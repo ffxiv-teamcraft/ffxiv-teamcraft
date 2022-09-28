@@ -22,6 +22,8 @@ import { IntegrityCheckPopupComponent } from './users/integrity-check-popup/inte
 import { INTEGRITY_CHECKS } from './users/integrity-checks/integrity-check';
 import { AllCharactersValidCheck } from './users/integrity-checks/all-characters-valid-check';
 import { AdminComponent } from './admin/admin.component';
+import { AllListsOkCheck } from './users/integrity-checks/all-lists-ok-check';
+import { FirestoreListStorage } from '../../core/database/storage/list/firestore-list-storage';
 
 const routes: Routes = [
   {
@@ -41,6 +43,12 @@ const userIntegrityChecks: Provider[] = [
     provide: INTEGRITY_CHECKS,
     useClass: AllCharactersValidCheck,
     deps: [XivapiService],
+    multi: true
+  },
+  {
+    provide: INTEGRITY_CHECKS,
+    useClass: AllListsOkCheck,
+    deps: [FirestoreListStorage],
     multi: true
   }
 ];

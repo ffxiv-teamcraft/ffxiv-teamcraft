@@ -13,17 +13,18 @@ import { withLazyData } from '../../../../core/rxjs/with-lazy-data';
 const fishImageUrls = [];
 
 Chart.pluginService.register({
-  afterDraw: chart => {
-    const ctx = chart.chart.ctx;
-    const xAxis = chart.scales['x-axis-0'];
-    const yAxis = chart.scales['y-axis-0'];
-    yAxis.ticks.forEach((value, index) => {
-      const y = yAxis.getPixelForTick(index);
-      const image = new Image();
-      image.src = fishImageUrls[index],
-        ctx.drawImage(image, xAxis.left - 33, y - 16, 32, 32);
-    });
-  }
+  // TODO fix image loading
+  // afterDraw: chart => {
+  //   const ctx = chart.chart.ctx;
+  //   const xAxis = chart.scales['x-axis-0'];
+  //   const yAxis = chart.scales['y-axis-0'];
+  //   yAxis.ticks.forEach((value, index) => {
+  //     const y = yAxis.getPixelForTick(index);
+  //     const image = new Image();
+  //     image.src = fishImageUrls[index],
+  //       ctx.drawImage(image, xAxis.left - 33, y - 16, 32, 32);
+  //   });
+  // }
 });
 
 interface FishingSpotChartData {
@@ -74,7 +75,7 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
       );
     }),
     startWith([]),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public readonly biteTimesChartJSData$: Observable<any> = combineLatest([this.fishCtx.biteTimesBySpot$, this.fishCtx.tugsBySpotByFish$]).pipe(
@@ -112,7 +113,9 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
               outlierRadius: 3,
               outlierColor: colors.map(color => `rgba(${color}, 0.5)`),
               data: sortedNames.map((el, index) => {
-                fishImageUrls[index] = 'https://xivapi.com' + itemIcons[el.id];
+                if (itemIcons) {
+                  fishImageUrls[index] = 'https://xivapi.com' + itemIcons[el.id];
+                }
                 return Object.entries(res.data.byFish[el.id].byTime)
                   .map(([time, occurences]) => {
                     return new Array(occurences).fill(+time);
@@ -129,7 +132,7 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
         debounceTime(100)
       );
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   gridColor = 'rgba(255,255,255,.3)';

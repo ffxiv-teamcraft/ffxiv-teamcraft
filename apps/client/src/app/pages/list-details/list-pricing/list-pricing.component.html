@@ -28,7 +28,7 @@
               <div>
                 <button (click)="$event.stopPropagation()"
                         [clipboard]="getSpendingText"
-                        [clipboardFnArgs]="[pricingData, spendingTotal$ | async]"
+                        [clipboardFnArgs]="[spendingRows$ | async]"
                         [clipboardSuccessMessage]="'PRICING.Content_copied' | translate"
                         [nzTooltipTitle]="'PRICING.Copy_panel_as_text' | translate"
                         nz-button
@@ -36,6 +36,19 @@
                         nzShape="circle"
                         nzSize="small">
                   <i nz-icon nzType="copy"></i>
+                </button>
+              </div>
+              <div>
+                <button (click)="$event.stopPropagation()"
+                        [clipboard]="getPanelAsCSV"
+                        [clipboardFnArgs]="[pricingData, spendingTotal$ | async]"
+                        [clipboardSuccessMessage]="'PRICING.Content_copied' | translate"
+                        [nzTooltipTitle]="'PRICING.Copy_panel_as_csv' | translate"
+                        nz-button
+                        nz-tooltip
+                        nzShape="circle"
+                        nzSize="small">
+                  <i nz-icon nzType="table" nzTheme="outline"></i>
                 </button>
               </div>
               <div fxFlex="1 1 auto"></div>
@@ -115,7 +128,7 @@
                 <button [clipboard]="getEarningText"
                         [clipboardFnArgs]="[pricingData, earningTotal$ | async]"
                         [clipboardSuccessMessage]="'PRICING.Content_copied' | translate"
-                        [nzTooltipTitle]="'PRICING.Copy_earnings_as_text' | translate"
+                        [nzTooltipTitle]="'PRICING.Copy_panel_as_text' | translate"
                         nz-button
                         nz-tooltip
                         nzSize="small"
@@ -123,6 +136,17 @@
                   <i nz-icon nzType="copy"></i>
                 </button>
               </div>
+              <button (click)="$event.stopPropagation()"
+                      [clipboard]="getPanelAsCSV"
+                      [clipboardFnArgs]="[earningRows$ | async]"
+                      [clipboardSuccessMessage]="'PRICING.Content_copied' | translate"
+                      [nzTooltipTitle]="'PRICING.Copy_panel_as_csv' | translate"
+                      nz-button
+                      nz-tooltip
+                      nzShape="circle"
+                      nzSize="small">
+                <i nz-icon nzType="table" nzTheme="outline"></i>
+              </button>
             </div>
           </ng-template>
           <nz-collapse>

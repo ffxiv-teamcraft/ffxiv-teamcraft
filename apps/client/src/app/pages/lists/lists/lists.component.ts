@@ -80,7 +80,7 @@ export class ListsComponent {
           })
           .sort((a, b) => a.workshop.index - b.workshop.index);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.favoriteLists$ = this.authFacade.favorites$.pipe(
@@ -116,7 +116,7 @@ export class ListsComponent {
             };
           });
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.teamsDisplays$ = this.teamsFacade.myTeams$.pipe(
@@ -133,7 +133,7 @@ export class ListsComponent {
           })
         )));
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.lists$ = combineLatest([this.listsFacade.loadingMyLists$, this.listsFacade.myLists$, this.workshops$, this.sharedWorkshops$, this.teamsDisplays$, this.query$]).pipe(
@@ -160,14 +160,14 @@ export class ListsComponent {
           otherLists: lists.filter(l => !l.public)
         };
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
     this.sharedLists$ = combineLatest([this.listsFacade.sharedLists$, this.workshopsFacade.sharedWorkshops$]).pipe(
       debounceTime(100),
       map(([lists, workshops]) => {
         return lists.filter(l => !workshops.some(w => w.listIds.some(id => id === l.$key)));
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.loading$ = combineLatest([this.lists$, this.workshops$, this.sharedWorkshops$, this.teamsDisplays$]).pipe(

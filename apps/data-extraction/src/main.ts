@@ -59,6 +59,7 @@ import { NodesExtractor } from './extractors/nodes.extractor';
 import { ShopsExtractor } from './extractors/shops.extractor';
 import { green } from 'colors';
 import { GatheringSearchIndexExtractor } from './extractors/gathering-search-index.extractor';
+import { IslandExtractor } from './extractors/island.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -69,7 +70,19 @@ const { MultiSelect } = require('enquirer');
 const extractors: AbstractExtractor[] = [
   new I18nExtractor('BNpcName', 'mobs'),
   new I18nExtractor('Title', 'titles'),
-  new I18nExtractor('PlaceName', 'places'),
+  new I18nExtractor('PlaceName', 'places', {}, 'Name_', false, (row, entities) => {
+    if (row.ID === 4043) {
+      const realName = entities[2566];
+      return {
+        ...row,
+        Name_en: realName.en,
+        Name_de: realName.de,
+        Name_ja: realName.ja,
+        Name_fr: realName.fr
+      };
+    }
+    return row;
+  }),
   new I18nExtractor('Status', 'statuses', { Icon: 'icon' }),
   new I18nExtractor('ItemSeries', 'item-series', { 'GameContentLinks.Item.ItemSeries': 'items' }),
   new I18nExtractor('Achievement', 'achievements', { Icon: 'icon', ItemTargetID: 'itemReward' }),
@@ -82,6 +95,8 @@ const extractors: AbstractExtractor[] = [
   new I18nExtractor('GrandCompany', 'gc-names'),
   new I18nExtractor('AirshipExplorationPoint', 'airship-voyages', { ID: 'id' }, 'NameShort_', true),
   new I18nExtractor('SubmarineExploration', 'submarine-voyages', { ID: 'id' }, 'Destination_'),
+  new I18nExtractor('MJICraftworksObjectTheme', 'island-craftworks-theme'),
+  new IslandExtractor(),
   new ShopsExtractor(),
   new NodesExtractor(),
   new SeedsExtractor(),

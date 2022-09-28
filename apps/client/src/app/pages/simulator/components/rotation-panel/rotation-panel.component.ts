@@ -57,12 +57,12 @@ export class RotationPanelComponent implements OnInit {
 
   public foods$: Observable<Consumable[]> = this.lazyData.getEntry('foods').pipe(
     map(foods => this.consumablesService.fromLazyData(foods)),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public medicines$: Observable<Consumable[]> = this.lazyData.getEntry('medicines').pipe(
     map(medicines => this.consumablesService.fromLazyData(medicines)),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public freeCompanyActions: FreeCompanyAction[] = [];
@@ -88,7 +88,7 @@ export class RotationPanelComponent implements OnInit {
       filter(([, rotation]) => rotation !== null),
       map(([links, rotation]) => links.find(link => link.redirectTo === this.getRouterLink(rotation).substr(1))),
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
     this.freeCompanyActions = freeCompanyActionsService.fromData(freeCompanyActions);
 

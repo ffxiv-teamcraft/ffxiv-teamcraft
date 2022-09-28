@@ -8,6 +8,7 @@ import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
 import * as _ from 'lodash';
+import { uniqBy } from 'lodash';
 
 @Component({
   selector: 'app-custom-alarm-popup',
@@ -76,11 +77,11 @@ export class CustomAlarmPopupComponent implements OnInit {
   constructor(private fb: FormBuilder, private xivapi: XivapiService, private alarmsFacade: AlarmsFacade,
               private modalRef: NzModalRef) {
     this.maps$ = this.xivapi.getList(XivapiEndpoint.Map, {
-      columns: ['ID', 'PlaceName.ID', 'TerritoryType.WeatherRate', 'PlaceNameSub'],
+      columns: ['ID', 'PlaceNameTargetID', 'PlaceName.ID', 'TerritoryType.WeatherRate', 'PlaceNameSub'],
       max_items: 1000
     }).pipe(
-      map(list => list.Results),
-      shareReplay(1)
+      map(list => uniqBy(list.Results, 'PlaceNameTargetID')),
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 
@@ -138,7 +139,7 @@ export class CustomAlarmPopupComponent implements OnInit {
       map((m: { TerritoryType: { WeatherRate: number } }) => {
         return _.uniq(weatherIndex[m.TerritoryType.WeatherRate].map(row => +row.weatherId)) as number[];
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 

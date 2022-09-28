@@ -35,14 +35,14 @@ export class UniversalisService {
     map(user => user.cid),
     filter(cid => !!cid),
     distinctUntilChanged(),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   private worldId$: Observable<number> = this.authFacade.user$.pipe(
     map(user => user.world),
     filter(world => world !== undefined),
     distinctUntilChanged(),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   constructor(private http: HttpClient, private lazyData: LazyDataFacade, private authFacade: AuthFacade,
@@ -85,7 +85,7 @@ export class UniversalisService {
             return item as MarketboardItem;
           });
         }),
-        shareReplay(1)
+        shareReplay({ bufferSize: 1, refCount: true })
       );
   }
 
@@ -144,12 +144,12 @@ export class UniversalisService {
   public getServerHistoryPrices(server: string, entries: number, ...itemIds: number[]): Observable<MarketboardItem[]> {
     const chunks = _.chunk(itemIds, 100);
     return combineLatest(chunks.map(chunk => {
-      const params = new HttpParams().set('entries', entries);
-      return this.http.get<any>(`https://universalis.app/api/history/${server}/${chunk.join(',')}`, { params })
+      const params = new HttpParams().set('entriesToReturn', entries);
+      return this.http.get<any>(`https://universalis.app/api/v2/history/${server}/${chunk.join(',')}`, { params })
         .pipe(
           catchError(() => of([])),
           map(response => {
-            const data = response.items || [response];
+            const data = response.items ? Object.values<any>(response.items) : [response];
             return data.map(res => {
               const item: Partial<MarketboardItem> = {
                 ...res,

@@ -3,8 +3,8 @@ import { map, shareReplay, startWith } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
-import { fshSpearLogOrder } from '../fsh-spear-log-order';
-import { fshLogOrder } from '../fsh-log-order';
+import { fshSpearLogAreas } from '../fsh-spear-log-order';
+import { fshLogAreas } from '../fsh-log-order';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Injectable({
@@ -19,7 +19,8 @@ export class FishingLogCacheService {
 
   public display$ = combineLatest([this.lazyData.getEntry('fishingLogTrackerPageData'), this.completion$, this.lazyData.getEntry('places')]).pipe(
     map(([completeDisplay, completion, places]) => {
-      return completeDisplay.map(display => {
+      return completeDisplay.map((display, displayIndex) => {
+        const areaLogOrder = (displayIndex === 0) ? fshLogAreas : fshSpearLogAreas;
         const uniqueDisplayDone = [];
         const uniqueDisplayTotal = [];
         display.tabs.forEach(area => {
@@ -54,26 +55,38 @@ export class FishingLogCacheService {
             spot.total = uniqueSpotTotal.length;
             spot.done = uniqueSpotDone.length;
           });
+          const areaName = places[area.placeId].en;
+          const spotNames = areaLogOrder.find(e => e.areaName === areaName)?.spotNames;
           area.spots = area.spots
             .sort((a, b) => {
-              if (a.id > 20000) {
-                return fshSpearLogOrder.indexOf(places[a.placeId].en) - fshSpearLogOrder.indexOf(places[b.placeId].en);
+              const a_name = places[a.placeId].en;
+              const b_name = places[b.placeId].en;
+              if (spotNames?.includes(a_name) && spotNames?.includes(b_name)) {
+                return spotNames.indexOf(a_name) - spotNames.indexOf(b_name);
+              } else {
+                return a.placeId - b.placeId;
               }
-              return fshLogOrder.indexOf(places[a.placeId].en) - fshLogOrder.indexOf(places[b.placeId].en);
             });
           area.total = uniqueMapTotal.length;
           area.done = uniqueMapDone.length;
         });
+        const areaNames = areaLogOrder.map(e => e.areaName);
         display.tabs = display.tabs
           .sort((a, b) => {
-            return b.placeId - a.placeId;
+            const a_name = places[a.placeId].en;
+            const b_name = places[b.placeId].en;
+            if (areaNames.includes(a_name) && areaNames.includes(b_name)) {
+              return areaNames.indexOf(a_name) - areaNames.indexOf(b_name);
+            } else {
+              return a.placeId - b.placeId;
+            }
           });
         display.total = uniqueDisplayTotal.length;
         display.done = uniqueDisplayDone.length;
         return display;
       });
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private lazyData: LazyDataFacade) {

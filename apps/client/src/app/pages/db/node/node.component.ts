@@ -119,7 +119,7 @@ export class NodeComponent extends TeamcraftPageComponent {
           })
         );
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.bonuses$ = this.nodeData$.pipe(

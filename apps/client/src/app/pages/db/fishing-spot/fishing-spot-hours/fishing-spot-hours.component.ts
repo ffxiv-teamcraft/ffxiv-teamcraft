@@ -46,7 +46,7 @@ export class FishingSpotHoursComponent implements OnInit, OnDestroy {
       );
     }),
     startWith([]),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public readonly activeFishName$ = new Subject<string | undefined>();

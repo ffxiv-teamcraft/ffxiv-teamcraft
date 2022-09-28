@@ -698,6 +698,9 @@ export class ListController {
       row = array[array.length - 1];
     } else {
       row.amount = MathTools.absoluteCeil(row.amount + data.amount);
+      if (!row.requires) {
+        row.requires = data.requires;
+      }
       previousAmount = row.amount_needed;
     }
     row.amount_needed = Math.ceil(row.amount / (row.yield || 1));

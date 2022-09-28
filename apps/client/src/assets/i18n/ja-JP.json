@@ -50,7 +50,8 @@
     "Share_url_copied": "検索URLがクリップボードにコピーされました",
     "Only_craftable": "レシピのみ",
     "Want_filters": "さらにフィルターが必要ですか？",
-    "Open_search": "代わりに検索ページを開く"
+    "Open_search": "代わりに検索ページを開く",
+    "Island_recipe": "Island Sanctuary recipe"
   },
   "Use_as_default_character": "デフォルトキャラとして使う",
   "Download_desktop_app": "デスクトップアプリをダウンロード",
@@ -183,7 +184,7 @@
     "Never": "しない",
     "Festival": "フェスティバルの間のみ",
     "Back": "戻る",
-    "Support_us_remove_ads": "Support us on Patreon to remove ads",
+    "Support_us_remove_ads": "Patreonをサポートして広告を消す",
     "Support_us": "サポート",
     "Show_more": "詳細を表示",
     "Item": "アイテム",
@@ -194,8 +195,17 @@
     "Voyage": "ボイジャー",
     "Instance": "ダンジョン",
     "Fate": "F. A. T. E",
-    "Reload": "Reload",
-    "Click_to_apply": "Click to apply"
+    "Reload": "再読み込み",
+    "Click_to_apply": "クリックして適用する",
+    "DAYS": {
+      "Monday": "Monday",
+      "Tuesday": "Tuesday",
+      "Wednesday": "Wednesday",
+      "Thursday": "Thursday",
+      "Friday": "Friday",
+      "Saturday": "Saturday",
+      "Sunday": "Sunday"
+    }
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -225,7 +235,7 @@
     "Add_group_and_alarms": "このグループとすべてのアラームをあなたのアラームに追加",
     "Delete_all": "全てのアラームを削除",
     "Delete_alarm": "このアラームを削除",
-    "Regenerating_alarms": "Regenerating your alarms…",
+    "Regenerating_alarms": "アラーム更新中......",
     "Regenerate": "アラーム更新",
     "Group_outdated": "このグループは古いです。使用者が新しいアップデートをしてログインをすると更新されます。",
     "Remove_from_group": "該当グループを削除",
@@ -303,6 +313,7 @@
   "Reset_progression": "進行状況を初期化する",
   "Gardening": "ガーデニング",
   "Hunting": "モブハン",
+  "Island_animal": "Island animal",
   "Desynth": "分解",
   "Vendors": "NPC",
   "Open": "開",
@@ -554,7 +565,7 @@
     "Jobs": "ジョブ",
     "Stats": "サブステ",
     "View_on_apkallu_falls": "アプカル・フォールズに開く",
-    "Masterbooks": "Master books",
+    "Masterbooks": "秘伝書",
     "Patreon_supporter": "Patreonサポーター",
     "Patreon_features": "Patreonサポーターの特典",
     "Contacts": "連絡先",
@@ -572,7 +583,7 @@
     "Loading_fish_rankings": "釣りのランキングを読み込み中",
     "Gearset_priority": "優先度",
     "Gearset_priority_explain": "インゴット、ナゲット、或はその他の飛行艇の修理材料など色んな制作ジョブが制作可能なレシピを選択する事に使用します。",
-    "Characters": "Characters",
+    "Characters": "キャラクター",
     "Missing_character": "Missing character",
     "Missing_character_description": "This character does not exist anymore, please delete it from your profile.",
     "VERIFICATION": {
@@ -757,6 +768,9 @@
     "Inventory_cleanup_description": "ここはリストに使用されない所持品内アイテムであります。",
     "Consider_requirements": "素材要求",
     "Ignore_requirements": "素材を除外する",
+    "SOURCES": {
+      "Gatherable": "Can be gathered, click to see more details"
+    },
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -923,8 +937,8 @@
     "Ephemeral_warning": "刻限の採集場所は複数に分かれています。座標はおおよその位置です。",
     "Legendary": "伝説",
     "Switched_to_compact": "結果が多すぎるため、コンパクトモードに切り替えました。",
-    "Node_type": "Type",
-    "Use": "Use",
+    "Node_type": "タイプ",
+    "Use": "用途",
     "Page_range": "{{start}}-{{end}} of {{total}} items"
   },
   "ANNOUNCEMENT": {
@@ -1185,7 +1199,8 @@
       "MISSING_LEVEL_REQUIREMENT": "このアイテムを製作するにはレベルが足りません。",
       "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
       "NO_INNER_QUIET": "インナーク ワイエットを使わず、インナーク ワイエットを要求するスキルを使用",
-      "MISSING_STATS_REQUIREMENT": "このアイテムを制作するにはステータスが足りません。"
+      "MISSING_STATS_REQUIREMENT": "このアイテムを制作するにはステータスが足りません。",
+      "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "殆どのすべてのスキル回しは、HQ制作を目指しにするには '精神集中' が含まれる必要があります。このスキルは、品質を向上させつつ 'ビエルゴの祝福' と同じようなスキルが使うことができます。",
@@ -1214,6 +1229,7 @@
     "Content_copied": "Content copied to your clipboard",
     "Cheaper_at_vendor": "Cheaper if you buy from NPC",
     "Copy_panel_as_text": "このパネルをテキストとしてコピーする",
+    "Copy_panel_as_csv": "Copy this panel as CSV",
     "Ignore_completed_items": "完了したアイテム除外",
     "Price_to_craft": "Price to craft",
     "Price_from_vendor": "Price from vendor",
@@ -1622,6 +1638,7 @@
         "Last_report": "最近報告",
         "Fish": "魚",
         "Size": "サイズ",
+        "Large": "Large",
         "Time_since_thrown": "キャスティング使用後時間",
         "ERRORS": {
           "No_bait": "No bait detected. Switch bait once to fix.",
@@ -1638,7 +1655,8 @@
       "Fish_per_tug": "当たりごとの魚",
       "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Include misses",
-      "Miss": "Miss"
+      "Miss": "Miss",
+      "Position_unknown": "Unknown location"
     },
     "NODE": {
       "Items": "アイテム",
@@ -1755,7 +1773,8 @@
       "No_comments": "コメントなし",
       "Post": "投稿",
       "Editor_tip": "他のページへのリンクを作成するため<page type>：\"<Content Name>\"を入力してください。例：item：\"Curtana\"、action：\"Basic Synthesis\"、map：\"The Crystarium\"サポートしているページの種類：item、map、mob、achievement、leve、npc、instance、quest、trait、action、status",
-      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments."
+      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments.",
+      "Deleted_comment": "This comment has been deleted"
     },
     "PATCH": {
       "Open_patch_page": "データベースのパッチ変更点はこちらをクリックしてください",
@@ -1848,7 +1867,8 @@
     "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard information. If you want to complain about this, please complain to Square Enix, as there is nothing we can do to make this work without them.",
     "Loading_data": "選択した通貨の取引データを読み込み中",
     "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items",
-    "X_sold_last_week": "{{amount}} sold last week"
+    "X_sold_last_week": "{{amount}} sold last week",
+    "No_trades": "This currency cannot be traded with something that can be sold on marketboard"
   },
   "FOOD_PICKER": {
     "Title": "調理品・薬品検索",
@@ -1917,7 +1937,8 @@
     "Leveling": "レベリング",
     "Currencies": "スクリップ",
     "Add_to_favorites": "お気に入りに追加",
-    "Remove_from_favorites": "お気に入りから排除"
+    "Remove_from_favorites": "お気に入りから排除",
+    "Island_Sanctuary": "Island Sanctuary"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "パケットキャプチャを使用することができます",
@@ -1975,7 +1996,8 @@
       "Other": "他の所持品",
       "Armory": "アーマリーチェスト",
       "Current_Gear": "現在の装備",
-      "RetainerMarket": "リテイナーが出品中"
+      "RetainerMarket": "リテイナーが出品中",
+      "IslandSanctuaryBag": "Island Sanctuary Bag"
     },
     "CONTENT_ID_POPUP": {
       "Description": "マルチキャラクター同期化と他の素敵な機能を使いたいのでしたら、TCは現在プレイ中のキャラクターまたは同期化を望むキャラクターがどれかを知る必要があります",
@@ -2073,6 +2095,8 @@
     "Total_cost": "コスト合計(スクリップ、ギル等々)",
     "Materia": "マテリア",
     "Amount_needed": "数量",
+    "Slots_used": "Slots",
+    "Slots_used_explain": "# of slots this materia is used for",
     "Cost": "価格",
     "Modal_editor": "{{itemName}} のマテリア",
     "Unavailable_slot": "このスロットに使用できません",
@@ -2087,7 +2111,7 @@
     "Materias": "マテリア",
     "Pieces": "装備品",
     "Import_from_ariyala": "Ariyalaからインポートする",
-    "Import_from_etro": "Import from Etro",
+    "Import_from_etro": "Etroからインポートする",
     "Import_from_lodestone": "ロドストからインポートさせる",
     "Import_using_pcap": "パケットキャプチャを使用してインポート",
     "Sync_with_pcap": "ギアセットとパケットキャプチャを同期",
@@ -2165,8 +2189,8 @@
       "Title": "ギアセットの同期化",
       "Tag": "同期",
       "Tag_tooltip": "This gearset is from a synchronization operation using packet capture. It will be updated if you synchronize again for this job.",
-      "Importing_gearset": "Importing set for {{name}}",
-      "Imported_gearset": "Imported set for {{name}}",
+      "Importing_gearset": "{{name}}のギアセットをインポートする",
+      "Imported_gearset": "{{name}}のギアセットをインポートしました",
       "Syncing_gearsets": "Synchronizing gearsets…"
     }
   },
@@ -2294,7 +2318,8 @@
         "Check": "整合性チェックを実行"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "All characters linked are valid"
+        "All_characters_valid": "All characters linked are valid",
+        "All_lists_ok": "All lists are working properly"
       }
     }
   },
@@ -2807,7 +2832,7 @@
     "Gubal_analysis_suggestion": "Suggestion based on data analysis",
     "Cannot_report_for_this_spot": "You can't report details for this spot on this fish because it already exists",
     "Please_suggest_edit_instead": "Please suggest an edit to the existing one instead",
-    "Add_data_sources": "Add data sources for this item",
+    "Add_data_sources": "Add/modify data sources for this item",
     "Not_applied_yet": "Not applied",
     "Not_applied_yet_explain": "This source will be added to the list and database system during the next update",
     "Pending_changes_count": "{{amount}} pending changes to review",
@@ -2868,7 +2893,8 @@
       "SPEARFISHING": "SPEARFISHING",
       "FATE": "FATE",
       "MOGSTATION": "MOGSTATION",
-      "DEPRECATED": "DEPRECATED"
+      "DEPRECATED": "DEPRECATED",
+      "ISLAND_ANIMAL": "ISLAND_ANIMAL"
     },
     "STATUS": {
       "PROPOSAL": "PROPOSAL",
@@ -2910,5 +2936,84 @@
     "Explain_cost_to_craft": "Added cost of all materials excluding crystals to craft one item using only materials from marketboard.",
     "Empty_list": "Empty list, click the + button on an item to add it here",
     "Add_to_list": "Add these items to a list"
+  },
+  "MACHINA_ERRORS": {
+    "Default": "Machina Wrapper error",
+    "Wrapper_failed_to_start": "Machina Wrapper failed to start",
+    "DESCRIPTION": {
+      "Wrapper_failed_to_start": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.<br><br> Retrying in {{retryDelay}}s"
+    }
+  },
+  "ISLAND_SANCTUARY": {
+    "Animal_source": "You need to gather this item from one of the following animals in your Island Sanctuary pasture",
+    "Island_level": "Island level",
+    "Landmarks": "Landmarks",
+    "Workshop_rank": "Workshop rank",
+    "WORKSHOP": {
+      "Title": "Workshop",
+      "Subtitle": "Track and manage your workshop",
+      "Out_of_sync": "State has not been updated since the last reset",
+      "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary to update the state. If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button, or import from database.",
+      "Export_state": "Export supply/demand state",
+      "State_copied": "State copied to your clipboard",
+      "Import_state": "Import state",
+      "Import_online_state": "Import state from database",
+      "Online_state_missing": "Nobody updated their state yet, this button will enable itself once it's done",
+      "State_imported": "State properly imported",
+      "Product": "Product",
+      "Popularity": "Popularity",
+      "Supply": "Supply",
+      "Demand_shift": "Demand shift",
+      "Predicted_popularity": "Predicted demand",
+      "Edit_mode": "Edit mode",
+      "Best_items_to_craft": "Best items to craft",
+      "Total_value": "Total value",
+      "Run_optimizer": "Find best planning for the rest of the week",
+      "No_schedule_found": "No planning found",
+      "No_schedule_found_explain": "Make sure the reset is in more than 4 hours",
+      "Possible_peak_days": "Possible peaks",
+      "Peak_days_explain": "The days on which it's more likely that this item will peak in value. Bold = strong peak.",
+      "Items_to_prepare": "Best items to prepare for tomorrow",
+      "Rest": "Rest day",
+      "Unknown_day_planning": "Unknown planning for now (will be known later this week)",
+      "Set_rest_day": "Set as second rest day",
+      "Import_explain": "You can update your supply/demand table by opening it ingame with the desktop app running and packet capture enabled.",
+      "Amount_of_workshops": "# of workshops :",
+      "Create_list": "Create a list for this planning",
+      "Exclude_pasture_materials": "Exclude pasture materials",
+      "Groove_tooltip": "Groove at the end of the day",
+      "POPULARITY": {
+        "Very_high": "Very high",
+        "High": "High",
+        "Average": "Average",
+        "Low": "Low"
+      },
+      "SUPPLY": {
+        "Non_existant": "Non existant",
+        "Insufficient": "Insufficient",
+        "Sufficient": "Sufficient",
+        "Surplus": "Surplus",
+        "Overflowing": "Overflowing"
+      },
+      "DEMAND_SHIFT": {
+        "Skyrocketing": "Skyrocketing",
+        "Increasing": "Increasing",
+        "None": "None",
+        "Decreasing": "Decreasing",
+        "Plummeting": "Plummeting"
+      }
+    },
+    "ANIMALS": {
+      "Title": "Animals",
+      "Subtitle": "A comprehensive list of animals, where and when to find them, with alarms integration",
+      "Name": "Name",
+      "Size": "Size",
+      "Coords": "Position",
+      "Spawn_time": "Spawn time",
+      "Weather": "Weather",
+      "Alarm": "Alarm",
+      "Main_drop": "Main drop",
+      "Rare_drop": "Rare drop"
+    }
   }
 }

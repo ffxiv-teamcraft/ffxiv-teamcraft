@@ -76,6 +76,7 @@ import { observeInput } from '../../../../core/rxjs/observe-input';
 import { withLazyData } from 'apps/client/src/app/core/rxjs/with-lazy-data';
 import { LocalStorageBehaviorSubject } from '../../../../core/rxjs/local-storage-behavior-subject';
 import { PermissionsController } from '../../../../core/database/permissions-controller';
+import { NzOptionComponent } from 'ng-zorro-antd/select';
 
 @Component({
   selector: 'app-simulator',
@@ -171,7 +172,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
       }
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public savedSet = true;
@@ -306,6 +307,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   private get registry() {
     return this.simulator.CraftingActionsRegistry;
+  }
+
+  filterOptions(input?: string, option?: NzOptionComponent): boolean {
+    return option.nzLabel?.toString().toLowerCase().includes(input.toLowerCase());
   }
 
   findRotation(stats: CrafterStats): void {
@@ -842,12 +847,12 @@ export class SimulatorComponent implements OnInit, OnDestroy {
           .filter(i => i.id > 20 && i.quality > 0)
           .map(ingredient => ({ id: +ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality }));
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.crafterStats$ = merge(statsFromRecipe$, this.customStats$).pipe(
       debounceTime(1000),
-      shareReplay(1),
+      shareReplay({ bufferSize: 1, refCount: true }),
       tap(stats => {
         const levels = stats.levels;
         levels[stats.jobId - 8] = stats.level;
@@ -901,6 +906,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       )
     ]).pipe(
       map(([stats, levelReq]) => {
+        if (levelReq === 255) {
+          levelReq = 0;
+        }
         return stats.level < levelReq;
       })
     );
@@ -912,7 +920,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         }
         return new this.simulator.Simulation(recipe, actions, stats, hqIngredients, stepStates, fails, forcedStartingQuality);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     combineLatest([this.rotation$, this.crafterStats$, observeInput(this, 'routeConsumables', true)]).pipe(
@@ -972,7 +980,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       tap(result => {
         this.actionFailed = result.steps.find(step => !step.success) !== undefined;
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.qualityPer100$ = this.result$.pipe(

@@ -5,6 +5,7 @@ import { bufferCount, first, map, switchMap, takeUntil, tap } from 'rxjs/operato
 import { SpendingEntry } from '../spending-entry';
 import { DataService } from '../../../core/api/data.service';
 import * as _ from 'lodash';
+import { uniqBy } from 'lodash';
 import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
@@ -13,7 +14,6 @@ import { getItemSource } from '../../../modules/list/model/list-row';
 import { DataType } from '../../../modules/list/data/data-type';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { uniqBy } from 'lodash';
 
 @Component({
   selector: 'app-currency-spending',
@@ -109,6 +109,9 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
               .flat();
           }),
           switchMap(entries => {
+            if (entries.length === 0) {
+              return of([]);
+            }
             const batches = _.chunk(entries, 100)
               .map((chunk: any) => {
                 return this.universalis.getServerHistoryPrices(

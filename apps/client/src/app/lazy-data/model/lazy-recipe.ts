@@ -4,7 +4,7 @@ export interface LazyRecipe {
   lvl:                     number;
   yields:                  number;
   result:                  number;
-  stars:                   number;
+  stars?:                  number;
   qs:                      boolean;
   hq:                      boolean;
   durability?:             number;
@@ -19,10 +19,12 @@ export interface LazyRecipe {
   controlReq?:             number;
   craftsmanshipReq?:       number;
   rlvl?:                   number;
+  requiredQuality?:        number;
   ingredients:             Ingredient[];
   expert?:                 boolean;
   conditionsFlag?:         number;
   masterbook?:             MasterbookClass | number;
+  isIslandRecipe?:         boolean;
 }
 
 export interface Ingredient {

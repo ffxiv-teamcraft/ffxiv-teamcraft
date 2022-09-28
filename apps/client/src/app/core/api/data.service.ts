@@ -6,7 +6,7 @@ import { Recipe } from '../../model/search/recipe';
 import { ItemData } from '../../model/garland-tools/item-data';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { SearchFilter } from '../../model/search/search-filter.interface';
-import { map, switchMap, tap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { SearchResult } from '../../model/search/search-result';
 import { InstanceData } from '../../model/garland-tools/instance-data';
 import { QuestData } from '../../model/garland-tools/quest-data';
@@ -290,8 +290,62 @@ export class DataService {
       );
     }
 
+    const MJIResults$ = query.length > 3 ? combineLatest([
+      this.lazyData.getEntry('islandBuildings'),
+      this.lazyData.getEntry('islandLandmarks')
+    ]).pipe(
+      map(([buildings, landmarks]) => {
+        return [
+          ...Object.entries(buildings)
+            .filter(([, building]) => {
+              return building[searchLang]?.toLowerCase().includes(query.toLowerCase());
+            })
+            .map(([key, building]) => {
+              return <SearchResult>{
+                id: +key,
+                itemId: +key,
+                icon: `${baseUrl}${building.icon}`,
+                amount: 1,
+                contentType: 'islandBuildings',
+                recipe: {
+                  recipeId: `mjibuilding-${key}`,
+                  itemId: +key,
+                  collectible: false,
+                  job: -10,
+                  stars: 0,
+                  lvl: 1,
+                  icon: `${baseUrl}${building.icon}`
+                }
+              };
+            }),
+          ...Object.entries(landmarks)
+            .filter(([, landmark]) => {
+              return landmark[searchLang]?.toLowerCase().includes(query.toLowerCase());
+            })
+            .map(([key, landmark]) => {
+              return <SearchResult>{
+                id: +key,
+                itemId: +key,
+                icon: `${baseUrl}${(landmark as any).icon}`,
+                amount: 1,
+                contentType: 'islandLandmarks',
+                recipe: {
+                  recipeId: `mjilandmark-${key}`,
+                  itemId: +key,
+                  collectible: false,
+                  job: -10,
+                  stars: 0,
+                  lvl: 1,
+                  icon: `${baseUrl}${(landmark as any).icon}`
+                }
+              };
+            })
+        ];
+      })
+    ) : of([]);
+
     const baseUrl = this.baseUrl;
-    return results$.pipe(
+    const baseResults = results$.pipe(
       map(results => {
         if (onlyCraftable) {
           return results.filter(row => {
@@ -317,6 +371,7 @@ export class DataService {
                   itemId: item.ID,
                   icon: `${baseUrl}${item.Icon}`,
                   amount: 1,
+                  contentType: 'items',
                   recipe: {
                     recipeId: recipe.id.toString(),
                     itemId: item.ID,
@@ -331,6 +386,7 @@ export class DataService {
           } else {
             results.push({
               itemId: item.ID,
+              contentType: 'items',
               icon: `${baseUrl}${item.Icon}`,
               amount: 1
             });
@@ -339,6 +395,11 @@ export class DataService {
         return results;
       })
     );
+
+    return combineLatest([baseResults, MJIResults$])
+      .pipe(
+        map(([a, b]) => a.concat(b))
+      );
   }
 
   public search(query: string, type: SearchType, filters: SearchFilter[], sort: [string, 'asc' | 'desc'] = [null, 'desc']): Observable<SearchResult[]> {
@@ -1144,9 +1205,27 @@ export class DataService {
           })
           .map(key => {
             return +key;
-          });
+          })
+          .sort((a, b) => {
+            return this.similar(data[b][lang], terms) - this.similar(data[a][lang], terms);
+          })
+          .slice(0, 100);
       })
     );
+  }
+
+  private similar(a: string, b: string): number {
+    let equivalency = 0;
+    const minLength = (a.length > b.length) ? b.length : a.length;
+    const maxLength = (a.length < b.length) ? b.length : a.length;
+    for (let i = 0; i < minLength; i++) {
+      if (a[i]?.toLowerCase() === b[i]?.toLowerCase()) {
+        equivalency++;
+      }
+    }
+
+    const weight = equivalency / maxLength;
+    return weight * 100;
   }
 
   private mapAchievement(achievement: any): StatusSearchResult {

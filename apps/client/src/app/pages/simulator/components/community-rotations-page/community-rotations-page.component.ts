@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { debounceTime, filter, first, map, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { RotationTag } from './rotation-tag';
@@ -176,7 +176,7 @@ export class CommunityRotationsPageComponent {
     map(([index, sets]) => sets[index])
   );
 
-  loading = true;
+  loading = false;
 
   filteredRotations$: Observable<CraftingRotation[]>;
 
@@ -208,40 +208,31 @@ export class CommunityRotationsPageComponent {
       tap(([name, tags, rlvl, durability, craftsmanship, control, cp, difficulty, quality]: any[]) => {
         this.page$.next(1);
         const queryParams = {};
-        if (name !== '') {
-          this.firstDisplay = false;
+        if (name?.length > 0) {
           queryParams['name'] = name;
         }
         if (tags.length > 0) {
-          this.firstDisplay = false;
           queryParams['tags'] = tags.join(',');
         }
         if (rlvl !== null) {
-          this.firstDisplay = false;
           queryParams['rlvl'] = rlvl;
         }
         if (durability !== null) {
-          this.firstDisplay = false;
           queryParams['durability'] = durability;
         }
         if (craftsmanship !== null) {
-          this.firstDisplay = false;
           queryParams['craftsmanship'] = craftsmanship;
         }
         if (control !== null) {
-          this.firstDisplay = false;
           queryParams['control'] = control;
         }
         if (cp !== null) {
-          this.firstDisplay = false;
           queryParams['cp'] = cp;
         }
         if (difficulty !== null) {
-          this.firstDisplay = false;
           queryParams['difficulty'] = difficulty;
         }
         if (quality !== null) {
-          this.firstDisplay = false;
           queryParams['quality'] = quality;
         }
         router.navigate([], {
@@ -293,7 +284,11 @@ export class CommunityRotationsPageComponent {
         }
       });
     this.filteredRotations$ = this.filters$.pipe(
-      tap(() => this.loading = true),
+      filter(filters => !!filters.rlvl),
+      tap(() => {
+        this.firstDisplay = false;
+        this.loading = true;
+      }),
       debounceTime(250),
       switchMap((filters) => {
         return this.rotationsService.getCommunityRotations({
@@ -311,7 +306,8 @@ export class CommunityRotationsPageComponent {
           })
         );
       }),
-      tap(() => setTimeout(() => this.loading = false))
+      tap(() => setTimeout(() => this.loading = false)),
+      startWith([])
     );
   }
 

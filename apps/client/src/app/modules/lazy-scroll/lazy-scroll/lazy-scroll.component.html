@@ -1,4 +1,4 @@
-<cdk-virtual-scroll-viewport [style.height.px]="displayedRows * rowSize" [itemSize]="rowSize" *ngIf="data?.length >= displayedRows && !noScroll; else noScrollRows">
+<cdk-virtual-scroll-viewport [style.height.px]="displayedRows * rowSize" [itemSize]="rowSize" *ngIf="data?.length >= displayedRows && !noScroll; else noScrollRows" [minBufferPx]="displayedRows * 2 * rowSize" [maxBufferPx]="displayedRows * 3 * rowSize">
   <ng-container *cdkVirtualFor="let row of data; trackBy: trackBy; let odd = odd; let first = first; let last = last; let index = index">
     <ng-container *ngTemplateOutlet="rowTemplate;context:{$implicit: row, odd: odd, first: first, last: last, index: index}"></ng-container>
   </ng-container>

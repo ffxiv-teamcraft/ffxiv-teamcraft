@@ -30,7 +30,7 @@ export class MateriaService {
       map(materias => {
         return materias.find(m => m.itemId === itemId);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   };
 
@@ -133,7 +133,7 @@ export class MateriaService {
           map(cap => result > cap ? cap : result)
         );
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 
@@ -281,7 +281,7 @@ export class MateriaService {
         const roleModifier = baseParam[`MeldParam${meldingData.modifier}`];
         return Math.round(baseValue * slotModifier / (roleModifier * 10));
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 }

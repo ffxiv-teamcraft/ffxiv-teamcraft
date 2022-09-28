@@ -5,15 +5,16 @@ import { TradeSource } from '../../modules/list/model/trade-source';
 import { TradeIconPipe } from '../../pipes/pipes/trade-icon.pipe';
 import { beastTribeNpcs } from '../../core/data/sources/beast-tribe-npcs';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
-import { Observable, of } from 'rxjs';
-import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
-import { map } from 'rxjs/operators';
+import { from, Observable } from 'rxjs';
 import { housingMaterialSuppliers } from '../../core/data/sources/housing-material-suppliers';
+import { map, mergeScan } from 'rxjs/operators';
+import { Vendor } from '../../modules/list/model/vendor';
+import { TradeNpc } from '../../modules/list/model/trade-npc';
 
 export class NpcBreakdown {
-  private readonly _rows: NpcBreakdownRow[] = [];
-
   private readonly canSkip: Record<number, number> = {};
+
+  public rows$: Observable<NpcBreakdownRow[]>;
 
   constructor(rows: ListRow[], private lazyData: LazyDataFacade, private prioritizeHousingSupplier: boolean) {
     // You can skip an item if there's another item requiring it inside the same array
@@ -30,68 +31,43 @@ export class NpcBreakdown {
       };
     }, {});
 
-    rows.forEach(row => {
-      if (getItemSource(row, DataType.VENDORS).length > 0) {
-        this.handleVendors(row);
-      } else if (getItemSource(row, DataType.TRADE_SOURCES).length > 0) {
-        this.handleTradeSources(row);
-      } else {
-        // Uh what?
-        return this.addRow(-1, row);
-      }
-    });
-
-    this._rows = this._rows.sort((a, b) => {
-      return a.position?.zoneid - b.position?.zoneid;
-    });
-
-    this._rows = this._rows.map(row => {
-      row.items = row.items.sort((a, b) => {
-        return this.canSkip[a.id] - this.canSkip[b.id];
-      });
-      return row;
-    });
-  }
-
-  public get rows(): NpcBreakdownRow[] {
-    return this._rows;
-  }
-
-  private handleVendors(row: ListRow): void {
-    const vendors = getItemSource(row, DataType.VENDORS);
-    safeCombineLatest(vendors.map(vendor => {
-      return this.getRowScore(vendor.npcId).pipe(
-        map(score => ({ vendor, score }))
-      );
-    })).subscribe(scored => {
-      const bestNpc = scored.sort((a, b) => b.score - a.score)[0];
-      this.addRow(bestNpc.vendor.npcId, row);
-    });
-  }
-
-  private handleTradeSources(row: ListRow): void {
-    const tradeSources = getItemSource(row, DataType.TRADE_SOURCES);
-    safeCombineLatest(tradeSources
-      .filter(ts => !!ts)
-      .map(ts => {
+    const rowsWithNpcs = rows
+      .map(row => {
         return {
-          tradeSource: ts,
-          tradeSourceScore: this.getTradeSourceScore(ts)
+          row,
+          npcs: this.getNpcs(row)
         };
       })
-      .sort((a, b) => b.tradeSourceScore - a.tradeSourceScore)
-      .map(ts => ts.tradeSource.npcs)
-      .flat()
-      .filter(npc => !!npc)
-      .map(npc => {
-        return this.getRowScore(npc.id).pipe(
-          map(score => ({ npc, score }))
-        );
+      .sort((a, b) => {
+        return a.npcs.length - b.npcs.length;
+      });
+
+    this.rows$ = from(rowsWithNpcs).pipe(
+      mergeScan((breakdown, entry) => {
+        if (entry.npcs.length === 0) {
+          return this.addRow(-1, entry.row, breakdown);
+        }
+        const bestNpc = entry.npcs
+          .map(npc => {
+            return {
+              npc,
+              score: this.getRowScore(npc, rowsWithNpcs)
+            };
+          })
+          .sort((a, b) => b.score - a.score)[0];
+        return this.addRow(this.getNpcId(bestNpc.npc), entry.row, breakdown);
+      }, [] as NpcBreakdownRow[], 1),
+      map(breakdown => {
+        return breakdown.sort((a, b) => {
+          return a.position?.zoneid - b.position?.zoneid;
+        }).map(row => {
+          row.items = row.items.sort((a, b) => {
+            return this.canSkip[a.id] - this.canSkip[b.id];
+          });
+          return row;
+        });
       })
-    ).subscribe(scored => {
-      const bestNpc = scored.sort((a, b) => b.score - a.score)[0];
-      this.addRow(bestNpc?.npc?.id || -1, row);
-    });
+    );
   }
 
   private getTradeSourceScore(tradeSource: TradeSource): number {
@@ -106,53 +82,63 @@ export class NpcBreakdown {
       })[0];
   }
 
-  private getRowScore(npcId: number): Observable<number> {
+  private getRowScore(npc: TradeNpc | Vendor, rowsWithNpcs: { row: ListRow, npcs: ReturnType<NpcBreakdown['getNpcs']> }[]): number {
+    const npcId = this.getNpcId(npc);
     // Hardcoded fix for Anna, has a wrong map for some reason.
     if (npcId === 1033785) {
-      return of(0);
+      return 0;
     }
     // If it's sold by material supplier and setting is enabled, favor this over anything else.
-    if (this.prioritizeHousingSupplier && housingMaterialSuppliers.includes(npcId)) {
-      return of(100);
+    if (this.prioritizeHousingSupplier && housingMaterialSuppliers.includes(+npcId)) {
+      return 1000;
     }
-    const sameNpc = this._rows.find(r => r.npcId === npcId);
-    if (sameNpc) {
-      return of(10 + sameNpc.items.length);
+    const commonNpcBonus = rowsWithNpcs.filter(row => row.npcs.some(n => this.getNpcId(n) === npcId)).length;
+    if (beastTribeNpcs.includes(npcId)) {
+      return 2 * commonNpcBonus;
     }
-    return safeCombineLatest([
-      this.lazyData.getRow('npcs', npcId).pipe(
-        map(res => ({ id: npcId, ...res }))
-      ),
-      ...this._rows.map(r => {
-        return this.lazyData.getRow('npcs', r.npcId).pipe(
-          map(res => ({ id: r.npcId, ...res }))
-        );
-      })
-    ]).pipe(
-      map(([currentNpc, ...rowsNpcs]) => {
-        if (rowsNpcs.some(npc => npc.position && npc.position?.map === currentNpc?.position?.map)) {
-          return 8;
+    if (npc.coords) {
+      return 3 * commonNpcBonus;
+    }
+  }
+
+  private getNpcId(npc: TradeNpc | Vendor): number {
+    return (npc as TradeNpc).id || (npc as Vendor).npcId;
+  }
+
+  private addRow(npcId: number, row: ListRow, rows: NpcBreakdownRow[]): Observable<NpcBreakdownRow[]> {
+    return this.lazyData.getRow('npcs', npcId).pipe(
+      map(npc => {
+        let breakdownRow = rows.find(r => r.npcId === npcId);
+        if (breakdownRow === undefined) {
+          const position = npc?.position;
+          rows = [...rows, { npcId, position, items: [] }];
+          breakdownRow = rows[rows.length - 1];
         }
-        if (currentNpc?.position) {
-          return 5;
-        }
-        if (beastTribeNpcs.includes(npcId)) {
-          return 3;
-        }
-        return 0;
+        breakdownRow.items = [...breakdownRow.items, row];
+        return rows;
       })
     );
   }
 
-  private addRow(npcId: number, row: ListRow): void {
-    this.lazyData.getRow('npcs', npcId).subscribe(npc => {
-      let breakdownRow = this._rows.find(r => r.npcId === npcId);
-      if (breakdownRow === undefined) {
-        const position = npc?.position;
-        this._rows.push({ npcId, position, items: [] });
-        breakdownRow = this._rows[this._rows.length - 1];
-      }
-      breakdownRow.items.push(row);
-    });
+  private getNpcs(row: ListRow): Array<TradeNpc | Vendor> {
+    const vendors = getItemSource(row, DataType.VENDORS);
+    if (vendors.length > 0) {
+      return vendors.filter(v => !v.festival);
+    }
+    const tradeSources = getItemSource(row, DataType.TRADE_SOURCES);
+    if (tradeSources.length > 0) {
+      return tradeSources
+        .filter(ts => !!ts)
+        .map(ts => {
+          return {
+            tradeSource: ts,
+            tradeSourceScore: this.getTradeSourceScore(ts)
+          };
+        })
+        .sort((a, b) => b.tradeSourceScore - a.tradeSourceScore)
+        .map(ts => ts.tradeSource.npcs)
+        .flat()
+        .filter(npc => !!npc && !npc.festival);
+    }
   }
 }

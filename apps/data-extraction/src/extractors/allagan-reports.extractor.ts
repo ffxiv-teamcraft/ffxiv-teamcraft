@@ -31,7 +31,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
   protected doExtract(): any {
     this.get('https://raw.githubusercontent.com/ufx/GarlandTools/master/Supplemental/FFXIV%20Data%20-%20Duties.json').pipe(
       switchMap(GTDuties => {
-        const desynth = this.requireLazyFile('desynth');
+        const desynth = {};
         const reduction = this.requireLazyFile('reduction');
         const voyageSources = this.requireLazyFile('voyage-sources');
         const deprecated = {};
@@ -40,6 +40,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
         const loots = {};
         const ventures = {};
         const drops = {};
+        const islandAnimals = {};
         const instanceDrops = {};
         const fateSources = {};
         const mogstation = {};
@@ -157,6 +158,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
             this.persistToJsonAsset('loot-sources', loots);
             this.persistToJsonAsset('venture-sources', ventures);
             this.persistToJsonAsset('drop-sources', drops);
+            this.persistToJsonAsset('island-animal-sources', islandAnimals);
             this.persistToJsonAsset('instance-sources', instanceDrops);
             this.persistToJsonAsset('fate-sources', fateSources);
             this.persistToJsonAsset('mogstation-sources', mogstation);
@@ -174,7 +176,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
           })
         );
       })
-    ).subscribe((data) => {
+    ).subscribe(() => {
       this.done();
     });
   }

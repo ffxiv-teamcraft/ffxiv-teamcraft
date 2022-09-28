@@ -36,6 +36,7 @@ import { LazyMateria } from '../../lazy-data/model/lazy-materia';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { LodestoneIdEntry } from '../../model/user/lodestone-id-entry';
 import { PlatformService } from '../../core/tools/platform.service';
+import { toIpcData } from '../../core/rxjs/to-ipc-data';
 
 @Injectable({
   providedIn: 'root'
@@ -119,6 +120,11 @@ export class InventoryService {
     const updateInventorySlotMessages$ = this.ipc.packets$.pipe(ofMessageType('updateInventorySlot'));
     const itemMarketBoardInfoMessages$ = this.ipc.packets$.pipe(ofMessageType('itemMarketBoardInfo'));
     const clientTriggerMbPriceMessages$ = this.ipc.packets$.pipe(ofMessageType('clientTrigger'), filter(m => m.parsedIpcData.commandId === 400));
+    const islandSanctuaryInventoryPackets$ = this.ipc.packets$.pipe(
+      ofMessageType('actorControlSelf'),
+      toIpcData(),
+      filter(p => p.category === 378)
+    );
 
     let constantsUrl = 'https://raw.githubusercontent.com/karashiiro/FFXIVOpcodes/master/constants.min.json';
 
@@ -174,8 +180,18 @@ export class InventoryService {
             map(retainer => ({ type: 'RetainerSpawn', retainer: retainer }))
           );
 
+          const islandPackets$: Observable<{ type: 'IslandInventoryPacket', itemId: number, quantity: number }> = islandSanctuaryInventoryPackets$.pipe(
+            map(p => {
+              return {
+                type: 'IslandInventoryPacket',
+                itemId: p.param2,
+                quantity: p.param4
+              };
+            })
+          );
+
           const customActions$ = merge(this.contentId$, this.setInventory$, this.resetInventory$, retainerActions$);
-          return merge(packetActions$, customActions$, packetActions2$).pipe(
+          return merge(packetActions$, customActions$, packetActions2$, islandPackets$).pipe(
             scan((state: InventoryState, action) => {
               if (!action) {
                 return state;
@@ -183,80 +199,90 @@ export class InventoryService {
               if (action.type !== 'SetContentId' && !state.inventory.contentId) {
                 return state;
               }
-              switch (action.type) {
-                case 'SetContentId':
-                  state.inventory.contentId = action.contentId;
-                  delete state.inventory.items['null'];
-                  delete state.inventory.items['undefined'];
-                  return { ...state, inventory: state.inventory };
-                case 'Reset':
-                  const reset = new UserInventory();
-                  reset.contentId = state.inventory.contentId;
-                  return { ...state, inventory: reset };
-                case 'Set':
-                  return { ...state, inventory: action.inventory };
-                case 'containerInfo':
-                  const itemInfos = state.itemInfoQueue.filter(itemInfo => itemInfo.containerSequence === action.parsedIpcData.sequence);
-                  const newQueue = state.itemInfoQueue.filter(itemInfo => itemInfo.containerSequence !== action.parsedIpcData.sequence);
-                  if (this.isRetainer(action.parsedIpcData.containerId)) {
-                    if (action.parsedIpcData.containerId === ContainerType.RetainerBag0) {
-                      state.retainerInventoryQueue = [];
+              if (!state.inventory) {
+                state.inventory = new UserInventory();
+              }
+              try {
+                switch (action.type) {
+                  case 'IslandInventoryPacket':
+                    return { ...state, inventory: this.handleIslandPacket(state.inventory, action) };
+                  case 'SetContentId':
+                    state.inventory.contentId = action.contentId;
+                    delete state.inventory.items['null'];
+                    delete state.inventory.items['undefined'];
+                    return { ...state, inventory: state.inventory };
+                  case 'Reset':
+                    const reset = new UserInventory();
+                    reset.contentId = state.inventory.contentId;
+                    return { ...state, inventory: reset };
+                  case 'Set':
+                    return { ...state, inventory: action.inventory || state.inventory };
+                  case 'containerInfo':
+                    const itemInfos = state.itemInfoQueue.filter(itemInfo => itemInfo.containerSequence === action.parsedIpcData.sequence);
+                    const newQueue = state.itemInfoQueue.filter(itemInfo => itemInfo.containerSequence !== action.parsedIpcData.sequence);
+                    if (this.isRetainer(action.parsedIpcData.containerId)) {
+                      if (action.parsedIpcData.containerId === ContainerType.RetainerBag0) {
+                        state.retainerInventoryQueue = [];
+                      }
+                      return {
+                        ...state,
+                        itemInfoQueue: newQueue,
+                        retainerInventoryQueue: [...state.retainerInventoryQueue, { containerInfo: action.parsedIpcData, itemInfos: itemInfos }]
+                      };
+                    } else {
+                      return {
+                        ...state,
+                        itemInfoQueue: newQueue,
+                        inventory: this.handleContainerInfo(state.inventory, action.parsedIpcData, itemInfos, materias)
+                      };
                     }
+                  case 'RetainerSpawn':
+                    let inventory = state.inventory.clone();
+                    state.retainerInventoryQueue.forEach(entry => {
+                      inventory = this.handleContainerInfo(inventory, entry.containerInfo, entry.itemInfos, materias, action.retainer);
+                    });
+                    state.retainerUpdateSlotQueue.forEach(entry => {
+                      inventory = this.handleUpdateInventorySlot(inventory, entry, action.retainer);
+                    });
+                    state.retainerMarketboardInfoQueue.forEach(entry => {
+                      inventory = this.handleItemMarketboardInfo(inventory, entry, action.retainer);
+                    });
                     return {
                       ...state,
-                      itemInfoQueue: newQueue,
-                      retainerInventoryQueue: [...state.retainerInventoryQueue, { containerInfo: action.parsedIpcData, itemInfos: itemInfos }]
+                      retainer: action.retainer,
+                      retainerInventoryQueue: [],
+                      retainerUpdateSlotQueue: [],
+                      retainerMarketboardInfoQueue: [],
+                      inventory
                     };
-                  } else {
+                  case 'inventoryModifyHandler':
+                    return { ...state, inventory: this.handleInventoryModifyHandler(state.inventory, action.parsedIpcData, state.retainer) };
+                  case 'updateInventorySlot':
+                  case 'inventoryTransaction':
+                    if (this.isRetainer(action.parsedIpcData.containerId) && state.retainerInventoryQueue.length > 0) {
+                      return {
+                        ...state,
+                        retainerUpdateSlotQueue: [...state.retainerUpdateSlotQueue, action.parsedIpcData]
+                      };
+                    } else {
+                      return { ...state, inventory: this.handleUpdateInventorySlot(state.inventory, action.parsedIpcData, state.retainer) };
+                    }
+                  case 'clientTrigger':
                     return {
                       ...state,
-                      itemInfoQueue: newQueue,
-                      inventory: this.handleContainerInfo(state.inventory, action.parsedIpcData, itemInfos, materias)
+                      inventory: this.handleClientTrigger400(state.inventory, action.parsedIpcData, state.retainer)
                     };
-                  }
-                case 'RetainerSpawn':
-                  let inventory = state.inventory.clone();
-                  state.retainerInventoryQueue.forEach(entry => {
-                    inventory = this.handleContainerInfo(inventory, entry.containerInfo, entry.itemInfos, materias, action.retainer);
-                  });
-                  state.retainerUpdateSlotQueue.forEach(entry => {
-                    inventory = this.handleUpdateInventorySlot(inventory, entry, action.retainer);
-                  });
-                  state.retainerMarketboardInfoQueue.forEach(entry => {
-                    inventory = this.handleItemMarketboardInfo(inventory, entry, action.retainer);
-                  });
-                  return {
-                    ...state,
-                    retainer: action.retainer,
-                    retainerInventoryQueue: [],
-                    retainerUpdateSlotQueue: [],
-                    retainerMarketboardInfoQueue: [],
-                    inventory
-                  };
-                case 'inventoryModifyHandler':
-                  return { ...state, inventory: this.handleInventoryModifyHandler(state.inventory, action.parsedIpcData, state.retainer) };
-                case 'updateInventorySlot':
-                case 'inventoryTransaction':
-                  if (this.isRetainer(action.parsedIpcData.containerId) && state.retainerInventoryQueue.length > 0) {
-                    return {
-                      ...state,
-                      retainerUpdateSlotQueue: [...state.retainerUpdateSlotQueue, action.parsedIpcData]
-                    };
-                  } else {
-                    return { ...state, inventory: this.handleUpdateInventorySlot(state.inventory, action.parsedIpcData, state.retainer) };
-                  }
-                case 'clientTrigger':
-                  return {
-                    ...state,
-                    inventory: this.handleClientTrigger400(state.inventory, action.parsedIpcData, state.retainer)
-                  };
-                case 'itemMarketBoardInfo':
-                  return { ...state, retainerMarketboardInfoQueue: [...state.retainerMarketboardInfoQueue, action.parsedIpcData] };
-                case 'itemInfo':
-                case 'currencyCrystalInfo':
-                  return { ...state, itemInfoQueue: [...state.itemInfoQueue, action.parsedIpcData] };
-                default:
-                  return { ...state };
+                  case 'itemMarketBoardInfo':
+                    return { ...state, retainerMarketboardInfoQueue: [...state.retainerMarketboardInfoQueue, action.parsedIpcData] };
+                  case 'itemInfo':
+                  case 'currencyCrystalInfo':
+                    return { ...state, itemInfoQueue: [...state.itemInfoQueue, action.parsedIpcData] };
+                  default:
+                    return { ...state };
+                }
+              } catch (e) {
+                console.error('INVENTORY Error:', e);
+                return state;
               }
             }, {
               itemInfoQueue: [],
@@ -271,7 +297,7 @@ export class InventoryService {
           );
         }),
         debounceTime(1000),
-        shareReplay(1)
+        shareReplay({ bufferSize: 1, refCount: true })
       );
     }
   }
@@ -372,6 +398,8 @@ export class InventoryService {
 
   public getContainerName(containerId: number): string {
     switch (containerId) {
+      case ContainerType.IslandSanctuaryBag:
+        return 'IslandSanctuaryBag';
       case ContainerType.Crystal:
         return 'Crystal';
       case ContainerType.Bag0:
@@ -483,6 +511,35 @@ export class InventoryService {
 
   public resetInventory(): void {
     this.resetInventory$.next({ type: 'Reset' });
+  }
+
+  private handleIslandPacket(inventory: UserInventory, action: { type: 'IslandInventoryPacket', itemId: number, quantity: number }): UserInventory {
+    inventory.items[inventory.contentId][ContainerType.IslandSanctuaryBag] = inventory.items[inventory.contentId][ContainerType.IslandSanctuaryBag] || {};
+    const previousEntry = inventory.items[inventory.contentId][ContainerType.IslandSanctuaryBag][action.itemId];
+    if (action.quantity === 0 || action.itemId < 37000) {
+      delete inventory.items[inventory.contentId][ContainerType.IslandSanctuaryBag][action.itemId];
+    } else {
+      inventory.items[inventory.contentId][ContainerType.IslandSanctuaryBag][action.itemId] = {
+        itemId: action.itemId,
+        quantity: action.quantity,
+        hq: false,
+        materias: [],
+        slot: action.itemId,
+        containerId: ContainerType.IslandSanctuaryBag,
+        spiritBond: 0
+      };
+    }
+    if (previousEntry && action.itemId >= 37000) {
+      this._inventoryPatches$.next({
+        itemId: action.itemId,
+        containerId: ContainerType.IslandSanctuaryBag,
+        hq: false,
+        quantity: action.quantity - previousEntry.quantity,
+        retainerName: null,
+        moved: false
+      });
+    }
+    return inventory;
   }
 
   private handleContainerInfo(inventory: UserInventory, packet: ContainerInfo, itemInfos: Array<ItemInfo | CurrencyCrystalInfo>, materias: LazyMateria[], retainer?: string): UserInventory {

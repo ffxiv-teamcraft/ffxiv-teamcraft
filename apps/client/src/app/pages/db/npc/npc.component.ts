@@ -50,14 +50,14 @@ export class NpcComponent extends TeamcraftPageComponent {
       switchMap(id => {
         return this.gt.getNpc(+id);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.xivapiNpc$ = npcId$.pipe(
       switchMap(id => {
         return this.xivapi.get(XivapiEndpoint.ENpcResident, +id);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.trades$ = npcId$.pipe(
@@ -98,7 +98,7 @@ export class NpcComponent extends TeamcraftPageComponent {
           },
           {
             title: 'Gamer Escape',
-            url: `https://ffxiv.gamerescape.com/wiki/${xivapiNpc.Name_en.toString().split(' ').join('_')}`,
+            url: `https://ffxiv.gamerescape.com/wiki/${encodeURIComponent(xivapiNpc.Name_en.toString().split(' ').join('_'))}`,
             icon: './assets/icons/ge.png'
           }
         ];

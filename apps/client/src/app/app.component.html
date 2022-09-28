@@ -49,7 +49,7 @@
           </ng-container>
         </div>
         <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="center center">
-          <app-ad *ngIf="showAd$ | async" [placementId]="adsPlacementBreakpoints | widthBreakpoints"></app-ad>
+          <app-ad *ngIf="showAd$ | async"></app-ad>
         </div>
         <ul [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu" nz-menu>
           <ng-container *ngIf="user$ | async as user">
@@ -58,6 +58,7 @@
                 <a routerLink="/allagan-reports" class="allagan-link">
                   {{'ALLAGAN_REPORTS.Title' | translate}}
                 </a>
+                <nz-tag *ngIf="user.admin">{{allaganReportsUnappliedCount$ | async | number}}</nz-tag>
               </nz-badge>
             </li>
           </ng-container>
@@ -140,7 +141,7 @@
                     <ng-template #krAvatar>
                       <nz-avatar [nzText]="character.Name[0]"></nz-avatar>
                     </ng-template>
-                      {{character.Name | ifMobile:''}}
+                    {{character.Name | ifMobile:''}}
                   </ng-container>
                 </div>
               </ng-template>
@@ -421,7 +422,9 @@
       <img alt="FFXIV Teamcraft" src="./assets/logo.png">
       <div class="desktop-message">{{'COMMON.Opened_in_desktop' | translate}}</div>
       <div class="desktop-message-description">{{'COMMON.Opened_in_desktop_setting' | translate}}</div>
-      <div class="desktop-message-button"><button nz-button (click)="disableAutoOpen()">{{'COMMON.Opened_in_desktop_button' | translate}}</button></div>
+      <div class="desktop-message-button">
+        <button nz-button (click)="disableAutoOpen()">{{'COMMON.Opened_in_desktop_button' | translate}}</button>
+      </div>
     </div>
   </ng-template>
 </ng-template>

@@ -29,7 +29,7 @@ export class CommentsService extends FirestoreRelationalStorage<ResourceComment>
         })),
         map(comments => this.serializer.deserialize<ResourceComment>(comments, [ResourceComment])),
         map(comments => comments.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())),
-        shareReplay(1)
+        shareReplay({ bufferSize: 1, refCount: true })
       );
   }
 

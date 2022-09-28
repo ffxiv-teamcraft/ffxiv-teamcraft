@@ -3,7 +3,7 @@ import { AbstractExtractor } from '../abstract-extractor';
 export class GubalExtractor extends AbstractExtractor {
   gubalToObject(rows) {
     return rows.reduce((res, row) => {
-      if (row.itemId < 500 || row.resultItemId < 500) {
+      if (row.itemId < 500 || row.resultItemId < 500 || row.resultItemId > 100000 || row.itemId > 100000) {
         return res;
       }
       return {
@@ -15,7 +15,7 @@ export class GubalExtractor extends AbstractExtractor {
 
   gubalToReverseObject(rows) {
     return rows.reduce((res, row) => {
-      if (row.itemId < 500 || row.resultItemId < 500) {
+      if (row.itemId < 500 || row.resultItemId < 500 || row.resultItemId > 100000 || row.itemId > 100000) {
         return res;
       }
       return {
@@ -36,10 +36,6 @@ export class GubalExtractor extends AbstractExtractor {
 
   protected doExtract(): any {
     this.gubalRequest(`query desynthAndReductionStats {
-  desynthresults_stats(where: {occurences: {_gte: 10}}) {
-    itemId
-    resultItemId
-  }
   reductionresults_stats(where: {occurences: {_gte: 10}}) {
     itemId
     resultItemId
@@ -49,12 +45,16 @@ export class GubalExtractor extends AbstractExtractor {
     voyageId
     type
   }
+  bnpc {
+    bnpcBase
+    bnpcName
+  }
 }
 `).subscribe(res => {
-      this.persistToJsonAsset('desynth', this.gubalToObject(res.data.desynthresults_stats));
       this.persistToJsonAsset('reduction', this.gubalToObject(res.data.reductionresults_stats));
       this.persistToJsonAsset('reverse-reduction', this.gubalToReverseObject(res.data.reductionresults_stats));
       this.persistToJsonAsset('voyage-sources', this.gubalVoyageAggregatorToObject(res.data.exploration_per_item));
+      this.persistToJsonAsset('gubal-bnpcs-index', res.data.bnpc.reduce((acc, row) => ({ ...acc, [row.bnpcBase]: row.bnpcName }), {}));
       this.done();
     });
   }

@@ -7,7 +7,9 @@
          [nzMd]="(layout?.showVendors || alarmsDisplay.alarms.length > 0) ? 8 : 12" [nzXs]="overlay?12:24">
       <div *ngIf="!item.custom" class="icon">
         <app-item-icon [itemId]="item.id" [itemName]="item.id | itemName: item | i18n"
-                       [width]="24" [forceCollectable]="item.collectable"></app-item-icon>
+                       [width]="24" [forceCollectable]="item.collectable" *ngIf="!item.xivapiIcon"></app-item-icon>
+        <app-item-icon [icon]="item.xivapiIcon | xivapiIcon" [itemId]="null"
+                       [width]="24" *ngIf="item.xivapiIcon" [tooltipDisabled]="true"></app-item-icon>
       </div>
       <div fxLayout="column" fxLayoutGap="5px">
         <div fxLayout="row">
@@ -20,7 +22,7 @@
               <span [itemNameCopy]="item.id"
                     class="item-name"
                     nz-tooltip>
-              <app-i18n-name content="items" [id]="item.id" [fallback]="item.name"></app-i18n-name>
+              <app-i18n-name [content]="item.contentType || 'items'" [id]="item.id" [fallback]="item.name"></app-i18n-name>
             </span>
               <span *ngIf="requiredForFinalCraft$ | async as requiredForFinal">
               <img [nzTooltipTitle]="'Required_for_final_craft' | translate:{amount: requiredForFinal}" alt="" nz-tooltip
@@ -49,11 +51,12 @@
                 [itemId]="item.id"
                 [fallbackItemName]="item.name"
                 [overlay]="overlay"
-                [isCraft]="item.craftedBy && item.craftedBy.length > 0 && item.craftedBy[0].id[0] !== 'f'"
+                [isCraft]="item.craftedBy && item.craftedBy.length > 0 && +item.craftedBy[0].id[0] > 0"
                 [hasAlarms]="alarmsDisplay.alarms?.length > 0"
                 [attachedRotation]="item.attachedRotation"
                 [userId]="userId"
                 [loggedIn]="loggedIn$ | async"
+                [offlineList]="list.offline"
                 [commentBadge]="commentBadge$ | async"
                 [team]="team$ | async"
                 [workingOnIt]="item.workingOnIt"

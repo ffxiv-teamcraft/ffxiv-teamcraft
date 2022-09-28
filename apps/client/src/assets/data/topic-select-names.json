@@ -90,10 +90,10 @@
     "fr": ""
   },
   "3276815": {
-    "en": "Purchase Garo Gear (DoW)",
-    "ja": "守りし者の装備の取引（ファイター）",
-    "de": "Garo-Ausrüstung (Krieger)",
-    "fr": "Armures Garo (guerre)"
+    "en": "Purchase Garo Gear (DoW I)",
+    "ja": "守りし者の装備の取引（ファイターその1）",
+    "de": "Garo-Ausrüstung (Krieger I)",
+    "fr": "Armures Garo (guerre 1)"
   },
   "3276816": {
     "en": "Purchase Garo Gear (DoM)",
@@ -102,52 +102,52 @@
     "fr": "Armures Garo (magie)"
   },
   "3276817": {
-    "en": "Use Wolf Marks (ARR)",
-    "ja": "対人戦績の取引（新生）",
-    "de": "Wolfsmarken (A Realm Reborn)",
-    "fr": "Marques de loup (A Realm Reborn)"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276818": {
-    "en": "Use Wolf Marks (ARR)",
-    "ja": "対人戦績の取引（新生）",
-    "de": "Wolfsmarken (A Realm Reborn)",
-    "fr": "Marques de loup (A Realm Reborn)"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276819": {
-    "en": "Use Wolf Marks (ARR)",
-    "ja": "対人戦績の取引（新生）",
-    "de": "Wolfsmarken (A Realm Reborn)",
-    "fr": "Marques de loup (A Realm Reborn)"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276820": {
-    "en": "Use Wolf Marks (ARR)",
-    "ja": "対人戦績の取引（新生）",
-    "de": "Wolfsmarken (A Realm Reborn)",
-    "fr": "Marques de loup (A Realm Reborn)"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276821": {
-    "en": "Use Wolf Marks (Heavensward)",
-    "ja": "対人戦績の取引（蒼天）",
-    "de": "Wolfsmarken (Heavensward)",
-    "fr": "Marques de loup (Heavensward)"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276822": {
-    "en": "Use Wolf Marks (Heavensward)",
-    "ja": "対人戦績の取引（蒼天）",
-    "de": "Wolfsmarken (Heavensward)",
-    "fr": "Marques de loup (Heavensward)"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276823": {
-    "en": "Use Wolf Marks (Heavensward)",
-    "ja": "対人戦績の取引（蒼天）",
-    "de": "Wolfsmarken (Heavensward)",
-    "fr": "Marques de loup (Heavensward)"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276824": {
-    "en": "Use Wolf Marks (Heavensward)",
-    "ja": "対人戦績の取引（蒼天）",
-    "de": "Wolfsmarken (Heavensward)",
-    "fr": "Marques de loup (Heavensward)"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276825": {
     "en": "Purchase Disciple of War Gear",
@@ -264,16 +264,16 @@
     "fr": ""
   },
   "3276844": {
-    "en": "Use Wolf Marks (Stormblood)",
-    "ja": "対人戦績の取引（紅蓮）",
-    "de": "Wolfsmarken (Stormblood)",
-    "fr": "Marques de loup (Stormblood)"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276845": {
-    "en": "Use Wolf Marks (Stormblood)",
-    "ja": "対人戦績の取引（紅蓮）",
-    "de": "Wolfsmarken (Stormblood)",
-    "fr": "Marques de loup (Stormblood)"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276846": {
     "en": "Purchase Tools",
@@ -528,28 +528,28 @@
     "fr": "Armures (magie)"
   },
   "3276888": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Earn Hannish Certificates of Grade 1 Import",
+    "ja": "ラザハンの手形G1との交換（NQ）",
+    "de": "Radz-at-Han-Marken I (NQ)",
+    "fr": "Échange de pièces d'équipement (QN) contre des avoirs de Radz-at-Han I"
   },
   "3276889": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Earn Hannish Certificates of Grade 1 Import (HQ)",
+    "ja": "ラザハンの手形G1との交換（HQ）",
+    "de": "Radz-at-Han-Marken I (HQ)",
+    "fr": "Échange de pièces d'équipement (HQ) contre des avoirs de Radz-at-Han I"
   },
   "3276890": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Purchase Augmented Classical Equipment",
+    "ja": "クラシカル強化装備の取引",
+    "de": "Modifizierte klassische Ausrüstung",
+    "fr": "Amélioration de pièces d'équipement classiques"
   },
   "3276891": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Purchase Garo Gear (DoW II)",
+    "ja": "守りし者の装備の取引（ファイターその2）",
+    "de": "Garo-Ausrüstung (Krieger II)",
+    "fr": "Armures Garo (guerre 2)"
   },
   "3276892": {
     "en": "",

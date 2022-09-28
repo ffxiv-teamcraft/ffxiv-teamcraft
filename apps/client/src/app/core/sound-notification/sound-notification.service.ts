@@ -22,6 +22,7 @@ export class SoundNotificationService {
     }
     audio.loop = false;
     audio.volume = notificationSettings.volume;
+    audio.crossOrigin = 'anonymous';
     audio.play()
       .then()
       .catch((err) => {

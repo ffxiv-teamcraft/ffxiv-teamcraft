@@ -83,7 +83,7 @@ export class AllaganReportsService {
           appliedReportsCount: resApplied.data.applied_reports.aggregate.count
         };
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 
@@ -118,9 +118,28 @@ export class AllaganReportsService {
               return row;
             });
           }),
-          shareReplay(1)
+          shareReplay({ bufferSize: 1, refCount: true })
         );
       })
+    );
+  }
+
+  getUnappliedCount(): Observable<number> {
+    const query = gql`subscription AllaganReportsToApplyCount {
+          allagan_reports_aggregate(where: {applied: {_eq: false}}) {
+            aggregate {
+              count
+            }
+          }
+        }`;
+    return this.apollo.subscribe<any>({
+      query,
+      fetchPolicy: 'network-only'
+    }).pipe(
+      map(res => {
+        return res.data.allagan_reports_aggregate.aggregate.count;
+      }),
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 

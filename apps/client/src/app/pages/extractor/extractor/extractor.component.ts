@@ -139,11 +139,14 @@ export class ExtractorComponent {
           return page.map(tab => {
             (tab as any).divisionId = +Object.keys(notebookDivision).find(key => {
               return notebookDivision[key].pages.includes(tab.id);
-            });
+            }) || 0;
             const division = notebookDivision[(tab as any).divisionId];
+            if (!division) {
+              console.log(tab);
+            }
             (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en);
             tab.items = tab.items.map(item => {
-              (item as any).nodes = getItemSource(extracts[item.itemId], DataType.GATHERED_BY).nodes
+              (item as any).nodes = (getItemSource(extracts[item.itemId], DataType.GATHERED_BY).nodes || [])
                 .slice(0, 3)
                 .map(node => {
                   return {
@@ -211,44 +214,46 @@ export class ExtractorComponent {
           map(([fishingFish, spearFishingFish]) => {
             return [fishingFish, spearFishingFish].map(log => {
               this.done$.next(this.done$.value + 1);
-              return log.reduce((display, fish) => {
-                const displayCopy = { ...display };
-                let row = displayCopy.tabs.find(e => e.mapId === fish.entry.mapId);
-                if (row === undefined) {
-                  displayCopy.tabs.push({
-                    id: fish.id,
-                    mapId: fish.entry.mapId,
-                    placeId: fish.entry.placeId,
-                    done: 0,
-                    total: 0,
-                    spots: []
-                  });
-                  row = displayCopy.tabs[displayCopy.tabs.length - 1];
-                }
-                const spotId = fish.entry.spot ? fish.entry.spot.id : fish.entry.id;
-                let spot = row.spots.find(s => s.id === spotId);
-                if (spot === undefined) {
-                  const coords = fish.entry.spot ? fish.entry.spot.coords : fish.entry.coords;
-                  row.spots.push({
-                    id: spotId,
-                    placeId: fish.entry.zoneId,
-                    mapId: fish.entry.mapId,
-                    done: 0,
-                    total: 0,
-                    coords: coords,
-                    fishes: []
-                  });
-                  spot = row.spots[row.spots.length - 1];
-                }
-                const { entry, ...fishRow } = fish;
-                spot.fishes.push(fishRow);
-                return displayCopy;
-              }, { tabs: [], total: 0, done: 0 });
+              return log
+                .filter(fish => fish.entry.mapId !== 358)
+                .reduce((display, fish) => {
+                  const displayCopy = { ...display };
+                  let row = displayCopy.tabs.find(e => e.mapId === fish.entry.mapId);
+                  if (row === undefined) {
+                    displayCopy.tabs.push({
+                      id: fish.id,
+                      mapId: fish.entry.mapId,
+                      placeId: fish.entry.placeId,
+                      done: 0,
+                      total: 0,
+                      spots: []
+                    });
+                    row = displayCopy.tabs[displayCopy.tabs.length - 1];
+                  }
+                  const spotId = fish.entry.spot ? fish.entry.spot.id : fish.entry.id;
+                  let spot = row.spots.find(s => s.id === spotId);
+                  if (spot === undefined) {
+                    const coords = fish.entry.spot ? fish.entry.spot.coords : fish.entry.coords;
+                    row.spots.push({
+                      id: spotId,
+                      placeId: fish.entry.zoneId,
+                      mapId: fish.entry.mapId,
+                      done: 0,
+                      total: 0,
+                      coords: coords,
+                      fishes: []
+                    });
+                    spot = row.spots[row.spots.length - 1];
+                  }
+                  const { entry, ...fishRow } = fish;
+                  spot.fishes.push(fishRow);
+                  return displayCopy;
+                }, { tabs: [], total: 0, done: 0 });
             });
           })
         );
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     combineLatest([
@@ -299,13 +304,41 @@ export class ExtractorComponent {
     this.running = true;
     this.currentLabel = 'Extracts';
     const res$ = new ReplaySubject<LazyDataWithExtracts['extracts']>();
-    this.lazyData.getEntry('items').pipe(
-      switchMap(lazyItems => {
-        const itemIds = onlyUpdatedItems ? updatedItemIds : Object.keys(lazyItems);
+    combineLatest([
+      this.lazyData.getEntry('items'),
+      this.lazyData.getEntry('islandBuildings'),
+      this.lazyData.getEntry('islandLandmarks')
+    ]).pipe(
+      switchMap(([lazyItems, islandBuildings, islandLandmarks]) => {
+        const itemIds = onlyUpdatedItems ? updatedItemIds : Object.keys({ ...islandBuildings, ...islandLandmarks, ...lazyItems }).sort((a, b) => +a - +b);
         this.totalTodo$.next(itemIds.length);
         return from(itemIds).pipe(
           mergeMap(itemId => {
-            return this.extractor.addDataToItem({ id: +itemId } as ListRow);
+            let row$: Observable<ListRow> = of({ id: +itemId } as ListRow);
+            if (itemId <= -11000) {
+              row$ = this.lazyData.getRow('islandLandmarks', +itemId).pipe(
+                map(landmark => {
+                  return {
+                    id: +itemId,
+                    contentType: 'islandLandmarks',
+                    xivapiIcon: landmark.icon
+                  } as ListRow;
+                })
+              );
+            } else if (itemId <= -10000) {
+              row$ = this.lazyData.getRow('islandBuildings', +itemId).pipe(
+                map(building => {
+                  return {
+                    id: +itemId,
+                    contentType: 'islandBuildings',
+                    xivapiIcon: building.icon
+                  } as ListRow;
+                })
+              );
+            }
+            return row$.pipe(
+              switchMap(row => this.extractor.addDataToItem(row))
+            );
           }, 50),
           tap(() => this.done$.next(this.done$.value + 1)),
           bufferCount(itemIds.length)

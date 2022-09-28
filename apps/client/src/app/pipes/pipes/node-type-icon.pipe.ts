@@ -10,7 +10,12 @@ export class NodeTypeIconPipe implements PipeTransform {
     './assets/icons/nodes/060433.png',
     './assets/icons/nodes/060432.png',
     './assets/icons/nodes/060445.png',
-    './assets/icons/nodes/060465.png'
+    './assets/icons/nodes/060465.png',
+    null,
+    null,
+    null,
+    null,
+    './assets/icons/island.png'
   ];
 
   public static timed_icons = [

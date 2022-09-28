@@ -12,9 +12,14 @@
              nzType="clock-circle"></i>
         </div>
         <div class="item-icon">
-          <app-item-icon [icon]="row.alarm.itemId | lazyIcon"
-                         [itemId]="row.alarm.itemId" [itemName]="row.alarm.itemId | itemName: row.alarm | i18n" [width]="32"></app-item-icon>
-          <img alt="" class="node-type" src="{{row.alarm.type | nodeTypeIcon: true}}">
+          <app-item-icon *ngIf="row.alarm.itemId"
+                         [icon]="row.alarm.itemId | lazyIcon"
+                         [itemId]="row.alarm.itemId"
+                         [itemName]="row.alarm.itemId | itemName: row.alarm | i18n"
+                         [width]="32"></app-item-icon>
+          <img *ngIf="row.alarm.type === -10" class="img-icon" [src]="row.alarm.icon | xivapiIcon" alt="">
+          <img *ngIf="row.alarm.type !== -10" alt="" class="node-type" src="{{row.alarm.type | nodeTypeIcon: true}}">
+          <img *ngIf="row.alarm.type === -10" alt="" class="node-type" src="https://xivapi.com/i/063000/063949.png">
         </div>
         <div class="center-content">
           <span *ngIf="row.alarm.itemId; else customName">
@@ -26,9 +31,12 @@
                nz-tooltip nzType="edit"></i>
           </span>
           <ng-template #customName>
-            <i *ngIf="row.groupNames" [nzTooltipTitle]="row.groupNames" class="folder-icon" nz-icon
-               nz-tooltip nzType="folder-open"></i>
-            <span class="item-name">{{row.alarm.name}}</span>
+            <div fxLayout="row" fxLayoutAlign="flex-start center">
+              <div><i *ngIf="row.groupNames" [nzTooltipTitle]="row.groupNames" class="folder-icon" nz-icon
+                      nz-tooltip nzType="folder-open"></i></div>
+              <div class="item-name" *ngIf="row.alarm.type !== -10">{{row.alarm.name}}</div>
+              <div class="item-name" *ngIf="row.alarm.type === -10">{{row.alarm.bnpcName | lazyRow:'mobs' | i18n}}</div>
+            </div>
           </ng-template>
           <div fxLayout="row wrap" fxLayoutGap="5px">
             <div class="timer" [timerTooltip]="row.remainingTime">{{row.remainingTime | timer}}</div>
@@ -48,7 +56,8 @@
           <button *ngIf="row.alarm.type > -1" (click)="openMap(row.alarm)" nz-button nzShape="circle" nzSize="small" nzType="primary">
             <i nz-icon nzType="environment-o"></i>
           </button>
-          <button *ngIf="row.alarm.type === -5" routerLink="/db/{{translate.currentLang}}/fishing-spot/{{row.alarm.nodeId}}" nz-button nzShape="circle" nzSize="small" nzType="primary">
+          <button *ngIf="row.alarm.type === -5" routerLink="/db/{{translate.currentLang}}/fishing-spot/{{row.alarm.nodeId}}" nz-button nzShape="circle"
+                  nzSize="small" nzType="primary">
             <i nz-icon nzType="environment-o"></i>
           </button>
         </div>

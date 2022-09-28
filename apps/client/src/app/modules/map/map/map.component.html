@@ -9,7 +9,7 @@
   </div>
   <ng-container *ngFor="let marker of markers">
     <ng-container *ngIf="marker.x || marker.y">
-      <i *ngIf="!marker.iconType"
+      <i *ngIf="!marker.iconType || (marker.iconType === 'img' && !marker.iconImg)"
          [ngStyle]="getMarkerStyle(map, marker)"
          [nzTooltipTitle]="marker.tooltip || 'X: ' + (marker.x | number: '1.0-1') + ' - Y: ' + (marker.y | number: '1.0-1')"
          [routerLink]="marker.link"

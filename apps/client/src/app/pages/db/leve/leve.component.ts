@@ -56,14 +56,14 @@ export class LeveComponent extends TeamcraftPageComponent {
       switchMap(id => {
         return this.gt.getLeve(+id);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.xivapiLeve$ = leveId$.pipe(
       switchMap(id => {
         return this.xivapi.get(XivapiEndpoint.Leve, +id);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.items$ = this.xivapiLeve$.pipe(
@@ -169,7 +169,7 @@ export class LeveComponent extends TeamcraftPageComponent {
           },
           {
             title: 'Gamer Escape',
-            url: `https://ffxiv.gamerescape.com/wiki/${xivapiLeve.Name_en.toString().split(' ').join('_')}`,
+            url: `https://ffxiv.gamerescape.com/wiki/${encodeURIComponent(xivapiLeve.Name_en.toString().split(' ').join('_'))}`,
             icon: './assets/icons/ge.png'
           }
         ];

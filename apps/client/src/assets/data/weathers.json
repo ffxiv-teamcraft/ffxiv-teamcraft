@@ -1249,26 +1249,26 @@
   },
   "157": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Pandæmonium",
+      "ja": "万魔殿",
+      "de": "Pandæmonium",
+      "fr": "Pandæmonium"
     }
   },
   "158": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Pandæmonium",
+      "ja": "万魔殿",
+      "de": "Pandæmonium",
+      "fr": "Pandæmonium"
     }
   },
   "159": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Pandæmonium",
+      "ja": "万魔殿",
+      "de": "Pandæmonium",
+      "fr": "Pandæmonium"
     }
   },
   "160": {
@@ -1285,6 +1285,78 @@
       "ja": "絶望",
       "de": "Verzweifelnd",
       "fr": "Désespoir"
+    }
+  },
+  "162": {
+    "name": {
+      "en": "Transcendence",
+      "ja": "神域",
+      "de": "Götterwetter",
+      "fr": "Mythologique"
+    }
+  },
+  "163": {
+    "name": {
+      "en": "Transcendence",
+      "ja": "神域",
+      "de": "Götterwetter",
+      "fr": "Mythologique"
+    }
+  },
+  "164": {
+    "name": {
+      "en": "Transcendence",
+      "ja": "神域",
+      "de": "Götterwetter",
+      "fr": "Mythologique"
+    }
+  },
+  "165": {
+    "name": {
+      "en": "Transcendence",
+      "ja": "神域",
+      "de": "Götterwetter",
+      "fr": "Mythologique"
+    }
+  },
+  "166": {
+    "name": {
+      "en": "Transcendence",
+      "ja": "神域",
+      "de": "Götterwetter",
+      "fr": "Mythologique"
+    }
+  },
+  "167": {
+    "name": {
+      "en": "Transcendence",
+      "ja": "神域",
+      "de": "Götterwetter",
+      "fr": "Mythologique"
+    }
+  },
+  "168": {
+    "name": {
+      "en": "Transcendence",
+      "ja": "神域",
+      "de": "Götterwetter",
+      "fr": "Mythologique"
+    }
+  },
+  "169": {
+    "name": {
+      "en": "Transcendence",
+      "ja": "神域",
+      "de": "Götterwetter",
+      "fr": "Mythologique"
+    }
+  },
+  "170": {
+    "name": {
+      "en": "Dragonstorms",
+      "ja": "邪天",
+      "de": "Hass",
+      "fr": "Tempête de haine"
     }
   }
 }

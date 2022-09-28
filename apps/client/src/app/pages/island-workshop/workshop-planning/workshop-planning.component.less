@@ -1,0 +1,61 @@
+:host ::ng-deep {
+  nz-divider {
+    margin: 0 !important;
+  }
+}
+
+.day-title {
+  font-weight: 500;
+  background: #3F3F3F;
+  padding: 8px;
+  border-bottom: 1px solid #666;
+  height: 64px;
+
+  &.today {
+    background-color: var(--primary-color-50);
+  }
+
+  &.first {
+    border-top-left-radius: 4px;
+  }
+
+  &.last {
+    border-top-right-radius: 4px;
+  }
+}
+
+.footer {
+  border: 1px solid #666;
+  padding: 8px;
+  font-weight: 500;
+  background: #3F3F3F;
+}
+
+.planning-container {
+  background: #292929;
+}
+
+.credits {
+  padding-top: 8px;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #666;
+  border-right: 1px solid #666;
+  padding: 8px;
+
+  &.today {
+    background-color: var(--primary-color-20);
+  }
+
+  &.first-day {
+    border-left: 1px solid #666;
+  }
+
+  &:hover {
+    background: #3F3F3F;
+  }
+}

@@ -50,7 +50,8 @@
     "Share_url_copied": "Url de recherche copié dans le presse-papiers",
     "Only_craftable": "Recettes uniquement",
     "Want_filters": "Besoin de plus de filtres ?",
-    "Open_search": "Ouvrir la page de recherche"
+    "Open_search": "Ouvrir la page de recherche",
+    "Island_recipe": "Island Sanctuary recipe"
   },
   "Use_as_default_character": "Utiliser comme personnage par défaut",
   "Download_desktop_app": "Télécharger l'application",
@@ -195,7 +196,16 @@
     "Instance": "Instance",
     "Fate": "Aléa",
     "Reload": "Recharger",
-    "Click_to_apply": "Cliquez pour appliquer"
+    "Click_to_apply": "Cliquez pour appliquer",
+    "DAYS": {
+      "Monday": "Monday",
+      "Tuesday": "Tuesday",
+      "Wednesday": "Wednesday",
+      "Thursday": "Thursday",
+      "Friday": "Friday",
+      "Saturday": "Saturday",
+      "Sunday": "Sunday"
+    }
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -303,6 +313,7 @@
   "Reset_progression": "Remettre la progression à 0",
   "Gardening": "Jardinage",
   "Hunting": "Chasse",
+  "Island_animal": "Island animal",
   "Desynth": "Recyclage",
   "Vendors": "Vendeurs",
   "Open": "Ouvrir",
@@ -757,6 +768,9 @@
     "Inventory_cleanup_description": "Voici les objets qui se trouvent dans votre inventaire et qui ne sont pas utilisés pour la liste",
     "Consider_requirements": "Afficher les pré-requis",
     "Ignore_requirements": "Ignorer les pré-requis",
+    "SOURCES": {
+      "Gatherable": "Can be gathered, click to see more details"
+    },
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -1185,7 +1199,8 @@
       "MISSING_LEVEL_REQUIREMENT": "You don't have the required level to craft this item.",
       "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
       "NO_INNER_QUIET": "Essayé d'utiliser une action qui requiert Calme Intérieur sans avoir le bonus Calme Intérieur activé",
-      "MISSING_STATS_REQUIREMENT": "Vous n'avez pas les statistiques minimales requises pour cette recette"
+      "MISSING_STATS_REQUIREMENT": "Vous n'avez pas les statistiques minimales requises pour cette recette",
+      "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Si vous souhaitez ajouter de la qualité sur votre rotation, elle se doit d'intégrer Calme Intérieur afin d'ajouter un bonus non négligeable et de pouvoir utiliser des actions comme la Bénédiction de Byregot.",
@@ -1214,6 +1229,7 @@
     "Content_copied": "Content copied to your clipboard",
     "Cheaper_at_vendor": "Moins cher chez le vendeur",
     "Copy_panel_as_text": "Copier ce panneau sous forme de texte",
+    "Copy_panel_as_csv": "Copy this panel as CSV",
     "Ignore_completed_items": "Ignorer les objets complétés",
     "Price_to_craft": "Prix du craft",
     "Price_from_vendor": "Prix du vendeur",
@@ -1622,6 +1638,7 @@
         "Last_report": "Dernier rapport",
         "Fish": "Poisson",
         "Size": "Taille",
+        "Large": "Large",
         "Time_since_thrown": "Temps écoulé depuis le lancement",
         "ERRORS": {
           "No_bait": "No bait detected. Switch bait once to fix.",
@@ -1638,7 +1655,8 @@
       "Fish_per_tug": "Poisson par touche",
       "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Inclure les ratés",
-      "Miss": "Raté"
+      "Miss": "Raté",
+      "Position_unknown": "Unknown location"
     },
     "NODE": {
       "Items": "Objets",
@@ -1755,7 +1773,8 @@
       "No_comments": "Aucun commentaire",
       "Post": "Publier",
       "Editor_tip": "Tapez <page type>:\"<Content Name>\" pour créer un lien vers une autre page. Exemples : item:\"Curtana\", action:\"Travail de base\", map:\"Cristarium\". Types de pages supportés: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status",
-      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments."
+      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments.",
+      "Deleted_comment": "This comment has been deleted"
     },
     "PATCH": {
       "Open_patch_page": "Cliquez ici pour ouvrir les modifications de patch dans la base de données",
@@ -1848,7 +1867,8 @@
     "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard information. If you want to complain about this, please complain to Square Enix, as there is nothing we can do to make this work without them.",
     "Loading_data": "Chargement des données d'échange pour la devise sélectionnée",
     "Loading_universalis": "Récupération des prix HDV depuis Universalis pour {{amount}} objets",
-    "X_sold_last_week": "{{amount}} vendu la semaine dernière"
+    "X_sold_last_week": "{{amount}} vendu la semaine dernière",
+    "No_trades": "This currency cannot be traded with something that can be sold on marketboard"
   },
   "FOOD_PICKER": {
     "Title": "Sélecteur de nourriture",
@@ -1917,7 +1937,8 @@
     "Leveling": "Leveling",
     "Currencies": "Devises",
     "Add_to_favorites": "Ajouter aux favoris",
-    "Remove_from_favorites": "Retirer des favoris"
+    "Remove_from_favorites": "Retirer des favoris",
+    "Island_Sanctuary": "Island Sanctuary"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Capture de paquets disponible",
@@ -1975,7 +1996,8 @@
       "Other": "Autre inventaire",
       "Armory": "Arsenal",
       "Current_Gear": "Équipement actuel",
-      "RetainerMarket": "En vente par les servants"
+      "RetainerMarket": "En vente par les servants",
+      "IslandSanctuaryBag": "Island Sanctuary Bag"
     },
     "CONTENT_ID_POPUP": {
       "Description": "Afin de prendre en charge le suivi multi-personnages et d'autres fonctionnalités intéressantes, Teamcraft a besoin de savoir sur quel personnage vous jouez actuellement, ou au moins quel personnage doit être lié au personnage actuellement en jeu.",
@@ -2073,6 +2095,8 @@
     "Total_cost": "Coût total (échanges, gils, etc)",
     "Materia": "Matéria",
     "Amount_needed": "Quantité",
+    "Slots_used": "Slots",
+    "Slots_used_explain": "# of slots this materia is used for",
     "Cost": "Coût",
     "Modal_editor": "Matérias pour {{itemName}}",
     "Unavailable_slot": "Emplacement indisponible",
@@ -2294,7 +2318,8 @@
         "Check": "Exécuter le contrôle d'intégrité"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "Tous les personnages liés sont valides"
+        "All_characters_valid": "Tous les personnages liés sont valides",
+        "All_lists_ok": "All lists are working properly"
       }
     }
   },
@@ -2807,7 +2832,7 @@
     "Gubal_analysis_suggestion": "Suggestion basée sur l'analyse des données",
     "Cannot_report_for_this_spot": "Vous ne pouvez pas rapporter de détails pour ce point de pêche sur ce poisson car il existe déjà",
     "Please_suggest_edit_instead": "Veuillez suggérer une modification à celle existante",
-    "Add_data_sources": "Ajouter des sources de données pour cet élément",
+    "Add_data_sources": "Add/modify data sources for this item",
     "Not_applied_yet": "Non appliqué",
     "Not_applied_yet_explain": "Cette source sera ajoutée à la liste et à la base de données lors de la prochaine mise à jour",
     "Pending_changes_count": "{{amount}} modifications en attente à verifier",
@@ -2868,7 +2893,8 @@
       "SPEARFISHING": "Pêche au harpon",
       "FATE": "Aléa",
       "MOGSTATION": "MOGSTATION",
-      "DEPRECATED": "Déprécié"
+      "DEPRECATED": "Déprécié",
+      "ISLAND_ANIMAL": "ISLAND_ANIMAL"
     },
     "STATUS": {
       "PROPOSAL": "Proposition",
@@ -2910,5 +2936,84 @@
     "Explain_cost_to_craft": "Le coût ajouté de tous les matériaux excluant les cristaux pour fabriquer un seul objet en utilisant uniquement des matériaux du tableau de bord.",
     "Empty_list": "Liste vide, cliquez sur le bouton + sur un élément pour l'ajouter ici",
     "Add_to_list": "Ajouter ces éléments à une liste"
+  },
+  "MACHINA_ERRORS": {
+    "Default": "Machina Wrapper error",
+    "Wrapper_failed_to_start": "Machina Wrapper failed to start",
+    "DESCRIPTION": {
+      "Wrapper_failed_to_start": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.<br><br> Retrying in {{retryDelay}}s"
+    }
+  },
+  "ISLAND_SANCTUARY": {
+    "Animal_source": "You need to gather this item from one of the following animals in your Island Sanctuary pasture",
+    "Island_level": "Island level",
+    "Landmarks": "Landmarks",
+    "Workshop_rank": "Workshop rank",
+    "WORKSHOP": {
+      "Title": "Workshop",
+      "Subtitle": "Track and manage your workshop",
+      "Out_of_sync": "State has not been updated since the last reset",
+      "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary to update the state. If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button, or import from database.",
+      "Export_state": "Export supply/demand state",
+      "State_copied": "State copied to your clipboard",
+      "Import_state": "Import state",
+      "Import_online_state": "Import state from database",
+      "Online_state_missing": "Nobody updated their state yet, this button will enable itself once it's done",
+      "State_imported": "State properly imported",
+      "Product": "Product",
+      "Popularity": "Popularity",
+      "Supply": "Supply",
+      "Demand_shift": "Demand shift",
+      "Predicted_popularity": "Predicted demand",
+      "Edit_mode": "Edit mode",
+      "Best_items_to_craft": "Best items to craft",
+      "Total_value": "Total value",
+      "Run_optimizer": "Find best planning for the rest of the week",
+      "No_schedule_found": "No planning found",
+      "No_schedule_found_explain": "Make sure the reset is in more than 4 hours",
+      "Possible_peak_days": "Possible peaks",
+      "Peak_days_explain": "The days on which it's more likely that this item will peak in value. Bold = strong peak.",
+      "Items_to_prepare": "Best items to prepare for tomorrow",
+      "Rest": "Rest day",
+      "Unknown_day_planning": "Unknown planning for now (will be known later this week)",
+      "Set_rest_day": "Set as second rest day",
+      "Import_explain": "You can update your supply/demand table by opening it ingame with the desktop app running and packet capture enabled.",
+      "Amount_of_workshops": "# of workshops :",
+      "Create_list": "Create a list for this planning",
+      "Exclude_pasture_materials": "Exclude pasture materials",
+      "Groove_tooltip": "Groove at the end of the day",
+      "POPULARITY": {
+        "Very_high": "Very high",
+        "High": "High",
+        "Average": "Average",
+        "Low": "Low"
+      },
+      "SUPPLY": {
+        "Non_existant": "Non existant",
+        "Insufficient": "Insufficient",
+        "Sufficient": "Sufficient",
+        "Surplus": "Surplus",
+        "Overflowing": "Overflowing"
+      },
+      "DEMAND_SHIFT": {
+        "Skyrocketing": "Skyrocketing",
+        "Increasing": "Increasing",
+        "None": "None",
+        "Decreasing": "Decreasing",
+        "Plummeting": "Plummeting"
+      }
+    },
+    "ANIMALS": {
+      "Title": "Animals",
+      "Subtitle": "A comprehensive list of animals, where and when to find them, with alarms integration",
+      "Name": "Name",
+      "Size": "Size",
+      "Coords": "Position",
+      "Spawn_time": "Spawn time",
+      "Weather": "Weather",
+      "Alarm": "Alarm",
+      "Main_drop": "Main drop",
+      "Rare_drop": "Rare drop"
+    }
   }
 }

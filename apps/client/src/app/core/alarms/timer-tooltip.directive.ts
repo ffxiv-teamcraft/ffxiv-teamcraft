@@ -17,7 +17,11 @@ export class TimerTooltipDirective extends NzTooltipDirective implements OnChang
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.title = this.datePipe.transform(new Date(Date.now() + this.timerSeconds * 1000), 'medium', null, this.translate.currentLang);
+    if (this.timerSeconds === null) {
+      this.title = null;
+    } else {
+      this.title = this.datePipe.transform(new Date(Date.now() + this.timerSeconds * 1000), 'medium', null, this.translate.currentLang);
+    }
     super.ngOnChanges(changes);
   }
 }

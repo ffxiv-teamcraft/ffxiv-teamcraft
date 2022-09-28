@@ -1,0 +1,60 @@
+<div fxLayout="row" class="planning-container">
+  <div *ngFor="let day of planning; index as i;first as first, last as last" fxLayout="column" fxFlex="1 0 14%">
+    <div class="day-title" [class.today]="today === i" [class.first]="first" [class.last]="last">
+      <div>{{days[i]}}&nbsp;{{(weeklyReset + 86400000 * i) | date:'dd/MM'}}</div>
+      <div>
+        <app-item-icon [itemId]="37549" width="24"></app-item-icon>
+        {{day.score | number:'1.0-0':translate.currentLang}}
+        <span nz-tooltip [nzTooltipTitle]="'ISLAND_SANCTUARY.WORKSHOP.Groove_tooltip' | translate">({{day.groove}})&nbsp;</span>
+        <ng-container *ngIf="!day.rest">
+          <button nz-button nzSize="small" nzShape="circle" nzType="primary"
+                  nz-tooltip
+                  [nzTooltipTitle]="'ISLAND_SANCTUARY.WORKSHOP.Set_rest_day' | translate"
+                  (click)="settings.islandWorkshopRestDay = i"><i nz-icon nzType="coffee" nzTheme="outline"></i></button>
+        </ng-container>
+      </div>
+    </div>
+    <div class="cell" [class.today]="today === i" [class.first-day]="first" *ngIf="day.rest" [style.height.px]="baseCellHeight * 24">
+      <span nz-icon nzType="coffee" nzTheme="outline"></span>&nbsp;{{'ISLAND_SANCTUARY.WORKSHOP.Rest' | translate}}
+    </div>
+    <div class="cell" [class.today]="today === i" [class.first-day]="first" *ngIf="day.unknown" [style.height.px]="baseCellHeight * 24">
+      <nz-empty
+        nzNotFoundContent="{{'ISLAND_SANCTUARY.WORKSHOP.Unknown_day_planning' | translate: {day: (days[planningAvailability[i]] | translate)}  }}"></nz-empty>
+    </div>
+    <div class="cell" [class.today]="today === i" [class.first-day]="first" *ngFor="let object of day.planning"
+         [style.height.px]="baseCellHeight * object.craftworksEntry.craftingTime"
+         fxLayout="column">
+      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+        <app-item-icon [itemId]="object.itemId" [width]="24"></app-item-icon>
+        <app-i18n-name content="items" [id]="object.itemId"></app-i18n-name>
+      </div>
+      <span *ngIf="object.alternative">
+      <nz-divider [nzText]="'Or' | translate"></nz-divider>
+      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+        <app-item-icon [itemId]="object.alternative.itemId" [width]="24"></app-item-icon>
+        <app-i18n-name content="items" [id]="object.alternative.itemId"></app-i18n-name>
+      </div>
+      </span>
+    </div>
+  </div>
+</div>
+<div class="footer" fxLayout="row" fxLayoutAlign="space-between center">
+  <div>
+    {{'COMMON.Total' | translate}}:
+    <app-item-icon [itemId]="37549" width="24"></app-item-icon>
+    {{totalScore | number:'1.0-0':translate.currentLang}}
+  </div>
+  <div>
+    <nz-input-group nzSearch [nzAddOnBefore]="'ISLAND_SANCTUARY.WORKSHOP.Amount_of_workshops' | translate" [nzAddOnAfter]="createListButton">
+      <nz-input-number [(ngModel)]="workshops"></nz-input-number>
+      <ng-template #createListButton>
+        <button nz-button (click)="createList(planning)" nzSearch nzType="primary">{{'ISLAND_SANCTUARY.WORKSHOP.Create_list' | translate}}</button>
+      </ng-template>
+    </nz-input-group>
+  </div>
+</div>
+<div class="credits">
+  <em>Kudos to the <a href="https://discord.gg/eWqxu9E7m3" target="_blank">Poking Paradise</a> team for the research, data and contribution to this solver.
+    Support
+    them on ko-fi <a href="https://ko-fi.com/leitongrey">here</a>.</em>
+</div>

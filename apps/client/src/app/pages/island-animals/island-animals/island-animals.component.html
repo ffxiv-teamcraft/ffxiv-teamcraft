@@ -1,0 +1,53 @@
+<nz-page-header [nzTitle]="'ISLAND_SANCTUARY.ANIMALS.Title' | translate" [nzSubtitle]="'ISLAND_SANCTUARY.ANIMALS.Subtitle' | translate"></nz-page-header>
+
+<nz-table #animalsTable [nzData]="animalsWithData$ | async" nzSize="small" [nzScroll]="{x: null, y: 'calc(100vh - 240px)' }" [nzPageSize]="999"
+          nzHideOnSinglePage>
+  <thead>
+  <tr>
+    <th>{{'ISLAND_SANCTUARY.ANIMALS.Name' | translate}}</th>
+    <th>{{'ISLAND_SANCTUARY.ANIMALS.Size' | translate}}</th>
+    <th>{{'ISLAND_SANCTUARY.ANIMALS.Coords' | translate}}</th>
+    <th>{{'ISLAND_SANCTUARY.ANIMALS.Main_drop' | translate}}</th>
+    <th>{{'ISLAND_SANCTUARY.ANIMALS.Rare_drop' | translate}}</th>
+    <th>{{'ISLAND_SANCTUARY.ANIMALS.Spawn_time' | translate}}</th>
+    <th>{{'ISLAND_SANCTUARY.ANIMALS.Weather' | translate}}</th>
+    <th>{{'ISLAND_SANCTUARY.ANIMALS.Alarm' | translate}}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let animal of animalsTable.data">
+    <td>
+      <img src="{{animal.icon | xivapiIcon}}" alt="" class="animal-icon">
+      &nbsp;<app-i18n-name content="mobs" [id]="animal.bnpcName"></app-i18n-name>
+    </td>
+    <td>
+      {{['N/A', 'S', 'M', 'L'][animal.size]}}
+    </td>
+    <td>
+      <app-map-position [mapId]="772" [zoneId]="2566" [marker]="animal" flex="row"></app-map-position>
+    </td>
+    <td>
+      <app-item-icon [width]="24" [itemId]="animal.rewards[0]"></app-item-icon>
+      <app-i18n-name content="items" [id]="animal.rewards[0]"></app-i18n-name>
+    </td>
+    <td>
+      <app-item-icon [width]="24" [itemId]="animal.rewards[1]"></app-item-icon>
+      <app-i18n-name content="items" [id]="animal.rewards[1]"></app-i18n-name>
+    </td>
+    <td>
+      <span *ngIf="animal.spawn !== undefined">{{animal.spawn}}:00 - {{(animal.spawn + animal.duration) % 24}}:00</span>
+    </td>
+    <td>
+      <span *ngIf="animal.weather"><img [src]="animal.weather | weatherIcon" alt="">&nbsp;<app-i18n-name content="weathers"
+                                                                                                         [id]="animal.weather"></app-i18n-name></span>
+    </td>
+    <td>
+      <app-alarm-button *ngIf="animal.alarm" [alarm]="animal.alarm" [showPosition]="false"
+                        (toggleAlarm)="addAlarm($event)"
+                        (addAlarmWithGroup)="addAlarmWithGroup($event.alarm, $event.group)"
+                        [useTimerTooltip]="true"
+                        [alarmGroups]="alarmGroups$ | async"></app-alarm-button>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>

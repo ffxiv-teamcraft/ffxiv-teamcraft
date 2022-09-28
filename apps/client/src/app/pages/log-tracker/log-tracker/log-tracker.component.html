@@ -1,7 +1,7 @@
 <ng-container *ngIf="anonymousState$ | async as state">
   <nz-alert nzType="info" [nzMessage]="'LOG_TRACKER.Log_in_to_track' | translate" nzCloseable *ngIf="state.isAnonymous"></nz-alert>
 
-  <nz-tabset (nzSelectedIndexChange)="setType($event)" *ngIf="type$ | async as trackerType" [nzSelectedIndex]="trackerType - 1"
+  <nz-tabset (nzSelectedIndexChange)="setType($event); selectedRecipes = {}" *ngIf="type$ | async as trackerType" [nzSelectedIndex]="trackerType - 1"
              nzAnimated="false">
     <nz-tab [nzTitle]="'Game_Term/DoH' | translate">
       <ng-container *ngIf="dohTabs$ | async as dohTabs">
@@ -10,17 +10,17 @@
             <div fxLayout="row" fxLayoutGap="10px">
               <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
                 <nz-switch [(ngModel)]="hideCompleted"
-                           (ngModelChange)="updateSelectedPage($event, showNotRequired, trackerType, dohTabs, [], true)"></nz-switch>
+                           (ngModelChange)="updateSelectedPage($event, showNotRequired, trackerType, dohTabs, [], true); selectedRecipes = {}"></nz-switch>
                 <div>{{'LOG_TRACKER.Hide_completed' | translate}}</div>
               </div>
               <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
                 <nz-switch [(ngModel)]="showNotRequired"
-                           (ngModelChange)="updateSelectedPage(hideCompleted, $event, trackerType, dohTabs, [], true)"></nz-switch>
+                           (ngModelChange)="updateSelectedPage(hideCompleted, $event, trackerType, dohTabs, [], true); selectedRecipes = {}"></nz-switch>
                 <div>{{'LOG_TRACKER.Show_not_required' | translate}}</div>
               </div>
             </div>
           </ng-template>
-          <nz-tabset (nzSelectedIndexChange)="dohSelectedPage = dohTabs[$event][0].id" nzAnimated="false"
+          <nz-tabset (nzSelectedIndexChange)="dohSelectedPage = dohTabs[$event][0].id; selectedRecipes = {}" nzAnimated="false"
                      nzSize="small" [nzTabBarExtraContent]="hideCompletedToggle">
             <nz-tab *ngFor="let tab of dohTabs$ | async; let index = index" [nzTitle]="titleTemplate">
               <ng-template #titleTemplate>
@@ -30,7 +30,7 @@
               <nz-tabset nzAnimated="false" nzSize="small" nzTabPosition="left" class="vertical-tabs">
                 <ng-container *ngFor="let page of tab">
                   <nz-tab *ngIf="(!hideCompleted || !isDoHPageDone(page)) && (showNotRequired || page.requiredForAchievement)" [nzTitle]="dohTitleTemplate"
-                          (nzSelect)="dohSelectedPage = page.id">
+                          (nzSelect)="dohSelectedPage = page.id; selectedRecipes = {}">
                     <ng-template #dohTitleTemplate>
                     <span [class.not-required]="!page.requiredForAchievement">
                       <app-i18n-name content="notebookDivision" [id]="page.divisionId" width="50"></app-i18n-name>

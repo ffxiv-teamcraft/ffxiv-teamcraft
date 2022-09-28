@@ -399,12 +399,12 @@
     "Wrists": 0
   },
   "22": {
-    "Body": 0,
+    "Body": 1,
     "Ears": 0,
     "Feet": 0,
     "FingerL": 0,
     "FingerR": 0,
-    "Gloves": 0,
+    "Gloves": "-1",
     "Head": 0,
     "ID": 22,
     "Legs": 0,
@@ -414,6 +414,25 @@
     "Patch": null,
     "SoulCrystal": 0,
     "Url": "/EquipSlotCategory/22",
+    "Waist": 0,
+    "Wrists": 0
+  },
+  "23": {
+    "Body": 0,
+    "Ears": 0,
+    "Feet": 0,
+    "FingerL": 0,
+    "FingerR": 0,
+    "Gloves": 0,
+    "Head": 0,
+    "ID": 23,
+    "Legs": 0,
+    "MainHand": 0,
+    "Neck": 0,
+    "OffHand": 0,
+    "Patch": null,
+    "SoulCrystal": 0,
+    "Url": "/EquipSlotCategory/23",
     "Waist": 0,
     "Wrists": 0
   }

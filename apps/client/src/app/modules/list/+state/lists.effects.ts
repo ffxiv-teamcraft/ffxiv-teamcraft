@@ -81,7 +81,7 @@ export class ListsEffects {
   private selectedListClone$ = this.listsFacade.selectedList$.pipe(
     map(list => ListController.clone(list, true)),
     debounceTime(50),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   /**

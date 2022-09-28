@@ -124,6 +124,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfileModule)
   },
   {
+    path: 'island-workshop',
+    loadChildren: () => import('./pages/island-workshop/island-workshop.module').then(m => m.IslandWorkshopModule)
+  },
+  {
+    path: 'island-animals',
+    loadChildren: () => import('./pages/island-animals/island-animals.module').then(m => m.IslandAnimalsModule)
+  },
+  {
     path: 'about',
     loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule)
   },

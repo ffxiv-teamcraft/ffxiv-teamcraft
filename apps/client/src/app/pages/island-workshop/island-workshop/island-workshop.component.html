@@ -1,0 +1,156 @@
+<nz-page-header>
+  <nz-page-header-title>{{'ISLAND_SANCTUARY.WORKSHOP.Title' | translate}}</nz-page-header-title>
+  <nz-page-header-subtitle>{{'ISLAND_SANCTUARY.WORKSHOP.Subtitle' | translate}}</nz-page-header-subtitle>
+  <nz-page-header-extra>
+    <label nz-checkbox [(ngModel)]="editMode">{{'ISLAND_SANCTUARY.WORKSHOP.Edit_mode' | translate}}</label>
+    <button nz-button [clipboard]="getExport" [clipboardSuccessMessage]="'ISLAND_SANCTUARY.WORKSHOP.State_copied' | translate">
+      <span nz-icon nzType="download" nzTheme="outline"></span> {{'ISLAND_SANCTUARY.WORKSHOP.Export_state' | translate}}
+    </button>
+    <button nz-button (click)="importState()">
+      <span nz-icon nzType="upload" nzTheme="outline"></span> {{'ISLAND_SANCTUARY.WORKSHOP.Import_state' | translate}}
+    </button>
+    <ng-container *ngIf="!machinaToggle">
+      <ng-container *ngIf="onlineState$ | async as onlineState">
+        <span nz-tooltip
+              [nzTooltipTitle]="onlineState.objects.length === 0 ? ('ISLAND_SANCTUARY.WORKSHOP.Online_state_missing' | translate) : null">
+          <button
+            nz-button
+            (click)="importOnlineState(onlineState)"
+            [disabled]="onlineState.objects.length === 0"
+            nzType="primary">
+            <span nz-icon nzType="cloud-download" nzTheme="outline"></span> {{'ISLAND_SANCTUARY.WORKSHOP.Import_online_state' | translate}}
+          </button>
+        </span>
+      </ng-container>
+    </ng-container>
+  </nz-page-header-extra>
+  <nz-page-header-content>
+    <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+      <div>
+        <nz-input-group [nzAddOnBefore]="'ISLAND_SANCTUARY.Island_level' | translate">
+          <nz-input-number [ngModel]="islandLevel$ | async" (ngModelChange)="islandLevel$.next($event)" [nzMin]="0"></nz-input-number>
+        </nz-input-group>
+      </div>
+      <div>
+        <nz-input-group [nzAddOnBefore]="'ISLAND_SANCTUARY.Landmarks' | translate">
+          <nz-input-number [ngModel]="landmarks$ | async" (ngModelChange)="landmarks$.next($event)" [nzMin]="0"></nz-input-number>
+        </nz-input-group>
+      </div>
+      <div>
+        <nz-input-group [nzAddOnBefore]="'ISLAND_SANCTUARY.Workshop_rank' | translate">
+          <nz-input-number [ngModel]="rank$ | async" (ngModelChange)="rank$.next($event)" [nzMin]="0"></nz-input-number>
+        </nz-input-group>
+      </div>
+      <div>
+        <label nz-checkbox [ngModel]="excludePastureMaterials$ | async" (ngModelChange)="excludePastureMaterials$.next($event)">
+          {{'ISLAND_SANCTUARY.WORKSHOP.Exclude_pasture_materials' | translate}}</label>
+      </div>
+      <div>
+        <label nz-checkbox [ngModel]="excludeCropMaterials$ | async" (ngModelChange)="excludeCropMaterials$.next($event)">
+          {{'ISLAND_SANCTUARY.WORKSHOP.Exclude_crop_materials' | translate}}</label>
+      </div>
+    </div>
+  </nz-page-header-content>
+</nz-page-header>
+<ng-container *ngIf="state$ | async as state">
+  <nz-alert *ngIf="stateIsOutdated$ | async" nzType="warning"
+            [nzMessage]="'ISLAND_SANCTUARY.WORKSHOP.Out_of_sync' | translate"
+            [nzDescription]="'ISLAND_SANCTUARY.WORKSHOP.Out_of_sync_explain' | translate"
+            nzCloseable
+  ></nz-alert>
+</ng-container>
+
+<ng-container *ngTemplateOutlet="objectsTable;context:{$implicit: craftworksObjects$ | async, pageSize: 8}"></ng-container>
+
+<ng-container *ngIf="optimizerResult$ | async as optimizerResult">
+  <app-workshop-planning [planning]="optimizerResult.planning" [totalScore]="optimizerResult.score" [today]="today$ | async"
+                         [weeklyReset]="previousWeeklyReset$ | async"></app-workshop-planning>
+</ng-container>
+
+<ng-template #objectsTable let-craftworksObjects let-pageSize="pageSize">
+  <ng-container *ngIf="tableColumns$ | async as tableColumns">
+    <nz-table #craftworksTable [nzData]="craftworksObjects" nzSize="small" [nzPageSize]="pageSize" nzHideOnSinglePage
+              [nzFooter]="platformService.isDesktop() ? ('ISLAND_SANCTUARY.WORKSHOP.Import_explain' | translate) : null">
+      <thead>
+      <tr>
+        <th *ngFor="let column of tableColumns"
+            [nzSortOrder]="column.sortOrder"
+            [nzSortFn]="column.sortFn"
+            [nzSortDirections]="column.sortDirections"
+            [nzFilterMultiple]="column.filterMultiple"
+            [nzFilters]="column.listOfFilter"
+            [nzFilterFn]="column.filterFn">
+          {{('ISLAND_SANCTUARY.WORKSHOP.' + column.name) | translate}}
+          <i nz-icon nzType="info-circle" *ngIf="column.name === 'Possible_peak_days'" nz-tooltip
+             [nzTooltipTitle]="'ISLAND_SANCTUARY.WORKSHOP.Peak_days_explain' | translate"></i>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let row of craftworksTable.data; index as i; trackBy: trackByRow">
+        <td>
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+            <app-item-icon [itemId]="row.itemId" [width]="24"></app-item-icon>
+            <app-i18n-name content="items" [id]="row.itemId"></app-i18n-name>
+          </div>
+        </td>
+        <td>
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+            <img src="./assets/icons/island/popularity{{row.popularity.id}}.png" alt="" class="ui-icon">
+            <div>{{('ISLAND_SANCTUARY.WORKSHOP.POPULARITY.' + row.popularityKey) | translate}}</div>
+          </div>
+        </td>
+        <td>
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" *ngIf="!editMode">
+            <div class="supply-icons">
+              <img src="./assets/icons/island/supply.png" alt="" class="ui-icon supply-icon" *ngFor="let i of row.supplyIcon">
+            </div>
+            <div>{{('ISLAND_SANCTUARY.WORKSHOP.SUPPLY.' + row.supplyKey) | translate}}</div>
+          </div>
+          <nz-select *ngIf="editMode" [ngModel]="row.supply" (ngModelChange)="setStateRowProperty(i, 'supply', $event)" nzSize="small">
+            <nz-option *ngFor="let supply of supplies" [nzLabel]="('ISLAND_SANCTUARY.WORKSHOP.SUPPLY.' + supply.label) | translate" [nzValue]="supply.value">
+            </nz-option>
+          </nz-select>
+        </td>
+        <td>
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" *ngIf="!editMode">
+            <img src="./assets/icons/island/demand{{row.demand}}.png" alt="" class="ui-icon">
+            <div>{{('ISLAND_SANCTUARY.WORKSHOP.DEMAND_SHIFT.' + row.demandKey) | translate}}</div>
+          </div>
+          <nz-select *ngIf="editMode" [ngModel]="row.demand" (ngModelChange)="setStateRowProperty(i, 'demand', $event)" nzSize="small">
+            <nz-option *ngFor="let demand of demands" nzCustomContent [nzLabel]="('ISLAND_SANCTUARY.WORKSHOP.DEMAND_SHIFT.' + demand.label) | translate"
+                       [nzValue]="demand.value">
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <img src="./assets/icons/island/demand{{demand.value}}.png" alt="" class="ui-icon">
+                <div>{{('ISLAND_SANCTUARY.WORKSHOP.DEMAND_SHIFT.' + demand.label) | translate}}</div>
+              </div>
+            </nz-option>
+          </nz-select>
+        </td>
+        <td>
+          <span *ngFor="let pattern of row.patterns; last as last" [class.strong-peak]="pattern.strong">{{('COMMON.DAYS.' + days[pattern.day]) | translate}}
+            <span *ngIf="!last">,&nbsp;</span> </span>
+        </td>
+        <td>
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+            <img src="./assets/icons/island/popularity{{row.predictedPopularity.id}}.png" alt="" class="ui-icon">
+            <div>{{('ISLAND_SANCTUARY.WORKSHOP.POPULARITY.' + row.predictedPopularityKey) | translate}}</div>
+          </div>
+        </td>
+        <td>
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+            {{row.craftworksEntry.craftingTime}}h
+          </div>
+        </td>
+        <td>
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+            <span *ngFor="let theme of row.craftworksEntry.themes; last as last"><app-i18n-name content="islandCraftworksTheme"
+                                                                                                [id]="theme"></app-i18n-name><span *ngIf="!last">,</span></span>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </nz-table>
+  </ng-container>
+</ng-template>
+

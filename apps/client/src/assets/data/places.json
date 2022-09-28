@@ -15152,7 +15152,7 @@
   "2526": {
     "en": "Loch Seld Southeastern Lakebed",
     "ja": "ロッホ・セル湖底南東",
-    "de": "Seldsee (Nordost)",
+    "de": "Seldsee (Südost)",
     "fr": "Fond du lac Seld (sud-est)"
   },
   "2527": {
@@ -15390,10 +15390,10 @@
     "fr": "Chambre à coucher"
   },
   "2566": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Island Sanctuary",
+    "ja": "無人島開拓",
+    "de": "Inselparadies",
+    "fr": "Félicité insulaire"
   },
   "2567": {
     "en": "",
@@ -22536,10 +22536,10 @@
     "fr": "Nord-ouest d'Onokoro"
   },
   "3757": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Anemone Gardens",
+    "ja": "イシボタンの巌窟周辺",
+    "de": "Anemonengärten",
+    "fr": "Jardins d'anémones"
   },
   "3758": {
     "en": "Loch Seld Northeastern Lakebed",
@@ -22765,13 +22765,13 @@
   },
   "3795": {
     "en": "The Halberd's Head",
-    "ja": "斧槍通り",
+    "ja": "斧槍通り（居住区担当官）",
     "de": "Hellebardenspalier",
     "fr": "Avenue Fer-de-hallebarde"
   },
   "3796": {
     "en": "The Halberd's Head Subdivision",
-    "ja": "[拡張街]斧槍通り",
+    "ja": "[拡張街]斧槍通り（居住区担当官）",
     "de": "[Erweiterung] Hellebardenspalier",
     "fr": "Avenue Fer-de-hallebarde [Annexe]"
   },
@@ -24204,46 +24204,46 @@
     "fr": "Archives interdites du Noumène"
   },
   "4035": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Alzadaal's Legacy",
+    "ja": "アルザダール海底遺跡群",
+    "de": "Alzadaals Vermächtnis",
+    "fr": "Legs d'Alzadaal"
   },
   "4036": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Fell Court of Troia",
+    "ja": "トロイアコート",
+    "de": "Schwarzer Hof von Troia",
+    "fr": "Château de Troïa"
   },
   "4037": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Aitiascope",
+    "ja": "アイティオン星晶鏡",
+    "de": "Aitiaskop",
+    "fr": "Prisme de l'Aitia"
   },
   "4038": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Zero's Domain",
+    "ja": "ゼロの領域",
+    "de": "Zeros Unterschlupf",
+    "fr": "Territoire de Zero"
   },
   "4039": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Meghaduta Guest Chambers",
+    "ja": "メーガドゥータ宮の客間",
+    "de": "Gästezimmer des Meghaduta-Tempels",
+    "fr": "Appartements du palais du Meghaduta"
   },
   "4040": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sneaky Hollow",
+    "ja": "魔人の隠れ家",
+    "de": "Versteck der Kürbishexe",
+    "fr": "Demeure de la femme à tête de citrouille"
   },
   "4041": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "A-4 Research",
+    "ja": "リサーチA4",
+    "de": "Plattform A4",
+    "fr": "Camp de base A-4"
   },
   "4042": {
     "en": "",
@@ -24252,34 +24252,34 @@
     "fr": ""
   },
   "4043": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Island Sanctuary",
+    "ja": "無人島開拓",
+    "de": "Inselparadies",
+    "fr": "Félicité insulaire"
   },
   "4044": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The High Crucible of Al-Kimiya",
+    "ja": "アルキミヤ製薬堂",
+    "de": "Tiegel von Al-Kimiya",
+    "fr": "Creuset de l'Al-Kimiya"
   },
   "4045": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Storm's Crown",
+    "ja": "呪髪の風塔",
+    "de": "Sturmes Krone",
+    "fr": "Toison des tempêtes"
   },
   "4046": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Zero's Hideout",
+    "ja": "ゼロのねぐら",
+    "de": "Zeros Versteck",
+    "fr": "Repaire de Zero"
   },
   "4047": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Ramshackle Square",
+    "ja": "広場",
+    "de": "Marktplatz",
+    "fr": "Place de la statue"
   },
   "4048": {
     "en": "",
@@ -24644,7 +24644,7 @@
   "4108": {
     "en": "Grebuloff Pillars",
     "ja": "グレビュオフの集落",
-    "de": "Typhoid-Siedlung",
+    "de": "Grebuloff-Siedlung",
     "fr": "Village grébuloff"
   },
   "4109": {
@@ -24860,8 +24860,8 @@
   "4144": {
     "en": "Dangoulain's Devotion",
     "ja": "ダングラン記念公園",
-    "de": "Dangoulins Hingabe",
-    "fr": "Mémorial Dangoulin"
+    "de": "Dangoulains Hingabe",
+    "fr": "Mémorial Dangoulain"
   },
   "4145": {
     "en": "Risensong Rookery",
@@ -24908,8 +24908,8 @@
   "4152": {
     "en": "Dangoulain's Devotion Subdivision",
     "ja": "[拡張街]ダングラン記念公園",
-    "de": "[Erweiterung] Dangoulins Hingabe",
-    "fr": "Mémorial Dangoulin [Annexe]"
+    "de": "[Erweiterung] Dangoulains Hingabe",
+    "fr": "Mémorial Dangoulain [Annexe]"
   },
   "4153": {
     "en": "Risensong Rookery Subdivision",
@@ -25068,6 +25068,492 @@
     "fr": "Palais jumeau"
   },
   "4179": {
+    "en": "Loch Seld Southwestern Lakebed",
+    "ja": "ロッホ・セル湖南西",
+    "de": "Seldsee (Südwest)",
+    "fr": "Sud-ouest du lac de Seld"
+  },
+  "4180": {
+    "en": "The Fell Court of Troia",
+    "ja": "トロイアコート",
+    "de": "Schwarzer Hof von Troia",
+    "fr": "Château de Troïa"
+  },
+  "4181": {
+    "en": "Carcere IV",
+    "ja": "第四監獄棟",
+    "de": "Viertes Burgverlies",
+    "fr": "Quatrième donjon"
+  },
+  "4182": {
+    "en": "Troia Keep",
+    "ja": "トロイア城",
+    "de": "Burg Troia",
+    "fr": "Château de Troïa"
+  },
+  "4183": {
+    "en": "Hydromantic Terraces",
+    "ja": "水占庭園",
+    "de": "Wassergärten",
+    "fr": "Promenade de l'Hydromancie"
+  },
+  "4184": {
+    "en": "Penitence",
+    "ja": "責罪広場",
+    "de": "Sühneshalle",
+    "fr": "Salle des admonestations"
+  },
+  "4185": {
+    "en": "Seat of the Foremost",
+    "ja": "筆頭神官の間",
+    "de": "Sitz der Hohepriesterin",
+    "fr": "Salle des primiciers"
+  },
+  "4186": {
+    "en": "The Garden of Epopts",
+    "ja": "姉妹たちの園",
+    "de": "Garten der Schwestern",
+    "fr": "Enclos des sœurs"
+  },
+  "4187": {
+    "en": "Pilgrim's Ascent",
+    "ja": "庭園への階",
+    "de": "Gartensteig",
+    "fr": "Escalier des primiciers"
+  },
+  "4188": {
+    "en": "Carcere IV",
+    "ja": "第四監獄棟",
+    "de": "Viertes Burgverlies",
+    "fr": "Quatrième donjon"
+  },
+  "4189": {
+    "en": "Troia Keep",
+    "ja": "トロイア城",
+    "de": "Burg Troia",
+    "fr": "Château de Troïa"
+  },
+  "4190": {
+    "en": "Hydromantic Terraces",
+    "ja": "水占庭園",
+    "de": "Wassergärten",
+    "fr": "Promenade de l'Hydromancie"
+  },
+  "4191": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4192": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4193": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4194": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4195": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4196": {
+    "en": "The Pestilent Purgatory",
+    "ja": "寄生生物隔離棟",
+    "de": "Isolationstrakt für parasitäre Lebensformen",
+    "fr": "Bloc des organismes parasites"
+  },
+  "4197": {
+    "en": "Storm's Crown",
+    "ja": "呪髪の風塔",
+    "de": "Sturmes Krone",
+    "fr": "Toison des tempêtes"
+  },
+  "4198": {
+    "en": "The Hollow Purgatory",
+    "ja": "創生樹隔離棟",
+    "de": "Separationstrakt für pflanzliche Lebensformen",
+    "fr": "Bloc des créations arborescentes"
+  },
+  "4199": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4200": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4201": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4202": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4203": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4204": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4205": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4206": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4207": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4208": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4209": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4210": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4211": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4212": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4213": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4214": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4215": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4216": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4217": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4218": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4219": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4220": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4221": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4222": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4223": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4224": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4225": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4226": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4227": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4228": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4229": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4230": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4231": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4232": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4233": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4234": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4235": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4236": {
+    "en": "The Wilds",
+    "ja": "採集環境",
+    "de": "Wildnis",
+    "fr": "Les Landes"
+  },
+  "4237": {
+    "en": "Home Sweet Hideaway",
+    "ja": "開拓拠点",
+    "de": "Trautes Domizil",
+    "fr": "Base d'opérations"
+  },
+  "4238": {
+    "en": "Pirate Bay",
+    "ja": "海賊たちの浜",
+    "de": "Bucht der Piraten",
+    "fr": "Baie des pirates"
+  },
+  "4239": {
+    "en": "Rocky Reef",
+    "ja": "飛び石岩礁",
+    "de": "Raues Riff",
+    "fr": "Récif rocheux"
+  },
+  "4240": {
+    "en": "Gentle Slope",
+    "ja": "のっぺり丘",
+    "de": "Rollende Hügel",
+    "fr": "Colline douce"
+  },
+  "4241": {
+    "en": "Small Spring",
+    "ja": "山の泉",
+    "de": "Bergbrunn",
+    "fr": "Source reposante"
+  },
+  "4242": {
+    "en": "True Summit",
+    "ja": "とんがり山頂",
+    "de": "Piz Paradies",
+    "fr": "Pic acéré"
+  },
+  "4243": {
+    "en": "Sunrise Lookout",
+    "ja": "山の中腹",
+    "de": "Dämmerhang",
+    "fr": "Flanc montagneux"
+  },
+  "4244": {
+    "en": "Coral Sands",
+    "ja": "サンゴ海岸",
+    "de": "Korallensande",
+    "fr": "Plage de corail"
+  },
+  "4245": {
+    "en": "Pristine Pond",
+    "ja": "青空池",
+    "de": "Gläserner Teich",
+    "fr": "Étang limpide"
+  },
+  "4246": {
+    "en": "Peak Point",
+    "ja": "三角岬",
+    "de": "Dreikanten-Kap",
+    "fr": "Cap triangulaire"
+  },
+  "4247": {
+    "en": "Northward Stream",
+    "ja": "縦の川",
+    "de": "Nordstrom",
+    "fr": "Rivière transversale"
+  },
+  "4248": {
+    "en": "Eastward Stream",
+    "ja": "横の川",
+    "de": "Oststrom",
+    "fr": "Rivière longitudinale"
+  },
+  "4249": {
+    "en": "The Caustic Purgatory",
+    "ja": "猛毒生物隔離棟",
+    "de": "Sicherheitstrakt für toxische Lebenformen",
+    "fr": "Bloc des créatures extrêmement nocives"
+  },
+  "4250": {
+    "en": "Stygian Insenescence Cells",
+    "ja": "生命神秘研究棟",
+    "de": "Forschungstrakt für die Geheimnisse des Lebens",
+    "fr": "Laboratoire d'études des secrets du vivant"
+  },
+  "4251": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4252": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4253": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4254": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4255": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4256": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4257": {
+    "en": "The Halberd's Head Subdivision",
+    "ja": "[拡張街]斧槍通り",
+    "de": "[Erweiterung] Hellebardenspalier",
+    "fr": "Avenue Fer-de-hallebarde [Annexe]"
+  },
+  "4258": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4259": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4260": {
     "en": "",
     "ja": "",
     "de": "",

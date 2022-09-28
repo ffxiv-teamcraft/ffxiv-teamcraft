@@ -18,7 +18,7 @@ export class NavigationSidebarService {
 
   public commissionNotificationsCount$ = this.commissionsFacade.notifications$.pipe(
     map(notifications => notifications.length),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   private settingsChange$ = this.settings.settingsChange$.pipe(
@@ -215,6 +215,32 @@ export class NavigationSidebarService {
               },
               link: '/gathering-location'
             }
+          ]
+        },
+        {
+          name: 'SIDEBAR.Island_Sanctuary',
+          collapsedKey: 'island',
+          icon: {
+            type: SidebarIconType.ANTD_ICONFONT,
+            content: 'icon-tree'
+          },
+          children: [
+            {
+              name: 'ISLAND_SANCTUARY.WORKSHOP.Title',
+              icon: {
+                type: SidebarIconType.ANTD,
+                content: 'area-chart'
+              },
+              link: '/island-workshop'
+            },
+            {
+              name: 'ISLAND_SANCTUARY.ANIMALS.Title',
+              icon: {
+                type: SidebarIconType.CUSTOM,
+                content: this.sanitizer.bypassSecurityTrustHtml('<img class="anticon" style="width:24px; height:24px; margin-right: 5px;" src="./assets/icons/island/capture.png"/>')
+              },
+              link: '/island-animals'
+            },
           ]
         },
         {
@@ -421,7 +447,7 @@ export class NavigationSidebarService {
       }
       return layout;
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public allLinks$: Observable<SidebarItem[]> = this.content$.pipe(

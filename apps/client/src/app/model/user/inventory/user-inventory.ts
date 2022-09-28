@@ -51,7 +51,8 @@ export class UserInventory extends DataModel {
     ContainerType.ArmorySoulCrystal,
     ContainerType.ArmoryMain,
     ContainerType.RetainerMarket,
-    ContainerType.GearSet0
+    ContainerType.GearSet0,
+    ContainerType.IslandSanctuaryBag
   ];
 
   items: { [contentId: string]: CharacterInventory } = {};

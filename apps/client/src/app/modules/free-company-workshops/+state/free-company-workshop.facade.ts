@@ -466,13 +466,13 @@ export class FreeCompanyWorkshopFacade {
       map((airshipRanks) => {
         return +Object.keys(airshipRanks).pop();
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 
   @Memoized()
   public getSubmarineMaxRank(): Observable<number> {
-    return of(95);
+    return of(100);
   }
 
   @Memoized()
@@ -482,7 +482,7 @@ export class FreeCompanyWorkshopFacade {
       map(airshipVoyages => {
         return Object.keys(airshipVoyages).filter((id) => airshipVoyages[id].en).length - 1;
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 
@@ -492,7 +492,7 @@ export class FreeCompanyWorkshopFacade {
       map(submarineVoyages => {
         return Object.keys(submarineVoyages).filter((id) => submarineVoyages[id].en).length;
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 

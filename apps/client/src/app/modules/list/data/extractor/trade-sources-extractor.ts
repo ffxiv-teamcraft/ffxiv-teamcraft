@@ -10,6 +10,7 @@ import { LazyShop } from '../../../../lazy-data/model/lazy-shop';
 import { I18nName } from '../../../../model/common/i18n-name';
 import { LazyNpc } from '../../../../lazy-data/model/lazy-npc';
 import { uniqBy } from 'lodash';
+import { TradeIconPipe } from '../../../../pipes/pipes/trade-icon.pipe';
 
 
 export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
@@ -114,7 +115,7 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
         const { specialShopNames, topicSelectNames, gilShopNames, gcNames } = names;
         return uniqBy(shops
           .filter(shop => {
-            return shop.type !== 'GilShop' && shop.trades.some(t => t.items.some(i => i.id === itemId));
+            return shop.type !== 'GilShop' && shop.trades.some(t => t.items.some(i => i.id === itemId) && t.currencies.some(c => TradeIconPipe.TRADE_SOURCES_PRIORITIES[c.id] !== 0));
           })
           .filter((shop, i, array) => {
             return shop.npcs.length > 0 || array.every(s => s.npcs.length === 0);

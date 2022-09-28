@@ -230,6 +230,14 @@ export class SettingsService {
     this.setSetting('commissions:minPrice', price.toString());
   }
 
+  public get islandWorkshopRestDay(): number {
+    return +this.getSetting('island-workshop:rest-day', '1');
+  }
+
+  public set islandWorkshopRestDay(day: number) {
+    this.setSetting('island-workshop:rest-day', day.toString());
+  }
+
   public get materiaConfidenceRate(): number {
     return +this.getSetting('materias:confidence', '0.5');
   }
@@ -923,6 +931,8 @@ export class SettingsService {
         switch (typeof defaultValue) {
           case 'string':
             return this._cache[change];
+          case 'number':
+            return +this._cache[change];
           default:
             return JSON.parse(this._cache[change]);
         }

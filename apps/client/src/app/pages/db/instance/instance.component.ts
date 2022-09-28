@@ -48,14 +48,14 @@ export class InstanceComponent extends TeamcraftPageComponent {
         emptyResponse.instance = new GtInstance();
         return of(emptyResponse);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.xivapiInstance$ = instanceId$.pipe(
       switchMap(id => {
         return this.xivapi.get(XivapiEndpoint.InstanceContent, +id);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.links$ = combineLatest([this.xivapiInstance$, this.gtData$]).pipe(
@@ -68,7 +68,7 @@ export class InstanceComponent extends TeamcraftPageComponent {
           },
           {
             title: 'Gamer Escape',
-            url: `https://ffxiv.gamerescape.com/wiki/${xivapiInstance.Name_en.toString().split(' ').join('_')}`,
+            url: `https://ffxiv.gamerescape.com/wiki/${encodeURIComponent(xivapiInstance.Name_en.toString().split(' ').join('_'))}`,
             icon: './assets/icons/ge.png'
           }
         ];

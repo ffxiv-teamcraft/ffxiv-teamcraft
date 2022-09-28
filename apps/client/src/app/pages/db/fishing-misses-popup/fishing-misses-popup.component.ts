@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import gql from 'graphql-tag';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { Apollo } from 'apollo-angular';
-import { map, switchMap } from 'rxjs/operators';
+import { debounceTime, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import * as _ from 'lodash';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
@@ -111,7 +111,10 @@ export class FishingMissesPopupComponent implements OnInit {
             };
           })
         );
-      })
+      }),
+      debounceTime(500),
+      first(),
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 
@@ -121,7 +124,6 @@ export class FishingMissesPopupComponent implements OnInit {
       const clone = { ...this.filters$.value };
       delete clone[key];
       this.filters$.next(clone);
-
     } else {
       this.filters$.next({
         ...this.filters$.value,

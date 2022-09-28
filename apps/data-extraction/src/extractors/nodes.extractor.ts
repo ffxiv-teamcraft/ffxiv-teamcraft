@@ -6,9 +6,13 @@ import { AbstractExtractor } from '../abstract-extractor';
 export class NodesExtractor extends AbstractExtractor {
 
   private gatheringItems = {};
+
   private gatheringPoints = {};
+
   private gatheringItemPoints = {};
+
   private nodes = {};
+
   private gatheringPointToBaseId = {};
 
   public isSpecific = true;
@@ -21,6 +25,7 @@ export class NodesExtractor extends AbstractExtractor {
     const gatheringItems$ = new Subject();
     const gatheringPoints$ = new Subject();
     const gatheringItemPoints$ = new Subject();
+
 
     this.getAllPages('https://xivapi.com/GatheringItem?columns=ID,GatheringItemLevel,IsHidden,Item').subscribe(page => {
       page.Results
@@ -104,7 +109,7 @@ export class NodesExtractor extends AbstractExtractor {
 
     combineLatest([gatheringItems$, gatheringPoints$, gatheringItemPoints$]).pipe(
       switchMap(([gi, gp, gip]) => {
-        return this.getAllPages('https://xivapi.com/GatheringPointBase?columns=ID,GatheringTypeTargetID,Item0,Item1,Item2,Item3,Item4,Item5,Item6,Item7,IsLimited,GameContentLinks,GatheringLevel')
+        return this.getAllPages('https://xivapi.com/GatheringPointBase?columns=ID,GatheringTypeTargetID,Item0,Item1,Item2,Item3,Item4,Item5,Item6,Item7,GameContentLinks,GatheringLevel')
           .pipe(
             map((page) => [page, gi, gp, gip])
           );

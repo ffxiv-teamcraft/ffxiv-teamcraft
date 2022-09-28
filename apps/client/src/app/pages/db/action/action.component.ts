@@ -107,7 +107,7 @@ export class ActionComponent extends TeamcraftPageComponent {
           );
         }
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.relatedTraits$ = this.xviapiAction$.pipe(

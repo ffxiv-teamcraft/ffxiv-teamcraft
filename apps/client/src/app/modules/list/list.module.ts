@@ -46,7 +46,6 @@ import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { MapModule } from '../map/map.module';
 import { ItemDetailsPopupsModule } from '../item-details/item-details-popups.module';
 import { ItemSourcesDisplayComponent } from './item/item-sources-display/item-sources-display.component';
-import { AlarmButtonComponent } from './item/alarm-button/alarm-button.component';
 import { ItemRowButtonsComponent } from './item/item-row-buttons/item-row-buttons.component';
 import { ListProgressbarComponent } from './list-progressbar/list-progressbar.component';
 import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
@@ -67,6 +66,9 @@ import { AchievementsExtractor } from './data/extractor/achievements-extractor';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { DeprecatedExtractor } from './data/extractor/deprecated-extractor';
 import { AggregateItemRowComponent } from './item/aggregate-item-row/aggregate-item-row.component';
+import { AlarmButtonModule } from '../alarm-button/alarm-button.module';
+import { IslandPastureExtractor } from './data/extractor/island-pasture-extractor';
+import { IslandCropExtractor } from './data/extractor/island-crop-extractor';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -93,8 +95,10 @@ export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: MasterbooksExtractor, deps: [GarlandToolsService], multi: true },
   { provide: EXTRACTORS, useClass: TreasuresExtractor, deps: [LazyDataFacade], multi: true },
   { provide: EXTRACTORS, useClass: FatesExtractor, deps: [LazyDataFacade], multi: true },
-  { provide: EXTRACTORS, useClass: RequirementsExtractor, deps: [LazyDataFacade], multi: true },
   { provide: EXTRACTORS, useClass: DeprecatedExtractor, deps: [LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: IslandPastureExtractor, deps: [LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: IslandCropExtractor, deps: [LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: RequirementsExtractor, deps: [LazyDataFacade], multi: true }
 ];
 
 @NgModule({
@@ -129,7 +133,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     SimulatorModule,
     CompanyWorkshopTreeModule,
     InventoryModule,
-    HttpClientModule
+    HttpClientModule,
+    AlarmButtonModule
   ],
   providers: [
     ...DATA_EXTRACTORS,
@@ -142,14 +147,13 @@ export const DATA_EXTRACTORS: Provider[] = [
     TagsPopupComponent,
     ListCompletionPopupComponent,
     ItemSourcesDisplayComponent,
-    AlarmButtonComponent,
     ItemRowButtonsComponent,
     ListProgressbarComponent,
     ListSplitPopupComponent,
     ItemRowMenuComponent,
     AggregateItemRowComponent
   ],
-  exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent, AlarmButtonComponent]
+  exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent]
 })
 export class ListModule {
 

@@ -15,25 +15,31 @@ export class AirshipExplorationResultReporter extends ExplorationResultReporter 
 
   getDataReports(packets$: Observable<any>): Observable<any[]> {
     const isAirshipMenuOpen$: Observable<boolean> = merge(
-      packets$.pipe(ofMessageType('eventStart')),
-      packets$.pipe(ofMessageType('eventFinish'))
+      packets$.pipe(
+        filter(packet => packet.header.sourceActor === packet.header.targetActor),
+        ofMessageType('eventStart')),
+      packets$.pipe(
+        filter(packet => packet.header.sourceActor === packet.header.targetActor),
+        ofMessageType('eventFinish'))
     ).pipe(
       filter((packet) => packet.parsedIpcData.eventId === 0xB0102),
       map((packet) => {
         return packet.type === 'eventStart';
       }),
       startWith(false),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     const resultLog$ = packets$.pipe(
+      filter(packet => packet.header.sourceActor === packet.header.targetActor),
       ofMessageType('airshipExplorationResult'),
       toIpcData(),
       map((packet) => packet.explorationResult),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     const status$ = packets$.pipe(
+      filter(packet => packet.header.sourceActor === packet.header.targetActor),
       ofMessageType('airshipStatus'),
       toIpcData()
     );

@@ -24,7 +24,7 @@ export class SimulatorPageComponent extends AbstractSimulationPage {
       return this.dataService.getItem(+params.get('itemId'));
     }),
     map(itemData => itemData.item),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   recipe$: Observable<Craft | LazyRecipe> = this.route.paramMap.pipe(
@@ -39,11 +39,11 @@ export class SimulatorPageComponent extends AbstractSimulationPage {
         })
       );
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
-  thresholds$: Observable<number[]> = this.item$.pipe(
-    switchMap(item => {
+  thresholds$: Observable<number[]> = combineLatest([this.item$, this.recipe$]).pipe(
+    switchMap(([item, recipe]) => {
       if (item.collectable === 1) {
         // If it's a delivery item
         if (item.satisfaction !== undefined) {
@@ -65,6 +65,8 @@ export class SimulatorPageComponent extends AbstractSimulationPage {
             })
           );
         }
+      } else if (recipe.requiredQuality) {
+        return of([recipe.requiredQuality]);
       }
     })
   );

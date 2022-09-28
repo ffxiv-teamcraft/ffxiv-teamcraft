@@ -12,7 +12,7 @@ export class FishingSpotUtilsService {
       return this.themeToColor(next);
     }),
     startWith(this.themeToColor(this.settings.theme)),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   constructor(private readonly settings: SettingsService) {

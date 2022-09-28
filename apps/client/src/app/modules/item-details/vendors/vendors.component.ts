@@ -25,6 +25,7 @@ export class VendorsComponent extends ItemDetailsPopup<Vendor[]> implements OnIn
         return 0;
       }
     });
+    super.ngOnInit();
   }
 
 }

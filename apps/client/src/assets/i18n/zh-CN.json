@@ -50,7 +50,8 @@
     "Share_url_copied": "搜索链接已复制到剪贴板",
     "Only_craftable": "仅显示有配方的物品",
     "Want_filters": "需要更多过滤方式？",
-    "Open_search": "打开搜索页面"
+    "Open_search": "打开搜索页面",
+    "Island_recipe": "Island Sanctuary recipe"
   },
   "Use_as_default_character": "设为默认角色",
   "Download_desktop_app": "下载客户端",
@@ -195,7 +196,16 @@
     "Instance": "副本",
     "Fate": "危命任务",
     "Reload": "刷新",
-    "Click_to_apply": "应用"
+    "Click_to_apply": "应用",
+    "DAYS": {
+      "Monday": "Monday",
+      "Tuesday": "Tuesday",
+      "Wednesday": "Wednesday",
+      "Thursday": "Thursday",
+      "Friday": "Friday",
+      "Saturday": "Saturday",
+      "Sunday": "Sunday"
+    }
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -303,6 +313,7 @@
   "Reset_progression": "重置进度",
   "Gardening": "园艺",
   "Hunting": "击杀",
+  "Island_animal": "Island animal",
   "Desynth": "分解",
   "Vendors": "商人",
   "Open": "打开",
@@ -757,6 +768,9 @@
     "Inventory_cleanup_description": "这是物品栏中已有但是未被此清单使用的物品",
     "Consider_requirements": "计算素材",
     "Ignore_requirements": "忽略素材",
+    "SOURCES": {
+      "Gatherable": "Can be gathered, click to see more details"
+    },
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
@@ -1185,7 +1199,8 @@
       "MISSING_LEVEL_REQUIREMENT": "您的职业等级无法制作此物品。",
       "NOT_SPECIALIST": "使用了专家手法，但你不是专家",
       "NO_INNER_QUIET": "没有内静 buff 但使用了内静技能",
-      "MISSING_STATS_REQUIREMENT": "您不满足此配方所需要的最低属性"
+      "MISSING_STATS_REQUIREMENT": "您不满足此配方所需要的最低属性",
+      "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "如果你的目标是制作HQ成品，那么几乎所有手法都要包括内静。内静能够提供很大的品质增益，并触发“比尔格的祝福”等技能。",
@@ -1214,6 +1229,7 @@
     "Content_copied": "已复制",
     "Cheaper_at_vendor": "从 NPC 购买更便宜",
     "Copy_panel_as_text": "复制为文本",
+    "Copy_panel_as_csv": "Copy this panel as CSV",
     "Ignore_completed_items": "排除已完成的物品",
     "Price_to_craft": "制作成本",
     "Price_from_vendor": "商店价格",
@@ -1622,6 +1638,7 @@
         "Last_report": "最近一次垂钓记录",
         "Fish": "鱼",
         "Size": "尺寸",
+        "Large": "Large",
         "Time_since_thrown": "抛竿以来的时间",
         "ERRORS": {
           "No_bait": "未检测到钓饵，请重新“选饵”",
@@ -1638,7 +1655,8 @@
       "Fish_per_tug": "不同咬饵的上钩概率",
       "Fish_per_hookset": "每次提钩获得的鱼",
       "Include_misses": "包含提钩失败记录",
-      "Miss": "提钩失败"
+      "Miss": "提钩失败",
+      "Position_unknown": "Unknown location"
     },
     "NODE": {
       "Items": "物品",
@@ -1755,7 +1773,8 @@
       "No_comments": "暂无评论",
       "Post": "发布",
       "Editor_tip": "输入 <页面类型>:\"<页面标题>\" 以链接到其它页面。例如， item:\"无锋剑柯塔纳\"、action:\"制作\"、map:\"魔晶堂\" 。支持的页面类型有：item(物品), map(地图), mob(怪物), achievement(成就), leve(理符), npc, instance(副本), quest(任务), trait(特性), action(技能), status(状态)",
-      "Disclaimer": "数据库评论意在传达有用的额外信息，滥用数据库评论以抱怨游戏内容可能导致会导致您的评论发表功能受限。"
+      "Disclaimer": "数据库评论意在传达有用的额外信息，滥用数据库评论以抱怨游戏内容可能导致会导致您的评论发表功能受限。",
+      "Deleted_comment": "This comment has been deleted"
     },
     "PATCH": {
       "Open_patch_page": "点击此处在数据库中打开新版本的全部改动",
@@ -1848,7 +1867,8 @@
     "Disabled_description": "由于 Square Enix 禁止我们读取交易板信息，此功能已关闭。如您有意见，请向 Square Enix 投诉。",
     "Loading_data": "加载选定货币的交易数据",
     "Loading_universalis": "正在从 Universalis 获取 {{amount}} 个物品的市场价格",
-    "X_sold_last_week": "上周已售出 {{amount}} 个"
+    "X_sold_last_week": "上周已售出 {{amount}} 个",
+    "No_trades": "This currency cannot be traded with something that can be sold on marketboard"
   },
   "FOOD_PICKER": {
     "Title": "食物选择器",
@@ -1917,7 +1937,8 @@
     "Leveling": "升级",
     "Currencies": "货币",
     "Add_to_favorites": "添加至收藏",
-    "Remove_from_favorites": "从收藏中删除"
+    "Remove_from_favorites": "从收藏中删除",
+    "Island_Sanctuary": "Island Sanctuary"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "数据包捕获功能可用",
@@ -1975,7 +1996,8 @@
       "Other": "其他物品栏",
       "Armory": "兵装库",
       "Current_Gear": "当前装备",
-      "RetainerMarket": "雇员出售列表"
+      "RetainerMarket": "雇员出售列表",
+      "IslandSanctuaryBag": "Island Sanctuary Bag"
     },
     "CONTENT_ID_POPUP": {
       "Description": "请选择你当前登录的游戏角色要关联的 TC 角色。",
@@ -2073,6 +2095,8 @@
     "Total_cost": "总成本 (兑换、金币等)",
     "Materia": "魔晶石",
     "Amount_needed": "数量",
+    "Slots_used": "Slots",
+    "Slots_used_explain": "# of slots this materia is used for",
     "Cost": "消耗",
     "Modal_editor": "{{itemName}} 的魔晶石",
     "Unavailable_slot": "此孔不可用",
@@ -2294,7 +2318,8 @@
         "Check": "运行完整性检查"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "所有关联的角色均有效"
+        "All_characters_valid": "所有关联的角色均有效",
+        "All_lists_ok": "All lists are working properly"
       }
     }
   },
@@ -2807,7 +2832,7 @@
     "Gubal_analysis_suggestion": "基于数据分析的建议",
     "Cannot_report_for_this_spot": "此数据已经存在，所以您无法报告该详细信息。",
     "Please_suggest_edit_instead": "请先对已有的报告提出修改建议。",
-    "Add_data_sources": "为该物品添加数据来源",
+    "Add_data_sources": "Add/modify data sources for this item",
     "Not_applied_yet": "未采用",
     "Not_applied_yet_explain": "此来源将在下一次更新时添加至数据库系统。",
     "Pending_changes_count": "{{amount}} 个待审阅更改",
@@ -2868,7 +2893,8 @@
       "SPEARFISHING": "叉鱼",
       "FATE": "危命任务",
       "MOGSTATION": "商城物品",
-      "DEPRECATED": "已弃用"
+      "DEPRECATED": "已弃用",
+      "ISLAND_ANIMAL": "ISLAND_ANIMAL"
     },
     "STATUS": {
       "PROPOSAL": "提议",
@@ -2910,5 +2936,84 @@
     "Explain_cost_to_craft": "包含从市场板购买所有除水晶之外的材料的支出。",
     "Empty_list": "当前清单为空，请点击 + 按钮添加物品",
     "Add_to_list": "将这些物品加入到清单"
+  },
+  "MACHINA_ERRORS": {
+    "Default": "Machina Wrapper error",
+    "Wrapper_failed_to_start": "Machina Wrapper failed to start",
+    "DESCRIPTION": {
+      "Wrapper_failed_to_start": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.<br><br> Retrying in {{retryDelay}}s"
+    }
+  },
+  "ISLAND_SANCTUARY": {
+    "Animal_source": "You need to gather this item from one of the following animals in your Island Sanctuary pasture",
+    "Island_level": "Island level",
+    "Landmarks": "Landmarks",
+    "Workshop_rank": "Workshop rank",
+    "WORKSHOP": {
+      "Title": "Workshop",
+      "Subtitle": "Track and manage your workshop",
+      "Out_of_sync": "State has not been updated since the last reset",
+      "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary to update the state. If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button, or import from database.",
+      "Export_state": "Export supply/demand state",
+      "State_copied": "State copied to your clipboard",
+      "Import_state": "Import state",
+      "Import_online_state": "Import state from database",
+      "Online_state_missing": "Nobody updated their state yet, this button will enable itself once it's done",
+      "State_imported": "State properly imported",
+      "Product": "Product",
+      "Popularity": "Popularity",
+      "Supply": "Supply",
+      "Demand_shift": "Demand shift",
+      "Predicted_popularity": "Predicted demand",
+      "Edit_mode": "Edit mode",
+      "Best_items_to_craft": "Best items to craft",
+      "Total_value": "Total value",
+      "Run_optimizer": "Find best planning for the rest of the week",
+      "No_schedule_found": "No planning found",
+      "No_schedule_found_explain": "Make sure the reset is in more than 4 hours",
+      "Possible_peak_days": "Possible peaks",
+      "Peak_days_explain": "The days on which it's more likely that this item will peak in value. Bold = strong peak.",
+      "Items_to_prepare": "Best items to prepare for tomorrow",
+      "Rest": "Rest day",
+      "Unknown_day_planning": "Unknown planning for now (will be known later this week)",
+      "Set_rest_day": "Set as second rest day",
+      "Import_explain": "You can update your supply/demand table by opening it ingame with the desktop app running and packet capture enabled.",
+      "Amount_of_workshops": "# of workshops :",
+      "Create_list": "Create a list for this planning",
+      "Exclude_pasture_materials": "Exclude pasture materials",
+      "Groove_tooltip": "Groove at the end of the day",
+      "POPULARITY": {
+        "Very_high": "Very high",
+        "High": "High",
+        "Average": "Average",
+        "Low": "Low"
+      },
+      "SUPPLY": {
+        "Non_existant": "Non existant",
+        "Insufficient": "Insufficient",
+        "Sufficient": "Sufficient",
+        "Surplus": "Surplus",
+        "Overflowing": "Overflowing"
+      },
+      "DEMAND_SHIFT": {
+        "Skyrocketing": "Skyrocketing",
+        "Increasing": "Increasing",
+        "None": "None",
+        "Decreasing": "Decreasing",
+        "Plummeting": "Plummeting"
+      }
+    },
+    "ANIMALS": {
+      "Title": "Animals",
+      "Subtitle": "A comprehensive list of animals, where and when to find them, with alarms integration",
+      "Name": "Name",
+      "Size": "Size",
+      "Coords": "Position",
+      "Spawn_time": "Spawn time",
+      "Weather": "Weather",
+      "Alarm": "Alarm",
+      "Main_drop": "Main drop",
+      "Rare_drop": "Rare drop"
+    }
   }
 }

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { IpcService } from '../../../../core/electron/ipc.service';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { EorzeaFacade } from '../../../../modules/eorzea/+state/eorzea.facade';
@@ -30,13 +30,15 @@ export class AutofillStatsPopupComponent extends TeamcraftComponent {
   constructor(private ipc: IpcService, private authFacade: AuthFacade,
               private eorzeaFacade: EorzeaFacade) {
     super();
-    this.eorzeaFacade.classJobSet$.subscribe(set => {
-      this.authFacade.saveSet(set);
-      this.completion$.next({
-        ...this.completion$.value,
-        [set.jobId]: true
+    this.eorzeaFacade.classJobSet$
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe(set => {
+        this.authFacade.saveSet(set);
+        this.completion$.next({
+          ...this.completion$.value,
+          [set.jobId]: true
+        });
       });
-    });
   }
 
 }

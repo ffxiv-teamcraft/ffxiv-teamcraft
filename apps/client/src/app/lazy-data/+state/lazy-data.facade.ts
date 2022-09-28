@@ -35,11 +35,11 @@ export class LazyDataFacade {
   );
 
   public patches$ = this.http.get<XivapiPatch[]>('https://xivapi.com/patchlist').pipe(
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public datacenters$ = this.xivapi.getDCList().pipe(
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   // This is a temporary cache system to absorb possible call spams on some methods, TTL for each row is 10s toa void memory issues
@@ -80,7 +80,7 @@ export class LazyDataFacade {
   public getEntry<K extends LazyDataKey>(propertyKey: K): Observable<LazyDataWithExtracts[K]> {
     if (this.getCacheEntry(propertyKey) === null) {
       const obs$ = combineLatest([
-        this.store.pipe(select(LazyDataSelectors.getEntry, { key: propertyKey })),
+        this.store.pipe(select(LazyDataSelectors.getEntry(propertyKey))),
         this.getStatus(propertyKey)
       ]).pipe(
         tap(([, status]) => {
@@ -315,7 +315,7 @@ export class LazyDataFacade {
               return eRecipe || r;
             });
           }),
-          shareReplay(1)
+          shareReplay({ bufferSize: 1, refCount: true })
         );
       case Region.Korea:
         return combineLatest([
@@ -328,7 +328,7 @@ export class LazyDataFacade {
               return eRecipe || r;
             });
           }),
-          shareReplay(1)
+          shareReplay({ bufferSize: 1, refCount: true })
         );
       default:
         return this.getEntry('recipes');
@@ -363,7 +363,7 @@ export class LazyDataFacade {
             return res;
           });
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 
@@ -470,7 +470,7 @@ export class LazyDataFacade {
   }
 
   private cacheObservable<T>(observable: Observable<T>, entity: LazyDataKey, id?: number): void {
-    const key = entity + (id ? `:${id}` : '');
+    const key = entity + (id !== undefined ? `:${id}` : '');
     this.cache[key] = observable.pipe(shareReplay(1));
     setTimeout(() => {
       delete this.cache[key];
@@ -480,7 +480,7 @@ export class LazyDataFacade {
   private getCacheEntry<K extends LazyDataKey>(entity: K): Observable<LazyDataWithExtracts[K]> | null;
   private getCacheEntry<K extends LazyDataKey>(entity: K, id: number): Observable<LazyDataEntries[K]> | null;
   private getCacheEntry<K extends LazyDataKey>(entity: K, id?: number): Observable<LazyDataWithExtracts[K]> | Observable<LazyDataEntries[K]> | null {
-    const key = entity + (id ? `:${id}` : '');
+    const key = entity + (id !== undefined ? `:${id}` : '');
     return this.cache[key] || null;
   }
 }

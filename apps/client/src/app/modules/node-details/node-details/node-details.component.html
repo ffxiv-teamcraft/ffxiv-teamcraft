@@ -2,7 +2,7 @@
   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
     <div fxLayout="column">
       <div>
-        {{node.map | mapName | i18n}} - lvl {{node.level}}
+        {{node.map | mapName | i18n}} <span *ngIf="node.type !== -10">- lvl {{node.level}}</span>
         <ng-container [ngSwitch]="node.type" *ngIf="!hideDbButton && node.id">
           <app-db-button *ngSwitchCase="-5" [id]="node.id" type="fishing-spot"></app-db-button>
           <app-db-button *ngSwitchCase="4" [id]="node.id" type="spearfishing-spot"></app-db-button>
@@ -29,7 +29,7 @@
       <span *ngIf="node.oceanFishingTime !== undefined && node.oceanFishingTime !== null">
         {{'ALLAGAN_REPORTS.Ocean_fishing_time' | translate}}: {{('OCEAN_FISHING.' + OceanFishingTime[node.oceanFishingTime]) | translate}}
       </span>
-      <span *ngIf="node.spawns !== undefined">
+    <span *ngIf="node.spawns !== undefined">
         <i *ngFor="let time of node.spawns">
           {{time}}:00 - {{getDespawnTime(time, node.duration)}}:00
         </i>
@@ -40,37 +40,12 @@
       <ng-container *ngIf="(generatedAlarm | alarmDisplay | async) as alarm">
         <div *ngIf="alarm.remainingTime"
              fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <div [timerTooltip]="alarm.remainingTime" [class.spawned]="alarm.spawned">{{ (alarm.spawned ? 'GATHERING_LOCATIONS.Spawned_for' : 'GATHERING_LOCATIONS.Will_spawn_in') | translate : { timer: (alarm.remainingTime | timer) } }}</div>
           <img *ngIf="generatedAlarm.fishEyes" nz-tooltip [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate"
                [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon"
                alt="" class="fish-eyes-alarm">
           <ng-container *ngIf="showAlarmsIntegration">
-            <div *ngIf="canCreateAlarm(alarm.alarm) | async; else alarmCreated" fxLayout="row"
-                 fxLayoutGap="5px">
-              <button (click)="addAlarm(alarm.alarm)" [nzTooltipTitle]="'ALARMS.Add_alarm' | translate" nz-button nz-tooltip nzShape="circle"
-                      nzSize="small">
-                <i nz-icon nzType="clock-circle"> </i>
-              </button>
-              <ng-container *ngIf="alarmGroups$ | async as groups">
-                <ng-container *ngIf="groups.length > 0">
-                  <button *ngIf="alarmsLoaded$ | async" [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'" nz-button
-                          nz-dropdown
-                          nzShape="circle" nzSize="small">
-                    <i nz-icon nzType="folder-open"></i>
-                  </button>
-                  <nz-dropdown-menu #menu="nzDropdownMenu">
-                    <ul nz-menu>
-                      <li (click)="addAlarm(alarm.alarm, group)" *ngFor="let group of groups" nz-menu-item>
-                        {{group.name}}
-                      </li>
-                    </ul>
-                  </nz-dropdown-menu>
-                </ng-container>
-              </ng-container>
-            </div>
-            <ng-template #alarmCreated>
-              {{'ALARMS.Alarm_already_created' | translate}}
-            </ng-template>
+            <app-alarm-button [alarm]="alarm.alarm" (toggleAlarm)="addAlarm($event.alarm)" (addAlarmWithGroup)="addAlarm($event.alarm, $event.group)"
+                              [alarmGroups]="alarmGroups$ | async" [showPosition]="false"></app-alarm-button>
           </ng-container>
         </div>
       </ng-container>

@@ -90,7 +90,7 @@ export class AuthFacade {
       }
       return of(token);
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   characters$ = this.user$.pipe(
@@ -109,7 +109,7 @@ export class AuthFacade {
       }));
     }),
     map(characters => characters.filter(c => c && c.Character)),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   characterEntries$ = this.user$.pipe(
@@ -137,7 +137,7 @@ export class AuthFacade {
       }));
     }),
     distinctUntilChanged((a, b) => JSON.stringify(a) === JSON.stringify(b)),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   mainCharacterEntry$ = combineLatest([
@@ -226,7 +226,7 @@ export class AuthFacade {
         return set;
       });
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   constructor(private store: Store<{ auth: AuthState }>, private af: AngularFireAuth,
@@ -238,8 +238,10 @@ export class AuthFacade {
       this.setCID(packet.contentId.toString());
     });
 
-    this.ipc.worldId$.subscribe(worldId => {
-      this.setWorld(worldId);
+    this.ipc.worldId$.pipe(
+      distinctUntilChanged()
+    ).subscribe((worldId) => {
+        this.setWorld(worldId);
     });
   }
 

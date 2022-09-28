@@ -22,6 +22,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { ListModule } from '../../modules/list/list.module';
+import { AlarmButtonModule } from '../../modules/alarm-button/alarm-button.module';
 
 
 const routes: Routes = [
@@ -57,7 +58,8 @@ const routes: Routes = [
     NzGridModule,
     NzToolTipModule,
     NzButtonModule,
-    NzIconModule
+    NzIconModule,
+    AlarmButtonModule
   ]
 })
 export class AlarmGroupModule {

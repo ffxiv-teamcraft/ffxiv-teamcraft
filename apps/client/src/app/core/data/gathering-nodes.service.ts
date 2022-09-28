@@ -38,9 +38,10 @@ export class GatheringNodesService {
       this.lazyData.getEntry('spearfishingSources'),
       this.lazyData.getEntry('fishingSources'),
       this.lazyData.getEntry('fishingSpots'),
-      this.lazyData.getEntry('fishParameter')
+      this.lazyData.getEntry('fishParameter'),
+      this.lazyData.getEntry('islandGatheringItems')
     ]).pipe(
-      map(([idsToConsider, minBtnSpearNodes, spearfishingSources, fishingSources, fishingSpots, fishParameter]) => {
+      map(([idsToConsider, minBtnSpearNodes, spearfishingSources, fishingSources, fishingSpots, fishParameter, islandGatheringItems]) => {
         const results: GatheringNode[][] = idsToConsider.map(id => {
           const minBtnSpearMatches: GatheringNode[] = minBtnSpearNodes.filter(node => {
             return node.items.includes(id) && node.zoneId > 0;
@@ -121,7 +122,25 @@ export class GatheringNodesService {
             }
           });
 
-          return [...minBtnSpearHiddenMatches.filter(e => !spearFishingMatches.some(s => s.id === e.id)), ...fishingSpotMatches, ...spearFishingMatches]
+          const islandMatches: GatheringNode[] = [islandGatheringItems[id]]
+            .filter(item => !! item)
+            .map(item => {
+              return {
+                id: -id,
+                isIslandNode: true,
+                items: [id],
+                level: 1,
+                zoneId: 4043,
+                type: -10,
+                map: 772,
+
+                x: item.x,
+                y: item.y,
+                z: item.z
+              }
+            });
+
+          return [...minBtnSpearHiddenMatches.filter(e => !spearFishingMatches.some(s => s.id === e.id)), ...fishingSpotMatches, ...spearFishingMatches, ...islandMatches]
             .map(node => {
               return { ...node, matchingItemId: id };
             });
@@ -134,7 +153,7 @@ export class GatheringNodesService {
 
   private getBaitChain(baitId: number, fishingSpot: LazyFishingSpot, fishingSources: LazyData['fishingSources'], currentChain: FishingBait[] = []): FishingBait[] {
     // If it's a mooch
-    if (fishingSpot.fishes.includes(baitId) && fishingSources[baitId]) {
+    if (fishingSpot.fishes.includes(baitId) && fishingSources[baitId] && fishingSources[baitId].some(s => s.spot === fishingSpot.id)) {
       const fishingSource = fishingSources[baitId].find(s => s.spot === fishingSpot.id);
       return this.getBaitChain(fishingSource.bait, fishingSpot, fishingSources, [...currentChain, {
         id: baitId,

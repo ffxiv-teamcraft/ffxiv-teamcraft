@@ -30,6 +30,9 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
         const nodeType = nodes.length > 0 ? nodes[0].type : -1;
         let gatheringItem: { level: number, stars: number };
         switch (nodeType) {
+          case -10:
+            gatheringItem = { stars: 0, level: 1 };
+            break;
           case -5:
             gatheringItem = fishParameter[itemId];
             break;
@@ -40,7 +43,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
             gatheringItem = Object.values(gatheringItems).find(g => g.itemId === itemId);
             break;
         }
-        if (!gatheringItem) {
+        if (!gatheringItem || nodes.length === 0) {
           return null;
         }
         return {

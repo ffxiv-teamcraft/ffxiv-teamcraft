@@ -85,42 +85,42 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
       // For now we only have more details if there's an associated series
       item.hasMoreDetails = item.ItemSeries !== null;
 
-      if (item.ItemSeries) {
-        return this.lazyData.getRow('itemSeries', item.ItemSeries.ID).pipe(
-          switchMap(itemSeries => {
-            if (itemSeries.items.length > 20) {
-              return of(item);
-            }
-            return safeCombineLatest(itemSeries.items.map(itemId => {
-              return this.lazyData.getRow('itemSetBonuses', itemId, { bonuses: [], itemSeriesId: item.ItemSeries.ID }).pipe(
-                map(bonuses => {
-                  return {
-                    itemId,
-                    bonuses
-                  };
-                })
-              );
-            })).pipe(
-              map(bonuses => {
-                return {
-                  ...item,
-                  bonuses
-                };
-              })
-            );
-          })
-        );
-      }
+      // if (item.ItemSeries) {
+      //   return this.lazyData.getRow('itemSeries', item.ItemSeries.ID).pipe(
+      //     switchMap(itemSeries => {
+      //       if (itemSeries.items.length > 20) {
+      //         return of(item);
+      //       }
+      //       return safeCombineLatest(itemSeries.items.map(itemId => {
+      //         return this.lazyData.getRow('itemSetBonuses', itemId, { bonuses: [], itemSeriesId: item.ItemSeries.ID }).pipe(
+      //           map(bonuses => {
+      //             return {
+      //               itemId,
+      //               bonuses
+      //             };
+      //           })
+      //         );
+      //       })).pipe(
+      //         map(bonuses => {
+      //           return {
+      //             ...item,
+      //             bonuses
+      //           };
+      //         })
+      //       );
+      //     })
+      //   );
+      // }
       return of(item);
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public readonly garlandToolsItem$: Observable<ItemData> = this.itemId$.pipe(
     switchMap((itemId) => {
       return this.gt.getItem(itemId);
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public readonly data$: Observable<ListRow> = combineLatest([this.garlandToolsItem$, this.xivapiItem$, this.authFacade.logTracking$.pipe(startWith(null))]).pipe(
@@ -455,7 +455,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
         },
         {
           title: 'Gamer Escape',
-          url: `https://ffxiv.gamerescape.com/wiki/${xivapiItem.Name_en.toString().split(' ').join('_')}`,
+          url: `https://ffxiv.gamerescape.com/wiki/${encodeURIComponent(xivapiItem.Name_en.toString().split(' ').join('_'))}`,
           icon: './assets/icons/ge.png'
         }
       ];
@@ -723,6 +723,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     return {
       itemId: item.id,
       icon: '',
+      contentType: 'items',
       addCrafts: false,
       amount: 1
     };

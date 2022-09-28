@@ -5,10 +5,13 @@
          [class.done]="req.amount <= req.done"
          [class.with-border]="!last"
          class="item-row">
-      <app-item-icon [icon]="req.icon" [itemId]="req.id" [width]="32"></app-item-icon>
+      <app-item-icon [itemId]="req.id" [itemName]="req.id | itemName: req | i18n"
+                     [width]="32" *ngIf="!item.xivapiIcon"></app-item-icon>
+      <app-item-icon [icon]="req.xivapiIcon | xivapiIcon" [itemId]="null"
+                     [width]="32" *ngIf="req.xivapiIcon"></app-item-icon>
       <div fxLayout="column" fxLayoutGap="5px">
         <div>
-          {{req.id | itemName | i18n}}&nbsp;<i>x{{req.reqAmount * ((item.amount_needed - item.done / item.yield) | ceil)}}({{req.reqAmount}}
+          <app-i18n-name [content]="req.contentType || 'items'" [id]="req.id" [fallback]="req.name"></app-i18n-name>&nbsp;<i>x{{req.reqAmount * ((item.amount_needed - item.done / item.yield) | ceil)}}({{req.reqAmount}}
           x {{((item.amount_needed - item.done / item.yield) | ceil)}})</i>
         </div>
         <!-- Inventory informations -->
@@ -44,9 +47,15 @@
            [nzRenderItem]="requiredByRow">
     <ng-template #requiredByRow let-req>
       <nz-list-item [class.craftable]="req.canBeCrafted" [class.done]="req.amount <= req.done" class="item-row">
-        <nz-list-item-meta [nzAvatar]="itemIcon" [nzTitle]="req.id | itemName | i18n"></nz-list-item-meta>
+        <nz-list-item-meta [nzAvatar]="itemIcon" [nzTitle]="title"></nz-list-item-meta>
+        <ng-template #title>
+          <app-i18n-name [content]="req.contentType || 'items'" [id]="req.id" [fallback]="req.name"></app-i18n-name>
+        </ng-template>
         <ng-template #itemIcon>
-          <app-item-icon [icon]="req.icon" [itemId]="req.id" [width]="32"></app-item-icon>
+          <app-item-icon [itemId]="req.id" [itemName]="req.id | itemName: req | i18n"
+                         [width]="32" *ngIf="!req.xivapiIcon"></app-item-icon>
+          <app-item-icon [icon]="req.xivapiIcon | xivapiIcon" [itemId]="null"
+                         [width]="32" *ngIf="req.xivapiIcon"></app-item-icon>
         </ng-template>
       </nz-list-item>
     </ng-template>

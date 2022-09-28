@@ -1,5 +1,5 @@
 <div class="menu-buttons" fxLayout="row" fxLayoutGap="5px">
-  <app-marketboard-icon *ngIf="isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS)" [itemId]="itemId"
+  <app-marketboard-icon *ngIf="isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS) && itemId > 0" [itemId]="itemId"
                         [showHistory]="finalItem"></app-marketboard-icon>
   <ng-container *ngIf="isButton(itemRowTypes.COPY_NAME_NOT_FAVORITE)">
     <button [itemNameCopy]="itemId"
@@ -11,7 +11,7 @@
     </button>
   </ng-container>
 
-  <ng-container *ngIf="!overlay && isButton(itemRowTypes.ATTACH_ROTATION) && isCraft">
+  <ng-container *ngIf="!overlay && isButton(itemRowTypes.ATTACH_ROTATION) && isCraft && itemId > 0">
     <button (click)="attachRotation.emit()" *ngIf="!attachedRotation; else detachRotationRef"
             [nzTooltipTitle]="'LIST.ROTATION.Attach' | translate" nz-button
             nz-tooltip nzShape="circle"
@@ -27,7 +27,7 @@
     </ng-template>
   </ng-container>
 
-  <ng-container *ngIf="isButton(itemRowTypes.COMMENTS)">
+  <ng-container *ngIf="isButton(itemRowTypes.COMMENTS)  && !offlineList">
     <button (click)="openCommentsPopup.emit()" [nzTooltipTitle]="'COMMENTS.Title' | translate" nz-button nz-tooltip
             nzShape="circle"
             nzSize="small">
@@ -137,7 +137,7 @@
     </button>
   </ng-container>
 
-  <ng-container *ngIf="isButton(itemRowTypes.MARK_HQ)">
+  <ng-container *ngIf="isButton(itemRowTypes.MARK_HQ) && itemId > 0">
     <button (click)="requiredAsHQ = true; requiredAsHQChange.emit(requiredAsHQ)"
             *ngIf="permissionLevel >= 30 && requiredForFinalCraft === 0 && !requiredAsHQ"
             [nzTooltipTitle]="'Mark_HQ' | translate"
@@ -148,7 +148,7 @@
     </button>
 
     <button (click)="requiredAsHQ = false; requiredAsHQChange.emit(requiredAsHQ)"
-            *ngIf="(requiredForFinalCraft > 0 || requiredAsHQ) && permissionLevel >= 30"
+            *ngIf="(requiredForFinalCraft > 0 || requiredAsHQ) && permissionLevel >= 30 && itemId > 0"
             [nzTooltipTitle]="'Unmark_HQ' | translate" nz-button
             nz-tooltip
             nzShape="circle"
@@ -175,7 +175,7 @@
       <i nz-icon nzType="delete"></i>
     </button>
   </ng-container>
-  <ng-container *ngIf="showLogCompletionButton">
+  <ng-container *ngIf="showLogCompletionButton && itemId > 0">
     <button (click)="markAsDoneInLog.emit()" *ngIf="isButton(itemRowTypes.MARK_AS_DONE_IN_LOG)"
             [nzTooltipTitle]="'LOG_TRACKER.Mark_as_done_external' | translate"
             nz-button

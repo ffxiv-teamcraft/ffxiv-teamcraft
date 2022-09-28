@@ -53,7 +53,7 @@ export class ListPricingComponent extends TeamcraftComponent {
 
   display$ = this.listsFacade.selectedList$.pipe(
     switchMap((list) => this.layoutsFacade.getDisplay(list, false)),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   finalItemsRow$ = this.listsFacade.selectedList$.pipe(
@@ -64,6 +64,30 @@ export class ListPricingComponent extends TeamcraftComponent {
   crystals$ = this.listsFacade.selectedList$.pipe(
     map(list => ListController.getCrystals(list).sort((a, b) => a.id - b.id)),
     first()
+  );
+
+  spendingRows$ = combineLatest([
+    this.listsFacade.selectedList$,
+    this.pricingData$,
+    this.settings.watchSetting('pricing:expect-sell-all', false)
+  ]).pipe(
+    map(([list, data]) => {
+      return list.finalItems
+        .map(row => data.find(pRow => pRow.array === 'items' && pRow.id === row.id))
+        .filter(row => row && row.use);
+    })
+  );
+
+  earningRows$ = combineLatest([
+    this.listsFacade.selectedList$,
+    this.pricingData$,
+    this.settings.watchSetting('pricing:expect-sell-all', false)
+  ]).pipe(
+    map(([list, data]) => {
+      return list.finalItems
+        .map(row => data.find(pRow => pRow.array === 'finalItems' && pRow.id === row.id))
+        .filter(row => row && row.use);
+    })
   );
 
   spendingTotal$ = combineLatest([
@@ -187,6 +211,24 @@ export class ListPricingComponent extends TeamcraftComponent {
             }
             return `${total}\n ${itemName}: ${priceString}`;
           }, `${this.translate.instant('COMMON.Total')}: ${totalSpendings.toLocaleString()}gil\n`);
+      })
+    );
+  };
+
+  public getPanelAsCSV = (rows: FullPricingRow[]) => {
+    return safeCombineLatest(rows.filter(row => row.use).map(row => {
+      return this.i18n.getNameObservable('items', row.id).pipe(
+        map(itemName => ({ row, itemName }))
+      );
+    })).pipe(
+      map(rowsWithName => {
+        return rowsWithName
+          .reduce((acc, { row, itemName }) => {
+            const price = row.price;
+            const amount = row.amount;
+            const priceString = `${itemName},${amount.hq},${price.hq},${price.hqServer ? this.getWorldName(price.hqServer) : ''},${amount.nq},${price.nq},${price.nqServer ? this.getWorldName(price.nqServer) : ''}`;
+            return `${acc}\n${priceString}`;
+          }, `Item name,HQ Amount,HQ Price,HQ World,NQ Amount,NQ Price,NQ World`);
       })
     );
   };

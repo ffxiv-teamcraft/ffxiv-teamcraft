@@ -29,7 +29,7 @@ export class CommentsPopupComponent implements OnInit {
 
   notificationFactory: (comment: ResourceComment) => AbstractNotification;
 
-  userId$ = this.authFacade.userId$.pipe(shareReplay(1));
+  userId$ = this.authFacade.userId$.pipe(shareReplay({ bufferSize: 1, refCount: true }));
 
   constructor(private commentsService: CommentsService, private authFacade: AuthFacade,
               private notificationService: NotificationService) {

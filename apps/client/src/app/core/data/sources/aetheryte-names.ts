@@ -670,5 +670,11 @@ export const aetheryteNames = {
     "de": "Kama",
     "ja": "カーマ区",
     "fr": "Kama"
+  },
+  "199": {
+    "en": "The High Crucible of Al-Kimiya",
+    "de": "Tiegel von Al-Kimiya",
+    "ja": "アルキミヤ製薬堂",
+    "fr": "Creuset de l'Al-Kimiya"
   }
 };

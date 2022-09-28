@@ -1,5 +1,7 @@
 // Source: https://github.com/SapphireServer/Sapphire/blob/c5d63e2eccf483c0e785d373ab9ea9a504c734f4/src/common/Common.h#L188-L271
 export enum ContainerType {
+  IslandSanctuaryBag = -10,
+
   Bag0 = 0,
   Bag1 = 1,
   Bag2 = 2,

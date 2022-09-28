@@ -30,6 +30,7 @@ export class VenturesComponent extends ItemDetailsPopup<LazyRetainerTask[]> impl
       });
       return venture;
     });
+    super.ngOnInit();
   }
 
 }

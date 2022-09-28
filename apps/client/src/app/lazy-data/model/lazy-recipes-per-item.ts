@@ -1,10 +1,10 @@
 export interface LazyRecipesPerItem {
-  id:                     number;
+  id:                     number | string;
   job:                    number;
   lvl:                    number;
   yields:                 number;
   result:                 number;
-  stars:                  number;
+  stars?:                 number;
   qs:                     boolean;
   hq:                     boolean;
   durability:             number;
@@ -19,10 +19,12 @@ export interface LazyRecipesPerItem {
   controlReq:             number;
   craftsmanshipReq:       number;
   rlvl:                   number;
+  requiredQuality:        number;
   ingredients:            Ingredient[];
   expert:                 boolean;
   conditionsFlag:         number;
   masterbook?:            number;
+  isIslandRecipe?:        boolean;
 }
 
 export interface Ingredient {

@@ -483,7 +483,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   @Memoized()
   canEquipSlot(slotName: string, chestPieceId: number, legsPieceId: number): Observable<boolean> {
     return this.gearsetsFacade.canEquipSlot(slotName, chestPieceId, legsPieceId).pipe(
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 

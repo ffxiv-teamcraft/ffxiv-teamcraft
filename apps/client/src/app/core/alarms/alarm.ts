@@ -10,6 +10,10 @@ import { LazyAetheryte } from '../../lazy-data/model/lazy-aetheryte';
 
 export class Alarm extends DataModel {
 
+  icon?: string;
+
+  bnpcName?: number;
+
   @ForeignKey(TeamcraftUser)
   userId?: string;
 
@@ -36,6 +40,7 @@ export class Alarm extends DataModel {
 
   /**
    * Type of the node.
+   * -10 = island animal
    * 0,1 = MIN
    * 2,3 = BOT
    * 4 = FSH

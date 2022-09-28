@@ -50,7 +50,7 @@ export class ListManagerService {
               private authFacade: AuthFacade) {
 
     this.customItemsFacade.loadAll();
-    this.customItems$ = this.customItemsFacade.allCustomItems$.pipe(shareReplay(1));
+    this.customItems$ = this.customItemsFacade.allCustomItems$.pipe(shareReplay({ bufferSize: 1, refCount: true }));
 
   }
 
@@ -73,7 +73,16 @@ export class ListManagerService {
           first()
         );
     }
-    const itemSource$ = typeof itemId === 'number' ? this.lazyData.getRow('extracts', itemId) : this.customItems$.pipe(map(items => items.find(i => i.$key === itemId)));
+    let itemSource$: Observable<ListRow | CustomItem>;
+    if (typeof itemId === 'number') {
+      itemSource$ = this.lazyData.getRow('extracts', itemId);
+    } else if (itemId.startsWith('mjibuilding')) {
+      itemSource$ = this.lazyData.getRow('extracts', +itemId.replace('mjibuilding-', ''));
+    } else if (itemId.startsWith('mjilandmark')) {
+      itemSource$ = this.lazyData.getRow('extracts', +itemId.replace('mjilandmark-', ''));
+    } else {
+      itemSource$ = this.customItems$.pipe(map(items => items.find(i => i.$key === itemId)));
+    }
     return itemSource$.pipe(
       switchMap(itemSource => {
         return team$.pipe(

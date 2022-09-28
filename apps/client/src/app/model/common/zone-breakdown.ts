@@ -23,7 +23,18 @@ export class ZoneBreakdown {
           if (node.type === 4) {
             this.addToBreakdown(mapIds.find(m => m.id === node.map)?.zone, node.map, row, hideZoneDuplicates, coords);
           } else {
-            this.addToBreakdown(node.zoneId, node.map, row, hideZoneDuplicates, coords);
+            this.addToBreakdown(node.zoneId, node.map, {
+              ...row, sources: row.sources.map(source => {
+                if (source.type === DataType.GATHERED_BY) {
+                  const clone = JSON.parse(JSON.stringify(source));
+                  clone.data.nodes = source.data.nodes.filter(n => n.zoneId === node.zoneId);
+                  clone.data.type = clone.data.nodes[0].type;
+                  clone.data.level = clone.data.nodes[0].level;
+                  return clone;
+                }
+                return source;
+              })
+            }, hideZoneDuplicates, coords);
           }
         });
       } else if (getItemSource(row, DataType.TRADE_SOURCES).length > 0
@@ -109,7 +120,7 @@ export class ZoneBreakdown {
     if (existingRow === undefined) {
       this._rows.push({ zoneId: zoneId, items: [item], mapId: mapId });
     } else {
-      if (existingRow.items.indexOf(item) === -1) {
+      if (existingRow.items.findIndex(i => i.id === item.id) === -1) {
         existingRow.items.push(item);
       }
     }

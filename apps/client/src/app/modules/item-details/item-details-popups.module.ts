@@ -35,6 +35,8 @@ import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
 import { AchievementsComponent } from './achievements/achievements.component';
 import { PageLoaderModule } from '../page-loader/page-loader.module';
 import { SpearfishingSpeedModule } from '../spearfishing-speed-tooltip/spearfishing-speed.module';
+import { IslandAnimalComponent } from './island-animal/island-animal.component';
+import { IslandCropComponent } from './island-crop/island-crop.component';
 
 @NgModule({
   imports: [
@@ -79,7 +81,9 @@ import { SpearfishingSpeedModule } from '../spearfishing-speed-tooltip/spearfish
     GardeningComponent,
     MogstationComponent,
     QuestsComponent,
-    AchievementsComponent
+    AchievementsComponent,
+    IslandAnimalComponent,
+    IslandCropComponent
   ],
   exports: [
     GatheredByComponent,
@@ -97,7 +101,9 @@ import { SpearfishingSpeedModule } from '../spearfishing-speed-tooltip/spearfish
     GardeningComponent,
     MogstationComponent,
     QuestsComponent,
-    AchievementsComponent
+    AchievementsComponent,
+    IslandAnimalComponent,
+    IslandCropComponent
   ]
 })
 export class ItemDetailsPopupsModule {

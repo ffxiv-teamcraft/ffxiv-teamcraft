@@ -1,0 +1,7 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="seed-name" fxLayoutGap="5px">
+  <app-item-icon [itemId]="details.seed" width="32"></app-item-icon>
+  <app-i18n-name content="items" [id]="details.seed"></app-i18n-name>
+</div>
+
+<app-map *ngIf="gatheringDetails$ | async as gatheringDetails"
+         [mapId]="772" [markers]="[{x: gatheringDetails.nodes[0].x, y: gatheringDetails.nodes[0].y}]"></app-map>

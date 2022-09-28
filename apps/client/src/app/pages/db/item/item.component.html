@@ -303,7 +303,6 @@
                 </div>
               </div>
               <div *ngIf="row.trades" fxLayout="column" fxLayoutGap="5px">
-
                 <app-lazy-scroll [data]="row.trades" [rowTemplate]="rowTpl" rowSize="651" displayedRows="1"></app-lazy-scroll>
                 <ng-template #rowTpl let-source>
                   <nz-card [nzTitle]="source.shopName | i18n" class="trade-card">
@@ -493,6 +492,18 @@
                   </ng-template>
                   <app-hunting [item]="data" [details]="source.data"></app-hunting>
                 </nz-card>
+                <nz-card *ngSwitchCase="dataTypes.ISLAND_PASTURE" [nzTitle]="title" class="details-card" fxFlex="1 1 auto"
+                         nzBordered="false">
+                  <ng-template #title>
+                    <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <img class="gathering-icon" src="https://xivapi.com/i/063000/063949.png" alt="Island animals">
+                      <div>
+                        {{'Island_animal' | translate}}
+                      </div>
+                    </div>
+                  </ng-template>
+                  <app-island-animal [item]="data" [details]="source.data"></app-island-animal>
+                </nz-card>
                 <nz-card *ngSwitchCase="dataTypes.TRADE_SOURCES" [nzTitle]="title"
                          class="details-card" fxFlex="1 1 auto"
                          nzBordered="false">
@@ -566,7 +577,7 @@
                       <nz-card-meta [nzTitle]="recipeTitle">
                         <ng-template #recipeTitle>
                           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="getRecipe(recipeSource.id, gtData) | async as recipe">
-                            <ng-container *ngIf="recipe.job !== 0">
+                            <ng-container *ngIf="recipe.job > 0">
                               <div class="recipe-title" fxLayout="column">
                                 <div fxLayout="row" fxLayoutGap="5px">
                                   <div><span class="companion-svg job-svg" [innerHTML]="recipe.job | jobUnicode"></span></div>
@@ -595,6 +606,12 @@
                                   <b>{{'SIMULATOR.Quality' | translate}}</b>:
                                   <div>{{recipe.quality}}</div>
                                 </div>
+                              </div>
+                            </ng-container>
+                            <ng-container *ngIf="recipe.isIslandRecipe">
+                              <div class="recipe-title">
+                                <img src="./assets/icons/island.png" alt="Island Recipe" class="job-icon small">
+                                {{'ITEMS.Island_recipe' | translate}}
                               </div>
                             </ng-container>
                           </div>

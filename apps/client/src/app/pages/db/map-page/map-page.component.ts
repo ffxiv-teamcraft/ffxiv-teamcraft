@@ -97,7 +97,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
             })
           );
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.related$ = this.map$.pipe(
@@ -110,7 +110,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
         ]);
       }),
       map((res) => res.flat()),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     const filteredTypes$ = combineLatest([this.related$, this.enabledTypes$]).pipe(
@@ -184,7 +184,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
             return [
               {
                 title: 'Gamer Escape',
-                url: `https://ffxiv.gamerescape.com/wiki/${place.en.split(' ').join('_')}`,
+                url: `https://ffxiv.gamerescape.com/wiki/${encodeURIComponent(place.en.split(' ').join('_'))}`,
                 icon: './assets/icons/ge.png'
               }
             ];

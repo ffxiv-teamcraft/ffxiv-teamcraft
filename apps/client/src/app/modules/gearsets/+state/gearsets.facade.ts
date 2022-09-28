@@ -218,7 +218,7 @@ export class GearsetsFacade {
         return of([matchesBody, true]);
       }),
       map(([matchesBody, matchesLegs]) => matchesBody && matchesLegs),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 
@@ -419,13 +419,7 @@ export class GearsetsFacade {
     }
     const itemMeldingData = lazyItemMeldingData[itemId];
     const canBeHq = hqFlags[itemId] === 1;
-    let itemKeySuffix = '';
-    if (etroSlotName === 'fingerL' && gearset[etroSlotName] === gearset['fingerR']) {
-      itemKeySuffix = 'L';
-    } else if (etroSlotName === 'fingerR' && gearset[etroSlotName] === gearset['fingerL']) {
-      itemKeySuffix = 'R';
-    }
-    const materias = Object.values<number>(gearset.materia[`${itemId}${itemKeySuffix}`] || {});
+    const materias = Object.values<number>(gearset.materia[`${itemId}`] || gearset.materia[`${itemId}R`] || gearset.materia[`${itemId}L`] || {});
     while (materias.length < itemMeldingData.slots) {
       materias.push(0);
     }

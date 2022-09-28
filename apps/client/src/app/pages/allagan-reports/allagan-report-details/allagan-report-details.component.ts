@@ -179,6 +179,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     venture: [null, this.requiredIfSource([AllaganReportSource.VENTURE], 'ventures$')],
     fate: [null, this.requiredIfSource([AllaganReportSource.FATE], 'fates$')],
     mob: [null, this.requiredIfSource([AllaganReportSource.DROP], 'mobs$')],
+    islandAnimal: [false],
     voyageType: [null, this.requiredIfSource([AllaganReportSource.VOYAGE])],
     voyage: [null, this.requiredIfSource([AllaganReportSource.VOYAGE])],
     rarity: [null],
@@ -203,7 +204,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   fishingSpotPatch$ = new Subject<any>();
 
   fishingSpot$ = merge(this.form.valueChanges.pipe(pluck('spot')), this.fishingSpotPatch$).pipe(
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   isOceanFishing$ = this.fishingSpot$.pipe(
@@ -236,7 +237,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     map((spot) => {
       return _.uniq(weatherIndex[mapIds.find(m => m.id === spot.mapId).weatherRate].map(row => +row.weatherId)) as number[];
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public loadingGubal = false;
@@ -276,7 +277,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
         );
     }),
     tap(() => this.loadingGubal = false),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public itemInput$: Subject<string> = new Subject<string>();

@@ -22,6 +22,7 @@ export class OnlyForOneMaterial extends InventoryOptimizer {
         try {
           const recipesWithThisItem = recipesIngredientLookup.searchIndex[item.itemId] || [];
           if (recipesWithThisItem.length === 1
+            && recipesIngredientLookup.recipes[recipesWithThisItem[0]].ingredients.find(i => i.id === item.itemId)?.amount <= item.quantity
             && recipesIngredientLookup.searchIndex[recipesIngredientLookup.recipes[recipesWithThisItem[0]].itemId]) {
             return this.i18n.getNameObservable('items', recipesIngredientLookup.recipes[recipesWithThisItem[0]].itemId).pipe(
               map(targetItem => {

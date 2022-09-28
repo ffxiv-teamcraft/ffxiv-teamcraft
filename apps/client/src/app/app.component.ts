@@ -85,12 +85,6 @@ export class AppComponent implements OnInit {
 
   version = environment.version;
 
-  public adsPlacementBreakpoints = {
-    475: null,
-    1350: '601845b9cf90756a43f6c4f8',
-    default: '601845ad7730eb16d35ec25a'
-  };
-
   public titleBreakpoints = {
     785: `TC\nv${this.version}`,
     default: `v${this.version}`
@@ -160,7 +154,7 @@ export class AppComponent implements OnInit {
 
   public showAd$ = this.authFacade.user$.pipe(
     map(user => {
-      return !this.platformService.isDesktop() && !(user.admin || user.moderator || user.patron);
+      return !(user.admin || user.moderator || user.patron);
     })
   );
 
@@ -174,6 +168,8 @@ export class AppComponent implements OnInit {
   public vmAdRef: ElementRef;
 
   public allaganReportsQueueCount$: Observable<number> = of(0);
+
+  public allaganReportsUnappliedCount$: Observable<number> = of(0);
 
   private reloadTime$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
 
@@ -253,6 +249,7 @@ export class AppComponent implements OnInit {
         this.allaganReportsQueueCount$ = this.allaganReportsService.getQueueStatus().pipe(
           map(status => status.length)
         );
+        this.allaganReportsUnappliedCount$ = this.allaganReportsService.getUnappliedCount();
       }, 2000);
     });
 
@@ -264,7 +261,7 @@ export class AppComponent implements OnInit {
 
     this.applyTheme(this.settings.theme);
 
-    this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/font_931253_8rqcxqh08v6.js' });
+    this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/c/font_931253_ylxiqmgyxl.js' });
 
     this.time$ = this.reloadTime$.pipe(
       switchMap(() => {
@@ -601,7 +598,7 @@ export class AppComponent implements OnInit {
       this.loggedIn$ = this.authFacade.loggedIn$;
 
       this.character$ = this.authFacade.mainCharacter$.pipe(
-        shareReplay(1),
+        shareReplay({ bufferSize: 1, refCount: true }),
         startWith({ loading: true })
       );
 

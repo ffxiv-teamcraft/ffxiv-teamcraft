@@ -77,15 +77,21 @@ export class AlarmBellService {
       }),
       first(),
       switchMap(alarm => {
+        let label$ = this.i18n.getNameObservable('items', alarm.itemId).pipe(
+          first()
+        );
+        if (alarm.type === -10) {
+          label$ = this.i18n.getNameObservable('mobs', alarm.bnpcName).pipe(
+            first()
+          );
+        }
         return combineLatest([
           of(alarm),
-          this.lazyData.getRow('itemIcons', alarm.itemId),
-          this.i18n.getNameObservable('items', alarm.itemId).pipe(
+          alarm.icon ? of(alarm.icon) : this.lazyData.getRow('itemIcons', alarm.itemId),
+          label$,
+          alarm.aetheryte ? this.i18n.getNameObservable('places', alarm.aetheryte.nameid).pipe(
             first()
-          ),
-          this.i18n.getNameObservable('places', alarm.aetheryte.nameid).pipe(
-            first()
-          ),
+          ) : of(''),
           this.i18n.getNameObservable('places', alarm.zoneId || alarm.mapId).pipe(
             first()
           )
@@ -93,7 +99,7 @@ export class AlarmBellService {
       })
     ).subscribe(([alarm, icon, itemName, aetheryteName, placeName]) => {
       const notificationIcon = `https://xivapi.com${icon}`;
-      const notificationTitle = alarm.itemId ? itemName : alarm.name;
+      const notificationTitle = (alarm.itemId || alarm.bnpcName) ? itemName : alarm.name;
       const notificationBody = `${placeName} - `
         + `${aetheryteName ? aetheryteName : ''}`;
       if (this.platform.isDesktop()) {

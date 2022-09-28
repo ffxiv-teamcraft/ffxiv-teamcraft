@@ -1,7 +1,7 @@
 {
   "Mogstation": "Mogstation",
   "Quests": "Квесты",
-  "Facebook_notice": "Facebook login is no longer available. You can add a password to your account using the \"reset password\" system, or by asking Miu on Discord.",
+  "Facebook_notice": "Facebook логин больше не доступен, вы можете добавить пароль к своей учетной записи, используя систему \"сброса пароля\" или попросив Miu в дискорде.",
   "Pick_a_list": "Выбрать список",
   "Pick_a_user": "Выбрать пользователя",
   "Pick_a_fc": "Выбрать FC",
@@ -15,15 +15,15 @@
   "See_on_map": "Посмотреть на карте",
   "No_known_coordinates": "Нет известных координат",
   "Edit_amount": "Изменить количество",
-  "List_fork_in_progress": "Copying the list to your account…",
-  "Network_error_logged_out": "A network error has been detected, and you have been logged out. If this issue persists, please contact Miu on the Discord server.",
+  "List_fork_in_progress": "Копирование списка на ваш аккаунт…",
+  "Network_error_logged_out": "Обнаружена сетевая ошибка, вы были разлогинены. Если эта проблема повторится, пожалуйста, свяжитесь с Miu в дискорд сервере.",
   "Hide_zone_duplicates": "Скрыть дубликаты зон (предметы из нескольких зон отображаются только один раз)",
   "Patch_notes": "{{version}} изменения",
-  "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on Patreon",
+  "Patch_notes_footer": "Вам нравятся новые возможности? Рассмотрите возможность поддержки проекта на patreon",
   "Selection": "Выбор",
   "Change_character": "Персонаж",
-  "Check_guides": "Check our guides",
-  "Guides_links": "Teamcraft Guides",
+  "Check_guides": "Посмотрите наши руководства",
+  "Guides_links": "Руоководства Teamcraft",
   "Db_ban": "У вас нет прав на публикацию комментариев в базе данных из-за вашей предыдущей активности. Если вы хотите обсудить этот бан, напишите Miu#1568 в Discord.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Аккаунт уже существует",
@@ -45,19 +45,20 @@
     "Add_to_list": "Добавить предмет в список",
     "Apply_filters": "Применить фильтры",
     "Reset_filters": "Сбросить фильтры",
-    "Too_many_results_warning": "This search returned over 100 items. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
+    "Too_many_results_warning": "Мы нашли более 100 совпадений. Поскольку наш источник данных ограничен 100 результатами, вам могут потребоваться дополнительные фильтры чтобы найти конкретный предмет.",
     "Share_url": "Скопировать ссылку в буфер обмена",
     "Share_url_copied": "Ссылка скопирована в буфер обмена",
     "Only_craftable": "Только рецепты",
     "Want_filters": "Хотите больше фильтров?",
-    "Open_search": "Вместо этого откройте страницу поиска"
+    "Open_search": "Вместо этого откройте страницу поиска",
+    "Island_recipe": "Island Sanctuary recipe"
   },
   "Use_as_default_character": "Использовать персонажа по умолчанию",
   "Download_desktop_app": "Скачайте десктопное приложение",
   "Find_us_on_twitter": "Мы в Twitter",
-  "Join_discord_server": "Join our Discord server",
-  "See_code_github": "See the code on Github",
-  "Support_on_patreon": "Support the project on Patreon",
+  "Join_discord_server": "Присоединиться к нашему Discord серверу",
+  "See_code_github": "Просмотреть код на github",
+  "Support_on_patreon": "Поддержать проект на Патреоне",
   "Access_patreon_page": "Перейти на нашу страницу Patreon",
   "Like_the_tool": "Вам нравится этот инструмент?",
   "Default": "По умолчанию",
@@ -85,7 +86,7 @@
     "Workshops": "Мастерские",
     "Add_one_list": "Добавить список",
     "Add_workshop": "Добавить мастерскую",
-    "Delete_message": "Deleting a workshop won't delete the lists in it. They will only be brought back to workshop-less lists",
+    "Delete_message": "Удаление мастерской не удалит в ней списки, они будут перемещены в списки без мастерских",
     "List_selection_title": "Выберите списки для добавлению в мастерскую {{workshopName}}",
     "Name_dialog": "Название мастерской",
     "Created_by": "Создано {{name}}",
@@ -129,9 +130,9 @@
     "Tags_filter_reset": "Сбросить фильтр",
     "Exclude_filter_placeholder": "Исключить использование тегов",
     "Exclude_filter_reset": "Сбросить фильтр исключений",
-    "Name_filter_placeholder": "Filter using name (5 characters minimum)",
-    "No_lists_matching": "No lists matching your filters. Make sure you have at least one tag selected and/or a name with a length of at least 5 characters",
-    "Search": "Search"
+    "Name_filter_placeholder": "Отфильтроваь используя имя (не менее 5 символов)",
+    "No_lists_matching": "Ни один список не совпал с фильтром. Убедись в том что хотя бы один тег выбран и/или в названии не менее 5 символов",
+    "Search": "Поиск"
   },
   "COMMON": {
     "Length": "Длина",
@@ -148,7 +149,7 @@
     "Success": "Успешно",
     "Copy_to_clipboard": "Копировать в буфер обмена",
     "Language": "Язык",
-    "Opened_in_desktop": "This page has been opened inside your desktop app. You can now close it.",
+    "Opened_in_desktop": "Эта страница была открыта в приложении, теперь вы можете её закрыть.",
     "Opened_in_desktop_setting": "Вы можете отключить это поведение в настройках",
     "Opened_in_desktop_button": "Or by clicking this button",
     "Open_in_desktop": "Открыть в приложении",
@@ -183,19 +184,28 @@
     "Never": "Никогда",
     "Festival": "Только во время фестиваля",
     "Back": "Назад",
-    "Support_us_remove_ads": "Support us on Patreon to remove ads",
+    "Support_us_remove_ads": "Поддержите нас на patreon, чтобы убрать рекламу",
     "Support_us": "Поддержите нас",
     "Show_more": "Показать еще",
     "Item": "Предмет",
     "Venture": "Venture",
     "Monster": "Монстр",
-    "Airship": "Airship",
+    "Airship": "Дирижабль",
     "Submarine": "Субмарина",
-    "Voyage": "Voyage",
+    "Voyage": "Экспедиция",
     "Instance": "Инстанс",
     "Fate": "Fate",
-    "Reload": "Reload",
-    "Click_to_apply": "Click to apply"
+    "Reload": "Перезагрузка",
+    "Click_to_apply": "Щелкните, чтобы применить",
+    "DAYS": {
+      "Monday": "Monday",
+      "Tuesday": "Tuesday",
+      "Wednesday": "Wednesday",
+      "Thursday": "Thursday",
+      "Friday": "Friday",
+      "Saturday": "Saturday",
+      "Sunday": "Sunday"
+    }
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -216,7 +226,7 @@
     "Macro_copied": "Макрос скопирован в буфер обмена",
     "Open_overlay": "Включить оверлей",
     "Open_alarms_overlay": "Открыть оверлей оповещений",
-    "More_available": "and {{amount}} more…",
+    "More_available": "добавить ещё {{amount}}…",
     "Node_content": "Содержимое ноды",
     "Toggle_collapse": "Свернуть группы оповещений",
     "Add_alarms_to_group": "Добавить оповещения к этой группе",
@@ -303,6 +313,7 @@
   "Reset_progression": "Сбросить прогресс",
   "Gardening": "Садоводство",
   "Hunting": "Охота",
+  "Island_animal": "Island animal",
   "Desynth": "Переработка",
   "Vendors": "Продавцы",
   "Open": "Открыть",
@@ -757,6 +768,9 @@
     "Inventory_cleanup_description": "Здесь предметы, которые находятся в вашем инвентаре и не используются для списка",
     "Consider_requirements": "Рассмотреть требования",
     "Ignore_requirements": "Игнорировать требования",
+    "SOURCES": {
+      "Gatherable": "Can be gathered, click to see more details"
+    },
     "LAYOUT_DIALOG": {
       "Title": "Макет",
       "Add_panel": "Добавить панель",
@@ -1185,7 +1199,8 @@
       "MISSING_LEVEL_REQUIREMENT": "You don't have the required level to craft this item.",
       "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
       "NO_INNER_QUIET": "Попытка использования действия, связанного с Inner Quiet без включённого Inner Quiet",
-      "MISSING_STATS_REQUIREMENT": "У вас нет минимальных параметров, необходимых для этого крафта"
+      "MISSING_STATS_REQUIREMENT": "У вас нет минимальных параметров, необходимых для этого крафта",
+      "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Почти все ротации должны включать Inner Quiet, если целью будет HQ предмет. Это обеспечивает действительно хороший рост качества и позволяет действия, такие как Byregot's Blessing.",
@@ -1214,6 +1229,7 @@
     "Content_copied": "Content copied to your clipboard",
     "Cheaper_at_vendor": "Cheaper if you buy from NPC",
     "Copy_panel_as_text": "Скопировать эту панель как текст",
+    "Copy_panel_as_csv": "Copy this panel as CSV",
     "Ignore_completed_items": "Исключить завершенные предметы",
     "Price_to_craft": "Price to craft",
     "Price_from_vendor": "Price from vendor",
@@ -1622,6 +1638,7 @@
         "Last_report": "Последний отчет",
         "Fish": "Рыба",
         "Size": "Размер",
+        "Large": "Large",
         "Time_since_thrown": "Время с момента броска",
         "ERRORS": {
           "No_bait": "No bait detected. Switch bait once to fix.",
@@ -1638,7 +1655,8 @@
       "Fish_per_tug": "Рыба за tug",
       "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Включать пропущенные",
-      "Miss": "Пропущено"
+      "Miss": "Пропущено",
+      "Position_unknown": "Unknown location"
     },
     "NODE": {
       "Items": "Предметы",
@@ -1755,7 +1773,8 @@
       "No_comments": "Нет комментариев",
       "Post": "Разместить",
       "Editor_tip": "Введите <тип страницы>:\"<Название Контента>\" чтоб создать ссылку на другую страницу. Например: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". Поддерживаемые типы страниц: item (предмет), map (карта), mob (монстр), achievement (достижение), leve (ливквест), npc, instance (инстанс), quest (квест), trait (пассивный эффект), action (действие), status (эффект)",
-      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments."
+      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments.",
+      "Deleted_comment": "This comment has been deleted"
     },
     "PATCH": {
       "Open_patch_page": "Нажмите здесь чтобы открыть полный список изменений патча",
@@ -1848,7 +1867,8 @@
     "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard information. If you want to complain about this, please complain to Square Enix, as there is nothing we can do to make this work without them.",
     "Loading_data": "Загрузка данных о сделках для выбранной валюты",
     "Loading_universalis": "Получение цен на рынке от Universalis для {{amount}} позиций",
-    "X_sold_last_week": "{{amount}} продано на прошлой неделе"
+    "X_sold_last_week": "{{amount}} продано на прошлой неделе",
+    "No_trades": "This currency cannot be traded with something that can be sold on marketboard"
   },
   "FOOD_PICKER": {
     "Title": "Подборщик еды",
@@ -1917,7 +1937,8 @@
     "Leveling": "Leveling",
     "Currencies": "Валюты",
     "Add_to_favorites": "Добавить в Избранное",
-    "Remove_from_favorites": "Убрать из Избранного"
+    "Remove_from_favorites": "Убрать из Избранного",
+    "Island_Sanctuary": "Island Sanctuary"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Захват пакетов доступен",
@@ -1975,7 +1996,8 @@
       "Other": "Другой инвентарь",
       "Armory": "Armory",
       "Current_Gear": "Текущее снаряжение",
-      "RetainerMarket": "На продаже у ретейнеров"
+      "RetainerMarket": "На продаже у ретейнеров",
+      "IslandSanctuaryBag": "Island Sanctuary Bag"
     },
     "CONTENT_ID_POPUP": {
       "Description": "Для поддержки отслеживания нескольких персонажей и других удобных функций, Teamcraft нужно знать, на каком персонаже вы играете, или по крайней мере какой персонаж должен быть привязан к текущей игровой сессии.",
@@ -2073,6 +2095,8 @@
     "Total_cost": "Общая стоимость (обмен, gil и т.д.)",
     "Materia": "Материя",
     "Amount_needed": "Количество",
+    "Slots_used": "Slots",
+    "Slots_used_explain": "# of slots this materia is used for",
     "Cost": "Стоимость",
     "Modal_editor": "Материи для {{itemName}}",
     "Unavailable_slot": "Слот не доступен",
@@ -2294,7 +2318,8 @@
         "Check": "Запустить проверку целостности"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "Все привязанные персонажи действительны"
+        "All_characters_valid": "Все привязанные персонажи действительны",
+        "All_lists_ok": "All lists are working properly"
       }
     }
   },
@@ -2807,7 +2832,7 @@
     "Gubal_analysis_suggestion": "Предложение, основанное на анализе данных",
     "Cannot_report_for_this_spot": "Вы не можете сообщить подробности для этого места по этой рыбе, потому что они уже существует",
     "Please_suggest_edit_instead": "Пожалуйста, предложите изменить текущие вместо этого",
-    "Add_data_sources": "Добавить источник данных для этого предмета",
+    "Add_data_sources": "Add/modify data sources for this item",
     "Not_applied_yet": "Не применено",
     "Not_applied_yet_explain": "Этот источник будет добавлен в список и систему баз данных во время следующего обновления",
     "Pending_changes_count": "{{amount}} ожидающих изменений для проверки",
@@ -2868,7 +2893,8 @@
       "SPEARFISHING": "SPEARFISHING",
       "FATE": "FATE",
       "MOGSTATION": "MOGSTATION",
-      "DEPRECATED": "DEPRECATED"
+      "DEPRECATED": "DEPRECATED",
+      "ISLAND_ANIMAL": "ISLAND_ANIMAL"
     },
     "STATUS": {
       "PROPOSAL": "PROPOSAL",
@@ -2910,5 +2936,84 @@
     "Explain_cost_to_craft": "Added cost of all materials excluding crystals to craft one item using only materials from marketboard.",
     "Empty_list": "Empty list, click the + button on an item to add it here",
     "Add_to_list": "Add these items to a list"
+  },
+  "MACHINA_ERRORS": {
+    "Default": "Machina Wrapper error",
+    "Wrapper_failed_to_start": "Machina Wrapper failed to start",
+    "DESCRIPTION": {
+      "Wrapper_failed_to_start": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.<br><br> Retrying in {{retryDelay}}s"
+    }
+  },
+  "ISLAND_SANCTUARY": {
+    "Animal_source": "You need to gather this item from one of the following animals in your Island Sanctuary pasture",
+    "Island_level": "Island level",
+    "Landmarks": "Landmarks",
+    "Workshop_rank": "Workshop rank",
+    "WORKSHOP": {
+      "Title": "Workshop",
+      "Subtitle": "Track and manage your workshop",
+      "Out_of_sync": "State has not been updated since the last reset",
+      "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary to update the state. If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button, or import from database.",
+      "Export_state": "Export supply/demand state",
+      "State_copied": "State copied to your clipboard",
+      "Import_state": "Import state",
+      "Import_online_state": "Import state from database",
+      "Online_state_missing": "Nobody updated their state yet, this button will enable itself once it's done",
+      "State_imported": "State properly imported",
+      "Product": "Product",
+      "Popularity": "Popularity",
+      "Supply": "Supply",
+      "Demand_shift": "Demand shift",
+      "Predicted_popularity": "Predicted demand",
+      "Edit_mode": "Edit mode",
+      "Best_items_to_craft": "Best items to craft",
+      "Total_value": "Total value",
+      "Run_optimizer": "Find best planning for the rest of the week",
+      "No_schedule_found": "No planning found",
+      "No_schedule_found_explain": "Make sure the reset is in more than 4 hours",
+      "Possible_peak_days": "Possible peaks",
+      "Peak_days_explain": "The days on which it's more likely that this item will peak in value. Bold = strong peak.",
+      "Items_to_prepare": "Best items to prepare for tomorrow",
+      "Rest": "Rest day",
+      "Unknown_day_planning": "Unknown planning for now (will be known later this week)",
+      "Set_rest_day": "Set as second rest day",
+      "Import_explain": "You can update your supply/demand table by opening it ingame with the desktop app running and packet capture enabled.",
+      "Amount_of_workshops": "# of workshops :",
+      "Create_list": "Create a list for this planning",
+      "Exclude_pasture_materials": "Exclude pasture materials",
+      "Groove_tooltip": "Groove at the end of the day",
+      "POPULARITY": {
+        "Very_high": "Very high",
+        "High": "High",
+        "Average": "Average",
+        "Low": "Low"
+      },
+      "SUPPLY": {
+        "Non_existant": "Non existant",
+        "Insufficient": "Insufficient",
+        "Sufficient": "Sufficient",
+        "Surplus": "Surplus",
+        "Overflowing": "Overflowing"
+      },
+      "DEMAND_SHIFT": {
+        "Skyrocketing": "Skyrocketing",
+        "Increasing": "Increasing",
+        "None": "None",
+        "Decreasing": "Decreasing",
+        "Plummeting": "Plummeting"
+      }
+    },
+    "ANIMALS": {
+      "Title": "Animals",
+      "Subtitle": "A comprehensive list of animals, where and when to find them, with alarms integration",
+      "Name": "Name",
+      "Size": "Size",
+      "Coords": "Position",
+      "Spawn_time": "Spawn time",
+      "Weather": "Weather",
+      "Alarm": "Alarm",
+      "Main_drop": "Main drop",
+      "Rare_drop": "Rare drop"
+    }
   }
 }

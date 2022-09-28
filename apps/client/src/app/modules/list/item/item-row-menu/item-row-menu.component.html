@@ -9,14 +9,14 @@
       </li>
     </ng-container>
 
-    <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.MARKET_BOARD_INFORMATIONS)">
+    <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.MARKET_BOARD_INFORMATIONS) && buttonsComponentRef.itemId > 0">
       <li (click)="buttonsComponentRef.openMarketboardDialog.emit()" nz-menu-item>
         {{'MARKETBOARD.Title' | translate}}
       </li>
     </ng-container>
 
     <ng-container
-      *ngIf="!isButton(buttonsComponentRef.itemRowTypes.ATTACH_ROTATION) && buttonsComponentRef.isCraft">
+      *ngIf="!isButton(buttonsComponentRef.itemRowTypes.ATTACH_ROTATION) && buttonsComponentRef.isCraft && buttonsComponentRef.itemId > 0">
       <li (click)="buttonsComponentRef.attachRotation.emit()" *ngIf="!buttonsComponentRef.attachedRotation; else detachRotationRef" nz-menu-item>
         {{'LIST.ROTATION.Attach' | translate}}
       </li>
@@ -28,7 +28,7 @@
     </ng-container>
 
 
-    <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.COMMENTS)">
+    <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.COMMENTS) && !buttonsComponentRef.offlineList">
       <li (click)="buttonsComponentRef.openCommentsPopup.emit()"
           nz-menu-item>
         <nz-badge [nzDot]="buttonsComponentRef.commentBadge">
@@ -99,7 +99,7 @@
         {{'Edit_amount' | translate}}
       </li>
     </ng-container>
-    <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.MARK_HQ)">
+    <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.MARK_HQ) && buttonsComponentRef.itemId > 0">
       <li (click)="buttonsComponentRef.requiredAsHQ = true; buttonsComponentRef.requiredAsHQChange.emit(buttonsComponentRef.requiredAsHQ)"
           *ngIf=" buttonsComponentRef.permissionLevel >= 30 && buttonsComponentRef.requiredForFinalCraft === 0 && !buttonsComponentRef.requiredAsHQ"
           nz-menu-item>
@@ -133,7 +133,7 @@
       {{(buttonsComponentRef.ignoreRequirements?'LIST_DETAILS.Consider_requirements':'LIST_DETAILS.Ignore_requirements') | translate}}
     </li>
 
-    <ng-container *ngIf="buttonsComponentRef.showLogCompletionButton">
+    <ng-container *ngIf="buttonsComponentRef.showLogCompletionButton && buttonsComponentRef.itemId > 0">
       <li (click)="buttonsComponentRef.markAsDoneInLog.emit()" *ngIf="!isButton(buttonsComponentRef.itemRowTypes.MARK_AS_DONE_IN_LOG)" nz-menu-item>
         {{'LOG_TRACKER.Mark_as_done_external' | translate}}
       </li>

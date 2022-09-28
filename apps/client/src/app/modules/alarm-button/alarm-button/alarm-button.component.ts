@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { Alarm } from '../../../../core/alarms/alarm';
-import { AlarmDisplay } from '../../../../core/alarms/alarm-display';
-import { AlarmGroup } from '../../../../core/alarms/alarm-group';
-import { MapComponent } from '../../../map/map/map.component';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { first } from 'rxjs/operators';
+import { Alarm } from '../../../core/alarms/alarm';
+import { AlarmDisplay } from '../../../core/alarms/alarm-display';
+import { AlarmGroup } from '../../../core/alarms/alarm-group';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { MapComponent } from '../../map/map/map.component';
 
 @Component({
   selector: 'app-alarm-button',
@@ -29,6 +29,12 @@ export class AlarmButtonComponent {
 
   @Input()
   showPosition = true;
+
+  @Input()
+  tooltipText?: string;
+
+  @Input()
+  useTimerTooltip: boolean;
 
   constructor(private dialog: NzModalService, private i18n: I18nToolsService) {
   }

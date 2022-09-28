@@ -133,7 +133,14 @@ export class MapService {
         map(mapData => {
           // We only want big aetherytes.
           const bigAetherytes = mapData.aetherytes.filter(ae => ae.type === 0);
-          // If theres no start point, check from each aetheryte to fidn the shortest path
+          if (mapData.aetherytes.length === 0) {
+            return this.getShortestPath({
+              x: 12,
+              y: 28,
+              name: this.i18n.getNameObservable('places', 2566)
+            }, points, []);
+          }
+          // If theres no start point, check from each aetheryte to find the shortest path
           if (startPoint === undefined) {
             const paths = bigAetherytes.map(aetheryte => this.getShortestPath({
               x: aetheryte.x,

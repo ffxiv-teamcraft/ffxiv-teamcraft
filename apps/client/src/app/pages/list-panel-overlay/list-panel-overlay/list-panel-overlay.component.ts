@@ -25,7 +25,7 @@ export class ListPanelOverlayComponent {
       ]);
     }),
     map(([display, finalRow]) => ([...display.rows, finalRow])),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public selectedPanel$ = new ReplaySubject<string>();

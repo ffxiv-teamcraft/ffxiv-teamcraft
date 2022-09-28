@@ -16,7 +16,7 @@
           nz-button nz-tooltip nzType="primary">
     <i nz-icon nzType="share-alt"></i>
   </button>
-  <button nz-button *ngIf="gearset.authorId === userId && gearset.fromSync" nzType="primary"
+  <button nz-button *ngIf="gearset.authorId === userId" nzType="primary"
           nzShape="circle" nz-tooltip [nzTooltipTitle]="'GEARSETS.Clone_gearset_from_sync' | translate"
           (nzOnConfirm)="cloneGearset(gearset)">
     <i nz-icon nzType="copy" nzTheme="outline"></i>

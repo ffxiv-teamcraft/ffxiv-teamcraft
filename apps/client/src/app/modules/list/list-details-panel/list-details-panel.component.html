@@ -70,7 +70,7 @@
             </div>
           </div>
           <div *ngSwitchCase="LayoutRowDisplayMode.NPC_BREAKDOWN">
-            <div *ngFor="let row of npcBreakdown?.rows; trackBy: trackByNpc">
+            <div *ngFor="let row of npcBreakdown?.rows$ | async; trackBy: trackByNpc">
               <div *ngIf="row.items.length > 0">
                 <ng-template #npcTitle>
                   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">

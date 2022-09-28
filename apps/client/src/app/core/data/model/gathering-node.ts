@@ -19,6 +19,7 @@ export interface GatheringNode {
   y?: number;
   z?: number;
   folklore?: number;
+  isIslandNode?: boolean;
   /**
    * Fishing stuff
    */

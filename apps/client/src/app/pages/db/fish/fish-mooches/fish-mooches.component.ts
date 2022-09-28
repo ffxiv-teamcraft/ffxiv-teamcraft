@@ -15,7 +15,7 @@ export class FishMoochesComponent {
   public readonly mooches$ = this.fishCtx.moochesByFish$.pipe(
     map((res) => res.data ?? []),
     startWith([]),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   constructor(public readonly settings: SettingsService, public readonly fishCtx: FishContextService) {

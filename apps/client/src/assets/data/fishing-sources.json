@@ -847,13 +847,6 @@
       "snagging": false
     },
     {
-      "spot": 59,
-      "hookset": 1,
-      "tug": 0,
-      "bait": 4869,
-      "snagging": false
-    },
-    {
       "spot": 60,
       "hookset": 1,
       "tug": 0,
@@ -872,6 +865,13 @@
       "hookset": 1,
       "tug": 0,
       "bait": 4869,
+      "snagging": false
+    },
+    {
+      "spot": 59,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 4874,
       "snagging": false
     }
   ],
@@ -2285,72 +2285,72 @@
   ],
   "4935": [
     {
-      "spot": 2,
-      "hookset": 1,
-      "tug": 0,
-      "bait": 2623,
-      "snagging": false
-    },
-    {
-      "spot": 3,
-      "hookset": 1,
-      "tug": 0,
-      "bait": 2623,
-      "snagging": false
-    },
-    {
-      "spot": 8,
-      "hookset": 1,
-      "tug": 0,
-      "bait": 2623,
-      "snagging": false
-    },
-    {
-      "spot": 18,
-      "hookset": 1,
-      "tug": 0,
-      "bait": 2623,
-      "snagging": false
-    },
-    {
       "spot": 19,
-      "hookset": 1,
-      "tug": 0,
-      "bait": 2623,
-      "snagging": false
-    },
-    {
-      "spot": 72,
-      "hookset": 1,
-      "tug": 0,
-      "bait": 2623,
-      "snagging": false
-    },
-    {
-      "spot": 75,
-      "hookset": 1,
-      "tug": 0,
+      "hookset": 2,
+      "tug": 2,
       "bait": 2623,
       "snagging": false
     },
     {
       "spot": 76,
-      "hookset": 1,
-      "tug": 0,
+      "hookset": 2,
+      "tug": 2,
       "bait": 2623,
       "snagging": false
     },
     {
       "spot": 96,
-      "hookset": 1,
-      "tug": 0,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 2623,
+      "snagging": false
+    },
+    {
+      "spot": 2,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 2623,
+      "snagging": false
+    },
+    {
+      "spot": 3,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 2623,
+      "snagging": false
+    },
+    {
+      "spot": 8,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 2623,
+      "snagging": false
+    },
+    {
+      "spot": 18,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 2623,
+      "snagging": false
+    },
+    {
+      "spot": 72,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 2623,
+      "snagging": false
+    },
+    {
+      "spot": 75,
+      "hookset": 2,
+      "tug": 2,
       "bait": 2623,
       "snagging": false
     },
     {
       "spot": 106,
-      "hookset": 1,
-      "tug": 0,
+      "hookset": 2,
+      "tug": 2,
       "bait": 2623,
       "snagging": false
     }
@@ -2492,13 +2492,6 @@
       "snagging": false
     },
     {
-      "spot": 28,
-      "hookset": 2,
-      "tug": 2,
-      "bait": 2597,
-      "snagging": false
-    },
-    {
       "spot": 30,
       "hookset": 2,
       "tug": 2,
@@ -2552,6 +2545,13 @@
       "hookset": 2,
       "tug": 2,
       "bait": 2597,
+      "snagging": false
+    },
+    {
+      "spot": 28,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 12704,
       "snagging": false
     }
   ],
@@ -5307,9 +5307,6 @@
       "hookset": 1,
       "tug": 0,
       "bait": 4978,
-      "weathers": [
-        4
-      ],
       "snagging": false
     },
     {
@@ -6883,7 +6880,7 @@
   ],
   "7927": [
     {
-      "spot": 68,
+      "spot": 155,
       "hookset": 1,
       "tug": 1,
       "bait": 2626,
@@ -6892,7 +6889,7 @@
       "snagging": false
     },
     {
-      "spot": 155,
+      "spot": 68,
       "hookset": 1,
       "tug": 1,
       "bait": 2626,
@@ -8411,17 +8408,17 @@
       "snagging": false
     },
     {
-      "spot": 122,
+      "spot": 123,
       "hookset": 2,
       "tug": 2,
       "bait": 12709,
       "snagging": false
     },
     {
-      "spot": 123,
+      "spot": 122,
       "hookset": 2,
       "tug": 2,
-      "bait": 12709,
+      "bait": 28634,
       "snagging": false
     },
     {
@@ -8758,21 +8755,21 @@
       "spot": 141,
       "hookset": 2,
       "tug": 2,
-      "bait": 12710,
+      "bait": 30136,
       "snagging": false
     },
     {
       "spot": 142,
       "hookset": 2,
       "tug": 2,
-      "bait": 12710,
+      "bait": 30136,
       "snagging": false
     },
     {
       "spot": 146,
       "hookset": 2,
       "tug": 2,
-      "bait": 12710,
+      "bait": 30136,
       "snagging": false
     }
   ],
@@ -9636,29 +9633,6 @@
         3,
         4
       ],
-      "snagging": false
-    }
-  ],
-  "13733": [
-    {
-      "spot": 10005,
-      "hookset": 0,
-      "tug": -1,
-      "bait": 12712,
-      "snagging": false
-    },
-    {
-      "spot": 10006,
-      "hookset": 0,
-      "tug": -1,
-      "bait": 12712,
-      "snagging": false
-    },
-    {
-      "spot": 10004,
-      "hookset": 0,
-      "tug": -1,
-      "bait": 12712,
       "snagging": false
     }
   ],
@@ -11121,17 +11095,17 @@
   ],
   "20064": [
     {
-      "spot": 184,
-      "hookset": 2,
-      "tug": 2,
-      "bait": 20613,
-      "snagging": false
-    },
-    {
       "spot": 185,
       "hookset": 2,
       "tug": 2,
       "bait": 20614,
+      "snagging": false
+    },
+    {
+      "spot": 184,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 28634,
       "snagging": false
     }
   ],
@@ -15278,7 +15252,8 @@
       "spawn": 2,
       "duration": 10,
       "weathers": [
-        2
+        2,
+        1
       ],
       "weathersFrom": [
         3,
@@ -15502,6 +15477,14 @@
       "bait": 27582
     }
   ],
+  "29568": [
+    {
+      "spot": 226,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 27582
+    }
+  ],
   "29569": [
     {
       "spot": 228,
@@ -15566,6 +15549,14 @@
       "bait": 27582
     }
   ],
+  "29582": [
+    {
+      "spot": 245,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 27582
+    }
+  ],
   "29583": [
     {
       "spot": 225,
@@ -15577,6 +15568,38 @@
   "29584": [
     {
       "spot": 227,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 27582
+    }
+  ],
+  "29585": [
+    {
+      "spot": 245,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 27582
+    }
+  ],
+  "29586": [
+    {
+      "spot": 226,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 27582
+    }
+  ],
+  "29587": [
+    {
+      "spot": 225,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 27582
+    }
+  ],
+  "29588": [
+    {
+      "spot": 228,
       "hookset": 2,
       "tug": 2,
       "bait": 27582
@@ -19622,12 +19645,95 @@
       "oceanFishingTime": 1
     }
   ],
+  "32894": [
+    {
+      "spot": 10022,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 30280
+    },
+    {
+      "spot": 10021,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 30280
+    },
+    {
+      "spot": 10020,
+      "tug": 2,
+      "bait": 30281
+    },
+    {
+      "spot": 10023,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 30280
+    },
+    {
+      "spot": 10024,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 30280
+    },
+    {
+      "spot": 10025,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 30281
+    }
+  ],
+  "32895": [
+    {
+      "spot": 10021,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 32894
+    },
+    {
+      "spot": 10021,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 29717
+    }
+  ],
+  "32897": [
+    {
+      "spot": 10021,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 30280
+    }
+  ],
+  "32901": [
+    {
+      "spot": 10021,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 30280,
+      "predators": [
+        {
+          "id": 32897,
+          "amount": 2
+        }
+      ]
+    }
+  ],
   "32902": [
     {
       "spot": 10022,
       "hookset": 1,
       "tug": 0,
       "bait": 32894
+    }
+  ],
+  "32903": [
+    {
+      "spot": 10023,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 32894,
+      "spawn": 0,
+      "duration": 0
     }
   ],
   "33219": [
@@ -21161,6 +21267,30 @@
       "duration": 4
     }
   ],
+  "36660": [
+    {
+      "spot": 266,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 28634
+    }
+  ],
+  "36662": [
+    {
+      "spot": 130,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 28634
+    }
+  ],
+  "36663": [
+    {
+      "spot": 262,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 28634
+    }
+  ],
   "36679": [
     {
       "spot": 252,
@@ -21177,7 +21307,7 @@
       "tug": 1,
       "bait": 36591,
       "spawn": 18,
-      "duration": 6,
+      "duration": 4,
       "weathers": [
         3
       ]
@@ -21247,6 +21377,142 @@
       "hookset": 1,
       "tug": 0,
       "bait": 36593
+    }
+  ],
+  "37697": [
+    {
+      "spot": 268,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 36447,
+      "spawn": 3,
+      "duration": 3
+    }
+  ],
+  "37845": [
+    {
+      "spot": 253,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36591,
+      "spawn": 16,
+      "duration": 4,
+      "weathers": [
+        15
+      ]
+    }
+  ],
+  "37846": [
+    {
+      "spot": 257,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36590,
+      "spawn": 8,
+      "duration": 8,
+      "weathers": [
+        3
+      ],
+      "weathersFrom": [
+        1,
+        2
+      ]
+    }
+  ],
+  "37847": [
+    {
+      "spot": 261,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36592,
+      "weathers": [
+        4
+      ],
+      "weathersFrom": [
+        1,
+        2
+      ]
+    }
+  ],
+  "37848": [
+    {
+      "spot": 266,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36590,
+      "spawn": 8,
+      "duration": 8,
+      "weathers": [
+        7,
+        8
+      ],
+      "weathersFrom": [
+        2,
+        1
+      ]
+    }
+  ],
+  "37849": [
+    {
+      "spot": 271,
+      "hookset": 2,
+      "tug": 1,
+      "bait": 36591,
+      "spawn": 2,
+      "duration": 6,
+      "weathers": [
+        15
+      ],
+      "weathersFrom": [
+        3,
+        4
+      ]
+    }
+  ],
+  "37850": [
+    {
+      "spot": 272,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36591,
+      "spawn": 0,
+      "duration": 2
+    }
+  ],
+  "37851": [
+    {
+      "spot": 281,
+      "tug": 1,
+      "bait": 36591,
+      "spawn": 2,
+      "duration": 2,
+      "weathers": [
+        149
+      ]
+    }
+  ],
+  "37852": [
+    {
+      "spot": 284,
+      "hookset": 2,
+      "tug": 1,
+      "bait": 36597,
+      "spawn": 2,
+      "duration": 2,
+      "weathers": [
+        49
+      ]
+    }
+  ],
+  "37853": [
+    {
+      "spot": 275,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36478,
+      "weathers": [
+        49
+      ]
     }
   ]
 }

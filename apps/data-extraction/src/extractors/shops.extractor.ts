@@ -57,11 +57,13 @@ export class ShopsExtractor extends AbstractExtractor {
              fateShops,
              inclusionShops,
              bnpcBases, mappyJSON]) => {
+        console.log('SHOPS LOADED');
         const shops = uniqBy([
           ...this.handleGilShops(gilShops),
           ...this.handleSpecialShops(specialShops),
           ...this.handleGCShop(gcShopItems, gcShopCategories)
         ], 'id');
+        console.log('SHOPS HANDLED');
         const mappyJSONRecord = mappyJSON.reduce((acc, e) => {
           if (e.Type !== 'BNPC') {
             return acc;
@@ -71,8 +73,11 @@ export class ShopsExtractor extends AbstractExtractor {
             [e.BNpcBaseID]: e.BNpcNameID
           };
         }, {});
+        console.log('SHOPS MAPPY DONE');
         let linked = this.linkNpcs(shops, npcs, topicSelect, customTalk, preHandler, fateShops, inclusionShops, specialShops);
+        console.log('SHOPS LINK NPC DONE');
         linked = this.linkBNPCs(shops, bnpcBases, mappyJSONRecord);
+        console.log('SHOPS LINK BNPC DONE');
         return linked.map(shop => {
           if (shop.npcs.length === 0 && linked.some(s => this.hashShop(s) === this.hashShop(shop) && s.npcs.length > 0)) {
             return null;
@@ -81,6 +86,7 @@ export class ShopsExtractor extends AbstractExtractor {
         }).filter(shop => !!shop);
       })
     ).subscribe((shops) => {
+      console.log('SHOPS START PERSISTENCE');
       this.persistToJsonAsset('shops', shops);
       this.persistToJsonAsset('shops-by-npc', shops.reduce((acc, shop) => {
         shop.npcs.forEach(npc => {
@@ -123,7 +129,9 @@ export class ShopsExtractor extends AbstractExtractor {
   }
 
   private handleGilShops(gilShops: any[]): Shop[] {
+
     return gilShops
+      .filter(shop => shop.Items !== null)
       .map(gilShop => {
         return {
           id: gilShop.ID,

@@ -47,7 +47,7 @@ export class AllaganReportsComponent {
   isDataChecker$ = this.authFacade.user$.pipe(
     map(user => user.admin || user.moderator || user.allaganChecker),
     distinctUntilChanged(),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public status$ = combineLatest([
@@ -68,6 +68,9 @@ export class AllaganReportsComponent {
         fishCoverage: Math.floor(1000 * (fishes.length - fishWithNoData.length) / fishes.length) / 10,
         fishWithNoData,
         itemsWithNoSource: Object.values(extracts).filter(e => {
+          if (e.id < 0) {
+            return false;
+          }
           const enName = items[e.id].en;
           const frName = items[e.id].fr;
           return !fishWithNoData.includes(e.id)

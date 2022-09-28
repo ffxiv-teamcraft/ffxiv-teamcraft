@@ -44,7 +44,7 @@ export class TraitComponent extends TeamcraftPageComponent {
       switchMap(id => {
         return this.xivapi.get(XivapiEndpoint.Trait, +id);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.relatedActions$ = this.xivapiTrait$.pipe(
@@ -64,7 +64,7 @@ export class TraitComponent extends TeamcraftPageComponent {
         return [
           {
             title: 'Gamer Escape',
-            url: `https://ffxiv.gamerescape.com/wiki/${xivapiAction.Name_en.toString().split(' ').join('_')}`,
+            url: `https://ffxiv.gamerescape.com/wiki/${encodeURIComponent(xivapiAction.Name_en.toString().split(' ').join('_'))}`,
             icon: './assets/icons/ge.png'
           }
         ];
