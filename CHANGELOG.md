@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.8.9"></a>
+## [9.8.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.8...v9.8.9) (2022-09-28)
+
+
+### Bug Fixes
+
+* **metrics:** fix fish layout filter crashing metrics page ([0ecdf9d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0ecdf9d))
+* **metrics-dashboard:** fixed dashboard not loading the second time it's opened ([9a8835b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a8835b))
+
+
+### Features
+
+* **db:** imported ~200 allagan reports ([74c1dbb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/74c1dbb))
+* **island-workshop:** new checkbox to exclude crop-based materials ([6c65470](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6c65470))
+* **island-workshop:** new crafting time and categories columns ([a845ec9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a845ec9))
+* **island-workshop:** now displaying when each day will be available ([adbd579](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/adbd579))
+* **list:** add island crop details ([cc80e48](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cc80e48))
+
+
+
 <a name="9.8.8"></a>
 ## [9.8.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.7...v9.8.8) (2022-09-25)
 
