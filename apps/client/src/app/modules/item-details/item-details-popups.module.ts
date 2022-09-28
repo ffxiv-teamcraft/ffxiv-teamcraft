@@ -36,6 +36,7 @@ import { AchievementsComponent } from './achievements/achievements.component';
 import { PageLoaderModule } from '../page-loader/page-loader.module';
 import { SpearfishingSpeedModule } from '../spearfishing-speed-tooltip/spearfishing-speed.module';
 import { IslandAnimalComponent } from './island-animal/island-animal.component';
+import { IslandCropComponent } from './island-crop/island-crop.component';
 
 @NgModule({
   imports: [
@@ -81,7 +82,8 @@ import { IslandAnimalComponent } from './island-animal/island-animal.component';
     MogstationComponent,
     QuestsComponent,
     AchievementsComponent,
-    IslandAnimalComponent
+    IslandAnimalComponent,
+    IslandCropComponent
   ],
   exports: [
     GatheredByComponent,
@@ -100,7 +102,8 @@ import { IslandAnimalComponent } from './island-animal/island-animal.component';
     MogstationComponent,
     QuestsComponent,
     AchievementsComponent,
-    IslandAnimalComponent
+    IslandAnimalComponent,
+    IslandCropComponent
   ]
 })
 export class ItemDetailsPopupsModule {

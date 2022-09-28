@@ -6,7 +6,7 @@ import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { SeoService } from '../../../core/seo/seo.service';
-import { catchError, filter, map, takeUntil } from 'rxjs/operators';
+import { catchError, filter, first, map, takeUntil } from 'rxjs/operators';
 import { MetricsDashboardLayout } from '../../../modules/player-metrics/display/metrics-dashboard-layout';
 import { MetricsDisplay } from '../metrics-display';
 import { METRICS_DISPLAY_FILTERS, MetricsDisplayFilter } from '../../../modules/player-metrics/filters/metrics-display-filter';
@@ -38,7 +38,11 @@ export class MetricsComponent extends TeamcraftPageComponent {
 
   editedLayout: MetricsDashboardLayout;
 
-  display$: Observable<MetricsDisplay> = combineLatest([this.metricsService.logs$, this.layout$]).pipe(
+  filtersReady$ = combineLatest(this.filters.map(filterObj => filterObj.loadData())).pipe(
+    first()
+  );
+
+  display$: Observable<MetricsDisplay> = combineLatest([this.metricsService.logs$, this.layout$, this.filtersReady$]).pipe(
     map(([logs, layout]) => {
       return {
         layout: layout,

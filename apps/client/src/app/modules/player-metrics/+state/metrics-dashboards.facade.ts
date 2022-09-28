@@ -33,7 +33,7 @@ export class MetricsDashboardsFacade {
     map(([layout]) => {
       return layout || MetricsDashboardLayout.DEFAULT;
     }),
-    shareReplay({ bufferSize: 1, refCount: true })
+    shareReplay(1)
   );
 
   constructor(

@@ -1,10 +1,8 @@
 import { ItemData } from '../../../../model/garland-tools/item-data';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { Item } from '../../../../model/garland-tools/item';
+import { Observable } from 'rxjs';
 import { DataType } from '../data-type';
 import { ListRow } from '../../model/list-row';
-import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 
 @Injectable()
 export abstract class AbstractExtractor<T> {

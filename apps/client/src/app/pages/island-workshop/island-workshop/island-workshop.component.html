@@ -45,6 +45,10 @@
         <label nz-checkbox [ngModel]="excludePastureMaterials$ | async" (ngModelChange)="excludePastureMaterials$.next($event)">
           {{'ISLAND_SANCTUARY.WORKSHOP.Exclude_pasture_materials' | translate}}</label>
       </div>
+      <div>
+        <label nz-checkbox [ngModel]="excludeCropMaterials$ | async" (ngModelChange)="excludeCropMaterials$.next($event)">
+          {{'ISLAND_SANCTUARY.WORKSHOP.Exclude_crop_materials' | translate}}</label>
+      </div>
     </div>
   </nz-page-header-content>
 </nz-page-header>
@@ -59,7 +63,8 @@
 <ng-container *ngTemplateOutlet="objectsTable;context:{$implicit: craftworksObjects$ | async, pageSize: 8}"></ng-container>
 
 <ng-container *ngIf="optimizerResult$ | async as optimizerResult">
-  <app-workshop-planning [planning]="optimizerResult.planning" [totalScore]="optimizerResult.score" [today]="today$ | async" [weeklyReset]="previousWeeklyReset$ | async"></app-workshop-planning>
+  <app-workshop-planning [planning]="optimizerResult.planning" [totalScore]="optimizerResult.score" [today]="today$ | async"
+                         [weeklyReset]="previousWeeklyReset$ | async"></app-workshop-planning>
 </ng-container>
 
 <ng-template #objectsTable let-craftworksObjects let-pageSize="pageSize">
@@ -130,6 +135,17 @@
           <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
             <img src="./assets/icons/island/popularity{{row.predictedPopularity.id}}.png" alt="" class="ui-icon">
             <div>{{('ISLAND_SANCTUARY.WORKSHOP.POPULARITY.' + row.predictedPopularityKey) | translate}}</div>
+          </div>
+        </td>
+        <td>
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+            {{row.craftworksEntry.craftingTime}}h
+          </div>
+        </td>
+        <td>
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+            <span *ngFor="let theme of row.craftworksEntry.themes; last as last"><app-i18n-name content="islandCraftworksTheme"
+                                                                                                [id]="theme"></app-i18n-name><span *ngIf="!last">,</span></span>
           </div>
         </td>
       </tr>

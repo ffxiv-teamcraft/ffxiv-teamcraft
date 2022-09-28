@@ -22,6 +22,7 @@ import { PlanningFormulaOptimizer } from '../optimizer/planning-formula-optimize
 import { getItemSource } from '../../../modules/list/model/list-row';
 import { DataType } from '../../../modules/list/data/data-type';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 
 interface ColumnItem {
   name: string;
@@ -145,9 +146,14 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
 
   public excludePastureMaterials$ = new LocalStorageBehaviorSubject<boolean>('island-workshop:exclude_pasture', false);
 
-  public tableColumns$: Observable<ColumnItem[]> = this.translate.get('ISLAND_SANCTUARY.WORKSHOP.POPULARITY.High').pipe(
+  public excludeCropMaterials$ = new LocalStorageBehaviorSubject<boolean>('island-workshop:exclude_crops', false);
+
+  public tableColumns$: Observable<ColumnItem[]> = combineLatest([
+    this.translate.get('ISLAND_SANCTUARY.WORKSHOP.POPULARITY.High'),
+    this.lazyData.getEntry('islandCraftworksTheme')
+  ]).pipe(
     // Just a small trick to only compute all this once translations are loaded
-    map(() => {
+    map(([, themes]) => {
       return [
         {
           name: 'Product'
@@ -215,6 +221,30 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
           }),
           filterFn: (values, item) => values.some(value => item.predictedPopularity.id === value),
           filterMultiple: true
+        },
+        {
+          name: 'Crafting_time',
+          sortOrder: null,
+          sortFn: (a, b) => a.craftworksEntry.craftingTime - b.craftworksEntry.craftingTime,
+          listOfFilter: [4, 6, 8].map(time => {
+            return {
+              value: time,
+              text: `${time}h`
+            };
+          }),
+          filterFn: (values, item) => values.some(value => item.craftworksEntry.craftingTime === value),
+          filterMultiple: true
+        },
+        {
+          name: 'Categories',
+          listOfFilter: Object.keys(themes).map(key => {
+            return {
+              value: +key,
+              text: this.i18n.getName(themes[key])
+            };
+          }),
+          filterFn: (values, item) => values.some(value => item.craftworksEntry.themes.includes(value)),
+          filterMultiple: true
         }
       ];
     })
@@ -246,20 +276,27 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     this.state$,
     this.islandLevel$,
     this.stateHistory$,
-    this.excludePastureMaterials$
+    this.excludePastureMaterials$,
+    this.excludeCropMaterials$
   ]).pipe(
     withLazyData(this.lazyData, 'islandPopularity', 'islandCraftworks', 'recipes', 'extracts'),
-    map(([[state, islandLevel, history, excludePasture], islandPopularity, islandCraftworks, recipes, extracts]) => {
+    map(([[state, islandLevel, history, excludePasture, excludeCrops], islandPopularity, islandCraftworks, recipes, extracts]) => {
       const popularityEntry = islandPopularity[state.popularity];
       const predictedPopularityEntry = islandPopularity[state.predictedPopularity];
       return state.supplyDemand
         .filter(row => row.id > 0 && islandCraftworks[row.id].itemId > 0)
         .filter(row => {
-          if (excludePasture) {
+          let matches = true;
+          if (excludePasture || excludeCrops) {
             const recipe = recipes.find(r => r.id === `mji-craftworks-${row.id}`);
-            return recipe.ingredients.every(i => getItemSource(extracts[i.id], DataType.ISLAND_PASTURE)?.length === 0);
+            if (excludePasture) {
+              matches = matches && recipe.ingredients.every(i => getItemSource(extracts[i.id], DataType.ISLAND_PASTURE)?.length === 0);
+            }
+            if (excludeCrops) {
+              matches = matches && recipe.ingredients.every(i => getItemSource(extracts[i.id], DataType.ISLAND_CROP, true).seed === undefined);
+            }
           }
-          return true;
+          return matches;
         })
         .map(row => {
           const popularity = popularityEntry[row.id];
@@ -320,7 +357,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
               public translate: TranslateService, private dialog: NzModalService,
               private message: NzMessageService, private mjiWorkshopStatusService: IslandWorkshopStatusService,
               public platformService: PlatformService, public settings: SettingsService,
-              private authFacade: AuthFacade) {
+              private authFacade: AuthFacade, private i18n: I18nToolsService) {
     super();
 
     if (this.platformService.isDesktop()) {
@@ -332,18 +369,31 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
         switchMap(([reset, state, user]) => {
           return this.mjiWorkshopStatusService.get(reset.toString()).pipe(
             map((historyEntry) => {
-              return !historyEntry.lock && state.updated - reset < 7200000 && !state.edited && historyEntry.objects.some((obj, i) => {
-                return state.supplyDemand[i].supply < obj.supply;
-              }) && !state.supplyDemand.some(entry => entry.supply > 3);
+              const shouldUpdate = !historyEntry.lock
+                && !state.edited
+                && historyEntry.objects.some((obj, i) => {
+                  return state.supplyDemand[i].supply < obj.supply;
+                })
+                && !state.supplyDemand.some(entry => entry.supply > 3);
+              return {
+                shouldUpdate,
+                historyEntry
+              };
             }),
             catchError(() => {
-              return of(true);
+              return of({ shouldUpdate: true, historyEntry: null });
             }),
-            switchMap(shouldUpdate => {
+            switchMap(({ shouldUpdate, historyEntry }) => {
               // Only update if reset was less than 2h ago, else it's probably bad data anyways
               if (shouldUpdate && state.updated >= reset) {
+                let supplyDemand = state.supplyDemand;
+                if (historyEntry) {
+                  supplyDemand = state.supplyDemand.map((row, i) => {
+                    row.supply = Math.min(historyEntry.objects[i].supply, row.supply);
+                  });
+                }
                 return this.mjiWorkshopStatusService.set(reset.toString(), {
-                  objects: state.supplyDemand,
+                  objects: supplyDemand,
                   popularity: state.popularity,
                   predictedPopularity: state.predictedPopularity,
                   start: reset,

@@ -47,7 +47,6 @@ export class PlanningFormulaOptimizer {
       let [best, combo] = this.findBestAndComboObjects(projectedSupplyObjects, objectsUsage);
 
       let totalTime = 0;
-      // Start with combo item if we have more than 12h total crafting time
       let useComboItem = combo.craftworksEntry.craftingTime + best.craftworksEntry.craftingTime <= 12;
       let projectedTime = useComboItem ? combo.craftworksEntry.craftingTime : best.craftworksEntry.craftingTime;
       while (totalTime + projectedTime <= 24) {
@@ -57,11 +56,13 @@ export class PlanningFormulaOptimizer {
         totalTime += item.craftworksEntry.craftingTime;
         objectsUsage[item.id] = (objectsUsage[item.id] || 0) + this.workshops * (totalTime === 0 ? 1 : 2);
         [best, combo] = this.findBestAndComboObjects(projectedSupplyObjects, objectsUsage);
-        projectedTime = useComboItem ? best.craftworksEntry.craftingTime : combo.craftworksEntry.craftingTime;
+        projectedTime = useComboItem ? combo.craftworksEntry.craftingTime + best.craftworksEntry.craftingTime : best.craftworksEntry.craftingTime;
       }
       if (totalTime < 24) {
         const bestFirstItem = projectedSupplyObjects.filter(obj => {
-          return obj.craftworksEntry.craftingTime <= (24 - totalTime) && obj.craftworksEntry.themes.some(t => day.planning[0].craftworksEntry.themes.includes(t));
+          return obj.craftworksEntry.craftingTime <= (24 - totalTime)
+            && obj.craftworksEntry.themes.some(t => day.planning[0].craftworksEntry.themes.includes(t))
+            && obj.id !== day.planning[0].id;
         }).sort((a, b) => {
           return this.getBoostedValue(b, objectsUsage[b.id]) - this.getBoostedValue(a, objectsUsage[a.id]);
         })[0];
@@ -73,13 +74,6 @@ export class PlanningFormulaOptimizer {
       day.score = result.score;
       groove = result.groove;
       day.groove = groove;
-      // if (result.score < 3500 && !restDayApplied) {
-      //   restDayApplied = true;
-      //   day.rest = true;
-      //   day.score = 0;
-      //   day.groove = 0;
-      //   day.planning = [];
-      // }
       return day;
     });
 
@@ -105,6 +99,7 @@ export class PlanningFormulaOptimizer {
     if (!combo) {
       // If we have no combo available (which is possible at lower ranks), just grab a random item with good value
       [combo] = projectedSupplyObjects
+        .filter(obj => obj.craftworksEntry.craftingTime + best.craftworksEntry.craftingTime <= 12)
         .sort((a, b) => {
           return this.getBoostedValue(b, 0) - this.getBoostedValue(a, 0);
         });
