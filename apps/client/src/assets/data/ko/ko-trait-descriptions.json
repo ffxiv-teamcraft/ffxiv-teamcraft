@@ -474,7 +474,7 @@
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>흑혈<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 활성화됩니다.\n특정 기술이 명중하면 흑혈이 증가합니다."
   },
   "159": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>피의 칼날<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과 중에 무기 기술 및 마법이 명중하면 흑혈이 증가합니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>피의 칼날<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과 중에 무기 기술 또는 마법이 명중하면 흑혈이 증가합니다."
   },
   "160": {
     "ko": "자신의 무기 기술이 극대화되면 80% 확률로 투기가 부여됩니다."
@@ -585,7 +585,7 @@
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>졸트<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>졸트라<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다.\n또한 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>버선더<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>버에어로<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 360으로, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>버파이어<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>버스톤<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 300으로 증가합니다."
   },
   "196": {
-    "ko": "자신이 전투 상태에 돌입하면 30초마다 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>치유의 백합<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 발생합니다.\n치유의 백합은 최대 3개까지 누적됩니다."
+    "ko": "자신이 전투 상태에 돌입하면 20초마다 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>치유의 백합<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 발생합니다.\n치유의 백합은 최대 3개까지 누적됩니다."
   },
   "197": {
     "ko": "지능이 8 증가합니다."
@@ -759,7 +759,7 @@
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>앞걸음<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 2회 사용 가능한 누적 기술로 변화합니다."
   },
   "255": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>정석 마무리<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 또는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>기교 마무리<UIGlow>01</UIGlow><UIForeground>01</UIForeground>에 성공하면 자신과 대상 파티원에게 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에스프리<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 부여됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>자신의 에스프리 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>캐스케이드<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>리버스 캐스케이드<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>파운틴<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>파운틴 폴<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>윈드밀<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>라이징 윈드밀<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>블레이드 샤워<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>블러드 샤워<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 명중시키면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에스프리<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 5 증가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>파티원의 에스프리 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 파티원이 무기 기술 또는 마법 공격을 실행하면, 특정 확률로 자신의 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에스프리<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 10 증가합니다.\n발동률은 파티원의 직업에 따라 다릅니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>정석 마무리<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 또는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>기교 마무리<UIGlow>01</UIGlow><UIForeground>01</UIForeground>에 성공하면 자신과 대상 파티원에게 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에스프리<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 부여됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>자신의 에스프리 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>캐스케이드<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>리버스 캐스케이드<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>파운틴<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>파운틴 폴<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>윈드밀<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>라이징 윈드밀<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>블레이드 샤워<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>블러드 샤워<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 명중시키면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에스프리<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 5 증가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>파티원의 에스프리 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 파티원의 무기 기술 또는 마법 공격이 명중하면, 특정 확률로 자신의 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에스프리<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 10 증가합니다.\n발동률은 파티원의 직업에 따라 다릅니다."
   },
   "256": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>앞걸음<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 최대 3번까지 사용할 수 있습니다."
@@ -867,7 +867,7 @@
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>가우스탄<UIGlow>01</UIGlow><UIForeground>01</UIForeground>과 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>도탄 사격<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 최대 3번까지 사용할 수 있습니다."
   },
   "293": {
-    "ko": "소이탄 기폭 시 적용되는 '무기 기술 1회당 위력'이 150으로 증가합니다."
+    "ko": "소이탄 기폭 시 적용되는 '무기 기술 1회당 위력'이 220으로 증가합니다."
   },
   "294": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>자동포탑 룩<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>자동인형 퀸<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>급속출력: 룩<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>급속출력: 퀸<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다."
@@ -1227,7 +1227,7 @@
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>중재<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 지속시간이 8초로 늘어나고, 아래 효과가 추가됩니다.\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 대상에게 4초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>나이트의 수비<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 부여\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>나이트의 수비<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 대상이 받는 피해량 10% 감소\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 대상에게 12초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>나이트의 가호<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 부여\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>나이트의 가호<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 대상의 HP를 지속적으로 회복\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 250"
   },
   "414": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>성령의 권능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>과 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>신성한 원<UIGlow>01</UIGlow><UIForeground>01</UIForeground>에 HP 회복 효과가 추가됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 400"
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>성령의 권능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>신성한 원<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>고백 기도<UIGlow>01</UIGlow><UIForeground>01</UIForeground>에 HP 회복 효과가 추가됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 400"
   },
   "415": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>내면의 기개<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>속죄<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다."
@@ -1362,7 +1362,7 @@
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>천상의 화염<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 및 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>저승의 냉기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 최대 2단계까지 중첩됩니다."
   },
   "459": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>천상의 화염<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 및 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>저승의 냉기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 최대 3단계까지 중첩됩니다.\n또한 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>파이라<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 실행 시 최대 단계의 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>천상의 화염<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>블리자라<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 실행 시 최대 단계의 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>저승의 냉기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 부여됩니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>천상의 화염<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 및 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>저승의 냉기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 최대 3단계까지 중첩됩니다.\n3단계일 때는 반대 속성 마법의 시전 시간이 50% 단축됩니다.\n또한 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>파이라<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 실행 시 최대 단계의 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>천상의 화염<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>블리자라<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 실행 시 최대 단계의 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>저승의 냉기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 부여됩니다."
   },
   "460": {
     "ko": "자신이 주는 마법 피해량이 5% 증가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>천상의 화염<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 또는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>저승의 냉기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n천상의 화염 효과 중에 파이라가 명중하면 자신에게 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>플레어 효과 향상<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 부여됩니다.\n천상의 화염이 해제되면 효과가 사라집니다."
@@ -1419,7 +1419,7 @@
     "ko": "자신에게 부여된 에테르에 따라 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>보석의 광휘<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 변화합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>불 에테르<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>루비의 재앙<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>땅 에테르<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>토파즈의 재앙<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>바람 에테르<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에메랄드의 재앙<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다."
   },
   "479": {
-    "ko": "루인가, 루비의 의식, 토파즈의 의식, 에메랄드의 의식의 위력이 증가합니다.\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>루인가 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 310\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>루비의 의식 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 450\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>토파즈의 의식 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 330\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>에메랄드의 의식 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 230"
+    "ko": "루인가, 루비의 의식, 토파즈의 의식, 에메랄드의 의식의 위력이 증가합니다.\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>루인가 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 310\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>루비의 의식 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 510\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>토파즈의 의식 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 330\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>에메랄드의 의식 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 230"
   },
   "480": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>수호의 빛<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 2회 사용 가능한 누적 기술로 변화합니다."
@@ -1530,7 +1530,7 @@
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>마무리 일격<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>몽환삼단<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다."
   },
   "516": {
-    "ko": "특정 기술의 위력이 증가합니다.\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>쌍검 회전베기 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 210\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>돌풍베기 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 160\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>칼날 선풍 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 140\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>강갑파점 찌르기 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 140"
+    "ko": "특정 기술의 위력이 증가합니다.\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>돌풍베기 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 120\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>칼날 선풍 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 140\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>강갑파점 찌르기 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 140"
   },
   "517": {
     "ko": "특정 기술의 위력이 증가합니다.\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>열분열탄 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>열슬러그탄 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 120\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>열정밀탄 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 110"
@@ -1540,5 +1540,14 @@
   },
   "519": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>풍아<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>풍광<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다."
+  },
+  "520": {
+    "ko": "특정 기술의 위력이 증가합니다.\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>검풍 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>진풍 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 120\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>사풍 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 120"
+  },
+  "521": {
+    "ko": "특정 기술의 위력이 증가합니다.\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>월광 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 120\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>화차 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 120\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>설풍 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 120"
+  },
+  "522": {
+    "ko": "특정 기술의 위력이 증가합니다.\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>쌍검 회전베기 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 220\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>돌풍베기 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 160"
   }
 }
