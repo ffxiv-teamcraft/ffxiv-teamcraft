@@ -103,6 +103,16 @@ export class PlanningFormulaOptimizer {
         .sort((a, b) => {
           return this.getBoostedValue(b, 0) - this.getBoostedValue(a, 0);
         });
+
+      if (!combo) {
+        // If we STILL have no combo available (which CAN happen but means you're optimizing in a shitty way anyways)
+        // Just grab the best item to use and that's it.
+        [combo] = projectedSupplyObjects
+          .filter(obj => obj.id !== best.id)
+          .sort((a, b) => {
+            return this.getBoostedValue(b, 0) - this.getBoostedValue(a, 0);
+          });
+      }
     }
     const alternative = comboCandidates
       .filter(obj => obj.craftworksEntry.craftingTime === combo.craftworksEntry.craftingTime && obj.id !== combo.id && (!objectsUsage[obj.id] || !objectsUsage[combo.id]))
