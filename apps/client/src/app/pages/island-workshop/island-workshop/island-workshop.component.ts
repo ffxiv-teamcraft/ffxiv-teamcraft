@@ -254,7 +254,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     switchMap(reset => {
       const historyEntriesToFetch = [reset.toString()];
       let nextDay = reset + 86400000;
-      while (nextDay < Date.now() + 86400000) {
+      while (nextDay < Date.now()) {
         historyEntriesToFetch.push(nextDay.toString());
         nextDay += 86400000;
       }
@@ -451,10 +451,14 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     const itemHistory = history.map(day => {
       return [day.objects[item.id].supply, day.objects[item.id].demand];
     });
-    const matches: { index: number, day: number, pattern: WorkshopPattern, strong: boolean }[] = [];
-    workshopPatterns.forEach((pattern, i) => {
-      const patternMatches = itemHistory.every((day, index) => {
+    let matches = workshopPatterns.map((pattern, i) => ({ pattern, i }));
+    for (let index = 0; index < itemHistory.length; index++) {
+      if (matches.length === 1) {
+        break;
+      }
+      matches = matches.filter(({ pattern, i }) => {
         const patternEntry = pattern[index];
+        const day = itemHistory[index];
         return Math.min(day[0], 2) === patternEntry[0]
           && (
             patternEntry[1] === -1
@@ -462,11 +466,10 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
             || day[1] === patternEntry[1]
           );
       });
-      if (patternMatches) {
-        matches.push({ day: (3 + Math.floor(i / 2)) % 7, index: i, pattern, strong: i % 2 === 1 });
-      }
+    }
+    return matches.map(({ pattern, i }) => {
+      return { day: (3 + Math.floor(i / 2)) % 7, index: i, pattern, strong: i % 2 === 1 };
     });
-    return matches;
   }
 
   trackByRow(index: number, row: { id: number, supply: number, demand: number }): string {
