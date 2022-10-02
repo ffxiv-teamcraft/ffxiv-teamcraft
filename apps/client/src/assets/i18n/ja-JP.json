@@ -51,7 +51,7 @@
     "Only_craftable": "レシピのみ",
     "Want_filters": "さらにフィルターが必要ですか？",
     "Open_search": "代わりに検索ページを開く",
-    "Island_recipe": "Island Sanctuary recipe"
+    "Island_recipe": "無人島レシピ"
   },
   "Use_as_default_character": "デフォルトキャラとして使う",
   "Download_desktop_app": "デスクトップアプリをダウンロード",
@@ -198,13 +198,13 @@
     "Reload": "再読み込み",
     "Click_to_apply": "クリックして適用する",
     "DAYS": {
-      "Monday": "Monday",
-      "Tuesday": "Tuesday",
-      "Wednesday": "Wednesday",
-      "Thursday": "Thursday",
-      "Friday": "Friday",
-      "Saturday": "Saturday",
-      "Sunday": "Sunday"
+      "Monday": "月曜日",
+      "Tuesday": "火曜日",
+      "Wednesday": "水曜日",
+      "Thursday": "木曜日",
+      "Friday": "金曜日",
+      "Saturday": "土曜日",
+      "Sunday": "日曜日"
     }
   },
   "ALARMS": {
@@ -247,7 +247,7 @@
       "WEEKLY_RESETS": "週制限",
       "WEEKLY_RESETS_DESCRIPTION": "お得意様取引、クロの空想帳、週制限報酬（アライアンスレイド、レイド：零式、ノーマルレイド）、ジャンボくじテンダー、攻略手帳、ファッションチェック、リスキーモブ手配書",
       "ROULETTES_RESET": "コンテンツルーレット & 蛮族デイリークエスト",
-      "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini Cactpot.",
+      "ROULETTES_RESET_DESCRIPTION": "デイリーコンテンツ（コンテンツルーレット、友好部族クエスト、モブハント、ミニくじテンダー）をリセット",
       "DELIVERIES_RESET": "調達依頼",
       "DELIVERIES_RESET_DESCRIPTION": "調達任務リセット",
       "LEVE_ALLOWANCES": "リーヴ受注権",
@@ -313,8 +313,8 @@
   "Reset_progression": "進行状況を初期化する",
   "Gardening": "ガーデニング",
   "Hunting": "モブハン",
-  "Island_animal": "Island animal",
-  "Island_crop": "Island crop",
+  "Island_animal": "無人島動物",
+  "Island_crop": "無人島作物",
   "Desynth": "分解",
   "Vendors": "NPC",
   "Open": "開",
@@ -380,7 +380,7 @@
   "Forgot_password": "パスワードを忘れた場合はこちら",
   "Email_enter": "メールアドレッス",
   "Email_not_found": "メールアドレスを見付け出しません",
-  "Email_sent": "An email has been sent with instructions on how to change your password.",
+  "Email_sent": "パスワード変更メールを送信しました",
   "Copy_current_link": "Copy a link to the current page on website to your clipboard",
   "ALARM": {
     "Spawned": "{{itemName}} 出現予定",
@@ -1939,7 +1939,7 @@
     "Currencies": "スクリップ",
     "Add_to_favorites": "お気に入りに追加",
     "Remove_from_favorites": "お気に入りから排除",
-    "Island_Sanctuary": "Island Sanctuary"
+    "Island_Sanctuary": "無人島"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "パケットキャプチャを使用することができます",
