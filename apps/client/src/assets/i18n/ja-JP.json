@@ -2978,7 +2978,7 @@
       "Rest": "休み",
       "Unknown_day_planning": "Available on {{day}}",
       "Set_rest_day": "休み（2日目）として設定する",
-      "Import_explain": "パケットキャプチャが有効になっている状態でゲーム内で人気・需要画面を開くことでテーブルを更新できます。",
+      "Import_explain": "パケットキャプチャが有効になっている状態でゲーム内で需要調査画面を開くことでテーブルを更新できます。",
       "Amount_of_workshops": "工房数",
       "Create_list": "このスケジュールでリストを作成",
       "Exclude_pasture_materials": "畜産物資を使わない",
