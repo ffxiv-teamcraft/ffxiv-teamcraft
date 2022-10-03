@@ -1998,7 +1998,7 @@
       "Armory": "アーマリーチェスト",
       "Current_Gear": "現在の装備",
       "RetainerMarket": "リテイナーが出品中",
-      "IslandSanctuaryBag": "Island Sanctuary Bag"
+      "IslandSanctuaryBag": "開拓ポーチ"
     },
     "CONTENT_ID_POPUP": {
       "Description": "マルチキャラクター同期化と他の素敵な機能を使いたいのでしたら、TCは現在プレイ中のキャラクターまたは同期化を望むキャラクターがどれかを知る必要があります",
@@ -2946,8 +2946,8 @@
     }
   },
   "ISLAND_SANCTUARY": {
-    "Animal_source": "You need to gather this item from one of the following animals in your Island Sanctuary pasture",
-    "Island_level": "Island level",
+    "Animal_source": "以下の飼育動物から採取してください",
+    "Island_level": "開拓ランク",
     "Landmarks": "Landmarks",
     "Workshop_rank": "Workshop rank",
     "WORKSHOP": {
