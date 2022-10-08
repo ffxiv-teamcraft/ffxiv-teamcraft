@@ -141,10 +141,10 @@ export class UniversalisService {
     );
   }
 
-  public getServerHistoryPrices(server: string, entries: number, ...itemIds: number[]): Observable<MarketboardItem[]> {
+  public getServerHistoryPrices(server: string, ...itemIds: number[]): Observable<MarketboardItem[]> {
     const chunks = _.chunk(itemIds, 100);
     return combineLatest(chunks.map(chunk => {
-      const params = new HttpParams().set('entriesToReturn', entries);
+      const params = new HttpParams().set('entriesWithin', 86400 * 7);
       return this.http.get<any>(`https://universalis.app/api/v2/history/${server}/${chunk.join(',')}`, { params })
         .pipe(
           catchError(() => of([])),
