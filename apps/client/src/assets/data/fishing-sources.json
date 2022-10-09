@@ -877,52 +877,52 @@
   ],
   "4886": [
     {
-      "spot": 48,
+      "spot": 108,
       "hookset": 1,
       "tug": 0,
-      "bait": 2606,
+      "bait": 2611,
       "snagging": false
     },
     {
       "spot": 52,
       "hookset": 1,
       "tug": 0,
-      "bait": 2606,
+      "bait": 2611,
+      "snagging": false
+    },
+    {
+      "spot": 48,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 2611,
       "snagging": false
     },
     {
       "spot": 107,
       "hookset": 1,
       "tug": 0,
-      "bait": 2606,
-      "snagging": false
-    },
-    {
-      "spot": 108,
-      "hookset": 1,
-      "tug": 0,
-      "bait": 2606,
+      "bait": 2611,
       "snagging": false
     },
     {
       "spot": 156,
       "hookset": 1,
       "tug": 0,
-      "bait": 2606,
+      "bait": 2611,
       "snagging": false
     },
     {
       "spot": 104,
       "hookset": 1,
       "tug": 0,
-      "bait": 2606,
+      "bait": 2611,
       "snagging": false
     },
     {
       "spot": 71,
       "hookset": 1,
       "tug": 0,
-      "bait": 2606,
+      "bait": 2599,
       "snagging": false
     }
   ],
