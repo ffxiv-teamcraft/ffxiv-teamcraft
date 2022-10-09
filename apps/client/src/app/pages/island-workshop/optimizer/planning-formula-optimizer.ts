@@ -129,7 +129,7 @@ export class PlanningFormulaOptimizer {
     const usageOffset = Math.floor((usage || 0) / 8);
     const supplyMultiplier = (this.supply[object.supply + usageOffset] || 60) / 100;
     // If this item didn't peak yet, reduce its value for the optimizer
-    const prePeakMultiplier = object.hasPeaked ? 1 : 0.8;
+    const prePeakMultiplier = object.isPeaking ? 2 : 1;
     return (object.craftworksEntry.value / object.craftworksEntry.craftingTime)
       * (supplyMultiplier) * (object.popularity.ratio / 100) * prePeakMultiplier;
   }
