@@ -38,7 +38,13 @@ export class GubalService {
   }
 
   private submitData(dataType: string, data: any[]): Observable<void> {
-    const query = gql`mutation add${dataType}Data($data: [${dataType}_insert_input!]!) {
+    let query = gql`mutation add${dataType}Data($data: [${dataType}_insert_input!]!) {
+        insert_${dataType}(objects: $data) {
+          affected_rows
+        }
+      }`;
+    if (dataType === 'bnpc') {
+      query = gql`mutation add${dataType}Data($data: [${dataType}_insert_input!]!) {
         insert_${dataType}(objects: $data, on_conflict: {
       constraint: bnpc_bnpcName_bnpcBase_key,
       update_columns: []
@@ -46,6 +52,7 @@ export class GubalService {
           affected_rows
         }
       }`;
+    }
     return this.authFacade.userId$.pipe(
       first(),
       switchMap(userId => {
