@@ -59,13 +59,12 @@
             nzCloseable
   ></nz-alert>
 </ng-container>
-
-<ng-container *ngTemplateOutlet="objectsTable;context:{$implicit: craftworksObjects$ | async, pageSize: 8}"></ng-container>
-
 <ng-container *ngIf="optimizerResult$ | async as optimizerResult">
   <app-workshop-planning [planning]="optimizerResult.planning" [totalScore]="optimizerResult.score" [today]="today$ | async"
                          [weeklyReset]="previousWeeklyReset$ | async"></app-workshop-planning>
 </ng-container>
+
+<ng-container *ngTemplateOutlet="objectsTable;context:{$implicit: craftworksObjects$ | async, pageSize: 8}"></ng-container>
 
 <ng-template #objectsTable let-craftworksObjects let-pageSize="pageSize">
   <ng-container *ngIf="tableColumns$ | async as tableColumns">

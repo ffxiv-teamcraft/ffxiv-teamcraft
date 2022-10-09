@@ -103,6 +103,16 @@ export class PlanningFormulaOptimizer {
         .sort((a, b) => {
           return this.getBoostedValue(b, 0) - this.getBoostedValue(a, 0);
         });
+
+      if (!combo) {
+        // If we STILL have no combo available (which CAN happen but means you're optimizing in a shitty way anyways)
+        // Just grab the best item to use and that's it.
+        [combo] = projectedSupplyObjects
+          .filter(obj => obj.id !== best.id)
+          .sort((a, b) => {
+            return this.getBoostedValue(b, 0) - this.getBoostedValue(a, 0);
+          });
+      }
     }
     const alternative = comboCandidates
       .filter(obj => obj.craftworksEntry.craftingTime === combo.craftworksEntry.craftingTime && obj.id !== combo.id && (!objectsUsage[obj.id] || !objectsUsage[combo.id]))
@@ -119,7 +129,7 @@ export class PlanningFormulaOptimizer {
     const usageOffset = Math.floor((usage || 0) / 8);
     const supplyMultiplier = (this.supply[object.supply + usageOffset] || 60) / 100;
     // If this item didn't peak yet, reduce its value for the optimizer
-    const prePeakMultiplier = object.hasPeaked ? 1 : 0.5;
+    const prePeakMultiplier = object.isPeaking ? 2 : 1;
     return (object.craftworksEntry.value / object.craftworksEntry.craftingTime)
       * (supplyMultiplier) * (object.popularity.ratio / 100) * prePeakMultiplier;
   }

@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.8.13"></a>
+## [9.8.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.12...v9.8.13) (2022-10-09)
+
+
+### Bug Fixes
+
+* **collectables:** fix exp formula for exp nerf level comparison ([fbbf0d7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fbbf0d7))
+* **currency-spending:** fixed cowries and amount sold last week ([4131e27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4131e27))
+* **desktop:** fixed an issue with fishing reports not sent to the database ([84655a0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/84655a0))
+* **island-workshop:** better planning logic for lower levels ([912f72c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/912f72c))
+* **island-workshop:** fixed pattern recognition for past days and error handling ([7bd46a9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7bd46a9))
+* **island-workshop:** fixed prediction issue and moved planning to the top ([6d878fb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6d878fb))
+
+
+### Features
+
+* **db:** imported 144 allagan reports ([d09bfae](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d09bfae))
+* **db:** support for korean v6.1 update ([e498668](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e498668))
+* **loader:** new patron: Darn Tarn and Dam Tam ([627d6aa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/627d6aa))
+
+
+
 <a name="9.8.12"></a>
 ## [9.8.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.11...v9.8.12) (2022-09-28)
 
