@@ -163,7 +163,8 @@ export class DatFilesWatcher {
       case 'CN':
         return 'C:\\Program Files (x86)\\上海数龙科技有限公司\\最终幻想XIV\\game\\My Games\\FINAL FANTASY XIV - A Realm Reborn';
       default:
-        return `${app.getPath('documents')}\\My Games\\FINAL FANTASY XIV - A Realm Reborn`;
+        //Hack to keep app from crashing locally
+        return app.getPath('documents'); // `}\\My Games\\FINAL FANTASY XIV - A Realm Reborn`;
     }
   }
 
