@@ -114,7 +114,6 @@ export class PlanningFormulaOptimizer {
           });
       }
     }
-    console.log(best, combo);
     const alternative = comboCandidates
       .filter(obj => obj.craftworksEntry.craftingTime === combo.craftworksEntry.craftingTime && obj.id !== combo.id && (!objectsUsage[obj.id] || !objectsUsage[combo.id]))
       .sort((a, b) => this.getBoostedValue(b, 0) - this.getBoostedValue(a, 0))[0];
