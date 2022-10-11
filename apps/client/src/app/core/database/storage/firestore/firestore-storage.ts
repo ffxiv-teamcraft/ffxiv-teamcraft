@@ -4,7 +4,7 @@ import { DataStore } from '../data-store';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { NgZone } from '@angular/core';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { catchError, distinctUntilChanged, filter, finalize, map, retry, takeUntil, tap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, map, retry, takeUntil, tap } from 'rxjs/operators';
 import { Action, AngularFirestore, DocumentSnapshot } from '@angular/fire/compat/firestore';
 import { Instantiable } from '@kaiu/serializer';
 import { environment } from '../../../../../environments/environment';

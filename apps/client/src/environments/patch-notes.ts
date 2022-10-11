@@ -12,4 +12,4 @@ export const patchNotes = `### Bug Fixes
 
 * **db:** imported 144 allagan reports.
 * **db:** support for korean v6.1 update.
-* **loader:** new patron: Darn Tarn and Dam Tam.`;
+* **loader:** new patron: Darn Tarn and Dam Tam.`;

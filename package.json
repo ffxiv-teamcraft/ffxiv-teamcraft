@@ -129,7 +129,7 @@
     "native-is-elevated": "^0.4.3",
     "ngx-google-analytics": "^11.2.1",
     "request": "^2.88.2",
-    "rxjs": "^7.5.4",
+    "rxjs": "^7.5.7",
     "tslib": "^2.3.1",
     "universal-analytics": "^0.5.3",
     "uuid": "^8.3.2"
