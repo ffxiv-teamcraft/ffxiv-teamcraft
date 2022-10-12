@@ -24,7 +24,6 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GearsetProgression } from '../../../model/gearset/gearset-progression';
 import { Clipboard } from '@angular/cdk/clipboard';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
@@ -107,8 +106,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
               private router: Router, private i18n: I18nToolsService,
               private message: NzMessageService,
               private authFacade: AuthFacade, private clipboard: Clipboard,
-              private afs: AngularFirestore, private commissionsFacade: CommissionsFacade,
-              private env: EnvironmentService) {
+              private commissionsFacade: CommissionsFacade, private env: EnvironmentService) {
     super();
     this.activatedRoute.paramMap
       .pipe(

@@ -24,33 +24,43 @@ import {
   UpdateUser,
   VerifyCharacter
 } from './auth.actions';
-import { UserCredential } from '@firebase/auth-types';
 import { catchError, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { PlatformService } from '../core/tools/platform.service';
 import { IpcService } from '../core/electron/ipc.service';
 import { CharacterLinkPopupComponent } from '../core/auth/character-link-popup/character-link-popup.component';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
-import { combineLatest, from, Observable, of } from 'rxjs';
+import { combineLatest, from, Observable, of, ReplaySubject } from 'rxjs';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { DefaultConsumables } from '../model/user/default-consumables';
 import { Favorites } from '../model/other/favorites';
 import { OauthService } from '../core/auth/oauth.service';
 import { ConvertLists } from '../modules/list/+state/lists.actions';
 import { Character } from '@xivapi/angular-client';
-import { AngularFireFunctions } from '@angular/fire/compat/functions';
 import { LogTracking } from '../model/user/log-tracking';
 import { TeamcraftGearsetStats } from '../model/user/teamcraft-gearset-stats';
 import { GearSet } from '@ffxiv-teamcraft/simulator';
 import { LogTrackingService } from '../core/database/log-tracking.service';
 import { LodestoneService } from '../core/api/lodestone.service';
 import { isEqual } from 'lodash';
+import {
+  Auth,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+  updateEmail,
+  User,
+  UserCredential
+} from '@angular/fire/auth';
+import { Functions, httpsCallable } from '@angular/fire/functions';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthFacade {
+
+  firebaseAuthState$ = new ReplaySubject<User>();
 
   loaded$ = this.store.select(authQuery.getLoaded);
 
@@ -68,7 +78,7 @@ export class AuthFacade {
 
   favorites$ = this.user$.pipe(map(user => user.favorites));
 
-  idToken$ = this.af.user.pipe(
+  idToken$ = this.firebaseAuthState$.pipe(
     filter(user => user !== null),
     switchMap(user => {
       return from(user.getIdTokenResult())
@@ -80,9 +90,9 @@ export class AuthFacade {
       if (token.claims['https://hasura.io/jwt/claims'] === undefined
         || token.claims['https://hasura.io/jwt/claims']['x-hasura-allowed-roles'] === undefined) {
         console.log('Token missing claims for hasura');
-        return this.fns.httpsCallable('setCustomUserClaims')({
+        return from(httpsCallable(this.fns, 'setCustomUserClaims')({
           uid: user.uid
-        }).pipe(
+        })).pipe(
           switchMap(() => {
             return from(user.getIdTokenResult(true));
           })
@@ -229,10 +239,10 @@ export class AuthFacade {
     shareReplay({ bufferSize: 1, refCount: true })
   );
 
-  constructor(private store: Store<{ auth: AuthState }>, private af: AngularFireAuth,
+  constructor(private store: Store<{ auth: AuthState }>, private auth: Auth,
               private platformService: PlatformService, private ipc: IpcService,
               private dialog: NzModalService, private translate: TranslateService,
-              private oauthService: OauthService, private fns: AngularFireFunctions,
+              private oauthService: OauthService, private fns: Functions,
               private logTrackingService: LogTrackingService, private characterService: LodestoneService) {
     this.ipc.playerSetupPackets$.subscribe(packet => {
       this.setCID(packet.contentId.toString());
@@ -241,26 +251,23 @@ export class AuthFacade {
     this.ipc.worldId$.pipe(
       distinctUntilChanged()
     ).subscribe((worldId) => {
-        this.setWorld(worldId);
+      this.setWorld(worldId);
     });
+
+    onAuthStateChanged(this.auth, this.firebaseAuthState$);
   }
 
   public async getIdTokenResult(forceRefresh = false) {
-    const user = await this.af.currentUser;
+    const user = await this.auth.currentUser;
     return await user.getIdTokenResult(forceRefresh);
   }
 
   resetPassword(email: string): void {
-    this.af.sendPasswordResetEmail(email);
+    sendPasswordResetEmail(this.auth, email);
   }
 
   changeEmail(newEmail: string): Observable<void> {
-    return this.af.user.pipe(
-      first(),
-      switchMap(user => {
-        return from(user.updateEmail(newEmail));
-      })
-    );
+    return from(updateEmail(this.auth.currentUser, newEmail));
   }
 
   public addCharacter(useAsDefault = false, disableClose = false): void {
@@ -311,14 +318,14 @@ export class AuthFacade {
   }
 
   public login(email: string, password: string): Promise<UserCredential> {
-    return this.af.signInWithEmailAndPassword(email, password);
+    return signInWithEmailAndPassword(this.auth, email, password);
   }
 
   public register(email: string, password: string): Promise<any> {
     return this.user$.pipe(
       first(),
       switchMap((user) => {
-        return from(this.af.createUserWithEmailAndPassword(email, password)).pipe(
+        return from(createUserWithEmailAndPassword(this.auth, email, password)).pipe(
           tap(a => {
             this.store.dispatch(new RegisterUser(a.user.uid, user));
             this.store.dispatch(new ConvertLists(a.user.uid));
@@ -333,7 +340,7 @@ export class AuthFacade {
   }
 
   public logout(): void {
-    this.af.signOut().then(() => {
+    this.auth.signOut().then(() => {
       this.store.dispatch(new Logout());
       window.location.reload();
     });
@@ -364,13 +371,13 @@ export class AuthFacade {
     this.store.dispatch(new MarkAsDoneInLog(log, itemId, done));
   }
 
-  reloadGubalToken(): Observable<void> {
-    return this.af.user.pipe(
+  reloadGubalToken(): Observable<unknown> {
+    return this.firebaseAuthState$.pipe(
       first(),
       switchMap(user => {
-        return this.fns.httpsCallable('setCustomUserClaims')({
+        return from(httpsCallable(this.fns, 'setCustomUserClaims')({
           uid: user.uid
-        }).pipe(
+        })).pipe(
           tap(() => {
             user.getIdTokenResult(true);
           })

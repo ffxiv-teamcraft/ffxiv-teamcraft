@@ -214,7 +214,7 @@ export class ListsFacade {
   }
 
   removeModificationsHistoryEntry(key: string, entryId: string): Observable<void> {
-    return this.listService.removeModificationsHistoryEntry(key, entryId);
+    return of(null);
   }
 
   getTeamLists(team: Team): Observable<List[]> {

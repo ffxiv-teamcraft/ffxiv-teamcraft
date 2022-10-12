@@ -19,7 +19,7 @@ import { CustomItemFolder } from '../model/custom-item-folder';
 import { combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CustomItemsDisplay } from './custom-items-display';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { collection, doc, Firestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -57,7 +57,7 @@ export class CustomItemsFacade {
     })
   );
 
-  constructor(private store: Store<CustomItemsPartialState>, private firestore: AngularFirestore) {
+  constructor(private store: Store<CustomItemsPartialState>, private firestore: Firestore) {
   }
 
   addCustomItem(item: CustomItem): void {
@@ -93,6 +93,6 @@ export class CustomItemsFacade {
   }
 
   createId(): string {
-    return this.firestore.createId();
+    return doc(collection(this.firestore, 'custom-items')).id;
   }
 }

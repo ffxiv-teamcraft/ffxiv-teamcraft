@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { TranslateService } from '@ngx-translate/core';
 import { PlatformService } from '../../../core/tools/platform.service';
+import { Database, objectVal, ref } from '@angular/fire/database';
 
 interface FeatureEntry {
   link: string;
@@ -16,7 +16,7 @@ interface FeatureEntry {
 })
 export class SearchIntroComponent {
 
-  counter$ = this.firebase.object<number>('lists_created').valueChanges();
+  counter$ = objectVal<string>(ref(this.firebase, 'lists_created'));
 
   features: FeatureEntry[] = [
     {
@@ -56,7 +56,7 @@ export class SearchIntroComponent {
     }
   ];
 
-  constructor(private firebase: AngularFireDatabase, public translate: TranslateService,
+  constructor(private firebase: Database, public translate: TranslateService,
               public platform: PlatformService) {
   }
 

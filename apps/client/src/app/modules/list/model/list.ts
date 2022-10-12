@@ -5,8 +5,8 @@ import { environment } from '../../../../environments/environment';
 import { Team } from '../../../model/team/team';
 import { ForeignKey } from '../../../core/database/relational/foreign-key';
 import { ListColor } from './list-color';
-import firebase from 'firebase/compat/app';
 import { SettingsService } from '../../settings/settings.service';
+import { Timestamp } from '@angular/fire/firestore';
 
 export class List extends DataWithPermissions {
 
@@ -28,7 +28,7 @@ export class List extends DataWithPermissions {
   note = '';
 
   // noinspection JSUnusedGlobalSymbols
-  createdAt: firebase.firestore.Timestamp;
+  createdAt: Timestamp;
 
   // Should we disable HQ suggestions for this list?
   disableHQSuggestions = false;
@@ -60,7 +60,7 @@ export class List extends DataWithPermissions {
   constructor(settings?: SettingsService) {
     super();
     if (!this.createdAt) {
-      this.createdAt = firebase.firestore.Timestamp.fromDate(new Date());
+      this.createdAt = Timestamp.fromDate(new Date());
     }
 
     if (settings) {

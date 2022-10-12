@@ -29,8 +29,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { TranslateService } from '@ngx-translate/core';
 import { XivapiService } from '@xivapi/angular-client';
 import { LoadAlarms } from '../core/alarms/+state/alarms.actions';
-import { User, UserCredential } from '@firebase/auth-types';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { User } from '@firebase/auth-types';
 import { AuthFacade } from './auth.facade';
 import { PatreonService } from '../core/patreon/patreon.service';
 import { diff } from 'deep-diff';
@@ -39,6 +38,7 @@ import { debounceBufferTime } from '../core/rxjs/debounce-buffer-time';
 import { CommissionProfile } from '../model/user/commission-profile';
 import { CommissionProfileService } from '../core/database/commission-profile.service';
 import { SettingsService } from '../modules/settings/settings.service';
+import { Auth, signInAnonymously } from '@angular/fire/auth';
 
 @Injectable()
 export class AuthEffects {
@@ -46,7 +46,7 @@ export class AuthEffects {
 
   getUser$ = createEffect(() => this.actions$.pipe(
     ofType(AuthActionTypes.GetUser),
-    mergeMap(() => this.af.authState),
+    mergeMap(() => this.authFacade.firebaseAuthState$),
     map((authState: User) => {
       if (authState === null) {
         return new LoginAsAnonymous();
@@ -65,8 +65,8 @@ export class AuthEffects {
 
   loginAsAnonymous$ = createEffect(() => this.actions$.pipe(
     ofType(AuthActionTypes.LoginAsAnonymous, AuthActionTypes.Logout),
-    mergeMap(() => from(this.af.signInAnonymously())),
-    map((result: UserCredential) => new LoggedInAsAnonymous(result.user.uid))
+    mergeMap(() => from(signInAnonymously(this.auth))),
+    map((result) => new LoggedInAsAnonymous(result.user.uid))
   ));
 
 
@@ -278,7 +278,7 @@ export class AuthEffects {
     switchMapTo(EMPTY)
   ), { dispatch: false });
 
-  constructor(private actions$: Actions, private af: AngularFireAuth, private userService: UserService,
+  constructor(private actions$: Actions, private auth: Auth, private userService: UserService,
               private store: Store<{ auth: AuthState }>, private dialog: NzModalService,
               private translate: TranslateService, private xivapi: XivapiService,
               private notificationService: NzNotificationService, private authFacade: AuthFacade,

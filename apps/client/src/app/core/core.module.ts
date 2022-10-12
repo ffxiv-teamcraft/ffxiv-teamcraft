@@ -14,10 +14,6 @@ import { MathToolsService } from './tools/math-tools';
 import { EorzeanTimeService } from './eorzea/eorzean-time.service';
 import { TimerPipe } from './eorzea/timer.pipe';
 import { HtmlToolsService } from './tools/html-tools.service';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { LinkToolsService } from './tools/link-tools.service';
 import { DiscordWebhookService } from './discord/discord-webhook.service';
 import { ListItemCommentNotification } from '../model/notification/list-item-comment-notification';
@@ -48,7 +44,6 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
-import { AngularFireFunctionsModule } from '@angular/fire/compat/functions';
 import { CommissionNotification } from '../model/notification/commission-notification';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { IpcPopupsModule } from '../modules/ipc-popups/ipc-popups.module';
@@ -84,9 +79,6 @@ import { NzNotificationModule } from 'ng-zorro-antd/notification';
         }
       }
     ]),
-    AngularFirestoreModule,
-    AngularFireDatabaseModule,
-    AngularFireFunctionsModule,
     PushNotificationsModule,
     MaintenanceModule,
     VersionLockModule,
@@ -135,9 +127,6 @@ import { NzNotificationModule } from 'ng-zorro-antd/notification';
   exports: [
     I18nPipe,
     TranslateModule,
-    AngularFireModule,
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
     PushNotificationsModule,
     MaintenanceModule,
     TimerPipe,
