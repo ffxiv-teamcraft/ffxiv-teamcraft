@@ -4146,13 +4146,13 @@
     "zh": "狼烟丘的于贝尔坦好像很期待“上古武器·魂灵”的强化。"
   },
   "67001": {
-    "zh": "蛇巢司令部的斯卡利特协牙尉有事情要委托给深受5个蛮族信赖的冒险者。"
+    "zh": "蛇巢司令部的斯卡利特协牙尉有事情要委托给深受5族信赖的冒险者。"
   },
   "67002": {
-    "zh": "黑涡军令部的特拉哈雷特协漩尉有事情要委托给深受5个蛮族信赖的冒险者。"
+    "zh": "黑涡军令部的特拉哈雷特协漩尉有事情要委托给深受5族信赖的冒险者。"
   },
   "67003": {
-    "zh": "恒辉作战总部的弥弥奥协耀尉有事情要委托给深受5个蛮族信赖的冒险者。"
+    "zh": "恒辉作战总部的弥弥奥协耀尉有事情要委托给深受5族信赖的冒险者。"
   },
   "67004": {
     "zh": "蛇巢司令部的加文协牙尉有事情想委托给冒险者。"
@@ -13061,6 +13061,15 @@
   "70058": {
     "zh": "劳班想要让冒险者前往工房。"
   },
+  "70059": {
+    "zh": "露天集市的佣人风貌的女性正在找人。"
+  },
+  "70060": {
+    "zh": "莱韦耶勒尔府的阿梅莉安丝想去迎接弥剌狄恩。"
+  },
+  "70061": {
+    "zh": "莱韦耶勒尔府的梅丽尔德有礼物想赠送给冒险者。"
+  },
   "70062": {
     "zh": "石之家的塔塔露正在为茶会做准备。"
   },
@@ -13109,6 +13118,114 @@
   "70077": {
     "zh": "※本任务是特定期间内的任务。\n\n太阳海岸的尔·弗尔·提亚十分消沉。"
   },
+  "70078": {
+    "zh": "拉札罕的矮小的少年似乎有事想委托冒险者。"
+  },
+  "70079": {
+    "zh": "迷途羊倌之森的希尔迪布兰德充满了无谓的干劲。"
+  },
+  "70081": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n新港的勘恰娜好像在担心什么事。"
+  },
+  "70082": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n大金库的荼罗娜一副很高兴的样子。"
+  },
+  "70083": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n大金库的荼罗娜充满了活力。"
+  },
+  "70084": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n大金库的荼罗娜一副心情很好的样子。"
+  },
+  "70085": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n大金库的荼罗娜正在防备袭击。"
+  },
+  "70086": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n大金库的荼罗娜感到很紧张。"
+  },
+  "70087": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢想要宣传河马骑手团。"
+  },
+  "70088": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢有很着急的业务要处理。"
+  },
+  "70089": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢很在意物资的库存情况。"
+  },
+  "70090": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢好像有心事。"
+  },
+  "70091": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢有事想要拜托冒险者。"
+  },
+  "70092": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢正在担心某人。"
+  },
+  "70093": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢想要用色粉进行宣传。"
+  },
+  "70094": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢想要冒险者帮忙搬运东西。"
+  },
+  "70095": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢正在等待某人回来。"
+  },
+  "70096": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢想要找人跑腿。"
+  },
+  "70097": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢在计划着什么。"
+  },
+  "70098": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢想要有效利用废弃食材。"
+  },
+  "70099": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢正在为阿输陀花的果实而担心。"
+  },
+  "70100": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢正在为出现的野兽发愁。"
+  },
+  "70101": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢正在思考驱除星甲虫的对策。"
+  },
+  "70102": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢想要展示河马用的肥皂。"
+  },
+  "70103": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢想要给河马们投喂美味的食物。"
+  },
+  "70104": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢很担心河马的去向。"
+  },
+  "70105": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢想要对河马进行护理。"
+  },
+  "70106": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢想要对河马的住处进行维修。"
+  },
+  "70107": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢想要委托危险的工作。"
+  },
+  "70108": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢想要委托狩猎的工作。"
+  },
+  "70109": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢正在等待冒险者的到来。"
+  },
+  "70110": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢遇到了让人头疼的事情。"
+  },
+  "70111": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢想找人支援运货工作。"
+  },
+  "70112": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢着急想要召集人手。"
+  },
+  "70113": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢很在意可疑人物的情报。"
+  },
+  "70114": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务需要与接受任务时的职业相同才可继续进行任务。\n\n大金库的摩罗卢很在意食材不足的问题。"
+  },
   "70115": {
     "zh": "流星之间的希剌巴缇有新的事想要拜托冒险者。"
   },
@@ -13121,8 +13238,17 @@
   "70118": {
     "zh": "都市区的富尔什诺打算返回据点。"
   },
+  "70119": {
+    "zh": "露天集市的麦及娜正在发愁。"
+  },
   "70120": {
     "zh": "※本任务是特定期间内的任务。\n\n乌尔达哈的奥利尔正在寻找能够帮忙的人。"
+  },
+  "70122": {
+    "zh": "魔导船的设计师正在知识神海港休息。"
+  },
+  "70123": {
+    "zh": "帕克夏大街的欧米茄想去进行下一项调查。"
   },
   "70126": {
     "zh": "※本任务是特定期间内的任务。\n\n米·凯特露天剧场的吉莉·阿里亚珀想要谈谈彩蛋狩猎的话题。"
