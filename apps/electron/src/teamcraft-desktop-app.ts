@@ -140,12 +140,16 @@ export class TeamcraftDesktopApp {
       });
     });
 
-    const resolveHtmlPath = (htmlFileName) => {
+  const resolveHtmlPath = (htmlFileName) => {
       const url = new URL(join(__dirname, htmlFileName));
       url.pathname = htmlFileName;
       return url.href;
     };
 
-    loaderWindow.loadURL(resolveHtmlPath('loader.html'));
+    //loaderWindow.loadURL(resolveHtmlPath('loader.html'));
+    //Hack to prevent app from crashing locally
+    loaderWindow.loadURL('https://www.google.com');
+
+    
   }
 }

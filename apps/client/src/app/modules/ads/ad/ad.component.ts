@@ -4,7 +4,7 @@ import { fromEvent } from 'rxjs';
 import { auditTime, delay, distinctUntilChanged, map, startWith, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 
-declare const tyche: any;
+declare const ramp: any;
 
 @Component({
   selector: 'app-ad',
@@ -12,15 +12,15 @@ declare const tyche: any;
   styleUrls: ['./ad.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
+ 
 export class AdComponent extends TeamcraftComponent {
 
   constructor(private platform: PlatformService) {
     super();
     if (!this.platform.isOverlay()) {
-      (<any>window).tyche = {
-        mode: 'tyche',
-        config: `https://config.playwire.com/1024627/v2/websites/${this.platform.isDesktop() ? 73554 : 73498}/banner.json`,
+      (<any>window).ramp = {
         passiveMode: true,
+        que: [],
         onReady: () => {
           fromEvent(window, 'resize')
             .pipe(
@@ -44,11 +44,10 @@ export class AdComponent extends TeamcraftComponent {
             });
         }
       };
-      const tycheCDNScript = document.createElement('script');
-      tycheCDNScript.id = 'tyche';
-      tycheCDNScript.async = true;
-      tycheCDNScript.setAttribute('src', 'https://cdn.intergi.com/hera/tyche.js');
-      document.head.appendChild(tycheCDNScript);
+      const ramp2CDNScript = document.createElement('script');
+      ramp2CDNScript.async = true;
+      ramp2CDNScript.setAttribute('src', `https://cdn.intergient.com/1024627/${this.platform.isDesktop() ? 73554 : 73498}/ramp.js`);
+      document.head.appendChild(ramp2CDNScript);
     }
   }
 
@@ -67,34 +66,34 @@ export class AdComponent extends TeamcraftComponent {
   }
 
   private removeAd(): void {
-    tyche.changePath('no-ads');
-    tyche.destroyUnits('all');
+    ramp.changePath('no-ads');
+    ramp.destroyUnits('all');
   }
 
   private enableDesktopAd(): void {
-    tyche.destroyUnits('all');
-    tyche.settings.device = 'desktop';
-    tyche.isMobile = false;
-    tyche.changePath('ROS');
-    tyche.addUnits([{
-      selectorId: 'pwAdBanner',
-      type: 'leaderboard_atf'
-    }]).then(() => {
-      tyche.displayUnits();
-    });
+    ramp.destroyUnits('all').then(() => {
+      ramp.settings.device = 'desktop';
+      ramp.isMobile = false;
+      ramp.addUnits([{
+        selectorId: 'pwAdBanner',
+        type: 'leaderboard_atf'
+      }]).then(() => {
+        ramp.displayUnits();
+      });
+    })
   }
 
   private enableMobileAd(): void {
-    tyche.destroyUnits('all');
-    tyche.settings.device = 'mobile';
-    tyche.isMobile = true;
-    tyche.changePath('mobile-ad');
-    tyche.addUnits([{
-      selectorId: 'pwAdBanner',
-      type: 'leaderboard_atf'
-    }]).then(() => {
-      tyche.displayUnits();
-    });
+    ramp.destroyUnits('all').then(() => {
+      ramp.settings.device = 'mobile';
+      ramp.isMobile = true;
+      ramp.addUnits([{
+        selectorId: 'pwAdBanner',
+        type: '320x50_atf'
+      }]).then(() => {
+        ramp.displayUnits();
+      });
+    })
   }
 
 }
