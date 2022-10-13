@@ -314,7 +314,7 @@
   "Gardening": "재배",
   "Hunting": "사냥",
   "Island_animal": "Island animal",
-  "Island_crop": "Island crop",
+  "Island_crop": "무인도 농작물",
   "Desynth": "분해",
   "Vendors": "상인",
   "Open": "열기",
@@ -1939,7 +1939,7 @@
     "Currencies": "화폐",
     "Add_to_favorites": "즐겨찾기에 추가",
     "Remove_from_favorites": "즐겨찾기에서 제거",
-    "Island_Sanctuary": "Island Sanctuary"
+    "Island_Sanctuary": "무인도 개척"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "패킷 캡쳐를 사용할 수 있습니다",
@@ -2320,7 +2320,7 @@
       },
       "INTEGRITY_CHECK": {
         "All_characters_valid": "이상없음",
-        "All_lists_ok": "All lists are working properly"
+        "All_lists_ok": "모든 리스트가 잘 작동하고 있습니다."
       }
     }
   },
@@ -2836,7 +2836,7 @@
     "Add_data_sources": "해당 아이템의 데이터 출처를 추가/수정",
     "Not_applied_yet": "적용되지 않음",
     "Not_applied_yet_explain": "해당 출처는 다음 업데이트에 목록과 데이터베이스 시스템에 추가됩니다",
-    "Pending_changes_count": "{{amount}} pending changes to review",
+    "Pending_changes_count": "{{amount}} 의 변경사항을 더 검토해야 합니다.",
     "Review_changes": "Review changes",
     "Imported_from_GT_data": "Garlandtools에서 가져오기",
     "Status": "상태",
@@ -2975,7 +2975,7 @@
       "Possible_peak_days": "Possible peaks",
       "Peak_days_explain": "The days on which it's more likely that this item will peak in value. Bold = strong peak.",
       "Items_to_prepare": "Best items to prepare for tomorrow",
-      "Rest": "Rest day",
+      "Rest": "휴일",
       "Unknown_day_planning": "Available on {{day}}",
       "Set_rest_day": "Set as second rest day",
       "Import_explain": "You can update your supply/demand table by opening it ingame with the desktop app running and packet capture enabled.",
