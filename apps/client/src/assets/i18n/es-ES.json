@@ -794,8 +794,8 @@
       "Please_pick_list": "Por favor elige una lista usando el campo que hay encima",
       "Layouts": "Disposiciones de pantalla",
       "Want_to_learn_more": "¿Quieres saber más sobre los diseños de pantalla y su uso?",
-      "Open_wiki_page": "Open the layouts system wiki page",
-      "Filter_using_level": "Use crafting and gathering level in corresponding filters",
+      "Open_wiki_page": "Abra la página wiki del sistema de diseños",
+      "Filter_using_level": "Utilice el nivel de síntesis y recolección en los filtros correspondientes",
       "ITEMS": {
         "COMMENTS": "Comentarios",
         "COPY_NAME_NOT_FAVORITE": "Modo de copia no favorito",
@@ -822,13 +822,13 @@
     },
     "OVERLAY": {
       "Open": "Alternar capa sobrepuesta de listas",
-      "No_display": "Open a list in the main window to get started",
+      "No_display": "Abra una lista en la ventana principal para comenzar",
       "No_panel_selected": "Seleccione un panel usando los botones de arriba"
     },
     "SPLIT": {
-      "Pick_items": "Pick items to add to another list",
-      "Remove_from_list": "Remove from the current list",
-      "Select_not_completed": "Select items not completed"
+      "Pick_items": "Seleccione objetos para añadirlos a otra lista",
+      "Remove_from_list": "Elimine de lista actual",
+      "Select_not_completed": "Seleccione objetos aun incompletos"
     }
   },
   "LIST_TAGS": {
@@ -925,12 +925,12 @@
     "No_items": "No se encontró nodo de recolección",
     "Gathering_name": "Ingrese nombre del artículo",
     "Ephemeral_node": "Nodo efímero, puede reaparecer",
-    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for!",
+    "Intro": "La ubicación de recolección le permite buscar fácilmente un objeto recolectadle y ver detalles sobre el mismo, donde encontrarlo y crear una alarma para un nodo determinado. ¡Simplemente ingresé un nombre en el campo de arriba y permítalo encontrar lo que busca Usted!",
     "Hidden_item": "Oculto",
-    "Fish_eyes": "Requires Fish Eyes to only care about weather requirement",
-    "Add_alarm": "Add alarm",
-    "Add_alarm_fish_eyes": "Add alarm with Fish Eyes",
-    "Snagging": "Requires Snagging",
+    "Fish_eyes": "Requiere ojos de pez para preocuparse solamente por el requisito de estación",
+    "Add_alarm": "Añade una alarma",
+    "Add_alarm_fish_eyes": "Añade una alarma con ojos de pez",
+    "Snagging": "Requiere casaquage",
     "Predators": "Pescar estos peces antes de",
     "Fish_eyes_duration": "Su \"fish eyes\" necesita esta duración para obtener el pescado. Haga clic para cambiar el formato.",
     "Spawned_for": "Desaparecerá en {{timer}}",
