@@ -152,9 +152,6 @@ workflows:
       - lint:
           requires:
             - setup
-      - test:
-          requires:
-            - setup
       - build:
           requires:
             - lint

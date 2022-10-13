@@ -187,14 +187,6 @@
         "lintFilePatterns": ["apps/client/**/*.ts", "apps/client/**/*.html"]
       }
     },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/client"],
-      "options": {
-        "jestConfig": "apps/client/jest.config.ts",
-        "passWithNoTests": true
-      }
-    },
     "server": {
       "executor": "@angular-devkit/build-angular:server",
       "options": {
@@ -242,6 +234,14 @@
       },
       "configurations": {
         "production": {}
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/client"],
+      "options": {
+        "jestConfig": "apps/client/jest.config.ts",
+        "passWithNoTests": true
       }
     }
   },

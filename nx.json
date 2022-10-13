@@ -32,12 +32,12 @@
     "@nrwl/angular:application": {
       "style": "less",
       "linter": "tslint",
-      "unitTestRunner": "jest",
+      "unitTestRunner": "karma",
       "e2eTestRunner": "cypress"
     },
     "@nrwl/angular:library": {
       "linter": "tslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "karma"
     },
     "@nrwl/angular:component": {
       "style": "less"
@@ -45,9 +45,10 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ]
+      "dependsOn": ["^build"]
+    },
+    "test": {
+      "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
     }
   }
 }
