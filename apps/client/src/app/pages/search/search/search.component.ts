@@ -14,7 +14,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
-import { AbstractControl, FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { AbstractControl, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { SearchFilter } from '../../../model/search/search-filter.interface';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { I18nName } from '../../../model/common/i18n-name';
@@ -82,7 +82,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
 
   allSelected = false;
 
-  filtersForm: FormGroup = this.fb.group({
+  filtersForm: UntypedFormGroup = this.fb.group({
     Patch: [-1],
     ilvlMin: [0],
     ilvlMax: [999],
@@ -219,7 +219,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private notificationService: NzNotificationService,
               private i18n: I18nToolsService, private listPicker: ListPickerService,
-              private progressService: ProgressPopupService, private fb: FormBuilder, private xivapi: XivapiService,
+              private progressService: ProgressPopupService, private fb: UntypedFormBuilder, private xivapi: XivapiService,
               private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService,
               private message: NzMessageService, public translate: TranslateService, private lazyData: LazyDataFacade,
               private analytics: GoogleAnalyticsService, private environment: EnvironmentService,
@@ -382,7 +382,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   }
 
   addFilter(type: 'stats' | 'bonuses'): void {
-    (this.filtersForm.get(type) as FormArray).push(this.fb.group({
+    (this.filtersForm.get(type) as UntypedFormArray).push(this.fb.group({
       name: ['Strength'],
       min: [0],
       max: [9999],
@@ -391,7 +391,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   }
 
   removeFilter(type: 'stats' | 'bonuses', i: number): void {
-    (this.filtersForm.get(type) as FormArray).removeAt(i);
+    (this.filtersForm.get(type) as UntypedFormArray).removeAt(i);
   }
 
   setSearchType(type: SearchType): void {
@@ -427,8 +427,8 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       lvlMax: this.curMaxLevel
     });
 
-    (this.filtersForm.get('bonuses') as FormArray).clear();
-    (this.filtersForm.get('stats') as FormArray).clear();
+    (this.filtersForm.get('bonuses') as UntypedFormArray).clear();
+    (this.filtersForm.get('stats') as UntypedFormArray).clear();
 
     const params = this.route.snapshot.queryParams;
 
@@ -596,7 +596,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     return +item.itemId;
   }
 
-  public adjust(form: KeysOfType<SearchComponent, FormGroup>, prop: string, amount: number, min: number, max: number, arrayName?: string, arrayIndex?: number): void {
+  public adjust(form: KeysOfType<SearchComponent, UntypedFormGroup>, prop: string, amount: number, min: number, max: number, arrayName?: string, arrayIndex?: number): void {
     //The arrayName and arrayIndex is for things such as the stat filters, where there can be multiple input rows
     //If we aren't given an arrayIndex, (we assume) it isn't necessary
     if (arrayName === undefined || arrayIndex === undefined) {
@@ -610,7 +610,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     }
   }
 
-  private filtersToForm(filters: SearchFilter[], form: FormGroup): Observable<{ [key: string]: any }> {
+  private filtersToForm(filters: SearchFilter[], form: UntypedFormGroup): Observable<{ [key: string]: any }> {
     return this.lazyData.getEntry('jobAbbr').pipe(
       map(jobAbbr => {
         const formRawValue: any = {};
@@ -621,8 +621,8 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
               if (form.get(f.formArray) === null) {
                 form.setControl(f.formArray, this.fb.array([]));
               }
-              if (!(form.get(f.formArray) as FormArray).controls.some(control => control.value.name === f.entryName)) {
-                (form.get(f.formArray) as FormArray).push(
+              if (!(form.get(f.formArray) as UntypedFormArray).controls.some(control => control.value.name === f.entryName)) {
+                (form.get(f.formArray) as UntypedFormArray).push(
                   this.fb.group({
                     name: f.entryName,
                     min: f.value.min,
@@ -692,7 +692,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
         }
       });
     }
-    if ((controls.stats as FormArray).controls.length > 0) {
+    if ((controls.stats as UntypedFormArray).controls.length > 0) {
       filters.push(...controls.stats.value.map(entry => {
         let fieldName: string;
         let valueMultiplier = 1;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { combineLatest, Observable } from 'rxjs';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { filter, map, shareReplay } from 'rxjs/operators';
@@ -17,7 +17,7 @@ import { uniqBy } from 'lodash';
 })
 export class CustomAlarmPopupComponent implements OnInit {
 
-  form: FormGroup;
+  form: UntypedFormGroup;
 
   /** Spawn are limited to hours (0 to 23) **/
   public SPAWN_VALIDATOR = {
@@ -74,7 +74,7 @@ export class CustomAlarmPopupComponent implements OnInit {
 
   public mapWeathers$: Observable<number[]>;
 
-  constructor(private fb: FormBuilder, private xivapi: XivapiService, private alarmsFacade: AlarmsFacade,
+  constructor(private fb: UntypedFormBuilder, private xivapi: XivapiService, private alarmsFacade: AlarmsFacade,
               private modalRef: NzModalRef) {
     this.maps$ = this.xivapi.getList(XivapiEndpoint.Map, {
       columns: ['ID', 'PlaceNameTargetID', 'PlaceName.ID', 'TerritoryType.WeatherRate', 'PlaceNameSub'],

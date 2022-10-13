@@ -2,11 +2,10 @@ import { Directive, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TutorialStepEntry } from './tutorial-step-entry';
 import { TutorialService } from './tutorial.service';
-import { Overlay, OverlayPositionBuilder } from '@angular/cdk/overlay';
+import { ConnectedPosition, Overlay, OverlayPositionBuilder } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { TutorialStepComponent } from './tutorial-step/tutorial-step.component';
 import { tap } from 'rxjs/operators';
-import { ConnectedPosition } from '@angular/cdk/overlay/position/flexible-connected-position-strategy';
 
 @Directive({
   selector: '[tutorialStep]'

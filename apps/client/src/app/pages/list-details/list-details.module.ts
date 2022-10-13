@@ -13,7 +13,6 @@ import { FormsModule } from '@angular/forms';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
-import { IconsModule } from '../../core/icons/icons.module';
 import { ListHistoryPopupComponent } from './list-history-popup/list-history-popup.component';
 import { LayoutEditorModule } from '../../modules/layout-editor/layout-editor.module';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
@@ -60,7 +59,6 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    IconsModule,
 
     RouterModule.forChild(routes),
 

@@ -17,7 +17,6 @@ import { FatesComponent } from './fates/fates.component';
 import { RouterModule } from '@angular/router';
 import { DesynthsComponent } from './desynth/desynths.component';
 import { RelationshipsComponent } from './relationships/relationships.component';
-import { IconsModule } from '../../core/icons/icons.module';
 import { ItemIconModule } from '../item-icon/item-icon.module';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { PipesModule } from '../../pipes/pipes.module';
@@ -42,7 +41,6 @@ import { IslandCropComponent } from './island-crop/island-crop.component';
   imports: [
     CommonModule,
     FormsModule,
-    IconsModule,
 
     CoreModule,
     ItemIconModule,

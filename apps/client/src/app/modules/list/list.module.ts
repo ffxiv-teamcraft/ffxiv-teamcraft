@@ -28,7 +28,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { TagsPopupComponent } from './tags-popup/tags-popup.component';
 import { PageLoaderModule } from '../page-loader/page-loader.module';
 import { PermissionsModule } from '../permissions/permissions.module';
-import { IconsModule } from '../../core/icons/icons.module';
 import { UserAvatarModule } from '../user-avatar/user-avatar.module';
 import { TeamsModule } from '../teams/teams.module';
 import { CommentsModule } from '../comments/comments.module';
@@ -113,7 +112,6 @@ export const DATA_EXTRACTORS: Provider[] = [
     PageLoaderModule,
     PermissionsModule,
     ProgressPopupModule,
-    IconsModule,
     UserAvatarModule,
     TeamsModule,
     CommentsModule,
