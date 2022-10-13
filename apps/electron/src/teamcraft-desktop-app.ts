@@ -146,10 +146,6 @@ export class TeamcraftDesktopApp {
       return url.href;
     };
 
-    //loaderWindow.loadURL(resolveHtmlPath('loader.html'));
-    //Hack to prevent app from crashing locally
-    loaderWindow.loadURL('https://www.google.com');
-
-    
+    loaderWindow.loadURL(resolveHtmlPath('loader.html'));
   }
 }
