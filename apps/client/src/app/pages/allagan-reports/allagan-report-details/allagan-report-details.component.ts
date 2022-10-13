@@ -14,7 +14,7 @@ import { pickBy, uniq } from 'lodash';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { AllaganReportQueueEntry } from '../model/allagan-report-queue-entry';
 import { AllaganReportStatus } from '../model/allagan-report-status';
-import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Hookset } from '../../../core/data/model/hookset';
 import { Tug } from '../../../core/data/model/tug';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
@@ -172,7 +172,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   };
 
   // tslint:disable-next-line:member-ordering
-  form: FormGroup = this.fb.group({
+  form: UntypedFormGroup = this.fb.group({
     source: [null, Validators.required],
     item: [null, this.requiredIfSource([AllaganReportSource.DESYNTH, AllaganReportSource.REDUCTION, AllaganReportSource.GARDENING, AllaganReportSource.LOOT], 'items$')],
     instance: [null, this.requiredIfSource([AllaganReportSource.INSTANCE], 'instances$')],
@@ -331,7 +331,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
               protected lazyData: LazyDataFacade, private i18n: I18nToolsService,
               private message: NzMessageService, private translate: TranslateService,
               private authFacade: AuthFacade, private cd: ChangeDetectorRef,
-              private xivapi: XivapiService, private fb: FormBuilder,
+              private xivapi: XivapiService, private fb: UntypedFormBuilder,
               private fishCtx: FishContextService, private itemCtx: ItemContextService,
               private router: Router) {
     super(lazyData);

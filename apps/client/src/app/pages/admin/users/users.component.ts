@@ -4,7 +4,7 @@ import { combineLatest, merge, Observable, of } from 'rxjs';
 import { XivapiService } from '@xivapi/angular-client';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { debounceTime, map, shareReplay, switchMap, tap } from 'rxjs/operators';
-import { FormControl, Validators } from '@angular/forms';
+import { UntypedFormControl, Validators } from '@angular/forms';
 import { UserSearchMode } from './user-search-mode.enum';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
@@ -26,19 +26,19 @@ export class UsersComponent {
 
   searchMode: UserSearchMode = UserSearchMode.UID;
 
-  uidFilter = new FormControl('');
+  uidFilter = new UntypedFormControl('');
 
-  emailFilter = new FormControl('');
+  emailFilter = new UntypedFormControl('');
 
   servers$: Observable<string[]>;
 
   autoCompleteRows$: Observable<string[]>;
 
-  selectedServer = new FormControl('', [Validators.required]);
+  selectedServer = new UntypedFormControl('', [Validators.required]);
 
-  characterName = new FormControl('');
+  characterName = new UntypedFormControl('');
 
-  lodestoneId = new FormControl(null);
+  lodestoneId = new UntypedFormControl(null);
 
   loadingResults = false;
 

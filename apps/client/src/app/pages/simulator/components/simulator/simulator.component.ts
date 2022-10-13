@@ -18,7 +18,7 @@ import {
 } from 'rxjs/operators';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { AuthFacade } from '../../../../+state/auth.facade';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ConsumablesService } from '../../model/consumables.service';
 import { FreeCompanyActionsService } from '../../model/free-company-actions.service';
 import { Consumable } from '../../model/consumable';
@@ -133,7 +133,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   public customStats$: ReplaySubject<CrafterStats> = new ReplaySubject<CrafterStats>();
 
   // Customization forms
-  public statsForm: FormGroup;
+  public statsForm: UntypedFormGroup;
 
   //
   public customJob$: ReplaySubject<number> = new ReplaySubject<number>();
@@ -229,7 +229,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   public levelTooLow$: Observable<boolean>;
 
   constructor(private htmlTools: HtmlToolsService, public settings: SettingsService,
-              private authFacade: AuthFacade, private fb: FormBuilder, public consumablesService: ConsumablesService,
+              private authFacade: AuthFacade, private fb: UntypedFormBuilder, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService, private i18n: I18nToolsService,
               private rotationsFacade: RotationsFacade, private router: Router,
               private route: ActivatedRoute, private dialog: NzModalService, public translate: TranslateService,

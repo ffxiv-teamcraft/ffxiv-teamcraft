@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalRef } from 'ng-zorro-antd/modal';
@@ -13,11 +13,11 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class LoginPopupComponent {
 
-  form: FormGroup;
+  form: UntypedFormGroup;
 
   errorMessageCode: string;
 
-  constructor(private fb: FormBuilder, private authFacade: AuthFacade,
+  constructor(private fb: UntypedFormBuilder, private authFacade: AuthFacade,
               private modalRef: NzModalRef, public platform: PlatformService,
               private message: NzMessageService, private translate: TranslateService) {
     this.form = this.fb.group({

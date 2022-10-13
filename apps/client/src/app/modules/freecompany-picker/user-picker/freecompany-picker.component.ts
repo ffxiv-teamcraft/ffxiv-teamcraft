@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
-import { FormControl, Validators } from '@angular/forms';
+import { UntypedFormControl, Validators } from '@angular/forms';
 import { CharacterSearchResult, CharacterSearchResultRow, XivapiService } from '@xivapi/angular-client';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { debounceTime, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
@@ -17,11 +17,11 @@ export class FreecompanyPickerComponent {
 
   public autoCompleteRows$: Observable<string[]>;
 
-  public selectedServer = new FormControl('', [Validators.required]);
+  public selectedServer = new UntypedFormControl('', [Validators.required]);
 
-  public fcName = new FormControl('');
+  public fcName = new UntypedFormControl('');
 
-  public lodestoneId = new FormControl(null);
+  public lodestoneId = new UntypedFormControl(null);
 
   public result$: Observable<any[]>;
 

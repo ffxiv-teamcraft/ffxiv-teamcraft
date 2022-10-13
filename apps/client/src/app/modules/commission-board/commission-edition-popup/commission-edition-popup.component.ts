@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { CommissionTag } from '../model/commission-tag';
 import { Commission } from '../model/commission';
@@ -15,7 +15,7 @@ export class CommissionEditionPopupComponent implements OnInit {
 
   commission: Partial<Commission>;
 
-  form: FormGroup;
+  form: UntypedFormGroup;
 
   commissionTags = Object.keys(CommissionTag).map(key => {
     return {
@@ -26,7 +26,7 @@ export class CommissionEditionPopupComponent implements OnInit {
 
   showWarning = localStorage.getItem('cw:s') === null;
 
-  constructor(private fb: FormBuilder, private modalRef: NzModalRef, private linkTools: LinkToolsService) {
+  constructor(private fb: UntypedFormBuilder, private modalRef: NzModalRef, private linkTools: LinkToolsService) {
   }
 
   ngOnInit(): void {
