@@ -4,10 +4,10 @@ import { observeInput } from '../../../../core/rxjs/observe-input';
 import { debounceTime, filter, map, switchMap, takeUntil } from 'rxjs/operators';
 import { combineLatest, Observable, Subject } from 'rxjs';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
-import { ListRow } from 'apps/client/src/app/modules/list/model/list-row';
+import { ListRow } from '../../../../modules/list/model/list-row';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { ListPricingService } from '../list-pricing.service';
-import { DataType } from 'apps/client/src/app/modules/list/data/data-type';
+import { DataType } from '../../../../modules/list/data/data-type';
 import { TranslateService } from '@ngx-translate/core';
 import { Price } from '../model/price';
 

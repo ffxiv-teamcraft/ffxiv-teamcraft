@@ -2,7 +2,7 @@ import { isPlatformServer } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { IS_HEADLESS } from 'apps/client/src/environments/is-headless';
+import { IS_HEADLESS } from '../../../../environments/is-headless';
 import { combineLatest } from 'rxjs';
 import { filter, map, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
@@ -21,7 +21,7 @@ export class DbComponent extends TeamcraftComponent implements OnInit {
     private settings: SettingsService,
     private translate: TranslateService,
     private router: Router,
-    @Inject(PLATFORM_ID) private platform: Object,
+    @Inject(PLATFORM_ID) private platform: any,
     private readonly i18n: I18nToolsService
   ) {
     super();

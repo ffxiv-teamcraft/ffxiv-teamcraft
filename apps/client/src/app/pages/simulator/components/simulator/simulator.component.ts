@@ -73,7 +73,7 @@ import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../../core/rxjs/safe-combine-latest';
 import { FinalAppraisal } from '@ffxiv-teamcraft/simulator';
 import { observeInput } from '../../../../core/rxjs/observe-input';
-import { withLazyData } from 'apps/client/src/app/core/rxjs/with-lazy-data';
+import { withLazyData } from '../../../../core/rxjs/with-lazy-data';
 import { LocalStorageBehaviorSubject } from '../../../../core/rxjs/local-storage-behavior-subject';
 import { PermissionsController } from '../../../../core/database/permissions-controller';
 import { NzOptionComponent } from 'ng-zorro-antd/select';
@@ -218,10 +218,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   private fails$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
 
-  private findActionsRegex: RegExp =
+  private findActionsRegex =
     new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+((\w|[éàèç]|[\u3000-\u303F]|[\u3040-\u309F]|[\u30A0-\u30FF]|[\uFF00-\uFFEF]|[\u4E00-\u9FAF]|[\u2605-\u2606]|[\u2190-\u2195]|\u203B)+|"[^"]+")?.*/, 'i');
 
-  private findActionsAutoTranslatedRegex: RegExp =
+  private findActionsAutoTranslatedRegex =
     new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+([^<]+)?.*/, 'i');
 
   public statsTooLow$: Observable<boolean>;

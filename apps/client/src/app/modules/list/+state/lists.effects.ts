@@ -72,6 +72,8 @@ import { UpdateData, where } from '@angular/fire/firestore';
 @Injectable()
 export class ListsEffects {
 
+  static LAST_HANDLED: SetItemDone;
+
   /**
    * TOOLING
    */
@@ -360,9 +362,6 @@ export class ListsEffects {
   /**
    * Unit update stuff, for items, progression, the core of the realtime part.
    */
-
-    // tslint:disable-next-line:member-ordering
-  static LAST_HANDLED: SetItemDone;
 
   updateItemDone$ = createEffect(() => this.actions$.pipe(
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),

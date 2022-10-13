@@ -177,7 +177,7 @@
       <app-favorite-button *ngIf="rotation.$key" [key]="rotation.$key" type="rotations"></app-favorite-button>
     </div>
     <div class="simulator" fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px"
-         [class.buttons-collapsed]="!(showFullButtons$ | async)" [class.buttons-expanded]="(showFullButtons$ | async)">
+         [class.buttons-collapsed]="(showFullButtons$ | async) === false" [class.buttons-expanded]="(showFullButtons$ | async)">
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
         <nz-tag *ngIf="rotation.public" [nzColor]="'geekblue'">
           {{'SIMULATOR.COMMUNITY_ROTATIONS.Community_rotation' | translate}}

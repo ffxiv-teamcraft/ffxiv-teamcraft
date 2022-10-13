@@ -191,7 +191,7 @@ export class AppComponent implements OnInit {
               private layoutsFacade: LayoutsFacade, private lazyDataFacade: LazyDataFacade,
               private customItemsFacade: CustomItemsFacade, private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
               private message: NzMessageService, private universalis: UniversalisService,
-              private inventoryService: InventoryService, @Inject(PLATFORM_ID) private platform: Object,
+              private inventoryService: InventoryService, @Inject(PLATFORM_ID) private platform: any,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
               private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService,

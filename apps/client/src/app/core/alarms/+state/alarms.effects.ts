@@ -272,7 +272,7 @@ export class AlarmsEffects {
   constructor(private actions$: Actions, private alarmsFacade: AlarmsFacade,
               private authFacade: AuthFacade, private alarmsService: AlarmsService,
               private alarmGroupsService: AlarmGroupService, private message: NzMessageService,
-              private translate: TranslateService, @Inject(PLATFORM_ID) private platform: Object,
+              private translate: TranslateService, @Inject(PLATFORM_ID) private platform: any,
               private router: Router) {
   }
 

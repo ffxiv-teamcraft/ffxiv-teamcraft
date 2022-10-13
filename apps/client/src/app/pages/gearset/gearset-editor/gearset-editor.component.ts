@@ -375,15 +375,6 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
           this.itemFiltersform.controls.ilvlMin.patchValue(lowestIlvl);
         }
         didChange = true;
-      } else if (!usedDefaultValues) {
-        if (this.itemFiltersform.value.ilvlMin > lowestIlvl) {
-          this.itemFiltersform.controls.ilvlMin.patchValue(lowestIlvl);
-          didChange = true;
-        }
-        if (this.itemFiltersform.value.ilvlMax < highestIlvl) {
-          this.itemFiltersform.controls.ilvlMax.patchValue(highestIlvl);
-          didChange = true;
-        }
       }
       if (didChange) {
         this.submitFilters();
@@ -547,7 +538,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
       }
       if (res && gearset[propertyName] && gearset[propertyName].itemId === res.itemId) {
         this.setGearsetPiece(gearset, propertyName, { ...res });
-      } else if (!!res) {
+      } else if (res) {
         category.items = category.items.map(item => {
           if (item.equipmentPiece.itemId === equipmentPiece.itemId) {
             return {

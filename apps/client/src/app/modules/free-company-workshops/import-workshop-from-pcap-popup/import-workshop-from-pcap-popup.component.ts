@@ -37,7 +37,7 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
 
   public get isLoading$() {
     return this._isLoading.asObservable();
-  };
+  }
 
   public get freeCompany$() {
     return this._freeCompany.asObservable();

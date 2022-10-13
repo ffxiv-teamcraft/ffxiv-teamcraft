@@ -32,7 +32,7 @@ export class MateriaService {
       }),
       shareReplay({ bufferSize: 1, refCount: true })
     );
-  };
+  }
 
   getMateriaItemIdFromPacketMateria(packetMateria: number, tier: number, materias: LazyData['materias']): number {
     return materias.find(m => m.id === packetMateria && m.tier === tier + 1)?.itemId;

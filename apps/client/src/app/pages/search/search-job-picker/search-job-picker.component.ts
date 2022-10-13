@@ -74,11 +74,11 @@ export class SearchJobPickerComponent implements ControlValueAccessor {
   constructor(private lazyData: LazyDataFacade) {
   }
 
-  registerOnChange(fn: (_: any) => {}): void {
+  registerOnChange(fn: (_: any) => void): void {
     this.onChange = fn;
   }
 
-  registerOnTouched(fn: () => {}): void {
+  registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
 

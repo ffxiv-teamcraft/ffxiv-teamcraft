@@ -21,7 +21,7 @@ import { Timestamp } from '@angular/fire/firestore';
 
 
 declare const fathom: any;
-declare const gtag: Function;
+declare const gtag: () => any;
 
 interface CraftAdditionParams {
   _additions: CraftAddition[];

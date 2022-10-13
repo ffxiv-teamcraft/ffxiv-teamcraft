@@ -12,6 +12,5 @@ export class FishingSpotPositionComponent {
 
   @Input() public spot?: XivApiFishingSpot = undefined;
 
-  constructor() {
-  }
+
 }

@@ -4,7 +4,8 @@ let electron = false;
 // In a try catch because navigator doesn't exist in server platform.
 try {
   electron = navigator && navigator.userAgent.toLowerCase().indexOf('electron/') > -1;
-} catch (ignored) {
+} catch (err) {
+  console.error(err);
 }
 export const IS_ELECTRON = electron;
 

@@ -8,7 +8,7 @@ import { filter, first, map, skip, switchMap, tap } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { concat } from 'rxjs';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
-import { AbstractListsSelectionPopup } from '../abstract-lists-selection-popup';
+import { AbstractListsSelectionPopupComponent } from '../abstract-lists-selection-popup.component';
 import { ListController } from '../../../modules/list/list-controller';
 
 @Component({
@@ -17,7 +17,7 @@ import { ListController } from '../../../modules/list/list-controller';
   styleUrls: ['./merge-lists-popup.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MergeListsPopupComponent extends AbstractListsSelectionPopup {
+export class MergeListsPopupComponent extends AbstractListsSelectionPopupComponent {
 
   merging = false;
 

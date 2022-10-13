@@ -1,6 +1,6 @@
 <nz-card
   [nzTitle]="'DB.FISH.Weather_transitions' | translate"
-  [nzLoading]="!(weatherTransitions$ | async)"
+  [nzLoading]="(weatherTransitions$ | async) === false"
   [class.card-with-list]="weatherTransitions$ | async"
 >
   <div

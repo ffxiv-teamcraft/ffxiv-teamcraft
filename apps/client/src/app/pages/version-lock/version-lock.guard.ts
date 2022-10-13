@@ -5,13 +5,13 @@ import { environment } from '../../../environments/environment';
 import { map } from 'rxjs/operators';
 import { isPlatformServer } from '@angular/common';
 import * as semver from 'semver';
-import { IS_HEADLESS } from 'apps/client/src/environments/is-headless';
 import { Database, objectVal, ref } from '@angular/fire/database';
+import { IS_HEADLESS } from '../../../environments/is-headless';
 
 @Injectable()
 export class VersionLockGuard implements CanActivate {
 
-  constructor(private firebase: Database, @Inject(PLATFORM_ID) private platform: Object) {
+  constructor(private firebase: Database, @Inject(PLATFORM_ID) private platform: any) {
   }
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {

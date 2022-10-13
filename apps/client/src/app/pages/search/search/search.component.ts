@@ -33,7 +33,7 @@ import { PlatformService } from '../../../core/tools/platform.service';
 import { GaActionEnum, GoogleAnalyticsService } from 'ngx-google-analytics';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
-import { IS_HEADLESS } from 'apps/client/src/environments/is-headless';
+import { IS_HEADLESS } from '../../../../environments/is-headless';
 import { EnvironmentService } from '../../../core/environment.service';
 
 @Component({
@@ -223,7 +223,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
               private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService,
               private message: NzMessageService, public translate: TranslateService, private lazyData: LazyDataFacade,
               private analytics: GoogleAnalyticsService, private environment: EnvironmentService,
-              private platformService: PlatformService, @Inject(PLATFORM_ID) private platform: Object) {
+              private platformService: PlatformService, @Inject(PLATFORM_ID) private platform: any) {
     super();
     this.uiCategories$ = this.xivapi.getList(XivapiEndpoint.ItemUICategory, {
       columns: ['ID', 'Name_de', 'Name_en', 'Name_fr', 'Name_ja'],
@@ -616,7 +616,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
         const formRawValue: any = {};
         (filters || []).forEach(f => {
           const formFieldName = this.getFormFieldName(f.name);
-          if (!!f.value) {
+          if (f.value) {
             if (f.formArray) {
               if (form.get(f.formArray) === null) {
                 form.setControl(f.formArray, this.fb.array([]));

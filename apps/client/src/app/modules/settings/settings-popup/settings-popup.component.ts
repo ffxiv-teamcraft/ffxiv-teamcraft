@@ -265,8 +265,7 @@ export class SettingsPopupComponent {
       case 'pac':
         return 'http://127.0.0.1:1080/pac';
       case 'custom':
-        const help = 'https://www.electronjs.org/docs/api/session#sessetproxyconfig';
-        return `<a href="${help}" target="_blank">${help}</a>`;
+        return `<a href="https://www.electronjs.org/docs/api/session#sessetproxyconfig" target="_blank">https://www.electronjs.org/docs/api/session#sessetproxyconfig</a>`;
       default:
         return '127.0.0.1:8080';
     }

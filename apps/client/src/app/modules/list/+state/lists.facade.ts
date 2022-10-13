@@ -55,7 +55,7 @@ import { ModificationEntry } from '../model/modification-entry';
 import { PermissionsController } from '../../../core/database/permissions-controller';
 import { ListController } from '../list-controller';
 
-declare const gtag: Function;
+declare const gtag: (...args: any[]) => void;
 declare const fathom: any;
 
 @Injectable({

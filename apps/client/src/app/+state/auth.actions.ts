@@ -60,8 +60,7 @@ export enum AuthActionTypes {
 export class GetUser implements Action {
   readonly type = AuthActionTypes.GetUser;
 
-  constructor() {
-  }
+
 }
 
 export class Authenticated implements Action {
@@ -116,8 +115,7 @@ export class RegisterUser implements Action {
 export class LoginAsAnonymous implements Action {
   readonly type = AuthActionTypes.LoginAsAnonymous;
 
-  constructor() {
-  }
+
 }
 
 export class LoggedInAsAnonymous implements Action {

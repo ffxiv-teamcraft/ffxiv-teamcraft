@@ -53,7 +53,7 @@
         <app-list-panel [hideAvatar]="true" [list]="list"></app-list-panel>
       </div>
     </div>
-    <app-fullpage-message *ngIf="lists.otherLists.length === 0 && !(loading$ | async)" height="150px">
+    <app-fullpage-message *ngIf="lists.otherLists.length === 0 && (loading$ | async) === false" height="150px">
       {{'LISTS.No_lists' | translate}}
     </app-fullpage-message>
     <ng-container *ngIf="favoriteLists$ | async as favoriteLists">

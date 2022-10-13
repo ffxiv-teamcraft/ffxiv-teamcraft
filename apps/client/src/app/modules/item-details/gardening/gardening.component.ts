@@ -6,7 +6,6 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { Observable } from 'rxjs';
 import { pluck } from 'rxjs/operators';
 
-// @ts-ignore
 @Component({
   selector: 'app-gardening',
   templateUrl: './gardening.component.html',

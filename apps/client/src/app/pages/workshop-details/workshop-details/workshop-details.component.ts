@@ -73,7 +73,4 @@ export class WorkshopDetailsComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-  }
-
 }

@@ -4,13 +4,13 @@ import { Observable, of } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { map } from 'rxjs/operators';
 import { isPlatformServer } from '@angular/common';
-import { IS_HEADLESS } from 'apps/client/src/environments/is-headless';
+import { IS_HEADLESS } from '../../../environments/is-headless';
 import { Database, objectVal, ref } from '@angular/fire/database';
 
 @Injectable()
 export class MaintenanceGuard implements CanActivate {
 
-  constructor(private firebase: Database, @Inject(PLATFORM_ID) private platform: Object) {
+  constructor(private firebase: Database, @Inject(PLATFORM_ID) private platform: any) {
   }
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {

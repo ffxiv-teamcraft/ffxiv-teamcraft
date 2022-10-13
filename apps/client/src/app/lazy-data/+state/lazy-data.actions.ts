@@ -8,4 +8,4 @@ export const lazyDataFullEntityLoading = createAction('[LazyData] Full Entity Lo
 export const lazyDataEntityEntryLoading = createAction('[LazyData] Entity Entry Loading', props<{ entity: LazyDataKey, id: number }>());
 
 export const loadLazyDataFullEntitySuccess = createAction('[LazyData] Full Entity Loaded', props<{ key: LazyDataKey, entry: Record<string, any> }>());
-export const loadLazyDataEntityEntrySuccess = createAction('[LazyData] Entity Entry Loaded', props<{ key: LazyDataKey, id: number, row: Object }>());
+export const loadLazyDataEntityEntrySuccess = createAction('[LazyData] Entity Entry Loaded', props<{ key: LazyDataKey, id: number, row: any }>());

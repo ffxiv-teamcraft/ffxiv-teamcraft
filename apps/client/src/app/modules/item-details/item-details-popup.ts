@@ -6,7 +6,7 @@ import { ListRow } from '../list/model/list-row';
 @Component({
   template: ''
 })
-// tslint:disable-next-line:component-class-suffix
+// eslint-disable-next-line @angular-eslint/component-class-suffix
 export class ItemDetailsPopup<T = any> implements OnInit {
   @Input()
   public item: ListRow;

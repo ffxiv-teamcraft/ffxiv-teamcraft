@@ -9,7 +9,7 @@ const getCustomItemsState = createFeatureSelector<CustomItemsState>(
 const getLoaded = createSelector(
   getCustomItemsState,
   (state: CustomItemsState) => {
-    ;
+    
     return state.loaded;
   }
 );

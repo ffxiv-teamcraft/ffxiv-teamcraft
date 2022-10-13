@@ -13,7 +13,7 @@ import { extractsHash } from '../../../environments/extracts-hash';
 import { LazyDataKey } from '../lazy-data-types';
 import { debounceBufferTime } from '../../core/rxjs/debounce-buffer-time';
 import { uniq } from 'lodash';
-import { IS_HEADLESS } from 'apps/client/src/environments/is-headless';
+import { IS_HEADLESS } from '../../../environments/is-headless';
 
 @Injectable()
 export class LazyDataEffects {
@@ -68,7 +68,7 @@ export class LazyDataEffects {
 
   constructor(private actions$: Actions, private http: HttpClient,
               private facade: LazyDataFacade, private platformService: PlatformService,
-              @Inject(PLATFORM_ID) private platform: Object) {
+              @Inject(PLATFORM_ID) private platform: any) {
   }
 
   private getUrl(entity: LazyDataKey): string {

@@ -10,7 +10,7 @@ import { WorkshopsFacade } from '../../modules/workshop/+state/workshops.facade'
   template: ''
 })
 // tslint:disable-next-line:component-class-suffix
-export abstract class AbstractListsSelectionPopup implements OnInit {
+export abstract class AbstractListsSelectionPopupComponent implements OnInit {
 
   lists$: Observable<List[]>;
 

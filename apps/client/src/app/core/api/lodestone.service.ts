@@ -52,12 +52,12 @@ export class LodestoneService {
 
   public getCharacterFromLodestoneApi(id: number, columns?: string[]): Observable<Partial<CharacterResponse>> {
     return this.ngZone.runOutsideAngular(() => {
-      let dataSource$: Observable<Partial<CharacterResponse>>;
+
       let params = new HttpParams();
       if (columns) {
         params = params.set('columns', columns.join(','));
       }
-      dataSource$ = this.http.get<any>(`https://lodestone.ffxivteamcraft.com/Character/${id}`, { params });
+      const dataSource$: Observable<Partial<CharacterResponse>> = this.http.get<any>(`https://lodestone.ffxivteamcraft.com/Character/${id}`, { params });
       return dataSource$.pipe(
         map(res => {
           return {

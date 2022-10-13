@@ -26,7 +26,7 @@ export class DiscordWebhookService {
               private characterService: LodestoneService, private lazyData: LazyDataFacade) {
   }
 
-  sendMessage(team: Team, contentKey: string, contentParams?: Object, iconUrl$: Observable<string> = of(''), imageUrl?: string): void {
+  sendMessage(team: Team, contentKey: string, contentParams?: any, iconUrl$: Observable<string> = of(''), imageUrl?: string): void {
     if (!team.webhook) {
       return;
     }
