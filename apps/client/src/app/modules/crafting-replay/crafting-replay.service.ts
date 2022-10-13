@@ -2,15 +2,15 @@ import { Injectable } from '@angular/core';
 import { IpcService } from '../../core/electron/ipc.service';
 import { combineLatest, merge, Observable } from 'rxjs';
 import { distinctUntilKeyChanged, filter, map, scan, shareReplay, switchMap, withLatestFrom } from 'rxjs/operators';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { CraftingReplay } from './model/crafting-replay';
-import firebase from 'firebase/compat/app';
+
 import { CrafterStats } from '@ffxiv-teamcraft/simulator';
 import { CraftingReplayFacade } from './+state/crafting-replay.facade';
 import { ofMessageType } from '../../core/rxjs/of-message-type';
 import { EventPlay32 } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { EnvironmentService } from '../../core/environment.service';
+import { collection, doc, Firestore, Timestamp } from '@angular/fire/firestore';
 
 @Injectable({ providedIn: 'root' })
 export class CraftingReplayService {
@@ -32,7 +32,7 @@ export class CraftingReplayService {
     shareReplay({ bufferSize: 1, refCount: true })
   );
 
-  constructor(private ipc: IpcService, private afs: AngularFirestore, private craftingReplayFacade: CraftingReplayFacade,
+  constructor(private ipc: IpcService, private firestore: Firestore, private craftingReplayFacade: CraftingReplayFacade,
               private lazyData: LazyDataFacade, private env: EnvironmentService) {
   }
 
@@ -52,16 +52,16 @@ export class CraftingReplayService {
                     return null;
                   case 2:
                     return new CraftingReplay(
-                      this.afs.createId(),
+                      doc(collection(this.firestore, 'crafting-replays')).id,
                       recipes.find(r => r.id.toString() === packet.params[1]?.toString())?.result,
                       packet.params[1],
-                      firebase.firestore.Timestamp.now(),
+                      Timestamp.now(),
                       stats
                     );
                   case 4:
                   case 6:
                     if (!replay) return null;
-                    replay.endTime = firebase.firestore.Timestamp.now();
+                    replay.endTime = Timestamp.now();
                     return replay;
                   default:
                     return replay;

@@ -3,7 +3,8 @@ import { Favorites } from '../other/favorites';
 import { LodestoneIdEntry } from './lodestone-id-entry';
 import { Character } from '@xivapi/angular-client';
 import { DefaultConsumables } from './default-consumables';
-import firebase from 'firebase/compat/app';
+import { Timestamp } from '@angular/fire/firestore';
+
 
 export class TeamcraftUser extends DataModel {
   defaultLodestoneId: number;
@@ -35,7 +36,7 @@ export class TeamcraftUser extends DataModel {
   patron = false;
 
   // For shared benefits or one-time donations benefits.
-  patreonBenefitsUntil: firebase.firestore.Timestamp;
+  patreonBenefitsUntil: Timestamp;
 
   sekrit?: boolean;
 

@@ -8,11 +8,10 @@ import { commissionLoaded, commissionsLoaded } from './commissions.actions';
 import { catchError, distinctUntilChanged, filter, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { Commission } from '../model/commission';
 import { combineLatest, of } from 'rxjs';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { CommissionEditionPopupComponent } from '../commission-edition-popup/commission-edition-popup.component';
 import { TranslateService } from '@ngx-translate/core';
-import firebase from 'firebase/compat/app';
+import { collection, doc, Firestore, Timestamp } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
@@ -69,9 +68,9 @@ export class CommissionsEffects {
       ofType(CommissionsActions.deleteCommission),
       mergeMap(({ key, deleteList }) => {
         if (deleteList) {
-          return combineLatest([this.commissionService.remove(key), this.listsFacade.deleteList(key, false)]);
+          return combineLatest([this.commissionService.remove(key), of(this.listsFacade.deleteList(key, false))]);
         } else {
-          return combineLatest([this.commissionService.remove(key), this.listsFacade.pureUpdateList(key, { hasCommission: false })]);
+          return combineLatest([this.commissionService.remove(key), of(this.listsFacade.pureUpdateList(key, { hasCommission: false }))]);
         }
       })
     );
@@ -112,8 +111,8 @@ export class CommissionsEffects {
         commission.authorId = userId;
         commission.server = character.Server;
         commission.datacenter = character.DC;
-        commission.createdAt = firebase.firestore.Timestamp.now();
-        commission.bump = firebase.firestore.Timestamp.now();
+        commission.createdAt = Timestamp.now();
+        commission.bump = Timestamp.now();
         Object.assign(commission, partialCommission);
         if (list) {
           commission.$key = list.$key;
@@ -125,7 +124,7 @@ export class CommissionsEffects {
         const newList = this.listsFacade.newListWithName(name);
         newList.hasCommission = true;
         newList.everyone = PermissionLevel.READ;
-        newList.$key = this.afs.createId();
+        newList.$key = doc(collection(this.firestore, 'lists')).id;
         this.listsFacade.addList(newList);
         commission.$key = newList.$key;
         return of(commission);
@@ -142,7 +141,7 @@ export class CommissionsEffects {
 
   constructor(private actions$: Actions, private authFacade: AuthFacade,
               private commissionService: CommissionService, private listsFacade: ListsFacade,
-              private lazyData: LazyDataFacade, private afs: AngularFirestore,
+              private lazyData: LazyDataFacade, private firestore: Firestore,
               private modalService: NzModalService, private translate: TranslateService,
               private router: Router) {
   }

@@ -3,7 +3,6 @@ import { SettingsService } from '../settings.service';
 import { TranslateService } from '@ngx-translate/core';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
@@ -18,7 +17,7 @@ import { Theme } from '../theme';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
 import { uniq } from 'lodash';
 import { MappyReporterService } from '../../../core/electron/mappy/mappy-reporter';
-import { from, Observable, Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { NavigationSidebarService } from '../../navigation-sidebar/navigation-sidebar.service';
 import { SidebarItem } from '../../navigation-sidebar/sidebar-entry';
 import { saveAs } from 'file-saver';
@@ -28,6 +27,7 @@ import { NotificationSettings } from '../notification-settings';
 import { SoundNotificationType } from '../../../core/sound-notification/sound-notification-type';
 import { SoundNotificationService } from '../../../core/sound-notification/sound-notification.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { Auth, sendPasswordResetEmail } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-settings-popup',
@@ -158,7 +158,7 @@ export class SettingsPopupComponent {
 
   constructor(public settings: SettingsService, public translate: TranslateService,
               public platform: PlatformService, private authFacade: AuthFacade,
-              private af: AngularFireAuth, private message: NzMessageService,
+              private auth: Auth, private message: NzMessageService,
               public ipc: IpcService, private router: Router, private http: HttpClient,
               private userService: UserService, private customLinksFacade: CustomLinksFacade,
               private dialog: NzModalService, private inventoryFacade: InventoryService,
@@ -429,30 +429,25 @@ export class SettingsPopupComponent {
   }
 
   resetPassword(): void {
-    this.af.user.pipe(
-      switchMap(user => {
-        return from(this.af.sendPasswordResetEmail(user.email));
-      })).subscribe(() => {
+    sendPasswordResetEmail(this.auth, this.auth.currentUser.email).then(() => {
       this.message.success(this.translate.instant('SETTINGS.Password_reset_mail_sent'));
     });
   }
 
   updateEmail(): void {
-    this.af.user.pipe(
-      switchMap(user => {
-        return this.dialog.create({
-          nzContent: NameQuestionPopupComponent,
-          nzComponentParams: {
-            type: 'email',
-            baseName: user.email
-          },
-          nzFooter: null,
-          nzTitle: this.translate.instant('SETTINGS.Change_email')
-        }).afterClose;
-      }),
-      filter(email => email !== undefined),
-      switchMap(email => this.authFacade.changeEmail(email))
-    ).subscribe(() => {
+    this.dialog.create({
+      nzContent: NameQuestionPopupComponent,
+      nzComponentParams: {
+        type: 'email',
+        baseName: this.auth.currentUser.email
+      },
+      nzFooter: null,
+      nzTitle: this.translate.instant('SETTINGS.Change_email')
+    }).afterClose
+      .pipe(
+        filter(email => email !== undefined),
+        switchMap(email => this.authFacade.changeEmail(email))
+      ).subscribe(() => {
       this.message.success(this.translate.instant('SETTINGS.Change_email_success'));
     });
   }

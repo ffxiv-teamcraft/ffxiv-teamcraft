@@ -3,28 +3,28 @@ import { Alarm } from './alarm';
 import { Injectable, NgZone } from '@angular/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../database/pending-changes/pending-changes.service';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { from, Observable } from 'rxjs';
+import { Firestore, writeBatch } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlarmsService extends FirestoreRelationalStorage<Alarm> {
 
-  constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService,
+  constructor(protected firestore: Firestore, protected serializer: NgSerializerService,
               protected zone: NgZone, protected pendingChangesService: PendingChangesService) {
     super(firestore, serializer, zone, pendingChangesService);
   }
 
   public deleteAll(alarms: Alarm[]): Observable<void> {
-    const batch = this.firestore.firestore.batch();
+    const batch = writeBatch(this.firestore);
     alarms.forEach(alarm => {
-      batch.delete(this.firestore.collection(this.getBaseUri()).doc(alarm.$key).ref);
+      batch.delete(this.docRef(alarm.$key));
     });
     return from(batch.commit());
   }
 
-  protected getBaseUri(params?: any): string {
+  protected getBaseUri(): string {
     return 'alarms';
   }
 

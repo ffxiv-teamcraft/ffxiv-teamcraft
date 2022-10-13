@@ -1,18 +1,18 @@
 import { Injectable, NgZone } from '@angular/core';
 import { FirestoreStorage } from '../../../core/database/storage/firestore/firestore-storage';
-import { AngularFirestore, DocumentChangeAction } from '@angular/fire/compat/firestore';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../../core/database/pending-changes/pending-changes.service';
 import { DbComment } from './model/db-comment';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Firestore, orderBy, where } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DbCommentsService extends FirestoreStorage<DbComment> {
   protected constructor(
-    protected firestore: AngularFirestore,
+    protected firestore: Firestore,
     protected serializer: NgSerializerService,
     protected zone: NgZone,
     protected pendingChangesService: PendingChangesService
@@ -21,18 +21,8 @@ export class DbCommentsService extends FirestoreStorage<DbComment> {
   }
 
   public getComments(resourceId: string): Observable<DbComment[]> {
-    return this.firestore
-      .collection(this.getBaseUri(), (ref) => ref.where('resourceId', '==', resourceId).orderBy('date', 'desc'))
-      .snapshotChanges()
+    return this.query(where('resourceId', '==', resourceId), orderBy('date', 'desc'))
       .pipe(
-        map((snaps: DocumentChangeAction<DbComment>[]) => {
-          const comments = snaps.map((snap: DocumentChangeAction<any>) => {
-            const valueWithKey: DbComment = <DbComment>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
-            delete snap.payload;
-            return valueWithKey;
-          });
-          return this.serializer.deserialize<DbComment>(comments, [this.getClass()]);
-        }),
         map((comments) => {
           // Map comments array to a tree with replies etc
           return comments
@@ -60,7 +50,7 @@ export class DbCommentsService extends FirestoreStorage<DbComment> {
       );
   }
 
-  protected getBaseUri(params?: any): string {
+  protected getBaseUri(): string {
     return 'db-comments';
   }
 

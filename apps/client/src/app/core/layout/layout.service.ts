@@ -6,13 +6,13 @@ import { LayoutRowFilter } from './layout-row-filter';
 import { ListLayout } from './list-layout';
 import { FirestoreRelationalStorage } from '../database/storage/firestore/firestore-relational-storage';
 import { PendingChangesService } from '../database/pending-changes/pending-changes.service';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import * as venilisLayout from './default/venili.json';
+import { Firestore } from '@angular/fire/firestore';
 
 @Injectable()
 export class LayoutService extends FirestoreRelationalStorage<ListLayout> {
 
-  constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService,
+  constructor(protected firestore: Firestore, protected serializer: NgSerializerService,
               protected zone: NgZone, protected pendingChangesService: PendingChangesService) {
     super(firestore, serializer, zone, pendingChangesService);
   }
@@ -85,7 +85,7 @@ export class LayoutService extends FirestoreRelationalStorage<ListLayout> {
     return layout;
   }
 
-  protected getBaseUri(params?: any): string {
+  protected getBaseUri(): string {
     return '/layouts';
   }
 
