@@ -123,9 +123,8 @@ jobs:
           keys:
             - v2-deps-{ .Branch }-{ checksum "yarn.lock" }
       - node/install:
-          node-version: 16.14.0
+          node-version: '16.14.0'
           install-yarn: true
-          install-npm: true
       - run:
           name: Reinstalling dependencies for windows
           command: yarn install --immutable
