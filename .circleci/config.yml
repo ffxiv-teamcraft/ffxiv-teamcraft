@@ -6,7 +6,7 @@ defaults: &defaults
 
 version: 2.1
 orbs:
-  win: circleci/windows@2.2.0
+  win: circleci/windows@5.0.0
 jobs:
   setup:
     <<: *defaults
