@@ -114,7 +114,9 @@ jobs:
 
 
   release-desktop:
-    executor: win/default
+    executor:
+      name: win/default
+      shell: bash.exe
     working_directory: ~/ffxiv-teamcraft
     steps:
       - attach_workspace:
