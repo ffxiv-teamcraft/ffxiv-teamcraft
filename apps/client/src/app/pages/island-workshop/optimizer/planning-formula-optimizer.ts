@@ -125,11 +125,16 @@ export class PlanningFormulaOptimizer {
     ];
   }
 
-  private getBoostedValue(object: CraftworksObject, usage: number | undefined): number {
+  private getBoostedValue(object: CraftworksObject, usage: number | undefined, forCombo = false): number {
     const usageOffset = Math.floor((usage || 0) / 8);
     const supplyMultiplier = (this.supply[object.supply + usageOffset] || 60) / 100;
     // If this item didn't peak yet, reduce its value for the optimizer
-    const prePeakMultiplier = object.isPeaking ? 2 : 1;
+    let prePeakMultiplier: number;
+    if (forCombo) {
+      prePeakMultiplier = object.hasPeaked ? 1.2 : 1;
+    } else {
+      prePeakMultiplier = object.isPeaking ? 2 : 1;
+    }
     return (object.craftworksEntry.value / object.craftworksEntry.craftingTime)
       * (supplyMultiplier) * (object.popularity.ratio / 100) * prePeakMultiplier;
   }
@@ -156,8 +161,8 @@ export class PlanningFormulaOptimizer {
         object.supply = object.patterns.map(p => {
           return p.pattern[dayIndex][0];
         }).sort((a, b) => a - b)[0];
-        object.hasPeaked = dayIndex > 0 && object.patterns.every(p => p.pattern.slice(1).every(day => day[0] >= object.supply));
-        object.isPeaking = object.patterns.length === 1 && !object.patterns[0].pattern.some(([supply]) => supply > object.supply);
+        object.hasPeaked = object.patterns.length === 1 && object.patterns[0].index < dayIndex;
+        object.isPeaking = object.patterns.length === 1 && object.patterns[0].index === dayIndex;
         return object;
       });
   }
