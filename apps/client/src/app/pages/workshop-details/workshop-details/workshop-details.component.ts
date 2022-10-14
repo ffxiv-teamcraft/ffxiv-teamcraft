@@ -15,7 +15,7 @@ import { LodestoneService } from '../../../core/api/lodestone.service';
   templateUrl: './workshop-details.component.html',
   styleUrls: ['./workshop-details.component.less']
 })
-export class WorkshopDetailsComponent implements OnInit {
+export class WorkshopDetailsComponent {
 
   public workshop$: Observable<Workshop>;
 
