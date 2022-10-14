@@ -782,7 +782,7 @@
       "Layout_name": "Nom de l'affichage",
       "Invalid_import": "Code d'import invalide",
       "Global_options": "Options générales",
-      "Default_readonly_message": "Default layout is readonly. You have to create a new layout using the + button to be able to customize it.",
+      "Default_readonly_message": "La mise en page par défaut est en lecture seule. Vous devez créer une nouvelle mise en page en utilisant le bouton + pour pouvoir la personnaliser.",
       "Buttons": "Boutons",
       "Menu": "Menu",
       "Edit_row_buttons_display": "Modifier les boutons de raccourci",
@@ -822,13 +822,13 @@
     },
     "OVERLAY": {
       "Open": "Ouvrir/fermer l'overlay de liste",
-      "No_display": "Open a list in the main window to get started",
+      "No_display": "Ouvrir une liste dans la fenêtre principale pour commencer",
       "No_panel_selected": "Sélectionnez un panneau en utilisant les boutons ci-dessus"
     },
     "SPLIT": {
       "Pick_items": "Choisir les éléments à ajouter à une autre liste",
       "Remove_from_list": "Retirer de la liste actuelle",
-      "Select_not_completed": "Select items not completed"
+      "Select_not_completed": "Sélectionner les objets non complétés"
     }
   },
   "LIST_TAGS": {
@@ -935,7 +935,7 @@
     "Fish_eyes_duration": "Vos yeux de poisson doivent avoir cette durée pour obtenir le poisson. Cliquez vous changer le format.",
     "Spawned_for": "Disparaîtra dans {{timer}}",
     "Will_spawn_in": "Apparaît dans {{timer}}",
-    "Ephemeral_warning": "Ephemeral nodes have multiple locations. Position is an approximation.",
+    "Ephemeral_warning": "Les nœuds éphémères ont plusieurs emplacements. La position est approximative.",
     "Legendary": "Légendaire",
     "Switched_to_compact": "L'affichage a basculé en mode compact car il y a trop de résultats.",
     "Node_type": "Type",
@@ -987,7 +987,7 @@
   },
   "WIKI": {
     "Title": "Wiki",
-    "Not_found_in_current_lang": "This page wasn't found in your current language. English version will be shown",
+    "Not_found_in_current_lang": "Cette page n'a pas été trouvée dans votre langue actuelle. La version anglaise sera affichée",
     "Not_found": "Page introuvable"
   },
   "SIMULATOR": {
@@ -1034,7 +1034,7 @@
     "Import_from_crafting_optimizer": "Importer depuis crafting optimizer",
     "Export_crafting_optimizer": "Exporter au format crafting optimizer",
     "Export_copied": "Code d'export crafting optimizer copié dans votre presse-papiers",
-    "Unsaved_changes": "You have unsaved changes. Please save before leaving this page or changes will be lost.",
+    "Unsaved_changes": "Vous avez des modifications non enregistrées. Veuillez sauvegarder avant de quitter cette page ou tous vos changements seront perdus.",
     "Crafting_optimizer_code": "Code d'import de crafting optimizer",
     "Generated_macro": "Macro en jeu",
     "Generate_ingame_macro": "Générer une macro en jeu",
@@ -1165,7 +1165,7 @@
     },
     "CONFIGURATION": {
       "Job": "Job",
-      "Job_not_configured": "It seems like you haven't configured this job yet.  Go to your Profile page to configure it properly and set stats.",
+      "Job_not_configured": "Il semblerait que vous n'avez pas encore configuré ce job. Allez sur votre page de profil pour le configurer et définir ses caractéristiques.",
       "Job_not_configured_anonymous": "Veuillez entrer vos statistiques pour avoir une simulation précise ou connectez-vous à votre compte",
       "Select_job": "Sélectionner un job",
       "Craftsmanship": "Habileté",
@@ -1195,13 +1195,13 @@
     },
     "FAIL_CAUSE": {
       "UNSAFE_ACTION": "Action non garantie avec le mode garanti activé",
-      "DURABILITY_REACHED_ZERO": "Durability reached 0 before Progression reached max",
+      "DURABILITY_REACHED_ZERO": "La solidité a atteint 0 avant que la progression soit terminée",
       "NOT_ENOUGH_CP": "Pas assez de PS",
-      "MISSING_LEVEL_REQUIREMENT": "You don't have the required level to craft this item.",
-      "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
+      "MISSING_LEVEL_REQUIREMENT": "Vous n'avez pas le niveau requis pour fabriquer cet objet.",
+      "NOT_SPECIALIST": "Rotation de spécialiste, mais vous n'êtes pas spécialiste",
       "NO_INNER_QUIET": "Essayé d'utiliser une action qui requiert Calme Intérieur sans avoir le bonus Calme Intérieur activé",
       "MISSING_STATS_REQUIREMENT": "Vous n'avez pas les statistiques minimales requises pour cette recette",
-      "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
+      "QUALITY_TOO_LOW": "La qualité ne correspond pas à la qualité requise de la recette"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Si vous souhaitez ajouter de la qualité sur votre rotation, elle se doit d'intégrer Calme Intérieur afin d'ajouter un bonus non négligeable et de pouvoir utiliser des actions comme la Bénédiction de Byregot.",
@@ -1217,7 +1217,7 @@
       "Use_prudent_touch_manipulation": "Comme vous êtes niveau 66+, vous devriez utiliser le combo Manipulation + Ouvrage parcimonieux afin d'obtenir un avantage maximum de qualité et plus de fiabilité.",
       "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the failure of the action is better for your rotation's reliability.",
       "Do_not_use_brand_without_name": "N'utilisez pas de Marque des Éléments sans Nom des Éléments actifs.",
-      "Avoid_using_good_actions": "Avoid using actions that require the Good state in a macro, as they can't be predicted",
+      "Avoid_using_good_actions": "Évitez d'utiliser des actions qui nécessitent un état \"Bon\" dans une macro, car cet état n'est pas prévisible",
       "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a Reuse proc.",
       "Use_reuse": "Votre rotation atteint 100% HQ et vous avez assez de PS pour utiliser Récupération de chutes, pensez à l'ajouter pour récupérer des ingrédients supplémentaires."
     }
@@ -1326,7 +1326,7 @@
     "Unit_price": "Prix unitaire",
     "History": "Historique",
     "Purchase_date": "Date",
-    "More_on_universalis": "More details on Universalis",
+    "More_on_universalis": "Plus de détails sur Universalis",
     "Server": "Serveur",
     "Last_updated": "Dernière mise à jour"
   },
@@ -1356,14 +1356,14 @@
       "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required Folklore book, and more!",
       "Rotations": "Créez des rotations pour la synthèse, testez-les dans un simulateur ou créez vos rotations en prévision des nouveaux patchs en utilisant le simulateur configurable !",
       "Levequests": "Find some levequests for a given job and/or level range, see instant benefits on them and create lists for them.",
-      "Macro_translation": "Got some macros but not in your language? Go to the macro translator and translate it back to your language so it works in your FFXIV game language!"
+      "Macro_translation": "Vous avez des macros mais elles ne sont pas dans votre langue ? Allez sur le traducteur de macro et traduisez-les dans votre langue pour les rendre utilisable dans votre langue de jeu FFXIV !"
     }
   },
   "UPDATE": {
     "New_update_available": "Une nouvelle mise à jour est disponible !",
     "New_update_available_desktop": "Une nouvelle mise à jour est disponible !\nCliquez ici pour la télécharger et l'installer.",
     "Web_instructions": "Veuillez recharger la page pour obtenir la version la plus récente.",
-    "Downloading_update": "Downloading the update! You'll be prompted to install once the download is done",
+    "Downloading_update": "Téléchargement de la mise à jour ! Un redémarrage vous sera proposé une fois celle-ci téléchargée",
     "Possible_update_issue": "It seems like your download is having an issue. Please click this icon to download latest setup."
   },
   "LOG_TRACKER": {
@@ -1527,8 +1527,8 @@
     "TT_card_unlock": "Débloque la carte dans la collection",
     "Track_on_attt": "Suivre sur \"Another Triple Triad Tracker\"",
     "Unlocked_by_quest": "Déverrouillé par quête",
-    "More_on_attt_npc": "See more details about this NPC on Another Triple Triad Tracker",
-    "Triple_triad_pack": "Triple Triad card pack",
+    "More_on_attt_npc": "Voir plus de détails sur ce PNJ sur un autre traqueur de Triple Triade",
+    "Triple_triad_pack": "Paquet de cartes Triple Triade",
     "Dungeons": "Instances",
     "Used_for_trades": "Échanges",
     "Can_contain_items": "Peut contenir ces objets",
@@ -1539,7 +1539,7 @@
     "Min_ilevel": "ilvl min.",
     "Sync_to": "Niveau max.",
     "Exp": "Exp",
-    "Week_restriction": "Weekly restriction",
+    "Week_restriction": "Restriction hebdomadaire",
     "Fights": "Combats",
     "Instance_details": "Détails de l'instance",
     "Instance_rewards": "Récompenses",
@@ -1604,8 +1604,8 @@
       "Used_as_mooch_for": "Utilisé comme vif pour",
       "No_known_mooch_usage": "Aucune utilisation en tant que vif connue pour ce poisson",
       "No_spot_filter": "Aucun filtre de spot",
-      "Chances_for_transition": "Chance for this transition to happen",
-      "Weather_chances": "Chance for each weather to appear",
+      "Chances_for_transition": "Chance pour que cette transition se produise",
+      "Weather_chances": "Chance d'apparition de chaque météo",
       "Bait": "Appât",
       "Refresh_data": "Actualiser les données",
       "Bite_times": "Temps entre le lancé et la touche",
@@ -1642,8 +1642,8 @@
         "Large": "Large",
         "Time_since_thrown": "Temps écoulé depuis le lancement",
         "ERRORS": {
-          "No_bait": "No bait detected. Switch bait once to fix.",
-          "No_stats": "No stats detected. Switch to Fisher again to fix."
+          "No_bait": "Aucun appât détecté, changez d'appât une fois pour régler le soucis.",
+          "No_stats": "Aucune statistique détectée. Basculez à nouveau en Pêcheur pour corriger."
         }
       }
     },
@@ -1657,7 +1657,7 @@
       "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Inclure les ratés",
       "Miss": "Raté",
-      "Position_unknown": "Unknown location"
+      "Position_unknown": "Lieu inconnu"
     },
     "NODE": {
       "Items": "Objets",
@@ -1774,8 +1774,8 @@
       "No_comments": "Aucun commentaire",
       "Post": "Publier",
       "Editor_tip": "Tapez <page type>:\"<Content Name>\" pour créer un lien vers une autre page. Exemples : item:\"Curtana\", action:\"Travail de base\", map:\"Cristarium\". Types de pages supportés: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status",
-      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments.",
-      "Deleted_comment": "This comment has been deleted"
+      "Disclaimer": "Les commentaires de la base de données sont destinés à être des informations supplémentaires utiles, les utiliser pour se plaindre du jeu ou de son contenu peut entraîner une restriction à publier des commentaires.",
+      "Deleted_comment": "Ce commentaire a été supprimé"
     },
     "PATCH": {
       "Open_patch_page": "Cliquez ici pour ouvrir les modifications de patch dans la base de données",
@@ -1881,7 +1881,7 @@
   },
   "ERRORS": {
     "Http_request_error": "Il y a un problème avec {{tool}}, veuillez patienter un instant et réessayer. Si le problème persiste, consultez #announcements sur le serveur Discord de Teamcraft pour suivre les mises à jour.",
-    "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to the internet."
+    "Firebase_blocked": "Teamcraft n'a pas réussi à se connecter à la base de données, il semble que quelque chose ne fonctionne pas ou vous n'avez pas accès à internet."
   },
   "SEARCH": {
     "Sort_by": "Trier par: ",
@@ -1945,7 +1945,7 @@
     "Banner_title": "Capture de paquets disponible",
     "Button_label": "Activer la capture de paquets",
     "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it). This allows Teamcraft to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
-    "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default. Just make sure to avoid telling everybody ingame and you'll be fine.",
+    "Banner_description_warning": "La capture de paquets est contre le Contrat de License d'Utilisateur Final, c'est pourquoi elle est désactivée par défaut. Veuillez juste éviter d'en parler à tout le monde en jeu et tout ira bien.",
     "Empty_inventory": "Votre inventaire n'a pas encore été chargé",
     "Please_zone": "Veuillez vous téléporter à un endroit aléatoire dans une autre zone et ouvrir votre sac de selle chocobo une fois que vous êtes arrivé pour initialiser correctement le système d'inventaire.",
     "Please_sort": "Inventory tracking cannot work without knowing which character you're currently playing. Please sort/unsort your inventory or log in with your character to have Teamcraft detect your current character.",
@@ -1966,7 +1966,7 @@
     "Install_npcap": "Npcap est manquant dans votre système",
     "Install_npcap_description": "In order to have Teamcraft capture packets with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
     "Install_npcap_button": "Installez npcap et redémarrez Teamcraft",
-    "Not_as_anonymous": "Packet capture won't work properly as Anonymous",
+    "Not_as_anonymous": "La capture de paquets ne fonctionnera pas correctement en anonyme",
     "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\", or disable packet capture inside the settings."
   },
   "SUGGESTED_REGION": {
@@ -2064,7 +2064,7 @@
     },
     "DEPRECATED_HQ": {
       "Title": "Items you don't need HQ because they function as a normal-quality item",
-      "Message": "Since 6.0, this item functions as a normal-quality item even if it's HQ"
+      "Message": "Depuis la 6.0, cet objet fonctionne comme un élément de qualité normale même s'il est HQ"
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "Objets qui ne sont utilisés que pour une seule recette",
@@ -2096,7 +2096,7 @@
     "Total_cost": "Coût total (échanges, gils, etc)",
     "Materia": "Matéria",
     "Amount_needed": "Quantité",
-    "Slots_used": "Slots",
+    "Slots_used": "Emplacements",
     "Slots_used_explain": "# of slots this materia is used for",
     "Cost": "Coût",
     "Modal_editor": "Matérias pour {{itemName}}",
@@ -2104,8 +2104,8 @@
     "Warning_job_switch": "Switching job will remove job crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
     "Pick_a_job": "Choisir un job",
     "New_gearset": "Nouvelle tenue",
-    "Please_input_ariyala_link": "Please input an Ariyala link",
-    "Please_input_etro_link": "Please input an Etro link",
+    "Please_input_ariyala_link": "Veuillez entrer un lien vers Ariyala",
+    "Please_input_etro_link": "Veuillez entrer un lien vers Etro",
     "Link_not_supported": "Lien non pris en charge",
     "Compare_gearset": "Comparer cette tenue avec une autre",
     "Stats": "Stats",
@@ -2224,14 +2224,14 @@
       "Filters": "Ouvrez ce panneau pour utiliser des filtres avancés, pour filtrer par stat, bonus, ilvl, et plus encore"
     },
     "LIST_PANEL": {
-      "Share": "Click here to copy a link to this list, to easily share it.",
-      "Open_list": "Click here to open the list's details. You can also double click the list's name.",
+      "Share": "Cliquez ici pour obtenir un lien vers cette liste afin de la partager facilement.",
+      "Open_list": "Cliquez ici pour ouvrir les détails de la liste. Vous pouvez aussi double-cliquer sur le nom de la liste.",
       "More": "Cliquez sur ce menu pour renommer la liste, gérer les permissions, et plus encore."
     },
     "LIST": {
       "HQ_mark": "This icon means that this item is required for a final recipe, so you might want to have it HQ, but aren't forced to.",
       "Layout": "You can edit the display entirely, change panels and how they filter data by opening the layout editor. The button to the left of this one is used as a quick layout switch.",
-      "Permissions": "You can edit permissions, add other users, make your list read-only, share it to a FC, and more, by opening the permission editor.",
+      "Permissions": "Vous pouvez éditer les permissions, ajouter d'autres utilisateurs, mettre votre liste en lecture seule, la partager à une CL, et plus encore, en ouvrant l'éditeur de permissions.",
       "Fill_with_inventory": "Vous pouvez ajouter tout ce qui se trouve dans votre inventaire à cette liste.",
       "Pricing_mode_button": "Préparez et prévoyez facilement vos bénéfices pour cette liste en utilisant le calcul de bénéfices.",
       "More_actions_button": "Ce bouton ouvre un menu avec de nombreuses actions différentes pour la ligne courante. Vous pouvez convertir ces actions en boutons à l'aide de l'éditeur de mise en page.",
@@ -2320,7 +2320,7 @@
       },
       "INTEGRITY_CHECK": {
         "All_characters_valid": "Tous les personnages liés sont valides",
-        "All_lists_ok": "All lists are working properly"
+        "All_lists_ok": "Toutes les listes fonctionnent correctement"
       }
     }
   },
@@ -2408,7 +2408,7 @@
   },
   "COLLECTABLES": {
     "Title": "Collectionnables",
-    "No_collectables_for_this_level": "No collectables available for this level"
+    "No_collectables_for_this_level": "Aucun collectionable disponible pour ce niveau"
   },
   "CRAFTING_REPLAYS": {
     "Title": "Enregistrements d'artisanat",
@@ -2430,14 +2430,14 @@
   },
   "COMMISSIONS": {
     "New_commission": "Nouvelle commission",
-    "Not_found": "Commission not found",
+    "Not_found": "La commission n'a pas été trouvée",
     "Price_tbd": "à négocier",
     "X_items": "{{amount}} objets",
     "Open_commission_details": "Voir la commission",
     "Your_commissions_as_client": "Vos commissions en tant que client",
     "No_commissions_as_client": "You don't have any commissions as a client",
     "Your_commissions_as_crafter": "Commissions sur lesquelles vous travaillez",
-    "No_commissions_as_crafter": "You're not working on any commissions",
+    "No_commissions_as_crafter": "Vous ne travaillez sur aucune commission",
     "Delete_commission": "Supprimer cette commission",
     "Delete_list_too": "Supprimer également la liste",
     "Delete_commission_only": "Supprimer la commission uniquement",
@@ -2473,7 +2473,7 @@
       "Only_requires_materials": "Cette commission ne nécessite que les matériaux pour cette liste",
       "Contact_info": "Coordonnées",
       "Contact_info_placeholder": "Comment le prestataire peut-il vous contacter une fois qu'ils sont acceptés pour la commission ? Discord, ingame, e-mail, comme vous le souhaitez.",
-      "Contact_info_required_error": "Please include contact information",
+      "Contact_info_required_error": "Veuillez inclure les informations de contact",
       "Description": "Description",
       "Description_placeholder": "Si vous voulez donner plus de détails sur votre commission, c'est ici",
       "Description_max_length_error": "La description peut comprendre jusqu'à 1000 caractères",
@@ -2578,7 +2578,7 @@
     },
     "RESIGNED": {
       "Please_pick_reason": "Pourquoi démissionnez-vous de cette commission?",
-      "NO_ACTIVE_SUB": "I no longer have an active subscription.",
+      "NO_ACTIVE_SUB": "Je n'ai plus d'abonnement actif.",
       "UNCOMFORTABLE_WITH_CLIENT": "Je ne suis pas à l'aise avec ce client.",
       "CANNOT_COMPLETE_LEVEL": "Je ne peux pas compléter cette commission en raison des exigences de niveau que je ne remplis pas.",
       "CANNOT_COMPLETE_CONTENT": "Je ne peux pas compléter cette commission parce que je n'ai pas accès au contenu nécessaire (exemple : je n'ai pas la dernière extension).",
@@ -2623,7 +2623,7 @@
   },
   "RETAINERS": {
     "Title": "Servants",
-    "No_retainers": "No retainers, please ring the retainer bell to load information about your retainers.",
+    "No_retainers": "Aucun servant, veuillez sonner la cloche des servants pour charger les informations sur vos servants.",
     "Selling": "{{amount}} objets en vente",
     "X_items": "{{amount}} objets",
     "Task_complete": "Tâche terminée",
@@ -2649,19 +2649,19 @@
     "Select_retainer": "Choisissez l'un de vos servants"
   },
   "PATREON": {
-    "By_supporting_us": "By supporting us on Patreon, you get:",
+    "By_supporting_us": "En nous soutenant sur patreon, vous obtenez :",
     "No_ads": "Plus de pubs dans la barre de titre",
-    "Exclusive_discord_role": "An exclusive Discord role, and access to supporters-only channel",
+    "Exclusive_discord_role": "Un rôle exclusif Discord et l'accès au canal réservé aux supporters seulement",
     "Your_name_in_loading_screen": "Votre nom dans l'écran de chargement (doit être demandé à Miu sur Discord)",
     "Goodies": "Autocollant gratuit, T-shirt gratuit, poster gratuit (en fonction du palier)",
     "Starting_at_X": "À partir de{{monthly}} $ par mois ou{{yearly}} $ par an",
     "Footer_text": "Même $1 par mois a un impact significatif sur le développement de Teamcraft et me rapproche de mon rêve de devenir un développeur à temps plein sur ce projet et de l'étendre au-delà du simple outil pour FFXIV.",
     "Already_supporter": "Déjà un supporteur ?",
-    "Disable_ads_explanation": "To disable ads, connect with your Patreon account to make Teamcraft able to verify your support and disable ads automatically"
+    "Disable_ads_explanation": "Pour désactiver les publicités, connectez-vous avec votre compte patreon pour permettre à Teamcraft de vérifier votre support et désactiver automatiquement les publicités"
   },
   "SUPPORT_US": {
     "Popup_introduction": "Bonjour, je suis Miu, le développeur de l'outil que vous utilisez actuellement.<br/> Teamcraft est un passe-temps pour moi depuis quelques années et mon rêve est de faire de cela mon travail à plein temps. <br/><br/>Avec votre aide, ce rêve pourrait devenir une réalité. vous pouvez soutenir le projet sur patreon, chaque euro compte et m'aide à atteindre cet objectif. <br/><br/> Soutenir le projet sur patreon vous donne également quelques avantages sympas:",
-    "Already_supporting": "Already a Patreon supporter? Make sure you link your account to Patreon in the settings",
+    "Already_supporting": "Déjà un supporteur sur Patreon? Assurez-vous de lier votre compte à Patreon dans les paramètres",
     "PATREON_BENEFITS": {
       "No_ads": "Teamcraft sans publicité",
       "Discord_rank": "Special rank on the Discord server, giving you access to supporters channel to see what's we're working on (${{price}})",
@@ -2792,7 +2792,7 @@
   },
   "ALLAGAN_REPORTS": {
     "Feature_banner_title": "Nouvelle fonctionnalité : Rapports Allagois",
-    "Feature_banner_description": "Found an item with missing data? You can now report item sources in the Allagan Reports system (General > Allagan Reports) and get them included inside the app in the following update!",
+    "Feature_banner_description": "Vous avez trouvé un objet avec des informations manquantes ? Vous pouvez maintenant les renseigner dans les rapports allagois (Général > Rapports Allagois) afin qu'ils soient ajoutés dans la prochaine mise à jour !",
     "Title": "Rapports Allagois",
     "Reports": "Rapports",
     "Pending_changes": "Changements en attente",
@@ -2833,7 +2833,7 @@
     "Gubal_analysis_suggestion": "Suggestion basée sur l'analyse des données",
     "Cannot_report_for_this_spot": "Vous ne pouvez pas rapporter de détails pour ce point de pêche sur ce poisson car il existe déjà",
     "Please_suggest_edit_instead": "Veuillez suggérer une modification à celle existante",
-    "Add_data_sources": "Add/modify data sources for this item",
+    "Add_data_sources": "Ajouter/Modifier des sources de données pour cet objet",
     "Not_applied_yet": "Non appliqué",
     "Not_applied_yet_explain": "Cette source sera ajoutée à la liste et à la base de données lors de la prochaine mise à jour",
     "Pending_changes_count": "{{amount}} modifications en attente à verifier",
@@ -2924,7 +2924,7 @@
   },
   "PROFITS": {
     "Title": "Aide aux profits",
-    "Description": "Find the best items to craft or gather based on your levels and marketboard data from Universalis",
+    "Description": "Trouvez les meilleurs objets à fabriquer ou à collecter en fonction de vos niveaux et des données de l'HDV depuis Universalis",
     "Self_sufficient": "Auto-suffisant",
     "Crafting": "Artisanat",
     "Gathering": "Récolte",
@@ -2953,24 +2953,24 @@
     "WORKSHOP": {
       "Title": "Fabrique",
       "Subtitle": "Track and manage your workshop",
-      "Out_of_sync": "State has not been updated since the last reset",
+      "Out_of_sync": "L'état n'a pas été mis à jour depuis la dernière réinitialisation",
       "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary to update the state. If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button, or import from database.",
       "Export_state": "Export supply/demand state",
       "State_copied": "State copied to your clipboard",
-      "Import_state": "Import state",
-      "Import_online_state": "Import state from database",
+      "Import_state": "Importer l'état",
+      "Import_online_state": "Import l'état depuis la base de données",
       "Online_state_missing": "Nobody updated their state yet, this button will enable itself once it's done",
-      "State_imported": "State properly imported",
-      "Product": "Product",
+      "State_imported": "Etat correctement importé",
+      "Product": "Produit",
       "Popularity": "Popularité",
-      "Supply": "Supply",
+      "Supply": "Offre",
       "Demand_shift": "Demand shift",
       "Predicted_popularity": "Predicted demand",
-      "Edit_mode": "Edit mode",
-      "Best_items_to_craft": "Best items to craft",
-      "Total_value": "Total value",
+      "Edit_mode": "Mode édition",
+      "Best_items_to_craft": "Meilleurs objets à fabriquer",
+      "Total_value": "Valeur totale",
       "Run_optimizer": "Find best planning for the rest of the week",
-      "No_schedule_found": "No planning found",
+      "No_schedule_found": "Aucun planning trouvé",
       "No_schedule_found_explain": "Make sure the reset is in more than 4 hours",
       "Possible_peak_days": "Possible peaks",
       "Peak_days_explain": "The days on which it's more likely that this item will peak in value. Bold = strong peak.",
@@ -2984,8 +2984,10 @@
       "Exclude_pasture_materials": "Exclude pasture materials",
       "Exclude_crop_materials": "Exclude crop materials",
       "Groove_tooltip": "Groove at the end of the day",
-      "Crafting_time": "Crafting time",
-      "Categories": "Categories",
+      "Crafting_time": "Temps de fabrication",
+      "Categories": "Catégories",
+      "No_planning": "Aucun planning disponible",
+      "No_planning_explain": " Teamcraft is not able to compute a planning because there's too few recipes available, try to change your island level or uncheck some material exclusions.",
       "POPULARITY": {
         "Very_high": "Très élevée",
         "High": "Élevée",
@@ -3002,13 +3004,13 @@
       "DEMAND_SHIFT": {
         "Skyrocketing": "Forte augmentation",
         "Increasing": "Augmentation",
-        "None": "None",
-        "Decreasing": "Decreasing",
+        "None": "Aucun",
+        "Decreasing": "Décroissant",
         "Plummeting": "Plummeting"
       }
     },
     "ANIMALS": {
-      "Title": "Animals",
+      "Title": "Animaux",
       "Subtitle": "Une liste complète des animaux, où et quand les trouver, avec intégration d'alarmes",
       "Name": "Nom",
       "Size": "Taille",
