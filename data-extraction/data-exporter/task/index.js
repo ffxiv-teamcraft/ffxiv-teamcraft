@@ -114,7 +114,7 @@ output('recipes', () => {
         ilvl: id < 20 ? 0 : +db('Item', null, true).findById(id)['Level{Item}']
       }
     }).filter(a => a)
-    const totalIlvl = ingredients.reduce((sum, { amount, ilvl }) => sum + amount * ilvl, 0)
+    const totalIlvl = ingredients.reduce((sum, { id, amount, ilvl }) => sum + (canBeHq[id] ? amount * ilvl : 0), 0)
     const maxQuality = Math.floor((+level.Quality) * (+recipe.QualityFactor) / 100)
     const totalContrib = maxQuality * (+recipe.MaterialQualityFactor) / 100
 
