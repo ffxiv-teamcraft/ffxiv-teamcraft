@@ -7,6 +7,7 @@ defaults: &defaults
 version: 2.1
 orbs:
   win: circleci/windows@5.0.0
+  node: circleci/node@5.0.3
 jobs:
   setup:
     <<: *defaults
@@ -121,6 +122,10 @@ jobs:
       - restore_cache:
           keys:
             - v2-deps-{ .Branch }-{ checksum "yarn.lock" }
+      - node/install:
+          node-version: 16.14.0
+          install-yarn: true
+          install-npm: true
       - run:
           name: Reinstalling dependencies for windows
           command: yarn install --immutable
