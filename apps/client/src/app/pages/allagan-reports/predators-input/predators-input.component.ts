@@ -55,10 +55,12 @@ export class PredatorsInputComponent implements ControlValueAccessor {
     }
   }
 
-  private onChange: Function = () => {
+  private onChange = (change: any) => {
+    return void 0;
   };
 
-  private onTouched: Function = () => {
+  private onTouched = () => {
+    return void 0;
   };
 
 }

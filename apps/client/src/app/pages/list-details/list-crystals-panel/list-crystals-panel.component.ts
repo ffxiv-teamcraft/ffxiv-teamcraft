@@ -18,7 +18,7 @@ export class ListCrystalsPanelComponent {
   crystals: ListRow[] = [];
 
   constructor(private i18nTools: I18nToolsService, private message: NzMessageService, private translate: TranslateService) {
-  };
+  }
 
   trackByItem(index: number, item: ListRow): number {
     return item.id;

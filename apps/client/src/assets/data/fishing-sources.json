@@ -21267,6 +21267,15 @@
       "duration": 4
     }
   ],
+  "36612": [
+    {
+      "spot": 281,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29717,
+      "snagging": true
+    }
+  ],
   "36660": [
     {
       "spot": 266,

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Character, CharacterSearchResultRow, XivapiService } from '@xivapi/angular-client';
 import { combineLatest, Observable } from 'rxjs';
 import { debounceTime, filter, map, mergeMap, startWith, tap } from 'rxjs/operators';
-import { FormControl, Validators } from '@angular/forms';
+import { UntypedFormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AddCharacter, AddCustomCharacter, Logout } from '../../../+state/auth.actions';
 import { NzModalRef } from 'ng-zorro-antd/modal';
@@ -20,11 +20,11 @@ export class CharacterLinkPopupComponent {
 
   public autoCompleteRows$: Observable<string[]>;
 
-  public selectedServer = new FormControl('', [Validators.required]);
+  public selectedServer = new UntypedFormControl('', [Validators.required]);
 
-  public characterName = new FormControl('');
+  public characterName = new UntypedFormControl('');
 
-  public lodestoneId = new FormControl(null);
+  public lodestoneId = new UntypedFormControl(null);
 
   public result$: Observable<any[]>;
 

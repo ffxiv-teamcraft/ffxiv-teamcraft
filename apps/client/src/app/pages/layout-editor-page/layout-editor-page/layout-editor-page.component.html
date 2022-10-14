@@ -22,7 +22,7 @@
               <nz-tag *ngIf="panel.layoutRow.hideUsedRows" [style.border-color]="'#cd4aff'" class="custom-tag">{{'Hide_used' | translate}}</nz-tag>
               <nz-tag *ngIf="panel.layoutRow.hideIfEmpty" [style.border-color]="'#f2b10e'" class="custom-tag">{{'LIST_DETAILS.LAYOUT_DIALOG.Hidden_if_empty' | translate}}</nz-tag>
               <nz-tag *ngIf="panel.layoutRow.collapsedByDefault" [style.border-color]="'#d9ff00'" class="custom-tag">{{'LIST_DETAILS.LAYOUT_DIALOG.Collapsed_by_default' | translate}}</nz-tag>
-              <nz-tag *ngIf="panel.layoutRow.hasTag != null" [style.border-color]="'#002aff'" class="custom-tag">
+              <nz-tag *ngIf="panel.layoutRow.hasTag !== null" [style.border-color]="'#002aff'" class="custom-tag">
                 <span *ngIf="panel.layoutRow.hasTag">INCLUDES</span>
                 <span *ngIf="!panel.layoutRow.hasTag">DOESN'T INCLUDE</span>
               </nz-tag>

@@ -913,7 +913,7 @@ export class SettingsService {
 
   public getNotificationSettings(type: SoundNotificationType): NotificationSettings {
     const raw = this.getString(`alarm-settings:${type}`, '');
-    if (!!raw) {
+    if (raw) {
       return JSON.parse(raw);
     } else {
       return {

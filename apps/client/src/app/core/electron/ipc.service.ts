@@ -56,13 +56,9 @@ export class IpcService {
     // Only load ipc if we're running inside electron
     if (platformService.isDesktop()) {
       if (window.require) {
-        try {
-          this._ipc = window.require('electron').ipcRenderer;
-          this._ipc.setMaxListeners(0);
-          this.connectListeners();
-        } catch (e) {
-          throw e;
-        }
+        this._ipc = window.require('electron').ipcRenderer;
+        this._ipc.setMaxListeners(0);
+        this.connectListeners();
       } else {
         console.warn('Electron\'s IPC was not loaded');
       }
@@ -359,7 +355,7 @@ export class IpcService {
     });
     this.on('navigate', (event, url: string) => {
       console.log('NAVIGATE', url);
-      // tslint:disable-next-line:prefer-const
+      // eslint-disable-next-line prefer-const
       let [path, params] = url.split('?');
       if (path.endsWith('/')) {
         path = path.substr(0, url.length - 1);
@@ -487,7 +483,7 @@ export class IpcService {
       this.packets$.next(packet);
       const debugPackets = (<any>window).debugPackets;
       if (debugPackets === true || (typeof debugPackets === 'function' && debugPackets(packet))) {
-        // tslint:disable-next-line:no-console
+        // eslint-disable-next-line no-restricted-syntax
         console.info(packet.type, packet);
       }
     }

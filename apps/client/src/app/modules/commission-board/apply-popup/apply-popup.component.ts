@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd/modal';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-apply-popup',
@@ -12,9 +12,9 @@ export class ApplyPopupComponent implements OnInit {
 
   price: number;
 
-  form: FormGroup;
+  form: UntypedFormGroup;
 
-  constructor(private fb: FormBuilder, private modalRef: NzModalRef) {
+  constructor(private fb: UntypedFormBuilder, private modalRef: NzModalRef) {
   }
 
   ngOnInit(): void {

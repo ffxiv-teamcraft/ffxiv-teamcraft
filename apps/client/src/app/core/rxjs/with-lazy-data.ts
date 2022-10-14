@@ -16,7 +16,7 @@ type MapTuple<T> =
     // base case, use a blank array so we don't consume our output into a never
     : []
 
-export function withLazyData<T extends any, K extends TupleOf<LazyDataKey>>(lazyData: LazyDataFacade, ...entries: K): OperatorFunction<T, [T, ...MapTuple<K>]> {
+export function withLazyData<T, K extends TupleOf<LazyDataKey>>(lazyData: LazyDataFacade, ...entries: K): OperatorFunction<T, [T, ...MapTuple<K>]> {
   return (source: Observable<T>) => {
     return source.pipe(
       switchMap(data => {

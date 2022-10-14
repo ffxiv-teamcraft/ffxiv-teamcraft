@@ -158,7 +158,6 @@ export class AllaganReportsExtractor extends AbstractExtractor {
             this.persistToJsonAsset('loot-sources', loots);
             this.persistToJsonAsset('venture-sources', ventures);
             this.persistToJsonAsset('drop-sources', drops);
-            this.persistToJsonAsset('island-animal-sources', islandAnimals);
             this.persistToJsonAsset('instance-sources', instanceDrops);
             this.persistToJsonAsset('fate-sources', fateSources);
             this.persistToJsonAsset('mogstation-sources', mogstation);

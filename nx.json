@@ -1,5 +1,17 @@
 {
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "npmScope": "ffxiv-teamcraft",
+  "affected": {
+    "defaultBase": "staging"
+  },
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false,
+      "versionMismatch": false
+    },
+    "analytics": false,
+    "packageManager": "yarn"
+  },
   "implicitDependencies": {
     "angular.json": "*",
     "package.json": "*",
@@ -7,37 +19,36 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "cli": {
-    "warnings": {
-      "typescriptMismatch": false,
-      "versionMismatch": false
-    },
-    "defaultCollection": "@nrwl/angular",
-    "analytics": false
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
   },
   "defaultProject": "client",
   "generators": {
-    "@nrwl/schematics:library": {
+    "@nrwl/angular:application": {
+      "style": "less",
+      "linter": "tslint",
       "unitTestRunner": "karma",
-      "framework": "angular"
+      "e2eTestRunner": "cypress"
     },
-    "@nrwl/schematics:application": {
-      "unitTestRunner": "karma",
-      "e2eTestRunner": "protractor"
+    "@nrwl/angular:library": {
+      "linter": "tslint",
+      "unitTestRunner": "karma"
     },
-    "@nrwl/schematics:node-application": {
-      "framework": "express"
+    "@nrwl/angular:component": {
+      "style": "less"
     }
   },
-  "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ]
-  },
-  "affected": {
-    "defaultBase": "master"
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"]
+    },
+    "test": {
+      "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
+    }
   }
 }

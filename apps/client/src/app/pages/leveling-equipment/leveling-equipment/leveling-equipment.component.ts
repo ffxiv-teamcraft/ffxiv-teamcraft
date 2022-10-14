@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { combineLatest, Observable, Subject } from 'rxjs';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { debounceTime, first, map, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
@@ -39,7 +39,7 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
 
   results$: Observable<{ level: number, gearset: TeamcraftGearset }[]>;
 
-  filtersForm: FormGroup;
+  filtersForm: UntypedFormGroup;
 
   slots: Array<{ property: keyof TeamcraftGearset, name: string, equipSlotCategoryIds: number[] }> = [
     { property: 'mainHand', name: 'MainHand', equipSlotCategoryIds: [1, 13] },
@@ -61,7 +61,7 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
   desktop = this.platformService.isDesktop();
 
   constructor(private inventoryFacade: InventoryService, private lazyData: LazyDataFacade,
-              private fb: FormBuilder, private dataService: DataService,
+              private fb: UntypedFormBuilder, private dataService: DataService,
               private gearsetsFacade: GearsetsFacade, private statsService: StatsService,
               private listPicker: ListPickerService, private router: Router,
               private platformService: PlatformService, private settings: SettingsService,

@@ -140,7 +140,7 @@ export class TeamcraftDesktopApp {
       });
     });
 
-    const resolveHtmlPath = (htmlFileName) => {
+  const resolveHtmlPath = (htmlFileName) => {
       const url = new URL(join(__dirname, htmlFileName));
       url.pathname = htmlFileName;
       return url.href;

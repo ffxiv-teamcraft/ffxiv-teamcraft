@@ -1,4 +1,4 @@
-<nz-card [nzTitle]="'DB.FISHING_SPOT.Possible_weathers' | translate" [nzLoading]="!(weathers$ | async)" [class.card-with-list]="weathers$ | async">
+<nz-card [nzTitle]="'DB.FISHING_SPOT.Possible_weathers' | translate" [nzLoading]="(weathers$ | async) === false" [class.card-with-list]="weathers$ | async">
   <div fxLayout="column" fxLayoutAlign="center center">
     <div
       *ngFor="let row of (weathers$ | async) || []; let last = last"

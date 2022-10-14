@@ -1,15 +1,14 @@
 export const patchNotes = `### Bug Fixes
 
-* **collectables:** fix exp formula for exp nerf level comparison.
-* **currency-spending:** fixed cowries and amount sold last week.
-* **desktop:** fixed an issue with fishing reports not sent to the database.
-* **island-workshop:** better planning logic for lower levels.
-* **island-workshop:** fixed pattern recognition for past days and error handling.
-* **island-workshop:** fixed prediction issue and moved planning to the top.
+* **allagan-reports:** fixed an issue with INSTANCE source.
+* **db:** fix recipe quality for kr/cn.
+* **island-workshop:** fixed an issue with peak days not applied properly in optimizer.
+* **island-workshop:** fixed solver using the same recipe twice in some cases.
+* **island-workshop:** new error message when computing planning isn't possible.
+* **lists:** favorite lists are now displayed above other lists.
 
 
 ### Features
 
-* **db:** imported 144 allagan reports.
-* **db:** support for korean v6.1 update.
-* **loader:** new patron: Darn Tarn and Dam Tam.`;
+* **data:** update for cn patch-6.15.
+* **db:** import 300+ allagan reports.`;

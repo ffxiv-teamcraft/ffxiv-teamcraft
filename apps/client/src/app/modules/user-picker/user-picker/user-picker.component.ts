@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { combineLatest, Observable, of } from 'rxjs';
-import { FormControl, Validators } from '@angular/forms';
+import { UntypedFormControl, Validators } from '@angular/forms';
 import { CharacterSearchResultRow, XivapiService } from '@xivapi/angular-client';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { debounceTime, map, shareReplay, switchMap, tap } from 'rxjs/operators';
@@ -19,11 +19,11 @@ export class UserPickerComponent {
 
   public autoCompleteRows$: Observable<string[]>;
 
-  public selectedServer = new FormControl('', [Validators.required]);
+  public selectedServer = new UntypedFormControl('', [Validators.required]);
 
-  public characterName = new FormControl('');
+  public characterName = new UntypedFormControl('');
 
-  public lodestoneId = new FormControl(null);
+  public lodestoneId = new UntypedFormControl(null);
 
   public result$: Observable<CharacterSearchResultRow[]>;
 

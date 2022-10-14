@@ -3,7 +3,7 @@ import { PlatformService } from '../tools/platform.service';
 import { IpcService } from '../electron/ipc.service';
 import { TranslateService } from '@ngx-translate/core';
 
-declare const gtag: Function;
+declare const gtag: (...args: any[]) => void;
 
 @Injectable({
   providedIn: 'root'

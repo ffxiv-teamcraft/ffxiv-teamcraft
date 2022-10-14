@@ -42,7 +42,7 @@ export class QuickSearchComponent extends TeamcraftComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private settings: SettingsService,
               private translate: TranslateService, private router: Router,
-              private data: DataService, @Inject(PLATFORM_ID) private platform: Object,
+              private data: DataService, @Inject(PLATFORM_ID) private platform: any,
               @Optional() private modal: NzModalRef) {
     super();
   }

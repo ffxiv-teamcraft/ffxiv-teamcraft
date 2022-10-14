@@ -30,8 +30,8 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
-import firebase from 'firebase/compat/app';
 import { IS_HEADLESS } from '../../../../environments/is-headless';
+import { arrayUnion } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -106,7 +106,7 @@ export class AlarmsEffects {
               return of(ids);
             } else {
               return this.alarmGroupsService.pureUpdate(action.group.$key, {
-                alarms: firebase.firestore.FieldValue.arrayUnion(
+                alarms: arrayUnion(
                   ...ids
                 )
               }).pipe(
@@ -272,7 +272,7 @@ export class AlarmsEffects {
   constructor(private actions$: Actions, private alarmsFacade: AlarmsFacade,
               private authFacade: AuthFacade, private alarmsService: AlarmsService,
               private alarmGroupsService: AlarmGroupService, private message: NzMessageService,
-              private translate: TranslateService, @Inject(PLATFORM_ID) private platform: Object,
+              private translate: TranslateService, @Inject(PLATFORM_ID) private platform: any,
               private router: Router) {
   }
 

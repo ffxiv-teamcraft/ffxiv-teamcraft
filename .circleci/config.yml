@@ -1,7 +1,7 @@
 defaults: &defaults
   working_directory: ~/ffxiv-teamcraft
   docker:
-    - image: circleci/node:14.16.0-stretch-browsers-legacy
+    - image: cimg/node:16.14-browsers
 
 
 version: 2.1
@@ -150,9 +150,6 @@ workflows:
     jobs:
       - setup
       - lint:
-          requires:
-            - setup
-      - test:
           requires:
             - setup
       - build:

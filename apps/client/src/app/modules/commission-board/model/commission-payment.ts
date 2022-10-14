@@ -1,7 +1,7 @@
-import firebase from 'firebase/compat/app';
+import { Timestamp } from '@angular/fire/firestore';
 
 export class CommissionPayment {
-  public timestamp: firebase.firestore.Timestamp = firebase.firestore.Timestamp.now();
+  public timestamp: Timestamp = Timestamp.now();
 
   constructor(public amount: number) {
   }

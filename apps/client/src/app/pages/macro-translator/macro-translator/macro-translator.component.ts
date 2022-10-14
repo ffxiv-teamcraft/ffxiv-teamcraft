@@ -33,11 +33,11 @@ export class MacroTranslatorComponent {
     { id: 'zh', name: 'ZH' }
   ];
 
-  private findActionsRegex: RegExp =
+  private findActionsRegex =
     new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+((\w|[éàèç]|[\u3000-\u303F]|[\u3040-\u309F]|[\u30A0-\u30FF]|[\uFF00-\uFFEF]|[\u4E00-\u9FAF]|[\u2605-\u2606]|[\u2190-\u2195]|[\u3041-\u3096]|[\u2E80-\u2FD5]|\u203B)+|["”“][^"”“]+["”“])?.*/, 'i');
 
 
-  private findActionsAutoTranslatedRegex: RegExp =
+  private findActionsAutoTranslatedRegex =
     new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+([^<]+)?.*/, 'i');
 
   constructor(private lazyData: LazyDataFacade, private i18n: I18nToolsService) {

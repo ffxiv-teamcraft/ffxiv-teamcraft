@@ -1,7 +1,5 @@
 import { getCraftByPriority, getItemSource, ListRow } from './model/list-row';
 import { deepClone } from 'fast-json-patch';
-import { ModificationEntry } from './model/modification-entry';
-import { LazyDataWithExtracts } from '../../lazy-data/lazy-data-types';
 import { DataType } from './data/data-type';
 import { MathTools } from '../../tools/math-tools';
 import * as semver from 'semver';
@@ -16,14 +14,14 @@ import { CraftedBy } from './model/crafted-by';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
 import { DataService } from '../../core/api/data.service';
 import { Ingredient } from '../../model/garland-tools/ingredient';
-import firebase from 'firebase/compat/app';
 import { List } from './model/list';
 import { Craft } from '@ffxiv-teamcraft/simulator';
 import { syncHqFlags } from '../../core/data/sources/sync-hq-flags';
+import { Timestamp } from '@angular/fire/firestore';
 
 
 declare const fathom: any;
-declare const gtag: Function;
+declare const gtag: (...args: any[]) => any;
 
 interface CraftAdditionParams {
   _additions: CraftAddition[];
@@ -106,26 +104,6 @@ export class ListController {
   public static forEachItemWithRequirement(list: List, method: (arg: ListRow) => void): void {
     (list.items || []).filter(row => row.requires !== undefined && row.requires.length > 0).forEach(method);
     (list.finalItems || []).filter(row => row.requires !== undefined && row.requires.length > 0).forEach(method);
-  }
-
-  public static getContributionStats(list: List, entries: ModificationEntry[], ilvls: LazyDataWithExtracts['ilvls']) {
-    return entries.filter(entry => entry.amount > 0)
-      .reduce((stats, entry) => {
-        let statsRow = stats.entries.find(s => s.userId === entry.userId);
-        if (statsRow === undefined) {
-          stats.entries.push({
-            userId: entry.userId,
-            amount: 0,
-            ilvlAmount: 0
-          });
-          statsRow = stats.entries[stats.entries.length - 1];
-        }
-        statsRow.amount += entry.amount;
-        stats.total += entry.amount;
-        statsRow.ilvlAmount += entry.amount * ilvls[entry.itemId];
-        stats.ilvlTotal += entry.amount * ilvls[entry.itemId];
-        return stats;
-      }, list.contributionStats);
   }
 
   public static addToFinalItems(list: List, data: ListRow): number {
@@ -474,9 +452,9 @@ export class ListController {
 
   public static afterDeserialized(list: List): void {
     if (typeof list.createdAt !== 'object') {
-      list.createdAt = firebase.firestore.Timestamp.fromDate(new Date(list.createdAt));
-    } else if (!(list.createdAt instanceof firebase.firestore.Timestamp)) {
-      list.createdAt = new firebase.firestore.Timestamp((list.createdAt as any).seconds, (list.createdAt as any).nanoseconds);
+      list.createdAt = Timestamp.fromDate(new Date(list.createdAt));
+    } else if (!(list.createdAt instanceof Timestamp)) {
+      list.createdAt = new Timestamp((list.createdAt as any).seconds, (list.createdAt as any).nanoseconds);
     }
     // lmao nice hotfix
     if (!list.name) {

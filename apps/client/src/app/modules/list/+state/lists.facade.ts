@@ -55,7 +55,7 @@ import { ModificationEntry } from '../model/modification-entry';
 import { PermissionsController } from '../../../core/database/permissions-controller';
 import { ListController } from '../list-controller';
 
-declare const gtag: Function;
+declare const gtag: (...args: any[]) => void;
 declare const fathom: any;
 
 @Injectable({
@@ -214,7 +214,7 @@ export class ListsFacade {
   }
 
   removeModificationsHistoryEntry(key: string, entryId: string): Observable<void> {
-    return this.listService.removeModificationsHistoryEntry(key, entryId);
+    return of(null);
   }
 
   getTeamLists(team: Team): Observable<List[]> {

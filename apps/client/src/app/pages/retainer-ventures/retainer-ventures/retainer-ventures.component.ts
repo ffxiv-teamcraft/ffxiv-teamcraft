@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Retainer, RetainersService } from '../../../core/electron/retainers.service';
 import { map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { combineLatest, Observable, of, Subject } from 'rxjs';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { StatsService } from '../../../modules/gearsets/stats.service';
@@ -42,7 +42,7 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
 
   servers$: Observable<string[]>;
 
-  form: FormGroup;
+  form: UntypedFormGroup;
 
   results$: Observable<SpendingEntry[]> = this.filters$.pipe(
     tap(() => this.loading = true),
@@ -177,7 +177,7 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
   );
 
   constructor(private retainersService: RetainersService, private inventoryFacade: InventoryService,
-              private lazyData: LazyDataFacade, private fb: FormBuilder, private gearsetsFacade: GearsetsFacade,
+              private lazyData: LazyDataFacade, private fb: UntypedFormBuilder, private gearsetsFacade: GearsetsFacade,
               private statsService: StatsService, private universalis: UniversalisService,
               private xivapi: XivapiService, private authFacade: AuthFacade,
               public translate: TranslateService, private environment: EnvironmentService) {

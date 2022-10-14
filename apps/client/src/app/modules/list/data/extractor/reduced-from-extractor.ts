@@ -3,7 +3,7 @@ import { DataType } from '../data-type';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { safeCombineLatest } from 'apps/client/src/app/core/rxjs/safe-combine-latest';
+import { safeCombineLatest } from '../../../../core/rxjs/safe-combine-latest';
 
 export class ReducedFromExtractor extends AbstractExtractor<number[]> {
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
@@ -14,13 +14,13 @@ import { combineLatest, of } from 'rxjs';
 })
 export class GearsetCreationPopupComponent implements OnInit {
 
-  public form: FormGroup;
+  public form: UntypedFormGroup;
 
   public availableJobs$;
 
   public gearset: TeamcraftGearset;
 
-  constructor(private modalRef: NzModalRef, private fb: FormBuilder,
+  constructor(private modalRef: NzModalRef, private fb: UntypedFormBuilder,
               private gt: GarlandToolsService, private lazyData: LazyDataFacade) {
   }
 

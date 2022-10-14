@@ -1,14 +1,14 @@
 import { Injectable, NgZone } from '@angular/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FirestoreRelationalStorage } from './storage/firestore/firestore-relational-storage';
 import { TeamInvite } from '../../model/team/team-invite';
+import { Firestore } from '@angular/fire/firestore';
 
 @Injectable()
 export class TeamInviteService extends FirestoreRelationalStorage<TeamInvite> {
 
-  constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
+  constructor(protected firestore: Firestore, protected serializer: NgSerializerService, protected zone: NgZone,
               protected pendingChangesService: PendingChangesService) {
     super(firestore, serializer, zone, pendingChangesService);
   }
