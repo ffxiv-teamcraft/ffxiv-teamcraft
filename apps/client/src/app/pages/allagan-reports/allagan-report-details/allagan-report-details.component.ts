@@ -9,7 +9,6 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { AllaganReport } from '../model/allagan-report';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
-import * as _ from 'lodash';
 import { pickBy, uniq } from 'lodash';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { AllaganReportQueueEntry } from '../model/allagan-report-queue-entry';
@@ -235,7 +234,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   public mapWeathers$ = this.fishingSpot$.pipe(
     filter(spot => !!spot),
     map((spot) => {
-      return _.uniq(weatherIndex[mapIds.find(m => m.id === spot.mapId).weatherRate].map(row => +row.weatherId)) as number[];
+      return uniq(weatherIndex[mapIds.find(m => m.id === spot.mapId).weatherRate].map(row => +row.weatherId)) as number[];
     }),
     shareReplay({ bufferSize: 1, refCount: true })
   );
