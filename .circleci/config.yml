@@ -7,7 +7,6 @@ defaults: &defaults
 version: 2.1
 orbs:
   win: circleci/windows@5.0.0
-  node: circleci/node@5.0.3
 jobs:
   setup:
     <<: *defaults
@@ -116,7 +115,6 @@ jobs:
   release-desktop:
     executor:
       name: win/default
-      shell: bash.exe
     working_directory: ~/ffxiv-teamcraft
     steps:
       - attach_workspace:
@@ -124,9 +122,17 @@ jobs:
       - restore_cache:
           keys:
             - v2-deps-{ .Branch }-{ checksum "yarn.lock" }
-      - node/install:
-          node-version: '16.14.0'
-          install-yarn: true
+      - run: choco install wget -y
+      - run:
+          command: wget https://nodejs.org/dist/v16.17.0/node-v16.17.0-x86.msi -P C:\Users\circleci\Downloads\
+          shell: cmd.exe
+      - run: MsiExec.exe /i C:\Users\circleci\Downloads\node-v16.17.0-x86.msi /qn
+      - run:
+          name: nvm use
+          command: |
+             Start-Process powershell -verb runAs -Args "-start GeneralProfile"
+             nvm install 16.17.0
+             nvm use 16.17.0
       - run:
           name: Reinstalling dependencies for windows
           command: yarn install --immutable
