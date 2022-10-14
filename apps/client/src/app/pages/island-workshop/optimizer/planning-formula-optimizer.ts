@@ -45,6 +45,9 @@ export class PlanningFormulaOptimizer {
 
       // Okay, if we're here, we know what'll peak and how, so we want to build an optimized value route now
       let [best, combo] = this.findBestAndComboObjects(projectedSupplyObjects, objectsUsage);
+      if (i === 5) {
+        console.log(best, combo);
+      }
 
       let totalTime = 0;
       let useComboItem = combo.craftworksEntry.craftingTime + best.craftworksEntry.craftingTime <= 12;
