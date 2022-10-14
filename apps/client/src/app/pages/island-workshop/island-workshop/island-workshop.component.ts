@@ -331,7 +331,14 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
   ]).pipe(
     filter(([objects]) => objects.length > 0),
     map(([objects, supply, landmarks, rank, secondRestDay]) => {
-      return new PlanningFormulaOptimizer(objects, 3, landmarks, rank, supply, secondRestDay).run();
+      try {
+        return new PlanningFormulaOptimizer(objects, 3, landmarks, rank, supply, secondRestDay).run();
+      } catch (e) {
+        return {
+          planning: null,
+          score: 0
+        };
+      }
     })
   );
 
