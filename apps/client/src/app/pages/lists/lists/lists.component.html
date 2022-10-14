@@ -45,6 +45,17 @@
     <ng-template #suffixIconSearch>
       <i nz-icon nzType="search"></i>
     </ng-template>
+    <ng-container *ngIf="favoriteLists$ | async as favoriteLists">
+      <ng-container *ngIf="favoriteLists?.length > 0">
+        <nz-divider [nzText]="'LISTS.Favorite_lists' | translate" nzOrientation="left"></nz-divider>
+        <div *ngIf="favoriteLists.length > 0">
+          <div *ngFor="let list of favoriteLists; trackBy: trackByList" class="list-panel">
+            <app-list-panel [list]="list"></app-list-panel>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+    <nz-divider [nzText]="'LISTS.Your_lists' | translate" nzOrientation="left"></nz-divider>
     <div (drop)="setListIndex($event.value, $event.dropIndex, lists.otherLists)" class="ngx-dnd-container"
          ngxDroppable="list">
       <div *ngFor="let list of lists.otherLists; trackBy: trackByList" [model]="list"
@@ -56,16 +67,6 @@
     <app-fullpage-message *ngIf="lists.otherLists.length === 0 && (loading$ | async) === false" height="150px">
       {{'LISTS.No_lists' | translate}}
     </app-fullpage-message>
-    <ng-container *ngIf="favoriteLists$ | async as favoriteLists">
-      <ng-container *ngIf="favoriteLists?.length > 0">
-        <nz-divider [nzText]="'LISTS.Favorite_lists' | translate" nzOrientation="left"></nz-divider>
-        <div *ngIf="favoriteLists.length > 0">
-          <div *ngFor="let list of favoriteLists; trackBy: trackByList" class="list-panel">
-            <app-list-panel [list]="list"></app-list-panel>
-          </div>
-        </div>
-      </ng-container>
-    </ng-container>
     <div *ngIf="sharedLists$ | async as sharedLists">
       <div *ngIf="sharedLists.length > 0">
         <nz-divider [nzText]="'LISTS.Shared_lists' | translate" nzOrientation="left"></nz-divider>
