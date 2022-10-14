@@ -128,11 +128,12 @@ jobs:
           shell: cmd.exe
       - run: MsiExec.exe /i C:\Users\circleci\Downloads\node-v16.17.0-x86.msi /qn
       - run:
-          name: nvm use
+          name: Install yarn
           command: |
              Start-Process powershell -verb runAs -Args "-start GeneralProfile"
              nvm install 16.17.0
              nvm use 16.17.0
+             npm i -g yarn
       - run:
           name: Reinstalling dependencies for windows
           command: yarn install --immutable
