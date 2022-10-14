@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.8.14"></a>
+## [9.8.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.13...v9.8.14) (2022-10-14)
+
+
+### Bug Fixes
+
+* **allagan-reports:** fixed an issue with INSTANCE source ([0cdef47](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0cdef47))
+* **db:** fix recipe quality for kr/cn ([2e20494](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2e20494))
+* **island-workshop:** fixed an issue with peak days not applied properly in optimizer ([4999a3a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4999a3a))
+* **island-workshop:** fixed solver using the same recipe twice in some cases ([bbd32d9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bbd32d9))
+* **island-workshop:** new error message when computing planning isn't possible ([d8c06f2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d8c06f2))
+* **lists:** favorite lists are now displayed above other lists ([f0c5b20](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f0c5b20))
+
+
+### Features
+
+* **data:** update for cn patch-6.15 ([600425b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/600425b))
+* **db:** import 300+ allagan reports ([9a18508](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a18508))
+
+
+
 <a name="9.8.13"></a>
 ## [9.8.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.12...v9.8.13) (2022-10-09)
 
