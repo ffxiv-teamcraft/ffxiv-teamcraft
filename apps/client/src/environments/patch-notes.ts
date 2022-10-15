@@ -11,4 +11,4 @@ export const patchNotes = `### Bug Fixes
 ### Features
 
 * **data:** update for cn patch-6.15.
-* **db:** import 300+ allagan reports.`;
+* **db:** import 300+ allagan reports.`;

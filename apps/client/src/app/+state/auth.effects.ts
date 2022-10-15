@@ -212,7 +212,7 @@ export class AuthEffects {
     withLatestFrom(this.authFacade.user$),
     filter(([, user]) => user.defaultLodestoneId !== undefined),
     withLatestFrom(this.authFacade.serverLogTracking$),
-    switchMap(([[actions, user], logTracking]) => {
+    mergeMap(([[actions, user], logTracking]) => {
       const entries = actions.filter(action => {
         return !action.done || !logTracking[action.log].includes(action.itemId);
       }).map(action => {
