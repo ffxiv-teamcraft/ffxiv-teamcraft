@@ -91,7 +91,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
                 return shop.trades.some(t => {
                   return t.currencies.some(c => c.id === currency)
                     && t.items.some(i => marketItems.includes(i.id));
-                }) && shop.npcs.length > 0 || currency === 37549;
+                });
               })
               .map(shop => {
                 return shop.trades
