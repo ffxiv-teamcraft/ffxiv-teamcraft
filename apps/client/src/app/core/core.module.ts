@@ -53,6 +53,7 @@ import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 import { CommonModule } from '@angular/common';
 import { I18nRowPipe } from './i18n/i18n-row.pipe';
 import { NzNotificationModule } from 'ng-zorro-antd/notification';
+import { NgForTrackByIdDirective } from './track-by/ng-for-track-by-id.directive';
 
 
 @NgModule({
@@ -122,7 +123,8 @@ import { NzNotificationModule } from 'ng-zorro-antd/notification';
     ClipboardDirective,
     ItemNameClipboardDirective,
     I18nNameComponent,
-    I18nRowPipe
+    I18nRowPipe,
+    NgForTrackByIdDirective
   ],
   exports: [
     I18nPipe,
@@ -142,7 +144,8 @@ import { NzNotificationModule } from 'ng-zorro-antd/notification';
     NzButtonModule,
     NzToolTipModule,
     NzIconModule,
-    I18nRowPipe
+    I18nRowPipe,
+    NgForTrackByIdDirective
   ]
 })
 export class CoreModule {

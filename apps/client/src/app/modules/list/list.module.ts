@@ -21,7 +21,6 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { NameQuestionPopupModule } from '../name-question-popup/name-question-popup.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
 import { AlarmsExtractor } from './data/extractor/alarms-extractor';
 import { MasterbooksExtractor } from './data/extractor/masterbooks-extractor';
 import { FlexLayoutModule } from '@angular/flex-layout';

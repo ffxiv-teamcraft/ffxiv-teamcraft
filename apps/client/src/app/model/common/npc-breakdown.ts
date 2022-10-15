@@ -44,7 +44,7 @@ export class NpcBreakdown {
 
     this.rows$ = from(rowsWithNpcs).pipe(
       mergeScan((breakdown, entry) => {
-        if (entry.npcs.length === 0) {
+        if ((entry.npcs || []).length === 0) {
           return this.addRow(-1, entry.row, breakdown);
         }
         const bestNpc = entry.npcs
@@ -140,5 +140,6 @@ export class NpcBreakdown {
         .flat()
         .filter(npc => !!npc && !npc.festival);
     }
+    return [];
   }
 }
