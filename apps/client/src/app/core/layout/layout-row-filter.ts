@@ -86,7 +86,7 @@ export class LayoutRowFilter {
     return getItemSource(row, DataType.VENDORS).some(vendor => {
       return beastTribeNpcs.indexOf(vendor.npcId) > -1;
     }) || getItemSource(row, DataType.TRADE_SOURCES).some(trade => {
-      return trade.npcs.some(npc => {
+      return (trade.npcs || []).some(npc => {
         return beastTribeNpcs.indexOf(npc.id) > -1;
       });
     });
