@@ -32,6 +32,7 @@ import { XivapiClientModule } from '@xivapi/angular-client';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { TranslationsLoaderFactory } from './translations-loader';
 import { IconDefinition } from '@ant-design/icons-angular';
+import { NgxEchartsModule } from 'ngx-echarts';
 import {
   AppstoreOutline,
   ArrowRightOutline,
@@ -124,6 +125,7 @@ import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFunctions, provideFunctions } from '@angular/fire/functions';
 import { getPerformance, providePerformance } from '@angular/fire/performance';
+import { NGX_ECHARTS_CONFIG } from 'ngx-echarts/lib/ngx-echarts.directive';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -318,7 +320,10 @@ const nzConfig: NzConfig = {
     NzAlertModule,
     NavigationSidebarModule,
     AdsModule,
-    LazyDataModule
+    LazyDataModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts')
+    })
   ],
   bootstrap: [AppComponent]
 })

@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.8.15"></a>
+## [9.8.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.14...v9.8.15) (2022-10-16)
+
+
+### Bug Fixes
+
+* **currency-spending:** fixed unexpected empty result for some currencies ([2f47593](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2f47593))
+* **list:** fixed layout breaking on npc breakdown with no npcs ([64644ee](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/64644ee))
+* **log-tracker:** fixed log tracking entries not properly saved to database ([3d439f9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3d439f9))
+
+
+### Features
+
+* **metrics:** complete refactor of charts using echarts ([922de02](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/922de02)), closes [#2376](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2376)
+
+
+
 <a name="9.8.14"></a>
 ## [9.8.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.13...v9.8.14) (2022-10-14)
 

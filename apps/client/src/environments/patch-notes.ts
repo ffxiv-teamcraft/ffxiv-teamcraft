@@ -1,14 +1,10 @@
 export const patchNotes = `### Bug Fixes
 
-* **allagan-reports:** fixed an issue with INSTANCE source.
-* **db:** fix recipe quality for kr/cn.
-* **island-workshop:** fixed an issue with peak days not applied properly in optimizer.
-* **island-workshop:** fixed solver using the same recipe twice in some cases.
-* **island-workshop:** new error message when computing planning isn't possible.
-* **lists:** favorite lists are now displayed above other lists.
+* **currency-spending:** fixed unexpected empty result for some currencies.
+* **list:** fixed layout breaking on npc breakdown with no npcs.
+* **log-tracker:** fixed log tracking entries not properly saved to database.
 
 
 ### Features
 
-* **data:** update for cn patch-6.15.
-* **db:** import 300+ allagan reports.`;
+* **metrics:** complete refactor of charts using echarts.`;

@@ -49,7 +49,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
       const workingCopy: Partial<WithFieldValue<T>> = (this.skipClone ? modelObject : { ...modelObject }) as Partial<WithFieldValue<T>>;
       delete workingCopy.$key;
       delete workingCopy.notFound;
-      return this.prepareData(workingCopy);
+      return {...this.prepareData(workingCopy)};
     },
     fromFirestore: (snapshot: QueryDocumentSnapshot): T => {
       const deserialized = this.serializer.deserialize<T & AfterDeserialized>(this.beforeDeserialization({

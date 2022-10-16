@@ -1,20 +1,4 @@
-<ng-container *ngIf="settings.theme as theme">
-  <ng-container *ngIf="results$ | async as results">
-    <ngx-charts-line-chart
-      *ngIf="results[0].series.length > 0; else nothingToShow"
-      [view]="[]"
-      [scheme]="{domain: [theme.highlight, theme.primary, theme.trigger]}"
-      [xAxis]="true"
-      [yAxis]="true"
-      [legend]="false"
-      [showXAxisLabel]="false"
-      [showYAxisLabel]="false"
-      [timeline]="false"
-      [results]="results"
-      [autoScale]="true"
-    ></ngx-charts-line-chart>
-    <ng-template #nothingToShow>
-      <h3>{{'METRICS.Nothing_to_show' | translate}}</h3>
-    </ng-template>
-  </ng-container>
+<ng-container *ngIf="options$ | async as options" >
+  <div *ngIf="!options.empty" echarts theme="dark" [options]="options"></div>
+  <nz-empty [nzNotFoundContent]="'METRICS.Nothing_to_show' | translate" *ngIf="options.empty"></nz-empty>
 </ng-container>
