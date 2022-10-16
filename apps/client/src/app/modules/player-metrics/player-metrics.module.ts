@@ -45,6 +45,9 @@ import { MetricsDashboardsFacade } from './+state/metrics-dashboards.facade';
 import { GilFilter } from './filters/gil-filter';
 import { InventoryService } from '../inventory/inventory.service';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { NzStatisticModule } from 'ng-zorro-antd/statistic';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
 
 const probes: Provider[] = [
   {
@@ -128,7 +131,10 @@ const filters: Provider[] = [
       fromMetricsDashboards.METRICSDASHBOARDS_FEATURE_KEY,
       fromMetricsDashboards.reducer
     ),
-    EffectsModule.forFeature([MetricsDashboardsEffects])
+    EffectsModule.forFeature([MetricsDashboardsEffects]),
+    NzStatisticModule,
+    NgxEchartsModule,
+    NzEmptyModule
   ],
   providers: [...probes, ...filters, MetricsDashboardsFacade],
   exports: [MetricDisplayComponent, MetricsDisplayEditorComponent],
