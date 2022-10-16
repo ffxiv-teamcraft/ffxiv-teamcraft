@@ -2986,6 +2986,8 @@
       "Groove_tooltip": "1日の終わりのやる気",
       "Crafting_time": "製作時間",
       "Categories": "特性",
+      "No_planning": "No planning available",
+      "No_planning_explain": " Teamcraft is not able to compute a planning because there's too few recipes available, try to change your island level or uncheck some material exclusions.",
       "POPULARITY": {
         "Very_high": "大人気",
         "High": "人気",
