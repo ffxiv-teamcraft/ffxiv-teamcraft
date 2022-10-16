@@ -206,7 +206,7 @@
     "apollo-link-ws": "^1.0.20",
     "bufferutil": "^4.0.5",
     "caniuse-lite": "^1.0.30001419",
-    "chart.js": "^3.9.1",
+    "chart.js": "^2.9.4",
     "chartjs-chart-box-and-violin-plot": "^2.4.0",
     "cli-progress": "^3.8.2",
     "codecov": "^3.6.5",
