@@ -41,7 +41,7 @@ export class MetricsDashboardsEffects {
       this.actions$.pipe(
         ofType(MetricsDashboardsActions.updateMetricsDashboard),
         switchMap(action => {
-          return this.metricsDashboardsService.update(action.dashboard.$key, action.dashboard);
+          return this.metricsDashboardsService.set(action.dashboard.$key, action.dashboard);
         })
       ),
     { dispatch: false }

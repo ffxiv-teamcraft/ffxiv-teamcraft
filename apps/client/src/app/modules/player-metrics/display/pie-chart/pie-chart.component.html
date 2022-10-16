@@ -1,6 +1,4 @@
-<ng-container *ngIf="settings.theme as theme">
-  <ngx-charts-advanced-pie-chart
-    [scheme]="{domain: [theme.highlight, theme.primary, theme.trigger]}"
-    [results]="results$ | async">
-  </ngx-charts-advanced-pie-chart>
+<ng-container *ngIf="options$ | async as options" >
+  <div *ngIf="!options.empty" echarts theme="dark" [options]="options"></div>
+  <nz-empty [nzNotFoundContent]="'METRICS.Nothing_to_show' | translate" *ngIf="options.empty"></nz-empty>
 </ng-container>
