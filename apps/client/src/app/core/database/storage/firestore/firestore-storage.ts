@@ -1,6 +1,5 @@
-import { defer, from, Observable, of, Subject, throwError } from 'rxjs';
+import { defer, from, Observable, of, Subject, throttleTime, throwError } from 'rxjs';
 import { DataModel } from '../data-model';
-import { DataStore } from '../data-store';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { NgZone } from '@angular/core';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
@@ -34,13 +33,11 @@ import {
 } from '@angular/fire/firestore';
 import { AfterDeserialized } from './after-deserialized';
 
-export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T> {
+export abstract class FirestoreStorage<T extends DataModel> {
 
   protected static OPERATIONS: Record<string, Record<'read' | 'write' | 'delete', number>> = {};
 
   protected cache: { [index: string]: Observable<T> } = {};
-
-  protected syncCache: { [index: string]: T } = {};
 
   protected skipClone = false;
 
@@ -49,7 +46,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
       const workingCopy: Partial<WithFieldValue<T>> = (this.skipClone ? modelObject : { ...modelObject }) as Partial<WithFieldValue<T>>;
       delete workingCopy.$key;
       delete workingCopy.notFound;
-      return {...this.prepareData(workingCopy)};
+      return { ...this.prepareData(workingCopy) };
     },
     fromFirestore: (snapshot: QueryDocumentSnapshot): T => {
       const deserialized = this.serializer.deserialize<T & AfterDeserialized>(this.beforeDeserialization({
@@ -69,7 +66,6 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
 
   protected constructor(protected firestore: Firestore, protected serializer: NgSerializerService, protected zone: NgZone,
                         protected pendingChangesService: PendingChangesService) {
-    super();
     (window as any).getOperationsStats = () => {
       const totals = {
         read: 0,
@@ -97,13 +93,14 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
   }
 
   public query(...filterQuery: QueryConstraint[]): Observable<T[]> {
-    return collectionData(query(this.collection, ...filterQuery).withConverter(this.converter));
+    return collectionData(query(this.collection, ...filterQuery).withConverter(this.converter)).pipe(
+      throttleTime(2000)
+    );
   }
 
   public stopListening(key: string, cacheEntry?: string): void {
     this.stop$.next(key);
     if (cacheEntry) {
-      delete this.syncCache[cacheEntry];
       delete this.cache[cacheEntry];
     }
   }
@@ -132,9 +129,6 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
           distinctUntilChanged((a, b) => compare(a, b).length === 0),
           tap(() => {
             this.recordOperation('read', key);
-          }),
-          tap(res => {
-            this.syncCache[key] = res as T;
           }),
           takeUntil(this.stop$.pipe(filter(stop => stop === key)))
         );
@@ -203,7 +197,6 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
         this.recordOperation('delete', key);
         // If there's cache information, delete it.
         delete this.cache[key];
-        delete this.syncCache[key];
         this.pendingChangesService.removePendingChange(`remove ${this.getBaseUri()}/${key}`);
       })
     );
@@ -244,8 +237,8 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     this.recordOperation('write', rows.map(row => row.$key));
     const batch = writeBatch(this.firestore);
     rows.forEach(row => {
-      const ref = this.docRef(row.$key) as DocumentReference<T & {index: number}>;
-      return batch.update<T & {index: number}>(ref, { index: row.index } as UpdateData<T & {index: number}>);
+      const ref = this.docRef(row.$key) as DocumentReference<T & { index: number }>;
+      return batch.update<T & { index: number }>(ref, { index: row.index } as UpdateData<T & { index: number }>);
     });
     return from(batch.commit());
   }
@@ -276,4 +269,8 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
   protected beforeDeserialization(data: Partial<T>): T {
     return data as T;
   }
+
+  protected abstract getBaseUri(): string;
+
+  protected abstract getClass(): any;
 }

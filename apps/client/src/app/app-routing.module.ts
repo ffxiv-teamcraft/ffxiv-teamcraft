@@ -196,10 +196,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/leveling-equipment/leveling-equipment.module').then(m => m.LevelingEquipmentModule)
   },
   {
-    path: 'blog',
-    loadChildren: () => import('./pages/blog/blog.module').then(m => m.BlogModule)
-  },
-  {
     path: 'reset-timers',
     loadChildren: () => import('./pages/reset-timers/reset-timers.module').then(m => m.ResetTimersModule)
   },

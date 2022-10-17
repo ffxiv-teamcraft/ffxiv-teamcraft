@@ -5,7 +5,7 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
 import { METADATA_FOREIGN_KEY_REGISTRY } from '../../relational/foreign-key';
 import { Class } from '@kaiu/serializer';
-import { catchError, tap } from 'rxjs/operators';
+import { catchError, finalize, shareReplay, tap } from 'rxjs/operators';
 import { DataModel } from '../data-model';
 import { Observable, throwError } from 'rxjs';
 import { Firestore, QueryConstraint, where } from '@angular/fire/firestore';
@@ -50,8 +50,12 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
       throw new Error(`No foreign key in class ${this.getClass().name} for entity ${foreignEntityClass.name}`);
     }
     const foreignPropertyKey = foreignPropertyEntry.property;
-    if (this.foreignKeyCache[foreignKeyValue + cacheSuffix] === undefined) {
-      this.foreignKeyCache[foreignKeyValue + cacheSuffix] = this.query(
+    const cacheKey = foreignKeyValue + cacheSuffix;
+    if (this.getBaseUri() === 'alarms') {
+      console.log('GET');
+    }
+    if (this.foreignKeyCache[cacheKey] === undefined) {
+      this.foreignKeyCache[cacheKey] = this.query(
         where(foreignPropertyKey, '==', foreignKeyValue),
         ...additionalFilters
       ).pipe(
@@ -60,14 +64,16 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
           console.error(error);
           return throwError(error);
         }),
+        tap((els) => {
+          if (this.getBaseUri() === 'alarms') {
+            console.log('NEW DATA', els);
+          }
+        }),
         tap(() => this.recordOperation('read')),
-        tap(elements => {
-          elements.forEach(el => {
-            this.syncCache[el.$key] = JSON.parse(JSON.stringify(el));
-          });
-        })
+        shareReplay({ bufferSize: 1, refCount: true }),
+        finalize(() => delete this.foreignKeyCache[cacheKey])
       );
     }
-    return this.foreignKeyCache[foreignKeyValue + cacheSuffix];
+    return this.foreignKeyCache[cacheKey];
   }
 }

@@ -49,6 +49,7 @@ export enum AuthActionTypes {
   AuthError = '[Auth] Error',
 
   MarkAsDoneInLog = '[Auth] Mark as done in log',
+  LoadLogTracking = '[Auth] Load Log tracking',
   LogTrackingLoaded = '[Auth] Log tracking loaded',
   CommissionProfileLoaded = '[Auth] Commission Profile Loaded',
   SetContentId = '[Auth] Set Content Id',
@@ -274,6 +275,13 @@ export class UserPersisted implements Action {
 // Just an action to be sent once anonymous warning has been shown
 export class AnonymousWarningShown implements Action {
   readonly type = AuthActionTypes.AnonymousWarningShown;
+}
+
+export class LoadLogTracking implements Action {
+  readonly type = AuthActionTypes.LoadLogTracking;
+
+  constructor(public readonly userId: string, public readonly lodestoneId: number) {
+  }
 }
 
 export class LogTrackingLoaded implements Action {

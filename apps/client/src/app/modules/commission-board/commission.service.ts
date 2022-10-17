@@ -52,14 +52,9 @@ export class CommissionService extends FirestoreRelationalStorage<Commission> {
   }
 
   private where(...query: QueryConstraint[]): Observable<Commission[]> {
-    return this.where(...query)
+    return this.query(...query)
       .pipe(
-        tap(() => this.recordOperation('read')),
-        tap(elements => {
-          elements.forEach(el => {
-            this.syncCache[el.$key] = JSON.parse(JSON.stringify(el));
-          });
-        })
+        tap(() => this.recordOperation('read'))
       );
   }
 

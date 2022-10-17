@@ -8,6 +8,7 @@ import {
   ApplyContentId,
   GetUser,
   LinkingCharacter,
+  LoadLogTracking,
   Logout,
   MarkAsDoneInLog,
   RegisterUser,
@@ -54,6 +55,7 @@ import {
   UserCredential
 } from '@angular/fire/auth';
 import { Functions, httpsCallable } from '@angular/fire/functions';
+import { lazyLoaded } from '../core/rxjs/lazy-loaded';
 
 @Injectable({
   providedIn: 'root'
@@ -68,11 +70,20 @@ export class AuthFacade {
 
   loggedIn$ = this.store.select(authQuery.getLoggedIn);
 
-  userId$ = this.store.select(authQuery.getUserId).pipe(filter(uid => !!uid));
+  userId$ = this.store.select(authQuery.getUserId).pipe(
+    filter(uid => !!uid),
+    distinctUntilChanged(),
+    shareReplay(1)
+  );
 
   user$ = this.store.select(authQuery.getUser).pipe(filter(u => !!u && !u.notFound && u.$key !== undefined));
 
-  logTracking$ = this.store.select(authQuery.getLogTracking).pipe(filter(log => !!log));
+  logTracking$ = this.store.select(authQuery.getLogTracking).pipe(
+    filter(log => !!log),
+    lazyLoaded(this.store, this.user$.pipe(
+      map(user => new LoadLogTracking(user.$key, user.defaultLodestoneId))
+    ))
+  );
 
   serverLogTracking$ = this.store.select(authQuery.getServerLogTracking).pipe(filter(log => !!log));
 
