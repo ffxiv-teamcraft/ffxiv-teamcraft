@@ -1,10 +1,8 @@
 export const patchNotes = `### Bug Fixes
 
-* **currency-spending:** fixed unexpected empty result for some currencies.
-* **list:** fixed layout breaking on npc breakdown with no npcs.
-* **log-tracker:** fixed log tracking entries not properly saved to database.
+* **desktop:** prevent packet capture from locking the game process.
 
 
-### Features
+### Performance Improvements
 
-* **metrics:** complete refactor of charts using echarts.`;
+* **core:** improved database interactions to lower usage.`;
