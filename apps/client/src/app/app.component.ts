@@ -608,7 +608,6 @@ export class AppComponent implements OnInit {
       );
 
       this.notificationsFacade.loadAll();
-      this.customLinksFacade.loadMyCustomLinks();
 
       let increasedPageViews = false;
 

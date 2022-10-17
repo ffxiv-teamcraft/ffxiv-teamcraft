@@ -1,15 +1,9 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { CustomLinksPartialState } from './custom-links.reducer';
-import {
-  CreateCustomLink,
-  DeleteCustomLink,
-  LoadCustomLink,
-  LoadMyCustomLinks,
-  UpdateCustomLink
-} from './custom-links.actions';
+import { CreateCustomLink, DeleteCustomLink, LoadCustomLink, LoadMyCustomLinks, UpdateCustomLink } from './custom-links.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { combineLatest } from 'rxjs';
+import { combineLatest, of } from 'rxjs';
 import { filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { customLinksQuery } from './custom-links.selectors';
 import { CustomLink } from '../../../core/database/custom-links/custom-link';
@@ -18,6 +12,7 @@ import { NameQuestionPopupComponent } from '../../name-question-popup/name-quest
 import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
+import { lazyLoaded } from '../../../core/rxjs/lazy-loaded';
 
 @Injectable()
 export class CustomLinksFacade {
@@ -33,6 +28,7 @@ export class CustomLinksFacade {
   );
 
   myCustomLinks$ = combineLatest([this.allCustomLinks$, this.authFacade.userId$]).pipe(
+    lazyLoaded(this.store, of(new LoadMyCustomLinks())),
     map(([folders, userId]) => folders.filter(folder => folder.authorId === userId)),
     shareReplay({ bufferSize: 1, refCount: true })
   );

@@ -11,6 +11,7 @@ import {
   Authenticated,
   CommissionProfileLoaded,
   LinkingCharacter,
+  LoadLogTracking,
   LoggedInAsAnonymous,
   LoginAsAnonymous,
   LogTrackingLoaded,
@@ -247,10 +248,9 @@ export class AuthEffects {
 
   fetchLogTracking$ = createEffect(() =>
     this.actions$.pipe(
-      ofType<UserFetched>(AuthActionTypes.UserFetched),
-      distinctUntilChanged((a, b) => a.user.defaultLodestoneId === b.user.defaultLodestoneId),
+      ofType<LoadLogTracking>(AuthActionTypes.LoadLogTracking),
       switchMap(action => {
-        return this.logTrackingService.get(`${action.user.$key}:${action.user.defaultLodestoneId?.toString()}`).pipe(
+        return this.logTrackingService.get(`${action.userId}:${action.lodestoneId?.toString()}`).pipe(
           catchError((_) => {
             return of({
               crafting: [],

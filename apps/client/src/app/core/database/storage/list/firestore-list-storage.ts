@@ -1,6 +1,5 @@
 import { List } from '../../../../modules/list/model/list';
 import { Injectable, NgZone } from '@angular/core';
-import { ListStore } from './list-store';
 import { combineLatest, Observable, of, throwError } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
@@ -17,7 +16,7 @@ import { Firestore, orderBy, QueryConstraint, Timestamp, where } from '@angular/
 @Injectable({
   providedIn: 'root'
 })
-export class FirestoreListStorage extends FirestoreRelationalStorage<List> implements ListStore {
+export class FirestoreListStorage extends FirestoreRelationalStorage<List> {
 
   private static readonly PERSISTED_LIST_ROW_PROPERTIES: (keyof ListRow)[] = [
     'amount',

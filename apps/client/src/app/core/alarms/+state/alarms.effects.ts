@@ -42,7 +42,6 @@ export class AlarmsEffects {
   loadAlarms$ = createEffect(() => this.actions$.pipe(
     ofType(AlarmsActionTypes.LoadAlarms),
     switchMap(() => this.authFacade.userId$),
-    // We want to connect the observable only the first time, no need to reload as it's firestore.
     distinctUntilChanged(),
     switchMap((userId) => {
       return combineLatest([

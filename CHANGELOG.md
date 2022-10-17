@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.8.16"></a>
+## [9.8.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.15...v9.8.16) (2022-10-17)
+
+
+### Bug Fixes
+
+* **desktop:** prevent packet capture from locking the game process ([ba153f3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ba153f3))
+
+
+### Performance Improvements
+
+* **core:** improved database interactions to lower usage ([ff9cf7c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ff9cf7c))
+
+
+
 <a name="9.8.15"></a>
 ## [9.8.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.14...v9.8.15) (2022-10-16)
 

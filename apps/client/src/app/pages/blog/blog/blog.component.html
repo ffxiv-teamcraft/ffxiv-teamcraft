@@ -1,7 +1,0 @@
-<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
-  <button *ngIf="admin$ | async" nz-button nzBlock routerLink="/blog/new">
-    <i nz-icon nzTheme="outline" nzType="form"></i>
-    New blog post
-  </button>
-  <app-blog-post *ngFor="let post of posts$ | async" [post]="post"></app-blog-post>
-</div>
