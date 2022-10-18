@@ -935,7 +935,7 @@
     "Fish_eyes_duration": "Su \"fish eyes\" necesita esta duración para obtener el pescado. Haga clic para cambiar el formato.",
     "Spawned_for": "Desaparecerá en {{timer}}",
     "Will_spawn_in": "Aparecerá en {{timer}}",
-    "Ephemeral_warning": "Ephemeral nodes have multiple locations. Position is an approximation.",
+    "Ephemeral_warning": "Nodos efémeros tienen múltiples ubicaciones. Posición es una aproximación.",
     "Legendary": "Legendary",
     "Switched_to_compact": "Display has been switched to compact because there's too many results.",
     "Node_type": "Type",
