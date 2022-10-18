@@ -21,13 +21,10 @@
 
   <nz-divider [nzText]="'DB.PATCH.CONTENT.Title' | translate" nzOrientation="left"></nz-divider>
 
-  <div nz-row nzGutter="10">
-    <nz-collapse *ngIf="patch.achievement" nz-col nzLg="6" nzMd="8" nzSm="24">
-      <nz-collapse-panel
-        #achievementPanel
-        [nzHeader]="'DB.PATCH.CONTENT.Achievements' | translate:{amount: patch.achievement.length}">
-        <nz-list *ngIf="achievementPanel.nzActive" [nzDataSource]="patch.achievement" [nzItemLayout]="'horizontal'"
-                 [nzRenderItem]="template">
+  <div fxLayout="row wrap" fxLayoutAlign="stretch stretch">
+    <nz-card fxFlex="1 1 420px" *ngIf="patch.achievement" [nzTitle]="'DB.PATCH.CONTENT.Achievements' | translate:{amount: patch.achievement.length}">
+      <nz-list>
+        <app-lazy-scroll [rowTemplate]="template" [data]="patch.achievement">
           <ng-template #template let-entry>
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
@@ -42,16 +39,13 @@
               </nz-list-item-meta>
             </nz-list-item>
           </ng-template>
-        </nz-list>
-      </nz-collapse-panel>
-    </nz-collapse>
+        </app-lazy-scroll>
+      </nz-list>
+    </nz-card>
 
-    <nz-collapse *ngIf="patch.action" nz-col nzLg="6" nzMd="8" nzSm="24">
-      <nz-collapse-panel
-        #actionPanel
-        [nzHeader]="'DB.PATCH.CONTENT.Actions' | translate:{amount: patch.action.length}">
-        <nz-list *ngIf="actionPanel.nzActive" [nzDataSource]="patch.action" [nzItemLayout]="'horizontal'"
-                 [nzRenderItem]="template">
+    <nz-card fxFlex="1 1 420px" *ngIf="patch.action" [nzTitle]="'DB.PATCH.CONTENT.Actions' | translate:{amount: patch.action.length}">
+      <nz-list>
+        <app-lazy-scroll [rowTemplate]="template" [data]="patch.action">
           <ng-template #template let-entry>
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
@@ -66,16 +60,13 @@
               </nz-list-item-meta>
             </nz-list-item>
           </ng-template>
-        </nz-list>
-      </nz-collapse-panel>
-    </nz-collapse>
+        </app-lazy-scroll>
+      </nz-list>
+    </nz-card>
 
-    <nz-collapse *ngIf="patch.craftaction" nz-col nzLg="6" nzMd="8" nzSm="24">
-      <nz-collapse-panel
-        #craftactionPanel
-        [nzHeader]="'DB.PATCH.CONTENT.Crafting_actions' | translate:{amount: patch.craftaction.length}">
-        <nz-list *ngIf="craftactionPanel.nzActive" [nzDataSource]="patch.craftaction" [nzItemLayout]="'horizontal'"
-                 [nzRenderItem]="template">
+    <nz-card fxFlex="1 1 420px" *ngIf="patch.craftaction" [nzTitle]="'DB.PATCH.CONTENT.Crafting_actions' | translate:{amount: patch.craftaction.length}">
+      <nz-list>
+        <app-lazy-scroll [rowTemplate]="template" [data]="patch.craftaction">
           <ng-template #template let-entry>
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
@@ -90,16 +81,13 @@
               </nz-list-item-meta>
             </nz-list-item>
           </ng-template>
-        </nz-list>
-      </nz-collapse-panel>
-    </nz-collapse>
+        </app-lazy-scroll>
+      </nz-list>
+    </nz-card>
 
-    <nz-collapse *ngIf="patch.fate" nz-col nzLg="6" nzMd="8" nzSm="24">
-      <nz-collapse-panel
-        #fatePanel
-        [nzHeader]="'DB.PATCH.CONTENT.Fates' | translate:{amount: patch.fate.length}">
-        <nz-list *ngIf="fatePanel.nzActive" [nzDataSource]="patch.fate" [nzItemLayout]="'horizontal'"
-                 [nzRenderItem]="template">
+    <nz-card fxFlex="1 1 420px" *ngIf="patch.fate" [nzTitle]="'DB.PATCH.CONTENT.Fates' | translate:{amount: patch.fate.length}">
+      <nz-list>
+        <app-lazy-scroll [rowTemplate]="template" [data]="patch.fate">
           <ng-template #template let-entry>
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
@@ -114,16 +102,13 @@
               </nz-list-item-meta>
             </nz-list-item>
           </ng-template>
-        </nz-list>
-      </nz-collapse-panel>
-    </nz-collapse>
+        </app-lazy-scroll>
+      </nz-list>
+    </nz-card>
 
-    <nz-collapse *ngIf="patch.instancecontent" nz-col nzLg="6" nzMd="8" nzSm="24">
-      <nz-collapse-panel
-        #instancecontentPanel
-        [nzHeader]="'DB.PATCH.CONTENT.Instances' | translate:{amount: patch.instancecontent.length}">
-        <nz-list *ngIf="instancecontentPanel.nzActive" [nzDataSource]="patch.instancecontent" [nzItemLayout]="'horizontal'"
-                 [nzRenderItem]="template">
+    <nz-card fxFlex="1 1 420px" *ngIf="patch.instancecontent" [nzTitle]="'DB.PATCH.CONTENT.Instances' | translate:{amount: patch.instancecontent.length}">
+      <nz-list>
+        <app-lazy-scroll [rowTemplate]="template" [data]="patch.instancecontent">
           <ng-template #template let-entry>
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
@@ -138,16 +123,13 @@
               </nz-list-item-meta>
             </nz-list-item>
           </ng-template>
-        </nz-list>
-      </nz-collapse-panel>
-    </nz-collapse>
+        </app-lazy-scroll>
+      </nz-list>
+    </nz-card>
 
-    <nz-collapse *ngIf="patch.item" nz-col nzLg="6" nzMd="8" nzSm="24">
-      <nz-collapse-panel
-        #itemPanel
-        [nzHeader]="'DB.PATCH.CONTENT.Items' | translate:{amount: patch.item.length}">
-        <nz-list *ngIf="itemPanel.nzActive" [nzDataSource]="patch.item" [nzItemLayout]="'horizontal'"
-                 [nzRenderItem]="template">
+    <nz-card fxFlex="1 1 420px" *ngIf="patch.item" [nzTitle]="'DB.PATCH.CONTENT.Items' | translate:{amount: patch.item.length}">
+      <nz-list>
+        <app-lazy-scroll [rowTemplate]="template" [data]="patch.item">
           <ng-template #template let-entry>
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
@@ -163,16 +145,13 @@
               </nz-list-item-meta>
             </nz-list-item>
           </ng-template>
-        </nz-list>
-      </nz-collapse-panel>
-    </nz-collapse>
+        </app-lazy-scroll>
+      </nz-list>
+    </nz-card>
 
-    <nz-collapse *ngIf="patch.leve" nz-col nzLg="6" nzMd="8" nzSm="24">
-      <nz-collapse-panel
-        #levePanel
-        [nzHeader]="'DB.PATCH.CONTENT.Leves' | translate:{amount: patch.leve.length}">
-        <nz-list *ngIf="levePanel.nzActive" [nzDataSource]="patch.leve" [nzItemLayout]="'horizontal'"
-                 [nzRenderItem]="template">
+    <nz-card fxFlex="1 1 420px" *ngIf="patch.leve" [nzTitle]="'DB.PATCH.CONTENT.Leves' | translate:{amount: patch.leve.length}">
+      <nz-list>
+        <app-lazy-scroll [rowTemplate]="template" [data]="patch.leve">
           <ng-template #template let-entry>
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
@@ -183,16 +162,13 @@
               </nz-list-item-meta>
             </nz-list-item>
           </ng-template>
-        </nz-list>
-      </nz-collapse-panel>
-    </nz-collapse>
+        </app-lazy-scroll>
+      </nz-list>
+    </nz-card>
 
-    <nz-collapse *ngIf="patch.placename" nz-col nzLg="6" nzMd="8" nzSm="24">
-      <nz-collapse-panel
-        #placenamePanel
-        [nzHeader]="'DB.PATCH.CONTENT.Maps' | translate:{amount: patch.placename.length}">
-        <nz-list *ngIf="placenamePanel.nzActive" [nzDataSource]="patch.placename" [nzItemLayout]="'horizontal'"
-                 [nzRenderItem]="template">
+    <nz-card fxFlex="1 1 420px" *ngIf="patch.placename" [nzTitle]="'DB.PATCH.CONTENT.Maps' | translate:{amount: patch.placename.length}">
+      <nz-list>
+        <app-lazy-scroll [rowTemplate]="template" [data]="patch.placename">
           <ng-template #template let-entry>
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
@@ -203,16 +179,13 @@
               </nz-list-item-meta>
             </nz-list-item>
           </ng-template>
-        </nz-list>
-      </nz-collapse-panel>
-    </nz-collapse>
+        </app-lazy-scroll>
+      </nz-list>
+    </nz-card>
 
-    <nz-collapse *ngIf="patch.bnpcname" nz-col nzLg="6" nzMd="8" nzSm="24">
-      <nz-collapse-panel
-        #bnpcnamePanel
-        [nzHeader]="'DB.PATCH.CONTENT.Monsters' | translate:{amount: patch.bnpcname.length}">
-        <nz-list *ngIf="bnpcnamePanel.nzActive" [nzDataSource]="patch.bnpcname" [nzItemLayout]="'horizontal'"
-                 [nzRenderItem]="template">
+    <nz-card fxFlex="1 1 420px" *ngIf="patch.bnpcname" [nzTitle]="'DB.PATCH.CONTENT.Monsters' | translate:{amount: patch.bnpcname.length}">
+      <nz-list>
+        <app-lazy-scroll [rowTemplate]="template" [data]="patch.bnpcname">
           <ng-template #template let-entry>
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
@@ -223,16 +196,13 @@
               </nz-list-item-meta>
             </nz-list-item>
           </ng-template>
-        </nz-list>
-      </nz-collapse-panel>
-    </nz-collapse>
+        </app-lazy-scroll>
+      </nz-list>
+    </nz-card>
 
-    <nz-collapse *ngIf="patch.enpcresident" nz-col nzLg="6" nzMd="8" nzSm="24">
-      <nz-collapse-panel
-        #enpcresidentPanel
-        [nzHeader]="'DB.PATCH.CONTENT.Npcs' | translate:{amount: patch.enpcresident.length}">
-        <nz-list *ngIf="enpcresidentPanel.nzActive" [nzDataSource]="patch.enpcresident" [nzItemLayout]="'horizontal'"
-                 [nzRenderItem]="template">
+    <nz-card fxFlex="1 1 420px" *ngIf="patch.enpcresident" [nzTitle]="'DB.PATCH.CONTENT.Npcs' | translate:{amount: patch.enpcresident.length}">
+      <nz-list>
+        <app-lazy-scroll [rowTemplate]="template" [data]="patch.enpcresident">
           <ng-template #template let-entry>
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
@@ -243,16 +213,13 @@
               </nz-list-item-meta>
             </nz-list-item>
           </ng-template>
-        </nz-list>
-      </nz-collapse-panel>
-    </nz-collapse>
+        </app-lazy-scroll>
+      </nz-list>
+    </nz-card>
 
-    <nz-collapse *ngIf="patch.quest" nz-col nzLg="6" nzMd="8" nzSm="24">
-      <nz-collapse-panel
-        #questPanel
-        [nzHeader]="'DB.PATCH.CONTENT.Quests' | translate:{amount: patch.quest.length}">
-        <nz-list *ngIf="questPanel.nzActive" [nzDataSource]="patch.quest"
-                 [nzItemLayout]="'horizontal'" [nzRenderItem]="template">
+    <nz-card fxFlex="1 1 420px" *ngIf="patch.quest" [nzTitle]="'DB.PATCH.CONTENT.Quests' | translate:{amount: patch.quest.length}">
+      <nz-list>
+        <app-lazy-scroll [rowTemplate]="template" [data]="patch.quest">
           <ng-template #template let-entry>
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
@@ -267,16 +234,13 @@
               </nz-list-item-meta>
             </nz-list-item>
           </ng-template>
-        </nz-list>
-      </nz-collapse-panel>
-    </nz-collapse>
+        </app-lazy-scroll>
+      </nz-list>
+    </nz-card>
 
-    <nz-collapse *ngIf="patch.status" nz-col nzLg="6" nzMd="8" nzSm="24">
-      <nz-collapse-panel
-        #statusPanel
-        [nzHeader]="'DB.PATCH.CONTENT.Statuses' | translate:{amount: patch.status.length}">
-        <nz-list *ngIf="statusPanel.nzActive" [nzDataSource]="patch.status" [nzItemLayout]="'horizontal'"
-                 [nzRenderItem]="template">
+    <nz-card fxFlex="1 1 420px" *ngIf="patch.status" [nzTitle]="'DB.PATCH.CONTENT.Statuses' | translate:{amount: patch.status.length}">
+      <nz-list>
+        <app-lazy-scroll [rowTemplate]="template" [data]="patch.status">
           <ng-template #template let-entry>
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
@@ -291,16 +255,13 @@
               </nz-list-item-meta>
             </nz-list-item>
           </ng-template>
-        </nz-list>
-      </nz-collapse-panel>
-    </nz-collapse>
+        </app-lazy-scroll>
+      </nz-list>
+    </nz-card>
 
-    <nz-collapse *ngIf="patch.trait" nz-col nzLg="6" nzMd="8" nzSm="24">
-      <nz-collapse-panel
-        #traitPanel
-        [nzHeader]="'DB.PATCH.CONTENT.Traits' | translate:{amount: patch.trait.length}">
-        <nz-list *ngIf="traitPanel.nzActive" [nzDataSource]="patch.trait" [nzItemLayout]="'horizontal'"
-                 [nzRenderItem]="template">
+    <nz-card fxFlex="1 1 420px" *ngIf="patch.trait" [nzTitle]="'DB.PATCH.CONTENT.Traits' | translate:{amount: patch.trait.length}">
+      <nz-list>
+        <app-lazy-scroll [rowTemplate]="template" [data]="patch.trait">
           <ng-template #template let-entry>
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
@@ -315,9 +276,9 @@
               </nz-list-item-meta>
             </nz-list-item>
           </ng-template>
-        </nz-list>
-      </nz-collapse-panel>
-    </nz-collapse>
+        </app-lazy-scroll>
+      </nz-list>
+    </nz-card>
   </div>
 
   <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="patch.ID" type="patch"></app-db-comments>
