@@ -1,4 +1,4 @@
-import { defer, from, Observable, of, Subject, throttleTime, throwError } from 'rxjs';
+import { defer, from, Observable, of, Subject, throwError } from 'rxjs';
 import { DataModel } from '../data-model';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { NgZone } from '@angular/core';
@@ -32,6 +32,7 @@ import {
   writeBatch
 } from '@angular/fire/firestore';
 import { AfterDeserialized } from './after-deserialized';
+import { isEqual } from 'lodash';
 
 export abstract class FirestoreStorage<T extends DataModel> {
 
@@ -94,7 +95,7 @@ export abstract class FirestoreStorage<T extends DataModel> {
 
   public query(...filterQuery: QueryConstraint[]): Observable<T[]> {
     return collectionData(query(this.collection, ...filterQuery).withConverter(this.converter)).pipe(
-      throttleTime(2000)
+      distinctUntilChanged((a, b) => isEqual(a, b))
     );
   }
 

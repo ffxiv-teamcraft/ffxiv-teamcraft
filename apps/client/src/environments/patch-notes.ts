@@ -5,4 +5,4 @@ export const patchNotes = `### Bug Fixes
 
 ### Performance Improvements
 
-* **core:** improved database interactions to lower usage.`;
+* **core:** improved database interactions to lower usage.`;
