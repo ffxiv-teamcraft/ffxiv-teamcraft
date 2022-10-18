@@ -8,7 +8,7 @@ import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { NzTableFilterFn, NzTableFilterList, NzTableSortFn, NzTableSortOrder } from 'ng-zorro-antd/table';
 import { TranslateService } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
-import { catchError, distinctUntilChanged, filter, retry, switchMap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, retry, switchMap, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { subDays } from 'date-fns';
@@ -381,7 +381,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
                 && historyEntry.objects.some((obj, i) => {
                   return state.supplyDemand[i].supply < obj.supply;
                 })
-                && !state.supplyDemand.some(entry => entry.supply > 3);
+                && !state.supplyDemand.some(entry => entry.supply > 3)
+                && !state.supplyDemand.every(entry => entry.supply === 0 && entry.demand === 0);
               return {
                 shouldUpdate,
                 historyEntry
