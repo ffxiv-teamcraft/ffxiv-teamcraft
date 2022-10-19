@@ -1,6 +1,6 @@
 export interface LazyCraftingLogPage {
   id:         number;
-  masterbook: null;
+  masterbook: number | null;
   startLevel: { [key: string]: number };
   recipes:    Recipe[];
 }

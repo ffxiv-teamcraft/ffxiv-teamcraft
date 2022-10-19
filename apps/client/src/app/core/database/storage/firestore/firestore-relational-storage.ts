@@ -51,9 +51,6 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
     }
     const foreignPropertyKey = foreignPropertyEntry.property;
     const cacheKey = foreignKeyValue + cacheSuffix;
-    if (this.getBaseUri() === 'alarms') {
-      console.log('GET');
-    }
     if (this.foreignKeyCache[cacheKey] === undefined) {
       this.foreignKeyCache[cacheKey] = this.query(
         where(foreignPropertyKey, '==', foreignKeyValue),
@@ -63,11 +60,6 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
           console.error(`GET BY FOREIGN KEY ${this.getBaseUri()}:${foreignPropertyKey}=${foreignKeyValue}`);
           console.error(error);
           return throwError(error);
-        }),
-        tap((els) => {
-          if (this.getBaseUri() === 'alarms') {
-            console.log('NEW DATA', els);
-          }
         }),
         tap(() => this.recordOperation('read')),
         shareReplay({ bufferSize: 1, refCount: true }),

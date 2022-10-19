@@ -3812,7 +3812,7 @@
   "636": {
     "en": "The Heavens' Legend",
     "ja": "the Heavens' Legend",
-    "de": "der Himmelsbändiger",
+    "de": "die Himmelslegende",
     "fr": "Légende d'azur"
   },
   "637": {
@@ -3862,5 +3862,83 @@
     "ja": "Makai Sage",
     "de": "Makai-Weiser",
     "fr": "Sage Makai"
+  },
+  "645": {
+    "en": "Sanctuary Seeker",
+    "ja": "Sanctuary Seeker",
+    "de": "der Zurückgezogene",
+    "fr": "Quêteur de vie paisible"
+  },
+  "646": {
+    "en": "Trader of Paradise",
+    "ja": "Trader of Paradise",
+    "de": "Händler des Paradieses",
+    "fr": "Maître des échanges"
+  },
+  "647": {
+    "en": "Cieldalaes Connoisseur",
+    "ja": "Cieldalaes Connoisseur",
+    "de": "Connaisseur der Cieldaläen",
+    "fr": "Expert des îles Cieldalaes"
+  },
+  "648": {
+    "en": "Voidbound",
+    "ja": "Voidbound",
+    "de": "Nichtsreisender",
+    "fr": "Argonaute du néant"
+  },
+  "649": {
+    "en": "Of the Final Conflict",
+    "ja": "of the Final Conflict",
+    "de": "vom finalen Konflikt",
+    "fr": "Légende conflictuelle"
+  },
+  "650": {
+    "en": "Of the Endless Conflict",
+    "ja": "of the Endless Conflict",
+    "de": "vom endlosen Konflikt",
+    "fr": "Histoire conflictuelle"
+  },
+  "651": {
+    "en": "Of the Rising Conflict",
+    "ja": "of the Rising Conflict",
+    "de": "vom zunehmenden Konflikt",
+    "fr": "Parcours conflictuel"
+  },
+  "652": {
+    "en": "Of the Final Conflict",
+    "ja": "of the Final Conflict",
+    "de": "vom finalen Konflikt",
+    "fr": "Légende conflictuelle"
+  },
+  "653": {
+    "en": "Of the Endless Conflict",
+    "ja": "of the Endless Conflict",
+    "de": "vom endlosen Konflikt",
+    "fr": "Histoire conflictuelle"
+  },
+  "654": {
+    "en": "Of the Rising Conflict",
+    "ja": "of the Rising Conflict",
+    "de": "vom zunehmenden Konflikt",
+    "fr": "Parcours conflictuel"
+  },
+  "655": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "656": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "657": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   }
 }

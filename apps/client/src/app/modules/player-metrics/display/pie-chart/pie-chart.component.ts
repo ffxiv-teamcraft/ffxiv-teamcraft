@@ -60,10 +60,6 @@ export class PieChartComponent extends AbstractMetricDisplayComponent {
         tooltip: {
           trigger: 'item'
         },
-        legend: {
-          orient: 'vertical',
-          left: 'left'
-        },
         backgroundColor: '#292929',
         series: [
           {

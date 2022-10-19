@@ -127001,6 +127001,36 @@
     "slots": 0,
     "overmeld": false
   },
+  "38223": {
+    "modifier": 0,
+    "prop": "Head%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "38224": {
+    "modifier": 0,
+    "prop": "Chest%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "38225": {
+    "modifier": 0,
+    "prop": "Hands%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "38226": {
+    "modifier": 0,
+    "prop": "Legs%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "38227": {
+    "modifier": 0,
+    "prop": "Feet%",
+    "slots": 0,
+    "overmeld": false
+  },
   "38228": {
     "modifier": 0,
     "prop": "Head%",
@@ -127169,6 +127199,126 @@
     "slots": 0,
     "overmeld": false
   },
+  "38400": {
+    "modifier": 1,
+    "prop": "1HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "38401": {
+    "modifier": 3,
+    "prop": "2HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "38402": {
+    "modifier": 1,
+    "prop": "2HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "38403": {
+    "modifier": 2,
+    "prop": "2HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "38404": {
+    "modifier": 4,
+    "prop": "2HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "38405": {
+    "modifier": 11,
+    "prop": "2HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "38406": {
+    "modifier": 1,
+    "prop": "2HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "38407": {
+    "modifier": 4,
+    "prop": "2HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "38408": {
+    "modifier": 6,
+    "prop": "2HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "38409": {
+    "modifier": 5,
+    "prop": "2HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "38410": {
+    "modifier": 5,
+    "prop": "2HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "38411": {
+    "modifier": 6,
+    "prop": "2HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "38412": {
+    "modifier": 6,
+    "prop": "2HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "38413": {
+    "modifier": 3,
+    "prop": "2HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "38414": {
+    "modifier": 5,
+    "prop": "2HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "38415": {
+    "modifier": 1,
+    "prop": "2HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "38416": {
+    "modifier": 4,
+    "prop": "2HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "38417": {
+    "modifier": 6,
+    "prop": "2HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "38418": {
+    "modifier": 2,
+    "prop": "2HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "38419": {
+    "modifier": 1,
+    "prop": "OH%",
+    "slots": 0,
+    "overmeld": false
+  },
   "38421": {
     "modifier": 1,
     "prop": "Chest%",
@@ -127319,6 +127469,12 @@
     "slots": 0,
     "overmeld": false
   },
+  "38559": {
+    "modifier": 0,
+    "prop": "Earring%",
+    "slots": 0,
+    "overmeld": false
+  },
   "38560": {
     "modifier": 0,
     "prop": "Necklace%",
@@ -127376,6 +127532,12 @@
   "38688": {
     "modifier": 0,
     "prop": "ChestHeadLegsFeet%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "38691": {
+    "modifier": 0,
+    "prop": "Earring%",
     "slots": 0,
     "overmeld": false
   },

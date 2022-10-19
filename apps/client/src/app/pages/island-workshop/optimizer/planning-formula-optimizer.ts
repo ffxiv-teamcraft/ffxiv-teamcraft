@@ -34,8 +34,8 @@ export class PlanningFormulaOptimizer {
 
       const unknownDay = projectedSupplyObjects.some(object => {
         // If some items have possible pattern peak for today but also other days, it's an unknown day
-        return object.patterns.length > 1 && object.patterns.some(p => (1 + Math.floor(p.index / 2)) === i);
-      });
+        return object.patterns.length > 1 && object.patterns.some(p => p.index === i);
+      }) || projectedSupplyObjects.every(obj => obj.patterns.length === 0);
 
       // If there's some unknown peaks for this day, consider it as not ready to optimize
       if (unknownDay) {
@@ -45,9 +45,6 @@ export class PlanningFormulaOptimizer {
 
       // Okay, if we're here, we know what'll peak and how, so we want to build an optimized value route now
       let [best, combo] = this.findBestAndComboObjects(projectedSupplyObjects, objectsUsage);
-      if (i === 5) {
-        console.log(best, combo);
-      }
 
       let totalTime = 0;
       let useComboItem = combo.craftworksEntry.craftingTime + best.craftworksEntry.craftingTime <= 12;
