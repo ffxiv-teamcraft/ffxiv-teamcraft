@@ -8,4 +8,4 @@ export const patchNotes = `### Bug Fixes
 ### Features
 
 * **db:** 6.25 data.
-* **db:** revamp of patch details page.`;
+* **db:** revamp of patch details page.`;

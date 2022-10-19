@@ -47,7 +47,7 @@ export abstract class FirestoreStorage<T extends DataModel> {
       const workingCopy: Partial<WithFieldValue<T>> = (this.skipClone ? modelObject : { ...modelObject }) as Partial<WithFieldValue<T>>;
       delete workingCopy.$key;
       delete workingCopy.notFound;
-      return { ...this.prepareData(workingCopy) };
+      return this.prepareData(workingCopy);
     },
     fromFirestore: (snapshot: QueryDocumentSnapshot): T => {
       const deserialized = this.serializer.deserialize<T & AfterDeserialized>(this.beforeDeserialization({
@@ -151,7 +151,7 @@ export abstract class FirestoreStorage<T extends DataModel> {
 
   pureUpdate(key: string, data: UpdateData<T>): Observable<void> {
     this.pendingChangesService.addPendingChange(`update ${this.getBaseUri()}/${key}`);
-    return from(updateDoc(this.docRef(key), data)).pipe(
+    return from(updateDoc(this.docRef(key), this.converter.toFirestore(data as WithFieldValue<T>))).pipe(
       catchError(error => {
         console.error(`UPDATE ${this.getBaseUri()}/${key}`);
         console.error(error);
