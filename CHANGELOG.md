@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.8.18"></a>
+## [9.8.18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.17...v9.8.18) (2022-10-19)
+
+
+### Bug Fixes
+
+* **core:** fixed data update failing on gearsets, workshops and other elements ([b7b43af](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b7b43af))
+
+
+
 <a name="9.8.17"></a>
 ## [9.8.17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.16...v9.8.17) (2022-10-19)
 
