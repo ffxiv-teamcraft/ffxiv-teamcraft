@@ -354,6 +354,40 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     })
   );
 
+  public nextWeekPrep$ = this.state$.pipe(
+    map(state => state.predictedPopularity),
+    distinctUntilChanged(),
+    withLazyData(this.lazyData, 'islandPopularity', 'islandCraftworks', 'recipes', 'extracts'),
+    map(([popularity, islandPopularity, objects, recipes, extracts]) => {
+      const registry = Object.entries(objects)
+        .filter(([id]) => {
+          return islandPopularity[popularity][id].ratio >= 120;
+        })
+        .reduce((acc, [id, obj]) => {
+          const recipe = recipes.find(r => r.id === `mji-craftworks-${id}`);
+          const possibleCrafts = Math.floor(24 / (obj.craftingTime + 4));
+          recipe.ingredients.forEach(i => {
+            const pastureData = getItemSource(extracts[i.id], DataType.ISLAND_PASTURE);
+            const cropData = getItemSource(extracts[i.id], DataType.ISLAND_CROP);
+            if (pastureData?.length > 0) {
+              // possibleCrafts crafts per day max, with 3 workshops
+              acc.pasture[i.id] = (acc.pasture[i.id] || 0) + i.amount * possibleCrafts * 3;
+            }
+            if (cropData.seed) {
+              // possibleCrafts crafts per day max, with 3 workshops
+              acc.crops[i.id] = (acc.crops[i.id] || 0) + i.amount * possibleCrafts * 3;
+            }
+          });
+          return acc;
+        }, { pasture: {}, crops: {} });
+      return {
+        pasture: Object.entries(registry.pasture).map(([id, quantity]) => ({ id, quantity })),
+        crops: Object.entries(registry.crops).map(([id, quantity]) => ({ id, quantity }))
+      };
+    }),
+    tap(console.log)
+  );
+
   public machinaToggle = false;
 
   public getExport = () => {
