@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.8.17"></a>
+## [9.8.17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.16...v9.8.17) (2022-10-19)
+
+
+### Bug Fixes
+
+* **island-workshop:** prevent corrupted states from being pushed as history data ([458166c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/458166c))
+* **lists:** fixed list creation sometimes stuck on checking server state ([e8c65cd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e8c65cd))
+* **metrics:** remove useless side legend on pie charts ([1d2b84f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1d2b84f))
+
+
+### Features
+
+* **db:** 6.25 data ([c29dfa7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c29dfa7))
+* **db:** revamp of patch details page ([af26d09](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/af26d09))
+
+
+
 <a name="9.8.16"></a>
 ## [9.8.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.15...v9.8.16) (2022-10-17)
 
