@@ -29,7 +29,7 @@ export class MapsExtractor extends AbstractExtractor {
           territory_id: mapData.TerritoryTypeTargetID,
           index: mapData.MapIndex,
           dungeon: contentFinderConditions.some(c => mapData.MapFilenameId.startsWith(c.TerritoryType.Name)),
-          housing: mapData.GameContentLinks.HousingMapMarkerInfo !== undefined
+          housing: mapData.GameContentLinks?.HousingMapMarkerInfo !== undefined
         };
       });
     }, null, () => {

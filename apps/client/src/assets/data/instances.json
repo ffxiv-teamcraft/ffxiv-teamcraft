@@ -1,21 +1,21 @@
 {
   "1": {
-    "en": "the Thousand Maws of Toto–Rak",
-    "ja": "監獄廃墟 トトラクの千獄",
-    "de": "Tausend Löcher von Toto-Rak",
-    "fr": "les Mille Gueules de Toto-Rak",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       33305,
       33300
     ]
   },
   "2": {
-    "en": "the Tam–Tara Deepcroft",
-    "ja": "地下霊殿 タムタラの墓所",
-    "de": "Totenacker Tam-Tara",
-    "fr": "l'Hypogée de Tam-Tara",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       1004,
       1003,
@@ -24,11 +24,11 @@
     ]
   },
   "3": {
-    "en": "Copperbell Mines",
-    "ja": "封鎖坑道 カッパーベル銅山",
-    "de": "Kupferglocken-Mine",
-    "fr": "les Mines de Clochecuivre",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       2705,
       2704,
@@ -37,11 +37,11 @@
     ]
   },
   "4": {
-    "en": "Sastasha",
-    "ja": "天然要害 サスタシャ浸食洞",
-    "de": "Sastasha",
-    "fr": "Sastasha",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       2505,
       2504,
@@ -50,121 +50,121 @@
     ]
   },
   "5": {
-    "en": "the Aurum Vale",
-    "ja": "霧中行軍 オーラムヴェイル",
-    "de": "Goldklamm",
-    "fr": "le Val d'Aurum",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       2903,
       2900
     ]
   },
   "6": {
-    "en": "Haukke Manor",
-    "ja": "名門屋敷 ハウケタ御用邸",
-    "de": "Haukke-Herrenhaus",
-    "fr": "le Manoir des Haukke",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       1103,
       1100
     ]
   },
   "7": {
-    "en": "Halatali",
-    "ja": "魔獣領域 ハラタリ修練所",
-    "de": "Halatali",
-    "fr": "Halatali",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       2407,
       2405
     ]
   },
   "8": {
-    "en": "Brayflox's Longstop",
-    "ja": "奪還支援 ブレイフロクスの野営地",
-    "de": "Brüllvolx' Langrast",
-    "fr": "le Bivouac de Brayflox",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       2403,
       2400
     ]
   },
   "9": {
-    "en": "the Sunken Temple of Qarn",
-    "ja": "遺跡探索 カルン埋没寺院",
-    "de": "Versunkener Tempel von Qarn",
-    "fr": "le Temple enseveli de Qarn",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       3509,
       3500
     ]
   },
   "10": {
-    "en": "the Wanderer's Palace",
-    "ja": "旅神聖域 ワンダラーパレス",
-    "de": "Palast des Wanderers",
-    "fr": "le Palais du Vagabond",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       2804,
       2800
     ]
   },
   "11": {
-    "en": "the Stone Vigil",
-    "ja": "城塞攻略 ストーンヴィジル",
-    "de": "Steinerne Wacht",
-    "fr": "le Vigile de Pierre",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       4402,
       4400
     ]
   },
   "12": {
-    "en": "Cutter's Cry",
-    "ja": "流砂迷宮 カッターズクライ",
-    "de": "Sägerschrei",
-    "fr": "le Gouffre hurlant",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       3402,
       3400
     ]
   },
   "13": {
-    "en": "Dzemael Darkhold",
-    "ja": "掃討作戦 ゼーメル要塞",
-    "de": "Die Feste Dzemael",
-    "fr": "la Forteresse de Dzemael",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       2906,
       2904
     ]
   },
   "14": {
-    "en": "Amdapor Keep",
-    "ja": "邪教排撃 古城アムダプール",
-    "de": "Die Ruinen von Amdapor",
-    "fr": "le Château d'Amdapor",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       4502,
       4500
     ]
   },
   "15": {
-    "en": "Castrum Meridianum",
-    "ja": "外郭攻略 カストルム・メリディアヌム",
-    "de": "Castrum Meridianum - Außenbereich",
-    "fr": "Castrum Meridianum",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       33526,
       33500
@@ -182,44 +182,44 @@
     ]
   },
   "17": {
-    "en": "Pharos Sirius",
-    "ja": "怪鳥巨塔 シリウス大灯台",
-    "de": "Pharos Sirius",
-    "fr": "le Phare de Sirius",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       4612,
       4600
     ]
   },
   "18": {
-    "en": "Copperbell Mines (Hard)",
-    "ja": "騒乱坑道 カッパーベル銅山 (Hard)",
-    "de": "Kupferglocken-Mine (schwer)",
-    "fr": "les Mines de Clochecuivre (brutal)",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       4812,
       4800
     ]
   },
   "19": {
-    "en": "Haukke Manor (Hard)",
-    "ja": "妖異屋敷 ハウケタ御用邸 (Hard)",
-    "de": "Haukke-Herrenhaus (schwer)",
-    "fr": "le Manoir des Haukke (brutal)",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       5007,
       5000
     ]
   },
   "20": {
-    "en": "Brayflox's Longstop (Hard)",
-    "ja": "盟友支援 ブレイフロクスの野営地 (Hard)",
-    "de": "Brüllvolx' Langrast (schwer)",
-    "fr": "le Bivouac de Brayflox (brutal)",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       5306,
       5305,
@@ -228,748 +228,748 @@
     ]
   },
   "21": {
-    "en": "Halatali (Hard)",
-    "ja": "剣闘領域 ハラタリ修練所 (Hard)",
-    "de": "Halatali (schwer)",
-    "fr": "Halatali (brutal)",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       5116,
       5100
     ]
   },
   "22": {
-    "en": "the Lost City of Amdapor",
-    "ja": "腐敗遺跡 古アムダプール市街",
-    "de": "Historisches Amdapor",
-    "fr": "les Vestiges de la cité d'Amdapor",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       5406,
       5400
     ]
   },
   "23": {
-    "en": "Hullbreaker Isle",
-    "ja": "財宝伝説 ハルブレーカー・アイル",
-    "de": "Schiffbrecher-Insel",
-    "fr": "l'Île de Crèvecarène",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       6005,
       6000
     ]
   },
   "24": {
-    "en": "the Tam–Tara Deepcroft (Hard)",
-    "ja": "惨劇霊殿 タムタラの墓所 (Hard)",
-    "de": "Totenacker Tam-Tara (schwer)",
-    "fr": "l'Hypogée de Tam-Tara (brutal)",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       6414,
       6400
     ]
   },
   "25": {
-    "en": "the Stone Vigil (Hard)",
-    "ja": "城塞奪回 ストーンヴィジル (Hard)",
-    "de": "Steinerne Wacht (schwer)",
-    "fr": "le Vigile de Pierre (brutal)",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       6106,
       6100
     ]
   },
   "26": {
-    "en": "the Sunken Temple of Qarn (Hard)",
-    "ja": "遺跡救援 カルン埋没寺院 (Hard)",
-    "de": "Versunkener Tempel von Qarn (schwer)",
-    "fr": "le Temple enseveli de Qarn (brutal)",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       6507,
       6500
     ]
   },
   "27": {
-    "en": "Snowcloak",
-    "ja": "氷結潜窟 スノークローク大氷壁",
-    "de": "Das Schneekleid",
-    "fr": "Manteneige",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       6804,
       6800
     ]
   },
   "28": {
-    "en": "Sastasha (Hard)",
-    "ja": "逆襲要害 サスタシャ浸食洞 (Hard)",
-    "de": "Sastasha (schwer)",
-    "fr": "Sastasha (brutal)",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       6617,
       6600
     ]
   },
   "29": {
-    "en": "Amdapor Keep (Hard)",
-    "ja": "邪念排撃 古城アムダプール (Hard)",
-    "de": "Die Ruinen von Amdapor (schwer)",
-    "fr": "le Château d'Amdapor (brutal)",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       7309,
       7300
     ]
   },
   "30": {
-    "en": "the Wanderer's Palace (Hard)",
-    "ja": "武装聖域 ワンダラーパレス (Hard)",
-    "de": "Palast des Wanderers (schwer)",
-    "fr": "le Palais du Vagabond (brutal)",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       6719,
       6700
     ]
   },
   "31": {
-    "en": "the Great Gubal Library",
-    "ja": "禁書回収 グブラ幻想図書館",
-    "de": "Große Gubal-Bibliothek",
-    "fr": "la Grande bibliothèque de Gubal",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       7704,
       7700
     ]
   },
   "32": {
-    "en": "the Keeper of the Lake",
-    "ja": "幻龍残骸 黙約の塔",
-    "de": "Hüter des Sees",
-    "fr": "le Gardien du lac",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       7516,
       7500
     ]
   },
   "33": {
-    "en": "Neverreap",
-    "ja": "神域浮島 ネバーリープ",
-    "de": "Nimmerreich",
-    "fr": "Nalloncques",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       9107,
       9100
     ]
   },
   "34": {
-    "en": "the Vault",
-    "ja": "強硬突入 イシュガルド教皇庁",
-    "de": "Erzbasilika",
-    "fr": "La Voûte",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       8208,
       8200
     ]
   },
   "35": {
-    "en": "the Fractal Continuum",
-    "ja": "博物戦艦 フラクタル・コンティニアム",
-    "de": "Die Fraktal-Kontinuum",
-    "fr": "Le Continuum fractal",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       8309,
       8300
     ]
   },
   "36": {
-    "en": "the Dusk Vigil",
-    "ja": "廃砦捜索 ダスクヴィジル",
-    "de": "Abendrot-Wacht",
-    "fr": "le Vigile du Crépuscule",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       8104,
       8100
     ]
   },
   "37": {
-    "en": "Sohm Al",
-    "ja": "霊峰踏破 ソーム・アル",
-    "de": "Sohm Al",
-    "fr": "Sohm Al",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       8705,
       8700
     ]
   },
   "38": {
-    "en": "the Aetherochemical Research Facility",
-    "ja": "蒼天聖戦 魔科学研究所",
-    "de": "Ätherochemisches Forschungslabor",
-    "fr": "le Laboratoire de magismologie",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       8621,
       8600
     ]
   },
   "39": {
-    "en": "the Aery",
-    "ja": "邪竜血戦 ドラゴンズエアリー",
-    "de": "Nest des Drachen",
-    "fr": "L'Aire",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       8524,
       8500
     ]
   },
   "40": {
-    "en": "Pharos Sirius (Hard)",
-    "ja": "制圧巨塔 シリウス大灯台 (Hard)",
-    "de": "Pharos Sirius (schwer)",
-    "fr": "le Phare de Sirius (brutal)",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       9507,
       9500
     ]
   },
   "41": {
-    "en": "Saint Mocianne's Arboretum",
-    "ja": "草木庭園 聖モシャーヌ植物園",
-    "de": "Sankt Mocianne-Arboretum",
-    "fr": "l'Arboretum Sainte-Mocianne",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       9704,
       9700
     ]
   },
   "42": {
-    "en": "the Lost City of Amdapor (Hard)",
-    "ja": "神聖遺跡 古アムダプール市街 (Hard)",
-    "de": "Historisches Amdapor (schwer)",
-    "fr": "les Vestiges de la cité d'Amdapor (brutal)",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       10011,
       10000
     ]
   },
   "43": {
-    "en": "the Antitower",
-    "ja": "星海観測 逆さの塔",
-    "de": "Antiturm",
-    "fr": "L'Antitour",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       9806,
       9800
     ]
   },
   "44": {
-    "en": "Sohr Khai",
-    "ja": "天竜宮殿 ソール・カイ",
-    "de": "Sohr Khai",
-    "fr": "Sohr Khai",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       12414,
       12400
     ]
   },
   "45": {
-    "en": "Hullbreaker Isle (Hard)",
-    "ja": "黒渦伝説 ハルブレーカー・アイル (Hard)",
-    "de": "Schiffbrecher-Insel (schwer)",
-    "fr": "l'Île de Crèvecarène (brutal)",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       12350,
       12300
     ]
   },
   "46": {
-    "en": "Xelphatol",
-    "ja": "峻厳渓谷 ゼルファトル",
-    "de": "Xelphatol",
-    "fr": "Xelphatol",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       13016,
       13000
     ]
   },
   "47": {
-    "en": "the Great Gubal Library (Hard)",
-    "ja": "稀書回収 グブラ幻想図書館 (Hard)",
-    "de": "Große Gubal-Bibliothek (schwer)",
-    "fr": "la Grande bibliothèque de Gubal (brutal)",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       13816,
       13800
     ]
   },
   "48": {
-    "en": "Baelsar's Wall",
-    "ja": "巨大防壁 バエサルの長城",
-    "de": "Baelsar-Wall",
-    "fr": "la Muraille de Baelsar",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       14008,
       14000
     ]
   },
   "49": {
-    "en": "Sohm Al (Hard)",
-    "ja": "霊峰浄化 ソーム・アル (Hard)",
-    "de": "Sohm Al (schwer)",
-    "fr": "Sohm Al (brutal)",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       14404,
       14400
     ]
   },
   "50": {
-    "en": "Shisui of the Violet Tides",
-    "ja": "海底宮殿 紫水宮",
-    "de": "Shisui",
-    "fr": "le Palais aux Marées violettes",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       14914,
       14900
     ]
   },
   "51": {
-    "en": "The Temple of the Fist",
-    "ja": "壊神修行 星導山寺院",
-    "de": "Tempel der Faust",
-    "fr": "le Temple du Poing",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       14623,
       14600
     ]
   },
   "52": {
-    "en": "The Sirensong Sea",
-    "ja": "漂流海域 セイレーン海",
-    "de": "Sirenen-See",
-    "fr": "la Mer du Chant des sirènes",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       14513,
       14500
     ]
   },
   "53": {
-    "en": "Bardam's Mettle",
-    "ja": "伝統試練 バルダム覇道",
-    "de": "Bardams Probe",
-    "fr": "la Force de Bardam",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       14722,
       14700
     ]
   },
   "54": {
-    "en": "Doma Castle",
-    "ja": "解放決戦 ドマ城",
-    "de": "Burg Doma",
-    "fr": "le Château de Doma",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       16111,
       16100
     ]
   },
   "55": {
-    "en": "Castrum Abania",
-    "ja": "巨砲要塞 カストルム・アバニア",
-    "de": "Castrum Abania",
-    "fr": "Castrum Abania",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       15516,
       15500
     ]
   },
   "56": {
-    "en": "Ala Mhigo",
-    "ja": "紅蓮決戦 アラミゴ",
-    "de": "Ala Mhigo",
-    "fr": "Ala Mhigo",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       17317,
       17300
     ]
   },
   "57": {
-    "en": "Kugane Castle",
-    "ja": "悪党成敗 クガネ城",
-    "de": "Schloss Kugane",
-    "fr": "le Château de Kugane",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       16230,
       16200
     ]
   },
   "58": {
-    "en": "the Drowned City of Skalla",
-    "ja": "水没遺構 スカラ",
-    "de": "Die versunkene Stadt Skalla",
-    "fr": "la Cité engloutie de Skalla",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       17908,
       17900
     ]
   },
   "59": {
-    "en": "Hells' Lid",
-    "ja": "紅玉火山 獄之蓋",
-    "de": "Höllenspund",
-    "fr": "le Couvercle des enfers",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       18411,
       18400
     ]
   },
   "60": {
-    "en": "the Fractal Continuum (Hard)",
-    "ja": "暴走戦艦 フラクタル・コンティニアム (Hard)",
-    "de": "Die Fraktal-Kontinuum (schwer)",
-    "fr": "le Continuum fractal (brutal)",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       18516,
       18500
     ]
   },
   "61": {
-    "en": "the Swallow's Compass",
-    "ja": "風水霊殿 ガンエン廟",
-    "de": "Kompass der Schwalbe",
-    "fr": "le Compas de l'Hirondelle",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       19230,
       19200
     ]
   },
   "62": {
-    "en": "Saint Mocianne's Arboretum (Hard)",
-    "ja": "草木汚染 聖モシャーヌ植物園 (Hard)",
-    "de": "Sankt Mocianne-Arboretum (schwer)",
-    "fr": "l'Arboretum Sainte-Mocianne (brutal)",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       19804,
       19800
     ]
   },
   "63": {
-    "en": "the Burn",
-    "ja": "永久焦土 ザ・バーン",
-    "de": "Das Kargland",
-    "fr": "L'Escarre",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       19714,
       19700
     ]
   },
   "64": {
-    "en": "the Ghimlyt Dark",
-    "ja": "境界戦線 ギムリトダーク",
-    "de": "Die Ghimlyt-Finsternis",
-    "fr": "Les Ténèbres de Ghimlyt",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       20819,
       20800
     ]
   },
   "65": {
-    "en": "Dohn Mheg",
-    "ja": "水妖幻園 ドォーヌ・メグ",
-    "de": "Dohn Mheg",
-    "fr": "Dohn Mheg",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       21323,
       21300
     ]
   },
   "66": {
-    "en": "the Qitana Ravel",
-    "ja": "古跡探索 キタンナ神影洞",
-    "de": "Irrungen der Qitari",
-    "fr": "L'Enchevêtrement des Qitari",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       21808,
       21800
     ]
   },
   "67": {
-    "en": "Amaurot",
-    "ja": "終末幻想 アーモロート",
-    "de": "Amaurot",
-    "fr": "Amaurote",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       21426,
       21400
     ]
   },
   "68": {
-    "en": "the Twinning",
-    "ja": "異界遺構 シルクス・ツイニング",
-    "de": "Der Kristallzwilling",
-    "fr": "La Macle de Syrcus",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       21609,
       21600
     ]
   },
   "69": {
-    "en": "Malikah's Well",
-    "ja": "爽涼離宮 マリカの大井戸",
-    "de": "Malikahs Brunnen",
-    "fr": "le Puits de Malikah",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       21505,
       21500
     ]
   },
   "70": {
-    "en": "Mt. Gulg",
-    "ja": "偽造天界 グルグ火山",
-    "de": "Der Gulg",
-    "fr": "Mont Gulg",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       20414,
       20400
     ]
   },
   "71": {
-    "en": "Akadaemia Anyder",
-    "ja": "創造機関 アナイダアカデミア",
-    "de": "Akadaemia Anyder",
-    "fr": "Akadaemia Anydre",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       21707,
       21700
     ]
   },
   "72": {
-    "en": "Holminster Switch",
-    "ja": "殺戮郷村 ホルミンスター",
-    "de": "Holminster",
-    "fr": "Holminster",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       22107,
       22100
     ]
   },
   "73": {
-    "en": "The Grand Cosmos",
-    "ja": "魔法宮殿 グラン・コスモス",
-    "de": "Chateau Cosmea",
-    "fr": "le Cosmos coruscant",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       23440,
       23400
     ]
   },
   "74": {
-    "en": "Anamnesis Anyder",
-    "ja": "黒風海底 アニドラス・アナムネーシス",
-    "de": "Anamnesis Anyder",
-    "fr": "Anamnesis Anydre",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24117,
       24100
     ]
   },
   "75": {
-    "en": "the Heroes' Gauntlet",
-    "ja": "漆黒決戦 ノルヴラント",
-    "de": "Schlacht um Norvrandt",
-    "fr": "La Traversée de Norvrandt",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       25042,
       25000
     ]
   },
   "76": {
-    "en": "Matoya's Relict",
-    "ja": "魔術工房 マトーヤのアトリエ",
-    "de": "Matoyas Atelier",
-    "fr": "l'Atelier abandonné de Matoya",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       25943,
       25900
     ]
   },
   "77": {
-    "en": "Paglth'an",
-    "ja": "黄金平原 パガルザン",
-    "de": "Die Goldene Ebene von Paglth'an",
-    "fr": "La grande prairie de Paglth'an",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       25129,
       25100
     ]
   },
   "78": {
-    "en": "The Tower of Zot",
-    "ja": "異形楼閣 ゾットの塔",
-    "de": "Der Turm von Zot",
-    "fr": "La tour de Zott",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       27129,
       27100
     ]
   },
   "79": {
-    "en": "The Stigma Dreamscape",
-    "ja": "電脳夢想 スティグマ・フォー",
-    "de": "Stigma-Holometrie",
-    "fr": "Rêve électrique de Stigma-4",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       27032,
       27000
     ]
   },
   "80": {
-    "en": "The Tower of Babil",
-    "ja": "魔導神門 バブイルの塔",
-    "de": "Der Turm von Babil",
-    "fr": "La tour de Babil",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       30536,
       30500
     ]
   },
   "81": {
-    "en": "The Aitiascope",
-    "ja": "星海潜航 アイティオン星晶鏡",
-    "de": "Das Aitiaskop",
-    "fr": "le Prisme de l'Aitia",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       30127,
       30100
     ]
   },
   "82": {
-    "en": "Ktisis Hyperboreia",
-    "ja": "創造環境 ヒュペルボレア造物院",
-    "de": "Ktisis Hyperboreia",
-    "fr": "l'Hyperborée",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       30316,
       30300
     ]
   },
   "83": {
-    "en": "Vanaspati",
-    "ja": "終末樹海 ヴァナスパティ",
-    "de": "Vanaspati",
-    "fr": "Vanaspati",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       30212,
       30200
     ]
   },
   "84": {
-    "en": "The Dead Ends",
-    "ja": "最終幻想 レムナント",
-    "de": "Das Sternengrab",
-    "fr": "L'Issue aux Impasses",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       30830,
       30800
     ]
   },
   "85": {
-    "en": "Smileton",
-    "ja": "楽園都市 スマイルトン",
-    "de": "Smileton",
-    "fr": "Risette-sur-lune",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       30611,
       30600
     ]
   },
   "86": {
-    "en": "the Praetorium",
-    "ja": "最終決戦 魔導城プラエトリウム",
-    "de": "Castrum Meridianum - Praetorium",
-    "fr": "le Praetorium",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       32921,
       32900
     ]
   },
   "87": {
-    "en": "Alzadaal's Legacy",
-    "ja": "近東秘宝 アルザダール海底遺跡群",
-    "de": "Alzadaals Vermächtnis",
-    "fr": "Le legs d'Alzadaal",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       32814,
       32800
     ]
   },
   "88": {
-    "en": "the Fell Court of Troia",
-    "ja": "異界孤城 トロイアコート",
-    "de": "Der Schwarze Hof von Troia",
-    "fr": "Le Château de Troïa",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       33929,
       33900
@@ -1039,693 +1039,693 @@
     "icon": null
   },
   "5001": {
-    "en": "a Spectacle for the Ages",
-    "ja": "四国合同演習",
-    "de": "Truppenübung der Eorzäischen Allianz",
-    "fr": "La grande manœuvre éorzéenne",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       10438,
       10400
     ]
   },
   "5002": {
-    "en": "a Bloody Reunion",
-    "ja": "レグラ・ヴァン・ヒュドルス追撃戦",
-    "de": "Blutiges Wiedersehen",
-    "fr": "Course-poursuite dans le laboratoire",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       12521,
       12500
     ]
   },
   "5003": {
-    "en": "One Life for One World",
-    "ja": "絡み合う宿命",
-    "de": "Weltenübergreifendes Schicksal",
-    "fr": "Destins entrecroisés",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       13335,
       13300
     ]
   },
   "5004": {
-    "en": "The Carteneau Flats: Heliodrome",
-    "ja": "カルテノー平原遭遇戦",
-    "de": "Heliodrom",
-    "fr": "Rixe à l'Héliodrome",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       14230,
       14200
     ]
   },
   "5005": {
-    "en": "It's Probably a Trap",
-    "ja": "ギョドウ現る！",
-    "de": "Ein zweifelhaftes Angebot",
-    "fr": "Un drôle de Namazu",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       14822,
       14800
     ]
   },
   "5006": {
-    "en": "In Thal's Name",
-    "ja": "ウル王杯闘技会の始まり",
-    "de": "Thal zu Ehren",
-    "fr": "Le tournoi commémoratif du sultanat",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       15025,
       15000
     ]
   },
   "5007": {
-    "en": "With Heart and Steel",
-    "ja": "抗う力",
-    "de": "Die Kraft des Widerstands",
-    "fr": "Transmigration démoniaque",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       15421,
       15400
     ]
   },
   "5008": {
-    "en": "Naadam",
-    "ja": "終節の合戦",
-    "de": "Naadam",
-    "fr": "La grande bataille du Naadam",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       15257,
       15200
     ]
   },
   "5009": {
-    "en": "Blood on the Deck",
-    "ja": "海都を震わす人斬りの宴！",
-    "de": "Mord ist sein Hobby",
-    "fr": "La légende de Musosai: l'assassin de Limsa Lominsa",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       15331,
       15300
     ]
   },
   "5010": {
-    "en": "The Face of True Evil",
-    "ja": "極悪人コガラシ",
-    "de": "Der Inbegriff des Bösen",
-    "fr": "L'abominable Kogarashi",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       15625,
       15600
     ]
   },
   "5011": {
-    "en": "Matsuba Mayhem",
-    "ja": "松葉門外の変",
-    "de": "Vorfall auf dem Matsuba-Platz",
-    "fr": "Règlement de compte au square Matsuba",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       15857,
       15800
     ]
   },
   "5012": {
-    "en": "The Battle on Bekko",
-    "ja": "ベッコウ島の決闘",
-    "de": "Entscheidungsschlacht auf Bekko",
-    "fr": "L'affrontement de deux justices",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       16016,
       16000
     ]
   },
   "5013": {
-    "en": "Curious Gorge Meets His Match",
-    "ja": "原初的な彼女",
-    "de": "Die Urkraft in ihr",
-    "fr": "L'épreuve de force",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       15715,
       15700
     ]
   },
   "5014": {
-    "en": "Our Unsung Heroes",
-    "ja": "時をかける願い",
-    "de": "Ein Wunsch aus alten Zeiten",
-    "fr": "L'espoir en héritage",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       16608,
       16600
     ]
   },
   "5015": {
-    "en": "The Heart of the Problem",
-    "ja": "燃えよゴージ！",
-    "de": "Kriegerische Leidenschaft",
-    "fr": "Passion guerrière",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       15930,
       15900
     ]
   },
   "5016": {
-    "en": "Dark as the Night Sky",
-    "ja": "漆黒の巨竜",
-    "de": "Der tobende Drache",
-    "fr": "Aussi sombre que la nuit",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       16705,
       16700
     ]
   },
   "5017": {
-    "en": "The Resonant",
-    "ja": "ウリエンジェの秘策",
-    "de": "Wege zur Transzendenz",
-    "fr": "La ruse d'Urianger",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       17039,
       17000
     ]
   },
   "5018": {
-    "en": "Raising the Sword",
-    "ja": "さらなる剣術の高みへ",
-    "de": "Die hohe Kunst des Schwertkampfs",
-    "fr": "La finale des champions",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       15115,
       15100
     ]
   },
   "5019": {
-    "en": "The Orphans and the Broken Blade",
-    "ja": "あと三度、遥かな憧憬",
-    "de": "Probe des Meisters",
-    "fr": "L'aspiration refoulée",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       16426,
       16400
     ]
   },
   "5020": {
-    "en": "Our Compromise",
-    "ja": "あと一度、君に会えたら",
-    "de": "Aus der Tiefe des Herzens",
-    "fr": "La dernière séparation",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       16520,
       16500
     ]
   },
   "5021": {
-    "en": "Dragon Sound",
-    "ja": "紅の竜騎士",
-    "de": "Der Rubin-Drachenreiter",
-    "fr": "Le Dragon écarlate",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       16811,
       16800
     ]
   },
   "5022": {
-    "en": "When Clans Collide",
-    "ja": "影隠忍法帖",
-    "de": "Aus dem Verborgenen",
-    "fr": "La bataille des clans",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       17109,
       17100
     ]
   },
   "5023": {
-    "en": "Interdimensional Rift",
-    "ja": "次元の狭間：外縁",
-    "de": "Interdimensionaler Riss",
-    "fr": "Fissure interdimensionnelle",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       17440,
       17400
     ]
   },
   "5024": {
-    "en": "Return of the Bull",
-    "ja": "英雄の帰還",
-    "de": "Verrat der Qalyana",
-    "fr": "Retour au bercail",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       18341,
       18300
     ]
   },
   "5025": {
-    "en": "Emissary of the Dawn",
-    "ja": "「暁」の少年",
-    "de": "Der Knabe der Morgenröte",
-    "fr": "Voyage en terre hostile",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       19620,
       19600
     ]
   },
   "5026": {
-    "en": "The Will of the Moon",
-    "ja": "楔石の虚",
-    "de": "Der Wille der Mondgöttin",
-    "fr": "Ralliement dans la steppe",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       20339,
       20300
     ]
   },
   "5027": {
-    "en": "Messenger of the Winds",
-    "ja": "来訪せし風の御使",
-    "de": "Durch den Sturm und zurück",
-    "fr": "La Messagère du vent",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       21112,
       21100
     ]
   },
   "5028": {
-    "en": "a Requiem for Heroes",
-    "ja": "英雄への鎮魂歌",
-    "de": "Requiem der Helden",
-    "fr": "Un requiem pour les héros",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       21239,
       21200
     ]
   },
   "5029": {
-    "en": "The Hardened Heart",
-    "ja": "揺れる天秤",
-    "de": "Ob Mitleid oder Hass",
-    "fr": "Naissance d'un bourreau",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       21949,
       21900
     ]
   },
   "5030": {
-    "en": "The Lost and the Found",
-    "ja": "古の大再生魔法",
-    "de": "Alter Zauber",
-    "fr": "Magie ancestrale",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       22340,
       22300
     ]
   },
   "5031": {
-    "en": "Coming Clean",
-    "ja": "廃都ナバスアレン",
-    "de": "Vater und Bruder",
-    "fr": "Sur les rails de Nabaath Areng",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       22763,
       22700
     ]
   },
   "5032": {
-    "en": "Legend of the Not-so-hidden Temple",
-    "ja": "仕掛けと呪いと毒と",
-    "de": "Der Beichtstuhl von Toupasa dem Älteren",
-    "fr": "Le Confessionnal de Toupasa l'ancien",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       22679,
       22600
     ]
   },
   "5033": {
-    "en": "Nyelbert's Lament",
-    "ja": "ナイルベルトの後悔",
-    "de": "Ein großes Opfer",
-    "fr": "Une cupidité bien généreuse",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       22539,
       22500
     ]
   },
   "5034": {
-    "en": "The Hunter's Legacy",
-    "ja": "勇気の狩人",
-    "de": "Der Legende auf der Spur",
-    "fr": "La chasseuse de légende",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       22944,
       22900
     ]
   },
   "5035": {
-    "en": "Vows of Virtue, Deeds of Cruelty",
-    "ja": "白き誓約、黒き密約",
-    "de": "Der Wolf und der Drachenreiter",
-    "fr": "Vœux de vertu, actes de cruauté",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       23832,
       23800
     ]
   },
   "5036": {
-    "en": "As the Heart Bids",
-    "ja": "この心が望むがままに",
-    "de": "Trubel im Traumland",
-    "fr": "À l'écoute de soi",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       23948,
       23900
     ]
   },
   "5037": {
-    "en": "the Bozja Incident",
-    "ja": "シタデル・ボズヤ蒸発事変",
-    "de": "Der Bozja-Vorfall",
-    "fr": "Prélude à la catastrophe",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24391,
       24300
     ]
   },
   "5038": {
-    "en": "A Sleep Disturbed",
-    "ja": "汝、英雄の眠り妨げるは",
-    "de": "Von schlafenden Helden",
-    "fr": "L'épreuve ronka",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24244,
       24200
     ]
   },
   "5039": {
-    "en": "Sleep Now in Sapphire",
-    "ja": "飛べ！ ウェルリトへ ",
-    "de": "Luftangriff auf Werlyt",
-    "fr": "Sur la mer de saphir",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       25233,
       25200
     ]
   },
   "5040": {
-    "en": "Sleep Now in Sapphire",
-    "ja": "飛べ！ ウェルリトへ ",
-    "de": "Luftangriff auf Werlyt",
-    "fr": "Sur la mer de saphir",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       25315,
       25300
     ]
   },
   "5041": {
-    "en": "Faded Memories",
-    "ja": "色あせた記憶",
-    "de": "Verblasste Erinnerungen",
-    "fr": "Souvenir périssable",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       25753,
       25700
     ]
   },
   "5042": {
-    "en": "The Great Ship Vylbrand",
-    "ja": "バイルブランドの船出",
-    "de": "Gute Winde für Vylbrand",
-    "fr": "Un navire nommé Vylbrand",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       26328,
       26300
     ]
   },
   "5043": {
-    "en": "Fit for a Queen",
-    "ja": "ゴッド・セイブ・ザ・クイーン",
-    "de": "Hinab in die Ruinen",
-    "fr": "Que les Dieux gardent la Reine",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       26511,
       26500
     ]
   },
   "5044": {
-    "en": "Death Unto Dawn",
-    "ja": "黎明の死闘",
-    "de": "Kampf im Morgengrauen",
-    "fr": "Aube meurtrière",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       26854,
       26800
     ]
   },
   "5045": {
-    "en": "In from the Cold",
-    "ja": "寒夜のこと",
-    "de": "In fremder Haut",
-    "fr": "Le voleur de corps",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       30439,
       30400
     ]
   },
   "5046": {
-    "en": "Worthy of His Back",
-    "ja": "前代アゼムの手ほどき",
-    "de": " Es reimt sich auf Gebell",
-    "fr": "Le défi de l'ancienne Azem",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       32414,
       32400
     ]
   },
   "5047": {
-    "en": "Endwalker",
-    "ja": "暁月のフィナーレ",
-    "de": "Endschreiter",
-    "fr": "Arpenteur des finitudes",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       31215,
       31200
     ]
   },
   "5048": {
-    "en": "To Calmer Seas",
-    "ja": "融和への船出",
-    "de": "Im Hafen des Friedens",
-    "fr": "Cap sur la paix",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       31434,
       31400
     ]
   },
   "5049": {
-    "en": "As the Heavens Burn",
-    "ja": "拡がる終末",
-    "de": "Rote Himmel, roter Schnee",
-    "fr": "L'arène des neiges",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       31530,
       31500
     ]
   },
   "5050": {
-    "en": "A Path Unveiled",
-    "ja": "開かれた道の先へ",
-    "de": "Offen für neue Wege",
-    "fr": "Des esprits et des hommes",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       31334,
       31300
     ]
   },
   "5051": {
-    "en": "A Frosty Reception",
-    "ja": "霜雪を踏みしめて",
-    "de": "Ein frostiger Empfang",
-    "fr": "Un accueil glacial",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       31663,
       31600
     ]
   },
   "5052": {
-    "en": "Sage's Focus",
-    "ja": "賢者の短杖",
-    "de": "Des Weisen wundersames Werkzeug",
-    "fr": "Les armes du sage",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       31745,
       31700
     ]
   },
   "5053": {
-    "en": "The Harvest Begins",
-    "ja": "大鎌の意味",
-    "de": "Die Bedeutung der Sense",
-    "fr": "La vraie puissance de la faux",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       31823,
       31800
     ]
   },
   "5054": {
-    "en": "Ever March Heavensward",
-    "ja": "蒼天を仰ぎ、歩み続ける",
-    "de": "Der Weg zur Erneuerung",
-    "fr": "La voie du renouveau",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       31019,
       31000
     ]
   },
   "5055": {
-    "en": "The Killing Art",
-    "ja": "暗殺道",
-    "de": "Die Kunst des Tötens",
-    "fr": "La voie du néant",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       31907,
       31900
     ]
   },
   "5056": {
-    "en": "Life Ephemeral, Path Eternal",
-    "ja": "人命は儚く、術のみちは永久に",
-    "de": "Das Leben ist kurz, die Kunst ist lang",
-    "fr": "Existences éphémères et savoir éternel",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       32039,
       32000
     ]
   },
   "5057": {
-    "en": "Laid to Rest",
-    "ja": "ドマの弔い",
-    "de": "Domanisches Begräbnis",
-    "fr": "Des adieux domiens",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       32320,
       32300
     ]
   },
   "5058": {
-    "en": "The Gift of Mercy",
-    "ja": "僕たちは還り、君を見送ろう",
-    "de": "Trauer und Hoffnung",
-    "fr": "Acceptation",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       31127,
       31100
     ]
   },
   "5059": {
-    "en": "Forlorn Glory",
-    "ja": "ネルウァの帝国",
-    "de": "Nervas Reich",
-    "fr": "Nerva, le patriote",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       32733,
       32700
     ]
   },
   "5060": {
-    "en": "Cape Westwind",
-    "ja": "リットアティン強襲戦",
-    "de": "Kap Westwind",
-    "fr": "le Cap Vendouest",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       33429,
       33400
     ]
   },
   "5061": {
-    "en": "Devastation",
-    "ja": "アシエン・ラハブレア討伐戦",
-    "de": "Das Antlitz der Kaltblütigkeit",
-    "fr": "le Praetorium en flammes",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       33713,
       33700
     ]
   },
   "5062": {
-    "en": "Where Everything Begins",
-    "ja": "失われた力",
-    "de": "Wo alles seinen Anfang nimmt",
-    "fr": "Au commencement était Zero",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       33132,
       33100
     ]
   },
   "5063": {
-    "en": "the Steps of Faith",
-    "ja": "皇都イシュガルド防衛戦",
-    "de": "Der Schicksalsweg",
-    "fr": "Le Siège de la sainte Cité d'Ishgard",
-    "icon": "/i/061000/061805.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       34842,
       34800
@@ -1746,154 +1746,154 @@
     "icon": null
   },
   "10001": {
-    "en": "Basic Training: Enemy Parties",
-    "ja": "集団戦訓練をくぐり抜けろ！",
-    "de": "Einer für alle, alle für einen",
-    "fr": "Entraînement: groupes d'ennemis",
-    "icon": "/i/061000/061803.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       1411,
       1400
     ]
   },
   "10002": {
-    "en": "Under the Armor",
-    "ja": "彷徨う死霊を討て！",
-    "de": "Bockmanns Gefolge",
-    "fr": "Chasse au fantôme fantoche",
-    "icon": "/i/061000/061803.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       1506,
       1500
     ]
   },
   "10003": {
-    "en": "Basic Training: Enemy Strongholds",
-    "ja": "全関門を突破し、最深部の敵を討て！",
-    "de": "Sturmkommando",
-    "fr": "Entraînement: infiltration en base ennemie",
-    "icon": "/i/061000/061803.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       1619,
       1600
     ]
   },
   "10004": {
-    "en": "Hero on the Half Shell",
-    "ja": "ギルガメを捕獲せよ！",
-    "de": "Gil oder Leben",
-    "fr": "Reconquête d'une carapace escamotée",
-    "icon": "/i/061000/061803.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       1715,
       1700
     ]
   },
   "10005": {
-    "en": "Pulling Poison Posies",
-    "ja": "有毒妖花を駆除せよ！",
-    "de": "Unkraut jäten",
-    "fr": "Opération fleurs du mal",
-    "icon": "/i/061000/061803.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       1811,
       1800
     ]
   },
   "10006": {
-    "en": "Stinging Back",
-    "ja": "無法者「似我蜂団」を撃滅せよ！",
-    "de": "Ins Wespennest stechen",
-    "fr": "Expédition punitive contre les Ventrerouge",
-    "icon": "/i/061000/061803.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       1915,
       1900
     ]
   },
   "10007": {
-    "en": "All's Well that Ends in the Well",
-    "ja": "夢幻のブラキシオを討て！",
-    "de": "Briaxio ausschalten",
-    "fr": "Briaxio à bras raccourcis",
-    "icon": "/i/061000/061803.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       2009,
       2000
     ]
   },
   "10008": {
-    "en": "Flicking Sticks and Taking Names",
-    "ja": "爆弾魔ゴブリン軍団を撃滅せよ！",
-    "de": "Bombige Goblins",
-    "fr": "Les Gobelins bombardiers",
-    "icon": "/i/061000/061803.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       2109,
       2100
     ]
   },
   "10009": {
-    "en": "More than a Feeler",
-    "ja": "汚染源モルボルを討て！",
-    "de": "Tödliches Rankenspiel",
-    "fr": "Sus au morbol pollueur",
-    "icon": "/i/061000/061803.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       2213,
       2200
     ]
   },
   "10010": {
-    "en": "Annoy the Void",
-    "ja": "坑道に現れた妖異ブソを討て！",
-    "de": "Gefahr aus dem Nichts",
-    "fr": "Buso l'immolateur",
-    "icon": "/i/061000/061803.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       2314,
       2300
     ]
   },
   "10011": {
-    "en": "Shadow and Claw",
-    "ja": "無敵の眷属を従えし、大型妖異を討て！",
-    "de": "Kampf gegen Schatten",
-    "fr": "Ombres et griffes",
-    "icon": "/i/061000/061803.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       3013,
       3000
     ]
   },
   "10012": {
-    "en": "Long Live the Queen",
-    "ja": "ボムを率いる「ボムクイーン」を討て！",
-    "de": "Miss Bombastic",
-    "fr": "Longue vie à la Reine",
-    "icon": "/i/061000/061803.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       3117,
       3100
     ]
   },
   "10013": {
-    "en": "Ward Up",
-    "ja": "不気味な陣形を組む妖異をせん滅せよ！",
-    "de": "Unzertrennlich",
-    "fr": "Quintettes infernaux",
-    "icon": "/i/061000/061803.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       3221,
       3200
     ]
   },
   "10014": {
-    "en": "Solemn Trinity",
-    "ja": "三つ巴の巨人族を制し、遺物を守れ！",
-    "de": "Wuchtige Dreifaltigkeit",
-    "fr": "Trinité sinistre",
-    "icon": "/i/061000/061803.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       3322,
       3300
@@ -1914,176 +1914,176 @@
     "icon": null
   },
   "15001": {
-    "en": "Avoid Area of Effect Attacks",
-    "ja": "範囲攻撃を避けよう！",
-    "de": "Flächenangriffen ausweichen",
-    "fr": "Éviter les attaques à aire d'effet",
-    "icon": "/i/061000/061823.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       10542,
       10500
     ]
   },
   "15002": {
-    "en": "Execute a Combo to Increase Enmity",
-    "ja": "コンボで敵視を集めよう！",
-    "de": "Mit Kombos Feindseligkeit auf sich ziehen",
-    "fr": "Générer de l'inimitié avec un combo",
-    "icon": "/i/061000/061823.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       10721,
       10700
     ]
   },
   "15003": {
-    "en": "Execute a Combo in Battle",
-    "ja": "実戦でコンボに挑戦しよう！",
-    "de": "Kombos im Kampf einsetzen",
-    "fr": "Effectuer le combo en combat",
-    "icon": "/i/061000/061823.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       10806,
       10800
     ]
   },
   "15004": {
-    "en": "Accrue Enmity from Multiple Targets",
-    "ja": "複数の敵から敵視を集めよう！",
-    "de": "Feindseligkeit mehrerer Gegner auf sich ziehen",
-    "fr": "Attirer l'inimitié de plusieurs ennemis sur soi",
-    "icon": "/i/061000/061823.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       11014,
       11000
     ]
   },
   "15005": {
-    "en": "Engage Multiple Targets",
-    "ja": "実戦で複数の敵と戦ってみよう！",
-    "de": "Gegen mehrere Gegner auf einmal kämpfen",
-    "fr": "Affronter plusieurs ennemis",
-    "icon": "/i/061000/061823.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       11110,
       11100
     ]
   },
   "15006": {
-    "en": "Execute a Ranged Attack to Increase Enmity",
-    "ja": "遠距離から敵視を集めよう！",
-    "de": "Aus der Ferne Feindseligkeit auf sich ziehen",
-    "fr": "Générer de l'inimitié à distance",
-    "icon": "/i/061000/061823.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       10913,
       10900
     ]
   },
   "15007": {
-    "en": "Engage Enemy Reinforcements",
-    "ja": "敵の増援に対応しよう！",
-    "de": "Feindliche Verstärkung aufhalten",
-    "fr": "Faire face à des renforts ennemis",
-    "icon": "/i/061000/061823.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       11217,
       11200
     ]
   },
   "15008": {
-    "en": "Assist Allies in Defeating a Target",
-    "ja": "味方と協力して敵を倒そう！",
-    "de": "Gegner gemeinsam besiegen",
-    "fr": "Vaincre un ennemi en assistant des alliés",
-    "icon": "/i/061000/061823.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       11313,
       11300
     ]
   },
   "15009": {
-    "en": "Defeat an Occupied Target",
-    "ja": "味方が引きつけている敵を倒そう！",
-    "de": "Den Gegner eines Verbündeten besiegen",
-    "fr": "Vaincre un ennemi occupé par un allié",
-    "icon": "/i/061000/061823.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       11410,
       11400
     ]
   },
   "15010": {
-    "en": "Avoid Engaged Targets",
-    "ja": "敵の攻撃を避けながら戦おう！",
-    "de": "Angriffen ausweichen",
-    "fr": "Combattre en évitant les attaques ennemies",
-    "icon": "/i/061000/061823.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       11509,
       11500
     ]
   },
   "15011": {
-    "en": "Engage Enemy Reinforcements",
-    "ja": "敵の増援に対応しよう！",
-    "de": "Feindliche Verstärkung aufhalten",
-    "fr": "Éliminer les renforts ennemis",
-    "icon": "/i/061000/061823.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       11610,
       11600
     ]
   },
   "15012": {
-    "en": "Interact with the Battlefield",
-    "ja": "ギミックを活用して戦おう！",
-    "de": "Mit dem Gelände interagieren",
-    "fr": "Interagir avec le décor en combat",
-    "icon": "/i/061000/061823.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       11708,
       11700
     ]
   },
   "15013": {
-    "en": "Heal an Ally",
-    "ja": "味方を回復しよう！",
-    "de": "Verbündete heilen",
-    "fr": "Soigner un allié",
-    "icon": "/i/061000/061823.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       11809,
       11800
     ]
   },
   "15014": {
-    "en": "Heal Multiple Allies",
-    "ja": "複数の味方を回復しよう！",
-    "de": "Mehrere Verbündete heilen",
-    "fr": "Soigner plusieurs alliés",
-    "icon": "/i/061000/061823.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       11909,
       11900
     ]
   },
   "15015": {
-    "en": "Avoid Engaged Targets",
-    "ja": "敵の攻撃を避けながら戦おう！",
-    "de": "Angriffen ausweichen",
-    "fr": "Combattre en évitant les attaques ennemies",
-    "icon": "/i/061000/061823.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       12011,
       12000
     ]
   },
   "15016": {
-    "en": "Final Exercise",
-    "ja": "最終訓練！",
-    "de": "Letzte Übung",
-    "fr": "Exercice final",
-    "icon": "/i/061000/061823.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       12130,
       12100
@@ -2104,66 +2104,66 @@
     "icon": null
   },
   "20001": {
-    "en": "the Bowl of Embers",
-    "ja": "イフリート討伐戦",
-    "de": "Das Grab der Lohe",
-    "fr": "le Cratère des tisons",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       2605,
       2600
     ]
   },
   "20002": {
-    "en": "the Navel",
-    "ja": "タイタン討伐戦",
-    "de": "Der Nabel",
-    "fr": "le Nombril",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       3811,
       3800
     ]
   },
   "20003": {
-    "en": "the Howling Eye",
-    "ja": "ガルーダ討伐戦",
-    "de": "Das Tosende Auge",
-    "fr": "Hurlœil",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       3705,
       3700
     ]
   },
   "20004": {
-    "en": "the Bowl of Embers (Hard)",
-    "ja": "真イフリート討滅戦",
-    "de": "Götterdämmerung - Ifrit",
-    "fr": "le Cratère des tisons (brutal)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       2605,
       2600
     ]
   },
   "20005": {
-    "en": "the Navel (Hard)",
-    "ja": "真タイタン討滅戦",
-    "de": "Götterdämmerung - Titan",
-    "fr": "le Nombril (brutal)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       3811,
       3800
     ]
   },
   "20006": {
-    "en": "the Howling Eye (Hard)",
-    "ja": "真ガルーダ討滅戦",
-    "de": "Götterdämmerung - Garuda",
-    "fr": "Hurlœil (brutal)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       3705,
       3700
@@ -2177,212 +2177,212 @@
     "icon": null
   },
   "20008": {
-    "en": "the Bowl of Embers (Extreme)",
-    "ja": "極イフリート討滅戦",
-    "de": "Zenit der Götter - Ifrit",
-    "fr": "le Cratère des tisons (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       2605,
       2600
     ]
   },
   "20009": {
-    "en": "the Navel (Extreme)",
-    "ja": "極タイタン討滅戦",
-    "de": "Zenit der Götter - Titan",
-    "fr": "le Nombril (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       3805,
       3800
     ]
   },
   "20010": {
-    "en": "the Howling Eye (Extreme)",
-    "ja": "極ガルーダ討滅戦",
-    "de": "Zenit der Götter - Garuda",
-    "fr": "Hurlœil (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       3705,
       3700
     ]
   },
   "20011": {
-    "en": "Thornmarch (Hard)",
-    "ja": "善王モグル・モグXII世討滅戦",
-    "de": "Königliche Konfrontation (schwer)",
-    "fr": "la Lisière de ronces (brutal)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       33809,
       33800
     ]
   },
   "20012": {
-    "en": "Thornmarch (Extreme)",
-    "ja": "極王モグル・モグXII世討滅戦",
-    "de": "Königliche Konfrontation (extrem)",
-    "fr": "la Lisière de ronces (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       4906,
       4900
     ]
   },
   "20013": {
-    "en": "the Minstrel's Ballad: Ultima's Bane",
-    "ja": "究極幻想 アルテマウェポン破壊作戦",
-    "de": "Heldenlied von Ultima",
-    "fr": "le fléau d'Ultima",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       4050,
       4044
     ]
   },
   "20014": {
-    "en": "Special Event III",
-    "ja": "イベント用コンテンツ：3",
-    "de": "Event-Inhalt 3",
-    "fr": "Défi spécial III",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       3805,
       3800
     ]
   },
   "20015": {
-    "en": "Special Event I",
-    "ja": "イベント用コンテンツ：1",
-    "de": "Event-Inhalt 1",
-    "fr": "Défi spécial I",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       20715,
       20700
     ]
   },
   "20016": {
-    "en": "Special Event II",
-    "ja": "イベント用コンテンツ：2",
-    "de": "Event-Inhalt 2",
-    "fr": "Défi spécial II",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       22017,
       22000
     ]
   },
   "20017": {
-    "en": "the Whorleater (Hard)",
-    "ja": "真リヴァイアサン討滅戦",
-    "de": "Götterdämmerung - Leviathan",
-    "fr": "le Briseur de marées (brutal)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       5205,
       5200
     ]
   },
   "20018": {
-    "en": "the Whorleater (Extreme)",
-    "ja": "極リヴァイアサン討滅戦",
-    "de": "Zenit der Götter - Leviathan",
-    "fr": "le Briseur de marées (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       5207,
       5200
     ]
   },
   "20019": {
-    "en": "A Relic Reborn: the Chimera",
-    "ja": "ドルムキマイラ討伐戦",
-    "de": "Kampf gegen die Dhorme-Chimära",
-    "fr": "la chimère dhorme du Coerthas",
-    "icon": "/i/061000/061804.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "20020": {
-    "en": "A Relic Reborn: the Hydra",
-    "ja": "ハイドラ討伐戦",
-    "de": "Kampf gegen die Hydra",
-    "fr": "l'hydre d'Halatali",
-    "icon": "/i/061000/061804.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "20021": {
-    "en": "Battle on the Big Bridge",
-    "ja": "ギルガメッシュ討伐戦",
-    "de": "Duell auf der großen Brücke",
-    "fr": "Affrontement sur le grand pont",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       5513,
       5501
     ]
   },
   "20022": {
-    "en": "the Striking Tree (Hard)",
-    "ja": "真ラムウ討滅戦",
-    "de": "Götterdämmerung - Ramuh",
-    "fr": "l'Arbre du jugement (brutal)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       6205,
       6200
     ]
   },
   "20023": {
-    "en": "the Striking Tree (Extreme)",
-    "ja": "極ラムウ討滅戦",
-    "de": "Zenit der Götter - Ramuh",
-    "fr": "l'Arbre du jugement (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       6205,
       6200
     ]
   },
   "20024": {
-    "en": "the Akh Afah Amphitheatre (Hard)",
-    "ja": "真シヴァ討滅戦",
-    "de": "Götterdämmerung - Shiva",
-    "fr": "l'Amphithéâtre d'Akh Afah (brutal)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       7104,
       7100
     ]
   },
   "20025": {
-    "en": "the Akh Afah Amphitheatre (Extreme)",
-    "ja": "極シヴァ討滅戦",
-    "de": "Zenit der Götter - Shiva",
-    "fr": "l'Amphithéâtre d'Akh Afah (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       7104,
       7100
     ]
   },
   "20026": {
-    "en": "the Dragon's Neck",
-    "ja": "アマジナ杯闘技会決勝戦",
-    "de": "Das Drachenhals-Kolosseum",
-    "fr": "le Col du dragon",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       7603,
       7600
     ]
   },
   "20027": {
-    "en": "Urth's Fount",
-    "ja": "闘神オーディン討滅戦",
-    "de": "Jenseits Urths Quelle",
-    "fr": "la Fontaine d'Urth",
-    "icon": "/i/061000/061804.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "20028": {
     "en": null,
@@ -2392,619 +2392,619 @@
     "icon": null
   },
   "20029": {
-    "en": "the Chrysalis",
-    "ja": "アシエン・ナプリアレス討伐戦",
-    "de": "Chrysalis",
-    "fr": "La Chrysalide",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       7806,
       7800
     ]
   },
   "20030": {
-    "en": "Battle in the Big Keep",
-    "ja": "真ギルガメッシュ討滅戦",
-    "de": "Revanche in den Ruinen",
-    "fr": "Revanche au vieux château",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       7907,
       7900
     ]
   },
   "20031": {
-    "en": "Thok ast Thok (Hard)",
-    "ja": "真ラーヴァナ討滅戦",
-    "de": "Götterdämmerung - Ravana",
-    "fr": "Thok ast Thok (brutal)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       8408,
       8400
     ]
   },
   "20032": {
-    "en": "Thok ast Thok (Extreme)",
-    "ja": "極ラーヴァナ討滅戦",
-    "de": "Zenit der Götter - Ravana",
-    "fr": "Thok ast Thok (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       8408,
       8400
     ]
   },
   "20033": {
-    "en": "the Limitless Blue (Hard)",
-    "ja": "真ビスマルク討滅戦",
-    "de": "Götterdämmerung - Bismarck",
-    "fr": "L'Immensité bleue (brutal)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       9007,
       9000
     ]
   },
   "20034": {
-    "en": "the Limitless Blue (Extreme)",
-    "ja": "極ビスマルク討滅戦",
-    "de": "Zenit der Götter - Bismarck",
-    "fr": "L'Immensité bleue (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       9007,
       9000
     ]
   },
   "20035": {
-    "en": "the Singularity Reactor",
-    "ja": "ナイツ・オブ・ラウンド討滅戦",
-    "de": "Singularitäts-Reaktor",
-    "fr": "le Réacteur de singularité",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       8807,
       8800
     ]
   },
   "20036": {
-    "en": "the Minstrel's Ballad: Thordan's Reign",
-    "ja": "蒼天幻想 ナイツ・オブ・ラウンド討滅戦",
-    "de": "Heldenlied von Thordans Fall",
-    "fr": "le règne de Thordan",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       8808,
       8800
     ]
   },
   "20037": {
-    "en": "Containment Bay S1T7",
-    "ja": "魔神セフィロト討滅戦",
-    "de": "Götterdämmerung - Sephirot",
-    "fr": "Unité de contention S1P7",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       9907,
       9900
     ]
   },
   "20038": {
-    "en": "Containment Bay S1T7 (Extreme)",
-    "ja": "極魔神セフィロト討滅戦",
-    "de": "Zenit der Götter - Sephirot",
-    "fr": "Unité de contention S1P7 (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       9907,
       9900
     ]
   },
   "20039": {
-    "en": "the Final Steps of Faith",
-    "ja": "ニーズヘッグ征竜戦",
-    "de": "Der letzte Schicksalsweg",
-    "fr": "la Dernière avancée de la Foi",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       12609,
       12600
     ]
   },
   "20040": {
-    "en": "the Minstrel's Ballad: Nidhogg's Rage",
-    "ja": "極ニーズヘッグ征竜戦",
-    "de": "Das Lied von Nidhoggs letztem Ruf",
-    "fr": "l'ire de Nidhogg",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       12609,
       12600
     ]
   },
   "20041": {
-    "en": "Containment Bay P1T6",
-    "ja": "女神ソフィア討滅戦",
-    "de": "Götterdämmerung - Sophia",
-    "fr": "Unité de contention P1P6",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       13113,
       13100
     ]
   },
   "20042": {
-    "en": "Containment Bay P1T6 (Extreme)",
-    "ja": "極女神ソフィア討滅戦",
-    "de": "Zenit der Götter - Sophia",
-    "fr": "Unité de contention P1P6 (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       13113,
       13100
     ]
   },
   "20043": {
-    "en": "Containment Bay Z1T9",
-    "ja": "鬼神ズルワーン討滅戦",
-    "de": "Götterdämmerung - Zurvan",
-    "fr": "Unité de contention Z1P9",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       14327,
       14300
     ]
   },
   "20044": {
-    "en": "Containment Bay Z1T9 (Extreme)",
-    "ja": "極鬼神ズルワーン討滅戦",
-    "de": "Zenit der Götter - Zurvan",
-    "fr": "Unité de contention Z1P9 (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       14327,
       14300
     ]
   },
   "20045": {
-    "en": "the Royal Menagerie",
-    "ja": "神龍討滅戦",
-    "de": "Königliche Menagerie",
-    "fr": "la Ménagerie royale",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       16903,
       16900
     ]
   },
   "20046": {
-    "en": "the Pool of Tribute",
-    "ja": "スサノオ討滅戦",
-    "de": "Götterdämmerung - Susano",
-    "fr": "la Crique aux tributs",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       17208,
       17200
     ]
   },
   "20047": {
-    "en": "the Pool of Tribute (Extreme)",
-    "ja": "極スサノオ討滅戦",
-    "de": "Zenit der Götter - Susano",
-    "fr": "la Crique aux tributs (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       17208,
       17200
     ]
   },
   "20048": {
-    "en": "Emanation",
-    "ja": "ラクシュミ討滅戦",
-    "de": "Götterdämmerung - Lakshmi",
-    "fr": "Émanation",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       16314,
       16300
     ]
   },
   "20049": {
-    "en": "Emanation (Extreme)",
-    "ja": "極ラクシュミ討滅戦",
-    "de": "Zenit der Götter - Lakshmi",
-    "fr": "Émanation (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       16314,
       16300
     ]
   },
   "20050": {
-    "en": "the Minstrel's Ballad: Shinryu's Domain",
-    "ja": "極神龍討滅戦",
-    "de": "Heldenlied von Shinryu",
-    "fr": "Le domaine de Shinryu",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       16905,
       16900
     ]
   },
   "20051": {
-    "en": "the Jade Stoa",
-    "ja": "白虎征魂戦",
-    "de": "Seelentanz - Byakko",
-    "fr": "la Clairière de Jade",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       18613,
       18600
     ]
   },
   "20052": {
-    "en": "the Jade Stoa (Extreme)",
-    "ja": "極白虎征魂戦",
-    "de": "Seelensturm - Byakko",
-    "fr": "la Clairière de Jade (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       18613,
       18600
     ]
   },
   "20053": {
-    "en": "the Great Hunt",
-    "ja": "リオレウス狩猟戦",
-    "de": "Jagd auf Rathalos",
-    "fr": "Chasse au Rathalos",
-    "icon": "/i/061000/061804.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "20054": {
-    "en": "the Great Hunt (Extreme)",
-    "ja": "極リオレウス狩猟戦",
-    "de": "Jagd auf Rathalos (schwer)",
-    "fr": "Chasse au Rathalos (extrême)",
-    "icon": "/i/061000/061804.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "20055": {
-    "en": "Castrum Fluminis",
-    "ja": "ツクヨミ討滅戦",
-    "de": "Götterdämmerung - Tsukuyomi",
-    "fr": "Castrum Fluminis",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       19533,
       19500
     ]
   },
   "20056": {
-    "en": "the Minstrel's Ballad: Tsukuyomi's Pain",
-    "ja": "極ツクヨミ討滅戦",
-    "de": "Zenit der Götter - Tsukuyomi",
-    "fr": "Castrum Fluminis (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       19533,
       19500
     ]
   },
   "20057": {
-    "en": "Hells' Kier",
-    "ja": "朱雀征魂戦",
-    "de": "Seelentanz - Suzaku",
-    "fr": "le Nid des Lamentations",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       19915,
       19900
     ]
   },
   "20058": {
-    "en": "Hells' Kier (Extreme)",
-    "ja": "極朱雀征魂戦",
-    "de": "Seelensturm - Suzaku",
-    "fr": "le Nid des Lamentations (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       19915,
       19900
     ]
   },
   "20059": {
-    "en": "Kugane Ohashi",
-    "ja": "真ヨウジンボウ討滅戦",
-    "de": "Duell auf der Kugane-Brücke",
-    "fr": "le Pont Ohashi",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       20715,
       20700
     ]
   },
   "20060": {
-    "en": "the Wreath of Snakes",
-    "ja": "青龍征魂戦",
-    "de": "Seelentanz - Seiryu",
-    "fr": "l'Îlot des Amertumes",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       21021,
       21000
     ]
   },
   "20061": {
-    "en": "the Wreath of Snakes (Extreme)",
-    "ja": "極青龍征魂戦",
-    "de": "Seelensturm - Seiryu",
-    "fr": "l'Îlot des Amertumes (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       21021,
       21000
     ]
   },
   "20062": {
-    "en": "The Dancing Plague",
-    "ja": "ティターニア討滅戦",
-    "de": "Offenbarung - Titania",
-    "fr": "la Valse du Monarque",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       22017,
       22000
     ]
   },
   "20063": {
-    "en": "the Dancing Plague (Extreme)",
-    "ja": "極ティターニア討滅戦",
-    "de": "Letzte Läuterung - Titania",
-    "fr": "la Valse du Monarque (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       22017,
       22000
     ]
   },
   "20064": {
-    "en": "The Crown of the Immaculate",
-    "ja": "イノセンス討滅戦",
-    "de": "Offenbarung - Innozenz",
-    "fr": "La Couronne de l'Immaculé",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       22414,
       22400
     ]
   },
   "20065": {
-    "en": "the Crown of the Immaculate (Extreme)",
-    "ja": "極イノセンス討滅戦",
-    "de": "Letzte Läuterung - Innozenz",
-    "fr": "La Couronne de l'Immaculé (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       22415,
       22400
     ]
   },
   "20066": {
-    "en": "The Dying Gasp",
-    "ja": "ハーデス討滅戦",
-    "de": "Offenbarung - Hades",
-    "fr": "le Râle de l'Agonie",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       23033,
       23000
     ]
   },
   "20067": {
-    "en": "The Minstrel's Ballad: Hades's Elegy",
-    "ja": "極ハーデス討滅戦",
-    "de": "Letzte Läuterung - Hades",
-    "fr": "Le Râle de l'Agonie (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       23347,
       23300
     ]
   },
   "20068": {
-    "en": "Cinder Drift",
-    "ja": "ルビーウェポン破壊作戦",
-    "de": "Rubinfeuer - Entfesselung",
-    "fr": "Les Nuées de Brandons",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24079,
       24050
     ]
   },
   "20069": {
-    "en": "Cinder Drift (Extreme)",
-    "ja": "極ルビーウェポン破壊作戦",
-    "de": "Rubinfeuer - Trauma",
-    "fr": "Les Nuées de Brandons (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24079,
       24050
     ]
   },
   "20070": {
-    "en": "Memoria Misera (Extreme)",
-    "ja": "極シタデル・ボズヤ追憶戦",
-    "de": "Memoria Misera (extrem)",
-    "fr": "Memoria Misera (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24385,
       24300
     ]
   },
   "20071": {
-    "en": "the Seat of Sacrifice",
-    "ja": "ウォーリア・オブ・ライト討滅戦",
-    "de": "Krieger des Lichts",
-    "fr": "Le Trône du Sacrifice",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       25440,
       25400
     ]
   },
   "20072": {
-    "en": "the Seat of Sacrifice (Extreme)",
-    "ja": "極ウォーリア・オブ・ライト討滅戦",
-    "de": "Krieger des Lichts (extrem)",
-    "fr": "Le Trône du Sacrifice (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       25440,
       25400
     ]
   },
   "20073": {
-    "en": "Castrum Marinum",
-    "ja": "エメラルドウェポン破壊作戦",
-    "de": "Smaragdsturm - Entfesselung",
-    "fr": "Castrum Marinum",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       25820,
       25800
     ]
   },
   "20074": {
-    "en": "Castrum Marinum (Extreme)",
-    "ja": "極エメラルドウェポン破壊作戦",
-    "de": "Smaragdsturm - Trauma",
-    "fr": "Castrum Marinum (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       25822,
       25800
     ]
   },
   "20075": {
-    "en": "The Cloud Deck",
-    "ja": "ダイヤウェポン捕獲作戦",
-    "de": "Diamantblitz - Entfesselung",
-    "fr": "Le Tillac des Cirrus",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       26928,
       26900
     ]
   },
   "20076": {
-    "en": "The Cloud Deck (Extreme)",
-    "ja": "極ダイヤウェポン捕獲作戦",
-    "de": "Diamantblitz - Trauma",
-    "fr": "Le Tillac des Cirrus (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       26928,
       26900
     ]
   },
   "20077": {
-    "en": "The Mothercrystal",
-    "ja": "ハイデリン討滅戦",
-    "de": "Prophetie - Hydaelyn",
-    "fr": "Le Cristal-mère",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       29018,
       29000
     ]
   },
   "20078": {
-    "en": "The Minstrel's Ballad: Hydaelyn's Call",
-    "ja": "極ハイデリン討滅戦",
-    "de": "Eschatos - Hydaelyn",
-    "fr": "Le Cristal-mère (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       29018,
       29000
     ]
   },
   "20079": {
-    "en": "The Final Day",
-    "ja": "終焉の戦い",
-    "de": "Prophetie - Endsängerin",
-    "fr": "le Répons final",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       30039,
       30000
     ]
   },
   "20080": {
-    "en": "The Dark Inside",
-    "ja": "ゾディアーク討滅戦",
-    "de": "Prophetie - Zodiark",
-    "fr": "Le Cratère des Martyrs",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       28021,
       28000
     ]
   },
   "20081": {
-    "en": "The Minstrel's Ballad: Zodiark's Fall",
-    "ja": "極ゾディアーク討滅戦",
-    "de": "Eschatos - Zodiark",
-    "fr": "Le Cratère des Martyrs (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       28021,
       28000
     ]
   },
   "20082": {
-    "en": "the Porta Decumana",
-    "ja": "アルテマウェポン破壊作戦",
-    "de": "Porta Decumana",
-    "fr": "Porta Decumana",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       33235,
       33200
     ]
   },
   "20083": {
-    "en": "The Minstrel's Ballad: Endsinger's Aria",
-    "ja": "終極の戦い",
-    "de": "Eschatos - Endsängerin",
-    "fr": "le Répons final (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       33617,
       33600
     ]
   },
   "20084": {
-    "en": "Storm's Crown",
-    "ja": "バルバリシア討滅戦",
-    "de": "Prophetie - Barbarizia",
-    "fr": "La Toison des tempêtes",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       34526,
       34500
     ]
   },
   "20085": {
-    "en": "Storm's Crown (Extreme)",
-    "ja": "極バルバリシア討滅戦",
-    "de": "Eschatos - Barbarizia",
-    "fr": "La Toison des tempêtes (extrême)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       34526,
       34500
@@ -3032,33 +3032,33 @@
     "icon": null
   },
   "25001": {
-    "en": "the Haunted Manor",
-    "ja": "亡霊屋敷 ホーンテッドマナー",
-    "de": "Das Geisterschloss",
-    "fr": "le Manoir hanté",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       12941,
       12900
     ]
   },
   "25002": {
-    "en": "the Valentione's Ceremony",
-    "ja": "ヴァレンティオンセレモニー",
-    "de": "Valentionzeremonie",
-    "fr": "la Cérémonie de la Valention",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       18739,
       18700
     ]
   },
   "25003": {
-    "en": "The Phantoms' Feast",
-    "ja": "道化饗宴 ホーンテッドフィースト",
-    "de": "Lustiges Bankett",
-    "fr": "Le banquet cauchemardesque",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       30739,
       30700
@@ -3079,22 +3079,22 @@
     "icon": null
   },
   "26001": {
-    "en": "Triple Triad Open Tournament",
-    "ja": "トリプルトライアド：オフィシャルトーナメント",
-    "de": "Triple Triad: Manderville-Turnier",
-    "fr": "Tournoi officiel de Triple Triade",
-    "icon": "/i/061000/061820.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       26600,
       26600
     ]
   },
   "26002": {
-    "en": "Triple Triad Invitational Parlor",
-    "ja": "トリプルトライアド：カスタムトーナメントルーム",
-    "de": "Triple Triad: Privatturnier",
-    "fr": "Salle de tournoi libre de Triple Triade",
-    "icon": "/i/061000/061820.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       26600,
       26600
@@ -3115,497 +3115,497 @@
     "icon": null
   },
   "30001": {
-    "en": "the Labyrinth of the Ancients",
-    "ja": "クリスタルタワー：古代の民の迷宮",
-    "de": "Kristallturm - Das Labyrinth der Alten",
-    "fr": "la Tour de Cristal - Dédale antique",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       4708,
       4700
     ]
   },
   "30002": {
-    "en": "the Binding Coil of Bahamut - Turn 1",
-    "ja": "大迷宮バハムート：邂逅編1",
-    "de": "Verschlungene Schatten 1",
-    "fr": "le Labyrinthe de Bahamut I",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       4101,
       4100
     ]
   },
   "30003": {
-    "en": "the Binding Coil of Bahamut - Turn 2",
-    "ja": "大迷宮バハムート：邂逅編2",
-    "de": "Verschlungene Schatten 2",
-    "fr": "le Labyrinthe de Bahamut II",
-    "icon": "/i/061000/061802.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "30004": {
-    "en": "the Binding Coil of Bahamut - Turn 3",
-    "ja": "大迷宮バハムート：邂逅編3",
-    "de": "Verschlungene Schatten 3",
-    "fr": "le Labyrinthe de Bahamut III",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       4201,
       4200
     ]
   },
   "30005": {
-    "en": "the Binding Coil of Bahamut - Turn 4",
-    "ja": "大迷宮バハムート：邂逅編4",
-    "de": "Verschlungene Schatten 4",
-    "fr": "le Labyrinthe de Bahamut IV",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       4300,
       4300
     ]
   },
   "30006": {
-    "en": "the Binding Coil of Bahamut - Turn 5",
-    "ja": "大迷宮バハムート：邂逅編5",
-    "de": "Verschlungene Schatten 5",
-    "fr": "le Labyrinthe de Bahamut V",
-    "icon": "/i/061000/061802.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "30007": {
-    "en": "the Second Coil of Bahamut - Turn 1",
-    "ja": "大迷宮バハムート：侵攻編1",
-    "de": "Verschlungene Schatten 2 - 1",
-    "fr": "les Méandres de Bahamut I",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       5600,
       5600
     ]
   },
   "30008": {
-    "en": "the Second Coil of Bahamut - Turn 2",
-    "ja": "大迷宮バハムート：侵攻編2",
-    "de": "Verschlungene Schatten 2 - 2",
-    "fr": "les Méandres de Bahamut II",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       5700,
       5700
     ]
   },
   "30009": {
-    "en": "the Second Coil of Bahamut - Turn 3",
-    "ja": "大迷宮バハムート：侵攻編3",
-    "de": "Verschlungene Schatten 2 - 3",
-    "fr": "les Méandres de Bahamut III",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       5800,
       5800
     ]
   },
   "30010": {
-    "en": "the Second Coil of Bahamut - Turn 4",
-    "ja": "大迷宮バハムート：侵攻編4",
-    "de": "Verschlungene Schatten 2 - 4",
-    "fr": "les Méandres de Bahamut IV",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       5905,
       5900
     ]
   },
   "30011": {
-    "en": "Syrcus Tower",
-    "ja": "クリスタルタワー：シルクスの塔",
-    "de": "Kristallturm - Der Syrcus-Turm",
-    "fr": "la Tour de Cristal - Tour de Syrcus",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       6325,
       6300
     ]
   },
   "30012": {
-    "en": "the Second Coil of Bahamut (Savage) - Turn 1",
-    "ja": "大迷宮バハムート零式：侵攻編1",
-    "de": "Verschlungene Schatten 2 - 1 (episch)",
-    "fr": "les Méandres de Bahamut I (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       5600,
       5600
     ]
   },
   "30013": {
-    "en": "the Second Coil of Bahamut (Savage) - Turn 2",
-    "ja": "大迷宮バハムート零式：侵攻編2",
-    "de": "Verschlungene Schatten 2 - 2 (episch)",
-    "fr": "les Méandres de Bahamut II (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       5700,
       5700
     ]
   },
   "30014": {
-    "en": "the Second Coil of Bahamut (Savage) - Turn 3",
-    "ja": "大迷宮バハムート零式：侵攻編3",
-    "de": "Verschlungene Schatten 2 - 3 (episch)",
-    "fr": "les Méandres de Bahamut III (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       5800,
       5800
     ]
   },
   "30015": {
-    "en": "the Second Coil of Bahamut (Savage) - Turn 4",
-    "ja": "大迷宮バハムート零式：侵攻編4",
-    "de": "Verschlungene Schatten 2 - 4 (episch)",
-    "fr": "les Méandres de Bahamut IV (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       5905,
       5900
     ]
   },
   "30016": {
-    "en": "the Final Coil of Bahamut - Turn 1",
-    "ja": "大迷宮バハムート：真成編1",
-    "de": "Verschlungene Schatten 3 - 1",
-    "fr": "l'Abîme de Bahamut I",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       6900,
       6900
     ]
   },
   "30017": {
-    "en": "the Final Coil of Bahamut - Turn 2",
-    "ja": "大迷宮バハムート：真成編2",
-    "de": "Verschlungene Schatten 3 - 2",
-    "fr": "l'Abîme de Bahamut II",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       7000,
       7000
     ]
   },
   "30018": {
-    "en": "the Final Coil of Bahamut - Turn 3",
-    "ja": "大迷宮バハムート：真成編3",
-    "de": "Verschlungene Schatten 3 - 3",
-    "fr": "l'Abîme de Bahamut III",
-    "icon": "/i/061000/061802.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "30019": {
-    "en": "the Final Coil of Bahamut - Turn 4",
-    "ja": "大迷宮バハムート：真成編4",
-    "de": "Verschlungene Schatten 3 - 4",
-    "fr": "l'Abîme de Bahamut IV",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       7205,
       7200
     ]
   },
   "30020": {
-    "en": "the World of Darkness",
-    "ja": "クリスタルタワー：闇の世界",
-    "de": "Die Welt der Dunkelheit",
-    "fr": "la Tour de Cristal - Monde des Ténèbres",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       7418,
       7400
     ]
   },
   "30021": {
-    "en": "Alexander - The Fist of the Father",
-    "ja": "機工城アレキサンダー：起動編1",
-    "de": "Alexander - Faust des Vaters",
-    "fr": "Alexander - Le Poing du Père",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       9202,
       9200
     ]
   },
   "30022": {
-    "en": "Alexander - The Cuff of the Father",
-    "ja": "機工城アレキサンダー：起動編2",
-    "de": "Alexander - Elle des Vaters",
-    "fr": "Alexander - Le Poignet du Père",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       9308,
       9300
     ]
   },
   "30023": {
-    "en": "Alexander - The Arm of the Father",
-    "ja": "機工城アレキサンダー：起動編3",
-    "de": "Alexander - Arm des Vaters",
-    "fr": "Alexander - Le Bras du Père",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       9401,
       9400
     ]
   },
   "30024": {
-    "en": "Alexander - The Burden of the Father",
-    "ja": "機工城アレキサンダー：起動編4",
-    "de": "Alexander - Last des Vaters",
-    "fr": "Alexander - Le Fardeau du Père",
-    "icon": "/i/061000/061802.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "30025": {
-    "en": "Alexander - The Fist of the Father (Savage)",
-    "ja": "機工城アレキサンダー零式：起動編1",
-    "de": "Alexander - Faust des Vaters (episch)",
-    "fr": "Alexander - Le Poing du Père (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       9202,
       9201
     ]
   },
   "30026": {
-    "en": "Alexander - The Cuff of the Father (Savage)",
-    "ja": "機工城アレキサンダー零式：起動編2",
-    "de": "Alexander - Elle des Vaters (episch)",
-    "fr": "Alexander - Le Poignet du Père (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       9308,
       9303
     ]
   },
   "30027": {
-    "en": "Alexander - The Arm of the Father (Savage)",
-    "ja": "機工城アレキサンダー零式：起動編3",
-    "de": "Alexander - Arm des Vaters (episch)",
-    "fr": "Alexander - Le Bras du Père (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       9401,
       9400
     ]
   },
   "30028": {
-    "en": "Alexander - The Burden of the Father (Savage)",
-    "ja": "機工城アレキサンダー零式：起動編4",
-    "de": "Alexander - Last des Vaters (episch)",
-    "fr": "Alexander - Le Fardeau du Père (sadique)",
-    "icon": "/i/061000/061802.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "30029": {
-    "en": "the Void Ark",
-    "ja": "魔航船ヴォイドアーク",
-    "de": "Die Nichts-Arche",
-    "fr": "l'Arche du néant",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       9621,
       9600
     ]
   },
   "30030": {
-    "en": "Alexander - The Fist of the Son",
-    "ja": "機工城アレキサンダー：律動編1",
-    "de": "Alexander - Faust des Sohnes",
-    "fr": "Alexander - Le Poing du Fils",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       10107,
       10100
     ]
   },
   "30031": {
-    "en": "Alexander - The Cuff of the Son",
-    "ja": "機工城アレキサンダー：律動編2",
-    "de": "Alexander - Elle des Sohnes",
-    "fr": "Alexander - Le Poignet du Fils",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       10209,
       10200
     ]
   },
   "30032": {
-    "en": "Alexander - The Arm of the Son",
-    "ja": "機工城アレキサンダー：律動編3",
-    "de": "Alexander - Arm des Sohnes",
-    "fr": "Alexander - Le Bras du Fils",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       10306,
       10300
     ]
   },
   "30033": {
-    "en": "Alexander - The Burden of the Son",
-    "ja": "機工城アレキサンダー：律動編4",
-    "de": "Alexander - Last des Sohnes",
-    "fr": "Alexander - Le Fardeau du Fils",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       10615,
       10600
     ]
   },
   "30034": {
-    "en": "Alexander - The Fist of the Son (Savage)",
-    "ja": "機工城アレキサンダー零式：律動編1",
-    "de": "Alexander - Faust des Sohnes (episch)",
-    "fr": "Alexander - Le Poing du Fils (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       10108,
       10100
     ]
   },
   "30035": {
-    "en": "Alexander - The Cuff of the Son (Savage)",
-    "ja": "機工城アレキサンダー零式：律動編2",
-    "de": "Alexander - Elle des Sohnes (episch)",
-    "fr": "Alexander - Le Poignet du Fils (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       10209,
       10200
     ]
   },
   "30036": {
-    "en": "Alexander - The Arm of the Son (Savage)",
-    "ja": "機工城アレキサンダー零式：律動編3",
-    "de": "Alexander - Arm des Sohnes (episch)",
-    "fr": "Alexander - Le Bras du Fils (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       10306,
       10300
     ]
   },
   "30037": {
-    "en": "Alexander - The Burden of the Son (Savage)",
-    "ja": "機工城アレキサンダー零式：律動編4",
-    "de": "Alexander - Last des Sohnes (episch)",
-    "fr": "Alexander - Le Fardeau du Fils (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       10615,
       10600
     ]
   },
   "30038": {
-    "en": "the Weeping City of Mhach",
-    "ja": "禁忌都市マハ",
-    "de": "Die Stadt der Tränen",
-    "fr": "la Cité défendue de Mhach",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       12749,
       12700
     ]
   },
   "30039": {
-    "en": "Alexander - The Eyes of the Creator",
-    "ja": "機工城アレキサンダー：天動編1",
-    "de": "Alexander - Augen des Schöpfers",
-    "fr": "Alexander - Les Yeux du Créateur",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       13414,
       13400
     ]
   },
   "30040": {
-    "en": "Alexander - The Breath of the Creator",
-    "ja": "機工城アレキサンダー：天動編2",
-    "de": "Alexander - Atem des Schöpfers",
-    "fr": "Alexander - Le Souffle du Créateur",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       13507,
       13500
     ]
   },
   "30041": {
-    "en": "Alexander - The Heart of the Creator",
-    "ja": "機工城アレキサンダー：天動編3",
-    "de": "Alexander - Herz des Schöpfers",
-    "fr": "Alexander - Le Cœur du Créateur",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       13609,
       13600
     ]
   },
   "30042": {
-    "en": "Alexander - The Soul of the Creator",
-    "ja": "機工城アレキサンダー：天動編4",
-    "de": "Alexander - Seele des Schöpfers",
-    "fr": "Alexander - L'Âme du Créateur",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       13717,
       13700
     ]
   },
   "30043": {
-    "en": "Alexander - The Eyes of the Creator (Savage)",
-    "ja": "機工城アレキサンダー零式：天動編1",
-    "de": "Alexander - Augen des Schöpfers (episch)",
-    "fr": "Alexander - Les Yeux du Créateur (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       13414,
       13400
     ]
   },
   "30044": {
-    "en": "Alexander - The Breath of the Creator (Savage)",
-    "ja": "機工城アレキサンダー零式：天動編2",
-    "de": "Alexander - Atem des Schöpfers (episch)",
-    "fr": "Alexander - Le Souffle du Créateur (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       13507,
       13500
     ]
   },
   "30045": {
-    "en": "Alexander - The Heart of the Creator (Savage)",
-    "ja": "機工城アレキサンダー零式：天動編3",
-    "de": "Alexander - Herz des Schöpfers (episch)",
-    "fr": "Alexander - Le Cœur du Créateur (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       13609,
       13600
     ]
   },
   "30046": {
-    "en": "Alexander - The Soul of the Creator (Savage)",
-    "ja": "機工城アレキサンダー零式：天動編4",
-    "de": "Alexander - Seele des Schöpfers (episch)",
-    "fr": "Alexander - L'Âme du Créateur (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       13717,
       13700
     ]
   },
   "30047": {
-    "en": "Dun Scaith",
-    "ja": "影の国ダン・スカー",
-    "de": "Dun Scaith",
-    "fr": "Dun Scaith",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       14173,
       14100
@@ -3619,817 +3619,817 @@
     "icon": null
   },
   "30049": {
-    "en": "Deltascape V1.0",
-    "ja": "次元の狭間オメガ：デルタ編1",
-    "de": "Deltametrie 1.0",
-    "fr": "Deltastice v1.0",
-    "icon": "/i/061000/061802.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "30050": {
-    "en": "Deltascape V2.0",
-    "ja": "次元の狭間オメガ：デルタ編2",
-    "de": "Deltametrie 2.0",
-    "fr": "Deltastice v2.0",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       17600,
       17600
     ]
   },
   "30051": {
-    "en": "Deltascape V3.0",
-    "ja": "次元の狭間オメガ：デルタ編3",
-    "de": "Deltametrie 3.0",
-    "fr": "Deltastice v3.0",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       17738,
       17700
     ]
   },
   "30052": {
-    "en": "Deltascape V4.0",
-    "ja": "次元の狭間オメガ：デルタ編4",
-    "de": "Deltametrie 4.0",
-    "fr": "Deltastice v4.0",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       17810,
       17800
     ]
   },
   "30053": {
-    "en": "Deltascape V1.0 (Savage)",
-    "ja": "次元の狭間オメガ零式：デルタ編1",
-    "de": "Deltametrie 1.0 (episch)",
-    "fr": "Deltastice v1.0 (sadique)",
-    "icon": "/i/061000/061802.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "30054": {
-    "en": "Deltascape V2.0 (Savage)",
-    "ja": "次元の狭間オメガ零式：デルタ編2",
-    "de": "Deltametrie 2.0 (episch)",
-    "fr": "Deltastice v2.0 (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       17600,
       17600
     ]
   },
   "30055": {
-    "en": "Deltascape V3.0 (Savage)",
-    "ja": "次元の狭間オメガ零式：デルタ編3",
-    "de": "Deltametrie 3.0 (episch)",
-    "fr": "Deltastice v3.0 (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       17738,
       17700
     ]
   },
   "30056": {
-    "en": "Deltascape V4.0 (Savage)",
-    "ja": "次元の狭間オメガ零式：デルタ編4",
-    "de": "Deltametrie 4.0 (episch)",
-    "fr": "Deltastice v4.0 (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       17822,
       17800
     ]
   },
   "30057": {
-    "en": "the Unending Coil of Bahamut (Ultimate)",
-    "ja": "絶バハムート討滅戦",
-    "de": "Endlose Schatten von Bahamut (fatal)",
-    "fr": "l'Abîme infini de Bahamut (fatal)",
-    "icon": "/i/061000/061832.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       18107,
       18100
     ]
   },
   "30058": {
-    "en": "the Royal City of Rabanastre",
-    "ja": "失われた都 ラバナスタ",
-    "de": "Rabanastre",
-    "fr": "la Cité royale de Rabanastre",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       18078,
       18000
     ]
   },
   "30059": {
-    "en": "Sigmascape V1.0",
-    "ja": "次元の狭間オメガ：シグマ編1",
-    "de": "Sigmametrie 1.0",
-    "fr": "Sigmastice v1.0",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       19101,
       19100
     ]
   },
   "30060": {
-    "en": "Sigmascape V2.0",
-    "ja": "次元の狭間オメガ：シグマ編2",
-    "de": "Sigmametrie 2.0",
-    "fr": "Sigmastice v2.0",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       18912,
       18900
     ]
   },
   "30061": {
-    "en": "Sigmascape V3.0",
-    "ja": "次元の狭間オメガ：シグマ編3",
-    "de": "Sigmametrie 3.0",
-    "fr": "Sigmastice v3.0",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       18807,
       18800
     ]
   },
   "30062": {
-    "en": "Sigmascape V4.0",
-    "ja": "次元の狭間オメガ：シグマ編4",
-    "de": "Sigmametrie 4.0",
-    "fr": "Sigmastice v4.0",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       19020,
       19000
     ]
   },
   "30063": {
-    "en": "Sigmascape V1.0 (Savage)",
-    "ja": "次元の狭間オメガ零式：シグマ編1",
-    "de": "Sigmametrie 1.0 (episch)",
-    "fr": "Sigmastice v1.0 (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       19101,
       19100
     ]
   },
   "30064": {
-    "en": "Sigmascape V2.0 (Savage)",
-    "ja": "次元の狭間オメガ零式：シグマ編2",
-    "de": "Sigmametrie 2.0 (episch)",
-    "fr": "Sigmastice v2.0 (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       18912,
       18900
     ]
   },
   "30065": {
-    "en": "Sigmascape V3.0 (Savage)",
-    "ja": "次元の狭間オメガ零式：シグマ編3",
-    "de": "Sigmametrie 3.0 (episch)",
-    "fr": "Sigmastice v3.0 (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       18808,
       18800
     ]
   },
   "30066": {
-    "en": "Sigmascape V4.0 (Savage)",
-    "ja": "次元の狭間オメガ零式：シグマ編4",
-    "de": "Sigmametrie 4.0 (episch)",
-    "fr": "Sigmastice v4.0 (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       19020,
       19000
     ]
   },
   "30067": {
-    "en": "the Weapon's Refrain (Ultimate)",
-    "ja": "絶アルテマウェポン破壊作戦",
-    "de": "Heldenlied von Ultima (fatal)",
-    "fr": "la Fantasmagorie d'Ultima (fatal)",
-    "icon": "/i/061000/061832.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       19320,
       19300
     ]
   },
   "30068": {
-    "en": "the Ridorana Lighthouse",
-    "ja": "封じられた聖塔 リドルアナ",
-    "de": "Richtfeuer von Ridorana",
-    "fr": "le Phare de Ridorana",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       19468,
       19400
     ]
   },
   "30069": {
-    "en": "Alphascape V1.0",
-    "ja": "次元の狭間オメガ：アルファ編1",
-    "de": "Alphametrie 1.0",
-    "fr": "Alphastice v1.0",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       20007,
       20000
     ]
   },
   "30070": {
-    "en": "Alphascape V2.0",
-    "ja": "次元の狭間オメガ：アルファ編2",
-    "de": "Alphametrie 2.0",
-    "fr": "Alphastice v2.0",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       20507,
       20500
     ]
   },
   "30071": {
-    "en": "Alphascape V3.0",
-    "ja": "次元の狭間オメガ：アルファ編3",
-    "de": "Alphametrie 3.0",
-    "fr": "Alphastice v3.0",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       20130,
       20100
     ]
   },
   "30072": {
-    "en": "Alphascape V4.0",
-    "ja": "次元の狭間オメガ：アルファ編4",
-    "de": "Alphametrie 4.0",
-    "fr": "Alphastice v4.0",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       20624,
       20600
     ]
   },
   "30073": {
-    "en": "Alphascape V1.0 (Savage)",
-    "ja": "次元の狭間オメガ零式：アルファ編1",
-    "de": "Alphametrie 1.0 (episch)",
-    "fr": "Alphastice v1.0 (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       20007,
       20000
     ]
   },
   "30074": {
-    "en": "Alphascape V2.0 (Savage)",
-    "ja": "次元の狭間オメガ零式：アルファ編2",
-    "de": "Alphametrie 2.0 (episch)",
-    "fr": "Alphastice v2.0 (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       20507,
       20500
     ]
   },
   "30075": {
-    "en": "Alphascape V3.0 (Savage)",
-    "ja": "次元の狭間オメガ零式：アルファ編3",
-    "de": "Alphametrie 3.0 (episch)",
-    "fr": "Alphastice v3.0 (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       20135,
       20100
     ]
   },
   "30076": {
-    "en": "Alphascape V4.0 (Savage)",
-    "ja": "次元の狭間オメガ零式：アルファ編4",
-    "de": "Alphametrie 4.0 (episch)",
-    "fr": "Alphastice v4.0 (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       20624,
       20600
     ]
   },
   "30077": {
-    "en": "the Orbonne Monastery",
-    "ja": "楽欲の僧院 オーボンヌ",
-    "de": "Kloster von Orbonne",
-    "fr": "le Monastère d'Orbonne",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       20999,
       20900
     ]
   },
   "30078": {
-    "en": "Eden's Gate: Resurrection",
-    "ja": "希望の園エデン：覚醒編1",
-    "de": "Edens Erwachen - Auferstehung",
-    "fr": "L'Éveil d'Éden - Résurrection",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       23200,
       23200
     ]
   },
   "30079": {
-    "en": "Eden's Gate: Resurrection (Savage)",
-    "ja": "希望の園エデン零式：覚醒編1",
-    "de": "Edens Erwachen - Auferstehung (episch)",
-    "fr": "L'Éveil d'Éden - Résurrection (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       23200,
       23200
     ]
   },
   "30080": {
-    "en": "Eden's Gate: Inundation",
-    "ja": "希望の園エデン：覚醒編3",
-    "de": "Edens Erwachen - Überflutung",
-    "fr": "L'Éveil d'Éden - Déluge",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       22814,
       22800
     ]
   },
   "30081": {
-    "en": "Eden's Gate: Inundation (Savage)",
-    "ja": "希望の園エデン零式：覚醒編3",
-    "de": "Edens Erwachen - Überflutung (episch)",
-    "fr": "L'Éveil d'Éden - Déluge (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       22814,
       22800
     ]
   },
   "30082": {
-    "en": "Eden's Gate: Descent",
-    "ja": "希望の園エデン：覚醒編2",
-    "de": "Edens Erwachen - Niederkunft",
-    "fr": "L'Éveil d'Éden - Descente",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       22211,
       22200
     ]
   },
   "30083": {
-    "en": "Eden's Gate: Descent (Savage)",
-    "ja": "希望の園エデン零式：覚醒編2",
-    "de": "Edens Erwachen - Niederkunft (episch)",
-    "fr": "L'Éveil d'Éden - Descente (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       22211,
       22200
     ]
   },
   "30084": {
-    "en": "Eden's Gate: Sepulture",
-    "ja": "希望の園エデン：覚醒編4",
-    "de": "Edens Erwachen - Beerdigung",
-    "fr": "L'Éveil d'Éden - Inhumation",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       23111,
       23100
     ]
   },
   "30085": {
-    "en": "Eden's Gate: Sepulture (Savage)",
-    "ja": "希望の園エデン零式：覚醒編4",
-    "de": "Edens Erwachen - Beerdigung (episch)",
-    "fr": "L'Éveil d'Éden - Inhumation (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       23114,
       23100
     ]
   },
   "30086": {
-    "en": "The Epic of Alexander (Ultimate)",
-    "ja": "絶アレキサンダー討滅戦",
-    "de": "Alexander (fatal)",
-    "fr": "L'Odyssée d'Alexander (fatal)",
-    "icon": "/i/061000/061832.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24018,
       24000
     ]
   },
   "30087": {
-    "en": "The Copied Factory",
-    "ja": "複製サレタ工場廃墟",
-    "de": "Die kopierte Fabrik",
-    "fr": "La réplique de l'usine désaffectée",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       23611,
       23500
     ]
   },
   "30088": {
-    "en": "Eden's Verse: Fulmination",
-    "ja": "希望の園エデン：共鳴編1",
-    "de": "Edens Resonanz - Entladung",
-    "fr": "Les Accords d'Éden - Fulmination",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24420,
       24400
     ]
   },
   "30089": {
-    "en": "Eden's Verse: Fulmination (Savage)",
-    "ja": "希望の園エデン零式：共鳴編1",
-    "de": "Edens Resonanz - Entladung (episch)",
-    "fr": "Les Accords d'Éden - Fulmination (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24420,
       24400
     ]
   },
   "30090": {
-    "en": "Eden's Verse: Furor",
-    "ja": "希望の園エデン：共鳴編2",
-    "de": "Edens Resonanz - Raserei",
-    "fr": "Les Accords d'Éden - Fureur",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24513,
       24500
     ]
   },
   "30091": {
-    "en": "Eden's Verse: Furor (Savage)",
-    "ja": "希望の園エデン零式：共鳴編2",
-    "de": "Edens Resonanz - Raserei (episch)",
-    "fr": "Les Accords d'Éden - Fureur (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24513,
       24500
     ]
   },
   "30092": {
-    "en": "Eden's Verse: Iconoclasm",
-    "ja": "希望の園エデン：共鳴編3",
-    "de": "Edens Resonanz - Bildersturm",
-    "fr": "Les Accords d'Éden - Iconoclasme",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24609,
       24600
     ]
   },
   "30093": {
-    "en": "Eden's Verse: Iconoclasm (Savage)",
-    "ja": "希望の園エデン零式：共鳴編3",
-    "de": "Edens Resonanz - Bildersturm (episch)",
-    "fr": "Les Accords d'Éden - Iconoclasme (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24609,
       24600
     ]
   },
   "30094": {
-    "en": "Eden's Verse: Refulgence",
-    "ja": "希望の園エデン：共鳴編4",
-    "de": "Edens Resonanz - Erstarrung",
-    "fr": "Les Accords d'Éden - Éclat",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24834,
       24800
     ]
   },
   "30095": {
-    "en": "Eden's Verse: Refulgence (Savage)",
-    "ja": "希望の園エデン零式：共鳴編4",
-    "de": "Edens Resonanz - Erstarrung (episch)",
-    "fr": "Les Accords d'Éden - Éclat (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24834,
       24804
     ]
   },
   "30096": {
-    "en": "the Puppets' Bunker",
-    "ja": "人形タチノ軍事基地",
-    "de": "Die Puppenfestung",
-    "fr": "La base militaire des Pantins",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       25564,
       25500
     ]
   },
   "30097": {
-    "en": "Eden's Promise: Umbra",
-    "ja": "希望の園エデン：再生編1",
-    "de": "Edens Verheißung - Umbra",
-    "fr": "La Promesse d'Éden - Nuée",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       26109,
       26100
     ]
   },
   "30098": {
-    "en": "Eden's Promise: Umbra (Savage)",
-    "ja": "希望の園エデン零式：再生編1",
-    "de": "Edens Verheißung - Umbra (episch)",
-    "fr": "La Promesse d'Éden - Nuée (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       26109,
       26100
     ]
   },
   "30099": {
-    "en": "Eden's Promise: Litany",
-    "ja": "希望の園エデン：再生編2",
-    "de": "Edens Verheißung - Litanei",
-    "fr": "La Promesse d'Éden - Litanie",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       26410,
       26400
     ]
   },
   "30100": {
-    "en": "Eden's Promise: Litany (Savage)",
-    "ja": "希望の園エデン零式：再生編2",
-    "de": "Edens Verheißung - Litanei (episch)",
-    "fr": "La Promesse d'Éden - Litanie (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       26410,
       26400
     ]
   },
   "30101": {
-    "en": "Eden's Promise: Anamorphosis",
-    "ja": "希望の園エデン：再生編3",
-    "de": "Edens Verheißung - Anamorphose",
-    "fr": "La Promesse d'Éden - Anamorphose",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       26015,
       26000
     ]
   },
   "30102": {
-    "en": "Eden's Promise: Anamorphosis (Savage)",
-    "ja": "希望の園エデン零式：再生編3",
-    "de": "Edens Verheißung - Anamorphose (episch)",
-    "fr": "La Promesse d'Éden - Anamorphose (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       26015,
       26000
     ]
   },
   "30103": {
-    "en": "Eden's Promise: Eternity",
-    "ja": "希望の園エデン：再生編4",
-    "de": "Edens Verheißung - Ewigkeit",
-    "fr": "La Promesse d'Éden - Éternité",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       25668,
       25600
     ]
   },
   "30104": {
-    "en": "Eden's Promise: Eternity (Savage)",
-    "ja": "希望の園エデン零式：再生編4",
-    "de": "Edens Verheißung - Ewigkeit (episch)",
-    "fr": "La Promesse d'Éden - Éternité (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       25668,
       25600
     ]
   },
   "30105": {
-    "en": "The Tower at Paradigm's Breach",
-    "ja": "希望ノ砲台：「塔」",
-    "de": "Der Turm, Paradigmenbrecher",
-    "fr": "La tour de la Contingence",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       26780,
       26700
     ]
   },
   "30106": {
-    "en": "Dragonsong's Reprise (Ultimate)",
-    "ja": "絶竜詩戦争",
-    "de": "Drachenkrieg (fatal)",
-    "fr": "la Guerre du chant des dragons (fatal)",
-    "icon": "/i/061000/061832.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       32628,
       32600
     ]
   },
   "30107": {
-    "en": "Asphodelos: The Fourth Circle",
-    "ja": "万魔殿パンデモニウム：辺獄編4",
-    "de": "Asphodelos - Vierter Kreis",
-    "fr": "Les Limbes du Pandæmonium - Abîme",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       32509,
       32500
     ]
   },
   "30108": {
-    "en": "Asphodelos: The Fourth Circle (Savage)",
-    "ja": "万魔殿パンデモニウム零式：辺獄編4",
-    "de": "Asphodelos - Vierter Kreis (episch)",
-    "fr": "Les Limbes du Pandæmonium - Abîme (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       32517,
       32500
     ]
   },
   "30109": {
-    "en": "Asphodelos: The Third Circle",
-    "ja": "万魔殿パンデモニウム：辺獄編3",
-    "de": "Asphodelos - Dritter Kreis",
-    "fr": "Les Limbes du Pandæmonium - Fournaise",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       32201,
       32200
     ]
   },
   "30110": {
-    "en": "Asphodelos: The Third Circle (Savage)",
-    "ja": "万魔殿パンデモニウム零式：辺獄編3",
-    "de": "Asphodelos - Dritter Kreis (episch)",
-    "fr": "Les Limbes du Pandæmonium - Fournaise (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       32201,
       32200
     ]
   },
   "30111": {
-    "en": "Asphodelos: The First Circle",
-    "ja": "万魔殿パンデモニウム：辺獄編1",
-    "de": "Asphodelos - Erster Kreis",
-    "fr": "Les Limbes du Pandæmonium - Parvis",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       32118,
       32100
     ]
   },
   "30112": {
-    "en": "Asphodelos: The First Circle (Savage)",
-    "ja": "万魔殿パンデモニウム零式：辺獄編1",
-    "de": "Asphodelos - Erster Kreis (episch)",
-    "fr": "Les Limbes du Pandæmonium - Parvis (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       32118,
       32100
     ]
   },
   "30113": {
-    "en": "Asphodelos: The Second Circle",
-    "ja": "万魔殿パンデモニウム：辺獄編2",
-    "de": "Asphodelos - Zweiter Kreis",
-    "fr": "Les Limbes du Pandæmonium - Cloaque",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       30904,
       30901
     ]
   },
   "30114": {
-    "en": "Asphodelos: The Second Circle (Savage)",
-    "ja": "万魔殿パンデモニウム零式：辺獄編2",
-    "de": "Asphodelos - Zweiter Kreis (episch)",
-    "fr": "Les Limbes du Pandæmonium - Cloaque (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       30904,
       30901
     ]
   },
   "30115": {
-    "en": "Aglaia",
-    "ja": "輝ける神域 アグライア",
-    "de": "Aglaia",
-    "fr": "Domaine divin - Aglaé",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       33089,
       33000
     ]
   },
   "30116": {
-    "en": "Abyssos: The Fifth Circle",
-    "ja": "万魔殿パンデモニウム：煉獄編1",
-    "de": "Abyssos - Fünfter Kreis",
-    "fr": "Le Purgatoire du Pandæmonium - Cages",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       34900,
       34900
     ]
   },
   "30117": {
-    "en": "Abyssos: The Fifth Circle (Savage)",
-    "ja": "万魔殿パンデモニウム零式：煉獄編1",
-    "de": "Abyssos - Fünfter Kreis (episch)",
-    "fr": "Le Purgatoire du Pandæmonium - Cages (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       34900,
       34900
     ]
   },
   "30118": {
-    "en": "Abyssos: The Seventh Circle",
-    "ja": "万魔殿パンデモニウム：煉獄編3",
-    "de": "Abyssos - Siebter Kreis",
-    "fr": "Le Purgatoire du Pandæmonium - Racines",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       34617,
       34600
     ]
   },
   "30119": {
-    "en": "Abyssos: The Seventh Circle (Savage)",
-    "ja": "万魔殿パンデモニウム零式：煉獄編3",
-    "de": "Abyssos - Siebter Kreis (episch)",
-    "fr": "Le Purgatoire du Pandæmonium - Racines (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       34618,
       34600
     ]
   },
   "30120": {
-    "en": "Abyssos: The Sixth Circle",
-    "ja": "万魔殿パンデモニウム：煉獄編2",
-    "de": "Abyssos - Sechster Kreis",
-    "fr": "Le Purgatoire du Pandæmonium - Croisements",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       34709,
       34700
     ]
   },
   "30121": {
-    "en": "Abyssos: The Sixth Circle (Savage)",
-    "ja": "万魔殿パンデモニウム零式：煉獄編2",
-    "de": "Abyssos - Sechster Kreis (episch)",
-    "fr": "Le Purgatoire du Pandæmonium - Croisements (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       34709,
       34700
     ]
   },
   "30122": {
-    "en": "Abyssos: The Eighth Circle",
-    "ja": "万魔殿パンデモニウム：煉獄編4",
-    "de": "Abyssos - Achter Kreis",
-    "fr": "Le Purgatoire du Pandæmonium - Hérédité",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       35033,
       35000
     ]
   },
   "30123": {
-    "en": "Abyssos: The Eighth Circle (Savage)",
-    "ja": "万魔殿パンデモニウム零式：煉獄編4",
-    "de": "Abyssos - Achter Kreis (episch)",
-    "fr": "Le Purgatoire du Pandæmonium - Hérédité (sadique)",
-    "icon": "/i/061000/061802.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       35033,
       35000
@@ -4450,221 +4450,221 @@
     "icon": null
   },
   "35001": {
-    "en": "All's Well That Starts Well",
-    "ja": "デビューマッチ",
-    "de": "Debüt in der Himmlischen Arena",
-    "fr": "Début du spectacle",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35002": {
-    "en": "Much Ado About Pudding",
-    "ja": "プリン・アラモード",
-    "de": "Pudding nach Art des Hauses",
-    "fr": "Puddings à la mode",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35003": {
-    "en": "Waiting for Golem",
-    "ja": "最初の岩壁「シパクナー」",
-    "de": "Zipacna - Aller Anfang ist schwer",
-    "fr": "Zipacna, le premier obstacle",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35004": {
-    "en": "Gentlemen Prefer Swords",
-    "ja": "怪力の鉄巨人「クレイオス」",
-    "de": "Kreios - Der Mann aus Stahl",
-    "fr": "Kreios, le destructeur d'acier",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35005": {
-    "en": "The Threepenny Turtles",
-    "ja": "ギルガメブラザーズ",
-    "de": "Die Bruderschaft der Kröten",
-    "fr": "La fratrie des gilkhélones",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35006": {
-    "en": "Eye Society",
-    "ja": "ブラインド・フューリー",
-    "de": "Den Tod im Auge",
-    "fr": "Vengeance aveugle",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35007": {
-    "en": "A Chorus Slime",
-    "ja": "シアーハートアタック",
-    "de": "Heißkalte Schauer",
-    "fr": "Pure attaque cardiaque",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35008": {
-    "en": "Bomb-edy of Errors",
-    "ja": "青い牙、赤い牙",
-    "de": "Explosiv - Vorhut in Blau und Rot",
-    "fr": "Crocs bleus et crocs rouges",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35009": {
-    "en": "To Kill a Mockingslime",
-    "ja": "七色の甘味「ギモーヴ」",
-    "de": "Guimauve und die sieben Gesichter des Todes",
-    "fr": "Guimauve, le goût de l'arc-en-ciel",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35010": {
-    "en": "A Little Knight Music",
-    "ja": "偶像の王者「クロムドゥーブ」",
-    "de": "Crom Dubh - König der Götzen",
-    "fr": "Crom Dubh, roi des idoles",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35011": {
-    "en": "Some Like It Excruciatingly Hot",
-    "ja": "爆ボム・ファーストアタック",
-    "de": "Explosiv - Die zweite Welle",
-    "fr": "Les courtes mèches",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35012": {
-    "en": "The Plant-om of the Opera",
-    "ja": "寄生植物「ヒドノラ」",
-    "de": "Hydnora - Der Parasit, der Paras sieht",
-    "fr": "Hydnora, la plante parasite",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35013": {
-    "en": "Beauty and a Beast",
-    "ja": "紅の死妖姫「カーミラ」",
-    "de": "Carmilla - Prinzessin des Todes",
-    "fr": "La mystérieuse Carmilla",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35014": {
-    "en": "Blobs in the Woods",
-    "ja": "死なばもろともーッ！",
-    "de": "Der Tod kommt süß gekleidet",
-    "fr": "La mort n'a pas d'ami",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35015": {
-    "en": "The Me Nobody Nodes",
-    "ja": "アラグの脅威「闘獣システム」",
-    "de": "Die Bestie steckt im System",
-    "fr": "La sphère bestiale, une menace allagoise",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35016": {
-    "en": "Sunset Bull-evard",
-    "ja": "豪腕の獣王「ティクバラン」",
-    "de": "Tikbalang - Der rechte Arm des Verderbens",
-    "fr": "Tikbalang, bras tout-puissant",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35017": {
-    "en": "The Sword of Music",
-    "ja": "剛柔の鉄巨人「クレイオス改」",
-    "de": "Kreios - Neues vom Mann aus Stahl",
-    "fr": "Kreios plie, mais ne rompt pas",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35018": {
-    "en": "Midsummer Night's Explosion",
-    "ja": "爆破デスマッチ",
-    "de": "Explosiv - Revanche mit Wumms",
-    "fr": "Rencontre explosive",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35019": {
-    "en": "On a Clear Day You Can Smell Forever",
-    "ja": "魅惑の芳香「リフレクティブ・レベッカ」",
-    "de": "Rebekkha - Verführerische Gerüche",
-    "fr": "Miroir, mon beau miroir",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35020": {
-    "en": "Miss Typhon",
-    "ja": "名コンビ「オルトロス＆テュポーン」",
-    "de": "Ultros & Typhon - Zwei wie Rotz und Wasser",
-    "fr": "Duo de choc: Orthros et maître Typhon",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35021": {
-    "en": "Chimera on a Hot Tin Roof",
-    "ja": "憤怒の合成獣「アペデマク」",
-    "de": "Apademak - Die cholerische Chimära",
-    "fr": "La chimèrique colère d'Apademak",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35022": {
-    "en": "Here Comes the Boom",
-    "ja": "爆発の対消滅「グランパボム」",
-    "de": "Explosiv - Urgroßbomber lässt es krachen",
-    "fr": "L'histoire détonante de Papi bombo",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35023": {
-    "en": "Behemoths and Broomsticks",
-    "ja": "魔獣の皇太子「クロンプリンツ・ベヒーモス」",
-    "de": "Kronprinz-Behemoth - Vom Teufel besessen",
-    "fr": "Kronprinz béhémoth, le prince héritier",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35024": {
-    "en": "Amazing Technicolor Pit Fiends",
-    "ja": "異形の人形師「エペロギ」",
-    "de": "Epilogi - Das Ende kommt immer zuletzt",
-    "fr": "Epilogi, l'étrange marionnettiste",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35025": {
-    "en": "Dirty Rotten Azulmagia",
-    "ja": "悪の青魔道士「アポカリョープス」",
-    "de": "Azulmagia - Der Blaumagier des Bösen",
-    "fr": "L'abominable Azulmagia",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35026": {
-    "en": "Papa Mia",
-    "ja": "豪腕の父親「フンババ・パパ」",
-    "de": "Papa Mia",
-    "fr": "Papa Humbaba, le paternel aux gros bras",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35027": {
-    "en": "Lock up Your Snorters",
-    "ja": "はないき爆破デスマッチ",
-    "de": "Explosives Schnaufen",
-    "fr": "Fungaaah! Et boum!",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35028": {
-    "en": "Dangerous When Dead",
-    "ja": "至妙の傀儡子「ドゥリン」",
-    "de": "Begnadeter Puppenspieler",
-    "fr": "Durinn, marionnettiste d'outre-tombe",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35029": {
-    "en": "Red, Fraught, and Blue",
-    "ja": "水と炎の歌",
-    "de": "Die Melodie von Feuer und Wasser",
-    "fr": "La mélodie du feu et de l'eau",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35030": {
-    "en": "The Catch of the Siegfried",
-    "ja": "世界一の剣士「ジークフリード」",
-    "de": "Siegfried, der beste Schwertkämpfer der Welt!",
-    "fr": "Siegfried, le plus grand bretteur du monde",
-    "icon": "/i/061000/061836.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "35031": {
-    "en": "Anything Gogo's",
-    "ja": "黄金頭巾「ものまね士ゴゴ」",
-    "de": "Gogo der Mime",
-    "fr": "Gogo le mime",
-    "icon": "/i/061000/061836.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       26206,
       26200
@@ -4689,7 +4689,11 @@
     "ja": null,
     "de": null,
     "fr": null,
-    "icon": null
+    "icon": null,
+    "contentText": [
+      34267,
+      34000
+    ]
   },
   "36002": {
     "en": null,
@@ -4710,14 +4714,22 @@
     "ja": null,
     "de": null,
     "fr": null,
-    "icon": null
+    "icon": null,
+    "contentText": [
+      34272,
+      34000
+    ]
   },
   "37002": {
     "en": null,
     "ja": null,
     "de": null,
     "fr": null,
-    "icon": null
+    "icon": null,
+    "contentText": [
+      34272,
+      34000
+    ]
   },
   "37003": {
     "en": null,
@@ -4916,67 +4928,67 @@
     "icon": null
   },
   "40027": {
-    "en": "The Palaistra",
-    "ja": "パライストラ",
-    "de": "Die Palästra",
-    "fr": "Le Palestre",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "40028": {
-    "en": "The Volcanic Heart",
-    "ja": "ヴォルカニック・ハート",
-    "de": "Das Herz des Vulkans",
-    "fr": "Le Cœur volcanique",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "40029": {
-    "en": "Cloud Nine",
-    "ja": "クラウドナイン",
-    "de": "Wolke Sieben",
-    "fr": "Le Petit Nuage",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "40030": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "40031": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "40032": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "40033": {
-    "en": "Crystalline Conflict (Custom Match - The Palaistra)",
-    "ja": "クリスタルコンフリクト(パライストラ：カスタムマッチ)",
-    "de": "Crystalline Conflict: Die Palästra (Schaukampf)",
-    "fr": "Crystalline Conflict (partie personnalisée - Le Palestre)",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "40034": {
-    "en": "Crystalline Conflict (Custom Match - The Volcanic Heart)",
-    "ja": "クリスタルコンフリクト(ヴォルカニック・ハート：カスタムマッチ)",
-    "de": "Crystalline Conflict: Das Herz des Vulkans (Schaukampf)",
-    "fr": "Crystalline Conflict (partie personnalisée - Le Cœur volcanique)",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "40035": {
-    "en": "Crystalline Conflict (Custom Match - Cloud Nine)",
-    "ja": "クリスタルコンフリクト(クラウドナイン：カスタムマッチ)",
-    "de": "Crystalline Conflict: Wolke Sieben (Schaukampf)",
-    "fr": "Crystalline Conflict (partie personnalisée - Le Petit Nuage)",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "40036": {
     "en": null,
@@ -4993,11 +5005,11 @@
     "icon": null
   },
   "50001": {
-    "en": "the Borderland Ruins (Secure)",
-    "ja": "外縁遺跡群 (制圧戦)",
-    "de": "Äußere Ruinen (Sicherung)",
-    "fr": "les Ruines frontalières (annexion)",
-    "icon": "/i/061000/061806.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       8910,
       8910
@@ -5018,33 +5030,33 @@
     "icon": null
   },
   "50004": {
-    "en": "Seal Rock (Seize)",
-    "ja": "シールロック (争奪戦)",
-    "de": "Robbenholm (Eroberung)",
-    "fr": "le Rocher des tréfonds (invasion)",
-    "icon": "/i/061000/061806.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       8900,
       8900
     ]
   },
   "50005": {
-    "en": "the Fields of Glory (Shatter)",
-    "ja": "フィールド・オブ・グローリー (砕氷戦)",
-    "de": "Feld der Ehre (Zersplitterung)",
-    "fr": "les Champs de la Gloire (brise-glace)",
-    "icon": "/i/061000/061806.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       8902,
       8901
     ]
   },
   "50006": {
-    "en": "Onsal Hakair (Danshig Naadam)",
-    "ja": "オンサル・ハカイル (終節戦)",
-    "de": "Onsal Hakair (Danshig Naadam)",
-    "fr": "Onsal Hakair (Danshig Naadam)",
-    "icon": "/i/061000/061806.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       23701,
       23700
@@ -5065,18 +5077,18 @@
     "icon": null
   },
   "51001": {
-    "en": "Astragalos",
-    "ja": "アストラガロス (機工戦)",
-    "de": "Astragalos",
-    "fr": "Astragalos (machinerie)",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "51002": {
-    "en": "Hidden Gorge",
-    "ja": "ヒドゥンゴージ (機工戦)",
-    "de": "Verborgene Schlucht",
-    "fr": "Gorge dérobée (machinerie)",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "51003": {
     "en": null,
@@ -5093,44 +5105,44 @@
     "icon": null
   },
   "55001": {
-    "en": "the Aquapolis",
-    "ja": "宝物庫 アクアポリス",
-    "de": "Aquapolis",
-    "fr": "l'Aquapole",
-    "icon": "/i/061000/061808.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       12810,
       12800
     ]
   },
   "55002": {
-    "en": "the Lost Canals of Uznair",
-    "ja": "宝物庫 ウズネアカナル",
-    "de": "Kanäle von Uznair",
-    "fr": "les Canaux perdus d'Uznair",
-    "icon": "/i/061000/061808.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       12810,
       12800
     ]
   },
   "55003": {
-    "en": "the Hidden Canals of Uznair",
-    "ja": "宝物庫 ウズネアカナル深層",
-    "de": "Vergessene Kanäle von Uznair",
-    "fr": "les Canaux cachés d'Uznair",
-    "icon": "/i/061000/061808.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       12810,
       12800
     ]
   },
   "55004": {
-    "en": "the Shifting Altars of Uznair",
-    "ja": "宝物庫 ウズネアカナル祭殿",
-    "de": "Glücksaltäre von Uznair",
-    "fr": "le Temple sacré d'Uznair",
-    "icon": "/i/061000/061808.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       12810,
       12800
@@ -5144,11 +5156,11 @@
     "icon": null
   },
   "55006": {
-    "en": "The Dungeons of Lyhe Ghiah",
-    "ja": "宝物庫 リェー・ギア・ダンジョン",
-    "de": "Verliese von Lyhe Ghiah",
-    "fr": "le Donjon hypogéen du Lyhe Ghiah",
-    "icon": "/i/061000/061808.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       12810,
       12800
@@ -5162,22 +5174,22 @@
     "icon": null
   },
   "55008": {
-    "en": "the Shifting Oubliettes of Lyhe Ghiah",
-    "ja": "宝物庫 リェー・ギア・ダンジョン祭殿",
-    "de": "Das Karussell von Lyhe Ghiah",
-    "fr": "le Jardin secret du Lyhe Ghiah",
-    "icon": "/i/061000/061808.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       12810,
       12800
     ]
   },
   "55009": {
-    "en": "The Excitatron 6000",
-    "ja": "宝物庫 エキサイトロン",
-    "de": "Euphoratron",
-    "fr": "Le Ludodrome",
-    "icon": "/i/061000/061808.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       12810,
       12800
@@ -5205,218 +5217,218 @@
     "icon": null
   },
   "60001": {
-    "en": "the Palace of the Dead (Floors 1-10)",
-    "ja": "死者の宮殿 B1～B10",
-    "de": "Palast der Toten (Ebenen 1-10)",
-    "fr": "le Palais des morts (sous-sols 1-10)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60002": {
-    "en": "the Palace of the Dead (Floors 11-20)",
-    "ja": "死者の宮殿 B11～B20",
-    "de": "Palast der Toten (Ebenen 11-20)",
-    "fr": "le Palais des morts (sous-sols 11-20)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60003": {
-    "en": "the Palace of the Dead (Floors 21-30)",
-    "ja": "死者の宮殿 B21～B30",
-    "de": "Palast der Toten (Ebenen 21-30)",
-    "fr": "le Palais des morts (sous-sols 21-30)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60004": {
-    "en": "the Palace of the Dead (Floors 31-40)",
-    "ja": "死者の宮殿 B31～B40",
-    "de": "Palast der Toten (Ebenen 31-40)",
-    "fr": "le Palais des morts (sous-sols 31-40)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60005": {
-    "en": "the Palace of the Dead (Floors 41-50)",
-    "ja": "死者の宮殿 B41～B50",
-    "de": "Palast der Toten (Ebenen 41-50)",
-    "fr": "le Palais des morts (sous-sols 41-50)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60006": {
-    "en": "the Palace of the Dead (Floors 51-60)",
-    "ja": "死者の宮殿 B51～B60",
-    "de": "Palast der Toten (Ebenen 51 - 60)",
-    "fr": "le Palais des morts (sous-sols 51-60)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60007": {
-    "en": "the Palace of the Dead (Floors 61-70)",
-    "ja": "死者の宮殿 B61～B70",
-    "de": "Palast der Toten (Ebenen 61 - 70)",
-    "fr": "le Palais des morts (sous-sols 61-70)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60008": {
-    "en": "the Palace of the Dead (Floors 71-80)",
-    "ja": "死者の宮殿 B71～B80",
-    "de": "Palast der Toten (Ebenen 71 - 80)",
-    "fr": "le Palais des morts (sous-sols 71-80)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60009": {
-    "en": "the Palace of the Dead (Floors 81-90)",
-    "ja": "死者の宮殿 B81～B90",
-    "de": "Palast der Toten (Ebenen 81 - 90)",
-    "fr": "le Palais des morts (sous-sols 81-90)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60010": {
-    "en": "the Palace of the Dead (Floors 91-100)",
-    "ja": "死者の宮殿 B91～B100",
-    "de": "Palast der Toten (Ebenen 91 - 100)",
-    "fr": "le Palais des morts (sous-sols 91-100)",
-    "icon": "/i/061000/061824.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       13903,
       13900
     ]
   },
   "60011": {
-    "en": "the Palace of the Dead (Floors 101-110)",
-    "ja": "死者の宮殿 B101～B110",
-    "de": "Palast der Toten (Ebenen 101 - 110)",
-    "fr": "le Palais des morts (sous-sols 101-110)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60012": {
-    "en": "the Palace of the Dead (Floors 111-120)",
-    "ja": "死者の宮殿 B111～B120",
-    "de": "Palast der Toten (Ebenen 111 - 120)",
-    "fr": "le Palais des morts (sous-sols 111-120)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60013": {
-    "en": "the Palace of the Dead (Floors 121-130)",
-    "ja": "死者の宮殿 B121～B130",
-    "de": "Palast der Toten (Ebenen 121 - 130)",
-    "fr": "le Palais des morts (sous-sols 121-130)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60014": {
-    "en": "the Palace of the Dead (Floors 131-140)",
-    "ja": "死者の宮殿 B131～B140",
-    "de": "Palast der Toten (Ebenen 131 - 140)",
-    "fr": "le Palais des morts (sous-sols 131-140)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60015": {
-    "en": "the Palace of the Dead (Floors 141-150)",
-    "ja": "死者の宮殿 B141～B150",
-    "de": "Palast der Toten (Ebenen 141 - 150)",
-    "fr": "le Palais des morts (sous-sols 141-150)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60016": {
-    "en": "the Palace of the Dead (Floors 151-160)",
-    "ja": "死者の宮殿 B151～B160",
-    "de": "Palast der Toten (Ebenen 151 - 160)",
-    "fr": "le Palais des morts (sous-sols 151-160)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60017": {
-    "en": "the Palace of the Dead (Floors 161-170)",
-    "ja": "死者の宮殿 B161～B170",
-    "de": "Palast der Toten (Ebenen 161 - 170)",
-    "fr": "le Palais des morts (sous-sols 161-170)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60018": {
-    "en": "the Palace of the Dead (Floors 171-180)",
-    "ja": "死者の宮殿 B171～B180",
-    "de": "Palast der Toten (Ebenen 171 - 180)",
-    "fr": "le Palais des morts (sous-sols 171-180)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60019": {
-    "en": "the Palace of the Dead (Floors 181-190)",
-    "ja": "死者の宮殿 B181～B190",
-    "de": "Palast der Toten (Ebenen 181 - 190)",
-    "fr": "le Palais des morts (sous-sols 181-190)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60020": {
-    "en": "the Palace of the Dead (Floors 191-200)",
-    "ja": "死者の宮殿 B191～B200",
-    "de": "Palast der Toten (Ebenen 191 - 200)",
-    "fr": "le Palais des morts (sous-sols 191-200)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60021": {
-    "en": "Heaven-on-High  (Floors 1-10)",
-    "ja": "アメノミハシラ 1～10層",
-    "de": "Himmelssäule (Ebenen 1-10)",
-    "fr": "le Pilier des Cieux (étages 1-10)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60022": {
-    "en": "Heaven-on-High  (Floors 11-20)",
-    "ja": "アメノミハシラ 11～20層",
-    "de": "Himmelssäule (Ebenen 11-20)",
-    "fr": "le Pilier des Cieux (étages 11-20)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60023": {
-    "en": "Heaven-on-High  (Floors 21-30)",
-    "ja": "アメノミハシラ 21～30層",
-    "de": "Himmelssäule (Ebenen 21-30)",
-    "fr": "le Pilier des Cieux (étages 21-30)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60024": {
-    "en": "Heaven-on-High  (Floors 31-40)",
-    "ja": "アメノミハシラ 31～40層",
-    "de": "Himmelssäule (Ebenen 31-40)",
-    "fr": "le Pilier des Cieux (étages 31-40)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60025": {
-    "en": "Heaven-on-High  (Floors 41-50)",
-    "ja": "アメノミハシラ 41～50層",
-    "de": "Himmelssäule (Ebenen 41-50)",
-    "fr": "le Pilier des Cieux (étages 41-50)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60026": {
-    "en": "Heaven-on-High  (Floors 51-60)",
-    "ja": "アメノミハシラ 51～60層",
-    "de": "Himmelssäule (Ebenen 51-60)",
-    "fr": "le Pilier des Cieux (étages 51-60)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60027": {
-    "en": "Heaven-on-High  (Floors 61-70)",
-    "ja": "アメノミハシラ 61～70層",
-    "de": "Himmelssäule (Ebenen 61-70)",
-    "fr": "le Pilier des Cieux (étages 61-70)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60028": {
-    "en": "Heaven-on-High  (Floors 71-80)",
-    "ja": "アメノミハシラ 71～80層",
-    "de": "Himmelssäule (Ebenen 71-80)",
-    "fr": "le Pilier des Cieux (étages 71-80)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60029": {
-    "en": "Heaven-on-High  (Floors 81-90)",
-    "ja": "アメノミハシラ 81～90層",
-    "de": "Himmelssäule (Ebenen 81-90)",
-    "fr": "le Pilier des Cieux (étages 81-90)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60030": {
-    "en": "Heaven-on-High  (Floors 91-100)",
-    "ja": "アメノミハシラ 91～100層",
-    "de": "Himmelssäule (Ebenen 91-100)",
-    "fr": "le Pilier des Cieux (étages 91-100)",
-    "icon": "/i/061000/061824.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "60031": {
     "en": null,
@@ -5433,60 +5445,60 @@
     "icon": null
   },
   "61001": {
-    "en": "Novice Mahjong (Full Ranked Match)",
-    "ja": "ドマ式麻雀：半荘戦一般卓（段位変動有り）",
-    "de": "Anfänger-Mahjong (komplette Partie, gewertet)",
-    "fr": "Mahjong domien: tous rangs (partie classée)",
-    "icon": "/i/061000/061820.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "61002": {
-    "en": "Advanced Mahjong (Full Ranked Match)",
-    "ja": "ドマ式麻雀：半荘戦有段卓（段位変動有り）",
-    "de": "Fortgeschrittenen-Mahjong (komplette Partie, gewertet)",
-    "fr": "Mahjong domien: dan seulement (partie classée)",
-    "icon": "/i/061000/061820.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "61003": {
-    "en": "Four-player Mahjong (Full Match, Kuitan Enabled)",
-    "ja": "ドマ式麻雀：半荘戦4人セット卓（クイタン有り）",
-    "de": "4-Spieler-Mahjong (komplette Partie, Kuitan aktiviert)",
-    "fr": "Mahjong domien: 4 joueurs (partie avec kuitan)",
-    "icon": "/i/061000/061820.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "61004": {
-    "en": "Four-player Mahjong (Full Match, Kuitan Disabled)",
-    "ja": "ドマ式麻雀：半荘戦4人セット卓（クイタン無し）",
-    "de": "4-Spieler-Mahjong (komplette Partie, Kuitan deaktiviert)",
-    "fr": "Mahjong domien: 4 joueurs (partie sans kuitan)",
-    "icon": "/i/061000/061820.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "61005": {
-    "en": "Novice Mahjong (Quick Ranked Match)",
-    "ja": "ドマ式麻雀：東風戦一般卓（段位変動有り）",
-    "de": "Anfänger-Mahjong (schnelle Partie, gewertet)",
-    "fr": "Mahjong domien: tous rangs (partie rapide classée)",
-    "icon": "/i/061000/061820.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "61006": {
-    "en": "Advanced Mahjong (Quick Ranked Match)",
-    "ja": "ドマ式麻雀：東風戦有段卓（段位変動有り）",
-    "de": "Fortgeschrittenen-Mahjong (schnelle Partie, gewertet)",
-    "fr": "Mahjong domien: dan seulement (partie rapide classée)",
-    "icon": "/i/061000/061820.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "61007": {
-    "en": "Four-player Mahjong (Quick Match, Kuitan Enabled)",
-    "ja": "ドマ式麻雀：東風戦4人セット卓（クイタン有り）",
-    "de": "4-Spieler-Mahjong (schnelle Partie, Kuitan aktiviert)",
-    "fr": "Mahjong domien: 4 joueurs (partie rapide avec kuitan)",
-    "icon": "/i/061000/061820.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "61008": {
-    "en": "Four-player Mahjong (Quick Match, Kuitan Disabled)",
-    "ja": "ドマ式麻雀：東風戦4人セット卓（クイタン無し）",
-    "de": "4-Spieler-Mahjong (schnelle Partie, Kuitan deaktiviert)",
-    "fr": "Mahjong domien: 4 joueurs (partie rapide sans kuitan)",
-    "icon": "/i/061000/061820.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "61009": {
     "en": null,
@@ -5496,153 +5508,153 @@
     "icon": null
   },
   "62000": {
-    "en": "Air Force One",
-    "ja": "出撃！ エアフォースパイロット",
-    "de": "Luftwaffe, Feuer frei!",
-    "fr": "As de l'air",
-    "icon": "/i/061000/061820.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "62001": {
-    "en": "Air Force One",
-    "ja": "出撃！ エアフォースパイロット",
-    "de": "Luftwaffe, Feuer frei!",
-    "fr": "As de l'air",
-    "icon": "/i/061000/061820.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "62002": {
-    "en": "Air Force One",
-    "ja": "出撃！ エアフォースパイロット",
-    "de": "Luftwaffe, Feuer frei!",
-    "fr": "As de l'air",
-    "icon": "/i/061000/061820.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "63000": {
-    "en": "Ocean Fishing",
-    "ja": "オーシャンフィッシング",
-    "de": "Auf großer Fahrt",
-    "fr": "Pêche en mer",
-    "icon": "/i/061000/061815.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24940,
       24900
     ]
   },
   "63001": {
-    "en": "Ocean Fishing",
-    "ja": "オーシャンフィッシング",
-    "de": "Auf großer Fahrt",
-    "fr": "Pêche en mer",
-    "icon": "/i/061000/061815.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24940,
       24900
     ]
   },
   "63002": {
-    "en": "Ocean Fishing",
-    "ja": "オーシャンフィッシング",
-    "de": "Auf großer Fahrt",
-    "fr": "Pêche en mer",
-    "icon": "/i/061000/061815.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24940,
       24900
     ]
   },
   "63003": {
-    "en": "Ocean Fishing",
-    "ja": "オーシャンフィッシング",
-    "de": "Auf großer Fahrt",
-    "fr": "Pêche en mer",
-    "icon": "/i/061000/061815.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24940,
       24900
     ]
   },
   "63004": {
-    "en": "Ocean Fishing",
-    "ja": "オーシャンフィッシング",
-    "de": "Auf großer Fahrt",
-    "fr": "Pêche en mer",
-    "icon": "/i/061000/061815.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24940,
       24900
     ]
   },
   "63005": {
-    "en": "Ocean Fishing",
-    "ja": "オーシャンフィッシング",
-    "de": "Auf großer Fahrt",
-    "fr": "Pêche en mer",
-    "icon": "/i/061000/061815.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24940,
       24900
     ]
   },
   "63006": {
-    "en": "Ocean Fishing",
-    "ja": "オーシャンフィッシング",
-    "de": "Auf großer Fahrt",
-    "fr": "Pêche en mer",
-    "icon": "/i/061000/061815.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24940,
       24900
     ]
   },
   "63007": {
-    "en": "Ocean Fishing",
-    "ja": "オーシャンフィッシング",
-    "de": "Auf großer Fahrt",
-    "fr": "Pêche en mer",
-    "icon": "/i/061000/061815.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24940,
       24900
     ]
   },
   "63008": {
-    "en": "Ocean Fishing",
-    "ja": "オーシャンフィッシング",
-    "de": "Auf großer Fahrt",
-    "fr": "Pêche en mer",
-    "icon": "/i/061000/061815.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24940,
       24900
     ]
   },
   "63009": {
-    "en": "Ocean Fishing",
-    "ja": "オーシャンフィッシング",
-    "de": "Auf großer Fahrt",
-    "fr": "Pêche en mer",
-    "icon": "/i/061000/061815.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24940,
       24900
     ]
   },
   "63010": {
-    "en": "Ocean Fishing",
-    "ja": "オーシャンフィッシング",
-    "de": "Auf großer Fahrt",
-    "fr": "Pêche en mer",
-    "icon": "/i/061000/061815.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24940,
       24900
     ]
   },
   "63011": {
-    "en": "Ocean Fishing",
-    "ja": "オーシャンフィッシング",
-    "de": "Auf großer Fahrt",
-    "fr": "Pêche en mer",
-    "icon": "/i/061000/061815.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       24940,
       24900
@@ -5684,11 +5696,11 @@
     "icon": null
   },
   "64005": {
-    "en": "Containment Bay S1T7 (Unreal)",
-    "ja": "幻魔神セフィロト討滅戦",
-    "de": "Traumprüfung - Sephirot",
-    "fr": "Unité de contention S1P7 (irréel)",
-    "icon": "/i/061000/061804.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
       9907,
       9900

@@ -1355,21 +1355,21 @@
     "ja": "シールドウォール",
     "de": "Schutzschild",
     "fr": "Mur protecteur",
-    "icon": "/i/016000/016401.png"
+    "icon": "/i/016000/016306.png"
   },
   "195": {
     "en": "Stronghold",
     "ja": "ストロングホールド",
     "de": "Bastion",
     "fr": "Citadelle",
-    "icon": "/i/016000/016401.png"
+    "icon": "/i/016000/016306.png"
   },
   "196": {
     "en": "Last Bastion",
     "ja": "ラストバスティオン",
     "de": "Letzte Bastion",
     "fr": "Dernier bastion",
-    "icon": "/i/016000/016401.png"
+    "icon": "/i/016000/016306.png"
   },
   "197": {
     "en": "Blaze Spikes",
@@ -4778,14 +4778,14 @@
     "ja": "土の加護",
     "de": "Segen der Erde",
     "fr": "Bénédiction de la terre",
-    "icon": "/i/015000/015103.png"
+    "icon": "/i/015000/015071.png"
   },
   "684": {
     "en": "Blessing of Fire",
     "ja": "火の加護",
     "de": "Segen des Feuers",
     "fr": "Bénédiction du feu",
-    "icon": "/i/015000/015100.png"
+    "icon": "/i/015000/015068.png"
   },
   "685": {
     "en": "Wind Resistance Down",
@@ -5449,7 +5449,7 @@
     "en": "Out of Body",
     "ja": "幽体離脱",
     "de": "Außerkörperlichkeit",
-    "fr": "Détachement corporel",
+    "fr": "Dissociation corps-âme",
     "icon": "/i/015000/015797.png"
   },
   "780": {
@@ -6038,14 +6038,14 @@
     "ja": "原初の大地",
     "de": "Erdbrecher",
     "fr": "Terre vierge",
-    "icon": "/i/016000/016401.png"
+    "icon": "/i/016000/016306.png"
   },
   "864": {
     "en": "Dark Force",
     "ja": "ダークフォース",
     "de": "Dunkle Macht",
     "fr": "Force des ténèbres",
-    "icon": "/i/016000/016401.png"
+    "icon": "/i/016000/016306.png"
   },
   "865": {
     "en": "The Wanderer's Minuet",
@@ -10735,7 +10735,7 @@
     "ja": "ロールプレイ",
     "de": "Rollenwechsel",
     "fr": "Jeu de rôle",
-    "icon": "/i/015000/015111.png"
+    "icon": "/i/016000/016401.png"
   },
   "1535": {
     "en": "Full Moon",
@@ -11127,7 +11127,7 @@
     "ja": "炎の妖異",
     "de": "Zwielichtige Flammen",
     "fr": "Lumière du néant",
-    "icon": "/i/015000/015100.png"
+    "icon": "/i/015000/015068.png"
   },
   "1591": {
     "en": "Woken",
@@ -13010,14 +13010,14 @@
     "ja": "命脈負荷",
     "de": "Geschwächter Lebensäther",
     "fr": "Fardeau de survie",
-    "icon": "/i/015000/015116.png"
+    "icon": "/i/016000/016406.png"
   },
   "1860": {
     "en": "Vital Sign",
     "ja": "生命活動停滞",
     "de": "Stillstand des Lebens",
     "fr": "Suspens vital",
-    "icon": "/i/015000/015117.png"
+    "icon": "/i/016000/016407.png"
   },
   "1861": {
     "en": "Leaden Fist",
@@ -13339,14 +13339,14 @@
     "ja": "パーフェクトインビジブル",
     "de": "Perfekte Unsichtbarkeit",
     "fr": "Invisibilité parfaite",
-    "icon": "/i/015000/015112.png"
+    "icon": "/i/016000/016402.png"
   },
   "1907": {
     "en": "Faded Out",
     "ja": "身体高負荷",
     "de": "Körperliche Last",
     "fr": "Faix prodigieux",
-    "icon": "/i/015000/015114.png"
+    "icon": "/i/016000/016404.png"
   },
   "1908": {
     "en": "Fetters",
@@ -13514,7 +13514,7 @@
     "ja": "ソウルガンメタル",
     "de": "Cermet-Matrix",
     "fr": "Âme de métal",
-    "icon": "/i/016000/016401.png"
+    "icon": "/i/016000/016306.png"
   },
   "1932": {
     "en": "Army's Muse",
@@ -13559,11 +13559,11 @@
     "icon": "/i/015000/015765.png"
   },
   "1938": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Sprint",
+    "ja": "スプリント",
+    "de": "Sprint",
+    "fr": "Sprint",
+    "icon": "/i/010000/010101.png"
   },
   "1939": {
     "en": "Beckoned",
@@ -13689,7 +13689,7 @@
     "ja": "ソウルレスインビジブル",
     "de": "Seelisch unsichtbar",
     "fr": "Invisibilité sans âme",
-    "icon": "/i/015000/015113.png"
+    "icon": "/i/016000/016403.png"
   },
   "1957": {
     "en": "",
@@ -14473,7 +14473,7 @@
     "ja": "スマックダウン",
     "de": "Niederschmetternd",
     "fr": "Amour paternel",
-    "icon": "/i/015000/015115.png"
+    "icon": "/i/016000/016405.png"
   },
   "2069": {
     "en": "Dissipation",
@@ -16650,7 +16650,7 @@
     "ja": "特殊戦闘",
     "de": "Spezialangriff",
     "fr": "Combat spécial",
-    "icon": "/i/015000/015111.png"
+    "icon": "/i/016000/016401.png"
   },
   "2380": {
     "en": "Warmonger",
@@ -19229,17 +19229,17 @@
     "icon": ""
   },
   "2748": {
-    "en": "_rsv_2748_-1_1_C0_0Status",
-    "ja": "_rsv_2748_-1_0_C0_0Status",
-    "de": "_rsv_2748_-1_2_C0_0Status",
-    "fr": "_rsv_2748_-1_3_C0_0Status",
+    "en": "Soul of Friendship",
+    "ja": "盟友の想い",
+    "de": "Essenz der Freundschaft",
+    "fr": "Amitié éternelle",
     "icon": "/i/015000/015450.png"
   },
   "2749": {
-    "en": "_rsv_2749_-1_1_C0_0Status",
-    "ja": "_rsv_2749_-1_0_C0_0Status",
-    "de": "_rsv_2749_-1_2_C0_0Status",
-    "fr": "_rsv_2749_-1_3_C0_0Status",
+    "en": "Soul of Devotion",
+    "ja": "巫女の想い",
+    "de": "Essenz der Tugend",
+    "fr": "Dévotion éternelle",
     "icon": "/i/015000/015451.png"
   },
   "2750": {
@@ -19299,17 +19299,17 @@
     "icon": "/i/015000/015391.png"
   },
   "2758": {
-    "en": "_rsv_2758_-1_1_C0_0Status",
-    "ja": "_rsv_2758_-1_0_C0_0Status",
-    "de": "_rsv_2758_-1_2_C0_0Status",
-    "fr": "_rsv_2758_-1_3_C0_0Status",
+    "en": "Spreading Flames",
+    "ja": "復讐の炎",
+    "de": "Flammende Rache",
+    "fr": "Vengeance consumante",
     "icon": "/i/015000/015452.png"
   },
   "2759": {
-    "en": "_rsv_2759_-1_1_C0_0Status",
-    "ja": "_rsv_2759_-1_0_C0_0Status",
-    "de": "_rsv_2759_-1_2_C0_0Status",
-    "fr": "_rsv_2759_-1_3_C0_0Status",
+    "en": "Entangled Flames",
+    "ja": "道連れの炎",
+    "de": "Verwobene Flammen",
+    "fr": "Flammes enchevêtrées",
     "icon": "/i/015000/015453.png"
   },
   "2760": {
@@ -19432,10 +19432,10 @@
     "icon": "/i/015000/015735.png"
   },
   "2777": {
-    "en": "_rsv_2777_-1_1_C0_0Status",
-    "ja": "_rsv_2777_-1_0_C0_0Status",
-    "de": "_rsv_2777_-1_2_C0_0Status",
-    "fr": "_rsv_2777_-1_3_C0_0Status",
+    "en": "Bound and Determined",
+    "ja": "爪牙不変",
+    "de": "Nidhoggs Stigmata",
+    "fr": "Stigmates de Nidhogg",
     "icon": "/i/015000/015454.png"
   },
   "2778": {
@@ -19814,7 +19814,7 @@
     "ja": "シールド・オブ・ハルオーネ",
     "de": "Halones Schild",
     "fr": "Bouclier de la Conquérante",
-    "icon": "/i/016000/016401.png"
+    "icon": "/i/016000/016306.png"
   },
   "2832": {
     "en": "Tenebrous Grasp",
@@ -20108,7 +20108,7 @@
     "ja": "リミットブレイク",
     "de": "Limitrausch",
     "fr": "Transcendance",
-    "icon": "/i/016000/016403.png"
+    "icon": "/i/016000/016308.png"
   },
   "2874": {
     "en": "Shackles of Time",
@@ -20258,24 +20258,24 @@
     "icon": ""
   },
   "2895": {
-    "en": "_rsv_2895_-1_1_C0_0Status",
-    "ja": "_rsv_2895_-1_0_C0_0Status",
-    "de": "_rsv_2895_-1_2_C0_0Status",
-    "fr": "_rsv_2895_-1_3_C0_0Status",
+    "en": "Solemn Vow",
+    "ja": "不殺の誓い",
+    "de": "Schwur des Friedens",
+    "fr": "Serment de paix",
     "icon": "/i/015000/015456.png"
   },
   "2896": {
-    "en": "_rsv_2896_-1_1_C0_0Status",
-    "ja": "_rsv_2896_-1_0_C0_0Status",
-    "de": "_rsv_2896_-1_2_C0_0Status",
-    "fr": "_rsv_2896_-1_3_C0_0Status",
+    "en": "Mortal Vow",
+    "ja": "滅殺の誓い",
+    "de": "Schwur der Vergeltung",
+    "fr": "Vœu d'anéantissement",
     "icon": "/i/015000/015457.png"
   },
   "2897": {
-    "en": "_rsv_2897_-1_1_C0_0Status",
-    "ja": "_rsv_2897_-1_0_C0_0Status",
-    "de": "_rsv_2897_-1_2_C0_0Status",
-    "fr": "_rsv_2897_-1_3_C0_0Status",
+    "en": "Mortal Atonement",
+    "ja": "滅殺の償い",
+    "de": "Versiegte Vergeltung",
+    "fr": "Vœu d'anéantissement rompu",
     "icon": "/i/015000/015458.png"
   },
   "2898": {
@@ -20832,17 +20832,17 @@
     "icon": "/i/015000/015503.png"
   },
   "2977": {
-    "en": "_rsv_2977_-1_1_C0_0Status",
-    "ja": "_rsv_2977_-1_0_C0_0Status",
-    "de": "_rsv_2977_-1_2_C0_0Status",
-    "fr": "_rsv_2977_-1_3_C0_0Status",
+    "en": "HP Recovery Down",
+    "ja": "被回復低下",
+    "de": "Heilung -",
+    "fr": "Soins diminués",
     "icon": "/i/015000/015427.png"
   },
   "2978": {
-    "en": "_rsv_2978_-1_1_C0_0Status",
-    "ja": "_rsv_2978_-1_0_C0_0Status",
-    "de": "_rsv_2978_-1_2_C0_0Status",
-    "fr": "_rsv_2978_-1_3_C0_0Status",
+    "en": "HP Recovery Down",
+    "ja": "被回復低下",
+    "de": "Heilung -",
+    "fr": "Soins diminués",
     "icon": "/i/015000/015427.png"
   },
   "2979": {
@@ -21343,7 +21343,7 @@
     "icon": "/i/014000/014902.png"
   },
   "3050": {
-    "en": "Eye Gauge",
+    "en": "Eye Gouge",
     "ja": "アイガウジ",
     "de": "Augenstecher",
     "fr": "Perforation des yeux",
@@ -21553,11 +21553,11 @@
     "icon": "/i/012000/012905.png"
   },
   "3080": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Rhythmetic Fever",
+    "ja": "フィーバー",
+    "de": "Rhythmus-Fieber",
+    "fr": "Fièvre",
+    "icon": "/i/015000/015480.png"
   },
   "3081": {
     "en": "Toxicosis",
@@ -22477,32 +22477,32 @@
     "icon": "/i/012000/012916.png"
   },
   "3212": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3213": {
     "en": "Astral Fire II",
     "ja": "アストラルファイアII",
     "de": "Lichtfeuer II",
     "fr": "Feu astral II",
     "icon": "/i/010000/010464.png"
   },
-  "3213": {
-    "en": "Astral Fire III",
-    "ja": "アストラルファイアIII",
-    "de": "Lichtfeuer III",
-    "fr": "Feu astral III",
-    "icon": "/i/010000/010465.png"
-  },
   "3214": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3215": {
     "en": "Umbral Ice II",
     "ja": "アンブラルブリザードII",
     "de": "Schatteneis II",
     "fr": "Glace ombrale II",
     "icon": "/i/010000/010467.png"
-  },
-  "3215": {
-    "en": "Umbral Ice III",
-    "ja": "アンブラルブリザードIII",
-    "de": "Schatteneis III",
-    "fr": "Glace ombrale III",
-    "icon": "/i/010000/010468.png"
   },
   "3216": {
     "en": "Astral Warmth",
@@ -22575,10 +22575,10 @@
     "icon": "/i/012000/012695.png"
   },
   "3226": {
-    "en": "スリップストリーム",
+    "en": "Slipstream",
     "ja": "スリップストリーム",
-    "de": "スリップストリーム",
-    "fr": "スリップストリーム",
+    "de": "Wirbelströmung",
+    "fr": "Sillage",
     "icon": "/i/014000/014962.png"
   },
   "3227": {
@@ -22820,18 +22820,18 @@
     "icon": "/i/015000/015519.png"
   },
   "3261": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Concentrated Poison",
+    "ja": "劇毒",
+    "de": "Starkes Gift",
+    "fr": "Poison concentré",
+    "icon": "/i/015000/015672.png"
   },
   "3262": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Liftoff",
+    "ja": "ノックアップ",
+    "de": "Hochschleudern",
+    "fr": "Décollage",
+    "icon": "/i/015000/015225.png"
   },
   "3263": {
     "en": "",
@@ -22848,11 +22848,11 @@
     "icon": ""
   },
   "3265": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Blood of the Dragon",
+    "ja": "蒼の竜血",
+    "de": "Drachenherz",
+    "fr": "Sang du dragon",
+    "icon": "/i/012000/012577.png"
   },
   "3266": {
     "en": "Burns",
@@ -22869,144 +22869,144 @@
     "icon": "/i/015000/015524.png"
   },
   "3268": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "First Brand",
+    "ja": "一の呪印",
+    "de": "Erstes Kryptogramm",
+    "fr": "Marque cryptique I",
+    "icon": "/i/016000/016711.png"
   },
   "3269": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Second Brand",
+    "ja": "二の呪印",
+    "de": "Zweites Kryptogramm",
+    "fr": "Marque cryptique II",
+    "icon": "/i/016000/016712.png"
   },
   "3270": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Third Brand",
+    "ja": "三の呪印",
+    "de": "Drittes Kryptogramm",
+    "fr": "Marque cryptique III",
+    "icon": "/i/016000/016713.png"
   },
   "3271": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Fourth Brand",
+    "ja": "四の呪印",
+    "de": "Viertes Kryptogramm",
+    "fr": "Marque cryptique IV",
+    "icon": "/i/016000/016714.png"
   },
   "3272": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "First Flame",
+    "ja": "火焔の呪印：一",
+    "de": "Erste Kryptoflamme",
+    "fr": "Flammes cryptiques I",
+    "icon": "/i/016000/016715.png"
   },
   "3273": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Second Flame",
+    "ja": "火焔の呪印：二",
+    "de": "Zweite Kryptoflamme",
+    "fr": "Flammes cryptiques II",
+    "icon": "/i/016000/016716.png"
   },
   "3274": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Third Flame",
+    "ja": "火焔の呪印：三",
+    "de": "Dritte Kryptoflamme",
+    "fr": "Flammes cryptiques III",
+    "icon": "/i/016000/016717.png"
   },
   "3275": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Fourth Flame",
+    "ja": "火焔の呪印：四",
+    "de": "Vierte Kryptoflamme",
+    "fr": "Flammes cryptiques IV",
+    "icon": "/i/016000/016718.png"
   },
   "3276": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Call of the Portal",
+    "ja": "転移の呪印",
+    "de": "Kryptisches Portal",
+    "fr": "Portail cryptique",
+    "icon": "/i/016000/016719.png"
   },
   "3277": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Rite of Passage",
+    "ja": "強制転移",
+    "de": "Zwangsteleport",
+    "fr": "Transfert forcé",
+    "icon": "/i/016000/016720.png"
   },
   "3278": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Forbidden Passage",
+    "ja": "転移不可",
+    "de": "Versiegelter Teleport",
+    "fr": "Transfert impossible",
+    "icon": "/i/016000/016721.png"
   },
   "3279": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Forbidden Passage",
+    "ja": "転移不可",
+    "de": "Versiegelter Teleport",
+    "fr": "Transfert impossible",
+    "icon": "/i/016000/016721.png"
   },
   "3280": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Blessing of Blight",
+    "ja": "腐土の恵み",
+    "de": "Fauliger Segen",
+    "fr": "Bénédiction nécromantique",
+    "icon": "/i/015000/015467.png"
   },
   "3281": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Warding Scale",
+    "ja": "星竜鱗",
+    "de": "Seelenwächter",
+    "fr": "Écaille du dragon ancien",
+    "icon": "/i/015000/015470.png"
   },
   "3282": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Brain Rot",
+    "ja": "腐土の呪い",
+    "de": "Fluch der Fäulnis",
+    "fr": "Malédiction nécromantique",
+    "icon": "/i/018000/018181.png"
   },
   "3283": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Fetters",
+    "ja": "拘束",
+    "de": "Gefesselt",
+    "fr": "Attache",
+    "icon": "/i/015000/015471.png"
   },
   "3284": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Tangled",
+    "ja": "呪髪呪縛",
+    "de": "Fesselnde Strähnen",
+    "fr": "Enchevêtrement",
+    "icon": "/i/015000/015472.png"
   },
   "3285": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Awareness",
+    "ja": "アウェアネス",
+    "de": "Achtsamkeit",
+    "fr": "Diligence",
+    "icon": "/i/013000/013916.png"
   },
   "3286": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Frozen",
+    "ja": "凍結",
+    "de": "Überfroren",
+    "fr": "Glaciation",
+    "icon": "/i/017000/017661.png"
   },
   "3287": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Deep Freeze",
+    "ja": "氷結",
+    "de": "Tiefkühlung",
+    "fr": "Congélation",
+    "icon": "/i/017000/017621.png"
   },
   "3288": {
     "en": "",
@@ -23023,76 +23023,1476 @@
     "icon": ""
   },
   "3290": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Echo of the Fallen",
+    "ja": "呪怨の残響",
+    "de": "Fluch des Äons",
+    "fr": "Écho déchu",
+    "icon": "/i/016000/016706.png"
   },
   "3291": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Scream of the Fallen",
+    "ja": "呪怨の大残響",
+    "de": "Fluch der Ewigkeit",
+    "fr": "Grand écho déchu",
+    "icon": "/i/016000/016707.png"
   },
   "3292": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Lingering Echoes",
+    "ja": "連呪の残響",
+    "de": "Verderb des Äons",
+    "fr": "Écho damné",
+    "icon": "/i/016000/016708.png"
   },
   "3293": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Thunderous Echo",
+    "ja": "重怨の残響",
+    "de": "Äonenlanger Hass",
+    "fr": "Écho réprouvé",
+    "icon": "/i/016000/016709.png"
   },
   "3294": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Chains of Resentment",
+    "ja": "呪毒の鎖",
+    "de": "Fluches Fessel",
+    "fr": "Chaîne maudite",
+    "icon": "/i/016000/016710.png"
   },
   "3295": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Gilded Fate",
+    "ja": "黄金の呪い",
+    "de": "Goldener Fluch",
+    "fr": "Malédiction dorée",
+    "icon": "/i/017000/017118.png"
   },
   "3296": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Silvered Fate",
+    "ja": "白銀の呪い",
+    "de": "Silberner Fluch",
+    "fr": "Malédiction argentée",
+    "icon": "/i/017000/017138.png"
   },
   "3297": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Bracing Suds",
+    "ja": "そよそよシャンプー",
+    "de": "Spritziger Schaum",
+    "fr": "Mousse tonifiante",
+    "icon": "/i/016000/016703.png"
   },
   "3298": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Chilling Suds",
+    "ja": "ひえひえシャンプー",
+    "de": "Kalter Schaum",
+    "fr": "Mousse givrée",
+    "icon": "/i/016000/016704.png"
   },
   "3299": {
+    "en": "Fizzling Suds",
+    "ja": "ぱちぱちシャンプー",
+    "de": "Prickelnder Schaum",
+    "fr": "Mousse pétillante",
+    "icon": "/i/016000/016705.png"
+  },
+  "3300": {
+    "en": "Medica II of the Seventh Dawn",
+    "ja": "サイオンズ・メディカラ",
+    "de": "Resedra der Morgenröte",
+    "fr": "Extra Médica des Héritiers",
+    "icon": "/i/010000/010413.png"
+  },
+  "3301": {
+    "en": "Excellence",
+    "ja": "エクセレンス",
+    "de": "Exzellenz",
+    "fr": "Excellence",
+    "icon": "/i/012000/012504.png"
+  },
+  "3302": {
+    "en": "Warding Scale",
+    "ja": "星竜鱗",
+    "de": "Seelenwächter",
+    "fr": "Écaille du dragon ancien",
+    "icon": "/i/012000/012504.png"
+  },
+  "3303": {
+    "en": "Supernal Guard",
+    "ja": "星壁",
+    "de": "Himmelsschutz",
+    "fr": "Mur astral",
+    "icon": "/i/010000/010151.png"
+  },
+  "3304": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
     "icon": ""
   },
-  "3300": {
+  "3305": {
+    "en": "Bracing Suds",
+    "ja": "そよそよシャンプー",
+    "de": "Spritziger Schaum",
+    "fr": "Mousse tonifiante",
+    "icon": "/i/016000/016703.png"
+  },
+  "3306": {
+    "en": "Chilling Suds",
+    "ja": "ひえひえシャンプー",
+    "de": "Kalter Schaum",
+    "fr": "Mousse givrée",
+    "icon": "/i/016000/016704.png"
+  },
+  "3307": {
+    "en": "Fizzling Suds",
+    "ja": "ぱちぱちシャンプー",
+    "de": "Prickelnder Schaum",
+    "fr": "Mousse pétillante",
+    "icon": "/i/016000/016705.png"
+  },
+  "3308": {
+    "en": "_rsv_3308_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3308_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3308_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3308_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015109.png"
+  },
+  "3309": {
+    "en": "_rsv_3309_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3309_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3309_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3309_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015113.png"
+  },
+  "3310": {
+    "en": "_rsv_3310_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3310_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3310_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3310_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015109.png"
+  },
+  "3311": {
+    "en": "_rsv_3311_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3311_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3311_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3311_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015113.png"
+  },
+  "3312": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3313": {
+    "en": "Aetherial Exchange",
+    "ja": "エーテルチェンジ",
+    "de": "Ätherwechsel",
+    "fr": "Changement éthéréen",
+    "icon": "/i/015000/015479.png"
+  },
+  "3314": {
+    "en": "Glossomorph",
+    "ja": "軟体寄生",
+    "de": "Glossomorph",
+    "fr": "Mollusque parasite",
+    "icon": "/i/015000/015473.png"
+  },
+  "3315": {
+    "en": "_rsv_3315_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3315_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3315_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3315_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015474.png"
+  },
+  "3316": {
+    "en": "Out of Control",
+    "ja": "制御不能",
+    "de": "Kontrollverlust",
+    "fr": "Incontrôlable",
+    "icon": "/i/015000/015475.png"
+  },
+  "3317": {
+    "en": "Consumption",
+    "ja": "細胞浸食",
+    "de": "Zellulärer Verfall",
+    "fr": "Rongement cellulaire",
+    "icon": "/i/019000/019617.png"
+  },
+  "3318": {
+    "en": "Bodily Manipulation",
+    "ja": "強制行動",
+    "de": "Zwangshandlung",
+    "fr": "Conduite forcée",
+    "icon": "/i/015000/015476.png"
+  },
+  "3319": {
+    "en": "_rsv_3319_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3319_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3319_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3319_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015477.png"
+  },
+  "3320": {
+    "en": "_rsv_3320_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3320_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3320_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3320_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015478.png"
+  },
+  "3321": {
+    "en": "_rsv_3321_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3321_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3321_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3321_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015770.png"
+  },
+  "3322": {
+    "en": "Glossomorph",
+    "ja": "軟体寄生",
+    "de": "Glossomorph",
+    "fr": "Mollusque parasite",
+    "icon": "/i/015000/015473.png"
+  },
+  "3323": {
+    "en": "Dark Resistance Down II",
+    "ja": "闇属性耐性低下［強］",
+    "de": "Dunkelresistenz - (stark)",
+    "fr": "Résistance aux Ténèbres réduite",
+    "icon": "/i/015000/015485.png"
+  },
+  "3324": {
+    "en": "Fetters",
+    "ja": "拘束",
+    "de": "Fesselung",
+    "fr": "Attache",
+    "icon": "/i/015000/015545.png"
+  },
+  "3325": {
+    "en": "_rsv_3325_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3325_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3325_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3325_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015486.png"
+  },
+  "3326": {
+    "en": "_rsv_3326_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3326_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3326_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3326_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015487.png"
+  },
+  "3327": {
+    "en": "_rsv_3327_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3327_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3327_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3327_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015488.png"
+  },
+  "3328": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3329": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3330": {
+    "en": "_rsv_3330_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3330_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3330_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3330_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015489.png"
+  },
+  "3331": {
+    "en": "_rsv_3331_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3331_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3331_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3331_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015490.png"
+  },
+  "3332": {
+    "en": "_rsv_3332_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3332_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3332_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3332_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015491.png"
+  },
+  "3333": {
+    "en": "_rsv_3333_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3333_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3333_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3333_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015492.png"
+  },
+  "3334": {
+    "en": "_rsv_3334_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3334_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3334_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3334_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015493.png"
+  },
+  "3335": {
+    "en": "_rsv_3335_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3335_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3335_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3335_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015494.png"
+  },
+  "3336": {
+    "en": "_rsv_3336_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3336_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3336_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3336_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015495.png"
+  },
+  "3337": {
+    "en": "_rsv_3337_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3337_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3337_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3337_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015496.png"
+  },
+  "3338": {
+    "en": "_rsv_3338_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3338_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3338_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3338_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015497.png"
+  },
+  "3339": {
+    "en": "_rsv_3339_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3339_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3339_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3339_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015498.png"
+  },
+  "3340": {
+    "en": "_rsv_3340_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3340_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3340_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3340_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015499.png"
+  },
+  "3341": {
+    "en": "_rsv_3341_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3341_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3341_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3341_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015500.png"
+  },
+  "3342": {
+    "en": "_rsv_3342_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3342_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3342_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3342_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015101.png"
+  },
+  "3343": {
+    "en": "_rsv_3343_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3343_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3343_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3343_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015102.png"
+  },
+  "3344": {
+    "en": "_rsv_3344_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3344_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3344_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3344_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015103.png"
+  },
+  "3345": {
+    "en": "_rsv_3345_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3345_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3345_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3345_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015104.png"
+  },
+  "3346": {
+    "en": "_rsv_3346_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3346_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3346_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3346_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015105.png"
+  },
+  "3347": {
+    "en": "_rsv_3347_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3347_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3347_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3347_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015106.png"
+  },
+  "3348": {
+    "en": "Targeting",
+    "ja": "ターゲッティング",
+    "de": "Anvisiert",
+    "fr": "Ciblage",
+    "icon": "/i/015000/015026.png"
+  },
+  "3349": {
+    "en": "_rsv_3349_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3349_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3349_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3349_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015107.png"
+  },
+  "3350": {
+    "en": "_rsv_3350_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3350_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3350_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3350_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015108.png"
+  },
+  "3351": {
+    "en": "_rsv_3351_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3351_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3351_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3351_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015587.png"
+  },
+  "3352": {
+    "en": "_rsv_3352_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3352_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3352_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3352_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015588.png"
+  },
+  "3353": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3354": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3355": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3356": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3357": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3358": {
+    "en": "Enmity Up",
+    "ja": "敵視上昇",
+    "de": "Erhöhte Feindseligkeit",
+    "fr": "Inimitié augmentée",
+    "icon": "/i/016000/016722.png"
+  },
+  "3359": {
+    "en": "Sustained Damage",
+    "ja": "継続ダメージ",
+    "de": "Schaden über Zeit",
+    "fr": "Dégâts continus",
+    "icon": "/i/016000/016723.png"
+  },
+  "3360": {
+    "en": "Vulnerability Down",
+    "ja": "被ダメージ低下",
+    "de": "Verringerte Verwundbarkeit",
+    "fr": "Vulnérabilité diminuée",
+    "icon": "/i/016000/016724.png"
+  },
+  "3361": {
+    "en": "Vulnerability Up",
+    "ja": "被ダメージ上昇",
+    "de": "Erhöhte Verwundbarkeit",
+    "fr": "Vulnérabilité augmentée",
+    "icon": "/i/015000/015020.png"
+  },
+  "3362": {
+    "en": "Out of Control",
+    "ja": "制御不能",
+    "de": "Keine Kontrolle",
+    "fr": "Incontrôlable",
+    "icon": "/i/015000/015475.png"
+  },
+  "3363": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3364": {
+    "en": "Doom",
+    "ja": "死の宣告",
+    "de": "Verhängnis",
+    "fr": "Glas",
+    "icon": "/i/015000/015503.png"
+  },
+  "3365": {
+    "en": "Holosakos",
+    "ja": "ホーリズム［バリア］",
+    "de": "Holos (Barriere)",
+    "fr": "Holos",
+    "icon": "/i/012000/012972.png"
+  },
+  "3366": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3367": {
+    "en": "Rehabilitation",
+    "ja": "徐々にＨＰ回復",
+    "de": "Rehabilitation",
+    "fr": "Recouvrement",
+    "icon": "/i/015000/015532.png"
+  },
+  "3368": {
+    "en": "Sewer-dweller",
+    "ja": "瘴気順応",
+    "de": "Angepasstes Miasma",
+    "fr": "Mithridatisation",
+    "icon": "/i/015000/015574.png"
+  },
+  "3369": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3370": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3371": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3372": {
+    "en": "Earth Resistance Down II",
+    "ja": "土属性耐性低下［強］",
+    "de": "Erdresistenz - (stark)",
+    "fr": "Résistance à la terre réduite+",
+    "icon": "/i/015000/015722.png"
+  },
+  "3373": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3374": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3375": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3376": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3377": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3378": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3379": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3380": {
+    "en": "Resurrection Restricted",
+    "ja": "蘇生制限",
+    "de": "Wiederbelebungsbegrenzung",
+    "fr": "Anti-résurrection",
+    "icon": "/i/015000/015959.png"
+  },
+  "3381": {
+    "en": "Astral Fire III",
+    "ja": "アストラルファイアIII",
+    "de": "Lichtfeuer III",
+    "fr": "Feu astral III",
+    "icon": "/i/010000/010465.png"
+  },
+  "3382": {
+    "en": "Umbral Ice III",
+    "ja": "アンブラルブリザードIII",
+    "de": "Schatteneis III",
+    "fr": "Glace ombrale III",
+    "icon": "/i/010000/010468.png"
+  },
+  "3383": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3384": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3385": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3386": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3387": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3388": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3389": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3390": {
+    "en": "Poison",
+    "ja": "毒",
+    "de": "Gift",
+    "fr": "Poison",
+    "icon": "/i/015000/015007.png"
+  },
+  "3391": {
+    "en": "_rsv_3391_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3391_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3391_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3391_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015110.png"
+  },
+  "3392": {
+    "en": "_rsv_3392_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3392_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3392_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3392_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015111.png"
+  },
+  "3393": {
+    "en": "_rsv_3393_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3393_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3393_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3393_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015112.png"
+  },
+  "3394": {
+    "en": "_rsv_3394_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3394_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3394_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3394_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015114.png"
+  },
+  "3395": {
+    "en": "_rsv_3395_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3395_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3395_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3395_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015115.png"
+  },
+  "3396": {
+    "en": "_rsv_3396_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3396_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3396_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3396_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015116.png"
+  },
+  "3397": {
+    "en": "_rsv_3397_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3397_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3397_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3397_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015110.png"
+  },
+  "3398": {
+    "en": "_rsv_3398_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3398_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3398_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3398_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015114.png"
+  },
+  "3399": {
+    "en": "Poison",
+    "ja": "毒",
+    "de": "Gift",
+    "fr": "Poison",
+    "icon": "/i/015000/015007.png"
+  },
+  "3400": {
+    "en": "Glossomorph",
+    "ja": "軟体寄生",
+    "de": "Glossomorph",
+    "fr": "Mollusques parasites",
+    "icon": "/i/015000/015473.png"
+  },
+  "3401": {
+    "en": "HP Penalty",
+    "ja": "最大ＨＰダウン",
+    "de": "LP-Malus",
+    "fr": "Malus de PV",
+    "icon": "/i/015000/015076.png"
+  },
+  "3402": {
+    "en": "The Arrow",
+    "ja": "オシュオンの矢",
+    "de": "Pfeil",
+    "fr": "La Flèche",
+    "icon": "/i/013000/013206.png"
+  },
+  "3403": {
+    "en": "Bole Drawn",
+    "ja": "ドロー：世界樹の幹",
+    "de": "Gezogen: Eiche",
+    "fr": "Tirage: le Tronc",
+    "icon": "/i/013000/013230.png"
+  },
+  "3404": {
+    "en": "Arrow Drawn",
+    "ja": "ドロー：オシュオンの矢",
+    "de": "Gezogen: Pfeil",
+    "fr": "Tirage: la Flèche",
+    "icon": "/i/013000/013231.png"
+  },
+  "3405": {
+    "en": "Damage Barrier",
+    "ja": "ダメージバリア",
+    "de": "Schutzbarriere",
+    "fr": "Barrière anti-dégâts",
+    "icon": "/i/015000/015119.png"
+  },
+  "3406": {
+    "en": "_rsv_3406_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3406_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3406_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3406_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015117.png"
+  },
+  "3407": {
+    "en": "Toxicosis",
+    "ja": "猛毒",
+    "de": "Giftpollen",
+    "fr": "Poison violent",
+    "icon": "/i/015000/015517.png"
+  },
+  "3408": {
+    "en": "Stun",
+    "ja": "スタン",
+    "de": "Betäubung",
+    "fr": "Étourdissement",
+    "icon": "/i/015000/015004.png"
+  },
+  "3409": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3410": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3411": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3412": {
+    "en": "_rsv_3412_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3412_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3412_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3412_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015272.png"
+  },
+  "3413": {
+    "en": "Bravery of the Seventh Dawn",
+    "ja": "サイオンズ・ブレイブ",
+    "de": "Courage der Morgenröte",
+    "fr": "Courage des Héritiers",
+    "icon": "/i/016000/016683.png"
+  },
+  "3414": {
+    "en": "Magic Vulnerability Up",
+    "ja": "被魔法ダメージ増加",
+    "de": "Erhöhte Magie-Verwundbarkeit",
+    "fr": "Vulnérabilité magique augmentée",
+    "icon": "/i/015000/015057.png"
+  },
+  "3415": {
+    "en": "Physical Vulnerability Up",
+    "ja": "被物理ダメージ増加",
+    "de": "Erhöhte physische Verwundbarkeit",
+    "fr": "Vulnérabilité physique augmentée",
+    "icon": "/i/015000/015053.png"
+  },
+  "3416": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3417": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3418": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3419": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3420": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3421": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3422": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3423": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3424": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3425": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3426": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3427": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3428": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3429": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3430": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3431": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3432": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3433": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3434": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3435": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3436": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3437": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3438": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3439": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3440": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3441": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3442": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3443": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3444": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3445": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3446": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3447": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3448": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3449": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3450": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3451": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3452": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3453": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3454": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3455": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3456": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3457": {
+    "en": "Bind",
+    "ja": "バインド",
+    "de": "Fessel",
+    "fr": "Entrave",
+    "icon": "/i/015000/015003.png"
+  },
+  "3458": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3459": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3460": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3461": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3462": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3463": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3464": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3465": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3466": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3467": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3468": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3469": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3470": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3471": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3472": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3473": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3474": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3475": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3476": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3477": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3478": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3479": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3480": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3481": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3482": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3483": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3484": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3485": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3486": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3487": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3488": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3489": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3490": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3491": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3492": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3493": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3494": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3495": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3496": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3497": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3498": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3499": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3500": {
     "en": "",
     "ja": "",
     "de": "",

@@ -24246,10 +24246,10 @@
     "fr": "Camp de base A-4"
   },
   "4042": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Elysion",
+    "ja": "エリュシオン",
+    "de": "Elysium",
+    "fr": "Élysée"
   },
   "4043": {
     "en": "Island Sanctuary",
@@ -24282,16 +24282,16 @@
     "fr": "Place de la statue"
   },
   "4048": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Last Dregs",
+    "ja": "カフェ「ラストレムナント」",
+    "de": "Café Wiegenstern",
+    "fr": "Les Dernières Réminiscences"
   },
   "4049": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Elysian Fields",
+    "ja": "農業区画",
+    "de": "Agrarsektor",
+    "fr": "Champs élyséens"
   },
   "4050": {
     "en": "Scholar's Harbor",
@@ -24474,10 +24474,10 @@
     "fr": "Source des Velléitaires"
   },
   "4080": {
-    "en": "Elegeia",
-    "ja": "辞世の連句碑",
-    "de": "Elegeia",
-    "fr": "Cippes élégiaques"
+    "en": "Abode of the Ea",
+    "ja": "イーアの里",
+    "de": "Domizil der Ea",
+    "fr": "Demeure des Éas"
   },
   "4081": {
     "en": "Limne 18",
@@ -24516,22 +24516,22 @@
     "fr": "Étage mésosphérique"
   },
   "4087": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Elysian Seas",
+    "ja": "海洋区画",
+    "de": "Meeressektor",
+    "fr": "Mers élyséennes"
   },
   "4088": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Elysian Playgrounds",
+    "ja": "遊園区画",
+    "de": "Vergnügungssektor",
+    "fr": "Terrains de jeu élyséens"
   },
   "4089": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Elysian Groves",
+    "ja": "森林区画",
+    "de": "Waldsektor",
+    "fr": "Forêt élyséenne"
   },
   "4090": {
     "en": "The Palaistra",
@@ -24603,7 +24603,7 @@
     "en": "Ostrakon Hexi",
     "ja": "オストラコン・エークシ",
     "de": "Ostrakon Exi",
-    "fr": "Ostrakon Exi"
+    "fr": "Ostrakon Hexi"
   },
   "4102": {
     "en": "Ostrakon Okto",
@@ -25140,34 +25140,34 @@
     "fr": "Promenade de l'Hydromancie"
   },
   "4191": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Elysian Fields",
+    "ja": "エリュシオン農業区画",
+    "de": "Elysischer Agrarsektor",
+    "fr": "Champs élyséens"
   },
   "4192": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Elysian Seas α",
+    "ja": "エリュシオン海洋区画α",
+    "de": "Elysischer Meeressektor α",
+    "fr": "Mers élyséennes α"
   },
   "4193": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Elysian Seas β",
+    "ja": "エリュシオン海洋区画β",
+    "de": "Elysischer Meeressektor β",
+    "fr": "Mers élyséennes β"
   },
   "4194": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Elysian Playgrounds α",
+    "ja": "エリュシオン遊園区画α",
+    "de": "Elysischer Vergnügungssektorα",
+    "fr": "Terrains de jeu élyséens α"
   },
   "4195": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Elysian Playgrounds β",
+    "ja": "エリュシオン遊園区画β",
+    "de": "Elysischer Vergnügungssektorβ",
+    "fr": "Terrains de jeu élyséens β"
   },
   "4196": {
     "en": "The Pestilent Purgatory",
@@ -25188,226 +25188,226 @@
     "fr": "Bloc des créations arborescentes"
   },
   "4199": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Sil'dihn Subterrane",
+    "ja": "シラディハ水道",
+    "de": "Unterstadt von Sil'dih",
+    "fr": "Canalisations sildiennes"
   },
   "4200": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Silt Pump",
+    "ja": "泥水ポンプ棟",
+    "de": "Schlickpumpe",
+    "fr": "Salle des pompes à limon"
   },
   "4201": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Forgotten Forecourt",
+    "ja": "花園の前庭",
+    "de": "Vergessener Vorhof",
+    "fr": "Avant-cour abandonnée"
   },
   "4202": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Malachite Portico",
+    "ja": "孔雀石の間",
+    "de": "Malachit-Portikus",
+    "fr": "Portique des Malachites"
   },
   "4203": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Shaded Solace",
+    "ja": "秘蔵の間",
+    "de": "Schattige Einkehr",
+    "fr": "Parterre ombragé"
   },
   "4204": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sunlit Garden",
+    "ja": "陽だまりの花園",
+    "de": "Sonnengarten",
+    "fr": "Jardin ensoleillé"
   },
   "4205": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Settling Basin",
+    "ja": "汚泥処理池",
+    "de": "Absatzbecken",
+    "fr": "Bassin de sédiments"
   },
   "4206": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Eternal Ease",
+    "ja": "勇士たちの寝所",
+    "de": "Ewiger Einklang",
+    "fr": "Tombe du héros trépassé"
   },
   "4207": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Ceremonial Stores",
+    "ja": "祭具室",
+    "de": "Sakristei",
+    "fr": "Antichambre des rituels"
   },
   "4208": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sifting Site",
+    "ja": "沈石搬出施設",
+    "de": "Siebstätte",
+    "fr": "Site de filtrage"
   },
   "4209": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Cornice of Favor",
+    "ja": "御前闘技台",
+    "de": "Kranz der Gunst",
+    "fr": "Arène des Faveurs"
   },
   "4210": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Royal Bedchambers",
+    "ja": "王族の私室",
+    "de": "Königliches Schlafgemach",
+    "fr": "Appartements royaux"
   },
   "4211": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Sultan's Table",
+    "ja": "王家の食卓",
+    "de": "Tafel des Sultans",
+    "fr": "Salle à manger du monarque"
   },
   "4212": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Audience Chamber",
+    "ja": "謁見の間",
+    "de": "Audienzhalle",
+    "fr": "Chambre des audiences"
   },
   "4213": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Prosperity",
+    "ja": "シラディハ公庫",
+    "de": "Prosperität",
+    "fr": "Trésor sildien"
   },
   "4214": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Cold Arms' Quietus",
+    "ja": "聖火兵器安置場",
+    "de": "Haus der kalten Waffen",
+    "fr": "Entrepôt des armes sacrées"
   },
   "4215": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Beacon's Balance",
+    "ja": "聖火と天秤の間",
+    "de": "Gleichgewicht der Flammen",
+    "fr": "Piédestal du Feu et de la Balance"
   },
   "4216": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Thresholds Three",
+    "ja": "選扉の間",
+    "de": "Halle der Drei Türen",
+    "fr": "Salle des trois seuils"
   },
   "4217": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Irrigation Ducts",
+    "ja": "灌漑用水路",
+    "de": "Bewässerungskanäle",
+    "fr": "Canaux d'irrigation"
   },
   "4218": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Spring's Passage",
+    "ja": "翠の散策路",
+    "de": "Gang des Frühlings",
+    "fr": "Passage verdoyant"
   },
   "4219": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Groundwater Intake",
+    "ja": "地下河川取水堰",
+    "de": "Grundwasser-Zulauf",
+    "fr": "Embouchure souterraine"
   },
   "4220": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sanitation Sluices",
+    "ja": "汚水処理区画",
+    "de": "Klärkanäle",
+    "fr": "Canaux d'assainissement"
   },
   "4221": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Flames' Fork",
+    "ja": "聖戦への岐路",
+    "de": "Scheideweg der Flammen",
+    "fr": "Fourche des Flammes"
   },
   "4222": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Traders' Return",
+    "ja": "掃討作戦前哨地",
+    "de": "Feldvorposten",
+    "fr": "Avant-poste de campagne"
   },
   "4223": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Cistern System",
+    "ja": "上水道施設",
+    "de": "Zisternenanlage",
+    "fr": "Couloir des citernes"
   },
   "4224": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Quarter of Rule",
+    "ja": "シラディハ王政区画",
+    "de": "Kammer der Herrschaft",
+    "fr": "Quartiers de la Loi sildienne"
   },
   "4225": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Hidden Halls",
+    "ja": "後宮",
+    "de": "Verborgene Hallen",
+    "fr": "Hall intérieur"
   },
   "4226": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Friendship's Testament",
+    "ja": "共闘記念斎場",
+    "de": "Bundes Zeugnis",
+    "fr": "Passage des Cobelligérants"
   },
   "4227": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Another Sil'dihn Subterrane",
+    "ja": "異聞シラディハ水道",
+    "de": "Kuriose Unterstadt von Sil'dih",
+    "fr": "Canalisations sildiennes annexes"
   },
   "4228": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Jewel",
+    "ja": "知恵の層",
+    "de": "Ebene der Weisheit",
+    "fr": "Strate de la Sagesse"
   },
   "4229": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Helm",
+    "ja": "力の層",
+    "de": "Ebene der Macht",
+    "fr": "Strate de la Puissance"
   },
   "4230": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Scales",
+    "ja": "天秤の層",
+    "de": "Ebene der Gerechtigkeit",
+    "fr": "Strate de la Justice"
   },
   "4231": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Trial of Knowledge",
+    "ja": "壱の試練",
+    "de": "Prüfung der Weisheit",
+    "fr": "Épreuve de la Sagesse"
   },
   "4232": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Trial of Might",
+    "ja": "弐の試練",
+    "de": "Prüfung der Macht",
+    "fr": "Épreuve de la Puissance"
   },
   "4233": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Trial of Balance",
+    "ja": "参の試練",
+    "de": "Prüfung der Gerechtigkeit",
+    "fr": "Épreuve de la Justice"
   },
   "4234": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Refuge of the Wise",
+    "ja": "知恵の庭",
+    "de": "Zuflucht der Weisen",
+    "fr": "Refuge des Sages"
   },
   "4235": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Refuge of the Powerful",
+    "ja": "力の庭",
+    "de": "Zuflucht der Mächtigen",
+    "fr": "Refuge des Puissants"
   },
   "4236": {
     "en": "The Wilds",
@@ -25500,40 +25500,40 @@
     "fr": "Laboratoire d'études des secrets du vivant"
   },
   "4251": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Elysion",
+    "ja": "エリュシオン",
+    "de": "Elysium",
+    "fr": "Élysée"
   },
   "4252": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Elysion",
+    "ja": "エリュシオン",
+    "de": "Elysium",
+    "fr": "Élysée"
   },
   "4253": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Elysion",
+    "ja": "エリュシオン",
+    "de": "Elysium",
+    "fr": "Élysée"
   },
   "4254": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Elysion",
+    "ja": "エリュシオン",
+    "de": "Elysium",
+    "fr": "Élysée"
   },
   "4255": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Elysion",
+    "ja": "エリュシオン",
+    "de": "Elysium",
+    "fr": "Élysée"
   },
   "4256": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Elysion",
+    "ja": "エリュシオン",
+    "de": "Elysium",
+    "fr": "Élysée"
   },
   "4257": {
     "en": "The Halberd's Head Subdivision",

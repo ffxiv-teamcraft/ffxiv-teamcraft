@@ -5746,5 +5746,53 @@
     "ja": "探索依頼：水辺 G28",
     "de": "Gewässererkundung XXVIII",
     "fr": "Exploration en rivage XXVIII"
+  },
+  "965": {
+    "en": "Stonehard Water",
+    "ja": "極硬水",
+    "de": "Superhartes Quellwasser",
+    "fr": "Eau extrêmement dure"
+  },
+  "966": {
+    "en": "Rime Dolomite",
+    "ja": "北州苦灰石",
+    "de": "Nordilsabarder Dolomitklumpen",
+    "fr": "Minerai de dolomite boréale"
+  },
+  "967": {
+    "en": "Lunar Adamantite Ore",
+    "ja": "ルナアダマン鉱",
+    "de": "Lunares Adamantit-Erz",
+    "fr": "Minerai d'adamantium sélénien"
+  },
+  "968": {
+    "en": "Rhodium Sand",
+    "ja": "ロジウム砂",
+    "de": "Rhodiumsand",
+    "fr": "Sable de rhodium"
+  },
+  "969": {
+    "en": "Potent Spice",
+    "ja": "天然香辛料",
+    "de": "Natürliche Gewürze",
+    "fr": "Épices naturelles"
+  },
+  "970": {
+    "en": "Mempisang Log",
+    "ja": "メンピサン原木",
+    "de": "Mempisang-Holzscheit",
+    "fr": "Rondin de mempisang"
+  },
+  "971": {
+    "en": "Golden Cocoon",
+    "ja": "金マユ",
+    "de": "Goldkokon",
+    "fr": "Cocon doré"
+  },
+  "972": {
+    "en": "Double-edged Herb",
+    "ja": "迷い草",
+    "de": "Verlaufdichnicht",
+    "fr": "Feuille d'égarante"
   }
 }
