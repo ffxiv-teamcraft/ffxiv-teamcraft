@@ -1,6 +1,6 @@
 export interface LazyLogTrackerPageData {
   id:                     number;
-  masterbook?:            null;
+  masterbook?:            number | null;
   startLevel:             number | { [key: string]: number };
   recipes?:               Recipe[];
   divisionId:             number;
