@@ -1615,6 +1615,7 @@
       "Your_ranking": "あなたのランキング",
       "Include_fisheyes_data": "フィッシュアイを通計で含む",
       "Not_enough_data_points": "チャートを表示するための十分なデータがありません。",
+      "Only_10_most_used": "Only showing the 10 most used baits",
       "TUG": {
         "Light": "弱震(!)",
         "Medium": "強震(!!)",
