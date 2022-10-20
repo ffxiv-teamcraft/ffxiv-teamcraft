@@ -1615,6 +1615,7 @@
       "Your_ranking": "Ваш рейтинг",
       "Include_fisheyes_data": "Включать отчеты с помощью Fish Eyes",
       "Not_enough_data_points": "Недостаточно данных для отображения диаграмм",
+      "Only_10_most_used": "Only showing the 10 most used baits",
       "TUG": {
         "Light": "Light (!)",
         "Medium": "Medium (!!)",
