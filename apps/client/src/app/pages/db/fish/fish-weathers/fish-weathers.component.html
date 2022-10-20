@@ -4,13 +4,8 @@
   [style.width.px]="(weathersChartView$ | async)[0]"
   [class.card-with-list]="!(loading$ | async)"
 >
-  <div [style.minHeight.px]="(weathersChartView$ | async)[1] + 24" [style.overflowX]="'hidden'">
-    <ngx-charts-advanced-pie-chart
-      [view]="weathersChartView$ | async"
-      [scheme]="{ domain: [settings.theme.highlight, settings.theme.primary, settings.theme.trigger] }"
-      [results]="weathersChartData$ | async"
-    ></ngx-charts-advanced-pie-chart>
-  </div>
+
+  <div echarts theme="dark" [options]="options$ | async" [initOpts]="{height: '300px'}"></div>
   <div fxLayout="column" *ngIf="weathersChances$ | async as weathersChances" class="weathers-list-block">
     <h4>{{ 'DB.FISH.Weather_chances' | translate }}</h4>
     <div fxLayout="column" fxLayoutAlign="center center">

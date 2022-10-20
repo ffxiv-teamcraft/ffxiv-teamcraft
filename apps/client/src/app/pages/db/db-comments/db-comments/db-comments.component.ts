@@ -245,7 +245,7 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
   }
 
   saveComment(comment: DbComment): Observable<void> {
-    return this.commentsService.update(comment.$key, { ...comment, replies: [] });
+    return this.commentsService.update(comment.$key, comment);
   }
 
   trackByComment(index: number, comment: DbComment): string {

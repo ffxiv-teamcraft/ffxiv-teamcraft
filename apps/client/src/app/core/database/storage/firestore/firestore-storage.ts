@@ -151,7 +151,7 @@ export abstract class FirestoreStorage<T extends DataModel> {
 
   pureUpdate(key: string, data: UpdateData<T>): Observable<void> {
     this.pendingChangesService.addPendingChange(`update ${this.getBaseUri()}/${key}`);
-    return from(updateDoc(this.docRef(key), this.converter.toFirestore(data as WithFieldValue<T>))).pipe(
+    return from(updateDoc(this.docRef(key), JSON.parse(JSON.stringify(data)))).pipe(
       catchError(error => {
         console.error(`UPDATE ${this.getBaseUri()}/${key}`);
         console.error(error);
@@ -164,11 +164,11 @@ export abstract class FirestoreStorage<T extends DataModel> {
     );
   }
 
-  update(uid: string, data: UpdateData<T> | T): Observable<void> {
-    return this.pureUpdate(uid, data as UpdateData<T>);
+  update(uid: string, data: T): Observable<void> {
+    return this.set(uid, data);
   }
 
-  set(key: string, data: T, uriParams?: any): Observable<void> {
+  set(key: string, data: T): Observable<void> {
     this.pendingChangesService.addPendingChange(`set ${this.getBaseUri()}/${key}`);
     return from(setDoc(this.docRef(key), data)).pipe(
       catchError(error => {

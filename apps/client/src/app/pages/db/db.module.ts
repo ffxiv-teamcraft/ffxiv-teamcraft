@@ -78,6 +78,7 @@ import { ApolloClientResolver } from '../../core/apollo-client.resolver';
 import { FishDataModule } from './fish/fish-data.module';
 import { FishingSpotHooksetDatagridComponent } from './fishing-spot/fishing-spot-hookset-datagrid/fishing-spot-hookset-datagrid.component';
 import { AlarmButtonModule } from '../../modules/alarm-button/alarm-button.module';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 const routes: Routes = [
   {
@@ -342,7 +343,8 @@ const routes: Routes = [
     LazyScrollModule,
     ChartModule,
     FishDataModule,
-    AlarmButtonModule
+    AlarmButtonModule,
+    NgxEchartsModule
   ],
   providers: [ItemContextService]
 })

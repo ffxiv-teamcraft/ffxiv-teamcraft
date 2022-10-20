@@ -9,17 +9,5 @@
       </div>
     </div>
   </ng-template>
-  <ngx-charts-bar-vertical
-    [view]="[600, 300]"
-    [scheme]="{ domain: [settings.theme.primary] }"
-    [customColors]="fishCtx.highlightTime$ | async"
-    [gradient]="false"
-    [xAxis]="true"
-    [yAxis]="true"
-    [legend]="false"
-    [showXAxisLabel]="false"
-    [showYAxisLabel]="false"
-    barPadding="5"
-    [results]="etimesChartData$ | async"
-  ></ngx-charts-bar-vertical>
+  <div echarts theme="dark" [options]="options$ | async"></div>
 </nz-card>
