@@ -1242,7 +1242,7 @@
     "ko": "대상에게 원거리 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 450\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>하늘의 인<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>땅의 인<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>사람의 인<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 중 하나를 맺은 상태로 인술 사용\n실행 시 무기 기술, 마법, 인 및 인술에 재사용 대기 시간이 발생합니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "2266": {
-    "ko": "대상과 그 주위 적에게 불속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 350\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>땅의 인<UIGlow>01</UIGlow><UIForeground>01</UIForeground>→<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>하늘의 인<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 또는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>사람의 인<UIGlow>01</UIGlow><UIForeground>01</UIForeground>→<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>하늘의 인<UIGlow>01</UIGlow><UIForeground>01</UIForeground>순서로 인을 맺고 인술 실행\n실행 시 무기 기술, 마법, 인 및 인술에 재사용 대기 시간이 발생합니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "대상과 그 주위 적에게 불속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 350\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>땅의 인<UIGlow>01</UIGlow><UIForeground>01</UIForeground>→<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>하늘의 인<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 또는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>사람의 인<UIGlow>01</UIGlow><UIForeground>01</UIForeground>→<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>하늘의 인<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 순서로 인을 맺고 인술 실행\n실행 시 무기 기술, 마법, 인 및 인술에 재사용 대기 시간이 발생합니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "2267": {
     "ko": "대상에게 번개속성 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 650\n<If(Equal(PlayerParameter(68),30))><If(GreaterThanOrEqualTo(PlayerParameter(72),90))><UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 30초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>월영뇌수 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>(최대 3중첩)\n근접 공격 무기 기술을 실행하면 효과가 사라집니다.\n<Else/></If><Else/></If><UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>하늘의 인<UIGlow>01</UIGlow><UIForeground>01</UIForeground>→<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>땅의 인<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 또는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>사람의 인<UIGlow>01</UIGlow><UIForeground>01</UIForeground>→<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>땅의 인<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 순서로 인을 맺고 인술 실행\n실행 시 무기 기술, 마법, 인 및 인술에 재사용 대기 시간이 발생합니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
@@ -2295,7 +2295,7 @@
     "ko": "대상에게 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n<If(GreaterThanOrEqualTo(PlayerParameter(72),70))><If(Equal(PlayerParameter(68),22))><UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>용의 눈<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 1단계 진화\n<Else/></If><Else/></If><UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <If(Equal(PlayerParameter(68),22))><If(GreaterThanOrEqualTo(PlayerParameter(72),74))>점프 또는 하이 점프<Else/>점프</If><Else/>점프</If> 실행 시 부여되는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>환영 강타 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "7400": {
-    "ko": "대상을 향해 전방 직선 범위 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <If(Equal(PlayerParameter(68),22))><If(GreaterThanOrEqualTo(PlayerParameter(72),90))>360<Else/>300</If><Else/>300</If>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>붉은 용혈<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과 중\n2번째 대상부터는 위력이 30% 감소합니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "대상을 향해 전방 직선 범위 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <If(Equal(PlayerParameter(68),22))><If(GreaterThanOrEqualTo(PlayerParameter(72),90))>360<Else/>300</If><Else/>300</If>\n2번째 대상부터는 위력이 30% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>붉은 용혈<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과 중\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "7401": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>인법 50<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 소비하여 대상과 그 주위 적에게 불속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 160\n재사용 대기 시간을 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>육도윤회<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 공유합니다."
@@ -2433,7 +2433,7 @@
     "ko": "현재 부여되지 않은 점복 징조가 발생하는 카드를 뽑습니다.\n징조가 하나도 없거나 3종류 모두 부여된 경우, 무작위로 카드를 점지합니다.\n점지한 카드에 따라 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>카드 풀이<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 및 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>소 아르카나<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 변화합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신의 MP를 최대 MP의 8%만큼 회복합니다."
   },
   "7449": {
-    "ko": "대상과 그 주위의 적에게 무속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1300\n2번째 대상부터는 위력이 60% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 데미바하무트 소환 중\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "대상과 그 주위 적에게 무속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1300\n2번째 대상부터는 위력이 60% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 데미바하무트 소환 중\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "7450": {
     "ko": "15초 동안 에기 주위 파티원이 주는 피해량이 5% 증가합니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
@@ -2553,7 +2553,7 @@
     "ko": "대상의 HP를 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 350"
   },
   "7515": {
-    "ko": "대상에게 물리 공격을 가하고 15m 후방으로 도약합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <If(Equal(PlayerParameter(68),35))><If(GreaterThanOrEqualTo(PlayerParameter(72),72))>180<Else/>130</If><Else/>130</If>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>최대 누적수<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 2\n속박 상태에서는 사용할 수 없습니다.재사용 대기 시간을 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>앙가주망<UIGlow>01</UIGlow><UIForeground>01</UIForeground>과 공유합니다."
+    "ko": "대상에게 물리 공격을 가하고 15m 후방으로 도약합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <If(Equal(PlayerParameter(68),35))><If(GreaterThanOrEqualTo(PlayerParameter(72),72))>180<Else/>130</If><Else/>130</If>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>최대 누적수<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 2\n속박 상태에서는 사용할 수 없습니다.\n재사용 대기 시간을 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>앙가주망<UIGlow>01</UIGlow><UIForeground>01</UIForeground>과 공유합니다."
   },
   "7516": {
     "ko": "대상에게 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>콤보 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 츠베르크하우 또는 인츠베르크하우\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>콤보 시 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 230\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>백마나<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>흑마나<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 각각 15 이상일 경우 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>인르두블망<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다."
@@ -3339,7 +3339,7 @@
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에테르 순환 2단계<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 소비하여 15초 동안 바하무트 빙의 상태가 됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 트라이디재스터의 재사용 대기 시간이 초기화됩니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 지속시간이 끝나면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>피닉스 빙의<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "9014": {
-    "ko": "대상과 그 주위의 적에게 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 2400\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>바하무트 빙의<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "대상과 그 주위 적에게 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 2400\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>바하무트 빙의<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "9015": {
     "ko": "가우스 총열을 해제합니다."
@@ -3588,7 +3588,7 @@
     "ko": "자신의 전방 부채꼴 범위를 향해 역한 입냄새를 내뿜습니다.\n범위 안에 있는 적에게 15초 동안 독, 주는 피해량 10% 감소, 40% 과중력, 20% 둔화, 실명, 마비를 부여하고, 대상의 기술 시전을 중단시킵니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>독 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 20"
   },
   "11389": {
-    "ko": "대상에게 뛰어들며 대상과 그 주위의 적에게 범위 물리 공격을 가합니다.\n2번째 대상부터는 위력이 50% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 150\n속박 상태에서는 사용할 수 없습니다."
+    "ko": "대상에게 뛰어들며 대상과 그 주위 적에게 범위 물리 공격을 가합니다.\n2번째 대상부터는 위력이 50% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 150\n속박 상태에서는 사용할 수 없습니다."
   },
   "11390": {
     "ko": "자신의 전방을 향해 부채꼴 범위 물속성 마법 공격을 가하고 12초 동안 물속성 지속 피해를 줍니다.\n2번째 대상부터는 위력이 50% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 140\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 피해 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 20"
@@ -3597,7 +3597,7 @@
     "ko": "자신의 주위에 있는 적에게 땅속성 범위 마법 공격을 가합니다.\n2번째 대상부터는 위력이 50% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 220"
   },
   "11392": {
-    "ko": "대상과 그 주위의 적에게 30초 동안 수면을 부여합니다.\n실행 후 자동 공격이 정지됩니다."
+    "ko": "대상과 그 주위 적에게 30초 동안 수면을 부여합니다.\n실행 후 자동 공격이 정지됩니다."
   },
   "11393": {
     "ko": "30초 안에 시전하는 다음 1번의 마법 위력이 50% 증가합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>공격 준비<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과와 동시에 부여할 수 없습니다."
@@ -3699,22 +3699,22 @@
     "ko": "대상과 그 주위 적에게 불속성 범위 물리 공격을 가합니다.\n2번째 대상부터는 위력이 50% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200"
   },
   "11426": {
-    "ko": "지정한 범위 안의 적에게 바람속성 마법 공격을 가하고 6초 동안 바람속성 지속 피해를 부여합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 220\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 피해 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 40\n일부 청마법과 재사용 대기 시간을 공유합니다."
+    "ko": "지정한 범위 안의 적에게 바람속성 마법 공격을 가하고 6초 동안 바람속성 지속 피해를 부여합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 220\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 피해 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 40\n재사용 대기 시간을 일부 청마법과 공유합니다."
   },
   "11427": {
-    "ko": "지정한 범위 안의 적에게 불속성 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n일부 청마법과 재사용 대기 시간을 공유합니다."
+    "ko": "지정한 범위 안의 적에게 불속성 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n재사용 대기 시간을 일부 청마법과 공유합니다."
   },
   "11428": {
-    "ko": "자신의 전방을 향해 땅속성 부채꼴 범위 물리 공격을 가합니다.\n2번째 대상부터는 위력이 50% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 400\n일부 청마법과 재사용 대기 시간을 공유합니다."
+    "ko": "자신의 전방을 향해 땅속성 부채꼴 범위 물리 공격을 가합니다.\n2번째 대상부터는 위력이 50% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 400\n재사용 대기 시간을 일부 청마법과 공유합니다."
   },
   "11429": {
-    "ko": "대상과 그 주위의 적에게 번개속성 범위 마법 공격을 가합니다.\n2번째 대상부터는 위력이 50% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 400\n일부 청마법과 재사용 대기 시간을 공유합니다."
+    "ko": "대상과 그 주위 적에게 번개속성 범위 마법 공격을 가합니다.\n2번째 대상부터는 위력이 50% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 400\n재사용 대기 시간을 일부 청마법과 공유합니다."
   },
   "11430": {
-    "ko": "자신의 전방에서 측면까지 얼음속성 부채꼴 범위 마법 공격을 가합니다.\n2번째 대상부터는 위력이 50% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 350\n일부 청마법과 재사용 대기 시간을 공유합니다."
+    "ko": "자신의 전방에서 측면까지 얼음속성 부채꼴 범위 마법 공격을 가합니다.\n2번째 대상부터는 위력이 50% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 350\n재사용 대기 시간을 일부 청마법과 공유합니다."
   },
   "11431": {
-    "ko": "30초 동안 자신이 공격을 받으면 공격자에게 물속성 마법 피해를 줍니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 50\n일부 청마법과 재사용 대기 시간을 공유합니다."
+    "ko": "30초 동안 자신이 공격을 받으면 공격자에게 물속성 마법 피해를 줍니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 50\n재사용 대기 시간을 일부 청마법과 공유합니다."
   },
   "11482": {
     "ko": "대상과 그 주위 적에게 무속성 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 30\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 대상을 20초 동안 속박"
@@ -3780,13 +3780,13 @@
     "ko": "대상을 전투불능으로 만듭니다.\n대상의 HP가 적을수록 성공률이 증가합니다."
   },
   "12972": {
-    "ko": "자신에게 30초 동안 지속되는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>힘 모으기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 부여합니다. 최대 16단계까지 중첩되며 무기 기술 사용 시 소비됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>힘 모으기 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1단계당 무기 기술 위력 30%씩 증가\n무기 기술과 재사용 대기 시간을 공유합니다."
+    "ko": "자신에게 30초 동안 지속되는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>힘 모으기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 부여합니다. 최대 16단계까지 중첩되며 무기 기술 사용 시 소비됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>힘 모으기 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1단계당 무기 기술 위력 30%씩 증가\n재사용 대기 시간을 무기 기술과 공유합니다."
   },
   "12973": {
     "ko": "60초 동안 대상을 마비시킵니다."
   },
   "12974": {
-    "ko": "60초 동안 대상과 그 주위의 적을 마비시킵니다."
+    "ko": "60초 동안 대상과 그 주위 적을 마비시킵니다."
   },
   "12975": {
     "ko": "10초 동안 자신의 이동 속도가 크게 향상됩니다."
@@ -4332,10 +4332,10 @@
     "ko": "대상에게 불속성 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 540\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>피닉스 빙의<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "16515": {
-    "ko": "대상과 그 주위의 적에게 불속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 240\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>피닉스 빙의<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "대상과 그 주위 적에게 불속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 240\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>피닉스 빙의<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "16516": {
-    "ko": "데미피닉스가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>계시<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행합니다.\n\n대상과 그 주위의 적에게 불속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1300\n2번째 대상부터는 위력이 60% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 데미피닉스 소환 중\n발동 조건을 갖추면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>바하무트 점화<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>피닉스 점화<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "데미피닉스가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>계시<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행합니다.\n\n대상과 그 주위 적에게 불속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1300\n2번째 대상부터는 위력이 60% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 데미피닉스 소환 중\n발동 조건을 갖추면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>바하무트 점화<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>피닉스 점화<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "16517": {
     "ko": "주위 파티원의 HP를 21초 동안 지속적으로 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
@@ -4350,7 +4350,7 @@
     "ko": "시전한 소환사에게 30초 동안 최대 HP의 30%만큼 피해를 흡수하는 보호막을 칩니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "16521": {
-    "ko": "대상과 그 주위의 적에게 바람속성 범위 마법 공격을 가하고, 대상을 중심으로 9초 동안 지속 피해 영역을 생성합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 30\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 피해 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 30\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "대상과 그 주위 적에게 바람속성 범위 마법 공격을 가하고, 대상을 중심으로 9초 동안 지속 피해 영역을 생성합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 30\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 피해 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 30\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "16522": {
     "ko": "시전한 소환사에게 30초 동안 최대 HP의 30%만큼 피해를 흡수하는 보호막을 칩니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
@@ -4479,7 +4479,7 @@
     "ko": "대상에게 번개속성 마법 공격을 가하고, 24초 동안 번개속성 지속 피해를 줍니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 피해 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 40"
   },
   "16577": {
-    "ko": "대상과 그 주위의 적에게 불속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 460"
+    "ko": "대상과 그 주위 적에게 불속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 460"
   },
   "16578": {
     "ko": "지정한 지면을 중심으로 위력 1500의 무속성 마법 공격을 가합니다."
@@ -4509,7 +4509,7 @@
     "ko": "가루다 에기가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>대기 난도질<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행합니다.\n\n대상과 그 주위 적에게 바람속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 150\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>최대 누적수<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 2\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 가루다 에기 생존 및 전투 중\n고유 재사용 대기 시간이 적용됩니다."
   },
   "16798": {
-    "ko": "가루다 에기가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>반동 기류<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행합니다.\n\n대상과 그 주위의 적에게 바람속성 범위 마법 공격을 가하고, 대상을 중심으로 9초 동안 지속되는 지속 피해 영역을 생성합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 50\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 피해 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 50\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>최대 누적수<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 2\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 가루다 에기 생존 및 전투 중\n고유 재사용 대기 시간이 적용됩니다."
+    "ko": "가루다 에기가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>반동 기류<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행합니다.\n\n대상과 그 주위 적에게 바람속성 범위 마법 공격을 가하고, 대상을 중심으로 9초 동안 지속되는 지속 피해 영역을 생성합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 50\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 피해 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 50\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>최대 누적수<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 2\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 가루다 에기 생존 및 전투 중\n고유 재사용 대기 시간이 적용됩니다."
   },
   "16799": {
     "ko": "이프리트 에기가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>진홍 회오리<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행합니다.\n\n대상에게 불속성 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>:250\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>최대 누적수<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 2\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 이프리트 에기 생존 및 전투 중\n고유 재사용 대기 시간이 적용됩니다."
@@ -4521,7 +4521,7 @@
     "ko": "타이탄 에기가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>대지의 분노<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행합니다.\n\n소환수를 중심으로 주위 적에게 땅속성 범위 마법 공격을 가하고, 15초 동안 지속되는 지속 피해 영역을 생성합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 피해 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 20\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 타이탄 에기 생존 및 전투 중"
   },
   "16802": {
-    "ko": "가루다 에기가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>대기 폭발<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행합니다.\n\n대상과 그 주위의 적에게 바람속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 350\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 가루다 에기 생존 및 전투 중"
+    "ko": "가루다 에기가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>대기 폭발<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행합니다.\n\n대상과 그 주위 적에게 바람속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 350\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 가루다 에기 생존 및 전투 중"
   },
   "16803": {
     "ko": "이프리트 에기가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>지옥의 화염<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행합니다.\n\n대상을 향해 불속성 전방 부채꼴 범위 마법 공격을 가하고, 15초 동안 불속성 지속 피해를 줍니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 피해 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 20\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 이프리트 에기 생존 및 전투 중"
@@ -5106,7 +5106,7 @@
     "ko": "대상을 향해 무속성 전방 직선 범위 마법 공격을 가하고, 20초 동안 속박을 부여합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n대상이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>둔화<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태인 경우, 둔화가 해제되는 대신 위력이 증가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>대상이 둔화 상태일 때 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 400\n2번째 대상부터는 위력이 50% 감소합니다."
   },
   "18312": {
-    "ko": "자신 주위에 있는 레벨이 5의 배수인 적을 전투불능으로 만듭니다.\n명중률이 낮은 편으로, 대상의 레벨이 자신보다 높으면 무효화됩니다.\n고유 재사용 대기 시간이 적용되며, 일부 청마법과 재사용 대기 시간을 공유합니다."
+    "ko": "자신 주위에 있는 레벨이 5의 배수인 적을 전투불능으로 만듭니다.\n명중률이 낮은 편으로, 대상의 레벨이 자신보다 높으면 무효화됩니다.\n고유 재사용 대기 시간이 적용되며, 재사용 대기 시간을 일부 청마법과 공유합니다."
   },
   "18313": {
     "ko": "자신을 중심으로 주위 적에게 현재 HP의 50%, 30%, 20%, 10% 중 하나에 해당하는 피해를 줍니다.\n대상의 레벨이 자신보다 높으면 무효화됩니다."
@@ -5142,10 +5142,10 @@
     "ko": "자신의 전방을 향해 땅속성 부채꼴 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n2번째 대상부터는 위력이 50% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>최대 누적수<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 4\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 3초 안에 실행하는 다음 관통산탄의 위력이 50% 증가합니다.(최대 3중첩)\n추가 효과는 관통산탄 이외의 기술을 실행하면 즉시 해제됩니다."
   },
   "18324": {
-    "ko": "자신을 중심으로 주위 적에게 무속성 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n2번째 대상부터는 위력이 50% 감소합니다.\n일부 청마법과 재사용 대기 시간을 공유합니다."
+    "ko": "자신을 중심으로 주위 적에게 무속성 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n2번째 대상부터는 위력이 50% 감소합니다.\n재사용 대기 시간을 일부 청마법과 공유합니다."
   },
   "18325": {
-    "ko": "높이 뛰어 대상에게 접근하면서 무속성 범위 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n2번째 대상부터는 위력이 50% 감소합니다.\n속박 상태에서는 사용할 수 없습니다.\n일부 청마법과 재사용 대기 시간을 공유합니다."
+    "ko": "높이 뛰어 대상에게 접근하면서 무속성 범위 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n2번째 대상부터는 위력이 50% 감소합니다.\n속박 상태에서는 사용할 수 없습니다.\n재사용 대기 시간을 일부 청마법과 공유합니다."
   },
   "18775": {
     "ko": "높이 뛰어 대상에게 접근하면서 불속성 범위 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 800"
@@ -5310,10 +5310,10 @@
     "ko": "대상과 그 주위 적에게 범위 마법 공격을 가하고 15초 동안 대상에게 지속 피해를 줍니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 피해 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신이 부여한 선더라 지속 피해가 남아 있는 대상에게 4000 이상 피해를 주면 대상의 선더라 효과가 해제되며 10초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>선더 계열 효과 향상<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>선더 계열 효과 향상<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "18937": {
-    "ko": "대상과 그 주위의 적에게 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1000\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>피닉스 빙의<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과 중에는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>연옥의 불꽃<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "대상과 그 주위 적에게 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1000\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>피닉스 빙의<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과 중에는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>연옥의 불꽃<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "18938": {
-    "ko": "에테르 순환을 1단계 소비하여 대상과 그 주위의 적에게 범위 마법 공격을 가하고, 2초 동안 대상을 기절시킵니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에테르 순환<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "에테르 순환을 1단계 소비하여 대상과 그 주위 적에게 범위 마법 공격을 가하고, 2초 동안 대상을 기절시킵니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에테르 순환<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "18939": {
     "ko": "에테르 순환을 1단계 소비하여, 대상에게 부여한 바이오가 지속 피해를 대상 주위 적에게 퍼뜨립니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속시간<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 확산된 시점의 남은 시간\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에테르 순환<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
@@ -5565,7 +5565,7 @@
     "ko": "자신을 중심으로 주위 적에게 무속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200"
   },
   "20701": {
-    "ko": "대상과 그 주위의 적을 60초 동안 마비시킵니다."
+    "ko": "대상과 그 주위 적을 60초 동안 마비시킵니다."
   },
   "20702": {
     "ko": "대상과 그 주위 적에게 무속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 대상이 언데드일 경우 60초 동안 받는 피해 25% 증가"
@@ -5604,7 +5604,7 @@
     "ko": "자신 또는 아군 1명을 대상으로, 600초 동안 주는 피해량을 5% 증가시킵니다."
   },
   "20714": {
-    "ko": "자신에게 30초 동안 지속되는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>힘 모으기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 부여합니다.\n최대 16단계까지 중첩됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>힘 모으기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1단계당 무기 기술 위력 15%씩 증가\n다른 로스트 기술을 계승하면 효과가 사라집니다.\n무기 기술 및 마법과 재사용 대기 시간을 공유합니다."
+    "ko": "자신에게 30초 동안 지속되는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>힘 모으기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 부여합니다.\n최대 16단계까지 중첩됩니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>힘 모으기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1단계당 무기 기술 위력 15%씩 증가\n다른 로스트 기술을 계승하면 효과가 사라집니다.\n재사용 대기 시간을 무기 기술 및 마법과 공유합니다."
   },
   "20715": {
     "ko": "30초 동안 자신이 주는 피해량이 70% 증가합니다.\n효과가 지속되는 동안 MP를 지속적으로 소비하며, MP가 0이 되면 효과가 사라집니다.\n전투 중에만 사용할 수 있습니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>마전사의 약 추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신에게 15초 동안 받는 마법 피해량이 50% 감소하는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>마법 방어막<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 부여합니다."
@@ -5664,7 +5664,7 @@
     "ko": "아군 1명을 대상으로, 대상이 계승한 로스트 기술을 흉내내어 계승합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신이 전투 중이 아닐 때"
   },
   "20734": {
-    "ko": "운명의 주사위를 굴립니다. 무슨 일이 일어날지 알 수 없습니다.\n전투 중에만 사용할 수 있습니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>저항군용 포션<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>저항군 엘릭서<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 재사용 대기 시간을 공유합니다."
+    "ko": "운명의 주사위를 굴립니다. 무슨 일이 일어날지 알 수 없습니다.\n전투 중에만 사용할 수 있습니다.\n재사용 대기 시간을 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>저항군용 포션<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>저항군 엘릭서<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 공유합니다."
   },
   "20735": {
     "ko": "대상을 쇠약 상태로 부활시킵니다."
@@ -5682,7 +5682,7 @@
     "ko": "자신에게 부여된 해제 가능한 약화 효과를 1개 해제합니다.\n해제 가능한 약화 효과가 없을 경우, 30분 동안 다음에 받는 약화 효과를 1회 막아주는 보호막을 칩니다.\n같은 종류의 보호막과 동시에 부여할 수 없습니다.\n재사용 대기 시간을 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>저항군용 포션 키트<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>저항군용 에테르 키트<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 공유합니다."
   },
   "20740": {
-    "ko": "40초 동안 자신의 HP를 지속적으로 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1600\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>운명의 주사위<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>저항군 엘릭서<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 재사용 대기 시간을 공유합니다."
+    "ko": "40초 동안 자신의 HP를 지속적으로 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1600\n재사용 대기 시간을 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>운명의 주사위<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>저항군 엘릭서<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 공유합니다."
   },
   "20741": {
     "ko": "영웅의 기억을 계승하여, 자신이 주는 피해량이 80% 증가합니다.\n다른 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>비약<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>영약<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 계열 약품과 동시에 사용할 수 없습니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속시간<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 해제 시까지"
@@ -5928,31 +5928,31 @@
     "ko": "대상을 향해 땅속성 전방 직선 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 220\n2번째 대상부터는 위력이 50% 감소합니다."
   },
   "23272": {
-    "ko": "자신과 주위 파티원의 HP를 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 400\n자신이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에테르 복사: 회복<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태인 경우, 추가로 15초 동안 대상의 HP를 지속적으로 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n고유 재사용 대기 시간이 적용되며, 일부 청마법과 재사용 대기 시간을 공유합니다."
+    "ko": "자신과 주위 파티원의 HP를 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 400\n자신이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에테르 복사: 회복<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태인 경우, 추가로 15초 동안 대상의 HP를 지속적으로 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n고유 재사용 대기 시간이 적용되며, 재사용 대기 시간을 일부 청마법과 공유합니다."
   },
   "23273": {
-    "ko": "10초 동안 결계를 치고 자신이 받는 피해량을 20% 감소시킵니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 지속시간 중에 자신의 최대 HP의 30%를 초과하는 피해를 받으면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>현천무수벽 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 발동합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>현천무수벽 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 기술 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>현무 결계<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>현천무수벽<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다.\n도중에 움직이면 현무 결계가 해제됩니다.\n현무 결계가 해제되면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>현천무수벽 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>도 사라집니다.\n고유 재사용 대기 시간이 적용되며, 일부 청마법과 재사용 대기 시간을 공유합니다.\n\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>현천무수벽<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n주위 적에게 물속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 500\n자신이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에테르 복사: 방어<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태인 경우, 위력이 1000으로 증가합니다.\n2번째 대상부터는 위력이 50% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>현천무수벽 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "10초 동안 결계를 치고 자신이 받는 피해량을 20% 감소시킵니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 지속시간 중에 자신의 최대 HP의 30%를 초과하는 피해를 받으면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>현천무수벽 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 발동합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>현천무수벽 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 기술 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>현무 결계<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>현천무수벽<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다.\n도중에 움직이면 현무 결계가 해제됩니다.\n현무 결계가 해제되면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>현천무수벽 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>도 사라집니다.\n고유 재사용 대기 시간이 적용되며, 재사용 대기 시간을 일부 청마법과 공유합니다.\n\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>현천무수벽<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n주위 적에게 물속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 500\n자신이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에테르 복사: 방어<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태인 경우, 위력이 1000으로 증가합니다.\n2번째 대상부터는 위력이 50% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>현천무수벽 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "23274": {
     "ko": "주위 적에게 물속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 500\n자신이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에테르 복사: 방어<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태인 경우, 위력이 1000으로 증가합니다.\n2번째 대상부터는 위력이 50% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>현천무수벽 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "23275": {
-    "ko": "대상에게 무속성 마법 공격을 가하고, 10m 밀쳐냅니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 400\n\n고유 재사용 대기 시간이 적용되며, 일부 청마법과 재사용 대기 시간을 공유합니다."
+    "ko": "대상에게 무속성 마법 공격을 가하고, 10m 밀쳐냅니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 400\n\n고유 재사용 대기 시간이 적용되며, 재사용 대기 시간을 일부 청마법과 공유합니다."
   },
   "23276": {
     "ko": "이동 속도가 30%, 주는 피해량과 회복 마법 회복량이 100% 증가하고, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>강력 방어<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 사용에 따르는 주는 피해량 감소 효과를 받지 않습니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 시간<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 해제 시까지\n2명 이상 파티로 도전할 수 있는 임무를 혼자서 공략할 때나, 자신 외에 생존한 파티원이 없을 때만 효과를 발휘합니다.\n이 효과는 파티원이 복귀하면 즉시 해제됩니다."
   },
   "23277": {
-    "ko": "주위에 초음파를 발생시켜, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>빙결<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 또는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>석화<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태의 적을 전투 불능으로 만듭니다.\n특정 대상 및 자신보다 레벨이 높은 적에게는 효과가 없습니다.\n고유 재사용 대기 시간이 적용되며, 일부 청마법과 재사용 대기 시간을 공유합니다."
+    "ko": "주위에 초음파를 발생시켜, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>빙결<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 또는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>석화<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태의 적을 전투 불능으로 만듭니다.\n특정 대상 및 자신보다 레벨이 높은 적에게는 효과가 없습니다.\n고유 재사용 대기 시간이 적용되며, 재사용 대기 시간을 일부 청마법과 공유합니다."
   },
   "23278": {
-    "ko": "대상과 그 주위의 적에게 얼음속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 220\n2번째 대상부터는 위력이 50% 감소합니다."
+    "ko": "대상과 그 주위 적에게 얼음속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 220\n2번째 대상부터는 위력이 50% 감소합니다."
   },
   "23279": {
     "ko": "대상과 그 주위 적에게 불속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 220\n2번째 대상부터는 위력이 50% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 대상이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>휘청휘청<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태인 경우, 15초 동안 불속성 지속 피해를 부여합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 피해 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 50"
   },
   "23280": {
-    "ko": "15초 동안 자신이 받는 피해량이 20% 감소합니다.\n자신이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에테르 복사: 방어<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태인 경우, 받는 피해량이 40% 감소합니다.\n고유 재사용 대기 시간이 적용되며, 일부 청마법과 재사용 대기 시간을 공유합니다."
+    "ko": "15초 동안 자신이 받는 피해량이 20% 감소합니다.\n자신이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에테르 복사: 방어<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태인 경우, 받는 피해량이 40% 감소합니다.\n고유 재사용 대기 시간이 적용되며, 재사용 대기 시간을 일부 청마법과 공유합니다."
   },
   "23281": {
     "ko": "대상을 향해 무속성 전방 직선 범위 마법 공격을 가하고, 15초 동안 무속성 지속 피해를 줍니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 50\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 피해 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 50"
@@ -5967,13 +5967,13 @@
     "ko": "대상과 그 주위 적에게 무속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n파티에 자신의 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>버디 초코보<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 존재할 경우 위력이 300으로 증가합니다.\n2번째 대상부터는 위력이 50% 감소합니다."
   },
   "23285": {
-    "ko": "대상에게 8회 연속으로 무속성 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 50\n자신이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에테르 복사: 공격<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태인 경우, 위력이 100으로 증가합니다.\n고유 재사용 대기 시간이 적용되며, 일부 청마법과 재사용 대기 시간을 공유합니다."
+    "ko": "대상에게 8회 연속으로 무속성 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 50\n자신이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에테르 복사: 공격<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태인 경우, 위력이 100으로 증가합니다.\n고유 재사용 대기 시간이 적용되며, 재사용 대기 시간을 일부 청마법과 공유합니다."
   },
   "23286": {
     "ko": "대상을 향해 전방 직선 범위 무속성 물리 공격을 가하고, 5초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>휘청휘청<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 부여합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 220\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>휘청휘청<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 이미 부여된 대상에게는 위력이 400으로 증가합니다.\n2번째 대상부터는 위력이 50% 감소합니다.\n단시간 안에 같은 대상에게 여러 번 사용할 경우 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>휘청휘청<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 지속시간이 점점 감소하며, 최종적으로는 효과가 부여되지 않습니다."
   },
   "23287": {
-    "ko": "주위 적에게 무속성 범위 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 600\n일부 청마법과 재사용 대기 시간을 공유합니다."
+    "ko": "주위 적에게 무속성 범위 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 600\n재사용 대기 시간을 일부 청마법과 공유합니다."
   },
   "23288": {
     "ko": "5초 동안 자신의 전방 부채꼴 범위 안에 있는 적에게 1초마다 피해를 줍니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n지속시간 안에 다시 사용하면, 전방 부채꼴 범위 안에 있는 적에게 무속성 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 600\n2번째 대상부터는 위력이 50% 감소합니다.\n도중에 귀수각 이외의 기술을 사용하거나 움직이면 즉시 해제됩니다."
@@ -5982,7 +5982,7 @@
     "ko": "5초 동안 자신의 전방 부채꼴 범위 안에 있는 적에게 1초마다 피해를 줍니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n지속시간 안에 다시 사용하면, 전방 부채꼴 범위 안에 있는 적에게 무속성 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 600\n2번째 대상부터는 위력이 50% 감소합니다.\n도중에 귀수각 이외의 기술을 사용하거나 움직이면 즉시 해제됩니다."
   },
   "23290": {
-    "ko": "주위 적에게 무속성 범위 마법 공격을 가한 후 60초 동안 무속성 지속 피해를 줍니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 400\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 피해 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 75\n2번째 대상부터는 위력이 50% 감소합니다.\n일부 청마법과 재사용 대기 시간을 공유합니다."
+    "ko": "주위 적에게 무속성 범위 마법 공격을 가한 후 60초 동안 무속성 지속 피해를 줍니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 400\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 피해 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 75\n2번째 대상부터는 위력이 50% 감소합니다.\n재사용 대기 시간을 일부 청마법과 공유합니다."
   },
   "23345": {
     "ko": "짧은 영원의 숨결을 내뿜습니다.\n※ 전투 효과는 없습니다."
@@ -5991,7 +5991,7 @@
     "ko": "자신을 중심으로 주위 적에게 무속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 140\n자신이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에테르 복사: 회복<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 상태인 경우, 자신과 주위 파티원의 HP를 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300"
   },
   "23907": {
-    "ko": "시작 지점으로 순간이동합니다.\n전투 중에는 사용할 수 없습니다.\n무기 기술 및 마법과 재사용 대기 시간을 공유합니다."
+    "ko": "시작 지점으로 순간이동합니다.\n전투 중에는 사용할 수 없습니다.\n재사용 대기 시간을 무기 기술 및 마법과 공유합니다."
   },
   "23908": {
     "ko": "자신과 주위 파티원에게 30초 동안 최대 HP 대비 10%의 피해를 막아주는 보호막을 칩니다."
@@ -6003,7 +6003,7 @@
     "ko": "자신을 중심으로 주위 적에게 범위 물리 공격을 가하고, 대상의 기술 시전을 중단시킵니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n물리 공격에 취약한 적에게는 추가 효과가 발생합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 60초 동안 받는 피해량 10% 증가"
   },
   "23911": {
-    "ko": "자신에게 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>로스트 리플렉트<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 부여합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>로스트 리플렉트<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 10초 동안 일부를 제외한 마법 피해를 반사합니다.\n무기 기술 및 마법과 재사용 대기 시간을 공유합니다."
+    "ko": "자신에게 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>로스트 리플렉트<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 부여합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>로스트 리플렉트<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 10초 동안 일부를 제외한 마법 피해를 반사합니다.\n재사용 대기 시간을 무기 기술 및 마법과 공유합니다."
   },
   "23912": {
     "ko": "자신 또는 다른 플레이어 1명을 대상으로 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>리레이즈<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 부여합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>리레이즈<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 지속시간 중에 전투불능이 되면 80%의 확률로 자동 부활합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속시간<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 180분"
@@ -6114,7 +6114,7 @@
     "ko": "자신과 주위 파티원의 HP를 15초 동안 지속적으로 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 130\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 10초 동안 대상이 받는 HP 회복 효과가 10% 증가합니다."
   },
   "24303": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>의술석 1개<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 소비하여 자신 또는 파티원 1명의 HP를 회복하고, 자신의 MP를 최대 MP의 7%만큼 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 700\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 15초 동안 대상이 받는 피해량이 10% 감소합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>케이라콜레<UIGlow>01</UIGlow><UIForeground>01</UIForeground>효과와 동시에 부여할 수 없습니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>의술석 1개<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 소비하여 자신 또는 파티원 1명의 HP를 회복하고, 자신의 MP를 최대 MP의 7%만큼 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 700\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 15초 동안 대상이 받는 피해량이 10% 감소합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>케이라콜레<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과와 동시에 부여할 수 없습니다."
   },
   "24304": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>의술침 1개<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 소비하여 대상과 그 주위 적에게 무속성 범위 마법 공격을 가하고, 심각인[회복] 대상의 HP를 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <If(Equal(PlayerParameter(68),40))><If(GreaterThanOrEqualTo(PlayerParameter(72),72))>300<Else/>240</If><Else/>240</If>\n2번째 대상부터는 위력이 50% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>심각인 회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <If(Equal(PlayerParameter(68),40))><If(GreaterThanOrEqualTo(PlayerParameter(72),85))>170<Else/>130</If><Else/>130</If>"
@@ -6294,7 +6294,7 @@
     "ko": "대상과 그 주위 적에게 무속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 420\n2번째 대상부터는 위력이 50% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신의 HP와 MP를 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>HP 회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 400\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 안식 기도가 해제될 때 부여되는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>신의의 검 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과 중\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "25749": {
-    "ko": "대상과 그 주위 적에게 무속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 500\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>콤보 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 신의의 검\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신의 HP와 MP를 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>HP 회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 400\n2번째 대상부터는 위력이 50% 감소합니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "대상과 그 주위 적에게 무속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 560\n2번째 대상부터는 위력이 50% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>콤보 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 신의의 검\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신의 HP와 MP를 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>HP 회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 400\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "25750": {
     "ko": "대상과 그 주위 적에게 무속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 580\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>콤보 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 진실의 검\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신의 HP와 MP를 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>HP 회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 400\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>콤보 보너스<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 대상에게 21초 동안 지속 피해 부여\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속 피해 위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 80\n2번째 대상부터는 위력 및 지속 피해 위력이 50% 감소합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>꿰뚫는 검격<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 지속 피해와 동시에 부여할 수 없습니다.\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
@@ -6306,7 +6306,7 @@
     "ko": "자신을 중심으로 주위 적에게 범위 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 150\n재사용 대기 시간을 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>격변<UIGlow>01</UIGlow><UIForeground>01</UIForeground>과 공유합니다."
   },
   "25753": {
-    "ko": "대상에게 뛰어들며 대상과 그 주위의 적에게 범위 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 700\n2번째 대상부터는 위력이 70% 감소합니다.\n이 기술은 반드시 극대화 직격으로 적중합니다.\n실행 시 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>원초의 해방<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 소비하지 않습니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>원초의 해방<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 실행 시 부여되는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>원초적 분쇄 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n속박 상태에서는 사용할 수 없습니다."
+    "ko": "대상에게 뛰어들며 대상과 그 주위 적에게 범위 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 700\n2번째 대상부터는 위력이 70% 감소합니다.\n이 기술은 반드시 극대화 직격으로 적중합니다.\n극대화 또는 직격 발동률을 향상시키는 효과를 받고 있는 경우에는 주는 피해량이 증가합니다.\n실행 시 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>원초의 해방<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 소비하지 않습니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>원초의 해방<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 실행 시 부여되는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>원초적 분쇄 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n속박 상태에서는 사용할 수 없습니다."
   },
   "25754": {
     "ko": "자신 또는 파티원 1명을 대상으로, 10초 동안 받는 피해량을 10% 감소시킵니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>최대 누적수<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 2"
@@ -6558,7 +6558,7 @@
     "ko": "이프리트 루비를 소환하여 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>지옥의 화염<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행시키고, 자신에게 30초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>불 에테르 2단계<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 부여합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지옥의 화염<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 대상과 그 주위 5m 안에 있는 적에게 불속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 700\n2번째 대상부터는 위력이 60% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>불 에테르<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>보석의 빛<UIGlow>01</UIGlow><UIForeground>01</UIForeground>과 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>보석의 광휘<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 불속성 마법으로 변화합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>진홍 회오리 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속시간<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 해제 시까지\n다른 소환 계열 기술을 실행하면 효과가 사라집니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 카벙클 생존 및 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>루비의 신비<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "25839": {
-    "ko": "타이탄 토파즈를 소환하여 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>대지의 분노<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행시키고, 자신에게 30초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>땅 에테르 4단계<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 부여합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>대지의 분노<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 대상과 그 주위 5m 안에 있는 적에게 땅속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 700\n2번째 대상부터는 위력이 60% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>땅 에테르<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>보석의 빛<UIGlow>01</UIGlow><UIForeground>01</UIForeground>과 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>보석의 광휘<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 땅속성 마법으로 변화합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 카벙클 생존 및 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>토파즈의 신비<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "타이탄 토파즈를 소환하여 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>대지의 분노<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행시키고, 자신에게 30초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>땅 에테르 4단계<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 부여합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>대지의 분노<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 대상과 그 주위 5m 안에 있는 적에게 땅속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 700\n2번째 대상부터는 위력이 60% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>땅 에테르<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>보석의 빛<UIGlow>01</UIGlow><UIForeground>01</UIForeground>과 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>보석의 광휘<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 땅속성 마법으로 변화합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 카벙클 생존 및 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>토파즈의 신비<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n타이탄 토파즈 소환 시간이 끝나면 카벙클이 다시 나타납니다."
   },
   "25840": {
     "ko": "가루다 에메랄드를 소환하여 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>대기 폭발<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행시키고, 자신에게 30초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>바람 에테르 4단계<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 부여합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>대기 폭발<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 대상과 그 주위 5m 안에 있는 적에게 바람속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 700\n2번째 대상부터는 위력이 60% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>바람 에테르<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>보석의 빛<UIGlow>01</UIGlow><UIForeground>01</UIForeground>과 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>보석의 광휘<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 바람속성 마법으로 변화합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>반동 기류 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>지속시간<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 해제 시까지\n다른 소환 계열 기술을 실행하면 효과가 사라집니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 카벙클 생존 및 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에메랄드의 신비<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
