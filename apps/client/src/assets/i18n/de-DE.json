@@ -314,7 +314,7 @@
   "Gardening": "Haus/Wohnungs-Gärtnerei",
   "Hunting": "Monsterjagd",
   "Island_animal": "Inseltier",
-  "Island_crop": "Island crop",
+  "Island_crop": "Inselernte",
   "Desynth": "Materialverwertung",
   "Vendors": "Verkäufer",
   "Open": "Offen",
@@ -1639,7 +1639,7 @@
         "Last_report": "Letzte Meldung",
         "Fish": "Fisch",
         "Size": "Größe",
-        "Large": "Large",
+        "Large": "Groß",
         "Time_since_thrown": "Zeit seit Wurf",
         "ERRORS": {
           "No_bait": "Kein Köder erkannt. Zur Behebung Köder einmal wechseln.",
@@ -2895,7 +2895,7 @@
       "FATE": "FATE",
       "MOGSTATION": "ONLINE-SHOP",
       "DEPRECATED": "VERALTET",
-      "ISLAND_ANIMAL": "ISLAND_ANIMAL"
+      "ISLAND_ANIMAL": "INSELPARADIES_WEIDETIER"
     },
     "STATUS": {
       "PROPOSAL": "VORSCHLAG",
@@ -2946,14 +2946,14 @@
     }
   },
   "ISLAND_SANCTUARY": {
-    "Animal_source": "You need to gather this item from one of the following animals in your Island Sanctuary pasture",
+    "Animal_source": "Du musst diesen Gegenstand von einem der folgenden Tiere in der Weide deines Inselparadieses sammeln",
     "Island_level": "Insel Level",
     "Landmarks": "Wahrzeichen",
-    "Workshop_rank": "Workshop rank",
+    "Workshop_rank": "Atelierrang",
     "WORKSHOP": {
       "Title": "Atelier",
       "Subtitle": "Verfolge und verwalte dein Atelier",
-      "Out_of_sync": "State has not been updated since the last reset",
+      "Out_of_sync": "Status wurde seit dem letzten Resest nicht aktualisiert",
       "Out_of_sync_explain": "Bitte öffne das Angebot-/Nachfrage-Fenster auf deinem Inselparadies um den Status zu aktualisieren. Wenn du keine Paketerfassung verwendest, bitten einen anderen Benutzer, deinen Status zu aktualisieren und ihn dann zu exportieren, damit du den Import-Button verwenden kannst oder importiere von der Datenbank.",
       "Export_state": "Exportiere Angebot-/Nachfrage-Status",
       "State_copied": "Status wurde in die Zwischenablage kopiert",
@@ -2976,21 +2976,21 @@
       "Peak_days_explain": "Die Tage, an denen es wahrscheinlicher ist, dass dieser Gegenstand seinen Höchstwert erreichen wird. Fett = starker Gipfel.",
       "Items_to_prepare": "Beste Gegenstände zum Vorbereiten für morgen",
       "Rest": "Ruhetag",
-      "Unknown_day_planning": "Available on {{day}}",
+      "Unknown_day_planning": "Verfügbar am {{day}}",
       "Set_rest_day": "Als zweiten Ruhetag festlegen",
       "Import_explain": "Du kannst die Angebots-/Nachfragetabelle aktualisieren, indem du sie mit der Desktop-App und der aktivierten Paketerfassung ingame öffnest.",
       "Amount_of_workshops": "# der Ateliere:",
       "Create_list": "Eine Liste für diese Planung erstellen",
-      "Exclude_pasture_materials": "Exclude pasture materials",
-      "Exclude_crop_materials": "Exclude crop materials",
+      "Exclude_pasture_materials": "Weidematerial ausschließen",
+      "Exclude_crop_materials": "Erntematerial ausschließen",
       "Groove_tooltip": "Groove at the end of the day",
-      "Crafting_time": "Crafting time",
-      "Categories": "Categories",
-      "No_planning": "No planning available",
-      "No_planning_explain": " Teamcraft is not able to compute a planning because there's too few recipes available, try to change your island level or uncheck some material exclusions.",
-      "Next_week_prep": "Materials you should prepare for next week",
-      "Crop_materials": "Crops",
-      "Pasture_materials": "Pasture",
+      "Crafting_time": "Herstellungszeit",
+      "Categories": "Kategorien",
+      "No_planning": "Keine Planung verfügbar",
+      "No_planning_explain": " Teamcraft ist nicht in der Lage, eine Planung zu berechnen, da es zu wenige Rezepte gibt. Versuche deine Inselstufe zu erhöhen oder überprüfe einige Materialausnahmen.",
+      "Next_week_prep": "Materialien, die du für nächste Woche vorbereiten solltest",
+      "Crop_materials": "Ackerbau",
+      "Pasture_materials": "Weide",
       "POPULARITY": {
         "Very_high": "Riesig",
         "High": "Groß",
@@ -3016,13 +3016,13 @@
       "Title": "Tiere",
       "Subtitle": "Eine umfassende Liste der Tiere, wo und wann sie zu finden sind, mit Alarm-Integration",
       "Name": "Name",
-      "Size": "Size",
+      "Size": "Größe",
       "Coords": "Position",
       "Spawn_time": "Spawnzeit",
       "Weather": "Wetter",
       "Alarm": "Alarm",
-      "Main_drop": "Main drop",
-      "Rare_drop": "Rare drop"
+      "Main_drop": "Hauptbeute",
+      "Rare_drop": "Seltene Beute"
     }
   }
 }
