@@ -4,7 +4,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { CoreModule } from '../../core/core.module';
@@ -320,7 +319,6 @@ const routes: Routes = [
     FlexLayoutModule,
     FormsModule,
     TranslateModule,
-    NgxChartsModule,
     MapModule,
     PipesModule,
     ItemIconModule,

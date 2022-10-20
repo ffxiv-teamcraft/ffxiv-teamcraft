@@ -26,7 +26,6 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { NoFilter } from './filters/no-filter';
 import { TranslateModule } from '@ngx-translate/core';
 import { HistogramComponent } from './display/histogram/histogram.component';
-import { LineChartModule, PieChartModule } from '@swimlane/ngx-charts';
 import { PieChartComponent } from './display/pie-chart/pie-chart.component';
 import { TableComponent } from './display/table/table.component';
 import { PipesModule } from '../../pipes/pipes.module';
@@ -46,8 +45,8 @@ import { GilFilter } from './filters/gil-filter';
 import { InventoryService } from '../inventory/inventory.service';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { NzStatisticModule } from 'ng-zorro-antd/statistic';
-import { NgxEchartsModule } from 'ngx-echarts';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 const probes: Provider[] = [
   {
@@ -108,8 +107,6 @@ const filters: Provider[] = [
     CommonModule,
     NzCardModule,
     TranslateModule,
-    LineChartModule,
-    PieChartModule,
     NzTableModule,
     PipesModule,
     CoreModule,
