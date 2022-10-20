@@ -1615,6 +1615,7 @@
       "Your_ranking": "당신의 순위",
       "Include_fisheyes_data": "물고기의 눈을 통계에 포함",
       "Not_enough_data_points": "데이터가 부족하여 해당 차트로 표시할 수 없음",
+      "Only_10_most_used": "Only showing the 10 most used baits",
       "TUG": {
         "Light": "소형 (!)",
         "Medium": "중형 (!!)",
