@@ -1615,6 +1615,7 @@
       "Your_ranking": "Su clasificación",
       "Include_fisheyes_data": "Include reports using Fish Eyes",
       "Not_enough_data_points": "Not enough data points to display this chart",
+      "Only_10_most_used": "Only showing the 10 most used baits",
       "TUG": {
         "Light": "Liviano (!)",
         "Medium": "Mediano (!!)",
