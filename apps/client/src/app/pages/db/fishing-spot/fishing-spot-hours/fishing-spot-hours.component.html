@@ -1,16 +1,3 @@
 <nz-card [nzTitle]="'DB.FISH.Hour' | translate" [nzLoading]="loading$ | async">
-  <div [style.height]="'400px'">
-<!--    <ngx-charts-area-chart-stacked-->
-<!--      [gradient]="true"-->
-<!--      [xAxis]="true"-->
-<!--      [yAxis]="true"-->
-<!--      [legend]="true"-->
-<!--      [showXAxisLabel]="false"-->
-<!--      [showYAxisLabel]="false"-->
-<!--      [activeEntries]="activeChartEntries$ | async"-->
-<!--      [results]="hoursChartData$ | async"-->
-<!--      (activate)="activeFishName$.next($event?.value?.name || undefined)"-->
-<!--      (deactivate)="activeFishName$.next(undefined)"-->
-<!--    ></ngx-charts-area-chart-stacked>-->
-  </div>
+  <div echarts theme="dark" [options]="options$ | async"></div>
 </nz-card>

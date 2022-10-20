@@ -33,6 +33,7 @@ export class FishHoursComponent {
         },
         xAxis: {
           type: 'category',
+          boundaryGap: false,
           data: new Array(24).fill(null).map((_, i) => `${i}:00`)
         },
         yAxis: {
