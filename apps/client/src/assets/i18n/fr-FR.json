@@ -1615,6 +1615,7 @@
       "Your_ranking": "Votre classement",
       "Include_fisheyes_data": "Inclure les rapports utilisant Yeux de poissons",
       "Not_enough_data_points": "Données insuffisantes pour afficher le graphique",
+      "Only_10_most_used": "Only showing the 10 most used baits",
       "TUG": {
         "Light": "Légère (!)",
         "Medium": "Normale (!!)",
