@@ -141,6 +141,11 @@ export class PermissionsBoxComponent implements OnInit {
     this.changes$.next(this.data);
   }
 
+  public removePermission(id: string): void {
+    PermissionsController.removePermissionRow(this.data, id);
+    this.changes$.next(this.data);
+  }
+
   public updateEveryonePermission(newLevel: PermissionLevel): void {
     this.data.everyone = newLevel;
     this.changes$.next(this.data);
