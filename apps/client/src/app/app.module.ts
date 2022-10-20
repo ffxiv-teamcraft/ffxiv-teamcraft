@@ -125,7 +125,6 @@ import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFunctions, provideFunctions } from '@angular/fire/functions';
 import { getPerformance, providePerformance } from '@angular/fire/performance';
-import { NGX_ECHARTS_CONFIG } from 'ngx-echarts/lib/ngx-echarts.directive';
 
 const icons: IconDefinition[] = [
   SettingOutline,

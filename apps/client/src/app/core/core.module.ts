@@ -109,8 +109,7 @@ import { NgForTrackByIdDirective } from './track-by/ng-for-track-by-id.directive
     AdminGuard,
     ModeratorGuard,
     DevGuard,
-    ...DATA_REPORTERS,
-    { provide: ErrorHandler, useClass: TeamcraftErrorHandler }
+    ...DATA_REPORTERS
   ],
   declarations: [
     I18nPipe,
@@ -155,7 +154,8 @@ export class CoreModule {
       providers: [
         GarlandToolsService,
         EorzeanTimeService,
-        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+        { provide: ErrorHandler, useClass: TeamcraftErrorHandler }
       ]
     };
   }
