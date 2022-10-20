@@ -8,7 +8,7 @@ import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { NzTableFilterFn, NzTableFilterList, NzTableSortFn, NzTableSortOrder } from 'ng-zorro-antd/table';
 import { TranslateService } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
-import { catchError, distinctUntilChanged, filter, retry, switchMap, tap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, retry, switchMap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { subDays } from 'date-fns';
@@ -327,12 +327,13 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     this.lazyData.getEntry('islandSupply'),
     this.landmarks$,
     this.rank$,
-    this.settings.watchSetting<number>('island-workshop:rest-day', this.settings.islandWorkshopRestDay)
+    this.settings.watchSetting<number>('island-workshop:rest-day', this.settings.islandWorkshopRestDay),
+    this.today$
   ]).pipe(
     filter(([objects]) => objects.length > 0),
-    map(([objects, supply, landmarks, rank, secondRestDay]) => {
+    map(([objects, supply, landmarks, rank, secondRestDay, today]) => {
       try {
-        return new PlanningFormulaOptimizer(objects, 3, landmarks, rank, supply, secondRestDay).run();
+        return new PlanningFormulaOptimizer(objects, 3, landmarks, rank, supply, secondRestDay, today).run();
       } catch (e) {
         return {
           planning: null,
@@ -384,8 +385,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
         pasture: Object.entries(registry.pasture).map(([id, quantity]) => ({ id, quantity })),
         crops: Object.entries(registry.crops).map(([id, quantity]) => ({ id, quantity }))
       };
-    }),
-    tap(console.log)
+    })
   );
 
   public machinaToggle = false;
