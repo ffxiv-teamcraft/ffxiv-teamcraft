@@ -9,7 +9,7 @@ export class PlanningFormulaOptimizer {
   private simulator = new IslandWorkshopSimulator(this.supply, this.workshops, this.landmarks, this.workshopLevel);
 
   constructor(private objects: CraftworksObject[], private workshops: number, private landmarks: number, private workshopLevel: number, private supply: LazyData['islandSupply'],
-              private secondRestDay: number) {
+              private secondRestDay: number, private currentDayIndex: number) {
   }
 
   public run(): { planning: WorkshopPlanning[], score: number } {
@@ -32,10 +32,7 @@ export class PlanningFormulaOptimizer {
       // Compute projected supply
       const projectedSupplyObjects = this.getProjectedSupplyObjects(i, objectsUsage);
 
-      const unknownDay = projectedSupplyObjects.some(object => {
-        // If some items have possible pattern peak for today but also other days, it's an unknown day
-        return object.patterns.length > 1 && object.patterns.some(p => p.index === i);
-      }) || projectedSupplyObjects.every(obj => obj.patterns.length === 0);
+      const unknownDay = [1, 2, 3, 7, 7, 7, 7][this.currentDayIndex] < i;
 
       // If there's some unknown peaks for this day, consider it as not ready to optimize
       if (unknownDay) {

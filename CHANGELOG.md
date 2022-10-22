@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.9.0"></a>
+# [9.9.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.18...v9.9.0) (2022-10-22)
+
+
+### Bug Fixes
+
+* **db:** fixed missing recipes from 6.25 ([e38f1d3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e38f1d3))
+* **island-workshop:** better planning day availability ([ed05719](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ed05719))
+* **permissions:** fixed an issue preventing permissions from being removed ([c213e1f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c213e1f))
+* **permissions:** fixed list access as team member ([d0bac01](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d0bac01))
+
+
+### Features
+
+* **db:** new charts in fish details page ([4f7ffbe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4f7ffbe)), closes [#2376](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2376)
+* **db:** new charts in fishing spot details page ([3d14163](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3d14163)), closes [#2376](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2376)
+* **db:** support for korean v6.11 update ([786fe0f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/786fe0f))
+* **island-workshop:** new section to show materials to prepare for next week ([809cc46](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/809cc46))
+
+
+### Performance Improvements
+
+* **core:** better error filter ([9b544e5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9b544e5))
+
+
+
 <a name="9.8.18"></a>
 ## [9.8.18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.17...v9.8.18) (2022-10-19)
 

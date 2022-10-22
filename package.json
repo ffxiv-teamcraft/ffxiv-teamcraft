@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "9.8.18",
+  "version": "9.9.0",
   "license": "MIT",
   "main": "dist/apps/electron/src/main.js",
   "build": {
@@ -181,7 +181,6 @@
     "@nrwl/jest": "^14.8.4",
     "@nrwl/workspace": "14.8.4",
     "@swimlane/dragula": "^3.8.0",
-    "@swimlane/ngx-charts": "^20.1.0",
     "@swimlane/ngx-dnd": "^9.0.0",
     "@types/express": "^4.17.0",
     "@types/express-serve-static-core": "^4.17.13",

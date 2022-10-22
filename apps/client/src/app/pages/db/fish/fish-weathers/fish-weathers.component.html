@@ -1,32 +1,7 @@
 <nz-card
   [nzTitle]="'DB.FISH.Weathers' | translate"
   [nzLoading]="loading$ | async"
-  [style.width.px]="(weathersChartView$ | async)[0]"
   [class.card-with-list]="!(loading$ | async)"
 >
-  <div [style.minHeight.px]="(weathersChartView$ | async)[1] + 24" [style.overflowX]="'hidden'">
-    <ngx-charts-advanced-pie-chart
-      [view]="weathersChartView$ | async"
-      [scheme]="{ domain: [settings.theme.highlight, settings.theme.primary, settings.theme.trigger] }"
-      [results]="weathersChartData$ | async"
-    ></ngx-charts-advanced-pie-chart>
-  </div>
-  <div fxLayout="column" *ngIf="weathersChances$ | async as weathersChances" class="weathers-list-block">
-    <h4>{{ 'DB.FISH.Weather_chances' | translate }}</h4>
-    <div fxLayout="column" fxLayoutAlign="center center">
-      <div
-        *ngFor="let row of weathersChances; let last = last"
-        fxLayout="row"
-        fxLayoutAlign="space-between center"
-        class="list-row"
-        [class.border-bottom]="!last"
-      >
-        <div>
-          <img src="{{ row.weatherId | weatherIcon | xivapiIcon }}" alt="" />
-          <span>{{ row.weatherId | i18nRow:'weathers' | i18n }}</span>
-        </div>
-        <div>{{ row.chances | number: '1.0-1' }}%</div>
-      </div>
-    </div>
-  </div>
+  <div echarts theme="dark" [options]="options$ | async" [initOpts]="{height: '300px'}"></div>
 </nz-card>

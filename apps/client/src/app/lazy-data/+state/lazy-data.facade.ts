@@ -91,7 +91,7 @@ export class LazyDataFacade {
         }),
         filter(([, status]) => status === 'full'),
         map(([res]) => res),
-        filter(res => !!res),
+        filter(Boolean),
         first()
       );
       this.cacheObservable(obs$, propertyKey);

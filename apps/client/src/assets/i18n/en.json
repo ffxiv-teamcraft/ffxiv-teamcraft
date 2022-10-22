@@ -1615,6 +1615,7 @@
       "Your_ranking": "Your ranking",
       "Include_fisheyes_data": "Include reports using Fish Eyes",
       "Not_enough_data_points": "Not enough data points to display this chart",
+      "Only_10_most_used": "Only showing the 10 most used baits",
       "TUG": {
         "Light": "Light (!)",
         "Medium": "Medium (!!)",
@@ -2988,6 +2989,9 @@
       "Categories": "Categories",
       "No_planning": "No planning available",
       "No_planning_explain": " Teamcraft is not able to compute a planning because there's too few recipes available, try to change your island level or uncheck some material exclusions.",
+      "Next_week_prep": "Materials you should prepare for next week",
+      "Crop_materials": "Crops",
+      "Pasture_materials": "Pasture",
       "POPULARITY": {
         "Very_high": "Very high",
         "High": "High",
