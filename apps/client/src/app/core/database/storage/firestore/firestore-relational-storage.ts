@@ -25,7 +25,7 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
   }
 
   public stopListening(key: string, cacheEntry?: string): void {
-    super.stopListening(key, cacheEntry);
+    super.stopListening(key);
     if (cacheEntry) {
       delete this.foreignKeyCache[cacheEntry];
     }

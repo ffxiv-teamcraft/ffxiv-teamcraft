@@ -3,10 +3,8 @@ import { DataModel } from '../data-model';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { NgZone } from '@angular/core';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { catchError, distinctUntilChanged, filter, map, retry, takeUntil, tap } from 'rxjs/operators';
-import { Instantiable } from '@kaiu/serializer';
+import { catchError, distinctUntilChanged, filter, finalize, map, retry, takeUntil, tap } from 'rxjs/operators';
 import { environment } from '../../../../../environments/environment';
-import { compare } from 'fast-json-patch';
 import {
   addDoc,
   collection,
@@ -99,11 +97,8 @@ export abstract class FirestoreStorage<T extends DataModel> {
     );
   }
 
-  public stopListening(key: string, cacheEntry?: string): void {
+  public stopListening(key: string): void {
     this.stop$.next(key);
-    if (cacheEntry) {
-      delete this.cache[cacheEntry];
-    }
   }
 
   add(data: Omit<T, '$key'>, uriParams?: any): Observable<string> {
@@ -127,26 +122,19 @@ export abstract class FirestoreStorage<T extends DataModel> {
             console.error(error);
             return throwError(error);
           }),
-          distinctUntilChanged((a, b) => compare(a, b).length === 0),
+          distinctUntilChanged((a, b) => isEqual(a, b)),
           tap(() => {
             this.recordOperation('read', key);
           }),
-          takeUntil(this.stop$.pipe(filter(stop => stop === key)))
+          takeUntil(this.stop$.pipe(filter(stop => stop === key))),
+          finalize(() => {
+            setTimeout(() => {
+              delete this.cache[key];
+            });
+          })
         );
     }
-    return this.cache[key].pipe(
-      map(data => {
-        if (this.skipClone) {
-          return data;
-        }
-        if ((<any>data).clone && typeof (<any>data).clone === 'function') {
-          return (<any>data).clone(true);
-        } else {
-          const clone = new (<Instantiable>this.getClass())();
-          return Object.assign(clone, { ...data });
-        }
-      })
-    );
+    return this.cache[key];
   }
 
   pureUpdate(key: string, data: UpdateData<T>): Observable<void> {

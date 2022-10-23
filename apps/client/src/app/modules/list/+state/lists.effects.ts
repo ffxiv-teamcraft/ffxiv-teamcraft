@@ -17,6 +17,7 @@ import {
   SetItemDone,
   SharedListsLoaded,
   TeamListsLoaded,
+  UnloadListDetails,
   UpdateItem,
   UpdateList,
   UpdateListIndexes
@@ -226,6 +227,11 @@ export class ListsEffects {
       return new ListDetailsLoaded(list);
     })
   ));
+
+  unloadListDetails$ = createEffect(() => this.actions$.pipe(
+    ofType<UnloadListDetails>(ListsActionTypes.UnloadListDetails),
+    tap((action) => this.listService.stopListening(action.key))
+  ), { dispatch: false });
 
   /**
    * BUlK save tooling
