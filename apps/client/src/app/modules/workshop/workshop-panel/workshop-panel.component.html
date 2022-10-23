@@ -40,16 +40,16 @@
         </button>
         <nz-dropdown-menu #menu="nzDropdownMenu">
           <ul nz-menu>
-            <li (nzClick)="renameWorkshop()" [nzDisabled]="(permissionLevel$ | async) < 40" nz-menu-item>
+            <li (click)="renameWorkshop()" [nzDisabled]="(permissionLevel$ | async) < 40" nz-menu-item>
               {{'WORKSHOP.Rename' | translate}}
             </li>
-            <li (nzClick)="openPermissionsPopup()" [nzDisabled]="(permissionLevel$ | async) < 40" nz-menu-item>
+            <li (click)="openPermissionsPopup()" [nzDisabled]="(permissionLevel$ | async) < 40" nz-menu-item>
               {{'PERMISSIONS.Title' | translate}}
             </li>
             <ng-container *ngIf="(permissionLevel$ | async) >= 40">
               <ng-container *ngIf="user$ | async as user">
                 <ng-container *ngIf="user.patron || user.admin">
-                  <li (nzClick)="createCustomLink(_workshop, user)" *ngIf="(customLink$ | async) === undefined; else copyLink"
+                  <li (click)="createCustomLink(_workshop, user)" *ngIf="(customLink$ | async) === undefined; else copyLink"
                       [nzDisabled]="!user.nickname"
                       nz-menu-item>
                     {{'CUSTOM_LINKS.Add_link' | translate}}

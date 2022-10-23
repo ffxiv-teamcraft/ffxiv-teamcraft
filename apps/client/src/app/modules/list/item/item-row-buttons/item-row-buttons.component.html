@@ -62,7 +62,7 @@
         <ul class="team-members" nz-menu>
           <ng-container *ngFor="let member of team?.members">
             <ng-container *ngIf="(workingOnIt || [])?.indexOf(member) === -1">
-              <li (nzClick)="assignTeamMember.emit({userId: member, team: team})"
+              <li (click)="assignTeamMember.emit({userId: member, team: team})"
                   *ngIf="member | characterName | async as charName"
                   nz-menu-item>{{charName}}
               </li>
@@ -93,7 +93,7 @@
       <nz-dropdown-menu #menu="nzDropdownMenu" class="item-options">
         <ul class="team-members" nz-menu>
           <ng-container *ngFor="let user of workingOnIt">
-            <li (nzClick)="removeWorkingOnIt.emit(user)" *ngIf="user | characterName | async as charName"
+            <li (click)="removeWorkingOnIt.emit(user)" *ngIf="user | characterName | async as charName"
                 [nzDisabled]="team?.leader !== userId && (team?.notFound || !team?.isOfficer(userId)) && user !== userId"
                 nz-menu-item>{{charName}}
             </li>

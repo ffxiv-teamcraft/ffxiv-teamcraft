@@ -199,7 +199,7 @@ export function listsReducer(
           id: action.payload.$key,
           map: current => {
             updated = (newVersion.etag || 0) >= (current.etag || 0);
-            if (updated) {
+            if (updated && newVersion.items?.length > 0) {
               newVersion.notFound = false;
               return newVersion;
             }

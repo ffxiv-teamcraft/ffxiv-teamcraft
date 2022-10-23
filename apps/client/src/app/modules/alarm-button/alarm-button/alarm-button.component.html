@@ -34,7 +34,7 @@
   </button>
   <nz-dropdown-menu #menu="nzDropdownMenu">
     <ul nz-menu>
-      <li (nzClick)="addAlarmWithGroup.emit({alarm: alarm, group: group})" *ngFor="let group of alarmGroups" nz-menu-item>
+      <li (click)="addAlarmWithGroup.emit({alarm: alarm, group: group})" *ngFor="let group of alarmGroups" nz-menu-item>
         {{group.name}}
       </li>
     </ul>
