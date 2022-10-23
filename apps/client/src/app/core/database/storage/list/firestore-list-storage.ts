@@ -130,7 +130,8 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> {
           console.error(error);
           return throwError(error);
         }),
-        tap(() => this.recordOperation('read'))
+        tap(() => this.recordOperation('read')),
+        switchMap(lists => this.completeLists(lists))
       );
   }
 
@@ -160,7 +161,8 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> {
           console.error(error);
           return throwError(error);
         }),
-        tap(() => this.recordOperation('read'))
+        tap(() => this.recordOperation('read')),
+        switchMap(lists => this.completeLists(lists))
       );
   }
 
@@ -210,7 +212,8 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> {
           console.error(error);
           return throwError(error);
         }),
-        tap(() => this.recordOperation('read'))
+        tap(() => this.recordOperation('read')),
+        switchMap(lists => this.completeLists(lists))
       );
   }
 }

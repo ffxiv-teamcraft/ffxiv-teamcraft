@@ -135,7 +135,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
         }
       }),
       map(([list]) => list),
-      shareReplay({ bufferSize: 1, refCount: true })
+      shareReplay(1)
     );
     this.layouts$ = this.layoutsFacade.allLayouts$;
     this.selectedLayout$ = this.layoutsFacade.selectedLayout$;

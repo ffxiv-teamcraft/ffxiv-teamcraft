@@ -119,7 +119,7 @@ export class ListsEffects {
     first(),
     switchMap(() => combineLatest([this.authFacade.user$, this.authFacade.fcId$])),
     distinctUntilChanged(),
-    switchMap(([user, fcId]) => {
+    exhaustMap(([user, fcId]) => {
       // First of all, load using user Id
       return this.listService.getShared(user.$key).pipe(
         switchMap((lists) => {

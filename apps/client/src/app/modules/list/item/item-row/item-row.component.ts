@@ -327,6 +327,9 @@ export class ItemRowComponent extends TeamcraftOptimizedComponent implements OnI
 
   @Input()
   set item(item: ListRow) {
+    if (item.sources === undefined) {
+      throw new Error('Ok imma fix dat');
+    }
     this._item$.next(item);
   }
 
