@@ -151,7 +151,7 @@ export abstract class FirestoreStorage<T extends DataModel> {
 
   pureUpdate(key: string, data: UpdateData<T>): Observable<void> {
     this.pendingChangesService.addPendingChange(`update ${this.getBaseUri()}/${key}`);
-    return from(updateDoc(this.docRef(key), JSON.parse(JSON.stringify(data)))).pipe(
+    return from(updateDoc(this.docRef(key), data)).pipe(
       catchError(error => {
         console.error(`UPDATE ${this.getBaseUri()}/${key}`);
         console.error(error);
