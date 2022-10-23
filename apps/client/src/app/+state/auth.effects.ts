@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { AuthState } from './auth.reducer';
-import { catchError, debounceTime, distinctUntilChanged, exhaustMap, filter, map, mergeMap, switchMap, switchMapTo, tap, withLatestFrom } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, filter, map, mergeMap, switchMap, switchMapTo, tap, withLatestFrom } from 'rxjs/operators';
 import { EMPTY, from, of } from 'rxjs';
 import { UserService } from '../core/database/user.service';
 import {
@@ -49,7 +49,7 @@ export class AuthEffects {
     ofType(AuthActionTypes.GetUser),
     mergeMap(() => this.authFacade.firebaseAuthState$),
     map((authState: User) => {
-      if (authState === null) {
+      if (!authState) {
         return new LoginAsAnonymous();
       } else {
         const payload: Partial<AuthState> = {
@@ -73,7 +73,7 @@ export class AuthEffects {
 
   fetchUser$ = createEffect(() => this.actions$.pipe(
     ofType<LoggedInAsAnonymous | Authenticated>(AuthActionTypes.LoggedInAsAnonymous, AuthActionTypes.Authenticated),
-    exhaustMap((action: LoggedInAsAnonymous | Authenticated) => {
+    switchMap((action: LoggedInAsAnonymous | Authenticated) => {
       return this.userService.get(action.uid, false, true).pipe(
         map(user => {
           return user;
