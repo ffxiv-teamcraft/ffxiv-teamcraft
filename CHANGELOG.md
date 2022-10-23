@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.9.1"></a>
+## [9.9.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.0...v9.9.1) (2022-10-23)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with creating alarm in a group corrupting the entire page ([c850ca3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c850ca3))
+* **core:** fixed permission controller crash on some transitions ([d7d1fcd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d7d1fcd))
+* **db:** fixed all instance names being displayed as "No Name" ([8c5ef60](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8c5ef60))
+* **list:** fixed an issue with layout randomly breaking on data update ([345194c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/345194c))
+* **permissions:** fixed disabled menu entries still being clickable ([52002c2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/52002c2))
+
+
+### Performance Improvements
+
+* **db:** more read operations optimizations ([cdd8ce1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cdd8ce1))
+
+
+
 <a name="9.9.0"></a>
 # [9.9.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.18...v9.9.0) (2022-10-22)
 

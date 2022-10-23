@@ -1,19 +1,12 @@
 export const patchNotes = `### Bug Fixes
 
-* **db:** fixed missing recipes from 6.25.
-* **island-workshop:** better planning day availability.
-* **permissions:** fixed an issue preventing permissions from being removed.
-* **permissions:** fixed list access as team member.
-
-
-### Features
-
-* **db:** new charts in fish details page.
-* **db:** new charts in fishing spot details page.
-* **db:** support for korean v6.11 update.
-* **island-workshop:** new section to show materials to prepare for next week.
+* **alarms:** fixed an issue with creating alarm in a group corrupting the entire page.
+* **core:** fixed permission controller crash on some transitions.
+* **db:** fixed all instance names being displayed as "No Name".
+* **list:** fixed an issue with layout randomly breaking on data update.
+* **permissions:** fixed disabled menu entries still being clickable.
 
 
 ### Performance Improvements
 
-* **core:** better error filter.`;
+* **db:** more read operations optimizations.`;

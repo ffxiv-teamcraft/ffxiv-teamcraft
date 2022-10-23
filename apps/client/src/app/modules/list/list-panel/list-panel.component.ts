@@ -119,7 +119,7 @@ export class ListPanelComponent extends TeamcraftComponent {
           return permissionLevel;
         }),
         distinctUntilChanged(),
-        shareReplay({ bufferSize: 1, refCount: true })
+        shareReplay(1)
       );
     }),
     map(level => {

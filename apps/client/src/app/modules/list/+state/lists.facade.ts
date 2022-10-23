@@ -50,7 +50,6 @@ import { ItemPickerService } from '../../item-picker/item-picker.service';
 import { ListManagerService } from '../list-manager.service';
 import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
 import { InventoryService } from '../../inventory/inventory.service';
-import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
 import { ModificationEntry } from '../model/modification-entry';
 import { PermissionsController } from '../../../core/database/permissions-controller';
 import { ListController } from '../list-controller';
@@ -73,23 +72,24 @@ export class ListsFacade {
           return list.finalItems !== undefined
             && list.items !== undefined;
         });
-      })
+      }),
+      shareReplay(1)
     );
 
-  myLists$ = combineLatest([this.store.select(listsQuery.getAllListDetails), this.authFacade.userId$]).pipe(
+  myLists$ = combineLatest([this.allListDetails$, this.authFacade.userId$]).pipe(
     map(([compacts, userId]) => {
       return compacts.filter(c => c.authorId === userId);
     }),
     map(lists => {
       return this.sortLists(lists);
     }),
-    shareReplay({ bufferSize: 1, refCount: true })
+    shareReplay(1)
   );
 
   sharedLists$ = this.authFacade.loggedIn$.pipe(
     switchMap(loggedIn => {
       if (!loggedIn) {
-        return combineLatest([this.store.select(listsQuery.getAllListDetails), this.authFacade.userId$]).pipe(
+        return combineLatest([this.allListDetails$, this.authFacade.userId$]).pipe(
           map(([compacts, userId]) => {
             return compacts.filter(c => {
               return !c.notFound
@@ -100,7 +100,7 @@ export class ListsFacade {
           })
         );
       }
-      return combineLatest([this.store.select(listsQuery.getAllListDetails), this.authFacade.user$, this.authFacade.userId$, this.authFacade.fcId$]).pipe(
+      return combineLatest([this.allListDetails$, this.authFacade.user$, this.authFacade.userId$, this.authFacade.fcId$]).pipe(
         map(([compacts, user, userId, fcId]) => {
           if (user !== null) {
             const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
@@ -120,7 +120,7 @@ export class ListsFacade {
         })
       );
     }),
-    shareReplay({ bufferSize: 1, refCount: true })
+    shareReplay(1)
   );
 
   public listsWithWriteAccess$ = combineLatest([this.allListDetails$, this.authFacade.user$, this.authFacade.userId$, this.authFacade.fcId$, this.teamsFacade.myTeams$]).pipe(
@@ -150,7 +150,7 @@ export class ListsFacade {
 
   selectedList$ = this.store.select(listsQuery.getSelectedList()).pipe(
     filter(list => list !== undefined),
-    shareReplay({ bufferSize: 1, refCount: true })
+    shareReplay(1)
   );
 
   selectedListPermissionLevel$ = this.authFacade.loggedIn$.pipe(
@@ -182,7 +182,7 @@ export class ListsFacade {
       return Math.max(PermissionsController.getPermissionLevel(list, userId), PermissionsController.getPermissionLevel(list, fcId), teamPermissionLevel);
     }),
     distinctUntilChanged(),
-    shareReplay({ bufferSize: 1, refCount: true })
+    shareReplay(1)
   );
 
   needsVerification$ = this.store.select(listsQuery.getNeedsVerification);
@@ -198,8 +198,7 @@ export class ListsFacade {
   constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
               private teamsFacade: TeamsFacade, private settings: SettingsService, private userInventoryService: InventoryService,
               private router: Router, private serializer: NgSerializerService, private itemPicker: ItemPickerService,
-              private listManager: ListManagerService, private progress: ProgressPopupService,
-              private listService: FirestoreListStorage) {
+              private listManager: ListManagerService, private progress: ProgressPopupService) {
     router.events
       .pipe(
         distinctUntilChanged((previous: any, current: any) => {

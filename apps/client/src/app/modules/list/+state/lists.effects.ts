@@ -17,6 +17,7 @@ import {
   SetItemDone,
   SharedListsLoaded,
   TeamListsLoaded,
+  UnloadListDetails,
   UpdateItem,
   UpdateList,
   UpdateListIndexes
@@ -118,7 +119,7 @@ export class ListsEffects {
     first(),
     switchMap(() => combineLatest([this.authFacade.user$, this.authFacade.fcId$])),
     distinctUntilChanged(),
-    switchMap(([user, fcId]) => {
+    exhaustMap(([user, fcId]) => {
       // First of all, load using user Id
       return this.listService.getShared(user.$key).pipe(
         switchMap((lists) => {
@@ -226,6 +227,11 @@ export class ListsEffects {
       return new ListDetailsLoaded(list);
     })
   ));
+
+  unloadListDetails$ = createEffect(() => this.actions$.pipe(
+    ofType<UnloadListDetails>(ListsActionTypes.UnloadListDetails),
+    tap((action) => this.listService.stopListening(action.key))
+  ), { dispatch: false });
 
   /**
    * BUlK save tooling
