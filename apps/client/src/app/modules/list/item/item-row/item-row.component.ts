@@ -327,7 +327,9 @@ export class ItemRowComponent extends TeamcraftOptimizedComponent implements OnI
 
   @Input()
   set item(item: ListRow) {
-    this._item$.next(item);
+    if (item.sources) {
+      this._item$.next(item);
+    }
   }
 
   public get finalItem(): boolean {
