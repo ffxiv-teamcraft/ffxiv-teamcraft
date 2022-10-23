@@ -97,7 +97,7 @@
                 </button>
                 <nz-dropdown-menu #menu="nzDropdownMenu">
                   <ul nz-menu>
-                    <li (click)="createCustomLink(rotation, user)" *ngIf="(customLink$ | async) === undefined; else copyLink"
+                    <li (nzClick)="createCustomLink(rotation, user)" *ngIf="(customLink$ | async) === undefined; else copyLink"
                         [nzDisabled]="!user.nickname"
                         nz-menu-item>
                       {{'CUSTOM_LINKS.Add_link' | translate}}

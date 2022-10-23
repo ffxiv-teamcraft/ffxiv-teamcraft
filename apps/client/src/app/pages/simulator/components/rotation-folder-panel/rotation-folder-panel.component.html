@@ -56,13 +56,13 @@
         </button>
         <nz-dropdown-menu #menu="nzDropdownMenu">
           <ul nz-menu>
-            <li (click)="renameFolder()" [nzDisabled]="(permissionLevel$ | async) < 40" nz-menu-item>
+            <li (nzClick)="renameFolder()" [nzDisabled]="(permissionLevel$ | async) < 40" nz-menu-item>
               {{'SIMULATOR.ROTATIONS.FOLDERS.Rename' | translate}}
             </li>
             <ng-container *ngIf="(permissionLevel$ | async) >= 40">
               <ng-container *ngIf="user$ | async as user">
                 <ng-container *ngIf="user.patron || user.admin">
-                  <li (click)="createCustomLink(_folder, user)" *ngIf="(customLink$ | async) === undefined; else copyLink"
+                  <li (nzClick)="createCustomLink(_folder, user)" *ngIf="(customLink$ | async) === undefined; else copyLink"
                       [nzDisabled]="!user.nickname"
                       nz-menu-item>
                     {{'CUSTOM_LINKS.Add_link' | translate}}

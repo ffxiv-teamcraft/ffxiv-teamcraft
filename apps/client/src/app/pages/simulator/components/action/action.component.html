@@ -22,7 +22,7 @@
   <ul (nzClick)="close()" nz-menu *ngIf="simulation">
     <li *ngFor="let condition of availableConditions" (click)="setState(condition.condition)" [nzSelected]="state === condition.condition"
         nz-menu-item>{{('SIMULATOR.STATE.' + condition.name) | translate}}</li>
-    <li (click)="failChange.next(!failed)" [nzSelected]="failed"
+    <li (nzClick)="failChange.next(!failed)" [nzSelected]="failed"
         nz-menu-item>{{'SIMULATOR.STATE.Fail' | translate}}</li>
   </ul>
 </nz-dropdown-menu>

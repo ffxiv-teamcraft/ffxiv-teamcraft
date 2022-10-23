@@ -37,7 +37,7 @@
                 <span class="fsh-area-title" title>{{area.placeId | i18nRow:'places' | i18n}} ({{area.done}}/{{area.total}})</span>
                 <ul class="fsh-area-list">
                   <ng-container *ngFor="let spot of area.spots">
-                    <li (click)="spotId$.next(spot.id)" *ngIf="!hideCompleted || spot.done < spot.total"
+                    <li (nzClick)="spotId$.next(spot.id)" *ngIf="!hideCompleted || spot.done < spot.total"
                         [class.ant-menu-item-selected]="(spotId$ | async) === spot.id"
                         fxLayout="row"
                         fxLayoutAlign="space-between center"
@@ -114,7 +114,7 @@
                                       </button>
                                       <nz-dropdown-menu #menu="nzDropdownMenu">
                                         <ul nz-menu>
-                                          <li (click)="addAlarmWithGroup(alarm, group)" *ngFor="let group of alarmGroups"
+                                          <li (nzClick)="addAlarmWithGroup(alarm, group)" *ngFor="let group of alarmGroups"
                                               nz-menu-item>
                                             {{group.name}}
                                           </li>

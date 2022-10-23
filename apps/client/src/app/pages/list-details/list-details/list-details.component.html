@@ -14,7 +14,7 @@
           </button>
           <nz-dropdown-menu #menu="nzDropdownMenu">
             <ul *ngIf="selectedLayout$ | async as selectedLayout" nz-menu>
-              <li (click)="selectLayout(layout)" *ngFor="let layout of layouts" nz-menu-item>
+              <li (nzClick)="selectLayout(layout)" *ngFor="let layout of layouts" nz-menu-item>
                 {{layout.name}}<i *ngIf="layout.$key === selectedLayout.$key" nz-icon nzType="check"></i>
               </li>
             </ul>
@@ -62,7 +62,7 @@
           </button>
           <nz-dropdown-menu #menu="nzDropdownMenu">
             <ul nz-menu>
-              <li (click)="assignTeam(list, team)" *ngFor="let team of teams" nz-menu-item>{{team.name}}</li>
+              <li (nzClick)="assignTeam(list, team)" *ngFor="let team of teams" nz-menu-item>{{team.name}}</li>
             </ul>
           </nz-dropdown-menu>
         </div>
@@ -82,7 +82,7 @@
           </button>
           <nz-dropdown-menu #menu="nzDropdownMenu">
             <ul  nz-menu class="inventories-menu">
-              <li (click)="fillWithInventory(list, inventory)" *ngFor="let inventory of inventories" nz-menu-item>
+              <li (nzClick)="fillWithInventory(list, inventory)" *ngFor="let inventory of inventories" nz-menu-item>
                 {{inventory | translate}}
               </li>
             </ul>

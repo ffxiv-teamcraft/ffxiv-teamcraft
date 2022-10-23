@@ -134,21 +134,21 @@
                 </button>
                 <nz-dropdown-menu #menu="nzDropdownMenu">
                   <ul nz-menu>
-                    <li (click)="addCraft(item)"
+                    <li (nzClick)="addCraft(item)"
                         *ngIf="item.craftedBy === undefined || item.craftedBy.length === 0"
                         nz-menu-item>{{'CUSTOM_ITEMS.DETAILS.CRAFT.Title' | translate}}</li>
-                    <li (click)="addGathering(item)"
+                    <li (nzClick)="addGathering(item)"
                         *ngIf="item.gatheredBy === undefined"
                         nz-menu-item>{{'CUSTOM_ITEMS.DETAILS.GATHERING.Title' | translate}}</li>
-                    <li (click)="addAlarm(item)"
+                    <li (nzClick)="addAlarm(item)"
                         nz-menu-item>{{'CUSTOM_ITEMS.DETAILS.ALARMS.Title' | translate}}</li>
-                    <li (click)="addVendor(item)"
+                    <li (nzClick)="addVendor(item)"
                         nz-menu-item>{{'CUSTOM_ITEMS.DETAILS.VENDORS.Title' | translate}}</li>
-                    <li (click)="addTrade(item)"
+                    <li (nzClick)="addTrade(item)"
                         nz-menu-item>{{'CUSTOM_ITEMS.DETAILS.TRADES.Title' | translate}}</li>
-                    <li (click)="addReduction(item)"
+                    <li (nzClick)="addReduction(item)"
                         nz-menu-item>{{'CUSTOM_ITEMS.DETAILS.REDUCTION.Title' | translate}}</li>
-                    <li (click)="addIngredient(item)"
+                    <li (nzClick)="addIngredient(item)"
                         nz-menu-item>{{'CUSTOM_ITEMS.DETAILS.Requirements' | translate}}</li>
                   </ul>
                 </nz-dropdown-menu>
