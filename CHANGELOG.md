@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.9.2"></a>
+## [9.9.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.1...v9.9.2) (2022-10-23)
+
+
+### Bug Fixes
+
+* **auth:** fixed new anonymous accounts reloading indefinitely ([9387045](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9387045))
+
+
+
 <a name="9.9.1"></a>
 ## [9.9.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.0...v9.9.1) (2022-10-23)
 
