@@ -8,6 +8,7 @@ import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { HttpClient } from '@angular/common/http';
 import { Firestore, where } from '@angular/fire/firestore';
 import { Auth } from '@angular/fire/auth';
+import { isEqual } from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -30,11 +31,9 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
         catchError(() => {
           return of(null);
         }),
-        distinctUntilChanged((a, b) => {
-          return JSON.stringify(a) === JSON.stringify(b);
-        }),
+        distinctUntilChanged(isEqual),
         switchMap(user => {
-          if (user === null) {
+          if (!user) {
             user = new TeamcraftUser();
             user.notFound = true;
             user.$key = uid;
