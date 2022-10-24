@@ -1,6 +1,7 @@
 import { Action } from '@ngrx/store';
 import { Folder } from '../../../model/folder/folder';
 import { FolderContentType } from '../../../model/folder/folder-content-type';
+import { UpdateData } from '@angular/fire/firestore';
 
 export enum FoldersActionTypes {
   CreateFolder = '[Folders] Create Folder',
@@ -77,7 +78,7 @@ export class UpdateFolder implements Action {
 export class PureUpdateFolder implements Action {
   readonly type = FoldersActionTypes.PureUpdateFolder;
 
-  constructor(public key: string, public folder: Partial<Folder<any>>) {
+  constructor(public key: string, public folder: UpdateData<Folder<any>>) {
   }
 }
 

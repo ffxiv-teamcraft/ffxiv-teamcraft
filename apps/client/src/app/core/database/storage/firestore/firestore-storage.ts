@@ -122,6 +122,15 @@ export abstract class FirestoreStorage<T extends DataModel> {
             console.error(error);
             return throwError(error);
           }),
+          map(data => {
+            if (data === undefined) {
+              return {
+                $key: key,
+                notFound: true
+              } as T;
+            }
+            return data;
+          }),
           distinctUntilChanged((a, b) => isEqual(a, b)),
           tap(() => {
             this.recordOperation('read', key);

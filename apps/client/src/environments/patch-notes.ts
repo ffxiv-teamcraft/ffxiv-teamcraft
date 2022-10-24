@@ -1,3 +1,4 @@
 export const patchNotes = `### Bug Fixes
 
-* **auth:** fixed new anonymous accounts reloading indefinitely.`;
+* **core:** fixed some pages not loading when data folder content was missing.
+* **desktop:** fixed app lock after gathering or crafting an item.`;

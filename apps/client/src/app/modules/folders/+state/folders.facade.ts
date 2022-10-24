@@ -6,7 +6,7 @@ import { CreateFolder, DeleteFolder, LoadFolder, LoadFolders, PureUpdateFolder, 
 import { FolderContentType } from '../../../model/folder/folder-content-type';
 import { combineLatest, Observable } from 'rxjs';
 import { Folder } from '../../../model/folder/folder';
-import { distinctUntilChanged, filter, map } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { FolderDisplay } from '../../../model/folder/folder-display';
 import { DataModel } from '../../../core/database/storage/data-model';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -14,12 +14,14 @@ import { NameQuestionPopupComponent } from '../../name-question-popup/name-quest
 import { TranslateService } from '@ngx-translate/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { Favorites } from '../../../model/other/favorites';
+import { arrayRemove } from '@angular/fire/firestore';
 
 export interface PreprocessedDisplay<T> {
   display: FolderDisplay<T>,
   missingEntities: string[],
   missingFolders: string[],
-  pickedEntities: string[]
+  pickedEntities: string[],
+  entitiesToDelete: string[]
 }
 
 export interface TreeFolderDisplay<T> {
@@ -54,6 +56,9 @@ export class FoldersFacade {
             syncDisplay.missingEntities.forEach(loadMissing);
             syncDisplay.missingFolders.forEach($key => this.load($key));
             root = root.filter(key => syncDisplay.pickedEntities.indexOf(key) === -1);
+            if (syncDisplay.entitiesToDelete.length > 0 && syncDisplay.missingEntities.length === 0) {
+              this.store.dispatch(new PureUpdateFolder(folder.$key, {content: arrayRemove(...syncDisplay.entitiesToDelete)}));
+            }
             return syncDisplay.display;
           });
         return {
@@ -67,7 +72,8 @@ export class FoldersFacade {
               return a.index - b.index;
             })
         };
-      })
+      }),
+      debounceTime(100)
     );
   }
 
@@ -180,12 +186,15 @@ export class FoldersFacade {
     const missingEntities: string[] = [];
     const missingFolders: string[] = [];
     const entitiesPicked: string[] = [];
+    const entitiesToDelete: string[] = [];
     folder.content.forEach($key => {
       const matchingEntity = entities.find(e => e.$key === $key);
       if (matchingEntity) {
         entitiesPicked.push($key);
         if (!matchingEntity.notFound) {
           display.content.push(matchingEntity);
+        } else {
+          entitiesToDelete.push($key);
         }
       } else {
         missingEntities.push($key);
@@ -206,7 +215,8 @@ export class FoldersFacade {
       display: display,
       missingEntities: missingEntities,
       missingFolders: missingFolders,
-      pickedEntities: entitiesPicked
+      pickedEntities: entitiesPicked,
+      entitiesToDelete
     };
   }
 }

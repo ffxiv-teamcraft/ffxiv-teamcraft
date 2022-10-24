@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.9.3"></a>
+## [9.9.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.2...v9.9.3) (2022-10-24)
+
+
+### Bug Fixes
+
+* **core:** fixed some pages not loading when data folder content was missing ([4c933b6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4c933b6))
+* **desktop:** fixed app lock after gathering or crafting an item ([62ddbd4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/62ddbd4)), closes [#2390](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2390)
+
+
+
 <a name="9.9.2"></a>
 ## [9.9.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.1...v9.9.2) (2022-10-23)
 
