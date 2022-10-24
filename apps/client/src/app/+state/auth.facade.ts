@@ -79,17 +79,18 @@ export class AuthFacade {
   user$ = this.store.select(authQuery.getUser).pipe(filter(u => !!u && !u.notFound && u.$key !== undefined));
 
   logTracking$ = this.store.select(authQuery.getLogTracking).pipe(
-    filter(log => !!log),
     lazyLoaded(this.store, this.user$.pipe(
       map(user => new LoadLogTracking(user.$key, user.defaultLodestoneId))
-    ))
+    )),
+    filter(log => !!log)
   );
 
   serverLogTracking$ = this.store.select(authQuery.getServerLogTracking).pipe(
-    filter(log => !!log),
     lazyLoaded(this.store, this.user$.pipe(
       map(user => new LoadLogTracking(user.$key, user.defaultLodestoneId))
-    )));
+    )),
+    filter(log => !!log)
+  );
 
   favorites$ = this.user$.pipe(map(user => user.favorites));
 

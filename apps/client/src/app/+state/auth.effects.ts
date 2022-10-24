@@ -213,6 +213,7 @@ export class AuthEffects {
     withLatestFrom(this.authFacade.user$),
     filter(([, user]) => user.defaultLodestoneId !== undefined),
     withLatestFrom(this.authFacade.serverLogTracking$),
+    filter(([, logTracking]) => !!logTracking),
     mergeMap(([[actions, user], logTracking]) => {
       const entries = actions.filter(action => {
         return !action.done || !logTracking[action.log].includes(action.itemId);
@@ -228,7 +229,7 @@ export class AuthEffects {
       }
       return EMPTY;
     })
-  ), { dispatch: false });
+  ), { dispatch: false, useEffectsErrorHandler: true });
 
 
   fetchCommissionProfile$ = createEffect(() => this.actions$.pipe(
