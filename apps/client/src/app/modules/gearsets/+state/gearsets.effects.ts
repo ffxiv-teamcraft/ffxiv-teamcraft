@@ -41,7 +41,7 @@ import { EtroImportPopupComponent } from '../etro-import-popup/etro-import-popup
 @Injectable()
 export class GearsetsEffects {
 
-  
+
   loadGearsets$ = createEffect(() => this.actions$.pipe(
     ofType<LoadGearsets>(GearsetsActionTypes.LoadGearsets),
     exhaustMap(() => {
@@ -55,18 +55,20 @@ export class GearsetsEffects {
     map(sets => new GearsetsLoaded(sets))
   ));
 
-  
+
   loadGearset$ = createEffect(() => this.actions$.pipe(
     ofType<LoadGearset>(GearsetsActionTypes.LoadGearset),
     onlyIfNotConnected(this.gearsetsFacade.allGearsets$, action => action.key),
     mergeMap(action => {
       return this.gearsetService.get(action.key)
-        .pipe(catchError(() => of({ $key: action.key, notFound: true } as TeamcraftGearset)));
+        .pipe(
+          catchError(() => of({ $key: action.key, notFound: true } as TeamcraftGearset))
+        );
     }),
     map(gearset => new GearsetLoaded(gearset))
   ));
 
-  
+
   loadGearsetProgression$ = createEffect(() => this.actions$.pipe(
     ofType<LoadGearsetProgression>(GearsetsActionTypes.LoadGearsetProgression),
     map(action => {
@@ -81,7 +83,7 @@ export class GearsetsEffects {
     })
   ));
 
-  
+
   saveGearsetProgression$ = createEffect(() => this.actions$.pipe(
     ofType<SaveGearsetProgression>(GearsetsActionTypes.SaveGearsetProgression),
     map(action => {
@@ -89,7 +91,7 @@ export class GearsetsEffects {
     })
   ), { dispatch: false });
 
-  
+
   updateIndexes$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateGearsetIndexes>(GearsetsActionTypes.UpdateGearsetIndexes),
     switchMap(action => {
@@ -99,7 +101,7 @@ export class GearsetsEffects {
     dispatch: false
   });
 
-  
+
   createGearset$ = createEffect(() => this.actions$.pipe(
     ofType<CreateGearset>(GearsetsActionTypes.CreateGearset),
     switchMap((action: CreateGearset) => {
@@ -142,7 +144,7 @@ export class GearsetsEffects {
     dispatch: false
   });
 
-  
+
   importAriyalaGearset$ = createEffect(() => this.actions$.pipe(
     ofType<ImportAriyalaGearset>(GearsetsActionTypes.ImportAriyalaGearset),
     switchMap(() => {
@@ -174,7 +176,7 @@ export class GearsetsEffects {
     dispatch: false
   });
 
-  
+
   importEtroGearset$ = createEffect(() => this.actions$.pipe(
     ofType<ImportAriyalaGearset>(GearsetsActionTypes.ImportEtroGearset),
     switchMap(() => {
@@ -207,7 +209,6 @@ export class GearsetsEffects {
   });
 
 
-  
   importFrompcap$ = createEffect(() => this.actions$.pipe(
     ofType<ImportFromPcap>(GearsetsActionTypes.ImportFromPcap),
     switchMap(() => {
@@ -240,7 +241,6 @@ export class GearsetsEffects {
   });
 
 
-  
   syncFromPcap$ = createEffect(() => this.actions$.pipe(
     ofType<SyncFromPcap>(GearsetsActionTypes.SyncFromPcap),
     switchMap(() => {
@@ -254,7 +254,7 @@ export class GearsetsEffects {
     dispatch: false
   });
 
-  
+
   importLodestoneGearset$ = createEffect(() => this.actions$.pipe(
     ofType<ImportLodestoneGearset>(GearsetsActionTypes.ImportLodestoneGearset),
     switchMap(() => {
@@ -286,7 +286,7 @@ export class GearsetsEffects {
     dispatch: false
   });
 
-  
+
   updateGearset$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateGearset>(GearsetsActionTypes.UpdateGearset),
     debounceTime(500),
@@ -298,7 +298,7 @@ export class GearsetsEffects {
     dispatch: false
   });
 
-  
+
   pureUpdateGearset = createEffect(() => this.actions$.pipe(
     ofType<PureUpdateGearset>(GearsetsActionTypes.PureUpdateGearset),
     switchMap(action => {
@@ -308,7 +308,7 @@ export class GearsetsEffects {
     dispatch: false
   });
 
-  
+
   deleteGearset$ = createEffect(() => this.actions$.pipe(
     ofType<DeleteGearset>(GearsetsActionTypes.DeleteGearset),
     switchMap(action => {
