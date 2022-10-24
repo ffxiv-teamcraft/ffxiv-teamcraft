@@ -90,7 +90,7 @@ export class AuthEffects {
       if (user.patron && Date.now() - user.lastPatreonRefresh >= 3 * 7 * 86400000) {
         this.patreonService.refreshToken(user);
       }
-      if (user.defaultLodestoneId === undefined && user.lodestoneIds.length > 0) {
+      if (user.defaultLodestoneId === undefined && user.lodestoneIds?.length > 0) {
         user.defaultLodestoneId = user.lodestoneIds[0].id;
       }
       if (user.defaultLodestoneId && !user.lodestoneIds.some(entry => entry.id === user.defaultLodestoneId)) {
@@ -98,16 +98,16 @@ export class AuthEffects {
       }
       return user;
     }),
-    catchError((error) => {
-      if (error.message.toLowerCase().indexOf('not found') > -1) {
-        return of(new TeamcraftUser());
-      } else {
-        this.authFacade.logout();
-        console.error(error);
-        this.notificationService.error(this.translate.instant('COMMON.Error'), this.translate.instant('Network_error_logged_out'));
-        return EMPTY;
-      }
-    }),
+    // catchError((error) => {
+    //   if (error.message.toLowerCase().indexOf('not found') > -1) {
+    //     return of(new TeamcraftUser());
+    //   } else {
+    //     this.authFacade.logout();
+    //     console.error(error);
+    //     this.notificationService.error(this.translate.instant('COMMON.Error'), this.translate.instant('Network_error_logged_out'));
+    //     return EMPTY;
+    //   }
+    // }),
     map(user => new UserFetched(user)),
     debounceTime(250)
   ));

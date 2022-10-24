@@ -33,7 +33,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
         }),
         distinctUntilChanged(isEqual),
         switchMap(user => {
-          if (!user) {
+          if (!user || user.notFound) {
             user = new TeamcraftUser();
             user.notFound = true;
             user.$key = uid;
