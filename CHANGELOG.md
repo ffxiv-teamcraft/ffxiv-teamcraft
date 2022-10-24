@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.9.5"></a>
+## [9.9.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.4...v9.9.5) (2022-10-24)
+
+
+### Bug Fixes
+
+* **core:** fixed app hanging after gathering a new item on unloaded log tracking data ([02bf417](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/02bf417))
+
+
+
 <a name="9.9.4"></a>
 ## [9.9.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.3...v9.9.4) (2022-10-24)
 
