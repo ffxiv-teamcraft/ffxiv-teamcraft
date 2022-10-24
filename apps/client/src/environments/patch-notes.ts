@@ -1,3 +1,3 @@
 export const patchNotes = `### Bug Fixes
 
-* **auth:** fixed infinite reloading with anonymous accounts.`;
+* **core:** fixed app hanging after gathering a new item on unloaded log tracking data.`;
