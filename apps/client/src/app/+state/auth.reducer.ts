@@ -272,6 +272,9 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
       };
 
     case AuthActionTypes.MarkAsDoneInLog:
+      if (!state.logTracking) {
+        return state;
+      }
       return {
         ...state,
         logTracking: {
