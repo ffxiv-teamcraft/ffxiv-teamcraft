@@ -56,6 +56,7 @@ import {
 } from '@angular/fire/auth';
 import { Functions, httpsCallable } from '@angular/fire/functions';
 import { lazyLoaded } from '../core/rxjs/lazy-loaded';
+import { isFoundAndDefined } from '../core/rxjs/is-found-and-defined';
 
 @Injectable({
   providedIn: 'root'
@@ -82,14 +83,14 @@ export class AuthFacade {
     lazyLoaded(this.store, this.user$.pipe(
       map(user => new LoadLogTracking(user.$key, user.defaultLodestoneId))
     )),
-    filter(log => !!log)
+    isFoundAndDefined()
   );
 
   serverLogTracking$ = this.store.select(authQuery.getServerLogTracking).pipe(
     lazyLoaded(this.store, this.user$.pipe(
       map(user => new LoadLogTracking(user.$key, user.defaultLodestoneId))
     )),
-    filter(log => !!log)
+    isFoundAndDefined()
   );
 
   favorites$ = this.user$.pipe(map(user => user.favorites));
@@ -120,7 +121,7 @@ export class AuthFacade {
   );
 
   characters$ = this.user$.pipe(
-    filter(u => u.lodestoneIds !== undefined),
+    isFoundAndDefined('lodestoneIds'),
     switchMap((user: TeamcraftUser) => {
       return combineLatest(user.lodestoneIds.map(entry => {
         if (entry.id > 0) {
@@ -139,7 +140,7 @@ export class AuthFacade {
   );
 
   characterEntries$ = this.user$.pipe(
-    filter(u => u.lodestoneIds !== undefined),
+    isFoundAndDefined('lodestoneIds'),
     switchMap((user: TeamcraftUser) => {
       return combineLatest(user.lodestoneIds.map(entry => {
         if (entry.id > 0) {

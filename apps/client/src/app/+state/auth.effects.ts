@@ -213,7 +213,6 @@ export class AuthEffects {
     withLatestFrom(this.authFacade.user$),
     filter(([, user]) => user.defaultLodestoneId !== undefined),
     withLatestFrom(this.authFacade.serverLogTracking$),
-    filter(([, logTracking]) => !!logTracking),
     mergeMap(([[actions, user], logTracking]) => {
       const entries = actions.filter(action => {
         return !action.done || !logTracking[action.log].includes(action.itemId);
@@ -276,7 +275,7 @@ export class AuthEffects {
         this.nickNameWarningShown = true;
       }
     }),
-    switchMapTo(EMPTY)
+    switchMap(() => EMPTY)
   ), { dispatch: false });
 
   constructor(private actions$: Actions, private auth: Auth, private userService: UserService,
