@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.9.6"></a>
+## [9.9.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.5...v9.9.6) (2022-10-25)
+
+
+### Bug Fixes
+
+* **db:** fixed gil shops limited to 50 entries ([da15511](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/da15511))
+* **desktop:** fixed an issue locking the app after gathering or crafting an item ingame ([f2ab280](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f2ab280))
+
+
+### Features
+
+* **db:** imported 80+ allagan reports ([6bbf9af](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6bbf9af))
+
+
+
 <a name="9.9.5"></a>
 ## [9.9.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.4...v9.9.5) (2022-10-24)
 
