@@ -267,7 +267,6 @@ export class DataService {
             map(items => {
               return items.Results.filter(item => {
                 if (!onlyCraftable) return true;
-
                 const matchesRecipeFilter = item.Recipes && item.Recipes.length > 0;
                 return matchesRecipeFilter && xivapiFilters.reduce((matches, f) => {
                   switch (f.operator) {
