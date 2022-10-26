@@ -12,7 +12,7 @@ export function observeInput<T, K extends keyof T>(target: T, name: K, optional 
   }
 
   if (Reflect.getMetadata('Observer', target, name.toString())) {
-    console.error(`Trying to setup an input Observer on an input that's already observed, input name: ${name}`);
+    console.error(`Trying to setup an input Observer on an input that's already observed, input name: ${name.toString()}`);
   }
 
   Reflect.defineMetadata('Observer', true, target, name.toString());

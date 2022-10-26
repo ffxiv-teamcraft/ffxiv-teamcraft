@@ -59,12 +59,58 @@
             nzCloseable
   ></nz-alert>
 </ng-container>
+<ng-container *ngIf="optimizerResult$ | async as optimizerResult">
+  <app-workshop-planning *ngIf="optimizerResult.planning !== null" [planning]="optimizerResult.planning" [totalScore]="optimizerResult.score"
+                         [today]="today$ | async"
+                         [weeklyReset]="previousWeeklyReset$ | async"></app-workshop-planning>
+  <nz-alert *ngIf="optimizerResult.planning === null" [nzMessage]="'ISLAND_SANCTUARY.WORKSHOP.No_planning' | translate"
+            [nzDescription]="'ISLAND_SANCTUARY.WORKSHOP.No_planning_explain' | translate"
+            nzType="error" nzShowIcon></nz-alert>
+</ng-container>
 
 <ng-container *ngTemplateOutlet="objectsTable;context:{$implicit: craftworksObjects$ | async, pageSize: 8}"></ng-container>
 
-<ng-container *ngIf="optimizerResult$ | async as optimizerResult">
-  <app-workshop-planning [planning]="optimizerResult.planning" [totalScore]="optimizerResult.score" [today]="today$ | async"
-                         [weeklyReset]="previousWeeklyReset$ | async"></app-workshop-planning>
+<ng-container *ngIf="nextWeekPrep$ | async as nextWeekPrep">
+  <nz-divider [nzText]="'ISLAND_SANCTUARY.WORKSHOP.Next_week_prep' | translate" nzOrientation="left"></nz-divider>
+
+  <div nz-row [nzGutter]="10">
+    <div nz-col [nzMd]="12" [nzSm]="24">
+      <nz-card nzSize="small" [nzTitle]="'ISLAND_SANCTUARY.WORKSHOP.Crop_materials' | translate">
+        <div fxLayout="column" fxLayoutGap="5px">
+          <div fxLayout="row" *ngFor="let row of nextWeekPrep.crops" fxLayoutGap="5px">
+            <app-item-icon [itemId]="+row.id" [width]="32"></app-item-icon>
+            <div fxLayout="column">
+              <div>
+                <app-i18n-name content="items" [id]="row.id"></app-i18n-name>
+              </div>
+              <div>
+                x{{row.quantity}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </nz-card>
+    </div>
+
+    <div nz-col [nzMd]="12" [nzSm]="24">
+      <nz-card nzSize="small" [nzTitle]="'ISLAND_SANCTUARY.WORKSHOP.Pasture_materials' | translate">
+        <div fxLayout="column" fxLayoutGap="5px">
+          <div fxLayout="row" *ngFor="let row of nextWeekPrep.pasture" fxLayoutGap="5px">
+            <app-item-icon [itemId]="+row.id" [width]="32"></app-item-icon>
+            <div fxLayout="column">
+              <div>
+                <app-i18n-name content="items" [id]="row.id"></app-i18n-name>
+              </div>
+              <div>
+                x{{row.quantity}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </nz-card>
+    </div>
+
+  </div>
 </ng-container>
 
 <ng-template #objectsTable let-craftworksObjects let-pageSize="pageSize">

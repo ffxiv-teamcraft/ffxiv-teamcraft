@@ -2,17 +2,17 @@ import { Injectable, NgZone } from '@angular/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../pending-changes/pending-changes.service';
 import { CraftingRotation } from '../../../model/other/crafting-rotation';
-import { AngularFirestore, DocumentChangeAction, QueryFn } from '@angular/fire/compat/firestore';
 import { FirestoreRelationalStorage } from '../storage/firestore/firestore-relational-storage';
 import { Observable, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { RotationTag } from '../../../pages/simulator/components/community-rotations-page/rotation-tag';
 import { CommunityRotationFilters } from './community-rotation-filters';
+import { Firestore, orderBy, where } from '@angular/fire/firestore';
 
 @Injectable()
 export class CraftingRotationService extends FirestoreRelationalStorage<CraftingRotation> {
 
-  constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
+  constructor(protected firestore: Firestore, protected serializer: NgSerializerService, protected zone: NgZone,
               protected pendingChangesService: PendingChangesService) {
     super(firestore, serializer, zone, pendingChangesService);
   }
@@ -21,22 +21,15 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
     if (filters.rlvl === null) {
       return of([]);
     }
-    const query: QueryFn = ref => {
-      return ref.where(`public`, '==', true)
-        .where('community.rlvl', '==', filters.rlvl)
-        .orderBy('xivVersion', 'desc');
-    };
-    return this.firestore.collection(this.getBaseUri(), query)
-      .snapshotChanges()
+    return this.query(
+      where(`public`, '==', true),
+      where('community.rlvl', '==', filters.rlvl),
+      orderBy('xivVersion', 'desc')
+    )
       .pipe(
         tap(() => this.recordOperation('read')),
-        map((snaps: DocumentChangeAction<CraftingRotation>[]) => {
+        map((snaps: CraftingRotation[]) => {
           const rotations = snaps
-            .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: CraftingRotation = <CraftingRotation>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
-              delete snap.payload;
-              return valueWithKey;
-            })
             .filter(rotation => {
               return filters.tags.reduce((res, tag) => res && rotation.tags.indexOf(<RotationTag>tag) > -1, true);
             });
@@ -88,22 +81,7 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
   }
 
   public getUserCommunityRotations(userId: string): Observable<CraftingRotation[]> {
-    const query: QueryFn = ref => {
-      return ref.where(`public`, '==', true).where('authorId', '==', userId);
-    };
-    return this.firestore.collection(this.getBaseUri(), query)
-      .snapshotChanges()
-      .pipe(
-        map((snaps: DocumentChangeAction<CraftingRotation>[]) => {
-          const rotations = snaps
-            .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: CraftingRotation = <CraftingRotation>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
-              delete snap.payload;
-              return valueWithKey;
-            });
-          return this.serializer.deserialize<CraftingRotation>(rotations, [this.getClass()]);
-        })
-      );
+    return this.query(where(`public`, '==', true), where('authorId', '==', userId));
   }
 
   protected getBaseUri(): string {
@@ -116,7 +94,7 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
 
   private getSortScore(rotation: CraftingRotation): number {
     return rotation.community.minCraftsmanship + rotation.community.minControl + rotation.community.minCp
-      + (rotation.rotation.length / 15) * 1000 + (!!rotation.food ? 5000 : 0)
+      + (rotation.rotation.length / 15) * 1000 + (rotation.food ? 5000 : 0)
       + (rotation.tags.includes(RotationTag.SPECIALIST) ? 10000 : 0);
   }
 

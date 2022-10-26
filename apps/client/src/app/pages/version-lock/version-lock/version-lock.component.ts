@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import * as semver from 'semver';
 import { first, map } from 'rxjs/operators';
 import { environment } from '../../../../environments/environment';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { Database, objectVal, ref } from '@angular/fire/database';
 
 @Component({
   selector: 'app-version-lock',
@@ -11,9 +11,8 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
   styleUrls: ['./version-lock.component.less']
 })
 export class VersionLockComponent {
-  constructor(private router: Router, private firebase: AngularFireDatabase) {
-    this.firebase.object<string>('version_lock')
-      .valueChanges()
+  constructor(private router: Router, private firebase: Database) {
+    objectVal<string>(ref(this.firebase, 'version_lock'))
       .pipe(
         map(version => {
           return semver.gte(environment.version, version);

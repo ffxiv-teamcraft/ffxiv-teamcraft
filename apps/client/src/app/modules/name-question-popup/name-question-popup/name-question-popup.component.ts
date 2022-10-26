@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd/modal';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-name-question-popup',
@@ -23,9 +23,9 @@ export class NameQuestionPopupComponent implements OnInit {
 
   public type = 'text';
 
-  public control: FormGroup;
+  public control: UntypedFormGroup;
 
-  constructor(private modalRef: NzModalRef, private fb: FormBuilder) {
+  constructor(private modalRef: NzModalRef, private fb: UntypedFormBuilder) {
   }
 
   public submit(): void {

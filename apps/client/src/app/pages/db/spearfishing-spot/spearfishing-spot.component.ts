@@ -31,7 +31,7 @@ export class SpearfishingSpotComponent extends TeamcraftPageComponent {
 
   public nodeData$: Observable<any>;
 
-  public bonuses$: Observable<Object[]>;
+  public bonuses$: Observable<any[]>;
 
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
 

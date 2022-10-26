@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { PlatformService } from '../../tools/platform.service';
@@ -11,11 +11,11 @@ import { PlatformService } from '../../tools/platform.service';
 })
 export class RegisterPopupComponent {
 
-  form: FormGroup;
+  form: UntypedFormGroup;
 
   errorMessageCode: string;
 
-  constructor(private fb: FormBuilder, private authFacade: AuthFacade,
+  constructor(private fb: UntypedFormBuilder, private authFacade: AuthFacade,
               private modalRef: NzModalRef, public platform: PlatformService) {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],

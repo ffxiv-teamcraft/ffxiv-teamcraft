@@ -40,9 +40,9 @@ export class PatreonRedirectComponent {
                 })
               );
             })
-          ).subscribe(() => {
-          }, (error => this.errorCode = error.error)
-        );
+          ).subscribe({
+          error: error => this.errorCode = error.error
+        });
       }
     });
   }

@@ -29,7 +29,7 @@ export class GarlandToolsService {
   public onceLoaded$: Observable<boolean> = this.loaded$.pipe(filter(loaded => loaded));
 
   constructor(private serializer: NgSerializerService, private http: HttpClient,
-              @Inject(PLATFORM_ID) platform: Object) {
+              @Inject(PLATFORM_ID) platform: any) {
     this.preload();
   }
 

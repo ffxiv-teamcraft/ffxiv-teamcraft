@@ -31,6 +31,7 @@ import { SoundNotificationService } from '../../../core/sound-notification/sound
 import { SoundNotificationType } from '../../../core/sound-notification/sound-notification-type';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { EnvironmentService } from '../../../core/environment.service';
 
 @Injectable({
   providedIn: 'root'
@@ -221,7 +222,7 @@ export class FreeCompanyWorkshopFacade {
 
   constructor(private readonly lazyData: LazyDataFacade, private readonly ipc: IpcService,
               private readonly store: Store<fromFreeCompanyWorkshop.State>, private readonly translate: TranslateService,
-              private readonly i18n: I18nToolsService,
+              private readonly i18n: I18nToolsService, private env: EnvironmentService,
               private readonly settings: SettingsService, private soundNotificationService: SoundNotificationService) {
   }
 
@@ -472,6 +473,9 @@ export class FreeCompanyWorkshopFacade {
 
   @Memoized()
   public getSubmarineMaxRank(): Observable<number> {
+    if (this.env.gameVersion < 6.2) {
+      return of(95);
+    }
     return of(100);
   }
 

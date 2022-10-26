@@ -7,6 +7,7 @@ import { SettingsService } from '../../../../modules/settings/settings.service';
 import { combineLatest, Observable, of } from 'rxjs';
 import { debounceTime, map, startWith, switchMap } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
+import { EChartsOption } from 'echarts';
 
 @Component({
   selector: 'app-fish-weathers',
@@ -57,6 +58,38 @@ export class FishWeathersComponent {
             weatherId: entry.id
           };
         });
+    })
+  );
+
+  options$: Observable<EChartsOption> = this.weathersChartData$.pipe(
+    map(entries => {
+      return {
+        tooltip: {
+          trigger: 'item'
+        },
+        avoidLabelOverlap: true,
+        backgroundColor: '#191E25',
+        series: [
+          {
+            type: 'pie',
+            radius: '50%',
+            data: entries.map(entry => {
+              return {
+                name: entry.name,
+                value: entry.value
+              };
+            }),
+            emphasis: {
+              itemStyle: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+              }
+            }
+          }
+
+        ]
+      };
     })
   );
 

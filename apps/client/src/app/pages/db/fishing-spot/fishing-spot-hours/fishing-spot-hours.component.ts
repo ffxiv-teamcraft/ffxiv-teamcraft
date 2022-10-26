@@ -2,8 +2,9 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnI
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { combineLatest, Observable, of, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, takeUntil } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, shareReplay, switchMap, takeUntil } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
+import { EChartsOption } from 'echarts';
 
 interface FishingSpotChartData {
   id: number;
@@ -36,34 +37,62 @@ export class FishingSpotHoursComponent implements OnInit, OnDestroy {
             name: names.find((name) => name.id === +fishId)?.name ?? '--',
             series: Object.entries(entry.byTime)
               .sort(([a], [b]) => +a - +b)
-              .map(([hour, value]) => ({
-                name: `${hour.padStart(2, '0')}:00`,
-                value: value ?? 0
-              }))
+              .map(([, value]) => value ?? 0)
           }));
-        }),
-        debounceTime(100)
+        })
       );
     }),
-    startWith([]),
     shareReplay({ bufferSize: 1, refCount: true })
+  );
+
+
+  options$: Observable<EChartsOption> = this.hoursChartData$.pipe(
+    map(entries => {
+      return {
+        backgroundColor: '#191E25',
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            animation: false
+          }
+        },
+        legend: {
+          top: '5%',
+          left: 'center'
+        },
+        xAxis: {
+          type: 'category',
+          boundaryGap: false,
+          data: new Array(24).fill(null).map((_, i) => `${i.toString().padStart(2, '0')}:00`)
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: entries.map((entry) => {
+          return {
+            name: entry.name,
+            stack: 'Total',
+            type: 'line',
+            showSymbol: false,
+            lineStyle: {
+              width: 0
+            },
+            areaStyle: {
+              opacity: 0.8
+            },
+            emphasis: {
+              focus: 'series'
+            },
+            data: entry.series
+          };
+        })
+      };
+    })
   );
 
   public readonly activeFishName$ = new Subject<string | undefined>();
 
   private readonly activeFish$ = new Subject<number | undefined>();
-
-  public activeChartEntries$: Observable<Array<{ name: string }>> = this.activeFish$.pipe(
-    distinctUntilChanged(),
-    debounceTime(100),
-    switchMap((fishId) => {
-      if (fishId >= 0) {
-        return this.i18n.getNameObservable('items', fishId).pipe(map((name) => [{ name }]));
-      }
-      return of([]);
-    }),
-    startWith([])
-  );
 
   private readonly unsubscribe$ = new Subject<void>();
 

@@ -4,7 +4,7 @@ import { LazyDataEntries, LazyDataRecordKey } from '../../lazy-data/lazy-data-ty
 import { map, switchMap } from 'rxjs/operators';
 
 
-export function withLazyRow<T extends any, K extends LazyDataRecordKey>(lazyData: LazyDataFacade, entry: K, idMappingFuntion: (data: T) => number): OperatorFunction<T, [T, LazyDataEntries[K]]> {
+export function withLazyRow<T, K extends LazyDataRecordKey>(lazyData: LazyDataFacade, entry: K, idMappingFuntion: (data: T) => number): OperatorFunction<T, [T, LazyDataEntries[K]]> {
   return (source: Observable<T>) => {
     return source.pipe(
       switchMap(data => {

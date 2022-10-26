@@ -4,7 +4,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { CoreModule } from '../../core/core.module';
@@ -78,6 +77,7 @@ import { ApolloClientResolver } from '../../core/apollo-client.resolver';
 import { FishDataModule } from './fish/fish-data.module';
 import { FishingSpotHooksetDatagridComponent } from './fishing-spot/fishing-spot-hookset-datagrid/fishing-spot-hookset-datagrid.component';
 import { AlarmButtonModule } from '../../modules/alarm-button/alarm-button.module';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 const routes: Routes = [
   {
@@ -319,7 +319,6 @@ const routes: Routes = [
     FlexLayoutModule,
     FormsModule,
     TranslateModule,
-    NgxChartsModule,
     MapModule,
     PipesModule,
     ItemIconModule,
@@ -342,7 +341,8 @@ const routes: Routes = [
     LazyScrollModule,
     ChartModule,
     FishDataModule,
-    AlarmButtonModule
+    AlarmButtonModule,
+    NgxEchartsModule
   ],
   providers: [ItemContextService]
 })

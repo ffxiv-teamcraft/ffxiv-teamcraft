@@ -13,7 +13,7 @@ import { GatheringNode } from '../../../core/data/model/gathering-node';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { SpearfishingShadowSize } from '../../../core/data/model/spearfishing-shadow-size';
 import { SpearfishingSpeed } from '../../../core/data/model/spearfishing-speed';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { chunk } from 'lodash';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
@@ -124,7 +124,7 @@ export class GatheringLocationComponent {
               private mapService: MapService, private router: Router,
               private route: ActivatedRoute, public translate: TranslateService,
               private gatheringNodesService: GatheringNodesService, private message: NzMessageService,
-              private fb: FormBuilder, private lazyData: LazyDataFacade,
+              private fb: UntypedFormBuilder, private lazyData: LazyDataFacade,
               private settings: SettingsService) {
 
     const resultsData$ = combineLatest([

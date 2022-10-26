@@ -2,7 +2,7 @@ import { Inject, Injectable, NgZone, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { first, shareReplay, tap } from 'rxjs/operators';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
-import { IS_HEADLESS } from 'apps/client/src/environments/is-headless';
+import { IS_HEADLESS } from '../../../environments/is-headless';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class EorzeanTimeService {
   // Only used for mocks in dev mode
   private mockTicks = 0;
 
-  constructor(@Inject(PLATFORM_ID) private platform: Object, private ngZone: NgZone) {
+  constructor(@Inject(PLATFORM_ID) private platform: any, private ngZone: NgZone) {
     if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
       this.ngZone.runOutsideAngular(() => {
         setInterval(() => this.tick(), 20000 / EorzeanTimeService.EPOCH_TIME_FACTOR);

@@ -5,9 +5,10 @@ import { PendingChangesService } from './pending-changes/pending-changes.service
 import { catchError, distinctUntilChanged, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { HttpClient } from '@angular/common/http';
+import { Firestore, where } from '@angular/fire/firestore';
+import { Auth } from '@angular/fire/auth';
+import { isEqual } from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,8 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
 
   userCache = {};
 
-  constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService, private af: AngularFireAuth, private http: HttpClient) {
+  constructor(protected firestore: Firestore, protected serializer: NgSerializerService, protected zone: NgZone,
+              protected pendingChangesService: PendingChangesService, private auth: Auth, private http: HttpClient) {
     super(firestore, serializer, zone, pendingChangesService);
   }
 
@@ -27,14 +28,12 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
         return EMPTY;
       }
       this.userCache[uid] = super.get(uid).pipe(
-        catchError((err) => {
+        catchError(() => {
           return of(null);
         }),
-        distinctUntilChanged((a, b) => {
-          return JSON.stringify(a) === JSON.stringify(b);
-        }),
+        distinctUntilChanged(isEqual),
         switchMap(user => {
-          if (user === null) {
+          if (!user || user.notFound) {
             user = new TeamcraftUser();
             user.notFound = true;
             user.$key = uid;
@@ -64,21 +63,13 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
     return this.userCache[uid];
   }
 
-  public getAllIds(): Observable<string[]> {
-    return this.firestore.collection(this.getBaseUri()).get().pipe(
-      tap(() => this.recordOperation('read')),
-      map(snap => snap.docs.map(doc => doc.id))
-    );
-  }
-
   /**
    * Checks if a given nickname is available.
    * @param {string} nickname
    * @returns {Observable<boolean>}
    */
   public checkNicknameAvailability(nickname: string): Observable<boolean> {
-    return this.firestore.collection(this.getBaseUri(), ref => ref.where('nickname', '==', nickname))
-      .valueChanges()
+    return this.query(where('nickname', '==', nickname))
       .pipe(
         tap(() => this.recordOperation('read')),
         map(res => res.length === 0)
@@ -86,14 +77,9 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
   }
 
   public getUsersByLodestoneId(id: number): Observable<TeamcraftUser[]> {
-    return this.firestore.collection(this.getBaseUri(), ref => ref.where('defaultLodestoneId', '==', id))
-      .snapshotChanges()
+    return this.query(where('defaultLodestoneId', '==', id))
       .pipe(
-        tap(() => this.recordOperation('read')),
-        map((snaps: any[]) => {
-          const valueWithKey: TeamcraftUser[] = snaps.map(snap => ({ ...snap.payload.doc.data(), $key: snap.payload.doc.id }));
-          return this.serializer.deserialize<TeamcraftUser>(valueWithKey, [this.getClass()]);
-        })
+        tap(() => this.recordOperation('read'))
       );
   }
 
@@ -103,7 +89,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
     return super.prepareData(data);
   }
 
-  protected getBaseUri(params?: any): string {
+  protected getBaseUri(): string {
     return 'users';
   }
 

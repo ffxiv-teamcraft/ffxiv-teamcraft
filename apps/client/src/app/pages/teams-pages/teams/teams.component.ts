@@ -56,9 +56,9 @@ export class TeamsComponent implements OnInit {
           switchMap((response: any) => {
             return this.setWebhook(this.params.state, response.webhook.url);
           })
-        ).subscribe(() => {
-        }, (error => this.errorCode$.next(error.error))
-      );
+        ).subscribe({
+        error: error => this.errorCode$.next(error.error)
+      });
     }
   }
 
@@ -171,8 +171,9 @@ export class TeamsComponent implements OnInit {
               return this.setWebhook(team.$key, response.webhook.url);
             })
           )
-          .subscribe(() => {
-          }, error => this.errorCode$.next(error.error));
+          .subscribe({
+            error: error => this.errorCode$.next(error.error)
+          });
       });
       this.ipc.send('oauth', 'discordapp.com');
     } else {

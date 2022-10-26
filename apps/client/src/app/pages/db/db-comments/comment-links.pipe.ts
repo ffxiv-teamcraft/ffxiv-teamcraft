@@ -29,7 +29,7 @@ export class CommentLinksPipe implements PipeTransform {
 
   constructor(private sanitizer: DomSanitizer, private linkTools: LinkToolsService,
               private i18n: I18nToolsService, private lazyData: LazyDataFacade,
-              @Inject(PLATFORM_ID) private platform: Object) {
+              @Inject(PLATFORM_ID) private platform: any) {
   }
 
   transform(value: string, locale: string, comment: DbComment): Observable<SafeHtml> {
@@ -138,9 +138,10 @@ export class CommentLinksPipe implements PipeTransform {
 
   getRegexResult(regex: RegExp, value: string): RegExpExecArray[] {
     const res = [];
-    let row = null;
-    while (row = regex.exec(value)) {
+    let row = regex.exec(value);
+    while (row !== null) {
       res.push(row);
+      row = regex.exec(value);
     }
     return res;
   }

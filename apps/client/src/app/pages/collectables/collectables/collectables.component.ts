@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { combineLatest, merge, Observable, Subject } from 'rxjs';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
@@ -28,7 +28,7 @@ import { LazyDataEntries } from '../../../lazy-data/lazy-data-types';
 })
 export class CollectablesComponent {
 
-  public form$: Observable<FormGroup>;
+  public form$: Observable<UntypedFormGroup>;
 
   public results$: Observable<{ job: number, level: number, groups: LazyDataEntries['collectablesPageData'] }[]>;
 
@@ -68,7 +68,7 @@ export class CollectablesComponent {
 
   selectedTab$: Observable<number> = merge(this.selectedTabFromRoute$, this.selectedTabFromTabset$);
 
-  constructor(private fb: FormBuilder, private authFacade: AuthFacade,
+  constructor(private fb: UntypedFormBuilder, private authFacade: AuthFacade,
               private lazyData: LazyDataFacade, private rotationPicker: RotationPickerService,
               private listPicker: ListPickerService, private listManager: ListManagerService,
               private progressService: ProgressPopupService, private notificationService: NzNotificationService,
@@ -128,7 +128,7 @@ export class CollectablesComponent {
     });
   }
 
-  public applyNewLevels(form: FormGroup): void {
+  public applyNewLevels(form: UntypedFormGroup): void {
     this.levelsEditor$.next(form.getRawValue());
   }
 

@@ -196,7 +196,7 @@
   </ng-container>
   <div class="block books-and-input-block" nz-col nzMd="6" nzSm="12" [nzXs]="overlay?12:24">
     <div class="masterbooks">
-      <app-item-icon *ngFor="let masterbook of item.masterbooks"
+      <app-item-icon *ngFor="let masterbook of item.masterbooks; trackById"
                      [disableClick]="+item.masterbooks[0].id !== item.masterbooks[0].id"
                      [tooltipDisabled]="+item.masterbooks[0].id !== item.masterbooks[0].id"
                      [icon]="masterbook.id | lazyIcon" [itemId]="masterbook.id"

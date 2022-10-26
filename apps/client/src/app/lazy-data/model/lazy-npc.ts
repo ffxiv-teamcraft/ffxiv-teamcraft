@@ -89,6 +89,7 @@ export enum Ja {
   Trade = "TRADE",
   Transportation = "TRANSPORTATION",
   TripleTriad = "TRIPLE TRIAD",
+  VariantDungeon = "VARIANT DUNGEON",
   Weather = "WEATHER",
   Workshop = "WORKSHOP",
 }

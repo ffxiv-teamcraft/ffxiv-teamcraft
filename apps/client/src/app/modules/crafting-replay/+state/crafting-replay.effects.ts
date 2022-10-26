@@ -8,7 +8,8 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { CraftingReplay } from '../model/crafting-replay';
 import { CraftingReplayDbService } from '../../../core/database/crafting-replay-db.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { AngularFireFunctions } from '@angular/fire/compat/functions';
+import { Functions, httpsCallable } from '@angular/fire/functions';
+import { from } from 'rxjs';
 
 @Injectable()
 export class CraftingReplayEffects {
@@ -59,9 +60,9 @@ export class CraftingReplayEffects {
     return this.actions$.pipe(
       ofType(CraftingReplayActions.addCraftingReplay),
       switchMap(action => {
-        return this.afs.httpsCallable('hashReplay')({ replay: action.craftingReplay }).pipe(
+        return from(httpsCallable<{ replay: CraftingReplay }, { hash: string }>(this.afs, 'hashReplay')({ replay: action.craftingReplay })).pipe(
           map(res => {
-            action.craftingReplay.hash = res.hash;
+            action.craftingReplay.hash = res.data.hash;
             return action.craftingReplay;
           }),
           tap(replay => {
@@ -84,7 +85,7 @@ export class CraftingReplayEffects {
     return this.actions$.pipe(
       ofType(CraftingReplayActions.persistCraftingReplay),
       switchMap(({ craftingReplay }) => {
-        return this.afs.httpsCallable('saveReplay')({ replay: craftingReplay }).pipe(
+        return from(httpsCallable(this.afs, 'saveReplay')({ replay: craftingReplay })).pipe(
           tap(() => {
             this.setLocalstore(this.getLocalstore().filter(replay => replay.$key !== craftingReplay.$key));
           })
@@ -113,7 +114,7 @@ export class CraftingReplayEffects {
   });
 
   constructor(private actions$: Actions, private authFacade: AuthFacade, private serializer: NgSerializerService,
-              private craftingReplayDbService: CraftingReplayDbService, private afs: AngularFireFunctions) {
+              private craftingReplayDbService: CraftingReplayDbService, private afs: Functions) {
   }
 
   private getLocalstore(): CraftingReplay[] {

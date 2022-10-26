@@ -57,7 +57,7 @@
   "Download_desktop_app": "Download desktop app",
   "Find_us_on_twitter": "Find us on Twitter",
   "Join_discord_server": "Join our Discord server",
-  "See_code_github": "See the code on Github",
+  "See_code_github": "Star the project on Github",
   "Support_on_patreon": "Support the project on Patreon",
   "Access_patreon_page": "Go to our Patreon page",
   "Like_the_tool": "Are you enjoying the tool so far?",
@@ -1615,6 +1615,7 @@
       "Your_ranking": "Your ranking",
       "Include_fisheyes_data": "Include reports using Fish Eyes",
       "Not_enough_data_points": "Not enough data points to display this chart",
+      "Only_10_most_used": "Only showing the 10 most used baits",
       "TUG": {
         "Light": "Light (!)",
         "Medium": "Medium (!!)",
@@ -2997,6 +2998,11 @@
       "Groove_tooltip": "Groove at the end of the day",
       "Crafting_time": "Crafting time",
       "Categories": "Categories",
+      "No_planning": "No planning available",
+      "No_planning_explain": " Teamcraft is not able to compute a planning because there's too few recipes available, try to change your island level or uncheck some material exclusions.",
+      "Next_week_prep": "Materials you should prepare for next week",
+      "Crop_materials": "Crops",
+      "Pasture_materials": "Pasture",
       "POPULARITY": {
         "Very_high": "Very high",
         "High": "High",

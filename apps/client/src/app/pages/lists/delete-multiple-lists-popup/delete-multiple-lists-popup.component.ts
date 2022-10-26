@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
-import { AbstractListsSelectionPopup } from '../abstract-lists-selection-popup';
+import { AbstractListsSelectionPopupComponent } from '../abstract-lists-selection-popup.component';
 import { AuthFacade } from '../../../+state/auth.facade';
 
 @Component({
@@ -11,7 +11,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
   styleUrls: ['./delete-multiple-lists-popup.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DeleteMultipleListsPopupComponent extends AbstractListsSelectionPopup {
+export class DeleteMultipleListsPopupComponent extends AbstractListsSelectionPopupComponent {
 
   public userId$ = this.authFacade.userId$;
 

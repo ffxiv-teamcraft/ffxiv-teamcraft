@@ -437,8 +437,8 @@ export class ExtractorComponent {
   private getExp(collectable: any, ratio: number): Observable<number[]> {
     return combineLatest(new Array(this.environment.maxLevel).fill(null).map((ignored, index) => {
       const level = index + 1;
-      const firstCollectableDigit = Math.floor(collectable.levelMax / 10);
-      const firstLevelDigit = Math.floor(level / 10);
+      const firstCollectableDigit = Math.ceil(collectable.levelMax / 10);
+      const firstLevelDigit = Math.ceil(level / 10);
       let nerfedExp = firstCollectableDigit < firstLevelDigit;
       if (level % 10 === 0 && level > collectable.levelMax) {
         nerfedExp = nerfedExp && (firstCollectableDigit + 1) < firstLevelDigit

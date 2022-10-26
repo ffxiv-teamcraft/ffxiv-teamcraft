@@ -1,14 +1,14 @@
 import { DataWithPermissions } from '../../../core/database/permissions/data-with-permissions';
 import { CommissionStatus } from './commission-status';
 import { CommissionTag } from './commission-tag';
-import firebase from 'firebase/compat/app';
 import { CommissionRating } from './commission-rating';
+import { Timestamp } from '@angular/fire/firestore';
 
 export class Commission extends DataWithPermissions {
 
-  createdAt: firebase.firestore.Timestamp;
+  createdAt: Timestamp;
 
-  bump: firebase.firestore.Timestamp;
+  bump: Timestamp;
 
   name: string;
 
@@ -36,7 +36,7 @@ export class Commission extends DataWithPermissions {
 
   status: CommissionStatus = CommissionStatus.OPENED;
 
-  candidates: { uid: string, offer: number, contact: string, date: firebase.firestore.Timestamp }[] = [];
+  candidates: { uid: string, offer: number, contact: string, date: Timestamp }[] = [];
 
   tags: CommissionTag[] = [];
 

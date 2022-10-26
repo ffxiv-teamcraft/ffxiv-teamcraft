@@ -21,14 +21,12 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { NameQuestionPopupModule } from '../name-question-popup/name-question-popup.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
 import { AlarmsExtractor } from './data/extractor/alarms-extractor';
 import { MasterbooksExtractor } from './data/extractor/masterbooks-extractor';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TagsPopupComponent } from './tags-popup/tags-popup.component';
 import { PageLoaderModule } from '../page-loader/page-loader.module';
 import { PermissionsModule } from '../permissions/permissions.module';
-import { IconsModule } from '../../core/icons/icons.module';
 import { UserAvatarModule } from '../user-avatar/user-avatar.module';
 import { TeamsModule } from '../teams/teams.module';
 import { CommentsModule } from '../comments/comments.module';
@@ -114,7 +112,6 @@ export const DATA_EXTRACTORS: Provider[] = [
     PageLoaderModule,
     PermissionsModule,
     ProgressPopupModule,
-    IconsModule,
     UserAvatarModule,
     TeamsModule,
     CommentsModule,

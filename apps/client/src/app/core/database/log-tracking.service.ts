@@ -1,12 +1,12 @@
 import { Injectable, NgZone } from '@angular/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { LogTracking } from '../../model/user/log-tracking';
 import { concat, from, Observable } from 'rxjs';
-import firebase from 'firebase/compat/app';
+
 import { chunk } from 'lodash';
+import { arrayRemove, arrayUnion, Firestore, runTransaction } from '@angular/fire/firestore';
 
 interface MarkAsDoneEntry {
   itemId: number;
@@ -17,7 +17,7 @@ interface MarkAsDoneEntry {
 @Injectable({ providedIn: 'root' })
 export class LogTrackingService extends FirestoreStorage<LogTracking> {
 
-  constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
+  constructor(protected firestore: Firestore, protected serializer: NgSerializerService, protected zone: NgZone,
               protected pendingChangesService: PendingChangesService) {
     super(firestore, serializer, zone, pendingChangesService);
   }
@@ -29,8 +29,8 @@ export class LogTrackingService extends FirestoreStorage<LogTracking> {
   public markAsDone(uid: string, entries: MarkAsDoneEntry[]): Observable<any> {
     return concat(chunk(entries, 450)
       .map(entriesChunk => {
-        return from(this.firestore.firestore.runTransaction(transaction => {
-          const docRef = this.firestore.firestore.doc(`${this.getBaseUri()}/${uid}`);
+        return from(runTransaction(this.firestore, transaction => {
+          const docRef = this.docRef(uid);
           return transaction.get(docRef)
             .then(doc => {
               entriesChunk
@@ -46,11 +46,11 @@ export class LogTrackingService extends FirestoreStorage<LogTracking> {
                   } else {
                     if (entry.done && (doc.get(entry.log.toString()) || []).indexOf(entry.itemId) === -1) {
                       transaction.update(docRef, {
-                        [entry.log]: firebase.firestore.FieldValue.arrayUnion(entry.itemId)
+                        [entry.log]: arrayUnion(entry.itemId)
                       });
                     } else if (!entry.done) {
                       transaction.update(docRef, {
-                        [entry.log]: firebase.firestore.FieldValue.arrayRemove(entry.itemId)
+                        [entry.log]: arrayRemove(entry.itemId)
                       });
                     } else {
                       Promise.resolve();

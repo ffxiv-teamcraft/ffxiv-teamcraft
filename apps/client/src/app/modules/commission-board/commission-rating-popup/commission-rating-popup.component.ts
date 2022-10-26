@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Commission } from '../model/commission';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 
 @Component({
@@ -15,9 +15,9 @@ export class CommissionRatingPopupComponent implements OnInit {
 
   authorId: string;
 
-  form: FormGroup;
+  form: UntypedFormGroup;
 
-  constructor(private fb: FormBuilder, private modalRef: NzModalRef) {
+  constructor(private fb: UntypedFormBuilder, private modalRef: NzModalRef) {
   }
 
   submit(): void {

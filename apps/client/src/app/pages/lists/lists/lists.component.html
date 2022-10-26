@@ -45,17 +45,6 @@
     <ng-template #suffixIconSearch>
       <i nz-icon nzType="search"></i>
     </ng-template>
-    <div (drop)="setListIndex($event.value, $event.dropIndex, lists.otherLists)" class="ngx-dnd-container"
-         ngxDroppable="list">
-      <div *ngFor="let list of lists.otherLists; trackBy: trackByList" [model]="list"
-           class="ngx-dnd-item list-panel"
-           ngxDraggable="list">
-        <app-list-panel [hideAvatar]="true" [list]="list"></app-list-panel>
-      </div>
-    </div>
-    <app-fullpage-message *ngIf="lists.otherLists.length === 0 && !(loading$ | async)" height="150px">
-      {{'LISTS.No_lists' | translate}}
-    </app-fullpage-message>
     <ng-container *ngIf="favoriteLists$ | async as favoriteLists">
       <ng-container *ngIf="favoriteLists?.length > 0">
         <nz-divider [nzText]="'LISTS.Favorite_lists' | translate" nzOrientation="left"></nz-divider>
@@ -66,6 +55,18 @@
         </div>
       </ng-container>
     </ng-container>
+    <nz-divider [nzText]="'LISTS.Your_lists' | translate" nzOrientation="left"></nz-divider>
+    <div (drop)="setListIndex($event.value, $event.dropIndex, lists.otherLists)" class="ngx-dnd-container"
+         ngxDroppable="list">
+      <div *ngFor="let list of lists.otherLists; trackBy: trackByList" [model]="list"
+           class="ngx-dnd-item list-panel"
+           ngxDraggable="list">
+        <app-list-panel [hideAvatar]="true" [list]="list"></app-list-panel>
+      </div>
+    </div>
+    <app-fullpage-message *ngIf="lists.otherLists.length === 0 && (loading$ | async) === false" height="150px">
+      {{'LISTS.No_lists' | translate}}
+    </app-fullpage-message>
     <div *ngIf="sharedLists$ | async as sharedLists">
       <div *ngIf="sharedLists.length > 0">
         <nz-divider [nzText]="'LISTS.Shared_lists' | translate" nzOrientation="left"></nz-divider>

@@ -1,25 +1,22 @@
 import { List } from '../../../../modules/list/model/list';
 import { Injectable, NgZone } from '@angular/core';
-import { ListStore } from './list-store';
-import { combineLatest, from, Observable, of, Subject, throwError } from 'rxjs';
+import { combineLatest, Observable, of, throwError } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { catchError, first, map, mapTo, shareReplay, switchMap, tap } from 'rxjs/operators';
-import { AngularFirestore, DocumentChangeAction, Query, QueryFn } from '@angular/fire/compat/firestore';
+import { catchError, first, map, switchMap, tap } from 'rxjs/operators';
 import { ListRow } from '../../../../modules/list/model/list-row';
 import { FirestoreRelationalStorage } from '../firestore/firestore-relational-storage';
 import { Class } from '@kaiu/serializer';
-import firebase from 'firebase/compat/app';
 import { PermissionLevel } from '../../permissions/permission-level.enum';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { ListController } from '../../../../modules/list/list-controller';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { ModificationEntry } from '../../../../modules/list/model/modification-entry';
+import { Firestore, orderBy, QueryConstraint, Timestamp, where } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
-export class FirestoreListStorage extends FirestoreRelationalStorage<List> implements ListStore {
+export class FirestoreListStorage extends FirestoreRelationalStorage<List> {
 
   private static readonly PERSISTED_LIST_ROW_PROPERTIES: (keyof ListRow)[] = [
     'amount',
@@ -40,10 +37,10 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     'craftableAmount'
   ];
 
-  constructor(protected af: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
+  constructor(protected firestore: Firestore, protected serializer: NgSerializerService, protected zone: NgZone,
               protected pendingChangesService: PendingChangesService, private lazyData: LazyDataFacade,
               private http: HttpClient) {
-    super(af, serializer, zone, pendingChangesService);
+    super(firestore, serializer, zone, pendingChangesService);
   }
 
   public prepareData(list: Partial<List>): List {
@@ -52,9 +49,9 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     }
     const clone: List = JSON.parse(JSON.stringify(list));
     if (typeof clone.createdAt === 'string') {
-      clone.createdAt = firebase.firestore.Timestamp.fromDate(new Date(clone.createdAt));
+      clone.createdAt = Timestamp.fromDate(new Date(clone.createdAt));
     }
-    clone.createdAt = new firebase.firestore.Timestamp(clone.createdAt.seconds || Math.floor(Date.now() / 1000), 0);
+    clone.createdAt = new Timestamp(clone.createdAt.seconds || Math.floor(Date.now() / 1000), 0);
     clone.items = (clone.items || [])
       .filter(item => !item.finalItem)
       .map(item => {
@@ -105,15 +102,15 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     );
   }
 
-  public getByForeignKey(foreignEntityClass: Class, foreignKeyValue: string, queryModifier?: (query: Query) => Query, cacheSuffix = ''): Observable<List[]> {
-    return super.getByForeignKey(foreignEntityClass, foreignKeyValue, queryModifier, cacheSuffix)
+  public getByForeignKey(foreignEntityClass: Class, foreignKeyValue: string, additionalFilters: QueryConstraint[] = [], cacheSuffix = ''): Observable<List[]> {
+    return super.getByForeignKey(foreignEntityClass, foreignKeyValue, additionalFilters, cacheSuffix)
       .pipe(
         switchMap(lists => this.completeLists(lists))
       );
   }
 
-  public getByForeignKeyRaw(foreignEntityClass: Class, foreignKeyValue: string, queryModifier?: (query: Query) => Query, cacheSuffix = ''): Observable<Partial<List>[]> {
-    return super.getByForeignKey(foreignEntityClass, foreignKeyValue, queryModifier, cacheSuffix);
+  public getByForeignKeyRaw(foreignEntityClass: Class, foreignKeyValue: string, additionalFilters: QueryConstraint[] = [], cacheSuffix = ''): Observable<Partial<List>[]> {
+    return super.getByForeignKey(foreignEntityClass, foreignKeyValue, additionalFilters, cacheSuffix);
   }
 
   get(uid: string): Observable<List> {
@@ -126,8 +123,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   }
 
   public getShared(userId: string): Observable<List[]> {
-    return this.firestore.collection(this.getBaseUri(), ref => ref.where(`registry.${userId}`, '>=', PermissionLevel.READ))
-      .snapshotChanges()
+    return this.query(where(`registry.${userId}`, '>=', PermissionLevel.READ))
       .pipe(
         catchError(error => {
           console.error(`GET SHARED LISTS ${this.getBaseUri()}:${userId}`);
@@ -135,15 +131,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
           return throwError(error);
         }),
         tap(() => this.recordOperation('read')),
-        switchMap((snaps: DocumentChangeAction<List>[]) => {
-          const lists = snaps
-            .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: List = <List>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
-              delete snap.payload;
-              return valueWithKey;
-            });
-          return this.completeLists(this.serializer.deserialize<List>(lists, [this.getClass()]));
-        })
+        switchMap(lists => this.completeLists(lists))
       );
   }
 
@@ -165,113 +153,8 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     );
   }
 
-  getModificationsHistory(listId: string): Observable<ModificationEntry[]> {
-    return this.firestore.collection(`/lists/${listId}/history`).snapshotChanges().pipe(
-      tap(() => this.recordOperation('read', 'history')),
-      map((snaps: DocumentChangeAction<ModificationEntry>[]) => {
-        return snaps
-          .map((snap: DocumentChangeAction<any>) => {
-            const valueWithKey: ModificationEntry = <ModificationEntry>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
-            delete snap.payload;
-            return valueWithKey;
-          });
-      })
-    );
-  }
-
-  addModificationsHistoryEntry(listId: string, entry: ModificationEntry): Observable<void> {
-    const res$ = new Subject<void>();
-    from(this.firestore.collection(`/lists/${listId}/history`).add(entry)).pipe(
-      tap(() => this.recordOperation('write', 'history')),
-      mapTo(null),
-      first()
-    ).subscribe(() => {
-      res$.next();
-    });
-    return res$;
-  }
-
-  incrementModificationsHistoryEntry(listId: any, entry: { key: string; increment: number }) {
-    const res$ = new Subject<void>();
-    from(this.firestore.collection(`/lists/${listId}/history`).doc(entry.key).update({ amount: firebase.firestore.FieldValue.increment(entry.increment) })).pipe(
-      tap(() => this.recordOperation('write', 'history')),
-      mapTo(null),
-      first()
-    ).subscribe(() => {
-      res$.next();
-    });
-    return res$;
-  }
-
-  removeModificationsHistoryEntry(listId: string, entryId: string): Observable<void> {
-    return from(this.firestore.collection(`/lists/${listId}/history`).doc(entryId).delete()).pipe(
-      tap(() => this.recordOperation('delete', 'history')),
-      mapTo(null)
-    );
-  }
-
-  resetModificationsHistory(listId: string): Observable<void> {
-    const res$ = new Subject<void>();
-    this.getModificationsHistory(listId).pipe(
-      first(),
-      switchMap(history => {
-        const batches = [this.af.firestore.batch()];
-        let ops = 0;
-        let index = 0;
-        history.forEach(entry => {
-          const batch = batches[index];
-          batch.delete(this.firestore.collection(`/lists/${listId}/history`).doc(entry.$key).ref);
-          ops++;
-          if (ops >= 450) {
-            batches.push(this.af.firestore.batch());
-            ops = 0;
-            index++;
-          }
-        });
-        return combineLatest(batches.map(batch => from(batch.commit().catch(e => console.log(e)))));
-      }),
-      first()
-    ).subscribe(() => {
-      res$.next();
-    }, error => console.log(error));
-    return res$;
-  }
-
-  migrateListModificationEntries(list: List): Observable<void> {
-    const batches = [this.af.firestore.batch()];
-    let ops = 0;
-    let index = 0;
-    (list as any).modificationsHistory.forEach((entry: ModificationEntry) => {
-      batches[index].set(this.af.firestore.collection(`/lists/${list.$key}/history`).doc(this.af.createId()), entry);
-      ops++;
-      if (ops >= 450) {
-        batches.push(this.af.firestore.batch());
-        ops = 0;
-        index++;
-      }
-    });
-    if ((list as any).modificationsHistory.length === 0) {
-      const newList = ListController.clone(list, true);
-      delete (newList as any).modificationsHistory;
-      delete (newList as any).contributionStats;
-      return this.set(list.$key, newList);
-    }
-    return combineLatest(batches.map(batch => from(batch.commit().catch(e => console.log(e))))).pipe(
-      switchMap(() => {
-        const newList = ListController.clone(list, true);
-        delete (newList as any).modificationsHistory;
-        delete (newList as any).contributionStats;
-        return this.set(list.$key, newList);
-      })
-    );
-  }
-
   public getUserCommunityLists(userId: string): Observable<List[]> {
-    const query: QueryFn = ref => {
-      return ref.where('authorId', '==', userId).where(`public`, '==', true);
-    };
-    return this.firestore.collection(this.getBaseUri(), query)
-      .snapshotChanges()
+    return this.query(where('authorId', '==', userId), where(`public`, '==', true))
       .pipe(
         catchError(error => {
           console.error(`GET USER COMMUNITY LISTS ${this.getBaseUri()}:${userId}`);
@@ -279,15 +162,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
           return throwError(error);
         }),
         tap(() => this.recordOperation('read')),
-        switchMap((snaps: DocumentChangeAction<List>[]) => {
-          const lists = snaps
-            .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: List = <List>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
-              delete snap.payload;
-              return valueWithKey;
-            });
-          return this.completeLists(this.serializer.deserialize<List>(lists, [this.getClass()]));
-        })
+        switchMap(lists => this.completeLists(lists))
       );
   }
 
@@ -330,9 +205,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   }
 
   private listsByAuthorRef(uid: string): Observable<List[]> {
-    return this.firestore
-      .collection(this.getBaseUri(), ref => ref.where('authorId', '==', uid).orderBy('createdAt', 'desc'))
-      .snapshotChanges()
+    return this.query(where('authorId', '==', uid), orderBy('createdAt', 'desc'))
       .pipe(
         catchError(error => {
           console.error(`GET BY AUTHOR REF ${this.getBaseUri()}:${uid}`);
@@ -340,17 +213,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
           return throwError(error);
         }),
         tap(() => this.recordOperation('read')),
-        map((snaps: any[]) => snaps.map(snap => {
-          // Issue #227 showed that sometimes, $key gets persisted (probably because of a migration process),
-          // Because of that, we have to delete $key property from data snapshot, else the $key won't point to the correct list,
-          // Resulting on an unreadable, undeletable list.
-          const data = snap.payload.doc.data();
-          delete data.$key;
-          return <List>{ $key: snap.payload.doc.id, ...data };
-        })),
-        switchMap((lists: List[]) => {
-          return this.completeLists(this.serializer.deserialize<List>(lists, [this.getClass()]));
-        })
+        switchMap(lists => this.completeLists(lists))
       );
   }
 }

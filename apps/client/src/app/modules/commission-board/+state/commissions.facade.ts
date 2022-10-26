@@ -12,7 +12,6 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { Commission } from '../model/commission';
 import { CommissionEditionPopupComponent } from '../commission-edition-popup/commission-edition-popup.component';
 import { ApplyPopupComponent } from '../apply-popup/apply-popup.component';
-import firebase from 'firebase/compat/app';
 import { CommissionStatus } from '../model/commission-status';
 import { ListsFacade } from '../../list/+state/lists.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
@@ -23,6 +22,8 @@ import { CommissionProfileService } from '../../../core/database/commission-prof
 import { NotificationType } from '../../../core/notification/notification-type';
 import { NotificationsFacade } from '../../notifications/+state/notifications.facade';
 import { Observable } from 'rxjs';
+import { Timestamp } from '@angular/fire/firestore';
+
 
 @Injectable({ providedIn: 'root' })
 export class CommissionsFacade {
@@ -161,7 +162,7 @@ export class CommissionsFacade {
         commission.candidates.push({
           offer: res.price,
           uid: userId,
-          date: firebase.firestore.Timestamp.now(),
+          date: Timestamp.now(),
           contact: res.contactInformations
         });
         this.store.dispatch(updateCommission({ commission }));
@@ -248,7 +249,7 @@ export class CommissionsFacade {
   }
 
   bump(commission: Commission): void {
-    commission.bump = firebase.firestore.Timestamp.now();
+    commission.bump = Timestamp.now();
     this.store.dispatch(updateCommission({ commission }));
   }
 

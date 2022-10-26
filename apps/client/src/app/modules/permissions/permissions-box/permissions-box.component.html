@@ -16,7 +16,7 @@
             <nz-option *ngFor="let level of permissionLevels" [nzLabel]="level.label"
                        [nzValue]="level.value"></nz-option>
           </nz-select>
-          <button (click)="data.removePermissionRow(row.id); changes$.next(data);" nz-button nzDanger *ngIf="row.avatar.length > 0">
+          <button (click)="removePermission(row.id); changes$.next(data);" nz-button nzDanger *ngIf="row.avatar.length > 0">
             <i nz-icon nzType="close"></i>
           </button>
         </ng-template>
@@ -44,7 +44,7 @@
       <button (click)="addFc()" *ngIf="canAddFc$ | async" nz-button nzGhost nzType="primary">
         <i nz-icon nzType="plus"></i>{{'PERMISSIONS.Add_new_fc' | translate}}
       </button>
-      <button (click)="propagateChanges$.next(data)" *ngIf="enablePropagation" nz-button nzGhost>
+      <button (click)="propagateWorkshopPermissions()" *ngIf="enablePropagation" nz-button nzGhost>
         {{'PERMISSIONS.Propagate_changes' | translate}}
       </button>
     </div>

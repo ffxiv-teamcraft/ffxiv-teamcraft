@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AbstractMetricDisplayComponent } from '../abstract-metric-display-component';
-import { map, switchMap } from 'rxjs/operators';
+import { map, switchMap, tap } from 'rxjs/operators';
 import { ProbeReport } from '../../model/probe-report';
 import { ProbeSource } from '../../model/probe-source';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
@@ -8,6 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { SettingsService } from '../../../settings/settings.service';
 import { Observable } from 'rxjs';
 import { safeCombineLatest } from '../../../../core/rxjs/safe-combine-latest';
+import { EChartsOption } from 'echarts';
 
 @Component({
   selector: 'app-pie-chart',
@@ -16,7 +17,7 @@ import { safeCombineLatest } from '../../../../core/rxjs/safe-combine-latest';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PieChartComponent extends AbstractMetricDisplayComponent {
-  results$ = this.data$.pipe(
+  options$: Observable<EChartsOption> = this.data$.pipe(
     switchMap(reports => {
       return safeCombineLatest(reports.map(report => {
         return this.getMetricName(report).pipe(
@@ -50,6 +51,31 @@ export class PieChartComponent extends AbstractMetricDisplayComponent {
         });
       }
       return display;
+    }),
+    map(values => {
+      if(values.length === 0){
+        return { empty: true }
+      }
+      return {
+        tooltip: {
+          trigger: 'item'
+        },
+        backgroundColor: '#292929',
+        series: [
+          {
+            type: 'pie',
+            radius: '50%',
+            data: values,
+            emphasis: {
+              itemStyle: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+              }
+            }
+          }
+        ]
+      }
     })
   );
 

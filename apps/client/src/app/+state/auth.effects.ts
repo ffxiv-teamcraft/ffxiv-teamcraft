@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { AuthState } from './auth.reducer';
-import { catchError, debounceTime, distinctUntilChanged, exhaustMap, filter, map, mergeMap, switchMap, switchMapTo, tap, withLatestFrom } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, filter, first, map, mergeMap, switchMap, switchMapTo, tap, withLatestFrom } from 'rxjs/operators';
 import { EMPTY, from, of } from 'rxjs';
 import { UserService } from '../core/database/user.service';
 import {
@@ -11,6 +11,7 @@ import {
   Authenticated,
   CommissionProfileLoaded,
   LinkingCharacter,
+  LoadLogTracking,
   LoggedInAsAnonymous,
   LoginAsAnonymous,
   LogTrackingLoaded,
@@ -29,8 +30,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { TranslateService } from '@ngx-translate/core';
 import { XivapiService } from '@xivapi/angular-client';
 import { LoadAlarms } from '../core/alarms/+state/alarms.actions';
-import { User, UserCredential } from '@firebase/auth-types';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { User } from '@firebase/auth-types';
 import { AuthFacade } from './auth.facade';
 import { PatreonService } from '../core/patreon/patreon.service';
 import { diff } from 'deep-diff';
@@ -39,6 +39,7 @@ import { debounceBufferTime } from '../core/rxjs/debounce-buffer-time';
 import { CommissionProfile } from '../model/user/commission-profile';
 import { CommissionProfileService } from '../core/database/commission-profile.service';
 import { SettingsService } from '../modules/settings/settings.service';
+import { Auth, signInAnonymously } from '@angular/fire/auth';
 
 @Injectable()
 export class AuthEffects {
@@ -46,9 +47,9 @@ export class AuthEffects {
 
   getUser$ = createEffect(() => this.actions$.pipe(
     ofType(AuthActionTypes.GetUser),
-    mergeMap(() => this.af.authState),
+    mergeMap(() => this.authFacade.firebaseAuthState$),
     map((authState: User) => {
-      if (authState === null) {
+      if (!authState) {
         return new LoginAsAnonymous();
       } else {
         const payload: Partial<AuthState> = {
@@ -65,14 +66,14 @@ export class AuthEffects {
 
   loginAsAnonymous$ = createEffect(() => this.actions$.pipe(
     ofType(AuthActionTypes.LoginAsAnonymous, AuthActionTypes.Logout),
-    mergeMap(() => from(this.af.signInAnonymously())),
-    map((result: UserCredential) => new LoggedInAsAnonymous(result.user.uid))
+    mergeMap(() => from(signInAnonymously(this.auth))),
+    map((result) => new LoggedInAsAnonymous(result.user.uid))
   ));
 
 
   fetchUser$ = createEffect(() => this.actions$.pipe(
     ofType<LoggedInAsAnonymous | Authenticated>(AuthActionTypes.LoggedInAsAnonymous, AuthActionTypes.Authenticated),
-    exhaustMap((action: LoggedInAsAnonymous | Authenticated) => {
+    switchMap((action: LoggedInAsAnonymous | Authenticated) => {
       return this.userService.get(action.uid, false, true).pipe(
         map(user => {
           return user;
@@ -89,7 +90,7 @@ export class AuthEffects {
       if (user.patron && Date.now() - user.lastPatreonRefresh >= 3 * 7 * 86400000) {
         this.patreonService.refreshToken(user);
       }
-      if (user.defaultLodestoneId === undefined && user.lodestoneIds.length > 0) {
+      if (user.defaultLodestoneId === undefined && user.lodestoneIds?.length > 0) {
         user.defaultLodestoneId = user.lodestoneIds[0].id;
       }
       if (user.defaultLodestoneId && !user.lodestoneIds.some(entry => entry.id === user.defaultLodestoneId)) {
@@ -97,16 +98,16 @@ export class AuthEffects {
       }
       return user;
     }),
-    catchError((error) => {
-      if (error.message.toLowerCase().indexOf('not found') > -1) {
-        return of(new TeamcraftUser());
-      } else {
-        this.authFacade.logout();
-        console.error(error);
-        this.notificationService.error(this.translate.instant('COMMON.Error'), this.translate.instant('Network_error_logged_out'));
-        return EMPTY;
-      }
-    }),
+    // catchError((error) => {
+    //   if (error.message.toLowerCase().indexOf('not found') > -1) {
+    //     return of(new TeamcraftUser());
+    //   } else {
+    //     this.authFacade.logout();
+    //     console.error(error);
+    //     this.notificationService.error(this.translate.instant('COMMON.Error'), this.translate.instant('Network_error_logged_out'));
+    //     return EMPTY;
+    //   }
+    // }),
     map(user => new UserFetched(user)),
     debounceTime(250)
   ));
@@ -211,23 +212,27 @@ export class AuthEffects {
     debounceBufferTime(1000),
     withLatestFrom(this.authFacade.user$),
     filter(([, user]) => user.defaultLodestoneId !== undefined),
-    withLatestFrom(this.authFacade.serverLogTracking$),
-    switchMap(([[actions, user], logTracking]) => {
-      const entries = actions.filter(action => {
-        return !action.done || !logTracking[action.log].includes(action.itemId);
-      }).map(action => {
-        return {
-          itemId: action.itemId,
-          log: action.log,
-          done: action.done
-        };
-      });
-      if (entries.length > 0) {
-        return this.logTrackingService.markAsDone(`${user.$key}:${user.defaultLodestoneId.toString()}`, entries);
-      }
-      return EMPTY;
+    mergeMap(([actions, user]) => {
+      return this.authFacade.serverLogTracking$.pipe(
+        first(),
+        switchMap(logTracking => {
+          const entries = actions.filter(action => {
+            return !action.done || !logTracking[action.log].includes(action.itemId);
+          }).map(action => {
+            return {
+              itemId: action.itemId,
+              log: action.log,
+              done: action.done
+            };
+          });
+          if (entries.length > 0) {
+            return this.logTrackingService.markAsDone(`${user.$key}:${user.defaultLodestoneId.toString()}`, entries);
+          }
+          return EMPTY;
+        })
+      );
     })
-  ), { dispatch: false });
+  ), { dispatch: false, useEffectsErrorHandler: true });
 
 
   fetchCommissionProfile$ = createEffect(() => this.actions$.pipe(
@@ -247,10 +252,9 @@ export class AuthEffects {
 
   fetchLogTracking$ = createEffect(() =>
     this.actions$.pipe(
-      ofType<UserFetched>(AuthActionTypes.UserFetched),
-      distinctUntilChanged((a, b) => a.user.defaultLodestoneId === b.user.defaultLodestoneId),
+      ofType<LoadLogTracking>(AuthActionTypes.LoadLogTracking),
       switchMap(action => {
-        return this.logTrackingService.get(`${action.user.$key}:${action.user.defaultLodestoneId?.toString()}`).pipe(
+        return this.logTrackingService.get(`${action.userId}:${action.lodestoneId?.toString()}`).pipe(
           catchError((_) => {
             return of({
               crafting: [],
@@ -275,10 +279,10 @@ export class AuthEffects {
         this.nickNameWarningShown = true;
       }
     }),
-    switchMapTo(EMPTY)
+    switchMap(() => EMPTY)
   ), { dispatch: false });
 
-  constructor(private actions$: Actions, private af: AngularFireAuth, private userService: UserService,
+  constructor(private actions$: Actions, private auth: Auth, private userService: UserService,
               private store: Store<{ auth: AuthState }>, private dialog: NzModalService,
               private translate: TranslateService, private xivapi: XivapiService,
               private notificationService: NzNotificationService, private authFacade: AuthFacade,

@@ -4,7 +4,7 @@
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="page-title">
         <span class="gearset-name">{{gearset.name}}</span>
         <span class="companion-svg job-icon" [innerHTML]="gearset.job | jobUnicode"></span>
-        <button nz-button nzShape="circle" *ngIf="!(isReadonly$ | async)" (click)="edit(gearset)" nz-tooltip
+        <button nz-button nzShape="circle" *ngIf="(isReadonly$ | async) === false" (click)="edit(gearset)" nz-tooltip
                 [nzTooltipTitle]="'GEARSETS.Edit_gearset' | translate">
           <i nz-icon nzType="edit"></i>
         </button>

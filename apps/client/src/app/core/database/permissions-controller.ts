@@ -3,6 +3,9 @@ import { PermissionLevel } from './permissions/permission-level.enum';
 
 export class PermissionsController {
   static getPermissionLevel(entity: DataWithPermissions, identifier: string): PermissionLevel {
+    if (!entity.registry) {
+      return PermissionLevel.NONE;
+    }
     if (identifier === entity.authorId) {
       return PermissionLevel.OWNER;
     }

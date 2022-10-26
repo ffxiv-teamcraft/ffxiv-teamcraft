@@ -212,13 +212,16 @@ export class InventoryService {
                     delete state.inventory.items['undefined'];
                     return { ...state, inventory: state.inventory };
                   case 'Reset':
+                    // eslint-disable-next-line no-case-declarations
                     const reset = new UserInventory();
                     reset.contentId = state.inventory.contentId;
                     return { ...state, inventory: reset };
                   case 'Set':
                     return { ...state, inventory: action.inventory || state.inventory };
                   case 'containerInfo':
+                    // eslint-disable-next-line no-case-declarations
                     const itemInfos = state.itemInfoQueue.filter(itemInfo => itemInfo.containerSequence === action.parsedIpcData.sequence);
+                    // eslint-disable-next-line no-case-declarations
                     const newQueue = state.itemInfoQueue.filter(itemInfo => itemInfo.containerSequence !== action.parsedIpcData.sequence);
                     if (this.isRetainer(action.parsedIpcData.containerId)) {
                       if (action.parsedIpcData.containerId === ContainerType.RetainerBag0) {
@@ -237,6 +240,7 @@ export class InventoryService {
                       };
                     }
                   case 'RetainerSpawn':
+                    // eslint-disable-next-line no-case-declarations
                     let inventory = state.inventory.clone();
                     state.retainerInventoryQueue.forEach(entry => {
                       inventory = this.handleContainerInfo(inventory, entry.containerInfo, entry.itemInfos, materias, action.retainer);
@@ -702,6 +706,7 @@ export class InventoryService {
       case ContainerType.RetainerBag4:
       case ContainerType.RetainerBag5:
       case ContainerType.RetainerBag6:
+        // eslint-disable-next-line no-case-declarations
         const retainerKey = Object.keys(retainers).find(key => retainers[key].name.toLowerCase() === item.retainerName.toLowerCase());
         if (retainerKey) {
           const retainerEntry = odr.Retainers.find(retainer => retainer.id.endsWith(retainerKey));

@@ -4685,11 +4685,15 @@
     "icon": null
   },
   "36001": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "The Sil'dihn Subterrane",
+    "ja": "ヴァリアントダンジョン シラディハ水道",
+    "de": "Die Unterstadt von Sil'dih",
+    "fr": "Les canalisations sildiennes - Donjon à embranchements",
+    "icon": "/i/061000/061846.png",
+    "contentText": [
+      34267,
+      34000
+    ]
   },
   "36002": {
     "en": null,
@@ -4706,18 +4710,26 @@
     "icon": null
   },
   "37001": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Another Sil'dihn Subterrane",
+    "ja": "アナザーダンジョン 異聞シラディハ水道",
+    "de": "Die kuriose Unterstadt von Sil'dih",
+    "fr": "Les canalisations sildiennes annexes - Donjon alternatif",
+    "icon": "/i/061000/061846.png",
+    "contentText": [
+      34272,
+      34000
+    ]
   },
   "37002": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Another Sil'dihn Subterrane (Savage)",
+    "ja": "アナザーダンジョン 異聞シラディハ水道 零式",
+    "de": "Die kuriose Unterstadt von Sil'dih (episch)",
+    "fr": "Les canalisations sildiennes annexes - Donjon alternatif (sadique)",
+    "icon": "/i/061000/061846.png",
+    "contentText": [
+      34272,
+      34000
+    ]
   },
   "37003": {
     "en": null,

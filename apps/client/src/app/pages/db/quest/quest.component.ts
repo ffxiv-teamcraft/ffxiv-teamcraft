@@ -168,7 +168,7 @@ export class QuestComponent extends TeamcraftPageComponent {
           .map(id => {
             return this.lazyData.getRow('npcs', id).pipe(
               map(npc => {
-                if (!!npc) {
+                if (npc) {
                   return id;
                 }
                 return null;

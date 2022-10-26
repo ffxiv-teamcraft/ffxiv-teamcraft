@@ -5,11 +5,10 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
 import { METADATA_FOREIGN_KEY_REGISTRY } from '../../relational/foreign-key';
 import { Class } from '@kaiu/serializer';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, finalize, shareReplay, tap } from 'rxjs/operators';
 import { DataModel } from '../data-model';
-import { AngularFirestore, DocumentChangeAction } from '@angular/fire/compat/firestore';
 import { Observable, throwError } from 'rxjs';
-import { Query } from '@angular/fire/compat/firestore/interfaces';
+import { Firestore, QueryConstraint, where } from '@angular/fire/firestore';
 
 @Injectable()
 export abstract class FirestoreRelationalStorage<T extends DataModel> extends FirestoreStorage<T> {
@@ -18,7 +17,7 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
 
   private foreignKeyCache: { [index: string]: Observable<T[]> } = {};
 
-  protected constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService,
+  protected constructor(protected firestore: Firestore, protected serializer: NgSerializerService,
                         protected zone: NgZone, protected pendingChangesService: PendingChangesService) {
     super(firestore, serializer, zone, pendingChangesService);
     const modelClass = this.getClass();
@@ -26,91 +25,47 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
   }
 
   public stopListening(key: string, cacheEntry?: string): void {
-    super.stopListening(key, cacheEntry);
+    super.stopListening(key);
     if (cacheEntry) {
       delete this.foreignKeyCache[cacheEntry];
     }
   }
 
   public getShared(userId: string): Observable<T[]> {
-    return this.firestore.collection(this.getBaseUri(), ref => ref.where(`registry.${userId}`, '>=', 20))
-      .snapshotChanges()
+    return this.query(where(`registry.${userId}`, '>=', 20))
       .pipe(
         catchError(error => {
           console.error(`GET SHARED ${this.getBaseUri()}:${userId}`);
           console.error(error);
           return throwError(error);
         }),
-        tap(() => this.recordOperation('read')),
-        map((snaps: DocumentChangeAction<T>[]) => {
-          try {
-            const rows = snaps
-              .map((snap: DocumentChangeAction<any>) => {
-                const valueWithKey: T = this.beforeDeserialization(<T>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id });
-                delete snap.payload;
-                return valueWithKey;
-              });
-            return this.serializer.deserialize<T>(rows, [this.getClass()]);
-          } catch (e) {
-            console.error(e);
-            return [];
-          }
-        })
+        tap(() => this.recordOperation('read'))
       );
   }
 
-  public getByForeignKey(foreignEntityClass: Class, foreignKeyValue: string, queryModifier?: (query: Query) => Query, cacheSuffix = ''): Observable<T[]> {
+  public getByForeignKey(foreignEntityClass: Class, foreignKeyValue: string, additionalFilters: QueryConstraint[] = [], cacheSuffix = ''): Observable<T[]> {
     const classMetadataRegistry = Reflect.getMetadata(METADATA_FOREIGN_KEY_REGISTRY, this.modelInstance);
     const foreignPropertyEntry = classMetadataRegistry.find((entry) => entry.clazz === foreignEntityClass);
     if (foreignPropertyEntry === undefined) {
       throw new Error(`No foreign key in class ${this.getClass().name} for entity ${foreignEntityClass.name}`);
     }
     const foreignPropertyKey = foreignPropertyEntry.property;
-    if (this.foreignKeyCache[foreignKeyValue + cacheSuffix] === undefined) {
-      this.foreignKeyCache[foreignKeyValue + cacheSuffix] = this.firestore.collection(this.getBaseUri(), ref => {
-        let query = ref.where(foreignPropertyKey, '==', foreignKeyValue);
-        if (queryModifier) {
-          query = queryModifier(query);
-        }
-        return query;
-      })
-        .snapshotChanges()
-        .pipe(
-          catchError(error => {
-            console.error(`GET BY FOREIGN KEY ${this.getBaseUri()}:${foreignPropertyKey}=${foreignKeyValue}`);
-            console.error(error);
-            return throwError(error);
-          }),
-          tap(() => this.recordOperation('read')),
-          map((snaps: DocumentChangeAction<T>[]) => {
-            try {
-              const elements = snaps
-                .map((snap: DocumentChangeAction<any>) => {
-                  const valueWithKey: T = this.beforeDeserialization(<T>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id });
-                  delete snap.payload;
-                  return valueWithKey;
-                });
-              return this.serializer.deserialize<T>(elements, [this.getClass()]);
-            } catch (e) {
-              console.error(e);
-              return [];
-            }
-          }),
-          map(elements => {
-            return elements.map(el => {
-              if ((el as any).afterDeserialized) {
-                (el as any).afterDeserialized();
-              }
-              return el;
-            });
-          }),
-          tap(elements => {
-            elements.forEach(el => {
-              this.syncCache[el.$key] = JSON.parse(JSON.stringify(el));
-            });
-          })
-        );
+    const cacheKey = foreignKeyValue + cacheSuffix;
+    if (this.foreignKeyCache[cacheKey] === undefined) {
+      this.foreignKeyCache[cacheKey] = this.query(
+        where(foreignPropertyKey, '==', foreignKeyValue),
+        ...additionalFilters
+      ).pipe(
+        catchError(error => {
+          console.error(`GET BY FOREIGN KEY ${this.getBaseUri()}:${foreignPropertyKey}=${foreignKeyValue}`);
+          console.error(error);
+          return throwError(error);
+        }),
+        tap(() => this.recordOperation('read')),
+        shareReplay({ bufferSize: 1, refCount: true }),
+        finalize(() => delete this.foreignKeyCache[cacheKey])
+      );
     }
-    return this.foreignKeyCache[foreignKeyValue + cacheSuffix];
+    return this.foreignKeyCache[cacheKey];
   }
 }

@@ -78,7 +78,7 @@ export class I18nToolsService {
     };
   }
 
-  public getTranslation(key: string, language: string, interpolationParams?: Object): Observable<string> {
+  public getTranslation(key: string, language: string, interpolationParams?: any): Observable<string> {
     return this.translator.getTranslation(language).pipe(
       map((translations) => {
         return this.translator.getParsedResult(translations, key, interpolationParams);

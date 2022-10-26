@@ -83,7 +83,7 @@ export class PatchComponent extends TeamcraftPageComponent {
           map(patchContent => {
             return {
               ...patch,
-              ...patchContent[patch.ID]
+              ...patchContent
             };
 
           })

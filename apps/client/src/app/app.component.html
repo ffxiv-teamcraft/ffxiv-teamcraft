@@ -15,9 +15,14 @@
           </nz-select>
         </div>
         <div>
-          <i nz-icon nzType="question-circle" nzTheme="outline"
-             (click)="startTutorial()" class="tutorial-start"
-             nz-tooltip [nzTooltipTitle]="'TUTORIAL.Start' | translate"></i>
+          <a *ngIf="true | ifMobile: false" nz-button nz-tooltip [nzTooltipTitle]="'See_code_github' | translate" nzTooltipPlacement="bottom"
+             href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft" target="_blank">
+            <span nz-icon nzType="github" nzTheme="outline"></span>
+            <span class="stars-count">
+              <span nz-icon nzType="star" nzTheme="outline"></span>
+              {{githubStars$ | async | number:'1.0-0':translate.currentLang}}
+            </span>
+          </a>
         </div>
         <div *ngIf="platformService.isDesktop() && newVersionAvailable$ | async" class="update-status">
           <ng-container *ngIf="checkingForUpdate$ | async as updateStatus">

@@ -363,7 +363,7 @@ export class LogsExtractor extends AbstractExtractor {
     if (page === undefined) {
       this.craftingLogPages[entry.CraftTypeTargetID].push({
         id: pageId,
-        masterbook: entry.SecretRecipeBook,
+        masterbook: entry.SecretRecipeBookTargetID || null,
         startLevel: entry.RecipeLevelTable,
         recipes: []
       });

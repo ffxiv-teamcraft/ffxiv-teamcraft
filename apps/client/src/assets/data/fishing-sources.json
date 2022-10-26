@@ -877,52 +877,52 @@
   ],
   "4886": [
     {
-      "spot": 48,
+      "spot": 108,
       "hookset": 1,
       "tug": 0,
-      "bait": 2606,
+      "bait": 2611,
       "snagging": false
     },
     {
       "spot": 52,
       "hookset": 1,
       "tug": 0,
-      "bait": 2606,
+      "bait": 2611,
+      "snagging": false
+    },
+    {
+      "spot": 48,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 2611,
       "snagging": false
     },
     {
       "spot": 107,
       "hookset": 1,
       "tug": 0,
-      "bait": 2606,
-      "snagging": false
-    },
-    {
-      "spot": 108,
-      "hookset": 1,
-      "tug": 0,
-      "bait": 2606,
+      "bait": 2611,
       "snagging": false
     },
     {
       "spot": 156,
       "hookset": 1,
       "tug": 0,
-      "bait": 2606,
+      "bait": 2611,
       "snagging": false
     },
     {
       "spot": 104,
       "hookset": 1,
       "tug": 0,
-      "bait": 2606,
+      "bait": 2611,
       "snagging": false
     },
     {
       "spot": 71,
       "hookset": 1,
       "tug": 0,
-      "bait": 2606,
+      "bait": 2599,
       "snagging": false
     }
   ],
@@ -21267,6 +21267,15 @@
       "duration": 4
     }
   ],
+  "36612": [
+    {
+      "spot": 281,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29717,
+      "snagging": true
+    }
+  ],
   "36660": [
     {
       "spot": 266,
@@ -21513,6 +21522,62 @@
       "weathers": [
         49
       ]
+    }
+  ],
+  "38325": [
+    {
+      "spot": 281,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 36588
+    }
+  ],
+  "38330": [
+    {
+      "spot": 281,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 36588
+    }
+  ],
+  "38332": [
+    {
+      "spot": 10026,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 36588
+    }
+  ],
+  "38333": [
+    {
+      "spot": 10027,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 36588
+    }
+  ],
+  "38334": [
+    {
+      "spot": 282,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 36588
+    }
+  ],
+  "38335": [
+    {
+      "spot": 10028,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 36588
+    }
+  ],
+  "38336": [
+    {
+      "spot": 10027,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 36588
     }
   ]
 }

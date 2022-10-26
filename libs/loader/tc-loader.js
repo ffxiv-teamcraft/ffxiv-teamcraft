@@ -60,7 +60,8 @@ const patrons = [
   'Syleboris Whitemaw (Phoenix)',
   'Arimathean Industries™',
   'MommaMiah',
-  'Chuang Mei@Faerie'
+  'Chuang Mei@Faerie',
+  'Darn Tarn and Dam Tam'
 ];
 
 const gifs = [

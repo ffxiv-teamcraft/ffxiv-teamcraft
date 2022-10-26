@@ -1,0 +1,249 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/client/src",
+  "prefix": "app",
+  "generators": {
+    "@schematics/angular:component": {
+      "prefix": "app",
+      "style": "less",
+      "changeDetection": "OnPush",
+      "skipTests": true
+    }
+  },
+  "targets": {
+    "build": {
+      "executor": "@angular-builders/custom-webpack:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "customWebpackConfig": {
+          "path": "./extra-webpack.config.js",
+          "mergeStrategies": {
+            "externals": "replace"
+          },
+          "allowedCommonJsDependencies": ["lodash", "graphql-tag", "@kaiu/serializer", "memoize", "ng-push", "file-saver", "papaparse"]
+        },
+        "outputPath": "dist/apps/client",
+        "index": "apps/client/src/index.html",
+        "main": "apps/client/src/main.ts",
+        "polyfills": "apps/client/src/polyfills.ts",
+        "tsConfig": "apps/client/tsconfig.app.json",
+        "assets": [
+          "apps/client/src/favicon.ico",
+          "apps/client/src/assets",
+          {
+            "glob": "**/*",
+            "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+            "output": "/assets/"
+          },
+          "apps/client/src/oembed.json",
+          "apps/client/src/ads.txt"
+        ],
+        "styles": ["apps/client/src/cdk.less", "apps/client/src/styles.less", "apps/client/src/theme.less"],
+        "scripts": ["node_modules/marked/marked.min.js"]
+      },
+      "configurations": {
+        "dev": {
+          "optimization": false,
+          "sourceMap": true,
+          "namedChunks": true,
+          "aot": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "buildOptimizer": false,
+          "baseHref": "/",
+          "deployUrl": "/"
+        },
+        "production": {
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": true,
+          "namedChunks": false,
+          "aot": true,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "buildOptimizer": true,
+          "baseHref": "/",
+          "deployUrl": "https://cdn.ffxivteamcraft.com/",
+          "fileReplacements": [
+            {
+              "replace": "apps/client/src/environments/environment.ts",
+              "with": "apps/client/src/environments/environment.prod.ts"
+            }
+          ]
+        },
+        "functions": {
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "aot": true,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "buildOptimizer": true,
+          "baseHref": "/",
+          "fileReplacements": [
+            {
+              "replace": "apps/client/src/environments/environment.ts",
+              "with": "apps/client/src/environments/environment.prod.ts"
+            }
+          ]
+        },
+        "electron": {
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": true,
+          "namedChunks": false,
+          "aot": true,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "buildOptimizer": true,
+          "baseHref": "",
+          "fileReplacements": [
+            {
+              "replace": "apps/client/src/environments/environment.ts",
+              "with": "apps/client/src/environments/environment.prod.ts"
+            }
+          ]
+        },
+        "electron-dev": {
+          "baseHref": "",
+          "sourceMap": true,
+          "fileReplacements": [
+            {
+              "replace": "apps/client/src/environments/environment.ts",
+              "with": "apps/client/src/environments/environment.beta.ts"
+            }
+          ]
+        },
+        "beta": {
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": true,
+          "namedChunks": false,
+          "aot": true,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "buildOptimizer": true,
+          "baseHref": "/",
+          "deployUrl": "/",
+          "fileReplacements": [
+            {
+              "replace": "apps/client/src/environments/environment.ts",
+              "with": "apps/client/src/environments/environment.beta.ts"
+            }
+          ]
+        },
+        "preview": {
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "aot": true,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "buildOptimizer": true,
+          "baseHref": "/",
+          "fileReplacements": [
+            {
+              "replace": "apps/client/src/environments/environment.ts",
+              "with": "apps/client/src/environments/environment.preview.ts"
+            }
+          ]
+        }
+      },
+      "defaultConfiguration": "dev"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "browserTarget": "client:build"
+      },
+      "configurations": {
+        "dev": {
+          "browserTarget": "client:build:dev"
+        },
+        "production": {
+          "browserTarget": "client:build:production"
+        },
+        "beta": {
+          "browserTarget": "client:build:beta"
+        },
+        "preview": {
+          "browserTarget": "client:build:preview"
+        }
+      },
+      "defaultConfiguration": "dev"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "client:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/client/**/*.ts", "apps/client/**/*.html"]
+      }
+    },
+    "server": {
+      "executor": "@angular-devkit/build-angular:server",
+      "options": {
+        "outputPath": "dist/client-server",
+        "main": "apps/client/server.ts",
+        "tsConfig": "apps/client/tsconfig.server.json",
+        "sourceMap": true,
+        "optimization": false,
+        "externalDependencies": [
+          "firebase",
+          "@firebase/app",
+          "@firebase/firestore",
+          "@firebase/analytics",
+          "@firebase/auth",
+          "@firebase/functions",
+          "@firebase/installations",
+          "@firebase/messaging",
+          "@firebase/storage",
+          "@firebase/performance",
+          "@firebase/remote-config",
+          "@firebase/util"
+        ]
+      },
+      "defaultConfiguration": ""
+    },
+    "serve-ssr": {
+      "executor": "@nguniversal/builders:ssr-dev-server",
+      "options": {
+        "browserTarget": "client:build",
+        "serverTarget": "client:server"
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "client:build:production",
+          "serverTarget": "client:server:production"
+        }
+      }
+    },
+    "prerender": {
+      "executor": "@nguniversal/builders:prerender",
+      "options": {
+        "browserTarget": "client:build:production",
+        "serverTarget": "client:server:production",
+        "routes": ["/"]
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/client"],
+      "options": {
+        "jestConfig": "apps/client/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

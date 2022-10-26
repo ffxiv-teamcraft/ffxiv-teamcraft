@@ -5,6 +5,7 @@ import {
   DeleteWorkshop,
   LoadWorkshop,
   MyWorkshopsLoaded,
+  PropagateWorkshopPermissions,
   RemoveListFromWorkshop,
   SharedWorkshopsLoaded,
   UpdateWorkshop,
@@ -12,7 +13,7 @@ import {
   WorkshopLoaded,
   WorkshopsActionTypes
 } from './workshops.actions';
-import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, withLatestFrom } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { WorkshopService } from '../../../core/database/workshop.service';
@@ -21,6 +22,9 @@ import { WorkshopsFacade } from './workshops.facade';
 import { Workshop } from '../../../model/other/workshop';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { PermissionsController } from '../../../core/database/permissions-controller';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { TranslateService } from '@ngx-translate/core';
+import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
 
 @Injectable()
 export class WorkshopsEffects {
@@ -146,11 +150,36 @@ export class WorkshopsEffects {
     })
   ), { dispatch: false });
 
+  propagatePermissions$ = createEffect(() => this.actions$.pipe(
+    ofType<PropagateWorkshopPermissions>(WorkshopsActionTypes.PropagateWorkshopPermissions),
+    switchMap(({ workshop }) => {
+      return combineLatest(workshop.listIds.map(id => {
+        const registryUpdateObj = Object.keys(workshop.registry).reduce((acc, key) => {
+          return {
+            ...acc,
+            [`registry.${key}`]: workshop.registry[key]
+          };
+        }, {});
+        return this.listService.pureUpdate(id, {
+          everyone: workshop.everyone,
+          ...registryUpdateObj
+        }).pipe(
+          // error can happen if document is missing or you can't write to it, in both case it's fine
+          catchError(() => of(null))
+        );
+      }));
+    }),
+    tap(() => this.message.success(this.translate.instant('PERMISSIONS.Propagate_changes_done')))
+  ), { dispatch: false });
+
   constructor(
     private actions$: Actions,
     private workshopService: WorkshopService,
     private authFacade: AuthFacade,
-    private workshopsFacade: WorkshopsFacade
+    private workshopsFacade: WorkshopsFacade,
+    private message: NzMessageService,
+    private translate: TranslateService,
+    private listService: FirestoreListStorage
   ) {
   }
 }

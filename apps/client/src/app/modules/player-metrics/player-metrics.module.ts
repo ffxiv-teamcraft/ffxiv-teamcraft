@@ -26,7 +26,6 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { NoFilter } from './filters/no-filter';
 import { TranslateModule } from '@ngx-translate/core';
 import { HistogramComponent } from './display/histogram/histogram.component';
-import { LineChartModule, PieChartModule } from '@swimlane/ngx-charts';
 import { PieChartComponent } from './display/pie-chart/pie-chart.component';
 import { TableComponent } from './display/table/table.component';
 import { PipesModule } from '../../pipes/pipes.module';
@@ -45,6 +44,9 @@ import { MetricsDashboardsFacade } from './+state/metrics-dashboards.facade';
 import { GilFilter } from './filters/gil-filter';
 import { InventoryService } from '../inventory/inventory.service';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { NzStatisticModule } from 'ng-zorro-antd/statistic';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 const probes: Provider[] = [
   {
@@ -105,8 +107,6 @@ const filters: Provider[] = [
     CommonModule,
     NzCardModule,
     TranslateModule,
-    LineChartModule,
-    PieChartModule,
     NzTableModule,
     PipesModule,
     CoreModule,
@@ -128,7 +128,10 @@ const filters: Provider[] = [
       fromMetricsDashboards.METRICSDASHBOARDS_FEATURE_KEY,
       fromMetricsDashboards.reducer
     ),
-    EffectsModule.forFeature([MetricsDashboardsEffects])
+    EffectsModule.forFeature([MetricsDashboardsEffects]),
+    NzStatisticModule,
+    NgxEchartsModule,
+    NzEmptyModule
   ],
   providers: [...probes, ...filters, MetricsDashboardsFacade],
   exports: [MetricDisplayComponent, MetricsDisplayEditorComponent],

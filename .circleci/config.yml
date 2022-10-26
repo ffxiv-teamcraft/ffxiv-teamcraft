@@ -1,12 +1,12 @@
 defaults: &defaults
   working_directory: ~/ffxiv-teamcraft
   docker:
-    - image: circleci/node:14.16.0-stretch-browsers-legacy
+    - image: cimg/node:16.14-browsers
 
 
 version: 2.1
 orbs:
-  win: circleci/windows@2.2.0
+  win: circleci/windows@5.0.0
 jobs:
   setup:
     <<: *defaults
@@ -113,7 +113,8 @@ jobs:
 
 
   release-desktop:
-    executor: win/default
+    executor:
+      name: win/default
     working_directory: ~/ffxiv-teamcraft
     steps:
       - attach_workspace:
@@ -121,6 +122,18 @@ jobs:
       - restore_cache:
           keys:
             - v2-deps-{ .Branch }-{ checksum "yarn.lock" }
+      - run: choco install wget -y
+      - run:
+          command: wget https://nodejs.org/dist/v16.17.0/node-v16.17.0-x86.msi -P C:\Users\circleci\Downloads\
+          shell: cmd.exe
+      - run: MsiExec.exe /i C:\Users\circleci\Downloads\node-v16.17.0-x86.msi /qn
+      - run:
+          name: Install yarn
+          command: |
+             Start-Process powershell -verb runAs -Args "-start GeneralProfile"
+             nvm install 16.17.0
+             nvm use 16.17.0
+             npm i -g yarn
       - run:
           name: Reinstalling dependencies for windows
           command: yarn install --immutable
@@ -150,9 +163,6 @@ workflows:
     jobs:
       - setup
       - lint:
-          requires:
-            - setup
-      - test:
           requires:
             - setup
       - build:

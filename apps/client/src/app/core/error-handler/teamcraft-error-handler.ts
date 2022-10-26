@@ -20,8 +20,8 @@ export class TeamcraftErrorHandler extends ErrorHandler {
   handleError(error: any): void {
     const message = error.message ? error.message : error.toString();
     if (message.indexOf('Could not reach Cloud Firestore backend') > -1) {
-      this.message.error(this.translate.instant('ERRORS.Firebase_blocked'));
+      this.message.error(`[Teamcraft] ${this.translate.instant('ERRORS.Firebase_blocked')}`);
     }
-    throw error;
+    console.error(`[Teamcraft] ${error.message}`, error);
   }
 }

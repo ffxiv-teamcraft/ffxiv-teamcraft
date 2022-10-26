@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
   ArchivedListsLoaded,
-  ClearModificationsHistory,
   ConvertLists,
   CreateList,
   DeleteList,
@@ -18,6 +17,7 @@ import {
   SetItemDone,
   SharedListsLoaded,
   TeamListsLoaded,
+  UnloadListDetails,
   UpdateItem,
   UpdateList,
   UpdateListIndexes
@@ -30,7 +30,6 @@ import {
   filter,
   first,
   map,
-  mapTo,
   mergeMap,
   shareReplay,
   switchMap,
@@ -65,14 +64,16 @@ import { ListController } from '../list-controller';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyRow } from '../../../core/rxjs/with-lazy-row';
 import { ListPricingService } from '../../../pages/list-details/list-pricing/list-pricing.service';
-import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { debounceBufferTime } from '../../../core/rxjs/debounce-buffer-time';
 import { PermissionsController } from '../../../core/database/permissions-controller';
 import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
+import { UpdateData, where } from '@angular/fire/firestore';
 
 // noinspection JSUnusedGlobalSymbols
 @Injectable()
 export class ListsEffects {
+
+  static LAST_HANDLED: SetItemDone;
 
   /**
    * TOOLING
@@ -93,7 +94,7 @@ export class ListsEffects {
     switchMap(() => this.authFacade.userId$),
     distinctUntilChanged(),
     exhaustMap((userId) => {
-      return this.listService.getByForeignKey(TeamcraftUser, userId, query => query.where('archived', '==', true), ':archived')
+      return this.listService.getByForeignKey(TeamcraftUser, userId, [where('archived', '==', true)], ':archived')
         .pipe(
           map(lists => new ArchivedListsLoaded(lists, userId))
         );
@@ -118,7 +119,7 @@ export class ListsEffects {
     first(),
     switchMap(() => combineLatest([this.authFacade.user$, this.authFacade.fcId$])),
     distinctUntilChanged(),
-    switchMap(([user, fcId]) => {
+    exhaustMap(([user, fcId]) => {
       // First of all, load using user Id
       return this.listService.getShared(user.$key).pipe(
         switchMap((lists) => {
@@ -208,7 +209,7 @@ export class ListsEffects {
       this.localStore = this.serializer.deserialize<List>(JSON.parse(localStorage.getItem('offline-lists') || '[]'), [List]);
       this.localStore.forEach(list => ListController.afterDeserialized(list));
       this.listsFacade.offlineListsLoaded(this.localStore);
-      return this.listService.getByForeignKey(TeamcraftUser, userId, query => query.where('archived', '==', false))
+      return this.listService.getByForeignKey(TeamcraftUser, userId, [where('archived', '==', false)])
         .pipe(
           debounceTime(100),
           tap(lists => {
@@ -217,16 +218,6 @@ export class ListsEffects {
                 this.listsFacade.deleteList(list.$key, false);
               }
             });
-          }),
-          switchMap(lists => {
-            return safeCombineLatest(lists.map(list => {
-              if (list && (list as any).modificationsHistory) {
-                return this.listService.migrateListModificationEntries(list);
-              }
-              return of(null);
-            })).pipe(
-              mapTo(lists)
-            );
           }),
           map(lists => new MyListsLoaded(lists, userId))
         );
@@ -244,6 +235,11 @@ export class ListsEffects {
       return new ListDetailsLoaded(list);
     })
   ));
+
+  unloadListDetails$ = createEffect(() => this.actions$.pipe(
+    ofType<UnloadListDetails>(ListsActionTypes.UnloadListDetails),
+    tap((action) => this.listService.stopListening(action.key))
+  ), { dispatch: false });
 
   /**
    * BUlK save tooling
@@ -273,11 +269,7 @@ export class ListsEffects {
   deleteListsFromDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<DeleteLists>(ListsActionTypes.DeleteLists),
     switchMap(({ keys }) => {
-      return combineLatest(keys.map(key => {
-        return this.listService.resetModificationsHistory(key);
-      })).pipe(switchMap(() => {
-        return this.listService.removeMany(keys);
-      }));
+      return this.listService.removeMany(keys);
     })
   ), { dispatch: false });
 
@@ -298,13 +290,6 @@ export class ListsEffects {
       return new UpdateList(list);
     })
   ));
-
-  clearModificationsHistory$ = createEffect(() => this.actions$.pipe(
-    ofType<ClearModificationsHistory>(ListsActionTypes.ClearModificationsHistory),
-    switchMap(action => {
-      return this.listService.resetModificationsHistory(action.payload.$key);
-    })
-  ), { dispatch: false });
 
   deleteEphemeralListsOnComplete$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList, ListsActionTypes.SetItemDone, ListsActionTypes.UpdateListAtomic),
@@ -384,20 +369,13 @@ export class ListsEffects {
         this.removeFromLocalStorage(action.key);
         return EMPTY;
       }
-      return this.listService.resetModificationsHistory(action.key).pipe(
-        switchMap(() => {
-          return this.listService.remove(action.key);
-        })
-      );
+      return this.listService.remove(action.key);
     })
   ), { dispatch: false });
 
   /**
    * Unit update stuff, for items, progression, the core of the realtime part.
    */
-
-    // tslint:disable-next-line:member-ordering
-  static LAST_HANDLED: SetItemDone;
 
   updateItemDone$ = createEffect(() => this.actions$.pipe(
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),
@@ -548,7 +526,8 @@ export class ListsEffects {
         this.saveToLocalstorage(localList, false);
         return EMPTY;
       }
-      return this.listService.pureUpdate(action.$key, action.payload);
+      // Yikes, we're forced to cast as unknown first because the types should probably be more accurate
+      return this.listService.pureUpdate(action.$key, action.payload as unknown as UpdateData<List>);
     })
   ), { dispatch: false });
 
@@ -612,14 +591,6 @@ export class ListsEffects {
       })),
       totalItems: list.finalItems.reduce((acc, item) => acc + item.amount, 0)
     }).subscribe();
-  }
-
-  private markAsDoneInDoHLog(recipeId: number): void {
-    this.authFacade.markAsDoneInLog('crafting', recipeId, true);
-  }
-
-  private markAsDoneInDoLLog(itemId: number): void {
-    this.authFacade.markAsDoneInLog('gathering', itemId, true);
   }
 
   private saveToLocalstorage(list: List, newList: boolean): void {

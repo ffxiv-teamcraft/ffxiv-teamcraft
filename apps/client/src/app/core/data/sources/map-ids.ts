@@ -6354,58 +6354,58 @@ export const mapIds = [
   {
     "id": 795,
     "zone": 4251,
-    "name": "",
+    "name": "Elysion",
     "territory": 1073,
     "scale": 400,
-    "weatherRate": 0
+    "weatherRate": 136
   },
   {
     "id": 796,
     "zone": 4252,
-    "name": "",
+    "name": "Elysion",
     "territory": 1073,
     "scale": 400,
-    "weatherRate": 0
+    "weatherRate": 136
   },
   {
     "id": 797,
     "zone": 4253,
-    "name": "",
+    "name": "Elysion",
     "territory": 1073,
     "scale": 400,
-    "weatherRate": 0
+    "weatherRate": 136
   },
   {
     "id": 798,
     "zone": 4254,
-    "name": "",
+    "name": "Elysion",
     "territory": 1073,
     "scale": 400,
-    "weatherRate": 0
+    "weatherRate": 136
   },
   {
     "id": 799,
     "zone": 4255,
-    "name": "",
+    "name": "Elysion",
     "territory": 1073,
     "scale": 400,
-    "weatherRate": 0
+    "weatherRate": 136
   },
   {
     "id": 800,
     "zone": 4256,
-    "name": "",
+    "name": "Elysion",
     "territory": 1073,
     "scale": 400,
-    "weatherRate": 0
+    "weatherRate": 136
   },
   {
     "id": 801,
     "zone": 4042,
-    "name": "",
+    "name": "Elysion",
     "territory": 1073,
     "scale": 400,
-    "weatherRate": 0
+    "weatherRate": 136
   },
   {
     "id": 802,
@@ -6418,7 +6418,7 @@ export const mapIds = [
   {
     "id": 803,
     "zone": 4199,
-    "name": "",
+    "name": "The Sil'dihn Subterrane",
     "territory": 1069,
     "scale": 200,
     "weatherRate": 0
@@ -6426,7 +6426,7 @@ export const mapIds = [
   {
     "id": 804,
     "zone": 4227,
-    "name": "",
+    "name": "Another Sil'dihn Subterrane",
     "territory": 1075,
     "scale": 200,
     "weatherRate": 0
@@ -6434,7 +6434,7 @@ export const mapIds = [
   {
     "id": 805,
     "zone": 4227,
-    "name": "",
+    "name": "Another Sil'dihn Subterrane",
     "territory": 1075,
     "scale": 200,
     "weatherRate": 0
@@ -6442,7 +6442,7 @@ export const mapIds = [
   {
     "id": 806,
     "zone": 4227,
-    "name": "",
+    "name": "Another Sil'dihn Subterrane",
     "territory": 1075,
     "scale": 200,
     "weatherRate": 0

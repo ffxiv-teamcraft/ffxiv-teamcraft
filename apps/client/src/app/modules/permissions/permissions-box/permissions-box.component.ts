@@ -12,6 +12,8 @@ import { TeamsFacade } from '../../teams/+state/teams.facade';
 import { Team } from '../../../model/team/team';
 import { LodestoneService } from '../../../core/api/lodestone.service';
 import { PermissionsController } from '../../../core/database/permissions-controller';
+import { WorkshopsFacade } from '../../workshop/+state/workshops.facade';
+import { Workshop } from '../../../model/other/workshop';
 
 @Component({
   selector: 'app-permissions-box',
@@ -26,8 +28,6 @@ export class PermissionsBoxComponent implements OnInit {
   public changes$: ReplaySubject<DataWithPermissions> = new ReplaySubject<DataWithPermissions>();
 
   public enablePropagation = false;
-
-  public propagateChanges$: Subject<DataWithPermissions> = new Subject<DataWithPermissions>();
 
   public ready$: Subject<void>;
 
@@ -51,7 +51,8 @@ export class PermissionsBoxComponent implements OnInit {
 
   constructor(private userService: UserService, private userPickerService: UserPickerService,
               private freecompanyPickerService: FreecompanyPickerService, private authFacade: AuthFacade,
-              private teamsFacade: TeamsFacade, private lodestoneService: LodestoneService) {
+              private teamsFacade: TeamsFacade, private lodestoneService: LodestoneService,
+              private workshopsFacade: WorkshopsFacade) {
     this.canAddFc$ = this.authFacade.mainCharacter$.pipe(map(char => char.ID > 0));
   }
 
@@ -141,9 +142,18 @@ export class PermissionsBoxComponent implements OnInit {
     this.changes$.next(this.data);
   }
 
+  public removePermission(id: string): void {
+    PermissionsController.removePermissionRow(this.data, id);
+    this.changes$.next(this.data);
+  }
+
   public updateEveryonePermission(newLevel: PermissionLevel): void {
     this.data.everyone = newLevel;
     this.changes$.next(this.data);
+  }
+
+  public propagateWorkshopPermissions(): void {
+    this.workshopsFacade.propagateWorkshopPermissions(this.data as Workshop);
   }
 
 }

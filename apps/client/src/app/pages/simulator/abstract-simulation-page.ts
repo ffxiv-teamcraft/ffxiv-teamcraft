@@ -53,7 +53,7 @@ export abstract class AbstractSimulationPage extends SeoPageComponent {
 
         const fca = params.get('fca');
         if (fca) {
-          consumables.freeCompanyActions = fca.split(',').map((n: String) => +n) as [number, number];
+          consumables.freeCompanyActions = fca.split(',').map((n: string) => +n) as [number, number];
         }
         return consumables;
       })

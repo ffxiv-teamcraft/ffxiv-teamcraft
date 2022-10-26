@@ -199,7 +199,7 @@
                    [nzRenderItem]="rewardTemplate">
             <ng-template #rewardTemplate let-reward>
               <nz-list-item
-                [nzContent]="(reward.type==='item' || reward.type == 'instance' || reward.type === 'action')?more:null">
+                [nzContent]="(reward.type ==='item' || reward.type === 'instance' || reward.type === 'action')?more:null">
                 <nz-list-item-meta
                   [nzAvatar]="rewardAvatar"
                   [nzTitle]="rewardTitle">

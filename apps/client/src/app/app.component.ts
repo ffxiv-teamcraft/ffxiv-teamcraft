@@ -18,7 +18,6 @@ import { RegisterPopupComponent } from './core/auth/register-popup/register-popu
 import { LoginPopupComponent } from './core/auth/login-popup/login-popup.component';
 import { EorzeanTimeService } from './core/eorzea/eorzean-time.service';
 import { ListsFacade } from './modules/list/+state/lists.facade';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { WorkshopsFacade } from './modules/workshop/+state/workshops.facade';
 import { SettingsService } from './modules/settings/settings.service';
 import { TeamsFacade } from './modules/teams/+state/teams.facade';
@@ -65,6 +64,8 @@ import { getMainDefinition } from 'apollo-utilities';
 import { LazyDataFacade } from './lazy-data/+state/lazy-data.facade';
 import { IS_HEADLESS } from '../environments/is-headless';
 import { LocalStorageBehaviorSubject } from './core/rxjs/local-storage-behavior-subject';
+import { Database, objectVal, ref } from '@angular/fire/database';
+import { gameEnv } from '../environments/game-env';
 
 @Component({
   selector: 'app-root',
@@ -89,6 +90,10 @@ export class AppComponent implements OnInit {
     785: `TC\nv${this.version}`,
     default: `v${this.version}`
   };
+
+  public githubStars$ = this.http.get<{stargazers_count: number}>('https://api.github.com/repos/ffxiv-teamcraft/ffxiv-teamcraft').pipe(
+    map(repo => repo.stargazers_count)
+  )
 
   public overlayOpacity = 1;
 
@@ -180,7 +185,7 @@ export class AppComponent implements OnInit {
   public currentLink = () => `https://ffxivteamcraft.com${window.location.hash.replace('#', '')}`;
 
   constructor(private gt: GarlandToolsService, public translate: TranslateService,
-              public ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
+              public ipc: IpcService, private router: Router, private firebase: Database,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
               public listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService,
               public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade,
@@ -190,7 +195,7 @@ export class AppComponent implements OnInit {
               private layoutsFacade: LayoutsFacade, private lazyDataFacade: LazyDataFacade,
               private customItemsFacade: CustomItemsFacade, private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
               private message: NzMessageService, private universalis: UniversalisService,
-              private inventoryService: InventoryService, @Inject(PLATFORM_ID) private platform: Object,
+              private inventoryService: InventoryService, @Inject(PLATFORM_ID) private platform: any,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
               private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService,
@@ -315,8 +320,7 @@ export class AppComponent implements OnInit {
       }
       this.freeCompanyWorkshopFacade.init();
 
-      this.firebase.object<boolean>('maintenance')
-        .valueChanges()
+      objectVal<string>(ref(this.firebase, 'maintenance'))
         .pipe(
           isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
         )
@@ -326,8 +330,7 @@ export class AppComponent implements OnInit {
           }
         });
 
-      this.firebase.object<string>('version_lock')
-        .valueChanges()
+      objectVal<string>(ref(this.firebase, 'version_lock'))
         .pipe(
           isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
         )
@@ -337,7 +340,7 @@ export class AppComponent implements OnInit {
           }
         });
 
-      this.updateVersion$ = this.firebase.object<string>('app_version').valueChanges();
+      this.updateVersion$ = objectVal<string>(ref(this.firebase, 'app_version'));
 
       this.newVersionAvailable$ = this.updateVersion$
         .pipe(
@@ -363,7 +366,7 @@ export class AppComponent implements OnInit {
         startWith(this.settings.region)
       );
 
-      this.pcapOutDated$ = combineLatest([region$, this.firebase.object('game_versions').valueChanges()]).pipe(
+      this.pcapOutDated$ = combineLatest([region$, objectVal<typeof gameEnv>(ref(this.firebase, 'game_versions'))]).pipe(
         map(([region, value]) => {
           let key: string;
           switch (region) {
@@ -609,7 +612,6 @@ export class AppComponent implements OnInit {
       );
 
       this.notificationsFacade.loadAll();
-      this.customLinksFacade.loadMyCustomLinks();
 
       let increasedPageViews = false;
 

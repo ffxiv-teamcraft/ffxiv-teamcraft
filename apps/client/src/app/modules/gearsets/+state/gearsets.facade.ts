@@ -41,6 +41,7 @@ import { LazyMateria } from '../../../lazy-data/model/lazy-materia';
 import { AriyalaStatToBaseParamId } from '../../../pages/lists/list-import-popup/link-parser/ariyala-stat-to-base-param-id';
 import { EtroLinkParser } from '../../../pages/lists/list-import-popup/link-parser/etro-link-parser';
 import { PermissionsController } from '../../../core/database/permissions-controller';
+import { lazyLoaded } from '../../../core/rxjs/lazy-loaded';
 
 @Injectable({
   providedIn: 'root'
@@ -48,7 +49,10 @@ import { PermissionsController } from '../../../core/database/permissions-contro
 export class GearsetsFacade {
   loaded$ = this.store.pipe(select(gearsetsQuery.getLoaded));
 
-  allGearsets$ = this.store.pipe(select(gearsetsQuery.getAllGearsets));
+  allGearsets$ = this.store.pipe(
+    select(gearsetsQuery.getAllGearsets),
+    lazyLoaded(this.store, of(new LoadGearsets()))
+  );
 
   selectedGearset$ = this.store.pipe(
     select(gearsetsQuery.getSelectedGearset),

@@ -9,7 +9,7 @@ export class PlanningFormulaOptimizer {
   private simulator = new IslandWorkshopSimulator(this.supply, this.workshops, this.landmarks, this.workshopLevel);
 
   constructor(private objects: CraftworksObject[], private workshops: number, private landmarks: number, private workshopLevel: number, private supply: LazyData['islandSupply'],
-              private secondRestDay: number) {
+              private secondRestDay: number, private currentDayIndex: number) {
   }
 
   public run(): { planning: WorkshopPlanning[], score: number } {
@@ -32,10 +32,7 @@ export class PlanningFormulaOptimizer {
       // Compute projected supply
       const projectedSupplyObjects = this.getProjectedSupplyObjects(i, objectsUsage);
 
-      const unknownDay = projectedSupplyObjects.some(object => {
-        // If some items have possible pattern peak for today but also other days, it's an unknown day
-        return object.patterns.length > 1 && object.patterns.some(p => (1 + Math.floor(p.index / 2)) === i);
-      });
+      const unknownDay = [1, 2, 3, 7, 7, 7, 7][this.currentDayIndex] < i;
 
       // If there's some unknown peaks for this day, consider it as not ready to optimize
       if (unknownDay) {
@@ -56,7 +53,7 @@ export class PlanningFormulaOptimizer {
         totalTime += item.craftworksEntry.craftingTime;
         objectsUsage[item.id] = (objectsUsage[item.id] || 0) + this.workshops * (totalTime === 0 ? 1 : 2);
         [best, combo] = this.findBestAndComboObjects(projectedSupplyObjects, objectsUsage);
-        projectedTime = useComboItem ? combo.craftworksEntry.craftingTime : best.craftworksEntry.craftingTime;
+        projectedTime = useComboItem ? combo.craftworksEntry.craftingTime + best.craftworksEntry.craftingTime : best.craftworksEntry.craftingTime;
       }
       if (totalTime < 24) {
         const bestFirstItem = projectedSupplyObjects.filter(obj => {
@@ -99,10 +96,20 @@ export class PlanningFormulaOptimizer {
     if (!combo) {
       // If we have no combo available (which is possible at lower ranks), just grab a random item with good value
       [combo] = projectedSupplyObjects
-        .filter(obj => obj.craftworksEntry.craftingTime + best.craftworksEntry.craftingTime <= 12)
+        .filter(obj => obj.id !== best.id && obj.craftworksEntry.craftingTime + best.craftworksEntry.craftingTime <= 12)
         .sort((a, b) => {
           return this.getBoostedValue(b, 0) - this.getBoostedValue(a, 0);
         });
+
+      if (!combo) {
+        // If we STILL have no combo available (which CAN happen but means you're optimizing in a shitty way anyways)
+        // Just grab the best item to use and that's it.
+        [combo] = projectedSupplyObjects
+          .filter(obj => obj.id !== best.id)
+          .sort((a, b) => {
+            return this.getBoostedValue(b, 0) - this.getBoostedValue(a, 0);
+          });
+      }
     }
     const alternative = comboCandidates
       .filter(obj => obj.craftworksEntry.craftingTime === combo.craftworksEntry.craftingTime && obj.id !== combo.id && (!objectsUsage[obj.id] || !objectsUsage[combo.id]))
@@ -115,21 +122,32 @@ export class PlanningFormulaOptimizer {
     ];
   }
 
-  private getBoostedValue(object: CraftworksObject, usage: number | undefined): number {
+  private getBoostedValue(object: CraftworksObject, usage: number | undefined, forCombo = false): number {
     const usageOffset = Math.floor((usage || 0) / 8);
     const supplyMultiplier = (this.supply[object.supply + usageOffset] || 60) / 100;
     // If this item didn't peak yet, reduce its value for the optimizer
-    const prePeakMultiplier = object.hasPeaked ? 1 : 0.5;
+    let prePeakMultiplier: number;
+    if (forCombo) {
+      prePeakMultiplier = object.hasPeaked ? 1.2 : 1;
+    } else {
+      prePeakMultiplier = object.isPeaking ? 2 : 1;
+    }
     return (object.craftworksEntry.value / object.craftworksEntry.craftingTime)
       * (supplyMultiplier) * (object.popularity.ratio / 100) * prePeakMultiplier;
   }
 
   private getBestItems(projectedSupplyObjects: CraftworksObject[], objectsUsage: Record<number, number>): CraftworksObject[] {
-    return projectedSupplyObjects
-      .filter((obj, i, array) => array.filter(e => e.craftworksEntry.themes.some(t => obj.craftworksEntry.themes.includes(t))))
-      .sort((a, b) => {
-        return this.getBoostedValue(b, objectsUsage[b.id]) - this.getBoostedValue(a, objectsUsage[a.id]);
-      });
+    let items = projectedSupplyObjects
+      .filter((obj, i, array) => array.filter(e => e.craftworksEntry.themes.some(t => obj.craftworksEntry.themes.includes(t))) && obj.patterns.length === 1);
+
+    if (items.length === 0) {
+      items = projectedSupplyObjects
+        .filter((obj, i, array) => array.filter(e => e.craftworksEntry.themes.some(t => obj.craftworksEntry.themes.includes(t))));
+    }
+
+    return items.sort((a, b) => {
+      return this.getBoostedValue(b, objectsUsage[b.id]) - this.getBoostedValue(a, objectsUsage[a.id]);
+    });
   }
 
   private getProjectedSupplyObjects(dayIndex: number, objectsUsage: Record<number, number>): CraftworksObject[] {
@@ -140,19 +158,9 @@ export class PlanningFormulaOptimizer {
         object.supply = object.patterns.map(p => {
           return p.pattern[dayIndex][0];
         }).sort((a, b) => a - b)[0];
-        object.hasPeaked = dayIndex > 0 && object.patterns.every(p => p.pattern.slice(1).every(day => day[0] >= object.supply));
-        object.isPeaking = object.patterns.length === 1 && this.findLastIndex(object.patterns[0].pattern, ([supply]) => supply === object.supply) === dayIndex;
+        object.hasPeaked = object.patterns.length === 1 && object.patterns[0].index < dayIndex;
+        object.isPeaking = object.patterns.length === 1 && object.patterns[0].index === dayIndex;
         return object;
       });
   }
-
-  private findLastIndex<T>(array: Array<T>, predicate: (value: T, index: number, obj: T[]) => boolean): number {
-    let l = array.length;
-    while (l--) {
-      if (predicate(array[l], l, array))
-        return l;
-    }
-    return -1;
-  }
-
 }

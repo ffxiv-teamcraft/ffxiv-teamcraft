@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Craft } from '../../../../model/garland-tools/craft';
 import { combineLatest, merge, Observable } from 'rxjs';
 import { filter, map, startWith, switchMap, tap } from 'rxjs/operators';
@@ -21,11 +21,11 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
 
   curMaxLevel = this.env.maxLevel;
 
-  public recipeForm: FormGroup;
+  public recipeForm: UntypedFormGroup;
 
   public recipe$: Observable<Craft>;
 
-  constructor(private fb: FormBuilder, protected route: ActivatedRoute,
+  constructor(private fb: UntypedFormBuilder, protected route: ActivatedRoute,
               private rotationsFacade: RotationsFacade, protected seo: SeoService,
               private env: EnvironmentService, private xivapi: XivapiService) {
     super(route, seo);

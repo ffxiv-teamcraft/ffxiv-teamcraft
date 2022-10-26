@@ -60,7 +60,7 @@ export class IntegrityCheckPopupComponent extends TeamcraftComponent {
     if (!fixedUser) {
       throw new Error('Tried to save undefined user, dangerous move !');
     }
-    this.userService.set(fixedUser.$key, fixedUser, true).subscribe(() => {
+    this.userService.set(fixedUser.$key, fixedUser).subscribe(() => {
       this.user = fixedUser;
     });
   }

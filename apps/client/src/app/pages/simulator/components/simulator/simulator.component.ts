@@ -18,7 +18,7 @@ import {
 } from 'rxjs/operators';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { AuthFacade } from '../../../../+state/auth.facade';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ConsumablesService } from '../../model/consumables.service';
 import { FreeCompanyActionsService } from '../../model/free-company-actions.service';
 import { Consumable } from '../../model/consumable';
@@ -73,7 +73,7 @@ import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../../core/rxjs/safe-combine-latest';
 import { FinalAppraisal } from '@ffxiv-teamcraft/simulator';
 import { observeInput } from '../../../../core/rxjs/observe-input';
-import { withLazyData } from 'apps/client/src/app/core/rxjs/with-lazy-data';
+import { withLazyData } from '../../../../core/rxjs/with-lazy-data';
 import { LocalStorageBehaviorSubject } from '../../../../core/rxjs/local-storage-behavior-subject';
 import { PermissionsController } from '../../../../core/database/permissions-controller';
 import { NzOptionComponent } from 'ng-zorro-antd/select';
@@ -133,7 +133,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   public customStats$: ReplaySubject<CrafterStats> = new ReplaySubject<CrafterStats>();
 
   // Customization forms
-  public statsForm: FormGroup;
+  public statsForm: UntypedFormGroup;
 
   //
   public customJob$: ReplaySubject<number> = new ReplaySubject<number>();
@@ -218,10 +218,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   private fails$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
 
-  private findActionsRegex: RegExp =
+  private findActionsRegex =
     new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+((\w|[éàèç]|[\u3000-\u303F]|[\u3040-\u309F]|[\u30A0-\u30FF]|[\uFF00-\uFFEF]|[\u4E00-\u9FAF]|[\u2605-\u2606]|[\u2190-\u2195]|\u203B)+|"[^"]+")?.*/, 'i');
 
-  private findActionsAutoTranslatedRegex: RegExp =
+  private findActionsAutoTranslatedRegex =
     new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+([^<]+)?.*/, 'i');
 
   public statsTooLow$: Observable<boolean>;
@@ -229,7 +229,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   public levelTooLow$: Observable<boolean>;
 
   constructor(private htmlTools: HtmlToolsService, public settings: SettingsService,
-              private authFacade: AuthFacade, private fb: FormBuilder, public consumablesService: ConsumablesService,
+              private authFacade: AuthFacade, private fb: UntypedFormBuilder, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService, private i18n: I18nToolsService,
               private rotationsFacade: RotationsFacade, private router: Router,
               private route: ActivatedRoute, private dialog: NzModalService, public translate: TranslateService,

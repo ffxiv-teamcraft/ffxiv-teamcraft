@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { combineLatest, concat, Observable, of, Subject } from 'rxjs';
 import { GearSet } from '@ffxiv-teamcraft/simulator';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
@@ -21,7 +21,7 @@ import { EnvironmentService } from '../../../core/environment.service';
 })
 export class GcSupplyComponent {
 
-  public form$: Observable<FormGroup>;
+  public form$: Observable<UntypedFormGroup>;
 
   public items$: Observable<{ job: number, items: { count: number, itemId: number, icon: string, reward: { xp: number, seals: number } }[] }[]>;
 
@@ -37,7 +37,7 @@ export class GcSupplyComponent {
 
   private idToIndex = [8, 15, 14, 10, 12, 11, 13, 9, 16, 17, 18];
 
-  constructor(private authFacade: AuthFacade, private fb: FormBuilder, private xivapi: XivapiService,
+  constructor(private authFacade: AuthFacade, private fb: UntypedFormBuilder, private xivapi: XivapiService,
               private listPicker: ListPickerService, private listsFacade: ListsFacade, private progressService: ProgressPopupService,
               private router: Router, private listManager: ListManagerService, private environment: EnvironmentService) {
     this.form$ = this.sets$.pipe(
@@ -114,7 +114,7 @@ export class GcSupplyComponent {
     );
   }
 
-  public getSupplies(form: FormGroup): void {
+  public getSupplies(form: UntypedFormGroup): void {
     this.levels$.next(form.getRawValue());
   }
 

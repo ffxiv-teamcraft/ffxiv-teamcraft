@@ -23,8 +23,7 @@ export class FolderPageComponent<T extends DataModel> {
   @Input()
   favoriteType: keyof Favorites;
 
-  constructor() {
-  }
+
 
   trackByKey(index: number, data: DataModel): string {
     return data.$key;
