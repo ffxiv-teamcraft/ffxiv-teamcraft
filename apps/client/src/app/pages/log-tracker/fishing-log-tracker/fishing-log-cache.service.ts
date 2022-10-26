@@ -86,7 +86,7 @@ export class FishingLogCacheService {
         return display;
       });
     }),
-    shareReplay({ bufferSize: 1, refCount: true })
+    shareReplay(1)
   );
 
   constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private lazyData: LazyDataFacade) {

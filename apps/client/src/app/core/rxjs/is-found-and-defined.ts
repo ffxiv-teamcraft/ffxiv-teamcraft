@@ -6,7 +6,7 @@ export function isFoundAndDefined<T extends DataModel>(...extraProps: Array<keyo
   return (source: Observable<T>) => {
     return source.pipe(
       filter((data) => {
-        return !data?.notFound && extraProps.every(prop => data[prop] !== undefined);
+        return data !== null && data !== undefined && !data.notFound && extraProps.every(prop => data[prop] !== undefined);
       })
     );
   };

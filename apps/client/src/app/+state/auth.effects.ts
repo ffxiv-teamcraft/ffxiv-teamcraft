@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { AuthState } from './auth.reducer';
-import { catchError, debounceTime, distinctUntilChanged, filter, map, mergeMap, switchMap, switchMapTo, tap, withLatestFrom } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, filter, first, map, mergeMap, switchMap, switchMapTo, tap, withLatestFrom } from 'rxjs/operators';
 import { EMPTY, from, of } from 'rxjs';
 import { UserService } from '../core/database/user.service';
 import {
@@ -214,6 +214,7 @@ export class AuthEffects {
     filter(([, user]) => user.defaultLodestoneId !== undefined),
     mergeMap(([actions, user]) => {
       return this.authFacade.serverLogTracking$.pipe(
+        first(),
         switchMap(logTracking => {
           const entries = actions.filter(action => {
             return !action.done || !logTracking[action.log].includes(action.itemId);
