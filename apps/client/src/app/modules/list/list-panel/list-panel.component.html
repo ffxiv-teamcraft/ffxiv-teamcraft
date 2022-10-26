@@ -204,7 +204,7 @@
                   </ul>
                 </li>
               </ng-container>
-              <ng-container *ngIf="isOwner$ | async && !_list.ephemeral && !_list.offline">
+              <ng-container *ngIf="(isOwner$ | async) === true && !_list.ephemeral && !_list.offline">
                 <ng-container *ngIf="user$ | async as user">
                   <ng-container *ngIf="!publicDisplay && (user.patron || user.admin)">
                     <li (click)="user.nickname ? createTemplate(_list, user) : null" *ngIf="(listTemplate$ | async) === undefined; else copyTemplate"
