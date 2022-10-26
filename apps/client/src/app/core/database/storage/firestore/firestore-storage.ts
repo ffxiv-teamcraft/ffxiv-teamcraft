@@ -124,10 +124,7 @@ export abstract class FirestoreStorage<T extends DataModel> {
           }),
           map(data => {
             if (data === undefined) {
-              return {
-                $key: key,
-                notFound: true
-              } as T;
+              throw new Error(`GET ${this.getBaseUri()}/${key}: NOT FOUND`);
             }
             return data;
           }),
