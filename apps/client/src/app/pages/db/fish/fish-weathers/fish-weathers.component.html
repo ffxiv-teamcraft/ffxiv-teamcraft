@@ -3,5 +3,5 @@
   [nzLoading]="loading$ | async"
   [class.card-with-list]="!(loading$ | async)"
 >
-  <div echarts theme="dark" [options]="options$ | async" [initOpts]="{height: '300px'}"></div>
+  <div echarts theme="dark" [options]="options$ | async" [initOpts]="{height: '300px', width: '500px'}"></div>
 </nz-card>
