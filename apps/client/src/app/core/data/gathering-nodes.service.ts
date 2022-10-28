@@ -89,7 +89,8 @@ export class GatheringNodesService {
                 tug: entry.tug,
                 snagging: entry.snagging,
                 baits: this.getBaitChain(entry.bait, spot, fishingSources),
-                oceanFishingTime: entry.oceanFishingTime || null
+                oceanFishingTime: entry.oceanFishingTime || null,
+                minGathering: entry.minGathering
               } as GatheringNode;
             }
           }).filter(node => !!node);

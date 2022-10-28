@@ -4,6 +4,7 @@ export interface LazyFishingSource {
   tug:               number;
   bait:              number;
   snagging?:         boolean;
+  minGathering:      number;
   spawn?:            number;
   duration?:         number;
   weathers?:         number[];

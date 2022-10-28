@@ -2,7 +2,8 @@
   <div class="details" fxLayoutAlign="flex-start center" fxLayout="row wrap" fxLayoutGap="5px">
     <div class="details-block no-icon" [class.loading]="loading$ | async">
       <div class="detail-name">
-        {{ 'DB.FISH.Min_gathering' | translate }}
+        {{ 'DB.FISH.Min_observed_gathering' | translate }} <span nz-icon nzType="info-circle" nz-tooltip
+                                                                 [nzTooltipTitle]="'DB.FISH.Min_observed_gathering_explain' | translate"></span>
       </div>
       <div class="detail-value">
         {{ (stats$ | async).gathering | number: '1.0-1' }}
@@ -29,7 +30,7 @@
     <div class="details-block" [class.loading]="loading$ | async">
       <div class="detail-name">
         <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
-          <img [src]="761 | lazyRow:'statuses':'icon' | async | xivapiIcon" alt="" />
+          <img [src]="761 | lazyRow:'statuses':'icon' | async | xivapiIcon" alt=""/>
           <span>{{ 761 | i18nRow:'statuses' | async | i18n }}</span>
         </div>
       </div>
