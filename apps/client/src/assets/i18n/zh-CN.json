@@ -1598,6 +1598,8 @@
       "Bite_time": "咬钩时间",
       "Spots": "钓场",
       "Min_gathering": "采集力要求",
+      "Min_observed_gathering": "Min. observed gathering",
+      "Min_observed_gathering_explain": "The minimum value among all the automated reports we have so far. Doesn't mean it's the minimum gathering required, just the one we observed.",
       "Min_size": "最小尺寸",
       "Max_size": "最大尺寸",
       "Avg_size": "平均尺寸",
