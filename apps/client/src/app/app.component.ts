@@ -91,6 +91,10 @@ export class AppComponent implements OnInit {
     default: `v${this.version}`
   };
 
+  public githubStars$ = this.http.get<{stargazers_count: number}>('https://api.github.com/repos/ffxiv-teamcraft/ffxiv-teamcraft').pipe(
+    map(repo => repo.stargazers_count)
+  )
+
   public overlayOpacity = 1;
 
   collapsedAlarmsBar$ = new LocalStorageBehaviorSubject('alarms-sidebar:collapsed', true);

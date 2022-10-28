@@ -44,7 +44,7 @@
       <button (click)="addFc()" *ngIf="canAddFc$ | async" nz-button nzGhost nzType="primary">
         <i nz-icon nzType="plus"></i>{{'PERMISSIONS.Add_new_fc' | translate}}
       </button>
-      <button (click)="propagateChanges$.next(data)" *ngIf="enablePropagation" nz-button nzGhost>
+      <button (click)="propagateWorkshopPermissions()" *ngIf="enablePropagation" nz-button nzGhost>
         {{'PERMISSIONS.Propagate_changes' | translate}}
       </button>
     </div>

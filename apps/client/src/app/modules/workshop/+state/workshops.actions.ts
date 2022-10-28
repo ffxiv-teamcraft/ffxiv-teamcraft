@@ -7,6 +7,8 @@ export enum WorkshopsActionTypes {
   LoadSharedWorkshops = '[Workshops] Load Shared Workshops',
   SelectWorkshop = '[Workshops] Select Workshop',
 
+  PropagateWorkshopPermissions = '[Workshops] Propagate Workshop Permissions',
+
   MyWorkshopsLoaded = '[Workshops] My Workshops Loaded',
   WorkshopLoaded = '[Workshops] Workshop Loaded',
   SharedWorkshopsLoaded = '[Workshops] Shared Workshops Loaded',
@@ -38,6 +40,13 @@ export class WorkshopLoaded implements Action {
 
 export class LoadSharedWorkshops implements Action {
   readonly type = WorkshopsActionTypes.LoadSharedWorkshops;
+}
+
+export class PropagateWorkshopPermissions implements Action {
+  readonly type = WorkshopsActionTypes.PropagateWorkshopPermissions;
+
+  constructor(public readonly workshop: Workshop) {
+  }
 }
 
 export class SelectWorkshop implements Action {
@@ -107,4 +116,5 @@ export type WorkshopsAction =
   | UpdateWorkshop
   | LoadWorkshop
   | WorkshopLoaded
-  | DeleteWorkshop;
+  | DeleteWorkshop
+  | PropagateWorkshopPermissions;

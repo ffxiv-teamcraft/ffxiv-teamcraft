@@ -83,14 +83,14 @@ export class AuthFacade {
     lazyLoaded(this.store, this.user$.pipe(
       map(user => new LoadLogTracking(user.$key, user.defaultLodestoneId))
     )),
-    isFoundAndDefined()
+    isFoundAndDefined('crafting', 'gathering')
   );
 
   serverLogTracking$ = this.store.select(authQuery.getServerLogTracking).pipe(
     lazyLoaded(this.store, this.user$.pipe(
       map(user => new LoadLogTracking(user.$key, user.defaultLodestoneId))
     )),
-    isFoundAndDefined()
+    isFoundAndDefined('crafting', 'gathering')
   );
 
   favorites$ = this.user$.pipe(map(user => user.favorites));

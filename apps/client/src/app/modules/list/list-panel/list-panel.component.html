@@ -142,19 +142,19 @@
           </button>
           <nz-dropdown-menu #menu="nzDropdownMenu">
             <ul nz-menu>
-              <li (click)="renameList(_list)" *ngIf="!publicDisplay && (permissionLevel$ | async)?.value < 40"
+              <li (click)="renameList(_list)" *ngIf="!publicDisplay && isOwner$ | async"
                   nz-menu-item>
                 {{'LIST.Rename' | translate}}
               </li>
-              <li (click)="archiveList(_list, true)" *ngIf="!publicDisplay && !_list.archived && (permissionLevel$ | async)?.value < 40"
+              <li (click)="archiveList(_list, true)" *ngIf="!publicDisplay && !_list.archived && isOwner$ | async"
                   nz-menu-item>
                 {{'LIST.Archive' | translate}}
               </li>
-              <li (click)="archiveList(_list, false)" *ngIf="!publicDisplay && _list.archived && (permissionLevel$ | async)?.value < 40"
+              <li (click)="archiveList(_list, false)" *ngIf="!publicDisplay && _list.archived && isOwner$ | async"
                   nz-menu-item>
                 {{'LIST.Unarchive' | translate}}
               </li>
-              <li (nzClick)="openSplitPopup(_list)" *ngIf="_list.finalItems.length > 1 && (permissionLevel$ | async)?.value < 30"
+              <li (nzClick)="openSplitPopup(_list)" *ngIf="_list.finalItems.length > 1 && isWriter$ | async"
                   nz-menu-item>
                 {{'LIST_DETAILS.Split_list' | translate}}
               </li>
@@ -162,15 +162,15 @@
                   nz-menu-item>
                 {{'COMMENTS.Title' | translate}}
               </li>
-              <li (click)="openTagsPopup(_list)" *ngIf="!publicDisplay && (permissionLevel$ | async)?.value < 40"
+              <li (click)="openTagsPopup(_list)" *ngIf="!publicDisplay && isOwner$ | async"
                   nz-menu-item>
                 {{'LIST_DETAILS.Tags_popup' | translate}}
               </li>
-              <li (click)="openPermissionsPopup(_list)" *ngIf="!publicDisplay && (permissionLevel$ | async)?.value < 40"
+              <li (click)="openPermissionsPopup(_list)" *ngIf="!publicDisplay && isOwner$ | async"
                   nz-menu-item>
                 {{'PERMISSIONS.Title' | translate}}
               </li>
-              <li (click)="removeEphemeral(_list)" *ngIf="!publicDisplay && _list.ephemeral && (permissionLevel$ | async)?.value < 40"
+              <li (click)="removeEphemeral(_list)" *ngIf="!publicDisplay && _list.ephemeral && isOwner$ | async"
                   nz-menu-item>
                 {{'Remove_ephemeral' | translate}}
               </li>
@@ -204,7 +204,7 @@
                   </ul>
                 </li>
               </ng-container>
-              <ng-container *ngIf="(permissionLevel$ | async)?.value >= 40 && !_list.ephemeral && !_list.offline">
+              <ng-container *ngIf="(isOwner$ | async) === true && !_list.ephemeral && !_list.offline">
                 <ng-container *ngIf="user$ | async as user">
                   <ng-container *ngIf="!publicDisplay && (user.patron || user.admin)">
                     <li (click)="user.nickname ? createTemplate(_list, user) : null" *ngIf="(listTemplate$ | async) === undefined; else copyTemplate"

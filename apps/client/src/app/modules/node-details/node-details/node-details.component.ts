@@ -6,6 +6,7 @@ import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { OceanFishingTime } from '../../../pages/allagan-reports/model/ocean-fishing-time';
+import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 
 @Component({
   selector: 'app-node-details',
@@ -51,8 +52,12 @@ export class NodeDetailsComponent {
     }
   }
 
-  public addAlarm(alarm: Alarm, group?: AlarmGroup): void {
-    this.alarmsFacade.addAlarmInGroup(alarm, group);
+  public toggleAlarm(display: AlarmDisplay, group?: AlarmGroup): void {
+    if (display.registered) {
+      this.alarmsFacade.deleteAlarm(display.alarm);
+    } else {
+      this.alarmsFacade.addAlarmInGroup(display.alarm, group);
+    }
   }
 
   getDespawnTime(time: number, uptime: number): string {

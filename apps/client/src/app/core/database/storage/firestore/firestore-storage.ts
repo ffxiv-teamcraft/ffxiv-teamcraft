@@ -87,7 +87,7 @@ export abstract class FirestoreStorage<T extends DataModel> {
     };
   }
 
-  protected docRef(key: string): DocumentReference<T> {
+  public docRef(key: string): DocumentReference<T> {
     return doc(this.firestore, this.getBaseUri(), key).withConverter(this.converter);
   }
 
@@ -124,10 +124,7 @@ export abstract class FirestoreStorage<T extends DataModel> {
           }),
           map(data => {
             if (data === undefined) {
-              return {
-                $key: key,
-                notFound: true
-              } as T;
+              throw new Error(`GET ${this.getBaseUri()}/${key}: NOT FOUND`);
             }
             return data;
           }),
@@ -218,12 +215,25 @@ export abstract class FirestoreStorage<T extends DataModel> {
     return from(batch.commit());
   }
 
-  public runTransaction(listId: string, transactionFn: (transaction: Transaction, serverCopy: DocumentSnapshot<T>) => void): Observable<void> {
-    return defer(() => runTransaction(this.firestore, async transaction => {
-      const ref = this.docRef(listId);
+  /**
+   * Run a transaction with server copy of a given entity
+   * @param entityId
+   * @param transactionFn
+   */
+  public runTransaction(entityId: string, transactionFn: (transaction: Transaction, serverCopy: DocumentSnapshot<T>) => void): Observable<void> {
+    return this.runPureTransaction(async (transaction) => {
+      const ref = this.docRef(entityId);
       const serverCopy = await transaction.get(ref);
       return transactionFn(transaction, serverCopy);
-    })).pipe(
+    });
+  }
+
+  /**
+   * Run a simple firestore transaction
+   * @param transactionFn
+   */
+  public runPureTransaction(transactionFn: (transaction: Transaction) => Promise<void>): Observable<void> {
+    return defer(() => runTransaction(this.firestore, transactionFn)).pipe(
       retry({
         count: 3,
         delay: 200

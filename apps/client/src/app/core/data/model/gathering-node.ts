@@ -31,6 +31,7 @@ export interface GatheringNode {
   snagging?: boolean;
   tug?: number;
   oceanFishingTime?: number;
+  minGathering?: number;
 
   /**
    * Spearfishing stuff

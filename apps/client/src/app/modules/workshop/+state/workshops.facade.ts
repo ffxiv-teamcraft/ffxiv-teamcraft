@@ -7,7 +7,7 @@ import {
   DeleteWorkshop,
   LoadMyWorkshops,
   LoadSharedWorkshops,
-  LoadWorkshop,
+  LoadWorkshop, PropagateWorkshopPermissions,
   RemoveListFromWorkshop,
   SelectWorkshop,
   UpdateWorkshop,
@@ -83,5 +83,9 @@ export class WorkshopsFacade {
 
   loadWorkshopsWithWriteAccess(): void {
     this.store.dispatch(new LoadSharedWorkshops());
+  }
+
+  propagateWorkshopPermissions(workshop: Workshop): void {
+    this.store.dispatch(new PropagateWorkshopPermissions(workshop));
   }
 }

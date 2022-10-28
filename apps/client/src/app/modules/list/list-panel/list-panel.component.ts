@@ -126,7 +126,18 @@ export class ListPanelComponent extends TeamcraftComponent {
       return {
         value: level
       };
-    })
+    }),
+    shareReplay(1)
+  );
+
+  isOwner$ = this.permissionLevel$.pipe(
+    map(level => level.value >= PermissionLevel.OWNER),
+    shareReplay(1)
+  );
+
+  isWriter$ = this.permissionLevel$.pipe(
+    map(level => level.value >= PermissionLevel.WRITE),
+    shareReplay(1)
   );
 
   private syncLinkUrl: string;
