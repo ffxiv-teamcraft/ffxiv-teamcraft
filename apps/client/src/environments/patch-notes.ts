@@ -6,4 +6,4 @@ export const patchNotes = `### Bug Fixes
 
 ### Features
 
-* **db:** imported 80+ allagan reports.`;
+* **db:** imported 80+ allagan reports.`;
