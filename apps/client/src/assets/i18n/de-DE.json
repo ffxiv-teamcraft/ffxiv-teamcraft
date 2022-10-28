@@ -1598,6 +1598,8 @@
       "Bite_time": "Zeit zum Anbeißen",
       "Spots": "Orte",
       "Min_gathering": "Min. Sammeln",
+      "Min_observed_gathering": "Min. observed gathering",
+      "Min_observed_gathering_explain": "The minimum value among all the automated reports we have so far. Doesn't mean it's the minimum gathering required, just the one we observed.",
       "Min_size": "Min. Größe",
       "Max_size": "Max. Größe",
       "Avg_size": "Ø Größe",
