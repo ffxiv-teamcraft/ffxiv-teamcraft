@@ -68,6 +68,16 @@ export class PlanningFormulaOptimizer {
         })[0];
         if (bestFirstItem) {
           day.planning.unshift(bestFirstItem);
+        } else {
+          const noComboFirstItem = projectedSupplyObjects.filter(obj => {
+            return obj.craftworksEntry.craftingTime <= (24 - totalTime)
+              && obj.id !== day.planning[0].id;
+          }).sort((a, b) => {
+            return this.getBoostedValue(b, objectsUsage[b.id]) - this.getBoostedValue(a, objectsUsage[a.id]);
+          })[0];
+          if (noComboFirstItem) {
+            day.planning.unshift(noComboFirstItem);
+          }
         }
       }
       const result = this.simulator.getScoreForDay(day, groove);
