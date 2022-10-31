@@ -610,7 +610,8 @@
     "Add_selection_to_list": "Add selection to list",
     "Your_lists": "Your lists",
     "Outdated_tag": "Outdated",
-    "No_lists": "You have no lists",
+    "No_lists": "No lists to display here",
+    "List_aggregates": "List aggregates",
     "Lists_search_placeholder": "Search for a list…",
     "Add_to_a_list": "Add to a list",
     "Please_pick_recipe": "Please pick a recipe for this item",
@@ -2950,9 +2951,11 @@
     "Select_layout": "Select a layout",
     "Open_aggregate": "Open an aggregated view",
     "Title": "Aggregated list view",
-    "Select_panel": "Select a panel to open its aggregated view",
+    "Select_panel": "Select a panel to open its view",
     "Missing_lists": "{{amount}} list(s) could not be loaded properly",
-    "Missing_lists_description": "Please make sure you have enough permissions on all the lists and that they still exist (missing ids: {{ids}})."
+    "Remove_missing_ids": "Remove missing lists from the aggregate",
+    "Missing_lists_description": "Please make sure you have enough permissions on all the lists and that they still exist (missing ids: {{ids}}).",
+    "Save": "Save this aggregate to your lists page"
   },
   "MACHINA_ERRORS": {
     "Default": "Machina Wrapper error",

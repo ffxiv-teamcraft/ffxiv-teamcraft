@@ -1,4 +1,21 @@
-<nz-page-header [nzTitle]="'LIST_AGGREGATE.Title' | translate" [nzSubtitle]="subtitle$ | async"></nz-page-header>
+<nz-page-header [nzTitle]="'LIST_AGGREGATE.Title' | translate" [nzSubtitle]="subtitle$ | async">
+  <nz-page-header-extra *ngIf="aggregate$ | async as aggregate">
+    <ng-container *ngIf="layoutId$ | async as layoutId">
+      <ng-container *ngIf="aggregateFromRoute$ | async as aggregateFromRoute">
+        <button nz-button nzType="primary" *ngIf="!aggregateFromRoute" (click)="saveAggregate(aggregate, layoutId)">
+          <span nz-icon nzType="save"></span> {{'LIST_AGGREGATE.Save' | translate}}
+        </button>
+        <ng-container *ngIf="aggregateFromRoute">
+          <button *ngIf="missingLists$ | async as missingLists"
+                  nz-button nzDanger
+                  (click)="removeMissingLists(aggregateFromRoute.$key, missingLists)"><span nz-icon nzType="clear"
+                                                                                   nzTheme="outline"></span> {{'LIST_AGGREGATE.Remove_missing_ids' | translate}}
+          </button>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+  </nz-page-header-extra>
+</nz-page-header>
 
 <nz-alert *ngIf="missingLists$ | async as missingLists"
           nzType="warning"

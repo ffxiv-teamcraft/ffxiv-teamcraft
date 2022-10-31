@@ -43,7 +43,7 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
       );
   }
 
-  public getByForeignKey(foreignEntityClass: Class, foreignKeyValue: string, additionalFilters: QueryConstraint[] = [], cacheSuffix = ''): Observable<T[]> {
+  public getByForeignKey(foreignEntityClass: Class, foreignKeyValue: string, additionalFilters: QueryConstraint[] = [], cacheSuffix: string = ''): Observable<T[]> {
     const classMetadataRegistry = Reflect.getMetadata(METADATA_FOREIGN_KEY_REGISTRY, this.modelInstance);
     const foreignPropertyEntry = classMetadataRegistry.find((entry) => entry.clazz === foreignEntityClass);
     if (foreignPropertyEntry === undefined) {

@@ -14,11 +14,21 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FormsModule } from '@angular/forms';
 import { ListModule } from '../../modules/list/list.module';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { ListAggregateModule } from '../../modules/list-aggregate/list-aggregate.module';
 
 const routes: Routes = [
   {
     path: '',
     component: ListAggregateHomeComponent
+  },
+  {
+    path: 'saved/:aggregateId',
+    component: ListAggregateComponent
+  },
+  {
+    path: 'saved/:aggregateId/:panelTitle',
+    component: ListAggregateComponent
   },
   {
     path: ':listIds/:layoutId',
@@ -49,8 +59,9 @@ const routes: Routes = [
     NzSelectModule,
     NzButtonModule,
     ListModule,
-    NzAlertModule
+    NzAlertModule,
+    NzIconModule
   ]
 })
-export class ListAggregateModule {
+export class ListAggregatePagesModule {
 }

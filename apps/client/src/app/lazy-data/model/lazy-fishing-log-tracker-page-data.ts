@@ -106,6 +106,7 @@ export interface GatheringNode {
   snagging?:         boolean;
   baits?:            Bait[];
   oceanFishingTime?: number | null;
+  minGathering?:     number;
   matchingItemId:    number;
   weathers?:         number[];
   weathersFrom?:     number[];

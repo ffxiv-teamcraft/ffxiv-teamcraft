@@ -127,6 +127,14 @@
              tutorialStepIndex="1">
             <i nz-icon nzType="folder-open"></i>
           </a>
+          <a (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async)?.value > 10" [nzShape]="'circle'"
+             [nzTooltipTitle]="'LIST_AGGREGATE.Open_aggregate' | translate"
+             [nzType]="'primary'"
+             nz-button
+             nz-tooltip
+             routerLink="/list-aggregate/{{_list.$key}}/defaultLayout">
+            <i nz-icon nzType="folder-view"></i>
+          </a>
           <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteList(_list)" *ngIf="(permissionLevel$ | async)?.value > 10"
                   [disabled]="(permissionLevel$ | async)?.value < 40 || _list.hasCommission" [nzShape]="'circle'"
                   [nzPopconfirmTitle]="'LIST.BUTTONS.Delete_warning' | translate"

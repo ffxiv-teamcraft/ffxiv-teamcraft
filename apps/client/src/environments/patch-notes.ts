@@ -15,4 +15,4 @@ export const patchNotes = `### Bug Fixes
 
 * **core:** new github button and stars count that links to the repo (we ♥ stars).
 * **db:** import 54 allagan reports.
-* **workshops:** complete refactor of the permissions propagation system.`;
+* **workshops:** complete refactor of the permissions propagation system.`;

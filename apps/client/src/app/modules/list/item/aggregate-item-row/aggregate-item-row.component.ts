@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { combineLatest, map, ReplaySubject } from 'rxjs';
 import { AbstractItemRowComponent } from '../abstract-item-row.component';
-import { ListAggregate } from '../../../../pages/list-aggregate/model/list-aggregate';
 import { ListRow } from '../../model/list-row';
+import { ProcessedListAggregate } from '../../../list-aggregate/model/processed-list-aggregate';
 
 @Component({
   selector: 'app-aggregate-item-row',
@@ -11,14 +11,14 @@ import { ListRow } from '../../model/list-row';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AggregateItemRowComponent extends AbstractItemRowComponent implements OnInit {
-  private aggregate$ = new ReplaySubject<ListAggregate>();
+  private aggregate$ = new ReplaySubject<ProcessedListAggregate>();
 
   list$ = this.aggregate$.pipe(
     map(aggregate => aggregate.aggregatedList)
   );
 
   @Input()
-  public set aggregate(data: ListAggregate) {
+  public set aggregate(data: ProcessedListAggregate) {
     this.aggregate$.next(data);
   }
 

@@ -21,6 +21,7 @@ import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { DeleteMultipleListsPopupComponent } from './delete-multiple-lists-popup/delete-multiple-lists-popup.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { PipesModule } from '../../pipes/pipes.module';
 
 const routes: Routes = [
   {
@@ -50,7 +51,8 @@ const routes: Routes = [
     NgxDnDModule,
     DragDropModule,
 
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    PipesModule
   ],
   declarations: [ListsComponent, MergeListsPopupComponent, ListImportPopupComponent, DeleteMultipleListsPopupComponent]
 })

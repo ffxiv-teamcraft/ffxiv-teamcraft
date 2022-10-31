@@ -35,8 +35,8 @@ import { NpcBreakdownRow } from '../../../model/common/npc-breakdown-row';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { observeInput } from '../../../core/rxjs/observe-input';
-import { ListAggregate } from '../../../pages/list-aggregate/model/list-aggregate';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { ProcessedListAggregate } from '../../list-aggregate/model/processed-list-aggregate';
 
 @Component({
   selector: 'app-list-details-panel',
@@ -60,7 +60,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   largeList = false;
 
   @Input()
-  aggregate: ListAggregate;
+  aggregate: ProcessedListAggregate;
 
   private _forcePermissionLevel$ = new ReplaySubject<PermissionLevel>();
 

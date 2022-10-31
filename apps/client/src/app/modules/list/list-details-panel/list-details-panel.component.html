@@ -93,7 +93,7 @@
     <nz-collapse-panel (nzActiveChange)="activeChange($event)"
                        *ngIf="!overlay"
                        [class.panel-done]="!overlay && displayRow.collapsed && (displayRow.layoutRow && displayRow.layoutRow.collapseIfDone)"
-                       [nzActive]="!(displayRow.collapsed || collapsed) || aggregate"
+                       [nzActive]="!(displayRow.collapsed || collapsed) || !!aggregate"
                        [nzHeader]="panelHeader">
       <ng-container *ngTemplateOutlet="display"></ng-container>
       <button (click)="addItems()" *ngIf="!aggregate && !overlay && finalItems && permissionLevel >= 30" nz-button nzBlock>

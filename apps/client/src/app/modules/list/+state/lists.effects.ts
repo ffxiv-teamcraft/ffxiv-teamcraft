@@ -183,14 +183,6 @@ export class ListsEffects {
       }
       return [listKey, null];
     }),
-    mergeMap(([key, list]: [string, List]) => {
-      if (list && (list as any).modificationsHistory) {
-        return this.listService.migrateListModificationEntries(list).pipe(
-          mapTo([key, list])
-        );
-      }
-      return of([key, list]);
-    }),
     map(([key, list]: [string, List]) => {
       if (list === null) {
         return new ListDetailsLoaded({ $key: key, notFound: true });

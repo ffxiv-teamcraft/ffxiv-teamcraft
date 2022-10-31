@@ -29,7 +29,7 @@ const routes: Routes = [
   },
   {
     path: 'list-aggregate',
-    loadChildren: () => import('./pages/list-aggregate/list-aggregate.module').then(m => m.ListAggregateModule)
+    loadChildren: () => import('./pages/list-aggregate/list-aggregate-pages.module').then(m => m.ListAggregatePagesModule)
   },
   {
     path: 'workshop',

@@ -49,7 +49,7 @@
       <ng-container *ngIf="favoriteLists?.length > 0">
         <nz-divider [nzText]="'LISTS.Favorite_lists' | translate" nzOrientation="left"></nz-divider>
         <div *ngIf="favoriteLists.length > 0">
-          <div *ngFor="let list of favoriteLists; trackBy: trackByList" class="list-panel">
+          <div *ngFor="let list of favoriteLists; trackByKey" class="list-panel">
             <app-list-panel [list]="list"></app-list-panel>
           </div>
         </div>
@@ -58,51 +58,89 @@
     <nz-divider [nzText]="'LISTS.Your_lists' | translate" nzOrientation="left"></nz-divider>
     <div (drop)="setListIndex($event.value, $event.dropIndex, lists.otherLists)" class="ngx-dnd-container"
          ngxDroppable="list">
-      <div *ngFor="let list of lists.otherLists; trackBy: trackByList" [model]="list"
+      <div *ngFor="let list of lists.otherLists; trackByKey" [model]="list"
            class="ngx-dnd-item list-panel"
            ngxDraggable="list">
         <app-list-panel [hideAvatar]="true" [list]="list"></app-list-panel>
       </div>
     </div>
-    <app-fullpage-message *ngIf="lists.otherLists.length === 0 && (loading$ | async) === false" height="150px">
-      {{'LISTS.No_lists' | translate}}
-    </app-fullpage-message>
-    <div *ngIf="sharedLists$ | async as sharedLists">
+    <nz-empty *ngIf="lists.otherLists.length === 0 && (loading$ | async) === false" [nzNotFoundContent]="'LISTS.No_lists' | translate" nzNotFoundImage="simple"></nz-empty>
+    <ng-container *ngIf="sharedLists$ | async as sharedLists">
       <div *ngIf="sharedLists.length > 0">
         <nz-divider [nzText]="'LISTS.Shared_lists' | translate" nzOrientation="left"></nz-divider>
-        <div *ngFor="let list of sharedLists; trackBy: trackByList" class="list-panel">
+        <div *ngFor="let list of sharedLists; trackByKey" class="list-panel">
           <app-list-panel [list]="list"></app-list-panel>
         </div>
       </div>
-    </div>
-    <div *ngIf="workshops$ | async as workshops">
+    </ng-container>
+    <ng-container *ngIf="aggregates$ | async as aggregates">
+      <div *ngIf="aggregates.length > 0">
+        <nz-divider [nzText]="'LISTS.List_aggregates' | translate" nzOrientation="left"></nz-divider>
+        <nz-list nzBordered>
+          <nz-list-item *ngFor="let display of aggregates; trackByKey" [nzActions]="[shareLinkTpl, openAggregateTpl, deleteAggregateTpl]"
+                        class="aggregate-list-item">
+            <div>
+              <nz-tag [style.border-color]="'#108ee9'" class="custom-tag">{{display.layoutName}}</nz-tag>
+              {{display.listNames}}
+            </div>
+            <ng-template #shareLinkTpl>
+              <button [clipboard]="('/list-aggregate/saved/'+display.aggregate.$key) | tcLink"
+                      [nzTooltipTitle]="'LIST.BUTTONS.Share_description' | translate"
+                      nzShape="circle"
+                      nz-button nz-tooltip>
+                <i nz-icon nzType="share-alt"></i>
+              </button>
+            </ng-template>
+            <ng-template #openAggregateTpl>
+              <a [nzShape]="'circle'"
+                 [nzTooltipTitle]="'Open' | translate"
+                 [nzType]="'primary'"
+                 nz-button
+                 nz-tooltip
+                 routerLink="/list-aggregate/saved/{{display.aggregate.$key}}">
+                <i nz-icon nzType="folder-open"></i>
+              </a>
+            </ng-template>
+            <ng-template #deleteAggregateTpl>
+              <button (nzOnConfirm)="deleteAggregate(display.aggregate)"
+                      [nzShape]="'circle'"
+                      [nzPopconfirmTitle]="'Confirmation' | translate"
+                      nzDanger
+                      nz-button nz-popconfirm>
+                <i nz-icon nzType="delete"></i></button>
+            </ng-template>
+          </nz-list-item>
+        </nz-list>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="workshops$ | async as workshops">
       <div *ngIf="workshops.length > 0">
         <nz-divider [nzText]="'WORKSHOP.Workshops' | translate" nzOrientation="left"></nz-divider>
         <div (cdkDropListDropped)="setWorkshopIndex($event, workshops)" cdkDropList>
-          <div *ngFor="let workshopDisplay of workshops; trackBy: trackByList" class="workshop-panel" cdkDrag
+          <div *ngFor="let workshopDisplay of workshops; trackByKey" class="workshop-panel" cdkDrag
                [cdkDragData]="workshopDisplay.workshop">
             <app-workshop-panel [lists]="workshopDisplay.lists" [workshop]="workshopDisplay.workshop"></app-workshop-panel>
           </div>
         </div>
       </div>
-    </div>
-    <div *ngIf="sharedWorkshops$ | async as sharedWorkshops">
+    </ng-container>
+    <ng-container *ngIf="sharedWorkshops$ | async as sharedWorkshops">
       <div *ngIf="sharedWorkshops.length > 0">
         <nz-divider [nzText]="'WORKSHOP.Shared_workshops' | translate" nzOrientation="left"></nz-divider>
-        <div *ngFor="let workshopDisplay of sharedWorkshops; trackBy: trackByList" class="workshop-panel">
+        <div *ngFor="let workshopDisplay of sharedWorkshops; trackByKey" class="workshop-panel">
           <app-workshop-panel [lists]="workshopDisplay.lists"
                               [workshop]="workshopDisplay.workshop"></app-workshop-panel>
         </div>
       </div>
-    </div>
+    </ng-container>
     <nz-divider *ngIf="(teamsDisplays$ | async)?.length > 0" [nzText]="'TEAMS.Title' | translate"
                 nzOrientation="left"></nz-divider>
     <div fxLayout="column" fxLayoutGap="5px">
-      <nz-collapse *ngFor="let teamDisplay of teamsDisplays$ | async;trackBy: trackByTeam">
+      <nz-collapse *ngFor="let teamDisplay of teamsDisplays$ | async; trackByKey">
         <nz-collapse-panel nzHeader="{{teamDisplay.team.name}} ({{teamDisplay.lists.length}})">
           <div (drop)="setListIndex($event.value, $event.dropIndex, teamDisplay.lists)" class="ngx-dnd-container"
                ngxDroppable="team-{{teamDisplay.team.$key}}">
-            <div *ngFor="let list of teamDisplay.lists; trackBy: trackByList" [model]="list"
+            <div *ngFor="let list of teamDisplay.lists; trackByKey" [model]="list"
                  class="ngx-dnd-item list-panel"
                  ngxDraggable="team-{{teamDisplay.team.$key}}">
               <app-list-panel [list]="list"></app-list-panel>
@@ -119,7 +157,7 @@
         <div (drop)="setListIndex($event.value, $event.dropIndex, lists.communityLists)" *ngIf="communityListsPanel.nzActive"
              class="ngx-dnd-container"
              ngxDroppable="communityList">
-          <div *ngFor="let list of lists.communityLists; trackBy: trackByList" [model]="list"
+          <div *ngFor="let list of lists.communityLists; trackByKey" [model]="list"
                class="ngx-dnd-item list-panel"
                ngxDraggable="communityList">
             <app-list-panel [list]="list"></app-list-panel>

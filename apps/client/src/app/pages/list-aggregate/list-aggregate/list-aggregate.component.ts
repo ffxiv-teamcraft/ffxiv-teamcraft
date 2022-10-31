@@ -2,12 +2,15 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ActivatedRoute } from '@angular/router';
 import { debounceTime, distinctUntilChanged, filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
-import { ListAggregate } from '../model/list-aggregate';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
-import { combineLatest, of } from 'rxjs';
+import { combineLatest, merge, of } from 'rxjs';
 import { PermissionsController } from '../../../core/database/permissions-controller';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
+import { ListAggregatesFacade } from '../../../modules/list-aggregate/+state/list-aggregates.facade';
+import { ProcessedListAggregate } from '../../../modules/list-aggregate/model/processed-list-aggregate';
+import { ListAggregate } from '../../../modules/list-aggregate/model/list-aggregate';
+import { arrayRemove } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-list-aggregate',
@@ -21,12 +24,32 @@ export class ListAggregateComponent {
     map(params => params.get('panelTitle'))
   );
 
-  public listIds$ = this.route.paramMap.pipe(
-    map(params => params.get('listIds').split(':'))
+  public listIdsFromRoute$ = this.route.paramMap.pipe(
+    map(params => params.get('listIds')?.split(':')),
+    filter(Boolean)
   );
 
-  public layout$ = this.route.paramMap.pipe(
+  public layoutIdFromRoute$ = this.route.paramMap.pipe(
     map(params => params.get('layoutId')),
+    filter(Boolean)
+  );
+
+  public aggregateFromRoute$ = this.route.paramMap.pipe(
+    map(params => params.get('aggregateId')),
+    filter(Boolean),
+    tap(id => {
+      this.aggregatesFacade.loadAndSelect(id);
+    }),
+    switchMap(() => this.aggregatesFacade.selectedListAggregate$),
+    filter(Boolean),
+    shareReplay(1)
+  );
+
+  private listIds$ = merge(this.listIdsFromRoute$, this.aggregateFromRoute$.pipe(map(aggregate => aggregate.lists)));
+
+  public layoutId$ = merge(this.layoutIdFromRoute$, this.aggregateFromRoute$.pipe(map(aggregate => aggregate.layout)));
+
+  public layout$ = this.layoutId$.pipe(
     tap(layoutId => {
       if (!layoutId.startsWith('default') && !layoutId.startsWith('venili')) {
         this.layoutsFacade.load(layoutId);
@@ -54,7 +77,9 @@ export class ListAggregateComponent {
           });
         })
       );
-    })
+    }),
+    distinctUntilChanged((a, b) => a.map(l => l.$key + l.etag).join('.') === b.map(l => l.$key + l.etag).join('.')),
+    shareReplay(1)
   );
 
   public missingLists$ = combineLatest([
@@ -74,8 +99,9 @@ export class ListAggregateComponent {
 
   public aggregate$ = this.lists$.pipe(
     map(lists => {
-      return new ListAggregate(lists);
-    })
+      return new ProcessedListAggregate(lists);
+    }),
+    shareReplay(1)
   );
 
   public permissionLevel$ = this.authFacade.loggedIn$.pipe(
@@ -138,8 +164,19 @@ export class ListAggregateComponent {
 
   constructor(private listsFacade: ListsFacade, private route: ActivatedRoute,
               private layoutsFacade: LayoutsFacade, private authFacade: AuthFacade,
-              private teamsFacade: TeamsFacade) {
+              private teamsFacade: TeamsFacade, private aggregatesFacade: ListAggregatesFacade) {
     this.layoutsFacade.loadAll();
   }
 
+  saveAggregate(processed: ProcessedListAggregate, layout: string): void {
+    const aggregate = ListAggregate.fromProcessed(processed);
+    aggregate.layout = layout;
+    this.aggregatesFacade.create(aggregate);
+  }
+
+  removeMissingLists(key: string, missingLists: string[]): void {
+    this.aggregatesFacade.pureUpdate(key, {
+      lists: arrayRemove(...missingLists)
+    });
+  }
 }

@@ -17,6 +17,7 @@ import { CustomLinksModule } from '../custom-links/custom-links.module';
 import { ListPickerModule } from '../list-picker/list-picker.module';
 import { FolderAdditionPickerModule } from '../folder-addition-picker/folder-addition-picker.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
     StoreModule.forFeature('workshops', workshopsReducer, {
       initialState: workshopsInitialState
     }),
-    EffectsModule.forFeature([WorkshopsEffects])
+    EffectsModule.forFeature([WorkshopsEffects]),
+    RouterModule,
   ],
   declarations: [WorkshopPanelComponent],
   exports: [WorkshopPanelComponent],
