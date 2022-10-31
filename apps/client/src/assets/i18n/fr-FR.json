@@ -1644,6 +1644,8 @@
         "Size": "Taille",
         "Large": "Large",
         "Time_since_thrown": "Temps écoulé depuis le lancement",
+        "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
+        "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
         "ERRORS": {
           "No_bait": "Aucun appât détecté, changez d'appât une fois pour régler le soucis.",
           "No_stats": "Aucune statistique détectée. Basculez à nouveau en Pêcheur pour corriger."
