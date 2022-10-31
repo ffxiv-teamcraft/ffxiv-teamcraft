@@ -1644,6 +1644,8 @@
         "Size": "Размер",
         "Large": "Large",
         "Time_since_thrown": "Время с момента броска",
+        "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
+        "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
         "ERRORS": {
           "No_bait": "No bait detected. Switch bait once to fix.",
           "No_stats": "No stats detected. Switch to Fisher again to fix."
