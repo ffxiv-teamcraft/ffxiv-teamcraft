@@ -1644,6 +1644,8 @@
         "Size": "尺寸",
         "Large": "Large",
         "Time_since_thrown": "抛竿以来的时间",
+        "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
+        "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
         "ERRORS": {
           "No_bait": "未检测到钓饵，请重新“选饵”",
           "No_stats": "未检测到属性，请尝试重新切换到捕鱼人进行修复。"
