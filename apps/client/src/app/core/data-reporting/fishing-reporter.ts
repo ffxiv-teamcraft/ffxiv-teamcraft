@@ -315,6 +315,9 @@ export class FishingReporter implements DataReporter {
         if (this.settings.localFishingDataDump) {
           this.ipc.send('fishing-report', reports);
         }
+      }),
+      filter(([entry]) => {
+        return entry.spot < 10000;
       })
     );
   }

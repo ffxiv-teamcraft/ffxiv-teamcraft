@@ -5,6 +5,11 @@
         <div class="error" *ngFor="let error of errors">- {{error | translate}}</div>
       </div>
     </ng-container>
+    <nz-alert nzType="info"
+              *ngIf="isIgnoredSpot$ | async"
+              nzCloseable
+              [nzMessage]="'DB.FISH.OVERLAY.Ignored_spot' | translate"
+              [nzDescription]="'DB.FISH.OVERLAY.Ignored_spot_description' | translate"></nz-alert>
     <ng-template #unknown>
       <span class="error-text">{{'COMMON.Unknown' | translate}}</span>
     </ng-template>
@@ -63,7 +68,8 @@
       <div fxLayout="row" fxLayoutAlign="space-between center">
         <div>{{'DB.FISH.OVERLAY.Statuses' | translate}}</div>
         <div *ngIf="state.statuses; else unknown" fxLayout="row" fxLayoutGap="5px">
-          <img *ngFor="let status of state.statuses; trackBy: trackByValue" src="{{status | lazyRow:'statuses':'icon' | async | xivapiIcon}}" nz-tooltip [nzTooltipTitle]="status | i18nRow:'statuses' | async | i18n"
+          <img *ngFor="let status of state.statuses; trackBy: trackByValue" src="{{status | lazyRow:'statuses':'icon' | async | xivapiIcon}}" nz-tooltip
+               [nzTooltipTitle]="status | i18nRow:'statuses' | async | i18n"
                alt="{{status}}">
           <span *ngIf="state.statuses.length === 0">
             {{'DB.FISH.OVERLAY.No_statuses' | translate}}

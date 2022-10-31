@@ -28,6 +28,10 @@ export class FishingReporterOverlayComponent {
     })
   );
 
+  public isIgnoredSpot$ = this.state$.pipe(
+    map(state => state.spot >= 10000)
+  );
+
   constructor(private ipc: IpcService, private translate: TranslateService) {
     this.ipc.on('fishing-state', (event, data) => {
       this.state$.next(data);
