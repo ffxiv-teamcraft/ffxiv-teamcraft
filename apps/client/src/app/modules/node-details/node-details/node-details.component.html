@@ -44,7 +44,7 @@
                [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon"
                alt="" class="fish-eyes-alarm">
           <ng-container *ngIf="showAlarmsIntegration">
-            <app-alarm-button [alarm]="alarm.alarm" (toggleAlarm)="addAlarm($event.alarm)" (addAlarmWithGroup)="addAlarm($event.alarm, $event.group)"
+            <app-alarm-button [alarm]="alarm.alarm" (toggleAlarm)="toggleAlarm($event)" (addAlarmWithGroup)="toggleAlarm($event, $event.group)"
                               [alarmGroups]="alarmGroups$ | async" [showPosition]="false"></app-alarm-button>
           </ng-container>
         </div>

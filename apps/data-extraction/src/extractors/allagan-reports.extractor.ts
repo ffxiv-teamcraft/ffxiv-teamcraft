@@ -144,7 +144,8 @@ export class AllaganReportsExtractor extends AbstractExtractor {
                     weathersFrom: report.data.weathersFrom,
                     snagging: report.data.snagging,
                     predators: report.data.predators,
-                    oceanFishingTime: report.data.oceanFishingTime
+                    oceanFishingTime: report.data.oceanFishingTime,
+                    minGathering: report.data.minGathering || 0
                   }, this.identity), false, !report.applied);
               }
             });

@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.9.7"></a>
+## [9.9.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.6...v9.9.7) (2022-10-28)
+
+
+### Bug Fixes
+
+* **auth:** fixed an issue with log tracking not updating properly ([5236869](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5236869))
+* **core:** better error handling with missing island workshop data ([dc9cfd4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dc9cfd4))
+* **db:** changed min gathering label and added min gathering data to gathering node details ([fd732a7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fd732a7))
+* **db:** fixed alarm button in gathering details not toggling the alarm properly ([cfcbd5d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cfcbd5d))
+* **db:** fixed weather chart card too small for fish details pages ([8645893](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8645893))
+* **island-workshop:** fix for planning changing D2 recommendations on D2 start ([ff80e27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ff80e27))
+* **lists:** fixed list options menu not showing correct options ([9a1ad69](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a1ad69))
+* **log-tracking:** fixed marking as done in log not saving properly ([76bfc65](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/76bfc65))
+* **submarine:** fix submarine max rank for kr/cn ([fc74349](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fc74349))
+
+
+### Features
+
+* **core:** new github button and stars count that links to the repo (we ♥ stars) ([9450f9f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9450f9f))
+* **db:** import 54 allagan reports ([7545045](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7545045))
+* **workshops:** complete refactor of the permissions propagation system ([be3ba14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/be3ba14))
+
+
+
 <a name="9.9.6"></a>
 ## [9.9.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.5...v9.9.6) (2022-10-25)
 

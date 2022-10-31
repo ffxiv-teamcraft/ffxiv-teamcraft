@@ -2,13 +2,16 @@ import { LazyData } from '../../../lazy-data/lazy-data';
 import { CraftworksObject } from '../craftworks-object';
 import { WorkshopPlanning } from './workshop-planning';
 import { IslandWorkshopSimulator } from './island-workshop-simulator';
+import { WorkshopStatusData } from '../workshop-status-data';
+import { WorkshopPattern } from '../workshop-patterns';
+import { findPatterns } from './find-pattern';
 
 
 export class PlanningFormulaOptimizer {
 
   private simulator = new IslandWorkshopSimulator(this.supply, this.workshops, this.landmarks, this.workshopLevel);
 
-  constructor(private objects: CraftworksObject[], private workshops: number, private landmarks: number, private workshopLevel: number, private supply: LazyData['islandSupply'],
+  constructor(private objects: CraftworksObject[], private history: WorkshopStatusData[], private workshops: number, private landmarks: number, private workshopLevel: number, private supply: LazyData['islandSupply'],
               private secondRestDay: number, private currentDayIndex: number) {
   }
 
@@ -30,7 +33,7 @@ export class PlanningFormulaOptimizer {
       }
       // For the other days, check if there's any strong peak
       // Compute projected supply
-      const projectedSupplyObjects = this.getProjectedSupplyObjects(i, objectsUsage);
+      const projectedSupplyObjects = this.getProjectedSupplyObjects(this.history, i, objectsUsage);
 
       const unknownDay = [1, 2, 3, 7, 7, 7, 7][this.currentDayIndex] < i;
 
@@ -65,6 +68,16 @@ export class PlanningFormulaOptimizer {
         })[0];
         if (bestFirstItem) {
           day.planning.unshift(bestFirstItem);
+        } else {
+          const noComboFirstItem = projectedSupplyObjects.filter(obj => {
+            return obj.craftworksEntry.craftingTime <= (24 - totalTime)
+              && obj.id !== day.planning[0].id;
+          }).sort((a, b) => {
+            return this.getBoostedValue(b, objectsUsage[b.id]) - this.getBoostedValue(a, objectsUsage[a.id]);
+          })[0];
+          if (noComboFirstItem) {
+            day.planning.unshift(noComboFirstItem);
+          }
         }
       }
       const result = this.simulator.getScoreForDay(day, groove);
@@ -150,11 +163,12 @@ export class PlanningFormulaOptimizer {
     });
   }
 
-  private getProjectedSupplyObjects(dayIndex: number, objectsUsage: Record<number, number>): CraftworksObject[] {
+  private getProjectedSupplyObjects(history: WorkshopStatusData[], dayIndex: number, objectsUsage: Record<number, number>): CraftworksObject[] {
     // Always return worst case scenario
     return this.objects
       .filter(obj => objectsUsage[obj.id] === undefined)
       .map(object => {
+        object.patterns = this.findPatternsForDay(history, object, dayIndex);
         object.supply = object.patterns.map(p => {
           return p.pattern[dayIndex][0];
         }).sort((a, b) => a - b)[0];
@@ -162,5 +176,14 @@ export class PlanningFormulaOptimizer {
         object.isPeaking = object.patterns.length === 1 && object.patterns[0].index === dayIndex;
         return object;
       });
+  }
+
+  private findPatternsForDay(history: WorkshopStatusData[], item: CraftworksObject, dayIndex: number): { index: number, pattern: WorkshopPattern, strong: boolean, day: number }[] {
+    const itemHistory = history
+      .slice(0, dayIndex)
+      .map(day => {
+        return [day.objects[item.id].supply, day.objects[item.id].demand];
+      });
+    return findPatterns(itemHistory);
   }
 }
