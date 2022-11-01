@@ -104,15 +104,17 @@ export class ExtractorComponent {
         return pages.map(page => {
           this.done$.next(this.done$.value + 1);
           return page.map(tab => {
-            (tab as any).divisionId = +Object.keys(notebookDivision).find(key => {
+            const divisionId = +Object.keys(notebookDivision).find(key => {
               return notebookDivision[key].pages.includes(tab.id);
             });
-            const division = notebookDivision[(tab as any).divisionId];
+            (tab as any).divisionId = divisionId;
+            const division = notebookDivision[divisionId];
             (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en)
               || division.name.en.startsWith('Fixtures') ||
               division.name.en.indexOf('Furnishings') > -1 || division.name.en.startsWith('Table') ||
-              division.name.en.startsWith('Wall-mounted') || division.name.en.startsWith('Ornaments');
-            if ((tab as any).divisionId === 1039) {
+              division.name.en.startsWith('Wall-mounted') || division.name.en.startsWith('Ornaments')
+              || divisionId === 1049;
+            if (divisionId === 1039) {
               (tab as any).requiredForAchievement = false;
             }
             tab.recipes = tab.recipes.map(entry => {

@@ -44,7 +44,9 @@ export class TradesComponent extends ItemDetailsPopup implements OnChanges {
     this.tradeSourcesData$,
     this.displayedTrades$
   ]).pipe(
-    map(([data, displayed]) => data?.length || 0 > displayed)
+    map(([data, displayed]) => {
+      return (data?.length || 0) > displayed
+    })
   );
 
   constructor() {

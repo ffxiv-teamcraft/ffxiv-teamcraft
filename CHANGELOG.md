@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.9.8"></a>
+## [9.9.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.7...v9.9.8) (2022-11-01)
+
+
+### Bug Fixes
+
+* **db:** fixed "Show more" button showing when there isn't more to show in trades ([71f455c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/71f455c))
+* **island-workshop:** fixed 20h schedule sometimes happening when no combo found ([7c5c31e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7c5c31e))
+* **log-tracker:** fixed first data updates not working on log state ([18dbc6f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/18dbc6f))
+* **log-tracker:** Housing's Other category is now listed as required for achievement ([d24c622](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d24c622))
+
+
+### Features
+
+* **fishing-overlay:** display when fishing in an unsupported spot ([fe95856](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fe95856))
+
+
+
 <a name="9.9.7"></a>
 ## [9.9.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.6...v9.9.7) (2022-10-28)
 
