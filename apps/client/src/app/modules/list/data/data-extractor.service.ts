@@ -19,6 +19,9 @@ export class DataExtractorService {
     setTimeout(() => {
       from(this.extractors
         .sort((a, b) => {
+          if (a.getDataType() === DataType.DEPRECATED) {
+            return -1;
+          }
           if (a.getRequirements().includes(b.getDataType())) {
             return 1;
           } else if (b.getRequirements().includes(a.getDataType())) {
@@ -28,6 +31,9 @@ export class DataExtractorService {
         })
       ).pipe(
         mergeScan((acc, extractor) => {
+          if ((acc.sources || []).some(s => s.type === DataType.DEPRECATED)) {
+            return of(acc);
+          }
           if (extractor.getDataType() === DataType.CRAFTED_BY && skipCraft) {
             return of(acc);
           }
