@@ -9,7 +9,7 @@ export const LazyDataKeys = [
   'airshipParts',
   'airshipRanks',
   'airshipVoyages',
-  'baitItems',
+  'baits',
   'baseParams',
   'classJobsModifiers',
   'collectableFlags',

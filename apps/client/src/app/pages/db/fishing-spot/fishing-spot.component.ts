@@ -13,6 +13,7 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { FishingMissesPopupComponent } from '../fishing-misses-popup/fishing-misses-popup.component';
 import { FishContextService } from '../service/fish-context.service';
+import { LazyFishingSpot } from '../../../lazy-data/model/lazy-fishing-spot';
 
 // TODO: Type me
 export type XivApiFishingSpot = any;
@@ -37,10 +38,11 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
       return combineLatest([this.xivapi.get(XivapiEndpoint.FishingSpot, id), this.lazyData.getEntry('fishingSpots'), this.lazyData.getEntry('diademTerritory')]);
     }),
     map(([spot, allSpots, diademTerritory]) => {
-      spot.customData = allSpots.find((s) => s.id === spot.ID);
+      spot.customData = allSpots.find((s) => s.id === spot.ID) as LazyFishingSpot;
       if (spot.TerritoryType === null && spot.ID >= 10000) {
         spot.TerritoryType = diademTerritory;
       }
+      spot.categoryLabel = ['Unknown', 'Saltwater', 'Freshwater', 'Dune', 'Sky', 'Clouds', 'Magma', 'Aetherochemical pool', 'Salt Lake', 'Space'][spot.customData.category];
       return spot;
     }),
     tap(() => this.loadingSub$.next(false)),

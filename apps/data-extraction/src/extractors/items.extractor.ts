@@ -45,11 +45,12 @@ export class ItemsExtractor extends AbstractExtractor {
     const itemPatch = {};
     const itemSetBonuses = {};
     const marketItems = [];
-    const baitItems = [];
+    const baits = [];
     const extractableItems = {};
     const aetherialReduce = {};
     const collectableFlags = {};
-    this.getAllPages(`https://xivapi.com/Item?columns=AlwaysCollectable,AetherialReduce,Patch,DamagePhys,DamageMag,DefensePhys,DefenseMag,ID,Name_*,IsUnique,IsUntradable,MaterializeType,CanBeHq,Rarity,GameContentLinks,Icon,IconHD,LevelItem,LevelEquip,StackSize,EquipSlotCategoryTargetID,ClassJobCategory,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted,ItemSearchCategoryTargetID,ItemSeries,BaseParamSpecial*,BaseParamValueSpecial*`)
+
+    this.getAllPages(`https://xivapi.com/Item?columns=AlwaysCollectable,AetherialReduce,Patch,DamagePhys,DamageMag,DefensePhys,DefenseMag,ID,Name_*,Description_en,IsUnique,IsUntradable,MaterializeType,CanBeHq,Rarity,GameContentLinks,Icon,IconHD,LevelItem,LevelEquip,StackSize,EquipSlotCategoryTargetID,ClassJobCategory,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted,ItemSearchCategoryTargetID,ItemSeries,BaseParamSpecial*,BaseParamValueSpecial*`)
       .subscribe(page => {
         page.Results.forEach(item => {
           itemIcons[item.ID] = item.IconHD || item.Icon;
@@ -72,8 +73,53 @@ export class ItemsExtractor extends AbstractExtractor {
           if (item.ItemSearchCategoryTargetID >= 9) {
             marketItems.push(item.ID);
           }
-          if ([30, 46].includes(item.ItemSearchCategoryTargetID)) {
-            baitItems.push(item.ID);
+          if ([30].includes(item.ItemSearchCategoryTargetID)) {
+            // -1: Universal
+            // 1: Saltwater
+            // 2: Freshwater
+            // 3: Dune
+            // 4: Sky
+            // 5: Clouds
+            // 6: Magma
+            // 7: Aetherochemical pool
+            // 8: Salt Lake
+            // 9: Space
+            const handmadeCategories = {
+              28634: [-1],// Metal Spinner
+              30136: [-1], // Signature Skyball
+              29717: [-1], // Versatile Lure
+            };
+
+            const labels = item.Description_en.match(/(freshwater|ocean|dunefishing|skyfishing|salt lake|cloud|lakeland|sea|saltwater|aetherfishing|starfishing|hellfishing|coast|river)/gm);
+            const categoryIndex = {
+              'ocean': 1,
+              'sea': 1,
+              'saltwater': 1,
+              'coast': 1,
+              'freshwater': 2,
+              'lake': 2,
+              'land': 2,
+              'dunefishing': 3,
+              'skyfishing': 4,
+              'cloud': 5,
+              'hellfishing': 6,
+              'salt lake': 6,
+              'aetherfishing': 7,
+              'starfishing': 9
+            };
+            let categories = [];
+            const hardcoded = handmadeCategories[item.ID];
+            if (!hardcoded) {
+              if (labels && labels.length > 0) {
+                categories = labels.map(label => categoryIndex[label]);
+              }
+            } else {
+              categories = hardcoded;
+            }
+            baits.push({
+              id: item.ID,
+              categories
+            });
           }
           if (item.MaterializeType > 0) {
             extractableItems[item.ID] = 1;
@@ -168,7 +214,7 @@ export class ItemsExtractor extends AbstractExtractor {
         this.persistToJsonAsset('item-equip-slot-category', equipSlotCategoryId);
         this.persistToJsonAsset('item-patch', itemPatch);
         this.persistToJsonAsset('market-items', marketItems);
-        this.persistToJsonAsset('bait-items', baitItems);
+        this.persistToJsonAsset('baits', baits);
         this.persistToJsonAsset('extractable-items', extractableItems);
         this.persistToJsonAsset('item-set-bonuses', itemSetBonuses);
         this.persistToJsonAsset('aetherial-reduce', aetherialReduce);

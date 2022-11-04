@@ -5,6 +5,7 @@
     "placeId": 54,
     "zoneId": 951,
     "level": 5,
+    "category": 2,
     "coords": {
       "x": 22.91,
       "y": 22.19
@@ -28,6 +29,7 @@
     "placeId": 54,
     "zoneId": 952,
     "level": 15,
+    "category": 2,
     "coords": {
       "x": 26.55,
       "y": 28.99
@@ -51,6 +53,7 @@
     "placeId": 54,
     "zoneId": 101,
     "level": 30,
+    "category": 2,
     "coords": {
       "x": 15.62,
       "y": 24.15
@@ -74,6 +77,7 @@
     "placeId": 54,
     "zoneId": 104,
     "level": 35,
+    "category": 2,
     "coords": {
       "x": 14.82,
       "y": 21.24
@@ -97,6 +101,7 @@
     "placeId": 55,
     "zoneId": 155,
     "level": 15,
+    "category": 2,
     "coords": {
       "x": 9.03,
       "y": 22.91
@@ -120,6 +125,7 @@
     "placeId": 55,
     "zoneId": 953,
     "level": 25,
+    "category": 2,
     "coords": {
       "x": 20.48,
       "y": 21.53
@@ -143,6 +149,7 @@
     "placeId": 55,
     "zoneId": 954,
     "level": 15,
+    "category": 2,
     "coords": {
       "x": 24.03,
       "y": 25.31
@@ -166,6 +173,7 @@
     "placeId": 55,
     "zoneId": 955,
     "level": 45,
+    "category": 2,
     "coords": {
       "x": 26.03,
       "y": 20.74
@@ -189,6 +197,7 @@
     "placeId": 55,
     "zoneId": 112,
     "level": 20,
+    "category": 2,
     "coords": {
       "x": 17.68,
       "y": 16.98
@@ -212,6 +221,7 @@
     "placeId": 56,
     "zoneId": 956,
     "level": 20,
+    "category": 2,
     "coords": {
       "x": 18.02,
       "y": 19.02
@@ -235,6 +245,7 @@
     "placeId": 56,
     "zoneId": 957,
     "level": 30,
+    "category": 2,
     "coords": {
       "x": 19.96,
       "y": 22.55
@@ -258,6 +269,7 @@
     "placeId": 56,
     "zoneId": 958,
     "level": 25,
+    "category": 2,
     "coords": {
       "x": 18.36,
       "y": 24.83
@@ -281,6 +293,7 @@
     "placeId": 56,
     "zoneId": 959,
     "level": 25,
+    "category": 2,
     "coords": {
       "x": 23.87,
       "y": 22.37
@@ -304,6 +317,7 @@
     "placeId": 56,
     "zoneId": 960,
     "level": 30,
+    "category": 2,
     "coords": {
       "x": 27.51,
       "y": 21.48
@@ -327,6 +341,7 @@
     "placeId": 56,
     "zoneId": 126,
     "level": 35,
+    "category": 2,
     "coords": {
       "x": 18.62,
       "y": 29.05
@@ -350,6 +365,7 @@
     "placeId": 56,
     "zoneId": 82,
     "level": 45,
+    "category": 2,
     "coords": {
       "x": 32.56,
       "y": 23.97
@@ -373,6 +389,7 @@
     "placeId": 57,
     "zoneId": 961,
     "level": 15,
+    "category": 2,
     "coords": {
       "x": 26.39,
       "y": 25.11
@@ -396,6 +413,7 @@
     "placeId": 57,
     "zoneId": 962,
     "level": 15,
+    "category": 2,
     "coords": {
       "x": 21.02,
       "y": 24.67
@@ -419,6 +437,7 @@
     "placeId": 57,
     "zoneId": 86,
     "level": 40,
+    "category": 2,
     "coords": {
       "x": 20.82,
       "y": 20.82
@@ -442,6 +461,7 @@
     "placeId": 57,
     "zoneId": 963,
     "level": 50,
+    "category": 2,
     "coords": {
       "x": 17.82,
       "y": 19.82
@@ -465,6 +485,7 @@
     "placeId": 67,
     "zoneId": 410,
     "level": 45,
+    "category": 2,
     "coords": {
       "x": 25.09,
       "y": 13.06
@@ -488,6 +509,7 @@
     "placeId": 67,
     "zoneId": 414,
     "level": 50,
+    "category": 2,
     "coords": {
       "x": 18.74,
       "y": 17.68
@@ -511,6 +533,7 @@
     "placeId": 67,
     "zoneId": 413,
     "level": 50,
+    "category": 2,
     "coords": {
       "x": 14.42,
       "y": 13.32
@@ -534,6 +557,7 @@
     "placeId": 67,
     "zoneId": 966,
     "level": 45,
+    "category": 2,
     "coords": {
       "x": 12.92,
       "y": 11.58
@@ -557,6 +581,7 @@
     "placeId": 63,
     "zoneId": 968,
     "level": 35,
+    "category": 2,
     "coords": {
       "x": 20.46,
       "y": 30.59
@@ -580,6 +605,7 @@
     "placeId": 63,
     "zoneId": 389,
     "level": 50,
+    "category": 4,
     "coords": {
       "x": 33.7,
       "y": 18.78
@@ -603,6 +629,7 @@
     "placeId": 63,
     "zoneId": 969,
     "level": 40,
+    "category": 2,
     "coords": {
       "x": 15.64,
       "y": 21.4
@@ -626,6 +653,7 @@
     "placeId": 63,
     "zoneId": 392,
     "level": 45,
+    "category": 2,
     "coords": {
       "x": 31.53,
       "y": 7.51
@@ -649,6 +677,7 @@
     "placeId": 63,
     "zoneId": 970,
     "level": 40,
+    "category": 2,
     "coords": {
       "x": 27.91,
       "y": 16.939999999999998
@@ -672,6 +701,7 @@
     "placeId": 63,
     "zoneId": 398,
     "level": 35,
+    "category": 2,
     "coords": {
       "x": 13.26,
       "y": 22.81
@@ -695,6 +725,7 @@
     "placeId": 63,
     "zoneId": 971,
     "level": 40,
+    "category": 2,
     "coords": {
       "x": 6.45,
       "y": 22.63
@@ -718,6 +749,7 @@
     "placeId": 63,
     "zoneId": 404,
     "level": 45,
+    "category": 2,
     "coords": {
       "x": 3.17,
       "y": 21.3
@@ -741,6 +773,7 @@
     "placeId": 63,
     "zoneId": 972,
     "level": 45,
+    "category": 4,
     "coords": {
       "x": 14.22,
       "y": 13.42
@@ -764,6 +797,7 @@
     "placeId": 29,
     "zoneId": 29,
     "level": 1,
+    "category": 1,
     "coords": {
       "x": 7.69,
       "y": 12.22
@@ -787,6 +821,7 @@
     "placeId": 28,
     "zoneId": 28,
     "level": 1,
+    "category": 1,
     "coords": {
       "x": 10.31,
       "y": 11.34
@@ -810,6 +845,7 @@
     "placeId": 30,
     "zoneId": 973,
     "level": 1,
+    "category": 1,
     "coords": {
       "x": 18.7,
       "y": 22.01
@@ -833,6 +869,7 @@
     "placeId": 30,
     "zoneId": 974,
     "level": 5,
+    "category": 1,
     "coords": {
       "x": 14.66,
       "y": 15.7
@@ -856,6 +893,7 @@
     "placeId": 30,
     "zoneId": 182,
     "level": 1,
+    "category": 2,
     "coords": {
       "x": 22.11,
       "y": 22.19
@@ -879,6 +917,7 @@
     "placeId": 30,
     "zoneId": 975,
     "level": 1,
+    "category": 2,
     "coords": {
       "x": 20.22,
       "y": 18.02
@@ -902,6 +941,7 @@
     "placeId": 30,
     "zoneId": 193,
     "level": 5,
+    "category": 2,
     "coords": {
       "x": 18.24,
       "y": 14.88
@@ -925,6 +965,7 @@
     "placeId": 30,
     "zoneId": 192,
     "level": 15,
+    "category": 2,
     "coords": {
       "x": 20.8,
       "y": 12.18
@@ -948,6 +989,7 @@
     "placeId": 31,
     "zoneId": 197,
     "level": 1,
+    "category": 2,
     "coords": {
       "x": 24.79,
       "y": 23.03
@@ -971,6 +1013,7 @@
     "placeId": 31,
     "zoneId": 976,
     "level": 5,
+    "category": 1,
     "coords": {
       "x": 26.91,
       "y": 25.99
@@ -994,6 +1037,7 @@
     "placeId": 31,
     "zoneId": 977,
     "level": 10,
+    "category": 1,
     "coords": {
       "x": 35.28,
       "y": 18.02
@@ -1017,6 +1061,7 @@
     "placeId": 31,
     "zoneId": 337,
     "level": 15,
+    "category": 1,
     "coords": {
       "x": 26.43,
       "y": 34.48
@@ -1040,6 +1085,7 @@
     "placeId": 31,
     "zoneId": 341,
     "level": 10,
+    "category": 1,
     "coords": {
       "x": 24.51,
       "y": 39.72
@@ -1063,6 +1109,7 @@
     "placeId": 31,
     "zoneId": 338,
     "level": 20,
+    "category": 1,
     "coords": {
       "x": 17.38,
       "y": 36.08
@@ -1086,6 +1133,7 @@
     "placeId": 31,
     "zoneId": 339,
     "level": 10,
+    "category": 1,
     "coords": {
       "x": 20.62,
       "y": 39.04
@@ -1109,6 +1157,7 @@
     "placeId": 31,
     "zoneId": 340,
     "level": 15,
+    "category": 2,
     "coords": {
       "x": 22.01,
       "y": 35.02
@@ -1132,6 +1181,7 @@
     "placeId": 32,
     "zoneId": 978,
     "level": 25,
+    "category": 1,
     "coords": {
       "x": 32.94,
       "y": 34.48
@@ -1155,6 +1205,7 @@
     "placeId": 32,
     "zoneId": 206,
     "level": 30,
+    "category": 1,
     "coords": {
       "x": 32.9,
       "y": 29.31
@@ -1178,6 +1229,7 @@
     "placeId": 32,
     "zoneId": 979,
     "level": 35,
+    "category": 1,
     "coords": {
       "x": 33.04,
       "y": 24.23
@@ -1201,6 +1253,7 @@
     "placeId": 32,
     "zoneId": 211,
     "level": 35,
+    "category": 2,
     "coords": {
       "x": 30.83,
       "y": 23.03
@@ -1224,6 +1277,7 @@
     "placeId": 32,
     "zoneId": 980,
     "level": 40,
+    "category": 2,
     "coords": {
       "x": 20.2,
       "y": 25.97
@@ -1247,6 +1301,7 @@
     "placeId": 32,
     "zoneId": 168,
     "level": 40,
+    "category": 2,
     "coords": {
       "x": 20.48,
       "y": 30.27
@@ -1270,6 +1325,7 @@
     "placeId": 32,
     "zoneId": 981,
     "level": 40,
+    "category": 2,
     "coords": {
       "x": 16.84,
       "y": 32.04
@@ -1293,6 +1349,7 @@
     "placeId": 32,
     "zoneId": 214,
     "level": 45,
+    "category": 2,
     "coords": {
       "x": 15.36,
       "y": 27.47
@@ -1316,6 +1373,7 @@
     "placeId": 33,
     "zoneId": 218,
     "level": 10,
+    "category": 1,
     "coords": {
       "x": 33.86,
       "y": 31.88
@@ -1339,6 +1397,7 @@
     "placeId": 33,
     "zoneId": 982,
     "level": 15,
+    "category": 1,
     "coords": {
       "x": 26.69,
       "y": 26.99
@@ -1362,6 +1421,7 @@
     "placeId": 33,
     "zoneId": 983,
     "level": 35,
+    "category": 1,
     "coords": {
       "x": 17.56,
       "y": 20.98
@@ -1385,6 +1445,7 @@
     "placeId": 33,
     "zoneId": 984,
     "level": 40,
+    "category": 1,
     "coords": {
       "x": 14.48,
       "y": 29.91
@@ -1408,6 +1469,7 @@
     "placeId": 33,
     "zoneId": 985,
     "level": 50,
+    "category": 1,
     "coords": {
       "x": 12.82,
       "y": 36.24
@@ -1431,6 +1493,7 @@
     "placeId": 33,
     "zoneId": 220,
     "level": 15,
+    "category": 1,
     "coords": {
       "x": 30.15,
       "y": 30.63
@@ -1454,6 +1517,7 @@
     "placeId": 33,
     "zoneId": 228,
     "level": 45,
+    "category": 1,
     "coords": {
       "x": 15.58,
       "y": 36.08
@@ -1477,6 +1541,7 @@
     "placeId": 34,
     "zoneId": 174,
     "level": 20,
+    "category": 2,
     "coords": {
       "x": 13.6,
       "y": 24.31
@@ -1500,6 +1565,7 @@
     "placeId": 34,
     "zoneId": 234,
     "level": 20,
+    "category": 2,
     "coords": {
       "x": 9.05,
       "y": 21.1
@@ -1523,6 +1589,7 @@
     "placeId": 34,
     "zoneId": 987,
     "level": 35,
+    "category": 2,
     "coords": {
       "x": 28.15,
       "y": 22.85
@@ -1546,6 +1613,7 @@
     "placeId": 42,
     "zoneId": 266,
     "level": 25,
+    "category": 1,
     "coords": {
       "x": 14.58,
       "y": 29.55
@@ -1569,6 +1637,7 @@
     "placeId": 42,
     "zoneId": 274,
     "level": 15,
+    "category": 1,
     "coords": {
       "x": 11.54,
       "y": 12.58
@@ -1592,6 +1661,7 @@
     "placeId": 42,
     "zoneId": 272,
     "level": 20,
+    "category": 1,
     "coords": {
       "x": 15.58,
       "y": 19.22
@@ -1615,6 +1685,7 @@
     "placeId": 42,
     "zoneId": 264,
     "level": 5,
+    "category": 2,
     "coords": {
       "x": 24.51,
       "y": 21.59
@@ -1638,6 +1709,7 @@
     "placeId": 42,
     "zoneId": 245,
     "level": 10,
+    "category": 2,
     "coords": {
       "x": 17.18,
       "y": 15.7
@@ -1661,6 +1733,7 @@
     "placeId": 42,
     "zoneId": 246,
     "level": 45,
+    "category": 1,
     "coords": {
       "x": 9.93,
       "y": 7.37
@@ -1684,6 +1757,7 @@
     "placeId": 43,
     "zoneId": 990,
     "level": 5,
+    "category": 2,
     "coords": {
       "x": 23.43,
       "y": 18.22
@@ -1707,6 +1781,7 @@
     "placeId": 43,
     "zoneId": 991,
     "level": 10,
+    "category": 2,
     "coords": {
       "x": 17.14,
       "y": 23.79
@@ -1730,6 +1805,7 @@
     "placeId": 43,
     "zoneId": 297,
     "level": 15,
+    "category": 2,
     "coords": {
       "x": 27.83,
       "y": 19.3
@@ -1753,6 +1829,7 @@
     "placeId": 44,
     "zoneId": 992,
     "level": 15,
+    "category": 2,
     "coords": {
       "x": 13.66,
       "y": 20.7
@@ -1776,6 +1853,7 @@
     "placeId": 44,
     "zoneId": 993,
     "level": 15,
+    "category": 2,
     "coords": {
       "x": 17.22,
       "y": 24.83
@@ -1799,6 +1877,7 @@
     "placeId": 44,
     "zoneId": 308,
     "level": 30,
+    "category": 2,
     "coords": {
       "x": 25.67,
       "y": 22.67
@@ -1822,6 +1901,7 @@
     "placeId": 53,
     "zoneId": 1000,
     "level": 5,
+    "category": 2,
     "coords": {
       "x": 16.55,
       "y": 6.31
@@ -1845,6 +1925,7 @@
     "placeId": 44,
     "zoneId": 253,
     "level": 40,
+    "category": 2,
     "coords": {
       "x": 29.15,
       "y": 24.71
@@ -1868,6 +1949,7 @@
     "placeId": 45,
     "zoneId": 314,
     "level": 25,
+    "category": 2,
     "coords": {
       "x": 21.75,
       "y": 15.1
@@ -1891,6 +1973,7 @@
     "placeId": 45,
     "zoneId": 995,
     "level": 35,
+    "category": 2,
     "coords": {
       "x": 25.39,
       "y": 21.02
@@ -1914,6 +1997,7 @@
     "placeId": 45,
     "zoneId": 323,
     "level": 35,
+    "category": 2,
     "coords": {
       "x": 15.66,
       "y": 30.95
@@ -1937,6 +2021,7 @@
     "placeId": 45,
     "zoneId": 996,
     "level": 35,
+    "category": 3,
     "coords": {
       "x": 12.38,
       "y": 36.04
@@ -1960,6 +2045,7 @@
     "placeId": 45,
     "zoneId": 997,
     "level": 35,
+    "category": 3,
     "coords": {
       "x": 27.31,
       "y": 36.96
@@ -1983,6 +2069,7 @@
     "placeId": 46,
     "zoneId": 330,
     "level": 45,
+    "category": 2,
     "coords": {
       "x": 20.74,
       "y": 23.59
@@ -2006,6 +2093,7 @@
     "placeId": 46,
     "zoneId": 998,
     "level": 40,
+    "category": 2,
     "coords": {
       "x": 24.15,
       "y": 26.01
@@ -2029,6 +2117,7 @@
     "placeId": 52,
     "zoneId": 964,
     "level": 5,
+    "category": 2,
     "coords": {
       "x": 12.62,
       "y": 14.63
@@ -2052,6 +2141,7 @@
     "placeId": 52,
     "zoneId": 965,
     "level": 5,
+    "category": 2,
     "coords": {
       "x": 10.73,
       "y": 11.67
@@ -2075,6 +2165,7 @@
     "placeId": 54,
     "zoneId": 59,
     "level": 35,
+    "category": 2,
     "coords": {
       "x": 10.87,
       "y": 23.17
@@ -2098,6 +2189,7 @@
     "placeId": 67,
     "zoneId": 417,
     "level": 45,
+    "category": 2,
     "coords": {
       "x": 29.15,
       "y": 10.33
@@ -2121,6 +2213,7 @@
     "placeId": 67,
     "zoneId": 967,
     "level": 50,
+    "category": 2,
     "coords": {
       "x": 30.99,
       "y": 6.21
@@ -2144,6 +2237,7 @@
     "placeId": 42,
     "zoneId": 276,
     "level": 50,
+    "category": 2,
     "coords": {
       "x": 15.06,
       "y": 6.39
@@ -2167,6 +2261,7 @@
     "placeId": 43,
     "zoneId": 249,
     "level": 10,
+    "category": 2,
     "coords": {
       "x": 29.55,
       "y": 21.42
@@ -2190,6 +2285,7 @@
     "placeId": 31,
     "zoneId": 202,
     "level": 20,
+    "category": 2,
     "coords": {
       "x": 27.45,
       "y": 15.7
@@ -2213,6 +2309,7 @@
     "placeId": 34,
     "zoneId": 988,
     "level": 30,
+    "category": 2,
     "coords": {
       "x": 33.58,
       "y": 24.95
@@ -2236,6 +2333,7 @@
     "placeId": 350,
     "zoneId": 989,
     "level": 40,
+    "category": 2,
     "coords": {
       "x": 15.9,
       "y": 11.34
@@ -2259,6 +2357,7 @@
     "placeId": 53,
     "zoneId": 999,
     "level": 5,
+    "category": 2,
     "coords": {
       "x": 8.91,
       "y": 8.01
@@ -2282,6 +2381,7 @@
     "placeId": 33,
     "zoneId": 363,
     "level": 45,
+    "category": 1,
     "coords": {
       "x": 17.14,
       "y": 15.78
@@ -2305,6 +2405,7 @@
     "placeId": 33,
     "zoneId": 365,
     "level": 50,
+    "category": 1,
     "coords": {
       "x": 13.78,
       "y": 13.18
@@ -2328,6 +2429,7 @@
     "placeId": 42,
     "zoneId": 275,
     "level": 45,
+    "category": 2,
     "coords": {
       "x": 18.02,
       "y": 7.07
@@ -2351,6 +2453,7 @@
     "placeId": 425,
     "zoneId": 425,
     "level": 30,
+    "category": 1,
     "coords": {
       "x": 11.01,
       "y": 11.01
@@ -2374,6 +2477,7 @@
     "placeId": 426,
     "zoneId": 426,
     "level": 30,
+    "category": 2,
     "coords": {
       "x": 11.01,
       "y": 11.01
@@ -2397,6 +2501,7 @@
     "placeId": 427,
     "zoneId": 427,
     "level": 30,
+    "category": 2,
     "coords": {
       "x": 11.01,
       "y": 11.01
@@ -2420,6 +2525,7 @@
     "placeId": 32,
     "zoneId": 1001,
     "level": 50,
+    "category": 1,
     "coords": {
       "x": 37.64,
       "y": 22.83
@@ -2443,6 +2549,7 @@
     "placeId": 32,
     "zoneId": 1002,
     "level": 50,
+    "category": 1,
     "coords": {
       "x": 37.24,
       "y": 24.03
@@ -2466,6 +2573,7 @@
     "placeId": 2200,
     "zoneId": 2201,
     "level": 50,
+    "category": 2,
     "coords": {
       "x": 32.870000000000005,
       "y": 27.56
@@ -2489,6 +2597,7 @@
     "placeId": 2200,
     "zoneId": 2217,
     "level": 51,
+    "category": 4,
     "coords": {
       "x": 35.57,
       "y": 27.39
@@ -2512,6 +2621,7 @@
     "placeId": 2200,
     "zoneId": 1003,
     "level": 52,
+    "category": 2,
     "coords": {
       "x": 28.44,
       "y": 17.91
@@ -2535,6 +2645,7 @@
     "placeId": 2200,
     "zoneId": 1004,
     "level": 60,
+    "category": 2,
     "coords": {
       "x": 36.79,
       "y": 5.98
@@ -2558,6 +2669,7 @@
     "placeId": 2200,
     "zoneId": 2227,
     "level": 60,
+    "category": 2,
     "coords": {
       "x": 8.719999999999999,
       "y": 9.73
@@ -2581,6 +2693,7 @@
     "placeId": 2200,
     "zoneId": 1005,
     "level": 53,
+    "category": 2,
     "coords": {
       "x": 21.78,
       "y": 11.33
@@ -2604,6 +2717,7 @@
     "placeId": 2200,
     "zoneId": 2211,
     "level": 52,
+    "category": 2,
     "coords": {
       "x": 14.07,
       "y": 15.71
@@ -2627,6 +2741,7 @@
     "placeId": 2200,
     "zoneId": 1006,
     "level": 53,
+    "category": 2,
     "coords": {
       "x": 13.27,
       "y": 8.84
@@ -2650,6 +2765,7 @@
     "placeId": 2000,
     "zoneId": 2019,
     "level": 52,
+    "category": 2,
     "coords": {
       "x": 31.39,
       "y": 10.11
@@ -2673,6 +2789,7 @@
     "placeId": 2000,
     "zoneId": 2020,
     "level": 52,
+    "category": 2,
     "coords": {
       "x": 30.63,
       "y": 14.83
@@ -2696,6 +2813,7 @@
     "placeId": 2000,
     "zoneId": 2004,
     "level": 52,
+    "category": 2,
     "coords": {
       "x": 25.28,
       "y": 25.83
@@ -2719,6 +2837,7 @@
     "placeId": 2000,
     "zoneId": 2029,
     "level": 55,
+    "category": 2,
     "coords": {
       "x": 31.62,
       "y": 6.06
@@ -2742,6 +2861,7 @@
     "placeId": 2000,
     "zoneId": 2008,
     "level": 55,
+    "category": 6,
     "coords": {
       "x": 13.14,
       "y": 13.4
@@ -2765,6 +2885,7 @@
     "placeId": 2000,
     "zoneId": 1007,
     "level": 56,
+    "category": 6,
     "coords": {
       "x": 9.65,
       "y": 7.54
@@ -2788,6 +2909,7 @@
     "placeId": 2000,
     "zoneId": 2064,
     "level": 57,
+    "category": 6,
     "coords": {
       "x": 19.47,
       "y": 10.83
@@ -2811,6 +2933,7 @@
     "placeId": 2000,
     "zoneId": 2030,
     "level": 60,
+    "category": 6,
     "coords": {
       "x": 7.66,
       "y": 5.43
@@ -2834,6 +2957,7 @@
     "placeId": 2001,
     "zoneId": 2039,
     "level": 57,
+    "category": 2,
     "coords": {
       "x": 23.17,
       "y": 23.55
@@ -2857,6 +2981,7 @@
     "placeId": 2001,
     "zoneId": 2035,
     "level": 58,
+    "category": 2,
     "coords": {
       "x": 11.33,
       "y": 27.56
@@ -2880,6 +3005,7 @@
     "placeId": 2001,
     "zoneId": 1008,
     "level": 58,
+    "category": 2,
     "coords": {
       "x": 22.96,
       "y": 36.37
@@ -2903,6 +3029,7 @@
     "placeId": 2001,
     "zoneId": 1009,
     "level": 60,
+    "category": 2,
     "coords": {
       "x": 20.62,
       "y": 25.03
@@ -2926,6 +3053,7 @@
     "placeId": 2002,
     "zoneId": 2013,
     "level": 54,
+    "category": 2,
     "coords": {
       "x": 36.83,
       "y": 30.51
@@ -2949,6 +3077,7 @@
     "placeId": 2002,
     "zoneId": 2017,
     "level": 54,
+    "category": 2,
     "coords": {
       "x": 8.76,
       "y": 34.38
@@ -2972,6 +3101,7 @@
     "placeId": 2002,
     "zoneId": 2079,
     "level": 54,
+    "category": 2,
     "coords": {
       "x": 9.18,
       "y": 8.09
@@ -2995,6 +3125,7 @@
     "placeId": 2002,
     "zoneId": 2014,
     "level": 54,
+    "category": 5,
     "coords": {
       "x": 29.71,
       "y": 25.37
@@ -3018,6 +3149,7 @@
     "placeId": 2002,
     "zoneId": 1010,
     "level": 55,
+    "category": 5,
     "coords": {
       "x": 18.45,
       "y": 40.37
@@ -3041,6 +3173,7 @@
     "placeId": 2002,
     "zoneId": 2048,
     "level": 55,
+    "category": 5,
     "coords": {
       "x": 20.27,
       "y": 6.4
@@ -3064,6 +3197,7 @@
     "placeId": 2100,
     "zoneId": 2103,
     "level": 52,
+    "category": 2,
     "coords": {
       "x": 28.91,
       "y": 34.93
@@ -3087,6 +3221,7 @@
     "placeId": 2100,
     "zoneId": 2120,
     "level": 60,
+    "category": 2,
     "coords": {
       "x": 31.56,
       "y": 39.61
@@ -3110,6 +3245,7 @@
     "placeId": 2100,
     "zoneId": 2102,
     "level": 53,
+    "category": 5,
     "coords": {
       "x": 15.08,
       "y": 38.6
@@ -3133,6 +3269,7 @@
     "placeId": 2100,
     "zoneId": 2105,
     "level": 56,
+    "category": 5,
     "coords": {
       "x": 7.66,
       "y": 11.54
@@ -3156,6 +3293,7 @@
     "placeId": 2100,
     "zoneId": 2129,
     "level": 56,
+    "category": 5,
     "coords": {
       "x": 15.33,
       "y": 5.64
@@ -3179,6 +3317,7 @@
     "placeId": 2101,
     "zoneId": 2109,
     "level": 58,
+    "category": 7,
     "coords": {
       "x": 16.85,
       "y": 12.05
@@ -3202,6 +3341,7 @@
     "placeId": 2101,
     "zoneId": 1011,
     "level": 59,
+    "category": 7,
     "coords": {
       "x": 31.14,
       "y": 6.69
@@ -3225,6 +3365,7 @@
     "placeId": 2101,
     "zoneId": 2177,
     "level": 60,
+    "category": 7,
     "coords": {
       "x": 6.91,
       "y": 16.68
@@ -3248,6 +3389,7 @@
     "placeId": 2101,
     "zoneId": 2112,
     "level": 59,
+    "category": 2,
     "coords": {
       "x": 12.09,
       "y": 31.81
@@ -3271,6 +3413,7 @@
     "placeId": 2101,
     "zoneId": 2173,
     "level": 60,
+    "category": 2,
     "coords": {
       "x": 6.78,
       "y": 35.35
@@ -3294,6 +3437,7 @@
     "placeId": 2101,
     "zoneId": 2113,
     "level": 60,
+    "category": 5,
     "coords": {
       "x": 40.2,
       "y": 18.71
@@ -3317,6 +3461,7 @@
     "placeId": 2101,
     "zoneId": 2114,
     "level": 60,
+    "category": 7,
     "coords": {
       "x": 22.08,
       "y": 22.08
@@ -3340,6 +3485,7 @@
     "placeId": 350,
     "zoneId": 1012,
     "level": 35,
+    "category": 2,
     "coords": {
       "x": 19.42,
       "y": 18.22
@@ -3363,6 +3509,7 @@
     "placeId": 32,
     "zoneId": 1013,
     "level": 50,
+    "category": 1,
     "coords": {
       "x": 36.04,
       "y": 26.63
@@ -3386,6 +3533,7 @@
     "placeId": 2404,
     "zoneId": 2501,
     "level": 63,
+    "category": 1,
     "coords": {
       "x": 10.51,
       "y": 11.01
@@ -3409,6 +3557,7 @@
     "placeId": 2409,
     "zoneId": 1027,
     "level": 62,
+    "category": 1,
     "coords": {
       "x": 38.44,
       "y": 38.44
@@ -3432,6 +3581,7 @@
     "placeId": 2409,
     "zoneId": 1028,
     "level": 62,
+    "category": 1,
     "coords": {
       "x": 25.83,
       "y": 33.64
@@ -3455,6 +3605,7 @@
     "placeId": 2409,
     "zoneId": 1029,
     "level": 65,
+    "category": 1,
     "coords": {
       "x": 34.64,
       "y": 20.22
@@ -3478,6 +3629,7 @@
     "placeId": 2409,
     "zoneId": 1030,
     "level": 63,
+    "category": 1,
     "coords": {
       "x": 32.64,
       "y": 8.21
@@ -3501,6 +3653,7 @@
     "placeId": 2409,
     "zoneId": 1031,
     "level": 64,
+    "category": 1,
     "coords": {
       "x": 22.03,
       "y": 11.01
@@ -3524,6 +3677,7 @@
     "placeId": 2409,
     "zoneId": 1032,
     "level": 64,
+    "category": 1,
     "coords": {
       "x": 9.01,
       "y": 11.94
@@ -3547,6 +3701,7 @@
     "placeId": 2409,
     "zoneId": 1033,
     "level": 70,
+    "category": 1,
     "coords": {
       "x": 8.309999999999999,
       "y": 26.63
@@ -3570,6 +3725,7 @@
     "placeId": 2410,
     "zoneId": 1034,
     "level": 64,
+    "category": 2,
     "coords": {
       "x": 34.84,
       "y": 14.02
@@ -3593,6 +3749,7 @@
     "placeId": 2410,
     "zoneId": 1035,
     "level": 64,
+    "category": 2,
     "coords": {
       "x": 35.84,
       "y": 17.02
@@ -3616,6 +3773,7 @@
     "placeId": 2410,
     "zoneId": 1036,
     "level": 64,
+    "category": 2,
     "coords": {
       "x": 29.53,
       "y": 15.62
@@ -3639,6 +3797,7 @@
     "placeId": 2410,
     "zoneId": 1042,
     "level": 67,
+    "category": 2,
     "coords": {
       "x": 28.63,
       "y": 6.51
@@ -3662,6 +3821,7 @@
     "placeId": 2410,
     "zoneId": 1043,
     "level": 67,
+    "category": 2,
     "coords": {
       "x": 31.73,
       "y": 7.21
@@ -3685,6 +3845,7 @@
     "placeId": 2410,
     "zoneId": 1037,
     "level": 67,
+    "category": 2,
     "coords": {
       "x": 14.42,
       "y": 7.41
@@ -3708,6 +3869,7 @@
     "placeId": 2410,
     "zoneId": 1038,
     "level": 67,
+    "category": 2,
     "coords": {
       "x": 11.42,
       "y": 14.02
@@ -3731,6 +3893,7 @@
     "placeId": 2410,
     "zoneId": 1039,
     "level": 65,
+    "category": 2,
     "coords": {
       "x": 20.02,
       "y": 24.23
@@ -3754,6 +3917,7 @@
     "placeId": 2410,
     "zoneId": 1040,
     "level": 70,
+    "category": 2,
     "coords": {
       "x": 11.01,
       "y": 32.94
@@ -3777,6 +3941,7 @@
     "placeId": 2410,
     "zoneId": 1041,
     "level": 70,
+    "category": 2,
     "coords": {
       "x": 36.04,
       "y": 23.83
@@ -3800,6 +3965,7 @@
     "placeId": 2411,
     "zoneId": 1046,
     "level": 60,
+    "category": 2,
     "coords": {
       "x": 32.44,
       "y": 30.43
@@ -3823,6 +3989,7 @@
     "placeId": 2411,
     "zoneId": 2500,
     "level": 60,
+    "category": 2,
     "coords": {
       "x": 29.03,
       "y": 20.42
@@ -3846,6 +4013,7 @@
     "placeId": 2411,
     "zoneId": 1049,
     "level": 60,
+    "category": 2,
     "coords": {
       "x": 17.94,
       "y": 18.82
@@ -3869,6 +4037,7 @@
     "placeId": 2411,
     "zoneId": 1045,
     "level": 60,
+    "category": 2,
     "coords": {
       "x": 21.63,
       "y": 22.43
@@ -3892,6 +4061,7 @@
     "placeId": 2411,
     "zoneId": 1047,
     "level": 60,
+    "category": 2,
     "coords": {
       "x": 16.619999999999997,
       "y": 14.42
@@ -3915,6 +4085,7 @@
     "placeId": 2411,
     "zoneId": 1048,
     "level": 60,
+    "category": 2,
     "coords": {
       "x": 22.63,
       "y": 28.43
@@ -3938,6 +4109,7 @@
     "placeId": 2411,
     "zoneId": 1044,
     "level": 60,
+    "category": 2,
     "coords": {
       "x": 12.52,
       "y": 33.24
@@ -3961,6 +4133,7 @@
     "placeId": 2403,
     "zoneId": 2502,
     "level": 61,
+    "category": 2,
     "coords": {
       "x": 11.01,
       "y": 14.02
@@ -3984,6 +4157,7 @@
     "placeId": 2403,
     "zoneId": 2504,
     "level": 62,
+    "category": 2,
     "coords": {
       "x": 11.27,
       "y": 10.36
@@ -4007,6 +4181,7 @@
     "placeId": 2403,
     "zoneId": 2503,
     "level": 62,
+    "category": 2,
     "coords": {
       "x": 12.17,
       "y": 5.91
@@ -4030,6 +4205,7 @@
     "placeId": 2406,
     "zoneId": 1014,
     "level": 61,
+    "category": 2,
     "coords": {
       "x": 11.52,
       "y": 18.22
@@ -4053,6 +4229,7 @@
     "placeId": 2406,
     "zoneId": 1015,
     "level": 62,
+    "category": 2,
     "coords": {
       "x": 9.61,
       "y": 29.03
@@ -4076,6 +4253,7 @@
     "placeId": 2406,
     "zoneId": 1016,
     "level": 62,
+    "category": 2,
     "coords": {
       "x": 13.92,
       "y": 31.03
@@ -4099,6 +4277,7 @@
     "placeId": 2406,
     "zoneId": 1017,
     "level": 61,
+    "category": 2,
     "coords": {
       "x": 17.92,
       "y": 9.51
@@ -4122,6 +4301,7 @@
     "placeId": 2406,
     "zoneId": 1018,
     "level": 62,
+    "category": 2,
     "coords": {
       "x": 27.53,
       "y": 16.42
@@ -4145,6 +4325,7 @@
     "placeId": 2407,
     "zoneId": 1019,
     "level": 61,
+    "category": 2,
     "coords": {
       "x": 6.21,
       "y": 15.02
@@ -4168,6 +4349,7 @@
     "placeId": 2407,
     "zoneId": 1020,
     "level": 61,
+    "category": 2,
     "coords": {
       "x": 23.63,
       "y": 9.21
@@ -4191,6 +4373,7 @@
     "placeId": 2407,
     "zoneId": 1021,
     "level": 65,
+    "category": 2,
     "coords": {
       "x": 32.64,
       "y": 6.61
@@ -4214,6 +4397,7 @@
     "placeId": 2407,
     "zoneId": 1022,
     "level": 70,
+    "category": 2,
     "coords": {
       "x": 32.04,
       "y": 17.02
@@ -4237,6 +4421,7 @@
     "placeId": 2407,
     "zoneId": 1023,
     "level": 68,
+    "category": 2,
     "coords": {
       "x": 20.58,
       "y": 32.68
@@ -4260,6 +4445,7 @@
     "placeId": 2407,
     "zoneId": 1025,
     "level": 70,
+    "category": 2,
     "coords": {
       "x": 9.21,
       "y": 37.44
@@ -4283,6 +4469,7 @@
     "placeId": 2408,
     "zoneId": 1026,
     "level": 70,
+    "category": 8,
     "coords": {
       "x": 21.53,
       "y": 21.53
@@ -4306,6 +4493,7 @@
     "placeId": 2412,
     "zoneId": 2505,
     "level": 63,
+    "category": 1,
     "coords": {
       "x": 8.51,
       "y": 14.52
@@ -4329,6 +4517,7 @@
     "placeId": 2412,
     "zoneId": 2506,
     "level": 65,
+    "category": 2,
     "coords": {
       "x": 10.71,
       "y": 11.32
@@ -4352,6 +4541,7 @@
     "placeId": 2951,
     "zoneId": 3289,
     "level": 70,
+    "category": 2,
     "coords": {
       "x": 8.71,
       "y": 7.46
@@ -4375,6 +4565,7 @@
     "placeId": 2951,
     "zoneId": 3290,
     "level": 70,
+    "category": 2,
     "coords": {
       "x": 10.41,
       "y": 15.62
@@ -4398,6 +4589,7 @@
     "placeId": 2951,
     "zoneId": 3291,
     "level": 70,
+    "category": 2,
     "coords": {
       "x": 12.77,
       "y": 16.32
@@ -4421,6 +4613,7 @@
     "placeId": 2953,
     "zoneId": 3292,
     "level": 71,
+    "category": 2,
     "coords": {
       "x": 31.03,
       "y": 11.92
@@ -4444,6 +4637,7 @@
     "placeId": 2953,
     "zoneId": 3293,
     "level": 72,
+    "category": 2,
     "coords": {
       "x": 11.92,
       "y": 21.53
@@ -4467,6 +4661,7 @@
     "placeId": 2953,
     "zoneId": 3294,
     "level": 71,
+    "category": 2,
     "coords": {
       "x": 12.72,
       "y": 29.63
@@ -4490,6 +4685,7 @@
     "placeId": 2953,
     "zoneId": 3295,
     "level": 72,
+    "category": 2,
     "coords": {
       "x": 19.42,
       "y": 35.84
@@ -4513,6 +4709,7 @@
     "placeId": 2953,
     "zoneId": 3296,
     "level": 75,
+    "category": 2,
     "coords": {
       "x": 9.21,
       "y": 37.64
@@ -4536,6 +4733,7 @@
     "placeId": 2954,
     "zoneId": 3297,
     "level": 78,
+    "category": 2,
     "coords": {
       "x": 27.03,
       "y": 14.42
@@ -4559,6 +4757,7 @@
     "placeId": 2954,
     "zoneId": 3298,
     "level": 71,
+    "category": 2,
     "coords": {
       "x": 29.43,
       "y": 21.42
@@ -4582,6 +4781,7 @@
     "placeId": 2954,
     "zoneId": 3299,
     "level": 71,
+    "category": 2,
     "coords": {
       "x": 30.23,
       "y": 27.03
@@ -4605,6 +4805,7 @@
     "placeId": 2954,
     "zoneId": 3300,
     "level": 71,
+    "category": 2,
     "coords": {
       "x": 20.62,
       "y": 24.23
@@ -4628,6 +4829,7 @@
     "placeId": 2954,
     "zoneId": 3301,
     "level": 72,
+    "category": 1,
     "coords": {
       "x": 8.41,
       "y": 35.24
@@ -4651,6 +4853,7 @@
     "placeId": 2954,
     "zoneId": 3302,
     "level": 75,
+    "category": 1,
     "coords": {
       "x": 16.82,
       "y": 35.84
@@ -4674,6 +4877,7 @@
     "placeId": 2954,
     "zoneId": 3303,
     "level": 72,
+    "category": 1,
     "coords": {
       "x": 35.24,
       "y": 35.84
@@ -4697,6 +4901,7 @@
     "placeId": 2952,
     "zoneId": 3304,
     "level": 72,
+    "category": 1,
     "coords": {
       "x": 11.27,
       "y": 11.27
@@ -4720,6 +4925,7 @@
     "placeId": 2955,
     "zoneId": 3305,
     "level": 71,
+    "category": 3,
     "coords": {
       "x": 31.84,
       "y": 12.72
@@ -4743,6 +4949,7 @@
     "placeId": 2955,
     "zoneId": 3307,
     "level": 77,
+    "category": 3,
     "coords": {
       "x": 15.52,
       "y": 14.82
@@ -4766,6 +4973,7 @@
     "placeId": 2955,
     "zoneId": 3306,
     "level": 72,
+    "category": 3,
     "coords": {
       "x": 31.03,
       "y": 31.63
@@ -4789,6 +4997,7 @@
     "placeId": 2956,
     "zoneId": 3308,
     "level": 73,
+    "category": 2,
     "coords": {
       "x": 4.3100000000000005,
       "y": 22.33
@@ -4812,6 +5021,7 @@
     "placeId": 2956,
     "zoneId": 3309,
     "level": 73,
+    "category": 2,
     "coords": {
       "x": 21.02,
       "y": 22.83
@@ -4835,6 +5045,7 @@
     "placeId": 2956,
     "zoneId": 3310,
     "level": 74,
+    "category": 2,
     "coords": {
       "x": 22.03,
       "y": 9.11
@@ -4858,6 +5069,7 @@
     "placeId": 2956,
     "zoneId": 3311,
     "level": 74,
+    "category": 2,
     "coords": {
       "x": 25.83,
       "y": 9.01
@@ -4881,6 +5093,7 @@
     "placeId": 2956,
     "zoneId": 3314,
     "level": 75,
+    "category": 2,
     "coords": {
       "x": 31.94,
       "y": 22.33
@@ -4904,6 +5117,7 @@
     "placeId": 2956,
     "zoneId": 3312,
     "level": 74,
+    "category": 2,
     "coords": {
       "x": 28.93,
       "y": 13.52
@@ -4927,6 +5141,7 @@
     "placeId": 2956,
     "zoneId": 3313,
     "level": 74,
+    "category": 2,
     "coords": {
       "x": 34.94,
       "y": 26.33
@@ -4950,6 +5165,7 @@
     "placeId": 2957,
     "zoneId": 3315,
     "level": 70,
+    "category": 2,
     "coords": {
       "x": 7.41,
       "y": 28.73
@@ -4973,6 +5189,7 @@
     "placeId": 2957,
     "zoneId": 3316,
     "level": 70,
+    "category": 2,
     "coords": {
       "x": 9.71,
       "y": 20.82
@@ -4996,6 +5213,7 @@
     "placeId": 2957,
     "zoneId": 3317,
     "level": 70,
+    "category": 2,
     "coords": {
       "x": 16.02,
       "y": 21.53
@@ -5019,6 +5237,7 @@
     "placeId": 2957,
     "zoneId": 3318,
     "level": 70,
+    "category": 2,
     "coords": {
       "x": 24.03,
       "y": 31.63
@@ -5042,6 +5261,7 @@
     "placeId": 2957,
     "zoneId": 3319,
     "level": 80,
+    "category": 2,
     "coords": {
       "x": 7.81,
       "y": 16.22
@@ -5065,6 +5285,7 @@
     "placeId": 2958,
     "zoneId": 3320,
     "level": 80,
+    "category": 1,
     "coords": {
       "x": 11.21,
       "y": 6.61
@@ -5088,6 +5309,7 @@
     "placeId": 2958,
     "zoneId": 3321,
     "level": 79,
+    "category": 1,
     "coords": {
       "x": 37.74,
       "y": 7.01
@@ -5111,6 +5333,7 @@
     "placeId": 2958,
     "zoneId": 3322,
     "level": 79,
+    "category": 1,
     "coords": {
       "x": 11.92,
       "y": 10.91
@@ -5134,6 +5357,7 @@
     "placeId": 2958,
     "zoneId": 3323,
     "level": 80,
+    "category": 1,
     "coords": {
       "x": 6.21,
       "y": 13.52
@@ -5157,6 +5381,7 @@
     "placeId": 2958,
     "zoneId": 3324,
     "level": 80,
+    "category": 1,
     "coords": {
       "x": 8.51,
       "y": 15.62
@@ -5180,6 +5405,7 @@
     "placeId": 2958,
     "zoneId": 3325,
     "level": 79,
+    "category": 1,
     "coords": {
       "x": 33.64,
       "y": 30.63
@@ -5203,6 +5429,7 @@
     "placeId": 2958,
     "zoneId": 3326,
     "level": 80,
+    "category": 1,
     "coords": {
       "x": 29.03,
       "y": 14.92
@@ -5226,6 +5453,7 @@
     "placeId": 3477,
     "zoneId": 3448,
     "level": 1,
+    "category": 1,
     "coords": {
       "x": 6.14,
       "y": 6.14
@@ -5249,6 +5477,7 @@
     "placeId": 3477,
     "zoneId": 3449,
     "level": 1,
+    "category": 1,
     "coords": {
       "x": 6.14,
       "y": 6.14
@@ -5272,6 +5501,7 @@
     "placeId": 3477,
     "zoneId": 3450,
     "level": 1,
+    "category": 1,
     "coords": {
       "x": 6.14,
       "y": 6.14
@@ -5295,6 +5525,7 @@
     "placeId": 3477,
     "zoneId": 3451,
     "level": 1,
+    "category": 1,
     "coords": {
       "x": 6.14,
       "y": 6.14
@@ -5318,6 +5549,7 @@
     "placeId": 3477,
     "zoneId": 3454,
     "level": 1,
+    "category": 1,
     "coords": {
       "x": 6.14,
       "y": 6.14
@@ -5341,6 +5573,7 @@
     "placeId": 3477,
     "zoneId": 3455,
     "level": 1,
+    "category": 1,
     "coords": {
       "x": 6.14,
       "y": 6.14
@@ -5364,6 +5597,7 @@
     "placeId": 3477,
     "zoneId": 3452,
     "level": 1,
+    "category": 1,
     "coords": {
       "x": 6.14,
       "y": 6.14
@@ -5387,6 +5621,7 @@
     "placeId": 3477,
     "zoneId": 3453,
     "level": 1,
+    "category": 1,
     "coords": {
       "x": 6.14,
       "y": 6.14
@@ -5410,6 +5645,7 @@
     "placeId": 2957,
     "zoneId": 3458,
     "level": 70,
+    "category": 2,
     "coords": {
       "x": 26.03,
       "y": 36.74
@@ -5433,6 +5669,7 @@
     "placeId": 3477,
     "zoneId": 3621,
     "level": 1,
+    "category": 1,
     "coords": {
       "x": 6.14,
       "y": 6.14
@@ -5456,6 +5693,7 @@
     "placeId": 3477,
     "zoneId": 3622,
     "level": 1,
+    "category": 1,
     "coords": {
       "x": 6.14,
       "y": 6.14
@@ -5479,6 +5717,7 @@
     "placeId": 3477,
     "zoneId": 3623,
     "level": 1,
+    "category": 1,
     "coords": {
       "x": 6.14,
       "y": 6.14
@@ -5502,6 +5741,7 @@
     "placeId": 3477,
     "zoneId": 3624,
     "level": 1,
+    "category": 1,
     "coords": {
       "x": 6.14,
       "y": 6.14
@@ -5525,6 +5765,7 @@
     "placeId": 3477,
     "zoneId": 3625,
     "level": 1,
+    "category": 1,
     "coords": {
       "x": 6.14,
       "y": 6.14
@@ -5548,6 +5789,7 @@
     "placeId": 3477,
     "zoneId": 3626,
     "level": 1,
+    "category": 1,
     "coords": {
       "x": 6.14,
       "y": 6.14
@@ -5571,6 +5813,7 @@
     "placeId": 3706,
     "zoneId": 4050,
     "level": 80,
+    "category": 1,
     "coords": {
       "x": 11.76,
       "y": 16.2
@@ -5594,6 +5837,7 @@
     "placeId": 3706,
     "zoneId": 4051,
     "level": 80,
+    "category": 2,
     "coords": {
       "x": 11.26,
       "y": 8.33
@@ -5617,6 +5861,7 @@
     "placeId": 3706,
     "zoneId": 4052,
     "level": 80,
+    "category": 2,
     "coords": {
       "x": 7.71,
       "y": 10.81
@@ -5640,6 +5885,7 @@
     "placeId": 3708,
     "zoneId": 4053,
     "level": 81,
+    "category": 2,
     "coords": {
       "x": 17.64,
       "y": 5.43
@@ -5663,6 +5909,7 @@
     "placeId": 3708,
     "zoneId": 4054,
     "level": 81,
+    "category": 2,
     "coords": {
       "x": 18.58,
       "y": 10.93
@@ -5686,6 +5933,7 @@
     "placeId": 3708,
     "zoneId": 4055,
     "level": 82,
+    "category": 2,
     "coords": {
       "x": 32.260000000000005,
       "y": 9.19
@@ -5709,6 +5957,7 @@
     "placeId": 3708,
     "zoneId": 4056,
     "level": 82,
+    "category": 2,
     "coords": {
       "x": 28.35,
       "y": 15.54
@@ -5732,6 +5981,7 @@
     "placeId": 3708,
     "zoneId": 4057,
     "level": 82,
+    "category": 2,
     "coords": {
       "x": 20.46,
       "y": 16.14
@@ -5755,6 +6005,7 @@
     "placeId": 3707,
     "zoneId": 4058,
     "level": 82,
+    "category": 2,
     "coords": {
       "x": 5.6,
       "y": 10.9
@@ -5778,6 +6029,7 @@
     "placeId": 3709,
     "zoneId": 4059,
     "level": 81,
+    "category": 1,
     "coords": {
       "x": 25.59,
       "y": 36.32
@@ -5801,6 +6053,7 @@
     "placeId": 3709,
     "zoneId": 4060,
     "level": 81,
+    "category": 1,
     "coords": {
       "x": 9.57,
       "y": 33.4
@@ -5824,6 +6077,7 @@
     "placeId": 3709,
     "zoneId": 4061,
     "level": 82,
+    "category": 1,
     "coords": {
       "x": 9.77,
       "y": 22.83
@@ -5847,6 +6101,7 @@
     "placeId": 3709,
     "zoneId": 4062,
     "level": 82,
+    "category": 2,
     "coords": {
       "x": 20.98,
       "y": 8.21
@@ -5870,6 +6125,7 @@
     "placeId": 3709,
     "zoneId": 4063,
     "level": 85,
+    "category": 2,
     "coords": {
       "x": 31.03,
       "y": 9.39
@@ -5893,6 +6149,7 @@
     "placeId": 3709,
     "zoneId": 4064,
     "level": 85,
+    "category": 2,
     "coords": {
       "x": 30.59,
       "y": 21.38
@@ -5916,6 +6173,7 @@
     "placeId": 3709,
     "zoneId": 4065,
     "level": 85,
+    "category": 2,
     "coords": {
       "x": 24.01,
       "y": 14.52
@@ -5939,6 +6197,7 @@
     "placeId": 3709,
     "zoneId": 4066,
     "level": 85,
+    "category": 2,
     "coords": {
       "x": 24.25,
       "y": 24.77
@@ -5962,6 +6221,7 @@
     "placeId": 3709,
     "zoneId": 4067,
     "level": 85,
+    "category": 1,
     "coords": {
       "x": 7.45,
       "y": 7.57
@@ -5985,6 +6245,7 @@
     "placeId": 3710,
     "zoneId": 4068,
     "level": 83,
+    "category": 2,
     "coords": {
       "x": 11.09,
       "y": 30.71
@@ -6008,6 +6269,7 @@
     "placeId": 3710,
     "zoneId": 4069,
     "level": 83,
+    "category": 2,
     "coords": {
       "x": 23.03,
       "y": 9.17
@@ -6031,6 +6293,7 @@
     "placeId": 3711,
     "zoneId": 4070,
     "level": 84,
+    "category": 2,
     "coords": {
       "x": 32.6,
       "y": 10.89
@@ -6054,6 +6317,7 @@
     "placeId": 3711,
     "zoneId": 4071,
     "level": 85,
+    "category": 7,
     "coords": {
       "x": 30.99,
       "y": 32.239999999999995
@@ -6077,6 +6341,7 @@
     "placeId": 3711,
     "zoneId": 4072,
     "level": 85,
+    "category": 7,
     "coords": {
       "x": 22.83,
       "y": 31.8
@@ -6100,6 +6365,7 @@
     "placeId": 3713,
     "zoneId": 4073,
     "level": 86,
+    "category": 2,
     "coords": {
       "x": 11.17,
       "y": 18.54
@@ -6123,6 +6389,7 @@
     "placeId": 3713,
     "zoneId": 4074,
     "level": 87,
+    "category": 2,
     "coords": {
       "x": 25.07,
       "y": 9.81
@@ -6146,6 +6413,7 @@
     "placeId": 3713,
     "zoneId": 4075,
     "level": 87,
+    "category": 2,
     "coords": {
       "x": 33.72,
       "y": 16.259999999999998
@@ -6169,6 +6437,7 @@
     "placeId": 3712,
     "zoneId": 4076,
     "level": 88,
+    "category": 7,
     "coords": {
       "x": 20.9,
       "y": 36.16
@@ -6192,6 +6461,7 @@
     "placeId": 3712,
     "zoneId": 4077,
     "level": 89,
+    "category": 7,
     "coords": {
       "x": 9.53,
       "y": 30.55
@@ -6215,6 +6485,7 @@
     "placeId": 3712,
     "zoneId": 4078,
     "level": 90,
+    "category": 7,
     "coords": {
       "x": 6.97,
       "y": 22.27
@@ -6238,6 +6509,7 @@
     "placeId": 3712,
     "zoneId": 4079,
     "level": 84,
+    "category": 2,
     "coords": {
       "x": 14.98,
       "y": 11.58
@@ -6261,6 +6533,7 @@
     "placeId": 3712,
     "zoneId": 4080,
     "level": 84,
+    "category": 2,
     "coords": {
       "x": 22.61,
       "y": 8.79
@@ -6284,6 +6557,7 @@
     "placeId": 3712,
     "zoneId": 4081,
     "level": 89,
+    "category": 9,
     "coords": {
       "x": 5.25,
       "y": 35.16
@@ -6307,6 +6581,7 @@
     "placeId": 3712,
     "zoneId": 4082,
     "level": 90,
+    "category": 9,
     "coords": {
       "x": 37.52,
       "y": 9.13
@@ -6330,6 +6605,7 @@
     "placeId": 3712,
     "zoneId": 4083,
     "level": 90,
+    "category": 9,
     "coords": {
       "x": 25.07,
       "y": 17.18
@@ -6353,6 +6629,7 @@
     "placeId": 1647,
     "zoneId": 2507,
     "level": 70,
+    "category": 2,
     "fishes": [
       20123,
       20119,
@@ -6372,6 +6649,7 @@
     "placeId": 1647,
     "zoneId": 2258,
     "level": 70,
+    "category": 2,
     "coords": {
       "x": 12,
       "y": 36
@@ -6395,6 +6673,7 @@
     "placeId": 1647,
     "zoneId": 2259,
     "level": 1,
+    "category": 2,
     "coords": {
       "x": 11,
       "y": 29
@@ -6418,6 +6697,7 @@
     "placeId": 1647,
     "zoneId": 2261,
     "level": 60,
+    "category": 2,
     "coords": {
       "x": 10.5,
       "y": 9.1
@@ -6441,6 +6721,7 @@
     "placeId": 1647,
     "zoneId": 2262,
     "level": 80,
+    "category": 5,
     "coords": {
       "x": 32.4,
       "y": 9.5
@@ -6464,6 +6745,7 @@
     "placeId": 1647,
     "zoneId": 2263,
     "level": 80,
+    "category": 5,
     "coords": {
       "x": 29,
       "y": 33
@@ -6487,6 +6769,7 @@
     "placeId": 1647,
     "zoneId": 2264,
     "level": 80,
+    "category": 5,
     "coords": {
       "x": 12.2,
       "y": 24.4
@@ -6510,6 +6793,7 @@
     "placeId": 1647,
     "zoneId": 3489,
     "level": 80,
+    "category": 5,
     "coords": {
       "x": 26,
       "y": 16
@@ -6533,6 +6817,7 @@
     "placeId": 1647,
     "zoneId": 2258,
     "level": 70,
+    "category": 2,
     "fishes": [
       31586,
       31587,
@@ -6552,6 +6837,7 @@
     "placeId": 1647,
     "zoneId": 2259,
     "level": 1,
+    "category": 2,
     "fishes": [
       31578,
       31579,
@@ -6571,6 +6857,7 @@
     "placeId": 1647,
     "zoneId": 2261,
     "level": 60,
+    "category": 2,
     "fishes": [
       31582,
       31583,
@@ -6590,6 +6877,7 @@
     "placeId": 1647,
     "zoneId": 2262,
     "level": 80,
+    "category": 5,
     "fishes": [
       31590,
       31591,
@@ -6609,6 +6897,7 @@
     "placeId": 1647,
     "zoneId": 2263,
     "level": 80,
+    "category": 5,
     "fishes": [
       31590,
       31591,
@@ -6628,6 +6917,7 @@
     "placeId": 1647,
     "zoneId": 2264,
     "level": 80,
+    "category": 5,
     "fishes": [
       31590,
       31591,
@@ -6647,6 +6937,7 @@
     "placeId": 1647,
     "zoneId": 3489,
     "level": 80,
+    "category": 5,
     "fishes": [
       31590,
       31591,
@@ -6666,6 +6957,7 @@
     "placeId": 1647,
     "zoneId": 3532,
     "level": 80,
+    "category": 5,
     "fishes": [
       31590,
       31591,
@@ -6685,6 +6977,7 @@
     "placeId": 1647,
     "zoneId": 3533,
     "level": 80,
+    "category": 5,
     "fishes": [
       31590,
       31591,
@@ -6704,6 +6997,7 @@
     "placeId": 1647,
     "zoneId": 2258,
     "level": 70,
+    "category": 2,
     "fishes": [
       32890,
       32891,
@@ -6723,6 +7017,7 @@
     "placeId": 1647,
     "zoneId": 2259,
     "level": 1,
+    "category": 2,
     "fishes": [
       32882,
       32883,
@@ -6742,6 +7037,7 @@
     "placeId": 1647,
     "zoneId": 2261,
     "level": 60,
+    "category": 2,
     "fishes": [
       32886,
       32887,
@@ -6761,6 +7057,7 @@
     "placeId": 1647,
     "zoneId": 2262,
     "level": 80,
+    "category": 5,
     "fishes": [
       32894,
       32895,
@@ -6780,6 +7077,7 @@
     "placeId": 1647,
     "zoneId": 2263,
     "level": 80,
+    "category": 5,
     "fishes": [
       32894,
       32895,
@@ -6799,6 +7097,7 @@
     "placeId": 1647,
     "zoneId": 2264,
     "level": 80,
+    "category": 5,
     "fishes": [
       32894,
       32895,
@@ -6818,6 +7117,7 @@
     "placeId": 1647,
     "zoneId": 3489,
     "level": 80,
+    "category": 5,
     "fishes": [
       32894,
       32895,
@@ -6837,6 +7137,7 @@
     "placeId": 1647,
     "zoneId": 3532,
     "level": 80,
+    "category": 5,
     "fishes": [
       32894,
       32895,
@@ -6856,6 +7157,7 @@
     "placeId": 1647,
     "zoneId": 3533,
     "level": 80,
+    "category": 5,
     "fishes": [
       32894,
       32895,
@@ -6875,6 +7177,7 @@
     "placeId": 4042,
     "zoneId": 4191,
     "level": 84,
+    "category": 2,
     "fishes": [
       36503,
       36501,
@@ -6894,6 +7197,7 @@
     "placeId": 4042,
     "zoneId": 4192,
     "level": 84,
+    "category": 2,
     "fishes": [
       36503,
       36499,
@@ -6913,6 +7217,7 @@
     "placeId": 4042,
     "zoneId": 4193,
     "level": 84,
+    "category": 2,
     "fishes": [
       36503,
       36501,
@@ -6932,6 +7237,7 @@
     "placeId": 4042,
     "zoneId": 4194,
     "level": 84,
+    "category": 2,
     "fishes": [
       36503,
       36505,
@@ -6951,6 +7257,7 @@
     "placeId": 4042,
     "zoneId": 4195,
     "level": 84,
+    "category": 2,
     "fishes": [
       36503,
       36505,

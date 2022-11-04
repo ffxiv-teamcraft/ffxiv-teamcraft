@@ -20,9 +20,9 @@
       </div>
       <div fxLayout="row" fxLayoutAlign="space-between center">
         <div>{{'DB.FISH.OVERLAY.Bait' | translate}}</div>
-        <div *ngIf="state.baitId; else unknown" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
-          <img class="fish-icon" src="{{(state.mooch ? (state.moochId || state.baitId) : state.baitId) | lazyIcon | xivapiIcon}}">
-          <div>{{(state.mooch ? (state.moochId || state.baitId) : state.baitId) | itemName | i18n}}</div>
+        <div *ngIf="(state.baitId || state.mooch); else unknown" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
+          <img class="fish-icon" src="{{(state.mooch || state.baitId) | lazyIcon | xivapiIcon}}">
+          <div>{{(state.mooch || state.baitId) | itemName | i18n}}</div>
         </div>
       </div>
       <div fxLayout="row" fxLayoutAlign="space-between center">

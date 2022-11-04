@@ -5,6 +5,7 @@ import {LazyAetheryte} from './model/lazy-aetheryte';
 import {LazyAirshipPart} from './model/lazy-airship-part';
 import {LazyAirshipRank} from './model/lazy-airship-rank';
 import {LazyAirshipVoyage} from './model/lazy-airship-voyage';
+import {LazyBait} from './model/lazy-bait';
 import {LazyBaseParam} from './model/lazy-base-param';
 import {LazyClassJobsModifier} from './model/lazy-class-jobs-modifier';
 import {LazyCollectablesPageData} from './model/lazy-collectables-page-data';
@@ -115,7 +116,7 @@ export interface LazyData {
   airshipParts: Record<number, LazyAirshipPart>;
   airshipRanks: Record<number, LazyAirshipRank>;
   airshipVoyages: Record<number, LazyAirshipVoyage>;
-  baitItems: Array<number>;
+  baits: Array<LazyBait>;
   baseParams: Record<number, LazyBaseParam>;
   classJobsModifiers: Record<number, LazyClassJobsModifier>;
   collectableFlags: Record<number, number>;
