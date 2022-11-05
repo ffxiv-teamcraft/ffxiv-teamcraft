@@ -7,15 +7,20 @@
 
 <div fxLayout="column" fxLayoutGap="20px">
   <div fxLayout="column" fxLayoutGap="5px">
-    <div *ngFor="let item of list.finalItems" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-      <div>
-        <label (ngModelChange)="setSelection(item, $event)" [ngModel]="isSelected(item.id)" nz-checkbox></label>
-      </div>
-      <app-item-icon [itemId]="item.id" width="32"></app-item-icon>
-      <div>{{item.id | itemName | i18n}}</div>
-      <div fxFlex="1 1 auto"></div>
-      <div>x{{item.amount}}</div>
-    </div>
+    <app-lazy-scroll [rowTemplate]="rowTpl" [data]="list.finalItems" [rowSize]="37">
+      <ng-template #rowTpl let-item>
+        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" class="row">
+          <div>
+            <label (ngModelChange)="setSelection(item, $event)" [ngModel]="isSelected(item.id)" nz-checkbox></label>
+          </div>
+          <app-item-icon [itemId]="item.id" width="32"></app-item-icon>
+          <div>{{item.id | itemName | i18n}}</div>
+          <div fxFlex="1 1 auto"></div>
+          <div>x{{item.amount}}</div>
+        </div>
+      </ng-template>
+    </app-lazy-scroll>
+
   </div>
 
   <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
