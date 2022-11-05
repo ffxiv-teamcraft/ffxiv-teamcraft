@@ -214,6 +214,7 @@ export interface LazyData {
   recipes: Array<LazyRecipe>;
   reduction: Record<number, number[]>;
   retainerTasks: Array<LazyRetainerTask>;
+  reverseInstanceSources: Record<number, number[]>;
   reverseReduction: Record<number, number[]>;
   scripIndex: Record<number, number>;
   seeds: Record<number, LazySeed>;

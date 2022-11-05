@@ -2,16 +2,14 @@ import { Component } from '@angular/core';
 import { SeoService } from '../../../core/seo/seo.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
-import { DataService } from '../../../core/api/data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { combineLatest, Observable, of } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
-import { catchError, filter, map, shareReplay, switchMap } from 'rxjs/operators';
-import { InstanceData } from '../../../model/garland-tools/instance-data';
-import { GtInstance } from '../../../model/garland-tools/gt-instance';
+import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-instance',
@@ -20,14 +18,14 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 })
 export class InstanceComponent extends TeamcraftPageComponent {
 
-  public gtData$: Observable<InstanceData>;
-
   public xivapiInstance$: Observable<any>;
+
+  public drops$: Observable<number[]>;
 
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private gt: DataService,
+              private lazyData: LazyDataFacade,
               private i18n: I18nToolsService, private translate: TranslateService,
               private router: Router, public settings: SettingsService,
               seo: SeoService) {
@@ -39,18 +37,6 @@ export class InstanceComponent extends TeamcraftPageComponent {
       map(params => params.get('instanceId'))
     );
 
-    this.gtData$ = instanceId$.pipe(
-      switchMap(id => {
-        return this.gt.getInstance(+id);
-      }),
-      catchError(() => {
-        const emptyResponse = new InstanceData();
-        emptyResponse.instance = new GtInstance();
-        return of(emptyResponse);
-      }),
-      shareReplay({ bufferSize: 1, refCount: true })
-    );
-
     this.xivapiInstance$ = instanceId$.pipe(
       switchMap(id => {
         return this.xivapi.get(XivapiEndpoint.InstanceContent, +id);
@@ -58,8 +44,12 @@ export class InstanceComponent extends TeamcraftPageComponent {
       shareReplay({ bufferSize: 1, refCount: true })
     );
 
-    this.links$ = combineLatest([this.xivapiInstance$, this.gtData$]).pipe(
-      map(([xivapiInstance, gtData]) => {
+    this.drops$ = instanceId$.pipe(
+      switchMap(id => this.lazyData.getRow('reverseInstanceSources', +id))
+    );
+
+    this.links$ = combineLatest([this.xivapiInstance$]).pipe(
+      map(([xivapiInstance]) => {
         return [
           {
             title: 'GarlandTools',

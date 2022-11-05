@@ -4,7 +4,7 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { bufferCount, bufferTime, filter, map, mergeMap, scan, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { saveAs } from 'file-saver';
 import { DataExtractorService } from '../../../modules/list/data/data-extractor.service';
-import { uniqBy } from 'lodash';
+import { uniq, uniqBy } from 'lodash';
 import { BehaviorSubject, combineLatest, from, Observable, of, ReplaySubject } from 'rxjs';
 import { LazyDataWithExtracts } from '../../../lazy-data/lazy-data-types';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
@@ -312,7 +312,7 @@ export class ExtractorComponent {
       this.lazyData.getEntry('islandLandmarks')
     ]).pipe(
       switchMap(([lazyItems, islandBuildings, islandLandmarks]) => {
-        const itemIds = onlyUpdatedItems ? updatedItemIds : Object.keys({ ...islandBuildings, ...islandLandmarks, ...lazyItems }).sort((a, b) => +a - +b);
+        const itemIds = onlyUpdatedItems ? uniq(updatedItemIds) : Object.keys({ ...islandBuildings, ...islandLandmarks, ...lazyItems }).sort((a, b) => +a - +b);
         this.totalTodo$.next(itemIds.length);
         return from(itemIds).pipe(
           mergeMap(itemId => {

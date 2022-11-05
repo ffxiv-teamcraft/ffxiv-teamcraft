@@ -40,7 +40,6 @@ export class AllaganReportsExtractor extends AbstractExtractor {
         const loots = {};
         const ventures = {};
         const drops = {};
-        const islandAnimals = {};
         const instanceDrops = {};
         const fateSources = {};
         const mogstation = {};
@@ -160,6 +159,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
             this.persistToJsonAsset('venture-sources', ventures);
             this.persistToJsonAsset('drop-sources', drops);
             this.persistToJsonAsset('instance-sources', instanceDrops);
+            this.persistToJsonAsset('reverse-instance-sources', this.reverseRecord(instanceDrops));
             this.persistToJsonAsset('fate-sources', fateSources);
             this.persistToJsonAsset('mogstation-sources', mogstation);
             this.persistToJsonAsset('gardening-sources', gardening);
@@ -179,6 +179,16 @@ export class AllaganReportsExtractor extends AbstractExtractor {
     ).subscribe(() => {
       this.done();
     });
+  }
+
+  private reverseRecord(input: Record<number, number[]>): Record<number, number[]> {
+    return Object.entries(input)
+      .reduce((acc, [key, value]) => {
+        value.forEach(v => {
+          acc[v] = [...(acc[v] || []), +key];
+        });
+        return acc;
+      }, {});
   }
 
   private addItemAsSource(targetObject: Object, targetItem: number, sourceDetails: any, isObject: boolean, isNew: boolean): void {
