@@ -31,7 +31,8 @@ import { SpearfishingShadowSize } from '../../../core/data/model/spearfishing-sh
 
 
 function durationRequired(control: AbstractControl) {
-  if (control.parent?.get('spawn').value !== null) {
+  const spawn = control.parent?.get('spawn').value;
+  if (spawn !== null && spawn !== '') {
     return Validators.required(control);
   }
   return null;
@@ -234,7 +235,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   public mapWeathers$ = this.fishingSpot$.pipe(
     filter(spot => !!spot),
     map((spot) => {
-      return uniq(weatherIndex[mapIds.find(m => m.id === spot.mapId).weatherRate].map(row => +row.weatherId)) as number[];
+      return uniq((weatherIndex[mapIds.find(m => m.id === spot.mapId).weatherRate] || []).map(row => +row.weatherId)) as number[];
     }),
     shareReplay({ bufferSize: 1, refCount: true })
   );
@@ -624,7 +625,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
           predators: formState.predators,
           oceanFishingTime: this.isOceanFishingSpot(formState.spot) ? formState.oceanFishingTime : null,
           minGathering: formState.minGathering
-        }, value => value !== undefined && value !== null));
+        }, value => value !== undefined && value !== null && value !== ''));
     }
   }
 
