@@ -2873,6 +2873,7 @@
     "Speed": "速度",
     "Shadow_size": "阴影大小",
     "Deprecated": "该物品已经无法获得",
+    "Select_all": "Select all proposals",
     "SPEEDS": {
       "VERY_SLOW": "非常慢",
       "SLOW": "慢",
