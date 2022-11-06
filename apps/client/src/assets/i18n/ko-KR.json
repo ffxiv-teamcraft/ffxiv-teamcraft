@@ -2873,6 +2873,7 @@
     "Speed": "속도",
     "Shadow_size": "그림자 크기",
     "Deprecated": "해당 아이템은 더 이상 획득할 수 없습니다",
+    "Select_all": "Select all proposals",
     "SPEEDS": {
       "VERY_SLOW": "매우 느림",
       "SLOW": "느림",
