@@ -2873,6 +2873,7 @@
     "Speed": "Geschwindigkeit",
     "Shadow_size": "Schattengröße",
     "Deprecated": "Dieser Gegenstand kann nicht mehr erhalten werden",
+    "Select_all": "Select all proposals",
     "SPEEDS": {
       "VERY_SLOW": "Sehr langsam",
       "SLOW": "Langsam",
