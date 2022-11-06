@@ -120,6 +120,16 @@ export class AllaganReportsComponent {
     }
   }
 
+  public selectAll(rows: AllaganReportQueueEntry[]): void {
+    rows.forEach(row => {
+      if (row.type === AllaganReportStatus.PROPOSAL && row.source !== AllaganReportSource.FISHING && row.source !== AllaganReportSource.SPEARFISHING) {
+        row.selected = true;
+        this.selectCount++;
+      }
+    });
+    this.cd.detectChanges();
+  }
+
   getColor(status: AllaganReportStatus): string {
     switch (status) {
       case AllaganReportStatus.ACCEPTED:
