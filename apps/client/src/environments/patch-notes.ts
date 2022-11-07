@@ -1,11 +1,17 @@
 export const patchNotes = `### Bug Fixes
 
-* **db:** fixed "Show more" button showing when there isn't more to show in trades.
-* **island-workshop:** fixed 20h schedule sometimes happening when no combo found.
-* **log-tracker:** fixed first data updates not working on log state.
-* **log-tracker:** Housing's Other category is now listed as required for achievement.
+* **allagan-reports:** fixed spawn and duration not handling empty value properly.
+* **db:** remove other data sources when the extract contains DEPRECATED source.
+* **db:** removed outdated instance sources.
+* **fishing-reporter:** brand new mooch detection, better reliability to reduce bad reports.
+* **layout:** added many new housing vendor suppliers to the housing filter.
+* **lists:** fixed list split popup not opening at all.
+* **simulator:** fixed average ilvl formula for jobs without offhand.
 
 
 ### Features
 
-* **fishing-overlay:** display when fishing in an unsupported spot.`;
+* **allagan-reports:** new button to mass select proposals.
+* **db:** import of over 1200 allagan reports.
+* **db:** support for the new NA datacenter.
+* **metrics:** better pie charts for metrics dashboard.`;

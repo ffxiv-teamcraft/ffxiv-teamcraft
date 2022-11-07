@@ -81,6 +81,11 @@
     <nz-divider nzText="{{'ALLAGAN_REPORTS.Pending_changes' | translate}} ({{queueStatus.length}})" nzOrientation="left"></nz-divider>
     <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
       <div>
+        <button nz-button (click)="selectAll(queueStatus)" nzType="primary" [nzLoading]="applyingChange">
+          {{'ALLAGAN_REPORTS.Select_all' | translate:{ amount: selectCount } }}
+        </button>
+      </div>
+      <div>
         <button nz-button [disabled]="selectCount < 1" nzType="primary" [nzLoading]="applyingChange"
                 nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
                 (nzOnConfirm)="applyingChange = true;acceptMany(queueStatus)">

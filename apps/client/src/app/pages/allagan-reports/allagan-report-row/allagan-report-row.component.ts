@@ -51,7 +51,7 @@ export class AllaganReportRowComponent {
   embed = false;
 
   @Input()
-  focusId: string;
+  focusId: string | null;
 
   @Output()
   accept = new EventEmitter<void>();

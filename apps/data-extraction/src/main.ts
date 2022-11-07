@@ -60,6 +60,7 @@ import { ShopsExtractor } from './extractors/shops.extractor';
 import { green } from 'colors';
 import { GatheringSearchIndexExtractor } from './extractors/gathering-search-index.extractor';
 import { IslandExtractor } from './extractors/island.extractor';
+import { TraitsExtractor } from './extractors/traits.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -96,6 +97,7 @@ const extractors: AbstractExtractor[] = [
   new I18nExtractor('AirshipExplorationPoint', 'airship-voyages', { ID: 'id' }, 'NameShort_', true),
   new I18nExtractor('SubmarineExploration', 'submarine-voyages', { ID: 'id' }, 'Destination_'),
   new I18nExtractor('MJICraftworksObjectTheme', 'island-craftworks-theme'),
+  new TraitsExtractor(),
   new IslandExtractor(),
   new ShopsExtractor(),
   new NodesExtractor(),

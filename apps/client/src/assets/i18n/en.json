@@ -2873,6 +2873,7 @@
     "Speed": "Speed",
     "Shadow_size": "Shadow size",
     "Deprecated": "This item cannot be obtained anymore",
+    "Select_all": "Select all proposals",
     "SPEEDS": {
       "VERY_SLOW": "Very slow",
       "SLOW": "Slow",
