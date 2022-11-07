@@ -4,6 +4,7 @@ export const patchNotes = `### Bug Fixes
 * **db:** remove other data sources when the extract contains DEPRECATED source.
 * **db:** removed outdated instance sources.
 * **fishing-reporter:** brand new mooch detection, better reliability to reduce bad reports.
+* **fishing-reporter:** fixed reports not sent to the server.
 * **layout:** added many new housing vendor suppliers to the housing filter.
 * **lists:** fixed list split popup not opening at all.
 * **simulator:** fixed average ilvl formula for jobs without offhand.
