@@ -57,7 +57,7 @@
   "Download_desktop_app": "Descarregar aplicação para desktop",
   "Find_us_on_twitter": "Siga-nos no Twitter",
   "Join_discord_server": "Join our Discord server",
-  "See_code_github": "See the code on Github",
+  "See_code_github": "Star the project on Github",
   "Support_on_patreon": "Support the project on Patreon",
   "Access_patreon_page": "Vá á nossa página do Patreon",
   "Like_the_tool": "Are you enjoying the tool so far?",
@@ -1598,6 +1598,8 @@
       "Bite_time": "Bite time",
       "Spots": "Spots",
       "Min_gathering": "Min. gathering",
+      "Min_observed_gathering": "Min. observed gathering",
+      "Min_observed_gathering_explain": "The minimum value among all the automated reports we have so far. Doesn't mean it's the minimum gathering required, just the one we observed.",
       "Min_size": "Min. size",
       "Max_size": "Max. size",
       "Avg_size": "Avg. size",
@@ -1615,6 +1617,7 @@
       "Your_ranking": "Your ranking",
       "Include_fisheyes_data": "Include reports using Fish Eyes",
       "Not_enough_data_points": "Not enough data points to display this chart",
+      "Only_10_most_used": "Only showing the 10 most used baits",
       "TUG": {
         "Light": "Light (!)",
         "Medium": "Medium (!!)",
@@ -1641,6 +1644,8 @@
         "Size": "Size",
         "Large": "Large",
         "Time_since_thrown": "Time since throw",
+        "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
+        "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
         "ERRORS": {
           "No_bait": "No bait detected. Switch bait once to fix.",
           "No_stats": "No stats detected. Switch to Fisher again to fix."
@@ -2868,6 +2873,7 @@
     "Speed": "Speed",
     "Shadow_size": "Shadow size",
     "Deprecated": "This item cannot be obtained anymore",
+    "Select_all": "Select all proposals",
     "SPEEDS": {
       "VERY_SLOW": "Very slow",
       "SLOW": "Slow",
@@ -2988,6 +2994,9 @@
       "Categories": "Categories",
       "No_planning": "No planning available",
       "No_planning_explain": " Teamcraft is not able to compute a planning because there's too few recipes available, try to change your island level or uncheck some material exclusions.",
+      "Next_week_prep": "Materials you should prepare for next week",
+      "Crop_materials": "Crops",
+      "Pasture_materials": "Pasture",
       "POPULARITY": {
         "Very_high": "Very high",
         "High": "High",

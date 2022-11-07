@@ -57,7 +57,7 @@
   "Download_desktop_app": "Descargar aplicación para PC",
   "Find_us_on_twitter": "Síganos en Twitter",
   "Join_discord_server": "¡Únete a nuestro servidor de Discord!",
-  "See_code_github": "Código fuente en Github",
+  "See_code_github": "Star the project on Github",
   "Support_on_patreon": "¡Apoya este projecto en Patreon!",
   "Access_patreon_page": "Visita nuestro Patreon",
   "Like_the_tool": "De momento, ¿la herramienta te gusta?",
@@ -935,12 +935,12 @@
     "Fish_eyes_duration": "Su \"fish eyes\" necesita esta duración para obtener el pescado. Haga clic para cambiar el formato.",
     "Spawned_for": "Desaparecerá en {{timer}}",
     "Will_spawn_in": "Aparecerá en {{timer}}",
-    "Ephemeral_warning": "Ephemeral nodes have multiple locations. Position is an approximation.",
-    "Legendary": "Legendary",
+    "Ephemeral_warning": "Nodos efémeros tienen múltiples ubicaciones. Posición es una aproximación.",
+    "Legendary": "Legendario",
     "Switched_to_compact": "Display has been switched to compact because there's too many results.",
-    "Node_type": "Type",
-    "Use": "Use",
-    "Page_range": "{{start}}-{{end}} of {{total}} items"
+    "Node_type": "Tipo",
+    "Use": "Usar",
+    "Page_range": "{{start}}-{{end}} de {{total}} artículos"
   },
   "ANNOUNCEMENT": {
     "Title": "Anuncio",
@@ -958,7 +958,7 @@
     "Not_found": "Plantilla no encontrada",
     "STATUS": {
       "Loading": "Cargando plantilla desde base de datos",
-      "Copying": "Creating a copy of the list in your account. You'll be redirected to it once it's done"
+      "Copying": "Creando una copia de la lista en tu cuenta. Serás redirigido a ella cuando esté lista"
     }
   },
   "PERMISSIONS": {
@@ -987,7 +987,7 @@
   },
   "WIKI": {
     "Title": "Wiki",
-    "Not_found_in_current_lang": "This page wasn't found in your current language. English version will be shown",
+    "Not_found_in_current_lang": "Esta página no se ha encontrado en tu idioma actual. La versión inglesa será mostrada",
     "Not_found": "Pagina no encontrada"
   },
   "SIMULATOR": {
@@ -998,10 +998,10 @@
     "Break_on_reclaim": "Dividir macros en el punto de no regreso de Reclaim",
     "Break_before_byregots_blessing": "Dividir macros antes de Byregot's Blessing",
     "Include_consumables_notification": "Incluir notificación de consumibles",
-    "Include_consumables_notification_wait_time": "Wait time after consumables notification",
+    "Include_consumables_notification_wait_time": "Tiempo de espera después de la notificación de consumibles",
     "Consumable_notification": "Usar {{buffs}}",
     "Extra_wait": "Espera extra",
-    "Completion_message": "Completion message",
+    "Completion_message": "Mensaje de finalización",
     "Import_macro": "Importar desde macro",
     "Ingame_macro": "Macro para el juego",
     "Min_stats": "Atributos mínimos",
@@ -1020,9 +1020,9 @@
     "Level": "Nivel",
     "Reliability": "Confiabilidad",
     "Average_hq": "Promedio de HQ",
-    "Median_HQ": "Median HQ",
-    "Min_HQ": "Min. HQ",
-    "Max_HQ": "Max. HQ",
+    "Median_HQ": "Mediana de HQ",
+    "Min_HQ": "HQ mínimo",
+    "Max_HQ": "HQ máximo",
     "Specialist": "Especialista",
     "New_rotation": "Rotación nueva",
     "Rotations": "Rotaciones de artesanías",
@@ -1030,11 +1030,11 @@
     "No_rotations": "No hay rotaciones",
     "Create_a_custom_rotation": "Crear rotación personalizada",
     "Reset": "Reiniciar rotación",
-    "Reset_saved": "Revert unsaved changes",
+    "Reset_saved": "Revertir cambios no guardados",
     "Import_from_crafting_optimizer": "Importar desde optimizador de artesanía",
     "Export_crafting_optimizer": "Exportar usando el formato de optimizador de elaboración",
     "Export_copied": "Código de exportación de optimizador de elaboración copiado al portapapeles",
-    "Unsaved_changes": "You have unsaved changes. Please save before leaving this page or changes will be lost.",
+    "Unsaved_changes": "Tienes cambios sin guardar. Guarda los datos antes de salir de esta página o los cambios serán perdidos.",
     "Crafting_optimizer_code": "Código de importación de optimizador de artesanía",
     "Generated_macro": "Macro para el juego",
     "Generate_ingame_macro": "Generar macro para el juego",
@@ -1055,15 +1055,15 @@
     "Change_rotation": "Escoger rotación",
     "New_rotation_folder": "Nueva carpeta",
     "Safe_mode": "Modo seguro",
-    "Safe_mode_tooltip": "Disables all the skills that aren't 100% chance to succeed (takes buffs into account)",
+    "Safe_mode_tooltip": "Deshabilita todas las habilidades que no tienen 100% de probabilidad de tener éxito (toma mejoras/bonos en cuenta)",
     "Quality_needed": "{{amount}} más calidad para llegar a 100%",
     "Rotation_tips": "Consejos de rotación",
     "Progress_action_100_potency": "Progreso por 100% de eficiencia: {{value}}",
     "Quality_action_100_potency": "Calidad por 100% de eficiencia: {{value}}",
     "Current_control": "Control actual: {{value}}",
-    "Current_control_bonus": "Current bonus",
+    "Current_control_bonus": "Bono actual",
     "Macrolock": "Incluir bloqueo de macro",
-    "Find_rotation": "Rotation finder",
+    "Find_rotation": "Buscador de rotación",
     "Searching_for_rotation": "Searching for community rotations…",
     "No_matching_rotations": "No community rotation found that match your needs",
     "Click_on_rotation": "Click on a rotation to select it",
@@ -1598,6 +1598,8 @@
       "Bite_time": "Tiempo de mordida",
       "Spots": "Lugares",
       "Min_gathering": "Recolección mínima",
+      "Min_observed_gathering": "Min. observed gathering",
+      "Min_observed_gathering_explain": "The minimum value among all the automated reports we have so far. Doesn't mean it's the minimum gathering required, just the one we observed.",
       "Min_size": "Tamaño Min.",
       "Max_size": "Tamaño máx.",
       "Avg_size": "Tamaño prom.",
@@ -1615,6 +1617,7 @@
       "Your_ranking": "Su clasificación",
       "Include_fisheyes_data": "Include reports using Fish Eyes",
       "Not_enough_data_points": "Not enough data points to display this chart",
+      "Only_10_most_used": "Only showing the 10 most used baits",
       "TUG": {
         "Light": "Liviano (!)",
         "Medium": "Mediano (!!)",
@@ -1641,6 +1644,8 @@
         "Size": "Tamaño",
         "Large": "Large",
         "Time_since_thrown": "Tiempo desde el lanzamiento",
+        "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
+        "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
         "ERRORS": {
           "No_bait": "No bait detected. Switch bait once to fix.",
           "No_stats": "No stats detected. Switch to Fisher again to fix."
@@ -2868,6 +2873,7 @@
     "Speed": "Speed",
     "Shadow_size": "Shadow size",
     "Deprecated": "This item cannot be obtained anymore",
+    "Select_all": "Select all proposals",
     "SPEEDS": {
       "VERY_SLOW": "Very slow",
       "SLOW": "Slow",
@@ -2988,6 +2994,9 @@
       "Categories": "Categories",
       "No_planning": "No planning available",
       "No_planning_explain": " Teamcraft is not able to compute a planning because there's too few recipes available, try to change your island level or uncheck some material exclusions.",
+      "Next_week_prep": "Materials you should prepare for next week",
+      "Crop_materials": "Crops",
+      "Pasture_materials": "Pasture",
       "POPULARITY": {
         "Very_high": "Very high",
         "High": "High",

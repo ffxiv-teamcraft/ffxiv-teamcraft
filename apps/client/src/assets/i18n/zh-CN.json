@@ -57,7 +57,7 @@
   "Download_desktop_app": "下载客户端",
   "Find_us_on_twitter": "在 Twitter 上关注我们",
   "Join_discord_server": "加入我们的 Discord 服务器",
-  "See_code_github": "在 Github 查看代码",
+  "See_code_github": "Star the project on Github",
   "Support_on_patreon": "在 Patreon 上支持该项目",
   "Access_patreon_page": "打开我们的 Patreon 页",
   "Like_the_tool": "您现在是否喜欢这个工具？",
@@ -1598,6 +1598,8 @@
       "Bite_time": "咬钩时间",
       "Spots": "钓场",
       "Min_gathering": "采集力要求",
+      "Min_observed_gathering": "Min. observed gathering",
+      "Min_observed_gathering_explain": "The minimum value among all the automated reports we have so far. Doesn't mean it's the minimum gathering required, just the one we observed.",
       "Min_size": "最小尺寸",
       "Max_size": "最大尺寸",
       "Avg_size": "平均尺寸",
@@ -1615,6 +1617,7 @@
       "Your_ranking": "你的排名",
       "Include_fisheyes_data": "包括使用鱼眼的数据",
       "Not_enough_data_points": "数据不足，无法生成图表",
+      "Only_10_most_used": "Only showing the 10 most used baits",
       "TUG": {
         "Light": "轻杆 (!)",
         "Medium": "中杆 (!!)",
@@ -1641,6 +1644,8 @@
         "Size": "尺寸",
         "Large": "Large",
         "Time_since_thrown": "抛竿以来的时间",
+        "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
+        "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
         "ERRORS": {
           "No_bait": "未检测到钓饵，请重新“选饵”",
           "No_stats": "未检测到属性，请尝试重新切换到捕鱼人进行修复。"
@@ -2868,6 +2873,7 @@
     "Speed": "速度",
     "Shadow_size": "阴影大小",
     "Deprecated": "该物品已经无法获得",
+    "Select_all": "Select all proposals",
     "SPEEDS": {
       "VERY_SLOW": "非常慢",
       "SLOW": "慢",
@@ -2988,6 +2994,9 @@
       "Categories": "Categories",
       "No_planning": "No planning available",
       "No_planning_explain": " Teamcraft is not able to compute a planning because there's too few recipes available, try to change your island level or uncheck some material exclusions.",
+      "Next_week_prep": "Materials you should prepare for next week",
+      "Crop_materials": "Crops",
+      "Pasture_materials": "Pasture",
       "POPULARITY": {
         "Very_high": "Very high",
         "High": "High",
