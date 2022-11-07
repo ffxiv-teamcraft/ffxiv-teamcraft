@@ -1,1 +1,1 @@
-export const extractsHash = `d93956e987dcc3c820528323b2a75bcb4d0cee06`;
+export const extractsHash = `f7e94f88883bf1cc29bfc1ad6bd553aed2c04b41`;
