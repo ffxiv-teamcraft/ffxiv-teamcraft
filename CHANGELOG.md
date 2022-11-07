@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.9.9"></a>
+## [9.9.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.8...v9.9.9) (2022-11-07)
+
+
+### Bug Fixes
+
+* **allagan-reports:** fixed spawn and duration not handling empty value properly ([e46b5f4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e46b5f4))
+* **db:** remove other data sources when the extract contains DEPRECATED source ([b297432](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b297432))
+* **db:** removed outdated instance sources ([015dae8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/015dae8))
+* **fishing-reporter:** brand new mooch detection, better reliability to reduce bad reports ([058d633](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/058d633))
+* **layout:** added many new housing vendor suppliers to the housing filter ([4bf270e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4bf270e))
+* **lists:** fixed list split popup not opening at all ([72e9a75](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/72e9a75))
+* **simulator:** fixed average ilvl formula for jobs without offhand ([c4f2303](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c4f2303))
+
+
+### Features
+
+* **allagan-reports:** new button to mass select proposals ([dd4b15a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dd4b15a))
+* **db:** import of over 1200 allagan reports ([990264b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/990264b))
+* **db:** support for the new NA datacenter ([f84e100](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f84e100))
+* **metrics:** better pie charts for metrics dashboard ([3e44c10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3e44c10)), closes [#2401](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2401)
+
+
+
 <a name="9.9.8"></a>
 ## [9.9.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.7...v9.9.8) (2022-11-01)
 
