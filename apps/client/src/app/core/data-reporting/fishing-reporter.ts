@@ -280,7 +280,7 @@ export class FishingReporter implements DataReporter {
           chum: throwData.statuses.includes(763),
           patience: throwData.statuses.includes(850),
           intuition: throwData.statuses.includes(568),
-          mooch: mooch,
+          mooch: mooch !== null,
           tug: biteData.tug,
           hookset,
           spot: spot.id,
