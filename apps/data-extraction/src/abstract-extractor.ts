@@ -291,15 +291,22 @@ export abstract class AbstractExtractor {
     return res$;
   };
 
-  protected persistToJson(fileName, content): void {
+  protected cleanupString(input: string): string {
+    if (input === undefined) {
+      return input;
+    }
+    return input.replace('–', '-');
+  }
+
+  protected persistToJson(fileName: string, content: any): void {
     writeFileSync(join(AbstractExtractor.outputFolder, `${fileName}.json`), JSON.stringify(content, null, 2));
   }
 
-  protected persistToJsonAsset(fileName, content): void {
+  protected persistToJsonAsset(fileName: string, content: any): void {
     writeFileSync(join(AbstractExtractor.assetOutputFolder, `${fileName}.json`), JSON.stringify(content, null, 2));
   }
 
-  protected persistToTypescript(fileName, variableName, content): void {
+  protected persistToTypescript(fileName: string, variableName: string, content: any): void {
     const ts = `export const ${variableName} = ${JSON.stringify(content, null, 2)};`;
     writeFileSync(join(AbstractExtractor.outputFolder, `${fileName}.ts`), ts);
   }

@@ -15,4 +15,4 @@ export const patchNotes = `### Bug Fixes
 * **allagan-reports:** new button to mass select proposals.
 * **db:** import of over 1200 allagan reports.
 * **db:** support for the new NA datacenter.
-* **metrics:** better pie charts for metrics dashboard.`;
+* **metrics:** better pie charts for metrics dashboard.`;
