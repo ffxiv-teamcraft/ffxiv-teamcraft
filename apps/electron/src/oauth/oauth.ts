@@ -2,6 +2,7 @@ import { OauthProvider } from './oauth-provider';
 import querystring from 'querystring';
 import nodeUrl from 'url';
 import { BrowserWindow, session } from 'electron';
+import { join } from 'path';
 
 export class Oauth {
   constructor(private provider: OauthProvider) {
@@ -33,8 +34,7 @@ export class Oauth {
         alwaysOnTop: true,
         autoHideMenuBar: true,
         webPreferences: {
-          contextIsolation: false,
-          nodeIntegration: this.provider.authorize_url.indexOf('discordapp.com') === -1,
+          preload: join(__dirname, '../preload.js'),
           webviewTag: true
         },
         useContentSize: true

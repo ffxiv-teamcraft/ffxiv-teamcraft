@@ -21,6 +21,7 @@
   },
   "files": [
     "src/main.ts",
-    "src/workers/index.ts"
+    "src/workers/index.ts",
+    "src/preload.ts"
   ]
 }
