@@ -62,7 +62,7 @@ export class GcSupplyComponent {
             { jobId: +key, level: Math.max(levels[key] - 2, 1) },
             { jobId: +key, level: Math.max(levels[key] - 3, 1) },
             { jobId: +key, level: Math.max(levels[key] - 4, 1) },
-            levels[key] === environment ? null : { jobId: +key, level: Math.max(levels[key] - 5, 1) }
+            levels[key] === environment.maxLevel ? null : { jobId: +key, level: Math.max(levels[key] - 5, 1) }
           ].filter(row => row !== null);
         }));
         const uniqLevels = _.uniq(levelsArray.map(entry => entry.level));
