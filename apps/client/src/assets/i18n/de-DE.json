@@ -57,7 +57,7 @@
   "Download_desktop_app": "Desktopanwendung herunterladen",
   "Find_us_on_twitter": "Finde uns auf Twitter",
   "Join_discord_server": "Tritt unserem Discord Server bei",
-  "See_code_github": "Star the project on Github",
+  "See_code_github": "Das Projekt auf GitHub mit Stern favorisieren",
   "Support_on_patreon": "Unterstütze das Projekt auf Patreon",
   "Access_patreon_page": "Gehe zu unserer Patreon-Seite",
   "Like_the_tool": "Gefällt dir das Programm soweit?",
@@ -1617,7 +1617,7 @@
       "Your_ranking": "Dein Rang",
       "Include_fisheyes_data": "Meldungen mit Fischaugen einbeziehen",
       "Not_enough_data_points": "Nicht genügend Datenpunkte, um dieses Diagramm anzuzeigen",
-      "Only_10_most_used": "Only showing the 10 most used baits",
+      "Only_10_most_used": "Nur die 10 meistgenutzten Köder anzeigen",
       "TUG": {
         "Light": "Leicht (!)",
         "Medium": "Mittel (!!)",
@@ -2325,7 +2325,7 @@
       },
       "INTEGRITY_CHECK": {
         "All_characters_valid": "Alle verlinkten Charaktere sind gültig",
-        "All_lists_ok": "All lists are working properly"
+        "All_lists_ok": "Alle Listen funktionieren einwandfrei"
       }
     }
   },
@@ -2873,7 +2873,7 @@
     "Speed": "Geschwindigkeit",
     "Shadow_size": "Schattengröße",
     "Deprecated": "Dieser Gegenstand kann nicht mehr erhalten werden",
-    "Select_all": "Select all proposals",
+    "Select_all": "Alle Vorschläge auswählen",
     "SPEEDS": {
       "VERY_SLOW": "Sehr langsam",
       "SLOW": "Langsam",
@@ -2978,7 +2978,7 @@
       "Run_optimizer": "Finde die beste Planung für den Rest der Woche",
       "No_schedule_found": "Keine Pläne gefunden",
       "No_schedule_found_explain": "Vergewissere dich, dass die Rücksetzung in weniger als 4 Stunden ist",
-      "Possible_peak_days": "Possible peaks",
+      "Possible_peak_days": "Mögliche Spitzen",
       "Peak_days_explain": "Die Tage, an denen es wahrscheinlicher ist, dass dieser Gegenstand seinen Höchstwert erreichen wird. Fett = starker Gipfel.",
       "Items_to_prepare": "Beste Gegenstände zum Vorbereiten für morgen",
       "Rest": "Ruhetag",
