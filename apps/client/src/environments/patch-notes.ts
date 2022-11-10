@@ -1,18 +1,11 @@
 export const patchNotes = `### Bug Fixes
 
-* **allagan-reports:** fixed spawn and duration not handling empty value properly.
-* **db:** remove other data sources when the extract contains DEPRECATED source.
-* **db:** removed outdated instance sources.
-* **fishing-reporter:** brand new mooch detection, better reliability to reduce bad reports.
-* **fishing-reporter:** fixed reports not sent to the server.
-* **layout:** added many new housing vendor suppliers to the housing filter.
-* **lists:** fixed list split popup not opening at all.
-* **simulator:** fixed average ilvl formula for jobs without offhand.
+* **db:** fixed some instance not being parsed properly due to SE hyphens.
+* **gearset:** fixed absurd result for average ilvl due to operations priority.
 
 
 ### Features
 
-* **allagan-reports:** new button to mass select proposals.
-* **db:** import of over 1200 allagan reports.
-* **db:** support for the new NA datacenter.
-* **metrics:** better pie charts for metrics dashboard.`;
+* **db:** ability for allagan checkers to remove baits from fishing spots.
+* **desktop:** many security improvements.
+* **desktop:** update bundled npcap installer to 1.70.`;
