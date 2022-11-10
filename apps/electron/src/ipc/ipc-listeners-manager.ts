@@ -329,9 +329,9 @@ export class IpcListenersManager {
         }
       };
       if (isDev) {
-        exec(`"${join(__dirname, '../../../../../desktop/npcap-1.50.exe')}"`, postInstallCallback);
+        exec(`"${join(__dirname, '../../../../../desktop/npcap-1.70.exe')}"`, postInstallCallback);
       } else {
-        exec(`"${join(app.getAppPath(), '../../resources/MachinaWrapper/', 'npcap-1.50.exe')}"`, postInstallCallback);
+        exec(`"${join(app.getAppPath(), '../../resources/MachinaWrapper/', 'npcap-1.70.exe')}"`, postInstallCallback);
       }
     });
   }
