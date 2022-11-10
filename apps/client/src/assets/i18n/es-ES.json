@@ -1617,7 +1617,6 @@
       "Your_ranking": "Su clasificación",
       "Include_fisheyes_data": "Include reports using Fish Eyes",
       "Not_enough_data_points": "Not enough data points to display this chart",
-      "Only_10_most_used": "Only showing the 10 most used baits",
       "TUG": {
         "Light": "Liviano (!)",
         "Medium": "Mediano (!!)",
@@ -1662,6 +1661,8 @@
       "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Include misses",
       "Miss": "Miss",
+      "Remove_this_bait": "Remove this bait",
+      "Bait_removed": "Bait removed from this spot",
       "Position_unknown": "Unknown location"
     },
     "NODE": {
