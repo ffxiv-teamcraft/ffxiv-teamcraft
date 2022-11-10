@@ -80,6 +80,7 @@ const datagridResultMapper = <DataKey extends string, RowKey extends string | nu
     }
     agg.valuesByColId[colId] = (agg.valuesByColId[colId] ?? 0) + row.occurences;
     data.totals[colId] = (data.totals[colId] ?? 0) + row.occurences;
+    data.totals['records'] = (data.totals['records'] ?? 0) + row.occurences;
   }
   return { ...res, data };
 };
@@ -91,17 +92,20 @@ const datagridResultMapper = <DataKey extends string, RowKey extends string | nu
 @Injectable()
 export class FishContextService {
 
+  private readonly reloader$ = new BehaviorSubject<void>(void 0);
+
   private readonly spotIdSub$ = new BehaviorSubject<number | undefined>(undefined);
 
   /** The spot id that is currently active and being used to filter results by. */
-  public readonly spotId$ = this.spotIdSub$.pipe(distinctUntilChanged());
+  public readonly spotId$ = this.reloader$.pipe(switchMap(() => this.spotIdSub$.pipe(distinctUntilChanged())));
 
   private readonly baitIdSub$ = new BehaviorSubject<number | undefined>(undefined);
 
   /** The bait id that is currently active and being used to filter results by. */
-  public readonly baitId$ = this.baitIdSub$.pipe(distinctUntilChanged());
+  public readonly baitId$ = this.reloader$.pipe(switchMap(() => this.baitIdSub$.pipe(distinctUntilChanged())));
+
   /** The fish id that is currently active and being used to filter results by. */
-  public readonly fishId$: Observable<number | undefined> = combineLatest([this.itemContext.itemId$, this.lazyData.getEntry('fishes')]).pipe(
+  public readonly fishId$: Observable<number | undefined> = combineLatest([this.itemContext.itemId$, this.lazyData.getEntry('fishes'), this.reloader$]).pipe(
     map(([itemId, fishes]) => (itemId > 0 && fishes.includes(itemId) ? itemId : undefined)),
     distinctUntilChanged()
   );
@@ -158,7 +162,10 @@ export class FishContextService {
   );
 
   /** An observable containing information about the tugs used to catch the active fish. */
-  public readonly tugsByFish$: Observable<OccurrencesResult> = this.hooksetTugsByFish$.pipe(map(occurrenceResultMapper('tugs', 'tug')), shareReplay({ bufferSize: 1, refCount: true }));
+  public readonly tugsByFish$: Observable<OccurrencesResult> = this.hooksetTugsByFish$.pipe(map(occurrenceResultMapper('tugs', 'tug')), shareReplay({
+    bufferSize: 1,
+    refCount: true
+  }));
 
   /** An observable containing the bite times recorded to catch the active fish. */
   public readonly biteTimesByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
@@ -291,7 +298,10 @@ export class FishContextService {
   );
 
   /** An observable containing information about the baits used to catch fish at the active spot. */
-  public readonly baitsBySpot$: Observable<OccurrencesResult> = this.baitMoochesBySpot$.pipe(map(occurrenceResultMapper('baits', 'baitId')), shareReplay({ bufferSize: 1, refCount: true }));
+  public readonly baitsBySpot$: Observable<OccurrencesResult> = this.baitMoochesBySpot$.pipe(map(occurrenceResultMapper('baits', 'baitId')), shareReplay({
+    bufferSize: 1,
+    refCount: true
+  }));
 
   /** An observable containing information about the baits used to catch fish at the active spot. */
   public readonly baitsBySpotByFish$: Observable<ApolloQueryResult<Datagrid>> = this.baitMoochesBySpot$.pipe(
@@ -335,7 +345,10 @@ export class FishContextService {
   );
 
   /** An observable containing information about the baits used to catch the active fish. */
-  public readonly baitsByFish$: Observable<OccurrencesResult> = this.baitMoochesByFish$.pipe(map(occurrenceResultMapper('baits', 'baitId')), shareReplay({ bufferSize: 1, refCount: true }));
+  public readonly baitsByFish$: Observable<OccurrencesResult> = this.baitMoochesByFish$.pipe(map(occurrenceResultMapper('baits', 'baitId')), shareReplay({
+    bufferSize: 1,
+    refCount: true
+  }));
 
   /** An observable containing information about the fishes that can be mooched with the active fish. */
   public readonly moochesByFish$: Observable<ApolloQueryResult<number[]>> = this.baitMoochesByFish$.pipe(
@@ -366,6 +379,10 @@ export class FishContextService {
     private readonly data: FishDataService,
     private readonly lazyData: LazyDataFacade
   ) {
+  }
+
+  public refresh(): void {
+    this.reloader$.next(void 0);
   }
 
   /** Sets the currently active spot. */
