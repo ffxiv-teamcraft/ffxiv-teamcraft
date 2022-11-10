@@ -2,13 +2,19 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { combineLatest, of } from 'rxjs';
-import { filter, map, switchMap } from 'rxjs/operators';
+import { filter, first, map, switchMap } from 'rxjs/operators';
 import { Datagrid, FishContextService } from '../../service/fish-context.service';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { AuthFacade } from '../../../../+state/auth.facade';
+import { FishDataService } from '../../service/fish-data.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-fishing-spot-bait-datagrid',
   templateUrl: './fishing-spot-bait-datagrid.component.html',
+  styleUrls: [
+    './fishing-spot-bait-datagrid.component.less'
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FishingSpotBaitDatagridComponent {
@@ -57,11 +63,30 @@ export class FishingSpotBaitDatagridComponent {
 
   showMisses$ = this.fishCtx.showMisses$;
 
+  public isAllaganChecker$ = this.authFacade.user$.pipe(
+    map(user => user.allaganChecker || user.admin)
+  );
+
   constructor(
     private readonly fishCtx: FishContextService,
     private readonly lazyData: LazyDataFacade,
     private readonly i18n: I18nToolsService,
-    private readonly translate: TranslateService
+    private readonly translate: TranslateService,
+    private readonly authFacade: AuthFacade,
+    private readonly fishDataService: FishDataService,
+    private readonly message: NzMessageService
   ) {
+  }
+
+  deleteBait(id: number): void {
+    this.fishCtx.spotId$.pipe(
+      first(),
+      switchMap(spotId => {
+        return this.fishDataService.deleteBaitFromSpot(id, spotId);
+      })
+    ).subscribe(() => {
+      this.message.success(this.translate.instant('DB.FISHING_SPOT.Bait_removed'));
+      this.fishCtx.refresh();
+    });
   }
 }

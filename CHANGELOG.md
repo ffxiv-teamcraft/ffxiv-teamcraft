@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.9.11"></a>
+## [9.9.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.10...v9.9.11) (2022-11-10)
+
+
+### Bug Fixes
+
+* **db:** fixed some instance not being parsed properly due to SE hyphens ([db8d8a6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/db8d8a6))
+* **gearset:** fixed absurd result for average ilvl due to operations priority ([e6781fe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e6781fe))
+
+
+### Features
+
+* **db:** ability for allagan checkers to remove baits from fishing spots ([3c06cab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3c06cab))
+* **desktop:** many security improvements ([4521c55](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4521c55))
+* **desktop:** update bundled npcap installer to 1.70 ([3440019](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3440019))
+
+
+
 <a name="9.9.10"></a>
 ## [9.9.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.8...v9.9.10) (2022-11-07)
 

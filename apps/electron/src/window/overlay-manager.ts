@@ -1,6 +1,7 @@
 import { Store } from '../store';
 import { BrowserWindow, BrowserWindowConstructorOptions } from 'electron';
 import { Constants } from '../constants';
+import { join } from 'path';
 
 export class OverlayManager {
 
@@ -28,9 +29,8 @@ export class OverlayManager {
       width: dimensions.x,
       height: dimensions.y,
       webPreferences: {
-        nodeIntegration: true,
         backgroundThrottling: false,
-        contextIsolation: false
+        preload: join(__dirname, '../preload.js')
       }
     };
     Object.assign(opts, this.store.get(`overlay:${url}:bounds`, {}));

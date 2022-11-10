@@ -52,8 +52,9 @@ export class AllaganReportsExtractor extends AbstractExtractor {
           if (duty.category !== 'dungeon') {
             return;
           }
-          const instanceId = +Object.keys(instances).find(k => instances[k].en?.toLowerCase() === duty.name.toLowerCase());
+          const instanceId = +Object.keys(instances).find(k => this.cleanupString(instances[k].en?.toLowerCase()) === this.cleanupString(duty.name.toLowerCase()));
           if (isNaN(instanceId)) {
+            console.log(duty.name);
             return;
           }
           const itemDrops = [

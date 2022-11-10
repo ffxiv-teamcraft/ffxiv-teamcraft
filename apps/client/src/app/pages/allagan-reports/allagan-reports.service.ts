@@ -32,24 +32,6 @@ export class AllaganReportsService {
     return this.getItemAllaganReportsQueueQuery.subscribe({ itemId }, { fetchPolicy: 'network-only' });
   };
 
-  importFromGT(queue: AllaganReport[]): Observable<void> {
-    const isFishing = queue[0].source === AllaganReportSource.FISHING;
-    const query = gql`mutation ImportFromGT($data: [allagan_reports_insert_input!]!) {
-        delete_allagan_reports(where: {gt: {_eq: true}, source: {_${isFishing ? '' : 'n'}in: ["${AllaganReportSource.FISHING}", "${AllaganReportSource.SPEARFISHING}"]}}) {
-          affected_rows
-        }
-        insert_allagan_reports(objects: $data) {
-          affected_rows
-        }
-      }`;
-    return this.apollo.mutate({
-      mutation: query,
-      variables: {
-        data: queue
-      }
-    }).pipe(mapTo(void 0));
-  }
-
   getDashboardData(subscribe = false): Observable<AllaganMetricsDashboardData> {
     const allReports = gql`subscription AllaganMetricsDashboardData {
         all_reports: allagan_reports_aggregate {

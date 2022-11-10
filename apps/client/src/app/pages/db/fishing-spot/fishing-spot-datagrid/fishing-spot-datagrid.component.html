@@ -15,7 +15,7 @@
   <tbody class="grid-body">
     <tr *ngFor="let row of table.colDefs; let i = index">
       <td class="grid-cell grid-sider">
-        <ng-container *ngTemplateOutlet="rowIconRender; context: { $implicit: row.colId }"></ng-container>
+        <ng-container *ngTemplateOutlet="rowIconRender; context: { $implicit: row.colId, total: table.totals[row.colId], percent: table.totals[row.colId] / table.totals.records }"></ng-container>
       </td>
       <td
         *ngFor="let col of table.data; let headerIndex = index; let last = last"

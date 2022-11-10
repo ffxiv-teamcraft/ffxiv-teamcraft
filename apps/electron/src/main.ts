@@ -12,6 +12,7 @@ import { app, ipcMain } from 'electron';
 import { DatFilesWatcher } from './dat/dat-files-watcher';
 import { MetricsSystem } from './ipc/metrics-system';
 import { AutoUpdater } from './update/auto-updater';
+
 Object.assign(console, log.functions);
 
 const argv = process.argv.slice(1);
