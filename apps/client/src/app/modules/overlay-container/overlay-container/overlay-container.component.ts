@@ -24,7 +24,7 @@ export class OverlayContainerComponent implements OnInit {
   }
 
   close(): void {
-    window.close();
+    this.ipc.send(`overlay:close`, this.uri);
   }
 
   setOverlayOpacity(opacity: number): void {

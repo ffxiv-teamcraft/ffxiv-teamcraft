@@ -44,11 +44,6 @@ export class OverlayManager {
       overlay.show();
     });
 
-    // save window size and position
-    overlay.on('close', () => {
-      this.afterOverlayClose(url);
-    });
-
 
     overlay.loadURL(`file://${Constants.BASE_APP_PATH}/index.html#${url}?overlay=true`);
     this.openedOverlays[url] = overlay;
@@ -75,9 +70,18 @@ export class OverlayManager {
   }
 
   sendToOverlay(uri: string, channel: string, payload: any): void {
-    if (this.openedOverlays[uri] !== undefined) {
+    if (this.openedOverlays[uri] !== undefined && !this.openedOverlays[uri].isDestroyed()) {
       this.openedOverlays[uri].webContents.send(channel, payload);
     }
+  }
+
+  closeOverlay(url: string): void {
+    const overlay = this.openedOverlays[url];
+    if (!overlay) {
+      return;
+    }
+    overlay.close();
+    this.afterOverlayClose(url);
   }
 
   persistOverlays(): void {
