@@ -24,7 +24,7 @@
   <ng-template #rowIconRender let-id let-percent="percent" let-total="total">
     <div class="icon-render-container">
       <app-item-icon *ngIf="id > 0" [itemId]="id" width="32"></app-item-icon>
-      <button *ngIf="(isAllaganChecker$ | async) === true && percent <= 0.01 && total <= 20" nz-button nzSize="small" nzDanger nzShape="circle" class="delete-button"
+      <button *ngIf="(isAllaganChecker$ | async) === true && percent <= 0.02" nz-button nzSize="small" nzDanger nzShape="circle" class="delete-button"
               nz-tooltip [nzTooltipTitle]="'DB.FISHING_SPOT.Remove_this_bait' | translate"
               nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="deleteBait(id)">
         <span nz-icon nzType="close"></span>
