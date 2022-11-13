@@ -517,6 +517,7 @@
     "Reload_auth_token": "인증 토큰 다시 불러오기",
     "Materia_confidence_rate": "금단 신뢰율",
     "Materia_confidence_rate_explain": "마테리아 예측 신뢰율이 높다는 것은 더 많은 마테리아가 요구되며, 해당 수량 이내로 금단을 끝낼 가능성이 높다는 것을 의미합니다",
+    "Disable_hardware_acceleration": "Disable hardware acceleration",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
