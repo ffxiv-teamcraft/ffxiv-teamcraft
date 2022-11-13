@@ -108,7 +108,7 @@ const allowedChannels = [
 
 function checkChannel(channel: string): boolean {
   const isAllowed =
-    channel.startsWith('overlay')
+    channel.startsWith('overlay:')
     || allowedChannels.includes(channel);
   if (!isAllowed) {
     console.error(`[IPC] Tried to use unallowed channel ${channel}`);

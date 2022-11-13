@@ -31,7 +31,7 @@ export class FishingReporterOverlayComponent {
   );
 
   public isIgnoredSpot$ = this.state$.pipe(
-    map(state => state.spot.id >= 10000)
+    map(state => state.spot?.id >= 10000)
   );
 
   constructor(private ipc: IpcService, private translate: TranslateService) {

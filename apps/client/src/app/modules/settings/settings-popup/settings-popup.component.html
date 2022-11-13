@@ -492,6 +492,11 @@
         </label>
       </div>
       <div>
+        <label [(ngModel)]="noHA" (ngModelChange)="noHAChange($event)" nz-checkbox>
+          {{'SETTINGS.Disable_hardware_acceleration' | translate}}
+        </label>
+      </div>
+      <div>
         <label [(ngModel)]="settings.hideBackButton" nz-checkbox>
           {{'SETTINGS.Hide_back_button' | translate}}
         </label>

@@ -14,7 +14,6 @@ import { ProxyManager } from '../tools/proxy-manager';
 import { existsSync, readFile, writeFileSync } from 'fs';
 import { createFileSync, readFileSync } from 'fs-extra';
 import { Character, CharacterSearch } from '@xivapi/nodestone';
-import { Worker } from 'worker_threads';
 import ua from 'universal-analytics';
 import { v4 as uuidv4 } from 'uuid';
 import fetch from 'electron-fetch';
@@ -138,11 +137,8 @@ export class IpcListenersManager {
       }
     });
 
-    ipcMain.on('overlay-close', (event, url) => {
-      const overlay = this.overlayManager.getOverlay(url);
-      if (overlay) {
-        overlay.close();
-      }
+    ipcMain.on('overlay:close', (event, url) => {
+      this.overlayManager.closeOverlay(url);
     });
   }
 
@@ -244,6 +240,7 @@ export class IpcListenersManager {
     this.twoWayBinding('disable-initial-navigation', 'disable-initial-navigation');
     this.twoWayBinding('no-shortcut', 'setup:noShortcut');
     this.twoWayBinding('start-minimized', 'start-minimized');
+    this.twoWayBinding('hardware-acceleration', 'hardware-acceleration');
     this.twoWayBinding('always-quit', 'always-quit', null, true);
     this.twoWayBinding('enable-minimize-reduction-button', 'enable-minimize-reduction-button');
 

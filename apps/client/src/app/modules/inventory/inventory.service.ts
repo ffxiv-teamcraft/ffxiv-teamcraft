@@ -543,6 +543,7 @@ export class InventoryService {
         moved: false
       });
     }
+    inventory.resetSearchCache();
     return inventory;
   }
 
