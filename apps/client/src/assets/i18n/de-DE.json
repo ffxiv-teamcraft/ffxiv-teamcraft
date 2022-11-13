@@ -517,6 +517,7 @@
     "Reload_auth_token": "Authentifizierungs-Token neu laden",
     "Materia_confidence_rate": "Erfolgsrate fürs Materia einsetzen",
     "Materia_confidence_rate_explain": "Zuversichtsrate für Materiaschätzungen. Höher bedeutet, dass mehr Materia vorgeschlagen wird, damit der Wert für erfolgreiche Verschmelzungen verlässlicher wird",
+    "Disable_hardware_acceleration": "Disable hardware acceleration",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
