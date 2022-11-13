@@ -600,14 +600,6 @@
             </label>
             <i>{{'SETTINGS.Enable_metrics_capture_explain' | translate}}</i>
           </div>
-          <nz-form-item nzFlex *ngIf="settings.playerMetricsEnabled" fxLayoutAlign="flex-start center">
-            <nz-form-label nzFor="ignored-inventories">{{'SETTINGS.Metrics_capture_folder' | translate}}</nz-form-label>
-            <nz-form-control>
-              <nz-input-group [nzAddOnBefore]="metricsPath">
-                <button nz-button nzType="primary" (click)="changeMetricsPath()" class="corners-left">{{'COMMON.Change' | translate}}</button>
-              </nz-input-group>
-            </nz-form-control>
-          </nz-form-item>
         </div>
       </nz-card>
 

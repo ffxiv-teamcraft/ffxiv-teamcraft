@@ -18787,6 +18787,11 @@ sprintf-js@~1.0.2:
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
+sqlite-electron@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/sqlite-electron/-/sqlite-electron-2.2.5.tgz#a70c011131a7d316928e945812e28b79fc8d1569"
+  integrity sha512-+YmqQ7RNXYu11DoM/uaRQQfuCodyqRVAbj+8TJcLSlLyd8iQ6Gu0ib9L937SYLryFxBlgAu7ro5sp8w12+yekQ==
+
 sshpk@^1.14.1, sshpk@^1.7.0:
   version "1.17.0"
   resolved "https://registry.yarnpkg.com/sshpk/-/sshpk-1.17.0.tgz#578082d92d4fe612b13007496e543fa0fbcbe4c5"

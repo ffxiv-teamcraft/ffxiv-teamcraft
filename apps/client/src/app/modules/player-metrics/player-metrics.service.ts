@@ -116,7 +116,7 @@ export class PlayerMetricsService {
     if (!environment.production && !this.ipc.ready) {
       this._logs$.next(this.parseLogRows(devMock));
     } else {
-      this.ipc.send('metrics:load', { from: this.dateToFileName(startOfDay(from)), to: this.dateToFileName(endOfDay(to)) });
+      this.ipc.send('metrics:load', { from: startOfDay(from), to: endOfDay(to) });
       this.loading$.next(true);
     }
   }
@@ -140,18 +140,6 @@ export class PlayerMetricsService {
       });
   }
 
-  private dateToFileName(date: Date): string {
-    let month = date.getMonth().toString();
-    if (+month < 10) {
-      month = `0${month}`;
-    }
-    let day = date.getDate().toString();
-    if (+day < 10) {
-      day = `0${day}`;
-    }
-    return `${date.getFullYear()}${month}${day}`;
-  }
-
   private handleReport(report: ProbeReport): void {
     report.timestamp = Math.floor(Date.now() / 1000);
     // If metrics aren't enabled, we don't save anything, not even in memory.
@@ -173,6 +161,6 @@ export class PlayerMetricsService {
     const logs = [...this.buffer];
     this.buffer = [];
     const dataString = logs.map(row => `${row.timestamp};${row.type};${row.source};${row.data.join(',')}`).join('|');
-    this.ipc.send('metrics:persist', dataString);
+    this.ipc.send('metrics:persist', logs);
   }
 }
