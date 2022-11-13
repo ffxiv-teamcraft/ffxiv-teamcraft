@@ -240,6 +240,7 @@ export class IpcListenersManager {
     this.twoWayBinding('disable-initial-navigation', 'disable-initial-navigation');
     this.twoWayBinding('no-shortcut', 'setup:noShortcut');
     this.twoWayBinding('start-minimized', 'start-minimized');
+    this.twoWayBinding('hardware-acceleration', 'hardware-acceleration');
     this.twoWayBinding('always-quit', 'always-quit', null, true);
     this.twoWayBinding('enable-minimize-reduction-button', 'enable-minimize-reduction-button');
 

@@ -58,6 +58,8 @@ export class SettingsPopupComponent {
 
   startMinimized = false;
 
+  noHA = false;
+
   alwaysQuit = true;
 
   enableMinimizeReduceButton = false;
@@ -177,6 +179,9 @@ export class SettingsPopupComponent {
     this.ipc.once('start-minimized:value', (event, value) => {
       this.startMinimized = value;
     });
+    this.ipc.once('hardware-acceleration:value', (event, value) => {
+      this.noHA = value;
+    });
     this.ipc.once('always-quit:value', (event, value) => {
       this.alwaysQuit = value;
     });
@@ -239,6 +244,7 @@ export class SettingsPopupComponent {
     this.ipc.send('no-shortcut:get');
     this.ipc.send('toggle-machina:get');
     this.ipc.send('start-minimized:get');
+    this.ipc.send('hardware-acceleration:get');
     this.ipc.send('always-quit:get');
     this.ipc.send('enable-minimize-reduction-button:get');
     this.ipc.send('proxy-rule:get');
@@ -328,6 +334,10 @@ export class SettingsPopupComponent {
 
   startMinimizedChange(value: boolean): void {
     this.ipc.send('start-minimized', value);
+  }
+
+  noHAChange(value: boolean): void {
+    this.ipc.send('hardware-acceleration', value);
   }
 
   alwaysQuitChange(value: boolean): void {
