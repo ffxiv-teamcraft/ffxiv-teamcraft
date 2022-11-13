@@ -517,6 +517,7 @@
     "Reload_auth_token": "Reload auth token",
     "Materia_confidence_rate": "Melding confidence rate",
     "Materia_confidence_rate_explain": "Confidence rate for materia estimate. Higher means that more materias will be suggested to be more confident that with this amount, your melds will succeed",
+    "Disable_hardware_acceleration": "Disable hardware acceleration",
     "COLORS": {
       "Background": "Cor de fundo",
       "Primary": "Cor principal",
