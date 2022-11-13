@@ -517,6 +517,7 @@
     "Reload_auth_token": "重新加载认证口令",
     "Materia_confidence_rate": "魔晶石禁断置信率",
     "Materia_confidence_rate_explain": "置信率用于预估魔晶石禁断数量，更高的置信率意味着预估时更多的魔晶石，从而提升完成禁断的可能性。会依据你的禁断方案调整。",
+    "Disable_hardware_acceleration": "Disable hardware acceleration",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
