@@ -1,5 +1,5 @@
 import { DataReporter } from './data-reporter';
-import { BehaviorSubject, combineLatest, merge, Observable } from 'rxjs';
+import { combineLatest, merge, Observable } from 'rxjs';
 import { ofMessageType } from '../rxjs/of-message-type';
 import { delay, distinctUntilChanged, filter, map, mapTo, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
@@ -11,11 +11,12 @@ import { Hookset } from '../data/model/hookset';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { EventPlay } from '@ffxiv-teamcraft/pcap-ffxiv';
+import { FishingReporterState } from './state/fishing-reporter-state';
 
 
 export class FishingReporter implements DataReporter {
 
-  private state: any = {};
+  private state: Partial<FishingReporterState> = {};
 
   constructor(private eorzea: EorzeaFacade, private lazyData: LazyDataFacade,
               private etime: EorzeanTimeService, private ipc: IpcService,
@@ -89,35 +90,21 @@ export class FishingReporter implements DataReporter {
       });
     });
 
-    const moochId$ = new BehaviorSubject<number>(null);
-
-    packets$.pipe(
-      ofMessageType('inventoryTransaction'),
-      toIpcData(),
-      withLatestFrom(isFishing$),
-      filter(([, isFishing]) => isFishing),
-      map(([packet]) => packet)
-    ).subscribe(packet => {
-      moochId$.next(packet.catalogId);
-    });
-
     const throw$ = eventPlay$.pipe(
       filter(packet => packet.scene === 1),
       delay(200),
       withLatestFrom(
         this.eorzea.statuses$,
         this.eorzea.weatherId$,
-        this.eorzea.previousWeatherId$,
-        moochId$
+        this.eorzea.previousWeatherId$
       ),
-      map(([, statuses, weatherId, previousWeatherId, mooch]) => {
+      map(([, statuses, weatherId, previousWeatherId]) => {
         return {
           timestamp: Date.now(),
           etime: this.etime.toEorzeanDate(new Date()),
           statuses,
           weatherId,
-          previousWeatherId,
-          mooch
+          previousWeatherId
         };
       })
     );
@@ -148,11 +135,14 @@ export class FishingReporter implements DataReporter {
     const mooch$ = packets$.pipe(
       ofMessageType('systemLogMessage'),
       toIpcData(),
-      filter(packet => packet.actionTimeline === 257 || packet.actionTimeline === 3073),
+      filter(packet => packet.param1 === 1121 || packet.param1 === 1110),
       map(packet => {
-        return packet.param1 === 1121;
+        if (packet.param1 === 1121) {
+          return packet.param3;
+        }
+        return null;
       }),
-      startWith(false)
+      startWith(null)
     );
 
     const misses$ = combineLatest([
@@ -161,7 +151,7 @@ export class FishingReporter implements DataReporter {
         toIpcData(),
         map(packet => {
           return {
-            animation: packet.actionTimeline,
+            logMessage: packet.param1,
             timestamp: Date.now()
           };
         })
@@ -169,7 +159,12 @@ export class FishingReporter implements DataReporter {
       bite$
     ]).pipe(
       filter(([rodAnimation, playerAnimation]) => {
-        return rodAnimation.animation === 0 && Math.abs(rodAnimation.timestamp - playerAnimation.timestamp) < 10000;
+        /**
+         * 1117: Ignored the fish
+         * 1119: snap?
+         * 1120: Fish left
+         */
+        return (rodAnimation.logMessage === 1119 || rodAnimation.logMessage === 1120 || rodAnimation.logMessage === 1117) && Math.abs(rodAnimation.timestamp - playerAnimation.timestamp) < 10000;
       }),
       map(() => {
         return {
@@ -238,10 +233,9 @@ export class FishingReporter implements DataReporter {
       this.eorzea.statuses$,
       this.eorzea.weatherId$.pipe(startWith(null), distinctUntilChanged()),
       this.eorzea.previousWeatherId$.pipe(startWith(null), distinctUntilChanged()),
-      moochId$.pipe(startWith(null)),
       throw$.pipe(startWith(null)),
       bite$.pipe(startWith(null))
-    ]).subscribe(([isFishing, mapId, baitId, spot, stats, mooch, statuses, weatherId, previousWeatherId, moochId, throwData, biteData]) => {
+    ]).subscribe(([isFishing, mapId, baitId, spot, stats, mooch, statuses, weatherId, previousWeatherId, throwData, biteData]) => {
       this.setState({
         isFishing,
         mapId,
@@ -252,7 +246,6 @@ export class FishingReporter implements DataReporter {
         statuses,
         weatherId,
         previousWeatherId,
-        moochId,
         throwData,
         biteData
       });
@@ -271,11 +264,10 @@ export class FishingReporter implements DataReporter {
         fisherStats$,
         mooch$
       ),
-      filter(([fish, , throwData, biteData, , spot, stats, mooch]) => {
+      filter(([fish, , throwData, biteData, , spot, stats]) => {
         return (fish.id === -1 && stats?.gp > 1)
           || (biteData.tug !== null
             && spot.fishes.indexOf(fish.id) > -1
-            && (!mooch || spot.fishes.indexOf(throwData.mooch) > -1)
           ) && throwData.weatherId !== null;
       }),
       map(([fish, baitId, throwData, biteData, hookset, spot, stats, mooch]) => {
@@ -293,7 +285,7 @@ export class FishingReporter implements DataReporter {
           chum: throwData.statuses.includes(763),
           patience: throwData.statuses.includes(850),
           intuition: throwData.statuses.includes(568),
-          mooch: mooch,
+          mooch: mooch !== null,
           tug: biteData.tug,
           hookset,
           spot: spot.id,
@@ -301,7 +293,7 @@ export class FishingReporter implements DataReporter {
           ...stats
         };
         if (mooch) {
-          entry.baitId = throwData.mooch;
+          entry.baitId = mooch;
         }
         return [entry];
       }),
@@ -326,7 +318,7 @@ export class FishingReporter implements DataReporter {
     return 'fishingresults';
   }
 
-  private setState(newState: any): void {
+  private setState(newState: Partial<FishingReporterState>): void {
     this.state = {
       ...this.state,
       ...newState

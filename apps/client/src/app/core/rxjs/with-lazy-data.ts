@@ -24,7 +24,7 @@ export function withLazyData<T, K extends TupleOf<LazyDataKey>>(lazyData: LazyDa
           entries.map(entry => lazyData.getEntry(entry))
         ).pipe(
           map(entriesData => [data, ...entriesData] as [T, ...MapTuple<K>]),
-          shareReplay({ bufferSize: 1, refCount: true })
+          shareReplay(1)
         );
       })
     );

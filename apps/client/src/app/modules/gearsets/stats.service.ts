@@ -582,7 +582,7 @@ export class StatsService {
         if (set.offHand) {
           return Math.floor((withoutOffHand + ilvls[set.offHand.itemId]) / 12);
         }
-        return Math.floor(withoutOffHand / 11);
+        return Math.floor((withoutOffHand + ilvls[set.mainHand.itemId]) / 12);
       })
     );
   }

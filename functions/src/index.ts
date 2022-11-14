@@ -1,4 +1,5 @@
 import { RuntimeOptions } from 'firebase-functions';
+import { subDays } from 'date-fns';
 
 const functions = require('firebase-functions');
 require('firebase/app');
@@ -92,6 +93,34 @@ export const searchCommunityLists = functions.runWith(runtimeOpts).https.onReque
 /**
  * END OF SEARCH STUFF
  */
+
+// IS history endpoint
+export const islandSanctuaryHistory = functions.runWith(runtimeOpts).https.onRequest(async (req, res) => {
+  let previousWeeklyReset = new Date();
+  previousWeeklyReset.setUTCSeconds(0);
+  previousWeeklyReset.setUTCMinutes(0);
+  previousWeeklyReset.setUTCMilliseconds(0);
+  if (previousWeeklyReset.getUTCDay() === 2 && previousWeeklyReset.getUTCHours() < 8) {
+    previousWeeklyReset = subDays(previousWeeklyReset, 7);
+  } else {
+    while (previousWeeklyReset.getUTCDay() !== 2) {
+      previousWeeklyReset = subDays(previousWeeklyReset, 1);
+    }
+  }
+  previousWeeklyReset.setUTCHours(8);
+  const reset = previousWeeklyReset.getTime();
+  const historyEntriesToFetch = [reset.toString()];
+  let nextDay = reset + 86400000;
+  while (nextDay < Date.now()) {
+    historyEntriesToFetch.push(nextDay.toString());
+    nextDay += 86400000;
+  }
+  const history = await Promise.all(historyEntriesToFetch.map(async (timestamp) => {
+    const doc = await firestore.doc(`mji-workshop-status/${timestamp.toString()}`).get();
+    return doc.data();
+  }));
+  res.status(200).send(history);
+});
 
 
 // Firestore counts

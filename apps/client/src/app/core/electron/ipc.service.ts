@@ -1,6 +1,6 @@
 import { Injectable, NgZone } from '@angular/core';
 import { PlatformService } from '../tools/platform.service';
-import { IpcRenderer, IpcRendererEvent } from 'electron';
+import { IpcRendererEvent } from 'electron';
 import { Router } from '@angular/router';
 import { Vector2 } from '../tools/vector2';
 import { BehaviorSubject, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
@@ -17,6 +17,25 @@ import { UpdateInstallPopupComponent } from '../../modules/ipc-popups/update-ins
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 type EventCallback = (event: IpcRendererEvent, ...args: any[]) => void;
+
+interface IPC {
+  send(channel: string, ...data: any[]): void;
+
+  on(channel: string, listener: (event: IpcRendererEvent, ...args: any[]) => void): void;
+
+  once(channel: string, listener: (event: IpcRendererEvent, ...args: any[]) => void): void;
+
+
+  removeAllListeners(channel: string): void;
+
+  init(): void;
+}
+
+declare global {
+  interface Window {
+    ipc: IPC;
+  }
+}
 
 @Injectable({
   providedIn: 'root'
@@ -42,7 +61,7 @@ export class IpcService {
     shareReplay({ bufferSize: 1, refCount: true })
   );
 
-  private readonly _ipc: IpcRenderer | undefined = undefined;
+  private readonly _ipc: IPC | undefined = undefined;
 
   private totalPacketsHandled = 0;
 
@@ -55,9 +74,9 @@ export class IpcService {
               private translate: TranslateService, private notification: NzNotificationService) {
     // Only load ipc if we're running inside electron
     if (platformService.isDesktop()) {
-      if (window.require) {
-        this._ipc = window.require('electron').ipcRenderer;
-        this._ipc.setMaxListeners(0);
+      if (window.ipc) {
+        this._ipc = window.ipc;
+        this._ipc.init();
         this.connectListeners();
       } else {
         console.warn('Electron\'s IPC was not loaded');

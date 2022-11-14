@@ -36,7 +36,7 @@ export class LogTrackingService extends FirestoreStorage<LogTracking> {
               entriesChunk
                 .filter(entry => !!entry.itemId)
                 .forEach(entry => {
-                  if (!doc.exists && entry.done) {
+                  if (!doc.exists() && entry.done) {
                     const newLog = {
                       crafting: [],
                       gathering: []

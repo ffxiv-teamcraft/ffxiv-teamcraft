@@ -1,12 +1,10 @@
 <nz-card [nzTitle]="'DB.FISH.Baits' | translate"
          [nzLoading]="loading$ | async"
          [style.width.px]="480 + 48">
-  <i>{{'DB.FISH.Only_10_most_used' | translate}}</i>
-  <div fxLayout="row wrap" fxLayoutAlign="center center">
-    <div *ngFor="let row of baitsChartData$ | async; let last = last">
-      <app-item-icon [itemId]="row.baitId" [icon]="row.baitId" width="32"></app-item-icon>
-      <nz-divider nzType="vertical" *ngIf="!last"></nz-divider>
-    </div>
-  </div>
-  <div echarts theme="dark" [options]="options$ | async" [initOpts]="{height: '300px', width: '400px'}"></div>
+  <ng-container *ngIf="options$ | async as options; else loadingTpl">
+    <div echarts theme="dark" [options]="options" [initOpts]="{height: '300px'}"></div>
+  </ng-container>
+  <ng-template #loadingTpl>
+    <nz-spin></nz-spin>
+  </ng-template>
 </nz-card>

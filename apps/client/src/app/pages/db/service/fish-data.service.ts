@@ -13,6 +13,9 @@ import {
   WeathersPerFishPerSpotQuery
 } from './fish-data.gql';
 import { QueryOptionsAlone } from 'apollo-angular/types';
+import { Observable } from 'rxjs';
+import gql from 'graphql-tag';
+import { Apollo } from 'apollo-angular';
 
 const qOpts: QueryOptionsAlone<any> = { fetchPolicy: 'network-only' };
 
@@ -31,7 +34,8 @@ export class FishDataService {
     private readonly biteFishSpotBaitQuery: BiteTimesPerFishPerSpotPerBaitQuery,
     private readonly statFishSpotQuery: FishStatisticsPerFishPerSpotQuery,
     private readonly weathersFishSpotQuery: WeathersPerFishPerSpotQuery,
-    private readonly rankingFishQuery: RankingPerFishQuery
+    private readonly rankingFishQuery: RankingPerFishQuery,
+    private readonly apollo: Apollo
   ) {
   }
 
@@ -133,4 +137,18 @@ export class FishDataService {
   public getRankingByFishId = (fishId: number) => {
     return this.auth.userId$.pipe(switchMap((userId) => this.rankingFishQuery.fetch({ fishId, userId }, qOpts)));
   };
+
+  public deleteBaitFromSpot(baitId: number, spot: number): Observable<any> {
+    const query = gql`mutation deleteBaitFromSpot($spot: Int!, $baitId: Int!) {
+      delete_fishingresults(where: {_and: {baitId: {_eq: $baitId}, spot: {_eq: $spot}}}){
+        affected_rows
+      }
+    }`;
+    return this.apollo.mutate({
+      mutation: query,
+      variables: {
+        baitId, spot
+      }
+    });
+  }
 }

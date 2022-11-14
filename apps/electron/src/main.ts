@@ -12,6 +12,7 @@ import { app, ipcMain } from 'electron';
 import { DatFilesWatcher } from './dat/dat-files-watcher';
 import { MetricsSystem } from './ipc/metrics-system';
 import { AutoUpdater } from './update/auto-updater';
+
 Object.assign(console, log.functions);
 
 const argv = process.argv.slice(1);
@@ -42,10 +43,6 @@ for (let i = 0; i < argv.length; i++) {
   }
 }
 
-if (options.noHA) {
-  app.disableHardwareAcceleration();
-}
-
 
 //Prepare all the managers
 const store = new Store();
@@ -56,6 +53,10 @@ const pcapManager = new PacketCapture(mainWindow, store, options);
 const trayMenu = new TrayMenu(mainWindow, overlayManager, store, pcapManager);
 const metrics = new MetricsSystem(mainWindow, store);
 const datFilesWatcher = new DatFilesWatcher(mainWindow, store);
+
+if (options.noHA || store.get('hardware-acceleration', false)) {
+  app.disableHardwareAcceleration();
+}
 
 // Prepare listeners connector
 const ipcListenersManager = new IpcListenersManager(pcapManager, overlayManager, mainWindow, store, trayMenu, proxyManager);

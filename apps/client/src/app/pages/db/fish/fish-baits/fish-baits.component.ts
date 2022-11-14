@@ -6,6 +6,8 @@ import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
 import { EChartsOption } from 'echarts';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { formatNumber } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-fish-baits',
@@ -29,7 +31,6 @@ export class FishBaitsComponent {
         map(([names, icons]) => {
           return Object.values(res.data.byId)
             .sort((a, b) => b.occurrences - a.occurrences)
-            .slice(0, 10)
             .map((bait) => ({
               name: names.find((i) => i.id === bait.id)?.name ?? '--',
               value: bait.occurrences,
@@ -45,22 +46,48 @@ export class FishBaitsComponent {
 
   options$: Observable<EChartsOption> = this.baitsChartData$.pipe(
     map(entries => {
-      return {
+      const legendData = entries.map(entry => {
+        return {
+          name: entry.name,
+          icon: `image://https://xivapi.com${entry.icon}`
+        };
+      });
+      return <EChartsOption>{
         tooltip: {
           trigger: 'item'
         },
         avoidLabelOverlap: true,
         backgroundColor: '#191E25',
+        legend: {
+          type: 'scroll',
+          orient: 'vertical',
+          right: 10,
+          top: 20,
+          bottom: 20,
+          icon: 'circle',
+          data: legendData,
+          formatter: name => {
+            const total = entries.find(e => e.name === name)?.value;
+            return `${name}: ${formatNumber(total, this.translate.currentLang, '1.0-0')}`;
+          }
+        },
         series: [
           {
             type: 'pie',
-            radius: '40%',
+            radius: ['30%', '50%'],
             data: entries.map(entry => {
               return {
                 name: entry.name,
                 value: entry.value
               };
             }),
+            center: ['40%', '50%'],
+            label: {
+              show: false
+            },
+            labelLine: {
+              show: false
+            },
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,
@@ -78,7 +105,8 @@ export class FishBaitsComponent {
     private readonly i18n: I18nToolsService,
     private readonly lazyData: LazyDataFacade,
     public readonly settings: SettingsService,
-    public readonly fishCtx: FishContextService
+    public readonly fishCtx: FishContextService,
+    private readonly translate: TranslateService
   ) {
   }
 }

@@ -57,7 +57,7 @@
   "Download_desktop_app": "데스크톱 앱 다운로드",
   "Find_us_on_twitter": "공식 트위터",
   "Join_discord_server": "팀크래프트 디스코드 참여",
-  "See_code_github": "Github에서 코드 보기",
+  "See_code_github": "Star the project on Github",
   "Support_on_patreon": "Patreon에서 프로젝트 후원",
   "Access_patreon_page": "Patreon 페이지로 이동",
   "Like_the_tool": "해당 기능에 만족하셨나요?",
@@ -1598,6 +1598,8 @@
       "Bite_time": "입질 시간",
       "Spots": "낚싯터",
       "Min_gathering": "최소 획득력",
+      "Min_observed_gathering": "Min. observed gathering",
+      "Min_observed_gathering_explain": "The minimum value among all the automated reports we have so far. Doesn't mean it's the minimum gathering required, just the one we observed.",
       "Min_size": "최소 크기",
       "Max_size": "최대 크기",
       "Avg_size": "평균 크기",
@@ -1641,6 +1643,8 @@
         "Size": "크기",
         "Large": "월척",
         "Time_since_thrown": "[낚싯대 던지기] 사용 후 시간",
+        "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
+        "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
         "ERRORS": {
           "No_bait": "미끼가 확인되지 않습니다. 재인식을 위해 미끼를 한번 바꿔주세요",
           "No_stats": "능력치를 확인하지 못했습니다. 어부로 다시 직업을 변경하여 해결하세요."
@@ -1657,6 +1661,8 @@
       "Fish_per_hookset": "낚아채기당 물고기",
       "Include_misses": "놓친 수 포함",
       "Miss": "놓침",
+      "Remove_this_bait": "Remove this bait",
+      "Bait_removed": "Bait removed from this spot",
       "Position_unknown": "알 수 없는 장소"
     },
     "NODE": {
@@ -2868,6 +2874,7 @@
     "Speed": "속도",
     "Shadow_size": "그림자 크기",
     "Deprecated": "해당 아이템은 더 이상 획득할 수 없습니다",
+    "Select_all": "Select all proposals",
     "SPEEDS": {
       "VERY_SLOW": "매우 느림",
       "SLOW": "느림",
@@ -2988,6 +2995,9 @@
       "Categories": "Categories",
       "No_planning": "No planning available",
       "No_planning_explain": " Teamcraft is not able to compute a planning because there's too few recipes available, try to change your island level or uncheck some material exclusions.",
+      "Next_week_prep": "Materials you should prepare for next week",
+      "Crop_materials": "Crops",
+      "Pasture_materials": "Pasture",
       "POPULARITY": {
         "Very_high": "Very high",
         "High": "High",

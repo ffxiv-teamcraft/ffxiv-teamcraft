@@ -119,7 +119,7 @@ import { initialState as listsInitialState, listsReducer } from './modules/list/
 import { ListsEffects } from './modules/list/+state/lists.effects';
 import { ListsActionTypes, SetItemDone } from './modules/list/+state/lists.actions';
 import { GOOGLE_ANALYTICS_ROUTER_INITIALIZER_PROVIDER } from './core/analytics/analytics-router-initializer';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { enableMultiTabIndexedDbPersistence, getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { getAuth, provideAuth } from '@angular/fire/auth';
@@ -217,7 +217,11 @@ const nzConfig: NzConfig = {
 
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
+    provideFirestore(() => {
+      const firestore = getFirestore();
+      enableMultiTabIndexedDbPersistence(firestore);
+      return firestore;
+    }),
     provideDatabase(() => getDatabase()),
     provideFunctions(() => getFunctions()),
     providePerformance(() => getPerformance()),

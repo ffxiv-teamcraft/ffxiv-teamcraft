@@ -3,6 +3,8 @@ import { IpcService } from '../../../core/electron/ipc.service';
 import { combineLatest, interval, Observable, ReplaySubject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { map } from 'rxjs/operators';
+import { FishingReporterState } from '../../../core/data-reporting/state/fishing-reporter-state';
+import { LazyFishingSpot } from '../../../lazy-data/model/lazy-fishing-spot';
 
 @Component({
   selector: 'app-fishing-reporter-overlay',
@@ -11,7 +13,7 @@ import { map } from 'rxjs/operators';
 })
 export class FishingReporterOverlayComponent {
 
-  public state$: ReplaySubject<any> = new ReplaySubject<any>();
+  public state$: ReplaySubject<FishingReporterState> = new ReplaySubject<FishingReporterState>();
 
   public throwTime$: Observable<number> = combineLatest([interval(1000), this.state$]).pipe(
     map(([, state]) => {
@@ -29,7 +31,7 @@ export class FishingReporterOverlayComponent {
   );
 
   public isIgnoredSpot$ = this.state$.pipe(
-    map(state => state.spot >= 10000)
+    map(state => state.spot?.id >= 10000)
   );
 
   constructor(private ipc: IpcService, private translate: TranslateService) {
@@ -39,11 +41,11 @@ export class FishingReporterOverlayComponent {
     this.ipc.send('fishing-state:get');
   }
 
-  openSpotInMainWindow(spot: any): void {
+  openSpotInMainWindow(spot: LazyFishingSpot): void {
     this.ipc.send('overlay:open-page', `/db/${this.translate.currentLang}/fishing-spot/${spot.id}`);
   }
 
-  getErrors(state: any): string[] {
+  getErrors(state: FishingReporterState): string[] {
     const errors = [];
     if (!state.baitId) {
       errors.push('DB.FISH.OVERLAY.ERRORS.No_bait');

@@ -4,6 +4,7 @@ import { Store } from '../store';
 import { OverlayManager } from './overlay-manager';
 import { ProxyManager } from '../tools/proxy-manager';
 import { Subject } from 'rxjs';
+import { join } from 'path';
 
 export class MainWindow {
 
@@ -75,9 +76,9 @@ export class MainWindow {
       icon: `file://${Constants.BASE_APP_PATH}/assets/app-icon.png`,
       title: 'FFXIV Teamcraft',
       webPreferences: {
-        nodeIntegration: true,
-        contextIsolation: false,
-        backgroundThrottling: false
+        backgroundThrottling: false,
+        sandbox: true,
+        preload: join(__dirname, '../preload.js')
       }
     };
     Object.assign(opts, this.store.get('win:bounds', {}));

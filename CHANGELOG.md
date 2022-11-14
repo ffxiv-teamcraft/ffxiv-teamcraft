@@ -2,6 +2,108 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.9.12"></a>
+## [9.9.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.11...v9.9.12) (2022-11-13)
+
+
+### Bug Fixes
+
+* **desktop:** fixed island sanctuary inventory not updating properly ([485d668](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/485d668))
+* **desktop:** fixed overlay close breaking the overlay entirely until restart ([68d6960](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/68d6960))
+
+
+### Features
+
+* **desktop:** new setting to disable hardware acceleration ([42098a9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/42098a9))
+* **desktop:** report ignored bites too ([c87fdc9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c87fdc9))
+
+
+
+<a name="9.9.11"></a>
+## [9.9.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.10...v9.9.11) (2022-11-10)
+
+
+### Bug Fixes
+
+* **db:** fixed some instance not being parsed properly due to SE hyphens ([db8d8a6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/db8d8a6))
+* **gearset:** fixed absurd result for average ilvl due to operations priority ([e6781fe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e6781fe))
+
+
+### Features
+
+* **db:** ability for allagan checkers to remove baits from fishing spots ([3c06cab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3c06cab))
+* **desktop:** many security improvements ([4521c55](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4521c55))
+* **desktop:** update bundled npcap installer to 1.70 ([3440019](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3440019))
+
+
+
+<a name="9.9.10"></a>
+## [9.9.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.8...v9.9.10) (2022-11-07)
+
+
+### Bug Fixes
+
+* **allagan-reports:** fixed spawn and duration not handling empty value properly ([e46b5f4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e46b5f4))
+* **db:** remove other data sources when the extract contains DEPRECATED source ([b297432](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b297432))
+* **db:** removed outdated instance sources ([015dae8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/015dae8))
+* **fishing-reporter:** brand new mooch detection, better reliability to reduce bad reports ([058d633](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/058d633))
+* **fishing-reporter:** fixed reports not sent to the server ([7517ec2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7517ec2))
+* **layout:** added many new housing vendor suppliers to the housing filter ([4bf270e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4bf270e))
+* **lists:** fixed list split popup not opening at all ([72e9a75](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/72e9a75))
+* **simulator:** fixed average ilvl formula for jobs without offhand ([c4f2303](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c4f2303))
+
+
+### Features
+
+* **allagan-reports:** new button to mass select proposals ([dd4b15a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dd4b15a))
+* **db:** import of over 1200 allagan reports ([990264b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/990264b))
+* **db:** support for the new NA datacenter ([f84e100](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f84e100))
+* **metrics:** better pie charts for metrics dashboard ([3e44c10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3e44c10)), closes [#2401](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2401)
+
+
+
+<a name="9.9.9"></a>
+## [9.9.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.8...v9.9.9) (2022-11-07)
+
+
+### Bug Fixes
+
+* **allagan-reports:** fixed spawn and duration not handling empty value properly ([e46b5f4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e46b5f4))
+* **db:** remove other data sources when the extract contains DEPRECATED source ([b297432](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b297432))
+* **db:** removed outdated instance sources ([015dae8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/015dae8))
+* **fishing-reporter:** brand new mooch detection, better reliability to reduce bad reports ([058d633](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/058d633))
+* **layout:** added many new housing vendor suppliers to the housing filter ([4bf270e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4bf270e))
+* **lists:** fixed list split popup not opening at all ([72e9a75](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/72e9a75))
+* **simulator:** fixed average ilvl formula for jobs without offhand ([c4f2303](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c4f2303))
+
+
+### Features
+
+* **allagan-reports:** new button to mass select proposals ([dd4b15a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dd4b15a))
+* **db:** import of over 1200 allagan reports ([990264b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/990264b))
+* **db:** support for the new NA datacenter ([f84e100](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f84e100))
+* **metrics:** better pie charts for metrics dashboard ([3e44c10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3e44c10)), closes [#2401](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2401)
+
+
+
+<a name="9.9.8"></a>
+## [9.9.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.7...v9.9.8) (2022-11-01)
+
+
+### Bug Fixes
+
+* **db:** fixed "Show more" button showing when there isn't more to show in trades ([71f455c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/71f455c))
+* **island-workshop:** fixed 20h schedule sometimes happening when no combo found ([7c5c31e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7c5c31e))
+* **log-tracker:** fixed first data updates not working on log state ([18dbc6f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/18dbc6f))
+* **log-tracker:** Housing's Other category is now listed as required for achievement ([d24c622](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d24c622))
+
+
+### Features
+
+* **fishing-overlay:** display when fishing in an unsupported spot ([fe95856](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fe95856))
+
+
+
 <a name="9.9.7"></a>
 ## [9.9.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.6...v9.9.7) (2022-10-28)
 

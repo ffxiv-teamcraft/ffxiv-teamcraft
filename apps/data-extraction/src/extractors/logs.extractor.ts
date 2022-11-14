@@ -251,7 +251,7 @@ export class LogsExtractor extends AbstractExtractor {
       this.persistToJsonAsset('fishes', fishes);
     });
 
-    this.getAllEntries('https://xivapi.com/FishingSpot', true).subscribe((completeFetch) => {
+    this.aggregateAllPages('https://xivapi.com/FishingSpot?columns=Item*,PlaceName,TerritoryType,ID,GatheringLevel,X,Y,Z,FishingSpotCategory,Icon,PlaceName').subscribe((completeFetch) => {
       const spots = [];
       completeFetch
         .filter(spot => spot.Item0 !== null && spot.PlaceName !== null && (spot.TerritoryType !== null || spot.ID >= 10000))
@@ -268,6 +268,7 @@ export class LogsExtractor extends AbstractExtractor {
             placeId: spot.TerritoryType.PlaceName.ID,
             zoneId: spot.PlaceName.ID,
             level: spot.GatheringLevel,
+            category: spot.FishingSpotCategory,
             coords: spot.ID >= 10000 ? diademFishingSpotCoords[spot.ID] : {
               x: Math.floor(100 * (41.0 / c) * (spot.X / 2048.0) + 1) / 100 + 1,
               y: Math.floor(100 * (41.0 / c) * (spot.Z / 2048.0) + 1) / 100 + 1
@@ -292,6 +293,7 @@ export class LogsExtractor extends AbstractExtractor {
                 mapId: spot.TerritoryType.Map.ID,
                 placeId: spot.TerritoryType.PlaceName.ID,
                 zoneId: spot.PlaceName.ID,
+                category: spot.FishingSpotCategory,
                 spot: {
                   id: spot.ID,
                   coords: {

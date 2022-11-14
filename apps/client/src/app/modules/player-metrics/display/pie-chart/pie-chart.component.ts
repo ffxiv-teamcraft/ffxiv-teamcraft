@@ -9,6 +9,7 @@ import { SettingsService } from '../../../settings/settings.service';
 import { Observable } from 'rxjs';
 import { safeCombineLatest } from '../../../../core/rxjs/safe-combine-latest';
 import { EChartsOption } from 'echarts';
+import { formatNumber } from '@angular/common';
 
 @Component({
   selector: 'app-pie-chart',
@@ -56,16 +57,42 @@ export class PieChartComponent extends AbstractMetricDisplayComponent {
       if(values.length === 0){
         return { empty: true }
       }
-      return {
+      return <EChartsOption>{
         tooltip: {
           trigger: 'item'
         },
         backgroundColor: '#292929',
+        legend: {
+          type: 'scroll',
+          left: 10,
+          top: 20,
+          bottom: 20,
+          orient: 'vertical',
+          formatter: name => {
+            return `${name}: ${formatNumber(values.find(v => v.name === name)?.value || 0, this.translate.currentLang, '1.0-0')}`
+          }
+        },
+        title: {
+          bottom: '5%',
+          left: 'center',
+          text: `${this.translate.instant('COMMON.Total')}: ${formatNumber(values.reduce((acc, v) => acc + v.value, 0), this.translate.currentLang, '1.0-0')}`
+        },
         series: [
           {
             type: 'pie',
-            radius: '50%',
+            radius: ['40%', '70%'],
             data: values,
+            itemStyle: {
+              borderRadius: 10,
+              borderColor: '#292929',
+              borderWidth: 2
+            },
+            label: {
+              show: false
+            },
+            labelLine: {
+              show: false
+            },
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,

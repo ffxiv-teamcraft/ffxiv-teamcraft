@@ -162,7 +162,7 @@
                   nz-menu-item>
                 {{'LIST.Unarchive' | translate}}
               </li>
-              <li (nzClick)="openSplitPopup(_list)" *ngIf="_list.finalItems.length > 1 && isWriter$ | async"
+              <li (click)="openSplitPopup(_list)" *ngIf="_list.finalItems.length > 1 && isWriter$ | async"
                   nz-menu-item>
                 {{'LIST_DETAILS.Split_list' | translate}}
               </li>

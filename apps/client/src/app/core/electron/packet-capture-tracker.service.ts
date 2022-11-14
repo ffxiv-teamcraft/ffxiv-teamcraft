@@ -190,12 +190,12 @@ export class PacketCaptureTrackerService {
       this.eorzeaFacade.setPcapWeather(packet.weatherId);
     });
 
-    this.lazyData.getEntry('baitItems').pipe(
+    this.lazyData.getEntry('baits').pipe(
       switchMap(baitItems => {
         return this.ipc.packets$.pipe(
           ofMessageType('actorControlSelf', 'fishingBaitMsg'),
           toIpcData(),
-          filter(packet => baitItems.includes(packet.baitId))
+          filter(packet => baitItems.some(i => i.id === packet.baitId))
         );
       })
     ).subscribe(packet => {

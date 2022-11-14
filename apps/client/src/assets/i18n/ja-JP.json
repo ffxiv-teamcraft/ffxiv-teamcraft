@@ -57,7 +57,7 @@
   "Download_desktop_app": "デスクトップアプリをダウンロード",
   "Find_us_on_twitter": "公式ツイッター",
   "Join_discord_server": "Discord サーバーに参加する",
-  "See_code_github": "Githubでコードを見る",
+  "See_code_github": "Star the project on Github",
   "Support_on_patreon": "Patreonで支援する",
   "Access_patreon_page": "Patreon ページへ移動",
   "Like_the_tool": "ツールを楽しく使ってもらえていますか？",
@@ -1598,6 +1598,8 @@
       "Bite_time": "フッキング時間",
       "Spots": "釣り場スポット",
       "Min_gathering": "最小獲得力",
+      "Min_observed_gathering": "Min. observed gathering",
+      "Min_observed_gathering_explain": "The minimum value among all the automated reports we have so far. Doesn't mean it's the minimum gathering required, just the one we observed.",
       "Min_size": "最小サイズ",
       "Max_size": "最大サイズ",
       "Avg_size": "平均サイズ",
@@ -1641,6 +1643,8 @@
         "Size": "サイズ",
         "Large": "Large",
         "Time_since_thrown": "キャスティング使用後時間",
+        "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
+        "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
         "ERRORS": {
           "No_bait": "No bait detected. Switch bait once to fix.",
           "No_stats": "No stats detected. Switch to Fisher again to fix."
@@ -1657,6 +1661,8 @@
       "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Include misses",
       "Miss": "Miss",
+      "Remove_this_bait": "Remove this bait",
+      "Bait_removed": "Bait removed from this spot",
       "Position_unknown": "Unknown location"
     },
     "NODE": {
@@ -2868,6 +2874,7 @@
     "Speed": "Speed",
     "Shadow_size": "Shadow size",
     "Deprecated": "This item cannot be obtained anymore",
+    "Select_all": "Select all proposals",
     "SPEEDS": {
       "VERY_SLOW": "Very slow",
       "SLOW": "Slow",
@@ -2988,6 +2995,9 @@
       "Categories": "特性",
       "No_planning": "No planning available",
       "No_planning_explain": " Teamcraft is not able to compute a planning because there's too few recipes available, try to change your island level or uncheck some material exclusions.",
+      "Next_week_prep": "Materials you should prepare for next week",
+      "Crop_materials": "Crops",
+      "Pasture_materials": "Pasture",
       "POPULARITY": {
         "Very_high": "大人気",
         "High": "人気",

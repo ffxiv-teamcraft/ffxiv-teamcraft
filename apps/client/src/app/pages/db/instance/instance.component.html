@@ -1,199 +1,108 @@
-<ng-container *ngIf="gtData$ | async as gtData; else loader">
-  <div *ngIf="xivapiInstance$ | async as xivapiInstance" [style.padding]="'0 25px' | ifMobile: '0'"
-       fxLayout="column" fxLayoutGap="10px">
-    <div class="top-bar" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
-         fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px" fxLayoutGap.lt-md="10px">
-      <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
-           fxLayoutAlign="space-between" fxLayoutGap="10px">
-        <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img [src]="xivapiInstance.Icon | xivapiIcon" alt="{{xivapiInstance.ID | i18nRow:'instances' | i18n}}"
-               class="item-icon">
-          <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{xivapiInstance.ID | i18nRow:'instances' | i18n}}</h2>
-            <div *ngIf="xivapiInstance.ContentType" class="item-kind">
-              {{xivapiInstance.ContentType | xivapiL12n: 'contentTypes' | i18n}}
-            </div>
-            <div *ngIf="xivapiInstance.GamePatch" class="patch">
-              {{xivapiInstance.GamePatch | xivapiL12n: 'patchs' | i18n}}
-              <app-db-button [id]="xivapiInstance.GamePatch.ID" type="patch"></app-db-button>
-            </div>
+<div *ngIf="xivapiInstance$ | async as xivapiInstance; else loader" [style.padding]="'0 25px' | ifMobile: '0'"
+     fxLayout="column" fxLayoutGap="10px">
+  <div class="top-bar" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
+       fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px" fxLayoutGap.lt-md="10px">
+    <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
+         fxLayoutAlign="space-between" fxLayoutGap="10px">
+      <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+        <img [src]="xivapiInstance.Icon | xivapiIcon" alt="{{xivapiInstance.ID | i18nRow:'instances' | i18n}}"
+             class="item-icon">
+        <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
+          <h2 class="item-name">{{xivapiInstance.ID | i18nRow:'instances' | i18n}}</h2>
+          <div *ngIf="xivapiInstance.ContentType" class="item-kind">
+            {{xivapiInstance.ContentType | xivapiL12n: 'contentTypes' | i18n}}
+          </div>
+          <div *ngIf="xivapiInstance.GamePatch" class="patch">
+            {{xivapiInstance.GamePatch | xivapiL12n: 'patchs' | i18n}}
+            <app-db-button [id]="xivapiInstance.GamePatch.ID" type="patch"></app-db-button>
           </div>
         </div>
-        <img [src]="xivapiInstance.Banner | xivapiIcon" alt="" class="instance-banner">
-        <div *ngIf="links$ | async as links" class="links" fxLayout="row" fxLayoutAlign="flex-start center"
-             fxLayoutGap="5px">
-          <a *ngFor="let link of links" [href]="link.url" [nzTooltipTitle]="link.title" nz-tooltip target="_blank">
-            <img [alt]="link.title" [src]="link.icon" class="link-icon">
-          </a>
-        </div>
       </div>
-      <div fxFlex="1 1 auto">
-        <p *ngIf="xivapiInstance.Description" [innerHTML]="xivapiInstance | xivapiL12n: 'instanceDescriptions':'Description' | i18n | xivUIText"></p>
-      </div>
-      <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
-                        [value]="xivapiInstance | i18nRow:'instances'"></app-i18n-display>
-    </div>
-    <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
-      <div class="details-block">
-        <div class="detail-name">{{'DB.Team_size' | translate}}</div>
-        <div class="detail-value">{{(xivapiInstance.ContentMemberType.HealersPerParty
-          + xivapiInstance.ContentMemberType.MeleesPerParty
-          + xivapiInstance.ContentMemberType.RangedPerParty
-          + xivapiInstance.ContentMemberType.TanksPerParty) || 1}}</div>
-      </div>
-      <div class="details-block">
-        <div class="detail-name">{{'DB.Time' | translate}}</div>
-        <div class="detail-value">{{xivapiInstance.TimeLimitMin}}</div>
-      </div>
-      <div class="details-block">
-        <div class="detail-name">{{'DB.Min_level' | translate}}</div>
-        <div class="detail-value">{{xivapiInstance.ContentFinderCondition.ClassJobLevelRequired}}</div>
-      </div>
-      <div class="details-block">
-        <div class="detail-name">{{'DB.Sync_to' | translate}}</div>
-        <div class="detail-value">{{xivapiInstance.ContentFinderCondition.ClassJobLevelSync}}</div>
-      </div>
-      <div *ngIf="gtData.instance.min_ilvl" class="details-block">
-        <div class="detail-name">{{'DB.Min_ilevel' | translate}}</div>
-        <div class="detail-value">{{gtData.instance.min_ilvl}}</div>
-      </div>
-      <div class="details-block">
-        <div class="detail-name">{{'DB.Exp' | translate}}</div>
-        <div class="detail-value">{{xivapiInstance.InstanceClearExp | number}}</div>
-      </div>
-      <div class="details-block">
-        <div class="detail-name">{{'DB.Week_restriction' | translate}}</div>
-        <div class="detail-value">{{(xivapiInstance.WeekRestriction === 1 ? 'Yes' : 'No') | translate}}</div>
+      <img [src]="xivapiInstance.Banner | xivapiIcon" alt="" class="instance-banner">
+      <div *ngIf="links$ | async as links" class="links" fxLayout="row" fxLayoutAlign="flex-start center"
+           fxLayoutGap="5px">
+        <a *ngFor="let link of links" [href]="link.url" [nzTooltipTitle]="link.title" nz-tooltip target="_blank">
+          <img [alt]="link.title" [src]="link.icon" class="link-icon">
+        </a>
       </div>
     </div>
-    <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiInstance.ID"
-                     type="instance"></app-db-comments>
-    <div>
-      <nz-divider [nzText]="'DB.Fights' | translate" nzOrientation="left"></nz-divider>
+    <div fxFlex="1 1 auto">
+      <p *ngIf="xivapiInstance.Description" [innerHTML]="xivapiInstance | xivapiL12n: 'instanceDescriptions':'Description' | i18n | xivUIText"></p>
     </div>
-    <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
-      <nz-card *ngFor="let fight of gtData.instance.fights" [nzTitle]="title" class="details-card" fxFlex="1 1 auto"
-               nzBordered="false">
-        <ng-template #title>
-          <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div>
-              {{('DB.FIGHT_TYPE.' + fight.type) | translate}}
-            </div>
-          </div>
-        </ng-template>
-        <ng-container *ngIf="fight.mobs.length > 1">
-          <div *ngFor="let mob of fight.mobs">{{mob | i18nRow:'mobs' | i18n}}</div>
-        </ng-container>
-        <ng-container *ngIf="fight.mobs.length === 1">
-          <h2>{{fight.mobs[0] | i18nRow:'mobs' | i18n}}</h2>
-        </ng-container>
-        <div *ngIf="fight.currency">
-          <h3>
-            {{'DB.Currencies_reward' | translate}}
-          </h3>
-          <div fxLayout="column" fxLayoutGap="5px">
-            <div *ngFor="let currency of fight.currency" fxLayout="row" fxLayoutAlign="flex-start center"
-                 fxLayoutGap="5px">
-              <app-item-icon [icon]="currency.id | lazyIcon" [itemId]="currency.id" [width]="32"></app-item-icon>
-              <div>{{currency.id | itemName | i18n}} x {{currency.amount}}</div>
-            </div>
-          </div>
-        </div>
-        <div *ngIf="fight.coffer" fxLayout="column" fxLayoutGap="10px">
-          <h3>
-            {{'DB.Chest_content' | translate}}
-          </h3>
-          <div fxLayout="column" fxLayoutGap="5px">
-            <div *ngFor="let reward of fight.coffer.items" fxLayout="row" fxLayoutAlign="flex-start center"
-                 fxLayoutGap="5px">
-              <app-item-icon [icon]="reward | lazyIcon" [itemId]="reward" [width]="32"></app-item-icon>
-              <div [appItemRarity]="reward">{{reward | itemName | i18n}}</div>
-            </div>
-          </div>
-        </div>
-      </nz-card>
+    <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
+                      [value]="xivapiInstance | i18nRow:'instances'"></app-i18n-display>
+  </div>
+  <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
+    <div class="details-block">
+      <div class="detail-name">{{'DB.Team_size' | translate}}</div>
+      <div class="detail-value">{{(xivapiInstance.ContentMemberType.HealersPerParty
+        + xivapiInstance.ContentMemberType.MeleesPerParty
+        + xivapiInstance.ContentMemberType.RangedPerParty
+        + xivapiInstance.ContentMemberType.TanksPerParty) || 1}}</div>
     </div>
-    <div>
-      <nz-divider [nzText]="'DB.Instance_details' | translate" nzOrientation="left"></nz-divider>
+    <div class="details-block">
+      <div class="detail-name">{{'DB.Time' | translate}}</div>
+      <div class="detail-value">{{xivapiInstance.TimeLimitMin}}</div>
     </div>
-    <div *ngIf="xivapiInstance.ContentFinderCondition.TerritoryType.Map" fxLayout="row wrap" fxLayout.lt-md="column"
-         fxLayoutGap="10px">
-      <nz-card [nzTitle]="mapTitle" class="details-card" fxFlex="1 1 auto" nzBordered="false">
-        <ng-template #mapTitle>
-          <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div>
-              {{'DB.Map' | translate}}
-            </div>
-          </div>
-        </ng-template>
-        <app-map [mapId]="xivapiInstance.ContentFinderCondition.TerritoryType.Map.ID"></app-map>
-      </nz-card>
-      <nz-card *ngIf="gtData.instance.rewards?.length > 0" [nzTitle]="rewardsTitle" class="details-card" fxFlex="1 1 auto"
-               nzBordered="false">
-        <ng-template #rewardsTitle>
-          <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div>
-              {{'DB.Instance_rewards' | translate}}
-            </div>
-          </div>
-        </ng-template>
-        <div fxLayout="column" fxLayoutGap="5px">
-          <div *ngFor="let reward of gtData.instance.rewards" fxLayout="row" fxLayoutAlign="flex-start center"
-               fxLayoutGap="5px">
-            <app-item-icon [icon]="reward | lazyIcon" [itemId]="reward" [width]="32"></app-item-icon>
-            <div [appItemRarity]="reward">{{reward | itemName | i18n}}</div>
-          </div>
-        </div>
-      </nz-card>
-      <nz-card *ngIf="gtData.instance.unlockedByQuest" [nzTitle]="questTitle" class="details-card" fxFlex="1 1 auto"
-               nzBordered="false">
-        <ng-template #questTitle>
-          <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div>
-              {{'DB.Unlocked_by' | translate}}
-            </div>
-          </div>
-        </ng-template>
-        <div fxLayout="column" fxLayoutGap="5px">
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <img class="img-icon round-icon"
-                 src="./assets/icons/quest.png">
-            <div>{{gtData.instance.unlockedByQuest | i18nRow:'quests' | i18n}}</div>
-            <app-db-button [id]="gtData.instance.unlockedByQuest" type="quest"></app-db-button>
-          </div>
-        </div>
-      </nz-card>
-      <nz-card *ngIf="gtData.instance.coffers" [nzTitle]="chestsTitle" class="details-card" fxFlex="1 1 auto"
-               nzBordered="false">
-        <ng-template #chestsTitle>
-          <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div>
-              {{'DB.Instance_chests' | translate}}
-            </div>
-          </div>
-        </ng-template>
-        <div fxLayout="column">
-          <div *ngFor="let chest of gtData.instance.coffers; let last = last">
-            <h3>{{'DB.Position' | translate}}</h3>
-            <app-map-position [mapId]="xivapiInstance.ContentFinderCondition.TerritoryType.Map.ID"
-                              [marker]="{x: chest.coords[0], y: chest.coords[1]}"
-                              [zoneId]="xivapiInstance.ContentFinderCondition.TerritoryType.Map.PlaceName.ID"></app-map-position>
-            <h3>{{'DB.Content' | translate}}</h3>
-            <div fxLayout="column" fxLayoutGap="5px">
-              <div *ngFor="let item of chest.items" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                <app-item-icon [icon]="item | lazyIcon" [itemId]="item" [width]="32"></app-item-icon>
-                <div [appItemRarity]="item">{{item | itemName | i18n}}</div>
-              </div>
-            </div>
-            <nz-divider *ngIf="!last"></nz-divider>
-          </div>
-        </div>
-      </nz-card>
+    <div class="details-block">
+      <div class="detail-name">{{'DB.Min_level' | translate}}</div>
+      <div class="detail-value">{{xivapiInstance.ContentFinderCondition.ClassJobLevelRequired}}</div>
+    </div>
+    <div class="details-block">
+      <div class="detail-name">{{'DB.Sync_to' | translate}}</div>
+      <div class="detail-value">{{xivapiInstance.ContentFinderCondition.ClassJobLevelSync}}</div>
+    </div>
+    <div class="details-block">
+      <div class="detail-name">{{'DB.Min_ilevel' | translate}}</div>
+      <div class="detail-value">{{xivapiInstance.ContentFinderCondition.ItemLevelRequired}}</div>
+    </div>
+    <div class="details-block">
+      <div class="detail-name">{{'DB.Exp' | translate}}</div>
+      <div class="detail-value">{{xivapiInstance.InstanceClearExp | number}}</div>
+    </div>
+    <div class="details-block">
+      <div class="detail-name">{{'DB.Week_restriction' | translate}}</div>
+      <div class="detail-value">{{(xivapiInstance.WeekRestriction === 1 ? 'Yes' : 'No') | translate}}</div>
     </div>
   </div>
-  <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="xivapiInstance.ID"
+  <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiInstance.ID"
                    type="instance"></app-db-comments>
-</ng-container>
+  <div>
+    <nz-divider [nzText]="'DB.Instance_details' | translate" nzOrientation="left"></nz-divider>
+  </div>
+  <div *ngIf="xivapiInstance.ContentFinderCondition.TerritoryType.Map" fxLayout="row wrap" fxLayout.lt-md="column"
+       fxLayoutGap="10px">
+    <nz-card [nzTitle]="mapTitle" class="details-card" fxFlex="1 1 auto" nzBordered="false">
+      <ng-template #mapTitle>
+        <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div>
+            {{'DB.Map' | translate}}
+          </div>
+        </div>
+      </ng-template>
+      <app-map [mapId]="xivapiInstance.ContentFinderCondition.TerritoryType.Map.ID"></app-map>
+    </nz-card>
+    <nz-card *ngIf="drops$ | async as rewards" [nzTitle]="rewardsTitle" class="details-card" fxFlex="1 1 auto"
+             nzBordered="false">
+      <ng-template #rewardsTitle>
+        <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div>
+            {{'DB.Instance_rewards' | translate}}
+          </div>
+        </div>
+      </ng-template>
+      <div fxLayout="column" fxLayoutGap="5px">
+        <div *ngFor="let reward of rewards" fxLayout="row" fxLayoutAlign="flex-start center"
+             fxLayoutGap="5px">
+          <app-item-icon [icon]="reward | lazyIcon" [itemId]="reward" [width]="32"></app-item-icon>
+          <div [appItemRarity]="reward">{{reward | itemName | i18n}}</div>
+        </div>
+      </div>
+    </nz-card>
+  </div>
+</div>
+<app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="xivapiInstance.ID"
+                 type="instance"></app-db-comments>
 <ng-template #loader>
   <app-page-loader></app-page-loader>
 </ng-template>

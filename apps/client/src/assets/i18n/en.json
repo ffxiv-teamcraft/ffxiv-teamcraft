@@ -517,6 +517,7 @@
     "Reload_auth_token": "Reload auth token",
     "Materia_confidence_rate": "Melding confidence rate",
     "Materia_confidence_rate_explain": "Confidence rate for materia estimate. Higher means that more materias will be suggested to be more confident that with this amount, your melds will succeed",
+    "Disable_hardware_acceleration": "Disable hardware acceleration",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -1618,7 +1619,6 @@
       "Your_ranking": "Your ranking",
       "Include_fisheyes_data": "Include reports using Fish Eyes",
       "Not_enough_data_points": "Not enough data points to display this chart",
-      "Only_10_most_used": "Only showing the 10 most used baits",
       "TUG": {
         "Light": "Light (!)",
         "Medium": "Medium (!!)",
@@ -1663,6 +1663,8 @@
       "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Include misses",
       "Miss": "Miss",
+      "Remove_this_bait": "Remove this bait",
+      "Bait_removed": "Bait removed from this spot",
       "Position_unknown": "Unknown location"
     },
     "NODE": {
@@ -2874,6 +2876,7 @@
     "Speed": "Speed",
     "Shadow_size": "Shadow size",
     "Deprecated": "This item cannot be obtained anymore",
+    "Select_all": "Select all proposals",
     "SPEEDS": {
       "VERY_SLOW": "Very slow",
       "SLOW": "Slow",
