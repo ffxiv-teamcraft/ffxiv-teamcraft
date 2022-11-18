@@ -1,9 +1,7 @@
-import { concat, of } from 'rxjs';
 import { AbstractExtractor } from './abstract-extractor';
 import { MapIdsExtractor } from './extractors/map-ids.extractor';
 import { SingleBar } from 'cli-progress';
 import { MappyExtractor } from './extractors/mappy.extractor';
-import { switchMapTo, tap } from 'rxjs/operators';
 import { LogsExtractor } from './extractors/logs.extractor';
 import { FishParameterExtractor } from './extractors/fish-parameter.extractor';
 import { WeatherRateExtractor } from './extractors/weather-rate.extractor';
@@ -61,6 +59,11 @@ import { green } from 'colors';
 import { GatheringSearchIndexExtractor } from './extractors/gathering-search-index.extractor';
 import { IslandExtractor } from './extractors/island.extractor';
 import { TraitsExtractor } from './extractors/traits.extractor';
+import { KoboldService } from './kobold/kobold.service';
+import { XivDataService } from './xiv/xiv-data.service';
+import { concat, of } from 'rxjs';
+import { switchMap, tap } from 'rxjs/operators';
+import { ItemSeriesExtractor } from './extractors/item-series.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -69,9 +72,9 @@ const argv = yargs(hideBin(process.argv)).argv;
 const { MultiSelect } = require('enquirer');
 
 const extractors: AbstractExtractor[] = [
-  new I18nExtractor('BNpcName', 'mobs'),
-  new I18nExtractor('Title', 'titles'),
-  new I18nExtractor('PlaceName', 'places', {}, 'Name_', false, (row, entities) => {
+  new I18nExtractor('BNpcName', 'mobs', 'Singular_'),
+  new I18nExtractor('Title', 'titles', 'Masculine_', {}),
+  new I18nExtractor('PlaceName', 'places', 'Name_', {}, false, (row, entities) => {
     if (row.ID === 4043) {
       const realName = entities[2566];
       return {
@@ -84,19 +87,20 @@ const extractors: AbstractExtractor[] = [
     }
     return row;
   }),
-  new I18nExtractor('Status', 'statuses', { Icon: 'icon' }),
-  new I18nExtractor('ItemSeries', 'item-series', { 'GameContentLinks.Item.ItemSeries': 'items' }),
-  new I18nExtractor('Achievement', 'achievements', { Icon: 'icon', ItemTargetID: 'itemReward' }),
+  new I18nExtractor('Status', 'statuses', 'Name_', { Icon: 'icon' }),
+  // new I18nExtractor('ItemSeries', 'item-series', 'Name_', { 'GameContentLinks.Item.ItemSeries': 'items' }), // TODO make this possible even with kobold
+  new I18nExtractor('Achievement', 'achievements', 'Name_', { Icon: 'icon', Item: 'itemReward' }),
   new I18nExtractor('CollectablesShopItemGroup', 'collectables-shop-item-group'),
   new I18nExtractor('HWDGathereInspectTerm', 'hwd-phases'),
-  new I18nExtractor('Race', 'races'),
+  new I18nExtractor('Race', 'races', 'Masculine_'),
   new I18nExtractor('SpecialShop', 'special-shop-names'),
   new I18nExtractor('GilShop', 'gil-shop-names'),
   new I18nExtractor('TopicSelect', 'topic-select-names'),
   new I18nExtractor('GrandCompany', 'gc-names'),
-  new I18nExtractor('AirshipExplorationPoint', 'airship-voyages', { ID: 'id' }, 'NameShort_', true),
-  new I18nExtractor('SubmarineExploration', 'submarine-voyages', { ID: 'id' }, 'Destination_'),
+  new I18nExtractor('AirshipExplorationPoint', 'airship-voyages', 'NameShort_', { index: 'id' }, true),
+  new I18nExtractor('SubmarineExploration', 'submarine-voyages', 'Destination_', { index: 'id' }),
   new I18nExtractor('MJICraftworksObjectTheme', 'island-craftworks-theme'),
+  new ItemSeriesExtractor(),
   new TraitsExtractor(),
   new IslandExtractor(),
   new ShopsExtractor(),
@@ -158,64 +162,71 @@ if (process.env.XIVAPI_KEY) {
   console.log('Fast mode enabled');
 }
 
-
 if (process.env.DEV_MODE) {
   console.log(green(`DEV MODE ENABLED, CACHE WILL BE USED`));
 }
 
-const operationsSelection = new MultiSelect({
-  name: 'operations',
-  message: 'What should be extracted ?',
-  choices: [
-    'everything',
-    ...extractors.map(extractor => {
-      return extractor.getName();
-    })
-  ]
-});
+(async () => {
+  const kobold = new KoboldService();
+  await kobold.init();
+  const xiv = new XivDataService(kobold);
+  xiv.UIColor = await xiv.getSheet('UIColor');
 
-if (argv['only']) {
-  const only = argv['only'].split(',');
-  startExtractors(extractors.filter(e => {
-    return only.includes(e.getName());
-  }));
-} else {
-  operationsSelection.run().then((selection: string[]) => {
+  const operationsSelection = new MultiSelect({
+    name: 'operations',
+    message: 'What should be extracted ?',
+    choices: [
+      'everything',
+      ...extractors.map(extractor => {
+        return extractor.getName();
+      })
+    ]
+  });
+
+  if (argv['only']) {
+    const only = argv['only'].split(',');
     startExtractors(extractors.filter(e => {
-      return selection.includes('everything') || selection.includes(e.getName());
+      return only.includes(e.getName());
     }));
-  });
-}
+  } else {
+    operationsSelection.run().then((selection: string[]) => {
+      startExtractors(extractors.filter(e => {
+        return selection.includes('everything') || selection.includes(e.getName());
+      }));
+    });
+  }
 
-function startExtractors(selectedExtractors: AbstractExtractor[]): void {
 
-  const progress = new SingleBar({
-    format: ' {bar} | {label} | {requests} requests done | {value}/{total}',
-    hideCursor: true,
-    barCompleteChar: '\u2588',
-    barIncompleteChar: '\u2591',
-    stopOnComplete: true
-  });
+  function startExtractors(selectedExtractors: AbstractExtractor[]): void {
 
-  progress.start(selectedExtractors.length, 0);
+    const progress = new SingleBar({
+      format: ' {bar} | {label} | {requests} requests done | {value}/{total}',
+      hideCursor: true,
+      barCompleteChar: '\u2588',
+      barIncompleteChar: '\u2591',
+      stopOnComplete: true
+    });
 
-  concat(...selectedExtractors.map(extractor => {
-    return of(null).pipe(
-      tap(() => {
-        progress.update({
-          label: extractor.getName()
-        });
-      }),
-      switchMapTo(extractor.extract(progress))
-    );
-  })).subscribe({
-    next: () => {
-      progress.increment();
-    },
-    complete: () => {
-      progress.stop();
-      process.exit(0);
-    }
-  });
+    progress.start(selectedExtractors.length, 0);
 
-}
+    concat(...selectedExtractors.map(extractor => {
+      return of(null).pipe(
+        tap(() => {
+          progress.update({
+            label: extractor.getName()
+          });
+        }),
+        switchMap(() => extractor.extract(progress, xiv))
+      );
+    })).subscribe({
+      next: () => {
+        progress.increment();
+      },
+      complete: () => {
+        progress.stop();
+        process.exit(0);
+      }
+    });
+
+  }
+})();

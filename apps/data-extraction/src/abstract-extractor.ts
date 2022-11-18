@@ -1,11 +1,13 @@
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
-import { BehaviorSubject, interval, Observable, of, Subject } from 'rxjs';
+import { BehaviorSubject, defer, interval, Observable, of, Subject } from 'rxjs';
 import { first, map, mergeMap, retry, skip, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { XivapiEndpoint, XivapiList } from '@xivapi/angular-client';
 import request from 'request';
 import querystring from 'querystring';
 import { mkdirSync } from 'fs-extra';
+import { XivDataService } from './xiv/xiv-data.service';
+import { ParsedRow } from './xiv/parsed-row';
 
 export abstract class AbstractExtractor {
 
@@ -42,13 +44,13 @@ export abstract class AbstractExtractor {
 
   public abstract getName(): string;
 
-  protected abstract doExtract(): void;
+  protected abstract doExtract(xiv: XivDataService): void;
 
-  public extract(progress: any): Observable<string> {
+  public extract(progress: any, xiv: XivDataService): Observable<string> {
     this.progress = progress;
     return of(null).pipe(
       switchMap(() => {
-        this.doExtract();
+        this.doExtract(xiv);
         return this.done$;
       })
     );
@@ -189,6 +191,9 @@ export abstract class AbstractExtractor {
     );
   }
 
+  /**
+   * @deprecated Prefer getSheet()
+   */
   protected getAllPages<T = any>(endpoint: string, body?: any, label?: string): Observable<XivapiList<T>> {
     const page$ = new BehaviorSubject(1);
     const complete$ = new Subject();
@@ -221,6 +226,9 @@ export abstract class AbstractExtractor {
     );
   };
 
+  /**
+   * @deprecated Prefer getSheet()
+   */
   protected aggregateAllPages<T = any>(endpoint: string, body?: any, label?: string): Observable<T[]> {
     const data = [];
     const res$ = new Subject<T[]>();
@@ -236,6 +244,9 @@ export abstract class AbstractExtractor {
     return res$;
   };
 
+  /**
+   * @deprecated Prefer getSheet()
+   */
   protected getAllEntries<T = any>(endpoint: string, startsAt0?: boolean, label?: string): Observable<T[]> {
     const allIds = startsAt0 ? ['0'] : [];
     const index$ = new Subject<number>();
@@ -264,6 +275,10 @@ export abstract class AbstractExtractor {
       first()
     );
   };
+
+  protected getSheet(xiv: XivDataService, contentName: string, columns?: string[]): Observable<ParsedRow[]> {
+    return defer(() => xiv.getSheet(contentName, columns));
+  }
 
   protected gubalRequest(gql: string): Observable<any> {
     const res$ = new Subject();

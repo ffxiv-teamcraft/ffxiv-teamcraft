@@ -7,4 +7,4 @@ export const patchNotes = `### Bug Fixes
 ### Features
 
 * **desktop:** new setting to disable hardware acceleration.
-* **desktop:** report ignored bites too.`;
+* **desktop:** report ignored bites too.`;
