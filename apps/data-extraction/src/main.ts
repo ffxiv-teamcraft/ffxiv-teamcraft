@@ -88,7 +88,6 @@ const extractors: AbstractExtractor[] = [
     return row;
   }),
   new I18nExtractor('Status', 'statuses', 'Name_', { Icon: 'icon' }),
-  // new I18nExtractor('ItemSeries', 'item-series', 'Name_', { 'GameContentLinks.Item.ItemSeries': 'items' }), // TODO make this possible even with kobold
   new I18nExtractor('Achievement', 'achievements', 'Name_', { Icon: 'icon', Item: 'itemReward' }),
   new I18nExtractor('CollectablesShopItemGroup', 'collectables-shop-item-group'),
   new I18nExtractor('HWDGathereInspectTerm', 'hwd-phases'),
@@ -102,12 +101,14 @@ const extractors: AbstractExtractor[] = [
   new I18nExtractor('MJICraftworksObjectTheme', 'island-craftworks-theme'),
   new ItemSeriesExtractor(),
   new TraitsExtractor(),
+  new WorldsExtractor(),
+  new TerritoriesExtractor(),
+  // Everything above is migrated to kobold
+  new SeedsExtractor(),
+  // Everything above relies on 3rd party APIS and cannot use kobold
   new IslandExtractor(),
   new ShopsExtractor(),
   new NodesExtractor(),
-  new SeedsExtractor(),
-  new WorldsExtractor(),
-  new TerritoriesExtractor(),
   new CollectablesExtractor(),
   new HwdGathererExtractor(),
   new ActionTimelineExtractor(),
