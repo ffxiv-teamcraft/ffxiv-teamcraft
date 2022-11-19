@@ -10,7 +10,7 @@ export class I18nExtractor extends AbstractExtractor {
 
   protected doExtract(xiv: XivDataService): any {
     const entities = {};
-    this.getSheet(xiv, this.contentName, [`${this.nameColumn}*`, ...Object.keys(this.additionalColumns)])
+    this.getSheet(xiv, this.contentName, [`${this.nameColumn}*`, ...Object.keys(this.additionalColumns)], 0)
       .subscribe({
         next: rows => {
           rows.forEach(entity => {
@@ -19,7 +19,6 @@ export class I18nExtractor extends AbstractExtractor {
             }
             const mapped = this.dataMapper(entity, entities);
             if (mapped[`${this.nameColumn}en`] === undefined) {
-              console.log(mapped);
               throw new Error(`Cannot find field ${this.nameColumn}en in i18n extractor ${this.fileName} for sheet ${this.contentName}, perhaps wrong nameColumn?`);
             }
             entities[mapped.index] = {

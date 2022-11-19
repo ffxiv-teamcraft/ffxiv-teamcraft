@@ -56,6 +56,10 @@ export abstract class AbstractExtractor {
     );
   }
 
+  protected getIconHD(icon: string): string {
+    return icon.replace('.png', '_hr1.png');
+  }
+
   protected requireLazyFile(name: string): any {
     return require(join(AbstractExtractor.assetOutputFolder, `${name}.json`));
   }
@@ -276,8 +280,8 @@ export abstract class AbstractExtractor {
     );
   };
 
-  protected getSheet(xiv: XivDataService, contentName: string, columns?: string[]): Observable<ParsedRow[]> {
-    return defer(() => xiv.getSheet(contentName, columns));
+  protected getSheet<T = ParsedRow>(xiv: XivDataService, contentName: string, columns?: string[], depth = 0): Observable<T[]> {
+    return defer(() => xiv.getSheet(contentName, { columns, depth })) as Observable<T[]>;
   }
 
   protected gubalRequest(gql: string): Observable<any> {

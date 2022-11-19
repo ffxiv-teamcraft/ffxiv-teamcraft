@@ -8,7 +8,8 @@ interface ComplexLinkLink {
     key: string;
     value: string | number;
   };
-  sheet: string
+  sheet?: string
+  sheets?: string[]
 }
 
 export interface ComplexLinkConverter {
