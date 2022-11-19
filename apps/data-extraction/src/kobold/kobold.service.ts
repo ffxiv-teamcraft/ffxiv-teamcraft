@@ -2,8 +2,7 @@ import { Kobold } from '@kobold/core';
 import { buildKoboldXIV } from '@kobold/xiv';
 import { ExcelList, Language } from '@kobold/excel/dist/files';
 import { Excel, Row } from '@kobold/excel';
-import { RowConstructor } from '@kobold/excel/dist/row';
-import { ParsedColumn } from '../xiv/parsed-row';
+import { ExtendedRow, ExtendedRowConstructor } from '../xiv/extended-row';
 
 export class KoboldService {
   private kobold: Kobold;
@@ -27,7 +26,7 @@ export class KoboldService {
     }
   }
 
-  public async getSheetData<T extends RowConstructor<R>, R extends (Row & { parsed: Record<string, ParsedColumn> })>(sheetClass: T): Promise<R[]> {
+  public async getSheetData<T extends ExtendedRowConstructor<R>, R extends ExtendedRow>(sheetClass: T): Promise<R[]> {
     const sheetName = sheetClass.sheet;
     if (!this.rawSheetsCache[sheetName]) {
       try {
@@ -40,13 +39,11 @@ export class KoboldService {
         const content = [];
         let counter = 0;
         for await(const row of i18nSheets.en.getRows()) {
-          for (const key of Object.keys(row.parsed)) {
-            if (typeof row.parsed[key] === 'string') {
-              row.parsed[`${key}_en`] = row.parsed[key];
-              row.parsed[`${key}_de`] = await i18nSheets.de.getRow(row.index, row.subIndex).then(r => r.parsed[key]);
-              row.parsed[`${key}_ja`] = await i18nSheets.ja.getRow(row.index, row.subIndex).then(r => r.parsed[key]);
-              row.parsed[`${key}_fr`] = await i18nSheets.fr.getRow(row.index, row.subIndex).then(r => r.parsed[key]);
-            }
+          for (const key of sheetClass.i18nColumns) {
+            row.parsed[`${key}_en`] = row.parsed[key];
+            row.parsed[`${key}_de`] = await i18nSheets.de.getRow(row.index, row.subIndex).then(r => r.parsed[key]);
+            row.parsed[`${key}_ja`] = await i18nSheets.ja.getRow(row.index, row.subIndex).then(r => r.parsed[key]);
+            row.parsed[`${key}_fr`] = await i18nSheets.fr.getRow(row.index, row.subIndex).then(r => r.parsed[key]);
           }
           content.push(row);
           counter++;

@@ -7,6 +7,7 @@ import { StaticResultChunk } from './chunks/static-result-chunk';
 import { UIForegroundResultChunk } from './chunks/ui-foreground-result-chunk';
 import { getNumber } from './get-number';
 import { IfResultChunk } from './chunks/if-result-chunk';
+import { EmphasisItalicResultChunk } from './chunks/emphasis-italic-result-chunk';
 
 export class SeString {
 
@@ -66,6 +67,8 @@ export class SeString {
         return new StaticResultChunk('-');
       case SeStringChunkType.UIForeground:
         return new UIForegroundResultChunk(payloadReader, this.UIColor);
+      case SeStringChunkType.EmphasisItalic:
+        return new EmphasisItalicResultChunk(payloadReader);
       case SeStringChunkType.If:
         return new IfResultChunk(payloadReader, this.UIColor);
       // Idk what the hell UIGlow is supposed to do, let's just skip it for now

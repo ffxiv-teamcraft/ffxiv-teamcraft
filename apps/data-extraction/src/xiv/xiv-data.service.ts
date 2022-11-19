@@ -3,13 +3,11 @@ import { SaintDefinition } from './saint/saint-definition';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { ColumnSeekOptions, Row } from '@kobold/excel/dist/row';
-import { BaseSaintColumnDefinition, SaintRepeatColumnDefinition } from './saint/saint-column-definition';
+import { BaseSaintColumnDefinition, SaintColumnDefinition, SaintRepeatColumnDefinition } from './saint/saint-column-definition';
 import { ParsedColumn, ParsedRow } from './parsed-row';
 import { SeString } from './string/se-string';
-
-class RowWithParsed extends Row {
-  parsed: Record<string, ParsedColumn>;
-}
+import { ColumnDataType } from '@kobold/excel';
+import { ExtendedRow } from './extended-row';
 
 export class XivDataService {
 
@@ -26,7 +24,7 @@ export class XivDataService {
   public async getSheet(sheetName: string, columns?: string[]) {
     const definition = this.getDefinition(sheetName);
     const sheetClass = this.generateSheetClass(definition, columns);
-    const data = await this.kobold.getSheetData<typeof sheetClass, RowWithParsed>(sheetClass);
+    const data = await this.kobold.getSheetData<typeof sheetClass, ExtendedRow>(sheetClass);
     const parsed = data.map(row => this.getParsedRow(row));
     if (definition.definitions.length === 0) {
       return []; // Nothing to parse if there's no definitions
@@ -34,7 +32,7 @@ export class XivDataService {
     return parsed;
   }
 
-  private getParsedRow(row: RowWithParsed): ParsedRow {
+  private getParsedRow(row: ExtendedRow): ParsedRow {
     if (row.parsed.Icon !== undefined) {
       if (row.parsed.Icon === 0) {
         row.parsed.Icon = '';
@@ -64,7 +62,7 @@ export class XivDataService {
 
   private generateSheetClass<T = Row>(definition: SaintDefinition, columns?: string[]) {
     const UIColor = this.UIColor || [];
-    return class DynamicRow extends Row {
+    return class DynamicRow extends ExtendedRow {
       static sheet = definition.sheet;
 
       public parsed: Record<string, ParsedColumn> = {};
@@ -72,6 +70,19 @@ export class XivDataService {
       constructor(opts) {
         super(opts);
         this.generateColumns();
+        if (!DynamicRow.i18nColsParsed) {
+          DynamicRow.i18nColumns = this.sheetHeader.columns
+            .map(({ dataType }, index) => ({ dataType, index }))
+            .filter(col => col.dataType === ColumnDataType.STRING)
+            .map(col => {
+              return definition.definitions.find(c => {
+                return (c.index || 0) === col.index;
+              });
+            })
+            .filter(c => !!c && this.columnIsParsed(c))
+            .map(c => this.cleanupColumnName(this.getColumnName(c)));
+          DynamicRow.i18nColsParsed = true;
+        }
       }
 
       private cleanupColumnName(name: string): string {
@@ -91,7 +102,10 @@ export class XivDataService {
         });
       }
 
-      private getColumnName(col: BaseSaintColumnDefinition): string {
+      private getColumnName(col: BaseSaintColumnDefinition): string | null {
+        if (!col) {
+          return null;
+        }
         if (col.name) {
           return col.name;
         }
@@ -107,20 +121,22 @@ export class XivDataService {
         throw new Error('Cannot find column name for' + JSON.stringify(col));
       }
 
-      generateColumns(): void {
+      private columnIsParsed(col: SaintColumnDefinition): boolean {
+        return !columns || columns.some(c => {
+          if (c.endsWith('_*')) {
+            return this.cleanupColumnName(this.getColumnName(col)).toLowerCase().startsWith(c.toLowerCase().replace('_*', ''));
+          }
+          if (c.endsWith('*')) {
+            return this.cleanupColumnName(this.getColumnName(col)).toLowerCase().startsWith(c.toLowerCase().replace('*', ''));
+          }
+          return c.toLowerCase() === this.cleanupColumnName(this.getColumnName(col)).toLowerCase();
+        });
+      }
+
+      private generateColumns(): void {
         // Let's generate columns from definitions !
         definition.definitions
-          .filter(col => {
-            return !columns || columns.some(c => {
-              if (c.endsWith('_*')) {
-                return this.cleanupColumnName(this.getColumnName(col)).toLowerCase().startsWith(c.toLowerCase().replace('_*', ''));
-              }
-              if (c.endsWith('*')) {
-                return this.cleanupColumnName(this.getColumnName(col)).toLowerCase().startsWith(c.toLowerCase().replace('*', ''));
-              }
-              return c.toLowerCase() === this.cleanupColumnName(this.getColumnName(col)).toLowerCase();
-            });
-          })
+          .filter(col => this.columnIsParsed(col))
           .forEach(col => {
             const index = col.index || 0;
             if (col.type === 'repeat') {
