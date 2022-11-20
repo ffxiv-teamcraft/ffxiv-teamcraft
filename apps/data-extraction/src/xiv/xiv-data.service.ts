@@ -50,7 +50,12 @@ export class XivDataService {
       .filter(col => this.columnIsParsed(col, columns, true))
       .map((col) => {
         const colName = this.cleanupColumnName(this.getColumnName(col));
-        const mapper = this.generateConverter(col);
+        let mapper;
+        if (col.type === 'repeat' && col.definition?.converter) {
+          mapper = this.generateConverter(col.definition);
+        } else {
+          mapper = this.generateConverter(col);
+        }
         if (!mapper) {
           return null;
         }
@@ -99,7 +104,11 @@ export class XivDataService {
 
     return content.map(row => {
       return mappers.reduce((acc, entry) => {
-        row[entry.col] = entry.mapper.fn(Number(row[entry.col]), row, sheets);
+        if (Array.isArray(row[entry.col])) {
+          row[entry.col] = (row[entry.col] as number[]).map(e => entry.mapper.fn(Number(e), row, sheets));
+        } else {
+          row[entry.col] = entry.mapper.fn(Number(row[entry.col]), row, sheets);
+        }
         return row;
       }, row);
     });
@@ -218,7 +227,6 @@ export class XivDataService {
   }
 
   public async getSheet(sheetName: string, options?: GetSheetOptions) {
-    // TODO implement depth per column
     const depth = options?.depth ?? 1;
     const columns = options?.columns;
     const definition = this.getDefinition(sheetName);
@@ -226,7 +234,7 @@ export class XivDataService {
       return []; // Nothing to parse if there's no definitions
     }
     const sheetClass = this.generateSheetClass(definition, columns);
-    const data = await this.kobold.getSheetData<typeof sheetClass, ExtendedRow>(sheetClass);
+    const data = await this.kobold.getSheetData<typeof sheetClass, ExtendedRow>(sheetClass, options?.skipFirst);
     const parsed = data.map(row => this.getParsedRow(row));
     if (depth > 0) {
       return await this.handleLinks(definition, parsed, columns, depth - 1);
@@ -270,27 +278,27 @@ export class XivDataService {
 
       public parsed: Record<string, ParsedColumn> = {};
 
+      public getI18nColumns(): string[] {
+        return this.sheetHeader.columns
+          .map(({ dataType }, index) => ({ dataType, index }))
+          .filter(col => col.dataType === ColumnDataType.STRING)
+          .map(col => {
+            return definition.definitions.find(c => {
+              return (c.index || 0) === col.index;
+            });
+          })
+          .filter(c => !!c && xiv.columnIsParsed(c, columns))
+          .map(c => xiv.cleanupColumnName(xiv.getColumnName(c)));
+      }
+
       constructor(opts) {
         super(opts);
         this.generateColumns();
-        if (!DynamicRow.i18nColsParsed) {
-          DynamicRow.i18nColumns = this.sheetHeader.columns
-            .map(({ dataType }, index) => ({ dataType, index }))
-            .filter(col => col.dataType === ColumnDataType.STRING)
-            .map(col => {
-              return definition.definitions.find(c => {
-                return (c.index || 0) === col.index;
-              });
-            })
-            .filter(c => !!c && xiv.columnIsParsed(c, columns))
-            .map(c => xiv.cleanupColumnName(xiv.getColumnName(c)));
-          DynamicRow.i18nColsParsed = true;
-        }
       }
 
       private handleRepeat(index: number, col: SaintRepeatColumnDefinition): any[] {
         return new Array(col.count).fill(null).map((_, i) => {
-          if (col.definition.type === 'repeat') {
+          if (col.definition?.type === 'repeat') {
             return this.handleRepeat(index + i * col.count, col.definition as SaintRepeatColumnDefinition);
           }
           return this.unknown({ column: index + i });
@@ -304,7 +312,7 @@ export class XivDataService {
           .forEach(col => {
             const index = col.index || 0;
             if ((col).type === 'repeat') {
-              if (col.definition.type === 'group') {
+              if (col.definition?.type === 'group') {
                 return col.definition.members.forEach((member, mi) => {
                   this.parsed[xiv.cleanupColumnName(xiv.getColumnName(member))] = new Array(col.count).fill(null)
                     .map((_, i) => {

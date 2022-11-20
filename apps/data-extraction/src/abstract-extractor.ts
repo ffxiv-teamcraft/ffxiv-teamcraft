@@ -280,8 +280,8 @@ export abstract class AbstractExtractor {
     );
   };
 
-  protected getSheet<T = ParsedRow>(xiv: XivDataService, contentName: string, columns?: string[], depth = 0): Observable<T[]> {
-    return defer(() => xiv.getSheet(contentName, { columns, depth })) as Observable<T[]>;
+  protected getSheet<T = ParsedRow>(xiv: XivDataService, contentName: string, columns?: string[], includeZero = false, depth = 0): Observable<T[]> {
+    return defer(() => xiv.getSheet(contentName, { columns, depth, skipFirst: !includeZero })) as Observable<T[]>;
   }
 
   protected gubalRequest(gql: string): Observable<any> {

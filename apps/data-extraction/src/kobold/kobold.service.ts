@@ -26,7 +26,7 @@ export class KoboldService {
     }
   }
 
-  public async getSheetData<T extends ExtendedRowConstructor<R>, R extends ExtendedRow>(sheetClass: T): Promise<R[]> {
+  public async getSheetData<T extends ExtendedRowConstructor<R>, R extends ExtendedRow>(sheetClass: T, skipFirst = false): Promise<R[]> {
     const sheetName = sheetClass.sheet;
     if (!this.rawSheetsCache[sheetName]) {
       try {
@@ -38,8 +38,16 @@ export class KoboldService {
         };
         const content = [];
         let counter = 0;
+        let i18nColumns = null;
         for await(const row of i18nSheets.en.getRows()) {
-          for (const key of sheetClass.i18nColumns) {
+          if (!i18nColumns) {
+            i18nColumns = row.getI18nColumns();
+          }
+          if (skipFirst && counter === 0) {
+            counter++;
+            continue;
+          }
+          for (const key of i18nColumns) {
             row.parsed[`${key}_en`] = row.parsed[key];
             row.parsed[`${key}_de`] = await i18nSheets.de.getRow(row.index, row.subIndex).then(r => r.parsed[key]);
             row.parsed[`${key}_ja`] = await i18nSheets.ja.getRow(row.index, row.subIndex).then(r => r.parsed[key]);

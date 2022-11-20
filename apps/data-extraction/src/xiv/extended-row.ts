@@ -8,9 +8,8 @@ export abstract class ExtendedRow extends Row {
 
   public static i18nColsParsed = false;
 
+  public abstract getI18nColumns(): string[];
 }
 
 export interface ExtendedRowConstructor<T extends ExtendedRow> extends RowConstructor<T> {
-  i18nColumns: string[];
-  i18nColsParsed: boolean;
 }
