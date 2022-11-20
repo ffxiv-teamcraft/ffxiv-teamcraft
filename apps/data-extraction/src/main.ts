@@ -104,6 +104,9 @@ const extractors: AbstractExtractor[] = [
   new WorldsExtractor(),
   new TerritoriesExtractor(),
   new ItemsExtractor(),
+  new ItemLevelExtractor(),
+  new BaseParamExtractor(),
+  new MateriasExtractor(),
   // Everything above is migrated to kobold
   new SeedsExtractor(),
   // Everything above relies on 3rd party APIS and cannot use kobold
@@ -113,9 +116,6 @@ const extractors: AbstractExtractor[] = [
   new CollectablesExtractor(),
   new HwdGathererExtractor(),
   new ActionTimelineExtractor(),
-  new MateriasExtractor(),
-  new BaseParamExtractor(),
-  new ItemLevelExtractor(),
   new ClassJobModifiersExtractor(),
   new EquipSlotCategoryExtractor(),
   new TribesExtractor(),

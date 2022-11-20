@@ -329,4 +329,20 @@ export abstract class AbstractExtractor {
     const ts = `export const ${variableName} = ${JSON.stringify(content, null, 2)};`;
     writeFileSync(join(AbstractExtractor.outputFolder, `${fileName}.ts`), ts);
   }
+
+  protected removeIndexes(data: ParsedRow): Omit<ParsedRow, 'index' | 'subIndex'> {
+    const { index, subIndex, ...cleaned } = data;
+    return cleaned;
+  }
+
+  protected sortProperties(data: any): any {
+    return Object.entries(data)
+      .sort(([a], [b]) => a < b ? -1 : 1)
+      .reduce((acc, [key, value]) => {
+        return {
+          ...acc,
+          [key]: value
+        };
+      }, {});
+  }
 }
