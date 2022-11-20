@@ -3,7 +3,7 @@ import { SaintDefinition } from './saint/saint-definition';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { ColumnSeekOptions, Row } from '@kobold/excel/dist/row';
-import { BaseSaintColumnDefinition, SaintColumnDefinition, SaintRepeatColumnDefinition } from './saint/saint-column-definition';
+import { BaseSaintColumnDefinition, SaintColumnDefinition, SaintGroupColumnDefinition, SaintRepeatColumnDefinition } from './saint/saint-column-definition';
 import { ParsedColumn, ParsedRow } from './parsed-row';
 import { SeString } from './string/se-string';
 import { ColumnDataType } from '@kobold/excel';
@@ -47,7 +47,7 @@ export class XivDataService {
      *  - null: link to a single row but we didn't find anything
      */
     const mappers = definition.definitions
-      .filter(col => this.columnIsParsed(col, columns))
+      .filter(col => this.columnIsParsed(col, columns, true))
       .map((col) => {
         const colName = this.cleanupColumnName(this.getColumnName(col));
         const mapper = this.generateConverter(col);
@@ -173,6 +173,8 @@ export class XivDataService {
     return name
       .replace('{', '')
       .replace('}', '')
+      .replace('<', '')
+      .replace('>', '')
       .replace('[', '')
       .replace(']', '');
   }
@@ -196,7 +198,7 @@ export class XivDataService {
     throw new Error('Cannot find column name for' + JSON.stringify(col));
   }
 
-  public columnIsParsed(col: SaintColumnDefinition, columns: string[]): boolean {
+  public columnIsParsed(col: SaintColumnDefinition, columns: string[], isForLinks = false): boolean {
     return !columns || columns.some(c => {
       const colName = this.cleanupColumnName(this.getColumnName(col)).toLowerCase();
       if (c.includes('.')) {
@@ -207,6 +209,9 @@ export class XivDataService {
       }
       if (c.endsWith('*')) {
         return colName.startsWith(c.toLowerCase().replace('*', ''));
+      }
+      if (c.endsWith('#')) {
+        return !isForLinks && colName === c.toLowerCase().replace('#', '');
       }
       return c.toLowerCase() === colName;
     });
@@ -283,12 +288,12 @@ export class XivDataService {
         }
       }
 
-      private handleRepeat(index: number, col: SaintRepeatColumnDefinition, offset = 0): any[] {
+      private handleRepeat(index: number, col: SaintRepeatColumnDefinition): any[] {
         return new Array(col.count).fill(null).map((_, i) => {
           if (col.definition.type === 'repeat') {
-            return this.handleRepeat(index + i * col.count, col.definition as SaintRepeatColumnDefinition, offset);
+            return this.handleRepeat(index + i * col.count, col.definition as SaintRepeatColumnDefinition);
           }
-          return this.unknown({ column: index + i + offset });
+          return this.unknown({ column: index + i });
         });
       }
 
@@ -301,9 +306,10 @@ export class XivDataService {
             if ((col).type === 'repeat') {
               if (col.definition.type === 'group') {
                 return col.definition.members.forEach((member, mi) => {
-                  this.parsed[xiv.cleanupColumnName(xiv.getColumnName(member))] = new Array(col.count).fill(null).map((_, i) => {
-                    return this.unknown({ column: index + i + mi });
-                  });
+                  this.parsed[xiv.cleanupColumnName(xiv.getColumnName(member))] = new Array(col.count).fill(null)
+                    .map((_, i) => {
+                      return this.unknown({ column: index + i * (col.definition as SaintGroupColumnDefinition).members.length + mi });
+                    });
                 }, {});
               } else {
                 this.parsed[xiv.cleanupColumnName(xiv.getColumnName(col))] = this.handleRepeat(index, col as SaintRepeatColumnDefinition);

@@ -5,7 +5,7 @@
       {
         "baseParam": 44,
         "value": 4,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -15,7 +15,7 @@
       {
         "baseParam": 44,
         "value": 4,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -25,7 +25,7 @@
       {
         "baseParam": 44,
         "value": 4,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -35,7 +35,7 @@
       {
         "baseParam": 44,
         "value": 6,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -45,7 +45,7 @@
       {
         "baseParam": 44,
         "value": 6,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -55,7 +55,7 @@
       {
         "baseParam": 44,
         "value": 6,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -65,7 +65,7 @@
       {
         "baseParam": 27,
         "value": 10,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -75,7 +75,7 @@
       {
         "baseParam": 22,
         "value": 10,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -85,7 +85,7 @@
       {
         "baseParam": 44,
         "value": 10,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -95,7 +95,7 @@
       {
         "baseParam": 22,
         "value": 12,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -105,7 +105,7 @@
       {
         "baseParam": 22,
         "value": 12,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -115,7 +115,7 @@
       {
         "baseParam": 22,
         "value": 12,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -125,7 +125,7 @@
       {
         "baseParam": 22,
         "value": 12,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -135,7 +135,7 @@
       {
         "baseParam": 45,
         "value": 18,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -145,7 +145,7 @@
       {
         "baseParam": 44,
         "value": 18,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -155,7 +155,7 @@
       {
         "baseParam": 44,
         "value": 18,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -165,7 +165,7 @@
       {
         "baseParam": 27,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -175,7 +175,7 @@
       {
         "baseParam": 27,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -185,7 +185,7 @@
       {
         "baseParam": 27,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -195,7 +195,7 @@
       {
         "baseParam": 27,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -205,7 +205,7 @@
       {
         "baseParam": 27,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -215,7 +215,7 @@
       {
         "baseParam": 27,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -225,7 +225,7 @@
       {
         "baseParam": 44,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -235,7 +235,7 @@
       {
         "baseParam": 27,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -245,7 +245,7 @@
       {
         "baseParam": 45,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -255,7 +255,7 @@
       {
         "baseParam": 22,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -265,7 +265,7 @@
       {
         "baseParam": 45,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -275,7 +275,7 @@
       {
         "baseParam": 22,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -285,7 +285,7 @@
       {
         "baseParam": 22,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -295,7 +295,7 @@
       {
         "baseParam": 22,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -305,7 +305,7 @@
       {
         "baseParam": 45,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -315,7 +315,7 @@
       {
         "baseParam": 44,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -325,7 +325,7 @@
       {
         "baseParam": 44,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -335,7 +335,7 @@
       {
         "baseParam": 44,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -345,7 +345,7 @@
       {
         "baseParam": 22,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -355,7 +355,7 @@
       {
         "baseParam": 45,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -365,7 +365,7 @@
       {
         "baseParam": 45,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -375,7 +375,7 @@
       {
         "baseParam": 45,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -385,7 +385,7 @@
       {
         "baseParam": 45,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -395,7 +395,7 @@
       {
         "baseParam": 45,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -405,7 +405,7 @@
       {
         "baseParam": 45,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -415,7 +415,7 @@
       {
         "baseParam": 27,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -425,7 +425,7 @@
       {
         "baseParam": 19,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -435,7 +435,7 @@
       {
         "baseParam": 44,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -445,7 +445,7 @@
       {
         "baseParam": 22,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -455,7 +455,7 @@
       {
         "baseParam": 44,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -465,7 +465,7 @@
       {
         "baseParam": 22,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -475,7 +475,7 @@
       {
         "baseParam": 22,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -485,7 +485,7 @@
       {
         "baseParam": 22,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -495,7 +495,7 @@
       {
         "baseParam": 19,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -505,7 +505,7 @@
       {
         "baseParam": 44,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -515,7 +515,7 @@
       {
         "baseParam": 19,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -525,7 +525,7 @@
       {
         "baseParam": 44,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -535,7 +535,7 @@
       {
         "baseParam": 22,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -545,7 +545,7 @@
       {
         "baseParam": 45,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -555,7 +555,7 @@
       {
         "baseParam": 45,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -565,7 +565,7 @@
       {
         "baseParam": 45,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -575,7 +575,7 @@
       {
         "baseParam": 45,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -585,7 +585,7 @@
       {
         "baseParam": 45,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -595,7 +595,7 @@
       {
         "baseParam": 45,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -605,7 +605,7 @@
       {
         "baseParam": 22,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -615,7 +615,7 @@
       {
         "baseParam": 22,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -625,7 +625,7 @@
       {
         "baseParam": 22,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -635,7 +635,7 @@
       {
         "baseParam": 44,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -645,7 +645,7 @@
       {
         "baseParam": 22,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -655,7 +655,7 @@
       {
         "baseParam": 45,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -665,7 +665,7 @@
       {
         "baseParam": 45,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -675,7 +675,7 @@
       {
         "baseParam": 44,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -685,7 +685,7 @@
       {
         "baseParam": 22,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -695,7 +695,7 @@
       {
         "baseParam": 45,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -705,7 +705,7 @@
       {
         "baseParam": 44,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -715,7 +715,7 @@
       {
         "baseParam": 44,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -725,7 +725,7 @@
       {
         "baseParam": 22,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -735,7 +735,7 @@
       {
         "baseParam": 45,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -745,7 +745,7 @@
       {
         "baseParam": 45,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -755,7 +755,7 @@
       {
         "baseParam": 45,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -765,7 +765,7 @@
       {
         "baseParam": 45,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -775,7 +775,7 @@
       {
         "baseParam": 45,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -785,7 +785,7 @@
       {
         "baseParam": 45,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -795,7 +795,7 @@
       {
         "baseParam": 27,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -805,7 +805,7 @@
       {
         "baseParam": 44,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -815,7 +815,7 @@
       {
         "baseParam": 45,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -825,7 +825,7 @@
       {
         "baseParam": 44,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -835,7 +835,7 @@
       {
         "baseParam": 22,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -845,7 +845,7 @@
       {
         "baseParam": 44,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -855,7 +855,7 @@
       {
         "baseParam": 22,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -865,7 +865,7 @@
       {
         "baseParam": 44,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -875,7 +875,7 @@
       {
         "baseParam": 27,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -885,7 +885,7 @@
       {
         "baseParam": 22,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -895,7 +895,7 @@
       {
         "baseParam": 44,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -905,7 +905,7 @@
       {
         "baseParam": 44,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -915,7 +915,7 @@
       {
         "baseParam": 22,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -925,7 +925,7 @@
       {
         "baseParam": 44,
         "value": 10,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -935,7 +935,7 @@
       {
         "baseParam": 44,
         "value": 12,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -945,7 +945,7 @@
       {
         "baseParam": 44,
         "value": 18,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -955,7 +955,7 @@
       {
         "baseParam": 27,
         "value": 18,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -965,7 +965,7 @@
       {
         "baseParam": 44,
         "value": 18,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -975,7 +975,7 @@
       {
         "baseParam": 27,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -985,7 +985,7 @@
       {
         "baseParam": 27,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -995,7 +995,7 @@
       {
         "baseParam": 27,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1005,7 +1005,7 @@
       {
         "baseParam": 27,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1015,7 +1015,7 @@
       {
         "baseParam": 27,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1025,7 +1025,7 @@
       {
         "baseParam": 27,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1035,7 +1035,7 @@
       {
         "baseParam": 27,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1045,7 +1045,7 @@
       {
         "baseParam": 27,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1055,7 +1055,7 @@
       {
         "baseParam": 46,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1065,7 +1065,7 @@
       {
         "baseParam": 46,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1075,7 +1075,7 @@
       {
         "baseParam": 46,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1085,7 +1085,7 @@
       {
         "baseParam": 44,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1095,7 +1095,7 @@
       {
         "baseParam": 44,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1105,7 +1105,7 @@
       {
         "baseParam": 44,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1115,7 +1115,7 @@
       {
         "baseParam": 46,
         "value": 6,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1125,7 +1125,7 @@
       {
         "baseParam": 46,
         "value": 6,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1135,7 +1135,7 @@
       {
         "baseParam": 46,
         "value": 6,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1145,7 +1145,7 @@
       {
         "baseParam": 27,
         "value": 10,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1155,7 +1155,7 @@
       {
         "baseParam": 46,
         "value": 10,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1165,7 +1165,7 @@
       {
         "baseParam": 22,
         "value": 12,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1175,7 +1175,7 @@
       {
         "baseParam": 46,
         "value": 12,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1185,7 +1185,7 @@
       {
         "baseParam": 22,
         "value": 12,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1195,7 +1195,7 @@
       {
         "baseParam": 44,
         "value": 14,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1205,7 +1205,7 @@
       {
         "baseParam": 44,
         "value": 14,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1215,7 +1215,7 @@
       {
         "baseParam": 44,
         "value": 14,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1225,7 +1225,7 @@
       {
         "baseParam": 44,
         "value": 18,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -1235,7 +1235,7 @@
       {
         "baseParam": 44,
         "value": 18,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -1245,7 +1245,7 @@
       {
         "baseParam": 22,
         "value": 18,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -1255,7 +1255,7 @@
       {
         "baseParam": 46,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1265,7 +1265,7 @@
       {
         "baseParam": 46,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1275,7 +1275,7 @@
       {
         "baseParam": 46,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1285,7 +1285,7 @@
       {
         "baseParam": 46,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1295,7 +1295,7 @@
       {
         "baseParam": 22,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1305,7 +1305,7 @@
       {
         "baseParam": 46,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1315,7 +1315,7 @@
       {
         "baseParam": 46,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1325,7 +1325,7 @@
       {
         "baseParam": 46,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1335,7 +1335,7 @@
       {
         "baseParam": 46,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1345,7 +1345,7 @@
       {
         "baseParam": 46,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1355,7 +1355,7 @@
       {
         "baseParam": 46,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1365,7 +1365,7 @@
       {
         "baseParam": 44,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1375,7 +1375,7 @@
       {
         "baseParam": 27,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1385,7 +1385,7 @@
       {
         "baseParam": 46,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1395,7 +1395,7 @@
       {
         "baseParam": 22,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1405,7 +1405,7 @@
       {
         "baseParam": 22,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1415,7 +1415,7 @@
       {
         "baseParam": 46,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1425,7 +1425,7 @@
       {
         "baseParam": 27,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1435,7 +1435,7 @@
       {
         "baseParam": 27,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1445,7 +1445,7 @@
       {
         "baseParam": 27,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1455,7 +1455,7 @@
       {
         "baseParam": 22,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -1465,7 +1465,7 @@
       {
         "baseParam": 44,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -1475,7 +1475,7 @@
       {
         "baseParam": 22,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -1485,7 +1485,7 @@
       {
         "baseParam": 44,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -1495,7 +1495,7 @@
       {
         "baseParam": 22,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -1505,7 +1505,7 @@
       {
         "baseParam": 44,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -1527,7 +1527,7 @@
       {
         "baseParam": 46,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1537,7 +1537,7 @@
       {
         "baseParam": 22,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1547,7 +1547,7 @@
       {
         "baseParam": 27,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1557,7 +1557,7 @@
       {
         "baseParam": 44,
         "value": 4,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1567,7 +1567,7 @@
       {
         "baseParam": 19,
         "value": 4,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1577,7 +1577,7 @@
       {
         "baseParam": 46,
         "value": 4,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1587,7 +1587,7 @@
       {
         "baseParam": 46,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1597,7 +1597,7 @@
       {
         "baseParam": 22,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1607,7 +1607,7 @@
       {
         "baseParam": 22,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1617,7 +1617,7 @@
       {
         "baseParam": 22,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1627,7 +1627,7 @@
       {
         "baseParam": 22,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1637,7 +1637,7 @@
       {
         "baseParam": 27,
         "value": 6,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1647,7 +1647,7 @@
       {
         "baseParam": 19,
         "value": 6,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1657,7 +1657,7 @@
       {
         "baseParam": 44,
         "value": 6,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1667,7 +1667,7 @@
       {
         "baseParam": 19,
         "value": 6,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1677,7 +1677,7 @@
       {
         "baseParam": 46,
         "value": 6,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1687,7 +1687,7 @@
       {
         "baseParam": 19,
         "value": 6,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1697,7 +1697,7 @@
       {
         "baseParam": 44,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1707,7 +1707,7 @@
       {
         "baseParam": 44,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1717,7 +1717,7 @@
       {
         "baseParam": 44,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1727,7 +1727,7 @@
       {
         "baseParam": 72,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1737,7 +1737,7 @@
       {
         "baseParam": 44,
         "value": 6,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1747,7 +1747,7 @@
       {
         "baseParam": 27,
         "value": 6,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1757,7 +1757,7 @@
       {
         "baseParam": 72,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1767,7 +1767,7 @@
       {
         "baseParam": 6,
         "value": 12,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -1777,7 +1777,7 @@
       {
         "baseParam": 27,
         "value": 12,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -1787,7 +1787,7 @@
       {
         "baseParam": 70,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1797,7 +1797,7 @@
       {
         "baseParam": 27,
         "value": 12,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -1807,7 +1807,7 @@
       {
         "baseParam": 6,
         "value": 12,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -1817,7 +1817,7 @@
       {
         "baseParam": 27,
         "value": 12,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -1827,7 +1827,7 @@
       {
         "baseParam": 70,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1837,7 +1837,7 @@
       {
         "baseParam": 27,
         "value": 12,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -1847,7 +1847,7 @@
       {
         "baseParam": 6,
         "value": 12,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -1857,7 +1857,7 @@
       {
         "baseParam": 27,
         "value": 12,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -1867,7 +1867,7 @@
       {
         "baseParam": 70,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1877,7 +1877,7 @@
       {
         "baseParam": 44,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1887,7 +1887,7 @@
       {
         "baseParam": 19,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1897,7 +1897,7 @@
       {
         "baseParam": 46,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1907,7 +1907,7 @@
       {
         "baseParam": 44,
         "value": 4,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1917,7 +1917,7 @@
       {
         "baseParam": 44,
         "value": 4,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1927,7 +1927,7 @@
       {
         "baseParam": 44,
         "value": 4,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1937,7 +1937,7 @@
       {
         "baseParam": 10,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1947,7 +1947,7 @@
       {
         "baseParam": 11,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1957,7 +1957,7 @@
       {
         "baseParam": 10,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1967,7 +1967,7 @@
       {
         "baseParam": 11,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1977,7 +1977,7 @@
       {
         "baseParam": 11,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1987,7 +1987,7 @@
       {
         "baseParam": 10,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -1997,7 +1997,7 @@
       {
         "baseParam": 27,
         "value": 7,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2007,7 +2007,7 @@
       {
         "baseParam": 44,
         "value": 11,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2017,7 +2017,7 @@
       {
         "baseParam": 45,
         "value": 7,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2027,7 +2027,7 @@
       {
         "baseParam": 45,
         "value": 7,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2037,7 +2037,7 @@
       {
         "baseParam": 44,
         "value": 7,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2047,7 +2047,7 @@
       {
         "baseParam": 27,
         "value": 7,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2057,7 +2057,7 @@
       {
         "baseParam": 45,
         "value": 7,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2067,7 +2067,7 @@
       {
         "baseParam": 45,
         "value": 7,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2077,7 +2077,7 @@
       {
         "baseParam": 46,
         "value": 7,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2087,7 +2087,7 @@
       {
         "baseParam": 45,
         "value": 7,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2097,7 +2097,7 @@
       {
         "baseParam": 45,
         "value": 7,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2107,7 +2107,7 @@
       {
         "baseParam": 45,
         "value": 7,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2117,7 +2117,7 @@
       {
         "baseParam": 27,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2127,7 +2127,7 @@
       {
         "baseParam": 22,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2137,7 +2137,7 @@
       {
         "baseParam": 46,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2147,7 +2147,7 @@
       {
         "baseParam": 27,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2157,7 +2157,7 @@
       {
         "baseParam": 22,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2167,7 +2167,7 @@
       {
         "baseParam": 45,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2177,7 +2177,7 @@
       {
         "baseParam": 22,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2187,7 +2187,7 @@
       {
         "baseParam": 22,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2197,7 +2197,7 @@
       {
         "baseParam": 22,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2207,7 +2207,7 @@
       {
         "baseParam": 45,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2217,7 +2217,7 @@
       {
         "baseParam": 44,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2227,7 +2227,7 @@
       {
         "baseParam": 11,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2237,7 +2237,7 @@
       {
         "baseParam": 46,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2247,7 +2247,7 @@
       {
         "baseParam": 45,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2257,7 +2257,7 @@
       {
         "baseParam": 11,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2267,7 +2267,7 @@
       {
         "baseParam": 22,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2277,7 +2277,7 @@
       {
         "baseParam": 27,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2287,7 +2287,7 @@
       {
         "baseParam": 11,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2297,7 +2297,7 @@
       {
         "baseParam": 27,
         "value": 24,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2307,7 +2307,7 @@
       {
         "baseParam": 19,
         "value": 24,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2317,7 +2317,7 @@
       {
         "baseParam": 22,
         "value": 24,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2327,7 +2327,7 @@
       {
         "baseParam": 73,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2337,7 +2337,7 @@
       {
         "baseParam": 70,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2347,7 +2347,7 @@
       {
         "baseParam": 73,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2357,7 +2357,7 @@
       {
         "baseParam": 70,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2367,7 +2367,7 @@
       {
         "baseParam": 70,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2377,7 +2377,7 @@
       {
         "baseParam": 73,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2387,7 +2387,7 @@
       {
         "baseParam": 22,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2397,7 +2397,7 @@
       {
         "baseParam": 19,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2407,7 +2407,7 @@
       {
         "baseParam": 70,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2417,7 +2417,7 @@
       {
         "baseParam": 45,
         "value": 11,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2427,7 +2427,7 @@
       {
         "baseParam": 27,
         "value": 11,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2437,7 +2437,7 @@
       {
         "baseParam": 19,
         "value": 11,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2447,7 +2447,7 @@
       {
         "baseParam": 22,
         "value": 11,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2457,7 +2457,7 @@
       {
         "baseParam": 45,
         "value": 11,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2467,7 +2467,7 @@
       {
         "baseParam": 19,
         "value": 11,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2477,7 +2477,7 @@
       {
         "baseParam": 45,
         "value": 11,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2487,7 +2487,7 @@
       {
         "baseParam": 46,
         "value": 11,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2497,7 +2497,7 @@
       {
         "baseParam": 19,
         "value": 11,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2507,7 +2507,7 @@
       {
         "baseParam": 27,
         "value": 19,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -2517,7 +2517,7 @@
       {
         "baseParam": 70,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2527,7 +2527,7 @@
       {
         "baseParam": 46,
         "value": 19,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -2537,7 +2537,7 @@
       {
         "baseParam": 45,
         "value": 19,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -2547,7 +2547,7 @@
       {
         "baseParam": 70,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2557,7 +2557,7 @@
       {
         "baseParam": 22,
         "value": 19,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -2567,7 +2567,7 @@
       {
         "baseParam": 70,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2577,7 +2577,7 @@
       {
         "baseParam": 22,
         "value": 19,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -2587,7 +2587,7 @@
       {
         "baseParam": 19,
         "value": 19,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -2597,7 +2597,7 @@
       {
         "baseParam": 44,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2607,7 +2607,7 @@
       {
         "baseParam": 44,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2617,7 +2617,7 @@
       {
         "baseParam": 44,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2627,7 +2627,7 @@
       {
         "baseParam": 22,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2637,7 +2637,7 @@
       {
         "baseParam": 22,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2647,7 +2647,7 @@
       {
         "baseParam": 22,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2657,7 +2657,7 @@
       {
         "baseParam": 22,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2667,7 +2667,7 @@
       {
         "baseParam": 22,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2677,7 +2677,7 @@
       {
         "baseParam": 22,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2687,7 +2687,7 @@
       {
         "baseParam": 22,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2697,7 +2697,7 @@
       {
         "baseParam": 22,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2707,7 +2707,7 @@
       {
         "baseParam": 22,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2717,7 +2717,7 @@
       {
         "baseParam": 27,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2727,7 +2727,7 @@
       {
         "baseParam": 44,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2737,7 +2737,7 @@
       {
         "baseParam": 11,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2747,7 +2747,7 @@
       {
         "baseParam": 10,
         "value": 4,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2757,7 +2757,7 @@
       {
         "baseParam": 44,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2767,7 +2767,7 @@
       {
         "baseParam": 11,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2777,7 +2777,7 @@
       {
         "baseParam": 22,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2787,7 +2787,7 @@
       {
         "baseParam": 44,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2797,7 +2797,7 @@
       {
         "baseParam": 11,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2807,7 +2807,7 @@
       {
         "baseParam": 44,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2817,7 +2817,7 @@
       {
         "baseParam": 22,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2827,7 +2827,7 @@
       {
         "baseParam": 19,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2837,7 +2837,7 @@
       {
         "baseParam": 44,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2847,7 +2847,7 @@
       {
         "baseParam": 44,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2857,7 +2857,7 @@
       {
         "baseParam": 44,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2867,7 +2867,7 @@
       {
         "baseParam": 22,
         "value": 4,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2877,7 +2877,7 @@
       {
         "baseParam": 22,
         "value": 4,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2887,7 +2887,7 @@
       {
         "baseParam": 22,
         "value": 4,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2897,7 +2897,7 @@
       {
         "baseParam": 27,
         "value": 4,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2907,7 +2907,7 @@
       {
         "baseParam": 22,
         "value": 4,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2917,7 +2917,7 @@
       {
         "baseParam": 22,
         "value": 4,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2927,7 +2927,7 @@
       {
         "baseParam": 11,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2937,7 +2937,7 @@
       {
         "baseParam": 22,
         "value": 4,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2947,7 +2947,7 @@
       {
         "baseParam": 22,
         "value": 4,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2957,7 +2957,7 @@
       {
         "baseParam": 22,
         "value": 4,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2967,7 +2967,7 @@
       {
         "baseParam": 44,
         "value": 11,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2977,7 +2977,7 @@
       {
         "baseParam": 11,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2987,7 +2987,7 @@
       {
         "baseParam": 45,
         "value": 11,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -2997,7 +2997,7 @@
       {
         "baseParam": 44,
         "value": 11,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3007,7 +3007,7 @@
       {
         "baseParam": 11,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3017,7 +3017,7 @@
       {
         "baseParam": 45,
         "value": 11,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3027,7 +3027,7 @@
       {
         "baseParam": 11,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3037,7 +3037,7 @@
       {
         "baseParam": 44,
         "value": 11,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3047,7 +3047,7 @@
       {
         "baseParam": 45,
         "value": 11,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3057,7 +3057,7 @@
       {
         "baseParam": 19,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3067,7 +3067,7 @@
       {
         "baseParam": 22,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3077,7 +3077,7 @@
       {
         "baseParam": 27,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3111,7 +3111,7 @@
       {
         "baseParam": 45,
         "value": 6,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3121,7 +3121,7 @@
       {
         "baseParam": 45,
         "value": 6,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3131,7 +3131,7 @@
       {
         "baseParam": 46,
         "value": 6,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3141,7 +3141,7 @@
       {
         "baseParam": 22,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3151,7 +3151,7 @@
       {
         "baseParam": 22,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3161,7 +3161,7 @@
       {
         "baseParam": 22,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3171,7 +3171,7 @@
       {
         "baseParam": 46,
         "value": 10,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3181,7 +3181,7 @@
       {
         "baseParam": 27,
         "value": 10,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3191,7 +3191,7 @@
       {
         "baseParam": 19,
         "value": 10,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3213,7 +3213,7 @@
       {
         "baseParam": 27,
         "value": 8,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3223,7 +3223,7 @@
       {
         "baseParam": 19,
         "value": 8,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3233,7 +3233,7 @@
       {
         "baseParam": 27,
         "value": 8,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3243,7 +3243,7 @@
       {
         "baseParam": 27,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3253,7 +3253,7 @@
       {
         "baseParam": 27,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3263,7 +3263,7 @@
       {
         "baseParam": 27,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3273,7 +3273,7 @@
       {
         "baseParam": 70,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3283,7 +3283,7 @@
       {
         "baseParam": 72,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3293,7 +3293,7 @@
       {
         "baseParam": 70,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3303,7 +3303,7 @@
       {
         "baseParam": 72,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3313,7 +3313,7 @@
       {
         "baseParam": 70,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3323,7 +3323,7 @@
       {
         "baseParam": 72,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3333,7 +3333,7 @@
       {
         "baseParam": 19,
         "value": 10,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3343,7 +3343,7 @@
       {
         "baseParam": 46,
         "value": 10,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3353,7 +3353,7 @@
       {
         "baseParam": 44,
         "value": 10,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3387,7 +3387,7 @@
       {
         "baseParam": 27,
         "value": 14,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3397,7 +3397,7 @@
       {
         "baseParam": 27,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3407,7 +3407,7 @@
       {
         "baseParam": 27,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3417,7 +3417,7 @@
       {
         "baseParam": 44,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3427,7 +3427,7 @@
       {
         "baseParam": 45,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3437,7 +3437,7 @@
       {
         "baseParam": 44,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3447,7 +3447,7 @@
       {
         "baseParam": 22,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3457,7 +3457,7 @@
       {
         "baseParam": 22,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3467,7 +3467,7 @@
       {
         "baseParam": 6,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3477,7 +3477,7 @@
       {
         "baseParam": 27,
         "value": 14,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3487,7 +3487,7 @@
       {
         "baseParam": 27,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3497,7 +3497,7 @@
       {
         "baseParam": 27,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3507,7 +3507,7 @@
       {
         "baseParam": 44,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3517,7 +3517,7 @@
       {
         "baseParam": 45,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3527,7 +3527,7 @@
       {
         "baseParam": 44,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3537,7 +3537,7 @@
       {
         "baseParam": 22,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3547,7 +3547,7 @@
       {
         "baseParam": 22,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3557,7 +3557,7 @@
       {
         "baseParam": 6,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3567,7 +3567,7 @@
       {
         "baseParam": 27,
         "value": 14,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3577,7 +3577,7 @@
       {
         "baseParam": 27,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3587,7 +3587,7 @@
       {
         "baseParam": 27,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3597,7 +3597,7 @@
       {
         "baseParam": 44,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3607,7 +3607,7 @@
       {
         "baseParam": 45,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3617,7 +3617,7 @@
       {
         "baseParam": 44,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3627,7 +3627,7 @@
       {
         "baseParam": 22,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3637,7 +3637,7 @@
       {
         "baseParam": 22,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3647,7 +3647,7 @@
       {
         "baseParam": 6,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -3657,17 +3657,17 @@
       {
         "baseParam": 27,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -3677,17 +3677,17 @@
       {
         "baseParam": 27,
         "value": 6,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 27,
+        "value": 7,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 27,
+        "value": 7,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 27,
-        "value": 7,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 27,
-        "value": 7,
-        "amountRequired": 4
       }
     ]
   },
@@ -3697,17 +3697,17 @@
       {
         "baseParam": 19,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 19,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 19,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 19,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 19,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -3717,17 +3717,17 @@
       {
         "baseParam": 44,
         "value": 6,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 44,
+        "value": 7,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 44,
+        "value": 7,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 44,
-        "value": 7,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 44,
-        "value": 7,
-        "amountRequired": 4
       }
     ]
   },
@@ -3737,17 +3737,17 @@
       {
         "baseParam": 45,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 45,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 45,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 45,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 45,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -3757,17 +3757,17 @@
       {
         "baseParam": 22,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 22,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 22,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 22,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 22,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -3777,17 +3777,17 @@
       {
         "baseParam": 45,
         "value": 6,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 45,
+        "value": 7,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 45,
+        "value": 7,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 45,
-        "value": 7,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 45,
-        "value": 7,
-        "amountRequired": 4
       }
     ]
   },
@@ -3797,17 +3797,17 @@
       {
         "baseParam": 45,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 45,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 45,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 45,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 45,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -3817,17 +3817,17 @@
       {
         "baseParam": 45,
         "value": 6,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 45,
+        "value": 7,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 45,
+        "value": 7,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 45,
-        "value": 7,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 45,
-        "value": 7,
-        "amountRequired": 4
       }
     ]
   },
@@ -3837,17 +3837,17 @@
       {
         "baseParam": 27,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -3857,17 +3857,17 @@
       {
         "baseParam": 27,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -3877,17 +3877,17 @@
       {
         "baseParam": 46,
         "value": 6,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 46,
+        "value": 7,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 46,
+        "value": 7,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 46,
-        "value": 7,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 46,
-        "value": 7,
-        "amountRequired": 4
       }
     ]
   },
@@ -3897,17 +3897,17 @@
       {
         "baseParam": 46,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 46,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 46,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 46,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 46,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -3917,17 +3917,17 @@
       {
         "baseParam": 44,
         "value": 6,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 44,
+        "value": 7,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 44,
+        "value": 7,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 44,
-        "value": 7,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 44,
-        "value": 7,
-        "amountRequired": 4
       }
     ]
   },
@@ -3937,17 +3937,17 @@
       {
         "baseParam": 27,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -3957,17 +3957,17 @@
       {
         "baseParam": 27,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -3977,17 +3977,17 @@
       {
         "baseParam": 27,
         "value": 6,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 27,
+        "value": 7,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 27,
+        "value": 7,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 27,
-        "value": 7,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 27,
-        "value": 7,
-        "amountRequired": 4
       }
     ]
   },
@@ -3997,17 +3997,17 @@
       {
         "baseParam": 19,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 19,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 19,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 19,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 19,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -4017,17 +4017,17 @@
       {
         "baseParam": 44,
         "value": 6,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 44,
+        "value": 7,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 44,
+        "value": 7,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 44,
-        "value": 7,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 44,
-        "value": 7,
-        "amountRequired": 4
       }
     ]
   },
@@ -4037,17 +4037,17 @@
       {
         "baseParam": 45,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 45,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 45,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 45,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 45,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -4057,17 +4057,17 @@
       {
         "baseParam": 22,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 22,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 22,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 22,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 22,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -4077,17 +4077,17 @@
       {
         "baseParam": 45,
         "value": 6,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 45,
+        "value": 7,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 45,
+        "value": 7,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 45,
-        "value": 7,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 45,
-        "value": 7,
-        "amountRequired": 4
       }
     ]
   },
@@ -4097,17 +4097,17 @@
       {
         "baseParam": 45,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 45,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 45,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 45,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 45,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -4117,17 +4117,17 @@
       {
         "baseParam": 45,
         "value": 6,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 45,
+        "value": 7,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 45,
+        "value": 7,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 45,
-        "value": 7,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 45,
-        "value": 7,
-        "amountRequired": 4
       }
     ]
   },
@@ -4137,17 +4137,17 @@
       {
         "baseParam": 27,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -4157,17 +4157,17 @@
       {
         "baseParam": 27,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -4177,17 +4177,17 @@
       {
         "baseParam": 46,
         "value": 6,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 46,
+        "value": 7,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 46,
+        "value": 7,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 46,
-        "value": 7,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 46,
-        "value": 7,
-        "amountRequired": 4
       }
     ]
   },
@@ -4197,17 +4197,17 @@
       {
         "baseParam": 46,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 46,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 46,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 46,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 46,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -4217,17 +4217,17 @@
       {
         "baseParam": 44,
         "value": 6,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 44,
+        "value": 7,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 44,
+        "value": 7,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 44,
-        "value": 7,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 44,
-        "value": 7,
-        "amountRequired": 4
       }
     ]
   },
@@ -4237,17 +4237,17 @@
       {
         "baseParam": 27,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -4257,17 +4257,17 @@
       {
         "baseParam": 27,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -4277,17 +4277,17 @@
       {
         "baseParam": 27,
         "value": 6,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 27,
+        "value": 7,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 27,
+        "value": 7,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 27,
-        "value": 7,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 27,
-        "value": 7,
-        "amountRequired": 4
       }
     ]
   },
@@ -4297,17 +4297,17 @@
       {
         "baseParam": 19,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 19,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 19,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 19,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 19,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -4317,17 +4317,17 @@
       {
         "baseParam": 44,
         "value": 6,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 44,
+        "value": 7,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 44,
+        "value": 7,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 44,
-        "value": 7,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 44,
-        "value": 7,
-        "amountRequired": 4
       }
     ]
   },
@@ -4337,17 +4337,17 @@
       {
         "baseParam": 45,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 45,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 45,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 45,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 45,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -4357,17 +4357,17 @@
       {
         "baseParam": 22,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 22,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 22,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 22,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 22,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -4377,17 +4377,17 @@
       {
         "baseParam": 45,
         "value": 6,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 45,
+        "value": 7,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 45,
+        "value": 7,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 45,
-        "value": 7,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 45,
-        "value": 7,
-        "amountRequired": 4
       }
     ]
   },
@@ -4397,17 +4397,17 @@
       {
         "baseParam": 45,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 45,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 45,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 45,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 45,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -4417,17 +4417,17 @@
       {
         "baseParam": 45,
         "value": 6,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 45,
+        "value": 7,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 45,
+        "value": 7,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 45,
-        "value": 7,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 45,
-        "value": 7,
-        "amountRequired": 4
       }
     ]
   },
@@ -4437,17 +4437,17 @@
       {
         "baseParam": 27,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -4457,17 +4457,17 @@
       {
         "baseParam": 27,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -4477,17 +4477,17 @@
       {
         "baseParam": 46,
         "value": 6,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 46,
+        "value": 7,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 46,
+        "value": 7,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 46,
-        "value": 7,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 46,
-        "value": 7,
-        "amountRequired": 4
       }
     ]
   },
@@ -4497,17 +4497,17 @@
       {
         "baseParam": 46,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 46,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 46,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 46,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 46,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -4517,17 +4517,17 @@
       {
         "baseParam": 44,
         "value": 6,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 44,
+        "value": 7,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 44,
+        "value": 7,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 44,
-        "value": 7,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 44,
-        "value": 7,
-        "amountRequired": 4
       }
     ]
   },
@@ -4537,17 +4537,17 @@
       {
         "baseParam": 27,
         "value": 4,
+        "amountRequired": 0
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
+        "amountRequired": 1
+      },
+      {
+        "baseParam": 27,
+        "value": 4,
         "amountRequired": 2
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 3
-      },
-      {
-        "baseParam": 27,
-        "value": 4,
-        "amountRequired": 4
       }
     ]
   },
@@ -4557,7 +4557,7 @@
       {
         "baseParam": 22,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4567,7 +4567,7 @@
       {
         "baseParam": 22,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4577,7 +4577,7 @@
       {
         "baseParam": 22,
         "value": 5,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4587,7 +4587,7 @@
       {
         "baseParam": 27,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4597,7 +4597,7 @@
       {
         "baseParam": 27,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4607,7 +4607,7 @@
       {
         "baseParam": 27,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4617,7 +4617,7 @@
       {
         "baseParam": 27,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4627,7 +4627,7 @@
       {
         "baseParam": 27,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4637,7 +4637,7 @@
       {
         "baseParam": 27,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4647,7 +4647,7 @@
       {
         "baseParam": 22,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4657,7 +4657,7 @@
       {
         "baseParam": 22,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4667,7 +4667,7 @@
       {
         "baseParam": 22,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4677,7 +4677,7 @@
       {
         "baseParam": 45,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4687,7 +4687,7 @@
       {
         "baseParam": 45,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4697,7 +4697,7 @@
       {
         "baseParam": 45,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4707,7 +4707,7 @@
       {
         "baseParam": 22,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -4717,7 +4717,7 @@
       {
         "baseParam": 22,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -4727,7 +4727,7 @@
       {
         "baseParam": 22,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -4737,7 +4737,7 @@
       {
         "baseParam": 44,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4747,7 +4747,7 @@
       {
         "baseParam": 44,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4757,7 +4757,7 @@
       {
         "baseParam": 44,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4767,7 +4767,7 @@
       {
         "baseParam": 45,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4777,7 +4777,7 @@
       {
         "baseParam": 45,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4787,7 +4787,7 @@
       {
         "baseParam": 45,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4797,7 +4797,7 @@
       {
         "baseParam": 27,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4807,7 +4807,7 @@
       {
         "baseParam": 19,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4817,7 +4817,7 @@
       {
         "baseParam": 44,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4827,7 +4827,7 @@
       {
         "baseParam": 44,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4837,7 +4837,7 @@
       {
         "baseParam": 22,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4847,7 +4847,7 @@
       {
         "baseParam": 45,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4857,7 +4857,7 @@
       {
         "baseParam": 22,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4867,7 +4867,7 @@
       {
         "baseParam": 19,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4877,7 +4877,7 @@
       {
         "baseParam": 44,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4887,7 +4887,7 @@
       {
         "baseParam": 44,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -4897,7 +4897,7 @@
       {
         "baseParam": 44,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -4907,7 +4907,7 @@
       {
         "baseParam": 22,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -4917,7 +4917,7 @@
       {
         "baseParam": 27,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4927,7 +4927,7 @@
       {
         "baseParam": 27,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4937,7 +4937,7 @@
       {
         "baseParam": 27,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4947,7 +4947,7 @@
       {
         "baseParam": 45,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4957,7 +4957,7 @@
       {
         "baseParam": 45,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4967,7 +4967,7 @@
       {
         "baseParam": 45,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4977,7 +4977,7 @@
       {
         "baseParam": 27,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4987,7 +4987,7 @@
       {
         "baseParam": 44,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -4997,7 +4997,7 @@
       {
         "baseParam": 45,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5007,7 +5007,7 @@
       {
         "baseParam": 22,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5017,7 +5017,7 @@
       {
         "baseParam": 22,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5027,7 +5027,7 @@
       {
         "baseParam": 22,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5037,7 +5037,7 @@
       {
         "baseParam": 22,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5047,7 +5047,7 @@
       {
         "baseParam": 22,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5057,7 +5057,7 @@
       {
         "baseParam": 22,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5067,7 +5067,7 @@
       {
         "baseParam": 22,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -5077,7 +5077,7 @@
       {
         "baseParam": 44,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -5087,7 +5087,7 @@
       {
         "baseParam": 44,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -5097,7 +5097,7 @@
       {
         "baseParam": 45,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5107,7 +5107,7 @@
       {
         "baseParam": 45,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5117,7 +5117,7 @@
       {
         "baseParam": 45,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5127,7 +5127,7 @@
       {
         "baseParam": 46,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5137,7 +5137,7 @@
       {
         "baseParam": 46,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5147,7 +5147,7 @@
       {
         "baseParam": 46,
         "value": 9,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5157,7 +5157,7 @@
       {
         "baseParam": 46,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5167,7 +5167,7 @@
       {
         "baseParam": 27,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5177,7 +5177,7 @@
       {
         "baseParam": 46,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5187,7 +5187,7 @@
       {
         "baseParam": 46,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5197,7 +5197,7 @@
       {
         "baseParam": 46,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5207,7 +5207,7 @@
       {
         "baseParam": 44,
         "value": 17,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5217,7 +5217,7 @@
       {
         "baseParam": 27,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5227,7 +5227,7 @@
       {
         "baseParam": 27,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5237,7 +5237,7 @@
       {
         "baseParam": 27,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5247,7 +5247,7 @@
       {
         "baseParam": 44,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -5257,7 +5257,7 @@
       {
         "baseParam": 27,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -5267,7 +5267,7 @@
       {
         "baseParam": 44,
         "value": 25,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -5277,7 +5277,7 @@
       {
         "baseParam": 6,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5287,7 +5287,7 @@
       {
         "baseParam": 6,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5297,7 +5297,7 @@
       {
         "baseParam": 6,
         "value": 20,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5307,12 +5307,12 @@
       {
         "baseParam": 3,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -5322,12 +5322,12 @@
       {
         "baseParam": 2,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 5,
         "value": 3,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -5337,12 +5337,12 @@
       {
         "baseParam": 1,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 4,
         "value": 2,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -5352,12 +5352,12 @@
       {
         "baseParam": 3,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -5367,12 +5367,12 @@
       {
         "baseParam": 2,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 5,
         "value": 3,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -5382,12 +5382,12 @@
       {
         "baseParam": 1,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 4,
         "value": 2,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -5397,7 +5397,7 @@
       {
         "baseParam": 52,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5407,7 +5407,7 @@
       {
         "baseParam": 52,
         "value": 15,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -5417,7 +5417,7 @@
       {
         "baseParam": 4,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5427,12 +5427,12 @@
       {
         "baseParam": 5,
         "value": 5,
-        "amountRequired": 4
+        "amountRequired": 2
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5442,7 +5442,7 @@
       {
         "baseParam": 2,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5452,7 +5452,7 @@
       {
         "baseParam": 3,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5462,7 +5462,7 @@
       {
         "baseParam": 1,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5496,12 +5496,12 @@
       {
         "baseParam": 2,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 5,
         "value": 2,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -5511,12 +5511,12 @@
       {
         "baseParam": 3,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -5526,12 +5526,12 @@
       {
         "baseParam": 1,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 4,
         "value": 2,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -5541,12 +5541,12 @@
       {
         "baseParam": 2,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 5,
         "value": 2,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -5556,12 +5556,12 @@
       {
         "baseParam": 3,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -5571,12 +5571,12 @@
       {
         "baseParam": 1,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 4,
         "value": 2,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -5586,12 +5586,12 @@
       {
         "baseParam": 5,
         "value": 4,
-        "amountRequired": 3
+        "amountRequired": 1
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -5601,7 +5601,7 @@
       {
         "baseParam": 4,
         "value": 4,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -5611,12 +5611,12 @@
       {
         "baseParam": 1,
         "value": 4,
-        "amountRequired": 3
+        "amountRequired": 1
       },
       {
         "baseParam": 2,
         "value": 4,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -5626,7 +5626,7 @@
       {
         "baseParam": 3,
         "value": 4,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -5636,12 +5636,12 @@
       {
         "baseParam": 3,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -5651,12 +5651,12 @@
       {
         "baseParam": 2,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 5,
         "value": 2,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -5666,12 +5666,12 @@
       {
         "baseParam": 1,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 4,
         "value": 2,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -5681,7 +5681,7 @@
       {
         "baseParam": 4,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5691,12 +5691,12 @@
       {
         "baseParam": 5,
         "value": 5,
-        "amountRequired": 4
+        "amountRequired": 2
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5706,7 +5706,7 @@
       {
         "baseParam": 2,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5716,7 +5716,7 @@
       {
         "baseParam": 3,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5726,7 +5726,7 @@
       {
         "baseParam": 1,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5736,7 +5736,7 @@
       {
         "baseParam": 4,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5746,12 +5746,12 @@
       {
         "baseParam": 5,
         "value": 5,
-        "amountRequired": 4
+        "amountRequired": 2
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5761,7 +5761,7 @@
       {
         "baseParam": 2,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5771,7 +5771,7 @@
       {
         "baseParam": 3,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5781,7 +5781,7 @@
       {
         "baseParam": 1,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5791,7 +5791,7 @@
       {
         "baseParam": 4,
         "value": 4,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -5801,12 +5801,12 @@
       {
         "baseParam": 5,
         "value": 4,
-        "amountRequired": 3
+        "amountRequired": 1
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -5816,12 +5816,12 @@
       {
         "baseParam": 1,
         "value": 4,
-        "amountRequired": 3
+        "amountRequired": 1
       },
       {
         "baseParam": 2,
         "value": 4,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -5831,7 +5831,7 @@
       {
         "baseParam": 3,
         "value": 4,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -5841,7 +5841,7 @@
       {
         "baseParam": 4,
         "value": 4,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -5851,12 +5851,12 @@
       {
         "baseParam": 5,
         "value": 4,
-        "amountRequired": 3
+        "amountRequired": 1
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -5866,12 +5866,12 @@
       {
         "baseParam": 1,
         "value": 4,
-        "amountRequired": 3
+        "amountRequired": 1
       },
       {
         "baseParam": 2,
         "value": 4,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -5881,7 +5881,7 @@
       {
         "baseParam": 3,
         "value": 4,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -5891,7 +5891,7 @@
       {
         "baseParam": 4,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5901,12 +5901,12 @@
       {
         "baseParam": 5,
         "value": 5,
-        "amountRequired": 4
+        "amountRequired": 2
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5916,7 +5916,7 @@
       {
         "baseParam": 2,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5926,7 +5926,7 @@
       {
         "baseParam": 3,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5936,7 +5936,7 @@
       {
         "baseParam": 1,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5946,7 +5946,7 @@
       {
         "baseParam": 4,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5956,12 +5956,12 @@
       {
         "baseParam": 5,
         "value": 5,
-        "amountRequired": 4
+        "amountRequired": 2
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5971,7 +5971,7 @@
       {
         "baseParam": 2,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5981,7 +5981,7 @@
       {
         "baseParam": 3,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -5991,7 +5991,7 @@
       {
         "baseParam": 1,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6001,7 +6001,7 @@
       {
         "baseParam": 4,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6011,12 +6011,12 @@
       {
         "baseParam": 5,
         "value": 5,
-        "amountRequired": 4
+        "amountRequired": 2
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6026,7 +6026,7 @@
       {
         "baseParam": 2,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6036,7 +6036,7 @@
       {
         "baseParam": 3,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6046,7 +6046,7 @@
       {
         "baseParam": 1,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6056,7 +6056,7 @@
       {
         "baseParam": 4,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6066,12 +6066,12 @@
       {
         "baseParam": 5,
         "value": 5,
-        "amountRequired": 4
+        "amountRequired": 2
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6081,7 +6081,7 @@
       {
         "baseParam": 2,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6091,7 +6091,7 @@
       {
         "baseParam": 3,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6101,7 +6101,7 @@
       {
         "baseParam": 1,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6111,7 +6111,7 @@
       {
         "baseParam": 4,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6121,12 +6121,12 @@
       {
         "baseParam": 5,
         "value": 5,
-        "amountRequired": 4
+        "amountRequired": 2
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6136,7 +6136,7 @@
       {
         "baseParam": 2,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6146,7 +6146,7 @@
       {
         "baseParam": 3,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6156,7 +6156,7 @@
       {
         "baseParam": 1,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6166,12 +6166,12 @@
       {
         "baseParam": 2,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 5,
         "value": 2,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -6181,12 +6181,12 @@
       {
         "baseParam": 2,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 5,
         "value": 2,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -6196,12 +6196,12 @@
       {
         "baseParam": 3,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -6211,12 +6211,12 @@
       {
         "baseParam": 3,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -6226,12 +6226,12 @@
       {
         "baseParam": 1,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 4,
         "value": 2,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -6241,12 +6241,12 @@
       {
         "baseParam": 1,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 4,
         "value": 2,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -6256,7 +6256,7 @@
       {
         "baseParam": 4,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6266,12 +6266,12 @@
       {
         "baseParam": 5,
         "value": 5,
-        "amountRequired": 4
+        "amountRequired": 2
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6281,7 +6281,7 @@
       {
         "baseParam": 2,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6291,7 +6291,7 @@
       {
         "baseParam": 3,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6301,7 +6301,7 @@
       {
         "baseParam": 1,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6311,7 +6311,7 @@
       {
         "baseParam": 4,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6321,12 +6321,12 @@
       {
         "baseParam": 5,
         "value": 5,
-        "amountRequired": 4
+        "amountRequired": 2
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6336,7 +6336,7 @@
       {
         "baseParam": 2,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6346,7 +6346,7 @@
       {
         "baseParam": 3,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6356,7 +6356,7 @@
       {
         "baseParam": 1,
         "value": 5,
-        "amountRequired": 5
+        "amountRequired": 3
       }
     ]
   },
@@ -6366,7 +6366,7 @@
       {
         "baseParam": 19,
         "value": 25,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6376,7 +6376,7 @@
       {
         "baseParam": 19,
         "value": 25,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6386,7 +6386,7 @@
       {
         "baseParam": 19,
         "value": 25,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6396,7 +6396,7 @@
       {
         "baseParam": 27,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6406,7 +6406,7 @@
       {
         "baseParam": 27,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6416,7 +6416,7 @@
       {
         "baseParam": 27,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6426,7 +6426,7 @@
       {
         "baseParam": 45,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6436,7 +6436,7 @@
       {
         "baseParam": 45,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6446,7 +6446,7 @@
       {
         "baseParam": 45,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6456,7 +6456,7 @@
       {
         "baseParam": 44,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6466,7 +6466,7 @@
       {
         "baseParam": 44,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6476,7 +6476,7 @@
       {
         "baseParam": 44,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6486,7 +6486,7 @@
       {
         "baseParam": 27,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6496,7 +6496,7 @@
       {
         "baseParam": 27,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6506,7 +6506,7 @@
       {
         "baseParam": 27,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6516,7 +6516,7 @@
       {
         "baseParam": 22,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6526,7 +6526,7 @@
       {
         "baseParam": 22,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6536,7 +6536,7 @@
       {
         "baseParam": 22,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6546,7 +6546,7 @@
       {
         "baseParam": 45,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6556,7 +6556,7 @@
       {
         "baseParam": 45,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6566,7 +6566,7 @@
       {
         "baseParam": 45,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6576,7 +6576,7 @@
       {
         "baseParam": 44,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6586,7 +6586,7 @@
       {
         "baseParam": 44,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6596,7 +6596,7 @@
       {
         "baseParam": 44,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6606,7 +6606,7 @@
       {
         "baseParam": 27,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6616,7 +6616,7 @@
       {
         "baseParam": 27,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6626,7 +6626,7 @@
       {
         "baseParam": 27,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6636,7 +6636,7 @@
       {
         "baseParam": 46,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6646,7 +6646,7 @@
       {
         "baseParam": 46,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6656,7 +6656,7 @@
       {
         "baseParam": 46,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6666,7 +6666,7 @@
       {
         "baseParam": 44,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6676,7 +6676,7 @@
       {
         "baseParam": 44,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6686,7 +6686,7 @@
       {
         "baseParam": 44,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6696,7 +6696,7 @@
       {
         "baseParam": 6,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6706,7 +6706,7 @@
       {
         "baseParam": 6,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6716,7 +6716,7 @@
       {
         "baseParam": 6,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6726,7 +6726,7 @@
       {
         "baseParam": 44,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6736,7 +6736,7 @@
       {
         "baseParam": 44,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6746,7 +6746,7 @@
       {
         "baseParam": 44,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6756,7 +6756,7 @@
       {
         "baseParam": 44,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6766,7 +6766,7 @@
       {
         "baseParam": 44,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6776,7 +6776,7 @@
       {
         "baseParam": 44,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6786,7 +6786,7 @@
       {
         "baseParam": 27,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6796,7 +6796,7 @@
       {
         "baseParam": 27,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6806,7 +6806,7 @@
       {
         "baseParam": 27,
         "value": 36,
-        "amountRequired": 2
+        "amountRequired": 0
       }
     ]
   },
@@ -6816,12 +6816,12 @@
       {
         "baseParam": 2,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 5,
         "value": 2,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -6831,12 +6831,12 @@
       {
         "baseParam": 3,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -6846,12 +6846,12 @@
       {
         "baseParam": 1,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 4,
         "value": 2,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -6861,12 +6861,12 @@
       {
         "baseParam": 2,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 5,
         "value": 2,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -6876,12 +6876,12 @@
       {
         "baseParam": 3,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -6891,12 +6891,12 @@
       {
         "baseParam": 1,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 4,
         "value": 2,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -6906,12 +6906,12 @@
       {
         "baseParam": 2,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 5,
         "value": 2,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -6921,12 +6921,12 @@
       {
         "baseParam": 3,
         "value": 3,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 52,
         "value": 30,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -6936,12 +6936,12 @@
       {
         "baseParam": 1,
         "value": 2,
-        "amountRequired": 2
+        "amountRequired": 0
       },
       {
         "baseParam": 4,
         "value": 2,
-        "amountRequired": 3
+        "amountRequired": 1
       }
     ]
   },
@@ -6951,7 +6951,7 @@
       {
         "baseParam": 11,
         "value": 9,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -6961,7 +6961,7 @@
       {
         "baseParam": 11,
         "value": 9,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -6971,7 +6971,7 @@
       {
         "baseParam": 11,
         "value": 9,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -6981,7 +6981,7 @@
       {
         "baseParam": 11,
         "value": 4,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -6991,7 +6991,7 @@
       {
         "baseParam": 10,
         "value": 9,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -7001,7 +7001,7 @@
       {
         "baseParam": 10,
         "value": 9,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -7011,7 +7011,7 @@
       {
         "baseParam": 10,
         "value": 9,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   },
@@ -7021,7 +7021,7 @@
       {
         "baseParam": 10,
         "value": 5,
-        "amountRequired": 4
+        "amountRequired": 2
       }
     ]
   }

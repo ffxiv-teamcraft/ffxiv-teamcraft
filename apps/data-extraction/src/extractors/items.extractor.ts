@@ -1,5 +1,6 @@
 import { AbstractExtractor } from '../abstract-extractor';
 import { XivDataService } from '../xiv/xiv-data.service';
+import { combineLatest } from 'rxjs';
 
 export class ItemsExtractor extends AbstractExtractor {
   getSlotName(equipSlotCategoryId: number): string {
@@ -51,12 +52,15 @@ export class ItemsExtractor extends AbstractExtractor {
     const aetherialReduce = {};
     const collectableFlags = {};
 
-    this.getSheet<any>(xiv, 'Item',
-      ['AlwaysCollectable', 'AetherialReduce', 'Patch', 'DamagePhys', 'DamageMag', 'DefensePhys', 'DefenseMag', 'ID', 'Name', 'Description',
-        'IsUnique', 'IsUntradable', 'MaterializeType', 'CanBeHq', 'Rarity', 'Icon', 'LevelItem', 'LevelEquip', 'StackSize',
-        'EquipSlotCategory', 'ClassJobCategory', 'MateriaSlotCount', 'BaseParamModifier', 'IsAdvancedMeldingPermitted',
-        'ItemSearchCategory', 'ItemSeries', 'BaseParamSpecial', 'BaseParamValueSpecial'], 1)
-      .subscribe(items => {
+    combineLatest([
+      this.getSheet<any>(xiv, 'Item',
+        ['AlwaysCollectable', 'AetherialReduce', 'Patch', 'DamagePhys', 'DamageMag', 'DefensePhys', 'DefenseMag', 'Name', 'Description',
+          'IsUnique', 'IsUntradable', 'MaterializeType', 'CanBeHq', 'Rarity', 'Icon', 'LevelItem#', 'LevelEquip', 'StackSize',
+          'EquipSlotCategory#', 'ClassJobCategory', 'MateriaSlotCount', 'BaseParamModifier', 'IsAdvancedMeldingPermitted',
+          'ItemSearchCategory#', 'ItemSeries#', 'BaseParam#', 'BaseParamValue', 'BaseParamSpecial#', 'BaseParamValueSpecial'], 1),
+      this.getNonXivapiUrl('https://raw.githubusercontent.com/xivapi/ffxiv-datamining-patches/master/patchdata/Item.json')
+    ])
+      .subscribe(([items, patchData]) => {
         items.forEach(item => {
           itemIcons[item.index] = this.getIconHD(item.Icon);
           names[item.index] = {
@@ -66,7 +70,7 @@ export class ItemsExtractor extends AbstractExtractor {
             fr: item.Name_fr
           };
           rarities[item.index] = item.Rarity;
-          ilvls[item.index] = item.LevelItem.index;
+          ilvls[item.index] = item.LevelItem;
           stackSizes[item.index] = item.StackSize;
           if (item.CanBeHq) {
             hqFlags[item.index] = 1;
@@ -74,10 +78,10 @@ export class ItemsExtractor extends AbstractExtractor {
           if (item.IsUntradable === false) {
             tradeFlags[item.index] = 1;
           }
-          if (item.ItemSearchCategory.index >= 9) {
+          if (item.ItemSearchCategory >= 9) {
             marketItems.push(item.index);
           }
-          if ([30].includes(item.ItemSearchCategory.index)) {
+          if ([30].includes(item.ItemSearchCategory)) {
             // -1: Universal
             // 1: Saltwater
             // 2: Freshwater
@@ -134,9 +138,46 @@ export class ItemsExtractor extends AbstractExtractor {
           if (item.AlwaysCollectable) {
             collectableFlags[item.index] = 1;
           }
-          if (item.ItemSeries?.index > 0) {
+          if (item.BaseParam.some(p => p > 0)) {
+            itemStats[item.index] = this.processStats(item);
+            itemMainAttributes[item.index] = [];
+            if (item.DamagePhys || item.DamageMag) {
+              if (item.DamagePhys > item.DamageMag) {
+                itemMainAttributes[item.index].push(
+                  {
+                    ID: 12,
+                    NQ: item.DamagePhys,
+                    HQ: Number(item.DamagePhys) + Number(item.BaseParamValueSpecial[0])
+                  });
+              } else {
+                itemMainAttributes[item.index].push(
+                  {
+                    ID: 13,
+                    NQ: item.DamageMag,
+                    HQ: Number(item.DamageMag) + Number(item.BaseParamValueSpecial[1])
+                  });
+              }
+            }
+            if (item.DefensePhys || item.DefenseMag) {
+              itemMainAttributes[item.index].push({
+                  ID: 21,
+                  NQ: item.DefensePhys,
+                  HQ: Number(item.DefensePhys) + Number(item.BaseParamValueSpecial[0])
+                },
+                {
+                  ID: 24,
+                  NQ: item.DefenseMag,
+                  HQ: Number(item.DefenseMag) + Number(item.BaseParamValueSpecial[1])
+                });
+            }
+            if (itemMainAttributes[item.index].length === 0) {
+              delete itemMainAttributes[item.index];
+            }
+          }
+          itemPatch[item.index] = patchData[item.index];
+          if (item.ItemSeries > 0) {
             itemSetBonuses[item.index] = {
-              itemSeriesId: item.ItemSeries.index,
+              itemSeriesId: item.ItemSeries,
               bonuses: [0, 1, 2, 3, 4, 5]
                 .filter(i => item.BaseParamSpecial[i] > 0 && item.BaseParamValueSpecial[i] > 0)
                 .map(i => {
@@ -148,59 +189,22 @@ export class ItemsExtractor extends AbstractExtractor {
                 })
             };
           }
-          // TODO migrate these
-          itemPatch[item.index] = item.Patch;
-          if (item.Stats) {
-            itemStats[item.index] = Object.values(item.Stats);
-            itemMainAttributes[item.index] = [];
-            if (item.DamagePhys || item.DamageMag) {
-              if (item.DamagePhys > item.DamageMag) {
-                itemMainAttributes[item.index].push(
-                  {
-                    ID: 12,
-                    NQ: item.DamagePhys,
-                    HQ: Number(item.DamagePhys) + Number(item.BaseParamValueSpecial0)
-                  });
-              } else {
-                itemMainAttributes[item.index].push(
-                  {
-                    ID: 13,
-                    NQ: item.DamageMag,
-                    HQ: Number(item.DamageMag) + Number(item.BaseParamValueSpecial1)
-                  });
-              }
+          if (item.EquipSlotCategory && !item.Name_en.toString().startsWith('Dated ')) {
+            equipSlotCategoryId[item.index] = item.EquipSlotCategory;
+            if (itemStats[item.index]) {
+              equipment[item.index] = {
+                equipSlotCategory: item.EquipSlotCategory,
+                level: item.LevelEquip,
+                unique: item.IsUnique ? 1 : 0,
+                jobs: Object.keys(item.ClassJobCategory).filter(jobAbbr => item.ClassJobCategory[jobAbbr] === true)
+              };
+              itemMeldingData[item.index] = {
+                modifier: item.BaseParamModifier,
+                prop: this.getSlotName(item.EquipSlotCategory),
+                slots: item.MateriaSlotCount,
+                overmeld: item.IsAdvancedMeldingPermitted
+              };
             }
-            if (item.DefensePhys || item.DefenseMag) {
-              itemMainAttributes[item.index].push({
-                  ID: 21,
-                  NQ: item.DefensePhys,
-                  HQ: Number(item.DefensePhys) + Number(item.BaseParamValueSpecial0)
-                },
-                {
-                  ID: 24,
-                  NQ: item.DefenseMag,
-                  HQ: Number(item.DefenseMag) + Number(item.BaseParamValueSpecial1)
-                });
-            }
-            if (itemMainAttributes[item.index].length === 0) {
-              delete itemMainAttributes[item.index];
-            }
-          }
-
-          if (item.EquipSlotCategory.index && !item.Name_en.toString().startsWith('Dated ')) {
-            equipSlotCategoryId[item.index] = item.EquipSlotCategory.index;
-            equipment[item.index] = {
-              equipSlotCategory: item.EquipSlotCategory.index,
-              level: item.LevelEquip,
-              unique: item.IsUnique,
-              jobs: Object.keys(item.ClassJobCategory).filter(jobAbbr => Boolean(item.ClassJobCategory[jobAbbr]))
-            };
-            itemMeldingData[item.index] = {
-              modifier: item.BaseParamModifier,
-              prop: this.getSlotName(item.EquipSlotCategory.index),
-              slots: item.MateriaSlotCount,
-              overmeld: item.IsAdvancedMeldingPermitted
-            };
           }
         });
         this.persistToJsonAsset('item-icons', itemIcons);
@@ -221,11 +225,36 @@ export class ItemsExtractor extends AbstractExtractor {
         this.persistToJsonAsset('item-set-bonuses', itemSetBonuses);
         this.persistToJsonAsset('aetherial-reduce', aetherialReduce);
         this.persistToJsonAsset('collectable-flags', collectableFlags);
-        // TODO prob a separate extractor? Later will still need xivapi imo
-        // this.persistToJsonAsset('item-stats', itemStats);
-        // this.persistToJsonAsset('item-patch', itemPatch);
+        this.persistToJsonAsset('item-stats', itemStats);
+        this.persistToJsonAsset('item-patch', itemPatch);
         this.done();
       });
+  }
+
+  private processStats(item: any): any[] {
+    const stats = [];
+    item.BaseParam.forEach((paramId, index) => {
+      if (paramId === 0) {
+        return;
+      }
+      const entry: { ID: number, NQ: number, HQ?: number } = {
+        ID: paramId,
+        NQ: item.BaseParamValue[index]
+      };
+      if (item.CanBeHq) {
+        let HQ = entry.NQ;
+        item.BaseParamSpecial
+          .forEach((specialParamId, specialIndex) => {
+            if (specialParamId !== paramId) {
+              return;
+            }
+            HQ += item.BaseParamValueSpecial[specialIndex];
+          });
+        entry.HQ = HQ;
+      }
+      stats.push(entry);
+    });
+    return stats;
   }
 
   getName(): string {

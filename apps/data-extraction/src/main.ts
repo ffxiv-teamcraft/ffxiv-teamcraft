@@ -173,12 +173,11 @@ if (process.env.DEV_MODE) {
   const xiv = new XivDataService(kobold);
   xiv.UIColor = await xiv.getSheet('UIColor');
 
-  // const items = await xiv.getSheet('Item', ['AlwaysCollectable', 'AetherialReduce', 'Patch', 'DamagePhys', 'DamageMag', 'DefensePhys', 'DefenseMag', 'ID', 'Name', 'Description_en',
-  //   'IsUnique', 'IsUntradable', 'MaterializeType', 'CanBeHq', 'Rarity', 'Icon', 'LevelItem', 'LevelEquip', 'StackSize',
-  //   'EquipSlotCategory', 'ClassJobCategory', 'MateriaSlotCount', 'BaseParamModifier', 'IsAdvancedMeldingPermitted',
-  //   'ItemSearchCategory', 'ItemSeries', 'BaseParamSpecial', 'BaseParamValueSpecial']);
+  // const items = await xiv.getSheet('Item', {
+  //   columns: ['BaseParam#', 'BaseParamValue']
+  // });
   //
-  // console.log(items.find(i => i.index === 366));
+  // console.log(items.find(i => i.index === 259));
   // process.exit(0);
 
   const operationsSelection = new MultiSelect({
