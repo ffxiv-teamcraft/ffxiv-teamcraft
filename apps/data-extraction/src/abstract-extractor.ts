@@ -317,6 +317,10 @@ export abstract class AbstractExtractor {
     return input.replace('–', '-');
   }
 
+  protected invert2DArray(input: any[][]): any[][] {
+    return input[0].map((_, colIndex) => input.map(row => row[colIndex]));
+  }
+
   protected persistToJson(fileName: string, content: any): void {
     writeFileSync(join(AbstractExtractor.outputFolder, `${fileName}.json`), JSON.stringify(content, null, 2));
   }

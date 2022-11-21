@@ -62,7 +62,11 @@ export class ItemsExtractor extends AbstractExtractor {
     ])
       .subscribe(([items, patchData]) => {
         items.forEach(item => {
-          itemIcons[item.index] = this.getIconHD(item.Icon);
+          try {
+            itemIcons[item.index] = this.getIconHD(item.Icon);
+          } catch (e) {
+            console.log(item.index, 'has no Icon?', item);
+          }
           names[item.index] = {
             en: item.Name_en,
             de: item.Name_de,

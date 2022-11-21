@@ -49,13 +49,10 @@ import { SubmarineRanksExtractor } from './extractors/submarine-ranks.extractor'
 import { AirshipPartsExtractor } from './extractors/airship-parts.extractor';
 import { AirshipRanksExtractor } from './extractors/airship-ranks.extractor';
 import { TreasuresExtractor } from './extractors/treasures.extractor';
-import { SeedsExtractor } from './extractors/seeds.extractor';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { AllaganReportsExtractor } from './extractors/allagan-reports.extractor';
 import { NodesExtractor } from './extractors/nodes.extractor';
-import { ShopsExtractor } from './extractors/shops.extractor';
-import { green } from 'colors';
 import { GatheringSearchIndexExtractor } from './extractors/gathering-search-index.extractor';
 import { IslandExtractor } from './extractors/island.extractor';
 import { TraitsExtractor } from './extractors/traits.extractor';
@@ -64,6 +61,8 @@ import { XivDataService } from './xiv/xiv-data.service';
 import { concat, of } from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
 import { ItemSeriesExtractor } from './extractors/item-series.extractor';
+import { ShopsExtractor } from './extractors/shops.extractor';
+import { SeedsExtractor } from './extractors/seeds.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -112,11 +111,11 @@ const extractors: AbstractExtractor[] = [
   new ClassJobModifiersExtractor(),
   new VenturesExtractor(),
   new StatsExtractor(),
+  new ShopsExtractor(),
+  new IslandExtractor(),
   // Everything above is migrated to kobold
   new SeedsExtractor(),
   // Everything above relies on 3rd party APIS and cannot use kobold
-  new IslandExtractor(),
-  new ShopsExtractor(),
   new NodesExtractor(),
   new CollectablesExtractor(),
   new HwdGathererExtractor(),
@@ -159,25 +158,18 @@ const extractors: AbstractExtractor[] = [
   new GatheringSearchIndexExtractor()
 ];
 
-if (process.env.XIVAPI_KEY) {
-  console.log('Fast mode enabled');
-}
-
-if (process.env.DEV_MODE) {
-  console.log(green(`DEV MODE ENABLED, CACHE WILL BE USED`));
-}
-
 (async () => {
   const kobold = new KoboldService();
   await kobold.init();
   const xiv = new XivDataService(kobold);
   xiv.UIColor = await xiv.getSheet('UIColor');
 
-  // const items = await xiv.getSheet('Item', {
-  //   columns: ['BaseParam#', 'BaseParamValue']
+  // const items = await xiv.getSheet('Quest', {
+  //   columns: [],
+  //   depth: 1
   // });
   //
-  // console.log(items.find(i => i.index === 259));
+  // console.log(items);
   // process.exit(0);
 
   const operationsSelection = new MultiSelect({
@@ -215,7 +207,7 @@ if (process.env.DEV_MODE) {
       stopOnComplete: true
     });
 
-    progress.start(selectedExtractors.length, 0);
+    // progress.start(selectedExtractors.length, 0);
 
     concat(...selectedExtractors.map(extractor => {
       return of(null).pipe(

@@ -1,16 +1,4 @@
 {
-  "0": {
-    "ModifierHitPoints": 100,
-    "ModifierManaPoints": 100,
-    "ModifierStrength": 100,
-    "ModifierVitality": 100,
-    "ModifierDexterity": 100,
-    "ModifierIntelligence": 100,
-    "ModifierMind": 100,
-    "ModifierPiety": 100,
-    "Role": 0,
-    "PrimaryStat": 0
-  },
   "1": {
     "ModifierHitPoints": 130,
     "ModifierManaPoints": 100,

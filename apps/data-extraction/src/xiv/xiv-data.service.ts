@@ -3,13 +3,12 @@ import { SaintDefinition } from './saint/saint-definition';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { ColumnSeekOptions, Row } from '@kobold/excel/dist/row';
-import { BaseSaintColumnDefinition, SaintColumnDefinition, SaintGroupColumnDefinition, SaintRepeatColumnDefinition } from './saint/saint-column-definition';
 import { ParsedColumn, ParsedRow } from './parsed-row';
 import { SeString } from './string/se-string';
 import { ColumnDataType } from '@kobold/excel';
 import { ExtendedRow } from './extended-row';
-import { ComplexLinkConverter, LinkConverter, MultiRefConverter } from './saint/saint-converter';
 import { GetSheetOptions } from './get-sheet-options';
+import { ColumnMapper, DefinitionParser, ReaderIndex } from './definition-parser';
 
 export class XivDataService {
 
@@ -39,32 +38,14 @@ export class XivDataService {
     return columns.filter(c => c.startsWith(`${targetProp}.`)).map(c => c.replace(`${targetProp}.`, ''));
   }
 
-  private async handleLinks(definition: SaintDefinition, content: ParsedRow[], columns: string[], depth: number) {
+  private async handleLinks(parser: DefinitionParser, content: ParsedRow[], columns: string[], depth: number) {
     /**
      * This will hold all out mappers, different return cases being for:
      *  - ParsedRow: link to a single row in a sheet and we found it
      *  - ParsedRow[]: link to multiple rows in a single sheet (with subIndexes) and we found it, or empty if we didn't
      *  - null: link to a single row but we didn't find anything
      */
-    const mappers = definition.definitions
-      .filter(col => this.columnIsParsed(col, columns, true))
-      .map((col) => {
-        const colName = this.cleanupColumnName(this.getColumnName(col));
-        let mapper;
-        if (col.type === 'repeat' && col.definition?.converter) {
-          mapper = this.generateConverter(col.definition);
-        } else {
-          mapper = this.generateConverter(col);
-        }
-        if (!mapper) {
-          return null;
-        }
-        return {
-          col: colName,
-          mapper
-        };
-      })
-      .filter(mapper => mapper !== null);
+    const mappers = parser.linkMappers;
 
     if (mappers.length === 0) {
       return content;
@@ -73,7 +54,7 @@ export class XivDataService {
     const flattenPreload = mappers.map(m => {
       return m.mapper.preload.map(preload => ({
         preload,
-        columns: this.getSubColumns(m.col, columns)
+        columns: this.getSubColumns(m.name, columns)
       }));
     }).flat();
     const sheetsArray = flattenPreload
@@ -85,7 +66,11 @@ export class XivDataService {
             { sheet: preload, columns }
           ];
         }
-        existing.columns = [...existing.columns, ...columns];
+        if (!columns || existing.columns === null) {
+          existing.columns = null;
+        } else {
+          existing.columns = [...existing.columns, ...columns];
+        }
         return acc;
       }, []);
     const preloaded = await Promise.all(sheetsArray.map(async ({ sheet, columns }) => {
@@ -104,126 +89,20 @@ export class XivDataService {
 
     return content.map(row => {
       return mappers.reduce((acc, entry) => {
-        if (Array.isArray(row[entry.col])) {
-          row[entry.col] = (row[entry.col] as number[]).map(e => entry.mapper.fn(Number(e), row, sheets));
-        } else {
-          row[entry.col] = entry.mapper.fn(Number(row[entry.col]), row, sheets);
-        }
+        row[entry.name] = this.mapEntry(row[entry.name] as number | number[], entry.mapper, sheets, row);
         return row;
       }, row);
     });
   }
 
-  private generateConverter(col: SaintColumnDefinition): {
-    preload: string[],
-    fn: (id: number, row: ParsedRow, sheets: Record<string, ParsedRow[]>) => ParsedRow | ParsedRow[] | null | number
-  } {
-    if (!col.converter && !col.type) {
-      return null;
+  private mapEntry(row: number | number[], mapper: ColumnMapper, sheets: Record<string, ParsedRow[]>, fullRow: ParsedRow) {
+    if (Array.isArray(row)) {
+      return (row as number[] | number[][]).map((e: number | number[]) => {
+        return this.mapEntry(e, mapper, sheets, fullRow);
+      });
+    } else {
+      return mapper.fn(Number(row), fullRow, sheets);
     }
-    if (col.converter) {
-      switch (col.converter.type) {
-        case 'color':
-        case 'tomestone':
-        case 'generic':
-        case 'icon':
-        case 'quad':
-          return null; // We don't need to handle those but enumerating them here to make sure we didn't miss them
-        case 'complexlink':
-          return {
-            preload: col.converter.links.map(link => link.sheet ? [link.sheet] : link.sheets).flat(),
-            fn: (id, row, sheets) => {
-              const target = (col.converter as ComplexLinkConverter).links.find(link => {
-                if (row[link.when.key] === undefined) {
-                  throw new Error(`Cannot process complexlink with missing property ${link.when.key}`);
-                }
-                return row[link.when.key] === link.when.value;
-              })?.sheet;
-              if (!target) {
-                return id;
-              }
-              const sheet = sheets[target];
-              if (!sheet) {
-                throw new Error(`Tried to link to a sheet that's not loaded??? ${target}`);
-              }
-              return sheet.find(row => row.index === id);
-            }
-          };
-        case 'multiref':
-          return {
-            preload: col.converter.targets,
-            fn: (id, row, sheets) => {
-              for (let t of (col.converter as MultiRefConverter).targets) {
-                const match = sheets[t].find(r => r.index === id);
-                if (match) {
-                  return match;
-                }
-              }
-              return id;
-            }
-          };
-        case 'link':
-          const target = (col.converter as LinkConverter).target;
-          return {
-            preload: [target],
-            fn: (id, row, sheets) => {
-              const sheet = sheets[target];
-              if (!sheet) {
-                throw new Error(`Tried to link to a sheet that's not loaded??? ${target}`);
-              }
-              return sheet.find(row => row.index === id);
-            }
-          };
-      }
-    }
-  }
-
-  public cleanupColumnName(name: string): string {
-    return name
-      .replace('{', '')
-      .replace('}', '')
-      .replace('<', '')
-      .replace('>', '')
-      .replace('[', '')
-      .replace(']', '');
-  }
-
-  public getColumnName(col: BaseSaintColumnDefinition): string | null {
-    if (!col) {
-      return null;
-    }
-    if (col.name) {
-      return col.name;
-    }
-    if (col.type === 'group') {
-      return this.getColumnName(col.members[0]);
-    }
-    if (col.definition?.name) {
-      return col.definition?.name;
-    }
-    if (col.definition) {
-      return this.getColumnName(col.definition);
-    }
-    throw new Error('Cannot find column name for' + JSON.stringify(col));
-  }
-
-  public columnIsParsed(col: SaintColumnDefinition, columns: string[], isForLinks = false): boolean {
-    return !columns || columns.some(c => {
-      const colName = this.cleanupColumnName(this.getColumnName(col)).toLowerCase();
-      if (c.includes('.')) {
-        return c.toLowerCase().startsWith(`${colName}.`);
-      }
-      if (c.endsWith('_*')) {
-        return colName.startsWith(c.toLowerCase().replace('_*', ''));
-      }
-      if (c.endsWith('*')) {
-        return colName.startsWith(c.toLowerCase().replace('*', ''));
-      }
-      if (c.endsWith('#')) {
-        return !isForLinks && colName === c.toLowerCase().replace('#', '');
-      }
-      return c.toLowerCase() === colName;
-    });
   }
 
   public async getSheet(sheetName: string, options?: GetSheetOptions) {
@@ -233,11 +112,12 @@ export class XivDataService {
     if (definition.definitions.length === 0) {
       return []; // Nothing to parse if there's no definitions
     }
-    const sheetClass = this.generateSheetClass(definition, columns);
+    const parser = new DefinitionParser(definition, options?.columns);
+    const sheetClass = this.generateSheetClass(parser, columns);
     const data = await this.kobold.getSheetData<typeof sheetClass, ExtendedRow>(sheetClass, options?.skipFirst);
     const parsed = data.map(row => this.getParsedRow(row));
     if (depth > 0) {
-      return await this.handleLinks(definition, parsed, columns, depth - 1);
+      return await this.handleLinks(parser, parsed, columns, depth - 1);
     }
     return parsed;
   }
@@ -253,6 +133,7 @@ export class XivDataService {
     return {
       index: row.index,
       subIndex: row.subIndex,
+      __sheet: row.__sheet,
       ...row.parsed
     };
   }
@@ -270,11 +151,12 @@ export class XivDataService {
     return this.definitionsCache[sheetName];
   }
 
-  private generateSheetClass<T = Row>(definition: SaintDefinition, columns?: string[]) {
+  private generateSheetClass<T = Row>(definition: DefinitionParser, columns?: string[]) {
     const UIColor = this.UIColor || [];
-    const xiv = this;
     return class DynamicRow extends ExtendedRow {
       static sheet = definition.sheet;
+
+      public __sheet = definition.sheet;
 
       public parsed: Record<string, ParsedColumn> = {};
 
@@ -287,8 +169,8 @@ export class XivDataService {
               return (c.index || 0) === col.index;
             });
           })
-          .filter(c => !!c && xiv.columnIsParsed(c, columns))
-          .map(c => xiv.cleanupColumnName(xiv.getColumnName(c)));
+          .filter(c => !!c && !!c.name && DefinitionParser.columnIsParsed(c.name, columns))
+          .map(c => DefinitionParser.cleanupColumnName(c.name));
       }
 
       constructor(opts) {
@@ -296,36 +178,21 @@ export class XivDataService {
         this.generateColumns();
       }
 
-      private handleRepeat(index: number, col: SaintRepeatColumnDefinition): any[] {
-        return new Array(col.count).fill(null).map((_, i) => {
-          if (col.definition?.type === 'repeat') {
-            return this.handleRepeat(index + i * col.count, col.definition as SaintRepeatColumnDefinition);
-          }
-          return this.unknown({ column: index + i });
-        });
-      }
-
       private generateColumns(): void {
         // Let's generate columns from definitions !
-        definition.definitions
-          .filter(col => xiv.columnIsParsed(col, columns))
-          .forEach(col => {
-            const index = col.index || 0;
-            if ((col).type === 'repeat') {
-              if (col.definition?.type === 'group') {
-                return col.definition.members.forEach((member, mi) => {
-                  this.parsed[xiv.cleanupColumnName(xiv.getColumnName(member))] = new Array(col.count).fill(null)
-                    .map((_, i) => {
-                      return this.unknown({ column: index + i * (col.definition as SaintGroupColumnDefinition).members.length + mi });
-                    });
-                }, {});
-              } else {
-                this.parsed[xiv.cleanupColumnName(xiv.getColumnName(col))] = this.handleRepeat(index, col as SaintRepeatColumnDefinition);
-              }
-            } else {
-              this.parsed[xiv.cleanupColumnName(xiv.getColumnName(col))] = this.unknown({ column: index });
-            }
+        definition
+          .reader
+          .forEach(({ name, reader }) => {
+            this.parsed[name] = this.generateReader(reader);
           });
+      }
+
+      private generateReader(reader: ReaderIndex): any {
+        if (Array.isArray(reader)) {
+          return reader.map(e => this.generateReader(e));
+        } else {
+          return this.unknown({ column: reader });
+        }
       }
 
       protected string(opts?: ColumnSeekOptions): string {

@@ -79,7 +79,7 @@
     "commit": "git-cz",
     "web:copyfiles": "copyfiles ./libs/loader/tc-loader.js ./apps/client/src/assets/ -f",
     "update-lazy-files": "node ./tools/build/lazy-files-updater.js",
-    "data-extractor": "tsc -p apps/data-extraction/tsconfig.json && node apps/data-extraction/build/src/main.js",
+    "data-extractor": "tsc -p apps/data-extraction/tsconfig.json && node --max-old-space-size=8192 apps/data-extraction/build/src/main.js",
     "data-extractor:allag": "tsc -p apps/data-extraction/tsconfig.json && node apps/data-extraction/build/src/main.js --only allagan-reports",
     "profits-api:build": "tsc -p apps/profits-api/tsconfig.json",
     "************ELECTRON STUFF*****************": "",
