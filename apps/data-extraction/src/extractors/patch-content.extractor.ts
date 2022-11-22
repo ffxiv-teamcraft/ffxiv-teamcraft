@@ -1,37 +1,52 @@
 import { AbstractExtractor } from '../abstract-extractor';
 import { join } from 'path';
-import { map, switchMap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+import { combineLatest, Observable } from 'rxjs';
+import { uniq } from 'lodash';
 
 export class PatchContentExtractor extends AbstractExtractor {
   protected doExtract(): any {
     const patchContent = require(join(__dirname, '../../../../client/src/assets/data/patch-content.json'));
-    this.get('https://xivapi.com/patchlist').pipe(
-      switchMap(patchList => {
-        const patch = patchList[patchList.length - 1];
-        return this.aggregateAllPages(`https://xivapi.com/search?indexes=achievement,action,craftaction,fate,instancecontent,item,leve,placename,bnpcname,enpcresident,quest,status,trait&filters=Patch=${patch.ID}`, undefined, `Patches`)
-          .pipe(
-            map(pages => {
-              return {
-                patchId: patch.ID,
-                content: pages
-              };
-            })
-          );
-      })
-    ).subscribe({
-      next: (page) => {
-        (page.content || []).forEach(entry => {
-          patchContent[page.patchId] = patchContent[page.patchId] || {};
-          if ((patchContent[page.patchId][entry._] || []).indexOf(entry.ID) === -1) {
-            patchContent[page.patchId][entry._] = [...(patchContent[page.patchId][entry._] || []), entry.ID];
-          }
+    combineLatest([
+      this.getPatchContent('Achievement'),
+      this.getPatchContent('Action'),
+      this.getPatchContent('CraftAction'),
+      this.getPatchContent('Fate'),
+      this.getPatchContent('InstanceContent'),
+      this.getPatchContent('Item'),
+      this.getPatchContent('Leve'),
+      this.getPatchContent('PlaceName'),
+      this.getPatchContent('BNpcName'),
+      this.getPatchContent('ENpcResident'),
+      this.getPatchContent('Quest'),
+      this.getPatchContent('Status'),
+      this.getPatchContent('Trait')
+    ]).subscribe(
+      (contents: Array<{ content: string, record: Record<number, number> }>) => {
+        contents.forEach(content => {
+          Object.entries(content.record).forEach(([elementId, patch]) => {
+            if (+elementId === 0) {
+              return;
+            }
+            patchContent[patch] = patchContent[patch] || {};
+            patchContent[patch][content.content] = patchContent[patch][content.content] || [];
+            patchContent[patch][content.content] = uniq([...patchContent[patch][content.content], +elementId]);
+          });
         });
         this.persistToJsonAsset('patch-content', patchContent);
         this.done();
-      },
-      complete: () => {
-      }
-    });
+      });
+  }
+
+  getPatchContent(content: string): Observable<{ content: string, record: Record<number, number> }> {
+    return this.getNonXivapiUrl(`https://raw.githubusercontent.com/xivapi/ffxiv-datamining-patches/master/patchdata/${content}.json`).pipe(
+      map(record => {
+        return {
+          content: content.toLowerCase(),
+          record
+        };
+      })
+    );
   }
 
   getName(): string {

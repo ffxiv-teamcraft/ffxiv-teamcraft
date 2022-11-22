@@ -334,8 +334,8 @@ export abstract class AbstractExtractor {
     writeFileSync(join(AbstractExtractor.outputFolder, `${fileName}.ts`), ts);
   }
 
-  protected removeIndexes(data: ParsedRow): Omit<ParsedRow, 'index' | 'subIndex'> {
-    const { index, subIndex, ...cleaned } = data;
+  protected removeIndexes(data: ParsedRow): Omit<ParsedRow, 'index' | 'subIndex' | '__sheet'> {
+    const { index, subIndex, __sheet, ...cleaned } = data;
     return cleaned;
   }
 

@@ -2,17 +2,32 @@ import { readdirSync, readFileSync } from 'fs-extra';
 import { join } from 'path';
 import { AbstractExtractor } from '../abstract-extractor';
 import { combineLatest } from 'rxjs';
+import { XivDataService } from '../xiv/xiv-data.service';
 
 export class LgbExtractor extends AbstractExtractor {
   public isSpecific = true;
 
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const mapData = require('../../../../client/src/assets/data/maps.json');
     const fates = require('../../../../client/src/assets/data/fates.json');
     const npcs = require('../../../../client/src/assets/data/npcs.json');
     const territoryLayers = require('../../../../client/src/assets/data/territory-layers.json');
     const lgbFolder = '../../../input/lgb';
-    const housingMaterialSuppliers = [1008837];
+    const housingMaterialSuppliers = [
+      1008837,
+      1025720,
+      1027018,
+      1025046,
+      1025042,
+      1025027,
+      1016177,
+      1016176,
+      1008847,
+      1025040,
+      1025044,
+      1027016,
+      1025718
+    ];
 
     const aetherytes = [];
 
@@ -57,8 +72,8 @@ export class LgbExtractor extends AbstractExtractor {
 
     // Then, let's work on lgb files
     combineLatest([
-      this.aggregateAllPages('https://xivapi.com/Aetheryte?columns=ID,Level0TargetID,MapTargetID,IsAetheryte,AethernetNameTargetID,PlaceNameTargetID,AetherstreamX,AetherstreamY', null, 'LGB Aetherytes'),
-      this.aggregateAllPages('https://xivapi.com/HousingAethernet?columns=ID,LevelTargetID,TerritoryType.MapTargetID,PlaceNameTargetID', null, 'LGB Housing Aetherytes')
+      this.getSheet<any>(xiv, 'Aetheryte', ['Level#', 'Map#', 'IsAetheryte', 'AethernetName#', 'PlaceName#', 'AetherstreamX', 'AetherstreamY']),
+      this.getSheet<any>(xiv, 'HousingAethernet', ['Level', 'TerritoryType.Map#', 'PlaceName#'], true, 1)
     ])
       .subscribe(([xivapiAetherytes, xivapiHousingAetherytes]) => {
         const allLgbFiles = readdirSync(join(__dirname, lgbFolder));
@@ -128,19 +143,19 @@ export class LgbExtractor extends AbstractExtractor {
                 // Aetherytes
                 case 40:
                   const xivapiAetheryte = xivapiAetherytes.find(aetheryte => {
-                      return aetheryte.Level0TargetID === object.InstanceId;
+                      return aetheryte.Level[0] === object.InstanceId;
                     })
                     || xivapiHousingAetherytes.find(aetheryte => {
-                      return aetheryte.TerritoryType && aetheryte.TerritoryType.MapTargetID === mapId && aetheryte.LevelTargetID === object.InstanceId;
+                      return aetheryte.TerritoryType && aetheryte.TerritoryType.Map === mapId && aetheryte.Level === object.InstanceId;
                     });
                   if (xivapiAetheryte) {
                     const aetheryteEntry = {
-                      id: xivapiAetheryte.ID,
+                      id: xivapiAetheryte.index,
                       zoneid: zoneId,
                       map: mapId,
                       ...coords,
-                      type: xivapiAetheryte.IsAetheryte === 1 ? 0 : 1,
-                      nameid: xivapiAetheryte.PlaceNameTargetID || xivapiAetheryte.AethernetNameTargetID,
+                      type: xivapiAetheryte.IsAetheryte ? 0 : 1,
+                      nameid: xivapiAetheryte.PlaceName || xivapiAetheryte.AethernetName,
                       aethernetCoords: {
                         x: xivapiAetheryte.AetherstreamX,
                         y: xivapiAetheryte.AetherstreamY

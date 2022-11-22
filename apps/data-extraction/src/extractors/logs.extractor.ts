@@ -1,5 +1,6 @@
 import { combineLatest, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { XivDataService } from '../xiv/xiv-data.service';
 import { AbstractExtractor } from '../abstract-extractor';
 
 export class LogsExtractor extends AbstractExtractor {
@@ -45,7 +46,10 @@ export class LogsExtractor extends AbstractExtractor {
 
   private notebookDivision = {};
 
-  protected doExtract(): any {
+  protected xiv: XivDataService;
+
+  protected doExtract(xiv: XivDataService): any {
+    this.xiv = xiv;
     const notebookDivisionDone$ = new Subject<void>();
 
     combineLatest([this.craftingLogDone$, notebookDivisionDone$, this.gatheringLogDone$,
@@ -54,9 +58,9 @@ export class LogsExtractor extends AbstractExtractor {
         this.extractRequiredLevels();
         this.done();
       });
-    this.getAllEntries('https://xivapi.com/NotebookDivision', true).subscribe(completeFetch => {
+    this.getSheet<any>(xiv, 'NotebookDivision', ['Name', 'CraftOpeningLevel', 'GatheringOpeningLevel'], true).subscribe(completeFetch => {
       completeFetch.forEach(row => {
-        this.notebookDivision[row.ID] = {
+        this.notebookDivision[row.index] = {
           name: {
             en: row.Name_en,
             ja: row.Name_ja,
@@ -65,24 +69,24 @@ export class LogsExtractor extends AbstractExtractor {
           },
           pages: [0, 1, 2, 3, 4, 5, 6, 7]
             .map(index => {
-              if (row.ID < 1000) {
+              if (row.index < 1000) {
                 // Level ranges
-                return 40 * index + row.ID;
-              } else if (row.ID < 2000) {
+                return 40 * index + row.index;
+              } else if (row.index < 2000) {
                 // DoH masterbooks
-                return 1000 + 8 * (row.ID - 1000) + index;
-              } else if (row.ID >= 2010 && row.ID <= 2012) {
+                return 1000 + 8 * (row.index - 1000) + index;
+              } else if (row.index >= 2010 && row.index <= 2012) {
                 return [
                   // Quarrying, Mining, Logging, Harvesting
                   [2025, 2024, 2026, 2027], // Ilsabard
                   [2028, 2029, -1, 2031], // Sea of Stars
                   [2033, -1, 2034, -1]  // World Sundered
-                ][row.ID - 2010][index] || -1;
-              } else if ([2006, 2007, 2008, 2009].includes(row.ID)) {
+                ][row.index - 2010][index] || -1;
+              } else if ([2006, 2007, 2008, 2009].includes(row.index)) {
                 return -1;
               } else {
                 // DoL folklores, only 4 DoLs tho
-                return index < 4 ? (2000 + 4 * (row.ID - 2000) + index) : -1;
+                return index < 4 ? (2000 + 4 * (row.index - 2000) + index) : -1;
               }
             }),
           craftLevel: row.CraftOpeningLevel,
@@ -100,29 +104,19 @@ export class LogsExtractor extends AbstractExtractor {
   }
 
   private extractCraftingLog(): void {
-    this.getAllEntries('https://xivapi.com/RecipeNotebookList', true).subscribe((completeFetch) => {
+    this.getSheet<any>(this.xiv, 'RecipeNotebookList', ['Recipe.CraftType', 'Recipe.SecretRecipeBook', 'Recipe.RecipeLevelTable', 'Recipe.ItemResult'], true, 1).subscribe((completeFetch) => {
       completeFetch.forEach(page => {
         // If it's an empty page or a collectable one, don't go further
-        if (!page.Recipe0 || page.Recipe0.ID === -1 || (page.ID >= 1256 && page.ID < 1280)) {
+        if (!page.Recipe[0] || page.Recipe[0]?.index <= 0 || (page.index >= 1256 && page.index < 1280)) {
           return;
         }
-        Object.keys(page)
-          .filter(key => {
-            return /^Recipe\d+$/.test(key) && page[key] && page[key].ID !== -1 && page[key].ID !== null;
-          })
-          .sort((a, b) => {
-            return +a.match(/^Recipe(\d+)$/)[1] - +b.match(/^Recipe(\d+)$/)[1];
-          })
-          .forEach(key => {
-            const entry = page[key];
-            try {
-              this.craftingLog[entry.CraftTypeTargetID].push(entry.ID);
-              this.addToCraftingLogPage(entry, page.ID);
-            } catch (e) {
-              console.log(e);
-              console.log(entry);
-            }
-          });
+        page.Recipe.forEach((recipe) => {
+          if (!recipe || recipe?.index <= 0) {
+            return;
+          }
+          this.craftingLog[recipe.CraftType].push(recipe.index);
+          this.addToCraftingLogPage(recipe, page.index);
+        });
       });
       this.persistToJsonAsset('crafting-log', this.craftingLog);
       this.persistToJsonAsset('crafting-log-pages', this.craftingLogPages);
@@ -131,40 +125,37 @@ export class LogsExtractor extends AbstractExtractor {
   }
 
   private extractGatheringLog(): void {
-    this.getAllEntries('https://xivapi.com/GatheringNotebookList', true).subscribe(completeFetch => {
+    this.getSheet<any>(this.xiv, 'GatheringNotebookList',
+      ['GatheringItem.GatheringItemLevel.GatheringItemLevel', 'GatheringItem.Item#', 'GatheringItem.GatheringItemLevel.Stars', 'GatheringItem.IsHidden'],
+      true, 2).subscribe(completeFetch => {
       completeFetch.forEach(page => {
         // If it's an empty page, don't go further
-        if (!page.GatheringItem0 || page.GatheringItem0.ID === -1) {
+        if (!page.GatheringItem[0] || page.GatheringItem[0] === -1) {
           return;
         }
-        Object.keys(page)
-          .filter(key => {
-            return /^GatheringItem\d+$/.test(key) && page[key] && page[key].ID !== -1 && page[key].ID !== null;
-          })
-          .sort((a, b) => {
-            return +a.match(/^GatheringItem(\d+)$/)[1] - +b.match(/^GatheringItem(\d+)$/)[1];
-          })
-          .forEach(key => {
-            if (page.ID >= 2200) {
-              return;
-            }
-            const pageId = page.ID;
-            const entry = page[key];
-            // 0 = MIN, 1 = MIN (quarrying), 2 = BTN, 3 = BTN (grass thing)
-            let gathererIndex;
-            if (page.ID < 40) {
-              gathererIndex = 0;
-            } else if (page.ID < 80) {
-              gathererIndex = 1;
-            } else if (page.ID < 120) {
-              gathererIndex = 2;
-            } else if (page.ID < 200) {
-              gathererIndex = 3;
-            } else {
-              gathererIndex = (page.ID - 2000) % 4;
-            }
-            this.addToGatheringLogPage(entry, pageId, gathererIndex);
-          });
+        page.GatheringItem.forEach(gatheringItem => {
+          if (!gatheringItem) {
+            return;
+          }
+          if (page.index >= 2200) {
+            return;
+          }
+          const pageId = page.index;
+          // 0 = MIN, 1 = MIN (quarrying), 2 = BTN, 3 = BTN (grass thing)
+          let gathererIndex;
+          if (page.index < 40) {
+            gathererIndex = 0;
+          } else if (page.index < 80) {
+            gathererIndex = 1;
+          } else if (page.index < 120) {
+            gathererIndex = 2;
+          } else if (page.index < 200) {
+            gathererIndex = 3;
+          } else {
+            gathererIndex = (page.index - 2000) % 4;
+          }
+          this.addToGatheringLogPage(gatheringItem, pageId, gathererIndex);
+        });
       });
       this.persistToJsonAsset('gathering-log-pages', this.gatheringLogPages);
       this.gatheringLogDone$.next();
@@ -208,94 +199,103 @@ export class LogsExtractor extends AbstractExtractor {
     const fishingLog = [];
     const fishes = [];
 
-    this.aggregateAllPages('https://xivapi.com/FishParameter?columns=ID,ItemTargetID,Item.Icon,TerritoryType.MapTargetID,TerritoryType.PlaceNameTargetID,GatheringItemLevel,TimeRestricted,WeatherRestricted,FishingRecordType,IsInLog,GatheringSubCategory').pipe(
+    const paramDone$ = new Subject<void>();
+    const spotsDone$ = new Subject<void>();
+
+    combineLatest([paramDone$, spotsDone$]).subscribe(() => {
+      this.fishingLogDone$.next();
+    });
+
+    this.getSheet<any>(this.xiv, 'FishParameter',
+      [
+        'Item.Icon',
+        'TerritoryType.Map#', 'TerritoryType.PlaceName#',
+        'GatheringItemLevel.Stars', 'GatheringItemLevel.GatheringItemLevel', 'TimeRestricted', 'WeatherRestricted', 'FishingRecordType#', 'IsInLog', 'GatheringSubCategory.Item#'],
+      false,
+      1
+    ).pipe(
       map(completeFetch => {
         const fishParameter = {};
         completeFetch
-          .filter(fish => fish.ItemTargetID > 0)
+          .filter(fish => fish.Item.index > 0)
           .forEach(fish => {
-            if (fish.TerritoryType === null) {
-              throw new Error(`No territory for FishParameter#${fish.ID}`);
+            if (!fish.TerritoryType) {
+              throw new Error(`No territory for FishParameter#${fish.index}`);
             }
-            if (fishes.indexOf(fish.ItemTargetID) === -1) {
-              fishes.push(fish.ItemTargetID);
+            if (fishes.indexOf(fish.Item.index) === -1) {
+              fishes.push(fish.Item.index);
             }
             const entry: any = {
-              id: fish.ID,
-              itemId: fish.ItemTargetID,
+              id: fish.index,
+              itemId: fish.Item.index,
               level: fish.GatheringItemLevel.GatheringItemLevel,
               icon: fish.Item.Icon,
-              mapId: fish.TerritoryType.MapTargetID,
-              zoneId: fish.TerritoryType.PlaceNameTargetID,
-              timed: fish.TimeRestricted,
-              weathered: fish.WeatherRestricted,
+              mapId: fish.TerritoryType.Map,
+              zoneId: fish.TerritoryType.PlaceName,
+              timed: fish.TimeRestricted ? 1 : 0,
+              weathered: fish.WeatherRestricted ? 1 : 0,
               stars: fish.GatheringItemLevel.Stars || 0
             };
             if (fish.GatheringSubCategory) {
-              entry.folklore = fish.GatheringSubCategory.ItemTargetID;
+              entry.folklore = fish.GatheringSubCategory.Item;
             }
-            if (fish.FishingRecordType && fish.FishingRecordType.Addon) {
-              entry.recordType = {
-                en: fish.FishingRecordType.Addon.Text_en,
-                de: fish.FishingRecordType.Addon.Text_de,
-                ja: fish.FishingRecordType.Addon.Text_ja,
-                fr: fish.FishingRecordType.Addon.Text_fr
-              };
+            if (fish.FishingRecordType) {
+              entry.recordType = fish.FishingRecordType;
             }
-            fishParameter[fish.ItemTargetID] = entry;
+            fishParameter[fish.Item.index] = entry;
           });
         return fishParameter;
       })
     ).subscribe(fishParameter => {
       this.persistToJsonAsset('fish-parameter', fishParameter);
       this.persistToJsonAsset('fishes', fishes);
+      paramDone$.next();
     });
 
-    this.aggregateAllPages('https://xivapi.com/FishingSpot?columns=Item*,PlaceName,TerritoryType,ID,GatheringLevel,X,Y,Z,FishingSpotCategory,Icon,PlaceName').subscribe((completeFetch) => {
+    this.getSheet<any>(this.xiv,
+      'FishingSpot',
+      [
+        'Item.Icon',
+        'TerritoryType.Map.SizeFactor', 'TerritoryType.PlaceName#',
+        'PlaceName#', 'GatheringLevel#', 'X', 'Y', 'Z', 'FishingSpotCategory#', 'Icon'],
+      true, 2
+    ).subscribe((completeFetch) => {
       const spots = [];
       completeFetch
-        .filter(spot => spot.Item0 !== null && spot.PlaceName !== null && (spot.TerritoryType !== null || spot.ID >= 10000))
+        .filter(spot => spot.Item[0] && spot.PlaceName && (spot.TerritoryType || spot.index >= 10000))
         .forEach(spot => {
           // Let's check if this is diadem
-          if (spot.TerritoryType === null && spot.ID >= 10000) {
+          if (!spot.TerritoryType && spot.index >= 10000) {
             spot.TerritoryType = diademTerritory;
           }
           const c = spot.TerritoryType.Map.SizeFactor / 100.0;
 
           spots.push({
-            id: spot.ID,
-            mapId: spot.TerritoryType.Map.ID,
-            placeId: spot.TerritoryType.PlaceName.ID,
-            zoneId: spot.PlaceName.ID,
+            id: spot.index,
+            mapId: spot.TerritoryType.Map.index,
+            placeId: spot.TerritoryType.PlaceName,
+            zoneId: spot.PlaceName,
             level: spot.GatheringLevel,
             category: spot.FishingSpotCategory,
-            coords: spot.ID >= 10000 ? diademFishingSpotCoords[spot.ID] : {
+            coords: spot.index >= 10000 ? diademFishingSpotCoords[spot.index] : {
               x: Math.floor(100 * (41.0 / c) * (spot.X / 2048.0) + 1) / 100 + 1,
               y: Math.floor(100 * (41.0 / c) * (spot.Z / 2048.0) + 1) / 100 + 1
             },
-            fishes: Object.keys(spot)
-              .filter(key => /Item\dTargetID/.test(key))
-              .map(key => +spot[key])
+            fishes: spot.Item.filter(i => i.index > 0).map(i => i.index)
           });
-          Object.keys(spot)
-            .filter(key => {
-              return /^Item\d+$/.test(key) && spot[key] && spot[key].ID !== -1 && spot[key].ID !== null;
-            })
-            .sort((a, b) => {
-              return +a.match(/^Item(\d+)$/)[1] - +b.match(/^Item(\d+)$/)[1];
-            })
-            .forEach(key => {
-              const fish = spot[key];
+          spot.Item
+            .filter(item => item && item.index > 0)
+            .forEach(fish => {
               const entry = {
-                itemId: fish.ID,
+                itemId: fish.index,
                 level: spot.GatheringLevel,
-                icon: fish.Icon,
-                mapId: spot.TerritoryType.Map.ID,
-                placeId: spot.TerritoryType.PlaceName.ID,
-                zoneId: spot.PlaceName.ID,
+                icon: this.getIconHD(fish.Icon),
+                mapId: spot.TerritoryType.Map.index,
+                placeId: spot.TerritoryType.PlaceName,
+                zoneId: spot.PlaceName,
                 category: spot.FishingSpotCategory,
                 spot: {
-                  id: spot.ID,
+                  id: spot.index,
                   coords: {
                     x: Math.floor(100 * (41.0 / c) * (spot.X / 2048.0) + 1) / 100 + 1,
                     y: Math.floor(100 * (41.0 / c) * (spot.Z / 2048.0) + 1) / 100 + 1
@@ -307,7 +307,7 @@ export class LogsExtractor extends AbstractExtractor {
         });
       this.persistToJsonAsset('fishing-log', fishingLog);
       this.persistToJsonAsset('fishing-spots', spots);
-      this.fishingLogDone$.next();
+      spotsDone$.next();
     });
   }
 
@@ -315,22 +315,28 @@ export class LogsExtractor extends AbstractExtractor {
 
     const spearFishingLog = [];
 
-    this.getAllEntries('https://xivapi.com/SpearfishingNotebook', true).subscribe(completeFetch => {
+    this.getSheet<any>(this.xiv, 'SpearfishingNotebook',
+      [
+        'GatheringPointBase.Item.Item#', 'GatheringLevel.GatheringLevel',
+        'TerritoryType.Map.SizeFactor', 'TerritoryType.PlaceName#',
+        'PlaceName#', 'X', 'Y'
+      ],
+      true,
+      2).subscribe(completeFetch => {
       completeFetch
-        .filter(entry => entry.GatheringPointBase)
+        .filter(entry => entry.GatheringPointBase?.index > 0)
         .forEach(entry => {
-          const entries = Object.keys(entry.GatheringPointBase)
-            .filter(key => /Item\d/.test(key))
-            .filter(key => entry.GatheringPointBase[key] !== null)
-            .map(key => {
+          const entries = entry.GatheringPointBase.Item
+            .filter(item => !!item)
+            .map(item => {
               const c = entry.TerritoryType.Map.SizeFactor / 100.0;
               return {
-                id: entry.GatheringPointBase.ID,
-                itemId: entry.GatheringPointBase[key].ItemTargetID,
+                id: entry.GatheringPointBase.index,
+                itemId: item.Item,
                 level: entry.GatheringLevel.GatheringLevel,
-                mapId: entry.TerritoryType.Map.ID,
-                placeId: entry.TerritoryType.PlaceName.ID,
-                zoneId: entry.PlaceName.ID,
+                mapId: entry.TerritoryType.Map.index,
+                placeId: entry.TerritoryType.PlaceName,
+                zoneId: entry.PlaceName,
                 coords: {
                   x: Math.floor(10 * (41.0 / c) * ((entry.X * c) / 2048.0) + 1) / 10,
                   y: Math.floor(10 * (41.0 / c) * ((entry.Y * c) / 2048.0) + 1) / 10
@@ -345,43 +351,39 @@ export class LogsExtractor extends AbstractExtractor {
 
     const spearFishingFish = [];
 
-    this.getAllPages('https://xivapi.com/SpearfishingItem?columns=ItemTargetID').subscribe(
-      {
-        next: page => {
-          page.Results.forEach(fish => {
-            spearFishingFish.push(fish.ItemTargetID);
-          });
-        },
-        complete: () => {
-          this.persistToJsonAsset('spear-fishing-fish', spearFishingFish);
-          this.spearFishingNodesDone$.next();
-        }
+    this.getSheet(this.xiv, 'SpearfishingItem', ['Item#']).subscribe(
+      (entries) => {
+        entries.forEach(fish => {
+          spearFishingFish.push(fish.Item);
+        });
+        this.persistToJsonAsset('spear-fishing-fish', spearFishingFish);
+        this.spearFishingNodesDone$.next();
       });
   }
 
-  private addToCraftingLogPage(entry, pageId) {
-    this.craftingLogPages[entry.CraftTypeTargetID] = this.craftingLogPages[entry.CraftTypeTargetID] || [];
-    let page = this.craftingLogPages[entry.CraftTypeTargetID].find(p => p.id === pageId);
+  private addToCraftingLogPage(entry: any, pageId: number) {
+    this.craftingLogPages[entry.CraftType] = this.craftingLogPages[entry.CraftType] || [];
+    let page = this.craftingLogPages[entry.CraftType].find(p => p.id === pageId);
     if (page === undefined) {
-      this.craftingLogPages[entry.CraftTypeTargetID].push({
+      this.craftingLogPages[entry.CraftType].push({
         id: pageId,
-        masterbook: entry.SecretRecipeBookTargetID || null,
+        masterbook: entry.SecretRecipeBook || null,
         startLevel: entry.RecipeLevelTable,
         recipes: []
       });
-      page = this.craftingLogPages[entry.CraftTypeTargetID].find(p => p.id === pageId);
+      page = this.craftingLogPages[entry.CraftType].find(p => p.id === pageId);
     }
-    if (page.recipes.some(r => r.recipeId === entry.ID)) {
+    if (page.recipes.some(r => r.recipeId === entry.index)) {
       return;
     }
     page.recipes.push({
-      recipeId: entry.ID,
-      itemId: entry.ItemResultTargetID,
-      rlvl: entry.RecipeLevelTable.ID
+      recipeId: entry.index,
+      itemId: entry.ItemResult,
+      rlvl: entry.RecipeLevelTable
     });
   }
 
-  private addToGatheringLogPage(entry, pageId, gathererIndex) {
+  private addToGatheringLogPage(entry: any, pageId: number, gathererIndex: number) {
     let page = this.gatheringLogPages[gathererIndex].find(p => p.id === pageId);
     if (page === undefined) {
       this.gatheringLogPages[gathererIndex].push({
@@ -392,11 +394,11 @@ export class LogsExtractor extends AbstractExtractor {
       page = this.gatheringLogPages[gathererIndex].find(p => p.id === pageId);
     }
     page.items.push({
-      itemId: entry.ItemTargetID,
-      ilvl: entry.GatheringItemLevelTargetID,
+      itemId: entry.Item,
+      ilvl: entry.GatheringItemLevel.index,
       lvl: entry.GatheringItemLevel.GatheringItemLevel,
       stars: entry.GatheringItemLevel.Stars,
-      hidden: entry.IsHidden
+      hidden: entry.IsHidden ? 1 : 0
     });
   }
 

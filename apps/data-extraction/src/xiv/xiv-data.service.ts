@@ -9,6 +9,7 @@ import { ColumnDataType } from '@kobold/excel';
 import { ExtendedRow } from './extended-row';
 import { GetSheetOptions } from './get-sheet-options';
 import { ColumnMapper, DefinitionParser, ReaderIndex } from './definition-parser';
+import { makeIcon } from './make-icon';
 
 export class XivDataService {
 
@@ -124,11 +125,8 @@ export class XivDataService {
 
   private getParsedRow(row: ExtendedRow): ParsedRow {
     if (row.parsed.Icon !== undefined) {
-      if (row.parsed.Icon === 0) {
-        row.parsed.Icon = '';
-      } else {
-        row.parsed.Icon = `/i/${Math.floor(Number(row.parsed.Icon) / 1000).toString().padStart(3, '0')}000/${row.parsed.Icon.toString().padStart(6, '0')}.png`;
-      }
+      row.parsed.IconID = Number(row.parsed.Icon);
+      row.parsed.Icon = makeIcon(Number(row.parsed.Icon));
     }
     return {
       index: row.index,

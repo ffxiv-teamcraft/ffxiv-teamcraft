@@ -1,30 +1,35 @@
+import { XivDataService } from '../xiv/xiv-data.service';
 import { AbstractExtractor } from '../abstract-extractor';
+import { combineLatest } from 'rxjs';
 
 export class NpcsExtractor extends AbstractExtractor {
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const npcs = {};
-    const housingMaterialSuppliers = [];
-    this.getAllPages('https://xivapi.com/ENpcResident?columns=ID,Name_*,DefaultTalk,Title_*').subscribe(page => {
-      page.Results.forEach(npc => {
-        npcs[npc.ID] = {
-          ...npcs[npc.ID],
-          en: npc.Name_en,
-          ja: npc.Name_ja,
-          de: npc.Name_de,
-          fr: npc.Name_fr,
+    combineLatest([
+      this.getSheet(xiv, 'ENpcResident', ['Singular', 'Title']),
+      this.getSheet<any>(xiv, 'ENpcBase', ['Balloon#', 'ENpcData#'])
+    ]).subscribe(([eNpcResidents, eNpcBases]) => {
+      eNpcResidents.forEach(npc => {
+        const base = eNpcBases.find(b => b.index === npc.index);
+        const defaultTalks = base.ENpcData.filter(d => d > 589800 && d < 601000);
+        npcs[npc.index] = {
+          ...npcs[npc.index],
+          en: npc.Singular_en,
+          ja: npc.Singular_ja,
+          de: npc.Singular_de,
+          fr: npc.Singular_fr,
           title: {
             en: npc.Title_en,
             ja: npc.Title_ja,
             de: npc.Title_de,
             fr: npc.Title_fr
           },
-          defaultTalks: (npc.DefaultTalk || []).map(talk => talk.ID)
+          defaultTalks
         };
-        if (npc.BalloonTargetID > 0) {
-          npcs[npc.ID].balloon = npc.BalloonTargetID;
+        if (base.Balloon > 0) {
+          npcs[npc.index].balloon = npc.Balloon;
         }
       });
-    }, null, () => {
       this.persistToJsonAsset('npcs', npcs);
       this.done();
     });

@@ -46,12 +46,7 @@ export class DefinitionParser {
       return null;
     }
     return name
-      .replace('{', '')
-      .replace('}', '')
-      .replace('<', '')
-      .replace('>', '')
-      .replace('[', '')
-      .replace(']', '');
+      .replace(/[{}\[\]<>]/gi, '');
   }
 
   public static columnIsParsed(name: string, columns: string[], isForLinks = false): boolean {
@@ -143,7 +138,7 @@ export class DefinitionParser {
             fn: (id, row, sheets) => {
               const target = (col.converter as ComplexLinkConverter).links.find(link => {
                 if (row[link.when.key] === undefined) {
-                  throw new Error(`Cannot process complexlink with missing property ${link.when.key}`);
+                  throw new Error(`Cannot process complexlink with missing property ${link.when.key}, please add it to the columns you're getting.`);
                 }
                 return row[link.when.key] === link.when.value;
               })?.sheet;

@@ -113,15 +113,8 @@ const extractors: AbstractExtractor[] = [
   new StatsExtractor(),
   new ShopsExtractor(),
   new IslandExtractor(),
-  // Everything above is migrated to kobold
-  new SeedsExtractor(),
-  // Everything above relies on 3rd party APIS and cannot use kobold
-  new NodesExtractor(),
-  new CollectablesExtractor(),
   new HwdGathererExtractor(),
   new ActionTimelineExtractor(),
-  new FoodsExtractor(),
-  new MedicinesExtractor(),
   new ParamGrowExtractor(),
   new CollectablesShopsExtractor(),
   new NpcsExtractor(),
@@ -129,29 +122,37 @@ const extractors: AbstractExtractor[] = [
   new JobsExtractor(),
   new JobCategoriesExtractor(),
   new FatesExtractor(),
-  new GatheringBonusesExtractor(),
   new CdGroupsExtractor(),
   new CombosExtractor(),
   new AetherytesExtractor(),
-  new RecipesExtractor(),
   new ActionsExtractor(),
-  new ReductionsExtractor(),
-  new MonsterDropsExtractor(),
   new InstancesExtractor(),
-  new QuestsExtractor(),
-  new MapsExtractor(),
-  new MapIdsExtractor(),
-  new FishParameterExtractor(),
   new WeathersExtractor(),
-  new WeatherRateExtractor(),
-  new PatchContentExtractor(),
+  new MapsExtractor(),
   new LogsExtractor(),
+  new FishParameterExtractor(),
+  new MapIdsExtractor(),
+  // Everything above is migrated to kobold
+  new SeedsExtractor(),
+  new ReductionsExtractor(),
+  new PatchContentExtractor(),
+  new MonsterDropsExtractor(),
+  // Everything above relies on 3rd party APIS and cannot use kobold
+  new NodesExtractor(),
+  new CollectablesExtractor(),
+  new FoodsExtractor(),
+  new MedicinesExtractor(),
+  new GatheringBonusesExtractor(),
+  new RecipesExtractor(),
+  new QuestsExtractor(),
+  new WeatherRateExtractor(),
   new SubmarinePartsExtractor(),
   new SubmarineRanksExtractor(),
   new AirshipPartsExtractor(),
   new AirshipRanksExtractor(),
   new TreasuresExtractor(),
   new MappyExtractor(),
+  // LGB is migrated but needs to stay here at the bottom
   new LgbExtractor(),
   new GubalExtractor(),
   new AllaganReportsExtractor(),
@@ -164,12 +165,21 @@ const extractors: AbstractExtractor[] = [
   const xiv = new XivDataService(kobold);
   xiv.UIColor = await xiv.getSheet('UIColor');
 
-  // const items = await xiv.getSheet('Quest', {
-  //   columns: [],
-  //   depth: 1
+  // console.time('Lazy');
+  // await xiv.getSheet('Item', {
+  //   columns: ['Icon'], // I just want Icon
+  //   depth: 0
   // });
+  // console.timeEnd('Lazy');
   //
-  // console.log(items);
+  //
+  // console.time('Not Lazy');
+  // await xiv.getSheet('Item', {
+  //   columns: null, // Give me all the columns
+  //   depth: 0
+  // });
+  // console.timeEnd('Not Lazy');
+  //
   // process.exit(0);
 
   const operationsSelection = new MultiSelect({
@@ -207,7 +217,7 @@ const extractors: AbstractExtractor[] = [
       stopOnComplete: true
     });
 
-    // progress.start(selectedExtractors.length, 0);
+    progress.start(selectedExtractors.length, 0);
 
     concat(...selectedExtractors.map(extractor => {
       return of(null).pipe(
