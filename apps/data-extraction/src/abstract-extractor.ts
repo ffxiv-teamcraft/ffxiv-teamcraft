@@ -60,6 +60,11 @@ export abstract class AbstractExtractor {
     return icon.replace('.png', '_hr1.png');
   }
 
+  protected getCompositeID(row: ParsedRow): string {
+    return `${row.index}.${row.subIndex}`;
+  }
+
+
   protected requireLazyFile(name: string): any {
     return require(join(AbstractExtractor.assetOutputFolder, `${name}.json`));
   }

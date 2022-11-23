@@ -40,8 +40,7 @@ import { ClassJobModifiersExtractor } from './extractors/class-job-modifiers.ext
 import { EquipSlotCategoryExtractor } from './extractors/equip-slot-category.extractor';
 import { TribesExtractor } from './extractors/tribes.extractor';
 import { VenturesExtractor } from './extractors/ventures.extractor';
-import { FoodsExtractor } from './extractors/foods.extractor';
-import { MedicinesExtractor } from './extractors/medicines.extractor';
+import { ConsumablesExtractor } from './extractors/consumables.extractor';
 import { ParamGrowExtractor } from './extractors/param-grow.extractor';
 import { GubalExtractor } from './extractors/gubal.extractor';
 import { SubmarinePartsExtractor } from './extractors/submarine-parts.extractor';
@@ -132,25 +131,24 @@ const extractors: AbstractExtractor[] = [
   new LogsExtractor(),
   new FishParameterExtractor(),
   new MapIdsExtractor(),
+  new TreasuresExtractor(),
+  new ConsumablesExtractor(),
+  new NodesExtractor(),
+  new WeatherRateExtractor(),
+  new GatheringBonusesExtractor(),
+  new CollectablesExtractor(),
   // Everything above is migrated to kobold
   new SeedsExtractor(),
   new ReductionsExtractor(),
   new PatchContentExtractor(),
   new MonsterDropsExtractor(),
   // Everything above relies on 3rd party APIS and cannot use kobold
-  new NodesExtractor(),
-  new CollectablesExtractor(),
-  new FoodsExtractor(),
-  new MedicinesExtractor(),
-  new GatheringBonusesExtractor(),
   new RecipesExtractor(),
   new QuestsExtractor(),
-  new WeatherRateExtractor(),
   new SubmarinePartsExtractor(),
   new SubmarineRanksExtractor(),
   new AirshipPartsExtractor(),
   new AirshipRanksExtractor(),
-  new TreasuresExtractor(),
   new MappyExtractor(),
   // LGB is migrated but needs to stay here at the bottom
   new LgbExtractor(),
@@ -165,21 +163,9 @@ const extractors: AbstractExtractor[] = [
   const xiv = new XivDataService(kobold);
   xiv.UIColor = await xiv.getSheet('UIColor');
 
-  // console.time('Lazy');
-  // await xiv.getSheet('Item', {
-  //   columns: ['Icon'], // I just want Icon
-  //   depth: 0
-  // });
-  // console.timeEnd('Lazy');
+  // const items = await xiv.getSheet('ItemFood');
   //
-  //
-  // console.time('Not Lazy');
-  // await xiv.getSheet('Item', {
-  //   columns: null, // Give me all the columns
-  //   depth: 0
-  // });
-  // console.timeEnd('Not Lazy');
-  //
+  // console.log(items);
   // process.exit(0);
 
   const operationsSelection = new MultiSelect({

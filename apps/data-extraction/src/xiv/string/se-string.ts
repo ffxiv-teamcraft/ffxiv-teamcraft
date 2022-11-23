@@ -65,6 +65,8 @@ export class SeString {
         return new StaticResultChunk('&nbsp;');
       case SeStringChunkType.SeHyphen:
         return new StaticResultChunk('-');
+      case 0x20:
+        return new StaticResultChunk('{{value}}');
       case SeStringChunkType.UIForeground:
         return new UIForegroundResultChunk(payloadReader, this.UIColor);
       case SeStringChunkType.EmphasisItalic:

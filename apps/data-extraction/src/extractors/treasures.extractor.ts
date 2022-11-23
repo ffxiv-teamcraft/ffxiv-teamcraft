@@ -1,20 +1,24 @@
 import { AbstractExtractor } from '../abstract-extractor';
 import { combineLatest } from 'rxjs';
+import { XivDataService } from '../xiv/xiv-data.service';
 
 export class TreasuresExtractor extends AbstractExtractor {
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const treasures = [];
     combineLatest([
-      this.aggregateAllPages('https://xivapi.com/TreasureSpot?columns=ID,Location,MapOffsetX,MapOffsetY'),
-      this.aggregateAllPages('https://xivapi.com/TreasureHuntRank?columns=ID,MaxPartySize,ItemNameTargetID')
+      this.getSheet<any>(xiv, 'TreasureSpot', [
+        'Location.X', 'Location.Y', 'Location.Z', 'Location.Map.SizeFactor', 'Location.Map.OffsetY', 'Location.Map.OffsetX',
+        'MapOffsetX', 'MapOffsetY'
+      ], false, 2),
+      this.getSheet(xiv, 'TreasureHuntRank', ['MaxPartySize', 'ItemName'])
     ]).subscribe(([treasureRows, ranks]) => {
       treasureRows
         .filter(treasure => !!treasure.Location)
         .forEach(treasure => {
           const rawCoords = {
-            x: +treasure.Location.X,
-            y: +treasure.Location.Z,
-            z: +treasure.Location.Y
+            x: Math.floor(+treasure.Location.X * 100) / 100,
+            y: Math.floor(+treasure.Location.Z * 100) / 100,
+            z: Math.floor(+treasure.Location.Y * 100) / 100
           };
           const coords = this.getCoords(rawCoords,
             {
@@ -24,17 +28,16 @@ export class TreasuresExtractor extends AbstractExtractor {
               offset_z: 0
             }
           );
-          const rank = ranks.find(r => r.ID === +treasure.ID.split('.')[0]);
+          const rank = ranks.find(r => r.index === treasure.index);
           treasures.push({
-            id: treasure.ID,
+            id: this.getCompositeID(treasure),
             coords: coords,
             rawCoords,
-            map: treasure.Location.MapTargetID,
+            map: treasure.Location.Map.index,
             partySize: rank.MaxPartySize,
-            item: rank.ItemNameTargetID
+            item: rank.ItemName
           });
         });
-    }, null, () => {
       this.persistToJsonAsset('treasures', treasures);
       this.done();
     });
