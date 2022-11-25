@@ -1,0 +1,12 @@
+{
+  "index": 901,
+  "subIndex": 0,
+  "__sheet": "TerritoryType",
+  "PlaceName": 1647,
+  "Map": {
+    "index": 584,
+    "subIndex": 0,
+    "__sheet": "Map",
+    "SizeFactor": 100
+  }
+}

@@ -23,6 +23,7 @@ export const LazyDataKeys = [
   'craftingLog',
   'deprecatedItems',
   'desynth',
+  'diademTerritory',
   'dropSources',
   'equipSlotCategories',
   'equipment',
