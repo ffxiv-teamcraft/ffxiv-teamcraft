@@ -185,7 +185,7 @@ export class ShopsExtractor extends AbstractExtractor {
                 delete entry.collectability;
               }
 
-              if (specialShop.UseCurrencyType === 16) {
+              if (specialShop.UseCurrencyType === 16 && entry.id !== 25) {
                 entry.id = StaticData.CURRENCIES[entry.id] || entry.id;
               }
 

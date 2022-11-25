@@ -3288,10 +3288,10 @@
     binary-parser "^1.6.2"
     fast-glob "^3.2.2"
 
-"@kobold/excel@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@kobold/excel/-/excel-0.0.3.tgz#19084f6cfefff6d3b2739dc081c0504ecd0fd49e"
-  integrity sha512-9qyMKmPcDvgESHnrb/008jW74sp3WX/B7b/pPoxYrA/EYjyetQ/WnP80djt+33ycW1jSV32w2HKU8FGw70Jv8g==
+"@kobold/excel@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@kobold/excel/-/excel-0.0.4.tgz#763c256afd97545b30b6de50627b56eb2545a420"
+  integrity sha512-ZlQ42Btjt08emsjxAscA9ZyJfWMgTlGLwqj/MT2gF/fIm1nwGsy6kXrf8r1DxdPzfaiwCTJs2IAU+BpInxGxLQ==
   dependencies:
     "@babel/runtime-corejs3" "^7.9.2"
     "@types/binary-parser" "^1.5.0"
