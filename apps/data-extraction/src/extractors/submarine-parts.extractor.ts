@@ -1,57 +1,33 @@
 import { AbstractExtractor } from '../abstract-extractor';
-import { map, switchMap, tap } from 'rxjs/operators';
-import { combineLatest } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { XivDataService } from '../xiv/xiv-data.service';
 
 export class SubmarinePartsExtractor extends AbstractExtractor {
 
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const parts = {};
 
-    this.getAllPages(this.getSearchEndpointWithQuery({
-      indexes: 'Item',
-      columns: 'ID',
-      filters: 'FilterGroup=36'
-    })).pipe(
-      switchMap(res => {
-        return combineLatest(res.Results.map(row => {
-          return this.get(`https://xivapi.com/Item/${row.ID}`);
-        }));
-      }),
-      map((items) => items.map((item) => {
-        return {
-          additionalData: item.AdditionalData,
-          itemId: item.ID
+    this.getSheet<any>(xiv, 'Item', ['FilterGroup#',
+      'AdditionalData.Slot', 'AdditionalData.Rank', 'AdditionalData.Components', 'AdditionalData.Surveillance', 'AdditionalData.Retrieval', 'AdditionalData.Speed', 'AdditionalData.Range', 'AdditionalData.Favor', 'AdditionalData.Class', 'AdditionalData.RepairMaterials'], false, 1).pipe(
+      map(items => items.filter(i => i.FilterGroup === 36))
+    ).subscribe(items => {
+      items.forEach(item => {
+        const part = item.AdditionalData;
+        parts[part.index] = {
+          id: part.index,
+          slot: part.Slot,
+          rank: part.Rank,
+          components: part.Components,
+          surveillance: part.Surveillance,
+          retrieval: part.Retrieval,
+          speed: part.Speed,
+          range: part.Range,
+          favor: part.Favor,
+          class: part.Class,
+          repairMaterials: part.RepairMaterials,
+          itemId: item.index
         };
-      })),
-      switchMap((itemResults) => {
-        return this.get(this.getResourceEndpointWithQuery('SubmarinePart' as any, {
-          ids: itemResults.map((r) => r.additionalData.ID).join(','),
-          columns: 'ID,Slot,Rank,Components,Surveillance,Retrieval,Speed,Range,Favor,Class,RepairMaterials'
-        }))
-          .pipe(
-            map((page) => page.Results),
-            tap((partResults) => {
-              partResults
-                .forEach((part) => {
-                  parts[part.ID] = {
-                    id: part.ID,
-                    slot: part.Slot,
-                    rank: part.Rank,
-                    components: part.Components,
-                    surveillance: part.Surveillance,
-                    retrieval: part.Retrieval,
-                    speed: part.Speed,
-                    range: part.Range,
-                    favor: part.Favor,
-                    class: part.Class,
-                    repairMaterials: part.RepairMaterials,
-                    itemId: itemResults.filter((r) => r.additionalData.ID === part.ID)[0]['itemId']
-                  };
-                });
-            })
-          );
-      })
-    ).subscribe(() => {
+      });
       this.persistToJsonAsset('submarine-parts', parts);
       this.done();
     });

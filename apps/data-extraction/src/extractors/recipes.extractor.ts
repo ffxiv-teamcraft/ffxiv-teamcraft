@@ -1,8 +1,9 @@
 import { combineLatest } from 'rxjs';
+import { XivDataService } from '../xiv/xiv-data.service';
 import { AbstractExtractor } from '../abstract-extractor';
 
 export class RecipesExtractor extends AbstractExtractor {
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const hqFlags = this.requireLazyFile('hq-flags');
     // We're maintaining two formats, that's bad but migrating all the usages of the current recipe model isn't possible, sadly.
     const recipes = [];
@@ -11,42 +12,54 @@ export class RecipesExtractor extends AbstractExtractor {
       recipes: {}
     };
     const recipesPerItem = {};
+    const typeToClassJob = [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ];
     combineLatest([
-      this.getAllEntries('https://xivapi.com/CompanyCraftSequence'),
-      this.aggregateAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,MaterialQualityFactor,RequiredQuality,DurabilityFactor,QualityFactor,DifficultyFactor,RequiredControl,RequiredCraftsmanship,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0,ItemIngredient1,ItemIngredient2,ItemIngredient3,ItemIngredient4,ItemIngredient5,ItemIngredient6,ItemIngredient7,ItemIngredient8,ItemIngredient9,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9,IsExpert,SecretRecipeBook'),
-      this.getAllEntries('https://xivapi.com/MJIRecipe', true),
-      this.getAllEntries('https://xivapi.com/MJICraftworksObject'),
-      this.getAllEntries('https://xivapi.com/MJIBuilding'),
-      this.getAllEntries('https://xivapi.com/MJILandmark'),
-    ]).subscribe(([companyCrafts, xivapiRecipes, mjiRecipes, mjiCraftworksObjects, mjiBuildings,mjiLandmarks]) => {
-      xivapiRecipes.forEach(recipe => {
-        if (recipe.RecipeLevelTable === null) {
+      this.getSheet<any>(xiv, 'CompanyCraftSequence',
+        ['ResultItem#', 'CompanyCraftDraft.Name', 'CompanyCraftPart.CompanyCraftProcess.SupplyItem.Item#', 'CompanyCraftPart.CompanyCraftProcess.SetQuantity', 'CompanyCraftPart.CompanyCraftProcess.SetsRequired'], false, 4),
+      this.getSheet<any>(xiv, 'Recipe', ['RecipeLevelTable', 'QualityFactor', 'ItemIngredient.LevelItem#', 'AmountIngredient', 'LevelItem#', 'MaterialQualityFactor', 'CraftType#', 'AmountResult', 'ItemResult#', 'DurabilityFactor', 'DifficultyFactor',
+        'CanQuickSynth', 'CanHq', 'RequiredControl', 'RequiredCraftsmanship', 'SecretRecipeBook.Item#', 'RequiredQuality', 'IsExpert'], false, 1),
+      this.getSheet<any>(xiv, 'MJIRecipe', ['Material.ItemPouch.Item#', 'Amount', 'KeyItem.Item#', 'ItemPouch.Item#'], true, 2),
+      this.getSheet<any>(xiv, 'MJICraftworksObject', ['Material.Item#', 'Amount', 'Item#'], true, 1),
+      this.getSheet<any>(xiv, 'MJIBuilding', ['Material.Item#', 'Amount'], true, 1),
+      this.getSheet<any>(xiv, 'MJILandmark', ['Material.Item#', 'Amount'], true, 1),
+    ]).subscribe(([companyCrafts, xivRecipes, mjiRecipes, mjiCraftworksObjects, mjiBuildings, mjiLandmarks]) => {
+
+      xivRecipes.forEach(recipe => {
+        if (!recipe.RecipeLevelTable || recipe.RecipeLevelTable?.index === 0) {
           return;
         }
         const maxQuality = Math.floor(recipe.RecipeLevelTable.Quality * recipe.QualityFactor / 100);
-        const ingredients = Object.keys(recipe)
-          .filter(k => /ItemIngredient\d/.test(k))
-          .sort((a, b) => a < b ? -1 : 1)
-          .filter(key => recipe[key] && recipe[key].ID > 0)
-          .map((key) => {
-            const index = +/ItemIngredient(\d)/.exec(key)[1];
+        const ingredients = recipe.ItemIngredient
+          .map((item, index) => {
+            if (!item || item.index === 0) {
+              return;
+            }
             return {
-              id: recipe[key].ID,
-              amount: +recipe[`AmountIngredient${index}`],
-              ilvl: +recipe[key].LevelItem
+              id: item.index,
+              amount: recipe.AmountIngredient[index],
+              ilvl: +item.LevelItem
             };
-          });
+          }).filter(Boolean);
         const totalContrib = maxQuality * recipe.MaterialQualityFactor / 100;
         const totalIlvl = ingredients.filter(i => i.id > 19 && hqFlags[i.id] === 1).reduce((acc, cur) => acc + cur.ilvl * cur.amount, 0);
         const lazyRecipeRow = {
-          id: recipe.ID,
-          job: recipe.ClassJob.ID,
+          id: recipe.index,
+          job: typeToClassJob[recipe.CraftType],
           lvl: recipe.RecipeLevelTable.ClassJobLevel,
           yields: recipe.AmountResult,
-          result: recipe.ItemResultTargetID,
+          result: recipe.ItemResult,
           stars: recipe.RecipeLevelTable.Stars,
-          qs: recipe.CanQuickSynth === 1,
-          hq: recipe.CanHq === 1,
+          qs: recipe.CanQuickSynth,
+          hq: recipe.CanHq,
           durability: Math.floor(recipe.RecipeLevelTable.Durability * recipe.DurabilityFactor / 100),
           quality: maxQuality,
           progress: Math.floor(recipe.RecipeLevelTable.Difficulty * recipe.DifficultyFactor / 100),
@@ -58,18 +71,18 @@ export class RecipesExtractor extends AbstractExtractor {
           qualityModifier: recipe.RecipeLevelTable.QualityModifier,
           controlReq: recipe.RequiredControl,
           craftsmanshipReq: recipe.RequiredCraftsmanship,
-          rlvl: recipe.RecipeLevelTable.ID,
-          masterbook: recipe.SecretRecipeBook?.ItemTargetID,
+          rlvl: recipe.RecipeLevelTable.index,
+          masterbook: recipe.SecretRecipeBook?.Item || undefined,
           requiredQuality: recipe.RequiredQuality,
           ingredients: ingredients
             .map(ingredient => {
               return {
                 id: ingredient.id,
                 amount: ingredient.amount,
-                quality: ingredient.ilvl / totalIlvl * totalContrib * hqFlags[ingredient.id]
+                quality: (ingredient.ilvl / totalIlvl * totalContrib * hqFlags[ingredient.id]) || 0
               };
             }),
-          expert: recipe.IsExpert === 1,
+          expert: recipe.IsExpert,
           conditionsFlag: recipe.RecipeLevelTable.ConditionsFlag
         };
 
@@ -95,19 +108,19 @@ export class RecipesExtractor extends AbstractExtractor {
 
       companyCrafts.forEach(companyCraftSequence => {
         const recipe: any = {
-          id: `fc${companyCraftSequence.ID}`,
+          id: `fc${companyCraftSequence.index}`,
           job: 0,
           lvl: 1,
           yields: 1,
-          result: companyCraftSequence.ResultItemTargetID,
+          result: companyCraftSequence.ResultItem,
           stars: 0,
           qs: false,
           hq: false,
           ingredients: []
         };
-        if (companyCraftSequence.CompanyCraftDraftTargetID > 0) {
+        if (companyCraftSequence.CompanyCraftDraft?.index > 0) {
           recipe.masterbook = {
-            id: `draft${companyCraftSequence.CompanyCraftDraftTargetID}`,
+            id: `draft${companyCraftSequence.CompanyCraftDraft?.index}`,
             name: {
               en: companyCraftSequence.CompanyCraftDraft?.Name_en || '???',
               ja: companyCraftSequence.CompanyCraftDraft?.Name_ja || '???',
@@ -117,21 +130,21 @@ export class RecipesExtractor extends AbstractExtractor {
           };
         }
         for (let partIndex = 0; partIndex < 8; partIndex++) {
-          if (!companyCraftSequence[`CompanyCraftPart${partIndex}TargetID`]) {
+          if (!companyCraftSequence.CompanyCraftPart[partIndex]) {
             continue;
           }
           for (let processIndex = 0; processIndex < 3; processIndex++) {
-            if (companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}TargetID`] === 0) {
+            if (!companyCraftSequence.CompanyCraftPart[partIndex].CompanyCraftProcess[processIndex]) {
               continue;
             }
             for (let i = 0; i < 12; i++) {
-              if (companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}TargetID`] === 0
-                || companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}`][`SupplyItem${i}TargetID`] === 0) {
+              if (!companyCraftSequence.CompanyCraftPart[partIndex].CompanyCraftProcess[processIndex]
+                || companyCraftSequence.CompanyCraftPart[partIndex].CompanyCraftProcess[processIndex].SupplyItem[i].Item === 0) {
                 continue;
               }
               recipe.ingredients.push({
-                id: companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}`][`SupplyItem${i}`].Item,
-                amount: companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}`][`SetQuantity${i}`] * companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}`][`SetsRequired${i}`],
+                id: companyCraftSequence.CompanyCraftPart[partIndex].CompanyCraftProcess[processIndex].SupplyItem[i].Item,
+                amount: companyCraftSequence.CompanyCraftPart[partIndex].CompanyCraftProcess[processIndex].SetQuantity[i] * companyCraftSequence.CompanyCraftPart[partIndex].CompanyCraftProcess[processIndex].SetsRequired[i],
                 quality: 0,
                 phase: processIndex + 1
               });
@@ -142,24 +155,23 @@ export class RecipesExtractor extends AbstractExtractor {
       });
 
       mjiRecipes.forEach(mjiRecipe => {
-        const ingredients = Object.keys(mjiRecipe)
-          .filter(k => /Material\d/.test(k))
-          .sort((a, b) => a < b ? -1 : 1)
-          .filter(key => mjiRecipe[key] && mjiRecipe[key].ID > 0)
-          .map((key) => {
-            const index = +/Material(\d)/.exec(key)[1];
+        const ingredients = mjiRecipe.Material
+          .map((material, index) => {
+            if (!material || material?.index === 0) {
+              return;
+            }
             return {
-              id: mjiRecipe[key].ItemPouch?.ItemTargetID,
-              amount: +mjiRecipe[`Amount${index}`]
+              id: material.ItemPouch?.Item,
+              amount: +mjiRecipe.Amount[index]
             };
           })
-          .filter(i => !!i.id);
+          .filter(i => !!i?.id);
         const lazyRecipeRow = {
-          id: `mji-${mjiRecipe.ID}`,
+          id: `mji-${mjiRecipe.index}`,
           job: -10,
           lvl: 1,
           yields: 1,
-          result: mjiRecipe.KeyItem?.ItemTargetID || mjiRecipe.ItemPouch?.ItemTargetID,
+          result: mjiRecipe.KeyItem?.Item || mjiRecipe.ItemPouch?.Item,
           qs: false,
           hq: false,
           durability: 0,
@@ -195,24 +207,23 @@ export class RecipesExtractor extends AbstractExtractor {
       });
 
       mjiCraftworksObjects.forEach(mjiCraftworksObject => {
-        const ingredients = Object.keys(mjiCraftworksObject)
-          .filter(k => /Material\d/.test(k))
-          .sort((a, b) => a < b ? -1 : 1)
-          .filter(key => mjiCraftworksObject[key])
-          .map((key) => {
-            const index = +/Material(\d)/.exec(key)[1];
+        const ingredients = mjiCraftworksObject.Material
+          .map((material, index) => {
+            if (!material || material?.index === 0) {
+              return;
+            }
             return {
-              id: mjiCraftworksObject[key].ItemTargetID,
-              amount: +mjiCraftworksObject[`Amount${index}`]
+              id: material.Item,
+              amount: +mjiCraftworksObject.Amount[index]
             };
           })
-          .filter(i => !!i.id && i.amount > 0);
+          .filter(i => !!i?.id && i.amount > 0);
         const lazyRecipeRow = {
-          id: `mji-craftworks-${mjiCraftworksObject.ID}`,
+          id: `mji-craftworks-${mjiCraftworksObject.index}`,
           job: -10,
           lvl: 1,
           yields: 1,
-          result: mjiCraftworksObject.ItemTargetID,
+          result: mjiCraftworksObject.Item,
           qs: false,
           hq: false,
           durability: 0,
@@ -248,21 +259,20 @@ export class RecipesExtractor extends AbstractExtractor {
       });
 
       mjiBuildings.forEach(building => {
-        const ingredients = Object.keys(building)
-          .filter(k => /Material\d/.test(k))
-          .sort((a, b) => a < b ? -1 : 1)
-          .filter(key => !!building[key])
-          .map((key) => {
-            const index = +/Material(\d)/.exec(key)[1];
+        const ingredients = building.Material
+          .map((material, index) => {
+            if (!material || material?.index === 0) {
+              return;
+            }
             return {
-              id: building[key].ItemTargetID,
-              amount: +building[`Amount${index}`]
+              id: material.Item,
+              amount: +building.Amount[index]
             };
           })
-          .filter(i => !!i.id);
-        const ID = -10000 + -1 * (+building.ID * 100);
+          .filter(i => !!i?.id && i.amount > 0);
+        const ID = -10000 + -1 * (+building.index * 100);
         const lazyRecipeRow = {
-          id: `mji-building-${building.ID}`,
+          id: `mji-building-${building.index}`,
           job: -10,
           lvl: 1,
           yields: 1,
@@ -302,21 +312,20 @@ export class RecipesExtractor extends AbstractExtractor {
       });
 
       mjiLandmarks.forEach(building => {
-        const ingredients = Object.keys(building)
-          .filter(k => /Material\d/.test(k))
-          .sort((a, b) => a < b ? -1 : 1)
-          .filter(key => !!building[key])
-          .map((key) => {
-            const index = +/Material(\d)/.exec(key)[1];
+        const ingredients = building.Material
+          .map((material, index) => {
+            if (!material || material?.index === 0) {
+              return;
+            }
             return {
-              id: building[key].ItemTargetID,
-              amount: +building[`Amount${index}`]
+              id: material.Item,
+              amount: +building.Amount[index]
             };
           })
-          .filter(i => !!i.id);
-        const ID = -11000 + -1 * (+building.ID * 10);
+          .filter(i => !!i?.id && i.amount > 0);
+        const ID = -11000 + -1 * (+building.index * 10);
         const lazyRecipeRow = {
-          id: `mji-landmark-${building.ID}`,
+          id: `mji-landmark-${building.index}`,
           job: -10,
           lvl: 1,
           yields: 1,

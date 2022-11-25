@@ -1,24 +1,12 @@
 import { AbstractExtractor } from '../abstract-extractor';
+import { XivDataService } from '../xiv/xiv-data.service';
 
 export class BaseParamExtractor extends AbstractExtractor {
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const baseParams = {};
     const baseParamColumns = [
-      'ID',
-      'Name_*',
-      'MeldParam0',
-      'MeldParam1',
-      'MeldParam2',
-      'MeldParam3',
-      'MeldParam4',
-      'MeldParam5',
-      'MeldParam6',
-      'MeldParam7',
-      'MeldParam8',
-      'MeldParam9',
-      'MeldParam10',
-      'MeldParam11',
-      'MeldParam12',
+      'Name',
+      'MeldParam',
       '1HWpn%',
       '2HWpn%',
       'Bracelet%',
@@ -40,14 +28,17 @@ export class BaseParamExtractor extends AbstractExtractor {
       'Ring%',
       'Waist%'
     ];
-    this.getAllPages(`https://xivapi.com/BaseParam?columns=${baseParamColumns.join(',')}`).subscribe(page => {
-      page.Results.forEach(entry => {
-        baseParams[entry.ID] = entry;
+    this.getSheet(xiv, 'BaseParam', baseParamColumns)
+      .subscribe(entries => {
+        entries.forEach(entry => {
+          if (entry.index === 0) {
+            return;
+          }
+          baseParams[entry.index] = this.sortProperties(this.removeIndexes(entry));
+        });
+        this.persistToJsonAsset('base-params', baseParams);
+        this.done();
       });
-    }, null, () => {
-      this.persistToJsonAsset('base-params', baseParams);
-      this.done();
-    });
   }
 
   getName(): string {

@@ -1,9 +1,10 @@
 import { combineLatest } from 'rxjs';
+import { XivDataService } from '../xiv/xiv-data.service';
 import { AbstractExtractor } from '../abstract-extractor';
 import { StaticData } from '../static-data';
 
 export class CollectablesExtractor extends AbstractExtractor {
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const hwdRewards = {
       '1.0': 30315,
       '1.1': 30316,
@@ -38,61 +39,76 @@ export class CollectablesExtractor extends AbstractExtractor {
     const collectables = {};
     const scripIndex = {};
     combineLatest([
-      this.getAllEntries('https://xivapi.com/HWDCrafterSupply'),
-      this.getAllEntries('https://xivapi.com/CollectablesShop'),
-      this.aggregateAllPages('https://xivapi.com/CollectablesShopItem?columns=ID,CollectablesShopRefine,CollectablesShopRewardScrip,ItemTargetID,Item.AlwaysCollectable,Item.IsCollectable,LevelMin,LevelMax,CollectablesShopItemGroupTargetID'),
-      this.aggregateAllPages('https://xivapi.com/CollectablesShopRewardItem?columns=ID,CollectablesShopRefine,CollectablesShopRewardScrip,ItemTargetID,Item.AlwaysCollectable,Item.IsCollectable,LevelMin,LevelMax,CollectablesShopItemGroupTargetID')
+      this.getSheet<any>(xiv, 'HWDCrafterSupply',
+        ['ItemTradeIn#', 'BaseCollectableReward', 'MidCollectableReward', 'HighCollectableReward', 'BaseCollectableRating', 'MidCollectableRating', 'HighCollectableRating', 'Level#']
+        , false, 1),
+      this.getSheet<any>(xiv, 'CollectablesShop',
+        [
+          'ShopItems.CollectablesShopRefine', 'RewardType',
+          'ShopItems.CollectablesShopRewardScrip',
+          'ShopItems.Item.AlwaysCollectable', 'ShopItems.Item.IsCollectable', 'ShopItems.LevelMin', 'ShopItems.LevelMax', 'ShopItems.CollectablesShopItemGroup#'
+        ], false, 3),
+      this.getSheet<any>(xiv, 'CollectablesShopItem',
+        [
+          'CollectablesShopRefine',
+          'CollectablesShopRewardScrip',
+          'Item.AlwaysCollectable', 'Item.IsCollectable', 'LevelMin', 'LevelMax', 'CollectablesShopItemGroup#'
+        ], false, 2),
+      this.getSheet<any>(xiv, 'CollectablesShopRewardItem', ['CollectablesShopRefine#', 'CollectablesShopRewardScrip#', 'Item.AlwaysCollectable', 'Item.IsCollectable', 'LevelMin', 'LevelMax', 'CollectablesShopItemGroup#'], false, 1)
     ])
       .subscribe(([hwdCompleteFetch, shopsCompleteFetch, collectablesCompleteFetch, collectableRewardsCompleteFetch]) => {
-        // HWD supplies
+        // HWDCrafterSupply
         hwdCompleteFetch.forEach(supply => {
           for (let i = 0; i < 32; i++) {
-            if (!supply[`ItemTradeIn${i}TargetID`]) {
+            if (!supply.ItemTradeIn[i]) {
               continue;
             }
-            const baseReward = supply[`BaseCollectableReward${i}`];
-            collectables[supply[`ItemTradeIn${i}TargetID`]] = {
+            const baseReward = supply.BaseCollectableReward[i];
+            collectables[supply.ItemTradeIn[i]] = {
               hwd: true,
-              level: supply[`Level${i}`],
+              level: supply.Level[i],
               reward: 28063,
               base: {
-                rating: supply[`BaseCollectableRating${i}`],
+                rating: supply.BaseCollectableRating[i],
                 exp: baseReward ? baseReward.ExpReward : 0,
                 scrip: baseReward ? baseReward.ScriptRewardAmount : 0
               },
               mid: {
-                rating: supply[`MidCollectableRating${i}`],
-                exp: supply[`MidCollectableReward${i}`].ExpReward,
-                scrip: supply[`MidCollectableReward${i}`].ScriptRewardAmount
+                rating: supply.MidCollectableRating[i],
+                exp: supply.MidCollectableReward[i].ExpReward,
+                scrip: supply.MidCollectableReward[i].ScriptRewardAmount
               },
               high: {
-                rating: supply[`HighCollectableRating${i}`],
-                exp: supply[`HighCollectableReward${i}`].ExpReward,
-                scrip: supply[`HighCollectableReward${i}`].ScriptRewardAmount
+                rating: supply.HighCollectableRating[i],
+                exp: supply.HighCollectableReward[i].ExpReward,
+                scrip: supply.HighCollectableReward[i].ScriptRewardAmount
               }
             };
           }
         });
 
-        // Collectables shops
+        // CollectablesShopItem
         collectablesCompleteFetch
           .filter(collectable => {
-            return collectable.CollectablesShopRewardScrip !== null;
+            return collectable.CollectablesShopRewardScrip?.index > 0;
           })
           .forEach(collectable => {
-            scripIndex[collectable.ItemTargetID] = StaticData.CURRENCIES[collectable.CollectablesShopRewardScrip.Currency];
+            scripIndex[collectable.Item.index] = StaticData.CURRENCIES[collectable.CollectablesShopRewardScrip.Currency];
             const [lowThreshold, midThreshold, highThreshold] = [
               collectable.CollectablesShopRefine.LowCollectability,
               collectable.CollectablesShopRefine.MidCollectability,
               collectable.CollectablesShopRefine.HighCollectability
             ].sort((a, b) => a - b);
-            collectables[collectable.ItemTargetID] = {
+            if (highThreshold === 0) {
+              return;
+            }
+            collectables[collectable.Item.index] = {
               collectable: collectable.Item.AlwaysCollectable | collectable.Item.IsCollectable,
               level: collectable.LevelMin,
               levelMin: collectable.LevelMin,
               levelMax: collectable.LevelMax,
-              group: collectable.CollectablesShopItemGroupTargetID,
-              shopId: +collectable.ID.split('.')[0],
+              group: collectable.CollectablesShopItemGroup,
+              shopId: collectable.index,
               reward: StaticData.CURRENCIES[collectable.CollectablesShopRewardScrip.Currency],
               base: {
                 rating: lowThreshold,
@@ -110,42 +126,45 @@ export class CollectablesExtractor extends AbstractExtractor {
                 scrip: collectable.CollectablesShopRewardScrip.HighReward
               }
             };
-            if (+collectable.ID < 10) {
-              collectables[collectable.ItemTargetID] = {
-                ...collectables[collectable.ItemTargetID],
+            if (+collectable.index < 10) {
+              collectables[collectable.Item.index] = {
+                ...collectables[collectable.Item.index],
                 hwd: true,
-                reward: hwdRewards[collectable.ID]
+                reward: hwdRewards[this.getCompositeID(collectable)]
               };
             }
           });
 
-        // Collectables trades
+        // CollectablesShop & CollectablesShopRewardItem
         shopsCompleteFetch
           .forEach(shop => {
-            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].forEach(i => {
-              (shop[`ShopItems${i}`] || []).forEach(collectable => {
+            shop.ShopItems.forEach(shopItem => {
+              shopItem.forEach(collectable => {
                 if (!collectable.CollectablesShopRewardScrip) {
                   return;
-                }
-                let reward = StaticData.CURRENCIES[collectable.CollectablesShopRewardScrip.Currency];
-                if (shop.RewardType === 2) {
-                  reward = collectableRewardsCompleteFetch.find(cReward => {
-                    return cReward.ID === collectable.CollectablesShopRewardScripTargetID;
-                  })?.ItemTargetID;
                 }
                 const [lowThreshold, midThreshold, highThreshold] = [
                   collectable.CollectablesShopRefine.LowCollectability,
                   collectable.CollectablesShopRefine.MidCollectability,
                   collectable.CollectablesShopRefine.HighCollectability
                 ].sort((a, b) => a - b);
-                collectables[collectable.ItemTargetID] = {
+                if (highThreshold === 0) {
+                  return;
+                }
+                let rewardId = StaticData.CURRENCIES[collectable.CollectablesShopRewardScrip.Currency];
+                if (shop.RewardType === 2) {
+                  rewardId = collectableRewardsCompleteFetch.find(cReward => {
+                    return cReward.index === collectable.CollectablesShopRewardScrip?.index;
+                  })?.Item?.index;
+                }
+                collectables[collectable.Item.index] = {
                   collectable: collectable.Item.AlwaysCollectable | collectable.Item.IsCollectable,
                   level: collectable.LevelMin,
                   levelMin: collectable.LevelMin,
                   levelMax: collectable.LevelMax,
-                  group: collectable.CollectablesShopItemGroupTargetID,
-                  shopId: +collectable.ID.split('.')[0],
-                  reward,
+                  group: collectable.CollectablesShopItemGroup,
+                  shopId: collectable.index,
+                  reward: rewardId,
                   base: {
                     rating: lowThreshold,
                     exp: collectable.CollectablesShopRewardScrip.ExpRatioLow,
@@ -162,11 +181,11 @@ export class CollectablesExtractor extends AbstractExtractor {
                     scrip: collectable.CollectablesShopRewardScrip.HighReward
                   }
                 };
-                if (+collectable.ID < 10) {
-                  collectables[collectable.ItemTargetID] = {
-                    ...collectables[collectable.ItemTargetID],
+                if (+collectable.index < 10) {
+                  collectables[collectable.Item.index] = {
+                    ...collectables[collectable.Item.index],
                     hwd: true,
-                    reward: hwdRewards[collectable.ID]
+                    reward: hwdRewards[this.getCompositeID(collectable)]
                   };
                 }
               });

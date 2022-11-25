@@ -98,10 +98,10 @@
     "id": 14
   },
   "15": {
-    "en": "the Wreckage of Discovery I",
+    "en": "the Wreckage of <i>Discovery I</i>",
     "ja": "O　ディスカバリー号の残骸",
-    "de": "Wrack der Discovery (O)",
-    "fr": "Épave du Découverte I (O)",
+    "de": "Wrack der <i>Discovery</i> (O)",
+    "fr": "Épave du <i>Découverte I</i> (O)",
     "id": 15
   },
   "16": {
@@ -175,10 +175,10 @@
     "id": 25
   },
   "26": {
-    "en": "the Wreckage of the Headway",
+    "en": "the Wreckage of the <i>Headway</i>",
     "ja": "Z　ヘッドウェイ号の残骸",
-    "de": "Wrack der Headway (Z)",
-    "fr": "Épave de L'Avancée (Z)",
+    "de": "Wrack der <i>Headway</i> (Z)",
+    "fr": "Épave de <i>L'Avancée</i> (Z)",
     "id": 26
   },
   "27": {
@@ -224,10 +224,10 @@
     "id": 32
   },
   "33": {
-    "en": "Wreckage of the Windwalker",
+    "en": "Wreckage of the <i>Windwalker</i>",
     "ja": "B　ウィンド・ウォーカーの残骸",
     "de": "Windschreiterschädel (B)",
-    "fr": "Épave du Marche-Vent (B)",
+    "fr": "Épave du <i>Marche-Vent</i> (B)",
     "id": 33
   },
   "34": {

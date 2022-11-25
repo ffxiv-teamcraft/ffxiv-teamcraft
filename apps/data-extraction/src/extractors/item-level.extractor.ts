@@ -1,7 +1,8 @@
 import { AbstractExtractor } from '../abstract-extractor';
+import { XivDataService } from '../xiv/xiv-data.service';
 
 export class ItemLevelExtractor extends AbstractExtractor {
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const itemLevel = {};
     const itemLevelColumns = [
       'AdditionalEffect',
@@ -81,14 +82,19 @@ export class ItemLevelExtractor extends AbstractExtractor {
       'WaterResistance',
       'WindResistance'
     ];
-    this.getAllPages(`https://xivapi.com/ItemLevel?columns=${itemLevelColumns.join(',')}`).subscribe(page => {
-      page.Results.forEach(entry => {
-        itemLevel[entry.ID] = entry;
+    this.getSheet(xiv, 'ItemLevel', itemLevelColumns)
+      .subscribe(ilvls => {
+        ilvls.forEach(entry => {
+          if (entry.index === 0) {
+            return;
+          }
+          const withoutIndexes = this.removeIndexes(entry);
+          // We want to sort props to match previous behavior and make sure nothing is being missed.
+          itemLevel[entry.index] = this.sortProperties(withoutIndexes);
+        });
+        this.persistToJsonAsset('item-level', itemLevel);
+        this.done();
       });
-    }, null, () => {
-      this.persistToJsonAsset('item-level', itemLevel);
-      this.done();
-    });
   }
 
   getName(): string {

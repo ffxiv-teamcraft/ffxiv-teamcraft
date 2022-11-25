@@ -5,7 +5,7 @@ export interface LazyMap {
   image:            string;
   offset_x:         number;
   offset_y:         number;
-  offset_z?:        number;
+  offset_z?:        null;
   map_marker_range: number;
   placename_id:     number;
   placename_sub_id: number;

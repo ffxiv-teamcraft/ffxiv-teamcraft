@@ -14,14 +14,15 @@ export interface Item {
 }
 
 export interface Job {
-  en: En | null;
-  ja: Ja | null;
-  de: De | null;
-  fr: Fr | null;
+  en: En;
+  ja: Ja;
+  de: De;
+  fr: Fr;
 }
 
 export enum De {
   Alc = "ALC",
+  Empty = "",
   Fis = "FIS",
   Ger = "GER",
   Gld = "GLD",
@@ -43,6 +44,7 @@ export enum En {
   Crp = "CRP",
   Cul = "CUL",
   DisciplesOfWarOrMagic = "Disciples of War or Magic",
+  Empty = "",
   Fsh = "FSH",
   GSM = "GSM",
   Ltw = "LTW",
@@ -57,6 +59,7 @@ export enum Fr {
   CombattantsEtMages = "combattants et mages",
   Cou = "COU",
   Cui = "CUI",
+  Empty = "",
   Frg = "FRG",
   Men = "MEN",
   Min = "MIN",
@@ -66,6 +69,7 @@ export enum Fr {
 }
 
 export enum Ja {
+  Empty = "",
   ファイターソーサラー = "ファイター ソーサラー",
   園芸師 = "園芸師",
   彫金師 = "彫金師",

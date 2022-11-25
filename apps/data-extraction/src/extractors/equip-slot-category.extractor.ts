@@ -1,16 +1,17 @@
 import { AbstractExtractor } from '../abstract-extractor';
+import { XivDataService } from '../xiv/xiv-data.service';
 
 export class EquipSlotCategoryExtractor extends AbstractExtractor {
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const equipSlotCategories = {};
-    this.getAllEntries(`https://xivapi.com/EquipSlotCategory`).subscribe(completeFetch => {
-      completeFetch.forEach(entry => {
-        delete entry.GameContentLinks;
-        equipSlotCategories[entry.ID] = entry;
+    this.getSheet(xiv, `EquipSlotCategory`)
+      .subscribe(completeFetch => {
+        completeFetch.forEach(entry => {
+          equipSlotCategories[entry.index] = this.removeIndexes(entry);
+        });
+        this.persistToJsonAsset('equip-slot-categories', equipSlotCategories);
+        this.done();
       });
-      this.persistToJsonAsset('equip-slot-categories', equipSlotCategories);
-      this.done();
-    });
   }
 
   getName(): string {

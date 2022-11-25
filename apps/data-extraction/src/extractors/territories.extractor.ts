@@ -1,13 +1,13 @@
 import { AbstractExtractor } from '../abstract-extractor';
+import { XivDataService } from '../xiv/xiv-data.service';
 
 export class TerritoriesExtractor extends AbstractExtractor {
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const territories = {};
-    this.getAllPages('https://xivapi.com/TerritoryType?columns=ID,MapTargetID').subscribe(page => {
-      page.Results.forEach(territory => {
-        territories[territory.ID] = territory.MapTargetID;
+    this.getSheet(xiv, 'TerritoryType', ['Map']).subscribe(res => {
+      res.forEach(territory => {
+        territories[territory.index] = territory.Map;
       });
-    }, null, () => {
       this.persistToTypescript('territories', 'territories', territories);
       this.done();
     });

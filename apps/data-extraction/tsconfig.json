@@ -1,9 +1,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "target": "ES2019",
+    "target": "ES6",
+    "module": "commonjs",
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
     "importHelpers": true,
-    "module": "CommonJS",
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",

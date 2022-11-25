@@ -1,16 +1,16 @@
+import { XivDataService } from '../xiv/xiv-data.service';
 import { AbstractExtractor } from '../abstract-extractor';
 
 export class CdGroupsExtractor extends AbstractExtractor {
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const groups = {};
-    this.getAllPages('https://xivapi.com/Action?columns=ID,CooldownGroup').subscribe(page => {
-      page.Results.forEach(action => {
+    this.getSheet<any>(xiv, 'Action', ['CooldownGroup']).subscribe(entries => {
+      entries.forEach(action => {
         groups[action.CooldownGroup] = [
           ...(groups[action.CooldownGroup] || []),
-          action.ID
+          action.index
         ];
       });
-    }, null, () => {
       this.persistToJsonAsset('action-cd-groups', groups);
       this.done();
     });

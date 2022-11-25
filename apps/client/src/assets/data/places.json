@@ -2055,19 +2055,19 @@
     "en": "Haukke Manor: Ground Floor",
     "ja": "ハウケタ御用邸：1F",
     "de": "Haukke-Herrenhaus: Erdgeschoss",
-    "fr": "Manoir des Haukke: rez-de-chaussée"
+    "fr": "Manoir des Haukke&nbsp;: rez-de-chaussée"
   },
   "344": {
     "en": "Haukke Manor: Second Floor",
     "ja": "ハウケタ御用邸：2F",
     "de": "Haukke-Herrenhaus: Obergeschoss",
-    "fr": "Manoir des Haukke: 1er étage"
+    "fr": "Manoir des Haukke&nbsp;: 1er étage"
   },
   "345": {
     "en": "Haukke Manor: Cellarage",
     "ja": "ハウケタ御用邸：B1F",
     "de": "Haukke-Herrenhaus: Keller",
-    "fr": "Manoir des Haukke: sous-sol"
+    "fr": "Manoir des Haukke&nbsp;: sous-sol"
   },
   "346": {
     "en": "Seat of the First Bow",
@@ -2508,10 +2508,10 @@
     "fr": "Gardien du lac"
   },
   "419": {
-    "en": "Everschade\n\n(The Guardian Tree)",
-    "ja": "エバーシェイド\n\n[長老の木]",
-    "de": "Immerschatten \n\n(Wächterbaum)",
-    "fr": "Breuil de l'Ombre éternelle\n\nArbre gardien"
+    "en": "Everschade<br>(The Guardian Tree)",
+    "ja": "エバーシェイド<br>[長老の木]",
+    "de": "Immerschatten <br>(Wächterbaum)",
+    "fr": "Breuil de l'Ombre éternelle<br>Arbre gardien"
   },
   "420": {
     "en": "Crystal Tower",
@@ -2526,9 +2526,9 @@
     "fr": "Lac de Pleurargent"
   },
   "422": {
-    "en": "The Braveheart",
+    "en": "The <i>Braveheart</i>",
     "ja": "ブレイブハート号",
-    "de": "Die Braveheart",
+    "de": "Die <i>Braveheart</i>",
     "fr": "Le Cœurbrave"
   },
   "423": {
@@ -2774,7 +2774,7 @@
   "463": {
     "en": "The Ragnarok",
     "ja": "ラグナロク級拘束艦",
-    "de": "Die Ragnarök",
+    "de": "Die <i>Ragnarök</i>",
     "fr": "Le Ragnarok"
   },
   "464": {
@@ -2792,25 +2792,25 @@
   "466": {
     "en": "The Ragnarok",
     "ja": "ラグナロク級拘束艦",
-    "de": "Die Ragnarök",
+    "de": "Die <i>Ragnarök</i>",
     "fr": "Le Ragnarok"
   },
   "467": {
     "en": "Ragnarok Drive Cylinder",
     "ja": "稼働隔壁",
-    "de": "Antriebszylinder der Ragnarök",
+    "de": "Antriebszylinder der <i>Ragnarök</i>",
     "fr": "Cylindre propulseur du Ragnarok"
   },
   "468": {
     "en": "Ragnarok Central Core",
     "ja": "中枢区画",
-    "de": "Kernsektor der Ragnarök",
+    "de": "Kernsektor der <i>Ragnarök</i>",
     "fr": "Noyau central du Ragnarok"
   },
   "469": {
     "en": "Ragnarok Main Bridge",
     "ja": "第一艦橋",
-    "de": "Kommandobrücke der Ragnarök",
+    "de": "Kommandobrücke der <i>Ragnarök</i>",
     "fr": "Pont principal du Ragnarok"
   },
   "470": {
@@ -3222,7 +3222,7 @@
     "fr": "Tombe du roi Galvanth le Tyran"
   },
   "538": {
-    "en": "The Ak–Inik Tomb",
+    "en": "The Ak-Inik Tomb",
     "ja": "イニク家の墓",
     "de": "Die Ak-Inik-Gruft",
     "fr": "Tombe d'Ak-Inik"
@@ -3234,7 +3234,7 @@
     "fr": "Autel de Grandbosc"
   },
   "540": {
-    "en": "The Ak–Mena Tomb",
+    "en": "The Ak-Mena Tomb",
     "ja": "メナ家の墓",
     "de": "Die Ak-Mena-Gruft",
     "fr": "Tombe d'Ak-Mena"
@@ -3276,10 +3276,10 @@
     "fr": "Guilde des aventuriers"
   },
   "547": {
-    "en": "Carline Canopy\n\n(Adventurers' Guild)",
-    "ja": "カーラインカフェ\n\n[冒険者ギルド]",
-    "de": "Miounnes Hexenstübchen \n\n(Abenteurergilde)",
-    "fr": "Aux Feuilles de carline\n\nGuilde des aventuriers"
+    "en": "Carline Canopy<br>(Adventurers' Guild)",
+    "ja": "カーラインカフェ<br>[冒険者ギルド]",
+    "de": "Miounnes Hexenstübchen <br>(Abenteurergilde)",
+    "fr": "Aux Feuilles de carline<br>Guilde des aventuriers"
   },
   "548": {
     "en": "The Roost",
@@ -3324,10 +3324,10 @@
     "fr": "Guilde des menuisiers"
   },
   "555": {
-    "en": "The Oak Atrium\n\n(Carpenters' Guild)",
-    "ja": "古樫の高堂\n\n[木工師ギルド]",
-    "de": "Atrium der Immergrünen Eichen \n\n(Zimmerergilde)",
-    "fr": "Pavillon de chêne\n\nGuilde des menuisiers"
+    "en": "The Oak Atrium<br>(Carpenters' Guild)",
+    "ja": "古樫の高堂<br>[木工師ギルド]",
+    "de": "Atrium der Immergrünen Eichen <br>(Zimmerergilde)",
+    "fr": "Pavillon de chêne<br>Guilde des menuisiers"
   },
   "556": {
     "en": "Figaga's Gift",
@@ -3372,10 +3372,10 @@
     "fr": "Guilde des archers"
   },
   "563": {
-    "en": "Quiver's Hold\n\n(Archers' Guild)",
-    "ja": "神勇隊司令砦\n\n[弓術士ギルド]",
-    "de": "Kleine Waldschanze \n\n(Waldläufergilde)",
-    "fr": "Le Carquois\n\nGuilde des archers"
+    "en": "Quiver's Hold<br>(Archers' Guild)",
+    "ja": "神勇隊司令砦<br>[弓術士ギルド]",
+    "de": "Kleine Waldschanze <br>(Waldläufergilde)",
+    "fr": "Le Carquois<br>Guilde des archers"
   },
   "564": {
     "en": "Ebony Stalls",
@@ -3396,7 +3396,7 @@
     "fr": "La Tonnelle ombragée"
   },
   "567": {
-    "en": "Atelier Fen–Yll",
+    "en": "Atelier Fen-Yll",
     "ja": "アトリエ「フェン・イル」",
     "de": "Atelier Fen-Yll",
     "fr": "Atelier Fen-Yll"
@@ -3408,7 +3408,7 @@
     "fr": "Guilde des tanneurs"
   },
   "569": {
-    "en": "Fen–Yll Fineries",
+    "en": "Fen-Yll Fineries",
     "ja": "工芸「フェン・イル」",
     "de": "Fen-Yll Lederwaren",
     "fr": "Les Atours de Fen-Yll"
@@ -3426,10 +3426,10 @@
     "fr": "Guilde des maîtres d'hast"
   },
   "572": {
-    "en": "Wailing Barracks\n\n(Lancers' Guild)",
-    "ja": "鬼哭隊屯所\n\n[槍術士ギルド]",
-    "de": "Große Waldschanze \n\n(Pikeniergilde)",
-    "fr": "Caserne des Vigiles\n\nGuilde des maîtres d'hast"
+    "en": "Wailing Barracks<br>(Lancers' Guild)",
+    "ja": "鬼哭隊屯所<br>[槍術士ギルド]",
+    "de": "Große Waldschanze <br>(Pikeniergilde)",
+    "fr": "Caserne des Vigiles<br>Guilde des maîtres d'hast"
   },
   "573": {
     "en": "The Centaur's Eye",
@@ -3462,10 +3462,10 @@
     "fr": "Guilde des élémentalistes"
   },
   "578": {
-    "en": "Stillglade Fane\n\n(Conjurers' Guild)",
-    "ja": "碩老樹瞑想窟\n\n[幻術士ギルド]",
-    "de": "Grotte der Versunkenen Gedanken \n\n(Druidengilde)",
-    "fr": "Temple de la Sérénité\n\nGuilde des élémentalistes"
+    "en": "Stillglade Fane<br>(Conjurers' Guild)",
+    "ja": "碩老樹瞑想窟<br>[幻術士ギルド]",
+    "de": "Grotte der Versunkenen Gedanken <br>(Druidengilde)",
+    "fr": "Temple de la Sérénité<br>Guilde des élémentalistes"
   },
   "579": {
     "en": "Nophica's Altar",
@@ -3492,10 +3492,10 @@
     "fr": "Guilde des botanistes"
   },
   "583": {
-    "en": "Greatloam Growery\n\n(Botanists' Guild)",
-    "ja": "グレートローム農場\n\n[園芸師ギルド]",
-    "de": "Ährenkranzkolonie \n\n(Gärtnergilde)",
-    "fr": "Le Courtil\n\nGuilde des botanistes"
+    "en": "Greatloam Growery<br>(Botanists' Guild)",
+    "ja": "グレートローム農場<br>[園芸師ギルド]",
+    "de": "Ährenkranzkolonie <br>(Gärtnergilde)",
+    "fr": "Le Courtil<br>Guilde des botanistes"
   },
   "584": {
     "en": "The Whistling Miller",
@@ -3528,7 +3528,7 @@
     "fr": "Le Noyau"
   },
   "589": {
-    "en": "The Mun–Tuy Cellars",
+    "en": "The Mun-Tuy Cellars",
     "ja": "ムントゥイ醸造庫",
     "de": "Mun-Tuy-Braukeller",
     "fr": "Caves de Mun-Tuy"
@@ -3546,10 +3546,10 @@
     "fr": "Quartier général des Deux Vipères"
   },
   "592": {
-    "en": "Westshore Pier\n\nEast Shroud",
-    "ja": "東桟橋\n\n黒衣森：東部森林",
-    "de": "Süßholz-Steg \n\nFähre zum Ostwald",
-    "fr": "Jetée de la rive est\n\nForêt de l'est"
+    "en": "Westshore Pier<br>East Shroud",
+    "ja": "東桟橋<br>黒衣森：東部森林",
+    "de": "Süßholz-Steg <br>Fähre zum Ostwald",
+    "fr": "Jetée de la rive est<br>Forêt de l'est"
   },
   "593": {
     "en": "Chocobokeep",
@@ -3558,10 +3558,10 @@
     "fr": "Relais à chocobos"
   },
   "594": {
-    "en": "Atelier Fen-Yll\n\n(Leatherworkers' Guild)",
-    "ja": "アトリエ「フェン・イル」\n\n[革細工師ギルド]",
-    "de": "Atelier Fen-Yll \n\n(Gerbergilde)",
-    "fr": "Atelier Fen-Yll\n\nGuilde des tanneurs"
+    "en": "Atelier Fen-Yll<br>(Leatherworkers' Guild)",
+    "ja": "アトリエ「フェン・イル」<br>[革細工師ギルド]",
+    "de": "Atelier Fen-Yll <br>(Gerbergilde)",
+    "fr": "Atelier Fen-Yll<br>Guilde des tanneurs"
   },
   "595": {
     "en": "Westshore Pier",
@@ -3690,10 +3690,10 @@
     "fr": "Les Sables mouvants"
   },
   "616": {
-    "en": "The Quicksand\n\n(Adventurers' Guild)",
-    "ja": "クイックサンド\n\n[冒険者ギルド]",
+    "en": "The Quicksand<br>(Adventurers' Guild)",
+    "ja": "クイックサンド<br>[冒険者ギルド]",
     "de": "Abenteurergilde",
-    "fr": "Les Sables mouvants\n\nGuilde des aventuriers"
+    "fr": "Les Sables mouvants<br>Guilde des aventuriers"
   },
   "617": {
     "en": "The Hourglass",
@@ -3714,10 +3714,10 @@
     "fr": "Guilde des pugilistes"
   },
   "620": {
-    "en": "Platinum Mirage\n\n(Pugilists' Guild)",
-    "ja": "プラチナミラージュ\n\n[格闘士ギルド]",
-    "de": "Palais Platin \n\n(Faustkämpfergilde)",
-    "fr": "Le Mirage de platine\n\nGuilde des pugilistes"
+    "en": "Platinum Mirage<br>(Pugilists' Guild)",
+    "ja": "プラチナミラージュ<br>[格闘士ギルド]",
+    "de": "Palais Platin <br>(Faustkämpfergilde)",
+    "fr": "Le Mirage de platine<br>Guilde des pugilistes"
   },
   "621": {
     "en": "Emerald Avenue",
@@ -3738,10 +3738,10 @@
     "fr": "Guilde des gladiateurs"
   },
   "624": {
-    "en": "The Coliseum\n\n(Gladiators' Guild)",
-    "ja": "コロセウム\n\n[剣術士ギルド]",
-    "de": "Das Kolosseum \n\n(Gladiatorengilde)",
-    "fr": "Colisée\n\nGuilde des gladiateurs"
+    "en": "The Coliseum<br>(Gladiators' Guild)",
+    "ja": "コロセウム<br>[剣術士ギルド]",
+    "de": "Das Kolosseum <br>(Gladiatorengilde)",
+    "fr": "Colisée<br>Guilde des gladiateurs"
   },
   "625": {
     "en": "The Rudius",
@@ -3774,10 +3774,10 @@
     "fr": "Guilde des occultistes"
   },
   "630": {
-    "en": "Arrzaneth Ossuary\n\n(Thaumaturges' Guild)",
-    "ja": "アルダネス聖櫃堂\n\n[呪術士ギルド]",
-    "de": "Arrzaneth-Ossarium \n\n(Thaumaturgengilde)",
-    "fr": "Ossuaire d'Arrzaneth\n\nGuilde des occultistes"
+    "en": "Arrzaneth Ossuary<br>(Thaumaturges' Guild)",
+    "ja": "アルダネス聖櫃堂<br>[呪術士ギルド]",
+    "de": "Arrzaneth-Ossarium <br>(Thaumaturgengilde)",
+    "fr": "Ossuaire d'Arrzaneth<br>Guilde des occultistes"
   },
   "631": {
     "en": "Eshtaime's Aesthetics",
@@ -3798,10 +3798,10 @@
     "fr": "Guilde des orfèvres"
   },
   "634": {
-    "en": "Eshtaime's Lapidaries\n\n(Goldsmiths' Guild)",
-    "ja": "エシュテム直営工房\n\n[彫金師ギルド]",
-    "de": "Edelsteinschleiferei Eshtaime \n\n(Goldschmiedegilde)",
-    "fr": "Les Lapidaires d'Eshtaime\n\nGuilde des orfèvres"
+    "en": "Eshtaime's Lapidaries<br>(Goldsmiths' Guild)",
+    "ja": "エシュテム直営工房<br>[彫金師ギルド]",
+    "de": "Edelsteinschleiferei Eshtaime <br>(Goldschmiedegilde)",
+    "fr": "Les Lapidaires d'Eshtaime<br>Guilde des orfèvres"
   },
   "635": {
     "en": "Amajina & Sons Mineral Concern",
@@ -3816,10 +3816,10 @@
     "fr": "Guilde des mineurs"
   },
   "637": {
-    "en": "Amajina & Sons Mineral Concern\n\n(Miners' Guild)",
-    "ja": "アマジナ鉱山社\n\n[採掘師ギルド]",
-    "de": "Amajina Bergbau AG \n\n(Minenarbeitergilde)",
-    "fr": "Les Bons filons d'Amajina et Fils\n\nGuilde des mineurs"
+    "en": "Amajina & Sons Mineral Concern<br>(Miners' Guild)",
+    "ja": "アマジナ鉱山社<br>[採掘師ギルド]",
+    "de": "Amajina Bergbau AG <br>(Minenarbeitergilde)",
+    "fr": "Les Bons filons d'Amajina et Fils<br>Guilde des mineurs"
   },
   "638": {
     "en": "Onyx Lane",
@@ -3858,10 +3858,10 @@
     "fr": "Guilde des couturiers"
   },
   "644": {
-    "en": "Sunsilk Tapestries\n\n(Weavers' Guild)",
-    "ja": "織物「サンシルク」\n\n[裁縫師ギルド]",
-    "de": "Haute Couture Sonnenseide \n\n(Webergilde)",
-    "fr": "Les Soieries du Soleil\n\nGuilde des couturiers"
+    "en": "Sunsilk Tapestries<br>(Weavers' Guild)",
+    "ja": "織物「サンシルク」<br>[裁縫師ギルド]",
+    "de": "Haute Couture Sonnenseide <br>(Webergilde)",
+    "fr": "Les Soieries du Soleil<br>Guilde des couturiers"
   },
   "645": {
     "en": "Gate of Thal",
@@ -3900,10 +3900,10 @@
     "fr": "Guilde des alchimistes"
   },
   "651": {
-    "en": "Frondale's Phrontistery\n\n(Alchemists' Guild)",
-    "ja": "フロンデール薬学院\n\n[錬金術師ギルド]",
-    "de": "Frondales Physiatrische Akademie \n\n(Alchemistengilde)",
-    "fr": "Académie médicale de Frondale\n\nGuilde des alchimistes"
+    "en": "Frondale's Phrontistery<br>(Alchemists' Guild)",
+    "ja": "フロンデール薬学院<br>[錬金術師ギルド]",
+    "de": "Frondales Physiatrische Akademie <br>(Alchemistengilde)",
+    "fr": "Académie médicale de Frondale<br>Guilde des alchimistes"
   },
   "652": {
     "en": "Scholars' Walk",
@@ -4206,16 +4206,16 @@
     "fr": "L'Entrepont"
   },
   "702": {
-    "en": "The Astalicia",
+    "en": "The <i>Astalicia</i>",
     "ja": "アスタリシア号",
-    "de": "Die Astalicia",
+    "de": "Die <i>Astalicia</i>",
     "fr": "Astalicia"
   },
   "703": {
-    "en": "Coral Tower\n\n(Marauders' Guild)",
-    "ja": "コーラルタワー\n\n[斧術士ギルド]",
-    "de": "Korallenturm \n\n(Marodeurgilde)",
-    "fr": "Tour de Corail\n\nGuilde des maraudeurs"
+    "en": "Coral Tower<br>(Marauders' Guild)",
+    "ja": "コーラルタワー<br>[斧術士ギルド]",
+    "de": "Korallenturm <br>(Marodeurgilde)",
+    "fr": "Tour de Corail<br>Guilde des maraudeurs"
   },
   "704": {
     "en": "Coral Tower",
@@ -4236,10 +4236,10 @@
     "fr": "Douane de Mealvaan"
   },
   "707": {
-    "en": "Mealvaan's Gate\n\n(Arcanists' Guild)",
-    "ja": "メルヴァン税関公社\n\n[巴術士ギルド]",
-    "de": "Mealvaan-Tor \n\n(Hermetikergilde)",
-    "fr": "Douane de Mealvaan\n\nGuilde des arcanistes"
+    "en": "Mealvaan's Gate<br>(Arcanists' Guild)",
+    "ja": "メルヴァン税関公社<br>[巴術士ギルド]",
+    "de": "Mealvaan-Tor <br>(Hermetikergilde)",
+    "fr": "Douane de Mealvaan<br>Guilde des arcanistes"
   },
   "708": {
     "en": "The Bismarck",
@@ -4248,10 +4248,10 @@
     "fr": "Le Bismarck"
   },
   "709": {
-    "en": "The Bismarck\n\n(Culinarians' Guild)",
-    "ja": "レストラン「ビスマルク」\n\n[調理師ギルド]",
-    "de": "Restaurant Bismarck \n\n(Gourmetgilde)",
-    "fr": "Le Bismarck\n\nGuilde des cuisiniers"
+    "en": "The Bismarck<br>(Culinarians' Guild)",
+    "ja": "レストラン「ビスマルク」<br>[調理師ギルド]",
+    "de": "Restaurant Bismarck <br>(Gourmetgilde)",
+    "fr": "Le Bismarck<br>Guilde des cuisiniers"
   },
   "710": {
     "en": "Naldiq & Vymelli's",
@@ -4260,10 +4260,10 @@
     "fr": "Naldiq et Vymelli"
   },
   "711": {
-    "en": "Naldiq & Vymelli's\n\n(Blacksmiths' Guild)\n\n(Armorers' Guild)",
-    "ja": "ナルディク＆ヴィメリー社\n\n[鍛冶師ギルド]\n\n[甲冑師ギルド]",
-    "de": "Naldiq & Vymelli \n\n(Grobschmiedegilde)\n\n(Plattnergilde)",
-    "fr": "Naldiq et Vymelli\n\nGuilde des forgerons et des armuriers"
+    "en": "Naldiq & Vymelli's<br>(Blacksmiths' Guild)<br>(Armorers' Guild)",
+    "ja": "ナルディク＆ヴィメリー社<br>[鍛冶師ギルド]<br>[甲冑師ギルド]",
+    "de": "Naldiq & Vymelli <br>(Grobschmiedegilde)<br>(Plattnergilde)",
+    "fr": "Naldiq et Vymelli<br>Guilde des forgerons et des armuriers"
   },
   "712": {
     "en": "Arcanists' Guild",
@@ -4278,10 +4278,10 @@
     "fr": "L'Escale du pêcheur"
   },
   "714": {
-    "en": "Fisherman's Bottom\n\n(Fishermen's Guild)",
-    "ja": "網倉\n\n[漁師ギルド]",
-    "de": "Fischers Bodden \n\n(Fischergilde)",
-    "fr": "L'Escale du pêcheur\n\nGuilde des pêcheurs"
+    "en": "Fisherman's Bottom<br>(Fishermen's Guild)",
+    "ja": "網倉<br>[漁師ギルド]",
+    "de": "Fischers Bodden <br>(Fischergilde)",
+    "fr": "L'Escale du pêcheur<br>Guilde des pêcheurs"
   },
   "715": {
     "en": "The Drowning Wench",
@@ -4290,10 +4290,10 @@
     "fr": "Le Dauphin noyé"
   },
   "716": {
-    "en": "The Drowning Wench\n\n(Adventurers' Guild)",
-    "ja": "溺れた海豚亭\n\n[冒険者ギルド]",
-    "de": "Zur Ertränkten Sorge \n\n(Abenteurergilde)",
-    "fr": "Le Dauphin noyé\n\nGuilde des aventuriers"
+    "en": "The Drowning Wench<br>(Adventurers' Guild)",
+    "ja": "溺れた海豚亭<br>[冒険者ギルド]",
+    "de": "Zur Ertränkten Sorge <br>(Abenteurergilde)",
+    "fr": "Le Dauphin noyé<br>Guilde des aventuriers"
   },
   "717": {
     "en": "The Hyaline",
@@ -5510,7 +5510,7 @@
   "919": {
     "en": "The Ragnarok",
     "ja": "拘束艦",
-    "de": "Die Ragnarök",
+    "de": "Die <i>Ragnarök</i>",
     "fr": "Le Ragnarok"
   },
   "920": {
@@ -8712,10 +8712,10 @@
     "fr": "Navire au large"
   },
   "1453": {
-    "en": "Dutiful Sisters of the Edelweiss\n\n(Rogues' Guild)",
-    "ja": "エーデルワイス商会\n\n[双剣士ギルド]",
-    "de": "Schwestern von Edelweiß\n\n(Schurkengilde)",
-    "fr": "Société de négoce de l'Edelweiss\n\nGuilde des surineurs"
+    "en": "Dutiful Sisters of the Edelweiss<br>(Rogues' Guild)",
+    "ja": "エーデルワイス商会<br>[双剣士ギルド]",
+    "de": "Schwestern von Edelweiß<br>(Schurkengilde)",
+    "fr": "Société de négoce de l'Edelweiss<br>Guilde des surineurs"
   },
   "1454": {
     "en": "31",
@@ -11208,7 +11208,7 @@
     "fr": "Dun Scaith"
   },
   "1869": {
-    "en": "The Lady Radlia",
+    "en": "The <i>Lady Radlia</i>",
     "ja": "巨大飛空艇「レディ・ラドリア号」",
     "de": "Lady Radlia",
     "fr": "Dame Radlia"
@@ -11754,9 +11754,9 @@
     "fr": "Les Pics"
   },
   "1960": {
-    "en": "The Misery",
+    "en": "The <i>Misery</i>",
     "ja": "ミゼリー号",
-    "de": "Die Misery",
+    "de": "Die <i>Misery</i>",
     "fr": "Le Misère"
   },
   "1961": {
@@ -11766,9 +11766,9 @@
     "fr": "Rocher aux Spectres"
   },
   "1962": {
-    "en": "The Jane Guy",
+    "en": "The <i>Jane Guy</i>",
     "ja": "ジェイン号",
-    "de": "Die Jane Guy",
+    "de": "Die <i>Jane Guy</i>",
     "fr": "Le Jane Guy"
   },
   "1963": {
@@ -12684,9 +12684,9 @@
     "fr": "Navire amiral"
   },
   "2115": {
-    "en": "The Protector",
+    "en": "The <i>Protector</i>",
     "ja": "プロテクトゥール号",
-    "de": "Die Protektor",
+    "de": "Die <i>Protektor</i>",
     "fr": "Protecteur"
   },
   "2116": {
@@ -12834,9 +12834,9 @@
     "fr": "Transfert de matière V-IV"
   },
   "2140": {
-    "en": "The Gration",
+    "en": "The <i>Gration</i>",
     "ja": "飛空戦艦グラティオン",
-    "de": "Die Gration",
+    "de": "Die <i>Gration</i>",
     "fr": "Gration"
   },
   "2141": {
@@ -13338,7 +13338,7 @@
     "fr": "Prairie de Gorgagne"
   },
   "2224": {
-    "en": "The North Star",
+    "en": "The <i>North Star</i>",
     "ja": "ノーススター号",
     "de": "Die Nordstern",
     "fr": "L'Étoile du nord"
@@ -13524,9 +13524,9 @@
     "fr": "Aire d'atterrissage 05"
   },
   "2255": {
-    "en": "The Bounty",
+    "en": "The <i>Bounty</i>",
     "ja": "バウンティ号の漂着地",
-    "de": "Die Bounty",
+    "de": "Die <i>Bounty</i>",
     "fr": "La Bonté"
   },
   "2256": {
@@ -14214,13 +14214,13 @@
     "fr": "Les profondeurs"
   },
   "2370": {
-    "en": "The Prima Vista Tiring Room",
+    "en": "The <i>Prima Vista</i> Tiring Room",
     "ja": "劇場艇プリマビスタ・大道具部屋",
     "de": "Theaterwerkstatt",
     "fr": "Salle de répétition du Prima Vista"
   },
   "2371": {
-    "en": "The Prima Vista Bridge",
+    "en": "The <i>Prima Vista</i> Bridge",
     "ja": "劇場艇プリマビスタ・ブリッジ",
     "de": "Brücke",
     "fr": "Pont du Prima Vista"
@@ -15072,15 +15072,15 @@
     "fr": "Tamamizu"
   },
   "2513": {
-    "en": "Sui–no–Sato",
+    "en": "Sui-no-Sato",
     "ja": "スイの里周辺",
     "de": "Sui no Sato",
     "fr": "Sui-no-Sato"
   },
   "2514": {
-    "en": "The Adventure",
+    "en": "The <i>Adventure</i>",
     "ja": "アドヴェンチャー号周辺",
-    "de": "Die Adventure",
+    "de": "Die <i>Adventure</i>",
     "fr": "L'Aventure"
   },
   "2515": {
@@ -15090,9 +15090,9 @@
     "fr": "Palais aux Marées violettes"
   },
   "2516": {
-    "en": "The Kobayashi Maru",
+    "en": "The <i>Kobayashi Maru</i>",
     "ja": "小林丸周辺",
-    "de": "Die Kobayashi-maru",
+    "de": "Die <i>Kobayashi-maru</i>",
     "fr": "Le Kobayashi Maru"
   },
   "2517": {
@@ -15978,9 +15978,9 @@
     "fr": "Bras du rachat"
   },
   "2664": {
-    "en": "Nyunkrepf's Hope",
+    "en": "<i>Nyunkrepf's Hope</i>",
     "ja": "ニュンクレフの箱船",
-    "de": "Nyunkrepfs Rettung",
+    "de": "<i>Nyunkrepfs Rettung</i>",
     "fr": "Secours de Nyunkrepf"
   },
   "2665": {
@@ -16674,15 +16674,15 @@
     "fr": "Palais aux Marées violettes"
   },
   "2780": {
-    "en": "The Adventure",
+    "en": "The <i>Adventure</i>",
     "ja": "アドヴェンチャー号",
-    "de": "Die Adventure",
+    "de": "Die <i>Adventure</i>",
     "fr": "L'Aventure"
   },
   "2781": {
-    "en": "The Kobayashi Maru",
+    "en": "The <i>Kobayashi Maru</i>",
     "ja": "小林丸",
-    "de": "Die Kobayashi-maru",
+    "de": "Die <i>Kobayashi-maru</i>",
     "fr": "Le Kobayashi Maru"
   },
   "2782": {
@@ -17526,9 +17526,9 @@
     "fr": "Kugane Ofunakura"
   },
   "2922": {
-    "en": "The Kuroboro Maru",
+    "en": "The <i>Kuroboro Maru</i>",
     "ja": "黒母衣丸",
-    "de": "Die Kuroboro-maru",
+    "de": "Die <i>Kuroboro-maru</i>",
     "fr": "Le Kuroboro Maru"
   },
   "2923": {
@@ -20856,9 +20856,9 @@
     "fr": "Champs de rolanbaies"
   },
   "3477": {
-    "en": "The Endeavor",
+    "en": "The <i>Endeavor</i>",
     "ja": "エンデバー号",
-    "de": "Die Endeavor",
+    "de": "Die <i>Endeavor</i>",
     "fr": "L'Ambition"
   },
   "3478": {
@@ -21762,9 +21762,9 @@
     "fr": "Fond de la Mer de Rubis (est)"
   },
   "3628": {
-    "en": "Kobayashi Maru's Northern Wake",
+    "en": "<i>Kobayashi Maru</i>'s Northern Wake",
     "ja": "小林丸北",
-    "de": "Kobayashi Maru (Norden)",
+    "de": "<i>Kobayashi Maru</i> (Norden)",
     "fr": "Nord du Kobayashimaru"
   },
   "3629": {
@@ -22086,9 +22086,9 @@
     "fr": "Anneau effondré"
   },
   "3682": {
-    "en": "The Dalriada",
+    "en": "The <i>Dalriada</i>",
     "ja": "旗艦ダル・リアータ",
-    "de": "Die Dalriada",
+    "de": "Die <i>Dalriada</i>",
     "fr": "Le Dalriada"
   },
   "3683": {
@@ -22683,7 +22683,7 @@
     "en": "Under Construction (Sorry!)",
     "ja": "工事中：ご迷惑をおかけしております",
     "de": "Noch-Nicht-Fertig (Tut uns leid!)",
-    "fr": "Entravauxpolis \n\n(désolé pour la gêne occasionnée!)"
+    "fr": "Entravauxpolis <br>(désolé pour la gêne occasionnée&nbsp;!)"
   },
   "3782": {
     "en": "Happy Street",
@@ -23820,9 +23820,9 @@
     "fr": "Ostrakon Dékaokto"
   },
   "3971": {
-    "en": "The Ragnarok",
+    "en": "The <i>Ragnarok</i>",
     "ja": "魔導船ラグナロク",
-    "de": "Die Ragnarök",
+    "de": "Die <i>Ragnarök</i>",
     "fr": "Le Ragnarok"
   },
   "3972": {
@@ -24252,10 +24252,10 @@
     "fr": "Élysée"
   },
   "4043": {
-    "en": "Island Sanctuary",
-    "ja": "無人島開拓",
-    "de": "Inselparadies",
-    "fr": "Félicité insulaire"
+    "en": "Unnamed Island",
+    "ja": "名もなき島",
+    "de": "Einsame Insel",
+    "fr": "Île sans nom"
   },
   "4044": {
     "en": "The High Crucible of Al-Kimiya",

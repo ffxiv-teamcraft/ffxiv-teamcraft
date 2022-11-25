@@ -1,11 +1,12 @@
+import { XivDataService } from '../xiv/xiv-data.service';
 import { AbstractExtractor } from '../abstract-extractor';
 
 export class ActionTimelineExtractor extends AbstractExtractor {
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const actionTimeline = {};
-    this.getAllPages('https://xivapi.com/ActionTimeline?columns=ID,Key').subscribe(page => {
-      page.Results.forEach(entry => {
-        actionTimeline[entry.ID] = entry.Key;
+    this.getSheet(xiv, 'ActionTimeline', ['Key']).subscribe(entries => {
+      entries.forEach(entry => {
+        actionTimeline[entry.index] = entry.Key;
       });
     }, null, () => {
       this.persistToJsonAsset('action-timeline', actionTimeline);
