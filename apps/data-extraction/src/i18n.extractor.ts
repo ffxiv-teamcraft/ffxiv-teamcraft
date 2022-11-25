@@ -10,7 +10,7 @@ export class I18nExtractor extends AbstractExtractor {
 
   protected doExtract(xiv: XivDataService): any {
     const entities = {};
-    this.getSheet(xiv, this.contentName, [`${this.nameColumn}*`, ...Object.keys(this.additionalColumns)], this.startsAt0, 0)
+    this.getSheet(xiv, this.contentName, [`${this.nameColumn}*`, ...Object.keys(this.additionalColumns).map(key => key.replace(/_\w+/, ''))], this.startsAt0, 0)
       .subscribe({
         next: rows => {
           rows.forEach(entity => {
