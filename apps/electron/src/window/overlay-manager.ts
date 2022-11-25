@@ -44,6 +44,11 @@ export class OverlayManager {
       overlay.show();
     });
 
+    // save window size and position
+    overlay.on('close', () => {
+      this.afterOverlayClose(url);
+    });
+
 
     overlay.loadURL(`file://${Constants.BASE_APP_PATH}/index.html#${url}?overlay=true`);
     this.openedOverlays[url] = overlay;

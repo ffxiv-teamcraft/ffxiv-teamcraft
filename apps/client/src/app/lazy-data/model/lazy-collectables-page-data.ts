@@ -74,6 +74,7 @@ export interface GatheringNode {
   limited:           boolean;
   level:             number;
   type:              number;
+  base?:             number;
   legendary:         boolean;
   ephemeral:         boolean;
   spawns:            number[];
@@ -90,6 +91,7 @@ export interface GatheringNode {
   snagging?:         boolean;
   baits?:            Bait[];
   oceanFishingTime?: null;
+  minGathering?:     number;
   folklore?:         number;
   weathers?:         number[];
   predators?:        Predator[];
