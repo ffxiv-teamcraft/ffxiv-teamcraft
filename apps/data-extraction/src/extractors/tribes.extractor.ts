@@ -20,7 +20,7 @@ export class TribesExtractor extends AbstractExtractor {
         delete entry.Masculine_de;
         delete entry.Masculine_ja;
         delete entry.Masculine_fr;
-        tribes[entry.index] = entry;
+        tribes[entry.index] = this.removeIndexes(entry);
       });
       this.persistToJsonAsset('tribes', tribes);
       this.done();

@@ -39,7 +39,7 @@ export class XivDataService {
     return columns.filter(c => c.startsWith(`${targetProp}.`)).map(c => c.replace(`${targetProp}.`, ''));
   }
 
-  private async handleLinks(parser: DefinitionParser, content: ParsedRow[], columns: string[], depth: number) {
+  private async handleLinks(parser: DefinitionParser, content: ParsedRow[], columns: string[], depth: number, progress?: any) {
     /**
      * This will hold all out mappers, different return cases being for:
      *  - ParsedRow: link to a single row in a sheet and we found it
@@ -75,7 +75,7 @@ export class XivDataService {
         return acc;
       }, []);
     const preloaded = await Promise.all(sheetsArray.map(async ({ sheet, columns }) => {
-      const preload = await this.getSheet(sheet, { columns, depth });
+      const preload = await this.getSheet(sheet, { columns, depth, progress });
       return {
         sheet,
         preload
@@ -115,10 +115,10 @@ export class XivDataService {
     }
     const parser = new DefinitionParser(definition, options?.columns);
     const sheetClass = this.generateSheetClass(parser, columns);
-    const data = await this.kobold.getSheetData<typeof sheetClass, ExtendedRow>(sheetClass, options?.skipFirst);
+    const data = await this.kobold.getSheetData<typeof sheetClass, ExtendedRow>(sheetClass, options?.skipFirst, options?.progress);
     const parsed = data.map(row => this.getParsedRow(row));
     if (depth > 0) {
-      return await this.handleLinks(parser, parsed, columns, depth - 1);
+      return await this.handleLinks(parser, parsed, columns, depth - 1, options?.progress);
     }
     return parsed;
   }
@@ -142,7 +142,7 @@ export class XivDataService {
         const raw = readFileSync(join(this.saintPath, `${sheetName}.json`), 'utf8');
         this.definitionsCache[sheetName] = JSON.parse(raw) as SaintDefinition;
       } catch (e) {
-        console.error(`Missing sheet ${sheetName}.json: ${e.message}`);
+        // console.error(`Missing sheet ${sheetName}.json: ${e.message}`);
         return { sheet: sheetName, definitions: [] };
       }
     }

@@ -137,6 +137,10 @@ export class DefinitionParser {
             preload: col.converter.links.map(link => link.sheet ? [link.sheet] : link.sheets).flat(),
             fn: (id, row, sheets) => {
               const target = (col.converter as ComplexLinkConverter).links.find(link => {
+                // This is a special case that happens in Quest for instance
+                if (!link.when) {
+                  return true;
+                }
                 if (row[link.when.key] === undefined) {
                   throw new Error(`Cannot process complexlink with missing property ${link.when.key}, please add it to the columns you're getting.`);
                 }

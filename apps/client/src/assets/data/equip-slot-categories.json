@@ -1,7 +1,5 @@
 {
   "1": {
-    "index": 1,
-    "subIndex": 0,
     "MainHand": 1,
     "OffHand": 0,
     "Head": 0,
@@ -18,8 +16,6 @@
     "SoulCrystal": 0
   },
   "2": {
-    "index": 2,
-    "subIndex": 0,
     "MainHand": 0,
     "OffHand": 1,
     "Head": 0,
@@ -36,8 +32,6 @@
     "SoulCrystal": 0
   },
   "3": {
-    "index": 3,
-    "subIndex": 0,
     "MainHand": 0,
     "OffHand": 0,
     "Head": 1,
@@ -54,8 +48,6 @@
     "SoulCrystal": 0
   },
   "4": {
-    "index": 4,
-    "subIndex": 0,
     "MainHand": 0,
     "OffHand": 0,
     "Head": 0,
@@ -72,8 +64,6 @@
     "SoulCrystal": 0
   },
   "5": {
-    "index": 5,
-    "subIndex": 0,
     "MainHand": 0,
     "OffHand": 0,
     "Head": 0,
@@ -90,8 +80,6 @@
     "SoulCrystal": 0
   },
   "6": {
-    "index": 6,
-    "subIndex": 0,
     "MainHand": 0,
     "OffHand": 0,
     "Head": 0,
@@ -108,8 +96,6 @@
     "SoulCrystal": 0
   },
   "7": {
-    "index": 7,
-    "subIndex": 0,
     "MainHand": 0,
     "OffHand": 0,
     "Head": 0,
@@ -126,8 +112,6 @@
     "SoulCrystal": 0
   },
   "8": {
-    "index": 8,
-    "subIndex": 0,
     "MainHand": 0,
     "OffHand": 0,
     "Head": 0,
@@ -144,8 +128,6 @@
     "SoulCrystal": 0
   },
   "9": {
-    "index": 9,
-    "subIndex": 0,
     "MainHand": 0,
     "OffHand": 0,
     "Head": 0,
@@ -162,8 +144,6 @@
     "SoulCrystal": 0
   },
   "10": {
-    "index": 10,
-    "subIndex": 0,
     "MainHand": 0,
     "OffHand": 0,
     "Head": 0,
@@ -180,8 +160,6 @@
     "SoulCrystal": 0
   },
   "11": {
-    "index": 11,
-    "subIndex": 0,
     "MainHand": 0,
     "OffHand": 0,
     "Head": 0,
@@ -198,8 +176,6 @@
     "SoulCrystal": 0
   },
   "12": {
-    "index": 12,
-    "subIndex": 0,
     "MainHand": 0,
     "OffHand": 0,
     "Head": 0,
@@ -216,8 +192,6 @@
     "SoulCrystal": 0
   },
   "13": {
-    "index": 13,
-    "subIndex": 0,
     "MainHand": 1,
     "OffHand": -1,
     "Head": 0,
@@ -234,8 +208,6 @@
     "SoulCrystal": 0
   },
   "14": {
-    "index": 14,
-    "subIndex": 0,
     "MainHand": 1,
     "OffHand": 1,
     "Head": 0,
@@ -252,8 +224,6 @@
     "SoulCrystal": 0
   },
   "15": {
-    "index": 15,
-    "subIndex": 0,
     "MainHand": 0,
     "OffHand": 0,
     "Head": -1,
@@ -270,8 +240,6 @@
     "SoulCrystal": 0
   },
   "16": {
-    "index": 16,
-    "subIndex": 0,
     "MainHand": 0,
     "OffHand": 0,
     "Head": 0,
@@ -288,8 +256,6 @@
     "SoulCrystal": 0
   },
   "17": {
-    "index": 17,
-    "subIndex": 0,
     "MainHand": 0,
     "OffHand": 0,
     "Head": 0,
@@ -306,8 +272,6 @@
     "SoulCrystal": 1
   },
   "18": {
-    "index": 18,
-    "subIndex": 0,
     "MainHand": 0,
     "OffHand": 0,
     "Head": 0,
@@ -324,8 +288,6 @@
     "SoulCrystal": 0
   },
   "19": {
-    "index": 19,
-    "subIndex": 0,
     "MainHand": 0,
     "OffHand": 0,
     "Head": -1,
@@ -342,8 +304,6 @@
     "SoulCrystal": 0
   },
   "20": {
-    "index": 20,
-    "subIndex": 0,
     "MainHand": 0,
     "OffHand": 0,
     "Head": 0,
@@ -360,8 +320,6 @@
     "SoulCrystal": 0
   },
   "21": {
-    "index": 21,
-    "subIndex": 0,
     "MainHand": 0,
     "OffHand": 0,
     "Head": 0,
@@ -378,8 +336,6 @@
     "SoulCrystal": 0
   },
   "22": {
-    "index": 22,
-    "subIndex": 0,
     "MainHand": 0,
     "OffHand": 0,
     "Head": 0,
@@ -396,8 +352,6 @@
     "SoulCrystal": 0
   },
   "23": {
-    "index": 23,
-    "subIndex": 0,
     "MainHand": 0,
     "OffHand": 0,
     "Head": 0,

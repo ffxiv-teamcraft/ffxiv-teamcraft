@@ -1,6 +1,6 @@
 import { AbstractExtractor } from './abstract-extractor';
 import { MapIdsExtractor } from './extractors/map-ids.extractor';
-import { SingleBar } from 'cli-progress';
+import { MultiBar } from 'cli-progress';
 import { MappyExtractor } from './extractors/mappy.extractor';
 import { LogsExtractor } from './extractors/logs.extractor';
 import { FishParameterExtractor } from './extractors/fish-parameter.extractor';
@@ -57,8 +57,7 @@ import { IslandExtractor } from './extractors/island.extractor';
 import { TraitsExtractor } from './extractors/traits.extractor';
 import { KoboldService } from './kobold/kobold.service';
 import { XivDataService } from './xiv/xiv-data.service';
-import { concat, of } from 'rxjs';
-import { switchMap, tap } from 'rxjs/operators';
+import { from, mergeMap, tap } from 'rxjs';
 import { ItemSeriesExtractor } from './extractors/item-series.extractor';
 import { ShopsExtractor } from './extractors/shops.extractor';
 import { SeedsExtractor } from './extractors/seeds.extractor';
@@ -137,20 +136,17 @@ const extractors: AbstractExtractor[] = [
   new WeatherRateExtractor(),
   new GatheringBonusesExtractor(),
   new CollectablesExtractor(),
-  // Everything above is migrated to kobold
+  new RecipesExtractor(),
+  new QuestsExtractor(),
+  new MappyExtractor(),
+  new SubmarinePartsExtractor(),
+  new AirshipPartsExtractor(),
+  new SubmarineRanksExtractor(),
+  new AirshipRanksExtractor(),
   new SeedsExtractor(),
   new ReductionsExtractor(),
   new PatchContentExtractor(),
   new MonsterDropsExtractor(),
-  // Everything above relies on 3rd party APIS and cannot use kobold
-  new RecipesExtractor(),
-  new QuestsExtractor(),
-  new SubmarinePartsExtractor(),
-  new SubmarineRanksExtractor(),
-  new AirshipPartsExtractor(),
-  new AirshipRanksExtractor(),
-  new MappyExtractor(),
-  // LGB is migrated but needs to stay here at the bottom
   new LgbExtractor(),
   new GubalExtractor(),
   new AllaganReportsExtractor(),
@@ -162,11 +158,6 @@ const extractors: AbstractExtractor[] = [
   await kobold.init();
   const xiv = new XivDataService(kobold);
   xiv.UIColor = await xiv.getSheet('UIColor');
-
-  // const items = await xiv.getSheet('ItemFood');
-  //
-  // console.log(items);
-  // process.exit(0);
 
   const operationsSelection = new MultiSelect({
     name: 'operations',
@@ -194,32 +185,34 @@ const extractors: AbstractExtractor[] = [
 
 
   function startExtractors(selectedExtractors: AbstractExtractor[]): void {
-
-    const progress = new SingleBar({
-      format: ' {bar} | {label} | {requests} requests done | {value}/{total}',
+    const multiBar = new MultiBar({
+      format: ' {bar} | {label} | {value}/{total} | {duration_formatted}',
       hideCursor: true,
       barCompleteChar: '\u2588',
       barIncompleteChar: '\u2591',
-      stopOnComplete: true
+      emptyOnZero: true,
+      forceRedraw: true
     });
 
-    progress.start(selectedExtractors.length, 0);
+    const globalBar = multiBar.create(selectedExtractors.length, 0, { label: 'All Extractors' });
 
-    concat(...selectedExtractors.map(extractor => {
-      return of(null).pipe(
-        tap(() => {
-          progress.update({
-            label: extractor.getName()
-          });
-        }),
-        switchMap(() => extractor.extract(progress, xiv))
-      );
-    })).subscribe({
+    from(selectedExtractors).pipe(
+      mergeMap(extractor => {
+        const progress = multiBar.create(0, 0, { label: extractor.getName() });
+        extractor.setProgress(progress);
+        return extractor.extract(xiv).pipe(
+          tap(() => {
+            progress.stop();
+            multiBar.remove(progress);
+          })
+        );
+      }, 1)
+    ).subscribe({
       next: () => {
-        progress.increment();
+        globalBar.increment();
       },
       complete: () => {
-        progress.stop();
+        multiBar.stop();
         process.exit(0);
       }
     });

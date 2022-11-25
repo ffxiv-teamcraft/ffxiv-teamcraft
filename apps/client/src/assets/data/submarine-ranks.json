@@ -951,36 +951,56 @@
   },
   "96": {
     "id": 96,
-    "capacity": 0,
-    "expToNext": 0,
-    "surveillanceBonus": 0,
-    "retrievalBonus": 0,
-    "speedBonus": 0,
-    "rangeBonus": 0,
-    "favorBonus": 0
+    "capacity": 80,
+    "expToNext": 8020557,
+    "surveillanceBonus": 61,
+    "retrievalBonus": 82,
+    "speedBonus": 46,
+    "rangeBonus": 72,
+    "favorBonus": 55
   },
   "97": {
     "id": 97,
-    "capacity": 0,
-    "expToNext": 0,
-    "surveillanceBonus": 0,
-    "retrievalBonus": 0,
-    "speedBonus": 0,
-    "rangeBonus": 0,
-    "favorBonus": 0
+    "capacity": 80,
+    "expToNext": 8963972,
+    "surveillanceBonus": 61,
+    "retrievalBonus": 84,
+    "speedBonus": 46,
+    "rangeBonus": 74,
+    "favorBonus": 55
   },
   "98": {
     "id": 98,
-    "capacity": 0,
-    "expToNext": 0,
-    "surveillanceBonus": 0,
-    "retrievalBonus": 0,
-    "speedBonus": 0,
-    "rangeBonus": 0,
-    "favorBonus": 0
+    "capacity": 80,
+    "expToNext": 10001729,
+    "surveillanceBonus": 63,
+    "retrievalBonus": 84,
+    "speedBonus": 48,
+    "rangeBonus": 76,
+    "favorBonus": 57
   },
   "99": {
     "id": 99,
+    "capacity": 80,
+    "expToNext": 30005186,
+    "surveillanceBonus": 63,
+    "retrievalBonus": 88,
+    "speedBonus": 48,
+    "rangeBonus": 78,
+    "favorBonus": 58
+  },
+  "100": {
+    "id": 100,
+    "capacity": 80,
+    "expToNext": 11257414,
+    "surveillanceBonus": 65,
+    "retrievalBonus": 90,
+    "speedBonus": 50,
+    "rangeBonus": 80,
+    "favorBonus": 60
+  },
+  "101": {
+    "id": 101,
     "capacity": 0,
     "expToNext": 0,
     "surveillanceBonus": 0,
@@ -989,8 +1009,38 @@
     "rangeBonus": 0,
     "favorBonus": 0
   },
-  "100": {
-    "id": 100,
+  "102": {
+    "id": 102,
+    "capacity": 0,
+    "expToNext": 0,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "103": {
+    "id": 103,
+    "capacity": 0,
+    "expToNext": 0,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "104": {
+    "id": 104,
+    "capacity": 0,
+    "expToNext": 0,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "105": {
+    "id": 105,
     "capacity": 0,
     "expToNext": 0,
     "surveillanceBonus": 0,

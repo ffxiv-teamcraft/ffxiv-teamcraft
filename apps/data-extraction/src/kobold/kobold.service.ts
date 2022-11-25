@@ -21,7 +21,8 @@ export class KoboldService {
     }
   }
 
-  public async getSheetData<T extends ExtendedRowConstructor<R>, R extends ExtendedRow>(sheetClass: T, skipFirst = false): Promise<R[]> {
+  // Progress is an instance of a progress bar
+  public async getSheetData<T extends ExtendedRowConstructor<R>, R extends ExtendedRow>(sheetClass: T, skipFirst = false, progress?: any): Promise<R[]> {
     // Using a new excel everytime even if it derps cache, because else we'll have troubles with same sheet asked twice with diff columns
     const excel = new Excel({ kobold: this.kobold, language: Language.ENGLISH });
     const i18nSheets = {
@@ -33,7 +34,14 @@ export class KoboldService {
     const content = [];
     let counter = 0;
     let i18nColumns = null;
+    if (progress) {
+      const header = await i18nSheets.en.getHeader();
+      progress.setTotal(progress.total + header.rowCount);
+    }
     for await(const row of i18nSheets.en.getRows()) {
+      if (progress) {
+        progress.increment();
+      }
       if (!i18nColumns) {
         i18nColumns = row.getI18nColumns();
       }

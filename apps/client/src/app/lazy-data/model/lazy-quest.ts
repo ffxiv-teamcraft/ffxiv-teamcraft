@@ -13,11 +13,17 @@ export interface Name {
 }
 
 export interface Reward {
-  id:      number;
-  amount?: number;
+  id:     number;
+  amount: number;
+  hq?:    boolean;
 }
 
 export interface Trade {
-  currencies: Reward[];
-  items:      Reward[];
+  currencies: Currency[];
+  items:      Currency[];
+}
+
+export interface Currency {
+  id:     number;
+  amount: number;
 }

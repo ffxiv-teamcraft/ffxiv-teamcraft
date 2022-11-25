@@ -7,7 +7,7 @@ export class EquipSlotCategoryExtractor extends AbstractExtractor {
     this.getSheet(xiv, `EquipSlotCategory`)
       .subscribe(completeFetch => {
         completeFetch.forEach(entry => {
-          equipSlotCategories[entry.index] = entry;
+          equipSlotCategories[entry.index] = this.removeIndexes(entry);
         });
         this.persistToJsonAsset('equip-slot-categories', equipSlotCategories);
         this.done();

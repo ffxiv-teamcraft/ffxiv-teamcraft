@@ -3,6 +3,7 @@ export interface LazyNode {
   level:        number;
   type:         number;
   limited?:     boolean;
+  base?:        number;
   legendary?:   boolean;
   ephemeral?:   boolean;
   spawns?:      number[];

@@ -173,7 +173,7 @@ export class ShopsExtractor extends AbstractExtractor {
               const entry = {
                 id: cost,
                 amount: specialShop.CountCost[tradeIndex][costIndex] || (specialShop.UseCurrencyType === 8 ? specialShop.ItemReceive[tradeIndex][costIndex]?.PriceMid || 0 : 0),
-                hq: specialShop.HQCost[tradeIndex][costIndex],
+                hq: specialShop.HQCost[tradeIndex][costIndex] > 0,
                 collectability: specialShop.CollectabilityRatingCost[tradeIndex][costIndex]
               };
 

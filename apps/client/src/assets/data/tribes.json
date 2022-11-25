@@ -1,7 +1,5 @@
 {
   "1": {
-    "index": 1,
-    "subIndex": 0,
     "Masculine": "Midlander",
     "Hp": 0,
     "Mp": 0,
@@ -17,8 +15,6 @@
     "Name_fr": "Hyurois"
   },
   "2": {
-    "index": 2,
-    "subIndex": 0,
     "Masculine": "Highlander",
     "Hp": 0,
     "Mp": 0,
@@ -34,8 +30,6 @@
     "Name_fr": "Hyurgoth"
   },
   "3": {
-    "index": 3,
-    "subIndex": 0,
     "Masculine": "Wildwood",
     "Hp": 0,
     "Mp": 0,
@@ -51,8 +45,6 @@
     "Name_fr": "Sylvestre"
   },
   "4": {
-    "index": 4,
-    "subIndex": 0,
     "Masculine": "Duskwight",
     "Hp": 0,
     "Mp": 0,
@@ -68,8 +60,6 @@
     "Name_fr": "Crépusculaire"
   },
   "5": {
-    "index": 5,
-    "subIndex": 0,
     "Masculine": "Plainsfolk",
     "Hp": 0,
     "Mp": 0,
@@ -85,8 +75,6 @@
     "Name_fr": "Peuple des Plaines"
   },
   "6": {
-    "index": 6,
-    "subIndex": 0,
     "Masculine": "Dunesfolk",
     "Hp": 0,
     "Mp": 0,
@@ -102,8 +90,6 @@
     "Name_fr": "Peuple des Dunes"
   },
   "7": {
-    "index": 7,
-    "subIndex": 0,
     "Masculine": "Seeker of the Sun",
     "Hp": 0,
     "Mp": 0,
@@ -119,8 +105,6 @@
     "Name_fr": "Tribu du Soleil"
   },
   "8": {
-    "index": 8,
-    "subIndex": 0,
     "Masculine": "Keeper of the Moon",
     "Hp": 0,
     "Mp": 0,
@@ -136,8 +120,6 @@
     "Name_fr": "Tribu de la Lune"
   },
   "9": {
-    "index": 9,
-    "subIndex": 0,
     "Masculine": "Sea Wolf",
     "Hp": 0,
     "Mp": 0,
@@ -153,8 +135,6 @@
     "Name_fr": "Clan de la Mer"
   },
   "10": {
-    "index": 10,
-    "subIndex": 0,
     "Masculine": "Hellsguard",
     "Hp": 0,
     "Mp": 0,
@@ -170,8 +150,6 @@
     "Name_fr": "Clan du Feu"
   },
   "11": {
-    "index": 11,
-    "subIndex": 0,
     "Masculine": "Raen",
     "Hp": 0,
     "Mp": 0,
@@ -187,8 +165,6 @@
     "Name_fr": "Raen"
   },
   "12": {
-    "index": 12,
-    "subIndex": 0,
     "Masculine": "Xaela",
     "Hp": 0,
     "Mp": 0,
@@ -204,8 +180,6 @@
     "Name_fr": "Xaela"
   },
   "13": {
-    "index": 13,
-    "subIndex": 0,
     "Masculine": "Helions",
     "Hp": 0,
     "Mp": 0,
@@ -221,8 +195,6 @@
     "Name_fr": "Hélion"
   },
   "14": {
-    "index": 14,
-    "subIndex": 0,
     "Masculine": "The Lost",
     "Hp": 0,
     "Mp": 0,
@@ -238,8 +210,6 @@
     "Name_fr": "Éloigné"
   },
   "15": {
-    "index": 15,
-    "subIndex": 0,
     "Masculine": "Rava",
     "Hp": 0,
     "Mp": 0,
@@ -255,8 +225,6 @@
     "Name_fr": "Rava"
   },
   "16": {
-    "index": 16,
-    "subIndex": 0,
     "Masculine": "Veena",
     "Hp": 0,
     "Mp": 0,
