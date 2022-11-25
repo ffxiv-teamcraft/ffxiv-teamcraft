@@ -178,7 +178,7 @@
         <i nz-icon nzType="edit"></i>
       </button>
       <button (click)="archiveList(list)"
-              *ngIf="!list.archived"
+              *ngIf="!list.archived && !list.offline"
               [nzTooltipTitle]="'LIST.COMPLETION_POPUP.Archive' | translate"
               nz-button nz-tooltip
               nzShape="circle" nzSize="small">
