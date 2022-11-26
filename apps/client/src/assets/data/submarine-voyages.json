@@ -4,832 +4,951 @@
     "ja": "A　白の浅瀬",
     "de": "Elfenbein-Syrte (A)",
     "fr": "Écueils d'Ivoire (A)",
-    "id": 1
+    "id": 1,
+    "location": "A"
   },
   "2": {
     "en": "deep-sea site 1",
     "ja": "B　溺没海01",
     "de": "Tiefsee 1 (B)",
     "fr": "Mer des noyades 1 (B)",
-    "id": 2
+    "id": 2,
+    "location": "B"
   },
   "3": {
     "en": "deep-sea site 2",
     "ja": "C　溺没海02",
     "de": "Tiefsee 2 (C)",
     "fr": "Mer des noyades 2 (C)",
-    "id": 3
+    "id": 3,
+    "location": "C"
   },
   "4": {
     "en": "the Lightless Basin",
     "ja": "D　黒の海盆",
     "de": "Lichtloses Becken (D)",
     "fr": "Bassin sans lumière (D)",
-    "id": 4
+    "id": 4,
+    "location": "D"
   },
   "5": {
     "en": "deep-sea site 3",
     "ja": "E　溺没海03",
     "de": "Tiefsee 3 (E)",
     "fr": "Mer des noyades 3 (E)",
-    "id": 5
+    "id": 5,
+    "location": "E"
   },
   "6": {
     "en": "the Southern Rimilala Trench",
     "ja": "F　リミララ海溝南端",
     "de": "Südlicher Rimilala-Graben (F)",
     "fr": "Sud de la fosse de Rimilala (F)",
-    "id": 6
+    "id": 6,
+    "location": "F"
   },
   "7": {
     "en": "the Umbrella Narrow",
     "ja": "G　アンブレラ海峡",
     "de": "Schirmenge (G)",
     "fr": "Détroit du Parapluie (G)",
-    "id": 7
+    "id": 7,
+    "location": "G"
   },
   "8": {
     "en": "Offender's Rot",
     "ja": "H　虜囚島",
     "de": "Banditenatoll (H)",
     "fr": "Trou de l'Agresseur (H)",
-    "id": 8
+    "id": 8,
+    "location": "H"
   },
   "9": {
     "en": "Neolith Island",
     "ja": "I　石人島",
     "de": "Neolitheninsel (I)",
     "fr": "Île des Néolithes (I)",
-    "id": 9
+    "id": 9,
+    "location": "I"
   },
   "10": {
     "en": "unidentified derelict",
     "ja": "J　名も無き沈没船",
     "de": "Unidentifiziertes Wrack (J)",
     "fr": "Épave sans nom (J)",
-    "id": 10
+    "id": 10,
+    "location": "J"
   },
   "11": {
     "en": "the Cobalt Shoals",
     "ja": "K　藍の浅瀬",
     "de": "Indigo-Untiefen (K)",
     "fr": "Haut-fond indigo (K)",
-    "id": 11
+    "id": 11,
+    "location": "K"
   },
   "12": {
     "en": "the Mystic Basin",
     "ja": "L　神秘の海盆",
     "de": "Lagune der Legenden (L)",
     "fr": "Bassin mystérieux (L)",
-    "id": 12
+    "id": 12,
+    "location": "L"
   },
   "13": {
     "en": "deep-sea site 4",
     "ja": "M　溺没海04",
     "de": "Tiefsee 4 (M)",
     "fr": "Mer des noyades 4 (M)",
-    "id": 13
+    "id": 13,
+    "location": "M"
   },
   "14": {
     "en": "the Central Rimilala Trench",
     "ja": "N　リミララ海溝中腹",
     "de": "Zentraler Rimilala-Graben (N)",
     "fr": "Flanc de la fosse de Rimilala (N)",
-    "id": 14
+    "id": 14,
+    "location": "N"
   },
   "15": {
-    "en": "the Wreckage of Discovery I",
+    "en": "the Wreckage of <i>Discovery I</i>",
     "ja": "O　ディスカバリー号の残骸",
-    "de": "Wrack der Discovery (O)",
-    "fr": "Épave du Découverte I (O)",
-    "id": 15
+    "de": "Wrack der <i>Discovery</i> (O)",
+    "fr": "Épave du <i>Découverte I</i> (O)",
+    "id": 15,
+    "location": "O"
   },
   "16": {
     "en": "Komura",
     "ja": "P　木叢島",
     "de": "Komura (P)",
     "fr": "Île verdoyante (P)",
-    "id": 16
+    "id": 16,
+    "location": "P"
   },
   "17": {
     "en": "Kanayama",
     "ja": "Q　金山島",
     "de": "Kanayama (Q)",
     "fr": "Île aux monts métallifère (Q)",
-    "id": 17
+    "id": 17,
+    "location": "Q"
   },
   "18": {
     "en": "concealed bay",
     "ja": "R　水師の隠し港",
     "de": "Versteckte Bucht (R)",
     "fr": "Repaire de l'armada (R)",
-    "id": 18
+    "id": 18,
+    "location": "R"
   },
   "19": {
     "en": "deep-sea site 5",
     "ja": "S　溺没海05",
     "de": "Tiefsee 5 (S)",
     "fr": "Mer des noyades 5 (S)",
-    "id": 19
+    "id": 19,
+    "location": "S"
   },
   "20": {
     "en": "Purgatory",
     "ja": "T　煉獄島",
     "de": "Vorhölle (T)",
     "fr": "Île du purgatoire (T)",
-    "id": 20
+    "id": 20,
+    "location": "T"
   },
   "21": {
     "en": "deep-sea site 6",
     "ja": "U　溺没海06",
     "de": "Tiefsee 6 (U)",
     "fr": "Mer des noyades 6 (U)",
-    "id": 21
+    "id": 21,
+    "location": "U"
   },
   "22": {
     "en": "the Rimilala Shelf",
     "ja": "V　リミララ海溝大傾斜",
     "de": "Rimilala-Riff (V)",
     "fr": "Large talus de la fosse de Rimilala (V)",
-    "id": 22
+    "id": 22,
+    "location": "V"
   },
   "23": {
     "en": "deep-sea site 7",
     "ja": "W　溺没海07",
     "de": "Tiefsee 7 (W)",
     "fr": "Mer des noyades 7 (W)",
-    "id": 23
+    "id": 23,
+    "location": "W"
   },
   "24": {
     "en": "Glittersand Basin",
     "ja": "X　輝砂の海盆",
     "de": "Glitzersand-Becken (X)",
     "fr": "Bassin des sables scintillants (X)",
-    "id": 24
+    "id": 24,
+    "location": "X"
   },
   "25": {
     "en": "Flickering Dip",
     "ja": "Y　残照の白谷",
     "de": "Flicker-Senke (Y)",
     "fr": "Vallée écumeuse du crépuscule (Y)",
-    "id": 25
+    "id": 25,
+    "location": "Y"
   },
   "26": {
-    "en": "the Wreckage of the Headway",
+    "en": "the Wreckage of the <i>Headway</i>",
     "ja": "Z　ヘッドウェイ号の残骸",
-    "de": "Wrack der Headway (Z)",
-    "fr": "Épave de L'Avancée (Z)",
-    "id": 26
+    "de": "Wrack der <i>Headway</i> (Z)",
+    "fr": "Épave de <i>L'Avancée</i> (Z)",
+    "id": 26,
+    "location": "Z"
   },
   "27": {
     "en": "the Upwell",
     "ja": "AA　変理の海域",
     "de": "Sondersee (AA)",
     "fr": "Zone des contre-courants (AA)",
-    "id": 27
+    "id": 27,
+    "location": "AA"
   },
   "28": {
     "en": "the Rimilala Trench Bottom",
     "ja": "AB　リミララ海溝最深部",
     "de": "Rimilala-Tiefe (AB)",
     "fr": "Fin fond de la fosse de Rimilala (AB)",
-    "id": 28
+    "id": 28,
+    "location": "AB"
   },
   "29": {
     "en": "stone temple",
     "ja": "AC　石造寺院跡",
     "de": "Steintempel (AC)",
     "fr": "Ruines du temple de pierre (AC)",
-    "id": 29
+    "id": 29,
+    "location": "AC"
   },
   "30": {
     "en": "sunken vault",
     "ja": "AD　古の宝物庫",
     "de": "Versunkene Schatzkammer (AD)",
     "fr": "Ancien écrin (AD)",
-    "id": 30
+    "id": 30,
+    "location": "AD"
   },
   "31": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 31
+    "id": 31,
+    "location": ""
   },
   "32": {
     "en": "South Isle of Zozonan",
     "ja": "A　ゾーゾーナン島南端",
     "de": "Zozonan-Südriff (A)",
     "fr": "Rive sud de l'Île Zozonan (A)",
-    "id": 32
+    "id": 32,
+    "location": "A"
   },
   "33": {
-    "en": "Wreckage of the Windwalker",
+    "en": "Wreckage of the <i>Windwalker</i>",
     "ja": "B　ウィンド・ウォーカーの残骸",
     "de": "Windschreiterschädel (B)",
-    "fr": "Épave du Marche-Vent (B)",
-    "id": 33
+    "fr": "Épave du <i>Marche-Vent</i> (B)",
+    "id": 33,
+    "location": "B"
   },
   "34": {
     "en": "North Isle of Zozonan",
     "ja": "C　ゾーゾーナン島北端",
     "de": "Zozonan-Nordriff (C)",
     "fr": "Rive nord de l'Île Zozonan (C)",
-    "id": 34
+    "id": 34,
+    "location": "C"
   },
   "35": {
     "en": "Sea of Ash 1",
     "ja": "D　灰海01",
     "de": "Verbranntes Meer 1 (D)",
     "fr": "Mer de Cendre 1 (D)",
-    "id": 35
+    "id": 35,
+    "location": "D"
   },
   "36": {
     "en": "the Southern Charnel Trench",
     "ja": "E　火葬炉海溝南端",
     "de": "Leichenfeuergraben Süd (E)",
     "fr": "Sud de la Fosse crématoire (E)",
-    "id": 36
+    "id": 36,
+    "location": "E"
   },
   "37": {
     "en": "Sea of Ash 2",
     "ja": "F　灰海02",
     "de": "Verbranntes Meer 2 (F)",
     "fr": "Mer de Cendre 2 (F)",
-    "id": 37
+    "id": 37,
+    "location": "F"
   },
   "38": {
     "en": "Sea of Ash 3",
     "ja": "G　灰海03",
     "de": "Verbranntes Meer 3 (G)",
     "fr": "Mer de Cendre 3 (G)",
-    "id": 38
+    "id": 38,
+    "location": "G"
   },
   "39": {
     "en": "Ascetic's Demise",
     "ja": "H　修道士たちの墓標",
     "de": "Grabmal des Asketen (H)",
     "fr": "Crypte des Ascètes (H)",
-    "id": 39
+    "id": 39,
+    "location": "H"
   },
   "40": {
     "en": "the Central Charnel Trench",
     "ja": "I　 火葬炉海溝中腹",
     "de": "Leichenfeuergraben Mitte (I)",
     "fr": "Flanc de la Fosse crématoire (I)",
-    "id": 40
+    "id": 40,
+    "location": "I"
   },
   "41": {
     "en": "the Catacombs of the Father",
     "ja": "J　神父の岩窟",
     "de": "Des Priesters Felsgrotte (J)",
     "fr": "Grotte du Révérend (J)",
-    "id": 41
+    "id": 41,
+    "location": "J"
   },
   "42": {
     "en": "Sea of Ash 4",
     "ja": "K　灰海04",
     "de": "Verbranntes Meer 4 (K)",
     "fr": "Mer de Cendre 4 (K)",
-    "id": 42
+    "id": 42,
+    "location": "K"
   },
   "43": {
     "en": "the Midden Pit",
     "ja": "L　砂利の海盆",
     "de": "Das Schotterbecken (L)",
     "fr": "Bassin sédimentaire (L)",
-    "id": 43
+    "id": 43,
+    "location": "L"
   },
   "44": {
     "en": "the Lone Glove",
     "ja": "M　片割れ手袋島",
     "de": "Insel der einsamen Hand (M)",
     "fr": "Île du gant esseulé (M)",
-    "id": 44
+    "id": 44,
+    "location": "M"
   },
   "45": {
     "en": "Coldtoe Isle",
     "ja": "N　穴あき靴下島",
     "de": "Insel der nassen Socken (N)",
     "fr": "Île de la chaussette trouée (N)",
-    "id": 45
+    "id": 45,
+    "location": "N"
   },
   "46": {
     "en": "Smuggler's Knot",
     "ja": "O　密輸業者の取引場",
     "de": "Schmugglerbasar (O)",
     "fr": "Repaire des contrebandiers (O)",
-    "id": 46
+    "id": 46,
+    "location": "O"
   },
   "47": {
     "en": "the Open Robe",
     "ja": "P　擦り切れローブ島",
     "de": "Lumpenkleidinsel (P)",
     "fr": "Île de la robe fripée (P)",
-    "id": 47
+    "id": 47,
+    "location": "P"
   },
   "48": {
     "en": "Nald'thal's Pipe",
     "ja": "Q　ナルザルの煙管",
     "de": "Nald'thals Schlot (Q)",
     "fr": "Cheminée de Nald'thal (Q)",
-    "id": 48
+    "id": 48,
+    "location": "Q"
   },
   "49": {
     "en": "the Slipped Anchor",
     "ja": "R　走錨海域",
     "de": "Schliergrund (R)",
     "fr": "Mer de Chasse-Ancre (R)",
-    "id": 49
+    "id": 49,
+    "location": "R"
   },
   "50": {
     "en": "Glutton's Belly",
     "ja": "S　強欲の胃袋",
     "de": "Hungriger Magen (S)",
     "fr": "Estomac goulu (S)",
-    "id": 50
+    "id": 50,
+    "location": "S"
   },
   "51": {
     "en": "the Blue Hole",
     "ja": "T　ブルーホール",
     "de": "Das Blaue Loch (T)",
     "fr": "Trou bleu (T)",
-    "id": 51
+    "id": 51,
+    "location": "T"
   },
   "52": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 52
+    "id": 52,
+    "location": ""
   },
   "53": {
     "en": "the Isle of Sacrament",
     "ja": "A　祭壇島",
     "de": "Insel des Sakraments (A)",
     "fr": "Île du Sacrement (A)",
-    "id": 53
+    "id": 53,
+    "location": "A"
   },
   "54": {
     "en": "the Kraken's Tomb",
     "ja": "B　蛸壺入江",
     "de": "Grab des Kraken (B)",
     "fr": "Tombe du Kraken (B)",
-    "id": 54
+    "id": 54,
+    "location": "B"
   },
   "55": {
     "en": "Sea of Jade 1",
     "ja": "C　翠浪海01",
     "de": "Jademeer 1 (C)",
     "fr": "Mer de Jade 1 (C)",
-    "id": 55
+    "id": 55,
+    "location": "C"
   },
   "56": {
     "en": "Rogo-Tumu-Here's Haunt",
     "ja": "D　ロゴトゥムヘレの狩場",
     "de": "Revier des Rogo-Tumu-Here (D)",
     "fr": "Chasse de Rogo-Tumu-Here (D)",
-    "id": 56
+    "id": 56,
+    "location": "D"
   },
   "57": {
     "en": "the Stone Barbs",
     "ja": "E　吸盤礁",
     "de": "Steinerne Dornen (E)",
     "fr": "Ventouse de pierre (E)",
-    "id": 57
+    "id": 57,
+    "location": "E"
   },
   "58": {
     "en": "Rogo-Tumu-Here's Repose",
     "ja": "F　ロゴトゥムヘレの寝蔵",
     "de": "Schlafplatz des Rogo-Tumu-Here (F)",
     "fr": "Repos de Rogo-Tumu-Here (F)",
-    "id": 58
+    "id": 58,
+    "location": "F"
   },
   "59": {
     "en": "Tangaroa's Prow",
     "ja": "G　タナロアの釣針",
     "de": "Tangaroas Angelhaken (G)",
     "fr": "Hameçon de Tangaroa (G)",
-    "id": 59
+    "id": 59,
+    "location": "G"
   },
   "60": {
     "en": "Sea of Jade 2",
     "ja": "H　翠浪海02",
     "de": "Jademeer 2 (H)",
     "fr": "Mer de Jade 2 (H)",
-    "id": 60
+    "id": 60,
+    "location": "H"
   },
   "61": {
     "en": "the Blind Sound",
     "ja": "I　目隠し峡江",
     "de": "Blinder Meeresarm (I)",
     "fr": "Fjord aveugle (I)",
-    "id": 61
+    "id": 61,
+    "location": "I"
   },
   "62": {
     "en": "Sea of Jade 3",
     "ja": "J　翠浪海03",
     "de": "Jademeer 3 (J)",
     "fr": "Mer de Jade 3 (J)",
-    "id": 62
+    "id": 62,
+    "location": "J"
   },
   "63": {
     "en": "Moergynn's Forge",
     "ja": "K　ムールギンの鍛冶場",
     "de": "Moergynns Schmiede (K)",
     "fr": "Forge de Moergynn (K)",
-    "id": 63
+    "id": 63,
+    "location": "K"
   },
   "64": {
     "en": "Tangaroa's Beacon",
     "ja": "L　タナロアの浮標",
     "de": "Tangaroas Boje (L)",
     "fr": "Fanal de Tangaroa (L)",
-    "id": 64
+    "id": 64,
+    "location": "L"
   },
   "65": {
     "en": "Sea of Jade 4",
     "ja": "M　翠浪海04",
     "de": "Jademeer 4 (M)",
     "fr": "Mer de Jade 4 (M)",
-    "id": 65
+    "id": 65,
+    "location": "M"
   },
   "66": {
     "en": "the Forest of Kelp",
     "ja": "N　海藻樹林",
     "de": "Seegrashain (N)",
     "fr": "Forêt d'algues (N)",
-    "id": 66
+    "id": 66,
+    "location": "N"
   },
   "67": {
     "en": "Sea of Jade 5",
     "ja": "O　翠浪海05",
     "de": "Jademeer 5 (O)",
     "fr": "Mer de Jade 5 (O)",
-    "id": 67
+    "id": 67,
+    "location": "O"
   },
   "68": {
     "en": "Bladefall Chasm",
     "ja": "P　なまくら切岸",
     "de": "Schwertklippe (P)",
     "fr": "Abîme émoussé (P)",
-    "id": 68
+    "id": 68,
+    "location": "P"
   },
   "69": {
     "en": "Stormport",
     "ja": "Q　風の休所",
     "de": "Sturmruh (Q)",
     "fr": "Port-tempête (Q)",
-    "id": 69
+    "id": 69,
+    "location": "Q"
   },
   "70": {
     "en": "Wyrm's Rest",
     "ja": "R　竜骨溜まり",
     "de": "Drachengebeinsanger (R)",
     "fr": "Repos du dragon (R)",
-    "id": 70
+    "id": 70,
+    "location": "R"
   },
   "71": {
     "en": "Sea of Jade 6",
     "ja": "S　翠浪海06",
     "de": "Jademeer 5 (S)",
     "fr": "Mer de Jade 6 (S)",
-    "id": 71
+    "id": 71,
+    "location": "S"
   },
   "72": {
     "en": "the Devil's Crypt",
     "ja": "T　海獣の霊園",
     "de": "Gruft des Seeungeheuers (T)",
     "fr": "Crypte du diable (T)",
-    "id": 72
+    "id": 72,
+    "location": "T"
   },
   "73": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 73
+    "id": 73,
+    "location": ""
   },
   "74": {
     "en": "Mastbound's Bounty",
     "ja": "A　耳蝋漁場",
     "de": "Ohrenschmalzbecken (A)",
     "fr": "Bassin de cérumen (A)",
-    "id": 74
+    "id": 74,
+    "location": "A"
   },
   "75": {
     "en": "Sirensong Sea 1",
     "ja": "B　セイレーン海01",
     "de": "Sirenen-See 1 (B)",
     "fr": "Mer du Chant des sirènes 1 (B)",
-    "id": 75
+    "id": 75,
+    "location": "B"
   },
   "76": {
     "en": "Sirensong Sea 2",
     "ja": "C　セイレーン海02",
     "de": "Sirenen-See 2 (C)",
     "fr": "Mer du Chant des sirènes 2 (C)",
-    "id": 76
+    "id": 76,
+    "location": "C"
   },
   "77": {
     "en": "Anthemoessa",
     "ja": "D　アンテモエッサ島",
     "de": "Anthemoessa (D)",
     "fr": "Île d'Anthémuse (D)",
-    "id": 77
+    "id": 77,
+    "location": "D"
   },
   "78": {
     "en": "Magos Trench",
     "ja": "E　海魔の口",
     "de": "Magosgraben (E)",
     "fr": "Bouche du démon des mers (E)",
-    "id": 78
+    "id": 78,
+    "location": "E"
   },
   "79": {
     "en": "Thrall's Unrest",
     "ja": "F　漂流海域",
     "de": "Thralls Enge (F)",
     "fr": "Pertuis des naufrages (F)",
-    "id": 79
+    "id": 79,
+    "location": "F"
   },
   "80": {
     "en": "Crow's Drop",
     "ja": "G　告死礁",
     "de": "Todesriff (G)",
     "fr": "Récif de la mort (G)",
-    "id": 80
+    "id": 80,
+    "location": "G"
   },
   "81": {
     "en": "Sirensong Sea 3",
     "ja": "H　セイレーン海03",
     "de": "Sirenen-See 3 (H)",
     "fr": "Mer du Chant des sirènes 3 (H)",
-    "id": 81
+    "id": 81,
+    "location": "H"
   },
   "82": {
     "en": "the Anthemoessa Undertow",
     "ja": "I　アンテモエッサ海廊",
     "de": "Haus von Anthemoessa (I)",
     "fr": "Courant sous-marin d'Anthémuse (I)",
-    "id": 82
+    "id": 82,
+    "location": "I"
   },
   "83": {
     "en": "Sirensong Sea 4",
     "ja": "J　セイレーン海04",
     "de": "Sirenen-See 4 (J)",
     "fr": "Mer du Chant des sirènes 4 (J)",
-    "id": 83
+    "id": 83,
+    "location": "J"
   },
   "84": {
     "en": "Seafoam Tide",
     "ja": "K　渦紋海峡",
     "de": "Wirbelenge (K)",
     "fr": "Détroit aux tourbillons (K)",
-    "id": 84
+    "id": 84,
+    "location": "K"
   },
   "85": {
     "en": "the Beak",
     "ja": "L　鳥嘴湾",
     "de": "Schnabelbucht (L)",
     "fr": "Baie du Bec (L)",
-    "id": 85
+    "id": 85,
+    "location": "L"
   },
   "86": {
     "en": "Seafarer's End",
     "ja": "M　海魔の牢獄",
     "de": "Kerker des Seeteufels (M)",
     "fr": "Geôle du démon des mers (M)",
-    "id": 86
+    "id": 86,
+    "location": "M"
   },
   "87": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 87
+    "id": 87,
+    "location": ""
   },
   "88": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 88
+    "id": 88,
+    "location": ""
   },
   "89": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 89
+    "id": 89,
+    "location": ""
   },
   "90": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 90
+    "id": 90,
+    "location": ""
   },
   "91": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 91
+    "id": 91,
+    "location": ""
   },
   "92": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 92
+    "id": 92,
+    "location": ""
   },
   "93": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 93
+    "id": 93,
+    "location": ""
   },
   "94": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 94
+    "id": 94,
+    "location": ""
   },
   "95": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 95
+    "id": 95,
+    "location": ""
   },
   "96": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 96
+    "id": 96,
+    "location": ""
   },
   "97": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 97
+    "id": 97,
+    "location": ""
   },
   "98": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 98
+    "id": 98,
+    "location": ""
   },
   "99": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 99
+    "id": 99,
+    "location": ""
   },
   "100": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 100
+    "id": 100,
+    "location": ""
   },
   "101": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 101
+    "id": 101,
+    "location": ""
   },
   "102": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 102
+    "id": 102,
+    "location": ""
   },
   "103": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 103
+    "id": 103,
+    "location": ""
   },
   "104": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 104
+    "id": 104,
+    "location": ""
   },
   "105": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 105
+    "id": 105,
+    "location": ""
   },
   "106": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 106
+    "id": 106,
+    "location": ""
   },
   "107": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 107
+    "id": 107,
+    "location": ""
   },
   "108": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 108
+    "id": 108,
+    "location": ""
   },
   "109": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 109
+    "id": 109,
+    "location": ""
   },
   "110": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 110
+    "id": 110,
+    "location": ""
   },
   "111": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 111
+    "id": 111,
+    "location": ""
   },
   "112": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 112
+    "id": 112,
+    "location": ""
   },
   "113": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 113
+    "id": 113,
+    "location": ""
   },
   "114": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 114
+    "id": 114,
+    "location": ""
   },
   "115": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 115
+    "id": 115,
+    "location": ""
   },
   "116": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 116
+    "id": 116,
+    "location": ""
   },
   "117": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 117
+    "id": 117,
+    "location": ""
   },
   "118": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 118
+    "id": 118,
+    "location": ""
   },
   "119": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": "",
-    "id": 119
+    "id": 119,
+    "location": ""
   }
 }

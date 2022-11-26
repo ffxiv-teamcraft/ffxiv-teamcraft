@@ -1,6 +1,6 @@
 {
   "1": {
-    "en": "the Thousand Maws of Toto–Rak",
+    "en": "the Thousand Maws of Toto-Rak",
     "ja": "監獄廃墟 トトラクの千獄",
     "de": "Tausend Löcher von Toto-Rak",
     "fr": "les Mille Gueules de Toto-Rak",
@@ -11,7 +11,7 @@
     ]
   },
   "2": {
-    "en": "the Tam–Tara Deepcroft",
+    "en": "the Tam-Tara Deepcroft",
     "ja": "地下霊殿 タムタラの墓所",
     "de": "Totenacker Tam-Tara",
     "fr": "l'Hypogée de Tam-Tara",
@@ -170,17 +170,6 @@
       33500
     ]
   },
-  "16": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null,
-    "contentText": [
-      32921,
-      32900
-    ]
-  },
   "17": {
     "en": "Pharos Sirius",
     "ja": "怪鳥巨塔 シリウス大灯台",
@@ -261,7 +250,7 @@
     ]
   },
   "24": {
-    "en": "the Tam–Tara Deepcroft (Hard)",
+    "en": "the Tam-Tara Deepcroft (Hard)",
     "ja": "惨劇霊殿 タムタラの墓所 (Hard)",
     "de": "Totenacker Tam-Tara (schwer)",
     "fr": "l'Hypogée de Tam-Tara (brutal)",
@@ -975,69 +964,6 @@
       33900
     ]
   },
-  "89": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "90": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "91": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "92": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "93": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "94": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "95": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "96": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "5000": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
   "5001": {
     "en": "a Spectacle for the Ages",
     "ja": "四国合同演習",
@@ -1130,7 +1056,7 @@
     "en": "Blood on the Deck",
     "ja": "海都を震わす人斬りの宴！",
     "de": "Mord ist sein Hobby",
-    "fr": "La légende de Musosai: l'assassin de Limsa Lominsa",
+    "fr": "La légende de Musosai&nbsp;: l'assassin de Limsa Lominsa",
     "icon": "/i/061000/061805.png",
     "contentText": [
       15331,
@@ -1731,25 +1657,11 @@
       34800
     ]
   },
-  "5064": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "10000": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
   "10001": {
     "en": "Basic Training: Enemy Parties",
     "ja": "集団戦訓練をくぐり抜けろ！",
     "de": "Einer für alle, alle für einen",
-    "fr": "Entraînement: groupes d'ennemis",
+    "fr": "Entraînement&nbsp;: groupes d'ennemis",
     "icon": "/i/061000/061803.png",
     "contentText": [
       1411,
@@ -1771,7 +1683,7 @@
     "en": "Basic Training: Enemy Strongholds",
     "ja": "全関門を突破し、最深部の敵を討て！",
     "de": "Sturmkommando",
-    "fr": "Entraînement: infiltration en base ennemie",
+    "fr": "Entraînement&nbsp;: infiltration en base ennemie",
     "icon": "/i/061000/061803.png",
     "contentText": [
       1619,
@@ -1898,20 +1810,6 @@
       3322,
       3300
     ]
-  },
-  "10015": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "15000": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
   },
   "15001": {
     "en": "Avoid Area of Effect Attacks",
@@ -2089,20 +1987,6 @@
       12100
     ]
   },
-  "15017": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "20000": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
   "20001": {
     "en": "the Bowl of Embers",
     "ja": "イフリート討伐戦",
@@ -2168,13 +2052,6 @@
       3705,
       3700
     ]
-  },
-  "20007": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
   },
   "20008": {
     "en": "the Bowl of Embers (Extreme)",
@@ -2276,7 +2153,7 @@
     ]
   },
   "20017": {
-    "en": "the Whorleater (Hard)",
+    "en": "the <i>Whorleater</i> (Hard)",
     "ja": "真リヴァイアサン討滅戦",
     "de": "Götterdämmerung - Leviathan",
     "fr": "le Briseur de marées (brutal)",
@@ -2287,7 +2164,7 @@
     ]
   },
   "20018": {
-    "en": "the Whorleater (Extreme)",
+    "en": "the <i>Whorleater</i> (Extreme)",
     "ja": "極リヴァイアサン討滅戦",
     "de": "Zenit der Götter - Leviathan",
     "fr": "le Briseur de marées (extrême)",
@@ -2383,13 +2260,6 @@
     "de": "Jenseits Urths Quelle",
     "fr": "la Fontaine d'Urth",
     "icon": "/i/061000/061804.png"
-  },
-  "20028": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
   },
   "20029": {
     "en": "the Chrysalis",
@@ -3010,27 +2880,6 @@
       34500
     ]
   },
-  "20086": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "20087": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "25000": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
   "25001": {
     "en": "the Haunted Manor",
     "ja": "亡霊屋敷 ホーンテッドマナー",
@@ -3064,20 +2913,6 @@
       30700
     ]
   },
-  "25004": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "26000": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
   "26001": {
     "en": "Triple Triad Open Tournament",
     "ja": "トリプルトライアド：オフィシャルトーナメント",
@@ -3099,20 +2934,6 @@
       26600,
       26600
     ]
-  },
-  "26003": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "30000": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
   },
   "30001": {
     "en": "the Labyrinth of the Ancients",
@@ -3610,13 +3431,6 @@
       14173,
       14100
     ]
-  },
-  "30048": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
   },
   "30049": {
     "en": "Deltascape V1.0",
@@ -4435,20 +4249,6 @@
       35000
     ]
   },
-  "30124": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "35000": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
   "35001": {
     "en": "All's Well That Starts Well",
     "ja": "デビューマッチ",
@@ -4586,7 +4386,7 @@
     "en": "Miss Typhon",
     "ja": "名コンビ「オルトロス＆テュポーン」",
     "de": "Ultros & Typhon - Zwei wie Rotz und Wasser",
-    "fr": "Duo de choc: Orthros et maître Typhon",
+    "fr": "Duo de choc&nbsp;: Orthros et maître Typhon",
     "icon": "/i/061000/061836.png"
   },
   "35021": {
@@ -4635,7 +4435,7 @@
     "en": "Lock up Your Snorters",
     "ja": "はないき爆破デスマッチ",
     "de": "Explosives Schnaufen",
-    "fr": "Fungaaah! Et boum!",
+    "fr": "Fungaaah&nbsp;! Et boum&nbsp;!",
     "icon": "/i/061000/061836.png"
   },
   "35028": {
@@ -4670,20 +4470,6 @@
       26200
     ]
   },
-  "35032": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "36000": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
   "36001": {
     "en": "The Sil'dihn Subterrane",
     "ja": "ヴァリアントダンジョン シラディハ水道",
@@ -4694,20 +4480,6 @@
       34267,
       34000
     ]
-  },
-  "36002": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "37000": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
   },
   "37001": {
     "en": "Another Sil'dihn Subterrane",
@@ -4730,202 +4502,6 @@
       34272,
       34000
     ]
-  },
-  "37003": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40000": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40001": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40002": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40003": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40004": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40005": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40006": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40007": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40008": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40009": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40010": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40011": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40012": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40013": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40014": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40015": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40016": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40017": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40018": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40019": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40020": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40021": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40022": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40023": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40024": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40025": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "40026": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
   },
   "40027": {
     "en": "The Palaistra",
@@ -4990,20 +4566,6 @@
     "fr": "Crystalline Conflict (partie personnalisée - Le Petit Nuage)",
     "icon": "/i/061000/061806.png"
   },
-  "40036": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "50000": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
   "50001": {
     "en": "the Borderland Ruins (Secure)",
     "ja": "外縁遺跡群 (制圧戦)",
@@ -5014,20 +4576,6 @@
       8910,
       8910
     ]
-  },
-  "50002": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "50003": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
   },
   "50004": {
     "en": "Seal Rock (Seize)",
@@ -5062,20 +4610,6 @@
       23700
     ]
   },
-  "50007": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "51000": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
   "51001": {
     "en": "Astragalos",
     "ja": "アストラガロス (機工戦)",
@@ -5089,20 +4623,6 @@
     "de": "Verborgene Schlucht",
     "fr": "Gorge dérobée (machinerie)",
     "icon": "/i/061000/061806.png"
-  },
-  "51003": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "55000": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
   },
   "55001": {
     "en": "the Aquapolis",
@@ -5148,13 +4668,6 @@
       12800
     ]
   },
-  "55005": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
   "55006": {
     "en": "The Dungeons of Lyhe Ghiah",
     "ja": "宝物庫 リェー・ギア・ダンジョン",
@@ -5165,13 +4678,6 @@
       12810,
       12800
     ]
-  },
-  "55007": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
   },
   "55008": {
     "en": "the Shifting Oubliettes of Lyhe Ghiah",
@@ -5194,27 +4700,6 @@
       12810,
       12800
     ]
-  },
-  "55010": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "55011": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "60000": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
   },
   "60001": {
     "en": "the Palace of the Dead (Floors 1-10)",
@@ -5430,82 +4915,61 @@
     "fr": "le Pilier des Cieux (étages 91-100)",
     "icon": "/i/061000/061824.png"
   },
-  "60031": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "61000": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
   "61001": {
     "en": "Novice Mahjong (Full Ranked Match)",
     "ja": "ドマ式麻雀：半荘戦一般卓（段位変動有り）",
     "de": "Anfänger-Mahjong (komplette Partie, gewertet)",
-    "fr": "Mahjong domien: tous rangs (partie classée)",
+    "fr": "Mahjong domien&nbsp;: tous rangs (partie classée)",
     "icon": "/i/061000/061820.png"
   },
   "61002": {
     "en": "Advanced Mahjong (Full Ranked Match)",
     "ja": "ドマ式麻雀：半荘戦有段卓（段位変動有り）",
     "de": "Fortgeschrittenen-Mahjong (komplette Partie, gewertet)",
-    "fr": "Mahjong domien: dan seulement (partie classée)",
+    "fr": "Mahjong domien&nbsp;: dan seulement (partie classée)",
     "icon": "/i/061000/061820.png"
   },
   "61003": {
     "en": "Four-player Mahjong (Full Match, Kuitan Enabled)",
     "ja": "ドマ式麻雀：半荘戦4人セット卓（クイタン有り）",
     "de": "4-Spieler-Mahjong (komplette Partie, Kuitan aktiviert)",
-    "fr": "Mahjong domien: 4 joueurs (partie avec kuitan)",
+    "fr": "Mahjong domien&nbsp;: 4 joueurs (partie avec kuitan)",
     "icon": "/i/061000/061820.png"
   },
   "61004": {
     "en": "Four-player Mahjong (Full Match, Kuitan Disabled)",
     "ja": "ドマ式麻雀：半荘戦4人セット卓（クイタン無し）",
     "de": "4-Spieler-Mahjong (komplette Partie, Kuitan deaktiviert)",
-    "fr": "Mahjong domien: 4 joueurs (partie sans kuitan)",
+    "fr": "Mahjong domien&nbsp;: 4 joueurs (partie sans kuitan)",
     "icon": "/i/061000/061820.png"
   },
   "61005": {
     "en": "Novice Mahjong (Quick Ranked Match)",
     "ja": "ドマ式麻雀：東風戦一般卓（段位変動有り）",
     "de": "Anfänger-Mahjong (schnelle Partie, gewertet)",
-    "fr": "Mahjong domien: tous rangs (partie rapide classée)",
+    "fr": "Mahjong domien&nbsp;: tous rangs (partie rapide classée)",
     "icon": "/i/061000/061820.png"
   },
   "61006": {
     "en": "Advanced Mahjong (Quick Ranked Match)",
     "ja": "ドマ式麻雀：東風戦有段卓（段位変動有り）",
     "de": "Fortgeschrittenen-Mahjong (schnelle Partie, gewertet)",
-    "fr": "Mahjong domien: dan seulement (partie rapide classée)",
+    "fr": "Mahjong domien&nbsp;: dan seulement (partie rapide classée)",
     "icon": "/i/061000/061820.png"
   },
   "61007": {
     "en": "Four-player Mahjong (Quick Match, Kuitan Enabled)",
     "ja": "ドマ式麻雀：東風戦4人セット卓（クイタン有り）",
     "de": "4-Spieler-Mahjong (schnelle Partie, Kuitan aktiviert)",
-    "fr": "Mahjong domien: 4 joueurs (partie rapide avec kuitan)",
+    "fr": "Mahjong domien&nbsp;: 4 joueurs (partie rapide avec kuitan)",
     "icon": "/i/061000/061820.png"
   },
   "61008": {
     "en": "Four-player Mahjong (Quick Match, Kuitan Disabled)",
     "ja": "ドマ式麻雀：東風戦4人セット卓（クイタン無し）",
     "de": "4-Spieler-Mahjong (schnelle Partie, Kuitan deaktiviert)",
-    "fr": "Mahjong domien: 4 joueurs (partie rapide sans kuitan)",
+    "fr": "Mahjong domien&nbsp;: 4 joueurs (partie rapide sans kuitan)",
     "icon": "/i/061000/061820.png"
-  },
-  "61009": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
   },
   "62000": {
     "en": "Air Force One",
@@ -5660,41 +5124,6 @@
       24900
     ]
   },
-  "64000": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "64001": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "64002": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "64003": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "64004": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
   "64005": {
     "en": "Containment Bay S1T7 (Unreal)",
     "ja": "幻魔神セフィロト討滅戦",
@@ -5705,26 +5134,5 @@
       9907,
       9900
     ]
-  },
-  "64006": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "65000": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
-  },
-  "65001": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
   }
 }

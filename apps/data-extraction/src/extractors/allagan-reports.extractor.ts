@@ -195,7 +195,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
   private addItemAsSource(targetObject: Object, targetItem: number, sourceDetails: any, isObject: boolean, isNew: boolean): void {
     if (isObject) {
       if (targetObject[targetItem] !== undefined) {
-        console.warn(`Overriding source for ${targetItem} with ${JSON.stringify(sourceDetails)}`);
+        // console.warn(`Overriding source for ${targetItem} with ${JSON.stringify(sourceDetails)}`);
       }
       targetObject[targetItem] = sourceDetails;
     } else if (!!sourceDetails) {

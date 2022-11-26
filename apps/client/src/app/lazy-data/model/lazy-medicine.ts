@@ -1,8 +1,8 @@
 export interface LazyMedicine {
-  Bonuses:    Bonuses;
   ID:         number;
   LevelEquip: number;
   LevelItem:  number;
+  Bonuses:    Bonuses;
 }
 
 export interface Bonuses {
@@ -35,9 +35,9 @@ export interface BindResistance {
 
 export interface Cp {
   ID:       number;
-  Max:      number;
-  MaxHQ:    number;
   Relative: boolean;
   Value:    number;
   ValueHQ:  number;
+  Max:      number;
+  MaxHQ:    number;
 }

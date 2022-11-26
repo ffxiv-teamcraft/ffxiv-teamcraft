@@ -1,10 +1,11 @@
 import { AbstractExtractor } from '../abstract-extractor';
 import { combineLatest, reduce, Subject } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
+import { XivDataService } from '../xiv/xiv-data.service';
 
 export class IslandExtractor extends AbstractExtractor {
 
-  protected doExtract(): void {
+  protected doExtract(xiv: XivDataService): void {
     const gatheringDone$ = new Subject();
     const buildingsDone$ = new Subject();
     const landmarksDone$ = new Subject();
@@ -13,11 +14,12 @@ export class IslandExtractor extends AbstractExtractor {
     const cropsDone$ = new Subject();
 
 
-    this.get('https://xivapi.com/Map/772').pipe(
+    this.getSheet<any>(xiv, 'Map').pipe(
+      map(sheet => sheet.find(m => m.index === 772)),
       switchMap(islandMap => {
-        return this.getAllPages('https://xivapi.com/MJIGatheringItem?columns=Item,Radius,X,Y').pipe(
-          reduce((mjiGatheringItems, page) => {
-            page.Results
+        return this.getSheet<any>(xiv, 'MJIGatheringItem', ['Item#', 'Radius', 'X', 'Y']).pipe(
+          reduce((mjiGatheringItems, entries) => {
+            entries
               .filter(item => !!item.Item)
               .forEach(item => {
                 let pos = this.getCoords({
@@ -30,15 +32,15 @@ export class IslandExtractor extends AbstractExtractor {
                   offset_x: +islandMap.OffsetX,
                   offset_z: 0
                 });
-                if (item.Item.ID === 37562) {
+                if (item.Item === 37562) {
                   pos = {
                     x: 18,
                     y: 17.6,
                     z: 0
                   };
                 }
-                mjiGatheringItems[item.Item.ID] = {
-                  itemId: item.Item.ID,
+                mjiGatheringItems[item.Item] = {
+                  itemId: item.Item,
                   ...pos,
                   radius: item.Radius
                 };
@@ -52,28 +54,24 @@ export class IslandExtractor extends AbstractExtractor {
       gatheringDone$.next(true);
     });
 
-    this.aggregateAllPages('https://xivapi.com/MJIBuilding?columns=Material0,Amount0,Material1,Amount1,Material2,Amount2,Material3,Amount3,Material4,Amount4,Name,IconHD,ID').pipe(
+    this.getSheet<any>(xiv, 'MJIBuilding', ['Material.Item#', 'Amount', 'Name.Text*', 'Icon'], true, 1).pipe(
       map(mjiBuildings => {
         return mjiBuildings
           .reduce((buildings, building) => {
-            const ID = -10000 + -1 * (+building.ID * 100);
-            const ingredients = Object.keys(building)
-              .filter(k => /Material\d/.test(k))
-              .sort((a, b) => a < b ? -1 : 1)
-              .filter(key => !!building[key])
-              .map((key) => {
-                const index = +/Material(\d)/.exec(key)[1];
+            const ID = -10000 - (+building.index * 100 + building.subIndex * 10);
+            const ingredients = building.Material
+              .map((material, index) => {
                 return {
-                  id: building[key].ItemTargetID,
-                  amount: +building[`Amount${index}`]
+                  id: material.Item,
+                  amount: +building.Amount[index]
                 };
               })
               .filter(i => !!i.id);
             return {
               ...buildings,
               [ID]: {
-                key: building.ID,
-                icon: building.IconHD,
+                key: `${building.index}.${building.subIndex}`,
+                icon: this.getIconHD(building.Icon),
                 en: building.Name.Text_en,
                 de: building.Name.Text_de,
                 ja: building.Name.Text_ja,
@@ -89,18 +87,18 @@ export class IslandExtractor extends AbstractExtractor {
     });
 
     combineLatest([
-      this.aggregateAllPages('https://xivapi.com/MJIAnimals?columns=BNpcBaseTargetID,Reward0TargetID,Reward1TargetID,ID,IconHD,Size'),
+      this.getSheet<any>(xiv, 'MJIAnimals', ['BNpcBase', 'Reward', 'Icon', 'Size']),
       this.getNonXivapiUrl('https://gubal.hasura.app/api/rest/bnpc')
     ]).pipe(
       map(([mjiAnimals, bnpcs]) => {
         return mjiAnimals.reduce((acc, animal) => {
           return {
             ...acc,
-            [animal.ID]: {
-              id: animal.ID,
-              rewards: [animal.Reward0TargetID, animal.Reward1TargetID],
-              icon: animal.IconHD,
-              bnpcName: bnpcs.bnpc.find(e => e.bnpcBase === animal.BNpcBaseTargetID)?.bnpcName,
+            [animal.index]: {
+              id: animal.index,
+              rewards: animal.Reward,
+              icon: this.getIconHD(animal.Icon),
+              bnpcName: bnpcs.bnpc.find(e => e.bnpcBase === animal.BNpcBase)?.bnpcName,
               size: animal.Size
             }
           };
@@ -111,29 +109,25 @@ export class IslandExtractor extends AbstractExtractor {
       pastureDone$.next(true);
     });
 
-    this.aggregateAllPages('https://xivapi.com/MJILandmark?columns=Material0,Amount0,Material1,Amount1,Material2,Amount2,Material3,Amount3,Material4,Amount4,Name,IconHD,ID').pipe(
+    this.getSheet<any>(xiv, 'MJILandmark', ['Material.Item#', 'Amount', 'Name', 'Icon'], false, 1).pipe(
       map(mjiLandmarks => {
         return mjiLandmarks
-          .filter(l => l.Name !== null)
+          .filter(l => l.Name?.index)
           .reduce((landmarks, landmark) => {
-            const ID = -11000 + -1 * (+landmark.ID * 10);
-            const ingredients = Object.keys(landmark)
-              .filter(k => /Material\d/.test(k))
-              .sort((a, b) => a < b ? -1 : 1)
-              .filter(key => !!landmark[key])
-              .map((key) => {
-                const index = +/Material(\d)/.exec(key)[1];
+            const ID = -11000 + -1 * (+landmark.index * 10);
+            const ingredients = landmark.Material
+              .map((material, index) => {
                 return {
-                  id: landmark[key].ItemTargetID,
-                  amount: +landmark[`Amount${index}`]
+                  id: material.Item,
+                  amount: +landmark.Amount[index]
                 };
               })
               .filter(i => !!i.id);
             return {
               ...landmarks,
               [ID]: {
-                key: landmark.ID,
-                icon: landmark.IconHD,
+                key: landmark.index,
+                icon: this.getIconHD(landmark.Icon),
                 en: landmark.Name.Text_en,
                 de: landmark.Name.Text_de,
                 ja: landmark.Name.Text_ja,
@@ -149,47 +143,44 @@ export class IslandExtractor extends AbstractExtractor {
     });
 
     combineLatest([
-      this.aggregateAllPages('https://xivapi.com/MJICraftworksPopularity?columns=*'),
-      this.aggregateAllPages('https://xivapi.com/MJICraftworksSupplyDefine?columns=ID,Ratio'),
-      this.aggregateAllPages('https://xivapi.com/MJICraftworksObject?columns=ID,ItemTargetID,CraftingTime,Value,Theme0TargetID,Theme1TargetID,LevelReq'),
-      this.aggregateAllPages('https://xivapi.com/MJICraftworksRankRatio?columns=ID,Ratio')
+      this.getSheet<any>(xiv, 'MJICraftworksPopularity', null, true, 1),
+      this.getSheet<any>(xiv, 'MJICraftworksSupplyDefine', ['Ratio'], true),
+      this.getSheet<any>(xiv, 'MJICraftworksObject', ['Item#', 'CraftingTime', 'Value', 'Theme', 'LevelReq']),
+      this.getSheet<any>(xiv, 'MJICraftworksRankRatio', ['Ratio'])
     ]).pipe(
       map(([popularity, supplyDefine, craftworksObjects]) => {
         const supplyObj = supplyDefine.reduce((acc, row) => {
           return {
             ...acc,
-            [row.ID]: row.Ratio
+            [row.index]: row.Ratio
           };
         }, {});
 
         const popularityMatrix = popularity.reduce((acc, row) => {
-          const entry = Object.keys(row)
-            .filter(k => /^Popularity\d+$/.test(k))
-            .sort((a, b) => a < b ? -1 : 1)
-            .reduce((eacc, key) => {
-              const id = +/^Popularity(\d+)$/.exec(key)[1];
+          const entry = row.Popularity
+            .reduce((eacc, popularity, index) => {
               return {
                 ...eacc,
-                [id]: {
-                  id: row[key].ID,
-                  ratio: row[key].Ratio
+                [index]: {
+                  id: popularity.index,
+                  ratio: popularity.Ratio
                 }
               };
             }, {});
           return {
             ...acc,
-            [row.ID]: entry
+            [row.index]: entry
           };
         }, {});
 
         const craftworksIndex = craftworksObjects.reduce((acc, obj) => {
           return {
             ...acc,
-            [obj.ID]: {
-              itemId: obj.ItemTargetID,
+            [obj.index]: {
+              itemId: obj.Item,
               value: obj.Value,
               craftingTime: obj.CraftingTime,
-              themes: [obj.Theme0TargetID, obj.Theme1TargetID].filter(theme => theme > 0),
+              themes: obj.Theme.filter(theme => theme > 0),
               lvl: obj.LevelReq
             }
           };
@@ -208,15 +199,17 @@ export class IslandExtractor extends AbstractExtractor {
       workshopDone$.next(true);
     });
 
-    this.aggregateAllPages('https://xivapi.com/MJIItemPouch?columns=ID,Item,Crop').pipe(
+    this.getSheet<any>(xiv, 'MJIItemPouch', ['Item#', 'Crop.Item#'], false, 1).pipe(
       map(itemPouch => {
         return itemPouch
-          .filter(row => row.Crop !== null)
+          .filter(row => {
+            return row.Crop.Item > 0;
+          })
           .reduce((acc, pouch) => {
             return {
               ...acc,
-              [pouch.Crop.ItemTargetID]: {
-                seed: pouch.Item.ID
+              [pouch.Crop.Item]: {
+                seed: pouch.Item
               }
             };
           }, {});

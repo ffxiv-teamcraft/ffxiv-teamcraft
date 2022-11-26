@@ -35,11 +35,11 @@ export class LazyDataFacade {
   );
 
   public patches$ = this.http.get<XivapiPatch[]>('https://xivapi.com/patchlist').pipe(
-    shareReplay({ bufferSize: 1, refCount: true })
+    shareReplay(1)
   );
 
   public datacenters$ = this.xivapi.getDCList().pipe(
-    shareReplay({ bufferSize: 1, refCount: true })
+    shareReplay(1)
   );
 
   // This is a temporary cache system to absorb possible call spams on some methods, TTL for each row is 10s toa void memory issues
@@ -161,7 +161,7 @@ export class LazyDataFacade {
     if (this.getCacheEntry(propertyKey, id) === null) {
       // If we asked for more than 50 separate things in the same entry during the last CACHE_TTL and it's not extracts, load the entire entry.
       if (propertyKey !== 'extracts'
-        && Object.keys(this.cache).filter(key => key.startsWith(`${propertyKey}:`)).length > 15
+        && Object.keys(this.cache).filter(key => key.startsWith(`${propertyKey}:`)).length > 100
         && !this.fullLoadingIndexes[propertyKey]) {
         this.preloadEntry(propertyKey);
         this.fullLoadingIndexes[propertyKey] = 1;
@@ -321,7 +321,7 @@ export class LazyDataFacade {
               return eRecipe || r;
             });
           }),
-          shareReplay({ bufferSize: 1, refCount: true })
+          shareReplay(1)
         );
       case Region.Korea:
         return combineLatest([
@@ -334,7 +334,7 @@ export class LazyDataFacade {
               return eRecipe || r;
             });
           }),
-          shareReplay({ bufferSize: 1, refCount: true })
+          shareReplay(1)
         );
       default:
         return this.getEntry('recipes');
@@ -369,7 +369,7 @@ export class LazyDataFacade {
             return res;
           });
       }),
-      shareReplay({ bufferSize: 1, refCount: true })
+      shareReplay(1)
     );
   }
 

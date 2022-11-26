@@ -1,31 +1,38 @@
 import { AbstractExtractor } from '../abstract-extractor';
+import { XivDataService } from '../xiv/xiv-data.service';
 
 export class InstancesExtractor extends AbstractExtractor {
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const instances = {};
-    this.getAllPages('https://xivapi.com/InstanceContent?columns=ID,ContentFinderCondition.Name_*,Icon,InstanceContentTextDataBossEndTargetID,InstanceContentTextDataBossStartTargetID,InstanceContentTextDataObjectiveEndTargetID,InstanceContentTextDataObjectiveStartTargetID').subscribe(page => {
-      page.Results.forEach(instance => {
-        instances[instance.ID] = {
-          en: instance.ContentFinderCondition.Name_en,
-          ja: instance.ContentFinderCondition.Name_ja,
-          de: instance.ContentFinderCondition.Name_de,
-          fr: instance.ContentFinderCondition.Name_fr,
-          icon: instance.Icon
-        };
-        const contentText = [
-          instance.InstanceContentTextDataBossEndTargetID,
-          instance.InstanceContentTextDataBossStartTargetID,
-          instance.InstanceContentTextDataObjectiveEndTargetID,
-          instance.InstanceContentTextDataObjectiveStartTargetID
-        ].filter(id => id > 0);
-        if (contentText.length > 0) {
-          instances[instance.ID].contentText = contentText;
-        }
+    this.getSheet<any>(xiv, 'ContentFinderCondition', [
+      'Name', 'Icon', 'ContentLinkType', 'ContentType.Icon',
+      'Content.InstanceContentTextDataBossEnd#', 'Content.InstanceContentTextDataBossStart#', 'Content.InstanceContentTextDataObjectiveEnd#', 'Content.InstanceContentTextDataObjectiveStart#'
+    ], false, 2)
+      .subscribe((entries) => {
+        entries.forEach(cfc => {
+          if (!cfc.Content || cfc.Content.__sheet !== 'InstanceContent') {
+            return;
+          }
+          instances[cfc.Content.index] = {
+            en: cfc.Name_en,
+            ja: cfc.Name_ja,
+            de: cfc.Name_de,
+            fr: cfc.Name_fr,
+            icon: cfc?.ContentType?.Icon
+          };
+          const contentText = [
+            cfc.Content.InstanceContentTextDataBossEnd,
+            cfc.Content.InstanceContentTextDataBossStart,
+            cfc.Content.InstanceContentTextDataObjectiveEnd,
+            cfc.Content.InstanceContentTextDataObjectiveStart
+          ].filter(id => id > 0);
+          if (contentText.length > 0) {
+            instances[cfc.Content.index].contentText = contentText;
+          }
+        });
+        this.persistToJsonAsset('instances', instances);
+        this.done();
       });
-    }, null, () => {
-      this.persistToJsonAsset('instances', instances);
-      this.done();
-    });
   }
 
   getName(): string {

@@ -1,21 +1,23 @@
+import { XivDataService } from '../xiv/xiv-data.service';
 import { AbstractExtractor } from '../abstract-extractor';
 
 export class HwdGathererExtractor extends AbstractExtractor {
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const inspections = [];
-    this.getAllEntries('https://xivapi.com/HWDGathererInspection').subscribe(completeFetch => {
+    this.getSheet<any>(xiv, 'HWDGathererInspection', ['ItemRequired.Item#', 'AmountRequired', 'ItemReceived#', 'Reward1.Scrips#', 'Reward1.Points#', 'Phase#'], false, 1).subscribe(completeFetch => {
       completeFetch.forEach(inspection => {
-        for (let i = 0; i < 78; i++) {
-          if (inspection[`ItemRequired${i}`] === null) {
+        for (const row of inspection.ItemRequired) {
+          const index = inspection.ItemRequired.indexOf(row);
+          if (row.Item === 0) {
             continue;
           }
           inspections.push({
-            requiredItem: inspection[`ItemRequired${i}`].ItemTargetID,
-            amount: inspection[`AmountRequired${i}`],
-            receivedItem: inspection[`ItemReceived${i}TargetID`],
-            scrips: inspection[`Reward1${i}`].Scrips,
-            points: inspection[`Reward1${i}`].Points,
-            phase: inspection[`Phase${i}TargetID`]
+            requiredItem: row.Item,
+            amount: inspection.AmountRequired[index],
+            receivedItem: inspection.ItemReceived[index],
+            scrips: inspection.Reward1[index].Scrips,
+            points: inspection.Reward1[index].Points,
+            phase: inspection.Phase[index]
           });
         }
       });

@@ -18,6 +18,7 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { mapIds } from '../../../core/data/sources/map-ids';
 import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
+import { cloneDeep } from 'lodash';
 
 @Component({
   selector: 'app-map-page',
@@ -363,7 +364,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
         return [].concat.apply([], Object.keys(monsters)
           .map(key => {
             const monster = monsters[key];
-            monster.positions = monster.positions.filter(p => p.zoneid === placeNameId);
+            monster.positions = cloneDeep(monster.positions).filter(p => p.zoneid === placeNameId);
             return { id: +key, ...monster };
           })
           .filter(monster => {

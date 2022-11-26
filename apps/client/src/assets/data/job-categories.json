@@ -5,47 +5,47 @@
     "de": "Alle Klassen",
     "fr": "Toutes les classes",
     "jobs": [
-      "ACN",
       "ADV",
-      "ALC",
-      "ARC",
-      "ARM",
-      "AST",
-      "BLM",
-      "BLU",
-      "BRD",
-      "BSM",
-      "BTN",
-      "CNJ",
-      "CRP",
-      "CUL",
-      "DNC",
-      "DRG",
-      "DRK",
-      "FSH",
       "GLA",
-      "GNB",
-      "GSM",
-      "LNC",
-      "LTW",
-      "MCH",
-      "MIN",
-      "MNK",
-      "MRD",
-      "NIN",
       "PGL",
-      "PLD",
-      "RDM",
-      "ROG",
-      "RPR",
-      "SAM",
-      "SCH",
-      "SGE",
-      "SMN",
+      "MRD",
+      "LNC",
+      "ARC",
+      "CNJ",
       "THM",
+      "CRP",
+      "BSM",
+      "ARM",
+      "GSM",
+      "LTW",
+      "WVR",
+      "ALC",
+      "CUL",
+      "MIN",
+      "BTN",
+      "FSH",
+      "PLD",
+      "MNK",
       "WAR",
+      "DRG",
+      "BRD",
       "WHM",
-      "WVR"
+      "BLM",
+      "ACN",
+      "SMN",
+      "SCH",
+      "ROG",
+      "NIN",
+      "MCH",
+      "DRK",
+      "AST",
+      "SAM",
+      "RDM",
+      "BLU",
+      "GNB",
+      "DNC",
+      "RPR",
+      "SGE"
     ]
   },
   "2": {
@@ -306,24 +306,24 @@
     "de": "Krieger",
     "fr": "combattants",
     "jobs": [
-      "ARC",
-      "BRD",
-      "DNC",
-      "DRG",
-      "DRK",
       "GLA",
-      "GNB",
-      "LNC",
-      "MCH",
-      "MNK",
-      "MRD",
-      "NIN",
       "PGL",
+      "MRD",
+      "LNC",
+      "ARC",
       "PLD",
+      "MNK",
+      "WAR",
+      "DRG",
+      "BRD",
       "ROG",
-      "RPR",
+      "NIN",
+      "MCH",
+      "DRK",
       "SAM",
-      "WAR"
+      "GNB",
+      "DNC",
+      "RPR"
     ]
   },
   "31": {
@@ -332,17 +332,17 @@
     "de": "Magier",
     "fr": "mages",
     "jobs": [
-      "ACN",
-      "AST",
-      "BLM",
-      "BLU",
       "CNJ",
-      "RDM",
-      "SCH",
-      "SGE",
-      "SMN",
       "THM",
-      "WHM"
+      "WHM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "SCH",
+      "AST",
+      "RDM",
+      "BLU",
+      "SGE"
     ]
   },
   "32": {
@@ -351,9 +351,9 @@
     "de": "Sammler",
     "fr": "récolteurs",
     "jobs": [
+      "MIN",
       "BTN",
-      "FSH",
-      "MIN"
+      "FSH"
     ]
   },
   "33": {
@@ -362,14 +362,14 @@
     "de": "Handwerker",
     "fr": "artisans",
     "jobs": [
-      "ALC",
-      "ARM",
-      "BSM",
       "CRP",
-      "CUL",
+      "BSM",
+      "ARM",
       "GSM",
       "LTW",
-      "WVR"
+      "WVR",
+      "ALC",
+      "CUL"
     ]
   },
   "34": {
@@ -378,35 +378,35 @@
     "de": "Krieger, Magier",
     "fr": "combattants et mages",
     "jobs": [
-      "ACN",
-      "ARC",
-      "AST",
-      "BLM",
-      "BLU",
-      "BRD",
-      "CNJ",
-      "DNC",
-      "DRG",
-      "DRK",
       "GLA",
-      "GNB",
-      "LNC",
-      "MCH",
-      "MNK",
-      "MRD",
-      "NIN",
       "PGL",
-      "PLD",
-      "RDM",
-      "ROG",
-      "RPR",
-      "SAM",
-      "SCH",
-      "SGE",
-      "SMN",
+      "MRD",
+      "LNC",
+      "ARC",
+      "CNJ",
       "THM",
+      "PLD",
+      "MNK",
       "WAR",
-      "WHM"
+      "DRG",
+      "BRD",
+      "WHM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "SCH",
+      "ROG",
+      "NIN",
+      "MCH",
+      "DRK",
+      "AST",
+      "SAM",
+      "RDM",
+      "BLU",
+      "GNB",
+      "DNC",
+      "RPR",
+      "SGE"
     ]
   },
   "35": {
@@ -415,17 +415,17 @@
     "de": "Handwerker, Sammler",
     "fr": "récolteurs et artisans",
     "jobs": [
-      "ALC",
-      "ARM",
-      "BSM",
-      "BTN",
       "CRP",
-      "CUL",
-      "FSH",
+      "BSM",
+      "ARM",
       "GSM",
       "LTW",
+      "WVR",
+      "ALC",
+      "CUL",
       "MIN",
-      "WVR"
+      "BTN",
+      "FSH"
     ]
   },
   "36": {
@@ -434,20 +434,20 @@
     "de": "Krieger außer Gladiator",
     "fr": "combattants (sauf GLA)",
     "jobs": [
-      "ARC",
-      "BRD",
-      "DRG",
-      "DRK",
-      "LNC",
-      "MCH",
-      "MNK",
-      "MRD",
-      "NIN",
       "PGL",
+      "MRD",
+      "LNC",
+      "ARC",
       "PLD",
+      "MNK",
+      "WAR",
+      "DRG",
+      "BRD",
       "ROG",
-      "RPR",
-      "WAR"
+      "NIN",
+      "MCH",
+      "DRK",
+      "RPR"
     ]
   },
   "37": {
@@ -456,18 +456,18 @@
     "de": "GLA FST MAR PIK WDL SCH DRU THM HRT PLD KRG DKR",
     "fr": "GLA PGL MRD HAS ARC SUR ÉLM OCC ACN PLD GUE CHN",
     "jobs": [
-      "ACN",
+      "GLA",
+      "PGL",
+      "MRD",
+      "LNC",
       "ARC",
       "CNJ",
-      "DRK",
-      "GLA",
-      "LNC",
-      "MRD",
-      "PGL",
-      "PLD",
-      "ROG",
       "THM",
-      "WAR"
+      "PLD",
+      "WAR",
+      "ACN",
+      "ROG",
+      "DRK"
     ]
   },
   "38": {
@@ -486,15 +486,15 @@
     "de": "GLA FST MAR PIK WDL SCH PLD KRG DKR",
     "fr": "GLA PGL MRD HAS ARC SUR PLD GUE CHN",
     "jobs": [
-      "ARC",
-      "DRK",
       "GLA",
-      "LNC",
-      "MRD",
       "PGL",
+      "MRD",
+      "LNC",
+      "ARC",
       "PLD",
+      "WAR",
       "ROG",
-      "WAR"
+      "DRK"
     ]
   },
   "40": {
@@ -503,20 +503,20 @@
     "de": "GLA FST MAR PIK WDL SCH DRU THM HRT MÖN KRG DRG BRD NIN",
     "fr": "GLA PGL MRD HAS ARC SUR ÉLM OCC ACN MOI GUE DRG BRD NIN",
     "jobs": [
-      "ACN",
-      "ARC",
-      "BRD",
-      "CNJ",
-      "DRG",
       "GLA",
-      "LNC",
-      "MNK",
-      "MRD",
-      "NIN",
       "PGL",
-      "ROG",
+      "MRD",
+      "LNC",
+      "ARC",
+      "CNJ",
       "THM",
-      "WAR"
+      "MNK",
+      "WAR",
+      "DRG",
+      "BRD",
+      "ACN",
+      "ROG",
+      "NIN"
     ]
   },
   "41": {
@@ -525,8 +525,8 @@
     "de": "FST MÖN",
     "fr": "PGL MOI",
     "jobs": [
-      "MNK",
-      "PGL"
+      "PGL",
+      "MNK"
     ]
   },
   "42": {
@@ -535,17 +535,17 @@
     "de": "GLA FST MAR PIK WDL SCH MÖN KRG DRG NIN",
     "fr": "GLA PGL MRD HAS ARC SUR MOI GUE DRG BRD NIN",
     "jobs": [
-      "ARC",
-      "BRD",
-      "DRG",
       "GLA",
-      "LNC",
-      "MNK",
-      "MRD",
-      "NIN",
       "PGL",
+      "MRD",
+      "LNC",
+      "ARC",
+      "MNK",
+      "WAR",
+      "DRG",
+      "BRD",
       "ROG",
-      "WAR"
+      "NIN"
     ]
   },
   "43": {
@@ -554,20 +554,20 @@
     "de": "GLA FST MAR PIK WDL SCH DRU THM HRT PLD MÖN KRG DRG DKR",
     "fr": "GLA PGL MRD HAS ARC SUR ÉLM OCC ACN PLD MOI GUE DRG CHN",
     "jobs": [
-      "ACN",
+      "GLA",
+      "PGL",
+      "MRD",
+      "LNC",
       "ARC",
       "CNJ",
-      "DRG",
-      "DRK",
-      "GLA",
-      "LNC",
-      "MNK",
-      "MRD",
-      "PGL",
-      "PLD",
-      "ROG",
       "THM",
-      "WAR"
+      "PLD",
+      "MNK",
+      "WAR",
+      "DRG",
+      "ACN",
+      "ROG",
+      "DRK"
     ]
   },
   "44": {
@@ -586,17 +586,17 @@
     "de": "GLA FST MAR PIK WDL SCH PLD MÖN KRG DRG DKR",
     "fr": "GLA PGL MRD HAS ARC SUR PLD MOI GUE DRG CHN",
     "jobs": [
-      "ARC",
-      "DRG",
-      "DRK",
       "GLA",
-      "LNC",
-      "MNK",
-      "MRD",
       "PGL",
+      "MRD",
+      "LNC",
+      "ARC",
       "PLD",
+      "MNK",
+      "WAR",
+      "DRG",
       "ROG",
-      "WAR"
+      "DRK"
     ]
   },
   "46": {
@@ -605,20 +605,20 @@
     "de": "GLA FST MAR PIK WDL SCH DRU THM HRT MÖN DRG BRD NIN MCH",
     "fr": "GLA PGL MRD HAS ARC SUR ÉLM OCC ACN MOI DRG BRD NIN MCH",
     "jobs": [
-      "ACN",
-      "ARC",
-      "BRD",
-      "CNJ",
-      "DRG",
       "GLA",
-      "LNC",
-      "MCH",
-      "MNK",
-      "MRD",
-      "NIN",
       "PGL",
+      "MRD",
+      "LNC",
+      "ARC",
+      "CNJ",
+      "THM",
+      "MNK",
+      "DRG",
+      "BRD",
+      "ACN",
       "ROG",
-      "THM"
+      "NIN",
+      "MCH"
     ]
   },
   "47": {
@@ -627,8 +627,8 @@
     "de": "PIK DRG",
     "fr": "HAS DRG",
     "jobs": [
-      "DRG",
-      "LNC"
+      "LNC",
+      "DRG"
     ]
   },
   "48": {
@@ -637,17 +637,17 @@
     "de": "GLA FST MAR PIK WDL SCH MÖN DRG BRD NIN MCH",
     "fr": "GLA PGL MRD HAS ARC SUR MOI DRG BRD NIN MCH",
     "jobs": [
-      "ARC",
-      "BRD",
-      "DRG",
       "GLA",
-      "LNC",
-      "MCH",
-      "MNK",
-      "MRD",
-      "NIN",
       "PGL",
-      "ROG"
+      "MRD",
+      "LNC",
+      "ARC",
+      "MNK",
+      "DRG",
+      "BRD",
+      "ROG",
+      "NIN",
+      "MCH"
     ]
   },
   "49": {
@@ -656,19 +656,19 @@
     "de": "GLA FST MAR PIK WDL SCH DRU THM HRT BRD SMA BSW MCH",
     "fr": "GLA PGL MRD HAS ARC SUR ÉLM OCC ACN BRD MNO INV MCH",
     "jobs": [
-      "ACN",
-      "ARC",
-      "BLM",
-      "BRD",
-      "CNJ",
       "GLA",
-      "LNC",
-      "MCH",
-      "MRD",
       "PGL",
-      "ROG",
+      "MRD",
+      "LNC",
+      "ARC",
+      "CNJ",
+      "THM",
+      "BRD",
+      "BLM",
+      "ACN",
       "SMN",
-      "THM"
+      "ROG",
+      "MCH"
     ]
   },
   "50": {
@@ -687,14 +687,14 @@
     "de": "GLA FST MAR PIK WDL SCH BRD MCH",
     "fr": "GLA PGL MRD HAS ARC SUR BRD MCH",
     "jobs": [
+      "GLA",
+      "PGL",
+      "MRD",
+      "LNC",
       "ARC",
       "BRD",
-      "GLA",
-      "LNC",
-      "MCH",
-      "MRD",
-      "PGL",
-      "ROG"
+      "ROG",
+      "MCH"
     ]
   },
   "52": {
@@ -703,19 +703,19 @@
     "de": "GLA FST MAR PIK WDL SCH DRU THM HRT PLD WMA GLT AST",
     "fr": "GLA PGL MRD HAS ARC SUR ÉLM OCC ACN PLD MBL ÉRU AST",
     "jobs": [
-      "ACN",
-      "ARC",
-      "AST",
-      "CNJ",
       "GLA",
-      "LNC",
-      "MRD",
       "PGL",
-      "PLD",
-      "ROG",
-      "SCH",
+      "MRD",
+      "LNC",
+      "ARC",
+      "CNJ",
       "THM",
-      "WHM"
+      "PLD",
+      "WHM",
+      "ACN",
+      "SCH",
+      "ROG",
+      "AST"
     ]
   },
   "53": {
@@ -734,20 +734,20 @@
     "de": "GLA FST MAR PIK WDL SCH DRU THM HRT WMA SMA BSW GLT AST",
     "fr": "GLA PGL MRD HAS ARC SUR ÉLM OCC ACN MBL MNO INV ÉRU AST",
     "jobs": [
-      "ACN",
-      "ARC",
-      "AST",
-      "BLM",
-      "CNJ",
       "GLA",
-      "LNC",
-      "MRD",
       "PGL",
-      "ROG",
-      "SCH",
-      "SMN",
+      "MRD",
+      "LNC",
+      "ARC",
+      "CNJ",
       "THM",
-      "WHM"
+      "WHM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "SCH",
+      "ROG",
+      "AST"
     ]
   },
   "55": {
@@ -756,8 +756,8 @@
     "de": "THM SMA",
     "fr": "OCC MNO",
     "jobs": [
-      "BLM",
-      "THM"
+      "THM",
+      "BLM"
     ]
   },
   "56": {
@@ -766,12 +766,12 @@
     "de": "GLA DRU THM PLD WMA SMA",
     "fr": "GLA ÉLM OCC PLD MBL MNO",
     "jobs": [
-      "BLM",
-      "CNJ",
       "GLA",
-      "PLD",
+      "CNJ",
       "THM",
-      "WHM"
+      "PLD",
+      "WHM",
+      "BLM"
     ]
   },
   "57": {
@@ -780,10 +780,10 @@
     "de": "GLA THM PLD SMA",
     "fr": "GLA OCC PLD MNO",
     "jobs": [
-      "BLM",
       "GLA",
+      "THM",
       "PLD",
-      "THM"
+      "BLM"
     ]
   },
   "58": {
@@ -792,8 +792,8 @@
     "de": "GLA DRU PLD WMA",
     "fr": "GLA ÉLM PLD MBL",
     "jobs": [
-      "CNJ",
       "GLA",
+      "CNJ",
       "PLD",
       "WHM"
     ]
@@ -804,12 +804,12 @@
     "de": "GLA MAR PLD KRG DKR REV",
     "fr": "GLA MRD PLD GUE CHN PSB",
     "jobs": [
-      "DRK",
       "GLA",
-      "GNB",
       "MRD",
       "PLD",
-      "WAR"
+      "WAR",
+      "DRK",
+      "GNB"
     ]
   },
   "60": {
@@ -818,15 +818,15 @@
     "de": "GLA MAR PIK PLD KRG DRG DKR REV SNT",
     "fr": "GLA MRD HAS PLD GUE DRG CHN PSB FCH",
     "jobs": [
+      "GLA",
+      "MRD",
+      "LNC",
+      "PLD",
+      "WAR",
       "DRG",
       "DRK",
-      "GLA",
       "GNB",
-      "LNC",
-      "MRD",
-      "PLD",
-      "RPR",
-      "WAR"
+      "RPR"
     ]
   },
   "61": {
@@ -835,12 +835,12 @@
     "de": "DRU THM HRT WMA GLT AST",
     "fr": "ÉLM OCC ACN MBL ÉRU AST",
     "jobs": [
-      "ACN",
-      "AST",
       "CNJ",
-      "SCH",
       "THM",
-      "WHM"
+      "WHM",
+      "ACN",
+      "SCH",
+      "AST"
     ]
   },
   "62": {
@@ -849,14 +849,14 @@
     "de": "DRU THM HRT WMA SMA BSW GLT AST",
     "fr": "ÉLM OCC ACN MBL MNO INV ÉRU AST",
     "jobs": [
-      "ACN",
-      "AST",
-      "BLM",
       "CNJ",
-      "SCH",
-      "SMN",
       "THM",
-      "WHM"
+      "WHM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "SCH",
+      "AST"
     ]
   },
   "63": {
@@ -865,12 +865,12 @@
     "de": "THM HRT SMA BSW RMA BMA",
     "fr": "OCC ACN MNO INV MRG MBU",
     "jobs": [
-      "ACN",
+      "THM",
       "BLM",
-      "BLU",
-      "RDM",
+      "ACN",
       "SMN",
-      "THM"
+      "RDM",
+      "BLU"
     ]
   },
   "64": {
@@ -879,11 +879,11 @@
     "de": "DRU WMA GLT AST WEI",
     "fr": "ÉLM MBL ÉRU AST SAG",
     "jobs": [
-      "AST",
       "CNJ",
+      "WHM",
       "SCH",
-      "SGE",
-      "WHM"
+      "AST",
+      "SGE"
     ]
   },
   "65": {
@@ -892,8 +892,8 @@
     "de": "FST MÖN SAM",
     "fr": "PGL MOI SAM",
     "jobs": [
-      "MNK",
       "PGL",
+      "MNK",
       "SAM"
     ]
   },
@@ -905,8 +905,8 @@
     "jobs": [
       "ARC",
       "BRD",
-      "DNC",
-      "MCH"
+      "MCH",
+      "DNC"
     ]
   },
   "67": {
@@ -915,14 +915,14 @@
     "de": "GLA FST MAR PIK SCH MÖN DRG NIN",
     "fr": "GLA PGL MRD HAS SUR MOI DRG NIN",
     "jobs": [
-      "DRG",
       "GLA",
+      "PGL",
+      "MRD",
       "LNC",
       "MNK",
-      "MRD",
-      "NIN",
-      "PGL",
-      "ROG"
+      "DRG",
+      "ROG",
+      "NIN"
     ]
   },
   "68": {
@@ -932,8 +932,8 @@
     "fr": "ACN INV ÉRU",
     "jobs": [
       "ACN",
-      "SCH",
-      "SMN"
+      "SMN",
+      "SCH"
     ]
   },
   "69": {
@@ -952,13 +952,13 @@
     "de": "Handwerker außer Gourmet",
     "fr": "artisans (sauf CUI)",
     "jobs": [
-      "ALC",
-      "ARM",
-      "BSM",
       "CRP",
+      "BSM",
+      "ARM",
       "GSM",
       "LTW",
-      "WVR"
+      "WVR",
+      "ALC"
     ]
   },
   "71": {
@@ -967,19 +967,19 @@
     "de": "GLA FST MAR PIK WDL SCH DRU THM HRT WMA SMA BSW GLT",
     "fr": "GLA PGL MRD HAS ARC SUR ÉLM OCC ACN MBL MNO INV ÉRU",
     "jobs": [
-      "ACN",
-      "ARC",
-      "BLM",
-      "CNJ",
       "GLA",
-      "LNC",
-      "MRD",
       "PGL",
-      "ROG",
-      "SCH",
-      "SMN",
+      "MRD",
+      "LNC",
+      "ARC",
+      "CNJ",
       "THM",
-      "WHM"
+      "WHM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "SCH",
+      "ROG"
     ]
   },
   "72": {
@@ -988,13 +988,13 @@
     "de": "DRU THM HRT WMA SMA BSW GLT",
     "fr": "ÉLM OCC ACN MBL MNO INV ÉRU",
     "jobs": [
-      "ACN",
-      "BLM",
       "CNJ",
-      "SCH",
-      "SMN",
       "THM",
-      "WHM"
+      "WHM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "SCH"
     ]
   },
   "73": {
@@ -1003,11 +1003,11 @@
     "de": "DRU WMA GLT AST WEI",
     "fr": "ÉLM MBL ÉRU AST SAG",
     "jobs": [
-      "AST",
       "CNJ",
+      "WHM",
       "SCH",
-      "SGE",
-      "WHM"
+      "AST",
+      "SGE"
     ]
   },
   "74": {
@@ -1016,47 +1016,47 @@
     "de": "",
     "fr": "",
     "jobs": [
-      "ACN",
       "ADV",
-      "ALC",
-      "ARC",
-      "ARM",
-      "AST",
-      "BLM",
-      "BLU",
-      "BRD",
-      "BSM",
-      "BTN",
-      "CNJ",
-      "CRP",
-      "CUL",
-      "DNC",
-      "DRG",
-      "DRK",
-      "FSH",
       "GLA",
-      "GNB",
-      "GSM",
-      "LNC",
-      "LTW",
-      "MCH",
-      "MIN",
-      "MNK",
-      "MRD",
-      "NIN",
       "PGL",
-      "PLD",
-      "RDM",
-      "ROG",
-      "RPR",
-      "SAM",
-      "SCH",
-      "SGE",
-      "SMN",
+      "MRD",
+      "LNC",
+      "ARC",
+      "CNJ",
       "THM",
+      "CRP",
+      "BSM",
+      "ARM",
+      "GSM",
+      "LTW",
+      "WVR",
+      "ALC",
+      "CUL",
+      "MIN",
+      "BTN",
+      "FSH",
+      "PLD",
+      "MNK",
       "WAR",
+      "DRG",
+      "BRD",
       "WHM",
-      "WVR"
+      "BLM",
+      "ACN",
+      "SMN",
+      "SCH",
+      "ROG",
+      "NIN",
+      "MCH",
+      "DRK",
+      "AST",
+      "SAM",
+      "RDM",
+      "BLU",
+      "GNB",
+      "DNC",
+      "RPR",
+      "SGE"
     ]
   },
   "75": {
@@ -1065,12 +1065,12 @@
     "de": "",
     "fr": "",
     "jobs": [
-      "DRK",
       "GLA",
-      "GNB",
       "MRD",
       "PLD",
-      "WAR"
+      "WAR",
+      "DRK",
+      "GNB"
     ]
   },
   "76": {
@@ -1079,8 +1079,8 @@
     "de": "PIK DRG SNT",
     "fr": "HAS DRG FCH",
     "jobs": [
-      "DRG",
       "LNC",
+      "DRG",
       "RPR"
     ]
   },
@@ -1090,8 +1090,8 @@
     "de": "",
     "fr": "",
     "jobs": [
-      "MNK",
       "PGL",
+      "MNK",
       "SAM"
     ]
   },
@@ -1103,8 +1103,8 @@
     "jobs": [
       "ARC",
       "BRD",
-      "DNC",
-      "MCH"
+      "MCH",
+      "DNC"
     ]
   },
   "79": {
@@ -1113,12 +1113,12 @@
     "de": "",
     "fr": "",
     "jobs": [
-      "ACN",
+      "THM",
       "BLM",
-      "BLU",
-      "RDM",
+      "ACN",
       "SMN",
-      "THM"
+      "RDM",
+      "BLU"
     ]
   },
   "80": {
@@ -1127,11 +1127,11 @@
     "de": "",
     "fr": "",
     "jobs": [
-      "AST",
       "CNJ",
+      "WHM",
       "SCH",
-      "SGE",
-      "WHM"
+      "AST",
+      "SGE"
     ]
   },
   "81": {
@@ -1140,18 +1140,18 @@
     "de": "",
     "fr": "",
     "jobs": [
-      "ARC",
-      "BRD",
-      "DNC",
-      "DRG",
-      "LNC",
-      "MCH",
-      "MNK",
-      "NIN",
       "PGL",
+      "LNC",
+      "ARC",
+      "MNK",
+      "DRG",
+      "BRD",
       "ROG",
-      "RPR",
-      "SAM"
+      "NIN",
+      "MCH",
+      "SAM",
+      "DNC",
+      "RPR"
     ]
   },
   "82": {
@@ -1160,17 +1160,17 @@
     "de": "",
     "fr": "",
     "jobs": [
-      "ACN",
-      "AST",
-      "BLM",
-      "BLU",
       "CNJ",
-      "RDM",
-      "SCH",
-      "SGE",
-      "SMN",
       "THM",
-      "WHM"
+      "WHM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "SCH",
+      "AST",
+      "RDM",
+      "BLU",
+      "SGE"
     ]
   },
   "83": {
@@ -1179,17 +1179,17 @@
     "de": "",
     "fr": "",
     "jobs": [
-      "ALC",
-      "ARM",
-      "BSM",
-      "BTN",
       "CRP",
-      "CUL",
-      "FSH",
+      "BSM",
+      "ARM",
       "GSM",
       "LTW",
+      "WVR",
+      "ALC",
+      "CUL",
       "MIN",
-      "WVR"
+      "BTN",
+      "FSH"
     ]
   },
   "84": {
@@ -1198,12 +1198,12 @@
     "de": "FST PIK MÖN DRG SAM SNT",
     "fr": "PGL HAS MOI DRG SAM FCH",
     "jobs": [
-      "DRG",
+      "PGL",
       "LNC",
       "MNK",
-      "PGL",
-      "RPR",
-      "SAM"
+      "DRG",
+      "SAM",
+      "RPR"
     ]
   },
   "85": {
@@ -1212,25 +1212,25 @@
     "de": "Krieger- oder Magier-Job",
     "fr": "Job de combattant ou mage",
     "jobs": [
-      "AST",
-      "BLM",
-      "BRD",
-      "DNC",
-      "DRG",
-      "DRK",
-      "GNB",
-      "MCH",
-      "MNK",
-      "NIN",
       "PLD",
-      "RDM",
-      "RPR",
-      "SAM",
-      "SCH",
-      "SGE",
-      "SMN",
+      "MNK",
       "WAR",
-      "WHM"
+      "DRG",
+      "BRD",
+      "WHM",
+      "BLM",
+      "SMN",
+      "SCH",
+      "NIN",
+      "MCH",
+      "DRK",
+      "AST",
+      "SAM",
+      "RDM",
+      "GNB",
+      "DNC",
+      "RPR",
+      "SGE"
     ]
   },
   "86": {
@@ -1239,14 +1239,14 @@
     "de": "PLD KRG SMA REV MÖN DRG NIN",
     "fr": "PLD GUE CHN PSB MOI DRG NIN SAM",
     "jobs": [
-      "DRG",
-      "DRK",
-      "GNB",
-      "MNK",
-      "NIN",
       "PLD",
+      "MNK",
+      "WAR",
+      "DRG",
+      "NIN",
+      "DRK",
       "SAM",
-      "WAR"
+      "GNB"
     ]
   },
   "87": {
@@ -1255,15 +1255,15 @@
     "de": "BRD MCH TÄN SMA BES RMA WMA GLT AST ",
     "fr": "BRD MCH DNS MNO INV MRG MBL ÉRU AST",
     "jobs": [
-      "AST",
-      "BLM",
       "BRD",
-      "DNC",
-      "MCH",
-      "RDM",
-      "SCH",
+      "WHM",
+      "BLM",
       "SMN",
-      "WHM"
+      "SCH",
+      "MCH",
+      "AST",
+      "RDM",
+      "DNC"
     ]
   },
   "88": {
@@ -1272,20 +1272,20 @@
     "de": "GLA FST MAR PIK WDL SCH PLD MÖN KRG DRG BRD NIN MCH",
     "fr": "GLA MRD PGL HAS ARC SUR PLD MOI GUE DRG BRD NIN CHN MCH",
     "jobs": [
-      "ARC",
-      "BRD",
-      "DRG",
-      "DRK",
       "GLA",
-      "LNC",
-      "MCH",
-      "MNK",
-      "MRD",
-      "NIN",
       "PGL",
+      "MRD",
+      "LNC",
+      "ARC",
       "PLD",
+      "MNK",
+      "WAR",
+      "DRG",
+      "BRD",
       "ROG",
-      "WAR"
+      "NIN",
+      "MCH",
+      "DRK"
     ]
   },
   "89": {
@@ -1295,8 +1295,8 @@
     "fr": "MNO INV MRG",
     "jobs": [
       "BLM",
-      "RDM",
-      "SMN"
+      "SMN",
+      "RDM"
     ]
   },
   "90": {
@@ -1305,17 +1305,17 @@
     "de": "WDL DRU THM HRT WMA BRD SMA BSW GLT MCH AST",
     "fr": "ARC ÉLM OCC ACN MBL BRD MNO INV ÉRU MCH AST",
     "jobs": [
-      "ACN",
       "ARC",
-      "AST",
-      "BLM",
-      "BRD",
       "CNJ",
-      "MCH",
-      "SCH",
-      "SMN",
       "THM",
-      "WHM"
+      "BRD",
+      "WHM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "SCH",
+      "MCH",
+      "AST"
     ]
   },
   "91": {
@@ -1342,8 +1342,8 @@
     "de": "SCH NIN",
     "fr": "SUR NIN",
     "jobs": [
-      "NIN",
-      "ROG"
+      "ROG",
+      "NIN"
     ]
   },
   "94": {
@@ -1352,13 +1352,13 @@
     "de": "GLA FST MAR PIK WDL SCH NIN",
     "fr": "GLA PGL MRD HAS ARC SUR NIN",
     "jobs": [
-      "ARC",
       "GLA",
-      "LNC",
-      "MRD",
-      "NIN",
       "PGL",
-      "ROG"
+      "MRD",
+      "LNC",
+      "ARC",
+      "ROG",
+      "NIN"
     ]
   },
   "95": {
@@ -1368,11 +1368,11 @@
     "fr": "GLA PGL MRD HAS SUR NIN",
     "jobs": [
       "GLA",
-      "LNC",
-      "MRD",
-      "NIN",
       "PGL",
-      "ROG"
+      "MRD",
+      "LNC",
+      "ROG",
+      "NIN"
     ]
   },
   "96": {
@@ -1390,15 +1390,15 @@
     "de": "FST PIK WDL SCH MÖN DRG BRD NIN MCH",
     "fr": "PGL HAS ARC SUR MOI DRG BRD NIN MCH",
     "jobs": [
-      "ARC",
-      "BRD",
-      "DRG",
-      "LNC",
-      "MCH",
-      "MNK",
-      "NIN",
       "PGL",
-      "ROG"
+      "LNC",
+      "ARC",
+      "MNK",
+      "DRG",
+      "BRD",
+      "ROG",
+      "NIN",
+      "MCH"
     ]
   },
   "98": {
@@ -1427,9 +1427,9 @@
     "jobs": [
       "ARC",
       "BRD",
-      "MCH",
+      "ROG",
       "NIN",
-      "ROG"
+      "MCH"
     ]
   },
   "101": {
@@ -1438,12 +1438,12 @@
     "de": "FST PIK SCH MÖN DRG NIN",
     "fr": "PGL HAS SUR MOI DRG NIN",
     "jobs": [
-      "DRG",
+      "PGL",
       "LNC",
       "MNK",
-      "NIN",
-      "PGL",
-      "ROG"
+      "DRG",
+      "ROG",
+      "NIN"
     ]
   },
   "102": {
@@ -1452,10 +1452,10 @@
     "de": "FST SCH MÖN NIN SAM",
     "fr": "PGL SUR MOI NIN SAM",
     "jobs": [
-      "MNK",
-      "NIN",
       "PGL",
+      "MNK",
       "ROG",
+      "NIN",
       "SAM"
     ]
   },
@@ -1465,8 +1465,8 @@
     "de": "SCH NIN",
     "fr": "SUR NIN",
     "jobs": [
-      "NIN",
-      "ROG"
+      "ROG",
+      "NIN"
     ]
   },
   "104": {
@@ -1475,8 +1475,8 @@
     "de": "",
     "fr": "",
     "jobs": [
-      "NIN",
-      "ROG"
+      "ROG",
+      "NIN"
     ]
   },
   "105": {
@@ -1487,10 +1487,10 @@
     "jobs": [
       "ARC",
       "BRD",
-      "DNC",
-      "MCH",
+      "ROG",
       "NIN",
-      "ROG"
+      "MCH",
+      "DNC"
     ]
   },
   "106": {
@@ -1499,12 +1499,12 @@
     "de": "GLA MAR FST PIK WDL SCH BRD",
     "fr": "GLA PGL MRD HAS ARC SUR BRD",
     "jobs": [
+      "GLA",
+      "PGL",
+      "MRD",
+      "LNC",
       "ARC",
       "BRD",
-      "GLA",
-      "LNC",
-      "MRD",
-      "PGL",
       "ROG"
     ]
   },
@@ -1514,19 +1514,19 @@
     "de": "PLD MÖN KRG DRG BRD WMA SMA BES GLT NIN MCH DKR AST",
     "fr": "PLD MOI GUE DRG BRD MBL MNO INV ÉRU NIN MCH CHN AST",
     "jobs": [
-      "AST",
-      "BLM",
-      "BRD",
-      "DRG",
-      "DRK",
-      "MCH",
-      "MNK",
-      "NIN",
       "PLD",
-      "SCH",
-      "SMN",
+      "MNK",
       "WAR",
-      "WHM"
+      "DRG",
+      "BRD",
+      "WHM",
+      "BLM",
+      "SMN",
+      "SCH",
+      "NIN",
+      "MCH",
+      "DRK",
+      "AST"
     ]
   },
   "108": {
@@ -1535,35 +1535,35 @@
     "de": "Krieger oder Magier",
     "fr": "combattant ou mage",
     "jobs": [
-      "ACN",
-      "ARC",
-      "AST",
-      "BLM",
-      "BLU",
-      "BRD",
-      "CNJ",
-      "DNC",
-      "DRG",
-      "DRK",
       "GLA",
-      "GNB",
-      "LNC",
-      "MCH",
-      "MNK",
-      "MRD",
-      "NIN",
       "PGL",
-      "PLD",
-      "RDM",
-      "ROG",
-      "RPR",
-      "SAM",
-      "SCH",
-      "SGE",
-      "SMN",
+      "MRD",
+      "LNC",
+      "ARC",
+      "CNJ",
       "THM",
+      "PLD",
+      "MNK",
       "WAR",
-      "WHM"
+      "DRG",
+      "BRD",
+      "WHM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "SCH",
+      "ROG",
+      "NIN",
+      "MCH",
+      "DRK",
+      "AST",
+      "SAM",
+      "RDM",
+      "BLU",
+      "GNB",
+      "DNC",
+      "RPR",
+      "SGE"
     ]
   },
   "109": {
@@ -1572,46 +1572,46 @@
     "de": "",
     "fr": "",
     "jobs": [
-      "ACN",
-      "ALC",
-      "ARC",
-      "ARM",
-      "AST",
-      "BLM",
-      "BLU",
-      "BRD",
-      "BSM",
-      "BTN",
-      "CNJ",
-      "CRP",
-      "CUL",
-      "DNC",
-      "DRG",
-      "DRK",
-      "FSH",
       "GLA",
-      "GNB",
-      "GSM",
-      "LNC",
-      "LTW",
-      "MCH",
-      "MIN",
-      "MNK",
-      "MRD",
-      "NIN",
       "PGL",
-      "PLD",
-      "RDM",
-      "ROG",
-      "RPR",
-      "SAM",
-      "SCH",
-      "SGE",
-      "SMN",
+      "MRD",
+      "LNC",
+      "ARC",
+      "CNJ",
       "THM",
+      "CRP",
+      "BSM",
+      "ARM",
+      "GSM",
+      "LTW",
+      "WVR",
+      "ALC",
+      "CUL",
+      "MIN",
+      "BTN",
+      "FSH",
+      "PLD",
+      "MNK",
       "WAR",
+      "DRG",
+      "BRD",
       "WHM",
-      "WVR"
+      "BLM",
+      "ACN",
+      "SMN",
+      "SCH",
+      "ROG",
+      "NIN",
+      "MCH",
+      "DRK",
+      "AST",
+      "SAM",
+      "RDM",
+      "BLU",
+      "GNB",
+      "DNC",
+      "RPR",
+      "SGE"
     ]
   },
   "110": {
@@ -1620,26 +1620,26 @@
     "de": "Krieger- oder Magier-Job",
     "fr": "job de combattant ou mage",
     "jobs": [
-      "AST",
-      "BLM",
-      "BLU",
-      "BRD",
-      "DNC",
-      "DRG",
-      "DRK",
-      "GNB",
-      "MCH",
-      "MNK",
-      "NIN",
       "PLD",
-      "RDM",
-      "RPR",
-      "SAM",
-      "SCH",
-      "SGE",
-      "SMN",
+      "MNK",
       "WAR",
-      "WHM"
+      "DRG",
+      "BRD",
+      "WHM",
+      "BLM",
+      "SMN",
+      "SCH",
+      "NIN",
+      "MCH",
+      "DRK",
+      "AST",
+      "SAM",
+      "RDM",
+      "BLU",
+      "GNB",
+      "DNC",
+      "RPR",
+      "SGE"
     ]
   },
   "111": {
@@ -1666,12 +1666,12 @@
     "de": "GLA MAR PLD KRG DKR REV",
     "fr": "GLA MRD PLD GUE CHN PSB",
     "jobs": [
-      "DRK",
       "GLA",
-      "GNB",
       "MRD",
       "PLD",
-      "WAR"
+      "WAR",
+      "DRK",
+      "GNB"
     ]
   },
   "114": {
@@ -1680,14 +1680,14 @@
     "de": "FST PIK MÖN DRG SCH NIN SAM SNT",
     "fr": "PGL HAS MOI DRG SUR NIN SAM FCH",
     "jobs": [
-      "DRG",
+      "PGL",
       "LNC",
       "MNK",
-      "NIN",
-      "PGL",
+      "DRG",
       "ROG",
-      "RPR",
-      "SAM"
+      "NIN",
+      "SAM",
+      "RPR"
     ]
   },
   "115": {
@@ -1698,8 +1698,8 @@
     "jobs": [
       "ARC",
       "BRD",
-      "DNC",
-      "MCH"
+      "MCH",
+      "DNC"
     ]
   },
   "116": {
@@ -1708,12 +1708,12 @@
     "de": "THM SMA HRT BSW RMA BMA",
     "fr": "OCC MNO ACN INV MRG MBU",
     "jobs": [
-      "ACN",
+      "THM",
       "BLM",
-      "BLU",
-      "RDM",
+      "ACN",
       "SMN",
-      "THM"
+      "RDM",
+      "BLU"
     ]
   },
   "117": {
@@ -1722,11 +1722,11 @@
     "de": "DRU WMA GLT AST WEI",
     "fr": "ÉLM MBL ÉRU AST SAG",
     "jobs": [
-      "AST",
       "CNJ",
+      "WHM",
       "SCH",
-      "SGE",
-      "WHM"
+      "AST",
+      "SGE"
     ]
   },
   "118": {
@@ -1735,18 +1735,18 @@
     "de": "FST PIK WLD MÖN DRG BRD SCH NIN MCH SAM TÄN SNT",
     "fr": "PGL HAS ARC MOI DRG BRD SUR NIN MCH SAM DNS FCH",
     "jobs": [
-      "ARC",
-      "BRD",
-      "DNC",
-      "DRG",
-      "LNC",
-      "MCH",
-      "MNK",
-      "NIN",
       "PGL",
+      "LNC",
+      "ARC",
+      "MNK",
+      "DRG",
+      "BRD",
       "ROG",
-      "RPR",
-      "SAM"
+      "NIN",
+      "MCH",
+      "SAM",
+      "DNC",
+      "RPR"
     ]
   },
   "119": {
@@ -1755,20 +1755,20 @@
     "de": "FST PIK THM MÖN DRG SMA HRT BSW SCH NIN SAM RMA BMA SNT",
     "fr": "PGL HAS OCC MOI DRG MNO ACN INV SUR NIN SAM MRG MBU FCH",
     "jobs": [
-      "ACN",
-      "BLM",
-      "BLU",
-      "DRG",
-      "LNC",
-      "MNK",
-      "NIN",
       "PGL",
-      "RDM",
-      "ROG",
-      "RPR",
-      "SAM",
+      "LNC",
+      "THM",
+      "MNK",
+      "DRG",
+      "BLM",
+      "ACN",
       "SMN",
-      "THM"
+      "ROG",
+      "NIN",
+      "SAM",
+      "RDM",
+      "BLU",
+      "RPR"
     ]
   },
   "120": {
@@ -1777,17 +1777,17 @@
     "de": "DRU THM WMA SMA HRT BSW SCH AST RMA BMA WEI",
     "fr": "ÉLM OCC MBL MNO ACN INV ÉRU AST MRG MBU SAG",
     "jobs": [
-      "ACN",
-      "AST",
-      "BLM",
-      "BLU",
       "CNJ",
-      "RDM",
-      "SCH",
-      "SGE",
-      "SMN",
       "THM",
-      "WHM"
+      "WHM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "SCH",
+      "AST",
+      "RDM",
+      "BLU",
+      "SGE"
     ]
   },
   "121": {
@@ -1796,10 +1796,10 @@
     "de": "PLD KRG DKR REV",
     "fr": "PLD GUE CHN PSB",
     "jobs": [
-      "DRK",
-      "GNB",
       "PLD",
-      "WAR"
+      "WAR",
+      "DRK",
+      "GNB"
     ]
   },
   "122": {
@@ -1808,11 +1808,11 @@
     "de": "MÖN DRG NIN SAM SNT",
     "fr": "MOI DRG NIN SAM FCH",
     "jobs": [
-      "DRG",
       "MNK",
+      "DRG",
       "NIN",
-      "RPR",
-      "SAM"
+      "SAM",
+      "RPR"
     ]
   },
   "123": {
@@ -1822,8 +1822,8 @@
     "fr": "BRD MCH DNS",
     "jobs": [
       "BRD",
-      "DNC",
-      "MCH"
+      "MCH",
+      "DNC"
     ]
   },
   "124": {
@@ -1833,9 +1833,9 @@
     "fr": "MNO INV MRG MBU",
     "jobs": [
       "BLM",
-      "BLU",
+      "SMN",
       "RDM",
-      "SMN"
+      "BLU"
     ]
   },
   "125": {
@@ -1844,10 +1844,10 @@
     "de": "WMA GLT AST WEI",
     "fr": "MBL ÉRU AST SAG",
     "jobs": [
-      "AST",
+      "WHM",
       "SCH",
-      "SGE",
-      "WHM"
+      "AST",
+      "SGE"
     ]
   },
   "126": {
@@ -1856,14 +1856,14 @@
     "de": "MÖN DRG BRD NIN MCH SAM TÄN SNT",
     "fr": "MOI DRG BRD NIN MCH SAM DNS FCH",
     "jobs": [
-      "BRD",
-      "DNC",
-      "DRG",
-      "MCH",
       "MNK",
+      "DRG",
+      "BRD",
       "NIN",
-      "RPR",
-      "SAM"
+      "MCH",
+      "SAM",
+      "DNC",
+      "RPR"
     ]
   },
   "127": {
@@ -1872,15 +1872,15 @@
     "de": "MÖN DRG SMA BSW NIN SAM RMA BMA SNT",
     "fr": "MOI DRG MNO INV NIN SAM MRG MBU FCH",
     "jobs": [
-      "BLM",
-      "BLU",
-      "DRG",
       "MNK",
+      "DRG",
+      "BLM",
+      "SMN",
       "NIN",
-      "RDM",
-      "RPR",
       "SAM",
-      "SMN"
+      "RDM",
+      "BLU",
+      "RPR"
     ]
   },
   "128": {
@@ -1889,14 +1889,14 @@
     "de": "WMA SMA BSW GLT AST RMA BMA WEI",
     "fr": "MBL MNO INV ÉRU AST MRG MBU SAG",
     "jobs": [
-      "AST",
+      "WHM",
       "BLM",
-      "BLU",
-      "RDM",
-      "SCH",
-      "SGE",
       "SMN",
-      "WHM"
+      "SCH",
+      "AST",
+      "RDM",
+      "BLU",
+      "SGE"
     ]
   },
   "129": {
@@ -1914,46 +1914,46 @@
     "de": "Alle Klassen und Jobs (außer beschränkte Jobs)",
     "fr": "Toutes classes et jobs (sauf jobs restreints)",
     "jobs": [
-      "ACN",
       "ADV",
-      "ALC",
-      "ARC",
-      "ARM",
-      "AST",
-      "BLM",
-      "BRD",
-      "BSM",
-      "BTN",
-      "CNJ",
-      "CRP",
-      "CUL",
-      "DNC",
-      "DRG",
-      "DRK",
-      "FSH",
       "GLA",
-      "GNB",
-      "GSM",
-      "LNC",
-      "LTW",
-      "MCH",
-      "MIN",
-      "MNK",
-      "MRD",
-      "NIN",
       "PGL",
-      "PLD",
-      "RDM",
-      "ROG",
-      "RPR",
-      "SAM",
-      "SCH",
-      "SGE",
-      "SMN",
+      "MRD",
+      "LNC",
+      "ARC",
+      "CNJ",
       "THM",
+      "CRP",
+      "BSM",
+      "ARM",
+      "GSM",
+      "LTW",
+      "WVR",
+      "ALC",
+      "CUL",
+      "MIN",
+      "BTN",
+      "FSH",
+      "PLD",
+      "MNK",
       "WAR",
+      "DRG",
+      "BRD",
       "WHM",
-      "WVR"
+      "BLM",
+      "ACN",
+      "SMN",
+      "SCH",
+      "ROG",
+      "NIN",
+      "MCH",
+      "DRK",
+      "AST",
+      "SAM",
+      "RDM",
+      "GNB",
+      "DNC",
+      "RPR",
+      "SGE"
     ]
   },
   "131": {
@@ -1962,17 +1962,17 @@
     "de": "MÖN DRG BRD SMA BSW NIN MCH SAM RMA TÄN SNT",
     "fr": "MOI DRG BRD MNO INV NIN MCH SAM MRG DNS FCH",
     "jobs": [
-      "BLM",
-      "BRD",
-      "DNC",
-      "DRG",
-      "MCH",
       "MNK",
+      "DRG",
+      "BRD",
+      "BLM",
+      "SMN",
       "NIN",
-      "RDM",
-      "RPR",
+      "MCH",
       "SAM",
-      "SMN"
+      "RDM",
+      "DNC",
+      "RPR"
     ]
   },
   "132": {
@@ -1981,21 +1981,21 @@
     "de": "MÖN DRG BRD WMA SMA BSW GLT NIN MCH AST SAM RMA TÄN SNT WEI",
     "fr": "MOI DRG BRD MBL MNO INV ÉRU NIN MCH AST SAM MRG DNS FCH SAG",
     "jobs": [
-      "AST",
-      "BLM",
-      "BRD",
-      "DNC",
-      "DRG",
-      "MCH",
       "MNK",
-      "NIN",
-      "RDM",
-      "RPR",
-      "SAM",
-      "SCH",
-      "SGE",
+      "DRG",
+      "BRD",
+      "WHM",
+      "BLM",
       "SMN",
-      "WHM"
+      "SCH",
+      "NIN",
+      "MCH",
+      "AST",
+      "SAM",
+      "RDM",
+      "DNC",
+      "RPR",
+      "SGE"
     ]
   },
   "133": {
@@ -2004,10 +2004,10 @@
     "de": "WMA GLT AST WEI",
     "fr": "MBL ÉRU AST SAG",
     "jobs": [
-      "AST",
+      "WHM",
       "SCH",
-      "SGE",
-      "WHM"
+      "AST",
+      "SGE"
     ]
   },
   "134": {
@@ -2016,10 +2016,10 @@
     "de": "PLD KRG DKR REV",
     "fr": "PLD GUE CHN PSB",
     "jobs": [
-      "DRK",
-      "GNB",
       "PLD",
-      "WAR"
+      "WAR",
+      "DRK",
+      "GNB"
     ]
   },
   "135": {
@@ -2028,21 +2028,21 @@
     "de": "PLD MÖN KRG DRG BRD SMA BSW NIN MCH DKR SAM RMA REV TÄN SNT",
     "fr": "PLD MOI GUE DRG BRD MNO INV NIN MCH CHN SAM MRG PSB DNS FCH",
     "jobs": [
-      "BLM",
-      "BRD",
-      "DNC",
-      "DRG",
-      "DRK",
-      "GNB",
-      "MCH",
-      "MNK",
-      "NIN",
       "PLD",
-      "RDM",
-      "RPR",
-      "SAM",
+      "MNK",
+      "WAR",
+      "DRG",
+      "BRD",
+      "BLM",
       "SMN",
-      "WAR"
+      "NIN",
+      "MCH",
+      "DRK",
+      "SAM",
+      "RDM",
+      "GNB",
+      "DNC",
+      "RPR"
     ]
   },
   "136": {
@@ -2051,14 +2051,14 @@
     "de": "PLD KRG WMA GLT DKR AST REV WEI",
     "fr": "PLD GUE MBL ÉRU CHN AST PSB SAG",
     "jobs": [
-      "AST",
-      "DRK",
-      "GNB",
       "PLD",
-      "SCH",
-      "SGE",
       "WAR",
-      "WHM"
+      "WHM",
+      "SCH",
+      "DRK",
+      "AST",
+      "GNB",
+      "SGE"
     ]
   },
   "137": {
@@ -2067,25 +2067,25 @@
     "de": "PLD MÖN KRG DRG BRD WMA SMA BSW GLT NIN MCH DKR AST SAM RMA REV TÄN SNT WEI",
     "fr": "PLD MOI GUE DRG BRD MBL MNO INV ÉRU NIN MCH CHN AST SAM MRG PSB DNS FCH SAG",
     "jobs": [
-      "AST",
-      "BLM",
-      "BRD",
-      "DNC",
-      "DRG",
-      "DRK",
-      "GNB",
-      "MCH",
-      "MNK",
-      "NIN",
       "PLD",
-      "RDM",
-      "RPR",
-      "SAM",
-      "SCH",
-      "SGE",
-      "SMN",
+      "MNK",
       "WAR",
-      "WHM"
+      "DRG",
+      "BRD",
+      "WHM",
+      "BLM",
+      "SMN",
+      "SCH",
+      "NIN",
+      "MCH",
+      "DRK",
+      "AST",
+      "SAM",
+      "RDM",
+      "GNB",
+      "DNC",
+      "RPR",
+      "SGE"
     ]
   },
   "138": {
@@ -2094,15 +2094,15 @@
     "de": "PLD MÖN KRG DRG NIN DKR SAM REV SNT",
     "fr": "PLD MOI GUE DRG NIN CHN SAM PSB FCH",
     "jobs": [
-      "DRG",
-      "DRK",
-      "GNB",
-      "MNK",
-      "NIN",
       "PLD",
-      "RPR",
+      "MNK",
+      "WAR",
+      "DRG",
+      "NIN",
+      "DRK",
       "SAM",
-      "WAR"
+      "GNB",
+      "RPR"
     ]
   },
   "139": {
@@ -2112,8 +2112,8 @@
     "fr": "BRD MCH DNS",
     "jobs": [
       "BRD",
-      "DNC",
-      "MCH"
+      "MCH",
+      "DNC"
     ]
   },
   "140": {
@@ -2122,13 +2122,13 @@
     "de": "WMA SMA BSW GLT AST RMA WEI",
     "fr": "MBL MNO INV ÉRU AST MRG SAG",
     "jobs": [
-      "AST",
+      "WHM",
       "BLM",
-      "RDM",
-      "SCH",
-      "SGE",
       "SMN",
-      "WHM"
+      "SCH",
+      "AST",
+      "RDM",
+      "SGE"
     ]
   },
   "141": {
@@ -2137,24 +2137,24 @@
     "de": "PLD MÖN KRG DRG BRD WMA SMA BSW GLT MCH DKR AST SAM RMA REV TÄN SNT WEI",
     "fr": "PLD MOI GUE DRG BRD MBL MNO INV ÉRU MCH CHN AST SAM MRG PSB DNS FCH SAG",
     "jobs": [
-      "AST",
-      "BLM",
-      "BRD",
-      "DNC",
-      "DRG",
-      "DRK",
-      "GNB",
-      "MCH",
-      "MNK",
       "PLD",
-      "RDM",
-      "RPR",
-      "SAM",
-      "SCH",
-      "SGE",
-      "SMN",
+      "MNK",
       "WAR",
-      "WHM"
+      "DRG",
+      "BRD",
+      "WHM",
+      "BLM",
+      "SMN",
+      "SCH",
+      "MCH",
+      "DRK",
+      "AST",
+      "SAM",
+      "RDM",
+      "GNB",
+      "DNC",
+      "RPR",
+      "SGE"
     ]
   },
   "142": {
@@ -2163,34 +2163,34 @@
     "de": "Krieger oder Magier (außer beschränkte Jobs)",
     "fr": "Combattants et mages (sauf jobs restreints)",
     "jobs": [
-      "ACN",
-      "ARC",
-      "AST",
-      "BLM",
-      "BRD",
-      "CNJ",
-      "DNC",
-      "DRG",
-      "DRK",
       "GLA",
-      "GNB",
-      "LNC",
-      "MCH",
-      "MNK",
-      "MRD",
-      "NIN",
       "PGL",
-      "PLD",
-      "RDM",
-      "ROG",
-      "RPR",
-      "SAM",
-      "SCH",
-      "SGE",
-      "SMN",
+      "MRD",
+      "LNC",
+      "ARC",
+      "CNJ",
       "THM",
+      "PLD",
+      "MNK",
       "WAR",
-      "WHM"
+      "DRG",
+      "BRD",
+      "WHM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "SCH",
+      "ROG",
+      "NIN",
+      "MCH",
+      "DRK",
+      "AST",
+      "SAM",
+      "RDM",
+      "GNB",
+      "DNC",
+      "RPR",
+      "SGE"
     ]
   },
   "143": {
@@ -2199,24 +2199,24 @@
     "de": "Krieger (außer beschränkte Jobs)",
     "fr": "Combattants (sauf jobs restreints)",
     "jobs": [
-      "ARC",
-      "BRD",
-      "DNC",
-      "DRG",
-      "DRK",
       "GLA",
-      "GNB",
-      "LNC",
-      "MCH",
-      "MNK",
-      "MRD",
-      "NIN",
       "PGL",
+      "MRD",
+      "LNC",
+      "ARC",
       "PLD",
+      "MNK",
+      "WAR",
+      "DRG",
+      "BRD",
       "ROG",
-      "RPR",
+      "NIN",
+      "MCH",
+      "DRK",
       "SAM",
-      "WAR"
+      "GNB",
+      "DNC",
+      "RPR"
     ]
   },
   "144": {
@@ -2225,16 +2225,16 @@
     "de": "Magier (außer beschränkte Jobs)",
     "fr": "Mages (sauf jobs restreints)",
     "jobs": [
-      "ACN",
-      "AST",
-      "BLM",
       "CNJ",
-      "RDM",
-      "SCH",
-      "SGE",
-      "SMN",
       "THM",
-      "WHM"
+      "WHM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "SCH",
+      "AST",
+      "RDM",
+      "SGE"
     ]
   },
   "145": {
@@ -2243,18 +2243,18 @@
     "de": "PLD MÖN KRG DRG BRD NIN MCH DKR SAM REV TÄN SNT",
     "fr": "PLD MOI GUE DRG BRD NIN MCH CHN SAM PSB DNS FCH",
     "jobs": [
-      "BRD",
-      "DNC",
-      "DRG",
-      "DRK",
-      "GNB",
-      "MCH",
-      "MNK",
-      "NIN",
       "PLD",
-      "RPR",
+      "MNK",
+      "WAR",
+      "DRG",
+      "BRD",
+      "NIN",
+      "MCH",
+      "DRK",
       "SAM",
-      "WAR"
+      "GNB",
+      "DNC",
+      "RPR"
     ]
   },
   "146": {
@@ -2263,25 +2263,25 @@
     "de": "Krieger- oder Magier-Job (außer beschränkte Jobs)",
     "fr": "Jobs de combattant ou mage (sauf jobs restreints)",
     "jobs": [
-      "AST",
-      "BLM",
-      "BRD",
-      "DNC",
-      "DRG",
-      "DRK",
-      "GNB",
-      "MCH",
-      "MNK",
-      "NIN",
       "PLD",
-      "RDM",
-      "RPR",
-      "SAM",
-      "SCH",
-      "SGE",
-      "SMN",
+      "MNK",
       "WAR",
-      "WHM"
+      "DRG",
+      "BRD",
+      "WHM",
+      "BLM",
+      "SMN",
+      "SCH",
+      "NIN",
+      "MCH",
+      "DRK",
+      "AST",
+      "SAM",
+      "RDM",
+      "GNB",
+      "DNC",
+      "RPR",
+      "SGE"
     ]
   },
   "147": {
@@ -2291,8 +2291,8 @@
     "fr": "MNO INV MRG",
     "jobs": [
       "BLM",
-      "RDM",
-      "SMN"
+      "SMN",
+      "RDM"
     ]
   },
   "148": {
@@ -2301,11 +2301,11 @@
     "de": "MÖN DRG NIN SAM SNT",
     "fr": "MOI DRG NIN SAM FCH",
     "jobs": [
-      "DRG",
       "MNK",
+      "DRG",
       "NIN",
-      "RPR",
-      "SAM"
+      "SAM",
+      "RPR"
     ]
   },
   "149": {
@@ -2332,8 +2332,8 @@
     "de": "GRS, PLA, GLD",
     "fr": "FRG ARM ORF",
     "jobs": [
-      "ARM",
       "BSM",
+      "ARM",
       "GSM"
     ]
   },
@@ -2364,8 +2364,8 @@
     "de": "MIN, GÄR",
     "fr": "MIN BOT",
     "jobs": [
-      "BTN",
-      "MIN"
+      "MIN",
+      "BTN"
     ]
   },
   "155": {
@@ -2383,10 +2383,10 @@
     "de": "Verteidiger (außer beschränkte Jobs)",
     "fr": "Tanks (sauf jobs restreints)",
     "jobs": [
-      "DRK",
-      "GNB",
       "PLD",
-      "WAR"
+      "WAR",
+      "DRK",
+      "GNB"
     ]
   },
   "157": {
@@ -2395,10 +2395,10 @@
     "de": "Heiler (außer beschränkte Jobs)",
     "fr": "Soigneurs (sauf jobs restreints)",
     "jobs": [
-      "AST",
+      "WHM",
       "SCH",
-      "SGE",
-      "WHM"
+      "AST",
+      "SGE"
     ]
   },
   "158": {
@@ -2407,14 +2407,14 @@
     "de": "Physischer Angreifer (außer beschränkte Jobs)",
     "fr": "DPS physiques (sauf jobs restreints)",
     "jobs": [
-      "BRD",
-      "DNC",
-      "DRG",
-      "MCH",
       "MNK",
+      "DRG",
+      "BRD",
       "NIN",
-      "RPR",
-      "SAM"
+      "MCH",
+      "SAM",
+      "DNC",
+      "RPR"
     ]
   },
   "159": {
@@ -2424,8 +2424,8 @@
     "fr": "DPS magiques (sauf jobs restreints)",
     "jobs": [
       "BLM",
-      "RDM",
-      "SMN"
+      "SMN",
+      "RDM"
     ]
   },
   "160": {
@@ -2444,49 +2444,49 @@
     "de": "GLA MAR FST PIK WLD PLD MÖN KRG DRG BRD SCH NIN MCH DKR SAM REV TÄN SNT",
     "fr": "GLA PGL MRD HAS ARC PLD MOI GUE DRG BRD SUR NIN MCH CHN SAM PSB DNS FCH",
     "jobs": [
-      "ARC",
-      "BRD",
-      "DNC",
-      "DRG",
-      "DRK",
       "GLA",
-      "GNB",
-      "LNC",
-      "MCH",
-      "MNK",
-      "MRD",
-      "NIN",
       "PGL",
+      "MRD",
+      "LNC",
+      "ARC",
       "PLD",
+      "MNK",
+      "WAR",
+      "DRG",
+      "BRD",
       "ROG",
-      "RPR",
+      "NIN",
+      "MCH",
+      "DRK",
       "SAM",
-      "WAR"
+      "GNB",
+      "DNC",
+      "RPR"
     ]
   },
   "162": {
     "en": "PLD MNK WAR DRG BRD WHM BLM SMN SCH NIN MCH DRK AST SAM RDM GNB DNC",
-    "ja": "ナイト モンク 戦士 竜騎士 吟遊詩人 白魔道士 黒魔道士 召喚士 学者 \n\n忍者 機工士 暗黒騎士 占星術師 侍 赤魔道士 ガンブレイカー 踊り子",
+    "ja": "ナイト モンク 戦士 竜騎士 吟遊詩人 白魔道士 黒魔道士 召喚士 学者 <br>忍者 機工士 暗黒騎士 占星術師 侍 赤魔道士 ガンブレイカー 踊り子",
     "de": "PLD MÖN KRG DRG BRD WMA SMA BSW GLT NIN MCH DKR AST SAM RMA REV TÄN",
     "fr": "PLD MOI GUE DRG BRD MBL MNO INV ÉRU NIN MCH CHN AST SAM MRG PSB DNS",
     "jobs": [
-      "AST",
-      "BLM",
-      "BRD",
-      "DNC",
-      "DRG",
-      "DRK",
-      "GNB",
-      "MCH",
-      "MNK",
-      "NIN",
       "PLD",
-      "RDM",
-      "SAM",
-      "SCH",
-      "SMN",
+      "MNK",
       "WAR",
-      "WHM"
+      "DRG",
+      "BRD",
+      "WHM",
+      "BLM",
+      "SMN",
+      "SCH",
+      "NIN",
+      "MCH",
+      "DRK",
+      "AST",
+      "SAM",
+      "RDM",
+      "GNB",
+      "DNC"
     ]
   },
   "163": {
@@ -2495,17 +2495,17 @@
     "de": "MÖN DRG BRD SMA BSW NIN MCH SAM RMA TÄN SNT",
     "fr": "MOI DRG BRD MNO INV NIN MCH SAM MRG DNS FCH",
     "jobs": [
-      "BLM",
-      "BRD",
-      "DNC",
-      "DRG",
-      "MCH",
       "MNK",
+      "DRG",
+      "BRD",
+      "BLM",
+      "SMN",
       "NIN",
-      "RDM",
-      "RPR",
+      "MCH",
       "SAM",
-      "SMN"
+      "RDM",
+      "DNC",
+      "RPR"
     ]
   },
   "164": {
@@ -2514,21 +2514,21 @@
     "de": "MÖN DRG BRD WMA SMA BSW GLT NIN MCH AST SAM RMA TÄN SNT WEI",
     "fr": "MOI DRG BRD MBL MNO INV ÉRU NIN MCH AST SAM MRG DNS FCH SAG",
     "jobs": [
-      "AST",
-      "BLM",
-      "BRD",
-      "DNC",
-      "DRG",
-      "MCH",
       "MNK",
-      "NIN",
-      "RDM",
-      "RPR",
-      "SAM",
-      "SCH",
-      "SGE",
+      "DRG",
+      "BRD",
+      "WHM",
+      "BLM",
       "SMN",
-      "WHM"
+      "SCH",
+      "NIN",
+      "MCH",
+      "AST",
+      "SAM",
+      "RDM",
+      "DNC",
+      "RPR",
+      "SGE"
     ]
   },
   "165": {
@@ -2537,10 +2537,10 @@
     "de": "WMA GLT AST WEI",
     "fr": "MBL ÉRU AST SAG",
     "jobs": [
-      "AST",
+      "WHM",
       "SCH",
-      "SGE",
-      "WHM"
+      "AST",
+      "SGE"
     ]
   },
   "166": {
@@ -2549,10 +2549,10 @@
     "de": "PLD KRG DKR REV",
     "fr": "PLD GUE CHN PSB",
     "jobs": [
-      "DRK",
-      "GNB",
       "PLD",
-      "WAR"
+      "WAR",
+      "DRK",
+      "GNB"
     ]
   },
   "167": {
@@ -2561,21 +2561,21 @@
     "de": "PLD MÖN KRG DRG BRD SMA BSW NIN MCH DKR SAM RMA REV TÄN SNT",
     "fr": "PLD MOI GUE DRG BRD MNO INV NIN MCH CHN SAM MRG PSB DNS FCH",
     "jobs": [
-      "BLM",
-      "BRD",
-      "DNC",
-      "DRG",
-      "DRK",
-      "GNB",
-      "MCH",
-      "MNK",
-      "NIN",
       "PLD",
-      "RDM",
-      "RPR",
-      "SAM",
+      "MNK",
+      "WAR",
+      "DRG",
+      "BRD",
+      "BLM",
       "SMN",
-      "WAR"
+      "NIN",
+      "MCH",
+      "DRK",
+      "SAM",
+      "RDM",
+      "GNB",
+      "DNC",
+      "RPR"
     ]
   },
   "168": {
@@ -2584,14 +2584,14 @@
     "de": "PLD KRG WMA GLT DKR AST REV WEI",
     "fr": "PLD GUE MBL ÉRU CHN AST PSB SAG",
     "jobs": [
-      "AST",
-      "DRK",
-      "GNB",
       "PLD",
-      "SCH",
-      "SGE",
       "WAR",
-      "WHM"
+      "WHM",
+      "SCH",
+      "DRK",
+      "AST",
+      "GNB",
+      "SGE"
     ]
   },
   "169": {
@@ -2600,25 +2600,25 @@
     "de": "PLD MÖN KRG DRG BRD WMA SMA BSW GLT NIN MCH DKR AST SAM RMA REV TÄN SNT WEI",
     "fr": "PLD MOI GUE DRG BRD MBL MNO INV ÉRU NIN MCH CHN AST SAM MRG PSB DNS FCH SAG",
     "jobs": [
-      "AST",
-      "BLM",
-      "BRD",
-      "DNC",
-      "DRG",
-      "DRK",
-      "GNB",
-      "MCH",
-      "MNK",
-      "NIN",
       "PLD",
-      "RDM",
-      "RPR",
-      "SAM",
-      "SCH",
-      "SGE",
-      "SMN",
+      "MNK",
       "WAR",
-      "WHM"
+      "DRG",
+      "BRD",
+      "WHM",
+      "BLM",
+      "SMN",
+      "SCH",
+      "NIN",
+      "MCH",
+      "DRK",
+      "AST",
+      "SAM",
+      "RDM",
+      "GNB",
+      "DNC",
+      "RPR",
+      "SGE"
     ]
   },
   "170": {
@@ -2627,15 +2627,15 @@
     "de": "PLD MÖN KRG DRG NIN DKR SAM REV SNT",
     "fr": "PLD MOI GUE DRG NIN CHN SAM PSB FCH",
     "jobs": [
-      "DRG",
-      "DRK",
-      "GNB",
-      "MNK",
-      "NIN",
       "PLD",
-      "RPR",
+      "MNK",
+      "WAR",
+      "DRG",
+      "NIN",
+      "DRK",
       "SAM",
-      "WAR"
+      "GNB",
+      "RPR"
     ]
   },
   "171": {
@@ -2645,8 +2645,8 @@
     "fr": "BRD MCH DNS",
     "jobs": [
       "BRD",
-      "DNC",
-      "MCH"
+      "MCH",
+      "DNC"
     ]
   },
   "172": {
@@ -2655,13 +2655,13 @@
     "de": "WMA SMA BSW GLT AST RMA WEI",
     "fr": "MBL MNO INV ÉRU AST MRG SAG",
     "jobs": [
-      "AST",
+      "WHM",
       "BLM",
-      "RDM",
-      "SCH",
-      "SGE",
       "SMN",
-      "WHM"
+      "SCH",
+      "AST",
+      "RDM",
+      "SGE"
     ]
   },
   "173": {
@@ -2670,24 +2670,24 @@
     "de": "PLD MÖN KRG DRG BRD WMA SMA BSW GLT MCH DKR AST SAM RMA REV TÄN SNT WEI",
     "fr": "PLD MOI GUE DRG BRD MBL MNO INV ÉRU MCH CHN AST SAM MRG PSB DNS FCH SAG",
     "jobs": [
-      "AST",
-      "BLM",
-      "BRD",
-      "DNC",
-      "DRG",
-      "DRK",
-      "GNB",
-      "MCH",
-      "MNK",
       "PLD",
-      "RDM",
-      "RPR",
-      "SAM",
-      "SCH",
-      "SGE",
-      "SMN",
+      "MNK",
       "WAR",
-      "WHM"
+      "DRG",
+      "BRD",
+      "WHM",
+      "BLM",
+      "SMN",
+      "SCH",
+      "MCH",
+      "DRK",
+      "AST",
+      "SAM",
+      "RDM",
+      "GNB",
+      "DNC",
+      "RPR",
+      "SGE"
     ]
   },
   "174": {
@@ -2696,18 +2696,18 @@
     "de": "PLD MÖN KRG DRG BRD NIN MCH DKR SAM REV TÄN SNT",
     "fr": "PLD MOI GUE DRG BRD NIN MCH CHN SAM PSB DNS FCH",
     "jobs": [
-      "BRD",
-      "DNC",
-      "DRG",
-      "DRK",
-      "GNB",
-      "MCH",
-      "MNK",
-      "NIN",
       "PLD",
-      "RPR",
+      "MNK",
+      "WAR",
+      "DRG",
+      "BRD",
+      "NIN",
+      "MCH",
+      "DRK",
       "SAM",
-      "WAR"
+      "GNB",
+      "DNC",
+      "RPR"
     ]
   },
   "175": {
@@ -2717,8 +2717,8 @@
     "fr": "MNO INV MRG",
     "jobs": [
       "BLM",
-      "RDM",
-      "SMN"
+      "SMN",
+      "RDM"
     ]
   },
   "176": {
@@ -2727,11 +2727,11 @@
     "de": "MÖN DRG NIN SAM SNT",
     "fr": "MOI DRG NIN SAM FCH",
     "jobs": [
-      "DRG",
       "MNK",
+      "DRG",
       "NIN",
-      "RPR",
-      "SAM"
+      "SAM",
+      "RPR"
     ]
   },
   "177": {
@@ -2740,14 +2740,14 @@
     "de": "MÖN DRG BRD NIN MCH SAM TÄN SNT",
     "fr": "MOI DRG BRD NIN MCH SAM DNS FCH",
     "jobs": [
-      "BRD",
-      "DNC",
-      "DRG",
-      "MCH",
       "MNK",
+      "DRG",
+      "BRD",
       "NIN",
-      "RPR",
-      "SAM"
+      "MCH",
+      "SAM",
+      "DNC",
+      "RPR"
     ]
   },
   "178": {
@@ -2756,13 +2756,13 @@
     "de": "PLD KRG SMA BSW DKR RMA REV",
     "fr": "PLD GUE MNO INV CHN MRG PSB",
     "jobs": [
-      "BLM",
-      "DRK",
-      "GNB",
       "PLD",
-      "RDM",
+      "WAR",
+      "BLM",
       "SMN",
-      "WAR"
+      "DRK",
+      "RDM",
+      "GNB"
     ]
   },
   "179": {
@@ -2771,12 +2771,12 @@
     "de": "WMA BSW GLT AST RMA WEI",
     "fr": "MBL INV ÉRU AST MRG SAG",
     "jobs": [
+      "WHM",
+      "SMN",
+      "SCH",
       "AST",
       "RDM",
-      "SCH",
-      "SGE",
-      "SMN",
-      "WHM"
+      "SGE"
     ]
   },
   "180": {
@@ -2803,12 +2803,12 @@
     "de": "",
     "fr": "",
     "jobs": [
-      "DRK",
       "GLA",
-      "GNB",
       "MRD",
       "PLD",
-      "WAR"
+      "WAR",
+      "DRK",
+      "GNB"
     ]
   },
   "183": {
@@ -2817,11 +2817,11 @@
     "de": "",
     "fr": "",
     "jobs": [
-      "AST",
       "CNJ",
+      "WHM",
       "SCH",
-      "SGE",
-      "WHM"
+      "AST",
+      "SGE"
     ]
   },
   "184": {
@@ -2830,18 +2830,18 @@
     "de": "",
     "fr": "",
     "jobs": [
-      "ARC",
-      "BRD",
-      "DNC",
-      "DRG",
-      "LNC",
-      "MCH",
-      "MNK",
-      "NIN",
       "PGL",
+      "LNC",
+      "ARC",
+      "MNK",
+      "DRG",
+      "BRD",
       "ROG",
-      "RPR",
-      "SAM"
+      "NIN",
+      "MCH",
+      "SAM",
+      "DNC",
+      "RPR"
     ]
   },
   "185": {
@@ -2850,11 +2850,11 @@
     "de": "",
     "fr": "",
     "jobs": [
-      "ACN",
+      "THM",
       "BLM",
-      "RDM",
+      "ACN",
       "SMN",
-      "THM"
+      "RDM"
     ]
   },
   "186": {
@@ -2863,10 +2863,10 @@
     "de": "Verteidiger (außer beschränkte Jobs)",
     "fr": "Tanks (sauf jobs restreints)",
     "jobs": [
-      "DRK",
-      "GNB",
       "PLD",
-      "WAR"
+      "WAR",
+      "DRK",
+      "GNB"
     ]
   },
   "187": {
@@ -2875,10 +2875,10 @@
     "de": "Heiler (außer beschränkte Jobs)",
     "fr": "Soigneurs (sauf jobs restreints)",
     "jobs": [
-      "AST",
+      "WHM",
       "SCH",
-      "SGE",
-      "WHM"
+      "AST",
+      "SGE"
     ]
   },
   "188": {
@@ -2887,11 +2887,11 @@
     "de": "Nahkampf-Angreifer (außer beschränkte Jobs)",
     "fr": "DPS physiques de mêlée (sauf jobs restreints)",
     "jobs": [
-      "DRG",
       "MNK",
+      "DRG",
       "NIN",
-      "RPR",
-      "SAM"
+      "SAM",
+      "RPR"
     ]
   },
   "189": {
@@ -2901,8 +2901,8 @@
     "fr": "DPS physiques à distance (sauf jobs restreints)",
     "jobs": [
       "BRD",
-      "DNC",
-      "MCH"
+      "MCH",
+      "DNC"
     ]
   },
   "190": {
@@ -2912,8 +2912,8 @@
     "fr": "DPS magiques à distance (sauf jobs restreints)",
     "jobs": [
       "BLM",
-      "RDM",
-      "SMN"
+      "SMN",
+      "RDM"
     ]
   },
   "191": {
@@ -2922,25 +2922,25 @@
     "de": "PLD MÖN KRG DRG BRD WMA SMA BSW GLT NIN MCH DKR AST SAM RMA REV TÄN SNT WIE",
     "fr": "PLD MOI GUE DRG BRD MBL MNO INV ÉRU NIN MCH CHN AST SAM MRG PSB DNS FCH SAG",
     "jobs": [
-      "AST",
-      "BLM",
-      "BRD",
-      "DNC",
-      "DRG",
-      "DRK",
-      "GNB",
-      "MCH",
-      "MNK",
-      "NIN",
       "PLD",
-      "RDM",
-      "RPR",
-      "SAM",
-      "SCH",
-      "SGE",
-      "SMN",
+      "MNK",
       "WAR",
-      "WHM"
+      "DRG",
+      "BRD",
+      "WHM",
+      "BLM",
+      "SMN",
+      "SCH",
+      "NIN",
+      "MCH",
+      "DRK",
+      "AST",
+      "SAM",
+      "RDM",
+      "GNB",
+      "DNC",
+      "RPR",
+      "SGE"
     ]
   },
   "192": {
@@ -2949,34 +2949,34 @@
     "de": "Krieger oder Magier (außer beschränkte Jobs)",
     "fr": "Combattants et mages (sauf jobs restreints)",
     "jobs": [
-      "ACN",
-      "ARC",
-      "AST",
-      "BLM",
-      "BRD",
-      "CNJ",
-      "DNC",
-      "DRG",
-      "DRK",
       "GLA",
-      "GNB",
-      "LNC",
-      "MCH",
-      "MNK",
-      "MRD",
-      "NIN",
       "PGL",
-      "PLD",
-      "RDM",
-      "ROG",
-      "RPR",
-      "SAM",
-      "SCH",
-      "SGE",
-      "SMN",
+      "MRD",
+      "LNC",
+      "ARC",
+      "CNJ",
       "THM",
+      "PLD",
+      "MNK",
       "WAR",
-      "WHM"
+      "DRG",
+      "BRD",
+      "WHM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "SCH",
+      "ROG",
+      "NIN",
+      "MCH",
+      "DRK",
+      "AST",
+      "SAM",
+      "RDM",
+      "GNB",
+      "DNC",
+      "RPR",
+      "SGE"
     ]
   },
   "193": {
@@ -2985,28 +2985,28 @@
     "de": "FST PIK WDL SCH DRU THM HRT MÖN DRG BRD WMA SMA BSW GLT NIN MCH AST SAM RMA TÄN SNT WEI",
     "fr": "PGL HAS ARC SUR ÉLM OCC ACN MOI DRG BRD MBL MNO INV ÉRU NIN MCH AST SAM MRG DNS FCH SAG",
     "jobs": [
-      "ACN",
-      "ARC",
-      "AST",
-      "BLM",
-      "BRD",
-      "CNJ",
-      "DNC",
-      "DRG",
-      "LNC",
-      "MCH",
-      "MNK",
-      "NIN",
       "PGL",
-      "RDM",
-      "ROG",
-      "RPR",
-      "SAM",
-      "SCH",
-      "SGE",
-      "SMN",
+      "LNC",
+      "ARC",
+      "CNJ",
       "THM",
-      "WHM"
+      "MNK",
+      "DRG",
+      "BRD",
+      "WHM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "SCH",
+      "ROG",
+      "NIN",
+      "MCH",
+      "AST",
+      "SAM",
+      "RDM",
+      "DNC",
+      "RPR",
+      "SGE"
     ]
   },
   "194": {
@@ -3015,17 +3015,17 @@
     "de": "GLA MAR DRU PLD KRG WMA GLT DKR AST REV WEI",
     "fr": "GLA MRD ÉLM PLD GUE MBL ÉRU CHN AST PSB SAG",
     "jobs": [
-      "AST",
-      "CNJ",
-      "DRK",
       "GLA",
-      "GNB",
       "MRD",
+      "CNJ",
       "PLD",
-      "SCH",
-      "SGE",
       "WAR",
-      "WHM"
+      "WHM",
+      "SCH",
+      "DRK",
+      "AST",
+      "GNB",
+      "SGE"
     ]
   },
   "195": {
@@ -3034,29 +3034,29 @@
     "de": "GLA FST MAR PIK WDL SCH THM HRT PLD MÖN DRG BRD SMA BSW NIN MCH DKR SAM RMA REV TÄN SNT",
     "fr": "GLA PGL MRD HAS ARC SUR OCC ACN PLD MOI GUE DRG BRD MNO INV NIN MCH CHN SAM MRG PSB DNS FCH",
     "jobs": [
-      "ACN",
-      "ARC",
-      "BLM",
-      "BRD",
-      "DNC",
-      "DRG",
-      "DRK",
       "GLA",
-      "GNB",
-      "LNC",
-      "MCH",
-      "MNK",
-      "MRD",
-      "NIN",
       "PGL",
-      "PLD",
-      "RDM",
-      "ROG",
-      "RPR",
-      "SAM",
-      "SMN",
+      "MRD",
+      "LNC",
+      "ARC",
       "THM",
-      "WAR"
+      "PLD",
+      "MNK",
+      "WAR",
+      "DRG",
+      "BRD",
+      "BLM",
+      "ACN",
+      "SMN",
+      "ROG",
+      "NIN",
+      "MCH",
+      "DRK",
+      "SAM",
+      "RDM",
+      "GNB",
+      "DNC",
+      "RPR"
     ]
   }
 }

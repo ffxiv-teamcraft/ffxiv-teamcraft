@@ -1,12 +1,13 @@
+import { XivDataService } from '../xiv/xiv-data.service';
 import { AbstractExtractor } from '../abstract-extractor';
 
 export class StatsExtractor extends AbstractExtractor {
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const stats = [];
-    this.getAllPages('https://xivapi.com/BaseParam?columns=ID,Name_*').subscribe(page => {
-      page.Results.forEach(baseParam => {
+    this.getSheet<any>(xiv, 'BaseParam', ['Name']).subscribe(entries => {
+      entries.forEach(baseParam => {
         stats.push({
-          id: baseParam.ID,
+          id: baseParam.index,
           en: baseParam.Name_en,
           de: baseParam.Name_de,
           ja: baseParam.Name_ja,
@@ -14,7 +15,6 @@ export class StatsExtractor extends AbstractExtractor {
           filterName: baseParam.Name_en.split(' ').join('')
         });
       });
-    }, null, () => {
       this.persistToTypescript('stats', 'stats', stats);
       this.done();
     });

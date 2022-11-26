@@ -1,51 +1,51 @@
+import { XivDataService } from '../xiv/xiv-data.service';
 import { AbstractExtractor } from '../abstract-extractor';
 
 export class LevesExtractor extends AbstractExtractor {
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const leves = {};
     const levesPerItem = {};
-    this.getAllPages('https://xivapi.com/Leve?columns=ID,Name_*,ClassJobCategory.Name_*,ClassJobLevel,CraftLeve,ClassJobCategoryTargetID').subscribe(page => {
-      page.Results.forEach(leve => {
-        if (leve.CraftLeve) {
-          [0, 1, 2, 3]
-            .filter(i => leve.CraftLeve[`Item${i}`] !== null)
-            .forEach(i => {
-              const itemId = leve.CraftLeve[`Item${i}TargetID`];
-              levesPerItem[itemId] = [...(levesPerItem[itemId] || []), {
-                leve: leve.ID,
-                amount: leve.CraftLeve[`ItemCount${i}`],
-                lvl: leve.ClassJobLevel,
-                classJob: leve.ClassJobCategoryTargetID
-              }];
-            });
-        }
-        leves[leve.ID] = {
-          en: leve.Name_en,
-          ja: leve.Name_ja,
-          de: leve.Name_de,
-          fr: leve.Name_fr,
-          job: {
-            en: leve.ClassJobCategory.Name_en,
-            ja: leve.ClassJobCategory.Name_ja,
-            de: leve.ClassJobCategory.Name_de,
-            fr: leve.ClassJobCategory.Name_fr
-          },
-          lvl: leve.ClassJobLevel,
-          items: leve.CraftLeve ? [0, 1, 2, 3]
-            .filter(i => leve.CraftLeve[`Item${i}`] !== null)
-            .map(i => {
-              return {
-                itemId: leve.CraftLeve[`Item${i}TargetID`],
-                amount: leve.CraftLeve[`ItemCount${i}`]
-              };
-            }) : []
-        };
+    this.getSheet<any>(xiv, 'Leve', ['Name', 'ClassJobCategory.Name', 'ClassJobLevel', 'CraftLeve', 'ClassJobCategory#', 'DataId.Item#', 'DataId.ItemCount'], false, 1)
+      .subscribe(entries => {
+        entries.forEach(leve => {
+          if (leve.DataId.__sheet === 'CraftLeve') {
+            leve.DataId.Item
+              .filter(i => i > 0)
+              .forEach((itemId, i) => {
+                levesPerItem[itemId] = [...(levesPerItem[itemId] || []), {
+                  leve: leve.index,
+                  amount: leve.DataId.ItemCount[i],
+                  lvl: leve.ClassJobLevel,
+                  classJob: leve.ClassJobCategory.index
+                }];
+              });
+          }
+          leves[leve.index] = {
+            en: leve.Name_en,
+            ja: leve.Name_ja,
+            de: leve.Name_de,
+            fr: leve.Name_fr,
+            job: {
+              en: leve.ClassJobCategory.Name_en,
+              ja: leve.ClassJobCategory.Name_ja,
+              de: leve.ClassJobCategory.Name_de,
+              fr: leve.ClassJobCategory.Name_fr
+            },
+            lvl: leve.ClassJobLevel,
+            items: leve.DataId.__sheet === 'CraftLeve' ? leve.DataId.Item
+              .filter(item => item > 0)
+              .map((item, i) => {
+                return {
+                  itemId: item,
+                  amount: leve.DataId.ItemCount[i]
+                };
+              }) : []
+          };
+        });
+        this.persistToJsonAsset('leves', leves);
+        this.persistToJsonAsset('leves-per-item', levesPerItem);
+        this.done();
       });
-    }, null, () => {
-      this.persistToJsonAsset('leves', leves);
-      this.persistToJsonAsset('leves-per-item', levesPerItem);
-      this.done();
-    });
   }
 
   getName(): string {

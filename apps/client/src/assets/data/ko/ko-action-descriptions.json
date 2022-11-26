@@ -2382,7 +2382,7 @@
     "ko": "대상에게 무속성 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 150\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 데미바하무트 소환 중\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "7429": {
-    "ko": "소환 중인 데미바하무트가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>아크 몬<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행합니다.\n\n대상과 그 주위에 있는 적에게 무속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1300\n2번째 대상부터는 위력이 60% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 데미바하무트 소환 중"
+    "ko": "소환 중인 데미바하무트가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>아크 몬<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행합니다.\n\n대상과 그 주위 적에게 무속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1300\n2번째 대상부터는 위력이 60% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 데미바하무트 소환 중"
   },
   "7430": {
     "ko": "12초 안에 실행하는 기술의 MP 소비량이 1회에 한해 100% 감소합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>최대 누적수<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 2"
@@ -3876,7 +3876,7 @@
     "ko": "대상에게 무속성 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 대상이 언데드일 경우 60초 동안 받는 피해 25% 증가"
   },
   "13004": {
-    "ko": "대상과 그 주위에 있는 적에게 무속성 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 150\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 대상이 언데드일 경우 60초 동안 받는 피해 25% 증가"
+    "ko": "대상과 그 주위 적에게 무속성 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 150\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 대상이 언데드일 경우 60초 동안 받는 피해 25% 증가"
   },
   "13005": {
     "ko": "20초 동안 MP 소비량이 증가하지만, 마법 공격으로 주는 피해량이 100% 증가합니다."
@@ -4317,7 +4317,7 @@
     "ko": "소환수가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에기 공습 1<UIGlow>01</UIGlow><UIForeground>01</UIForeground>에 대응하는 기술을 실행합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>최대 누적수<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 2\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 소환수 생존 및 전투 중\n고유 재사용 대기 시간이 적용됩니다."
   },
   "16510": {
-    "ko": "대상을 중심으로 주위 적에게 무속성 범위 마법 공격을 가하고, 자신에게 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에테르 순환 2단계<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 부여합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<If(Equal(PlayerParameter(68),27))><If(GreaterThanOrEqualTo(PlayerParameter(72),62))><UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 60초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>루인쟈 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<Else/></If><Else/></If>재사용 대기 시간을 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>생명력 흡수<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 공유합니다."
+    "ko": "대상과 그 주위 적에게 무속성 범위 마법 공격을 가하고, 자신에게 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에테르 순환 2단계<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 부여합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<If(Equal(PlayerParameter(68),27))><If(GreaterThanOrEqualTo(PlayerParameter(72),62))><UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 60초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>루인쟈 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<Else/></If><Else/></If>재사용 대기 시간을 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>생명력 흡수<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 공유합니다."
   },
   "16511": {
     "ko": "대상과 그 주위 적에게 무속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100"
@@ -6306,7 +6306,7 @@
     "ko": "자신을 중심으로 주위 적에게 범위 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 150\n재사용 대기 시간을 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>격변<UIGlow>01</UIGlow><UIForeground>01</UIForeground>과 공유합니다."
   },
   "25753": {
-    "ko": "대상에게 뛰어들며 대상과 그 주위 적에게 범위 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 700\n2번째 대상부터는 위력이 70% 감소합니다.\n이 기술은 반드시 극대화 직격으로 적중합니다.\n극대화 또는 직격 발동률을 향상시키는 효과를 받고 있는 경우에는 주는 피해량이 증가합니다.\n실행 시 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>원초의 해방<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 소비하지 않습니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>원초의 해방<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 실행 시 부여되는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>원초적 분쇄 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n속박 상태에서는 사용할 수 없습니다."
+    "ko": "대상에게 뛰어들며 대상과 그 주위 적에게 범위 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 700\n2번째 대상부터는 위력이 70% 감소합니다.\n이 기술은 반드시 극대화 직격으로 적중합니다.\n실행 시 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>원초의 해방<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 소비하지 않습니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>원초의 해방<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 실행 시 부여되는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>원초적 분쇄 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n속박 상태에서는 사용할 수 없습니다."
   },
   "25754": {
     "ko": "자신 또는 파티원 1명을 대상으로, 10초 동안 받는 피해량을 10% 감소시킵니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>최대 누적수<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 2"
@@ -7219,6 +7219,27 @@
   },
   "29371": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>언어 통달 1단계<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 소비하여 대상과 그 주위 적에게 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 16000\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 단축바에 등록할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "29382": {
+    "ko": "빨간색 색가루를 뿌립니다."
+  },
+  "29383": {
+    "ko": "노란색 색가루를 뿌립니다."
+  },
+  "29384": {
+    "ko": "파란색 색가루를 뿌립니다."
+  },
+  "29385": {
+    "ko": "빨간색 색가루를 뿌립니다.\n※ 전투 효과는 없습니다."
+  },
+  "29386": {
+    "ko": "노란색 색가루를 뿌립니다.\n※ 전투 효과는 없습니다."
+  },
+  "29387": {
+    "ko": "파란색 색가루를 뿌립니다.\n※ 전투 효과는 없습니다."
+  },
+  "29388": {
+    "ko": "무지개색 색가루를 뿌립니다.\n※ 전투 효과는 없습니다."
   },
   "29391": {
     "ko": "대상에게 원거리 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 4000~6000\n대상과 멀어질수록 위력이 증가하며, 15m 이상 떨어졌을 때 최대 위력을 발휘합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>천상의 화살<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 재사용 대기 시간 5초 단축\n시전 시간이 필요하지만, 시전 중에도 움직일 수 있습니다."

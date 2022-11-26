@@ -4,6 +4,7 @@ import { FreeCompanyWorkshopFacade } from '../../../../../modules/free-company-w
 import { observeInput } from '../../../../../core/rxjs/observe-input';
 import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { VesselType } from '../../../../../modules/free-company-workshops/model/vessel-type';
 
 @Component({
   selector: 'app-vessel-voyage-column',
@@ -13,6 +14,8 @@ import { of } from 'rxjs';
 })
 export class VesselVoyageColumnComponent {
   @Input() vessel: Vessel;
+
+  VesselType = VesselType;
 
   destinationNames$ = observeInput(this, 'vessel').pipe(
     switchMap(vessel => {
