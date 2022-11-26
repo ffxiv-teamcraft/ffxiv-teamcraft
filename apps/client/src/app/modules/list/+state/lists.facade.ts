@@ -282,6 +282,9 @@ export class ListsFacade {
   }
 
   setItemDone(itemId: number, itemIcon: number, finalItem: boolean, delta: number, recipeId: string, totalNeeded: number, external = false, fromPacket = false, hq = false): void {
+    if (this.settings.autoMarkAsCompleted && delta > 0) {
+      this.authFacade.markAsDoneInLog(recipeId ? 'crafting' : 'gathering', +(recipeId || itemId), true);
+    }
     this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, {
       enableAutofillHQFilter: this.settings.enableAutofillHQFilter,
       enableAutofillNQFilter: this.settings.enableAutofillNQFilter
