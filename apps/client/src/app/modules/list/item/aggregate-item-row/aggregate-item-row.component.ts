@@ -17,8 +17,11 @@ export class AggregateItemRowComponent extends AbstractItemRowComponent implemen
     map(aggregate => aggregate.aggregatedList)
   );
 
+  private _aggregate: ProcessedListAggregate;
+
   @Input()
   public set aggregate(data: ProcessedListAggregate) {
+    this._aggregate = data;
     this.aggregate$.next(data);
   }
 
@@ -33,9 +36,6 @@ export class AggregateItemRowComponent extends AbstractItemRowComponent implemen
     this.connectListObservables();
   }
 
-  /**
-   * TODO Implement amount/used logic with list aggregate
-   */
   itemDoneChanged(newValue: number, item: ListRow): void {
     if (newValue.toString().length === 0) {
       return;
@@ -43,24 +43,24 @@ export class AggregateItemRowComponent extends AbstractItemRowComponent implemen
     if (this.settings.displayRemaining) {
       newValue += item.used;
     }
-    this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, newValue - item.done, item.recipeId, item.amount);
+    this._aggregate.generateSetItemDone(item, newValue - item.done, this.finalItem)(this.listsFacade);
   }
 
   add(amount: string | number, item: ListRow, external = false): void {
     // Amount is typed to string because it's from input value, which is always considered as string.
-    this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, +amount, item.recipeId, item.amount, external);
+    this._aggregate.generateSetItemDone(item, +amount, this.finalItem)(this.listsFacade);
   }
 
   remove(amount: string, item: ListRow, external = false): void {
     // Amount is typed to string because it's from input value, which is always considered as string.
-    this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, -1 * (+amount), item.recipeId, item.amount, external);
+    this._aggregate.generateSetItemDone(item, -1 * (+amount), this.finalItem)(this.listsFacade);
   }
 
   markAsDone(item: ListRow): void {
-    this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, item.amount - item.done, item.recipeId, item.amount);
+    this._aggregate.generateSetItemDone(item, item.amount - item.done, this.finalItem)(this.listsFacade);
   }
 
   resetDone(item: ListRow): void {
-    this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, -1 * item.done, item.recipeId, item.amount);
+    this._aggregate.generateSetItemDone(item, -1 * item.done, this.finalItem)(this.listsFacade);
   }
 }

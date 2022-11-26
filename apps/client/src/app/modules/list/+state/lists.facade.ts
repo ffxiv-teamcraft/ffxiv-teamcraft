@@ -291,6 +291,16 @@ export class ListsFacade {
     }, external, fromPacket, hq));
   }
 
+  setListItemDone(listId: string, itemId: number, itemIcon: number, finalItem: boolean, delta: number, recipeId: string, totalNeeded: number, external = false, fromPacket = false, hq = false): void {
+    if (this.settings.autoMarkAsCompleted && delta > 0) {
+      this.authFacade.markAsDoneInLog(recipeId ? 'crafting' : 'gathering', +(recipeId || itemId), true);
+    }
+    this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, {
+      enableAutofillHQFilter: this.settings.enableAutofillHQFilter,
+      enableAutofillNQFilter: this.settings.enableAutofillNQFilter
+    }, external, fromPacket, hq, listId));
+  }
+
   markAsHq(itemIds: number[], hq: boolean): void {
     this.store.dispatch(new MarkItemsHq(itemIds, hq));
   }

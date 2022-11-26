@@ -24,6 +24,7 @@ import {
 } from './lists.actions';
 import {
   catchError,
+  concatMap,
   debounceTime,
   distinctUntilChanged,
   exhaustMap,
@@ -381,10 +382,10 @@ export class ListsEffects {
       ListsEffects.LAST_HANDLED = action;
       return ok;
     }),
-    switchMap(action => {
+    concatMap(action => {
       return combineLatest([
         of(action),
-        this.selectedListClone$,
+        action.listId ? this.listsFacade.allListDetails$.pipe(map(lists => lists.find(l => l.$key === action.listId))) : this.selectedListClone$,
         this.teamsFacade.selectedTeam$,
         this.authFacade.userId$,
         this.authFacade.fcId$,
@@ -406,7 +407,7 @@ export class ListsEffects {
       return true;
     }),
     withLazyRow(this.lazyData, 'itemIcons', ([action]) => action.itemId),
-    switchMap(([[action, list, team, userId, fcId, autofillEnabled, completionNotificationEnabled], icon]) => {
+    concatMap(([[action, list, team, userId, fcId, autofillEnabled, completionNotificationEnabled], icon]) => {
       const item = ListController.getItemById(list, action.itemId, !action.finalItem, action.finalItem);
       if (!list.offline) {
         this.listsFacade.addModificationsHistoryEntry({
@@ -449,37 +450,36 @@ export class ListsEffects {
           );
         }
       }
-      return of(action);
+      return of(action).pipe(
+        withLatestFrom(action.listId ? this.listsFacade.allListDetails$.pipe(map(lists => lists.find(l => l.$key === action.listId))) : this.selectedListClone$),
+        filter(([, list]) => list !== undefined)
+      );
     }),
-    debounceBufferTime(3000),
-    withLatestFrom(this.selectedListClone$),
-    filter(([, list]) => list !== undefined)
+    debounceBufferTime(3000)
   ).pipe(
-    switchMap(([actions, list]: [SetItemDone[], List]) => {
-      if (list.offline) {
-        actions.forEach(action => {
+    concatMap((entries: [SetItemDone, List][]) => {
+      return combineLatest(entries.map(([action, list]) => {
+        if (list.offline) {
           ListController.updateAllStatuses(list, action.itemId);
-        });
-        this.saveToLocalstorage(list, false);
-        return of(null);
-      } else {
-        if (list.hasCommission) {
-          this.updateCommission(list);
-        }
-        return this.listService.runTransaction(list.$key, (transaction, serverCopy) => {
-          const serverList = serverCopy.data() as List;
-          actions.forEach(action => {
+          this.saveToLocalstorage(list, false);
+          return of(null);
+        } else {
+          if (list.hasCommission) {
+            this.updateCommission(list);
+          }
+          return this.listService.runTransaction(list.$key, (transaction, serverCopy) => {
+            const serverList = serverCopy.data() as List;
             ListController.setDone(serverList, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
             ListController.updateAllStatuses(serverList, action.itemId);
+            if (isNaN(serverList.etag)) {
+              serverList.etag = 0;
+            }
+            serverList.etag++;
+            this.listService.recordOperation('write');
+            transaction.set(serverCopy.ref, serverList);
           });
-          if (isNaN(serverList.etag)) {
-            serverList.etag = 0;
-          }
-          serverList.etag++;
-          this.listService.recordOperation('write');
-          transaction.set(serverCopy.ref, serverList);
-        });
-      }
+        }
+      }));
     }),
     map(() => new RemoveReadLock()),
     debounceTime(1000)

@@ -95,7 +95,8 @@ export function listsReducer(
     }
 
     case ListsActionTypes.SetItemDone: {
-      const list = ListController.clone(state.listDetails.entities[state.selectedId], true);
+      const listId = action.listId || state.selectedId;
+      const list = ListController.clone(state.listDetails.entities[listId], true);
       const item = ListController.getItemById(list, action.itemId, !action.finalItem, action.finalItem);
       const requiredHq = ListController.requiredAsHQ(list, item) > 0;
       let fill = true;

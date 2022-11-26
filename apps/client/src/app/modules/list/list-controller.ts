@@ -676,6 +676,7 @@ export class ListController {
       row = array[array.length - 1];
     } else {
       row.amount = MathTools.absoluteCeil(row.amount + data.amount);
+      row.done = MathTools.absoluteCeil(row.done + data.done);
       if (!row.requires) {
         row.requires = data.requires;
       }

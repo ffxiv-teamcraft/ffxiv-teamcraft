@@ -185,7 +185,7 @@
       </span>
       <ng-container *ngIf="!overlay">
         <button (click)="markAsDone(item)" *ngIf="item.amount > item.done; else done"
-                [disabled]="permissionLevel < 20" [nzShape]="'circle'"
+                [nzShape]="'circle'"
                 [nzSize]="'small'" [nzType]="'primary'"
                 class="done-button" nz-button>
           <i nz-icon nzType="check"></i>

@@ -2,6 +2,8 @@ import { ListController } from '../../list/list-controller';
 import { ListAggregatePriority } from './list-aggregate-priority';
 import { List } from '../../list/model/list';
 import { DataWithPermissions } from '../../../core/database/permissions/data-with-permissions';
+import { ListRow } from '../../list/model/list-row';
+import { ListsFacade } from '../../list/+state/lists.facade';
 
 export class ProcessedListAggregate extends DataWithPermissions {
 
@@ -13,6 +15,8 @@ export class ProcessedListAggregate extends DataWithPermissions {
 
   public assignedItems: { [id: number]: { user: string, list: string, array: string, amount: number }[] } = {};
 
+  public itemListLinks: Record<number, { list: string, amount: number, totalNeeded: number }[]> = {};
+
   constructor(public readonly lists: List[]) {
     super();
     if (lists.length === 1) {
@@ -21,6 +25,7 @@ export class ProcessedListAggregate extends DataWithPermissions {
       this.aggregatedList = lists.reduce((acc, list) => {
         Object.assign(this.registry, list.registry);
         list.items.forEach(item => {
+          this.addListLinkForItem(item, list.$key);
           if (item.workingOnIt) {
             this.assignedItems[item.id] = [
               ...(this.assignedItems[item.id] || []),
@@ -36,6 +41,7 @@ export class ProcessedListAggregate extends DataWithPermissions {
           }
         });
         list.finalItems.forEach(item => {
+          this.addListLinkForItem(item, list.$key);
           if (item.workingOnIt) {
             this.assignedItems[item.id] = [
               ...(this.assignedItems[item.id] || []),
@@ -60,6 +66,55 @@ export class ProcessedListAggregate extends DataWithPermissions {
         return ListController.merge(acc, ListController.clone(list, true));
       }, new List());
     }
+  }
+
+  private addListLinkForItem(item: ListRow, listId: string): void {
+    this.itemListLinks[item.id] = this.itemListLinks[item.id] || [];
+    const itemRow = this.itemListLinks[item.id].find(e => e.list === listId);
+    if (itemRow) {
+      itemRow.amount += (item.amount - item.done);
+      itemRow.totalNeeded += item.amount;
+    } else {
+      this.itemListLinks[item.id].push({
+        list: listId,
+        amount: (item.amount - item.done),
+        totalNeeded: item.amount
+      });
+    }
+  }
+
+  public generateSetItemDone(item: ListRow, _delta: number, finalItem: boolean): (facade: ListsFacade) => void {
+    let delta = _delta;
+    const patches = this.itemListLinks[item.id].map(row => {
+      if (delta < 0) {
+        if (row.totalNeeded > Math.abs(delta)) {
+          const deltaToApply = delta;
+          delta += row.totalNeeded;
+          return { list: row.list, delta: deltaToApply };
+        } else {
+          delta += row.totalNeeded;
+          return { list: row.list, delta: -row.totalNeeded };
+        }
+      } else {
+        if (row.amount > delta) {
+          const deltaToApply = delta;
+          delta -= row.amount;
+          return { list: row.list, delta: deltaToApply };
+        } else {
+          delta -= row.amount;
+          return { list: row.list, delta: row.amount };
+        }
+      }
+    });
+    return facade => {
+      patches.forEach(row => {
+        if (row.delta !== 0) {
+          facade.setListItemDone(row.list, item.id, item.icon, finalItem, row.delta, item.recipeId, item.amount);
+        }
+      });
+      ListController.setDone(this.aggregatedList, item.id, _delta, !finalItem, finalItem, false, item.recipeId, false);
+      ListController.updateAllStatuses(this.aggregatedList, item.id);
+    };
   }
 
 }
