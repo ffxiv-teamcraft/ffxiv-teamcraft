@@ -7,8 +7,10 @@
   <nz-table #t [nzData]="lists" nzSize="small" [nzTitle]="'LIST_AGGREGATE.Select_lists' | translate" [nzPageSize]="10">
     <thead>
     <tr>
-      <th></th>
+      <th [nzLeft]="true" nzWidth="40px"></th>
       <th>{{'List_name' | translate}}</th>
+      <th>{{'LIST_AGGREGATE.Final_items_count' | translate}}</th>
+      <th>{{'LIST_AGGREGATE.Requirement_items_count' | translate}}</th>
     </tr>
     </thead>
     <tbody>
@@ -18,6 +20,8 @@
         (nzCheckedChange)="selectList(data.list, $event)"
       ></td>
       <td>{{ data.list.name }}</td>
+      <td>{{ data.list.finalItems.length }}</td>
+      <td>{{ data.list.items.length }}</td>
     </tr>
     </tbody>
   </nz-table>

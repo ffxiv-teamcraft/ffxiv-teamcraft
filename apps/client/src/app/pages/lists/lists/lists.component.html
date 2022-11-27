@@ -21,6 +21,14 @@
               tutorialStep="TUTORIAL.LISTS.Import">
         <i nz-icon nzType="download"></i>
       </button>
+      <a [nzShape]="'circle'"
+         [nzTooltipTitle]="'LIST_AGGREGATE.Home_subtitle' | translate"
+         routerLink="/list-aggregate"
+         [nzType]="'primary'"
+         nz-button
+         nz-tooltip>
+        <i nz-icon nzType="folder-view"></i>
+      </a>
       <div class="spacer">
       </div>
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
@@ -64,7 +72,8 @@
         <app-list-panel [hideAvatar]="true" [list]="list"></app-list-panel>
       </div>
     </div>
-    <nz-empty *ngIf="lists.otherLists.length === 0 && (loading$ | async) === false" [nzNotFoundContent]="'LISTS.No_lists' | translate" nzNotFoundImage="simple"></nz-empty>
+    <nz-empty *ngIf="lists.otherLists.length === 0 && (loading$ | async) === false" [nzNotFoundContent]="'LISTS.No_lists' | translate"
+              nzNotFoundImage="simple"></nz-empty>
     <ng-container *ngIf="sharedLists$ | async as sharedLists">
       <div *ngIf="sharedLists.length > 0">
         <nz-divider [nzText]="'LISTS.Shared_lists' | translate" nzOrientation="left"></nz-divider>

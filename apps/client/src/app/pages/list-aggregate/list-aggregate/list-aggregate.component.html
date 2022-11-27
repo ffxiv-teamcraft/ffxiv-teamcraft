@@ -1,10 +1,7 @@
 <nz-page-header [nzTitle]="'LIST_AGGREGATE.Title' | translate" [nzSubtitle]="subtitle$ | async">
   <nz-page-header-extra *ngIf="aggregate$ | async as aggregate">
     <ng-container *ngIf="layoutId$ | async as layoutId">
-      <ng-container *ngIf="aggregateFromRoute$ | async as aggregateFromRoute">
-        <button nz-button nzType="primary" *ngIf="!aggregateFromRoute" (click)="saveAggregate(aggregate, layoutId)">
-          <span nz-icon nzType="save"></span> {{'LIST_AGGREGATE.Save' | translate}}
-        </button>
+      <ng-container *ngIf="aggregateFromRoute$ | async as aggregateFromRoute;else saveAggregateButtonTpl">
         <ng-container *ngIf="aggregateFromRoute">
           <button *ngIf="missingLists$ | async as missingLists"
                   nz-button nzDanger
@@ -13,6 +10,11 @@
           </button>
         </ng-container>
       </ng-container>
+      <ng-template #saveAggregateButtonTpl>
+        <button nz-button nzType="primary" (click)="saveAggregate(aggregate, layoutId)">
+          <span nz-icon nzType="save"></span> {{'LIST_AGGREGATE.Save' | translate}}
+        </button>
+      </ng-template>
     </ng-container>
   </nz-page-header-extra>
 </nz-page-header>
