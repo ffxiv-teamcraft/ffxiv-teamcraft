@@ -15,7 +15,6 @@ import { FormsModule } from '@angular/forms';
 import { ListModule } from '../../modules/list/list.module';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { ListAggregateModule } from '../../modules/list-aggregate/list-aggregate.module';
 
 const routes: Routes = [
   {

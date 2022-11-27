@@ -22,6 +22,7 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { ListAggregate } from '../../../modules/list-aggregate/model/list-aggregate';
 import { ListAggregatesFacade } from '../../../modules/list-aggregate/+state/list-aggregates.facade';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 @Component({
   selector: 'app-lists',
@@ -184,7 +185,7 @@ export class ListsComponent {
           if (!aggregate.layout.startsWith('default') && !aggregate.layout.startsWith('venili')) {
             layoutsFacade.load(aggregate.layout);
           }
-          return combineLatest([
+          return safeCombineLatest([
             this.listsFacade.allListDetails$,
             this.layoutsFacade.allLayouts$
           ]).pipe(

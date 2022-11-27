@@ -3,7 +3,7 @@ import { gameEnv } from './game-env';
 import { patchNotes } from './patch-notes';
 
 export const environment = {
-  production: true,
+  production: false,
   beta: true,
   version: version,
   patchNotes: patchNotes,

@@ -3,10 +3,13 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 
 import { distinctUntilChanged, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import * as ListAggregatesActions from './list-aggregates.actions';
-import { listAggregateLoaded, pureUpdateListAggregate, selectListAggregate } from './list-aggregates.actions';
+import { listAggregateLoaded, selectListAggregate } from './list-aggregates.actions';
 import { ListAggregatesService } from '../../../core/database/list-aggregates.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
+import { Router } from '@angular/router';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 export class ListAggregatesEffects {
@@ -48,6 +51,8 @@ export class ListAggregatesEffects {
         return this.service.add(action.aggregate);
       }),
       map(key => {
+        this.router.navigate(['list-aggregate', 'saved', key]);
+        this.message.success(this.translate.instant('LIST_AGGREGATE.Saved'));
         return selectListAggregate({ id: key });
       })
     )
@@ -84,6 +89,7 @@ export class ListAggregatesEffects {
   );
 
   constructor(private actions$: Actions, private service: ListAggregatesService,
-              private authFacade: AuthFacade) {
+              private authFacade: AuthFacade, private router: Router, private message: NzMessageService,
+              private translate: TranslateService) {
   }
 }

@@ -2960,6 +2960,7 @@
     "Remove_missing_ids": "Remove missing lists from the aggregate",
     "Missing_lists_description": "Please make sure you have enough permissions on all the lists and that they still exist (missing ids: {{ids}}).",
     "Save": "Save this aggregate to your lists page",
+    "Saved": "Aggregate saved to your lists page",
     "Final_items_count": "# of items",
     "Requirement_items_count": "# of required items"
   },
