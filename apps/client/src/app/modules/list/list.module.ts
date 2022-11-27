@@ -67,7 +67,7 @@ import { AggregateItemRowComponent } from './item/aggregate-item-row/aggregate-i
 import { AlarmButtonModule } from '../alarm-button/alarm-button.module';
 import { IslandPastureExtractor } from './data/extractor/island-pasture-extractor';
 import { IslandCropExtractor } from './data/extractor/island-crop-extractor';
-
+import { CompactItemRowComponent } from './item/compact-item-row/compact-item-row.component';
 
 export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: CraftedByExtractor, deps: [LazyDataFacade], multi: true },
@@ -78,7 +78,7 @@ export const DATA_EXTRACTORS: Provider[] = [
     provide: EXTRACTORS,
     useClass: GatheredByExtractor,
     deps: [HtmlToolsService, GatheringNodesService, LazyDataFacade],
-    multi: true
+    multi: true,
   },
   { provide: EXTRACTORS, useClass: TradeSourcesExtractor, deps: [LazyDataFacade], multi: true },
   { provide: EXTRACTORS, useClass: VendorsExtractor, deps: [LazyDataFacade], multi: true },
@@ -96,7 +96,7 @@ export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: DeprecatedExtractor, deps: [LazyDataFacade], multi: true },
   { provide: EXTRACTORS, useClass: IslandPastureExtractor, deps: [LazyDataFacade], multi: true },
   { provide: EXTRACTORS, useClass: IslandCropExtractor, deps: [LazyDataFacade], multi: true },
-  { provide: EXTRACTORS, useClass: RequirementsExtractor, deps: [LazyDataFacade], multi: true }
+  { provide: EXTRACTORS, useClass: RequirementsExtractor, deps: [LazyDataFacade], multi: true },
 ];
 
 @NgModule({
@@ -131,12 +131,9 @@ export const DATA_EXTRACTORS: Provider[] = [
     CompanyWorkshopTreeModule,
     InventoryModule,
     HttpClientModule,
-    AlarmButtonModule
+    AlarmButtonModule,
   ],
-  providers: [
-    ...DATA_EXTRACTORS,
-    DataExtractorService
-  ],
+  providers: [...DATA_EXTRACTORS, DataExtractorService],
   declarations: [
     ListPanelComponent,
     ListDetailsPanelComponent,
@@ -148,10 +145,9 @@ export const DATA_EXTRACTORS: Provider[] = [
     ListProgressbarComponent,
     ListSplitPopupComponent,
     ItemRowMenuComponent,
-    AggregateItemRowComponent
+    AggregateItemRowComponent,
+    CompactItemRowComponent,
   ],
-  exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent]
+  exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent],
 })
-export class ListModule {
-
-}
+export class ListModule {}
