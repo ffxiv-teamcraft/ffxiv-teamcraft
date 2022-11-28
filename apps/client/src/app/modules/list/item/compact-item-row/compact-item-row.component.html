@@ -4,7 +4,7 @@
   <app-item-icon [icon]="item.xivapiIcon | xivapiIcon" [itemId]="null"
                  [width]="24" *ngIf="item.xivapiIcon" [tooltipDisabled]="true"></app-item-icon>
   <div [itemNameCopy]="item.id" class="item-name" nz-tooltip>
-    <app-i18n-name [content]="item.contentType || 'items'" [id]="item.id" [fallback]="item.name"></app-i18n-name>
+    <app-i18n-name [content]="item.contentType || 'items'" [id]="item.id"></app-i18n-name>
     <span *ngIf="item.amount > item.done" class="needed" nz-tooltip
           [nzTooltipTitle]="'Required_crafts_amount' | translate">&nbsp;x{{item.amount - item.done}}<span
       *ngIf="item.amount !== item.amount_needed">({{((item.amount - item.done) / item.yield) | ceil}})</span>
