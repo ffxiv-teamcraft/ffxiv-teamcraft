@@ -11,3 +11,32 @@
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 }
+
+.back-icon {
+  color: var(--text-color) !important;
+}
+
+.display-mode-selector {
+  margin-right: 10px;
+
+  .selector-label {
+    display: inline-block;
+    padding: 4px 10px 5px 15px;
+    height: 32px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border: 1px solid #444;
+    border-right: none;
+    background: var(--primary-color-50);
+  }
+
+  ::ng-deep {
+    .ant-radio-button-wrapper {
+      background: var(--topbar-color) !important;
+
+      &:first-child {
+        border-radius: 0 !important;
+      }
+    }
+  }
+}

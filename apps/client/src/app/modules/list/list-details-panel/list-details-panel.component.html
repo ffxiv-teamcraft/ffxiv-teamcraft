@@ -2,29 +2,43 @@
   <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
   <nz-collapse *ngIf="permissionLevel$ | async as permissionLevel">
     <ng-template #itemsListDisplay let-items let-displayedItems="displayedItems" let-skip="skip">
-    <app-lazy-scroll [data]="items" [noScroll]="!!aggregate || overlay || noScroll" [displayedRows]="displayedItems" rowSize="36" [rowTemplate]="itemRow"
-                     [trackBy]="trackByItem">
-      <ng-template #itemRow let-item let-odd="odd">
-        <app-item-row [permissionLevel]="overlay ? 10 : permissionLevel"
-                      *ngIf="!aggregate"
-                      [overlay]="overlay"
-                      [finalItem]="finalItems"
-                      [alarmGroups]="alarmGroups"
-                      [skip]="skip && (skip[item.id] > 0) ? skip[item.id] : 0"
-                      [item]="item"
-                      [layout]="displayRow.layout"
-                      [odd]="odd"></app-item-row>
-        <app-aggregate-item-row *ngIf="aggregate"
-                                [finalItem]="finalItems"
-                                [alarmGroups]="alarmGroups"
-                                [skip]="skip && (skip[item.id] > 0) ? skip[item.id] : 0"
-                                [permissionLevel]="30"
-                                [item]="item"
-                                [aggregate]="aggregate"
-                                [layout]="displayRow.layout"
-                                [odd]="odd"></app-aggregate-item-row>
-      </ng-template>
-    </app-lazy-scroll>
+      <ng-container *ngIf="!compact">
+        <app-lazy-scroll [data]="items" [noScroll]="!!aggregate || overlay || noScroll" [displayedRows]="displayedItems" rowSize="36" [rowTemplate]="itemRow"
+                         [trackBy]="trackByItem">
+          <ng-template #itemRow let-item let-odd="odd">
+            <app-item-row [permissionLevel]="overlay ? 10 : permissionLevel"
+                          *ngIf="!aggregate"
+                          [overlay]="overlay"
+                          [finalItem]="finalItems"
+                          [alarmGroups]="alarmGroups"
+                          [skip]="skip && (skip[item.id] > 0) ? skip[item.id] : 0"
+                          [item]="item"
+                          [layout]="displayRow.layout"
+                          [odd]="odd"></app-item-row>
+            <app-aggregate-item-row *ngIf="aggregate"
+                                    [finalItem]="finalItems"
+                                    [alarmGroups]="alarmGroups"
+                                    [skip]="skip && (skip[item.id] > 0) ? skip[item.id] : 0"
+                                    [permissionLevel]="30"
+                                    [item]="item"
+                                    [aggregate]="aggregate"
+                                    [layout]="displayRow.layout"
+                                    [odd]="odd"></app-aggregate-item-row>
+          </ng-template>
+        </app-lazy-scroll>
+        </ng-container>
+      <div *ngIf="compact" nz-row [nzGutter]="[10,10]">
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="8" [nzLg]="6" [nzXl]="4" *ngFor="let item of items;trackById">
+          <app-compact-item-row
+            [item]="item"
+            [finalItem]="finalItems"
+            [skip]="skip && (skip[item.id] > 0) ? skip[item.id] : 0"
+            [aggregate]="aggregate" [permissionLevel]="permissionLevel"
+            [alarmGroups]="alarmGroups"
+            [layoutRow]="displayRow.layoutRow"
+          ></app-compact-item-row>
+        </div>
+      </div>
     </ng-template>
     <ng-template #display>
       <ng-container *ngIf="aggregate || hasAlreadyBeenOpened || !collapsed || overlay">

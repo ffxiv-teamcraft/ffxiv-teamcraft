@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { getItemSource, ListRow } from '../model/list-row';
 import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
@@ -41,7 +41,8 @@ import { ProcessedListAggregate } from '../../list-aggregate/model/processed-lis
 @Component({
   selector: 'app-list-details-panel',
   templateUrl: './list-details-panel.component.html',
-  styleUrls: ['./list-details-panel.component.less']
+  styleUrls: ['./list-details-panel.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
@@ -49,6 +50,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   @Input()
   displayRow: LayoutRowDisplay;
+
+  @Input()
+  compact: boolean;
 
   @Input()
   finalItems = false;

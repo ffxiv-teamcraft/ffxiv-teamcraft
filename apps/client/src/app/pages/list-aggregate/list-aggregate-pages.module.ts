@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { ListModule } from '../../modules/list/list.module';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
 
 const routes: Routes = [
   {
@@ -59,7 +60,8 @@ const routes: Routes = [
     NzButtonModule,
     ListModule,
     NzAlertModule,
-    NzIconModule
+    NzIconModule,
+    NzRadioModule
   ]
 })
 export class ListAggregatePagesModule {

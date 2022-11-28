@@ -19,53 +19,49 @@ export class ProcessedListAggregate extends DataWithPermissions {
 
   constructor(public readonly lists: List[]) {
     super();
-    if (lists.length === 1) {
-      this.aggregatedList = lists[0];
-    } else {
-      this.aggregatedList = lists.reduce((acc, list) => {
-        Object.assign(this.registry, list.registry);
-        list.items.forEach(item => {
-          this.addListLinkForItem(item, list.$key);
-          if (item.workingOnIt) {
-            this.assignedItems[item.id] = [
-              ...(this.assignedItems[item.id] || []),
-              ...item.workingOnIt.map(userId => {
-                return {
-                  user: userId,
-                  list: list.$key,
-                  array: 'items',
-                  amount: item.amount
-                };
-              })
-            ];
-          }
-        });
-        list.finalItems.forEach(item => {
-          this.addListLinkForItem(item, list.$key);
-          if (item.workingOnIt) {
-            this.assignedItems[item.id] = [
-              ...(this.assignedItems[item.id] || []),
-              ...item.workingOnIt.map(userId => {
-                return {
-                  user: userId,
-                  list: list.$key,
-                  array: 'finalItems',
-                  amount: item.amount
-                };
-              })
-            ];
-          }
-        });
-        this.everyone = Math.min(this.everyone, list.everyone);
-        if (this.teamId === undefined) {
-          this.teamId = list.teamId;
+    this.aggregatedList = lists.reduce((acc, list) => {
+      Object.assign(this.registry, list.registry);
+      list.items.forEach(item => {
+        this.addListLinkForItem(item, list.$key);
+        if (item.workingOnIt) {
+          this.assignedItems[item.id] = [
+            ...(this.assignedItems[item.id] || []),
+            ...item.workingOnIt.map(userId => {
+              return {
+                user: userId,
+                list: list.$key,
+                array: 'items',
+                amount: item.amount
+              };
+            })
+          ];
         }
-        if (this.authorId === undefined) {
-          this.authorId = list.authorId;
+      });
+      list.finalItems.forEach(item => {
+        this.addListLinkForItem(item, list.$key);
+        if (item.workingOnIt) {
+          this.assignedItems[item.id] = [
+            ...(this.assignedItems[item.id] || []),
+            ...item.workingOnIt.map(userId => {
+              return {
+                user: userId,
+                list: list.$key,
+                array: 'finalItems',
+                amount: item.amount
+              };
+            })
+          ];
         }
-        return ListController.merge(acc, ListController.clone(list, true));
-      }, new List());
-    }
+      });
+      this.everyone = Math.min(this.everyone, list.everyone);
+      if (this.teamId === undefined) {
+        this.teamId = list.teamId;
+      }
+      if (this.authorId === undefined) {
+        this.authorId = list.authorId;
+      }
+      return ListController.merge(acc, ListController.clone(list, true));
+    }, new List());
   }
 
   private addListLinkForItem(item: ListRow, listId: string): void {
@@ -85,7 +81,7 @@ export class ProcessedListAggregate extends DataWithPermissions {
 
   public generateSetItemDone(item: ListRow, _delta: number, finalItem: boolean): (facade: ListsFacade) => void {
     let delta = _delta;
-    const patches = this.itemListLinks[item.id].map(row => {
+    const patches = (this.itemListLinks[item.id]).map(row => {
       if (delta < 0) {
         if (row.totalNeeded > Math.abs(delta)) {
           const deltaToApply = delta;

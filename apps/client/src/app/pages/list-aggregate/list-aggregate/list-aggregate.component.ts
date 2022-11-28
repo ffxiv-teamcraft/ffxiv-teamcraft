@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { debounceTime, distinctUntilChanged, filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { combineLatest, merge, of } from 'rxjs';
@@ -11,6 +11,8 @@ import { ListAggregatesFacade } from '../../../modules/list-aggregate/+state/lis
 import { ProcessedListAggregate } from '../../../modules/list-aggregate/model/processed-list-aggregate';
 import { ListAggregate } from '../../../modules/list-aggregate/model/list-aggregate';
 import { arrayRemove } from '@angular/fire/firestore';
+import { ListDisplayMode } from '../../list-details/list-details/list-display-mode';
+import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 
 @Component({
   selector: 'app-list-aggregate',
@@ -19,6 +21,10 @@ import { arrayRemove } from '@angular/fire/firestore';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListAggregateComponent {
+
+  public ListDisplayMode = ListDisplayMode;
+
+  public displayMode$ = new LocalStorageBehaviorSubject<ListDisplayMode>('list-aggregate:display-mode', ListDisplayMode.COMPACT);
 
   public selectedPanelTitle$ = this.route.paramMap.pipe(
     map(params => params.get('panelTitle'))
@@ -164,8 +170,13 @@ export class ListAggregateComponent {
 
   constructor(private listsFacade: ListsFacade, private route: ActivatedRoute,
               private layoutsFacade: LayoutsFacade, private authFacade: AuthFacade,
-              private teamsFacade: TeamsFacade, private aggregatesFacade: ListAggregatesFacade) {
+              private teamsFacade: TeamsFacade, private aggregatesFacade: ListAggregatesFacade,
+              private router: Router) {
     this.layoutsFacade.loadAll();
+  }
+
+  onBack(): void {
+    this.router.navigate(['..'], { relativeTo: this.route });
   }
 
   saveAggregate(processed: ProcessedListAggregate, layout: string): void {

@@ -99,8 +99,6 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
   @Input()
   overlay = false;
 
-  moreAlarmsAvailable = 0;
-
   @Input()
   permissionLevel: PermissionLevel;
 
@@ -444,16 +442,16 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
     }
   }
 
+  addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
+    this.alarmsFacade.addAlarmInGroup(alarm, group);
+  }
+
   success(key: string, args?: any): void {
     this.messageService.success(this.translate.instant(key, args));
   }
 
   addToList(item: ListRow): void {
     this.listPicker.addToList(item);
-  }
-
-  addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
-    this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 
   addAllAlarms(item: ListRow) {

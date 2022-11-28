@@ -1,1 +1,82 @@
-<p>compact-item-row works!</p>
+<div class="row">
+  <app-item-icon [itemId]="item.id" [itemName]="item.id | itemName: item | i18n"
+                 [width]="24" [forceCollectable]="item.collectable" *ngIf="!item.xivapiIcon"></app-item-icon>
+  <app-item-icon [icon]="item.xivapiIcon | xivapiIcon" [itemId]="null"
+                 [width]="24" *ngIf="item.xivapiIcon" [tooltipDisabled]="true"></app-item-icon>
+  <div [itemNameCopy]="item.id" class="item-name" nz-tooltip>
+    <app-i18n-name [content]="item.contentType || 'items'" [id]="item.id" [fallback]="item.name"></app-i18n-name>
+    <span *ngIf="item.amount > item.done" class="needed" nz-tooltip
+          [nzTooltipTitle]="'Required_crafts_amount' | translate">&nbsp;x{{item.amount - item.done}}<span
+      *ngIf="item.amount !== item.amount_needed">({{((item.amount - item.done) / item.yield) | ceil}})</span>
+    </span>
+  </div>
+  <div class="spacer"></div>
+  <app-item-sources-display class="source-display" [sources]="source" [item]="item" [overlay]="false" size="small"></app-item-sources-display>
+</div>
+<div class="row">
+  <div *ngIf="totalAmountInInventory$ | async as total; else alarmsTpl">
+    <nz-tag nz-dropdown [nzDropdownMenu]="containers">
+      <span>{{'INVENTORY.In_x_containers' | translate: { amount: total.containers.length } }}</span>
+      <span *ngIf="total.nq">, {{'COMMON.Nq' | translate}}: {{total.nq}}</span>
+      <span *ngIf="total.hq">, {{'COMMON.Hq' | translate}}: {{total.hq}}</span>
+    </nz-tag>
+    <nz-dropdown-menu #containers="nzDropdownMenu">
+      <ul nz-menu>
+        <li nz-menu-item *ngFor="let entry of amountInInventory$ | async;trackBy: trackByInventoryEntry"
+            (click)="tooltip.hide();permissionLevel >= 20 ? add(entry.amount, item) : null"
+            #tooltip="nzTooltip"
+            nz-tooltip [nzTooltipTitle]="positionTooltip">
+          <ng-template #positionTooltip>
+            <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
+              <app-inventory-position [item]="entry.item"></app-inventory-position>
+              <div>{{'INVENTORY.Click_to_add_to_progression' | translate}}</div>
+            </div>
+          </ng-template>
+          {{entry.containerName}}: {{entry.amount}}
+          <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
+        </li>
+      </ul>
+    </nz-dropdown-menu>
+  </div>
+  <div class="spacer"></div>
+  <div class="amount-input">
+    <button (click)="markAsDone(item)" *ngIf="item.amount > item.done; else done"
+            [disabled]="permissionLevel < 20" [nzType]="'primary'" nzSize="small"
+            nz-button class="check-button">
+      <i nz-icon nzType="check"></i>
+    </button>
+    <nz-input-number-group [nzAddOnAfter]="totalTpl" nzSize="small" nzCompact>
+      <nz-input-number #input (keypress.enter)="itemDoneChange$.next(input.ngModel)"
+                       (ngModelChange)="itemDoneChange$.next($event)" [disabled]="permissionLevel < 20"
+                       [ngModel]="settings.displayRemaining? item.done - item.used : item.done"
+                       [nzMax]="item.amount"
+                       [nzMin]="0"
+                       [nzSize]="'small'"
+                       [nzStep]="1"></nz-input-number>
+    </nz-input-number-group>
+    <ng-template #totalTpl>
+      <span *ngIf="!settings.displayRemaining" class="amount-max">
+        /{{item.amount}} <span *ngIf="item.amount_needed !== item.amount">({{item.amount_needed}})</span>
+      </span>
+      <span *ngIf="settings.displayRemaining" class="amount-max">
+        /{{item.amount - item.used}} <span *ngIf="item.amount_needed !== item.amount">({{item.amount_needed}})</span>
+      </span>
+    </ng-template>
+    <ng-template #done>
+      <button (click)="permissionLevel >= 20 ? resetDone(item) : null"
+              [disabled]="permissionLevel < 20" nzType="default" nzSize="small"
+              nz-button class="check-button">
+        <span nz-icon nzType="undo" nzTheme="outline"></span>
+      </button>
+    </ng-template>
+  </div>
+</div>
+<div class="row" *ngIf="amountInInventory$ | async">
+  <ng-container *ngTemplateOutlet="alarmsTpl"></ng-container>
+</div>
+
+<ng-template #alarmsTpl>
+  <app-alarm-button *ngIf="alarmDisplay$ | async as display" [alarm]="display.alarm" [alarmGroups]="alarmGroups"
+                    (toggleAlarm)="toggleAlarm($event)"
+                    (addAlarmWithGroup)="addAlarmWithGroup($event.alarm, $event.group)"></app-alarm-button>
+</ng-template>

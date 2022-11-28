@@ -772,6 +772,12 @@
     "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
     "Consider_requirements": "Consider requirements",
     "Ignore_requirements": "Ignore requirements",
+    "DISPLAY_MODE": {
+      "Title": "Display mode",
+      "Full": "Full",
+      "Compact": "Compact",
+      "Step_by_step": "Step by step"
+    },
     "SOURCES": {
       "Gatherable": "Can be gathered, click to see more details"
     },

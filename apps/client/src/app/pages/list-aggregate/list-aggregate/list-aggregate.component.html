@@ -1,12 +1,27 @@
-<nz-page-header [nzTitle]="'LIST_AGGREGATE.Title' | translate" [nzSubtitle]="subtitle$ | async">
-  <nz-page-header-extra *ngIf="aggregate$ | async as aggregate">
+<nz-page-header [nzTitle]="'LIST_AGGREGATE.Title' | translate" [nzSubtitle]="subtitle$ | async"
+                (nzBack)="onBack()" [nzBackIcon]="backIconTpl">
+  <ng-template #backIconTpl>
+    <span nz-icon nzType="arrow-left" nzTheme="outline" *ngIf="(selectedPanelTitle$ | async) !== null" class="back-icon"></span>
+  </ng-template>
+  <nz-page-header-extra>
+    <div class="display-mode-selector">
+        <span class="selector-label">
+        {{'LIST_DETAILS.DISPLAY_MODE.Title' | translate}}
+        </span>
+      <nz-radio-group [ngModel]="displayMode$ | async" (ngModelChange)="displayMode$.next($event)">
+        <label nz-radio-button [nzValue]="ListDisplayMode.FULL">{{'LIST_DETAILS.DISPLAY_MODE.Full' | translate}}</label>
+        <label nz-radio-button [nzValue]="ListDisplayMode.COMPACT">{{'LIST_DETAILS.DISPLAY_MODE.Compact' | translate}}</label>
+      </nz-radio-group>
+    </div>
+  </nz-page-header-extra>
+  <nz-page-header-content *ngIf="aggregate$ | async as aggregate">
     <ng-container *ngIf="layoutId$ | async as layoutId">
       <ng-container *ngIf="aggregateFromRoute$ | async as aggregateFromRoute;else saveAggregateButtonTpl">
         <ng-container *ngIf="aggregateFromRoute">
           <button *ngIf="missingLists$ | async as missingLists"
                   nz-button nzDanger
                   (click)="removeMissingLists(aggregateFromRoute.$key, missingLists)"><span nz-icon nzType="clear"
-                                                                                   nzTheme="outline"></span> {{'LIST_AGGREGATE.Remove_missing_ids' | translate}}
+                                                                                            nzTheme="outline"></span> {{'LIST_AGGREGATE.Remove_missing_ids' | translate}}
           </button>
         </ng-container>
       </ng-container>
@@ -16,7 +31,7 @@
         </button>
       </ng-template>
     </ng-container>
-  </nz-page-header-extra>
+  </nz-page-header-content>
 </nz-page-header>
 
 <nz-alert *ngIf="missingLists$ | async as missingLists"
@@ -29,7 +44,8 @@
 <ng-container *ngIf="selectedPanelTitle$ | async; else pickPanel">
   <ng-container *ngIf="panelDisplay$ | async as display">
     <app-list-details-panel *ngIf="display.panel" [finalItems]="display.finalItems" [displayRow]="display.panel"
-                            [permissionLevel]="permissionLevel$ | async" [aggregate]="aggregate$ | async"></app-list-details-panel>
+                            [permissionLevel]="permissionLevel$ | async" [aggregate]="aggregate$ | async"
+                            [compact]="(displayMode$ | async) === ListDisplayMode.COMPACT"></app-list-details-panel>
   </ng-container>
 </ng-container>
 <ng-template #pickPanel>

@@ -81,7 +81,7 @@
             <i nz-icon nzType="shopping" nzTheme="outline"></i>
           </button>
           <nz-dropdown-menu #menu="nzDropdownMenu">
-            <ul  nz-menu class="inventories-menu">
+            <ul nz-menu class="inventories-menu">
               <li (click)="fillWithInventory(list, inventory)" *ngFor="let inventory of inventories" nz-menu-item>
                 {{inventory | translate}}
               </li>
@@ -109,16 +109,6 @@
                   nzType="default">
             <i nz-icon nzType="split-cells" nzTheme="outline"></i>
           </button>
-<!--          <button (click)="openContributionsPopup()"-->
-<!--                  *ngIf="!list.offline"-->
-<!--                  [disabled]="(permissionLevel$ | async) < 20"-->
-<!--                  [nzTooltipTitle]="'LIST_DETAILS.Contributions_popup' | translate"-->
-<!--                  nz-button-->
-<!--                  nz-tooltip-->
-<!--                  nzShape="circle"-->
-<!--                  nzType="default">-->
-<!--            <i nz-icon nzType="pie-chart"></i>-->
-<!--          </button>-->
           <button (click)="openTagsPopup(list)" [disabled]="(permissionLevel$ | async) < 40"
                   [nzTooltipTitle]="'LIST_DETAILS.Tags_popup' | translate" [nzType]="list.public?'primary':'default'"
                   nz-button
@@ -147,14 +137,6 @@
                   nzType="primary">
             <i nz-icon nzType="number" nzTheme="outline"></i>
           </button>
-<!--          <button (click)="openHistoryPopup()"-->
-<!--                  [disabled]="(permissionLevel$ | async) < 20"-->
-<!--                  *ngIf="!list.offline"-->
-<!--                  [nzTooltipTitle]="'LIST.History' | translate" nz-button-->
-<!--                  nz-tooltip-->
-<!--                  nzShape="circle">-->
-<!--            <i nz-icon nzType="field-time" nzTheme="outline"></i>-->
-<!--          </button>-->
         </div>
       </div>
     </div>
@@ -198,6 +180,17 @@
         <i nz-icon nzType="file-zip" nzTheme="outline"></i>
         {{'Archived_tag' | translate}}
       </nz-tag>
+      <div class="spacer"></div>
+      <div class="display-mode-selector">
+        <span class="selector-label">
+        {{'LIST_DETAILS.DISPLAY_MODE.Title' | translate}}
+        </span>
+        <nz-radio-group [ngModel]="displayMode$ | async" (ngModelChange)="displayMode$.next($event)">
+          <label nz-radio-button [nzValue]="ListDisplayMode.FULL">{{'LIST_DETAILS.DISPLAY_MODE.Full' | translate}}</label>
+          <label nz-radio-button [nzValue]="ListDisplayMode.COMPACT">{{'LIST_DETAILS.DISPLAY_MODE.Compact' | translate}}</label>
+<!--          <label nz-radio-button [nzValue]="ListDisplayMode.STEP_BY_STEP">{{'LIST_DETAILS.DISPLAY_MODE.Step_by_step' | translate}}</label>-->
+        </nz-radio-group>
+      </div>
     </div>
     <div class="list-title" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="flex-start center"
          fxLayoutAlign.lt-md="center center"
@@ -310,15 +303,27 @@
       <nz-alert [nzMessage]="'Not_own_list_outdated' | translate" nzShowIcon nzType="error"></nz-alert>
     </div>
     <div *ngIf="display$ | async as listDisplay" class="list-display" fxLayout="row" fxLayoutGap="10px">
-      <div fxFlex="1 1 auto">
-        <app-list-crystals-panel *ngIf="listDisplay.crystalsPanel"
-                                 [crystals]="crystals$ | async"></app-list-crystals-panel>
-        <app-list-details-panel *ngFor="let displayRow of listDisplay.rows; trackBy: trackByDisplayRow"
-                                [largeList]="listIsLarge"
-                                [displayRow]="displayRow"></app-list-details-panel>
-        <app-list-details-panel *ngIf="listDisplay.showFinalItemsPanel"
-                                [displayRow]="finalItemsRow$ | async" [finalItems]="true"
-                                [largeList]="listIsLarge"></app-list-details-panel>
+      <div fxFlex="1 1 auto" [ngSwitch]="displayMode$ | async">
+        <ng-container *ngSwitchCase="ListDisplayMode.FULL">
+          <app-list-crystals-panel *ngIf="listDisplay.crystalsPanel"
+                                   [crystals]="crystals$ | async"></app-list-crystals-panel>
+          <app-list-details-panel *ngFor="let displayRow of listDisplay.rows; trackBy: trackByDisplayRow"
+                                  [largeList]="listIsLarge"
+                                  [displayRow]="displayRow"></app-list-details-panel>
+          <app-list-details-panel *ngIf="listDisplay.showFinalItemsPanel"
+                                  [displayRow]="finalItemsRow$ | async" [finalItems]="true"
+                                  [largeList]="listIsLarge"></app-list-details-panel>
+        </ng-container>
+        <ng-container *ngSwitchCase="ListDisplayMode.COMPACT">
+          <app-list-crystals-panel *ngIf="listDisplay.crystalsPanel"
+                                   [crystals]="crystals$ | async"></app-list-crystals-panel>
+          <app-list-details-panel *ngFor="let displayRow of listDisplay.rows; trackBy: trackByDisplayRow"
+                                  [largeList]="listIsLarge"
+                                  [displayRow]="displayRow" [compact]="true"></app-list-details-panel>
+          <app-list-details-panel *ngIf="listDisplay.showFinalItemsPanel"
+                                  [displayRow]="finalItemsRow$ | async" [finalItems]="true"
+                                  [largeList]="listIsLarge" [compact]="true"></app-list-details-panel>
+        </ng-container>
       </div>
       <div *ngIf="listDisplay.showInventory | ifMobile: false" class="inventory">
         <app-inventory-view [list]="list"></app-inventory-view>
