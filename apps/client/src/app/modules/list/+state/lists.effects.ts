@@ -65,7 +65,6 @@ import { ListController } from '../list-controller';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyRow } from '../../../core/rxjs/with-lazy-row';
 import { ListPricingService } from '../../../pages/list-details/list-pricing/list-pricing.service';
-import { debounceBufferTime } from '../../../core/rxjs/debounce-buffer-time';
 import { PermissionsController } from '../../../core/database/permissions-controller';
 import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 import { UpdateData, where } from '@angular/fire/firestore';
@@ -454,35 +453,31 @@ export class ListsEffects {
         withLatestFrom(action.listId ? this.listsFacade.allListDetails$.pipe(map(lists => lists.find(l => l.$key === action.listId))) : this.selectedListClone$),
         filter(([, list]) => list !== undefined)
       );
-    }),
-    debounceBufferTime(3000)
+    })
   ).pipe(
-    concatMap((entries: [SetItemDone, List][]) => {
-      return combineLatest(entries.map(([action, list]) => {
-        if (list.offline) {
-          ListController.updateAllStatuses(list, action.itemId);
-          this.saveToLocalstorage(list, false);
-          return of(null);
-        } else {
-          if (list.hasCommission) {
-            this.updateCommission(list);
-          }
-          return this.listService.runTransaction(list.$key, (transaction, serverCopy) => {
-            const serverList = serverCopy.data() as List;
-            ListController.setDone(serverList, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
-            ListController.updateAllStatuses(serverList, action.itemId);
-            if (isNaN(serverList.etag)) {
-              serverList.etag = 0;
-            }
-            serverList.etag++;
-            this.listService.recordOperation('write');
-            transaction.set(serverCopy.ref, serverList);
-          });
+    concatMap(([action, list]: [SetItemDone, List]) => {
+      if (list.offline) {
+        ListController.updateAllStatuses(list, action.itemId);
+        this.saveToLocalstorage(list, false);
+        return of(null);
+      } else {
+        if (list.hasCommission) {
+          this.updateCommission(list);
         }
-      }));
+        return this.listService.runTransaction(list.$key, (transaction, serverCopy) => {
+          const serverList = serverCopy.data() as List;
+          ListController.setDone(serverList, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
+          ListController.updateAllStatuses(serverList, action.itemId);
+          if (isNaN(serverList.etag)) {
+            serverList.etag = 0;
+          }
+          serverList.etag++;
+          this.listService.recordOperation('write');
+          transaction.set(serverCopy.ref, serverList);
+        });
+      }
     }),
-    map(() => new RemoveReadLock()),
-    debounceTime(1000)
+    map(() => new RemoveReadLock())
   ));
 
   updateItem$ = createEffect(() => this.actions$.pipe(

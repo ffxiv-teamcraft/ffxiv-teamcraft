@@ -12,7 +12,7 @@ import {
   CollectionReference,
   deleteDoc,
   doc,
-  docData,
+  docSnapshots,
   DocumentData,
   DocumentReference,
   DocumentSnapshot,
@@ -115,12 +115,16 @@ export abstract class FirestoreStorage<T extends DataModel> {
 
   get(key: string, uriParams?: any): Observable<T> {
     if (this.cache[key] === undefined) {
-      this.cache[key] = docData(this.docRef(key))
+      this.cache[key] = docSnapshots(this.docRef(key))
         .pipe(
           catchError(error => {
             console.error(`GET ${this.getBaseUri()}/${key}`);
             console.error(error);
             return throwError(error);
+          }),
+          filter(snap => !snap.metadata.hasPendingWrites),
+          map(snap => {
+            return snap.data();
           }),
           map(data => {
             if (data === undefined) {
