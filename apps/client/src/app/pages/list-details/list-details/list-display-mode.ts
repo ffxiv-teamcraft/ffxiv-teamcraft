@@ -1,5 +1,5 @@
 export enum ListDisplayMode {
   FULL,
-  COMPACT,
+  MINIMALIST,
   STEP_BY_STEP
 }

@@ -109,7 +109,16 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   private regeneratingList = false;
 
-  public displayMode$ = new LocalStorageBehaviorSubject<ListDisplayMode>('list-details:display-mode', ListDisplayMode.FULL);
+  public _displayMode$ = new LocalStorageBehaviorSubject<ListDisplayMode>('list-details:display-mode', ListDisplayMode.FULL);
+
+  public displayMode$ = this._displayMode$.pipe(
+    map((displayMode, i) => {
+      if (this.listIsLarge && this.settings.autoMinimalistOnLargeLists && i === 0) {
+        return ListDisplayMode.MINIMALIST;
+      }
+      return displayMode;
+    })
+  );
 
   constructor(private layoutsFacade: LayoutsFacade, public listsFacade: ListsFacade,
               private activatedRoute: ActivatedRoute, private dialog: NzModalService,

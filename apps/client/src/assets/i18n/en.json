@@ -471,6 +471,7 @@
     "Enable_autofill_notification_by_default": "Enable autofill notification by default",
     "Enable_autofill_hq_filter": "Only autofill using hq items when item is required as HQ",
     "Enable_autofill_nq_filter": "Only autofill using nq items when item is not required as HQ",
+    "Auto_minimalist_large_lists": "Automatically switch to minimalist mode for large lists",
     "Contribute_to_universalis": "Contribute to Universalis",
     "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
     "Change_email": "Change email",
@@ -775,7 +776,7 @@
     "DISPLAY_MODE": {
       "Title": "Display mode",
       "Full": "Full",
-      "Compact": "Compact",
+      "Minimalist": "Minimalist",
       "Step_by_step": "Step by step"
     },
     "SOURCES": {

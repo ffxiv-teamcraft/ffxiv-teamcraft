@@ -185,9 +185,9 @@
         <span class="selector-label">
         {{'LIST_DETAILS.DISPLAY_MODE.Title' | translate}}
         </span>
-        <nz-radio-group [ngModel]="displayMode$ | async" (ngModelChange)="displayMode$.next($event)">
+        <nz-radio-group [ngModel]="displayMode$ | async" (ngModelChange)="_displayMode$.next($event)">
           <label nz-radio-button [nzValue]="ListDisplayMode.FULL">{{'LIST_DETAILS.DISPLAY_MODE.Full' | translate}}</label>
-          <label nz-radio-button [nzValue]="ListDisplayMode.COMPACT">{{'LIST_DETAILS.DISPLAY_MODE.Compact' | translate}}</label>
+          <label nz-radio-button [nzValue]="ListDisplayMode.MINIMALIST">{{'LIST_DETAILS.DISPLAY_MODE.Minimalist' | translate}}</label>
 <!--          <label nz-radio-button [nzValue]="ListDisplayMode.STEP_BY_STEP">{{'LIST_DETAILS.DISPLAY_MODE.Step_by_step' | translate}}</label>-->
         </nz-radio-group>
       </div>
@@ -314,7 +314,7 @@
                                   [displayRow]="finalItemsRow$ | async" [finalItems]="true"
                                   [largeList]="listIsLarge"></app-list-details-panel>
         </ng-container>
-        <ng-container *ngSwitchCase="ListDisplayMode.COMPACT">
+        <ng-container *ngSwitchCase="ListDisplayMode.MINIMALIST">
           <app-list-crystals-panel *ngIf="listDisplay.crystalsPanel"
                                    [crystals]="crystals$ | async"></app-list-crystals-panel>
           <app-list-details-panel *ngFor="let displayRow of listDisplay.rows; trackBy: trackByDisplayRow"

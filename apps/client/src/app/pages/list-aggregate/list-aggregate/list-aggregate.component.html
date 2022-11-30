@@ -10,7 +10,7 @@
         </span>
       <nz-radio-group [ngModel]="displayMode$ | async" (ngModelChange)="displayMode$.next($event)">
         <label nz-radio-button [nzValue]="ListDisplayMode.FULL">{{'LIST_DETAILS.DISPLAY_MODE.Full' | translate}}</label>
-        <label nz-radio-button [nzValue]="ListDisplayMode.COMPACT">{{'LIST_DETAILS.DISPLAY_MODE.Compact' | translate}}</label>
+        <label nz-radio-button [nzValue]="ListDisplayMode.MINIMALIST">{{'LIST_DETAILS.DISPLAY_MODE.Compact' | translate}}</label>
       </nz-radio-group>
     </div>
   </nz-page-header-extra>
@@ -45,7 +45,7 @@
   <ng-container *ngIf="panelDisplay$ | async as display">
     <app-list-details-panel *ngIf="display.panel" [finalItems]="display.finalItems" [displayRow]="display.panel"
                             [permissionLevel]="permissionLevel$ | async" [aggregate]="aggregate$ | async"
-                            [compact]="(displayMode$ | async) === ListDisplayMode.COMPACT"></app-list-details-panel>
+                            [compact]="(displayMode$ | async) === ListDisplayMode.MINIMALIST"></app-list-details-panel>
   </ng-container>
 </ng-container>
 <ng-template #pickPanel>

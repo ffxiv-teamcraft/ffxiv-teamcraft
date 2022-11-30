@@ -462,6 +462,14 @@ export class SettingsService {
     this.setSetting('compact-alarms', compact.toString());
   }
 
+  public get autoMinimalistOnLargeLists(): boolean {
+    return this.getBoolean('auto-minimalist-large-lists', true);
+  }
+
+  public set autoMinimalistOnLargeLists(compact: boolean) {
+    this.setSetting('auto-minimalist-large-lists', compact.toString());
+  }
+
   public get performanceMode(): boolean {
     return this.getBoolean('lists:perf-mode', false);
   }
