@@ -213,10 +213,9 @@ export class ItemRowButtonsComponent extends TeamcraftComponent {
   }
 
   openMenu(event: MouseEvent): void {
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ItemRowMenuComponent);
     const viewContainerRef = this.contextMenuHost;
     viewContainerRef.clear();
-    const componentRef = viewContainerRef.createComponent<ItemRowMenuComponent>(componentFactory);
+    const componentRef = viewContainerRef.createComponent<ItemRowMenuComponent>(ItemRowMenuComponent);
     componentRef.instance.buttonsComponentRef = this;
     componentRef.instance.menu$.subscribe(menu => {
       this.nzContextMenuService.create(event, menu);

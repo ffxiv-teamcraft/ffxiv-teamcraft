@@ -54,6 +54,7 @@ import { CommonModule } from '@angular/common';
 import { I18nRowPipe } from './i18n/i18n-row.pipe';
 import { NzNotificationModule } from 'ng-zorro-antd/notification';
 import { NgForTrackByIdDirective } from './track-by/ng-for-track-by-id.directive';
+import { NgForTrackByKeyDirective } from './track-by/ng-for-track-by-key.directive';
 
 
 @NgModule({
@@ -123,7 +124,8 @@ import { NgForTrackByIdDirective } from './track-by/ng-for-track-by-id.directive
     ItemNameClipboardDirective,
     I18nNameComponent,
     I18nRowPipe,
-    NgForTrackByIdDirective
+    NgForTrackByIdDirective,
+    NgForTrackByKeyDirective
   ],
   exports: [
     I18nPipe,
@@ -144,7 +146,8 @@ import { NgForTrackByIdDirective } from './track-by/ng-for-track-by-id.directive
     NzToolTipModule,
     NzIconModule,
     I18nRowPipe,
-    NgForTrackByIdDirective
+    NgForTrackByIdDirective,
+    NgForTrackByKeyDirective
   ]
 })
 export class CoreModule {

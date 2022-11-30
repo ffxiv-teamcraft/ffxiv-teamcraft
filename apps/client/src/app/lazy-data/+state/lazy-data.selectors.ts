@@ -21,9 +21,9 @@ export const getEntryRow = ({ key, id }) => createSelector(
   }
 );
 
-export const getEntryStatus = createSelector(
+export const getEntryStatus = ({ key }) => createSelector(
   getLazyDataState,
-  (state, { key }) => state.loadingStates[key]
+  (state) => state.loadingStates[key]
 );
 
 export const isLoading = createSelector(

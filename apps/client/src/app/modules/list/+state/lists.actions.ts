@@ -135,7 +135,7 @@ export class SetItemDone implements Action {
               public readonly finalItem: boolean, public readonly doneDelta: number,
               public readonly recipeId: string, public readonly totalNeeded: number, public readonly settings: { enableAutofillHQFilter: boolean, enableAutofillNQFilter: boolean },
               public readonly external = false, public readonly fromPacket = false,
-              public readonly hq = false) {
+              public readonly hq = false, public readonly listId?: string) {
   }
 }
 

@@ -47,6 +47,7 @@ import { ListController } from '../../../modules/list/list-controller';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { uniq } from 'lodash';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
+import { ListDisplayMode } from './list-display-mode';
 
 @Component({
   selector: 'app-list-details',
@@ -55,6 +56,8 @@ import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-be
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListDetailsComponent extends TeamcraftPageComponent implements OnInit, OnDestroy {
+
+  public ListDisplayMode = ListDisplayMode;
 
   public display$: Observable<ListDisplay>;
 
@@ -105,6 +108,17 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   private adaptativeFilter$ = new BehaviorSubject<boolean>(localStorage.getItem('adaptative-filter') === 'true');
 
   private regeneratingList = false;
+
+  public _displayMode$ = new LocalStorageBehaviorSubject<ListDisplayMode>('list-details:display-mode', ListDisplayMode.FULL);
+
+  public displayMode$ = this._displayMode$.pipe(
+    map((displayMode, i) => {
+      if (this.listIsLarge && this.settings.autoMinimalistOnLargeLists && i === 0) {
+        return ListDisplayMode.MINIMALIST;
+      }
+      return displayMode;
+    })
+  );
 
   constructor(private layoutsFacade: LayoutsFacade, public listsFacade: ListsFacade,
               private activatedRoute: ActivatedRoute, private dialog: NzModalService,

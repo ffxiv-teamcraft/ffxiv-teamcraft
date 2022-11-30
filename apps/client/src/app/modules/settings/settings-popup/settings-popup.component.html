@@ -203,6 +203,13 @@
       <nz-form-item class="empty-label">
         <nz-form-label [nzSpan]="5"></nz-form-label>
         <nz-form-control [nzSpan]="12">
+          <label [(ngModel)]="settings.autoMinimalistOnLargeLists"
+                 nz-checkbox>{{'SETTINGS.Auto_minimalist_large_lists' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
           <label [(ngModel)]="settings.makeQuickListsOffline"
                  nz-checkbox>{{'SETTINGS.Make_quick_lists_offline' | translate}}</label>
         </nz-form-control>

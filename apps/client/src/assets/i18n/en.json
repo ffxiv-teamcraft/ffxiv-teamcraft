@@ -471,6 +471,7 @@
     "Enable_autofill_notification_by_default": "Enable autofill notification by default",
     "Enable_autofill_hq_filter": "Only autofill using hq items when item is required as HQ",
     "Enable_autofill_nq_filter": "Only autofill using nq items when item is not required as HQ",
+    "Auto_minimalist_large_lists": "Automatically switch to minimalist mode for large lists",
     "Contribute_to_universalis": "Contribute to Universalis",
     "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
     "Change_email": "Change email",
@@ -612,7 +613,8 @@
     "Add_selection_to_list": "Add selection to list",
     "Your_lists": "Your lists",
     "Outdated_tag": "Outdated",
-    "No_lists": "You have no lists",
+    "No_lists": "No lists to display here",
+    "List_aggregates": "List aggregates",
     "Lists_search_placeholder": "Search for a list…",
     "Add_to_a_list": "Add to a list",
     "Please_pick_recipe": "Please pick a recipe for this item",
@@ -771,6 +773,12 @@
     "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
     "Consider_requirements": "Consider requirements",
     "Ignore_requirements": "Ignore requirements",
+    "DISPLAY_MODE": {
+      "Title": "Display mode",
+      "Full": "Full",
+      "Minimalist": "Minimalist",
+      "Step_by_step": "Step by step"
+    },
     "SOURCES": {
       "Gatherable": "Can be gathered, click to see more details"
     },
@@ -2946,6 +2954,22 @@
     "Explain_cost_to_craft": "Added cost of all materials excluding crystals to craft one item using only materials from marketboard.",
     "Empty_list": "Empty list, click the + button on an item to add it here",
     "Add_to_list": "Add these items to a list"
+  },
+  "LIST_AGGREGATE": {
+    "Home_title": "List Aggregate",
+    "Home_subtitle": "Open multiple lists at once in an aggregated view",
+    "Select_lists": "Select the lists you want to aggregate",
+    "Select_layout": "Select a layout",
+    "Open_aggregate": "Open an aggregated view",
+    "Title": "Aggregated list view",
+    "Select_panel": "Select a panel to open its view",
+    "Missing_lists": "{{amount}} list(s) could not be loaded properly",
+    "Remove_missing_ids": "Remove missing lists from the aggregate",
+    "Missing_lists_description": "Please make sure you have enough permissions on all the lists and that they still exist (missing ids: {{ids}}).",
+    "Save": "Save this aggregate to your lists page",
+    "Saved": "Aggregate saved to your lists page",
+    "Final_items_count": "# of items",
+    "Requirement_items_count": "# of required items"
   },
   "MACHINA_ERRORS": {
     "Default": "Machina Wrapper error",

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { getItemSource, ListRow } from '../model/list-row';
 import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
@@ -12,7 +12,7 @@ import { NavigationMapComponent } from '../../map/navigation-map/navigation-map.
 import { NavigationObjective } from '../../map/navigation-objective';
 import { ListsFacade } from '../+state/lists.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { Observable, of } from 'rxjs';
+import { merge, Observable, of, ReplaySubject } from 'rxjs';
 import { ItemPickerService } from '../../item-picker/item-picker.service';
 import { filter, first, map, switchMap, takeUntil } from 'rxjs/operators';
 import { ListManagerService } from '../list-manager.service';
@@ -36,11 +36,13 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { observeInput } from '../../../core/rxjs/observe-input';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { ProcessedListAggregate } from '../../list-aggregate/model/processed-list-aggregate';
 
 @Component({
   selector: 'app-list-details-panel',
   templateUrl: './list-details-panel.component.html',
-  styleUrls: ['./list-details-panel.component.less']
+  styleUrls: ['./list-details-panel.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
@@ -50,6 +52,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   displayRow: LayoutRowDisplay;
 
   @Input()
+  compact: boolean;
+
+  @Input()
   finalItems = false;
 
   @Input()
@@ -57,6 +62,16 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   @Input()
   largeList = false;
+
+  @Input()
+  aggregate: ProcessedListAggregate;
+
+  private _forcePermissionLevel$ = new ReplaySubject<PermissionLevel>();
+
+  @Input()
+  set permissionLevel(level: PermissionLevel) {
+    this._forcePermissionLevel$.next(level);
+  }
 
   collapsed = false;
 
@@ -70,7 +85,10 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   hasNavigationMapForZone: { [index: number]: boolean } = {};
 
-  permissionLevel$: Observable<PermissionLevel> = this.listsFacade.selectedListPermissionLevel$;
+  permissionLevel$: Observable<PermissionLevel> = merge(
+    this.listsFacade.selectedListPermissionLevel$,
+    this._forcePermissionLevel$
+  );
 
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
 

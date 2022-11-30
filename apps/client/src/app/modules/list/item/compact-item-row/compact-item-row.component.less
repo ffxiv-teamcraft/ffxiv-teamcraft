@@ -1,0 +1,53 @@
+:host {
+  border-radius: 4px;
+  border: 1px solid #444;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+
+  &.done {
+    background-color: rgba(94, 255, 91, 0.2);
+    opacity: .6;
+  }
+
+  &.can-skip {
+    opacity: .5;
+  }
+
+  &.has-all-ingredients {
+    border: 1px dashed rgba(19, 168, 255, .3);
+  }
+
+  &.craftable {
+    background-color: rgba(19, 168, 255, .4);
+  }
+
+  ::ng-deep {
+    .ant-input-number-group .ant-input-number {
+      width: 70px;
+    }
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+
+    &:not(:first-child) {
+      margin-top: 5px;
+    }
+  }
+
+  .amount-input {
+    display: flex;
+
+    .ant-input-number {
+      border-radius: 0;
+    }
+  }
+
+  .check-button {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+}

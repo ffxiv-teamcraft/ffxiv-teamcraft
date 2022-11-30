@@ -132,7 +132,7 @@ export class ListController {
    * @param {List} otherList
    * @returns {List}
    */
-  public static merge(list: List, otherList: List): List {
+  public static merge(list: List, otherList: Pick<List, 'items' | 'finalItems'>): List {
     otherList.items.forEach(item => {
       ListController.add(list, list.items, item);
     });
@@ -676,6 +676,7 @@ export class ListController {
       row = array[array.length - 1];
     } else {
       row.amount = MathTools.absoluteCeil(row.amount + data.amount);
+      row.done = MathTools.absoluteCeil(row.done + data.done);
       if (!row.requires) {
         row.requires = data.requires;
       }

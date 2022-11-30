@@ -22,7 +22,6 @@ export interface ListsState {
   deleted: string[];
   pinned: string;
   showArchived: boolean;
-  readLock: boolean;
 }
 
 export const initialState: ListsState = {
@@ -32,8 +31,7 @@ export const initialState: ListsState = {
   deleted: [],
   connectedTeams: [],
   pinned: localStorage.getItem(PINNED_LIST_LS_KEY) || 'none',
-  showArchived: false,
-  readLock: false
+  showArchived: false
 };
 
 function updateLists(lists: List[], state: ListsState, matchingPredicate = (list: List) => false): ListsState {
@@ -44,7 +42,7 @@ function updateLists(lists: List[], state: ListsState, matchingPredicate = (list
     checkedLists[storeList.$key] = true;
     const patch = listsByKey[storeList.$key];
     if (patch && patch.etag >= storeList.etag) {
-      if (storeList.$key === state.selectedId && state.readLock) {
+      if (storeList.$key === state.selectedId) {
         return storeList;
       }
       return patch;
@@ -95,7 +93,8 @@ export function listsReducer(
     }
 
     case ListsActionTypes.SetItemDone: {
-      const list = ListController.clone(state.listDetails.entities[state.selectedId], true);
+      const listId = action.listId || state.selectedId;
+      const list = ListController.clone(state.listDetails.entities[listId], true);
       const item = ListController.getItemById(list, action.itemId, !action.finalItem, action.finalItem);
       const requiredHq = ListController.requiredAsHQ(list, item) > 0;
       let fill = true;
@@ -110,18 +109,9 @@ export function listsReducer(
         ListController.updateAllStatuses(list, action.itemId);
         state = {
           ...state,
-          readLock: true,
           listDetails: listsAdapter.setOne(list, state.listDetails)
         };
       }
-      break;
-    }
-
-    case ListsActionTypes.RemoveReadLock: {
-      state = {
-        ...state,
-        readLock: false
-      };
       break;
     }
 

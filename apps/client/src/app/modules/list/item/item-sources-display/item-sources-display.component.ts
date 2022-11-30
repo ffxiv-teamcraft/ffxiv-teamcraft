@@ -28,6 +28,8 @@ import { first } from 'rxjs/operators';
 import { TeamcraftOptimizedComponent } from '../../../../core/component/teamcraft-optimized-component';
 import { IslandAnimalComponent } from '../../../item-details/island-animal/island-animal.component';
 import { IslandCropComponent } from '../../../item-details/island-crop/island-crop.component';
+import { NzSizeLDSType } from 'ng-zorro-antd/core/types';
+import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 
 @Component({
   selector: 'app-item-sources-display',
@@ -35,7 +37,7 @@ import { IslandCropComponent } from '../../../item-details/island-crop/island-cr
   styleUrls: ['./item-sources-display.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ItemSourcesDisplayComponent extends TeamcraftOptimizedComponent {
+export class ItemSourcesDisplayComponent extends TeamcraftComponent {
   @Input()
   sources: ItemSource[];
 
@@ -51,11 +53,14 @@ export class ItemSourcesDisplayComponent extends TeamcraftOptimizedComponent {
   @Input()
   flex = '0 1 auto';
 
+  @Input()
+  size: NzSizeLDSType = 'default';
+
   dataTypes = DataType;
 
   constructor(private modal: NzModalService, private i18n: I18nToolsService,
-              private rotationPicker: RotationPickerService, cd: ChangeDetectorRef) {
-    super(cd);
+              private rotationPicker: RotationPickerService) {
+    super();
   }
 
   public openGatheredByPopup(item: ListRow): void {

@@ -13,27 +13,23 @@
       </div>
       <div fxLayout="column" fxLayoutGap="5px">
         <div fxLayout="row">
-          <div fxLayout="column" fxLayoutAlign="center flex-start">
-            <div>
-              <i nz-icon nzType="experiment" nzTheme="outline" nz-tooltip [nzTooltipTitle]="'LIST.Final_item' | translate"
-                 *ngIf="item.finalItem && !this.finalItem$.value"></i>
-              <i nz-icon nzType="stop" nzTheme="outline" nz-tooltip [nzTooltipTitle]="'LIST.Requirements_ignored' | translate"
-                 *ngIf="ignoreRequirements$ | async"></i>
-              <span [itemNameCopy]="item.id"
-                    class="item-name"
-                    nz-tooltip>
+          <i nz-icon nzType="experiment" nzTheme="outline" nz-tooltip [nzTooltipTitle]="'LIST.Final_item' | translate"
+             *ngIf="item.finalItem && !this.finalItem$.value"></i>
+          <i nz-icon nzType="stop" nzTheme="outline" nz-tooltip [nzTooltipTitle]="'LIST.Requirements_ignored' | translate"
+             *ngIf="ignoreRequirements$ | async"></i>
+          <span [itemNameCopy]="item.id"
+                class="item-name"
+                nz-tooltip>
               <app-i18n-name [content]="item.contentType || 'items'" [id]="item.id" [fallback]="item.name"></app-i18n-name>
             </span>
-              <span *ngIf="requiredForFinalCraft$ | async as requiredForFinal">
+          <span *ngIf="requiredForFinalCraft$ | async as requiredForFinal">
               <img [nzTooltipTitle]="'Required_for_final_craft' | translate:{amount: requiredForFinal}" alt="" nz-tooltip
                    src="./assets/icons/HQ.png"/>
             </span>
-              <span *ngIf="item.amount > item.done" class="needed" nz-tooltip
-                    [nzTooltipTitle]="'Required_crafts_amount' | translate">&nbsp;x{{item.amount - item.done}}<span
-                *ngIf="item.amount !== item.amount_needed">({{((item.amount - item.done) / item.yield) | ceil}})</span>
+          <span *ngIf="item.amount > item.done" class="needed" nz-tooltip
+                [nzTooltipTitle]="'Required_crafts_amount' | translate">&nbsp;x{{item.amount - item.done}}<span
+            *ngIf="item.amount !== item.amount_needed">({{((item.amount - item.done) / item.yield) | ceil}})</span>
             </span>
-            </div>
-          </div>
           <div class="skip-tag" *ngIf="skip">
             <nz-tag *ngIf="skip < item.amount" nz-tooltip
                     [nzTooltipTitle]="'LIST.Can_skip_tooltip' | translate">{{'LIST.Can_skip_buying_X' | translate:{ amount: skip } }}</nz-tag>
@@ -43,50 +39,49 @@
           <app-user-avatar *ngFor="let user of item.workingOnIt" [userId]="user" [width]="24"
                            class="working-on-it" messageKey="Is_working_on_it"></app-user-avatar>
           <ng-container *ngIf="list$ | async as list">
-            <div class="menu-buttons" fxLayout="row" fxLayoutGap="5px" *ngIf="userId$ | async as userId">
-              <app-item-row-buttons
-                [recipeId]="item.recipeId || (item.craftedBy && item.craftedBy.length > 0 && item.craftedBy[0].id)"
-                [buttonsCache]="buttonsCache"
-                [finalItem]="finalItem$ | async"
-                [itemId]="item.id"
-                [fallbackItemName]="item.name"
-                [overlay]="overlay"
-                [isCraft]="item.craftedBy && item.craftedBy.length > 0 && +item.craftedBy[0].id[0] > 0"
-                [hasAlarms]="alarmsDisplay.alarms?.length > 0"
-                [attachedRotation]="item.attachedRotation"
-                [userId]="userId"
-                [loggedIn]="loggedIn$ | async"
-                [offlineList]="list.offline"
-                [commentBadge]="commentBadge$ | async"
-                [team]="team$ | async"
-                [workingOnIt]="item.workingOnIt"
-                [requiredForFinalCraft]="requiredForFinalCraft$ | async"
-                [permissionLevel]="permissionLevel"
-                [showLogCompletionButton]="showLogCompletionButton$ | async"
-                [missingBooks]="missingBooks$ | async"
-                [masterbooks]="item.masterbooks"
-                (attachRotation)="attachRotation(item)"
-                (detachRotation)="detachRotation(item)"
-                (openCommentsPopup)="openCommentsPopup(list.authorId === userId, item)"
-                (checkMasterbooks)="checkMasterbooks($event)"
-                (openMarketboardDialog)="openMarketboardDialog(item)"
-                (addAllAlarms)="addAllAlarms(item)"
-                (openRequirementsPopup)="openRequirementsPopup(item)"
-                (openRotationMacroPopup)="openRotationMacroPopup($event, item)"
-                (showTagInput)="showTagInput()"
-                (changeAmount)="changeAmount(item)"
-                (addToList)="addToList(item)"
-                (removeItem)="removeItem(item)"
-                (markAsDoneInLog)="markAsDoneInLog(item)"
-                (assignTeamMember)="assignTeamMember($event.team, $event.userId, item)"
-                (setWorkingOnIt)="setWorkingOnIt($event, item)"
-                (removeWorkingOnIt)="removeWorkingOnIt($event, item)"
-                [(requiredAsHQ)]="item.requiredAsHQ"
-                (requiredAsHQChange)="saveItem(item)"
-                [ignoreRequirements]="ignoreRequirements$ | async"
-                (ignoreRequirementsChange)="setIgnoreRequirements($event, item.id, list, finalItem)"
-              ></app-item-row-buttons>
-            </div>
+            <app-item-row-buttons
+              class="menu-buttons" fxLayout="row" fxLayoutGap="5px" *ngIf="userId$ | async as userId"
+              [recipeId]="item.recipeId || (item.craftedBy && item.craftedBy.length > 0 && item.craftedBy[0].id)"
+              [buttonsCache]="buttonsCache"
+              [finalItem]="finalItem$ | async"
+              [itemId]="item.id"
+              [fallbackItemName]="item.name"
+              [overlay]="overlay"
+              [isCraft]="item.craftedBy && item.craftedBy.length > 0 && +item.craftedBy[0].id[0] > 0"
+              [hasAlarms]="alarmsDisplay.alarms?.length > 0"
+              [attachedRotation]="item.attachedRotation"
+              [userId]="userId"
+              [loggedIn]="loggedIn$ | async"
+              [offlineList]="list.offline"
+              [commentBadge]="commentBadge$ | async"
+              [team]="team$ | async"
+              [workingOnIt]="item.workingOnIt"
+              [requiredForFinalCraft]="requiredForFinalCraft$ | async"
+              [permissionLevel]="permissionLevel"
+              [showLogCompletionButton]="showLogCompletionButton$ | async"
+              [missingBooks]="missingBooks$ | async"
+              [masterbooks]="item.masterbooks"
+              (attachRotation)="attachRotation(item)"
+              (detachRotation)="detachRotation(item)"
+              (openCommentsPopup)="openCommentsPopup(list.authorId === userId, item)"
+              (checkMasterbooks)="checkMasterbooks($event)"
+              (openMarketboardDialog)="openMarketboardDialog(item)"
+              (addAllAlarms)="addAllAlarms(item)"
+              (openRequirementsPopup)="openRequirementsPopup(item)"
+              (openRotationMacroPopup)="openRotationMacroPopup($event, item)"
+              (showTagInput)="showTagInput()"
+              (changeAmount)="changeAmount(item)"
+              (addToList)="addToList(item)"
+              (removeItem)="removeItem(item)"
+              (markAsDoneInLog)="markAsDoneInLog(item)"
+              (assignTeamMember)="assignTeamMember($event.team, $event.userId, item)"
+              (setWorkingOnIt)="setWorkingOnIt($event, item)"
+              (removeWorkingOnIt)="removeWorkingOnIt($event, item)"
+              [(requiredAsHQ)]="item.requiredAsHQ"
+              (requiredAsHQChange)="saveItem(item)"
+              [ignoreRequirements]="ignoreRequirements$ | async"
+              (ignoreRequirementsChange)="setIgnoreRequirements($event, item.id, list, finalItem)"
+            ></app-item-row-buttons>
           </ng-container>
           <div *ngIf="amountInInventory$ | async as amountInInventory" class="amount-in-inventories" fxLayout="row wrap"
                fxLayoutGap="5px">
