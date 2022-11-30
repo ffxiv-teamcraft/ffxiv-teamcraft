@@ -31,7 +31,6 @@ export class ItemRowComponent extends AbstractItemRowComponent implements OnInit
   ngOnInit() {
     super.ngOnInit();
 
-
     this.commentBadge$ = this.commentBadgeReloader$.pipe(
       exhaustMap(() => combineLatest([this.list$, this.item$.pipe(map(i => i.id))])),
       switchMap(([list, itemId]) => {
