@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, Type } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Type } from '@angular/core';
 import { ItemSource } from '../../model/item-source';
 import { DataType } from '../../data/data-type';
 import { Craft } from '../../../../model/garland-tools/craft';
@@ -24,12 +24,13 @@ import { GardeningComponent } from '../../../item-details/gardening/gardening.co
 import { MogstationComponent } from '../../../item-details/mogstation/mogstation.component';
 import { QuestsComponent } from '../../../item-details/quests/quests.component';
 import { AchievementsComponent } from '../../../item-details/achievements/achievements.component';
-import { first } from 'rxjs/operators';
-import { TeamcraftOptimizedComponent } from '../../../../core/component/teamcraft-optimized-component';
+import { combineLatest, first, map } from 'rxjs';
 import { IslandAnimalComponent } from '../../../item-details/island-animal/island-animal.component';
 import { IslandCropComponent } from '../../../item-details/island-crop/island-crop.component';
 import { NzSizeLDSType } from 'ng-zorro-antd/core/types';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
+import { observeInput } from '../../../../core/rxjs/observe-input';
+import { shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-item-sources-display',
@@ -55,6 +56,25 @@ export class ItemSourcesDisplayComponent extends TeamcraftComponent {
 
   @Input()
   size: NzSizeLDSType = 'default';
+
+  @Input()
+  forceHorizontal = false;
+
+  @Input()
+  displayedSources: DataType[] | null = null;
+
+  sourcesDisplay$ = combineLatest([
+    observeInput(this, 'sources'),
+    observeInput(this, 'displayedSources', true)
+  ]).pipe(
+    map(([sources, displayedSources]) => {
+      if (!displayedSources) {
+        return sources;
+      }
+      return sources.filter(s => displayedSources.includes(s.type));
+    }),
+    shareReplay(1)
+  );
 
   dataTypes = DataType;
 

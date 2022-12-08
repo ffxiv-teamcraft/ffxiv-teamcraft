@@ -2,6 +2,7 @@ import { ListsAction, ListsActionTypes } from './lists.actions';
 import { List } from '../model/list';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { ListController } from '../list-controller';
+import { cloneDeep } from 'lodash';
 
 
 const PINNED_LIST_LS_KEY = 'lists:pinned';
@@ -60,6 +61,14 @@ function updateLists(lists: List[], state: ListsState, matchingPredicate = (list
     ...state,
     listDetails: listsAdapter.removeMany(toDelete, afterSet)
   };
+}
+
+function buildProgression(list: List): number {
+  const allItems = [...list.items, ...list.finalItems];
+  return 100 * allItems.reduce((acc, item) => {
+    acc += item.done / item.amount;
+    return acc;
+  }, 0) / allItems.length;
 }
 
 export function listsReducer(
@@ -181,15 +190,15 @@ export function listsReducer(
     }
 
     case ListsActionTypes.ListDetailsLoaded: {
-      const newVersion = action.payload as List;
+      const newVersion = ListController.clone(cloneDeep(action.payload) as List, true);
       let updated = false;
       let listDetails = state.listDetails;
       if (state.listDetails.entities[action.payload.$key]) {
         listDetails = listsAdapter.mapOne({
-          id: action.payload.$key,
+          id: newVersion.$key,
           map: current => {
             updated = (newVersion.etag || 0) >= (current.etag || 0);
-            if (updated && newVersion.items?.length > 0) {
+            if (updated && newVersion.items?.length > 0 && newVersion.notFound) {
               newVersion.notFound = false;
               return newVersion;
             }
@@ -197,7 +206,7 @@ export function listsReducer(
           }
         }, state.listDetails);
       } else {
-        listDetails = listsAdapter.setOne(action.payload as List, state.listDetails);
+        listDetails = listsAdapter.setOne(newVersion, state.listDetails);
         updated = true;
       }
       state = {

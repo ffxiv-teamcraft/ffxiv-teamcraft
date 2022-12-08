@@ -773,6 +773,15 @@
     "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
     "Consider_requirements": "Consider requirements",
     "Ignore_requirements": "Ignore requirements",
+    "STEP_BY_STEP": {
+      "Previous": "Previous map",
+      "Previous_incomplete": "Previous incomplete map",
+      "Next": "Next map",
+      "Next_incomplete": "Next incomplete map",
+      "Global_list_progress": "Global list progress",
+      "Alarms": "Timed rows",
+      "Crafts": "Ordered crafts"
+    },
     "DISPLAY_MODE": {
       "Title": "Display mode",
       "Full": "Full",

@@ -30,7 +30,7 @@
   </button>
   <button [nzSize]="'small'" *ngIf="showPosition" nz-tooltip [nzTooltipTitle]="'See_on_map' | translate"
           (click)="openMap()" nz-button>
-    <i nz-icon nzType="environment" nzTheme="outline"></i>
+    <i nz-icon nzType="environment" nzTheme="outline" class="position-icon"></i>
   </button>
   <nz-dropdown-menu #menu="nzDropdownMenu">
     <ul nz-menu>

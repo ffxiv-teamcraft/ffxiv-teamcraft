@@ -9,7 +9,7 @@ export class MapsExtractor extends AbstractExtractor {
       this.getSheet<any>(xiv, 'Map', ['PriorityUI', 'Id', 'MapIndex', 'PlaceNameSub', 'Hierarchy', 'MapFilename', 'OffsetX', 'OffsetY', 'MapMarkerRange', 'PlaceName', 'PlaceNameRegion', 'PlaceNameSub', 'SizeFactor', 'TerritoryType']),
       this.getSheet<any>(xiv, 'TerritoryType', ['OffsetZ']),
       this.getSheet<any>(xiv, 'ContentFinderCondition', ['TerritoryType.Name']),
-      this.getSheet<any>(xiv, 'HousingMapMarkerInfo', ['Map'])
+      this.getSheet<any>(xiv, 'HousingMapMarkerInfo', ['Map#'])
     ]).subscribe(([xivapiMaps, territories, contentFinderConditions, housingMapMarkerInfo]) => {
       xivapiMaps.forEach(mapData => {
         const [folder, layer] = mapData.Id.split('/');
@@ -35,7 +35,7 @@ export class MapsExtractor extends AbstractExtractor {
           territory_id: mapData.TerritoryType,
           index: mapData.MapIndex,
           dungeon: contentFinderConditions.some(c => folder === c.TerritoryType.Name),
-          housing: housingMapMarkerInfo.some(marker => marker.map === mapData.index)
+          housing: housingMapMarkerInfo.some(marker => marker.Map === mapData.index)
         };
       });
       this.persistToJsonAsset('maps', maps);

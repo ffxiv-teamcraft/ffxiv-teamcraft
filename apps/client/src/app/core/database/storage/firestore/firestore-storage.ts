@@ -3,7 +3,7 @@ import { DataModel } from '../data-model';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { NgZone } from '@angular/core';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { catchError, distinctUntilChanged, filter, finalize, map, retry, takeUntil, tap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, finalize, map, retry, shareReplay, takeUntil, tap } from 'rxjs/operators';
 import { environment } from '../../../../../environments/environment';
 import {
   addDoc,
@@ -136,6 +136,7 @@ export abstract class FirestoreStorage<T extends DataModel> {
           tap(() => {
             this.recordOperation('read', key);
           }),
+          shareReplay(1),
           takeUntil(this.stop$.pipe(filter(stop => stop === key))),
           finalize(() => {
             setTimeout(() => {

@@ -160,10 +160,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/template/template.module').then(m => m.TemplateModule)
   },
   {
-    path: 'custom-items',
-    loadChildren: () => import('./pages/custom-items/custom-items-page.module').then(m => m.CustomItemsPageModule)
-  },
-  {
     path: 'desynth',
     loadChildren: () => import('./pages/desynth/desynth.module').then(m => m.DesynthModule)
   },

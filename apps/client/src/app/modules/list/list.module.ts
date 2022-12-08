@@ -68,6 +68,10 @@ import { AlarmButtonModule } from '../alarm-button/alarm-button.module';
 import { IslandPastureExtractor } from './data/extractor/island-pasture-extractor';
 import { IslandCropExtractor } from './data/extractor/island-crop-extractor';
 import { CompactItemRowComponent } from './item/compact-item-row/compact-item-row.component';
+import { StepByStepDetailsComponent } from './step-by-step-details/step-by-step-details.component';
+import { StepByStepDatatypeComponent } from './step-by-step-datatype/step-by-step-datatype.component';
+import { StepByStepRowComponent } from './step-by-step-row/step-by-step-row.component';
+import { CompactAmountInputComponent } from './item/compact-amount-input/compact-amount-input.component';
 
 export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: CraftedByExtractor, deps: [LazyDataFacade], multi: true },
@@ -147,7 +151,11 @@ export const DATA_EXTRACTORS: Provider[] = [
     ItemRowMenuComponent,
     AggregateItemRowComponent,
     CompactItemRowComponent,
+    StepByStepDetailsComponent,
+    StepByStepDatatypeComponent,
+    StepByStepRowComponent,
+    CompactAmountInputComponent,
   ],
-  exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent],
+  exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent, StepByStepDetailsComponent],
 })
 export class ListModule {}

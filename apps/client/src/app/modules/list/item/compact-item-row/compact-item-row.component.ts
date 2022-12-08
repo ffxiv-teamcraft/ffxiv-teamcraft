@@ -3,8 +3,8 @@ import { PermissionLevel } from '../../../../core/database/permissions/permissio
 import { AlarmGroup } from '../../../../core/alarms/alarm-group';
 import { getItemSource, ListRow } from '../../model/list-row';
 import { ProcessedListAggregate } from '../../../list-aggregate/model/processed-list-aggregate';
-import { combineLatest, Observable, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, map, startWith, takeUntil } from 'rxjs/operators';
+import { combineLatest, Observable } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map, startWith } from 'rxjs/operators';
 import { SettingsService } from '../../../settings/settings.service';
 import { InventoryService } from '../../../inventory/inventory.service';
 import { ListsFacade } from '../../+state/lists.facade';
@@ -115,8 +115,6 @@ export class CompactItemRowComponent extends TeamcraftComponent implements OnIni
     })
   );
 
-  public itemDoneChange$ = new Subject<number>();
-
   public source: [ItemSource?];
 
   @HostBinding('class.done')
@@ -144,12 +142,6 @@ export class CompactItemRowComponent extends TeamcraftComponent implements OnIni
               private listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private etime: EorzeanTimeService) {
     super();
-    this.itemDoneChange$.pipe(
-      takeUntil(this.onDestroy$),
-      debounceTime(1000)
-    ).subscribe(value => {
-      this.itemDoneChanged(value, this.item);
-    });
   }
 
   ngOnInit(): void {
@@ -168,49 +160,12 @@ export class CompactItemRowComponent extends TeamcraftComponent implements OnIni
     return this.layoutRow.filter.matchingSources.includes(source.type) ? 1 : 0;
   }
 
-  itemDoneChanged(newValue: number, item: ListRow): void {
-    if (newValue.toString().length === 0) {
-      return;
-    }
-    if (this.settings.displayRemaining) {
-      newValue += item.used;
-    }
-    if (this.aggregate) {
-      this.aggregate.generateSetItemDone(item, newValue - item.done, this.finalItem)(this.listsFacade);
-    } else {
-      this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, newValue - item.done, item.recipeId, item.amount);
-    }
-  }
 
   add(amount: string | number, item: ListRow, external = false): void {
     if (this.aggregate) {
       this.aggregate.generateSetItemDone(item, +amount, this.finalItem)(this.listsFacade);
     } else {
       this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, +amount, item.recipeId, item.amount, external);
-    }
-  }
-
-  remove(amount: string, item: ListRow, external = false): void {
-    if (this.aggregate) {
-      this.aggregate.generateSetItemDone(item, -1 * (+amount), this.finalItem)(this.listsFacade);
-    } else {
-      this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, -1 * (+amount), item.recipeId, item.amount, external);
-    }
-  }
-
-  markAsDone(item: ListRow): void {
-    if (this.aggregate) {
-      this.aggregate.generateSetItemDone(item, item.amount - item.done, this.finalItem)(this.listsFacade);
-    } else {
-      this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, item.amount - item.done, item.recipeId, item.amount);
-    }
-  }
-
-  resetDone(item: ListRow): void {
-    if (this.aggregate) {
-      this.aggregate.generateSetItemDone(item, -1 * item.done, this.finalItem)(this.listsFacade);
-    } else {
-      this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, -1 * item.done, item.recipeId, item.amount);
     }
   }
 

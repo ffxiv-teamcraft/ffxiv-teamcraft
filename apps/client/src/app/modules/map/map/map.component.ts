@@ -74,7 +74,7 @@ export class MapComponent implements OnInit {
       top: `${positionPercents.y}%`,
       left: `${positionPercents.x}%`,
       transform: 'translate(-50%, -50%);',
-      'z-index': marker.zIndex || aetheryte ? this.aetheryteZIndex : 5,
+      'z-index': marker.zIndex || (aetheryte ? this.aetheryteZIndex : 5),
       ...(marker.additionalStyle || {})
     };
   }

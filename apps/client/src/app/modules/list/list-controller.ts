@@ -55,6 +55,7 @@ export class ListController {
     clone.name = list.name;
     clone.version = list.version || '1.0.0';
     clone.tags = list.tags;
+    clone.notFound = list.notFound;
     clone.etag = internal ? list.etag : 0;
     clone.ignoreRequirementsRegistry = list.ignoreRequirementsRegistry;
     if (internal) {

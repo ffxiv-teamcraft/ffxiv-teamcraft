@@ -342,6 +342,14 @@ export class SettingsService {
     this.setSetting('startingPlace', startingPlace.toString());
   }
 
+  public get housingMap(): number {
+    return +this.getSetting('housingMap', '72');
+  }
+
+  public set housingMap(housingMap: number) {
+    this.setSetting('housingMap', housingMap.toString());
+  }
+
   public get freeAetheryte(): number {
     return +this.getSetting('freeAetheryte', '-1');
   }

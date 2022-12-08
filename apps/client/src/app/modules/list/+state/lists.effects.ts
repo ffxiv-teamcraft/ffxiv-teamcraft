@@ -13,7 +13,6 @@ import {
   MarkItemsHq,
   MyListsLoaded,
   PureUpdateList,
-  RemoveReadLock,
   SetItemDone,
   SharedListsLoaded,
   TeamListsLoaded,
@@ -32,7 +31,7 @@ import {
   first,
   map,
   mergeMap,
-  shareReplay,
+  pairwise,
   switchMap,
   tap,
   withLatestFrom
@@ -68,6 +67,8 @@ import { ListPricingService } from '../../../pages/list-details/list-pricing/lis
 import { PermissionsController } from '../../../core/database/permissions-controller';
 import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 import { UpdateData, where } from '@angular/fire/firestore';
+import { debounceBufferTime } from '../../../core/rxjs/debounce-buffer-time';
+import { jsonDiff } from 'nx/src/utils/json-diff';
 
 // noinspection JSUnusedGlobalSymbols
 @Injectable()
@@ -79,11 +80,7 @@ export class ListsEffects {
    * TOOLING
    */
 
-  private selectedListClone$ = this.listsFacade.selectedList$.pipe(
-    map(list => ListController.clone(list, true)),
-    debounceTime(50),
-    shareReplay({ bufferSize: 1, refCount: true })
-  );
+  private selectedListClone$ = this.listsFacade.selectedList$;
 
   /**
    * LOADING STUFF
@@ -453,32 +450,50 @@ export class ListsEffects {
         withLatestFrom(action.listId ? this.listsFacade.allListDetails$.pipe(map(lists => lists.find(l => l.$key === action.listId))) : this.selectedListClone$),
         filter(([, list]) => list !== undefined)
       );
-    })
-  ).pipe(
-    concatMap(([action, list]: [SetItemDone, List]) => {
-      if (list.offline) {
-        ListController.updateAllStatuses(list, action.itemId);
-        this.saveToLocalstorage(list, false);
-        return of(null);
-      } else {
-        if (list.hasCommission) {
-          this.updateCommission(list);
-        }
-        return this.listService.runTransaction(list.$key, (transaction, serverCopy) => {
-          const serverList = serverCopy.data() as List;
-          ListController.setDone(serverList, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
-          ListController.updateAllStatuses(serverList, action.itemId);
-          if (isNaN(serverList.etag)) {
-            serverList.etag = 0;
-          }
-          serverList.etag++;
-          this.listService.recordOperation('write');
-          transaction.set(serverCopy.ref, serverList);
-        });
-      }
     }),
-    map(() => new RemoveReadLock())
-  ));
+    debounceBufferTime(1000)
+  ).pipe(
+    mergeMap((entries: [SetItemDone, List][]) => {
+      const groupedByList = entries.reduce((acc, entry) => {
+        let listEntry = acc.find(e => e.list.$key === entry[1].$key);
+        if (!listEntry) {
+          acc.push({
+            list: entry[1],
+            actions: []
+          });
+          listEntry = acc[acc.length - 1];
+        }
+        listEntry.actions.push(entry[0]);
+        return acc;
+      }, []);
+      return combineLatest(groupedByList.map(({ list, actions }) => {
+        if (list.offline) {
+          actions.forEach(action => {
+            ListController.updateAllStatuses(list, action.itemId);
+          });
+          this.saveToLocalstorage(list, false);
+          return of(null);
+        } else {
+          if (list.hasCommission) {
+            this.updateCommission(list);
+          }
+          return this.listService.runTransaction(list.$key, (transaction, serverCopy) => {
+            const serverList = serverCopy.data() as List;
+            actions.forEach(action => {
+              ListController.setDone(serverList, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
+              ListController.updateAllStatuses(serverList, action.itemId);
+            });
+            if (isNaN(serverList.etag)) {
+              serverList.etag = 0;
+            }
+            serverList.etag++;
+            this.listService.recordOperation('write');
+            transaction.set(serverCopy.ref, serverList);
+          });
+        }
+      }));
+    }, 1)
+  ), { dispatch: false });
 
   updateItem$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateItem>(ListsActionTypes.UpdateItem),

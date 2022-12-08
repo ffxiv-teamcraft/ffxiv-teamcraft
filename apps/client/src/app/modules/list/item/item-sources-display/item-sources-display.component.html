@@ -1,5 +1,5 @@
 <div class="obtentions-container" [fxFlex]="flex" fxLayout="row wrap" [fxLayoutAlign]="layoutAlign" fxLayoutGap="2px">
-  <ng-container *ngFor="let source of sources; trackBy: trackByItemSource">
+  <ng-container *ngFor="let source of sourcesDisplay$ | async; trackBy: trackByItemSource">
     <ng-container [ngSwitch]="source.type">
       <div *ngSwitchCase="dataTypes.DEPRECATED">
         <i nz-icon nzType="close-circle" nzTheme="twotone" [nzTwotoneColor]="'#F5222DFF'"
@@ -94,7 +94,7 @@
       <ng-container *ngSwitchCase="dataTypes.CRAFTED_BY">
         <div *ngFor="let craft of source.data; trackBy: trackByCraft"
              [fxLayoutGap]="source.data.length > 1?'0px':'5px'"
-             [fxLayout]="source.data.length > 1?'column':'row'"
+             [fxLayout]="!forceHorizontal && source.data.length > 1?'column':'row'"
              fxLayoutAlign="center center">
           <ng-container *ngIf="craft.job > 0">
             <button (click)="overlay?null:openSimulator(craft.id, item, craft)" *ngIf="craft.icon !== ''" [nzShape]="'circle'"
@@ -111,7 +111,8 @@
         </div>
       </ng-container>
       <div *ngSwitchCase="dataTypes.GATHERED_BY" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2px">
-        <button (click)="openGatheredByPopup(item)" nz-button [nzSize]="size" nzShape="circle" nz-tooltip [nzTooltipTitle]="'LIST_DETAILS.SOURCES.Gatherable' | translate">
+        <button (click)="openGatheredByPopup(item)" nz-button [nzSize]="size" nzShape="circle" nz-tooltip
+                [nzTooltipTitle]="'LIST_DETAILS.SOURCES.Gatherable' | translate">
           <img class="gathering-icon" [class.small]="source.data.type === -10" src="{{source.data.type | nodeTypeIcon: source.data.nodes[0]?.limited}}">
         </button>
         <div *ngIf="!source.data.nodes[0].isIslandNode">{{source.data.level}}</div>
