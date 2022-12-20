@@ -16,6 +16,7 @@ import { ListModule } from '../../modules/list/list.module';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 
 const routes: Routes = [
   {
@@ -61,7 +62,8 @@ const routes: Routes = [
     ListModule,
     NzAlertModule,
     NzIconModule,
-    NzRadioModule
+    NzRadioModule,
+    NzDropDownModule
   ]
 })
 export class ListAggregatePagesModule {

@@ -10,27 +10,43 @@
         </span>
       <nz-radio-group [ngModel]="displayMode$ | async" (ngModelChange)="displayMode$.next($event)">
         <label nz-radio-button [nzValue]="ListDisplayMode.FULL">{{'LIST_DETAILS.DISPLAY_MODE.Full' | translate}}</label>
-        <label nz-radio-button [nzValue]="ListDisplayMode.MINIMALIST">{{'LIST_DETAILS.DISPLAY_MODE.Compact' | translate}}</label>
+        <label nz-radio-button [nzValue]="ListDisplayMode.MINIMALIST">{{'LIST_DETAILS.DISPLAY_MODE.Minimalist' | translate}}</label>
       </nz-radio-group>
     </div>
   </nz-page-header-extra>
   <nz-page-header-content *ngIf="aggregate$ | async as aggregate">
-    <ng-container *ngIf="layoutId$ | async as layoutId">
-      <ng-container *ngIf="aggregateFromRoute$ | async as aggregateFromRoute;else saveAggregateButtonTpl">
-        <ng-container *ngIf="aggregateFromRoute">
-          <button *ngIf="missingLists$ | async as missingLists"
-                  nz-button nzDanger
-                  (click)="removeMissingLists(aggregateFromRoute.$key, missingLists)"><span nz-icon nzType="clear"
-                                                                                            nzTheme="outline"></span> {{'LIST_AGGREGATE.Remove_missing_ids' | translate}}
-          </button>
+    <div class="flex-row gap-10">
+      <div *ngIf="withLayoutApplied$ | async as withLayoutApplied" class="flex-auto">
+        <button nz-button nz-dropdown nzBlock [nzDropdownMenu]="menu" nzPlacement="bottomLeft"><span nz-icon nzType="swap" nzTheme="outline"></span>{{'LIST_AGGREGATE.Switch_panel' | translate}}</button>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
+          <ul nz-menu>
+            <div nz-menu-item *ngFor="let panel of withLayoutApplied.items.rows" routerLink="../{{panel.title}}">
+              {{panel.title | translate}} ({{'LIST.Items_count' | translate: { amount: panel.rows.length } }})
+            </div>
+            <li nz-menu-item *ngIf="withLayoutApplied.finalItems.rows.length > 0" routerLink="../{{withLayoutApplied.finalItems.title}}">
+              {{withLayoutApplied.finalItems.title | translate}}
+              ({{'LIST.Items_count' | translate: { amount: withLayoutApplied.finalItems.rows.length } }})
+            </li>
+          </ul>
+        </nz-dropdown-menu>
+      </div>
+      <div *ngIf="layoutId$ | async as layoutId">
+        <ng-container *ngIf="aggregateFromRoute$ | async as aggregateFromRoute;else saveAggregateButtonTpl">
+          <ng-container *ngIf="aggregateFromRoute">
+            <button *ngIf="missingLists$ | async as missingLists"
+                    nz-button nzDanger
+                    (click)="removeMissingLists(aggregateFromRoute.$key, missingLists)"><span nz-icon nzType="clear"
+                                                                                              nzTheme="outline"></span> {{'LIST_AGGREGATE.Remove_missing_ids' | translate}}
+            </button>
+          </ng-container>
         </ng-container>
-      </ng-container>
-      <ng-template #saveAggregateButtonTpl>
-        <button nz-button nzType="primary" (click)="saveAggregate(aggregate, layoutId)">
-          <span nz-icon nzType="save"></span> {{'LIST_AGGREGATE.Save' | translate}}
-        </button>
-      </ng-template>
-    </ng-container>
+        <ng-template #saveAggregateButtonTpl>
+          <button nz-button nzType="primary" (click)="saveAggregate(aggregate, layoutId)">
+            <span nz-icon nzType="save"></span> {{'LIST_AGGREGATE.Save' | translate}}
+          </button>
+        </ng-template>
+      </div>
+    </div>
   </nz-page-header-content>
 </nz-page-header>
 
@@ -54,7 +70,7 @@
     <div class="panel-selector" *ngFor="let panel of withLayoutApplied.items.rows" [routerLink]="panel.title">
       {{panel.title | translate}} ({{'LIST.Items_count' | translate: { amount: panel.rows.length } }})
     </div>
-    <div class="panel-selector" *ngIf="withLayoutApplied.finalItems.length > 0" [routerLink]="withLayoutApplied.finalItems.title">
+    <div class="panel-selector" *ngIf="withLayoutApplied.finalItems.rows.length > 0" [routerLink]="withLayoutApplied.finalItems.title">
       {{withLayoutApplied.finalItems.title | translate}} ({{'LIST.Items_count' | translate: { amount: withLayoutApplied.finalItems.rows.length } }})
     </div>
   </ng-container>

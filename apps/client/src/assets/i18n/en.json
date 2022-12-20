@@ -2980,7 +2980,8 @@
     "Save": "Save this aggregate to your lists page",
     "Saved": "Aggregate saved to your lists page",
     "Final_items_count": "# of items",
-    "Requirement_items_count": "# of required items"
+    "Requirement_items_count": "# of required items",
+    "Switch_panel": "Switch panel"
   },
   "MACHINA_ERRORS": {
     "Default": "Machina Wrapper error",
