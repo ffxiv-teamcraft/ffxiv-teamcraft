@@ -520,6 +520,8 @@
     "Materia_confidence_rate": "Melding confidence rate",
     "Materia_confidence_rate_explain": "Confidence rate for materia estimate. Higher means that more materias will be suggested to be more confident that with this amount, your melds will succeed",
     "Disable_hardware_acceleration": "Disable hardware acceleration",
+    "Housing_map": "Housing map",
+    "Housing_map_explain": "The housing map in which your house is",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
