@@ -2962,7 +2962,7 @@
     "WORKSHOP": {
       "Title": "Atelier",
       "Subtitle": "Verfolge und verwalte dein Atelier",
-      "Out_of_sync": "Status wurde seit dem letzten Resest nicht aktualisiert",
+      "Out_of_sync": "Status wurde seit dem letzten Reset nicht aktualisiert",
       "Out_of_sync_explain": "Bitte öffne das Angebot-/Nachfrage-Fenster auf deinem Inselparadies um den Status zu aktualisieren. Wenn du keine Paketerfassung verwendest, bitten einen anderen Benutzer, deinen Status zu aktualisieren und ihn dann zu exportieren, damit du den Import-Button verwenden kannst oder importiere von der Datenbank.",
       "Export_state": "Exportiere Angebot-/Nachfrage-Status",
       "State_copied": "Status wurde in die Zwischenablage kopiert",
