@@ -19,4 +19,4 @@ export const patchNotes = `### Bug Fixes
 * **data:** update for cn patch-6.2.
 * **db:** 1200+ allagan reports import.
 * **db:** support for korean v6.15 update.
-* **voyage-tracker:** submarine voyages are now using letter name instead of index.`;
+* **voyage-tracker:** submarine voyages are now using letter name instead of index.`;
