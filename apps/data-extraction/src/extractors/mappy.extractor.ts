@@ -1,18 +1,17 @@
 import { combineLatest } from 'rxjs';
 import { AbstractExtractor } from '../abstract-extractor';
+import { XivDataService } from '../xiv/xiv-data.service';
 
 export class MappyExtractor extends AbstractExtractor {
-  private gatheringPointToBaseId = {};
-
   private monsters = {};
 
   public isSpecific = true;
 
-  doExtract(): void {
+  doExtract(xiv: XivDataService): void {
     const mapData$ = this.get('https://xivapi.com/mappy/json');
 
 
-    const mapDiscoveryIndexes$ = this.aggregateAllPages('https://xivapi.com/map?columns=ID,DiscoveryIndex');
+    const mapDiscoveryIndexes$ = this.getSheet<any>(xiv, 'Map', ['DiscoveryIndex']);
 
     combineLatest([mapData$, mapDiscoveryIndexes$])
       .subscribe(([mapData, mapDiscoveryIndexes]) => {
@@ -22,7 +21,7 @@ export class MappyExtractor extends AbstractExtractor {
           })
           .forEach(row => {
             if (row.Type === 'BNPC') {
-              const mapEntry = mapDiscoveryIndexes.find(m => m.ID === +row.MapID);
+              const mapEntry = mapDiscoveryIndexes.find(m => m.index === +row.MapID);
               if (+mapEntry.DiscoveryIndex < 1) {
                 return;
               }
@@ -45,7 +44,6 @@ export class MappyExtractor extends AbstractExtractor {
               this.monsters[bnpcNameID].positions.push(newEntry);
             }
           });
-        // console.log('nodes written');
         this.persistToJsonAsset('monsters', this.monsters);
         this.done();
       });

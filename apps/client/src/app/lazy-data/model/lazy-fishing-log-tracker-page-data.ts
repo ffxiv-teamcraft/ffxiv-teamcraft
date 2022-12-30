@@ -76,9 +76,9 @@ export interface Bait {
 }
 
 export interface AlarmCoords {
-  x?: number;
-  y?: number;
-  z:  number;
+  x: number;
+  y: number;
+  z: number;
 }
 
 export interface Predator {

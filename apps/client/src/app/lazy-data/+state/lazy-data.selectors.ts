@@ -10,9 +10,9 @@ export const getEntry = (key: LazyDataKey) => createSelector(
   (state) => state.data[key]
 );
 
-export const getEntryRow = createSelector(
+export const getEntryRow = ({ key, id }) => createSelector(
   getLazyDataState,
-  (state, { key, id }) => {
+  (state) => {
     const entry = state.data[key];
     if (entry) {
       return entry[id];

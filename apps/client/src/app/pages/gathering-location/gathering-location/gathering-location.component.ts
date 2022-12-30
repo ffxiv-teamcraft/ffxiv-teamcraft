@@ -97,6 +97,7 @@ export class GatheringLocationComponent {
         this.lazyData.getEntry('scripIndex'),
         this.lazyData.getEntry('aetherialReduce')
       ]).pipe(
+        filter((data) => data.every(Boolean)),
         first(),
         map(([items, index, scripIndex, aetherialReduce]) => {
           return items.filter(row => {

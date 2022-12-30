@@ -51,13 +51,13 @@
     "Only_craftable": "仅显示有配方的物品",
     "Want_filters": "需要更多过滤方式？",
     "Open_search": "打开搜索页面",
-    "Island_recipe": "Island Sanctuary recipe"
+    "Island_recipe": "无人岛配方"
   },
   "Use_as_default_character": "设为默认角色",
   "Download_desktop_app": "下载客户端",
   "Find_us_on_twitter": "在 Twitter 上关注我们",
   "Join_discord_server": "加入我们的 Discord 服务器",
-  "See_code_github": "Star the project on Github",
+  "See_code_github": "在 Github 上 Star 此项目",
   "Support_on_patreon": "在 Patreon 上支持该项目",
   "Access_patreon_page": "打开我们的 Patreon 页",
   "Like_the_tool": "您现在是否喜欢这个工具？",
@@ -197,14 +197,15 @@
     "Fate": "危命任务",
     "Reload": "刷新",
     "Click_to_apply": "应用",
+    "Recommended": "推荐",
     "DAYS": {
-      "Monday": "Monday",
-      "Tuesday": "Tuesday",
-      "Wednesday": "Wednesday",
-      "Thursday": "Thursday",
-      "Friday": "Friday",
-      "Saturday": "Saturday",
-      "Sunday": "Sunday"
+      "Monday": "星期一",
+      "Tuesday": "星期二",
+      "Wednesday": "星期三",
+      "Thursday": "星期四",
+      "Friday": "星期五",
+      "Saturday": "星期六",
+      "Sunday": "星期日"
     }
   },
   "ALARMS": {
@@ -313,8 +314,8 @@
   "Reset_progression": "重置进度",
   "Gardening": "园艺",
   "Hunting": "击杀",
-  "Island_animal": "Island animal",
-  "Island_crop": "Island crop",
+  "Island_animal": "无人岛动物",
+  "Island_crop": "无人岛作物",
   "Desynth": "分解",
   "Vendors": "商人",
   "Open": "打开",
@@ -517,6 +518,7 @@
     "Reload_auth_token": "重新加载认证口令",
     "Materia_confidence_rate": "魔晶石禁断置信率",
     "Materia_confidence_rate_explain": "置信率用于预估魔晶石禁断数量，更高的置信率意味着预估时更多的魔晶石，从而提升完成禁断的可能性。会依据你的禁断方案调整。",
+    "Disable_hardware_acceleration": "禁用硬件加速",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -585,7 +587,7 @@
     "Gearset_priority": "优先级",
     "Gearset_priority_explain": "用于决定物品可被多个职业制作（例如金属锭、金属块、飞空艇修理材料等）时选择配方的顺序。",
     "Characters": "角色",
-    "Missing_character": "Missing character",
+    "Missing_character": "缺少的字符",
     "Missing_character_description": "此角色不再存在，请从您的个人资料中删除它。",
     "VERIFICATION": {
       "Button": "验证",
@@ -770,7 +772,7 @@
     "Consider_requirements": "计算素材",
     "Ignore_requirements": "忽略素材",
     "SOURCES": {
-      "Gatherable": "Can be gathered, click to see more details"
+      "Gatherable": "可以收集，点击查看更多细节"
     },
     "LAYOUT_DIALOG": {
       "Title": "布局",
@@ -828,7 +830,7 @@
     "SPLIT": {
       "Pick_items": "选择要添加到另一个清单的项目",
       "Remove_from_list": "从当前清单中移除",
-      "Select_not_completed": "Select items not completed"
+      "Select_not_completed": "选择尚未完成的项目"
     }
   },
   "LIST_TAGS": {
@@ -1201,7 +1203,7 @@
       "NOT_SPECIALIST": "使用了专家手法，但你不是专家",
       "NO_INNER_QUIET": "没有内静 buff 但使用了内静技能",
       "MISSING_STATS_REQUIREMENT": "您不满足此配方所需要的最低属性",
-      "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
+      "QUALITY_TOO_LOW": "品质不符合配方要求的品质"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "如果你的目标是制作HQ成品，那么几乎所有手法都要包括内静。内静能够提供很大的品质增益，并触发“比尔格的祝福”等技能。",
@@ -1230,7 +1232,7 @@
     "Content_copied": "已复制",
     "Cheaper_at_vendor": "从 NPC 购买更便宜",
     "Copy_panel_as_text": "复制为文本",
-    "Copy_panel_as_csv": "Copy this panel as CSV",
+    "Copy_panel_as_csv": "将此面板复制为CSV格式",
     "Ignore_completed_items": "排除已完成的物品",
     "Price_to_craft": "制作成本",
     "Price_from_vendor": "商店价格",
@@ -1598,8 +1600,8 @@
       "Bite_time": "咬钩时间",
       "Spots": "钓场",
       "Min_gathering": "采集力要求",
-      "Min_observed_gathering": "Min. observed gathering",
-      "Min_observed_gathering_explain": "The minimum value among all the automated reports we have so far. Doesn't mean it's the minimum gathering required, just the one we observed.",
+      "Min_observed_gathering": "观察到的最小采集量",
+      "Min_observed_gathering_explain": "到目前为止，在我们所有的自动报告中，这是最低值。并不意味着它是所需的最小采集，只是我们观察到的一个",
       "Min_size": "最小尺寸",
       "Max_size": "最大尺寸",
       "Avg_size": "平均尺寸",
@@ -1641,10 +1643,10 @@
         "Last_report": "最近一次垂钓记录",
         "Fish": "鱼",
         "Size": "尺寸",
-        "Large": "Large",
+        "Large": "大",
         "Time_since_thrown": "抛竿以来的时间",
-        "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
-        "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
+        "Ignored_spot": "上报器不支持这个点，预计会出现奇怪的数值",
+        "Ignored_spot_description": "你钓到的鱼都不会被上报",
         "ERRORS": {
           "No_bait": "未检测到钓饵，请重新“选饵”",
           "No_stats": "未检测到属性，请尝试重新切换到捕鱼人进行修复。"
@@ -1661,9 +1663,9 @@
       "Fish_per_hookset": "每次提钩获得的鱼",
       "Include_misses": "包含提钩失败记录",
       "Miss": "提钩失败",
-      "Remove_this_bait": "Remove this bait",
-      "Bait_removed": "Bait removed from this spot",
-      "Position_unknown": "Unknown location"
+      "Remove_this_bait": "移除该鱼饵",
+      "Bait_removed": "从这一地点移除的鱼饵",
+      "Position_unknown": "未知位置"
     },
     "NODE": {
       "Items": "物品",
@@ -1781,7 +1783,7 @@
       "Post": "发布",
       "Editor_tip": "输入 <页面类型>:\"<页面标题>\" 以链接到其它页面。例如， item:\"无锋剑柯塔纳\"、action:\"制作\"、map:\"魔晶堂\" 。支持的页面类型有：item(物品), map(地图), mob(怪物), achievement(成就), leve(理符), npc, instance(副本), quest(任务), trait(特性), action(技能), status(状态)",
       "Disclaimer": "数据库评论意在传达有用的额外信息，滥用数据库评论以抱怨游戏内容可能导致会导致您的评论发表功能受限。",
-      "Deleted_comment": "This comment has been deleted"
+      "Deleted_comment": "此评论已被删除"
     },
     "PATCH": {
       "Open_patch_page": "点击此处在数据库中打开新版本的全部改动",
@@ -1875,7 +1877,7 @@
     "Loading_data": "加载选定货币的交易数据",
     "Loading_universalis": "正在从 Universalis 获取 {{amount}} 个物品的市场价格",
     "X_sold_last_week": "上周已售出 {{amount}} 个",
-    "No_trades": "This currency cannot be traded with something that can be sold on marketboard"
+    "No_trades": "这种货币不能与可以在市场上出售的东西进行交易"
   },
   "FOOD_PICKER": {
     "Title": "食物选择器",
@@ -1945,7 +1947,7 @@
     "Currencies": "货币",
     "Add_to_favorites": "添加至收藏",
     "Remove_from_favorites": "从收藏中删除",
-    "Island_Sanctuary": "Island Sanctuary"
+    "Island_Sanctuary": "无人岛"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "数据包捕获功能可用",
@@ -2326,7 +2328,7 @@
       },
       "INTEGRITY_CHECK": {
         "All_characters_valid": "所有关联的角色均有效",
-        "All_lists_ok": "All lists are working properly"
+        "All_lists_ok": "所有清单都在正常工作"
       }
     }
   },
@@ -2839,7 +2841,7 @@
     "Gubal_analysis_suggestion": "基于数据分析的建议",
     "Cannot_report_for_this_spot": "此数据已经存在，所以您无法报告该详细信息。",
     "Please_suggest_edit_instead": "请先对已有的报告提出修改建议。",
-    "Add_data_sources": "Add/modify data sources for this item",
+    "Add_data_sources": "为该物品添加/修改数据来源",
     "Not_applied_yet": "未采用",
     "Not_applied_yet_explain": "此来源将在下一次更新时添加至数据库系统。",
     "Pending_changes_count": "{{amount}} 个待审阅更改",
@@ -2874,7 +2876,7 @@
     "Speed": "速度",
     "Shadow_size": "阴影大小",
     "Deprecated": "该物品已经无法获得",
-    "Select_all": "Select all proposals",
+    "Select_all": "选择所有建议",
     "SPEEDS": {
       "VERY_SLOW": "非常慢",
       "SLOW": "慢",

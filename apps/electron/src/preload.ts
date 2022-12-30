@@ -103,7 +103,9 @@ const allowedChannels = [
   'show-devtools',
   'clear-cache',
   'fishing-state:get',
-  'mappy-state:get'
+  'mappy-state:get',
+  'hardware-acceleration:get',
+  'hardware-acceleration:value'
 ];
 
 function checkChannel(channel: string): boolean {

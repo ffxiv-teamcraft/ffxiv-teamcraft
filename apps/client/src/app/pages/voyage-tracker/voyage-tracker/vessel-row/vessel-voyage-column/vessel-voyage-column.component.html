@@ -4,7 +4,8 @@
      [nzPopoverContent]="voyageDetailsContent">
   <nz-breadcrumb [nzSeparator]="iconTemplate">
     <nz-breadcrumb-item *ngFor="let sector of vessel?.destinations">
-      {{ sector + 1 }}
+      <span *ngIf="vessel.vesselType === VesselType.AIRSHIP">{{ sector + 1 }}</span>
+      <span *ngIf="vessel.vesselType === VesselType.SUBMARINE">{{ sector | lazyRow:'submarineVoyages':'location' }}</span>
     </nz-breadcrumb-item>
   </nz-breadcrumb>
   <ng-template #iconTemplate><i nz-icon nzType="arrow-right"></i></ng-template>

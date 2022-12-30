@@ -197,6 +197,7 @@
     "Fate": "F. A. T. E",
     "Reload": "再読み込み",
     "Click_to_apply": "クリックして適用する",
+    "Recommended": "Recommended",
     "DAYS": {
       "Monday": "月曜日",
       "Tuesday": "火曜日",
@@ -517,6 +518,7 @@
     "Reload_auth_token": "認証トークンを再読み込みする",
     "Materia_confidence_rate": "Melding confidence rate",
     "Materia_confidence_rate_explain": "Confidence rate for materia estimate. Higher means that more materias will be suggested to be more confident that with this amount, your melds will succeed",
+    "Disable_hardware_acceleration": "Disable hardware acceleration",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",

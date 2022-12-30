@@ -1,20 +1,20 @@
 <p>
   {{'LIST.COMPLETION_POPUP.Content' | translate}}
 </p>
-<div fxLayout="row wrap" fxLayoutGap="5px">
-  <button (nzOnConfirm)="clearList()" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm nzDanger>
-    {{'LIST.COMPLETION_POPUP.Clear' | translate}}
+<div fxLayout="column" fxLayoutGap="5px">
+  <button nzBlock (nzOnConfirm)="deleteList()" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm nzType="primary">
+    <span nz-icon nzType="delete" nzTheme="outline"></span> {{'LIST.COMPLETION_POPUP.Delete' | translate}} ({{'COMMON.Recommended' | translate | lowercase}})
   </button>
-  <button (nzOnConfirm)="deleteList()" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm nzDanger>
-    {{'LIST.COMPLETION_POPUP.Delete' | translate}}
+  <button nzBlock (nzOnConfirm)="clearList()" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm>
+    <span nz-icon nzType="clear" nzTheme="outline"></span> {{'LIST.COMPLETION_POPUP.Clear' | translate}}
   </button>
-  <button (nzOnConfirm)="archiveList()" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm nzType="primary">
-    {{'LIST.COMPLETION_POPUP.Archive' | translate}}
+  <button nzBlock (nzOnConfirm)="archiveList()" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm>
+    <span nz-icon nzType="file-zip" nzTheme="outline"></span> {{'LIST.COMPLETION_POPUP.Archive' | translate}}
   </button>
-  <button (nzOnConfirm)="resetList()" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm nzType="primary">
-    {{'LIST.COMPLETION_POPUP.Reset' | translate}}
+  <button nzBlock (nzOnConfirm)="resetList()" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm>
+    <i nz-icon nzType="reload"></i> {{'LIST.COMPLETION_POPUP.Reset' | translate}}
   </button>
-  <button (click)="close()" nz-button>
+  <button nzBlock (click)="close()" nz-button>
     {{'LIST.COMPLETION_POPUP.Nothing' | translate}}
   </button>
 </div>

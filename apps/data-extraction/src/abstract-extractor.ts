@@ -1,11 +1,11 @@
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
-import { BehaviorSubject, interval, Observable, of, Subject } from 'rxjs';
-import { first, map, mergeMap, retry, skip, switchMap, takeUntil, tap } from 'rxjs/operators';
-import { XivapiEndpoint, XivapiList } from '@xivapi/angular-client';
+import { defer, interval, Observable, of, Subject } from 'rxjs';
+import { switchMap, takeUntil } from 'rxjs/operators';
 import request from 'request';
-import querystring from 'querystring';
 import { mkdirSync } from 'fs-extra';
+import { XivDataService } from './xiv/xiv-data.service';
+import { ParsedRow } from './xiv/parsed-row';
 
 export abstract class AbstractExtractor {
 
@@ -40,19 +40,31 @@ export abstract class AbstractExtractor {
       });
   }
 
+  public setProgress(progress: any): void {
+    this.progress = progress;
+  }
+
   public abstract getName(): string;
 
-  protected abstract doExtract(): void;
+  protected abstract doExtract(xiv: XivDataService): void;
 
-  public extract(progress: any): Observable<string> {
-    this.progress = progress;
+  public extract(xiv: XivDataService): Observable<string> {
     return of(null).pipe(
       switchMap(() => {
-        this.doExtract();
+        this.doExtract(xiv);
         return this.done$;
       })
     );
   }
+
+  protected getIconHD(icon: string): string {
+    return icon.replace('.png', '_hr1.png');
+  }
+
+  protected getCompositeID(row: ParsedRow): string {
+    return `${row.index}.${row.subIndex}`;
+  }
+
 
   protected requireLazyFile(name: string): any {
     return require(join(AbstractExtractor.assetOutputFolder, `${name}.json`));
@@ -64,14 +76,6 @@ export abstract class AbstractExtractor {
     } else {
       return `${url}?${paramName}=${paramValue}`;
     }
-  }
-
-  protected getResourceEndpointWithQuery(resource: XivapiEndpoint, queryParams: { ids?: string, columns?: string }): string {
-    return `${AbstractExtractor.XIVAPI_BASE_URL}/${resource}?${querystring.stringify(queryParams)}`;
-  }
-
-  protected getSearchEndpointWithQuery(queryParams: { indexes?: string, columns?: string, string_column?: string, string?: string, string_algo?: string, filters?: string }): string {
-    return `${AbstractExtractor.XIVAPI_BASE_URL}/search?${querystring.stringify(queryParams)}`;
   }
 
   protected done(): void {
@@ -189,81 +193,9 @@ export abstract class AbstractExtractor {
     );
   }
 
-  protected getAllPages<T = any>(endpoint: string, body?: any, label?: string): Observable<XivapiList<T>> {
-    const page$ = new BehaviorSubject(1);
-    const complete$ = new Subject();
-    return page$.pipe(
-      mergeMap(page => {
-        let url = endpoint;
-        if (body) {
-          body.page = page;
-        } else {
-          url = this.addQueryParam(endpoint, 'page', page);
-        }
-        return this.get<XivapiList<T>>(url, body).pipe(
-          retry(3),
-          tap(result => {
-            if (result === undefined || result.Pagination === undefined) {
-              page$.next(page);
-            }
-            if (typeof result.Pagination.PageNext === 'number' && result.Pagination.PageNext > page) {
-              page$.next(result.Pagination.PageNext);
-            } else {
-              setTimeout(() => {
-                complete$.next(null);
-                page$.complete();
-              }, 250);
-            }
-          })
-        );
-      }),
-      takeUntil(complete$)
-    );
-  };
-
-  protected aggregateAllPages<T = any>(endpoint: string, body?: any, label?: string): Observable<T[]> {
-    const data = [];
-    const res$ = new Subject<T[]>();
-    this.getAllPages(endpoint, body, label).subscribe(page => {
-      data.push(...page.Results);
-    }, (e) => {
-      console.log('ERROR', endpoint);
-      console.error(e);
-    }, () => {
-      res$.next(data);
-      res$.complete();
-    });
-    return res$;
-  };
-
-  protected getAllEntries<T = any>(endpoint: string, startsAt0?: boolean, label?: string): Observable<T[]> {
-    const allIds = startsAt0 ? ['0'] : [];
-    const index$ = new Subject<number>();
-    this.getAllPages(this.addQueryParam(endpoint, 'columns', 'ID')).subscribe(page => {
-      allIds.push(...page.Results.map(res => res.ID));
-    }, null, () => {
-      index$.next(0);
-    });
-    const completeFetch = [];
-    return index$.pipe(
-      switchMap(index => {
-        return this.get(`${endpoint}/${allIds[index]}`).pipe(
-          tap(result => {
-            if (label === undefined) {
-              label = `${endpoint.replace('https://xivapi.com/', '').substring(0, 120)}${endpoint.length > 120 ? '...' : ''}`;
-            }
-            completeFetch.push(result);
-            if (allIds[index + 1] !== undefined) {
-              index$.next(index + 1);
-            }
-          })
-        );
-      }),
-      skip(allIds.length - 1),
-      map(() => completeFetch),
-      first()
-    );
-  };
+  protected getSheet<T = ParsedRow>(xiv: XivDataService, contentName: string, columns?: string[], includeZero = false, depth = 0): Observable<T[]> {
+    return defer(() => xiv.getSheet(contentName, { columns, depth, skipFirst: !includeZero, progress: this.progress })) as Observable<T[]>;
+  }
 
   protected gubalRequest(gql: string): Observable<any> {
     const res$ = new Subject();
@@ -298,6 +230,10 @@ export abstract class AbstractExtractor {
     return input.replace('–', '-');
   }
 
+  protected invert2DArray(input: any[][]): any[][] {
+    return input[0].map((_, colIndex) => input.map(row => row[colIndex]));
+  }
+
   protected persistToJson(fileName: string, content: any): void {
     writeFileSync(join(AbstractExtractor.outputFolder, `${fileName}.json`), JSON.stringify(content, null, 2));
   }
@@ -309,5 +245,21 @@ export abstract class AbstractExtractor {
   protected persistToTypescript(fileName: string, variableName: string, content: any): void {
     const ts = `export const ${variableName} = ${JSON.stringify(content, null, 2)};`;
     writeFileSync(join(AbstractExtractor.outputFolder, `${fileName}.ts`), ts);
+  }
+
+  protected removeIndexes(data: ParsedRow): Omit<ParsedRow, 'index' | 'subIndex' | '__sheet'> {
+    const { index, subIndex, __sheet, ...cleaned } = data;
+    return cleaned;
+  }
+
+  protected sortProperties(data: any): any {
+    return Object.entries(data)
+      .sort(([a], [b]) => a < b ? -1 : 1)
+      .reduce((acc, [key, value]) => {
+        return {
+          ...acc,
+          [key]: value
+        };
+      }, {});
   }
 }

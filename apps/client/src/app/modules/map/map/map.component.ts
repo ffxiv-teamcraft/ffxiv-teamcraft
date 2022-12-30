@@ -53,9 +53,11 @@ export class MapComponent implements OnInit {
   }
 
   @Input()
-  set markers(markers: MapMarker[]) {
-    this._markers = markers;
-    this.unknownPosition = markers.every(marker => !marker.x && !marker.y);
+  set markers(markers: MapMarker[] | null) {
+    if (markers) {
+      this._markers = markers;
+      this.unknownPosition = markers.every(marker => !marker.x && !marker.y);
+    }
   }
 
   ngOnInit() {

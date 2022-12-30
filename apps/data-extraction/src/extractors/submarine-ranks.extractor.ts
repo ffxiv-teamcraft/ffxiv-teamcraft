@@ -1,19 +1,16 @@
 import { AbstractExtractor } from '../abstract-extractor';
-import { map, tap } from 'rxjs/operators';
+import { XivDataService } from '../xiv/xiv-data.service';
 
 export class SubmarineRanksExtractor extends AbstractExtractor {
 
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const ranks = {};
 
-    this.getAllPages(this.getResourceEndpointWithQuery('SubmarineRank' as any, {
-      columns: 'ID,Capacity,ExpToNext,SurveillanceBonus,RetrievalBonus,SpeedBonus,RangeBonus,FavorBonus'
-    })).pipe(
-      map((page) => page.Results),
-      tap((rankResults) => {
-        rankResults.forEach((result) => {
-          ranks[result.ID] = {
-            id: result.ID,
+    this.getSheet(xiv, 'SubmarineRank')
+      .subscribe((entries) => {
+        entries.forEach((result) => {
+          ranks[result.index] = {
+            id: result.index,
             capacity: result.Capacity,
             expToNext: result.ExpToNext,
             surveillanceBonus: result.SurveillanceBonus,
@@ -23,11 +20,9 @@ export class SubmarineRanksExtractor extends AbstractExtractor {
             favorBonus: result.FavorBonus
           };
         });
-      })
-    ).subscribe(() => {
-      this.persistToJsonAsset('submarine-ranks', ranks);
-      this.done();
-    });
+        this.persistToJsonAsset('submarine-ranks', ranks);
+        this.done();
+      });
   }
 
   getName(): string {

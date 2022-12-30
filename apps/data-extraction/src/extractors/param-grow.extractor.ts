@@ -1,16 +1,17 @@
+import { XivDataService } from '../xiv/xiv-data.service';
 import { AbstractExtractor } from '../abstract-extractor';
 
 export class ParamGrowExtractor extends AbstractExtractor {
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const paramGrow = {};
-    this.getAllPages('https://xivapi.com/Paramgrow?columns=AdditionalActions,ApplyAction,BaseSpeed,CraftingLevel,ExpToNext,GameContentLinks,HpModifier,HuntingLogExpReward,ID,ItemLevelSync,LevelModifier,MonsterNoteSeals,MpModifier,Patch,ProperDungeon,ProperGuildOrder,QuestExpModifier,ScaledQuestXP').subscribe(page => {
-      page.Results.forEach(entry => {
-        paramGrow[entry.ID] = entry;
+    this.getSheet(xiv, 'Paramgrow', ['AdditionalActions', 'ApplyAction', 'BaseSpeed', 'CraftingLevel', 'ExpToNext', 'HpModifier', 'HuntingLogExpReward', 'ItemLevelSync', 'LevelModifier', 'MonsterNoteSeals', 'MpModifier', 'ProperDungeon', 'ProperGuildOrder', 'QuestExpModifier', 'ScaledQuestXP'])
+      .subscribe(entries => {
+        entries.forEach(entry => {
+          paramGrow[entry.index] = this.removeIndexes(entry);
+        });
+        this.persistToJsonAsset('param-grow', paramGrow);
+        this.done();
       });
-    }, null, () => {
-      this.persistToJsonAsset('param-grow', paramGrow);
-      this.done();
-    });
   }
 
   getName(): string {

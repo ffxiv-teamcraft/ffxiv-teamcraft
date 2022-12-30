@@ -1,9 +1,9 @@
 export interface LazyInstance {
-  en:           null | string;
-  ja:           null | string;
-  de:           null | string;
-  fr:           null | string;
-  icon:         Icon | null;
+  en:           string;
+  ja:           string;
+  de:           string;
+  fr:           string;
+  icon:         Icon;
   contentText?: number[];
 }
 

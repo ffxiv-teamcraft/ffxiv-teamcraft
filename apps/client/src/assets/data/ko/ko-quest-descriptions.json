@@ -6777,7 +6777,7 @@
     "ko": "비술사 길드마스터 대리인 투뷔르가임은 모험가에게 할 말이 있는 듯하다."
   },
   "67897": {
-    "ko": "성 레마노 대성당에 있는 브리아르디앙은 울라 납치사건의 흑막에 대해 짚이는 바가 있는 듯하다."
+    "ko": "성 레마노 대성당에 있는 브리아르디앙은 울라 납치 사건의 흑막에 대해 짚이는 바가 있는 듯하다."
   },
   "67898": {
     "ko": "성 앙달림 신학원의 테오모상은 풀이 죽은 듯하다."
@@ -13040,6 +13040,15 @@
   "70058": {
     "ko": "라우반은 모험가를 '공방'에 보내고자 한다."
   },
+  "70059": {
+    "ko": "아고라에 있는 시종인 듯한 여성은 누군가를 찾고 있는 듯하다."
+  },
+  "70060": {
+    "ko": "르베유르 저택에 있는 아멜리앙스는 밀라딘을 데리러 가고 싶은 듯하다."
+  },
+  "70061": {
+    "ko": "르베유르 저택에 있는 메릴드는 모험가에게 주고 싶은 것이 있는 듯하다."
+  },
   "70062": {
     "ko": "돌의 집에 있는 타타루는 다과회 준비를 하고 있는 듯하다."
   },
@@ -13088,6 +13097,114 @@
   "70077": {
     "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n코스타 델 솔에 있는 르풀 티아는 굉장히 침울해하고 있다."
   },
+  "70078": {
+    "ko": "라자한에 있는 키 작은 소년은 부탁하고 싶은 일이 있는 듯하다."
+  },
+  "70079": {
+    "ko": "헤매는 양치기의 숲에 있는 힐디브랜드는 쓸데없이 기운이 넘치고 있다."
+  },
+  "70081": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n예드리만에 있는 칸차나는 걱정스러운 일이 있는 듯하다."
+  },
+  "70082": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n스바르나 창고에 있는 트르나는 기분이 좋아 보인다."
+  },
+  "70083": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n스바르나 창고에 있는 트르나는 활기 넘치는 모습이다."
+  },
+  "70084": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n스바르나 창고에 있는 트르나는 매우 기분이 좋은 듯하다."
+  },
+  "70085": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n스바르나 창고에 있는 트르나는 습격에 대비하고 있는 듯하다."
+  },
+  "70086": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n스바르나 창고에 있는 트르나는 긴장하고 있는 듯하다."
+  },
+  "70087": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 하마운송을 홍보하고 싶은 듯하다."
+  },
+  "70088": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 급한 거래가 있는 듯하다."
+  },
+  "70089": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 비품의 재고가 걱정되는 듯하다."
+  },
+  "70090": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 걱정되는 일이 있는 듯하다."
+  },
+  "70091": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 부탁하고 싶은 것이 있는 듯하다."
+  },
+  "70092": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 누군가가 불안한 듯하다."
+  },
+  "70093": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 색가루로 홍보를 하고 싶은 듯하다."
+  },
+  "70094": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 배달해줬으면 하는 물건이 있는 듯하다."
+  },
+  "70095": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 누군가의 귀가를 기다리고 있는 듯하다."
+  },
+  "70096": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 심부름을 부탁하고 싶은 듯하다."
+  },
+  "70097": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 무슨 계획이 있는 듯하다."
+  },
+  "70098": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 남는 식자재를 유효하게 활용하고 싶은 듯하다."
+  },
+  "70099": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 보리수 열매를 걱정하고 있는 듯하다."
+  },
+  "70100": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 야수가 나타나 곤란해하고 있는 듯하다."
+  },
+  "70101": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 별딱정벌레의 퇴치를 생각하고 있는 듯하다."
+  },
+  "70102": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 하마용 비누를 보여주고 싶은 듯하다."
+  },
+  "70103": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 하마들에게 맛있는 먹이를 주고 싶은 듯하다."
+  },
+  "70104": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 하마의 행방을 걱정하고 있는 듯하다."
+  },
+  "70105": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 하마를 손질하고 싶은 듯하다."
+  },
+  "70106": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 하마들의 주거지를 점검하고 싶은 듯하다."
+  },
+  "70107": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 위험한 일을 부탁하고 싶은 듯하다."
+  },
+  "70108": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 사냥을 부탁하고 싶은 듯하다."
+  },
+  "70109": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 모험가를 기다리고 있었던 듯하다."
+  },
+  "70110": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 고민스러운 안건이 있는 듯하다."
+  },
+  "70111": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 물자 수송의 조력자를 찾고 있는 듯하다."
+  },
+  "70112": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 급하게 일손을 찾고 있는 듯하다."
+  },
+  "70113": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 수상한 사람의 정보가 신경 쓰이는 듯하다."
+  },
+  "70114": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 수락 시점의 직업으로만 진행할 수 있습니다.\n\n스바르나 창고에 있는 마루는 식재료 부족을 걱정하고 있는 듯하다."
+  },
   "70115": {
     "ko": "유성의 방에 있는 시라바트는 모험가에게 새로운 부탁이 있는 듯하다."
   },
@@ -13100,8 +13217,23 @@
   "70118": {
     "ko": "우르바니시마 구역에 있는 푸르슈노는 거점으로 돌아가고 싶은 듯하다."
   },
+  "70119": {
+    "ko": "아고라에 있는 메지나는 고민이 있는 듯하다."
+  },
   "70120": {
     "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n울다하에 있는 올리어는 협력해줄 사람을 찾고 있는 듯하다."
+  },
+  "70122": {
+    "ko": "마도선 설계사는 지식신의 항구에서 쉬고 있는 듯하다."
+  },
+  "70123": {
+    "ko": "팍샤 거리에 있는 오메가는 다음 조사를 하러 가고 싶은 듯하다."
+  },
+  "70124": {
+    "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n뱃고물 광장에 있는 토끼 사또는 올해도 동방 문화를 소개하고 싶은 듯하다."
+  },
+  "70125": {
+    "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n림사 로민사에 있는 동방의 점쟁이는 점괘를 뽑은 사람들의 모습을 신경 쓰고 있는 듯하다."
   },
   "70126": {
     "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n미 케토 야외음악당에 있는 질리 알리아포는 알사냥 축제 이야기를 하고 싶은 듯하다."

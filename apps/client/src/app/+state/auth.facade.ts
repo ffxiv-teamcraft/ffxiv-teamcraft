@@ -86,13 +86,6 @@ export class AuthFacade {
     isFoundAndDefined('crafting', 'gathering')
   );
 
-  serverLogTracking$ = this.store.select(authQuery.getServerLogTracking).pipe(
-    lazyLoaded(this.store, this.user$.pipe(
-      map(user => new LoadLogTracking(user.$key, user.defaultLodestoneId))
-    )),
-    isFoundAndDefined('crafting', 'gathering')
-  );
-
   favorites$ = this.user$.pipe(map(user => user.favorites));
 
   idToken$ = this.firebaseAuthState$.pipe(
@@ -222,7 +215,8 @@ export class AuthFacade {
       }
     }),
     map(entry => entry.id),
-    startWith('')
+    startWith(''),
+    distinctUntilChanged()
   );
 
   gearSets$ = this.loggedIn$.pipe(

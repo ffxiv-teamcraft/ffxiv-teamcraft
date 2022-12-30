@@ -41,7 +41,7 @@
             *ngIf="spawn.level"> - {{'DB.Level' | translate}} {{spawn.level}}</span>
           </div>
         </ng-template>
-        <app-map [mapId]="spawn.map" [markers]="spawn?.positions"></app-map>
+        <app-map *ngIf="spawn?.positions" [mapId]="spawn.map" [markers]="spawn?.positions"></app-map>
       </nz-card>
       <ng-container *ngIf="drops$ | async as drops">
         <nz-card *ngIf="drops.length > 0" [nzTitle]="title"

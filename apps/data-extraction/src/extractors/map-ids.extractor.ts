@@ -1,28 +1,26 @@
 import { AbstractExtractor } from '../abstract-extractor';
+import { XivDataService } from '../xiv/xiv-data.service';
 
 export class MapIdsExtractor extends AbstractExtractor {
 
-  doExtract(): void {
+  doExtract(xiv: XivDataService): void {
     const mapIds = [];
 
-    this.getAllPages('https://xivapi.com/map?columns=ID,PlaceName.Name_en,PlaceName.ID,TerritoryType.WeatherRate,TerritoryTypeTargetID,SizeFactor')
-      .subscribe({
-        next: res => {
-          res.Results.forEach(map => {
+    this.getSheet<any>(xiv, 'Map', ['PlaceName.Name', 'TerritoryType.WeatherRate', 'SizeFactor'], false, 1)
+      .subscribe(entries => {
+        entries
+          .forEach(map => {
             mapIds.push({
-              id: +map.ID,
-              zone: +map.PlaceName.ID,
+              id: +map.index,
+              zone: +map.PlaceName.index,
               name: map.PlaceName.Name_en,
-              territory: +map.TerritoryTypeTargetID,
+              territory: +map.TerritoryType?.index ?? 0,
               scale: +map.SizeFactor,
-              weatherRate: map.TerritoryType.WeatherRate
+              weatherRate: map.TerritoryType?.WeatherRate ?? null
             });
           });
-        },
-        complete: () => {
-          this.persistToTypescript('map-ids', 'mapIds', mapIds);
-          this.done();
-        }
+        this.persistToTypescript('map-ids', 'mapIds', mapIds);
+        this.done();
       });
   }
 

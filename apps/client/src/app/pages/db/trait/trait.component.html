@@ -26,7 +26,7 @@
         </div>
       </div>
       <div fxFlex="1 1 auto">
-        <p *ngIf="trait.Description" [innerHTML]="trait | xivapiL12n: 'traitDescriptions':'Description' | i18n | xivUIText"></p>
+        <p *ngIf="trait.Description" [innerHTML]="trait.ID | lazyRow: 'traits':'description' | i18n | xivUIText"></p>
       </div>
     </div>
     <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="trait.ID" type="trait"></app-db-comments>

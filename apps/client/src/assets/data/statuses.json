@@ -3825,56 +3825,56 @@
     "en": "Facility Access: Production",
     "ja": "製作施設：部材工作",
     "de": "Arbeitsstätte: Herstellung",
-    "fr": "Installation: production",
+    "fr": "Installation&nbsp;: production",
     "icon": "/i/016000/016108.png"
   },
   "548": {
     "en": "Facility Access: Finishing",
     "ja": "製作施設：精密工作",
     "de": "Arbeitsstätte: Veredelung",
-    "fr": "Installation: finition",
+    "fr": "Installation&nbsp;: finition",
     "icon": "/i/016000/016108.png"
   },
   "549": {
     "en": "Facility Access: Detailing",
     "ja": "製作施設：難関工作",
     "de": "Arbeitsstätte: Feinarbeit",
-    "fr": "Installation: minutie",
+    "fr": "Installation&nbsp;: minutie",
     "icon": "/i/016000/016108.png"
   },
   "550": {
     "en": "Facility Access: Production II",
     "ja": "製作施設：部材工作II",
     "de": "Arbeitsstätte: Herstellung II",
-    "fr": "Installation: production II",
+    "fr": "Installation&nbsp;: production II",
     "icon": "/i/016000/016108.png"
   },
   "551": {
     "en": "Facility Access: Specialization",
     "ja": "製作施設：専門工作",
     "de": "Arbeitsstätte: Spezialisierung",
-    "fr": "Installation: spécialité",
+    "fr": "Installation&nbsp;: spécialité",
     "icon": "/i/016000/016108.png"
   },
   "552": {
     "en": "Facility Access: Specialization II",
     "ja": "製作施設：専門工作II",
     "de": "Arbeitsstätte: Spezialisierung II",
-    "fr": "Installation: spécialité II",
+    "fr": "Installation&nbsp;: spécialité II",
     "icon": "/i/016000/016108.png"
   },
   "553": {
     "en": "Facility Access: Detailing II",
     "ja": "製作施設：難関工作II",
     "de": "Arbeitsstätte: Feinarbeit II",
-    "fr": "Installation: minutie II",
+    "fr": "Installation&nbsp;: minutie II",
     "icon": "/i/016000/016108.png"
   },
   "554": {
     "en": "Facility Access: Finishing II",
     "ja": "製作施設：精密工作II",
     "de": "Arbeitsstätte: Veredelung II",
-    "fr": "Installation: finition II",
+    "fr": "Installation&nbsp;: finition II",
     "icon": "/i/016000/016108.png"
   },
   "555": {
@@ -4637,7 +4637,7 @@
     "en": "Red Light",
     "ja": "動くな！",
     "de": "Stillgestanden",
-    "fr": "Halte!",
+    "fr": "Halte&nbsp;!",
     "icon": "/i/016000/016217.png"
   },
   "664": {
@@ -4833,21 +4833,21 @@
     "en": "Marked for Vulnerability Up",
     "ja": "指定：被物理ダメージ増加",
     "de": "Erhöhte physische Verwundbarkeit",
-    "fr": "Cible: Vulnérabilité physique augmentée",
+    "fr": "Cible&nbsp;: Vulnérabilité physique augmentée",
     "icon": "/i/015000/015659.png"
   },
   "692": {
     "en": "Marked for Damage Down",
     "ja": "指定：与ダメージ低下",
     "de": "Schadenswert -",
-    "fr": "Cible: Malus de dégâts",
+    "fr": "Cible&nbsp;: Malus de dégâts",
     "icon": "/i/015000/015660.png"
   },
   "693": {
     "en": "Marked for Healing Magic Down",
     "ja": "指定：回復魔法効果低下",
     "de": "Heilmagie -",
-    "fr": "Cible: Malus de soin",
+    "fr": "Cible&nbsp;: Malus de soin",
     "icon": "/i/015000/015661.png"
   },
   "694": {
@@ -6387,42 +6387,42 @@
     "en": "Balance Drawn",
     "ja": "ドロー：アーゼマの均衡",
     "de": "Gezogen: Waage",
-    "fr": "Tirage: la Balance",
+    "fr": "Tirage&nbsp;: la Balance",
     "icon": "/i/013000/013229.png"
   },
   "914": {
     "en": "Bole Drawn",
     "ja": "ドロー：世界樹の幹",
     "de": "Gezogen: Eiche",
-    "fr": "Tirage: le Tronc",
+    "fr": "Tirage&nbsp;: le Tronc",
     "icon": "/i/013000/013230.png"
   },
   "915": {
     "en": "Arrow Drawn",
     "ja": "ドロー：オシュオンの矢",
     "de": "Gezogen: Pfeil",
-    "fr": "Tirage: la Flèche",
+    "fr": "Tirage&nbsp;: la Flèche",
     "icon": "/i/013000/013231.png"
   },
   "916": {
     "en": "Spear Drawn",
     "ja": "ドロー：ハルオーネの槍",
     "de": "Gezogen: Speer",
-    "fr": "Tirage: l'Épieu",
+    "fr": "Tirage&nbsp;: l'Épieu",
     "icon": "/i/013000/013232.png"
   },
   "917": {
     "en": "Ewer Drawn",
     "ja": "ドロー：サリャクの水瓶",
     "de": "Gezogen: Krug",
-    "fr": "Tirage: l'Aiguière",
+    "fr": "Tirage&nbsp;: l'Aiguière",
     "icon": "/i/013000/013233.png"
   },
   "918": {
     "en": "Spire Drawn",
     "ja": "ドロー：ビエルゴの塔",
     "de": "Gezogen: Turm",
-    "fr": "Tirage: la Tour",
+    "fr": "Tirage&nbsp;: la Tour",
     "icon": "/i/013000/013234.png"
   },
   "919": {
@@ -6436,42 +6436,42 @@
     "en": "Balance Held",
     "ja": "キープ：アーゼマの均衡",
     "de": "Abgelegt: Waage",
-    "fr": "Ajout: la Balance",
+    "fr": "Ajout&nbsp;: la Balance",
     "icon": "/i/013000/013235.png"
   },
   "921": {
     "en": "Bole Held",
     "ja": "キープ：世界樹の幹",
     "de": "Abgelegt: Eiche",
-    "fr": "Ajout: le Tronc",
+    "fr": "Ajout&nbsp;: le Tronc",
     "icon": "/i/013000/013236.png"
   },
   "922": {
     "en": "Arrow Held",
     "ja": "キープ：オシュオンの矢",
     "de": "Abgelegt: Pfeil",
-    "fr": "Ajout: la Flèche",
+    "fr": "Ajout&nbsp;: la Flèche",
     "icon": "/i/013000/013237.png"
   },
   "923": {
     "en": "Spear Held",
     "ja": "キープ：ハルオーネの槍",
     "de": "Abgelegt: Speer",
-    "fr": "Ajout: l'Épieu",
+    "fr": "Ajout&nbsp;: l'Épieu",
     "icon": "/i/013000/013238.png"
   },
   "924": {
     "en": "Ewer Held",
     "ja": "キープ：サリャクの水瓶",
     "de": "Abgelegt: Krug",
-    "fr": "Ajout: l'Aiguière",
+    "fr": "Ajout&nbsp;: l'Aiguière",
     "icon": "/i/013000/013239.png"
   },
   "925": {
     "en": "Spire Held",
     "ja": "キープ：ビエルゴの塔",
     "de": "Abgelegt: Turm",
-    "fr": "Ajout: la Tour",
+    "fr": "Ajout&nbsp;: la Tour",
     "icon": "/i/013000/013240.png"
   },
   "926": {
@@ -7213,49 +7213,49 @@
     "en": "Final Judgment: Max HP",
     "ja": "最後の審判：HP最大",
     "de": "Prozess über Maximal-LP",
-    "fr": "Injonction: plus hauts PV",
+    "fr": "Injonction&nbsp;: plus hauts PV",
     "icon": "/i/015000/015701.png"
   },
   "1032": {
     "en": "Final Judgment: Min HP",
     "ja": "最後の審判：HP最小",
     "de": "Prozess über Minimal-LP",
-    "fr": "Injonction: plus bas PV",
+    "fr": "Injonction&nbsp;: plus bas PV",
     "icon": "/i/015000/015702.png"
   },
   "1033": {
     "en": "Final Judgment: Penalty I",
     "ja": "最後の審判：デバフ1",
     "de": "Prozess über Schwächung 1",
-    "fr": "Injonction: 1 altération",
+    "fr": "Injonction&nbsp;: 1 altération",
     "icon": "/i/015000/015703.png"
   },
   "1034": {
     "en": "Final Judgment: Penalty II",
     "ja": "最後の審判：デバフ2",
     "de": "Prozess über Schwächung 2",
-    "fr": "Injonction: 2 altérations",
+    "fr": "Injonction&nbsp;: 2 altérations",
     "icon": "/i/015000/015704.png"
   },
   "1035": {
     "en": "Final Judgment: Penalty III",
     "ja": "最後の審判：デバフ3",
     "de": "Prozess über Schwächung 3",
-    "fr": "Injonction: 3 altérations",
+    "fr": "Injonction&nbsp;: 3 altérations",
     "icon": "/i/015000/015705.png"
   },
   "1036": {
     "en": "Final Judgment: Decree Nisi A",
     "ja": "最後の審判：仮判決α",
     "de": "Prozess über Vorläufiges Urteil α",
-    "fr": "Injonction: peine provisoire α",
+    "fr": "Injonction&nbsp;: peine provisoire α",
     "icon": "/i/015000/015706.png"
   },
   "1037": {
     "en": "Final Judgment: Decree Nisi B",
     "ja": "最後の審判：仮判決β",
     "de": "Prozess über Vorläufiges Urteil β",
-    "fr": "Injonction: peine provisoire β",
+    "fr": "Injonction&nbsp;: peine provisoire β",
     "icon": "/i/015000/015707.png"
   },
   "1038": {
@@ -7836,35 +7836,35 @@
     "en": "Defamation",
     "ja": "確定判決：名誉罰",
     "de": "Urteil: Ehrenstrafe",
-    "fr": "Jugement: diffamation",
+    "fr": "Jugement&nbsp;: diffamation",
     "icon": "/i/015000/015738.png"
   },
   "1121": {
     "en": "Aggravated Assault",
     "ja": "確定判決：加重罰",
     "de": "Urteil: Erschwerte Strafe",
-    "fr": "Jugement: peine sévère",
+    "fr": "Jugement&nbsp;: peine sévère",
     "icon": "/i/015000/015739.png"
   },
   "1122": {
     "en": "Shared Sentence",
     "ja": "確定判決：集団罰",
     "de": "Urteil: Kollektivstrafe",
-    "fr": "Jugement: peine collective",
+    "fr": "Jugement&nbsp;: peine collective",
     "icon": "/i/015000/015740.png"
   },
   "1123": {
     "en": "House Arrest",
     "ja": "確定判決：接近強制命令",
     "de": "Urteil: Freiheitsstrafe",
-    "fr": "Jugement: rapprochement",
+    "fr": "Jugement&nbsp;: rapprochement",
     "icon": "/i/015000/015741.png"
   },
   "1124": {
     "en": "Restraining Order",
     "ja": "確定判決：接近禁止命令",
     "de": "Urteil: Näherungsverbot",
-    "fr": "Jugement: éloignement",
+    "fr": "Jugement&nbsp;: éloignement",
     "icon": "/i/015000/015742.png"
   },
   "1125": {
@@ -8676,7 +8676,7 @@
     "en": "Chiten",
     "ja": "必殺剣・地天",
     "de": "Hissatsu: Chiten",
-    "fr": "Hissatsu: Chiten",
+    "fr": "Hissatsu&nbsp;: Chiten",
     "icon": "/i/014000/014820.png"
   },
   "1241": {
@@ -9047,28 +9047,28 @@
     "en": "Forward March",
     "ja": "移動命令：前",
     "de": "Geistlenkung vorwärts",
-    "fr": "Contrainte mentale: avancer",
+    "fr": "Contrainte mentale&nbsp;: avancer",
     "icon": "/i/015000/015774.png"
   },
   "1294": {
     "en": "About Face",
     "ja": "移動命令：後",
     "de": "Geistlenkung rückwärts",
-    "fr": "Contrainte mentale: reculer",
+    "fr": "Contrainte mentale&nbsp;: reculer",
     "icon": "/i/015000/015775.png"
   },
   "1295": {
     "en": "Left Face",
     "ja": "移動命令：左",
     "de": "Geistlenkung links",
-    "fr": "Contrainte mentale: virage à gauche",
+    "fr": "Contrainte mentale&nbsp;: virage à gauche",
     "icon": "/i/015000/015776.png"
   },
   "1296": {
     "en": "Right Face",
     "ja": "移動命令：右",
     "de": "Geistlenkung rechts",
-    "fr": "Contrainte mentale: virage à droite",
+    "fr": "Contrainte mentale&nbsp;: virage à droite",
     "icon": "/i/015000/015777.png"
   },
   "1297": {
@@ -9964,14 +9964,14 @@
     "en": "Divine Commandment: Flee",
     "ja": "神の啓示：行動し続けよ",
     "de": "Wort Gottes: Hinfort!",
-    "fr": "Révélation: Ne cesse pas de te mouvoir!",
+    "fr": "Révélation&nbsp;: Ne cesse pas de te mouvoir&nbsp;!",
     "icon": "/i/015000/015807.png"
   },
   "1425": {
     "en": "Divine Commandment: Turn",
     "ja": "神の啓示：見るなかれ",
     "de": "Wort Gottes: Sieh weg!",
-    "fr": "Révélation: Détourne ton regard!",
+    "fr": "Révélation&nbsp;: Détourne ton regard&nbsp;!",
     "icon": "/i/015000/015808.png"
   },
   "1426": {
@@ -10223,7 +10223,7 @@
     "en": "Elemental Blessing: EXP",
     "ja": "精霊の加護：経験値アップ",
     "de": "Elementarer Segen: Routine",
-    "fr": "Bénédiction des esprits: bonus d'expérience",
+    "fr": "Bénédiction des esprits&nbsp;: bonus d'expérience",
     "icon": "/i/015000/015887.png"
   },
   "1462": {
@@ -10237,7 +10237,7 @@
     "en": "Elemental Blessing: Damage",
     "ja": "精霊の加護：戦闘能力アップ",
     "de": "Elementarer Segen: Schaden",
-    "fr": "Bénédiction des esprits: bonus de combativité",
+    "fr": "Bénédiction des esprits&nbsp;: bonus de combativité",
     "icon": "/i/015000/015835.png"
   },
   "1464": {
@@ -10713,7 +10713,7 @@
     "en": "Down the Rabbit Hole",
     "ja": "財宝誘導",
     "de": "Immer dem Hasen nach",
-    "fr": "Lapinou!",
+    "fr": "Lapinou&nbsp;!",
     "icon": "/i/015000/015886.png"
   },
   "1532": {
@@ -11490,21 +11490,21 @@
     "en": "Protect L",
     "ja": "ロゴス・プロテス",
     "de": "Logos-Protes",
-    "fr": "Évocation Logos: Bouclier",
+    "fr": "Évocation Logos&nbsp;: Bouclier",
     "icon": "/i/016000/016638.png"
   },
   "1643": {
     "en": "Shell L",
     "ja": "ロゴス・シェル",
     "de": "Logos-Vallum",
-    "fr": "Évocation Logos: Barrière",
+    "fr": "Évocation Logos&nbsp;: Barrière",
     "icon": "/i/016000/016639.png"
   },
   "1644": {
     "en": "Swift L",
     "ja": "ロゴス・スウィフト",
     "de": "Logos-Eile",
-    "fr": "Évocation Logos: Vélocité",
+    "fr": "Évocation Logos&nbsp;: Vélocité",
     "icon": "/i/016000/016640.png"
   },
   "1645": {
@@ -11518,7 +11518,7 @@
     "en": "Bravery L",
     "ja": "ロゴス・ブレイブ",
     "de": "Logos-Courage",
-    "fr": "Évocation Logos: Bravoure",
+    "fr": "Évocation Logos&nbsp;: Bravoure",
     "icon": "/i/016000/016642.png"
   },
   "1647": {
@@ -11539,21 +11539,21 @@
     "en": "Reflect L",
     "ja": "ロゴス・リフレク",
     "de": "Logos-Reflektion",
-    "fr": "Évocation Logos: Miroir",
+    "fr": "Évocation Logos&nbsp;: Miroir",
     "icon": "/i/016000/016645.png"
   },
   "1650": {
     "en": "Poison L",
     "ja": "ロゴス・ポイズン",
     "de": "Logos-Gift",
-    "fr": "Évocation Logos: Poison",
+    "fr": "Évocation Logos&nbsp;: Poison",
     "icon": "/i/016000/016646.png"
   },
   "1651": {
     "en": "Refresh L",
     "ja": "ロゴス・リフレッシュ",
     "de": "Logos-Erfrischung",
-    "fr": "Évocation Logos: Tonification",
+    "fr": "Évocation Logos&nbsp;: Tonification",
     "icon": "/i/016000/016647.png"
   },
   "1652": {
@@ -11567,21 +11567,21 @@
     "en": "Double Edge L",
     "ja": "ロゴス・ダブルエッジ",
     "de": "Logos-Zweischneid",
-    "fr": "Évocation Logos: Double tranchant",
+    "fr": "Évocation Logos&nbsp;: Double tranchant",
     "icon": "/i/019000/019401.png"
   },
   "1654": {
     "en": "Spirit Dart L",
     "ja": "ロゴス・スピリットダート",
     "de": "Logos-Geistpfeil",
-    "fr": "Évocation Logos: Flèche spirituelle",
+    "fr": "Évocation Logos&nbsp;: Flèche spirituelle",
     "icon": "/i/016000/016650.png"
   },
   "1655": {
     "en": "Banish L",
     "ja": "ロゴス・バニシュ",
     "de": "Logos-Bann",
-    "fr": "Évocation Logos: Bannissement",
+    "fr": "Évocation Logos&nbsp;: Bannissement",
     "icon": "/i/016000/016651.png"
   },
   "1656": {
@@ -11595,7 +11595,7 @@
     "en": "Incense L",
     "ja": "ロゴス・エンミティ",
     "de": "Logos-Hohn",
-    "fr": "Évocation Logos: Incitation",
+    "fr": "Évocation Logos&nbsp;: Incitation",
     "icon": "/i/016000/016652.png"
   },
   "1658": {
@@ -11630,56 +11630,56 @@
     "en": "Local Resonance",
     "ja": "レゾナンスプログラム：ニアー",
     "de": "Resonanzprogramm: Nah",
-    "fr": "Programme de résonance: proximité",
+    "fr": "Programme de résonance&nbsp;: proximité",
     "icon": "/i/015000/015913.png"
   },
   "1663": {
     "en": "Remote Resonance",
     "ja": "レゾナンスプログラム：ファー",
     "de": "Resonanzprogramm: Fern",
-    "fr": "Programme de résonance: distance",
+    "fr": "Programme de résonance&nbsp;: distance",
     "icon": "/i/015000/015914.png"
   },
   "1664": {
     "en": "Critical Synchronization Bug",
     "ja": "クリティカルバグ：シェア",
     "de": "Kritischer Bug: Synchronisierung",
-    "fr": "Bogue critique: partage",
+    "fr": "Bogue critique&nbsp;: partage",
     "icon": "/i/015000/015915.png"
   },
   "1665": {
     "en": "Critical Overflow Bug",
     "ja": "クリティカルバグ：サークル",
     "de": "Kritischer Bug: Überlauf",
-    "fr": "Bogue critique: boucle",
+    "fr": "Bogue critique&nbsp;: boucle",
     "icon": "/i/015000/015916.png"
   },
   "1666": {
     "en": "Critical Underflow Bug",
     "ja": "クリティカルバグ：デグレード",
     "de": "Kritischer Bug: Unterlauf",
-    "fr": "Bogue critique: dégradation",
+    "fr": "Bogue critique&nbsp;: dégradation",
     "icon": "/i/015000/015917.png"
   },
   "1667": {
     "en": "Synchronization Debugger",
     "ja": "バグフィックス：シェア",
     "de": "Bug-Korrektur: Synchronisierung",
-    "fr": "Déboguage: partage",
+    "fr": "Déboguage&nbsp;: partage",
     "icon": "/i/015000/015918.png"
   },
   "1668": {
     "en": "Overflow Debugger",
     "ja": "バグフィックス：サークル",
     "de": "Bug-Korrektur: Überlauf",
-    "fr": "Déboguage: boucle",
+    "fr": "Déboguage&nbsp;: boucle",
     "icon": "/i/015000/015919.png"
   },
   "1669": {
     "en": "Underflow Debugger",
     "ja": "バグフィックス：デグレード",
     "de": "Bug-Korrektur: Unterlauf",
-    "fr": "Déboguage: dégradation",
+    "fr": "Déboguage&nbsp;: dégradation",
     "icon": "/i/015000/015920.png"
   },
   "1670": {
@@ -11693,21 +11693,21 @@
     "en": "Cascading Latent Defect",
     "ja": "レイテントバグ：デグレード",
     "de": "Latenter Bug: Unterlauf",
-    "fr": "Bogue latent: dégradation",
+    "fr": "Bogue latent&nbsp;: dégradation",
     "icon": "/i/015000/015922.png"
   },
   "1672": {
     "en": "Local Regression",
     "ja": "エンバグ：ニアー",
     "de": "Regression: Nah",
-    "fr": "Bogue intentionnel: proximité",
+    "fr": "Bogue intentionnel&nbsp;: proximité",
     "icon": "/i/015000/015923.png"
   },
   "1673": {
     "en": "Remote Regression",
     "ja": "エンバグ：ファー",
     "de": "Regression: Fern",
-    "fr": "Bogue intentionnel: distance",
+    "fr": "Bogue intentionnel&nbsp;: distance",
     "icon": "/i/015000/015924.png"
   },
   "1674": {
@@ -11735,7 +11735,7 @@
     "en": "Bloodbath L",
     "ja": "ロゴス・ブラッドバス",
     "de": "Logos-Blutbad",
-    "fr": "Évocation Logos: Bain de sang",
+    "fr": "Évocation Logos&nbsp;: Bain de sang",
     "icon": "/i/016000/016653.png"
   },
   "1678": {
@@ -11749,14 +11749,14 @@
     "en": "Spell-in-Waiting: Return IV",
     "ja": "ディレイスペル：リタンジャ",
     "de": "Verzögerung: Giga-Rückführung",
-    "fr": "Sort déphasé: Giga Retour",
+    "fr": "Sort déphasé&nbsp;: Giga Retour",
     "icon": "/i/015000/015331.png"
   },
   "1680": {
     "en": "Spell-in-Waiting: Flare",
     "ja": "ディレイスペル：フレア",
     "de": "Verzögerung: Flare",
-    "fr": "Sort déphasé: Brasier",
+    "fr": "Sort déphasé&nbsp;: Brasier",
     "icon": "/i/015000/015970.png"
   },
   "1681": {
@@ -11784,21 +11784,21 @@
     "en": "Break III Edict",
     "ja": "号令：ブレクガ",
     "de": "Kommando: Stillstandga",
-    "fr": "Ordre: Méga Brèche",
+    "fr": "Ordre&nbsp;: Méga Brèche",
     "icon": "/i/015000/015555.png"
   },
   "1685": {
     "en": "Rush Edict",
     "ja": "号令：ラッシュ",
     "de": "Kommando: Sturm",
-    "fr": "Ordre: Plongeon",
+    "fr": "Ordre&nbsp;: Plongeon",
     "icon": "/i/015000/015555.png"
   },
   "1686": {
     "en": "Tornado Edict",
     "ja": "号令：トルネド",
     "de": "Kommando: Tornado",
-    "fr": "Ordre: Tornade",
+    "fr": "Ordre&nbsp;: Tornade",
     "icon": "/i/015000/015555.png"
   },
   "1687": {
@@ -12253,14 +12253,14 @@
     "en": "Soul of Fire",
     "ja": "属性偏向：火",
     "de": "Elementarer Bias: Feuer",
-    "fr": "Déséquilibre éthéré: feu",
+    "fr": "Déséquilibre éthéré&nbsp;: feu",
     "icon": "/i/015000/015509.png"
   },
   "1752": {
     "en": "Soul of Ice",
     "ja": "属性偏向：氷",
     "de": "Elementarer Bias: Eis",
-    "fr": "Déséquilibre éthéré: glace",
+    "fr": "Déséquilibre éthéré&nbsp;: glace",
     "icon": "/i/015000/015510.png"
   },
   "1753": {
@@ -12477,14 +12477,14 @@
     "en": "Soul of Fire",
     "ja": "属性偏向：火",
     "de": "Elementarer Bias: Feuer",
-    "fr": "Déséquilibre éthéré: feu",
+    "fr": "Déséquilibre éthéré&nbsp;: feu",
     "icon": "/i/015000/015509.png"
   },
   "1784": {
     "en": "Soul of Ice",
     "ja": "属性偏向：氷",
     "de": "Elementarer Bias: Eis",
-    "fr": "Déséquilibre éthéré: glace",
+    "fr": "Déséquilibre éthéré&nbsp;: glace",
     "icon": "/i/015000/015510.png"
   },
   "1785": {
@@ -12659,28 +12659,28 @@
     "en": "Spell-in-Waiting: Unholy Darkness",
     "ja": "ディレイスペル：ダークホーリー",
     "de": "Verzögerung: Unheiliges Dunkel",
-    "fr": "Sort déphasé: Miracle ténébreux",
+    "fr": "Sort déphasé&nbsp;: Miracle ténébreux",
     "icon": "/i/015000/015983.png"
   },
   "1810": {
     "en": "Spell-in-Waiting: Dark Fire III",
     "ja": "ディレイスペル：ダークファイガ",
     "de": "Verzögerung: Dunkel-Feuga",
-    "fr": "Sort déphasé: Méga Feu ténébreux",
+    "fr": "Sort déphasé&nbsp;: Méga Feu ténébreux",
     "icon": "/i/015000/015984.png"
   },
   "1811": {
     "en": "Spell-in-Waiting: Hell Wind",
     "ja": "ディレイスペル：ヘルウィンド",
     "de": "Verzögerung: Höllenwind",
-    "fr": "Sort déphasé: Vent infernal",
+    "fr": "Sort déphasé&nbsp;: Vent infernal",
     "icon": "/i/015000/015985.png"
   },
   "1812": {
     "en": "Spell-in-Waiting: Shadoweye",
     "ja": "ディレイスペル：シャドウアイ",
     "de": "Verzögerung: Schattenauge",
-    "fr": "Sort déphasé: Œil de l'ombre",
+    "fr": "Sort déphasé&nbsp;: Œil de l'ombre",
     "icon": "/i/015000/015986.png"
   },
   "1813": {
@@ -13401,7 +13401,7 @@
     "en": "Summon Order",
     "ja": "アクション実行待機I",
     "de": "Egi-Attacke I",
-    "fr": "Action en attente: 1",
+    "fr": "Action en attente&nbsp;: 1",
     "icon": "/i/019000/019701.png"
   },
   "1916": {
@@ -13702,28 +13702,28 @@
     "en": "Forward March",
     "ja": "移動命令：前",
     "de": "Geistlenkung vorwärts",
-    "fr": "Contrainte mentale: avancer",
+    "fr": "Contrainte mentale&nbsp;: avancer",
     "icon": "/i/015000/015774.png"
   },
   "1959": {
     "en": "About Face",
     "ja": "移動命令：後",
     "de": "Geistlenkung rückwärts",
-    "fr": "Contrainte mentale: reculer",
+    "fr": "Contrainte mentale&nbsp;: reculer",
     "icon": "/i/015000/015775.png"
   },
   "1960": {
     "en": "Left Face",
     "ja": "移動命令：左",
     "de": "Geistlenkung links",
-    "fr": "Contrainte mentale: virage à gauche",
+    "fr": "Contrainte mentale&nbsp;: virage à gauche",
     "icon": "/i/015000/015776.png"
   },
   "1961": {
     "en": "Right Face",
     "ja": "移動命令：右",
     "de": "Geistlenkung rechts",
-    "fr": "Contrainte mentale: virage à droite",
+    "fr": "Contrainte mentale&nbsp;: virage à droite",
     "icon": "/i/015000/015777.png"
   },
   "1962": {
@@ -13744,21 +13744,21 @@
     "en": "Summon Order II",
     "ja": "アクション実行待機II",
     "de": "Egi-Attacke II",
-    "fr": "Actions en attente: 2",
+    "fr": "Actions en attente&nbsp;: 2",
     "icon": "/i/019000/019711.png"
   },
   "1965": {
     "en": "Summon Order III",
     "ja": "アクション実行待機III",
     "de": "Egi-Attacke III",
-    "fr": "Actions en attente: 3",
+    "fr": "Actions en attente&nbsp;: 3",
     "icon": "/i/019000/019721.png"
   },
   "1966": {
     "en": "Summon Order IV",
     "ja": "アクション実行待機IV",
     "de": "Egi-Attacke IV",
-    "fr": "Actions en attente: 4",
+    "fr": "Actions en attente&nbsp;: 4",
     "icon": "/i/019000/019731.png"
   },
   "1967": {
@@ -14738,7 +14738,7 @@
     "en": "Spell-in-Waiting: Flare",
     "ja": "ディレイスペル：フレア",
     "de": "Verzögerung: Flare",
-    "fr": "Sort déphasé: Brasier",
+    "fr": "Sort déphasé&nbsp;: Brasier",
     "icon": "/i/015000/015970.png"
   },
   "2107": {
@@ -14969,21 +14969,21 @@
     "en": "Final Judgment: Decree Nisi γ",
     "ja": "最後の審判：仮判決γ",
     "de": "Prozess über Vorläufiges Urteil γ",
-    "fr": "Injonction: peine provisoire γ",
+    "fr": "Injonction&nbsp;: peine provisoire γ",
     "icon": "/i/015000/015203.png"
   },
   "2140": {
     "en": "Final Judgment: Decree Nisi δ",
     "ja": "最後の審判：仮判決δ",
     "de": "Prozess über Vorläufiges Urteil δ",
-    "fr": "Injonction: peine provisoire δ",
+    "fr": "Injonction&nbsp;: peine provisoire δ",
     "icon": "/i/015000/015204.png"
   },
   "2141": {
     "en": "Final Judgment: Penalty IV",
     "ja": "最後の審判：デバフ4",
     "de": "Prozess über Schwächung 4",
-    "fr": "Injonction: 4 altérations",
+    "fr": "Injonction&nbsp;: 4 altérations",
     "icon": "/i/015000/015205.png"
   },
   "2142": {
@@ -15060,28 +15060,28 @@
     "en": "Final Word: Contact Prohibition",
     "ja": "確定判決：接触禁止命令",
     "de": "Urteil: Kontaktverbot",
-    "fr": "Jugement: contact prohibé",
+    "fr": "Jugement&nbsp;: contact prohibé",
     "icon": "/i/015000/015215.png"
   },
   "2153": {
     "en": "Final Word: Contact Regulation",
     "ja": "確定判決：接触保護命令",
     "de": "Urteil: Kontakt-Order",
-    "fr": "Jugement: contact forcé",
+    "fr": "Jugement&nbsp;: contact forcé",
     "icon": "/i/015000/015216.png"
   },
   "2154": {
     "en": "Final Word: Escape Prohibition",
     "ja": "確定判決：逃亡禁止命令",
     "de": "Urteil: Fluchtverbot",
-    "fr": "Jugement: fuite prohibée",
+    "fr": "Jugement&nbsp;: fuite prohibée",
     "icon": "/i/015000/015217.png"
   },
   "2155": {
     "en": "Final Word: Escape Detection",
     "ja": "確定判決：逃亡監察命令",
     "de": "Urteil: Fluchtbeobachtung",
-    "fr": "Jugement: fuite forcée",
+    "fr": "Jugement&nbsp;: fuite forcée",
     "icon": "/i/015000/015218.png"
   },
   "2156": {
@@ -15109,7 +15109,7 @@
     "en": "Red Light",
     "ja": "動くな！",
     "de": "Stillgestanden",
-    "fr": "Halte!",
+    "fr": "Halte&nbsp;!",
     "icon": "/i/016000/016233.png"
   },
   "2160": {
@@ -15123,28 +15123,28 @@
     "en": "Forward March",
     "ja": "移動命令：前",
     "de": "Geistlenkung vorwärts",
-    "fr": "Contrainte mentale: avancer",
+    "fr": "Contrainte mentale&nbsp;: avancer",
     "icon": "/i/015000/015774.png"
   },
   "2162": {
     "en": "About Face",
     "ja": "移動命令：後",
     "de": "Geistlenkung rückwärts",
-    "fr": "Contrainte mentale: reculer",
+    "fr": "Contrainte mentale&nbsp;: reculer",
     "icon": "/i/015000/015775.png"
   },
   "2163": {
     "en": "Left Face",
     "ja": "移動命令：左",
     "de": "Geistlenkung links",
-    "fr": "Contrainte mentale: virage à gauche",
+    "fr": "Contrainte mentale&nbsp;: virage à gauche",
     "icon": "/i/015000/015776.png"
   },
   "2164": {
     "en": "Right Face",
     "ja": "移動命令：右",
     "de": "Geistlenkung rechts",
-    "fr": "Contrainte mentale: virage à droite",
+    "fr": "Contrainte mentale&nbsp;: virage à droite",
     "icon": "/i/015000/015777.png"
   },
   "2165": {
@@ -15543,7 +15543,7 @@
     "en": "Final Judgment: Penalty III",
     "ja": "最後の審判：デバフ3",
     "de": "Prozess über Schwächung 3",
-    "fr": "Injonction: 3 altérations",
+    "fr": "Injonction&nbsp;: 3 altérations",
     "icon": "/i/015000/015705.png"
   },
   "2222": {
@@ -15564,14 +15564,14 @@
     "en": "Final Judgment: Decree Nisi α",
     "ja": "最後の審判：仮判決α",
     "de": "Prozess über Vorläufiges Urteil α",
-    "fr": "Injonction: peine provisoire α",
+    "fr": "Injonction&nbsp;: peine provisoire α",
     "icon": "/i/015000/015223.png"
   },
   "2225": {
     "en": "Final Judgment: Decree Nisi β",
     "ja": "最後の審判：仮判決β",
     "de": "Prozess über Vorläufiges Urteil β",
-    "fr": "Injonction: peine provisoire β",
+    "fr": "Injonction&nbsp;: peine provisoire β",
     "icon": "/i/015000/015224.png"
   },
   "2226": {
@@ -15984,7 +15984,7 @@
     "en": "Running Wild",
     "ja": "ふりしぼれ",
     "de": "Volle Kraft",
-    "fr": "Déchaîne-toi!",
+    "fr": "Déchaîne-toi&nbsp;!",
     "icon": "/i/015000/015255.png"
   },
   "2285": {
@@ -16145,14 +16145,14 @@
     "en": "Safety Lock: Pyretic Booster",
     "ja": "兵装制限：ブーストモード",
     "de": "Beschränkung: Übermodus",
-    "fr": "Restriction: mode turbo",
+    "fr": "Restriction&nbsp;: mode turbo",
     "icon": "/i/015000/015259.png"
   },
   "2308": {
     "en": "Safety Lock: Aetherial Aegis",
     "ja": "兵装制限：エーテルバリア",
     "de": "Beschränkung: Ätherbarriere",
-    "fr": "Restriction: barrière éthérée",
+    "fr": "Restriction&nbsp;: barrière éthérée",
     "icon": "/i/015000/015260.png"
   },
   "2309": {
@@ -16509,42 +16509,42 @@
     "en": "Marching Orders: Vigil for the Lost",
     "ja": "攻撃要請：高火力陸戦魔導兵器「ヴィジル」",
     "de": "Hilfsgesuch: Vigil, Feuerkraft hoch zehn",
-    "fr": "Passe-droit d'interception: Vigile de feu",
+    "fr": "Passe-droit d'interception&nbsp;: Vigile de feu",
     "icon": "/i/016000/016697.png"
   },
   "2360": {
     "en": "Marching Orders: Kill It with Fire",
     "ja": "攻撃要請：腐乱野菜「ピーリフール」",
     "de": "Hilfsgesuch: Peeriefool, das faule Gemüse",
-    "fr": "Passe-droit d'interception: Grandeur et pestilence",
+    "fr": "Passe-droit d'interception&nbsp;: Grandeur et pestilence",
     "icon": "/i/016000/016697.png"
   },
   "2361": {
     "en": "Marching Orders: The Hunt for Red Choctober",
     "ja": "攻撃要請：赤チョコボのヌシ「レッドコメット」",
     "de": "Hilfsgesuch: Der Rote Meteor und seine Meute",
-    "fr": "Passe-droit d'interception: Une ruée en rouge",
+    "fr": "Passe-droit d'interception&nbsp;: Une ruée en rouge",
     "icon": "/i/016000/016697.png"
   },
   "2362": {
     "en": "Marching Orders: The Final Furlong",
     "ja": "攻撃要請：怨念の死霊「スパルトイ」",
     "de": "Hilfsgesuch: Spartoi der Gefürchtete",
-    "fr": "Passe-droit d'interception: Menace spectrale",
+    "fr": "Passe-droit d'interception&nbsp;: Menace spectrale",
     "icon": "/i/016000/016697.png"
   },
   "2363": {
     "en": "Marching Orders: Rise of the Robots",
     "ja": "攻撃要請：新たなる鉄巨人「魔導レイバーX型」",
     "de": "Hilfsgesuch: Im Schatten von Modell X",
-    "fr": "Passe-droit d'interception: Le soulèvement des machines",
+    "fr": "Passe-droit d'interception&nbsp;: Le soulèvement des machines",
     "icon": "/i/016000/016697.png"
   },
   "2364": {
     "en": "Marching Orders: Metal Fox Chaos",
     "ja": "攻撃要請：鋼鉄の魔獣「ダーインスレイヴ」",
     "de": "Hilfsgesuch: Dáinsleif, Bestie aus Eisen",
-    "fr": "Passe-droit d'interception: Le guerrier de métal",
+    "fr": "Passe-droit d'interception&nbsp;: Le guerrier de métal",
     "icon": "/i/016000/016697.png"
   },
   "2365": {
@@ -16663,28 +16663,28 @@
     "en": "Forward March",
     "ja": "移動命令：前",
     "de": "Geistlenkung vorwärts",
-    "fr": "Contrainte mentale: avancer",
+    "fr": "Contrainte mentale&nbsp;: avancer",
     "icon": "/i/015000/015774.png"
   },
   "2382": {
     "en": "About Face",
     "ja": "移動命令：後",
     "de": "Geistlenkung rückwärts",
-    "fr": "Contrainte mentale: reculer",
+    "fr": "Contrainte mentale&nbsp;: reculer",
     "icon": "/i/015000/015775.png"
   },
   "2383": {
     "en": "Left Face",
     "ja": "移動命令：左",
     "de": "Geistlenkung links",
-    "fr": "Contrainte mentale: virage à gauche",
+    "fr": "Contrainte mentale&nbsp;: virage à gauche",
     "icon": "/i/015000/015776.png"
   },
   "2384": {
     "en": "Right Face",
     "ja": "移動命令：右",
     "de": "Geistlenkung rechts",
-    "fr": "Contrainte mentale: virage à droite",
+    "fr": "Contrainte mentale&nbsp;: virage à droite",
     "icon": "/i/015000/015777.png"
   },
   "2385": {
@@ -17006,14 +17006,14 @@
     "en": "Wanderer's Fate",
     "ja": "迷走の呪い：ノックバック",
     "de": "Fluch des Irrlaufs: Zurückschleudern",
-    "fr": "Calamité des dévoyés: projection",
+    "fr": "Calamité des dévoyés&nbsp;: projection",
     "icon": "/i/015000/015281.png"
   },
   "2431": {
     "en": "Sacrifice's Fate",
     "ja": "迷走の呪い：引き寄せ",
     "de": "Fluch des Irrlaufs: Heranziehen",
-    "fr": "Calamité des dévoyés: attraction",
+    "fr": "Calamité des dévoyés&nbsp;: attraction",
     "icon": "/i/015000/015282.png"
   },
   "2432": {
@@ -17174,21 +17174,21 @@
     "en": "Spell-in-Waiting: Unholy Darkness",
     "ja": "ディレイスペル：ダークホーリー",
     "de": "Verzögerung: Unheiliges Dunkel",
-    "fr": "Sort déphasé: Miracle ténébreux",
+    "fr": "Sort déphasé&nbsp;: Miracle ténébreux",
     "icon": "/i/015000/015983.png"
   },
   "2455": {
     "en": "Spell-in-Waiting: Dark Fire III",
     "ja": "ディレイスペル：ダークファイガ",
     "de": "Verzögerung: Dunkel-Feuga",
-    "fr": "Sort déphasé: Méga Feu ténébreux",
+    "fr": "Sort déphasé&nbsp;: Méga Feu ténébreux",
     "icon": "/i/015000/015984.png"
   },
   "2456": {
     "en": "Spell-in-Waiting: Shadoweye",
     "ja": "ディレイスペル：シャドウアイ",
     "de": "Verzögerung: Schattenauge",
-    "fr": "Sort déphasé: Œil de l'ombre",
+    "fr": "Sort déphasé&nbsp;: Œil de l'ombre",
     "icon": "/i/015000/015986.png"
   },
   "2457": {
@@ -17216,35 +17216,35 @@
     "en": "Spell-in-Waiting: Dark Eruption",
     "ja": "ディレイスペル：ダークエラプション",
     "de": "Verzögerung: Dunkle Eruption",
-    "fr": "Sort déphasé: Éruption ténébreuse",
+    "fr": "Sort déphasé&nbsp;: Éruption ténébreuse",
     "icon": "/i/015000/015305.png"
   },
   "2461": {
     "en": "Spell-in-Waiting: Dark Water III",
     "ja": "ディレイスペル：ダークウォタガ",
     "de": "Verzögerung: Dunkel-Aquaga",
-    "fr": "Sort déphasé: Méga Eau ténébreuse",
+    "fr": "Sort déphasé&nbsp;: Méga Eau ténébreuse",
     "icon": "/i/015000/015306.png"
   },
   "2462": {
     "en": "Spell-in-Waiting: Dark Blizzard III",
     "ja": "ディレイスペル：ダークブリザガ",
     "de": "Verzögerung: Dunkel-Eisga",
-    "fr": "Sort déphasé: Méga Glace ténébreuse",
+    "fr": "Sort déphasé&nbsp;: Méga Glace ténébreuse",
     "icon": "/i/015000/015307.png"
   },
   "2463": {
     "en": "Spell-in-Waiting: Dark Aero III",
     "ja": "ディレイスペル：ダークエアロガ",
     "de": "Verzögerung: Dunkel-Windga",
-    "fr": "Sort déphasé: Méga Vent ténébreux",
+    "fr": "Sort déphasé&nbsp;: Méga Vent ténébreux",
     "icon": "/i/015000/015308.png"
   },
   "2464": {
     "en": "Spell-in-Waiting: Return",
     "ja": "ディレイスペル：リターン",
     "de": "Verzögerung: Rückgabe",
-    "fr": "Sort déphasé: Retour",
+    "fr": "Sort déphasé&nbsp;: Retour",
     "icon": "/i/015000/015313.png"
   },
   "2465": {
@@ -17272,21 +17272,21 @@
     "en": "Junction Shiva",
     "ja": "ジャンクション：シヴァ",
     "de": "Kopplung: Shiva",
-    "fr": "Association: Shiva",
+    "fr": "Association&nbsp;: Shiva",
     "icon": "/i/015000/015310.png"
   },
   "2469": {
     "en": "Junction Titan",
     "ja": "ジャンクション：タイタン",
     "de": "Kopplung: Titan",
-    "fr": "Association: Titan",
+    "fr": "Association&nbsp;: Titan",
     "icon": "/i/015000/015311.png"
   },
   "2470": {
     "en": "Junction Loghrif",
     "ja": "ジャンクション：アログリフ",
     "de": "Kopplung: Loghrif",
-    "fr": "Association: Loghrif",
+    "fr": "Association&nbsp;: Loghrif",
     "icon": "/i/015000/015312.png"
   },
   "2471": {
@@ -17314,63 +17314,63 @@
     "en": "Movement Edict: 2 Squares",
     "ja": "移動の勅令：2マス",
     "de": "Edikt der Bewegung: 2 Felder",
-    "fr": "Injonction reçue: déplacement de 2 cases",
+    "fr": "Injonction reçue&nbsp;: déplacement de 2 cases",
     "icon": "/i/015000/015319.png"
   },
   "2475": {
     "en": "Movement Edict: 3 Squares",
     "ja": "移動の勅令：3マス",
     "de": "Edikt der Bewegung: 3 Felder",
-    "fr": "Injonction reçue: déplacement de 3 cases",
+    "fr": "Injonction reçue&nbsp;: déplacement de 3 cases",
     "icon": "/i/015000/015320.png"
   },
   "2476": {
     "en": "Movement Edict: 4 Squares",
     "ja": "移動の勅令：4マス",
     "de": "Edikt der Bewegung: 4 Felder",
-    "fr": "Injonction reçue: déplacement de 4 cases",
+    "fr": "Injonction reçue&nbsp;: déplacement de 4 cases",
     "icon": "/i/015000/015321.png"
   },
   "2477": {
     "en": "Movement Edict: 2 Squares",
     "ja": "移動の勅令：2マス",
     "de": "Edikt der Bewegung: 2 Felder",
-    "fr": "Injonction reçue: déplacement de 2 cases",
+    "fr": "Injonction reçue&nbsp;: déplacement de 2 cases",
     "icon": "/i/015000/015319.png"
   },
   "2478": {
     "en": "Movement Edict: 3 Squares",
     "ja": "移動の勅令：3マス",
     "de": "Edikt der Bewegung: 3 Felder",
-    "fr": "Injonction reçue: déplacement de 3 cases",
+    "fr": "Injonction reçue&nbsp;: déplacement de 3 cases",
     "icon": "/i/015000/015320.png"
   },
   "2479": {
     "en": "Movement Edict: 4 Squares",
     "ja": "移動の勅令：4マス",
     "de": "Edikt der Bewegung: 4 Felder",
-    "fr": "Injonction reçue: déplacement de 4 cases",
+    "fr": "Injonction reçue&nbsp;: déplacement de 4 cases",
     "icon": "/i/015000/015321.png"
   },
   "2480": {
     "en": "Your Move: 2 Squares",
     "ja": "移動実行：2マス",
     "de": "Ausführung des Edikts: 2 Felder",
-    "fr": "Exécution d'injonction: déplacement de 2 cases",
+    "fr": "Exécution d'injonction&nbsp;: déplacement de 2 cases",
     "icon": "/i/015000/015322.png"
   },
   "2481": {
     "en": "Your Move: 3 Squares",
     "ja": "移動実行：3マス",
     "de": "Ausführung des Edikts: 3 Felder",
-    "fr": "Exécution d'injonction: déplacement de 3 cases",
+    "fr": "Exécution d'injonction&nbsp;: déplacement de 3 cases",
     "icon": "/i/015000/015323.png"
   },
   "2482": {
     "en": "Your Move: 4 Squares",
     "ja": "移動実行：4マス",
     "de": "Ausführung des Edikts: 4 Felder",
-    "fr": "Exécution d'injonction: déplacement de 4 cases",
+    "fr": "Exécution d'injonction&nbsp;: déplacement de 4 cases",
     "icon": "/i/015000/015324.png"
   },
   "2483": {
@@ -17713,7 +17713,7 @@
     "en": "Spell-in-Waiting: Quietus",
     "ja": "ディレイスペル：クワイタス",
     "de": "Verzögerung: Quietus",
-    "fr": "Sort déphasé: Quietus",
+    "fr": "Sort déphasé&nbsp;: Quietus",
     "icon": "/i/015000/015341.png"
   },
   "2532": {
@@ -18056,42 +18056,42 @@
     "en": "Marching Orders: Feeling the Burn",
     "ja": "攻撃要請：試作飛行型魔導アーマー「ブラックバーン」",
     "de": "Hilfsgesuch: Schwarzbrands Testflug",
-    "fr": "Passe-droit d'interception: On arrête le progrès",
+    "fr": "Passe-droit d'interception&nbsp;: On arrête le progrès",
     "icon": "/i/016000/016697.png"
   },
   "2581": {
     "en": "Marching Orders: On Serpents' Wings",
     "ja": "攻撃要請：妖霊使い「妖戦百人隊」",
     "de": "Hilfsgesuch: Der Geistertrupp",
-    "fr": "Passe-droit d'interception: Zirnitrop",
+    "fr": "Passe-droit d'interception&nbsp;: Zirnitrop",
     "icon": "/i/016000/016697.png"
   },
   "2582": {
     "en": "Marching Orders: Never Cry Wolf",
     "ja": "攻撃要請：邪悪なる氷狼「フローズヴィトニル」",
     "de": "Hilfsgesuch: Eiswolf Hrodvitnir",
-    "fr": "Passe-droit d'interception: Et n'y Hród'viens plus!",
+    "fr": "Passe-droit d'interception&nbsp;: Et n'y Hród'viens plus&nbsp;!",
     "icon": "/i/016000/016697.png"
   },
   "2583": {
     "en": "Marching Orders: Here Comes the Cavalry",
     "ja": "攻撃要請：鋼鉄の人馬「魔導騎兵大隊」",
     "de": "Hilfsgesuch: Halb Pferd, halb Garlear",
-    "fr": "Passe-droit d'interception: Un cavalier qui surgit hors de la nuit",
+    "fr": "Passe-droit d'interception&nbsp;: Un cavalier qui surgit hors de la nuit",
     "icon": "/i/016000/016697.png"
   },
   "2584": {
     "en": "Marching Orders: Worn to a Shadow",
     "ja": "攻撃要請：有角の凶鳥「アルコノスト」",
     "de": "Hilfsgesuch: Alkonost, schön und gefiedert",
-    "fr": "Passe-droit d'interception: Oiseau d'enfer",
+    "fr": "Passe-droit d'interception&nbsp;: Oiseau d'enfer",
     "icon": "/i/016000/016697.png"
   },
   "2585": {
     "en": "Marching Orders: A Familiar Face",
     "ja": "攻撃要請：模造統制者「IVレギオン・ハシュマリム」",
     "de": "Hilfsgesuch: Hashmallim der Einiger",
-    "fr": "Passe-droit d'interception: Le Grand Ordonnateur",
+    "fr": "Passe-droit d'interception&nbsp;: Le Grand Ordonnateur",
     "icon": "/i/016000/016697.png"
   },
   "2586": {
@@ -18420,14 +18420,14 @@
     "en": "Program: #FFFFFFF",
     "ja": "プログラム化：白",
     "de": "Weißes Programm",
-    "fr": "Blanc: numérisation",
+    "fr": "Blanc&nbsp;: numérisation",
     "icon": "/i/015000/015356.png"
   },
   "2633": {
     "en": "Program: #000000",
     "ja": "プログラム化：黒",
     "de": "Schwarzes Programm",
-    "fr": "Noir: numérisation",
+    "fr": "Noir&nbsp;: numérisation",
     "icon": "/i/015000/015357.png"
   },
   "2634": {
@@ -18574,14 +18574,14 @@
     "en": "Who Is She",
     "ja": "ドグ？",
     "de": "Dug?",
-    "fr": "Samanta?",
+    "fr": "Samanta&nbsp;?",
     "icon": "/i/015000/015395.png"
   },
   "2655": {
     "en": "Who Is She",
     "ja": "ドグ？",
     "de": "Dug?",
-    "fr": "Samanta?",
+    "fr": "Samanta&nbsp;?",
     "icon": "/i/015000/015395.png"
   },
   "2656": {
@@ -18616,7 +18616,7 @@
     "en": "Brightwinged Fortitude",
     "ja": "蒼天の光翼：守",
     "de": "Schützende Lichtschwingen",
-    "fr": "Vol céleste: défense",
+    "fr": "Vol céleste&nbsp;: défense",
     "icon": "/i/015000/015445.png"
   },
   "2661": {
@@ -18644,7 +18644,7 @@
     "en": "Brightwinged Fury",
     "ja": "蒼天の光翼：攻",
     "de": "Schlagende Lichtschwingen",
-    "fr": "Vol céleste: attaque",
+    "fr": "Vol céleste&nbsp;: attaque",
     "icon": "/i/015000/015448.png"
   },
   "2665": {
@@ -19841,28 +19841,28 @@
     "en": "Forward Bearing",
     "ja": "方向転換：前",
     "de": "Wende: Vorne",
-    "fr": "Changement de cap: en avant",
+    "fr": "Changement de cap&nbsp;: en avant",
     "icon": "/i/015000/015423.png"
   },
   "2836": {
     "en": "Backward Bearing",
     "ja": "方向転換：後",
     "de": "Wende: Hinten",
-    "fr": "Changement de cap: en arrière",
+    "fr": "Changement de cap&nbsp;: en arrière",
     "icon": "/i/015000/015424.png"
   },
   "2837": {
     "en": "Leftward Bearing",
     "ja": "方向転換：左",
     "de": "Wende: Links",
-    "fr": "Changement de cap: à gauche",
+    "fr": "Changement de cap&nbsp;: à gauche",
     "icon": "/i/015000/015425.png"
   },
   "2838": {
     "en": "Rightward Bearing",
     "ja": "方向転換：右",
     "de": "Wende: Rechts",
-    "fr": "Changement de cap: à droite",
+    "fr": "Changement de cap&nbsp;: à droite",
     "icon": "/i/015000/015426.png"
   },
   "2839": {
@@ -19876,21 +19876,21 @@
     "en": "Rightward Whimsy",
     "ja": "気まぐれ：右",
     "de": "Prinzessinnenlaune: rechts",
-    "fr": "Caprice de princesse: à droite",
+    "fr": "Caprice de princesse&nbsp;: à droite",
     "icon": "/i/015000/015425.png"
   },
   "2841": {
     "en": "Leftward Whimsy",
     "ja": "気まぐれ：左",
     "de": "Prinzessinnenlaune: links",
-    "fr": "Caprice de princesse: à gauche",
+    "fr": "Caprice de princesse&nbsp;: à gauche",
     "icon": "/i/015000/015426.png"
   },
   "2842": {
     "en": "Backward Whimsy",
     "ja": "気まぐれ：後",
     "de": "Prinzessinnenlaune: hinten",
-    "fr": "Caprice de princesse: en arrière",
+    "fr": "Caprice de princesse&nbsp;: en arrière",
     "icon": "/i/015000/015423.png"
   },
   "2843": {
@@ -20296,14 +20296,14 @@
     "en": "Sustained Dark Damage",
     "ja": "継続ダメージ：闇",
     "de": "Schrittweiser Dunkelschaden",
-    "fr": "Dégâts continus: Ténèbres",
+    "fr": "Dégâts continus&nbsp;: Ténèbres",
     "icon": "/i/015000/015460.png"
   },
   "2901": {
     "en": "Sustained Light Damage",
     "ja": "継続ダメージ：光",
     "de": "Schrittweiser Lichtschaden",
-    "fr": "Dégâts continus: Lumière",
+    "fr": "Dégâts continus&nbsp;: Lumière",
     "icon": "/i/015000/015461.png"
   },
   "2902": {
@@ -20702,14 +20702,14 @@
     "en": "Forward Whimsy",
     "ja": "気まぐれ：前",
     "de": "Prinzessinnenlaune: vorne",
-    "fr": "Caprice de princesse: en avant",
+    "fr": "Caprice de princesse&nbsp;: en avant",
     "icon": "/i/015000/015424.png"
   },
   "2959": {
     "en": "Ogi Namikiri Ready",
     "ja": "奥義波切実行可",
     "de": "Ogi Namikiri",
-    "fr": "Ôgi: Namikiri préparée",
+    "fr": "Ôgi&nbsp;: Namikiri préparée",
     "icon": "/i/013000/013313.png"
   },
   "2960": {
@@ -21115,14 +21115,14 @@
     "en": "Flourishing Symmetry",
     "ja": "対称投擲：フラリッシュ",
     "de": "Synchrone Trance",
-    "fr": "Lancer synchrone: Apothéose",
+    "fr": "Lancer synchrone&nbsp;: Apothéose",
     "icon": "/i/013000/013725.png"
   },
   "3018": {
     "en": "Flourishing Flow",
     "ja": "非対称投擲：フラリッシュ",
     "de": "Asynchrone Trance",
-    "fr": "Lancer asynchrone: Apothéose",
+    "fr": "Lancer asynchrone&nbsp;: Apothéose",
     "icon": "/i/013000/013726.png"
   },
   "3019": {
@@ -21703,21 +21703,21 @@
     "en": "Balance Drawn",
     "ja": "ドロー：アーゼマの均衡",
     "de": "Gezogen: Waage",
-    "fr": "Tirage: la Balance",
+    "fr": "Tirage&nbsp;: la Balance",
     "icon": "/i/013000/013229.png"
   },
   "3102": {
     "en": "Ewer Drawn",
     "ja": "ドロー：サリャクの水瓶",
     "de": "Gezogen: Krug",
-    "fr": "Tirage: l'Aiguière",
+    "fr": "Tirage&nbsp;: l'Aiguière",
     "icon": "/i/013000/013233.png"
   },
   "3103": {
     "en": "Spire Drawn",
     "ja": "ドロー：ビエルゴの塔",
     "de": "Gezogen: Turm",
-    "fr": "Tirage: la Tour",
+    "fr": "Tirage&nbsp;: la Tour",
     "icon": "/i/013000/013234.png"
   },
   "3104": {
@@ -22389,7 +22389,7 @@
     "en": "Ogi Namikiri",
     "ja": "奥義波切",
     "de": "Ogi Namikiri",
-    "fr": "Ôgi: Namikiri",
+    "fr": "Ôgi&nbsp;: Namikiri",
     "icon": "/i/014000/014952.png"
   },
   "3200": {
@@ -22403,7 +22403,7 @@
     "en": "Kaiten",
     "ja": "回天",
     "de": "Hissatsu: Kaiten",
-    "fr": "Hissatsu: Kaiten",
+    "fr": "Hissatsu&nbsp;: Kaiten",
     "icon": "/i/013000/013305.png"
   },
   "3202": {
@@ -23817,14 +23817,14 @@
     "en": "Bole Drawn",
     "ja": "ドロー：世界樹の幹",
     "de": "Gezogen: Eiche",
-    "fr": "Tirage: le Tronc",
+    "fr": "Tirage&nbsp;: le Tronc",
     "icon": "/i/013000/013230.png"
   },
   "3404": {
     "en": "Arrow Drawn",
     "ja": "ドロー：オシュオンの矢",
     "de": "Gezogen: Pfeil",
-    "fr": "Tirage: la Flèche",
+    "fr": "Tirage&nbsp;: la Flèche",
     "icon": "/i/013000/013231.png"
   },
   "3405": {

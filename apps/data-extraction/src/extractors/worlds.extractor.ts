@@ -1,13 +1,13 @@
 import { AbstractExtractor } from '../abstract-extractor';
+import { XivDataService } from '../xiv/xiv-data.service';
 
 export class WorldsExtractor extends AbstractExtractor {
-  protected doExtract(): any {
-    const worlds = {};
-    this.getAllPages('https://xivapi.com/World?columns=ID,Name').subscribe(page => {
-      page.Results.forEach(world => {
-        worlds[world.Name.toLowerCase()] = world.ID;
+  protected doExtract(xiv: XivDataService): any {
+    this.getSheet(xiv, 'World', ['Name']).subscribe(xivWorlds => {
+      const worlds = {};
+      xivWorlds.forEach(world => {
+        worlds[world.Name.toString().toLowerCase()] = world.index;
       });
-    }, null, () => {
       this.persistToTypescript('worlds', 'worlds', worlds);
       this.done();
     });

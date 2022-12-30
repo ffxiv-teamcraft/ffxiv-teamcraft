@@ -11,6 +11,8 @@ export interface Bonus {
 
 export enum Zh {
   低于自身等级道具获得率ValueIntegerParameter1Value = "低于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>%",
+  收藏价值最大时升华率ValueIntegerParameter1Value = "收藏价值最大时：升华率＋<Value>IntegerParameter(1)</Value>%",
+  收藏价值最大时升华率ValueIntegerParameter1Value上升型 = "收藏价值最大时：升华率＋<Value>IntegerParameter(1)</Value>%（上升型）",
   灵巧ValueIntegerParameter1Value以上 = "灵巧 <Value>IntegerParameter(1)</Value>以上",
   获得力ValueIntegerParameter1Value以上 = "获得力 <Value>IntegerParameter(1)</Value>以上",
   获得数ValueIntegerParameter1Value个 = "获得数＋<Value>IntegerParameter(1)</Value>个",

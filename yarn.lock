@@ -1690,6 +1690,14 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
+"@babel/runtime-corejs3@^7.9.2":
+  version "7.20.1"
+  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.20.1.tgz#d0775a49bb5fba77e42cbb7276c9955c7b05af8d"
+  integrity sha512-CGulbEDcg/ND1Im7fUNRZdGXmX2MTWVVZacQi/6DiKE5HNwZ3aVTm5PV4lO8HHz0B2h8WQyvKKjbX5XgTtydsg==
+  dependencies:
+    core-js-pure "^3.25.1"
+    regenerator-runtime "^0.13.10"
+
 "@babel/runtime@7.18.9":
   version "7.18.9"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.18.9.tgz#b4fcfce55db3d2e5e080d2490f608a3b9f407f4a"
@@ -2066,10 +2074,10 @@
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 
-"@ffxiv-teamcraft/simulator@^3.1.4":
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-3.1.4.tgz#da54103bba25bafc9023441491d06c36b5a395e4"
-  integrity sha512-0MziRhDxCN994xVR/m+j/8uUErefN8MRjDBtTmquKXVogPVftNQ3O4zJ4pS8IA1kUqSMWZhZkvy9Nw4sdbr3Jg==
+"@ffxiv-teamcraft/simulator@^3.1.5":
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-3.1.5.tgz#92339e2f480b8087706159f0ed542aca3e89c5ab"
+  integrity sha512-rZ9tcHxpYDMHxtDTOKfIFJBWyVpW7iECmg0JgQBAOJ6FmiXNx/FPcKE6MtJbStw64ACGh7WBKi/L06qbGKrLSg==
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 
@@ -3270,6 +3278,32 @@
   resolved "https://registry.yarnpkg.com/@kaiu/serializer/-/serializer-1.4.0.tgz#e26fff9ab04652c573f41d4049d41be0605455f3"
   integrity sha512-DJ+TwTV7pIR3Ac8AVVOVAYqZqLezBW32fWB/tDrhsMotd9gQ+jmorxwBr5kntEfwIDXWghhEQ7twCWNVqCXKYA==
 
+"@kobold/core@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@kobold/core/-/core-0.0.2.tgz#1a0e5b7dc759c31e06c0b7ba98bc182d66f39718"
+  integrity sha512-+dsOnqU3QveQMlNlzc1HTA7z8U/WGWGKtrF8HtohajMv7zKWakO1sENqLld7PLd8wpvmHe1UBvNCEsQpVUAnvw==
+  dependencies:
+    "@babel/runtime-corejs3" "^7.9.2"
+    "@types/binary-parser" "^1.5.0"
+    binary-parser "^1.6.2"
+    fast-glob "^3.2.2"
+
+"@kobold/excel@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@kobold/excel/-/excel-0.0.4.tgz#763c256afd97545b30b6de50627b56eb2545a420"
+  integrity sha512-ZlQ42Btjt08emsjxAscA9ZyJfWMgTlGLwqj/MT2gF/fIm1nwGsy6kXrf8r1DxdPzfaiwCTJs2IAU+BpInxGxLQ==
+  dependencies:
+    "@babel/runtime-corejs3" "^7.9.2"
+    "@types/binary-parser" "^1.5.0"
+    binary-parser "^1.6.2"
+
+"@kobold/xiv@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@kobold/xiv/-/xiv-0.0.2.tgz#3a91acd3e221989740e786fc7f5cd23cd46feea2"
+  integrity sha512-CSm495/GYP7aeCD5kvpAYL7qKS6sYmZFEjsumlx5TcmWVP4T4jefHP1qVAYSWMQO/MziM6QT0BfMtZNzP9T2qw==
+  dependencies:
+    "@babel/runtime-corejs3" "^7.9.2"
+
 "@leichtgewicht/ip-codec@^2.0.1":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz#b2ac626d6cb9c8718ab459166d4bb405b8ffa78b"
@@ -3940,6 +3974,13 @@
   integrity sha512-K2waXdXBi2302XUdcHcR1jCeU0LL4TD9HRs/gk0N2Xvrht+G/BfJa4QObBQZfhMdxiCpV3COl5Nfq4uKTeTnJA==
   dependencies:
     "@babel/types" "^7.3.0"
+
+"@types/binary-parser@^1.5.0":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@types/binary-parser/-/binary-parser-1.5.1.tgz#248c0d787498f3622c177622e93dfe2478235635"
+  integrity sha512-wxSg5YQFVYsyGwuCSTdBu+cUIYCD9eX0pq3CsJbP4DLeLExbwEPqci9JgjCNHv1ZfLO/QzVtGlasec5xSUcCVA==
+  dependencies:
+    "@types/node" "*"
 
 "@types/body-parser@*":
   version "1.19.2"
@@ -5792,6 +5833,13 @@ binary-extensions@^2.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
 
+binary-parser@^1.6.2:
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/binary-parser/-/binary-parser-1.9.2.tgz#6474e30eb2ddee85ab042135e2d011fa80d11438"
+  integrity sha512-aQvTapiRIV/x7bAaR2KT3Ptyjff4R8i1zxljgw/Je2kUt0babNPUdtuo7AKN4CWklyzPK4u5e99Z9/3Ib03u9w==
+  dependencies:
+    fast-text-encoding "^1.0.3"
+
 binary@~0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/binary/-/binary-0.3.0.tgz#9f60553bc5ce8c3386f3b553cff47462adecaa79"
@@ -7411,6 +7459,11 @@ core-js-compat@^3.21.0, core-js-compat@^3.22.1, core-js-compat@^3.25.1:
   integrity sha512-ovcyhs2DEBUIE0MGEKHP4olCUW/XYte3Vroyxuh38rD1wAO4dHohsovUC4eAOuzFxE6b+RXvBU3UZ9o0YhUTkA==
   dependencies:
     browserslist "^4.21.4"
+
+core-js-pure@^3.25.1:
+  version "3.26.1"
+  resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.26.1.tgz#653f4d7130c427820dcecd3168b594e8bb095a33"
+  integrity sha512-VVXcDpp/xJ21KdULRq/lXdLzQAtX7+37LzpyfFM973il0tWSsDEoyzG38G14AjTpK9VTfiNM9jnFauq/CpaWGQ==
 
 core-js@2.1.5:
   version "2.1.5"
@@ -10144,7 +10197,7 @@ fast-glob@3.2.7:
     merge2 "^1.3.0"
     micromatch "^4.0.4"
 
-fast-glob@^3.2.11, fast-glob@^3.2.9:
+fast-glob@^3.2.11, fast-glob@^3.2.2, fast-glob@^3.2.9:
   version "3.2.12"
   resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.12.tgz#7f39ec99c2e6ab030337142da9e0c18f37afae80"
   integrity sha512-DVj4CQIYYow0BlaelwK1pHl5n5cRSJfM60UA0zK891sVInoPri2Ekj7+e1CT3/3qxXenpI+nBBmQAcJPJgaj4w==
@@ -17602,6 +17655,11 @@ regenerator-runtime@^0.11.0:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
   integrity sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==
+
+regenerator-runtime@^0.13.10:
+  version "0.13.10"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.10.tgz#ed07b19616bcbec5da6274ebc75ae95634bfc2ee"
+  integrity sha512-KepLsg4dU12hryUO7bp/axHAKvwGOCV0sGloQtpagJ12ai+ojVDqkeGSiRX1zlq+kjIMZ1t7gpze+26QqtdGqw==
 
 regenerator-transform@^0.15.0:
   version "0.15.0"
