@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.9.14"></a>
+## [9.9.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.13...v9.9.14) (2022-12-30)
+
+
+### Bug Fixes
+
+* **simulator:** fixed an error in icon rendering making it too large for the button ([033b955](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/033b955))
+* **voyage-tracker:** fixed submarine voyages displayed as object object ([b854f4e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b854f4e))
+
+
+
 <a name="9.9.13"></a>
 ## [9.9.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.12...v9.9.13) (2022-12-30)
 
