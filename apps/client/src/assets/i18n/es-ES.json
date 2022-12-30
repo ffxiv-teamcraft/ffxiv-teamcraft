@@ -197,6 +197,7 @@
     "Fate": "Fate",
     "Reload": "Recargar",
     "Click_to_apply": "Haga clic para aplicar",
+    "Recommended": "Recommended",
     "DAYS": {
       "Monday": "Lunes",
       "Tuesday": "Martes",
@@ -517,6 +518,7 @@
     "Reload_auth_token": "Recargar token de entrada",
     "Materia_confidence_rate": "Probabilidad de éxito del melding",
     "Materia_confidence_rate_explain": "La probabilidad de éxito para las materias es una estimación. Un valor mayor propondrá mayor cantidad de materia para estar (casi) seguro de tener éxito",
+    "Disable_hardware_acceleration": "Disable hardware acceleration",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",

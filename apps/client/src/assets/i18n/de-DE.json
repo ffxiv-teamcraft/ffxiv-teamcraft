@@ -197,6 +197,7 @@
     "Fate": "FATE",
     "Reload": "Neu laden",
     "Click_to_apply": "Klicken zum anwenden",
+    "Recommended": "Empfohlen",
     "DAYS": {
       "Monday": "Montag",
       "Tuesday": "Dienstag",
@@ -517,6 +518,7 @@
     "Reload_auth_token": "Authentifizierungs-Token neu laden",
     "Materia_confidence_rate": "Erfolgsrate fürs Materia einsetzen",
     "Materia_confidence_rate_explain": "Zuversichtsrate für Materiaschätzungen. Höher bedeutet, dass mehr Materia vorgeschlagen wird, damit der Wert für erfolgreiche Verschmelzungen verlässlicher wird",
+    "Disable_hardware_acceleration": "Hardwarebeschleunigung deaktivieren",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -767,7 +769,7 @@
     "Commission_list": "Auftragsliste",
     "Inventory_cleanup": "Inventar bereinigen",
     "Inventory_cleanup_description": "Hier sind die Gegenstände aus deinem Inventar, die nicht für die Liste verwendet werden",
-    "Consider_requirements": "Consider requirements",
+    "Consider_requirements": "Anforderungen berücksichtigen",
     "Ignore_requirements": "Anforderungen ignorieren",
     "SOURCES": {
       "Gatherable": "Kann gesammelt werden, klicke um mehr Details zu sehen"
@@ -1661,7 +1663,7 @@
       "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Fehlschläge einbeziehen",
       "Miss": "Fehlschlag",
-      "Remove_this_bait": "Remove this bait",
+      "Remove_this_bait": "Diesen Köder entfernen",
       "Bait_removed": "Bait removed from this spot",
       "Position_unknown": "Unbekannter Ort"
     },
@@ -2146,8 +2148,8 @@
     "Copied_as_string": "Ausrüstungsset als Zeichenfolge kopiert",
     "Mark_as_done": "Als erledigt markieren",
     "Create_commission": "Einen Auftrag für dieses Ausrüstungsset erstellen",
-    "Value_for_next": "Next breakpoint",
-    "Value_for_previous": "Previous breakpoint",
+    "Value_for_next": "Nächster Haltepunkt",
+    "Value_for_previous": "Vorheriger Haltepunkt",
     "Editing_others_gearset": "Lokaler Bearbeitungsmodus",
     "Editing_others_gearset_description": "Du bearbeitest gerade das Ausrüstungsset eines anderen Benutzers. Es wird nichts gespeichert, solange du nicht oben auf die Schaltfläche \"Speichern\" klickst, um deine eigene Kopie zu erstellen.",
     "Empty_materias": "Alle Materia aus der ausgewählten Ausrüstung entfernen",
@@ -2946,8 +2948,8 @@
     "Add_to_list": "Diese Gegenstände zu einer Liste hinzufügen"
   },
   "MACHINA_ERRORS": {
-    "Default": "Machina Wrapper error",
-    "Wrapper_failed_to_start": "Machina Wrapper failed to start",
+    "Default": "Machina-Wrapper Fehler",
+    "Wrapper_failed_to_start": "Machina-Wrapper konnte nicht gestartet werden",
     "DESCRIPTION": {
       "Wrapper_failed_to_start": "Bitte stelle sicher, dass das Spiel läuft und nicht als Admininstrator ausgeführt wird (oder, in diesem Fall, TC als Administrator starten).<br>Wenn dieses Problem weiterhin besteht, melde dich bitte an Discords Fehlerbehebungskanal #troubleshooting mit einem Screenshot der obigen Nachrichten.<br><br> Wiederholung in {{retryDelay}}s"
     }
@@ -2960,7 +2962,7 @@
     "WORKSHOP": {
       "Title": "Atelier",
       "Subtitle": "Verfolge und verwalte dein Atelier",
-      "Out_of_sync": "Status wurde seit dem letzten Resest nicht aktualisiert",
+      "Out_of_sync": "Status wurde seit dem letzten Reset nicht aktualisiert",
       "Out_of_sync_explain": "Bitte öffne das Angebot-/Nachfrage-Fenster auf deinem Inselparadies um den Status zu aktualisieren. Wenn du keine Paketerfassung verwendest, bitten einen anderen Benutzer, deinen Status zu aktualisieren und ihn dann zu exportieren, damit du den Import-Button verwenden kannst oder importiere von der Datenbank.",
       "Export_state": "Exportiere Angebot-/Nachfrage-Status",
       "State_copied": "Status wurde in die Zwischenablage kopiert",

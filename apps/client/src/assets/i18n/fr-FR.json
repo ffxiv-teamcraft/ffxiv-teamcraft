@@ -197,6 +197,7 @@
     "Fate": "Aléa",
     "Reload": "Recharger",
     "Click_to_apply": "Cliquez pour appliquer",
+    "Recommended": "Recommended",
     "DAYS": {
       "Monday": "Lundi",
       "Tuesday": "Mardi",
@@ -517,6 +518,7 @@
     "Reload_auth_token": "Recharger le jeton d'authentification",
     "Materia_confidence_rate": "Taux de confiance du sertissage de matérias",
     "Materia_confidence_rate_explain": "Le taux de confiance pour l'estimation de matéria, plus élevé signifie que plus de matériaux seront suggérés pour être plus confiants qu'avec ce montant, vous réussirez à remplir tous les sertissages",
+    "Disable_hardware_acceleration": "Disable hardware acceleration",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
