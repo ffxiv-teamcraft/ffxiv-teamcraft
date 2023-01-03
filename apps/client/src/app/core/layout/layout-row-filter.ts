@@ -21,7 +21,7 @@ export class LayoutRowFilter {
 
   static IS_GATHERING = new LayoutRowFilter(row => getItemSource(row, DataType.GATHERED_BY, true).type !== undefined, 'IS_GATHERING', [DataType.GATHERED_BY]);
 
-  static IS_GARDENING = new LayoutRowFilter(row => getItemSource(row, DataType.GARDENING)?.seedItemId > 0, 'IS_GARDENING');
+  static IS_GARDENING = new LayoutRowFilter(row => getItemSource(row, DataType.GARDENING)?.seedItemId > 0, 'IS_GARDENING', [DataType.GARDENING]);
 
   static IS_TRADE = new LayoutRowFilter(row => getItemSource(row, DataType.TRADE_SOURCES).length > 0, 'IS_TRADE', [DataType.TRADE_SOURCES]);
 
