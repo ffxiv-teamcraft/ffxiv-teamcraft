@@ -83,6 +83,8 @@ export class PacketCapture {
 
   private captureInterface: CaptureInterface;
 
+  private startTimeout = null;
+
   constructor(private mainWindow: MainWindow, private store: Store, private options: any) {
     this.mainWindow.closed$.subscribe(() => {
       this.stop();
@@ -110,6 +112,9 @@ export class PacketCapture {
   }
 
   stop(): void {
+    if (this.startTimeout) {
+      clearTimeout(this.startTimeout);
+    }
     if (this.captureInterface) {
       this.captureInterface.stop();
     }
@@ -216,7 +221,7 @@ export class PacketCapture {
             retryDelay: 120
           });
         }
-        setTimeout(() => {
+        this.startTimeout = setTimeout(() => {
           this.start();
         }, 120000);
       });
