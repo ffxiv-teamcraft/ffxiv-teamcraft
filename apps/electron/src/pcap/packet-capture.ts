@@ -85,6 +85,8 @@ export class PacketCapture {
 
   private startTimeout = null;
 
+  private tries = 0;
+
   constructor(private mainWindow: MainWindow, private store: Store, private options: any) {
     this.mainWindow.closed$.subscribe(() => {
       this.stop();
@@ -221,9 +223,12 @@ export class PacketCapture {
             retryDelay: 120
           });
         }
-        this.startTimeout = setTimeout(() => {
-          this.start();
-        }, 120000);
+        if (this.tries < 3) {
+          this.startTimeout = setTimeout(() => {
+            this.tries++;
+            this.start();
+          }, 120000);
+        }
       });
     this.captureInterface.on('error', err => {
       log.error(err);
