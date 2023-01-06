@@ -63,7 +63,7 @@ export class EorzeanTimeService {
   private tick(): void {
     // How to mock time:
     // Set date here and uncomment the next 3 lines
-    // const mockDate = new Date(new Date('Aug 14, 2022 19:45:00 GMT+2').getTime() + this.mockTicks);
+    // const mockDate = new Date(new Date('Jan 6, 2023 17:59:30 GMT').getTime() + this.mockTicks);
     // this.mockTicks += 20000 / EorzeanTimeService.EPOCH_TIME_FACTOR;
     // this._timerObservable.next(this.toEorzeanDate(mockDate));
 

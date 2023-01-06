@@ -317,6 +317,10 @@ export class AlarmsFacade {
    * @param minutes
    */
   public getMinutesBefore(currentTime: Date, spawn: NextSpawn, minutes = 0): number {
+    if (spawn.date) {
+      const durationSeconds = Math.floor((spawn.date.getTime() - currentTime.getTime()) / 1000);
+      return durationSeconds / 60;
+    }
     let hours = spawn.hours;
     // Convert 0 to 24 for spawn timers
     if (hours === 0) {
