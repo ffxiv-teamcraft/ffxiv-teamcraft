@@ -30,7 +30,14 @@ export class StepByStepList {
               private readonly lazyMapData: LazyData['maps']) {
     this.buildMapIndex();
     this.crafts = getTiers(this.crafts).map(tier => {
-      return tier.sort((a, b) => getItemSource(a, DataType.CRAFTED_BY)[0].job - getItemSource(b, DataType.CRAFTED_BY)[0].job);
+      return tier.sort((a, b) => {
+        const aCraft = getItemSource(a, DataType.CRAFTED_BY)[0];
+        const bCraft = getItemSource(b, DataType.CRAFTED_BY)[0];
+        if (aCraft.job === bCraft.job) {
+          return aCraft.rlvl - bCraft.rlvl;
+        }
+        return aCraft.job - bCraft.job;
+      });
     }).flat();
   }
 

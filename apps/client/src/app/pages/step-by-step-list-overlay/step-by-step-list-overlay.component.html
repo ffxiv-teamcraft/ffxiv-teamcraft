@@ -77,6 +77,39 @@
             </nz-list-item>
           </ng-template>
         </nz-list>
+
+        <ng-container *ngIf="mapDisplay.path.alarms">
+          <nz-divider [nzText]="'LIST_DETAILS.STEP_BY_STEP.Alarms' | translate" nzOrientation="left"></nz-divider>
+
+          <nz-list [nzDataSource]="mapDisplay.path.alarms" [nzRenderItem]="alarmRowTpl" nzSize="small">
+            <ng-template #alarmRowTpl let-alarm>
+              <nz-list-item [nzContent]="rowContent">
+                <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="stepTitle"
+                                   [nzDescription]="description">
+                  <ng-template #description>
+                    X: {{alarm.marker.x | number:'1.1-1'}} - Y: {{alarm.marker.y | number:'1.1-1'}}
+                  </ng-template>
+                  <ng-template #stepTitle>
+                    <app-i18n-name content="items" [id]="alarm.row.id" [itemNameCopy]="alarm.row.id"></app-i18n-name>&nbsp;<img
+                    class="node-type-icon" [src]="alarm.marker.iconImg">
+                  </ng-template>
+                  <ng-template #rowContent>
+                    <app-compact-amount-input *ngIf="alarm.row" [permissionLevel]="permissionLevel$ | async" [item]="alarm.row"
+                                              [finalItem]="alarm.row.finalItem"></app-compact-amount-input>
+                  </ng-template>
+                  <ng-template #avatar>
+                    <app-item-icon [itemId]="alarm.row.id" [itemName]="alarm.row.id | itemName: alarm.row | i18n"
+                                   [width]="32"
+                                   [forceCollectable]="alarm.row.collectable" *ngIf="!alarm.row.xivapiIcon"></app-item-icon>
+                    <app-item-icon [icon]="alarm.row.xivapiIcon | xivapiIcon" [itemId]="null"
+                                   [width]="32"
+                                   *ngIf="alarm.row.xivapiIcon" [tooltipDisabled]="true"></app-item-icon>
+                  </ng-template>
+                </nz-list-item-meta>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
+        </ng-container>
       </ng-container>
     </ng-container>
   </ng-container>

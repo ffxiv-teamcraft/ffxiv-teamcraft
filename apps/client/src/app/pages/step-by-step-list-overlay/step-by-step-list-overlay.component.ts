@@ -33,16 +33,21 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+import { EorzeanTimeService } from '../../core/eorzea/eorzean-time.service';
+import { AlarmsFacade } from '../../core/alarms/+state/alarms.facade';
 
 @Component({
   selector: 'app-step-by-step-list-overlay',
   standalone: true,
-  imports: [CommonModule, OverlayContainerModule, MapModule, PipesModule, CoreModule, FullpageMessageModule, NzListModule, ItemIconModule, ListModule, NzDividerModule, NzBreadCrumbModule, NzEmptyModule, PageLoaderModule],
+  imports: [CommonModule, OverlayContainerModule, MapModule, PipesModule, CoreModule, FullpageMessageModule,
+    NzListModule, ItemIconModule, ListModule,
+    NzDividerModule, NzBreadCrumbModule, NzEmptyModule, PageLoaderModule],
   templateUrl: './step-by-step-list-overlay.component.html',
   styleUrls: ['./step-by-step-list-overlay.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StepByStepListOverlayComponent {
+  DataType = DataType;
 
   public loading = true;
 
@@ -110,25 +115,34 @@ export class StepByStepListOverlayComponent {
   public currentPath$: Observable<StepByStepDisplayData> = combineLatest([
     this.currentMapDisplay$,
     this.ipc.updatePositionHandlerPackets$.pipe(startWith(null)),
-    this.stepByStep$
+    this.stepByStep$,
+    this.etime.getEorzeanTime()
   ]).pipe(
     filter(([display]) => Boolean(display)),
-    switchMap(([display, position, stepByStep]) => {
+    switchMap(([display, position, stepByStep, etime]) => {
       const alarmMarkers = stepByStep.alarms.filter(row => {
         const alarms = getItemSource(row, DataType.ALARMS);
         return alarms.some(a => a.mapId === display.mapId);
       }).map(row => {
-        return getItemSource(row, DataType.ALARMS).filter(a => a.mapId === display.mapId);
-      }).flat()
-        .map(alarm => {
-          return {
-            x: alarm.coords.x,
-            y: alarm.coords.y,
-            iconType: 'img',
-            zIndex: 999,
-            iconImg: NodeTypeIconPipe.timed_icons[alarm.type]
-          } as MapMarker;
-        });
+        return getItemSource(row, DataType.ALARMS).filter(a => a.mapId === display.mapId)
+          .map(alarm => {
+            const display = this.alarmsFacade.createDisplay(alarm, etime);
+            return {
+              row: row,
+              marker: {
+                x: alarm.coords.x,
+                y: alarm.coords.y,
+                iconType: 'img',
+                zIndex: 999,
+                iconImg: NodeTypeIconPipe.timed_icons[alarm.type],
+                subtitle: this.etime.toStringTimer(display.remainingTime),
+                subtitleStyle: display.spawned ? {
+                  'text-shadow': `2px 0 0 #4880b1, -2px 0 0 #4880b1, 0 2px 0 #4880b1, 0 -2px 0 #4880b1, 1px 1px #4880b1, -1px -1px 0 #4880b1, 1px -1px 0 #4880b1, -1px 1px 0 #4880b1;`
+                } : {}
+              } as MapMarker
+            };
+          });
+      }).flat();
       const markers: NavigationObjective[] = display.sources.map(source => {
         return display[source]
           .filter(row => row.row.amount > row.row.done)
@@ -154,7 +168,8 @@ export class StepByStepListOverlayComponent {
                 path: {
                   map: mapData,
                   // Removing first step as it's the starting point.
-                  steps: steps || []
+                  steps: steps || [],
+                  alarms: alarmMarkers
                 },
                 additionalMarkers: [
                   startingPoint ? {
@@ -168,7 +183,7 @@ export class StepByStepListOverlayComponent {
                       'margin-left': '-16px'
                     }
                   } as MapMarker : null,
-                  ...alarmMarkers,
+                  ...alarmMarkers.map(m => m.marker),
                   ...display.sources.map(source => {
                     return display[source]
                       .filter(row => row.row.done < row.row.amount)
@@ -203,7 +218,7 @@ export class StepByStepListOverlayComponent {
   constructor(private eorzeaFacade: EorzeaFacade, private ipc: IpcService,
               private listsFacade: ListsFacade, private layoutsFacade: LayoutsFacade,
               private settings: SettingsService, private lazyData: LazyDataFacade,
-              private mapService: MapService) {
+              private mapService: MapService, private etime: EorzeanTimeService, private alarmsFacade: AlarmsFacade) {
     this.layoutsFacade.loadAll();
     this.ipc.send('overlay:pcap', { enabled: true, url: '/step-by-step-list-overlay' });
     this.ipc.mainWindowState$.pipe(
@@ -228,5 +243,9 @@ export class StepByStepListOverlayComponent {
   markStepAsDone(step: NavigationStep): void {
     this.markedAsDone.push(step.itemId);
     this.listsFacade.setItemDone(step.itemId, step.iconid, step.finalItem, step.item_amount, null, step.total_item_amount);
+  }
+
+  trackById(index: number, item: { id: number }): number {
+    return item.id;
   }
 }

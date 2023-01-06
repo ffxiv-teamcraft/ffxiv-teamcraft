@@ -79,8 +79,19 @@ export class MapComponent implements OnInit {
     };
   }
 
+  getSubtitleStyle(map: MapData, marker: MapMarker, aetheryte = false): any {
+    return {
+      ...this.getMarkerStyle(map, marker, aetheryte),
+      ...marker.subtitleStyle
+    };
+  }
+
   getIcon(type: number): string {
     return `./assets/icons/Aetheryte${type === 1 ? '_Shard' : ''}.png`;
+  }
+
+  trackByMarker(index: number, marker: MapMarker): string {
+    return `${marker.x}:${marker.y}:${marker.iconType}`;
   }
 
 }
