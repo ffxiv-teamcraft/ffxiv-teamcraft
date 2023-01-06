@@ -6,7 +6,7 @@ import { ListDisplay } from '../../../core/layout/list-display';
 import { MapListStep } from './model/map-list-step';
 import { DataType } from '../data/data-type';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { filter, shareReplay, startWith, switchMap, takeUntil } from 'rxjs/operators';
+import { distinctUntilChanged, filter, shareReplay, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { SettingsService } from '../../settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
@@ -40,7 +40,7 @@ export class StepByStepDetailsComponent extends TeamcraftComponent {
 
   selectedMap$ = new BehaviorSubject(0);
 
-  stepByStepList$: Observable<StepByStepList> = combineLatest([this.display$, this.settings.watchSetting('housingMap', 72), this.lazyData.getEntry('maps')]).pipe(
+  stepByStepList$: Observable<StepByStepList> = combineLatest([this.display$, this.settings.watchSetting('housingMap', this.settings.housingMap), this.lazyData.getEntry('maps')]).pipe(
     map(([display, housingMap, maps]) => {
       return new StepByStepList(display, housingMap, maps);
     }),
@@ -167,7 +167,7 @@ export class StepByStepDetailsComponent extends TeamcraftComponent {
               private eorzeaFacade: EorzeaFacade) {
     super();
     combineLatest([
-      this.eorzeaFacade.mapId$,
+      this.eorzeaFacade.mapId$.pipe(distinctUntilChanged()),
       this.stepByStepList$
     ]).pipe(
       takeUntil(this.onDestroy$)

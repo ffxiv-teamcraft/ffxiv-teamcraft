@@ -489,7 +489,8 @@ export class IpcService {
         .subscribe(state => {
           this.send('app-state:set', {
             lists: JSON.parse(JSON.stringify(state.lists)),
-            layouts: JSON.parse(JSON.stringify(state.layouts))
+            layouts: JSON.parse(JSON.stringify(state.layouts)),
+            eorzea: JSON.parse(JSON.stringify(state.eorzea))
           });
         });
     }

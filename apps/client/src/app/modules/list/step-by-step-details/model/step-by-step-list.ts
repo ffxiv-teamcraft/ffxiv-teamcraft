@@ -26,7 +26,6 @@ export class StepByStepList {
 
   public progress = 0;
 
-
   constructor(private readonly display: ListDisplay, private readonly housingMap: number,
               private readonly lazyMapData: LazyData['maps']) {
     this.buildMapIndex();

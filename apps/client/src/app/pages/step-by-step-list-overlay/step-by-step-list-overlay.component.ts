@@ -76,7 +76,7 @@ export class StepByStepListOverlayComponent {
 
   public stepByStep$ = combineLatest([
     this.display$,
-    this.settings.watchSetting('housingMap', 72),
+    this.settings.watchSetting('housingMap', this.settings.housingMap),
     this.lazyData.getEntry('maps')
   ]).pipe(
     map(([display, housingMap, maps]) => {
@@ -89,7 +89,7 @@ export class StepByStepListOverlayComponent {
     this.stepByStep$
   ]).pipe(
     switchMap(([mapId, stepByStep]) => {
-      return combineLatest([this.mapService.getMapById(mapId), ...stepByStep.maps.filter(id => id !== mapId).map(id => this.mapService.getMapById(id))]).pipe(
+      return combineLatest([this.mapService.getMapById(mapId), ...stepByStep.maps.filter(id => id !== mapId && !stepByStep.steps[id].complete).map(id => this.mapService.getMapById(id))]).pipe(
         map(([currentMap, ...maps]: MapData[]) => {
           return maps.sort((a, b) => {
             return this.mapService.getTpCost(currentMap.aetherytes[0], a.aetherytes[0]) -
