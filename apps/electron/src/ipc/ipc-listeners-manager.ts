@@ -455,11 +455,11 @@ export class IpcListenersManager {
     //       worker.terminate();
     //   });
     // });
-    // ipcMain.on('lodestone:searchCharacter', (event, { name, server }) => {
-    //   this.characterSearchParser.parse({ query: { name, server } } as any).then((res: { List: any[] }) => {
-    //     event.sender.send('lodestone:character:search', res.List);
-    //   });
-    // });
+    ipcMain.on('lodestone:searchCharacter', (event, { name, server }) => {
+      this.characterSearchParser.parse({ query: { name, server } } as any).then((res: { List: any[] }) => {
+        event.sender.send('lodestone:character:search', res.List);
+      });
+    });
   }
 
   private sendPageView(ga3user: any, url: string): void {
