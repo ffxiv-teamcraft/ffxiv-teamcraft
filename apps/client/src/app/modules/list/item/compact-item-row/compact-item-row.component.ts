@@ -90,6 +90,9 @@ export class CompactItemRowComponent extends TeamcraftComponent implements OnIni
         hq: 0,
         nq: 0
       });
+    }),
+    startWith({
+      hq: 5, nq: 15, containers: ['Test']
     })
   );
 
