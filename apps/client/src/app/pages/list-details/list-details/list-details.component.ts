@@ -63,11 +63,26 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   public finalItemsRow$: Observable<LayoutRowDisplay>;
 
-  public list$: Observable<List>;
+  public permissionLevel$: Observable<PermissionLevel> = this.listsFacade.selectedListPermissionLevel$;
+
+  public list$: Observable<List> = combineLatest([this.listsFacade.selectedList$, this.permissionLevel$]).pipe(
+    filter(([list]) => list !== undefined),
+    tap(([list, permissionLevel]) => {
+      if (!list.notFound && ListController.isOutDated(list) && permissionLevel >= PermissionLevel.WRITE && !this.regeneratingList) {
+        this.regenerateList(list);
+      }
+      if (!list.notFound) {
+        this.listIsLarge = ListController.isLarge(list);
+        if (!ListController.isOutDated(list)) {
+          this.regeneratingList = false;
+        }
+      }
+    }),
+    map(([list]) => list),
+    shareReplay(1)
+  );
 
   public crystals$: Observable<ListRow[]>;
-
-  public permissionLevel$: Observable<PermissionLevel> = this.listsFacade.selectedListPermissionLevel$;
 
   public teams$: Observable<Team[]>;
 
@@ -111,10 +126,13 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   public _displayMode$ = new LocalStorageBehaviorSubject<ListDisplayMode>('list-details:display-mode', ListDisplayMode.FULL);
 
-  public displayMode$ = this._displayMode$.pipe(
-    map((displayMode, i) => {
-      if (displayMode === ListDisplayMode.FULL && this.listIsLarge && this.settings.autoMinimalistOnLargeLists && i === 0) {
+  public displayMode$ = combineLatest([this._displayMode$, this.list$.pipe(first())]).pipe(
+    map(([displayMode, list], i) => {
+      if (displayMode === ListDisplayMode.FULL && ListController.isLarge(list) && this.settings.autoMinimalistOnLargeLists && i === 0) {
         return ListDisplayMode.MINIMALIST;
+      }
+      if (list.finalItems.length === 0 && i === 0) {
+        return ListDisplayMode.FULL;
       }
       return displayMode;
     })
@@ -135,22 +153,6 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       this.machinaToggle = value;
     });
     this.ipc.send('toggle-machina:get');
-    this.list$ = combineLatest([this.listsFacade.selectedList$, this.permissionLevel$]).pipe(
-      filter(([list]) => list !== undefined),
-      tap(([list, permissionLevel]) => {
-        if (!list.notFound && ListController.isOutDated(list) && permissionLevel >= PermissionLevel.WRITE && !this.regeneratingList) {
-          this.regenerateList(list);
-        }
-        if (!list.notFound) {
-          this.listIsLarge = ListController.isLarge(list);
-          if (!ListController.isOutDated(list)) {
-            this.regeneratingList = false;
-          }
-        }
-      }),
-      map(([list]) => list),
-      shareReplay(1)
-    );
     this.layouts$ = this.layoutsFacade.allLayouts$;
     this.selectedLayout$ = this.layoutsFacade.selectedLayout$;
     this.finalItemsRow$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$]).pipe(
