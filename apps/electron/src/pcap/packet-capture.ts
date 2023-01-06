@@ -83,6 +83,10 @@ export class PacketCapture {
 
   private captureInterface: CaptureInterface;
 
+  private startTimeout = null;
+
+  private tries = 0;
+
   private overlayListeners = [];
 
   constructor(private mainWindow: MainWindow, private store: Store, private options: any) {
@@ -112,6 +116,9 @@ export class PacketCapture {
   }
 
   stop(): void {
+    if (this.startTimeout) {
+      clearTimeout(this.startTimeout);
+    }
     if (this.captureInterface) {
       this.captureInterface.stop();
     }
@@ -239,9 +246,12 @@ export class PacketCapture {
             retryDelay: 120
           });
         }
-        setTimeout(() => {
-          this.start();
-        }, 120000);
+        if (this.tries < 3) {
+          this.startTimeout = setTimeout(() => {
+            this.tries++;
+            this.start();
+          }, 120000);
+        }
       });
     this.captureInterface.on('error', err => {
       log.error(err);

@@ -34,7 +34,7 @@
               nzMode="inline">
             <ng-container *ngFor="let area of tabsDisplay.tabs">
               <li *ngIf="!hideCompleted || area.done < area.total" nz-submenu class="fsh-area-box">
-                <span class="fsh-area-title" title>{{area.placeId | i18nRow:'places' | i18n}} ({{area.done}}/{{area.total}})</span>
+                <span class="fsh-area-title" title><span [innerHTML]="area.placeId | i18nRow:'places' | i18n"></span> ({{area.done}}/{{area.total}})</span>
                 <ul class="fsh-area-list">
                   <ng-container *ngFor="let spot of area.spots">
                     <li (click)="spotId$.next(spot.id)" *ngIf="!hideCompleted || spot.done < spot.total"
@@ -42,7 +42,7 @@
                         fxLayout="row"
                         fxLayoutAlign="space-between center"
                         nz-menu-item>
-                      <div>{{spot.placeId | i18nRow:'places' | i18n}} ({{spot.done}}/{{spot.total}})</div>
+                      <div><span [innerHTML]="spot.placeId | i18nRow:'places' | i18n"></span> ({{spot.done}}/{{spot.total}})</div>
                       <app-db-button type="fishing-spot" [id]="spot.id" *ngIf="(type$ | async) === 0"></app-db-button>
                       <app-db-button type="spearfishing-spot" [id]="spot.id" *ngIf="(type$ | async) === 1"></app-db-button>
                     </li>
