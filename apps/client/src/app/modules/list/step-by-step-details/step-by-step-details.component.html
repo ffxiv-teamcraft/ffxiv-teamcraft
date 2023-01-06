@@ -1,12 +1,17 @@
 <ng-container *ngIf="stepByStepList$ | async as list">
   <div nz-row [nzGutter]="[10,10]" *ngIf="currentMapDisplay$ | async as mapDisplay">
-    <div nz-col [nzMd]="24" class="list-progress">
+    <div nz-col [nzMd]="isDesktop ? 12 : 24" class="list-progress">
       <div class="flex-row gap-10 align-center">
         <div>{{'LIST_DETAILS.STEP_BY_STEP.Global_list_progress' | translate}}:</div>
         <div class="spacer">
           <nz-progress [nzStrokeColor]="settings.theme.primary" [nzPercent]="list.progress"></nz-progress>
         </div>
       </div>
+    </div>
+    <div nz-col [nzMd]="12" *ngIf="isDesktop">
+      <button nz-button nzBlock nzType="primary" (click)="toggleOverlay()">
+        {{'LIST_DETAILS.STEP_BY_STEP.Toggle_overlay' | translate}}
+      </button>
     </div>
     <nz-select nz-col [nzMd]="8" [ngModel]="selectedMap$ | async" (ngModelChange)="selectedMap$.next($event)" nzShowSearch class="map-selector">
       <nz-option *ngFor="let mapId of list.maps" [nzValue]="mapId"
@@ -44,8 +49,8 @@
     </div>
     <div class="map-container" nz-col [nzMd]="7">
       <div #container class="navigation-container">
-        <app-map [mapId]="mapDisplay.mapId" [hideDbButton]="true" [markers]="additionalMarkers$ | async"></app-map>
-        <ng-container *ngIf="currentPath$ | async as currentPath">
+        <ng-container *ngIf="currentPath$ | async as path">
+          <app-map [mapId]="mapDisplay.mapId" [hideDbButton]="true" [markers]="path.additionalMarkers"></app-map>
           <svg class="navigation-svg" style="width:100%;height:100%;">
             <defs>
               <marker id="walkarrow" markerHeight="6" markerWidth="6" orient="auto" refX="10" refY="5" viewBox="0 0 10 10">
@@ -55,14 +60,14 @@
                 <path d="M 0 0 L 10 5 L 0 10 z" fill="blue"/>
               </marker>
             </defs>
-            <g *ngFor="let step of currentPath.steps; let i = index">
-              <line *ngIf="i > 0 && currentPath.map !== undefined && containerRef !== undefined"
+            <g *ngFor="let step of path.path.steps; let i = index">
+              <line *ngIf="i > 0 && path.path.map !== undefined && containerRef !== undefined"
                     [attr.marker-end]="'url('+(step.isTeleport?'#tparrow':'#walkarrow')+')'"
                     [attr.stroke]="step.isTeleport?'blue':'red'"
-                    [attr.x1]="getPositionPercent(currentPath.map, currentPath.steps[i-1]).x"
-                    [attr.x2]="getPositionPercent(currentPath.map, step).x"
-                    [attr.y1]="getPositionPercent(currentPath.map, currentPath.steps[i-1]).y"
-                    [attr.y2]="getPositionPercent(currentPath.map, step).y"
+                    [attr.x1]="getPositionPercent(path.path.map, path.path.steps[i-1]).x"
+                    [attr.x2]="getPositionPercent(path.path.map, step).x"
+                    [attr.y1]="getPositionPercent(path.path.map, path.path.steps[i-1]).y"
+                    [attr.y2]="getPositionPercent(path.path.map, step).y"
                     stroke-width="2">
               </line>
             </g>

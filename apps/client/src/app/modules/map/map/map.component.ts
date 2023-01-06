@@ -69,7 +69,7 @@ export class MapComponent implements OnInit {
   }
 
   getMarkerStyle(map: MapData, marker: MapMarker, aetheryte = false): any {
-    const positionPercents = this.mapService.getPositionOnMap(map, marker);
+    const positionPercents = this.mapService.getPositionPercentOnMap(map, marker);
     return {
       top: `${positionPercents.y}%`,
       left: `${positionPercents.x}%`,

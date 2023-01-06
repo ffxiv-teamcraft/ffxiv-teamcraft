@@ -156,6 +156,6 @@ export const DATA_EXTRACTORS: Provider[] = [
     StepByStepRowComponent,
     CompactAmountInputComponent,
   ],
-  exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent, StepByStepDetailsComponent],
+  exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent, StepByStepDetailsComponent, CompactAmountInputComponent]
 })
 export class ListModule {}

@@ -49,7 +49,6 @@ export class OverlayManager {
       this.afterOverlayClose(url);
     });
 
-
     overlay.loadURL(`file://${Constants.BASE_APP_PATH}/index.html#${url}?overlay=true`);
     this.openedOverlays[url] = overlay;
     this.openedOverlayUris.push(url);
@@ -102,6 +101,7 @@ export class OverlayManager {
       '/fishing-reporter-overlay',
       '/alarms-overlay',
       '/list-panel-overlay',
+      '/step-by-step-list-overlay',
       '/rotation-overlay',
       '/mappy-overlay'
     ].forEach(uri => {

@@ -46,8 +46,8 @@ for (let i = 0; i < argv.length; i++) {
 
 //Prepare all the managers
 const store = new Store();
-const overlayManager = new OverlayManager(store);
 const proxyManager = new ProxyManager(store);
+const overlayManager = new OverlayManager(store);
 const mainWindow = new MainWindow(store, overlayManager, proxyManager);
 const pcapManager = new PacketCapture(mainWindow, store, options);
 const trayMenu = new TrayMenu(mainWindow, overlayManager, store, pcapManager);

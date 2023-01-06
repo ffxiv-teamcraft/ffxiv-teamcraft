@@ -7,6 +7,7 @@ import { ListDisplay } from '../../../../core/layout/list-display';
 import { LazyData } from '../../../../lazy-data/lazy-data';
 import { getTiers } from '../../../../core/tools/get-tiers';
 import { NodeTypeIconPipe } from '../../../../pipes/pipes/node-type-icon.pipe';
+import { NavigationObjective } from '../../../map/navigation-objective';
 
 export class StepByStepList {
   public alarms: ListRow[] = [];
@@ -45,7 +46,7 @@ export class StepByStepList {
             hasCoords = true;
             positions.forEach(position => {
               if (this.shouldAddMap(position.mapId)) {
-                this.addToMapIndex(position.mapId, row, [source], position.coords, position.icon);
+                this.addToMapIndex(position.mapId, row, [source], position.coords, position.icon, position.type);
               }
             });
           }
@@ -61,7 +62,7 @@ export class StepByStepList {
     });
   }
 
-  private addToMapIndex(mapId: number, row: ListRow, sources: ItemSource[], coords?: Vector2, icon?: string): void {
+  private addToMapIndex(mapId: number, row: ListRow, sources: ItemSource[], coords?: Vector2, icon?: string, type?: NavigationObjective['type']): void {
     let entry: MapListStep = this.steps[mapId];
     if (!entry) {
       this.steps[mapId] = {
@@ -96,7 +97,8 @@ export class StepByStepList {
           row,
           sources,
           coords,
-          icon
+          icon,
+          type
         });
       entry.complete = entry.complete && row.done >= row.amount;
       entry.itemsCount++;
@@ -112,7 +114,7 @@ export class StepByStepList {
     }
   }
 
-  private getPositions(source: ItemSource): { mapId: number, coords: Vector2, icon?: string }[] {
+  private getPositions(source: ItemSource): { mapId: number, coords: Vector2, icon?: string, type?: NavigationObjective['type'] }[] {
     switch (source.type) {
       case DataType.GATHERED_BY:
         return source.data.nodes
@@ -132,7 +134,8 @@ export class StepByStepList {
           return {
             mapId: alarm.mapId,
             coords: alarm.coords,
-            icon: alarm.icon
+            icon: alarm.icon,
+            type: 'Gathering'
           };
         });
       case DataType.TRADE_SOURCES:
@@ -141,7 +144,8 @@ export class StepByStepList {
             return {
               mapId: npc.mapId,
               coords: npc.coords,
-              icon: 'https://www.garlandtools.org/db/images/marker/Shop.png'
+              icon: 'https://www.garlandtools.org/db/images/marker/Shop.png',
+              type: 'Trade' as NavigationObjective['type']
             };
           });
         }).flat();
@@ -150,7 +154,8 @@ export class StepByStepList {
           return {
             mapId: vendor.mapId,
             coords: vendor.coords,
-            icon: 'https://xivapi.com/i/065000/065002.png'
+            icon: 'https://xivapi.com/i/065000/065002.png',
+            type: 'Vendor'
           };
         });
       case DataType.DROPS:
@@ -158,14 +163,16 @@ export class StepByStepList {
           return {
             mapId: drop.mapid,
             coords: drop.position,
-            icon: 'https://www.garlandtools.org/db/images/Mob.png'
+            icon: 'https://www.garlandtools.org/db/images/Mob.png',
+            type: 'Hunting'
           };
         });
       case DataType.FATES:
         return source.data.map(fate => {
           return {
             mapId: fate.mapId,
-            coords: fate.coords
+            coords: fate.coords,
+            type: 'Hunting'
           };
         });
     }

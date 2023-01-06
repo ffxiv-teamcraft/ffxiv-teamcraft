@@ -782,7 +782,11 @@
       "Next_incomplete": "Next incomplete map",
       "Global_list_progress": "Global list progress",
       "Alarms": "Timed rows",
-      "Crafts": "Ordered crafts"
+      "Crafts": "Ordered crafts",
+      "Toggle_overlay": "Open/Close step by step overlay",
+      "Empty_map": "Nothing to do in the current map, closest map for this list is {{closest}}",
+      "Unknown_map": "Unknown map, please change map to allow TC to detect it.",
+      "No_list": "No list, please open a list in main window to have the overlay work as intended."
     },
     "DISPLAY_MODE": {
       "Title": "Display mode",

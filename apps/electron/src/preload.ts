@@ -3,6 +3,8 @@ import { IpcRendererEvent } from 'electron';
 const { contextBridge, ipcRenderer } = require('electron');
 
 const allowedChannels = [
+  'list:setItemDone',
+  'list:setListItemDone',
   'toggle-machina',
   'toggle-machina:value',
   'packet',

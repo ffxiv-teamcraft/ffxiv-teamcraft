@@ -63,7 +63,7 @@ export class WorldNavigationMapComponent extends TeamcraftComponent implements O
   }
 
   getPositionPercent(mapData: MapData, coords: Vector2): Vector2 {
-    const positionPercents = this.mapService.getPositionOnMap(mapData, coords);
+    const positionPercents = this.mapService.getPositionPercentOnMap(mapData, coords);
     return {
       x: positionPercents.x * this.containerRef.nativeElement.offsetWidth / 100,
       y: positionPercents.y * this.containerRef.nativeElement.offsetHeight / 100

@@ -6,9 +6,8 @@ import { ListDisplay } from '../../../core/layout/list-display';
 import { MapListStep } from './model/map-list-step';
 import { DataType } from '../data/data-type';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { filter, shareReplay, switchMap } from 'rxjs/operators';
+import { filter, shareReplay, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { SettingsService } from '../../settings/settings.service';
-import { debounceTimeAfter } from '../../../core/rxjs/debounce-time-after';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
 import { LayoutRowOrder } from '../../../core/layout/layout-row-order.enum';
@@ -16,6 +15,11 @@ import { MapData } from '../../map/map-data';
 import { Vector2 } from '../../../core/tools/vector2';
 import { MapService } from '../../map/map.service';
 import { MapMarker } from '../../map/map-marker';
+import { PlatformService } from '../../../core/tools/platform.service';
+import { IpcService } from '../../../core/electron/ipc.service';
+import { EorzeaFacade } from '../../eorzea/+state/eorzea.facade';
+import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
+import { StepByStepDisplayData } from './step-by-step-display-data';
 
 @Component({
   selector: 'app-step-by-step-details',
@@ -23,7 +27,7 @@ import { MapMarker } from '../../map/map-marker';
   styleUrls: ['./step-by-step-details.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class StepByStepDetailsComponent {
+export class StepByStepDetailsComponent extends TeamcraftComponent {
   DataType = DataType;
 
   @Input()
@@ -91,50 +95,95 @@ export class StepByStepDetailsComponent {
     }, 500);
   }
 
-  public currentPath$ = this.currentMapDisplay$.pipe(
-    switchMap(display => {
+
+  public currentPath$: Observable<StepByStepDisplayData> = combineLatest([
+    this.currentMapDisplay$,
+    this.ipc.updatePositionHandlerPackets$.pipe(startWith(null)),
+    this.eorzeaFacade.mapId$
+  ]).pipe(
+    switchMap(([display, position, mapId]) => {
       const markers = display.sources.map(source => {
-        return display[source].map(row => {
-          return {
-            ...row.coords,
-            name: ''
-          };
-        });
+        return display[source]
+          .filter(row => row.row.amount > row.row.done)
+          .map(row => {
+            return {
+              ...row.coords
+            };
+          });
       }).flat().filter(Boolean);
-      return combineLatest([
-        this.mapService.getMapById(display.mapId),
-        this.mapService.getOptimizedPathOnMap(display.mapId, markers)
-      ]).pipe(
-        map(([mapData, steps]) => ({ map: mapData, steps }))
+      return this.mapService.getMapById(display.mapId).pipe(
+        switchMap(mapData => {
+          const startingPoint = position && mapId === display.mapId ? this.mapService.getCoordsOnMap(mapData, {
+            x: position.pos.x,
+            y: position.pos.z
+          }) : null;
+          return this.mapService.getOptimizedPathOnMap(display.mapId, markers, startingPoint).pipe(
+            map(steps => {
+              return {
+                path: {
+                  map: mapData,
+                  steps
+                },
+                additionalMarkers: [
+                  startingPoint ? {
+                    ...startingPoint,
+                    iconType: 'img',
+                    zIndex: 999,
+                    iconImg: './assets/icons/map/cursor.png',
+                    additionalStyle: {
+                      transform: `rotate(${(position.rotation - Math.PI) * -1}rad)`,
+                      'margin-top': '-16px',
+                      'margin-left': '-16px'
+                    }
+                  } as MapMarker : null,
+                  ...display.sources.map(source => {
+                    return display[source].map(row => {
+                      return {
+                        ...row.coords,
+                        zIndex: 999,
+                        iconType: 'img',
+                        iconImg: row.icon,
+                        additionalStyle: {
+                          width: '24px',
+                          height: '24px'
+                        }
+                      } as MapMarker;
+                    });
+                  }).flat()
+                ].filter(Boolean)
+              };
+            })
+          );
+        })
       );
     })
   );
 
-  additionalMarkers$ = this.currentMapDisplay$.pipe(
-    map(display => {
-      return display.sources.map(source => {
-        return display[source].map(row => {
-          return {
-            ...row.coords,
-            zIndex: 999,
-            iconType: 'img',
-            iconImg: row.icon,
-            additionalStyle: {
-              width: '24px',
-              height: '24px'
-            }
-          } as MapMarker;
-        });
-      }).flat().filter(Boolean);
-    })
-  );
+  public isDesktop = this.platformService.isDesktop();
 
   constructor(public settings: SettingsService, private lazyData: LazyDataFacade,
-              private layoutOrderService: LayoutOrderService, private mapService: MapService) {
+              private layoutOrderService: LayoutOrderService, private mapService: MapService,
+              private platformService: PlatformService, private ipc: IpcService,
+              private eorzeaFacade: EorzeaFacade) {
+    super();
+    combineLatest([
+      this.eorzeaFacade.mapId$,
+      this.stepByStepList$
+    ]).pipe(
+      takeUntil(this.onDestroy$)
+    ).subscribe(([mapId, list]) => {
+      if (list.maps.includes(mapId)) {
+        this.selectedMap$.next(mapId);
+      }
+    });
+  }
+
+  toggleOverlay(): void {
+    this.ipc.openOverlay('/step-by-step-list-overlay');
   }
 
   getPositionPercent(mapData: MapData, coords: Vector2): Vector2 {
-    const positionPercents = this.mapService.getPositionOnMap(mapData, coords);
+    const positionPercents = this.mapService.getPositionPercentOnMap(mapData, coords);
     return {
       x: positionPercents.x * this.containerRef.nativeElement.offsetWidth / 100,
       y: positionPercents.y * this.containerRef.nativeElement.offsetHeight / 100
