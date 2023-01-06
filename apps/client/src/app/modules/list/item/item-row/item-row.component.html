@@ -233,32 +233,7 @@
           </ng-template>
         </button>
       </span>
-      <nz-input-number #input (keypress.enter)="itemDoneChange$.next(input.ngModel)"
-                       (ngModelChange)="itemDoneChange$.next($event)" [disabled]="permissionLevel < 20"
-                       [ngModel]="settings.displayRemaining? item.done - item.used : item.done"
-                       [nzMax]="item.amount"
-                       [nzMin]="0"
-                       [nzSize]="'small'"
-                       [nzStep]="1"></nz-input-number>
-      <span *ngIf="!settings.displayRemaining" class="amount-max">
-        /{{item.amount}} <span *ngIf="item.amount_needed !== item.amount">({{item.amount_needed}})</span>
-      </span>
-      <span *ngIf="settings.displayRemaining" class="amount-max">
-        /{{item.amount - item.used}} <span *ngIf="item.amount_needed !== item.amount">({{item.amount_needed}})</span>
-      </span>
-      <ng-container *ngIf="!overlay">
-        <button (click)="markAsDone(item)" *ngIf="item.amount > item.done; else done"
-                [disabled]="permissionLevel < 20" [nzShape]="'circle'"
-                [nzSize]="'small'" [nzType]="'primary'"
-                class="done-button" nz-button>
-          <i nz-icon nzType="check"></i>
-        </button>
-        <ng-template #done>
-          <div>
-            <i (click)="permissionLevel >= 20 ? resetDone(item) : null" class="done-icon" nz-icon nzType="check"></i>
-          </div>
-        </ng-template>
-      </ng-container>
+      <app-compact-amount-input [permissionLevel]="permissionLevel" [item]="item" [finalItem]="finalItem" [checkButtonAfter]="true"></app-compact-amount-input>
     </div>
   </div>
   <div class="item-obtention" nz-col nzMd="3" nzSm="6" [nzXs]="overlay?12:24">

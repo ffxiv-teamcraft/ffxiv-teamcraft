@@ -15,6 +15,9 @@ import { SettingsService } from '../../../settings/settings.service';
 })
 export class CompactAmountInputComponent extends TeamcraftComponent {
   @Input()
+  checkButtonAfter = false;
+
+  @Input()
   permissionLevel: PermissionLevel;
 
   @Input()
