@@ -6,7 +6,7 @@ import { ListDisplay } from '../../../core/layout/list-display';
 import { MapListStep } from './model/map-list-step';
 import { DataType } from '../data/data-type';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { distinctUntilChanged, filter, shareReplay, startWith, switchMap, takeUntil } from 'rxjs/operators';
+import { distinctUntilChanged, filter, shareReplay, startWith, switchMap, takeUntil, withLatestFrom } from 'rxjs/operators';
 import { SettingsService } from '../../settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
@@ -166,10 +166,8 @@ export class StepByStepDetailsComponent extends TeamcraftComponent {
               private platformService: PlatformService, private ipc: IpcService,
               private eorzeaFacade: EorzeaFacade) {
     super();
-    combineLatest([
-      this.eorzeaFacade.mapId$.pipe(distinctUntilChanged()),
-      this.stepByStepList$
-    ]).pipe(
+    this.eorzeaFacade.mapId$.pipe(distinctUntilChanged()).pipe(
+      withLatestFrom(this.stepByStepList$),
       takeUntil(this.onDestroy$)
     ).subscribe(([mapId, list]) => {
       if (list.maps.includes(mapId)) {
