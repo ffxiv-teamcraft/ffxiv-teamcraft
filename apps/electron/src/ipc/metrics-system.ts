@@ -2,11 +2,15 @@ import { ipcMain } from 'electron';
 import { Store } from '../store';
 import isDev from 'electron-is-dev';
 import { join } from 'path';
-import { existsSync, mkdirSync, readdirSync, readFileSync } from 'fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'fs';
 import { MainWindow } from '../window/main-window';
+import { Database } from 'sqlite3';
 
 export class MetricsSystem {
+  private db: Database;
+
   constructor(private mainWindow: MainWindow, private store: Store) {
+    this.mainWindow.closed$.subscribe(() => this.db.close());
   }
 
   public async start() {
@@ -16,10 +20,23 @@ export class MetricsSystem {
     if (!existsSync(METRICS_FOLDER)) {
       mkdirSync(METRICS_FOLDER);
     }
-    // await sqlite.setdbPath(join(APP_DATA, `ffxiv-teamcraft-metrics${isDev ? '-dev' : ''}`, 'records.db'));
-    // await sqlite.executeScript('CREATE TABLE IF NOT EXISTS records (ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,TYPE INTEGER NOT NULL,SOURCE INTEGER NOT NULL,DATA CHAR(256) NOT NULL,TIMESTAMP NUMBER);');
+    this.db = new Database(join(METRICS_FOLDER, `records.db`));
+    this.db.serialize(() => {
+      this.db.run('CREATE TABLE IF NOT EXISTS records (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,type INTEGER NOT NULL,source INTEGER NOT NULL,data CHAR(256) NOT NULL,timestamp NUMBER);');
+    });
 
-    console.log(readdirSync(METRICS_FOLDER));
+    if (!readdirSync(METRICS_FOLDER).includes('.imported')) {
+      const files = readdirSync(METRICS_FOLDER);
+      const loadedFiles = files.map(fileName => readFileSync(join(METRICS_FOLDER, fileName), 'utf8'));
+      loadedFiles.forEach(file => {
+        try {
+          const parsed = this.parseLogRows(file);
+          this.insert(parsed);
+        } catch (ignored) {
+        }
+      });
+      writeFileSync(join(METRICS_FOLDER, '.imported'), '1');
+    }
 
     ipcMain.on('metrics:persist', (event, data) => {
       if (data.length === 0) {
@@ -32,25 +49,51 @@ export class MetricsSystem {
       if (to === undefined) {
         to = Date.now();
       }
-      // TODO convert to sqlite
-      const files = readdirSync(METRICS_FOLDER);
-      const loadedFiles = files
-        .filter(fileName => {
-          const date = +fileName.split('.')[0];
-          return date >= from && date <= to;
-        })
-        .map(fileName => readFileSync(join(METRICS_FOLDER, fileName), 'utf8'));
-      event.sender.send('metrics:loaded', loadedFiles);
+      this.db.serialize(() => {
+        const stmt = this.db.prepare(`SELECT * FROM records WHERE timestamp >= (?) AND timestamp <= (?)`);
+        stmt.all([Math.floor(from.getTime() / 1000), Math.floor(to.getTime() / 1000)], (err, rows) => {
+          console.log('LOAD', [Math.floor(from.getTime() / 1000), Math.floor(to.getTime() / 1000)], rows, err);
+          event.sender.send('metrics:loaded', rows.map(row => {
+            if (row.data) {
+              row.data = JSON.parse(row.data);
+            }
+            return row;
+          }));
+        });
+        stmt.finalize();
+      });
     });
   }
 
   private insert(data: any[]): void {
-    const query = 'INSERT INTO records (TYPE,SOURCE,DATA,TIMESTAMP) VALUES (?,?,?,?);';
+    const query = 'INSERT INTO records (type,source,data,timestamp) VALUES (?,?,?,?);';
     const params = data.map(row => {
       return [row.type, row.source, JSON.stringify(row.data), row.timestamp];
     });
 
-    console.log(query, params);
-    // TODO run the query once https://github.com/tmotagam/sqlite-electron/issues/9 is fixed
+    this.db.serialize(() => {
+      const stmt = this.db.prepare(query);
+      params.forEach(row => stmt.run(row));
+      stmt.finalize();
+    });
+  }
+
+  private parseLogRows(data: string): any[] {
+    return data.split('|')
+      .map(row => {
+        const parsed = row.split(';');
+        if (parsed.length === 1) {
+          return;
+        }
+        return {
+          timestamp: +parsed[0],
+          type: +parsed[1],
+          source: +parsed[2],
+          data: parsed[3].split(',').map(n => +n)
+        };
+      })
+      .filter(row => {
+        return row.source !== undefined;
+      });
   }
 }
