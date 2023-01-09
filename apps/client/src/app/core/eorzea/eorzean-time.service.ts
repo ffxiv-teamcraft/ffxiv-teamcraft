@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { first, shareReplay, tap } from 'rxjs/operators';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { IS_HEADLESS } from '../../../environments/is-headless';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class EorzeanTimeService {
   // Only used for mocks in dev mode
   private mockTicks = 0;
 
-  constructor(@Inject(PLATFORM_ID) private platform: any, private ngZone: NgZone) {
+  constructor(@Inject(PLATFORM_ID) private platform: any, private ngZone: NgZone, private translate: TranslateService) {
     if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
       this.ngZone.runOutsideAngular(() => {
         setInterval(() => this.tick(), 20000 / EorzeanTimeService.EPOCH_TIME_FACTOR);
@@ -58,6 +59,22 @@ export class EorzeanTimeService {
       shareReplay({ bufferSize: 1, refCount: true }),
       isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
     );
+  }
+
+  public toStringTimer(duration: number, verbose = false):string{
+    const seconds = duration % 60;
+    const minutes = Math.floor(duration / 60) % 60;
+    const hours = Math.floor(duration / 3600) % 24;
+    const days = Math.floor(duration / 86400);
+    const secondsString = `${seconds < 10 ? 0 : ''}${seconds}`;
+    const minutesString = `${minutes < 10 ? 0 : ''}${minutes}`;
+    const hoursString = `${hours < 10 ? 0 : ''}${hours}`;
+    const daysString = `${days}`;
+    if (verbose) {
+      return `${days > 0 ? daysString + this.translate.instant(days > 1 ? 'TIMERS.Days' : 'TIMERS.Day') : ''} ${hoursString}${this.translate.instant('TIMERS.Hours')} ${minutesString}${this.translate.instant('TIMERS.Minutes')} ${secondsString}${this.translate.instant('TIMERS.Seconds')}`;
+    } else {
+      return `${days > 0 ? daysString + ':' : ''}${(hours > 0 || days > 0) ? hoursString + ':' : ''}${minutesString}:${secondsString}`;
+    }
   }
 
   private tick(): void {

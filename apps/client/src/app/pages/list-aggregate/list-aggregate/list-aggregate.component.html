@@ -16,20 +16,24 @@
   </nz-page-header-extra>
   <nz-page-header-content *ngIf="aggregate$ | async as aggregate">
     <div class="flex-row gap-10">
-      <div *ngIf="withLayoutApplied$ | async as withLayoutApplied" class="flex-auto">
-        <button nz-button nz-dropdown nzBlock [nzDropdownMenu]="menu" nzPlacement="bottomLeft"><span nz-icon nzType="swap" nzTheme="outline"></span>{{'LIST_AGGREGATE.Switch_panel' | translate}}</button>
-        <nz-dropdown-menu #menu="nzDropdownMenu">
-          <ul nz-menu>
-            <div nz-menu-item *ngFor="let panel of withLayoutApplied.items.rows" routerLink="../{{panel.title}}">
-              {{panel.title | translate}} ({{'LIST.Items_count' | translate: { amount: panel.rows.length } }})
-            </div>
-            <li nz-menu-item *ngIf="withLayoutApplied.finalItems.rows.length > 0" routerLink="../{{withLayoutApplied.finalItems.title}}">
-              {{withLayoutApplied.finalItems.title | translate}}
-              ({{'LIST.Items_count' | translate: { amount: withLayoutApplied.finalItems.rows.length } }})
-            </li>
-          </ul>
-        </nz-dropdown-menu>
-      </div>
+      <ng-container *ngIf="(selectedPanelTitle$ | async) !== null">
+        <div *ngIf="withLayoutApplied$ | async as withLayoutApplied" class="flex-auto">
+          <button nz-button nz-dropdown nzBlock [nzDropdownMenu]="menu" nzPlacement="bottomLeft"><span nz-icon nzType="swap"
+                                                                                                       nzTheme="outline"></span>{{'LIST_AGGREGATE.Switch_panel' | translate}}
+          </button>
+          <nz-dropdown-menu #menu="nzDropdownMenu">
+            <ul nz-menu>
+              <div nz-menu-item *ngFor="let panel of withLayoutApplied.items.rows" routerLink="../{{panel.title}}">
+                {{panel.title | translate}} ({{'LIST.Items_count' | translate: { amount: panel.rows.length } }})
+              </div>
+              <li nz-menu-item *ngIf="withLayoutApplied.finalItems.rows.length > 0" routerLink="../{{withLayoutApplied.finalItems.title}}">
+                {{withLayoutApplied.finalItems.title | translate}}
+                ({{'LIST.Items_count' | translate: { amount: withLayoutApplied.finalItems.rows.length } }})
+              </li>
+            </ul>
+          </nz-dropdown-menu>
+        </div>
+      </ng-container>
       <div *ngIf="layoutId$ | async as layoutId">
         <ng-container *ngIf="aggregateFromRoute$ | async as aggregateFromRoute;else saveAggregateButtonTpl">
           <ng-container *ngIf="aggregateFromRoute">

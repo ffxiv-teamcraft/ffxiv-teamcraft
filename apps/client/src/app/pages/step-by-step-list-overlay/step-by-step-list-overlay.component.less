@@ -1,0 +1,37 @@
+:host {
+  display: block;
+
+  .node-type-icon{
+    width: 24px;
+  }
+
+  .title-banner {
+    padding: 5px 15px;
+  }
+
+  .map-container {
+    max-width: 700px;
+
+    .navigation-container {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+
+      .navigation-svg {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+      }
+    }
+  }
+
+  .scroll-container {
+    overflow: auto;
+    flex: 1 0 100px;
+  }
+}

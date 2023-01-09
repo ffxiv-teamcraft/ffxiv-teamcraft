@@ -7,7 +7,7 @@
   <div *ngIf="unknownPosition" class="unknown-position">
     {{'No_known_coordinates' | translate}}
   </div>
-  <ng-container *ngFor="let marker of markers">
+  <ng-container *ngFor="let marker of markers; trackBy: trackByMarker">
     <ng-container *ngIf="marker.x || marker.y">
       <i *ngIf="!marker.iconType || (marker.iconType === 'img' && !marker.iconImg)"
          [ngStyle]="getMarkerStyle(map, marker)"
@@ -35,6 +35,7 @@
          class="marker material-icons" nz-tooltip>
         {{marker.materialIcon}}
       </i>
+      <div *ngIf="marker.subtitle" class="marker subtitle" [ngStyle]="getSubtitleStyle(map, marker)">{{marker.subtitle}}</div>
     </ng-container>
   </ng-container>
 </div>

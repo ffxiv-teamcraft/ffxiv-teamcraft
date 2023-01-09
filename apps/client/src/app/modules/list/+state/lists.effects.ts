@@ -31,7 +31,6 @@ import {
   first,
   map,
   mergeMap,
-  pairwise,
   switchMap,
   tap,
   withLatestFrom
@@ -68,7 +67,6 @@ import { PermissionsController } from '../../../core/database/permissions-contro
 import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 import { UpdateData, where } from '@angular/fire/firestore';
 import { debounceBufferTime } from '../../../core/rxjs/debounce-buffer-time';
-import { jsonDiff } from 'nx/src/utils/json-diff';
 
 // noinspection JSUnusedGlobalSymbols
 @Injectable()

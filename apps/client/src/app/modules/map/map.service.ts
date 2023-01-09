@@ -21,7 +21,7 @@ import { LazyAetheryte } from '../../lazy-data/model/lazy-aetheryte';
 export class MapService {
 
   // Flying mount speed, used as reference for TP over mount comparison, needs a precise recording.
-  private static readonly MOUNT_SPEED = 1;
+  private static readonly MOUNT_SPEED = 1.5;
 
   // TP duration on the same map, this is an average.
   private static readonly TP_DURATION = 8;
@@ -133,6 +133,9 @@ export class MapService {
         map(mapData => {
           // We only want big aetherytes.
           const bigAetherytes = mapData.aetherytes.filter(ae => ae.type === 0);
+          if (startPoint) {
+            return this.getShortestPath(startPoint, points, bigAetherytes);
+          }
           if (mapData.aetherytes.length === 0) {
             return this.getShortestPath({
               x: 12,
@@ -140,22 +143,18 @@ export class MapService {
               name: this.i18n.getNameObservable('places', 2566)
             }, points, []);
           }
-          // If theres no start point, check from each aetheryte to find the shortest path
-          if (startPoint === undefined) {
-            const paths = bigAetherytes.map(aetheryte => this.getShortestPath({
-              x: aetheryte.x,
-              y: aetheryte.y,
-              name: this.i18n.getNameObservable('places', aetheryte.nameid)
-            }, points, bigAetherytes));
-            return paths.sort((a, b) => this.totalDuration(a) - this.totalDuration(b))[0];
-          } else {
-            return this.getShortestPath(startPoint, points, bigAetherytes);
-          }
+          // If there's no start point, check from each aetheryte to find the shortest path
+          const paths = bigAetherytes.map(aetheryte => this.getShortestPath({
+            x: aetheryte.x,
+            y: aetheryte.y,
+            name: this.i18n.getNameObservable('places', aetheryte.nameid)
+          }, points, bigAetherytes));
+          return paths.sort((a, b) => this.totalDuration(a) - this.totalDuration(b))[0];
         })
       );
   }
 
-  getPositionOnMap(mapData: MapData, position: Vector2): Vector2 {
+  getPositionPercentOnMap(mapData: MapData, position: Vector2): Vector2 {
     const scale = mapData.size_factor / 100;
 
     const offset = 1;
@@ -170,7 +169,17 @@ export class MapService {
     };
   }
 
-  private getTpCost(from: LazyAetheryte, to: LazyAetheryte): number {
+  getCoordsOnMap(mapData: MapData, position: Vector2): Vector2 {
+    const c = mapData.size_factor / 100;
+    const x = ((+position.x) + mapData.offset_x) * c;
+    const y = ((+position.y) + mapData.offset_y) * c;
+    return {
+      x: Math.floor(((41.0 / c) * ((+x + 1024.0) / 2048.0) + 1) * 100) / 100,
+      y: Math.floor(((41.0 / c) * ((+y + 1024.0) / 2048.0) + 1) * 100) / 100
+    };
+  }
+
+  public getTpCost(from: LazyAetheryte, to: LazyAetheryte): number {
     if (from === undefined || to === undefined) {
       return 999;
     }

@@ -88,6 +88,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/list-panel-overlay/list-panel-overlay.module').then(m => m.ListPanelOverlayModule)
   },
   {
+    path: 'step-by-step-list-overlay',
+    loadComponent: () => import('./pages/step-by-step-list-overlay/step-by-step-list-overlay.component').then(m => m.StepByStepListOverlayComponent)
+  },
+  {
     path: 'rotation-overlay',
     loadChildren: () => import('./pages/rotation-overlay/rotation-overlay.module').then(m => m.RotationOverlayModule)
   },

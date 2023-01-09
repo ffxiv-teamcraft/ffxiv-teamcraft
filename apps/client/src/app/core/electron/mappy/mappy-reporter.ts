@@ -447,7 +447,7 @@ export class MappyReporterService {
             position: row.position,
             ingameCoords: this.getCoords(row.position),
             data: row,
-            displayPosition: this.mapService.getPositionOnMap(maps[mapId], row.position)
+            displayPosition: this.mapService.getPositionPercentOnMap(maps[mapId], row.position)
           };
         }),
         aetherytes: aetherytes.map(row => {
@@ -461,7 +461,7 @@ export class MappyReporterService {
             },
             ingameCoords: this.getCoords(row),
             data: row,
-            displayPosition: this.mapService.getPositionOnMap(maps[mapId], {
+            displayPosition: this.mapService.getPositionPercentOnMap(maps[mapId], {
               x: row.x,
               y: row.y
             })
@@ -498,7 +498,7 @@ export class MappyReporterService {
           return {
             ...row,
             ingameCoords: newCoords,
-            displayPosition: this.mapService.getPositionOnMap(newState.map, newCoords),
+            displayPosition: this.mapService.getPositionPercentOnMap(newState.map, newCoords),
             timestamp: Date.now()
           };
         });
@@ -507,7 +507,7 @@ export class MappyReporterService {
           return {
             ...row,
             ingameCoords: newCoords,
-            displayPosition: this.mapService.getPositionOnMap(newState.map, newCoords),
+            displayPosition: this.mapService.getPositionPercentOnMap(newState.map, newCoords),
             timestamp: Date.now()
           };
         });
@@ -620,7 +620,7 @@ export class MappyReporterService {
       };
     }
     const raw = this.getCoords(coords);
-    return this.mapService.getPositionOnMap(this.state.map, raw);
+    return this.mapService.getPositionPercentOnMap(this.state.map, raw);
   }
 
   private setState(newState: Partial<MappyReporterState>): void {

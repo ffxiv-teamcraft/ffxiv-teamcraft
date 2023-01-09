@@ -193,7 +193,7 @@ export function listsReducer(
       const newVersion = ListController.clone(cloneDeep(action.payload) as List, true);
       let updated = false;
       let listDetails = state.listDetails;
-      if (state.listDetails.entities[action.payload.$key]) {
+      if (!action.forOverlay && state.listDetails.entities[action.payload.$key]) {
         listDetails = listsAdapter.mapOne({
           id: newVersion.$key,
           map: current => {

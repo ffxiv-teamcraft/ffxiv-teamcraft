@@ -195,7 +195,7 @@ export class ListsForTeamsLoaded implements Action {
 export class ListDetailsLoaded implements Action {
   readonly type = ListsActionTypes.ListDetailsLoaded;
 
-  constructor(public payload: Partial<List>) {
+  constructor(public payload: Partial<List>, public readonly forOverlay = false) {
   }
 }
 
