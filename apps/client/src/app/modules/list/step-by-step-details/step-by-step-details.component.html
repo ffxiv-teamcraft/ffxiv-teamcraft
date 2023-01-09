@@ -1,4 +1,4 @@
-<ng-container *ngIf="stepByStepList$ | async as list">
+<ng-container *ngIf="stepByStep$ | async as list">
   <div nz-row [nzGutter]="[10,10]" *ngIf="currentMapDisplay$ | async as mapDisplay">
     <div nz-col [nzMd]="isDesktop ? 12 : 24" class="list-progress">
       <div class="flex-row gap-10 align-center">

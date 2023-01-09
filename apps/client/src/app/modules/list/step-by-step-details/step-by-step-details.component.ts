@@ -1,25 +1,24 @@
 import { ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { observeInput } from '../../../core/rxjs/observe-input';
-import { BehaviorSubject, combineLatest, map, Observable, tap } from 'rxjs';
+import { BehaviorSubject, combineLatest, map, Observable } from 'rxjs';
 import { StepByStepList } from './model/step-by-step-list';
 import { ListDisplay } from '../../../core/layout/list-display';
-import { MapListStep } from './model/map-list-step';
 import { DataType } from '../data/data-type';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { distinctUntilChanged, filter, shareReplay, startWith, switchMap, takeUntil, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilChanged, filter, switchMap, takeUntil, withLatestFrom } from 'rxjs/operators';
 import { SettingsService } from '../../settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { LayoutOrderService } from '../../../core/layout/layout-order.service';
 import { LayoutRowOrder } from '../../../core/layout/layout-row-order.enum';
-import { MapData } from '../../map/map-data';
-import { Vector2 } from '../../../core/tools/vector2';
 import { MapService } from '../../map/map.service';
-import { MapMarker } from '../../map/map-marker';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { EorzeaFacade } from '../../eorzea/+state/eorzea.facade';
-import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { StepByStepDisplayData } from './step-by-step-display-data';
+import { StepByStepComponent } from './step-by-step-component';
+import { ListsFacade } from '../+state/lists.facade';
+import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
+import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
+import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
+import { LayoutOrderService } from '../../../core/layout/layout-order.service';
 
 @Component({
   selector: 'app-step-by-step-details',
@@ -27,7 +26,7 @@ import { StepByStepDisplayData } from './step-by-step-display-data';
   styleUrls: ['./step-by-step-details.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class StepByStepDetailsComponent extends TeamcraftComponent {
+export class StepByStepDetailsComponent extends StepByStepComponent {
   DataType = DataType;
 
   @Input()
@@ -36,33 +35,7 @@ export class StepByStepDetailsComponent extends TeamcraftComponent {
   @Input()
   permissionLevel: PermissionLevel;
 
-  display$: Observable<ListDisplay> = observeInput(this, 'display');
-
-  selectedMap$ = new BehaviorSubject(0);
-
-  stepByStepList$: Observable<StepByStepList> = combineLatest([this.display$, this.settings.watchSetting('housingMap', this.settings.housingMap), this.lazyData.getEntry('maps')]).pipe(
-    map(([display, housingMap, maps]) => {
-      return new StepByStepList(display, housingMap, maps);
-    }),
-    tap(list => {
-      if (!list.steps[this.selectedMap$.value] && list.maps.length > 0) {
-        const nextIncompleteMap = list.maps.find(mapId => !list.steps[mapId].complete);
-        this.selectedMap$.next(nextIncompleteMap || 0);
-      }
-    })
-  );
-
-  currentMapDisplay$: Observable<MapListStep> = combineLatest([
-    this.stepByStepList$,
-    this.selectedMap$
-  ]).pipe(
-    map(([list, mapId]) => {
-      return list.steps[mapId];
-    }),
-    shareReplay(1)
-  );
-
-  navigationStatus$ = combineLatest([this.stepByStepList$, this.selectedMap$]).pipe(
+  navigationStatus$ = combineLatest([this.stepByStep$, this.selectedMap$]).pipe(
     map(([list, mapId]) => {
       const mapIndex = list.maps.indexOf(mapId);
       const next = list.maps[mapIndex + 1] || null;
@@ -78,7 +51,7 @@ export class StepByStepDetailsComponent extends TeamcraftComponent {
     })
   );
 
-  sortedAlarms$ = this.stepByStepList$.pipe(
+  sortedAlarms$ = this.stepByStep$.pipe(
     map(list => list.alarms),
     filter(alarms => alarms.length > 0),
     switchMap(alarms => {
@@ -95,79 +68,16 @@ export class StepByStepDetailsComponent extends TeamcraftComponent {
     }, 500);
   }
 
-
-  public currentPath$: Observable<StepByStepDisplayData> = combineLatest([
-    this.currentMapDisplay$,
-    this.ipc.updatePositionHandlerPackets$.pipe(startWith(null)),
-    this.eorzeaFacade.mapId$
-  ]).pipe(
-    switchMap(([display, position, mapId]) => {
-      const markers = display.sources.map(source => {
-        return display[source]
-          .filter(row => row.row.amount > row.row.done)
-          .map(row => {
-            return {
-              ...row.coords
-            };
-          });
-      }).flat().filter(Boolean);
-      return this.mapService.getMapById(display.mapId).pipe(
-        switchMap(mapData => {
-          const startingPoint = position && mapId === display.mapId ? this.mapService.getCoordsOnMap(mapData, {
-            x: position.pos.x,
-            y: position.pos.z
-          }) : null;
-          return this.mapService.getOptimizedPathOnMap(display.mapId, markers, startingPoint).pipe(
-            map(steps => {
-              return {
-                path: {
-                  map: mapData,
-                  steps
-                },
-                additionalMarkers: [
-                  startingPoint ? {
-                    ...startingPoint,
-                    iconType: 'img',
-                    zIndex: 999,
-                    iconImg: './assets/icons/map/cursor.png',
-                    additionalStyle: {
-                      transform: `rotate(${(position.rotation - Math.PI) * -1}rad)`,
-                      'margin-top': '-16px',
-                      'margin-left': '-16px'
-                    }
-                  } as MapMarker : null,
-                  ...display.sources.map(source => {
-                    return display[source].map(row => {
-                      return {
-                        ...row.coords,
-                        zIndex: 999,
-                        iconType: 'img',
-                        iconImg: row.icon,
-                        additionalStyle: {
-                          width: '24px',
-                          height: '24px'
-                        }
-                      } as MapMarker;
-                    });
-                  }).flat()
-                ].filter(Boolean)
-              };
-            })
-          );
-        })
-      );
-    })
-  );
-
   public isDesktop = this.platformService.isDesktop();
 
-  constructor(public settings: SettingsService, private lazyData: LazyDataFacade,
-              private layoutOrderService: LayoutOrderService, private mapService: MapService,
-              private platformService: PlatformService, private ipc: IpcService,
-              private eorzeaFacade: EorzeaFacade) {
-    super();
+  constructor(protected eorzeaFacade: EorzeaFacade, protected ipc: IpcService,
+              protected listsFacade: ListsFacade, protected layoutsFacade: LayoutsFacade,
+              public settings: SettingsService, protected lazyData: LazyDataFacade,
+              protected mapService: MapService, protected etime: EorzeanTimeService, protected alarmsFacade: AlarmsFacade,
+              private platformService: PlatformService, private layoutOrderService: LayoutOrderService) {
+    super(eorzeaFacade, ipc, listsFacade, layoutsFacade, settings, lazyData, mapService, etime, alarmsFacade);
     this.eorzeaFacade.mapId$.pipe(distinctUntilChanged()).pipe(
-      withLatestFrom(this.stepByStepList$),
+      withLatestFrom(this.stepByStep$),
       takeUntil(this.onDestroy$)
     ).subscribe(([mapId, list]) => {
       if (list.maps.includes(mapId)) {
@@ -176,16 +86,15 @@ export class StepByStepDetailsComponent extends TeamcraftComponent {
     });
   }
 
-  toggleOverlay(): void {
-    this.ipc.openOverlay('/step-by-step-list-overlay');
+  protected onNewStepByStep(list: StepByStepList) {
+    if (!list.steps[this.selectedMap$.value] && list.maps.length > 0) {
+      const nextIncompleteMap = list.maps.find(mapId => !list.steps[mapId].complete);
+      this.selectedMap$.next(nextIncompleteMap || 0);
+    }
   }
 
-  getPositionPercent(mapData: MapData, coords: Vector2): Vector2 {
-    const positionPercents = this.mapService.getPositionPercentOnMap(mapData, coords);
-    return {
-      x: positionPercents.x * this.containerRef.nativeElement.offsetWidth / 100,
-      y: positionPercents.y * this.containerRef.nativeElement.offsetHeight / 100
-    };
+  toggleOverlay(): void {
+    this.ipc.openOverlay('/step-by-step-list-overlay');
   }
 
   trackById(index: number, item: { id: number }): number {
@@ -194,5 +103,13 @@ export class StepByStepDetailsComponent extends TeamcraftComponent {
 
   trackByMapId(index: number, mapId: number): number {
     return mapId;
+  }
+
+  protected getDisplay(): Observable<ListDisplay> {
+    return  observeInput(this, 'display');
+  }
+
+  protected getMapId(): Observable<number> {
+    return this.selectedMap$;
   }
 }
