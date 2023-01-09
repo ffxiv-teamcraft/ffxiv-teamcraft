@@ -39,7 +39,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   public machinaToggle = false;
 
   itemFiltersform: UntypedFormGroup = this.fb.group({
-    ilvlMin: [540],
+    ilvlMin: [this.environment.maxIlvl - 30],
     ilvlMax: [999],
     elvlMin: [1],
     elvlMax: [this.environment.maxLevel]
@@ -301,7 +301,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
                   return b.item.ID - a.item.Id;
                 }
                 return aIlvl - bIlvl;
-              });
+              }).slice(0, 10); // Max 10 items per category to avoid rendering issues.
               return category;
             })
             .sort((a, b) => {
@@ -361,7 +361,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
       let highestIlvl = Math.max(...ilvls) + 30;
       let usedDefaultValues = false;
       if (lowestIlvl === Infinity) {
-        lowestIlvl = 460;
+        lowestIlvl = this.environment.maxIlvl - 30;
         usedDefaultValues = true;
       }
       if (highestIlvl === -Infinity) {
