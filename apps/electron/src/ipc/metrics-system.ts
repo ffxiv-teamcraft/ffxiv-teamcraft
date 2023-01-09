@@ -1,78 +1,99 @@
-import { dialog, ipcMain, OpenDialogOptions } from 'electron';
+import { ipcMain } from 'electron';
 import { Store } from '../store';
 import isDev from 'electron-is-dev';
 import { join } from 'path';
-import { appendFileSync, existsSync, mkdirSync, readdirSync, readFileSync } from 'fs';
-import { moveSync } from 'fs-extra';
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'fs';
 import { MainWindow } from '../window/main-window';
+import { Database } from 'sqlite3';
 
 export class MetricsSystem {
+  private db: Database;
+
   constructor(private mainWindow: MainWindow, private store: Store) {
+    this.mainWindow.closed$.subscribe(() => this.db.close());
   }
 
-  public start(): void {
+  public async start() {
     const APP_DATA = process.env.APPDATA || (process.platform === 'darwin' ? process.env.HOME + '/Library/Preferences' : process.env.HOME + '/.local/share');
     let METRICS_FOLDER = this.store.get('metrics:folder', join(APP_DATA, `ffxiv-teamcraft-metrics${isDev ? '-dev' : ''}`));
 
     if (!existsSync(METRICS_FOLDER)) {
       mkdirSync(METRICS_FOLDER);
     }
+    this.db = new Database(join(METRICS_FOLDER, `records.db`));
+    this.db.serialize(() => {
+      this.db.run('CREATE TABLE IF NOT EXISTS records (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,type INTEGER NOT NULL,source INTEGER NOT NULL,data CHAR(256) NOT NULL,timestamp NUMBER);');
+    });
+
+    if (!readdirSync(METRICS_FOLDER).includes('.imported')) {
+      const files = readdirSync(METRICS_FOLDER);
+      const loadedFiles = files.map(fileName => readFileSync(join(METRICS_FOLDER, fileName), 'utf8'));
+      loadedFiles.forEach(file => {
+        try {
+          const parsed = this.parseLogRows(file);
+          this.insert(parsed);
+        } catch (ignored) {
+        }
+      });
+      writeFileSync(join(METRICS_FOLDER, '.imported'), '1');
+    }
 
     ipcMain.on('metrics:persist', (event, data) => {
       if (data.length === 0) {
         return;
       }
-      const now = new Date();
-      let month = now.getMonth().toString();
-      if (+month < 10) {
-        month = `0${month}`;
-      }
-      let day = now.getUTCDate().toString();
-      if (+day < 10) {
-        day = `0${day}`;
-      }
-      const filename = `${now.getFullYear()}${month}${day}.tcmetrics`;
-      const filePath = join(METRICS_FOLDER, filename);
-      if (existsSync(filePath)) {
-        data = `|${data}`;
-      }
-      appendFileSync(filePath, data);
+      this.insert(data);
     });
 
     ipcMain.on('metrics:load', (event, { from, to }) => {
       if (to === undefined) {
         to = Date.now();
       }
-      const files = readdirSync(METRICS_FOLDER);
-      const loadedFiles = files
-        .filter(fileName => {
-          const date = +fileName.split('.')[0];
-          return date >= from && date <= to;
-        })
-        .map(fileName => readFileSync(join(METRICS_FOLDER, fileName), 'utf8'));
-      event.sender.send('metrics:loaded', loadedFiles);
-    });
-
-    ipcMain.on('metrics:path:get', (event) => {
-      event.sender.send('metrics:path:value', METRICS_FOLDER);
-    });
-
-    ipcMain.on('metrics:path:set', (event, value) => {
-      const folderPickerOptions: OpenDialogOptions = {
-        // See place holder 2 in above image
-        defaultPath: METRICS_FOLDER,
-        properties: ['openDirectory']
-      };
-      dialog.showOpenDialog(this.mainWindow.win, folderPickerOptions).then((result) => {
-        if (result.canceled) {
-          return;
-        }
-        const filePath = result.filePaths[0];
-        moveSync(METRICS_FOLDER, filePath);
-        METRICS_FOLDER = filePath;
-        this.store.set('metrics:folder', filePath);
-        event.sender.send('metrics:path:value', METRICS_FOLDER);
+      this.db.serialize(() => {
+        const stmt = this.db.prepare(`SELECT * FROM records WHERE timestamp >= (?) AND timestamp <= (?)`);
+        stmt.all([Math.floor(from.getTime() / 1000), Math.floor(to.getTime() / 1000)], (err, rows) => {
+          console.log('LOAD', [Math.floor(from.getTime() / 1000), Math.floor(to.getTime() / 1000)], rows, err);
+          event.sender.send('metrics:loaded', rows.map(row => {
+            if (row.data) {
+              row.data = JSON.parse(row.data);
+            }
+            return row;
+          }));
+        });
+        stmt.finalize();
       });
     });
+  }
+
+  private insert(data: any[]): void {
+    const query = 'INSERT INTO records (type,source,data,timestamp) VALUES (?,?,?,?);';
+    const params = data.map(row => {
+      return [row.type, row.source, JSON.stringify(row.data), row.timestamp];
+    });
+
+    this.db.serialize(() => {
+      const stmt = this.db.prepare(query);
+      params.forEach(row => stmt.run(row));
+      stmt.finalize();
+    });
+  }
+
+  private parseLogRows(data: string): any[] {
+    return data.split('|')
+      .map(row => {
+        const parsed = row.split(';');
+        if (parsed.length === 1) {
+          return;
+        }
+        return {
+          timestamp: +parsed[0],
+          type: +parsed[1],
+          source: +parsed[2],
+          data: parsed[3].split(',').map(n => +n)
+        };
+      })
+      .filter(row => {
+        return row.source !== undefined;
+      });
   }
 }

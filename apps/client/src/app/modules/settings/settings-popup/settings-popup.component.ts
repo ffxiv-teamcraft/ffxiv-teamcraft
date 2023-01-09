@@ -66,8 +66,6 @@ export class SettingsPopupComponent {
 
   noShortcut = false;
 
-  metricsPath = '';
-
   watchFilesPath = '';
 
   proxyType: '' | 'http' | 'https' | 'socks4' | 'socks5' | 'pac' | 'custom' = '';
@@ -195,9 +193,6 @@ export class SettingsPopupComponent {
     this.ipc.once('no-shortcut:value', (event, value) => {
       this.noShortcut = value;
     });
-    this.ipc.on('metrics:path:value', (event, value) => {
-      this.metricsPath = value;
-    });
     this.ipc.on('dat:path:value', (event, value) => {
       this.watchFilesPath = value;
     });
@@ -254,7 +249,6 @@ export class SettingsPopupComponent {
     this.ipc.send('proxy-rule:get');
     this.ipc.send('proxy-bypass:get');
     this.ipc.send('proxy-pac:get');
-    this.ipc.send('metrics:path:get');
     this.ipc.send('dat:path:get');
     this.ipc.send('rawsock:get');
     this.customTheme = this.settings.customTheme;
@@ -279,10 +273,6 @@ export class SettingsPopupComponent {
       default:
         return '127.0.0.1:8080';
     }
-  }
-
-  changeMetricsPath(): void {
-    this.ipc.send('metrics:path:set');
   }
 
   changeWatchFilesPath(): void {
