@@ -1,38 +1,43 @@
 import { combineLatest } from 'rxjs';
+import { XivDataService } from '../xiv/xiv-data.service';
 import { AbstractExtractor } from '../abstract-extractor';
 
 export class MapsExtractor extends AbstractExtractor {
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const maps = {};
     combineLatest([
-      this.aggregateAllPages('https://xivapi.com/Map?columns=ID,GameContentLinks,PriorityUI,MapFilenameId,MapIndex,PlaceNameSubTargetID,Hierarchy,MapFilename,OffsetX,OffsetY,MapMarkerRange,PlaceNameTargetID,PlaceNameRegionTargetID,PlaceNameSubTargetID,SizeFactor,TerritoryTypeTargetID'),
-      this.aggregateAllPages('https://xivapi.com/TerritoryType?columns=ID,OffsetZ'),
-      this.aggregateAllPages('https://xivapi.com/ContentFinderCondition?columns=TerritoryType.Name')
-    ]).subscribe(([xivapiMaps, territories, contentFinderConditions]) => {
+      this.getSheet<any>(xiv, 'Map', ['PriorityUI', 'Id', 'MapIndex', 'PlaceNameSub', 'Hierarchy', 'MapFilename', 'OffsetX', 'OffsetY', 'MapMarkerRange', 'PlaceName', 'PlaceNameRegion', 'PlaceNameSub', 'SizeFactor', 'TerritoryType']),
+      this.getSheet<any>(xiv, 'TerritoryType', ['OffsetZ']),
+      this.getSheet<any>(xiv, 'ContentFinderCondition', ['TerritoryType.Name']),
+      this.getSheet<any>(xiv, 'HousingMapMarkerInfo', ['Map#'])
+    ]).subscribe(([xivapiMaps, territories, contentFinderConditions, housingMapMarkerInfo]) => {
       xivapiMaps.forEach(mapData => {
-        const territory = territories.find(t => t.ID === mapData.TerritoryTypeTargetID);
+        const [folder, layer] = mapData.Id.split('/');
+        const filename = `/m/${folder}/${folder}.${layer}.jpg`;
+
+
+        const territory = territories.find(t => t.index === mapData.TerritoryType);
         const offsetZ = territory && +territory.OffsetZ;
-        maps[mapData.ID] = {
-          id: mapData.ID,
+        maps[mapData.index] = {
+          id: mapData.index,
           hierarchy: mapData.Hierarchy,
           priority_ui: mapData.PriorityUI,
-          image: `https://xivapi.com${mapData.MapFilename}`,
+          image: `https://xivapi.com${filename}`,
           offset_x: +mapData.OffsetX,
           offset_y: +mapData.OffsetY,
           offset_z: offsetZ === -10000 ? 0 : offsetZ,
           map_marker_range: mapData.MapMarkerRange,
-          placename_id: mapData.PlaceNameTargetID,
-          placename_sub_id: mapData.PlaceNameSubTargetID,
-          region_id: mapData.PlaceNameRegionTargetID,
-          zone_id: mapData.PlaceNameSubTargetID,
+          placename_id: mapData.PlaceName,
+          placename_sub_id: mapData.PlaceNameSub,
+          region_id: mapData.PlaceNameRegion,
+          zone_id: mapData.PlaceNameSub,
           size_factor: mapData.SizeFactor,
-          territory_id: mapData.TerritoryTypeTargetID,
+          territory_id: mapData.TerritoryType,
           index: mapData.MapIndex,
-          dungeon: contentFinderConditions.some(c => mapData.MapFilenameId.startsWith(c.TerritoryType.Name)),
-          housing: mapData.GameContentLinks?.HousingMapMarkerInfo !== undefined
+          dungeon: contentFinderConditions.some(c => folder === c.TerritoryType.Name),
+          housing: housingMapMarkerInfo.some(marker => marker.Map === mapData.index)
         };
       });
-    }, null, () => {
       this.persistToJsonAsset('maps', maps);
       this.done();
     });

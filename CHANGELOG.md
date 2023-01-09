@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.9.12"></a>
+## [9.9.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.11...v9.9.12) (2022-11-13)
+
+
+### Bug Fixes
+
+* **desktop:** fixed island sanctuary inventory not updating properly ([485d668](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/485d668))
+* **desktop:** fixed overlay close breaking the overlay entirely until restart ([68d6960](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/68d6960))
+
+
+### Features
+
+* **desktop:** new setting to disable hardware acceleration ([42098a9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/42098a9))
+* **desktop:** report ignored bites too ([c87fdc9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c87fdc9))
+
+
+
 <a name="9.9.11"></a>
 ## [9.9.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.10...v9.9.11) (2022-11-10)
 

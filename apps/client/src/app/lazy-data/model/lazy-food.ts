@@ -1,14 +1,14 @@
 export interface LazyFood {
-  Bonuses:    Bonuses;
   ID:         number;
   LevelEquip: number;
   LevelItem:  number;
+  Bonuses:    Bonuses;
 }
 
 export interface Bonuses {
-  DirectHitRate?:           Cp;
   SkillSpeed?:              Cp;
   Vitality?:                Cp;
+  DirectHitRate?:           Cp;
   CriticalHit?:             Cp;
   Tenacity?:                Cp;
   Determination?:           Cp;
@@ -42,9 +42,9 @@ export interface BindResistance {
 
 export interface Cp {
   ID:       number;
-  Max?:     number;
-  MaxHQ?:   number;
   Relative: boolean;
   Value:    number;
   ValueHQ:  number;
+  Max?:     number;
+  MaxHQ?:   number;
 }

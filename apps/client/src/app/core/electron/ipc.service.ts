@@ -489,7 +489,8 @@ export class IpcService {
         .subscribe(state => {
           this.send('app-state:set', {
             lists: JSON.parse(JSON.stringify(state.lists)),
-            layouts: JSON.parse(JSON.stringify(state.layouts))
+            layouts: JSON.parse(JSON.stringify(state.layouts)),
+            eorzea: JSON.parse(JSON.stringify(state.eorzea))
           });
         });
     }
@@ -497,14 +498,12 @@ export class IpcService {
 
   private handleMessage(packet: Message): void {
     // If we're inside an overlay, don't do anything with the packet, we don't care.
-    if (!this.overlayUri) {
-      this.totalPacketsHandled++;
-      this.packets$.next(packet);
-      const debugPackets = (<any>window).debugPackets;
-      if (debugPackets === true || (typeof debugPackets === 'function' && debugPackets(packet))) {
-        // eslint-disable-next-line no-restricted-syntax
-        console.info(packet.type, packet);
-      }
+    this.totalPacketsHandled++;
+    this.packets$.next(packet);
+    const debugPackets = (<any>window).debugPackets;
+    if (debugPackets === true || (typeof debugPackets === 'function' && debugPackets(packet))) {
+      // eslint-disable-next-line no-restricted-syntax
+      console.info(packet.type, packet);
     }
   }
 

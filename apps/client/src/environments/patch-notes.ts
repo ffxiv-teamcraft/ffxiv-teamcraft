@@ -1,11 +1,10 @@
 export const patchNotes = `### Bug Fixes
 
-* **db:** fixed some instance not being parsed properly due to SE hyphens.
-* **gearset:** fixed absurd result for average ilvl due to operations priority.
+* **desktop:** fixed island sanctuary inventory not updating properly.
+* **desktop:** fixed overlay close breaking the overlay entirely until restart.
 
 
 ### Features
 
-* **db:** ability for allagan checkers to remove baits from fishing spots.
-* **desktop:** many security improvements.
-* **desktop:** update bundled npcap installer to 1.70.`;
+* **desktop:** new setting to disable hardware acceleration.
+* **desktop:** report ignored bites too.`;

@@ -35,17 +35,19 @@ export class LazyDataFacade {
   );
 
   public patches$ = this.http.get<XivapiPatch[]>('https://xivapi.com/patchlist').pipe(
-    shareReplay({ bufferSize: 1, refCount: true })
+    shareReplay(1)
   );
 
   public datacenters$ = this.xivapi.getDCList().pipe(
-    shareReplay({ bufferSize: 1, refCount: true })
+    shareReplay(1)
   );
 
   // This is a temporary cache system to absorb possible call spams on some methods, TTL for each row is 10s toa void memory issues
   private cache: Record<string, Observable<any>> = {};
 
   private searchIndexCache: Record<string, Observable<{ id: number, name: I18nName }[]>> = {};
+
+  private fullLoadingIndexes: Record<string, 1> = {};
 
   constructor(private store: Store<fromLazyData.LazyDataPartialState>,
               private settings: SettingsService, private http: HttpClient,
@@ -158,11 +160,14 @@ export class LazyDataFacade {
   public getRow<K extends LazyDataRecordKey>(propertyKey: K, id: number, fallback?: Partial<LazyDataEntries[K]>): Observable<LazyDataEntries[K] | null> | Observable<Partial<LazyDataEntries[K]> | LazyDataEntries[K]> {
     if (this.getCacheEntry(propertyKey, id) === null) {
       // If we asked for more than 50 separate things in the same entry during the last CACHE_TTL and it's not extracts, load the entire entry.
-      if (propertyKey !== 'extracts' && Object.keys(this.cache).filter(key => key.startsWith(`${propertyKey}:`)).length > 50) {
+      if (propertyKey !== 'extracts'
+        && Object.keys(this.cache).filter(key => key.startsWith(`${propertyKey}:`)).length > 100
+        && !this.fullLoadingIndexes[propertyKey]) {
         this.preloadEntry(propertyKey);
+        this.fullLoadingIndexes[propertyKey] = 1;
       }
       const obs$ = combineLatest([
-        this.store.pipe(select(LazyDataSelectors.getEntryRow, { key: propertyKey, id })),
+        this.store.pipe(select(LazyDataSelectors.getEntryRow({ key: propertyKey, id }))),
         this.getStatus(propertyKey, id)
       ]).pipe(
         tap(([res, status]) => {
@@ -184,7 +189,8 @@ export class LazyDataFacade {
           return of(undefined);
         }),
         filter(res => res !== undefined || (fallback !== undefined && res === fallback)),
-        first()
+        first(),
+        shareReplay(1)
       );
       this.cacheObservable(obs$, propertyKey, id);
     }
@@ -198,7 +204,7 @@ export class LazyDataFacade {
    */
   public getStatus<K extends LazyDataKey>(propertyKey: K, id?: number): Observable<LoadingStatus | null> {
     return this.store.pipe(
-      select(LazyDataSelectors.getEntryStatus, { key: propertyKey }),
+      select(LazyDataSelectors.getEntryStatus({ key: propertyKey })),
       map(row => {
         if (!row) {
           return null;
@@ -315,7 +321,7 @@ export class LazyDataFacade {
               return eRecipe || r;
             });
           }),
-          shareReplay({ bufferSize: 1, refCount: true })
+          shareReplay(1)
         );
       case Region.Korea:
         return combineLatest([
@@ -328,7 +334,7 @@ export class LazyDataFacade {
               return eRecipe || r;
             });
           }),
-          shareReplay({ bufferSize: 1, refCount: true })
+          shareReplay(1)
         );
       default:
         return this.getEntry('recipes');
@@ -363,7 +369,7 @@ export class LazyDataFacade {
             return res;
           });
       }),
-      shareReplay({ bufferSize: 1, refCount: true })
+      shareReplay(1)
     );
   }
 

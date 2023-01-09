@@ -1,7 +1,7 @@
 export interface LazyLogTrackerPageData {
   id:                     number;
   masterbook?:            number | null;
-  startLevel:             number | { [key: string]: number };
+  startLevel:             number;
   recipes?:               Recipe[];
   divisionId:             number;
   requiredForAchievement: boolean;
@@ -55,6 +55,7 @@ export interface GatheringNode {
   limited:               boolean;
   level:                 number;
   type:                  number;
+  base:                  number;
   legendary:             boolean;
   ephemeral:             boolean;
   spawns:                number[];

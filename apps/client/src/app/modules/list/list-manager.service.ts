@@ -20,6 +20,7 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
 import { ListController } from './list-controller';
 import { Team } from '../../model/team/team';
+import { CraftedBySource } from './model/item-source';
 
 export interface ListAdditionParams {
   itemId: number | string;
@@ -328,7 +329,7 @@ export class ListManagerService {
         map(extract => {
           const newItem = { ...item, ...extract };
           if (getItemSource<CraftedBy[]>(extract, DataType.CRAFTED_BY).length > 0) {
-            const craftedBy = { ...newItem.sources.find(s => s.type === DataType.CRAFTED_BY) };
+            const craftedBy: CraftedBySource = { ...newItem.sources.find(s => s.type === DataType.CRAFTED_BY) as CraftedBySource };
             if (recipeId !== undefined && craftedBy.data.some(row => row.id.toString() === recipeId.toString())) {
               craftedBy.data = craftedBy.data.filter(row => {
                 return row.id.toString() === recipeId.toString();

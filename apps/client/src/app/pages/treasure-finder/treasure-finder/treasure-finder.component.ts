@@ -41,7 +41,7 @@ export class TreasureFinderComponent {
         .filter(t => t.map === mapId)
         .map(treasure => {
           const mapData = maps[treasure.map];
-          const coordsPercent = this.mapService.getPositionOnMap(mapData, treasure.coords);
+          const coordsPercent = this.mapService.getPositionPercentOnMap(mapData, treasure.coords);
           const offsetX = 109 * 0.9;
           const offsetY = 94.5 * 0.9;
           return {

@@ -15,7 +15,7 @@ import { CustomLinksFacade } from '../../custom-links/+state/custom-links.facade
 import { CustomLink } from '../../../core/database/custom-links/custom-link';
 import { Theme } from '../theme';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { uniq } from 'lodash';
+import { uniq, uniqBy } from 'lodash';
 import { MappyReporterService } from '../../../core/electron/mappy/mappy-reporter';
 import { Observable, Subject } from 'rxjs';
 import { NavigationSidebarService } from '../../navigation-sidebar/navigation-sidebar.service';
@@ -118,6 +118,10 @@ export class SettingsPopupComponent {
       placenameId: 3707
     }
   ];
+
+  housingMaps$ = this.lazyData.getEntry('maps').pipe(
+    map(maps => uniqBy(Object.values(maps).filter(v => v.housing), v => v.placename_id))
+  );
 
   public sidebarItems$: Observable<SidebarItem[]> = this.navigationSidebarService.allLinks$.pipe(first());
 

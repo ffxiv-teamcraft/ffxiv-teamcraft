@@ -11,6 +11,6 @@ export interface LazyAetheryte {
 }
 
 export interface AethernetCoords {
-  x?: number;
-  y?: number;
+  x: number;
+  y: number;
 }

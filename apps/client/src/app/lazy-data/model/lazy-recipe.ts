@@ -30,7 +30,7 @@ export interface LazyRecipe {
 export interface Ingredient {
   id:      number;
   amount:  number;
-  quality: number | null;
+  quality: number;
   phase?:  number;
 }
 

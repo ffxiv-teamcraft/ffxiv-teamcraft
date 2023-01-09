@@ -115,7 +115,7 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
           this.lazyData.getEntry('jobAbbr'),
           this.lazyData.getEntry('itemMeldingData'),
           this.lazyData.getEntry('itemStats'),
-          this.lazyData.getEntry('rarities'),
+          this.lazyData.getEntry('rarities')
         ]);
       }),
       map(([inventory, extracts, equipment, jobAbbr, itemMeldingData, itemStats, rarities]) => {
@@ -295,7 +295,8 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
         mainStat = BaseParam.GP;
       }
       if ([8, 9, 10, 11, 12, 13, 14, 15].includes(job)) {
-        mainStat = BaseParam.CP;
+        return (itemStats[itemId]?.find(stat => stat.ID === BaseParam.CRAFTSMANSHIP)?.NQ || 0)
+          + (itemStats[itemId]?.find(stat => stat.ID === BaseParam.CONTROL)?.NQ || 0);
       }
     }
 
@@ -309,8 +310,6 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
       return bonus + mainStatEntry?.NQ || 0;
     } else if ([16, 17, 18].includes(job)) {
       return bonus + itemStats[itemId]?.find(stat => stat.ID === BaseParam.PERCEPTION)?.NQ || 0;
-    } else if ([8, 9, 10, 11, 12, 13, 14, 15].includes(job)) {
-      return bonus + itemStats[itemId]?.find(stat => stat.ID === BaseParam.CONTROL)?.NQ || 0;
     }
     return 0;
   }

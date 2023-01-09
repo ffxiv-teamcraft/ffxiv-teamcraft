@@ -159,7 +159,12 @@ export class FishingReporter implements DataReporter {
       bite$
     ]).pipe(
       filter(([rodAnimation, playerAnimation]) => {
-        return (rodAnimation.logMessage === 1119 || rodAnimation.logMessage === 1120) && Math.abs(rodAnimation.timestamp - playerAnimation.timestamp) < 10000;
+        /**
+         * 1117: Ignored the fish
+         * 1119: snap?
+         * 1120: Fish left
+         */
+        return (rodAnimation.logMessage === 1119 || rodAnimation.logMessage === 1120 || rodAnimation.logMessage === 1117) && Math.abs(rodAnimation.timestamp - playerAnimation.timestamp) < 10000;
       }),
       map(() => {
         return {

@@ -1,10 +1,10 @@
+import { XivDataService } from '../xiv/xiv-data.service';
 import { AbstractExtractor } from '../abstract-extractor';
 
 export class ClassJobModifiersExtractor extends AbstractExtractor {
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const ClassJobs = {};
     const ClassJobsColumns = [
-      'ID',
       'ModifierDexterity',
       'ModifierHitPoints',
       'ModifierIntelligence',
@@ -16,14 +16,14 @@ export class ClassJobModifiersExtractor extends AbstractExtractor {
       'PrimaryStat',
       'Role'
     ];
-    this.getAllPages(`https://xivapi.com/ClassJob?columns=${ClassJobsColumns.join(',')}`).subscribe(page => {
-      page.Results.forEach(entry => {
-        ClassJobs[entry.ID] = entry;
+    this.getSheet(xiv, 'ClassJob', ClassJobsColumns)
+      .subscribe(entries => {
+        entries.forEach(entry => {
+          ClassJobs[entry.index] = this.removeIndexes(entry);
+        });
+        this.persistToJsonAsset('class-jobs-modifiers', ClassJobs);
+        this.done();
       });
-    }, null, () => {
-      this.persistToJsonAsset('class-jobs-modifiers', ClassJobs);
-      this.done();
-    });
   }
 
   getName(): string {

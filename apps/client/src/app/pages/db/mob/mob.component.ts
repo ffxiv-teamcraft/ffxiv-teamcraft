@@ -62,17 +62,16 @@ export class MobComponent extends TeamcraftPageComponent {
 
     this.xivapiMob$ = mobId$.pipe(
       switchMap(id => {
-        return this.xivapi.get(XivapiEndpoint.BNpcName, +id);
+        return combineLatest([
+          this.xivapi.get(XivapiEndpoint.BNpcName, +id),
+          this.lazyData.getRow('monsters', +id)
+        ]);
       }),
-      switchMap(mob => {
-        return this.lazyData.getRow('monsters', mob.ID).pipe(
-          map(monster => {
-            mob.mappyData = monster;
-            return mob;
-          })
-        );
+      map(([xivapiMob, lazyMob]) => {
+        xivapiMob.mappyData = _.cloneDeep(lazyMob);
+        return xivapiMob;
       }),
-      shareReplay({ bufferSize: 1, refCount: true })
+      shareReplay(1)
     );
 
     this.spawns$ = this.xivapiMob$.pipe(

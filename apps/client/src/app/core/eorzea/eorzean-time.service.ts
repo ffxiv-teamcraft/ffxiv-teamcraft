@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { first, shareReplay, tap } from 'rxjs/operators';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { IS_HEADLESS } from '../../../environments/is-headless';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class EorzeanTimeService {
   // Only used for mocks in dev mode
   private mockTicks = 0;
 
-  constructor(@Inject(PLATFORM_ID) private platform: any, private ngZone: NgZone) {
+  constructor(@Inject(PLATFORM_ID) private platform: any, private ngZone: NgZone, private translate: TranslateService) {
     if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
       this.ngZone.runOutsideAngular(() => {
         setInterval(() => this.tick(), 20000 / EorzeanTimeService.EPOCH_TIME_FACTOR);
@@ -60,10 +61,26 @@ export class EorzeanTimeService {
     );
   }
 
+  public toStringTimer(duration: number, verbose = false):string{
+    const seconds = duration % 60;
+    const minutes = Math.floor(duration / 60) % 60;
+    const hours = Math.floor(duration / 3600) % 24;
+    const days = Math.floor(duration / 86400);
+    const secondsString = `${seconds < 10 ? 0 : ''}${seconds}`;
+    const minutesString = `${minutes < 10 ? 0 : ''}${minutes}`;
+    const hoursString = `${hours < 10 ? 0 : ''}${hours}`;
+    const daysString = `${days}`;
+    if (verbose) {
+      return `${days > 0 ? daysString + this.translate.instant(days > 1 ? 'TIMERS.Days' : 'TIMERS.Day') : ''} ${hoursString}${this.translate.instant('TIMERS.Hours')} ${minutesString}${this.translate.instant('TIMERS.Minutes')} ${secondsString}${this.translate.instant('TIMERS.Seconds')}`;
+    } else {
+      return `${days > 0 ? daysString + ':' : ''}${(hours > 0 || days > 0) ? hoursString + ':' : ''}${minutesString}:${secondsString}`;
+    }
+  }
+
   private tick(): void {
     // How to mock time:
     // Set date here and uncomment the next 3 lines
-    // const mockDate = new Date(new Date('Aug 14, 2022 19:45:00 GMT+2').getTime() + this.mockTicks);
+    // const mockDate = new Date(new Date('Jan 6, 2023 17:59:30 GMT').getTime() + this.mockTicks);
     // this.mockTicks += 20000 / EorzeanTimeService.EPOCH_TIME_FACTOR;
     // this._timerObservable.next(this.toEorzeanDate(mockDate));
 

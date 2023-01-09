@@ -4272,7 +4272,7 @@
     "fr": "Récompenses d'événements saisonniers"
   },
   "262896": {
-    "en": "Purchase Lv. 70 Arms",
+    "en": "Purchase Lv. 70 Arms ",
     "ja": "Lv70向け武器の再購入",
     "de": "Waffen (St. 70)",
     "fr": "Armes (Nv 70)"
@@ -4290,7 +4290,7 @@
     "fr": "Armures Nv 70 (guerre 2)"
   },
   "262899": {
-    "en": "Purchase Lv. 70 Gear (DoM)",
+    "en": "Purchase Lv. 70 Gear (DoM) ",
     "ja": "Lv70向け防具の再購入（ソーサラー）",
     "de": "Ausrüstung (St. 70, Magier)",
     "fr": "Armures Nv 70 (magie)"
@@ -5658,22 +5658,22 @@
     "fr": "Objets"
   },
   "263127": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "アイテムの購入",
+    "ja": "アイテムの購入",
+    "de": "アイテムの購入",
+    "fr": "アイテムの購入"
   },
   "263128": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "アイテムの購入",
+    "ja": "アイテムの購入",
+    "de": "アイテムの購入",
+    "fr": "アイテムの購入"
   },
   "263129": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "アイテムの購入",
+    "ja": "アイテムの購入",
+    "de": "アイテムの購入",
+    "fr": "アイテムの購入"
   },
   "263130": {
     "en": "Purchase Paintings (The Northern Empty)",

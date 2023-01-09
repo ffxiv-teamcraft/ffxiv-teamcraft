@@ -47,6 +47,7 @@ import { ListController } from '../../../modules/list/list-controller';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { uniq } from 'lodash';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
+import { ListDisplayMode } from './list-display-mode';
 
 @Component({
   selector: 'app-list-details',
@@ -56,15 +57,32 @@ import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-be
 })
 export class ListDetailsComponent extends TeamcraftPageComponent implements OnInit, OnDestroy {
 
+  public ListDisplayMode = ListDisplayMode;
+
   public display$: Observable<ListDisplay>;
 
   public finalItemsRow$: Observable<LayoutRowDisplay>;
 
-  public list$: Observable<List>;
+  public permissionLevel$: Observable<PermissionLevel> = this.listsFacade.selectedListPermissionLevel$;
+
+  public list$: Observable<List> = combineLatest([this.listsFacade.selectedList$, this.permissionLevel$]).pipe(
+    filter(([list]) => list !== undefined),
+    tap(([list, permissionLevel]) => {
+      if (!list.notFound && ListController.isOutDated(list) && permissionLevel >= PermissionLevel.WRITE && !this.regeneratingList) {
+        this.regenerateList(list);
+      }
+      if (!list.notFound) {
+        this.listIsLarge = ListController.isLarge(list);
+        if (!ListController.isOutDated(list)) {
+          this.regeneratingList = false;
+        }
+      }
+    }),
+    map(([list]) => list),
+    shareReplay(1)
+  );
 
   public crystals$: Observable<ListRow[]>;
-
-  public permissionLevel$: Observable<PermissionLevel> = this.listsFacade.selectedListPermissionLevel$;
 
   public teams$: Observable<Team[]>;
 
@@ -106,6 +124,20 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   private regeneratingList = false;
 
+  public _displayMode$ = new LocalStorageBehaviorSubject<ListDisplayMode>('list-details:display-mode', ListDisplayMode.FULL);
+
+  public displayMode$ = combineLatest([this._displayMode$, this.list$.pipe(first())]).pipe(
+    map(([displayMode, list], i) => {
+      if (displayMode === ListDisplayMode.FULL && ListController.isLarge(list) && this.settings.autoMinimalistOnLargeLists && i === 0) {
+        return ListDisplayMode.MINIMALIST;
+      }
+      if (list.finalItems.length === 0 && i === 0) {
+        return ListDisplayMode.FULL;
+      }
+      return displayMode;
+    })
+  );
+
   constructor(private layoutsFacade: LayoutsFacade, public listsFacade: ListsFacade,
               private activatedRoute: ActivatedRoute, private dialog: NzModalService,
               private translate: TranslateService, private router: Router,
@@ -121,22 +153,6 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       this.machinaToggle = value;
     });
     this.ipc.send('toggle-machina:get');
-    this.list$ = combineLatest([this.listsFacade.selectedList$, this.permissionLevel$]).pipe(
-      filter(([list]) => list !== undefined),
-      tap(([list, permissionLevel]) => {
-        if (!list.notFound && ListController.isOutDated(list) && permissionLevel >= PermissionLevel.WRITE && !this.regeneratingList) {
-          this.regenerateList(list);
-        }
-        if (!list.notFound) {
-          this.listIsLarge = ListController.isLarge(list);
-          if (!ListController.isOutDated(list)) {
-            this.regeneratingList = false;
-          }
-        }
-      }),
-      map(([list]) => list),
-      shareReplay(1)
-    );
     this.layouts$ = this.layoutsFacade.allLayouts$;
     this.selectedLayout$ = this.layoutsFacade.selectedLayout$;
     this.finalItemsRow$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$]).pipe(

@@ -91,6 +91,12 @@ export class EorzeaFacade {
               private etime: EorzeanTimeService,
               private ipc: IpcService,
               private authFacade: AuthFacade) {
+    this.ipc.mainWindowState$.subscribe(state => {
+      if (state.eorzea.mapId) {
+        this.setMap(state.eorzea.mapId);
+        this.setZone(state.eorzea.zoneId);
+      }
+    });
   }
 
   setZone(zoneId: number) {

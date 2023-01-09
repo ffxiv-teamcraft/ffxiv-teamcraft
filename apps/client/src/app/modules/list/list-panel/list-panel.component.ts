@@ -64,6 +64,10 @@ export class ListPanelComponent extends TeamcraftComponent {
 
   private list$: ReplaySubject<List> = new ReplaySubject<List>();
 
+  public listIsLarge$ = this.list$.pipe(
+    map(list => ListController.isLarge(list))
+  )
+
   public listTemplate$: Observable<ListTemplate> = combineLatest([this.customLinksFacade.myCustomLinks$, this.list$]).pipe(
     map(([links, list]) => {
       return <ListTemplate>links.find(link => {

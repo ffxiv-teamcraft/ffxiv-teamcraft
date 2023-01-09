@@ -55,6 +55,7 @@ export class ListController {
     clone.name = list.name;
     clone.version = list.version || '1.0.0';
     clone.tags = list.tags;
+    clone.notFound = list.notFound;
     clone.etag = internal ? list.etag : 0;
     clone.ignoreRequirementsRegistry = list.ignoreRequirementsRegistry;
     if (internal) {
@@ -132,7 +133,7 @@ export class ListController {
    * @param {List} otherList
    * @returns {List}
    */
-  public static merge(list: List, otherList: List): List {
+  public static merge(list: List, otherList: Pick<List, 'items' | 'finalItems'>): List {
     otherList.items.forEach(item => {
       ListController.add(list, list.items, item);
     });
@@ -676,6 +677,7 @@ export class ListController {
       row = array[array.length - 1];
     } else {
       row.amount = MathTools.absoluteCeil(row.amount + data.amount);
+      row.done = MathTools.absoluteCeil(row.done + data.done);
       if (!row.requires) {
         row.requires = data.requires;
       }

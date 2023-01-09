@@ -1,25 +1,30 @@
 import { AbstractExtractor } from '../abstract-extractor';
+import { XivDataService } from '../xiv/xiv-data.service';
+import { combineLatest } from 'rxjs';
 
 export class TraitsExtractor extends AbstractExtractor {
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const traits = {};
-    this.getAllPages('https://xivapi.com/Trait?columns=ID,Name_*,Description_*,Icon').subscribe(page => {
-      page.Results.forEach(trait => {
-        traits[trait.ID] = {
+    combineLatest([
+      this.getSheet(xiv, 'Trait', ['Name_*', 'Description_*', 'Icon']),
+      this.getSheet(xiv, 'TraitTransient', ['Description_*'])
+    ]).subscribe(([rows, transientRows]) => {
+      rows.forEach((trait, i) => {
+        traits[trait.index] = {
           en: trait.Name_en,
           de: trait.Name_de,
           ja: trait.Name_ja,
           fr: trait.Name_fr,
           icon: trait.Icon,
           description: {
-            en: trait.Description_en,
-            de: trait.Description_de,
-            ja: trait.Description_ja,
-            fr: trait.Description_fr
+            en: transientRows[i].Description_en,
+            de: transientRows[i].Description_de,
+            ja: transientRows[i].Description_ja,
+            fr: transientRows[i].Description_fr
           }
         };
       });
-    }, null, () => {
+      delete traits[0];
       this.persistToJsonAsset('traits', traits);
       this.done();
     });

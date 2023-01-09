@@ -203,6 +203,13 @@
       <nz-form-item class="empty-label">
         <nz-form-label [nzSpan]="5"></nz-form-label>
         <nz-form-control [nzSpan]="12">
+          <label [(ngModel)]="settings.autoMinimalistOnLargeLists"
+                 nz-checkbox>{{'SETTINGS.Auto_minimalist_large_lists' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
           <label [(ngModel)]="settings.makeQuickListsOffline"
                  nz-checkbox>{{'SETTINGS.Make_quick_lists_offline' | translate}}</label>
         </nz-form-control>
@@ -327,6 +334,16 @@
           <nz-select [(ngModel)]="settings.startingPlace">
             <nz-option *ngFor="let place of startingPlaces" [nzLabel]="place.placenameId | i18nRow:'places' | i18n"
                        [nzValue]="place.id"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5">{{'SETTINGS.Housing_map' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="12" [nzExtra]="'SETTINGS.Housing_map_explain' | translate">
+          <nz-select [(ngModel)]="settings.housingMap">
+            <nz-option *ngFor="let housingMap of housingMaps$ | async" [nzLabel]="housingMap.placename_id | i18nRow:'places' | i18n"
+                       [nzValue]="housingMap.id"></nz-option>
           </nz-select>
         </nz-form-control>
       </nz-form-item>

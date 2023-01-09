@@ -1,25 +1,20 @@
 import { AbstractExtractor } from '../abstract-extractor';
-import { map, tap } from 'rxjs/operators';
+import { XivDataService } from '../xiv/xiv-data.service';
 
 export class AirshipRanksExtractor extends AbstractExtractor {
 
-  protected doExtract(): any {
+  protected doExtract(xiv: XivDataService): any {
     const ranks = {};
 
-    this.getAllPages(this.getResourceEndpointWithQuery('AirshipExplorationLevel' as any, {
-      columns: 'ID,Capacity,ExpToNext'
-    })).pipe(
-      map((page) => page.Results),
-      tap((rankResults) => {
-        rankResults.forEach((result) => {
-          ranks[result.ID] = {
-            id: result.ID,
-            capacity: result.Capacity,
-            expToNext: result.ExpToNext
-          };
-        });
-      })
-    ).subscribe(() => {
+    this.getSheet(xiv, 'AirshipExplorationLevel', ['Capacity', 'ExpToNext']).pipe(
+    ).subscribe((entries) => {
+      entries.forEach((result) => {
+        ranks[result.index] = {
+          id: result.index,
+          capacity: result.Capacity,
+          expToNext: result.ExpToNext
+        };
+      });
       this.persistToJsonAsset('airship-ranks', ranks);
       this.done();
     });

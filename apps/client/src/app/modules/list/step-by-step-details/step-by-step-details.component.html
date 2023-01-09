@@ -1,0 +1,132 @@
+<ng-container *ngIf="stepByStepList$ | async as list">
+  <div nz-row [nzGutter]="[10,10]" *ngIf="currentMapDisplay$ | async as mapDisplay">
+    <div nz-col [nzMd]="isDesktop ? 12 : 24" class="list-progress">
+      <div class="flex-row gap-10 align-center">
+        <div>{{'LIST_DETAILS.STEP_BY_STEP.Global_list_progress' | translate}}:</div>
+        <div class="spacer">
+          <nz-progress [nzStrokeColor]="settings.theme.primary" [nzPercent]="list.progress"></nz-progress>
+        </div>
+      </div>
+    </div>
+    <div nz-col [nzMd]="12" *ngIf="isDesktop">
+      <button nz-button nzBlock nzType="primary" (click)="toggleOverlay()">
+        {{'LIST_DETAILS.STEP_BY_STEP.Toggle_overlay' | translate}}
+      </button>
+    </div>
+    <nz-select nz-col [nzMd]="8" [ngModel]="selectedMap$ | async" (ngModelChange)="selectedMap$.next($event)" nzShowSearch class="map-selector">
+      <nz-option *ngFor="let mapId of list.maps" [nzValue]="mapId"
+                 nzLabel="{{mapId | mapName | i18n}} ({{list.steps[mapId]?.itemsCount}} {{'Items' | translate | lowercase}})" nzCustomContent>
+        {{mapId | mapName | i18n}} ({{list.steps[mapId]?.itemsCount}}) <span *ngIf="list.steps[mapId]?.complete" nz-icon nzType="check-circle"
+                                                                             nzTheme="twotone" [nzTwotoneColor]="settings.theme.primary"></span>
+      </nz-option>
+    </nz-select>
+
+    <nz-progress [nzPercent]="mapDisplay.progress" nz-col [nzMd]="16"
+                 [nzStrokeColor]="settings.theme.primary"></nz-progress>
+    <div nz-col [nzMd]="24" *ngIf="navigationStatus$ | async as navigationStatus">
+      <nz-button-group class="navigation-buttons">
+        <button nz-button [disabled]="!navigationStatus.previousIncomplete"
+                (click)="selectedMap$.next(navigationStatus.previousIncomplete)">
+          <span nz-icon nzType="double-left" nzTheme="outline"></span>
+          {{'LIST_DETAILS.STEP_BY_STEP.Previous_incomplete' | translate}}
+        </button>
+        <button nz-button [disabled]="!navigationStatus.previous"
+                (click)="selectedMap$.next(navigationStatus.previous)">
+          <span nz-icon nzType="left" nzTheme="outline"></span>
+          {{'LIST_DETAILS.STEP_BY_STEP.Previous' | translate}}
+        </button>
+        <button nz-button [disabled]="!navigationStatus.next"
+                (click)="selectedMap$.next(navigationStatus.next)">
+          {{'LIST_DETAILS.STEP_BY_STEP.Next' | translate}}
+          <span nz-icon nzType="right" nzTheme="outline"></span>
+        </button>
+        <button nz-button [nzType]="mapDisplay.complete ? 'primary' : 'default'" [disabled]="!navigationStatus.nextIncomplete"
+                (click)="selectedMap$.next(navigationStatus.nextIncomplete)">
+          {{'LIST_DETAILS.STEP_BY_STEP.Next_incomplete' | translate}}
+          <span nz-icon nzType="double-right" nzTheme="outline"></span>
+        </button>
+      </nz-button-group>
+    </div>
+    <div class="map-container" nz-col [nzMd]="7">
+      <div #container class="navigation-container">
+        <ng-container *ngIf="currentPath$ | async as path">
+          <app-map [mapId]="mapDisplay.mapId" [hideDbButton]="true" [markers]="path.additionalMarkers"></app-map>
+          <svg class="navigation-svg" style="width:100%;height:100%;">
+            <defs>
+              <marker id="walkarrow" markerHeight="6" markerWidth="6" orient="auto" refX="10" refY="5" viewBox="0 0 10 10">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="red"/>
+              </marker>
+              <marker id="tparrow" markerHeight="6" markerWidth="6" orient="auto" refX="10" refY="5" viewBox="0 0 10 10">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="blue"/>
+              </marker>
+            </defs>
+            <g *ngFor="let step of path.path.steps; let i = index">
+              <line *ngIf="i > 0 && path.path.map !== undefined && containerRef !== undefined"
+                    [attr.marker-end]="'url('+(step.isTeleport?'#tparrow':'#walkarrow')+')'"
+                    [attr.stroke]="step.isTeleport?'blue':'red'"
+                    [attr.x1]="getPositionPercent(path.path.map, path.path.steps[i-1]).x"
+                    [attr.x2]="getPositionPercent(path.path.map, step).x"
+                    [attr.y1]="getPositionPercent(path.path.map, path.path.steps[i-1]).y"
+                    [attr.y2]="getPositionPercent(path.path.map, step).y"
+                    stroke-width="2">
+              </line>
+            </g>
+          </svg>
+        </ng-container>
+      </div>
+    </div>
+    <div nz-col [nzMd]="17">
+      <div nz-row [nzGutter]="[10,10]">
+        <app-step-by-step-datatype *ngFor="let source of mapDisplay.sources; trackBy: trackByMapId"
+                                   nz-col [nzMd]="12"
+                                   [dataType]="source"
+                                   [steps]="mapDisplay[source]"
+                                   [permissionLevel]="permissionLevel"></app-step-by-step-datatype>
+      </div>
+    </div>
+    <div nz-col [nzMd]="24" class="last-row">
+      <div class="last-row-element" *ngIf="sortedAlarms$ | async as alarms">
+        <nz-card nzSize="small" [nzTitle]="alarmsTitleTpl">
+          <ng-template #alarmsTitleTpl>
+            {{'LIST_DETAILS.STEP_BY_STEP.Alarms' | translate}} ({{alarms.length}})
+          </ng-template>
+          <app-lazy-scroll [data]="alarms" [trackBy]="trackById" [rowTemplate]="rowTpl" [rowSize]="31" [displayedRows]="8">
+            <ng-template #rowTpl let-row let-odd="odd">
+              <app-step-by-step-row [row]="row" [class.odd]="odd"
+                                    [showAlarms]="true"
+                                    [dataTypes]="[DataType.GATHERED_BY, DataType.REDUCED_FROM]"
+                                    [permissionLevel]="permissionLevel"></app-step-by-step-row>
+            </ng-template>
+          </app-lazy-scroll>
+        </nz-card>
+      </div>
+      <div class="last-row-element" *ngIf="list.crafts?.length > 0">
+        <nz-card nzSize="small" [nzTitle]="craftsTitleTpl">
+          <ng-template #craftsTitleTpl>
+            {{'LIST_DETAILS.STEP_BY_STEP.Crafts' | translate}} ({{list.crafts.length}})
+          </ng-template>
+          <app-lazy-scroll [data]="list.crafts" [trackBy]="trackById" [rowTemplate]="rowTpl" [rowSize]="31" [displayedRows]="8">
+            <ng-template #rowTpl let-row let-odd="odd">
+              <app-step-by-step-row [row]="row" [class.odd]="odd"
+                                    [dataTypes]="[DataType.CRAFTED_BY]"
+                                    [permissionLevel]="permissionLevel"></app-step-by-step-row>
+            </ng-template>
+          </app-lazy-scroll>
+        </nz-card>
+      </div>
+      <div class="last-row-element" *ngIf="list.steps[-1]?.length > 0">
+        <nz-card nzSize="small" [nzTitle]="othersTitleTpl">
+          <ng-template #othersTitleTpl>
+            {{'LIST_DETAILS.STEP_BY_STEP.Others' | translate}} ({{list.steps[-1].length}})
+          </ng-template>
+          <app-lazy-scroll [data]="list.steps[-1]" [trackBy]="trackById" [rowTemplate]="rowTpl" [rowSize]="31" [displayedRows]="8">
+            <ng-template #rowTpl let-row let-odd="odd">
+              <app-step-by-step-row [row]="row" [class.odd]="odd"
+                                    [permissionLevel]="permissionLevel"></app-step-by-step-row>
+            </ng-template>
+          </app-lazy-scroll>
+        </nz-card>
+      </div>
+    </div>
+  </div>
+</ng-container>

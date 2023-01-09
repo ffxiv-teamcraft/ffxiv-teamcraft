@@ -1,336 +1,339 @@
 [
   {
-    "Bonuses": {
-      "Strength": {
-        "ID": 1,
-        "Max": 12,
-        "MaxHQ": 15,
-        "Relative": true,
-        "Value": 16,
-        "ValueHQ": 20
-      }
-    },
     "ID": 4594,
     "LevelEquip": 1,
-    "LevelItem": 20
-  },
-  {
+    "LevelItem": 20,
     "Bonuses": {
-      "Dexterity": {
-        "ID": 2,
-        "Max": 12,
-        "MaxHQ": 15,
+      "Strength": {
+        "ID": 1,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 12,
+        "MaxHQ": 15
       }
-    },
+    }
+  },
+  {
     "ID": 4595,
     "LevelEquip": 1,
-    "LevelItem": 20
-  },
-  {
+    "LevelItem": 20,
     "Bonuses": {
-      "Vitality": {
-        "ID": 3,
-        "Max": 12,
-        "MaxHQ": 15,
+      "Dexterity": {
+        "ID": 2,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 12,
+        "MaxHQ": 15
       }
-    },
+    }
+  },
+  {
     "ID": 4596,
     "LevelEquip": 1,
-    "LevelItem": 20
-  },
-  {
+    "LevelItem": 20,
     "Bonuses": {
-      "Intelligence": {
-        "ID": 4,
-        "Max": 12,
-        "MaxHQ": 15,
+      "Vitality": {
+        "ID": 3,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 12,
+        "MaxHQ": 15
       }
-    },
+    }
+  },
+  {
     "ID": 4597,
     "LevelEquip": 1,
-    "LevelItem": 20
-  },
-  {
+    "LevelItem": 20,
     "Bonuses": {
-      "Mind": {
-        "ID": 5,
-        "Max": 12,
-        "MaxHQ": 15,
+      "Intelligence": {
+        "ID": 4,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 12,
+        "MaxHQ": 15
       }
-    },
+    }
+  },
+  {
     "ID": 4598,
     "LevelEquip": 1,
-    "LevelItem": 20
-  },
-  {
+    "LevelItem": 20,
     "Bonuses": {
-      "Strength": {
-        "ID": 1,
-        "Max": 27,
-        "MaxHQ": 34,
+      "Mind": {
+        "ID": 5,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 12,
+        "MaxHQ": 15
       }
-    },
+    }
+  },
+  {
     "ID": 4599,
     "LevelEquip": 1,
-    "LevelItem": 35
-  },
-  {
+    "LevelItem": 35,
     "Bonuses": {
-      "Dexterity": {
-        "ID": 2,
-        "Max": 27,
-        "MaxHQ": 34,
+      "Strength": {
+        "ID": 1,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 27,
+        "MaxHQ": 34
       }
-    },
+    }
+  },
+  {
     "ID": 4600,
     "LevelEquip": 1,
-    "LevelItem": 35
-  },
-  {
+    "LevelItem": 35,
     "Bonuses": {
-      "Vitality": {
-        "ID": 3,
-        "Max": 28,
-        "MaxHQ": 35,
+      "Dexterity": {
+        "ID": 2,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 27,
+        "MaxHQ": 34
       }
-    },
+    }
+  },
+  {
     "ID": 4601,
     "LevelEquip": 1,
-    "LevelItem": 35
-  },
-  {
+    "LevelItem": 35,
     "Bonuses": {
-      "Intelligence": {
-        "ID": 4,
-        "Max": 27,
-        "MaxHQ": 34,
+      "Vitality": {
+        "ID": 3,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 28,
+        "MaxHQ": 35
       }
-    },
+    }
+  },
+  {
     "ID": 4602,
     "LevelEquip": 1,
-    "LevelItem": 35
-  },
-  {
+    "LevelItem": 35,
     "Bonuses": {
-      "Mind": {
-        "ID": 5,
-        "Max": 27,
-        "MaxHQ": 34,
+      "Intelligence": {
+        "ID": 4,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 27,
+        "MaxHQ": 34
       }
-    },
+    }
+  },
+  {
     "ID": 4603,
     "LevelEquip": 1,
-    "LevelItem": 35
-  },
-  {
+    "LevelItem": 35,
     "Bonuses": {
-      "Strength": {
-        "ID": 1,
-        "Max": 49,
-        "MaxHQ": 61,
+      "Mind": {
+        "ID": 5,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 27,
+        "MaxHQ": 34
       }
-    },
+    }
+  },
+  {
     "ID": 4604,
     "LevelEquip": 1,
-    "LevelItem": 50
-  },
-  {
+    "LevelItem": 50,
     "Bonuses": {
-      "Dexterity": {
-        "ID": 2,
-        "Max": 49,
-        "MaxHQ": 61,
+      "Strength": {
+        "ID": 1,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 49,
+        "MaxHQ": 61
       }
-    },
+    }
+  },
+  {
     "ID": 4605,
     "LevelEquip": 1,
-    "LevelItem": 50
-  },
-  {
+    "LevelItem": 50,
     "Bonuses": {
-      "Vitality": {
-        "ID": 3,
-        "Max": 50,
-        "MaxHQ": 62,
+      "Dexterity": {
+        "ID": 2,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 49,
+        "MaxHQ": 61
       }
-    },
+    }
+  },
+  {
     "ID": 4606,
     "LevelEquip": 1,
-    "LevelItem": 50
-  },
-  {
-    "Bonuses": {
-      "Intelligence": {
-        "ID": 4,
-        "Max": 49,
-        "MaxHQ": 61,
-        "Relative": true,
-        "Value": 16,
-        "ValueHQ": 20
-      }
-    },
-    "ID": 4607,
-    "LevelEquip": 1,
-    "LevelItem": 50
-  },
-  {
-    "Bonuses": {
-      "Mind": {
-        "ID": 5,
-        "Max": 49,
-        "MaxHQ": 61,
-        "Relative": true,
-        "Value": 16,
-        "ValueHQ": 20
-      }
-    },
-    "ID": 4608,
-    "LevelEquip": 1,
-    "LevelItem": 50
-  },
-  {
-    "Bonuses": {
-      "Strength": {
-        "ID": 1,
-        "Max": 67,
-        "MaxHQ": 84,
-        "Relative": true,
-        "Value": 16,
-        "ValueHQ": 20
-      }
-    },
-    "ID": 4609,
-    "LevelEquip": 1,
-    "LevelItem": 70
-  },
-  {
-    "Bonuses": {
-      "Dexterity": {
-        "ID": 2,
-        "Max": 67,
-        "MaxHQ": 84,
-        "Relative": true,
-        "Value": 16,
-        "ValueHQ": 20
-      }
-    },
-    "ID": 4610,
-    "LevelEquip": 1,
-    "LevelItem": 70
-  },
-  {
+    "LevelItem": 50,
     "Bonuses": {
       "Vitality": {
         "ID": 3,
-        "Max": 70,
-        "MaxHQ": 87,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 50,
+        "MaxHQ": 62
       }
-    },
-    "ID": 4611,
-    "LevelEquip": 1,
-    "LevelItem": 70
+    }
   },
   {
+    "ID": 4607,
+    "LevelEquip": 1,
+    "LevelItem": 50,
     "Bonuses": {
       "Intelligence": {
         "ID": 4,
-        "Max": 67,
-        "MaxHQ": 84,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 49,
+        "MaxHQ": 61
       }
-    },
-    "ID": 4612,
-    "LevelEquip": 1,
-    "LevelItem": 70
+    }
   },
   {
+    "ID": 4608,
+    "LevelEquip": 1,
+    "LevelItem": 50,
     "Bonuses": {
       "Mind": {
         "ID": 5,
-        "Max": 67,
-        "MaxHQ": 84,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 49,
+        "MaxHQ": 61
       }
-    },
-    "ID": 4613,
-    "LevelEquip": 1,
-    "LevelItem": 70
+    }
   },
   {
+    "ID": 4609,
+    "LevelEquip": 1,
+    "LevelItem": 70,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 67,
+        "MaxHQ": 84
+      }
+    }
+  },
+  {
+    "ID": 4610,
+    "LevelEquip": 1,
+    "LevelItem": 70,
     "Bonuses": {
       "Dexterity": {
         "ID": 2,
-        "Max": 34,
-        "MaxHQ": 34,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 67,
+        "MaxHQ": 84
+      }
+    }
+  },
+  {
+    "ID": 4611,
+    "LevelEquip": 1,
+    "LevelItem": 70,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 70,
+        "MaxHQ": 87
+      }
+    }
+  },
+  {
+    "ID": 4612,
+    "LevelEquip": 1,
+    "LevelItem": 70,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 67,
+        "MaxHQ": 84
+      }
+    }
+  },
+  {
+    "ID": 4613,
+    "LevelEquip": 1,
+    "LevelItem": 70,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 67,
+        "MaxHQ": 84
+      }
+    }
+  },
+  {
+    "ID": 4638,
+    "LevelEquip": 1,
+    "LevelItem": 35,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
         "Relative": true,
         "Value": 20,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 34,
+        "MaxHQ": 34
+      },
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 20,
+        "ValueHQ": 20,
+        "Max": 34,
+        "MaxHQ": 34
       },
       "Intelligence": {
         "ID": 4,
-        "Max": 34,
-        "MaxHQ": 34,
         "Relative": true,
         "Value": 20,
-        "ValueHQ": 20
-      },
-      "Strength": {
-        "ID": 1,
+        "ValueHQ": 20,
         "Max": 34,
-        "MaxHQ": 34,
-        "Relative": true,
-        "Value": 20,
-        "ValueHQ": 20
+        "MaxHQ": 34
       }
-    },
-    "ID": 4638,
-    "LevelEquip": 1,
-    "LevelItem": 35
+    }
   },
   {
+    "ID": 6946,
+    "LevelEquip": 1,
+    "LevelItem": 1,
     "Bonuses": {
       "SlowResistance": {
         "ID": 57,
@@ -338,12 +341,12 @@
         "Value": 15,
         "ValueHQ": 20
       }
-    },
-    "ID": 6946,
-    "LevelEquip": 1,
-    "LevelItem": 1
+    }
   },
   {
+    "ID": 6947,
+    "LevelEquip": 1,
+    "LevelItem": 1,
     "Bonuses": {
       "SilenceResistance": {
         "ID": 60,
@@ -351,12 +354,12 @@
         "Value": 15,
         "ValueHQ": 20
       }
-    },
-    "ID": 6947,
-    "LevelEquip": 1,
-    "LevelItem": 1
+    }
   },
   {
+    "ID": 6948,
+    "LevelEquip": 1,
+    "LevelItem": 1,
     "Bonuses": {
       "BlindResistance": {
         "ID": 61,
@@ -364,12 +367,12 @@
         "Value": 15,
         "ValueHQ": 20
       }
-    },
-    "ID": 6948,
-    "LevelEquip": 1,
-    "LevelItem": 1
+    }
   },
   {
+    "ID": 6949,
+    "LevelEquip": 1,
+    "LevelItem": 1,
     "Bonuses": {
       "PoisonResistance": {
         "ID": 62,
@@ -377,12 +380,12 @@
         "Value": 15,
         "ValueHQ": 20
       }
-    },
-    "ID": 6949,
-    "LevelEquip": 1,
-    "LevelItem": 1
+    }
   },
   {
+    "ID": 6950,
+    "LevelEquip": 1,
+    "LevelItem": 1,
     "Bonuses": {
       "StunResistance": {
         "ID": 63,
@@ -390,12 +393,12 @@
         "Value": 15,
         "ValueHQ": 20
       }
-    },
-    "ID": 6950,
-    "LevelEquip": 1,
-    "LevelItem": 1
+    }
   },
   {
+    "ID": 6951,
+    "LevelEquip": 1,
+    "LevelItem": 1,
     "Bonuses": {
       "SleepResistance": {
         "ID": 64,
@@ -403,12 +406,12 @@
         "Value": 15,
         "ValueHQ": 20
       }
-    },
-    "ID": 6951,
-    "LevelEquip": 1,
-    "LevelItem": 1
+    }
   },
   {
+    "ID": 6952,
+    "LevelEquip": 1,
+    "LevelItem": 1,
     "Bonuses": {
       "BindResistance": {
         "ID": 65,
@@ -416,12 +419,12 @@
         "Value": 15,
         "ValueHQ": 20
       }
-    },
-    "ID": 6952,
-    "LevelEquip": 1,
-    "LevelItem": 1
+    }
   },
   {
+    "ID": 6953,
+    "LevelEquip": 1,
+    "LevelItem": 1,
     "Bonuses": {
       "HeavyResistance": {
         "ID": 66,
@@ -429,12 +432,12 @@
         "Value": 15,
         "ValueHQ": 20
       }
-    },
-    "ID": 6953,
-    "LevelEquip": 1,
-    "LevelItem": 1
+    }
   },
   {
+    "ID": 7059,
+    "LevelEquip": 1,
+    "LevelItem": 55,
     "Bonuses": {
       "IncreasedSpiritbondGain": {
         "ID": 69,
@@ -442,12 +445,12 @@
         "Value": 3,
         "ValueHQ": 3
       }
-    },
-    "ID": 7059,
-    "LevelEquip": 1,
-    "LevelItem": 55
+    }
   },
   {
+    "ID": 10086,
+    "LevelEquip": 1,
+    "LevelItem": 110,
     "Bonuses": {
       "DesynthesisSkillGain": {
         "ID": 51,
@@ -455,282 +458,282 @@
         "Value": 30,
         "ValueHQ": 40
       }
-    },
-    "ID": 10086,
-    "LevelEquip": 1,
-    "LevelItem": 110
+    }
   },
   {
-    "Bonuses": {
-      "Strength": {
-        "ID": 1,
-        "Max": 70,
-        "MaxHQ": 87,
-        "Relative": true,
-        "Value": 16,
-        "ValueHQ": 20
-      }
-    },
     "ID": 12622,
     "LevelEquip": 1,
-    "LevelItem": 145
-  },
-  {
+    "LevelItem": 145,
     "Bonuses": {
-      "Dexterity": {
-        "ID": 2,
-        "Max": 70,
-        "MaxHQ": 87,
+      "Strength": {
+        "ID": 1,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 70,
+        "MaxHQ": 87
       }
-    },
+    }
+  },
+  {
     "ID": 12623,
     "LevelEquip": 1,
-    "LevelItem": 145
-  },
-  {
+    "LevelItem": 145,
     "Bonuses": {
-      "Vitality": {
-        "ID": 3,
-        "Max": 71,
-        "MaxHQ": 89,
+      "Dexterity": {
+        "ID": 2,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 70,
+        "MaxHQ": 87
       }
-    },
+    }
+  },
+  {
     "ID": 12624,
     "LevelEquip": 1,
-    "LevelItem": 145
-  },
-  {
+    "LevelItem": 145,
     "Bonuses": {
-      "Intelligence": {
-        "ID": 4,
-        "Max": 70,
-        "MaxHQ": 87,
+      "Vitality": {
+        "ID": 3,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 71,
+        "MaxHQ": 89
       }
-    },
+    }
+  },
+  {
     "ID": 12625,
     "LevelEquip": 1,
-    "LevelItem": 145
-  },
-  {
+    "LevelItem": 145,
     "Bonuses": {
-      "Mind": {
-        "ID": 5,
-        "Max": 70,
-        "MaxHQ": 87,
+      "Intelligence": {
+        "ID": 4,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 70,
+        "MaxHQ": 87
       }
-    },
+    }
+  },
+  {
     "ID": 12626,
     "LevelEquip": 1,
-    "LevelItem": 145
-  },
-  {
+    "LevelItem": 145,
     "Bonuses": {
-      "Strength": {
-        "ID": 1,
-        "Max": 76,
-        "MaxHQ": 95,
+      "Mind": {
+        "ID": 5,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 70,
+        "MaxHQ": 87
       }
-    },
+    }
+  },
+  {
     "ID": 14176,
     "LevelEquip": 1,
-    "LevelItem": 210
-  },
-  {
+    "LevelItem": 210,
     "Bonuses": {
-      "Dexterity": {
-        "ID": 2,
-        "Max": 76,
-        "MaxHQ": 95,
+      "Strength": {
+        "ID": 1,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 76,
+        "MaxHQ": 95
       }
-    },
+    }
+  },
+  {
     "ID": 14177,
     "LevelEquip": 1,
-    "LevelItem": 210
-  },
-  {
+    "LevelItem": 210,
     "Bonuses": {
-      "Vitality": {
-        "ID": 3,
-        "Max": 75,
-        "MaxHQ": 94,
+      "Dexterity": {
+        "ID": 2,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 76,
+        "MaxHQ": 95
       }
-    },
+    }
+  },
+  {
     "ID": 14178,
     "LevelEquip": 1,
-    "LevelItem": 210
-  },
-  {
+    "LevelItem": 210,
     "Bonuses": {
-      "Intelligence": {
-        "ID": 4,
-        "Max": 76,
-        "MaxHQ": 95,
+      "Vitality": {
+        "ID": 3,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 75,
+        "MaxHQ": 94
       }
-    },
+    }
+  },
+  {
     "ID": 14179,
     "LevelEquip": 1,
-    "LevelItem": 210
-  },
-  {
+    "LevelItem": 210,
     "Bonuses": {
-      "Mind": {
-        "ID": 5,
-        "Max": 76,
-        "MaxHQ": 95,
+      "Intelligence": {
+        "ID": 4,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 76,
+        "MaxHQ": 95
       }
-    },
+    }
+  },
+  {
     "ID": 14180,
     "LevelEquip": 1,
-    "LevelItem": 210
-  },
-  {
+    "LevelItem": 210,
     "Bonuses": {
-      "Strength": {
-        "ID": 1,
-        "Max": 81,
-        "MaxHQ": 101,
+      "Mind": {
+        "ID": 5,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 76,
+        "MaxHQ": 95
       }
-    },
+    }
+  },
+  {
     "ID": 16716,
     "LevelEquip": 1,
-    "LevelItem": 250
-  },
-  {
+    "LevelItem": 250,
     "Bonuses": {
-      "Dexterity": {
-        "ID": 2,
-        "Max": 81,
-        "MaxHQ": 101,
+      "Strength": {
+        "ID": 1,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 81,
+        "MaxHQ": 101
       }
-    },
+    }
+  },
+  {
     "ID": 16717,
     "LevelEquip": 1,
-    "LevelItem": 250
-  },
-  {
+    "LevelItem": 250,
     "Bonuses": {
-      "Vitality": {
-        "ID": 3,
-        "Max": 82,
-        "MaxHQ": 102,
+      "Dexterity": {
+        "ID": 2,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 81,
+        "MaxHQ": 101
       }
-    },
+    }
+  },
+  {
     "ID": 16718,
     "LevelEquip": 1,
-    "LevelItem": 250
-  },
-  {
+    "LevelItem": 250,
     "Bonuses": {
-      "Intelligence": {
-        "ID": 4,
-        "Max": 81,
-        "MaxHQ": 101,
+      "Vitality": {
+        "ID": 3,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 82,
+        "MaxHQ": 102
       }
-    },
+    }
+  },
+  {
     "ID": 16719,
     "LevelEquip": 1,
-    "LevelItem": 250
-  },
-  {
+    "LevelItem": 250,
     "Bonuses": {
-      "Mind": {
-        "ID": 5,
-        "Max": 81,
-        "MaxHQ": 101,
+      "Intelligence": {
+        "ID": 4,
         "Relative": true,
         "Value": 16,
-        "ValueHQ": 20
+        "ValueHQ": 20,
+        "Max": 81,
+        "MaxHQ": 101
       }
-    },
+    }
+  },
+  {
     "ID": 16720,
     "LevelEquip": 1,
-    "LevelItem": 250
+    "LevelItem": 250,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 16,
+        "ValueHQ": 20,
+        "Max": 81,
+        "MaxHQ": 101
+      }
+    }
   },
   {
-    "Bonuses": {
-      "Craftsmanship": {
-        "ID": 70,
-        "Max": 20,
-        "MaxHQ": 25,
-        "Relative": true,
-        "Value": 2,
-        "ValueHQ": 3
-      }
-    },
     "ID": 19882,
     "LevelEquip": 1,
-    "LevelItem": 273
-  },
-  {
+    "LevelItem": 273,
     "Bonuses": {
-      "Control": {
-        "ID": 71,
-        "Max": 20,
-        "MaxHQ": 25,
+      "Craftsmanship": {
+        "ID": 70,
         "Relative": true,
         "Value": 2,
-        "ValueHQ": 3
+        "ValueHQ": 3,
+        "Max": 20,
+        "MaxHQ": 25
       }
-    },
+    }
+  },
+  {
     "ID": 19883,
     "LevelEquip": 1,
-    "LevelItem": 276
+    "LevelItem": 276,
+    "Bonuses": {
+      "Control": {
+        "ID": 71,
+        "Relative": true,
+        "Value": 2,
+        "ValueHQ": 3,
+        "Max": 20,
+        "MaxHQ": 25
+      }
+    }
   },
   {
-    "Bonuses": {
-      "CP": {
-        "ID": 11,
-        "Max": 10,
-        "MaxHQ": 13,
-        "Relative": true,
-        "Value": 4,
-        "ValueHQ": 5
-      }
-    },
     "ID": 19884,
     "LevelEquip": 1,
-    "LevelItem": 282
+    "LevelItem": 282,
+    "Bonuses": {
+      "CP": {
+        "ID": 11,
+        "Relative": true,
+        "Value": 4,
+        "ValueHQ": 5,
+        "Max": 10,
+        "MaxHQ": 13
+      }
+    }
   },
   {
+    "ID": 19885,
+    "LevelEquip": 1,
+    "LevelItem": 260,
     "Bonuses": {
       "IncreasedSpiritbondGain": {
         "ID": 69,
@@ -738,357 +741,357 @@
         "Value": 4,
         "ValueHQ": 5
       }
-    },
-    "ID": 19885,
-    "LevelEquip": 1,
-    "LevelItem": 260
+    }
   },
   {
-    "Bonuses": {
-      "Strength": {
-        "ID": 1,
-        "Max": 79,
-        "MaxHQ": 99,
-        "Relative": true,
-        "Value": 8,
-        "ValueHQ": 10
-      }
-    },
     "ID": 19886,
     "LevelEquip": 1,
-    "LevelItem": 288
-  },
-  {
+    "LevelItem": 288,
     "Bonuses": {
-      "Dexterity": {
-        "ID": 2,
-        "Max": 79,
-        "MaxHQ": 99,
+      "Strength": {
+        "ID": 1,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 79,
+        "MaxHQ": 99
       }
-    },
+    }
+  },
+  {
     "ID": 19887,
     "LevelEquip": 1,
-    "LevelItem": 288
-  },
-  {
+    "LevelItem": 288,
     "Bonuses": {
-      "Vitality": {
-        "ID": 3,
-        "Max": 78,
-        "MaxHQ": 98,
+      "Dexterity": {
+        "ID": 2,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 79,
+        "MaxHQ": 99
       }
-    },
+    }
+  },
+  {
     "ID": 19888,
     "LevelEquip": 1,
-    "LevelItem": 288
-  },
-  {
+    "LevelItem": 288,
     "Bonuses": {
-      "Intelligence": {
-        "ID": 4,
-        "Max": 79,
-        "MaxHQ": 99,
+      "Vitality": {
+        "ID": 3,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 78,
+        "MaxHQ": 98
       }
-    },
+    }
+  },
+  {
     "ID": 19889,
     "LevelEquip": 1,
-    "LevelItem": 288
-  },
-  {
+    "LevelItem": 288,
     "Bonuses": {
-      "Mind": {
-        "ID": 5,
-        "Max": 79,
-        "MaxHQ": 99,
+      "Intelligence": {
+        "ID": 4,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 79,
+        "MaxHQ": 99
       }
-    },
+    }
+  },
+  {
     "ID": 19890,
     "LevelEquip": 1,
-    "LevelItem": 288
-  },
-  {
+    "LevelItem": 288,
     "Bonuses": {
-      "Strength": {
-        "ID": 1,
-        "Max": 82,
-        "MaxHQ": 103,
+      "Mind": {
+        "ID": 5,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 79,
+        "MaxHQ": 99
       }
-    },
+    }
+  },
+  {
     "ID": 22447,
     "LevelEquip": 1,
-    "LevelItem": 320
-  },
-  {
+    "LevelItem": 320,
     "Bonuses": {
-      "Dexterity": {
-        "ID": 2,
-        "Max": 82,
-        "MaxHQ": 103,
+      "Strength": {
+        "ID": 1,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 82,
+        "MaxHQ": 103
       }
-    },
+    }
+  },
+  {
     "ID": 22448,
     "LevelEquip": 1,
-    "LevelItem": 320
-  },
-  {
+    "LevelItem": 320,
     "Bonuses": {
-      "Vitality": {
-        "ID": 3,
-        "Max": 82,
-        "MaxHQ": 103,
+      "Dexterity": {
+        "ID": 2,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 82,
+        "MaxHQ": 103
       }
-    },
+    }
+  },
+  {
     "ID": 22449,
     "LevelEquip": 1,
-    "LevelItem": 320
-  },
-  {
+    "LevelItem": 320,
     "Bonuses": {
-      "Intelligence": {
-        "ID": 4,
-        "Max": 82,
-        "MaxHQ": 103,
+      "Vitality": {
+        "ID": 3,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 82,
+        "MaxHQ": 103
       }
-    },
+    }
+  },
+  {
     "ID": 22450,
     "LevelEquip": 1,
-    "LevelItem": 320
-  },
-  {
+    "LevelItem": 320,
     "Bonuses": {
-      "Mind": {
-        "ID": 5,
-        "Max": 82,
-        "MaxHQ": 103,
+      "Intelligence": {
+        "ID": 4,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 82,
+        "MaxHQ": 103
       }
-    },
+    }
+  },
+  {
     "ID": 22451,
     "LevelEquip": 1,
-    "LevelItem": 320
-  },
-  {
+    "LevelItem": 320,
     "Bonuses": {
-      "Strength": {
-        "ID": 1,
-        "Max": 89,
-        "MaxHQ": 111,
+      "Mind": {
+        "ID": 5,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 82,
+        "MaxHQ": 103
       }
-    },
+    }
+  },
+  {
     "ID": 24261,
     "LevelEquip": 1,
-    "LevelItem": 350
-  },
-  {
-    "Bonuses": {
-      "Dexterity": {
-        "ID": 2,
-        "Max": 89,
-        "MaxHQ": 111,
-        "Relative": true,
-        "Value": 8,
-        "ValueHQ": 10
-      }
-    },
-    "ID": 24262,
-    "LevelEquip": 1,
-    "LevelItem": 350
-  },
-  {
-    "Bonuses": {
-      "Vitality": {
-        "ID": 3,
-        "Max": 90,
-        "MaxHQ": 113,
-        "Relative": true,
-        "Value": 8,
-        "ValueHQ": 10
-      }
-    },
-    "ID": 24263,
-    "LevelEquip": 1,
-    "LevelItem": 350
-  },
-  {
-    "Bonuses": {
-      "Intelligence": {
-        "ID": 4,
-        "Max": 89,
-        "MaxHQ": 111,
-        "Relative": true,
-        "Value": 8,
-        "ValueHQ": 10
-      }
-    },
-    "ID": 24264,
-    "LevelEquip": 1,
-    "LevelItem": 350
-  },
-  {
-    "Bonuses": {
-      "Mind": {
-        "ID": 5,
-        "Max": 89,
-        "MaxHQ": 111,
-        "Relative": true,
-        "Value": 8,
-        "ValueHQ": 10
-      }
-    },
-    "ID": 24265,
-    "LevelEquip": 1,
-    "LevelItem": 350
-  },
-  {
+    "LevelItem": 350,
     "Bonuses": {
       "Strength": {
         "ID": 1,
-        "Max": 94,
-        "MaxHQ": 117,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 89,
+        "MaxHQ": 111
       }
-    },
-    "ID": 27786,
-    "LevelEquip": 1,
-    "LevelItem": 430
+    }
   },
   {
+    "ID": 24262,
+    "LevelEquip": 1,
+    "LevelItem": 350,
     "Bonuses": {
       "Dexterity": {
         "ID": 2,
-        "Max": 94,
-        "MaxHQ": 117,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 89,
+        "MaxHQ": 111
       }
-    },
-    "ID": 27787,
-    "LevelEquip": 1,
-    "LevelItem": 430
+    }
   },
   {
+    "ID": 24263,
+    "LevelEquip": 1,
+    "LevelItem": 350,
     "Bonuses": {
       "Vitality": {
         "ID": 3,
-        "Max": 95,
-        "MaxHQ": 119,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 90,
+        "MaxHQ": 113
       }
-    },
-    "ID": 27788,
-    "LevelEquip": 1,
-    "LevelItem": 430
+    }
   },
   {
+    "ID": 24264,
+    "LevelEquip": 1,
+    "LevelItem": 350,
     "Bonuses": {
       "Intelligence": {
         "ID": 4,
-        "Max": 94,
-        "MaxHQ": 117,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 89,
+        "MaxHQ": 111
       }
-    },
-    "ID": 27789,
-    "LevelEquip": 1,
-    "LevelItem": 430
+    }
   },
   {
+    "ID": 24265,
+    "LevelEquip": 1,
+    "LevelItem": 350,
     "Bonuses": {
       "Mind": {
         "ID": 5,
-        "Max": 94,
-        "MaxHQ": 117,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 89,
+        "MaxHQ": 111
       }
-    },
-    "ID": 27790,
-    "LevelEquip": 1,
-    "LevelItem": 430
+    }
   },
   {
+    "ID": 27786,
+    "LevelEquip": 1,
+    "LevelItem": 430,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 94,
+        "MaxHQ": 117
+      }
+    }
+  },
+  {
+    "ID": 27787,
+    "LevelEquip": 1,
+    "LevelItem": 430,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 94,
+        "MaxHQ": 117
+      }
+    }
+  },
+  {
+    "ID": 27788,
+    "LevelEquip": 1,
+    "LevelItem": 430,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 95,
+        "MaxHQ": 119
+      }
+    }
+  },
+  {
+    "ID": 27789,
+    "LevelEquip": 1,
+    "LevelItem": 430,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 94,
+        "MaxHQ": 117
+      }
+    }
+  },
+  {
+    "ID": 27790,
+    "LevelEquip": 1,
+    "LevelItem": 430,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 94,
+        "MaxHQ": 117
+      }
+    }
+  },
+  {
+    "ID": 27957,
+    "LevelEquip": 1,
+    "LevelItem": 406,
     "Bonuses": {
       "Craftsmanship": {
         "ID": 70,
-        "Max": 33,
-        "MaxHQ": 41,
         "Relative": true,
         "Value": 2,
-        "ValueHQ": 3
+        "ValueHQ": 3,
+        "Max": 33,
+        "MaxHQ": 41
       }
-    },
-    "ID": 27957,
-    "LevelEquip": 1,
-    "LevelItem": 406
+    }
   },
   {
+    "ID": 27958,
+    "LevelEquip": 1,
+    "LevelItem": 412,
     "Bonuses": {
       "Control": {
         "ID": 71,
-        "Max": 34,
-        "MaxHQ": 42,
         "Relative": true,
         "Value": 2,
-        "ValueHQ": 3
+        "ValueHQ": 3,
+        "Max": 34,
+        "MaxHQ": 42
       }
-    },
-    "ID": 27958,
-    "LevelEquip": 1,
-    "LevelItem": 412
+    }
   },
   {
+    "ID": 27959,
+    "LevelEquip": 1,
+    "LevelItem": 412,
     "Bonuses": {
       "CP": {
         "ID": 11,
-        "Max": 13,
-        "MaxHQ": 16,
         "Relative": true,
         "Value": 5,
-        "ValueHQ": 6
+        "ValueHQ": 6,
+        "Max": 13,
+        "MaxHQ": 16
       }
-    },
-    "ID": 27959,
-    "LevelEquip": 1,
-    "LevelItem": 412
+    }
   },
   {
+    "ID": 27960,
+    "LevelEquip": 1,
+    "LevelItem": 395,
     "Bonuses": {
       "IncreasedSpiritbondGain": {
         "ID": 69,
@@ -1096,504 +1099,501 @@
         "Value": 5,
         "ValueHQ": 6
       }
-    },
-    "ID": 27960,
-    "LevelEquip": 1,
-    "LevelItem": 395
+    }
   },
   {
-    "Bonuses": {
-      "Strength": {
-        "ID": 1,
-        "Max": 99,
-        "MaxHQ": 124,
-        "Relative": true,
-        "Value": 8,
-        "ValueHQ": 10
-      }
-    },
     "ID": 27995,
     "LevelEquip": 1,
-    "LevelItem": 450
-  },
-  {
+    "LevelItem": 450,
     "Bonuses": {
-      "Dexterity": {
-        "ID": 2,
-        "Max": 99,
-        "MaxHQ": 124,
+      "Strength": {
+        "ID": 1,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 99,
+        "MaxHQ": 124
       }
-    },
+    }
+  },
+  {
     "ID": 27996,
     "LevelEquip": 1,
-    "LevelItem": 450
-  },
-  {
+    "LevelItem": 450,
     "Bonuses": {
-      "Vitality": {
-        "ID": 3,
-        "Max": 99,
-        "MaxHQ": 124,
+      "Dexterity": {
+        "ID": 2,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 99,
+        "MaxHQ": 124
       }
-    },
+    }
+  },
+  {
     "ID": 27997,
     "LevelEquip": 1,
-    "LevelItem": 450
-  },
-  {
+    "LevelItem": 450,
     "Bonuses": {
-      "Intelligence": {
-        "ID": 4,
-        "Max": 99,
-        "MaxHQ": 124,
+      "Vitality": {
+        "ID": 3,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 99,
+        "MaxHQ": 124
       }
-    },
+    }
+  },
+  {
     "ID": 27998,
     "LevelEquip": 1,
-    "LevelItem": 450
-  },
-  {
+    "LevelItem": 450,
     "Bonuses": {
-      "Mind": {
-        "ID": 5,
-        "Max": 99,
-        "MaxHQ": 124,
+      "Intelligence": {
+        "ID": 4,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 99,
+        "MaxHQ": 124
       }
-    },
+    }
+  },
+  {
     "ID": 27999,
     "LevelEquip": 1,
-    "LevelItem": 450
-  },
-  {
+    "LevelItem": 450,
     "Bonuses": {
-      "Strength": {
-        "ID": 1,
-        "Max": 106,
-        "MaxHQ": 133,
+      "Mind": {
+        "ID": 5,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 99,
+        "MaxHQ": 124
       }
-    },
+    }
+  },
+  {
     "ID": 29492,
     "LevelEquip": 1,
-    "LevelItem": 480
-  },
-  {
+    "LevelItem": 480,
     "Bonuses": {
-      "Dexterity": {
-        "ID": 2,
-        "Max": 106,
-        "MaxHQ": 133,
+      "Strength": {
+        "ID": 1,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 106,
+        "MaxHQ": 133
       }
-    },
+    }
+  },
+  {
     "ID": 29493,
     "LevelEquip": 1,
-    "LevelItem": 480
-  },
-  {
+    "LevelItem": 480,
     "Bonuses": {
-      "Vitality": {
-        "ID": 3,
-        "Max": 109,
-        "MaxHQ": 136,
+      "Dexterity": {
+        "ID": 2,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 106,
+        "MaxHQ": 133
       }
-    },
+    }
+  },
+  {
     "ID": 29494,
     "LevelEquip": 1,
-    "LevelItem": 480
-  },
-  {
+    "LevelItem": 480,
     "Bonuses": {
-      "Intelligence": {
-        "ID": 4,
-        "Max": 106,
-        "MaxHQ": 133,
+      "Vitality": {
+        "ID": 3,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 109,
+        "MaxHQ": 136
       }
-    },
+    }
+  },
+  {
     "ID": 29495,
     "LevelEquip": 1,
-    "LevelItem": 480
-  },
-  {
+    "LevelItem": 480,
     "Bonuses": {
-      "Mind": {
-        "ID": 5,
-        "Max": 106,
-        "MaxHQ": 133,
+      "Intelligence": {
+        "ID": 4,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 106,
+        "MaxHQ": 133
       }
-    },
+    }
+  },
+  {
     "ID": 29496,
     "LevelEquip": 1,
-    "LevelItem": 480
-  },
-  {
+    "LevelItem": 480,
     "Bonuses": {
-      "Strength": {
-        "ID": 1,
-        "Max": 115,
-        "MaxHQ": 144,
+      "Mind": {
+        "ID": 5,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 106,
+        "MaxHQ": 133
       }
-    },
+    }
+  },
+  {
     "ID": 31893,
     "LevelEquip": 1,
-    "LevelItem": 510
-  },
-  {
+    "LevelItem": 510,
     "Bonuses": {
-      "Dexterity": {
-        "ID": 2,
-        "Max": 115,
-        "MaxHQ": 144,
+      "Strength": {
+        "ID": 1,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 115,
+        "MaxHQ": 144
       }
-    },
+    }
+  },
+  {
     "ID": 31894,
     "LevelEquip": 1,
-    "LevelItem": 510
-  },
-  {
+    "LevelItem": 510,
     "Bonuses": {
-      "Vitality": {
-        "ID": 3,
-        "Max": 119,
-        "MaxHQ": 149,
+      "Dexterity": {
+        "ID": 2,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 115,
+        "MaxHQ": 144
       }
-    },
+    }
+  },
+  {
     "ID": 31895,
     "LevelEquip": 1,
-    "LevelItem": 510
-  },
-  {
+    "LevelItem": 510,
     "Bonuses": {
-      "Intelligence": {
-        "ID": 4,
-        "Max": 115,
-        "MaxHQ": 144,
+      "Vitality": {
+        "ID": 3,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 119,
+        "MaxHQ": 149
       }
-    },
+    }
+  },
+  {
     "ID": 31896,
     "LevelEquip": 1,
-    "LevelItem": 510
-  },
-  {
+    "LevelItem": 510,
     "Bonuses": {
-      "Mind": {
-        "ID": 5,
-        "Max": 115,
-        "MaxHQ": 144,
+      "Intelligence": {
+        "ID": 4,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 115,
+        "MaxHQ": 144
       }
-    },
+    }
+  },
+  {
     "ID": 31897,
     "LevelEquip": 1,
-    "LevelItem": 510
-  },
-  {
+    "LevelItem": 510,
     "Bonuses": {
-      "Strength": {
-        "ID": 1,
-        "Max": 137,
-        "MaxHQ": 172,
+      "Mind": {
+        "ID": 5,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 115,
+        "MaxHQ": 144
       }
-    },
+    }
+  },
+  {
     "ID": 36104,
     "LevelEquip": 1,
-    "LevelItem": 560
-  },
-  {
-    "Bonuses": {
-      "Dexterity": {
-        "ID": 2,
-        "Max": 137,
-        "MaxHQ": 172,
-        "Relative": true,
-        "Value": 8,
-        "ValueHQ": 10
-      }
-    },
-    "ID": 36105,
-    "LevelEquip": 1,
-    "LevelItem": 560
-  },
-  {
-    "Bonuses": {
-      "Vitality": {
-        "ID": 3,
-        "Max": 136,
-        "MaxHQ": 171,
-        "Relative": true,
-        "Value": 8,
-        "ValueHQ": 10
-      }
-    },
-    "ID": 36106,
-    "LevelEquip": 1,
-    "LevelItem": 560
-  },
-  {
-    "Bonuses": {
-      "Intelligence": {
-        "ID": 4,
-        "Max": 137,
-        "MaxHQ": 172,
-        "Relative": true,
-        "Value": 8,
-        "ValueHQ": 10
-      }
-    },
-    "ID": 36107,
-    "LevelEquip": 1,
-    "LevelItem": 560
-  },
-  {
-    "Bonuses": {
-      "Mind": {
-        "ID": 5,
-        "Max": 137,
-        "MaxHQ": 172,
-        "Relative": true,
-        "Value": 8,
-        "ValueHQ": 10
-      }
-    },
-    "ID": 36108,
-    "LevelEquip": 1,
-    "LevelItem": 560
-  },
-  {
+    "LevelItem": 560,
     "Bonuses": {
       "Strength": {
         "ID": 1,
-        "Max": 151,
-        "MaxHQ": 189,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 137,
+        "MaxHQ": 172
       }
-    },
-    "ID": 36109,
-    "LevelEquip": 1,
-    "LevelItem": 580
+    }
   },
   {
+    "ID": 36105,
+    "LevelEquip": 1,
+    "LevelItem": 560,
     "Bonuses": {
       "Dexterity": {
         "ID": 2,
-        "Max": 151,
-        "MaxHQ": 189,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 137,
+        "MaxHQ": 172
       }
-    },
-    "ID": 36110,
-    "LevelEquip": 1,
-    "LevelItem": 580
+    }
   },
   {
+    "ID": 36106,
+    "LevelEquip": 1,
+    "LevelItem": 560,
     "Bonuses": {
       "Vitality": {
         "ID": 3,
-        "Max": 155,
-        "MaxHQ": 194,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 136,
+        "MaxHQ": 171
       }
-    },
-    "ID": 36111,
-    "LevelEquip": 1,
-    "LevelItem": 580
+    }
   },
   {
+    "ID": 36107,
+    "LevelEquip": 1,
+    "LevelItem": 560,
     "Bonuses": {
       "Intelligence": {
         "ID": 4,
-        "Max": 151,
-        "MaxHQ": 189,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 137,
+        "MaxHQ": 172
       }
-    },
-    "ID": 36112,
-    "LevelEquip": 1,
-    "LevelItem": 580
+    }
   },
   {
+    "ID": 36108,
+    "LevelEquip": 1,
+    "LevelItem": 560,
     "Bonuses": {
       "Mind": {
         "ID": 5,
-        "Max": 151,
-        "MaxHQ": 189,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 137,
+        "MaxHQ": 172
       }
-    },
-    "ID": 36113,
-    "LevelEquip": 1,
-    "LevelItem": 580
+    }
   },
   {
+    "ID": 36109,
+    "LevelEquip": 1,
+    "LevelItem": 580,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 151,
+        "MaxHQ": 189
+      }
+    }
+  },
+  {
+    "ID": 36110,
+    "LevelEquip": 1,
+    "LevelItem": 580,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 151,
+        "MaxHQ": 189
+      }
+    }
+  },
+  {
+    "ID": 36111,
+    "LevelEquip": 1,
+    "LevelItem": 580,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 155,
+        "MaxHQ": 194
+      }
+    }
+  },
+  {
+    "ID": 36112,
+    "LevelEquip": 1,
+    "LevelItem": 580,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 151,
+        "MaxHQ": 189
+      }
+    }
+  },
+  {
+    "ID": 36113,
+    "LevelEquip": 1,
+    "LevelItem": 580,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 151,
+        "MaxHQ": 189
+      }
+    }
+  },
+  {
+    "ID": 36114,
+    "LevelEquip": 1,
+    "LevelItem": 527,
     "Bonuses": {
       "Craftsmanship": {
         "ID": 70,
-        "Max": 40,
-        "MaxHQ": 50,
         "Relative": true,
         "Value": 2,
-        "ValueHQ": 3
+        "ValueHQ": 3,
+        "Max": 40,
+        "MaxHQ": 50
       }
-    },
-    "ID": 36114,
-    "LevelEquip": 1,
-    "LevelItem": 527
+    }
   },
   {
+    "ID": 36115,
+    "LevelEquip": 1,
+    "LevelItem": 540,
     "Bonuses": {
       "Control": {
         "ID": 71,
-        "Max": 40,
-        "MaxHQ": 50,
         "Relative": true,
         "Value": 2,
-        "ValueHQ": 3
+        "ValueHQ": 3,
+        "Max": 40,
+        "MaxHQ": 50
       }
-    },
-    "ID": 36115,
-    "LevelEquip": 1,
-    "LevelItem": 540
+    }
   },
   {
+    "ID": 36116,
+    "LevelEquip": 1,
+    "LevelItem": 554,
     "Bonuses": {
       "CP": {
         "ID": 11,
-        "Max": 17,
-        "MaxHQ": 21,
         "Relative": true,
         "Value": 5,
-        "ValueHQ": 6
+        "ValueHQ": 6,
+        "Max": 17,
+        "MaxHQ": 21
       }
-    },
-    "ID": 36116,
-    "LevelEquip": 1,
-    "LevelItem": 554
+    }
   },
   {
+    "ID": 37840,
+    "LevelEquip": 1,
+    "LevelItem": 610,
     "Bonuses": {
       "Strength": {
         "ID": 1,
-        "Max": 178,
-        "MaxHQ": 223,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 178,
+        "MaxHQ": 223
       }
-    },
-    "ID": 37840,
-    "LevelEquip": 1,
-    "LevelItem": 610
+    }
   },
   {
+    "ID": 37841,
+    "LevelEquip": 1,
+    "LevelItem": 610,
     "Bonuses": {
       "Dexterity": {
         "ID": 2,
-        "Max": 178,
-        "MaxHQ": 223,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 178,
+        "MaxHQ": 223
       }
-    },
-    "ID": 37841,
-    "LevelEquip": 1,
-    "LevelItem": 610
+    }
   },
   {
+    "ID": 37842,
+    "LevelEquip": 1,
+    "LevelItem": 610,
     "Bonuses": {
       "Vitality": {
         "ID": 3,
-        "Max": 189,
-        "MaxHQ": 236,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 189,
+        "MaxHQ": 236
       }
-    },
-    "ID": 37842,
-    "LevelEquip": 1,
-    "LevelItem": 610
+    }
   },
   {
+    "ID": 37843,
+    "LevelEquip": 1,
+    "LevelItem": 610,
     "Bonuses": {
       "Intelligence": {
         "ID": 4,
-        "Max": 178,
-        "MaxHQ": 223,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 178,
+        "MaxHQ": 223
       }
-    },
-    "ID": 37843,
-    "LevelEquip": 1,
-    "LevelItem": 610
+    }
   },
   {
+    "ID": 37844,
+    "LevelEquip": 1,
+    "LevelItem": 610,
     "Bonuses": {
       "Mind": {
         "ID": 5,
-        "Max": 178,
-        "MaxHQ": 223,
         "Relative": true,
         "Value": 8,
-        "ValueHQ": 10
+        "ValueHQ": 10,
+        "Max": 178,
+        "MaxHQ": 223
       }
-    },
-    "ID": 37844,
-    "LevelEquip": 1,
-    "LevelItem": 610
+    }
   }
 ]

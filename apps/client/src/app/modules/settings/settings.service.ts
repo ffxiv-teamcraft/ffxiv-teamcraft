@@ -3,7 +3,7 @@ import { Observable, Subject } from 'rxjs';
 import { Theme } from './theme';
 import { IpcService } from '../../core/electron/ipc.service';
 import { Region } from './region.enum';
-import { filter, map, startWith } from 'rxjs/operators';
+import { debounceTime, filter, map, startWith } from 'rxjs/operators';
 import { CommissionTag } from '../commission-board/model/commission-tag';
 import { Language } from '../../core/data/language';
 import { NotificationSettings } from './notification-settings';
@@ -342,6 +342,14 @@ export class SettingsService {
     this.setSetting('startingPlace', startingPlace.toString());
   }
 
+  public get housingMap(): number {
+    return +this.getSetting('housingMap', '72');
+  }
+
+  public set housingMap(housingMap: number) {
+    this.setSetting('housingMap', housingMap.toString());
+  }
+
   public get freeAetheryte(): number {
     return +this.getSetting('freeAetheryte', '-1');
   }
@@ -460,6 +468,14 @@ export class SettingsService {
 
   public set compactAlarms(compact: boolean) {
     this.setSetting('compact-alarms', compact.toString());
+  }
+
+  public get autoMinimalistOnLargeLists(): boolean {
+    return this.getBoolean('auto-minimalist-large-lists', true);
+  }
+
+  public set autoMinimalistOnLargeLists(compact: boolean) {
+    this.setSetting('auto-minimalist-large-lists', compact.toString());
   }
 
   public get performanceMode(): boolean {
@@ -937,7 +953,8 @@ export class SettingsService {
             return JSON.parse(this._cache[change]);
         }
       }),
-      startWith(defaultValue)
+      startWith(defaultValue),
+      debounceTime(10)
     );
   }
 

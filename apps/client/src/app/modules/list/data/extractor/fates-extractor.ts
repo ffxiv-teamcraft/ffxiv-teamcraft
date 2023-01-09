@@ -1,8 +1,5 @@
 import { AbstractExtractor } from './abstract-extractor';
-import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { DataType } from '../data-type';
-import { Item } from '../../../../model/garland-tools/item';
-import { ItemData } from '../../../../model/garland-tools/item-data';
 import { FateData } from '../../model/fate-data';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest, Observable } from 'rxjs';
@@ -37,6 +34,7 @@ export class FatesExtractor extends AbstractExtractor<FateData[]> {
             };
             if (fateData.position) {
               fate.zoneId = fateData.position.zoneid;
+              fate.mapId = fateData.position.map;
               fate.coords = {
                 x: fateData.position.x,
                 y: fateData.position.y

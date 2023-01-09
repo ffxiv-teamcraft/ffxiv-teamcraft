@@ -27,7 +27,6 @@ export enum Job {
   GSM = "GSM",
   Gla = "GLA",
   Gnb = "GNB",
-  ID = "ID",
   Lnc = "LNC",
   Ltw = "LTW",
   Mch = "MCH",

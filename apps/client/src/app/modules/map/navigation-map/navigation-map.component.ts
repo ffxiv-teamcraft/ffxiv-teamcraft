@@ -41,7 +41,7 @@ export class NavigationMapComponent implements OnInit {
   }
 
   getPositionPercent(coords: Vector2): Vector2 {
-    const positionPercents = this.mapService.getPositionOnMap(this.map, coords);
+    const positionPercents = this.mapService.getPositionPercentOnMap(this.map, coords);
     return {
       x: positionPercents.x * this.containerRef.nativeElement.offsetWidth / 100,
       y: positionPercents.y * this.containerRef.nativeElement.offsetHeight / 100

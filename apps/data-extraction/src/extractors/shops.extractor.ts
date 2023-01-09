@@ -3,6 +3,7 @@ import { AbstractExtractor } from '../abstract-extractor';
 import { map } from 'rxjs/operators';
 import { StaticData } from '../static-data';
 import { uniq, uniqBy } from 'lodash';
+import { XivDataService } from '../xiv/xiv-data.service';
 
 interface TradeItem {
   id: number;
@@ -35,49 +36,43 @@ interface ShopLinkMaps {
 }
 
 export class ShopsExtractor extends AbstractExtractor {
-  protected doExtract(): void {
+  protected doExtract(xiv: XivDataService): void {
     combineLatest([
-      this.aggregateAllPages('https://xivapi.com/GilShop?columns=ID,Name_*,Items'),
-      this.aggregateAllPages('https://xivapi.com/SpecialShop?columns=ID,QuestItem*,SpecialShopItemCategory*,ItemReceive*,CountReceive*,HQReceive*,ItemCost*,CountCost*,HQCost*,CollectabilityRatingCost*,UseCurrencyType'),
-      this.aggregateAllPages('https://xivapi.com/GCScripShopItem?columns=ID,CostGCSeals,ItemTargetID,RequiredGrandCompanyRankTargetID'),
-      this.aggregateAllPages('https://xivapi.com/GCScripShopCategory?columns=ID,GrandCompany,Tier'),
-      this.aggregateAllPages('https://xivapi.com/TopicSelect?columns=ID,Name_*,Shop*,Url'),
-      this.aggregateAllPages('https://xivapi.com/CustomTalk?columns=ID,Name_*,SpecialLinks*,ScriptInstruction*,ScriptArg*,Icon*'),
-      this.aggregateAllPages('https://xivapi.com/PreHandler?columns=ID,TargetTargetID,UnlockQuestTargetID,Image'),
-      this.aggregateAllPages('https://xivapi.com/EnpcResident?columns=ID,Base'),
-      this.aggregateAllPages('https://xivapi.com/FateShop?columns=ID,SpecialShop0TargetID,SpecialShop1TargetID'),
-      this.aggregateAllPages('https://xivapi.com/InclusionShop?columns=ID,Category*'),
-      this.aggregateAllPages('https://xivapi.com/BnpcBase?columns=ID,ArrayEventHandler'),
-      this.get('https://xivapi.com/mappy/json')
+      this.getSheet<any>(xiv, 'GilShop', ['Name', 'Items.PriceMid']),
+      this.getSheet<any>(xiv, 'GilShopItem', ['Item.PriceMid'], true, 1),
+      this.getSheet<any>(xiv, 'SpecialShop', ['QuestItem#', 'SpecialShopItemCategory#', 'ItemReceive.PriceMid', 'CountReceive', 'HQReceive', 'ItemCost#', 'CountCost', 'HQCost', 'CollectabilityRatingCost', 'UseCurrencyType'], false, 1),
+      this.getSheet<any>(xiv, 'GCScripShopItem', ['CostGCSeals', 'Item#', 'RequiredGrandCompanyRank#']),
+      this.getSheet<any>(xiv, 'GCScripShopCategory', ['GrandCompany', 'Tier']),
+      this.getSheet<any>(xiv, 'TopicSelect', ['Name', 'Shop']),
+      this.getSheet<any>(xiv, 'CustomTalk', ['Name', 'SpecialLinks', 'ScriptInstruction', 'ScriptArg', 'Icon']),
+      this.getSheet<any>(xiv, 'PreHandler', ['Target#', 'UnlockQuest#', 'Image']),
+      this.getSheet<any>(xiv, 'EnpcResident', []),
+      this.getSheet<any>(xiv, 'EnpcBase', ['ENpcData']),
+      this.getSheet<any>(xiv, 'FateShop', ['SpecialShop']),
+      this.getSheet<any>(xiv, 'InclusionShop', ['Category.InclusionShopSeries.SpecialShop#'], false, 2),
+      this.getSheet<any>(xiv, 'BnpcBase', ['ArrayEventHandler.Data#'], true, 2),
+      this.getNonXivapiUrl('https://gubal.hasura.app/api/rest/bnpc')
     ]).pipe(
-      map(([gilShops,
+      map(([gilShops, gilShopItems,
              specialShops,
-             gcShopItems, gcShopCategories,
-             topicSelect, customTalk, preHandler, npcs,
+             gcShopItems,
+             gcShopCategories,
+             topicSelect,
+             customTalk,
+             preHandler,
+             npcs,
+             npcBases,
              fateShops,
              inclusionShops,
-             bnpcBases, mappyJSON]) => {
-        console.log('SHOPS LOADED');
+             bnpcBases]) => {
         const shops = uniqBy([
-          ...this.handleGilShops(gilShops),
+          ...this.handleGilShops(gilShops, gilShopItems),
           ...this.handleSpecialShops(specialShops),
           ...this.handleGCShop(gcShopItems, gcShopCategories)
         ], 'id');
-        console.log('SHOPS HANDLED');
-        const mappyJSONRecord = mappyJSON.reduce((acc, e) => {
-          if (e.Type !== 'BNPC') {
-            return acc;
-          }
-          return {
-            ...acc,
-            [e.BNpcBaseID]: e.BNpcNameID
-          };
-        }, {});
-        console.log('SHOPS MAPPY DONE');
-        let linked = this.linkNpcs(shops, npcs, topicSelect, customTalk, preHandler, fateShops, inclusionShops, specialShops);
-        console.log('SHOPS LINK NPC DONE');
+        const mappyJSONRecord = this.requireLazyFile('gubal-bnpcs-index');
+        let linked = this.linkNpcs(shops, npcs, npcBases, topicSelect, customTalk, preHandler, fateShops, inclusionShops, specialShops);
         linked = this.linkBNPCs(shops, bnpcBases, mappyJSONRecord);
-        console.log('SHOPS LINK BNPC DONE');
         return linked.map(shop => {
           if (shop.npcs.length === 0 && linked.some(s => this.hashShop(s) === this.hashShop(shop) && s.npcs.length > 0)) {
             return null;
@@ -86,7 +81,6 @@ export class ShopsExtractor extends AbstractExtractor {
         }).filter(shop => !!shop);
       })
     ).subscribe((shops) => {
-      console.log('SHOPS START PERSISTENCE');
       this.persistToJsonAsset('shops', shops);
       this.persistToJsonAsset('shops-by-npc', shops.reduce((acc, shop) => {
         shop.npcs.forEach(npc => {
@@ -102,21 +96,21 @@ export class ShopsExtractor extends AbstractExtractor {
   private handleGCShop(gcShopItems: any[], gcShopCategories: any[]): Shop[] {
     return gcShopCategories.map(category => {
       const shop: Shop = {
-        id: category.ID,
+        id: category.index,
         type: 'GCShop',
-        gc: category.GrandCompany.ID,
-        npcs: [[1002387, 1002393, 1002390][category.GrandCompany.ID - 1]],
+        gc: category.GrandCompany,
+        npcs: [[1002387, 1002393, 1002390][category.GrandCompany - 1]],
         trades: gcShopItems
-          .filter(item => item.ID.startsWith(category.ID.toString()))
+          .filter(item => item.index === category.index)
           .map(item => {
             return {
-              requiredGCRank: item.RequiredGrandCompanyRankTargetID,
+              requiredGCRank: item.RequiredGrandCompanyRank,
               currencies: [{
-                id: [20, 21, 22][category.GrandCompany.ID - 1],
+                id: [20, 21, 22][category.GrandCompany - 1],
                 amount: item.CostGCSeals
               }].filter(row => row.id > 0 && row.amount > 0),
               items: [{
-                id: item.ItemTargetID,
+                id: item.Item,
                 amount: 1
               }].filter(row => row.id > 0 && row.amount > 0)
             };
@@ -128,23 +122,28 @@ export class ShopsExtractor extends AbstractExtractor {
       .filter(s => s.trades.length > 0);
   }
 
-  private handleGilShops(gilShops: any[]): Shop[] {
-
+  private handleGilShops(gilShops: any[], gilShopItems: any[]): Shop[] {
     return gilShops
-      .filter(shop => shop.Items !== null)
+      .map(shop => {
+        return {
+          ...shop,
+          Items: gilShopItems.filter(shopItem => shopItem.index === shop.index)
+        };
+      })
+      .filter(shop => shop.Items.length > 0)
       .map(gilShop => {
         return {
-          id: gilShop.ID,
+          id: gilShop.index,
           type: 'GilShop',
           npcs: [],
           trades: gilShop.Items.map(item => {
             return {
               currencies: [{
                 id: 1,
-                amount: item.PriceMid
+                amount: item.Item.PriceMid
               }].filter(c => c.amount > 0),
               items: [{
-                id: item.ID,
+                id: item.Item.index,
                 amount: 1
               }]
             };
@@ -155,26 +154,27 @@ export class ShopsExtractor extends AbstractExtractor {
 
   private handleSpecialShops(specialShops: any[]): Shop[] {
     return specialShops.map(specialShop => {
-      const tradeIds = uniq(Object.keys(specialShop)
-        .map(key => /ItemReceive(\d+)TargetID/.exec(key))
-        .filter(res => res !== null)
-        .map(match => {
-          // Trade indexes are always **0 or 1 or 2, because trades in XIV can only take up to 3 items and give up to 3 items.
-          return Math.floor(+match[1] / 10);
-        }));
+      // Inverting 2D arrays to make them easier to process for trades
+      specialShop.ItemReceive = this.invert2DArray(specialShop.ItemReceive);
+      specialShop.ItemCost = this.invert2DArray(specialShop.ItemCost);
+      specialShop.CountCost = this.invert2DArray(specialShop.CountCost);
+      specialShop.HQCost = this.invert2DArray(specialShop.HQCost);
+      specialShop.CollectabilityRatingCost = this.invert2DArray(specialShop.CollectabilityRatingCost);
+      specialShop.CountReceive = this.invert2DArray(specialShop.CountReceive);
+      specialShop.SpecialShopItemCategory = this.invert2DArray(specialShop.SpecialShopItemCategory);
+      specialShop.HQReceive = this.invert2DArray(specialShop.HQReceive);
       const shop: Shop = {
-        id: specialShop.ID,
+        id: specialShop.index,
         type: 'SpecialShop',
         npcs: [],
-        trades: tradeIds.map(tradeID => {
-          const tradeIndexes = [`${tradeID}0`, `${tradeID}1`, `${tradeID}2`];
+        trades: specialShop.ItemReceive.map((items, tradeIndex) => {
           const trade: Trade = {
-            currencies: tradeIndexes.map(tradeIndex => {
+            currencies: specialShop.ItemCost[tradeIndex].map((cost, costIndex) => {
               const entry = {
-                id: specialShop[`ItemCost${tradeIndex}TargetID`],
-                amount: specialShop[`CountCost${tradeIndex}`] || (specialShop.UseCurrencyType === 8 ? specialShop[`ItemReceive${tradeIndex}`]?.PriceMid || 0 : 0),
-                hq: specialShop[`HQCost${tradeIndex}`] === 1,
-                collectability: specialShop[`CollectabilityRatingCost${tradeIndex}`]
+                id: cost,
+                amount: specialShop.CountCost[tradeIndex][costIndex] || (specialShop.UseCurrencyType === 8 ? specialShop.ItemReceive[tradeIndex][costIndex]?.PriceMid || 0 : 0),
+                hq: specialShop.HQCost[tradeIndex][costIndex] > 0,
+                collectability: specialShop.CollectabilityRatingCost[tradeIndex][costIndex]
               };
 
               if (!entry.hq) {
@@ -185,7 +185,7 @@ export class ShopsExtractor extends AbstractExtractor {
                 delete entry.collectability;
               }
 
-              if (specialShop.UseCurrencyType === 16) {
+              if (specialShop.UseCurrencyType === 16 && entry.id !== 25) {
                 entry.id = StaticData.CURRENCIES[entry.id] || entry.id;
               }
 
@@ -194,11 +194,11 @@ export class ShopsExtractor extends AbstractExtractor {
               }
               return entry;
             }).filter(row => row.id > 0 && row.amount > 0),
-            items: tradeIndexes.map(tradeIndex => {
+            items: items.map((item, itemIndex) => {
               const entry = {
-                id: specialShop[`ItemReceive${tradeIndex}TargetID`],
-                amount: specialShop[`CountReceive${tradeIndex}`],
-                hq: specialShop[`HQReceive${tradeIndex}`] === 1
+                id: item.index,
+                amount: specialShop.CountReceive[tradeIndex][itemIndex],
+                hq: specialShop.HQReceive[tradeIndex][itemIndex]
               };
 
               if (!entry.hq) {
@@ -207,16 +207,16 @@ export class ShopsExtractor extends AbstractExtractor {
               return entry;
             }).filter(row => row.id > 0 && row.amount > 0)
           };
-          const req = specialShop[`QuestItem${tradeID}TargetID`];
+          const req = specialShop.QuestItem[tradeIndex];
           if (req > 0) {
             // This cannot be a quest, it's for fate shop rank flags !
             if (req < 120) {
-              const allRanks = uniq(tradeIds.map(id => specialShop[`QuestItem${id}TargetID`])).sort();
+              const allRanks = uniq([0, 1, 2].map(id => specialShop.QuestItem[id])).sort();
               trade.requiredFateRank = allRanks.indexOf(req);
             }
           }
           return trade;
-        }).filter(t => t.currencies.length > 0)
+        }).filter(t => t.currencies.length > 0 && t.items.length > 0)
       };
       return shop;
     }).filter(shop => shop.trades.length > 0);
@@ -228,12 +228,12 @@ export class ShopsExtractor extends AbstractExtractor {
       + shop.trades.map(t => t.items.map(item => `${item.id}|${item.amount}|${item.hq}`).join(',')).join(':');
   }
 
-  private linkNpcs(shops: Shop[], npcs: { ID: number, Base: any }[], topicSelect: any[], customTalk: any[], preHandler: any[], fateShops: any[], inclusionShops: any[], specialShops: any[]): Shop[] {
+  private linkNpcs(shops: Shop[], npcs: { index: number }[], npcBases: any[], topicSelect: any[], customTalk: any[], preHandler: any[], fateShops: any[], inclusionShops: any[], specialShops: any[]): Shop[] {
     const {
       npcsByShopID,
       topicSelects,
       questReqs
-    } = this.buildShopLinkMaps(npcs, topicSelect, customTalk, preHandler, fateShops, inclusionShops, specialShops);
+    } = this.buildShopLinkMaps(npcs, npcBases, topicSelect, customTalk, preHandler, fateShops, inclusionShops, specialShops);
 
     return shops.map(shop => {
       if (shop.type === 'GCShop') {
@@ -250,18 +250,22 @@ export class ShopsExtractor extends AbstractExtractor {
     });
   }
 
-  private linkBNPCs(shops: Shop[], bnpcs: { ID: number, ArrayEventHandler: any }[], mappyJSON: Record<number, number>): Shop[] {
+  private isGilShopID(id: number): boolean {
+    return id >= 262144 && id < 270000;
+  }
+
+  private linkBNPCs(shops: Shop[], bnpcs: { index: number, ArrayEventHandler: any }[], mappyJSON: Record<number, number>): Shop[] {
     const npcsByShopID = bnpcs.filter(bnpc => {
-      return bnpc.ArrayEventHandler && Object.entries<string>(bnpc.ArrayEventHandler).some(([key, value]) => key.endsWith('Target') && value.endsWith('Shop'));
+      return bnpc.ArrayEventHandler && bnpc.ArrayEventHandler.Data.some((data) => this.isGilShopID(data));
     }).reduce((acc, bnpc) => {
-      const nameId = mappyJSON[bnpc.ID];
+      const nameId = mappyJSON[bnpc.index];
       if (!nameId) {
         return acc;
       }
-      Object.keys(bnpc.ArrayEventHandler)
-        .forEach(key => {
-          if (key.endsWith('Target') && bnpc.ArrayEventHandler[key]?.endsWith('Shop')) {
-            const shopID = bnpc.ArrayEventHandler[`${key}ID`];
+      bnpc.ArrayEventHandler.Data
+        .forEach(data => {
+          if (this.isGilShopID(data)) {
+            const shopID = data;
             if (shopID > 0) {
               acc[shopID] = [
                 ...(acc[shopID] || []),
@@ -285,17 +289,18 @@ export class ShopsExtractor extends AbstractExtractor {
     return 'shops';
   }
 
-  private buildShopLinkMaps(npcData: { ID: number, Base: any }[], topicSelect: any[], customTalk: any[], preHandlers: any[], fateShops: any[], inclusionShops: any[], specialShops: any[]): ShopLinkMaps {
+  private buildShopLinkMaps(npcData: { index: number }[], npcBases: any[], topicSelect: any[], customTalk: any[], preHandlers: any[], fateShops: any[], inclusionShops: any[], specialShops: any[]): ShopLinkMaps {
     const questReqs = {};
     const topicSelects = {};
 
     let npcsByShopID = npcData.reduce((acc, npc) => {
       for (let i = 0; i < 32; i++) {
-        const dataID = npc.Base[`ENpcData${i}`];
+        const base = npcBases.find(base => base.index === npc.index);
+        const dataID = base.ENpcData[i];
         if (!acc[dataID]) {
           acc[dataID] = [];
         }
-        acc[dataID].push(npc.ID);
+        acc[dataID].push(npc.index);
       }
       return acc;
     }, {});
@@ -304,39 +309,39 @@ export class ShopsExtractor extends AbstractExtractor {
 
     topicSelect.forEach((topic) => {
       for (let i = 0; i < 10; i++) {
-        const dataID = topic[`Shop${i}`];
+        const dataID = topic.Shop[i];
         if (dataID > 0) {
           npcsByShopID[dataID] = [
             ...(npcsByShopID[dataID] || []),
-            ...(npcsByShopID[topic.ID] || [])
+            ...(npcsByShopID[topic.index] || [])
           ];
-          topicSelects[dataID] = topic.ID;
+          topicSelects[dataID] = topic.index;
         }
       }
     });
 
     preHandlers.forEach(preHandler => {
-      npcsByShopID[preHandler.TargetTargetID] = [...(npcsByShopID[preHandler.TargetTargetID] || []), ...(npcsByShopID[preHandler.ID] || [])];
+      npcsByShopID[preHandler.Target] = [...(npcsByShopID[preHandler.Target] || []), ...(npcsByShopID[preHandler.index] || [])];
     });
 
     // Then InclusionShops because they sometimes link from PreHandler
     inclusionShops.forEach(inclusionShop => {
       for (let i = 0; i < 30; i++) {
-        const category = inclusionShop[`Category${i}`];
+        const category = inclusionShop.Category[i];
         if (!category) {
           continue;
         }
         category.InclusionShopSeries.forEach(shopSeries => {
-          npcsByShopID[shopSeries.SpecialShopTargetID] = [...(npcsByShopID[shopSeries.SpecialShopTargetID] || []), ...(npcsByShopID[inclusionShop.ID] || [])];
+          npcsByShopID[shopSeries.SpecialShop] = [...(npcsByShopID[shopSeries.SpecialShop] || []), ...(npcsByShopID[inclusionShop.index] || [])];
         });
       }
     });
 
     fateShops.forEach(fateShop => {
       [0, 1].forEach(i => {
-        const specialShopID = fateShop[`SpecialShop${i}TargetID`];
+        const specialShopID = fateShop.SpecialShop[i];
         if (specialShopID > 0) {
-          npcsByShopID[specialShopID] = [fateShop.ID];
+          npcsByShopID[specialShopID] = [fateShop.index];
         }
       });
     });
@@ -353,16 +358,16 @@ export class ShopsExtractor extends AbstractExtractor {
       721385: [262919]
     };
     const dataIdsByCustomTalks = customTalks.reduce((acc, talk) => {
-      if (!acc[talk.ID]) {
-        acc[talk.ID] = [];
+      if (!acc[talk.index]) {
+        acc[talk.index] = [];
       }
       if (talk.SpecialLinks) {
-        acc[talk.ID].push(talk.SpecialLinks);
+        acc[talk.index].push(talk.SpecialLinks);
       }
       for (let i = 0; i < 30; i++) {
-        const scriptInstruction = talk[`ScriptInstruction${i}`];
-        const scriptArg = talk[`ScriptArg${i}`];
-        if (talk.ID === 721479) { // local fate shops
+        const scriptInstruction = talk.ScriptInstruction[i];
+        const scriptArg = talk.ScriptArg[i];
+        if (talk.index === 721479) { // local fate shops
           if (scriptInstruction.includes('FATESHOP_REWARD')) {
             const shop = specialShops.find(s => {
               return Object.entries(s).some(([k, v]) => k.startsWith('QuestItem') && k.endsWith('TargetID') && v === scriptArg);
@@ -371,12 +376,12 @@ export class ShopsExtractor extends AbstractExtractor {
               const tokenizedInstruction = scriptInstruction.split('_');
               const placeNameEngrish = tokenizedInstruction[tokenizedInstruction.length - 1].slice(0, -1).replace('LAKELAND', 'LAKERAND'); // LAKERAND lmao
               const npcInstructionIndex = [0, 1, 2, 3, 4, 5, 6]
-                .find(j => talk[`ScriptInstruction${j}`] === `FATESHOP_ENPCID_${placeNameEngrish}`);
-              preEndwalkerGemstoneShops[shop.ID] = [talk[`ScriptArg${npcInstructionIndex}`]];
+                .find(j => talk.ScriptInstruction[j] === `FATESHOP_ENPCID_${placeNameEngrish}`);
+              preEndwalkerGemstoneShops[shop.index] = [talk.ScriptArg[npcInstructionIndex]];
             }
           }
         } else if (scriptInstruction.includes('SHOP')) {
-          acc[talk.ID].push(scriptArg);
+          acc[talk.index].push(scriptArg);
         }
       }
       return acc;

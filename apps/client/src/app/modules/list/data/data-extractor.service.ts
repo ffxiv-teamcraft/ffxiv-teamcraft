@@ -84,7 +84,7 @@ export class DataExtractorService {
         return {
           type: type,
           data: extract
-        };
+        } as any;
       })
     );
   }

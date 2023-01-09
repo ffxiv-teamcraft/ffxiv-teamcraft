@@ -99,10 +99,27 @@ export class IpcListenersManager {
     });
   }
 
+  private forwardToMain(channel: string): void {
+    ipcMain.on(channel, (e, data) => this.mainWindow.win.webContents.send(channel, data));
+  }
+
   private setupOverlayListeners(): void {
     ipcMain.on('overlay', (event, data) => {
       this.overlayManager.toggleOverlay(data);
     });
+
+    ipcMain.on('overlay:pcap', (event, { url, enabled }) => {
+      if (enabled) {
+        this.pcap.registerOverlayListener(url, packet => {
+          this.overlayManager.sendToOverlay(url, 'packet', packet);
+        });
+      } else {
+        this.pcap.unregisterOverlayListener(url);
+      }
+    });
+
+    this.forwardToMain('list:setItemDone');
+    this.forwardToMain('list:setListItemDone');
 
     ipcMain.on('overlay:set-opacity', (event, data) => {
       const overlayWindow = this.overlayManager.getOverlay(data.uri);
@@ -147,7 +164,8 @@ export class IpcListenersManager {
       '/fishing-reporter-overlay'
     ];
     const overlaysNeedingState = [
-      '/list-panel-overlay'
+      '/list-panel-overlay',
+      '/step-by-step-list-overlay'
     ];
 
     ipcMain.on('fishing-state:set', (_, data) => {
@@ -455,11 +473,11 @@ export class IpcListenersManager {
     //       worker.terminate();
     //   });
     // });
-    // ipcMain.on('lodestone:searchCharacter', (event, { name, server }) => {
-    //   this.characterSearchParser.parse({ query: { name, server } } as any).then((res: { List: any[] }) => {
-    //     event.sender.send('lodestone:character:search', res.List);
-    //   });
-    // });
+    ipcMain.on('lodestone:searchCharacter', (event, { name, server }) => {
+      this.characterSearchParser.parse({ query: { name, server } } as any).then((res: { List: any[] }) => {
+        event.sender.send('lodestone:character:search', res.List);
+      });
+    });
   }
 
   private sendPageView(ga3user: any, url: string): void {
