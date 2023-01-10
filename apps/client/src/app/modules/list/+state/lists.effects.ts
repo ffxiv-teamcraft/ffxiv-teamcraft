@@ -114,11 +114,11 @@ export class ListsEffects {
     first(),
     switchMap(() => combineLatest([this.authFacade.user$, this.authFacade.fcId$])),
     distinctUntilChanged(),
-    exhaustMap(([user, fcId]) => {
+    switchMap(([user, fcId]) => {
       // First of all, load using user Id
       return this.listService.getShared(user.$key).pipe(
         switchMap((lists) => {
-          // If we don't have fc informations yet, return the lists directly.
+          // If we don't have fc information yet, return the lists directly.
           if (!fcId) {
             return of(lists);
           }

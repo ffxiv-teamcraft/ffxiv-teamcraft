@@ -2,6 +2,46 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.9.14"></a>
+## [9.9.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.13...v9.9.14) (2022-12-30)
+
+
+### Bug Fixes
+
+* **simulator:** fixed an error in icon rendering making it too large for the button ([033b955](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/033b955))
+* **voyage-tracker:** fixed submarine voyages displayed as object object ([b854f4e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b854f4e))
+
+
+
+<a name="9.9.13"></a>
+## [9.9.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.12...v9.9.13) (2022-12-30)
+
+
+### Bug Fixes
+
+* **db:** fixed monster positions sometimes vanishing after navigation ([e2fe855](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e2fe855))
+* **db:** fixed Wolf marks sometimes confused with faerie tribe tokens ([95fabe1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/95fabe1))
+* **desktop:** fixed overlay error after closing it from windows ([c4e2630](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c4e2630))
+* **gathering-location:** fixed an issue with search breaking after leaving the page ([2be165b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2be165b))
+* **leveling-equipment:** fixed wrong stat priority for crafting jobs ([a54f45b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a54f45b))
+* **list:** fixed list split sometimes forgetting some materials ([ce97ad6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ce97ad6))
+* **list-details:** better UX for list completion popup ([ee45263](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ee45263))
+* **lists:** fixed FC sharing not working with lists ([3d498e8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3d498e8))
+* **lists:** fixed log completion on crafting rows not being applied ([9f69e08](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9f69e08))
+* **lists:** it's no longer possible to archive an offline list ([5c82974](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5c82974))
+* **simulator:** fixed Tricks of the Trade removing Heart and Soul buff ([6c1dc82](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6c1dc82))
+
+
+### Features
+
+* **data:** update for cn patch-6.18 ([62558d7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/62558d7))
+* **data:** update for cn patch-6.2 ([064968e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/064968e))
+* **db:** 1200+ allagan reports import ([948208b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/948208b))
+* **db:** support for korean v6.15 update ([fcf2f1f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fcf2f1f))
+* **voyage-tracker:** submarine voyages are now using letter name instead of index ([2e9caa9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2e9caa9))
+
+
+
 <a name="9.9.12"></a>
 ## [9.9.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.11...v9.9.12) (2022-11-13)
 

@@ -569,6 +569,16 @@
       "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
     }
   },
+  "58": {
+    "value": 2,
+    "conditionValue": 3750,
+    "bonus": {
+      "zh": "采集次数/耐久＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
   "59": {
     "value": 1,
     "conditionValue": 804,
@@ -779,6 +789,36 @@
       "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
     }
   },
+  "81": {
+    "value": 30,
+    "conditionValue": 3800,
+    "bonus": {
+      "zh": "额外采集奖励发生率＋<Value>IntegerParameter(1)</Value>%"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "82": {
+    "value": 1,
+    "conditionValue": 3590,
+    "bonus": {
+      "zh": "获得数＋<Value>IntegerParameter(1)</Value>个（上升型）"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "83": {
+    "value": 1,
+    "conditionValue": 850,
+    "bonus": {
+      "zh": "采集次数/耐久＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
   "84": {
     "value": 10,
     "conditionValue": 90,
@@ -814,6 +854,26 @@
     "conditionValue": 90,
     "bonus": {
       "zh": "高于自身等级道具获得率＋<Value>IntegerParameter(1)</Value>%"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "88": {
+    "value": 50,
+    "conditionValue": 3910,
+    "bonus": {
+      "zh": "收藏价值最大时：升华率＋<Value>IntegerParameter(1)</Value>%"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "89": {
+    "value": 10,
+    "conditionValue": 3300,
+    "bonus": {
+      "zh": "收藏价值最大时：升华率＋<Value>IntegerParameter(1)</Value>%（上升型）"
     },
     "condition": {
       "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"

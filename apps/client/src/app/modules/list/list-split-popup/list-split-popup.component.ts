@@ -5,6 +5,8 @@ import { ListRow } from '../model/list-row';
 import { ListsFacade } from '../+state/lists.facade';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { ListController } from '../list-controller';
+import { ListManagerService } from '../list-manager.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-list-split-popup',
@@ -21,7 +23,7 @@ export class ListSplitPopupComponent {
   public selectedItems = [];
 
   public constructor(private listPicker: ListPickerService, private listsFacade: ListsFacade,
-                     private modalRef: NzModalRef) {
+                     private modalRef: NzModalRef, private listManager: ListManagerService) {
   }
 
   setSelection(item: ListRow, selected: boolean): void {
@@ -47,7 +49,11 @@ export class ListSplitPopupComponent {
     this.listPicker.addToList(...itemsToAdd);
     if (this.removeFromList) {
       this.list.finalItems = this.list.finalItems.filter(row => !this.selectedItems.includes(row.id));
-      this.listsFacade.updateList(ListController.clean(this.list));
+      this.listManager.upgradeList(ListController.clean(this.list)).pipe(
+        first()
+      ).subscribe(res => {
+        this.listsFacade.updateList(res);
+      });
     }
     this.modalRef.close();
   }

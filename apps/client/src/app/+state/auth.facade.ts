@@ -215,7 +215,8 @@ export class AuthFacade {
       }
     }),
     map(entry => entry.id),
-    startWith('')
+    startWith(''),
+    distinctUntilChanged()
   );
 
   gearSets$ = this.loggedIn$.pipe(
