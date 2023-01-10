@@ -2370,6 +2370,8 @@
     "Import_success": "表盘已面板",
     "Nothing_to_show": "没有可展示的数据",
     "Nothing_to_show_description": "请确保您选择了一个您启用了 TC 捕获数据的时间期间，并检查是否启用了此选项(在 设置 -> 客户端 中勾选启用计量捕获)",
+    "Importing": "Importing metrics data to the new sql format, please don't close Teamcraft. This may take up to 15 minutes.",
+    "Imported": "Metrics data has been imported.",
     "SOURCES": {
       "UNKNOWN": "未知",
       "GATHERING": "采集",
