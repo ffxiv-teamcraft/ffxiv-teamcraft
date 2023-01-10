@@ -52,7 +52,6 @@ export class MetricsSystem {
       this.db.serialize(() => {
         const stmt = this.db.prepare(`SELECT * FROM records WHERE timestamp >= (?) AND timestamp <= (?)`);
         stmt.all([Math.floor(from.getTime() / 1000), Math.floor(to.getTime() / 1000)], (err, rows) => {
-          console.log('LOAD', [Math.floor(from.getTime() / 1000), Math.floor(to.getTime() / 1000)], rows, err);
           event.sender.send('metrics:loaded', rows.map(row => {
             if (row.data) {
               row.data = JSON.parse(row.data);
