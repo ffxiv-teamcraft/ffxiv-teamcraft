@@ -22,7 +22,7 @@ import { StepByStepList } from './model/step-by-step-list';
 import { ListDisplay } from '../../../core/layout/list-display';
 import { DataType } from '../data/data-type';
 
-@Component({})
+@Component({ template: '' })
 export abstract class StepByStepComponent extends TeamcraftComponent {
 
   selectedMap$ = new BehaviorSubject(0);
