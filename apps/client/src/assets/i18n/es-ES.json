@@ -471,6 +471,7 @@
     "Enable_autofill_notification_by_default": "Activar notificación de autocompletado por defecto",
     "Enable_autofill_hq_filter": "Solo autocompletar usando elementos HQ cuando el artículo es requerido como HQ",
     "Enable_autofill_nq_filter": "Autorellenar con material nq solamente si no es necesario que sea HQ",
+    "Auto_minimalist_large_lists": "Automatically switch to minimalist mode for large lists",
     "Contribute_to_universalis": "Contribuir a Universalis",
     "Track_items_on_sale": "Rastrear artículos a la venta en sus retenedores (requiere reiniciar/actualizar)",
     "Change_email": "Cambiar correo electrónico",
@@ -519,6 +520,8 @@
     "Materia_confidence_rate": "Probabilidad de éxito del melding",
     "Materia_confidence_rate_explain": "La probabilidad de éxito para las materias es una estimación. Un valor mayor propondrá mayor cantidad de materia para estar (casi) seguro de tener éxito",
     "Disable_hardware_acceleration": "Disable hardware acceleration",
+    "Housing_map": "Housing map",
+    "Housing_map_explain": "The housing map in which your house is",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -612,7 +615,8 @@
     "Add_selection_to_list": "Agregar selección a la lista",
     "Your_lists": "Sus listas",
     "Outdated_tag": "Desactualizado",
-    "No_lists": "No tiene listas",
+    "No_lists": "No lists to display here",
+    "List_aggregates": "List aggregates",
     "Lists_search_placeholder": "Buscar una lista…",
     "Add_to_a_list": "Agregar a una lista",
     "Please_pick_recipe": "Por favor elija una receta para este artículo",
@@ -771,6 +775,25 @@
     "Inventory_cleanup_description": "Estos son los objetos de tu inventario que no se usan en la lista",
     "Consider_requirements": "Considerar requisitos",
     "Ignore_requirements": "Ignorar los requisitos",
+    "STEP_BY_STEP": {
+      "Previous": "Previous map",
+      "Previous_incomplete": "Previous incomplete map",
+      "Next": "Next map",
+      "Next_incomplete": "Next incomplete map",
+      "Global_list_progress": "Global list progress",
+      "Alarms": "Timed rows",
+      "Crafts": "Ordered crafts",
+      "Toggle_overlay": "Open/Close step by step overlay",
+      "Empty_map": "Nothing to do in the current map, closest map for this list is {{closest}}",
+      "Unknown_map": "Unknown map, please change map to allow TC to detect it.",
+      "No_list": "No list, please open a list in main window to have the overlay work as intended."
+    },
+    "DISPLAY_MODE": {
+      "Title": "Display mode",
+      "Full": "Full",
+      "Minimalist": "Minimalist",
+      "Step_by_step": "Step by step"
+    },
     "SOURCES": {
       "Gatherable": "Puede recolectarse, haga clic para ver más detalles"
     },
@@ -2946,6 +2969,23 @@
     "Explain_cost_to_craft": "Added cost of all materials excluding crystals to craft one item using only materials from marketboard.",
     "Empty_list": "Empty list, click the + button on an item to add it here",
     "Add_to_list": "Add these items to a list"
+  },
+  "LIST_AGGREGATE": {
+    "Home_title": "List Aggregate",
+    "Home_subtitle": "Open multiple lists at once in an aggregated view",
+    "Select_lists": "Select the lists you want to aggregate",
+    "Select_layout": "Select a layout",
+    "Open_aggregate": "Open an aggregated view",
+    "Title": "Aggregated list view",
+    "Select_panel": "Select a panel to open its view",
+    "Missing_lists": "{{amount}} list(s) could not be loaded properly",
+    "Remove_missing_ids": "Remove missing lists from the aggregate",
+    "Missing_lists_description": "Please make sure you have enough permissions on all the lists and that they still exist (missing ids: {{ids}}).",
+    "Save": "Save this aggregate to your lists page",
+    "Saved": "Aggregate saved to your lists page",
+    "Final_items_count": "# of items",
+    "Requirement_items_count": "# of required items",
+    "Switch_panel": "Switch panel"
   },
   "MACHINA_ERRORS": {
     "Default": "Machina Wrapper error",
