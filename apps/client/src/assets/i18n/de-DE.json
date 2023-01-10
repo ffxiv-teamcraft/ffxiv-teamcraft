@@ -471,6 +471,7 @@
     "Enable_autofill_notification_by_default": "Autovervollständigungsbenachrichtigung standardmäßig aktivieren",
     "Enable_autofill_hq_filter": "HQ-Gegenstände nur automatisch füllen, wenn der Gegenstand als HQ benötigt wird",
     "Enable_autofill_nq_filter": "NQ-Gegenstände nur automatisch füllen, wenn der Gegenstand nicht in HQ benötigt wird",
+    "Auto_minimalist_large_lists": "Automatically switch to minimalist mode for large lists",
     "Contribute_to_universalis": "Zu Universalis beitragen",
     "Track_items_on_sale": "Zum Verkauf stehende Gegenstände von Gehilfen verfolgen (erfordert Neustart/Aktualisierung)",
     "Change_email": "E-Mail Adresse ändern",
@@ -519,6 +520,8 @@
     "Materia_confidence_rate": "Erfolgsrate fürs Materia einsetzen",
     "Materia_confidence_rate_explain": "Zuversichtsrate für Materiaschätzungen. Höher bedeutet, dass mehr Materia vorgeschlagen wird, damit der Wert für erfolgreiche Verschmelzungen verlässlicher wird",
     "Disable_hardware_acceleration": "Hardwarebeschleunigung deaktivieren",
+    "Housing_map": "Housing map",
+    "Housing_map_explain": "The housing map in which your house is",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -612,7 +615,8 @@
     "Add_selection_to_list": "Auswahl zu einer Liste hinzufügen",
     "Your_lists": "Deine Listen",
     "Outdated_tag": "veraltet",
-    "No_lists": "Du hast keine Listen",
+    "No_lists": "No lists to display here",
+    "List_aggregates": "List aggregates",
     "Lists_search_placeholder": "Suche nach Liste…",
     "Add_to_a_list": "Einer Liste hinzufügen",
     "Please_pick_recipe": "Bitte wähle ein Rezept für diesen Gegenstand",
@@ -771,6 +775,25 @@
     "Inventory_cleanup_description": "Hier sind die Gegenstände aus deinem Inventar, die nicht für die Liste verwendet werden",
     "Consider_requirements": "Anforderungen berücksichtigen",
     "Ignore_requirements": "Anforderungen ignorieren",
+    "STEP_BY_STEP": {
+      "Previous": "Previous map",
+      "Previous_incomplete": "Previous incomplete map",
+      "Next": "Next map",
+      "Next_incomplete": "Next incomplete map",
+      "Global_list_progress": "Global list progress",
+      "Alarms": "Timed rows",
+      "Crafts": "Ordered crafts",
+      "Toggle_overlay": "Open/Close step by step overlay",
+      "Empty_map": "Nothing to do in the current map, closest map for this list is {{closest}}",
+      "Unknown_map": "Unknown map, please change map to allow TC to detect it.",
+      "No_list": "No list, please open a list in main window to have the overlay work as intended."
+    },
+    "DISPLAY_MODE": {
+      "Title": "Display mode",
+      "Full": "Full",
+      "Minimalist": "Minimalist",
+      "Step_by_step": "Step by step"
+    },
     "SOURCES": {
       "Gatherable": "Kann gesammelt werden, klicke um mehr Details zu sehen"
     },
@@ -2946,6 +2969,23 @@
     "Explain_cost_to_craft": "Zusätzlich Kosten für alle Materialien, ausgenommen Kristalle, um einen Gegenstand nur mit Materialien vom Marktbrett herzustellen.",
     "Empty_list": "Leere Liste, klicke auf die + Schaltfläche eines Gegenstands um ihn hier hinzuzufügen",
     "Add_to_list": "Diese Gegenstände zu einer Liste hinzufügen"
+  },
+  "LIST_AGGREGATE": {
+    "Home_title": "List Aggregate",
+    "Home_subtitle": "Open multiple lists at once in an aggregated view",
+    "Select_lists": "Select the lists you want to aggregate",
+    "Select_layout": "Select a layout",
+    "Open_aggregate": "Open an aggregated view",
+    "Title": "Aggregated list view",
+    "Select_panel": "Select a panel to open its view",
+    "Missing_lists": "{{amount}} list(s) could not be loaded properly",
+    "Remove_missing_ids": "Remove missing lists from the aggregate",
+    "Missing_lists_description": "Please make sure you have enough permissions on all the lists and that they still exist (missing ids: {{ids}}).",
+    "Save": "Save this aggregate to your lists page",
+    "Saved": "Aggregate saved to your lists page",
+    "Final_items_count": "# of items",
+    "Requirement_items_count": "# of required items",
+    "Switch_panel": "Switch panel"
   },
   "MACHINA_ERRORS": {
     "Default": "Machina-Wrapper Fehler",
