@@ -119,11 +119,7 @@ export class ListManagerService {
           return of(new List());
         }
         // If it's a standard item, add it with the classic implementation.
-        if (isListRow(data)) {
-          return this.processItemAddition(data, amount, collectable, recipeId, gearsets, list.ignoreRequirementsRegistry);
-        } else {
-          return this.processCustomItemAddition(data as CustomItem, amount, list.ignoreRequirementsRegistry);
-        }
+        return this.processItemAddition(data, amount, collectable, recipeId, gearsets, list.ignoreRequirementsRegistry);
       }),
       // merge the addition list with the list we want to add items in.
       map(addition => ListController.clean(ListController.merge(list, addition)))

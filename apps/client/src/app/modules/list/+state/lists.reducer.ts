@@ -63,14 +63,6 @@ function updateLists(lists: List[], state: ListsState, matchingPredicate = (list
   };
 }
 
-function buildProgression(list: List): number {
-  const allItems = [...list.items, ...list.finalItems];
-  return 100 * allItems.reduce((acc, item) => {
-    acc += item.done / item.amount;
-    return acc;
-  }, 0) / allItems.length;
-}
-
 export function listsReducer(
   state: ListsState = initialState,
   action: ListsAction

@@ -124,6 +124,7 @@ export class ListController {
         });
       });
     }
+    list.etag = (list.etag || 0) + 1;
     return ListController.add(list, list.finalItems, data, true);
   }
 

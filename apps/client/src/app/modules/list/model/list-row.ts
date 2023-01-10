@@ -18,6 +18,7 @@ import { LazyDataI18nKey } from '../../../lazy-data/lazy-data-types';
 import { IslandAnimal } from './island-animal';
 import { IslandCrop } from './island-crop';
 import { TripleTriadDuel } from '../../../pages/db/model/attt/triple-triad-duel';
+import { cloneDeep } from 'lodash';
 
 export function isListRow(obj: any): obj is ListRow {
   return typeof obj === 'object'
@@ -114,7 +115,7 @@ export function getItemSource<T = any>(item: ListRow, type: DataType, isObject =
       return isObject ? {} : [] as any;
     }
   } else {
-    return source.data;
+    return cloneDeep(source.data);
   }
 }
 
@@ -122,7 +123,7 @@ export function getCraftByPriority(crafts: CraftedBy[], sets: TeamcraftGearsetSt
   if (crafts.length <= 1) {
     return crafts[0];
   }
-  return crafts.sort((a, b) => {
+  return [...crafts].sort((a, b) => {
     return sets.find(s => s.jobId === b.job)?.priority - sets.find(s => s.jobId === a.job)?.priority;
   })[0];
 }
