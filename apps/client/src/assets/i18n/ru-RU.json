@@ -2370,6 +2370,8 @@
     "Import_success": "Панель импортирована и выбрана",
     "Nothing_to_show": "Нет данных для отображения",
     "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside Settings -> Desktop -> Enable metrics capture)",
+    "Importing": "Importing metrics data to the new sql format, please don't close Teamcraft. This may take up to 15 minutes.",
+    "Imported": "Metrics data has been imported.",
     "SOURCES": {
       "UNKNOWN": "Неизвестно",
       "GATHERING": "Сбор",
