@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.0.1"></a>
+## [10.0.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.0.0...v10.0.1) (2023-01-10)
+
+
+### Bug Fixes
+
+* **list:** fixed items addition not updating display ([20eab79](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/20eab79))
+* **metrics:** better display for when metrics data is importing to the new sql format ([acdd8cf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/acdd8cf))
+
+
+### Performance Improvements
+
+* **list:** various display optimizations ([4df71d7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4df71d7))
+
+
+
 <a name="10.0.0"></a>
 # [10.0.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.14...v10.0.0) (2023-01-10)
 
