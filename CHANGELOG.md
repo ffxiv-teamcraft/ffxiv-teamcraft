@@ -2,40 +2,6 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-<a name="10.0.0"></a>
-# [10.0.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.14...v10.0.0) (2023-01-10)
-
-
-### Bug Fixes
-
-* **alarms:** fixed fishing alarms sometimes jumping back and forth ([b6f8f98](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b6f8f98))
-* **db:** brought back gathering information on diadem items ([c3f22dd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c3f22dd))
-* **desktop:** fixed an issue with machina still trying to start with pcap disabled ([319b88c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/319b88c))
-* **desktop:** fixed character link search infinite loading ([a063183](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a063183))
-* **desktop:** Machina will now only try to start 3 times before stopping until app restart ([953ceb3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/953ceb3))
-* **gearset:** better default ilvl filter values and perf fixes ([d51aa2c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d51aa2c))
-* **list:** fixed island buildings not parsed properly in lists ([5683213](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5683213))
-* **log-tracker:** fixed text formatting ([3cd5895](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3cd5895))
-
-
-### Features
-
-* Update submarine max level to 105 ([c48b087](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c48b087))
-* **desktop:** step-by-step list overlay ([a1cd329](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a1cd329))
-* **layout:** new filter: IS_GARDENING ([1643e61](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1643e61))
-* **list-details:** new alternate display mode: Compact ([4e96d2b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4e96d2b)), closes [#2400](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2400)
-* **list-details:** new minimalist display mode ([6f23041](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6f23041)), closes [#2400](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2400)
-* **lists:** new list aggregates system ([b04a6a7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b04a6a7)), closes [#2064](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2064)
-* **lists:** new step by step display mode ([a81ea73](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a81ea73))
-* **metrics:** refactored persistence to use sqlite db instead of custom files ([af9fd37](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/af9fd37)), closes [#2407](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2407)
-
-
-### Performance Improvements
-
-* **lists:** no more delay on marking something as done & better reliability ([156f053](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/156f053)), closes [#2377](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2377)
-
-
-
 <a name="9.9.14"></a>
 ## [9.9.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.9.13...v9.9.14) (2022-12-30)
 
