@@ -221,7 +221,7 @@ export class TradeIconPipe implements PipeTransform {
     13631: 1 // Steel
   };
 
-  transform(tradeSources: TradeSource[]): number {
+  public static getIcon(tradeSources: TradeSource[]): number {
     const res: any = { priority: 0, id: 0 };
     tradeSources.forEach(ts => {
       ts.trades.forEach(trade => {
@@ -236,6 +236,10 @@ export class TradeIconPipe implements PipeTransform {
       });
     });
     return res.id;
+  }
+
+  transform(tradeSources: TradeSource[]): number {
+    return TradeIconPipe.getIcon(tradeSources);
   }
 
 }

@@ -4,6 +4,7 @@ export interface LazyIslandLandmark {
   "-11030": The110;
   "-11040": The110;
   "-11050": The110;
+  "-11060": The110;
 }
 
 export interface The110 {

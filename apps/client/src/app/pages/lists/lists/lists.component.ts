@@ -19,6 +19,10 @@ import { ListImportPopupComponent } from '../list-import-popup/list-import-popup
 import { AuthFacade } from '../../../+state/auth.facade';
 import { DeleteMultipleListsPopupComponent } from '../delete-multiple-lists-popup/delete-multiple-lists-popup.component';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { ListAggregate } from '../../../modules/list-aggregate/model/list-aggregate';
+import { ListAggregatesFacade } from '../../../modules/list-aggregate/+state/list-aggregates.facade';
+import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 @Component({
   selector: 'app-lists',
@@ -37,6 +41,8 @@ export class ListsComponent {
 
   public workshops$: Observable<WorkshopDisplay[]>;
 
+  public aggregates$: Observable<{ listNames: string, layoutName: string, aggregate: ListAggregate }[]>;
+
   public sharedWorkshops$: Observable<WorkshopDisplay[]>;
 
   public query$ = new BehaviorSubject<string>('');
@@ -53,12 +59,14 @@ export class ListsComponent {
               private listManager: ListManagerService, private message: NzMessageService,
               private translate: TranslateService, private dialog: NzModalService,
               private workshopsFacade: WorkshopsFacade, private teamsFacade: TeamsFacade,
-              private authFacade: AuthFacade) {
+              private authFacade: AuthFacade, private listAggregatesFacade: ListAggregatesFacade,
+              private layoutsFacade: LayoutsFacade) {
     this.listsFacade.loadMyLists();
     this.listsFacade.loadListsWithWriteAccess();
     this.workshopsFacade.loadMyWorkshops();
     this.workshopsFacade.loadWorkshopsWithWriteAccess();
     this.teamsFacade.loadMyTeams();
+    this.layoutsFacade.loadAll();
 
     this.workshops$ = combineLatest([this.workshopsFacade.myWorkshops$, this.listsFacade.allListDetails$]).pipe(
       debounceTime(100),
@@ -170,6 +178,29 @@ export class ListsComponent {
       shareReplay({ bufferSize: 1, refCount: true })
     );
 
+    this.aggregates$ = this.listAggregatesFacade.allListAggregates$.pipe(
+      switchMap(aggregates => {
+        return combineLatest(aggregates.map(aggregate => {
+          aggregate.lists.forEach(id => this.listsFacade.load(id));
+          if (!aggregate.layout.startsWith('default') && !aggregate.layout.startsWith('venili')) {
+            layoutsFacade.load(aggregate.layout);
+          }
+          return safeCombineLatest([
+            this.listsFacade.allListDetails$,
+            this.layoutsFacade.allLayouts$
+          ]).pipe(
+            map(([details, layouts]) => {
+              return {
+                layoutName: layouts.find(l => l.$key === aggregate.layout)?.name,
+                listNames: details.filter(list => aggregate.lists.includes(list.$key)).map(l => l.name).join(', '),
+                aggregate
+              };
+            })
+          );
+        }));
+      })
+    );
+
     this.loading$ = combineLatest([this.lists$, this.workshops$, this.sharedWorkshops$, this.teamsDisplays$]).pipe(
       map(() => false),
       startWith(true)
@@ -261,11 +292,7 @@ export class ListsComponent {
     });
   }
 
-  trackByList(index: number, list: List): string {
-    return list.$key;
-  }
-
-  trackByTeam(index: number, team: Team): string {
-    return team.$key;
+  deleteAggregate(aggregate: ListAggregate): void {
+    return this.listAggregatesFacade.delete(aggregate.$key);
   }
 }

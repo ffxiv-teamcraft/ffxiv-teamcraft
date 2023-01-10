@@ -1,0 +1,29 @@
+:host {
+  display: flex;
+
+  ::ng-deep {
+    .ant-input-number-group .ant-input-number {
+      width: 70px;
+    }
+
+    .check-button-right {
+      .ant-input-number-group-addon {
+        border-radius: 0;
+      }
+    }
+  }
+
+  .ant-input-number:not(.check-button-after-number) {
+    border-radius: 0;
+  }
+
+  .check-button {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .check-button-after {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+}

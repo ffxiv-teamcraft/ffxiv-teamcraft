@@ -12962,7 +12962,7 @@
       "hookset": 1,
       "tug": 0,
       "bait": 20617,
-      "snagging": true,
+      "snagging": false,
       "minGathering": 0
     }
   ],
@@ -18639,14 +18639,6 @@
       "spot": 240,
       "hookset": 1,
       "tug": 0,
-      "bait": 29717,
-      "oceanFishingTime": 0,
-      "minGathering": 0
-    },
-    {
-      "spot": 240,
-      "hookset": 1,
-      "tug": 0,
       "bait": 29716,
       "snagging": false,
       "oceanFishingTime": 0,
@@ -21819,14 +21811,6 @@
     }
   ],
   "32107": [
-    {
-      "spot": 251,
-      "hookset": 2,
-      "tug": 2,
-      "bait": 29717,
-      "oceanFishingTime": 0,
-      "minGathering": 0
-    },
     {
       "spot": 251,
       "hookset": 2,

@@ -105,7 +105,7 @@ export class CharacterLinkPopupComponent {
     this.result$ = combineLatest([this.selectedServer.valueChanges, this.characterName.valueChanges])
       .pipe(
         tap(([selectedServer]) => {
-          this.loadingResults = !this.chineseServers.includes(selectedServer) && this.koreanServers.includes(selectedServer);
+          this.loadingResults = !this.chineseServers.includes(selectedServer) && !this.koreanServers.includes(selectedServer);
         }),
         debounceTime(500),
         mergeMap(([selectedServer, characterName]) => {

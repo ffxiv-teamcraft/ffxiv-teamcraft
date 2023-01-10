@@ -19893,7 +19893,7 @@
     "en": "Temple chirurgeon",
     "ja": "神殿騎士団の治療師",
     "de": "Ishgarder Wundarzt",
-    "fr": "chirurgienne ishgardaise"
+    "fr": "chirurgien ishgardais"
   },
   "3317": {
     "en": "Ishgardian archer",
@@ -61842,10 +61842,10 @@
     "fr": "Ilberd"
   },
   "10308": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Galatea Magna",
+    "ja": "ガラテア・マグナ",
+    "de": "Galatea Magna",
+    "fr": "Galatea Magna"
   },
   "10309": {
     "en": "",
@@ -65529,7 +65529,7 @@
     "en": "ktiseos ktenos",
     "ja": "キティセオス・クティノス",
     "de": "Ktiseos-Ktenos",
-    "fr": "ktiséos ktnos"
+    "fr": "ktiséos kténos"
   },
   "10923": {
     "en": "Terminus flesher",
@@ -67764,22 +67764,22 @@
     "fr": "couple léonin"
   },
   "11295": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ceremonial pillar",
+    "ja": "魔氷柱",
+    "de": "Eiszapfen",
+    "fr": "pilier de glace"
   },
   "11296": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ice sprite",
+    "ja": "アイススプライト",
+    "de": "Eis-Exergon",
+    "fr": "élémentaire de glace"
   },
   "11297": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "hellsfire",
+    "ja": "妖炎",
+    "de": "Spektralfeuer",
+    "fr": "flamme spectrale"
   },
   "11298": {
     "en": "",
@@ -67958,13 +67958,13 @@
   "11327": {
     "en": "eager lancer",
     "ja": "気鋭の槍術士",
-    "de": "kühn[a] Pikenier",
+    "de": "kühn[a] Pikenierin",
     "fr": "maître d'hast volontaire"
   },
   "11328": {
     "en": "eager thaumaturge",
     "ja": "気鋭の呪術士",
-    "de": "kühn[a] Thaumaturg",
+    "de": "kühn[a] Thaumaturgin",
     "fr": "occultiste volontaire"
   },
   "11329": {
@@ -67982,13 +67982,13 @@
   "11331": {
     "en": "Scion lancer",
     "ja": "暁の槍術士",
-    "de": "Pikenier[p] der Morgenröte",
+    "de": "Pikenierin[p] der Morgenröte",
     "fr": "maître d'hast des Héritiers"
   },
   "11332": {
     "en": "Scion thaumaturge",
     "ja": "暁の呪術士",
-    "de": "Thaumaturg[p] der Morgenröte",
+    "de": "Thaumaturgin[p] der Morgenröte",
     "fr": "occultiste des Héritiers"
   },
   "11333": {
@@ -68006,13 +68006,13 @@
   "11335": {
     "en": "serpent lancer",
     "ja": "双蛇党の槍術士",
-    "de": "Bruderschaftspikenier",
+    "de": "Bruderschaftspikenierin",
     "fr": "maître d'hast des Deux Vipères"
   },
   "11336": {
     "en": "flame thaumaturge",
     "ja": "不滅隊の呪術士",
-    "de": "Legionsthaumaturg",
+    "de": "Legionsthaumaturgin",
     "fr": "occultiste des Immortels"
   },
   "11337": {
@@ -71904,10 +71904,10 @@
     "fr": "laveur des canalisations"
   },
   "11985": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "wind-up philos",
+    "ja": "マメット・フィロス",
+    "de": "Philos-Puppe",
+    "fr": "ami miniature"
   },
   "11986": {
     "en": "wind-up Erichthonios",
@@ -71946,10 +71946,10 @@
     "fr": "aventurière sérieuse"
   },
   "11992": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Albion",
+    "ja": "アルビオン",
+    "de": "Albion",
+    "fr": "Albion"
   },
   "11993": {
     "en": "Aery red dragon",
@@ -71964,36 +71964,2136 @@
     "fr": "dragon jaune de L'Aire"
   },
   "11995": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Cagnazzo",
+    "ja": "カイナッツォ",
+    "de": "Cagnazzo",
+    "fr": "Cagnazzo"
   },
   "11996": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "fearsome flotsam",
+    "ja": "水禍の楔",
+    "de": "Pfahl[p] der Fluten",
+    "fr": "pal de submersion"
   },
   "11997": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "gymnasiou leon",
+    "ja": "ギュムナシオー・レオン",
+    "de": "Gymnasiou-Leon",
+    "fr": "gymnasiou léon"
   },
   "11998": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "gymnasiou leon mikros",
+    "ja": "ギュムナシオー・レオンミクロス",
+    "de": "Gymnasiou-Leon[p] mikros",
+    "fr": "gymnasiou léon mikros"
   },
   "11999": {
+    "en": "gymnasiou tigris",
+    "ja": "ギュムナシオー・ティグリス",
+    "de": "Gymnasiou-Tigris",
+    "fr": "gymnasiou tigris"
+  },
+  "12000": {
+    "en": "gymnasiou tigris mikra",
+    "ja": "ギュムナシオー・ティグリスミクラ",
+    "de": "Gymnasiou-Leon[p] mikra",
+    "fr": "gymnasiou tigris mikra"
+  },
+  "12001": {
+    "en": "gymnasiou pithekos",
+    "ja": "ギュムナシオー・ピテコス",
+    "de": "Gymnasiou-Pithekos",
+    "fr": "gymnasiou pithékos"
+  },
+  "12002": {
+    "en": "gymnasiou pithekos mikros",
+    "ja": "ギュムナシオー・ピテコスミクロス",
+    "de": "Gymnasiou-Pithekos[p] mikros",
+    "fr": "gymnasiou pithékos mikros"
+  },
+  "12003": {
+    "en": "gymnasiou satyros",
+    "ja": "ギュムナシオー・サテュロス",
+    "de": "Gymnasiou-Satyros",
+    "fr": "gymnasiou satyros"
+  },
+  "12004": {
+    "en": "gymnasiou elaphos",
+    "ja": "ギュムナシオー・エラポス",
+    "de": "Gymnasiou-Elaphos",
+    "fr": "gymnasiou élaphos"
+  },
+  "12005": {
+    "en": "the storm's grip",
+    "ja": "暴風域",
+    "de": "Sturmgebiet",
+    "fr": "zone de tempête"
+  },
+  "12006": {
+    "en": "gymnasiou triton",
+    "ja": "ギュムナシオー・トリトン",
+    "de": "Gymnasiou-Triton",
+    "fr": "gymnasiou triton"
+  },
+  "12007": {
+    "en": "gymnasiou echeneis",
+    "ja": "ギュムナシオー・エケネイス",
+    "de": "Gymnasiou-Echeneis",
+    "fr": "gymnasiou echénéis"
+  },
+  "12008": {
+    "en": "bubble",
+    "ja": "バブル",
+    "de": "Blase",
+    "fr": "bulle"
+  },
+  "12009": {
+    "en": "gymnasiou megakantha",
+    "ja": "ギュムナシオー・メガアカンサ",
+    "de": "Gymnasiou-Megakantha",
+    "fr": "gymnasiou mégakantha"
+  },
+  "12010": {
+    "en": "gymnasiou akantha",
+    "ja": "ギュムナシオー・アカンサ",
+    "de": "Gymnasiou-Akantha",
+    "fr": "gymnasiou akantha"
+  },
+  "12011": {
+    "en": "gymnasiou sinapi",
+    "ja": "ギュムナシオー・シナーピ",
+    "de": "Gymnasiou-Sinapi",
+    "fr": "gymnasiou sinapi"
+  },
+  "12012": {
+    "en": "gymnasiou styphnolobion",
+    "ja": "ギュムナシオー・スティファノロビュウム",
+    "de": "Gymnasiou-Styphnolobium",
+    "fr": "gymnasiou styphnolobion"
+  },
+  "12013": {
+    "en": "gymnasiou hippogryph",
+    "ja": "ギュムナシオー・ヒッポグリフ",
+    "de": "Gymnasiou-Hippogryph",
+    "fr": "gymnasiou hippogryph"
+  },
+  "12014": {
+    "en": "gymnasiou meganereis",
+    "ja": "ギュムナシオー・メガネレイス",
+    "de": "Gymnasiou-Meganereis",
+    "fr": "gymnasiou méganéréis"
+  },
+  "12015": {
+    "en": "gymnasiou nereis",
+    "ja": "ギュムナシオー・ネレイス",
+    "de": "Gymnasiou-Nereis",
+    "fr": "gymnasiou néréis"
+  },
+  "12016": {
+    "en": "gymnasiou sphinx",
+    "ja": "ギュムナシオー・スフィンクス",
+    "de": "Gymnasiou-Sphinx",
+    "fr": "gymnasiou sphinx"
+  },
+  "12017": {
+    "en": "gymnasiou gryps",
+    "ja": "ギュムナシオー・グリュプス",
+    "de": "Gymnasiou-Gryps",
+    "fr": "gymnasiou gryps"
+  },
+  "12018": {
+    "en": "verdant plume",
+    "ja": "濃緑の羽根",
+    "de": "blau[a] Feder",
+    "fr": "plume vert foncé"
+  },
+  "12019": {
+    "en": "gymnasiou acheloios",
+    "ja": "ギュムナシオー・アケローオス",
+    "de": "Gymnasiou-Acheloios",
+    "fr": "gymnasiou achéloios"
+  },
+  "12020": {
+    "en": "gymnasiou souchos",
+    "ja": "ギュムナシオー・スクス",
+    "de": "Gymnasiou-Souchos",
+    "fr": "gymnasiou souchos"
+  },
+  "12021": {
+    "en": "lampas chrysine",
+    "ja": "クリュシネ・ランパス",
+    "de": "Lampas[p] Chrysine",
+    "fr": "lampas chrysine"
+  },
+  "12022": {
+    "en": "gymnasiou mandragoras",
+    "ja": "ギュムナシオー・マンドラゴラ",
+    "de": "Gymnasiou-Mandragora",
+    "fr": "gymnasiou mandragoras"
+  },
+  "12023": {
+    "en": "gymnasiou korrigan",
+    "ja": "ギュムナシオー・コリガン",
+    "de": "Gymnasiou-Korrigane",
+    "fr": "gymnasiou korrigan"
+  },
+  "12024": {
+    "en": "lyssa chrysine",
+    "ja": "クリュシネ・リッサ",
+    "de": "Lyssa[p] Chrysine",
+    "fr": "lyssa chrysine"
+  },
+  "12025": {
+    "en": "ice pillar",
+    "ja": "氷柱",
+    "de": "Eissäule",
+    "fr": "pilier de glace"
+  },
+  "12026": {
+    "en": "Phaethon",
+    "ja": "ファエトン",
+    "de": "Phaethon",
+    "fr": "Phaéton"
+  },
+  "12027": {
+    "en": "phantasmal Phaethon",
+    "ja": "ファエトンの幻影",
+    "de": "Phantom-Phaethon",
+    "fr": "spectre de Phaéton"
+  },
+  "12028": {
+    "en": "ball of fire",
+    "ja": "火球",
+    "de": "Feuerball",
+    "fr": "orbe de feu"
+  },
+  "12029": {
+    "en": "Narkissos",
+    "ja": "ナルキッソス",
+    "de": "Narkissos",
+    "fr": "Narcisse"
+  },
+  "12030": {
+    "en": "Hippomenes",
+    "ja": "ヒッポメネス",
+    "de": "Hippomenes",
+    "fr": "Hippomène"
+  },
+  "12031": {
+    "en": "ball of levin",
+    "ja": "雷球",
+    "de": "Elektrosphäre",
+    "fr": "orbe de foudre"
+  },
+  "12032": {
+    "en": "ephemeral observer",
+    "ja": "観察者の幻体",
+    "de": "Beobachter-Phantom",
+    "fr": "observateur spectral"
+  },
+  "12033": {
+    "en": "kalypso",
+    "ja": "カリュプソー",
+    "de": "Kalypso",
+    "fr": "Calypso"
+  },
+  "12034": {
+    "en": "gymnasiou lampas",
+    "ja": "ギュムナシオー・ランパス",
+    "de": "Gymnasiou-Lampas",
+    "fr": "gymnasiou lampas"
+  },
+  "12035": {
+    "en": "gymnasiou lyssa",
+    "ja": "ギュムナシオー・リッサ",
+    "de": "Gymnasiou-Lyssa",
+    "fr": "gymnasiou lyssa"
+  },
+  "12036": {
+    "en": "gymnastic onion",
+    "ja": "ギュムナシオー・オニオン",
+    "de": "gymnastisch[a] Zwiebel",
+    "fr": "oignon du Gymnase"
+  },
+  "12037": {
+    "en": "gymnastic eggplant",
+    "ja": "ギュムナシオー・エッグ",
+    "de": "gymnastisch[a] Aubergine",
+    "fr": "aubergine du Gymnase"
+  },
+  "12038": {
+    "en": "gymnastic garlic",
+    "ja": "ギュムナシオー・ガーリック",
+    "de": "gymnastisch[a] Knoblauch",
+    "fr": "ail du Gymnase"
+  },
+  "12039": {
+    "en": "gymnastic tomato",
+    "ja": "ギュムナシオー・トマト",
+    "de": "gymnastisch[a] Tomate",
+    "fr": "tomate du Gymnase"
+  },
+  "12040": {
+    "en": "gymnastic queen",
+    "ja": "ギュムナシオー・クイーン",
+    "de": "gymnastisch[a] Königin",
+    "fr": "reine du Gymnase"
+  },
+  "12041": {
+    "en": "lampas & lyssa",
+    "ja": "ギュムナシオー・ランパスとギュムナシオー・リッサ",
+    "de": "Lampas und Lyssa",
+    "fr": "groupe lampas & lyssa"
+  },
+  "12042": {
+    "en": "gymnasiou mandragorai",
+    "ja": "ギュムナシオー・マンドラゴライ",
+    "de": "Gymnasiou-Mandragorai",
+    "fr": "groupe gymnasiou mandragorai"
+  },
+  "12043": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": ""
   },
-  "12000": {
+  "12044": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12045": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12046": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12047": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12048": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12049": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12050": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12051": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12052": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12053": {
+    "en": "Zero's avatar",
+    "ja": "ゼロの幻体",
+    "de": "Zero[p] an deiner Seite",
+    "fr": "avatar de Zero"
+  },
+  "12054": {
+    "en": "Rubicante",
+    "ja": "ルビカンテ",
+    "de": "Rubicante",
+    "fr": "Rubicante"
+  },
+  "12055": {
+    "en": "ardent wing",
+    "ja": "ルビカンテの翼",
+    "de": "ルビカンテの翼",
+    "fr": "aile de Rubicante"
+  },
+  "12056": {
+    "en": "flamesent",
+    "ja": "炎妖",
+    "de": "Flammengesandt[a]",
+    "fr": "flamme démoniaque"
+  },
+  "12057": {
+    "en": "Rubicante mirage",
+    "ja": "ルビカンテの幻影",
+    "de": "Phantom-Rubicante",
+    "fr": "spectre de Rubicante"
+  },
+  "12058": {
+    "en": "circle of purgatory",
+    "ja": "煉獄魔陣",
+    "de": "Kreis[p] der Läuterung",
+    "fr": "cercle arcanique du Purgatoire"
+  },
+  "12059": {
+    "en": "circle of purgatory",
+    "ja": "煉獄魔陣",
+    "de": "Kreis[p] der Läuterung",
+    "fr": "cercle arcanique du Purgatoire"
+  },
+  "12060": {
+    "en": "wild beasts",
+    "ja": "野獣の群れ",
+    "de": "Bestienmeute",
+    "fr": "meute sauvage"
+  },
+  "12061": {
+    "en": "Nymeia",
+    "ja": "ニメーヤ",
+    "de": "Nymeia",
+    "fr": "Nymeia"
+  },
+  "12062": {
+    "en": "Althyk",
+    "ja": "アルジク",
+    "de": "Althyk",
+    "fr": "Althyk"
+  },
+  "12063": {
+    "en": "Menphina",
+    "ja": "メネフィナ",
+    "de": "Menphina",
+    "fr": "Menphina"
+  },
+  "12064": {
+    "en": "Halone",
+    "ja": "ハルオーネ",
+    "de": "Halone",
+    "fr": "Halone"
+  },
+  "12065": {
+    "en": "Nophica",
+    "ja": "ノフィカ",
+    "de": "Nophica",
+    "fr": "Nophica"
+  },
+  "12066": {
+    "en": "Furcas",
+    "ja": "フルカス",
+    "de": "Furcas",
+    "fr": "Furcas"
+  },
+  "12067": {
+    "en": "visitant voidskipper",
+    "ja": "ビジタント・スキッパー",
+    "de": "Besucher-Springer",
+    "fr": "cisailleur visiteur"
+  },
+  "12068": {
+    "en": "visitant hecteyes",
+    "ja": "ビジタント・ヘクトアイズ",
+    "de": "Besucher-Hektokulus",
+    "fr": "hectoculus visiteur"
+  },
+  "12069": {
+    "en": "visitant persona",
+    "ja": "ビジタント・ペルソナ",
+    "de": "Besucher-Persona",
+    "fr": "persona visiteuse"
+  },
+  "12070": {
+    "en": "visitant dahak",
+    "ja": "ビジタント・ダハーカ",
+    "de": "Besucher-Dahak",
+    "fr": "dahaka visiteur"
+  },
+  "12071": {
+    "en": "Andromalius",
+    "ja": "アンドロマリウス",
+    "de": "Andromalius",
+    "fr": "Andromalius"
+  },
+  "12072": {
+    "en": "visitant ogre",
+    "ja": "ビジタント・オーガ",
+    "de": "Besucher-Oger",
+    "fr": "ogre visiteur"
+  },
+  "12073": {
+    "en": "voidcrystal",
+    "ja": "ヴォイドクリスタル",
+    "de": "Nichtskristall",
+    "fr": "cristal du néant"
+  },
+  "12074": {
+    "en": "voidcluster",
+    "ja": "ヴォイドクラスター",
+    "de": "Nichts-Polykristall",
+    "fr": "agrégat du néant"
+  },
+  "12075": {
+    "en": "Alphinaud",
+    "ja": "アルフィノ",
+    "de": "Alphinaud",
+    "fr": "Alphinaud"
+  },
+  "12076": {
+    "en": "Alisaie",
+    "ja": "アリゼー",
+    "de": "Alisaie",
+    "fr": "Alisaie"
+  },
+  "12077": {
+    "en": "Zero",
+    "ja": "ゼロ",
+    "de": "Zero",
+    "fr": "Zero"
+  },
+  "12078": {
+    "en": "caladrius maturus",
+    "ja": "カラドリウス・マトゥルス",
+    "de": "Caladrius maturus",
+    "fr": "caladrius maturus"
+  },
+  "12079": {
+    "en": "rock of Albus",
+    "ja": "アルバス・リビングロック",
+    "de": "Albus-Stein",
+    "fr": "rocher vivant de l'Albus"
+  },
+  "12080": {
+    "en": "Albus bear",
+    "ja": "アルバス・ベアー",
+    "de": "Albus-Bär",
+    "fr": "ours de l'Albus"
+  },
+  "12081": {
+    "en": "caladrius",
+    "ja": "カラドリウス",
+    "de": "Caladrius",
+    "fr": "caladrius"
+  },
+  "12082": {
+    "en": "Galatea Parva",
+    "ja": "ガラテア・パルヴァ",
+    "de": "Galatea Parva",
+    "fr": "Galatea Parva"
+  },
+  "12083": {
+    "en": "visitant satana",
+    "ja": "ビジタント・サタナジュニア",
+    "de": "Besucher-Satana",
+    "fr": "minisatana visiteur"
+  },
+  "12084": {
+    "en": "visitant monk",
+    "ja": "ビジタント・モンク",
+    "de": "Besucher-Mönch",
+    "fr": "moine visiteur"
+  },
+  "12085": {
+    "en": "visitant vodoriga",
+    "ja": "ビジタント・ヴォドリガ",
+    "de": "Besucher-Vodoriga",
+    "fr": "vodoriga visiteuse"
+  },
+  "12086": {
+    "en": "Albus craklaw",
+    "ja": "アルバス・クラックロー",
+    "de": "Albus-Kraklaw",
+    "fr": "craqulov de l'Albus"
+  },
+  "12087": {
+    "en": "Albus serpent",
+    "ja": "アルバス・サーペント",
+    "de": "Albus-Schlange",
+    "fr": "serpent de l'Albus"
+  },
+  "12088": {
+    "en": "visitant bloodguard",
+    "ja": "ビジタント・ブラッドガード",
+    "de": "Besucher-Blutwächter",
+    "fr": "garde de sang de l'Albus"
+  },
+  "12089": {
+    "en": "Albus cliffmole",
+    "ja": "アルバス・クリフモール",
+    "de": "Albus-Klippenmull",
+    "fr": "アルバス・クリフモール"
+  },
+  "12090": {
+    "en": "Albus doblyn",
+    "ja": "アルバス・ドブラン",
+    "de": "Albus-Dobalos",
+    "fr": "アルバス・ドブラン"
+  },
+  "12091": {
+    "en": "Albus bat",
+    "ja": "アルバス・バット",
+    "de": "Albus-Fledermaus",
+    "fr": "アルバス・バット"
+  },
+  "12092": {
+    "en": "visitant arch demon",
+    "ja": "ビジタント・アークデーモン",
+    "de": "Besucher-Erzdämon",
+    "fr": "ビジタント・アークデーモン"
+  },
+  "12093": {
+    "en": "visitant parthenope",
+    "ja": "ビジタント・コムサベラ",
+    "de": "Besucherl-Parthenope",
+    "fr": "ビジタント・コムサベラ"
+  },
+  "12094": {
+    "en": "Albus canis lupinus",
+    "ja": "アルバス・カニスルピナス",
+    "de": "Albus-Canis Lupinus",
+    "fr": "canis lupinus de l'Albus"
+  },
+  "12095": {
+    "en": "visitant taurus",
+    "ja": "ビジタント・タウルス",
+    "de": "Besucher-Taurus",
+    "fr": "taurus visiteur"
+  },
+  "12096": {
+    "en": "spirited engineer",
+    "ja": "快活な技師",
+    "de": "Reparaturmeister",
+    "fr": "ingénieur jovial"
+  },
+  "12097": {
+    "en": "suspect Sylph",
+    "ja": "いたずらシルフ",
+    "de": "いたずらシルフ",
+    "fr": "Sylphe farceur"
+  },
+  "12098": {
+    "en": "egg runner",
+    "ja": "エッグデリバラー",
+    "de": "エッグデリバラー",
+    "fr": "Livreur d'œufs"
+  },
+  "12099": {
+    "en": "Hamlyn",
+    "ja": "ハムリン",
+    "de": "ハムリン",
+    "fr": "Hamlin"
+  },
+  "12100": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12101": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12102": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12103": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12104": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12105": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12106": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12107": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12108": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12109": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12110": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12111": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12112": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12113": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12114": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12115": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12116": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12117": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12118": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12119": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12120": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12121": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12122": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12123": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12124": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12125": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12126": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12127": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12128": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12129": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12130": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12131": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12132": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12133": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12134": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12135": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12136": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12137": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12138": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12139": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12140": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12141": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12142": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12143": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12144": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12145": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12146": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12147": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12148": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12149": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12150": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12151": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12152": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12153": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12154": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12155": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12156": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12157": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12158": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12159": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12160": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12161": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12162": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12163": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12164": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12165": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12166": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12167": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12168": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12169": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12170": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12171": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12172": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12173": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12174": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12175": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12176": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12177": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12178": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12179": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12180": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12181": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12182": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12183": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12184": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12185": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12186": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12187": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12188": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12189": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12190": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12191": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12192": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12193": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12194": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12195": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12196": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12197": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12198": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12199": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12200": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12201": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12202": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12203": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12204": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12205": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12206": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12207": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12208": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12209": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12210": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12211": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12212": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12213": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12214": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12215": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12216": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12217": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12218": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12219": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12220": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12221": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12222": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12223": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12224": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12225": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12226": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12227": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12228": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12229": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12230": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12231": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12232": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12233": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12234": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12235": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12236": {
+    "en": "House Fortemps knight",
+    "ja": "フォルタン家の騎士",
+    "de": "Fortemps-Ritter",
+    "fr": "chevalier des Fortemps"
+  },
+  "12237": {
+    "en": "House Fortemps banneret",
+    "ja": "フォルタン家の槍騎兵",
+    "de": "Fortemps-Bannerherr",
+    "fr": "lancier des Fortemps"
+  },
+  "12238": {
+    "en": "House Fortemps archer",
+    "ja": "フォルタン家の射手",
+    "de": "Fortemps-Bogenschützin",
+    "fr": "archère des Fortemps"
+  },
+  "12239": {
+    "en": "Temple chirurgeon",
+    "ja": "神殿騎士団の治療師",
+    "de": "Ishgarder Wundarzt",
+    "fr": "chirurgienne ishgardaise"
+  },
+  "12240": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12241": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12242": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12243": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12244": {
+    "en": "Althyk & Nymeia",
+    "ja": "アルジク＆ニメーヤ",
+    "de": "Althyk & Nymeia",
+    "fr": "duo Althyk et Nymeia"
+  },
+  "12245": {
+    "en": "Albus griffin",
+    "ja": "アルバス・グリフィン",
+    "de": "Albus-Greif",
+    "fr": "griffon de l'Albus"
+  },
+  "12246": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12247": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12248": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12249": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12250": {
+    "en": "euphrosynos behemoth",
+    "ja": "エウプロシュネ・ベヒーモス",
+    "de": "Euphrosyne-Behemoth",
+    "fr": "béhémoth d'Euphrosyne"
+  },
+  "12251": {
+    "en": "euphrosynos ktenos",
+    "ja": "エウプロシュネ・クティノス",
+    "de": "Euphrosyne-Ktenos",
+    "fr": "kténos d'Euphrosyne"
+  },
+  "12252": {
+    "en": "euphrosynos gigantoad",
+    "ja": "エウプロシュネ・ギガントード",
+    "de": "Euphrosyne-Karpfenkröte",
+    "fr": "crapaud géant d'Euphrosyne"
+  },
+  "12253": {
+    "en": "euphrosynos werewood",
+    "ja": "エウプロシュネ・ウェアウッド",
+    "de": "Euphrosyne-Ebenhöh",
+    "fr": "arbre-garou d'Euphrosyne"
+  },
+  "12254": {
+    "en": "euphrosynos dhruva",
+    "ja": "エウプロシュネ・ドルヴァ",
+    "de": "Euphrosyne-Dhruva",
+    "fr": "dhruva d'Euphrosyne"
+  },
+  "12255": {
+    "en": "euphrosynos colossus",
+    "ja": "エウプロシュネ・コロッサス",
+    "de": "Euphrosyne-Colossus",
+    "fr": "colosse d'Euphrosyne"
+  },
+  "12256": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12257": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12258": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12259": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12260": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12261": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12262": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12263": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12264": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12265": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12266": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12267": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12268": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12269": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12270": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12271": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12272": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12273": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12274": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12275": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12276": {
+    "en": "visitant gnat",
+    "ja": "ビジタント・ナット",
+    "de": "Besucher-Schnake",
+    "fr": "taon visiteur"
+  },
+  "12277": {
+    "en": "visitant trapper",
+    "ja": "ビジタント・トラッパー",
+    "de": "Besucher-Jäger",
+    "fr": "trappeur visiteur"
+  },
+  "12278": {
+    "en": "clockwork yojimbo",
+    "ja": "からくり用心棒",
+    "de": "Mechanik-Yojimbo",
+    "fr": "garde du corps mécanique"
+  },
+  "12279": {
+    "en": "clockwork onmyoji",
+    "ja": "からくり陰陽師",
+    "de": "Mechanik-Onmyoji",
+    "fr": "prêtre onmyo mécanique"
+  },
+  "12280": {
+    "en": "greater flamesent",
+    "ja": "業炎妖",
+    "de": "Infernogesandt[a]",
+    "fr": "flamme démoniaque inexorable"
+  },
+  "12281": {
+    "en": "corgi",
+    "ja": "コーギー",
+    "de": "Corgi",
+    "fr": "corgi"
+  },
+  "12282": {
+    "en": "sky blue back",
+    "ja": "スカイブルーバック",
+    "de": "Himmelblaurücken",
+    "fr": "dronte échine-bleu ciel"
+  },
+  "12283": {
+    "en": "suzusaurus",
+    "ja": "スズサウルス",
+    "de": "Suzusaurus",
+    "fr": "suzusaurus"
+  },
+  "12284": {
+    "en": "Mama automaton",
+    "ja": "オートマトン・ママ",
+    "de": "Mama-Puppe",
+    "fr": "automate Maman"
+  },
+  "12285": {
+    "en": "wind-up Cagnazzo",
+    "ja": "マメット・カイナッツォ",
+    "de": "Aufzieh-Cagnazzo",
+    "fr": "Cagnazzo miniature"
+  },
+  "12286": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12287": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12288": {
+    "en": "wind-up Halone",
+    "ja": "マメット・ハルオーネ",
+    "de": "Aufzieh-Halone",
+    "fr": "Halone miniature"
+  },
+  "12289": {
+    "en": "bantam train",
+    "ja": "豆列車",
+    "de": "Modelleisenbahn",
+    "fr": "train petit mais costaud"
+  },
+  "12290": {
+    "en": "wind-up Godbert",
+    "ja": "マメット・ゴッドベルト",
+    "de": "Aufzieh-Godbert",
+    "fr": "Godbert miniature"
+  },
+  "12291": {
+    "en": "wind-up Aidoneus",
+    "ja": "マメット・アイドネウス",
+    "de": "Aufzieh-Aidoneus",
+    "fr": "Aidoneus miniature"
+  },
+  "12292": {
+    "en": "frozen star",
+    "ja": "氷の魔力球",
+    "de": "Eissphäre",
+    "fr": "globe de glace"
+  },
+  "12293": {
+    "en": "burning star",
+    "ja": "炎の魔力球",
+    "de": "Feuersphäre",
+    "fr": "globe de feu"
+  },
+  "12294": {
+    "en": "arcane sphere",
+    "ja": "立体魔法陣",
+    "de": "arkan[a] Körper",
+    "fr": "sphère arcanique"
+  },
+  "12295": {
+    "en": "Lahabrea's shade",
+    "ja": "ラハブレアの影",
+    "de": "Lahabreas Schatten",
+    "fr": "spectre de Lahabrea"
+  },
+  "12296": {
+    "en": "Igeyorhm's shade",
+    "ja": "イゲオルムの影",
+    "de": "Igeyorhms Schatten",
+    "fr": "spectre d'Igeyorhm"
+  },
+  "12297": {
+    "en": "glacial spear",
+    "ja": "氷の数槍",
+    "de": "Eis-Speer",
+    "fr": "lance de glace"
+  },
+  "12298": {
+    "en": "territorial yggdreant",
+    "ja": "テリトリアル・イグドリア",
+    "de": "hinterhältig[a] Igdrya",
+    "fr": "yggdriade territoriale"
+  },
+  "12299": {
+    "en": "territorial lykopersikon",
+    "ja": "テリトリアル・リコペルシクム",
+    "de": "hinterhältig[a] Lykopersikon",
+    "fr": "lycopersicum territorial"
+  },
+  "12300": {
+    "en": "territorial harpuia",
+    "ja": "テリトリアル・ハルピュイア",
+    "de": "hinterhältig[a] Harpuia",
+    "fr": "harpyia territoriale"
+  },
+  "12301": {
+    "en": "territorial medusa",
+    "ja": "テリトリアル・メデューサ",
+    "de": "hinterhältig[a] Medusa",
+    "fr": "médusa territoriale"
+  },
+  "12302": {
+    "en": "territorial ophion",
+    "ja": "テリトリアル・オピオン",
+    "de": "hinterhältig[a] Ophion",
+    "fr": "ophion territorial"
+  },
+  "12303": {
+    "en": "territorial bird of Elpis",
+    "ja": "テリトリアル・バード",
+    "de": "hinterhältig[a] Vogel",
+    "fr": "oiseau territorial"
+  },
+  "12304": {
+    "en": "territorial hippe",
+    "ja": "テリトリアル・ヒッペー",
+    "de": "hinterhältig[a] Hippe",
+    "fr": "hippe territoriale"
+  },
+  "12305": {
+    "en": "territorial phanopsyche",
+    "ja": "テリトリアル・ファノプシュケ",
+    "de": "hinterhältig[a] Phanopsyche",
+    "fr": "phanopsychée territoriale"
+  },
+  "12306": {
+    "en": "territorial ophiotauros",
+    "ja": "テリトリアル・オピオタウロス",
+    "de": "hinterhältig[a] Ophiotauros",
+    "fr": "ophiotauros territorial"
+  },
+  "12307": {
+    "en": "territorial lotis",
+    "ja": "テリトリアル・ロティス",
+    "de": "hinterhältig[a] Lotis",
+    "fr": "lotis territoriale"
+  },
+  "12308": {
+    "en": "visitant blackguard",
+    "ja": "ビジタント・ブラックガード",
+    "de": "Besucher-Düsterwächter",
+    "fr": "garde noir visiteur"
+  },
+  "12309": {
+    "en": "visitant arch demon",
+    "ja": "ビジタント・アークデーモン",
+    "de": "Besucher-Erzdämon",
+    "fr": "archidémon visiteur"
+  },
+  "12310": {
+    "en": "visitant vodoriga",
+    "ja": "ビジタント・ヴォドリガ",
+    "de": "Besucher-Vodoriga",
+    "fr": "vodoriga visiteuse"
+  },
+  "12311": {
+    "en": "visitant taurus",
+    "ja": "ビジタント・タウルス",
+    "de": "Besucher-Taurus",
+    "fr": "taurus visiteur"
+  },
+  "12312": {
+    "en": "Pero Roggo",
+    "ja": "ペロ・ロッゴ",
+    "de": "Pero Roggo",
+    "fr": "Pero Roggo"
+  },
+  "12313": {
+    "en": "griffin",
+    "ja": "グリフィン",
+    "de": "Greif",
+    "fr": "griffon"
+  },
+  "12314": {
+    "en": "tiger of paradise",
+    "ja": "パライソタイガー",
+    "de": "Paradies-Tiger",
+    "fr": "tigre paradisiaque"
+  },
+  "12315": {
+    "en": "morbol seedling",
+    "ja": "モルボルバルブ",
+    "de": "Morbol-Knolle",
+    "fr": "bulbe de morbol"
+  },
+  "12316": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12317": {
+    "en": "trick floor",
+    "ja": "からくり畳",
+    "de": "falsch[a] Boden",
+    "fr": "tatami mécanique"
+  },
+  "12318": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12319": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12320": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12321": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12322": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12323": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12324": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12325": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12326": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12327": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12328": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12329": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12330": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12331": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12332": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12333": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12334": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12335": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12336": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12337": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12338": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12339": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12340": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12341": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12342": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12343": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12344": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12345": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12346": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12347": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12348": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12349": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12350": {
     "en": "",
     "ja": "",
     "de": "",

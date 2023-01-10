@@ -83,6 +83,12 @@ export class PacketCapture {
 
   private captureInterface: CaptureInterface;
 
+  private startTimeout = null;
+
+  private tries = 0;
+
+  private overlayListeners = [];
+
   constructor(private mainWindow: MainWindow, private store: Store, private options: any) {
     this.mainWindow.closed$.subscribe(() => {
       this.stop();
@@ -110,6 +116,9 @@ export class PacketCapture {
   }
 
   stop(): void {
+    if (this.startTimeout) {
+      clearTimeout(this.startTimeout);
+    }
     if (this.captureInterface) {
       this.captureInterface.stop();
     }
@@ -119,10 +128,31 @@ export class PacketCapture {
     exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - Machina" dir=in action=allow program="${PacketCapture.MACHINA_EXE_PATH}" enable=yes`);
   }
 
+  public registerOverlayListener(id: string, listener: (packet: Message) => void): void {
+    if (this.overlayListeners.some(l => l.id === id)) {
+      this.unregisterOverlayListener(id);
+    }
+    this.overlayListeners.push({
+      id,
+      listener
+    });
+  }
+
+  public unregisterOverlayListener(id: string): void {
+    this.overlayListeners = this.overlayListeners.filter(l => l.id === id);
+  }
+
   sendToRenderer(packet: Message): void {
     if (this.mainWindow?.win) {
       try {
         this.mainWindow.win.webContents.send('packet', packet);
+        this.overlayListeners.forEach(l => {
+          try {
+            l.listener(packet);
+          } catch (e) {
+            this.unregisterOverlayListener(l.id);
+          }
+        });
       } catch (e) {
         log.error(packet);
         log.error(e);
@@ -216,9 +246,12 @@ export class PacketCapture {
             retryDelay: 120
           });
         }
-        setTimeout(() => {
-          this.start();
-        }, 120000);
+        if (this.tries < 3) {
+          this.startTimeout = setTimeout(() => {
+            this.tries++;
+            this.start();
+          }, 120000);
+        }
       });
     this.captureInterface.on('error', err => {
       log.error(err);

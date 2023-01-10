@@ -24611,7 +24611,7 @@
     "en": "Go Big Till the End I",
     "ja": "暁月の太公望：ランク1",
     "de": "Apokalyptische Kapitalbeschaffung I",
-    "fr": "Pêcheur de légendes intemporel",
+    "fr": "Pêcheur de légendes intemporel I",
     "icon": "/i/001000/001102.png",
     "itemReward": 0
   },
@@ -24906,7 +24906,7 @@
   "3114": {
     "en": "Top Tier: Season Two",
     "ja": "コンフリクトの王者：シーズン2",
-    "de": "Kristallkönig (2.Saison)",
+    "de": "Kristallkönig (2. Saison)",
     "fr": "Roi du conflit : saison 2",
     "icon": "/i/000000/000210.png",
     "itemReward": 0
@@ -24914,7 +24914,7 @@
   "3115": {
     "en": "Crystal in the Rough: Season Two",
     "ja": "コンフリクトの勇者：シーズン2",
-    "de": "Kristallfürst (2.Saison)",
+    "de": "Kristallfürst (2. Saison)",
     "fr": "Prince du conflit : saison 2",
     "icon": "/i/000000/000210.png",
     "itemReward": 0
@@ -24922,7 +24922,7 @@
   "3116": {
     "en": "Ranked and Filed: Season Two",
     "ja": "コンフリクトの入賞者：シーズン2",
-    "de": "Kristallkämpfer (2.Saison)",
+    "de": "Kristallkämpfer (2. Saison)",
     "fr": "As du conflit : saison 2",
     "icon": "/i/000000/000210.png",
     "itemReward": 0
@@ -24930,7 +24930,7 @@
   "3117": {
     "en": "Top Tier: Season Three",
     "ja": "コンフリクトの王者：シーズン3",
-    "de": "Kristallkönig (3.Saison)",
+    "de": "Kristallkönig (3. Saison)",
     "fr": "Roi du conflit : saison 3",
     "icon": "/i/000000/000210.png",
     "itemReward": 0
@@ -24938,7 +24938,7 @@
   "3118": {
     "en": "Crystal in the Rough: Season Three",
     "ja": "コンフリクトの勇者：シーズン3",
-    "de": "Kristallfürst (3.Saison)",
+    "de": "Kristallfürst (3. Saison)",
     "fr": "Prince du conflit : saison 3",
     "icon": "/i/000000/000210.png",
     "itemReward": 0
@@ -24946,7 +24946,7 @@
   "3119": {
     "en": "Ranked and Filed: Season Three",
     "ja": "コンフリクトの入賞者：シーズン3",
-    "de": "Kristallkämpfer (3.Saison)",
+    "de": "Kristallkämpfer (3. Saison)",
     "fr": "As du conflit : saison 3",
     "icon": "/i/000000/000210.png",
     "itemReward": 0
@@ -25245,6 +25245,702 @@
     "de": "Auf epischen Sanden",
     "fr": "L'égout et les couleurs",
     "icon": "/i/002000/002643.png",
+    "itemReward": 0
+  },
+  "3157": {
+    "en": "Hallowed and Harrowed",
+    "ja": "天の祝祭、地の鳴動",
+    "de": "Gods Revel, Lands Tremble",
+    "fr": "Les Dieux festoient, la terre tremble",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "3158": {
+    "en": "Mapping the Realm: Lapis Manalis",
+    "ja": "ラピス・マナリスを踏破せし者",
+    "de": "Kartograph: Lapis Manalis",
+    "fr": "Cartographe du continent : Lapis Manalis",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3159": {
+    "en": "Mapping the Realm: Euphrosyne",
+    "ja": "エウプロシュネを踏破せし者",
+    "de": "Kartograph: Euphrosyne",
+    "fr": "Cartographe du continent : Euphrosyne",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3160": {
+    "en": "Ordeal by Fire",
+    "ja": "ルビカンテを狩りし者",
+    "de": "Flammenjäger",
+    "fr": "Fors l'honneur",
+    "icon": "/i/000000/000317.png",
+    "itemReward": 0
+  },
+  "3161": {
+    "en": "Divine Revelry",
+    "ja": "エウプロシュネを制覇せし者",
+    "de": "Göttliche Freude",
+    "fr": "Divine allégresse",
+    "icon": "/i/064000/064849.png",
+    "itemReward": 0
+  },
+  "3162": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3163": {
+    "en": "Satisfaction Guaranteed: Anden I",
+    "ja": "アンデン：ランク1",
+    "de": "Schafsfreund I",
+    "fr": "Il pleut, il pleut, berger I",
+    "icon": "/i/025000/025507.png",
+    "itemReward": 0
+  },
+  "3164": {
+    "en": "Satisfaction Guaranteed: Anden II",
+    "ja": "アンデン：ランク2",
+    "de": "Schafsfreund II",
+    "fr": "Il pleut, il pleut, berger II",
+    "icon": "/i/025000/025507.png",
+    "itemReward": 0
+  },
+  "3165": {
+    "en": "Satisfaction Guaranteed: Anden III",
+    "ja": "アンデン：ランク3",
+    "de": "Schafsfreund III",
+    "fr": "Il pleut, il pleut, berger III",
+    "icon": "/i/025000/025507.png",
+    "itemReward": 0
+  },
+  "3166": {
+    "en": "Satisfaction Guaranteed: Anden IV",
+    "ja": "アンデン：ランク4",
+    "de": "Schafsfreund IV",
+    "fr": "Il pleut, il pleut, berger IV",
+    "icon": "/i/025000/025507.png",
+    "itemReward": 0
+  },
+  "3167": {
+    "en": "Satisfaction Guaranteed: Anden V",
+    "ja": "アンデン：ランク5",
+    "de": "Schafsfreund V",
+    "fr": "Il pleut, il pleut, berger V",
+    "icon": "/i/025000/025507.png",
+    "itemReward": 0
+  },
+  "3168": {
+    "en": "The Customer Is Always Right: Anden I",
+    "ja": "アンデンの得意先：ランク1",
+    "de": "Erinnerungslieferung I",
+    "fr": "Fournisseur officiel d'Anden I",
+    "icon": "/i/026000/026551.png",
+    "itemReward": 0
+  },
+  "3169": {
+    "en": "The Customer Is Always Right: Anden II",
+    "ja": "アンデンの得意先：ランク2",
+    "de": "Erinnerungslieferung II",
+    "fr": "Fournisseur officiel d'Anden II",
+    "icon": "/i/026000/026551.png",
+    "itemReward": 0
+  },
+  "3170": {
+    "en": "The Customer Is Always Right: Anden III",
+    "ja": "アンデンの得意先：ランク3",
+    "de": "Erinnerungslieferung III",
+    "fr": "Fournisseur officiel d'Anden III",
+    "icon": "/i/026000/026551.png",
+    "itemReward": 0
+  },
+  "3171": {
+    "en": "The Customer Is Always Right: Anden IV",
+    "ja": "アンデンの得意先：ランク4",
+    "de": "Erinnerungslieferung IV",
+    "fr": "Fournisseur officiel d'Anden IV",
+    "icon": "/i/026000/026551.png",
+    "itemReward": 0
+  },
+  "3172": {
+    "en": "The Customer Is Always Right: Anden V",
+    "ja": "アンデンの得意先：ランク5",
+    "de": "Erinnerungslieferung V",
+    "fr": "Fournisseur officiel d'Anden V",
+    "icon": "/i/026000/026551.png",
+    "itemReward": 0
+  },
+  "3173": {
+    "en": "The Customer Is Always Right: Anden VI",
+    "ja": "アンデンの得意先：ランク6",
+    "de": "Erinnerungslieferung VI",
+    "fr": "Fournisseur officiel d'Anden VI",
+    "icon": "/i/026000/026551.png",
+    "itemReward": 0
+  },
+  "3174": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3175": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3176": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3177": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3178": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3179": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3180": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3181": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3182": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3183": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3184": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3185": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3186": {
+    "en": "Mammet Is the Architect",
+    "ja": "無人島のカリスマ開拓者",
+    "de": "Pfade im Sand",
+    "fr": "Paix et Félicité",
+    "icon": "/i/001000/001052.png",
+    "itemReward": 0
+  },
+  "3187": {
+    "en": "Go Big Till the End II",
+    "ja": "暁月の太公望：ランク2",
+    "de": "Apokalyptische Kapitalbeschaffung II",
+    "fr": "Pêcheur de légendes intemporel II",
+    "icon": "/i/001000/001102.png",
+    "itemReward": 0
+  },
+  "3188": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3189": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3190": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3191": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3192": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3193": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3194": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3195": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3196": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3197": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3198": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3199": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3200": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3201": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3202": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3203": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3204": {
+    "en": "Her Greatest Fan",
+    "ja": "受け継がれし扇と舞踊",
+    "de": "Tanzende Erinnerungen",
+    "fr": "Héritier des traditions",
+    "icon": "/i/064000/064428.png",
+    "itemReward": 0
+  },
+  "3205": {
+    "en": "トンベリが守る祝祭",
+    "ja": "トンベリが守る祝祭",
+    "de": "Tonberry-Hüter",
+    "fr": "Tomberry protecteur",
+    "icon": "/i/056000/056554.png",
+    "itemReward": 0
+  },
+  "3206": {
+    "en": "ゴールデンな独占取材",
+    "ja": "ゴールデンな独占取材",
+    "de": "Goldene Recherche",
+    "fr": "Publi-rédactionnel",
+    "icon": "/i/059000/059876.png",
+    "itemReward": 0
+  },
+  "3207": {
+    "en": "不死鳥のヒーロー士",
+    "ja": "不死鳥のヒーロー士",
+    "de": "Recke des Reigens",
+    "fr": "Phénix de la Mort",
+    "icon": "/i/056000/056563.png",
+    "itemReward": 0
+  },
+  "3208": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3209": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3210": {
+    "en": "On the Proteion I",
+    "ja": "エルピス・ギュムナシオンに侵入せし者：ランク1",
+    "de": "Gymnastische Ertüchtigung I",
+    "fr": "Visiteur du gymnase I",
+    "icon": "/i/000000/000116.png",
+    "itemReward": 0
+  },
+  "3211": {
+    "en": "On the Proteion II",
+    "ja": "エルピス・ギュムナシオンに侵入せし者：ランク2",
+    "de": "Gymnastische Ertüchtigung II",
+    "fr": "Visiteur du gymnase II",
+    "icon": "/i/000000/000116.png",
+    "itemReward": 0
+  },
+  "3212": {
+    "en": "On the Proteion III",
+    "ja": "エルピス・ギュムナシオンに侵入せし者：ランク3",
+    "de": "Gymnastische Ertüchtigung III",
+    "fr": "Visiteur du gymnase III",
+    "icon": "/i/000000/000116.png",
+    "itemReward": 0
+  },
+  "3213": {
+    "en": "On the Proteion IV",
+    "ja": "エルピス・ギュムナシオンに侵入せし者：ランク4",
+    "de": "Gymnastische Ertüchtigung IV",
+    "fr": "Visiteur du gymnase IV",
+    "icon": "/i/000000/000116.png",
+    "itemReward": 0
+  },
+  "3214": {
+    "en": "Let None but Gymnasts Enter Here I",
+    "ja": "エルピス・ギュムナシオンの覇者：ランク1",
+    "de": "Zutritt nur für Gymnasiarchen I",
+    "fr": "Maître du gymnase I",
+    "icon": "/i/000000/000116.png",
+    "itemReward": 0
+  },
+  "3215": {
+    "en": "Let None but Gymnasts Enter Here II",
+    "ja": "エルピス・ギュムナシオンの覇者：ランク2",
+    "de": "Zutritt nur für Gymnasiarchen II",
+    "fr": "Maître du gymnase II",
+    "icon": "/i/000000/000116.png",
+    "itemReward": 0
+  },
+  "3216": {
+    "en": "Let None but Gymnasts Enter Here III",
+    "ja": "エルピス・ギュムナシオンの覇者：ランク3",
+    "de": "Zutritt nur für Gymnasiarchen III",
+    "fr": "Maître du gymnase III",
+    "icon": "/i/000000/000116.png",
+    "itemReward": 0
+  },
+  "3217": {
+    "en": "Let None but Gymnasts Enter Here IV",
+    "ja": "エルピス・ギュムナシオンの覇者：ランク4",
+    "de": "Zutritt nur für Gymnasiarchen IV",
+    "fr": "Maître du gymnase IV",
+    "icon": "/i/000000/000116.png",
+    "itemReward": 0
+  },
+  "3218": {
+    "en": "Top Tier: Season Four",
+    "ja": "コンフリクトの王者：シーズン4",
+    "de": "Kristallkönig (4. Saison)",
+    "fr": "Roi du conflit : saison 4",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3219": {
+    "en": "Crystal in the Rough: Season Four",
+    "ja": "コンフリクトの勇者：シーズン4",
+    "de": "Kristallfürst (4. Saison)",
+    "fr": "Prince du conflit : saison 4",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3220": {
+    "en": "Ranked and Filed: Season Four",
+    "ja": "コンフリクトの入賞者：シーズン4",
+    "de": "Kristallkämpfer (4. Saison)",
+    "fr": "As du conflit : saison 4",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3221": {
+    "en": "Top Tier: Season Five",
+    "ja": "コンフリクトの王者：シーズン5",
+    "de": "Kristallkönig (5. Saison)",
+    "fr": "Roi du conflit : saison 5",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3222": {
+    "en": "Crystal in the Rough: Season Five",
+    "ja": "コンフリクトの勇者：シーズン5",
+    "de": "Kristallfürst (5. Saison)",
+    "fr": "Prince du conflit : saison 5",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3223": {
+    "en": "Ranked and Filed: Season Five",
+    "ja": "コンフリクトの入賞者：シーズン5",
+    "de": "Kristallkämpfer (5. Saison)",
+    "fr": "As du conflit : saison 5",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3224": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3225": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3226": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3227": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3228": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3229": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3230": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3231": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3232": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3233": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3234": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3235": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3236": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3237": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3238": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3239": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3240": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3241": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3242": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3243": {
+    "en": "I Can Dig It XIV",
+    "ja": "トレジャーハンター：ランク14",
+    "de": "Wer sucht, der findet XIV",
+    "fr": "Creuser son trou XIV",
+    "icon": "/i/000000/000115.png",
     "itemReward": 0
   }
 }

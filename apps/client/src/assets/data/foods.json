@@ -9486,5 +9486,51 @@
         "MaxHQ": 58
       }
     }
+  },
+  {
+    "ID": 38929,
+    "LevelEquip": 1,
+    "LevelItem": 620,
+    "Bonuses": {
+      "CP": {
+        "ID": 11,
+        "Relative": true,
+        "Value": 21,
+        "ValueHQ": 26,
+        "Max": 69,
+        "MaxHQ": 86
+      },
+      "Control": {
+        "ID": 71,
+        "Relative": true,
+        "Value": 4,
+        "ValueHQ": 5,
+        "Max": 72,
+        "MaxHQ": 90
+      }
+    }
+  },
+  {
+    "ID": 38930,
+    "LevelEquip": 1,
+    "LevelItem": 620,
+    "Bonuses": {
+      "Gathering": {
+        "ID": 72,
+        "Relative": true,
+        "Value": 6,
+        "ValueHQ": 7,
+        "Max": 109,
+        "MaxHQ": 136
+      },
+      "GP": {
+        "ID": 10,
+        "Relative": true,
+        "Value": 4,
+        "ValueHQ": 5,
+        "Max": 25,
+        "MaxHQ": 31
+      }
+    }
   }
 ]

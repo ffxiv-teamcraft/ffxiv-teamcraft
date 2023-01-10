@@ -17,8 +17,6 @@ export class SeString {
 
   private static CLOSING_TAG_START = 0xFF;
 
-  private textDecoder = new TextDecoder();
-
   private chunks: SeStringChunk[] = [];
 
   constructor(buffer: Buffer, private readonly UIColor: ParsedRow[]) {

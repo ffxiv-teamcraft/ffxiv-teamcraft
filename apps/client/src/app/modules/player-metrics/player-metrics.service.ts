@@ -9,9 +9,7 @@ import { MetricType } from './model/metric-type';
 import { AuthFacade } from '../../+state/auth.facade';
 import { ProbeSource } from './model/probe-source';
 import { LogTracking } from '../../model/user/log-tracking';
-import { devMock } from './dev-mock';
 import { endOfDay, startOfDay } from 'date-fns';
-import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -44,10 +42,7 @@ export class PlayerMetricsService {
     setInterval(() => {
       this.saveLogs();
     }, 10000);
-    this.ipc.on('metrics:loaded', (e, files: string[]) => {
-      const logs = [].concat.apply([], files.map(data => {
-        return this.parseLogRows(data);
-      }));
+    this.ipc.on('metrics:loaded', (e, logs: ProbeReport[]) => {
       this._logs$.next(logs);
       this.loading$.next(false);
     });
@@ -65,7 +60,7 @@ export class PlayerMetricsService {
         this.handleReport(report);
       });
 
-    // Auto fill log completion on item crafted or gathered.
+    // Autofill log completion on item crafted or gathered.
     this.events$
       .pipe(
         filter(event => {
@@ -113,43 +108,8 @@ export class PlayerMetricsService {
   public load(from: Date, to: Date = new Date()): void {
     this.loadedPeriod.from = from;
     this.loadedPeriod.to = to;
-    if (!environment.production && !this.ipc.ready) {
-      this._logs$.next(this.parseLogRows(devMock));
-    } else {
-      this.ipc.send('metrics:load', { from: this.dateToFileName(startOfDay(from)), to: this.dateToFileName(endOfDay(to)) });
-      this.loading$.next(true);
-    }
-  }
-
-  private parseLogRows(data: string): ProbeReport[] {
-    return data.split('|')
-      .map(row => {
-        const parsed = row.split(';');
-        if (parsed.length === 1) {
-          return;
-        }
-        return {
-          timestamp: +parsed[0],
-          type: +parsed[1],
-          source: +parsed[2],
-          data: parsed[3].split(',').map(n => +n)
-        };
-      })
-      .filter(row => {
-        return row.source !== undefined;
-      });
-  }
-
-  private dateToFileName(date: Date): string {
-    let month = date.getMonth().toString();
-    if (+month < 10) {
-      month = `0${month}`;
-    }
-    let day = date.getDate().toString();
-    if (+day < 10) {
-      day = `0${day}`;
-    }
-    return `${date.getFullYear()}${month}${day}`;
+    this.ipc.send('metrics:load', { from: startOfDay(from), to: endOfDay(to) });
+    this.loading$.next(true);
   }
 
   private handleReport(report: ProbeReport): void {
@@ -172,7 +132,6 @@ export class PlayerMetricsService {
     // prepare a clone to work on, so we don't overwrite data registered while saving.
     const logs = [...this.buffer];
     this.buffer = [];
-    const dataString = logs.map(row => `${row.timestamp};${row.type};${row.source};${row.data.join(',')}`).join('|');
-    this.ipc.send('metrics:persist', dataString);
+    this.ipc.send('metrics:persist', logs);
   }
 }

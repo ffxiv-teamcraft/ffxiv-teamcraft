@@ -125,6 +125,7 @@ import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFunctions, provideFunctions } from '@angular/fire/functions';
 import { getPerformance, providePerformance } from '@angular/fire/performance';
+import { ListAggregateModule } from './modules/list-aggregate/list-aggregate.module';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -297,7 +298,7 @@ const nzConfig: NzConfig = {
       },
       actionSanitizer: (action) => {
         if (action.type.includes('LazyData')) {
-          return { type: action.type, key: (action as any).key };
+          return { type: action.type, key: (action as any).key, entity: (action as any).entity, id: (action as any).id };
         }
         if (action.type === ListsActionTypes.SetItemDone) {
           const { settings, ...sanitized } = (action as SetItemDone);
@@ -312,6 +313,8 @@ const nzConfig: NzConfig = {
 
     StoreModule.forFeature('lists', listsReducer, { initialState: listsInitialState }),
     EffectsModule.forFeature([ListsEffects]),
+
+    ListAggregateModule,
 
     GraphQLModule,
 

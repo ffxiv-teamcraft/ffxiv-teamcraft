@@ -1843,7 +1843,7 @@ export const mapIds = [
     "id": 231,
     "zone": 2147,
     "name": "Aetherochemical Research Facility",
-    "territory": 438,
+    "territory": 1110,
     "scale": 200,
     "weatherRate": 0
   },
@@ -1851,7 +1851,7 @@ export const mapIds = [
     "id": 232,
     "zone": 2147,
     "name": "Aetherochemical Research Facility",
-    "territory": 438,
+    "territory": 1110,
     "scale": 200,
     "weatherRate": 0
   },
@@ -1859,7 +1859,7 @@ export const mapIds = [
     "id": 233,
     "zone": 2147,
     "name": "Aetherochemical Research Facility",
-    "territory": 438,
+    "territory": 1110,
     "scale": 200,
     "weatherRate": 0
   },
@@ -1867,7 +1867,7 @@ export const mapIds = [
     "id": 234,
     "zone": 2147,
     "name": "Aetherochemical Research Facility",
-    "territory": 438,
+    "territory": 1110,
     "scale": 200,
     "weatherRate": 0
   },
@@ -1923,7 +1923,7 @@ export const mapIds = [
     "id": 241,
     "zone": 2038,
     "name": "The Great Gubal Library",
-    "territory": 416,
+    "territory": 1109,
     "scale": 200,
     "weatherRate": 0
   },
@@ -2027,7 +2027,7 @@ export const mapIds = [
     "id": 254,
     "zone": 2147,
     "name": "Aetherochemical Research Facility",
-    "territory": 438,
+    "territory": 1110,
     "scale": 200,
     "weatherRate": 0
   },
@@ -2211,7 +2211,7 @@ export const mapIds = [
     "id": 277,
     "zone": 2088,
     "name": "The Antitower",
-    "territory": 516,
+    "territory": 1111,
     "scale": 200,
     "weatherRate": 0
   },
@@ -2219,7 +2219,7 @@ export const mapIds = [
     "id": 278,
     "zone": 2088,
     "name": "The Antitower",
-    "territory": 516,
+    "territory": 1111,
     "scale": 200,
     "weatherRate": 0
   },
@@ -2227,7 +2227,7 @@ export const mapIds = [
     "id": 279,
     "zone": 2088,
     "name": "The Antitower",
-    "territory": 516,
+    "territory": 1111,
     "scale": 200,
     "weatherRate": 0
   },
@@ -2331,7 +2331,7 @@ export const mapIds = [
     "id": 292,
     "zone": 2090,
     "name": "Sohr Khai",
-    "territory": 555,
+    "territory": 1112,
     "scale": 200,
     "weatherRate": 0
   },
@@ -2339,7 +2339,7 @@ export const mapIds = [
     "id": 293,
     "zone": 2090,
     "name": "Sohr Khai",
-    "territory": 555,
+    "territory": 1112,
     "scale": 200,
     "weatherRate": 0
   },
@@ -2347,7 +2347,7 @@ export const mapIds = [
     "id": 294,
     "zone": 2090,
     "name": "Sohr Khai",
-    "territory": 555,
+    "territory": 1112,
     "scale": 200,
     "weatherRate": 0
   },
@@ -2499,7 +2499,7 @@ export const mapIds = [
     "id": 313,
     "zone": 1792,
     "name": "Xelphatol",
-    "territory": 572,
+    "territory": 1113,
     "scale": 200,
     "weatherRate": 40
   },
@@ -2691,7 +2691,7 @@ export const mapIds = [
     "id": 337,
     "zone": 1857,
     "name": "Baelsar's Wall",
-    "territory": 615,
+    "territory": 1114,
     "scale": 200,
     "weatherRate": 40
   },
@@ -2699,7 +2699,7 @@ export const mapIds = [
     "id": 338,
     "zone": 1857,
     "name": "Baelsar's Wall",
-    "territory": 615,
+    "territory": 1114,
     "scale": 200,
     "weatherRate": 40
   },
@@ -2707,7 +2707,7 @@ export const mapIds = [
     "id": 339,
     "zone": 1857,
     "name": "Baelsar's Wall",
-    "territory": 615,
+    "territory": 1114,
     "scale": 200,
     "weatherRate": 40
   },
@@ -2715,7 +2715,7 @@ export const mapIds = [
     "id": 340,
     "zone": 1857,
     "name": "Baelsar's Wall",
-    "territory": 615,
+    "territory": 1114,
     "scale": 200,
     "weatherRate": 40
   },
@@ -6469,7 +6469,7 @@ export const mapIds = [
     "name": "Stygian Insenescence Cells",
     "territory": 1093,
     "scale": 400,
-    "weatherRate": 0
+    "weatherRate": 145
   },
   {
     "id": 810,
@@ -6478,5 +6478,165 @@ export const mapIds = [
     "territory": 1085,
     "scale": 400,
     "weatherRate": 145
+  },
+  {
+    "id": 811,
+    "zone": 4258,
+    "name": "Euphrosyne",
+    "territory": 1118,
+    "scale": 200,
+    "weatherRate": 147
+  },
+  {
+    "id": 812,
+    "zone": 4258,
+    "name": "Euphrosyne",
+    "territory": 1118,
+    "scale": 200,
+    "weatherRate": 147
+  },
+  {
+    "id": 813,
+    "zone": 4258,
+    "name": "Euphrosyne",
+    "territory": 1118,
+    "scale": 200,
+    "weatherRate": 147
+  },
+  {
+    "id": 814,
+    "zone": 4258,
+    "name": "Euphrosyne",
+    "territory": 1118,
+    "scale": 200,
+    "weatherRate": 147
+  },
+  {
+    "id": 815,
+    "zone": 4270,
+    "name": "Lapis Manalis",
+    "territory": 1097,
+    "scale": 200,
+    "weatherRate": 42
+  },
+  {
+    "id": 816,
+    "zone": 4270,
+    "name": "Lapis Manalis",
+    "territory": 1097,
+    "scale": 200,
+    "weatherRate": 42
+  },
+  {
+    "id": 817,
+    "zone": 4270,
+    "name": "Lapis Manalis",
+    "territory": 1097,
+    "scale": 200,
+    "weatherRate": 42
+  },
+  {
+    "id": 818,
+    "zone": 4287,
+    "name": "The Shifting Gymnasion Agonon",
+    "territory": 1123,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 819,
+    "zone": 2528,
+    "name": "Sylphstep",
+    "territory": 1098,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 820,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 821,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 822,
+    "zone": 4093,
+    "name": "The Clockwork Castletown",
+    "territory": 1116,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 823,
+    "zone": 4289,
+    "name": "Mount Ordeals",
+    "territory": 1095,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 824,
+    "zone": 4270,
+    "name": "Lapis Manalis",
+    "territory": 1097,
+    "scale": 200,
+    "weatherRate": 42
+  },
+  {
+    "id": 825,
+    "zone": 4293,
+    "name": "Khadga",
+    "territory": 1125,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 826,
+    "zone": 4295,
+    "name": "Lapis Manalis",
+    "territory": 1119,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 827,
+    "zone": 4295,
+    "name": "Lapis Manalis",
+    "territory": 1119,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 828,
+    "zone": 4295,
+    "name": "Lapis Manalis",
+    "territory": 1119,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 829,
+    "zone": 4295,
+    "name": "Lapis Manalis",
+    "territory": 1119,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 830,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 100,
+    "weatherRate": null
   }
 ];

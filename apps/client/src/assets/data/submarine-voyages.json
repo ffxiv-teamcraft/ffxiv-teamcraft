@@ -688,60 +688,60 @@
     "location": "M"
   },
   "87": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Drifter's Decay",
+    "ja": "N　放棄された流刑島",
+    "de": "Atoll des Exils (N)",
+    "fr": "Atoll des exilés (N)",
     "id": 87,
-    "location": ""
+    "location": "N"
   },
   "88": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Lugat's Landing",
+    "ja": "O　ルガトの浜",
+    "de": "Strand des Lugat (O)",
+    "fr": "Plage de Lugat (O)",
     "id": 88,
-    "location": ""
+    "location": "O"
   },
   "89": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "the Frozen Spring",
+    "ja": "P　積氷泉",
+    "de": "Frostbrunn (P)",
+    "fr": "Source givrée (P)",
     "id": 89,
-    "location": ""
+    "location": "P"
   },
   "90": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Sirensong Sea 5",
+    "ja": "Q　セイレーン海05",
+    "de": "Sirenen-See 5 (Q)",
+    "fr": "Mer du Chant des sirènes 5 (Q)",
     "id": 90,
-    "location": ""
+    "location": "Q"
   },
   "91": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Tidewind Isle",
+    "ja": "R　渦紋島",
+    "de": "Schneckholm (R)",
+    "fr": "Île du tumulte (R)",
     "id": 91,
-    "location": ""
+    "location": "R"
   },
   "92": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Bloodbreak",
+    "ja": "S　赤血海丘",
+    "de": "Blutblase (S)",
+    "fr": "Colline de sang pourpre (S)",
     "id": 92,
-    "location": ""
+    "location": "S"
   },
   "93": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "the Crystal Font",
+    "ja": "T　海晶泉",
+    "de": "Kristallquell (T)",
+    "fr": "Source cristalline (T)",
     "id": 93,
-    "location": ""
+    "location": "T"
   },
   "94": {
     "en": "",

@@ -1,0 +1,40 @@
+<nz-page-header [nzTitle]="'LIST_AGGREGATE.Home_title' | translate"
+                [nzSubtitle]="'LIST_AGGREGATE.Home_subtitle' | translate">
+</nz-page-header>
+
+
+<ng-container *ngIf="lists$ | async as lists">
+  <nz-table #t [nzData]="lists" nzSize="small" [nzTitle]="'LIST_AGGREGATE.Select_lists' | translate" [nzPageSize]="10">
+    <thead>
+    <tr>
+      <th [nzLeft]="true" nzWidth="40px"></th>
+      <th>{{'List_name' | translate}}</th>
+      <th>{{'LIST_AGGREGATE.Final_items_count' | translate}}</th>
+      <th>{{'LIST_AGGREGATE.Requirement_items_count' | translate}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of t.data">
+      <td
+        [(nzChecked)]="data.checked"
+        (nzCheckedChange)="selectList(data.list, $event)"
+      ></td>
+      <td>{{ data.list.name }}</td>
+      <td>{{ data.list.finalItems.length }}</td>
+      <td>{{ data.list.items.length }}</td>
+    </tr>
+    </tbody>
+  </nz-table>
+</ng-container>
+
+<ng-container *ngIf="layouts$ | async as layouts">
+  <nz-input-group [nzAddOnBefore]="'LIST_AGGREGATE.Select_layout' | translate">
+    <nz-select [(ngModel)]="layoutId" nzShowSearch class="layout-selector">
+      <nz-option *ngFor="let layout of layouts" [nzLabel]="layout.name" [nzValue]="layout.$key"></nz-option>
+    </nz-select>
+  </nz-input-group>
+</ng-container>
+
+<button nz-button nzType="primary" class="validate-button"
+        nzBlock [disabled]="selectedLists.length === 0 || !layoutId"
+        [routerLink]="currentLink">{{'LIST_AGGREGATE.Open_aggregate' | translate}}</button>

@@ -3,7 +3,9 @@ import { ListLayout } from '../list-layout';
 
 export enum LayoutsActionTypes {
   LoadLayouts = '[Layouts] Load Layouts',
+  LoadLayout = '[Layouts] Load Layout',
   LayoutsLoaded = '[Layouts] Layouts Loaded',
+  LayoutLoaded = '[Layouts] Layout Loaded',
   SelectLayout = '[Layouts] Select layout',
   CreateLayout = '[Layouts] Create layout',
   DeleteLayout = '[Layouts] Delete layout',
@@ -14,10 +16,24 @@ export class LoadLayouts implements Action {
   readonly type = LayoutsActionTypes.LoadLayouts;
 }
 
+export class LoadLayout implements Action {
+  readonly type = LayoutsActionTypes.LoadLayout;
+
+  constructor(public readonly key: string) {
+  }
+}
+
 export class LayoutsLoaded implements Action {
   readonly type = LayoutsActionTypes.LayoutsLoaded;
 
   constructor(public payload: ListLayout[]) {
+  }
+}
+
+export class LayoutLoaded implements Action {
+  readonly type = LayoutsActionTypes.LayoutLoaded;
+
+  constructor(public payload: ListLayout) {
   }
 }
 
@@ -49,7 +65,7 @@ export class DeleteLayout implements Action {
   }
 }
 
-export type LayoutsAction = LoadLayouts | LayoutsLoaded | SelectLayout | CreateLayout | DeleteLayout | UpdateLayout;
+export type LayoutsAction = LoadLayouts | LayoutsLoaded | SelectLayout | CreateLayout | DeleteLayout | UpdateLayout | LoadLayout | LayoutLoaded;
 
 export const fromLayoutsActions = {
   LoadLayouts,
@@ -57,5 +73,7 @@ export const fromLayoutsActions = {
   SelectLayout,
   CreateLayout,
   DeleteLayout,
-  UpdateLayout
+  UpdateLayout,
+  LoadLayout,
+  LayoutLoaded
 };

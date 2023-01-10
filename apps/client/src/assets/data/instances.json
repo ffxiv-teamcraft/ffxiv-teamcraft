@@ -410,7 +410,7 @@
     "fr": "le Laboratoire de magismologie",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      8621,
+      8642,
       8600
     ]
   },
@@ -476,7 +476,7 @@
     "fr": "Sohr Khai",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      12414,
+      12419,
       12400
     ]
   },
@@ -558,7 +558,7 @@
     ]
   },
   "52": {
-    "en": "The Sirensong Sea",
+    "en": "the Sirensong Sea",
     "ja": "漂流海域 セイレーン海",
     "de": "Sirenen-See",
     "fr": "la Mer du Chant des sirènes",
@@ -962,6 +962,17 @@
     "contentText": [
       33929,
       33900
+    ]
+  },
+  "89": {
+    "en": "Lapis Manalis",
+    "ja": "雪山冥洞 ラピス・マナリス",
+    "de": "Lapis Manalis",
+    "fr": "Lapis Manalis",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      35229,
+      35200
     ]
   },
   "5001": {
@@ -1655,6 +1666,17 @@
     "contentText": [
       34842,
       34800
+    ]
+  },
+  "5065": {
+    "en": "An Unforeseen Bargain",
+    "ja": "パンひとつと引き換えに",
+    "de": "Der Wert einer Buuds",
+    "fr": "Pour une bouchée de pain",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      35533,
+      35500
     ]
   },
   "10001": {
@@ -2878,6 +2900,28 @@
     "contentText": [
       34526,
       34500
+    ]
+  },
+  "20086": {
+    "en": "Mount Ordeals",
+    "ja": "ルビカンテ討滅戦",
+    "de": "Prophetie - Rubicante",
+    "fr": "Le Mont du Supplice",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      35729,
+      35700
+    ]
+  },
+  "20087": {
+    "en": "Mount Ordeals (Extreme)",
+    "ja": "極ルビカンテ討滅戦",
+    "de": "Eschatos - Rubicante",
+    "fr": "Le Mont du Supplice (extrême)",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      35729,
+      35700
     ]
   },
   "25001": {
@@ -4249,6 +4293,17 @@
       35000
     ]
   },
+  "30125": {
+    "en": "Euphrosyne",
+    "ja": "喜びの神域 エウプロシュネ",
+    "de": "Euphrosyne",
+    "fr": "Domaine divin - Euphrosyne",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      35173,
+      35100
+    ]
+  },
   "35001": {
     "en": "All's Well That Starts Well",
     "ja": "デビューマッチ",
@@ -4566,6 +4621,39 @@
     "fr": "Crystalline Conflict (partie personnalisée - Le Petit Nuage)",
     "icon": "/i/061000/061806.png"
   },
+  "40036": {
+    "en": "The Clockwork Castletown",
+    "ja": "東方絡繰御殿",
+    "de": "Die Mechanische Menagerie",
+    "fr": "Le Traquenard oriental",
+    "icon": "/i/061000/061806.png",
+    "contentText": [
+      36105,
+      36100
+    ]
+  },
+  "40037": {
+    "en": "The Clockwork Castletown",
+    "ja": "東方絡繰御殿",
+    "de": "Die Mechanische Menagerie",
+    "fr": "Le Traquenard oriental",
+    "icon": "/i/061000/061806.png",
+    "contentText": [
+      36105,
+      36100
+    ]
+  },
+  "40038": {
+    "en": "Crystalline Conflict (Custom Match - The Clockwork Castletown)",
+    "ja": "クリスタルコンフリクト(東方絡繰御殿：カスタムマッチ)",
+    "de": "Crystalline Conflict: Die Mechanische Menagerie (Schaukampf)",
+    "fr": "Crystalline Conflict (partie personnalisée - Le Traquenard oriental)",
+    "icon": "/i/061000/061806.png",
+    "contentText": [
+      36105,
+      36100
+    ]
+  },
   "50001": {
     "en": "the Borderland Ruins (Secure)",
     "ja": "外縁遺跡群 (制圧戦)",
@@ -4695,6 +4783,17 @@
     "ja": "宝物庫 エキサイトロン",
     "de": "Euphoratron",
     "fr": "Le Ludodrome",
+    "icon": "/i/061000/061808.png",
+    "contentText": [
+      12810,
+      12800
+    ]
+  },
+  "55011": {
+    "en": "The Shifting Gymnasion Agonon",
+    "ja": "宝物庫 エルピス・ギュムナシオン祭殿",
+    "de": "Gymnasion Agonon",
+    "fr": "Elpis Gymnasion",
     "icon": "/i/061000/061808.png",
     "contentText": [
       12810,
@@ -5124,15 +5223,15 @@
       24900
     ]
   },
-  "64005": {
-    "en": "Containment Bay S1T7 (Unreal)",
-    "ja": "幻魔神セフィロト討滅戦",
-    "de": "Traumprüfung - Sephirot",
-    "fr": "Unité de contention S1P7 (irréel)",
+  "64006": {
+    "en": "Containment Bay P1T6 (Unreal)",
+    "ja": "幻女神ソフィア討滅戦",
+    "de": "Traumprüfung - Sophia",
+    "fr": "Unité de contention P1P6 (irréel)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      9907,
-      9900
+      13113,
+      13100
     ]
   }
 }

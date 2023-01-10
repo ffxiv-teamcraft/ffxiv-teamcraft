@@ -34,6 +34,16 @@ export function layoutsReducer(
       };
       break;
     }
+    case LayoutsActionTypes.LayoutLoaded: {
+      state = {
+        ...state,
+        layouts: [
+          ...state.layouts,
+          action.payload
+        ]
+      };
+      break;
+    }
 
     case LayoutsActionTypes.SelectLayout: {
       state = {

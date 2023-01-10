@@ -28,12 +28,22 @@
                 nz-tooltip>
           <i nz-icon nzType="plus"></i>
         </button>
+        <a [nzShape]="'circle'"
+                *ngIf="_workshop.listIds.length>1"
+                (click)="$event.stopPropagation()"
+                [nzTooltipTitle]="'LIST_AGGREGATE.Open_aggregate' | translate"
+                routerLink="/list-aggregate/{{aggregatedIds}}/defaultLayout"
+                [nzType]="'primary'"
+                nz-button
+                nz-tooltip>
+          <i nz-icon nzType="folder-view"></i>
+        </a>
         <button (nzOnConfirm)="deleteWorkshop()" [disabled]="(permissionLevel$ | async) < 30" [nzShape]="'circle'"
                 [nzPopconfirmTitle]="'WORKSHOP.Delete_message' | translate"
                 nzDanger nz-button nz-popconfirm>
           <i nz-icon nzType="delete"></i>
         </button>
-        <button (click)="$event.stopPropagation()"  [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'" [nzShape]="'circle'"
+        <button (click)="$event.stopPropagation()" [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'" [nzShape]="'circle'"
                 [nzTrigger]="'click'"
                 nz-button nz-dropdown>
           <i nz-icon nzType="ellipsis"></i>

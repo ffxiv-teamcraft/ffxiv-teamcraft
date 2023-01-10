@@ -282111,5 +282111,2651 @@
       "GLA",
       "PLD"
     ]
+  },
+  "38890": {
+    "equipSlotCategory": 1,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CRP"
+    ]
+  },
+  "38891": {
+    "equipSlotCategory": 1,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "BSM"
+    ]
+  },
+  "38892": {
+    "equipSlotCategory": 1,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ARM"
+    ]
+  },
+  "38893": {
+    "equipSlotCategory": 1,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "GSM"
+    ]
+  },
+  "38894": {
+    "equipSlotCategory": 1,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "LTW"
+    ]
+  },
+  "38895": {
+    "equipSlotCategory": 1,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "WVR"
+    ]
+  },
+  "38896": {
+    "equipSlotCategory": 1,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ALC"
+    ]
+  },
+  "38897": {
+    "equipSlotCategory": 1,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CUL"
+    ]
+  },
+  "38898": {
+    "equipSlotCategory": 1,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "MIN"
+    ]
+  },
+  "38899": {
+    "equipSlotCategory": 1,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "BTN"
+    ]
+  },
+  "38900": {
+    "equipSlotCategory": 1,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "FSH"
+    ]
+  },
+  "38901": {
+    "equipSlotCategory": 2,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CRP"
+    ]
+  },
+  "38902": {
+    "equipSlotCategory": 2,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "BSM"
+    ]
+  },
+  "38903": {
+    "equipSlotCategory": 2,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ARM"
+    ]
+  },
+  "38904": {
+    "equipSlotCategory": 2,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "GSM"
+    ]
+  },
+  "38905": {
+    "equipSlotCategory": 2,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "LTW"
+    ]
+  },
+  "38906": {
+    "equipSlotCategory": 2,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "WVR"
+    ]
+  },
+  "38907": {
+    "equipSlotCategory": 2,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ALC"
+    ]
+  },
+  "38908": {
+    "equipSlotCategory": 2,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CUL"
+    ]
+  },
+  "38909": {
+    "equipSlotCategory": 2,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "MIN"
+    ]
+  },
+  "38910": {
+    "equipSlotCategory": 2,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "BTN"
+    ]
+  },
+  "38911": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CRP",
+      "BSM",
+      "ARM",
+      "GSM",
+      "LTW",
+      "WVR",
+      "ALC",
+      "CUL"
+    ]
+  },
+  "38912": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CRP",
+      "BSM",
+      "ARM",
+      "GSM",
+      "LTW",
+      "WVR",
+      "ALC",
+      "CUL"
+    ]
+  },
+  "38913": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CRP",
+      "BSM",
+      "ARM",
+      "GSM",
+      "LTW",
+      "WVR",
+      "ALC",
+      "CUL"
+    ]
+  },
+  "38914": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CRP",
+      "BSM",
+      "ARM",
+      "GSM",
+      "LTW",
+      "WVR",
+      "ALC",
+      "CUL"
+    ]
+  },
+  "38915": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CRP",
+      "BSM",
+      "ARM",
+      "GSM",
+      "LTW",
+      "WVR",
+      "ALC",
+      "CUL"
+    ]
+  },
+  "38916": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "MIN",
+      "BTN",
+      "FSH"
+    ]
+  },
+  "38917": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "MIN",
+      "BTN",
+      "FSH"
+    ]
+  },
+  "38918": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "MIN",
+      "BTN",
+      "FSH"
+    ]
+  },
+  "38919": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "MIN",
+      "BTN",
+      "FSH"
+    ]
+  },
+  "38920": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "MIN",
+      "BTN",
+      "FSH"
+    ]
+  },
+  "38921": {
+    "equipSlotCategory": 9,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CRP",
+      "BSM",
+      "ARM",
+      "GSM",
+      "LTW",
+      "WVR",
+      "ALC",
+      "CUL"
+    ]
+  },
+  "38922": {
+    "equipSlotCategory": 10,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CRP",
+      "BSM",
+      "ARM",
+      "GSM",
+      "LTW",
+      "WVR",
+      "ALC",
+      "CUL"
+    ]
+  },
+  "38923": {
+    "equipSlotCategory": 11,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CRP",
+      "BSM",
+      "ARM",
+      "GSM",
+      "LTW",
+      "WVR",
+      "ALC",
+      "CUL"
+    ]
+  },
+  "38924": {
+    "equipSlotCategory": 12,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CRP",
+      "BSM",
+      "ARM",
+      "GSM",
+      "LTW",
+      "WVR",
+      "ALC",
+      "CUL"
+    ]
+  },
+  "38925": {
+    "equipSlotCategory": 9,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "MIN",
+      "BTN",
+      "FSH"
+    ]
+  },
+  "38926": {
+    "equipSlotCategory": 10,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "MIN",
+      "BTN",
+      "FSH"
+    ]
+  },
+  "38927": {
+    "equipSlotCategory": 11,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "MIN",
+      "BTN",
+      "FSH"
+    ]
+  },
+  "38928": {
+    "equipSlotCategory": 12,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "MIN",
+      "BTN",
+      "FSH"
+    ]
+  },
+  "38957": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "38958": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "38959": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "38960": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "38961": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "38962": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "LNC",
+      "DRG",
+      "RPR"
+    ]
+  },
+  "38963": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "LNC",
+      "DRG",
+      "RPR"
+    ]
+  },
+  "38964": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "LNC",
+      "DRG",
+      "RPR"
+    ]
+  },
+  "38965": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "LNC",
+      "DRG",
+      "RPR"
+    ]
+  },
+  "38966": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "LNC",
+      "DRG",
+      "RPR"
+    ]
+  },
+  "38967": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "PGL",
+      "MNK",
+      "SAM"
+    ]
+  },
+  "38968": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "PGL",
+      "MNK",
+      "SAM"
+    ]
+  },
+  "38969": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "PGL",
+      "MNK",
+      "SAM"
+    ]
+  },
+  "38970": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "PGL",
+      "MNK",
+      "SAM"
+    ]
+  },
+  "38971": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "PGL",
+      "MNK",
+      "SAM"
+    ]
+  },
+  "38972": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "38973": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "38974": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "38975": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "38976": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "38977": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ROG",
+      "NIN"
+    ]
+  },
+  "38978": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ROG",
+      "NIN"
+    ]
+  },
+  "38979": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ROG",
+      "NIN"
+    ]
+  },
+  "38980": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ROG",
+      "NIN"
+    ]
+  },
+  "38981": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ROG",
+      "NIN"
+    ]
+  },
+  "38982": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "38983": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "38984": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "38985": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "38986": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "38987": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "38988": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "38989": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "38990": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "38991": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "38992": {
+    "equipSlotCategory": 9,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "38993": {
+    "equipSlotCategory": 9,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "PGL",
+      "LNC",
+      "MNK",
+      "DRG",
+      "SAM",
+      "RPR"
+    ]
+  },
+  "38994": {
+    "equipSlotCategory": 9,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "ROG",
+      "NIN",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "38995": {
+    "equipSlotCategory": 9,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "38996": {
+    "equipSlotCategory": 9,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "38997": {
+    "equipSlotCategory": 10,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "38998": {
+    "equipSlotCategory": 10,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "PGL",
+      "LNC",
+      "MNK",
+      "DRG",
+      "SAM",
+      "RPR"
+    ]
+  },
+  "38999": {
+    "equipSlotCategory": 10,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "ROG",
+      "NIN",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "39000": {
+    "equipSlotCategory": 10,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "39001": {
+    "equipSlotCategory": 10,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "39002": {
+    "equipSlotCategory": 11,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "39003": {
+    "equipSlotCategory": 11,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "PGL",
+      "LNC",
+      "MNK",
+      "DRG",
+      "SAM",
+      "RPR"
+    ]
+  },
+  "39004": {
+    "equipSlotCategory": 11,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "ROG",
+      "NIN",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "39005": {
+    "equipSlotCategory": 11,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "39006": {
+    "equipSlotCategory": 11,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "39007": {
+    "equipSlotCategory": 12,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "39008": {
+    "equipSlotCategory": 12,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "PGL",
+      "LNC",
+      "MNK",
+      "DRG",
+      "SAM",
+      "RPR"
+    ]
+  },
+  "39009": {
+    "equipSlotCategory": 12,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "ROG",
+      "NIN",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "39010": {
+    "equipSlotCategory": 12,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "39011": {
+    "equipSlotCategory": 12,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "39012": {
+    "equipSlotCategory": 1,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "GLA",
+      "PLD"
+    ]
+  },
+  "39013": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "PGL",
+      "MNK"
+    ]
+  },
+  "39014": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "MRD",
+      "WAR"
+    ]
+  },
+  "39015": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "LNC",
+      "DRG"
+    ]
+  },
+  "39016": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ARC",
+      "BRD"
+    ]
+  },
+  "39017": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ROG",
+      "NIN"
+    ]
+  },
+  "39018": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "DRK"
+    ]
+  },
+  "39019": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "MCH"
+    ]
+  },
+  "39020": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CNJ",
+      "WHM"
+    ]
+  },
+  "39021": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "THM",
+      "BLM"
+    ]
+  },
+  "39022": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ACN",
+      "SMN"
+    ]
+  },
+  "39023": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "SCH"
+    ]
+  },
+  "39024": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "AST"
+    ]
+  },
+  "39025": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "SAM"
+    ]
+  },
+  "39026": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "RDM"
+    ]
+  },
+  "39027": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "GNB"
+    ]
+  },
+  "39028": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "DNC"
+    ]
+  },
+  "39029": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "SGE"
+    ]
+  },
+  "39030": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "RPR"
+    ]
+  },
+  "39031": {
+    "equipSlotCategory": 2,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "GLA",
+      "PLD"
+    ]
+  },
+  "39032": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "39033": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "39034": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "39035": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "39036": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "39037": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "LNC",
+      "DRG",
+      "RPR"
+    ]
+  },
+  "39038": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "LNC",
+      "DRG",
+      "RPR"
+    ]
+  },
+  "39039": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "LNC",
+      "DRG",
+      "RPR"
+    ]
+  },
+  "39040": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "LNC",
+      "DRG",
+      "RPR"
+    ]
+  },
+  "39041": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "LNC",
+      "DRG",
+      "RPR"
+    ]
+  },
+  "39042": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "PGL",
+      "MNK",
+      "SAM"
+    ]
+  },
+  "39043": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "PGL",
+      "MNK",
+      "SAM"
+    ]
+  },
+  "39044": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "PGL",
+      "MNK",
+      "SAM"
+    ]
+  },
+  "39045": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "PGL",
+      "MNK",
+      "SAM"
+    ]
+  },
+  "39046": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "PGL",
+      "MNK",
+      "SAM"
+    ]
+  },
+  "39047": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "39048": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "39049": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "39050": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "39051": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "39052": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ROG",
+      "NIN"
+    ]
+  },
+  "39053": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ROG",
+      "NIN"
+    ]
+  },
+  "39054": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ROG",
+      "NIN"
+    ]
+  },
+  "39055": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ROG",
+      "NIN"
+    ]
+  },
+  "39056": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ROG",
+      "NIN"
+    ]
+  },
+  "39057": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "39058": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "39059": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "39060": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "39061": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "39062": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "39063": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "39064": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "39065": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "39066": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "39067": {
+    "equipSlotCategory": 9,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "39068": {
+    "equipSlotCategory": 9,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "PGL",
+      "LNC",
+      "MNK",
+      "DRG",
+      "SAM",
+      "RPR"
+    ]
+  },
+  "39069": {
+    "equipSlotCategory": 9,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "ROG",
+      "NIN",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "39070": {
+    "equipSlotCategory": 9,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "39071": {
+    "equipSlotCategory": 9,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "39072": {
+    "equipSlotCategory": 10,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "39073": {
+    "equipSlotCategory": 10,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "PGL",
+      "LNC",
+      "MNK",
+      "DRG",
+      "SAM",
+      "RPR"
+    ]
+  },
+  "39074": {
+    "equipSlotCategory": 10,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "ROG",
+      "NIN",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "39075": {
+    "equipSlotCategory": 10,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "39076": {
+    "equipSlotCategory": 10,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "39077": {
+    "equipSlotCategory": 11,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "39078": {
+    "equipSlotCategory": 11,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "PGL",
+      "LNC",
+      "MNK",
+      "DRG",
+      "SAM",
+      "RPR"
+    ]
+  },
+  "39079": {
+    "equipSlotCategory": 11,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "ROG",
+      "NIN",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "39080": {
+    "equipSlotCategory": 11,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "39081": {
+    "equipSlotCategory": 11,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "39082": {
+    "equipSlotCategory": 12,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "39083": {
+    "equipSlotCategory": 12,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "PGL",
+      "LNC",
+      "MNK",
+      "DRG",
+      "SAM",
+      "RPR"
+    ]
+  },
+  "39084": {
+    "equipSlotCategory": 12,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "ROG",
+      "NIN",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "39085": {
+    "equipSlotCategory": 12,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "39086": {
+    "equipSlotCategory": 12,
+    "level": 90,
+    "unique": 0,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "39089": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "39090": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "39091": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "39092": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "39093": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "GLA",
+      "MRD",
+      "PLD",
+      "WAR",
+      "DRK",
+      "GNB"
+    ]
+  },
+  "39094": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "LNC",
+      "DRG",
+      "RPR"
+    ]
+  },
+  "39095": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "LNC",
+      "DRG",
+      "RPR"
+    ]
+  },
+  "39096": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "LNC",
+      "DRG",
+      "RPR"
+    ]
+  },
+  "39097": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "LNC",
+      "DRG",
+      "RPR"
+    ]
+  },
+  "39098": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "LNC",
+      "DRG",
+      "RPR"
+    ]
+  },
+  "39099": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "PGL",
+      "MNK",
+      "SAM"
+    ]
+  },
+  "39100": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "PGL",
+      "MNK",
+      "SAM"
+    ]
+  },
+  "39101": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "PGL",
+      "MNK",
+      "SAM"
+    ]
+  },
+  "39102": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "PGL",
+      "MNK",
+      "SAM"
+    ]
+  },
+  "39103": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "PGL",
+      "MNK",
+      "SAM"
+    ]
+  },
+  "39104": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "39105": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "39106": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "39107": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "39108": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ARC",
+      "BRD",
+      "MCH",
+      "DNC"
+    ]
+  },
+  "39109": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ROG",
+      "NIN"
+    ]
+  },
+  "39110": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ROG",
+      "NIN"
+    ]
+  },
+  "39111": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ROG",
+      "NIN"
+    ]
+  },
+  "39112": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ROG",
+      "NIN"
+    ]
+  },
+  "39113": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ROG",
+      "NIN"
+    ]
+  },
+  "39114": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "39115": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "39116": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "39117": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "39118": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "CNJ",
+      "WHM",
+      "SCH",
+      "AST",
+      "SGE"
+    ]
+  },
+  "39119": {
+    "equipSlotCategory": 3,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "39120": {
+    "equipSlotCategory": 4,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "39121": {
+    "equipSlotCategory": 5,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "39122": {
+    "equipSlotCategory": 7,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "39123": {
+    "equipSlotCategory": 8,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "THM",
+      "BLM",
+      "ACN",
+      "SMN",
+      "RDM",
+      "BLU"
+    ]
+  },
+  "39124": {
+    "equipSlotCategory": 1,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "GLA",
+      "PLD"
+    ]
+  },
+  "39125": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "PGL",
+      "MNK"
+    ]
+  },
+  "39126": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "MRD",
+      "WAR"
+    ]
+  },
+  "39127": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "LNC",
+      "DRG"
+    ]
+  },
+  "39128": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ARC",
+      "BRD"
+    ]
+  },
+  "39129": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ROG",
+      "NIN"
+    ]
+  },
+  "39130": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "DRK"
+    ]
+  },
+  "39131": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "MCH"
+    ]
+  },
+  "39132": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "CNJ",
+      "WHM"
+    ]
+  },
+  "39133": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "THM",
+      "BLM"
+    ]
+  },
+  "39134": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "ACN",
+      "SMN"
+    ]
+  },
+  "39135": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "SCH"
+    ]
+  },
+  "39136": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "AST"
+    ]
+  },
+  "39137": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "SAM"
+    ]
+  },
+  "39138": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "RDM"
+    ]
+  },
+  "39139": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "GNB"
+    ]
+  },
+  "39140": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "DNC"
+    ]
+  },
+  "39141": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "SGE"
+    ]
+  },
+  "39142": {
+    "equipSlotCategory": 13,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "RPR"
+    ]
+  },
+  "39143": {
+    "equipSlotCategory": 2,
+    "level": 90,
+    "unique": 1,
+    "jobs": [
+      "GLA",
+      "PLD"
+    ]
+  },
+  "39549": {
+    "equipSlotCategory": 1,
+    "level": 80,
+    "unique": 0,
+    "jobs": [
+      "GLA",
+      "PLD"
+    ]
+  },
+  "39550": {
+    "equipSlotCategory": 13,
+    "level": 80,
+    "unique": 0,
+    "jobs": [
+      "PGL",
+      "MNK"
+    ]
+  },
+  "39551": {
+    "equipSlotCategory": 13,
+    "level": 80,
+    "unique": 0,
+    "jobs": [
+      "MRD",
+      "WAR"
+    ]
+  },
+  "39552": {
+    "equipSlotCategory": 13,
+    "level": 80,
+    "unique": 0,
+    "jobs": [
+      "LNC",
+      "DRG"
+    ]
+  },
+  "39553": {
+    "equipSlotCategory": 13,
+    "level": 80,
+    "unique": 0,
+    "jobs": [
+      "ARC",
+      "BRD"
+    ]
+  },
+  "39554": {
+    "equipSlotCategory": 13,
+    "level": 80,
+    "unique": 0,
+    "jobs": [
+      "ROG",
+      "NIN"
+    ]
+  },
+  "39555": {
+    "equipSlotCategory": 13,
+    "level": 80,
+    "unique": 0,
+    "jobs": [
+      "DRK"
+    ]
+  },
+  "39556": {
+    "equipSlotCategory": 13,
+    "level": 80,
+    "unique": 0,
+    "jobs": [
+      "MCH"
+    ]
+  },
+  "39557": {
+    "equipSlotCategory": 13,
+    "level": 80,
+    "unique": 0,
+    "jobs": [
+      "CNJ",
+      "WHM"
+    ]
+  },
+  "39558": {
+    "equipSlotCategory": 13,
+    "level": 80,
+    "unique": 0,
+    "jobs": [
+      "THM",
+      "BLM"
+    ]
+  },
+  "39559": {
+    "equipSlotCategory": 13,
+    "level": 80,
+    "unique": 0,
+    "jobs": [
+      "ACN",
+      "SMN"
+    ]
+  },
+  "39560": {
+    "equipSlotCategory": 13,
+    "level": 80,
+    "unique": 0,
+    "jobs": [
+      "SCH"
+    ]
+  },
+  "39561": {
+    "equipSlotCategory": 13,
+    "level": 80,
+    "unique": 0,
+    "jobs": [
+      "AST"
+    ]
+  },
+  "39562": {
+    "equipSlotCategory": 13,
+    "level": 80,
+    "unique": 0,
+    "jobs": [
+      "SAM"
+    ]
+  },
+  "39563": {
+    "equipSlotCategory": 13,
+    "level": 80,
+    "unique": 0,
+    "jobs": [
+      "RDM"
+    ]
+  },
+  "39564": {
+    "equipSlotCategory": 13,
+    "level": 80,
+    "unique": 0,
+    "jobs": [
+      "GNB"
+    ]
+  },
+  "39565": {
+    "equipSlotCategory": 13,
+    "level": 80,
+    "unique": 0,
+    "jobs": [
+      "DNC"
+    ]
+  },
+  "39566": {
+    "equipSlotCategory": 2,
+    "level": 80,
+    "unique": 0,
+    "jobs": [
+      "GLA",
+      "PLD"
+    ]
+  },
+  "39568": {
+    "equipSlotCategory": 13,
+    "level": 70,
+    "unique": 1,
+    "jobs": [
+      "SGE"
+    ]
+  },
+  "39569": {
+    "equipSlotCategory": 13,
+    "level": 70,
+    "unique": 1,
+    "jobs": [
+      "RPR"
+    ]
+  },
+  "39621": {
+    "equipSlotCategory": 1,
+    "level": 1,
+    "unique": 0,
+    "jobs": [
+      "GLA",
+      "PLD"
+    ]
+  },
+  "39622": {
+    "equipSlotCategory": 13,
+    "level": 1,
+    "unique": 0,
+    "jobs": [
+      "MRD",
+      "WAR"
+    ]
+  },
+  "39623": {
+    "equipSlotCategory": 13,
+    "level": 1,
+    "unique": 0,
+    "jobs": [
+      "LNC",
+      "DRG"
+    ]
+  },
+  "39624": {
+    "equipSlotCategory": 13,
+    "level": 1,
+    "unique": 0,
+    "jobs": [
+      "DRK"
+    ]
+  },
+  "39625": {
+    "equipSlotCategory": 13,
+    "level": 1,
+    "unique": 0,
+    "jobs": [
+      "CNJ",
+      "WHM"
+    ]
+  },
+  "39626": {
+    "equipSlotCategory": 13,
+    "level": 1,
+    "unique": 0,
+    "jobs": [
+      "THM",
+      "BLM"
+    ]
+  },
+  "39627": {
+    "equipSlotCategory": 13,
+    "level": 1,
+    "unique": 0,
+    "jobs": [
+      "RPR"
+    ]
   }
 }

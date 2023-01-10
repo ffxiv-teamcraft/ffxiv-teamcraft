@@ -30,7 +30,7 @@ export class LayoutOrderService {
 
   orderCache: Record<string, Observable<number[]>> = {};
 
-  private orderFunctions: { [index: string]: (rowA: ListRowSortComparison, rowB: ListRowSortComparison) => number } = {
+  private orderFunctions = {
     'NAME': (a, b) => {
       return a.name > b.name ? 1 : -1;
     },
@@ -99,7 +99,8 @@ export class LayoutOrderService {
       const eNow = this.etime.toEorzeanDate(new Date());
       const next = alarms
         .map(alarm => {
-          return this.alarmsFacade.createDisplay(alarm, eNow).remainingTime;
+          const display = this.alarmsFacade.createDisplay(alarm, eNow);
+          return display.remainingTime * (display.spawned ? -1 : 1);
         })
         .sort((a, b) => {
           return a - b;

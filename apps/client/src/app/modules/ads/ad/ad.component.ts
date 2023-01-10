@@ -3,8 +3,10 @@ import { PlatformService } from '../../../core/tools/platform.service';
 import { fromEvent } from 'rxjs';
 import { auditTime, delay, distinctUntilChanged, map, startWith, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
+import { AnalyticsService } from '../../../core/analytics/analytics.service';
 
 declare const ramp: any;
+declare const gtag: any;
 
 @Component({
   selector: 'app-ad',
@@ -12,12 +14,20 @@ declare const ramp: any;
   styleUrls: ['./ad.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
- 
 export class AdComponent extends TeamcraftComponent {
 
   constructor(private platform: PlatformService) {
     super();
     if (!this.platform.isOverlay()) {
+      (<any>window)._pwGA4PageviewId = ''.concat(Date.now().toString());
+      gtag(
+        'event',
+        'ramp_js',
+        {
+          'send_to': AnalyticsService.GA4_ID,
+          'pageview_id': (<any>window)._pwGA4PageviewId
+        }
+      );
       (<any>window).ramp = {
         passiveMode: true,
         que: [],

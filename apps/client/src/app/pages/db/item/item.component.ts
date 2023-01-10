@@ -889,7 +889,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
               }
               if (card.sources.pack) {
                 item.sources.push({
-                  type: DataType.TRIPLE_TRIAD_DUELS,
+                  type: DataType.TRIPLE_TRIAD_PACK,
                   data: {
                     id: [10128, 10129, 10130, 13380, 10077][card.sources.pack.id - 1],
                     price: card.sources.pack.cost

@@ -9098,17 +9098,7 @@
       "de": "Edelstein-Erinnerungen",
       "fr": "Une vraie mine d'orbes"
     },
-    "icon": "/i/071000/071221.png",
-    "rewards": [
-      {
-        "id": 9376,
-        "amount": 1
-      },
-      {
-        "id": 14899,
-        "amount": 1
-      }
-    ]
+    "icon": "/i/071000/071221.png"
   },
   "66035": {
     "name": {
@@ -38796,7 +38786,7 @@
     "name": {
       "en": "Don't Trust Anyone over Sixty",
       "ja": "時魔法の謎",
-      "de": "Alter schützt vor Torheit nicht",
+      "de": "Sechzigern ist nicht zu trauen",
       "fr": "Sans bibi d'adieu"
     },
     "icon": "/i/071000/071221.png"
@@ -76606,10 +76596,10 @@
   },
   "70188": {
     "name": {
-      "en": "Make It a Manderville",
-      "ja": "マンダヴィル家と古の武具",
-      "de": "Mach ein Manderville-Stück draus",
-      "fr": "Le secret ancestral des Manderville"
+      "en": " Make It a Manderville",
+      "ja": " マンダヴィル家と古の武具",
+      "de": " Mach ein Manderville-Stück draus",
+      "fr": " Le secret ancestral des Manderville"
     },
     "icon": "/i/071000/071221.png",
     "rewards": [
@@ -76697,10 +76687,10 @@
   },
   "70189": {
     "name": {
-      "en": "Make Another Manderville",
-      "ja": "もうひとつのマンダヴィルウェポン",
-      "de": "Mach noch ein Manderville-Stück draus",
-      "fr": "Une nouvelle arme des Manderville"
+      "en": " Make Another Manderville",
+      "ja": " もうひとつのマンダヴィルウェポン",
+      "de": " Mach noch ein Manderville-Stück draus",
+      "fr": " Une nouvelle arme des Manderville"
     },
     "icon": "/i/071000/071221.png",
     "rewards": [
@@ -76894,6 +76884,855 @@
     "icon": "/i/071000/071221.png"
   },
   "70197": {
+    "name": {
+      "en": "Shadowed Pasts Once More",
+      "ja": "続・ヴォイドの傍観者",
+      "de": "Tiefere Einblicke ins Nichts",
+      "fr": "Les observateurs du néant, le retour"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 39594,
+        "amount": 1
+      }
+    ]
+  },
+  "70198": {
+    "name": {
+      "en": "An Auspicious Opportunity",
+      "ja": "紅玉海に繋がれ、大繁盛の輪！",
+      "de": "Schwindel in der Rubinsee",
+      "fr": "Arnaque, couture et boutique"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 39509,
+        "amount": 1
+      },
+      {
+        "id": 39510,
+        "amount": 1
+      },
+      {
+        "id": 39511,
+        "amount": 1
+      },
+      {
+        "id": 39512,
+        "amount": 1
+      },
+      {
+        "id": 39513,
+        "amount": 1
+      }
+    ]
+  },
+  "70199": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70200": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70201": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70202": {
+    "name": {
+      "en": "Return to the Phantom Realm",
+      "ja": "喜びの神域 エウプロシュネ",
+      "de": "Rückkehr ins Schemenreich",
+      "fr": "Retour à Omphalos"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70203": {
+    "name": {
+      "en": "In Heavenly Company",
+      "ja": "神々との道行き",
+      "de": "In himmlischer Gesellschaft",
+      "fr": "Un voyage lapidaire"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70204": {
+    "name": {
+      "en": "Divine Nonintervention",
+      "ja": "神の想い、人の想い",
+      "de": "Göttliche Nichteinmischung",
+      "fr": "La quête de Krile"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70205": {
+    "name": {
+      "en": "The Secret of the Twelve",
+      "ja": "十二神の秘密",
+      "de": "Das Geheimnis der Zwölf",
+      "fr": "Le secret des Douze"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70206": {
+    "name": {
+      "en": "Once More unto the Void",
+      "ja": "今再び、ヴォイドへ",
+      "de": "Ruf aus dem Nichts",
+      "fr": "Le jour et la nuit"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "70207": {
+    "name": {
+      "en": "A Cold Reunion",
+      "ja": "北での再会",
+      "de": "Hilfe aus der Zapferhöhle",
+      "fr": "Rendez-vous gare du Nord"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "70208": {
+    "name": {
+      "en": "Kindled Spirit",
+      "ja": "あたたかい家",
+      "de": "Ernste Gespräche",
+      "fr": "Aides de camp"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 38269,
+        "amount": 2,
+        "hq": true
+      },
+      {
+        "id": 38261,
+        "amount": 2,
+        "hq": true
+      },
+      {
+        "id": 38265,
+        "amount": 2,
+        "hq": true
+      },
+      {
+        "id": 38267,
+        "amount": 2,
+        "hq": true
+      },
+      {
+        "id": 5825,
+        "amount": 3
+      }
+    ]
+  },
+  "70209": {
+    "name": {
+      "en": "An Unforeseen Bargain",
+      "ja": "パンひとつと引き換えに",
+      "de": "Der Wert einer Buuds",
+      "fr": "Pour une bouchée de pain"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 33917,
+        "amount": 1
+      },
+      {
+        "id": 33921,
+        "amount": 1
+      },
+      {
+        "id": 33928,
+        "amount": 1
+      },
+      {
+        "id": 33929,
+        "amount": 1
+      }
+    ]
+  },
+  "70210": {
+    "name": {
+      "en": "King of the Mountain",
+      "ja": "気配の正体",
+      "de": "Die Höhle von Lapis Manalis",
+      "fr": "Là-haut, dans la montagne"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "70211": {
+    "name": {
+      "en": "A Dragon's Resolve",
+      "ja": "ヴリトラの想い",
+      "de": "Verschnaufpause für Vrtra",
+      "fr": "La résilience du dragon ancien"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "70212": {
+    "name": {
+      "en": "Paths Barred",
+      "ja": "阻む光",
+      "de": "Dem Ungeheuer auf den Fersen",
+      "fr": "Nouveau contretemps"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 38270,
+        "amount": 2,
+        "hq": true
+      },
+      {
+        "id": 38262,
+        "amount": 2,
+        "hq": true
+      },
+      {
+        "id": 38268,
+        "amount": 2,
+        "hq": true
+      },
+      {
+        "id": 38266,
+        "amount": 2,
+        "hq": true
+      },
+      {
+        "id": 5825,
+        "amount": 3
+      }
+    ]
+  },
+  "70213": {
+    "name": {
+      "en": "Desires Untold",
+      "ja": "ゴルベーザの思惑",
+      "de": "Feuer auf dem Felsen",
+      "fr": "Les menées du néant"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 33918,
+        "amount": 1
+      },
+      {
+        "id": 33919,
+        "amount": 1
+      },
+      {
+        "id": 33920,
+        "amount": 1
+      }
+    ]
+  },
+  "70214": {
+    "name": {
+      "en": "Gods Revel, Lands Tremble",
+      "ja": "天の祝祭、地の鳴動",
+      "de": "Unerreichbares Nichts",
+      "fr": "Les Dieux festoient, la terre tremble"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "70215": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70216": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70217": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70218": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70219": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70220": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70221": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70222": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70223": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70224": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70225": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70226": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70227": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70228": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70229": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70230": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70231": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70232": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70233": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70234": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70235": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70236": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70237": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70238": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70239": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70240": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70241": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70242": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70243": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70244": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70245": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70246": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70247": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70248": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70249": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70250": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70251": {
+    "name": {
+      "en": "That's So Anden",
+      "ja": "お得意様アンデン",
+      "de": "Etwas grummelt im Gras",
+      "fr": "L'enfeuillé doté de parole"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36053,
+        "amount": 3
+      },
+      {
+        "id": 36054,
+        "amount": 3
+      }
+    ]
+  },
+  "70252": {
+    "name": {
+      "en": "Every Anden of the Rainbow",
+      "ja": "アンデンの選択",
+      "de": "Andens letzte Verwandlung",
+      "fr": "Le choix d'Anden"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36060,
+        "amount": 3
+      },
+      {
+        "id": 36061,
+        "amount": 3
+      }
+    ]
+  },
+  "70253": {
+    "name": {
+      "en": "A Labor of Leaf",
+      "ja": "素敵なヒトの葉を紡ぎ",
+      "de": "Blätter der Dankbarkeit",
+      "fr": "Un gage de gratitude"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 39629,
+        "amount": 1
+      },
+      {
+        "id": 39488,
+        "amount": 1
+      }
+    ]
+  },
+  "70254": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70255": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70256": {
+    "name": {
+      "en": "Inheritance",
+      "ja": "プリンセスデーと扇の舞踊",
+      "de": "Ein rätselhaftes Erbstück",
+      "fr": "La grâce de l'éventail"
+    },
+    "icon": "/i/080000/080109.png",
+    "rewards": [
+      {
+        "id": 39497,
+        "amount": 1
+      }
+    ]
+  },
+  "70257": {
+    "name": {
+      "en": "エッグハントのいたずら騒動",
+      "ja": "エッグハントのいたずら騒動",
+      "de": "Schelmischer Schabernack",
+      "fr": "Des farceurs sèment la pagaille"
+    },
+    "icon": "/i/080000/080110.png"
+  },
+  "70258": {
+    "name": {
+      "en": "エッグハントでトンベリに愛を",
+      "ja": "エッグハントでトンベリに愛を",
+      "de": "Liebe zwischen Eiern und Tonberrys",
+      "fr": "Aimer les tomberrys à la folie"
+    },
+    "icon": "/i/080000/080110.png",
+    "rewards": [
+      {
+        "id": 39500,
+        "amount": 1
+      }
+    ]
+  },
+  "70259": {
+    "name": {
+      "en": "Allergic to Sunshine",
+      "ja": "紅蓮祭と常夏の不審者",
+      "de": "Suspekt im Sand",
+      "fr": "La Mort vous va si mal"
+    },
+    "icon": "/i/080000/080101.png"
+  },
+  "70260": {
+    "name": {
+      "en": "I am the Sunshine",
+      "ja": "紅蓮祭と常夏のヒーロー士",
+      "de": "Ein Recke zur rechten Zeit",
+      "fr": "Le phénix et son ange gardien"
+    },
+    "icon": "/i/080000/080101.png",
+    "rewards": [
+      {
+        "id": 39245,
+        "amount": 1
+      },
+      {
+        "id": 39246,
+        "amount": 1
+      }
+    ]
+  },
+  "70261": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70262": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70263": {
+    "name": {
+      "en": "ゴールドソーサーとゴールデンな独占取材",
+      "ja": "ゴールドソーサーとゴールデンな独占取材",
+      "de": "Eine goldene Schlagzeile",
+      "fr": "Petits mais costauds"
+    },
+    "icon": "/i/080000/080116.png"
+  },
+  "70264": {
+    "name": {
+      "en": "ゴールドソーサーとゴールデンな心意気！",
+      "ja": "ゴールドソーサーとゴールデンな心意気！",
+      "de": "Ein goldenes Interview",
+      "fr": "Les honneurs du Gold Saucer"
+    },
+    "icon": "/i/080000/080116.png",
+    "rewards": [
+      {
+        "id": 39483,
+        "amount": 1
+      }
+    ]
+  },
+  "70265": {
+    "name": {
+      "en": "A Far Eastern Yarn",
+      "ja": "珍客？ 東方からの来訪者！",
+      "de": "Besuch aus Fernost",
+      "fr": "Des invitées venues de loin"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 39247,
+        "amount": 1
+      },
+      {
+        "id": 39248,
+        "amount": 1
+      },
+      {
+        "id": 39249,
+        "amount": 1
+      },
+      {
+        "id": 39250,
+        "amount": 1
+      },
+      {
+        "id": 39251,
+        "amount": 1
+      }
+    ]
+  },
+  "70266": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70267": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70268": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70269": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70270": {
     "name": {
       "en": "",
       "ja": "",

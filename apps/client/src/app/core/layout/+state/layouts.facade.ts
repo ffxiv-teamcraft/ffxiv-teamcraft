@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 
 import { LayoutsState } from './layouts.reducer';
 import { layoutsQuery } from './layouts.selectors';
-import { CreateLayout, DeleteLayout, LoadLayouts, SelectLayout, UpdateLayout } from './layouts.actions';
+import { CreateLayout, DeleteLayout, LoadLayout, LoadLayouts, SelectLayout, UpdateLayout } from './layouts.actions';
 import { LayoutOrderService } from '../layout-order.service';
 import { List } from '../../../modules/list/model/list';
 import { combineLatest, EMPTY, Observable, of } from 'rxjs';
@@ -55,7 +55,7 @@ export class LayoutsFacade {
               private authFacade: AuthFacade, private settings: SettingsService, private lazyData: LazyDataFacade) {
   }
 
-  public getDisplay(list: List, adaptativeFilter: boolean, overrideHideCompleted = false): Observable<ListDisplay> {
+  public getDisplay(list: List, adaptativeFilter: boolean, overrideHideCompleted = false, layout$ = this.selectedLayout$): Observable<ListDisplay> {
     const settingsChange$ = this.settings.settingsChange$.pipe(
       filter(name => name === 'maximum-vendor-price'),
       debounceTime(2000),
@@ -70,7 +70,7 @@ export class LayoutsFacade {
         }
       })
     );
-    return combineLatest([this.selectedLayout$, user$, settingsChange$, this.lazyData.getEntry('craftingLevels'), this.lazyData.getEntry('gatheringLevels')])
+    return combineLatest([layout$, user$, settingsChange$, this.lazyData.getEntry('craftingLevels'), this.lazyData.getEntry('gatheringLevels')])
       .pipe(
         withLatestFrom(this.authFacade.gearSets$),
         switchMap(([[layout, user, craftingLevels, gatheringLevels], gearsets]) => {
@@ -186,8 +186,8 @@ export class LayoutsFacade {
       );
   }
 
-  public getFinalItemsDisplay(list: List, adaptativeFilter: boolean, overrideHideCompleted = false): Observable<LayoutRowDisplay> {
-    return this.selectedLayout$.pipe(
+  public getFinalItemsDisplay(list: List, adaptativeFilter: boolean, overrideHideCompleted = false, layout$ = this.selectedLayout$): Observable<LayoutRowDisplay> {
+    return layout$.pipe(
       switchMap(layout => {
         return this.layoutOrder.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder).pipe(
           map(ordered => ({ rows: ordered.filter(row => (layout.recipeHideCompleted || overrideHideCompleted) ? row.done < row.amount : true), layout }))
@@ -257,12 +257,16 @@ export class LayoutsFacade {
     this.store.dispatch(new SelectLayout(key));
   }
 
-  loadAll() {
+  loadAll(): void {
     this.store.dispatch(new LoadLayouts());
     const selectedKey = localStorage.getItem('layout:selected');
     if (selectedKey !== null) {
       this.store.dispatch(new SelectLayout(selectedKey));
     }
+  }
+
+  load(key: string): void {
+    this.store.dispatch(new LoadLayout(key));
   }
 
   private matchesLevel(sets: TeamcraftGearsetStats[], job: number, level: number): boolean {

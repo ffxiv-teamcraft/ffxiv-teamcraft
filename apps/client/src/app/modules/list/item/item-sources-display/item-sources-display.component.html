@@ -1,33 +1,33 @@
 <div class="obtentions-container" [fxFlex]="flex" fxLayout="row wrap" [fxLayoutAlign]="layoutAlign" fxLayoutGap="2px">
-  <ng-container *ngFor="let source of sources; trackBy: trackByItemSource">
+  <ng-container *ngFor="let source of sourcesDisplay$ | async; trackBy: trackByItemSource">
     <ng-container [ngSwitch]="source.type">
       <div *ngSwitchCase="dataTypes.DEPRECATED">
         <i nz-icon nzType="close-circle" nzTheme="twotone" [nzTwotoneColor]="'#F5222DFF'"
            nz-tooltip [nzTooltipTitle]="'ALLAGAN_REPORTS.Deprecated' | translate">
         </i>
       </div>
-      <button (click)="openGardeningPopup(item)" *ngSwitchCase="dataTypes.GARDENING" nz-button
+      <button (click)="openGardeningPopup(item)" *ngSwitchCase="dataTypes.GARDENING" nz-button [nzSize]="size"
               nz-tooltip
               nzShape="circle" nzTooltipTitle="{{'Gardening' | translate}}">
         <img class="img-icon gardening-icon" src="./assets/icons/Gardening.png">
       </button>
-      <button (click)="openHuntingPopup(item)" *ngSwitchCase="dataTypes.DROPS" nz-button
+      <button (click)="openHuntingPopup(item)" *ngSwitchCase="dataTypes.DROPS" nz-button [nzSize]="size"
               nz-tooltip
               nzShape="circle" nzTooltipTitle="{{'Hunting' | translate}}">
         <img alt="Drops" class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png">
       </button>
-      <button (click)="openIslandAnimalsPopup(item)" *ngSwitchCase="dataTypes.ISLAND_PASTURE" nz-button
+      <button (click)="openIslandAnimalsPopup(item)" *ngSwitchCase="dataTypes.ISLAND_PASTURE" nz-button [nzSize]="size"
               nz-tooltip
               nzShape="circle" nzTooltipTitle="{{'Island_animal' | translate}}">
         <img class="gathering-icon" src="https://xivapi.com/i/063000/063949.png" alt="Island animals">
       </button>
-      <button (click)="openIslandCropPopup(item)" *ngSwitchCase="dataTypes.ISLAND_CROP" nz-button
+      <button (click)="openIslandCropPopup(item)" *ngSwitchCase="dataTypes.ISLAND_CROP" nz-button [nzSize]="size"
               nz-tooltip
               nzShape="circle" nzTooltipTitle="{{'Island_crop' | translate}}">
         <img class="gathering-icon" src="https://xivapi.com/i/063000/063950_hr1.png" alt="Island crop">
       </button>
       <button (click)="openTradesPopup(item)" *ngSwitchCase="dataTypes.TRADE_SOURCES"
-              nz-button
+              nz-button [nzSize]="size"
               nz-tooltip nzShape="circle" nzTooltipTitle="{{'Trade' | translate}}">
         <span *ngIf="source.data | tradeIcon as icon; else gtFallBack">
           <app-item-icon width="24" disableClick="true" tooltipDisabled="true" [itemId]="icon"></app-item-icon>
@@ -37,68 +37,68 @@
         </ng-template>
       </button>
       <button (click)="openInstancesPopup(item)" *ngSwitchCase="dataTypes.INSTANCES"
-              nz-button
+              nz-button [nzSize]="size"
               nz-tooltip nzShape="circle" nzTooltipTitle="{{source.data[0].name | i18n}}">
         <img [src]="source.data[0] | lazyRow:'instances':'icon' | async | xivapiIcon" class="img-icon round-icon">
       </button>
       <button (click)="openMogstationPopup(item)" *ngSwitchCase="dataTypes.MOGSTATION"
-              nz-button
+              nz-button [nzSize]="size"
               nz-tooltip nzShape="circle" [nzTooltipTitle]="'Mogstation' | translate">
         <img class="img-icon round-icon" src="https://cache.secure.square-enix.com/account/content/mogstation/favicon.ico">
       </button>
       <button (click)="openQuestPopup(item)" *ngSwitchCase="dataTypes.QUESTS"
-              nz-button
+              nz-button [nzSize]="size"
               nz-tooltip nzShape="circle" [nzTooltipTitle]="'Quests' | translate">
         <img class="img-icon round-icon" src="./assets/icons/quest.png">
       </button>
       <button (click)="openAchievementsPopup(item)" *ngSwitchCase="dataTypes.ACHIEVEMENTS"
-              nz-button
+              nz-button [nzSize]="size"
               nz-tooltip nzShape="circle" [nzTooltipTitle]="'DB.Achievements' | translate">
         <img class="img-icon round-icon" [src]="source.data[0] | lazyRow:'achievements':'icon' | async | xivapiIcon">
       </button>
       <button (click)="openReducedFromPopup(item)" *ngSwitchCase="dataTypes.REDUCED_FROM"
-              nz-button
+              nz-button [nzSize]="size"
               nz-tooltip nzShape="circle" nzTooltipTitle="{{'Reduction' | translate}}">
         <img class="img-icon round-icon" src="https://www.garlandtools.org/db/images/item/Reduce.png">
       </button>
       <button (click)="openDesynthsPopup(item)" *ngSwitchCase="dataTypes.DESYNTHS"
-              nz-button
+              nz-button [nzSize]="size"
               nz-tooltip nzShape="circle" nzTooltipTitle="{{'Desynth' | translate}}">
         <i nzIconfont="icon-vectorcombine" nz-icon></i>
       </button>
       <button (click)="openVendorsPopup(item)" *ngSwitchCase="dataTypes.VENDORS"
               [nzTooltipTitle]="'Vendors' | translate"
-              nz-button nz-tooltip nzShape="circle">
+              nz-button [nzSize]="size" nz-tooltip nzShape="circle">
         <img alt="Gil" class="img-icon" src="https://xivapi.com/i/065000/065002.png">
       </button>
       <button (click)="openVoyagesPopup(item)" *ngSwitchCase="dataTypes.VOYAGES"
               [nzTooltipTitle]="'Voyages' | translate"
-              nz-button nz-tooltip nzShape="circle">
+              nz-button [nzSize]="size" nz-tooltip nzShape="circle">
         <img alt="Voyages" class="img-icon" src="https://www.garlandtools.org/db/images/Voyage.png">
       </button>
       <button (click)="openVenturesPopup(item)" *ngSwitchCase="dataTypes.VENTURES"
               [nzTooltipTitle]="'Retainer_ventures' | translate"
-              nz-button nz-tooltip nzShape="circle">
+              nz-button [nzSize]="size" nz-tooltip nzShape="circle">
         <img [src]="21072 | lazyIcon" alt="Ventures" class="img-icon round-icon">
       </button>
       <button (click)="openTreasuresPopup(item)" *ngSwitchCase="dataTypes.TREASURES"
               [nzTooltipTitle]="'Treasures' | translate"
-              nz-button nz-tooltip nzShape="circle">
+              nz-button [nzSize]="size" nz-tooltip nzShape="circle">
         <img alt="Treasures" class="img-icon round-icon" src="./assets/icons/chest_open.png">
       </button>
       <button (click)="openFatesPopup(item)" *ngSwitchCase="dataTypes.FATES"
               [nzTooltipTitle]="'Fates' | translate"
-              nz-button nz-tooltip nzShape="circle">
+              nz-button [nzSize]="size" nz-tooltip nzShape="circle">
         <img [src]="source.data[0].id | lazyRow:'fates':'icon' | async | xivapiIcon" alt="Fates" class="img-icon round-icon">
       </button>
       <ng-container *ngSwitchCase="dataTypes.CRAFTED_BY">
         <div *ngFor="let craft of source.data; trackBy: trackByCraft"
              [fxLayoutGap]="source.data.length > 1?'0px':'5px'"
-             [fxLayout]="source.data.length > 1?'column':'row'"
+             [fxLayout]="!forceHorizontal && source.data.length > 1?'column':'row'"
              fxLayoutAlign="center center">
           <ng-container *ngIf="craft.job > 0">
             <button (click)="overlay?null:openSimulator(craft.id, item, craft)" *ngIf="craft.icon !== ''" [nzShape]="'circle'"
-                    nz-button>
+                    nz-button [nzSize]="size">
               <span [innerHTML]="craft.job | jobUnicode" class="craft-icon companion-svg"></span>
             </button>
             <div>{{craft.lvl}}</div>
@@ -107,11 +107,12 @@
           <ng-container *ngIf="craft.isIslandRecipe">
             <img src="./assets/icons/island.png" alt="Island Recipe" class="img-icon" nz-tooltip [nzTooltipTitle]="'ITEMS.Island_recipe' | translate">
           </ng-container>
-          <app-company-workshop-tree-button *ngIf="craft.job === 0" [recipeId]="craft.id"></app-company-workshop-tree-button>
+          <app-company-workshop-tree-button *ngIf="craft.job === 0" [recipeId]="craft.id" [size]="size"></app-company-workshop-tree-button>
         </div>
       </ng-container>
       <div *ngSwitchCase="dataTypes.GATHERED_BY" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2px">
-        <button (click)="openGatheredByPopup(item)" nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'LIST_DETAILS.SOURCES.Gatherable' | translate">
+        <button (click)="openGatheredByPopup(item)" nz-button [nzSize]="size" nzShape="circle" nz-tooltip
+                [nzTooltipTitle]="'LIST_DETAILS.SOURCES.Gatherable' | translate">
           <img class="gathering-icon" [class.small]="source.data.type === -10" src="{{source.data.type | nodeTypeIcon: source.data.nodes[0]?.limited}}">
         </button>
         <div *ngIf="!source.data.nodes[0].isIslandNode">{{source.data.level}}</div>

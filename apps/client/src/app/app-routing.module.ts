@@ -28,6 +28,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/list-details/list-details.module').then(m => m.ListDetailsModule)
   },
   {
+    path: 'list-aggregate',
+    loadChildren: () => import('./pages/list-aggregate/list-aggregate-pages.module').then(m => m.ListAggregatePagesModule)
+  },
+  {
     path: 'workshop',
     loadChildren: () => import('./pages/workshop-details/workshop-details.module').then(m => m.WorkshopDetailsModule)
   },
@@ -82,6 +86,10 @@ const routes: Routes = [
   {
     path: 'list-panel-overlay',
     loadChildren: () => import('./pages/list-panel-overlay/list-panel-overlay.module').then(m => m.ListPanelOverlayModule)
+  },
+  {
+    path: 'step-by-step-list-overlay',
+    loadComponent: () => import('./pages/step-by-step-list-overlay/step-by-step-list-overlay.component').then(m => m.StepByStepListOverlayComponent)
   },
   {
     path: 'rotation-overlay',
@@ -154,10 +162,6 @@ const routes: Routes = [
   {
     path: 'template',
     loadChildren: () => import('./pages/template/template.module').then(m => m.TemplateModule)
-  },
-  {
-    path: 'custom-items',
-    loadChildren: () => import('./pages/custom-items/custom-items-page.module').then(m => m.CustomItemsPageModule)
   },
   {
     path: 'desynth',

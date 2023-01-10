@@ -360,7 +360,7 @@
             </ng-template>
           </nz-alert>
           <nz-alert
-            *ngIf="!firewallRuleApplied && platformService.isDesktop() && ipc.machinaToggle && (possibleMissingFirewallRule$ | async)  && !(pcapOutDated$ | async)"
+            *ngIf="!firewallRuleApplied && platformService.isDesktop() && ipc.machinaToggle && !overlay && (possibleMissingFirewallRule$ | async)  && !(pcapOutDated$ | async)"
             class="new-version-alert"
             [nzMessage]="'PACKET_CAPTURE.Possible_missing_firewall_rule' | translate"
             nzBanner nzCloseable nzType="warning" [nzCloseText]="'Close' | translate"

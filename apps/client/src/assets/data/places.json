@@ -3972,10 +3972,10 @@
     "fr": "La Chatterie"
   },
   "663": {
-    "en": "The Rambade",
-    "ja": "舷梯門",
-    "de": "Die Rambade",
-    "fr": "La Rambade"
+    "en": "The First Rambade",
+    "ja": "第一舷梯門",
+    "de": "Erstes Fallreeptor",
+    "fr": "La Première Rambade"
   },
   "664": {
     "en": "Rowers' Quarters",
@@ -4014,10 +4014,10 @@
     "fr": "Le Trou"
   },
   "670": {
-    "en": "The Rambade",
-    "ja": "舷梯門",
-    "de": "Die Rambade",
-    "fr": "La Rambade"
+    "en": "The Second Rambade",
+    "ja": "第二舷梯門",
+    "de": "Zweites Fallreeptor",
+    "fr": "La Seconde Rambade"
   },
   "671": {
     "en": "Waverider Gate",
@@ -8076,7 +8076,7 @@
     "fr": "Crypte des rêves"
   },
   "1347": {
-    "en": "The Arrested Darkness",
+    "en": "The Sanctum of Dreams",
     "ja": "封魔洞",
     "de": "Siegelgewölbe",
     "fr": "Les Ténèbres Scellées"
@@ -15162,10 +15162,10 @@
     "fr": "Cité croulante de Nym"
   },
   "2528": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sylphstep",
+    "ja": "シルフ領風特設アスレチック",
+    "de": "Sylphenland",
+    "fr": "Sylve sylphe sibylline"
   },
   "2529": {
     "en": "",
@@ -15414,28 +15414,28 @@
     "fr": ""
   },
   "2570": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Forbidden Land, Eureka<br>(Field Entry)",
+    "ja": "禁断の地 エウレカ<br>[特殊フィールド探索]",
+    "de": "Das Verbotene Land Eureka (Feldexkursion)",
+    "fr": "Eurêka, la terre interdite<br>[Missions d'exploration]"
   },
   "2571": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Save the Queen<br>(Field Entry)",
+    "ja": "セイブ・ザ・クイーン<br>[特殊フィールド探索]",
+    "de": "Die Königinnenwache (Feldexkursion)",
+    "fr": "Garde-la-Reine<br>[Missions d'exploration]"
   },
   "2572": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Palace of the Dead<br>(Dungeon Entry)",
+    "ja": "死者の宮殿<br>[ディープダンジョン]",
+    "de": "Palast der Toten (Tiefes Gewölbe)",
+    "fr": "Palais des morts<br>[Donjon sans fond]"
   },
   "2573": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Heaven-on-High<br>(Dungeon Entry)",
+    "ja": "アメノミハシラ<br>[ディープダンジョン]",
+    "de": "Himmelssäule (Tiefes Gewölbe)",
+    "fr": "Pilier des Cieux<br>[Donjon sans fond]"
   },
   "2574": {
     "en": "",
@@ -15444,10 +15444,10 @@
     "fr": ""
   },
   "2575": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Sil'dihn Subterrane<br>(Dungeon Entry)",
+    "ja": "シラディハ水道<br>[特殊ダンジョン探索]",
+    "de": "Unterstadt von Sil'dih (Gewölbesuche)",
+    "fr": "Canalisations sildiennes<br>[Donjons spéciaux]"
   },
   "2576": {
     "en": "",
@@ -21086,7 +21086,7 @@
   "3515": {
     "en": "Mount Argai Mines",
     "ja": "アルゲ鉱山",
-    "de": "Minen des Argai",
+    "de": "Vorplatz der Argai-Minen",
     "fr": "Mines du mont Argai"
   },
   "3516": {
@@ -24552,10 +24552,10 @@
     "fr": "Le Petit Nuage"
   },
   "4093": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Clockwork Castletown",
+    "ja": "東方絡繰御殿",
+    "de": "Die Mechanische Menagerie",
+    "fr": "Le Traquenard oriental"
   },
   "4094": {
     "en": "",
@@ -25542,21 +25542,231 @@
     "fr": "Avenue Fer-de-hallebarde [Annexe]"
   },
   "4258": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Euphrosyne",
+    "ja": "喜びの神域 エウプロシュネ",
+    "de": "Euphrosyne",
+    "fr": "Domaine divin - Euphrosyne"
   },
   "4259": {
+    "en": "Heaven of Earth",
+    "ja": "土天",
+    "de": "Elementarhimmel der Erde",
+    "fr": "Voûte de la terre"
+  },
+  "4260": {
+    "en": "Heaven of Ice",
+    "ja": "氷天",
+    "de": "Elementarhimmel des Eises",
+    "fr": "Voûte de la glace"
+  },
+  "4261": {
+    "en": "Hall of the Spear",
+    "ja": "氷天宮",
+    "de": "Göttliches Firmament",
+    "fr": "Sanctuaire de l'Azur"
+  },
+  "4262": {
+    "en": "Arete",
+    "ja": "氷天宮屋上",
+    "de": "Spitze des Firmaments",
+    "fr": "Toits du sanctuaire de l'Azur"
+  },
+  "4263": {
+    "en": "Heaven of Earth",
+    "ja": "土天",
+    "de": "Elementarhimmel der Erde",
+    "fr": "Voûte de la terre"
+  },
+  "4264": {
+    "en": "Heaven of Ice",
+    "ja": "氷天",
+    "de": "Elementarhimmel des Eises",
+    "fr": "Voûte de la glace"
+  },
+  "4265": {
+    "en": "Fertile Plains",
+    "ja": "豊穣の地",
+    "de": "Land der Fruchtbarkeit",
+    "fr": "Terre d'abondance"
+  },
+  "4266": {
+    "en": "The Roots",
+    "ja": "世界樹の根土",
+    "de": "Fuß des Weltenbaums",
+    "fr": "Racines de l'Arbre-Monde"
+  },
+  "4267": {
+    "en": "The Bole",
+    "ja": "世界樹",
+    "de": "Weltenbaum",
+    "fr": "Arbre-Monde"
+  },
+  "4268": {
+    "en": "Hanging Tributary",
+    "ja": "削られた氷河",
+    "de": "Geschabter Gletscher",
+    "fr": "Glacier ciselé"
+  },
+  "4269": {
+    "en": "The Barbs",
+    "ja": "戦神の間",
+    "de": "Domäne der Furie",
+    "fr": "Quartiers de la Conquérante"
+  },
+  "4270": {
+    "en": "Lapis Manalis",
+    "ja": "ラピス・マナリス",
+    "de": "Lapis Manalis",
+    "fr": "Lapis Manalis"
+  },
+  "4271": {
+    "en": "Mons Albus",
+    "ja": "モンス・アルバス山腹",
+    "de": "Hang des Mons Albus",
+    "fr": "Flanc du Mons Albus"
+  },
+  "4272": {
+    "en": "Vicus Messorum",
+    "ja": "ヴィクス・メッソルム",
+    "de": "Vicus Messorem",
+    "fr": "Vicus Messorem"
+  },
+  "4273": {
+    "en": "Fons Manalis",
+    "ja": "フォンス・マナリス",
+    "de": "Fons Manalis",
+    "fr": "Fons Manalis"
+  },
+  "4274": {
+    "en": "The Silvan Throne",
+    "ja": "雪獣の帝座",
+    "de": "Thron der Schneebestie",
+    "fr": "Trône de la Bête des neiges"
+  },
+  "4275": {
+    "en": "Forum Messorum",
+    "ja": "フォルム・メッソルム",
+    "de": "Forum Messorem",
+    "fr": "Forum Messorem"
+  },
+  "4276": {
+    "en": "Deepspine",
+    "ja": "青炎の棘",
+    "de": "Erdseim-Dornen",
+    "fr": "Épines céruléennes"
+  },
+  "4277": {
+    "en": "Lar",
+    "ja": "穂刈の炉",
+    "de": "Ofen der Ernte",
+    "fr": "Four à Épis"
+  },
+  "4278": {
+    "en": "Mons Albus",
+    "ja": "モンス・アルバス山腹",
+    "de": "Hang des Mons Albus",
+    "fr": "Flanc du Mons Albus"
+  },
+  "4279": {
+    "en": "Vicus Messorum",
+    "ja": "ヴィクス・メッソルム",
+    "de": "Vicus Messorem",
+    "fr": "Vicus Messorem"
+  },
+  "4280": {
+    "en": "Fons Manalis",
+    "ja": "フォンス・マナリス",
+    "de": "Fons Manalis",
+    "fr": "Fons Manalis"
+  },
+  "4281": {
+    "en": "Southwestern Isle of Ken",
+    "ja": "ケンの島南西",
+    "de": "Insel der Erkenntnis (Südwesten)",
+    "fr": "Sud-ouest de l'île de Ken"
+  },
+  "4282": {
+    "en": "The House of the First Light",
+    "ja": "水没した教会周辺",
+    "de": "Haus des Strahlenden Lichts",
+    "fr": "Alentours de l'Abbaye de l'Aurore"
+  },
+  "4283": {
+    "en": "Northeast Bronze Lake",
+    "ja": "ブロンズレイク北東湖底",
+    "de": "Grund des Bronzesees (Nordosten)",
+    "fr": "Nord-est du lac d'Airain"
+  },
+  "4284": {
+    "en": "The Chamber of Revolutions",
+    "ja": "双月の間",
+    "de": "Kammer der Zwillingsmonde",
+    "fr": "Chambre des lunes jumelles"
+  },
+  "4285": {
+    "en": "Via Nivalis XLVII",
+    "ja": "XLVII登山雪道",
+    "de": "Bergstraße XLVII",
+    "fr": "Route de montagne XLVII"
+  },
+  "4286": {
+    "en": "Tyrannis",
+    "ja": "僭主の森",
+    "de": "Tyrannenwald",
+    "fr": "Bois du Tyran"
+  },
+  "4287": {
+    "en": "The Shifting Gymnasion Agonon",
+    "ja": "エルピス・ギュムナシオン祭殿",
+    "de": "Gymnasion Agonon",
+    "fr": "Elpis Gymnasion"
+  },
+  "4288": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": ""
   },
-  "4260": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+  "4289": {
+    "en": "Mount Ordeals",
+    "ja": "試練の山",
+    "de": "Berg der Tortur",
+    "fr": "Mont du Supplice"
+  },
+  "4290": {
+    "en": "Hoper's Hold",
+    "ja": "ホーパーズ・ホールド",
+    "de": "Halle der Heiterkeit",
+    "fr": "Berceau des espoirs"
+  },
+  "4291": {
+    "en": "Pes Albus",
+    "ja": "モンス・アルバス山麓",
+    "de": "Fuß des Mons Albus",
+    "fr": "Pied du Mons Albus"
+  },
+  "4292": {
+    "en": "Pes Albus",
+    "ja": "モンス・アルバス山麓",
+    "de": "Fuß des Mons Albus",
+    "fr": "Pied du Mons Albus"
+  },
+  "4293": {
+    "en": "Khadga",
+    "ja": "カドガの大岩",
+    "de": "Khadga-Felsen",
+    "fr": "Khadga"
+  },
+  "4294": {
+    "en": "Magitek Snowcraft ",
+    "ja": "魔導雪上車甲板部",
+    "de": "Deck des Schneemobils",
+    "fr": "Toit de l'autoneige magitek"
+  },
+  "4295": {
+    "en": "Lapis Manalis",
+    "ja": "ラピス・マナリス",
+    "de": "Lapis Manalis",
+    "fr": "Lapis Manalis"
   }
 }

@@ -3,7 +3,7 @@ import { Workshop } from '../../../model/other/workshop';
 import { combineLatest, Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { WorkshopsFacade } from '../+state/workshops.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -28,8 +28,19 @@ import { PermissionsController } from '../../../core/database/permissions-contro
 })
 export class WorkshopPanelComponent {
 
+  public aggregatedIds: string;
+
+  private _lists: List[];
   @Input()
-  lists: List[] = [];
+  set lists(lists: List[]) {
+    this._lists = lists;
+    this.aggregatedIds = lists.map(l => l.$key).join(':');
+  }
+
+  get lists(): List[] {
+    return this._lists;
+  }
+
 
   public user$ = this.authFacade.user$;
 

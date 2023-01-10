@@ -1,0 +1,38 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px;
+
+  &.odd {
+    background-color: rgba(77, 77, 77, .5);
+  }
+
+  .name {
+    flex: 0 0 200px;
+  }
+
+  .timers {
+    flex-wrap: wrap;
+    flex: 1 1 200px
+  }
+
+  &.craftable {
+    background-color: rgba(19, 168, 255, .4);
+  }
+
+  &.done {
+    background-color: rgba(94, 255, 91, 0.2);
+    opacity: .6;
+  }
+
+  &.can-skip {
+    opacity: .5;
+  }
+
+  &.has-all-ingredients {
+    border: 1px dashed rgba(19, 168, 255, .3);
+  }
+}
