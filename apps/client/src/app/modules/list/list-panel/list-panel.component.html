@@ -80,7 +80,7 @@
               <nz-tag *ngFor="let tag of getTags()">{{('LIST_TAGS.' + tag) | uppercase | translate}}</nz-tag>
             </div>
             <div class="description">
-              <nz-tag nz-tooltip [nzTooltipTitle]="_list.note" class="custom-tag" [style.border-color]="'#108ee9'"  *ngIf="publicDisplay && _list.note">
+              <nz-tag nz-tooltip [nzTooltipTitle]="_list.note" class="custom-tag" [style.border-color]="'#108ee9'" *ngIf="publicDisplay && _list.note">
                 <i nz-icon nzType="read" nzTheme="outline"></i>
                 {{'LIST_DETAILS.Note_placeholder' | translate}}
               </nz-tag>
@@ -126,6 +126,14 @@
              tutorialStep="TUTORIAL.LIST_PANEL.Open_list"
              tutorialStepIndex="1">
             <i nz-icon nzType="folder-open"></i>
+          </a>
+          <a (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async)?.value > 10 && (listIsLarge$ | async) === true" [nzShape]="'circle'"
+             [nzTooltipTitle]="'LIST_AGGREGATE.Open_aggregate' | translate"
+             [nzType]="'primary'"
+             nz-button
+             nz-tooltip
+             routerLink="/list-aggregate/{{_list.$key}}/defaultLayout">
+            <i nz-icon nzType="folder-view"></i>
           </a>
           <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteList(_list)" *ngIf="(permissionLevel$ | async)?.value > 10"
                   [disabled]="(permissionLevel$ | async)?.value < 40 || _list.hasCommission" [nzShape]="'circle'"

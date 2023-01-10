@@ -24,24 +24,24 @@ export class LayoutService extends FirestoreRelationalStorage<ListLayout> {
     layout.name = 'Default Layout';
     layout.rows = [
       new LayoutRow('Timed nodes', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_TIMED.name,
-        0, true, false, false, false, true, false, false, true),
+        0, true, false, false, false, true, false, false, true, false, true),
       new LayoutRow('Vendors ', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.CAN_BE_BOUGHT.name,
-        1, false, true, false, false, true, false, false, true),
+        1, false, true, false, false, true, false, false, true, false, true),
       new LayoutRow('Reducible', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_REDUCTION.name,
-        2, false, false, false, false, true, false, false, true),
+        2, false, false, false, false, true, false, false, true, false, true),
       new LayoutRow('Tomes/Tokens/Scrips', 'NAME', LayoutRowOrder.DESC, 'IS_TOME_TRADE:or:IS_SCRIPT_TRADE',
-        3, false, true, false, false, true, false, false, true),
+        3, false, true, false, false, true, false, false, true, false, true),
       new LayoutRow('Fishing', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_GATHERED_BY_FSH.name,
-        4, false, false, false, false, true, false, false, true),
+        4, false, false, false, false, true, false, false, true, false, true),
       new LayoutRow('Gathering', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_GATHERING.name,
-        5, true, false, false, false, true, false, false, true),
+        5, true, false, false, false, true, false, false, true, false, true),
       new LayoutRow('Drops_or_GC', 'NAME', LayoutRowOrder.DESC,
         LayoutRowFilter.IS_MONSTER_DROP.name + ':or:' + LayoutRowFilter.IS_GC_TRADE.name,
-        6, false, false, false, false, true, false, false, true),
+        6, false, false, false, false, true, false, false, true, false, true),
       new LayoutRow('Pre_crafts', 'JOB', LayoutRowOrder.ASC, LayoutRowFilter.IS_CRAFT.name,
-        8, false, false, true, false, true, false, false, true),
+        8, false, false, true, false, true, false, false, true, false, true),
       new LayoutRow('Other', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.ANYTHING.name,
-        7, true, false, false, false, true, false, false, true)
+        7, true, false, false, false, true, false, false, true, false, true)
     ];
     layout.recipeOrder = LayoutRowOrder.ASC;
     layout.recipeOrderBy = 'JOB';
@@ -55,22 +55,22 @@ export class LayoutService extends FirestoreRelationalStorage<ListLayout> {
     layout.name = 'Default Layout without vendors';
     layout.rows = [
       new LayoutRow('Timed nodes', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_TIMED.name,
-        0, true, false, false, false, true, false, false, true),
+        0, true, false, false, false, true, false, false, true, false, true),
       new LayoutRow('Reducible', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_REDUCTION.name,
-        1, false, false, false, false, true, false, false, true),
+        1, false, false, false, false, true, false, false, true, false, true),
       new LayoutRow('Tomes/Tokens/Scrips', 'NAME', LayoutRowOrder.DESC, 'IS_TOME_TRADE:or:IS_SCRIPT_TRADE',
-        2, false, true, false, false, true, false, false, true),
+        2, false, true, false, false, true, false, false, true, false, true),
       new LayoutRow('Fishing', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_GATHERED_BY_FSH.name,
-        3, false, false, false, false, true, false, false, true),
+        3, false, false, false, false, true, false, false, true, false, true),
       new LayoutRow('Gathering', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_GATHERING.name,
-        4, true, false, false, false, true, false, false, true),
+        4, true, false, false, false, true, false, false, true, false, true),
       new LayoutRow('Drops_or_GC', 'NAME', LayoutRowOrder.DESC,
         LayoutRowFilter.IS_MONSTER_DROP.name + ':or:' + LayoutRowFilter.IS_GC_TRADE.name,
-        5, false, false, false, false, true, false, false, true),
+        5, false, false, false, false, true, false, false, true, false, true),
       new LayoutRow('Pre_crafts', 'JOB', LayoutRowOrder.ASC, LayoutRowFilter.IS_CRAFT.name,
-        6, false, false, true, false, true, false, false, true),
+        6, false, false, true, false, true, false, false, true, false, true),
       new LayoutRow('Other', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.ANYTHING.name,
-        7, true, false, false, false, true, false, false, true)
+        7, true, false, false, false, true, false, false, true, false, true)
     ];
     layout.recipeOrder = LayoutRowOrder.ASC;
     layout.recipeOrderBy = 'JOB';

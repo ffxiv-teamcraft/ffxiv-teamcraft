@@ -70,8 +70,8 @@ export class NodesExtractor extends AbstractExtractor {
             return;
           }
 
-          if (point.PlaceNameTargetID === 0 && point.TerritoryType) {
-            point.PlaceNameTargetID = point.TerritoryType.PlaceName;
+          if (point.PlaceName === 0 && point.TerritoryType) {
+            point.PlaceName = point.TerritoryType.PlaceName.index;
           }
           this.gatheringPoints[point.index] = {
             base: point.GatheringPointBase,

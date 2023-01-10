@@ -12,7 +12,7 @@ export class MapNamePipe implements PipeTransform {
   }
 
   transform(id: number): Observable<I18nName> {
-    const placeId = mapIds.find((m) => m.id === id).zone ?? 1;
+    const placeId = mapIds.find((m) => m.id === id)?.zone ?? 1;
     return this.lazyData.getRow('places', placeId);
   }
 }

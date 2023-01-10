@@ -271,7 +271,7 @@ export class AlarmsFacade {
   public getNextSpawn(alarm: Alarm, etime: Date): NextSpawn {
     const cacheKey = `${alarm.itemId}-${alarm.bnpcName}-${alarm.zoneId}-${(alarm.spawns || []).join(',')}-${(alarm.weathers || []).join(',')}`;
     if (this.nextSpawnCache[cacheKey] === undefined || this.nextSpawnCache[cacheKey].expires.getTime() < Date.now()) {
-      const sortedSpawns = (alarm.spawns || []).sort((a, b) => {
+      const sortedSpawns = [...(alarm.spawns || [])].sort((a, b) => {
         const timeBeforeA = this.getMinutesBefore(etime, { hours: a, days: 0 });
         const timeBeforeADespawns = this.getMinutesBefore(etime, { hours: (a + alarm.duration) % 24, days: 0 });
         const timeBeforeB = this.getMinutesBefore(etime, { hours: b, days: 0 });
@@ -317,6 +317,10 @@ export class AlarmsFacade {
    * @param minutes
    */
   public getMinutesBefore(currentTime: Date, spawn: NextSpawn, minutes = 0): number {
+    if (spawn.date) {
+      const durationSeconds = Math.floor((spawn.date.getTime() - currentTime.getTime()) / 1000);
+      return durationSeconds / 60;
+    }
     let hours = spawn.hours;
     // Convert 0 to 24 for spawn timers
     if (hours === 0) {

@@ -29,7 +29,7 @@ export class RelationshipsComponent implements OnInit {
 
   constructor(private listsFacade: ListsFacade, private inventoryService: InventoryService,
               private platform: PlatformService) {
-    this.list$ = this.listsFacade.selectedList$;
+    this.list$ = this.list$ || this.listsFacade.selectedList$;
   }
 
   ngOnInit() {

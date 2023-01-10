@@ -14,6 +14,9 @@ import { UserService } from '../../../core/database/user.service';
 export class UserAvatarComponent implements OnInit {
 
   @Input()
+  disableTooltip = false;
+
+  @Input()
   userId: string;
 
   @Input()

@@ -30,7 +30,7 @@ export class RecipesExtractor extends AbstractExtractor {
       this.getSheet<any>(xiv, 'MJIRecipe', ['Material.ItemPouch.Item#', 'Amount', 'KeyItem.Item#', 'ItemPouch.Item#'], true, 2),
       this.getSheet<any>(xiv, 'MJICraftworksObject', ['Material.Item#', 'Amount', 'Item#'], true, 1),
       this.getSheet<any>(xiv, 'MJIBuilding', ['Material.Item#', 'Amount'], true, 1),
-      this.getSheet<any>(xiv, 'MJILandmark', ['Material.Item#', 'Amount'], true, 1),
+      this.getSheet<any>(xiv, 'MJILandmark', ['Material.Item#', 'Amount'], true, 1)
     ]).subscribe(([companyCrafts, xivRecipes, mjiRecipes, mjiCraftworksObjects, mjiBuildings, mjiLandmarks]) => {
 
       xivRecipes.forEach(recipe => {
@@ -270,9 +270,9 @@ export class RecipesExtractor extends AbstractExtractor {
             };
           })
           .filter(i => !!i?.id && i.amount > 0);
-        const ID = -10000 + -1 * (+building.index * 100);
+        const ID = -10000 + -1 * (+building.index * 100) + -1 * (+building.subIndex * 10);
         const lazyRecipeRow = {
-          id: `mji-building-${building.index}`,
+          id: `mji-building-${building.index}.${building.subIndex}`,
           job: -10,
           lvl: 1,
           yields: 1,

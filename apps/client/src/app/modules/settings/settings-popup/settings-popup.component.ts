@@ -15,7 +15,7 @@ import { CustomLinksFacade } from '../../custom-links/+state/custom-links.facade
 import { CustomLink } from '../../../core/database/custom-links/custom-link';
 import { Theme } from '../theme';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { uniq } from 'lodash';
+import { uniq, uniqBy } from 'lodash';
 import { MappyReporterService } from '../../../core/electron/mappy/mappy-reporter';
 import { Observable, Subject } from 'rxjs';
 import { NavigationSidebarService } from '../../navigation-sidebar/navigation-sidebar.service';
@@ -65,8 +65,6 @@ export class SettingsPopupComponent {
   enableMinimizeReduceButton = false;
 
   noShortcut = false;
-
-  metricsPath = '';
 
   watchFilesPath = '';
 
@@ -120,6 +118,10 @@ export class SettingsPopupComponent {
       placenameId: 3707
     }
   ];
+
+  housingMaps$ = this.lazyData.getEntry('maps').pipe(
+    map(maps => uniqBy(Object.values(maps).filter(v => v.housing), v => v.placename_id))
+  );
 
   public sidebarItems$: Observable<SidebarItem[]> = this.navigationSidebarService.allLinks$.pipe(first());
 
@@ -191,9 +193,6 @@ export class SettingsPopupComponent {
     this.ipc.once('no-shortcut:value', (event, value) => {
       this.noShortcut = value;
     });
-    this.ipc.on('metrics:path:value', (event, value) => {
-      this.metricsPath = value;
-    });
     this.ipc.on('dat:path:value', (event, value) => {
       this.watchFilesPath = value;
     });
@@ -250,7 +249,6 @@ export class SettingsPopupComponent {
     this.ipc.send('proxy-rule:get');
     this.ipc.send('proxy-bypass:get');
     this.ipc.send('proxy-pac:get');
-    this.ipc.send('metrics:path:get');
     this.ipc.send('dat:path:get');
     this.ipc.send('rawsock:get');
     this.customTheme = this.settings.customTheme;
@@ -275,10 +273,6 @@ export class SettingsPopupComponent {
       default:
         return '127.0.0.1:8080';
     }
-  }
-
-  changeMetricsPath(): void {
-    this.ipc.send('metrics:path:set');
   }
 
   changeWatchFilesPath(): void {

@@ -1,0 +1,150 @@
+<nz-card [nzTitle]="titleTpl" nzSize="small" [nzExtra]="markAsDoneTpl">
+  <ng-template #markAsDoneTpl>
+    <button (nzOnConfirm)="markPanelAsDone()"
+            nz-tooltip
+            [nzTooltipTitle]="'LIST.Mark_whole_panel_done' | translate" *ngIf="permissionLevel >= 20"
+            nz-button
+            nz-popconfirm
+            [nzPopconfirmTitle]="'Confirmation' | translate"
+            nzShape="circle" nzSize="small">
+      <i nz-icon nzType="check"></i>
+    </button>
+  </ng-template>
+  <ng-template #titleTpl>
+    <div class="flex-row gap-5 align-center">
+      <div [ngSwitch]="dataType" class="flex-row align-center">
+      <span *ngSwitchCase="DataType.DEPRECATED">
+        <i nz-icon nzType="close-circle" nzTheme="twotone" [nzTwotoneColor]="'#F5222DFF'">
+        </i>
+        {{'ALLAGAN_REPORTS.Deprecated' | translate}}
+      </span>
+        <span *ngSwitchCase="DataType.GARDENING">
+        <img class="img-icon gardening-icon" src="./assets/icons/Gardening.png">
+          {{'Gardening' | translate}}
+      </span>
+        <span *ngSwitchCase="DataType.DROPS">
+        <img alt="Drops" class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png">
+          {{'Hunting' | translate}}
+      </span>
+        <span *ngSwitchCase="DataType.ISLAND_PASTURE">
+        <img class="gathering-icon" src="https://xivapi.com/i/063000/063949.png" alt="Island animals">
+          {{'Island_animal' | translate}}
+      </span>
+        <span *ngSwitchCase="DataType.ISLAND_CROP">
+        <img class="gathering-icon" src="https://xivapi.com/i/063000/063950_hr1.png" alt="Island crop">
+          {{'Island_crop' | translate}}
+      </span>
+        <span *ngSwitchCase="DataType.TRADE_SOURCES">
+        <span *ngIf="steps[0].sources[0].data | tradeIcon as icon; else gtFallBack">
+          <app-item-icon width="24" disableClick="true" tooltipDisabled="true" [itemId]="icon"></app-item-icon>
+          {{'Trade' | translate}}
+        </span>
+        <ng-template #gtFallBack>
+          <img src="https://www.garlandtools.org/db/images/marker/Shop.png" class="img-icon round-icon">
+        </ng-template>
+      </span>
+        <span *ngSwitchCase="DataType.INSTANCES">
+        <img [src]="steps[0].sources[0].data[0]?.id | lazyRow:'instances':'icon' | async | xivapiIcon" class="img-icon round-icon">
+          {{steps[0].sources[0].data[0].name | i18n}}
+      </span>
+        <span *ngSwitchCase="DataType.MOGSTATION">
+        <img class="img-icon round-icon" src="https://cache.secure.square-enix.com/account/content/mogstation/favicon.ico">
+          {{'Mogstation' | translate}}
+      </span>
+        <span *ngSwitchCase="DataType.QUESTS">
+        <img class="img-icon round-icon" src="./assets/icons/quest.png">
+          {{'Quests' | translate}}
+      </span>
+        <span *ngSwitchCase="DataType.ACHIEVEMENTS">
+        <img class="img-icon round-icon" [src]="steps[0].sources[0].data[0] | lazyRow:'achievements':'icon' | async | xivapiIcon">
+          {{'DB.Achievements' | translate}}
+      </span>
+        <span *ngSwitchCase="DataType.REDUCED_FROM">
+        <img class="img-icon round-icon" src="https://www.garlandtools.org/db/images/item/Reduce.png">
+          {{'Reduction' | translate}}
+      </span>
+        <span *ngSwitchCase="DataType.DESYNTHS">
+        <i nzIconfont="icon-vectorcombine" nz-icon></i>
+          {{'Desynth' | translate}}
+      </span>
+        <span *ngSwitchCase="DataType.VENDORS">
+        <img alt="Gil" class="img-icon" src="https://xivapi.com/i/065000/065002.png">
+          {{'Vendors' | translate}}
+      </span>
+        <span *ngSwitchCase="DataType.VOYAGES">
+        <img alt="Voyages" class="img-icon" src="https://www.garlandtools.org/db/images/Voyage.png">
+          {{'Voyages' | translate}}
+      </span>
+        <span *ngSwitchCase="DataType.VENTURES">
+        <img [src]="21072 | lazyIcon" alt="Ventures" class="img-icon round-icon">
+          {{'Retainer_ventures' | translate}}
+      </span>
+        <span *ngSwitchCase="DataType.TREASURES">
+        <img alt="Treasures" class="img-icon round-icon" src="./assets/icons/chest_open.png">
+          {{'Treasures' | translate}}
+      </span>
+        <span *ngSwitchCase="DataType.FATES">
+        <img [src]="steps[0].sources[0].data[0].id | lazyRow:'fates':'icon' | async | xivapiIcon" alt="Fates"
+             class="img-icon round-icon">
+          {{'Fates' | translate}}
+      </span>
+        <ng-container *ngSwitchCase="DataType.CRAFTED_BY">
+          <ng-container *ngIf="steps[0].sources[0].data[0] as craft">
+            <ng-container *ngIf="craft.job > 0">
+            <span *ngIf="craft.icon !== ''" [nzShape]="'circle'"
+            >
+              <span [innerHTML]="craft.job | jobUnicode" class="craft-icon companion-svg"></span>
+            </span>
+              <div>{{craft.lvl}}</div>
+              <div *ngIf="craft.stars_tooltip !== undefined">{{craft.stars_tooltip}}</div>
+              {{'DB.Crafts' | translate}}
+            </ng-container>
+            <ng-container *ngIf="craft.isIslandRecipe">
+              <img src="./assets/icons/island.png" alt="Island Recipe" class="img-icon">
+              {{'ITEMS.Island_recipe' | translate}}
+            </ng-container>
+          </ng-container>
+        </ng-container>
+        <span *ngSwitchCase="DataType.GATHERED_BY" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2px">
+          <img class="gathering-icon" [class.small]="steps[0].sources[0].data.type === -10"
+               src="{{steps[0].sources[0].data.type | nodeTypeIcon: steps[0].sources[0].data.nodes[0]?.limited}}">
+          {{'DB.Gathering' | translate}}
+      </span>
+      </div>
+      <div>
+        ({{steps.length}} {{'Items' | translate | lowercase}})
+      </div>
+    </div>
+  </ng-template>
+  <ng-container *ngIf="npcBreakdownRows$ | async as npcBreakdown; else classicDisplay">
+    <div *ngFor="let row of npcBreakdown; trackBy: trackByNpc">
+      <div *ngIf="row.items.length > 0">
+        <ng-template #npcTitle>
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+            <span class="zone-title">{{row.npcName}}</span>
+            <div *ngIf="row.position" fxLayout="row">,&nbsp;
+              <app-map-position [mapId]="row.position?.map" flex="row" [zoneId]="row.position?.zoneid"
+                                [marker]="row.position"></app-map-position>
+            </div>
+          </div>
+        </ng-template>
+        <nz-divider [nzText]="npcTitle" nzOrientation="left"></nz-divider>
+        <app-lazy-scroll [data]="row.items" [trackBy]="trackById" [rowTemplate]="rowTpl" [rowSize]="31" [displayedRows]="6">
+          <ng-template #rowTpl let-row let-odd="odd">
+            <app-step-by-step-row [row]="row" [class.odd]="odd"
+                                  [dataTypes]="[dataType]"
+                                  [permissionLevel]="permissionLevel"></app-step-by-step-row>
+          </ng-template>
+        </app-lazy-scroll>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #classicDisplay>
+    <app-lazy-scroll [data]="steps" [trackBy]="trackById" [rowTemplate]="rowTpl" [rowSize]="31" [displayedRows]="6">
+      <ng-template #rowTpl let-step let-odd="odd">
+        <app-step-by-step-row [row]="step.row" [class.odd]="odd" [dataTypes]="[dataType]"
+                              [permissionLevel]="permissionLevel"></app-step-by-step-row>
+      </ng-template>
+    </app-lazy-scroll>
+  </ng-template>
+</nz-card>

@@ -69,18 +69,29 @@ export class MapComponent implements OnInit {
   }
 
   getMarkerStyle(map: MapData, marker: MapMarker, aetheryte = false): any {
-    const positionPercents = this.mapService.getPositionOnMap(map, marker);
+    const positionPercents = this.mapService.getPositionPercentOnMap(map, marker);
     return {
       top: `${positionPercents.y}%`,
       left: `${positionPercents.x}%`,
       transform: 'translate(-50%, -50%);',
-      'z-index': marker.zIndex || aetheryte ? this.aetheryteZIndex : 5,
+      'z-index': marker.zIndex || (aetheryte ? this.aetheryteZIndex : 5),
       ...(marker.additionalStyle || {})
+    };
+  }
+
+  getSubtitleStyle(map: MapData, marker: MapMarker, aetheryte = false): any {
+    return {
+      ...this.getMarkerStyle(map, marker, aetheryte),
+      ...marker.subtitleStyle
     };
   }
 
   getIcon(type: number): string {
     return `./assets/icons/Aetheryte${type === 1 ? '_Shard' : ''}.png`;
+  }
+
+  trackByMarker(index: number, marker: MapMarker): string {
+    return `${marker.x}:${marker.y}:${marker.iconType}`;
   }
 
 }

@@ -135,7 +135,7 @@ export class SetItemDone implements Action {
               public readonly finalItem: boolean, public readonly doneDelta: number,
               public readonly recipeId: string, public readonly totalNeeded: number, public readonly settings: { enableAutofillHQFilter: boolean, enableAutofillNQFilter: boolean },
               public readonly external = false, public readonly fromPacket = false,
-              public readonly hq = false) {
+              public readonly hq = false, public readonly listId?: string) {
   }
 }
 
@@ -195,7 +195,7 @@ export class ListsForTeamsLoaded implements Action {
 export class ListDetailsLoaded implements Action {
   readonly type = ListsActionTypes.ListDetailsLoaded;
 
-  constructor(public payload: Partial<List>) {
+  constructor(public payload: Partial<List>, public readonly forOverlay = false) {
   }
 }
 

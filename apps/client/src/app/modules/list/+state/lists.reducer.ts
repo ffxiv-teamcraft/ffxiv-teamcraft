@@ -2,6 +2,7 @@ import { ListsAction, ListsActionTypes } from './lists.actions';
 import { List } from '../model/list';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { ListController } from '../list-controller';
+import { cloneDeep } from 'lodash';
 
 
 const PINNED_LIST_LS_KEY = 'lists:pinned';
@@ -22,7 +23,6 @@ export interface ListsState {
   deleted: string[];
   pinned: string;
   showArchived: boolean;
-  readLock: boolean;
 }
 
 export const initialState: ListsState = {
@@ -32,8 +32,7 @@ export const initialState: ListsState = {
   deleted: [],
   connectedTeams: [],
   pinned: localStorage.getItem(PINNED_LIST_LS_KEY) || 'none',
-  showArchived: false,
-  readLock: false
+  showArchived: false
 };
 
 function updateLists(lists: List[], state: ListsState, matchingPredicate = (list: List) => false): ListsState {
@@ -44,7 +43,7 @@ function updateLists(lists: List[], state: ListsState, matchingPredicate = (list
     checkedLists[storeList.$key] = true;
     const patch = listsByKey[storeList.$key];
     if (patch && patch.etag >= storeList.etag) {
-      if (storeList.$key === state.selectedId && state.readLock) {
+      if (storeList.$key === state.selectedId) {
         return storeList;
       }
       return patch;
@@ -62,6 +61,14 @@ function updateLists(lists: List[], state: ListsState, matchingPredicate = (list
     ...state,
     listDetails: listsAdapter.removeMany(toDelete, afterSet)
   };
+}
+
+function buildProgression(list: List): number {
+  const allItems = [...list.items, ...list.finalItems];
+  return 100 * allItems.reduce((acc, item) => {
+    acc += item.done / item.amount;
+    return acc;
+  }, 0) / allItems.length;
 }
 
 export function listsReducer(
@@ -95,7 +102,8 @@ export function listsReducer(
     }
 
     case ListsActionTypes.SetItemDone: {
-      const list = ListController.clone(state.listDetails.entities[state.selectedId], true);
+      const listId = action.listId || state.selectedId;
+      const list = ListController.clone(state.listDetails.entities[listId], true);
       const item = ListController.getItemById(list, action.itemId, !action.finalItem, action.finalItem);
       const requiredHq = ListController.requiredAsHQ(list, item) > 0;
       let fill = true;
@@ -110,18 +118,9 @@ export function listsReducer(
         ListController.updateAllStatuses(list, action.itemId);
         state = {
           ...state,
-          readLock: true,
           listDetails: listsAdapter.setOne(list, state.listDetails)
         };
       }
-      break;
-    }
-
-    case ListsActionTypes.RemoveReadLock: {
-      state = {
-        ...state,
-        readLock: false
-      };
       break;
     }
 
@@ -191,15 +190,15 @@ export function listsReducer(
     }
 
     case ListsActionTypes.ListDetailsLoaded: {
-      const newVersion = action.payload as List;
+      const newVersion = ListController.clone(cloneDeep(action.payload) as List, true);
       let updated = false;
       let listDetails = state.listDetails;
-      if (state.listDetails.entities[action.payload.$key]) {
+      if (!action.forOverlay && state.listDetails.entities[action.payload.$key]) {
         listDetails = listsAdapter.mapOne({
-          id: action.payload.$key,
+          id: newVersion.$key,
           map: current => {
             updated = (newVersion.etag || 0) >= (current.etag || 0);
-            if (updated && newVersion.items?.length > 0) {
+            if (updated && newVersion.items?.length > 0 && newVersion.notFound) {
               newVersion.notFound = false;
               return newVersion;
             }
@@ -207,7 +206,7 @@ export function listsReducer(
           }
         }, state.listDetails);
       } else {
-        listDetails = listsAdapter.setOne(action.payload as List, state.listDetails);
+        listDetails = listsAdapter.setOne(newVersion, state.listDetails);
         updated = true;
       }
       state = {

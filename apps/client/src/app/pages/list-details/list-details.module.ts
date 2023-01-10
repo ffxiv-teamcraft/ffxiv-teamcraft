@@ -41,6 +41,7 @@ import { InventoryModule } from '../../modules/inventory/inventory.module';
 import { ListPricingComponent } from './list-pricing/list-pricing.component';
 import { ListPricingRowComponent } from './list-pricing/list-pricing-row/list-pricing-row.component';
 import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
 
 const routes: Routes = [
   {
@@ -93,7 +94,8 @@ const routes: Routes = [
 
     CommissionBoardModule,
     InventoryModule,
-    LazyScrollModule
+    LazyScrollModule,
+    NzRadioModule
   ],
   declarations: [
     ListDetailsComponent,

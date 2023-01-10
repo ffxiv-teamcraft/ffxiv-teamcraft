@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { getItemSource, ListRow } from '../model/list-row';
 import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
@@ -12,7 +12,7 @@ import { NavigationMapComponent } from '../../map/navigation-map/navigation-map.
 import { NavigationObjective } from '../../map/navigation-objective';
 import { ListsFacade } from '../+state/lists.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { Observable, of } from 'rxjs';
+import { merge, Observable, of, ReplaySubject } from 'rxjs';
 import { ItemPickerService } from '../../item-picker/item-picker.service';
 import { filter, first, map, switchMap, takeUntil } from 'rxjs/operators';
 import { ListManagerService } from '../list-manager.service';
@@ -36,11 +36,15 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { observeInput } from '../../../core/rxjs/observe-input';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { ProcessedListAggregate } from '../../list-aggregate/model/processed-list-aggregate';
+import { topologicalSort } from '../../../core/tools/topological-sort';
+import { getTiers } from '../../../core/tools/get-tiers';
 
 @Component({
   selector: 'app-list-details-panel',
   templateUrl: './list-details-panel.component.html',
-  styleUrls: ['./list-details-panel.component.less']
+  styleUrls: ['./list-details-panel.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
@@ -50,6 +54,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   displayRow: LayoutRowDisplay;
 
   @Input()
+  compact: boolean;
+
+  @Input()
   finalItems = false;
 
   @Input()
@@ -57,6 +64,16 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   @Input()
   largeList = false;
+
+  @Input()
+  aggregate: ProcessedListAggregate;
+
+  private _forcePermissionLevel$ = new ReplaySubject<PermissionLevel>();
+
+  @Input()
+  set permissionLevel(level: PermissionLevel) {
+    this._forcePermissionLevel$.next(level);
+  }
 
   collapsed = false;
 
@@ -70,7 +87,10 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   hasNavigationMapForZone: { [index: number]: boolean } = {};
 
-  permissionLevel$: Observable<PermissionLevel> = this.listsFacade.selectedListPermissionLevel$;
+  permissionLevel$: Observable<PermissionLevel> = merge(
+    this.listsFacade.selectedListPermissionLevel$,
+    this._forcePermissionLevel$
+  );
 
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
 
@@ -91,12 +111,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   tiers$: Observable<ListRow[][]> = this.displayRow$.pipe(
     filter(row => row.tiers || row.reverseTiers),
     switchMap(displayRow => {
-      let tiers = [[]];
-      if (displayRow.rows !== null) {
-        this.topologicalSort(displayRow.rows).forEach(row => {
-          tiers = this.setTier(row, tiers);
-        });
-      }
+      const tiers = getTiers(displayRow.rows);
       return safeCombineLatest(tiers.map(tier => {
         return this.layoutOrderService.order(tier, displayRow.layoutRow.orderBy, displayRow.layoutRow.order);
       })).pipe(
@@ -477,40 +492,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       return true;
     });
     return preferredPosition || positions[0];
-  }
-
-  private topologicalSort(data: ListRow[]): ListRow[] {
-    const res: ListRow[] = [];
-    const doneList: boolean[] = [];
-    while (data.length > res.length) {
-      let resolved = false;
-
-      for (const item of data) {
-        if (res.indexOf(item) > -1) {
-          // item already in resultset
-          continue;
-        }
-        resolved = true;
-
-        if (item.requires !== undefined) {
-          for (const dep of item.requires) {
-            // We have to check if it's not a precraft, as some dependencies aren't resolvable inside the current array.
-            const depIsInArray = data.find(row => row.id === dep.id) !== undefined;
-            if (!doneList[dep.id] && depIsInArray) {
-              // there is a dependency that is not met:
-              resolved = false;
-              break;
-            }
-          }
-        }
-        if (resolved) {
-          // All dependencies are met:
-          doneList[item.id] = true;
-          res.push(item);
-        }
-      }
-    }
-    return res;
   }
 
   private setTier(row: ListRow, result: ListRow[][]): ListRow[][] {

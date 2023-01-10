@@ -17,6 +17,22 @@
 </div>
 
 <div class="results">
+  <nz-list *ngIf="currentUserFc$ | async as fc">
+    <nz-list-item [nzActions]="[selectAction]">
+      <ng-template #selectAction>
+        <button (click)="pickFc(fc)" nz-button nzType="primary">{{'COMMON.Select' | translate}}</button>
+      </ng-template>
+      <nz-list-item-meta
+        [nzAvatar]="crest"
+        [nzTitle]="fc.Name">
+        <ng-template #crest>
+          <div class="crest-container">
+            <img *ngFor="let layer of fc.Crest" alt="" class="crest-layer" src="{{layer}}">
+          </div>
+        </ng-template>
+      </nz-list-item-meta>
+    </nz-list-item>
+  </nz-list>
   <nz-list [nzDataSource]="result$ | async"
            [nzItemLayout]="'horizontal'"
            [nzLoading]="loadingResults"

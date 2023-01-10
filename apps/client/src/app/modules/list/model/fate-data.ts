@@ -5,4 +5,5 @@ export interface FateData {
   level: number;
   coords?: Vector2;
   zoneId?: number;
+  mapId?: number;
 }

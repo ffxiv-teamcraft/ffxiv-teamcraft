@@ -1,7 +1,7 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as LazyDataActions from './lazy-data.actions';
-import { map, mergeMap, switchMap } from 'rxjs/operators';
+import { concatMap, map, mergeMap, switchMap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { LazyDataFacade } from './lazy-data.facade';
 import { lazyFilesList } from '../../core/data/lazy-files-list';
@@ -32,7 +32,7 @@ export class LazyDataEffects {
           };
         }, {});
       }),
-      mergeMap((registry) => {
+      concatMap((registry) => {
         return merge(...Object.entries<number[]>(registry).map(([entity, ids]: [LazyDataKey, number[]]) => {
           if (this.platformService.isDesktop() || !environment.production || environment.beta) {
             return this.getData(this.getUrl(entity)).pipe(
@@ -56,7 +56,7 @@ export class LazyDataEffects {
   loadLazyDataFullEntity$ = createEffect(() =>
     this.actions$.pipe(
       ofType(LazyDataActions.loadLazyDataFullEntity),
-      mergeMap(({ entity }) => {
+      concatMap(({ entity }) => {
         return this.getData(this.getUrl(entity)).pipe(
           map(entry => {
             return LazyDataActions.loadLazyDataFullEntitySuccess({ entry, key: entity });

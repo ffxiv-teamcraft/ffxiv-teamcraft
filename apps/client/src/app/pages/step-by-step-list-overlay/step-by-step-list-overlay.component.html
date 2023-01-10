@@ -1,0 +1,127 @@
+<app-overlay-container uri="/step-by-step-list-overlay">
+  <ng-container *ngIf="list$ | async; else noListTpl">
+    <ng-container *ngIf="currentMapDisplay$ | async; else closestMapTpl">
+      <ng-container *ngIf="currentPath$ | async as mapDisplay">
+        <div class="title-banner">
+          <nz-breadcrumb>
+            <nz-breadcrumb-item>{{(list$ | async)?.name}}</nz-breadcrumb-item>
+            <nz-breadcrumb-item>{{mapId$ | async | mapName | i18n}}</nz-breadcrumb-item>
+          </nz-breadcrumb>
+        </div>
+        <div class="map-container" nz-col [nzMd]="7">
+          <div #container class="navigation-container">
+            <app-map [mapId]="mapDisplay.path.map.id" [hideDbButton]="true" [markers]="mapDisplay.additionalMarkers"></app-map>
+            <svg class="navigation-svg">
+              <defs>
+                <marker id="walkarrow" markerHeight="6" markerWidth="6" orient="auto" refX="10" refY="5" viewBox="0 0 10 10">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="red"/>
+                </marker>
+                <marker id="tparrow" markerHeight="6" markerWidth="6" orient="auto" refX="10" refY="5" viewBox="0 0 10 10">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="blue"/>
+                </marker>
+              </defs>
+              <g *ngFor="let step of mapDisplay.path.steps; let i = index">
+                <line *ngIf="i > 0 && mapDisplay.path.map !== undefined && containerRef !== undefined"
+                      [attr.marker-end]="'url('+(step.isTeleport?'#tparrow':'#walkarrow')+')'"
+                      [attr.stroke]="step.isTeleport?'blue':'red'"
+                      [attr.x1]="getPositionPercent(mapDisplay.path.map, mapDisplay.path.steps[i-1]).x"
+                      [attr.x2]="getPositionPercent(mapDisplay.path.map, step).x"
+                      [attr.y1]="getPositionPercent(mapDisplay.path.map, mapDisplay.path.steps[i-1]).y"
+                      [attr.y2]="getPositionPercent(mapDisplay.path.map, step).y"
+                      stroke-width="2">
+                </line>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <nz-divider [nzText]="'NAVIGATION.Steps' | translate" nzOrientation="left"></nz-divider>
+
+        <nz-list [nzDataSource]="stepsList$ | async" [nzRenderItem]="stepTemplate" nzSize="small" [nzNoResult]="noStepsTpl">
+          <ng-template #noStepsTpl>
+            <nz-empty [nzNotFoundContent]="'LIST_DETAILS.STEP_BY_STEP.Empty_map' | translate:{ closest: closestMap$ | async| mapName | i18n }"></nz-empty>
+          </ng-template>
+          <ng-template #stepTemplate let-step>
+            <nz-list-item [nzContent]="rowContent">
+              <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="stepTitle"
+                                 [nzDescription]="description">
+                <ng-template #description>
+                  X: {{step.x | number:'1.1-1'}} - Y: {{step.y | number:'1.1-1'}} <span *ngIf="step.fate">({{step.fate | i18nRow:'fates' | i18n}})</span><span
+                  *ngIf="step.monster">({{step.monster | i18nRow:'mobs' | i18n}})</span>
+                </ng-template>
+                <ng-template #stepTitle>
+                  <app-i18n-name *ngIf="step.listRow; else nameTpl" content="items" [id]="step.listRow.id" [itemNameCopy]="step.listRow.id"></app-i18n-name>&nbsp;<img
+                  *ngIf="step.icon" class="node-type-icon"
+                  [src]="step.icon">
+                  <ng-template #nameTpl>
+                    <span [clipboard]="step.name | i18n" nz-tooltip [nzTooltipTitle]="'COMMON.Copy_to_clipboard' | translate">{{step.name | i18n}}</span>
+                  </ng-template>
+                </ng-template>
+                <ng-template #rowContent>
+                  <app-compact-amount-input *ngIf="step.listRow" [permissionLevel]="permissionLevel$ | async" [item]="step.listRow"
+                                            [finalItem]="step.listRow.finalItem"></app-compact-amount-input>
+                </ng-template>
+                <ng-template #avatar>
+                  <img *ngIf="step.isTeleport" alt="" src="./assets/icons/Aetheryte.png">
+                  <ng-container *ngIf="step.listRow">
+                    <app-item-icon [itemId]="step.listRow.id" [itemName]="step.listRow.id | itemName: step.listRow | i18n"
+                                   [width]="32"
+                                   [forceCollectable]="step.listRow.collectable" *ngIf="!step.isTeleport && !step.listRow.xivapiIcon"></app-item-icon>
+                    <app-item-icon [icon]="step.listRow.xivapiIcon | xivapiIcon" [itemId]="null"
+                                   [width]="32"
+                                   *ngIf="step.listRow.xivapiIcon" [tooltipDisabled]="true"></app-item-icon>
+                  </ng-container>
+                  <i *ngIf="!step.isTeleport && step.itemId === undefined" class="material-icons">location_on</i>
+                  <img *ngIf="step.fate" [src]="step.fate | lazyRow:'fates':'icon' | async | xivapiIcon" class="item-icon">
+                </ng-template>
+              </nz-list-item-meta>
+            </nz-list-item>
+          </ng-template>
+        </nz-list>
+
+        <ng-container *ngIf="mapDisplay.path.alarms">
+          <nz-divider [nzText]="'LIST_DETAILS.STEP_BY_STEP.Alarms' | translate" nzOrientation="left"></nz-divider>
+
+          <nz-list [nzDataSource]="mapDisplay.path.alarms" [nzRenderItem]="alarmRowTpl" nzSize="small">
+            <ng-template #alarmRowTpl let-alarm>
+              <nz-list-item [nzContent]="rowContent">
+                <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="stepTitle"
+                                   [nzDescription]="description">
+                  <ng-template #description>
+                    X: {{alarm.marker.x | number:'1.1-1'}} - Y: {{alarm.marker.y | number:'1.1-1'}}
+                  </ng-template>
+                  <ng-template #stepTitle>
+                    <app-i18n-name content="items" [id]="alarm.row.id" [itemNameCopy]="alarm.row.id"></app-i18n-name>&nbsp;<img
+                    class="node-type-icon" [src]="alarm.marker.iconImg">
+                  </ng-template>
+                  <ng-template #rowContent>
+                    <app-compact-amount-input *ngIf="alarm.row" [permissionLevel]="permissionLevel$ | async" [item]="alarm.row"
+                                              [finalItem]="alarm.row.finalItem"></app-compact-amount-input>
+                  </ng-template>
+                  <ng-template #avatar>
+                    <app-item-icon [itemId]="alarm.row.id" [itemName]="alarm.row.id | itemName: alarm.row | i18n"
+                                   [width]="32"
+                                   [forceCollectable]="alarm.row.collectable" *ngIf="!alarm.row.xivapiIcon"></app-item-icon>
+                    <app-item-icon [icon]="alarm.row.xivapiIcon | xivapiIcon" [itemId]="null"
+                                   [width]="32"
+                                   *ngIf="alarm.row.xivapiIcon" [tooltipDisabled]="true"></app-item-icon>
+                  </ng-template>
+                </nz-list-item-meta>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+  <ng-template #noListTpl>
+    <app-fullpage-message>{{'LIST_DETAILS.STEP_BY_STEP.No_list' | translate}}</app-fullpage-message>
+  </ng-template>
+  <ng-template #closestMapTpl>
+    <app-fullpage-message *ngIf="(mapId$ | async) === 0">{{'LIST_DETAILS.STEP_BY_STEP.Unknown_map' | translate}}</app-fullpage-message>
+    <ng-container *ngIf="(mapId$ | async) > 0">
+      <app-fullpage-message
+        *ngIf="!loading">{{'LIST_DETAILS.STEP_BY_STEP.Empty_map' | translate:{ closest: closestMap$ | async| mapName | i18n } }}</app-fullpage-message>
+      <app-page-loader *ngIf="loading"></app-page-loader>
+    </ng-container>
+  </ng-template>
+</app-overlay-container>

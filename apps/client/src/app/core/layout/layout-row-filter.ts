@@ -11,17 +11,19 @@ import { housingMaterialSuppliers } from '../data/sources/housing-material-suppl
 
 export class LayoutRowFilter {
 
-  static NONE = new LayoutRowFilter(() => false, 'NONE');
+  static NONE = new LayoutRowFilter(() => false, 'NONE', []);
 
-  static IS_CRAFT = new LayoutRowFilter(row => getItemSource(row, DataType.CRAFTED_BY).length > 0, 'IS_CRAFT');
+  static IS_CRAFT = new LayoutRowFilter(row => getItemSource(row, DataType.CRAFTED_BY).length > 0, 'IS_CRAFT', [DataType.CRAFTED_BY]);
 
-  static IS_CRYSTAL = new LayoutRowFilter(row => row.id > 1 && row.id < 20, 'IS_CRYSTAL');
+  static IS_CRYSTAL = new LayoutRowFilter(row => row.id > 1 && row.id < 20, 'IS_CRYSTAL', []);
 
-  static IS_FINAL_ITEM = new LayoutRowFilter(row => row.finalItem === true, 'IS_FINAL_ITEM');
+  static IS_FINAL_ITEM = new LayoutRowFilter(row => row.finalItem === true, 'IS_FINAL_ITEM', []);
 
-  static IS_GATHERING = new LayoutRowFilter(row => getItemSource(row, DataType.GATHERED_BY, true).type !== undefined, 'IS_GATHERING');
+  static IS_GATHERING = new LayoutRowFilter(row => getItemSource(row, DataType.GATHERED_BY, true).type !== undefined, 'IS_GATHERING', [DataType.GATHERED_BY]);
 
-  static IS_TRADE = new LayoutRowFilter(row => getItemSource(row, DataType.TRADE_SOURCES).length > 0, 'IS_TRADE');
+  static IS_GARDENING = new LayoutRowFilter(row => getItemSource(row, DataType.GARDENING)?.seedItemId > 0, 'IS_GARDENING', [DataType.GARDENING]);
+
+  static IS_TRADE = new LayoutRowFilter(row => getItemSource(row, DataType.TRADE_SOURCES).length > 0, 'IS_TRADE', [DataType.TRADE_SOURCES]);
 
   static CAN_BE_BOUGHT = new LayoutRowFilter((row, _, settings) => {
     let vendors = getItemSource<Vendor[]>(row, DataType.VENDORS);
@@ -32,7 +34,7 @@ export class LayoutRowFilter {
       vendors = vendors.filter(vendor => vendor.price * row.amount <= settings.maximumTotalVendorPrice);
     }
     return vendors.length > 0;
-  }, 'CAN_BE_BOUGHT');
+  }, 'CAN_BE_BOUGHT', [DataType.VENDORS]);
 
   static IS_FROM_HOUSING_VENDOR = new LayoutRowFilter((row, _, settings) => {
     let vendors = getItemSource<Vendor[]>(row, DataType.VENDORS).filter(s => {
@@ -45,7 +47,7 @@ export class LayoutRowFilter {
       vendors = vendors.filter(vendor => vendor.price * row.amount <= settings.maximumTotalVendorPrice);
     }
     return vendors.length > 0;
-  }, 'IS_FROM_HOUSING_VENDOR');
+  }, 'IS_FROM_HOUSING_VENDOR', [DataType.VENDORS]);
 
   static IS_ONLY_FROM_VENDOR = LayoutRowFilter.CAN_BE_BOUGHT._and(new LayoutRowFilter(row => {
     return row.sources.length === 1 || row.sources.length === 2 &&
@@ -53,7 +55,7 @@ export class LayoutRowFilter {
         getItemSource(row, DataType.TRADE_SOURCES).length > 0
         || getItemSource(row, DataType.QUESTS).length > 0
       );
-  }, 'IS_ONLY_FROM_VENDOR'));
+  }, 'IS_ONLY_FROM_VENDOR', [DataType.VENDORS]));
 
   static IS_HQ = new LayoutRowFilter((row, list) => {
     const recipesNeedingItem = list.finalItems
@@ -76,11 +78,11 @@ export class LayoutRowFilter {
       });
       return count > 0;
     }
-  }, 'IS_HQ');
+  }, 'IS_HQ', []);
 
   static IS_FATE_ITEM = new LayoutRowFilter(row => {
     return getItemSource(row, DataType.TRADE_SOURCES).some(ts => ts.trades.some(trade => trade.currencies.some(c => c.id === 26807)));
-  }, 'IS_FATE_ITEM');
+  }, 'IS_FATE_ITEM', [DataType.TRADE_SOURCES]);
 
   static FROM_BEAST_TRIBE = LayoutRowFilter.CAN_BE_BOUGHT._and(new LayoutRowFilter(row => {
     return getItemSource(row, DataType.VENDORS).some(vendor => {
@@ -90,16 +92,16 @@ export class LayoutRowFilter {
         return beastTribeNpcs.indexOf(npc.id) > -1;
       });
     });
-  }, 'FROM_BEAST_TRIBE'));
+  }, 'FROM_BEAST_TRIBE', [DataType.TRADE_SOURCES, DataType.VENDORS]));
 
-  static IS_MONSTER_DROP = new LayoutRowFilter(row => getItemSource(row, DataType.DROPS).length > 0, 'IS_MONSTER_DROP');
+  static IS_MONSTER_DROP = new LayoutRowFilter(row => getItemSource(row, DataType.DROPS).length > 0, 'IS_MONSTER_DROP', [DataType.DROPS]);
 
-  static IS_DUNGEON_DROP = new LayoutRowFilter(row => getItemSource(row, DataType.INSTANCES).length > 0, 'IS_DUNGEON_DROP');
+  static IS_DUNGEON_DROP = new LayoutRowFilter(row => getItemSource(row, DataType.INSTANCES).length > 0, 'IS_DUNGEON_DROP', [DataType.INSTANCES]);
 
   static IS_GC_TRADE = new LayoutRowFilter(row => getItemSource(row, DataType.TRADE_SOURCES)
     .find(source => source.trades
         .find(trade => trade.currencies.find(currency => [20, 21, 22].indexOf(+currency.id) > -1) !== undefined)
-      !== undefined) !== undefined, 'IS_GC_TRADE');
+      !== undefined) !== undefined, 'IS_GC_TRADE', [DataType.TRADE_SOURCES]);
 
   static IS_TOKEN_TRADE = new LayoutRowFilter(row => {
     // These ids are for voidrake and Althyk lavender.
@@ -113,7 +115,7 @@ export class LayoutRowFilter {
       }
     }
     return false;
-  }, 'IS_TOKEN_TRADE');
+  }, 'IS_TOKEN_TRADE', [DataType.TRADE_SOURCES]);
 
   static IS_TOME_TRADE = new LayoutRowFilter(row => {
     const tomeIds = [
@@ -147,7 +149,7 @@ export class LayoutRowFilter {
     }
 
     return false;
-  }, 'IS_TOME_TRADE');
+  }, 'IS_TOME_TRADE', [DataType.TRADE_SOURCES]);
 
   static IS_SCRIPT_TRADE = new LayoutRowFilter(row => {
     const scripIds = [
@@ -171,18 +173,18 @@ export class LayoutRowFilter {
       }
     }
     return false;
-  }, 'IS_SCRIPT_TRADE');
+  }, 'IS_SCRIPT_TRADE', [DataType.TRADE_SOURCES]);
 
-  static IS_VENTURE = new LayoutRowFilter(row => getItemSource(row, DataType.VENTURES).length > 0, 'IS_VENTURE');
+  static IS_VENTURE = new LayoutRowFilter(row => getItemSource(row, DataType.VENTURES).length > 0, 'IS_VENTURE', [DataType.VENTURES]);
 
-  static IS_VOYAGE = new LayoutRowFilter(row => getItemSource(row, DataType.VOYAGES).length > 0, 'IS_VOYAGE');
+  static IS_VOYAGE = new LayoutRowFilter(row => getItemSource(row, DataType.VOYAGES).length > 0, 'IS_VOYAGE', [DataType.VOYAGES]);
 
   static IS_MASTERCRAFT = LayoutRowFilter.IS_CRAFT
     ._and(new LayoutRowFilter(row => getItemSource(row, DataType.CRAFTED_BY).find(craft => craft.masterbook !== undefined) !== undefined,
-      'IS_MASTERCRAFT'));
+      'IS_MASTERCRAFT', [DataType.CRAFTED_BY]));
 
   static IS_FOLKLORE = LayoutRowFilter.IS_GATHERING
-    ._and(new LayoutRowFilter(row => (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).find(node => node.folklore !== undefined) !== undefined, 'IS_FOLKLORE'));
+    ._and(new LayoutRowFilter(row => (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).find(node => node.folklore !== undefined) !== undefined, 'IS_FOLKLORE', [DataType.GATHERED_BY]));
 
   static IS_TIMED = new LayoutRowFilter(row => {
     const isTimedGathering = (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).filter(node => node.limited).length > 0;
@@ -193,11 +195,11 @@ export class LayoutRowFilter {
         }) !== undefined;
       }).length > 0;
     return isTimedGathering || isTimedReduction;
-  }, 'IS_TIMED');
+  }, 'IS_TIMED', [DataType.REDUCED_FROM, DataType.GATHERED_BY]);
 
   static IS_NORMAL_GATHERING = LayoutRowFilter.IS_GATHERING
     ._and(LayoutRowFilter.not(LayoutRowFilter.IS_TIMED))
-    ._and(new LayoutRowFilter(() => true, 'IS_NORMAL_GATHERING'));
+    ._and(new LayoutRowFilter(() => true, 'IS_NORMAL_GATHERING', [DataType.GATHERED_BY]));
 
   static IS_END_CRAFT_MATERIAL = new LayoutRowFilter((row, list) => {
     for (const item of list.finalItems) {
@@ -206,9 +208,9 @@ export class LayoutRowFilter {
       }
     }
     return false;
-  }, 'IS_END_CRAFT_MATERIAL');
+  }, 'IS_END_CRAFT_MATERIAL', []);
 
-  static IS_REDUCTION = new LayoutRowFilter(row => getItemSource(row, DataType.REDUCED_FROM).length > 0, 'IS_REDUCTION');
+  static IS_REDUCTION = new LayoutRowFilter(row => getItemSource(row, DataType.REDUCED_FROM).length > 0, 'IS_REDUCTION', [DataType.REDUCED_FROM]);
 
   /**
    * CRAFTED BY FILTERS
@@ -219,56 +221,56 @@ export class LayoutRowFilter {
       return getItemSource(row, DataType.CRAFTED_BY).find((craftedByRow: CraftedBy) => {
         return craftedByRow.job === 14;
       }) !== undefined;
-    }, 'IS_CRAFTED_BY_ALC'));
+    }, 'IS_CRAFTED_BY_ALC', [DataType.CRAFTED_BY]));
 
   static IS_CRAFTED_BY_ARM = LayoutRowFilter.IS_CRAFT
     ._and(new LayoutRowFilter((row: ListRow) => {
       return getItemSource(row, DataType.CRAFTED_BY).find((craftedByRow: CraftedBy) => {
         return craftedByRow.job === 10;
       }) !== undefined;
-    }, 'IS_CRAFTED_BY_ARM'));
+    }, 'IS_CRAFTED_BY_ARM', [DataType.CRAFTED_BY]));
 
   static IS_CRAFTED_BY_BSM = LayoutRowFilter.IS_CRAFT
     ._and(new LayoutRowFilter((row: ListRow) => {
       return getItemSource(row, DataType.CRAFTED_BY).find((craftedByRow: CraftedBy) => {
         return craftedByRow.job === 9;
       }) !== undefined;
-    }, 'IS_CRAFTED_BY_BSM'));
+    }, 'IS_CRAFTED_BY_BSM', [DataType.CRAFTED_BY]));
 
   static IS_CRAFTED_BY_CRP = LayoutRowFilter.IS_CRAFT
     ._and(new LayoutRowFilter((row: ListRow) => {
       return getItemSource(row, DataType.CRAFTED_BY).find((craftedByRow: CraftedBy) => {
         return craftedByRow.job === 8;
       }) !== undefined;
-    }, 'IS_CRAFTED_BY_CRP'));
+    }, 'IS_CRAFTED_BY_CRP', [DataType.CRAFTED_BY]));
 
   static IS_CRAFTED_BY_CUL = LayoutRowFilter.IS_CRAFT
     ._and(new LayoutRowFilter((row: ListRow) => {
       return getItemSource(row, DataType.CRAFTED_BY).find((craftedByRow: CraftedBy) => {
         return craftedByRow.job === 15;
       }) !== undefined;
-    }, 'IS_CRAFTED_BY_CUL'));
+    }, 'IS_CRAFTED_BY_CUL', [DataType.CRAFTED_BY]));
 
   static IS_CRAFTED_BY_GSM = LayoutRowFilter.IS_CRAFT
     ._and(new LayoutRowFilter((row: ListRow) => {
       return getItemSource(row, DataType.CRAFTED_BY).find((craftedByRow: CraftedBy) => {
         return craftedByRow.job === 11;
       }) !== undefined;
-    }, 'IS_CRAFTED_BY_GSM'));
+    }, 'IS_CRAFTED_BY_GSM', [DataType.CRAFTED_BY]));
 
   static IS_CRAFTED_BY_LTW = LayoutRowFilter.IS_CRAFT
     ._and(new LayoutRowFilter((row: ListRow) => {
       return getItemSource(row, DataType.CRAFTED_BY).find((craftedByRow: CraftedBy) => {
         return craftedByRow.job === 12;
       }) !== undefined;
-    }, 'IS_CRAFTED_BY_LTW'));
+    }, 'IS_CRAFTED_BY_LTW', [DataType.CRAFTED_BY]));
 
   static IS_CRAFTED_BY_WVR = LayoutRowFilter.IS_CRAFT
     ._and(new LayoutRowFilter((row: ListRow) => {
       return getItemSource(row, DataType.CRAFTED_BY).find((craftedByRow: CraftedBy) => {
         return craftedByRow.job === 13;
       }) !== undefined;
-    }, 'IS_CRAFTED_BY_WVR'));
+    }, 'IS_CRAFTED_BY_WVR', [DataType.CRAFTED_BY]));
 
   /**
    * GATHERED BY FILTERS
@@ -276,31 +278,32 @@ export class LayoutRowFilter {
   static IS_GATHERED_BY_BTN = LayoutRowFilter.IS_GATHERING
     ._and(new LayoutRowFilter((row: ListRow) => {
       return [2, 3].indexOf(getItemSource(row, DataType.GATHERED_BY, true).type) > -1;
-    }, 'IS_GATHERED_BY_BTN'));
+    }, 'IS_GATHERED_BY_BTN', [DataType.GATHERED_BY]));
 
   static IS_GATHERED_BY_MIN = LayoutRowFilter.IS_GATHERING
     ._and(new LayoutRowFilter((row: ListRow) => {
       return [0, 1].indexOf(getItemSource(row, DataType.GATHERED_BY, true).type) > -1;
-    }, 'IS_GATHERED_BY_MIN'));
+    }, 'IS_GATHERED_BY_MIN', [DataType.GATHERED_BY]));
 
   static IS_GATHERED_BY_FSH = LayoutRowFilter.IS_GATHERING
     ._and(new LayoutRowFilter((row: ListRow) => {
       return getItemSource(row, DataType.GATHERED_BY, true).type === 4 || getItemSource(row, DataType.GATHERED_BY, true).type === -5;
-    }, 'IS_GATHERED_BY_FSH'));
+    }, 'IS_GATHERED_BY_FSH', [DataType.GATHERED_BY]));
 
   static REQUIRES_WEATHER = LayoutRowFilter.IS_GATHERED_BY_FSH
     ._and(new LayoutRowFilter((row: ListRow) => {
       return getItemSource(row, DataType.GATHERED_BY).nodes.some(node => node.weathers && node.weathers.length > 0);
-    }, 'REQUIRES_WEATHER'));
+    }, 'REQUIRES_WEATHER', [DataType.GATHERED_BY]));
 
-  static ANYTHING = new LayoutRowFilter(() => true, 'ANYTHING');
+  static ANYTHING = new LayoutRowFilter(() => true, 'ANYTHING', []);
 
   /**
    * A filter needs a method, and eventually a base string for serialization (used to resolve filter chains).
    * @param {FilterMethod} _filter
    * @param _name
+   * @param matchingSources
    */
-  constructor(private _filter: FilterMethod, private _name: string) {
+  constructor(private _filter: FilterMethod, private _name: string, public readonly matchingSources: DataType[]) {
   }
 
   static get ALL(): LayoutRowFilter[] {
@@ -332,7 +335,7 @@ export class LayoutRowFilter {
   public static not(baseFilter: LayoutRowFilter): LayoutRowFilter {
     return new LayoutRowFilter((row: ListRow, list: List, settings: SettingsService) => {
       return !baseFilter._filter(row, list, settings);
-    }, `!${baseFilter.name}`);
+    }, `!${baseFilter.name}`, []);
   }
 
   private static processRows(stringRows: string[], filter: LayoutRowFilter): LayoutRowFilter {
@@ -364,7 +367,7 @@ export class LayoutRowFilter {
     const newName = buildNewName ? `${this.name}:and:${pipedFilter.name}` : pipedFilter.name;
     return new LayoutRowFilter((row: ListRow, list: List, settings: SettingsService) => {
       return this._filter(row, list, settings) && pipedFilter._filter(row, list, settings);
-    }, newName);
+    }, newName, [...this.matchingSources, ...pipedFilter.matchingSources]);
   }
 
   /**
@@ -377,7 +380,7 @@ export class LayoutRowFilter {
     const newName = buildNewName ? `${this.name}:or:${pipedFilter.name}` : pipedFilter.name;
     return new LayoutRowFilter((row: ListRow, list: List, settings: SettingsService) => {
       return this._filter(row, list, settings) || pipedFilter._filter(row, list, settings);
-    }, newName);
+    }, newName, [...this.matchingSources, ...pipedFilter.matchingSources]);
   }
 
   // noinspection JSValidateJSDoc

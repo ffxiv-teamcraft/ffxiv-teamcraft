@@ -10,7 +10,7 @@ declare const gtag: (...args: any[]) => void;
 })
 export class AnalyticsService {
 
-  private static readonly GA4_ID = 'G-RNVD9NJW4N';
+  public static readonly GA4_ID = 'G-RNVD9NJW4N';
 
   private static readonly GA3_ID = 'UA-104948571-1';
 

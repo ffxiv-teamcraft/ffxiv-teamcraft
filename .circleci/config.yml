@@ -191,5 +191,5 @@ workflows:
             - build
           filters:
             branches:
-              only: staging
+              only: release/10.0
 

@@ -3,7 +3,7 @@ import { DataModel } from '../data-model';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { NgZone } from '@angular/core';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { catchError, distinctUntilChanged, filter, finalize, map, retry, takeUntil, tap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, finalize, map, retry, shareReplay, takeUntil, tap } from 'rxjs/operators';
 import { environment } from '../../../../../environments/environment';
 import {
   addDoc,
@@ -12,7 +12,7 @@ import {
   CollectionReference,
   deleteDoc,
   doc,
-  docData,
+  docSnapshots,
   DocumentData,
   DocumentReference,
   DocumentSnapshot,
@@ -115,12 +115,16 @@ export abstract class FirestoreStorage<T extends DataModel> {
 
   get(key: string, uriParams?: any): Observable<T> {
     if (this.cache[key] === undefined) {
-      this.cache[key] = docData(this.docRef(key))
+      this.cache[key] = docSnapshots(this.docRef(key))
         .pipe(
           catchError(error => {
             console.error(`GET ${this.getBaseUri()}/${key}`);
             console.error(error);
             return throwError(error);
+          }),
+          filter(snap => !snap.metadata.hasPendingWrites),
+          map(snap => {
+            return snap.data();
           }),
           map(data => {
             if (data === undefined) {
@@ -132,6 +136,7 @@ export abstract class FirestoreStorage<T extends DataModel> {
           tap(() => {
             this.recordOperation('read', key);
           }),
+          shareReplay(1),
           takeUntil(this.stop$.pipe(filter(stop => stop === key))),
           finalize(() => {
             setTimeout(() => {

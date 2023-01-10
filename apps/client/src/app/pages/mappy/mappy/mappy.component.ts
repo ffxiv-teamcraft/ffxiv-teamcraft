@@ -50,13 +50,13 @@ export class MappyComponent extends TeamcraftComponent {
               bnpcs: entries.filter(e => e.Type === 'BNPC').map(e => {
                 return {
                   ...e,
-                  cssCoords: this.mapService.getPositionOnMap(mapData, { x: e.PosX, y: e.PosY })
+                  cssCoords: this.mapService.getPositionPercentOnMap(mapData, { x: e.PosX, y: e.PosY })
                 };
               }),
               nodes: entries.filter(e => e.Type === 'Node').map(e => {
                 return {
                   ...e,
-                  cssCoords: this.mapService.getPositionOnMap(mapData, { x: e.PosX, y: e.PosY })
+                  cssCoords: this.mapService.getPositionPercentOnMap(mapData, { x: e.PosX, y: e.PosY })
                 };
               }),
               missingNodes: mapNodes.filter((node) => {
