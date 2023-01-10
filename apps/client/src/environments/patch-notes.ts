@@ -12,6 +12,7 @@ export const patchNotes = `### Bug Fixes
 
 ### Features
 
+* **db:** 6.3 patch data.
 * Update submarine max level to 105.
 * **desktop:** step-by-step list overlay.
 * **layout:** new filter: IS_GARDENING.

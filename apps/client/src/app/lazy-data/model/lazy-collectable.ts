@@ -5,7 +5,7 @@ export interface LazyCollectable {
   levelMax?:    number;
   group?:       number;
   shopId?:      number;
-  reward:       number;
+  reward?:      number;
   base:         Base;
   mid:          Base;
   high:         Base;
