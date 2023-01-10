@@ -15,7 +15,7 @@
       </ng-template>
     </ng-container>
     <div *ngIf="lists$ | async as lists" class="lists" fxLayout="column" fxLayoutGap="5px">
-      <app-list-panel *ngFor="let list of lists" [list]="list"></app-list-panel>
+      <app-list-panel *ngFor="let list of lists;trackByKey" [list]="list"></app-list-panel>
     </div>
   </nz-card>
   <ng-template #notFound>

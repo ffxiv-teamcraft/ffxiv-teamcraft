@@ -9,6 +9,7 @@ import log from 'electron-log';
 import { Constants } from './constants';
 import { join } from 'path';
 import { parse } from 'url';
+import { MetricsSystem } from './ipc/metrics-system';
 
 export class TeamcraftDesktopApp {
 
@@ -17,7 +18,7 @@ export class TeamcraftDesktopApp {
   private httpServer: Server;
 
   public constructor(private mainWindow: MainWindow, private tray: TrayMenu, private store: Store,
-                     private pcap: PacketCapture, private argv: any[]) {
+                     private pcap: PacketCapture, private metrics: MetricsSystem, private argv: any[]) {
   }
 
   start(): void {
@@ -28,19 +29,19 @@ export class TeamcraftDesktopApp {
     app.whenReady().then(() => {
       session.defaultSession
         .setPermissionRequestHandler((webContents, permission, callback) => {
-          const parsedUrl = new URL(webContents.getURL())
+          const parsedUrl = new URL(webContents.getURL());
 
           if (permission === 'notifications') {
             // Approves the permissions request
-            callback(true)
+            callback(true);
           }
 
           // Verify URL
           if (parsedUrl.protocol !== 'file:') {
             // Denies the permissions request
-            return callback(false)
+            return callback(false);
           }
-        })
+        });
 
 
       protocol.registerFileProtocol('teamcraft', (req) => {
@@ -154,6 +155,7 @@ export class TeamcraftDesktopApp {
           this.mainWindow.win.focus();
           this.mainWindow.win.webContents.send('displayed', true);
         }, 200);
+        this.metrics.start();
       });
     });
 

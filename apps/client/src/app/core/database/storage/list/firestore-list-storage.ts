@@ -113,7 +113,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> {
     return super.getByForeignKey(foreignEntityClass, foreignKeyValue, additionalFilters, cacheSuffix);
   }
 
-  deepFreeze(object) {
+  deepFreeze<T extends object>(object: T): T {
     // Retrieve the property names defined on object
     const propNames = Reflect.ownKeys(object);
 
@@ -134,8 +134,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> {
       .pipe(
         switchMap(list => {
           return this.completeListData(list);
-        }),
-        map(list => this.deepFreeze(list))
+        })
       );
   }
 

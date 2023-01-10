@@ -3,6 +3,8 @@ import { IpcRendererEvent } from 'electron';
 const { contextBridge, ipcRenderer } = require('electron');
 
 const allowedChannels = [
+  'metrics:importing',
+  'metrics:imported',
   'list:setItemDone',
   'list:setListItemDone',
   'toggle-machina',
