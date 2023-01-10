@@ -476,6 +476,9 @@ export class FreeCompanyWorkshopFacade {
     if (this.env.gameVersion < 6.2) {
       return of(95);
     }
+    else if (this.env.gameVersion < 6.3) {
+      return of(100);
+    }
     return of(105);
   }
 
