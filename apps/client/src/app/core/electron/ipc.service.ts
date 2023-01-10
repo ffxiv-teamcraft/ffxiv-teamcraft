@@ -15,6 +15,7 @@ import { FreeCompanyDialog, Message } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { toIpcData } from '../rxjs/to-ipc-data';
 import { UpdateInstallPopupComponent } from '../../modules/ipc-popups/update-install-popup/update-install-popup.component';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
+import { NzMessageRef, NzMessageService } from 'ng-zorro-antd/message';
 
 type EventCallback = (event: IpcRendererEvent, ...args: any[]) => void;
 
@@ -71,7 +72,8 @@ export class IpcService {
 
   constructor(private platformService: PlatformService, private router: Router,
               private store: Store<any>, private zone: NgZone, private dialog: NzModalService,
-              private translate: TranslateService, private notification: NzNotificationService) {
+              private translate: TranslateService, private notification: NzNotificationService,
+              private message: NzMessageService) {
     // Only load ipc if we're running inside electron
     if (platformService.isDesktop()) {
       if (window.ipc) {
@@ -371,6 +373,17 @@ export class IpcService {
     });
     this.on('machina:error:raw', (event, error: { message: string, retryDelay: number }) => {
       console.log(error.message);
+    });
+    this.on('metrics:importing', () => {
+      this.message.info(this.translate.instant('METRICS.Importing'), {
+        nzDuration: 0
+      });
+    });
+    this.on('metrics:imported', () => {
+      this.message.remove()
+      this.message.info(this.translate.instant('METRICS.Imported'), {
+        nzDuration: 10000
+      });
     });
     this.on('navigate', (event, url: string) => {
       console.log('NAVIGATE', url);

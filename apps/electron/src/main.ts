@@ -71,10 +71,9 @@ const autoUpdater = new AutoUpdater(mainWindow);
 autoUpdater.connectListeners();
 
 // Then, create the Electron application
-const desktopApp = new TeamcraftDesktopApp(mainWindow, trayMenu, store, pcapManager, argv);
+const desktopApp = new TeamcraftDesktopApp(mainWindow, trayMenu, store, pcapManager, metrics, argv);
 desktopApp.start();
 
 // Then start all our ipc listeners and dat files watcher
 ipcListenersManager.init();
 datFilesWatcher.start();
-metrics.start();
