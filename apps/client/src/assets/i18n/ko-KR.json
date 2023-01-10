@@ -2370,6 +2370,8 @@
     "Import_success": "대시보드 선택 및 가져오기",
     "Nothing_to_show": "표시할 데이터가 없습니다",
     "Nothing_to_show_description": "TC에서 데이터를 캡쳐한 기간을 선택하고 (설정 -> 데스크탑 -> 메트릭스 캡쳐) 옵션을 활성화시켰는지 확인하세요",
+    "Importing": "Importing metrics data to the new sql format, please don't close Teamcraft. This may take up to 15 minutes.",
+    "Imported": "Metrics data has been imported.",
     "SOURCES": {
       "UNKNOWN": "알 수 없음",
       "GATHERING": "채집",
