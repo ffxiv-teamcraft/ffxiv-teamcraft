@@ -1322,9 +1322,9 @@
   "1025": {
     "name": {
       "en": "Restoration (1)",
-      "ja": "復興事業（その1）",
+      "ja": "イシュガルド復興1",
       "de": "Wiederaufbau (1)",
-      "fr": "Ressources (1)"
+      "fr": "Reconstruction d'Ishgard (1)"
     },
     "pages": [
       1200,
@@ -1362,9 +1362,9 @@
   "1027": {
     "name": {
       "en": "Restoration (2)",
-      "ja": "復興事業（その2）",
+      "ja": "イシュガルド復興2",
       "de": "Wiederaufbau (2)",
-      "fr": "Ressources (2)"
+      "fr": "Reconstruction d'Ishgard (2)"
     },
     "pages": [
       1216,
@@ -1442,9 +1442,9 @@
   "1031": {
     "name": {
       "en": "Restoration (3)",
-      "ja": "復興事業（その3）",
+      "ja": "イシュガルド復興3",
       "de": "Wiederaufbau (3)",
-      "fr": "Ressources (3)"
+      "fr": "Reconstruction d'Ishgard (3)"
     },
     "pages": [
       1248,
@@ -1542,9 +1542,9 @@
   "1036": {
     "name": {
       "en": "Restoration (4)",
-      "ja": "復興事業（その4）",
+      "ja": "イシュガルド復興4",
       "de": "Wiederaufbau (4)",
-      "fr": "Ressources (4)"
+      "fr": "Reconstruction d'Ishgard (4)"
     },
     "pages": [
       1288,
@@ -1881,10 +1881,10 @@
   },
   "1053": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Anden",
+      "ja": "アンデン",
+      "de": "Anden",
+      "fr": "Anden"
     },
     "pages": [
       1424,
@@ -1895,6 +1895,66 @@
       1429,
       1430,
       1431
+    ],
+    "craftLevel": 80,
+    "gatheringLevel": 255
+  },
+  "1054": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "pages": [
+      1432,
+      1433,
+      1434,
+      1435,
+      1436,
+      1437,
+      1438,
+      1439
+    ],
+    "craftLevel": 0,
+    "gatheringLevel": 0
+  },
+  "1055": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "pages": [
+      1440,
+      1441,
+      1442,
+      1443,
+      1444,
+      1445,
+      1446,
+      1447
+    ],
+    "craftLevel": 0,
+    "gatheringLevel": 0
+  },
+  "1056": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "pages": [
+      1448,
+      1449,
+      1450,
+      1451,
+      1452,
+      1453,
+      1454,
+      1455
     ],
     "craftLevel": 0,
     "gatheringLevel": 0
@@ -2196,7 +2256,27 @@
       -1,
       -1
     ],
-    "craftLevel": 255,
-    "gatheringLevel": 255
+    "craftLevel": 0,
+    "gatheringLevel": 0
+  },
+  "2015": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "pages": [
+      2060,
+      2061,
+      2062,
+      2063,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "craftLevel": 0,
+    "gatheringLevel": 0
   }
 }

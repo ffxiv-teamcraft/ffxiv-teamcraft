@@ -17,11 +17,12 @@ import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { MapData } from '../../map/map-data';
 import { Vector2 } from '../../../core/tools/vector2';
-import { ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { StepByStepList } from './model/step-by-step-list';
 import { ListDisplay } from '../../../core/layout/list-display';
 import { DataType } from '../data/data-type';
 
+@Component({})
 export abstract class StepByStepComponent extends TeamcraftComponent {
 
   selectedMap$ = new BehaviorSubject(0);

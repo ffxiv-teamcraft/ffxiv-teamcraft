@@ -209,19 +209,16 @@ export class LogsExtractor extends AbstractExtractor {
     this.getSheet<any>(this.xiv, 'FishParameter',
       [
         'Item.Icon',
-        'TerritoryType.Map#', 'TerritoryType.PlaceName#',
+        'FishingSpot.TerritoryType.Map#', 'FishingSpot.TerritoryType.PlaceName#',
         'GatheringItemLevel.Stars', 'GatheringItemLevel.GatheringItemLevel', 'TimeRestricted', 'WeatherRestricted', 'FishingRecordType#', 'IsInLog', 'GatheringSubCategory.Item#'],
       false,
-      1
+      2
     ).pipe(
       map(completeFetch => {
         const fishParameter = {};
         completeFetch
-          .filter(fish => fish.Item.index > 0)
+          .filter(fish => fish.Item.index > 0 && fish.FishingSpot.TerritoryType !== undefined)
           .forEach(fish => {
-            if (!fish.TerritoryType) {
-              throw new Error(`No territory for FishParameter#${fish.index}`);
-            }
             if (fishes.indexOf(fish.Item.index) === -1) {
               fishes.push(fish.Item.index);
             }
@@ -230,8 +227,8 @@ export class LogsExtractor extends AbstractExtractor {
               itemId: fish.Item.index,
               level: fish.GatheringItemLevel.GatheringItemLevel,
               icon: fish.Item.Icon,
-              mapId: fish.TerritoryType.Map,
-              zoneId: fish.TerritoryType.PlaceName,
+              mapId: fish.FishingSpot.TerritoryType.Map,
+              zoneId: fish.FishingSpot.TerritoryType.PlaceName,
               timed: fish.TimeRestricted ? 1 : 0,
               weathered: fish.WeatherRestricted ? 1 : 0,
               stars: fish.GatheringItemLevel.Stars || 0

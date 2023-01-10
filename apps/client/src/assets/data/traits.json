@@ -2684,10 +2684,10 @@
     "fr": "Maîtrise de la magie divine",
     "icon": "/i/005000/005210.png",
     "description": {
-      "en": "Halves MP cost for all spells while preventing casting interruptions via damage taken.",
-      "de": "MP-Kosten für Magie sind halbiert und erlittener Schaden unterbricht das Wirken von Zaubern nicht.",
-      "ja": "自身が実行するすべての魔法の消費ＭＰが50％減少し、かつ被ダメージにより詠唱が中断されることがなくなる。",
-      "fr": "Réduit de 50% le coût en PM de tous vos sorts, et vous permet de les lancer sans risque d'interruption due à des dégâts."
+      "en": "Halves MP cost for all spells while preventing casting interruptions via damage taken. Grants the following effects after successfully completing a combo with <span style=\"color:#ff7b1a\">Royal Authority</span>:<br><span style=\"color:#ffcc22\">Combo Bonus: </span>Grants <span style=\"color:#ffff66\">Divine Might</span><br><span style=\"color:#ffcc22\">Divine Might Effect: </span>Allows next <span style=\"color:#ff7b1a\">Holy Spirit</span> or <span style=\"color:#ff7b1a\">Holy Circle</span> to be cast immediately with increased potency<br><span style=\"color:#ffcc22\">Duration: </span>30s",
+      "de": "MP-Kosten für Magie sind halbiert und erlittener Schaden unterbricht das Wirken von Zaubern nicht.<br>Darüber hinaus werden <span style=\"color:#ffbfff\">Königsklinge</span> die folgenden Effekte hinzugefügt:<br>Bonus: <span style=\"color:#ffff66\">Göttliche Gunst</span><br>Dauer: 30 Sekunden<br>Effekt von <span style=\"color:#ffff66\">Göttliche Gunst</span>: Der nächste <span style=\"color:#ffbfff\">Heilige Geist</span> oder <span style=\"color:#ffbfff\">Heilige Kreis</span> kann sofort gewirkt werden und hat einen erhöhten Attacke-Wert.<br>Bedingung: Erfolgreiches Ausführen einer Kombo mit <span style=\"color:#ffbfff\">Königsklinge</span>.",
+      "ja": "自身が実行するすべての魔法の消費ＭＰが50％減少し、かつ被ダメージにより詠唱が中断されることがなくなる。<br>さらに、ロイヤルアソリティに下記の効果を追加する。<br><br><span style=\"color:#ffcc22\">コンボボーナス：</span>自身に<span style=\"color:#ff7b1a\">「神聖魔法効果アップ」</span>が付与される。<br><span style=\"color:#ffcc22\">効果時間：</span>30秒<br><span style=\"color:#ffcc22\">神聖魔法効果アップ効果：</span>次に実行する1回のホーリースピリットまたはホーリーサークルの威力が上昇し、かつ詠唱時間無しで実行できる。<br><span style=\"color:#ffcc22\">発動条件：</span>ロイヤルアソリティのコンボ成功時",
+      "fr": "Réduit de 50% le coût en PM de tous vos sorts, et vous permet de les lancer sans risque d'interruption due à des dégâts.<br><span style=\"color:#ff7b1a\">Autorité royale</span> bénéficie des effets supplémentaires suivants&nbsp;:<br><br><span style=\"color:#ffff66\">Bonus du combo&nbsp;:</span> vous octroie <span style=\"color:#ff7b1a\">Grâce divine</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 30s<br><span style=\"color:#ffff66\">Grâce divine&nbsp;:</span> permet de lancer instantanément le prochain Esprit saint ou Cercle sacré avec une puissance augmentée.<br><span style=\"color:#ffff66\">Condition&nbsp;:</span> combo avec <span style=\"color:#ff7b1a\">Autorité royale</span> réussi."
     }
   },
   "208": {
@@ -3386,10 +3386,10 @@
     "fr": "Évidence améliorée",
     "icon": "/i/005000/005214.png",
     "description": {
-      "en": "Restores MP when using <span style=\"color:#ff7b1a\">Prominence</span>.",
-      "de": "Erfolgreiches Ausführen von <span style=\"color:#ffbfff\">Protuberanz</span> regeneriert MP.",
-      "ja": "プロミネンスにＭＰ回復効果を付与する。",
-      "fr": "Octroie un effet de restauration des PM à <span style=\"color:#ff7b1a\">Évidence</span>."
+      "en": "Grants the following effects after successfully completing a combo with <span style=\"color:#ff7b1a\">Prominence</span>:<br><span style=\"color:#ffcc22\">Combo Bonus: </span>Restores MP<br><span style=\"color:#ffcc22\">Combo Bonus: </span>Grants <span style=\"color:#ffff66\">Divine Might</span><br><span style=\"color:#ffcc22\">Divine Might Effect: </span>Allows next <span style=\"color:#ff7b1a\">Holy Spirit</span> or <span style=\"color:#ff7b1a\">Holy Circle</span> to be cast immediately with increased potency<br><span style=\"color:#ffcc22\">Duration: </span>30s",
+      "de": "<span style=\"color:#ffbfff\">Protuberanz</span> werden die folgenden Effekte hinzugefügt:<br>Bonus: MP-Regeneration<br>Bonus: <span style=\"color:#ffff66\">Göttliche Gunst</span><br>Dauer: 30 Sekunden<br>Effekt von <span style=\"color:#ffff66\">Göttliche Gunst</span>: Der nächste <span style=\"color:#ffbfff\">Heilige Geist</span> oder <span style=\"color:#ffbfff\">Heilige Kreis</span> kann sofort gewirkt werden und hat einen erhöhten Attacke-Wert.<br>Bedingung: Erfolgreiches Ausführen einer Kombo mit <span style=\"color:#ffbfff\">Protuberanz</span>.",
+      "ja": "プロミネンスに下記の効果を追加する。<br><br><span style=\"color:#ffcc22\">コンボボーナス：</span>自身のＭＰを回復する。<br><span style=\"color:#ffcc22\">コンボボーナス：</span>自身に<span style=\"color:#ff7b1a\">「神聖魔法効果アップ」</span>が付与される。<br><span style=\"color:#ffcc22\">効果時間：</span>30秒<br><span style=\"color:#ffcc22\">神聖魔法効果アップ効果：</span>次に実行する1回のホーリースピリットまたはホーリーサークルの威力が上昇し、かつ詠唱時間無しで実行できる。<br><span style=\"color:#ffcc22\">発動条件：</span>プロミネンスのコンボ成功時",
+      "fr": "<span style=\"color:#ff7b1a\">Évidence</span> bénéficie des effets supplémentaires suivants&nbsp;:<br><br><span style=\"color:#ffff66\">Bonus du combo&nbsp;:</span> restaure vos PM.<br><span style=\"color:#ffff66\">Bonus du combo&nbsp;:</span> vous octroie <span style=\"color:#ff7b1a\">Grâce divine</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 30s<br><span style=\"color:#ffff66\">Grâce divine&nbsp;:</span> permet de lancer instantanément le prochain Esprit saint ou Cercle sacré avec une puissance augmentée.<br><span style=\"color:#ffff66\">Condition&nbsp;:</span> combo avec <span style=\"color:#ff7b1a\">Évidence</span> réussi."
     }
   },
   "262": {
@@ -3412,10 +3412,10 @@
     "fr": "Requiescat amélioré",
     "icon": "/i/005000/005216.png",
     "description": {
-      "en": "Spells require no cast time while under the effect of <span style=\"color:#ffff66\">Requiescat</span>.",
-      "de": "Während <span style=\"color:#ffff66\">Requiescat</span> aktiv ist, kannst du Zauber sofort wirken.",
-      "ja": "一定時間、魔法を詠唱時間無しで詠唱することができる。<br><span style=\"color:#ffcc22\">発動条件：</span><span style=\"color:#ff7b1a\">「レクイエスカット」</span>効果中",
-      "fr": "Permet de lancer des sorts instantanément pendant la durée de <span style=\"color:#ff7b1a\">Requiescat</span>."
+      "en": "Grants the effect of <span style=\"color:#ffff66\">Confiteor Ready</span> upon landing <span style=\"color:#ff7b1a\">Requiescat</span>.<br><span style=\"color:#ffcc22\">Duration: </span>30s",
+      "de": "Du gewährst dir den Status <span style=\"color:#ffff66\">Confiteor</span>.<br>Dauer: 30 Sekunden<br>Bedingung: Erfolgreiche Ausführung von <span style=\"color:#ffbfff\">Requiescat</span>",
+      "ja": "自身に<span style=\"color:#ff7b1a\">「コンフィテオル実行可」</span>が付与される。<br><span style=\"color:#ffcc22\">効果時間：</span>30秒<br><span style=\"color:#ffcc22\">発動条件：</span>レクイエスカット実行時",
+      "fr": "Vous octroie <span style=\"color:#ff7b1a\">Confiteor préparé</span>.<br><span style=\"color:#ffff66\">Durée&nbsp;:</span> 30s"
     }
   },
   "264": {
@@ -4842,10 +4842,10 @@
     "fr": "Croc de vipère",
     "icon": "/i/006000/006454.png",
     "description": {
-      "en": "Grants 1 stack of <span style=\"color:#ffff66\">Addersting</span> when the barrier granted by <span style=\"color:#ff7b1a\">Eukrasian Diagnosis</span> is completely absorbed.<br><span style=\"color:#ffcc22\">Maximum Stacks: </span>3",
-      "de": "Gewährt dir einen Stapel <span style=\"color:#ffff66\">Komplexion</span>, wenn die von <span style=\"color:#ffbfff\">Eukratische Diagnose</span> gewährte Barriere den vollen Schaden absorbiert.<br>Maximalstapelzahl: 3",
-      "ja": "自身に<span style=\"color:#ff7b1a\">「アダースティング」</span>が付与される。<br><span style=\"color:#ffcc22\">最大スタック数：</span>3<br><span style=\"color:#ffcc22\">発動条件：</span><span style=\"color:#ff7b1a\">「エウクラシア・ディアグノシス」</span>がダメージを完全に吸収して消滅したとき。",
-      "fr": "Vous octroie un <span style=\"color:#ff7b1a\">Croc de vipère</span> lorsque la barrière de <span style=\"color:#ff7b1a\">Diagnosis eucrasique</span> a absorbé son montant de dégâts.<br>Vous pouvez en cumuler jusqu'à un maximum de trois."
+      "en": "Grants 1 stack of <span style=\"color:#ffff66\">Addersting</span> when the barrier granted by <span style=\"color:#ff7b1a\">Eukrasian Diagnosis</span> to any party member or the barrier granted by <span style=\"color:#ff7b1a\">Eukrasian Prognosis</span> to self is completely absorbed.<br><span style=\"color:#ffcc22\">Maximum Stacks: </span>3",
+      "de": "Gewährt dir einen Stapel <span style=\"color:#ffff66\">Komplexion</span>, wenn die von <span style=\"color:#ffbfff\">Eukratische Diagnose</span> oder <span style=\"color:#ffbfff\">Eukratische Prognose</span> auf dir selbst gewährte Barriere den vollen Schaden absorbiert.<br>Maximalstapelzahl: 3",
+      "ja": "自身に<span style=\"color:#ff7b1a\">「アダースティング」</span>が付与される。<br><span style=\"color:#ffcc22\">最大スタック数：</span>3<br><span style=\"color:#ffcc22\">発動条件：</span><span style=\"color:#ff7b1a\">「エウクラシア・ディアグノシス」</span>および自身に付与した<span style=\"color:#ff7b1a\">「エウクラシア・プログノシス」</span>がダメージを完全に吸収して消滅したとき。",
+      "fr": "Vous octroie un <span style=\"color:#ff7b1a\">Croc de vipère</span> lorsque la barrière de <span style=\"color:#ff7b1a\">Prognosis eucrasique</span> sur vous-même ou <span style=\"color:#ff7b1a\">Diagnosis eucrasique</span> a absorbé son montant de dégâts.<br>Vous pouvez en cumuler jusqu'à un maximum de trois."
     }
   },
   "374": {
@@ -5402,9 +5402,9 @@
     "icon": "/i/005000/005222.png",
     "description": {
       "en": "Adds a healing effect to <span style=\"color:#ff7b1a\">Divine Veil</span>.<br><span style=\"color:#ffcc22\">Cure Potency: </span>400",
-      "de": "Gewährt LP-Regeneration, wenn der Barriere-Effekt von <span style=\"color:#ffbfff\">Heiliger Quell</span> ausgelöst wird.<br>Heilpotenzial: 400",
-      "ja": "ディヴァインヴェールのバリア効果が付与されるときに対象のＨＰを回復する。　<span style=\"color:#ffcc22\">回復力：</span>400",
-      "fr": "Octroyer un bouclier avec <span style=\"color:#ff7b1a\">Voile divin</span> restaure aussi les PV de la cible.<br><span style=\"color:#ffff66\">Puissance&nbsp;:</span> 400"
+      "de": "Gewährt dem Ziel LP-Regeneration, wenn <span style=\"color:#ffbfff\">Heiliger Quell</span> ausgeführt wird.<br>Heilpotenzial: 400",
+      "ja": "ディヴァインヴェール実行時に、対象のＨＰを回復させる。<br><span style=\"color:#ffcc22\">回復力：</span>400",
+      "fr": "<span style=\"color:#ff7b1a\">Voile divin</span> restaure vos PV et ceux des équipiers alentour.<br><span style=\"color:#ffff66\">Puissance&nbsp;:</span> 400"
     }
   },
   "417": {
@@ -6545,10 +6545,10 @@
     "fr": "Actions améliorées",
     "icon": "/i/006000/006801.png",
     "description": {
-      "en": "Increases the potency of <span style=\"color:#ff7b1a\">Fast Blade</span> to 200, <span style=\"color:#ff7b1a\">Riot Blade</span> to 170, <span style=\"color:#ff7b1a\">Royal Authority</span> to 130, <span style=\"color:#ff7b1a\">Holy Spirit</span> to 300, and <span style=\"color:#ff7b1a\">Atonement</span> to 420.",
-      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffbfff\">Vortexschnitt</span>: 200<br>Attacke-Wert von <span style=\"color:#ffbfff\">Donnerklinge</span>: 170<br>Attacke-Wert von <span style=\"color:#ffbfff\">Königsklinge</span>: 130<br>Attacke-Wert von <span style=\"color:#ffbfff\">Heiliger Geist</span>: 300<br>Attacke-Wert von <span style=\"color:#ffbfff\">Absolution</span>: 420",
-      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffcc22\">ファストブレードの威力：</span>200<br><span style=\"color:#ffcc22\">ライオットソードの威力：</span>170<br><span style=\"color:#ffcc22\">ロイヤルアソリティの威力：</span>130<br><span style=\"color:#ffcc22\">ホーリースピリットの威力：</span>300<br><span style=\"color:#ffcc22\">ロイエの威力：</span>420",
-      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffff66\">Puissance de Lame rapide&nbsp;:</span> 200<br><span style=\"color:#ffff66\">Puissance de Lame déchaînée&nbsp;:</span> 170<br><span style=\"color:#ffff66\">Puissance d'Autorité royale&nbsp;:</span> 130<br><span style=\"color:#ffff66\">Puissance d'Esprit saint&nbsp;:</span> 300<br><span style=\"color:#ffff66\">Puissance d'Absolution&nbsp;:</span> 420"
+      "en": "Increases the potency of <span style=\"color:#ff7b1a\">Fast Blade</span> to 200, <span style=\"color:#ff7b1a\">Riot Blade</span> to 120, <span style=\"color:#ff7b1a\">Royal Authority</span> to 120, <span style=\"color:#ff7b1a\">Holy Spirit</span> to 350, and <span style=\"color:#ff7b1a\">Atonement</span> to 380.",
+      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffbfff\">Vortexschnitt</span>: 200<br>Attacke-Wert von <span style=\"color:#ffbfff\">Donnerklinge</span>: 120<br>Attacke-Wert von <span style=\"color:#ffbfff\">Königsklinge</span>: 120<br>Attacke-Wert von <span style=\"color:#ffbfff\">Heiliger Geist</span>: 350<br>Attacke-Wert von <span style=\"color:#ffbfff\">Absolution</span>: 380",
+      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffcc22\">ファストブレードの威力：</span>200<br><span style=\"color:#ffcc22\">ライオットソードの威力：</span>120<br><span style=\"color:#ffcc22\">ロイヤルアソリティの威力：</span>120<br><span style=\"color:#ffcc22\">ホーリースピリットの威力：</span>350<br><span style=\"color:#ffcc22\">ロイエの威力：</span>380",
+      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffff66\">Puissance de Lame rapide&nbsp;:</span> 200<br><span style=\"color:#ffff66\">Puissance de Lame déchaînée&nbsp;:</span> 120<br><span style=\"color:#ffff66\">Puissance d'Autorité royale&nbsp;:</span> 120<br><span style=\"color:#ffff66\">Puissance d'Esprit saint&nbsp;:</span> 350<br><span style=\"color:#ffff66\">Puissance d'Absolution&nbsp;:</span> 380"
     }
   },
   "505": {
@@ -6714,10 +6714,10 @@
     "fr": "Actions améliorées",
     "icon": "/i/006000/006801.png",
     "description": {
-      "en": "Increases the potency of <span style=\"color:#ff7b1a\">Heated Split Shot</span> to 200, <span style=\"color:#ff7b1a\">Heated Slug Shot</span> to 120, and <span style=\"color:#ff7b1a\">Heated Clean Shot</span> to 110.",
-      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffbfff\">Höllenfeuer frei</span>: 200<br>Attacke-Wert von <span style=\"color:#ffbfff\">Höllen-Flintenlaufgeschoss</span>: 120<br>Attacke-Wert von <span style=\"color:#ffbfff\">Sauberer Höllenschuss</span>: 110",
-      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffcc22\">ヒートスプリットショットの威力：</span>200<br><span style=\"color:#ffcc22\">ヒートスラッグショットの威力：</span>120<br><span style=\"color:#ffcc22\">ヒートクリーンショットの威力：</span>110",
-      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffff66\">Puissance de Tir scindé chauffé&nbsp;:</span> 200<br><span style=\"color:#ffff66\">Puissance de Tir de balle chauffé&nbsp;:</span> 120<br><span style=\"color:#ffff66\">Puissance de Tir net chauffé&nbsp;:</span> 110"
+      "en": "Increases the potency of <span style=\"color:#ff7b1a\">Heated Split Shot</span> to 200, <span style=\"color:#ff7b1a\">Heated Slug Shot</span> to 120, and <span style=\"color:#ff7b1a\">Heated Clean Shot</span> to 120.",
+      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffbfff\">Höllenfeuer frei</span>: 200<br>Attacke-Wert von <span style=\"color:#ffbfff\">Höllen-Flintenlaufgeschoss</span>: 120<br>Attacke-Wert von <span style=\"color:#ffbfff\">Sauberer Höllenschuss</span>: 120",
+      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffcc22\">ヒートスプリットショットの威力：</span>200<br><span style=\"color:#ffcc22\">ヒートスラッグショットの威力：</span>120<br><span style=\"color:#ffcc22\">ヒートクリーンショットの威力：</span>120",
+      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffff66\">Puissance de Tir scindé chauffé&nbsp;:</span> 200<br><span style=\"color:#ffff66\">Puissance de Tir de balle chauffé&nbsp;:</span> 120<br><span style=\"color:#ffff66\">Puissance de Tir net chauffé&nbsp;:</span> 120"
     }
   },
   "518": {

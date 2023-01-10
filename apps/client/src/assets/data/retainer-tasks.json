@@ -30706,5 +30706,77 @@
       }
     ],
     "category": 18
+  },
+  {
+    "id": 973,
+    "exp": 1327800,
+    "reqGathering": 2327,
+    "reqIlvl": 0,
+    "lvl": 90,
+    "cost": 1,
+    "item": 37279,
+    "quantities": [
+      {
+        "quantity": 3,
+        "stat": "perception"
+      },
+      {
+        "quantity": 5,
+        "stat": "perception",
+        "value": 2468
+      },
+      {
+        "quantity": 7,
+        "stat": "perception",
+        "value": 3525
+      },
+      {
+        "quantity": 8,
+        "stat": "perception",
+        "value": 3878
+      },
+      {
+        "quantity": 9,
+        "stat": "perception",
+        "value": 4230
+      }
+    ],
+    "category": 17
+  },
+  {
+    "id": 974,
+    "exp": 1327800,
+    "reqGathering": 2327,
+    "reqIlvl": 0,
+    "lvl": 90,
+    "cost": 1,
+    "item": 37278,
+    "quantities": [
+      {
+        "quantity": 3,
+        "stat": "perception"
+      },
+      {
+        "quantity": 5,
+        "stat": "perception",
+        "value": 2468
+      },
+      {
+        "quantity": 7,
+        "stat": "perception",
+        "value": 3525
+      },
+      {
+        "quantity": 8,
+        "stat": "perception",
+        "value": 3878
+      },
+      {
+        "quantity": 9,
+        "stat": "perception",
+        "value": 4230
+      }
+    ],
+    "category": 18
   }
 ]

@@ -3210,5 +3210,159 @@
       "x": 22.8,
       "y": 26.5
     }
+  },
+  {
+    "id": 915,
+    "itemId": 27516,
+    "mapId": 491,
+    "placeId": 2953,
+    "zoneId": 4281,
+    "coords": {
+      "x": 5.3,
+      "y": 36.2
+    }
+  },
+  {
+    "id": 915,
+    "itemId": 27524,
+    "mapId": 491,
+    "placeId": 2953,
+    "zoneId": 4281,
+    "coords": {
+      "x": 5.3,
+      "y": 36.2
+    }
+  },
+  {
+    "id": 915,
+    "itemId": 27526,
+    "mapId": 491,
+    "placeId": 2953,
+    "zoneId": 4281,
+    "coords": {
+      "x": 5.3,
+      "y": 36.2
+    }
+  },
+  {
+    "id": 915,
+    "itemId": 38811,
+    "mapId": 491,
+    "placeId": 2953,
+    "zoneId": 4281,
+    "coords": {
+      "x": 5.3,
+      "y": 36.2
+    }
+  },
+  {
+    "id": 916,
+    "itemId": 27549,
+    "mapId": 494,
+    "placeId": 2956,
+    "zoneId": 4282,
+    "coords": {
+      "x": 14.6,
+      "y": 16.1
+    }
+  },
+  {
+    "id": 916,
+    "itemId": 27557,
+    "mapId": 494,
+    "placeId": 2956,
+    "zoneId": 4282,
+    "coords": {
+      "x": 14.6,
+      "y": 16.1
+    }
+  },
+  {
+    "id": 916,
+    "itemId": 27560,
+    "mapId": 494,
+    "placeId": 2956,
+    "zoneId": 4282,
+    "coords": {
+      "x": 14.6,
+      "y": 16.1
+    }
+  },
+  {
+    "id": 916,
+    "itemId": 38813,
+    "mapId": 494,
+    "placeId": 2956,
+    "zoneId": 4282,
+    "coords": {
+      "x": 14.6,
+      "y": 16.1
+    }
+  },
+  {
+    "id": 917,
+    "itemId": 38939,
+    "mapId": 19,
+    "placeId": 34,
+    "zoneId": 4283,
+    "coords": {
+      "x": 23.8,
+      "y": 20.5
+    }
+  },
+  {
+    "id": 917,
+    "itemId": 38837,
+    "mapId": 19,
+    "placeId": 34,
+    "zoneId": 4283,
+    "coords": {
+      "x": 23.8,
+      "y": 20.5
+    }
+  },
+  {
+    "id": 917,
+    "itemId": 38838,
+    "mapId": 19,
+    "placeId": 34,
+    "zoneId": 4283,
+    "coords": {
+      "x": 23.8,
+      "y": 20.5
+    }
+  },
+  {
+    "id": 917,
+    "itemId": 38839,
+    "mapId": 19,
+    "placeId": 34,
+    "zoneId": 4283,
+    "coords": {
+      "x": 23.8,
+      "y": 20.5
+    }
+  },
+  {
+    "id": 917,
+    "itemId": 38840,
+    "mapId": 19,
+    "placeId": 34,
+    "zoneId": 4283,
+    "coords": {
+      "x": 23.8,
+      "y": 20.5
+    }
+  },
+  {
+    "id": 917,
+    "itemId": 38841,
+    "mapId": 19,
+    "placeId": 34,
+    "zoneId": 4283,
+    "coords": {
+      "x": 23.8,
+      "y": 20.5
+    }
   }
 ]

@@ -1217,7 +1217,19 @@
   },
   "77": {
     "value": 0,
-    "conditionValue": 0
+    "conditionValue": 38723,
+    "bonus": {
+      "en": " Available",
+      "de": "Verfügbar",
+      "ja": "獲得可能",
+      "fr": " récoltable"
+    },
+    "condition": {
+      "en": "[UNHANDLED 0x28] Equipped",
+      "de": "[UNHANDLED 0x2B] ausgerüstet",
+      "ja": "[UNHANDLED 0x28]装備時",
+      "fr": "[UNHANDLED 0x28] [UNHANDLED 0x28]"
+    }
   },
   "78": {
     "value": 1,
@@ -1413,11 +1425,35 @@
   },
   "90": {
     "value": 0,
-    "conditionValue": 0
+    "conditionValue": 38734,
+    "bonus": {
+      "en": " Available",
+      "de": "Verfügbar",
+      "ja": "獲得可能",
+      "fr": " récoltable"
+    },
+    "condition": {
+      "en": "[UNHANDLED 0x28] Equipped",
+      "de": "[UNHANDLED 0x2B] ausgerüstet",
+      "ja": "[UNHANDLED 0x28]装備時",
+      "fr": "[UNHANDLED 0x28] [UNHANDLED 0x28]"
+    }
   },
   "91": {
     "value": 0,
-    "conditionValue": 0
+    "conditionValue": 38724,
+    "bonus": {
+      "en": " Available",
+      "de": "Verfügbar",
+      "ja": "獲得可能",
+      "fr": " récoltable"
+    },
+    "condition": {
+      "en": "[UNHANDLED 0x28] Equipped",
+      "de": "[UNHANDLED 0x2B] ausgerüstet",
+      "ja": "[UNHANDLED 0x28]装備時",
+      "fr": "[UNHANDLED 0x28] [UNHANDLED 0x28]"
+    }
   },
   "92": {
     "value": 10,
@@ -1661,7 +1697,19 @@
   },
   "107": {
     "value": 0,
-    "conditionValue": 0
+    "conditionValue": 38735,
+    "bonus": {
+      "en": " Available",
+      "de": "Verfügbar",
+      "ja": "獲得可能",
+      "fr": " récoltable"
+    },
+    "condition": {
+      "en": "[UNHANDLED 0x28] Equipped",
+      "de": "[UNHANDLED 0x2B] ausgerüstet",
+      "ja": "[UNHANDLED 0x28]装備時",
+      "fr": "[UNHANDLED 0x28] [UNHANDLED 0x28]"
+    }
   },
   "108": {
     "value": 1,
@@ -3984,8 +4032,20 @@
     }
   },
   "253": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 2,
+    "conditionValue": 3950,
+    "bonus": {
+      "en": " Gathering Attempts/Integrity +{{value}}",
+      "de": "Sammelversuche/Belastbarkeit +{{value}}",
+      "ja": "採集回数／耐久＋{{value}}",
+      "fr": " Nombre de tentatives + {{value}}"
+    },
+    "condition": {
+      "en": "Gathering ≥ {{value}}",
+      "de": "Sammeln min. {{value}}",
+      "ja": "獲得力 {{value}}以上",
+      "fr": "Collecte ≧ {{value}}"
+    }
   },
   "254": {
     "value": 0,
@@ -7328,8 +7388,20 @@
     "conditionValue": 0
   },
   "471": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 30,
+    "conditionValue": 3145,
+    "bonus": {
+      "en": " Gatherer's Boon Chance +{{value}}%～",
+      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
+      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
+      "fr": " Chance de récolte supp. +{{value}}% (↑)"
+    },
+    "condition": {
+      "en": "Perception ≥ {{value}}",
+      "de": "Expertise min. {{value}}",
+      "ja": "技術力 {{value}}以上",
+      "fr": "Savoir-faire ≧ {{value}}"
+    }
   },
   "472": {
     "value": 0,
@@ -7344,16 +7416,40 @@
     "conditionValue": 0
   },
   "475": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 1,
+    "conditionValue": 900,
+    "bonus": {
+      "en": " Gathering Attempts/Integrity +{{value}}",
+      "de": "Sammelversuche/Belastbarkeit +{{value}}",
+      "ja": "採集回数／耐久＋{{value}}",
+      "fr": " Nombre de tentatives + {{value}}"
+    },
+    "condition": {
+      "en": "Max GP ≥ {{value}}",
+      "de": "Max. SP ≥ {{value}}",
+      "ja": "GPmax {{value}}以上",
+      "fr": "PR ≧ {{value}}"
+    }
   },
   "476": {
     "value": 0,
     "conditionValue": 0
   },
   "477": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 30,
+    "conditionValue": 3230,
+    "bonus": {
+      "en": " Gatherer's Boon Chance +{{value}}%～",
+      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
+      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
+      "fr": " Chance de récolte supp. +{{value}}% (↑)"
+    },
+    "condition": {
+      "en": "Perception ≥ {{value}}",
+      "de": "Expertise min. {{value}}",
+      "ja": "技術力 {{value}}以上",
+      "fr": "Savoir-faire ≧ {{value}}"
+    }
   },
   "478": {
     "value": 0,
@@ -7368,8 +7464,20 @@
     "conditionValue": 0
   },
   "481": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 2,
+    "conditionValue": 850,
+    "bonus": {
+      "en": " Gathering Attempts/Integrity +{{value}}～",
+      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
+      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
+      "fr": " Nombre de tentatives + {{value}} (croissant)"
+    },
+    "condition": {
+      "en": "Max GP ≥ {{value}}",
+      "de": "Max. SP ≥ {{value}}",
+      "ja": "GPmax {{value}}以上",
+      "fr": "PR ≧ {{value}}"
+    }
   },
   "482": {
     "value": 0,

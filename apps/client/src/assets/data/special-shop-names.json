@@ -5634,10 +5634,10 @@
     "fr": "Assignats blancs : matériaux (Nv ≧ 80)"
   },
   "1770488": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "White Scrip Exchange (Lv. 90 Materials)",
+    "ja": "白貨の取引：Lv90～向け素材",
+    "de": "Weiße Scheine (ab St. 90, Materialien)",
+    "fr": "Assignats blancs : matériaux (Nv ≧ 90)"
   },
   "1770489": {
     "en": "Purple Scrip Exchange (Lv. 90 Materials/Bait)",
@@ -6246,16 +6246,16 @@
     "fr": "Cristaux-trophées (armes de mages)"
   },
   "1770590": {
-    "en": "Trophy Crystal Exchange (DoW Gear)",
-    "ja": "トロフィークリスタルの取引（ファイター用防具）",
-    "de": "Kristalltrophäen (Krieger-Rüstungen)",
-    "fr": "Cristaux-trophées (protections de combattants)"
+    "en": "Trophy Crystal Exchange (DoW Gear) I",
+    "ja": "トロフィークリスタルの取引（ファイター用防具その1）",
+    "de": "Kristalltrophäen (Krieger-Rüstungen I)",
+    "fr": "Cristaux-trophées (protections de combattants I)"
   },
   "1770591": {
-    "en": "Trophy Crystal Exchange (DoM Gear)",
-    "ja": "トロフィークリスタルの取引（ソーサラー用防具）",
-    "de": "Kristalltrophäen (Magier-Rüstungen)",
-    "fr": "Cristaux-trophées (protections de mages)"
+    "en": "Trophy Crystal Exchange (DoM Gear) I",
+    "ja": "トロフィークリスタルの取引（ソーサラー用防具その1）",
+    "de": "Kristalltrophäen (Magier-Rüstungen I)",
+    "fr": "Cristaux-trophées (protections de mages I)"
   },
   "1770592": {
     "en": "Trophy Crystal Exchange (Accessories)",
@@ -6504,6 +6504,168 @@
     "fr": ""
   },
   "1770633": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770634": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770635": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770636": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770637": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770638": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770639": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770640": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770641": {
+    "en": "Totem Gear (Rubicante)",
+    "ja": "報酬装備の取引（ルビカンテ）",
+    "de": "Rubicante-Ausrüstung",
+    "fr": "Équipements totémiques (Rubicante)"
+  },
+  "1770642": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770643": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770644": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770645": {
+    "en": "Seasonal Event Prizes I",
+    "ja": "シーズナルイベント報酬の交換（その1）",
+    "de": "Saisonale Gegenstände I",
+    "fr": "Récompenses d'événements saisonniers I"
+  },
+  "1770646": {
+    "en": "Seasonal Event Prizes II",
+    "ja": "シーズナルイベント報酬の交換（その2）",
+    "de": "Saisonale Gegenstände II",
+    "fr": "Récompenses d'événements saisonniers II"
+  },
+  "1770647": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770648": {
+    "en": "Trophy Crystal Exchange (DoW Gear) II",
+    "ja": "トロフィークリスタルの取引（ファイター用防具その2）",
+    "de": "Kristalltrophäen (Krieger-Rüstungen II)",
+    "fr": "Cristaux-trophées (protections de combattants II)"
+  },
+  "1770649": {
+    "en": "Trophy Crystal Exchange (DoM Gear) II",
+    "ja": "トロフィークリスタルの取引（ソーサラー用防具その2）",
+    "de": "Kristalltrophäen (Magier-Rüstungen II)",
+    "fr": "Cristaux-trophées (protections de mages II)"
+  },
+  "1770650": {
+    "en": "Hannish Certificates of Grade 2 Import (Weapons)",
+    "ja": "ラザハンの手形G2との交換（武器）",
+    "de": "Radz-at-Han-Marken II (Waffen)",
+    "fr": "Avoirs de Radz-at-Han II (armes)"
+  },
+  "1770651": {
+    "en": "Hannish Certificates of Grade 2 Import (Gear)",
+    "ja": "ラザハンの手形G2との交換（防具）",
+    "de": "Radz-at-Han-Marken II (Rüstungen)",
+    "fr": "Avoirs de Radz-at-Han II (pièces d'armure)"
+  },
+  "1770652": {
+    "en": "Hannish Certificates of Grade 2 Import (Accessories)",
+    "ja": "ラザハンの手形G2との交換（アクセサリー）",
+    "de": "Radz-at-Han-Marken II (Accessoires)",
+    "fr": "Avoirs de Radz-at-Han II (accessoires)"
+  },
+  "1770653": {
+    "en": "Hannish Certificates of Grade 2 Import (Weapons)",
+    "ja": "ラザハンの手形G2との交換（武器）",
+    "de": "Radz-at-Han-Marken II (Waffen)",
+    "fr": "Avoirs de Radz-at-Han II (armes)"
+  },
+  "1770654": {
+    "en": "Hannish Certificates of Grade 2 Import (Gear)",
+    "ja": "ラザハンの手形G2との交換（防具）",
+    "de": "Radz-at-Han-Marken II (Rüstungen)",
+    "fr": "Avoirs de Radz-at-Han II (pièces d'armure)"
+  },
+  "1770655": {
+    "en": "Hannish Certificates of Grade 2 Import (Accessories)",
+    "ja": "ラザハンの手形G2との交換（アクセサリー）",
+    "de": "Radz-at-Han-Marken II (Accessoires)",
+    "fr": "Avoirs de Radz-at-Han II (accessoires)"
+  },
+  "1770656": {
+    "en": "Augmented Rinascita Equipment (Weapons)",
+    "ja": "リナシータ強化装備の取引（武器）",
+    "de": "Modifizierte Rinascita-Ausrüstung (Waffen)",
+    "fr": "Amélioration d'armes de la rinascita"
+  },
+  "1770657": {
+    "en": "Augmented Rinascita Equipment (Gear)",
+    "ja": "リナシータ強化装備の取引（防具）",
+    "de": "Modifizierte Rinascita-Ausrüstung (Rüstungen)",
+    "fr": "Amélioration de pièces d'armure de la rinascita"
+  },
+  "1770658": {
+    "en": "Augmented Rinascita Equipment (Accessories)",
+    "ja": "リナシータ強化装備の取引（アクセサリー）",
+    "de": "Modifizierte Rinascita-Ausrüstung (Accessoires)",
+    "fr": "Amélioration d'accessoires de la rinascita"
+  },
+  "1770659": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770660": {
     "en": "",
     "ja": "",
     "de": "",

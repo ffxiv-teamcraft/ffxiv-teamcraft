@@ -34835,7 +34835,7 @@
   },
   "1614": {
     "name": {
-      "en": "Scavengers of Human Sorrow",
+      "en": "Scavengers of Man's Sorrow",
       "ja": "魂喰いの妖異たち",
       "de": "Zurück ins Nichts",
       "fr": "Les dévoreurs d'âmes"
@@ -39960,20 +39960,27 @@
   },
   "1857": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Don't Be Sylphish",
+      "ja": "エッグハント「シルフ対トンベリ人間」",
+      "de": "エッグハント「シルフ対トンベリ人間」",
+      "fr": "Sylphes contre tomberrys humains"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "In a fit of jealousy, a group of suspect sylphs has begun raiding this Ul'dahn caravan for its cargo of precious Archon eggs. Thwart this attempted highroad robbery by reminding these sylphs how scary tonberries can be─and remember to pick up some eggs on your way home.",
+      "ja": "エッグハント用タマゴの運搬が妨害されている<br>いたずら者のシルフ族を驚かせて追い払い<br>散らばった「アルコンエッグ」を集めろ",
+      "de": "エッグハント用タマゴの運搬が妨害されている<br>いたずら者のシルフ族を驚かせて追い払い<br>散らばった「アルコンエッグ」を集めろ",
+      "fr": "Les Sylphes empêchent le bon acheminement des Prœufs. Effrayez-les pour les chasser et récupérez les Prœufs dispersés."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060508.png",
+    "level": 15,
+    "location": 9556018,
+    "position": {
+      "map": 4,
+      "zoneid": 54,
+      "x": 25.24,
+      "y": 29.29,
+      "z": -0.33
+    }
   },
   "1858": {
     "name": {

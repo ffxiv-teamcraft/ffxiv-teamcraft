@@ -548,7 +548,7 @@
   "79": {
     "en": "Iron Will",
     "ja": "アイアンウィル",
-    "de": "Eiserner Wille",
+    "de": "Schild-Eid",
     "fr": "Volonté de fer",
     "icon": "/i/012000/012506.png"
   },
@@ -8250,7 +8250,7 @@
     "ja": "金剛の極意",
     "de": "Steinernes Enigma",
     "fr": "Énigme de la terre",
-    "icon": "/i/017000/017271.png"
+    "icon": "/i/012000/012527.png"
   },
   "1180": {
     "en": "Earth's Reply",
@@ -9527,11 +9527,11 @@
     "icon": "/i/015000/015037.png"
   },
   "1362": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Divine Veil",
+    "ja": "ディヴァインヴェール",
+    "de": "Heiliger Quell",
+    "fr": "Voile divin",
+    "icon": "/i/012000/012509.png"
   },
   "1363": {
     "en": "Sleep",
@@ -14749,11 +14749,11 @@
     "icon": ""
   },
   "2108": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "/i/018000/018921.png"
+    "en": "Shake It Off (Over Time)",
+    "ja": "シェイクオフ[被]",
+    "de": "Abschütteln",
+    "fr": "Débarrassé",
+    "icon": "/i/012000/012567.png"
   },
   "2109": {
     "en": "Out of the Action",
@@ -18704,11 +18704,11 @@
     "icon": "/i/018000/018981.png"
   },
   "2673": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "/i/017000/017521.png"
+    "en": "Divine Might",
+    "ja": "神聖魔法効果アップ",
+    "de": "Göttliche Gunst",
+    "fr": "Grâce divine",
+    "icon": "/i/012000/012521.png"
   },
   "2674": {
     "en": "Holy Sheltron",
@@ -18809,11 +18809,11 @@
     "icon": "/i/012000/012537.png"
   },
   "2688": {
-    "en": "竜眼蒼穹実行可",
-    "ja": "竜眼蒼穹実行可",
-    "de": "Groll des Drachen",
-    "fr": "竜眼蒼穹実行可",
-    "icon": ""
+    "en": "Overheated",
+    "ja": "オーバーヒート",
+    "de": "Überhitzung",
+    "fr": "Surchauffe",
+    "icon": "/i/018000/018385.png"
   },
   "2689": {
     "en": "Meisui",
@@ -21126,11 +21126,11 @@
     "icon": "/i/013000/013726.png"
   },
   "3019": {
-    "en": "Blade of Faith Ready",
-    "ja": "ブレード・オブ・フェイス実行可",
-    "de": "Klinge der Frömmigkeit",
-    "fr": "Lame de foi préparée",
-    "icon": "/i/012000/012519.png"
+    "en": "Confiteor Ready",
+    "ja": "コンフィテオル実行可",
+    "de": "Confiteor",
+    "fr": "Confiteor préparé",
+    "icon": "/i/012000/012520.png"
   },
   "3020": {
     "en": "Souls in the Balance",
@@ -23149,31 +23149,31 @@
     "icon": "/i/016000/016705.png"
   },
   "3308": {
-    "en": "_rsv_3308_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3308_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3308_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3308_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Inviolate Winds",
+    "ja": "風の魔印",
+    "de": "Zeichen des Windes",
+    "fr": "Sigil du vent",
     "icon": "/i/015000/015109.png"
   },
   "3309": {
-    "en": "_rsv_3309_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3309_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3309_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3309_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Holy Bonds",
+    "ja": "聖の魔印",
+    "de": "Zeichen der Heiligkeit",
+    "fr": "Sigil sacré",
     "icon": "/i/015000/015113.png"
   },
   "3310": {
-    "en": "_rsv_3310_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3310_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3310_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3310_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Purgatory Winds",
+    "ja": "風の二重印",
+    "de": "Doppeltes Zeichen des Windes",
+    "fr": "Double sigil du vent",
     "icon": "/i/015000/015109.png"
   },
   "3311": {
-    "en": "_rsv_3311_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3311_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3311_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3311_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Holy Purgation",
+    "ja": "聖の二重印",
+    "de": "Doppeltes Zeichen der Heiligkeit",
+    "fr": "Double sigil sacré",
     "icon": "/i/015000/015113.png"
   },
   "3312": {
@@ -23198,10 +23198,10 @@
     "icon": "/i/015000/015473.png"
   },
   "3315": {
-    "en": "_rsv_3315_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3315_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3315_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3315_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Chelomorph",
+    "ja": "甲殻寄生",
+    "de": "Chelomorph",
+    "fr": "Crustacé parasite",
     "icon": "/i/015000/015474.png"
   },
   "3316": {
@@ -23226,24 +23226,24 @@
     "icon": "/i/015000/015476.png"
   },
   "3319": {
-    "en": "_rsv_3319_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3319_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3319_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3319_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Glossal Resistance Down",
+    "ja": "軟体攻撃耐性低下",
+    "de": "Glossaler Widerstand -",
+    "fr": "Résistance aux attaques de mollusques réduite",
     "icon": "/i/015000/015477.png"
   },
   "3320": {
-    "en": "_rsv_3320_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3320_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3320_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3320_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Chelic Resistance Down",
+    "ja": "甲殻攻撃耐性低下",
+    "de": "Chelischer Widerstand -",
+    "fr": "Résistance aux attaques de crustacés réduite",
     "icon": "/i/015000/015478.png"
   },
   "3321": {
-    "en": "_rsv_3321_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3321_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3321_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3321_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Aetheronecrosis",
+    "ja": "魔活細胞",
+    "de": "Explozelle",
+    "fr": "Cellules magiques actives",
     "icon": "/i/015000/015770.png"
   },
   "3322": {
@@ -23268,164 +23268,164 @@
     "icon": "/i/015000/015545.png"
   },
   "3325": {
-    "en": "_rsv_3325_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3325_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3325_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3325_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Conceptual Mastery",
+    "ja": "マジックコンシーヴ",
+    "de": "Magische Einnistung",
+    "fr": "Conception magique",
     "icon": "/i/015000/015486.png"
   },
   "3326": {
-    "en": "_rsv_3326_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3326_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3326_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3326_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Blood of the Gorgon",
+    "ja": "ゴルゴンの呪詛：蛇毒",
+    "de": "Gorgons Fluch: Schlangengift",
+    "fr": "Malédiction de gorgone&nbsp;: venin reptilien",
     "icon": "/i/015000/015487.png"
   },
   "3327": {
-    "en": "_rsv_3327_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3327_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3327_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3327_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Breath of the Gorgon",
+    "ja": "ゴルゴンの呪詛：邪毒",
+    "de": "Gorgons Fluch: Übelgift",
+    "fr": "Malédiction de gorgone&nbsp;: poison insidieux",
     "icon": "/i/015000/015488.png"
   },
   "3328": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Spring Tide",
+    "ja": "水禍の呪い：大潮",
+    "de": "Fluch der Fluten: Springtide",
+    "fr": "Maléfice des vives-eaux",
+    "icon": "/i/015000/015120.png"
   },
   "3329": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Neap Tide",
+    "ja": "水禍の呪い：小潮",
+    "de": "Fluch der Fluten: Nipptide",
+    "fr": "Maléfice des mortes-eaux",
+    "icon": "/i/015000/015121.png"
   },
   "3330": {
-    "en": "_rsv_3330_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3330_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3330_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3330_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Imperfection: Alpha",
+    "ja": "未完概念：α",
+    "de": "Unvollständiges Konzept α",
+    "fr": "Concept immature&nbsp;: α",
     "icon": "/i/015000/015489.png"
   },
   "3331": {
-    "en": "_rsv_3331_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3331_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3331_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3331_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Imperfection: Beta",
+    "ja": "未完概念：β",
+    "de": "Unvollständiges Konzept β",
+    "fr": "Concept immature&nbsp;: β",
     "icon": "/i/015000/015490.png"
   },
   "3332": {
-    "en": "_rsv_3332_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3332_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3332_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3332_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Imperfection: Gamma",
+    "ja": "未完概念：γ",
+    "de": "Unvollständiges Konzept γ",
+    "fr": "Concept immature&nbsp;: γ",
     "icon": "/i/015000/015491.png"
   },
   "3333": {
-    "en": "_rsv_3333_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3333_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3333_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3333_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Perfection: Alpha",
+    "ja": "完成概念：α",
+    "de": "Vollständiges Konzept α",
+    "fr": "Concept mature&nbsp;: α",
     "icon": "/i/015000/015492.png"
   },
   "3334": {
-    "en": "_rsv_3334_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3334_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3334_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3334_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Perfection: Beta",
+    "ja": "完成概念：β",
+    "de": "Vollständiges Konzept β",
+    "fr": "Concept mature&nbsp;: β",
     "icon": "/i/015000/015493.png"
   },
   "3335": {
-    "en": "_rsv_3335_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3335_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3335_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3335_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Perfection: Gamma",
+    "ja": "完成概念：γ",
+    "de": "Vollständiges Konzept γ",
+    "fr": "Concept mature&nbsp;: γ",
     "icon": "/i/015000/015494.png"
   },
   "3336": {
-    "en": "_rsv_3336_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3336_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3336_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3336_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Inconceivable",
+    "ja": "概念拒絶",
+    "de": "Konzeptablehnung",
+    "fr": "Rejet conceptuel",
     "icon": "/i/015000/015495.png"
   },
   "3337": {
-    "en": "_rsv_3337_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3337_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3337_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3337_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Winged Conception",
+    "ja": "概念生成：飛行生物",
+    "de": "Konzeptumsetzung: Flugwesen",
+    "fr": "Conceptualisation&nbsp;: créature volante",
     "icon": "/i/015000/015496.png"
   },
   "3338": {
-    "en": "_rsv_3338_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3338_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3338_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3338_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Aquatic Conception",
+    "ja": "概念生成：水棲生物",
+    "de": "Konzeptumsetzung: Wasserorganismus",
+    "fr": "Conceptualisation&nbsp;: créature marine",
     "icon": "/i/015000/015497.png"
   },
   "3339": {
-    "en": "_rsv_3339_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3339_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3339_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3339_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Shocking Conception",
+    "ja": "概念生成：雷獣",
+    "de": "Konzeptumsetzung: Gewitterwesen",
+    "fr": "Conceptualisation&nbsp;: Raijû",
     "icon": "/i/015000/015498.png"
   },
   "3340": {
-    "en": "_rsv_3340_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3340_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3340_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3340_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Fiery Conception",
+    "ja": "概念生成：火精",
+    "de": "Konzeptumsetzung: Flammengeist",
+    "fr": "Conceptualisation&nbsp;: esprit des flammes",
     "icon": "/i/015000/015499.png"
   },
   "3341": {
-    "en": "_rsv_3341_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3341_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3341_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3341_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Toxic Conception",
+    "ja": "概念生成：有毒生物",
+    "de": "Konzeptumsetzung: Gifttier",
+    "fr": "Conceptualisation&nbsp;: créature venimeuse",
     "icon": "/i/015000/015500.png"
   },
   "3342": {
-    "en": "_rsv_3342_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3342_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3342_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3342_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Growing Conception",
+    "ja": "概念生成：草木生物",
+    "de": "Konzeptumsetzung: Pflanzenwesen",
+    "fr": "Conceptualisation&nbsp;: créature végétale",
     "icon": "/i/015000/015101.png"
   },
   "3343": {
-    "en": "_rsv_3343_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3343_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3343_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3343_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Immortal Spark",
+    "ja": "概念の断片：不死鳥",
+    "de": "Konzeptfragment: Phoinix",
+    "fr": "Concept fragmentaire&nbsp;: oiseau immortel",
     "icon": "/i/015000/015102.png"
   },
   "3344": {
-    "en": "_rsv_3344_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3344_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3344_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3344_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Immortal Conception",
+    "ja": "概念生成：不死鳥",
+    "de": "Konzeptumsetzung: Phoinix",
+    "fr": "Conceptualisation&nbsp;: oiseau immortel",
     "icon": "/i/015000/015103.png"
   },
   "3345": {
-    "en": "_rsv_3345_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3345_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3345_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3345_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Solosplice",
+    "ja": "単相式反発概念",
+    "de": "Einfache Konzeptreflektion",
+    "fr": "Concept adverse simple",
     "icon": "/i/015000/015104.png"
   },
   "3346": {
-    "en": "_rsv_3346_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3346_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3346_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3346_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Multisplice",
+    "ja": "複相式反発概念",
+    "de": "Multiple Konzeptreflektion",
+    "fr": "Concepts adverses multiples",
     "icon": "/i/015000/015105.png"
   },
   "3347": {
-    "en": "_rsv_3347_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3347_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3347_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3347_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Supersplice",
+    "ja": "重相式反発概念",
+    "de": "Komplexe Konzeptreflektion",
+    "fr": "Concept adverse puissant",
     "icon": "/i/015000/015106.png"
   },
   "3348": {
@@ -23436,31 +23436,31 @@
     "icon": "/i/015000/015026.png"
   },
   "3349": {
-    "en": "_rsv_3349_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3349_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3349_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3349_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Inverse Magicks",
+    "ja": "マジックインヴァージョン",
+    "de": "Magische Umkehr",
+    "fr": "Inversion magique",
     "icon": "/i/015000/015107.png"
   },
   "3350": {
-    "en": "_rsv_3350_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3350_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3350_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3350_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Soul Stranded",
+    "ja": "幽体離脱",
+    "de": "Außerkörperlichkeit",
+    "fr": "Dissociation corps-âme",
     "icon": "/i/015000/015108.png"
   },
   "3351": {
-    "en": "_rsv_3351_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3351_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3351_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3351_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Eye of the Gorgon",
+    "ja": "ゴルゴンの呪詛：石眼",
+    "de": "Gorgons Fluch: Steinauge",
+    "fr": "Malédiction de gorgone&nbsp;: œil pétrifiant",
     "icon": "/i/015000/015587.png"
   },
   "3352": {
-    "en": "_rsv_3352_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3352_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3352_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3352_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Crown of the Gorgon",
+    "ja": "ゴルゴンの呪詛：石光",
+    "de": "Gorgons Fluch: Steinlicht",
+    "fr": "Malédiction de gorgone&nbsp;: lueur pétrifiante",
     "icon": "/i/015000/015588.png"
   },
   "3353": {
@@ -23534,11 +23534,11 @@
     "icon": "/i/015000/015475.png"
   },
   "3363": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Seduced",
+    "ja": "誘惑",
+    "de": "Versuchung",
+    "fr": "Séduction",
+    "icon": "/i/015000/015552.png"
   },
   "3364": {
     "en": "Doom",
@@ -23555,11 +23555,11 @@
     "icon": "/i/012000/012972.png"
   },
   "3366": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Vulnerability Up",
+    "ja": "被ダメージ上昇",
+    "de": "Erhöhte Verwundbarkeit",
+    "fr": "Vulnérabilité augmentée",
+    "icon": "/i/015000/015020.png"
   },
   "3367": {
     "en": "Rehabilitation",
@@ -23674,53 +23674,53 @@
     "icon": "/i/010000/010468.png"
   },
   "3383": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Arcane Triumph",
+    "ja": "勝利の運命",
+    "de": "Schicksal des Siegers",
+    "fr": "Destin victorieux",
+    "icon": "/i/015000/015152.png"
   },
   "3384": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Arcane Triumph",
+    "ja": "勝利の運命",
+    "de": "Schicksal des Siegers",
+    "fr": "Destin victorieux",
+    "icon": "/i/015000/015152.png"
   },
   "3385": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Arcane Attraction",
+    "ja": "恋慕の運命",
+    "de": "Schicksal der Liebenden",
+    "fr": "Destin amoureux",
+    "icon": "/i/015000/015153.png"
   },
   "3386": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Attraction Reversed",
+    "ja": "恋慕の運命【逆位置】",
+    "de": "Schicksal der umgekehrten Liebenden",
+    "fr": "Destin amoureux opposé",
+    "icon": "/i/015000/015154.png"
   },
   "3387": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Arcane Fever",
+    "ja": "熱火の運命",
+    "de": "Schicksal des Eifers",
+    "fr": "Destin enflammé",
+    "icon": "/i/015000/015155.png"
   },
   "3388": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Fever Reversed",
+    "ja": "熱火の運命【逆位置】",
+    "de": "Schicksal des umgekehrten Eifers",
+    "fr": "Destin enflammé opposé",
+    "icon": "/i/015000/015156.png"
   },
   "3389": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Sibling Revelry",
+    "ja": "兄妹神の絆",
+    "de": "Göttliche Geschwisterbande",
+    "fr": "Lien fraternel divin",
+    "icon": "/i/015000/015157.png"
   },
   "3390": {
     "en": "Poison",
@@ -23730,59 +23730,59 @@
     "icon": "/i/015000/015007.png"
   },
   "3391": {
-    "en": "_rsv_3391_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3391_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3391_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3391_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Purgatory Winds",
+    "ja": "風の二重印",
+    "de": "Doppeltes Zeichen des Windes",
+    "fr": "Double sigil du vent",
     "icon": "/i/015000/015110.png"
   },
   "3392": {
-    "en": "_rsv_3392_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3392_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3392_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3392_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Purgatory Winds",
+    "ja": "風の二重印",
+    "de": "Doppeltes Zeichen des Windes",
+    "fr": "Double sigil du vent",
     "icon": "/i/015000/015111.png"
   },
   "3393": {
-    "en": "_rsv_3393_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3393_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3393_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3393_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Purgatory Winds",
+    "ja": "風の二重印",
+    "de": "Doppeltes Zeichen des Windes",
+    "fr": "Double sigil du vent",
     "icon": "/i/015000/015112.png"
   },
   "3394": {
-    "en": "_rsv_3394_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3394_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3394_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3394_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Holy Purgation",
+    "ja": "聖の二重印",
+    "de": "Doppeltes Zeichen der Heiligkeit",
+    "fr": "Double sigil sacré",
     "icon": "/i/015000/015114.png"
   },
   "3395": {
-    "en": "_rsv_3395_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3395_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3395_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3395_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Holy Purgation",
+    "ja": "聖の二重印",
+    "de": "Doppeltes Zeichen der Heiligkeit",
+    "fr": "Double sigil sacré",
     "icon": "/i/015000/015115.png"
   },
   "3396": {
-    "en": "_rsv_3396_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3396_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3396_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3396_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Holy Purgation",
+    "ja": "聖の二重印",
+    "de": "Doppeltes Zeichen der Heiligkeit",
+    "fr": "Double sigil sacré",
     "icon": "/i/015000/015116.png"
   },
   "3397": {
-    "en": "_rsv_3397_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3397_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3397_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3397_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Inviolate Winds",
+    "ja": "風の魔印",
+    "de": "Doppeltes Zeichen des Windes",
+    "fr": "Sigil du vent",
     "icon": "/i/015000/015110.png"
   },
   "3398": {
-    "en": "_rsv_3398_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3398_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3398_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3398_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Holy Bonds",
+    "ja": "聖の魔印",
+    "de": "Doppeltes Zeichen der Heiligkeit",
+    "fr": "Sigil sacré",
     "icon": "/i/015000/015114.png"
   },
   "3399": {
@@ -23835,10 +23835,10 @@
     "icon": "/i/015000/015119.png"
   },
   "3406": {
-    "en": "_rsv_3406_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3406_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3406_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3406_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Everburn",
+    "ja": "不死鳥の力",
+    "de": "Macht des Phoinix",
+    "fr": "Puissance de l'oiseau immortel",
     "icon": "/i/015000/015117.png"
   },
   "3407": {
@@ -23877,10 +23877,10 @@
     "icon": ""
   },
   "3412": {
-    "en": "_rsv_3412_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3412_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3412_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3412_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Natural Alignment",
+    "ja": "術式記述[被]",
+    "de": "Rituelle Anpassung (empfangen)",
+    "fr": "Description rituelle (ciblage)",
     "icon": "/i/015000/015272.png"
   },
   "3413": {
@@ -23940,11 +23940,11 @@
     "icon": ""
   },
   "3421": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Fetters",
+    "ja": "拘束",
+    "de": "Gefesselt",
+    "fr": "Attache",
+    "icon": "/i/015000/015545.png"
   },
   "3422": {
     "en": "",
@@ -24206,18 +24206,18 @@
     "icon": ""
   },
   "3459": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Blooming Blue",
+    "ja": "青花の加護",
+    "de": "Blaue Benediktion",
+    "fr": "Bénédiction d'azur",
+    "icon": "/i/015000/015124.png"
   },
   "3460": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Blooming Gold",
+    "ja": "黄花の加護",
+    "de": "Gelbe Benediktion",
+    "fr": "Bénédiction dorée",
+    "icon": "/i/015000/015125.png"
   },
   "3461": {
     "en": "",
@@ -24227,88 +24227,88 @@
     "icon": ""
   },
   "3462": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Poison",
+    "ja": "毒",
+    "de": "Gift",
+    "fr": "Poison",
+    "icon": "/i/017000/017001.png"
   },
   "3463": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Dirty Claw",
+    "ja": "麻痺",
+    "de": "Paralyse",
+    "fr": "Paralysie",
+    "icon": "/i/015000/015006.png"
   },
   "3464": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Slow",
+    "ja": "スロウ",
+    "de": "Gemach",
+    "fr": "Lenteur",
+    "icon": "/i/015000/015009.png"
   },
   "3465": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Stun",
+    "ja": "スタン",
+    "de": "Betäubung",
+    "fr": "Étourdissement",
+    "icon": "/i/015000/015004.png"
   },
   "3466": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Sleep",
+    "ja": "睡眠",
+    "de": "Schlaf",
+    "fr": "Sommeil",
+    "icon": "/i/015000/015013.png"
   },
   "3467": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Vegetal Vapours",
+    "ja": "魅惑の香光",
+    "de": "Betört und Verlockt",
+    "fr": "Encens lumineux",
+    "icon": "/i/015000/015147.png"
   },
   "3468": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Frontal Blaster Charge",
+    "ja": "ブラスターチャージ：前",
+    "de": "Frontale Blaster-Ladung",
+    "fr": "Charge d'électrochoc&nbsp;: avant",
+    "icon": "/i/015000/015148.png"
   },
   "3469": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Rear Blaster Charge",
+    "ja": "ブラスターチャージ：後",
+    "de": "Hintere Blaster-Ladung",
+    "fr": "Charge d'électrochoc&nbsp;: arrière",
+    "icon": "/i/015000/015149.png"
   },
   "3470": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Left Blaster Charge",
+    "ja": "ブラスターチャージ：左",
+    "de": "Linke Blaster-Ladung",
+    "fr": "Charge d'électrochoc&nbsp;: gauche",
+    "icon": "/i/015000/015150.png"
   },
   "3471": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Right Blaster Charge",
+    "ja": "ブラスターチャージ：右",
+    "de": "Rechte Blaster-Ladung",
+    "fr": "Charge d'électrochoc&nbsp;: droite",
+    "icon": "/i/015000/015151.png"
   },
   "3472": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Heavy",
+    "ja": "ヘヴィ",
+    "de": "Gewicht",
+    "fr": "Pesanteur",
+    "icon": "/i/015000/015002.png"
   },
   "3473": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Heavy",
+    "ja": "ヘヴィ",
+    "de": "Gewicht",
+    "fr": "Pesanteur",
+    "icon": "/i/015000/015002.png"
   },
   "3474": {
     "en": "",
@@ -24318,25 +24318,25 @@
     "icon": ""
   },
   "3475": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Penance",
+    "ja": "妖炎の呪い",
+    "de": "Des Büßers Fluch",
+    "fr": "Malédiction des flammes spectrales",
+    "icon": "/i/015000/015158.png"
   },
   "3476": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Penitent's Shackles",
+    "ja": "妖炎拘束",
+    "de": "Des Büßers Kerker",
+    "fr": "Étreinte enflammée",
+    "icon": "/i/015000/015159.png"
   },
   "3477": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Penance",
+    "ja": "妖炎の呪い",
+    "de": "Des Büßers Fluch",
+    "fr": "Malédiction des flammes spectrales",
+    "icon": "/i/015000/015158.png"
   },
   "3478": {
     "en": "",
@@ -24374,46 +24374,46 @@
     "icon": ""
   },
   "3483": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Blooming Welt",
+    "ja": "大爆呪",
+    "de": "Loderndes Mal",
+    "fr": "Grosse malédiction explosive",
+    "icon": "/i/015000/015165.png"
   },
   "3484": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Furious Welt",
+    "ja": "重爆呪",
+    "de": "Zehrendes Mal",
+    "fr": "Malédiction explosive massive",
+    "icon": "/i/015000/015166.png"
   },
   "3485": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Stinging Welt",
+    "ja": "爆呪",
+    "de": "Flammenmal",
+    "fr": "Malédiction explosive",
+    "icon": "/i/015000/015167.png"
   },
   "3486": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Flamespire",
+    "ja": "炎禍",
+    "de": "Flammendorn",
+    "fr": "Flamme maudite",
+    "icon": "/i/019000/019564.png"
   },
   "3487": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Flamespire",
+    "ja": "炎禍",
+    "de": "Flammendorn",
+    "fr": "Flamme maudite",
+    "icon": "/i/019000/019564.png"
   },
   "3488": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Mark of the Harvest",
+    "ja": "ハーベストマーク",
+    "de": "Erntemal",
+    "fr": "Marque de moisson",
+    "icon": "/i/016000/016412.png"
   },
   "3489": {
     "en": "",
@@ -24451,11 +24451,11 @@
     "icon": ""
   },
   "3494": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Blind",
+    "ja": "暗闇",
+    "de": "Blind",
+    "fr": "Cécité",
+    "icon": "/i/015000/015012.png"
   },
   "3495": {
     "en": "",
@@ -24493,6 +24493,356 @@
     "icon": ""
   },
   "3500": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3501": {
+    "en": "Down for the Count",
+    "ja": "ノックダウン",
+    "de": "Am Boden",
+    "fr": "Au tapis",
+    "icon": "/i/015000/015044.png"
+  },
+  "3502": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3503": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3504": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3505": {
+    "en": "Burning Chains",
+    "ja": "炎鎖の呪い",
+    "de": "Fluch der Flammenkette",
+    "fr": "Malédiction des flammes enchaînées",
+    "icon": "/i/015000/015170.png"
+  },
+  "3506": {
+    "en": "Ancient Frost",
+    "ja": "エンシェントフロスト",
+    "de": "Antiker Frost",
+    "fr": "Givre ancien",
+    "icon": "/i/015000/015168.png"
+  },
+  "3507": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3508": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3509": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3510": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3511": {
+    "en": "Glassy-eyed",
+    "ja": "人形の石眼",
+    "de": "Steinauge der Lebenden",
+    "fr": "Œil pétrifiant de marionnette",
+    "icon": "/i/015000/015986.png"
+  },
+  "3512": {
+    "en": "Moonspore Spurred",
+    "ja": "ムーンスポア",
+    "de": "Mondspore",
+    "fr": "Sporelunes",
+    "icon": "/i/015000/015169.png"
+  },
+  "3513": {
+    "en": "Concussion",
+    "ja": "脳しんとう",
+    "de": "Schädel-Hirn-Trauma",
+    "fr": "Commotion cérébrale",
+    "icon": "/i/015000/015712.png"
+  },
+  "3514": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3515": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3516": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3517": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3518": {
+    "en": "Mini",
+    "ja": "ミニマム",
+    "de": "Wicht",
+    "fr": "Mini",
+    "icon": "/i/015000/015581.png"
+  },
+  "3519": {
+    "en": "Deep Freeze",
+    "ja": "氷結",
+    "de": "Tiefkühlung",
+    "fr": "Congélation",
+    "icon": "/i/015000/015637.png"
+  },
+  "3520": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3521": {
+    "en": "Concussion",
+    "ja": "打撲傷",
+    "de": "Prellung",
+    "fr": "Concussion",
+    "icon": "/i/015000/015523.png"
+  },
+  "3522": {
+    "en": "Pyretic",
+    "ja": "ヒート",
+    "de": "Pyretisch",
+    "fr": "Chaleur",
+    "icon": "/i/015000/015647.png"
+  },
+  "3523": {
+    "en": "Freezing Up",
+    "ja": "冷却",
+    "de": "Kühlung",
+    "fr": "Réfrigération",
+    "icon": "/i/015000/015355.png"
+  },
+  "3524": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3525": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3526": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3527": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3528": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3529": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3530": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3531": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3532": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3533": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3534": {
+    "en": "Ancient Circle",
+    "ja": "エンシェントリング",
+    "de": "Orbis Antiquus",
+    "fr": "Cercle ancien",
+    "icon": "/i/015000/015770.png"
+  },
+  "3535": {
+    "en": "Dark Whispers",
+    "ja": "闇火の呪い",
+    "de": "Fluch der Finsterflamme",
+    "fr": "Malédiction du feu ténébreux",
+    "icon": "/i/015000/015305.png"
+  },
+  "3536": {
+    "en": "Magic Vulnerability Up",
+    "ja": "被魔法ダメージ上昇",
+    "de": "Erhöhte Magie-Verwundbarkeit",
+    "fr": "Vulnérabilité magique augmentée",
+    "icon": "/i/015000/015057.png"
+  },
+  "3537": {
+    "en": "Burns",
+    "ja": "火傷",
+    "de": "Brandwunde",
+    "fr": "Brûlure",
+    "icon": "/i/015000/015524.png"
+  },
+  "3538": {
+    "en": "Forward March",
+    "ja": "移動命令：前",
+    "de": "Geistlenkung vorwärts",
+    "fr": "Contrainte mentale&nbsp;: avancer",
+    "icon": "/i/015000/015774.png"
+  },
+  "3539": {
+    "en": "About Face",
+    "ja": "移動命令：後",
+    "de": "Geistlenkung rückwärts",
+    "fr": "Contrainte mentale&nbsp;: reculer",
+    "icon": "/i/015000/015775.png"
+  },
+  "3540": {
+    "en": "Left Face",
+    "ja": "移動命令：左",
+    "de": "Geistlenkung links",
+    "fr": "Contrainte mentale&nbsp;: virage à gauche",
+    "icon": "/i/015000/015776.png"
+  },
+  "3541": {
+    "en": "Right Face",
+    "ja": "移動命令：右",
+    "de": "Geistlenkung rechts",
+    "fr": "Contrainte mentale&nbsp;: virage à droite",
+    "icon": "/i/015000/015777.png"
+  },
+  "3542": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3543": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3544": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3545": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3546": {
+    "en": "Radiant Veil",
+    "ja": "星法衣",
+    "de": "Himmelsmantel",
+    "fr": "Voile étoilé",
+    "icon": "/i/012000/012509.png"
+  },
+  "3547": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3548": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3549": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "3550": {
     "en": "",
     "ja": "",
     "de": "",

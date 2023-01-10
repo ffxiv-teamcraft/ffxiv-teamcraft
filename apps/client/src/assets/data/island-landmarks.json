@@ -148,5 +148,35 @@
         "amount": 3
       }
     ]
+  },
+  "-11060": {
+    "key": 6,
+    "icon": "/i/053000/053927_hr1.png",
+    "en": "Gamboling Garden",
+    "de": "Inselgärtchen",
+    "ja": "アイランドガーデン",
+    "fr": "Jardin insulaire",
+    "ingredients": [
+      {
+        "id": 37560,
+        "amount": 20
+      },
+      {
+        "id": 39228,
+        "amount": 10
+      },
+      {
+        "id": 37574,
+        "amount": 10
+      },
+      {
+        "id": 37562,
+        "amount": 10
+      },
+      {
+        "id": 37578,
+        "amount": 5
+      }
+    ]
   }
 }
