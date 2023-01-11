@@ -1564,5 +1564,59 @@
       "speed": 1,
       "shadowSize": 0
     }
+  ],
+  "38811": [
+    {
+      "speed": 3,
+      "shadowSize": 1
+    }
+  ],
+  "38813": [
+    {
+      "speed": 1,
+      "shadowSize": 0
+    }
+  ],
+  "38837": [
+    {
+      "speed": 2,
+      "shadowSize": 0
+    }
+  ],
+  "38838": [
+    {
+      "speed": 1,
+      "shadowSize": 1
+    }
+  ],
+  "38839": [
+    {
+      "speed": 3,
+      "shadowSize": 1
+    }
+  ],
+  "38840": [
+    {
+      "speed": 2,
+      "shadowSize": 2
+    }
+  ],
+  "38841": [
+    {
+      "speed": 3,
+      "shadowSize": 2,
+      "predators": [
+        {
+          "id": 38939,
+          "amount": 4
+        }
+      ]
+    }
+  ],
+  "38939": [
+    {
+      "speed": 4,
+      "shadowSize": 0
+    }
   ]
 }
