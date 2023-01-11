@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { GarlandtoolsGroupLinkParser } from './link-parser/garlandtools-group-link-parser';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { EtroLinkParser } from './link-parser/etro-link-parser';
 
 @Component({
   selector: 'app-list-import-popup',
@@ -26,8 +25,7 @@ export class ListImportPopupComponent {
   linkParsers: ExternalListLinkParser[] = [
     new FfxivCraftingLinkParser(),
     new AriyalaLinkParser(this.http, this.xivapi, this.lazyData),
-    new GarlandtoolsGroupLinkParser(),
-    new EtroLinkParser(this.http, this.lazyData)
+    new GarlandtoolsGroupLinkParser()
   ];
 
   linkType: string;
@@ -59,7 +57,7 @@ export class ListImportPopupComponent {
     const parser = this.linkParsers.find(p => p.canParse(this.importLink));
     if (parser !== undefined) {
       this.inProgress = true;
-      if (parser instanceof AriyalaLinkParser || parser instanceof EtroLinkParser) {
+      if (parser instanceof AriyalaLinkParser) {
         parser.setMateriaOptions(this.materiaOptions);
       }
 

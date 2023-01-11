@@ -23,10 +23,10 @@
           </button>
           <nz-dropdown-menu #menu="nzDropdownMenu">
             <ul nz-menu>
-              <div nz-menu-item *ngFor="let panel of withLayoutApplied.items.rows" routerLink="../{{panel.title}}">
+              <div nz-menu-item *ngFor="let panel of withLayoutApplied.items.rows" routerLink="../{{panel.title | encodeUriComponent}}">
                 {{panel.title | translate}} ({{'LIST.Items_count' | translate: { amount: panel.rows.length } }})
               </div>
-              <li nz-menu-item *ngIf="withLayoutApplied.finalItems.rows.length > 0" routerLink="../{{withLayoutApplied.finalItems.title}}">
+              <li nz-menu-item *ngIf="withLayoutApplied.finalItems.rows.length > 0" routerLink="../{{withLayoutApplied.finalItems.title | encodeUriComponent}}">
                 {{withLayoutApplied.finalItems.title | translate}}
                 ({{'LIST.Items_count' | translate: { amount: withLayoutApplied.finalItems.rows.length } }})
               </li>
@@ -71,10 +71,10 @@
 <ng-template #pickPanel>
   <h3>{{'LIST_AGGREGATE.Select_panel' | translate}}</h3>
   <ng-container *ngIf="withLayoutApplied$ | async as withLayoutApplied">
-    <div class="panel-selector" *ngFor="let panel of withLayoutApplied.items.rows" [routerLink]="panel.title">
+    <div class="panel-selector" *ngFor="let panel of withLayoutApplied.items.rows" [routerLink]="panel.title | encodeUriComponent">
       {{panel.title | translate}} ({{'LIST.Items_count' | translate: { amount: panel.rows.length } }})
     </div>
-    <div class="panel-selector" *ngIf="withLayoutApplied.finalItems.rows.length > 0" [routerLink]="withLayoutApplied.finalItems.title">
+    <div class="panel-selector" *ngIf="withLayoutApplied.finalItems.rows.length > 0" [routerLink]="withLayoutApplied.finalItems.title | encodeUriComponent">
       {{withLayoutApplied.finalItems.title | translate}} ({{'LIST.Items_count' | translate: { amount: withLayoutApplied.finalItems.rows.length } }})
     </div>
   </ng-container>

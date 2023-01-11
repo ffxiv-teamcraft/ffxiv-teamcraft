@@ -39,9 +39,9 @@ import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { LazyData } from '../../../lazy-data/lazy-data';
 import { LazyMateria } from '../../../lazy-data/model/lazy-materia';
 import { AriyalaStatToBaseParamId } from '../../../pages/lists/list-import-popup/link-parser/ariyala-stat-to-base-param-id';
-import { EtroLinkParser } from '../../../pages/lists/list-import-popup/link-parser/etro-link-parser';
 import { PermissionsController } from '../../../core/database/permissions-controller';
 import { lazyLoaded } from '../../../core/rxjs/lazy-loaded';
+import { EtroImportStatic } from '../etro-import-popup/etro-import-static';
 
 @Injectable({
   providedIn: 'root'
@@ -268,8 +268,8 @@ export class GearsetsFacade {
   }
 
   fromEtroLink(url: string): Observable<TeamcraftGearset> {
-    const identifier: string = url.match(EtroLinkParser.REGEXP)[1];
-    return this.http.get<any>(`${EtroLinkParser.API_URL}${identifier}`).pipe(
+    const identifier: string = url.match(EtroImportStatic.REGEXP)[1];
+    return this.http.get<any>(`${EtroImportStatic.API_URL}${identifier}`).pipe(
       withLazyData(this.lazyData, 'foods', 'itemMeldingData', 'hqFlags'),
       map(([data, foods, itemMeldingData, hqFlags]) => {
         const gearset = new TeamcraftGearset();
@@ -423,7 +423,7 @@ export class GearsetsFacade {
     }
     const itemMeldingData = lazyItemMeldingData[itemId];
     const canBeHq = hqFlags[itemId] === 1;
-    const materias = Object.values<number>(gearset.materia[`${itemId}`] || gearset.materia[`${itemId}R`] || gearset.materia[`${itemId}L`] || {});
+    const materias = Object.values<number>(gearset.materia[`${itemId}`] || gearset.materia[`${itemId}R`] || gearset.materia[`${itemId}L`] || {}).filter(id => id !== null);
     while (materias.length < itemMeldingData.slots) {
       materias.push(0);
     }

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { GearsetsFacade } from '../+state/gearsets.facade';
 import { NzModalRef } from 'ng-zorro-antd/modal';
-import { EtroLinkParser } from '../../../pages/lists/list-import-popup/link-parser/etro-link-parser';
+import { EtroImportStatic } from './etro-import-static';
 
 @Component({
   selector: 'app-etro-import-popup',
@@ -24,7 +24,7 @@ export class EtroImportPopupComponent {
     if (this.importLink === undefined) {
       return;
     }
-    this.importLinkSupported = EtroLinkParser.REGEXP.test(this.importLink);
+    this.importLinkSupported = EtroImportStatic.REGEXP.test(this.importLink);
   }
 
   submit(): void {

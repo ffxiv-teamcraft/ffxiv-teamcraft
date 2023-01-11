@@ -513,7 +513,7 @@ export class ListsEffects {
       }
       return list;
     }),
-    map(list => new UpdateList(list, false))
+    map(list => new UpdateList(list))
   ));
 
   pureListUpdate$ = createEffect(() => this.actions$.pipe(

@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.0.2"></a>
+## [10.0.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.0.1...v10.0.2) (2023-01-11)
+
+
+### Bug Fixes
+
+* **aggregate:** fixed panels including "/" in their name not being selected properly ([4aebe9f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4aebe9f))
+* **alarms:** fixed weather-related timers derping when alarm is spawned ([ebe994b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ebe994b))
+* **db:** added missing allagan reports to the item sources ([c5babb7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c5babb7))
+* **gearset:** fixed etro import now including null in empty materia slots ([f03346c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f03346c))
+* **list-details:** fixed minimalist rows not scaling properly on smaller screens ([d05b678](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d05b678))
+* **list-details:** new notification message for when list display auto-switches to minimalist ([f031f5c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f031f5c))
+* **mobile:** fixed step by step elements shown above the navigation sidebar ([1e17c34](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1e17c34))
+* **step-by-step:** fixed weird layout scaling with smaller widths ([0434ab4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0434ab4))
+
+
+### Features
+
+* **island:** add data for two of the three new animals ([f16f6fe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f16f6fe))
+
+
+
 <a name="10.0.1"></a>
 ## [10.0.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.0.0...v10.0.1) (2023-01-10)
 

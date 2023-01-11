@@ -129,6 +129,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   public displayMode$ = combineLatest([this._displayMode$, this.list$.pipe(first())]).pipe(
     map(([displayMode, list], i) => {
       if (displayMode === ListDisplayMode.FULL && ListController.isLarge(list) && this.settings.autoMinimalistOnLargeLists && i === 0) {
+        this.message.info(this.translate.instant('LIST_DETAILS.DISPLAY_MODE.Switched_to_minimalist_large_list'), { nzDuration: 10000 });
         return ListDisplayMode.MINIMALIST;
       }
       if (list.finalItems.length === 0 && i === 0) {

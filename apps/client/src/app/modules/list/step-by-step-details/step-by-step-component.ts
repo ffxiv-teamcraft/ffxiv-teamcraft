@@ -79,7 +79,7 @@ export abstract class StepByStepComponent extends TeamcraftComponent {
                 x: alarm.coords.x,
                 y: alarm.coords.y,
                 iconType: 'img',
-                zIndex: 999,
+                zIndex: 55,
                 iconImg: NodeTypeIconPipe.timed_icons[alarm.type],
                 subtitle: this.etime.toStringTimer(display.remainingTime),
                 subtitleStyle: display.spawned ? {
@@ -121,7 +121,7 @@ export abstract class StepByStepComponent extends TeamcraftComponent {
                   startingPoint ? {
                     ...startingPoint,
                     iconType: 'img',
-                    zIndex: 999,
+                    zIndex: 55,
                     iconImg: './assets/icons/map/cursor.png',
                     additionalStyle: {
                       transform: `rotate(${(position.rotation - Math.PI) * -1}rad)`,
@@ -138,7 +138,7 @@ export abstract class StepByStepComponent extends TeamcraftComponent {
                         .map(row => {
                           return {
                             ...row.coords,
-                            zIndex: 999,
+                            zIndex: 55,
                             iconType: 'img',
                             iconImg: row.icon,
                             additionalStyle: {

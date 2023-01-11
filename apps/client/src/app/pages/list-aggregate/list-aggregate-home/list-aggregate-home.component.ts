@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
-import { map } from 'rxjs/operators';
+import { distinctUntilChanged, map } from 'rxjs/operators';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { List } from '../../../modules/list/model/list';
 
@@ -21,8 +21,11 @@ export class ListAggregateHomeComponent {
           list,
           checked: false
         };
+      }).sort((a, b) => {
+        return a.list.$key.localeCompare(b.list.$key);
       });
-    })
+    }),
+    distinctUntilChanged((a, b) => a.length === b.length)
   );
 
   public layoutId = 'defaultLayout';
@@ -51,6 +54,10 @@ export class ListAggregateHomeComponent {
     } else {
       this.selectedLists = this.selectedLists.filter(l => l.$key !== list.$key);
     }
+  }
+
+  trackByTableRow(index: number, row: { list: List, checked: boolean }): string {
+    return row.list.$key;
   }
 
 }

@@ -14,7 +14,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let data of t.data">
+    <tr *ngFor="let data of t.data; trackBy: trackByTableRow">
       <td
         [(nzChecked)]="data.checked"
         (nzCheckedChange)="selectList(data.list, $event)"

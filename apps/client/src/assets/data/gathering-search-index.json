@@ -8012,7 +8012,8 @@
     "type": 5
   },
   "38841": {
-    "type": 5
+    "type": 5,
+    "reduction": true
   },
   "38933": {
     "type": 2
@@ -8023,23 +8024,47 @@
   "38935": {
     "type": 5
   },
+  "38936": {
+    "reduction": true
+  },
   "38937": {
-    "type": 1
+    "type": 1,
+    "reduction": true
   },
   "38938": {
-    "type": 3
+    "type": 3,
+    "reduction": true
   },
   "38939": {
-    "type": 5
+    "type": 5,
+    "reduction": true
   },
   "39234": {
-    "type": 2
+    "type": 2,
+    "reduction": true
+  },
+  "39235": {
+    "reduction": true
+  },
+  "39236": {
+    "reduction": true
   },
   "39237": {
-    "type": 0
+    "type": 0,
+    "reduction": true
+  },
+  "39238": {
+    "reduction": true
+  },
+  "39239": {
+    "reduction": true
   },
   "39240": {
-    "type": 5
+    "type": 5,
+    "reduction": true
+  },
+  "39241": {
+    "reduction": true
   },
   "2000265": {
     "type": 2

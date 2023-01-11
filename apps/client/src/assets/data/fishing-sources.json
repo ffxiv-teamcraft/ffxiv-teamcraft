@@ -24559,5 +24559,52 @@
       "bait": 36588,
       "minGathering": 0
     }
+  ],
+  "38810": [
+    {
+      "spot": 213,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 28634,
+      "minGathering": 0
+    }
+  ],
+  "38812": [
+    {
+      "spot": 235,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 28634,
+      "minGathering": 0
+    }
+  ],
+  "38814": [
+    {
+      "spot": 236,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 28634,
+      "minGathering": 0
+    }
+  ],
+  "38935": [
+    {
+      "spot": 262,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 36593,
+      "minGathering": 0
+    }
+  ],
+  "39240": [
+    {
+      "spot": 276,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 36591,
+      "spawn": 5,
+      "duration": 1,
+      "minGathering": 3150
+    }
   ]
 }
