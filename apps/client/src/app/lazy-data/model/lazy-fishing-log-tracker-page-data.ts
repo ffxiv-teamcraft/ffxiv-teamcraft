@@ -114,5 +114,4 @@ export interface GatheringNode {
   folklore?:         number;
   speed?:            number;
   shadowSize?:       number;
-  base?:             number;
 }

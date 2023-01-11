@@ -99,6 +99,7 @@ export class IslandExtractor extends AbstractExtractor {
               rewards: animal.Reward,
               icon: this.getIconHD(animal.Icon),
               bnpcName: bnpcs.bnpc.find(e => e.bnpcBase === animal.BNpcBase)?.bnpcName,
+              bnpcBase: animal.BNpcBase,
               size: animal.Size
             }
           };
