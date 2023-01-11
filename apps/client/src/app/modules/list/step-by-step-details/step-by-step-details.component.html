@@ -85,47 +85,49 @@
       </div>
     </div>
     <div nz-col [nzMd]="24" class="last-row">
-      <div class="last-row-element" *ngIf="sortedAlarms$ | async as alarms">
-        <nz-card nzSize="small" [nzTitle]="alarmsTitleTpl">
-          <ng-template #alarmsTitleTpl>
-            {{'LIST_DETAILS.STEP_BY_STEP.Alarms' | translate}} ({{alarms.length}})
-          </ng-template>
-          <app-lazy-scroll [data]="alarms" [trackBy]="trackById" [rowTemplate]="rowTpl" [rowSize]="31" [displayedRows]="8">
-            <ng-template #rowTpl let-row let-odd="odd">
-              <app-step-by-step-row [row]="row" [class.odd]="odd"
-                                    [showAlarms]="true"
-                                    [dataTypes]="[DataType.GATHERED_BY, DataType.REDUCED_FROM]"
-                                    [permissionLevel]="permissionLevel"></app-step-by-step-row>
+      <div nz-row [nzGutter]="[10,10]">
+        <div nz-col [nzMd]="list.steps[-1]?.length > 0 ? 8 : 12" [nzSm]="24" class="last-row-element" *ngIf="sortedAlarms$ | async as alarms">
+          <nz-card nzSize="small" [nzTitle]="alarmsTitleTpl">
+            <ng-template #alarmsTitleTpl>
+              {{'LIST_DETAILS.STEP_BY_STEP.Alarms' | translate}} ({{alarms.length}})
             </ng-template>
-          </app-lazy-scroll>
-        </nz-card>
-      </div>
-      <div class="last-row-element" *ngIf="list.crafts?.length > 0">
-        <nz-card nzSize="small" [nzTitle]="craftsTitleTpl">
-          <ng-template #craftsTitleTpl>
-            {{'LIST_DETAILS.STEP_BY_STEP.Crafts' | translate}} ({{list.crafts.length}})
-          </ng-template>
-          <app-lazy-scroll [data]="list.crafts" [trackBy]="trackById" [rowTemplate]="rowTpl" [rowSize]="31" [displayedRows]="8">
-            <ng-template #rowTpl let-row let-odd="odd">
-              <app-step-by-step-row [row]="row" [class.odd]="odd"
-                                    [dataTypes]="[DataType.CRAFTED_BY]"
-                                    [permissionLevel]="permissionLevel"></app-step-by-step-row>
+            <app-lazy-scroll [data]="alarms" [trackBy]="trackById" [rowTemplate]="rowTpl" [rowSize]="31" [displayedRows]="8">
+              <ng-template #rowTpl let-row let-odd="odd">
+                <app-step-by-step-row [row]="row" [class.odd]="odd"
+                                      [showAlarms]="true"
+                                      [dataTypes]="[DataType.GATHERED_BY, DataType.REDUCED_FROM]"
+                                      [permissionLevel]="permissionLevel"></app-step-by-step-row>
+              </ng-template>
+            </app-lazy-scroll>
+          </nz-card>
+        </div>
+        <div nz-col [nzMd]="list.steps[-1]?.length > 0 ? 8 : 12" [nzSm]="24" class="last-row-element" *ngIf="list.crafts?.length > 0">
+          <nz-card nzSize="small" [nzTitle]="craftsTitleTpl">
+            <ng-template #craftsTitleTpl>
+              {{'LIST_DETAILS.STEP_BY_STEP.Crafts' | translate}} ({{list.crafts.length}})
             </ng-template>
-          </app-lazy-scroll>
-        </nz-card>
-      </div>
-      <div class="last-row-element" *ngIf="list.steps[-1]?.length > 0">
-        <nz-card nzSize="small" [nzTitle]="othersTitleTpl">
-          <ng-template #othersTitleTpl>
-            {{'LIST_DETAILS.STEP_BY_STEP.Others' | translate}} ({{list.steps[-1].length}})
-          </ng-template>
-          <app-lazy-scroll [data]="list.steps[-1]" [trackBy]="trackById" [rowTemplate]="rowTpl" [rowSize]="31" [displayedRows]="8">
-            <ng-template #rowTpl let-row let-odd="odd">
-              <app-step-by-step-row [row]="row" [class.odd]="odd"
-                                    [permissionLevel]="permissionLevel"></app-step-by-step-row>
+            <app-lazy-scroll [data]="list.crafts" [trackBy]="trackById" [rowTemplate]="rowTpl" [rowSize]="31" [displayedRows]="8">
+              <ng-template #rowTpl let-row let-odd="odd">
+                <app-step-by-step-row [row]="row" [class.odd]="odd"
+                                      [dataTypes]="[DataType.CRAFTED_BY]"
+                                      [permissionLevel]="permissionLevel"></app-step-by-step-row>
+              </ng-template>
+            </app-lazy-scroll>
+          </nz-card>
+        </div>
+        <div nz-col [nzMd]="8" [nzSm]="24" class="last-row-element" *ngIf="list.steps[-1]?.length > 0">
+          <nz-card nzSize="small" [nzTitle]="othersTitleTpl">
+            <ng-template #othersTitleTpl>
+              {{'LIST_DETAILS.STEP_BY_STEP.Others' | translate}} ({{list.steps[-1].length}})
             </ng-template>
-          </app-lazy-scroll>
-        </nz-card>
+            <app-lazy-scroll [data]="list.steps[-1]" [trackBy]="trackById" [rowTemplate]="rowTpl" [rowSize]="31" [displayedRows]="8">
+              <ng-template #rowTpl let-row let-odd="odd">
+                <app-step-by-step-row [row]="row" [class.odd]="odd"
+                                      [permissionLevel]="permissionLevel"></app-step-by-step-row>
+              </ng-template>
+            </app-lazy-scroll>
+          </nz-card>
+        </div>
       </div>
     </div>
   </div>
