@@ -792,7 +792,8 @@
       "Title": "Display mode",
       "Full": "Full",
       "Minimalist": "Minimalist",
-      "Step_by_step": "Step by step"
+      "Step_by_step": "Step by step",
+      "Switched_to_minimalist_large_list": "Display mode has been switched to minimalist because this is a large list. You can disable this in settings."
     },
     "SOURCES": {
       "Gatherable": "Kann gesammelt werden, klicke um mehr Details zu sehen"
