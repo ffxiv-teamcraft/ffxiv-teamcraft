@@ -786,14 +786,14 @@
       "Toggle_overlay": "Schritt-für-Schritt-Overlay öffnen/schließen",
       "Empty_map": "Nichts in der aktuellen Karte zu tun, die nächste Karte für diese Liste ist {{closest}}",
       "Unknown_map": "Unbekannte Karte, bitte wechsle die die Karte, damit TC sie erkennen kann.",
-      "No_list": "No list, please open a list in main window to have the overlay work as intended."
+      "No_list": "Keine Liste, bitte öffne eine Liste im Hauptfenster, damit das Overlay wie beabsichtigt arbeitet."
     },
     "DISPLAY_MODE": {
       "Title": "Display mode",
       "Full": "Full",
       "Minimalist": "Minimalist",
-      "Step_by_step": "Step by step",
-      "Switched_to_minimalist_large_list": "Display mode has been switched to minimalist because this is a large list. You can disable this in settings."
+      "Step_by_step": "Schritt für Schritt",
+      "Switched_to_minimalist_large_list": "Der Anzeigemodus wurde auf minimalistisch umgeschaltet, da dies eine große Liste ist. Du kannst dies in den Einstellungen deaktivieren."
     },
     "SOURCES": {
       "Gatherable": "Kann gesammelt werden, klicke um mehr Details zu sehen"
