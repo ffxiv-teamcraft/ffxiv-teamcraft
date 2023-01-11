@@ -27,7 +27,13 @@ export class ListAggregateComponent {
   public displayMode$ = new LocalStorageBehaviorSubject<ListDisplayMode>('list-aggregate:display-mode', ListDisplayMode.MINIMALIST);
 
   public selectedPanelTitle$ = this.route.paramMap.pipe(
-    map(params => params.get('panelTitle'))
+    map(params => {
+      const title = params.get('panelTitle');
+      if (title) {
+        return decodeURIComponent(title);
+      }
+    }),
+    filter(Boolean)
   );
 
   public listIdsFromRoute$ = this.route.paramMap.pipe(

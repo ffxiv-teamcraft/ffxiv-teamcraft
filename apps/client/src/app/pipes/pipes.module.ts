@@ -46,6 +46,7 @@ import { TugNamePipe } from './pipes/tug-name.pipe';
 import { VoyageNamePipe } from './pipes/voyage-name.pipe';
 import { HooksetActionIdPipe } from './pipes/hookset-action-id.pipe';
 import { LazyRowPipe } from './pipes/lazy-row.pipe';
+import { EncodeUriComponentPipe } from './pipes/encode-uri-component.pipe';
 
 const pipes = [
   ItemNamePipe,
@@ -95,7 +96,8 @@ const pipes = [
   TugNamePipe,
   VoyageNamePipe,
   HooksetActionIdPipe,
-  LazyRowPipe
+  LazyRowPipe,
+  EncodeUriComponentPipe
 ];
 
 @NgModule({
