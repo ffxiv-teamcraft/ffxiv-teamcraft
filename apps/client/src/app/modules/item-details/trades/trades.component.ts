@@ -4,7 +4,7 @@ import { TradeSource } from '../../list/model/trade-source';
 import { Trade } from '../../list/model/trade';
 import { TradeEntry } from '../../list/model/trade-entry';
 import { BehaviorSubject, combineLatest, merge, Observable, ReplaySubject } from 'rxjs';
-import { filter, map, tap } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-trades',
@@ -45,7 +45,7 @@ export class TradesComponent extends ItemDetailsPopup implements OnChanges {
     this.displayedTrades$
   ]).pipe(
     map(([data, displayed]) => {
-      return (data?.length || 0) > displayed
+      return (data?.length || 0) > displayed;
     })
   );
 
