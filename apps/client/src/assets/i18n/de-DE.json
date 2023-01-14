@@ -3006,7 +3006,7 @@
       "Title": "Atelier",
       "Subtitle": "Verfolge und verwalte dein Atelier",
       "Out_of_sync": "Status wurde seit dem letzten Reset nicht aktualisiert",
-      "Out_of_sync_explain": "Bitte öffne das Angebot-/Nachfrage-Fenster auf deinem Inselparadies um den Status zu aktualisieren. Wenn du keine Paketerfassung verwendest, bitten einen anderen Benutzer, deinen Status zu aktualisieren und ihn dann zu exportieren, damit du den Import-Button verwenden kannst oder importiere von der Datenbank.",
+      "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary for the first time after logging in the game to update the state (If you have already opened the window since you logged in, you will need to log out of the game and back in, and re-open the Supply/Demand window to correctly update your state). If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button, or import from database.",
       "Export_state": "Exportiere Angebot-/Nachfrage-Status",
       "State_copied": "Status wurde in die Zwischenablage kopiert",
       "Import_state": "Importiere Status",
