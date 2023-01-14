@@ -112,7 +112,7 @@
   },
   "private": true,
   "dependencies": {
-    "@ffxiv-teamcraft/pcap-ffxiv": "0.11.7",
+    "@ffxiv-teamcraft/pcap-ffxiv": "0.11.8",
     "@xivapi/nodestone": "^0.2.5",
     "buffer-reader": "^0.1.0",
     "electron-google-analytics": "^1.0.2",
