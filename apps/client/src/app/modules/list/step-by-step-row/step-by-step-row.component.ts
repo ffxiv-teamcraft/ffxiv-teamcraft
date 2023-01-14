@@ -7,10 +7,12 @@ import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { Alarm } from '../../../core/alarms/alarm';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
-import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map, shareReplay } from 'rxjs/operators';
 import { DataType } from '../data/data-type';
 import { observeInput } from '../../../core/rxjs/observe-input';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
+import { ListsFacade } from '../+state/lists.facade';
+import { InventoryService } from '../../inventory/inventory.service';
 
 @Component({
   selector: 'app-step-by-step-row',
@@ -81,7 +83,13 @@ export class StepByStepRowComponent {
 
   public alarmGroups$ = this.alarmsFacade.allGroups$;
 
-  constructor(private alarmsFacade: AlarmsFacade, private etime: EorzeanTimeService) {
+  public hasItemInInventory$ = this.inventoryService.inventory$.pipe(
+    map(inventory => inventory.hasItem(this.row.id)),
+    shareReplay(1)
+  );
+
+  constructor(private alarmsFacade: AlarmsFacade, private etime: EorzeanTimeService, private listsFacade: ListsFacade,
+              private inventoryService: InventoryService) {
   }
 
   @HostBinding('class.done')
@@ -114,5 +122,14 @@ export class StepByStepRowComponent {
 
   addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
     this.alarmsFacade.addAlarmInGroup(alarm, group);
+  }
+
+  add(amount: string | number, item: ListRow, external = false): void {
+    if (this.aggregate) {
+      this.aggregate.generateSetItemDone(item, +amount, this.finalItem)(this.listsFacade);
+    } else {
+      this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, +amount, item.recipeId, item.amount, external);
+    }
+    item.done += +amount;
   }
 }

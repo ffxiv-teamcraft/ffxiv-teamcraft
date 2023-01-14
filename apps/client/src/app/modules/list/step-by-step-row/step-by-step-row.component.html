@@ -1,29 +1,40 @@
-<div class="flex-row align-center gap-2 name">
-  <app-item-icon [itemId]="row.id" [itemName]="row.id | itemName: row | i18n"
-                 [width]="24" [forceCollectable]="row.collectable" *ngIf="!row.xivapiIcon"></app-item-icon>
-  <app-item-icon [icon]="row.xivapiIcon | xivapiIcon" [itemId]="null"
-                 [width]="24" *ngIf="row.xivapiIcon" [tooltipDisabled]="true"></app-item-icon>
-  <div [itemNameCopy]="row.id" class="item-name" nz-tooltip>
-    <app-i18n-name [content]="row.contentType || 'items'" [id]="row.id"></app-i18n-name>
-    <span *ngIf="row.amount > row.done" class="needed" nz-tooltip
-          [nzTooltipTitle]="'Required_crafts_amount' | translate">&nbsp;x{{row.amount - row.done}}<span
-      *ngIf="row.amount !== row.amount_needed">&nbsp;({{((row.amount - row.done) / row.yield) | ceil}})</span>
+<div nz-row class="step-row">
+  <div nz-col [nzSpan]="8">
+    <div class="flex-row align-center gap-2">
+      <app-item-icon [itemId]="row.id" [itemName]="row.id | itemName: row | i18n"
+                     [width]="24" [forceCollectable]="row.collectable" *ngIf="!row.xivapiIcon"></app-item-icon>
+      <app-item-icon [icon]="row.xivapiIcon | xivapiIcon" [itemId]="null"
+                     [width]="24" *ngIf="row.xivapiIcon" [tooltipDisabled]="true"></app-item-icon>
+      <div [itemNameCopy]="row.id" class="item-name" nz-tooltip>
+        <app-i18n-name [content]="row.contentType || 'items'" [id]="row.id"></app-i18n-name>
+        <span *ngIf="row.amount > row.done" class="needed" nz-tooltip
+              [nzTooltipTitle]="'Required_crafts_amount' | translate">&nbsp;x{{row.amount - row.done}}<span
+          *ngIf="row.amount !== row.amount_needed">&nbsp;({{((row.amount - row.done) / row.yield) | ceil}})</span>
     </span>
-  </div>
-</div>
-<div *ngIf="showAlarms">
-  <div class="timers flex-row align-center gap-5" *ngIf="alarmsDisplay$ | async as alarmsDisplay">
-    <div *ngFor="let alarm of alarmsDisplay.alarms; trackByKey">
-      <app-alarm-button [alarm]="alarm" [alarmGroups]="alarmGroups$ | async" (toggleAlarm)="toggleAlarm($event)"
-                        (addAlarmWithGroup)="addAlarmWithGroup($event.alarm, $event.group)"></app-alarm-button>
+      </div>
     </div>
-    <nz-tag *ngIf="alarmsDisplay.moreAvailable > 0">{{'ALARMS.More_available' | translate: { amount: alarmsDisplay.moreAvailable } }}</nz-tag>
+  </div>
+  <div nz-col [nzSpan]="4" *ngIf="hasItemInInventory$ | async">
+    <app-item-inventory-button [itemId]="row.id" [permissionLevel]="permissionLevel" (add)="add($event, row)"></app-item-inventory-button>
+  </div>
+  <div nz-col [nzSpan]="(hasItemInInventory$ | async) ? 3 : 7">
+    <ng-container *ngIf="showAlarms">
+      <div class="timers flex-row align-center gap-5" *ngIf="alarmsDisplay$ | async as alarmsDisplay">
+        <div *ngFor="let alarm of alarmsDisplay.alarms; trackByKey">
+          <app-alarm-button [alarm]="alarm" [alarmGroups]="alarmGroups$ | async" (toggleAlarm)="toggleAlarm($event)"
+                            (addAlarmWithGroup)="addAlarmWithGroup($event.alarm, $event.group)"></app-alarm-button>
+        </div>
+        <nz-tag *ngIf="alarmsDisplay.moreAvailable > 0">{{'ALARMS.More_available' | translate: { amount: alarmsDisplay.moreAvailable } }}</nz-tag>
+      </div>
+    </ng-container>
+  </div>
+  <div nz-col [nzSpan]="9">
+    <div class="flex-row justify-end gap-5">
+      <app-item-sources-display [item]="row" [sources]="row.sources" [displayedSources]="dataTypes" [forceHorizontal]="true"
+                                size="small"></app-item-sources-display>
+      <div class="spacer"></div>
+      <app-compact-amount-input [permissionLevel]="permissionLevel" [aggregate]="aggregate" [item]="row" [finalItem]="finalItem"></app-compact-amount-input>
+    </div>
   </div>
 </div>
-<div class="flex-row align-center justify-center">
-  <app-item-sources-display [item]="row" [sources]="row.sources" [displayedSources]="dataTypes" [forceHorizontal]="true"
-                            size="small"></app-item-sources-display>
-</div>
-<div class="flex-row justify-end">
-  <app-compact-amount-input [permissionLevel]="permissionLevel" [aggregate]="aggregate" [item]="row" [finalItem]="finalItem"></app-compact-amount-input>
-</div>
+

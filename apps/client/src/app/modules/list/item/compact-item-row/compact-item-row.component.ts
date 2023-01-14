@@ -3,8 +3,7 @@ import { PermissionLevel } from '../../../../core/database/permissions/permissio
 import { AlarmGroup } from '../../../../core/alarms/alarm-group';
 import { getItemSource, ListRow } from '../../model/list-row';
 import { ProcessedListAggregate } from '../../../list-aggregate/model/processed-list-aggregate';
-import { combineLatest, Observable } from 'rxjs';
-import { debounceTime, distinctUntilChanged, map, startWith } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { SettingsService } from '../../../settings/settings.service';
 import { InventoryService } from '../../../inventory/inventory.service';
 import { ListsFacade } from '../../+state/lists.facade';
@@ -45,52 +44,8 @@ export class CompactItemRowComponent extends TeamcraftComponent implements OnIni
   @Input()
   aggregate?: ProcessedListAggregate;
 
-  amountInInventory$: Observable<{ containerName: string, amount: number, hq: boolean, isRetainer: boolean }[]> =
-    combineLatest(([this.settings.settingsChange$.pipe(startWith(0)), this.inventoryService.inventory$])).pipe(
-      map(([, inventory]) => {
-        return inventory.getItem(this.item.id)
-          .filter(entry => {
-            return !this.settings.ignoredInventories.includes(this.inventoryService.getContainerTranslateKey(entry))
-              && (this.settings.showOthercharacterInventoriesInList || entry.isCurrentCharacter);
-          })
-          .map(entry => {
-            return {
-              item: entry,
-              isRetainer: entry.retainerName !== undefined,
-              containerName: this.inventoryService.getContainerDisplayName(entry),
-              amount: entry.quantity,
-              hq: entry.hq
-            };
-          }).reduce((res, entry) => {
-            const resEntry = res.find(e => e.containerName === entry.containerName && e.hq === entry.hq);
-            if (resEntry !== undefined) {
-              resEntry.amount += entry.amount;
-            } else {
-              res.push(entry);
-            }
-            return res;
-          }, []);
-      })
-    );
-
-  totalAmountInInventory$: Observable<{ hq: number, nq: number }> = this.amountInInventory$.pipe(
-    map(rows => {
-      return rows.reduce((acc, row) => {
-        if (row.hq) {
-          acc.hq += row.amount;
-        } else {
-          acc.nq += row.amount;
-        }
-        if (acc.containers.indexOf(row.containerName) === -1) {
-          acc.containers.push(row.containerName);
-        }
-        return acc;
-      }, {
-        containers: [],
-        hq: 0,
-        nq: 0
-      });
-    })
+  hasItemInInventory$ = this.inventoryService.inventory$.pipe(
+    map(inventory => inventory.hasItem(this.item.id))
   );
 
   public alarmDisplay$ = this.etime.getEorzeanTime().pipe(
@@ -179,9 +134,5 @@ export class CompactItemRowComponent extends TeamcraftComponent implements OnIni
 
   addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
     this.alarmsFacade.addAlarmInGroup(alarm, group);
-  }
-
-  trackByInventoryEntry(index: number, entry: { containerName: string, amount: number, hq: boolean }): string {
-    return `${entry.containerName}${entry.hq}`;
   }
 }

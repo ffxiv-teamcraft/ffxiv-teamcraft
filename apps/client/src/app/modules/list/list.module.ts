@@ -72,6 +72,7 @@ import { StepByStepDetailsComponent } from './step-by-step-details/step-by-step-
 import { StepByStepDatatypeComponent } from './step-by-step-datatype/step-by-step-datatype.component';
 import { StepByStepRowComponent } from './step-by-step-row/step-by-step-row.component';
 import { CompactAmountInputComponent } from './item/compact-amount-input/compact-amount-input.component';
+import { ItemInventoryButtonComponent } from './item-inventory-button/item-inventory-button.component';
 
 export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: CraftedByExtractor, deps: [LazyDataFacade], multi: true },
@@ -82,7 +83,7 @@ export const DATA_EXTRACTORS: Provider[] = [
     provide: EXTRACTORS,
     useClass: GatheredByExtractor,
     deps: [HtmlToolsService, GatheringNodesService, LazyDataFacade],
-    multi: true,
+    multi: true
   },
   { provide: EXTRACTORS, useClass: TradeSourcesExtractor, deps: [LazyDataFacade], multi: true },
   { provide: EXTRACTORS, useClass: VendorsExtractor, deps: [LazyDataFacade], multi: true },
@@ -100,7 +101,7 @@ export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: DeprecatedExtractor, deps: [LazyDataFacade], multi: true },
   { provide: EXTRACTORS, useClass: IslandPastureExtractor, deps: [LazyDataFacade], multi: true },
   { provide: EXTRACTORS, useClass: IslandCropExtractor, deps: [LazyDataFacade], multi: true },
-  { provide: EXTRACTORS, useClass: RequirementsExtractor, deps: [LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: RequirementsExtractor, deps: [LazyDataFacade], multi: true }
 ];
 
 @NgModule({
@@ -135,7 +136,7 @@ export const DATA_EXTRACTORS: Provider[] = [
     CompanyWorkshopTreeModule,
     InventoryModule,
     HttpClientModule,
-    AlarmButtonModule,
+    AlarmButtonModule
   ],
   providers: [...DATA_EXTRACTORS, DataExtractorService],
   declarations: [
@@ -155,7 +156,9 @@ export const DATA_EXTRACTORS: Provider[] = [
     StepByStepDatatypeComponent,
     StepByStepRowComponent,
     CompactAmountInputComponent,
+    ItemInventoryButtonComponent
   ],
   exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent, StepByStepDetailsComponent, CompactAmountInputComponent]
 })
-export class ListModule {}
+export class ListModule {
+}
