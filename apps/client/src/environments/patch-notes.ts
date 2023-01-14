@@ -1,15 +1,13 @@
 export const patchNotes = `### Bug Fixes
 
-* **aggregate:** fixed panels including "/" in their name not being selected properly.
-* **alarms:** fixed weather-related timers derping when alarm is spawned.
-* **db:** added missing allagan reports to the item sources.
-* **gearset:** fixed etro import now including null in empty materia slots.
-* **list-details:** fixed minimalist rows not scaling properly on smaller screens.
-* **list-details:** new notification message for when list display auto-switches to minimalist.
-* **mobile:** fixed step by step elements shown above the navigation sidebar.
-* **step-by-step:** fixed weird layout scaling with smaller widths.
+* **desktop:** fixed packet capture support for 6.3 update.
+* **gearsets:** fixed clone button in gearsets page not working.
+* **list-details:** fixed notification showing three times on auto mode switch.
+* **list-details:** fixed realtime sharing on two different browsers not working.
+* **search:** fixed html parts not being properly rendered in search results.
+* **trades:** removed more HQ trade currencies.
 
 
 ### Features
 
-* **island:** add data for two of the three new animals.`;
+* **island-sanctuary:** add data for morbol spawn.`;
