@@ -18,7 +18,7 @@
   </button>
   <button nz-button *ngIf="gearset.authorId === userId" nzType="primary"
           nzShape="circle" nz-tooltip [nzTooltipTitle]="'GEARSETS.Clone_gearset_from_sync' | translate"
-          (nzOnConfirm)="cloneGearset(gearset)">
+          (click)="cloneGearset(gearset)">
     <i nz-icon nzType="copy" nzTheme="outline"></i>
   </button>
   <a nz-button routerLink="/gearset/{{gearset.$key}}" nzShape="circle" nzType="primary" nz-tooltip [nzTooltipTitle]="'GEARSETS.View_gearset' | translate">

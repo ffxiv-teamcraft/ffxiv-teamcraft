@@ -1,4 +1,4 @@
-<ng-container *ngIf="i18nName$ | i18n as displayString; else loading">{{displayString}}</ng-container>
+<ng-container *ngIf="i18nName$ | i18n as displayString; else loading"><span [innerHtml]="displayString"></span></ng-container>
 <ng-template #loading>
   <nz-skeleton
     nzActive="true"

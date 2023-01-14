@@ -136,7 +136,8 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
         return ListDisplayMode.FULL;
       }
       return displayMode;
-    })
+    }),
+    shareReplay(1)
   );
 
   constructor(private layoutsFacade: LayoutsFacade, public listsFacade: ListsFacade,

@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.0.3"></a>
+## [10.0.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.0.2...v10.0.3) (2023-01-14)
+
+
+### Bug Fixes
+
+* **desktop:** fixed packet capture support for 6.3 update ([94270f0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/94270f0))
+* **gearsets:** fixed clone button in gearsets page not working ([bd39a41](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bd39a41))
+* **list-details:** fixed notification showing three times on auto mode switch ([366f9a9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/366f9a9))
+* **list-details:** fixed realtime sharing on two different browsers not working ([5255143](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5255143))
+* **search:** fixed html parts not being properly rendered in search results ([5e32691](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5e32691))
+* **trades:** removed more HQ trade currencies ([23abdc7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/23abdc7))
+
+
+### Features
+
+* **island-sanctuary:** add data for morbol spawn ([0210371](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0210371))
+
+
+
 <a name="10.0.2"></a>
 ## [10.0.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.0.1...v10.0.2) (2023-01-11)
 

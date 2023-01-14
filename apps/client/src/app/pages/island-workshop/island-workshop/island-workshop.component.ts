@@ -121,8 +121,6 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
 
   public editMode = false;
 
-  public startOptimizer$ = new Subject<void>();
-
   public state$ = new LocalStorageBehaviorSubject('island:state', {
     popularity: -1,
     predictedPopularity: -1,
