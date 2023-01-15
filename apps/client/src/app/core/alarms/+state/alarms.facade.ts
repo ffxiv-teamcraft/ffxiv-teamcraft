@@ -20,7 +20,7 @@ import {
   UpdateAlarmGroup
 } from './alarms.actions';
 import { Alarm } from '../alarm';
-import { filter, first, map, switchMap, tap } from 'rxjs/operators';
+import { filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { combineLatest, Observable, of } from 'rxjs';
 import { AlarmDisplay } from '../alarm-display';
 import { EorzeanTimeService } from '../../eorzea/eorzean-time.service';
@@ -65,7 +65,8 @@ export class AlarmsFacade {
       }
       return alarms;
     }),
-    filter(alarms => alarms.length === 0 || !!alarms[0])
+    filter(alarms => alarms.length === 0 || !!alarms[0]),
+    shareReplay(1)
   );
 
   allGroups$ = this.store.pipe(select(alarmsQuery.getAllGroups));
@@ -106,7 +107,8 @@ export class AlarmsFacade {
           return display;
         })
       );
-    })
+    }),
+    shareReplay(1)
   );
 
   alarmsSidebarDisplay$ = combineLatest([this.allAlarms$, this.allGroups$]).pipe(
@@ -126,7 +128,8 @@ export class AlarmsFacade {
       return this.etime.getEorzeanTime().pipe(
         map(date => this.createDisplayArray(alarms, date))
       );
-    })
+    }),
+    shareReplay(1)
   );
 
   private nextSpawnCache: any = {};
