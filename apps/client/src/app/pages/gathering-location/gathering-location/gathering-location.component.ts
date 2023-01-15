@@ -17,7 +17,6 @@ import { UntypedFormBuilder } from '@angular/forms';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { chunk } from 'lodash';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
-import { SettingsService } from '../../../modules/settings/settings.service';
 
 interface ResultRow {
   originalItemId: number,
@@ -107,7 +106,7 @@ export class GatheringLocationComponent {
               ...row,
               scrip: scripIndex[row.id],
               reduction: aetherialReduce[row.id] > 0,
-              type: index[row.id].type
+              types: index[row.id].types
             };
           });
         }),
@@ -125,8 +124,7 @@ export class GatheringLocationComponent {
               private mapService: MapService, private router: Router,
               private route: ActivatedRoute, public translate: TranslateService,
               private gatheringNodesService: GatheringNodesService, private message: NzMessageService,
-              private fb: UntypedFormBuilder, private lazyData: LazyDataFacade,
-              private settings: SettingsService) {
+              private fb: UntypedFormBuilder, private lazyData: LazyDataFacade) {
 
     const resultsData$ = combineLatest([
       this.query$,
@@ -177,12 +175,12 @@ export class GatheringLocationComponent {
             }
             if (filters.type !== -1) {
               res = res.filter(row => {
-                return Math.abs(row.type) === +filters.type;
+                return row.types.some(t => Math.abs(t) === +filters.type);
               });
             }
-            return res;
+            return [res, filters];
           }),
-          switchMap(rows => {
+          switchMap(([rows, filters]) => {
             return safeCombineLatest(rows.map(row => {
                 const itemId = row.id;
                 return this.gatheringNodesService.getItemNodes(itemId).pipe(
@@ -197,10 +195,18 @@ export class GatheringLocationComponent {
                   })
                 );
               })
+            ).pipe(
+              map(rows => {
+                return rows
+                  .flat()
+                  .filter((row: { node: GatheringNode }) => {
+                    if (filters.type !== -1) {
+                      return Math.abs(row.node.type) === +filters.type;
+                    }
+                  })
+                  .sort((a: { node: GatheringNode }, b: { node: GatheringNode }) => b.node.level - a.node.level);
+              })
             );
-          }),
-          map(nodes => {
-            return nodes.flat().sort((a, b) => b.node.level - a.node.level);
           })
         );
       }),

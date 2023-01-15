@@ -1,4 +1,5 @@
 import { AbstractExtractor } from '../abstract-extractor';
+import { uniq } from 'lodash';
 
 
 export class GatheringSearchIndexExtractor extends AbstractExtractor {
@@ -8,12 +9,12 @@ export class GatheringSearchIndexExtractor extends AbstractExtractor {
     const fishing = this.requireLazyFile('fishing-spots');
     const reductions = this.requireLazyFile('reduction');
 
-    const index: Record<number, { type?: number, reduction?: boolean }> = {};
+    const index: Record<number, { types?: number[], reduction?: boolean }> = {};
 
     Object.entries<any>(nodes).forEach(([id, node]) => {
       [...node.items, ...(node.hiddenItems || [])].forEach(itemId => {
         index[itemId] = {
-          type: node.type
+          types: uniq([...(index[itemId]?.types || []), node.type])
         };
       });
     });
@@ -21,7 +22,7 @@ export class GatheringSearchIndexExtractor extends AbstractExtractor {
     Object.values<any>(fishing).forEach(node => {
       node.fishes.forEach(itemId => {
         index[itemId] = {
-          type: 5
+          types: [5]
         };
       });
     });

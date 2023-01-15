@@ -1,4 +1,4 @@
 export interface LazyGatheringSearchIndex {
-  type?:      number;
+  types?:     number[];
   reduction?: boolean;
 }
