@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { IpcService } from '../../core/electron/ipc.service';
@@ -40,7 +40,7 @@ import { ListDisplay } from '../../core/layout/list-display';
   styleUrls: ['./step-by-step-list-overlay.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class StepByStepListOverlayComponent extends StepByStepComponent {
+export class StepByStepListOverlayComponent extends StepByStepComponent implements OnInit {
 
   public zoneId$ = this.eorzeaFacade.zoneId$;
 
@@ -61,25 +61,9 @@ export class StepByStepListOverlayComponent extends StepByStepComponent {
     shareReplay({ bufferSize: 1, refCount: true })
   );
 
-  public closestMap$ = combineLatest([
-    this.mapId$,
-    this.stepByStep$
-  ]).pipe(
-    switchMap(([mapId, stepByStep]) => {
-      return combineLatest([this.mapService.getMapById(mapId), ...stepByStep.maps.filter(id => id !== mapId && !stepByStep.steps[id].complete).map(id => this.mapService.getMapById(id))]).pipe(
-        map(([currentMap, ...maps]: MapData[]) => {
-          return maps.sort((a, b) => {
-            return this.mapService.getTpCost(currentMap.aetherytes[0], a.aetherytes[0]) -
-              this.mapService.getTpCost(currentMap.aetherytes[0], b.aetherytes[0]);
-          })[0]?.id;
-        })
-      );
-    })
-  );
+  public closestMap$: Observable<number>;
 
-  public stepsList$ = this.currentPath$.pipe(
-    map(path => path.path.steps.slice(1))
-  );
+  public stepsList$: Observable<NavigationStep[]>;
 
   constructor(protected eorzeaFacade: EorzeaFacade, protected ipc: IpcService,
               protected listsFacade: ListsFacade, protected layoutsFacade: LayoutsFacade,
@@ -109,5 +93,27 @@ export class StepByStepListOverlayComponent extends StepByStepComponent {
 
   markStepAsDone(step: NavigationStep): void {
     this.listsFacade.setItemDone(step.itemId, step.iconid, step.finalItem, step.item_amount, null, step.total_item_amount);
+  }
+
+  ngOnInit() {
+    super.ngOnInit();
+    this.stepsList$ = this.currentPath$.pipe(
+      map(path => path.path.steps.slice(1))
+    );
+    this.closestMap$ = combineLatest([
+      this.mapId$,
+      this.stepByStep$
+    ]).pipe(
+      switchMap(([mapId, stepByStep]) => {
+        return combineLatest([this.mapService.getMapById(mapId), ...stepByStep.maps.filter(id => id !== mapId && !stepByStep.steps[id].complete).map(id => this.mapService.getMapById(id))]).pipe(
+          map(([currentMap, ...maps]: MapData[]) => {
+            return maps.sort((a, b) => {
+              return this.mapService.getTpCost(currentMap.aetherytes[0], a.aetherytes[0]) -
+                this.mapService.getTpCost(currentMap.aetherytes[0], b.aetherytes[0]);
+            })[0]?.id;
+          })
+        );
+      })
+    );
   }
 }

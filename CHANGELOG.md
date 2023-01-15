@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.0.4"></a>
+## [10.0.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.0.3...v10.0.4) (2023-01-15)
+
+
+### Bug Fixes
+
+* **desktop:** fixed step-by-step overlay not loading ([330acca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/330acca))
+* **gathering-location:** fixed type filter not working as intended ([d08490d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d08490d))
+* **island-workshop:** updated state import message with 6.3 changes ([2bd4eb7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2bd4eb7))
+* **list:** fixed possible crash after opening a list for too long ([a24192a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a24192a))
+
+
+### Features
+
+* **db:** more allagan reports import ([cf405ab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cf405ab))
+* **step-by-step:** better layout and inventory button ([33f2a0f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/33f2a0f))
+
+
+
 <a name="10.0.3"></a>
 ## [10.0.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.0.2...v10.0.3) (2023-01-14)
 

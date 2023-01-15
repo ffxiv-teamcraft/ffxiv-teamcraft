@@ -1,13 +1,13 @@
 :host {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 3px;
+  .step-row {
+    padding: 3px;
+  }
+
 
   &.odd {
-    background-color: rgba(77, 77, 77, .5);
+    .step-row {
+      background-color: rgba(77, 77, 77, .5);
+    }
   }
 
   .name {
@@ -20,11 +20,16 @@
   }
 
   &.craftable {
-    background-color: rgba(19, 168, 255, .4);
+    .step-row {
+      background-color: rgba(19, 168, 255, .4);
+    }
   }
 
   &.done {
-    background-color: rgba(94, 255, 91, 0.2);
+    .step-row {
+      background-color: rgba(94, 255, 91, 0.2);
+    }
+
     opacity: .6;
   }
 
@@ -33,6 +38,8 @@
   }
 
   &.has-all-ingredients {
-    border: 1px dashed rgba(19, 168, 255, .3);
+    .step-row {
+      border: 1px dashed rgba(19, 168, 255, .3);
+    }
   }
 }

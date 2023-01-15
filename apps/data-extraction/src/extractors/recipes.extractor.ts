@@ -157,7 +157,7 @@ export class RecipesExtractor extends AbstractExtractor {
       mjiRecipes.forEach(mjiRecipe => {
         const ingredients = mjiRecipe.Material
           .map((material, index) => {
-            if (!material || material?.index === 0) {
+            if (!material || material?.Item === 0) {
               return;
             }
             return {
@@ -209,7 +209,7 @@ export class RecipesExtractor extends AbstractExtractor {
       mjiCraftworksObjects.forEach(mjiCraftworksObject => {
         const ingredients = mjiCraftworksObject.Material
           .map((material, index) => {
-            if (!material || material?.index === 0) {
+            if (!material || material?.Item === 0) {
               return;
             }
             return {
@@ -261,7 +261,7 @@ export class RecipesExtractor extends AbstractExtractor {
       mjiBuildings.forEach(building => {
         const ingredients = building.Material
           .map((material, index) => {
-            if (!material || material?.index === 0) {
+            if (!material || material?.Item === 0) {
               return;
             }
             return {
@@ -314,7 +314,7 @@ export class RecipesExtractor extends AbstractExtractor {
       mjiLandmarks.forEach(building => {
         const ingredients = building.Material
           .map((material, index) => {
-            if (!material || material?.index === 0) {
+            if (!material || material?.Item === 0) {
               return;
             }
             return {

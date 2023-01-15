@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { observeInput } from '../../../core/rxjs/observe-input';
-import { BehaviorSubject, combineLatest, map, Observable } from 'rxjs';
+import { combineLatest, map, Observable } from 'rxjs';
 import { StepByStepList } from './model/step-by-step-list';
 import { ListDisplay } from '../../../core/layout/list-display';
 import { DataType } from '../data/data-type';
@@ -19,6 +19,7 @@ import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
+import { ListRow } from '../model/list-row';
 
 @Component({
   selector: 'app-step-by-step-details',
@@ -26,7 +27,7 @@ import { LayoutOrderService } from '../../../core/layout/layout-order.service';
   styleUrls: ['./step-by-step-details.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class StepByStepDetailsComponent extends StepByStepComponent {
+export class StepByStepDetailsComponent extends StepByStepComponent implements OnInit {
   DataType = DataType;
 
   @Input()
@@ -35,29 +36,9 @@ export class StepByStepDetailsComponent extends StepByStepComponent {
   @Input()
   permissionLevel: PermissionLevel;
 
-  navigationStatus$ = combineLatest([this.stepByStep$, this.selectedMap$]).pipe(
-    map(([list, mapId]) => {
-      const mapIndex = list.maps.indexOf(mapId);
-      const next = list.maps[mapIndex + 1] || null;
-      const previous = mapIndex <= 0 ? null : list.maps[mapIndex - 1];
-      const nextIncomplete = list.maps.slice(mapIndex + 1).find(id => !list.steps[id].complete);
-      const previousIncomplete = mapIndex <= 0 ? null : list.maps.slice(0, mapIndex - 1).find(id => !list.steps[id].complete);
-      return {
-        next,
-        previous,
-        nextIncomplete,
-        previousIncomplete
-      };
-    })
-  );
+  navigationStatus$: Observable<any>;
 
-  sortedAlarms$ = this.stepByStep$.pipe(
-    map(list => list.alarms),
-    filter(alarms => alarms.length > 0),
-    switchMap(alarms => {
-      return this.layoutOrderService.order(alarms, 'TIMER', LayoutRowOrder.ASC);
-    })
-  );
+  sortedAlarms$: Observable<ListRow[]>;
 
   public containerRef: ElementRef;
 
@@ -76,14 +57,6 @@ export class StepByStepDetailsComponent extends StepByStepComponent {
               protected mapService: MapService, protected etime: EorzeanTimeService, protected alarmsFacade: AlarmsFacade,
               private platformService: PlatformService, private layoutOrderService: LayoutOrderService) {
     super(eorzeaFacade, ipc, listsFacade, layoutsFacade, settings, lazyData, mapService, etime, alarmsFacade);
-    this.eorzeaFacade.mapId$.pipe(distinctUntilChanged()).pipe(
-      withLatestFrom(this.stepByStep$),
-      takeUntil(this.onDestroy$)
-    ).subscribe(([mapId, list]) => {
-      if (list.maps.includes(mapId)) {
-        this.selectedMap$.next(mapId);
-      }
-    });
   }
 
   protected onNewStepByStep(list: StepByStepList) {
@@ -106,10 +79,46 @@ export class StepByStepDetailsComponent extends StepByStepComponent {
   }
 
   protected getDisplay(): Observable<ListDisplay> {
-    return  observeInput(this, 'display');
+    return observeInput(this, 'display');
   }
 
   protected getMapId(): Observable<number> {
     return this.selectedMap$;
+  }
+
+  ngOnInit() {
+    super.ngOnInit();
+    this.sortedAlarms$ = this.stepByStep$.pipe(
+      map(list => list.alarms),
+      filter(alarms => alarms.length > 0),
+      switchMap(alarms => {
+        return this.layoutOrderService.order(alarms, 'TIMER', LayoutRowOrder.ASC);
+      })
+    );
+
+    this.navigationStatus$ = combineLatest([this.stepByStep$, this.selectedMap$]).pipe(
+      map(([list, mapId]) => {
+        const mapIndex = list.maps.indexOf(mapId);
+        const next = list.maps[mapIndex + 1] || null;
+        const previous = mapIndex <= 0 ? null : list.maps[mapIndex - 1];
+        const nextIncomplete = list.maps.slice(mapIndex + 1).find(id => !list.steps[id].complete);
+        const previousIncomplete = mapIndex <= 0 ? null : list.maps.slice(0, mapIndex - 1).find(id => !list.steps[id].complete);
+        return {
+          next,
+          previous,
+          nextIncomplete,
+          previousIncomplete
+        };
+      })
+    );
+
+    this.eorzeaFacade.mapId$.pipe(distinctUntilChanged()).pipe(
+      withLatestFrom(this.stepByStep$),
+      takeUntil(this.onDestroy$)
+    ).subscribe(([mapId, list]) => {
+      if (list.maps.includes(mapId)) {
+        this.selectedMap$.next(mapId);
+      }
+    });
   }
 }

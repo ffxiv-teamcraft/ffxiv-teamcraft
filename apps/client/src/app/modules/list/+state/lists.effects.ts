@@ -464,32 +464,34 @@ export class ListsEffects {
         listEntry.actions.push(entry[0]);
         return acc;
       }, []);
-      return combineLatest(groupedByList.map(({ list, actions }) => {
-        if (list.offline) {
-          actions.forEach(action => {
-            ListController.updateAllStatuses(list, action.itemId);
-          });
-          this.saveToLocalstorage(list, false);
-          return of(null);
-        } else {
-          if (list.hasCommission) {
-            this.updateCommission(list);
-          }
-          return this.listService.runTransaction(list.$key, (transaction, serverCopy) => {
-            const serverList = serverCopy.data() as List;
+      return combineLatest(groupedByList
+        .filter(({ list }) => list !== undefined)
+        .map(({ list, actions }) => {
+          if (list.offline) {
             actions.forEach(action => {
-              ListController.setDone(serverList, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
-              ListController.updateAllStatuses(serverList, action.itemId);
+              ListController.updateAllStatuses(list, action.itemId);
             });
-            if (isNaN(serverList.etag)) {
-              serverList.etag = 0;
+            this.saveToLocalstorage(list, false);
+            return of(null);
+          } else {
+            if (list.hasCommission) {
+              this.updateCommission(list);
             }
-            serverList.etag++;
-            this.listService.recordOperation('write');
-            transaction.set(serverCopy.ref, serverList);
-          });
-        }
-      }));
+            return this.listService.runTransaction(list.$key, (transaction, serverCopy) => {
+              const serverList = serverCopy.data() as List;
+              actions.forEach(action => {
+                ListController.setDone(serverList, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
+                ListController.updateAllStatuses(serverList, action.itemId);
+              });
+              if (isNaN(serverList.etag)) {
+                serverList.etag = 0;
+              }
+              serverList.etag++;
+              this.listService.recordOperation('write');
+              transaction.set(serverCopy.ref, serverList);
+            });
+          }
+        }));
     }, 1)
   ), { dispatch: false });
 

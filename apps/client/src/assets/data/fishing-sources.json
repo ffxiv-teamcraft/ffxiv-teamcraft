@@ -9089,22 +9089,6 @@
       "bait": 12708,
       "snagging": true,
       "minGathering": 0
-    },
-    {
-      "spot": 10005,
-      "hookset": 0,
-      "tug": -1,
-      "bait": 12708,
-      "snagging": true,
-      "minGathering": 0
-    },
-    {
-      "spot": 10004,
-      "hookset": 0,
-      "tug": -1,
-      "bait": 12708,
-      "snagging": true,
-      "minGathering": 0
     }
   ],
   "12737": [
@@ -24587,6 +24571,96 @@
       "minGathering": 0
     }
   ],
+  "38830": [
+    {
+      "spot": 254,
+      "hookset": 2,
+      "tug": 1,
+      "bait": 36591,
+      "spawn": 8,
+      "duration": 6,
+      "weathers": [
+        2
+      ],
+      "weathersFrom": [
+        1
+      ],
+      "minGathering": 2950
+    }
+  ],
+  "38831": [
+    {
+      "spot": 256,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36590,
+      "weathers": [
+        7
+      ],
+      "weathersFrom": [
+        3
+      ],
+      "minGathering": 2950
+    }
+  ],
+  "38833": [
+    {
+      "spot": 267,
+      "tug": 1,
+      "bait": 36591,
+      "spawn": 22,
+      "duration": 4,
+      "weathers": [
+        7
+      ],
+      "minGathering": 2950
+    }
+  ],
+  "38834": [
+    {
+      "spot": 274,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36595,
+      "spawn": 10,
+      "duration": 5,
+      "weathers": [
+        49
+      ],
+      "minGathering": 2950
+    }
+  ],
+  "38835": [
+    {
+      "spot": 278,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36489,
+      "spawn": 20,
+      "duration": 8,
+      "weathers": [
+        149
+      ],
+      "minGathering": 2950
+    }
+  ],
+  "38836": [
+    {
+      "spot": 277,
+      "hookset": 2,
+      "tug": 1,
+      "bait": 36591,
+      "spawn": 4,
+      "duration": 6,
+      "weathers": [
+        1
+      ],
+      "weathersFrom": [
+        3
+      ],
+      "minGathering": 2950
+    }
+  ],
   "38935": [
     {
       "spot": 262,
@@ -24603,7 +24677,7 @@
       "tug": 2,
       "bait": 36591,
       "spawn": 5,
-      "duration": 1,
+      "duration": 3,
       "minGathering": 3150
     }
   ]
