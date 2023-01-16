@@ -598,7 +598,8 @@
       "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
       "Success": "Character verified! You can now close this popup. Feel free to remove the code from your profile, as it isn't needed anymore.",
       "Error": "Couldn't find the code in your bio. Please make sure you pasted it and applied the changes, then wait ~30s and retry.",
-      "Validate": "Validate"
+      "Validate": "Validate",
+      "Submitted": "Checking your Lodestone profile..."
     }
   },
   "LISTS": {
