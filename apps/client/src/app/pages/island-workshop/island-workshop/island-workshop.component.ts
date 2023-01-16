@@ -282,7 +282,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
       const popularityEntry = islandPopularity[state.popularity];
       const predictedPopularityEntry = islandPopularity[state.predictedPopularity];
       return state.supplyDemand
-        .filter(row => row.id > 0 && islandCraftworks[row.id].itemId > 0)
+        .filter(row => row.id > 0 && islandCraftworks[row.id]?.itemId > 0)
         .filter(row => {
           let matches = true;
           if (excludePasture || excludeCrops) {
