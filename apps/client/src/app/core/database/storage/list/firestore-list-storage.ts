@@ -3,7 +3,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { combineLatest, Observable, of, throwError } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { catchError, first, map, switchMap, tap } from 'rxjs/operators';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { ListRow } from '../../../../modules/list/model/list-row';
 import { FirestoreRelationalStorage } from '../firestore/firestore-relational-storage';
 import { Class } from '@kaiu/serializer';
@@ -11,7 +11,7 @@ import { PermissionLevel } from '../../permissions/permission-level.enum';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { ListController } from '../../../../modules/list/list-controller';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Firestore, orderBy, QueryConstraint, Timestamp, where } from '@angular/fire/firestore';
+import { Firestore, QueryConstraint, Timestamp, where } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -76,6 +76,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> {
         return cleanedItem;
       }, {}) as ListRow;
     });
+    clone.etag = (list.etag || 0) + 1;
     return clone;
   }
 
@@ -182,29 +183,6 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> {
       );
   }
 
-  getPublicListsByAuthor(uid: string): Observable<List[]> {
-    return this.listsByAuthorRef(uid).pipe(map(lists => lists.filter(list => list.public === true)));
-  }
-
-  byAuthor(uid: string): Observable<List[]> {
-    return this.listsByAuthorRef(uid);
-  }
-
-  deleteByAuthor(uid: string): Observable<void> {
-    return this.listsByAuthorRef(uid)
-      .pipe(
-        tap(() => this.recordOperation('delete')),
-        first(),
-        map(lists => lists.map(list => list.$key)),
-        switchMap(listIds => {
-          const deletion = listIds.map(id => {
-            return this.remove(id);
-          });
-          return combineLatest(deletion).pipe(map(() => null));
-        })
-      );
-  }
-
   protected getBaseUri(): string {
     return 'lists';
   }
@@ -218,18 +196,5 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> {
       return of([]);
     }
     return combineLatest(lists.filter(list => list.name !== undefined && list.finalItems !== undefined).map(list => this.completeListData(list)));
-  }
-
-  private listsByAuthorRef(uid: string): Observable<List[]> {
-    return this.query(where('authorId', '==', uid), orderBy('createdAt', 'desc'))
-      .pipe(
-        catchError(error => {
-          console.error(`GET BY AUTHOR REF ${this.getBaseUri()}:${uid}`);
-          console.error(error);
-          return throwError(error);
-        }),
-        tap(() => this.recordOperation('read')),
-        switchMap(lists => this.completeLists(lists))
-      );
   }
 }
