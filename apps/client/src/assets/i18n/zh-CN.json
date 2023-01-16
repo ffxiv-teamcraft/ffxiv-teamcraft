@@ -597,7 +597,7 @@
       "Title": "角色验证",
       "Guide": "若要认证您的账户，复制这个代码{{userId}}到Lodestone个人资料中，并点击下方的按键。更多信息在<a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>。",
       "Success": "角色已验证！你现在可以关闭该窗口。现在你可以从你的 Lodestone 资料中移除验证代码了。",
-      "Error": "无法在你的资料中找到代码。请确认你已经粘贴并保存，并等待约 30 秒后重试。",
+      "Error": "Couldn't find the code in your bio. Please make sure you pasted it and applied the changes. If you did so correctly and the verification still failed, please try again in a few hours due to how Lodestone caching works. However, verification only affects Free Company lists and the Commission System, so you can continue using all other features without issue.",
       "Validate": "验证"
     }
   },
