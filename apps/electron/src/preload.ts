@@ -5,6 +5,8 @@ const { contextBridge, ipcRenderer } = require('electron');
 const allowedChannels = [
   'metrics:importing',
   'metrics:imported',
+  'metrics:delete',
+  'metrics:delete:done',
   'list:setItemDone',
   'list:setListItemDone',
   'toggle-machina',

@@ -3,6 +3,9 @@ import { AbstractMetricDisplayComponent } from '../abstract-metric-display-compo
 import { ProbeSource } from '../../model/probe-source';
 import { TranslateService } from '@ngx-translate/core';
 import { map } from 'rxjs/operators';
+import { IpcService } from '../../../../core/electron/ipc.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { PlayerMetricsService } from '../../player-metrics.service';
 
 @Component({
   selector: 'app-table',
@@ -54,13 +57,22 @@ export class TableComponent extends AbstractMetricDisplayComponent implements On
 
   public sortState: Record<string, string | null> = {};
 
-  constructor(public translate: TranslateService) {
+  constructor(public translate: TranslateService, private ipc: IpcService,
+              private message: NzMessageService, private metricsService: PlayerMetricsService) {
     super();
   }
 
   saveSort(column: string, sort: string | null): void {
     this.sortState[column] = sort;
     localStorage.setItem(`metrics:table:sort:${this.title}`, JSON.stringify(this.sortState));
+  }
+
+  deleteRow(id: number): void {
+    this.ipc.once('metrics:delete:done', () => {
+      this.message.success(this.translate.instant('METRICS.Deleted'));
+      this.metricsService.reload();
+    });
+    this.ipc.send('metrics:delete', id);
   }
 
   ngOnInit(): void {

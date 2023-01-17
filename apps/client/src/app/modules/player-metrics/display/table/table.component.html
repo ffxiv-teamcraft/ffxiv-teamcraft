@@ -8,6 +8,7 @@
         (nzSortOrderChange)="saveSort(column.title, $event)"
         [nzSortOrder]="sortState[column.title]"
     >{{('METRICS.TABLE.' + column.title) | translate}}</th>
+    <th></th>
   </tr>
   </thead>
   <tbody>
@@ -17,6 +18,7 @@
     <td>{{row.data[1] | number:'1.0-0':translate.currentLang}}</td>
     <td *ngIf="showSourceColumn$ | async">{{('METRICS.SOURCES.' + ProbeSource[row.source]) | translate}}</td>
     <td>{{(row.timestamp * 1000) | date:'medium'}}</td>
+    <td><button nz-button nzDanger nzSize="small" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="deleteRow(row.id)"><span nz-icon nzType="delete" nzTheme="outline"></span></button></td>
   </tr>
   </tbody>
 </nz-table>
