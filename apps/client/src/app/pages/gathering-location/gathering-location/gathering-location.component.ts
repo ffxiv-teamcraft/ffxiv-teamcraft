@@ -200,9 +200,7 @@ export class GatheringLocationComponent {
                 return rows
                   .flat()
                   .filter((row: { node: GatheringNode }) => {
-                    if (filters.type !== -1) {
-                      return Math.abs(row.node.type) === +filters.type;
-                    }
+                    return filters.type === -1 || Math.abs(row.node.type) === +filters.type;
                   })
                   .sort((a: { node: GatheringNode }, b: { node: GatheringNode }) => b.node.level - a.node.level);
               })
