@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.0.5"></a>
+## [10.0.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.0.4...v10.0.5) (2023-01-17)
+
+
+### Bug Fixes
+
+* **desktop:** fixed state import sometimes breaking workshop table entirely ([6c91e34](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6c91e34))
+* **metrics:** fixed histogram chart sometimes not sorting entries ([766a0a8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/766a0a8)), closes [#2442](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2442)
+
+
+### Features
+
+* **desktop:** Notification feedback on profile validation start ([#2443](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2443)) ([fca50ec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fca50ec))
+
+
+### Performance Improvements
+
+* **list:** improvements to concurrency system for list updates ([e03f05a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e03f05a))
+
+
+
 <a name="10.0.4"></a>
 ## [10.0.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.0.3...v10.0.4) (2023-01-15)
 

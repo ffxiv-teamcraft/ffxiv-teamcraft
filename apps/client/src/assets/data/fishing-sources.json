@@ -24580,10 +24580,10 @@
       "spawn": 8,
       "duration": 6,
       "weathers": [
-        2
+        1
       ],
       "weathersFrom": [
-        1
+        2
       ],
       "minGathering": 2950
     }
@@ -24603,9 +24603,27 @@
       "minGathering": 2950
     }
   ],
+  "38832": [
+    {
+      "spot": 263,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36592,
+      "spawn": 20,
+      "duration": 4,
+      "weathers": [
+        1
+      ],
+      "weathersFrom": [
+        3
+      ],
+      "minGathering": 2950
+    }
+  ],
   "38833": [
     {
       "spot": 267,
+      "hookset": 1,
       "tug": 1,
       "bait": 36591,
       "spawn": 22,
@@ -24623,7 +24641,7 @@
       "tug": 1,
       "bait": 36595,
       "spawn": 10,
-      "duration": 5,
+      "duration": 3,
       "weathers": [
         49
       ],
