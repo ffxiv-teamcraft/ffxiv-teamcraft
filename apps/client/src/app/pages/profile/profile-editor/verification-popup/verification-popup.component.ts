@@ -3,6 +3,8 @@ import { filter, map, switchMap } from 'rxjs/operators';
 import { Observable, Subject, Subscription } from 'rxjs';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { LodestoneService } from '../../../../core/api/lodestone.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-verification-popup',
@@ -21,7 +23,7 @@ export class VerificationPopupComponent implements OnDestroy {
 
   subscription: Subscription;
 
-  constructor(private lodestone: LodestoneService, private authFacade: AuthFacade) {
+  constructor(private lodestone: LodestoneService, private authFacade: AuthFacade, private message: NzMessageService, private translate: TranslateService) {
     this.verificationResult$ = this.startVerify$.pipe(
       switchMap(code => {
         return this.lodestone.getCharacterFromLodestoneApi(this.lodestoneId, ['Character.Bio']).pipe(
@@ -38,6 +40,7 @@ export class VerificationPopupComponent implements OnDestroy {
 
   validate(): void {
     this.startVerify$.next(this.verificationCode);
+    this.message.info(this.translate.instant('PROFILE.VERIFICATION.Submitted'), { nzDuration: 1500 });
   }
 
   ngOnDestroy(): void {
