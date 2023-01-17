@@ -102,15 +102,17 @@ export abstract class FirestoreStorage<T extends DataModel> {
   }
 
   add(data: Omit<T, '$key'>, uriParams?: any): Observable<string> {
-    return from(addDoc(this.collection, data)).pipe(
-      catchError(error => {
-        console.error(`ADD ${this.getBaseUri()}`);
-        console.error(error);
-        return throwError(error);
-      }),
-      tap(() => this.recordOperation('write')),
-      map(res => res.id)
-    );
+    return this.zone.runOutsideAngular(() => {
+      return from(addDoc(this.collection, data)).pipe(
+        catchError(error => {
+          console.error(`ADD ${this.getBaseUri()}`);
+          console.error(error);
+          return throwError(error);
+        }),
+        tap(() => this.recordOperation('write')),
+        map(res => res.id)
+      );
+    });
   }
 
   get(key: string, uriParams?: any): Observable<T> {
@@ -149,18 +151,20 @@ export abstract class FirestoreStorage<T extends DataModel> {
   }
 
   pureUpdate(key: string, data: UpdateData<T>): Observable<void> {
-    this.pendingChangesService.addPendingChange(`update ${this.getBaseUri()}/${key}`);
-    return from(updateDoc(this.docRef(key), data)).pipe(
-      catchError(error => {
-        console.error(`UPDATE ${this.getBaseUri()}/${key}`);
-        console.error(error);
-        return throwError(error);
-      }),
-      tap(() => {
-        this.recordOperation('write', key);
-        this.pendingChangesService.removePendingChange(`update ${this.getBaseUri()}/${key}`);
-      })
-    );
+    return this.zone.runOutsideAngular(() => {
+      this.pendingChangesService.addPendingChange(`update ${this.getBaseUri()}/${key}`);
+      return from(updateDoc(this.docRef(key), data)).pipe(
+        catchError(error => {
+          console.error(`UPDATE ${this.getBaseUri()}/${key}`);
+          console.error(error);
+          return throwError(error);
+        }),
+        tap(() => {
+          this.recordOperation('write', key);
+          this.pendingChangesService.removePendingChange(`update ${this.getBaseUri()}/${key}`);
+        })
+      );
+    });
   }
 
   update(uid: string, data: T): Observable<void> {
@@ -169,17 +173,19 @@ export abstract class FirestoreStorage<T extends DataModel> {
 
   set(key: string, data: T): Observable<void> {
     this.pendingChangesService.addPendingChange(`set ${this.getBaseUri()}/${key}`);
-    return from(setDoc(this.docRef(key), data)).pipe(
-      catchError(error => {
-        console.error(`UPDATE ${this.getBaseUri()}/${key}`);
-        console.error(error);
-        return throwError(error);
-      }),
-      tap(() => {
-        this.recordOperation('write', key);
-        this.pendingChangesService.removePendingChange(`set ${this.getBaseUri()}/${key}`);
-      })
-    );
+    return this.zone.runOutsideAngular(() => {
+      return from(setDoc(this.docRef(key), data)).pipe(
+        catchError(error => {
+          console.error(`UPDATE ${this.getBaseUri()}/${key}`);
+          console.error(error);
+          return throwError(error);
+        }),
+        tap(() => {
+          this.recordOperation('write', key);
+          this.pendingChangesService.removePendingChange(`set ${this.getBaseUri()}/${key}`);
+        })
+      );
+    });
   }
 
   remove(key: string, uriParams?: any): Observable<void> {
@@ -187,37 +193,43 @@ export abstract class FirestoreStorage<T extends DataModel> {
     if (key === undefined || key === null || key === '') {
       throw new Error(`Empty uid ${this.getBaseUri()}`);
     }
-    return from(deleteDoc(this.docRef(key))).pipe(
-      catchError(error => {
-        console.error(`DELETE ${this.getBaseUri()}/${key}`);
-        console.error(error);
-        return of(null);
-      }),
-      tap(() => {
-        this.recordOperation('delete', key);
-        // If there's cache information, delete it.
-        delete this.cache[key];
-        this.pendingChangesService.removePendingChange(`remove ${this.getBaseUri()}/${key}`);
-      })
-    );
+    return this.zone.runOutsideAngular(() => {
+      return from(deleteDoc(this.docRef(key))).pipe(
+        catchError(error => {
+          console.error(`DELETE ${this.getBaseUri()}/${key}`);
+          console.error(error);
+          return of(null);
+        }),
+        tap(() => {
+          this.recordOperation('delete', key);
+          // If there's cache information, delete it.
+          delete this.cache[key];
+          this.pendingChangesService.removePendingChange(`remove ${this.getBaseUri()}/${key}`);
+        })
+      );
+    });
   }
 
   removeMany(keys: string[]): Observable<void> {
-    const batch = writeBatch(this.firestore);
-    keys.forEach(key => {
-      batch.delete(this.docRef(key));
+    return this.zone.runOutsideAngular(() => {
+      const batch = writeBatch(this.firestore);
+      keys.forEach(key => {
+        batch.delete(this.docRef(key));
+      });
+      return from(batch.commit());
     });
-    return from(batch.commit());
   }
 
   setMany(entities: T[]): Observable<void> {
-    const batch = writeBatch(this.firestore);
-    entities
-      .filter(entity => !!entity)
-      .forEach(entity => {
-        batch.set(this.docRef(entity.$key), entity);
-      });
-    return from(batch.commit());
+    return this.zone.runOutsideAngular(() => {
+      const batch = writeBatch(this.firestore);
+      entities
+        .filter(entity => !!entity)
+        .forEach(entity => {
+          batch.set(this.docRef(entity.$key), entity);
+        });
+      return from(batch.commit());
+    });
   }
 
   /**
@@ -226,10 +238,12 @@ export abstract class FirestoreStorage<T extends DataModel> {
    * @param transactionFn
    */
   public runTransaction(entityId: string, transactionFn: (transaction: Transaction, serverCopy: DocumentSnapshot<T>) => void): Observable<void> {
-    return this.runPureTransaction(async (transaction) => {
-      const ref = this.docRef(entityId);
-      const serverCopy = await transaction.get(ref);
-      return transactionFn(transaction, serverCopy);
+    return this.zone.runOutsideAngular(() => {
+      return this.runPureTransaction(async (transaction) => {
+        const ref = this.docRef(entityId);
+        const serverCopy = await transaction.get(ref);
+        return transactionFn(transaction, serverCopy);
+      });
     });
   }
 
@@ -238,22 +252,26 @@ export abstract class FirestoreStorage<T extends DataModel> {
    * @param transactionFn
    */
   public runPureTransaction(transactionFn: (transaction: Transaction) => Promise<void>): Observable<void> {
-    return defer(() => runTransaction(this.firestore, transactionFn)).pipe(
-      retry({
-        count: 3,
-        delay: 200
-      })
-    );
+    return this.zone.runOutsideAngular(() => {
+      return defer(() => runTransaction(this.firestore, transactionFn)).pipe(
+        retry({
+          count: 3,
+          delay: 200
+        })
+      );
+    });
   }
 
   updateIndexes<R extends T & { index: number }>(rows: Array<R>): Observable<void> {
-    this.recordOperation('write', rows.map(row => row.$key));
-    const batch = writeBatch(this.firestore);
-    rows.forEach(row => {
-      const ref = this.docRef(row.$key) as DocumentReference<T & { index: number }>;
-      return batch.update<T & { index: number }>(ref, { index: row.index } as UpdateData<T & { index: number }>);
+    return this.zone.runOutsideAngular(() => {
+      this.recordOperation('write', rows.map(row => row.$key));
+      const batch = writeBatch(this.firestore);
+      rows.forEach(row => {
+        const ref = this.docRef(row.$key) as DocumentReference<T & { index: number }>;
+        return batch.update<T & { index: number }>(ref, { index: row.index } as UpdateData<T & { index: number }>);
+      });
+      return from(batch.commit());
     });
-    return from(batch.commit());
   }
 
   public recordOperation(operation: 'read' | 'write' | 'delete', debugData?: any): void {
