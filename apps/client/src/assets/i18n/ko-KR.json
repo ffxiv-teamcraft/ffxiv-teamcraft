@@ -597,8 +597,9 @@
       "Title": "캐릭터 인증",
       "Guide": "계정 인증을 위해 Lodestone Profile에 \"{{userId}}\"를 붙여넣고 아래의 인증버튼을 눌러주세요. 자세한 정보는 <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">위키</a>를 참고해주세요.",
       "Success": "캐릭터가 인증되었습니다! 이 팝업을 닫으셔도 됩니다. 더 이상 코드가 필요없기 때문에, 프로필에서 코드를 제거하셔도 됩니다.",
-      "Error": "Couldn't find the code in your bio. Please make sure you pasted it and applied the changes. If you did so correctly and the verification still failed, please try again in a few hours due to how Lodestone caching works. However, verification only affects Free Company lists and the Commission System, so you can continue using all other features without issue.",
-      "Validate": "인증"
+      "Validate": "인증",
+      "Submitted": "Checking your Lodestone profile...",
+      "Error": "Couldn't find the code in your bio. Please make sure you pasted it and applied the changes. If you did so correctly and the verification still failed, please try again in a few hours due to how Lodestone caching works. However, verification only affects Free Company lists and the Commission System, so you can continue using all other features without issue."
     }
   },
   "LISTS": {
