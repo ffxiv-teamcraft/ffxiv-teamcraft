@@ -42,7 +42,7 @@ function updateLists(lists: List[], state: ListsState, matchingPredicate = (list
   const afterMap = listsAdapter.map(storeList => {
     checkedLists[storeList.$key] = true;
     const patch = listsByKey[storeList.$key];
-    if (patch && patch.etag >= storeList.etag) {
+    if (patch && patch.etag > storeList.etag) {
       if (storeList.$key === state.selectedId) {
         return storeList;
       }
@@ -189,7 +189,7 @@ export function listsReducer(
         listDetails = listsAdapter.mapOne({
           id: newVersion.$key,
           map: current => {
-            updated = (newVersion.etag || 0) >= (current.etag || 0);
+            updated = (newVersion.etag || 0) > (current.etag || 0);
             if (updated) {
               if (newVersion.items?.length > 0 && newVersion.notFound) {
                 newVersion.notFound = false;

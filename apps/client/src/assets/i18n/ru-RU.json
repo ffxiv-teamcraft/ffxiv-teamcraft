@@ -471,6 +471,7 @@
     "Enable_autofill_notification_by_default": "Включить уведомление автозаполнения по умолчанию",
     "Enable_autofill_hq_filter": "Автозаполнение только с использованием HQ, когда предмет требуется как HQ",
     "Enable_autofill_nq_filter": "Автозаполнение только с использованием NQ, когда предмет не требуется как HQ",
+    "Auto_minimalist_large_lists": "Automatically switch to minimalist mode for large lists",
     "Contribute_to_universalis": "Внести данные в Universalis",
     "Track_items_on_sale": "Отслеживать товары на продажу у ваших ретейнеров (требуется перезапуск/обновление)",
     "Change_email": "Изменить email",
@@ -519,6 +520,8 @@
     "Materia_confidence_rate": "Melding confidence rate",
     "Materia_confidence_rate_explain": "Confidence rate for materia estimate. Higher means that more materias will be suggested to be more confident that with this amount, your melds will succeed",
     "Disable_hardware_acceleration": "Disable hardware acceleration",
+    "Housing_map": "Housing map",
+    "Housing_map_explain": "The housing map in which your house is",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -594,7 +597,7 @@
       "Title": "Подтверждение персонажа",
       "Guide": "Чтобы подтвердить свою учетную запись, вставьте этот код: \"{{userId}}\" в своём профиле Lodestone и нажмите кнопку ниже. Подробнее - на <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">вики</a>",
       "Success": "Character verified! You can now close this popup. Feel free to remove the code from your profile, as it isn't needed anymore.",
-      "Error": "Couldn't find the code in your bio. Please make sure you pasted it and applied the changes, then wait ~30s and retry.",
+      "Error": "Couldn't find the code in your bio. Please make sure you pasted it and applied the changes. If you did so correctly and the verification still failed, please try again in a few hours due to how Lodestone caching works. However, verification only affects Free Company lists and the Commission System, so you can continue using all other features without issue.",
       "Validate": "Подтвердить"
     }
   },
@@ -612,7 +615,8 @@
     "Add_selection_to_list": "Добавить выбранное в список",
     "Your_lists": "Ваши списки",
     "Outdated_tag": "Устаревшие",
-    "No_lists": "У вас нет списков",
+    "No_lists": "No lists to display here",
+    "List_aggregates": "List aggregates",
     "Lists_search_placeholder": "Search for a list…",
     "Add_to_a_list": "Добавить в список",
     "Please_pick_recipe": "Пожалуйста, выберите рецепт для этого предмета",
@@ -771,6 +775,26 @@
     "Inventory_cleanup_description": "Здесь предметы, которые находятся в вашем инвентаре и не используются для списка",
     "Consider_requirements": "Рассмотреть требования",
     "Ignore_requirements": "Игнорировать требования",
+    "STEP_BY_STEP": {
+      "Previous": "Previous map",
+      "Previous_incomplete": "Previous incomplete map",
+      "Next": "Next map",
+      "Next_incomplete": "Next incomplete map",
+      "Global_list_progress": "Global list progress",
+      "Alarms": "Timed rows",
+      "Crafts": "Ordered crafts",
+      "Toggle_overlay": "Open/Close step by step overlay",
+      "Empty_map": "Nothing to do in the current map, closest map for this list is {{closest}}",
+      "Unknown_map": "Unknown map, please change map to allow TC to detect it.",
+      "No_list": "No list, please open a list in main window to have the overlay work as intended."
+    },
+    "DISPLAY_MODE": {
+      "Title": "Display mode",
+      "Full": "Full",
+      "Minimalist": "Minimalist",
+      "Step_by_step": "Step by step",
+      "Switched_to_minimalist_large_list": "Display mode has been switched to minimalist because this is a large list. You can disable this in settings."
+    },
     "SOURCES": {
       "Gatherable": "Can be gathered, click to see more details"
     },
@@ -2347,6 +2371,8 @@
     "Import_success": "Панель импортирована и выбрана",
     "Nothing_to_show": "Нет данных для отображения",
     "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside Settings -> Desktop -> Enable metrics capture)",
+    "Importing": "Importing metrics data to the new sql format, please don't close Teamcraft. This may take up to 15 minutes.",
+    "Imported": "Metrics data has been imported.",
     "SOURCES": {
       "UNKNOWN": "Неизвестно",
       "GATHERING": "Сбор",
@@ -2947,6 +2973,23 @@
     "Empty_list": "Empty list, click the + button on an item to add it here",
     "Add_to_list": "Add these items to a list"
   },
+  "LIST_AGGREGATE": {
+    "Home_title": "List Aggregate",
+    "Home_subtitle": "Open multiple lists at once in an aggregated view",
+    "Select_lists": "Select the lists you want to aggregate",
+    "Select_layout": "Select a layout",
+    "Open_aggregate": "Open an aggregated view",
+    "Title": "Aggregated list view",
+    "Select_panel": "Select a panel to open its view",
+    "Missing_lists": "{{amount}} list(s) could not be loaded properly",
+    "Remove_missing_ids": "Remove missing lists from the aggregate",
+    "Missing_lists_description": "Please make sure you have enough permissions on all the lists and that they still exist (missing ids: {{ids}}).",
+    "Save": "Save this aggregate to your lists page",
+    "Saved": "Aggregate saved to your lists page",
+    "Final_items_count": "# of items",
+    "Requirement_items_count": "# of required items",
+    "Switch_panel": "Switch panel"
+  },
   "MACHINA_ERRORS": {
     "Default": "Machina Wrapper error",
     "Wrapper_failed_to_start": "Machina Wrapper failed to start",
@@ -2963,7 +3006,7 @@
       "Title": "Workshop",
       "Subtitle": "Track and manage your workshop",
       "Out_of_sync": "State has not been updated since the last reset",
-      "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary to update the state. If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button, or import from database.",
+      "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary for the first time after logging in the game to update the state (If you have already opened the window since you logged in, you will need to log out of the game and back in, and re-open the Supply/Demand window to correctly update your state). If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button, or import from database.",
       "Export_state": "Export supply/demand state",
       "State_copied": "State copied to your clipboard",
       "Import_state": "Import state",

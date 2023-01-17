@@ -538,7 +538,6 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
           }
         });
         ListController.updateAllStatuses(list);
-        list.etag++;
         return list;
       })
     ).subscribe(res => {

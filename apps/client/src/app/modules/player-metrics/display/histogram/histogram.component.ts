@@ -42,7 +42,7 @@ export class HistogramComponent extends AbstractMetricDisplayComponent {
               new Date(report.timestamp * 1000),
               report.data[1]
             ];
-          }),
+          }).sort(([a], [b]) => a[0].getTime() - b[0].getTime()),
           dimensions: ['timestamp', 'value']
         },
         series: [
