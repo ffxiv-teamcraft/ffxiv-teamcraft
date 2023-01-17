@@ -2374,6 +2374,7 @@
     "Nothing_to_show_description": "Stelle sicher, dass du einen Zeitraum ausgewählt hast, in dem TC Daten erfasst hat und stelle sicher, dass diese Option aktiviert ist (Einstellungen -> Desktop -> Metriken erfassen aktivieren)",
     "Importing": "Importing metrics data to the new sql format, please don't close Teamcraft. This may take up to 15 minutes.",
     "Imported": "Metrics data has been imported.",
+    "Deleted": "Metrics entry deleted",
     "SOURCES": {
       "UNKNOWN": "Unbekannt",
       "GATHERING": "Sammeln",
