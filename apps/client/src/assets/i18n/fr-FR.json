@@ -471,6 +471,7 @@
     "Enable_autofill_notification_by_default": "Activer la notification de complétion automatique par défaut",
     "Enable_autofill_hq_filter": "Remplissage automatique uniquement en utilisant des éléments hq lorsque l'élément est requis comme HQ",
     "Enable_autofill_nq_filter": "Remplissage automatique uniquement en utilisant des éléments NQ lorsque l'élément n'est pas requis en HQ",
+    "Auto_minimalist_large_lists": "Automatically switch to minimalist mode for large lists",
     "Contribute_to_universalis": "Contribuer à Universalis",
     "Track_items_on_sale": "Suivre les objets en vente par vos servants (nécessite un redémarrage/rafraîchissement)",
     "Change_email": "Changer votre email",
@@ -519,6 +520,8 @@
     "Materia_confidence_rate": "Taux de confiance du sertissage de matérias",
     "Materia_confidence_rate_explain": "Le taux de confiance pour l'estimation de matéria, plus élevé signifie que plus de matériaux seront suggérés pour être plus confiants qu'avec ce montant, vous réussirez à remplir tous les sertissages",
     "Disable_hardware_acceleration": "Disable hardware acceleration",
+    "Housing_map": "Housing map",
+    "Housing_map_explain": "The housing map in which your house is",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -594,7 +597,7 @@
       "Title": "Vérification de personnage",
       "Guide": "Pour vérifier votre compte, collez ce code: \"{{userId}}\" dans votre biographie de profil Lodestone et cliquez sur le bouton ci-dessous. Plus d'informations sur <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">le wiki</a>",
       "Success": "Personnage vérifié ! Vous pouvez maintenant fermer cette fenêtre contextuelle. N’hésitez pas à supprimer le code de votre profil, il n’est plus nécessaire.",
-      "Error": "Code introuvable dans votre description, merci de vous assurer que vous l'avez bien placé dans la description et sauvegardé les changements, puis attendez jusqu'à 1h et réessayez.",
+      "Error": "Couldn't find the code in your bio. Please make sure you pasted it and applied the changes. If you did so correctly and the verification still failed, please try again in a few hours due to how Lodestone caching works. However, verification only affects Free Company lists and the Commission System, so you can continue using all other features without issue.",
       "Validate": "Valider"
     }
   },
@@ -612,7 +615,8 @@
     "Add_selection_to_list": "Ajouter la sélection la liste",
     "Your_lists": "Vos listes",
     "Outdated_tag": "Pas à jour",
-    "No_lists": "Vous n'avez pas de listes",
+    "No_lists": "No lists to display here",
+    "List_aggregates": "List aggregates",
     "Lists_search_placeholder": "Rechercher une liste…",
     "Add_to_a_list": "Ajouter à une liste",
     "Please_pick_recipe": "Veuillez choisir une recette pour cet objet",
@@ -771,6 +775,26 @@
     "Inventory_cleanup_description": "Voici les objets qui se trouvent dans votre inventaire et qui ne sont pas utilisés pour la liste",
     "Consider_requirements": "Afficher les pré-requis",
     "Ignore_requirements": "Ignorer les pré-requis",
+    "STEP_BY_STEP": {
+      "Previous": "Previous map",
+      "Previous_incomplete": "Previous incomplete map",
+      "Next": "Next map",
+      "Next_incomplete": "Next incomplete map",
+      "Global_list_progress": "Global list progress",
+      "Alarms": "Timed rows",
+      "Crafts": "Ordered crafts",
+      "Toggle_overlay": "Open/Close step by step overlay",
+      "Empty_map": "Nothing to do in the current map, closest map for this list is {{closest}}",
+      "Unknown_map": "Unknown map, please change map to allow TC to detect it.",
+      "No_list": "No list, please open a list in main window to have the overlay work as intended."
+    },
+    "DISPLAY_MODE": {
+      "Title": "Display mode",
+      "Full": "Full",
+      "Minimalist": "Minimalist",
+      "Step_by_step": "Step by step",
+      "Switched_to_minimalist_large_list": "Display mode has been switched to minimalist because this is a large list. You can disable this in settings."
+    },
     "SOURCES": {
       "Gatherable": "Peut être collecté, cliquez pour voir plus de détails"
     },
@@ -2347,6 +2371,8 @@
     "Import_success": "Tableau de bord importé et sélectionné",
     "Nothing_to_show": "Aucune donnée à afficher",
     "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside Settings -> Desktop -> Enable metrics capture)",
+    "Importing": "Importing metrics data to the new sql format, please don't close Teamcraft. This may take up to 15 minutes.",
+    "Imported": "Metrics data has been imported.",
     "SOURCES": {
       "UNKNOWN": "Inconnu",
       "GATHERING": "Récolte",
@@ -2947,6 +2973,23 @@
     "Empty_list": "Liste vide, cliquez sur le bouton + sur un élément pour l'ajouter ici",
     "Add_to_list": "Ajouter ces éléments à une liste"
   },
+  "LIST_AGGREGATE": {
+    "Home_title": "List Aggregate",
+    "Home_subtitle": "Open multiple lists at once in an aggregated view",
+    "Select_lists": "Select the lists you want to aggregate",
+    "Select_layout": "Select a layout",
+    "Open_aggregate": "Open an aggregated view",
+    "Title": "Aggregated list view",
+    "Select_panel": "Select a panel to open its view",
+    "Missing_lists": "{{amount}} list(s) could not be loaded properly",
+    "Remove_missing_ids": "Remove missing lists from the aggregate",
+    "Missing_lists_description": "Please make sure you have enough permissions on all the lists and that they still exist (missing ids: {{ids}}).",
+    "Save": "Save this aggregate to your lists page",
+    "Saved": "Aggregate saved to your lists page",
+    "Final_items_count": "# of items",
+    "Requirement_items_count": "# of required items",
+    "Switch_panel": "Switch panel"
+  },
   "MACHINA_ERRORS": {
     "Default": "Machina Wrapper error",
     "Wrapper_failed_to_start": "Machina Wrapper failed to start",
@@ -2963,7 +3006,7 @@
       "Title": "Fabrique",
       "Subtitle": "Track and manage your workshop",
       "Out_of_sync": "L'état n'a pas été mis à jour depuis la dernière réinitialisation",
-      "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary to update the state. If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button, or import from database.",
+      "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary for the first time after logging in the game to update the state (If you have already opened the window since you logged in, you will need to log out of the game and back in, and re-open the Supply/Demand window to correctly update your state). If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button, or import from database.",
       "Export_state": "Export supply/demand state",
       "State_copied": "State copied to your clipboard",
       "Import_state": "Importer l'état",
