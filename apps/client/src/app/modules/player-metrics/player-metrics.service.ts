@@ -112,6 +112,11 @@ export class PlayerMetricsService {
     this.loading$.next(true);
   }
 
+  public reload(): void {
+    this.ipc.send('metrics:load', { from: startOfDay(this.loadedPeriod.from), to: endOfDay(this.loadedPeriod.to) });
+    this.loading$.next(true);
+  }
+
   private handleReport(report: ProbeReport): void {
     report.timestamp = Math.floor(Date.now() / 1000);
     // If metrics aren't enabled, we don't save anything, not even in memory.

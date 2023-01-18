@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.0.6"></a>
+## [10.0.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.0.5...v10.0.6) (2023-01-18)
+
+
+### Bug Fixes
+
+* **gathering-location:** fixed search not finding anything with "Any" node type filter ([9e9d188](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9e9d188))
+* **metrics:** fixed histogram component not loading ([19cfb0c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/19cfb0c))
+
+
+### Features
+
+* **db:** allagan reports improt ([b8db815](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b8db815))
+
+
+### Performance Improvements
+
+* **lists:** first step of update system refactoring ([65404dd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/65404dd))
+
+
+
 <a name="10.0.5"></a>
 ## [10.0.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.0.4...v10.0.5) (2023-01-17)
 

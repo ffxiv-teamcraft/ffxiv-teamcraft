@@ -28,7 +28,6 @@ export class MetricsSystem {
 
     if (!readdirSync(METRICS_FOLDER).includes('.imported')) {
       this.mainWindow.win.webContents.send('metrics:importing');
-      console.log('START IMPORT');
       const files = readdirSync(METRICS_FOLDER);
       this.db.run('DELETE * FROM records', async () => {
         const loadedFiles = files.map(fileName => ({ fileName, content: readFileSync(join(METRICS_FOLDER, fileName), 'utf8') }));
@@ -46,7 +45,6 @@ export class MetricsSystem {
         }));
         writeFileSync(join(METRICS_FOLDER, '.imported'), '1');
         this.mainWindow.win.webContents.send('metrics:imported');
-        console.log('IMPORT DONE');
       });
     }
 
@@ -72,6 +70,15 @@ export class MetricsSystem {
           }));
         });
         stmt.finalize();
+      });
+    });
+
+    ipcMain.on('metrics:delete', (event, id) => {
+      this.db.serialize(() => {
+        const stmt = this.db.prepare('DELETE FROM records WHERE id = (?)');
+        stmt.run([id], () => {
+          event.sender.send('metrics:delete:done');
+        });
       });
     });
   }

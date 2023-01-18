@@ -1,14 +1,14 @@
 export const patchNotes = `### Bug Fixes
 
-* **desktop:** fixed state import sometimes breaking workshop table entirely.
-* **metrics:** fixed histogram chart sometimes not sorting entries.
+* **gathering-location:** fixed search not finding anything with "Any" node type filter.
+* **metrics:** fixed histogram component not loading.
 
 
 ### Features
 
-* **desktop:** Notification feedback on profile validation start.
+* **db:** allagan reports improt.
 
 
 ### Performance Improvements
 
-* **list:** improvements to concurrency system for list updates.`;
+* **lists:** first step of update system refactoring.`;

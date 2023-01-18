@@ -3,7 +3,6 @@ import { PlatformService } from '../../../core/tools/platform.service';
 import { fromEvent } from 'rxjs';
 import { auditTime, delay, distinctUntilChanged, map, startWith, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { AnalyticsService } from '../../../core/analytics/analytics.service';
 
 declare const ramp: any;
 declare const gtag: any;
@@ -24,7 +23,7 @@ export class AdComponent extends TeamcraftComponent {
         'event',
         'ramp_js',
         {
-          'send_to': AnalyticsService.GA4_ID,
+          'send_to': platform.isDesktop() ? 'G-0HS31QMFKW' : 'G-DBE6XPBFQS',
           'pageview_id': (<any>window)._pwGA4PageviewId
         }
       );
@@ -86,11 +85,10 @@ export class AdComponent extends TeamcraftComponent {
       ramp.isMobile = false;
       ramp.addUnits([{
         selectorId: 'pwAdBanner',
-        type: 'leaderboard_atf'
-      }]).then(() => {
-        ramp.displayUnits();
-      });
-    })
+        type: 'leaderboard_btf2'
+      }]);
+      setTimeout(() => ramp.displayUnits(), 500);
+    });
   }
 
   private enableMobileAd(): void {
@@ -103,7 +101,7 @@ export class AdComponent extends TeamcraftComponent {
       }]).then(() => {
         ramp.displayUnits();
       });
-    })
+    });
   }
 
 }

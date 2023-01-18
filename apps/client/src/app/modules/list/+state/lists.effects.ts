@@ -399,17 +399,6 @@ export class ListsEffects {
     withLazyRow(this.lazyData, 'itemIcons', ([action]) => action.itemId),
     concatMap(([[action, list, team, userId, fcId, autofillEnabled, completionNotificationEnabled], icon]) => {
       const item = ListController.getItemById(list, action.itemId, !action.finalItem, action.finalItem);
-      if (!list.offline) {
-        this.listsFacade.addModificationsHistoryEntry({
-          amount: action.doneDelta,
-          date: Date.now(),
-          itemId: action.itemId,
-          userId: userId,
-          finalItem: action.finalItem || false,
-          total: action.totalNeeded,
-          recipeId: action.recipeId || null
-        });
-      }
       if (team && list.teamId === team.$key && action.doneDelta > 0) {
         this.discordWebhookService.notifyItemChecked(team, list, userId, fcId, action.doneDelta, action.itemId, action.totalNeeded, action.finalItem);
       }
@@ -479,10 +468,6 @@ export class ListsEffects {
                 ListController.setDone(serverList, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
                 ListController.updateAllStatuses(serverList, action.itemId);
               });
-              if (isNaN(serverList.etag)) {
-                serverList.etag = 0;
-              }
-              serverList.etag++;
               this.listService.recordOperation('write');
               transaction.set(serverCopy.ref, serverList);
             });
