@@ -88,6 +88,9 @@
              class="img-icon round-icon">
           {{'Fates' | translate}}
       </span>
+        <span *ngSwitchCase="DataType.ALARMS">
+          {{'LIST_DETAILS.STEP_BY_STEP.Alarms' | translate}}
+      </span>
         <ng-container *ngSwitchCase="DataType.CRAFTED_BY">
           <ng-container *ngIf="steps[0].sources[0].data[0] as craft">
             <ng-container *ngIf="craft.job > 0">
