@@ -404,12 +404,13 @@ export class ListsEffects {
       }
       const withList$ = of(action).pipe(
         withLatestFrom(action.listId ? this.listsFacade.allListDetails$.pipe(map(lists => lists.find(l => l.$key === action.listId))) : this.selectedListClone$),
-        filter(([, list]) => list !== undefined)
+        filter(([, list]) => list !== undefined),
+        first()
       );
       if (autofillEnabled && completionNotificationEnabled && action.fromPacket) {
         const itemDone = item.done + action.doneDelta >= item.amount;
         const played = localStorage.getItem('autofill:completion');
-        if (itemDone && (!played || +played < Date.now() - 10000)) {
+        if (itemDone && (!played || +played < Date.now() - 1000)) {
           return this.i18n.getNameObservable('items', action.itemId).pipe(
             switchMap(itemName => {
               const notificationTitle = this.translate.instant('LIST_DETAILS.Autofill_notification_title');
@@ -429,7 +430,8 @@ export class ListsEffects {
               this.notificationService.info(notificationTitle, notificationBody);
               localStorage.setItem('autofill:completion', Date.now().toString());
               return withList$;
-            })
+            }),
+            first()
           );
         }
       }
@@ -451,7 +453,6 @@ export class ListsEffects {
         return acc;
       }, []);
       return safeCombineLatest(groupedByList
-        .filter(({ list }) => list !== undefined)
         .map(({ list, actions }) => {
           if (list.offline) {
             actions.forEach(action => {
