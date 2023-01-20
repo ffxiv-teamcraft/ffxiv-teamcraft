@@ -135,7 +135,6 @@ export abstract class FirestoreStorage<T extends DataModel> {
             return data;
           }),
           distinctUntilChanged((a, b) => isEqual(a, b)),
-          map(list => structuredClone(list) as T),
           tap(() => {
             this.recordOperation('read', key);
           }),
