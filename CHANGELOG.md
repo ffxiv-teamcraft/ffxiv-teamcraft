@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.0.8"></a>
+## [10.0.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.0.6...v10.0.8) (2023-01-20)
+
+
+### Bug Fixes
+
+* **alarms:** add small timer comparison margin to prevent alarms order from jumping ([5cbbd75](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5cbbd75))
+* **lists:** fixed autofill not saving list to database after first item done ([b743e08](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b743e08))
+* **lists:** fixed progress bar display on smaller screen sizes ([1026d34](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1026d34))
+* **lists:** improvements to overlay sync and general list saving method ([3d11be6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3d11be6))
+* **simulator:** fixed rotations not opening properly in simulator page ([479c9e0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/479c9e0))
+* **step-by-step:** fixed display being empty when only crafts are remaining ([530fb1b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/530fb1b))
+
+
+### Performance Improvements
+
+* **list:** better concurrency management with time-based etag ([2129179](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2129179))
+
+
+
 <a name="10.0.7"></a>
 ## [10.0.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.0.6...v10.0.7) (2023-01-20)
 
