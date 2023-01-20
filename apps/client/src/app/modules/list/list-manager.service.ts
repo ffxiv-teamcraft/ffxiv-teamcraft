@@ -190,43 +190,11 @@ export class ListManagerService {
             }
           });
           ListController.updateAllStatuses(resultList);
+          ListController.updateEtag(resultList);
           resultList.registry = permissions;
           return resultList;
         })
       );
-  }
-
-  private processCustomItemAddition(item: CustomItem, amount: number, ignoreRequirementsRegistry: Record<string, 1>): Observable<List> {
-    const addition = new List();
-    addition.ignoreRequirementsRegistry = ignoreRequirementsRegistry;
-    const itemClone = new CustomItem();
-    Object.assign(itemClone, item);
-    itemClone.amount = amount;
-    itemClone.done = 0;
-    itemClone.used = 0;
-    itemClone.id = itemClone.$key;
-    const added = ListController.addToFinalItems(addition, itemClone);
-    if (itemClone.requires.length > 0) {
-      return this.customItems$.pipe(
-        first(),
-        switchMap(customItems => {
-          return ListController.addCraft(addition, {
-            _additions: [
-              {
-                amount: added,
-                data: itemClone,
-                item: null
-              }
-            ],
-            customItems: customItems,
-            dataService: this.db,
-            listManager: this,
-            lazyDataFacade: this.lazyData
-          });
-        })
-      );
-    }
-    return of(addition);
   }
 
   private processItemAddition(data: ListRow, amount: number, collectable: boolean, recipeId: string | number, gearsets: TeamcraftGearsetStats[], ignoreRequirementsRegistry: Record<string, 1>): Observable<List> {

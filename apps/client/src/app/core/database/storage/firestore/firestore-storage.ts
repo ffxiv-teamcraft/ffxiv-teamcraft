@@ -135,11 +135,13 @@ export abstract class FirestoreStorage<T extends DataModel> {
             return data;
           }),
           distinctUntilChanged((a, b) => isEqual(a, b)),
+          map(list => structuredClone(list) as T),
           tap(() => {
             this.recordOperation('read', key);
           }),
           shareReplay(1),
-          takeUntil(this.stop$.pipe(filter(stop => stop === key))),
+          takeUntil(this.stop$.pipe(filter(stop => stop === key)))
+        ).pipe(
           finalize(() => {
             setTimeout(() => {
               delete this.cache[key];
@@ -295,6 +297,22 @@ export abstract class FirestoreStorage<T extends DataModel> {
     });
     clone.appVersion = environment.version;
     return clone;
+  }
+
+  protected deepFreeze<T extends object>(object: T): T {
+    // Retrieve the property names defined on object
+    const propNames = Reflect.ownKeys(object);
+
+    // Freeze properties before freezing self
+    for (const name of propNames) {
+      const value = object[name];
+
+      if ((value && typeof value === 'object') || typeof value === 'function') {
+        this.deepFreeze(value);
+      }
+    }
+
+    return Object.freeze(object);
   }
 
   protected beforeDeserialization(data: Partial<T>): T {

@@ -5,6 +5,7 @@ import { NzModalRef } from 'ng-zorro-antd/modal';
 import { ListsFacade } from '../+state/lists.facade';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
+import { ListController } from '../list-controller';
 
 @Component({
   selector: 'app-tags-popup',
@@ -24,6 +25,7 @@ export class TagsPopupComponent implements OnInit {
   }
 
   confirm(list: List): void {
+    ListController.updateEtag(list);
     this.listsFacade.updateList(list, true);
     this.modalRef.close();
   }

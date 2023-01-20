@@ -281,6 +281,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       filter(name => name !== undefined),
       map(name => {
         list.name = name;
+        ListController.updateEtag(list);
         return list;
       })
     ).subscribe(l => this.listsFacade.updateList(l));
@@ -288,12 +289,12 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   unArchiveList(list: List): void {
     list.archived = false;
-    this.listsFacade.pureUpdateList(list.$key, { archived: false });
+    this.listsFacade.pureUpdateList(list.$key, { archived: false, etag: Date.now() });
   }
 
   archiveList(list: List): void {
     list.archived = true;
-    this.listsFacade.pureUpdateList(list.$key, { archived: true });
+    this.listsFacade.pureUpdateList(list.$key, { archived: true, etag: Date.now() });
   }
 
   editNote(list: List): void {
@@ -306,6 +307,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       filter(note => note !== undefined)
     ).subscribe((note) => {
       list.note = note;
+      ListController.updateEtag(list);
       this.listsFacade.updateList(list);
     });
   }
@@ -469,6 +471,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       }),
       takeUntil(this.onDestroy$)
     ).subscribe(() => {
+      ListController.updateEtag(list);
       this.listsFacade.updateList(list);
     });
   }

@@ -76,15 +76,12 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> {
         return cleanedItem;
       }, {}) as ListRow;
     });
-    clone.etag = (list.etag || 0) + 1;
-    return clone;
+    return ListController.updateEtag(clone);
   }
 
   public completeListData(list: List): Observable<List> {
-    return combineLatest([
-      this.lazyData.getEntry('extracts')
-    ]).pipe(
-      map(([extracts]) => {
+    return this.lazyData.getEntry('extracts').pipe(
+      map((extracts) => {
         list.items = list.items.map(item => {
           if (!(item.requires instanceof Array)) {
             item.requires = [];
@@ -112,22 +109,6 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> {
 
   public getByForeignKeyRaw(foreignEntityClass: Class, foreignKeyValue: string, additionalFilters: QueryConstraint[] = [], cacheSuffix = ''): Observable<Partial<List>[]> {
     return super.getByForeignKey(foreignEntityClass, foreignKeyValue, additionalFilters, cacheSuffix);
-  }
-
-  deepFreeze<T extends object>(object: T): T {
-    // Retrieve the property names defined on object
-    const propNames = Reflect.ownKeys(object);
-
-    // Freeze properties before freezing self
-    for (const name of propNames) {
-      const value = object[name];
-
-      if ((value && typeof value === 'object') || typeof value === 'function') {
-        this.deepFreeze(value);
-      }
-    }
-
-    return Object.freeze(object);
   }
 
   get(uid: string): Observable<List> {
