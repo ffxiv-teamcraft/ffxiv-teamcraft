@@ -49,7 +49,7 @@ export class ListSplitPopupComponent {
     this.listPicker.addToList(...itemsToAdd);
     if (this.removeFromList) {
       this.list.finalItems = this.list.finalItems.filter(row => !this.selectedItems.includes(row.id));
-      this.listManager.upgradeList(ListController.clean(this.list)).pipe(
+      this.listManager.upgradeList(ListController.updateEtag(ListController.clean(this.list))).pipe(
         first()
       ).subscribe(res => {
         this.listsFacade.updateList(res);

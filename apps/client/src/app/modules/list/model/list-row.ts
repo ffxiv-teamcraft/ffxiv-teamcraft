@@ -18,7 +18,6 @@ import { LazyDataI18nKey } from '../../../lazy-data/lazy-data-types';
 import { IslandAnimal } from './island-animal';
 import { IslandCrop } from './island-crop';
 import { TripleTriadDuel } from '../../../pages/db/model/attt/triple-triad-duel';
-import { cloneDeep } from 'lodash';
 
 export function isListRow(obj: any): obj is ListRow {
   return typeof obj === 'object'
@@ -115,7 +114,7 @@ export function getItemSource<T = any>(item: ListRow, type: DataType, isObject =
       return isObject ? {} : [] as any;
     }
   } else {
-    return cloneDeep(source.data);
+    return structuredClone(source.data);
   }
 }
 

@@ -5,12 +5,14 @@
                      [width]="24" [forceCollectable]="row.collectable" *ngIf="!row.xivapiIcon"></app-item-icon>
       <app-item-icon [icon]="row.xivapiIcon | xivapiIcon" [itemId]="null"
                      [width]="24" *ngIf="row.xivapiIcon" [tooltipDisabled]="true"></app-item-icon>
-      <div [itemNameCopy]="row.id" class="item-name" nz-tooltip>
-        <app-i18n-name [content]="row.contentType || 'items'" [id]="row.id"></app-i18n-name>
+      <div nz-tooltip>
+        <app-i18n-name [content]="row.contentType || 'items'" [id]="row.id" [itemNameCopy]="row.id" class="item-name" ></app-i18n-name>
         <span *ngIf="row.amount > row.done" class="needed" nz-tooltip
               [nzTooltipTitle]="'Required_crafts_amount' | translate">&nbsp;x{{row.amount - row.done}}<span
           *ngIf="row.amount !== row.amount_needed">&nbsp;({{((row.amount - row.done) / row.yield) | ceil}})</span>
-    </span>
+        </span>
+        <i nz-icon nzType="experiment" nzTheme="outline" nz-tooltip [nzTooltipTitle]="'LIST.Final_item' | translate"
+           *ngIf="finalItem"></i>
       </div>
     </div>
   </div>

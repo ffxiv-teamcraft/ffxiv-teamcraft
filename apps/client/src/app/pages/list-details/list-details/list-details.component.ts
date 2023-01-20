@@ -160,8 +160,20 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.finalItemsRow$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$]).pipe(
       switchMap(([list, adaptativeFilter, overrideHideCompleted]) => this.layoutsFacade.getFinalItemsDisplay(list, adaptativeFilter, overrideHideCompleted))
     );
-    this.display$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$]).pipe(
-      switchMap(([list, adaptativeFilter, overrideHideCompleted]) => this.layoutsFacade.getDisplay(list, adaptativeFilter, overrideHideCompleted)),
+    this.display$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$, this.displayMode$]).pipe(
+      switchMap(([list, adaptativeFilter, overrideHideCompleted, displayMode]) => {
+        const layout$ = this.layoutsFacade.selectedLayout$.pipe(
+          map(layout => {
+            if (displayMode === ListDisplayMode.STEP_BY_STEP) {
+              const withFinalItems = layout.clone();
+              withFinalItems.includeRecipesInItems = true;
+              return withFinalItems;
+            }
+            return layout;
+          })
+        );
+        return this.layoutsFacade.getDisplay(list, adaptativeFilter, overrideHideCompleted, layout$);
+      }),
       shareReplay({ bufferSize: 1, refCount: true })
     );
     this.crystals$ = this.list$.pipe(
@@ -269,6 +281,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       filter(name => name !== undefined),
       map(name => {
         list.name = name;
+        ListController.updateEtag(list);
         return list;
       })
     ).subscribe(l => this.listsFacade.updateList(l));
@@ -276,12 +289,12 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   unArchiveList(list: List): void {
     list.archived = false;
-    this.listsFacade.pureUpdateList(list.$key, { archived: false });
+    this.listsFacade.pureUpdateList(list.$key, { archived: false, etag: Date.now() });
   }
 
   archiveList(list: List): void {
     list.archived = true;
-    this.listsFacade.pureUpdateList(list.$key, { archived: true });
+    this.listsFacade.pureUpdateList(list.$key, { archived: true, etag: Date.now() });
   }
 
   editNote(list: List): void {
@@ -294,6 +307,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       filter(note => note !== undefined)
     ).subscribe((note) => {
       list.note = note;
+      ListController.updateEtag(list);
       this.listsFacade.updateList(list);
     });
   }
@@ -457,6 +471,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       }),
       takeUntil(this.onDestroy$)
     ).subscribe(() => {
+      ListController.updateEtag(list);
       this.listsFacade.updateList(list);
     });
   }

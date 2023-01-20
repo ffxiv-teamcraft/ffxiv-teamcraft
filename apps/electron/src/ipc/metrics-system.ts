@@ -29,7 +29,10 @@ export class MetricsSystem {
     if (!readdirSync(METRICS_FOLDER).includes('.imported')) {
       this.mainWindow.win.webContents.send('metrics:importing');
       const files = readdirSync(METRICS_FOLDER);
-      this.db.run('DELETE * FROM records', async () => {
+      if(files.length === 0){
+        this.mainWindow.win.webContents.send('metrics:imported');
+      }
+      this.db.run('DELETE * FROM records WHERE timestamp < 1673362800', async () => {
         const loadedFiles = files.map(fileName => ({ fileName, content: readFileSync(join(METRICS_FOLDER, fileName), 'utf8') }));
         await Promise.all(loadedFiles.map(async file => {
           if (!file.fileName.endsWith('.tcmetrics')) {

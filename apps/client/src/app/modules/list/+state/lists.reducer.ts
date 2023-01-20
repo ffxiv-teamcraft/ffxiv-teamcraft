@@ -2,7 +2,6 @@ import { ListsAction, ListsActionTypes } from './lists.actions';
 import { List } from '../model/list';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { ListController } from '../list-controller';
-import { cloneDeep } from 'lodash';
 
 
 const PINNED_LIST_LS_KEY = 'lists:pinned';
@@ -182,14 +181,13 @@ export function listsReducer(
     }
 
     case ListsActionTypes.ListDetailsLoaded: {
-      const newVersion = ListController.clone(cloneDeep(action.payload) as List, true);
-      let updated = false;
+      const newVersion = ListController.clone(structuredClone(action.payload) as List, true);
       let listDetails = state.listDetails;
-      if (!action.forOverlay && state.listDetails.entities[action.payload.$key]) {
+      if (state.listDetails.entities[action.payload.$key]) {
         listDetails = listsAdapter.mapOne({
           id: newVersion.$key,
           map: current => {
-            updated = (newVersion.etag || 0) > (current.etag || 0);
+            const updated = action.forOverlay || (newVersion.etag || 0) > (current.etag || 0);
             if (updated) {
               if (newVersion.items?.length > 0 && newVersion.notFound) {
                 newVersion.notFound = false;
@@ -201,7 +199,6 @@ export function listsReducer(
         }, state.listDetails);
       } else {
         listDetails = listsAdapter.setOne(newVersion, state.listDetails);
-        updated = true;
       }
       state = {
         ...state,

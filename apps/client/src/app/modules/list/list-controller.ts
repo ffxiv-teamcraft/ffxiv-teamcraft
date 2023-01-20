@@ -1,10 +1,9 @@
 import { getCraftByPriority, getItemSource, ListRow } from './model/list-row';
-import { deepClone } from 'fast-json-patch';
 import { DataType } from './data/data-type';
 import { MathTools } from '../../tools/math-tools';
 import * as semver from 'semver';
-import { BehaviorSubject, combineLatest, concat, EMPTY, Observable, of, Subject } from 'rxjs';
-import { bufferCount, debounceTime, expand, map, skip, skipUntil, switchMap, tap } from 'rxjs/operators';
+import { combineLatest, concat, EMPTY, Observable, of, Subject } from 'rxjs';
+import { bufferCount, debounceTime, expand, map, skipUntil, switchMap } from 'rxjs/operators';
 import { CustomItem } from '../custom-items/model/custom-item';
 import { CraftAddition } from './model/craft-addition';
 import { ListManagerService } from './list-manager.service';
@@ -59,7 +58,7 @@ export class ListController {
     clone.etag = internal ? list.etag : 0;
     clone.ignoreRequirementsRegistry = list.ignoreRequirementsRegistry;
     if (internal) {
-      Object.assign(clone, deepClone(list));
+      Object.assign(clone, structuredClone(list));
     } else {
       for (const prop of Object.keys(list)) {
         if (['finalItems', 'items', 'note'].indexOf(prop) > -1) {
@@ -85,6 +84,7 @@ export class ListController {
   public static reset(list: List): void {
     list.finalItems.forEach(recipe => ListController.resetDone(list, recipe));
     ListController.updateAllStatuses(list);
+    ListController.updateEtag(list);
   }
 
   /**
@@ -124,6 +124,7 @@ export class ListController {
         });
       });
     }
+    ListController.updateEtag(list);
     return ListController.add(list, list.finalItems, data, true);
   }
 
@@ -140,7 +141,7 @@ export class ListController {
     otherList.finalItems.forEach(recipe => {
       ListController.add(list, list.finalItems, recipe, true);
     });
-    return ListController.clean(list);
+    return ListController.updateEtag(ListController.clean(list));
   }
 
   /**
@@ -218,6 +219,11 @@ export class ListController {
     });
   }
 
+  public static updateEtag(list: List): List {
+    list.etag = Date.now();
+    return list;
+  }
+
   /**
    * Adds items to a given row and tags them as used if they're "done" from another craft.
    *
@@ -286,6 +292,7 @@ export class ListController {
         }
       }
     }
+    ListController.updateEtag(list);
   }
 
   public static canBeCrafted(list: List, item: ListRow): boolean {
@@ -404,12 +411,11 @@ export class ListController {
         ListController.resetDone(list, requirementItem);
       });
     }
+    ListController.updateEtag(list);
   }
 
   public static addCraft(list: List, {
     _additions,
-    customItems,
-    dataService,
     listManager,
     lazyDataFacade,
     recipeId,
@@ -424,11 +430,7 @@ export class ListController {
         }
         return concat(
           ...additions.map(addition => {
-            if (addition.data instanceof CustomItem) {
-              return ListController.addCustomCraft(list, addition, customItems, dataService, listManager);
-            } else {
-              return ListController.addNormalCraft(list, addition, listManager, lazyDataFacade, gearsets, recipeId, i === 0);
-            }
+            return ListController.addNormalCraft(list, addition, listManager, lazyDataFacade, gearsets, recipeId, i === 0);
           })
         ).pipe(
           bufferCount(additions.length),
@@ -438,7 +440,7 @@ export class ListController {
       debounceTime(100),
       skipUntil(done$),
       map(() => {
-        return list;
+        return ListController.updateEtag(list);
       })
     );
   }
@@ -578,95 +580,6 @@ export class ListController {
     );
   }
 
-  private static addCustomCraft(list: List, addition: CraftAddition, customItems: CustomItem[], dataService: DataService, listManager: ListManagerService): Observable<CraftAddition[]> {
-    const item: CustomItem = addition.data as CustomItem;
-    const nextIteration: CraftAddition[] = [];
-    let index = 0;
-    const queue$ = new BehaviorSubject<Ingredient>(item.requires[0]);
-    return queue$.pipe(
-      switchMap(element => {
-        if (element.id < 20 && element.id > 1) {
-          ListController.add(list, list.items, {
-            id: +element.id,
-            amount: element.amount * addition.amount,
-            done: 0,
-            used: 0,
-            yield: 1,
-            collectable: false
-          });
-          listManager.addDetails(list);
-          return of(null);
-        } else {
-          if (element.custom) {
-            const itemDetails = customItems.find(i => i.$key === element.id);
-            const itemDetailsClone = new CustomItem();
-            Object.assign(itemDetailsClone, itemDetails);
-            itemDetailsClone.amount = element.amount * addition.amount;
-            itemDetailsClone.done = 0;
-            itemDetailsClone.used = 0;
-            itemDetailsClone.id = itemDetails.$key;
-            const added = ListController.add(list, list.items, itemDetailsClone);
-            if (itemDetailsClone.requires !== undefined) {
-              return of({
-                data: itemDetailsClone,
-                amount: added
-              });
-            }
-            return of(null);
-          } else {
-            return dataService.getItem(+element.id).pipe(
-              map(elementItemData => {
-                const elementDetails = elementItemData.item;
-                if (elementDetails.isCraft()) {
-                  const yields = elementDetails.craft[0].yield || 1;
-                  const added = ListController.add(list, list.items, {
-                    id: elementDetails.id,
-                    icon: elementDetails.icon,
-                    amount: element.amount * addition.amount,
-                    requires: elementDetails.craft[0].ingredients,
-                    done: 0,
-                    used: 0,
-                    yield: yields,
-                    collectable: false
-                  });
-                  return {
-                    item: elementDetails,
-                    data: elementItemData,
-                    amount: added
-                  };
-                } else {
-                  ListController.add(list, list.items, {
-                    id: elementDetails.id,
-                    icon: elementDetails.icon,
-                    amount: element.amount * addition.amount,
-                    done: 0,
-                    used: 0,
-                    yield: 1,
-                    collectable: false
-                  });
-                }
-                listManager.addDetails(list);
-              })
-            );
-          }
-        }
-      }),
-      tap((res) => {
-        if (res !== null && res !== undefined) {
-          nextIteration.push(res as CraftAddition);
-        }
-        index++;
-        if (item.requires[index] !== undefined) {
-          queue$.next(item.requires[index]);
-        }
-      }),
-      skip(item.requires.length - 1),
-      map(() => {
-        return nextIteration;
-      })
-    );
-  }
-
   private static add(list: List, array: ListRow[], data: ListRow, recipe = false): number {
     let previousAmount = 0;
     let row = array.find(r => {
@@ -692,6 +605,7 @@ export class ListController {
       }
     }
     ListController.updateAllStatuses(list);
+    ListController.updateEtag(list);
     return added;
   }
 

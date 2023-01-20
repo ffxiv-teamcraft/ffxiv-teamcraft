@@ -463,7 +463,7 @@ export class AlarmsFacade {
   private sortAlarmDisplays(alarms: AlarmDisplay[]): AlarmDisplay[] {
     return alarms.sort((a, b) => {
       if (a.spawned && b.spawned) {
-        return a.remainingTime < b.remainingTime ? -1 : 1;
+        return Math.abs(a.remainingTime -  b.remainingTime) < 10 ? -1 : 1;
       }
       if (a.spawned) {
         return -1;
@@ -471,7 +471,7 @@ export class AlarmsFacade {
       if (b.spawned) {
         return 1;
       }
-      if (a.remainingTime === b.remainingTime) {
+      if (Math.abs(a.remainingTime -  b.remainingTime) < 10) {
         return a.alarm.itemId < b.alarm.itemId ? -1 : 1;
       }
       return a.remainingTime < b.remainingTime ? -1 : 1;
