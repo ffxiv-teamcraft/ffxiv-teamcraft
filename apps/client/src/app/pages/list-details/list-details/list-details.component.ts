@@ -160,8 +160,20 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.finalItemsRow$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$]).pipe(
       switchMap(([list, adaptativeFilter, overrideHideCompleted]) => this.layoutsFacade.getFinalItemsDisplay(list, adaptativeFilter, overrideHideCompleted))
     );
-    this.display$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$]).pipe(
-      switchMap(([list, adaptativeFilter, overrideHideCompleted]) => this.layoutsFacade.getDisplay(list, adaptativeFilter, overrideHideCompleted)),
+    this.display$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$, this.displayMode$]).pipe(
+      switchMap(([list, adaptativeFilter, overrideHideCompleted, displayMode]) => {
+        const layout$ = this.layoutsFacade.selectedLayout$.pipe(
+          map(layout => {
+            if (displayMode === ListDisplayMode.STEP_BY_STEP) {
+              const withFinalItems = layout.clone();
+              withFinalItems.includeRecipesInItems = true;
+              return withFinalItems;
+            }
+            return layout;
+          })
+        );
+        return this.layoutsFacade.getDisplay(list, adaptativeFilter, overrideHideCompleted, layout$);
+      }),
       shareReplay({ bufferSize: 1, refCount: true })
     );
     this.crystals$ = this.list$.pipe(
