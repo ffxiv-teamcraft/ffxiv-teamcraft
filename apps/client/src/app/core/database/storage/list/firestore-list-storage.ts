@@ -115,7 +115,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> {
     return super.get(uid)
       .pipe(
         switchMap(list => {
-          return this.completeListData(list);
+          return this.completeListData(structuredClone(list));
         })
       );
   }
