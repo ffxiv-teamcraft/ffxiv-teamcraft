@@ -298,10 +298,10 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
                 const aIlvl = lazyIlvls[a.equipmentPiece.itemId];
                 const bIlvl = lazyIlvls[b.equipmentPiece.itemId];
                 if (aIlvl === bIlvl) {
-                  return b.item.ID - a.item.Id;
+                  return b.equipmentPiece.itemId - a.equipmentPiece.itemId;
                 }
                 return aIlvl - bIlvl;
-              }).slice(0, 10); // Max 10 items per category to avoid rendering issues.
+              }).slice(0, 20); // Max 20 items per category to avoid rendering issues.
               return category;
             })
             .sort((a, b) => {
