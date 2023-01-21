@@ -2000,7 +2000,10 @@
     "Install_npcap_description": "デフォルトのnpcapモードでパケットキャプチャを利用するためにはnpcapのインストールが必要です。npcapのインストールとTeamcraftの再起動を行いますか？",
     "Install_npcap_button": "Npcap をインストールして Teamcraft を再起動します",
     "Not_as_anonymous": "パケットキャプチャは匿名ユーザでは正しく動作しません",
-    "Not_as_anonymous_description": "右上隅の「匿名」にカーソルを重ね、表示されたメニューの「登録」をクリックしてユーザ登録をするか、または設定内でパケットキャプチャを無効にしてください。"
+    "Not_as_anonymous_description": "右上隅の「匿名」にカーソルを重ね、表示されたメニューの「登録」をクリックしてユーザ登録をするか、または設定内でパケットキャプチャを無効にしてください。",
+    "Status": "Packet capture status",
+    "Pcap": "Packet capture",
+    "Inventory": "Inventory tracking"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "{{region}}に変更することをおすすめします",
