@@ -2000,7 +2000,10 @@
     "Install_npcap_description": "为在默认的 Npcap 下使用 Teamcraft 的数据包捕获功能，您需要安装 Npcap。Teamcraft 可以帮你安装并在安装完成后自动重启本应用。",
     "Install_npcap_button": "安装 Npcap 并重启 Teamcraft",
     "Not_as_anonymous": "在未登录状态下数据包捕获无法正常工作。",
-    "Not_as_anonymous_description": "请在界面右上角“匿名”标签悬停，并点击“注册”或在设置内禁用数据包捕获功能。"
+    "Not_as_anonymous_description": "请在界面右上角“匿名”标签悬停，并点击“注册”或在设置内禁用数据包捕获功能。",
+    "Status": "Packet capture status",
+    "Pcap": "Packet capture",
+    "Inventory": "Inventory tracking"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "建议将区域更改为 {{region}}",
