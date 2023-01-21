@@ -2000,7 +2000,10 @@
     "Install_npcap_description": "In order to have Teamcraft capture packets with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
     "Install_npcap_button": "Install npcap and restart Teamcraft",
     "Not_as_anonymous": "Packet capture won't work properly as Anonymous",
-    "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\", or disable packet capture inside the settings."
+    "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\", or disable packet capture inside the settings.",
+    "Status": "Packet capture status",
+    "Pcap": "Packet capture",
+    "Inventory": "Inventory tracking"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Suggest changing region to {{region}}",
