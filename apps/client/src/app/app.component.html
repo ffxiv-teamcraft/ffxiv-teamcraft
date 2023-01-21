@@ -67,6 +67,27 @@
               </nz-badge>
             </li>
           </ng-container>
+          <li *ngIf="desktop">
+            <ng-template #pcapStatusTpl>
+              <div class="flex-row space-between">
+                <div>{{'PACKET_CAPTURE.Pcap' | translate}}</div>
+                <div>
+                  <nz-badge [nzStatus]="pcapStatus$ | async"></nz-badge>
+                </div>
+              </div>
+              <div class="flex-row space-between">
+                <div>{{'PACKET_CAPTURE.Inventory' | translate}}</div>
+                <div>
+                  <nz-badge [nzStatus]="inventoryStatus$ | async"></nz-badge>
+                </div>
+              </div>
+            </ng-template>
+            <div class="pcap-status" nz-popover [nzPopoverTitle]="'PACKET_CAPTURE.Status' | translate" [nzPopoverContent]="pcapStatusTpl"
+                 nzPopoverPlacement="bottom">
+              <nz-badge [nzStatus]="pcapFeaturesStatus$ | async" class="status-badge"></nz-badge>
+              <span nz-icon nzType="scan" nzTheme="outline"></span>
+            </div>
+          </li>
           <ng-container *ngIf="pinnedList$ | async as pinnedList">
             <li *ngIf="pinnedList !== 'none'"
                 class="ant-menu-item"

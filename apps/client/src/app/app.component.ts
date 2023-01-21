@@ -66,6 +66,9 @@ import { IS_HEADLESS } from '../environments/is-headless';
 import { LocalStorageBehaviorSubject } from './core/rxjs/local-storage-behavior-subject';
 import { Database, objectVal, ref } from '@angular/fire/database';
 import { gameEnv } from '../environments/game-env';
+import { PacketCaptureStatus } from './core/electron/packet-capture-status';
+import { NzBadgeStatusType } from 'ng-zorro-antd/badge/types';
+import { InventoryCaptureStatus } from './modules/inventory/inventory-capture-status';
 
 @Component({
   selector: 'app-root',
@@ -82,6 +85,47 @@ export class AppComponent implements OnInit {
 
   public availableLanguages = this.settings.availableLocales;
 
+  public pcapStatus$: Observable<NzBadgeStatusType> = this.ipc.pcapStatus$.pipe(
+    map(status => {
+      return (<Record<PacketCaptureStatus, NzBadgeStatusType>>{
+        [PacketCaptureStatus.STARTING]: 'processing',
+        [PacketCaptureStatus.RUNNING]: 'success',
+        [PacketCaptureStatus.STOPPED]: 'default',
+        [PacketCaptureStatus.ERROR]: 'error',
+        [PacketCaptureStatus.WARNING]: 'warning'
+      })[status];
+    })
+  );
+
+  public inventoryStatus$: Observable<NzBadgeStatusType> = this.inventoryService.status$.pipe(
+    map(status => {
+      return (<Record<InventoryCaptureStatus, NzBadgeStatusType>>{
+        [InventoryCaptureStatus.RUNNING]: 'success',
+        [InventoryCaptureStatus.IGNORED_CHAR]: 'default',
+        [InventoryCaptureStatus.ERROR]: 'error',
+        [InventoryCaptureStatus.UNKNOWN_CHAR]: 'warning'
+      })[status];
+    })
+  );
+
+  public pcapFeaturesStatus$: Observable<NzBadgeStatusType> = combineLatest([this.pcapStatus$, this.inventoryStatus$]).pipe(
+    map(([pcap, inventory]) => {
+      if (pcap === 'success' && inventory === 'success') {
+        return 'success';
+      }
+      if (inventory === 'warning' || pcap === 'warning') {
+        return 'warning';
+      }
+      if (inventory === 'error' || pcap === 'error') {
+        return 'error';
+      }
+      if (pcap === 'processing') {
+        return 'processing';
+      }
+      return 'default';
+    })
+  );
+
   locale: string;
 
   version = environment.version;
@@ -91,9 +135,9 @@ export class AppComponent implements OnInit {
     default: `v${this.version}`
   };
 
-  public githubStars$ = this.http.get<{stargazers_count: number}>('https://api.github.com/repos/ffxiv-teamcraft/ffxiv-teamcraft').pipe(
+  public githubStars$ = this.http.get<{ stargazers_count: number }>('https://api.github.com/repos/ffxiv-teamcraft/ffxiv-teamcraft').pipe(
     map(repo => repo.stargazers_count)
-  )
+  );
 
   public overlayOpacity = 1;
 

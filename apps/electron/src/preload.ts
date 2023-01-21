@@ -3,6 +3,7 @@ import { IpcRendererEvent } from 'electron';
 const { contextBridge, ipcRenderer } = require('electron');
 
 const allowedChannels = [
+  'pcap:status',
   'metrics:importing',
   'metrics:imported',
   'metrics:delete',

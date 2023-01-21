@@ -122,6 +122,7 @@ export class PacketCapture {
     if (this.captureInterface) {
       this.captureInterface.stop();
     }
+    this.mainWindow.win.webContents.send('pcap:status', 'stopped');
   }
 
   addMachinaFirewallRule(): void {
@@ -182,6 +183,8 @@ export class PacketCapture {
     const region = this.store.get('region', 'Global');
     const rawsock = this.store.get('rawsock', false);
 
+    this.mainWindow.win.webContents.send('pcap:status', 'starting');
+
     if (rawsock) {
       const elevated = await isElevated();
       if (!elevated) {
@@ -235,9 +238,11 @@ export class PacketCapture {
     this.captureInterface = new CaptureInterface(options);
     this.captureInterface.start()
       .then(() => {
+        this.mainWindow.win.webContents.send('pcap:status', 'running');
         log.info('Packet capture started');
       })
       .catch((err) => {
+        this.mainWindow.win.webContents.send('pcap:status', 'error');
         log.error(`Couldn't start packet capture`);
         log.error(err);
         if (err.message === `Cannot call write after a stream was destroyed`) {
