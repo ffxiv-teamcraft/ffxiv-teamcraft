@@ -2000,7 +2000,10 @@
     "Install_npcap_description": "Um in Teamcraft die Paketerfassung mit seinem ursprünglichen npcap Modus nutzen zu können, muss npcap installiert sein. Teamcraft kann es für dich installieren und die Anwendung neu starten, sobald es fertig ist.",
     "Install_npcap_button": "Installiere npcap und starte Teamcraft neu",
     "Not_as_anonymous": "Paketerfassung funktioniert nicht korrekt als anonyme Person",
-    "Not_as_anonymous_description": "Bitte registriere dich, indem du die Bezeichnung \"Anonymous\" in der oberen rechten Ecke drückst und auf \"Registrieren\" klickst, oder die Paketaufnahme innerhalb der Einstellungen deaktivierst."
+    "Not_as_anonymous_description": "Bitte registriere dich, indem du die Bezeichnung \"Anonymous\" in der oberen rechten Ecke drückst und auf \"Registrieren\" klickst, oder die Paketaufnahme innerhalb der Einstellungen deaktivierst.",
+    "Status": "Packet capture status",
+    "Pcap": "Packet capture",
+    "Inventory": "Inventory tracking"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Region zu {{region}} wechseln",
