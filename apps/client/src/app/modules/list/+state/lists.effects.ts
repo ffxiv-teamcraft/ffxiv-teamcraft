@@ -408,7 +408,7 @@ export class ListsEffects {
         first()
       );
       if (autofillEnabled && completionNotificationEnabled && action.fromPacket) {
-        const itemDone = item.done + action.doneDelta >= item.amount;
+        const itemDone = item.done >= item.amount;
         const played = localStorage.getItem('autofill:completion');
         if (itemDone && (!played || +played < Date.now() - 1000)) {
           return this.i18n.getNameObservable('items', action.itemId).pipe(
