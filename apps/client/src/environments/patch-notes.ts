@@ -10,4 +10,4 @@ export const patchNotes = `### Bug Fixes
 
 ### Performance Improvements
 
-* **list:** better concurrency management with time-based etag.`;
+* **list:** better concurrency management with time-based etag.`;
