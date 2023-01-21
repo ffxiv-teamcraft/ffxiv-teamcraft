@@ -55,6 +55,7 @@ import { I18nRowPipe } from './i18n/i18n-row.pipe';
 import { NzNotificationModule } from 'ng-zorro-antd/notification';
 import { NgForTrackByIdDirective } from './track-by/ng-for-track-by-id.directive';
 import { NgForTrackByKeyDirective } from './track-by/ng-for-track-by-key.directive';
+import { FathomEventDirective } from './analytics/fathom-event.directive';
 
 
 @NgModule({
@@ -125,7 +126,8 @@ import { NgForTrackByKeyDirective } from './track-by/ng-for-track-by-key.directi
     I18nNameComponent,
     I18nRowPipe,
     NgForTrackByIdDirective,
-    NgForTrackByKeyDirective
+    NgForTrackByKeyDirective,
+    FathomEventDirective
   ],
   exports: [
     I18nPipe,
@@ -146,6 +148,7 @@ import { NgForTrackByKeyDirective } from './track-by/ng-for-track-by-key.directi
     NzToolTipModule,
     NzIconModule,
     I18nRowPipe,
+    FathomEventDirective,
     NgForTrackByIdDirective,
     NgForTrackByKeyDirective
   ]

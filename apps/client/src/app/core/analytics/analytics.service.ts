@@ -4,6 +4,7 @@ import { IpcService } from '../electron/ipc.service';
 import { TranslateService } from '@ngx-translate/core';
 
 declare const gtag: (...args: any[]) => void;
+declare const fathom: any;
 
 @Injectable({
   providedIn: 'root'
@@ -62,5 +63,9 @@ export class AnalyticsService {
       gtag('set', 'page', url);
       gtag('send', 'pageview');
     }
+  }
+
+  public event(code: string): void {
+    fathom.trackGoal(code, 0);
   }
 }
