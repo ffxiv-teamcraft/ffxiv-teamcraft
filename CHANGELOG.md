@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.1.0"></a>
+# [10.1.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.0.8...v10.1.0) (2023-01-22)
+
+
+### Bug Fixes
+
+* **desktop:** fixed autofill completion notification triggered before item is done ([0797857](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0797857))
+* **gearsets:** bump max results per slot to 20 ([4af0eac](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4af0eac))
+* **list:** fixed a possible sync bug after navigating out of a list and coming back ([dbc2821](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dbc2821))
+* **step-by-step:** better layout and responsive design ([4e7f285](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4e7f285))
+* **step-by-step:** fixed trades sometimes showing wrong currency ([c8b961f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c8b961f))
+* **step-by-step:** larger details panel when there's space for it ([56bcc82](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/56bcc82))
+
+
+### Features
+
+* **alarms:** you can now mark individual spawns as done to push them last ([722b007](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/722b007))
+* **desktop:** packet capture status icon in top-right corner ([be6829e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/be6829e))
+* **gearsets:** now displaying total currencies needed for materias ([ed306ca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ed306ca))
+
+
+
 <a name="10.0.8"></a>
 ## [10.0.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.0.6...v10.0.8) (2023-01-20)
 
