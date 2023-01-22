@@ -2181,6 +2181,7 @@
     "Editing_others_gearset": "로컬 편집 모드",
     "Editing_others_gearset_description": "현재 다른 플레이어의 장비 세트를 수정 중입니다. 만약 저장 버튼을 사용하여 사본을 만들지 않으면 창을 닫은 후에 데이터가 손실됩니다.",
     "Empty_materias": "선택된 모든 장비의 마테리아 제거",
+    "Total_scrips": "Total currencies needed",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",
