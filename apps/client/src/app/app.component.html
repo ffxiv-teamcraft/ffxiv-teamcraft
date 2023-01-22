@@ -1,4 +1,5 @@
 <app-loading-screen *ngIf="!dataLoaded; else appLayout"></app-loading-screen>
+<app-breakpoint-debug *ngIf="breakpointDebug"></app-breakpoint-debug>
 <ng-template #appLayout>
   <nz-layout *ngIf="!(hasDesktop$ | async); else desktopOpenedMessage" [class.no-panel-borders]="settings.noPanelBorders"
              class="app-container" [class.blur]="desktopLoading$ | async">
