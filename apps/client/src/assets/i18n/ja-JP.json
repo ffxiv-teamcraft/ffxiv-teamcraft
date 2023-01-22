@@ -135,6 +135,7 @@
     "Search": "検索"
   },
   "COMMON": {
+    "Done": "Done",
     "Length": "長さ",
     "Save": "保存",
     "Reset": "リセット",
@@ -2000,7 +2001,10 @@
     "Install_npcap_description": "デフォルトのnpcapモードでパケットキャプチャを利用するためにはnpcapのインストールが必要です。npcapのインストールとTeamcraftの再起動を行いますか？",
     "Install_npcap_button": "Npcap をインストールして Teamcraft を再起動します",
     "Not_as_anonymous": "パケットキャプチャは匿名ユーザでは正しく動作しません",
-    "Not_as_anonymous_description": "右上隅の「匿名」にカーソルを重ね、表示されたメニューの「登録」をクリックしてユーザ登録をするか、または設定内でパケットキャプチャを無効にしてください。"
+    "Not_as_anonymous_description": "右上隅の「匿名」にカーソルを重ね、表示されたメニューの「登録」をクリックしてユーザ登録をするか、または設定内でパケットキャプチャを無効にしてください。",
+    "Status": "Packet capture status",
+    "Pcap": "Packet capture",
+    "Inventory": "Inventory tracking"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "{{region}}に変更することをおすすめします",
@@ -2178,6 +2182,7 @@
     "Editing_others_gearset": "ローカル編集モード",
     "Editing_others_gearset_description": "You're currently editing someone else's gearset. Nothing will be saved unless you click the save button above to create your own copy.",
     "Empty_materias": "選択されたすべての装備からマテリアを削除",
+    "Total_scrips": "Total currencies needed",
     "SLOT": {
       "Body": "胴防具",
       "Ears": "耳飾り",
