@@ -2181,6 +2181,7 @@
     "Editing_others_gearset": "本地编辑模式",
     "Editing_others_gearset_description": "您目前正在编辑他人的配装。除非您点击上面的保存按钮来创建您自己的副本，否则任何东西都不会被保存。",
     "Empty_materias": "从所选套装中移除所有魔晶石",
+    "Total_scrips": "Total currencies needed",
     "SLOT": {
       "Body": "身体",
       "Ears": "耳部",
