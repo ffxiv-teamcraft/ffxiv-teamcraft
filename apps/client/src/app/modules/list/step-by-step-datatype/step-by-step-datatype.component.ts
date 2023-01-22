@@ -5,7 +5,7 @@ import { PermissionLevel } from '../../../core/database/permissions/permission-l
 import { ListsFacade } from '../+state/lists.facade';
 import { observeInput } from '../../../core/rxjs/observe-input';
 import { combineLatest, Observable, of } from 'rxjs';
-import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
+import { filter, map, switchMap } from 'rxjs/operators';
 import { NpcBreakdown } from '../../../model/common/npc-breakdown';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';

@@ -11,15 +11,23 @@
           <i *ngIf="row.alarm.ephemeral" [nzTooltipTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
              nzType="clock-circle"></i>
         </div>
-        <div class="item-icon">
-          <app-item-icon *ngIf="row.alarm.itemId"
-                         [icon]="row.alarm.itemId | lazyIcon"
-                         [itemId]="row.alarm.itemId"
-                         [itemName]="row.alarm.itemId | itemName: row.alarm | i18n"
-                         [width]="32"></app-item-icon>
-          <img *ngIf="row.alarm.type === -10" class="img-icon" [src]="row.alarm.icon | xivapiIcon" alt="">
-          <img *ngIf="row.alarm.type !== -10" alt="" class="node-type" src="{{row.alarm.type | nodeTypeIcon: true}}">
-          <img *ngIf="row.alarm.type === -10" alt="" class="node-type" src="https://xivapi.com/i/063000/063949.png">
+        <div class="flex-column gap-2 justify-center">
+          <div>
+            <div class="item-icon">
+              <app-item-icon *ngIf="row.alarm.itemId"
+                             [icon]="row.alarm.itemId | lazyIcon"
+                             [itemId]="row.alarm.itemId"
+                             [itemName]="row.alarm.itemId | itemName: row.alarm | i18n"
+                             [width]="32"></app-item-icon>
+              <img *ngIf="row.alarm.type === -10" class="img-icon" [src]="row.alarm.icon | xivapiIcon" alt="">
+              <img *ngIf="row.alarm.type !== -10" alt="" class="node-type" src="{{row.alarm.type | nodeTypeIcon: true}}">
+              <img *ngIf="row.alarm.type === -10" alt="" class="node-type" src="https://xivapi.com/i/063000/063949.png">
+            </div>
+          </div>
+          <div>
+            <button *ngIf="row.spawned && !row.alarm.done" nz-button nzSize="small" nzType="primary" (click)="markAsDone(row.alarm)"
+                    class="done-button" nz-tooltip [nzTooltipTitle]="'COMMON.Done' | translate"><span nz-icon nzType="check" nzTheme="outline"></span></button>
+          </div>
         </div>
         <div class="center-content">
           <span *ngIf="row.alarm.itemId; else customName">

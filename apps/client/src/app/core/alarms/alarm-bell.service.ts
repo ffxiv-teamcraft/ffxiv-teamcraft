@@ -168,6 +168,7 @@ export class AlarmBellService {
         })
       ).subscribe(alarmsToPlay => {
       alarmsToPlay.forEach(alarm => {
+        this.alarmsFacade.pureUpdateAlarm(alarm.$key, { done: false });
         if (!this.settings.alarmsMuted) {
           this.notify(alarm);
         }

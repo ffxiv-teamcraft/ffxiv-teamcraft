@@ -135,6 +135,7 @@
     "Search": "Suche"
   },
   "COMMON": {
+    "Done": "Done",
     "Length": "Länge",
     "Save": "Speichern",
     "Reset": "Neustart",
@@ -2000,7 +2001,10 @@
     "Install_npcap_description": "Um in Teamcraft die Paketerfassung mit seinem ursprünglichen npcap Modus nutzen zu können, muss npcap installiert sein. Teamcraft kann es für dich installieren und die Anwendung neu starten, sobald es fertig ist.",
     "Install_npcap_button": "Installiere npcap und starte Teamcraft neu",
     "Not_as_anonymous": "Paketerfassung funktioniert nicht korrekt als anonyme Person",
-    "Not_as_anonymous_description": "Bitte registriere dich, indem du die Bezeichnung \"Anonymous\" in der oberen rechten Ecke drückst und auf \"Registrieren\" klickst, oder die Paketaufnahme innerhalb der Einstellungen deaktivierst."
+    "Not_as_anonymous_description": "Bitte registriere dich, indem du die Bezeichnung \"Anonymous\" in der oberen rechten Ecke drückst und auf \"Registrieren\" klickst, oder die Paketaufnahme innerhalb der Einstellungen deaktivierst.",
+    "Status": "Packet capture status",
+    "Pcap": "Packet capture",
+    "Inventory": "Inventory tracking"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Region zu {{region}} wechseln",
@@ -2178,6 +2182,7 @@
     "Editing_others_gearset": "Lokaler Bearbeitungsmodus",
     "Editing_others_gearset_description": "Du bearbeitest gerade das Ausrüstungsset eines anderen Benutzers. Es wird nichts gespeichert, solange du nicht oben auf die Schaltfläche \"Speichern\" klickst, um deine eigene Kopie zu erstellen.",
     "Empty_materias": "Alle Materia aus der ausgewählten Ausrüstung entfernen",
+    "Total_scrips": "Total currencies needed",
     "SLOT": {
       "Body": "Rumpf",
       "Ears": "Ohrring",

@@ -16,6 +16,7 @@ export const environment = {
   startTimestamp: Date.now(),
   noAnimations: false,
   verboseOperations: false,
+  breakpointDebug: false,
   ...gameEnv,
   firebase: {
     apiKey: 'AIzaSyCkrNPf7XlyuxQeqNtynvDFDnQ-XigG3WA',

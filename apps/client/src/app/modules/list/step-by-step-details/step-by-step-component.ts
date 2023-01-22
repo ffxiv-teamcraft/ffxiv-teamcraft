@@ -113,7 +113,11 @@ export abstract class StepByStepComponent extends TeamcraftComponent implements 
                 itemId: row.row.id,
                 type: row.type,
                 listRow: row.row,
-                icon: row.icon
+                icon: row.icon,
+                additionalStyle: {
+                  width: '24px',
+                  height: '24px'
+                }
               };
             });
         }).flat().filter(Boolean);
@@ -157,8 +161,8 @@ export abstract class StepByStepComponent extends TeamcraftComponent implements 
                               iconType: 'img',
                               iconImg: row.icon,
                               additionalStyle: {
-                                width: '32px',
-                                height: '32px'
+                                width: '24px',
+                                height: '24px'
                               }
                             } as MapMarker;
                           });

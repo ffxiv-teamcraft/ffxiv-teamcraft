@@ -15,7 +15,8 @@ import { FreeCompanyDialog, Message } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { toIpcData } from '../rxjs/to-ipc-data';
 import { UpdateInstallPopupComponent } from '../../modules/ipc-popups/update-install-popup/update-install-popup.component';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { NzMessageRef, NzMessageService } from 'ng-zorro-antd/message';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { PacketCaptureStatus } from './packet-capture-status';
 
 type EventCallback = (event: IpcRendererEvent, ...args: any[]) => void;
 
@@ -44,6 +45,8 @@ declare global {
 export class IpcService {
 
   public static readonly ROTATION_DEFAULT_DIMENSIONS = { x: 600, y: 200 };
+
+  public readonly pcapStatus$ = new BehaviorSubject<PacketCaptureStatus>(PacketCaptureStatus.STOPPED);
 
   public packets$ = new Subject<Message>();
 
@@ -380,7 +383,7 @@ export class IpcService {
       });
     });
     this.on('metrics:imported', () => {
-      this.message.remove()
+      this.message.remove();
       this.message.info(this.translate.instant('METRICS.Imported'), {
         nzDuration: 10000
       });
@@ -470,10 +473,12 @@ export class IpcService {
           }
         });
     });
+    this.on('pcap:status', (e, status) => this.pcapStatus$.next(status));
     // If we don't get a packet for an entire minute, something is wrong.
     this.packets$.pipe(
       debounceTime(60000)
     ).subscribe(() => {
+      this.pcapStatus$.next(PacketCaptureStatus.WARNING);
       this.send('log', {
         level: 'error',
         data: 'No ping received from the server during 60 seconds'

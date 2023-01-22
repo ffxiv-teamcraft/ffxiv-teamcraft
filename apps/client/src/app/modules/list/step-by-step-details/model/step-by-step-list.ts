@@ -52,7 +52,14 @@ export class StepByStepList {
             hasCoords = true;
             positions.forEach(position => {
               if (this.shouldAddMap(position.mapId)) {
-                this.addToMapIndex(position.mapId, row, [source], position.coords, position.icon, position.type);
+                const preparedSource = structuredClone(source);
+                if (source.type === DataType.TRADE_SOURCES) {
+                  // If it's a trade, we want to filter to make sure it's on this map, to avoid showing wrong currency and details.
+                  preparedSource.data = preparedSource.data.filter(ts => {
+                    return ts.npcs.some(npc => npc.mapId === position.mapId);
+                  });
+                }
+                this.addToMapIndex(position.mapId, row, [preparedSource], position.coords, position.icon, position.type);
               }
             });
           }

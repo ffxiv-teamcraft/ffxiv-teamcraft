@@ -135,6 +135,7 @@
     "Search": "검색"
   },
   "COMMON": {
+    "Done": "Done",
     "Length": "길이",
     "Save": "저장",
     "Reset": "초기화",
@@ -2000,7 +2001,10 @@
     "Install_npcap_description": "팀크래프트의 패킷 캡처를 npcap 모드로 사용하기 위해서는 npcap 설치가 필요합니다. 설치가 끝나면 팀크래프트를 다시 실행하실 수 있습니다.",
     "Install_npcap_button": "npcap 설치 및 팀크래프트 재실행",
     "Not_as_anonymous": "익명 상태에서는 패킷 캡쳐가 제대로 작동하지 않습니다",
-    "Not_as_anonymous_description": "우측 상단의 \"익명\"에 커서를 올려 계정을 등록하거나 설정에서 패킷 캡쳐를 비활성화 해주세요"
+    "Not_as_anonymous_description": "우측 상단의 \"익명\"에 커서를 올려 계정을 등록하거나 설정에서 패킷 캡쳐를 비활성화 해주세요",
+    "Status": "Packet capture status",
+    "Pcap": "Packet capture",
+    "Inventory": "Inventory tracking"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "{{region}} 로 변경하시는 것을 권장합니다.",
@@ -2178,6 +2182,7 @@
     "Editing_others_gearset": "로컬 편집 모드",
     "Editing_others_gearset_description": "현재 다른 플레이어의 장비 세트를 수정 중입니다. 만약 저장 버튼을 사용하여 사본을 만들지 않으면 창을 닫은 후에 데이터가 손실됩니다.",
     "Empty_materias": "선택된 모든 장비의 마테리아 제거",
+    "Total_scrips": "Total currencies needed",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",

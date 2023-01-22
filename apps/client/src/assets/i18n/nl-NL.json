@@ -135,6 +135,7 @@
     "Search": "Search"
   },
   "COMMON": {
+    "Done": "Done",
     "Length": "Duur",
     "Save": "Opslaan",
     "Reset": "Reset",
@@ -2000,7 +2001,10 @@
     "Install_npcap_description": "In order to have Teamcraft capture packets with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
     "Install_npcap_button": "Install npcap and restart Teamcraft",
     "Not_as_anonymous": "Packet capture won't work properly as Anonymous",
-    "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\", or disable packet capture inside the settings."
+    "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\", or disable packet capture inside the settings.",
+    "Status": "Packet capture status",
+    "Pcap": "Packet capture",
+    "Inventory": "Inventory tracking"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Suggest changing region to {{region}}",
@@ -2178,6 +2182,7 @@
     "Editing_others_gearset": "Local editing mode",
     "Editing_others_gearset_description": "You're currently editing someone else's gearset. Nothing will be saved unless you click the save button above to create your own copy.",
     "Empty_materias": "Remove all materias from selected gear",
+    "Total_scrips": "Total currencies needed",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",

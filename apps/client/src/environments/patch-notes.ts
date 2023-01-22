@@ -1,13 +1,15 @@
 export const patchNotes = `### Bug Fixes
 
-* **alarms:** add small timer comparison margin to prevent alarms order from jumping.
-* **lists:** fixed autofill not saving list to database after first item done.
-* **lists:** fixed progress bar display on smaller screen sizes.
-* **lists:** improvements to overlay sync and general list saving method.
-* **simulator:** fixed rotations not opening properly in simulator page.
-* **step-by-step:** fixed display being empty when only crafts are remaining.
+* **desktop:** fixed autofill completion notification triggered before item is done.
+* **gearsets:** bump max results per slot to 20.
+* **list:** fixed a possible sync bug after navigating out of a list and coming back.
+* **step-by-step:** better layout and responsive design.
+* **step-by-step:** fixed trades sometimes showing wrong currency.
+* **step-by-step:** larger details panel when there's space for it.
 
 
-### Performance Improvements
+### Features
 
-* **list:** better concurrency management with time-based etag.`;
+* **alarms:** you can now mark individual spawns as done to push them last.
+* **desktop:** packet capture status icon in top-right corner.
+* **gearsets:** now displaying total currencies needed for materias.`;

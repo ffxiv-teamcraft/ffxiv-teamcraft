@@ -12,7 +12,7 @@ import {
   DeleteAlarmGroup,
   DeleteAllAlarms,
   LoadAlarmGroup,
-  LoadAlarms,
+  LoadAlarms, PureUpdateAlarm,
   RemoveAlarm,
   SetAlarms,
   SetGroups,
@@ -43,6 +43,7 @@ import { safeCombineLatest } from '../../rxjs/safe-combine-latest';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyData } from '../../../lazy-data/lazy-data';
 import { XivapiPatch } from '../../data/model/xivapi-patch';
+import { UpdateData } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -462,8 +463,14 @@ export class AlarmsFacade {
 
   private sortAlarmDisplays(alarms: AlarmDisplay[]): AlarmDisplay[] {
     return alarms.sort((a, b) => {
+      if (a.spawned && a.alarm.done) {
+        return 1;
+      }
+      if (b.spawned && b.alarm.done) {
+        return -1;
+      }
       if (a.spawned && b.spawned) {
-        return Math.abs(a.remainingTime -  b.remainingTime) < 10 ? -1 : 1;
+        return Math.abs(a.remainingTime - b.remainingTime) < 10 ? -1 : 1;
       }
       if (a.spawned) {
         return -1;
@@ -471,7 +478,7 @@ export class AlarmsFacade {
       if (b.spawned) {
         return 1;
       }
-      if (Math.abs(a.remainingTime -  b.remainingTime) < 10) {
+      if (Math.abs(a.remainingTime - b.remainingTime) < 10) {
         return a.alarm.itemId < b.alarm.itemId ? -1 : 1;
       }
       return a.remainingTime < b.remainingTime ? -1 : 1;
@@ -592,5 +599,9 @@ export class AlarmsFacade {
       return [alarm, { ...alarmWithFishEyesEnabled, fishEyes: true }];
     }
     return [alarm];
+  }
+
+  pureUpdateAlarm(key:string, alarm: UpdateData<Alarm>):void {
+    this.store.dispatch(new PureUpdateAlarm(key, alarm))
   }
 }

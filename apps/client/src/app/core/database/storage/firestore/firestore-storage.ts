@@ -138,8 +138,7 @@ export abstract class FirestoreStorage<T extends DataModel> {
           tap(() => {
             this.recordOperation('read', key);
           }),
-          shareReplay(1),
-          takeUntil(this.stop$.pipe(filter(stop => stop === key)))
+          shareReplay(1)
         ).pipe(
           finalize(() => {
             setTimeout(() => {
@@ -153,7 +152,6 @@ export abstract class FirestoreStorage<T extends DataModel> {
 
   pureUpdate(key: string, data: UpdateData<T>): Observable<void> {
     return this.zone.runOutsideAngular(() => {
-      this.pendingChangesService.addPendingChange(`update ${this.getBaseUri()}/${key}`);
       return from(updateDoc(this.docRef(key), data)).pipe(
         catchError(error => {
           console.error(`UPDATE ${this.getBaseUri()}/${key}`);
@@ -162,7 +160,6 @@ export abstract class FirestoreStorage<T extends DataModel> {
         }),
         tap(() => {
           this.recordOperation('write', key);
-          this.pendingChangesService.removePendingChange(`update ${this.getBaseUri()}/${key}`);
         })
       );
     });
