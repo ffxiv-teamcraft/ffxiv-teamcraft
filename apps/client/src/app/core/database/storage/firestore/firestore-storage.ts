@@ -138,8 +138,7 @@ export abstract class FirestoreStorage<T extends DataModel> {
           tap(() => {
             this.recordOperation('read', key);
           }),
-          shareReplay(1),
-          takeUntil(this.stop$.pipe(filter(stop => stop === key)))
+          shareReplay(1)
         ).pipe(
           finalize(() => {
             setTimeout(() => {
