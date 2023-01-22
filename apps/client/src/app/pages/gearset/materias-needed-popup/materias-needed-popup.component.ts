@@ -4,8 +4,9 @@ import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetProgression } from '../../../model/gearset/gearset-progression';
 import { combineLatest, Observable } from 'rxjs';
 import { observeInput } from '../../../core/rxjs/observe-input';
-import { switchMap } from 'rxjs/operators';
+import { filter, map, switchMap } from 'rxjs/operators';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-materias-needed-popup',
@@ -28,7 +29,9 @@ export class MateriasNeededPopupComponent {
 
   totalNeeded$: Observable<{ id: number, amount: number, scrip?: { id: number, amount: number } }[]>;
 
-  constructor(private materiaService: MateriaService, public settings: SettingsService) {
+  totalPerCurrency$: Observable<{ id: number, amount: number }[]>;
+
+  constructor(private materiaService: MateriaService, public settings: SettingsService, public translate: TranslateService) {
     this.totalNeeded$ = combineLatest([
       observeInput(this, 'gearset'),
       observeInput(this, 'progression', true),
@@ -40,6 +43,24 @@ export class MateriasNeededPopupComponent {
         }
         return this.materiaService.getTotalNeededMaterias(gearset, includeAllTools || false, progression);
       })
+    );
+
+    this.totalPerCurrency$ = this.totalNeeded$.pipe(
+      map(total => {
+        return total.reduce((acc, row) => {
+          if (!row.scrip) {
+            return acc;
+          }
+          let currencyRow = acc.find(r => r.id === row.scrip.id);
+          if (!currencyRow) {
+            acc.push({ id: row.scrip.id, amount: 0 });
+            currencyRow = acc[acc.length - 1];
+          }
+          currencyRow.amount += row.amount * row.scrip.amount;
+          return acc;
+        }, []);
+      }),
+      filter(total => total.length > 0)
     );
   }
 

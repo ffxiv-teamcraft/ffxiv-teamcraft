@@ -17,7 +17,8 @@
     <tr>
       <th>{{'GEARSETS.Materia' | translate}}</th>
       <th>{{'GEARSETS.Amount_needed' | translate}}</th>
-      <th>{{'GEARSETS.Slots_used' | translate}} <i nz-icon nzType="info-circle" nz-tooltip [nzTooltipTitle]="'GEARSETS.Slots_used_explain' | translate"></i></th>
+      <th>{{'GEARSETS.Slots_used' | translate}} <i nz-icon nzType="info-circle" nz-tooltip [nzTooltipTitle]="'GEARSETS.Slots_used_explain' | translate"></i>
+      </th>
       <th>{{'GEARSETS.Cost' | translate}}</th>
     </tr>
     </thead>
@@ -28,7 +29,7 @@
         <div [itemNameCopy]="row.id">{{row.id | itemName | i18n}} ({{row.baseParamId | i18nRow:'baseParams' | i18n}} +{{row.value}})</div>
       </td>
       <td class="amount">
-        {{row.amount}}
+        {{row.amount | number:'1.0-0':translate.currentLang}}
       </td>
       <td class="amount">
         {{row.slots}}
@@ -36,11 +37,27 @@
       <td class="amount">
         <div *ngIf="row.scrip; else costUnknown" fxLayout="row" fxLayoutAlign="flex-end center">
           <app-item-icon [width]="24" [itemId]="row.scrip.id"></app-item-icon>
-          <div>x {{row.amount * row.scrip.amount}}</div>
+          <div>x {{(row.amount * row.scrip.amount) | number:'1.0-0':translate.currentLang}}</div>
         </div>
         <ng-template #costUnknown>???</ng-template>
       </td>
     </tr>
+    <ng-container *ngIf="totalPerCurrency$ | async as totalPerCurrency">
+      <tr>
+        <th colspan="4">{{'GEARSETS.Total_scrips' | translate}}</th>
+      </tr>
+      <tr *ngFor="let currency of totalPerCurrency">
+        <td colspan="2">
+          <div class="flex-row gap-5">
+            <app-item-icon [width]="24" [itemId]="currency.id"></app-item-icon>
+            <div [itemNameCopy]="currency.id">{{currency.id | itemName | i18n}}</div>
+          </div>
+        </td>
+        <td colspan="2">
+          <div>x {{currency.amount | number:'1.0-0':translate.currentLang}}</div>
+        </td>
+      </tr>
+    </ng-container>
     </tbody>
   </table>
 </div>
