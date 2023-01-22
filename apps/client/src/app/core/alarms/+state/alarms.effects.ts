@@ -11,6 +11,7 @@ import {
   CreateAlarmGroup,
   DeleteAlarmGroup,
   LoadAlarmGroup,
+  PureUpdateAlarm,
   RemoveAlarm,
   SetAlarms,
   SetGroups,
@@ -164,6 +165,13 @@ export class AlarmsEffects {
     .pipe(
       ofType(AlarmsActionTypes.UpdateAlarm),
       switchMap((action: UpdateAlarm) => this.alarmsService.update(action.alarm.$key, action.alarm))
+    ), { dispatch: false });
+
+
+  pureUpdateAlarmInDatabase$ = createEffect(() => this.actions$
+    .pipe(
+      ofType(AlarmsActionTypes.PureUpdateAlarm),
+      switchMap((action: PureUpdateAlarm) => this.alarmsService.pureUpdate(action.key, action.payload))
     ), { dispatch: false });
 
 

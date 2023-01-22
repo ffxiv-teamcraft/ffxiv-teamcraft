@@ -269,4 +269,8 @@ export class AlarmsPageComponent implements OnInit {
     this.alarmsFacade.loadAlarms();
   }
 
+  markAsDone(alarm: Alarm) {
+    alarm.done = true;
+    this.alarmsFacade.updateAlarm(alarm);
+  }
 }

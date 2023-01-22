@@ -1,3 +1,4 @@
+import { UpdateData } from '@angular/fire/firestore';
 import { Action } from '@ngrx/store';
 import { Alarm } from '../alarm';
 import { AlarmGroup } from '../alarm-group';
@@ -10,6 +11,7 @@ export enum AlarmsActionTypes {
   AddAlarmsAndGroup = '[Alarms] Add alarms and group',
   AlarmsCreated = '[Alarms] Alarms created',
   UpdateAlarm = '[Alarms] Update Alarm',
+  PureUpdateAlarm = '[Alarms] Pure Update Alarm',
   RemoveAlarm = '[Alarms] Remove Alarm',
 
   PersistAlarms = '[Alarms] Persist Alarms',
@@ -63,6 +65,13 @@ export class UpdateAlarm implements Action {
   readonly type = AlarmsActionTypes.UpdateAlarm;
 
   constructor(public readonly alarm: Alarm) {
+  }
+}
+
+export class PureUpdateAlarm implements Action {
+  readonly type = AlarmsActionTypes.PureUpdateAlarm;
+
+  constructor(public readonly key: string, public readonly payload: UpdateData<Alarm>) {
   }
 }
 
@@ -153,4 +162,5 @@ export type AlarmsAction =
   | LoadAlarmGroup
   | AlarmGroupLoaded
   | SetAlarms
-  | SetGroups;
+  | SetGroups
+  | PureUpdateAlarm;
