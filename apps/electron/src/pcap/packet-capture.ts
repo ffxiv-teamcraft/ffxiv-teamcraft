@@ -24,6 +24,7 @@ export class PacketCapture {
     'effectResult',
     'eventFinish',
     'eventPlay',
+    'eventPlay64',
     'eventPlay32',
     'eventPlay4',
     'eventPlay8',
@@ -74,6 +75,7 @@ export class PacketCapture {
     'eventStart',
     'eventFinish',
     'eventPlay4',
+    'eventPlay64',
     'systemLogMessage',
     'npcSpawn',
     'objectSpawn'

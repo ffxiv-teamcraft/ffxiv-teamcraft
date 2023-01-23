@@ -39,7 +39,7 @@ export class CraftingReplayService {
   public init(): void {
     this.lazyData.getRecipes().pipe(
       switchMap(recipes => {
-        return merge(this.ipc.packets$.pipe(ofMessageType('eventPlay4')), this.ipc.packets$.pipe(ofMessageType('eventPlay32')))
+        return merge(this.ipc.packets$.pipe(ofMessageType('eventPlay4')), this.ipc.packets$.pipe(ofMessageType('eventPlay64')))
           .pipe(
             filter(message => message.parsedIpcData.eventId === CraftingReplayService.CRAFTING_EVENT_ID),
             withLatestFrom(this.stats$),
@@ -66,7 +66,7 @@ export class CraftingReplayService {
                   default:
                     return replay;
                 }
-              } else if (message.type === 'eventPlay32') {
+              } else if (message.type === 'eventPlay64') {
                 if (!replay) return null;
                 replay.steps.push({
                   action: packet.params[4],
@@ -77,6 +77,7 @@ export class CraftingReplayService {
                   success: this.isSuccess(packet)
                 });
               }
+              console.log(replay);
               return replay;
             }, null),
             filter(replay => replay && !!replay.endTime && replay.steps.length > 0),
