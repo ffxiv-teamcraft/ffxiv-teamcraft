@@ -35,8 +35,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> {
     'canBeCrafted',
     'hasAllBaseIngredients',
     'craftableAmount',
-    'requiredHQ',
-    'canBeSkipped'
+    'requiredHQ'
   ];
 
   constructor(protected firestore: Firestore, protected serializer: NgSerializerService, protected zone: NgZone,

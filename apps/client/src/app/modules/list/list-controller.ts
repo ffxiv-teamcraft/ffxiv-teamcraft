@@ -338,8 +338,6 @@ export class ListController {
       item.canBeCrafted = ListController.canBeCrafted(list, item);
       item.craftableAmount = ListController.craftableAmount(list, item);
       item.requiredHQ = ListController.amountRequiredHQ(list, item);
-      //TODO
-      // item.canBeSkipped = ListController.canBe
     });
     list.finalItems.forEach(i => {
       i.hasAllBaseIngredients = (i.requires || []).length > 0 && !i.canBeCrafted && i.done < i.amount && ListController.hasAllBaseIngredients(list, i);

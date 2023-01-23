@@ -84,8 +84,6 @@ export class ListRow extends DataModel {
   finalItem?: boolean;
 
   requiredHQ?: number;
-
-  canBeSkipped?: number;
 }
 
 export function getItemSource(item: ListRow, type: DataType.CRAFTED_BY, isObject?: boolean): CraftedBy[]
