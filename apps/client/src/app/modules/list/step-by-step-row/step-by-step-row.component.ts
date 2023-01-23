@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
 import { getItemSource, ListRow } from '../model/list-row';
 import { ProcessedListAggregate } from '../../list-aggregate/model/processed-list-aggregate';
-import { combineLatest, Observable, Subject } from 'rxjs';
+import { combineLatest, Subject } from 'rxjs';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
@@ -13,7 +13,6 @@ import { observeInput } from '../../../core/rxjs/observe-input';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { ListsFacade } from '../+state/lists.facade';
 import { InventoryService } from '../../inventory/inventory.service';
-import { ListController } from '../list-controller';
 import { List } from '../model/list';
 
 @Component({

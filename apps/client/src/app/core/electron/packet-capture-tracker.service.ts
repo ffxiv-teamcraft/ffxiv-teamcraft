@@ -120,7 +120,7 @@ export class PacketCaptureTrackerService {
         withLatestFrom(this.listsFacade.autocompleteEnabled$)
       )
       .subscribe(([[status, list, page], autofill]) => {
-        if (page.includes('list') && list && !list.offline && status && !this.notificationRef && autofill) {
+        if (page.includes('list') && list && !list.offline && status && !this.notificationRef && autofill && !this.ipc.overlayUri) {
           this.notificationRef = this.nzNotification.info(
             this.translate.instant('LIST_DETAILS.Autofill_crafting_gathering_title'),
             this.translate.instant('LIST_DETAILS.Autofill_crafting_gathering_message'),
