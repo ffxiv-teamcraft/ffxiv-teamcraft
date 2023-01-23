@@ -3042,6 +3042,7 @@
       "Create_list": "Create a list for this planning",
       "Exclude_pasture_materials": "Exclude pasture materials",
       "Exclude_crop_materials": "Exclude crop materials",
+      "Display_item_metadata": "显示物品分类及制作时间",
       "Groove_tooltip": "Groove at the end of the day",
       "Crafting_time": "Crafting time",
       "Categories": "Categories",

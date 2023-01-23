@@ -146,6 +146,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
 
   public excludeCropMaterials$ = new LocalStorageBehaviorSubject<boolean>('island-workshop:exclude_crops', false);
 
+  public displayItemMetadata$ = new LocalStorageBehaviorSubject<boolean>('island-workshop:display_item_metadata', true);
+
   public tableColumns$: Observable<ColumnItem[]> = combineLatest([
     this.translate.get('ISLAND_SANCTUARY.WORKSHOP.POPULARITY.High'),
     this.lazyData.getEntry('islandCraftworksTheme')
@@ -361,7 +363,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     map(([popularity, islandPopularity, objects, recipes, extracts]) => {
       const registry = Object.entries(objects)
         .filter(([id]) => {
-          return islandPopularity[popularity][id].ratio >= 120;
+          return islandPopularity[popularity] && islandPopularity[popularity][id].ratio >= 120;
         })
         .reduce((acc, [id, obj]) => {
           const recipe = recipes.find(r => r.id === `mji-craftworks-${id}`);
