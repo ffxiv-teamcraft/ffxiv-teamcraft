@@ -97,7 +97,6 @@ export class PacketCapture {
 
   start(): void {
     this.tries++;
-    console.log('START', this.tries);
     if (this.store.get('rawsock', false)) {
       this.startMachina();
     } else {
