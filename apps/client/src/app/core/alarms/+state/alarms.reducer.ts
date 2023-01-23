@@ -95,6 +95,17 @@ export function alarmsReducer(
           return group;
         })]
       };
+
+    case AlarmsActionTypes.SetAlarmDone:
+      return {
+        ...state,
+        alarms: [...state.alarms.map(alarm => {
+          if (alarm.$key === action.key) {
+            alarm.done = action.done;
+          }
+          return alarm;
+        })]
+      };
   }
   return state;
 }
