@@ -96,6 +96,8 @@ export class PacketCapture {
   }
 
   start(): void {
+    this.tries++;
+    console.log('START', this.tries);
     if (this.store.get('rawsock', false)) {
       this.startMachina();
     } else {
@@ -248,14 +250,15 @@ export class PacketCapture {
         if (err.message === `Cannot call write after a stream was destroyed`) {
           this.mainWindow.win.webContents.send('machina:error', {
             message: 'Wrapper_failed_to_start',
-            retryDelay: 120
+            retryDelay: 60
           });
         }
         if (this.tries < 3) {
           this.startTimeout = setTimeout(() => {
-            this.tries++;
             this.start();
-          }, 120000);
+          }, 60000);
+        } else {
+          this.stop();
         }
       });
     this.captureInterface.on('error', err => {

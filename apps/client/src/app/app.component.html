@@ -72,8 +72,11 @@
             <ng-template #pcapStatusTpl>
               <div class="flex-row space-between">
                 <div>{{'PACKET_CAPTURE.Pcap' | translate}}</div>
-                <div>
-                  <nz-badge [nzStatus]="pcapStatus$ | async"></nz-badge>
+                <div *ngIf="pcapStatus$ | async as pcapStatus">
+                  <nz-badge [nzStatus]="pcapStatus"></nz-badge>
+                  <button nz-button *ngIf="pcapStatus === 'default'" nzSize="small" nzType="primary" nzShape="circle" (click)="startPcap()">
+                    <span nz-icon nzType="caret-right" nzTheme="outline"></span>
+                  </button>
                 </div>
               </div>
               <div class="flex-row space-between">

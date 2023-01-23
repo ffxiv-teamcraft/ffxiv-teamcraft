@@ -552,6 +552,11 @@ export class AppComponent implements OnInit {
     fontawesome.library.add(faDiscord, faTwitter, faGithub, faCalculator, faBell, faMap, faGavel);
   }
 
+  startPcap(): void {
+    this.ipc.send('toggle-machina', false);
+    this.ipc.send('toggle-machina', true);
+  }
+
   public openSupportPopup(): void {
     this.dialog.create({
       nzTitle: this.translate.instant('COMMON.Support_us_remove_ads'),
