@@ -387,11 +387,10 @@ export class ListsEffects {
     }),
     filter(([action, list, , , , autofillEnabled, _]) => {
       const item = ListController.getItemById(list, action.itemId, !action.finalItem, action.finalItem);
-      const requiredHq = ListController.requiredAsHQ(list, item) > 0;
-      if (autofillEnabled && this.settings.enableAutofillHQFilter && requiredHq) {
+      if (autofillEnabled && this.settings.enableAutofillHQFilter && item.requiredHQ) {
         return !action.fromPacket || action.hq;
       }
-      if (autofillEnabled && this.settings.enableAutofillNQFilter && !requiredHq) {
+      if (autofillEnabled && this.settings.enableAutofillNQFilter && !item.requiredHQ) {
         return !action.fromPacket || !action.hq;
       }
       return true;

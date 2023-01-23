@@ -304,9 +304,9 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
       shareReplay(1)
     );
 
-    this.requiredForFinalCraft$ = combineLatest([this.list$, this.item$]).pipe(
-      map(([list, item]) => {
-        return ListController.requiredAsHQ(list, item);
+    this.requiredForFinalCraft$ = this.item$.pipe(
+      map((item) => {
+        return item.requiredHQ;
       })
     );
 

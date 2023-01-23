@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
 import { getItemSource, ListRow } from '../model/list-row';
 import { ProcessedListAggregate } from '../../list-aggregate/model/processed-list-aggregate';
-import { combineLatest, Subject } from 'rxjs';
+import { combineLatest, Observable, Subject } from 'rxjs';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
@@ -13,6 +13,8 @@ import { observeInput } from '../../../core/rxjs/observe-input';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { ListsFacade } from '../+state/lists.facade';
 import { InventoryService } from '../../inventory/inventory.service';
+import { ListController } from '../list-controller';
+import { List } from '../model/list';
 
 @Component({
   selector: 'app-step-by-step-row',
@@ -23,6 +25,9 @@ import { InventoryService } from '../../inventory/inventory.service';
 export class StepByStepRowComponent {
   @Input()
   row: ListRow;
+
+  @Input()
+  list: List;
 
   @Input()
   dataTypes: DataType[];
@@ -45,8 +50,12 @@ export class StepByStepRowComponent {
   @Input()
   showCrafts = false;
 
+  row$ = observeInput(this, 'row');
+
+  list$ = observeInput(this, 'list');
+
   public alarmsDisplay$ = combineLatest([
-    observeInput(this, 'row'),
+    this.row$,
     this.etime.getEorzeanTime().pipe(
       distinctUntilChanged((a, b) => a.getUTCHours() === b.getUTCHours())
     )

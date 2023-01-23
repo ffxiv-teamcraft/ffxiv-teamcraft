@@ -96,12 +96,11 @@ export function listsReducer(
       const listId = action.listId || state.selectedId;
       const list = ListController.clone(state.listDetails.entities[listId], true);
       const item = ListController.getItemById(list, action.itemId, !action.finalItem, action.finalItem);
-      const requiredHq = ListController.requiredAsHQ(list, item) > 0;
       let fill = true;
-      if (state.autocompletionEnabled && action.settings.enableAutofillHQFilter && requiredHq) {
+      if (state.autocompletionEnabled && action.settings.enableAutofillHQFilter && item.requiredHQ) {
         fill = !action.fromPacket || action.hq;
       }
-      if (state.autocompletionEnabled && action.settings.enableAutofillNQFilter && !requiredHq) {
+      if (state.autocompletionEnabled && action.settings.enableAutofillNQFilter && !item.requiredHQ) {
         fill = !action.fromPacket || !action.hq;
       }
       if (fill) {

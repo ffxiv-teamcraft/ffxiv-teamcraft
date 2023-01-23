@@ -67,7 +67,7 @@ export class ListRow extends DataModel {
   /**
    * Manual flag for an item required as HQ
    */
-  requiredAsHQ?: boolean;
+  forceRequiredHQ?: boolean;
 
   hidden?: boolean;
 
@@ -82,6 +82,10 @@ export class ListRow extends DataModel {
   craftableAmount?: number;
 
   finalItem?: boolean;
+
+  requiredHQ?: number;
+
+  canBeSkipped?: number;
 }
 
 export function getItemSource(item: ListRow, type: DataType.CRAFTED_BY, isObject?: boolean): CraftedBy[]
