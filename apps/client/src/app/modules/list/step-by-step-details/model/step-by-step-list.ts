@@ -45,7 +45,10 @@ export class StepByStepList {
     this.display.rows.forEach(panel => {
       panel.rows.forEach(row => {
         let hasCoords = false;
-        const matchingSources = row.sources.filter(s => panel.layoutRow.filter.matchingSources.includes(s.type) || s.type === DataType.ALARMS);
+        let matchingSources = row.sources.filter(s => panel.layoutRow.filter.matchingSources.includes(s.type) || s.type === DataType.ALARMS);
+        if (matchingSources.length === 0) {
+          matchingSources = row.sources;
+        }
         matchingSources.forEach(source => {
           const positions = this.getPositions(source).filter(p => !!p.mapId);
           if (!hasCoords && positions.length > 0) {

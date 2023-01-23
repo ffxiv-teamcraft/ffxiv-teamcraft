@@ -12,4 +12,4 @@ export const patchNotes = `### Bug Fixes
 
 * **alarms:** you can now mark individual spawns as done to push them last.
 * **desktop:** packet capture status icon in top-right corner.
-* **gearsets:** now displaying total currencies needed for materias.`;
+* **gearsets:** now displaying total currencies needed for materias.`;

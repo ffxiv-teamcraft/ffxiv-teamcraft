@@ -88,7 +88,7 @@
     </ng-container>
     <div nz-col [nzLg]="24" class="last-row">
       <div nz-row [nzGutter]="[10,10]">
-        <div nz-col [nzXXl]="list.steps[-1]?.length > 0 ? 8 : 12" [nzSm]="24" class="last-row-element" *ngIf="sortedAlarms$ | async as alarms">
+        <div nz-col [nzXXl]="12" [nzSm]="24" class="last-row-element" *ngIf="sortedAlarms$ | async as alarms">
           <nz-card nzSize="small" [nzTitle]="alarmsTitleTpl">
             <ng-template #alarmsTitleTpl>
               {{'LIST_DETAILS.STEP_BY_STEP.Alarms' | translate}} ({{alarms.length}})
@@ -103,7 +103,7 @@
             </app-lazy-scroll>
           </nz-card>
         </div>
-        <div nz-col [nzXXl]="list.steps[-1]?.length > 0 ? 8 : 12" [nzSm]="24" class="last-row-element" *ngIf="list.crafts?.length > 0">
+        <div nz-col [nzXXl]="12" [nzSm]="24" class="last-row-element" *ngIf="list.crafts?.length > 0">
           <nz-card nzSize="small" [nzTitle]="craftsTitleTpl">
             <ng-template #craftsTitleTpl>
               {{'LIST_DETAILS.STEP_BY_STEP.Crafts' | translate}} ({{list.crafts.length}})
@@ -118,17 +118,18 @@
             </app-lazy-scroll>
           </nz-card>
         </div>
-        <div nz-col [nzXXl]="8" [nzSm]="24" class="last-row-element" *ngIf="list.steps[-1]?.length > 0">
+        <div nz-col [nzSpan]="24" class="last-row-element" *ngIf="list.steps[-1]">
           <nz-card nzSize="small" [nzTitle]="othersTitleTpl">
             <ng-template #othersTitleTpl>
-              {{'LIST_DETAILS.STEP_BY_STEP.Others' | translate}} ({{list.steps[-1].length}})
+              {{'LIST_DETAILS.STEP_BY_STEP.Others' | translate}}
             </ng-template>
-            <app-lazy-scroll [data]="list.steps[-1]" [trackBy]="trackById" [rowTemplate]="rowTpl" [rowSize]="31" [displayedRows]="8">
-              <ng-template #rowTpl let-row let-odd="odd">
-                <app-step-by-step-row [row]="row" [class.odd]="odd"
-                                      [permissionLevel]="permissionLevel"></app-step-by-step-row>
-              </ng-template>
-            </app-lazy-scroll>
+            <div nz-row>
+              <app-step-by-step-datatype *ngFor="let source of list.steps[-1].sources; trackBy: trackByMapId; index as i"
+                                         nz-col [nzXXl]="(i % 2 === 0 && !list.steps[-1].sources[i + 1]) ? 24 : 12" [nzLg]="24"
+                                         [dataType]="source"
+                                         [steps]="list.steps[-1][source]"
+                                         [permissionLevel]="permissionLevel"></app-step-by-step-datatype>
+            </div>
           </nz-card>
         </div>
       </div>

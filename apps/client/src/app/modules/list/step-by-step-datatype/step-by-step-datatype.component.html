@@ -44,8 +44,8 @@
         </ng-template>
       </span>
         <span *ngSwitchCase="DataType.INSTANCES">
-        <img [src]="steps[0].sources[0].data[0]?.id | lazyRow:'instances':'icon' | async | xivapiIcon" class="img-icon round-icon">
-          {{steps[0].sources[0].data[0].name | i18n}}
+        <img [src]="steps[0].sources[0].data[0] | lazyRow:'instances':'icon' | async | xivapiIcon" class="img-icon round-icon">
+          {{'LIST_DETAILS.SOURCES.Instances' | translate}}
       </span>
         <span *ngSwitchCase="DataType.MOGSTATION">
         <img class="img-icon round-icon" src="https://cache.secure.square-enix.com/account/content/mogstation/favicon.ico">
@@ -135,6 +135,7 @@
         <app-lazy-scroll [data]="row.items" [trackBy]="trackById" [rowTemplate]="rowTpl" [rowSize]="31" [displayedRows]="6">
           <ng-template #rowTpl let-row let-odd="odd">
             <app-step-by-step-row [row]="row" [class.odd]="odd"
+                                  [finalItem]="row.finalItem"
                                   [dataTypes]="[dataType]"
                                   [permissionLevel]="permissionLevel"></app-step-by-step-row>
           </ng-template>
@@ -146,6 +147,7 @@
     <app-lazy-scroll [data]="steps" [trackBy]="trackById" [rowTemplate]="rowTpl" [rowSize]="31" [displayedRows]="6">
       <ng-template #rowTpl let-step let-odd="odd">
         <app-step-by-step-row [row]="step.row" [class.odd]="odd" [dataTypes]="[dataType]"
+                              [finalItem]="step.row.finalItem"
                               [permissionLevel]="permissionLevel"></app-step-by-step-row>
       </ng-template>
     </app-lazy-scroll>
