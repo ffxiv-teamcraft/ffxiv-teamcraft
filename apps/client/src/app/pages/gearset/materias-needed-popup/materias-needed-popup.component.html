@@ -43,20 +43,22 @@
       </td>
     </tr>
     <ng-container *ngIf="totalPerCurrency$ | async as totalPerCurrency">
-      <tr>
-        <th colspan="4">{{'GEARSETS.Total_scrips' | translate}}</th>
-      </tr>
-      <tr *ngFor="let currency of totalPerCurrency">
-        <td colspan="2">
-          <div class="flex-row gap-5">
-            <app-item-icon [width]="24" [itemId]="currency.id"></app-item-icon>
-            <div [itemNameCopy]="currency.id">{{currency.id | itemName | i18n}}</div>
-          </div>
-        </td>
-        <td colspan="2">
-          <div>x {{currency.amount | number:'1.0-0':translate.currentLang}}</div>
-        </td>
-      </tr>
+      <ng-container *ngIf="totalPerCurrency.length > 0">
+        <tr>
+          <th colspan="4">{{'GEARSETS.Total_scrips' | translate}}</th>
+        </tr>
+        <tr *ngFor="let currency of totalPerCurrency">
+          <td colspan="2">
+            <div class="flex-row gap-5">
+              <app-item-icon [width]="24" [itemId]="currency.id"></app-item-icon>
+              <div [itemNameCopy]="currency.id">{{currency.id | itemName | i18n}}</div>
+            </div>
+          </td>
+          <td colspan="2">
+            <div>x {{currency.amount | number:'1.0-0':translate.currentLang}}</div>
+          </td>
+        </tr>
+      </ng-container>
     </ng-container>
     </tbody>
   </table>
