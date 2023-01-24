@@ -3044,6 +3044,7 @@
       "Create_list": "为此计划创建一个列表",
       "Exclude_pasture_materials": "排除畜牧物资",
       "Exclude_crop_materials": "排除耕种物资",
+      "Display_item_metadata": "Display category and craft time of items in planning",
       "Groove_tooltip": "当日结束时的工房干劲",
       "Crafting_time": "制作时间",
       "Categories": "分类",
