@@ -168,6 +168,7 @@ export class AlarmBellService {
         })
       ).subscribe(alarmsToPlay => {
       alarmsToPlay.forEach(alarm => {
+        localStorage.setItem(`played:${alarm.$key}`, Date.now().toString());
         this.alarmsFacade.setAlarmDone(alarm.$key, false);
         if (!this.settings.alarmsMuted) {
           this.notify(alarm);
