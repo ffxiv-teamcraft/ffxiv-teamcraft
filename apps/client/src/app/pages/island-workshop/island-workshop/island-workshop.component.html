@@ -67,7 +67,7 @@
   <app-workshop-planning *ngIf="optimizerResult.planning !== null" [planning]="optimizerResult.planning" [totalScore]="optimizerResult.score"
                          [today]="today$ | async"
                          [weeklyReset]="previousWeeklyReset$ | async"
-                         [displayItemMetadata]="displayItemMetadata$.value"></app-workshop-planning>
+                         [displayItemMetadata]="displayItemMetadata$ | async"></app-workshop-planning>
   <nz-alert *ngIf="optimizerResult.planning === null" [nzMessage]="'ISLAND_SANCTUARY.WORKSHOP.No_planning' | translate"
             [nzDescription]="'ISLAND_SANCTUARY.WORKSHOP.No_planning_explain' | translate"
             nzType="error" nzShowIcon></nz-alert>

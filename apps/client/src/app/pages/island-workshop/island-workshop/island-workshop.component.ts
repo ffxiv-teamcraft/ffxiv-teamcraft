@@ -146,7 +146,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
 
   public excludeCropMaterials$ = new LocalStorageBehaviorSubject<boolean>('island-workshop:exclude_crops', false);
 
-  public displayItemMetadata$ = new LocalStorageBehaviorSubject<boolean>('island-workshop:display_item_metadata', true);
+  public displayItemMetadata$ = new LocalStorageBehaviorSubject<boolean>('island-workshop:display_item_metadata', false);
 
   public tableColumns$: Observable<ColumnItem[]> = combineLatest([
     this.translate.get('ISLAND_SANCTUARY.WORKSHOP.POPULARITY.High'),
