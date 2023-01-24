@@ -63,13 +63,13 @@ export class LayoutRowFilter {
       .filter(item => {
         return (item.requires || []).some(req => req.id === row.id);
       });
-    if (row.requiredAsHQ) {
+    if (row.forceRequiredHQ) {
       return true;
     }
     if (list.disableHQSuggestions) {
       return false;
     }
-    if (recipesNeedingItem.length === 0 || row.requiredAsHQ === false) {
+    if (recipesNeedingItem.length === 0 || row.forceRequiredHQ === false) {
       return false;
     } else {
       let count = 0;

@@ -12,8 +12,10 @@ import {
   DeleteAlarmGroup,
   DeleteAllAlarms,
   LoadAlarmGroup,
-  LoadAlarms, PureUpdateAlarm,
+  LoadAlarms,
+  PureUpdateAlarm,
   RemoveAlarm,
+  SetAlarmDone,
   SetAlarms,
   SetGroups,
   UpdateAlarm,
@@ -601,7 +603,11 @@ export class AlarmsFacade {
     return [alarm];
   }
 
-  pureUpdateAlarm(key:string, alarm: UpdateData<Alarm>):void {
-    this.store.dispatch(new PureUpdateAlarm(key, alarm))
+  pureUpdateAlarm(key: string, alarm: UpdateData<Alarm>): void {
+    this.store.dispatch(new PureUpdateAlarm(key, alarm));
+  }
+
+  setAlarmDone(key: string, done: boolean): void {
+    this.store.dispatch(new SetAlarmDone(key, done));
   }
 }

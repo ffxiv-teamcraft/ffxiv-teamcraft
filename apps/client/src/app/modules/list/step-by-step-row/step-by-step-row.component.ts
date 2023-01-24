@@ -13,6 +13,7 @@ import { observeInput } from '../../../core/rxjs/observe-input';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { ListsFacade } from '../+state/lists.facade';
 import { InventoryService } from '../../inventory/inventory.service';
+import { List } from '../model/list';
 
 @Component({
   selector: 'app-step-by-step-row',
@@ -23,6 +24,9 @@ import { InventoryService } from '../../inventory/inventory.service';
 export class StepByStepRowComponent {
   @Input()
   row: ListRow;
+
+  @Input()
+  list: List;
 
   @Input()
   dataTypes: DataType[];
@@ -45,8 +49,12 @@ export class StepByStepRowComponent {
   @Input()
   showCrafts = false;
 
+  row$ = observeInput(this, 'row');
+
+  list$ = observeInput(this, 'list');
+
   public alarmsDisplay$ = combineLatest([
-    observeInput(this, 'row'),
+    this.row$,
     this.etime.getEorzeanTime().pipe(
       distinctUntilChanged((a, b) => a.getUTCHours() === b.getUTCHours())
     )

@@ -41,7 +41,7 @@ function updateLists(lists: List[], state: ListsState, matchingPredicate = (list
   const afterMap = listsAdapter.map(storeList => {
     checkedLists[storeList.$key] = true;
     const patch = listsByKey[storeList.$key];
-    if (patch && patch.etag > storeList.etag) {
+    if (patch && (patch.etag > storeList.etag || storeList.offline)) {
       if (storeList.$key === state.selectedId) {
         return storeList;
       }
@@ -96,12 +96,11 @@ export function listsReducer(
       const listId = action.listId || state.selectedId;
       const list = ListController.clone(state.listDetails.entities[listId], true);
       const item = ListController.getItemById(list, action.itemId, !action.finalItem, action.finalItem);
-      const requiredHq = ListController.requiredAsHQ(list, item) > 0;
       let fill = true;
-      if (state.autocompletionEnabled && action.settings.enableAutofillHQFilter && requiredHq) {
+      if (state.autocompletionEnabled && action.settings.enableAutofillHQFilter && item.requiredHQ) {
         fill = !action.fromPacket || action.hq;
       }
-      if (state.autocompletionEnabled && action.settings.enableAutofillNQFilter && !requiredHq) {
+      if (state.autocompletionEnabled && action.settings.enableAutofillNQFilter && !item.requiredHQ) {
         fill = !action.fromPacket || !action.hq;
       }
       if (fill) {
@@ -187,7 +186,7 @@ export function listsReducer(
         listDetails = listsAdapter.mapOne({
           id: newVersion.$key,
           map: current => {
-            const updated = action.forOverlay || (newVersion.etag || 0) > (current.etag || 0);
+            const updated = action.forOverlay || (newVersion.etag || 0) > (current.etag || 0) || current.offline;
             if (updated) {
               if (newVersion.items?.length > 0 && newVersion.notFound) {
                 newVersion.notFound = false;

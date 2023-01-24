@@ -49,6 +49,10 @@
         <label nz-checkbox [ngModel]="excludeCropMaterials$ | async" (ngModelChange)="excludeCropMaterials$.next($event)">
           {{'ISLAND_SANCTUARY.WORKSHOP.Exclude_crop_materials' | translate}}</label>
       </div>
+      <div>
+        <label nz-checkbox [ngModel]="displayItemMetadata$ | async" (ngModelChange)="displayItemMetadata$.next($event)">
+          {{'ISLAND_SANCTUARY.WORKSHOP.Display_item_metadata' | translate}}</label>
+      </div>
     </div>
   </nz-page-header-content>
 </nz-page-header>
@@ -62,7 +66,8 @@
 <ng-container *ngIf="optimizerResult$ | async as optimizerResult">
   <app-workshop-planning *ngIf="optimizerResult.planning !== null" [planning]="optimizerResult.planning" [totalScore]="optimizerResult.score"
                          [today]="today$ | async"
-                         [weeklyReset]="previousWeeklyReset$ | async"></app-workshop-planning>
+                         [weeklyReset]="previousWeeklyReset$ | async"
+                         [displayItemMetadata]="displayItemMetadata$ | async"></app-workshop-planning>
   <nz-alert *ngIf="optimizerResult.planning === null" [nzMessage]="'ISLAND_SANCTUARY.WORKSHOP.No_planning' | translate"
             [nzDescription]="'ISLAND_SANCTUARY.WORKSHOP.No_planning_explain' | translate"
             nzType="error" nzShowIcon></nz-alert>
@@ -199,4 +204,3 @@
     </nz-table>
   </ng-container>
 </ng-template>
-

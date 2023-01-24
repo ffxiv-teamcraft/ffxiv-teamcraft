@@ -13,6 +13,7 @@ import {
   LoadAlarmGroup,
   PureUpdateAlarm,
   RemoveAlarm,
+  SetAlarmDone,
   SetAlarms,
   SetGroups,
   UpdateAlarm,
@@ -60,6 +61,14 @@ export class AlarmsEffects {
     withLatestFrom(this.alarmsFacade.allAlarms$),
     switchMap(([, alarms]) => {
       return this.alarmsService.deleteAll(alarms);
+    })
+  ), { dispatch: false });
+
+
+  markAlarmAsDone$ = createEffect(() => this.actions$.pipe(
+    ofType<SetAlarmDone>(AlarmsActionTypes.SetAlarmDone),
+    map(({ key, done }) => {
+      return this.alarmsService.setAlarmDone(key, done);
     })
   ), { dispatch: false });
 

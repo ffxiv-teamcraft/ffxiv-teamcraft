@@ -28,11 +28,26 @@
         <app-item-icon [itemId]="object.itemId" [width]="24"></app-item-icon>
         <app-i18n-name content="items" [id]="object.itemId"></app-i18n-name>
       </div>
+      <div *ngIf="displayItemMetadata" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+      <span *ngFor="let theme of object.craftworksEntry.themes; last as last"><app-i18n-name content="islandCraftworksTheme"
+                                                                                             [id]="theme"></app-i18n-name><span *ngIf="!last">,</span></span>
+      </div>
+      <!-- was trying to wrap ngIf's into a span but style was broken :( -->
+      <div *ngIf="displayItemMetadata" fxLayout="row" fxLayoutAlign="flex-start center">
+        {{object.craftworksEntry.craftingTime}}h
+      </div>
       <span *ngIf="object.alternative">
       <nz-divider [nzText]="'Or' | translate"></nz-divider>
       <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
         <app-item-icon [itemId]="object.alternative.itemId" [width]="24"></app-item-icon>
         <app-i18n-name content="items" [id]="object.alternative.itemId"></app-i18n-name>
+      </div>
+      <div *ngIf="displayItemMetadata" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+      <span *ngFor="let theme of object.craftworksEntry.themes; last as last"><app-i18n-name content="islandCraftworksTheme"
+                                                                                             [id]="theme"></app-i18n-name><span *ngIf="!last">,</span></span>
+      </div>
+      <div *ngIf="displayItemMetadata" fxLayout="row" fxLayoutAlign="flex-start center">
+        {{object.craftworksEntry.craftingTime}}h
       </div>
       </span>
     </div>

@@ -262,6 +262,24 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
           && (equipSlotCategories[0] !== 12 || +key !== (gearset.ring1?.itemId || gearset.ring2?.itemId) || !equipment[gearset.ring1?.itemId || gearset.ring2?.itemId]?.unique);
       })
       .sort((a, b) => {
+        if (level < this.environment.maxLevel) {
+          if ([8, 9, 10, 11, 12, 13, 14, 15].includes(job)) {
+            const aTotalStat = (itemStats[+a].find(s => s.ID === BaseParam.CRAFTSMANSHIP)?.NQ || 0) + (itemStats[+a].find(s => s.ID === BaseParam.CONTROL)?.NQ || 0);
+            const bTotalStat = (itemStats[+b].find(s => s.ID === BaseParam.CRAFTSMANSHIP)?.NQ || 0) + (itemStats[+b].find(s => s.ID === BaseParam.CONTROL)?.NQ || 0);
+            if (aTotalStat === bTotalStat) {
+              return equipment[b].level - equipment[a].level;
+            }
+            return bTotalStat - aTotalStat;
+          }
+          if ([16, 17, 18].includes(job)) {
+            const aTotalStat = (itemStats[+a].find(s => s.ID === BaseParam.GATHERING)?.NQ || 0) + (itemStats[+a].find(s => s.ID === BaseParam.PERCEPTION)?.NQ || 0);
+            const bTotalStat = (itemStats[+b].find(s => s.ID === BaseParam.GATHERING)?.NQ || 0) + (itemStats[+b].find(s => s.ID === BaseParam.PERCEPTION)?.NQ || 0);
+            if (aTotalStat === bTotalStat) {
+              return equipment[b].level - equipment[a].level;
+            }
+            return bTotalStat - aTotalStat;
+          }
+        }
         const aMainStat = this.getMainStatValue(+a, mainStat, equipSlotCategories, job, itemStats);
         const bMainStat = this.getMainStatValue(+b, mainStat, equipSlotCategories, job, itemStats);
         const mainDiff = bMainStat - aMainStat;

@@ -1,15 +1,26 @@
 export const patchNotes = `### Bug Fixes
 
-* **desktop:** fixed autofill completion notification triggered before item is done.
-* **gearsets:** bump max results per slot to 20.
-* **list:** fixed a possible sync bug after navigating out of a list and coming back.
-* **step-by-step:** better layout and responsive design.
-* **step-by-step:** fixed trades sometimes showing wrong currency.
-* **step-by-step:** larger details panel when there's space for it.
+* **crafting-replay:** fixed crafting replays not recording properly.
+* **db:** fixed instance rewards sometimes not being listed in details page.
+* **desktop:** better universalis GCF for better reporting and timeout management.
+* **desktop:** prevent autofill crafting/gathering message from showing in overlays.
+* **gearset:** fixed currency total not updating on last materia done.
+* **leveling-equipment:** fixed wrong suggestions for lower level crafting gear.
+* **lists:** fixed offline lists sometimes not updated properly.
+* **search:** removed sort selectors when they cannot be applied to the results.
+* **step-by-step:** fixed Other sources not being displayed.
+* **tooltip:** fixed line break in description not processed properly.
 
 
 ### Features
 
-* **alarms:** you can now mark individual spawns as done to push them last.
-* **desktop:** packet capture status icon in top-right corner.
-* **gearsets:** now displaying total currencies needed for materias.`;
+* **db:** 6.31 data update.
+* **desktop:** added a start button in packet capture status tooltip.
+* **island-workshop:** new checkbox to display item metadata in planning.
+* **step-by-step:** added HQ flag on step-by-step display (requires list update).
+
+
+### Performance Improvements
+
+* **alarms:** done checkbox is now saved offline to lower database usage.
+* **desktop:** packet queue optimizations for lower memory usage.`;

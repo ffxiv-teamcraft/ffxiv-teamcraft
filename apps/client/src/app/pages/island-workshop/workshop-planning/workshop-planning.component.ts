@@ -26,6 +26,9 @@ export class WorkshopPlanningComponent {
   @Input()
   weeklyReset: number;
 
+  @Input()
+  displayItemMetadata: boolean;
+
   planningAvailability = [0, 0, 1, 2, 3, 3, 3];
 
   days = [

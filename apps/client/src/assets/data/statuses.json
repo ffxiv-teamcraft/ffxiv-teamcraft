@@ -23961,151 +23961,151 @@
     "icon": ""
   },
   "3424": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Guided Missile Kyrios Incoming",
+    "ja": "誘導ミサイルP",
+    "de": "Lenkrakete P",
+    "fr": "Missile guidé P",
+    "icon": "/i/015000/015126.png"
   },
   "3425": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Sniper Cannon Fodder",
+    "ja": "狙撃式波動砲",
+    "de": "Wellengeschütz „Pfeil”",
+    "fr": "Canon plasma longue portée",
+    "icon": "/i/015000/015127.png"
   },
   "3426": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "High-powered Sniper Cannon Fodder",
+    "ja": "狙撃式高出力波動砲",
+    "de": "Wellengeschütz „Pfeil +”",
+    "fr": "Canon plasma longue portée surchargé",
+    "icon": "/i/015000/015128.png"
   },
   "3427": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_3427_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3427_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3427_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3427_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015129.png"
   },
   "3428": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_3428_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3428_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3428_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3428_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015130.png"
   },
   "3429": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_3429_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3429_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3429_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3429_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015131.png"
   },
   "3430": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Synchronization Debugger",
+    "ja": "バグフィックス：シェア",
+    "de": "Bug-Korrektur: Synchronisierung",
+    "fr": "Déboguage&nbsp;: partage",
+    "icon": "/i/015000/015918.png"
   },
   "3431": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Overflow Debugger",
+    "ja": "バグフィックス：サークル",
+    "de": "Bug-Korrektur: Überlauf",
+    "fr": "Déboguage&nbsp;: boucle",
+    "icon": "/i/015000/015919.png"
   },
   "3432": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Underflow Debugger",
+    "ja": "バグフィックス：デグレード",
+    "de": "Bug-Korrektur: Unterlauf",
+    "fr": "Déboguage&nbsp;: dégradation",
+    "icon": "/i/015000/015920.png"
   },
   "3433": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_3433_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3433_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3433_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3433_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015132.png"
   },
   "3434": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Latent Synchronization Bug",
+    "ja": "レイテントバグ：シェア",
+    "de": "Latenter Bug: Synchronisierung",
+    "fr": "Bogue latent&nbsp;: partage",
+    "icon": "/i/015000/015133.png"
   },
   "3435": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_3435_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3435_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3435_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3435_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015134.png"
   },
   "3436": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Synchronization Code Smell",
+    "ja": "コードスメール：シェア",
+    "de": "Softwarezerfall: Synchronisierung",
+    "fr": "Dette technique&nbsp;: partage",
+    "icon": "/i/015000/015135.png"
   },
   "3437": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Overflow Code Smell",
+    "ja": "コードスメール：サークル",
+    "de": "Softwarezerfall: Überlauf",
+    "fr": "Dette technique&nbsp;: boucle",
+    "icon": "/i/015000/015136.png"
   },
   "3438": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Underflow Code Smell",
+    "ja": "コードスメール：デグレード",
+    "de": "Softwarezerfall: Unterlauf",
+    "fr": "Dette technique&nbsp;: dégradation",
+    "icon": "/i/015000/015137.png"
   },
   "3439": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_3439_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3439_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3439_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3439_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015138.png"
   },
   "3440": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Local Code Smell",
+    "ja": "コードスメール：ニアー",
+    "de": "Softwarezerfall: Nah",
+    "fr": "Dette technique&nbsp;: proximité",
+    "icon": "/i/015000/015139.png"
   },
   "3441": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Remote Code Smell",
+    "ja": "コードスメール：ファー",
+    "de": "Softwarezerfall: Fern",
+    "fr": "Dette technique&nbsp;: distance",
+    "icon": "/i/015000/015140.png"
   },
   "3442": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_3442_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3442_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3442_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3442_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015141.png"
   },
   "3443": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_3443_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3443_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3443_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3443_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015142.png"
   },
   "3444": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_3444_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3444_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3444_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3444_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/019000/019657.png"
   },
   "3445": {
     "en": "",
@@ -24115,81 +24115,81 @@
     "icon": ""
   },
   "3446": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_3446_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3446_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3446_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3446_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015143.png"
   },
   "3447": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_3447_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3447_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3447_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3447_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015144.png"
   },
   "3448": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_3448_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3448_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3448_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3448_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015145.png"
   },
   "3449": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Omega",
+    "ja": "オメガ",
+    "de": "Omega",
+    "fr": "Oméga",
+    "icon": "/i/015000/015909.png"
   },
   "3450": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Infinite Limit",
+    "ja": "限界超越",
+    "de": "Grenzüberschreitung",
+    "fr": "Dépassement de limites",
+    "icon": "/i/015000/015910.png"
   },
   "3451": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Fourth in Line",
+    "ja": "フォースターゲット",
+    "de": "Viertes Ziel",
+    "fr": "Quatrième cible",
+    "icon": "/i/015000/015118.png"
   },
   "3452": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_3452_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3452_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3452_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3452_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015146.png"
   },
   "3453": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_3453_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3453_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3453_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3453_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015146.png"
   },
   "3454": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Omega-M",
+    "ja": "オメガM",
+    "de": "Omega-M",
+    "fr": "Oméga-M",
+    "icon": "/i/015000/015925.png"
   },
   "3455": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Superfluid",
+    "ja": "液状化",
+    "de": "Verflüssigt",
+    "fr": "Liquéfaction",
+    "icon": "/i/015000/015927.png"
   },
   "3456": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Looper",
+    "ja": "サークルプログラム",
+    "de": "Programmschleife",
+    "fr": "Boucle de programme",
+    "icon": "/i/015000/015892.png"
   },
   "3457": {
     "en": "Bind",
@@ -24458,25 +24458,25 @@
     "icon": "/i/015000/015012.png"
   },
   "3495": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Guided Missile Kyrios Incoming",
+    "ja": "誘導ミサイルP",
+    "de": "Lenkrakete P",
+    "fr": "Missile guidé P",
+    "icon": "/i/015000/015126.png"
   },
   "3496": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Guided Missile Kyrios Incoming",
+    "ja": "誘導ミサイルP",
+    "de": "Lenkrakete P",
+    "fr": "Missile guidé P",
+    "icon": "/i/015000/015126.png"
   },
   "3497": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Guided Missile Kyrios Incoming",
+    "ja": "誘導ミサイルP",
+    "de": "Lenkrakete P",
+    "fr": "Missile guidé P",
+    "icon": "/i/015000/015126.png"
   },
   "3498": {
     "en": "",
@@ -24486,18 +24486,18 @@
     "icon": ""
   },
   "3499": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Packet Filter M",
+    "ja": "ガードプログラムM",
+    "de": "Sicherungssystem M",
+    "fr": "Programme protecteur M",
+    "icon": "/i/015000/015911.png"
   },
   "3500": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Packet Filter F",
+    "ja": "ガードプログラムF",
+    "de": "Sicherungssystem W",
+    "fr": "Programme protecteur F",
+    "icon": "/i/015000/015912.png"
   },
   "3501": {
     "en": "Down for the Count",
@@ -24514,18 +24514,18 @@
     "icon": ""
   },
   "3503": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Local Code Smell",
+    "ja": "コードスメール：ニアー",
+    "de": "Softwarezerfall: Nah",
+    "fr": "Dette technique&nbsp;: proximité",
+    "icon": "/i/015000/015139.png"
   },
   "3504": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Remote Code Smell",
+    "ja": "コードスメール：ファー",
+    "de": "Softwarezerfall: Fern",
+    "fr": "Dette technique&nbsp;: distance",
+    "icon": "/i/015000/015140.png"
   },
   "3505": {
     "en": "Burning Chains",
@@ -24542,32 +24542,32 @@
     "icon": "/i/015000/015168.png"
   },
   "3507": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Condensed Wave Cannon Kyrios",
+    "ja": "高出力波動砲P",
+    "de": "Hochleistungswellenkanone P",
+    "fr": "Canon plasma surchargé P",
+    "icon": "/i/015000/015026.png"
   },
   "3508": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Condensed Wave Cannon Kyrios",
+    "ja": "高出力波動砲P",
+    "de": "Hochleistungswellenkanone P",
+    "fr": "Canon plasma surchargé P",
+    "icon": "/i/015000/015026.png"
   },
   "3509": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Condensed Wave Cannon Kyrios",
+    "ja": "高出力波動砲P",
+    "de": "Hochleistungswellenkanone P",
+    "fr": "Canon plasma surchargé P",
+    "icon": "/i/015000/015026.png"
   },
   "3510": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Condensed Wave Cannon Kyrios",
+    "ja": "高出力波動砲P",
+    "de": "Hochleistungswellenkanone P",
+    "fr": "Canon plasma surchargé P",
+    "icon": "/i/015000/015026.png"
   },
   "3511": {
     "en": "Glassy-eyed",
@@ -24605,11 +24605,11 @@
     "icon": ""
   },
   "3516": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Magic Vulnerability Up",
+    "ja": "被魔法ダメージ増加",
+    "de": "Erhöhte Magie-Verwundbarkeit",
+    "fr": "Vulnérabilité magique augmentée",
+    "icon": "/i/018000/018021.png"
   },
   "3517": {
     "en": "",
@@ -24661,53 +24661,53 @@
     "icon": "/i/015000/015355.png"
   },
   "3524": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Critical Synchronization Bug",
+    "ja": "クリティカルバグ：シェア",
+    "de": "Kritischer Bug: Synchronisierung",
+    "fr": "Bogue critique&nbsp;: partage",
+    "icon": "/i/015000/015915.png"
   },
   "3525": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Critical Overflow Bug",
+    "ja": "クリティカルバグ：サークル",
+    "de": "Kritischer Bug: Überlauf",
+    "fr": "Bogue critique&nbsp;: boucle",
+    "icon": "/i/015000/015916.png"
   },
   "3526": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Critical Underflow Bug",
+    "ja": "クリティカルバグ：デグレード",
+    "de": "Kritischer Bug: Unterlauf",
+    "fr": "Bogue critique&nbsp;: dégradation",
+    "icon": "/i/015000/015917.png"
   },
   "3527": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Latent Defect",
+    "ja": "レイテントバグ",
+    "de": "Latenter Bug",
+    "fr": "Bogue latent",
+    "icon": "/i/015000/015921.png"
   },
   "3528": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Cascading Latent Defect",
+    "ja": "レイテントバグ：デグレード",
+    "de": "Latenter Bug: Unterlauf",
+    "fr": "Bogue latent&nbsp;: dégradation",
+    "icon": "/i/015000/015922.png"
   },
   "3529": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Local Regression",
+    "ja": "エンバグ：ニアー",
+    "de": "Regression: Nah",
+    "fr": "Bogue intentionnel&nbsp;: proximité",
+    "icon": "/i/015000/015923.png"
   },
   "3530": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Remote Regression",
+    "ja": "エンバグ：ファー",
+    "de": "Regression: Fern",
+    "fr": "Bogue intentionnel&nbsp;: distance",
+    "icon": "/i/015000/015924.png"
   },
   "3531": {
     "en": "",
@@ -24717,11 +24717,11 @@
     "icon": ""
   },
   "3532": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_3532_-1_1_0_0_S74CFC3B0_E74CFC3B0",
+    "ja": "_rsv_3532_-1_0_0_0_S74CFC3B0_E74CFC3B0",
+    "de": "_rsv_3532_-1_2_0_0_S74CFC3B0_E74CFC3B0",
+    "fr": "_rsv_3532_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "icon": "/i/015000/015171.png"
   },
   "3533": {
     "en": "",

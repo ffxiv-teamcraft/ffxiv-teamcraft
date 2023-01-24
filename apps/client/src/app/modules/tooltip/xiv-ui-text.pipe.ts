@@ -11,6 +11,6 @@ export class UiTextPipe implements PipeTransform {
 
   transform(value?: string | SafeHtml): SafeHtml | null {
     if (!value) return null;
-    return this.sanitizer.bypassSecurityTrustHtml(value.toString());
+    return this.sanitizer.bypassSecurityTrustHtml(value.toString().replace(/\n\n/gm, '<br>'));
   }
 }
