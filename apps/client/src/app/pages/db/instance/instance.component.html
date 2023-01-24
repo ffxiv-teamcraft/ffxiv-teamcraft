@@ -70,9 +70,8 @@
   <div>
     <nz-divider [nzText]="'DB.Instance_details' | translate" nzOrientation="left"></nz-divider>
   </div>
-  <div *ngIf="xivapiInstance.ContentFinderCondition.TerritoryType.Map" fxLayout="row wrap" fxLayout.lt-md="column"
-       fxLayoutGap="10px">
-    <nz-card [nzTitle]="mapTitle" class="details-card" fxFlex="1 1 auto" nzBordered="false">
+  <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
+    <nz-card [nzTitle]="mapTitle" class="details-card" fxFlex="1 1 auto" nzBordered="false" *ngIf="xivapiInstance.ContentFinderCondition.TerritoryType.Map">
       <ng-template #mapTitle>
         <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <div>
