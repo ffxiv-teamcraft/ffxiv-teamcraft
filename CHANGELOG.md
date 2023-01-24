@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.1.1"></a>
+## [10.1.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.1.0...v10.1.1) (2023-01-24)
+
+
+### Bug Fixes
+
+* **crafting-replay:** fixed crafting replays not recording properly ([4151220](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4151220))
+* **db:** fixed instance rewards sometimes not being listed in details page ([7bfd08b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7bfd08b))
+* **desktop:** better universalis GCF for better reporting and timeout management ([3ba76b4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3ba76b4))
+* **desktop:** prevent autofill crafting/gathering message from showing in overlays ([b38f592](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b38f592))
+* **gearset:** fixed currency total not updating on last materia done ([a113bdf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a113bdf))
+* **leveling-equipment:** fixed wrong suggestions for lower level crafting gear ([cdec71e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cdec71e))
+* **lists:** fixed offline lists sometimes not updated properly ([4cf8ce5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4cf8ce5))
+* **search:** removed sort selectors when they cannot be applied to the results ([2f4dad5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2f4dad5))
+* **step-by-step:** fixed Other sources not being displayed ([b71a214](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b71a214))
+* **tooltip:** fixed line break in description not processed properly ([c18bf5b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c18bf5b))
+
+
+### Features
+
+* **db:** 6.31 data update ([8452f57](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8452f57))
+* **desktop:** added a start button in packet capture status tooltip ([1ceb95c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1ceb95c))
+* **island-workshop:** new checkbox to display item metadata in planning ([#2456](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2456)) ([b972c05](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b972c05))
+* **step-by-step:** added HQ flag on step-by-step display (requires list update) ([e89b781](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e89b781))
+
+
+### Performance Improvements
+
+* **alarms:** done checkbox is now saved offline to lower database usage ([23bc5b4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/23bc5b4))
+* **desktop:** packet queue optimizations for lower memory usage ([da1f5fd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/da1f5fd))
+
+
+
 <a name="10.1.0"></a>
 # [10.1.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.0.8...v10.1.0) (2023-01-22)
 
