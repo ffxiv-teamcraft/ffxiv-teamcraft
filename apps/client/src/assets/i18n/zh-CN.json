@@ -135,7 +135,7 @@
     "Search": "搜索"
   },
   "COMMON": {
-    "Done": "Done",
+    "Done": "完成",
     "Length": "长度",
     "Save": "保存",
     "Reset": "重置",
@@ -472,7 +472,7 @@
     "Enable_autofill_notification_by_default": "默认启用自动填充通知",
     "Enable_autofill_hq_filter": "只将 HQ 物品用于 HQ 需求的自动填充",
     "Enable_autofill_nq_filter": "只将 NQ 物品用于非 HQ 需求的自动填充",
-    "Auto_minimalist_large_lists": "Automatically switch to minimalist mode for large lists",
+    "Auto_minimalist_large_lists": "将长列表自动切换到最小化模式",
     "Contribute_to_universalis": "向 Universalis 提交数据",
     "Track_items_on_sale": "追踪雇员出售的物品（需要重启应用或刷新页面）",
     "Change_email": "修改电子邮箱",
@@ -521,7 +521,7 @@
     "Materia_confidence_rate": "魔晶石禁断置信率",
     "Materia_confidence_rate_explain": "置信率用于预估魔晶石禁断数量，更高的置信率意味着预估时更多的魔晶石，从而提升完成禁断的可能性。会依据你的禁断方案调整。",
     "Disable_hardware_acceleration": "禁用硬件加速",
-    "Housing_map": "Housing map",
+    "Housing_map": "房区地图",
     "Housing_map_explain": "The housing map in which your house is",
     "COLORS": {
       "Background": "背景颜色",
