@@ -3044,6 +3044,7 @@
       "Create_list": "Eine Liste für diese Planung erstellen",
       "Exclude_pasture_materials": "Weidematerial ausschließen",
       "Exclude_crop_materials": "Erntematerial ausschließen",
+      "Display_item_metadata": "Display category and craft time of items in planning",
       "Groove_tooltip": "Groove at the end of the day",
       "Crafting_time": "Herstellungszeit",
       "Categories": "Kategorien",
