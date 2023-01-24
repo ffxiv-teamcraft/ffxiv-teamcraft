@@ -6561,11 +6561,11 @@ export const mapIds = [
   },
   {
     "id": 821,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4288,
+    "name": "The Interdimensional Rift",
+    "territory": 1122,
+    "scale": 400,
+    "weatherRate": 150
   },
   {
     "id": 822,
