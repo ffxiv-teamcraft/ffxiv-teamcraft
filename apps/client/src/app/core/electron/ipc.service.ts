@@ -517,6 +517,9 @@ export class IpcService {
   private handleMessage(packet: Message): void {
     // If we're inside an overlay, don't do anything with the packet, we don't care.
     this.totalPacketsHandled++;
+    if (this.pcapStatus$.value !== PacketCaptureStatus.RUNNING) {
+      this.pcapStatus$.next(PacketCaptureStatus.RUNNING);
+    }
     this.packets$.next(packet);
     const debugPackets = (<any>window).debugPackets;
     if (debugPackets === true || (typeof debugPackets === 'function' && debugPackets(packet))) {
