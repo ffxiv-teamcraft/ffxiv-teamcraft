@@ -57,7 +57,7 @@
   "Download_desktop_app": "デスクトップアプリをダウンロード",
   "Find_us_on_twitter": "公式ツイッター",
   "Join_discord_server": "Discord サーバーに参加する",
-  "See_code_github": "Star the project on Github",
+  "See_code_github": "Github でプロジェクトにスターを付ける",
   "Support_on_patreon": "Patreonで支援する",
   "Access_patreon_page": "Patreon ページへ移動",
   "Like_the_tool": "ツールを楽しく使ってもらえていますか？",
@@ -135,7 +135,7 @@
     "Search": "検索"
   },
   "COMMON": {
-    "Done": "Done",
+    "Done": "完了",
     "Length": "長さ",
     "Save": "保存",
     "Reset": "リセット",
@@ -198,7 +198,7 @@
     "Fate": "F. A. T. E",
     "Reload": "再読み込み",
     "Click_to_apply": "クリックして適用する",
-    "Recommended": "Recommended",
+    "Recommended": "推奨",
     "DAYS": {
       "Monday": "月曜日",
       "Tuesday": "火曜日",
