@@ -486,9 +486,9 @@
     "Scrolling_behavior_explain": "设置清单面板的滚动行为。默认情况下，每个面板在显示滚动条前可显示 12 个项目。",
     "Enable_auto_log_check": "采集（制作）物品后自动标记采集（制作）笔记",
     "Enable_auto_stats_updating": "游戏内切换职业时自动更新统计数据/级别",
-    "Enable_metrics_capture": "启用计量捕获",
+    "Enable_metrics_capture": "启动统计数据记录",
     "Enable_metrics_capture_explain": "（通过金币和物品收入进行捕获和统计，此信息仅供您查看，不会上传至服务器）",
-    "Metrics_capture_folder": "计量日志文件夹",
+    "Metrics_capture_folder": "统计数据日志文件夹",
     "Enable_local_fishing_dump": "启用本地钓鱼报告导出",
     "Char_data_folder": "角色数据文件夹 （CHRXXXXXXX 所在位置）",
     "Maximum_vendor_price": "最大商店购买价格",
@@ -591,7 +591,7 @@
     "Gearset_priority": "优先级",
     "Gearset_priority_explain": "用于决定物品可被多个职业制作（例如金属锭、金属块、飞空艇修理材料等）时选择配方的顺序。",
     "Characters": "角色",
-    "Missing_character": "缺少的字符",
+    "Missing_character": "角色不存在",
     "Missing_character_description": "此角色不再存在，请从您的个人资料中删除它。",
     "VERIFICATION": {
       "Button": "验证",
@@ -799,7 +799,7 @@
       "Switched_to_minimalist_large_list": "由于清单过长，显示模式已切换为简略模式。您可以在设置中禁用"
     },
     "SOURCES": {
-      "Gatherable": "可以收集，点击查看更多细节",
+      "Gatherable": "可以采集，点击查看更多细节",
       "Instances": "副本"
     },
     "LAYOUT_DIALOG": {
@@ -858,7 +858,7 @@
     "SPLIT": {
       "Pick_items": "选择要添加到另一个清单的项目",
       "Remove_from_list": "从当前清单中移除",
-      "Select_not_completed": "选择尚未完成的项目"
+      "Select_not_completed": "选择未完成的项目"
     }
   },
   "LIST_TAGS": {
@@ -1231,7 +1231,7 @@
       "NOT_SPECIALIST": "使用了专家手法，但你不是专家",
       "NO_INNER_QUIET": "没有内静 buff 但使用了内静技能",
       "MISSING_STATS_REQUIREMENT": "您不满足此配方所需要的最低属性",
-      "QUALITY_TOO_LOW": "品质不符合配方要求的品质"
+      "QUALITY_TOO_LOW": "品质不符合配方要求"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "如果你的目标是制作HQ成品，那么几乎所有手法都要包括内静。内静能够提供很大的品质增益，并触发“比尔格的祝福”等技能。",
@@ -1628,8 +1628,8 @@
       "Bite_time": "咬钩时间",
       "Spots": "钓场",
       "Min_gathering": "采集力要求",
-      "Min_observed_gathering": "观察到的最小采集量",
-      "Min_observed_gathering_explain": "到目前为止，在我们所有的自动报告中，这是最低值。并不意味着它是所需的最小采集，只是我们观察到的一个",
+      "Min_observed_gathering": "有记录的最低采集力",
+      "Min_observed_gathering_explain": "迄今为止的自动报告中的最小数据。不代表所需的最低采集力，仅供参考",
       "Min_size": "最小尺寸",
       "Max_size": "最大尺寸",
       "Avg_size": "平均尺寸",
@@ -2379,9 +2379,9 @@
     "Import_success": "表盘已面板",
     "Nothing_to_show": "没有可展示的数据",
     "Nothing_to_show_description": "请确保您选择了一个您启用了 TC 捕获数据的时间期间，并检查是否启用了此选项(在 设置 -> 客户端 中勾选启用计量捕获)",
-    "Importing": "正在将监测数据导入为sql格式，请勿关闭Teamcraft。这可能需要15分钟。",
-    "Imported": "监测数据已导入",
-    "Deleted": "监测数据已删除",
+    "Importing": "正在将统计数据导入为sql格式，请勿关闭Teamcraft。这可能需要15分钟。",
+    "Imported": "统计数据已导入",
+    "Deleted": "统计数据已删除",
     "SOURCES": {
       "UNKNOWN": "未知",
       "GATHERING": "采集",
@@ -3009,7 +3009,7 @@
   "ISLAND_SANCTUARY": {
     "Animal_source": "您需要从以下的牧场动物中获取该物品",
     "Island_level": "开拓等级",
-    "Landmarks": "地标",
+    "Landmarks": "地标数量",
     "Workshop_rank": "工坊等级",
     "WORKSHOP": {
       "Title": "工坊",
