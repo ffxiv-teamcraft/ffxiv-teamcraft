@@ -59,8 +59,7 @@ export class MateriasNeededPopupComponent {
           currencyRow.amount += row.amount * row.scrip.amount;
           return acc;
         }, []);
-      }),
-      filter(total => total.length > 0)
+      })
     );
   }
 

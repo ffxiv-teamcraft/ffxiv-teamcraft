@@ -241,7 +241,7 @@ export class UniversalisService {
             listings: -1
           }
         };
-        return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
+        return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalisPublisher', data, {
           headers: new HttpHeaders().append('Content-Type', 'application/json')
         }).pipe(
           catchError(e => {
@@ -292,7 +292,7 @@ export class UniversalisService {
               })];
           }, [])
         };
-        return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
+        return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalisPublisher', data, {
           headers: new HttpHeaders().append('Content-Type', 'application/json')
         });
       })
@@ -318,7 +318,7 @@ export class UniversalisService {
             };
           })
         };
-        return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
+        return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalisPublisher', data, {
           headers: new HttpHeaders().append('Content-Type', 'application/json')
         });
       })
@@ -338,7 +338,7 @@ export class UniversalisService {
           pricePerUnit: packet.pricePerUnit,
           uploaderID: cid
         };
-        return this.http.post(`https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-purchase`, data, {
+        return this.http.post(`https://us-central1-ffxivteamcraft.cloudfunctions.net/universalisPurchase`, data, {
           headers: new HttpHeaders().append('Content-Type', 'application/json')
         });
       })
@@ -375,7 +375,7 @@ export class UniversalisService {
             crystarium: packet.crystarium
           }
         };
-        return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
+        return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalisPublisher', data, {
           headers: new HttpHeaders().append('Content-Type', 'application/json')
         });
       })
@@ -387,7 +387,7 @@ export class UniversalisService {
       contentID: packet.contentId.toString(),
       characterName: packet.name
     };
-    this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
+    this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalisPublisher', data, {
       headers: new HttpHeaders().append('Content-Type', 'application/json')
     }).subscribe();
   }

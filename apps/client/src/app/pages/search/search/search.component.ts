@@ -215,6 +215,10 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
 
   showFilters = this.settings.showSearchFilters;
 
+  showSort$ = this.searchType$.pipe(
+    map(type => [SearchType.ITEM, SearchType.RECIPE].includes(type))
+  );
+
   constructor(private gt: GarlandToolsService, private data: DataService, public settings: SettingsService,
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private notificationService: NzNotificationService,

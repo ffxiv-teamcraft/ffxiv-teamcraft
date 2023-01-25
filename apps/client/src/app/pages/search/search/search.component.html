@@ -327,7 +327,7 @@
     </div>
   </div>
 
-  <div class="order-boxes" fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <div class="order-boxes" fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center center" fxLayoutGap="10px" *ngIf="showSort$ | async">
     <div>{{'SEARCH.Sort_by' | translate}}</div>
     <nz-select (ngModelChange)="sortBy$.next($event)" [ngModel]="sortBy$ | async" nzAllowClear>
       <nz-option *ngFor="let entry of possibleSortEntries$ | async" [nzLabel]="('SEARCH.SORT_BY.'+entry.label) | translate"

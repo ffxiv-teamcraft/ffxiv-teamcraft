@@ -520,7 +520,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
             .filter(e => {
               return containerName === null || this.inventoryFacade.getContainerDisplayName(e) === containerName;
             });
-          const requiredHq = ListController.requiredAsHQ(list, item) > 0;
+          const requiredHq = item.requiredHQ > 0;
           if (requiredHq && this.settings.enableAutofillHQFilter) {
             inventoryItems = inventoryItems.filter(i => i.hq);
           }
@@ -540,7 +540,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
             .filter(e => {
               return containerName === null || this.inventoryFacade.getContainerDisplayName(e) === containerName;
             });
-          const requiredHq = ListController.requiredAsHQ(list, item) > 0;
+          const requiredHq = item.requiredHQ > 0;
           if (requiredHq && this.settings.enableAutofillHQFilter) {
             inventoryItems = inventoryItems.filter(i => i.hq);
           }

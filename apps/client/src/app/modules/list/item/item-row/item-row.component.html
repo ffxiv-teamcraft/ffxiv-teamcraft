@@ -77,7 +77,7 @@
               (assignTeamMember)="assignTeamMember($event.team, $event.userId, item)"
               (setWorkingOnIt)="setWorkingOnIt($event, item)"
               (removeWorkingOnIt)="removeWorkingOnIt($event, item)"
-              [(requiredAsHQ)]="item.requiredAsHQ"
+              [(requiredAsHQ)]="item.forceRequiredHQ"
               (requiredAsHQChange)="saveItem(item)"
               [ignoreRequirements]="ignoreRequirements$ | async"
               (ignoreRequirementsChange)="setIgnoreRequirements($event, item.id, list, finalItem)"

@@ -484,6 +484,18 @@ export class IpcService {
         data: 'No ping received from the server during 60 seconds'
       });
     });
+    // If we don't get a packet for 5 minutes, attempt to restart pcap entirely.
+    this.packets$.pipe(
+      debounceTime(300000)
+    ).subscribe(() => {
+      this.pcapStatus$.next(PacketCaptureStatus.WARNING);
+      this.send('log', {
+        level: 'error',
+        data: 'No ping received from the server during 300 seconds, restarting pcap'
+      });
+      this.send('toggle-machina', false);
+      this.send('toggle-machina', true);
+    });
     this.handleOverlayChange();
   }
 
@@ -517,6 +529,9 @@ export class IpcService {
   private handleMessage(packet: Message): void {
     // If we're inside an overlay, don't do anything with the packet, we don't care.
     this.totalPacketsHandled++;
+    if (this.pcapStatus$.value !== PacketCaptureStatus.RUNNING) {
+      this.pcapStatus$.next(PacketCaptureStatus.RUNNING);
+    }
     this.packets$.next(packet);
     const debugPackets = (<any>window).debugPackets;
     if (debugPackets === true || (typeof debugPackets === 'function' && debugPackets(packet))) {

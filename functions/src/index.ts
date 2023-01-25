@@ -1,5 +1,6 @@
 import { RuntimeOptions } from 'firebase-functions';
 import { subDays } from 'date-fns';
+import axios from 'axios';
 
 const functions = require('firebase-functions');
 require('firebase/app');
@@ -122,6 +123,72 @@ export const islandSanctuaryHistory = functions.runWith(runtimeOpts).https.onReq
   res.status(200).send(history);
 });
 
+/**
+ * UNIVERSALIS
+ */
+export const universalisPurchase = functions.runWith({ memory: '128MB', timeoutSeconds: 5 }).https.onRequest((req, res) => {
+  const lastUniversalisTimeoutRef = admin.database().ref('/last_universalis_timeout');
+  res.set('Access-Control-Allow-Origin', '*')
+    .set('Access-Control-Allow-Headers', 'Content-Type');
+  lastUniversalisTimeoutRef.once('value', snap => {
+    const lastTimeout = snap.val();
+    // Pause everything for 30s when a timeout occurs
+    if (Date.now() - lastTimeout < 30000) {
+      return res.status(200).send('{"res":"Timeout"}');
+    } else {
+      const { itemID, worldID, ...payload } = req.body;
+
+      axios.post(
+        `https://universalis.app/api/${worldID}/${itemID}/delete`,
+        payload,
+        {
+          timeout: 2000,
+          headers: {
+            Authorization: functions.config().universalis.key
+          }
+        })
+        .then(() => {
+          res.status(200).send('{"res":"OK"}');
+        })
+        .catch((err) => {
+          res.status(500).send();
+          if (err.code === 'ECONNABORTED') {
+            lastUniversalisTimeoutRef.set(Date.now());
+          }
+        });
+    }
+  });
+});
+
+export const universalisPublisher = functions.runWith({ memory: '128MB', timeoutSeconds: 5 }).https.onRequest((req, res) => {
+  const lastUniversalisTimeoutRef = admin.database().ref('/last_universalis_timeout');
+  res.set('Access-Control-Allow-Origin', '*')
+    .set('Access-Control-Allow-Headers', 'Content-Type');
+  lastUniversalisTimeoutRef.once('value', snap => {
+    const lastTimeout = snap.val();
+    // Pause everything for 5min when a timeout occurs
+    if (Date.now() - lastTimeout < 30000) {
+      return res.status(200).send('{"res":"Timeout"}');
+    } else {
+      axios.post(
+        `https://universalis.app/upload/${functions.config().universalis.key}`,
+        req.body,
+        {
+          timeout: 2000
+        })
+        .then(() => {
+          res.status(200).send('{"res":"OK"}');
+        })
+        .catch(err => {
+          res.status(500).send(err);
+          console.log(err.message);
+          if (err.code === 'ECONNABORTED') {
+            lastUniversalisTimeoutRef.set(Date.now());
+          }
+        });
+    }
+  });
+});
 
 // Firestore counts
 export const firestoreCountlistsCreate = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate(() => {

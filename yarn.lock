@@ -2060,10 +2060,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@ffxiv-teamcraft/pcap-ffxiv@0.11.8":
-  version "0.11.8"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.11.8.tgz#c2ad95a0341aa448da5db29083d1c07b86b6e2e2"
-  integrity sha512-hchddUe1ASjNuc5paW32QSXgJ4BUuGE3vF/l+Ezx5wc8azK/tiB2vhkJKOf4d3+S3aUFIHdabe+jsxxCbfW2VQ==
+"@ffxiv-teamcraft/pcap-ffxiv@0.11.11":
+  version "0.11.11"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.11.11.tgz#50732dc199bede370170857b0352eb10852755ff"
+  integrity sha512-S/V4jWvtLk92GSubZljHcUWrGqN1uYlQ8E18q8Fm7vSyNSTwPZ92mUQQnkUTkRFzwvGggnDPsAcDULwMRBRptw==
   dependencies:
     heap-js "^2.1.5"
 
@@ -20174,9 +20174,9 @@ ua-parser-js@1.0.2:
   integrity sha512-00y/AXhx0/SsnI51fTc0rLRmafiGOM4/O+ny10Ps7f+j/b8p/ZY11ytMgznXkOVo4GQ+KwQG5UQLkLGirsACRg==
 
 ua-parser-js@^0.7.30:
-  version "0.7.31"
-  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.31.tgz#649a656b191dffab4f21d5e053e27ca17cbff5c6"
-  integrity sha512-qLK/Xe9E2uzmYI3qLeOmI0tEOt+TBBQyUIAh4aAgU05FVYzeZrKUdkAZfBNVGRaHVgV0TDkdEngJSw/SyQchkQ==
+  version "0.7.33"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.33.tgz#1d04acb4ccef9293df6f70f2c3d22f3030d8b532"
+  integrity sha512-s8ax/CeZdK9R/56Sui0WM6y9OFREJarMRHqLB2EwkovemBxNQ+Bqu8GAsUnVcXKgphb++ghr/B2BZx4mahujPw==
 
 uc.micro@^1.0.1, uc.micro@^1.0.5:
   version "1.0.6"

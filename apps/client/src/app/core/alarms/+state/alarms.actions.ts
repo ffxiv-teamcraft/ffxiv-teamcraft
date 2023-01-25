@@ -12,6 +12,7 @@ export enum AlarmsActionTypes {
   AlarmsCreated = '[Alarms] Alarms created',
   UpdateAlarm = '[Alarms] Update Alarm',
   PureUpdateAlarm = '[Alarms] Pure Update Alarm',
+  SetAlarmDone = '[Alarms] Set Alarm Done',
   RemoveAlarm = '[Alarms] Remove Alarm',
 
   PersistAlarms = '[Alarms] Persist Alarms',
@@ -72,6 +73,13 @@ export class PureUpdateAlarm implements Action {
   readonly type = AlarmsActionTypes.PureUpdateAlarm;
 
   constructor(public readonly key: string, public readonly payload: UpdateData<Alarm>) {
+  }
+}
+
+export class SetAlarmDone implements Action {
+  readonly type = AlarmsActionTypes.SetAlarmDone;
+
+  constructor(public readonly key: string, public readonly done: boolean) {
   }
 }
 
@@ -163,4 +171,5 @@ export type AlarmsAction =
   | AlarmGroupLoaded
   | SetAlarms
   | SetGroups
-  | PureUpdateAlarm;
+  | PureUpdateAlarm
+  | SetAlarmDone;

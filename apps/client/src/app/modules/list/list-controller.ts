@@ -176,14 +176,14 @@ export class ListController {
     return list.finalItems.length === 0;
   }
 
-  public static requiredAsHQ(list: List, item: ListRow): number {
+  public static amountRequiredHQ(list: List, item: ListRow): number {
     if (list.disableHQSuggestions) {
       return 0;
     }
     if (!item || item.id < 20 || !syncHqFlags[item.id]) {
       return 0;
     }
-    if (item.requiredAsHQ) {
+    if (item.forceRequiredHQ) {
       return item.amount;
     }
     const recipesNeedingItem = list.finalItems
@@ -191,7 +191,7 @@ export class ListController {
       .filter(i => {
         return (i.requires || []).some(req => req.id === item.id);
       });
-    if (recipesNeedingItem.length === 0 || item.requiredAsHQ === false) {
+    if (recipesNeedingItem.length === 0 || item.forceRequiredHQ === false) {
       return 0;
     } else {
       let count = 0;
@@ -337,6 +337,7 @@ export class ListController {
     directRequirements.forEach(item => {
       item.canBeCrafted = ListController.canBeCrafted(list, item);
       item.craftableAmount = ListController.craftableAmount(list, item);
+      item.requiredHQ = ListController.amountRequiredHQ(list, item);
     });
     list.finalItems.forEach(i => {
       i.hasAllBaseIngredients = (i.requires || []).length > 0 && !i.canBeCrafted && i.done < i.amount && ListController.hasAllBaseIngredients(list, i);

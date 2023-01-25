@@ -165,7 +165,7 @@ export class LayoutsFacade {
                         collapsedByDefault: row.collapsedByDefault,
                         layoutRow: row,
                         layout: layout,
-                        allHQ: orderedAccepted.every(i => i.requiredAsHQ)
+                        allHQ: orderedAccepted.every(i => i.forceRequiredHQ)
                       }
                     ]
                   };
@@ -226,7 +226,7 @@ export class LayoutsFacade {
           collapsed: false,
           layoutRow: null,
           layout: layout,
-          allHQ: rows.every(i => i.requiredAsHQ)
+          allHQ: rows.every(i => i.forceRequiredHQ)
         };
       })
     );

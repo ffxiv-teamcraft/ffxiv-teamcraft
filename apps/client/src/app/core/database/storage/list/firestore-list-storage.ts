@@ -28,13 +28,14 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> {
     'recipeId',
     'yield',
     'workingOnIt',
-    'requiredAsHQ',
+    'forceRequiredHQ',
     'custom',
     'attachedRotation',
     'requires',
     'canBeCrafted',
     'hasAllBaseIngredients',
-    'craftableAmount'
+    'craftableAmount',
+    'requiredHQ'
   ];
 
   constructor(protected firestore: Firestore, protected serializer: NgSerializerService, protected zone: NgZone,
