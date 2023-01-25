@@ -800,7 +800,7 @@
     },
     "SOURCES": {
       "Gatherable": "可以收集，点击查看更多细节",
-      "Instances": "Instances"
+      "Instances": "副本"
     },
     "LAYOUT_DIALOG": {
       "Title": "布局",
@@ -3037,7 +3037,7 @@
       "Peak_days_explain": "该产品价格可能达到峰值的日期。加粗=高峰值",
       "Items_to_prepare": "为明天准备的最优物品",
       "Rest": "休息日",
-      "Unknown_day_planning": "Available on {{day}}",
+      "Unknown_day_planning": "在{{day}}可见",
       "Set_rest_day": "设置为第二个休息日",
       "Import_explain": "您可以在游戏内打开供需窗口以更新数据（需要在桌面端开启数据包捕获）",
       "Amount_of_workshops": "工坊数量：",
