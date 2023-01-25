@@ -135,7 +135,7 @@
     "Search": "Suche"
   },
   "COMMON": {
-    "Done": "Done",
+    "Done": "Fertig",
     "Length": "Länge",
     "Save": "Speichern",
     "Reset": "Neustart",
@@ -599,8 +599,8 @@
       "Guide": "Um dein Konto zu verifizieren, füge den Code \"{{userId}}\" in die Biografie deines Lodestone-Profils ein und klicke danach den Button. Mehr Informationen findest du in der <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">Wiki</a>.",
       "Success": "Charakter verifiziert! Du kannst dieses Popup jetzt schließen. Der Code kann jetzt aus dem Profil entfernt werden.",
       "Validate": "Verifizieren",
-      "Submitted": "Checking your Lodestone profile...",
-      "Error": "Couldn't find the code in your bio. Please make sure you pasted it and applied the changes. If you did so correctly and the verification still failed, please try again in a few hours due to how Lodestone caching works. However, verification only affects Free Company lists and the Commission System, so you can continue using all other features without issue."
+      "Submitted": "Überprüfe dein Lodestone-Profil...",
+      "Error": "Konnte den Code in deiner Bio nicht finden. Bitte stelle sicher, dass du ihn eingefügt und die Änderungen übernommen hast. Wenn du dies richtig gemacht hast und die Überprüfung immer noch fehlgeschlagen ist, versuche es bitte in ein paar Stunden erneut, bis Lodestone Caching funktioniert. Allerdings wirkt sich die Überprüfung nur auf Listen der Freien Gesellschaft und das Kommissionssystem aus, so dass du alle anderen Funktionen ohne Probleme weiter nutzen kannst."
     }
   },
   "LISTS": {
@@ -618,7 +618,7 @@
     "Your_lists": "Deine Listen",
     "Outdated_tag": "veraltet",
     "No_lists": "Keine Listen zum Anzeigen",
-    "List_aggregates": "List aggregates",
+    "List_aggregates": "Zusammenfassungen auflisten",
     "Lists_search_placeholder": "Suche nach Liste…",
     "Add_to_a_list": "Einer Liste hinzufügen",
     "Please_pick_recipe": "Bitte wähle ein Rezept für diesen Gegenstand",
@@ -782,23 +782,25 @@
       "Previous_incomplete": "Vorherige unvollständige Karte",
       "Next": "Nächste Karte",
       "Next_incomplete": "Nächste unvollständige Karte",
-      "Global_list_progress": "Global list progress",
+      "Global_list_progress": "Globaler Listenfortschritt",
       "Alarms": "Timed rows",
       "Crafts": "Bestellte Herstellungen",
       "Toggle_overlay": "Schritt-für-Schritt-Overlay öffnen/schließen",
       "Empty_map": "Nichts in der aktuellen Karte zu tun, die nächste Karte für diese Liste ist {{closest}}",
       "Unknown_map": "Unbekannte Karte, bitte wechsle die die Karte, damit TC sie erkennen kann.",
-      "No_list": "Keine Liste, bitte öffne eine Liste im Hauptfenster, damit das Overlay wie beabsichtigt arbeitet."
+      "No_list": "Keine Liste, bitte öffne eine Liste im Hauptfenster, damit das Overlay wie beabsichtigt arbeitet.",
+      "Others": "Others"
     },
     "DISPLAY_MODE": {
-      "Title": "Display mode",
+      "Title": "Anzeigemodus",
       "Full": "Full",
       "Minimalist": "Minimalist",
       "Step_by_step": "Schritt für Schritt",
       "Switched_to_minimalist_large_list": "Der Anzeigemodus wurde auf minimalistisch umgeschaltet, da dies eine große Liste ist. Du kannst dies in den Einstellungen deaktivieren."
     },
     "SOURCES": {
-      "Gatherable": "Kann gesammelt werden, klicke um mehr Details zu sehen"
+      "Gatherable": "Kann gesammelt werden, klicke um mehr Details zu sehen",
+      "Instances": "Instances"
     },
     "LAYOUT_DIALOG": {
       "Title": "Layout",
@@ -1383,7 +1385,7 @@
       "Alarms": "Erstelle Alarme, um kein Erscheinen eines Vorkommens zu verpassen, organisiere sie in Gruppen, importiere sie im Spiel, alles ist möglich!",
       "Gathering_location": "Finde Informationen über alle Sammlergegenstände, erstelle Alarme, erhalte sofort Koordinaten, den nächsten Ätheryten, erforderliche Bücher, und mehr!",
       "Rotations": "Erstelle Rotationen zum Herstellen, teste sie im Simulator, oder teste theoretische Rotationen mit dem benutzerdefinierten Simulator!",
-      "Levequests": "Find some levequests for a given job and/or level range, see instant benefits on them and create lists for them.",
+      "Levequests": "Finde Freibriefe für einen bestimmten Job und/oder Stufenbereich, schau dir den Fortschritt an und erstelle daraus Listen.",
       "Macro_translation": "Du hast Makros, die nicht in deiner Sprache sind? Nutze die Makro-Übersetzung und übersetze es in deine Sprache damit es auch in deiner Sprachversion von FFXIV funktioniert!"
     }
   },
@@ -2002,9 +2004,9 @@
     "Install_npcap_button": "Installiere npcap und starte Teamcraft neu",
     "Not_as_anonymous": "Paketerfassung funktioniert nicht korrekt als anonyme Person",
     "Not_as_anonymous_description": "Bitte registriere dich, indem du die Bezeichnung \"Anonymous\" in der oberen rechten Ecke drückst und auf \"Registrieren\" klickst, oder die Paketaufnahme innerhalb der Einstellungen deaktivierst.",
-    "Status": "Packet capture status",
-    "Pcap": "Packet capture",
-    "Inventory": "Inventory tracking"
+    "Status": "Paketerfassungsstatus",
+    "Pcap": "Paketerfassung",
+    "Inventory": "Inventarerfassung"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Region zu {{region}} wechseln",
@@ -2988,13 +2990,13 @@
     "Open_aggregate": "Open an aggregated view",
     "Title": "Aggregated list view",
     "Select_panel": "Select a panel to open its view",
-    "Missing_lists": "{{amount}} list(s) could not be loaded properly",
-    "Remove_missing_ids": "Remove missing lists from the aggregate",
-    "Missing_lists_description": "Please make sure you have enough permissions on all the lists and that they still exist (missing ids: {{ids}}).",
-    "Save": "Save this aggregate to your lists page",
-    "Saved": "Aggregate saved to your lists page",
-    "Final_items_count": "# of items",
-    "Requirement_items_count": "# of required items",
+    "Missing_lists": "{{amount}} Liste(n) konnten nicht korrekt geladen werden",
+    "Remove_missing_ids": "Fehlende Listen aus der Zusammenfassung entfernen",
+    "Missing_lists_description": "Bitte stelle sicher, dass du genügend Berechtigungen für alle Listen hast und dass diese noch existieren (fehlende IDs: {{ids}}).",
+    "Save": "Speichere diese Zusammenfassung auf deiner Listenseite",
+    "Saved": "Zusammenfassung auf der Listenseite gespeichert",
+    "Final_items_count": "Anzahl der Elemente",
+    "Requirement_items_count": "# benötigter Gegenstände",
     "Switch_panel": "Switch panel"
   },
   "MACHINA_ERRORS": {
@@ -3013,7 +3015,7 @@
       "Title": "Atelier",
       "Subtitle": "Verfolge und verwalte dein Atelier",
       "Out_of_sync": "Status wurde seit dem letzten Reset nicht aktualisiert",
-      "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary for the first time after logging in the game to update the state (If you have already opened the window since you logged in, you will need to log out of the game and back in, and re-open the Supply/Demand window to correctly update your state). If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button, or import from database.",
+      "Out_of_sync_explain": "Bitte öffne das Angebot/Nachfrage Fenster in deinem Inselatelier zum ersten Mal, nachdem du dich im Spiel angemeldet hast, um den Status zu aktualisieren (Wenn du das Fenster bereits geöffnet hast, seit du dich eingeloggt hast, musst du dich aus dem Spiel ausloggen und wieder einloggen und das Fenster Angebot/Nachfrage erneut öffnen, um den Status korrekt zu aktualisieren). Wenn du keine Paketaufnahme verwendest, bite einen anderen Benutzer, seinen Status zu aktualisieren und ihn dann zu exportieren, damit du den Import-Button verwenden oder aus der Datenbank importieren können.",
       "Export_state": "Exportiere Angebot-/Nachfrage-Status",
       "State_copied": "Status wurde in die Zwischenablage kopiert",
       "Import_state": "Importiere Status",
@@ -3042,6 +3044,7 @@
       "Create_list": "Eine Liste für diese Planung erstellen",
       "Exclude_pasture_materials": "Weidematerial ausschließen",
       "Exclude_crop_materials": "Erntematerial ausschließen",
+      "Display_item_metadata": "Display category and craft time of items in planning",
       "Groove_tooltip": "Groove at the end of the day",
       "Crafting_time": "Herstellungszeit",
       "Categories": "Kategorien",
