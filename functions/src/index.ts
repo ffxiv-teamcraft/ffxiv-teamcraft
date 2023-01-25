@@ -132,9 +132,9 @@ export const universalisPurchase = functions.runWith({ memory: '128MB', timeoutS
     .set('Access-Control-Allow-Headers', 'Content-Type');
   lastUniversalisTimeoutRef.once('value', snap => {
     const lastTimeout = snap.val();
-    // Pause everything for 5min when a timeout occurs
+    // Pause everything for 30s when a timeout occurs
     if (Date.now() - lastTimeout < 30000) {
-      return res.status(200).send('{"res":"OK"}');
+      return res.status(200).send('{"res":"Timeout"}');
     } else {
       const { itemID, worldID, ...payload } = req.body;
 
@@ -168,7 +168,7 @@ export const universalisPublisher = functions.runWith({ memory: '128MB', timeout
     const lastTimeout = snap.val();
     // Pause everything for 5min when a timeout occurs
     if (Date.now() - lastTimeout < 30000) {
-      return res.status(200).send('{"res":"OK"}');
+      return res.status(200).send('{"res":"Timeout"}');
     } else {
       axios.post(
         `https://universalis.app/upload/${functions.config().universalis.key}`,
@@ -176,8 +176,8 @@ export const universalisPublisher = functions.runWith({ memory: '128MB', timeout
         {
           timeout: 2000
         })
-        .then(response => {
-          res.status(response.status).send(response.data);
+        .then(() => {
+          res.status(200).send('{"res":"OK"}');
         })
         .catch(err => {
           res.status(500).send(err);
