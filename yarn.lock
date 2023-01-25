@@ -2060,10 +2060,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@ffxiv-teamcraft/pcap-ffxiv@0.11.11":
-  version "0.11.11"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.11.11.tgz#50732dc199bede370170857b0352eb10852755ff"
-  integrity sha512-S/V4jWvtLk92GSubZljHcUWrGqN1uYlQ8E18q8Fm7vSyNSTwPZ92mUQQnkUTkRFzwvGggnDPsAcDULwMRBRptw==
+"@ffxiv-teamcraft/pcap-ffxiv@0.11.9":
+  version "0.11.9"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.11.9.tgz#aff340d67983ceebd0c88b0c590662c558242b17"
+  integrity sha512-ScNMd9itXdg7GRFXXbPwJitvlQ04R8ot9SMPZ45lu+I14hnvpfGMMqGyERmI91Er1wQW45ei0NyxPA3HTV8iEA==
   dependencies:
     heap-js "^2.1.5"
 

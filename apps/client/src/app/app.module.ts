@@ -90,6 +90,7 @@ import zh from '@angular/common/locales/zh';
 import ru from '@angular/common/locales/ru';
 import es from '@angular/common/locales/es';
 import pt from '@angular/common/locales/pt';
+import br from '@angular/common/locales/br';
 import hr from '@angular/common/locales/hr';
 import ko from '@angular/common/locales/ko';
 import { InventoryModule } from './modules/inventory/inventory.module';
@@ -173,6 +174,7 @@ registerLocaleData(pt);
 registerLocaleData(hr);
 registerLocaleData(ru);
 registerLocaleData(ko);
+registerLocaleData(br);
 
 const nzConfig: NzConfig = {
   message: {
