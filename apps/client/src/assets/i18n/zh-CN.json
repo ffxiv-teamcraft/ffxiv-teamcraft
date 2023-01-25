@@ -3003,7 +3003,7 @@
     "Default": "Machina Wrapper错误",
     "Wrapper_failed_to_start": "Machina Wrapper无法启动",
     "DESCRIPTION": {
-      "Wrapper_failed_to_start": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.<br><br> Retrying in {{retryDelay}}s"
+      "Wrapper_failed_to_start": "请确保游戏正在运行（如果以管理员权限启动，TC同样需要管理员权限）<br>如果问题仍然存在，请在discord的 #troubleshooting 频道报告含上述消息的截图。<br><br>将在{{retryDelay}}秒后重试"
     }
   },
   "ISLAND_SANCTUARY": {
@@ -3075,7 +3075,7 @@
       }
     },
     "ANIMALS": {
-      "Title": "Animals",
+      "Title": "动物",
       "Subtitle": "A comprehensive list of animals, where and when to find them, with alarms integration",
       "Name": "Name",
       "Size": "Size",
