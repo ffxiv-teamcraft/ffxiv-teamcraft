@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.1.3"></a>
+## [10.1.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.1.2...v10.1.3) (2023-01-25)
+
+
+### Bug Fixes
+
+* **core:** fixed some numbers not showing when using PT_BR locale ([07716b7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/07716b7))
+* **desktop:** rollback of recent packet capture changes to fix inventory tracking issues ([bfe469f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bfe469f))
+
+
+
 <a name="10.1.2"></a>
 ## [10.1.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.1.1...v10.1.2) (2023-01-25)
 
