@@ -3000,8 +3000,8 @@
     "Switch_panel": "Switch panel"
   },
   "MACHINA_ERRORS": {
-    "Default": "Machina Wrapper error",
-    "Wrapper_failed_to_start": "Machina Wrapper failed to start",
+    "Default": "Machina Wrapper错误",
+    "Wrapper_failed_to_start": "Machina Wrapper无法启动",
     "DESCRIPTION": {
       "Wrapper_failed_to_start": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.<br><br> Retrying in {{retryDelay}}s"
     }
