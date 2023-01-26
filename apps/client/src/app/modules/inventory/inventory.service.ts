@@ -123,7 +123,7 @@ export class InventoryService {
     const updateInventorySlotMessages$ = this.ipc.packets$.pipe(ofMessageType('updateInventorySlot'));
     const itemMarketBoardInfoMessages$ = this.ipc.packets$.pipe(ofMessageType('itemMarketBoardInfo'));
     const clientTriggerMbPriceMessages$ = this.ipc.packets$.pipe(ofMessageType('clientTrigger'), filter(m => m.parsedIpcData.commandId === 400));
-    const islandSanctuaryInventoryPackets$ = this.ipc.packets$.pipe(
+    const actorControlSelfInventory$ = this.ipc.packets$.pipe(
       ofMessageType('actorControlSelf'),
       toIpcData(),
       filter(p => p.category === 378)
@@ -183,7 +183,8 @@ export class InventoryService {
             map(retainer => ({ type: 'RetainerSpawn', retainer: retainer }))
           );
 
-          const islandPackets$: Observable<{ type: 'IslandInventoryPacket', itemId: number, quantity: number }> = islandSanctuaryInventoryPackets$.pipe(
+          const islandPackets$: Observable<{ type: 'IslandInventoryPacket', itemId: number, quantity: number }> = actorControlSelfInventory$.pipe(
+            filter(p => p.param1 === 255),
             map(p => {
               return {
                 type: 'IslandInventoryPacket',
@@ -193,8 +194,19 @@ export class InventoryService {
             })
           );
 
+          const actorControlTokenPackets$: Observable<{ type: 'ActorControlTokenPacket', itemId: number, quantity: number }> = actorControlSelfInventory$.pipe(
+            filter(p => p.param1 !== 255),
+            map(p => {
+              return {
+                type: 'ActorControlTokenPacket',
+                itemId: p.param2,
+                quantity: p.param4
+              };
+            })
+          );
+
           const customActions$ = merge(this.contentId$, this.setInventory$, this.resetInventory$, retainerActions$);
-          return merge(packetActions$, customActions$, packetActions2$, islandPackets$).pipe(
+          return merge(packetActions$, customActions$, packetActions2$, islandPackets$, actorControlTokenPackets$).pipe(
             scan((state: InventoryState, action) => {
               if (!action) {
                 return state;
@@ -208,6 +220,8 @@ export class InventoryService {
               }
               try {
                 switch (action.type) {
+                  case 'ActorControlTokenPacket':
+                    return { ...state, inventory: this.handleActorControlTokenPacket(state.inventory, action) };
                   case 'IslandInventoryPacket':
                     return { ...state, inventory: this.handleIslandPacket(state.inventory, action) };
                   case 'SetContentId':
@@ -555,6 +569,14 @@ export class InventoryService {
       });
     }
     inventory.resetSearchCache();
+    return inventory;
+  }
+
+  private handleActorControlTokenPacket(inventory: UserInventory, action: { type: 'ActorControlTokenPacket', itemId: number, quantity: number }): UserInventory {
+    // TODO handle currencies in their own inventory, for now just skip it.
+    if ((window as any).debugToken) {
+      console.log(action);
+    }
     return inventory;
   }
 
