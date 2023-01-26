@@ -98,7 +98,7 @@
   <div fxLayout="column" fxLayoutGap="5px">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <img [src]="row.id | lazyRow:'instances':'icon' | async | xivapiIcon" alt="">
-      <div>{{row.id | i18nRow:'instances' | i18n}}</div>
+      <app-i18n-name content="instances" [id]="row.id"></app-i18n-name>
       <app-db-button [id]="row.id" type="instance"></app-db-button>
     </div>
     <div fxLayout="row" fxLayoutGap="5px">
@@ -120,7 +120,7 @@
   <div fxLayout="column" fxLayoutGap="5px">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <img [src]="row.id | lazyRow: 'quests':'icon' | async | xivapiIcon" alt="" class="quest-icon">
-      <div>{{row.id | i18nRow:'quests' | i18n}}</div>
+      <app-i18n-name content="quests" [id]="row.id"></app-i18n-name>
       <app-db-button [id]="row.id" type="quest"></app-db-button>
     </div>
     <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
@@ -140,7 +140,7 @@
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <div fxLayout="row" fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px">
         <div fxLayout="column">
-          <div>{{row.id | i18nRow:'npcs' | i18n}}</div>
+          <app-i18n-name content="npcs" [id]="row.id"></app-i18n-name>
           <div fxLayout="row" fxLayoutGap="5px">
             <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
             <div><span
@@ -192,7 +192,7 @@
   <div fxLayout="column" fxLayoutGap="5px">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon">
-      <div>{{row.id | i18nRow:'leves' | i18n}}</div>
+      <app-i18n-name content="leves" [id]="row.id"></app-i18n-name>
       <app-db-button [id]="row.id" type="leve"></app-db-button>
     </div>
     <div fxLayout="row" fxLayoutGap="5px">
@@ -211,7 +211,7 @@
   <div fxLayout="column" fxLayoutGap="5px">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <img [src]="'/c/PlaceName.png' | xivapiIcon" alt="" class="quest-icon">
-      <div>{{row.zoneid | i18nRow:'places' | i18n}}</div>
+      <app-i18n-name content="places" [id]="row.zoneid"></app-i18n-name>
       <app-db-button [id]="row.id" type="map"></app-db-button>
     </div>
     <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
@@ -249,7 +249,7 @@
   <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon" fxFlex="0 0 auto">
   <div fxLayout="column" fxLayoutGap="5px">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <div><b>{{row.id | i18nRow: 'fates' | i18n}}</b> - lvl{{row.level}}</div>
+      <div><app-i18n-name content="fates" [id]="row.id"></app-i18n-name> - lvl{{row.level}}</div>
       <app-db-button [id]="row.id" type="fate"></app-db-button>
     </div>
     <div fxLayout="row" fxLayoutGap="5px">
@@ -315,7 +315,7 @@
   <div fxLayout="column" fxLayoutGap="5px">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <div fxLayout="column">
-        <div>{{row.id | i18nRow:'traits' | i18n}}</div>
+        <app-i18n-name content="traits" [id]="row.id"></app-i18n-name>
         <div fxLayout="row" fxLayoutGap="5px">
           <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
           <div>
@@ -338,7 +338,7 @@
   <div fxLayout="column" fxLayoutGap="5px">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <div fxLayout="column">
-        <div>{{row.id | i18nRow:'achievements' | i18n}}</div>
+        <app-i18n-name content="achievements" [id]="row.id"></app-i18n-name>
         <div fxLayout="row" fxLayoutGap="5px">
           <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
         </div>

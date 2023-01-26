@@ -30,7 +30,7 @@ export abstract class TeamcraftPageComponent extends SeoPageComponent implements
         const slug = params.get('slug');
         return i18n.getNameObservable(entity, +params.get(paramName)).pipe(
           map(name => {
-            const correctSlug = name.split(' ').join('-');
+            const correctSlug = encodeURIComponent(name.split(' ').join('-'));
             return { slug, correctSlug };
           })
         );
