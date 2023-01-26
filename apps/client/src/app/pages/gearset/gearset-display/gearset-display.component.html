@@ -5,6 +5,10 @@
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="page-title">
           <span class="gearset-name">{{gearset.name}}</span>
           <span class="companion-svg job-icon" [innerHTML]="gearset.job | jobUnicode"></span>
+          <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'GEARSETS.Reset_progression' | translate"
+                  nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="resetProgression(gearset)">
+            <i nz-icon nzType="reload"></i>
+          </button>
           <ng-container *ngIf="userId$ | async as userId">
             <app-favorite-button *ngIf="gearset.authorId !== userId"
                                  type="gearsets"
@@ -67,7 +71,8 @@
             <div fxFlexOrder="2" fxLayout="row" fxLayoutAlign="center center">
               <div fxLayout="column">
                 <app-gearset-display-slot *ngFor="let row of gearsetSlotProperties" [gearset]="gearset" [propertyName]="row[1]"
-                                          [verbose]="true" [progression]="progression" (progressionChange)="updateProgression(gearset.$key, $event)"></app-gearset-display-slot>
+                                          [verbose]="true" [progression]="progression"
+                                          (progressionChange)="updateProgression(gearset.$key, $event)"></app-gearset-display-slot>
               </div>
             </div>
             <div fxFlexOrder="3" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
@@ -113,7 +118,8 @@
               </div>
               <app-stats-popup class="full-width-table" [gearset]="gearset" [food]="food$ | async" [level]="level$ | async"
                                [tribe]="tribe$ | async"></app-stats-popup>
-              <app-materias-needed-popup class="full-width-table" [gearset]="gearset" [progression]="progression" [(includeAllTools)]="includeAllTools"></app-materias-needed-popup>
+              <app-materias-needed-popup class="full-width-table" [gearset]="gearset" [progression]="progression"
+                                         [(includeAllTools)]="includeAllTools"></app-materias-needed-popup>
               <app-gearset-cost-popup class="full-width-table" [gearset]="gearset" [progression]="progression"></app-gearset-cost-popup>
             </div>
           </div>

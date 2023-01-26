@@ -22,7 +22,7 @@ import { RecipeChoicePopupComponent } from '../../simulator/components/recipe-ch
 import { BaseParam } from '../../../modules/gearsets/base-param';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { GearsetProgression } from '../../../model/gearset/gearset-progression';
+import { GearsetProgression, newEmptyProgression } from '../../../model/gearset/gearset-progression';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
@@ -183,6 +183,10 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
     ).subscribe(items => {
       this.listPicker.addToList(...items);
     });
+  }
+
+  resetProgression(gearset: TeamcraftGearset): void {
+    this.gearsetsFacade.saveProgression(gearset.$key, { ...newEmptyProgression() });
   }
 
   createCommission(gearset: TeamcraftGearset, progression: GearsetProgression): void {
