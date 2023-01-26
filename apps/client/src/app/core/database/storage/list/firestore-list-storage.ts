@@ -12,6 +12,7 @@ import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { ListController } from '../../../../modules/list/list-controller';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Firestore, QueryConstraint, Timestamp, where } from '@angular/fire/firestore';
+import structuredClone from '@ungap/structured-clone';
 
 @Injectable({
   providedIn: 'root'

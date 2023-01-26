@@ -18,6 +18,7 @@ import { LazyDataI18nKey } from '../../../lazy-data/lazy-data-types';
 import { IslandAnimal } from './island-animal';
 import { IslandCrop } from './island-crop';
 import { TripleTriadDuel } from '../../../pages/db/model/attt/triple-triad-duel';
+import structuredClone from '@ungap/structured-clone';
 
 export function isListRow(obj: any): obj is ListRow {
   return typeof obj === 'object'

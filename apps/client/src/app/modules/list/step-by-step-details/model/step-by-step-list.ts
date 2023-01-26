@@ -8,6 +8,7 @@ import { LazyData } from '../../../../lazy-data/lazy-data';
 import { getTiers } from '../../../../core/tools/get-tiers';
 import { NodeTypeIconPipe } from '../../../../pipes/pipes/node-type-icon.pipe';
 import { NavigationObjective } from '../../../map/navigation-objective';
+import structuredClone from '@ungap/structured-clone';
 
 export class StepByStepList {
   public alarms: ListRow[] = [];
