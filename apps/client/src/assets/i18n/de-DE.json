@@ -2185,6 +2185,7 @@
     "Editing_others_gearset_description": "Du bearbeitest gerade das Ausrüstungsset eines anderen Benutzers. Es wird nichts gespeichert, solange du nicht oben auf die Schaltfläche \"Speichern\" klickst, um deine eigene Kopie zu erstellen.",
     "Empty_materias": "Alle Materia aus der ausgewählten Ausrüstung entfernen",
     "Total_scrips": "Total currencies needed",
+    "Reset_progression": "Reset item and materia progression",
     "SLOT": {
       "Body": "Rumpf",
       "Ears": "Ohrring",
