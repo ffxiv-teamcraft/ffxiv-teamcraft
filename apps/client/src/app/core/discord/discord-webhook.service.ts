@@ -118,12 +118,12 @@ export class DiscordWebhookService {
       return;
     }
     const row = ListController.getItemById(list, itemId, !finalItem, finalItem);
-    if (row.done + amount < totalNeeded && !team.hasSettingEnabled(WebhookSettingType.ITEM_PROGRESSION)) {
+    if (row.done < totalNeeded && !team.hasSettingEnabled(WebhookSettingType.ITEM_PROGRESSION)) {
       return;
-    } else if (row.done + amount >= totalNeeded && !team.hasSettingEnabled(WebhookSettingType.ITEM_COMPLETION)) {
+    } else if (row.done >= totalNeeded && !team.hasSettingEnabled(WebhookSettingType.ITEM_COMPLETION)) {
       return;
-    } else if (row.done + amount < totalNeeded) {
-      amount = row.done + amount;
+    } else if (row.done < totalNeeded) {
+      amount = row.done;
     }
     if (!team.hasSettingEnabled(WebhookSettingType.LIST_PROGRESSION) && !finalItem) {
       return;
@@ -148,49 +148,6 @@ export class DiscordWebhookService {
             }, this.getIcon(itemId), character ? character.character.Avatar : '');
           })
         );
-      })
-    ).subscribe();
-  }
-
-  notifyCustomItemAddition(itemName: string, amount: number, list: List, team: Team): void {
-    if (!team.hasSettingEnabled(WebhookSettingType.ITEM_ADDED)) {
-      return;
-    }
-    this.sendMessage(team, 'TEAMS.NOTIFICATIONS.Item_added', {
-      amount: amount,
-      itemName: itemName,
-      listName: list.name,
-      listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-    }, undefined);
-  }
-
-  notifyCustomItemDeletion(itemName: string, amount: number, list: List, team: Team): void {
-    if (!team.hasSettingEnabled(WebhookSettingType.ITEM_REMOVED)) {
-      return;
-    }
-    this.sendMessage(team, 'TEAMS.NOTIFICATIONS.Item_removed', {
-      amount: amount,
-      itemName: itemName,
-      listName: list.name,
-      listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-    }, undefined);
-  }
-
-  notifyCustomItemChecked(team: Team, itemId: number, list: List, memberId: string, amount: number, itemName: string): void {
-    if (!team.hasSettingEnabled(WebhookSettingType.LIST_PROGRESSION)) {
-      return;
-    }
-    this.characterService.getUserCharacter(memberId).pipe(
-      first(),
-      map(character => {
-        this.sendMessage(team, 'TEAMS.NOTIFICATIONS.List_progress', {
-          characterName: character.character.Name,
-          memberProfileUrl: this.linkTools.getLink(`/profile/${memberId}`),
-          amount: amount,
-          itemName: itemName,
-          listName: list.name,
-          listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-        }, this.getIcon(itemId), character.character.Avatar);
       })
     ).subscribe();
   }
