@@ -44,7 +44,7 @@ export class GearsetCreationPopupComponent implements OnInit {
           this.lazyData.getEntry('jobAbbr')
         ]).pipe(
           map(([jobCategories, jobAbbr]) => {
-            const jobCategoryId = [32, 33, 156, 157, 158, 159].find(categoryId => {
+            const jobCategoryId = [32, 33, 182, 183, 184, 185].find(categoryId => {
               return jobCategories[categoryId.toString()].jobs.includes(jobAbbr[this.gearset.job.toString()].en);
             });
             const category = jobCategories[jobCategoryId.toString()];
