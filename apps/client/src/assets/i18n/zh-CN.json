@@ -1629,7 +1629,7 @@
       "Spots": "钓场",
       "Min_gathering": "采集力要求",
       "Min_observed_gathering": "有记录的最低采集力",
-      "Min_observed_gathering_explain": "迄今为止的自动报告中的最小数据。不代表所需的最低采集力，仅供参考",
+      "Min_observed_gathering_explain": "迄今为止的自动报告中的最小值。不代表所需的最低采集力，仅供参考",
       "Min_size": "最小尺寸",
       "Max_size": "最大尺寸",
       "Avg_size": "平均尺寸",
@@ -1673,8 +1673,8 @@
         "Size": "尺寸",
         "Large": "大",
         "Time_since_thrown": "抛竿以来的时间",
-        "Ignored_spot": "上报器不支持这个点，预计会出现奇怪的数值",
-        "Ignored_spot_description": "你钓到的鱼都不会被上报",
+        "Ignored_spot": "报告工具不支持该钓鱼点，可能会显示不正常的数值。",
+        "Ignored_spot_description": "报告工具不会上传你钓到的鱼",
         "ERRORS": {
           "No_bait": "未检测到钓饵，请重新“选饵”",
           "No_stats": "未检测到属性，请尝试重新切换到捕鱼人进行修复。"
@@ -1692,7 +1692,7 @@
       "Include_misses": "包含提钩失败记录",
       "Miss": "提钩失败",
       "Remove_this_bait": "移除该鱼饵",
-      "Bait_removed": "从这一地点移除的鱼饵",
+      "Bait_removed": "鱼饵已从该钓鱼点移除",
       "Position_unknown": "未知位置"
     },
     "NODE": {
@@ -1905,7 +1905,7 @@
     "Loading_data": "加载选定货币的交易数据",
     "Loading_universalis": "正在从 Universalis 获取 {{amount}} 个物品的市场价格",
     "X_sold_last_week": "上周已售出 {{amount}} 个",
-    "No_trades": "这种货币不能与可以在市场上出售的东西进行交易"
+    "No_trades": "该货币无法与可在交易板上出售的物品交换"
   },
   "FOOD_PICKER": {
     "Title": "食物选择器",
@@ -2360,7 +2360,7 @@
       },
       "INTEGRITY_CHECK": {
         "All_characters_valid": "所有关联的角色均有效",
-        "All_lists_ok": "所有清单都在正常工作"
+        "All_lists_ok": "所有清单正常工作"
       }
     }
   },
