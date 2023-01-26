@@ -51,9 +51,17 @@ export const updateSearchOnEdit = functions.runWith(runtimeOpts).firestore.docum
   }
 });
 
-export const updateSearchOnDelete = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onDelete((snap) => {
+export const onListDelete = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onDelete(async (snap) => {
   if (snap.data().public) {
-    return searchIndex.deleteObject(snap.id);
+    searchIndex.deleteObject(snap.id);
+  }
+  const workshopsWithThisList = await firestore.collection('workshops')
+    .where('listIds', 'array-contains', snap.id)
+    .get()
+  if(workshopsWithThisList.size > 0){
+    workshopsWithThisList.forEach(ws => {
+      firestore.doc(`/workshops/${ws.id}`).update({listIds: admin.firestore.FieldValue.arrayRemove(snap.id)})
+    });
   }
 });
 

@@ -233,9 +233,9 @@ export class ListsFacade {
     );
   }
 
-  getWorkshopCompacts(keys: string[]): Observable<List[]> {
+  getWorkshopLists(keys: string[]): Observable<List[]> {
     return this.allListDetails$.pipe(
-      map(compacts => keys.map(key => compacts.find(compact => compact.$key === key)))
+      map(lists => keys.map(key => lists.find(l => l.$key === key)))
     );
   }
 
