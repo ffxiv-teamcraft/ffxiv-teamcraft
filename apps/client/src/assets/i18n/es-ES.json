@@ -2185,6 +2185,7 @@
     "Editing_others_gearset_description": "You're currently editing someone else's gearset. Nothing will be saved unless you click the save button above to create your own copy.",
     "Empty_materias": "Remove all materias from selected gear",
     "Total_scrips": "Total currencies needed",
+    "Reset_progression": "Reset item and materia progression",
     "SLOT": {
       "Body": "Pecho",
       "Ears": "Orejas",
