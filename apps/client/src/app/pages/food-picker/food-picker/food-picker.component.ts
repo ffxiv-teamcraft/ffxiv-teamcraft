@@ -7,6 +7,7 @@ import { SearchIndex, XivapiSearchFilter, XivapiService } from '@xivapi/angular-
 import { ActivatedRoute, Router } from '@angular/router';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
+import { I18nName } from '../../../model/common/i18n-name';
 
 @Component({
   selector: 'app-food-picker',
@@ -75,22 +76,36 @@ export class FoodPickerComponent extends TeamcraftComponent {
           })
           .filter(i => !!i)
           .sort((a, b) => {
-            return this.sortBy(a, b, 'Max') || this.sortBy(a, b, 'Value');
+            return this.sortBy(a, b, 'Max', pickedStats) || this.sortBy(a, b, 'Value', pickedStats);
           });
       }),
       tap(() => this.loading = false)
     );
   }
 
-  sortBy(a: any, b: any, prop: 'Value' | 'Max'): 1 | 0 | -1 {
-    if (a.bonuses[0][prop] > b.bonuses[0][prop]) {
-      return -1;
-    } else if (a.bonuses[0][prop] < b.bonuses[0][prop]) {
-      return 1;
-    } else if (a.bonuses[1] && b.bonuses[1]) {
-      if (a.bonuses[1][prop] > b.bonuses[1][prop]) {
+  private getSortedBonusesByPickedStats(bonuses: any[], pickedStats: Array<I18nName & { filterName: string, id: number }>): any[] {
+    return [...bonuses].sort((a, b) => {
+      if (pickedStats.some(s => s.id === a.ID)) {
         return -1;
-      } else if (a.bonuses[1][prop] < b.bonuses[1][prop]) {
+      }
+      if (pickedStats.some(s => s.id === b.ID)) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+
+  sortBy(a: any, b: any, prop: 'Value' | 'Max', pickedStats: Array<I18nName & { filterName: string, id: number }>): 1 | 0 | -1 {
+    const aSortedBonuses = this.getSortedBonusesByPickedStats(a.bonuses, pickedStats);
+    const bSortedBonuses = this.getSortedBonusesByPickedStats(b.bonuses, pickedStats);
+    if (aSortedBonuses[0][prop] > bSortedBonuses[0][prop]) {
+      return -1;
+    } else if (aSortedBonuses[0][prop] < bSortedBonuses[0][prop]) {
+      return 1;
+    } else if (aSortedBonuses[1] && bSortedBonuses[1]) {
+      if (aSortedBonuses[1][prop] > bSortedBonuses[1][prop]) {
+        return -1;
+      } else if (aSortedBonuses[1][prop] < bSortedBonuses[1][prop]) {
         return 1;
       }
     }

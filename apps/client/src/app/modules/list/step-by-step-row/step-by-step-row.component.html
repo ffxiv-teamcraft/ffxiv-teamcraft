@@ -37,6 +37,15 @@
       <app-item-sources-display [item]="row" [sources]="row.sources" [displayedSources]="dataTypes" [forceHorizontal]="true"
                                 size="small"></app-item-sources-display>
       <div class="spacer"></div>
+      <ng-container *ngIf="masterbooks$ | async as masterbooks">
+        <app-item-icon *ngFor="let masterbook of masterbooks; trackById"
+                       [disableClick]="+masterbooks[0].id !== masterbooks[0].id"
+                       [tooltipDisabled]="+masterbooks[0].id !== masterbooks[0].id"
+                       [icon]="masterbook.id | lazyIcon" [itemId]="masterbook.id"
+                       [itemName]="masterbook.id | itemName| i18n"
+                       [nzTooltipTitle]="(masterbook.id.toString().indexOf('draft') > -1 ? masterbook.name : (masterbook.id | itemName)) | i18n"
+                       [width]="24" nz-tooltip></app-item-icon>
+      </ng-container>
       <app-compact-amount-input [permissionLevel]="permissionLevel" [aggregate]="aggregate" [item]="row" [finalItem]="finalItem"></app-compact-amount-input>
     </div>
   </div>

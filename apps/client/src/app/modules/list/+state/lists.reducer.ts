@@ -2,6 +2,7 @@ import { ListsAction, ListsActionTypes } from './lists.actions';
 import { List } from '../model/list';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { ListController } from '../list-controller';
+import structuredClone from '@ungap/structured-clone';
 
 
 const PINNED_LIST_LS_KEY = 'lists:pinned';

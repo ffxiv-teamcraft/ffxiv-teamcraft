@@ -33,7 +33,7 @@ import {
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { distinctUntilChanged, filter, first, map, mergeMap, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, concat, Observable, of } from 'rxjs';
@@ -54,6 +54,7 @@ import { ModificationEntry } from '../model/modification-entry';
 import { PermissionsController } from '../../../core/database/permissions-controller';
 import { ListController } from '../list-controller';
 import { IpcService } from '../../../core/electron/ipc.service';
+import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
 
 declare const gtag: (...args: any[]) => void;
 declare const fathom: any;
@@ -199,7 +200,8 @@ export class ListsFacade {
   constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
               private teamsFacade: TeamsFacade, private settings: SettingsService, private userInventoryService: InventoryService,
               private router: Router, private serializer: NgSerializerService, private itemPicker: ItemPickerService,
-              private listManager: ListManagerService, private progress: ProgressPopupService, private ipc: IpcService) {
+              private listManager: ListManagerService, private progress: ProgressPopupService, private ipc: IpcService,
+              private listsService: FirestoreListStorage) {
     router.events
       .pipe(
         distinctUntilChanged((previous: any, current: any) => {
@@ -231,9 +233,9 @@ export class ListsFacade {
     );
   }
 
-  getWorkshopCompacts(keys: string[]): Observable<List[]> {
+  getWorkshopLists(keys: string[]): Observable<List[]> {
     return this.allListDetails$.pipe(
-      map(compacts => keys.map(key => compacts.find(compact => compact.$key === key)))
+      map(lists => keys.map(key => lists.find(l => l.$key === key)))
     );
   }
 
@@ -525,17 +527,13 @@ export class ListsFacade {
           'Adding_recipes',
           { amount: items.length, listname: list.name });
       }),
-      tap(l => list.$key ? this.updateList(l) : this.addList(l)),
-      mergeMap(updatedList => {
-        // We want to get the list created before calling it a success, let's be pessimistic !
-        return this.progress.showProgress(
-          combineLatest([this.myLists$, this.listsWithWriteAccess$]).pipe(
-            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
-            map(lists => lists.find(l => l.createdAt.seconds === updatedList.createdAt.seconds && l.$key !== undefined)),
-            filter(l => l !== undefined),
-            first()
-          ), 1, 'Saving_in_database');
-      })
+      map(list => {
+        if (!list.$key) {
+          list.$key = this.listsService.newId();
+        }
+        return list;
+      }),
+      tap(l => this.updateList(l))
     );
 
   }

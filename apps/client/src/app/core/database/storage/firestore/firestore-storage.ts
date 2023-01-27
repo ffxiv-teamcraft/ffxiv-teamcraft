@@ -311,6 +311,10 @@ export abstract class FirestoreStorage<T extends DataModel> {
     return Object.freeze(object);
   }
 
+  public newId(): string {
+    return doc(collection(this.firestore, this.getBaseUri())).id;
+  }
+
   protected beforeDeserialization(data: Partial<T>): T {
     return data as T;
   }

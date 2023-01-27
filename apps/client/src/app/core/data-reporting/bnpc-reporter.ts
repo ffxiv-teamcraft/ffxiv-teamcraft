@@ -18,7 +18,7 @@ export class BnpcReporter implements DataReporter {
         return packets$.pipe(
           ofMessageType('npcSpawn'),
           toIpcData(),
-          filter(packet => !index[packet.bNpcBase]),
+          filter(packet => !index[packet.bNpcBase] && packet.bNpcBase > 0 && packet.bNpcName > 0),
           map((packet) => {
             return {
               bnpcBase: packet.bNpcBase,

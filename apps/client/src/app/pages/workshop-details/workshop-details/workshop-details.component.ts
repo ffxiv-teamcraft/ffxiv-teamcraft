@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
@@ -17,52 +17,46 @@ import { LodestoneService } from '../../../core/api/lodestone.service';
 })
 export class WorkshopDetailsComponent {
 
-  public workshop$: Observable<Workshop>;
+  public workshop$: Observable<Workshop> = this.workshopsFacade.selectedWorkshop$.pipe(
+    filter(w => w !== undefined),
+    tap(workshop => {
+      if (!workshop.notFound) {
+        workshop.listIds.forEach(listId => this.listsFacade.load(listId));
+      }
+    })
+  );
 
-  public author$: Observable<Partial<Character>>;
+  public author$: Observable<Partial<Character>> = this.workshop$.pipe(
+    filter(workshop => !workshop.notFound),
+    switchMap(workshop => {
+      return this.userService.get(workshop.authorId).pipe(
+        catchError(() => of(null))
+      );
+    }),
+    switchMap(user => {
+      if (user && user.defaultLodestoneId) {
+        return this.characterService.getCharacter(user.defaultLodestoneId)
+          .pipe(
+            map(response => response.Character)
+          );
+      }
+      return of({
+        Name: 'COMMON.Anonymous'
+      });
+    })
+  );
 
-  public lists$: Observable<List[]>;
+  public lists$: Observable<List[]> = this.workshop$.pipe(
+    filter(workshop => !workshop.notFound),
+    switchMap(workshop => {
+      return this.listsFacade.getWorkshopLists(workshop.listIds);
+    }),
+    map(lists => lists.filter(list => list !== undefined && !list.notFound))
+  );
 
   constructor(private route: ActivatedRoute, private workshopsFacade: WorkshopsFacade,
               private listsFacade: ListsFacade, private xivapi: XivapiService,
               private userService: UserService, private characterService: LodestoneService) {
-    this.workshop$ = this.workshopsFacade.selectedWorkshop$.pipe(
-      filter(w => w !== undefined),
-      tap(workshop => {
-        if (!workshop.notFound) {
-          workshop.listIds.forEach(listId => this.listsFacade.load(listId));
-        }
-      })
-    );
-
-    this.lists$ = this.workshop$.pipe(
-      filter(workshop => !workshop.notFound),
-      switchMap(workshop => {
-        return this.listsFacade.getWorkshopCompacts(workshop.listIds);
-      }),
-      map(lists => lists.filter(list => list !== undefined && !list.notFound))
-    );
-
-    this.author$ = this.workshop$.pipe(
-      filter(workshop => !workshop.notFound),
-      switchMap(workshop => {
-        return this.userService.get(workshop.authorId).pipe(
-          catchError(() => of(null))
-        );
-      }),
-      switchMap(user => {
-        if (user && user.defaultLodestoneId) {
-          return this.characterService.getCharacter(user.defaultLodestoneId)
-            .pipe(
-              map(response => response.Character)
-            );
-        }
-        return of({
-          Name: 'COMMON.Anonymous'
-        });
-      })
-    );
-
     this.route.paramMap.pipe(
       map(params => params.get('id')),
       filter(key => key !== undefined),

@@ -800,7 +800,7 @@
     },
     "SOURCES": {
       "Gatherable": "Can be gathered, click to see more details",
-      "Instances": "Instances"
+      "Instances": "インスタンス"
     },
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
@@ -2185,6 +2185,7 @@
     "Editing_others_gearset_description": "You're currently editing someone else's gearset. Nothing will be saved unless you click the save button above to create your own copy.",
     "Empty_materias": "選択されたすべての装備からマテリアを削除",
     "Total_scrips": "Total currencies needed",
+    "Reset_progression": "Reset item and materia progression",
     "SLOT": {
       "Body": "胴防具",
       "Ears": "耳飾り",
@@ -3028,16 +3029,16 @@
       "Demand_shift": "需要変化",
       "Predicted_popularity": "予測人気度",
       "Edit_mode": "編集モード",
-      "Best_items_to_craft": "Best items to craft",
+      "Best_items_to_craft": "最適な島産品",
       "Total_value": "合計",
       "Run_optimizer": "Find best planning for the rest of the week",
-      "No_schedule_found": "No planning found",
+      "No_schedule_found": "お探しのプランが見つかりません",
       "No_schedule_found_explain": "次のリセットまで4時間以上あることを確認してください",
       "Possible_peak_days": "予測ピーク日",
       "Peak_days_explain": "需要のピークが予測されている日。太字は大人気",
       "Items_to_prepare": "Best items to prepare for tomorrow",
       "Rest": "休み",
-      "Unknown_day_planning": "Available on {{day}}",
+      "Unknown_day_planning": "{{day}}で利用可能",
       "Set_rest_day": "休み（2日目）として設定する",
       "Import_explain": "パケットキャプチャが有効になっている状態でゲーム内で需要調査画面を開くことでテーブルを更新できます。",
       "Amount_of_workshops": "工房数",
@@ -3048,11 +3049,11 @@
       "Groove_tooltip": "1日の終わりのやる気",
       "Crafting_time": "製作時間",
       "Categories": "特性",
-      "No_planning": "No planning available",
+      "No_planning": "利用可能なプランはありません",
       "No_planning_explain": " Teamcraft is not able to compute a planning because there's too few recipes available, try to change your island level or uncheck some material exclusions.",
-      "Next_week_prep": "Materials you should prepare for next week",
-      "Crop_materials": "Crops",
-      "Pasture_materials": "Pasture",
+      "Next_week_prep": "来週までに準備すべき材料",
+      "Crop_materials": "耕作物資",
+      "Pasture_materials": "畜産物資",
       "POPULARITY": {
         "Very_high": "大人気",
         "High": "人気",

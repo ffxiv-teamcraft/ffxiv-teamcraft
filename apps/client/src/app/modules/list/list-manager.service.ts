@@ -95,12 +95,6 @@ export class ListManagerService {
                 } else {
                   this.discordWebhookService.notifyItemDeletion(itemId, Math.abs(amount), list, team);
                 }
-              } else {
-                if (amount > 0) {
-                  this.discordWebhookService.notifyCustomItemAddition((<CustomItem>itemSource).name, amount, list, team);
-                } else {
-                  this.discordWebhookService.notifyCustomItemDeletion((<CustomItem>itemSource).name, Math.abs(amount), list, team);
-                }
               }
             }
           }),

@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.1.4"></a>
+## [10.1.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.1.3...v10.1.4) (2023-01-27)
+
+
+### Bug Fixes
+
+* **core:** add structuredClone polyfill for older browsers ([01cadb0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/01cadb0))
+* **db:** fixed some content not being accessible due to italic characters in their name ([9f41642](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9f41642))
+* **desktop:** fixed omicron tokens listed in island inventory ([e4ec069](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e4ec069))
+* **food-picker:** now sorting results by picked stat(s) value ([1385f91](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1385f91))
+* **lists:** possible fix for final items sometimes not updating ([0d94205](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0d94205))
+* **step-by-step:** added masterbook icon next to input when required ([27de40d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/27de40d))
+* **step-by-step:** fixed arrows not accurate at all on ultrawide displays ([7d91dfb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7d91dfb))
+* **teams:** fixed discord webhook often sending wrong values in notification ([db3c268](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/db3c268))
+* **workshop:** improvements on list deletion workshop update ([e9060c4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e9060c4))
+
+
+### Features
+
+* **db:** import of ~500 allagan reports ([599c750](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/599c750))
+* **gearset:** new button to reset materia and item progression ([214396b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/214396b))
+* **gearset:** you can now switch from a class to its job on a gearset ([b21063d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b21063d))
+
+
+
 <a name="10.1.3"></a>
 ## [10.1.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.1.2...v10.1.3) (2023-01-25)
 
