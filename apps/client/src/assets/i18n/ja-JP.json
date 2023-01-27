@@ -2079,7 +2079,7 @@
     },
     "CONSOLIDATE_STACKS": {
       "Title": "品質下げを利用して整理出来るHQアイテム",
-      "Message": "NQ素材と合わせる:{{containers}}",
+      "Message": "NQ素材と合わせる: {{containers}}",
       "Filter": "該当バージョン素材のみ表示: ",
       "Placeholder": "ゲームバージョン選択"
     },
@@ -2102,12 +2102,12 @@
       "Message": "このアイテムは「匠の早業」を使用できるレシピだけに必要なので、HQを要求しません"
     },
     "DEPRECATED_HQ": {
-      "Title": "Items you don't need HQ because they function as a normal-quality item",
-      "Message": "Since 6.0, this item functions as a normal-quality item even if it's HQ"
+      "Title": "このアイテムは通常のアイテムと同等に扱われるのでHQ素材を要求しません",
+      "Message": "パッチ6.0から、通常のアイテムと同等に扱われています"
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "単一のレシピにのみ使用されるアイテムです。",
-      "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw",
+      "Message": "このアイテムは {{targetItem}} のレシピにのみ使用されます。素材のままにしておくべきかを検討してください。",
       "Add_to_list": "アイテムをリストに追加"
     }
   },
