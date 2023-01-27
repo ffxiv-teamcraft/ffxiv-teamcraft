@@ -3050,7 +3050,7 @@
       "Crafting_time": "制作时间",
       "Categories": "分类",
       "No_planning": "没有可用的计划",
-      "No_planning_explain": "由于可用配方过少，Teamcraft无法计算生产计划；请尝试提升开拓等级或解除材料限制",
+      "No_planning_explain": " 由于可用配方过少，Teamcraft无法计算生产计划；请尝试提升开拓等级或解除材料限制",
       "Next_week_prep": "需要为下周准备的材料",
       "Crop_materials": "开拓作物",
       "Pasture_materials": "牧场动物",
