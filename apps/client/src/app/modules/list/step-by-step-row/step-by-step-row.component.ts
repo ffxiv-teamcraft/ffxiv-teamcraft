@@ -53,6 +53,10 @@ export class StepByStepRowComponent {
 
   list$ = observeInput(this, 'list');
 
+  masterbooks$ = this.row$.pipe(
+    map(row => getItemSource(row, DataType.MASTERBOOKS))
+  );
+
   public alarmsDisplay$ = combineLatest([
     this.row$,
     this.etime.getEorzeanTime().pipe(
