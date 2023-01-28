@@ -43,9 +43,6 @@ function updateLists(lists: List[], state: ListsState, matchingPredicate = (list
     checkedLists[storeList.$key] = true;
     const patch = listsByKey[storeList.$key];
     if (patch && (patch.etag > storeList.etag || storeList.offline)) {
-      if (storeList.$key === state.selectedId) {
-        return storeList;
-      }
       return patch;
     }
     if (!patch && matchingPredicate(storeList)) {
