@@ -135,7 +135,7 @@
     "Search": "Rechercher"
   },
   "COMMON": {
-    "Done": "Done",
+    "Done": "Terminé",
     "Length": "Longueur",
     "Save": "Sauvegarder",
     "Reset": "Remettre à 0",
@@ -617,7 +617,7 @@
     "Add_selection_to_list": "Ajouter la sélection la liste",
     "Your_lists": "Vos listes",
     "Outdated_tag": "Pas à jour",
-    "No_lists": "No lists to display here",
+    "No_lists": "Aucune liste à afficher",
     "List_aggregates": "Listes agrégées",
     "Lists_search_placeholder": "Rechercher une liste…",
     "Add_to_a_list": "Ajouter à une liste",
@@ -784,7 +784,7 @@
       "Next_incomplete": "Prochaine carte incomplète",
       "Global_list_progress": "Progression globale",
       "Alarms": "Timed rows",
-      "Crafts": "Ordered crafts",
+      "Crafts": "Fabrications ordonnées",
       "Toggle_overlay": "Ouvrir/Fermer l'overlay pas à pas",
       "Empty_map": "Rien à faire sur la carte actuelle, la carte la plus proche pour cette liste est {{closest}}",
       "Unknown_map": "Carte inconnue, veuillez changer de carte pour permettre à TC de la détecter.",
@@ -3008,7 +3008,7 @@
     }
   },
   "ISLAND_SANCTUARY": {
-    "Animal_source": "You need to gather this item from one of the following animals in your Island Sanctuary pasture",
+    "Animal_source": "Vous devez récolter cet objet auprès de l'un des animaux suivants dans le pâturage de votre Félicité Insulaire",
     "Island_level": "Rang de Félicité",
     "Landmarks": "Édifices",
     "Workshop_rank": "Rang de Fabrique",
@@ -3043,7 +3043,7 @@
       "Import_explain": "You can update your supply/demand table by opening it ingame with the desktop app running and packet capture enabled.",
       "Amount_of_workshops": "# de fabriques :",
       "Create_list": "Créer une liste pour ce planning",
-      "Exclude_pasture_materials": "Exclude pasture materials",
+      "Exclude_pasture_materials": "Exclure les matériaux de pâturage",
       "Exclude_crop_materials": "Exclude crop materials",
       "Display_item_metadata": "Display category and craft time of items in planning",
       "Groove_tooltip": "Groove at the end of the day",
@@ -3053,7 +3053,7 @@
       "No_planning_explain": " Teamcraft is not able to compute a planning because there's too few recipes available, try to change your island level or uncheck some material exclusions.",
       "Next_week_prep": "Materials you should prepare for next week",
       "Crop_materials": "Crops",
-      "Pasture_materials": "Pasture",
+      "Pasture_materials": "Pâturage",
       "POPULARITY": {
         "Very_high": "Très élevée",
         "High": "Élevée",
