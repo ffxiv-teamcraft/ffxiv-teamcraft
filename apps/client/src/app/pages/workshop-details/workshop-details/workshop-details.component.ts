@@ -51,7 +51,7 @@ export class WorkshopDetailsComponent {
     switchMap(workshop => {
       return this.listsFacade.getWorkshopLists(workshop.listIds);
     }),
-    map(lists => lists.filter(list => list !== undefined && !list.notFound))
+    map(lists => lists.filter(list => list !== undefined && !list.notFound && list.name))
   );
 
   constructor(private route: ActivatedRoute, private workshopsFacade: WorkshopsFacade,

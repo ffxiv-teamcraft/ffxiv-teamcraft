@@ -77,7 +77,6 @@ export class CraftingReplayService {
                   success: this.isSuccess(packet)
                 });
               }
-              console.log(replay);
               return replay;
             }, null),
             filter(replay => replay && !!replay.endTime && replay.steps.length > 0),

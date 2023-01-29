@@ -36,22 +36,24 @@ export class AlarmBellService {
    * @param itemName
    */
   public ring(alarm: Alarm, itemName: string): void {
-    localStorage.setItem(`played:${alarm.$key}`, Date.now().toString());
-    if (this.settings.TTSAlarms) {
-      try {
-        const notificationSettings = this.settings.getNotificationSettings(SoundNotificationType.ALARM);
-        const speech = new SpeechSynthesisUtterance(itemName);
-        speech.pitch = 1.1;
-        speech.lang = this.translate.currentLang;
-        speech.rate = 1;
-        speech.volume = notificationSettings.volume;
-        window.speechSynthesis.speak(speech);
-      } catch (e) {
-        console.error(e);
+    if (Date.now() - 10000 <= this.getLastPlayed(alarm)) {
+      localStorage.setItem(`played:${alarm.$key}`, Date.now().toString());
+      if (this.settings.TTSAlarms) {
+        try {
+          const notificationSettings = this.settings.getNotificationSettings(SoundNotificationType.ALARM);
+          const speech = new SpeechSynthesisUtterance(itemName);
+          speech.pitch = 1.1;
+          speech.lang = this.translate.currentLang;
+          speech.rate = 1;
+          speech.volume = notificationSettings.volume;
+          window.speechSynthesis.speak(speech);
+        } catch (e) {
+          console.error(e);
+          this.soundNotificationService.play(SoundNotificationType.ALARM);
+        }
+      } else {
         this.soundNotificationService.play(SoundNotificationType.ALARM);
       }
-    } else {
-      this.soundNotificationService.play(SoundNotificationType.ALARM);
     }
   }
 
