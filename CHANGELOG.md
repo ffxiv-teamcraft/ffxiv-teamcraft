@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.1.5"></a>
+## [10.1.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.1.4...v10.1.5) (2023-01-29)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarms sometimes ringing twice ([a93d94f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a93d94f))
+* **list:** fixed added items sometimes not updating display properly ([dd1426e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dd1426e))
+* **workshop:** filter lists with no name from display ([e7a35bd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e7a35bd))
+
+
+
 <a name="10.1.4"></a>
 ## [10.1.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.1.3...v10.1.4) (2023-01-27)
 
