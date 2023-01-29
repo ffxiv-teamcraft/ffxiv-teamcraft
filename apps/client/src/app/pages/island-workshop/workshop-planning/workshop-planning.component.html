@@ -1,7 +1,7 @@
 <div fxLayout="row" class="planning-container">
   <div *ngFor="let day of planning; index as i;first as first, last as last" fxLayout="column" fxFlex="1 0 14%">
     <div class="day-title" [class.today]="today === i" [class.first]="first" [class.last]="last">
-      <div>{{days[i]}}&nbsp;{{(weeklyReset + 86400000 * i) | date:'dd/MM'}}</div>
+      <div>{{('COMMON.DAYS.' + days[i]) | translate}}&nbsp;{{(weeklyReset + 86400000 * i) | date:'dd/MM'}}</div>
       <div>
         <app-item-icon [itemId]="37549" width="24"></app-item-icon>
         {{day.score | number:'1.0-0':translate.currentLang}}
