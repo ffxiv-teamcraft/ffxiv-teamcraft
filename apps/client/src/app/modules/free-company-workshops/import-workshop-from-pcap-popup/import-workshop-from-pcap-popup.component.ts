@@ -1,14 +1,15 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, combineLatest, of } from 'rxjs';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { IpcService } from '../../../core/electron/ipc.service';
-import { filter, map, takeUntil, tap, withLatestFrom } from 'rxjs/operators';
+import { filter, first, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { FreeCompanyWorkshopFacade } from '../+state/free-company-workshop.facade';
 import { FreeCompanyWorkshop } from '../model/free-company-workshop';
 import { VesselType } from '../model/vessel-type';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { worlds } from '../../../core/data/sources/worlds';
+import { FreeCompanyDialog } from '@ffxiv-teamcraft/pcap-ffxiv';
 
 @Component({
   selector: 'app-import-workshop-from-pcap-popup',
@@ -83,21 +84,25 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
       map((user) => {
         return Object.keys(worlds).find((key) => worlds[key] === user.world);
       }),
+      shareReplay(1),
       takeUntil(this.onDestroy$)
     );
 
     const fcId$ = this.ipc.freeCompanyId$.pipe(
+      shareReplay(1),
       takeUntil(this.onDestroy$)
     );
 
-    this.ipc.freeCompanyDetails.pipe(
+    this.ipc.freeCompanyDetails$.pipe(
       tap(() => {
         this._isLoading.next(true);
       }),
-      withLatestFrom(fcId$),
-      filter(([packet, fcId]) => packet.freeCompanyId.toString() === fcId),
-      map(([packet]) => packet),
-      withLatestFrom(server$),
+      switchMap((packet) => {
+        return combineLatest([of(packet), server$, fcId$]).pipe(
+          first()
+        );
+      }),
+      filter(([packet, , fcId]) => packet.freeCompanyId.toString() === fcId),
       map(([packet, server]) => {
         return {
           id: packet.freeCompanyId.toString(),

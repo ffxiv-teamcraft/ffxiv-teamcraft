@@ -140,7 +140,7 @@ export class IpcService {
     );
   }
 
-  public get freeCompanyDetails(): Observable<FreeCompanyDialog> {
+  public get freeCompanyDetails$(): Observable<FreeCompanyDialog> {
     return this.packets$.pipe(
       ofMessageType('freeCompanyDialog'),
       toIpcData()
