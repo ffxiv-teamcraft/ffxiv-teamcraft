@@ -9,9 +9,9 @@ const {
   jsonInputForTargetLanguage
 } = require('quicktype-core');
 
-const baseFiles = fs.readdirSync(path.join(__dirname, '../../apps/client/src/assets/data/'));
-const koFiles = fs.readdirSync(path.join(__dirname, '../../apps/client/src/assets/data/ko/')).map((row) => `/ko/${row}`);
-const zhFiles = fs.readdirSync(path.join(__dirname, '../../apps/client/src/assets/data/zh/')).map((row) => `/zh/${row}`);
+const baseFiles = fs.readdirSync(path.join(__dirname, '../../libs/data/src/lib/json/'));
+const koFiles = fs.readdirSync(path.join(__dirname, '../../libs/data/src/lib/json/ko/')).map((row) => `/ko/${row}`);
+const zhFiles = fs.readdirSync(path.join(__dirname, '../../libs/data/src/lib/json/zh/')).map((row) => `/zh/${row}`);
 
 const getPropertyName = (filename) => _.camelCase(filename.replace('.json', '').replace(/\/\w+\//, ''));
 
@@ -29,30 +29,32 @@ function getClassName(file) {
 
 function getType(file) {
   const className = getClassName(file);
-  const data = fs.readFileSync(path.join(__dirname, '../../apps/client/src/assets/data/', file), 'utf8');
+  const data = fs.readFileSync(path.join(__dirname, '../../libs/data/src/lib/json/', file), 'utf8');
   const dataObj = JSON.parse(data);
   let indexType = Array.isArray(dataObj) ? 'Array<T>' : 'Record<number, T>';
   if (Object.keys(dataObj).filter(k => !isNaN(k)).length === 0) {
     return {
       type: className,
-      importStr: `import {${className}} from './model/${_.kebabCase(className)}';`
+      importStr: `import {${className}} from './${_.kebabCase(className)}';`
     };
   }
+
   // We need to override this case, weird quicktype derp
   if (className === 'LazyIslandLandmark') {
     return {
       type: 'Record<number, The110>',
-      importStr: `import {The110} from './model/${_.kebabCase(className)}';`
+      importStr: `import {The110} from './${_.kebabCase(className)}';`
     };
   }
+
   const valuesAreArrays = Array.isArray(dataObj[0] || dataObj[Object.keys(dataObj)[0]]);
   if (valuesAreArrays) {
     indexType = indexType.replace('T', 'T[]');
   }
-  if (fs.existsSync(path.join(__dirname, '../../apps/client/src/app/lazy-data/model/', `${_.kebabCase(className)}.ts`))) {
+  if (fs.existsSync(path.join(__dirname, '../../libs/data/src/lib/model/', `${_.kebabCase(className)}.ts`))) {
     return {
       type: indexType.replace('T', className),
-      importStr: `import {${className}} from './model/${_.kebabCase(className)}';`
+      importStr: `import {${className}} from './${_.kebabCase(className)}';`
     };
   }
   // If it's not a class index, let's get the data type
@@ -91,14 +93,14 @@ function validateLines(lines) {
 
   console.log(colors.cyan(`Updating lazy loaded files list`));
   fs.writeFileSync(
-    path.join(__dirname, '../../apps/client/src/app/core/data/lazy-files-list.ts'),
+    path.join(__dirname, '../../libs/data/src/lib/lazy-files-list.ts'),
     `export const lazyFilesList = ${JSON.stringify(
       [...baseFiles, ...koFiles, ...zhFiles]
         .filter((row) => {
           return row.indexOf('.json') > -1;
         })
         .reduce((acc, row) => {
-          const hash = hashFiles.sync({ files: [path.join(__dirname, '../../apps/client/src/assets/data/', row)] });
+          const hash = hashFiles.sync({ files: [path.join(__dirname, '../../libs/data/src/lib/json/', row)] });
           const propertyName = getPropertyName(row);
           return {
             ...acc,
@@ -122,7 +124,7 @@ function validateLines(lines) {
       continue;
     }
     const className = getClassName(file);
-    const jsonString = fs.readFileSync(path.join(__dirname, '../../apps/client/src/assets/data/', file));
+    const jsonString = fs.readFileSync(path.join(__dirname, '../../libs/data/src/lib/json/', file), 'utf-8');
     const jsonInput = jsonInputForTargetLanguage('typescript');
     await jsonInput.addSource({
       name: className,
@@ -134,16 +136,17 @@ function validateLines(lines) {
 
     const { lines } = await quicktype({
       inputData,
+      alphabetizeProperties: true,
       lang: 'typescript',
       combineClasses: true,
       rendererOptions: {
-        'just-types': true
+        'just-types': 'true'
       },
       indentation: '  '
     });
 
     if (validateLines(lines)) {
-      fs.writeFileSync(path.join(__dirname, '../../apps/client/src/app/lazy-data/model/', `${_.kebabCase(className)}.ts`), lines.join('\n'));
+      fs.writeFileSync(path.join(__dirname, '../../libs/data/src/lib/model/', `${_.kebabCase(className)}.ts`), lines.join('\n'));
     }
   }
   console.log(colors.green(`Lazy loaded data Models updated`));
@@ -166,7 +169,7 @@ ${importStr}` : acc.imports
       }, { properties: '', imports: '' });
 
   fs.writeFileSync(
-    path.join(__dirname, '../../apps/client/src/app/lazy-data/lazy-data.ts'),
+    path.join(__dirname, '../../libs/data/src/lib/model/lazy-data.ts'),
     `${imports}
 
 export interface LazyData {${properties}
@@ -187,7 +190,7 @@ export interface LazyData {${properties}
 
 
   fs.writeFileSync(
-    path.join(__dirname, '../../apps/client/src/app/lazy-data/lazy-data-keys.ts'),
+    path.join(__dirname, '../../libs/data/src/lib/model/lazy-data-keys.ts'),
     `export const LazyDataKeys = ${JSON.stringify(keys, null, 2)}`.replace(/"/g, '\'')
   );
 
@@ -198,9 +201,9 @@ export interface LazyData {${properties}
   colors.cyan('ALL GOOD');
 });
 
-const extractsHash = hashFiles.sync({ files: [path.join(__dirname, '../../apps/client/src/assets/extracts/extracts.json')] });
+const extractsHash = hashFiles.sync({ files: [path.join(__dirname, '../../libs/data/src/lib/extracts/extracts.json')] });
 fs.writeFileSync(
-  path.join(__dirname + '/../../apps/client/src/environments/extracts-hash.ts'),
+  path.join(__dirname, '../../libs/data/src/lib/extracts-hash.ts'),
   `export const extractsHash = \`${extractsHash}\`;
 `
 );

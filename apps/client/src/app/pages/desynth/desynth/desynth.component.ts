@@ -12,7 +12,7 @@ import { ListPickerService } from '../../../modules/list-picker/list-picker.serv
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { LazyJobAbbr } from '../../../lazy-data/model/lazy-job-abbr';
+import { LazyJobAbbr } from '@ffxiv-teamcraft/data/model/lazy-job-abbr';
 
 @Component({
   selector: 'app-desynth',

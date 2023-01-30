@@ -12,7 +12,8 @@ import { GearsetsFacade } from '../+state/gearsets.facade';
 import { TranslateService } from '@ngx-translate/core';
 import { MateriaService } from '../materia.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { Job } from '../../../lazy-data/model/lazy-equipment';
+import { Job } from '@ffxiv-teamcraft/data/model/lazy-equipment';
+
 
 @Component({
   selector: 'app-sync-from-pcap-popup',

@@ -4,7 +4,7 @@ import { uniq } from 'lodash';
 import { combineLatest, Observable } from 'rxjs';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { map } from 'rxjs/operators';
-import { LazyRetainerTask } from '../../../../lazy-data/model/lazy-retainer-task';
+import { LazyRetainerTask } from '@ffxiv-teamcraft/data/model/lazy-retainer-task';
 
 export class VenturesExtractor extends AbstractExtractor<Partial<LazyRetainerTask>[]> {
 

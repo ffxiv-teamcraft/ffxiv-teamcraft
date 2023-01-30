@@ -18,7 +18,7 @@ import { WorldNavigationMapComponent } from '../../../modules/map/world-navigati
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { LazyLogTrackerPageData } from '../../../lazy-data/model/lazy-log-tracker-page-data';
+import { LazyLogTrackerPageData } from '@ffxiv-teamcraft/data/model/lazy-log-tracker-page-data';
 
 @Component({
   selector: 'app-log-tracker',

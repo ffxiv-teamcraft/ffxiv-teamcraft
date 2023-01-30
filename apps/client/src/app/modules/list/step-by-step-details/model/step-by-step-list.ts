@@ -4,7 +4,7 @@ import { Vector2 } from '../../../../core/tools/vector2';
 import { DataType } from '../../data/data-type';
 import { MapListStep } from './map-list-step';
 import { ListDisplay } from '../../../../core/layout/list-display';
-import { LazyData } from '../../../../lazy-data/lazy-data';
+import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { getTiers } from '../../../../core/tools/get-tiers';
 import { NodeTypeIconPipe } from '../../../../pipes/pipes/node-type-icon.pipe';
 import { NavigationObjective } from '../../../map/navigation-objective';

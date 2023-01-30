@@ -15,7 +15,7 @@ import { EorzeaFacade } from '../eorzea/+state/eorzea.facade';
 import { Vector3 } from '../../core/tools/vector3';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
-import { LazyAetheryte } from '../../lazy-data/model/lazy-aetheryte';
+import { LazyAetheryte } from '@ffxiv-teamcraft/data/model/lazy-aetheryte';
 
 @Injectable()
 export class MapService {

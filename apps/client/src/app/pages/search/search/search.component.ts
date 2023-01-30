@@ -2,7 +2,7 @@ import { Component, Inject, OnInit, PLATFORM_ID, TemplateRef, ViewChild } from '
 import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
-import { debounceTime, filter, first, map, mergeMap, pairwise, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, pairwise, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SearchResult } from '../../../model/search/search-result';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -30,7 +30,7 @@ import { XivapiPatch } from '../../../core/data/model/xivapi-patch';
 import { Language } from '../../../core/data/language';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { PlatformService } from '../../../core/tools/platform.service';
-import { GaActionEnum, GoogleAnalyticsService } from 'ngx-google-analytics';
+import { GoogleAnalyticsService } from 'ngx-google-analytics';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { IS_HEADLESS } from '../../../../environments/is-headless';
@@ -298,7 +298,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       this.availableCraftJobs = this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1);
       this.availableJobs = this.gt.getJobs().filter(job => job.id > 0).map(job => job.id);
     });
-    this.results$ = combineLatest([this.query$, this.searchType$, this.filters$, this.sort$, this.searchLang$]).pipe(
+    this.results$ = combineLatest([this.query$.pipe(distinctUntilChanged()), this.searchType$, this.filters$, this.sort$, this.searchLang$]).pipe(
       debounceTime(400),
       filter(([query, , filters, , lang]) => {
         if (['ko', 'zh'].indexOf(lang.toLowerCase()) > -1) {
@@ -316,7 +316,6 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
           type: type,
           filters: null
         };
-        this.analytics.event(GaActionEnum.SEARCH, SearchType[type], query);
         if (sortBy) {
           queryParams.sort = sortBy;
           queryParams.order = sortOrder;

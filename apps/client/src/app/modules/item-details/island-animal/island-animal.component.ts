@@ -4,7 +4,7 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { switchMap } from 'rxjs/operators';
 import { IslandAnimal } from '../../list/model/island-animal';
 import { combineLatest, Observable } from 'rxjs';
-import { LazyIslandAnimal } from '../../../lazy-data/model/lazy-island-animal';
+import { LazyIslandAnimal } from '@ffxiv-teamcraft/data/model/lazy-island-animal';
 
 @Component({
   selector: 'app-island-animal',

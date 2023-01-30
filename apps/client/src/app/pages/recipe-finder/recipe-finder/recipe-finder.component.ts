@@ -24,7 +24,7 @@ import { LogTracking } from '../../../model/user/log-tracking';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
-import { LazyRecipe } from '../../../lazy-data/model/lazy-recipe';
+import { LazyRecipe } from '@ffxiv-teamcraft/data/model/lazy-recipe';
 import { EnvironmentService } from '../../../core/environment.service';
 
 @Component({

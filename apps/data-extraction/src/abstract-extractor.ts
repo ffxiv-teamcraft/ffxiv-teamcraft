@@ -11,9 +11,7 @@ export abstract class AbstractExtractor {
 
   protected static outputFolder = join(__dirname, '../../../client/src/app/core/data/sources/');
 
-  protected static assetOutputFolder = join(__dirname, '../../../client/src/assets/data/');
-
-  protected static XIVAPI_BASE_URL = process.env.XIVAPI_BASE_URL || 'https://xivapi.com';
+  protected static assetOutputFolder = join(__dirname, '../../../../libs/data/src/lib/json/');
 
   protected static XIVAPI_KEY = process.env.XIVAPI_KEY;
 
@@ -22,8 +20,6 @@ export abstract class AbstractExtractor {
   private queue: Subject<void>[] = [];
 
   private done$ = new Subject<string>();
-
-  public isSpecific = false;
 
   protected progress: any;
 
@@ -232,10 +228,6 @@ export abstract class AbstractExtractor {
 
   protected invert2DArray(input: any[][]): any[][] {
     return input[0].map((_, colIndex) => input.map(row => row[colIndex]));
-  }
-
-  protected persistToJson(fileName: string, content: any): void {
-    writeFileSync(join(AbstractExtractor.outputFolder, `${fileName}.json`), JSON.stringify(content, null, 2));
   }
 
   protected persistToJsonAsset(fileName: string, content: any): void {

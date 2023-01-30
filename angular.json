@@ -3,6 +3,6 @@
   "version": 2,
   "projects": {
     "client": "apps/client",
-    "client-e2e": "apps/client-e2e"
+    "data": "libs/data"
   }
 }

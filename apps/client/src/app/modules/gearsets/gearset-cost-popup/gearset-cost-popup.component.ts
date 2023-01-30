@@ -8,9 +8,9 @@ import { TradeEntry } from '../../list/model/trade-entry';
 import { GearsetProgression } from '../../../model/gearset/gearset-progression';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { map, switchMap, tap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { combineLatest, Observable } from 'rxjs';
-import { LazyData } from '../../../lazy-data/lazy-data';
+import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { observeInput } from '../../../core/rxjs/observe-input';
 
 @Component({

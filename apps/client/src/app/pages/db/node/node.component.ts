@@ -17,7 +17,7 @@ import { MapService } from '../../../modules/map/map.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { LazyGatheringItem } from '../../../lazy-data/model/lazy-gathering-item';
+import { LazyGatheringItem } from '@ffxiv-teamcraft/data/model/lazy-gathering-item';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 @Component({

@@ -1,5 +1,5 @@
-import { LazyIslandCraftwork } from '../../lazy-data/model/lazy-island-craftwork';
-import { LazyIslandPopularity } from '../../lazy-data/model/lazy-island-popularity';
+import { LazyIslandCraftwork } from '@ffxiv-teamcraft/data/model/lazy-island-craftwork';
+import { LazyIslandPopularity } from '@ffxiv-teamcraft/data/model/lazy-island-popularity';
 import { WorkshopPattern } from './workshop-patterns';
 
 export interface CraftworksObject {
