@@ -222,8 +222,7 @@ export class IpcListenersManager {
           this.store.set('region', settings.region);
 
           if (this.store.get<boolean>('machina', false) === true) {
-            this.pcap.stop();
-            this.pcap.start();
+            this.pcap.restart();
           }
         }
 
@@ -247,8 +246,7 @@ export class IpcListenersManager {
     });
 
     this.twoWayBinding('rawsock', 'rawsock', () => {
-      this.pcap.stop();
-      this.pcap.start();
+      this.pcap.restart();
     });
 
     this.twoWayBinding('always-on-top', 'win:alwaysOnTop', (onTop) => {
@@ -272,6 +270,10 @@ export class IpcListenersManager {
 
     ipcMain.on('minimize', () => {
       this.mainWindow.win.minimize();
+    });
+
+    ipcMain.on('pcap:restart', () => {
+      this.pcap.restart();
     });
 
     ipcMain.on('language', (event, lang) => {
