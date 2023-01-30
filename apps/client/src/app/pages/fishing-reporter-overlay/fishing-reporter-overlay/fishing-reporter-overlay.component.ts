@@ -4,7 +4,7 @@ import { combineLatest, interval, Observable, ReplaySubject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { map } from 'rxjs/operators';
 import { FishingReporterState } from '../../../core/data-reporting/state/fishing-reporter-state';
-import { LazyFishingSpot } from '../../../lazy-data/model/lazy-fishing-spot';
+import { LazyFishingSpot } from '@ffxiv-teamcraft/data/model/lazy-fishing-spot';
 
 @Component({
   selector: 'app-fishing-reporter-overlay',

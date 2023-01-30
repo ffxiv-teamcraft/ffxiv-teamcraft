@@ -6,7 +6,7 @@ import { FishingBait } from '../data/model/fishing-bait';
 import { Hookset } from '../data/model/hookset';
 import { SpearfishingSpeed } from '../data/model/spearfishing-speed';
 import { SpearfishingShadowSize } from '../data/model/spearfishing-shadow-size';
-import { LazyAetheryte } from '../../lazy-data/model/lazy-aetheryte';
+import { LazyAetheryte } from '@ffxiv-teamcraft/data/model/lazy-aetheryte';
 
 export class Alarm extends DataModel {
 

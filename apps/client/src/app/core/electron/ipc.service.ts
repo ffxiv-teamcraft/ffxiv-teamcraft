@@ -93,6 +93,10 @@ export class IpcService {
     return this._ipc !== undefined;
   }
 
+  public get available(): boolean {
+    return this.platformService.isDesktop();
+  }
+
   public get itemInfoPackets$() {
     return this.packets$.pipe(
       ofMessageType('itemInfo'),

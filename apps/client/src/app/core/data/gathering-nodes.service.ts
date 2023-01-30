@@ -7,8 +7,8 @@ import { FishingBait } from './model/fishing-bait';
 import { Observable, of } from 'rxjs';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { map } from 'rxjs/operators';
-import { LazyFishingSpot } from '../../lazy-data/model/lazy-fishing-spot';
-import { LazyData } from '../../lazy-data/lazy-data';
+import { LazyFishingSpot } from '@ffxiv-teamcraft/data/model/lazy-fishing-spot';
+import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { safeCombineLatest } from '../rxjs/safe-combine-latest';
 
 @Injectable({

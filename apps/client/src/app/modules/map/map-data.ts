@@ -1,4 +1,4 @@
-import { LazyAetheryte } from '../../lazy-data/model/lazy-aetheryte';
+import { LazyAetheryte } from '@ffxiv-teamcraft/data/model/lazy-aetheryte';
 
 export interface MapData {
   id: number;

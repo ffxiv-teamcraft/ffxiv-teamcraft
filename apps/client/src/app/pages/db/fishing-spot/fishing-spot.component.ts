@@ -13,7 +13,7 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { FishingMissesPopupComponent } from '../fishing-misses-popup/fishing-misses-popup.component';
 import { FishContextService } from '../service/fish-context.service';
-import { LazyFishingSpot } from '../../../lazy-data/model/lazy-fishing-spot';
+import { LazyFishingSpot } from '@ffxiv-teamcraft/data/model/lazy-fishing-spot';
 
 // TODO: Type me
 export type XivApiFishingSpot = any;

@@ -1,4 +1,4 @@
-import { LazyFishingSpot } from '../../../lazy-data/model/lazy-fishing-spot';
+import { LazyFishingSpot } from '@ffxiv-teamcraft/data/model/lazy-fishing-spot';
 import { Tug } from '../../data/model/tug';
 
 export interface FishingReporterState {

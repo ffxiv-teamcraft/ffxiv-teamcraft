@@ -36,6 +36,7 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../rxjs/with-lazy-data';
 import { safeCombineLatest } from '../rxjs/safe-combine-latest';
 import { GatheringNodeSearchResult } from '../../model/search/gathering-node-search-result';
+import { withLazyRows } from '../rxjs/with-lazy-rows';
 
 @Injectable()
 export class DataService {
@@ -354,11 +355,11 @@ export class DataService {
         }
         return results;
       }),
-      withLazyData(this.lazyData, 'recipes'),
+      withLazyRows(this.lazyData, 'recipesPerItem', item => item.ID),
       map(([xivapiSearchResults, lazyRecipes]) => {
         const results: SearchResult[] = [];
         xivapiSearchResults.forEach(item => {
-          const recipes = lazyRecipes.filter(recipe => recipe.result === item.ID);
+          const recipes = lazyRecipes[item.ID] || [];
           if (recipes.length > 0) {
             const craftedByFilter = filters.find(f => f.name === 'Recipes.ClassJobID');
             recipes

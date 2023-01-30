@@ -8,12 +8,12 @@ import { TradeSource } from '../list/model/trade-source';
 import { GearsetProgression } from '../../model/gearset/gearset-progression';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { map, shareReplay, switchMap } from 'rxjs/operators';
-import { LazyMateria } from '../../lazy-data/model/lazy-materia';
+import { LazyMateria } from '@ffxiv-teamcraft/data/model/lazy-materia';
 import { combineLatest, Observable, of } from 'rxjs';
 import { StaticData } from '../../lazy-data/static-data';
-import { LazyItemStat } from '../../lazy-data/model/lazy-item-stat';
+import { LazyItemStat } from '@ffxiv-teamcraft/data/model/lazy-item-stat';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
-import { LazyData } from '../../lazy-data/lazy-data';
+import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { SettingsService } from '../settings/settings.service';
 
 @Injectable({

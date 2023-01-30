@@ -19,7 +19,7 @@ import { GatheringNodesService } from '../../../core/data/gathering-nodes.servic
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { Region } from '../../../modules/settings/region.enum';
-import { LazyData } from '../../../lazy-data/lazy-data';
+import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 
 @Component({
   selector: 'app-spearfishing-spot',

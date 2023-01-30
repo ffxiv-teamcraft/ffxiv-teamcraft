@@ -41,7 +41,7 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { withLazyRow } from '../../../core/rxjs/with-lazy-row';
-import { LazyRecipesPerItem } from '../../../lazy-data/model/lazy-recipes-per-item';
+import { LazyRecipesPerItem } from '@ffxiv-teamcraft/data/model/lazy-recipes-per-item';
 
 @Component({
   selector: 'app-item',

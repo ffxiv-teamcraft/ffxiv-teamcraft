@@ -23,7 +23,7 @@ import { GearsetCostPopupComponent } from '../../../modules/gearsets/gearset-cos
 import { GearsetCreationPopupComponent } from '../../../modules/gearsets/gearset-creation-popup/gearset-creation-popup.component';
 import { XivapiSearchOptions } from '@xivapi/angular-client/src/model';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { LazyData } from '../../../lazy-data/lazy-data';
+import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { Memoized } from '../../../core/decorators/memoized';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { EnvironmentService } from '../../../core/environment.service';

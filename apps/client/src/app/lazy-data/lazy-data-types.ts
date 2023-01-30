@@ -1,5 +1,5 @@
 import { ListRow } from '../modules/list/model/list-row';
-import { LazyData } from './lazy-data';
+import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { I18nName } from '../model/common/i18n-name';
 
 export type LazyDataKey = keyof LazyData | 'extracts';

@@ -32,7 +32,7 @@ import { SettingsService } from '../settings/settings.service';
 import { ContentIdLinkingPopupComponent } from './content-id-linking-popup/content-id-linking-popup.component';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { InventoryState } from './sync-state/inventory-state';
-import { LazyMateria } from '../../lazy-data/model/lazy-materia';
+import { LazyMateria } from '@ffxiv-teamcraft/data/model/lazy-materia';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { LodestoneIdEntry } from '../../model/user/lodestone-id-entry';
 import { PlatformService } from '../../core/tools/platform.service';
