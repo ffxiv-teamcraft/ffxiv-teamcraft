@@ -2,7 +2,7 @@ import { Component, OnDestroy, TemplateRef, ViewChild } from '@angular/core';
 import { BehaviorSubject, combineLatest, concat, from, Observable, of, Subject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { I18nName } from '../../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { debounceTime, filter, first, map, mergeMap, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';

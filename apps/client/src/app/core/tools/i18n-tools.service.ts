@@ -3,12 +3,12 @@ import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { I18nData } from '../../model/common/i18n-data';
-import { I18nName } from '../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { I18nNameLazy } from '../../model/common/i18n-name-lazy';
 import { CustomItem } from '../../modules/custom-items/model/custom-item';
 import { Language } from '../data/language';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
-import { LazyDataI18nKey } from '../../lazy-data/lazy-data-types';
+import { LazyDataI18nKey } from '@ffxiv-teamcraft/types';
 import { mapIds } from '../data/sources/map-ids';
 import { withLazyData } from '../rxjs/with-lazy-data';
 

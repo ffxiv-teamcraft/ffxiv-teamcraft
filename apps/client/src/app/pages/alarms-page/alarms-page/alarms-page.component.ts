@@ -19,7 +19,7 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { CustomAlarmPopupComponent } from '../../../modules/custom-alarm-popup/custom-alarm-popup/custom-alarm-popup.component';
-import { I18nName } from '../../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { FolderAdditionPickerComponent } from '../../../modules/folder-addition-picker/folder-addition-picker/folder-addition-picker.component';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';

@@ -3,7 +3,7 @@ import { MetricsDisplayEntry } from '../metrics-display-entry';
 import { MetricType } from '../../model/metric-type';
 import { METRICS_DISPLAY_FILTERS, MetricsDisplayFilter } from '../../filters/metrics-display-filter';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { I18nName } from '../../../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { debounceTime, map, switchMap } from 'rxjs/operators';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { ProbeSource } from '../../model/probe-source';

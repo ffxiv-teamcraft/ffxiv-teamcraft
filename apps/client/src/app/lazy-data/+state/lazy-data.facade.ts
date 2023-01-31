@@ -7,8 +7,8 @@ import { debounceTime, distinctUntilChanged, filter, first, map, shareReplay, sk
 import * as fromLazyData from './lazy-data.reducer';
 import * as LazyDataSelectors from './lazy-data.selectors';
 import { loadLazyDataEntityEntry, loadLazyDataFullEntity } from './lazy-data.actions';
-import { I18nElement, LazyDataEntries, LazyDataI18nKey, LazyDataKey, LazyDataRecordKey, LazyDataWithExtracts } from '../lazy-data-types';
-import { I18nName } from '../../model/common/i18n-name';
+import { LazyDataEntries, LazyDataKey, LazyDataRecordKey, LazyDataWithExtracts } from '../lazy-data-types';
+import { I18nElement, I18nName, LazyDataI18nKey } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Region } from '../../modules/settings/region.enum';
 import { zhWorlds } from '../../core/data/sources/zh-worlds';

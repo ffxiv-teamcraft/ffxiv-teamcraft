@@ -4,7 +4,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { SeoService } from '../seo/seo.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, switchMap, takeUntil } from 'rxjs/operators';
-import { LazyDataI18nKey } from '../../lazy-data/lazy-data-types';
+import { LazyDataI18nKey } from '@ffxiv-teamcraft/types';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 
 @Component({

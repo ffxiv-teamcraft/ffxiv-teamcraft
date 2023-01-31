@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { I18nName } from '../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { aetheryteNames } from '../../core/data/sources/aetheryte-names';
 
 @Pipe({

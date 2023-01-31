@@ -4,7 +4,7 @@ import { debounceTime, filter, first, map, pluck, shareReplay, startWith, switch
 import { AllaganReportsService } from '../allagan-reports.service';
 import { AllaganReportSource } from '../model/allagan-report-source';
 import { BehaviorSubject, combineLatest, merge, Observable, of, Subject } from 'rxjs';
-import { I18nName } from '../../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { AllaganReport } from '../model/allagan-report';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -23,7 +23,7 @@ import { FishContextService } from '../../db/service/fish-context.service';
 import { ItemContextService } from '../../db/service/item-context.service';
 import { ReportsManagementComponent } from '../reports-management.component';
 import { OceanFishingTime } from '../model/ocean-fishing-time';
-import { SearchType } from '../../search/search-type';
+import { SearchType } from '@ffxiv-teamcraft/trpc-api';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { SpearfishingSpeed } from '../../../core/data/model/spearfishing-speed';

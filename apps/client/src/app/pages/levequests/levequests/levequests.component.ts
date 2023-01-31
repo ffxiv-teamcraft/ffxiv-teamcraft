@@ -11,14 +11,14 @@ import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { List } from '../../../modules/list/model/list';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
-import { Levequest } from '../../../model/search/levequest';
+import { Levequest } from '@ffxiv-teamcraft/trpc-api';
 import { DataService } from '../../../core/api/data.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { IpcService } from '../../../core/electron/ipc.service';
-import { I18nName } from '../../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { EnvironmentService } from '../../../core/environment.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 

@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { SearchType } from '../search-type';
-import { SearchResult } from '../../../model/search/search-result';
+import { SearchResult, SearchType } from '@ffxiv-teamcraft/trpc-api';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { Region } from '../../../modules/settings/region.enum';
 

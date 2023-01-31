@@ -1,4 +1,4 @@
-import { CompactMasterbook } from '../common/compact-masterbook';
+import { I18nName } from '@ffxiv-teamcraft/types';
 
 export interface Recipe {
   itemId: number;
@@ -6,7 +6,10 @@ export interface Recipe {
   recipeId: string;
   job: number;
   stars: number;
-  masterbook?: CompactMasterbook;
+  masterbook?: {
+    id: number | string;
+    name?: I18nName;
+  };
   lvl: number;
   collectible: boolean;
 }

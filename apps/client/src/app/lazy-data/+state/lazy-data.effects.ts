@@ -1,10 +1,10 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as LazyDataActions from './lazy-data.actions';
-import { concatMap, map, mergeMap, switchMap } from 'rxjs/operators';
+import { concatMap, map, switchMap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { LazyDataFacade } from './lazy-data.facade';
-import { lazyFilesList } from '../../core/data/lazy-files-list';
+import { lazyFilesList } from '@ffxiv-teamcraft/data/lazy-files-list';
 import { merge, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { isPlatformServer } from '@angular/common';

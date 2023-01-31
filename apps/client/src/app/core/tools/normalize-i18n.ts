@@ -1,4 +1,4 @@
-import { I18nName } from '../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { XivapiI18nName } from '../../lazy-data/lazy-data-types';
 
 export function normalizeI18nName(row: I18nName | { name: I18nName } | XivapiI18nName): I18nName {
