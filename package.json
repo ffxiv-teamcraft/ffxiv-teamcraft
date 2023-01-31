@@ -211,6 +211,7 @@
     "apollo-client": "^2.6.0",
     "apollo-link": "^1.2.11",
     "apollo-link-ws": "^1.0.20",
+    "axios": "^1.2.6",
     "bufferutil": "^4.0.5",
     "caniuse-lite": "^1.0.30001419",
     "chart.js": "^2.9.4",
