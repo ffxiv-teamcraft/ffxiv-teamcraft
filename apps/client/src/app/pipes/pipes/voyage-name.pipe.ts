@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
-import { I18nName } from '../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 
 @Pipe({
   name: 'voyageName'

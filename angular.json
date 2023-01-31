@@ -2,7 +2,10 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "api": "apps/api",
     "client": "apps/client",
-    "data": "libs/data"
+    "data": "libs/data",
+    "trpc-api": "libs/trpc-api",
+    "types": "libs/types"
   }
 }

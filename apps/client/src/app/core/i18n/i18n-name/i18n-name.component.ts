@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest } from 'rxjs';
-import { LazyDataI18nKey } from '../../../lazy-data/lazy-data-types';
+import { LazyDataI18nKey } from '@ffxiv-teamcraft/types';
 import { map, switchMap } from 'rxjs/operators';
 import { observeInput } from '../../rxjs/observe-input';
 import { I18nToolsService } from '../../tools/i18n-tools.service';

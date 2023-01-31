@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, OnDestroy, Pipe, PipeTransform } from '@angular/core';
 import { isNil } from 'lodash';
 import { isObservable, Observable, Subscription } from 'rxjs';
-import { I18nName } from '../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { I18nNameLazy } from '../model/common/i18n-name-lazy';
 import { I18nToolsService } from './tools/i18n-tools.service';
 

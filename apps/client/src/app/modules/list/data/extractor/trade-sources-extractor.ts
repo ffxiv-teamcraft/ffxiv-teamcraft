@@ -7,7 +7,7 @@ import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { map } from 'rxjs/operators';
 import { safeCombineLatest } from '../../../../core/rxjs/safe-combine-latest';
 import { LazyShop } from '@ffxiv-teamcraft/data/model/lazy-shop';
-import { I18nName } from '../../../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { LazyNpc } from '@ffxiv-teamcraft/data/model/lazy-npc';
 import { uniqBy } from 'lodash';
 import { TradeIconPipe } from '../../../../pipes/pipes/trade-icon.pipe';

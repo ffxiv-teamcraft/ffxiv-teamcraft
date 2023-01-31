@@ -2,12 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { combineLatest, Observable, of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
-import { Recipe } from '../../model/search/recipe';
 import { ItemData } from '../../model/garland-tools/item-data';
 import { NgSerializerService } from '@kaiu/ng-serializer';
-import { SearchFilter } from '../../model/search/search-filter.interface';
 import { map, switchMap } from 'rxjs/operators';
-import { SearchResult } from '../../model/search/search-result';
 import { InstanceData } from '../../model/garland-tools/instance-data';
 import { QuestData } from '../../model/garland-tools/quest-data';
 import { NpcData } from '../../model/garland-tools/npc-data';
@@ -15,19 +12,25 @@ import { LeveData } from '../../model/garland-tools/leve-data';
 import { MobData } from '../../model/garland-tools/mob-data';
 import { FateData } from '../../model/garland-tools/fate-data';
 import { SearchAlgo, SearchIndex, XivapiEndpoint, XivapiOptions, XivapiSearchFilter, XivapiSearchOptions, XivapiService } from '@xivapi/angular-client';
-import { SearchType } from '../../pages/search/search-type';
-import { InstanceSearchResult } from '../../model/search/instance-search-result';
-import { QuestSearchResult } from '../../model/search/quest-search-result';
-import { ActionSearchResult } from '../../model/search/action-search-result';
-import { StatusSearchResult } from '../../model/search/status-search-result';
-import { LeveSearchResult } from '../../model/search/leve-search-result';
-import { NpcSearchResult } from '../../model/search/npc-search-result';
-import { MobSearchResult } from '../../model/search/mob-search-result';
-import { FateSearchResult } from '../../model/search/fate-search-result';
-import { MapSearchResult } from '../../model/search/map-search-result';
+import {
+  AchievementSearchResult,
+  ActionSearchResult,
+  FateSearchResult,
+  FishingSpotSearchResult,
+  GatheringNodeSearchResult,
+  InstanceSearchResult,
+  LeveSearchResult,
+  MapSearchResult,
+  MobSearchResult,
+  NpcSearchResult,
+  QuestSearchResult,
+  SearchFilter,
+  SearchResult,
+  SearchType,
+  StatusSearchResult
+} from '@ffxiv-teamcraft/trpc-api';
 import { mapIds } from '../data/sources/map-ids';
 import { requestsWithDelay } from '../rxjs/requests-with-delay';
-import { FishingSpotSearchResult } from '../../model/search/fishing-spot-search-result';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Region } from '../../modules/settings/region.enum';
@@ -35,10 +38,9 @@ import { Language } from '../data/language';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../rxjs/with-lazy-data';
 import { safeCombineLatest } from '../rxjs/safe-combine-latest';
-import { GatheringNodeSearchResult } from '../../model/search/gathering-node-search-result';
 import { withLazyRows } from '../rxjs/with-lazy-rows';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class DataService {
 
   public garlandtoolsVersions = {
@@ -835,7 +837,7 @@ export class DataService {
     );
   }
 
-  searchAchievement(query: string, filters: SearchFilter[]): Observable<StatusSearchResult[]> {
+  searchAchievement(query: string, filters: SearchFilter[]): Observable<AchievementSearchResult[]> {
     return this.xivapiSearch({
       indexes: [SearchIndex.ACHIEVEMENT],
       columns: ['ID', 'Icon', 'Name_*', 'Description_*'],

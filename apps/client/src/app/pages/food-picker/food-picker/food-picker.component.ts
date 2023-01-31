@@ -7,7 +7,7 @@ import { SearchIndex, XivapiSearchFilter, XivapiService } from '@xivapi/angular-
 import { ActivatedRoute, Router } from '@angular/router';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
-import { I18nName } from '../../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 
 @Component({
   selector: 'app-food-picker',

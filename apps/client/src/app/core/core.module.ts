@@ -1,7 +1,6 @@
 import { ErrorHandler, ModuleWithProviders, NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { GarlandToolsService } from './api/garland-tools.service';
-import { DataService } from './api/data.service';
 import { NgSerializerModule } from '@kaiu/ng-serializer';
 import { I18nPipe } from './i18n.pipe';
 import { TranslateModule } from '@ngx-translate/core';
@@ -101,7 +100,6 @@ import { FathomEventDirective } from './analytics/fathom-event.directive';
   providers: [
     PendingChangesService,
     PlatformService,
-    DataService,
     MathToolsService,
     HtmlToolsService,
     LinkToolsService,

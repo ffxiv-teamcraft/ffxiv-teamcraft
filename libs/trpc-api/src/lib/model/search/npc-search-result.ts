@@ -1,4 +1,4 @@
-import { I18nName } from '../common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { BaseSearchResult } from './base-search-result';
 
 export interface NpcSearchResult extends BaseSearchResult {

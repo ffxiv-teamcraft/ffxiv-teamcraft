@@ -1,6 +1,6 @@
 import { Recipe } from './recipe';
 import { BaseSearchResult } from './base-search-result';
-import { LazyDataI18nKey } from '../../lazy-data/lazy-data-types';
+import { LazyDataI18nKey } from '@ffxiv-teamcraft/types';
 
 export interface SearchResult extends BaseSearchResult {
   itemId: number | string;

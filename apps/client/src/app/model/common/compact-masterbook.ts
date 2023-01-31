@@ -1,4 +1,4 @@
-import { I18nName } from './i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 
 export interface CompactMasterbook {
   id: number | string;
