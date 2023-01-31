@@ -115,16 +115,6 @@ export class DataService {
   /**
    * Gets an instance based on its id.
    * @param {number} id
-   * @returns {Observable<InstanceData>}
-   */
-  public getInstance(id: number): Observable<InstanceData> {
-    return this.getGarlandData(`/instance/en/${this.garlandtoolsVersions.instance}/${id}`)
-      .pipe(map(item => this.serializer.deserialize<InstanceData>(item, InstanceData)));
-  }
-
-  /**
-   * Gets an instance based on its id.
-   * @param {number} id
    * @returns {Observable<NpcData>}
    */
   public getNpc(id: number): Observable<NpcData> {
@@ -150,16 +140,6 @@ export class DataService {
   public getLeve(id: number): Observable<LeveData> {
     return this.getGarlandData(`/leve/en/${this.garlandtoolsVersions.leve}/${id}`)
       .pipe(map(item => this.serializer.deserialize<LeveData>(item, LeveData)));
-  }
-
-  /**
-   * Gets a mob based on its id.
-   * @param {number} id
-   * @returns {Observable<MobData>}
-   */
-  public getMob(id: string): Observable<MobData> {
-    return this.getGarlandData(`/mob/en/${this.garlandtoolsVersions.mob}/${id}`)
-      .pipe(map(item => this.serializer.deserialize<MobData>(item, MobData)));
   }
 
   /**
@@ -477,54 +457,6 @@ export class DataService {
   }
 
   /**
-   * Searches for gathering items based on a given name.
-   * Will return an observable of empty array if name is shorter than 2 characters.
-   *
-   * @param {string} name
-   * @returns {Observable<number[]>}
-   */
-  public searchGathering(name: string): Observable<number[]> {
-    let lang = this.searchLang;
-    const isKoOrZh = ['ko', 'zh'].indexOf(this.searchLang.toLowerCase()) > -1;
-    if (isKoOrZh) {
-      if (name.length > 0) {
-        lang = 'en';
-      } else {
-        return of([]);
-      }
-    } else if (name.length < 2 && (this.searchLang !== 'ja' && name.length === 0)) {
-      return of([]);
-    }
-
-    let params = new HttpParams()
-      .set('gatherable', '1')
-      .set('type', 'item')
-      .set('lang', lang);
-
-    // If the lang is korean, handle it properly to map to item ids.
-    if (isKoOrZh) {
-      return this.mapToItemIds(name, this.searchLang as 'ko' | 'zh').pipe(
-        switchMap(ids => {
-          params = ids.length > 0 ? params.set('ids', ids.join(',')) : params.set('text', name);
-          return this.getGarlandSearch(params).pipe(
-            map(results => {
-              return (results || []).map(item => item.obj.i);
-            })
-          );
-        })
-      );
-    } else {
-      params = params.set('text', name);
-    }
-
-    return this.getGarlandSearch(params).pipe(
-      map(results => {
-        return (results || []).map(item => item.obj.i);
-      })
-    );
-  }
-
-  /**
    * Creates a request to garlandtools.org.
    * @param {string} uri
    * @returns {Observable}
@@ -542,7 +474,6 @@ export class DataService {
     } else if (['fr', 'en', 'ja', 'de'].indexOf(lang) === -1) {
       return 'en';
     }
-
     return lang;
   }
 
@@ -1187,15 +1118,6 @@ export class DataService {
         });
       })
     );
-  }
-
-  /**
-   * Creates a search request to garlandtools.org.
-   * @param {HttpParams} query
-   * @returns {Observable}
-   */
-  private getGarlandSearch(query: HttpParams): Observable<any> {
-    return this.http.get<any>(`${this.garlandApiUrl}/search.php`, { params: query });
   }
 
   private mapToItemIds(terms: string, lang: 'ko' | 'zh'): Observable<number[]> {

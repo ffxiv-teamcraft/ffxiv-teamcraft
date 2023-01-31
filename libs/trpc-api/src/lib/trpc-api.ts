@@ -6,6 +6,7 @@ export const appRouter = router({
   doSearch: procedure
     .input(z.object({
       query: z.string(),
+      lang: z.string(),
       filters: z.array(z.object({
         name: z.string(),
         value: z.any(),
@@ -20,7 +21,8 @@ export const appRouter = router({
     }))
     .query(req => {
       const { input } = req;
-      const { query, filters } = input;
+      const { query, lang, filters } = input;
+
       return 'Hello World';
     })
 });
