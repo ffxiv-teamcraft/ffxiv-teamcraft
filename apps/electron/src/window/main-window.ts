@@ -59,7 +59,7 @@ export class MainWindow {
           // We have to store the url because we're only allowed to call the callback once, so we're gonna edit
           let url: string = details.url;
           // First, let's handle request protocol
-          if (url.match(/^file:\/\/[^.]*\.[^\/]+\/.+$/mi)) {
+          if (url.match(/^file:\/\/[^.\/]*\.[^\/]+\/.+$/mi)) {
             url = url.replace('file://', 'https://');
           }
           // Then, ads request url details containing file protocol
