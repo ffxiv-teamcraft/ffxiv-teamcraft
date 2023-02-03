@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { AlarmsFacade } from './+state/alarms.facade';
 import { combineLatest, of } from 'rxjs';
-import { filter, first, map, startWith, switchMap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, startWith, switchMap } from 'rxjs/operators';
 import { Alarm } from './alarm';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { PlatformService } from '../tools/platform.service';
@@ -126,9 +126,14 @@ export class AlarmBellService {
   }
 
   private initBell(): void {
+    const alarms$ = this.alarmsFacade.allAlarms$.pipe(
+      distinctUntilChanged((a, b) => {
+        return a.map(el => el.$key).join(':') === b.map(el => el.$key).join(':');
+      })
+    );
     combineLatest([
       this.eorzeanTime.getEorzeanTime(),
-      this.alarmsFacade.allAlarms$,
+      alarms$,
       this.alarmsFacade.allGroups$,
       this.eorzeaFacade.mapId$.pipe(startWith(-1)),
       this.lazyData.getEntry('maps')
@@ -155,22 +160,16 @@ export class AlarmBellService {
             if ((!hasOneGroupEnabled) || !alarm.enabled) {
               return false;
             }
-            const lastPlayed = this.getLastPlayed(alarm);
             // Ceiling on /6 so precision is 1/10
             const timeBeforePlay = Math.round(this.alarmsFacade.getMinutesBefore(date, this.alarmsFacade.getNextSpawn(alarm, date)) / 6) / 10 - this.settings.alarmHoursBefore;
-            // Irl alarm duration in ms
-            let irlAlarmDuration = this.eorzeanTime.toEarthTime(alarm.duration * 60) * 1000;
-            // If the alarm has no duration, it's because it has no spawn time and only depends on weather
-            if (irlAlarmDuration === 0) {
-              irlAlarmDuration = this.eorzeanTime.toEarthTime(8 * 60) * 1000;
-            }
-            return Date.now() - lastPlayed >= irlAlarmDuration
-              && timeBeforePlay <= 0;
+            return timeBeforePlay <= 0;
           });
         })
       ).subscribe(alarmsToPlay => {
       alarmsToPlay.forEach(alarm => {
-        this.alarmsFacade.setAlarmDone(alarm.$key, false);
+        if (alarm.done) {
+          this.alarmsFacade.setAlarmDone(alarm.$key, false);
+        }
         if (!this.settings.alarmsMuted) {
           this.notify(alarm);
         }
