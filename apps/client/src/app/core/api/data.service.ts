@@ -565,7 +565,7 @@ export class DataService {
         'ClassJobLevel', 'ClassJob', 'ClassJobCategory', 'Level', 'Description_*', 'IconIssuer',
         'Title_*', 'IconMap', '_'],
       // I know, it looks like it's the same, but it isn't
-      string: query.split('-').join('–'),
+      string: query,
       filters: [].concat.apply([], filters
         .filter(f => f.value !== null)
         .map(f => {
@@ -644,7 +644,7 @@ export class DataService {
       indexes: [SearchIndex.INSTANCECONTENT],
       columns: ['ID', 'Banner', 'Icon', 'ContentFinderCondition.ClassJobLevelRequired'],
       // I know, it looks like it's the same, but it isn't
-      string: query.split('-').join('–'),
+      string: query,
       filters: [].concat.apply([], filters
         .filter(f => f.value !== null)
         .map(f => {
@@ -683,7 +683,7 @@ export class DataService {
       indexes: [SearchIndex.QUEST],
       columns: ['ID', 'Banner', 'Icon'],
       // I know, it looks like it's the same, but it isn't
-      string: query.split('-').join('–'),
+      string: query,
       filters: [].concat.apply([], filters
         .filter(f => f.value !== null)
         .map(f => {
@@ -722,7 +722,7 @@ export class DataService {
       indexes: [SearchIndex.ACTION, <SearchIndex>'craftaction'],
       columns: ['ID', 'Icon', 'ClassJobLevel', 'ClassJob', 'ClassJobCategory'],
       // I know, it looks like it's the same, but it isn't
-      string: query.split('-').join('–'),
+      string: query,
       filters: [].concat.apply([], filters
         .filter(f => f.value !== null)
         .map(f => {
@@ -761,7 +761,7 @@ export class DataService {
       indexes: [<SearchIndex>'trait'],
       columns: ['ID', 'Icon', 'Level', 'ClassJob', 'ClassJobCategory'],
       // I know, it looks like it's the same, but it isn't
-      string: query.split('-').join('–'),
+      string: query,
       filters: [].concat.apply([], filters
         .filter(f => f.value !== null)
         .map(f => {
@@ -800,7 +800,7 @@ export class DataService {
       indexes: [SearchIndex.STATUS],
       columns: ['ID', 'Icon', 'Name_*', 'Description_*'],
       // I know, it looks like it's the same, but it isn't
-      string: query.split('-').join('–'),
+      string: query,
       filters: [].concat.apply([], filters
         .filter(f => f.value !== null)
         .map(f => {
@@ -839,7 +839,7 @@ export class DataService {
       indexes: [SearchIndex.ACHIEVEMENT],
       columns: ['ID', 'Icon', 'Name_*', 'Description_*'],
       // I know, it looks like it's the same, but it isn't
-      string: query.split('-').join('–'),
+      string: query,
       filters: [].concat.apply([], filters
         .filter(f => f.value !== null)
         .map(f => {
@@ -878,7 +878,7 @@ export class DataService {
       indexes: [SearchIndex.LEVE],
       columns: ['ID', 'Banner', 'Icon', 'ClassJobCategory', 'IconIssuer', 'ClassJobLevel'],
       // I know, it looks like it's the same, but it isn't
-      string: query.split('-').join('–'),
+      string: query,
       filters: [].concat.apply([], filters
         .filter(f => f.value !== null)
         .map(f => {
@@ -917,7 +917,7 @@ export class DataService {
       indexes: [SearchIndex.ENPCRESIDENT],
       columns: ['ID', 'Title_*', 'Icon'],
       // I know, it looks like it's the same, but it isn't
-      string: query.split('-').join('–'),
+      string: query,
       filters: [].concat.apply([], filters
         .filter(f => f.value !== null)
         .map(f => {
@@ -956,7 +956,7 @@ export class DataService {
       indexes: [SearchIndex.BNPCNAME],
       columns: ['ID', 'Icon'],
       // I know, it looks like it's the same, but it isn't
-      string: query.split('-').join('–'),
+      string: query,
       filters: [].concat.apply([], filters
         .filter(f => f.value !== null)
         .map(f => {
@@ -995,7 +995,7 @@ export class DataService {
       indexes: [SearchIndex.FATE],
       columns: ['ID', 'IconMap', 'ClassJobLevel'],
       // I know, it looks like it's the same, but it isn't
-      string: query.split('-').join('–'),
+      string: query,
       filters: [].concat.apply([], filters
         .filter(f => f.value !== null)
         .map(f => {
@@ -1093,7 +1093,7 @@ export class DataService {
       indexes: [SearchIndex.PLACENAME],
       columns: ['ID', 'Name_*'],
       // I know, it looks like it's the same, but it isn't
-      string: query.split('-').join('–'),
+      string: query,
       filters: [].concat.apply([], filters
         .filter(f => f.value !== null)
         .map(f => {
