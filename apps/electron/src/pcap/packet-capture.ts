@@ -98,7 +98,6 @@ export class PacketCapture {
   }
 
   start(): void {
-    this.tries++;
     if (this.store.get('rawsock', false)) {
       this.startMachina();
     } else {
@@ -118,14 +117,25 @@ export class PacketCapture {
     }
   }
 
-  stop(): void {
+  restart(): void {
+    this.tries = 0;
+    this.stop();
+    setTimeout(() => {
+      this.mainWindow.win.webContents.send('pcap:status', 'starting');
+      this.start();
+    }, 1000);
+  }
+
+  stop(): Promise<void> {
+    this.mainWindow.win.webContents.send('pcap:status', 'stopped');
     if (this.startTimeout) {
       clearTimeout(this.startTimeout);
+      delete this.startTimeout;
     }
     if (this.captureInterface) {
-      this.captureInterface.stop();
+      return this.captureInterface.stop().catch(err => log.error(err));
     }
-    this.mainWindow.win.webContents.send('pcap:status', 'stopped');
+    return Promise.resolve();
   }
 
   addMachinaFirewallRule(): void {
@@ -183,6 +193,10 @@ export class PacketCapture {
   }
 
   private async startMachina(): Promise<void> {
+    if (this.startTimeout) {
+      clearTimeout(this.startTimeout);
+      delete this.startTimeout;
+    }
     const region = this.store.get('region', 'Global');
     const rawsock = this.store.get('rawsock', false);
 
@@ -239,36 +253,13 @@ export class PacketCapture {
 
     log.info(`Starting PacketCapture with options: ${JSON.stringify(options)}`);
     this.captureInterface = new CaptureInterface(options);
-    this.captureInterface.start()
-      .then(() => {
-        this.mainWindow.win.webContents.send('pcap:status', 'running');
-        log.info('Packet capture started');
-      })
-      .catch((err) => {
-        this.mainWindow.win.webContents.send('pcap:status', 'error');
-        log.error(`Couldn't start packet capture`);
-        log.error(err);
-        if (err.message === `Cannot call write after a stream was destroyed`) {
-          this.mainWindow.win.webContents.send('machina:error', {
-            message: 'Wrapper_failed_to_start',
-            retryDelay: 60
-          });
-        }
-        if (this.tries < 3) {
-          this.startTimeout = setTimeout(() => {
-            this.start();
-          }, 60000);
-        } else {
-          this.stop();
-        }
-      });
     this.captureInterface.on('error', err => {
-      log.error(err);
-    });
-    this.captureInterface.on('error', err => {
+      this.mainWindow.win.webContents.send('pcap:status', 'error');
       this.mainWindow.win.webContents.send('machina:error:raw', {
         message: err
       });
+      log.error('ERROR EVENT');
+      log.error(err);
     });
     this.captureInterface.setMaxListeners(0);
     this.captureInterface.on('message', (message) => {
@@ -277,5 +268,37 @@ export class PacketCapture {
       }
       this.sendToRenderer(message);
     });
+    await this.captureInterface.start()
+      .then(() => {
+        this.mainWindow.win.webContents.send('pcap:status', 'running');
+        log.info('Packet capture started');
+      })
+      .catch((err) => {
+        this.mainWindow.win.webContents.send('pcap:status', 'error');
+        log.error(`Couldn't start packet capture`);
+        log.error(err);
+        if (err.code === `ERR_STREAM_DESTROYED` || err.code === 'EPIPE') {
+          this.mainWindow.win.webContents.send('machina:error', {
+            message: 'Wrapper_failed_to_start',
+            retryDelay: 60
+          });
+        }
+        this.onStartError();
+      });
+  }
+
+  private onStartError(): void {
+    console.log('On start error', this.tries);
+    this.tries++;
+    if (this.tries < 3) {
+      console.log('Failed to start pcap, retrying in 60s');
+      if (!this.startTimeout) {
+        this.startTimeout = setTimeout(() => {
+          this.start();
+        }, 60000);
+      }
+    } else {
+      this.stop();
+    }
   }
 }

@@ -140,7 +140,7 @@ export class IpcService {
     );
   }
 
-  public get freeCompanyDetails(): Observable<FreeCompanyDialog> {
+  public get freeCompanyDetails$(): Observable<FreeCompanyDialog> {
     return this.packets$.pipe(
       ofMessageType('freeCompanyDialog'),
       toIpcData()
@@ -493,8 +493,7 @@ export class IpcService {
         level: 'error',
         data: 'No ping received from the server during 300 seconds, restarting pcap'
       });
-      this.send('toggle-machina', false);
-      this.send('toggle-machina', true);
+      this.send('pcap:restart');
     });
     this.handleOverlayChange();
   }

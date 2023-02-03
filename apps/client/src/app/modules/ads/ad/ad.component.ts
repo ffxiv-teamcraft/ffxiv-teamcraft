@@ -85,7 +85,7 @@ export class AdComponent extends TeamcraftComponent {
       ramp.isMobile = false;
       ramp.addUnits([{
         selectorId: 'pwAdBanner',
-        type: 'leaderboard_btf2'
+        type: 'leaderboard_atf'
       }]);
       setTimeout(() => ramp.displayUnits(), 500);
     });

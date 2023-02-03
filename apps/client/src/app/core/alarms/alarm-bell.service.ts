@@ -36,7 +36,7 @@ export class AlarmBellService {
    * @param itemName
    */
   public ring(alarm: Alarm, itemName: string): void {
-    if (Date.now() - 10000 <= this.getLastPlayed(alarm)) {
+    if (Date.now() - 10000 >= this.getLastPlayed(alarm)) {
       localStorage.setItem(`played:${alarm.$key}`, Date.now().toString());
       if (this.settings.TTSAlarms) {
         try {

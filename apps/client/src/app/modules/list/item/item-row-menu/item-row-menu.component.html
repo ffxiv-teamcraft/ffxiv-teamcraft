@@ -49,7 +49,9 @@
     </ng-container>
 
     <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.ASSIGN_TEAM_MEMBER)">
-      <li *ngIf="buttonsComponentRef.team?.leader === buttonsComponentRef.userId || (!buttonsComponentRef.team?.notFound && buttonsComponentRef.team?.isOfficer(buttonsComponentRef.userId))" nz-submenu>
+      <li
+        *ngIf="buttonsComponentRef.team?.leader === buttonsComponentRef.userId || (!buttonsComponentRef.team?.notFound && buttonsComponentRef.team?.isOfficer(buttonsComponentRef.userId))"
+        nz-submenu>
         <span title>{{'TEAMS.Assign_team_member' | translate}}</span>
         <ul class="team-members" nz-menu>
           <ng-container *ngFor="let member of buttonsComponentRef.team?.members">
@@ -100,12 +102,12 @@
       </li>
     </ng-container>
     <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.MARK_HQ) && buttonsComponentRef.itemId > 0">
-      <li (click)="buttonsComponentRef.requiredAsHQ = true; buttonsComponentRef.requiredAsHQChange.emit(buttonsComponentRef.requiredAsHQ)"
-          *ngIf=" buttonsComponentRef.permissionLevel >= 30 && buttonsComponentRef.requiredForFinalCraft === 0 && !buttonsComponentRef.requiredAsHQ"
+      <li (click)="buttonsComponentRef.requiredAsHQ = true; buttonsComponentRef.requiredAsHQChange.emit(true)"
+          *ngIf="buttonsComponentRef.permissionLevel >= 30 && buttonsComponentRef.requiredForFinalCraft === 0 && !buttonsComponentRef.requiredAsHQ"
           nz-menu-item>
         {{'Mark_HQ' | translate}}
       </li>
-      <li (click)="buttonsComponentRef.requiredAsHQ = false; buttonsComponentRef.requiredAsHQChange.emit(buttonsComponentRef.requiredAsHQ)"
+      <li (click)="buttonsComponentRef.requiredAsHQ = false; buttonsComponentRef.requiredAsHQChange.emit(false)"
           *ngIf="(buttonsComponentRef.requiredForFinalCraft >= 0 || buttonsComponentRef.requiredAsHQ) && buttonsComponentRef.permissionLevel >= 30"
           nz-menu-item>
         {{'Unmark_HQ' | translate}}
@@ -130,7 +132,7 @@
     </ng-container>
 
     <li (click)="buttonsComponentRef.toggleIgnoreRequirements()" nz-menu-item>
-      {{(buttonsComponentRef.ignoreRequirements?'LIST_DETAILS.Consider_requirements':'LIST_DETAILS.Ignore_requirements') | translate}}
+      {{(buttonsComponentRef.ignoreRequirements ? 'LIST_DETAILS.Consider_requirements' : 'LIST_DETAILS.Ignore_requirements') | translate}}
     </li>
 
     <ng-container *ngIf="buttonsComponentRef.showLogCompletionButton && buttonsComponentRef.itemId > 0">
