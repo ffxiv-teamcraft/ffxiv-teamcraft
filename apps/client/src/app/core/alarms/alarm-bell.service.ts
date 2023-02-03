@@ -36,93 +36,93 @@ export class AlarmBellService {
    * @param itemName
    */
   public ring(alarm: Alarm, itemName: string): void {
-    if (Date.now() - 10000 >= this.getLastPlayed(alarm)) {
-      localStorage.setItem(`played:${alarm.$key}`, Date.now().toString());
-      if (this.settings.TTSAlarms) {
-        try {
-          const notificationSettings = this.settings.getNotificationSettings(SoundNotificationType.ALARM);
-          const speech = new SpeechSynthesisUtterance(itemName);
-          speech.pitch = 1.1;
-          speech.lang = this.translate.currentLang;
-          speech.rate = 1;
-          speech.volume = notificationSettings.volume;
-          window.speechSynthesis.speak(speech);
-        } catch (e) {
-          console.error(e);
-          this.soundNotificationService.play(SoundNotificationType.ALARM);
-        }
-      } else {
+    if (this.settings.TTSAlarms) {
+      try {
+        const notificationSettings = this.settings.getNotificationSettings(SoundNotificationType.ALARM);
+        const speech = new SpeechSynthesisUtterance(itemName);
+        speech.pitch = 1.1;
+        speech.lang = this.translate.currentLang;
+        speech.rate = 1;
+        speech.volume = notificationSettings.volume;
+        window.speechSynthesis.speak(speech);
+      } catch (e) {
+        console.error(e);
         this.soundNotificationService.play(SoundNotificationType.ALARM);
       }
+    } else {
+      this.soundNotificationService.play(SoundNotificationType.ALARM);
     }
   }
 
   public notify(_alarm: Alarm): void {
-    of(_alarm).pipe(
-      switchMap(alarm => {
-        return this.mapService.getMapById(alarm.mapId)
-          .pipe(
-            switchMap((mapData) => {
-              if (mapData !== undefined) {
-                return this.mapService.getNearestAetheryte(mapData, alarm.coords);
-              } else {
-                return of(undefined);
-              }
-            }),
-            map(aetheryte => {
-              if (aetheryte !== undefined) {
-                alarm.aetheryte = aetheryte;
-              }
-              return alarm;
-            })
-          );
-      }),
-      first(),
-      switchMap(alarm => {
-        let label$ = this.i18n.getNameObservable('items', alarm.itemId).pipe(
-          first()
-        );
-        if (alarm.type === -10) {
-          label$ = this.i18n.getNameObservable('mobs', alarm.bnpcName).pipe(
+    if (Date.now() - 10000 >= this.getLastPlayed(_alarm)) {
+      localStorage.setItem(`played:${_alarm.$key}`, Date.now().toString());
+      of(_alarm).pipe(
+        switchMap(alarm => {
+          return this.mapService.getMapById(alarm.mapId)
+            .pipe(
+              switchMap((mapData) => {
+                if (mapData !== undefined) {
+                  return this.mapService.getNearestAetheryte(mapData, alarm.coords);
+                } else {
+                  return of(undefined);
+                }
+              }),
+              map(aetheryte => {
+                if (aetheryte !== undefined) {
+                  alarm.aetheryte = aetheryte;
+                }
+                return alarm;
+              })
+            );
+        }),
+        first(),
+        switchMap(alarm => {
+          let label$ = this.i18n.getNameObservable('items', alarm.itemId).pipe(
             first()
           );
-        }
-        return combineLatest([
-          of(alarm),
-          alarm.icon ? of(alarm.icon) : this.lazyData.getRow('itemIcons', alarm.itemId),
-          label$,
-          alarm.aetheryte ? this.i18n.getNameObservable('places', alarm.aetheryte.nameid).pipe(
-            first()
-          ) : of(''),
-          this.i18n.getNameObservable('places', alarm.zoneId || alarm.mapId).pipe(
-            first()
-          )
-        ]);
-      })
-    ).subscribe(([alarm, icon, itemName, aetheryteName, placeName]) => {
-      const notificationIcon = `https://xivapi.com${icon}`;
-      const notificationTitle = (alarm.itemId || alarm.bnpcName) ? itemName : alarm.name;
-      const notificationBody = `${placeName} - `
-        + `${aetheryteName ? aetheryteName : ''}`;
-      if (this.platform.isDesktop()) {
-        this.ipc.send('notification', {
-          title: notificationTitle,
-          content: notificationBody,
-          icon: notificationIcon
-        });
-      } else {
-        this.pushNotificationsService.create(notificationTitle,
-          {
-            icon: notificationIcon,
-            sticky: false,
-            renotify: false,
-            body: notificationBody
+          if (alarm.type === -10) {
+            label$ = this.i18n.getNameObservable('mobs', alarm.bnpcName).pipe(
+              first()
+            );
           }
-        ).subscribe();
-        this.notificationService.info(notificationTitle, notificationBody);
-      }
-      this.ring(alarm, itemName);
-    });
+          return combineLatest([
+            of(alarm),
+            alarm.icon ? of(alarm.icon) : this.lazyData.getRow('itemIcons', alarm.itemId),
+            label$,
+            alarm.aetheryte ? this.i18n.getNameObservable('places', alarm.aetheryte.nameid).pipe(
+              first()
+            ) : of(''),
+            this.i18n.getNameObservable('places', alarm.zoneId || alarm.mapId).pipe(
+              first()
+            )
+          ]);
+        })
+      ).subscribe(([alarm, icon, itemName, aetheryteName, placeName]) => {
+        const notificationIcon = `https://xivapi.com${icon}`;
+        const notificationTitle = (alarm.itemId || alarm.bnpcName) ? itemName : alarm.name;
+        const notificationBody = `${placeName} - `
+          + `${aetheryteName ? aetheryteName : ''}`;
+        if (this.platform.isDesktop()) {
+          this.ipc.send('notification', {
+            title: notificationTitle,
+            content: notificationBody,
+            icon: notificationIcon
+          });
+        } else {
+          this.pushNotificationsService.create(notificationTitle,
+            {
+              icon: notificationIcon,
+              sticky: false,
+              renotify: false,
+              body: notificationBody
+            }
+          ).subscribe();
+          this.notificationService.info(notificationTitle, notificationBody);
+        }
+        this.ring(alarm, itemName);
+      });
+    }
   }
 
   private initBell(): void {
@@ -170,7 +170,6 @@ export class AlarmBellService {
         })
       ).subscribe(alarmsToPlay => {
       alarmsToPlay.forEach(alarm => {
-        localStorage.setItem(`played:${alarm.$key}`, Date.now().toString());
         this.alarmsFacade.setAlarmDone(alarm.$key, false);
         if (!this.settings.alarmsMuted) {
           this.notify(alarm);
