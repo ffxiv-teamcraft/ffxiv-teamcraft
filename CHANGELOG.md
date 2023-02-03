@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.1.6"></a>
+## [10.1.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.1.5...v10.1.6) (2023-02-03)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarms sometimes not ringing ([d007f22](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d007f22)), closes [#2469](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2469)
+* **desktop:** better packet capture status monitoring ([48ff915](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/48ff915))
+* **desktop:** better restart logic for when no packets were received after 5min ([989b05b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/989b05b))
+* **i18n:** fixed some wrong translation labels in island workshop and profile ([75787e4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/75787e4))
+* **list:** fixed HQ flag interactions ([06db8cf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/06db8cf))
+* **voyages:** fixed infinite loading in some import cases ([b702d49](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b702d49))
+
+
+
 <a name="10.1.5"></a>
 ## [10.1.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.1.4...v10.1.5) (2023-01-29)
 
