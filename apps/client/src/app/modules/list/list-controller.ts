@@ -177,14 +177,14 @@ export class ListController {
   }
 
   public static amountRequiredHQ(list: List, item: ListRow): number {
-    if (list.disableHQSuggestions) {
-      return 0;
-    }
     if (!item || item.id < 20 || !syncHqFlags[item.id]) {
       return 0;
     }
     if (item.forceRequiredHQ) {
       return item.amount;
+    }
+    if (list.disableHQSuggestions) {
+      return 0;
     }
     const recipesNeedingItem = list.finalItems
       .filter(i => i.requires !== undefined)
@@ -300,7 +300,7 @@ export class ListController {
       return false;
     }
     const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
-    if (craftedBy === undefined || item.requires === undefined) {
+    if (craftedBy === undefined || item.requires === undefined || item.requires.length === 0) {
       return false;
     }
     let canCraft = true;
@@ -331,8 +331,9 @@ export class ListController {
 
   public static updateAllStatuses(list: List, updatedItemId?: number): void {
     const directRequirements = [...list.finalItems, ...list.items].filter(item => {
-      return (item.requires || []).length > 0
-        && (!updatedItemId || item.requires.some(req => req.id === updatedItemId));
+      return !updatedItemId
+        || item.id === updatedItemId
+        || ((item.requires || []).length > 0 && item.requires.some(req => req.id === updatedItemId));
     });
     directRequirements.forEach(item => {
       item.canBeCrafted = ListController.canBeCrafted(list, item);
