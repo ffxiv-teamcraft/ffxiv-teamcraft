@@ -4,7 +4,6 @@ lists.json
 ssr/output
 functions/dist
 *.log
-apps/client/src/app/core/data/lazy-files-list.ts
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 apps/client/src/environments/version.ts

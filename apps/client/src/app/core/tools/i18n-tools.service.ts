@@ -46,11 +46,8 @@ export class I18nToolsService {
     );
   }
 
-  public getName(i18nName: I18nName, item?: CustomItem): string {
+  public getName(i18nName: I18nName): string {
     if (!i18nName) {
-      if (item !== undefined && item.name !== undefined) {
-        return item.name;
-      }
       return 'missing name';
     }
     return (i18nName[this.translator.currentLang] || i18nName.en || 'no name').replace('', '•');

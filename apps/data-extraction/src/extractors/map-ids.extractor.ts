@@ -20,6 +20,7 @@ export class MapIdsExtractor extends AbstractExtractor {
             });
           });
         this.persistToTypescript('map-ids', 'mapIds', mapIds);
+        this.persistToJsonAsset('map-entries', mapIds);
         this.done();
       });
   }

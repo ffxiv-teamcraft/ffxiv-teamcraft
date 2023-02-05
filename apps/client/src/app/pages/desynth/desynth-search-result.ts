@@ -1,4 +1,4 @@
-import { SearchResult } from "@ffxiv-teamcraft/trpc-api";
+import { SearchResult } from "@ffxiv-teamcraft/types";
 
 export interface DesynthSearchResult extends SearchResult {
   dlvl: number;

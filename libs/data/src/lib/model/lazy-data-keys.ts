@@ -85,6 +85,7 @@ export const LazyDataKeys = [
   'leves',
   'logTrackerPageData',
   'lootSources',
+  'mapEntries',
   'maps',
   'marketItems',
   'materias',

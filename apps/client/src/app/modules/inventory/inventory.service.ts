@@ -27,7 +27,7 @@ import { InventoryItem } from '../../model/user/inventory/inventory-item';
 import { InventoryPatch } from '../../model/user/inventory/inventory-patch';
 import { InventoryEventType } from '../../model/user/inventory/inventory-event-type';
 import { HttpClient } from '@angular/common/http';
-import { Region } from '../settings/region.enum';
+import { Region } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../settings/settings.service';
 import { ContentIdLinkingPopupComponent } from './content-id-linking-popup/content-id-linking-popup.component';
 import { NzModalService } from 'ng-zorro-antd/modal';

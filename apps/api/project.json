@@ -6,14 +6,28 @@
   "targets": {
     "build": {
       "executor": "@nrwl/webpack:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "target": "node",
         "compiler": "tsc",
         "outputPath": "dist/apps/api",
         "main": "apps/api/src/main.ts",
         "tsConfig": "apps/api/tsconfig.app.json",
-        "assets": []
+        "assets": [
+          "apps/api/src/assets",
+          {
+            "glob": "**/*",
+            "input": "./libs/data/src/lib/json/",
+            "output": "/assets/data/"
+          },
+          {
+            "glob": "**/*",
+            "input": "./libs/data/src/lib/extracts/",
+            "output": "/assets/extracts/"
+          }
+        ]
       },
       "configurations": {
         "production": {
@@ -42,14 +56,20 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/api/**/*.ts"]
+        "lintFilePatterns": [
+          "apps/api/**/*.ts"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/api"],
+      "outputs": [
+        "coverage/apps/api"
+      ],
       "options": {
         "jestConfig": "apps/api/jest.config.ts",
         "passWithNoTests": true

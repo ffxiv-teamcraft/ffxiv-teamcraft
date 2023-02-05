@@ -41,7 +41,7 @@ import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { withLazyRow } from '../../../core/rxjs/with-lazy-row';
 import { LazyRecipesPerItem } from '@ffxiv-teamcraft/data/model/lazy-recipes-per-item';
-import { SearchResult } from '@ffxiv-teamcraft/trpc-api';
+import { SearchResult } from '@ffxiv-teamcraft/types';
 
 @Component({
   selector: 'app-item',

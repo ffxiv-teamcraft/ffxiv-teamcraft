@@ -4,7 +4,7 @@ import { CraftingActionsRegistry as KRCraftingActionsRegistry } from '@ffxiv-tea
 import { CraftingActionsRegistry as CNCraftingActionsRegistry } from '@ffxiv-teamcraft/simulator-cn';
 
 import { SimulationService } from './simulation.service';
-import { Region } from '../../modules/settings/region.enum';
+import { Region } from '@ffxiv-teamcraft/types';
 
 describe('SimulationService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
