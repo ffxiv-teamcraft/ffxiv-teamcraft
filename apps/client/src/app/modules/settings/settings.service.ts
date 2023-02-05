@@ -2,7 +2,7 @@ import { Injectable, Optional } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Theme } from './theme';
 import { IpcService } from '../../core/electron/ipc.service';
-import { Region } from './region.enum';
+import { Region } from '@ffxiv-teamcraft/types';
 import { debounceTime, filter, map, startWith } from 'rxjs/operators';
 import { CommissionTag } from '../commission-board/model/commission-tag';
 import { Language } from '../../core/data/language';

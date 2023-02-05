@@ -18,7 +18,7 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
-import { Region } from '../../../modules/settings/region.enum';
+import { Region } from '@ffxiv-teamcraft/types';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 
 @Component({

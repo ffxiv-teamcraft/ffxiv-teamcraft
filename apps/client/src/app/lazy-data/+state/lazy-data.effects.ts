@@ -42,7 +42,7 @@ export class LazyDataEffects {
             );
           }
           const { contentName, hash } = this.parseFileName(entity);
-          return this.http.get<any>(`https://data.ffxivteamcraft.com/${hash}/${contentName}/${ids.join(',')}`).pipe(
+          return this.http.get<any>(`https://api.ffxivteamcraft.com/data/${contentName}/${hash}/${ids.join(',')}`).pipe(
             switchMap(res => {
               return ids.map(id => {
                 return LazyDataActions.loadLazyDataEntityEntrySuccess({ id, row: res[id] || null, key: entity });

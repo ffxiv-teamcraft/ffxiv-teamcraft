@@ -23,7 +23,7 @@ import { FishContextService } from '../../db/service/fish-context.service';
 import { ItemContextService } from '../../db/service/item-context.service';
 import { ReportsManagementComponent } from '../reports-management.component';
 import { OceanFishingTime } from '../model/ocean-fishing-time';
-import { SearchType } from '@ffxiv-teamcraft/trpc-api';
+import { SearchType } from '@ffxiv-teamcraft/types';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { SpearfishingSpeed } from '../../../core/data/model/spearfishing-speed';

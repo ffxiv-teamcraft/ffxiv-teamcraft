@@ -5,7 +5,6 @@
     "api": "apps/api",
     "client": "apps/client",
     "data": "libs/data",
-    "trpc-api": "libs/trpc-api",
     "types": "libs/types"
   }
 }

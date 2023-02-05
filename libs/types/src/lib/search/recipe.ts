@@ -1,8 +1,8 @@
-import { I18nName } from '@ffxiv-teamcraft/types';
+import { I18nName } from '../i18n-name';
 
 export interface Recipe {
   itemId: number;
-  icon: string;
+  icon?: string;
   recipeId: string;
   job: number;
   stars: number;

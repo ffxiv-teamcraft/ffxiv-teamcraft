@@ -56,6 +56,7 @@ import {LazyJobName} from './lazy-job-name';
 import {LazyLevesPerItem} from './lazy-leves-per-item';
 import {LazyLeve} from './lazy-leve';
 import {LazyLogTrackerPageData} from './lazy-log-tracker-page-data';
+import {LazyMapEntry} from './lazy-map-entry';
 import {LazyMap} from './lazy-map';
 import {LazyMateria} from './lazy-materia';
 import {LazyMedicine} from './lazy-medicine';
@@ -192,6 +193,7 @@ export interface LazyData {
   leves: Record<number, LazyLeve>;
   logTrackerPageData: Array<LazyLogTrackerPageData[]>;
   lootSources: Record<number, number[]>;
+  mapEntries: Array<LazyMapEntry>;
   maps: Record<number, LazyMap>;
   marketItems: Array<number>;
   materias: Array<LazyMateria>;

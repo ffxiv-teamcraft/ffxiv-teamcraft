@@ -11,7 +11,7 @@ import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { List } from '../../../modules/list/model/list';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
-import { Levequest } from '@ffxiv-teamcraft/trpc-api';
+import { Levequest } from '@ffxiv-teamcraft/types';
 import { DataService } from '../../../core/api/data.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';

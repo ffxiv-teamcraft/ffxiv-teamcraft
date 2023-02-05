@@ -10,7 +10,7 @@ import { loadLazyDataEntityEntry, loadLazyDataFullEntity } from './lazy-data.act
 import { LazyDataEntries, LazyDataKey, LazyDataRecordKey, LazyDataWithExtracts } from '../lazy-data-types';
 import { I18nElement, I18nName, LazyDataI18nKey } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../modules/settings/settings.service';
-import { Region } from '../../modules/settings/region.enum';
+import { Region } from '@ffxiv-teamcraft/types';
 import { zhWorlds } from '../../core/data/sources/zh-worlds';
 import { koWorlds } from '../../core/data/sources/ko-worlds';
 import { LoadingStatus } from '../data-entry-status';
