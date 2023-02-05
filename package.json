@@ -107,7 +107,8 @@
     "build:stats": "yarn prebuild && yarn nx build --project=client --configuration production --stats-json",
     "bundle-analyzer": "webpack-bundle-analyzer dist/apps/client/stats.json",
     "*********** API STUFF **************": "",
-    "api:deploy": "nx run api:build:production && gcloud builds submit --config ./apps/api/cloudbuild.yaml . && gcloud beta run deploy data-api --image gcr.io/ffxivteamcraft/data-api",
+    "api:build": "nx run api:build:production",
+    "api:deploy": "yarn api:build && gcloud builds submit --config ./apps/api/cloudbuild.yaml . && gcloud beta run deploy data-api --image gcr.io/ffxivteamcraft/data-api",
     "api:start": "nx run api:serve"
   },
   "private": true,
