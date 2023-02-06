@@ -1,42 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { combineLatest, Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { ItemData } from '../../model/garland-tools/item-data';
 import { NgSerializerService } from '@kaiu/ng-serializer';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { QuestData } from '../../model/garland-tools/quest-data';
 import { NpcData } from '../../model/garland-tools/npc-data';
 import { LeveData } from '../../model/garland-tools/leve-data';
 import { MobData } from '../../model/garland-tools/mob-data';
 import { FateData } from '../../model/garland-tools/fate-data';
-import { SearchAlgo, SearchIndex, XivapiOptions, XivapiSearchOptions, XivapiService } from '@xivapi/angular-client';
-import {
-  AchievementSearchResult,
-  ActionSearchResult,
-  FateSearchResult,
-  FishingSpotSearchResult,
-  GatheringNodeSearchResult,
-  InstanceSearchResult,
-  LeveSearchResult,
-  MapSearchResult,
-  MobSearchResult,
-  NpcSearchResult,
-  QuestSearchResult,
-  Region,
-  SearchFilter,
-  SearchResult,
-  SearchType,
-  StatusSearchResult
-} from '@ffxiv-teamcraft/types';
-import { mapIds } from '../data/sources/map-ids';
-import { requestsWithDelay } from '../rxjs/requests-with-delay';
+import { XivapiOptions, XivapiService } from '@xivapi/angular-client';
+import { Region, SearchFilter, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Language } from '../data/language';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../rxjs/with-lazy-data';
-import { safeCombineLatest } from '../rxjs/safe-combine-latest';
 import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
@@ -186,7 +166,7 @@ export class DataService {
       params['sort_field'] = sort[0];
       params['sort_order'] = sort[1];
     }
-    if (!environment.production) {
+    if (environment.useLocalAPI) {
       return this.devSearch(params);
     }
     return this.prodSearch(params);

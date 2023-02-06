@@ -1,5 +1,10 @@
-# Ignore everything, whitelist to allow
-**
+/**
 
-!/dist
-!/apps/api
+!dist/**
+!apps/**
+apps/client
+apps/data-extraction
+apps/electron
+apps/profits-api
+!.dockerignore
+!.

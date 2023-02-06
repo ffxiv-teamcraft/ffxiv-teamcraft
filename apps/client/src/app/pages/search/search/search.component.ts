@@ -15,11 +15,10 @@ import { ListPickerService } from '../../../modules/list-picker/list-picker.serv
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { AbstractControl, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
-import { I18nName } from '@ffxiv-teamcraft/types';
+import { I18nName, SearchFilter, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { TranslateService } from '@ngx-translate/core';
-import { SearchFilter, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import * as _ from 'lodash';
 import { stats } from '../../../core/data/sources/stats';

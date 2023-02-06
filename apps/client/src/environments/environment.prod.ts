@@ -5,6 +5,7 @@ import { patchNotes } from './patch-notes';
 export const environment = {
   production: true,
   beta: false,
+  useLocalAPI: false, // Should we use localhost:333 as API for search?
   version: version,
   patchNotes: patchNotes,
   ssrHost: 'https://ffxivteamcraft.com',
