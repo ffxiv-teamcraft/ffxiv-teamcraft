@@ -215,7 +215,7 @@ workflows:
             - build-api
           filters:
             branches:
-              only: refactor/search-api
+              only: master
       - deploy-firebase-hosting:
           requires:
             - deploy-hosting
