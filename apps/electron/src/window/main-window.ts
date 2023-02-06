@@ -56,9 +56,20 @@ export class MainWindow {
 
 
         session.defaultSession.webRequest.onBeforeRequest((details, callback) => {
-          if (details.url.includes('ads') && details.url.includes('url=file')) {
+          // We have to store the url because we're only allowed to call the callback once, so we're gonna edit
+          let url: string = details.url;
+          // First, let's handle request protocol
+          if (url.match(/^file:\/\/[^.\/]*\.[^\/]+\/.+$/mi)) {
+            url = url.replace('file://', 'https://');
+          }
+          // Then, ads request url details containing file protocol
+          if (url.includes('ads?') && url.includes('url=file')) {
+            url = url.replace(/url=file[^&]+/gm, `url=https://ffxivteamcraft.com`);
+          }
+          // If there's a redirect to do, do it !
+          if (url !== details.url) {
             callback({
-              redirectURL: details.url.replace(/url=[^&]+/gm, `url=https://ffxivteamcraft.com`)
+              redirectURL: url
             });
           } else {
             callback({});

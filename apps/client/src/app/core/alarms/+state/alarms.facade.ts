@@ -13,7 +13,6 @@ import {
   DeleteAllAlarms,
   LoadAlarmGroup,
   LoadAlarms,
-  PureUpdateAlarm,
   RemoveAlarm,
   SetAlarmDone,
   SetAlarms,
@@ -45,7 +44,6 @@ import { safeCombineLatest } from '../../rxjs/safe-combine-latest';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { XivapiPatch } from '../../data/model/xivapi-patch';
-import { UpdateData } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -601,10 +599,6 @@ export class AlarmsFacade {
       return [alarm, { ...alarmWithFishEyesEnabled, fishEyes: true }];
     }
     return [alarm];
-  }
-
-  pureUpdateAlarm(key: string, alarm: UpdateData<Alarm>): void {
-    this.store.dispatch(new PureUpdateAlarm(key, alarm));
   }
 
   setAlarmDone(key: string, done: boolean): void {
