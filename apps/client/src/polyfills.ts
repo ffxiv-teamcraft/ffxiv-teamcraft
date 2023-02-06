@@ -24,7 +24,7 @@ import 'core-js/es6/reflect';
  */
 import './zone-flags';
 import 'zone.js'; // Included with Angular CLI.
-import './zone-patch-rxjs';
+// import './zone-patch-rxjs';
 import 'zone.js/plugins/zone-error';
 /** Drag and drop touch polyfill **/
 import './polyfills/drag-drop-touch.js';

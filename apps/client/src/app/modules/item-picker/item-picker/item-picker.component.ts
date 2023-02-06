@@ -5,11 +5,11 @@ import { NzModalRef } from 'ng-zorro-antd/modal';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { debounceTime, filter, map, startWith, switchMap, tap } from 'rxjs/operators';
-import { SearchResult } from '../../../model/search/search-result';
+import { SearchResult } from '@ffxiv-teamcraft/types';
 import { CustomItemsFacade } from '../../custom-items/+state/custom-items.facade';
 import { TranslateService } from '@ngx-translate/core';
 import { SettingsService } from '../../settings/settings.service';
-import { Region } from '../../settings/region.enum';
+import { Region } from '@ffxiv-teamcraft/types';
 
 @Component({
   selector: 'app-item-picker',

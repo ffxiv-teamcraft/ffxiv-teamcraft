@@ -3,6 +3,7 @@
 ## Summary
 * [Prepare your environment](#prepare-your-environment)
 * [Live Development Server](#live-development-server)
+* [Live Development API](#live-development-api)
 - [Contributing](#contributing)
   * [Getting Started](#getting-started)
   * [Branch names](#branch-names)
@@ -27,6 +28,14 @@ To build Electron on windows, node-gyp is required and depends on some external 
 ### Live Development Server
 
 Simply run `yarn start` to start a live server with file watcher.
+
+### Live Development API
+
+Since 10.2, Teamcraft includes its own API for various optimizations, hosted at https://api.ffxivteamcraft.com.
+
+If you want to work on this API, simply run `yarn api:start`, which will run a watcher compiler and serve the api at http://localhost:3333.
+
+Then edit `environment.ts` and set `useLocalAPI: true` to make sure it'll use the local API instead of the production one.
 
 ## Contributing
 

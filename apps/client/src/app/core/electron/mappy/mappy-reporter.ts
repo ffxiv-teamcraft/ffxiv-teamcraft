@@ -19,7 +19,7 @@ import { XivapiReportEntry } from './xivapi-report-entry';
 import { UpdatePositionHandler } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../rxjs/with-lazy-data';
-import { LazyData } from '../../../lazy-data/lazy-data';
+import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 
 export interface MappyMarker {
   position: Vector3;

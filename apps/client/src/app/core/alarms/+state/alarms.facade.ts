@@ -42,7 +42,7 @@ import { Actions } from '@ngrx/effects';
 import { TimeUtils } from '../time.utils';
 import { safeCombineLatest } from '../../rxjs/safe-combine-latest';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { LazyData } from '../../../lazy-data/lazy-data';
+import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { XivapiPatch } from '../../data/model/xivapi-patch';
 
 @Injectable({

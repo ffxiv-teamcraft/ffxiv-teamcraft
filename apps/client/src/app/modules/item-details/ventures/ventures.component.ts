@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
-import { LazyRetainerTask } from '../../../lazy-data/model/lazy-retainer-task';
+import { LazyRetainerTask } from '@ffxiv-teamcraft/data/model/lazy-retainer-task';
 
 @Component({
   selector: 'app-ventures',

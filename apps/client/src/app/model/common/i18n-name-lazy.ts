@@ -1,5 +1,5 @@
 import { Observable, of } from 'rxjs';
-import { I18nName } from './i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 
 export type I18nNameLazy = I18nLazy<I18nName>;
 

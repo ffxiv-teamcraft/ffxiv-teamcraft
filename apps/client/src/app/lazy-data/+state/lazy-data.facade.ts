@@ -7,14 +7,14 @@ import { debounceTime, distinctUntilChanged, filter, first, map, shareReplay, sk
 import * as fromLazyData from './lazy-data.reducer';
 import * as LazyDataSelectors from './lazy-data.selectors';
 import { loadLazyDataEntityEntry, loadLazyDataFullEntity } from './lazy-data.actions';
-import { I18nElement, LazyDataEntries, LazyDataI18nKey, LazyDataKey, LazyDataRecordKey, LazyDataWithExtracts } from '../lazy-data-types';
-import { I18nName } from '../../model/common/i18n-name';
+import { LazyDataEntries, LazyDataKey, LazyDataRecordKey, LazyDataWithExtracts } from '../lazy-data-types';
+import { I18nElement, I18nName, LazyDataI18nKey } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../modules/settings/settings.service';
-import { Region } from '../../modules/settings/region.enum';
+import { Region } from '@ffxiv-teamcraft/types';
 import { zhWorlds } from '../../core/data/sources/zh-worlds';
 import { koWorlds } from '../../core/data/sources/ko-worlds';
 import { LoadingStatus } from '../data-entry-status';
-import { LazyRecipe } from '../model/lazy-recipe';
+import { LazyRecipe } from '@ffxiv-teamcraft/data/model/lazy-recipe';
 import { XivapiPatch } from '../../core/data/model/xivapi-patch';
 import { HttpClient } from '@angular/common/http';
 import { mapIds } from '../../core/data/sources/map-ids';
@@ -159,12 +159,12 @@ export class LazyDataFacade {
   public getRow<K extends LazyDataRecordKey>(propertyKey: K, id: number, fallback: Partial<LazyDataEntries[K]>): Observable<Partial<LazyDataEntries[K]> | LazyDataEntries[K]>;
   public getRow<K extends LazyDataRecordKey>(propertyKey: K, id: number, fallback?: Partial<LazyDataEntries[K]>): Observable<LazyDataEntries[K] | null> | Observable<Partial<LazyDataEntries[K]> | LazyDataEntries[K]> {
     if (this.getCacheEntry(propertyKey, id) === null) {
-      // If we asked for more than 50 separate things in the same entry during the last CACHE_TTL and it's not extracts, load the entire entry.
+      // If we asked for more than 100 separate things in the same entry during the last CACHE_TTL and it's not extracts, load the entire entry.
       if (propertyKey !== 'extracts'
-        && Object.keys(this.cache).filter(key => key.startsWith(`${propertyKey}:`)).length > 100
-        && !this.fullLoadingIndexes[propertyKey]) {
+        && Object.keys(this.cache).filter(key => key.startsWith(`${String(propertyKey)}:`)).length > 100
+        && !this.fullLoadingIndexes[String(propertyKey)]) {
         this.preloadEntry(propertyKey);
-        this.fullLoadingIndexes[propertyKey] = 1;
+        this.fullLoadingIndexes[String(propertyKey)] = 1;
       }
       const obs$ = combineLatest([
         this.store.pipe(select(LazyDataSelectors.getEntryRow({ key: propertyKey, id }))),
@@ -476,7 +476,7 @@ export class LazyDataFacade {
   }
 
   private cacheObservable<T>(observable: Observable<T>, entity: LazyDataKey, id?: number): void {
-    const key = entity + (id !== undefined ? `:${id}` : '');
+    const key = String(entity) + (id !== undefined ? `:${id}` : '');
     this.cache[key] = observable.pipe(shareReplay(1));
     setTimeout(() => {
       delete this.cache[key];
@@ -486,7 +486,7 @@ export class LazyDataFacade {
   private getCacheEntry<K extends LazyDataKey>(entity: K): Observable<LazyDataWithExtracts[K]> | null;
   private getCacheEntry<K extends LazyDataKey>(entity: K, id: number): Observable<LazyDataEntries[K]> | null;
   private getCacheEntry<K extends LazyDataKey>(entity: K, id?: number): Observable<LazyDataWithExtracts[K]> | Observable<LazyDataEntries[K]> | null {
-    const key = entity + (id !== undefined ? `:${id}` : '');
+    const key = String(entity) + (id !== undefined ? `:${id}` : '');
     return this.cache[key] || null;
   }
 }

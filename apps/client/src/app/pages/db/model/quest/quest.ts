@@ -1,4 +1,4 @@
-import { I18nName } from '../../../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 
 export interface Quest {
   name: I18nName;

@@ -1,8 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { SearchType } from '../search-type';
-import { SearchResult } from '../../../model/search/search-result';
+import { SearchResult, SearchType } from '@ffxiv-teamcraft/types';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
-import { Region } from '../../../modules/settings/region.enum';
+import { Region } from '@ffxiv-teamcraft/types';
 
 @Component({
   selector: 'app-search-result',

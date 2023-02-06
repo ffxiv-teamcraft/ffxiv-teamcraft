@@ -4,7 +4,6 @@ import { SearchIndex, XivapiService } from '@xivapi/angular-client';
 import { debounce, filter, first, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DesynthSearchResult } from '../desynth-search-result';
-import { SearchResult } from '../../../model/search/search-result';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
@@ -12,7 +11,8 @@ import { ListPickerService } from '../../../modules/list-picker/list-picker.serv
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { LazyJobAbbr } from '../../../lazy-data/model/lazy-job-abbr';
+import { LazyJobAbbr } from '@ffxiv-teamcraft/data/model/lazy-job-abbr';
+import { SearchResult } from '@ffxiv-teamcraft/types';
 
 @Component({
   selector: 'app-desynth',

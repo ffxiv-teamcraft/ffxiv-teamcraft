@@ -16,7 +16,6 @@ import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { SeoService } from '../../../core/seo/seo.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ItemData } from '../../../model/garland-tools/item-data';
-import { SearchResult } from '../../../model/search/search-result';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { DataExtractorService } from '../../../modules/list/data/data-extractor.service';
@@ -41,7 +40,8 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { withLazyRow } from '../../../core/rxjs/with-lazy-row';
-import { LazyRecipesPerItem } from '../../../lazy-data/model/lazy-recipes-per-item';
+import { LazyRecipesPerItem } from '@ffxiv-teamcraft/data/model/lazy-recipes-per-item';
+import { SearchResult } from '@ffxiv-teamcraft/types';
 
 @Component({
   selector: 'app-item',

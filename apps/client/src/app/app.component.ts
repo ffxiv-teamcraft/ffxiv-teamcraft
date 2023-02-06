@@ -44,7 +44,7 @@ import { Apollo } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { QuickSearchService } from './modules/quick-search/quick-search.service';
-import { Region } from './modules/settings/region.enum';
+import { Region } from '@ffxiv-teamcraft/types';
 import { MappyReporterService } from './core/electron/mappy/mappy-reporter';
 import { TutorialService } from './core/tutorial/tutorial.service';
 import { ChangelogPopupComponent } from './modules/changelog-popup/changelog-popup/changelog-popup.component';

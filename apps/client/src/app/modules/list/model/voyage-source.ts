@@ -1,5 +1,5 @@
 import { ExplorationType } from '../../../model/other/exploration-type';
-import { I18nName } from '../../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 
 export interface VoyageSource {
   type: ExplorationType;

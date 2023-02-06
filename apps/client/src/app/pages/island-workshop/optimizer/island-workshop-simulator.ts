@@ -1,4 +1,4 @@
-import { LazyData } from '../../../lazy-data/lazy-data';
+import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { WorkshopPlanning } from './workshop-planning';
 
 export class IslandWorkshopSimulator {
