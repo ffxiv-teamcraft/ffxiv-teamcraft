@@ -112,12 +112,21 @@ jobs:
           command: ./node_modules/.bin/firebase deploy -P default --only hosting --token "$FIREBASE_TOKEN"
 
   deploy-api:
-    <<: *defaults
+    working_directory: ~/ffxiv-teamcraft
+    docker:
+      - image: google/cloud-sdk
     steps:
       - attach_workspace:
           at: ~/
       - run:
-          name: Deploying API
+          name: Authorize GCloud Command Line Tool
+          command: |
+            echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
+      - add_ssh_keys:
+          fingerprints:
+            - "96:02:36:2b:33:81:70:ce:37:3d:f8:9b:e5:ac:65:30"
+      - run:
+          name: Deploy Could Run TC API
           command: yarn api:deploy
 
 
