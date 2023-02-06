@@ -1,6 +1,5 @@
-.git
-.idea
-.angular
-apps/data-extraction
-functions
-ssr
+# Ignore everything, whitelist to allow
+**
+
+!/dist
+!/apps/api
