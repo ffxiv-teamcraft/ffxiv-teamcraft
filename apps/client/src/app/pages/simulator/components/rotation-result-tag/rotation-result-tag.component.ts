@@ -92,7 +92,10 @@ export class RotationResultTagComponent implements OnInit {
       switchMap(([[rotation, gearSets, _recipe, simulationSet], recipes]) => {
         return combineLatest([this.foods$, this.medicines$]).pipe(
           map(([foods, medicines]) => {
-            const recipe = recipes.find(r => r.id === (_recipe || rotation.recipe).id);
+            let recipe = recipes.find(r => r.id === (_recipe || rotation.recipe).id) as unknown as Craft;
+            if (!recipe) {
+              recipe = rotation.recipe as unknown as Craft;
+            }
             const stats = simulationSet || gearSets.find(g => g.jobId === recipe.job);
             const food = foods.find(f => this.rotation.food && f.itemId === this.rotation.food.id && f.hq === this.rotation.food.hq);
             const medicine = medicines.find(f => this.rotation.medicine && f.itemId === this.rotation.medicine.id && f.hq === this.rotation.medicine.hq);
@@ -105,7 +108,7 @@ export class RotationResultTagComponent implements OnInit {
               stats.specialist,
               stats.level,
               gearSets.length > 0 ? gearSets.map(set => set.level) as [number, number, number, number, number, number, number, number] : [this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel]);
-            return new this.simulator.Simulation(recipe as unknown as Craft, this.registry.deserializeRotation(rotation.rotation), crafterStats).run(true);
+            return new this.simulator.Simulation(recipe, this.registry.deserializeRotation(rotation.rotation), crafterStats).run(true);
           })
         );
       })
