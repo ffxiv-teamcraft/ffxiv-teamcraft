@@ -25,6 +25,7 @@ import { LazyDataLoader } from '../lazy-data/lazy-data.loader';
 import { map, switchMap } from 'rxjs/operators';
 import type { XivapiSearchFilter, XivapiSearchOptions } from '@xivapi/angular-client';
 import { SearchIndex } from './search-index';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class SearchService {
@@ -636,7 +637,8 @@ export class SearchService {
     //   return config;
     // });
     return from(axios.get<T>(`${this.getBaseUrl(region)}/search`, {
-      params: { ...options, filters },
+      params: { ...options, filters,
+      private_key: environment.xivapiKey },
       paramsSerializer: {
         serialize: params => qs.stringify(params, { arrayFormat: 'comma' })
       }
@@ -645,7 +647,8 @@ export class SearchService {
 
   private xivapiList<T = any>(region: Region, endpoint: string, ids: number[], columns: string[]): Observable<T> {
     return from(axios.get<T>(`${this.getBaseUrl(region)}/${endpoint}`, {
-      params: { ids, columns },
+      params: { ids, columns,
+      private_key: environment.xivapiKey },
       paramsSerializer: {
         serialize: params => qs.stringify(params, { arrayFormat: 'comma' })
       }

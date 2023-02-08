@@ -56,7 +56,7 @@ export class XivapiItemTooltipDirective implements OnDestroy {
       this._subscription.unsubscribe();
     }
 
-    // Request information for the item on XivDB database.
+    // Request information for the item on XIVAPI database.
     this._subscription = this._tooltipData.getItemTooltipData(this.itemId).subscribe(this._createTooltip);
   }
 

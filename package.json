@@ -108,7 +108,7 @@
     "bundle-analyzer": "webpack-bundle-analyzer dist/apps/client/stats.json",
     "*********** API STUFF **************": "",
     "api:build": "nx run api:build:production",
-    "api:deploy": "yarn api:build && gcloud builds submit --config ./apps/api/cloudbuild.yaml . && gcloud beta run deploy api --image gcr.io/ffxivteamcraft/api --region us-central1",
+    "api:deploy": "yarn api:build && gcloud builds submit --config ./apps/api/cloudbuild.yaml . && gcloud beta run deploy api --image gcr.io/ffxivteamcraft/api --region us-central1 --update-secrets=XIVAPI_KEY=XIVAPI_KEY:latest",
     "api:start": "nx run api:serve"
   },
   "private": true,
