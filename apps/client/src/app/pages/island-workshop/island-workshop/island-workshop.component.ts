@@ -433,9 +433,9 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
                 if (historyEntry) {
                   supplyDemand = historyEntry.objects.map((historyRow, i) => {
                     const stateRow = state.supplyDemand[i];
-                    // If supply is >= 3, it's probably a missing item, just return history row.
+                    // If supply is >= 3, it's probably a missing item, just return history row (and fallback if it's undefined).
                     if (stateRow.supply >= 3) {
-                      return historyRow;
+                      return historyRow || stateRow;
                     }
                     // Pick the row that has the lowest supply
                     return stateRow.supply > historyRow.supply ? historyRow : stateRow;
