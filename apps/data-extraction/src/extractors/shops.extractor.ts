@@ -351,8 +351,14 @@ export class ShopsExtractor extends AbstractExtractor {
 
   private processCustomTalkLinks(customTalks: any[], npcIdsByDataId: Record<number, number[]>, specialShops: any[]): Record<number, number[]> {
     const preEndwalkerGemstoneShops = {
+      '1769957': [1027998],
       '1769958': [1027538],
-      '1769957': [1027998]
+      '1769959': [1027385],
+      '1769960': [1027497],
+      '1769961': [1027892],
+      '1769962': [1027665],
+      '1769963': [1027709],
+      '1769964': [1027766],
     };
     const hardcodedLinks = {
       721385: [262919]
@@ -380,7 +386,7 @@ export class ShopsExtractor extends AbstractExtractor {
               preEndwalkerGemstoneShops[shop.index] = [talk.ScriptArg[npcInstructionIndex]];
             }
           }
-        } else if (scriptInstruction.includes('SHOP')) {
+        } else if (scriptInstruction.includes('SHOP') || scriptInstruction.includes('LOGMSG')) {
           acc[talk.index].push(scriptArg);
         }
       }

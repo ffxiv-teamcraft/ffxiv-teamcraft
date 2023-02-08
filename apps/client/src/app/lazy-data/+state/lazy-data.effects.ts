@@ -14,6 +14,7 @@ import { LazyDataKey } from '../lazy-data-types';
 import { debounceBufferTime } from '../../core/rxjs/debounce-buffer-time';
 import { uniq } from 'lodash';
 import { IS_HEADLESS } from '../../../environments/is-headless';
+import { uniqMergeMap } from '../../core/rxjs/uniq-merge-map';
 
 @Injectable()
 export class LazyDataEffects {
@@ -23,7 +24,7 @@ export class LazyDataEffects {
   loadLazyDataEntityEntry$ = createEffect(() =>
     this.actions$.pipe(
       ofType(LazyDataActions.loadLazyDataEntityEntry),
-      debounceBufferTime(10),
+      debounceBufferTime(50),
       map(actions => {
         return actions.reduce((acc, { id, entity }) => {
           return {
@@ -56,7 +57,7 @@ export class LazyDataEffects {
   loadLazyDataFullEntity$ = createEffect(() =>
     this.actions$.pipe(
       ofType(LazyDataActions.loadLazyDataFullEntity),
-      concatMap(({ entity }) => {
+      uniqMergeMap(({ entity }) => String(entity), ({ entity }) => {
         return this.getData(this.getUrl(entity)).pipe(
           map(entry => {
             return LazyDataActions.loadLazyDataFullEntitySuccess({ entry, key: entity });
