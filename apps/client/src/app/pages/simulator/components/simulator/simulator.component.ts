@@ -533,7 +533,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                     return this.i18n.getCraftingActionIdByName(skillName, <Language>this.translate.currentLang).pipe(
                       catchError(() => {
                         match = this.findActionsAutoTranslatedRegex.exec(line);
-                        return this.i18n.getCraftingActionIdByName(match[2], <Language>this.translate.currentLang).pipe(
+                        return this.i18n.getCraftingActionIdByName(match[2].trim(), <Language>this.translate.currentLang).pipe(
                           catchError(() => of(''))
                         );
                       })
