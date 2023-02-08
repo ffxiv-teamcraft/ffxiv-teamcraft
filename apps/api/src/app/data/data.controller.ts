@@ -18,7 +18,10 @@ export class DataController {
     @Param('key') key: string,
     @Param('hash') hash: string
   ) {
-    const contentName = Object.keys(lazyFilesList).find(k => lazyFilesList[k].fileName === `${key}.json`)
+    const contentName = key === 'extracts' ? key : Object.keys(lazyFilesList).find(k => lazyFilesList[k].fileName === `${key}.json`);
+    if (!contentName) {
+      throw new HttpException(`${contentName} is not available`, 404);
+    }
     return this.lazyData.get(contentName as keyof LazyData);
   }
 
@@ -34,9 +37,9 @@ export class DataController {
           return {
             ...acc,
             [id]: data[id]
-          }
-        }, {})
+          };
+        }, {});
       })
-    )
+    );
   }
 }

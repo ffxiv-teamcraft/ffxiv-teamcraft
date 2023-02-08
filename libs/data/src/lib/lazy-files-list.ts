@@ -429,7 +429,7 @@ export const lazyFilesList = {
   },
   'reduction': {
     'fileName': 'reduction.json',
-    'hashedFileName': 'reduction.2977e51ca4c338389effdb1f5ae922c212a98103.json'
+    'hashedFileName': 'reduction.542bbd2e9177a874bbc9dfa38bfa2f5c1d97ab54.json'
   },
   'retainerTasks': {
     'fileName': 'retainer-tasks.json',
