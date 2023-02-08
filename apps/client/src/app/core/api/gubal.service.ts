@@ -9,6 +9,7 @@ import { DataReporters } from '../data-reporting/data-reporters-index';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { environment } from '../../../environments/environment';
+import { PlatformService } from '../tools/platform.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,23 +19,26 @@ export class GubalService {
   private readonly version: number;
 
   constructor(private http: HttpClient, private ipc: IpcService, private authFacade: AuthFacade,
-              @Inject(DataReporters) private reporters: DataReporter[], private apollo: Apollo) {
+              @Inject(DataReporters) private reporters: DataReporter[], private apollo: Apollo,
+              private platform: PlatformService) {
     const versionFragments = environment.version.split('.');
     this.version = +versionFragments[0] * 100000 + +versionFragments[1] * 100 + +versionFragments[2];
   }
 
   public init(): void {
-    combineLatest(this.reporters.map(reporter => {
-      return reporter.getDataReports(this.ipc.packets$).pipe(
-        debounceTime(500),
-        switchMap(dataReports => {
-          if (dataReports.length === 0) {
-            return of(null);
-          }
-          return this.submitData(reporter.getDataType(), dataReports);
-        })
-      );
-    })).subscribe();
+    if (this.platform.isDesktop()) {
+      combineLatest(this.reporters.map(reporter => {
+        return reporter.getDataReports(this.ipc.packets$).pipe(
+          debounceTime(500),
+          switchMap(dataReports => {
+            if (dataReports.length === 0) {
+              return of(null);
+            }
+            return this.submitData(reporter.getDataType(), dataReports);
+          })
+        );
+      })).subscribe();
+    }
   }
 
   private submitData(dataType: string, data: any[]): Observable<void> {
