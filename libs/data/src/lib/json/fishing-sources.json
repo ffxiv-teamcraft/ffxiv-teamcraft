@@ -5248,7 +5248,7 @@
       "spot": 9,
       "hookset": 1,
       "tug": 0,
-      "bait": 2627,
+      "bait": 2623,
       "snagging": false,
       "minGathering": 0
     },
@@ -5269,7 +5269,7 @@
       "minGathering": 0
     },
     {
-      "spot": 14,
+      "spot": 12,
       "hookset": 1,
       "tug": 0,
       "bait": 2627,
@@ -5277,10 +5277,10 @@
       "minGathering": 0
     },
     {
-      "spot": 12,
+      "spot": 14,
       "hookset": 1,
       "tug": 0,
-      "bait": 2627,
+      "bait": 2617,
       "snagging": false,
       "minGathering": 0
     },
@@ -22428,10 +22428,6 @@
       "duration": 8,
       "weathers": [
         4
-      ],
-      "weathersFrom": [
-        1,
-        2
       ],
       "snagging": false,
       "minGathering": 2250

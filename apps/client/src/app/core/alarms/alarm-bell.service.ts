@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { AlarmsFacade } from './+state/alarms.facade';
 import { combineLatest, of } from 'rxjs';
-import { filter, first, map, startWith, switchMap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, startWith, switchMap } from 'rxjs/operators';
 import { Alarm } from './alarm';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { PlatformService } from '../tools/platform.service';
@@ -36,99 +36,104 @@ export class AlarmBellService {
    * @param itemName
    */
   public ring(alarm: Alarm, itemName: string): void {
-    if (Date.now() - 10000 >= this.getLastPlayed(alarm)) {
-      localStorage.setItem(`played:${alarm.$key}`, Date.now().toString());
-      if (this.settings.TTSAlarms) {
-        try {
-          const notificationSettings = this.settings.getNotificationSettings(SoundNotificationType.ALARM);
-          const speech = new SpeechSynthesisUtterance(itemName);
-          speech.pitch = 1.1;
-          speech.lang = this.translate.currentLang;
-          speech.rate = 1;
-          speech.volume = notificationSettings.volume;
-          window.speechSynthesis.speak(speech);
-        } catch (e) {
-          console.error(e);
-          this.soundNotificationService.play(SoundNotificationType.ALARM);
-        }
-      } else {
+    if (this.settings.TTSAlarms) {
+      try {
+        const notificationSettings = this.settings.getNotificationSettings(SoundNotificationType.ALARM);
+        const speech = new SpeechSynthesisUtterance(itemName);
+        speech.pitch = 1.1;
+        speech.lang = this.translate.currentLang;
+        speech.rate = 1;
+        speech.volume = notificationSettings.volume;
+        window.speechSynthesis.speak(speech);
+      } catch (e) {
+        console.error(e);
         this.soundNotificationService.play(SoundNotificationType.ALARM);
       }
+    } else {
+      this.soundNotificationService.play(SoundNotificationType.ALARM);
     }
   }
 
   public notify(_alarm: Alarm): void {
-    of(_alarm).pipe(
-      switchMap(alarm => {
-        return this.mapService.getMapById(alarm.mapId)
-          .pipe(
-            switchMap((mapData) => {
-              if (mapData !== undefined) {
-                return this.mapService.getNearestAetheryte(mapData, alarm.coords);
-              } else {
-                return of(undefined);
-              }
-            }),
-            map(aetheryte => {
-              if (aetheryte !== undefined) {
-                alarm.aetheryte = aetheryte;
-              }
-              return alarm;
-            })
-          );
-      }),
-      first(),
-      switchMap(alarm => {
-        let label$ = this.i18n.getNameObservable('items', alarm.itemId).pipe(
-          first()
-        );
-        if (alarm.type === -10) {
-          label$ = this.i18n.getNameObservable('mobs', alarm.bnpcName).pipe(
+    if (Date.now() - 10000 >= this.getLastPlayed(_alarm)) {
+      localStorage.setItem(`played:${_alarm.$key}`, Date.now().toString());
+      of(_alarm).pipe(
+        switchMap(alarm => {
+          return this.mapService.getMapById(alarm.mapId)
+            .pipe(
+              switchMap((mapData) => {
+                if (mapData !== undefined) {
+                  return this.mapService.getNearestAetheryte(mapData, alarm.coords);
+                } else {
+                  return of(undefined);
+                }
+              }),
+              map(aetheryte => {
+                if (aetheryte !== undefined) {
+                  alarm.aetheryte = aetheryte;
+                }
+                return alarm;
+              })
+            );
+        }),
+        first(),
+        switchMap(alarm => {
+          let label$ = this.i18n.getNameObservable('items', alarm.itemId).pipe(
             first()
           );
-        }
-        return combineLatest([
-          of(alarm),
-          alarm.icon ? of(alarm.icon) : this.lazyData.getRow('itemIcons', alarm.itemId),
-          label$,
-          alarm.aetheryte ? this.i18n.getNameObservable('places', alarm.aetheryte.nameid).pipe(
-            first()
-          ) : of(''),
-          this.i18n.getNameObservable('places', alarm.zoneId || alarm.mapId).pipe(
-            first()
-          )
-        ]);
-      })
-    ).subscribe(([alarm, icon, itemName, aetheryteName, placeName]) => {
-      const notificationIcon = `https://xivapi.com${icon}`;
-      const notificationTitle = (alarm.itemId || alarm.bnpcName) ? itemName : alarm.name;
-      const notificationBody = `${placeName} - `
-        + `${aetheryteName ? aetheryteName : ''}`;
-      if (this.platform.isDesktop()) {
-        this.ipc.send('notification', {
-          title: notificationTitle,
-          content: notificationBody,
-          icon: notificationIcon
-        });
-      } else {
-        this.pushNotificationsService.create(notificationTitle,
-          {
-            icon: notificationIcon,
-            sticky: false,
-            renotify: false,
-            body: notificationBody
+          if (alarm.type === -10) {
+            label$ = this.i18n.getNameObservable('mobs', alarm.bnpcName).pipe(
+              first()
+            );
           }
-        ).subscribe();
-        this.notificationService.info(notificationTitle, notificationBody);
-      }
-      this.ring(alarm, itemName);
-    });
+          return combineLatest([
+            of(alarm),
+            alarm.icon ? of(alarm.icon) : this.lazyData.getRow('itemIcons', alarm.itemId),
+            label$,
+            alarm.aetheryte ? this.i18n.getNameObservable('places', alarm.aetheryte.nameid).pipe(
+              first()
+            ) : of(''),
+            this.i18n.getNameObservable('places', alarm.zoneId || alarm.mapId).pipe(
+              first()
+            )
+          ]);
+        })
+      ).subscribe(([alarm, icon, itemName, aetheryteName, placeName]) => {
+        const notificationIcon = `https://xivapi.com${icon}`;
+        const notificationTitle = (alarm.itemId || alarm.bnpcName) ? itemName : alarm.name;
+        const notificationBody = `${placeName} - `
+          + `${aetheryteName ? aetheryteName : ''}`;
+        if (this.platform.isDesktop()) {
+          this.ipc.send('notification', {
+            title: notificationTitle,
+            content: notificationBody,
+            icon: notificationIcon
+          });
+        } else {
+          this.pushNotificationsService.create(notificationTitle,
+            {
+              icon: notificationIcon,
+              sticky: false,
+              renotify: false,
+              body: notificationBody
+            }
+          ).subscribe();
+          this.notificationService.info(notificationTitle, notificationBody);
+        }
+        this.ring(alarm, itemName);
+      });
+    }
   }
 
   private initBell(): void {
+    const alarms$ = this.alarmsFacade.allAlarms$.pipe(
+      distinctUntilChanged((a, b) => {
+        return a.map(el => el.$key).join(':') === b.map(el => el.$key).join(':');
+      })
+    );
     combineLatest([
       this.eorzeanTime.getEorzeanTime(),
-      this.alarmsFacade.allAlarms$,
+      alarms$,
       this.alarmsFacade.allGroups$,
       this.eorzeaFacade.mapId$.pipe(startWith(-1)),
       this.lazyData.getEntry('maps')
@@ -155,23 +160,16 @@ export class AlarmBellService {
             if ((!hasOneGroupEnabled) || !alarm.enabled) {
               return false;
             }
-            const lastPlayed = this.getLastPlayed(alarm);
             // Ceiling on /6 so precision is 1/10
             const timeBeforePlay = Math.round(this.alarmsFacade.getMinutesBefore(date, this.alarmsFacade.getNextSpawn(alarm, date)) / 6) / 10 - this.settings.alarmHoursBefore;
-            // Irl alarm duration in ms
-            let irlAlarmDuration = this.eorzeanTime.toEarthTime(alarm.duration * 60) * 1000;
-            // If the alarm has no duration, it's because it has no spawn time and only depends on weather
-            if (irlAlarmDuration === 0) {
-              irlAlarmDuration = this.eorzeanTime.toEarthTime(8 * 60) * 1000;
-            }
-            return Date.now() - lastPlayed >= irlAlarmDuration
-              && timeBeforePlay <= 0;
+            return timeBeforePlay <= 0;
           });
         })
       ).subscribe(alarmsToPlay => {
       alarmsToPlay.forEach(alarm => {
-        localStorage.setItem(`played:${alarm.$key}`, Date.now().toString());
-        this.alarmsFacade.setAlarmDone(alarm.$key, false);
+        if (alarm.done) {
+          this.alarmsFacade.setAlarmDone(alarm.$key, false);
+        }
         if (!this.settings.alarmsMuted) {
           this.notify(alarm);
         }

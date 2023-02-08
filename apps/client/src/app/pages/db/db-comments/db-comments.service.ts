@@ -5,7 +5,7 @@ import { PendingChangesService } from '../../../core/database/pending-changes/pe
 import { DbComment } from './model/db-comment';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Firestore, orderBy, where } from '@angular/fire/firestore';
+import { Firestore, orderBy, where, WithFieldValue } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -73,5 +73,10 @@ export class DbCommentsService extends FirestoreStorage<DbComment> {
       );
     }
     return null;
+  }
+
+  protected prepareData(data: Partial<WithFieldValue<DbComment>>): Partial<WithFieldValue<DbComment>> {
+    const { replies, ...prepared } = data;
+    return prepared;
   }
 }
