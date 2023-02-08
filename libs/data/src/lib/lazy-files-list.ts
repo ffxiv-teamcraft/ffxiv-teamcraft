@@ -275,10 +275,6 @@ export const lazyFilesList = {
     'fileName': 'item-icons.json',
     'hashedFileName': 'item-icons.f7ef73a76de1320b433beb46a2585e09676c4b34.json'
   },
-  'itemKinds': {
-    'fileName': 'item-kinds.json',
-    'hashedFileName': 'item-kinds.bf21a9e8fbc5a3846fb05b4fa0859e0917b2202f.json'
-  },
   'itemLevel': {
     'fileName': 'item-level.json',
     'hashedFileName': 'item-level.cbb6cd81354ef86810cd2150ec6d554c24248455.json'
@@ -295,10 +291,6 @@ export const lazyFilesList = {
     'fileName': 'item-patch.json',
     'hashedFileName': 'item-patch.89d01c0f98de333e20fe970fef0e768af03741a1.json'
   },
-  'itemSearchCategories': {
-    'fileName': 'item-search-categories.json',
-    'hashedFileName': 'item-search-categories.935e8754b71db827dd50d4f771d2b78ad9ada2f8.json'
-  },
   'itemSeries': {
     'fileName': 'item-series.json',
     'hashedFileName': 'item-series.ea8f835aa09ab82cead05c9bacea52ac5d8a2d90.json'
@@ -307,17 +299,9 @@ export const lazyFilesList = {
     'fileName': 'item-set-bonuses.json',
     'hashedFileName': 'item-set-bonuses.d23e7135bb305828fdbfde707bf3b6dcd161276b.json'
   },
-  'itemSpecialBonus': {
-    'fileName': 'item-special-bonus.json',
-    'hashedFileName': 'item-special-bonus.33d5c9e4e7e85236b68fd6a3bcafba875dcf4308.json'
-  },
   'itemStats': {
     'fileName': 'item-stats.json',
     'hashedFileName': 'item-stats.9c5e38907b6c2db7b00f92734d1a81ba9f9bfd93.json'
-  },
-  'itemTooltips': {
-    'fileName': 'item-tooltips.json',
-    'hashedFileName': 'item-tooltips.05eaed3e4fa0b0263266bf08b671cf086c66dbea.json'
   },
   'items': {
     'fileName': 'items.json',
