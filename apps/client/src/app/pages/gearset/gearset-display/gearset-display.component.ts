@@ -19,7 +19,7 @@ import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { List } from '../../../modules/list/model/list';
 import { RecipeChoicePopupComponent } from '../../simulator/components/recipe-choice-popup/recipe-choice-popup.component';
-import { BaseParam } from '../../../modules/gearsets/base-param';
+import { BaseParam } from '@ffxiv-teamcraft/data/game';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GearsetProgression, newEmptyProgression } from '../../../model/gearset/gearset-progression';

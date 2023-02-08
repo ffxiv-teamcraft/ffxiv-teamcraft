@@ -1,6 +1,6 @@
 import { inject, TestBed } from '@angular/core/testing';
 import { MateriaService } from './materia.service';
-import { BaseParam } from './base-param';
+import { BaseParam } from '@ffxiv-teamcraft/data/game';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 xdescribe('MateriaService', () => {

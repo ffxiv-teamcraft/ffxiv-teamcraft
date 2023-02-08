@@ -1,12 +1,11 @@
 import { AbstractExtractor } from '../abstract-extractor';
-import { join } from 'path';
 import { map } from 'rxjs/operators';
 import { combineLatest, Observable } from 'rxjs';
 import { uniq } from 'lodash';
 
 export class PatchContentExtractor extends AbstractExtractor {
   protected doExtract(): any {
-    const patchContent = require(join(__dirname, '../../../../client/src/assets/data/patch-content.json'));
+    const patchContent = this.requireLazyFile('patch-content');
     combineLatest([
       this.getPatchContent('Achievement'),
       this.getPatchContent('Action'),
