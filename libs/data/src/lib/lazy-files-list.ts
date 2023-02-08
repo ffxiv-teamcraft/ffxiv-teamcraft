@@ -21,11 +21,11 @@ export const lazyFilesList = {
   },
   'aetherialReduce': {
     'fileName': 'aetherial-reduce.json',
-    'hashedFileName': 'aetherial-reduce.c5e5da0cfd4c7614a8ede62a5cf480c340f8e6b4.json'
+    'hashedFileName': 'aetherial-reduce.e5408c8993cc885b86a1e910b3ce385e9b3951f0.json'
   },
   'aetherytes': {
     'fileName': 'aetherytes.json',
-    'hashedFileName': 'aetherytes.e931a71ac165d0bbb930a6229433207296ab29d1.json'
+    'hashedFileName': 'aetherytes.64f8b6c290fa2cedeac1f002e9d07e05f30a3162.json'
   },
   'airshipParts': {
     'fileName': 'airship-parts.json',
@@ -41,7 +41,7 @@ export const lazyFilesList = {
   },
   'baits': {
     'fileName': 'baits.json',
-    'hashedFileName': 'baits.24f88dd5b64739eb9499535e873fac1b67daad79.json'
+    'hashedFileName': 'baits.1c64d69dcd511ecf68be9c62cdd1b449a91d9040.json'
   },
   'baseParams': {
     'fileName': 'base-params.json',
@@ -53,7 +53,7 @@ export const lazyFilesList = {
   },
   'collectableFlags': {
     'fileName': 'collectable-flags.json',
-    'hashedFileName': 'collectable-flags.3683513ad5f2887ae461b581e193f838d6b007f3.json'
+    'hashedFileName': 'collectable-flags.31f67f37886486fc5c2128059aeecd0f802c6155.json'
   },
   'collectablesPageData': {
     'fileName': 'collectables-page-data.json',
@@ -109,7 +109,7 @@ export const lazyFilesList = {
   },
   'equipment': {
     'fileName': 'equipment.json',
-    'hashedFileName': 'equipment.b99bc0d920e8b88eca9f5b790f0d6d16a8535aec.json'
+    'hashedFileName': 'equipment.12c964d67e575f655d24649dfe4dab012aca8c09.json'
   },
   'exVersions': {
     'fileName': 'ex-versions.json',
@@ -117,7 +117,7 @@ export const lazyFilesList = {
   },
   'extractableItems': {
     'fileName': 'extractable-items.json',
-    'hashedFileName': 'extractable-items.53ba5072e1913e0c2afec4ee974fda1937b79ffb.json'
+    'hashedFileName': 'extractable-items.20d1de2535b6b9186fba4f21d38c8d1946a3b0ed.json'
   },
   'fateSources': {
     'fileName': 'fate-sources.json',
@@ -125,7 +125,7 @@ export const lazyFilesList = {
   },
   'fates': {
     'fileName': 'fates.json',
-    'hashedFileName': 'fates.b23766623b120f560b58252db3883da6507d4069.json'
+    'hashedFileName': 'fates.c7b85222d0dc23c2dc687d11a4d2c58c18816af7.json'
   },
   'fishParameter': {
     'fileName': 'fish-parameter.json',
@@ -205,7 +205,7 @@ export const lazyFilesList = {
   },
   'hqFlags': {
     'fileName': 'hq-flags.json',
-    'hashedFileName': 'hq-flags.6b933e631881fbab7c800731c0507518c103d785.json'
+    'hashedFileName': 'hq-flags.07fbf2ce0deeb5cbc6acd83cce24d2831f470582.json'
   },
   'hunts': {
     'fileName': 'hunts.json',
@@ -221,7 +221,7 @@ export const lazyFilesList = {
   },
   'ilvls': {
     'fileName': 'ilvls.json',
-    'hashedFileName': 'ilvls.b36df7e44b1ed64cadfb18af88854333c0faca06.json'
+    'hashedFileName': 'ilvls.b44c49f2dbea79fba106524377faaffd0e0b607f.json'
   },
   'instanceSources': {
     'fileName': 'instance-sources.json',
@@ -269,11 +269,15 @@ export const lazyFilesList = {
   },
   'itemEquipSlotCategory': {
     'fileName': 'item-equip-slot-category.json',
-    'hashedFileName': 'item-equip-slot-category.ad912b28f08ca9d4d1c5d05be4776abead2276a6.json'
+    'hashedFileName': 'item-equip-slot-category.d73f303e58c751ac7913e8e030ba0aa9d4948cfb.json'
   },
   'itemIcons': {
     'fileName': 'item-icons.json',
-    'hashedFileName': 'item-icons.dae2a0e6eb7d351128a0600a38c99165967c6ac0.json'
+    'hashedFileName': 'item-icons.f7ef73a76de1320b433beb46a2585e09676c4b34.json'
+  },
+  'itemKinds': {
+    'fileName': 'item-kinds.json',
+    'hashedFileName': 'item-kinds.bf21a9e8fbc5a3846fb05b4fa0859e0917b2202f.json'
   },
   'itemLevel': {
     'fileName': 'item-level.json',
@@ -281,15 +285,19 @@ export const lazyFilesList = {
   },
   'itemMainAttributes': {
     'fileName': 'item-main-attributes.json',
-    'hashedFileName': 'item-main-attributes.d89cda457d70aeb3f3b7c7504381e582fa05ccb1.json'
+    'hashedFileName': 'item-main-attributes.26bc3baaa8c3321cc988ef36f9b5804542eaed89.json'
   },
   'itemMeldingData': {
     'fileName': 'item-melding-data.json',
-    'hashedFileName': 'item-melding-data.14cdc4b3bbbdc14bc684d384b93ac634c6418c20.json'
+    'hashedFileName': 'item-melding-data.fd698fef790105bb85d05d5689d1b9a396921908.json'
   },
   'itemPatch': {
     'fileName': 'item-patch.json',
-    'hashedFileName': 'item-patch.61f5a77cf472757dd6ceef6aeb7d30bc30e2a865.json'
+    'hashedFileName': 'item-patch.89d01c0f98de333e20fe970fef0e768af03741a1.json'
+  },
+  'itemSearchCategories': {
+    'fileName': 'item-search-categories.json',
+    'hashedFileName': 'item-search-categories.935e8754b71db827dd50d4f771d2b78ad9ada2f8.json'
   },
   'itemSeries': {
     'fileName': 'item-series.json',
@@ -297,15 +305,23 @@ export const lazyFilesList = {
   },
   'itemSetBonuses': {
     'fileName': 'item-set-bonuses.json',
-    'hashedFileName': 'item-set-bonuses.ec7ed93fd20da2f85b4c9cd245558f2583fab5a6.json'
+    'hashedFileName': 'item-set-bonuses.d23e7135bb305828fdbfde707bf3b6dcd161276b.json'
+  },
+  'itemSpecialBonus': {
+    'fileName': 'item-special-bonus.json',
+    'hashedFileName': 'item-special-bonus.33d5c9e4e7e85236b68fd6a3bcafba875dcf4308.json'
   },
   'itemStats': {
     'fileName': 'item-stats.json',
-    'hashedFileName': 'item-stats.548ff23ce3329334a1867ac14dca211b441ac182.json'
+    'hashedFileName': 'item-stats.9c5e38907b6c2db7b00f92734d1a81ba9f9bfd93.json'
+  },
+  'itemTooltips': {
+    'fileName': 'item-tooltips.json',
+    'hashedFileName': 'item-tooltips.05eaed3e4fa0b0263266bf08b671cf086c66dbea.json'
   },
   'items': {
     'fileName': 'items.json',
-    'hashedFileName': 'items.e2d426732597f4870460ee2586c98aee012a8247.json'
+    'hashedFileName': 'items.e5622f7396c07dbbd7dc3be50326ce5dda1f633b.json'
   },
   'jobAbbr': {
     'fileName': 'job-abbr.json',
@@ -353,7 +369,7 @@ export const lazyFilesList = {
   },
   'marketItems': {
     'fileName': 'market-items.json',
-    'hashedFileName': 'market-items.814cb66dd325956b6905d965e904c5f2222f1b16.json'
+    'hashedFileName': 'market-items.cc3168a9f1a54cabd7bffadb8cdfd6141e75999a.json'
   },
   'materias': {
     'fileName': 'materias.json',
@@ -389,7 +405,7 @@ export const lazyFilesList = {
   },
   'npcs': {
     'fileName': 'npcs.json',
-    'hashedFileName': 'npcs.5a7676b6dbd29c35a861e4632855120d56d20576.json'
+    'hashedFileName': 'npcs.951f9da617f2e93ba54fb654f6165492327c94ca.json'
   },
   'paramGrow': {
     'fileName': 'param-grow.json',
@@ -413,7 +429,7 @@ export const lazyFilesList = {
   },
   'rarities': {
     'fileName': 'rarities.json',
-    'hashedFileName': 'rarities.eb2a121846b9f7bd9a5eac75a281e4ff1ce0f23e.json'
+    'hashedFileName': 'rarities.0a681fa289d3ca9946087e5b91085b3756518961.json'
   },
   'recipesIngredientLookup': {
     'fileName': 'recipes-ingredient-lookup.json',
@@ -481,7 +497,7 @@ export const lazyFilesList = {
   },
   'stackSizes': {
     'fileName': 'stack-sizes.json',
-    'hashedFileName': 'stack-sizes.bbc96c2dde107c2ffe7e2aed44700559a416663e.json'
+    'hashedFileName': 'stack-sizes.02f72218a09a4cbd2e92363f303790837f314c26.json'
   },
   'statuses': {
     'fileName': 'statuses.json',
@@ -501,7 +517,7 @@ export const lazyFilesList = {
   },
   'territoryLayers': {
     'fileName': 'territory-layers.json',
-    'hashedFileName': 'territory-layers.38f474f5971fbcd32566f489ad6de8b26bd08878.json'
+    'hashedFileName': 'territory-layers.9752b457df99196542cc7462cc8d4cb0b8a7a14c.json'
   },
   'titles': {
     'fileName': 'titles.json',
@@ -513,7 +529,7 @@ export const lazyFilesList = {
   },
   'tradeFlags': {
     'fileName': 'trade-flags.json',
-    'hashedFileName': 'trade-flags.803c3090204c8406e2aa72720df7cc553b6c7f2a.json'
+    'hashedFileName': 'trade-flags.cc4e6c413f0ca9d61ddb9fb5912ec5df27dbd7c3.json'
   },
   'traits': {
     'fileName': 'traits.json',

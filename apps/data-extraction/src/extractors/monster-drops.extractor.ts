@@ -7,8 +7,8 @@ export class MonsterDropsExtractor extends AbstractExtractor {
   protected doExtract(): any {
     // Base handmade data
     const drops = {};
-    const monsters = require('../../../../client/src/assets/data/mobs.json');
-    const items = require('../../../../client/src/assets/data/items.json');
+    const monsters = this.requireLazyFile('mobs');
+    const items = this.requireLazyFile('items');
     const sheetRows = [];
     // Credits to Hiems Whiterock / M'aila Batih for the data sheet
     createReadStream(join(__dirname, '../../../input/monster-drops.csv'), 'utf-8')

@@ -5,6 +5,7 @@
     "api": "apps/api",
     "client": "apps/client",
     "data": "libs/data",
+    "data-extraction": "apps/data-extraction",
     "types": "libs/types"
   }
 }

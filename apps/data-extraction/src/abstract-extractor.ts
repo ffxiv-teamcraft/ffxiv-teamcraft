@@ -9,9 +9,9 @@ import { ParsedRow } from './xiv/parsed-row';
 
 export abstract class AbstractExtractor {
 
-  protected static outputFolder = join(__dirname, '../../../client/src/app/core/data/sources/');
+  protected static outputFolder = join(__dirname, '../../../apps/client/src/app/core/data/sources/');
 
-  protected static assetOutputFolder = join(__dirname, '../../../../libs/data/src/lib/json/');
+  protected static assetOutputFolder = join(__dirname, '../../../libs/data/src/lib/json/');
 
   protected static XIVAPI_KEY = process.env.XIVAPI_KEY;
 
@@ -63,7 +63,7 @@ export abstract class AbstractExtractor {
 
 
   protected requireLazyFile(name: string): any {
-    return require(join(AbstractExtractor.assetOutputFolder, `${name}.json`));
+    return JSON.parse(readFileSync(join(AbstractExtractor.assetOutputFolder, `${name}.json`), 'utf-8'));
   }
 
   protected addQueryParam(url: string, paramName: string, paramValue: string | number): string {

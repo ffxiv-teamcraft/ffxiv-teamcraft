@@ -54,9 +54,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-/apps/data-extraction/build/
-/apps/data-extraction/input/*
-/apps/data-extraction/csv/*
+/apps/data-extraction/src/assets/input/*
+/apps/data-extraction/src/assets/csv/*
 /apps/client/src/assets/tc-loader.js
 /ssr/dist/
 /functions/lib/

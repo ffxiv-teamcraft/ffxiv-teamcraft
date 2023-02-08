@@ -163,7 +163,18 @@ export class LogsExtractor extends AbstractExtractor {
   }
 
   private extractFishingLog(): void {
-    const diademTerritory = require('../../../input/diadem-territory.json');
+    const diademTerritory = {
+      'index': 901,
+      'subIndex': 0,
+      '__sheet': 'TerritoryType',
+      'PlaceName': 1647,
+      'Map': {
+        'index': 584,
+        'subIndex': 0,
+        '__sheet': 'Map',
+        'SizeFactor': 100
+      }
+    };
 
     const diademFishingSpotCoords = {
       10001: {
