@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { PlatformService } from '../../../core/tools/platform.service';
-import { fromEvent } from 'rxjs';
+import { fromEvent, Subscription } from 'rxjs';
 import { auditTime, delay, distinctUntilChanged, map, startWith, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 
@@ -10,10 +10,11 @@ declare const gtag: any;
 @Component({
   selector: 'app-ad',
   templateUrl: './ad.component.html',
-  styleUrls: ['./ad.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./ad.component.less']
 })
 export class AdComponent extends TeamcraftComponent {
+
+  private subscription: Subscription;
 
   constructor(private platform: PlatformService) {
     super();
@@ -31,7 +32,11 @@ export class AdComponent extends TeamcraftComponent {
         passiveMode: true,
         que: [],
         onReady: () => {
-          fromEvent(window, 'resize')
+          if (this.subscription) {
+            this.subscription.unsubscribe();
+            delete this.subscription;
+          }
+          this.subscription = fromEvent(window, 'resize')
             .pipe(
               map(event => (event.currentTarget as any).innerWidth),
               startWith(window.innerWidth),
