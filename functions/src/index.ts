@@ -57,10 +57,10 @@ export const onListDelete = functions.runWith(runtimeOpts).firestore.document('/
   }
   const workshopsWithThisList = await firestore.collection('workshops')
     .where('listIds', 'array-contains', snap.id)
-    .get()
-  if(workshopsWithThisList.size > 0){
+    .get();
+  if (workshopsWithThisList.size > 0) {
     workshopsWithThisList.forEach(ws => {
-      firestore.doc(`/workshops/${ws.id}`).update({listIds: admin.firestore.FieldValue.arrayRemove(snap.id)})
+      firestore.doc(`/workshops/${ws.id}`).update({ listIds: admin.firestore.FieldValue.arrayRemove(snap.id) });
     });
   }
 });
@@ -135,67 +135,42 @@ export const islandSanctuaryHistory = functions.runWith(runtimeOpts).https.onReq
  * UNIVERSALIS
  */
 export const universalisPurchase = functions.runWith({ memory: '128MB', timeoutSeconds: 5 }).https.onRequest((req, res) => {
-  const lastUniversalisTimeoutRef = admin.database().ref('/last_universalis_timeout');
   res.set('Access-Control-Allow-Origin', '*')
     .set('Access-Control-Allow-Headers', 'Content-Type');
-  lastUniversalisTimeoutRef.once('value', snap => {
-    const lastTimeout = snap.val();
-    // Pause everything for 30s when a timeout occurs
-    if (Date.now() - lastTimeout < 30000) {
-      return res.status(200).send('{"res":"Timeout"}');
-    } else {
-      const { itemID, worldID, ...payload } = req.body;
-
-      axios.post(
-        `https://universalis.app/api/${worldID}/${itemID}/delete`,
-        payload,
-        {
-          timeout: 2000,
-          headers: {
-            Authorization: functions.config().universalis.key
-          }
-        })
-        .then(() => {
-          res.status(200).send('{"res":"OK"}');
-        })
-        .catch((err) => {
-          res.status(500).send();
-          if (err.code === 'ECONNABORTED') {
-            lastUniversalisTimeoutRef.set(Date.now());
-          }
-        });
-    }
-  });
+  const { itemID, worldID, ...payload } = req.body;
+  return axios.post(
+    `https://universalis.app/api/${worldID}/${itemID}/delete`,
+    payload,
+    {
+      timeout: 2000,
+      headers: {
+        Authorization: functions.config().universalis.key
+      }
+    })
+    .then(() => {
+      res.status(200).send('{"res":"OK"}');
+    })
+    .catch((err) => {
+      res.status(500).send();
+    });
 });
 
 export const universalisPublisher = functions.runWith({ memory: '128MB', timeoutSeconds: 5 }).https.onRequest((req, res) => {
-  const lastUniversalisTimeoutRef = admin.database().ref('/last_universalis_timeout');
   res.set('Access-Control-Allow-Origin', '*')
     .set('Access-Control-Allow-Headers', 'Content-Type');
-  lastUniversalisTimeoutRef.once('value', snap => {
-    const lastTimeout = snap.val();
-    // Pause everything for 5min when a timeout occurs
-    if (Date.now() - lastTimeout < 30000) {
-      return res.status(200).send('{"res":"Timeout"}');
-    } else {
-      axios.post(
-        `https://universalis.app/upload/${functions.config().universalis.key}`,
-        req.body,
-        {
-          timeout: 2000
-        })
-        .then(() => {
-          res.status(200).send('{"res":"OK"}');
-        })
-        .catch(err => {
-          res.status(500).send(err);
-          console.log(err.message);
-          if (err.code === 'ECONNABORTED') {
-            lastUniversalisTimeoutRef.set(Date.now());
-          }
-        });
-    }
-  });
+  axios.post(
+    `https://universalis.app/upload/${functions.config().universalis.key}`,
+    req.body,
+    {
+      timeout: 2000
+    })
+    .then(() => {
+      res.status(200).send('{"res":"OK"}');
+    })
+    .catch(err => {
+      res.status(500).send(err);
+      console.log(err.message);
+    });
 });
 
 // Firestore counts
