@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.2.1"></a>
+## [10.2.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.2.0...v10.2.1) (2023-02-09)
+
+
+### Bug Fixes
+
+* **desktop:** fixed lazy data loading not loading at all ([d0456cd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d0456cd))
+
+
+
 <a name="10.2.0"></a>
 # [10.2.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.1.6...v10.2.0) (2023-02-09)
 
