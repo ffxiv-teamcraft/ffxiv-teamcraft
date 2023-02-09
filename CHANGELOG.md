@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.2.2"></a>
+## [10.2.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.2.1...v10.2.2) (2023-02-09)
+
+
+### Bug Fixes
+
+* **desktop:** better fir for cn/kr packet capture ([5c9a824](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5c9a824))
+* **search:** fixed search filters not being applied at all ([dfa621c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dfa621c))
+
+
+
 <a name="10.2.1"></a>
 ## [10.2.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.2.0...v10.2.1) (2023-02-09)
 
