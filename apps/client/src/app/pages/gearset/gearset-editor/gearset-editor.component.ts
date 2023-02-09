@@ -514,6 +514,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   editMaterias(gearset: TeamcraftGearset, propertyName: string, equipmentPiece: EquipmentPiece, category: any): void {
     const clone = JSON.parse(JSON.stringify(equipmentPiece));
     this.i18n.getNameObservable('items', equipmentPiece.itemId).pipe(
+      first(),
       switchMap(itemName => {
         return this.dialog.create({
           nzTitle: this.translate.instant('GEARSETS.Modal_editor', { itemName }),
