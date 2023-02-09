@@ -22,16 +22,22 @@ export class SearchController {
     @Query('region') region: Region = Region.Global,
     @Query('filters') filters = ''
   ): Observable<SearchResult[]> {
-    const transformedFilters: XivapiSearchFilter[] = filters.split(',')
-      .filter(Boolean)
-      .map(fragment => {
-        const [, column, operator, value] = fragment.match(/([^><=?!|]+)([><=?!|]+)(.*)/);
-        return {
-          column,
-          operator: operator as XivapiSearchFilter['operator'],
-          value: isNaN(Number(value)) ? value : +value
-        };
-      });
+    let transformedFilters: XivapiSearchFilter[] = [];
+    try {
+      transformedFilters = (filters || '').split(',')
+        .filter(Boolean)
+        .map(fragment => {
+          const [, column, operator, value] = fragment.match(/([^><=?!|]+)([><=?!|]+)(.*)/);
+          return {
+            column,
+            operator: operator as XivapiSearchFilter['operator'],
+            value: isNaN(Number(value)) ? value : +value
+          };
+        });
+    } catch (e) {
+      console.log(filters);
+      console.error(e);
+    }
     return this.searchService.search(
       type,
       query,

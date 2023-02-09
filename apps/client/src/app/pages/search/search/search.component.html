@@ -346,7 +346,7 @@
   <app-search-intro></app-search-intro>
 </div>
 <ng-container *ngIf="searchType$ | async as searchType">
-  <div *ngIf="results$ | async as results" fxLayout="column" fxLayoutAlign="flex-start center">
+  <div *ngIf="results$ | async as results" class="flex-column justify-start align-center">
     <div *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE  || searchType === searchTypes.ANY"
          class="addition-buttons">
       <button nz-button (click)="selectAll(results, !allSelected)">{{(allSelected ? 'Unselect_all' : 'Select_all') | translate}}</button>

@@ -52,8 +52,6 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
 
   queryChangeValue?: string | null;
 
-  results$: Observable<SearchResult[]>;
-
   selection$: BehaviorSubject<SearchResult[]> = new BehaviorSubject<SearchResult[]>([]);
 
   filters$: BehaviorSubject<SearchFilter[]> = new BehaviorSubject<any>([]);
@@ -216,6 +214,53 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     map(type => [SearchType.ITEM, SearchType.RECIPE].includes(type))
   );
 
+  results$: Observable<SearchResult[]> = combineLatest([this.query$.pipe(distinctUntilChanged()), this.searchType$, this.filters$, this.sort$, this.searchLang$]).pipe(
+    debounceTime(400),
+    filter(([query, , filters, , lang]) => {
+      if (['ko', 'zh'].indexOf(lang.toLowerCase()) > -1) {
+        // Chinese and korean characters system use fewer chars for the same thing, filters have to be handled accordingly.
+        return query.length > 0 || filters.length > 0;
+      }
+      return query.length > 2 || (lang === 'ja' && query.length > 0) || filters.length > 0;
+    }),
+    tap(([query, type, filters, [sortBy, sortOrder], lang]) => {
+      this.allSelected = false;
+      this.showIntro = false;
+      this.loading = true;
+      const queryParams: any = {
+        query: query,
+        type: type,
+        filters: null
+      };
+      if (sortBy) {
+        queryParams.sort = sortBy;
+        queryParams.order = sortOrder;
+      }
+      if (filters.length > 0) {
+        queryParams.filters = btoa(JSON.stringify(filters));
+      } else {
+        queryParams.filters = null;
+      }
+      if (query.length > 0) {
+        const searchHistory = JSON.parse(localStorage.getItem('search:history') || '{}');
+        searchHistory[type] = _.uniq([...(searchHistory[type] || []), query]);
+        localStorage.setItem('search:history', JSON.stringify(searchHistory));
+      }
+      this.data.setSearchLang(lang);
+      this.router.navigate([], {
+        queryParamsHandling: 'merge',
+        queryParams: queryParams,
+        relativeTo: this.route
+      });
+    }),
+    switchMap(([query, type, filters, sort]) => {
+      return this.data.search(query.trim(), type, filters, sort);
+    }),
+    tap(() => {
+      this.loading = false;
+    })
+  );
+
   constructor(private gt: GarlandToolsService, private data: DataService, public settings: SettingsService,
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private notificationService: NzNotificationService,
@@ -295,52 +340,6 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       this.availableCraftJobs = this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1);
       this.availableJobs = this.gt.getJobs().filter(job => job.id > 0).map(job => job.id);
     });
-    this.results$ = combineLatest([this.query$.pipe(distinctUntilChanged()), this.searchType$, this.filters$, this.sort$, this.searchLang$]).pipe(
-      debounceTime(400),
-      filter(([query, , filters, , lang]) => {
-        if (['ko', 'zh'].indexOf(lang.toLowerCase()) > -1) {
-          // Chinese and korean characters system use fewer chars for the same thing, filters have to be handled accordingly.
-          return query.length > 0 || filters.length > 0;
-        }
-        return query.length > 2 || (lang === 'ja' && query.length > 0) || filters.length > 0;
-      }),
-      tap(([query, type, filters, [sortBy, sortOrder], lang]) => {
-        this.allSelected = false;
-        this.showIntro = false;
-        this.loading = true;
-        const queryParams: any = {
-          query: query,
-          type: type,
-          filters: null
-        };
-        if (sortBy) {
-          queryParams.sort = sortBy;
-          queryParams.order = sortOrder;
-        }
-        if (filters.length > 0) {
-          queryParams.filters = btoa(JSON.stringify(filters));
-        } else {
-          queryParams.filters = null;
-        }
-        if (query.length > 0) {
-          const searchHistory = JSON.parse(localStorage.getItem('search:history') || '{}');
-          searchHistory[type] = _.uniq([...(searchHistory[type] || []), query]);
-          localStorage.setItem('search:history', JSON.stringify(searchHistory));
-        }
-        this.data.setSearchLang(lang);
-        this.router.navigate([], {
-          queryParamsHandling: 'merge',
-          queryParams: queryParams,
-          relativeTo: this.route
-        });
-      }),
-      switchMap(([query, type, filters, sort]) => {
-        return this.data.search(query.trim(), type, filters, sort);
-      }),
-      tap(() => {
-        this.loading = false;
-      })
-    );
 
     this.route.queryParams.pipe(
       filter(params => {

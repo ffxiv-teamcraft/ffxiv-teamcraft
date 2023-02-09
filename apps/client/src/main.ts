@@ -10,7 +10,6 @@ import { enableDebugTools } from '@angular/platform-browser';
 if (environment.production) {
   enableProdMode();
 }
-enableProdMode();
 
 document.addEventListener('DOMContentLoaded', () => {
   platformBrowserDynamic().bootstrapModule(AppModule, { ngZoneEventCoalescing: true, ngZoneRunCoalescing: true }).then((module) => {
