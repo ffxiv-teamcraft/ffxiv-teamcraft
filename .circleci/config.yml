@@ -96,25 +96,16 @@ jobs:
 
 
   deploy-hosting:
-    working_directory: ~/ffxiv-teamcraft
-    docker:
-      - image: google/cloud-sdk
+    <<: *defaults
     steps:
       - attach_workspace:
           at: ~/
-      - run:
-          name: Authorize GCloud Command Line Tool
-          command: |
-            echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
       - add_ssh_keys:
           fingerprints:
             - "96:02:36:2b:33:81:70:ce:37:3d:f8:9b:e5:ac:65:30"
       - run:
           name: Deploying cdn to OVH server
           command: bash tools/cdn/deploy.sh
-      - run:
-          name: Updating Cloud Run
-          command: gcloud builds submit --tag gcr.io/ffxivteamcraft/ssr && gcloud beta run deploy tc-ssr --image gcr.io/ffxivteamcraft/ssr --region europe-west1 --allow-unauthenticated
 
 
   deploy-firebase-hosting:
@@ -137,9 +128,6 @@ jobs:
           name: Authorize GCloud Command Line Tool
           command: |
             echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
-      - add_ssh_keys:
-          fingerprints:
-            - "96:02:36:2b:33:81:70:ce:37:3d:f8:9b:e5:ac:65:30"
       - run:
           name: Deploy Could Run TC API
           command: gcloud builds submit --config ./apps/api/cloudbuild.yaml . && gcloud beta run deploy api --image gcr.io/ffxivteamcraft/api --region us-central1 --allow-unauthenticated --update-secrets=XIVAPI_KEY=XIVAPI_KEY:latest
