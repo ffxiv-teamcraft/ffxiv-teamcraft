@@ -152,7 +152,9 @@ export class DataService {
           }];
         }
       })
-      .flat();
+      .flat()
+      .map(filter => `${filter.column}${filter.operator}${filter.value}`)
+      .join(',');
     const params: any = {
       query,
       type,

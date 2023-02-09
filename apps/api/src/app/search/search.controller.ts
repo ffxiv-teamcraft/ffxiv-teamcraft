@@ -1,4 +1,4 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, Header, Query } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { SearchService } from './search.service';
 import { Region, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
@@ -13,6 +13,7 @@ export class SearchController {
   }
 
   @Get()
+  @Header('Cache-Control', 'no-cache, no-store, must-revalidate')
   getSearch(
     @Query('query') query: string,
     @Query('type') type: SearchType,
