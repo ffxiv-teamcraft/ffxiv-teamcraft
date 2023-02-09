@@ -316,7 +316,7 @@ export class SearchService {
             xivapiSearchResults.forEach(item => {
               const recipes = lazyRecipes[item.ID] || [];
               if (recipes.length > 0) {
-                const craftedByFilter = filters.find(f => f.column === 'Recipes.ClassJobID');
+                const craftedByFilter = filters.find(f => f.column === 'Recipes.ClassJobID' && f.operator === '=');
                 recipes
                   .filter(recipe => {
                     return !craftedByFilter || +craftedByFilter.value === recipe.job;
@@ -637,8 +637,10 @@ export class SearchService {
     //   return config;
     // });
     return from(axios.get<T>(`${this.getBaseUrl(region)}/search`, {
-      params: { ...options, filters,
-      private_key: environment.xivapiKey },
+      params: {
+        ...options, filters,
+        private_key: environment.xivapiKey
+      },
       paramsSerializer: {
         serialize: params => qs.stringify(params, { arrayFormat: 'comma' })
       }
@@ -647,8 +649,10 @@ export class SearchService {
 
   private xivapiList<T = any>(region: Region, endpoint: string, ids: number[], columns: string[]): Observable<T> {
     return from(axios.get<T>(`${this.getBaseUrl(region)}/${endpoint}`, {
-      params: { ids, columns,
-      private_key: environment.xivapiKey },
+      params: {
+        ids, columns,
+        private_key: environment.xivapiKey
+      },
       paramsSerializer: {
         serialize: params => qs.stringify(params, { arrayFormat: 'comma' })
       }

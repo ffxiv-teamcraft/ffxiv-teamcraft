@@ -84,7 +84,7 @@ export class PacketCapture {
 
   private static readonly MACHINA_GLOBAL_EXE_PATH = join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
 
-  private static readonly MACHINA_KRCN_EXE_PATH = join(app.getAppPath(), '../../resources/MachinaWrapper-krcn/MachinaWrapper.exe');
+  private static readonly MACHINA_KRCN_EXE_PATH = join(app.getAppPath(), '../../resources/MachinaWrapper/krcn/MachinaWrapper.exe');
 
   private captureInterface: CaptureInterface | KRCNCaptureInterface;
 
