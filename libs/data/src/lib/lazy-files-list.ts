@@ -89,11 +89,11 @@ export const lazyFilesList = {
   },
   'deprecatedItems': {
     'fileName': 'deprecated-items.json',
-    'hashedFileName': 'deprecated-items.4b8b5d9e6260388e3dfcf87feb780e3b6c036a79.json'
+    'hashedFileName': 'deprecated-items.9a57cb139a8bec2d57ed71511f0d39c9436db426.json'
   },
   'desynth': {
     'fileName': 'desynth.json',
-    'hashedFileName': 'desynth.e68a906f4edf8e68392e3495f1f9d664c51d66ca.json'
+    'hashedFileName': 'desynth.cbf299421f7454de97c9bda6bb4e12860a27cb4a.json'
   },
   'diademTerritory': {
     'fileName': 'diadem-territory.json',
@@ -101,7 +101,7 @@ export const lazyFilesList = {
   },
   'dropSources': {
     'fileName': 'drop-sources.json',
-    'hashedFileName': 'drop-sources.4b021618008d488e09f5fff2a7abab5a1db2a311.json'
+    'hashedFileName': 'drop-sources.19c4ec8476e4d9dda5c5a84a95cd7d82b21c8e8c.json'
   },
   'equipSlotCategories': {
     'fileName': 'equip-slot-categories.json',
@@ -121,7 +121,7 @@ export const lazyFilesList = {
   },
   'fateSources': {
     'fileName': 'fate-sources.json',
-    'hashedFileName': 'fate-sources.c6ea54c9acaef492423bad828c9b07e024e40af3.json'
+    'hashedFileName': 'fate-sources.41bbeb6ecbda7dbff29afccebf6e077e8e874a54.json'
   },
   'fates': {
     'fileName': 'fates.json',
@@ -145,7 +145,7 @@ export const lazyFilesList = {
   },
   'fishingSources': {
     'fileName': 'fishing-sources.json',
-    'hashedFileName': 'fishing-sources.beb9354b0fed1971b99ed140720cfd53e1d448f7.json'
+    'hashedFileName': 'fishing-sources.bbed3e338f539a8ebc53864d54c3a468034124bd.json'
   },
   'fishingSpots': {
     'fileName': 'fishing-spots.json',
@@ -165,7 +165,7 @@ export const lazyFilesList = {
   },
   'gardeningSources': {
     'fileName': 'gardening-sources.json',
-    'hashedFileName': 'gardening-sources.12676e07975f826b8cb42210a54f8c37ed25f078.json'
+    'hashedFileName': 'gardening-sources.d42e7b9064647d3b20d80fc4c2758134998d40c3.json'
   },
   'gatheringBonuses': {
     'fileName': 'gathering-bonuses.json',
@@ -225,7 +225,7 @@ export const lazyFilesList = {
   },
   'instanceSources': {
     'fileName': 'instance-sources.json',
-    'hashedFileName': 'instance-sources.64968f871c96ee4cc1f9cc1ebf9d68d5347510a4.json'
+    'hashedFileName': 'instance-sources.5106f5ca7af4aadccadd5a598d168cda2f19db74.json'
   },
   'instances': {
     'fileName': 'instances.json',
@@ -341,7 +341,7 @@ export const lazyFilesList = {
   },
   'lootSources': {
     'fileName': 'loot-sources.json',
-    'hashedFileName': 'loot-sources.c8d388bc9ee3639ad37978823de7184eff86b6db.json'
+    'hashedFileName': 'loot-sources.2e5564a2f83fc7775e772a94cca5f2b77696ea84.json'
   },
   'mapEntries': {
     'fileName': 'map-entries.json',
@@ -369,7 +369,7 @@ export const lazyFilesList = {
   },
   'mogstationSources': {
     'fileName': 'mogstation-sources.json',
-    'hashedFileName': 'mogstation-sources.41a2f4f8c1332e168152b635f9efa34d9aa8d933.json'
+    'hashedFileName': 'mogstation-sources.916056797121a30068e6903a160a23e7ab269c4d.json'
   },
   'monsters': {
     'fileName': 'monsters.json',
@@ -429,7 +429,7 @@ export const lazyFilesList = {
   },
   'reduction': {
     'fileName': 'reduction.json',
-    'hashedFileName': 'reduction.bf2f1d41b4187ab868d7a6cadb4cb4980a0a177a.json'
+    'hashedFileName': 'reduction.2977e51ca4c338389effdb1f5ae922c212a98103.json'
   },
   'retainerTasks': {
     'fileName': 'retainer-tasks.json',
@@ -437,7 +437,7 @@ export const lazyFilesList = {
   },
   'reverseInstanceSources': {
     'fileName': 'reverse-instance-sources.json',
-    'hashedFileName': 'reverse-instance-sources.027d7ec16b16028b72ad521a7584b451c1f09ae5.json'
+    'hashedFileName': 'reverse-instance-sources.a991d24357256bad7cc99342d0e7856efcf2ec2a.json'
   },
   'reverseReduction': {
     'fileName': 'reverse-reduction.json',
@@ -473,7 +473,7 @@ export const lazyFilesList = {
   },
   'spearfishingSources': {
     'fileName': 'spearfishing-sources.json',
-    'hashedFileName': 'spearfishing-sources.c9029f0a7d633e520e8e4f04f46aa8a43fdd96c6.json'
+    'hashedFileName': 'spearfishing-sources.c41d272722d9a371b68837696e36c922be7ff26c.json'
   },
   'specialShopNames': {
     'fileName': 'special-shop-names.json',
@@ -537,7 +537,7 @@ export const lazyFilesList = {
   },
   'ventureSources': {
     'fileName': 'venture-sources.json',
-    'hashedFileName': 'venture-sources.f970fba2daed46ebd1d2b819b7e94908b6d570d7.json'
+    'hashedFileName': 'venture-sources.ea7ef0634a6f51c2332d1d3acff94aa62e025ab5.json'
   },
   'ventures': {
     'fileName': 'ventures.json',
@@ -545,7 +545,7 @@ export const lazyFilesList = {
   },
   'voyageSources': {
     'fileName': 'voyage-sources.json',
-    'hashedFileName': 'voyage-sources.fdf9175c0d4f7c2264ba92bf5ebc89c384bfc601.json'
+    'hashedFileName': 'voyage-sources.b845cb15c34bcfec93a84edb56340401d177544a.json'
   },
   'weathers': {
     'fileName': 'weathers.json',
