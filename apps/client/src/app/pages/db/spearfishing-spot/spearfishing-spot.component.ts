@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { SeoService } from '../../../core/seo/seo.service';
 import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
-import { I18nName } from '../../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { Alarm } from '../../../core/alarms/alarm';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
@@ -18,8 +18,8 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
-import { Region } from '../../../modules/settings/region.enum';
-import { LazyData } from '../../../lazy-data/lazy-data';
+import { Region } from '@ffxiv-teamcraft/types';
+import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 
 @Component({
   selector: 'app-spearfishing-spot',

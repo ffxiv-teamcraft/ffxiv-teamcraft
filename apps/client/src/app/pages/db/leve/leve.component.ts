@@ -13,7 +13,7 @@ import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-c
 import { LeveData } from '../../../model/garland-tools/leve-data';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { levemetes } from '../../../core/data/sources/levemetes';
-import { I18nName } from '../../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({

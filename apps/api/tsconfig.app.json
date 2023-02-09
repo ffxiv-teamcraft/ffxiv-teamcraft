@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "module": "esnext",
+    "types": [
+      "node"
+    ],
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "target": "es2020",
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": [
+    "jest.config.ts",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ],
+  "include": [
+    "**/*.ts"
+  ]
+}

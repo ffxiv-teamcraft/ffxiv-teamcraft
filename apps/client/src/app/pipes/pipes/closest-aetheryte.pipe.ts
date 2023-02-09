@@ -3,7 +3,7 @@ import { MapService } from '../../modules/map/map.service';
 import { Observable } from 'rxjs';
 import { Vector2 } from '../../core/tools/vector2';
 import { filter, switchMap } from 'rxjs/operators';
-import { LazyAetheryte } from '../../lazy-data/model/lazy-aetheryte';
+import { LazyAetheryte } from '@ffxiv-teamcraft/data/model/lazy-aetheryte';
 
 @Pipe({
   name: 'closestAetheryte'

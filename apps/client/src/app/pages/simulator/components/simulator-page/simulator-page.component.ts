@@ -10,7 +10,7 @@ import { SeoMetaConfig } from '../../../../core/seo/seo-meta-config';
 import { Craft } from '@ffxiv-teamcraft/simulator';
 import { AbstractSimulationPage } from '../../abstract-simulation-page';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
-import { LazyRecipe } from '../../../../lazy-data/model/lazy-recipe';
+import { LazyRecipe } from '@ffxiv-teamcraft/data/model/lazy-recipe';
 
 @Component({
   selector: 'app-simulator-page',

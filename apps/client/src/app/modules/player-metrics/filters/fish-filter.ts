@@ -2,7 +2,7 @@ import { MetricsDisplayFilter } from './metrics-display-filter';
 import { ProbeReport } from '../model/probe-report';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { tap } from 'rxjs/operators';
-import { LazyData } from '../../../lazy-data/lazy-data';
+import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { Observable } from 'rxjs';
 
 export class FishFilter extends MetricsDisplayFilter<number[]> {

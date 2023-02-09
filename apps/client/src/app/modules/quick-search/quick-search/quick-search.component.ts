@@ -1,7 +1,7 @@
 import { Component, Inject, Input, OnInit, Optional, PLATFORM_ID } from '@angular/core';
-import { SearchType } from '../../../pages/search/search-type';
+import { SearchType } from '@ffxiv-teamcraft/types';
 import { BehaviorSubject, combineLatest, merge, Subject } from 'rxjs';
-import { SearchResult } from '../../../model/search/search-result';
+import { SearchResult } from '@ffxiv-teamcraft/types';
 import { debounceTime, filter, switchMap, tap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SettingsService } from '../../settings/settings.service';

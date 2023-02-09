@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { I18nName } from '../../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { I18nNameLazy } from '../../../model/common/i18n-name-lazy';
 
 @Component({

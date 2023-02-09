@@ -2,8 +2,7 @@ import { Component, Inject, OnInit, PLATFORM_ID, TemplateRef, ViewChild } from '
 import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
-import { debounceTime, filter, first, map, mergeMap, pairwise, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
-import { SearchResult } from '../../../model/search/search-result';
+import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, pairwise, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
@@ -15,13 +14,11 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { AbstractControl, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-import { SearchFilter } from '../../../model/search/search-filter.interface';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
-import { I18nName } from '../../../model/common/i18n-name';
+import { I18nName, SearchFilter, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { TranslateService } from '@ngx-translate/core';
-import { SearchType } from '../search-type';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import * as _ from 'lodash';
 import { stats } from '../../../core/data/sources/stats';
@@ -30,7 +27,7 @@ import { XivapiPatch } from '../../../core/data/model/xivapi-patch';
 import { Language } from '../../../core/data/language';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { PlatformService } from '../../../core/tools/platform.service';
-import { GaActionEnum, GoogleAnalyticsService } from 'ngx-google-analytics';
+import { GoogleAnalyticsService } from 'ngx-google-analytics';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { IS_HEADLESS } from '../../../../environments/is-headless';
@@ -298,7 +295,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       this.availableCraftJobs = this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1);
       this.availableJobs = this.gt.getJobs().filter(job => job.id > 0).map(job => job.id);
     });
-    this.results$ = combineLatest([this.query$, this.searchType$, this.filters$, this.sort$, this.searchLang$]).pipe(
+    this.results$ = combineLatest([this.query$.pipe(distinctUntilChanged()), this.searchType$, this.filters$, this.sort$, this.searchLang$]).pipe(
       debounceTime(400),
       filter(([query, , filters, , lang]) => {
         if (['ko', 'zh'].indexOf(lang.toLowerCase()) > -1) {
@@ -316,7 +313,6 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
           type: type,
           filters: null
         };
-        this.analytics.event(GaActionEnum.SEARCH, SearchType[type], query);
         if (sortBy) {
           queryParams.sort = sortBy;
           queryParams.order = sortOrder;

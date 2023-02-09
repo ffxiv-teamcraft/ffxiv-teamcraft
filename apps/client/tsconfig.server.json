@@ -6,8 +6,7 @@
   },
   "exclude": [
     "**/*.spec.ts",
-    "**/*.po.ts",
-    "**/client-e2e/*"
+    "**/*.po.ts"
   ],
   "angularCompilerOptions": {
     "entryModule": "src/app/app.server.module#AppServerModule",

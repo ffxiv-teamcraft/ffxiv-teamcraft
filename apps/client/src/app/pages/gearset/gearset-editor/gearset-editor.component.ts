@@ -21,9 +21,9 @@ import { IpcService } from '../../../core/electron/ipc.service';
 import { ImportFromPcapPopupComponent } from '../../../modules/gearsets/import-from-pcap-popup/import-from-pcap-popup.component';
 import { GearsetCostPopupComponent } from '../../../modules/gearsets/gearset-cost-popup/gearset-cost-popup.component';
 import { GearsetCreationPopupComponent } from '../../../modules/gearsets/gearset-creation-popup/gearset-creation-popup.component';
-import { XivapiSearchOptions } from '@xivapi/angular-client/src/model';
+import { XivapiSearchOptions } from '@xivapi/angular-client/model';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { LazyData } from '../../../lazy-data/lazy-data';
+import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { Memoized } from '../../../core/decorators/memoized';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { EnvironmentService } from '../../../core/environment.service';
@@ -514,6 +514,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   editMaterias(gearset: TeamcraftGearset, propertyName: string, equipmentPiece: EquipmentPiece, category: any): void {
     const clone = JSON.parse(JSON.stringify(equipmentPiece));
     this.i18n.getNameObservable('items', equipmentPiece.itemId).pipe(
+      first(),
       switchMap(itemName => {
         return this.dialog.create({
           nzTitle: this.translate.instant('GEARSETS.Modal_editor', { itemName }),

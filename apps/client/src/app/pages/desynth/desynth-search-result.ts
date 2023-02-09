@@ -1,4 +1,4 @@
-import { SearchResult } from '../../model/search/search-result';
+import { SearchResult } from "@ffxiv-teamcraft/types";
 
 export interface DesynthSearchResult extends SearchResult {
   dlvl: number;

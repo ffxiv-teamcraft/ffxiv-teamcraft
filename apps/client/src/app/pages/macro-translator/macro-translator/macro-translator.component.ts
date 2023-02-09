@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Language } from '../../../core/data/language';
-import { I18nName } from '../../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { zhActions } from '../../../core/data/sources/zh-actions';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest, Observable, of } from 'rxjs';

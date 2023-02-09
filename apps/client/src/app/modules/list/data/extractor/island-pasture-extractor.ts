@@ -4,7 +4,7 @@ import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { IslandAnimal } from '../../model/island-animal';
-import { LazyIslandAnimal } from '../../../../lazy-data/model/lazy-island-animal';
+import { LazyIslandAnimal } from '@ffxiv-teamcraft/data/model/lazy-island-animal';
 
 export class IslandPastureExtractor extends AbstractExtractor<IslandAnimal[]> {
 

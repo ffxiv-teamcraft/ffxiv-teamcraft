@@ -3,12 +3,12 @@ import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { I18nData } from '../../model/common/i18n-data';
-import { I18nName } from '../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { I18nNameLazy } from '../../model/common/i18n-name-lazy';
 import { CustomItem } from '../../modules/custom-items/model/custom-item';
 import { Language } from '../data/language';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
-import { LazyDataI18nKey } from '../../lazy-data/lazy-data-types';
+import { LazyDataI18nKey } from '@ffxiv-teamcraft/types';
 import { mapIds } from '../data/sources/map-ids';
 import { withLazyData } from '../rxjs/with-lazy-data';
 
@@ -46,11 +46,8 @@ export class I18nToolsService {
     );
   }
 
-  public getName(i18nName: I18nName, item?: CustomItem): string {
+  public getName(i18nName: I18nName): string {
     if (!i18nName) {
-      if (item !== undefined && item.name !== undefined) {
-        return item.name;
-      }
       return 'missing name';
     }
     return (i18nName[this.translator.currentLang] || i18nName.en || 'no name').replace('', '•');

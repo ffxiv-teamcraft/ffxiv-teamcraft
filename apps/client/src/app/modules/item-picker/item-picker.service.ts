@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { SearchResult } from '../../model/search/search-result';
+import { SearchResult } from '@ffxiv-teamcraft/types';
 import { Observable } from 'rxjs';
 import { ItemPickerComponent } from './item-picker/item-picker.component';
 import { TranslateService } from '@ngx-translate/core';

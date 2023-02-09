@@ -4,7 +4,6 @@ lists.json
 ssr/output
 functions/dist
 *.log
-apps/client/src/app/core/data/lazy-files-list.ts
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 apps/client/src/environments/version.ts
@@ -55,9 +54,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-/apps/data-extraction/build/
-/apps/data-extraction/input/*
-/apps/data-extraction/csv/*
+/apps/data-extraction/src/assets/input/*
+/apps/data-extraction/src/assets/csv/*
 /apps/client/src/assets/tc-loader.js
 /ssr/dist/
 /functions/lib/

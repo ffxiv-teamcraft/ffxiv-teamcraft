@@ -7,7 +7,7 @@ import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 import { StatsService } from '../../../modules/gearsets/stats.service';
-import { BaseParam } from '../../../modules/gearsets/base-param';
+import { BaseParam } from '@ffxiv-teamcraft/data/game';
 import { DataType } from '../../../modules/list/data/data-type';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { getItemSource, ListRow } from '../../../modules/list/model/list-row';

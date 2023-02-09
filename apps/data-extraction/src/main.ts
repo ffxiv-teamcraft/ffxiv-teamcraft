@@ -66,6 +66,7 @@ const argv = yargs(hideBin(process.argv)).argv;
 
 // We have to do it like that because the lib seems to dynamically import its prompts,
 // which creates shitty typings
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { MultiSelect } = require('enquirer');
 
 const extractors: AbstractExtractor[] = [
@@ -216,6 +217,5 @@ const extractors: AbstractExtractor[] = [
         process.exit(0);
       }
     });
-
   }
 })();

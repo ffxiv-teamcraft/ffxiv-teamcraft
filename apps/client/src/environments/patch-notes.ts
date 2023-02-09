@@ -1,8 +1,19 @@
 export const patchNotes = `### Bug Fixes
 
-* **alarms:** fixed alarms sometimes not ringing.
-* **desktop:** better packet capture status monitoring.
-* **desktop:** better restart logic for when no packets were received after 5min.
-* **i18n:** fixed some wrong translation labels in island workshop and profile.
-* **list:** fixed HQ flag interactions.
-* **voyages:** fixed infinite loading in some import cases.`;
+* **alarms:** fix alarms ringing multiple times during early delay.
+* **community-rotations:** better support for custom simulator rotations.
+* **db:** add handmade NPC links for gemstone shops.
+* **desktop:** support for chinese and korean packet capture.
+* **gearset:** fixed materia edit popup opening multiple times when changing language.
+* **i18n:** fix wrong translation label in masterbooks popup.
+* **island-sanctuary:** fixed state import to history database.
+* **island-workshop:** fixed days not using translation labels in planning.
+* **island-workshop:** peak patterns updated for 6.3.
+* **list-aggregates:** fixed reset panel crashing the app.
+* **simulator:** fix macro import with additional auto translate whitespace.
+
+
+### Performance Improvements
+
+* **search:** new search API for better performances.
+* **simulator:** better min stats finder.`;

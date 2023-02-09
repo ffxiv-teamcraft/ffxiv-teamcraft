@@ -36,8 +36,17 @@
             "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
             "output": "/assets/"
           },
-          "apps/client/src/oembed.json",
-          "apps/client/src/ads.txt"
+          {
+            "glob": "**/*",
+            "input": "./libs/data/src/lib/json/",
+            "output": "/assets/data/"
+          },
+          {
+            "glob": "**/*",
+            "input": "./libs/data/src/lib/extracts/",
+            "output": "/assets/extracts/"
+          },
+          "apps/client/src/oembed.json"
         ],
         "styles": ["apps/client/src/cdk.less", "apps/client/src/styles.less", "apps/client/src/theme.less"],
         "scripts": ["node_modules/marked/marked.min.js"]

@@ -1,7 +1,7 @@
 import { Inject, Pipe, PipeTransform, PLATFORM_ID } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
-import { I18nName } from '../../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { DbComment } from './model/db-comment';
 import { Language } from '../../../core/data/language';

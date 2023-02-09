@@ -2,13 +2,13 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { combineLatest, EMPTY, map, Observable, of, Subject, timer } from 'rxjs';
+import { combineLatest, EMPTY, map, Observable, of, timer } from 'rxjs';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { NzTableFilterFn, NzTableFilterList, NzTableSortFn, NzTableSortOrder } from 'ng-zorro-antd/table';
 import { TranslateService } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
-import { catchError, distinctUntilChanged, filter, retry, switchMap, tap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, retry, switchMap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { subDays } from 'date-fns';
@@ -411,13 +411,14 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
         switchMap(([reset, state, user]) => {
           return this.mjiWorkshopStatusService.get(reset.toString()).pipe(
             map((historyEntry) => {
-              const shouldUpdate = !historyEntry.lock
-                && !state.edited
-                && historyEntry.objects.some((obj, i) => {
-                  return state.supplyDemand[i].supply < obj.supply;
-                })
-                && !state.supplyDemand.some(entry => entry.supply > 3)
-                && !state.supplyDemand.every(entry => entry.supply === 0 && entry.demand === 0);
+              const shouldUpdate = user.admin ||
+                (!historyEntry.lock
+                  && !state.edited
+                  && historyEntry.objects.some((obj, i) => {
+                    return state.supplyDemand[i].supply < obj.supply;
+                  })
+                  && !state.supplyDemand.some(entry => entry.supply > 3)
+                  && !state.supplyDemand.every(entry => entry.supply === 0 && entry.demand === 0));
               return {
                 shouldUpdate,
                 historyEntry
@@ -427,12 +428,17 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
               return of({ shouldUpdate: true, historyEntry: null });
             }),
             switchMap(({ shouldUpdate, historyEntry }) => {
-              // Only update if reset was less than 2h ago, else it's probably bad data anyways
               if (shouldUpdate && state.updated >= reset) {
                 let supplyDemand = state.supplyDemand;
                 if (historyEntry) {
-                  supplyDemand = state.supplyDemand.map((row, i) => {
-                    row.supply = Math.min(historyEntry.objects[i].supply, row.supply);
+                  supplyDemand = historyEntry.objects.map((historyRow, i) => {
+                    const stateRow = state.supplyDemand[i];
+                    // If supply is >= 3, it's probably a missing item, just return history row (and fallback if it's undefined).
+                    if (stateRow.supply >= 3) {
+                      return historyRow || stateRow;
+                    }
+                    // Pick the row that has the lowest supply
+                    return stateRow.supply > historyRow.supply ? historyRow : stateRow;
                   });
                 }
                 return this.mjiWorkshopStatusService.set(reset.toString(), {
@@ -447,7 +453,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
             })
           );
         })
-      ).subscribe(() => console.log('UPLOADED STATE'));
+      ).subscribe();
       this.ipc.islandWorkshopSupplyDemandPackets$.subscribe(packet => {
         this.state$.next({
           ...packet,

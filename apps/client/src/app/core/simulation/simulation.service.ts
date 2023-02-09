@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as Simulator from '@ffxiv-teamcraft/simulator';
-import { Region } from '../../modules/settings/region.enum';
+import { Region } from '@ffxiv-teamcraft/types';
 import { getSimulator } from './simulation';
 
 export type ActionResult = Simulator.ActionResult;

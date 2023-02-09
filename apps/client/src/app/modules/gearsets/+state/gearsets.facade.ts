@@ -36,8 +36,8 @@ import { PermissionLevel } from '../../../core/database/permissions/permission-l
 import { GearsetProgression } from '../../../model/gearset/gearset-progression';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
-import { LazyData } from '../../../lazy-data/lazy-data';
-import { LazyMateria } from '../../../lazy-data/model/lazy-materia';
+import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
+import { LazyMateria } from '@ffxiv-teamcraft/data/model/lazy-materia';
 import { AriyalaStatToBaseParamId } from '../../../pages/lists/list-import-popup/link-parser/ariyala-stat-to-base-param-id';
 import { PermissionsController } from '../../../core/database/permissions-controller';
 import { lazyLoaded } from '../../../core/rxjs/lazy-loaded';

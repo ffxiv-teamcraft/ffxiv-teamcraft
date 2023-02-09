@@ -4,7 +4,7 @@ import { TradeSource } from './trade-source';
 import { Vendor } from './vendor';
 import { GatheredBy } from './gathered-by';
 import { GardeningData } from './gardening-data';
-import { I18nName } from '../../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { Drop } from './drop';
 import { Alarm } from '../../../core/alarms/alarm';
 import { CompactMasterbook } from '../../../model/common/compact-masterbook';

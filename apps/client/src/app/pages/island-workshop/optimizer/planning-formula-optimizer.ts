@@ -1,10 +1,10 @@
-import { LazyData } from '../../../lazy-data/lazy-data';
 import { CraftworksObject } from '../craftworks-object';
 import { WorkshopPlanning } from './workshop-planning';
 import { IslandWorkshopSimulator } from './island-workshop-simulator';
 import { WorkshopStatusData } from '../workshop-status-data';
 import { WorkshopPattern } from '../workshop-patterns';
 import { findPatterns } from './find-pattern';
+import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 
 
 export class PlanningFormulaOptimizer {

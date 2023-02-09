@@ -1,10 +1,10 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as LazyDataActions from './lazy-data.actions';
-import { concatMap, map, mergeMap, switchMap } from 'rxjs/operators';
+import { concatMap, map, switchMap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { LazyDataFacade } from './lazy-data.facade';
-import { lazyFilesList } from '../../core/data/lazy-files-list';
+import { lazyFilesList } from '@ffxiv-teamcraft/data/lazy-files-list';
 import { merge, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { isPlatformServer } from '@angular/common';
@@ -14,6 +14,7 @@ import { LazyDataKey } from '../lazy-data-types';
 import { debounceBufferTime } from '../../core/rxjs/debounce-buffer-time';
 import { uniq } from 'lodash';
 import { IS_HEADLESS } from '../../../environments/is-headless';
+import { uniqMergeMap } from '../../core/rxjs/uniq-merge-map';
 
 @Injectable()
 export class LazyDataEffects {
@@ -23,7 +24,7 @@ export class LazyDataEffects {
   loadLazyDataEntityEntry$ = createEffect(() =>
     this.actions$.pipe(
       ofType(LazyDataActions.loadLazyDataEntityEntry),
-      debounceBufferTime(10),
+      debounceBufferTime(50),
       map(actions => {
         return actions.reduce((acc, { id, entity }) => {
           return {
@@ -42,7 +43,7 @@ export class LazyDataEffects {
             );
           }
           const { contentName, hash } = this.parseFileName(entity);
-          return this.http.get<any>(`https://data.ffxivteamcraft.com/${hash}/${contentName}/${ids.join(',')}`).pipe(
+          return this.http.get<any>(`https://api.ffxivteamcraft.com/data/${contentName}/${hash}/${ids.join(',')}`).pipe(
             switchMap(res => {
               return ids.map(id => {
                 return LazyDataActions.loadLazyDataEntityEntrySuccess({ id, row: res[id] || null, key: entity });
@@ -56,7 +57,7 @@ export class LazyDataEffects {
   loadLazyDataFullEntity$ = createEffect(() =>
     this.actions$.pipe(
       ofType(LazyDataActions.loadLazyDataFullEntity),
-      concatMap(({ entity }) => {
+      uniqMergeMap(({ entity }) => String(entity), ({ entity }) => {
         return this.getData(this.getUrl(entity)).pipe(
           map(entry => {
             return LazyDataActions.loadLazyDataFullEntitySuccess({ entry, key: entity });

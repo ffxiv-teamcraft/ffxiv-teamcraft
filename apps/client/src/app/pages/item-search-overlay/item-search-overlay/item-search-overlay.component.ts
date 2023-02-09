@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { combineLatest, Observable, Subject } from 'rxjs';
-import { I18nName } from '../../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { debounceTime, filter, map, startWith, switchMap } from 'rxjs/operators';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListRow } from '../../../modules/list/model/list-row';

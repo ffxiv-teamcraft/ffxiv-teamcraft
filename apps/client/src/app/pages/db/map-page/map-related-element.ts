@@ -1,6 +1,6 @@
 import { Vector2 } from '../../../core/tools/vector2';
 import { MapMarker } from '../../../modules/map/map-marker';
-import { I18nName } from '../../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { Observable } from 'rxjs';
 
 export interface MapRelatedElement {

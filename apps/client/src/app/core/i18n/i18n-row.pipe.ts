@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { LazyDataEntries, LazyDataI18nKey } from '../../lazy-data/lazy-data-types';
-import { I18nName } from '../../model/common/i18n-name';
+import { LazyDataEntries } from '../../lazy-data/lazy-data-types';
+import { I18nName, LazyDataI18nKey } from '@ffxiv-teamcraft/types';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { Observable } from 'rxjs';
 

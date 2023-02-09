@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BaseParam } from './base-param';
+import { BaseParam } from '@ffxiv-teamcraft/data/game';
 import { EquipmentPiece } from '../../model/gearset/equipment-piece';
 import { TeamcraftGearset } from '../../model/gearset/teamcraft-gearset';
 import { MateriaService } from './materia.service';
@@ -8,9 +8,9 @@ import { combineLatest, EMPTY, Observable, of } from 'rxjs';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { expand, last, map, shareReplay, switchMap } from 'rxjs/operators';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
-import { LazyItemStat } from '../../lazy-data/model/lazy-item-stat';
-import { LazyItemSetBonus } from '../../lazy-data/model/lazy-item-set-bonus';
-import { LazyMateria } from '../../lazy-data/model/lazy-materia';
+import { LazyItemStat } from '@ffxiv-teamcraft/data/model/lazy-item-stat';
+import { LazyItemSetBonus } from '@ffxiv-teamcraft/data/model/lazy-item-set-bonus';
+import { LazyMateria } from '@ffxiv-teamcraft/data/model/lazy-materia';
 import { Memoized } from '../../core/decorators/memoized';
 
 @Injectable({

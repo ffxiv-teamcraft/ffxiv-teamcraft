@@ -3,9 +3,9 @@ import { Observable } from 'rxjs';
 import { map, startWith, switchMap } from 'rxjs/operators';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { LazyDataEntries, LazyDataRecordKey } from '../../lazy-data/lazy-data-types';
-import { LazyDataKeys } from '../../lazy-data/lazy-data-keys';
 import { TranslateService } from '@ngx-translate/core';
 import { Language } from '../../core/data/language';
+import { LazyDataKeys } from '@ffxiv-teamcraft/data/model/lazy-data-keys';
 
 @Pipe({
   name: 'lazyRow'

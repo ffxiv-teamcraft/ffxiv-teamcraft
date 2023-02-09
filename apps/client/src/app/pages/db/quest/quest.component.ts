@@ -15,7 +15,7 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { questChainLengths } from '../../../core/data/sources/quests-chain-lengths';
 import { Trade } from '../../../modules/list/model/trade';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { LazyQuest } from '../../../lazy-data/model/lazy-quest';
+import { LazyQuest } from '@ffxiv-teamcraft/data/model/lazy-quest';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 @Component({

@@ -5,14 +5,12 @@ import { combineLatest } from 'rxjs';
 import { XivDataService } from '../xiv/xiv-data.service';
 
 export class LgbExtractor extends AbstractExtractor {
-  public isSpecific = true;
-
   protected doExtract(xiv: XivDataService): any {
-    const mapData = require('../../../../client/src/assets/data/maps.json');
-    const fates = require('../../../../client/src/assets/data/fates.json');
-    const npcs = require('../../../../client/src/assets/data/npcs.json');
-    const territoryLayers = require('../../../../client/src/assets/data/territory-layers.json');
-    const lgbFolder = '../../../input/lgb';
+    const mapData = this.requireLazyFile('maps');
+    const fates = this.requireLazyFile('fates');
+    const npcs = this.requireLazyFile('npcs');
+    const territoryLayers = this.requireLazyFile('territory-layers');
+    const lgbFolder = './assets/input/lgb';
     const housingMaterialSuppliers = [
       1008837,
       1025720,

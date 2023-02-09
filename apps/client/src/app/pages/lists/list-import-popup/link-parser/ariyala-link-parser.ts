@@ -6,7 +6,7 @@ import { AriyalaMateriaOptions } from './ariyala-materia-options';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { StaticData } from '../../../../lazy-data/static-data';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
-import { LazyMateria } from '../../../../lazy-data/model/lazy-materia';
+import { LazyMateria } from '@ffxiv-teamcraft/data/model/lazy-materia';
 import { AriyalaStatToBaseParamId } from './ariyala-stat-to-base-param-id';
 
 export class AriyalaLinkParser implements ExternalListLinkParser {

@@ -4,7 +4,7 @@ import { DataType } from '../data-type';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { MasterbookClass } from '../../../../lazy-data/model/lazy-recipe';
+import { MasterbookClass } from '@ffxiv-teamcraft/data/model/lazy-recipe';
 
 export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {
 

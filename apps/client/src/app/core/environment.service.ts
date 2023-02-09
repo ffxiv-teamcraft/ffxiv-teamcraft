@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SettingsService } from '../modules/settings/settings.service';
-import { Region } from '../modules/settings/region.enum';
+import { Region } from '@ffxiv-teamcraft/types';
 import { environment } from '../../environments/environment';
 
 @Injectable({

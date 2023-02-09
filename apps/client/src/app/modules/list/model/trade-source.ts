@@ -1,6 +1,6 @@
 import { Trade } from './trade';
 import { TradeNpc } from './trade-npc';
-import { I18nName } from '../../../model/common/i18n-name';
+import { I18nName } from '@ffxiv-teamcraft/types';
 
 export interface TradeSource {
   // Useful for debugging stuff

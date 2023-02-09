@@ -134,8 +134,11 @@ export class RotationPanelComponent implements OnInit {
               stats.level,
               gearSets.length > 0 ? gearSets.map(set => set.level) as [number, number, number, number, number, number, number, number] :
                 [this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel]);
-            const recipe = recipes.find(r => r.id === rotation.recipe.id);
-            return new this.simulator.Simulation(recipe as unknown as Craft, this.registry.deserializeRotation(rotation.rotation), crafterStats).run(true);
+            let recipe: Craft = recipes.find(r => r.id === rotation.recipe.id) as unknown as Craft;
+            if (!recipe) {
+              recipe = rotation.recipe as unknown as Craft;
+            }
+            return new this.simulator.Simulation(recipe, this.registry.deserializeRotation(rotation.rotation), crafterStats).run(true);
           })
         );
       })
