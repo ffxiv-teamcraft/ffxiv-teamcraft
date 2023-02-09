@@ -8,7 +8,25 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
+* **alarms:** fix alarms ringing multiple times during early delay ([75a94e3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/75a94e3))
+* **community-rotations:** better support for custom simulator rotations ([c422172](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c422172))
+* **db:** add handmade NPC links for gemstone shops ([9df03fb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9df03fb))
+* **desktop:** support for chinese and korean packet capture ([34a812e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/34a812e))
+* **gearset:** fixed materia edit popup opening multiple times when changing language ([7af47ee](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7af47ee))
+* **i18n:** fix wrong translation label in masterbooks popup ([705853c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/705853c))
+* **island-sanctuary:** fixed state import to history database ([b08e956](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b08e956))
+* **island-workshop:** fixed days not using translation labels in planning ([3d64b6e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3d64b6e))
+* **island-workshop:** peak patterns updated for 6.3 ([5335729](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5335729))
+* **list-aggregates:** fixed reset panel crashing the app ([811546a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/811546a))
+* **simulator:** fix macro import with additional auto translate whitespace ([9cce8ff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9cce8ff))
 * **desktop:** fixed lazy data loading not loading at all ([d0456cd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d0456cd))
+
+
+### Performance Improvements
+
+* **search:** new search API for better performances ([#2482](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2482)) ([f9de4bb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f9de4bb))
+* **simulator:** better min stats finder ([2709e55](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2709e55))
+
 
 
 
