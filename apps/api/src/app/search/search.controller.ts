@@ -35,8 +35,7 @@ export class SearchController {
           };
         });
     } catch (e) {
-      console.log(filters);
-      console.error(e);
+      console.error(filters, e);
     }
     return this.searchService.search(
       type,

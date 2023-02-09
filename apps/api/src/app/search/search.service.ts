@@ -128,7 +128,7 @@ export class SearchService {
       filters
     }).pipe(
       switchMap(res => {
-        if (res.length === 0) {
+        if (res.Results.length === 0) {
           return of([]);
         }
         return combineLatest(res.Results.map(row => {
