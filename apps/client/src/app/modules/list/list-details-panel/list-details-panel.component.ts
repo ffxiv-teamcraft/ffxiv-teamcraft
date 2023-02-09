@@ -37,7 +37,6 @@ import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { observeInput } from '../../../core/rxjs/observe-input';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { ProcessedListAggregate } from '../../list-aggregate/model/processed-list-aggregate';
-import { topologicalSort } from '../../../core/tools/topological-sort';
 import { getTiers } from '../../../core/tools/get-tiers';
 
 @Component({
@@ -311,7 +310,11 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   public markPanelAsDone(): void {
     this.displayRow.rows.forEach(row => {
-      this.listsFacade.setItemDone(row.id, row.icon, this.finalItems || row.finalItem, row.amount - row.done, row.recipeId, row.amount, false);
+      if (this.aggregate) {
+        this.aggregate.generateSetItemDone(row, row.amount - row.done, this.finalItems || row.finalItem)(this.listsFacade);
+      } else {
+        this.listsFacade.setItemDone(row.id, row.icon, this.finalItems || row.finalItem, row.amount - row.done, row.recipeId, row.amount, false);
+      }
       if (this.settings.autoMarkAsCompleted) {
         if (row.sources.some(s => s.type === DataType.GATHERED_BY)) {
           this.authFacade.markAsDoneInLog('gathering', row.id, true);
@@ -329,7 +332,11 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   public resetPanel(): void {
     this.displayRow.rows.forEach(row => {
-      this.listsFacade.setItemDone(row.id, row.icon, this.finalItems || row.finalItem, -row.done, row.recipeId, row.amount, false);
+      if (this.aggregate) {
+        this.aggregate.generateSetItemDone(row, -row.done, this.finalItems || row.finalItem)(this.listsFacade);
+      } else {
+        this.listsFacade.setItemDone(row.id, row.icon, this.finalItems || row.finalItem, -row.done, row.recipeId, row.amount, false);
+      }
     });
   }
 
@@ -378,7 +385,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         return rowsWithNames.reduce((exportString, { row, itemName }) => {
           return exportString + `${row.amount}x ${itemName}\n`;
         }, `${this.translate.instant(this.displayRow.title)} :\n`);
-      })
+      }),
+      first()
     );
   };
 
@@ -492,27 +500,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       return true;
     });
     return preferredPosition || positions[0];
-  }
-
-  private setTier(row: ListRow, result: ListRow[][]): ListRow[][] {
-    if (result[0] === undefined) {
-      result[0] = [];
-    }
-    // Default tier is -1, because we want to do +1 to the last requirement tier to define the tier of the current item.
-    let requirementsTier = -1;
-    for (const requirement of (row.requires || [])) {
-      for (let tier = 0; tier < result.length; tier++) {
-        if (result[tier].find(r => r.id === requirement.id) !== undefined) {
-          requirementsTier = requirementsTier > tier ? requirementsTier : tier;
-        }
-      }
-    }
-    const itemTier = requirementsTier + 1;
-    if (result[itemTier] === undefined) {
-      result[itemTier] = [];
-    }
-    result[itemTier].push(row);
-    return result;
   }
 
 }
