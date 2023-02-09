@@ -14,8 +14,9 @@ const zhFiles = fs.readdirSync(path.join(__dirname, '../../dist/apps/client/asse
     return row.indexOf('.json') > -1;
   })
   .forEach(row => {
+    const contentPath = path.join(__dirname, '../../libs/data/src/lib/json/', row);
     const filePath = path.join(__dirname, '../../dist/apps/client/assets/data/', row);
-    const hash = hashFiles.sync({ files: [filePath] });
+    const hash = hashFiles.sync({ files: [contentPath] });
     if (row.indexOf(hash) > -1) {
       return;
     }
@@ -27,7 +28,8 @@ const zhFiles = fs.readdirSync(path.join(__dirname, '../../dist/apps/client/asse
 
 // Extracts
 const extractsPath = path.join(__dirname, '../../dist/apps/client/assets/extracts/extracts.json');
-const extractsHash = hashFiles.sync({ files: [extractsPath] });
+const extractsContentPath = path.join(__dirname, '../../libs/data/src/lib/extracts/extracts.json');
+const extractsHash = hashFiles.sync({ files: [extractsContentPath] });
 fs.renameSync(extractsPath, extractsPath.replace('.json', `.${extractsHash}.json`));
 
 
