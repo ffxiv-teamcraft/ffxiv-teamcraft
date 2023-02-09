@@ -5,7 +5,7 @@
      fxLayoutAlign="space-between center"
      fxLayoutAlign.lt-md="center center"
      fxLayoutGap="5px">
-  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+  <div class="flex-row justify-start align-center gap-5">
     <div class="checkbox">
       <label [(ngModel)]="selected" (ngModelChange)="selectionChange(row, $event)"
              nz-checkbox></label>
@@ -14,8 +14,8 @@
       <app-item-icon *ngIf="row.contentType === 'items'" [icon]="row.icon" [itemId]="row.itemId" [width]="32"></app-item-icon>
       <app-item-icon *ngIf="row.contentType !== 'items'" [icon]="row.icon" [itemId]="null" [width]="32" [tooltipDisabled]="true"></app-item-icon>
     </div>
-    <div fxLayout="column">
-      <div [appItemRarity]="+row.itemId" class="item-name" fxLayout="row" fxLayoutGap="5px">
+    <div class="flex-column">
+      <div [appItemRarity]="+row.itemId" class="item-name flex-row gap-5">
         <app-i18n-name [content]="row.contentType" [id]="row.itemId"></app-i18n-name>
         <app-db-button [id]="row.itemId" type="item" tutorialStep="TUTORIAL.DB.Button"
                        *ngIf="row.contentType === 'items'"></app-db-button>
@@ -26,7 +26,7 @@
             <i nz-icon nzType="reconciliation" nzTheme="outline"></i>
           </a>
         </div>
-        <app-marketboard-icon [itemId]="row.itemId" [showHistory]="true"  *ngIf="row.contentType === 'items'"></app-marketboard-icon>
+        <app-marketboard-icon [itemId]="row.itemId" [showHistory]="true" *ngIf="row.contentType === 'items'"></app-marketboard-icon>
         <app-company-workshop-tree-button *ngIf="row.recipe?.job === 0" [recipeId]="row.recipe.recipeId" size="small"></app-company-workshop-tree-button>
       </div>
       <div *ngIf="row.recipe?.job > 1" class="description">
@@ -49,7 +49,7 @@
   </div>
   <div class="inputs-container" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center"
        fxLayoutGap="10px" fxLayoutGap.lt-md="10px">
-    <div class="input-box" fxLayout="row" fxLayoutAlign="center center" nz-col>
+    <div class="input-box align-center justify-center" nz-col>
       <nz-input-group [nzAddOnBefore]="null | ifRegions:[Region.China, Region.Korea]:(row.recipe !== undefined?addCrafts:null)" [nzCompact]="true"
                       class="amount-input">
         <nz-input-number mouseWheel
@@ -67,7 +67,7 @@
         </ng-template>
       </nz-input-group>
     </div>
-    <div class="actions" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px" nz-col>
+    <div class="actions flex-row justify-center align-center gap-5" nz-col>
       <button (click)="addItemsToList.emit()" [nzShape]="'circle'" [nzTooltipTitle]="'ITEMS.Add_to_list' | translate" [nzType]="'primary'"
               nz-button nz-tooltip>
         <i nz-icon nzType="plus"></i>
@@ -85,309 +85,313 @@
     </div>
   </div>
 </div>
-<div *ngIf="row.type === searchTypes.INSTANCE" [class.odd]="odd"
-     class="result-row"
-     fxLayout="row"
-     fxLayout.lt-md="column"
-     fxLayoutAlign="flex-start flex-start"
-     fxLayoutAlign.lt-md="center center"
-     fxLayoutGap="5px">
-  <a routerLink="/db/{{currentLang}}/instance/{{row.id}}">
-    <img *ngIf="row.banner" [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
-  </a>
-  <div fxLayout="column" fxLayoutGap="5px">
-    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <img [src]="row.id | lazyRow:'instances':'icon' | async | xivapiIcon" alt="">
-      <app-i18n-name content="instances" [id]="row.id"></app-i18n-name>
-      <app-db-button [id]="row.id" type="instance"></app-db-button>
+<ng-container [ngSwitch]="row.type">
+  <div *ngSwitchCase="searchTypes.INSTANCE" [class.odd]="odd"
+       class="result-row"
+       fxLayout="row"
+       fxLayout.lt-md="column"
+       fxLayoutAlign="flex-start flex-start"
+       fxLayoutAlign.lt-md="center center"
+       fxLayoutGap="5px">
+    <a routerLink="/db/{{currentLang}}/instance/{{row.id}}">
+      <img *ngIf="row.banner" [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
+    </a>
+    <div class="flex-column gap-5">
+      <div class="flex-row justify-start align-center gap-5">
+        <img [src]="row.id | lazyRow:'instances':'icon' | async | xivapiIcon" alt="">
+        <app-i18n-name content="instances" [id]="row.id"></app-i18n-name>
+        <app-db-button [id]="row.id" type="instance"></app-db-button>
+      </div>
+      <div class="flex-row gap-5">
+        <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+        <div class="instance-level">lvl {{row.level}}</div>
+      </div>
     </div>
-    <div fxLayout="row" fxLayoutGap="5px">
+  </div>
+  <div *ngSwitchCase="searchTypes.QUEST" [class.odd]="odd"
+       class="result-row"
+       fxLayout="row"
+       fxLayout.lt-md="column"
+       fxLayoutAlign="flex-start flex-start"
+       fxLayoutAlign.lt-md="center center"
+       fxLayoutGap="5px">
+    <a routerLink="/db/{{currentLang}}/quest/{{row.id}}">
+      <img *ngIf="row.banner && row.banner !== row.icon" [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
+    </a>
+    <div class="flex-column gap-5">
+      <div class="flex-row justify-start align-center gap-5">
+        <img [src]="row.id | lazyRow: 'quests':'icon' | async | xivapiIcon" alt="" class="quest-icon">
+        <app-i18n-name content="quests" [id]="row.id"></app-i18n-name>
+        <app-db-button [id]="row.id" type="quest"></app-db-button>
+      </div>
       <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
-      <div class="instance-level">lvl {{row.level}}</div>
     </div>
   </div>
-</div>
-<div *ngIf="row.type === searchTypes.QUEST" [class.odd]="odd"
-     class="result-row"
-     fxLayout="row"
-     fxLayout.lt-md="column"
-     fxLayoutAlign="flex-start flex-start"
-     fxLayoutAlign.lt-md="center center"
-     fxLayoutGap="5px">
-  <a routerLink="/db/{{currentLang}}/quest/{{row.id}}">
-    <img *ngIf="row.banner && row.banner !== row.icon" [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
-  </a>
-  <div fxLayout="column" fxLayoutGap="5px">
-    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <img [src]="row.id | lazyRow: 'quests':'icon' | async | xivapiIcon" alt="" class="quest-icon">
-      <app-i18n-name content="quests" [id]="row.id"></app-i18n-name>
-      <app-db-button [id]="row.id" type="quest"></app-db-button>
-    </div>
-    <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
-  </div>
-</div>
-<div *ngIf="row.type === searchTypes.NPC" [class.odd]="odd"
-     class="result-row"
-     fxLayout="row"
-     fxLayout.lt-md="column"
-     fxLayoutAlign="flex-start flex-start"
-     fxLayoutAlign.lt-md="center center"
-     fxLayoutGap="5px">
-  <a routerLink="/db/{{currentLang}}/npc/{{row.id}}">
-    <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon">
-  </a>
-  <div fxLayout="column" fxLayoutGap="5px">
-    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <div fxLayout="row" fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px">
-        <div fxLayout="column">
-          <app-i18n-name content="npcs" [id]="row.id"></app-i18n-name>
-          <div fxLayout="row" fxLayoutGap="5px">
-            <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
-            <div><span
-              *ngIf="(row.id | i18nRow:'npcs')?.position as npcPosition">{{npcPosition.zoneid | i18nRow:'places' | i18n}}
-              - X: {{npcPosition.x}} Y: {{npcPosition.y}} </span>
-              <i *ngIf="(row.title | i18n) !== 'No name'">{{row.title | i18n}}</i></div>
-          </div>
-        </div>
-        <app-db-button [id]="row.id" type="npc"></app-db-button>
-      </div>
-    </div>
-  </div>
-</div>
-<div *ngIf="row.type === searchTypes.MONSTER" [class.odd]="odd"
-     class="result-row"
-     fxLayout="row"
-     fxLayout.lt-md="column"
-     fxLayoutAlign="flex-start flex-start"
-     fxLayoutAlign.lt-md="center center"
-     fxLayoutGap="5px">
-  <a routerLink="/db/{{currentLang}}/mob/{{row.id}}">
-    <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon">
-  </a>
-  <div fxLayout="column" fxLayoutGap="5px">
-    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <div fxLayout="row" fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px">
-        <div fxLayout="column">
-          <app-i18n-name content="mobs" [id]="row.id"></app-i18n-name>
-          <div fxLayout="row" fxLayoutGap="5px">
-            <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
-            <div *ngIf="row.zoneid">{{row.zoneid | i18nRow:'places' | i18n}}</div>
-          </div>
-        </div>
-        <app-db-button [id]="row.id" type="mob"></app-db-button>
-      </div>
-    </div>
-  </div>
-</div>
-<div *ngIf="row.type === searchTypes.LEVE" [class.odd]="odd"
-     class="result-row"
-     fxLayout="row"
-     fxLayout.lt-md="column"
-     fxLayoutAlign="flex-start flex-start"
-     fxLayoutAlign.lt-md="center center"
-     fxLayoutGap="5px">
-  <a routerLink="/db/{{currentLang}}/leve/{{row.id}}">
-    <img *ngIf="row.banner" [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
-  </a>
-  <div fxLayout="column" fxLayoutGap="5px">
-    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+  <div *ngSwitchCase="searchTypes.NPC" [class.odd]="odd"
+       class="result-row"
+       fxLayout="row"
+       fxLayout.lt-md="column"
+       fxLayoutAlign="flex-start flex-start"
+       fxLayoutAlign.lt-md="center center"
+       fxLayoutGap="5px">
+    <a routerLink="/db/{{currentLang}}/npc/{{row.id}}">
       <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon">
-      <app-i18n-name content="leves" [id]="row.id"></app-i18n-name>
-      <app-db-button [id]="row.id" type="leve"></app-db-button>
+    </a>
+    <div class="flex-column gap-5">
+      <div class="flex-row justify-start align-center gap-5">
+        <div fxLayout="row" fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px">
+          <div class="flex-column">
+            <app-i18n-name content="npcs" [id]="row.id"></app-i18n-name>
+            <div class="flex-row gap-5">
+              <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+              <div><span
+                *ngIf="(row.id | i18nRow:'npcs')?.position as npcPosition">{{npcPosition.zoneid | i18nRow:'places' | i18n}}
+                - X: {{npcPosition.x}} Y: {{npcPosition.y}} </span>
+                <i *ngIf="(row.title | i18n) !== 'No name'">{{row.title | i18n}}</i></div>
+            </div>
+          </div>
+          <app-db-button [id]="row.id" type="npc"></app-db-button>
+        </div>
+      </div>
     </div>
-    <div fxLayout="row" fxLayoutGap="5px">
+  </div>
+  <div *ngSwitchCase="searchTypes.MONSTER" [class.odd]="odd"
+       class="result-row"
+       fxLayout="row"
+       fxLayout.lt-md="column"
+       fxLayoutAlign="flex-start flex-start"
+       fxLayoutAlign.lt-md="center center"
+       fxLayoutGap="5px">
+    <a routerLink="/db/{{currentLang}}/mob/{{row.id}}">
+      <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon">
+    </a>
+    <div class="flex-column gap-5">
+      <div class="flex-row justify-start align-center gap-5">
+        <div class="flex-row justify-start align-start gap-5">
+          <div class="flex-column">
+            <app-i18n-name content="mobs" [id]="row.id"></app-i18n-name>
+            <div class="flex-row gap-5">
+              <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+              <div *ngIf="row.zoneid">{{row.zoneid | i18nRow:'places' | i18n}}</div>
+            </div>
+          </div>
+          <app-db-button [id]="row.id" type="mob"></app-db-button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngSwitchCase="searchTypes.LEVE" [class.odd]="odd"
+       class="result-row"
+       fxLayout="row"
+       fxLayout.lt-md="column"
+       fxLayoutAlign="flex-start flex-start"
+       fxLayoutAlign.lt-md="center center"
+       fxLayoutGap="5px">
+    <a routerLink="/db/{{currentLang}}/leve/{{row.id}}">
+      <img *ngIf="row.banner" [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
+    </a>
+    <div class="flex-column gap-5">
+      <div class="flex-row justify-start align-center gap-5">
+        <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon">
+        <app-i18n-name content="leves" [id]="row.id"></app-i18n-name>
+        <app-db-button [id]="row.id" type="leve"></app-db-button>
+      </div>
+      <div class="flex-row gap-5">
+        <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+        <div>{{row.job | i18n}} {{row.level}}</div>
+      </div>
+    </div>
+  </div>
+  <div *ngSwitchCase="searchTypes.MAP" [class.odd]="odd"
+       class="result-row"
+       fxLayout="row"
+       fxLayout.lt-md="column"
+       fxLayoutAlign="flex-start flex-start"
+       fxLayoutAlign.lt-md="center center"
+       fxLayoutGap="5px">
+    <div class="flex-column gap-5">
+      <div class="flex-row justify-start align-center gap-5">
+        <img [src]="'/c/PlaceName.png' | xivapiIcon" alt="" class="quest-icon">
+        <app-i18n-name content="places" [id]="row.zoneid"></app-i18n-name>
+        <app-db-button [id]="row.id" type="map"></app-db-button>
+      </div>
       <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
-      <div>{{row.job | i18n}} {{row.level}}</div>
     </div>
   </div>
-</div>
-<div *ngIf="row.type === searchTypes.MAP" [class.odd]="odd"
-     class="result-row"
-     fxLayout="row"
-     fxLayout.lt-md="column"
-     fxLayoutAlign="flex-start flex-start"
-     fxLayoutAlign.lt-md="center center"
-     fxLayoutGap="5px">
-  <div fxLayout="column" fxLayoutGap="5px">
-    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <img [src]="'/c/PlaceName.png' | xivapiIcon" alt="" class="quest-icon">
-      <app-i18n-name content="places" [id]="row.zoneid"></app-i18n-name>
-      <app-db-button [id]="row.id" type="map"></app-db-button>
-    </div>
-    <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
-  </div>
-</div>
-<div *ngIf="row.type === searchTypes.LORE" [class.odd]="odd"
-     class="result-row"
-     fxLayout="row"
-     fxLayout.lt-md="column"
-     fxLayoutAlign="flex-start flex-start"
-     fxLayoutAlign.lt-md="center center"
-     fxLayoutGap="5px">
-  <img [src]="row.Data.Icon | xivapiIcon" alt="" class="job-icon">
-  <div fxLayout="column" fxLayoutGap="5px">
-    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <div fxLayout="row" fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px">
-        <div fxLayout="column">
-          <div [innerHTML]="(row.Data | xivapiI18n) || row.Source"></div>
-          <span [innerHTML]="row | xivapiI18n: 'Text'"></span>
+  <div *ngSwitchCase="searchTypes.LORE" [class.odd]="odd"
+       class="result-row"
+       fxLayout="row"
+       fxLayout.lt-md="column"
+       fxLayoutAlign="flex-start flex-start"
+       fxLayoutAlign.lt-md="center center"
+       fxLayoutGap="5px">
+    <img [src]="row.Data.Icon | xivapiIcon" alt="" class="job-icon">
+    <div class="flex-column gap-5">
+      <div class="flex-row justify-start align-center gap-5">
+        <div fxLayout="row" fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px">
+          <div class="flex-column">
+            <div [innerHTML]="(row.Data | xivapiI18n) || row.Source"></div>
+            <span [innerHTML]="row | xivapiI18n: 'Text'"></span>
+          </div>
+          <app-db-button *ngIf="row.Data.showButton"
+                         [id]="row.SourceID"
+                         [type]="row.Source.toLowerCase()"></app-db-button>
         </div>
-        <app-db-button *ngIf="row.Data.showButton"
-                       [id]="row.SourceID"
-                       [type]="row.Source.toLowerCase()"></app-db-button>
       </div>
     </div>
   </div>
-</div>
-<div *ngIf="row.type === searchTypes.FATE" [class.odd]="odd"
-     class="result-row"
-     fxLayout="row"
-     fxLayout.lt-md="column"
-     fxLayoutAlign="flex-start flex-start"
-     fxLayoutAlign.lt-md="center center"
-     fxLayoutGap="5px">
-  <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon" fxFlex="0 0 auto">
-  <div fxLayout="column" fxLayoutGap="5px">
-    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <div><app-i18n-name content="fates" [id]="row.id"></app-i18n-name> - lvl{{row.level}}</div>
-      <app-db-button [id]="row.id" type="fate"></app-db-button>
-    </div>
-    <div fxLayout="row" fxLayoutGap="5px">
-      <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
-      <div>{{row.id | i18nRow: 'fates':'description' | i18n}}</div>
+  <div *ngSwitchCase="searchTypes.FATE" [class.odd]="odd"
+       class="result-row"
+       fxLayout="row"
+       fxLayout.lt-md="column"
+       fxLayoutAlign="flex-start flex-start"
+       fxLayoutAlign.lt-md="center center"
+       fxLayoutGap="5px">
+    <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon" fxFlex="0 0 auto">
+    <div class="flex-column gap-5">
+      <div class="flex-row justify-start align-center gap-5">
+        <div>
+          <app-i18n-name content="fates" [id]="row.id"></app-i18n-name>
+          - lvl{{row.level}}</div>
+        <app-db-button [id]="row.id" type="fate"></app-db-button>
+      </div>
+      <div class="flex-row gap-5">
+        <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+        <div>{{row.id | i18nRow: 'fates':'description' | i18n}}</div>
+      </div>
     </div>
   </div>
-</div>
-<div *ngIf="row.type === searchTypes.ACTION" [class.odd]="odd"
-     class="result-row"
-     fxLayout="row"
-     fxLayout.lt-md="column"
-     fxLayoutAlign="flex-start flex-start"
-     fxLayoutAlign.lt-md="center center"
-     fxLayoutGap="5px">
-  <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon" fxFlex="0 0 auto">
-  <div fxLayout="column" fxLayoutGap="5px">
-    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <div fxLayout="column">
-        <div>{{row.id | actionName | i18n}}</div>
-        <div fxLayout="row" fxLayoutGap="5px">
-          <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
-          <div>
-            <i *ngIf="row.job">Lvl {{row.level}} {{row.job | xivapiL12n: 'jobName' | i18n}}</i>
+  <div *ngSwitchCase="searchTypes.ACTION" [class.odd]="odd"
+       class="result-row"
+       fxLayout="row"
+       fxLayout.lt-md="column"
+       fxLayoutAlign="flex-start flex-start"
+       fxLayoutAlign.lt-md="center center"
+       fxLayoutGap="5px">
+    <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon" fxFlex="0 0 auto">
+    <div class="flex-column gap-5">
+      <div class="flex-row justify-start align-center gap-5">
+        <div class="flex-column">
+          <div>{{row.id | actionName | i18n}}</div>
+          <div class="flex-row gap-5">
+            <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+            <div>
+              <i *ngIf="row.job">Lvl {{row.level}} {{row.job | xivapiL12n: 'jobName' | i18n}}</i>
+            </div>
+          </div>
+        </div>
+        <app-db-button [id]="row.id" type="action"></app-db-button>
+      </div>
+    </div>
+  </div>
+  <div *ngSwitchCase="searchTypes.STATUS" [class.odd]="odd"
+       class="result-row"
+       fxLayout="row"
+       fxLayout.lt-md="column"
+       fxLayoutAlign="flex-start flex-start"
+       fxLayoutAlign.lt-md="center center"
+       fxLayoutGap="5px">
+    <img [src]="row.icon | xivapiIcon" alt="" fxFlex="0 0 auto">
+    <div class="flex-column gap-5">
+      <div class="flex-row justify-start align-center gap-5">
+        <div class="flex-column">
+          <div>{{row.data | xivapiL12n: 'statuses' | i18n}}</div>
+          <div class="flex-row gap-5">
+            <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+            <div>
+              <i>{{row.data | xivapiL12n: 'statusDescriptions':'Description' | i18n}}</i>
+            </div>
+          </div>
+        </div>
+        <app-db-button [id]="row.id" type="status"></app-db-button>
+      </div>
+    </div>
+  </div>
+  <div *ngSwitchCase="searchTypes.TRAIT" [class.odd]="odd"
+       class="result-row"
+       fxLayout="row"
+       fxLayout.lt-md="column"
+       fxLayoutAlign="flex-start flex-start"
+       fxLayoutAlign.lt-md="center center"
+       fxLayoutGap="5px">
+    <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon" fxFlex="0 0 auto">
+    <div class="flex-column gap-5">
+      <div class="flex-row justify-start align-center gap-5">
+        <div class="flex-column">
+          <app-i18n-name content="traits" [id]="row.id"></app-i18n-name>
+          <div class="flex-row gap-5">
+            <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+            <div>
+              <i *ngIf="row.job">Lvl {{row.level}} {{row.job | xivapiL12n: 'jobCategories' | i18n}}</i>
+            </div>
+          </div>
+        </div>
+        <app-db-button [id]="row.id" type="trait"></app-db-button>
+      </div>
+    </div>
+  </div>
+  <div *ngSwitchCase="searchTypes.ACHIEVEMENT" [class.odd]="odd"
+       class="result-row"
+       fxLayout="row"
+       fxLayout.lt-md="column"
+       fxLayoutAlign="flex-start flex-start"
+       fxLayoutAlign.lt-md="center center"
+       fxLayoutGap="5px">
+    <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon" fxFlex="0 0 auto">
+    <div class="flex-column gap-5">
+      <div class="flex-row justify-start align-center gap-5">
+        <div class="flex-column">
+          <app-i18n-name content="achievements" [id]="row.id"></app-i18n-name>
+          <div class="flex-row gap-5">
+            <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+          </div>
+        </div>
+        <app-db-button [id]="row.id" type="achievement"></app-db-button>
+      </div>
+    </div>
+  </div>
+  <div *ngSwitchCase="searchTypes.FISHING_SPOT" [class.odd]="odd"
+       class="result-row"
+       fxLayout="row"
+       fxLayout.lt-md="column"
+       fxLayoutAlign="flex-start flex-start"
+       fxLayoutAlign.lt-md="center center"
+       fxLayoutGap="5px">
+    <img src="./assets/icons/classjob/fisher.png" alt="" class="quest-icon" fxFlex="0 0 auto">
+    <div class="flex-column gap-5">
+      <div class="flex-row justify-start align-center gap-5">
+        <div class="flex-column">
+          <div class="flex-row gap-5">
+            <div>{{row.spot.zoneId | i18nRow:'places' | i18n}} - {{row.spot.placeId | i18nRow:'places' | i18n}}</div>
+            <app-db-button [id]="row.id" type="fishing-spot"></app-db-button>
+          </div>
+          <div class="flex-row gap-5">
+            <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
           </div>
         </div>
       </div>
-      <app-db-button [id]="row.id" type="action"></app-db-button>
     </div>
   </div>
-</div>
-<div *ngIf="row.type === searchTypes.STATUS" [class.odd]="odd"
-     class="result-row"
-     fxLayout="row"
-     fxLayout.lt-md="column"
-     fxLayoutAlign="flex-start flex-start"
-     fxLayoutAlign.lt-md="center center"
-     fxLayoutGap="5px">
-  <img [src]="row.icon | xivapiIcon" alt="" fxFlex="0 0 auto">
-  <div fxLayout="column" fxLayoutGap="5px">
-    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <div fxLayout="column">
-        <div>{{row.data | xivapiL12n: 'statuses' | i18n}}</div>
-        <div fxLayout="row" fxLayoutGap="5px">
-          <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
-          <div>
-            <i>{{row.data | xivapiL12n: 'statusDescriptions':'Description' | i18n}}</i>
+  <div *ngSwitchCase="searchTypes.GATHERING_NODE" [class.odd]="odd"
+       class="result-row"
+       fxLayout="row"
+       fxLayout.lt-md="column"
+       fxLayoutAlign="flex-start flex-start"
+       fxLayoutAlign.lt-md="center center"
+       fxLayoutGap="5px">
+    <img [src]="row.node.type | nodeTypeIcon" alt="" class="quest-icon" fxFlex="0 0 auto">
+    <div class="flex-column gap-5">
+      <div class="flex-row justify-start align-center gap-5">
+        <div class="flex-column">
+          <div class="flex-row gap-5">
+            <div>{{row.node.map | mapName | i18n}} - {{row.node.zoneid | i18nRow:'places' | i18n}}</div>
+            <app-db-button [id]="row.id" [type]="row.node.type < 4 ? 'node' : 'spearfishing-spot'"></app-db-button>
+          </div>
+          <div class="flex-row gap-5">
+            <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
           </div>
         </div>
       </div>
-      <app-db-button [id]="row.id" type="status"></app-db-button>
     </div>
   </div>
-</div>
-<div *ngIf="row.type === searchTypes.TRAIT" [class.odd]="odd"
-     class="result-row"
-     fxLayout="row"
-     fxLayout.lt-md="column"
-     fxLayoutAlign="flex-start flex-start"
-     fxLayoutAlign.lt-md="center center"
-     fxLayoutGap="5px">
-  <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon" fxFlex="0 0 auto">
-  <div fxLayout="column" fxLayoutGap="5px">
-    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <div fxLayout="column">
-        <app-i18n-name content="traits" [id]="row.id"></app-i18n-name>
-        <div fxLayout="row" fxLayoutGap="5px">
-          <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
-          <div>
-            <i *ngIf="row.job">Lvl {{row.level}} {{row.job | xivapiL12n: 'jobCategories' | i18n}}</i>
-          </div>
-        </div>
-      </div>
-      <app-db-button [id]="row.id" type="trait"></app-db-button>
-    </div>
-  </div>
-</div>
-<div *ngIf="row.type === searchTypes.ACHIEVEMENT" [class.odd]="odd"
-     class="result-row"
-     fxLayout="row"
-     fxLayout.lt-md="column"
-     fxLayoutAlign="flex-start flex-start"
-     fxLayoutAlign.lt-md="center center"
-     fxLayoutGap="5px">
-  <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon" fxFlex="0 0 auto">
-  <div fxLayout="column" fxLayoutGap="5px">
-    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <div fxLayout="column">
-        <app-i18n-name content="achievements" [id]="row.id"></app-i18n-name>
-        <div fxLayout="row" fxLayoutGap="5px">
-          <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
-        </div>
-      </div>
-      <app-db-button [id]="row.id" type="achievement"></app-db-button>
-    </div>
-  </div>
-</div>
-<div *ngIf="row.type === searchTypes.FISHING_SPOT" [class.odd]="odd"
-     class="result-row"
-     fxLayout="row"
-     fxLayout.lt-md="column"
-     fxLayoutAlign="flex-start flex-start"
-     fxLayoutAlign.lt-md="center center"
-     fxLayoutGap="5px">
-  <img src="./assets/icons/classjob/fisher.png" alt="" class="quest-icon" fxFlex="0 0 auto">
-  <div fxLayout="column" fxLayoutGap="5px">
-    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <div fxLayout="column">
-        <div fxLayout="row" fxLayoutGap="5px">
-          <div>{{row.spot.zoneId | i18nRow:'places' | i18n}} - {{row.spot.placeId | i18nRow:'places' | i18n}}</div>
-          <app-db-button [id]="row.id" type="fishing-spot"></app-db-button>
-        </div>
-        <div fxLayout="row" fxLayoutGap="5px">
-          <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div *ngIf="row.type === searchTypes.GATHERING_NODE" [class.odd]="odd"
-     class="result-row"
-     fxLayout="row"
-     fxLayout.lt-md="column"
-     fxLayoutAlign="flex-start flex-start"
-     fxLayoutAlign.lt-md="center center"
-     fxLayoutGap="5px">
-  <img [src]="row.node.type | nodeTypeIcon" alt="" class="quest-icon" fxFlex="0 0 auto">
-  <div fxLayout="column" fxLayoutGap="5px">
-    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <div fxLayout="column">
-        <div fxLayout="row" fxLayoutGap="5px">
-          <div>{{row.node.map | mapName | i18n}} - {{row.node.zoneid | i18nRow:'places' | i18n}}</div>
-          <app-db-button [id]="row.id" [type]="row.node.type < 4 ? 'node' : 'spearfishing-spot'"></app-db-button>
-        </div>
-        <div fxLayout="row" fxLayoutGap="5px">
-          <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+</ng-container>

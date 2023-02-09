@@ -361,7 +361,8 @@
               <i nz-icon nzType="close"></i>
             </div>
             <app-item-icon *ngIf="item.contentType === 'items'" [icon]="item.icon" [itemId]="item.itemId" [width]="24"></app-item-icon>
-            <app-item-icon *ngIf="item.contentType === 'islandBuildings'" [icon]="item.icon" [itemId]="null" [width]="24" [tooltipDisabled]="true"></app-item-icon>
+            <app-item-icon *ngIf="item.contentType === 'islandBuildings'" [icon]="item.icon" [itemId]="null" [width]="24"
+                           [tooltipDisabled]="true"></app-item-icon>
             <div fxLayout="column">
               <div>
                 <app-i18n-name [content]="item.contentType" [id]="item.itemId"></app-i18n-name>

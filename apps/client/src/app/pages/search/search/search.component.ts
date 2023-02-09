@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, PLATFORM_ID, TemplateRef, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject, OnChanges, OnInit, PLATFORM_ID, SimpleChanges, TemplateRef, ViewChild } from '@angular/core';
 import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
@@ -891,5 +891,9 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       );
     }
     return filters;
+  }
+
+  changes(...args: any[]): void {
+    console.log(args);
   }
 }
