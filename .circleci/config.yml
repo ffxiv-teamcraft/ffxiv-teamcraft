@@ -96,7 +96,9 @@ jobs:
 
 
   deploy-hosting:
-    <<: *defaults
+    working_directory: ~/ffxiv-teamcraft
+    docker:
+      - image: google/cloud-sdk
     steps:
       - attach_workspace:
           at: ~/
