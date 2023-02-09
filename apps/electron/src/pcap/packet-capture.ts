@@ -6,7 +6,8 @@ import { app } from 'electron';
 import isDev from 'electron-is-dev';
 import log from 'electron-log';
 import { default as isElevated } from 'native-is-elevated';
-import { CaptureInterface, CaptureInterfaceOptions, Message } from '@ffxiv-teamcraft/pcap-ffxiv';
+import { CaptureInterface, CaptureInterfaceOptions, Message, Region } from '@ffxiv-teamcraft/pcap-ffxiv';
+import { CaptureInterface as KRCNCaptureInterface } from '@ffxiv-teamcraft/pcap-ffxiv-krcn';
 
 export class PacketCapture {
 
@@ -81,15 +82,28 @@ export class PacketCapture {
     'objectSpawn'
   ];
 
-  private static readonly MACHINA_EXE_PATH = join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
+  private static readonly MACHINA_GLOBAL_EXE_PATH = join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
 
-  private captureInterface: CaptureInterface;
+  private static readonly MACHINA_KRCN_EXE_PATH = join(app.getAppPath(), '../../resources/MachinaWrapper-krcn/MachinaWrapper.exe');
+
+  private captureInterface: CaptureInterface | KRCNCaptureInterface;
 
   private startTimeout = null;
 
   private tries = 0;
 
   private overlayListeners = [];
+
+  private get region(): Region {
+    return this.store.get<Region>('region', 'Global');
+  }
+
+  private get MACHINA_EXE_PATH() {
+    if (this.region === 'Global') {
+      return PacketCapture.MACHINA_GLOBAL_EXE_PATH;
+    }
+    return PacketCapture.MACHINA_KRCN_EXE_PATH;
+  }
 
   constructor(private mainWindow: MainWindow, private store: Store, private options: any) {
     this.mainWindow.closed$.subscribe(() => {
@@ -139,7 +153,7 @@ export class PacketCapture {
   }
 
   addMachinaFirewallRule(): void {
-    exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - Machina" dir=in action=allow program="${PacketCapture.MACHINA_EXE_PATH}" enable=yes`);
+    exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - Machina" dir=in action=allow program="${this.MACHINA_EXE_PATH}" enable=yes`);
   }
 
   public registerOverlayListener(id: string, listener: (packet: Message) => void): void {
@@ -248,7 +262,7 @@ export class PacketCapture {
         log.info('[pcap] Using localOpcodes:', localDataPath);
       }
     } else {
-      options.exePath = PacketCapture.MACHINA_EXE_PATH;
+      options.exePath = this.MACHINA_EXE_PATH;
     }
 
     log.info(`Starting PacketCapture with options: ${JSON.stringify(options)}`);
