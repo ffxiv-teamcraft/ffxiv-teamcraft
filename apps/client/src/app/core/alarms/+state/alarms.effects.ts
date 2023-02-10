@@ -67,8 +67,8 @@ export class AlarmsEffects {
 
   markAlarmAsDone$ = createEffect(() => this.actions$.pipe(
     ofType<SetAlarmDone>(AlarmsActionTypes.SetAlarmDone),
-    map(({ key, done }) => {
-      return this.alarmsService.setAlarmDone(key, done);
+    map(({ key }) => {
+      return this.alarmsService.setAlarmDone(key);
     })
   ), { dispatch: false });
 

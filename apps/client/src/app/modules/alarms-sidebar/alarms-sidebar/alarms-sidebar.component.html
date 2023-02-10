@@ -25,7 +25,7 @@
             </div>
           </div>
           <div>
-            <button *ngIf="row.spawned && !row.alarm.done" nz-button nzSize="small" nzType="primary" (click)="markAsDone(row.alarm)"
+            <button *ngIf="row.spawned && !row.done" nz-button nzSize="small" nzType="primary" (click)="markAsDone(row.alarm)"
                     class="done-button" nz-tooltip [nzTooltipTitle]="'COMMON.Done' | translate"><span nz-icon nzType="check" nzTheme="outline"></span></button>
           </div>
         </div>
