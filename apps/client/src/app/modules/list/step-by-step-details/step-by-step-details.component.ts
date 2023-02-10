@@ -66,10 +66,6 @@ export class StepByStepDetailsComponent extends StepByStepComponent implements O
     }
   }
 
-  toggleOverlay(): void {
-    this.ipc.openOverlay('/step-by-step-list-overlay');
-  }
-
   trackById(index: number, item: { id: number }): number {
     return item.id;
   }

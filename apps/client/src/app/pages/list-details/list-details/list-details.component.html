@@ -181,15 +181,22 @@
         {{'Archived_tag' | translate}}
       </nz-tag>
       <div class="spacer"></div>
-      <div class="display-mode-selector">
-        <span class="selector-label">
-        {{'LIST_DETAILS.DISPLAY_MODE.Title' | translate}}
-        </span>
-        <nz-radio-group [ngModel]="displayMode$ | async" (ngModelChange)="_displayMode$.next($event)">
-          <label nz-radio-button [nzValue]="ListDisplayMode.FULL">{{'LIST_DETAILS.DISPLAY_MODE.Full' | translate}}</label>
-          <label nz-radio-button [nzValue]="ListDisplayMode.MINIMALIST">{{'LIST_DETAILS.DISPLAY_MODE.Minimalist' | translate}}</label>
-          <label nz-radio-button [nzValue]="ListDisplayMode.STEP_BY_STEP">{{'LIST_DETAILS.DISPLAY_MODE.Step_by_step' | translate}}</label>
-        </nz-radio-group>
+      <div class="flex-column gap-2">
+        <div class="display-mode-selector">
+          <span class="selector-label">
+          {{'LIST_DETAILS.DISPLAY_MODE.Title' | translate}}
+          </span>
+          <nz-radio-group [ngModel]="displayMode$ | async" (ngModelChange)="_displayMode$.next($event)">
+            <label nz-radio-button [nzValue]="ListDisplayMode.FULL">{{'LIST_DETAILS.DISPLAY_MODE.Full' | translate}}</label>
+            <label nz-radio-button [nzValue]="ListDisplayMode.MINIMALIST">{{'LIST_DETAILS.DISPLAY_MODE.Minimalist' | translate}}</label>
+            <label nz-radio-button [nzValue]="ListDisplayMode.STEP_BY_STEP">{{'LIST_DETAILS.DISPLAY_MODE.Step_by_step' | translate}}</label>
+          </nz-radio-group>
+        </div>
+        <div *ngIf="isDesktop" class="step-by-step-overlay-button">
+          <button nz-button nzBlock nzType="primary" (click)="toggleStepByStepOverlay()">
+            {{'LIST_DETAILS.STEP_BY_STEP.Toggle_overlay' | translate}}
+          </button>
+        </div>
       </div>
     </div>
     <div class="list-title" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="flex-start center"

@@ -1,18 +1,13 @@
 <ng-container *ngIf="stepByStep$ | async as list">
   <div nz-row [nzGutter]="[10,10]">
     <ng-container *ngIf="currentMapDisplay$ | async as mapDisplay">
-      <div nz-col [nzMd]="isDesktop ? 12 : 24" class="list-progress">
+      <div nz-col [nzMd]="24" class="list-progress">
         <div class="flex-row gap-10 align-center">
           <div>{{'LIST_DETAILS.STEP_BY_STEP.Global_list_progress' | translate}}:</div>
           <div class="spacer">
             <nz-progress [nzStrokeColor]="settings.theme.primary" [nzPercent]="list.progress"></nz-progress>
           </div>
         </div>
-      </div>
-      <div nz-col [nzMd]="12" *ngIf="isDesktop">
-        <button nz-button nzBlock nzType="primary" (click)="toggleOverlay()">
-          {{'LIST_DETAILS.STEP_BY_STEP.Toggle_overlay' | translate}}
-        </button>
       </div>
       <nz-select nz-col [nzLg]="8" [nzMd]="12" [ngModel]="selectedMap$ | async" (ngModelChange)="selectedMap$.next($event)" nzShowSearch class="map-selector">
         <nz-option *ngFor="let mapId of list.maps" [nzValue]="mapId"

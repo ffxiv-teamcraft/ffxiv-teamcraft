@@ -164,8 +164,8 @@ export abstract class StepByStepComponent extends TeamcraftComponent implements 
                               iconType: 'img',
                               iconImg: row.icon,
                               additionalStyle: {
-                                width: '24px',
-                                height: '24px'
+                                width: row.type === 'Hunting' ? '24px' : '32px',
+                                height: row.type === 'Hunting' ? '24px' : '32px'
                               }
                             } as MapMarker;
                           });
