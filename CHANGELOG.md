@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.2.3"></a>
+## [10.2.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.2.2...v10.2.3) (2023-02-10)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarm done flag not resetting on alarm spawn ([952916e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/952916e))
+* **desktop:** fixed cross world linkshell messages breaking character link ([3898d98](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3898d98))
+
+
+
 <a name="10.2.2"></a>
 ## [10.2.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.2.1...v10.2.2) (2023-02-09)
 
