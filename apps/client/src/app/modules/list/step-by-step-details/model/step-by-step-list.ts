@@ -1,8 +1,7 @@
 import { getItemSource, ListRow } from '../../model/list-row';
 import { ItemSource } from '../../model/item-source';
-import { Vector2 } from '../../../../core/tools/vector2';
 import { DataType } from '../../data/data-type';
-import { MapListStep } from './map-list-step';
+import { ListStep, MapListStep } from './map-list-step';
 import { ListDisplay } from '../../../../core/layout/list-display';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { getTiers } from '../../../../core/tools/get-tiers';
@@ -65,7 +64,7 @@ export class StepByStepList {
                 }
                 const sourcesToTransfer = row.sources.filter(s => [DataType.MASTERBOOKS, DataType.DEPRECATED].includes(s.type));
                 const sources = [...sourcesToTransfer, preparedSource];
-                this.addToMapIndex(position.mapId, row, sources, position.coords, position.icon, position.type);
+                this.addToMapIndex(position.mapId, row, sources, position);
               }
             });
           }
@@ -81,59 +80,7 @@ export class StepByStepList {
     });
   }
 
-  private addToMapIndex(mapId: number, row: ListRow, sources: ItemSource[], coords?: Vector2, icon?: string, type?: NavigationObjective['type']): void {
-    let entry: MapListStep = this.steps[mapId];
-    if (!entry) {
-      this.steps[mapId] = {
-        mapId,
-        sources: [],
-        other: [],
-        complete: true,
-        isHousingMap: this.isHousingMap(mapId),
-        itemsCount: 0,
-        progress: 0,
-        totalTodo: 0,
-        totalDone: 0
-      };
-      entry = this.steps[mapId];
-    }
-    if (!this.mapsByItemId[row.id]) {
-      this.mapsByItemId[row.id] = [];
-    }
-    if (mapId > -1 && !this.maps.includes(mapId)) {
-      this.maps.push(mapId);
-    }
-    this.mapsByItemId[row.id].push(mapId);
-    sources.forEach(source => {
-      if (!entry.sources.includes(source.type)) {
-        entry.sources.push(source.type);
-      }
-      entry[source.type] = entry[source.type] || [];
-      const uniqId = this.getUniqId(row);
-      if (!entry[source.type].some(e => e.uniqId === uniqId))
-        entry[source.type].push({
-          uniqId,
-          row,
-          sources,
-          coords,
-          icon,
-          type
-        });
-      entry.complete = entry.complete && row.done >= row.amount;
-      entry.itemsCount++;
-      entry.totalTodo += row.amount;
-      entry.totalDone += row.done;
-      this.totalTodo += row.amount;
-      this.totalDone += row.done;
-      entry.progress = Math.ceil(100 * entry.totalDone / entry.totalTodo);
-      this.progress = Math.ceil(100 * this.totalDone / this.totalTodo);
-    });
-    if (sources.some(s => s.type === DataType.ALARMS)) {
-      this.alarms.push(row);
-    }
-  }
-
-  private getPositions(source: ItemSource): { mapId: number, coords: Vector2, icon?: string, type?: NavigationObjective['type'] }[] {
+  private getPositions(source: ItemSource): Array<Omit<ListStep, 'uniqId' | 'row' | 'sources'>> {
     switch (source.type) {
       case DataType.GATHERED_BY:
         return source.data.nodes
@@ -183,7 +130,8 @@ export class StepByStepList {
             mapId: drop.mapid,
             coords: drop.position,
             icon: 'https://www.garlandtools.org/db/images/Mob.png',
-            type: 'Hunting'
+            type: 'Hunting',
+            monster: drop.id
           };
         });
       case DataType.FATES:
@@ -191,11 +139,62 @@ export class StepByStepList {
           return {
             mapId: fate.mapId,
             coords: fate.coords,
-            type: 'Hunting'
+            type: 'Hunting',
+            fate: fate.id
           };
         });
     }
     return [];
+  }
+
+  private addToMapIndex(mapId: number, row: ListRow, sources: ItemSource[], position?: Omit<ListStep, 'uniqId' | 'row' | 'sources'>): void {
+    let entry: MapListStep = this.steps[mapId];
+    if (!entry) {
+      this.steps[mapId] = {
+        mapId,
+        sources: [],
+        other: [],
+        complete: true,
+        isHousingMap: this.isHousingMap(mapId),
+        itemsCount: 0,
+        progress: 0,
+        totalTodo: 0,
+        totalDone: 0
+      };
+      entry = this.steps[mapId];
+    }
+    if (!this.mapsByItemId[row.id]) {
+      this.mapsByItemId[row.id] = [];
+    }
+    if (mapId > -1 && !this.maps.includes(mapId)) {
+      this.maps.push(mapId);
+    }
+    this.mapsByItemId[row.id].push(mapId);
+    sources.forEach(source => {
+      if (!entry.sources.includes(source.type)) {
+        entry.sources.push(source.type);
+      }
+      entry[source.type] = entry[source.type] || [];
+      const uniqId = this.getUniqId(row);
+      if (!entry[source.type].some(e => e.uniqId === uniqId))
+        entry[source.type].push({
+          uniqId,
+          row,
+          sources,
+          ...(position || {})
+        });
+      entry.complete = entry.complete && row.done >= row.amount;
+      entry.itemsCount++;
+      entry.totalTodo += row.amount;
+      entry.totalDone += row.done;
+      this.totalTodo += row.amount;
+      this.totalDone += row.done;
+      entry.progress = Math.ceil(100 * entry.totalDone / entry.totalTodo);
+      this.progress = Math.ceil(100 * this.totalDone / this.totalTodo);
+    });
+    if (sources.some(s => s.type === DataType.ALARMS)) {
+      this.alarms.push(row);
+    }
   }
 
   private getUniqId(row: ListRow): string {

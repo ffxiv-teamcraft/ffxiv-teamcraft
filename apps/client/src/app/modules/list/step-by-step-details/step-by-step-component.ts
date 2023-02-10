@@ -115,9 +115,11 @@ export abstract class StepByStepComponent extends TeamcraftComponent implements 
                 type: row.type,
                 listRow: row.row,
                 icon: row.icon,
+                monster: row.monster,
+                fate: row.fate,
                 additionalStyle: {
-                  width: '24px',
-                  height: '24px'
+                  width: row.type === 'Hunting' ? '24px' : '32px',
+                  height: row.type === 'Hunting' ? '24px' : '32px'
                 }
               };
             });
