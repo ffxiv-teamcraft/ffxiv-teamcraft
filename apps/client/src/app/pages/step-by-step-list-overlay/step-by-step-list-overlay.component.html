@@ -78,7 +78,7 @@
           </ng-template>
         </nz-list>
 
-        <ng-container *ngIf="mapDisplay.path.alarms">
+        <ng-container *ngIf="mapDisplay.path.alarms?.length > 0">
           <nz-divider [nzText]="'LIST_DETAILS.STEP_BY_STEP.Alarms' | translate" nzOrientation="left"></nz-divider>
 
           <nz-list [nzDataSource]="mapDisplay.path.alarms" [nzRenderItem]="alarmRowTpl" nzSize="small">
