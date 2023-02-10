@@ -147,6 +147,22 @@ export class AlarmsFacade {
               private gatheringNodesService: GatheringNodesService, private progressService: ProgressPopupService) {
   }
 
+  public isAlarmDone(alarm: Alarm, etime: Date): boolean {
+    const doneStr = localStorage.getItem(`alarm:${alarm.$key}:done`);
+    if (!doneStr) {
+      return false;
+    }
+    const done = new Date(doneStr);
+    const earthTime = this.etime.toEarthDate(etime).getTime();
+    const durationEarthMinutes = 60 * alarm.duration / EorzeanTimeService.EPOCH_TIME_FACTOR;
+    const durationExpiration = new Date(done.getTime() + (durationEarthMinutes * 60 * 1000)).getTime();
+    return earthTime < durationExpiration;
+  }
+
+  setAlarmDone(key: string): void {
+    this.store.dispatch(new SetAlarmDone(key));
+  }
+
   public addAlarms(...alarms: Alarm[]): void {
     this.store.dispatch(new AddAlarms(alarms));
   }
@@ -238,6 +254,7 @@ export class AlarmsFacade {
     const nextSpawn = { ...this.getNextSpawn(alarm, date) };
     display.spawned = this.isSpawned(alarm, date);
     display.played = this.isPlayed(alarm, date);
+    display.done = this.isAlarmDone(alarm, date);
     display.groupNames = alarm.groupNames || '';
     if (Math.abs(alarm.type) < 4) {
       display.dbType = 'node';
@@ -463,10 +480,10 @@ export class AlarmsFacade {
 
   private sortAlarmDisplays(alarms: AlarmDisplay[]): AlarmDisplay[] {
     return alarms.sort((a, b) => {
-      if (a.spawned && a.alarm.done) {
+      if (a.spawned && a.done) {
         return 1;
       }
-      if (b.spawned && b.alarm.done) {
+      if (b.spawned && b.done) {
         return -1;
       }
       if (a.spawned && b.spawned) {
@@ -599,9 +616,5 @@ export class AlarmsFacade {
       return [alarm, { ...alarmWithFishEyesEnabled, fishEyes: true }];
     }
     return [alarm];
-  }
-
-  setAlarmDone(key: string, done: boolean): void {
-    this.store.dispatch(new SetAlarmDone(key, done));
   }
 }

@@ -79,7 +79,7 @@ export class PureUpdateAlarm implements Action {
 export class SetAlarmDone implements Action {
   readonly type = AlarmsActionTypes.SetAlarmDone;
 
-  constructor(public readonly key: string, public readonly done: boolean) {
+  constructor(public readonly key: string) {
   }
 }
 

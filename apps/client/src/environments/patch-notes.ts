@@ -1,4 +1,4 @@
 export const patchNotes = `### Bug Fixes
 
-* **desktop:** better fir for cn/kr packet capture.
-* **search:** fixed search filters not being applied at all.`;
+* **alarms:** fixed alarm done flag not resetting on alarm spawn.
+* **desktop:** fixed cross world linkshell messages breaking character link.`;

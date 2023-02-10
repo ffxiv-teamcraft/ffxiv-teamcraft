@@ -38,7 +38,7 @@ export class AlarmsSidebarComponent implements OnInit {
   }
 
   markAsDone(alarm: Alarm): void {
-    this.alarmsFacade.setAlarmDone(alarm.$key, true);
+    this.alarmsFacade.setAlarmDone(alarm.$key);
   }
 
   deleteAlarm(alarm: Alarm): void {

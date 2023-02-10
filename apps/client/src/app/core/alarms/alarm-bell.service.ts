@@ -175,9 +175,6 @@ export class AlarmBellService {
         })
       ).subscribe(alarmsToPlay => {
       alarmsToPlay.forEach(alarm => {
-        if (alarm.done) {
-          this.alarmsFacade.setAlarmDone(alarm.$key, false);
-        }
         if (!this.settings.alarmsMuted) {
           this.notify(alarm);
         }

@@ -16,12 +16,8 @@ export class AlarmsService extends FirestoreRelationalStorage<Alarm> {
     super(firestore, serializer, zone, pendingChangesService);
   }
 
-  public isAlarmDone(key: string): boolean {
-    return localStorage.getItem(`alarm:${key}:done`) === '1';
-  }
-
-  public setAlarmDone(key: string, done: boolean): void {
-    localStorage.setItem(`alarm:${key}:done`, done ? '1' : '0');
+  public setAlarmDone(key: string): void {
+    localStorage.setItem(`alarm:${key}:done`, new Date().toString());
   }
 
   public deleteAll(alarms: Alarm[]): Observable<void> {
@@ -41,7 +37,6 @@ export class AlarmsService extends FirestoreRelationalStorage<Alarm> {
   }
 
   beforeDeserialization(data: Partial<Alarm>): Alarm {
-    data.done = this.isAlarmDone(data.$key);
     return data as Alarm;
   }
 }

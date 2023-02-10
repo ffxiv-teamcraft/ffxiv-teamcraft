@@ -101,7 +101,9 @@ export function alarmsReducer(
         ...state,
         alarms: [...state.alarms.map(alarm => {
           if (alarm.$key === action.key) {
-            alarm.done = action.done;
+            return {
+              ...alarm
+            };
           }
           return alarm;
         })]

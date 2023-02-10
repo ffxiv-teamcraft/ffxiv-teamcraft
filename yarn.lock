@@ -2089,10 +2089,10 @@
   dependencies:
     heap-js "^2.1.5"
 
-"@ffxiv-teamcraft/pcap-ffxiv@0.11.9":
-  version "0.11.9"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.11.9.tgz#aff340d67983ceebd0c88b0c590662c558242b17"
-  integrity sha512-ScNMd9itXdg7GRFXXbPwJitvlQ04R8ot9SMPZ45lu+I14hnvpfGMMqGyERmI91Er1wQW45ei0NyxPA3HTV8iEA==
+"@ffxiv-teamcraft/pcap-ffxiv@0.11.13":
+  version "0.11.13"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.11.13.tgz#2def06330faf55cc07440849030ae658663d7ae0"
+  integrity sha512-/BV5sDTLJ1Bjy72UnXOES6MWje9E/d03m6vZyvBmSamdX/Jq+/kV/znuEWWLiBOSssGZhary7rskn+/DYHuMuA==
   dependencies:
     heap-js "^2.1.5"
 

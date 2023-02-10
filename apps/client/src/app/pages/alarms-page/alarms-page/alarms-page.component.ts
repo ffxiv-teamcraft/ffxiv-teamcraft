@@ -270,6 +270,6 @@ export class AlarmsPageComponent implements OnInit {
   }
 
   markAsDone(alarm: Alarm) {
-    this.alarmsFacade.setAlarmDone(alarm.$key, true);
+    this.alarmsFacade.setAlarmDone(alarm.$key);
   }
 }

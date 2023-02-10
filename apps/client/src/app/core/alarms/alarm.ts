@@ -82,8 +82,6 @@ export class Alarm extends DataModel {
 
   nodeContent?: any;
 
-  done = false;
-
   enabled = true;
 
   constructor(alarmData?: Partial<Alarm>) {
