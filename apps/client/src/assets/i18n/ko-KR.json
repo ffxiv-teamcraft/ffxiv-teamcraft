@@ -2718,7 +2718,12 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "패킷캡쳐를 사용하여 가져오기",
-    "Import_from_pcap_notice": "1. 자유부대의 공방으로 이동(해당 팝업을 연 후에 꼭 입력하세요)<br>2. 자유부대 창을 열기<br>3. 관리 인터페이스를 사용하여 각 잠수함 또는 비공정과 상호작용",
+    "Go_to_workshop": "Enter your workshop",
+    "Go_to_workshop_description": "If you're already in it, please exit the workshop and enter again.",
+    "Open_fc_window": "Open your Free Company details window",
+    "Open_fc_window_description": "This will make TC get more important details about your free company, such as server, G is the default binding for it.",
+    "Interact_with_ships_subs": "Interact with each Submarine/Airship you want to import",
+    "Interact_with_ships_subs_description": "Opening the airship/submarine management window makes TC load everything needed to display details about your ships.",
     "Airships": "비공정",
     "Submersibles": "잠수함"
   },
