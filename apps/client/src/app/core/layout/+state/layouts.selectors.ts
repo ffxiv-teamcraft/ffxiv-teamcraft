@@ -1,36 +1,38 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { LayoutsState } from './layouts.reducer';
+import { LayoutsState, LIST_LAYOUTS_FEATURE_KEY, listLayoutsAdapter } from './layouts.reducer';
 
 // Lookup the 'Layouts' feature state managed by NgRx
-const getLayoutsState = createFeatureSelector<LayoutsState>('layouts');
+const getLayoutsState = createFeatureSelector<LayoutsState>(LIST_LAYOUTS_FEATURE_KEY);
 
-const getLoaded = createSelector(
+const { selectAll, selectEntities } = listLayoutsAdapter.getSelectors();
+
+export const getLoaded = createSelector(
   getLayoutsState,
   (state: LayoutsState) => state.loaded
 );
 
-const getAllLayouts = createSelector(
+export const getAllLayouts = createSelector(
   getLayoutsState,
   getLoaded,
   (state: LayoutsState, isLoaded) => {
-    return isLoaded ? state.layouts : [];
-  }
-);
-const getSelectedId = createSelector(
-  getLayoutsState,
-  (state: LayoutsState) => state.selectedKey
-);
-const getSelectedLayout = createSelector(
-  getAllLayouts,
-  getSelectedId,
-  (layouts, id) => {
-    const result = layouts.find(it => it.$key === id);
-    return result ? result : layouts[0];
+    return isLoaded ? selectAll(state) : [];
   }
 );
 
-export const layoutsQuery = {
-  getLoaded,
-  getAllLayouts,
-  getSelectedLayout
-};
+export const getLayoutsEntities = createSelector(
+  getLayoutsState,
+  state => selectEntities(state)
+);
+
+export const getSelectedId = createSelector(
+  getLayoutsState,
+  (state: LayoutsState) => state.selectedId
+);
+
+export const getSelectedLayout = createSelector(
+  getLayoutsEntities,
+  getSelectedId,
+  (layouts, id) => {
+    return layouts[id];
+  }
+);
