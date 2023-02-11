@@ -423,14 +423,15 @@
           </div>
         </ng-template>
         <div *ngIf="user.patron || user.admin" fxLayout="column" fxLayoutGap="5px">
-          <nz-input-group>
+          <nz-form-item>
             <nz-form-label>{{'SETTINGS.Nickname' | translate}}</nz-form-label>
-            <nz-form-control [nzValidateStatus]="nicknameAvailable === false ? 'error' : null" [nzExtra]="'SETTINGS.Nickname_used' | translate">
+            <nz-form-control [nzValidateStatus]="nicknameAvailable === false ? 'error' : null" nzHasFeedback
+                             [nzErrorTip]="'SETTINGS.Nickname_used' | translate">
               <input #nickname (ngModelChange)="nicknameAvailable = undefined" [ngModel]="user.nickname" nz-input
                      placeholder="Nickname"
                      type="text">
             </nz-form-control>
-          </nz-input-group>
+          </nz-form-item>
           <button (click)="checkNicknameAvailability(nickname.value)"
                   *ngIf="!nicknameAvailable && nickname.value !== user.nickname" nz-button
                   nzBlock>Verify
