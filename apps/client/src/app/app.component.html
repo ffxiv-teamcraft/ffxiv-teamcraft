@@ -68,7 +68,7 @@
               </nz-badge>
             </li>
           </ng-container>
-          <li *ngIf="desktop">
+          <li *ngIf="desktop && ipc.machinaToggle">
             <ng-template #pcapStatusTpl>
               <div class="flex-row space-between">
                 <div>{{'PACKET_CAPTURE.Pcap' | translate}}</div>
