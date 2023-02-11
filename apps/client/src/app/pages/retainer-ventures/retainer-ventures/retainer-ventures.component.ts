@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Retainer, RetainersService } from '../../../core/electron/retainers.service';
-import { map, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { combineLatest, Observable, of, Subject } from 'rxjs';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
@@ -134,13 +134,13 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
   );
 
   retainersWithStats$ = combineLatest([this.sortedRetainers$, this.inventoryFacade.inventory$, this.lazyData.getEntry('itemMeldingData')]).pipe(
-    switchMap(([retainers, inventory, lzeyItemMeldingData]) => {
+    switchMap(([retainers, inventory, lazyItemMeldingData]) => {
       return safeCombineLatest(retainers.map(retainer => {
         const gearset = new TeamcraftGearset();
         gearset.job = retainer.job;
         inventory.getRetainerGear(retainer.name)
           .forEach(item => {
-            const itemMeldingData = lzeyItemMeldingData[item.itemId];
+            const itemMeldingData = lazyItemMeldingData[item.itemId];
             const materias = item.materias || [];
             while (materias.length < itemMeldingData.slots) {
               materias.push(0);
@@ -173,6 +173,13 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
           })
         );
       }));
+    }),
+    shareReplay(1)
+  );
+
+  retainersMissingStats$ = this.retainersWithStats$.pipe(
+    map(retainers => {
+      return retainers.filter(r => r.ilvl === 0);
     })
   );
 
