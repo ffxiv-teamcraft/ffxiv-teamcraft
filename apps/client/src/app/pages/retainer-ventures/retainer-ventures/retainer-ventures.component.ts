@@ -91,12 +91,8 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
                 })
                 .map(entry => {
                   const mbRow = res.find(r => r.ItemId === entry.item);
-                  let prices = (mbRow.Prices || [])
+                  const prices = (mbRow.History || [])
                     .filter(item => item.IsHQ === false);
-                  if (prices.length === 0) {
-                    prices = (mbRow.History || [])
-                      .filter(item => item.IsHQ === false);
-                  }
                   const price = prices
                     .sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
                   return {
