@@ -636,11 +636,19 @@ export class SearchService {
     //   console.log(axios.getUri(config));
     //   return config;
     // });
+    const params: any = {
+      ...options
+    };
+    if (filters?.length > 0) {
+      params.filters = filters;
+    }
+    if (region === Region.China && environment.ffcafeKey) {
+      params.private_key = environment.ffcafeKey;
+    } else if (environment.xivapiKey) {
+      params.private_key = environment.xivapiKey;
+    }
     return from(axios.get<T>(`${this.getBaseUrl(region)}/search`, {
-      params: {
-        ...options, filters,
-        private_key: environment.xivapiKey
-      },
+      params,
       paramsSerializer: {
         serialize: params => qs.stringify(params, { arrayFormat: 'comma' })
       }

@@ -25,6 +25,25 @@ export class DataController {
     return this.lazyData.get(contentName as keyof LazyData);
   }
 
+  @Get(['//:prefix/:key/:hash/:ids', '/:prefix/:key/:hash/:ids'])
+  getZhPartialLazyData(
+    @Param('prefix') prefix: string,
+    @Param('key') key: string,
+    @Param('hash') hash: string,
+    @Param('ids', ParseArrayPipe) ids: string[]
+  ) {
+    return this.getLazyData(`/${prefix}/${key}`, hash).pipe(
+      map(data => {
+        return ids.reduce((acc, id) => {
+          return {
+            ...acc,
+            [id]: data[id]
+          };
+        }, {});
+      })
+    );
+  }
+
   @Get(':key/:hash/:ids')
   getPartialLazyData(
     @Param('key') key: string,

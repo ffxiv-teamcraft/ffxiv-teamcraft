@@ -1,4 +1,5 @@
 export const environment = {
   production: false,
-  xivapiKey: undefined
+  xivapiKey: undefined,
+  ffcafeKey: undefined
 };
