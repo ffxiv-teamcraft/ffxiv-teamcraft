@@ -29,8 +29,6 @@ export class IpcListenersManager {
 
   private characterSearchParser = new CharacterSearch();
 
-  private characterParser = new Character();
-
   constructor(private pcap: PacketCapture, private overlayManager: OverlayManager,
               private mainWindow: MainWindow, private store: Store,
               private trayMenu: TrayMenu, private proxyManager: ProxyManager) {

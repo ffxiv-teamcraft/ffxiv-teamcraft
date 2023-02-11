@@ -8,6 +8,7 @@ import { ImportWorkshopFromPcapPopupComponent } from './import-workshop-from-pca
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { CoreModule } from '../../core/core.module';
+import { NzStepsModule } from 'ng-zorro-antd/steps';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CoreModule } from '../../core/core.module';
 
     FlexLayoutModule,
     AntdSharedModule,
-    CoreModule
+    CoreModule,
+    NzStepsModule
   ]
 })
 export class FreeCompanyWorkshopsModule {
