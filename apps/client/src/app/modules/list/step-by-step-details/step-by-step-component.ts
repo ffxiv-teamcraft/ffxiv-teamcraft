@@ -63,6 +63,14 @@ export abstract class StepByStepComponent extends TeamcraftComponent implements 
       map(([display, housingMap, maps]) => {
         return new StepByStepList(display, housingMap, maps);
       }),
+      switchMap(list => {
+        return this.mapService.sortMapIdsByTpCost(list.maps).pipe(
+          map(sortedMaps => {
+            list.maps = sortedMaps;
+            return list;
+          })
+        );
+      }),
       tap((list) => this.onNewStepByStep(list)),
       shareReplay(1)
     );

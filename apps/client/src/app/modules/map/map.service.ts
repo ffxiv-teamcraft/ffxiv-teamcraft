@@ -5,7 +5,7 @@ import { Vector2 } from '../../core/tools/vector2';
 import { MathToolsService } from '../../core/tools/math-tools';
 import { NavigationStep } from './navigation-step';
 import { NavigationObjective } from './navigation-objective';
-import { map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
+import { debounceTime, map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 import { XivapiService } from '@xivapi/angular-client';
 import * as _ from 'lodash';
 import { WorldNavigationStep } from './world-navigation-step';
@@ -154,6 +154,31 @@ export class MapService {
       );
   }
 
+  public sortMapIdsByTpCost(_mapIds: number[]): Observable<number[]> {
+    const mapIds = [..._mapIds];
+    return this.lazyData.getEntry('aetherytes').pipe(
+      switchMap(aetherytes => {
+        const currentMapId$ = this.eorzea.mapId$.pipe(startWith(this.settings.startingPlace), debounceTime(10));
+        return currentMapId$.pipe(
+          map(currentMapId => {
+            const path = [];
+            while (mapIds.length > 0) {
+              const currentAetheryte = this.filterAetherytes(aetherytes, path[0] || currentMapId, true)[0];
+              path.push(mapIds.sort((a, b) => {
+                const aAetheryte = this.filterAetherytes(aetherytes, a, true)[0];
+                const bAetheryte = this.filterAetherytes(aetherytes, b, true)[0];
+                const aCost = this.getTpCost(currentAetheryte, aAetheryte as LazyAetheryte);
+                const bCost = this.getTpCost(currentAetheryte, bAetheryte as LazyAetheryte);
+                return aCost - bCost;
+              }).shift());
+            }
+            return path;
+          })
+        );
+      })
+    );
+  }
+
   getPositionPercentOnMap(mapData: MapData, position: Vector2): Vector2 {
     const scale = mapData.size_factor / 100;
 
@@ -204,18 +229,22 @@ export class MapService {
   }
 
   private getAetherytes(id: number, excludeMinis = false): Observable<LazyAetheryte[]> {
-    // If it's dravanian forelands, use Idyllshire id instead.
-    if (id === 213) {
-      id = 257;
-    }
     return this.lazyData.getEntry('aetherytes').pipe(
       map(aetherytes => {
-        return aetherytes
-          .filter((aetheryte) => {
-            return aetheryte.map === id && (!excludeMinis || aetheryte.type === 0);
-          });
+        return this.filterAetherytes(aetherytes, id, excludeMinis);
       })
     );
+  }
+
+  private filterAetherytes(aetherytes: LazyAetheryte[], mapId: number, excludeMinis = false): LazyAetheryte[] {
+    // If it's dravanian forelands, use Idyllshire id instead.
+    if (mapId === 213) {
+      mapId = 257;
+    }
+    return aetherytes
+      .filter((aetheryte) => {
+        return aetheryte.map === mapId && (!excludeMinis || aetheryte.type === 0);
+      });
   }
 
   private totalDuration(path: NavigationStep[]): number {
