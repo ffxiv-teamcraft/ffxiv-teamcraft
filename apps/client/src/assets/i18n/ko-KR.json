@@ -2690,7 +2690,9 @@
     "Task_level": "수행 레벨",
     "Total_per_venture": "집사 수행 총 집계",
     "Use_retainer": "고용 중인 집사",
-    "Select_retainer": "집사를 선택하세요"
+    "Select_retainer": "집사를 선택하세요",
+    "Missing_gear": "Missing gear",
+    "Missing_gear_description": "Some of your retainers are missing their gear in TC data, please summon each retainer again to load their gear"
   },
   "PATREON": {
     "By_supporting_us": "Patreon 후원시 얻을 수 있는 것들:",
