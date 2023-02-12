@@ -69,7 +69,7 @@ export const lazyFilesList = {
   },
   'collectables': {
     'fileName': 'collectables.json',
-    'hashedFileName': 'collectables.13f1bbec534af54f3e4dc146d65eefef3a63b8df.json'
+    'hashedFileName': 'collectables.83c1e2b5ee5b09ae831611a4d1cf28407a26a33a.json'
   },
   'craftActions': {
     'fileName': 'craft-actions.json',
@@ -445,7 +445,7 @@ export const lazyFilesList = {
   },
   'scripIndex': {
     'fileName': 'scrip-index.json',
-    'hashedFileName': 'scrip-index.557348cdf199e6e9e685f39f110ca5cb034959e2.json'
+    'hashedFileName': 'scrip-index.3c08f97b23ac466dd7a797fdc9f66530da12dd4a.json'
   },
   'seeds': {
     'fileName': 'seeds.json',
