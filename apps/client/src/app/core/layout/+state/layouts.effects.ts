@@ -1,6 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { CreateLayout, DeleteLayout, LayoutLoaded, LayoutsActionTypes, LayoutsLoaded, SelectLayout, UpdateLayout } from './layouts.actions';
+import {
+  createListLayout,
+  deleteListLayout,
+  loadListLayout,
+  loadListLayouts,
+  loadListLayoutsSuccess,
+  loadListLayoutSuccess,
+  selectListLayout,
+  updateListLayout
+} from './layouts.actions';
 import { LayoutService } from '../layout.service';
 import { distinctUntilChanged, filter, map, mergeMap, switchMap, withLatestFrom } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
@@ -13,7 +22,7 @@ export class LayoutsEffects {
 
 
   loadLayouts$ = createEffect(() => this.actions$.pipe(
-    ofType(LayoutsActionTypes.LoadLayouts),
+    ofType(loadListLayouts),
     switchMap(() => this.authFacade.userId$),
     distinctUntilChanged(),
     switchMap((userId) => {
@@ -26,34 +35,34 @@ export class LayoutsEffects {
       this.layoutService.venilisCraftsTimedFirst,
       ...layouts
     ]),
-    map(layouts => new LayoutsLoaded(layouts))
+    map(layouts => loadListLayoutsSuccess({ layouts }))
   ));
 
 
   loadLayout$ = createEffect(() => this.actions$.pipe(
-    ofType(LayoutsActionTypes.LoadLayout),
+    ofType(loadListLayout),
     switchMap(({ key }) => {
       return this.layoutService.get(key);
     }),
-    map(layout => new LayoutLoaded(layout))
+    map(layout => loadListLayoutSuccess({ layout }))
   ));
 
 
   createLayoutInDatabaseAndSelect$ = createEffect(() => this.actions$.pipe(
-    ofType(LayoutsActionTypes.CreateLayout),
+    ofType(createListLayout),
     withLatestFrom(this.authFacade.userId$),
-    switchMap(([action, userId]: [CreateLayout, string]) => {
+    switchMap(([action, userId]) => {
       action.layout.userId = userId;
       return this.layoutService.add(action.layout);
     }),
-    map((createdLayoutKey) => new SelectLayout(createdLayoutKey))
+    map((createdLayoutKey) => selectListLayout({ key: createdLayoutKey }))
   ));
 
 
   updateLayoutInDatabase$ = createEffect(() => this.actions$.pipe(
-    ofType<UpdateLayout>(LayoutsActionTypes.UpdateLayout),
+    ofType(updateListLayout),
     filter(action => action.layout.$key !== undefined),
-    switchMap((action: UpdateLayout) => {
+    switchMap((action) => {
       return this.layoutService.set(action.layout.$key, action.layout);
     }),
     mergeMap(() => EMPTY)
@@ -61,13 +70,13 @@ export class LayoutsEffects {
 
 
   removeLayoutInDatabase = createEffect(() => this.actions$.pipe(
-    ofType(LayoutsActionTypes.DeleteLayout),
-    switchMap((action: DeleteLayout) => {
-      return this.layoutService.remove(action.key);
+    ofType(deleteListLayout),
+    switchMap((action) => {
+      return this.layoutService.remove(action.id);
     }),
     withLatestFrom(this.layoutsFacade.allLayouts$),
     map(([, layouts]) => {
-      return new SelectLayout(layouts[0].$key);
+      return selectListLayout({ key: layouts[0].$key });
     })
   ));
 
@@ -79,3 +88,4 @@ export class LayoutsEffects {
   ) {
   }
 }
+

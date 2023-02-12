@@ -132,7 +132,7 @@ jobs:
             echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
       - run:
           name: Deploy Could Run TC API
-          command: gcloud builds submit --config ./apps/api/cloudbuild.yaml . && gcloud beta run deploy api --image gcr.io/ffxivteamcraft/api --region us-central1 --allow-unauthenticated --update-secrets=XIVAPI_KEY=XIVAPI_KEY:latest
+          command: gcloud builds submit --config ./apps/api/cloudbuild.yaml . && gcloud beta run deploy api --image gcr.io/ffxivteamcraft/api --region us-central1 --allow-unauthenticated --update-secrets=XIVAPI_KEY=XIVAPI_KEY:latest --update-secrets=FFCAFE_KEY=FFCAFE_KEY:latest
 
 
   release-desktop:

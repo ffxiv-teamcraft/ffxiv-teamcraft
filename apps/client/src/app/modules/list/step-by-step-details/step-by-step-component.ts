@@ -63,6 +63,14 @@ export abstract class StepByStepComponent extends TeamcraftComponent implements 
       map(([display, housingMap, maps]) => {
         return new StepByStepList(display, housingMap, maps);
       }),
+      switchMap(list => {
+        return this.mapService.sortMapIdsByTpCost(list.maps).pipe(
+          map(sortedMaps => {
+            list.maps = sortedMaps;
+            return list;
+          })
+        );
+      }),
       tap((list) => this.onNewStepByStep(list)),
       shareReplay(1)
     );
@@ -115,9 +123,11 @@ export abstract class StepByStepComponent extends TeamcraftComponent implements 
                 type: row.type,
                 listRow: row.row,
                 icon: row.icon,
+                monster: row.monster,
+                fate: row.fate,
                 additionalStyle: {
-                  width: '24px',
-                  height: '24px'
+                  width: row.type === 'Hunting' ? '24px' : '32px',
+                  height: row.type === 'Hunting' ? '24px' : '32px'
                 }
               };
             });
@@ -162,8 +172,8 @@ export abstract class StepByStepComponent extends TeamcraftComponent implements 
                               iconType: 'img',
                               iconImg: row.icon,
                               additionalStyle: {
-                                width: '24px',
-                                height: '24px'
+                                width: row.type === 'Hunting' ? '24px' : '32px',
+                                height: row.type === 'Hunting' ? '24px' : '32px'
                               }
                             } as MapMarker;
                           });

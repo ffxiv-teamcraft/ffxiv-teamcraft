@@ -1,79 +1,46 @@
-import { Action } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 import { ListLayout } from '../list-layout';
 
-export enum LayoutsActionTypes {
-  LoadLayouts = '[Layouts] Load Layouts',
-  LoadLayout = '[Layouts] Load Layout',
-  LayoutsLoaded = '[Layouts] Layouts Loaded',
-  LayoutLoaded = '[Layouts] Layout Loaded',
-  SelectLayout = '[Layouts] Select layout',
-  CreateLayout = '[Layouts] Create layout',
-  DeleteLayout = '[Layouts] Delete layout',
-  UpdateLayout = '[Layouts] Update layout'
-}
+const PREFIX = '[List Layouts]';
 
-export class LoadLayouts implements Action {
-  readonly type = LayoutsActionTypes.LoadLayouts;
-}
+export const loadListLayout = createAction(
+  `${PREFIX} Load ListLayout`,
+  props<{ key: string }>()
+);
 
-export class LoadLayout implements Action {
-  readonly type = LayoutsActionTypes.LoadLayout;
+export const loadListLayoutSuccess = createAction(
+  `${PREFIX} Load ListLayout Success`,
+  props<{ layout: ListLayout }>()
+);
 
-  constructor(public readonly key: string) {
-  }
-}
+export const loadListLayouts = createAction(
+  `${PREFIX} Load ListLayouts`
+);
 
-export class LayoutsLoaded implements Action {
-  readonly type = LayoutsActionTypes.LayoutsLoaded;
+export const loadListLayoutsSuccess = createAction(
+  `${PREFIX} Load ListLayouts Success`,
+  props<{ layouts: ListLayout[] }>()
+);
 
-  constructor(public payload: ListLayout[]) {
-  }
-}
+export const selectListLayout = createAction(
+  `${PREFIX} Select List Layout`,
+  props<{ key: string }>()
+);
 
-export class LayoutLoaded implements Action {
-  readonly type = LayoutsActionTypes.LayoutLoaded;
+export const createListLayout = createAction(
+  `${PREFIX} Create List Layout`,
+  props<{ layout: ListLayout }>()
+);
 
-  constructor(public payload: ListLayout) {
-  }
-}
+export const updateListLayout = createAction(
+  `${PREFIX} Update List Layout`,
+  props<{ layout: ListLayout }>()
+);
 
-export class SelectLayout implements Action {
-  readonly type = LayoutsActionTypes.SelectLayout;
+export const deleteListLayout = createAction(
+  `${PREFIX} Delete List Layout`,
+  props<{ id: string }>()
+);
 
-  constructor(public key: string) {
-  }
-}
 
-export class CreateLayout implements Action {
-  readonly type = LayoutsActionTypes.CreateLayout;
 
-  constructor(public readonly layout: ListLayout) {
-  }
-}
-
-export class UpdateLayout implements Action {
-  readonly type = LayoutsActionTypes.UpdateLayout;
-
-  constructor(public readonly layout: ListLayout) {
-  }
-}
-
-export class DeleteLayout implements Action {
-  readonly type = LayoutsActionTypes.DeleteLayout;
-
-  constructor(public readonly key: string) {
-  }
-}
-
-export type LayoutsAction = LoadLayouts | LayoutsLoaded | SelectLayout | CreateLayout | DeleteLayout | UpdateLayout | LoadLayout | LayoutLoaded;
-
-export const fromLayoutsActions = {
-  LoadLayouts,
-  LayoutsLoaded,
-  SelectLayout,
-  CreateLayout,
-  DeleteLayout,
-  UpdateLayout,
-  LoadLayout,
-  LayoutLoaded
-};

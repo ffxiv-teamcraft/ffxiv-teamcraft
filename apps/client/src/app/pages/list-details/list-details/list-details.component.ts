@@ -140,6 +140,8 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     shareReplay(1)
   );
 
+  public isDesktop = this.platform.isDesktop();
+
   constructor(private layoutsFacade: LayoutsFacade, public listsFacade: ListsFacade,
               private activatedRoute: ActivatedRoute, private dialog: NzModalService,
               private translate: TranslateService, private router: Router,
@@ -206,6 +208,10 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   public set adaptativeFilter(value: boolean) {
     this.adaptativeFilter$.next(value);
+  }
+
+  toggleStepByStepOverlay(): void {
+    this.ipc.openOverlay('/step-by-step-list-overlay');
   }
 
   ngOnInit() {

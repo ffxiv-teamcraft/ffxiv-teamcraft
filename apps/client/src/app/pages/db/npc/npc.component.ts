@@ -31,6 +31,8 @@ export class NpcComponent extends TeamcraftPageComponent {
 
   public trades$: Observable<TradeSource[]>;
 
+  public gilShops$: Observable<TradeSource[]>;
+
   public leves$: Observable<number[]>;
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
@@ -60,7 +62,7 @@ export class NpcComponent extends TeamcraftPageComponent {
       shareReplay({ bufferSize: 1, refCount: true })
     );
 
-    this.trades$ = npcId$.pipe(
+    const shops$ = npcId$.pipe(
       switchMap(npcId => {
         return combineLatest([
           of(npcId),
@@ -70,7 +72,6 @@ export class NpcComponent extends TeamcraftPageComponent {
       }),
       map(([npcId, npcEntry, shops]) => {
         return shops
-          .filter(shop => shop.type !== 'GilShop')
           .map(shop => {
             const npc: TradeNpc = { id: +npcId };
             if (npcEntry.position !== null) {
@@ -85,7 +86,16 @@ export class NpcComponent extends TeamcraftPageComponent {
               ]
             };
           });
-      })
+      }),
+      shareReplay(1)
+    );
+
+    this.trades$ = shops$.pipe(
+      map(shops => shops.filter(s => s.type !== 'GilShop'))
+    );
+
+    this.gilShops$ = shops$.pipe(
+      map(shops => shops.filter(s => s.type === 'GilShop'))
     );
 
     this.links$ = this.xivapiNpc$.pipe(

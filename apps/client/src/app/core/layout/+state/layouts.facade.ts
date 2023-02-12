@@ -3,8 +3,6 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { LayoutsState } from './layouts.reducer';
-import { layoutsQuery } from './layouts.selectors';
-import { CreateLayout, DeleteLayout, LoadLayout, LoadLayouts, SelectLayout, UpdateLayout } from './layouts.actions';
 import { LayoutOrderService } from '../layout-order.service';
 import { List } from '../../../modules/list/model/list';
 import { combineLatest, EMPTY, Observable, of } from 'rxjs';
@@ -23,16 +21,18 @@ import { DataType } from '../../../modules/list/data/data-type';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-stats';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { getAllLayouts, getLoaded, getSelectedLayout } from './layouts.selectors';
+import { createListLayout, deleteListLayout, loadListLayout, loadListLayouts, selectListLayout, updateListLayout } from './layouts.actions';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LayoutsFacade {
-  loaded$ = this.store.select(layoutsQuery.getLoaded);
+  loaded$ = this.store.select(getLoaded);
 
-  allLayouts$ = this.store.select(layoutsQuery.getAllLayouts);
+  allLayouts$ = this.store.select(getAllLayouts);
 
-  selectedLayout$: Observable<ListLayout> = this.store.select(layoutsQuery.getSelectedLayout)
+  selectedLayout$: Observable<ListLayout> = this.store.select(getSelectedLayout)
     .pipe(
       map(layout => {
         if (layout === undefined) {
@@ -237,36 +237,36 @@ export class LayoutsFacade {
     Object.assign(layout, baseLayout);
     layout.name = (baseLayout && baseLayout.name) || name;
     layout.rows = layout.rows || this.layoutService.defaultLayout.rows;
-    this.store.dispatch(new CreateLayout(layout));
+    this.store.dispatch(createListLayout({ layout }));
   }
 
-  public deleteLayout(key: string): void {
-    this.store.dispatch(new DeleteLayout(key));
+  public deleteLayout(id: string): void {
+    this.store.dispatch(deleteListLayout({ id }));
   }
 
   public updateLayout(layout: ListLayout): void {
-    this.store.dispatch(new UpdateLayout(layout));
+    this.store.dispatch(updateListLayout({ layout }));
   }
 
   select(layout: ListLayout): void {
-    this.store.dispatch(new SelectLayout(layout.$key));
+    this.store.dispatch(selectListLayout({ key: layout.$key }));
     localStorage.setItem('layout:selected', layout.$key);
   }
 
   selectFromOverlay(key: string): void {
-    this.store.dispatch(new SelectLayout(key));
+    this.store.dispatch(selectListLayout({ key }));
   }
 
   loadAll(): void {
-    this.store.dispatch(new LoadLayouts());
+    this.store.dispatch(loadListLayouts());
     const selectedKey = localStorage.getItem('layout:selected');
     if (selectedKey !== null) {
-      this.store.dispatch(new SelectLayout(selectedKey));
+      this.store.dispatch(selectListLayout({ key: selectedKey }));
     }
   }
 
   load(key: string): void {
-    this.store.dispatch(new LoadLayout(key));
+    this.store.dispatch(loadListLayout({ key }));
   }
 
   private matchesLevel(sets: TeamcraftGearsetStats[], job: number, level: number): boolean {

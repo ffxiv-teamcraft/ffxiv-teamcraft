@@ -1,10 +1,9 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { METRICSDASHBOARDS_FEATURE_KEY, metricsDashboardsAdapter, MetricsDashboardsPartialState, State } from './metrics-dashboards.reducer';
+import { METRICSDASHBOARDS_FEATURE_KEY, metricsDashboardsAdapter, State } from './metrics-dashboards.reducer';
 import { MetricsDashboardLayout } from '../display/metrics-dashboard-layout';
 
 // Lookup the 'MetricsDashboards' feature state managed by NgRx
-export const getMetricsDashboardsState = createFeatureSelector<
-  State>(METRICSDASHBOARDS_FEATURE_KEY);
+export const getMetricsDashboardsState = createFeatureSelector<State>(METRICSDASHBOARDS_FEATURE_KEY);
 
 const { selectAll, selectEntities } = metricsDashboardsAdapter.getSelectors();
 

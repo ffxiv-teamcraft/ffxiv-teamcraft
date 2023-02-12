@@ -144,6 +144,12 @@ export class DataService {
               value: f.value.max
             }
           ];
+        } else if (Array.isArray(f.value)) {
+          return [{
+            column: f.name,
+            operator: '|=',
+            value: f.value.filter(Boolean).join(';')
+          }];
         } else {
           return [{
             column: f.name,

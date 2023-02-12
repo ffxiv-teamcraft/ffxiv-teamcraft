@@ -151,6 +151,18 @@
           <app-trades [externalTradeSources]="trades"></app-trades>
         </nz-card>
       </ng-container>
+      <ng-container *ngIf="gilShops$ | async as gilShops">
+        <nz-card *ngIf="gilShops?.length > 0" [nzTitle]="title" class="details-card" fxFlex="1 1 auto" nzBordered="false">
+          <ng-template #title>
+            <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <div>
+                {{'DB.NPC.Shops' | translate}}
+              </div>
+            </div>
+          </ng-template>
+          <app-trades [externalTradeSources]="gilShops"></app-trades>
+        </nz-card>
+      </ng-container>
 
       <nz-card *ngIf="xivapiNpc.GilShop && xivapiNpc.GilShop.length > 0" [nzTitle]="title" class="details-card" fxFlex="1 1 auto"
                nzBordered="false">

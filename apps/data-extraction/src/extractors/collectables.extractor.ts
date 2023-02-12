@@ -54,7 +54,9 @@ export class CollectablesExtractor extends AbstractExtractor {
           'CollectablesShopRewardScrip',
           'Item.AlwaysCollectable', 'Item.IsCollectable', 'LevelMin', 'LevelMax', 'CollectablesShopItemGroup#'
         ], false, 2),
-      this.getSheet<any>(xiv, 'CollectablesShopRewardItem', ['CollectablesShopRefine#', 'CollectablesShopRewardScrip#', 'Item.AlwaysCollectable', 'Item.IsCollectable', 'LevelMin', 'LevelMax', 'CollectablesShopItemGroup#'], false, 1)
+      this.getSheet<any>(xiv, 'CollectablesShopRewardItem', ['CollectablesShopRefine#', 'CollectablesShopRewardScrip#', 'Item.AlwaysCollectable',
+        'Item.IsCollectable', 'LevelMin', 'LevelMax', 'CollectablesShopItemGroup#', 'RewardLow', 'RewardMid', 'RewardHigh'
+      ], false, 1)
     ])
       .subscribe(([hwdCompleteFetch, shopsCompleteFetch, collectablesCompleteFetch, collectableRewardsCompleteFetch]) => {
         // HWDCrafterSupply
@@ -66,6 +68,8 @@ export class CollectablesExtractor extends AbstractExtractor {
             const baseReward = supply.BaseCollectableReward[i];
             collectables[supply.ItemTradeIn[i]] = {
               hwd: true,
+              id: supply.index,
+              type: 'HWDCrafterSupply',
               level: supply.Level[i],
               reward: 28063,
               base: {
@@ -103,6 +107,8 @@ export class CollectablesExtractor extends AbstractExtractor {
               return;
             }
             collectables[collectable.Item.index] = {
+              id: collectable.index,
+              type: 'CollectablesShopItem',
               collectable: collectable.Item.AlwaysCollectable | collectable.Item.IsCollectable,
               level: collectable.LevelMin,
               levelMin: collectable.LevelMin,
@@ -152,12 +158,22 @@ export class CollectablesExtractor extends AbstractExtractor {
                   return;
                 }
                 let rewardId = StaticData.CURRENCIES[collectable.CollectablesShopRewardScrip.Currency];
+                let lowQuantity = 1;
+                let midQuantity = 1;
+                let highQuantity = 1;
                 if (shop.RewardType === 2) {
-                  rewardId = collectableRewardsCompleteFetch.find(cReward => {
+                  const rewardEntry = collectableRewardsCompleteFetch.find(cReward => {
                     return cReward.index === collectable.CollectablesShopRewardScrip?.index;
-                  })?.Item?.index;
+                  });
+                  rewardId = rewardEntry?.Item?.index;
+                  lowQuantity = rewardEntry.RewardLow;
+                  midQuantity = rewardEntry.RewardMid;
+                  highQuantity = rewardEntry.RewardHigh;
                 }
                 collectables[collectable.Item.index] = {
+                  id: collectable.index,
+                  type: 'CollectablesShopItem',
+                  rewardType: shop.RewardType,
                   collectable: collectable.Item.AlwaysCollectable | collectable.Item.IsCollectable,
                   level: collectable.LevelMin,
                   levelMin: collectable.LevelMin,
@@ -166,16 +182,19 @@ export class CollectablesExtractor extends AbstractExtractor {
                   shopId: collectable.index,
                   reward: rewardId,
                   base: {
+                    quantity: lowQuantity,
                     rating: lowThreshold,
                     exp: collectable.CollectablesShopRewardScrip.ExpRatioLow,
                     scrip: collectable.CollectablesShopRewardScrip.LowReward
                   },
                   mid: {
+                    quantity: midQuantity,
                     rating: midThreshold,
                     exp: collectable.CollectablesShopRewardScrip.ExpRatioMid,
                     scrip: collectable.CollectablesShopRewardScrip.MidReward
                   },
                   high: {
+                    quantity: highQuantity,
                     rating: highThreshold,
                     exp: collectable.CollectablesShopRewardScrip.ExpRatioHigh,
                     scrip: collectable.CollectablesShopRewardScrip.HighReward

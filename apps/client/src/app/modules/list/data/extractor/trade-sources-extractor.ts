@@ -83,13 +83,15 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
         }
         if (collectableReward) {
           return [{
+            type: 'CollectableReward',
+            id: +collectableReward[0],
             npcs: [{
-              id: 1032900,
-              zoneId: npcs[1032900].position.zoneid,
-              mapId: npcs[1032900].position.map,
+              id: 1035014,
+              zoneId: npcs[1035014].position.zoneid,
+              mapId: npcs[1035014].position.map,
               coords: {
-                x: npcs[1032900].position.x,
-                y: npcs[1032900].position.y
+                x: npcs[1035014].position.x,
+                y: npcs[1035014].position.y
               }
             }],
             shopName: collectablesShopItemGroup[collectableReward[1].group],
@@ -98,7 +100,8 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
                 currencies: [
                   {
                     id: +collectableReward[0],
-                    amount: 1
+                    amount: collectableReward[1][tier].quantity || 1,
+                    minCollectability: collectableReward[1].base.rating
                   }
                 ],
                 items: [

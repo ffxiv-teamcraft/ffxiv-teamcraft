@@ -12,7 +12,6 @@ import { SettingsService } from '../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { MapService } from '../../modules/map/map.service';
 import { MapModule } from '../../modules/map/map.module';
-import { MapData } from '../../modules/map/map-data';
 import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
@@ -57,7 +56,16 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
   public permissionLevel$: Observable<PermissionLevel> = this.listsFacade.selectedListPermissionLevel$;
 
   private display$ = combineLatest([this.list$, this.adaptativeFilter$]).pipe(
-    switchMap(([list, adaptativeFilter]) => this.layoutsFacade.getDisplay(list, adaptativeFilter, false)),
+    switchMap(([list, adaptativeFilter]) => {
+      const layout$ = this.layoutsFacade.selectedLayout$.pipe(
+        map(layout => {
+          const withFinalItems = layout.clone();
+          withFinalItems.includeRecipesInItems = true;
+          return withFinalItems;
+        })
+      );
+      return this.layoutsFacade.getDisplay(list, adaptativeFilter, false, layout$);
+    }),
     shareReplay({ bufferSize: 1, refCount: true })
   );
 
@@ -100,19 +108,9 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
     this.stepsList$ = this.currentPath$.pipe(
       map(path => path.path.steps.slice(1))
     );
-    this.closestMap$ = combineLatest([
-      this.mapId$,
-      this.stepByStep$
-    ]).pipe(
-      switchMap(([mapId, stepByStep]) => {
-        return combineLatest([this.mapService.getMapById(mapId), ...stepByStep.maps.filter(id => id !== mapId && !stepByStep.steps[id].complete).map(id => this.mapService.getMapById(id))]).pipe(
-          map(([currentMap, ...maps]: MapData[]) => {
-            return maps.sort((a, b) => {
-              return this.mapService.getTpCost(currentMap.aetherytes[0], a.aetherytes[0]) -
-                this.mapService.getTpCost(currentMap.aetherytes[0], b.aetherytes[0]);
-            })[0]?.id;
-          })
-        );
+    this.closestMap$ = this.stepByStep$.pipe(
+      map((stepByStep) => {
+        return stepByStep.maps[0];
       })
     );
   }

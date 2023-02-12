@@ -8,55 +8,65 @@
   </div>
 </div>
 <app-page-loader [loading]="isLoading$ | async">
-  <div fxLayout="column" fxLayoutGap="20px" *ngIf="display$ | async | keyvalue as servers; else noData">
-    <nz-collapse *ngFor="let server of servers; trackBy:trackByServerKey">
-      <nz-collapse-panel [nzHeader]="serverHeaderTpl" [nzActive]="servers.length === 1">
-        <ng-template #serverHeaderTpl>
-          {{ server.key }}
-        </ng-template>
-        <div fxLayout="column" fxLayoutGap="20px">
-          <nz-collapse *ngFor="let freecompany of server.value; trackBy:trackById">
-            <nz-collapse-panel [nzHeader]="freeCompanyHeaderTpl" [nzActive]="activeState[server.key + ':' + freecompany.id]" (nzActiveChange)="setActiveState(server.key + ':' + freecompany.id, $event)">
-              <ng-template #freeCompanyHeaderTpl>
-                <div fxLayout="row" fxLayoutAlign="space-between center">
-                  <div nz-col nzMd="7">
-                    {{ freecompany.name }} <{{ freecompany.tag}}>
-                  </div>
-                  <div nz-col nzMd="14" fxLayout="row">
-                    <div>{{ 'VOYAGE_TRACKER.Sectors_discovered' | translate }}:&nbsp;</div>
-                    <div nz-tooltip nzTooltipPlacement="top" [nzTooltipTitle]="'VOYAGE_TRACKER.SECTOR_PROGRESSION.Airship' | translate">
-                      <i class="fa fa-plane"></i>
-                      {{ getAirshipSectorsProgression(freecompany.airships?.sectors) }}/{{ airshipSectorsTotal$ | async }}
+  <ng-container *ngIf="display$ | async | keyvalue as servers">
+    <div fxLayout="column" fxLayoutGap="20px">
+      <nz-collapse *ngFor="let server of servers; trackBy:trackByServerKey">
+        <nz-collapse-panel [nzHeader]="serverHeaderTpl" [nzActive]="servers.length === 1">
+          <ng-template #serverHeaderTpl>
+            {{ server.key }}
+          </ng-template>
+          <div fxLayout="column" fxLayoutGap="20px">
+            <nz-collapse *ngFor="let freecompany of server.value; trackBy:trackById">
+              <nz-collapse-panel [nzHeader]="freeCompanyHeaderTpl" [nzActive]="activeState[server.key + ':' + freecompany.id]"
+                                 (nzActiveChange)="setActiveState(server.key + ':' + freecompany.id, $event)">
+                <ng-template #freeCompanyHeaderTpl>
+                  <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <div nz-col nzMd="7">
+                      {{ freecompany.name }} <{{ freecompany.tag}}>
                     </div>
-                    <div>&nbsp; | &nbsp;</div>
-                    <div nz-tooltip nzTooltipPlacement="top" [nzTooltipTitle]="'VOYAGE_TRACKER.SECTOR_PROGRESSION.Submersible' | translate" >
-                      <i class="fa fa-anchor"></i>
-                      {{ getSubmarineSectorsProgression(freecompany.submarines?.sectors) }}/{{ submarineSectorsTotal$ | async }}
+                    <div nz-col nzMd="14" fxLayout="row">
+                      <div>{{ 'VOYAGE_TRACKER.Sectors_discovered' | translate }}:&nbsp;</div>
+                      <div nz-tooltip nzTooltipPlacement="top" [nzTooltipTitle]="'VOYAGE_TRACKER.SECTOR_PROGRESSION.Airship' | translate">
+                        <i class="fa fa-plane"></i>
+                        {{ getAirshipSectorsProgression(freecompany.airships?.sectors) }}/{{ airshipSectorsTotal$ | async }}
+                      </div>
+                      <div>&nbsp; | &nbsp;</div>
+                      <div nz-tooltip nzTooltipPlacement="top" [nzTooltipTitle]="'VOYAGE_TRACKER.SECTOR_PROGRESSION.Submersible' | translate">
+                        <i class="fa fa-anchor"></i>
+                        {{ getSubmarineSectorsProgression(freecompany.submarines?.sectors) }}/{{ submarineSectorsTotal$ | async }}
+                      </div>
+                    </div>
+                    <div nz-col nzMd="3" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end" style="padding-right: 5px;">
+                      <button nz-button nzDanger
+                              nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" nzShape="circle"
+                              nz-tooltip [nzTooltipTitle]="'VOYAGE_TRACKER.Delete_free_company' | translate"
+                              (click)="$event.stopPropagation()"
+                              (nzOnConfirm)="deleteWorkshop(freecompany.id)">
+                        <i nz-icon nzType="delete" nzTheme="outline"></i>
+                      </button>
                     </div>
                   </div>
-                  <div nz-col nzMd="3" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end" style="padding-right: 5px;">
-                    <button nz-button nzDanger
-                            nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" nzShape="circle"
-                            nz-tooltip [nzTooltipTitle]="'VOYAGE_TRACKER.Delete_free_company' | translate"
-                            (click)="$event.stopPropagation()"
-                            (nzOnConfirm)="deleteWorkshop(freecompany.id)">
-                      <i nz-icon nzType="delete" nzTheme="outline"></i>
-                    </button>
-                  </div>
-                </div>
-              </ng-template>
-              <app-vessel-list [airships]="freecompany.airships.slots"
-                               [submarines]="freecompany.submarines.slots"
-                               [airshipMaxRank]="airshipMaxRank$ | async"
-                               [submarineMaxRank]="submarineMaxRank$ | async"
-              ></app-vessel-list>
-            </nz-collapse-panel>
-          </nz-collapse>
-        </div>
-      </nz-collapse-panel>
-    </nz-collapse>
-  </div>
-  <ng-template #noData>
-    <app-fullpage-message height="300px" [subtitle]="'VOYAGE_TRACKER.Please_import_pcap' | translate">{{'VOYAGE_TRACKER.Nothing_to_show' | translate}}</app-fullpage-message>
-  </ng-template>
+                </ng-template>
+                <app-vessel-list [airships]="freecompany.airships.slots"
+                                 [submarines]="freecompany.submarines.slots"
+                                 [airshipMaxRank]="airshipMaxRank$ | async"
+                                 [submarineMaxRank]="submarineMaxRank$ | async"
+                ></app-vessel-list>
+              </nz-collapse-panel>
+            </nz-collapse>
+          </div>
+        </nz-collapse-panel>
+      </nz-collapse>
+    </div>
+    <app-fullpage-message height="300px"
+                          *ngIf="servers.length === 0"
+                          [subtitle]="subtitleTpl">{{'VOYAGE_TRACKER.Nothing_to_show' | translate}}</app-fullpage-message>
+    <ng-template #subtitleTpl>
+      <div class="flex-column align-center justify-center">
+        {{'VOYAGE_TRACKER.Please_import_pcap' | translate}}
+        <button [disabled]="(ipc.machinaToggle$ | async) === false" nz-button (click)="importFromPcap()"
+                nzType="primary">{{'VOYAGE_TRACKER.Import_using_pcap' | translate}}</button>
+      </div>
+    </ng-template>
+  </ng-container>
 </app-page-loader>

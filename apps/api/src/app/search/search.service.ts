@@ -155,7 +155,7 @@ export class SearchService {
             case SearchIndex.FATE:
               return of(this.mapFate(row));
             case SearchIndex.PLACENAME:
-              return of(this.mapMap(row));
+              return this.mapMap(row);
           }
           console.warn('No type matching for res type', row._);
         })).pipe(
@@ -617,10 +617,10 @@ export class SearchService {
       string: query,
       filters
     }).pipe(
-      map(res => {
-        return res.Results.map(place => {
-          return this.mapMap(place);
-        }).filter(r => r !== null);
+      switchMap(res => {
+        return combineLatest<MapSearchResult[]>(res.Results.map(place => this.mapMap(place))).pipe(
+          map(res => res.filter(r => r !== null))
+        );
       })
     );
   }
@@ -636,11 +636,19 @@ export class SearchService {
     //   console.log(axios.getUri(config));
     //   return config;
     // });
+    const params: any = {
+      ...options
+    };
+    if (filters?.length > 0) {
+      params.filters = filters;
+    }
+    if (region === Region.China && environment.ffcafeKey) {
+      params.private_key = environment.ffcafeKey;
+    } else if (environment.xivapiKey) {
+      params.private_key = environment.xivapiKey;
+    }
     return from(axios.get<T>(`${this.getBaseUrl(region)}/search`, {
-      params: {
-        ...options, filters,
-        private_key: environment.xivapiKey
-      },
+      params,
       paramsSerializer: {
         serialize: params => qs.stringify(params, { arrayFormat: 'comma' })
       }

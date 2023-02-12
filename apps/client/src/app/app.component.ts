@@ -566,6 +566,7 @@ export class AppComponent implements OnInit {
   }
 
   startPcap(): void {
+    this.ipc.send('toggle-machina', true);
     this.ipc.send('pcap:restart');
   }
 

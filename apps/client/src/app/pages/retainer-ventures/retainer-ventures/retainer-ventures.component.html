@@ -2,6 +2,14 @@
 
 <div fxLayout="column" fxLayoutGap="10px">
   <i>{{'RETAINER_VENTURES.Description' | translate}}</i>
+  <ng-container *ngIf="retainersMissingStats$ | async as retainersMissingStats">
+    <nz-alert *ngIf="retainersMissingStats.length > 0" nzType="warning" nzShowIcon [nzMessage]="'RETAINER_VENTURES.Missing_gear' | translate"
+              [nzDescription]="descriptionTpl">
+      <ng-template #descriptionTpl>
+        {{'RETAINER_VENTURES.Missing_gear_description' | translate}}: <span *ngFor="let retainer of retainersMissingStats;let last = last">{{retainer.name}}<span *ngIf="!last">, </span></span>
+      </ng-template>
+    </nz-alert>
+  </ng-container>
   <div *ngIf="retainersWithStats$ | async as retainers" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
     <div>{{'RETAINER_VENTURES.Use_retainer' | translate}}:&nbsp;</div>
     <nz-select [nzPlaceHolder]="'RETAINER_VENTURES.Select_retainer' | translate"
@@ -9,7 +17,7 @@
                (ngModelChange)="selectRetainer($event)"
                class="retainer-filter"
                nzShowSearch>
-      <nz-option *ngFor="let retainer of retainers" [nzLabel]="retainer.name" [nzValue]="retainer"></nz-option>
+      <nz-option *ngFor="let retainer of retainers" nzLabel="{{retainer.name}} (ilvl {{retainer.ilvl}})" [nzValue]="retainer"></nz-option>
     </nz-select>
   </div>
 
@@ -97,7 +105,9 @@
           </div>
         </div>
         <div nz-col nzMd="3" fxLayout="row" fxLayoutAlign="flex-start center">{{'RETAINER_VENTURES.Task_level' | translate}}: {{task.lvl}}</div>
-        <div nz-col nzMd="3" fxLayout="row" fxLayoutAlign="flex-start center"><img alt="exp" class="img-icon" src="./assets/icons/exp.png">&nbsp;{{task.exp | number:'1.0-0':translate.currentLang}}</div>
+        <div nz-col nzMd="3" fxLayout="row" fxLayoutAlign="flex-start center"><img alt="exp" class="img-icon"
+                                                                                   src="./assets/icons/exp.png">&nbsp;{{task.exp | number:'1.0-0':translate.currentLang}}
+        </div>
       </div>
     </app-page-loader>
   </div>

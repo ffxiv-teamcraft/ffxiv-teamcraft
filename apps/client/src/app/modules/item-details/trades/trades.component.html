@@ -8,10 +8,16 @@
     <div nz-row>
       <div *ngFor="let trade of tradeSource.trades" class="trades" nz-col [nzMd]="6" [nzSm]="12" [nzXs]="24">
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-          <div *ngFor="let currency of trade.currencies" class="item-container">
+          <div *ngFor="let currency of trade.currencies" class="item-container flex-row align-center gap-2">
             <app-item-icon [hq]="currency.hq" [icon]="currency.icon" [itemId]="+currency.id"
                            [itemName]="currency.id | itemName | i18n" [width]="32"></app-item-icon>
-            <span>x{{currency.amount}}</span>
+            <div class="flex-column">
+              <div class="compact-line">x{{currency.amount}}</div>
+              <div *ngIf="currency.minCollectability" class="min-collectability compact-line">
+                <img src="./assets/icons/svg/collectable.svg" alt="collectability">
+                <span class="value">>= {{currency.minCollectability}}</span>
+              </div>
+            </div>
           </div>
           <i nz-icon nzType="arrow-right"></i>
           <div *ngFor="let tradeItem of trade.items" class="item-container">
