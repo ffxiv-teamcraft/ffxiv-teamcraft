@@ -3,4 +3,5 @@ export interface TradeEntry {
   icon?: number | string;
   amount?: number;
   hq?: boolean;
+  minCollectability?: number;
 }
