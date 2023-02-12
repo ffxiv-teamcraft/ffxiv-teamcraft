@@ -2690,7 +2690,9 @@
     "Task_level": "ベンチャーレベル",
     "Total_per_venture": "ベンチャーあたりの合計",
     "Use_retainer": "Fill with retainer",
-    "Select_retainer": "Pick one of your retainers"
+    "Select_retainer": "Pick one of your retainers",
+    "Missing_gear": "Missing gear",
+    "Missing_gear_description": "Some of your retainers are missing their gear in TC data, please summon each retainer again to load their gear"
   },
   "PATREON": {
     "By_supporting_us": "By supporting us on Patreon, you get:",
