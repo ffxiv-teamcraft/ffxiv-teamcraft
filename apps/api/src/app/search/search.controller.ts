@@ -28,7 +28,7 @@ export class SearchController {
       transformedFilters = (filters || '').split(',')
         .filter(Boolean)
         .map(fragment => {
-          const [, column, operator, value] = fragment.match(/([^><=?!|]+)([><=?!|]+)(.*)/);
+          const [, column, operator, value] = fragment.match(/([^><=?!|]+)([><=?!|]{1,2})(.*)/);
           return {
             column,
             operator: operator as XivapiSearchFilter['operator'],
