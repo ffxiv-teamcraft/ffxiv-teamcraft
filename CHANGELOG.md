@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.2.4"></a>
+## [10.2.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.2.3...v10.2.4) (2023-02-12)
+
+
+### Bug Fixes
+
+* **api:** fixed Chinese region search crashing ([6538c19](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6538c19))
+* **db:** fixed skysteel mats trades quantities and NPC ([8c1ecfa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8c1ecfa))
+* **desktop:** don't show pcap status if pcap is disabled in settings ([98a00b2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/98a00b2))
+* **layouts:** upgrade to ngrx entity adapter to prevent display duplicates ([a4437d2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a4437d2))
+* **list:** fixed clusters only showing two timers ([e774f78](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e774f78))
+* **retainer-ventures:** use history instead of listing for current price ([b7e1311](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b7e1311))
+* **search:** fix Map search type returning broken results ([5fddf64](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5fddf64))
+* **search:** fixed item type multiselect not working ([27caa56](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/27caa56))
+* **settings:** better nickname validation UX ([6a1ab38](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6a1ab38))
+* **step-by-step:** fixed final items not showing in gatherables ([0eaa6a1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0eaa6a1))
+* **step-by-step-overlay:** hide timed nodes if there's none ([6423df6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6423df6))
+
+
+### Features
+
+* **desktop:** new button in list details page to open step-by-step overlay from any display mode ([6b08285](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6b08285))
+* **retainer-ventures:** added a banner to check if all retainers have their gear properly imported ([5f4139e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5f4139e))
+* **step-by-step:** include monster or fate name when needed ([d37acce](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d37acce))
+* **step-by-step:** map listing is now sorted by TP cost ([78835e2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/78835e2))
+* **voyage-tracker:** better import UX ([194b55a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/194b55a))
+
+
+
 <a name="10.2.3"></a>
 ## [10.2.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.2.2...v10.2.3) (2023-02-10)
 
