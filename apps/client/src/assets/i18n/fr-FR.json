@@ -2690,7 +2690,9 @@
     "Task_level": "Niveau de la tâche",
     "Total_per_venture": "Total par tâche",
     "Use_retainer": "Utiliser le servant",
-    "Select_retainer": "Choisissez l'un de vos servants"
+    "Select_retainer": "Choisissez l'un de vos servants",
+    "Missing_gear": "Missing gear",
+    "Missing_gear_description": "Some of your retainers are missing their gear in TC data, please summon each retainer again to load their gear"
   },
   "PATREON": {
     "By_supporting_us": "En nous soutenant sur patreon, vous obtenez :",
