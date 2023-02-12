@@ -29,12 +29,16 @@ export class SearchController {
         .filter(Boolean)
         .map(fragment => {
           const [, column, operator, value] = fragment.match(/([^><=?!|]+)([><=?!|]{1,2})(.*)/);
+          if (value === '') {
+            return null;
+          }
           return {
             column,
             operator: operator as XivapiSearchFilter['operator'],
             value: isNaN(Number(value)) ? value : +value
           };
-        });
+        })
+        .filter(Boolean);
     } catch (e) {
       console.error(filters, e);
     }
