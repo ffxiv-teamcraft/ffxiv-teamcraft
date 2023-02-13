@@ -2725,7 +2725,7 @@
     "Open_fc_window": "Open your Free Company details window",
     "Open_fc_window_description": "This will make TC get more important details about your free company, such as server, G is the default binding for it.",
     "Interact_with_ships_subs": "Interact with each Submarine/Airship you want to import",
-    "Interact_with_ships_subs_description": "Opening the airship/submarine management window makes TC load everything needed to display details about your ships.",
+    "Interact_with_ships_subs_description": "打开飞空艇/潜水艇管理窗口，以便Teamcraft收集可供显示的数据",
     "Airships": "飞空艇",
     "Submersibles": "潜水艇"
   },
