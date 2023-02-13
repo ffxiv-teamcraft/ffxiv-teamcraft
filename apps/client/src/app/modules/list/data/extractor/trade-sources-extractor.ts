@@ -100,14 +100,14 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
                 currencies: [
                   {
                     id: +collectableReward[0],
-                    amount: collectableReward[1][tier].quantity || 1,
-                    minCollectability: collectableReward[1].base.rating
+                    amount: 1,
+                    minCollectability: collectableReward[1][tier].rating
                   }
                 ],
                 items: [
                   {
                     id: collectableReward[1].reward,
-                    amount: collectableReward[1][tier].scrip
+                    amount:  collectableReward[1][tier].quantity || collectableReward[1][tier].scrip
                   }
                 ]
               };
