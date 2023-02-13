@@ -9,9 +9,9 @@ import { ParsedRow } from './xiv/parsed-row';
 
 export abstract class AbstractExtractor {
 
-  protected static outputFolder = join(__dirname, '../../../apps/client/src/app/core/data/sources/');
+  public static outputFolder = join(__dirname, '../../../apps/client/src/app/core/data/sources/');
 
-  protected static assetOutputFolder = join(__dirname, '../../../libs/data/src/lib/json/');
+  public static assetOutputFolder = join(__dirname, '../../../libs/data/src/lib/json/');
 
   protected static XIVAPI_KEY = process.env.XIVAPI_KEY;
 
@@ -22,6 +22,8 @@ export abstract class AbstractExtractor {
   private done$ = new Subject<string>();
 
   protected progress: any;
+
+  multiBarRef: any;
 
   constructor() {
     interval(AbstractExtractor.XIVAPI_KEY ? 50 : 250)
@@ -38,6 +40,10 @@ export abstract class AbstractExtractor {
 
   public setProgress(progress: any): void {
     this.progress = progress;
+  }
+
+  public setMultiBarRef(ref: any): void {
+    this.multiBarRef = ref;
   }
 
   public abstract getName(): string;

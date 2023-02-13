@@ -14,7 +14,7 @@ export class DataExtractorService {
   constructor(@Inject(EXTRACTORS) private extractors: AbstractExtractor<any>[]) {
   }
 
-  addDataToItem(item: ListRow, skipCraft = false): Observable<ListRow> {
+  addDataToItem(item: ListRow): Observable<ListRow> {
     const result$ = new Subject<ListRow>();
     setTimeout(() => {
       from(this.extractors
@@ -32,9 +32,6 @@ export class DataExtractorService {
       ).pipe(
         mergeScan((acc, extractor) => {
           if ((acc.sources || []).some(s => s.type === DataType.DEPRECATED)) {
-            return of(acc);
-          }
-          if (extractor.getDataType() === DataType.CRAFTED_BY && skipCraft) {
             return of(acc);
           }
           return this.extract(extractor.getDataType(), item.id, acc).pipe(

@@ -61,6 +61,7 @@ import { from, mergeMap, tap } from 'rxjs';
 import { ItemSeriesExtractor } from './extractors/item-series.extractor';
 import { ShopsExtractor } from './extractors/shops.extractor';
 import { SeedsExtractor } from './extractors/seeds.extractor';
+import { ItemDetailsExtractExtractor } from './extractors/item-details-extract.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -151,7 +152,8 @@ const extractors: AbstractExtractor[] = [
   new LgbExtractor(),
   new GubalExtractor(),
   new AllaganReportsExtractor(),
-  new GatheringSearchIndexExtractor()
+  new GatheringSearchIndexExtractor(),
+  new ItemDetailsExtractExtractor()
 ];
 
 (async () => {
@@ -201,6 +203,7 @@ const extractors: AbstractExtractor[] = [
       mergeMap(extractor => {
         const progress = multiBar.create(0, 0, { label: extractor.getName() });
         extractor.setProgress(progress);
+        extractor.setMultiBarRef(multiBar);
         return extractor.extract(xiv).pipe(
           tap(() => {
             progress.stop();
