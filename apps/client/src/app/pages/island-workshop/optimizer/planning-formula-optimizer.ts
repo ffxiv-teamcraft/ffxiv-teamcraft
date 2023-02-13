@@ -55,10 +55,14 @@ export class PlanningFormulaOptimizer {
         useComboItem = !useComboItem;
         totalTime += item.craftworksEntry.craftingTime;
         objectsUsage[item.id] = (objectsUsage[item.id] || 0) + this.workshops * (totalTime === 0 ? 1 : 2);
-        [best, combo] = this.findBestAndComboObjects(projectedSupplyObjects, objectsUsage);
+        // If our best changes, we cannot ensure it will combo so we go to one at a time
+        let [bestChange, _] = this.findBestAndComboObjects(projectedSupplyObjects, objectsUsage);
+        if (bestChange !== best) {
+          break;
+        }
         projectedTime = useComboItem ? combo.craftworksEntry.craftingTime + best.craftworksEntry.craftingTime : best.craftworksEntry.craftingTime;
       }
-      if (totalTime < 24) {
+      while (totalTime < 24) {
         const bestFirstItem = projectedSupplyObjects.filter(obj => {
           return obj.craftworksEntry.craftingTime <= (24 - totalTime)
             && obj.craftworksEntry.themes.some(t => day.planning[0].craftworksEntry.themes.includes(t))
@@ -68,6 +72,7 @@ export class PlanningFormulaOptimizer {
         })[0];
         if (bestFirstItem) {
           day.planning.unshift(bestFirstItem);
+          totalTime += bestFirstItem.craftworksEntry.craftingTime;
         } else {
           const noComboFirstItem = projectedSupplyObjects.filter(obj => {
             return obj.craftworksEntry.craftingTime <= (24 - totalTime)
@@ -77,6 +82,10 @@ export class PlanningFormulaOptimizer {
           })[0];
           if (noComboFirstItem) {
             day.planning.unshift(noComboFirstItem);
+            totalTime += noComboFirstItem.craftworksEntry.craftingTime;
+          }
+          else {
+            break;
           }
         }
       }
