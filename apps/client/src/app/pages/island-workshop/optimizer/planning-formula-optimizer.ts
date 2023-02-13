@@ -44,7 +44,7 @@ export class PlanningFormulaOptimizer {
       }
 
       // Okay, if we're here, we know what'll peak and how, so we want to build an optimized value route now
-      let [best, combo] = this.findBestAndComboObjects(projectedSupplyObjects, objectsUsage);
+      const [best, combo] = this.findBestAndComboObjects(projectedSupplyObjects, objectsUsage);
 
       let totalTime = 0;
       let useComboItem = combo.craftworksEntry.craftingTime + best.craftworksEntry.craftingTime <= 12;
@@ -56,7 +56,7 @@ export class PlanningFormulaOptimizer {
         totalTime += item.craftworksEntry.craftingTime;
         objectsUsage[item.id] = (objectsUsage[item.id] || 0) + this.workshops * (totalTime === 0 ? 1 : 2);
         // If our best changes, we cannot ensure it will combo so we go to one at a time
-        let [bestChange, _] = this.findBestAndComboObjects(projectedSupplyObjects, objectsUsage);
+        const [bestChange, _] = this.findBestAndComboObjects(projectedSupplyObjects, objectsUsage);
         if (bestChange !== best) {
           break;
         }
