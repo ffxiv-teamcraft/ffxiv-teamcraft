@@ -6,30 +6,33 @@ export class CraftedByExtractor extends AbstractItemDetailsExtractor<CraftedBy[]
   recipes = this.requireLazyFile('recipesPerItem');
 
   doExtract(itemId: number): CraftedBy[] {
-    return (this.recipes[itemId] || []).map(
-      recipe => {
-        const { yields, masterbook, ...withoutYields } = recipe;
-        const result: CraftedBy = {
-          ...withoutYields,
-          itemId,
-          yield: recipe.yields,
-          stars_tooltip: this.generateStars(recipe.stars),
-          id: recipe.id.toString(),
-          hq: recipe.hq ? 1 : 0
+    return (this.recipes[itemId] || []).map(craft => {
+        const craftedBy: CraftedBy = {
+          itemId: itemId,
+          job: craft.job,
+          lvl: craft.lvl,
+          stars_tooltip: craft.stars > 0 ? `(${this.generateStars(craft.stars)}★)` : '',
+          id: craft.id.toString(),
+          rlvl: craft.rlvl,
+          durability: craft.durability,
+          progression: craft.progress,
+          quality: craft.quality,
+          yield: craft.yields,
+          isIslandRecipe: craft.isIslandRecipe || false
         };
-        if (recipe.masterbook) {
+        if (craft.masterbook) {
           let masterbookEntry: CompactMasterbook = {
-            id: recipe.masterbook
+            id: craft.masterbook
           };
-          if (recipe.masterbook && typeof recipe.masterbook !== 'number' && (recipe.masterbook as MasterbookClass).id) {
+          if (craft.masterbook && typeof craft.masterbook !== 'number' && (craft.masterbook as MasterbookClass).id) {
             masterbookEntry = {
-              id: +(recipe.masterbook as MasterbookClass).id,
-              name: (recipe.masterbook as MasterbookClass).name
+              id: +(craft.masterbook as MasterbookClass).id,
+              name: (craft.masterbook as MasterbookClass).name
             };
           }
-          result.masterbook = masterbookEntry;
+          craftedBy.masterbook = masterbookEntry;
         }
-        return result;
+        return craftedBy;
       }
     );
   }

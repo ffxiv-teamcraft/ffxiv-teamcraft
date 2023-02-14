@@ -159,10 +159,6 @@ export const lazyFilesList = {
     'fileName': 'free-company-actions.json',
     'hashedFileName': 'free-company-actions.f4f1953dca9cb18936dad61766fb4d9925179835.json'
   },
-  'gardeningSeedIds': {
-    'fileName': 'gardening-seed-ids.json',
-    'hashedFileName': 'gardening-seed-ids.8b5f82f365f0635797f3fb138003e5ec506c419f.json'
-  },
   'gardeningSources': {
     'fileName': 'gardening-sources.json',
     'hashedFileName': 'gardening-sources.12676e07975f826b8cb42210a54f8c37ed25f078.json'
@@ -449,7 +445,7 @@ export const lazyFilesList = {
   },
   'seeds': {
     'fileName': 'seeds.json',
-    'hashedFileName': 'seeds.e29b07783902fc142e0829094f1d00a6e92f811c.json'
+    'hashedFileName': 'seeds.85a69a38c40cc131cb67efc8d1144c8826be07bc.json'
   },
   'shopNames': {
     'fileName': 'shop-names.json',

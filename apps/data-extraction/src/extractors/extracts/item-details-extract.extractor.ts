@@ -85,7 +85,7 @@ export class ItemDetailsExtractExtractor extends AbstractExtractor {
               if (sources.length > 0) {
                 extracts[item.index] = {
                   id: item.index,
-                  sources: sources
+                  sources: sources.sort((a, b) => a.type - b.type)
                 };
               }
               done++;
