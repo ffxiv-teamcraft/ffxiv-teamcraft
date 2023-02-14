@@ -3017,7 +3017,7 @@
   "ISLAND_SANCTUARY": {
     "Animal_source": "당신은 이 아이템을 무인도 목장의 동물들에게서 채집해야 합니다",
     "Island_level": "무인도 레벨",
-    "Landmarks": "랜드마크",
+    "Landmarks": "특수 건물",
     "Workshop_rank": "공방 등급",
     "WORKSHOP": {
       "Title": "공방",
@@ -3059,27 +3059,27 @@
       "No_planning": "No planning available",
       "No_planning_explain": " Teamcraft is not able to compute a planning because there's too few recipes available, try to change your island level or uncheck some material exclusions.",
       "Next_week_prep": "Materials you should prepare for next week",
-      "Crop_materials": "Crops",
-      "Pasture_materials": "Pasture",
+      "Crop_materials": "경작지",
+      "Pasture_materials": "방목지",
       "POPULARITY": {
-        "Very_high": "Very high",
-        "High": "High",
-        "Average": "Average",
-        "Low": "Low"
+        "Very_high": "아주 높음",
+        "High": "높음",
+        "Average": "보통",
+        "Low": "낮음"
       },
       "SUPPLY": {
-        "Non_existant": "Non existant",
-        "Insufficient": "Insufficient",
-        "Sufficient": "Sufficient",
-        "Surplus": "Surplus",
-        "Overflowing": "Overflowing"
+        "Non_existant": "공급 고갈",
+        "Insufficient": "공급 부족",
+        "Sufficient": "보통",
+        "Surplus": "공급 과다",
+        "Overflowing": "공급 넘침"
       },
       "DEMAND_SHIFT": {
-        "Skyrocketing": "Skyrocketing",
-        "Increasing": "Increasing",
-        "None": "None",
-        "Decreasing": "Decreasing",
-        "Plummeting": "Plummeting"
+        "Skyrocketing": "크게 증가",
+        "Increasing": "증가",
+        "None": "변화 없음",
+        "Decreasing": "저하",
+        "Plummeting": "크게 저하"
       }
     },
     "ANIMALS": {
