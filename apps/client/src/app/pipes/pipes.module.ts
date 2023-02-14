@@ -10,7 +10,6 @@ import { ClosestAetherytePipe } from './pipes/closest-aetheryte.pipe';
 import { XivapiIconPipe } from './pipes/xivapi-icon.pipe';
 import { CharacterNamePipe } from './pipes/character-name.pipe';
 import { TeamcraftLinkPipe } from './pipes/teamcraft-link.pipe';
-import { FfxivgardeningPipe } from './pipes/ffxivgardening.pipe';
 import { NodeTypeNamePipe } from './pipes/node-type-name';
 import { XivapiI18nPipe } from './pipes/xivapi-i18n.pipe';
 import { XivapiL12nPipe } from './pipes/xivapi-l12n.pipe';
@@ -63,7 +62,6 @@ const pipes = [
   XivapiIconPipe,
   CharacterNamePipe,
   TeamcraftLinkPipe,
-  FfxivgardeningPipe,
   XivapiI18nPipe,
   XivapiL12nPipe,
   WeatherIconPipe,
