@@ -3021,10 +3021,10 @@
     "Workshop_rank": "개척공방 랭크",
     "WORKSHOP": {
       "Title": "개척공방",
-      "Subtitle": "공방 추적 및 관리",
+      "Subtitle": "개척공방 추적 및 관리",
       "Out_of_sync": "이전 리셋 이후 상태가 변화되지 않았습니다",
       "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary for the first time after logging in the game to update the state (If you have already opened the window since you logged in, you will need to log out of the game and back in, and re-open the Supply/Demand window to correctly update your state). If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button, or import from database.",
-      "Export_state": "수요/공급 상태 내보내기",
+      "Export_state": "특산품 수요 조사 내보내기",
       "State_copied": "상태가 클립보드에 복사되었습니다",
       "Import_state": "상태 가져오기",
       "Import_online_state": "데이터베이스로부터 상태 가져오기",
