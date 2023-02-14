@@ -1,5 +1,5 @@
-import { getCraftByPriority, getItemSource, ListRow } from './model/list-row';
-import { DataType } from './data/data-type';
+import { getCraftByPriority, ListRow } from './model/list-row';
+import { DataType, getExtract, getItemSource, Ingredient } from '@ffxiv-teamcraft/types';
 import { MathTools } from '../../tools/math-tools';
 import * as semver from 'semver';
 import { combineLatest, concat, EMPTY, Observable, of, Subject } from 'rxjs';
@@ -12,7 +12,6 @@ import { TeamcraftGearsetStats } from '../../model/user/teamcraft-gearset-stats'
 import { CraftedBy } from './model/crafted-by';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
 import { DataService } from '../../core/api/data.service';
-import { Ingredient } from '../../model/garland-tools/ingredient';
 import { List } from './model/list';
 import { Craft } from '@ffxiv-teamcraft/simulator';
 import { syncHqFlags } from '../../core/data/sources/sync-hq-flags';
@@ -120,7 +119,8 @@ export class ListController {
           done: 0,
           used: 0,
           yield: 1,
-          collectable: data.collectable
+          collectable: data.collectable,
+          sources: []
         });
       });
     }
@@ -504,7 +504,7 @@ export class ListController {
             lazyDataFacade.getRecipes() as unknown as Observable<Craft[]>
           ]).pipe(
             map(([extracts, recipes]) => {
-              const elementDetails = extracts[element.id];
+              const elementDetails = getExtract(extracts, +element.id);
               const nextIteration: CraftAddition[] = [];
               if (element.id < 20 && element.id > 1) {
                 ListController.add(list, list.items, {
@@ -513,7 +513,8 @@ export class ListController {
                   done: 0,
                   used: 0,
                   yield: 1,
-                  collectable: false
+                  collectable: false,
+                  sources: []
                 });
                 listManager.addDetails(list);
                 return [];
@@ -524,13 +525,13 @@ export class ListController {
                   const yields = craftToAdd.yield || 1;
                   const added = ListController.add(list, list.items, {
                     id: elementDetails.id,
-                    icon: elementDetails.icon,
                     amount: element.amount * addition.amount,
                     requires: recipes.find((r) => (r as any).result.toString() === element.id.toString()).ingredients,
                     done: 0,
                     used: 0,
                     yield: yields,
-                    collectable: false
+                    collectable: false,
+                    sources: []
                   });
                   nextIteration.push({
                     item: elementDetails,
@@ -539,7 +540,6 @@ export class ListController {
                 } else {
                   const rowToAdd: Partial<ListRow> = {
                     id: elementDetails.id,
-                    icon: elementDetails.icon,
                     amount: element.amount * addition.amount,
                     done: 0,
                     used: 0,
@@ -551,7 +551,7 @@ export class ListController {
                     rowToAdd.requires = requirements;
                     const reqAmount = element.amount * addition.amount;
                     requirements.forEach(req => {
-                      const reqDetails = extracts[+req.id];
+                      const reqDetails = getExtract(extracts, +req.id);
                       const reqRecipeId = getItemSource(reqDetails, DataType.CRAFTED_BY)[0]?.id;
                       ListController.add(list, list.items, {
                         id: +req.id,
@@ -560,10 +560,11 @@ export class ListController {
                         used: 0,
                         yield: 1,
                         requires: reqRecipeId ? recipes.find((r) => (r as any).id.toString() === reqRecipeId.toString()).ingredients : getItemSource(reqDetails, DataType.REQUIREMENTS),
-                        collectable: false
+                        collectable: false,
+                        sources: []
                       });
                       nextIteration.push({
-                        item: extracts[+req.id],
+                        item: getExtract(extracts, +req.id),
                         amount: Math.ceil(reqAmount / req.amount) * req.amount
                       });
                     });

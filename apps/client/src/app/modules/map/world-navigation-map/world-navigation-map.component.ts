@@ -3,7 +3,7 @@ import { NavigationObjective } from '../navigation-objective';
 import { MapService } from '../map.service';
 import { NavigationStep } from '../navigation-step';
 import { BehaviorSubject, combineLatest, fromEvent, Observable, Subject } from 'rxjs';
-import { Vector2 } from '../../../core/tools/vector2';
+import { Vector2 } from '@ffxiv-teamcraft/types';
 import { MapData } from '../map-data';
 import { filter, first, map, shareReplay, takeUntil } from 'rxjs/operators';
 import { WorldNavigationStep } from '../world-navigation-step';

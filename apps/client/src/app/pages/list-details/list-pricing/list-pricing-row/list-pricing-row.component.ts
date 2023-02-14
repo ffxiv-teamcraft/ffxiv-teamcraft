@@ -7,7 +7,7 @@ import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { ListRow } from '../../../../modules/list/model/list-row';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { ListPricingService } from '../list-pricing.service';
-import { DataType } from '../../../../modules/list/data/data-type';
+import { DataType } from '@ffxiv-teamcraft/types';
 import { TranslateService } from '@ngx-translate/core';
 import { Price } from '../model/price';
 

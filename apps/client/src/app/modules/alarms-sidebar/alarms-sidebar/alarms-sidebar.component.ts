@@ -5,7 +5,7 @@ import { AlarmBellService } from '../../../core/alarms/alarm-bell.service';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { Alarm } from '../../../core/alarms/alarm';
+import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { MapComponent } from '../../map/map/map.component';
 import { SettingsService } from '../../settings/settings.service';
 import { tap } from 'rxjs/operators';
@@ -37,20 +37,20 @@ export class AlarmsSidebarComponent implements OnInit {
     return display.alarm.$key;
   }
 
-  markAsDone(alarm: Alarm): void {
+  markAsDone(alarm: PersistedAlarm): void {
     this.alarmsFacade.setAlarmDone(alarm.$key);
   }
 
-  deleteAlarm(alarm: Alarm): void {
+  deleteAlarm(alarm: PersistedAlarm): void {
     this.alarmsFacade.deleteAlarm(alarm);
   }
 
-  hideAlarm(alarm: Alarm): void {
+  hideAlarm(alarm: PersistedAlarm): void {
     alarm.enabled = false;
     this.alarmsFacade.updateAlarm(alarm);
   }
 
-  openMap(alarm: Alarm): void {
+  openMap(alarm: PersistedAlarm): void {
     this.i18n.getNameObservable('places', alarm.zoneId).subscribe(title => {
       this.dialog.create({
         nzTitle: title,

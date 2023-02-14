@@ -3,7 +3,7 @@ import { Observable, of } from 'rxjs';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { AlarmBellService } from '../../../core/alarms/alarm-bell.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
-import { Alarm } from '../../../core/alarms/alarm';
+import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { AlarmsPageDisplay } from '../../../core/alarms/alarms-page-display';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
@@ -58,14 +58,14 @@ export class AlarmsPageComponent implements OnInit {
   }
 
   trackByAlarm(index: number, display: AlarmDisplay): string {
-    return display.alarm.$key;
+    return (display.alarm as PersistedAlarm).$key;
   }
 
   trackByGroup(index: number, group: AlarmGroup): string {
     return group.$key;
   }
 
-  deleteAlarm(alarm: Alarm): void {
+  deleteAlarm(alarm: PersistedAlarm): void {
     this.alarmsFacade.deleteAlarm(alarm);
   }
 
@@ -73,7 +73,7 @@ export class AlarmsPageComponent implements OnInit {
     this.alarmsFacade.updateGroup(group);
   }
 
-  setAlarmGroup(alarm: Alarm, groupKey: string): void {
+  setAlarmGroup(alarm: PersistedAlarm, groupKey: string): void {
     this.alarmsFacade.assignAlarmGroup(alarm.$key, groupKey);
   }
 
@@ -82,7 +82,7 @@ export class AlarmsPageComponent implements OnInit {
     this.alarmsFacade.updateGroup(group);
   }
 
-  addNote(alarm: Alarm): void {
+  addNote(alarm: PersistedAlarm): void {
     this.dialog.create({
       nzTitle: this.translate.instant('ALARMS.Add_note'),
       nzFooter: null,
@@ -118,7 +118,7 @@ export class AlarmsPageComponent implements OnInit {
     this.alarmsFacade.regenerateAlarms();
   }
 
-  editNote(alarm: Alarm): void {
+  editNote(alarm: PersistedAlarm): void {
     this.dialog.create({
       nzTitle: this.translate.instant('ALARMS.Edit_note'),
       nzFooter: null,
@@ -181,11 +181,11 @@ export class AlarmsPageComponent implements OnInit {
 
   deleteGroupAndAlarms(group: AlarmGroup, alarms: AlarmDisplay[]): void {
     this.alarmsFacade.deleteGroup(group.$key);
-    alarms.map(alarm => alarm.alarm).forEach(alarm => this.deleteAlarm(alarm));
+    alarms.map(alarm => alarm.alarm).forEach(alarm => this.deleteAlarm(alarm as PersistedAlarm));
   }
 
   getIngameAlarmMacro = (display: AlarmDisplay) => {
-    const itemName$ = display.alarm.itemId ? this.i18n.getNameObservable('items', display.alarm.itemId) : of(display.alarm.name);
+    const itemName$ = display.alarm.itemId ? this.i18n.getNameObservable('items', display.alarm.itemId) : of((display.alarm as PersistedAlarm).name);
     return itemName$.pipe(
       map(itemName => {
         const rp: I18nName = {
@@ -201,7 +201,7 @@ export class AlarmsPageComponent implements OnInit {
     );
   };
 
-  private alarmToEntry(alarm: Alarm, groupName?: string): AdditionPickerEntry {
+  private alarmToEntry(alarm: PersistedAlarm, groupName?: string): AdditionPickerEntry {
     const entry: AdditionPickerEntry = {
       $key: alarm.$key,
       name: of(''),
@@ -227,12 +227,12 @@ export class AlarmsPageComponent implements OnInit {
           nzComponentParams: {
             elements: [
               ...display.noGroup.map(({ alarm }) => {
-                return this.alarmToEntry(alarm);
+                return this.alarmToEntry(alarm as PersistedAlarm);
               }),
               ...Object.values<AdditionPickerEntry[]>(
                 groupBy<AdditionPickerEntry>([].concat.apply([], display.groupedAlarms.map(({ group, alarms }) => {
                   return alarms.map(({ alarm }) => {
-                    return this.alarmToEntry(alarm, group.name);
+                    return this.alarmToEntry(alarm as PersistedAlarm, group.name);
                   });
                 })), '$key')
               ).map(entries => {
@@ -269,7 +269,7 @@ export class AlarmsPageComponent implements OnInit {
     this.alarmsFacade.loadAlarms();
   }
 
-  markAsDone(alarm: Alarm) {
+  markAsDone(alarm: PersistedAlarm) {
     this.alarmsFacade.setAlarmDone(alarm.$key);
   }
 }

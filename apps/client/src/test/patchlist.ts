@@ -1,4 +1,4 @@
-import { XivapiPatch } from '../app/core/data/model/xivapi-patch';
+import { XivapiPatch } from '@ffxiv-teamcraft/types';
 
 export const patchList: XivapiPatch[] = [{
   'Banner': 'https:\/\/i.imgur.com\/ZUUtGzH.png',

@@ -10,8 +10,8 @@ import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { UniversalisService } from '../../../core/api/universalis.service';
-import { getItemSource } from '../../../modules/list/model/list-row';
-import { DataType } from '../../../modules/list/data/data-type';
+import { getItemSource } from '@ffxiv-teamcraft/types';
+import { DataType } from '@ffxiv-teamcraft/types';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 

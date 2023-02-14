@@ -1,6 +1,5 @@
+import { SpearfishingShadowSize, SpearfishingSpeed } from '../game';
 import { FishingBait } from './fishing-bait';
-import { SpearfishingShadowSize } from './spearfishing-shadow-size';
-import { SpearfishingSpeed } from './spearfishing-speed';
 
 export interface GatheringNode {
   id: number;

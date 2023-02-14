@@ -10,8 +10,7 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { SpearfishingSpeed } from '../../../core/data/model/spearfishing-speed';
-import { SpearfishingShadowSize } from '../../../core/data/model/spearfishing-shadow-size';
+import { SpearfishingShadowSize, SpearfishingSpeed } from '@ffxiv-teamcraft/types';
 
 @Component({
   selector: 'app-fishing-log-tracker',

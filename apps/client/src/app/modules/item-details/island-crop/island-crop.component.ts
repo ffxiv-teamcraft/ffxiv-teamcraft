@@ -3,8 +3,8 @@ import { ItemDetailsPopup } from '../item-details-popup';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { map, switchMap } from 'rxjs/operators';
 import { IslandCrop } from '../../list/model/island-crop';
-import { getItemSource } from '../../list/model/list-row';
-import { DataType } from '../../list/data/data-type';
+import { getItemSource } from '@ffxiv-teamcraft/types';
+import { DataType } from '@ffxiv-teamcraft/types';
 
 @Component({
   selector: 'app-island-crop',

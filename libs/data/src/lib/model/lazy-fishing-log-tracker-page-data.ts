@@ -48,7 +48,6 @@ export interface Alarm {
   baits?:       Bait[];
   coords:       AlarmCoords;
   duration:     number;
-  enabled:      boolean;
   ephemeral:    boolean;
   fishEyes?:    boolean;
   folklore?:    number;
@@ -57,12 +56,11 @@ export interface Alarm {
   mapId:        number;
   nodeContent:  number[];
   nodeId:       number;
-  note:         string;
   predators:    Predator[];
   reduction:    boolean;
   shadowSize?:  number;
   snagging:     boolean;
-  spawns?:      number[];
+  spawns:       number[];
   speed?:       number;
   type:         number;
   weathers:     number[];

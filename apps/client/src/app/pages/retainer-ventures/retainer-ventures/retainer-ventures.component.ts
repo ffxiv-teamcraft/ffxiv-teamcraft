@@ -6,7 +6,7 @@ import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { StatsService } from '../../../modules/gearsets/stats.service';
-import { BaseParam } from '@ffxiv-teamcraft/data/game';
+import { BaseParam } from '@ffxiv-teamcraft/types';
 import { UniversalisService } from '../../../core/api/universalis.service';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import * as _ from 'lodash';

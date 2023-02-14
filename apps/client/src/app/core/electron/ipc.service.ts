@@ -2,7 +2,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { PlatformService } from '../tools/platform.service';
 import { IpcRendererEvent } from 'electron';
 import { Router } from '@angular/router';
-import { Vector2 } from '../tools/vector2';
+import { Vector2 } from '@ffxiv-teamcraft/types';
 import { BehaviorSubject, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
 import { bufferCount, debounceTime, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { ofMessageType } from '../rxjs/of-message-type';

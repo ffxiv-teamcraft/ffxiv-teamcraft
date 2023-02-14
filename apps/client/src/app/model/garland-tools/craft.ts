@@ -1,6 +1,5 @@
 import { Complexity } from './complexity';
-import { Ingredient } from './ingredient';
-import { Craft as SimCraft } from '@ffxiv-teamcraft/simulator';
+import { Craft as SimCraft, Ingredient } from '@ffxiv-teamcraft/simulator';
 
 export interface Craft extends SimCraft {
   id: string;

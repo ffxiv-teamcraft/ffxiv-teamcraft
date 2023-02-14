@@ -6,8 +6,8 @@ import { ItemAmount } from './model/item-amount';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { first, map } from 'rxjs/operators';
 import { FullPricingRow, ListArray } from './model/full-pricing-row';
-import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
-import { DataType } from '../../../modules/list/data/data-type';
+import { ListRow } from '../../../modules/list/model/list-row';
+import { DataType, getItemSource } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../../modules/settings/settings.service';
 
 interface DBEntry {

@@ -1,10 +1,9 @@
 import { Injectable, NgZone } from '@angular/core';
 import { List } from './model/list';
 import { combineLatest, concat, Observable, of } from 'rxjs';
-import { getCraftByPriority, getItemSource, isListRow, ListRow } from './model/list-row';
+import { getCraftByPriority, ListRow } from './model/list-row';
 import { DataService } from '../../core/api/data.service';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
-import { DataExtractorService } from './data/data-extractor.service';
 import { filter, first, map, mapTo, mergeMap, shareReplay, skip, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { GarlandToolsService } from '../../core/api/garland-tools.service';
 import { DiscordWebhookService } from '../../core/discord/discord-webhook.service';
@@ -12,7 +11,7 @@ import { TeamsFacade } from '../teams/+state/teams.facade';
 import { environment } from '../../../environments/environment';
 import { CustomItemsFacade } from '../custom-items/+state/custom-items.facade';
 import { CustomItem } from '../custom-items/model/custom-item';
-import { DataType } from './data/data-type';
+import { CraftedBySource, DataType, ExtractRow, getItemSource } from '@ffxiv-teamcraft/types';
 import { CraftedBy } from './model/crafted-by';
 import { AuthFacade } from '../../+state/auth.facade';
 import { TeamcraftGearsetStats } from '../../model/user/teamcraft-gearset-stats';
@@ -20,7 +19,6 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
 import { ListController } from './list-controller';
 import { Team } from '../../model/team/team';
-import { CraftedBySource } from './model/item-source';
 
 export interface ListAdditionParams {
   itemId: number | string;
@@ -42,7 +40,6 @@ export class ListManagerService {
   constructor(protected db: DataService,
               private gt: GarlandToolsService,
               protected i18n: I18nToolsService,
-              private extractor: DataExtractorService,
               private zone: NgZone,
               private discordWebhookService: DiscordWebhookService,
               private teamsFacade: TeamsFacade,
@@ -74,7 +71,7 @@ export class ListManagerService {
           first()
         );
     }
-    let itemSource$: Observable<ListRow | CustomItem>;
+    let itemSource$: Observable<ExtractRow>;
     if (typeof itemId === 'number') {
       itemSource$ = this.lazyData.getRow('extracts', itemId);
     } else if (itemId.startsWith('mjibuilding')) {
@@ -191,7 +188,7 @@ export class ListManagerService {
       );
   }
 
-  private processItemAddition(data: ListRow, amount: number, collectable: boolean, recipeId: string | number, gearsets: TeamcraftGearsetStats[], ignoreRequirementsRegistry: Record<string, 1>): Observable<List> {
+  private processItemAddition(data: ExtractRow, amount: number, collectable: boolean, recipeId: string | number, gearsets: TeamcraftGearsetStats[], ignoreRequirementsRegistry: Record<string, 1>): Observable<List> {
     const crafted = getItemSource<CraftedBy[]>(data, DataType.CRAFTED_BY);
     const addition = new List();
     addition.ignoreRequirementsRegistry = ignoreRequirementsRegistry;
@@ -230,7 +227,7 @@ export class ListManagerService {
                 craftedBy: crafted,
                 usePrice: true,
                 ...data
-              };
+              } as ListRow;
             })
           );
         } else {
@@ -248,10 +245,10 @@ export class ListManagerService {
             yield: 1,
             usePrice: true,
             ...data
-          });
+          } as ListRow);
         }
       }),
-      switchMap(toAdd => {
+      switchMap((toAdd) => {
         // We add the row to recipes.
         const added = ListController.addToFinalItems(addition, toAdd);
         if (toAdd.requires.length > 0) {

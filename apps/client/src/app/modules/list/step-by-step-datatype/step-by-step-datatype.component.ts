@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { DataType } from '../data/data-type';
+import { DataType } from '@ffxiv-teamcraft/types';
 import { ListStep } from '../step-by-step-details/model/map-list-step';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { ListsFacade } from '../+state/lists.facade';

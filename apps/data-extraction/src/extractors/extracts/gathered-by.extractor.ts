@@ -1,9 +1,9 @@
 import { AbstractItemDetailsExtractor } from './abstract-item-details-extractor';
-import { FishingBait, GatheringNode } from '@ffxiv-teamcraft/types';
+import { DataType, FishingBait, GatheredBy, GatheringNode } from '@ffxiv-teamcraft/types';
 import { LazyFishingSpot } from '@ffxiv-teamcraft/data/model/lazy-fishing-spot';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 
-export class GatheredByExtractor extends AbstractItemDetailsExtractor<any> {
+export class GatheredByExtractor<T = GatheredBy> extends AbstractItemDetailsExtractor<GatheredBy> {
 
   protected spearfishingSources = this.requireLazyFile('spearfishingSources');
 
@@ -17,7 +17,7 @@ export class GatheredByExtractor extends AbstractItemDetailsExtractor<any> {
 
   protected reductionSources = this.requireLazyFile('reduction');
 
-  protected minBtnSpearNodes = Object.entries(this.requireLazyFile('nodes')).map(([key, value]) => {
+  public minBtnSpearNodes = Object.entries(this.requireLazyFile('nodes')).map(([key, value]) => {
     const res = {
       ...value,
       id: +key,
@@ -29,12 +29,7 @@ export class GatheredByExtractor extends AbstractItemDetailsExtractor<any> {
 
   protected gatheringItems = this.requireLazyFile('gatheringItems');
 
-
-  constructor() {
-    super();
-  }
-
-  getItemNodes(itemId: number, onlyDirect = false): any[] {
+  getItemNodes(itemId: number, onlyDirect = false): GatheringNode[] {
     let idsToConsider = [itemId];
     if (!onlyDirect) {
       idsToConsider = [
@@ -192,8 +187,7 @@ export class GatheredByExtractor extends AbstractItemDetailsExtractor<any> {
     };
   }
 
-  getDataType(): any {
-    // TODO
-    return 0;
+  getDataType(): DataType {
+    return DataType.GATHERED_BY;
   }
 }

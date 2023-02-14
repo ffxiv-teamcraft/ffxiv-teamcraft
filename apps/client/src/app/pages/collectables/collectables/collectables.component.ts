@@ -15,10 +15,10 @@ import { Location } from '@angular/common';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
-import { Alarm } from '../../../core/alarms/alarm';
+import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { LazyDataEntries } from '../../../lazy-data/lazy-data-types';
+import { LazyDataEntries } from '@ffxiv-teamcraft/types';
 
 @Component({
   selector: 'app-collectables',
@@ -162,13 +162,13 @@ export class CollectablesComponent {
 
   toggleAlarm(display: AlarmDisplay): void {
     if (display.registered) {
-      this.alarmsFacade.deleteAlarm(display.alarm);
+      this.alarmsFacade.deleteAlarm(display.alarm as PersistedAlarm);
     } else {
-      this.alarmsFacade.addAlarms(display.alarm);
+      this.alarmsFacade.addAlarms(display.alarm as PersistedAlarm);
     }
   }
 
-  addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
+  addAlarmWithGroup(alarm: PersistedAlarm, group: AlarmGroup) {
     this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 

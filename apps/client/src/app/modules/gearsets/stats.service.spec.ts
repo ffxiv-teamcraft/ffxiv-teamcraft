@@ -1,6 +1,6 @@
 import { inject, TestBed } from '@angular/core/testing';
 import { StatsService } from './stats.service';
-import { BaseParam } from '@ffxiv-teamcraft/data/game';
+import { BaseParam } from '@ffxiv-teamcraft/data';
 
 xdescribe('StatsService', () => {
   beforeEach(() => {

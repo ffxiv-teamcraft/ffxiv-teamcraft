@@ -23,7 +23,7 @@ import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import * as _ from 'lodash';
 import { stats } from '../../../core/data/sources/stats';
 import { KeysOfType } from '../../../core/tools/key-of-type';
-import { XivapiPatch } from '../../../core/data/model/xivapi-patch';
+import { XivapiPatch } from '@ffxiv-teamcraft/types';
 import { Language } from '../../../core/data/language';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { PlatformService } from '../../../core/tools/platform.service';

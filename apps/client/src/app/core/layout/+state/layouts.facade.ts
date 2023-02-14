@@ -11,13 +11,13 @@ import { debounceTime, expand, filter, map, shareReplay, startWith, switchMap, w
 import { FilterResult } from '../filter-result';
 import { ListLayout } from '../list-layout';
 import { LayoutService } from '../layout.service';
-import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
+import { ListRow } from '../../../modules/list/model/list-row';
 import { ListDisplay } from '../list-display';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { LayoutRow } from '../layout-row';
 import { LayoutRowOrder } from '../layout-row-order.enum';
 import { LayoutRowFilter } from '../layout-row-filter';
-import { DataType } from '../../../modules/list/data/data-type';
+import { DataType, getItemSource } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-stats';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';

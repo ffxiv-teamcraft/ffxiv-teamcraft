@@ -9,12 +9,12 @@ import { merge, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { isPlatformServer } from '@angular/common';
 import { PlatformService } from '../../core/tools/platform.service';
-import { LazyDataKey } from '../lazy-data-types';
 import { debounceBufferTime } from '../../core/rxjs/debounce-buffer-time';
 import { uniq } from 'lodash';
 import { IS_HEADLESS } from '../../../environments/is-headless';
 import { uniqMergeMap } from '../../core/rxjs/uniq-merge-map';
 import { extractsHash } from '@ffxiv-teamcraft/data/extracts-hash';
+import { LazyDataKey } from '@ffxiv-teamcraft/types';
 
 @Injectable()
 export class LazyDataEffects {
