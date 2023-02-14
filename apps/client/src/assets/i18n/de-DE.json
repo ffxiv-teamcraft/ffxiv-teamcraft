@@ -2184,8 +2184,8 @@
     "Editing_others_gearset": "Lokaler Bearbeitungsmodus",
     "Editing_others_gearset_description": "Du bearbeitest gerade das Ausrüstungsset eines anderen Benutzers. Es wird nichts gespeichert, solange du nicht oben auf die Schaltfläche \"Speichern\" klickst, um deine eigene Kopie zu erstellen.",
     "Empty_materias": "Alle Materia aus der ausgewählten Ausrüstung entfernen",
-    "Total_scrips": "Total currencies needed",
-    "Reset_progression": "Reset item and materia progression",
+    "Total_scrips": "Gesamt benötigte Währung",
+    "Reset_progression": "Item und Materiafortschritt zurücksetzen",
     "SLOT": {
       "Body": "Rumpf",
       "Ears": "Ohrring",
@@ -2691,7 +2691,7 @@
     "Total_per_venture": "Gesamt für Unternehmung",
     "Use_retainer": "Wähle Gehilfe aus",
     "Select_retainer": "Wähle einen Gehilfen",
-    "Missing_gear": "Missing gear",
+    "Missing_gear": "Fehlende Ausrüstung",
     "Missing_gear_description": "Some of your retainers are missing their gear in TC data, please summon each retainer again to load their gear"
   },
   "PATREON": {
@@ -2720,12 +2720,12 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "Durch Paketerfassung importieren",
-    "Go_to_workshop": "Enter your workshop",
-    "Go_to_workshop_description": "If you're already in it, please exit the workshop and enter again.",
-    "Open_fc_window": "Open your Free Company details window",
-    "Open_fc_window_description": "This will make TC get more important details about your free company, such as server, G is the default binding for it.",
-    "Interact_with_ships_subs": "Interact with each Submarine/Airship you want to import",
-    "Interact_with_ships_subs_description": "Opening the airship/submarine management window makes TC load everything needed to display details about your ships.",
+    "Go_to_workshop": "Betritt deine Werkstatt",
+    "Go_to_workshop_description": "Wenn du bereits darin bist, verlasse bitte die Werkstatt und betrete sie erneut.",
+    "Open_fc_window": "Öffne das Fenster mit den Details der Freien Gesellschaft",
+    "Open_fc_window_description": "Dadurch erhält TC mehr wichtige Details über deine Freie Gesellschaft, wie zum Beispiel Server, Ö ist Standardtaste dafür.",
+    "Interact_with_ships_subs": "Interagiere mit jedem U-Boot/Luftschiff, das du importieren möchtest",
+    "Interact_with_ships_subs_description": "Das Öffnen des Luftschiff-/U-Boot-Management-Fensters macht TC laden alles, was nötig ist, um Details über Ihre Schiffe anzuzeigen.",
     "Airships": "Luftschiffe",
     "Submersibles": "Tauchboote"
   },
@@ -2993,8 +2993,8 @@
   "LIST_AGGREGATE": {
     "Home_title": "List Aggregate",
     "Home_subtitle": "Open multiple lists at once in an aggregated view",
-    "Select_lists": "Select the lists you want to aggregate",
-    "Select_layout": "Select a layout",
+    "Select_lists": "Wähle die Listen, die du zusammenfassen möchtest",
+    "Select_layout": "Wähle ein Layout",
     "Open_aggregate": "Open an aggregated view",
     "Title": "Aggregated list view",
     "Select_panel": "Select a panel to open its view",
