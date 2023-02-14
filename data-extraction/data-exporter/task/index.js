@@ -180,3 +180,4 @@ output('ventures', () => db('RetainerTask', false).toObject(row => {
 output('weathers', () => db('Weather').simpleObject('Name'))
 output('airship-voyages', () => db('AirshipExplorationPoint').simpleObject('Name{Short}'))
 output('submarine-voyages', () => db('SubmarineExploration').simpleObject('Destination'))
+output('island-craftworks-theme', () => db('MJICraftworksObjectTheme').simpleObject('Name'))

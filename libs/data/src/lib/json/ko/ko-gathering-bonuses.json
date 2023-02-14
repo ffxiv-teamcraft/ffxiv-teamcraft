@@ -569,6 +569,16 @@
       "ko": "최대 GP <Value>IntegerParameter(1)</Value> 이상"
     }
   },
+  "58": {
+    "value": 2,
+    "conditionValue": 3750,
+    "bonus": {
+      "ko": "채집 횟수/내구도+<Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "ko": "획득력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
   "59": {
     "value": 1,
     "conditionValue": 804,
@@ -779,6 +789,36 @@
       "ko": "기술력 <Value>IntegerParameter(1)</Value> 이상"
     }
   },
+  "81": {
+    "value": 30,
+    "conditionValue": 3800,
+    "bonus": {
+      "ko": "획득 수 보너스 발생률+<Value>IntegerParameter(1)</Value>%"
+    },
+    "condition": {
+      "ko": "기술력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
+  "82": {
+    "value": 1,
+    "conditionValue": 3590,
+    "bonus": {
+      "ko": "획득 수+<Value>IntegerParameter(1)</Value>개(능력치 반영)"
+    },
+    "condition": {
+      "ko": "획득력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
+  "83": {
+    "value": 1,
+    "conditionValue": 850,
+    "bonus": {
+      "ko": "채집 횟수/내구도+<Value>IntegerParameter(1)</Value>(능력치 반영)"
+    },
+    "condition": {
+      "ko": "최대 GP <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
   "84": {
     "value": 10,
     "conditionValue": 90,
@@ -814,6 +854,26 @@
     "conditionValue": 90,
     "bonus": {
       "ko": "상위 레벨 아이템 획득률+<Value>IntegerParameter(1)</Value>%"
+    },
+    "condition": {
+      "ko": "획득력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
+  "88": {
+    "value": 50,
+    "conditionValue": 3910,
+    "bonus": {
+      "ko": "소장 가치 최대 시: 승화율+<Value>IntegerParameter(1)</Value>%"
+    },
+    "condition": {
+      "ko": "획득력 <Value>IntegerParameter(1)</Value> 이상"
+    }
+  },
+  "89": {
+    "value": 10,
+    "conditionValue": 3300,
+    "bonus": {
+      "ko": "소장 가치 최대 시: 승화율+<Value>IntegerParameter(1)</Value>%(능력치 반영)"
     },
     "condition": {
       "ko": "획득력 <Value>IntegerParameter(1)</Value> 이상"

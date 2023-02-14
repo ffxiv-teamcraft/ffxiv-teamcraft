@@ -8,7 +8,7 @@ module.exports = {
   ),
   outputPath: (name) => path.join(
     __dirname,
-    '../../../apps/client/src/assets/data/zh/',
+    '../../../libs/data/src/lib/json/zh/',
     `zh-${name}.json`
   ),
   languages: [{
