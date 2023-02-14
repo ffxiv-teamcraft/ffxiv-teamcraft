@@ -473,10 +473,7 @@ export class FreeCompanyWorkshopFacade {
 
   @Memoized()
   public getSubmarineMaxRank(): Observable<number> {
-    if (this.env.gameVersion < 6.2) {
-      return of(95);
-    }
-    else if (this.env.gameVersion < 6.3) {
+    if (this.env.gameVersion < 6.3) {
       return of(100);
     }
     return of(105);
