@@ -315,7 +315,7 @@
   "Reset_progression": "진행상황 초기화",
   "Gardening": "재배",
   "Hunting": "사냥",
-  "Island_animal": "무인도 동물",
+  "Island_animal": "사육동물",
   "Island_crop": "무인도 농작물",
   "Desynth": "분해",
   "Vendors": "상인",
@@ -2037,7 +2037,7 @@
       "Armory": "장비함",
       "Current_Gear": "현재 장비",
       "RetainerMarket": "집사가 판매중",
-      "IslandSanctuaryBag": "Island Sanctuary Bag"
+      "IslandSanctuaryBag": "개척 가방"
     },
     "CONTENT_ID_POPUP": {
       "Description": "다중 캐릭터 동기화와 다른 멋진 기능들을 사용하고 싶으시다면, 팀크래프트는 현재 플레이 중인 캐릭터 또는 동기화를 원하는 캐릭터가 어떤 건지 알아야 합니다.",
@@ -3016,9 +3016,9 @@
   },
   "ISLAND_SANCTUARY": {
     "Animal_source": "당신은 이 아이템을 무인도 목장의 동물들에게서 채집해야 합니다",
-    "Island_level": "무인도 레벨",
+    "Island_level": "개척 랭크",
     "Landmarks": "특수 건물",
-    "Workshop_rank": "공방 등급",
+    "Workshop_rank": "개척공방 랭크",
     "WORKSHOP": {
       "Title": "개척공방",
       "Subtitle": "공방 추적 및 관리",
@@ -3091,8 +3091,8 @@
       "Spawn_time": "출몰 시간",
       "Weather": "날씨",
       "Alarm": "알람",
-      "Main_drop": "주요 재료",
-      "Rare_drop": "레어 재료"
+      "Main_drop": "일반 개척재료",
+      "Rare_drop": "희귀 개척재료"
     }
   }
 }
