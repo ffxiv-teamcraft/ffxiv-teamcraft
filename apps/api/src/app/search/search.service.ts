@@ -647,6 +647,9 @@ export class SearchService {
     } else if (environment.xivapiKey) {
       params.private_key = environment.xivapiKey;
     }
+    if (region === Region.Global) {
+      params.string_algo = 'wildcard_plus';
+    }
     return from(axios.get<T>(`${this.getBaseUrl(region)}/search`, {
       params,
       paramsSerializer: {
