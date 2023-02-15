@@ -4,7 +4,6 @@ import { MathTools } from '../../tools/math-tools';
 import * as semver from 'semver';
 import { combineLatest, concat, EMPTY, Observable, of, Subject } from 'rxjs';
 import { bufferCount, debounceTime, expand, map, skipUntil, switchMap } from 'rxjs/operators';
-import { CustomItem } from '../custom-items/model/custom-item';
 import { CraftAddition } from './model/craft-addition';
 import { ListManagerService } from './list-manager.service';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
@@ -23,7 +22,6 @@ declare const gtag: (...args: any[]) => any;
 
 interface CraftAdditionParams {
   _additions: CraftAddition[];
-  customItems: CustomItem[];
   dataService: DataService;
   listManager: ListManagerService;
   lazyDataFacade: LazyDataFacade;

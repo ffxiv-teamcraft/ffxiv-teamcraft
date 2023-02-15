@@ -70,7 +70,7 @@ export class ItemIconComponent {
           if (xivapiIcon) {
             return `https://xivapi.com${xivapiIcon}`;
           }
-          return 'https://xivapi.com/img-misc/code-regular.svg';
+          return undefined;
         })
       );
     }),

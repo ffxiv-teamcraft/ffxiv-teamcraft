@@ -115,7 +115,6 @@ import { FreeCompanyWorkshopsModule } from './modules/free-company-workshops/fre
 import { AdsModule } from './modules/ads/ads.module';
 import { NzNoAnimationModule } from 'ng-zorro-antd/core/no-animation';
 import * as AllaganReportsGQLProviders from './pages/allagan-reports/allagan-reports.gql';
-import { LazyDataModule } from './lazy-data/lazy-data.module';
 import { initialState as listsInitialState, listsReducer } from './modules/list/+state/lists.reducer';
 import { ListsEffects } from './modules/list/+state/lists.effects';
 import { ListsActionTypes, SetItemDone } from './modules/list/+state/lists.actions';
@@ -334,7 +333,6 @@ const nzConfig: NzConfig = {
     NzAlertModule,
     NavigationSidebarModule,
     AdsModule,
-    LazyDataModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     }),

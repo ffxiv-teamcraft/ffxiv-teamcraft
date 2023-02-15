@@ -1,16 +1,14 @@
 import { Injectable, NgZone } from '@angular/core';
 import { List } from './model/list';
-import { combineLatest, concat, Observable, of } from 'rxjs';
+import { combineLatest, concat, defer, Observable, of } from 'rxjs';
 import { getCraftByPriority, ListRow } from './model/list-row';
 import { DataService } from '../../core/api/data.service';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
-import { filter, first, map, mapTo, mergeMap, shareReplay, skip, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { filter, first, map, skip, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { GarlandToolsService } from '../../core/api/garland-tools.service';
 import { DiscordWebhookService } from '../../core/discord/discord-webhook.service';
 import { TeamsFacade } from '../teams/+state/teams.facade';
 import { environment } from '../../../environments/environment';
-import { CustomItemsFacade } from '../custom-items/+state/custom-items.facade';
-import { CustomItem } from '../custom-items/model/custom-item';
 import { CraftedBySource, DataType, ExtractRow, getItemSource } from '@ffxiv-teamcraft/types';
 import { CraftedBy } from './model/crafted-by';
 import { AuthFacade } from '../../+state/auth.facade';
@@ -35,21 +33,14 @@ export interface ListAdditionParams {
 })
 export class ListManagerService {
 
-  private customItems$: Observable<CustomItem[]>;
-
   constructor(protected db: DataService,
               private gt: GarlandToolsService,
               protected i18n: I18nToolsService,
               private zone: NgZone,
               private discordWebhookService: DiscordWebhookService,
               private teamsFacade: TeamsFacade,
-              private customItemsFacade: CustomItemsFacade,
               private lazyData: LazyDataFacade,
               private authFacade: AuthFacade) {
-
-    this.customItemsFacade.loadAll();
-    this.customItems$ = this.customItemsFacade.allCustomItems$.pipe(shareReplay({ bufferSize: 1, refCount: true }));
-
   }
 
   public addToList({
@@ -58,63 +49,61 @@ export class ListManagerService {
                      recipeId,
                      amount = 1,
                      collectable = false,
-                     ignoreHooks = false,
-                     upgradeCustom = false
+                     ignoreHooks = false
                    }: ListAdditionParams): Observable<List> {
-    let team$: Observable<Team | null> = of(null);
-    if (list.teamId && !ignoreHooks) {
-      this.teamsFacade.loadTeam(list.teamId);
-      team$ = this.teamsFacade.allTeams$
-        .pipe(
-          map(teams => teams.find(team => list.teamId && team.$key === list.teamId)),
-          filter(team => team !== undefined),
-          first()
-        );
-    }
-    let itemSource$: Observable<ExtractRow>;
-    if (typeof itemId === 'number') {
-      itemSource$ = this.lazyData.getRow('extracts', itemId);
-    } else if (itemId.startsWith('mjibuilding')) {
-      itemSource$ = this.lazyData.getRow('extracts', +itemId.replace('mjibuilding-', ''));
-    } else if (itemId.startsWith('mjilandmark')) {
-      itemSource$ = this.lazyData.getRow('extracts', +itemId.replace('mjilandmark-', ''));
-    } else {
-      itemSource$ = this.customItems$.pipe(map(items => items.find(i => i.$key === itemId)));
-    }
-    return itemSource$.pipe(
-      switchMap(itemSource => {
-        return team$.pipe(
-          tap((team) => {
-            if (team && team.webhook !== undefined && amount !== 0) {
-              if (+itemId === itemId) {
-                if (amount > 0) {
-                  this.discordWebhookService.notifyItemAddition(itemId, amount, list, team);
-                } else {
-                  this.discordWebhookService.notifyItemDeletion(itemId, Math.abs(amount), list, team);
+    return defer(() => {
+      let team$: Observable<Team | null> = of(null);
+      if (list.teamId && !ignoreHooks) {
+        this.teamsFacade.loadTeam(list.teamId);
+        team$ = this.teamsFacade.allTeams$
+          .pipe(
+            map(teams => teams.find(team => list.teamId && team.$key === list.teamId)),
+            filter(team => team !== undefined),
+            first()
+          );
+      }
+      let itemSource$: Observable<ExtractRow>;
+      if (typeof itemId === 'number') {
+        itemSource$ = this.lazyData.getRow('extracts', itemId);
+      } else if (itemId.startsWith('mjibuilding')) {
+        itemSource$ = this.lazyData.getRow('extracts', +itemId.replace('mjibuilding-', ''));
+      } else if (itemId.startsWith('mjilandmark')) {
+        itemSource$ = this.lazyData.getRow('extracts', +itemId.replace('mjilandmark-', ''));
+      }
+      console.log('---------------', itemId, '----------------');
+      return itemSource$.pipe(
+        tap(data => console.log(itemId, data)),
+        filter(Boolean),
+        first(),
+        switchMap(itemSource => {
+          return team$.pipe(
+            tap((team) => {
+              if (team && team.webhook !== undefined && amount !== 0) {
+                if (+itemId === itemId) {
+                  if (amount > 0) {
+                    this.discordWebhookService.notifyItemAddition(itemId, amount, list, team);
+                  } else {
+                    this.discordWebhookService.notifyItemDeletion(itemId, Math.abs(amount), list, team);
+                  }
                 }
               }
-            }
-          }),
-          mapTo(itemSource)
-        );
-      }),
-      switchMap(data => {
-        if ((data as CustomItem).realItemId !== undefined && upgradeCustom) {
-          return this.lazyData.getRow('extracts', (data as CustomItem).realItemId);
-        }
-        return of(data);
-      }),
-      withLatestFrom(this.authFacade.gearSets$),
-      switchMap(([data, gearsets]) => {
-        if (data === undefined) {
-          return of(new List());
-        }
-        // If it's a standard item, add it with the classic implementation.
-        return this.processItemAddition(data, amount, collectable, recipeId, gearsets, list.ignoreRequirementsRegistry);
-      }),
-      // merge the addition list with the list we want to add items in.
-      map(addition => ListController.clean(ListController.merge(list, addition)))
-    );
+            }),
+            map(() => itemSource)
+          );
+        }),
+        withLatestFrom(this.authFacade.gearSets$),
+        switchMap(([data, gearsets]) => {
+          if (data === undefined) {
+            return of(new List());
+          }
+          // If it's a standard item, add it with the classic implementation.
+          return this.processItemAddition(data, amount, collectable, recipeId, gearsets, list.ignoreRequirementsRegistry);
+        }),
+        // merge the addition list with the list we want to add items in.
+        map(addition => ListController.clean(ListController.merge(list, addition))),
+        first()
+      );
+    });
   }
 
   public addDetails(list: List, recipeId?: string | number): Observable<List> {
@@ -192,10 +181,12 @@ export class ListManagerService {
     const crafted = getItemSource<CraftedBy[]>(data, DataType.CRAFTED_BY);
     const addition = new List();
     addition.ignoreRequirementsRegistry = ignoreRequirementsRegistry;
+    console.log('processItemAddition', data.id);
     return of(new ListRow()).pipe(
       switchMap(toAdd => {
         // If this is a craft
         if (crafted.length > 0) {
+          console.log('CRAFT DETECTED');
           if (!recipeId) {
             const firstCraft = getCraftByPriority(crafted, gearsets);
             if (firstCraft.id !== undefined) {
@@ -208,6 +199,7 @@ export class ListManagerService {
           // Then we prepare the list row to add.
           return this.lazyData.getRecipes().pipe(
             map(recipes => {
+              console.log('GOT RECIPES');
               const ingredients = recipes.find(r => r.id.toString() === craft.id.toString())?.ingredients || [];
               return {
                 ...toAdd,
@@ -235,6 +227,7 @@ export class ListManagerService {
           if (requirements.length > 0) {
             toAdd.requires = requirements;
           }
+          console.log('NOT A CRAFT');
           // If it's not a recipe, add as item
           return of({
             ...toAdd,
@@ -249,39 +242,39 @@ export class ListManagerService {
         }
       }),
       switchMap((toAdd) => {
+        console.log('ADDITION', toAdd);
         // We add the row to recipes.
         const added = ListController.addToFinalItems(addition, toAdd);
+        console.log('ADDED', added);
         if (toAdd.requires.length > 0) {
-          // Then we add the craft to the addition list.
-          return this.customItems$.pipe(
-            first(),
-            switchMap(customItemsSync => {
-              return ListController.addCraft(addition, {
-                _additions: [{
-                  item: toAdd,
-                  amount: added
-                }],
-                customItems: customItemsSync,
-                dataService: this.db,
-                listManager: this,
-                lazyDataFacade: this.lazyData,
-                recipeId: recipeId?.toString(),
-                gearsets: gearsets
-              });
-            })
-          );
+          return ListController.addCraft(addition, {
+            _additions: [{
+              item: toAdd,
+              amount: added
+            }],
+            dataService: this.db,
+            listManager: this,
+            lazyDataFacade: this.lazyData,
+            recipeId: recipeId?.toString(),
+            gearsets: gearsets
+          });
         } else {
           return of(addition);
         }
       }),
-      mergeMap(wipList => this.addDetails(wipList, recipeId))
+      tap(() => console.log('ADD DETAILS')),
+      switchMap(wipList => this.addDetails(wipList, recipeId)),
+      tap(() => console.log('DONE'))
     );
   }
 
   private addDetailsForArray(array: ListRow[], recipeId?: string | number): Observable<ListRow[]> {
+    console.log(`======EXTRACTS=====`);
     return safeCombineLatest(array.map(item => {
+      console.log(item.id);
       return this.lazyData.getRow('extracts', item.id).pipe(
         map(extract => {
+          console.log(item.id, 'DONE');
           const newItem = { ...item, ...extract };
           if (getItemSource<CraftedBy[]>(extract, DataType.CRAFTED_BY).length > 0) {
             const craftedBy: CraftedBySource = { ...newItem.sources.find(s => s.type === DataType.CRAFTED_BY) as CraftedBySource };

@@ -1,15 +1,7 @@
 import { Injectable } from '@angular/core';
-
-import { select, Store } from '@ngrx/store';
 import { combineLatest, Observable, of } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, first, map, shareReplay, skipWhile, switchMap, tap } from 'rxjs/operators';
-
-import * as fromLazyData from './lazy-data.reducer';
-import * as LazyDataSelectors from './lazy-data.selectors';
-import { loadLazyDataEntityEntry, loadLazyDataFullEntity } from './lazy-data.actions';
+import { debounceTime, filter, first, map, shareReplay, skipWhile, switchMap } from 'rxjs/operators';
 import {
-  ExtractRow,
-  getExtract,
   I18nElement,
   I18nName,
   LazyDataEntries,
@@ -23,7 +15,6 @@ import {
 import { SettingsService } from '../../modules/settings/settings.service';
 import { zhWorlds } from '../../core/data/sources/zh-worlds';
 import { koWorlds } from '../../core/data/sources/ko-worlds';
-import { LoadingStatus } from '../data-entry-status';
 import { LazyRecipe } from '@ffxiv-teamcraft/data/model/lazy-recipe';
 import { HttpClient } from '@angular/common/http';
 import { mapIds } from '../../core/data/sources/map-ids';
@@ -31,17 +22,12 @@ import { XivapiService } from '@xivapi/angular-client';
 import { Language } from '../../core/data/language';
 import { normalizeI18nName } from '../../core/tools/normalize-i18n';
 import { TranslateService } from '@ngx-translate/core';
+import { LazyDataStateService } from './lazy-data-state.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LazyDataFacade {
-
-  private static readonly CACHE_TTL = 30000;
-
-  public isLoading$ = this.store.pipe(
-    select(LazyDataSelectors.isLoading)
-  );
 
   public patches$ = this.http.get<XivapiPatch[]>('https://xivapi.com/patchlist').pipe(
     shareReplay(1)
@@ -51,14 +37,11 @@ export class LazyDataFacade {
     shareReplay(1)
   );
 
-  // This is a temporary cache system to absorb possible call spams on some methods, TTL for each row is 10s toa void memory issues
-  private cache: Record<string, Observable<any>> = {};
-
   private searchIndexCache: Record<string, Observable<{ id: number, name: I18nName }[]>> = {};
 
-  private fullLoadingIndexes: Record<string, 1> = {};
+  public isLoading$ = this.state.loading$;
 
-  constructor(private store: Store<fromLazyData.LazyDataPartialState>,
+  constructor(private state: LazyDataStateService,
               private settings: SettingsService, private http: HttpClient,
               private xivapi: XivapiService, private translate: TranslateService) {
     this.isLoading$
@@ -75,13 +58,7 @@ export class LazyDataFacade {
   }
 
   public preloadEntry<K extends LazyDataKey>(propertyKey: K): void {
-    this.getStatus(propertyKey).pipe(
-      first()
-    ).subscribe((status) => {
-      if (status !== 'full' && status !== 'loading') {
-        this.store.dispatch(loadLazyDataFullEntity({ entity: propertyKey }));
-      }
-    });
+    this.state.preloadEntry(propertyKey);
   }
 
   /**
@@ -89,25 +66,7 @@ export class LazyDataFacade {
    * @param propertyKey the name of the property you want to load inside the lazy data system.
    */
   public getEntry<K extends LazyDataKey>(propertyKey: K): Observable<LazyDataWithExtracts[K]> {
-    if (this.getCacheEntry(propertyKey) === null) {
-      const obs$ = combineLatest([
-        this.store.pipe(select(LazyDataSelectors.getEntry(propertyKey))),
-        this.getStatus(propertyKey)
-      ]).pipe(
-        tap(([, status]) => {
-          const loadingOrLoaded = status === 'full' || status === 'loading';
-          if (!loadingOrLoaded) {
-            this.store.dispatch(loadLazyDataFullEntity({ entity: propertyKey }));
-          }
-        }),
-        filter(([, status]) => status === 'full'),
-        map(([res]) => res),
-        filter(Boolean),
-        first()
-      );
-      this.cacheObservable(obs$, propertyKey);
-    }
-    return this.getCacheEntry(propertyKey);
+    return this.state.getEntry(propertyKey);
   }
 
   /**
@@ -167,67 +126,7 @@ export class LazyDataFacade {
    */
   public getRow<K extends LazyDataRecordKey>(propertyKey: K, id: number, fallback: Partial<LazyDataEntries[K]>): Observable<Partial<LazyDataEntries[K]> | LazyDataEntries[K]>;
   public getRow<K extends LazyDataRecordKey>(propertyKey: K, id: number, fallback?: Partial<LazyDataEntries[K]>): Observable<LazyDataEntries[K] | null> | Observable<Partial<LazyDataEntries[K]> | LazyDataEntries[K]> {
-    if (this.getCacheEntry(propertyKey, id) === null) {
-      // If we asked for more than 100 separate things in the same entry during the last CACHE_TTL and it's not extracts, load the entire entry.
-      if (propertyKey !== 'extracts'
-        && Object.keys(this.cache).filter(key => key.startsWith(`${String(propertyKey)}:`)).length > 100
-        && !this.fullLoadingIndexes[String(propertyKey)]) {
-        this.preloadEntry(propertyKey);
-        this.fullLoadingIndexes[String(propertyKey)] = 1;
-      }
-      if (propertyKey === 'extracts' && !fallback) {
-        fallback = getExtract({}, id) as any;
-      }
-      const obs$ = combineLatest([
-        this.store.pipe(select(LazyDataSelectors.getEntryRow({ key: propertyKey, id }))),
-        this.getStatus(propertyKey, id)
-      ]).pipe(
-        tap(([res, status]) => {
-          const loadingOrLoaded = status === 'full' || status === 'loading';
-          if (!res && !loadingOrLoaded) {
-            this.store.dispatch(loadLazyDataEntityEntry({ entity: propertyKey, id }));
-          }
-        }),
-        switchMap(([res, status]) => {
-          if (status === 'full' && !res) {
-            if (propertyKey.startsWith('zh') || propertyKey.startsWith('ko')) {
-              const globalPropertyKey = propertyKey.replace(/^ko|zh/, '');
-              return this.getRow(`${globalPropertyKey[0].toLowerCase()}${globalPropertyKey.slice(1)}` as LazyDataRecordKey, id, fallback);
-            }
-            return of(fallback || null);
-          } else if (res) {
-            return of(res);
-          }
-          return of(undefined);
-        }),
-        filter(res => res !== undefined || (fallback !== undefined && res === fallback)),
-        first(),
-        shareReplay(1)
-      );
-      this.cacheObservable(obs$, propertyKey, id);
-    }
-    return this.getCacheEntry(propertyKey, id);
-  }
-
-  /**
-   * Get the status of a lazy data entry in the store
-   * @param propertyKey the property to get the status from
-   * @param id id of the entry to get the status for
-   */
-  public getStatus<K extends LazyDataKey>(propertyKey: K, id?: number): Observable<LoadingStatus | null> {
-    return this.store.pipe(
-      select(LazyDataSelectors.getEntryStatus({ key: propertyKey })),
-      map(row => {
-        if (!row) {
-          return null;
-        }
-        if (id !== undefined) {
-          return row.record[id] || row.status;
-        }
-        return row.status;
-      }),
-      distinctUntilChanged()
-    );
+    return this.state.getRow(propertyKey, id, fallback);
   }
 
   /**
@@ -353,20 +252,6 @@ export class LazyDataFacade {
     }
   }
 
-  public getDatacenterForServer(server: string): Observable<string> {
-    return this.datacenters$.pipe(
-      map(datacenters => {
-        const fromData = Object.keys(datacenters)
-          .find(dc => {
-            return datacenters[dc].some(s => s.toLowerCase() === server.toLowerCase());
-          });
-        if (!fromData && server.toLowerCase().includes('korean')) {
-          return 'Korea';
-        }
-      })
-    );
-  }
-
   public getMinBtnSpearNodesIndex(): Observable<(Omit<LazyDataEntries['nodes'], 'zoneid'> & { id: number, zoneId: number })[]> {
     return this.getEntry('nodes').pipe(
       map(nodes => {
@@ -485,20 +370,5 @@ export class LazyDataFacade {
 
   private findPrefixedProperty(property: LazyDataI18nKey, prefix: 'ko' | 'zh'): LazyDataI18nKey {
     return `${prefix}${property[0].toUpperCase()}${property.slice(1)}` as unknown as LazyDataI18nKey;
-  }
-
-  private cacheObservable<T>(observable: Observable<T>, entity: LazyDataKey, id?: number): void {
-    const key = String(entity) + (id !== undefined ? `:${id}` : '');
-    this.cache[key] = observable.pipe(shareReplay(1));
-    setTimeout(() => {
-      delete this.cache[key];
-    }, LazyDataFacade.CACHE_TTL);
-  }
-
-  private getCacheEntry<K extends LazyDataKey>(entity: K): Observable<LazyDataWithExtracts[K]> | null;
-  private getCacheEntry<K extends LazyDataKey>(entity: K, id: number): Observable<LazyDataEntries[K]> | null;
-  private getCacheEntry<K extends LazyDataKey>(entity: K, id?: number): Observable<LazyDataWithExtracts[K]> | Observable<LazyDataEntries[K]> | null {
-    const key = String(entity) + (id !== undefined ? `:${id}` : '');
-    return this.cache[key] || null;
   }
 }

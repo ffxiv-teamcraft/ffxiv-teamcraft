@@ -1,7 +1,10 @@
 <a [appXivApiTooltipDisabled]="tooltipDisabled" [appXivApiTooltip]="itemId"
    (mouseup)="handleClick($event)"
    class="icon-container">
-  <img *ngIf="icon$ | async as icon" [src]="icon" [style.width.px]="width" alt="{{itemName}}" class="item-icon">
+  <img *ngIf="icon$ | async as icon; else skeleton" [src]="icon" [style.width.px]="width" alt="{{itemName}}" class="item-icon">
+  <ng-template #skeleton>
+    <nz-skeleton-element nzType="avatar" nzShape="circle" [nzActive]="true" [nzSize]="width"  class="item-icon"></nz-skeleton-element>
+  </ng-template>
   <img *ngIf="hq" [style.width.px]="width" class="hq-overlay"
        src="https://www.garlandtools.org/db/images/item/HQOverlay.png">
   <img *ngIf="collectable$ | async" class="bottom-right-icon" src="./assets/icons/svg/collectable.svg">
