@@ -1,6 +1,6 @@
+import { LazyDataKey } from '@ffxiv-teamcraft/types';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { LAZY_DATA_FEATURE_KEY, State } from './lazy-data.reducer';
-import { LazyDataKey } from '../lazy-data-types';
 
 // Lookup the 'LazyData' feature state managed by NgRx
 export const getLazyDataState = createFeatureSelector<State>(LAZY_DATA_FEATURE_KEY);

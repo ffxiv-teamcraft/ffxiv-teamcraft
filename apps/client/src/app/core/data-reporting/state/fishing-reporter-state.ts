@@ -1,5 +1,5 @@
 import { LazyFishingSpot } from '@ffxiv-teamcraft/data/model/lazy-fishing-spot';
-import { Tug } from '../../data/model/tug';
+import { Tug } from '@ffxiv-teamcraft/types';
 
 export interface FishingReporterState {
   isFishing: boolean;

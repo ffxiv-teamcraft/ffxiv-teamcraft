@@ -1,5 +1,5 @@
+import { LazyDataKey } from '@ffxiv-teamcraft/types';
 import { createAction, props } from '@ngrx/store';
-import { LazyDataKey } from '../lazy-data-types';
 
 export const loadLazyDataFullEntity = createAction('[LazyData] Load Full Entity', props<{ entity: LazyDataKey }>());
 export const loadLazyDataEntityEntry = createAction('[LazyData] Load Entity Entry', props<{ entity: LazyDataKey, id: number }>());

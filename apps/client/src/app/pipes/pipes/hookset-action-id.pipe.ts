@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Hookset } from '../../core/data/model/hookset';
+import { Hookset } from '@ffxiv-teamcraft/types';
 
 @Pipe({
   name: 'hooksetActionId'

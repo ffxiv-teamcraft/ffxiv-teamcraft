@@ -1,4 +1,4 @@
-import { CompactMasterbook } from '../../../model/common/compact-masterbook';
+import { CompactMasterbook } from '@ffxiv-teamcraft/types';
 import { Complexity } from '../../../model/garland-tools/complexity';
 
 export interface CraftedBy {

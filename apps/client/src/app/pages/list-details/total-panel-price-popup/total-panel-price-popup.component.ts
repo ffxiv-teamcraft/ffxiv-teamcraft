@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
-import { TradeIconPipe } from '../../../pipes/pipes/trade-icon.pipe';
+import { ListRow } from '../../../modules/list/model/list-row';
 import { TradeSource } from '../../../modules/list/model/trade-source';
 import { TradeEntry } from '../../../modules/list/model/trade-entry';
-import { DataType } from '../../../modules/list/data/data-type';
 import { uniqBy } from 'lodash';
+import { DataType, getItemSource, TRADE_SOURCES_PRIORITIES } from '@ffxiv-teamcraft/types';
 
 @Component({
   selector: 'app-total-panel-price-popup',
@@ -25,8 +24,8 @@ export class TotalPanelPricePopupComponent implements OnInit {
         return this.getTradeEntries(source).length > 0;
       })
       .sort((a, b) => {
-        return (TradeIconPipe.TRADE_SOURCES_PRIORITIES[this.getTradeEntries(b)[0].id] || 0)
-          - (TradeIconPipe.TRADE_SOURCES_PRIORITIES[this.getTradeEntries(a)[0].id] || 0);
+        return (TRADE_SOURCES_PRIORITIES[this.getTradeEntries(b)[0].id] || 0)
+          - (TRADE_SOURCES_PRIORITIES[this.getTradeEntries(a)[0].id] || 0);
       })[0];
   }
 
@@ -48,8 +47,8 @@ export class TotalPanelPricePopupComponent implements OnInit {
       } else if (tradeSources.length > 0) {
         const tradeSource = this.getTradeSourceByPriority(tradeSources);
         const trade = tradeSource.trades.sort((a, b) => {
-          return (TradeIconPipe.TRADE_SOURCES_PRIORITIES[this.getFilteredCurrencies(b.currencies)[0]?.id] || 0)
-            - (TradeIconPipe.TRADE_SOURCES_PRIORITIES[this.getFilteredCurrencies(a.currencies)[0]?.id] || 0);
+          return (TRADE_SOURCES_PRIORITIES[this.getFilteredCurrencies(b.currencies)[0]?.id] || 0)
+            - (TRADE_SOURCES_PRIORITIES[this.getFilteredCurrencies(a.currencies)[0]?.id] || 0);
         })[0];
         const itemsPerTrade = trade.items.find(item => item.id === row.id).amount;
         this.getFilteredCurrencies(trade.currencies).forEach(currency => {
@@ -94,8 +93,8 @@ export class TotalPanelPricePopupComponent implements OnInit {
         ];
       }, []);
     })).sort((a, b) => {
-      return (TradeIconPipe.TRADE_SOURCES_PRIORITIES[b.id] || 0)
-        - (TradeIconPipe.TRADE_SOURCES_PRIORITIES[a.id] || 0);
+      return (TRADE_SOURCES_PRIORITIES[b.id] || 0)
+        - (TRADE_SOURCES_PRIORITIES[a.id] || 0);
     });
   }
 

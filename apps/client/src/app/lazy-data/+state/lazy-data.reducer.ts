@@ -2,7 +2,7 @@ import { Action, createReducer, on } from '@ngrx/store';
 
 import * as LazyDataActions from './lazy-data.actions';
 import { DataEntryStatus } from '../data-entry-status';
-import { LazyDataKey, LazyDataWithExtracts } from '../lazy-data-types';
+import { LazyDataKey, LazyDataWithExtracts } from '@ffxiv-teamcraft/types';
 
 export const LAZY_DATA_FEATURE_KEY = 'lazyData';
 

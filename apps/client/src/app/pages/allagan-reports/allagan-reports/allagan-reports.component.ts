@@ -11,6 +11,7 @@ import { AllaganReportStatus } from '../model/allagan-report-status';
 import { AllaganReportSource } from '../model/allagan-report-source';
 import { uniq } from 'lodash';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { getExtract } from '@ffxiv-teamcraft/types';
 
 @Component({
   selector: 'app-allagan-reports',
@@ -60,7 +61,7 @@ export class AllaganReportsComponent {
       const fishWithNoData = fishes
         .filter(itemId => {
           return itemId < 200000 && !items[itemId].en.includes('Skybuilders')
-            && extracts[itemId].sources.length === 0;
+            && getExtract(extracts, itemId).sources.length === 0;
         });
       return {
         reportsCount: dashboardData.reportsCount,

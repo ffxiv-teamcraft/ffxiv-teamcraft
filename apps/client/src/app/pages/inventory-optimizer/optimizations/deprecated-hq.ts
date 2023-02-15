@@ -1,13 +1,12 @@
 import { InventoryOptimizer } from './inventory-optimizer';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
-import { ListRow } from '../../../modules/list/model/list-row';
 import { Injectable } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { map } from 'rxjs/operators';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest, Observable, of } from 'rxjs';
-import { LazyDataKey } from '../../../lazy-data/lazy-data-types';
+import { ExtractRow, LazyDataKey } from '@ffxiv-teamcraft/types';
 
 @Injectable()
 export class DeprecatedHq extends InventoryOptimizer {
@@ -16,7 +15,7 @@ export class DeprecatedHq extends InventoryOptimizer {
     super();
   }
 
-  _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): Observable<{ [p: string]: number | string } | null> {
+  _getOptimization(item: InventoryItem, inventory: UserInventory, data: ExtractRow): Observable<{ [p: string]: number | string } | null> {
     if (item.hq) {
       return combineLatest([
         this.lazyData.getRow('hqFlags', item.itemId, 0),

@@ -4,7 +4,7 @@ import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
 import { GatheringNodesService } from '../../../../core/data/gathering-nodes.service';
 import { AlarmsFacade } from '../../../../core/alarms/+state/alarms.facade';
-import { Alarm } from '../../../../core/alarms/alarm';
+import { PersistedAlarm } from '../../../../core/alarms/persisted-alarm';
 import { AlarmDisplay } from '../../../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../../../core/alarms/alarm-group';
 import { AuthFacade } from '../../../../+state/auth.facade';
@@ -17,7 +17,7 @@ import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FishingSpotAvailableFishesComponent {
-  public readonly fishes$: Observable<{ itemId: number, alarms: Alarm[], done: boolean }[] | undefined> = combineLatest([this.fishCtx.spotId$, this.lazyData.getEntry('fishingSpots'), this.authFacade.logTracking$]).pipe(
+  public readonly fishes$: Observable<{ itemId: number, alarms: PersistedAlarm[], done: boolean }[] | undefined> = combineLatest([this.fishCtx.spotId$, this.lazyData.getEntry('fishingSpots'), this.authFacade.logTracking$]).pipe(
     filter(([spotId]) => spotId >= 0),
     switchMap(([spotId, spots, logs]) => {
       const fishIds = spots.find((s) => s.id === spotId)?.fishes?.filter((f) => f > 0);
@@ -49,13 +49,13 @@ export class FishingSpotAvailableFishesComponent {
 
   toggleAlarm(display: AlarmDisplay): void {
     if (display.registered) {
-      this.alarmsFacade.deleteAlarm(display.alarm);
+      this.alarmsFacade.deleteAlarm(display.alarm as PersistedAlarm);
     } else {
-      this.alarmsFacade.addAlarms(display.alarm);
+      this.alarmsFacade.addAlarms(display.alarm as PersistedAlarm);
     }
   }
 
-  addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
+  addAlarmWithGroup(alarm: PersistedAlarm, group: AlarmGroup) {
     this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 

@@ -1,12 +1,11 @@
 import { InventoryOptimizer } from './inventory-optimizer';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
-import { ListRow } from '../../../modules/list/model/list-row';
 import { environment } from '../../../../environments/environment';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest, Observable, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { LazyDataKey } from '../../../lazy-data/lazy-data-types';
+import { ExtractRow, LazyDataKey } from '@ffxiv-teamcraft/types';
 
 export class UnwantedMaterials extends InventoryOptimizer {
 
@@ -71,7 +70,7 @@ export class UnwantedMaterials extends InventoryOptimizer {
     return of(JSON.parse(LScache));
   }
 
-  _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): Observable<{ [p: string]: number | string }> {
+  _getOptimization(item: InventoryItem, inventory: UserInventory, data: ExtractRow): Observable<{ [p: string]: number | string }> {
     const wantedIlvl: number = parseInt(localStorage.getItem(UnwantedMaterials.RECIPE_ILVL_KEY), 10);
     return this.getCache().pipe(
       map(cache => {

@@ -3,7 +3,7 @@ import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms
 import { combineLatest, Observable } from 'rxjs';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { filter, map, shareReplay } from 'rxjs/operators';
-import { Alarm } from '../../../core/alarms/alarm';
+import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
@@ -87,7 +87,7 @@ export class CustomAlarmPopupComponent implements OnInit {
 
   submit(): void {
     const data = this.form.getRawValue();
-    const alarm: Partial<Alarm> = {
+    const alarm: Partial<PersistedAlarm> = {
       name: data.name
     };
     if (data.spawn !== null) {
@@ -110,9 +110,9 @@ export class CustomAlarmPopupComponent implements OnInit {
       alarm.coords = { x: data.x || 0, y: data.y || 0, z: data.z || 0 };
     }
     if (this.returnAlarm) {
-      this.modalRef.close(<Alarm>alarm);
+      this.modalRef.close(<PersistedAlarm>alarm);
     } else {
-      this.alarmsFacade.addAlarms(<Alarm>alarm);
+      this.alarmsFacade.addAlarms(<PersistedAlarm>alarm);
       this.modalRef.close();
     }
   }

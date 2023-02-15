@@ -6,7 +6,7 @@ import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith
 import { FishContextService } from '../../service/fish-context.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Chart, ChartOptions } from 'chart.js';
-import { Tug } from '../../../../core/data/model/tug';
+import { Tug } from '@ffxiv-teamcraft/types';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../../core/rxjs/with-lazy-data';
 

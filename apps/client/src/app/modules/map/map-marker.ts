@@ -1,4 +1,4 @@
-import { Vector2 } from '../../core/tools/vector2';
+import { Vector2 } from '@ffxiv-teamcraft/types';
 
 export interface MapMarker extends Vector2 {
   iconType?: 'img' | 'material' | 'ant';

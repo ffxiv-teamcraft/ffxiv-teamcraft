@@ -7,15 +7,24 @@ import { debounceTime, distinctUntilChanged, filter, first, map, shareReplay, sk
 import * as fromLazyData from './lazy-data.reducer';
 import * as LazyDataSelectors from './lazy-data.selectors';
 import { loadLazyDataEntityEntry, loadLazyDataFullEntity } from './lazy-data.actions';
-import { LazyDataEntries, LazyDataKey, LazyDataRecordKey, LazyDataWithExtracts } from '../lazy-data-types';
-import { I18nElement, I18nName, LazyDataI18nKey } from '@ffxiv-teamcraft/types';
+import {
+  ExtractRow,
+  getExtract,
+  I18nElement,
+  I18nName,
+  LazyDataEntries,
+  LazyDataI18nKey,
+  LazyDataKey,
+  LazyDataRecordKey,
+  LazyDataWithExtracts,
+  Region,
+  XivapiPatch
+} from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../modules/settings/settings.service';
-import { Region } from '@ffxiv-teamcraft/types';
 import { zhWorlds } from '../../core/data/sources/zh-worlds';
 import { koWorlds } from '../../core/data/sources/ko-worlds';
 import { LoadingStatus } from '../data-entry-status';
 import { LazyRecipe } from '@ffxiv-teamcraft/data/model/lazy-recipe';
-import { XivapiPatch } from '../../core/data/model/xivapi-patch';
 import { HttpClient } from '@angular/common/http';
 import { mapIds } from '../../core/data/sources/map-ids';
 import { XivapiService } from '@xivapi/angular-client';
@@ -165,6 +174,9 @@ export class LazyDataFacade {
         && !this.fullLoadingIndexes[String(propertyKey)]) {
         this.preloadEntry(propertyKey);
         this.fullLoadingIndexes[String(propertyKey)] = 1;
+      }
+      if (propertyKey === 'extracts' && !fallback) {
+        fallback = getExtract({}, id) as any;
       }
       const obs$ = combineLatest([
         this.store.pipe(select(LazyDataSelectors.getEntryRow({ key: propertyKey, id }))),

@@ -1,8 +1,8 @@
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { Observable, OperatorFunction } from 'rxjs';
-import { LazyDataKey, LazyDataWithExtracts } from '../../lazy-data/lazy-data-types';
 import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { safeCombineLatest } from './safe-combine-latest';
+import { LazyDataKey, LazyDataWithExtracts } from '@ffxiv-teamcraft/types';
 
 type TupleOf<T> = [T, ...T[]]
 

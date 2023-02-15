@@ -19,8 +19,8 @@ import { WorkshopStatusData } from '../workshop-status-data';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { WorkshopPattern, workshopPatterns } from '../workshop-patterns';
 import { PlanningFormulaOptimizer } from '../optimizer/planning-formula-optimizer';
-import { getItemSource } from '../../../modules/list/model/list-row';
-import { DataType } from '../../../modules/list/data/data-type';
+import { getExtract, getItemSource } from '@ffxiv-teamcraft/types';
+import { DataType } from '@ffxiv-teamcraft/types';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 
@@ -290,10 +290,10 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
           if (excludePasture || excludeCrops) {
             const recipe = recipes.find(r => r.id === `mji-craftworks-${row.id}`);
             if (excludePasture) {
-              matches = matches && recipe.ingredients.every(i => getItemSource(extracts[i.id], DataType.ISLAND_PASTURE)?.length === 0);
+              matches = matches && recipe.ingredients.every(i => getItemSource(getExtract(extracts, i.id), DataType.ISLAND_PASTURE)?.length === 0);
             }
             if (excludeCrops) {
-              matches = matches && recipe.ingredients.every(i => getItemSource(extracts[i.id], DataType.ISLAND_CROP, true).seed === undefined);
+              matches = matches && recipe.ingredients.every(i => getItemSource(getExtract(extracts, i.id), DataType.ISLAND_CROP, true).seed === undefined);
             }
           }
           return matches;
@@ -369,8 +369,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
           const recipe = recipes.find(r => r.id === `mji-craftworks-${id}`);
           const possibleCrafts = Math.floor(24 / (obj.craftingTime + 4));
           recipe.ingredients.forEach(i => {
-            const pastureData = getItemSource(extracts[i.id], DataType.ISLAND_PASTURE);
-            const cropData = getItemSource(extracts[i.id], DataType.ISLAND_CROP);
+            const pastureData = getItemSource(getExtract(extracts, i.id), DataType.ISLAND_PASTURE);
+            const cropData = getItemSource(getExtract(extracts, i.id), DataType.ISLAND_CROP);
             if (pastureData?.length > 0) {
               // possibleCrafts crafts per day max, with 3 workshops
               acc.pasture[i.id] = (acc.pasture[i.id] || 0) + i.amount * possibleCrafts * 3;

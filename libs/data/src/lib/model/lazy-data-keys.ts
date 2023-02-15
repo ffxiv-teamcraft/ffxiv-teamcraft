@@ -39,7 +39,6 @@ export const LazyDataKeys = [
   'fishingSpots',
   'foods',
   'freeCompanyActions',
-  'gardeningSeedIds',
   'gardeningSources',
   'gatheringBonuses',
   'gatheringItems',

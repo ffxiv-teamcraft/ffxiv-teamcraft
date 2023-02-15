@@ -1,8 +1,6 @@
-import { CustomItem } from '../../custom-items/model/custom-item';
-import { ListRow } from './list-row';
+import { ExtractRow } from '@ffxiv-teamcraft/types';
 
 export interface CraftAddition {
-  item?: ListRow;
-  data?: CustomItem;
+  item?: ExtractRow;
   amount: number;
 }

@@ -23,7 +23,7 @@ import { bufferTime, catchError, debounceTime, distinctUntilChanged, filter, map
 import { combineLatest, of } from 'rxjs';
 import { AlarmsFacade } from './alarms.facade';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { Alarm } from '../alarm';
+import { PersistedAlarm } from '../persisted-alarm';
 import { AlarmsService } from '../alarms.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { AlarmGroupService } from '../alarm-group.service';
@@ -103,7 +103,7 @@ export class AlarmsEffects {
       withLatestFrom(this.authFacade.userId$),
       switchMap(([action, userId]) => {
         const alarms = (<AddAlarms>action).payload.map(alarm => {
-          return new Alarm({ ...alarm, userId: userId });
+          return new PersistedAlarm({ ...alarm, userId: userId });
         });
         return combineLatest(
           alarms.map(alarm => {
@@ -140,7 +140,7 @@ export class AlarmsEffects {
         const alarms = payload
           .filter(alarm => !allAlarms.some(a => a.itemId === alarm.itemId && a.nodeId === alarm.nodeId && a.fishEyes === alarm.fishEyes))
           .map(alarm => {
-            return new Alarm({ ...alarm, userId: userId, enabled: true });
+            return new PersistedAlarm({ ...alarm, userId: userId, enabled: true });
           });
         let res = combineLatest(
           alarms.map(alarm => {

@@ -1,16 +1,15 @@
-import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { Observable, shareReplay } from 'rxjs';
-import { lazyFilesList } from '@ffxiv-teamcraft/data/lazy-files-list';
 import { readFile } from 'fs';
 import { join } from 'path';
-
-export type LazyDataWithExtracts = { [Property in keyof LazyData]: LazyData[Property] } & { extracts: Record<number, any> };
+import { LazyDataKey, LazyDataWithExtracts } from '@ffxiv-teamcraft/types';
+import { lazyFilesList } from '@ffxiv-teamcraft/data/lazy-files-list';
+import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 
 export class LazyDataLoader {
 
   public cache: Record<string, Observable<any>> = {};
 
-  public get<K extends keyof LazyData | 'extracts'>(contentName: K): Observable<LazyDataWithExtracts[K]> {
+  public get<K extends LazyDataKey>(contentName: K): Observable<LazyDataWithExtracts[K]> {
     let fileName: string;
     let folder: string;
     if (contentName === 'extracts') {

@@ -1,12 +1,12 @@
 import { AlarmsAction, AlarmsActionTypes } from './alarms.actions';
-import { Alarm } from '../alarm';
+import { PersistedAlarm } from '../persisted-alarm';
 import { AlarmGroup } from '../alarm-group';
 
 export interface AlarmsState {
-  alarms: Alarm[];
+  alarms: PersistedAlarm[];
   groups: AlarmGroup[];
   externalGroup: AlarmGroup;
-  externalGroupAlarms: Alarm[];
+  externalGroupAlarms: PersistedAlarm[];
   loaded: boolean;
 }
 

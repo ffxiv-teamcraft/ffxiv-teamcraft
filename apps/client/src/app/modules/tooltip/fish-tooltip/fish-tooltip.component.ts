@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
-import { GatheringNode } from '../../../core/data/model/gathering-node';
-import { FishingBait } from '../../../core/data/model/fishing-bait';
+import { GatheringNode } from '@ffxiv-teamcraft/types';
+import { FishingBait } from '@ffxiv-teamcraft/types';
 import { Observable } from 'rxjs';
 import { FishDataService } from '../../../pages/db/service/fish-data.service';
 import { map } from 'rxjs/operators';

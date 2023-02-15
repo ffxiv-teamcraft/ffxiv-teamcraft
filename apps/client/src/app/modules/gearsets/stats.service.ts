@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BaseParam } from '@ffxiv-teamcraft/data/game';
+import { BaseParam } from '@ffxiv-teamcraft/types';
 import { EquipmentPiece } from '../../model/gearset/equipment-piece';
 import { TeamcraftGearset } from '../../model/gearset/teamcraft-gearset';
 import { MateriaService } from './materia.service';

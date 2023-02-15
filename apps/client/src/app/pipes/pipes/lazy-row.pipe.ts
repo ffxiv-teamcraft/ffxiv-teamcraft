@@ -2,10 +2,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, startWith, switchMap } from 'rxjs/operators';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
-import { LazyDataEntries, LazyDataRecordKey } from '../../lazy-data/lazy-data-types';
 import { TranslateService } from '@ngx-translate/core';
 import { Language } from '../../core/data/language';
 import { LazyDataKeys } from '@ffxiv-teamcraft/data/model/lazy-data-keys';
+import { LazyDataEntries, LazyDataRecordKey } from '@ffxiv-teamcraft/types';
 
 @Pipe({
   name: 'lazyRow'

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { first } from 'rxjs/operators';
-import { Alarm } from '../../../core/alarms/alarm';
+import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
@@ -16,7 +16,7 @@ import { MapComponent } from '../../map/map/map.component';
 export class AlarmButtonComponent {
 
   @Input()
-  alarm: Alarm;
+  alarm: PersistedAlarm;
 
   @Input()
   alarmGroups: AlarmGroup[];
@@ -25,7 +25,7 @@ export class AlarmButtonComponent {
   toggleAlarm = new EventEmitter<AlarmDisplay>();
 
   @Output()
-  addAlarmWithGroup = new EventEmitter<{ alarm: Alarm, group: AlarmGroup }>();
+  addAlarmWithGroup = new EventEmitter<{ alarm: PersistedAlarm, group: AlarmGroup }>();
 
   @Input()
   showPosition = true;

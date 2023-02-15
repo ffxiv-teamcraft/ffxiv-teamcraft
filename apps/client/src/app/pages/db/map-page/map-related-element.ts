@@ -1,4 +1,4 @@
-import { Vector2 } from '../../../core/tools/vector2';
+import { Vector2 } from '@ffxiv-teamcraft/types';
 import { MapMarker } from '../../../modules/map/map-marker';
 import { I18nName } from '@ffxiv-teamcraft/types';
 import { Observable } from 'rxjs';

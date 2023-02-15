@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
-import { getItemSource, ListRow } from '../model/list-row';
+import { ListRow } from '../model/list-row';
 import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -22,10 +22,10 @@ import { WorldNavigationMapComponent } from '../../map/world-navigation-map/worl
 import { EorzeaFacade } from '../../eorzea/+state/eorzea.facade';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
-import { DataType } from '../data/data-type';
+import { DataType, getItemSource } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../settings/settings.service';
 import { Drop } from '../model/drop';
-import { Alarm } from '../../../core/alarms/alarm';
+import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { GatheredBy } from '../model/gathered-by';
 import { TradeSource } from '../model/trade-source';
 import { Vendor } from '../model/vendor';
@@ -438,7 +438,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     const tradeSources = getItemSource<TradeSource[]>(row, DataType.TRADE_SOURCES);
     const gatheredBy = getItemSource<GatheredBy>(row, DataType.GATHERED_BY);
     const drops = getItemSource<Drop[]>(row, DataType.DROPS);
-    const alarms = getItemSource<Alarm[]>(row, DataType.ALARMS);
+    const alarms = getItemSource<PersistedAlarm[]>(row, DataType.ALARMS);
     const positions = [];
     if (vendors.some(d => d.coords && (d.coords.x !== undefined) && d.mapId === zoneBreakdownRow.mapId)) {
       const vendor = vendors.find(d => d.coords && (d.coords.x !== undefined) && d.mapId === zoneBreakdownRow.mapId);

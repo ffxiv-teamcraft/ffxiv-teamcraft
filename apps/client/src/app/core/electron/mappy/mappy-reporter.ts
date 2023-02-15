@@ -2,7 +2,7 @@ import { IpcService } from '../ipc.service';
 import { Injectable } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { EorzeaFacade } from '../../../modules/eorzea/+state/eorzea.facade';
-import { Vector2 } from '../../tools/vector2';
+import { TerritoryLayer, Vector2, Vector3 } from '@ffxiv-teamcraft/types';
 import { delayWhen, filter, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { combineLatest, interval, merge, Subject } from 'rxjs';
 import { MapData } from '../../../modules/map/map-data';
@@ -10,8 +10,6 @@ import { MapService } from '../../../modules/map/map.service';
 import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
 import { Aetheryte } from '../../data/aetheryte';
 import { Npc } from '../../../pages/db/model/npc/npc';
-import { Vector3 } from '../../tools/vector3';
-import { TerritoryLayer } from '../../data/model/territory-layer';
 import { uniqBy } from 'lodash';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { SettingsService } from '../../../modules/settings/settings.service';
@@ -378,7 +376,7 @@ export class MappyReporterService {
   }
 
   private getCurrentLayer(territoryLayers: LazyData['territoryLayers'], maps: LazyData['maps']): TerritoryLayer {
-    const placeholderLayer = {
+    const placeholderLayer: TerritoryLayer = {
       mapId: this.state.mapId,
       index: 0,
       placeNameId: this.state.zoneId,

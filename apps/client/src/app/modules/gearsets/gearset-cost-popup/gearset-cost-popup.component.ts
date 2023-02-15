@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
-import { getItemSource, ListRow } from '../../list/model/list-row';
-import { DataType } from '../../list/data/data-type';
+import { DataType, Extracts, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
 import { TradeSource } from '../../list/model/trade-source';
 import { TranslateService } from '@ngx-translate/core';
 import { TradeEntry } from '../../list/model/trade-entry';
@@ -70,10 +69,10 @@ export class GearsetCostPopupComponent {
   constructor(private lazyData: LazyDataFacade, public translate: TranslateService) {
   }
 
-  private computeCosts(currency: TradeEntry, itemEquipSlotCategory: LazyData['itemEquipSlotCategory'], extracts: Record<number, ListRow>, costs = []): { id: string | number, amount: number }[] {
+  private computeCosts(currency: TradeEntry, itemEquipSlotCategory: LazyData['itemEquipSlotCategory'], extracts: Extracts, costs = []): { id: string | number, amount: number }[] {
     // If you can equip this item, let's trigger recursion and not include it as a trade currency
     if (itemEquipSlotCategory[currency.id]) {
-      const itemExtract = extracts[+currency.id];
+      const itemExtract = getExtract(extracts, +currency.id);
       const trades = getItemSource<TradeSource[]>(itemExtract, DataType.TRADE_SOURCES);
       if (trades.length > 0) {
         const tradeCurrencyCosts = trades

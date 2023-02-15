@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Vector2 } from './vector2';
-import { Vector3 } from './vector3';
+import { Vector2 } from '@ffxiv-teamcraft/types';
+import { Vector3 } from '@ffxiv-teamcraft/types';
 
 @Injectable({
   providedIn: 'root'

@@ -1,5 +1,10 @@
 export interface LazySeed {
-  duration: number;
-  ffxivgId: number;
-  seed:     number;
+  crossBreeds: CrossBreed[];
+  duration:    number;
+  seedItemId:  number;
+}
+
+export interface CrossBreed {
+  adjacentSeed: number;
+  baseSeed:     number;
 }

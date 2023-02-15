@@ -20,7 +20,7 @@ import {
   UpdateAlarm,
   UpdateAlarmGroup
 } from './alarms.actions';
-import { Alarm } from '../alarm';
+import { isPersistedAlarm, PersistedAlarm } from '../persisted-alarm';
 import { filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { combineLatest, Observable, of } from 'rxjs';
 import { AlarmDisplay } from '../alarm-display';
@@ -32,7 +32,7 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { WeatherService } from '../../eorzea/weather.service';
 import { NextSpawn } from '../next-spawn';
 import { mapIds } from '../../data/sources/map-ids';
-import { GatheringNode } from '../../data/model/gathering-node';
+import { AlarmDetails, GatheringNode, XivapiPatch } from '@ffxiv-teamcraft/types';
 import { MapService } from '../../../modules/map/map.service';
 import { GatheringNodesService } from '../../data/gathering-nodes.service';
 import * as semver from 'semver';
@@ -43,7 +43,6 @@ import { TimeUtils } from '../time.utils';
 import { safeCombineLatest } from '../../rxjs/safe-combine-latest';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
-import { XivapiPatch } from '../../data/model/xivapi-patch';
 
 @Injectable({
   providedIn: 'root'
@@ -147,7 +146,7 @@ export class AlarmsFacade {
               private gatheringNodesService: GatheringNodesService, private progressService: ProgressPopupService) {
   }
 
-  public isAlarmDone(alarm: Alarm, etime: Date): boolean {
+  public isAlarmDone(alarm: PersistedAlarm, etime: Date): boolean {
     const doneStr = localStorage.getItem(`alarm:${alarm.$key}:done`);
     if (!doneStr) {
       return false;
@@ -163,23 +162,23 @@ export class AlarmsFacade {
     this.store.dispatch(new SetAlarmDone(key));
   }
 
-  public addAlarms(...alarms: Alarm[]): void {
+  public addAlarms(...alarms: PersistedAlarm[]): void {
     this.store.dispatch(new AddAlarms(alarms));
   }
 
-  public addAlarmInGroup(alarm: Alarm, group?: AlarmGroup): void {
+  public addAlarmInGroup(alarm: PersistedAlarm, group?: AlarmGroup): void {
     this.store.dispatch(new AddAlarms([alarm], group));
   }
 
-  public addAlarmsAndGroup(alarms: Alarm[], groupName: string, redirect = false): void {
+  public addAlarmsAndGroup(alarms: PersistedAlarm[], groupName: string, redirect = false): void {
     this.store.dispatch(new AddAlarmsAndGroup(alarms, groupName, redirect));
   }
 
-  public updateAlarm(alarm: Alarm): void {
+  public updateAlarm(alarm: PersistedAlarm): void {
     this.store.dispatch(new UpdateAlarm(alarm));
   }
 
-  public deleteAlarm(alarm: Alarm): void {
+  public deleteAlarm(alarm: PersistedAlarm): void {
     this.store.dispatch(new RemoveAlarm(alarm.$key));
   }
 
@@ -211,11 +210,11 @@ export class AlarmsFacade {
    * Only one alarm can be added for each item.
    * @param alarm
    */
-  public hasAlarm(alarm: Partial<Alarm>): Observable<boolean> {
+  public hasAlarm(alarm: AlarmDetails): Observable<boolean> {
     return this.getRegisteredAlarm(alarm).pipe(map(a => a !== undefined));
   }
 
-  public getRegisteredAlarm(alarm: Partial<Alarm>): Observable<Alarm> {
+  public getRegisteredAlarm(alarm: Partial<PersistedAlarm>): Observable<PersistedAlarm> {
     return this.allAlarms$.pipe(
       map(alarms => alarms.find(a => {
         if (alarm.itemId) {
@@ -249,13 +248,15 @@ export class AlarmsFacade {
     });
   }
 
-  public createDisplay(alarm: Alarm, date: Date): AlarmDisplay {
+  public createDisplay<T extends  AlarmDetails | PersistedAlarm = PersistedAlarm>(alarm: T, date: Date): AlarmDisplay<T> {
     const display = new AlarmDisplay(alarm);
     const nextSpawn = { ...this.getNextSpawn(alarm, date) };
     display.spawned = this.isSpawned(alarm, date);
     display.played = this.isPlayed(alarm, date);
-    display.done = this.isAlarmDone(alarm, date);
-    display.groupNames = alarm.groupNames || '';
+    if (isPersistedAlarm(alarm)) {
+      display.done = this.isAlarmDone(alarm, date);
+      display.groupNames = alarm.groupNames || '';
+    }
     if (Math.abs(alarm.type) < 4) {
       display.dbType = 'node';
     } else if (alarm.type === 4) {
@@ -282,14 +283,14 @@ export class AlarmsFacade {
     return display;
   }
 
-  public createDisplayArray(alarms: Alarm[], date: Date): AlarmDisplay[] {
+  public createDisplayArray<T extends AlarmDetails | PersistedAlarm = PersistedAlarm>(alarms: T[], date: Date): AlarmDisplay<T>[] {
     return this.sortAlarmDisplays(alarms.filter(alarm => alarm.spawns !== undefined || alarm.weathers !== undefined)
       .map(alarm => {
         return this.createDisplay(alarm, date);
       }));
   }
 
-  public getNextSpawn(alarm: Alarm, etime: Date): NextSpawn {
+  public getNextSpawn(alarm: AlarmDetails, etime: Date): NextSpawn {
     const cacheKey = `${alarm.itemId}-${alarm.bnpcName}-${alarm.zoneId}-${(alarm.spawns || []).join(',')}-${(alarm.weathers || []).join(',')}`;
     if (this.nextSpawnCache[cacheKey] === undefined || this.nextSpawnCache[cacheKey].expires.getTime() < Date.now()) {
       const sortedSpawns = [...(alarm.spawns || [])].sort((a, b) => {
@@ -362,12 +363,12 @@ export class AlarmsFacade {
     return resMinutes + (spawn.days * 1440);
   }
 
-  public generateAlarms(node: GatheringNode): Alarm[] {
+  public generateAlarms(node: GatheringNode): AlarmDetails[] {
     // If no spawns and no weather, no alarms.
     if (!node?.spawns?.length && !node?.weathers?.length) {
       return [];
     }
-    const alarm: Partial<Alarm> = {
+    const alarm: AlarmDetails = {
       itemId: node.matchingItemId,
       nodeId: node.id,
       duration: node.duration ? node.duration / 60 : 0,
@@ -388,9 +389,7 @@ export class AlarmsFacade {
       weathers: node.weathers || [],
       weathersFrom: node.weathersFrom || [],
       snagging: node.snagging || false,
-      predators: node.predators || [],
-      note: '',
-      enabled: true
+      predators: node.predators || []
     };
     if (node.speed) {
       alarm.speed = node.speed;
@@ -402,10 +401,10 @@ export class AlarmsFacade {
     if (node.hookset) {
       alarm.hookset = node.hookset;
     }
-    return this.applyFishEyes(alarm) as Alarm[];
+    return this.applyFishEyes(alarm) as AlarmDetails[];
   }
 
-  public regenerateAlarm(alarm: Partial<Alarm>): Observable<Alarm> {
+  public regenerateAlarm(alarm: Partial<PersistedAlarm>): Observable<PersistedAlarm> {
     return this.gatheringNodesService.getItemNodes(alarm.itemId).pipe(
       map(nodes => {
         const nodeForThisAlarm = nodes.find(n => {
@@ -416,7 +415,7 @@ export class AlarmsFacade {
         }) || nodes[0];
         if (nodeForThisAlarm) {
           const alarms = this.generateAlarms(nodeForThisAlarm);
-          const regenerated = alarms.find(a => a.fishEyes === alarm.fishEyes) || alarms[0];
+          const regenerated = (alarms.find(a => a.fishEyes === alarm.fishEyes) || alarms[0]) as PersistedAlarm;
           if (!regenerated) {
             return null;
           }
@@ -424,13 +423,14 @@ export class AlarmsFacade {
           regenerated.$key = alarm.$key;
           regenerated.appVersion = environment.version;
           regenerated.enabled = alarm.enabled;
-          return regenerated;
+          Object.assign(alarm, regenerated);
+          return regenerated as PersistedAlarm;
         }
       })
     );
   }
 
-  public regenerateAlarms(_alarms?: Alarm[]): void {
+  public regenerateAlarms(_alarms?: PersistedAlarm[]): void {
     let alarms$ = of(_alarms);
     if (!_alarms) {
       alarms$ = this.allAlarms$;
@@ -478,7 +478,7 @@ export class AlarmsFacade {
     this.progressService.showProgress(operation$, 1, 'ALARMS.Regenerating_alarms').subscribe();
   }
 
-  private sortAlarmDisplays(alarms: AlarmDisplay[]): AlarmDisplay[] {
+  private sortAlarmDisplays<T extends  AlarmDetails | PersistedAlarm = PersistedAlarm>(alarms: AlarmDisplay<T>[]): AlarmDisplay<T>[] {
     return alarms.sort((a, b) => {
       if (a.spawned && a.done) {
         return 1;
@@ -507,7 +507,7 @@ export class AlarmsFacade {
    * @param alarm
    * @param time
    */
-  private isSpawned(alarm: Alarm, time: Date): boolean {
+  private isSpawned(alarm: AlarmDetails, time: Date): boolean {
     const nextSpawn = this.getNextSpawn(alarm, time);
     if (nextSpawn.days > 0 || (nextSpawn.date && (Math.floor(time.getTime() / 86400000) !== Math.floor(nextSpawn.date.getTime() / 86400000)))) {
       // Nothing spawns for more than a day.
@@ -533,11 +533,11 @@ export class AlarmsFacade {
    * @param alarm
    * @param time
    */
-  private isPlayed(alarm: Alarm, time: Date): boolean {
+  private isPlayed(alarm: AlarmDetails, time: Date): boolean {
     return this.getMinutesBefore(time, this.getNextSpawn(alarm, time)) < this.settings.alarmHoursBefore * 60;
   }
 
-  private findWeatherSpawnCombination(alarm: Alarm, sortedSpawns: number[], time: number, iteration = time): NextSpawn {
+  private findWeatherSpawnCombination(alarm: AlarmDetails, sortedSpawns: number[], time: number, iteration = time): NextSpawn {
     const weatherSpawns = alarm.weathers
       .map(weather => {
         if (alarm.weathersFrom !== undefined && alarm.weathersFrom.length > 0) {
@@ -606,14 +606,14 @@ export class AlarmsFacade {
     }
   }
 
-  private applyFishEyes(alarm: Partial<Alarm>): Partial<Alarm>[] {
+  private applyFishEyes(alarm: AlarmDetails): AlarmDetails[] {
     const patch = this.itemPatch && this.itemPatch[alarm.itemId];
     const expansion = this.patches.find(p => p.ID === patch)?.ExVersion;
     const isLegendary = this.legendaryFish && this.legendaryFish[alarm.itemId];
     // The changes only apply to fishes pre-ShB and non-legendary
     if (expansion < 3 && alarm.weathers?.length > 0 && alarm.spawns && !isLegendary) {
       const { spawns, ...alarmWithFishEyesEnabled } = alarm;
-      return [alarm, { ...alarmWithFishEyesEnabled, fishEyes: true }];
+      return [alarm, { ...alarmWithFishEyesEnabled, fishEyes: true, spawns: [] }];
     }
     return [alarm];
   }
