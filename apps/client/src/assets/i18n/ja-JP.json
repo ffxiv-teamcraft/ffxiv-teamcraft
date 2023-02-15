@@ -2690,7 +2690,9 @@
     "Task_level": "ベンチャーレベル",
     "Total_per_venture": "ベンチャーあたりの合計",
     "Use_retainer": "Fill with retainer",
-    "Select_retainer": "Pick one of your retainers"
+    "Select_retainer": "Pick one of your retainers",
+    "Missing_gear": "Missing gear",
+    "Missing_gear_description": "Some of your retainers are missing their gear in TC data, please summon each retainer again to load their gear"
   },
   "PATREON": {
     "By_supporting_us": "By supporting us on Patreon, you get:",
@@ -2718,7 +2720,12 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "パケットキャプチャを使用してインポート",
-    "Import_from_pcap_notice": "1. Go to your company's Workshop (make sure you enter after you opened this popup)<br>2. Open your Free Company's window<br>3. Interact with each submarine or airship using the management interface",
+    "Go_to_workshop": "Enter your workshop",
+    "Go_to_workshop_description": "If you're already in it, please exit the workshop and enter again.",
+    "Open_fc_window": "Open your Free Company details window",
+    "Open_fc_window_description": "This will make TC get more important details about your free company, such as server, G is the default binding for it.",
+    "Interact_with_ships_subs": "Interact with each Submarine/Airship you want to import",
+    "Interact_with_ships_subs_description": "Opening the airship/submarine management window makes TC load everything needed to display details about your ships.",
     "Airships": "飛空艇",
     "Submersibles": "Submersibles"
   },
