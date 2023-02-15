@@ -1,9 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { combineLatest, Observable, Subject } from 'rxjs';
-import { I18nName } from '@ffxiv-teamcraft/types';
+import { ExtractRow, I18nName } from '@ffxiv-teamcraft/types';
 import { debounceTime, filter, map, startWith, switchMap } from 'rxjs/operators';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { ListRow } from '../../../modules/list/model/list-row';
 import { UniversalisService } from '../../../core/api/universalis.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { IpcService } from '../../../core/electron/ipc.service';
@@ -14,7 +13,7 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 
 interface Display {
-  data: ListRow,
+  data: ExtractRow,
   inventoryItems: InventoryItem[],
   canBeSold: boolean;
 }

@@ -1,6 +1,6 @@
 import { UpdateData } from '@angular/fire/firestore';
 import { Action } from '@ngrx/store';
-import { Alarm } from '../alarm';
+import { PersistedAlarm } from '../persisted-alarm';
 import { AlarmGroup } from '../alarm-group';
 
 export enum AlarmsActionTypes {
@@ -37,21 +37,21 @@ export class LoadAlarms implements Action {
 export class AlarmsLoaded implements Action {
   readonly type = AlarmsActionTypes.AlarmsLoaded;
 
-  constructor(public readonly alarms: Alarm[], public readonly groups: AlarmGroup[]) {
+  constructor(public readonly alarms: PersistedAlarm[], public readonly groups: AlarmGroup[]) {
   }
 }
 
 export class AddAlarms implements Action {
   readonly type = AlarmsActionTypes.AddAlarms;
 
-  constructor(public payload: Alarm[], public group?: AlarmGroup) {
+  constructor(public payload: PersistedAlarm[], public group?: AlarmGroup) {
   }
 }
 
 export class AddAlarmsAndGroup implements Action {
   readonly type = AlarmsActionTypes.AddAlarmsAndGroup;
 
-  constructor(public payload: Alarm[], public groupName: string, public redirect = false) {
+  constructor(public payload: PersistedAlarm[], public groupName: string, public redirect = false) {
   }
 }
 
@@ -65,14 +65,14 @@ export class AlarmsCreated implements Action {
 export class UpdateAlarm implements Action {
   readonly type = AlarmsActionTypes.UpdateAlarm;
 
-  constructor(public readonly alarm: Alarm) {
+  constructor(public readonly alarm: PersistedAlarm) {
   }
 }
 
 export class PureUpdateAlarm implements Action {
   readonly type = AlarmsActionTypes.PureUpdateAlarm;
 
-  constructor(public readonly key: string, public readonly payload: UpdateData<Alarm>) {
+  constructor(public readonly key: string, public readonly payload: UpdateData<PersistedAlarm>) {
   }
 }
 
@@ -97,7 +97,7 @@ export class PersistAlarms implements Action {
 export class SetAlarms implements Action {
   readonly type = AlarmsActionTypes.SetAlarms;
 
-  constructor(public readonly alarms: Alarm[]) {
+  constructor(public readonly alarms: PersistedAlarm[]) {
   }
 }
 
@@ -151,7 +151,7 @@ export class LoadAlarmGroup implements Action {
 export class AlarmGroupLoaded implements Action {
   readonly type = AlarmsActionTypes.AlarmGroupLoaded;
 
-  constructor(public readonly group: AlarmGroup, public readonly alarms: Alarm[]) {
+  constructor(public readonly group: AlarmGroup, public readonly alarms: PersistedAlarm[]) {
   }
 }
 

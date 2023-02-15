@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
+import { ExplorationType } from '@ffxiv-teamcraft/types';
 import { ItemDetailsPopup } from '../item-details-popup';
-import { ExplorationType } from '../../../model/other/exploration-type';
 
 @Component({
   selector: 'app-voyages',

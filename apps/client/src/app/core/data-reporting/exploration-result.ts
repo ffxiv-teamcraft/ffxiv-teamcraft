@@ -1,4 +1,5 @@
-import { ExplorationType } from '../../model/other/exploration-type';
+import { ExplorationType } from "@ffxiv-teamcraft/types";
+
 
 export interface ExplorationResult {
   voyageId: number;

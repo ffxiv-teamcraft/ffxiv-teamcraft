@@ -1,24 +1,7 @@
-import { Ingredient } from '../../../model/garland-tools/ingredient';
 import { DataModel } from '../../../core/database/storage/data-model';
-import { Alarm } from '../../../core/alarms/alarm';
-import { CompactMasterbook } from '../../../model/common/compact-masterbook';
-import { ItemSource } from './item-source';
-import { DataType } from '../data/data-type';
-import { GatheredBy } from './gathered-by';
 import { CraftedBy } from './crafted-by';
-import { TradeSource } from './trade-source';
-import { Vendor } from './vendor';
-import { I18nName } from '@ffxiv-teamcraft/types';
-import { Drop } from './drop';
-import { FateData } from './fate-data';
+import { CompactMasterbook, ExtractRow, Ingredient, ItemSource, LazyDataI18nKey } from '@ffxiv-teamcraft/types';
 import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-stats';
-import { GardeningData } from './gardening-data';
-import { MogstationItem } from './mogstation-item';
-import { LazyDataI18nKey } from '@ffxiv-teamcraft/types';
-import { IslandAnimal } from './island-animal';
-import { IslandCrop } from './island-crop';
-import { TripleTriadDuel } from '../../../pages/db/model/attt/triple-triad-duel';
-import structuredClone from '@ungap/structured-clone';
 
 export function isListRow(obj: any): obj is ListRow {
   return typeof obj === 'object'
@@ -27,7 +10,7 @@ export function isListRow(obj: any): obj is ListRow {
     && obj.authorId === undefined;
 }
 
-export class ListRow extends DataModel {
+export class ListRow extends DataModel implements ExtractRow {
   icon?: number;
 
   id: any; // can be string or number, but we use any so less refactoring is needed.
@@ -53,12 +36,9 @@ export class ListRow extends DataModel {
 
   collectable = false;
 
-  /** @deprecated use getItemSource instead, with DataType.ALARMS; **/
-  alarms?: Alarm[] = [];
-
   masterbooks?: CompactMasterbook[] = [];
 
-  sources?: ItemSource[] = [];
+  sources: ItemSource[] = [];
 
   /**
    * Is someone working on it?
@@ -85,40 +65,6 @@ export class ListRow extends DataModel {
   finalItem?: boolean;
 
   requiredHQ?: number;
-}
-
-export function getItemSource(item: ListRow, type: DataType.CRAFTED_BY, isObject?: boolean): CraftedBy[]
-export function getItemSource(item: ListRow, type: DataType.TRADE_SOURCES, isObject?: boolean): TradeSource[]
-export function getItemSource(item: ListRow, type: DataType.VENDORS, isObject?: boolean): Vendor[]
-export function getItemSource(item: ListRow, type: DataType.REDUCED_FROM | DataType.DESYNTHS | DataType.VENTURES | DataType.TREASURES | DataType.INSTANCES | DataType.QUESTS, isObject?: boolean): number[]
-export function getItemSource(item: ListRow, type: DataType.GATHERED_BY, isObject?: boolean): GatheredBy
-export function getItemSource(item: ListRow, type: DataType.GARDENING, isObject?: boolean): GardeningData
-export function getItemSource(item: ListRow, type: DataType.VOYAGES, isObject?: boolean): I18nName[]
-export function getItemSource(item: ListRow, type: DataType.DROPS, isObject?: boolean): Drop[]
-export function getItemSource(item: ListRow, type: DataType.ALARMS, isObject?: boolean): Alarm[]
-export function getItemSource(item: ListRow, type: DataType.MASTERBOOKS, isObject?: boolean): CompactMasterbook[]
-export function getItemSource(item: ListRow, type: DataType.FATES, isObject?: boolean): FateData[]
-export function getItemSource(item: ListRow, type: DataType.REQUIREMENTS, isObject?: boolean): Ingredient[]
-export function getItemSource(item: ListRow, type: DataType.MOGSTATION, isObject?: boolean): MogstationItem
-export function getItemSource(item: ListRow, type: DataType.ISLAND_PASTURE, isObject?: boolean): IslandAnimal[]
-export function getItemSource(item: ListRow, type: DataType.ISLAND_CROP, isObject?: boolean): IslandCrop
-export function getItemSource(item: ListRow, type: DataType.TRIPLE_TRIAD_DUELS, isObject?: boolean): TripleTriadDuel[]
-export function getItemSource(item: ListRow, type: DataType.TRIPLE_TRIAD_PACK, isObject?: boolean): { id: number, price: number }
-export function getItemSource<T = any>(item: ListRow, type: DataType, isObject?: boolean): T
-export function getItemSource<T = any>(item: ListRow, type: DataType, isObject = false): ItemSource['data'] {
-  if (item.sources === undefined) {
-    return (isObject ? {} : []) as any;
-  }
-  const source = item.sources.find(s => s.type === type);
-  if (source === undefined) {
-    if (type === DataType.ALARMS && item.alarms && item.alarms.length > 0) {
-      return item.alarms as any;
-    } else {
-      return isObject ? {} : [] as any;
-    }
-  } else {
-    return structuredClone(source.data);
-  }
 }
 
 export function getCraftByPriority(crafts: CraftedBy[], sets: TeamcraftGearsetStats[]): CraftedBy {

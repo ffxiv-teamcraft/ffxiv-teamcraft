@@ -3,7 +3,7 @@ import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { AlarmsFacade } from './+state/alarms.facade';
 import { combineLatest, of } from 'rxjs';
 import { distinctUntilChanged, filter, first, map, startWith, switchMap } from 'rxjs/operators';
-import { Alarm } from './alarm';
+import { PersistedAlarm } from './persisted-alarm';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { PlatformService } from '../tools/platform.service';
 import { IpcService } from '../electron/ipc.service';
@@ -35,7 +35,7 @@ export class AlarmBellService {
    * @param alarm
    * @param itemName
    */
-  public ring(alarm: Alarm, itemName: string): void {
+  public ring(alarm: PersistedAlarm, itemName: string): void {
     if (this.settings.TTSAlarms) {
       try {
         const notificationSettings = this.settings.getNotificationSettings(SoundNotificationType.ALARM);
@@ -54,7 +54,7 @@ export class AlarmBellService {
     }
   }
 
-  public notify(_alarm: Alarm): void {
+  public notify(_alarm: PersistedAlarm): void {
     if (Date.now() - 10000 >= this.getLastPlayed(_alarm)) {
       localStorage.setItem(`played:${_alarm.$key}`, Date.now().toString());
       of(_alarm).pipe(
@@ -182,7 +182,7 @@ export class AlarmBellService {
     });
   }
 
-  private getLastPlayed(alarm: Alarm): number {
+  private getLastPlayed(alarm: PersistedAlarm): number {
     return +(localStorage.getItem(`played:${alarm.$key}`) || 0);
   }
 }

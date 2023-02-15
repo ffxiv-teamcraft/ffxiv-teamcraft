@@ -13,7 +13,7 @@ import { DbItemCommentNotification } from '../../../../model/notification/db-ite
 import { NotificationService } from '../../../../core/notification/notification.service';
 import { environment } from '../../../../../environments/environment';
 import { DbCommentReplyNotification } from '../../../../model/notification/db-comment-reply-notification';
-import { XivapiPatch } from '../../../../core/data/model/xivapi-patch';
+import { XivapiPatch } from '@ffxiv-teamcraft/types';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 
 @Component({

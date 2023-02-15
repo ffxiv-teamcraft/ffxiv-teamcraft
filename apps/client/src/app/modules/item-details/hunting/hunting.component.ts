@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
-import { Vector2 } from '../../../core/tools/vector2';
+import { Vector2 } from '@ffxiv-teamcraft/types';
 import { Drop } from '../../list/model/drop';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { Observable } from 'rxjs';

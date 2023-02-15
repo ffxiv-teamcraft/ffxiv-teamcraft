@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FishingBait } from '../../../core/data/model/fishing-bait';
+import { FishingBait } from '@ffxiv-teamcraft/types';
 
 @Component({
   selector: 'app-fishing-bait',

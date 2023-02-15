@@ -12,6 +12,7 @@ export interface Collectable {
   expMid:      number[];
   group:       number;
   high:        Base;
+  id:          number;
   itemId:      number;
   level:       number;
   levelMax:    number;
@@ -19,13 +20,16 @@ export interface Collectable {
   mid:         Base;
   nodes?:      Node[];
   reward:      number;
+  rewardType:  number;
   shopId:      number;
+  type:        Type;
 }
 
 export interface Base {
-  exp:    number;
-  rating: number;
-  scrip:  number;
+  exp:      number;
+  quantity: number;
+  rating:   number;
+  scrip:    number;
 }
 
 export interface Node {
@@ -38,7 +42,6 @@ export interface Alarm {
   baits?:       Bait[];
   coords:       Coords;
   duration:     number;
-  enabled:      boolean;
   ephemeral:    boolean;
   fishEyes?:    boolean;
   folklore?:    number;
@@ -47,11 +50,10 @@ export interface Alarm {
   mapId:        number;
   nodeContent:  number[];
   nodeId:       number;
-  note:         string;
   predators:    any[];
   reduction:    boolean;
   snagging:     boolean;
-  spawns?:      number[];
+  spawns:       number[];
   type:         number;
   weathers:     number[];
   weathersFrom: any[];
@@ -102,4 +104,8 @@ export interface GatheringNode {
 export interface Predator {
   amount: number;
   id:     number;
+}
+
+export enum Type {
+  CollectablesShopItem = "CollectablesShopItem",
 }

@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { map } from 'rxjs/operators';
 import { animalsSpawnData } from '../animals-spawn-data';
-import { Alarm } from '../../../core/alarms/alarm';
+import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { Observable } from 'rxjs';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
@@ -28,7 +28,7 @@ export class IslandAnimalsComponent {
     map(animals => {
       return animals.map((animal) => {
         if (animal.spawn !== undefined || animal.weather !== undefined) {
-          const alarm: Partial<Alarm> = {
+          const alarm: Partial<PersistedAlarm> = {
             type: -10,
             mapId: 772,
             zoneId: 2566,
@@ -50,7 +50,7 @@ export class IslandAnimalsComponent {
     })
   );
 
-  alarms$: Observable<Alarm[]> = this.alarmsFacade.allAlarms$;
+  alarms$: Observable<PersistedAlarm[]> = this.alarmsFacade.allAlarms$;
 
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
 
@@ -59,13 +59,13 @@ export class IslandAnimalsComponent {
 
   public addAlarm(display: AlarmDisplay, group?: AlarmGroup): void {
     if (display.registered) {
-      this.alarmsFacade.deleteAlarm(display.alarm);
+      this.alarmsFacade.deleteAlarm(display.alarm as PersistedAlarm);
     } else {
-      this.alarmsFacade.addAlarmInGroup(display.alarm, group);
+      this.alarmsFacade.addAlarmInGroup(display.alarm as PersistedAlarm, group);
     }
   }
 
-  public addAlarmWithGroup(alarm: Alarm, group: AlarmGroup): void {
+  public addAlarmWithGroup(alarm: PersistedAlarm, group: AlarmGroup): void {
     this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 

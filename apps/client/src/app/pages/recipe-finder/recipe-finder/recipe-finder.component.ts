@@ -26,6 +26,7 @@ import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { LazyRecipe } from '@ffxiv-teamcraft/data/model/lazy-recipe';
 import { EnvironmentService } from '../../../core/environment.service';
+import { LazyLeve } from '@ffxiv-teamcraft/data/model/lazy-leve';
 
 @Component({
   selector: 'app-recipe-finder',
@@ -216,7 +217,7 @@ export class RecipeFinderComponent implements OnDestroy {
       withLazyData(this.lazyData, 'leves'),
       map(([[entries, onlyLeveItems], leves]) => {
         const withLeves = entries.map(entry => {
-          entry.leves = Object.entries(leves)
+          entry.leves = Object.entries<LazyLeve>(leves)
             .filter(([, leve]) => {
               return leve.items.some(i => i.itemId === entry.itemId);
             })

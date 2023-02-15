@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input, OnInit } from '@angular/core';
 import { PermissionLevel } from '../../../../core/database/permissions/permission-level.enum';
 import { AlarmGroup } from '../../../../core/alarms/alarm-group';
-import { getItemSource, ListRow } from '../../model/list-row';
+import { ListRow } from '../../model/list-row';
 import { ProcessedListAggregate } from '../../../list-aggregate/model/processed-list-aggregate';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { SettingsService } from '../../../settings/settings.service';
@@ -9,12 +9,11 @@ import { InventoryService } from '../../../inventory/inventory.service';
 import { ListsFacade } from '../../+state/lists.facade';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { AlarmDisplay } from '../../../../core/alarms/alarm-display';
-import { Alarm } from '../../../../core/alarms/alarm';
+import { PersistedAlarm } from '../../../../core/alarms/persisted-alarm';
 import { AlarmsFacade } from '../../../../core/alarms/+state/alarms.facade';
-import { DataType } from '../../data/data-type';
+import { DataType, getItemSource, ItemSource } from '@ffxiv-teamcraft/types';
 import { EorzeanTimeService } from '../../../../core/eorzea/eorzean-time.service';
 import { LayoutRow } from '../../../../core/layout/layout-row';
-import { ItemSource } from '../../model/item-source';
 
 @Component({
   selector: 'app-compact-item-row',
@@ -52,7 +51,7 @@ export class CompactItemRowComponent extends TeamcraftComponent implements OnIni
     distinctUntilChanged((a, b) => a.getUTCHours() === b.getUTCHours()),
     debounceTime(10),
     map((etime) => {
-      const alarms = getItemSource<Alarm[]>(this.item, DataType.ALARMS).sort((a, b) => {
+      const alarms = getItemSource<PersistedAlarm[]>(this.item, DataType.ALARMS).sort((a, b) => {
         const aDisplay = this.alarmsFacade.createDisplay(a, etime);
         const bDisplay = this.alarmsFacade.createDisplay(b, etime);
         if (aDisplay.spawned) {
@@ -126,13 +125,13 @@ export class CompactItemRowComponent extends TeamcraftComponent implements OnIni
 
   toggleAlarm(display: AlarmDisplay): void {
     if (display.registered) {
-      this.alarmsFacade.deleteAlarm(display.alarm);
+      this.alarmsFacade.deleteAlarm(display.alarm as PersistedAlarm);
     } else {
-      this.alarmsFacade.addAlarms(display.alarm);
+      this.alarmsFacade.addAlarms(display.alarm as PersistedAlarm);
     }
   }
 
-  addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
+  addAlarmWithGroup(alarm: PersistedAlarm, group: AlarmGroup) {
     this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 }

@@ -1,12 +1,13 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
-import { Alarm } from '../../../core/alarms/alarm';
-import { GatheringNode } from '../../../core/data/model/gathering-node';
+import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
+import { GatheringNode } from '@ffxiv-teamcraft/types';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { OceanFishingTime } from '../../../pages/allagan-reports/model/ocean-fishing-time';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
+import { AlarmDetails } from '@ffxiv-teamcraft/types';
 
 @Component({
   selector: 'app-node-details',
@@ -20,7 +21,7 @@ export class NodeDetailsComponent {
 
   alarmsLoaded$: Observable<boolean> = this.alarmsFacade.loaded$;
 
-  alarms$: Observable<Alarm[]> = this.alarmsFacade.allAlarms$;
+  alarms$: Observable<PersistedAlarm[]> = this.alarmsFacade.allAlarms$;
 
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
 
@@ -33,7 +34,7 @@ export class NodeDetailsComponent {
   @Input()
   hideDbButton = false;
 
-  public alarms: Alarm[] = [];
+  public alarms: AlarmDetails[] = [];
 
   constructor(private alarmsFacade: AlarmsFacade, public translate: TranslateService) {
   }
@@ -54,9 +55,9 @@ export class NodeDetailsComponent {
 
   public toggleAlarm(display: AlarmDisplay, group?: AlarmGroup): void {
     if (display.registered) {
-      this.alarmsFacade.deleteAlarm(display.alarm);
+      this.alarmsFacade.deleteAlarm(display.alarm as PersistedAlarm);
     } else {
-      this.alarmsFacade.addAlarmInGroup(display.alarm, group);
+      this.alarmsFacade.addAlarmInGroup(display.alarm as PersistedAlarm, group);
     }
   }
 
@@ -65,7 +66,7 @@ export class NodeDetailsComponent {
     return res.toString();
   }
 
-  trackByAlarm(index: number, alarm: Partial<Alarm>): string {
+  trackByAlarm(index: number, alarm: Partial<PersistedAlarm>): string {
     return `${JSON.stringify(alarm.spawns)}:${JSON.stringify(alarm.weathers)}`;
   }
 

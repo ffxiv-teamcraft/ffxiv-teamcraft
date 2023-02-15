@@ -1,4 +1,4 @@
-import { Alarm } from '../../core/alarms/alarm';
+import { PersistedAlarm } from '../../core/alarms/persisted-alarm';
 import { AlarmDisplay } from '../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../core/alarms/alarm-group';
 import { Observable } from 'rxjs';
@@ -9,11 +9,9 @@ export class TrackerComponent extends TeamcraftComponent {
 
   public alarmsLoaded$: Observable<boolean>;
 
-  public alarms$: Observable<Alarm[]>;
+  public alarms$: Observable<PersistedAlarm[]>;
 
   public alarmGroups$: Observable<AlarmGroup[]>;
-
-  public alarmsCache: any = {};
 
   constructor(protected alarmsFacade: AlarmsFacade) {
     super();
@@ -23,13 +21,13 @@ export class TrackerComponent extends TeamcraftComponent {
 
   public toggleAlarm(display: AlarmDisplay): void {
     if (display.registered) {
-      this.alarmsFacade.deleteAlarm(display.alarm);
+      this.alarmsFacade.deleteAlarm(display.alarm as PersistedAlarm);
     } else {
-      this.alarmsFacade.addAlarms(display.alarm);
+      this.alarmsFacade.addAlarms(display.alarm as PersistedAlarm);
     }
   }
 
-  public addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
+  public addAlarmWithGroup(alarm: PersistedAlarm, group: AlarmGroup) {
     this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 }

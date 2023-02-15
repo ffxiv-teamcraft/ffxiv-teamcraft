@@ -1,8 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, Type } from '@angular/core';
-import { ItemSource } from '../../model/item-source';
-import { DataType } from '../../data/data-type';
+import { DataType, getItemSource, ItemSource } from '@ffxiv-teamcraft/types';
 import { Craft } from '../../../../model/garland-tools/craft';
-import { getItemSource, ListRow } from '../../model/list-row';
+import {  ListRow } from '../../model/list-row';
 import { GatheredByComponent } from '../../../item-details/gathered-by/gathered-by.component';
 import { HuntingComponent } from '../../../item-details/hunting/hunting.component';
 import { InstancesComponent } from '../../../item-details/instances/instances.component';

@@ -4,7 +4,7 @@ import { debounceTime, filter, first, map, pluck, shareReplay, startWith, switch
 import { AllaganReportsService } from '../allagan-reports.service';
 import { AllaganReportSource } from '../model/allagan-report-source';
 import { BehaviorSubject, combineLatest, merge, Observable, of, Subject } from 'rxjs';
-import { I18nName } from '@ffxiv-teamcraft/types';
+import { I18nName, SpearfishingShadowSize, SpearfishingSpeed } from '@ffxiv-teamcraft/types';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { AllaganReport } from '../model/allagan-report';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -14,8 +14,8 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { AllaganReportQueueEntry } from '../model/allagan-report-queue-entry';
 import { AllaganReportStatus } from '../model/allagan-report-status';
 import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validators } from '@angular/forms';
-import { Hookset } from '../../../core/data/model/hookset';
-import { Tug } from '../../../core/data/model/tug';
+import { Hookset } from '@ffxiv-teamcraft/types';
+import { Tug } from '@ffxiv-teamcraft/types';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
 import { mapIds } from '../../../core/data/sources/map-ids';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
@@ -26,8 +26,6 @@ import { OceanFishingTime } from '../model/ocean-fishing-time';
 import { SearchType } from '@ffxiv-teamcraft/types';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
-import { SpearfishingSpeed } from '../../../core/data/model/spearfishing-speed';
-import { SpearfishingShadowSize } from '../../../core/data/model/spearfishing-shadow-size';
 
 
 function durationRequired(control: AbstractControl) {

@@ -18,30 +18,26 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ItemData } from '../../../model/garland-tools/item-data';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
-import { DataExtractorService } from '../../../modules/list/data/data-extractor.service';
-import { DataType } from '../../../modules/list/data/data-type';
+import { DataType, getItemSource, SearchResult, TripleTriadDuel } from '@ffxiv-teamcraft/types';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { List } from '../../../modules/list/model/list';
-import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
+import { ListRow } from '../../../modules/list/model/list-row';
 import { Trade } from '../../../modules/list/model/trade';
 import { TradeEntry } from '../../../modules/list/model/trade-entry';
 import { TradeNpc } from '../../../modules/list/model/trade-npc';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
-import { TripleTriadDuel } from '../model/attt/triple-triad-duel';
 import { UsedForType } from '../model/used-for-type';
 import { ATTTService } from '../service/attt.service';
 import { ItemContextService } from '../service/item-context.service';
 import { ModelViewerComponent } from './model-viewer/model-viewer.component';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { environment } from '../../../../environments/environment';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { withLazyRow } from '../../../core/rxjs/with-lazy-row';
 import { LazyRecipesPerItem } from '@ffxiv-teamcraft/data/model/lazy-recipes-per-item';
-import { SearchResult } from '@ffxiv-teamcraft/types';
 
 @Component({
   selector: 'app-item',
@@ -133,28 +129,15 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
         used: 0,
         yield: 1
       };
-      if (!environment.production) {
-        // Useful for debugging extractors
-        return this.extractor.addDataToItem(mockRow).pipe(
-          switchMap((item: any) => {
-            item.canBeGathered = getItemSource(item, DataType.GATHERED_BY).type !== undefined;
-            if (item.canBeGathered) {
-              item.isDoneInLog = logTracking?.gathering.includes(item.id);
-            }
-            return this.handleAdditionalData(item, xivapiItem);
-          })
-        );
-      } else {
-        return this.lazyData.getRow('extracts', data.item.id).pipe(
-          switchMap((item: any) => {
-            item.canBeGathered = getItemSource(item, DataType.GATHERED_BY).type !== undefined;
-            if (item.canBeGathered) {
-              item.isDoneInLog = logTracking?.gathering.includes(item.id);
-            }
-            return this.handleAdditionalData(item, xivapiItem);
-          })
-        );
-      }
+      return this.lazyData.getRow('extracts', data.item.id).pipe(
+        switchMap((item: any) => {
+          item.canBeGathered = getItemSource(item, DataType.GATHERED_BY).type !== undefined;
+          if (item.canBeGathered) {
+            item.isDoneInLog = logTracking?.gathering.includes(item.id);
+          }
+          return this.handleAdditionalData(item, xivapiItem);
+        })
+      );
     }),
     map(data => {
       if (data.id > 1 && data.id < 19) {
@@ -658,7 +641,6 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     private readonly i18n: I18nToolsService,
     public readonly translate: TranslateService,
     private readonly router: Router,
-    private readonly extractor: DataExtractorService,
     private readonly listPicker: ListPickerService,
     private readonly listsFacade: ListsFacade,
     private readonly progressService: ProgressPopupService,

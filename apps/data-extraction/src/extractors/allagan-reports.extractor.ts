@@ -22,8 +22,6 @@ enum AllaganReportSource {
 
 export class AllaganReportsExtractor extends AbstractExtractor {
 
-  private updatedItemIds = [];
-
   private identity = (row) => {
     return row !== undefined && row !== null && (!Array.isArray(row) || row.length > 0);
   };
@@ -192,7 +190,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
       }, {});
   }
 
-  private addItemAsSource(targetObject: Object, targetItem: number, sourceDetails: any, isObject: boolean, isNew: boolean): void {
+  private addItemAsSource(targetObject: any, targetItem: number, sourceDetails: any, isObject: boolean, isNew: boolean): void {
     if (isObject) {
       if (targetObject[targetItem] !== undefined) {
         // console.warn(`Overriding source for ${targetItem} with ${JSON.stringify(sourceDetails)}`);
@@ -200,9 +198,6 @@ export class AllaganReportsExtractor extends AbstractExtractor {
       targetObject[targetItem] = sourceDetails;
     } else if (!!sourceDetails) {
       targetObject[targetItem] = uniq([...(targetObject[targetItem] || []), sourceDetails]);
-    }
-    if (isNew) {
-      this.updatedItemIds.push(targetItem);
     }
   }
 

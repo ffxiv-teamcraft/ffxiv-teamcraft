@@ -10,8 +10,8 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { merge } from 'rxjs';
 import { observeInput } from '../../../core/rxjs/observe-input';
 import { filter, map, switchMap } from 'rxjs/operators';
-import { SpearfishingSpeed } from '../../../core/data/model/spearfishing-speed';
-import { SpearfishingShadowSize } from '../../../core/data/model/spearfishing-shadow-size';
+import { SpearfishingShadowSize } from '@ffxiv-teamcraft/types';
+import { SpearfishingSpeed } from '@ffxiv-teamcraft/types';
 
 @Component({
   selector: 'app-allagan-report-row',

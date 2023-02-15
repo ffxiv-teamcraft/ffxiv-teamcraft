@@ -1,4 +1,4 @@
-import { Vector2 } from '../../core/tools/vector2';
+import { Vector2 } from '@ffxiv-teamcraft/types';
 
 export const animalsSpawnData: Record<number, Vector2 & { weather?: number, spawn?: number, duration?: number }> = {
   1: {

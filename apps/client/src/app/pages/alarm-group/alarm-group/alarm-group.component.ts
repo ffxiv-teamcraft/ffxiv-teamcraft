@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
-import { Alarm } from '../../../core/alarms/alarm';
+import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 import { ltr } from 'semver';
@@ -31,8 +31,7 @@ export class AlarmGroupComponent {
 
   public addingGroupAndAlarms = false;
 
-  constructor(route: ActivatedRoute, private alarmsFacade: AlarmsFacade,
-              private router: Router) {
+  constructor(route: ActivatedRoute, private alarmsFacade: AlarmsFacade) {
     route.paramMap.subscribe(paramMap => {
       this.alarmsFacade.loadExternalGroup(paramMap.get('key'));
     });
@@ -40,17 +39,17 @@ export class AlarmGroupComponent {
 
   toggleAlarm(display: AlarmDisplay): void {
     if (display.registered) {
-      this.alarmsFacade.deleteAlarm(display.alarm);
+      this.alarmsFacade.deleteAlarm(display.alarm as PersistedAlarm);
     } else {
-      this.alarmsFacade.addAlarms(display.alarm);
+      this.alarmsFacade.addAlarms(display.alarm as PersistedAlarm);
     }
   }
 
-  addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
+  addAlarmWithGroup(alarm: PersistedAlarm, group: AlarmGroup) {
     this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 
-  cloneGroup(group: AlarmGroup, alarms: Alarm[]): void {
+  cloneGroup(group: AlarmGroup, alarms: PersistedAlarm[]): void {
     this.addingGroupAndAlarms = true;
     this.alarmsFacade.addAlarmsAndGroup(alarms.map(a => {
       delete a.$key;

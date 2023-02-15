@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { SpearfishingSpeed } from '../../../core/data/model/spearfishing-speed';
+import { SpearfishingSpeed } from '@ffxiv-teamcraft/types';
 
 @Component({
   selector: 'app-spearfishing-speed',

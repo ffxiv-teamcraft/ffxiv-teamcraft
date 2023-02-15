@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
-import { GatheringNode } from '../../../core/data/model/gathering-node';
+import { GatheringNode } from '@ffxiv-teamcraft/types';
 import { map } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 

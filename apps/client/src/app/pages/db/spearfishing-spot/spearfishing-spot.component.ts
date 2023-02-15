@@ -10,7 +10,7 @@ import { SeoService } from '../../../core/seo/seo.service';
 import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { I18nName } from '@ffxiv-teamcraft/types';
-import { Alarm } from '../../../core/alarms/alarm';
+import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { MapService } from '../../../modules/map/map.service';
@@ -37,7 +37,7 @@ export class SpearfishingSpotComponent extends TeamcraftPageComponent {
 
   alarmsLoaded$: Observable<boolean> = this.alarmsFacade.loaded$;
 
-  alarms$: Observable<Alarm[]> = this.alarmsFacade.allAlarms$;
+  alarms$: Observable<PersistedAlarm[]> = this.alarmsFacade.allAlarms$;
 
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
 
@@ -161,7 +161,7 @@ export class SpearfishingSpotComponent extends TeamcraftPageComponent {
     }, { en: '', fr: '', de: '', ja: '' });
   }
 
-  public canCreateAlarm(generatedAlarm: Partial<Alarm>): Observable<boolean> {
+  public canCreateAlarm(generatedAlarm: Partial<PersistedAlarm>): Observable<boolean> {
     return this.alarms$.pipe(
       map(alarms => {
         return !alarms.some(alarm => {
@@ -172,7 +172,7 @@ export class SpearfishingSpotComponent extends TeamcraftPageComponent {
     );
   }
 
-  public addAlarm(alarm: Alarm, group?: AlarmGroup): void {
+  public addAlarm(alarm: PersistedAlarm, group?: AlarmGroup): void {
     this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 
