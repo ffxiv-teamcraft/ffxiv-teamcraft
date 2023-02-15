@@ -7,7 +7,7 @@
     <div *ngFor="let row of data.items; let odd = odd;" [class.odd]="odd" class="item-row" fxLayout="row"
          fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <app-item-icon [icon]="row.itemData.item.icon" [itemId]="row.itemData.item.id" [width]="32"></app-item-icon>
-      <div class="item-name">{{row.itemData.item.id | itemName | i18n}} x{{row.quantity}}</div>
+      <div class="item-name"><app-i18n-name content="items" [id]="row.itemData.item.id"></app-i18n-name> x{{row.quantity}}</div>
       <div fxFlex="1 1 auto">
         <nz-alert *ngIf="row.itemData.isCraft() && row.recipeId === null" [nzMessage]="'LISTS.Please_pick_recipe' | translate"
                   nzShowIcon nzType="error"></nz-alert>

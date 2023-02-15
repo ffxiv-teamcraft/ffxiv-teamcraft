@@ -50,7 +50,7 @@
         </ng-template>
         <ng-template #nzTitle>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div>{{item.id | itemName | i18n}}</div>
+            <div><app-i18n-name [id]="item.id" content="items"></app-i18n-name></div>
             <app-db-button [id]="item.id" type="item"></app-db-button>
             <app-marketboard-icon [itemId]="item.id" [showHistory]="true"></app-marketboard-icon>
           </div>

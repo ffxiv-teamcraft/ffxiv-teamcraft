@@ -31,7 +31,7 @@
           <div fxLayout="column" fxLayoutGap="10px">
             <div *ngFor="let item of panel.rows" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <app-item-icon width="24" [itemId]="item.id"></app-item-icon>
-              <div>{{item.id | itemName | i18n}}</div>
+              <div><app-i18n-name [id]="item.id" content="items"></app-i18n-name></div>
             </div>
           </div>
         </nz-collapse-panel>

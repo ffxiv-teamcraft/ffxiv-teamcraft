@@ -14,7 +14,7 @@
       </div>
       <div fxLayout="column" *ngIf="materia > 0 && mobileEdit !== i; else addMateria">
         <div fxLayout="row" fxLayoutGap="5px">
-          <div>{{materia | itemName | i18n}}</div>
+          <div><app-i18n-name [id]="materia" content="items"></app-i18n-name></div>
           <button nz-button nz-dropdown [nzDropdownMenu]="menu" nzTrigger="click"
                   *ngIf="true | ifMobile: false"
                   nzShape="circle" nzSize="small">
@@ -41,7 +41,7 @@
                    nzShowSearch [nzPlaceHolder]="'GEARSETS.Add_materia' | translate" [style.width.px]="200">
           <nz-option-group *ngFor="let row of materiaMenu$ | async" [nzLabel]="row.baseParamId | i18nRow:'baseParams' | i18n">
             <nz-option *ngFor="let materia of row.materias" [nzValue]="materia" [nzLabel]="materia | itemName | i18n" nzCustomContent>
-              {{materia | itemName | i18n}} (<span [class.overcapped]="bonus.overcapped" *ngIf="getBonus(materia, i) | async as bonus">+{{bonus.value}}</span>)
+              <app-i18n-name [id]="materia" content="items"></app-i18n-name> (<span [class.overcapped]="bonus.overcapped" *ngIf="getBonus(materia, i) | async as bonus">+{{bonus.value}}</span>)
             </nz-option>
           </nz-option-group>
         </nz-select>
@@ -56,7 +56,7 @@
                   [nzDisabled]="getMeldingChances(materia, i) === 0"
                   [nzSelected]="equipmentPiece.materias[i] === materia"
                   *ngFor="let materia of row.materias">
-                {{materia | itemName | i18n}} (<span [class.overcapped]="bonus.overcapped" *ngIf="getBonus(materia, i) | async as bonus">+{{bonus.value}}</span>)
+                <app-i18n-name [id]="materia" content="items"></app-i18n-name> (<span [class.overcapped]="bonus.overcapped" *ngIf="getBonus(materia, i) | async as bonus">+{{bonus.value}}</span>)
               </li>
             </ul>
           </li>

@@ -86,7 +86,7 @@
                     <ng-template #title>
                       <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
                         <div>
-                          {{item.itemId | itemName | i18n}}
+                          <app-i18n-name [id]="item.itemId" content="items"></app-i18n-name>
                         </div>
                         <div>
                           <i nz-icon nzType="search" nzTheme="outline" nz-tooltip [nzTooltipTitle]="positionTooltip"></i>

@@ -187,7 +187,7 @@
           <div class="card-title" fxLayout="row">
             <div class="name-slot-container" fxLayout="row">
           <span *ngIf="row.alarm.itemId; else customName" class="alarm-item-name"
-                fxFlex="1 1 auto">{{row.alarm.itemId | itemName | i18n}}</span>
+                fxFlex="1 1 auto"><app-i18n-name [id]="row.alarm.itemId" content="items"></app-i18n-name></span>
               <ng-template #customName>
                 <span class="alarm-item-name" fxFlex="1 1 auto"  *ngIf="row.alarm.type !== -10">{{row.alarm.name}}</span>
                 <span class="alarm-item-name" fxFlex="1 1 auto" *ngIf="row.alarm.type === -10">{{row.alarm.bnpcName | lazyRow:'mobs' | i18n}}</span>
@@ -239,7 +239,7 @@
               <ng-template #nodeContent>
                 <ul>
                   <li *ngFor="let item of row.alarm.nodeContent">
-                    {{(item.id || item) | itemName | i18n}} <span *ngIf="item.slot">({{item.slot}})</span>
+                    <app-i18n-name [id]="item.id || item" content="items"></app-i18n-name> <span *ngIf="item.slot">({{item.slot}})</span>
                   </li>
                 </ul>
               </ng-template>

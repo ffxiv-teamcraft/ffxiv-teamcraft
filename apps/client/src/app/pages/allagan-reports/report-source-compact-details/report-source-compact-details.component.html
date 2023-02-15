@@ -77,7 +77,7 @@
 <ng-template #itemIdTpl let-itemId>
   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
     <app-item-icon width="24" [itemId]="itemId"></app-item-icon>
-    <div>{{itemId | itemName | i18n}}</div>
+    <div><app-i18n-name [id]="itemId" content="items"></app-i18n-name></div>
     <app-db-button [id]="itemId" type="item"></app-db-button>
   </div>
 </ng-template>

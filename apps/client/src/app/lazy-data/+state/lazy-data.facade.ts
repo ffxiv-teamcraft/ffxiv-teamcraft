@@ -129,6 +129,10 @@ export class LazyDataFacade {
     return this.state.getRow(propertyKey, id, fallback);
   }
 
+  getRows<K extends LazyDataRecordKey>(propertyKey: K, ...ids: number[]): Observable<Partial<LazyDataEntries[K]>> {
+      return this.state.getRows(propertyKey, ids);
+  }
+
   /**
    * Get I18nName structure for a given row in a given lazy loaded entry
    * @param propertyKey the lazy loaded data entry name

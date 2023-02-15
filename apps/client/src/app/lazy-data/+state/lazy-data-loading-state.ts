@@ -13,10 +13,4 @@ export interface PartialLoading {
   loaded: Array<number | string | symbol>;
 }
 
-export interface PartiallyLoaded {
-  status: 'partial';
-  loaded: Array<number | string | symbol>;
-  loading: Array<number | string | symbol>;
-}
-
-export type LazyDataLoadingState = PartialLoading | FullLoading | FullyLoaded | PartiallyLoaded;
+export type LazyDataLoadingState = PartialLoading | FullLoading | FullyLoaded;

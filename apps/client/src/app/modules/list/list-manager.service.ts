@@ -1,6 +1,6 @@
 import { Injectable, NgZone } from '@angular/core';
 import { List } from './model/list';
-import { combineLatest, concat, defer, Observable, of } from 'rxjs';
+import { combineLatest, concat, Observable, of } from 'rxjs';
 import { getCraftByPriority, ListRow } from './model/list-row';
 import { DataService } from '../../core/api/data.service';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
@@ -9,7 +9,7 @@ import { GarlandToolsService } from '../../core/api/garland-tools.service';
 import { DiscordWebhookService } from '../../core/discord/discord-webhook.service';
 import { TeamsFacade } from '../teams/+state/teams.facade';
 import { environment } from '../../../environments/environment';
-import { CraftedBySource, DataType, ExtractRow, getItemSource } from '@ffxiv-teamcraft/types';
+import { CraftedBySource, DataType, ExtractRow, Extracts, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
 import { CraftedBy } from './model/crafted-by';
 import { AuthFacade } from '../../+state/auth.facade';
 import { TeamcraftGearsetStats } from '../../model/user/teamcraft-gearset-stats';
@@ -17,6 +17,7 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
 import { ListController } from './list-controller';
 import { Team } from '../../model/team/team';
+import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 
 export interface ListAdditionParams {
   itemId: number | string;
@@ -51,57 +52,56 @@ export class ListManagerService {
                      collectable = false,
                      ignoreHooks = false
                    }: ListAdditionParams): Observable<List> {
-    return defer(() => {
-      let team$: Observable<Team | null> = of(null);
-      if (list.teamId && !ignoreHooks) {
-        this.teamsFacade.loadTeam(list.teamId);
-        team$ = this.teamsFacade.allTeams$
-          .pipe(
-            map(teams => teams.find(team => list.teamId && team.$key === list.teamId)),
-            filter(team => team !== undefined),
-            first()
-          );
-      }
-      let itemSource$: Observable<ExtractRow>;
-      if (typeof itemId === 'number') {
-        itemSource$ = this.lazyData.getRow('extracts', itemId);
-      } else if (itemId.startsWith('mjibuilding')) {
-        itemSource$ = this.lazyData.getRow('extracts', +itemId.replace('mjibuilding-', ''));
-      } else if (itemId.startsWith('mjilandmark')) {
-        itemSource$ = this.lazyData.getRow('extracts', +itemId.replace('mjilandmark-', ''));
-      }
-      return itemSource$.pipe(
-        filter(Boolean),
-        first(),
-        switchMap(itemSource => {
-          return team$.pipe(
-            tap((team) => {
-              if (team && team.webhook !== undefined && amount !== 0) {
-                if (+itemId === itemId) {
-                  if (amount > 0) {
-                    this.discordWebhookService.notifyItemAddition(itemId, amount, list, team);
-                  } else {
-                    this.discordWebhookService.notifyItemDeletion(itemId, Math.abs(amount), list, team);
-                  }
+    let team$: Observable<Team | null> = of(null);
+    if (list.teamId && !ignoreHooks) {
+      this.teamsFacade.loadTeam(list.teamId);
+      team$ = this.teamsFacade.allTeams$
+        .pipe(
+          map(teams => teams.find(team => list.teamId && team.$key === list.teamId)),
+          filter(team => team !== undefined),
+          first()
+        );
+    }
+    return combineLatest([
+      this.lazyData.getEntry('extracts'),
+      this.lazyData.getRecipes()
+    ]).pipe(
+      switchMap(([extracts, recipes]) => {
+        let itemSource: ExtractRow;
+        if (typeof itemId === 'number') {
+          itemSource = getExtract(extracts, itemId);
+        } else if (itemId.startsWith('mjibuilding')) {
+          itemSource = getExtract(extracts, +itemId.replace('mjibuilding-', ''));
+        } else if (itemId.startsWith('mjilandmark')) {
+          itemSource = getExtract(extracts, +itemId.replace('mjilandmark-', ''));
+        }
+        return team$.pipe(
+          tap((team) => {
+            if (team && team.webhook !== undefined && amount !== 0) {
+              if (+itemId === itemId) {
+                if (amount > 0) {
+                  this.discordWebhookService.notifyItemAddition(itemId, amount, list, team);
+                } else {
+                  this.discordWebhookService.notifyItemDeletion(itemId, Math.abs(amount), list, team);
                 }
               }
-            }),
-            map(() => itemSource)
-          );
-        }),
-        withLatestFrom(this.authFacade.gearSets$),
-        switchMap(([data, gearsets]) => {
-          if (data === undefined) {
-            return of(new List());
-          }
-          // If it's a standard item, add it with the classic implementation.
-          return this.processItemAddition(data, amount, collectable, recipeId, gearsets, list.ignoreRequirementsRegistry);
-        }),
-        // merge the addition list with the list we want to add items in.
-        map(addition => ListController.clean(ListController.merge(list, addition))),
-        first()
-      );
-    });
+            }
+          }),
+          map(() => itemSource),
+          withLatestFrom(this.authFacade.gearSets$),
+          switchMap(([data, gearsets]) => {
+            if (data === undefined) {
+              return of(new List());
+            }
+            // If it's a standard item, add it with the classic implementation.
+            return this.processItemAddition(data, amount, collectable, recipeId, gearsets, list.ignoreRequirementsRegistry, extracts, recipes);
+          }),
+          // merge the addition list with the list we want to add items in.
+          map(addition => ListController.clean(ListController.merge(list, addition))),
+          first()
+        );
+      })
+    );
   }
 
   public addDetails(list: List, recipeId?: string | number): Observable<List> {
@@ -175,12 +175,18 @@ export class ListManagerService {
       );
   }
 
-  private processItemAddition(data: ExtractRow, amount: number, collectable: boolean, recipeId: string | number, gearsets: TeamcraftGearsetStats[], ignoreRequirementsRegistry: Record<string, 1>): Observable<List> {
+  private processItemAddition(data: ExtractRow, amount: number, collectable: boolean, recipeId: string | number, gearsets: TeamcraftGearsetStats[], ignoreRequirementsRegistry: Record<string, 1>,
+                              extracts: Extracts, recipes: LazyData['recipes']): Observable<List> {
     const crafted = getItemSource<CraftedBy[]>(data, DataType.CRAFTED_BY);
-    const addition = new List();
-    addition.ignoreRequirementsRegistry = ignoreRequirementsRegistry;
+    const list = new List();
+    list.ignoreRequirementsRegistry = ignoreRequirementsRegistry;
     return of(new ListRow()).pipe(
-      switchMap(toAdd => {
+      switchMap(listRow => {
+        listRow.id = data.id;
+        listRow.amount = amount;
+        listRow.done = 0;
+        listRow.used = 0;
+        listRow.sources = data.sources;
         // If this is a craft
         if (crafted.length > 0) {
           if (!recipeId) {
@@ -193,68 +199,49 @@ export class ListManagerService {
 
           const yields = collectable ? 1 : (craft.yield || 1);
           // Then we prepare the list row to add.
-          return this.lazyData.getRecipes().pipe(
-            map(recipes => {
-              const ingredients = recipes.find(r => r.id.toString() === craft.id.toString())?.ingredients || [];
-              return {
-                ...toAdd,
-                id: data.id,
-                amount: amount,
-                done: 0,
-                used: 0,
-                yield: yields,
-                collectable,
-                recipeId: recipeId.toString(),
-                requires: ingredients.map(ing => {
-                  return {
-                    id: ing.id,
-                    amount: ing.amount
-                  };
-                }),
-                craftedBy: crafted,
-                usePrice: true,
-                ...data
-              } as ListRow;
+          return this.lazyData.getRecipe(craft.id).pipe(
+            map(recipe => {
+              const ingredients = recipe?.ingredients || [];
+              listRow.yield = yields;
+              listRow.collectable = collectable;
+              listRow.recipeId = recipeId.toString();
+              listRow.requires = ingredients.map(ing => {
+                return {
+                  id: ing.id,
+                  amount: ing.amount
+                };
+              });
+              return listRow;
             })
           );
         } else {
           const requirements = getItemSource(data, DataType.REQUIREMENTS);
           if (requirements.length > 0) {
-            toAdd.requires = requirements;
+            listRow.requires = requirements;
           }
           // If it's not a recipe, add as item
-          return of({
-            ...toAdd,
-            id: data.id,
-            amount: amount,
-            done: 0,
-            used: 0,
-            yield: 1,
-            usePrice: true,
-            ...data
-          } as ListRow);
+          return of(listRow);
         }
       }),
-      switchMap((toAdd) => {
+      map((listRow) => {
         // We add the row to recipes.
-        const added = ListController.addToFinalItems(addition, toAdd);
-        if (toAdd.requires.length > 0) {
-          return ListController.addCraft(addition, {
+        const added = ListController.addToFinalItems(list, listRow);
+        if (listRow.requires.length > 0) {
+          return ListController.addCraft(list, {
             _additions: [{
-              item: toAdd,
+              item: listRow,
               amount: added
             }],
-            dataService: this.db,
-            listManager: this,
-            lazyDataFacade: this.lazyData,
+            extracts: extracts,
+            recipes: recipes,
             recipeId: recipeId?.toString(),
             gearsets: gearsets
           });
         } else {
-          return of(addition);
+          return list;
         }
       }),
-      switchMap(wipList => this.addDetails(wipList, recipeId)),
+      switchMap(wipList => this.addDetails(wipList, recipeId))
     );
   }
 

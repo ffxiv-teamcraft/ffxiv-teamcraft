@@ -1,16 +1,17 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { getExtract, LazyDataEntries, LazyDataKey, LazyDataRecordKey, LazyDataWithExtracts } from '@ffxiv-teamcraft/types';
-import { LazyDataLoadingState } from './lazy-data-loading-state';
+import { LazyDataLoadingState, PartialLoading } from './lazy-data-loading-state';
 import { lazyFilesList } from '@ffxiv-teamcraft/data/lazy-files-list';
 import { environment } from '../../../environments/environment';
 import { extractsHash } from '@ffxiv-teamcraft/data/extracts-hash';
-import { BehaviorSubject, defer, first, map, Observable, of, Subject, Subscription } from 'rxjs';
+import { BehaviorSubject, first, map, Observable, Subject, Subscription } from 'rxjs';
 import { isPlatformServer } from '@angular/common';
 import { IS_HEADLESS } from '../../../environments/is-headless';
 import { HttpClient } from '@angular/common/http';
 import { PlatformService } from '../../core/tools/platform.service';
-import { distinctUntilChanged, filter, mergeMap, shareReplay, skipUntil, tap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, mergeMap, shareReplay, tap } from 'rxjs/operators';
 import { debounceBufferTime } from '../../core/rxjs/debounce-buffer-time';
+import { pick } from 'lodash';
 
 @Injectable({ providedIn: 'root' })
 export class LazyDataStateService {
@@ -38,33 +39,29 @@ export class LazyDataStateService {
   }
 
   public getEntry<K extends LazyDataKey>(propertyKey: K): Observable<LazyDataWithExtracts[K]> {
-    // Using defer here to only trigger on subscribe to avoid hot calls from being made
-    return defer(() => {
-      const loadingState = this.loadingStates[propertyKey];
-      const data$ = this.getDataObservable(propertyKey);
-      const lock$ = new Subject<void>();
-      const shouldLoad = !loadingState || loadingState.status !== 'full';
-      if (shouldLoad) {
-        this.loadingStates[propertyKey] = {
-          status: 'full',
-          loading: true
-        };
-        this.loadingKeys$.next([...this.loadingKeys$.value, `${propertyKey}:full`]);
-        this.getData(this.getUrl(propertyKey))
-          .subscribe((data: LazyDataWithExtracts[K]) => {
-            this.loadingStates[propertyKey] = {
-              status: 'full'
-            };
-            lock$.next();
-            data$.next(data);
-            this.loadingKeys$.next(this.loadingKeys$.value.filter(v => !v.startsWith(propertyKey)));
-          });
-      }
-      return (data$ as BehaviorSubject<LazyDataWithExtracts[K]>).asObservable().pipe(
-        filter(Boolean),
-        skipUntil(shouldLoad ? lock$ : of(true))
-      );
-    });
+    const loadingState = this.loadingStates[propertyKey];
+    const data$ = this.getDataSubject(propertyKey);
+    const shouldLoad = !loadingState || loadingState.status !== 'full';
+    if (shouldLoad) {
+      data$.next(null);
+      this.loadingStates[propertyKey] = {
+        status: 'full',
+        loading: true
+      };
+      this.loadingKeys$.next([...this.loadingKeys$.value, `${propertyKey}:full`]);
+      this.getData(this.getUrl(propertyKey))
+        .subscribe((data: LazyDataWithExtracts[K]) => {
+          this.loadingStates[propertyKey] = {
+            status: 'full'
+          };
+          data$.next(data);
+          this.loadingKeys$.next(this.loadingKeys$.value.filter(v => !v.startsWith(propertyKey)));
+        });
+    }
+    return (data$ as BehaviorSubject<LazyDataWithExtracts[K]>).pipe(
+      filter(Boolean),
+      first()
+    );
   }
 
   public preloadEntry(propertyKey: LazyDataKey): void {
@@ -81,40 +78,72 @@ export class LazyDataStateService {
    * @param fallback fallback value if nothing is found
    */
   public getRow<K extends LazyDataRecordKey>(propertyKey: K, id: string | number | symbol, fallback: Partial<LazyDataEntries[K]> = null): Observable<LazyDataEntries[K] | null> | Observable<Partial<LazyDataEntries[K]> | LazyDataEntries[K]> {
-    return defer(() => {
-      if (this.platformService.isDesktop()) {
-        this.preloadEntry(propertyKey);
+    if (this.platformService.isDesktop()) {
+      this.preloadEntry(propertyKey);
+    }
+    if (propertyKey === 'extracts' && !fallback) {
+      fallback = getExtract({}, Number(id)) as any;
+    }
+    let loadingState = this.loadingStates[propertyKey];
+    const data$ = this.getDataSubject(propertyKey);
+    // If it's already fully loaded or fully loading, don't do anything and just return partial Observable
+    if (loadingState?.status !== 'full') {
+      if (!loadingState) {
+        loadingState = {
+          status: 'partial',
+          loaded: [],
+          loading: []
+        };
+        this.loadingStates[propertyKey] = loadingState;
       }
-      if (propertyKey === 'extracts' && !fallback) {
-        fallback = getExtract({}, Number(id)) as any;
+      if (!loadingState.loaded.includes(id) && !loadingState.loading.includes(id)) {
+        this.loadingKeys$.next([...this.loadingKeys$.value, `${propertyKey}:${id.toString()}`]);
+        loadingState.loading.push(id);
+        this.loadRowAndSetupSubscription(propertyKey, id as keyof LazyDataWithExtracts[K]);
       }
-      let loadingState = this.loadingStates[propertyKey];
-      const data$ = this.getDataObservable(propertyKey);
-      // If it's already fully loaded or fully loading, don't do anything and just return partial Observable
-      if (loadingState?.status !== 'full') {
-        if (!loadingState) {
-          loadingState = {
-            status: 'partial',
-            loaded: [],
-            loading: []
-          };
-          this.loadingStates[propertyKey] = loadingState;
-        }
-        if (!loadingState.loaded.includes(id) && !loadingState.loading.includes(id)) {
+    }
+    return data$.pipe(
+      filter(Boolean),
+      map(data => {
+        return data[id] || fallback;
+      }),
+      filter(res => res !== undefined),
+      distinctUntilChanged(),
+      shareReplay(1)
+    );
+  }
+
+
+  getRows<K extends LazyDataRecordKey>(propertyKey: K, ids: number[]): Observable<Partial<LazyDataEntries[K]>> {
+    if (this.platformService.isDesktop()) {
+      this.preloadEntry(propertyKey);
+    }
+    let loadingState = this.loadingStates[propertyKey];
+    const data$ = this.getDataSubject(propertyKey);
+    if (loadingState?.status !== 'full') {
+      if (!loadingState) {
+        loadingState = {
+          status: 'partial',
+          loaded: [],
+          loading: []
+        };
+        this.loadingStates[propertyKey] = loadingState;
+      }
+      const partialLoadingState: PartialLoading = loadingState;
+      ids.forEach(id => {
+        if (!partialLoadingState.loaded.includes(id) && !partialLoadingState.loading.includes(id)) {
           this.loadingKeys$.next([...this.loadingKeys$.value, `${propertyKey}:${id.toString()}`]);
-          loadingState.loading.push(id);
+          partialLoadingState.loading.push(id);
           this.loadRowAndSetupSubscription(propertyKey, id as keyof LazyDataWithExtracts[K]);
         }
-      }
-      return data$.pipe(
-        filter(Boolean),
-        map(data => {
-          return data[id] || fallback;
-        }),
-        filter(res => res !== undefined),
-        distinctUntilChanged()
-      );
-    });
+      });
+    }
+    return data$.pipe(
+      filter(Boolean),
+      map(data => {
+        return pick(data, ids) as Partial<LazyDataEntries[K]>;
+      })
+    );
   }
 
   private loadRowAndSetupSubscription<K extends LazyDataRecordKey>(propertyKey: K, id: keyof LazyDataWithExtracts[K]): void {
@@ -142,7 +171,7 @@ export class LazyDataStateService {
           );
         })
       ).subscribe((data: Partial<LazyDataWithExtracts[K]>) => {
-        const obs$ = this.getDataObservable(propertyKey);
+        const obs$ = this.getDataSubject(propertyKey);
         obs$.next({
           ...obs$.value,
           ...data
@@ -156,10 +185,12 @@ export class LazyDataStateService {
    *  ===================== TOOLING
    */
 
-  private getDataObservable<K extends LazyDataKey>(key: K): BehaviorSubject<Partial<LazyDataWithExtracts[K]>> {
+  private getDataSubject<K extends LazyDataKey>(key: K): BehaviorSubject<Partial<LazyDataWithExtracts[K]>> {
     if (!this.data[key]) {
       // We have to cast because TS is being stupid for some reason here
       this.data[key] = new BehaviorSubject<Partial<LazyDataWithExtracts[K]>>(null) as any;
+      // Freeze this property
+      Object.defineProperty(this.data, key, { configurable: false, writable: false });
     }
     return this.data[key];
   }
