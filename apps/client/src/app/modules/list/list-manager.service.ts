@@ -70,9 +70,7 @@ export class ListManagerService {
       } else if (itemId.startsWith('mjilandmark')) {
         itemSource$ = this.lazyData.getRow('extracts', +itemId.replace('mjilandmark-', ''));
       }
-      console.log('---------------', itemId, '----------------');
       return itemSource$.pipe(
-        tap(data => console.log(itemId, data)),
         filter(Boolean),
         first(),
         switchMap(itemSource => {
@@ -181,12 +179,10 @@ export class ListManagerService {
     const crafted = getItemSource<CraftedBy[]>(data, DataType.CRAFTED_BY);
     const addition = new List();
     addition.ignoreRequirementsRegistry = ignoreRequirementsRegistry;
-    console.log('processItemAddition', data.id);
     return of(new ListRow()).pipe(
       switchMap(toAdd => {
         // If this is a craft
         if (crafted.length > 0) {
-          console.log('CRAFT DETECTED');
           if (!recipeId) {
             const firstCraft = getCraftByPriority(crafted, gearsets);
             if (firstCraft.id !== undefined) {
@@ -199,7 +195,6 @@ export class ListManagerService {
           // Then we prepare the list row to add.
           return this.lazyData.getRecipes().pipe(
             map(recipes => {
-              console.log('GOT RECIPES');
               const ingredients = recipes.find(r => r.id.toString() === craft.id.toString())?.ingredients || [];
               return {
                 ...toAdd,
@@ -227,7 +222,6 @@ export class ListManagerService {
           if (requirements.length > 0) {
             toAdd.requires = requirements;
           }
-          console.log('NOT A CRAFT');
           // If it's not a recipe, add as item
           return of({
             ...toAdd,
@@ -242,10 +236,8 @@ export class ListManagerService {
         }
       }),
       switchMap((toAdd) => {
-        console.log('ADDITION', toAdd);
         // We add the row to recipes.
         const added = ListController.addToFinalItems(addition, toAdd);
-        console.log('ADDED', added);
         if (toAdd.requires.length > 0) {
           return ListController.addCraft(addition, {
             _additions: [{
@@ -262,19 +254,14 @@ export class ListManagerService {
           return of(addition);
         }
       }),
-      tap(() => console.log('ADD DETAILS')),
       switchMap(wipList => this.addDetails(wipList, recipeId)),
-      tap(() => console.log('DONE'))
     );
   }
 
   private addDetailsForArray(array: ListRow[], recipeId?: string | number): Observable<ListRow[]> {
-    console.log(`======EXTRACTS=====`);
     return safeCombineLatest(array.map(item => {
-      console.log(item.id);
       return this.lazyData.getRow('extracts', item.id).pipe(
         map(extract => {
-          console.log(item.id, 'DONE');
           const newItem = { ...item, ...extract };
           if (getItemSource<CraftedBy[]>(extract, DataType.CRAFTED_BY).length > 0) {
             const craftedBy: CraftedBySource = { ...newItem.sources.find(s => s.type === DataType.CRAFTED_BY) as CraftedBySource };
