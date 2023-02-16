@@ -57,14 +57,7 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
 
   private display$ = combineLatest([this.list$, this.adaptativeFilter$]).pipe(
     switchMap(([list, adaptativeFilter]) => {
-      const layout$ = this.layoutsFacade.selectedLayout$.pipe(
-        map(layout => {
-          const withFinalItems = layout.clone();
-          withFinalItems.includeRecipesInItems = true;
-          return withFinalItems;
-        })
-      );
-      return this.layoutsFacade.getDisplay(list, adaptativeFilter, false, layout$);
+      return this.layoutsFacade.getDisplay(list, adaptativeFilter, false, this.layoutsFacade.selectedLayout$, true);
     }),
     shareReplay({ bufferSize: 1, refCount: true })
   );
