@@ -2723,7 +2723,7 @@
     "Go_to_workshop": "进入部队工房",
     "Go_to_workshop_description": "如果已经在工房里，请退出并重新进入",
     "Open_fc_window": "打开部队详细窗口",
-    "Open_fc_window_description": "This will make TC get more important details about your free company, such as server, G is the default binding for it.",
+    "Open_fc_window_description": "This will make TC get more important details about your free company, such as server \":\" is the default binding for it.",
     "Interact_with_ships_subs": "Interact with each Submarine/Airship you want to import",
     "Interact_with_ships_subs_description": "打开飞空艇/潜水艇管理窗口，以便Teamcraft收集可供显示的数据",
     "Airships": "飞空艇",
