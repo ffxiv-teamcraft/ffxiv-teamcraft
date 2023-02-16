@@ -103,6 +103,7 @@ export class InventoryService {
               private settings: SettingsService, private modal: NzModalService,
               private lazyData: LazyDataFacade, private platform: PlatformService) {
     if (!this.platform.isDesktop()) {
+      this.inventory$ = of(new UserInventory())
       return;
     }
     this.retainerInformations$.connect();

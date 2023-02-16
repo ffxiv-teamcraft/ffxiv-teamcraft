@@ -110,7 +110,7 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
     );
     this.closestMap$ = this.stepByStep$.pipe(
       map((stepByStep) => {
-        return stepByStep.maps[0];
+        return stepByStep.maps[1];
       })
     );
   }
