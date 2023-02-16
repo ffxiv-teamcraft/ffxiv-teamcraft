@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
-import { first, map, switchMap } from 'rxjs/operators';
+import { filter, first, map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-layout-editor-page',
@@ -21,6 +21,7 @@ export class LayoutEditorPageComponent {
         };
       });
     }),
+    filter(lists => lists.length > 0),
     first()
   );
 
