@@ -8,7 +8,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../text-question-popup/text-question-popup/text-question-popup.component';
-import { filter } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { LayoutRowDisplayEditorComponent } from '../layout-row-display-editor/layout-row-display-editor.component';
 import { LayoutOrderPopupComponent } from '../layout-order-popup/layout-order-popup.component';
@@ -28,7 +28,9 @@ export class LayoutEditorComponent {
 
   constructor(private layoutsFacade: LayoutsFacade, private message: NzMessageService, private translate: TranslateService,
               private dialog: NzModalService, private serializer: NgSerializerService) {
-    this.selectedLayout$ = this.layoutsFacade.selectedLayout$;
+    this.selectedLayout$ = this.layoutsFacade.selectedLayout$.pipe(
+      map(layout => layout.clone())
+    );
     this.allLayouts$ = this.layoutsFacade.allLayouts$;
     this.layoutsFacade.loadAll();
   }
