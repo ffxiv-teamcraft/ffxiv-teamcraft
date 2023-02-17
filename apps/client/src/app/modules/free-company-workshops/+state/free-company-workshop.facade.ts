@@ -32,6 +32,7 @@ import { SoundNotificationType } from '../../../core/sound-notification/sound-no
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { EnvironmentService } from '../../../core/environment.service';
+import { Region } from '@ffxiv-teamcraft/types';
 
 @Injectable({
   providedIn: 'root'
@@ -482,8 +483,13 @@ export class FreeCompanyWorkshopFacade {
   @Memoized()
   public getAirshipSectorTotalCount(): Observable<number> {
     // Minus 1 because SE removed Diadem from Airship
-    return this.lazyData.getEntry('airshipVoyages').pipe(
+    return this.lazyData.getI18nEntry('airshipVoyages').pipe(
       map(airshipVoyages => {
+        if (this.settings.region === Region.Korea) {
+          return Object.keys(airshipVoyages).filter((id) => airshipVoyages[id].ko).length - 1;
+        } else if (this.settings.region === Region.China) {
+          return Object.keys(airshipVoyages).filter((id) => airshipVoyages[id].zh).length - 1;
+        }
         return Object.keys(airshipVoyages).filter((id) => airshipVoyages[id].en).length - 1;
       }),
       shareReplay({ bufferSize: 1, refCount: true })
@@ -492,8 +498,13 @@ export class FreeCompanyWorkshopFacade {
 
   @Memoized()
   public getSubmarineSectorTotalCount(): Observable<number> {
-    return this.lazyData.getEntry('submarineVoyages').pipe(
+    return this.lazyData.getI18nEntry('submarineVoyages').pipe(
       map(submarineVoyages => {
+        if (this.settings.region === Region.Korea) {
+          return Object.keys(submarineVoyages).filter((id) => submarineVoyages[id].ko).length;
+        } else if (this.settings.region === Region.China) {
+          return Object.keys(submarineVoyages).filter((id) => submarineVoyages[id].zh).length;
+        }
         return Object.keys(submarineVoyages).filter((id) => submarineVoyages[id].en).length;
       }),
       shareReplay({ bufferSize: 1, refCount: true })

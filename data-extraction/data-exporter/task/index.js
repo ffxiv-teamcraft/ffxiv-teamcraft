@@ -178,6 +178,21 @@ output('ventures', () => db('RetainerTask', false).toObject(row => {
   }
 }))
 output('weathers', () => db('Weather').simpleObject('Name'))
-output('airship-voyages', () => db('AirshipExplorationPoint').simpleObject('Name{Short}'))
-output('submarine-voyages', () => db('SubmarineExploration').simpleObject('Destination'))
+output('airship-voyages', () => db('AirshipExplorationPoint').toObject(row => {
+  if (!row.Name) return
+
+  let voyages = i18n('AirshipExplorationPoint', +row['#'], 'Name')
+  voyages.id = +row['#']
+
+  return voyages;
+}))
+output('submarine-voyages', () => db('SubmarineExploration').toObject(row => {
+  if (!row.Destination) return
+
+  let voyages = i18n('SubmarineExploration', +row['#'], 'Destination')
+  voyages.id = +row['#']
+  voyages.location = row['Location']
+
+  return voyages;
+}))
 output('island-craftworks-theme', () => db('MJICraftworksObjectTheme').simpleObject('Name'))
