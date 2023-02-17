@@ -8,6 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { ProfitEntry } from '../model/profit-entry';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
+import { ListAdditionRecord } from '../../../modules/list-picker/list-addition-record';
 
 @Component({
   selector: 'app-profits-helper',
@@ -83,7 +84,7 @@ export class ProfitsHelperComponent {
     })
   );
 
-  list: Pick<ListRow, 'id' | 'recipeId' | 'amount'>[] = [];
+  list: ListAdditionRecord[] = [];
 
   itemsInList: Record<number, 1> = {};
 

@@ -153,7 +153,7 @@ export class AlarmsFacade {
     }
     const done = new Date(doneStr);
     const earthTime = this.etime.toEarthDate(etime).getTime();
-    const durationEarthMinutes = 60 * alarm.duration / EorzeanTimeService.EPOCH_TIME_FACTOR;
+    const durationEarthMinutes = 60 * (alarm.duration || 8) / EorzeanTimeService.EPOCH_TIME_FACTOR;
     const durationExpiration = new Date(done.getTime() + (durationEarthMinutes * 60 * 1000)).getTime();
     return earthTime < durationExpiration;
   }
