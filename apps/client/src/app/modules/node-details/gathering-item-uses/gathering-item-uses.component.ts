@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { observeInput } from '../../../core/rxjs/observe-input';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { filter, map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-gathering-item-uses',
@@ -21,6 +21,7 @@ export class GatheringItemUsesComponent {
   itemId$ = observeInput(this, 'itemId');
 
   reduction$ = this.itemId$.pipe(
+    filter(Boolean),
     switchMap(itemId => {
       return combineLatest([
         this.lazyData.getRow('aetherialReduce', itemId, 0),
@@ -34,6 +35,7 @@ export class GatheringItemUsesComponent {
   );
 
   collectable$ = this.itemId$.pipe(
+    filter(Boolean),
     switchMap(itemId => {
       return this.lazyData.getRow('collectables', itemId).pipe(
         map(collectable => {
