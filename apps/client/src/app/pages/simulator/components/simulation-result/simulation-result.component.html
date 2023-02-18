@@ -11,7 +11,7 @@
             <span [itemNameCopy]="itemId"
                   class="item-name"
                   nz-tooltip>
-              {{itemId | itemName | i18n}}
+              <app-i18n-name [id]="itemId" content="items"></app-i18n-name>
             </span>
           <button *ngIf="!readonly" (click)="changeRecipe.emit()" [nzTooltipTitle]="'SIMULATOR.Change_recipe' | translate" nz-button
                   nz-tooltip nzShape="circle"

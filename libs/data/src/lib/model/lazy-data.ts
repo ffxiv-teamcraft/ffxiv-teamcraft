@@ -263,6 +263,7 @@ export interface LazyData {
   koGatheringTypes: Record<number, {ko: string}>;
   koInstanceDescriptions: Record<number, {ko: string}>;
   koInstances: Record<number, {ko: string}>;
+  koIslandCraftworksTheme: Record<number, {ko: string}>;
   koItemDescriptions: Record<number, {ko: string}>;
   koItemKinds: Record<number, {ko: string}>;
   koItemSearchCategories: Record<number, {ko: string}>;
@@ -317,6 +318,7 @@ export interface LazyData {
   zhGatheringTypes: Record<number, {zh: string}>;
   zhInstanceDescriptions: Record<number, {zh: string}>;
   zhInstances: Record<number, {zh: string}>;
+  zhIslandCraftworksTheme: Record<number, {zh: string}>;
   zhItemDescriptions: Record<number, {zh: string}>;
   zhItemKinds: Record<number, {zh: string}>;
   zhItemSearchCategories: Record<number, {zh: string}>;

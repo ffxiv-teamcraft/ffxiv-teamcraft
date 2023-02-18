@@ -16,7 +16,7 @@
         <div [title]="currency | itemName | i18n" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <img [src]="currency | lazyIcon" alt="" class="currency-icon">
           <div>
-            {{currency | itemName | i18n}}
+            <app-i18n-name [id]="currency" content="items"></app-i18n-name>
           </div>
         </div>
       </nz-option>
@@ -84,7 +84,7 @@
             </ng-template>
             <ng-template #nzTitle>
               <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                <div>{{item.item | itemName | i18n}}</div>
+                <div><app-i18n-name [id]="item.item" content="items"></app-i18n-name></div>
                 <app-db-button [id]="item.item" type="item"></app-db-button>
                 <app-marketboard-icon [itemId]="item.item" [showHistory]="true"></app-marketboard-icon>
               </div>

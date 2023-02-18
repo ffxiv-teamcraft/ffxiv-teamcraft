@@ -13,7 +13,7 @@
 <ng-container *ngTemplateOutlet="isAirshipsEmpty ? noVessel : airshipsTpl; context: {$implicit: vesselTypeEnum.AIRSHIP}"></ng-container>
 <ng-template #airshipsTpl>
   <div class="vessels-list" fxLayout="column" *ngFor="let vessel of airships">
-    <app-vessel-row [vessel]="vessel" [maxRank]="airshipMaxRank"></app-vessel-row>
+    <app-vessel-row *ngIf="vessel?.rank > 0" [vessel]="vessel" [maxRank]="airshipMaxRank"></app-vessel-row>
   </div>
 </ng-template>
 
@@ -21,7 +21,7 @@
 <ng-container *ngTemplateOutlet="isSubmarinesEmpty ? noVessel : submarinesTpl; context: {$implicit: vesselTypeEnum.SUBMARINE}"></ng-container>
 <ng-template #submarinesTpl>
   <div class="vessels-list" fxLayout="column" *ngFor="let vessel of submarines">
-    <app-vessel-row [vessel]="vessel" [maxRank]="submarineMaxRank"></app-vessel-row>
+    <app-vessel-row *ngIf="vessel?.rank > 0" [vessel]="vessel" [maxRank]="submarineMaxRank"></app-vessel-row>
   </div>
 </ng-template>
 

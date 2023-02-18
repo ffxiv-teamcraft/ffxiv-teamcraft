@@ -3,10 +3,12 @@ import { CompactMasterbook, CraftedBy, DataType } from '@ffxiv-teamcraft/types';
 import { MasterbookClass } from '@ffxiv-teamcraft/data/model/lazy-recipe';
 
 export class CraftedByExtractor extends AbstractItemDetailsExtractor<CraftedBy[]> {
-  recipes = this.requireLazyFile('recipesPerItem');
+  recipes = this.requireLazyFile('recipes');
 
   doExtract(itemId: number): CraftedBy[] {
-    return (this.recipes[itemId] || []).map(craft => {
+    return this.recipes
+      .filter(recipe => recipe.result === itemId)
+      .map(craft => {
         const craftedBy: CraftedBy = {
           itemId: itemId,
           job: craft.job,
@@ -22,7 +24,7 @@ export class CraftedByExtractor extends AbstractItemDetailsExtractor<CraftedBy[]
         };
         if (craft.masterbook) {
           let masterbookEntry: CompactMasterbook = {
-            id: craft.masterbook
+            id: craft.masterbook as number
           };
           if (craft.masterbook && typeof craft.masterbook !== 'number' && (craft.masterbook as MasterbookClass).id) {
             masterbookEntry = {

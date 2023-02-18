@@ -171,7 +171,7 @@
                                         <div fxLayout="column" fxLayoutAlign="center flex-start" fxLayoutGap="5px">
                                           <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
                                             <div [appItemRarity]="item.itemId"
-                                                 class="recipe-name">{{item.itemId | itemName | i18n}}</div>
+                                                 class="recipe-name"><app-i18n-name [id]="item.itemId" content="items"></app-i18n-name></div>
                                             <i *ngIf="userCompletion[item.itemId]" nz-icon nzType="check"></i>
                                           </div>
                                           <div class="recipe-details">ilvl {{item.ilvl}} {{item.stars | ingameStars}}</div>

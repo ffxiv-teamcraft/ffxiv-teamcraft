@@ -14,7 +14,7 @@
       <app-item-icon [itemId]="predator.id" width="24"></app-item-icon>
     </div>
     <div>
-      {{predator.id | itemName | i18n}}
+      <app-i18n-name [id]="predator.id" content="items"></app-i18n-name>
     </div>
     <div>
       x{{predator.amount}}

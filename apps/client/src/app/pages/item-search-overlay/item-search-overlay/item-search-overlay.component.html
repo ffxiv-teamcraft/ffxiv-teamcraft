@@ -19,7 +19,7 @@
       <div class="item-card" fxLayout="row" fxLayoutGap="5px">
         <app-item-icon tooltipDisabled="true" [itemId]="display.data.id"></app-item-icon>
         <div fxLayout="column" fxLayoutGap="5px">
-          <div>{{display.data.id | itemName | i18n}}</div>
+          <div><app-i18n-name [id]="display.data.id" content="items"></app-i18n-name></div>
           <div fxLayout="row wrap" *ngIf="display.inventoryItems.length > 0; else nothingInsideInventory">
             <ng-container *ngFor="let item of display.inventoryItems">
               <ng-template #positionTooltip>

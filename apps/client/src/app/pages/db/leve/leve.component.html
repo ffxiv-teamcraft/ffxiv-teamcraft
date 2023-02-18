@@ -160,7 +160,7 @@
                 [nzTitle]="title"
                 nzDescription="x{{item.amount}}">
                 <ng-template #title>
-                  <span [appItemRarity]="item.id">{{item.id | itemName | i18n}} ({{item.chances}}%)</span>
+                  <span [appItemRarity]="item.id"><app-i18n-name [id]="item.id" content="items"></app-i18n-name> ({{item.chances}}%)</span>
                 </ng-template>
                 <ng-template #itemAvatar>
                   <app-item-icon [hq]="item.hq" [icon]="item.id | lazyIcon" [itemId]="item.id"

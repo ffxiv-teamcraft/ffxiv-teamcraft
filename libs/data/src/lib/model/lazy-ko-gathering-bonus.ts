@@ -13,6 +13,8 @@ export enum Ko {
   기술력ValueIntegerParameter1Value이상 = "기술력 <Value>IntegerParameter(1)</Value> 이상",
   민첩성ValueIntegerParameter1Value이상 = "민첩성 <Value>IntegerParameter(1)</Value> 이상",
   상위레벨아이템획득률ValueIntegerParameter1Value = "상위 레벨 아이템 획득률+<Value>IntegerParameter(1)</Value>%",
+  소장가치최대시승화율ValueIntegerParameter1Value = "소장 가치 최대 시: 승화율+<Value>IntegerParameter(1)</Value>%",
+  소장가치최대시승화율ValueIntegerParameter1Value능력치반영 = "소장 가치 최대 시: 승화율+<Value>IntegerParameter(1)</Value>%(능력치 반영)",
   연속성공ValueIntegerParameter1Value회이상 = "연속 성공 <Value>IntegerParameter(1)</Value>회 이상",
   채집횟수내구도ValueIntegerParameter1Value = "채집 횟수/내구도+<Value>IntegerParameter(1)</Value>",
   채집횟수내구도ValueIntegerParameter1Value능력치반영 = "채집 횟수/내구도+<Value>IntegerParameter(1)</Value>(능력치 반영)",

@@ -14,7 +14,7 @@
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
         <div fxFlex="0 0 300px">
           <nz-input-group [nzAddOnBefore]="'GATHERING_LOCATIONS.Node_type' | translate">
-            <nz-select class="with-addon-before" formControlName="type" nzAllowClear>
+            <nz-select class="with-addon-before" formControlName="type">
               <nz-option [nzLabel]="'COMMON.Any' | translate" [nzValue]="-1"></nz-option>
               <nz-option *ngFor="let type of nodeTypes; let i = index" [nzLabel]="('NODE_TYPE.' + type) | translate"
                          [nzValue]="i" nzCustomContent>
@@ -29,7 +29,7 @@
 
         <div fxFlex="1 1 300px">
           <nz-input-group [nzAddOnBefore]="'GATHERING_LOCATIONS.Use' | translate">
-            <nz-select class="with-addon-before" formControlName="use" nzAllowClear>
+            <nz-select class="with-addon-before" formControlName="use">
               <nz-option [nzLabel]="'COMMON.Any' | translate" [nzValue]="-1"></nz-option>
               <nz-option *ngFor="let use of uses" [nzLabel]="use.needsTranslate ? (use.value | translate) : use.value | itemName | i18n"
                          [nzValue]="use.value" nzCustomContent>

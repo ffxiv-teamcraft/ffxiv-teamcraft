@@ -14,11 +14,11 @@
       <button (click)="addLayout()" nz-button nzType="primary">
         <i nz-icon nzType="plus"></i>
       </button>
-      <button (click)="save(layout)" [disabled]="layout.$key === undefined || !dirty" nz-button
+      <button (click)="save(layout)" [disabled]="layout.default || layout.$key === undefined || !dirty" nz-button
               nzType="primary">
         <i class="material-icons">save</i>
       </button>
-      <button (nzOnConfirm)="deleteLayout(layout.$key)" [disabled]="layout.$key === undefined" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
+      <button (nzOnConfirm)="deleteLayout(layout.$key)" [disabled]="layout.default || layout.$key === undefined" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
               nz-popconfirm nzDanger>
         <i nz-icon nzType="delete"></i>
       </button>

@@ -16,7 +16,6 @@ export type MapListStep = {
 } & {
   mapId: number;
   sources: DataType[];
-  other: ListStep[];
   isHousingMap: boolean;
   complete: boolean;
   itemsCount: number;

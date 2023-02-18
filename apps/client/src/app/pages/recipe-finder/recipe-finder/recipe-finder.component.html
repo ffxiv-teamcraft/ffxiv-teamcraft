@@ -144,7 +144,7 @@
         <i (click)="removeFromPool(item.id, item.amount, true)" class="delete-element" nz-icon nzType="close"></i>
         <app-item-icon [icon]="item.id | lazyIcon" [itemId]="item.id" [width]="32"></app-item-icon>
         <div fxLayout="column">
-          <div>{{item.id | itemName | i18n}}</div>
+          <div><app-i18n-name [id]="item.id" content="items"></app-i18n-name></div>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <div *ngIf="editingAmount !== item.id">x{{item.amount}}</div>
             <div *ngIf="editingAmount === item.id">

@@ -162,8 +162,6 @@ export class AllaganReportsExtractor extends AbstractExtractor {
             this.persistToJsonAsset('fate-sources', fateSources);
             this.persistToJsonAsset('mogstation-sources', mogstation);
             this.persistToJsonAsset('gardening-sources', gardening);
-
-            this.persistToTypescript('updated-items', 'updatedItemIds', this.updatedItemIds);
           }),
           switchMap(() => {
             return this.gubalRequest(`
@@ -196,7 +194,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
         // console.warn(`Overriding source for ${targetItem} with ${JSON.stringify(sourceDetails)}`);
       }
       targetObject[targetItem] = sourceDetails;
-    } else if (!!sourceDetails) {
+    } else if (sourceDetails) {
       targetObject[targetItem] = uniq([...(targetObject[targetItem] || []), sourceDetails]);
     }
   }

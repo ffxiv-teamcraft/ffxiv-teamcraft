@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ItemData } from '../../../model/garland-tools/item-data';
-import { combineLatest, concat, Observable } from 'rxjs';
-import { filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
+import { combineLatest, Observable } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
@@ -87,38 +87,13 @@ export class ImportComponent {
   }
 
   doImport(data: { items: { itemData: ItemData, quantity: number, recipeId?: string }[], url: string }): void {
-    this.listPicker.pickList().pipe(
-      mergeMap(list => {
-        if (data.url) {
-          list.note = data.url;
-        }
-        const operation$ = concat(
-          ...data.items.map(row => {
-            return this.listManager.addToList({
-              itemId: row.itemData.item.id,
-              list: list,
-              recipeId: +row.recipeId,
-              amount: row.quantity
-            });
-          })
-        );
-        return this.progressService.showProgress(operation$,
-          data.items.length,
-          'Adding_recipes',
-          { amount: data.items.length, listname: list.name });
-      }),
-      tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      mergeMap(list => {
-        // We want to get the list created before calling it a success, let's be pessimistic !
-        return this.progressService.showProgress(
-          combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
-            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
-            map(lists => lists.find(l => l.createdAt.seconds === list.createdAt.seconds && l.$key !== undefined)),
-            filter(l => l !== undefined),
-            first()
-          ), 1, 'Saving_in_database');
-      })
-    ).subscribe((list) => {
+    this.listPicker.addToList(...data.items.map(row => {
+      return {
+        id: row.itemData.item.id,
+        recipeId: row.recipeId,
+        amount: row.quantity
+      };
+    })).subscribe((list) => {
       const callbackUrl = this.route.snapshot.queryParamMap.get('callback');
       if (callbackUrl !== null) {
         this.http.post(callbackUrl, { url: this.linkTools.getLink(`/list/${list.$key}`) }).subscribe();

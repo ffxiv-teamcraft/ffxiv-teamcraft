@@ -101,7 +101,7 @@
                 </ng-template>
                 <ng-template #title>
                   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                    <div [appItemRarity]="item">{{item.item | itemName | i18n}}</div>
+                    <div [appItemRarity]="item"><app-i18n-name [id]="item.item" content="items"></app-i18n-name></div>
                     <nz-tag *ngIf="item.gatheringItem?.hidden" nzColor="#108ee9">{{'GATHERING_LOCATIONS.Hidden_item' | translate}}</nz-tag>
                   </div>
                 </ng-template>

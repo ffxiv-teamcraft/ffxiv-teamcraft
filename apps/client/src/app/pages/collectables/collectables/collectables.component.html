@@ -39,7 +39,7 @@
                          (ngModelChange)="selectItem(group.groupId, collectable.itemId, $event)"></label>
                   <app-item-icon [itemId]="collectable.itemId" [width]="32"></app-item-icon>
                   <div fxLayout="column">
-                    <div>{{collectable.itemId | itemName | i18n}}</div>
+                    <div><app-i18n-name [id]="collectable.itemId" content="items"></app-i18n-name></div>
                     <div>{{'Level' | translate}} {{collectable.levelMax}}</div>
                   </div>
                 </div>

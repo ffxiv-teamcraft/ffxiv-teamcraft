@@ -9,7 +9,7 @@
   >
     <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
       <app-item-icon [itemId]="itemId" [icon]="itemId | lazyIcon" width="32"></app-item-icon>
-      <span>{{ itemId | itemName | i18n }}</span>
+      <span><app-i18n-name [id]="itemId" content="items"></app-i18n-name></span>
     </div>
   </div>
   <div class="no-data">

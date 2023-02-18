@@ -46,9 +46,9 @@ export class I18nToolsService {
     );
   }
 
-  public getName(i18nName: I18nName): string {
+  public getName(i18nName: I18nName): string | null {
     if (!i18nName) {
-      return 'missing name';
+      return null;
     }
     return (i18nName[this.translator.currentLang] || i18nName.en || 'no name').replace('', '•');
   }
