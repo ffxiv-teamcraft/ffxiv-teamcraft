@@ -3053,7 +3053,7 @@
       "Exclude_pasture_materials": "축산물자 예외",
       "Exclude_crop_materials": "경작물자 예외",
       "Display_item_metadata": "분류와 소요 시간을 계획에 표시",
-      "Groove_tooltip": "일정 이후 마법인형 의욕",
+      "Groove_tooltip": "이 일정 이후 마법인형 의욕",
       "Crafting_time": "소요 시간",
       "Categories": "분류",
       "No_planning": "No planning available",
