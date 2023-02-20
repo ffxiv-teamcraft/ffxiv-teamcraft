@@ -34,6 +34,12 @@ export class StepByStepDatatypeComponent {
 
   steps$ = observeInput(this, 'steps');
 
+  firstRelevantSource$ = combineLatest([this.steps$, this.dataType$]).pipe(
+    map(([steps, dataType]) => {
+      return steps[0].sources.find(source => source.type === dataType);
+    })
+  );
+
   npcBreakdownRows$ = combineLatest([this.dataType$, this.steps$]).pipe(
     filter(([dataType]) => [DataType.VENDORS, DataType.TRADE_SOURCES].includes(dataType)),
     map(([, steps]) => {

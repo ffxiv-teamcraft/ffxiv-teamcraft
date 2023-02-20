@@ -55,7 +55,7 @@ export class LayoutsFacade {
               private authFacade: AuthFacade, private settings: SettingsService, private lazyData: LazyDataFacade) {
   }
 
-  public getDisplay(list: List, adaptativeFilter: boolean, overrideHideCompleted = false, layout$ = this.selectedLayout$): Observable<ListDisplay> {
+  public getDisplay(list: List, adaptativeFilter: boolean, overrideHideCompleted = false, layout$ = this.selectedLayout$, stepByStepDisplay = false): Observable<ListDisplay> {
     const settingsChange$ = this.settings.settingsChange$.pipe(
       filter(name => name === 'maximum-vendor-price'),
       debounceTime(2000),
@@ -85,7 +85,15 @@ export class LayoutsFacade {
               i.finalItem = true;
               return i;
             }));
+          } else if (stepByStepDisplay) {
+            starter.push(...list.finalItems
+              .filter(i => getItemSource(i, DataType.CRAFTED_BY)?.length === 0)
+              .map(i => {
+                i.finalItem = true;
+                return i;
+              }));
           }
+
           return of({
             rows: [], unfilteredRows: starter, layoutRows: [...layout.rows.sort((a, b) => {
               // Other has to be last filter applied, as it rejects nothing.

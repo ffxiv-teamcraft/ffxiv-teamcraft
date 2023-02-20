@@ -55,90 +55,90 @@
         <ng-container *ngTemplateOutlet="alarmsDisplay;context:{$implicit: display.noGroup}"></ng-container>
       </div>
       <ng-container *ngIf="activePanels$ | async as activePanels">
-      <div (onDrop)="setGroupIndex(0, $event.dragData.group, display.groupedAlarms)" class="panel-drop-zone" dropScope="group"
-           droppable></div>
-      <div *ngFor="let group of display.groupedAlarms; trackBy: trackByGroup; let i = index" class="panel-container">
-        <nz-collapse>
-          <nz-collapse-panel [class.empty-group]="group.alarms.length === 0" [dragData]="group"
-                             [nzActive]="activePanels[group.group.$key] || (activePanels[group.group.$key] === undefined && !group.group.muted)"
-                             (nzActiveChange)="setPanelActive(group.group.$key, $event)"
-                             [nzHeader]="panelTitle"
-                             class="alarm-group-panel"
-                             dragScope="group"
-                             draggable>
-            <div (onDrop)="setAlarmGroup($event.dragData, group.group.$key)" class="alarms-container" dropScope="alarm"
-                 droppable
-                 fxLayout="row wrap"
-                 fxLayoutGap="5px">
-              <ng-container *ngTemplateOutlet="alarmsDisplay;context:{$implicit: group.alarms, group: group.group}"></ng-container>
-            </div>
-          </nz-collapse-panel>
-          <ng-template #panelTitle>
-            <div class="panel-title" fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-              <div class="group-name">
-                {{group.group.name}}
-              </div>
-              <button (click)="$event.stopPropagation()"
-                      [clipboard]="getGroupLink(group.group.$key)"
-                      [clipboardFnArgs]="[group.group.$key]"
-                      [clipboardSuccessMessage]="'ALARMS.Group_link_copied' | translate"
-                      nz-button
-                      nzType="primary"
-                      nzShape="circle"
-                      nzSize="small">
-                <i nz-icon nzType="share-alt"></i>
-              </button>
-              <button (click)="$event.stopPropagation();renameGroup(group.group)" nz-button nzGhost nzShape="circle"
-                      nzSize="small">
-                <i nz-icon nzType="edit"></i>
-              </button>
-              <button (click)="$event.stopPropagation();"
-                      [nzDropdownMenu]="menu"
-                      nz-button
-                      nz-dropdown
-                      nzGhost
-                      nzTrigger="click"
-                      nzDanger
-                      nzShape="circle" nzSize="small"
-              >
-                <i nz-icon nzType="delete"></i>
-              </button>
-              <nz-dropdown-menu #menu="nzDropdownMenu">
-                <ul nz-menu>
-                  <li nz-menu-item>
-                    <a (nzOnConfirm)="deleteGroup(group.group)"
-                       [nzPopconfirmTitle]="'ALARMS.Confirm_group_delete' | translate"
-                       nz-popconfirm
-                    >
-                      {{'ALARMS.Delete_group' | translate}}
-                    </a>
-                  </li>
-                  <li nz-menu-item>
-                    <a (nzOnConfirm)="deleteGroupAndAlarms(group.group, group.alarms)"
-                       [nzPopconfirmTitle]="'ALARMS.Confirm_group_delete_with_alarms' | translate"
-                       nz-popconfirm
-                    >
-                      {{'ALARMS.Delete_group_and_alarms' | translate}}
-                    </a>
-                  </li>
-                </ul>
-              </nz-dropdown-menu>
-              <button (click)="$event.stopPropagation(); addAlarmsToGroup(group.group)" [nzShape]="'circle'"
-                      [nzTooltipTitle]="'ALARMS.Add_alarms_to_group' | translate"
-                      [nzType]="'primary'" nz-button nz-tooltip
-                      nzSize="small">
-                <i nz-icon nzType="plus"></i>
-              </button>
-              <div class="spacer"></div>
-              <nz-switch (click)="$event.stopPropagation();"
-                         [(ngModel)]="group.group.enabled"
-                         (ngModelChange)="updateGroupMuteState(group.group)"></nz-switch>
-            </div>
-          </ng-template>
-        </nz-collapse>
-        <div (onDrop)="setGroupIndex(i, $event.dragData.group, display.groupedAlarms)" class="panel-drop-zone" dropScope="group"
+        <div (onDrop)="setGroupIndex(0, $event.dragData.group, display.groupedAlarms)" class="panel-drop-zone" dropScope="group"
              droppable></div>
-      </div>
+        <div *ngFor="let group of display.groupedAlarms; trackBy: trackByGroup; let i = index" class="panel-container">
+          <nz-collapse>
+            <nz-collapse-panel [class.empty-group]="group.alarms.length === 0" [dragData]="group"
+                               [nzActive]="activePanels[group.group.$key] || (activePanels[group.group.$key] === undefined && !group.group.muted)"
+                               (nzActiveChange)="setPanelActive(group.group.$key, $event)"
+                               [nzHeader]="panelTitle"
+                               class="alarm-group-panel"
+                               dragScope="group"
+                               draggable>
+              <div (onDrop)="setAlarmGroup($event.dragData, group.group.$key)" class="alarms-container" dropScope="alarm"
+                   droppable
+                   fxLayout="row wrap"
+                   fxLayoutGap="5px">
+                <ng-container *ngTemplateOutlet="alarmsDisplay;context:{$implicit: group.alarms, group: group.group}"></ng-container>
+              </div>
+            </nz-collapse-panel>
+            <ng-template #panelTitle>
+              <div class="panel-title" fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <div class="group-name">
+                  {{group.group.name}}
+                </div>
+                <button (click)="$event.stopPropagation()"
+                        [clipboard]="getGroupLink(group.group.$key)"
+                        [clipboardFnArgs]="[group.group.$key]"
+                        [clipboardSuccessMessage]="'ALARMS.Group_link_copied' | translate"
+                        nz-button
+                        nzType="primary"
+                        nzShape="circle"
+                        nzSize="small">
+                  <i nz-icon nzType="share-alt"></i>
+                </button>
+                <button (click)="$event.stopPropagation();renameGroup(group.group)" nz-button nzGhost nzShape="circle"
+                        nzSize="small">
+                  <i nz-icon nzType="edit"></i>
+                </button>
+                <button (click)="$event.stopPropagation();"
+                        [nzDropdownMenu]="menu"
+                        nz-button
+                        nz-dropdown
+                        nzGhost
+                        nzTrigger="click"
+                        nzDanger
+                        nzShape="circle" nzSize="small"
+                >
+                  <i nz-icon nzType="delete"></i>
+                </button>
+                <nz-dropdown-menu #menu="nzDropdownMenu">
+                  <ul nz-menu>
+                    <li nz-menu-item>
+                      <a (nzOnConfirm)="deleteGroup(group.group)"
+                         [nzPopconfirmTitle]="'ALARMS.Confirm_group_delete' | translate"
+                         nz-popconfirm
+                      >
+                        {{'ALARMS.Delete_group' | translate}}
+                      </a>
+                    </li>
+                    <li nz-menu-item>
+                      <a (nzOnConfirm)="deleteGroupAndAlarms(group.group, group.alarms)"
+                         [nzPopconfirmTitle]="'ALARMS.Confirm_group_delete_with_alarms' | translate"
+                         nz-popconfirm
+                      >
+                        {{'ALARMS.Delete_group_and_alarms' | translate}}
+                      </a>
+                    </li>
+                  </ul>
+                </nz-dropdown-menu>
+                <button (click)="$event.stopPropagation(); addAlarmsToGroup(group.group)" [nzShape]="'circle'"
+                        [nzTooltipTitle]="'ALARMS.Add_alarms_to_group' | translate"
+                        [nzType]="'primary'" nz-button nz-tooltip
+                        nzSize="small">
+                  <i nz-icon nzType="plus"></i>
+                </button>
+                <div class="spacer"></div>
+                <nz-switch (click)="$event.stopPropagation();"
+                           [(ngModel)]="group.group.enabled"
+                           (ngModelChange)="updateGroupMuteState(group.group)"></nz-switch>
+              </div>
+            </ng-template>
+          </nz-collapse>
+          <div (onDrop)="setGroupIndex(i, $event.dragData.group, display.groupedAlarms)" class="panel-drop-zone" dropScope="group"
+               droppable></div>
+        </div>
       </ng-container>
     </div>
     <app-fullpage-message *ngIf="display.noGroup.length === 0 && display.groupedAlarms.length === 0" height="300px">
@@ -189,13 +189,13 @@
           <span *ngIf="row.alarm.itemId; else customName" class="alarm-item-name"
                 fxFlex="1 1 auto"><app-i18n-name [id]="row.alarm.itemId" content="items"></app-i18n-name></span>
               <ng-template #customName>
-                <span class="alarm-item-name" fxFlex="1 1 auto"  *ngIf="row.alarm.type !== -10">{{row.alarm.name}}</span>
+                <span class="alarm-item-name" fxFlex="1 1 auto" *ngIf="row.alarm.type !== -10">{{row.alarm.name}}</span>
                 <span class="alarm-item-name" fxFlex="1 1 auto" *ngIf="row.alarm.type === -10">{{row.alarm.bnpcName | lazyRow:'mobs' | i18n}}</span>
               </ng-template>
               <span *ngIf="row.alarm.slot" fxFlex="0 0 auto">({{row.alarm.slot}})</span>
             </div>
             <app-gathering-item-uses [itemId]="row.alarm.itemId"></app-gathering-item-uses>
-            <img *ngIf="row.alarm.type > 0" alt="" class="node-type" src="{{row.alarm.type | nodeTypeIcon: true}}">
+            <img *ngIf="row.alarm.type >= 0" alt="" class="node-type" src="{{row.alarm.type | nodeTypeIcon: true}}">
             <img *ngIf="row.alarm.type === -10" alt="" class="node-type" src="https://xivapi.com/i/063000/063949.png">
           </div>
         </ng-template>
@@ -213,7 +213,7 @@
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <app-map-position *ngIf="row.alarm.mapId > 0"
                               [mapId]="row.alarm.mapId"
-                              [marker]="{x: row.alarm.coords.x, y: row.alarm.coords.y, iconType: 'img', iconImg: row.alarm.type ? (row.alarm.type | nodeTypeIcon: true) : null}"
+                              [marker]="{x: row.alarm.coords.x, y: row.alarm.coords.y, iconType: 'img', iconImg: row.alarm.type >= 0 ? (row.alarm.type | nodeTypeIcon: true) : null}"
                               [zoneId]="row.alarm.zoneId"></app-map-position>
             <app-db-button [type]="row.dbType" [id]="row.alarm.nodeId"></app-db-button>
             <app-item-icon *ngIf="row.alarm.folklore !== undefined" [itemId]="row.alarm.folklore" [width]="32"></app-item-icon>
@@ -239,7 +239,8 @@
               <ng-template #nodeContent>
                 <ul>
                   <li *ngFor="let item of row.alarm.nodeContent">
-                    <app-i18n-name [id]="item.id || item" content="items"></app-i18n-name> <span *ngIf="item.slot">({{item.slot}})</span>
+                    <app-i18n-name [id]="item.id || item" content="items"></app-i18n-name>
+                    <span *ngIf="item.slot">({{item.slot}})</span>
                   </li>
                 </ul>
               </ng-template>
@@ -302,7 +303,7 @@
         </ng-template>
         <ng-template #map>
           <app-map *ngIf="row.alarm.mapId > 0" [mapId]="row.alarm.mapId"
-                   [markers]="[{x: row.alarm.coords.x, y: row.alarm.coords.y, iconType: 'img', iconImg: row.alarm.type ? (row.alarm.type | nodeTypeIcon: true) : null}]"></app-map>
+                   [markers]="[{x: row.alarm.coords.x, y: row.alarm.coords.y, iconType: 'img', iconImg: row.alarm.type >= 0 ? (row.alarm.type | nodeTypeIcon: true) : null}]"></app-map>
         </ng-template>
         <ng-template #deleteAlarmTpl>
           <i (nzOnConfirm)="deleteAlarm(row.alarm)" [nzTooltipTitle]="'ALARMS.Delete_alarm' | translate" nz-tooltip
@@ -352,7 +353,7 @@
             <div class="text-col">
               <span *ngIf="row.alarm.itemId; else customName">{{row.alarm.itemId | itemName | i18n}}</span>
               <ng-template #customName>
-                <span class="alarm-item-name" fxFlex="1 1 auto"  *ngIf="row.alarm.type !== -10">{{row.alarm.name}}</span>
+                <span class="alarm-item-name" fxFlex="1 1 auto" *ngIf="row.alarm.type !== -10">{{row.alarm.name}}</span>
                 <span class="alarm-item-name" fxFlex="1 1 auto" *ngIf="row.alarm.type === -10">{{row.alarm.bnpcName | lazyRow:'mobs' | i18n}}</span>
               </ng-template>
             </div>
@@ -360,7 +361,7 @@
         </div>
         <div nz-col nzMd="1" fxLayout="row wrap">
           <app-gathering-item-uses [itemId]="row.alarm.itemId" [compact]="true"></app-gathering-item-uses>
-          <img *ngIf="row.alarm.type > 0" alt="" class="node-type-compact" src="{{row.alarm.type | nodeTypeIcon: true}}">
+          <img *ngIf="row.alarm.type >= 0" alt="" class="node-type-compact" src="{{row.alarm.type | nodeTypeIcon: true}}">
           <img *ngIf="row.alarm.type === -10" alt="" class="node-type-compact" src="https://xivapi.com/i/063000/063949.png">
           <div fxLayout="row" fxLayoutGap="5px" *ngIf="row.alarm.ephemeral">
             <div>

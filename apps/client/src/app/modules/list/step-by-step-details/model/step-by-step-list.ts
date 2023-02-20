@@ -152,7 +152,6 @@ export class StepByStepList {
       this.steps[mapId] = {
         mapId,
         sources: [],
-        other: [],
         complete: true,
         isHousingMap: this.isHousingMap(mapId),
         itemsCount: 0,

@@ -11,7 +11,7 @@
     </button>
   </ng-template>
   <ng-template #titleTpl>
-    <div class="flex-row gap-5 align-center">
+    <div class="flex-row gap-5 align-center" *ngIf="firstRelevantSource$ | async as firstRelevantSource">
       <div [ngSwitch]="dataType" class="flex-row align-center">
       <span *ngSwitchCase="DataType.DEPRECATED">
         <i nz-icon nzType="close-circle" nzTheme="twotone" [nzTwotoneColor]="'#F5222DFF'">
@@ -35,7 +35,7 @@
           {{'Island_crop' | translate}}
       </span>
         <span *ngSwitchCase="DataType.TRADE_SOURCES">
-        <span *ngIf="steps[0].sources[0].data | tradeIcon as icon; else gtFallBack">
+        <span *ngIf="firstRelevantSource.data | tradeIcon as icon; else gtFallBack">
           <app-item-icon width="24" disableClick="true" tooltipDisabled="true" [itemId]="icon"></app-item-icon>
           {{'Trade' | translate}}
         </span>
@@ -44,7 +44,7 @@
         </ng-template>
       </span>
         <span *ngSwitchCase="DataType.INSTANCES">
-        <img [src]="steps[0].sources[0].data[0] | lazyRow:'instances':'icon' | async | xivapiIcon" class="img-icon round-icon">
+        <img [src]="firstRelevantSource.data[0] | lazyRow:'instances':'icon' | async | xivapiIcon" class="img-icon round-icon">
           {{'LIST_DETAILS.SOURCES.Instances' | translate}}
       </span>
         <span *ngSwitchCase="DataType.MOGSTATION">
@@ -56,7 +56,7 @@
           {{'Quests' | translate}}
       </span>
         <span *ngSwitchCase="DataType.ACHIEVEMENTS">
-        <img class="img-icon round-icon" [src]="steps[0].sources[0].data[0] | lazyRow:'achievements':'icon' | async | xivapiIcon">
+        <img class="img-icon round-icon" [src]="firstRelevantSource.data[0] | lazyRow:'achievements':'icon' | async | xivapiIcon">
           {{'DB.Achievements' | translate}}
       </span>
         <span *ngSwitchCase="DataType.REDUCED_FROM">
@@ -84,7 +84,7 @@
           {{'Treasures' | translate}}
       </span>
         <span *ngSwitchCase="DataType.FATES">
-        <img [src]="steps[0].sources[0].data[0].id | lazyRow:'fates':'icon' | async | xivapiIcon" alt="Fates"
+        <img [src]="firstRelevantSource.data[0].id | lazyRow:'fates':'icon' | async | xivapiIcon" alt="Fates"
              class="img-icon round-icon">
           {{'Fates' | translate}}
       </span>
@@ -92,7 +92,7 @@
           {{'LIST_DETAILS.STEP_BY_STEP.Alarms' | translate}}
       </span>
         <ng-container *ngSwitchCase="DataType.CRAFTED_BY">
-          <ng-container *ngIf="steps[0].sources[0].data[0] as craft">
+          <ng-container *ngIf="firstRelevantSource.data[0] as craft">
             <ng-container *ngIf="craft.job > 0">
             <span *ngIf="craft.icon !== ''" [nzShape]="'circle'"
             >
@@ -109,8 +109,8 @@
           </ng-container>
         </ng-container>
         <span *ngSwitchCase="DataType.GATHERED_BY" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2px">
-          <img class="gathering-icon" [class.small]="steps[0].sources[0].data.type === -10"
-               src="{{steps[0].sources[0].data.type | nodeTypeIcon: steps[0].sources[0].data.nodes[0]?.limited}}">
+          <img class="gathering-icon" [class.small]="firstRelevantSource.data.type === -10"
+               src="{{firstRelevantSource.data.type | nodeTypeIcon: firstRelevantSource.data.nodes[0]?.limited}}">
           {{'DB.Gathering' | translate}}
       </span>
       </div>

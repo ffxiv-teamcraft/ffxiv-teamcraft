@@ -19,7 +19,7 @@ export class VoyagesExtractor extends AbstractItemDetailsExtractor<VoyageSource[
   }
 
   getDataType(): DataType {
-    return DataType.REDUCED_FROM;
+    return DataType.VOYAGES;
   }
 
 }

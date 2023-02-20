@@ -3,7 +3,7 @@ import { DataModel } from '../data-model';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { NgZone } from '@angular/core';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { catchError, distinctUntilChanged, filter, finalize, map, retry, shareReplay, takeUntil, tap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, finalize, map, retry, shareReplay, tap } from 'rxjs/operators';
 import { environment } from '../../../../../environments/environment';
 import {
   addDoc,
@@ -293,22 +293,6 @@ export abstract class FirestoreStorage<T extends DataModel> {
     });
     clone.appVersion = environment.version;
     return clone;
-  }
-
-  protected deepFreeze<T extends object>(object: T): T {
-    // Retrieve the property names defined on object
-    const propNames = Reflect.ownKeys(object);
-
-    // Freeze properties before freezing self
-    for (const name of propNames) {
-      const value = object[name];
-
-      if ((value && typeof value === 'object') || typeof value === 'function') {
-        this.deepFreeze(value);
-      }
-    }
-
-    return Object.freeze(object);
   }
 
   public newId(): string {
