@@ -135,7 +135,7 @@
     "Search": "검색"
   },
   "COMMON": {
-    "Done": "Done",
+    "Done": "완료",
     "Length": "길이",
     "Save": "저장",
     "Reset": "초기화",
@@ -315,8 +315,8 @@
   "Reset_progression": "진행상황 초기화",
   "Gardening": "재배",
   "Hunting": "사냥",
-  "Island_animal": "사육동물",
-  "Island_crop": "무인도 농작물",
+  "Island_animal": "무인도 사육동물",
+  "Island_crop": "무인도 경작지",
   "Desynth": "분해",
   "Vendors": "상인",
   "Open": "열기",
@@ -792,10 +792,10 @@
       "Others": "Others"
     },
     "DISPLAY_MODE": {
-      "Title": "Display mode",
-      "Full": "Full",
-      "Minimalist": "Minimalist",
-      "Step_by_step": "Step by step",
+      "Title": "표시 모드",
+      "Full": "전체화",
+      "Minimalist": "간소화",
+      "Step_by_step": "단계별",
       "Switched_to_minimalist_large_list": "Display mode has been switched to minimalist because this is a large list. You can disable this in settings."
     },
     "SOURCES": {
@@ -2004,9 +2004,9 @@
     "Install_npcap_button": "npcap 설치 및 팀크래프트 재실행",
     "Not_as_anonymous": "익명 상태에서는 패킷 캡쳐가 제대로 작동하지 않습니다",
     "Not_as_anonymous_description": "우측 상단의 \"익명\"에 커서를 올려 계정을 등록하거나 설정에서 패킷 캡쳐를 비활성화 해주세요",
-    "Status": "Packet capture status",
-    "Pcap": "Packet capture",
-    "Inventory": "Inventory tracking"
+    "Status": "패킷 캡쳐 상태",
+    "Pcap": "패킷 캡쳐",
+    "Inventory": "소지품 동기화"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "{{region}} 로 변경하시는 것을 권장합니다.",
@@ -2184,7 +2184,7 @@
     "Editing_others_gearset": "로컬 편집 모드",
     "Editing_others_gearset_description": "현재 다른 플레이어의 장비 세트를 수정 중입니다. 만약 저장 버튼을 사용하여 사본을 만들지 않으면 창을 닫은 후에 데이터가 손실됩니다.",
     "Empty_materias": "선택된 모든 장비의 마테리아 제거",
-    "Total_scrips": "Total currencies needed",
+    "Total_scrips": "필요한 총 화폐",
     "Reset_progression": "Reset item and materia progression",
     "SLOT": {
       "Body": "몸통",
@@ -2691,8 +2691,8 @@
     "Total_per_venture": "집사 수행 총 집계",
     "Use_retainer": "고용 중인 집사",
     "Select_retainer": "집사를 선택하세요",
-    "Missing_gear": "Missing gear",
-    "Missing_gear_description": "Some of your retainers are missing their gear in TC data, please summon each retainer again to load their gear"
+    "Missing_gear": "미확인 장비",
+    "Missing_gear_description": "몇몇 집사의 장비가 확인되지 않습니다. 장비 갱신을 위해 각 집사를 호출해 주세요."
   },
   "PATREON": {
     "By_supporting_us": "Patreon 후원시 얻을 수 있는 것들:",
@@ -2720,12 +2720,12 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "패킷캡쳐를 사용하여 가져오기",
-    "Go_to_workshop": "Enter your workshop",
-    "Go_to_workshop_description": "If you're already in it, please exit the workshop and enter again.",
-    "Open_fc_window": "Open your Free Company details window",
-    "Open_fc_window_description": "This will make TC get more important details about your free company, such as server, G is the default binding for it.",
-    "Interact_with_ships_subs": "Interact with each Submarine/Airship you want to import",
-    "Interact_with_ships_subs_description": "Opening the airship/submarine management window makes TC load everything needed to display details about your ships.",
+    "Go_to_workshop": "지하공방에 입장하세요",
+    "Go_to_workshop_description": "이미 지하공방이라면 재입장 해주세요.",
+    "Open_fc_window": "자유부대 창을 열어주세요.",
+    "Open_fc_window_description": "자유부대나 서버와 같은 중요한 세부정보를 가져옵니다. 기본 단축키는 \";\" 입니다.",
+    "Interact_with_ships_subs": "정보를 가져올 잠수함/비공정을 각각 상호작용 해주세요.",
+    "Interact_with_ships_subs_description": "잠수함/비공정 관리 창을 열어 탐사선 세부 정보를 가져옵니다.",
     "Airships": "비공정",
     "Submersibles": "잠수함"
   },
@@ -3018,12 +3018,12 @@
     "Animal_source": "당신은 이 아이템을 무인도 목장의 동물들에게서 채집해야 합니다",
     "Island_level": "개척 랭크",
     "Landmarks": "특수 건물",
-    "Workshop_rank": "개척공방 랭크",
+    "Workshop_rank": "개척공방 등급",
     "WORKSHOP": {
       "Title": "개척공방",
       "Subtitle": "개척공방 추적 및 관리",
       "Out_of_sync": "초기화 이후로 상태가 갱신되지 않았습니다",
-      "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary for the first time after logging in the game to update the state (If you have already opened the window since you logged in, you will need to log out of the game and back in, and re-open the Supply/Demand window to correctly update your state). If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button, or import from database.",
+      "Out_of_sync_explain": "게임에 접속한 후 무인도에서 처음으로 특산품 수요 조사 창을 열어 상태를 갱신해 주세요.(갱신하기 전에 이미 창을 열어 봤다면 캐릭터를 재접속하고 창을 다시 열어서 상태를 올바르게 갱신할 수 있습니다.) 패킷 캡쳐를 사용하지 않는다면 다른 사용자에게 내보내기를 받아 상태를 가져오거나 데이터베이스에서 받아올 수 있습니다.",
       "Export_state": "특산품 수요 조사 내보내기",
       "State_copied": "상태가 클립보드에 복사되었습니다",
       "Import_state": "상태 가져오기",
@@ -3041,8 +3041,8 @@
       "Run_optimizer": "남은 주간동안의 최적 계획 찾기",
       "No_schedule_found": "계획을 찾을 수 없습니다",
       "No_schedule_found_explain": "다음 리셋 시간까지 4시간 이상 남아 있도록 해 주세요",
-      "Possible_peak_days": "예상 피크일자",
-      "Peak_days_explain": "The days on which it's more likely that this item will peak in value. Bold = strong peak.",
+      "Possible_peak_days": "고점 예측",
+      "Peak_days_explain": "해당 아이템의 가치가 고점이 될 가능성이 높은 날짜. 굵게 = 최고점.",
       "Items_to_prepare": "Best items to prepare for tomorrow",
       "Rest": "휴일",
       "Unknown_day_planning": "{{day}}에 이용 가능",
@@ -3053,11 +3053,11 @@
       "Exclude_pasture_materials": "축산물자 예외",
       "Exclude_crop_materials": "경작물자 예외",
       "Display_item_metadata": "분류와 소요 시간을 계획에 표시",
-      "Groove_tooltip": "Groove at the end of the day",
+      "Groove_tooltip": "이 일정 이후 마법인형 의욕",
       "Crafting_time": "소요 시간",
       "Categories": "분류",
-      "No_planning": "No planning available",
-      "No_planning_explain": " Teamcraft is not able to compute a planning because there's too few recipes available, try to change your island level or uncheck some material exclusions.",
+      "No_planning": "계획 이용 불가",
+      "No_planning_explain": " 이용가능한 제작법이 너무 적어 계산할 수 없습니다. 무인도 랭크를 올리거나 예외처리된 재료를 확인해주세요.",
       "Next_week_prep": "다음 주에 준비해야 할 재료",
       "Crop_materials": "경작물자",
       "Pasture_materials": "축산물자",
