@@ -1,11 +1,11 @@
 import { LayoutRowOrder } from './layout-row-order.enum';
 import { Injectable } from '@angular/core';
-import { getItemSource, ListRow } from '../../modules/list/model/list-row';
+import { ListRow } from '../../modules/list/model/list-row';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../tools/i18n-tools.service';
-import { DataType } from '../../modules/list/data/data-type';
+import { AlarmDetails, DataType, getItemSource } from '@ffxiv-teamcraft/types';
 import { AlarmsFacade } from '../alarms/+state/alarms.facade';
-import { Alarm } from '../alarms/alarm';
+import { PersistedAlarm } from '../alarms/persisted-alarm';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { MathTools } from '../../tools/math-tools';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
@@ -93,7 +93,7 @@ export class LayoutOrderService {
     );
   }
 
-  private getNextSpawn(alarms: Alarm[]): number {
+  private getNextSpawn(alarms: AlarmDetails[]): number {
     if (!this.alarmsCache[alarms[0].itemId] || this.alarmsCache[alarms[0].itemId].expire >= Date.now()) {
       // Now in eorzean time
       const eNow = this.etime.toEorzeanDate(new Date());

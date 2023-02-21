@@ -7,10 +7,9 @@ import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 import { StatsService } from '../../../modules/gearsets/stats.service';
-import { BaseParam } from '@ffxiv-teamcraft/data/game';
-import { DataType } from '../../../modules/list/data/data-type';
+import { DataType, BaseParam, LazyDataWithExtracts, getItemSource, getExtract } from '@ffxiv-teamcraft/types';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
-import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
+import { ListRow } from '../../../modules/list/model/list-row';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { PlatformService } from '../../../core/tools/platform.service';
@@ -18,7 +17,6 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { LazyDataWithExtracts } from '../../../lazy-data/lazy-data-types';
 import { EnvironmentService } from '../../../core/environment.service';
 
 @Component({
@@ -212,7 +210,8 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
           done: 0,
           used: 0,
           yield: 1,
-          collectable: false
+          collectable: false,
+          sources: []
         };
       });
     this.listPicker.addToList(...items);
@@ -225,7 +224,7 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
     if (filters.onlyInventory && inventory) {
       return inventory.hasItem(itemId, true);
     }
-    const extract = extracts[itemId];
+    const extract = getExtract(extracts, itemId);
     // If the item has a masterbook requirement, it's not worth getting it for leveling.
     if (getItemSource(extract, DataType.MASTERBOOKS).length > 0) {
       return false;

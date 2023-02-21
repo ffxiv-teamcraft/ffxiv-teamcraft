@@ -1,6 +1,5 @@
-import { getItemSource, ListRow } from '../../model/list-row';
-import { ItemSource } from '../../model/item-source';
-import { DataType } from '../../data/data-type';
+import { ListRow } from '../../model/list-row';
+import { DataType, getItemSource, ItemSource } from '@ffxiv-teamcraft/types';
 import { ListStep, MapListStep } from './map-list-step';
 import { ListDisplay } from '../../../../core/layout/list-display';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
@@ -100,7 +99,7 @@ export class StepByStepList {
           return {
             mapId: alarm.mapId,
             coords: alarm.coords,
-            icon: alarm.icon,
+            icon: NodeTypeIconPipe.timed_icons[Math.abs(alarm.type)],
             type: 'Gathering'
           };
         });
@@ -153,7 +152,6 @@ export class StepByStepList {
       this.steps[mapId] = {
         mapId,
         sources: [],
-        other: [],
         complete: true,
         isHousingMap: this.isHousingMap(mapId),
         itemsCount: 0,

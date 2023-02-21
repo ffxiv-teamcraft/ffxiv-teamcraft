@@ -5,7 +5,7 @@
       <div fxLayout="column" fxLayoutGap="5px">
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngFor="let item of cleanup; let odd = odd">
           <app-item-icon [width]="24" [itemId]="item.itemId" [hq]="item.hq"></app-item-icon>
-          <div>{{item.itemId | itemName | i18n}}</div>
+          <div><app-i18n-name [id]="item.itemId" content="items"></app-i18n-name></div>
           <img *ngIf="item.hq" alt="(HQ)" src="./assets/icons/HQ.png" class="hq-icon">
           <div>x{{item.quantity}}</div>
           <div>

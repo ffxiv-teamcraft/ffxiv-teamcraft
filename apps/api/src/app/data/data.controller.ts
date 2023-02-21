@@ -1,8 +1,8 @@
 import { Controller, Get, Header, HttpException, Param, ParseArrayPipe } from '@nestjs/common';
 import { LazyDataLoader } from '../lazy-data/lazy-data.loader';
-import { lazyFilesList } from '@ffxiv-teamcraft/data/lazy-files-list';
-import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { map } from 'rxjs/operators';
+import { LazyDataKey } from '@ffxiv-teamcraft/types';
+import { lazyFilesList } from '@ffxiv-teamcraft/data/lazy-files-list';
 
 @Controller({
   path: '/data'
@@ -22,7 +22,7 @@ export class DataController {
     if (!contentName) {
       throw new HttpException(`${contentName} is not available`, 404);
     }
-    return this.lazyData.get(contentName as keyof LazyData);
+    return this.lazyData.get(contentName as LazyDataKey);
   }
 
   @Get(['//:prefix/:key/:hash/:ids', '/:prefix/:key/:hash/:ids'])

@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { Vector2 } from '../../core/tools/vector2';
+import { Vector2 } from '@ffxiv-teamcraft/types';
 import { I18nName } from '@ffxiv-teamcraft/types';
 import { ListRow } from '../list/model/list-row';
 

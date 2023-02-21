@@ -1,4 +1,4 @@
-import { GatheringNode } from '../../../core/data/model/gathering-node';
+import { GatheringNode } from '@ffxiv-teamcraft/types';
 
 export interface GatheredBy {
   type: number;

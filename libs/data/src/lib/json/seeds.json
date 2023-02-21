@@ -1,502 +1,1099 @@
 {
   "2": {
-    "seed": 15865,
+    "seedItemId": 15865,
     "duration": 18,
-    "ffxivgId": 73
+    "crossBreeds": []
   },
   "3": {
-    "seed": 15866,
+    "seedItemId": 15866,
     "duration": 18,
-    "ffxivgId": 74
+    "crossBreeds": []
   },
   "4": {
-    "seed": 15867,
+    "seedItemId": 15867,
     "duration": 18,
-    "ffxivgId": 75
+    "crossBreeds": []
   },
   "5": {
-    "seed": 15868,
+    "seedItemId": 15868,
     "duration": 18,
-    "ffxivgId": 76
+    "crossBreeds": []
   },
   "6": {
-    "seed": 15869,
+    "seedItemId": 15869,
     "duration": 18,
-    "ffxivgId": 77
+    "crossBreeds": []
   },
   "7": {
-    "seed": 15870,
+    "seedItemId": 15870,
     "duration": 18,
-    "ffxivgId": 78
+    "crossBreeds": []
   },
   "4777": {
-    "seed": 7716,
-    "duration": 5,
-    "ffxivgId": 57
+    "seedItemId": 7716,
+    "duration": 120,
+    "crossBreeds": []
   },
   "4778": {
-    "seed": 7717,
-    "duration": 5,
-    "ffxivgId": 6
+    "seedItemId": 7717,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7715,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 7717,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 8174,
+        "baseSeed": 7715
+      }
+    ]
   },
   "4782": {
-    "seed": 7718,
-    "duration": 5,
-    "ffxivgId": 5
+    "seedItemId": 7718,
+    "duration": 120,
+    "crossBreeds": []
   },
   "4785": {
-    "seed": 7715,
-    "duration": 5,
-    "ffxivgId": 3
+    "seedItemId": 7715,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7720,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 7720,
+        "baseSeed": 8182
+      },
+      {
+        "adjacentSeed": 8174,
+        "baseSeed": 7720
+      }
+    ]
   },
   "4787": {
-    "seed": 7720,
-    "duration": 5,
-    "ffxivgId": 53
+    "seedItemId": 7720,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7721,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 8174,
+        "baseSeed": 7721
+      },
+      {
+        "adjacentSeed": 8177,
+        "baseSeed": 7721
+      }
+    ]
   },
   "4788": {
-    "seed": 7722,
-    "duration": 5,
-    "ffxivgId": 16
+    "seedItemId": 7722,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7722,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 8174,
+        "baseSeed": 7722
+      },
+      {
+        "adjacentSeed": 7722,
+        "baseSeed": 8182
+      }
+    ]
   },
   "4789": {
-    "seed": 7723,
-    "duration": 5,
-    "ffxivgId": 17
+    "seedItemId": 7723,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7723,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 13767,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 8174,
+        "baseSeed": 7723
+      }
+    ]
   },
   "4804": {
-    "seed": 7719,
-    "duration": 5,
-    "ffxivgId": 7
+    "seedItemId": 7719,
+    "duration": 120,
+    "crossBreeds": []
   },
   "4808": {
-    "seed": 7726,
-    "duration": 5,
-    "ffxivgId": 2
+    "seedItemId": 7726,
+    "duration": 120,
+    "crossBreeds": []
   },
   "4809": {
-    "seed": 7725,
-    "duration": 5,
-    "ffxivgId": 1
+    "seedItemId": 7725,
+    "duration": 120,
+    "crossBreeds": []
   },
   "4810": {
-    "seed": 7727,
-    "duration": 5,
-    "ffxivgId": 9
+    "seedItemId": 7727,
+    "duration": 120,
+    "crossBreeds": []
   },
   "4811": {
-    "seed": 7728,
-    "duration": 5,
-    "ffxivgId": 10
+    "seedItemId": 7728,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7728,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 7729,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 7721,
+        "baseSeed": 17547
+      }
+    ]
   },
   "4812": {
-    "seed": 7729,
-    "duration": 5,
-    "ffxivgId": 12
+    "seedItemId": 7729,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 17547,
+        "baseSeed": 7738
+      },
+      {
+        "adjacentSeed": 17547,
+        "baseSeed": 7740
+      },
+      {
+        "adjacentSeed": 7725,
+        "baseSeed": 17547
+      }
+    ]
   },
   "4814": {
-    "seed": 7730,
-    "duration": 5,
-    "ffxivgId": 21
+    "seedItemId": 7730,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 17547,
+        "baseSeed": 7730
+      },
+      {
+        "adjacentSeed": 7723,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 7743,
+        "baseSeed": 17547
+      }
+    ]
   },
   "4815": {
-    "seed": 7732,
-    "duration": 5,
-    "ffxivgId": 24
+    "seedItemId": 7732,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7733,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 8174,
+        "baseSeed": 7734
+      },
+      {
+        "adjacentSeed": 8177,
+        "baseSeed": 7734
+      }
+    ]
   },
   "4816": {
-    "seed": 7734,
-    "duration": 5,
-    "ffxivgId": 27
+    "seedItemId": 7734,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7734,
+        "baseSeed": 7723
+      },
+      {
+        "adjacentSeed": 7734,
+        "baseSeed": 7730
+      },
+      {
+        "adjacentSeed": 7734,
+        "baseSeed": 7731
+      }
+    ]
   },
   "4821": {
-    "seed": 7721,
-    "duration": 5,
-    "ffxivgId": 15
+    "seedItemId": 7721,
+    "duration": 120,
+    "crossBreeds": []
   },
   "4829": {
-    "seed": 7735,
-    "duration": 5,
-    "ffxivgId": 55
+    "seedItemId": 7735,
+    "duration": 120,
+    "crossBreeds": []
   },
   "4830": {
-    "seed": 7737,
-    "duration": 5,
-    "ffxivgId": 8
+    "seedItemId": 7737,
+    "duration": 120,
+    "crossBreeds": []
   },
   "4835": {
-    "seed": 7738,
-    "duration": 5,
-    "ffxivgId": 13
+    "seedItemId": 7738,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 17547,
+        "baseSeed": 7738
+      },
+      {
+        "adjacentSeed": 7739,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 8182,
+        "baseSeed": 7738
+      }
+    ]
   },
   "4836": {
-    "seed": 7739,
-    "duration": 5,
-    "ffxivgId": 56
+    "seedItemId": 7739,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 17547,
+        "baseSeed": 7740
+      },
+      {
+        "adjacentSeed": 8182,
+        "baseSeed": 7740
+      },
+      {
+        "adjacentSeed": 8174,
+        "baseSeed": 7740
+      }
+    ]
   },
   "4837": {
-    "seed": 7742,
-    "duration": 5,
-    "ffxivgId": 19
+    "seedItemId": 7742,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7742,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 8174,
+        "baseSeed": 7742
+      },
+      {
+        "adjacentSeed": 8177,
+        "baseSeed": 7742
+      }
+    ]
   },
   "4842": {
-    "seed": 7744,
-    "duration": 5,
-    "ffxivgId": 22
+    "seedItemId": 7744,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 13768,
+        "baseSeed": 7717
+      },
+      {
+        "adjacentSeed": 13768,
+        "baseSeed": 7737
+      },
+      {
+        "adjacentSeed": 7743,
+        "baseSeed": 7738
+      }
+    ]
   },
   "4868": {
-    "seed": 8572,
-    "duration": 3,
-    "ffxivgId": 11
+    "seedItemId": 8572,
+    "duration": 72,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 8174,
+        "baseSeed": 8182
+      },
+      {
+        "adjacentSeed": 8176,
+        "baseSeed": 8182
+      },
+      {
+        "adjacentSeed": 8177,
+        "baseSeed": 8182
+      }
+    ]
   },
   "5346": {
-    "seed": 7741,
-    "duration": 5,
-    "ffxivgId": 18
+    "seedItemId": 7741,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7741,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 8182,
+        "baseSeed": 7741
+      },
+      {
+        "adjacentSeed": 8174,
+        "baseSeed": 7741
+      }
+    ]
   },
   "5539": {
-    "seed": 7736,
-    "duration": 5,
-    "ffxivgId": 4
+    "seedItemId": 7736,
+    "duration": 120,
+    "crossBreeds": []
   },
   "5542": {
-    "seed": 7740,
-    "duration": 5,
-    "ffxivgId": 14
+    "seedItemId": 7740,
+    "duration": 120,
+    "crossBreeds": []
   },
   "5543": {
-    "seed": 7743,
-    "duration": 5,
-    "ffxivgId": 20
+    "seedItemId": 7743,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 13768,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 17547,
+        "baseSeed": 7744
+      },
+      {
+        "adjacentSeed": 13768,
+        "baseSeed": 8179
+      }
+    ]
   },
   "6146": {
-    "seed": 7731,
-    "duration": 5,
-    "ffxivgId": 23
+    "seedItemId": 7731,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7732,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 8182,
+        "baseSeed": 7733
+      },
+      {
+        "adjacentSeed": 8174,
+        "baseSeed": 7733
+      }
+    ]
   },
   "6147": {
-    "seed": 7733,
-    "duration": 5,
-    "ffxivgId": 25
+    "seedItemId": 7733,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7734,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 17547,
+        "baseSeed": 7751
+      },
+      {
+        "adjacentSeed": 7732,
+        "baseSeed": 7723
+      }
+    ]
   },
   "6148": {
-    "seed": 7724,
-    "duration": 5,
-    "ffxivgId": 26
+    "seedItemId": 7724,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7723,
+        "baseSeed": 7717
+      },
+      {
+        "adjacentSeed": 7722,
+        "baseSeed": 7721
+      },
+      {
+        "adjacentSeed": 7715,
+        "baseSeed": 7723
+      }
+    ]
   },
   "7591": {
-    "seed": 7753,
-    "duration": 6,
-    "ffxivgId": 30
+    "seedItemId": 7753,
+    "duration": 144,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7743,
+        "baseSeed": 7742
+      },
+      {
+        "adjacentSeed": 7741,
+        "baseSeed": 13768
+      },
+      {
+        "adjacentSeed": 13765,
+        "baseSeed": 7743
+      }
+    ]
   },
   "7592": {
-    "seed": 7751,
-    "duration": 6,
-    "ffxivgId": 28
+    "seedItemId": 7751,
+    "duration": 144,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 13765,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 13765,
+        "baseSeed": 8182
+      },
+      {
+        "adjacentSeed": 13765,
+        "baseSeed": 8175
+      }
+    ]
   },
   "7593": {
-    "seed": 7752,
-    "duration": 6,
-    "ffxivgId": 36
+    "seedItemId": 7752,
+    "duration": 144,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7749,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 7721,
+        "baseSeed": 7723
+      },
+      {
+        "adjacentSeed": 7722,
+        "baseSeed": 7723
+      }
+    ]
   },
   "7602": {
-    "seed": 7748,
-    "duration": 6,
-    "ffxivgId": 35
+    "seedItemId": 7748,
+    "duration": 144,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7742,
+        "baseSeed": 13768
+      },
+      {
+        "adjacentSeed": 7742,
+        "baseSeed": 7744
+      },
+      {
+        "adjacentSeed": 13765,
+        "baseSeed": 13768
+      }
+    ]
   },
   "7603": {
-    "seed": 7749,
-    "duration": 6,
-    "ffxivgId": 54
+    "seedItemId": 7749,
+    "duration": 144,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 13767,
+        "baseSeed": 7723
+      },
+      {
+        "adjacentSeed": 7722,
+        "baseSeed": 13767
+      },
+      {
+        "adjacentSeed": 7722,
+        "baseSeed": 7724
+      }
+    ]
   },
   "7604": {
-    "seed": 7750,
-    "duration": 6,
-    "ffxivgId": 29
+    "seedItemId": 7750,
+    "duration": 144,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 13765,
+        "baseSeed": 7721
+      },
+      {
+        "adjacentSeed": 13765,
+        "baseSeed": 7723
+      },
+      {
+        "adjacentSeed": 13765,
+        "baseSeed": 7741
+      }
+    ]
   },
   "7768": {
-    "seed": 7745,
-    "duration": 6,
-    "ffxivgId": 40
+    "seedItemId": 7745,
+    "duration": 144,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7740,
+        "baseSeed": 7746
+      }
+    ]
   },
   "7769": {
-    "seed": 7746,
-    "duration": 6,
-    "ffxivgId": 34
+    "seedItemId": 7746,
+    "duration": 144,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 13768,
+        "baseSeed": 7740
+      },
+      {
+        "adjacentSeed": 7743,
+        "baseSeed": 7741
+      },
+      {
+        "adjacentSeed": 7723,
+        "baseSeed": 13768
+      }
+    ]
   },
   "7770": {
-    "seed": 7747,
-    "duration": 6,
-    "ffxivgId": 41
+    "seedItemId": 7747,
+    "duration": 144,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7743,
+        "baseSeed": 13768
+      },
+      {
+        "adjacentSeed": 7743,
+        "baseSeed": 7744
+      },
+      {
+        "adjacentSeed": 7753,
+        "baseSeed": 7743
+      }
+    ]
   },
   "7773": {
-    "seed": 7754,
-    "duration": 7,
-    "ffxivgId": 48
+    "seedItemId": 7754,
+    "duration": 168,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 13765,
+        "baseSeed": 7733
+      },
+      {
+        "adjacentSeed": 7750,
+        "baseSeed": 7734
+      },
+      {
+        "adjacentSeed": 7754,
+        "baseSeed": 7734
+      }
+    ]
   },
   "7774": {
-    "seed": 7755,
-    "duration": 7,
-    "ffxivgId": 42
+    "seedItemId": 7755,
+    "duration": 168,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 8167,
+        "baseSeed": 7743
+      },
+      {
+        "adjacentSeed": 7743,
+        "baseSeed": 7745
+      },
+      {
+        "adjacentSeed": 7748,
+        "baseSeed": 13768
+      }
+    ]
   },
   "7775": {
-    "seed": 7756,
-    "duration": 7,
-    "ffxivgId": 49
+    "seedItemId": 7756,
+    "duration": 168,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7734,
+        "baseSeed": 13765
+      },
+      {
+        "adjacentSeed": 7750,
+        "baseSeed": 7751
+      },
+      {
+        "adjacentSeed": 7754,
+        "baseSeed": 7751
+      }
+    ]
   },
   "7776": {
-    "seed": 7757,
-    "duration": 7,
-    "ffxivgId": 43
+    "seedItemId": 7757,
+    "duration": 168,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 8167,
+        "baseSeed": 13768
+      },
+      {
+        "adjacentSeed": 7745,
+        "baseSeed": 13768
+      },
+      {
+        "adjacentSeed": 7747,
+        "baseSeed": 13768
+      }
+    ]
   },
   "7894": {
-    "seed": 8169,
-    "duration": 5,
-    "ffxivgId": 31
+    "seedItemId": 8169,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 8182,
+        "baseSeed": 7740
+      },
+      {
+        "adjacentSeed": 8174,
+        "baseSeed": 7740
+      },
+      {
+        "adjacentSeed": 8175,
+        "baseSeed": 7740
+      }
+    ]
   },
   "7895": {
-    "seed": 8170,
-    "duration": 5,
-    "ffxivgId": 38
+    "seedItemId": 8170,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 13768,
+        "baseSeed": 8179
+      },
+      {
+        "adjacentSeed": 8182,
+        "baseSeed": 13768
+      },
+      {
+        "adjacentSeed": 8174,
+        "baseSeed": 13768
+      }
+    ]
   },
   "7897": {
-    "seed": 8171,
-    "duration": 5,
-    "ffxivgId": 32
+    "seedItemId": 8171,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 8174,
+        "baseSeed": 7723
+      },
+      {
+        "adjacentSeed": 8177,
+        "baseSeed": 7723
+      },
+      {
+        "adjacentSeed": 8178,
+        "baseSeed": 7723
+      }
+    ]
   },
   "7898": {
-    "seed": 8172,
-    "duration": 5,
-    "ffxivgId": 39
+    "seedItemId": 8172,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 8174,
+        "baseSeed": 7722
+      },
+      {
+        "adjacentSeed": 8174,
+        "baseSeed": 7742
+      },
+      {
+        "adjacentSeed": 8177,
+        "baseSeed": 7742
+      }
+    ]
   },
   "7900": {
-    "seed": 8173,
-    "duration": 5,
-    "ffxivgId": 33
+    "seedItemId": 8173,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 8174,
+        "baseSeed": 7721
+      },
+      {
+        "adjacentSeed": 8177,
+        "baseSeed": 7721
+      },
+      {
+        "adjacentSeed": 8178,
+        "baseSeed": 7721
+      }
+    ]
   },
   "8023": {
-    "seed": 8167,
-    "duration": 6,
-    "ffxivgId": 37
+    "seedItemId": 8167,
+    "duration": 144,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 13768,
+        "baseSeed": 7744
+      },
+      {
+        "adjacentSeed": 7753,
+        "baseSeed": 13768
+      },
+      {
+        "adjacentSeed": 8167,
+        "baseSeed": 7742
+      }
+    ]
   },
   "8157": {
-    "seed": 8174,
-    "duration": 2,
-    "ffxivgId": 58
+    "seedItemId": 8174,
+    "duration": 48,
+    "crossBreeds": []
   },
   "8158": {
-    "seed": 8175,
-    "duration": 2,
-    "ffxivgId": 59
+    "seedItemId": 8175,
+    "duration": 48,
+    "crossBreeds": []
   },
   "8159": {
-    "seed": 8176,
-    "duration": 2,
-    "ffxivgId": 60
+    "seedItemId": 8176,
+    "duration": 48,
+    "crossBreeds": []
   },
   "8160": {
-    "seed": 8177,
-    "duration": 2,
-    "ffxivgId": 61
+    "seedItemId": 8177,
+    "duration": 48,
+    "crossBreeds": []
   },
   "8161": {
-    "seed": 8178,
-    "duration": 2,
-    "ffxivgId": 62
+    "seedItemId": 8178,
+    "duration": 48,
+    "crossBreeds": []
   },
   "8162": {
-    "seed": 8179,
-    "duration": 2,
-    "ffxivgId": 63
+    "seedItemId": 8179,
+    "duration": 48,
+    "crossBreeds": []
   },
   "8163": {
-    "seed": 8180,
-    "duration": 2,
-    "ffxivgId": 64
+    "seedItemId": 8180,
+    "duration": 48,
+    "crossBreeds": []
   },
   "8165": {
-    "seed": 8182,
-    "duration": 3,
-    "ffxivgId": 51
+    "seedItemId": 8182,
+    "duration": 72,
+    "crossBreeds": []
   },
   "8166": {
-    "seed": 8183,
-    "duration": 10,
-    "ffxivgId": 46
+    "seedItemId": 8183,
+    "duration": 240,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 8170,
+        "baseSeed": 7750
+      },
+      {
+        "adjacentSeed": 8172,
+        "baseSeed": 7750
+      },
+      {
+        "adjacentSeed": 7750,
+        "baseSeed": 8169
+      }
+    ]
   },
   "8192": {
-    "seed": 8184,
-    "duration": 7,
-    "ffxivgId": 52
+    "seedItemId": 8184,
+    "duration": 168,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7743,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 8174,
+        "baseSeed": 7743
+      },
+      {
+        "adjacentSeed": 8178,
+        "baseSeed": 7743
+      }
+    ]
   },
   "8193": {
-    "seed": 8185,
-    "duration": 7,
-    "ffxivgId": 47
+    "seedItemId": 8185,
+    "duration": 168,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7748,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 7722,
+        "baseSeed": 7743
+      },
+      {
+        "adjacentSeed": 13768,
+        "baseSeed": 7730
+      }
+    ]
   },
   "8194": {
-    "seed": 8186,
-    "duration": 7,
-    "ffxivgId": 44
+    "seedItemId": 8186,
+    "duration": 168,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7743,
+        "baseSeed": 7736
+      },
+      {
+        "adjacentSeed": 7743,
+        "baseSeed": 7717
+      },
+      {
+        "adjacentSeed": 7743,
+        "baseSeed": 7737
+      }
+    ]
   },
   "8195": {
-    "seed": 8187,
-    "duration": 7,
-    "ffxivgId": 50
+    "seedItemId": 8187,
+    "duration": 168,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 8167,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 7745,
+        "baseSeed": 17547
+      },
+      {
+        "adjacentSeed": 7747,
+        "baseSeed": 17547
+      }
+    ]
   },
   "8196": {
-    "seed": 8188,
-    "duration": 7,
-    "ffxivgId": 45
+    "seedItemId": 8188,
+    "duration": 168,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7747,
+        "baseSeed": 7743
+      }
+    ]
   },
   "12877": {
-    "seed": 13767,
-    "duration": 5,
-    "ffxivgId": 68
+    "seedItemId": 13767,
+    "duration": 120,
+    "crossBreeds": []
   },
   "12882": {
-    "seed": 13768,
-    "duration": 5,
-    "ffxivgId": 69
+    "seedItemId": 13768,
+    "duration": 120,
+    "crossBreeds": []
   },
   "12884": {
-    "seed": 13766,
-    "duration": 5,
-    "ffxivgId": 67
+    "seedItemId": 13766,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 20794,
+        "baseSeed": 7723
+      },
+      {
+        "adjacentSeed": 13767,
+        "baseSeed": 7749
+      },
+      {
+        "adjacentSeed": 7724,
+        "baseSeed": 7749
+      }
+    ]
   },
   "12896": {
-    "seed": 13765,
-    "duration": 5,
-    "ffxivgId": 66
+    "seedItemId": 13765,
+    "duration": 120,
+    "crossBreeds": []
   },
   "13754": {
-    "seed": 13755,
-    "duration": 7,
-    "ffxivgId": 65
+    "seedItemId": 13755,
+    "duration": 168,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7756,
+        "baseSeed": 13766
+      }
+    ]
   },
   "14071": {
-    "seed": 14007,
-    "duration": 1,
-    "ffxivgId": 72
+    "seedItemId": 14007,
+    "duration": 24,
+    "crossBreeds": []
   },
   "15857": {
-    "seed": 15855,
+    "seedItemId": 15855,
     "duration": 22,
-    "ffxivgId": 70
+    "crossBreeds": []
   },
   "15858": {
-    "seed": 15856,
+    "seedItemId": 15856,
     "duration": 12,
-    "ffxivgId": 71
+    "crossBreeds": []
   },
   "16022": {
-    "seed": 16016,
-    "duration": 1,
-    "ffxivgId": 79
+    "seedItemId": 16016,
+    "duration": 24,
+    "crossBreeds": []
   },
   "17048": {
-    "seed": 17546,
-    "duration": 1,
-    "ffxivgId": 81
+    "seedItemId": 17546,
+    "duration": 24,
+    "crossBreeds": []
   },
   "17548": {
-    "seed": 17547,
-    "duration": 1,
-    "ffxivgId": 80
+    "seedItemId": 17547,
+    "duration": 24,
+    "crossBreeds": []
   },
   "17999": {
-    "seed": 17996,
-    "duration": 1,
-    "ffxivgId": 82
+    "seedItemId": 17996,
+    "duration": 24,
+    "crossBreeds": []
   },
   "20791": {
-    "seed": 20792,
-    "duration": 5,
-    "ffxivgId": 84
+    "seedItemId": 20792,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 7724,
+        "baseSeed": 13768
+      }
+    ]
   },
   "20793": {
-    "seed": 20794,
-    "duration": 5,
-    "ffxivgId": 85
+    "seedItemId": 20794,
+    "duration": 120,
+    "crossBreeds": [
+      {
+        "adjacentSeed": 13765,
+        "baseSeed": 13755
+      }
+    ]
   },
   "20796": {
-    "seed": 20795,
-    "duration": 1,
-    "ffxivgId": 83
+    "seedItemId": 20795,
+    "duration": 24,
+    "crossBreeds": []
   },
   "21876": {
-    "seed": 21875,
-    "duration": 1,
-    "ffxivgId": 86
+    "seedItemId": 21875,
+    "duration": 24,
+    "crossBreeds": []
   },
   "22590": {
-    "seed": 22589,
-    "duration": 1,
-    "ffxivgId": 87
+    "seedItemId": 22589,
+    "duration": 24,
+    "crossBreeds": []
   },
   "24166": {
-    "seed": 24165,
-    "duration": 1,
-    "ffxivgId": 88
+    "seedItemId": 24165,
+    "duration": 24,
+    "crossBreeds": []
   },
   "24542": {
-    "seed": 24541,
-    "duration": 1,
-    "ffxivgId": 89
+    "seedItemId": 24541,
+    "duration": 24,
+    "crossBreeds": []
   },
   "27321": {
-    "seed": 27320,
-    "duration": 1,
-    "ffxivgId": 90
+    "seedItemId": 27320,
+    "duration": 24,
+    "crossBreeds": []
   },
   "28176": {
-    "seed": 28175,
-    "duration": 1,
-    "ffxivgId": 91
+    "seedItemId": 28175,
+    "duration": 24,
+    "crossBreeds": []
   },
   "28948": {
-    "seed": 28947,
-    "duration": 1,
-    "ffxivgId": 92
+    "seedItemId": 28947,
+    "duration": 24,
+    "crossBreeds": []
   },
   "30371": {
-    "seed": 30365,
-    "duration": 1,
-    "ffxivgId": 94
+    "seedItemId": 30365,
+    "duration": 24,
+    "crossBreeds": []
   },
   "30873": {
-    "seed": 30364,
-    "duration": 7,
-    "ffxivgId": 93
+    "seedItemId": 30364,
+    "duration": 168,
+    "crossBreeds": []
   },
   "32813": {
-    "seed": 32812,
-    "duration": 1,
-    "ffxivgId": 95
+    "seedItemId": 32812,
+    "duration": 24,
+    "crossBreeds": []
   },
   "33307": {
-    "seed": 33306,
-    "duration": 1,
-    "ffxivgId": 96
+    "seedItemId": 33306,
+    "duration": 24,
+    "crossBreeds": []
   },
   "35745": {
-    "seed": 35744,
-    "duration": 1,
-    "ffxivgId": 97
+    "seedItemId": 35744,
+    "duration": 24,
+    "crossBreeds": []
   },
   "37303": {
-    "seed": 37302,
-    "duration": 1,
-    "ffxivgId": 98
+    "seedItemId": 37302,
+    "duration": 24,
+    "crossBreeds": []
   },
   "38660": {
-    "seed": 38659,
-    "duration": 1,
-    "ffxivgId": 99
+    "seedItemId": 38659,
+    "duration": 24,
+    "crossBreeds": []
   },
   "39461": {
-    "seed": 39460,
-    "duration": 1,
-    "ffxivgId": 100
+    "seedItemId": 39460,
+    "duration": 24,
+    "crossBreeds": []
   }
 }

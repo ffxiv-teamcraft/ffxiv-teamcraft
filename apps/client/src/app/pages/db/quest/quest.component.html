@@ -216,7 +216,7 @@
                   </ng-template>
                   <ng-template #rewardTitle>
                     <div *ngIf="reward.type === 'item'" [appItemRarity]="reward.id">
-                      {{reward.id | itemName | i18n}} x{{reward.amount}}
+                      <app-i18n-name [id]="reward.id" content="items"></app-i18n-name> x{{reward.amount}}
                     </div>
                     <div *ngIf="reward.type === 'exp'">
                       {{'DB.Experience_points' | translate}} x{{reward.amount}}

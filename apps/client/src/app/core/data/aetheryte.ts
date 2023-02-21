@@ -1,5 +1,5 @@
-import { Vector3 } from '../tools/vector3';
-import { Vector2 } from '../tools/vector2';
+import { Vector2, Vector3 } from "@ffxiv-teamcraft/types";
+
 
 export interface Aetheryte extends Vector3 {
   id: number;

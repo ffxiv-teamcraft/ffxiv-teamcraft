@@ -38,7 +38,7 @@
                     <nz-avatar [nzText]="alarm.name?alarm.name[0] + alarm.name[1]:'?'"></nz-avatar>
                   </ng-template>
                   <div fxLayout="column" fxLayoutAlign="center flex-start">
-                    <div>{{alarm.itemId | itemName | i18n}}</div>
+                    <div><app-i18n-name [id]="alarm.itemId" content="items"></app-i18n-name></div>
                     <div>{{alarm.mapId | mapName | i18n}} <span *ngIf="alarm.itemId">- {{alarm.zoneId | i18nRow:'places' | i18n}}</span></div>
                   </div>
                 </div>

@@ -10,12 +10,12 @@ import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
-import { Vector2 } from '../../../core/tools/vector2';
+import { Vector2 } from '@ffxiv-teamcraft/types';
 import { mapIds } from '../../../core/data/sources/map-ids';
 import { SettingsService } from '../../../modules/settings/settings.service';
-import { monsterDrops } from '../../../core/data/sources/monster-drops';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
+import { monsterDrops } from '@ffxiv-teamcraft/data/handmade/monster-drops';
 
 @Component({
   selector: 'app-mob',

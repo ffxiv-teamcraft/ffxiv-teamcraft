@@ -11,7 +11,7 @@ import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { XivapiPatch } from '../../../core/data/model/xivapi-patch';
+import { XivapiPatch } from '@ffxiv-teamcraft/types';
 
 @Component({
   selector: 'app-patch',

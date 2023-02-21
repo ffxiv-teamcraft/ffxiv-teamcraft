@@ -9679,7 +9679,7 @@
       "spot": 117,
       "hookset": 1,
       "tug": 0,
-      "bait": 29717,
+      "bait": 12711,
       "snagging": false,
       "minGathering": 0
     }
@@ -20011,8 +20011,7 @@
         4
       ],
       "weathersFrom": [
-        3,
-        4
+        3
       ],
       "snagging": false,
       "minGathering": 1950

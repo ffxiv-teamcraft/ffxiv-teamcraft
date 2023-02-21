@@ -19,6 +19,7 @@ import { EventHandlerType } from './event-handler-type';
 import { NzNotificationRef, NzNotificationService } from 'ng-zorro-antd/notification';
 import { TranslateService } from '@ngx-translate/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { PlatformService } from '../tools/platform.service';
 
 @Injectable({
   providedIn: 'root'
@@ -33,11 +34,14 @@ export class PacketCaptureTrackerService {
               private settings: SettingsService, private lazyData: LazyDataFacade,
               private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade,
               private nzNotification: NzNotificationService, private translate: TranslateService,
-              private router: Router) {
+              private router: Router, private platformService: PlatformService) {
   }
 
 
   public init(): void {
+    if (!this.platformService.isDesktop()) {
+      return;
+    }
     const currentPage$ = this.router.events.pipe(
       filter(e => e instanceof NavigationEnd),
       map((e: NavigationEnd) => e.urlAfterRedirects)

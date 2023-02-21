@@ -67,7 +67,7 @@
                 <ng-template #title>
                   <div *ngIf="element.type === 'node'; else baseTitle" fxLayout="row" fxLayoutGap="5px">
                     <div *ngFor="let item of element.additionalData; let last = last" fxLayout="row" fxLayoutGap="5px">
-                      <div>{{item.id | itemName | i18n}} <span *ngIf="item.slot">({{item.slot}})</span></div>
+                      <div><app-i18n-name [id]="item.id" content="items"></app-i18n-name> <span *ngIf="item.slot">({{item.slot}})</span></div>
                       <app-db-button [id]="item.id" type="item"></app-db-button>
                     </div>
                   </div>

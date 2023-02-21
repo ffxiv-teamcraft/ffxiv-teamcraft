@@ -14,4 +14,7 @@ export class FullpageMessageComponent {
 
   @Input()
   subtitle: TemplateRef<any>;
+
+  @Input()
+  disableMobileBreakpoint = false;
 }

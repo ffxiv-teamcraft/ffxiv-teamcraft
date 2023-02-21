@@ -4,7 +4,7 @@ import { Observable, ReplaySubject } from 'rxjs';
 import { MapService } from '../map.service';
 import { switchMap } from 'rxjs/operators';
 import { MapMarker } from '../map-marker';
-import { Vector2 } from '../../../core/tools/vector2';
+import { Vector2 } from '@ffxiv-teamcraft/types';
 
 @Component({
   selector: 'app-map',

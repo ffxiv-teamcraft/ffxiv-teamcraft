@@ -1,28 +1,16 @@
 import { TeamcraftOptimizedComponent } from '../../../core/component/teamcraft-optimized-component';
 import { ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
-import { getItemSource, ListRow } from '../model/list-row';
-import {
-  debounceTime,
-  distinctUntilChanged,
-  filter,
-  first,
-  map,
-  shareReplay,
-  startWith,
-  switchMap,
-  switchMapTo,
-  takeUntil,
-  withLatestFrom
-} from 'rxjs/operators';
-import { DataType } from '../data/data-type';
+import { ListRow } from '../model/list-row';
+import { debounceTime, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, switchMapTo, takeUntil } from 'rxjs/operators';
+import { DataType, getItemSource } from '@ffxiv-teamcraft/types';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { Team } from '../../../model/team/team';
 import { List } from '../model/list';
 import { ListController } from '../list-controller';
 import * as _ from 'lodash';
-import { Alarm } from '../../../core/alarms/alarm';
+import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { ListsFacade } from '../+state/lists.facade';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -48,11 +36,6 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { ListLayout } from '../../../core/layout/list-layout';
 import { MarketboardPopupComponent } from '../../marketboard/marketboard-popup/marketboard-popup.component';
-import { Craft } from '../../../model/garland-tools/craft';
-import { CraftingRotation } from '../../../model/other/crafting-rotation';
-import { freeCompanyActions } from '../../../core/data/sources/free-company-actions';
-import { MacroPopupComponent } from '../../../pages/simulator/components/macro-popup/macro-popup.component';
-import { NumberQuestionPopupComponent } from '../../number-question-popup/number-question-popup/number-question-popup.component';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { CustomItem } from '../../custom-items/model/custom-item';
 import { RelationshipsComponent } from '../../item-details/relationships/relationships.component';
@@ -73,7 +56,7 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
       (<any>item).vendors = vendors ? vendors : null;
       item.masterbooks = getItemSource(item, DataType.MASTERBOOKS);
       if (item.recipeId) {
-        item.sources = item.sources.map(source => {
+        item.sources = (item.sources || []).map(source => {
           if (source.type === DataType.CRAFTED_BY) {
             return {
               ...source,
@@ -226,7 +209,7 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
     debounceTime(10),
     map(([showAllAlarmsSetting, item, showAllAlarmsOverride, etime]) => {
       const showEverything = showAllAlarmsSetting || showAllAlarmsOverride;
-      const alarms = getItemSource<Alarm[]>(item, DataType.ALARMS).sort((a, b) => {
+      const alarms = getItemSource<PersistedAlarm[]>(item, DataType.ALARMS).sort((a, b) => {
         const aDisplay = this.alarmsFacade.createDisplay(a, etime);
         const bDisplay = this.alarmsFacade.createDisplay(b, etime);
         if (aDisplay.spawned) {
@@ -436,13 +419,13 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
 
   toggleAlarm(display: AlarmDisplay): void {
     if (display.registered) {
-      this.alarmsFacade.deleteAlarm(display.alarm);
+      this.alarmsFacade.deleteAlarm(display.alarm as PersistedAlarm);
     } else {
-      this.alarmsFacade.addAlarms(display.alarm);
+      this.alarmsFacade.addAlarms(display.alarm as PersistedAlarm);
     }
   }
 
-  addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
+  addAlarmWithGroup(alarm: PersistedAlarm, group: AlarmGroup) {
     this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 
@@ -465,7 +448,7 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
         })
       )
       .subscribe(({ itemName, allAlarms }) => {
-        const alarmsToAdd = getItemSource<Alarm[]>(item, DataType.ALARMS).filter(a => {
+        const alarmsToAdd = getItemSource<PersistedAlarm[]>(item, DataType.ALARMS).filter(a => {
           return !allAlarms.some(alarm => {
             return alarm.itemId === a.itemId && alarm.spawns === a.spawns && alarm.zoneId === a.zoneId;
           });
@@ -491,7 +474,7 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
     });
   }
 
-  public trackByAlarm(index: number, alarm: Alarm): string {
+  public trackByAlarm(index: number, alarm: PersistedAlarm): string {
     return alarm.$key;
   }
 

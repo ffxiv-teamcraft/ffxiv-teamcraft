@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { SpearfishingShadowSize } from '../../../core/data/model/spearfishing-shadow-size';
-import { SpearfishingSpeed } from '../../../core/data/model/spearfishing-speed';
+import { SpearfishingShadowSize, SpearfishingSpeed } from '@ffxiv-teamcraft/types';
 import { ItemDetailsPopup } from '../item-details-popup';
 
 @Component({

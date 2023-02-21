@@ -22,8 +22,6 @@ enum AllaganReportSource {
 
 export class AllaganReportsExtractor extends AbstractExtractor {
 
-  private updatedItemIds = [];
-
   private identity = (row) => {
     return row !== undefined && row !== null && (!Array.isArray(row) || row.length > 0);
   };
@@ -164,8 +162,6 @@ export class AllaganReportsExtractor extends AbstractExtractor {
             this.persistToJsonAsset('fate-sources', fateSources);
             this.persistToJsonAsset('mogstation-sources', mogstation);
             this.persistToJsonAsset('gardening-sources', gardening);
-
-            this.persistToTypescript('updated-items', 'updatedItemIds', this.updatedItemIds);
           }),
           switchMap(() => {
             return this.gubalRequest(`
@@ -192,17 +188,14 @@ export class AllaganReportsExtractor extends AbstractExtractor {
       }, {});
   }
 
-  private addItemAsSource(targetObject: Object, targetItem: number, sourceDetails: any, isObject: boolean, isNew: boolean): void {
+  private addItemAsSource(targetObject: any, targetItem: number, sourceDetails: any, isObject: boolean, isNew: boolean): void {
     if (isObject) {
       if (targetObject[targetItem] !== undefined) {
         // console.warn(`Overriding source for ${targetItem} with ${JSON.stringify(sourceDetails)}`);
       }
       targetObject[targetItem] = sourceDetails;
-    } else if (!!sourceDetails) {
+    } else if (sourceDetails) {
       targetObject[targetItem] = uniq([...(targetObject[targetItem] || []), sourceDetails]);
-    }
-    if (isNew) {
-      this.updatedItemIds.push(targetItem);
     }
   }
 

@@ -1,4 +1,4 @@
-import { MonsterLocation } from '../../../core/data/monster-location';
+import { MonsterLocation } from "@ffxiv-teamcraft/types";
 
 export interface Drop {
   id: number;

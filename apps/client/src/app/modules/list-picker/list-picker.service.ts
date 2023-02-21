@@ -2,15 +2,16 @@ import { Injectable } from '@angular/core';
 import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { List } from '../list/model/list';
-import { combineLatest, concat, Observable, of, Subject } from 'rxjs';
+import { combineLatest, concat, Observable, of, race, Subject } from 'rxjs';
 import { ListPickerDrawerComponent } from './list-picker-drawer/list-picker-drawer.component';
-import { filter, first, map, mapTo, mergeMap, switchMap, tap } from 'rxjs/operators';
+import { delay, filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { ListsFacade } from '../list/+state/lists.facade';
 import { ListRow } from '../list/model/list-row';
 import { ListManagerService } from '../list/list-manager.service';
 import { ProgressPopupService } from '../progress-popup/progress-popup.service';
 import { Router } from '@angular/router';
+import { ListAdditionRecord } from './list-addition-record';
 
 @Injectable({
   providedIn: 'root'
@@ -50,7 +51,7 @@ export class ListPickerService {
       );
   }
 
-  addToList(...items: Pick<ListRow, 'id' | 'recipeId' | 'amount'>[]): Observable<List> {
+  addToList(...items: ListAdditionRecord[]): Observable<List> {
     // Making the observable optional, this way you can just call it and ignore it,
     // or add your own logic once it's done.
     const done$ = new Subject<List>();
@@ -61,7 +62,8 @@ export class ListPickerService {
             itemId: +item.id,
             list: list,
             recipeId: item.recipeId || '',
-            amount: item.amount
+            amount: item.amount,
+            collectable: item.collectable
           });
         });
         let operation$: Observable<any>;
@@ -91,7 +93,7 @@ export class ListPickerService {
       switchMap(list => {
         done$.next(list);
         done$.complete();
-        return this.notificationService.success(
+        const ref = this.notificationService.success(
           this.translate.instant('Success'),
           this.translate.instant('Recipes_Added', { listname: list.name, itemcount: items.length }),
           {
@@ -99,12 +101,18 @@ export class ListPickerService {
               cursor: 'pointer'
             }
           }
-        ).onClick.pipe(
-          mapTo(list)
+        );
+        ref.onClose.subscribe(() => console.log('WTF CLOSE'));
+        return race(
+          ref.onClick.pipe(delay(100),tap(() => console.log('click')),map(() => list)),
+          ref.onClose.pipe(tap(() => console.log('close')),map(() => false))
         );
       })
     ).subscribe((list) => {
-      this.router.navigate(['/list', list.$key]);
+      console.log(list);
+      if (list) {
+        this.router.navigate(['/list', list.$key]);
+      }
     });
     return done$;
   }

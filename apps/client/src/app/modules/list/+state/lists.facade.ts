@@ -274,7 +274,8 @@ export class ListsFacade {
         list.offline = res.offline;
         fathom.trackGoal('AYCCVISE', 0);
         return list;
-      })
+      }),
+      first()
     );
   }
 
@@ -536,6 +537,10 @@ export class ListsFacade {
       tap(l => this.updateList(l))
     );
 
+  }
+
+  createId(): string {
+    return this.listsService.newId();
   }
 
   addModificationsHistoryEntry(entry: ModificationEntry): void {

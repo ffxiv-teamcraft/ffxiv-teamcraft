@@ -13,6 +13,8 @@ import { ListController } from '../../../../modules/list/list-controller';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Firestore, QueryConstraint, Timestamp, where } from '@angular/fire/firestore';
 import structuredClone from '@ungap/structured-clone';
+import { getExtract } from '@ffxiv-teamcraft/types';
+import { uniq } from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -82,19 +84,19 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> {
   }
 
   public completeListData(list: List): Observable<List> {
-    return this.lazyData.getEntry('extracts').pipe(
+    return this.lazyData.getRows('extracts', ...uniq([...list.items.map(i => i.id), ...list.finalItems.map(i => i.id)])).pipe(
       map((extracts) => {
         list.items = list.items.map(item => {
           if (!(item.requires instanceof Array)) {
             item.requires = [];
           }
-          return Object.assign(item, extracts[item.id]);
+          return Object.assign(item, getExtract(extracts, item.id));
         });
         list.finalItems = list.finalItems.map(item => {
           if (!(item.requires instanceof Array)) {
             item.requires = [];
           }
-          return Object.assign(item, extracts[item.id]);
+          return Object.assign(item, getExtract(extracts, item.id));
         });
         ListController.afterDeserialized(list);
         return list;

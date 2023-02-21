@@ -1,22 +1,14 @@
-import { getCraftByPriority, getItemSource, ListRow } from './model/list-row';
-import { DataType } from './data/data-type';
+import { getCraftByPriority, ListRow } from './model/list-row';
+import { DataType, Extracts, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
 import { MathTools } from '../../tools/math-tools';
 import * as semver from 'semver';
-import { combineLatest, concat, EMPTY, Observable, of, Subject } from 'rxjs';
-import { bufferCount, debounceTime, expand, map, skipUntil, switchMap } from 'rxjs/operators';
-import { CustomItem } from '../custom-items/model/custom-item';
 import { CraftAddition } from './model/craft-addition';
-import { ListManagerService } from './list-manager.service';
-import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { TeamcraftGearsetStats } from '../../model/user/teamcraft-gearset-stats';
 import { CraftedBy } from './model/crafted-by';
-import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
-import { DataService } from '../../core/api/data.service';
-import { Ingredient } from '../../model/garland-tools/ingredient';
 import { List } from './model/list';
-import { Craft } from '@ffxiv-teamcraft/simulator';
 import { syncHqFlags } from '../../core/data/sources/sync-hq-flags';
 import { Timestamp } from '@angular/fire/firestore';
+import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 
 
 declare const fathom: any;
@@ -24,10 +16,8 @@ declare const gtag: (...args: any[]) => any;
 
 interface CraftAdditionParams {
   _additions: CraftAddition[];
-  customItems: CustomItem[];
-  dataService: DataService;
-  listManager: ListManagerService;
-  lazyDataFacade: LazyDataFacade;
+  extracts: Extracts;
+  recipes: LazyData['recipes'];
   gearsets?: TeamcraftGearsetStats[];
   recipeId?: string;
 }
@@ -120,7 +110,8 @@ export class ListController {
           done: 0,
           used: 0,
           yield: 1,
-          collectable: data.collectable
+          collectable: data.collectable,
+          sources: []
         });
       });
     }
@@ -418,33 +409,24 @@ export class ListController {
 
   public static addCraft(list: List, {
     _additions,
-    listManager,
-    lazyDataFacade,
+    extracts,
+    recipes,
     recipeId,
     gearsets
-  }: CraftAdditionParams): Observable<List> {
-    const done$ = new Subject<void>();
-    return of(_additions).pipe(
-      expand((additions, i) => {
-        if (additions.length === 0) {
-          done$.next();
-          return EMPTY;
-        }
-        return concat(
-          ...additions.map(addition => {
-            return ListController.addNormalCraft(list, addition, listManager, lazyDataFacade, gearsets, recipeId, i === 0);
-          })
-        ).pipe(
-          bufferCount(additions.length),
-          map(res => [].concat.apply([], res.filter(r => r !== null)))
-        );
-      }),
-      debounceTime(100),
-      skipUntil(done$),
-      map(() => {
-        return ListController.updateEtag(list);
-      })
-    );
+  }: CraftAdditionParams, i = 0): List {
+    _additions.forEach(addition => {
+      const next = ListController.addNormalCraft(list, addition, extracts, recipes, gearsets, recipeId, i === 0);
+      if (next.length > 0) {
+        this.addCraft(list, {
+          _additions: next,
+          extracts,
+          recipes,
+          gearsets,
+          recipeId
+        }, i + 1);
+      }
+    });
+    return list;
   }
 
   public static isLarge(list: List): boolean {
@@ -483,7 +465,8 @@ export class ListController {
     }
   }
 
-  private static addNormalCraft(list: List, addition: CraftAddition, listManager: ListManagerService, lazyDataFacade: LazyDataFacade, gearsets: TeamcraftGearsetStats[], recipeId: string, finalItem: boolean): Observable<CraftAddition[]> {
+  private static addNormalCraft(list: List, addition: CraftAddition, extracts: Extracts, recipes: LazyData['recipes'],
+                                gearsets: TeamcraftGearsetStats[], recipeId: string, finalItem: boolean): CraftAddition[] {
     let craft: CraftedBy;
     const crafts = getItemSource(addition.item, DataType.CRAFTED_BY);
     if (recipeId !== undefined) {
@@ -491,98 +474,85 @@ export class ListController {
     } else {
       craft = getCraftByPriority(crafts, gearsets);
     }
-    const ingredients$ = craft ? lazyDataFacade.getRecipes().pipe(map(recipes => recipes.find(r => r.id.toString() === craft.id.toString()).ingredients as Ingredient[])) : of(getItemSource(addition.item, DataType.REQUIREMENTS));
+    const ingredients = craft ? recipes.find(r => r.id.toString() === craft.id.toString()).ingredients : getItemSource(addition.item, DataType.REQUIREMENTS);
 
-    return ingredients$.pipe(
-      switchMap(ingredients => {
-        if (ListController.shouldIgnoreRequirements(list, finalItem ? 'finalItems' : 'items', addition.item.id)) {
-          return of([]);
+    if (ListController.shouldIgnoreRequirements(list, finalItem ? 'finalItems' : 'items', addition.item.id)) {
+      return [];
+    }
+    return ingredients.map(element => {
+      const elementDetails = getExtract(extracts, +element.id);
+      const nextIteration: CraftAddition[] = [];
+      if (element.id < 20 && element.id > 1) {
+        ListController.add(list, list.items, {
+          id: +element.id,
+          amount: element.amount * addition.amount,
+          done: 0,
+          used: 0,
+          yield: 1,
+          collectable: false,
+          sources: elementDetails.sources
+        });
+        return [];
+      } else {
+        const craftedBy = getItemSource(elementDetails, DataType.CRAFTED_BY);
+        const craftToAdd = getCraftByPriority(craftedBy, gearsets);
+        if (elementDetails && getItemSource(elementDetails, DataType.CRAFTED_BY).length > 0) {
+          const yields = craftToAdd.yield || 1;
+          const added = ListController.add(list, list.items, {
+            id: elementDetails.id,
+            amount: element.amount * addition.amount,
+            requires: recipes.find((r) => (r as any).result.toString() === element.id.toString()).ingredients,
+            done: 0,
+            used: 0,
+            yield: yields,
+            collectable: false,
+            sources: elementDetails.sources
+          });
+          nextIteration.push({
+            item: elementDetails,
+            amount: added
+          });
+        } else {
+          const rowToAdd: Partial<ListRow> = {
+            id: elementDetails.id,
+            amount: element.amount * addition.amount,
+            done: 0,
+            used: 0,
+            yield: 1,
+            sources: elementDetails.sources
+          };
+          // Handle possible additional requirements
+          const requirements = getItemSource(elementDetails, DataType.REQUIREMENTS);
+          if (requirements.length > 0) {
+            rowToAdd.requires = requirements;
+            const reqAmount = element.amount * addition.amount;
+            requirements.forEach(req => {
+              const reqDetails = getExtract(extracts, +req.id);
+              const reqRecipeId = getItemSource(reqDetails, DataType.CRAFTED_BY)[0]?.id;
+              ListController.add(list, list.items, {
+                id: +req.id,
+                amount: Math.ceil(reqAmount / req.amount) * req.amount,
+                done: 0,
+                used: 0,
+                yield: 1,
+                requires: reqRecipeId ? recipes.find((r) => (r as any).id.toString() === reqRecipeId.toString()).ingredients : getItemSource(reqDetails, DataType.REQUIREMENTS),
+                collectable: false,
+                sources: elementDetails.sources
+              });
+              nextIteration.push({
+                item: getExtract(extracts, +req.id),
+                amount: Math.ceil(reqAmount / req.amount) * req.amount
+              });
+            });
+          }
+          ListController.add(list, list.items, rowToAdd as ListRow);
         }
-        return safeCombineLatest(ingredients.map(element => {
-          return combineLatest([
-            lazyDataFacade.getEntry('extracts'),
-            lazyDataFacade.getRecipes() as unknown as Observable<Craft[]>
-          ]).pipe(
-            map(([extracts, recipes]) => {
-              const elementDetails = extracts[element.id];
-              const nextIteration: CraftAddition[] = [];
-              if (element.id < 20 && element.id > 1) {
-                ListController.add(list, list.items, {
-                  id: +element.id,
-                  amount: element.amount * addition.amount,
-                  done: 0,
-                  used: 0,
-                  yield: 1,
-                  collectable: false
-                });
-                listManager.addDetails(list);
-                return [];
-              } else {
-                const craftedBy = getItemSource(elementDetails, DataType.CRAFTED_BY);
-                const craftToAdd = getCraftByPriority(craftedBy, gearsets);
-                if (elementDetails && getItemSource(elementDetails, DataType.CRAFTED_BY).length > 0) {
-                  const yields = craftToAdd.yield || 1;
-                  const added = ListController.add(list, list.items, {
-                    id: elementDetails.id,
-                    icon: elementDetails.icon,
-                    amount: element.amount * addition.amount,
-                    requires: recipes.find((r) => (r as any).result.toString() === element.id.toString()).ingredients,
-                    done: 0,
-                    used: 0,
-                    yield: yields,
-                    collectable: false
-                  });
-                  nextIteration.push({
-                    item: elementDetails,
-                    amount: added
-                  });
-                } else {
-                  const rowToAdd: Partial<ListRow> = {
-                    id: elementDetails.id,
-                    icon: elementDetails.icon,
-                    amount: element.amount * addition.amount,
-                    done: 0,
-                    used: 0,
-                    yield: 1
-                  };
-                  // Handle possible additional requirements
-                  const requirements = getItemSource(elementDetails, DataType.REQUIREMENTS);
-                  if (requirements.length > 0) {
-                    rowToAdd.requires = requirements;
-                    const reqAmount = element.amount * addition.amount;
-                    requirements.forEach(req => {
-                      const reqDetails = extracts[+req.id];
-                      const reqRecipeId = getItemSource(reqDetails, DataType.CRAFTED_BY)[0]?.id;
-                      ListController.add(list, list.items, {
-                        id: +req.id,
-                        amount: Math.ceil(reqAmount / req.amount) * req.amount,
-                        done: 0,
-                        used: 0,
-                        yield: 1,
-                        requires: reqRecipeId ? recipes.find((r) => (r as any).id.toString() === reqRecipeId.toString()).ingredients : getItemSource(reqDetails, DataType.REQUIREMENTS),
-                        collectable: false
-                      });
-                      nextIteration.push({
-                        item: extracts[+req.id],
-                        amount: Math.ceil(reqAmount / req.amount) * req.amount
-                      });
-                    });
-                  }
-                  ListController.add(list, list.items, rowToAdd as ListRow);
-                }
-                listManager.addDetails(list);
-              }
-              return nextIteration;
-            })
-          );
-        })).pipe(
-          map(nextIteration => nextIteration.flat())
-        );
-      })
-    );
+        return nextIteration;
+      }
+    }).flat();
   }
 
-  private static add(list: List, array: ListRow[], data: ListRow, recipe = false): number {
+  public static add(list: List, array: ListRow[], data: ListRow, recipe = false): number {
     let previousAmount = 0;
     let row = array.find(r => {
       return (r.id === data.id && r.recipeId === data.recipeId) || (r.$key !== undefined && r.$key === data.$key);

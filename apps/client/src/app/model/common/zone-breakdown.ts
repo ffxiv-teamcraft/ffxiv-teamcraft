@@ -1,14 +1,14 @@
 import { ZoneBreakdownRow } from './zone-breakdown-row';
-import { getItemSource, ListRow } from '../../modules/list/model/list-row';
+import { ListRow } from '../../modules/list/model/list-row';
 import { tpWindowEntries } from '../../core/data/sources/tp-window-entries';
 import { LayoutRowFilter } from '../../core/layout/layout-row-filter';
-import { DataType } from '../../modules/list/data/data-type';
+import { DataType, getItemSource } from '@ffxiv-teamcraft/types';
 import { GatheredBy } from '../../modules/list/model/gathered-by';
 import { Drop } from '../../modules/list/model/drop';
-import { Alarm } from '../../core/alarms/alarm';
+import { PersistedAlarm } from '../../core/alarms/persisted-alarm';
 import { Vendor } from '../../modules/list/model/vendor';
 import { TradeSource } from '../../modules/list/model/trade-source';
-import { Vector2 } from '../../core/tools/vector2';
+import { Vector2 } from '@ffxiv-teamcraft/types';
 import { mapIds } from '../../core/data/sources/map-ids';
 
 export class ZoneBreakdown {
@@ -58,7 +58,7 @@ export class ZoneBreakdown {
           this.addToBreakdown(drop.zoneid, drop.mapid, row, hideZoneDuplicates, drop.position);
         });
       } else if (getItemSource(row, DataType.ALARMS).length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_TIMED, LayoutRowFilter.IS_REDUCTION)) {
-        getItemSource<Alarm[]>(row, DataType.ALARMS).forEach(alarm => {
+        getItemSource<PersistedAlarm[]>(row, DataType.ALARMS).forEach(alarm => {
           this.addToBreakdown(alarm.zoneId, alarm.mapId, row, hideZoneDuplicates, alarm.coords);
         });
       } else if (getItemSource(row, DataType.VENDORS).length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.CAN_BE_BOUGHT)) {

@@ -2,9 +2,9 @@ import { combineLatest, merge, Observable } from 'rxjs';
 import { ofMessageType } from '../rxjs/of-message-type';
 import { filter, first, map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 import { ExplorationResultReporter } from './exploration-result.reporter';
-import { ExplorationType } from '../../model/other/exploration-type';
 import { toIpcData } from '../rxjs/to-ipc-data';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { ExplorationType } from '@ffxiv-teamcraft/types';
 
 export class SubmarineExplorationResultReporter extends ExplorationResultReporter {
 

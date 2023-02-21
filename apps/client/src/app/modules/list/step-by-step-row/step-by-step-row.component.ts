@@ -1,14 +1,14 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
-import { getItemSource, ListRow } from '../model/list-row';
+import { ListRow } from '../model/list-row';
 import { ProcessedListAggregate } from '../../list-aggregate/model/processed-list-aggregate';
 import { combineLatest, Subject } from 'rxjs';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
-import { Alarm } from '../../../core/alarms/alarm';
+import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { debounceTime, distinctUntilChanged, map, shareReplay } from 'rxjs/operators';
-import { DataType } from '../data/data-type';
+import { DataType, getItemSource } from '@ffxiv-teamcraft/types';
 import { observeInput } from '../../../core/rxjs/observe-input';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { ListsFacade } from '../+state/lists.facade';
@@ -65,7 +65,7 @@ export class StepByStepRowComponent {
   ]).pipe(
     debounceTime(10),
     map(([item, etime]) => {
-      const alarms = getItemSource<Alarm[]>(item, DataType.ALARMS).sort((a, b) => {
+      const alarms = getItemSource<PersistedAlarm[]>(item, DataType.ALARMS).sort((a, b) => {
         const aDisplay = this.alarmsFacade.createDisplay(a, etime);
         const bDisplay = this.alarmsFacade.createDisplay(b, etime);
         if (aDisplay.spawned) {
@@ -126,13 +126,13 @@ export class StepByStepRowComponent {
 
   toggleAlarm(display: AlarmDisplay): void {
     if (display.registered) {
-      this.alarmsFacade.deleteAlarm(display.alarm);
+      this.alarmsFacade.deleteAlarm(display.alarm as PersistedAlarm);
     } else {
-      this.alarmsFacade.addAlarms(display.alarm);
+      this.alarmsFacade.addAlarms(display.alarm as PersistedAlarm);
     }
   }
 
-  addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
+  addAlarmWithGroup(alarm: PersistedAlarm, group: AlarmGroup) {
     this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 

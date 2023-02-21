@@ -97,14 +97,18 @@ import {LazyTripleTriadRule} from './lazy-triple-triad-rule';
 import {LazyVenture} from './lazy-venture';
 import {LazyVoyageSource} from './lazy-voyage-source';
 import {LazyWeather} from './lazy-weather';
+import {LazyKoAirshipVoyage} from './lazy-ko-airship-voyage';
 import {LazyKoFate} from './lazy-ko-fate';
 import {LazyKoGatheringBonus} from './lazy-ko-gathering-bonus';
 import {LazyKoRecipe} from './lazy-ko-recipe';
 import {LazyKoStatus} from './lazy-ko-status';
+import {LazyKoSubmarineVoyage} from './lazy-ko-submarine-voyage';
+import {LazyZhAirshipVoyage} from './lazy-zh-airship-voyage';
 import {LazyZhFate} from './lazy-zh-fate';
 import {LazyZhGatheringBonus} from './lazy-zh-gathering-bonus';
 import {LazyZhRecipe} from './lazy-zh-recipe';
 import {LazyZhStatus} from './lazy-zh-status';
+import {LazyZhSubmarineVoyage} from './lazy-zh-submarine-voyage';
 
 export interface LazyData {
   achievements: Record<number, LazyAchievement>;
@@ -147,7 +151,6 @@ export interface LazyData {
   fishingSpots: Array<LazyFishingSpot>;
   foods: Array<LazyFood>;
   freeCompanyActions: Record<number, LazyFreeCompanyAction>;
-  gardeningSeedIds: Record<number, number>;
   gardeningSources: Record<number, number[]>;
   gatheringBonuses: Record<number, LazyGatheringBonus>;
   gatheringItems: Record<number, LazyGatheringItem>;
@@ -250,7 +253,7 @@ export interface LazyData {
   koActionCategories: Record<number, {ko: string}>;
   koActionDescriptions: Record<number, {ko: string}>;
   koActions: Record<number, {ko: string}>;
-  koAirshipVoyages: Record<number, {ko: string}>;
+  koAirshipVoyages: Record<number, LazyKoAirshipVoyage>;
   koBaseParams: Record<number, {ko: string}>;
   koBeastReputationRanks: Record<number, {ko: string}>;
   koContentTypes: Record<number, {ko: string}>;
@@ -264,6 +267,7 @@ export interface LazyData {
   koGatheringTypes: Record<number, {ko: string}>;
   koInstanceDescriptions: Record<number, {ko: string}>;
   koInstances: Record<number, {ko: string}>;
+  koIslandCraftworksTheme: Record<number, {ko: string}>;
   koItemDescriptions: Record<number, {ko: string}>;
   koItemKinds: Record<number, {ko: string}>;
   koItemSearchCategories: Record<number, {ko: string}>;
@@ -290,7 +294,7 @@ export interface LazyData {
   koShops: Record<number, {ko: string}>;
   koStatusDescriptions: Record<number, {ko: string}>;
   koStatuses: Record<number, LazyKoStatus>;
-  koSubmarineVoyages: Record<number, {ko: string}>;
+  koSubmarineVoyages: Record<number, LazyKoSubmarineVoyage>;
   koTraitDescriptions: Record<number, {ko: string}>;
   koTraits: Record<number, {ko: string}>;
   koTribes: Record<number, {ko: string}>;
@@ -304,7 +308,7 @@ export interface LazyData {
   zhActionCategories: Record<number, {zh: string}>;
   zhActionDescriptions: Record<number, {zh: string}>;
   zhActions: Record<number, {zh: string}>;
-  zhAirshipVoyages: Record<number, {zh: string}>;
+  zhAirshipVoyages: Record<number, LazyZhAirshipVoyage>;
   zhBaseParams: Record<number, {zh: string}>;
   zhBeastReputationRanks: Record<number, {zh: string}>;
   zhContentTypes: Record<number, {zh: string}>;
@@ -318,6 +322,7 @@ export interface LazyData {
   zhGatheringTypes: Record<number, {zh: string}>;
   zhInstanceDescriptions: Record<number, {zh: string}>;
   zhInstances: Record<number, {zh: string}>;
+  zhIslandCraftworksTheme: Record<number, {zh: string}>;
   zhItemDescriptions: Record<number, {zh: string}>;
   zhItemKinds: Record<number, {zh: string}>;
   zhItemSearchCategories: Record<number, {zh: string}>;
@@ -344,7 +349,7 @@ export interface LazyData {
   zhShops: Record<number, {zh: string}>;
   zhStatusDescriptions: Record<number, {zh: string}>;
   zhStatuses: Record<number, LazyZhStatus>;
-  zhSubmarineVoyages: Record<number, {zh: string}>;
+  zhSubmarineVoyages: Record<number, LazyZhSubmarineVoyage>;
   zhTraitDescriptions: Record<number, {zh: string}>;
   zhTraits: Record<number, {zh: string}>;
   zhTribes: Record<number, {zh: string}>;

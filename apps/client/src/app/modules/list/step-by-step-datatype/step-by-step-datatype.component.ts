@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { DataType } from '../data/data-type';
+import { DataType } from '@ffxiv-teamcraft/types';
 import { ListStep } from '../step-by-step-details/model/map-list-step';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { ListsFacade } from '../+state/lists.facade';
@@ -33,6 +33,12 @@ export class StepByStepDatatypeComponent {
   dataType$ = observeInput(this, 'dataType');
 
   steps$ = observeInput(this, 'steps');
+
+  firstRelevantSource$ = combineLatest([this.steps$, this.dataType$]).pipe(
+    map(([steps, dataType]) => {
+      return steps[0].sources.find(source => source.type === dataType);
+    })
+  );
 
   npcBreakdownRows$ = combineLatest([this.dataType$, this.steps$]).pipe(
     filter(([dataType]) => [DataType.VENDORS, DataType.TRADE_SOURCES].includes(dataType)),

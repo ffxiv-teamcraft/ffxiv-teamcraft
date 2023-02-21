@@ -12,7 +12,10 @@
     <nz-list-item [nzContent]="content">
       <nz-list-item-meta [nzAvatar]="avatar"
                          [nzDescription]="description"
-                         [nzTitle]="recipe.itemId | itemName | i18n">
+                         [nzTitle]="titleTpl">
+        <ng-template #titleTpl>
+          <app-i18n-name content="items" [id]="recipe.itemId"></app-i18n-name>
+        </ng-template>
         <ng-template #avatar>
           <app-item-icon [icon]="recipe.icon" [itemId]="recipe.itemId" [width]="32"></app-item-icon>
         </ng-template>

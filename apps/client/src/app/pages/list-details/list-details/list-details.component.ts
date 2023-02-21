@@ -6,7 +6,7 @@ import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, takeU
 import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { List } from '../../../modules/list/model/list';
-import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
+import { ListRow } from '../../../modules/list/model/list-row';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
@@ -38,7 +38,7 @@ import { IpcService } from '../../../core/electron/ipc.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { InventorySynthesisPopupComponent } from '../inventory-synthesis-popup/inventory-synthesis-popup.component';
 import { PlatformService } from '../../../core/tools/platform.service';
-import { DataType } from '../../../modules/list/data/data-type';
+import { DataType, getItemSource } from '@ffxiv-teamcraft/types';
 import { ListSplitPopupComponent } from '../../../modules/list/list-split-popup/list-split-popup.component';
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
 import { InventoryCleanupPopupComponent } from '../inventory-cleanup-popup/inventory-cleanup-popup.component';
@@ -162,19 +162,9 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.finalItemsRow$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$]).pipe(
       switchMap(([list, adaptativeFilter, overrideHideCompleted]) => this.layoutsFacade.getFinalItemsDisplay(list, adaptativeFilter, overrideHideCompleted))
     );
-    this.display$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$, this.displayMode$]).pipe(
-      switchMap(([list, adaptativeFilter, overrideHideCompleted, displayMode]) => {
-        const layout$ = this.layoutsFacade.selectedLayout$.pipe(
-          map(layout => {
-            if (displayMode === ListDisplayMode.STEP_BY_STEP) {
-              const withFinalItems = layout.clone();
-              withFinalItems.includeRecipesInItems = true;
-              return withFinalItems;
-            }
-            return layout;
-          })
-        );
-        return this.layoutsFacade.getDisplay(list, adaptativeFilter, overrideHideCompleted, layout$);
+    this.display$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$]).pipe(
+      switchMap(([list, adaptativeFilter, overrideHideCompleted]) => {
+        return this.layoutsFacade.getDisplay(list, adaptativeFilter, overrideHideCompleted, this.layoutsFacade.selectedLayout$);
       }),
       shareReplay({ bufferSize: 1, refCount: true })
     );

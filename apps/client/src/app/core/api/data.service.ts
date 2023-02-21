@@ -63,6 +63,7 @@ export class DataService {
 
   /**
    * Gets an item based on its id.
+   * @deprecated
    * @param {number} id
    * @returns {Observable<ItemData>}
    */
@@ -73,6 +74,7 @@ export class DataService {
 
   /**
    * Gets an instance based on its id.
+   * @deprecated
    * @param {number} id
    * @returns {Observable<NpcData>}
    */
@@ -83,6 +85,7 @@ export class DataService {
 
   /**
    * Gets a quest based on its id.
+   * @deprecated
    * @param {number} id
    * @returns {Observable<QuestData>}
    */
@@ -93,6 +96,7 @@ export class DataService {
 
   /**
    * Gets a quest based on its id.
+   * @deprecated
    * @param {number} id
    * @returns {Observable<LeveData>}
    */
@@ -103,6 +107,7 @@ export class DataService {
 
   /**
    * Gets a mob based on its id.
+   * @deprecated
    * @param {number} id
    * @returns {Observable<MobData>}
    */

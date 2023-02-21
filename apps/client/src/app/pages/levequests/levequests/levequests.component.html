@@ -108,7 +108,7 @@
                   <app-db-button [id]="leve.id" type="leve"></app-db-button>
                 </div>
                 <div>
-                  {{leve.itemId | itemName | i18n}}
+                  <app-i18n-name [id]="leve.itemId" content="items"></app-i18n-name>
                   <span *ngIf="leve.itemQuantity > 1">
                     x {{leve.itemQuantity}}
                   </span>

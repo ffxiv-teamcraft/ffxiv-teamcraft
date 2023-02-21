@@ -1,8 +1,9 @@
-import { Alarm } from './alarm';
+import { PersistedAlarm } from './persisted-alarm';
 import { Aetheryte } from '../data/aetheryte';
 import { NextSpawn } from './next-spawn';
+import { AlarmDetails } from '@ffxiv-teamcraft/types';
 
-export class AlarmDisplay {
+export class AlarmDisplay<T extends AlarmDetails | PersistedAlarm = PersistedAlarm> {
 
   /**
    * Did the alarm ring for it?
@@ -48,6 +49,6 @@ export class AlarmDisplay {
 
   dbType?: 'node' | 'fishing-spot' | 'spearfishing-spot';
 
-  constructor(public readonly alarm: Alarm) {
+  constructor(public readonly alarm: T) {
   }
 }

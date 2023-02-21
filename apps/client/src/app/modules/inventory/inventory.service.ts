@@ -102,6 +102,10 @@ export class InventoryService {
               private serializer: NgSerializerService, private http: HttpClient,
               private settings: SettingsService, private modal: NzModalService,
               private lazyData: LazyDataFacade, private platform: PlatformService) {
+    if (!this.platform.isDesktop()) {
+      this.inventory$ = of(new UserInventory())
+      return;
+    }
     this.retainerInformations$.connect();
     this.authFacade.characterEntries$.subscribe(entries => {
       this.characterEntries = entries as Array<LodestoneIdEntry & { character: CharacterResponse }>;
@@ -331,7 +335,7 @@ export class InventoryService {
   }
 
   public init(): void {
-    if (!this.platform.isOverlay()) {
+    if (this.platform.isDesktop() && !this.platform.isOverlay()) {
       this.inventory$.subscribe(inventory => {
         this.ipc.send('inventory:set', inventory);
       });

@@ -3,25 +3,24 @@ import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { debounceTime, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
-import { Alarm } from '../../../core/alarms/alarm';
+import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { MapService } from '../../../modules/map/map.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { TranslateService } from '@ngx-translate/core';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
-import { GatheringNode } from '../../../core/data/model/gathering-node';
+import { GatheringNode } from '@ffxiv-teamcraft/types';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { SpearfishingShadowSize } from '../../../core/data/model/spearfishing-shadow-size';
-import { SpearfishingSpeed } from '../../../core/data/model/spearfishing-speed';
 import { UntypedFormBuilder } from '@angular/forms';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { chunk } from 'lodash';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { AlarmDetails, SpearfishingShadowSize, SpearfishingSpeed } from '@ffxiv-teamcraft/types';
 
 interface ResultRow {
   originalItemId: number,
   node: GatheringNode,
-  alarms: Alarm[]
+  alarms: AlarmDetails[]
 }
 
 @Component({
@@ -63,9 +62,7 @@ export class GatheringLocationComponent {
 
   results$: Observable<{ rows: ResultRow[], total: number }>;
 
-  alarmsLoaded$: Observable<boolean> = this.alarmsFacade.loaded$;
-
-  alarms$: Observable<Alarm[]> = this.alarmsFacade.allAlarms$;
+  alarms$: Observable<PersistedAlarm[]> = this.alarmsFacade.allAlarms$;
 
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
 
@@ -243,11 +240,11 @@ export class GatheringLocationComponent {
       });
   }
 
-  public addAlarm(alarm: Alarm, group?: AlarmGroup): void {
+  public addAlarm(alarm: PersistedAlarm, group?: AlarmGroup): void {
     this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 
-  public canCreateAlarmFromNode(alarms: Alarm[], node: GatheringNode): boolean {
+  public canCreateAlarmFromNode(alarms: PersistedAlarm[], node: GatheringNode): boolean {
     return alarms.find(alarm => {
       return node.matchingItemId === alarm.itemId
         && Math.floor(node.x) === Math.floor(alarm.coords.x)
@@ -256,22 +253,15 @@ export class GatheringLocationComponent {
     }) === undefined;
   }
 
-  public canCreateAlarm(alarms: Alarm[], alarm: Alarm): boolean {
-    return alarms.find(a => {
-      return alarm.itemId === a.itemId
-        && Math.floor(alarm.coords.x) === Math.floor(a.coords.x)
-        && alarm.zoneId === a.zoneId
-        && alarm.type === a.type
-        && alarm.fishEyes === a.fishEyes;
-    }) === undefined;
-  }
-
   public submitFilters(): void {
     this.filters$.next(this.filtersForm.getRawValue());
   }
 
   public resetFilters(): void {
-    this.filtersForm.reset();
+    this.filtersForm.reset({
+      type: -1,
+      use: -1
+    });
     this.submitFilters();
   }
 
@@ -280,7 +270,7 @@ export class GatheringLocationComponent {
     this.compactDisplay$.next(value);
   }
 
-  trackByAlarm(index: number, alarm: Partial<Alarm>): string {
+  trackByAlarm(index: number, alarm: Partial<PersistedAlarm>): string {
     return `${JSON.stringify(alarm.spawns)}:${JSON.stringify(alarm.weathers)}`;
   }
 

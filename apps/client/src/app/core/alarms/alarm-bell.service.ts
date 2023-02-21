@@ -3,7 +3,7 @@ import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { AlarmsFacade } from './+state/alarms.facade';
 import { combineLatest, of } from 'rxjs';
 import { distinctUntilChanged, filter, first, map, startWith, switchMap } from 'rxjs/operators';
-import { Alarm } from './alarm';
+import { PersistedAlarm } from './persisted-alarm';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { PlatformService } from '../tools/platform.service';
 import { IpcService } from '../electron/ipc.service';
@@ -35,7 +35,7 @@ export class AlarmBellService {
    * @param alarm
    * @param itemName
    */
-  public ring(alarm: Alarm, itemName: string): void {
+  public ring(alarm: PersistedAlarm, itemName: string): void {
     if (this.settings.TTSAlarms) {
       try {
         const notificationSettings = this.settings.getNotificationSettings(SoundNotificationType.ALARM);
@@ -54,7 +54,7 @@ export class AlarmBellService {
     }
   }
 
-  public notify(_alarm: Alarm): void {
+  public notify(_alarm: PersistedAlarm): void {
     if (Date.now() - 10000 >= this.getLastPlayed(_alarm)) {
       localStorage.setItem(`played:${_alarm.$key}`, Date.now().toString());
       of(_alarm).pipe(
@@ -131,49 +131,54 @@ export class AlarmBellService {
         return a.map(el => el.$key).join(':') === b.map(el => el.$key).join(':');
       })
     );
-    combineLatest([
-      this.eorzeanTime.getEorzeanTime(),
-      alarms$,
-      this.alarmsFacade.allGroups$,
-      this.eorzeaFacade.mapId$.pipe(startWith(-1)),
-      this.lazyData.getEntry('maps')
-    ])
-      .pipe(
-        filter(([, , , mapId, maps]) => {
-          return !this.platform.isDesktop()
-            || mapId === -1
-            || !maps[mapId]
-            || !maps[mapId]?.dungeon;
-        }),
-        map(([date, alarms, groups]) => {
-          return alarms.filter(alarm => {
-            if (alarm.spawns === undefined) {
-              return false;
-            }
+    alarms$.pipe(
+      filter(alarms => alarms.length > 0),
+      switchMap(alarms => {
+        return combineLatest([
+          this.eorzeanTime.getEorzeanTime(),
+          this.alarmsFacade.allGroups$,
+          this.eorzeaFacade.mapId$.pipe(
+            startWith(-1),
+            switchMap(mapId => this.lazyData.getRow('maps', mapId))
+          )
+        ])
+          .pipe(
+            filter(([, , currentMap]) => {
+              return !this.platform.isDesktop()
+                || !currentMap
+                || !currentMap?.dungeon;
+            }),
+            map(([date, groups]) => {
+              return alarms.filter(alarm => {
+                if (alarm.spawns === undefined) {
+                  return false;
+                }
+                const groupsForThisAlarm = groups.filter(g => g.alarms.includes(alarm.$key));
 
-            const groupsForThisAlarm = groups.filter(g => g.alarms.includes(alarm.$key));
-
-            const hasOneGroupEnabled = groupsForThisAlarm.length === 0 || groupsForThisAlarm.some(group => {
-              return group.enabled && group.alarms.includes(alarm.$key);
-            });
-            // If this alarm has a group and it's muted, don't even go further
-            if ((!hasOneGroupEnabled) || !alarm.enabled) {
-              return false;
-            }
-            const lastPlayed = this.getLastPlayed(alarm);
-            // Ceiling on /6 so precision is 1/10
-            const timeBeforePlay = Math.round(this.alarmsFacade.getMinutesBefore(date, this.alarmsFacade.getNextSpawn(alarm, date)) / 6) / 10 - this.settings.alarmHoursBefore;
-            // Irl alarm duration in ms
-            let irlAlarmDuration = this.eorzeanTime.toEarthTime(alarm.duration * 60) * 1000;
-            // If the alarm has no duration, it's because it has no spawn time and only depends on weather
-            if (irlAlarmDuration === 0) {
-              irlAlarmDuration = this.eorzeanTime.toEarthTime(8 * 60) * 1000;
-            }
-            return Date.now() - lastPlayed >= irlAlarmDuration
-              && timeBeforePlay <= 0;
-          });
-        })
-      ).subscribe(alarmsToPlay => {
+                const hasOneGroupEnabled = groupsForThisAlarm.length === 0 || groupsForThisAlarm.some(group => {
+                  return group.enabled && group.alarms.includes(alarm.$key);
+                });
+                // If this alarm has a group and it's muted, don't even go further
+                if ((!hasOneGroupEnabled) || !alarm.enabled) {
+                  return false;
+                }
+                const lastPlayed = this.getLastPlayed(alarm);
+                // Ceiling on /6 so precision is 1/10
+                const timeBeforePlay = Math.round(this.alarmsFacade.getMinutesBefore(date, this.alarmsFacade.getNextSpawn(alarm, date)) / 6) / 10 - this.settings.alarmHoursBefore;
+                // Irl alarm duration in ms
+                let irlAlarmDuration = this.eorzeanTime.toEarthTime(alarm.duration * 60) * 1000;
+                // If the alarm has no duration, it's because it has no spawn time and only depends on weather
+                if (irlAlarmDuration === 0) {
+                  irlAlarmDuration = this.eorzeanTime.toEarthTime(8 * 60) * 1000;
+                }
+                return Date.now() - lastPlayed >= irlAlarmDuration
+                  && timeBeforePlay <= 0;
+              });
+            })
+          )
+      })
+    )
+    .subscribe(alarmsToPlay => {
       alarmsToPlay.forEach(alarm => {
         if (!this.settings.alarmsMuted) {
           this.notify(alarm);
@@ -182,7 +187,7 @@ export class AlarmBellService {
     });
   }
 
-  private getLastPlayed(alarm: Alarm): number {
+  private getLastPlayed(alarm: PersistedAlarm): number {
     return +(localStorage.getItem(`played:${alarm.$key}`) || 0);
   }
 }

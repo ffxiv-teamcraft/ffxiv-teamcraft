@@ -11,13 +11,13 @@ import { debounceTime, expand, filter, map, shareReplay, startWith, switchMap, w
 import { FilterResult } from '../filter-result';
 import { ListLayout } from '../list-layout';
 import { LayoutService } from '../layout.service';
-import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
+import { ListRow } from '../../../modules/list/model/list-row';
 import { ListDisplay } from '../list-display';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { LayoutRow } from '../layout-row';
 import { LayoutRowOrder } from '../layout-row-order.enum';
 import { LayoutRowFilter } from '../layout-row-filter';
-import { DataType } from '../../../modules/list/data/data-type';
+import { DataType, getItemSource } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-stats';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
@@ -55,7 +55,7 @@ export class LayoutsFacade {
               private authFacade: AuthFacade, private settings: SettingsService, private lazyData: LazyDataFacade) {
   }
 
-  public getDisplay(list: List, adaptativeFilter: boolean, overrideHideCompleted = false, layout$ = this.selectedLayout$): Observable<ListDisplay> {
+  public getDisplay(list: List, adaptativeFilter: boolean, overrideHideCompleted = false, layout$ = this.selectedLayout$, stepByStepDisplay = false): Observable<ListDisplay> {
     const settingsChange$ = this.settings.settingsChange$.pipe(
       filter(name => name === 'maximum-vendor-price'),
       debounceTime(2000),
@@ -85,7 +85,15 @@ export class LayoutsFacade {
               i.finalItem = true;
               return i;
             }));
+          } else if (stepByStepDisplay) {
+            starter.push(...list.finalItems
+              .filter(i => getItemSource(i, DataType.CRAFTED_BY)?.length === 0)
+              .map(i => {
+                i.finalItem = true;
+                return i;
+              }));
           }
+
           return of({
             rows: [], unfilteredRows: starter, layoutRows: [...layout.rows.sort((a, b) => {
               // Other has to be last filter applied, as it rejects nothing.

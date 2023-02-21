@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
 import { MapData } from './map-data';
-import { Vector2 } from '../../core/tools/vector2';
+import { Vector2 } from '@ffxiv-teamcraft/types';
 import { MathToolsService } from '../../core/tools/math-tools';
 import { NavigationStep } from './navigation-step';
 import { NavigationObjective } from './navigation-objective';
@@ -12,7 +12,7 @@ import { WorldNavigationStep } from './world-navigation-step';
 import { requestsWithDelay } from '../../core/rxjs/requests-with-delay';
 import { SettingsService } from '../settings/settings.service';
 import { EorzeaFacade } from '../eorzea/+state/eorzea.facade';
-import { Vector3 } from '../../core/tools/vector3';
+import { Vector3 } from '@ffxiv-teamcraft/types';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 import { LazyAetheryte } from '@ffxiv-teamcraft/data/model/lazy-aetheryte';

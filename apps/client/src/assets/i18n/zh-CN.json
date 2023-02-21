@@ -2690,7 +2690,9 @@
     "Task_level": "探险等级",
     "Total_per_venture": "单次探险总计",
     "Use_retainer": "选择雇员",
-    "Select_retainer": "选择一名雇员"
+    "Select_retainer": "选择一名雇员",
+    "Missing_gear": "缺少装备数据",
+    "Missing_gear_description": "Teamcraft缺少部分雇员的装备数据，请再次传唤雇员以更新数据"
   },
   "PATREON": {
     "By_supporting_us": "在 Patreon 赞助我们后可以获得：",
@@ -2718,7 +2720,12 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "使用数据包捕获导入",
-    "Import_from_pcap_notice": "1. 前往部队工坊（请确保在打开弹出窗口后进入）<br>2. 打开你的部队界面 <br>3. 通过航行管制面板与每艘飞空艇/潜水艇互动",
+    "Go_to_workshop": "进入部队工房",
+    "Go_to_workshop_description": "如果已经在工房里，请退出并重新进入",
+    "Open_fc_window": "打开部队详细窗口",
+    "Open_fc_window_description": "This will make TC get more important details about your free company, such as server \":\" is the default binding for it.",
+    "Interact_with_ships_subs": "Interact with each Submarine/Airship you want to import",
+    "Interact_with_ships_subs_description": "打开飞空艇/潜水艇管理窗口，以便Teamcraft收集可供显示的数据",
     "Airships": "飞空艇",
     "Submersibles": "潜水艇"
   },

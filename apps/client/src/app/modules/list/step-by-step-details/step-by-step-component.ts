@@ -1,8 +1,8 @@
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { BehaviorSubject, combineLatest, map, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, map, merge, Observable } from 'rxjs';
 import { StepByStepDisplayData } from './step-by-step-display-data';
 import { filter, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
-import { getItemSource } from '../model/list-row';
+import { getItemSource } from '@ffxiv-teamcraft/types';
 import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
 import { MapMarker } from '../../map/map-marker';
 import { NavigationObjective } from '../../map/navigation-objective';
@@ -16,11 +16,11 @@ import { MapService } from '../../map/map.service';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { MapData } from '../../map/map-data';
-import { Vector2 } from '../../../core/tools/vector2';
+import { Vector2 } from '@ffxiv-teamcraft/types';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { StepByStepList } from './model/step-by-step-list';
 import { ListDisplay } from '../../../core/layout/list-display';
-import { DataType } from '../data/data-type';
+import { DataType } from '@ffxiv-teamcraft/types';
 import { MapListStep } from './model/map-list-step';
 
 @Component({ template: '' })
@@ -82,9 +82,17 @@ export abstract class StepByStepComponent extends TeamcraftComponent implements 
       })
     );
 
+    // This resets position on map change
+    const position$ = merge(
+      this.currentMapDisplay$.pipe(map(() => null)),
+      this.ipc.updatePositionHandlerPackets$
+    ).pipe(
+      startWith(null)
+    )
+
     this.currentPath$ = combineLatest([
       this.currentMapDisplay$,
-      this.ipc.updatePositionHandlerPackets$.pipe(startWith(null)),
+      position$,
       this.stepByStep$,
       this.etime.getEorzeanTime()
     ]).pipe(

@@ -3,7 +3,7 @@ import { IpcService } from '../../../core/electron/ipc.service';
 import { ReplaySubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { MapService } from '../../../modules/map/map.service';
-import { Vector2 } from '../../../core/tools/vector2';
+import { Vector2 } from '@ffxiv-teamcraft/types';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { MappyMarker, MappyReporterState } from '../../../core/electron/mappy/mappy-reporter';
 

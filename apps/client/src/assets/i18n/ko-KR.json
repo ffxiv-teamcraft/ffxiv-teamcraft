@@ -135,7 +135,7 @@
     "Search": "검색"
   },
   "COMMON": {
-    "Done": "Done",
+    "Done": "완료",
     "Length": "길이",
     "Save": "저장",
     "Reset": "초기화",
@@ -315,8 +315,8 @@
   "Reset_progression": "진행상황 초기화",
   "Gardening": "재배",
   "Hunting": "사냥",
-  "Island_animal": "무인도 동물",
-  "Island_crop": "무인도 농작물",
+  "Island_animal": "무인도 사육동물",
+  "Island_crop": "무인도 경작지",
   "Desynth": "분해",
   "Vendors": "상인",
   "Open": "열기",
@@ -522,7 +522,7 @@
     "Materia_confidence_rate_explain": "마테리아 예측 신뢰율이 높다는 것은 더 많은 마테리아가 요구되며, 해당 수량 이내로 금단을 끝낼 가능성이 높다는 것을 의미합니다",
     "Disable_hardware_acceleration": "하드웨어 가속 비활성화",
     "Housing_map": "모험가 거주구 구역",
-    "Housing_map_explain": "The housing map in which your house is",
+    "Housing_map_explain": "주택이 속해있는 거주구 구역",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -599,7 +599,7 @@
       "Guide": "계정 인증을 위해 Lodestone Profile에 \"{{userId}}\"를 붙여넣고 아래의 인증버튼을 눌러주세요. 자세한 정보는 <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">위키</a>를 참고해주세요.",
       "Success": "캐릭터가 인증되었습니다! 이 팝업을 닫으셔도 됩니다. 더 이상 코드가 필요없기 때문에, 프로필에서 코드를 제거하셔도 됩니다.",
       "Validate": "인증",
-      "Submitted": "Checking your Lodestone profile...",
+      "Submitted": "Lodestone 프로필 확인중...",
       "Error": "Couldn't find the code in your bio. Please make sure you pasted it and applied the changes. If you did so correctly and the verification still failed, please try again in a few hours due to how Lodestone caching works. However, verification only affects Free Company lists and the Commission System, so you can continue using all other features without issue."
     }
   },
@@ -617,7 +617,7 @@
     "Add_selection_to_list": "선택항목을 목록에 추가",
     "Your_lists": "내 목록",
     "Outdated_tag": "만료",
-    "No_lists": "No lists to display here",
+    "No_lists": "표시 할 리스트가 없습니다.",
     "List_aggregates": "List aggregates",
     "Lists_search_placeholder": "목록 검색...",
     "Add_to_a_list": "목록에 추가",
@@ -778,24 +778,24 @@
     "Consider_requirements": "재료 포함하기",
     "Ignore_requirements": "재료 무시하기",
     "STEP_BY_STEP": {
-      "Previous": "Previous map",
-      "Previous_incomplete": "Previous incomplete map",
-      "Next": "Next map",
-      "Next_incomplete": "Next incomplete map",
+      "Previous": "이전 맵",
+      "Previous_incomplete": "이전 미완료 맵",
+      "Next": "다음 맵",
+      "Next_incomplete": "다음 미완료 맵",
       "Global_list_progress": "Global list progress",
       "Alarms": "시간제 목록",
       "Crafts": "Ordered crafts",
-      "Toggle_overlay": "Open/Close step by step overlay",
+      "Toggle_overlay": "단계별 오버레이 열기/닫기",
       "Empty_map": "Nothing to do in the current map, closest map for this list is {{closest}}",
       "Unknown_map": "Unknown map, please change map to allow TC to detect it.",
       "No_list": "목록 없음, 올바른 목록 오버레이의 작동을 위해 메인 프로그램에서 목록을 열어주세요.",
       "Others": "Others"
     },
     "DISPLAY_MODE": {
-      "Title": "Display mode",
-      "Full": "Full",
-      "Minimalist": "Minimalist",
-      "Step_by_step": "Step by step",
+      "Title": "표시 모드",
+      "Full": "전체화",
+      "Minimalist": "간소화",
+      "Step_by_step": "단계별",
       "Switched_to_minimalist_large_list": "Display mode has been switched to minimalist because this is a large list. You can disable this in settings."
     },
     "SOURCES": {
@@ -2004,9 +2004,9 @@
     "Install_npcap_button": "npcap 설치 및 팀크래프트 재실행",
     "Not_as_anonymous": "익명 상태에서는 패킷 캡쳐가 제대로 작동하지 않습니다",
     "Not_as_anonymous_description": "우측 상단의 \"익명\"에 커서를 올려 계정을 등록하거나 설정에서 패킷 캡쳐를 비활성화 해주세요",
-    "Status": "Packet capture status",
-    "Pcap": "Packet capture",
-    "Inventory": "Inventory tracking"
+    "Status": "패킷 캡쳐 상태",
+    "Pcap": "패킷 캡쳐",
+    "Inventory": "소지품 동기화"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "{{region}} 로 변경하시는 것을 권장합니다.",
@@ -2037,7 +2037,7 @@
       "Armory": "장비함",
       "Current_Gear": "현재 장비",
       "RetainerMarket": "집사가 판매중",
-      "IslandSanctuaryBag": "Island Sanctuary Bag"
+      "IslandSanctuaryBag": "개척 가방"
     },
     "CONTENT_ID_POPUP": {
       "Description": "다중 캐릭터 동기화와 다른 멋진 기능들을 사용하고 싶으시다면, 팀크래프트는 현재 플레이 중인 캐릭터 또는 동기화를 원하는 캐릭터가 어떤 건지 알아야 합니다.",
@@ -2184,7 +2184,7 @@
     "Editing_others_gearset": "로컬 편집 모드",
     "Editing_others_gearset_description": "현재 다른 플레이어의 장비 세트를 수정 중입니다. 만약 저장 버튼을 사용하여 사본을 만들지 않으면 창을 닫은 후에 데이터가 손실됩니다.",
     "Empty_materias": "선택된 모든 장비의 마테리아 제거",
-    "Total_scrips": "Total currencies needed",
+    "Total_scrips": "필요한 총 화폐",
     "Reset_progression": "Reset item and materia progression",
     "SLOT": {
       "Body": "몸통",
@@ -2690,7 +2690,9 @@
     "Task_level": "수행 레벨",
     "Total_per_venture": "집사 수행 총 집계",
     "Use_retainer": "고용 중인 집사",
-    "Select_retainer": "집사를 선택하세요"
+    "Select_retainer": "집사를 선택하세요",
+    "Missing_gear": "미확인 장비",
+    "Missing_gear_description": "몇몇 집사의 장비가 확인되지 않습니다. 장비 갱신을 위해 각 집사를 호출해 주세요."
   },
   "PATREON": {
     "By_supporting_us": "Patreon 후원시 얻을 수 있는 것들:",
@@ -2718,7 +2720,12 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "패킷캡쳐를 사용하여 가져오기",
-    "Import_from_pcap_notice": "1. 자유부대의 공방으로 이동(해당 팝업을 연 후에 꼭 입력하세요)<br>2. 자유부대 창을 열기<br>3. 관리 인터페이스를 사용하여 각 잠수함 또는 비공정과 상호작용",
+    "Go_to_workshop": "지하공방에 입장하세요",
+    "Go_to_workshop_description": "이미 지하공방이라면 재입장 해주세요.",
+    "Open_fc_window": "자유부대 창을 열어주세요.",
+    "Open_fc_window_description": "자유부대나 서버와 같은 중요한 세부정보를 가져옵니다. 기본 단축키는 \";\" 입니다.",
+    "Interact_with_ships_subs": "정보를 가져올 잠수함/비공정을 각각 상호작용 해주세요.",
+    "Interact_with_ships_subs_description": "잠수함/비공정 관리 창을 열어 탐사선 세부 정보를 가져옵니다.",
     "Airships": "비공정",
     "Submersibles": "잠수함"
   },
@@ -3009,74 +3016,74 @@
   },
   "ISLAND_SANCTUARY": {
     "Animal_source": "당신은 이 아이템을 무인도 목장의 동물들에게서 채집해야 합니다",
-    "Island_level": "무인도 레벨",
-    "Landmarks": "랜드마크",
-    "Workshop_rank": "공방 등급",
+    "Island_level": "개척 랭크",
+    "Landmarks": "특수 건물",
+    "Workshop_rank": "개척공방 등급",
     "WORKSHOP": {
-      "Title": "공방",
-      "Subtitle": "공방 추적 및 관리",
-      "Out_of_sync": "이전 리셋 이후 상태가 변화되지 않았습니다",
-      "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary for the first time after logging in the game to update the state (If you have already opened the window since you logged in, you will need to log out of the game and back in, and re-open the Supply/Demand window to correctly update your state). If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button, or import from database.",
-      "Export_state": "수요/공급 상태 내보내기",
+      "Title": "개척공방",
+      "Subtitle": "개척공방 추적 및 관리",
+      "Out_of_sync": "초기화 이후로 상태가 갱신되지 않았습니다",
+      "Out_of_sync_explain": "게임에 접속한 후 무인도에서 처음으로 특산품 수요 조사 창을 열어 상태를 갱신해 주세요.(갱신하기 전에 이미 창을 열어 봤다면 캐릭터를 재접속하고 창을 다시 열어서 상태를 올바르게 갱신할 수 있습니다.) 패킷 캡쳐를 사용하지 않는다면 다른 사용자에게 내보내기를 받아 상태를 가져오거나 데이터베이스에서 받아올 수 있습니다.",
+      "Export_state": "특산품 수요 조사 내보내기",
       "State_copied": "상태가 클립보드에 복사되었습니다",
       "Import_state": "상태 가져오기",
       "Import_online_state": "데이터베이스로부터 상태 가져오기",
       "Online_state_missing": "상태를 갱신한 사용자가 아직 없습니다. 이 버튼은 다른 사용자들의 상태가 갱신된 뒤 활성화될 것입니다.",
       "State_imported": "상태를 올바르게 가져왔습니다",
-      "Product": "생산품",
+      "Product": "특산품",
       "Popularity": "인기도",
-      "Supply": "공급",
-      "Demand_shift": "공급량 변동",
-      "Predicted_popularity": "예상 수요",
+      "Supply": "수요",
+      "Demand_shift": "수요 변화",
+      "Predicted_popularity": "인기도 예측",
       "Edit_mode": "편집 모드",
       "Best_items_to_craft": "최적 생산품",
       "Total_value": "총 가격",
       "Run_optimizer": "남은 주간동안의 최적 계획 찾기",
       "No_schedule_found": "계획을 찾을 수 없습니다",
       "No_schedule_found_explain": "다음 리셋 시간까지 4시간 이상 남아 있도록 해 주세요",
-      "Possible_peak_days": "예상 피크일자",
-      "Peak_days_explain": "The days on which it's more likely that this item will peak in value. Bold = strong peak.",
+      "Possible_peak_days": "고점 예측",
+      "Peak_days_explain": "해당 아이템의 가치가 고점이 될 가능성이 높은 날짜. 굵게 = 최고점.",
       "Items_to_prepare": "Best items to prepare for tomorrow",
       "Rest": "휴일",
-      "Unknown_day_planning": "Available on {{day}}",
+      "Unknown_day_planning": "{{day}}에 이용 가능",
       "Set_rest_day": "두번째 휴일로 설정",
-      "Import_explain": "You can update your supply/demand table by opening it ingame with the desktop app running and packet capture enabled.",
-      "Amount_of_workshops": "공방 갯수:",
-      "Create_list": "Create a list for this planning",
-      "Exclude_pasture_materials": "Exclude pasture materials",
-      "Exclude_crop_materials": "Exclude crop materials",
-      "Display_item_metadata": "Display category and craft time of items in planning",
-      "Groove_tooltip": "Groove at the end of the day",
-      "Crafting_time": "제작 시간",
-      "Categories": "Categories",
-      "No_planning": "No planning available",
-      "No_planning_explain": " Teamcraft is not able to compute a planning because there's too few recipes available, try to change your island level or uncheck some material exclusions.",
-      "Next_week_prep": "Materials you should prepare for next week",
-      "Crop_materials": "Crops",
-      "Pasture_materials": "Pasture",
+      "Import_explain": "데스크톱 앱을 실행하고 패킷 캡쳐를 켠 다음 특산품 수요 조사를 열면 갱신할 수 있습니다.",
+      "Amount_of_workshops": "개척공방 개수:",
+      "Create_list": "이 계획으로 목록 생성",
+      "Exclude_pasture_materials": "축산물자 예외",
+      "Exclude_crop_materials": "경작물자 예외",
+      "Display_item_metadata": "분류와 소요 시간을 계획에 표시",
+      "Groove_tooltip": "이 일정 이후 마법인형 의욕",
+      "Crafting_time": "소요 시간",
+      "Categories": "분류",
+      "No_planning": "계획 이용 불가",
+      "No_planning_explain": " 이용가능한 제작법이 너무 적어 계산할 수 없습니다. 무인도 랭크를 올리거나 예외처리된 재료를 확인해주세요.",
+      "Next_week_prep": "다음 주에 준비해야 할 재료",
+      "Crop_materials": "경작물자",
+      "Pasture_materials": "축산물자",
       "POPULARITY": {
-        "Very_high": "Very high",
-        "High": "High",
-        "Average": "Average",
-        "Low": "Low"
+        "Very_high": "아주 높음",
+        "High": "높음",
+        "Average": "보통",
+        "Low": "낮음"
       },
       "SUPPLY": {
-        "Non_existant": "Non existant",
-        "Insufficient": "Insufficient",
-        "Sufficient": "Sufficient",
-        "Surplus": "Surplus",
-        "Overflowing": "Overflowing"
+        "Non_existant": "공급 고갈",
+        "Insufficient": "공급 부족",
+        "Sufficient": "보통",
+        "Surplus": "공급 과다",
+        "Overflowing": "공급 넘침"
       },
       "DEMAND_SHIFT": {
-        "Skyrocketing": "Skyrocketing",
-        "Increasing": "Increasing",
-        "None": "None",
-        "Decreasing": "Decreasing",
-        "Plummeting": "Plummeting"
+        "Skyrocketing": "크게 증가",
+        "Increasing": "증가",
+        "None": "변화 없음",
+        "Decreasing": "저하",
+        "Plummeting": "크게 저하"
       }
     },
     "ANIMALS": {
-      "Title": "동물",
+      "Title": "사육동물",
       "Subtitle": "동물을 언제 어디서 찾을 수 있는지에 대한 정보 및 알람이 포함된 종합 동물 리스트",
       "Name": "이름",
       "Size": "크기",
@@ -3084,8 +3091,8 @@
       "Spawn_time": "출몰 시간",
       "Weather": "날씨",
       "Alarm": "알람",
-      "Main_drop": "주요 재료",
-      "Rare_drop": "레어 재료"
+      "Main_drop": "일반 개척재료",
+      "Rare_drop": "희귀 개척재료"
     }
   }
 }

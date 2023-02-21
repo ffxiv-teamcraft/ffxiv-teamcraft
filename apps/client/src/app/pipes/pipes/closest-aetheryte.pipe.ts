@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { MapService } from '../../modules/map/map.service';
 import { Observable } from 'rxjs';
-import { Vector2 } from '../../core/tools/vector2';
+import { Vector2 } from '@ffxiv-teamcraft/types';
 import { filter, switchMap } from 'rxjs/operators';
 import { LazyAetheryte } from '@ffxiv-teamcraft/data/model/lazy-aetheryte';
 

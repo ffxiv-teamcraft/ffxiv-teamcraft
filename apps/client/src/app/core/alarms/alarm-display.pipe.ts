@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { AlarmDisplay } from './alarm-display';
-import { Alarm } from './alarm';
+import { PersistedAlarm } from './persisted-alarm';
 import { AlarmsFacade } from './+state/alarms.facade';
 import { combineLatest, Observable, of } from 'rxjs';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
@@ -17,7 +17,7 @@ export class AlarmDisplayPipe implements PipeTransform {
               private lazyData: LazyDataFacade) {
   }
 
-  transform(alarm: Partial<Alarm>): Observable<AlarmDisplay> {
+  transform(alarm: Partial<PersistedAlarm>): Observable<AlarmDisplay> {
     if (!alarm) {
       return of(null);
     }
@@ -39,7 +39,7 @@ export class AlarmDisplayPipe implements PipeTransform {
         }
         return alarm$.pipe(
           map(completeAlarm => {
-            const display = this.alarmsFacade.createDisplay(<Alarm>completeAlarm, date);
+            const display = this.alarmsFacade.createDisplay(<PersistedAlarm>completeAlarm, date);
             display.registered = registeredAlarm !== undefined;
             if (display.registered) {
               display.alarm.$key = registeredAlarm.$key;

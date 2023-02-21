@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { IpcService } from './ipc.service';
 import { BehaviorSubject, combineLatest, EMPTY, interval, ReplaySubject } from 'rxjs';
 import { SettingsService } from '../../modules/settings/settings.service';
-import { delay, filter, map, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
+import { delay, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { SoundNotificationType } from '../sound-notification/sound-notification-type';
 import { SoundNotificationService } from '../sound-notification/sound-notification.service';
 import { InventoryItem } from '../../model/user/inventory/inventory-item';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { PlatformService } from '../tools/platform.service';
 
 export interface Retainer {
   name: string;
@@ -37,7 +38,8 @@ export class RetainersService {
 
   constructor(private ipc: IpcService, private settings: SettingsService,
               private translate: TranslateService, private i18n: I18nToolsService,
-              private lazyData: LazyDataFacade, private soundNotificationService: SoundNotificationService) {
+              private lazyData: LazyDataFacade, private soundNotificationService: SoundNotificationService,
+              private platform: PlatformService) {
     this.settings.watchSetting('retainerTaskAlarms', false).pipe(
       delay(1000),
       switchMap(() => {
@@ -83,27 +85,29 @@ export class RetainersService {
   }
 
   init(): void {
-    this.ipc.retainerInformationPackets$
-      .pipe(
-        withLatestFrom(this.contentId$)
-      )
-      .subscribe(([packet, contentId]) => {
-        const retainers = this.retainers;
-        retainers[packet.retainerId.toString(16).substr(-8)] = {
-          name: packet.name,
-          order: packet.hireOrder,
-          itemCount: packet.itemCount,
-          itemSellingCount: packet.sellingCount,
-          level: packet.level,
-          job: packet.classJob,
-          task: packet.ventureId,
-          taskComplete: packet.ventureComplete,
-          gil: packet.gil,
-          character: contentId
-        };
-        this.retainers$.next(retainers);
-        this.persist();
-      });
+    if (this.platform.isDesktop()) {
+      this.ipc.retainerInformationPackets$
+        .pipe(
+          withLatestFrom(this.contentId$)
+        )
+        .subscribe(([packet, contentId]) => {
+          const retainers = this.retainers;
+          retainers[packet.retainerId.toString(16).substr(-8)] = {
+            name: packet.name,
+            order: packet.hireOrder,
+            itemCount: packet.itemCount,
+            itemSellingCount: packet.sellingCount,
+            level: packet.level,
+            job: packet.classJob,
+            task: packet.ventureId,
+            taskComplete: packet.ventureComplete,
+            gil: packet.gil,
+            character: contentId
+          };
+          this.retainers$.next(retainers);
+          this.persist();
+        });
+    }
   }
 
   persist(): void {

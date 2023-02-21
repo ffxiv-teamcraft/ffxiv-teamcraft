@@ -41,13 +41,9 @@ import { ListDisplay } from '../../core/layout/list-display';
 })
 export class StepByStepListOverlayComponent extends StepByStepComponent implements OnInit {
 
-  public zoneId$ = this.eorzeaFacade.zoneId$;
-
   public mapId$ = this.eorzeaFacade.mapId$.pipe(
     tap(() => this.loading = true)
   );
-
-  public position$ = this.ipc.updatePositionHandlerPackets$;
 
   public list$ = this.listsFacade.selectedList$;
 
@@ -57,14 +53,7 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
 
   private display$ = combineLatest([this.list$, this.adaptativeFilter$]).pipe(
     switchMap(([list, adaptativeFilter]) => {
-      const layout$ = this.layoutsFacade.selectedLayout$.pipe(
-        map(layout => {
-          const withFinalItems = layout.clone();
-          withFinalItems.includeRecipesInItems = true;
-          return withFinalItems;
-        })
-      );
-      return this.layoutsFacade.getDisplay(list, adaptativeFilter, false, layout$);
+      return this.layoutsFacade.getDisplay(list, adaptativeFilter, false, this.layoutsFacade.selectedLayout$, true);
     }),
     shareReplay({ bufferSize: 1, refCount: true })
   );
@@ -72,6 +61,8 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
   public closestMap$: Observable<number>;
 
   public stepsList$: Observable<NavigationStep[]>;
+
+  public noListSelected = true;
 
   constructor(protected eorzeaFacade: EorzeaFacade, protected ipc: IpcService,
               protected listsFacade: ListsFacade, protected layoutsFacade: LayoutsFacade,
@@ -82,12 +73,15 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
     this.ipc.send('overlay:pcap', { enabled: true, url: '/step-by-step-list-overlay' });
     this.ipc.mainWindowState$.pipe(
       filter(state => {
-        return state.lists && state.lists.selectedId && state.layouts;
+        return state.lists && state.layouts;
       })
     ).subscribe((state) => {
-      this.listsFacade.overlayListsLoaded(Object.values<List>(state.lists.listDetails.entities).filter(list => list.$key === state.lists.selectedId));
-      this.listsFacade.select(state.lists.selectedId);
-      this.layoutsFacade.selectFromOverlay(state.layouts.selectedKey);
+      this.noListSelected = !state.lists.selectedId;
+      if (state.lists.selectedId) {
+        this.listsFacade.overlayListsLoaded(Object.values<List>(state.lists.listDetails.entities).filter(list => list.$key === state.lists.selectedId));
+        this.listsFacade.select(state.lists.selectedId);
+        this.layoutsFacade.selectFromOverlay(state.layouts.selectedKey);
+      }
     });
   }
 
@@ -99,10 +93,6 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
     return this.mapId$;
   }
 
-  markStepAsDone(step: NavigationStep): void {
-    this.listsFacade.setItemDone(step.itemId, step.iconid, step.finalItem, step.item_amount, null, step.total_item_amount);
-  }
-
   ngOnInit() {
     super.ngOnInit();
     this.stepsList$ = this.currentPath$.pipe(
@@ -110,7 +100,7 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
     );
     this.closestMap$ = this.stepByStep$.pipe(
       map((stepByStep) => {
-        return stepByStep.maps[0];
+        return stepByStep.maps[1];
       })
     );
   }

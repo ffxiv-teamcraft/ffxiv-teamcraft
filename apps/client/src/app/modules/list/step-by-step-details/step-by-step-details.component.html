@@ -120,7 +120,7 @@
             <ng-template #othersTitleTpl>
               {{'LIST_DETAILS.STEP_BY_STEP.Others' | translate}}
             </ng-template>
-            <div nz-row>
+            <div nz-row [nzGutter]="[5,5]">
               <app-step-by-step-datatype *ngFor="let source of list.steps[-1].sources; trackBy: trackByMapId; index as i"
                                          nz-col [nzXXl]="(i % 2 === 0 && !list.steps[-1].sources[i + 1]) ? 24 : 12" [nzLg]="24"
                                          [dataType]="source"

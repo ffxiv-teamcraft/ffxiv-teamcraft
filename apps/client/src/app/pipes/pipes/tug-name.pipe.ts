@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Tug } from '../../core/data/model/tug';
+import { Tug } from '@ffxiv-teamcraft/types';
 
 @Pipe({
   name: 'tugName'

@@ -61,13 +61,14 @@ import { from, mergeMap, tap } from 'rxjs';
 import { ItemSeriesExtractor } from './extractors/item-series.extractor';
 import { ShopsExtractor } from './extractors/shops.extractor';
 import { SeedsExtractor } from './extractors/seeds.extractor';
+import { ItemDetailsExtractExtractor } from './extractors/extracts/item-details-extract.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
 // We have to do it like that because the lib seems to dynamically import its prompts,
 // which creates shitty typings
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { MultiSelect } = require('enquirer');
+const { MultiSelect, Confirm } = require('enquirer');
 
 const extractors: AbstractExtractor[] = [
   new I18nExtractor('BNpcName', 'mobs', 'Singular_'),
@@ -159,16 +160,23 @@ const extractors: AbstractExtractor[] = [
   await kobold.init();
   const xiv = new XivDataService(kobold);
   xiv.UIColor = await xiv.getSheet('UIColor');
+  console.clear();
 
   const operationsSelection = new MultiSelect({
     name: 'operations',
+    limit: 10,
     message: 'What should be extracted ?',
     choices: [
       'everything',
       ...extractors.map(extractor => {
         return extractor.getName();
-      })
+      }).sort()
     ]
+  });
+
+  const runExtractors = new Confirm({
+    name: 'runExtractor',
+    message: 'Run extractors once it\'s done?'
   });
 
   if (argv['only']) {
@@ -177,11 +185,15 @@ const extractors: AbstractExtractor[] = [
       return only.includes(e.getName());
     }));
   } else {
-    operationsSelection.run().then((selection: string[]) => {
-      startExtractors(extractors.filter(e => {
-        return selection.includes('everything') || selection.includes(e.getName());
-      }));
-    });
+    const selection = await operationsSelection.run();
+    const runExtractor = await runExtractors.run();
+    startExtractors([
+        ...extractors.filter(e => {
+          return selection.includes('everything') || selection.includes(e.getName());
+        }),
+        ...(runExtractor ? [new ItemDetailsExtractExtractor()] : [])
+      ]
+    );
   }
 
 
@@ -201,6 +213,7 @@ const extractors: AbstractExtractor[] = [
       mergeMap(extractor => {
         const progress = multiBar.create(0, 0, { label: extractor.getName() });
         extractor.setProgress(progress);
+        extractor.setMultiBarRef(multiBar);
         return extractor.extract(xiv).pipe(
           tap(() => {
             progress.stop();

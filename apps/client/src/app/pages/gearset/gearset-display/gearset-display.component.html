@@ -90,7 +90,7 @@
                 <nz-option *ngFor="let food of foods$ | async" [nzValue]="food"
                            [nzLabel]="(food.ID | itemName | i18n) + (food.HQ ? ('('+( 'COMMON.Hq' | translate )+')') : '') + ' / ' + (food | foodBonuses:true | async)"
                            nzCustomContent>
-                  <b>{{food.ID | itemName | i18n}} <span *ngIf="food.HQ">{{'COMMON.Hq' | translate}}</span></b>
+                  <b><app-i18n-name [id]="food.ID" content="items"></app-i18n-name> <span *ngIf="food.HQ">{{'COMMON.Hq' | translate}}</span></b>
                   <div class="food-bonus" *ngFor="let bonus of food | foodBonuses | async">
                     {{bonus}}
                   </div>

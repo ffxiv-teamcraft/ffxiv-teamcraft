@@ -1,12 +1,11 @@
-import { ChangeDetectionStrategy, Component, Inject, OnChanges, OnInit, PLATFORM_ID, SimpleChanges, TemplateRef, ViewChild } from '@angular/core';
-import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
 import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, pairwise, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
-import { List } from '../../../modules/list/model/list';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
@@ -15,7 +14,7 @@ import { ListPickerService } from '../../../modules/list-picker/list-picker.serv
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { AbstractControl, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
-import { I18nName, SearchFilter, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
+import { I18nName, SearchFilter, SearchResult, SearchType, XivapiPatch } from '@ffxiv-teamcraft/types';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -23,7 +22,6 @@ import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import * as _ from 'lodash';
 import { stats } from '../../../core/data/sources/stats';
 import { KeysOfType } from '../../../core/tools/key-of-type';
-import { XivapiPatch } from '../../../core/data/model/xivapi-patch';
 import { Language } from '../../../core/data/language';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { PlatformService } from '../../../core/tools/platform.service';
@@ -66,14 +64,6 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   public availableLanguages = ['en', 'de', 'fr', 'ja', 'ko', 'zh'];
 
   public searchLang$: BehaviorSubject<Language> = new BehaviorSubject<Language>(this.settings.searchLanguage);
-
-  @ViewChild('notificationRef', { static: true })
-  notification: TemplateRef<any>;
-
-  // Notification data
-  itemsAdded = 0;
-
-  modifiedList: List;
 
   allSelected = false;
 
@@ -501,46 +491,14 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   }
 
   public addItemsToList(items: SearchResult[]): void {
-    this.listPicker.pickList().pipe(
-      mergeMap(list => {
-        const operations = items.map(item => {
-          return this.listManager.addToList({
-            itemId: +item.itemId,
-            list: list,
-            recipeId: item.recipe ? item.recipe.recipeId : '',
-            amount: item.amount,
-            collectable: item.addCrafts
-          });
-        });
-        let operation$: Observable<any>;
-        if (operations.length > 0) {
-          operation$ = concat(
-            ...operations
-          );
-        } else {
-          operation$ = of(list);
-        }
-        return this.progressService.showProgress(operation$,
-          items.length,
-          'Adding_recipes',
-          { amount: items.length, listname: list.name });
-      }),
-      tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      mergeMap(list => {
-        // We want to get the list created before calling it a success, let's be pessimistic !
-        return this.progressService.showProgress(
-          combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
-            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
-            map(lists => lists.find(l => l.createdAt.seconds === list.createdAt.seconds)),
-            filter(l => l !== undefined),
-            first()
-          ), 1, 'Saving_in_database');
-      })
-    ).subscribe((list) => {
-      this.itemsAdded = items.length;
-      this.modifiedList = list;
-      this.notificationService.template(this.notification);
-    });
+    this.listPicker.addToList(...items.map(item => {
+      return {
+        id: +item.itemId,
+        recipeId: item.recipe?.recipeId || '',
+        amount: item.amount,
+        collectable: item.addCrafts
+      };
+    }));
   }
 
   public getShareUrl = () => {

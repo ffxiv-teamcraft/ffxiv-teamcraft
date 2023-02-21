@@ -1,7 +1,7 @@
-import { ExplorationType } from '../../model/other/exploration-type';
 import { DataReporter } from './data-reporter';
 import { Observable } from 'rxjs';
 import { ExplorationResult } from './exploration-result';
+import { ExplorationType } from '@ffxiv-teamcraft/types';
 
 export abstract class ExplorationResultReporter implements DataReporter {
   private static ALREADY_SENT_HASHES = JSON.parse(localStorage.getItem(`exploration-reporter:hashes`) || '[]');

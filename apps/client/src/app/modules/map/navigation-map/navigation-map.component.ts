@@ -3,7 +3,7 @@ import { NavigationObjective } from '../navigation-objective';
 import { MapService } from '../map.service';
 import { NavigationStep } from '../navigation-step';
 import { Observable } from 'rxjs';
-import { Vector2 } from '../../../core/tools/vector2';
+import { Vector2 } from '@ffxiv-teamcraft/types';
 import { MapData } from '../map-data';
 import { first } from 'rxjs/operators';
 import { ListsFacade } from '../../list/+state/lists.facade';

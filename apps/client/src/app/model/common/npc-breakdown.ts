@@ -1,5 +1,5 @@
-import { DataType } from '../../modules/list/data/data-type';
-import { getItemSource, ListRow } from '../../modules/list/model/list-row';
+import { DataType, getItemSource, TRADE_SOURCES_PRIORITIES } from '@ffxiv-teamcraft/types';
+import { ListRow } from '../../modules/list/model/list-row';
 import { NpcBreakdownRow } from './npc-breakdown-row';
 import { TradeSource } from '../../modules/list/model/trade-source';
 import { TradeIconPipe } from '../../pipes/pipes/trade-icon.pipe';
@@ -74,7 +74,7 @@ export class NpcBreakdown {
     return tradeSource.trades
       .map(trade => {
         return trade.currencies
-          .map(currency => TradeIconPipe.TRADE_SOURCES_PRIORITIES[currency.id])
+          .map(currency => TRADE_SOURCES_PRIORITIES[currency.id])
           .sort((ca, cb) => cb.ca)[0];
       })
       .sort((a, b) => {
