@@ -788,7 +788,7 @@
       "Toggle_overlay": "Ouvrir/Fermer l'overlay pas à pas",
       "Empty_map": "Rien à faire sur la carte actuelle, la carte la plus proche pour cette liste est {{closest}}",
       "Unknown_map": "Carte inconnue, veuillez changer de carte pour permettre à TC de la détecter.",
-      "No_list": "Aucune liste, veuillez ouvrir une liste dans la fenêtre principale pour que l'overlay fonctionne comme prévu.",
+      "No_list": "No list selected, please open a list in main window to have the overlay work as intended.",
       "Others": "Autres"
     },
     "DISPLAY_MODE": {
@@ -812,7 +812,7 @@
       "Layout_name": "Nom de l'affichage",
       "Invalid_import": "Code d'import invalide",
       "Global_options": "Options générales",
-      "Default_readonly_message": "La mise en page par défaut est en lecture seule. Vous devez créer une nouvelle mise en page en utilisant le bouton + pour pouvoir la personnaliser.",
+      "Default_readonly_message": "This is one of the default layouts and is read-only. Please create a new layout with the + button to customize your layout.",
       "Buttons": "Boutons",
       "Menu": "Menu",
       "Edit_row_buttons_display": "Modifier les boutons de raccourci",
