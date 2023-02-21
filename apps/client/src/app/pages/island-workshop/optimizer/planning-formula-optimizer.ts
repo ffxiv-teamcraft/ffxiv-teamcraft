@@ -180,7 +180,7 @@ export class PlanningFormulaOptimizer {
         object.patterns = this.findPatternsForDay(history, object, dayIndex);
         object.supply = object.patterns.map(p => {
           return p.pattern[dayIndex][0];
-        }).sort((a, b) => a - b)[0];
+        }).sort((a, b) => a > b ? -1 : 1)[0];
         object.hasPeaked = object.patterns.length === 1 && object.patterns[0].index < dayIndex;
         object.isPeaking = object.patterns.length === 1 && object.patterns[0].index === dayIndex;
         return object;
