@@ -523,6 +523,7 @@
     "Disable_hardware_acceleration": "Disable hardware acceleration",
     "Housing_map": "Housing map",
     "Housing_map_explain": "The housing map in which your house is",
+    "Reset_linked_characters_ok": "Character links have been reset",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
