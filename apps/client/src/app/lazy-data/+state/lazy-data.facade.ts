@@ -130,7 +130,7 @@ export class LazyDataFacade {
   }
 
   getRows<K extends LazyDataRecordKey>(propertyKey: K, ...ids: number[]): Observable<Partial<LazyDataEntries[K]>> {
-      return this.state.getRows(propertyKey, ids);
+    return this.state.getRows(propertyKey, ids);
   }
 
   /**
@@ -168,6 +168,9 @@ export class LazyDataFacade {
               case Region.China:
                 return this.getRow(this.findPrefixedProperty(propertyKey, 'zh'), id).pipe(
                   map(zhRow => {
+                    if (zhRow === null) {
+                      return row;
+                    }
                     return {
                       ...row,
                       ...normalizeI18nName(extendedProperty ? row[extendedProperty as string] : zhRow)
@@ -177,6 +180,9 @@ export class LazyDataFacade {
               case Region.Korea:
                 return this.getRow(this.findPrefixedProperty(propertyKey, 'ko'), id).pipe(
                   map(koRow => {
+                    if (koRow === null) {
+                      return row;
+                    }
                     return {
                       ...row,
                       ...normalizeI18nName(extendedProperty ? row[extendedProperty as string] : koRow)
