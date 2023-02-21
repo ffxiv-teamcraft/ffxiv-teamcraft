@@ -263,6 +263,7 @@
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
     "hammerjs": "^2.0.8",
+    "hash-files": "^1.1.1",
     "husky": "^0.14.3",
     "inquirer-autocomplete-prompt": "^1.0.1",
     "jasmine": "2.99.0",
