@@ -1,5 +1,8 @@
 <app-overlay-container uri="/step-by-step-list-overlay">
-  <ng-container *ngIf="list$ | async; else noListTpl">
+  <app-fullpage-message *ngIf="noListSelected; else listDisplayTpl" fontSize="30px"
+                        [disableMobileBreakpoint]="true">{{'LIST_DETAILS.STEP_BY_STEP.No_list' | translate}}</app-fullpage-message>
+
+  <ng-template #listDisplayTpl>
     <ng-container *ngIf="currentMapDisplay$ | async; else closestMapTpl">
       <ng-container *ngIf="currentPath$ | async as mapDisplay">
         <div class="title-banner">
@@ -112,9 +115,6 @@
         </ng-container>
       </ng-container>
     </ng-container>
-  </ng-container>
-  <ng-template #noListTpl>
-    <app-fullpage-message>{{'LIST_DETAILS.STEP_BY_STEP.No_list' | translate}}</app-fullpage-message>
   </ng-template>
   <ng-template #closestMapTpl>
     <app-fullpage-message *ngIf="(mapId$ | async) === 0">{{'LIST_DETAILS.STEP_BY_STEP.Unknown_map' | translate}}</app-fullpage-message>

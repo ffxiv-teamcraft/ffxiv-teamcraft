@@ -41,13 +41,9 @@ import { ListDisplay } from '../../core/layout/list-display';
 })
 export class StepByStepListOverlayComponent extends StepByStepComponent implements OnInit {
 
-  public zoneId$ = this.eorzeaFacade.zoneId$;
-
   public mapId$ = this.eorzeaFacade.mapId$.pipe(
     tap(() => this.loading = true)
   );
-
-  public position$ = this.ipc.updatePositionHandlerPackets$;
 
   public list$ = this.listsFacade.selectedList$;
 
@@ -66,6 +62,8 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
 
   public stepsList$: Observable<NavigationStep[]>;
 
+  public noListSelected = true;
+
   constructor(protected eorzeaFacade: EorzeaFacade, protected ipc: IpcService,
               protected listsFacade: ListsFacade, protected layoutsFacade: LayoutsFacade,
               protected settings: SettingsService, protected lazyData: LazyDataFacade,
@@ -75,12 +73,15 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
     this.ipc.send('overlay:pcap', { enabled: true, url: '/step-by-step-list-overlay' });
     this.ipc.mainWindowState$.pipe(
       filter(state => {
-        return state.lists && state.lists.selectedId && state.layouts;
+        return state.lists && state.layouts;
       })
     ).subscribe((state) => {
-      this.listsFacade.overlayListsLoaded(Object.values<List>(state.lists.listDetails.entities).filter(list => list.$key === state.lists.selectedId));
-      this.listsFacade.select(state.lists.selectedId);
-      this.layoutsFacade.selectFromOverlay(state.layouts.selectedKey);
+      this.noListSelected = !state.lists.selectedId;
+      if (state.lists.selectedId) {
+        this.listsFacade.overlayListsLoaded(Object.values<List>(state.lists.listDetails.entities).filter(list => list.$key === state.lists.selectedId));
+        this.listsFacade.select(state.lists.selectedId);
+        this.layoutsFacade.selectFromOverlay(state.layouts.selectedKey);
+      }
     });
   }
 
@@ -90,10 +91,6 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
 
   protected getMapId(): Observable<number> {
     return this.mapId$;
-  }
-
-  markStepAsDone(step: NavigationStep): void {
-    this.listsFacade.setItemDone(step.itemId, step.iconid, step.finalItem, step.item_amount, null, step.total_item_amount);
   }
 
   ngOnInit() {
