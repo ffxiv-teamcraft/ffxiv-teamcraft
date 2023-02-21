@@ -788,7 +788,7 @@
       "Toggle_overlay": "打开/关闭步骤模式叠加窗口",
       "Empty_map": "当前地图没有内容，该清单中最近的地图是{{closest}}",
       "Unknown_map": "未知地图，请更换地图以检测数据",
-      "No_list": "没有清单，请在主窗口打开清单",
+      "No_list": "No list selected, please open a list in main window to have the overlay work as intended.",
       "Others": "其他"
     },
     "DISPLAY_MODE": {
@@ -812,7 +812,7 @@
       "Layout_name": "布局名称",
       "Invalid_import": "无效的导入码",
       "Global_options": "通用选项",
-      "Default_readonly_message": "默认布局不能修改，请使用 + 按钮新建一个自定义布局。",
+      "Default_readonly_message": "This is one of the default layouts and is read-only. Please create a new layout with the + button to customize your layout.",
       "Buttons": "按钮",
       "Menu": "菜单",
       "Edit_row_buttons_display": "修改物品次级菜单",
