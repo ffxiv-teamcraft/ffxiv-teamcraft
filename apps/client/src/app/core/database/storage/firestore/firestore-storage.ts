@@ -61,7 +61,14 @@ export abstract class FirestoreStorage<T extends DataModel> {
 
   protected stop$: Subject<string> = new Subject<string>();
 
-  protected readonly collection: CollectionReference<T> = collection(this.firestore, this.getBaseUri()).withConverter(this.converter);
+  private _collection: CollectionReference<T>;
+
+  protected get collection() {
+    if (!this._collection) {
+      this._collection = collection(this.firestore, this.getBaseUri()).withConverter(this.converter);
+    }
+    return this._collection;
+  }
 
   protected constructor(protected firestore: Firestore, protected serializer: NgSerializerService, protected zone: NgZone,
                         protected pendingChangesService: PendingChangesService) {
