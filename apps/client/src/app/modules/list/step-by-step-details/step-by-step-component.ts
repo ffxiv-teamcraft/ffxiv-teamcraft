@@ -1,5 +1,5 @@
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { BehaviorSubject, combineLatest, map, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, map, merge, Observable } from 'rxjs';
 import { StepByStepDisplayData } from './step-by-step-display-data';
 import { filter, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { getItemSource } from '@ffxiv-teamcraft/types';
@@ -82,9 +82,17 @@ export abstract class StepByStepComponent extends TeamcraftComponent implements 
       })
     );
 
+    // This resets position on map change
+    const position$ = merge(
+      this.currentMapDisplay$.pipe(map(() => null)),
+      this.ipc.updatePositionHandlerPackets$
+    ).pipe(
+      startWith(null)
+    )
+
     this.currentPath$ = combineLatest([
       this.currentMapDisplay$,
-      this.ipc.updatePositionHandlerPackets$.pipe(startWith(null)),
+      position$,
       this.stepByStep$,
       this.etime.getEorzeanTime()
     ]).pipe(
