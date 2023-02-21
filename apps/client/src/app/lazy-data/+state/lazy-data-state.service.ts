@@ -56,6 +56,7 @@ export class LazyDataStateService {
           };
           data$.next({
             status: 'full',
+            ids: [],
             content
           });
           this.loadingKeys$.next(this.loadingKeys$.value.filter(v => !v.startsWith(propertyKey)));
@@ -107,13 +108,13 @@ export class LazyDataStateService {
       }
     }
     return data$.pipe(
+      filter(data => data.status === 'full' || data.ids.includes(id)),
       map(data => data.content),
-      filter(Boolean),
       map(content => {
         return content[id] || fallback;
       }),
       filter(res => res !== undefined),
-      distinctUntilChanged(),
+      first(),
       shareReplay(1)
     );
   }
@@ -144,11 +145,12 @@ export class LazyDataStateService {
       });
     }
     return data$.pipe(
-      map((data) => data.content),
-      filter(Boolean),
+      filter(data => data.status === 'full' || ids.every(id => data.ids.includes(id))),
+      map(data => data.content),
       map(content => {
         return pick(content, ids) as Partial<LazyDataEntries[K]>;
-      })
+      }),
+      first()
     );
   }
 
@@ -173,17 +175,22 @@ export class LazyDataStateService {
                 });
                 this.loadingKeys$.next(loadingKeys);
               }
-            })
+            }),
+            map(content => ({ ids, content }))
           );
         })
-      ).subscribe((data: Partial<LazyDataWithExtracts[K]>) => {
+      ).subscribe(({ ids, content }) => {
         const obs$ = this.getDataSubject(propertyKey);
         obs$.next({
           status: 'partial',
           content: {
             ...(obs$.value?.content || {}),
-            ...data
-          }
+            ...content
+          },
+          ids: [
+            ...(obs$.value?.ids || []),
+            ...ids
+          ]
         });
       });
     }
@@ -199,7 +206,8 @@ export class LazyDataStateService {
       // We have to cast because TS is being stupid for some reason here
       this.data[key] = new BehaviorSubject<LazyDataContent<K>>({
         status: 'partial',
-        content: null
+        content: null,
+        ids: []
       }) as any;
       // Freeze this property
       Object.defineProperty(this.data, key, { configurable: false, writable: false });
