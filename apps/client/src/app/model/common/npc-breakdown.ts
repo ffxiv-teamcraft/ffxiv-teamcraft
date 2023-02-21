@@ -7,7 +7,7 @@ import { beastTribeNpcs } from '../../core/data/sources/beast-tribe-npcs';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { from, Observable } from 'rxjs';
 import { housingMaterialSuppliers } from '../../core/data/sources/housing-material-suppliers';
-import { map, mergeScan } from 'rxjs/operators';
+import { first, map, mergeScan } from 'rxjs/operators';
 import { Vendor } from '../../modules/list/model/vendor';
 import { TradeNpc } from '../../modules/list/model/trade-npc';
 
@@ -106,7 +106,7 @@ export class NpcBreakdown {
   }
 
   private addRow(npcId: number, row: ListRow, rows: NpcBreakdownRow[]): Observable<NpcBreakdownRow[]> {
-    return this.lazyData.getRow('npcs', npcId).pipe(
+    return this.lazyData.getRow('npcs', npcId, null).pipe(
       map(npc => {
         let breakdownRow = rows.find(r => r.npcId === npcId);
         if (breakdownRow === undefined) {
@@ -116,7 +116,8 @@ export class NpcBreakdown {
         }
         breakdownRow.items = [...breakdownRow.items, row];
         return rows;
-      })
+      }),
+      first()
     );
   }
 

@@ -102,10 +102,9 @@ export class ListPickerService {
             }
           }
         );
-        ref.onClose.subscribe(() => console.log('WTF CLOSE'));
         return race(
-          ref.onClick.pipe(delay(100),tap(() => console.log('click')),map(() => list)),
-          ref.onClose.pipe(tap(() => console.log('close')),map(() => false))
+          ref.onClick.pipe(delay(100),map(() => list)),
+          ref.onClose.pipe(map(() => false))
         );
       })
     ).subscribe((list) => {
