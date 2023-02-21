@@ -812,7 +812,7 @@
       "Layout_name": "Layout name",
       "Invalid_import": "Invalid import code",
       "Global_options": "General options",
-      "Default_readonly_message": "Default layout is readonly. You have to create a new layout using the + button to be able to customize it.",
+      "Default_readonly_message": "This is one of the default layouts and is read-only. Please create a new layout with the + button to customize your layout.",
       "Buttons": "Buttons",
       "Menu": "Menu",
       "Edit_row_buttons_display": "Edit row buttons display",
