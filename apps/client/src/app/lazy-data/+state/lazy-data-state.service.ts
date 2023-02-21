@@ -144,9 +144,10 @@ export class LazyDataStateService {
       });
     }
     return data$.pipe(
+      map((data) => data.content),
       filter(Boolean),
-      map(data => {
-        return pick(data.content, ids) as Partial<LazyDataEntries[K]>;
+      map(content => {
+        return pick(content, ids) as Partial<LazyDataEntries[K]>;
       })
     );
   }
