@@ -150,7 +150,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
 
   public tableColumns$: Observable<ColumnItem[]> = combineLatest([
     this.translate.get('ISLAND_SANCTUARY.WORKSHOP.POPULARITY.High'),
-    this.lazyData.getEntry('islandCraftworksTheme')
+    this.lazyData.getI18nEntry('islandCraftworksTheme')
   ]).pipe(
     // Just a small trick to only compute all this once translations are loaded
     map(([, themes]) => {
