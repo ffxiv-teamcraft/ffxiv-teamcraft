@@ -28,7 +28,7 @@ export class CraftedByExtractor extends AbstractItemDetailsExtractor<CraftedBy[]
           };
           if (craft.masterbook && typeof craft.masterbook !== 'number' && (craft.masterbook as MasterbookClass).id) {
             masterbookEntry = {
-              id: +(craft.masterbook as MasterbookClass).id,
+              id: (craft.masterbook as MasterbookClass).id,
               name: (craft.masterbook as MasterbookClass).name
             };
           }
