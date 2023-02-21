@@ -185,7 +185,13 @@ export class AlarmsPageComponent implements OnInit {
   }
 
   getIngameAlarmMacro = (display: AlarmDisplay) => {
-    const itemName$ = display.alarm.itemId ? this.i18n.getNameObservable('items', display.alarm.itemId) : of((display.alarm as PersistedAlarm).name);
+    let itemName$ = this.i18n.getNameObservable('items', display.alarm.itemId);
+    if (!display.alarm.itemId && display.alarm.name) {
+      itemName$ = of((display.alarm as PersistedAlarm).name);
+    }
+    if (display.alarm.type === -10) {
+      itemName$ = this.i18n.getNameObservable('mobs', display.alarm.bnpcName);
+    }
     return itemName$.pipe(
       map(itemName => {
         const rp: I18nName = {
