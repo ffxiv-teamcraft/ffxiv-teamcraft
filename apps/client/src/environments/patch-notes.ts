@@ -28,4 +28,4 @@ export const patchNotes = `### Bug Fixes
 ### Performance Improvements
 
 * **core:** better load time when first opening a list, new skeletons for icons and names.
-* **core:** new lazy data loading system.`;
+* **core:** new lazy data loading system.`;

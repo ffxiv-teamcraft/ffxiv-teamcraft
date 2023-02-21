@@ -12,6 +12,7 @@ import { PlatformService } from '../../core/tools/platform.service';
 import { distinctUntilChanged, filter, mergeMap, shareReplay, tap } from 'rxjs/operators';
 import { debounceBufferTime } from '../../core/rxjs/debounce-buffer-time';
 import { pick } from 'lodash';
+import { LazyDataContent } from './lazy-data-content';
 
 @Injectable({ providedIn: 'root' })
 export class LazyDataStateService {
@@ -20,7 +21,7 @@ export class LazyDataStateService {
 
   private loadingStates: Partial<{ [Key in LazyDataKey]: LazyDataLoadingState }> = {};
 
-  private data: Partial<{ [Key in LazyDataKey]: BehaviorSubject<Partial<LazyDataWithExtracts[Key]>> }> = {};
+  private data: Partial<{ [Key in LazyDataKey]: BehaviorSubject<LazyDataContent<Key>> }> = {};
 
   private partialLoadQueue: Partial<{ [Key in LazyDataKey]: Subject<keyof LazyDataWithExtracts[Key]> }> = {};
 
@@ -43,23 +44,26 @@ export class LazyDataStateService {
     const data$ = this.getDataSubject(propertyKey);
     const shouldLoad = !loadingState || loadingState.status !== 'full';
     if (shouldLoad) {
-      data$.next(null);
       this.loadingStates[propertyKey] = {
         status: 'full',
         loading: true
       };
       this.loadingKeys$.next([...this.loadingKeys$.value, `${propertyKey}:full`]);
       this.getData(this.getUrl(propertyKey))
-        .subscribe((data: LazyDataWithExtracts[K]) => {
+        .subscribe((content: LazyDataWithExtracts[K]) => {
           this.loadingStates[propertyKey] = {
             status: 'full'
           };
-          data$.next(data);
+          data$.next({
+            status: 'full',
+            content
+          });
           this.loadingKeys$.next(this.loadingKeys$.value.filter(v => !v.startsWith(propertyKey)));
         });
     }
-    return (data$ as BehaviorSubject<LazyDataWithExtracts[K]>).pipe(
-      filter(Boolean),
+    return data$.pipe(
+      filter(data => data?.status === 'full'),
+      map(data => data.content as LazyDataWithExtracts[K]),
       first()
     );
   }
@@ -103,9 +107,10 @@ export class LazyDataStateService {
       }
     }
     return data$.pipe(
+      map(data => data.content),
       filter(Boolean),
-      map(data => {
-        return data[id] || fallback;
+      map(content => {
+        return content[id] || fallback;
       }),
       filter(res => res !== undefined),
       distinctUntilChanged(),
@@ -141,7 +146,7 @@ export class LazyDataStateService {
     return data$.pipe(
       filter(Boolean),
       map(data => {
-        return pick(data, ids) as Partial<LazyDataEntries[K]>;
+        return pick(data.content, ids) as Partial<LazyDataEntries[K]>;
       })
     );
   }
@@ -173,8 +178,11 @@ export class LazyDataStateService {
       ).subscribe((data: Partial<LazyDataWithExtracts[K]>) => {
         const obs$ = this.getDataSubject(propertyKey);
         obs$.next({
-          ...obs$.value,
-          ...data
+          status: 'partial',
+          content: {
+            ...(obs$.value?.content || {}),
+            ...data
+          }
         });
       });
     }
@@ -185,10 +193,13 @@ export class LazyDataStateService {
    *  ===================== TOOLING
    */
 
-  private getDataSubject<K extends LazyDataKey>(key: K): BehaviorSubject<Partial<LazyDataWithExtracts[K]>> {
+  private getDataSubject<K extends LazyDataKey>(key: K): BehaviorSubject<LazyDataContent<K>> {
     if (!this.data[key]) {
       // We have to cast because TS is being stupid for some reason here
-      this.data[key] = new BehaviorSubject<Partial<LazyDataWithExtracts[K]>>(null) as any;
+      this.data[key] = new BehaviorSubject<LazyDataContent<K>>({
+        status: 'partial',
+        content: null
+      }) as any;
       // Freeze this property
       Object.defineProperty(this.data, key, { configurable: false, writable: false });
     }
