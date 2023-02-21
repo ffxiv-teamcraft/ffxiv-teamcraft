@@ -4,8 +4,8 @@ export type WorkshopPattern = [[number, number], [number, number], [number, numb
 
 // [ Supply, Demand ]
 export const workshopPatterns: WorkshopPattern[] = [
-  [[1, -2], [1, 1], [2, 4], [2, 2], [2, 2], [2, 2], [2, 2]], // Cycle 2 weak
-  [[1, 0], [0, 0], [2, 4], [2, 2], [2, 2], [2, 2], [2, 2]], // Cycle 2 Strong
+  [[1, -1], [1, 1], [2, 4], [2, 2], [2, 2], [2, 2], [2, 2]], // Cycle 2 weak
+  [[1, -2], [0, 0], [2, 4], [2, 2], [2, 2], [2, 2], [2, 2]], // Cycle 2 Strong
 
   [[2, -1], [1, 1], [1, 1], [2, 4], [2, 2], [2, 2], [2, 2]], // Cycle 3 weak
   [[2, -1], [1, 0], [0, 0], [2, 4], [2, 2], [2, 2], [2, 2]], // Cycle 3 Strong

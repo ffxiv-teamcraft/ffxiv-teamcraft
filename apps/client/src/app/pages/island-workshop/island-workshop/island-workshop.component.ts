@@ -511,7 +511,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
         return Math.min(day[0], 2) === patternEntry[0]
           && (
             patternEntry[1] === -1
-            || (patternEntry[1] === -2 && day[1] !== 0)
+            || (patternEntry[1] === -2 && day[1] !== 1)
             || day[1] === patternEntry[1]
           );
       });
