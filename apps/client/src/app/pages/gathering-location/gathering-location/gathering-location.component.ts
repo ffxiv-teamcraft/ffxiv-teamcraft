@@ -62,8 +62,6 @@ export class GatheringLocationComponent {
 
   results$: Observable<{ rows: ResultRow[], total: number }>;
 
-  alarmsLoaded$: Observable<boolean> = this.alarmsFacade.loaded$;
-
   alarms$: Observable<PersistedAlarm[]> = this.alarmsFacade.allAlarms$;
 
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
@@ -255,22 +253,15 @@ export class GatheringLocationComponent {
     }) === undefined;
   }
 
-  public canCreateAlarm(alarms: PersistedAlarm[], alarm: PersistedAlarm): boolean {
-    return alarms.find(a => {
-      return alarm.itemId === a.itemId
-        && Math.floor(alarm.coords.x) === Math.floor(a.coords.x)
-        && alarm.zoneId === a.zoneId
-        && alarm.type === a.type
-        && alarm.fishEyes === a.fishEyes;
-    }) === undefined;
-  }
-
   public submitFilters(): void {
     this.filters$.next(this.filtersForm.getRawValue());
   }
 
   public resetFilters(): void {
-    this.filtersForm.reset();
+    this.filtersForm.reset({
+      type: -1,
+      use: -1
+    });
     this.submitFilters();
   }
 
