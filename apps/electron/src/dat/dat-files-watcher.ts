@@ -7,7 +7,7 @@ import { InventoryCoords } from './inventory-coords';
 import { RetainerInventory } from './retainer-inventory';
 import { app, dialog, ipcMain, OpenDialogOptions } from 'electron';
 import { Store } from '../store';
-import hashFiles from 'hash-files';
+import hash from 'object-hash';
 
 class UnexpectedSizeError extends Error {
   constructor(expected, real) {
@@ -26,7 +26,9 @@ export class DatFilesWatcher {
   private static readonly CONTENT_ID_REGEXP = /FFXIV_CHR(\w+)/;
 
   private static readonly XOR8 = 0x73;
+
   private static readonly XOR16 = 0x7373;
+
   private static readonly XOR32 = 0x73737373;
 
   private static readonly INVENTORY_NAMES = [
@@ -103,7 +105,7 @@ export class DatFilesWatcher {
     }
     const fullFilePath = join(watchDir, filename);
     try {
-      const newHash = hashFiles.sync({ files: [fullFilePath] });
+      const newHash = this.getODRHash(fullFilePath);
       if (this.hashRegistry[fullFilePath] !== newHash) {
         log.log(`Approved hash for ${filename}`);
         this.hashRegistry[fullFilePath] = newHash;
@@ -120,7 +122,12 @@ export class DatFilesWatcher {
     }
   }
 
-  private parseItemODR(filePath: string, contentId): void {
+  private getODRHash(path: string): string {
+    const odr = this.parseItemOrder(readFileSync(path));
+    return hash(odr);
+  }
+
+  private parseItemODR(filePath: string, contentId: string): void {
     readFile(filePath, (err, content) => {
       const odr = this.parseItemOrder(content);
       if (this.mainWindow.win) {
@@ -186,8 +193,8 @@ export class DatFilesWatcher {
           try {
             const odrPath = join(watchDir, dir, 'ITEMODR.DAT');
             const gsPath = join(watchDir, dir, 'GS.DAT');
-            const odrHash = hashFiles.sync({ files: [odrPath] });
-            const gsHash = hashFiles.sync({ files: [gsPath] });
+            const odrHash = this.getODRHash(odrPath);
+            const gsHash = this.getODRHash(gsPath);
             return {
               ...acc,
               [odrPath]: odrHash,
