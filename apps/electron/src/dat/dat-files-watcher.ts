@@ -192,13 +192,10 @@ export class DatFilesWatcher {
         if (stats.isDirectory() && contentId) {
           try {
             const odrPath = join(watchDir, dir, 'ITEMODR.DAT');
-            const gsPath = join(watchDir, dir, 'GS.DAT');
             const odrHash = this.getODRHash(odrPath);
-            const gsHash = this.getODRHash(gsPath);
             return {
               ...acc,
               [odrPath]: odrHash,
-              [gsPath]: gsHash
             };
           } catch (e) {
             log.error(e);
