@@ -68,17 +68,18 @@ export class AllaganReportsComponent {
         appliedReportsCount: dashboardData.appliedReportsCount,
         fishCoverage: Math.floor(1000 * (fishes.length - fishWithNoData.length) / fishes.length) / 10,
         fishWithNoData,
-        itemsWithNoSource: Object.values(extracts).filter(e => {
-          if (e.id < 0) {
+        itemsWithNoSource: Object.keys(items)
+          .filter(id => {
+          if (+id < 0) {
             return false;
           }
-          const enName = items[e.id].en;
-          const frName = items[e.id].fr;
-          return !fishWithNoData.includes(e.id)
+          const enName = items[id].en;
+          const frName = items[id].fr;
+          return !fishWithNoData.includes(+id)
             && !['Dated', 'Skybuilders'].some(ignored => enName.indexOf(ignored) > -1)
             && !/S\d{1,2}$/.test(frName) && enName.length > 0
-            && e.sources.length === 0;
-        }).map(e => e.id).sort((a, b) => b - a)
+            && getExtract(extracts, +id).sources.length === 0;
+        }).sort((a, b) => +b - +a)
       };
     })
   );
