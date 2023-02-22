@@ -179,7 +179,8 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
             }),
           ...materias
         ];
-      })
+      }),
+      first()
     ).subscribe(items => {
       this.listPicker.addToList(...items);
     });

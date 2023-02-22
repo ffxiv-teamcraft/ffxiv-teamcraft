@@ -4,6 +4,7 @@ import { AlarmDetails, CompactMasterbook, Ingredient, TripleTriadDuel } from '..
 import { CraftedBy, Drop, FateData, GardeningData, GatheredBy, IslandAnimal, IslandCrop, MogstationItem, TradeSource, Vendor } from '../source';
 import { ExtractRow } from './extracts';
 import { ItemSource } from './item-source';
+import structuredClone from '@ungap/structured-clone';
 
 export function getItemSource(item: ExtractRow, type: DataType.CRAFTED_BY, isObject?: boolean): CraftedBy[]
 export function getItemSource(item: ExtractRow, type: DataType.TRADE_SOURCES, isObject?: boolean): TradeSource[]

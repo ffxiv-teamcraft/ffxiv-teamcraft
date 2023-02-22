@@ -6,7 +6,7 @@ import { map, switchMap } from 'rxjs/operators';
 import { AlarmsExtractor } from './alarms.extractor';
 import { CraftedByExtractor } from './crafted-by.extractor';
 import { DeprecatedExtractor } from './deprecated.extractor';
-import { AlarmDetails, DataType, GatheringNode } from '@ffxiv-teamcraft/types';
+import { AlarmDetails, DataType, GatheringNode, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
 import { SimpleDetailsExtractor } from './simple-details-extractor.extractor';
 import { IslandPastureExtractor } from './island-pasture.extractor';
 import { QuestsExtractor } from './quests.extractor';
@@ -156,8 +156,7 @@ export class ItemDetailsExtractExtractor extends AbstractExtractor {
         }
         (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en);
         tab.items = tab.items.map(item => {
-          const extract = extracts[item.itemId];
-          const gatheredBy = (extract?.sources || []).find(s => s.type === DataType.GATHERED_BY);
+          const gatheredBy = getItemSource(getExtract(extracts, item.itemId), DataType.GATHERED_BY);
           (item as any).nodes = (gatheredBy?.nodes || [])
             .slice(0, 3)
             .map(node => {
