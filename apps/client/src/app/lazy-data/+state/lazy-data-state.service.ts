@@ -155,6 +155,7 @@ export class LazyDataStateService {
   }
 
   private loadRowAndSetupSubscription<K extends LazyDataRecordKey>(propertyKey: K, id: keyof LazyDataWithExtracts[K]): void {
+    const baseUrl = environment.useLocalAPI ? 'http://localhost:3333' : 'https://api.ffxivteamcraft.com';
     if (!this.partialLoadQueue[propertyKey]) {
       this.partialLoadQueue[propertyKey] = new Subject<keyof LazyDataWithExtracts[K]>() as any;
     }
@@ -164,7 +165,7 @@ export class LazyDataStateService {
         // Small 20ms debounce to make sure we catch all demands before starting our request
         debounceBufferTime(20),
         mergeMap((ids) => {
-          return this.http.get<any>(`https://api.ffxivteamcraft.com/data/${contentName}/${hash}/${ids.join(',')}`).pipe(
+          return this.http.get<any>(`${baseUrl}/data/${contentName}/${hash}/${ids.join(',')}`).pipe(
             tap(() => {
               const loadingState = this.loadingStates[propertyKey];
               if (loadingState.status === 'partial') {

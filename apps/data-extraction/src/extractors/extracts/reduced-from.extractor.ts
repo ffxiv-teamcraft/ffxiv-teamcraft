@@ -11,9 +11,9 @@ export class ReducedFromExtractor extends AbstractItemDetailsExtractor<number[]>
     if (!reductionRow) {
       return [];
     }
-    return reductionRow.map(id => {
-      return this.aetherialReduce[itemId] ? id : -1;
-    }).filter(r => r > 0);
+    return reductionRow.filter(id => {
+      return this.aetherialReduce[id];
+    });
   }
 
   getDataType(): DataType {

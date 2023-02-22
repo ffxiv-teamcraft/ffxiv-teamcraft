@@ -158,8 +158,8 @@ export class GatheredByExtractor<T = GatheredBy> extends AbstractItemDetailsExtr
     return [...currentChain, { id: baitId }].reverse();
   }
 
-  doExtract(itemId: number): any {
-    const nodes = this.getItemNodes(itemId);
+  doExtract(itemId: number): GatheredBy {
+    const nodes = this.getItemNodes(itemId, true);
     const nodeType = nodes.length > 0 ? nodes[0].type : -1;
     let gatheringItem: { level: number, stars: number };
     switch (nodeType) {
