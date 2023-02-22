@@ -87,7 +87,7 @@ export class StepByStepList {
           .map(node => {
             return {
               mapId: node.map,
-              icon: (node.limited ? NodeTypeIconPipe.timed_icons : NodeTypeIconPipe.icons)[node.type],
+              icon: (node.limited ? NodeTypeIconPipe.timed_icons : NodeTypeIconPipe.icons)[Math.abs(node.type)],
               coords: {
                 x: node.x,
                 y: node.y
