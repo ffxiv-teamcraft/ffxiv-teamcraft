@@ -1,6 +1,6 @@
 <nz-card [nzTitle]="title">
   <div fxLayout="column" fxLayoutGap="10px">
-    <div *ngIf="!readonly && !isOtherRow" class="filter" fxLayout="column" fxLayoutGap="5px">
+    <div *ngIf="!isOtherRow" class="filter" fxLayout="column" fxLayoutGap="5px">
       <div *ngFor="let fragment of filter; let last = last" fxLayout="row">
         <div *ngIf="!fragment.isBooleanGate" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-sm="column"
              fxLayoutAlign="flex-start center" fxLayoutGap="5px">
