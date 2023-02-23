@@ -17,9 +17,7 @@
              *ngIf="item.finalItem && !this.finalItem$.value"></i>
           <i nz-icon nzType="stop" nzTheme="outline" nz-tooltip [nzTooltipTitle]="'LIST.Requirements_ignored' | translate"
              *ngIf="ignoreRequirements$ | async"></i>
-          <span [itemNameCopy]="item.id"
-                class="item-name"
-                nz-tooltip>
+          <span [itemNameCopy]="item.id" class="item-name" nz-tooltip>
               <app-i18n-name [content]="item.contentType || 'items'" [id]="item.id" [fallback]="item.name"></app-i18n-name>
             </span>
           <span *ngIf="requiredForFinalCraft$ | async as requiredForFinal">

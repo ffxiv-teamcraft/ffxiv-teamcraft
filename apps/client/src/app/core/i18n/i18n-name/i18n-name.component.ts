@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest } from 'rxjs';
 import { LazyDataI18nKey } from '@ffxiv-teamcraft/types';
-import { map, switchMap } from 'rxjs/operators';
+import { filter, map, switchMap } from 'rxjs/operators';
 import { observeInput } from '../../rxjs/observe-input';
 import { I18nToolsService } from '../../tools/i18n-tools.service';
 
@@ -19,6 +19,7 @@ export class I18nNameComponent {
     observeInput(this, 'id'),
     observeInput(this, 'fallback', true)
   ]).pipe(
+    filter(([, id]) => id !== null),
     switchMap(([content, id, fallback]) => {
       return this.lazyData.getI18nName(content, id).pipe(
         map(name => name || (fallback && this.i18n.createFakeI18n(fallback)))

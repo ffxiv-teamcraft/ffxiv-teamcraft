@@ -101,7 +101,7 @@ export class LazyDataStateService {
         };
         this.loadingStates[propertyKey] = loadingState;
       }
-      if (!loadingState.loaded.includes(id) && !loadingState.loading.includes(id)) {
+      if (id !== null && !loadingState.loaded.includes(id) && !loadingState.loading.includes(id)) {
         this.loadingKeys$.next([...this.loadingKeys$.value, `${propertyKey}:${id.toString()}`]);
         loadingState.loading.push(id);
         this.loadRowAndSetupSubscription(propertyKey, id as keyof LazyDataWithExtracts[K]);
@@ -166,7 +166,7 @@ export class LazyDataStateService {
         debounceBufferTime(20),
         mergeMap((ids) => {
           let url = `${baseUrl}/data/${contentName}/${hash}/${ids.join(',')}`;
-          const fullLoading = url.length >= 2048;
+          const fullLoading = url.length >= 4096;
           // If we're over max url length, load the whole damn thing at once.
           if (fullLoading) {
             url = this.getUrl(propertyKey);
