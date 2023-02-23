@@ -165,7 +165,13 @@ export class LazyDataStateService {
         // Small 20ms debounce to make sure we catch all demands before starting our request
         debounceBufferTime(20),
         mergeMap((ids) => {
-          return this.http.get<any>(`${baseUrl}/data/${contentName}/${hash}/${ids.join(',')}`).pipe(
+          let url = `${baseUrl}/data/${contentName}/${hash}/${ids.join(',')}`;
+          const fullLoading = url.length >= 2048;
+          // If we're over max url length, load the whole damn thing at once.
+          if (fullLoading) {
+            url = this.getUrl(propertyKey);
+          }
+          return this.http.get<Partial<LazyDataWithExtracts[K]>>(url).pipe(
             tap(() => {
               const loadingState = this.loadingStates[propertyKey];
               if (loadingState.status === 'partial') {
@@ -177,18 +183,18 @@ export class LazyDataStateService {
                 this.loadingKeys$.next(loadingKeys);
               }
             }),
-            map(content => ({ ids, content }))
+            map(content => ({ ids, content, fullLoading }))
           );
         })
-      ).subscribe(({ ids, content }) => {
+      ).subscribe(({ ids, content, fullLoading }) => {
         const obs$ = this.getDataSubject(propertyKey);
         obs$.next({
-          status: 'partial',
+          status: fullLoading ? 'full' : 'partial',
           content: {
             ...(obs$.value?.content || {}),
             ...content
           },
-          ids: [
+          ids: fullLoading ? [] : [
             ...(obs$.value?.ids || []),
             ...ids
           ]

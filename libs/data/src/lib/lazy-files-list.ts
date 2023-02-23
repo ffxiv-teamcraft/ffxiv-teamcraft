@@ -333,7 +333,7 @@ export const lazyFilesList = {
   },
   'logTrackerPageData': {
     'fileName': 'log-tracker-page-data.json',
-    'hashedFileName': 'log-tracker-page-data.65612b33a902dc3f946973148ee826b0c1754f45.json'
+    'hashedFileName': 'log-tracker-page-data.2e68743024b195aa8c7a53df64ccb1872169b9d4.json'
   },
   'lootSources': {
     'fileName': 'loot-sources.json',
