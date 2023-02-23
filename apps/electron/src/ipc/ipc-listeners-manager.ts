@@ -296,6 +296,7 @@ export class IpcListenersManager {
     });
 
     ipcMain.on('open-link', (event, url) => {
+      if (!['https:', 'http:'].includes(new URL(url).protocol)) return;
       shell.openExternal(url);
     });
 
