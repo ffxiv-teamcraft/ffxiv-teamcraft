@@ -15,11 +15,7 @@ export abstract class AbstractItemDetailsExtractor<T> {
   }
 
   public generateStars(amount: number): string {
-    let stars = '';
-    for (let i = 0; i < amount; i++) {
-      stars += '★';
-    }
-    return stars;
+    return new Array(amount).fill('★').join('');
   }
 
   public abstract doExtract(itemId: number, sources: { type: DataType, data: any }[]): T;
