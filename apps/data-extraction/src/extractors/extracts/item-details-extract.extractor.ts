@@ -2,11 +2,11 @@ import { AbstractExtractor } from '../../abstract-extractor';
 import { XivDataService } from '../../xiv/xiv-data.service';
 import { GatheredByExtractor } from './gathered-by.extractor';
 import { AbstractItemDetailsExtractor } from './abstract-item-details-extractor';
-import { map, switchMap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { AlarmsExtractor } from './alarms.extractor';
 import { CraftedByExtractor } from './crafted-by.extractor';
 import { DeprecatedExtractor } from './deprecated.extractor';
-import { AlarmDetails, DataType, GatheringNode } from '@ffxiv-teamcraft/types';
+import { AlarmDetails, DataType, Extracts, GatheringNode, getExtract, getItemSource, LazyDataI18nKey } from '@ffxiv-teamcraft/types';
 import { SimpleDetailsExtractor } from './simple-details-extractor.extractor';
 import { IslandPastureExtractor } from './island-pasture.extractor';
 import { QuestsExtractor } from './quests.extractor';
@@ -31,6 +31,12 @@ export class ItemDetailsExtractExtractor extends AbstractExtractor {
 
   paramGrow = this.requireLazyFileByKey('paramGrow');
 
+  items = this.requireLazyFileByKey('items');
+
+  islandBuildings = this.requireLazyFileByKey('islandBuildings');
+
+  islandLandmarks = this.requireLazyFileByKey('islandLandmarks');
+
   alarmsExtractor: AlarmsExtractor;
 
   protected doExtract(xiv: XivDataService): void {
@@ -39,7 +45,7 @@ export class ItemDetailsExtractExtractor extends AbstractExtractor {
       frames: ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏']
     }).start();
     this.get('https://xivapi.com/patchlist').pipe(
-      switchMap(patches => {
+      map(patches => {
         this.alarmsExtractor = new AlarmsExtractor(patches);
         const extractors: AbstractItemDetailsExtractor<any>[] = [
           new DeprecatedExtractor(patches),
@@ -64,40 +70,51 @@ export class ItemDetailsExtractExtractor extends AbstractExtractor {
           new RequirementsExtractor(patches),
           new MasterbooksExtractor(patches)
         ];
-        return this.getSheet(xiv, 'Item', []).pipe(
-          map(items => {
-            let done = 0;
+        let done = 0;
+        const itemIds = Object.keys({ ...this.items, ...this.islandBuildings, ...this.islandLandmarks });
+        spinner.update({
+          text: `Item details ${done}/${itemIds.length}`
+        }).spin();
+        return itemIds.reduce((extracts, _itemId) => {
+          const itemId = +_itemId;
+          const sources = [];
+          let contentType: LazyDataI18nKey | null = null;
+          let xivapiIcon: string | null = null;
+          if (itemId <= -11000) {
+            contentType = 'islandLandmarks';
+            xivapiIcon = this.islandLandmarks[_itemId].icon;
+          } else if (itemId <= -10000) {
+            contentType = 'islandBuildings';
+            xivapiIcon = this.islandBuildings[_itemId].icon;
+          }
+          for (const extractor of extractors) {
+            const source = extractor.doExtract(itemId, sources);
+            const isEmptyArray = Array.isArray(source) && source.length === 0;
+            if (source && !isEmptyArray) {
+              sources.push({ type: extractor.getDataType(), data: source });
+              if (extractor.getDataType() === DataType.DEPRECATED) {
+                break;
+              }
+            }
+          }
+          if (sources.length > 0) {
+            extracts[itemId] = {
+              id: itemId,
+              sources: sources.sort((a, b) => a.type - b.type)
+            };
+            if (contentType) {
+              extracts[itemId].contentType = contentType;
+              extracts[itemId].xivapiIcon = xivapiIcon;
+            }
+          }
+          done++;
+          if (done % 100 === 0 || done === itemIds.length) {
             spinner.update({
-              text: `Item details ${done}/${items.length}`
+              text: `Item details ${done}/${itemIds.length}`
             }).spin();
-            return items.reduce((extracts, item) => {
-              const sources = [];
-              for (const extractor of extractors) {
-                const source = extractor.doExtract(item.index, sources);
-                const isEmptyArray = Array.isArray(source) && source.length === 0;
-                if (source && !isEmptyArray) {
-                  sources.push({ type: extractor.getDataType(), data: source });
-                  if (extractor.getDataType() === DataType.DEPRECATED) {
-                    break;
-                  }
-                }
-              }
-              if (sources.length > 0) {
-                extracts[item.index] = {
-                  id: item.index,
-                  sources: sources.sort((a, b) => a.type - b.type)
-                };
-              }
-              done++;
-              if (done % 100 === 0 || done === items.length) {
-                spinner.update({
-                  text: `Item details ${done}/${items.length}`
-                }).spin();
-              }
-              return extracts;
-            }, {});
-          })
-        );
+          }
+          return extracts;
+        }, {} as Extracts);
       })
     ).subscribe(extracts => {
       spinner.success({
@@ -156,8 +173,7 @@ export class ItemDetailsExtractExtractor extends AbstractExtractor {
         }
         (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en);
         tab.items = tab.items.map(item => {
-          const extract = extracts[item.itemId];
-          const gatheredBy = (extract?.sources || []).find(s => s.type === DataType.GATHERED_BY);
+          const gatheredBy = getItemSource(getExtract(extracts, item.itemId), DataType.GATHERED_BY);
           (item as any).nodes = (gatheredBy?.nodes || [])
             .slice(0, 3)
             .map(node => {

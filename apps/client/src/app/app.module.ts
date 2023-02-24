@@ -293,26 +293,7 @@ const nzConfig: NzConfig = {
       }
     }),
     !environment.production ? StoreDevtoolsModule.instrument({
-      name: 'FFXIV Teamcraft',
-      stateSanitizer: (state) => {
-        const { lazyData, ...sanitized } = state;
-        return sanitized;
-      },
-      actionSanitizer: (action) => {
-        if (action.type.includes('LazyData')) {
-          return {
-            type: action.type,
-            key: (action as any).key,
-            entity: (action as any).entity,
-            id: (action as any).id
-          };
-        }
-        if (action.type === ListsActionTypes.SetItemDone) {
-          const { settings, ...sanitized } = (action as SetItemDone);
-          return sanitized;
-        }
-        return action;
-      }
+      name: 'FFXIV Teamcraft'
     }) : [],
     EffectsModule.forRoot([]),
     StoreModule.forFeature('auth', authReducer, { initialState: authInitialState }),

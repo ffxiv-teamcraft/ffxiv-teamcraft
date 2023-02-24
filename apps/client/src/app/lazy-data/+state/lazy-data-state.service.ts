@@ -101,7 +101,7 @@ export class LazyDataStateService {
         };
         this.loadingStates[propertyKey] = loadingState;
       }
-      if (!loadingState.loaded.includes(id) && !loadingState.loading.includes(id)) {
+      if (id !== null && !loadingState.loaded.includes(id) && !loadingState.loading.includes(id)) {
         this.loadingKeys$.next([...this.loadingKeys$.value, `${propertyKey}:${id.toString()}`]);
         loadingState.loading.push(id);
         this.loadRowAndSetupSubscription(propertyKey, id as keyof LazyDataWithExtracts[K]);
@@ -155,6 +155,7 @@ export class LazyDataStateService {
   }
 
   private loadRowAndSetupSubscription<K extends LazyDataRecordKey>(propertyKey: K, id: keyof LazyDataWithExtracts[K]): void {
+    const baseUrl = environment.useLocalAPI ? 'http://localhost:3333' : 'https://api.ffxivteamcraft.com';
     if (!this.partialLoadQueue[propertyKey]) {
       this.partialLoadQueue[propertyKey] = new Subject<keyof LazyDataWithExtracts[K]>() as any;
     }
@@ -164,7 +165,13 @@ export class LazyDataStateService {
         // Small 20ms debounce to make sure we catch all demands before starting our request
         debounceBufferTime(20),
         mergeMap((ids) => {
-          return this.http.get<any>(`https://api.ffxivteamcraft.com/data/${contentName}/${hash}/${ids.join(',')}`).pipe(
+          let url = `${baseUrl}/data/${contentName}/${hash}/${ids.join(',')}`;
+          const fullLoading = url.length >= 4096;
+          // If we're over max url length, load the whole damn thing at once.
+          if (fullLoading) {
+            url = this.getUrl(propertyKey);
+          }
+          return this.http.get<Partial<LazyDataWithExtracts[K]>>(url).pipe(
             tap(() => {
               const loadingState = this.loadingStates[propertyKey];
               if (loadingState.status === 'partial') {
@@ -176,18 +183,18 @@ export class LazyDataStateService {
                 this.loadingKeys$.next(loadingKeys);
               }
             }),
-            map(content => ({ ids, content }))
+            map(content => ({ ids, content, fullLoading }))
           );
         })
-      ).subscribe(({ ids, content }) => {
+      ).subscribe(({ ids, content, fullLoading }) => {
         const obs$ = this.getDataSubject(propertyKey);
         obs$.next({
-          status: 'partial',
+          status: fullLoading ? 'full' : 'partial',
           content: {
             ...(obs$.value?.content || {}),
             ...content
           },
-          ids: [
+          ids: fullLoading ? [] : [
             ...(obs$.value?.ids || []),
             ...ids
           ]

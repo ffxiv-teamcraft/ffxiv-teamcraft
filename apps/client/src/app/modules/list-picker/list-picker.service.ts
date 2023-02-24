@@ -108,7 +108,6 @@ export class ListPickerService {
         );
       })
     ).subscribe((list) => {
-      console.log(list);
       if (list) {
         this.router.navigate(['/list', list.$key]);
       }

@@ -137,18 +137,28 @@ export class DataService {
       .filter(f => f.value !== null)
       .map(f => {
         if (f.minMax) {
-          return [
-            {
-              column: f.name,
-              operator: '>=',
-              value: f.value.min
-            },
-            {
-              column: f.name,
-              operator: '<=',
-              value: f.value.max
-            }
-          ];
+          if (f.value.exclude) {
+            return [
+              {
+                column: f.name,
+                operator: '!!',
+                value: ''
+              }
+            ];
+          } else {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          }
         } else if (Array.isArray(f.value)) {
           return [{
             column: f.name,

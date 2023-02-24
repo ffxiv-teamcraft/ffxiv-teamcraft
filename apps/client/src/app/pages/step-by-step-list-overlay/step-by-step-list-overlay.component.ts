@@ -98,9 +98,11 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
     this.stepsList$ = this.currentPath$.pipe(
       map(path => path.path.steps.slice(1))
     );
-    this.closestMap$ = this.stepByStep$.pipe(
-      map((stepByStep) => {
-        return stepByStep.maps[1];
+    this.closestMap$ = combineLatest([this.stepByStep$, this.mapId$]).pipe(
+      map(([stepByStep, currentMapId]) => {
+        return stepByStep.maps.filter(mapId => {
+          return mapId !== currentMapId && stepByStep.steps[mapId].progress < 100;
+        })[0];
       })
     );
   }

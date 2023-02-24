@@ -42,3 +42,6 @@ console.error = (message?: any, ...optionalParams: any[]) => {
     originalError(message, ...optionalParams);
   }
 };
+
+navigator.mediaDevices.getUserMedia = () => Promise.resolve(null);
+navigator.mediaDevices.enumerateDevices = () => Promise.resolve([]);

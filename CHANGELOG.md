@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.3.2"></a>
+## [10.3.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.1...v10.3.2) (2023-02-24)
+
+
+### Bug Fixes
+
+* **allagan-reports:** fixed list of items with no reports always empty ([4723a2e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4723a2e))
+* **db:** fixed db pages not showing reduction sources ([5c50a61](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5c50a61))
+* **desktop:** prevent open-link ipc event from opening local files ([81179ab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/81179ab))
+* **island-workshop:** allowed items with undetermined C2 peak type to be considered for best item to use ([3bfc6fa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3bfc6fa))
+* **island-workshop:** fixed schedules ending in 84 when they occur ([0b1fc24](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0b1fc24))
+* **island-workshop:** planner now properly assumes worst possible future supply for cowrie calculations ([3543c95](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3543c95))
+* **layouts:** now showing filters on readonly layouts editor ([f4c9ebe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f4c9ebe))
+* **list:** fixed recipe stars always showing 1 extra star ([a28292e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a28292e))
+* **lists:** fixed island landmark recipes not loading ([b5297e1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b5297e1))
+* **lists:** fixed too many lists or very large lists breaking lazy data system entirely ([da084e3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/da084e3))
+* **log-tracker:** fixed BTN/MIN log tracker pages having no coords or alarms ([1ae46b1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1ae46b1))
+* **search:** fixed stat exclusion checkbox not applied properly ([322f355](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/322f355))
+* **step-by-step:** fixed beast trades sometimes showing when also from monster drops ([a42724b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a42724b))
+* **step-by-step:** fixed fishing icon missing on map path ([0a6ff0e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0a6ff0e))
+* **step-by-step-overlay:** fixed next incomplete map not filtering empty maps ([35bc9cf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/35bc9cf))
+
+
+
 <a name="10.3.1"></a>
 ## [10.3.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.2.4...v10.3.1) (2023-02-21)
 

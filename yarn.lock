@@ -3297,10 +3297,12 @@
   resolved "https://registry.yarnpkg.com/@jsdevtools/ono/-/ono-7.1.3.tgz#9df03bbd7c696a5c58885c34aa06da41c8543796"
   integrity sha512-4JQNk+3mVzK3xh2rqd6RB4J46qUR19azEHBneZyTZM+c456qOrbbM/5xcR8huNCCcbVt7+UmizG6GuUvPvKUYg==
 
-"@kaiu/ng-serializer@1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@kaiu/ng-serializer/-/ng-serializer-1.1.1.tgz#32fc8594db380ef200082042acd84bfd3cf7b71d"
-  integrity sha512-goqjvdp9ZAHw0tHF/KczQtHlFvK+giYW/LeXQdpxI1fXzP/t/WWapj6wggRZ2QX33iOJ/snGLp4f0ef2r7FO7Q==
+"@kaiu/ng-serializer@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@kaiu/ng-serializer/-/ng-serializer-2.0.0.tgz#be0e23a160b34d76142e068a25438ee1e998a95f"
+  integrity sha512-gOLxY+A1l5AtTccEAn+LRPAUNnefWo+hh58ADZE2+E1j0agQ8o/ult3viHa1KUvm7W+bHuK9hsRAC2gAUnOO3w==
+  dependencies:
+    tslib "^2.3.0"
 
 "@kaiu/serializer@1.4.0", "@kaiu/serializer@^1.4.0":
   version "1.4.0"
@@ -4188,11 +4190,6 @@
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@socket.io/component-emitter/-/component-emitter-3.1.0.tgz#96116f2a912e0c02817345b3c10751069920d553"
   integrity sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==
-
-"@std/esm@^0.26.0":
-  version "0.26.0"
-  resolved "https://registry.yarnpkg.com/@std/esm/-/esm-0.26.0.tgz#c3ec3abdee95738e15ea7c695b7fee14ae529b81"
-  integrity sha512-g3RDuosSa5fZOzENtrZdx7Gevb3zabfn8qglug2aCJIVz/4woFpKoqm1yD3mG2RD0zJEZRnkkuPHsmNglKGl7g==
 
 "@swimlane/dragula@^3.8.0":
   version "3.8.0"

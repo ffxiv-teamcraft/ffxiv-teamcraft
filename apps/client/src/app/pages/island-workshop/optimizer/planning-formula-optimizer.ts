@@ -62,6 +62,18 @@ export class PlanningFormulaOptimizer {
         }
         projectedTime = useComboItem ? combo.craftworksEntry.craftingTime + best.craftworksEntry.craftingTime : best.craftworksEntry.craftingTime;
       }
+      //Inverted schedule detection for *84 schedules
+      const planLength = day.planning.length;
+      if (planLength >= 2 && day.planning[planLength - 1].craftworksEntry.craftingTime == 4 && day.planning[planLength - 2].craftworksEntry.craftingTime == 8) {
+        let item = day.planning[planLength - 2];
+        day.planning.push(item);
+        totalTime += item.craftworksEntry.craftingTime;
+        objectsUsage[item.id] = objectsUsage[item.id] + this.workshops * 2;
+        item = day.planning[0];
+        totalTime -= item.craftworksEntry.craftingTime;
+        objectsUsage[item.id] = objectsUsage[item.id] - this.workshops;
+        day.planning.shift();
+      }
       while (totalTime < 24) {
         const bestFirstItem = projectedSupplyObjects.filter(obj => {
           return obj.craftworksEntry.craftingTime <= (24 - totalTime)
@@ -160,7 +172,7 @@ export class PlanningFormulaOptimizer {
 
   private getBestItems(projectedSupplyObjects: CraftworksObject[], objectsUsage: Record<number, number>): CraftworksObject[] {
     let items = projectedSupplyObjects
-      .filter((obj, i, array) => array.filter(e => e.craftworksEntry.themes.some(t => obj.craftworksEntry.themes.includes(t))) && obj.patterns.length === 1);
+      .filter((obj, i, array) => array.filter(e => e.craftworksEntry.themes.some(t => obj.craftworksEntry.themes.includes(t))) && obj.isPeaking);
 
     if (items.length === 0) {
       items = projectedSupplyObjects
@@ -180,9 +192,9 @@ export class PlanningFormulaOptimizer {
         object.patterns = this.findPatternsForDay(history, object, dayIndex);
         object.supply = object.patterns.map(p => {
           return p.pattern[dayIndex][0];
-        }).sort((a, b) => a - b)[0];
+        }).sort((a, b) => a > b ? -1 : 1)[0];
         object.hasPeaked = object.patterns.length === 1 && object.patterns[0].index < dayIndex;
-        object.isPeaking = object.patterns.length === 1 && object.patterns[0].index === dayIndex;
+        object.isPeaking = (object.patterns.length === 1 || object.patterns.length === 2) && object.patterns[0].index === dayIndex;
         return object;
       });
   }

@@ -16,6 +16,7 @@ import { Vector3 } from '@ffxiv-teamcraft/types';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 import { LazyAetheryte } from '@ffxiv-teamcraft/data/model/lazy-aetheryte';
+import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
 
 @Injectable()
 export class MapService {
@@ -81,7 +82,7 @@ export class MapService {
 
   public getOptimizedPathInWorld(points: NavigationObjective[]): Observable<WorldNavigationStep[]> {
     const allMaps = _.uniq(points.map(point => point.mapId));
-    return requestsWithDelay(allMaps.map(mapId => this.getMapById(mapId)), 250)
+    return safeCombineLatest(allMaps.map(mapId => this.getMapById(mapId)))
       .pipe(
         switchMap(maps => {
           return combineLatest(

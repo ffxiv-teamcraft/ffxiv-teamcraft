@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "10.3.1",
+  "version": "10.3.2",
   "license": "MIT",
   "main": "dist/apps/electron/src/main.js",
   "build": {
@@ -121,7 +121,6 @@
   "dependencies": {
     "@ffxiv-teamcraft/pcap-ffxiv": "0.11.13",
     "@ffxiv-teamcraft/pcap-ffxiv-krcn": "npm:@ffxiv-teamcraft/pcap-ffxiv@0.11.5",
-    "@std/esm": "^0.26.0",
     "@ungap/structured-clone": "^1.0.1",
     "@xivapi/nodestone": "^0.2.5",
     "buffer-reader": "^0.1.0",
@@ -174,7 +173,7 @@
     "@fortawesome/fontawesome-free-brands": "^5.0.13",
     "@fortawesome/fontawesome-free-solid": "^5.0.13",
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
-    "@kaiu/ng-serializer": "1.1.1",
+    "@kaiu/ng-serializer": "2.0.0",
     "@kaiu/serializer": "1.4.0",
     "@kobold/core": "^0.0.2",
     "@kobold/excel": "^0.0.4",

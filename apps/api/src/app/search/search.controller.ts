@@ -29,7 +29,7 @@ export class SearchController {
         .filter(Boolean)
         .map(fragment => {
           const [, column, operator, value] = fragment.match(/([^><=?!|]+)([><=?!|]{1,2})(.*)/);
-          if (value === '') {
+          if (value === '' && operator !== '!!') {
             return null;
           }
           return {
