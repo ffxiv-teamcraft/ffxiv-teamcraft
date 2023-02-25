@@ -323,16 +323,11 @@ export class LayoutRowFilter {
     const parsed = filterString.split(':');
     const baseFilterString: string = parsed.shift();
     const baseFilter: LayoutRowFilter = LayoutRowFilter[baseFilterString.replace('!', '')];
+    const firstFilter = baseFilterString[0] === '!' ? LayoutRowFilter.not(baseFilter) : baseFilter;
     if (parsed.length > 1 && baseFilter !== undefined) {
-      if (baseFilterString[0] === '!'){
-        return LayoutRowFilter.processRows(parsed, LayoutRowFilter.not(baseFilter));
-      }
-      return LayoutRowFilter.processRows(parsed, baseFilter);
+      return LayoutRowFilter.processRows(parsed, firstFilter);
     }
-    if (baseFilterString[0] === '!') {
-      return LayoutRowFilter.not(baseFilter);
-    }
-    return baseFilter;
+    return firstFilter;
   }
 
   public static not(baseFilter: LayoutRowFilter): LayoutRowFilter {
