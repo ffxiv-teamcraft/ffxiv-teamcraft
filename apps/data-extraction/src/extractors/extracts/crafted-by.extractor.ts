@@ -13,7 +13,7 @@ export class CraftedByExtractor extends AbstractItemDetailsExtractor<CraftedBy[]
           itemId: itemId,
           job: craft.job,
           lvl: craft.lvl,
-          stars_tooltip: craft.stars > 0 ? `(${this.generateStars(craft.stars)}★)` : '',
+          stars_tooltip: craft.stars > 0 ? `(${craft.stars}★)` : '',
           id: craft.id.toString(),
           rlvl: craft.rlvl,
           durability: craft.durability,

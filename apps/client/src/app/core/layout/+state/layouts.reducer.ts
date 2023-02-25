@@ -1,4 +1,4 @@
-import { loadListLayoutsSuccess, loadListLayoutSuccess, selectListLayout, updateListLayout } from './layouts.actions';
+import { deleteListLayout, loadListLayoutsSuccess, loadListLayoutSuccess, selectListLayout, updateListLayout } from './layouts.actions';
 import { ListLayout } from '../list-layout';
 import { createEntityAdapter, EntityState } from '@ngrx/entity';
 import { createReducer, on } from '@ngrx/store';
@@ -52,6 +52,11 @@ export const layoutsReducer = createReducer(
   ),
   on(updateListLayout, (state, { layout }) =>
     listLayoutsAdapter.setOne(layout, {
+      ...state
+    })
+  ),
+  on(deleteListLayout, (state, { id }) =>
+    listLayoutsAdapter.removeOne(id, {
       ...state
     })
   )

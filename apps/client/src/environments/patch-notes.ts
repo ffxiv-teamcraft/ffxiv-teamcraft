@@ -1,31 +1,17 @@
 export const patchNotes = `### Bug Fixes
 
-* **alarms:** fixed ingame macro generator for island animals.
-* **alarms:** fixed some alarms not showing gathering type.
-* **alarms:** fixed weather-only alarms not marked as done as they should.
-* **db:** better fix for oddly delicate exchange rates.
-* **desktop:** reliability improvements for character detection.
-* **gathering-location:** fixed reset button emptying filters.
-* **gathering-location:** remove clear button from type and use dropdowns.
-* **island-workshop:** fixed planner sometimes using the same item twice in a row..
-* **island-workshop:** store pre-6.3 data separate from global data.
-* **layout:** better description for readonly layouts.
-* **layouts:** fixed layout save sometimes not applied immediately.
-* **layouts-page:** fixed no lists being displayed in the preview dropdown.
-* **log-tracker:** fix missing data in bait tooltips.
-* **search:** bring back wildcard_plus search features.
-* **step-by-step:** fixed low level crafts sometimes included as vendor entries.
-* **step-by-step:** reset position on map change.
-* **step-by-step-overlay:** now displaying error message if no list is selected.
-* **step-by-step-overlay:** now showing the next closest map for real.
-
-
-### Features
-
-* **db:** support for korean v6.2 update.
-
-
-### Performance Improvements
-
-* **core:** better load time when first opening a list, new skeletons for icons and names.
-* **core:** new lazy data loading system.`;
+* **allagan-reports:** fixed list of items with no reports always empty.
+* **db:** fixed db pages not showing reduction sources.
+* **desktop:** prevent open-link ipc event from opening local files.
+* **island-workshop:** allowed items with undetermined C2 peak type to be considered for best item to use.
+* **island-workshop:** fixed schedules ending in 84 when they occur.
+* **island-workshop:** planner now properly assumes worst possible future supply for cowrie calculations.
+* **layouts:** now showing filters on readonly layouts editor.
+* **list:** fixed recipe stars always showing 1 extra star.
+* **lists:** fixed island landmark recipes not loading.
+* **lists:** fixed too many lists or very large lists breaking lazy data system entirely.
+* **log-tracker:** fixed BTN/MIN log tracker pages having no coords or alarms.
+* **search:** fixed stat exclusion checkbox not applied properly.
+* **step-by-step:** fixed beast trades sometimes showing when also from monster drops.
+* **step-by-step:** fixed fishing icon missing on map path.
+* **step-by-step-overlay:** fixed next incomplete map not filtering empty maps.`;

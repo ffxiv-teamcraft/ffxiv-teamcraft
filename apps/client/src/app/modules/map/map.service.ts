@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
 import { MapData } from './map-data';
-import { Vector2 } from '@ffxiv-teamcraft/types';
+import { Vector2, Vector3 } from '@ffxiv-teamcraft/types';
 import { MathToolsService } from '../../core/tools/math-tools';
 import { NavigationStep } from './navigation-step';
 import { NavigationObjective } from './navigation-objective';
@@ -9,10 +9,8 @@ import { debounceTime, map, shareReplay, startWith, switchMap, withLatestFrom } 
 import { XivapiService } from '@xivapi/angular-client';
 import * as _ from 'lodash';
 import { WorldNavigationStep } from './world-navigation-step';
-import { requestsWithDelay } from '../../core/rxjs/requests-with-delay';
 import { SettingsService } from '../settings/settings.service';
 import { EorzeaFacade } from '../eorzea/+state/eorzea.facade';
-import { Vector3 } from '@ffxiv-teamcraft/types';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 import { LazyAetheryte } from '@ffxiv-teamcraft/data/model/lazy-aetheryte';
@@ -26,6 +24,13 @@ export class MapService {
 
   // TP duration on the same map, this is an average.
   private static readonly TP_DURATION = 8;
+
+  private static readonly MAP_OVERRIDES = {
+    213: 257, // dravanian forelands => use Idyllshire
+    11: 12, // Limsa lower => use upper
+    13: 14, // Steps of thal => use steps of nald
+    2: 3 // Old gridania => use new
+  };
 
   private cache: { [index: number]: Observable<MapData> } = {};
 
@@ -164,10 +169,10 @@ export class MapService {
           map(currentMapId => {
             const path = [];
             while (mapIds.length > 0) {
-              const currentAetheryte = this.filterAetherytes(aetherytes, path[0] || currentMapId, true)[0];
+              const currentAetheryte = this.filterAetherytes(aetherytes, path[0] || currentMapId, true, true)[0];
               path.push(mapIds.sort((a, b) => {
-                const aAetheryte = this.filterAetherytes(aetherytes, a, true)[0];
-                const bAetheryte = this.filterAetherytes(aetherytes, b, true)[0];
+                const aAetheryte = this.filterAetherytes(aetherytes, a, true, true)[0];
+                const bAetheryte = this.filterAetherytes(aetherytes, b, true, true)[0];
                 const aCost = this.getTpCost(currentAetheryte, aAetheryte as LazyAetheryte);
                 const bCost = this.getTpCost(currentAetheryte, bAetheryte as LazyAetheryte);
                 return aCost - bCost;
@@ -218,7 +223,7 @@ export class MapService {
       return 999;
     }
 
-    if (from.map === to.map) {
+    if (this.getMapId(from.map) === this.getMapId(to.map)) {
       return 70;
     }
 
@@ -237,15 +242,20 @@ export class MapService {
     );
   }
 
-  private filterAetherytes(aetherytes: LazyAetheryte[], mapId: number, excludeMinis = false): LazyAetheryte[] {
-    // If it's dravanian forelands, use Idyllshire id instead.
-    if (mapId === 213) {
-      mapId = 257;
+  private filterAetherytes(aetherytes: LazyAetheryte[], mapId: number, excludeMinis = false, includeTownOverrides = false): LazyAetheryte[] {
+    // Handle main cities having two maps but only one aetheryte, and idyllshire
+    if (mapId > 20 || includeTownOverrides) {
+      mapId = this.getMapId(mapId);
     }
+
     return aetherytes
       .filter((aetheryte) => {
         return aetheryte.map === mapId && (!excludeMinis || aetheryte.type === 0);
       });
+  }
+
+  getMapId(mapId: number): number {
+    return MapService.MAP_OVERRIDES[mapId] || mapId;
   }
 
   private totalDuration(path: NavigationStep[]): number {

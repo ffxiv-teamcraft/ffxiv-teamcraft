@@ -84,7 +84,7 @@ export abstract class StepByStepComponent extends TeamcraftComponent implements 
 
     // This resets position on map change
     const position$ = merge(
-      this.currentMapDisplay$.pipe(map(() => null)),
+      this.selectedMap$.pipe(map(() => null)),
       this.ipc.updatePositionHandlerPackets$
     ).pipe(
       startWith(null)
