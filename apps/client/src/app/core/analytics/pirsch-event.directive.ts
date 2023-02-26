@@ -3,11 +3,11 @@ import { AnalyticsService } from './analytics.service';
 
 @Directive({
   // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: '[fathomEvent]'
+  selector: '[pirschEvent]'
 })
-export class FathomEventDirective {
+export class PirschEventDirective {
 
-  @Input('fathomEvent')
+  @Input('pirschEvent')
   code: string;
 
   @HostListener('click')

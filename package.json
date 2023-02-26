@@ -294,6 +294,7 @@
     "nz-tslint-rules": "^0.901.2",
     "ora": "^6.1.2",
     "papaparse": "^5.3.2",
+    "pirsch-sdk": "^2.1.1",
     "prettier": "2.6.2",
     "qs": "^6.11.0",
     "quicktype-core": "6.1.0",

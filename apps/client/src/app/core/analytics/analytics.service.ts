@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { PlatformService } from '../tools/platform.service';
 import { IpcService } from '../electron/ipc.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Pirsch, PirschWebClient } from 'pirsch-sdk/web';
+import { environment } from '../../../environments/environment';
+import { PirschBrowserHit, Scalar } from 'pirsch-sdk';
 
 declare const gtag: (...args: any[]) => void;
-declare const fathom: any;
 
 @Injectable({
   providedIn: 'root'
@@ -15,13 +17,12 @@ export class AnalyticsService {
 
   private static readonly GA3_ID = 'UA-104948571-1';
 
-  private static readonly FATHOM_ID = 'TNSXKFPS';
+  private pirsch: PirschWebClient;
 
   constructor(private platformService: PlatformService, private ipc: IpcService,
               private translate: TranslateService) {
-    this.initFathom(this.platformService.isDesktop());
+    this.initPirsch(this.platformService.isDesktop());
     if (this.platformService.isDesktop()) {
-      (window as any).fathomHost = 'https://ffxivteamcraft.app';
       this.ipc.send('analytics:init', {
         ga3: AnalyticsService.GA3_ID,
         ga4: AnalyticsService.GA4_ID,
@@ -39,24 +40,16 @@ export class AnalyticsService {
     }
   }
 
-  private initFathom(desktop: boolean): void {
-    if (document.getElementById('fathom') !== null) {
-      return;
-    }
-    const script = document.createElement('script');
-    script.setAttribute('id', 'fathom');
-    script.setAttribute('src', './assets/fathom.js');
-    script.setAttribute('data-site', AnalyticsService.FATHOM_ID);
-    script.setAttribute('data-spa', 'auto');
-    script.setAttribute('data-tracker-url', 'https://beard-genuine.ffxivteamcraft.com/');
-    script.setAttribute('data-excluded-domains', 'localhost');
-    if (desktop) {
-      script.setAttribute('data-host', 'https://ffxivteamcraft.electron');
-    }
-    document.head.appendChild(script);
+  private initPirsch(desktop: boolean): void {
+    this.pirsch = new Pirsch({
+      identificationCode: 'rfKDF2BBvfeaKFFLDuJVri1sV0zh5v4w',
+      hostname: 'ffxivteamcraft.com'
+    });
+    this.event('init', { app: desktop ? 'electron' : 'web', version: environment.version });
   }
 
   public pageView(url: string): void {
+    this.pirschHit();
     if (this.platformService.isDesktop()) {
       this.ipc.send('analytics:pageView', url);
     } else {
@@ -65,7 +58,19 @@ export class AnalyticsService {
     }
   }
 
-  public event(code: string): void {
-    fathom.trackGoal(code, 0);
+  private generatePirschHit(): PirschBrowserHit {
+    const hit = this.pirsch.hitFromBrowser();
+    if (this.platformService.isDesktop()) {
+      hit.url = `https://ffxivteamcraft.com${hit.url.split('#')[1] || '/'}`;
+    }
+    return hit;
+  }
+
+  private pirschHit(): void {
+    this.pirsch.hit(this.generatePirschHit());
+  }
+
+  public event(code: string, meta?: Record<string, Scalar>): void {
+    this.pirsch.event(code, 0, meta, this.generatePirschHit());
   }
 }
