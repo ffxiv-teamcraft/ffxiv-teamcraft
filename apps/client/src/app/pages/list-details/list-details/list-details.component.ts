@@ -48,6 +48,7 @@ import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { uniq } from 'lodash';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 import { ListDisplayMode } from './list-display-mode';
+import { AnalyticsService } from '../../../core/analytics/analytics.service';
 
 @Component({
   selector: 'app-list-details',
@@ -151,7 +152,8 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
               private discordWebhookService: DiscordWebhookService, private i18n: I18nToolsService,
               private linkTools: LinkToolsService, protected seoService: SeoService,
               private media: MediaObserver, public ipc: IpcService, private inventoryFacade: InventoryService,
-              public settings: SettingsService, public platform: PlatformService, private commissionsFacade: CommissionsFacade) {
+              public settings: SettingsService, public platform: PlatformService, private commissionsFacade: CommissionsFacade,
+              private analyticsService: AnalyticsService) {
     super(seoService);
     this.ipc.once('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
@@ -335,6 +337,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   cloneList(list: List): void {
     this.listsFacade.loadMyLists();
     const clone = ListController.clone(list);
+    this.analyticsService.event('List created');
     this.listsFacade.updateList(list);
     this.listManager.upgradeList(clone).pipe(
       first()
