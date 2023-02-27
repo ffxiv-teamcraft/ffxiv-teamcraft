@@ -22,7 +22,11 @@ export class FishTrainController {
       .doc(id)
       .get()
       .then(doc => {
-        return doc.data();
+        const data = doc.data();
+        return {
+          start: data.start,
+          fish: data.fish
+        }
       })
       .catch(err => {
         if (err.code === 7) {
@@ -42,7 +46,8 @@ export class FishTrainController {
           start: new Date(stop.start).getTime(),
           end: new Date(stop.end).getTime()
         };
-      })
+      }),
+      passengers: []
     };
     return this.firestore
       .collection('fish-train')
