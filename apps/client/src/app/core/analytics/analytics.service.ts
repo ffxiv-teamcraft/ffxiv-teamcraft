@@ -67,10 +67,14 @@ export class AnalyticsService {
   }
 
   private pirschHit(): void {
-    this.pirsch.hit(this.generatePirschHit());
+    if (environment.production) {
+      this.pirsch.hit(this.generatePirschHit());
+    }
   }
 
   public event(code: string, meta?: Record<string, Scalar>): void {
-    this.pirsch.event(code, 0, meta, this.generatePirschHit());
+    if (environment.production) {
+      this.pirsch.event(code, 0, meta, this.generatePirschHit());
+    }
   }
 }
