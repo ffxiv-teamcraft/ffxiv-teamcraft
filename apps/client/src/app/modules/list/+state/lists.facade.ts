@@ -55,9 +55,9 @@ import { PermissionsController } from '../../../core/database/permissions-contro
 import { ListController } from '../list-controller';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
+import { AnalyticsService } from '../../../core/analytics/analytics.service';
 
 declare const gtag: (...args: any[]) => void;
-declare const fathom: any;
 
 @Injectable({
   providedIn: 'root'
@@ -201,7 +201,7 @@ export class ListsFacade {
               private teamsFacade: TeamsFacade, private settings: SettingsService, private userInventoryService: InventoryService,
               private router: Router, private serializer: NgSerializerService, private itemPicker: ItemPickerService,
               private listManager: ListManagerService, private progress: ProgressPopupService, private ipc: IpcService,
-              private listsService: FirestoreListStorage) {
+              private listsService: FirestoreListStorage, private analyticsService: AnalyticsService) {
     router.events
       .pipe(
         distinctUntilChanged((previous: any, current: any) => {
@@ -272,7 +272,7 @@ export class ListsFacade {
         const list = this.newListWithName(res.name);
         list.ephemeral = res.ephemeral;
         list.offline = res.offline;
-        fathom.trackGoal('AYCCVISE', 0);
+        this.analyticsService.event('List created');
         return list;
       }),
       first()

@@ -11,7 +11,6 @@ import { Timestamp } from '@angular/fire/firestore';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 
 
-declare const fathom: any;
 declare const gtag: (...args: any[]) => any;
 
 interface CraftAdditionParams {
@@ -63,7 +62,6 @@ export class ListController {
         'event_label': 'clone',
         'non_interaction': true
       });
-      fathom.trackGoal('AYCCVISE', 0);
       list.forks++;
       ListController.reset(clone);
     }
