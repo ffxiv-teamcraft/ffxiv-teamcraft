@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.3.4"></a>
+## [10.3.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.3...v10.3.4) (2023-02-27)
+
+
+### Bug Fixes
+
+* **lists:** fixed lists creation being entirely broken ([1d884af](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1d884af))
+
+
+
 <a name="10.3.3"></a>
 ## [10.3.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.2...v10.3.3) (2023-02-27)
 
