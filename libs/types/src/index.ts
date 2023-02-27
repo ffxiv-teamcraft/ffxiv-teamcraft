@@ -6,3 +6,4 @@ export * from './lib/data';
 export * from './lib/list';
 export * from './lib/game';
 export * from './lib/core';
+export * from './lib/fishing';
