@@ -2,7 +2,7 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { BehaviorSubject, combineLatest, map, merge, Observable } from 'rxjs';
 import { StepByStepDisplayData } from './step-by-step-display-data';
 import { filter, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
-import { getItemSource } from '@ffxiv-teamcraft/types';
+import { DataType, getItemSource, Vector2 } from '@ffxiv-teamcraft/types';
 import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
 import { MapMarker } from '../../map/map-marker';
 import { NavigationObjective } from '../../map/navigation-objective';
@@ -16,12 +16,11 @@ import { MapService } from '../../map/map.service';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { MapData } from '../../map/map-data';
-import { Vector2 } from '@ffxiv-teamcraft/types';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { StepByStepList } from './model/step-by-step-list';
 import { ListDisplay } from '../../../core/layout/list-display';
-import { DataType } from '@ffxiv-teamcraft/types';
 import { MapListStep } from './model/map-list-step';
+import { uniqBy } from 'lodash';
 
 @Component({ template: '' })
 export abstract class StepByStepComponent extends TeamcraftComponent implements OnInit {
@@ -88,7 +87,7 @@ export abstract class StepByStepComponent extends TeamcraftComponent implements 
       this.ipc.updatePositionHandlerPackets$
     ).pipe(
       startWith(null)
-    )
+    );
 
     this.currentPath$ = combineLatest([
       this.currentMapDisplay$,
@@ -167,7 +166,7 @@ export abstract class StepByStepComponent extends TeamcraftComponent implements 
                         'margin-left': '-16px'
                       }
                     } as MapMarker : null,
-                    ...alarmMarkers.map(m => m.marker),
+                    ...uniqBy(alarmMarkers.map(m => m.marker), (marker) => `${marker.x}:${marker.y}`),
                     ...display.sources
                       .filter(s => s !== DataType.ALARMS)
                       .map(source => {

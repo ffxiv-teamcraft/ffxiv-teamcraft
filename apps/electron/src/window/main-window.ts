@@ -170,7 +170,14 @@ export class MainWindow {
     };
 
     this.win.webContents.on('will-navigate', handleRedirect);
-    this.win.webContents.on('new-window', handleRedirect);
+    this.win.webContents.setWindowOpenHandler(details => {
+      let url = details.url;
+      if (url.indexOf('ffxivteamcraft.com') > -1 || url.indexOf('index.html#') > -1) {
+        url = `${url}${url.indexOf('?') > -1 ? '&' : '?'}noDesktop=true`;
+      }
+      require('electron').shell.openExternal(url);
+      return { action: 'deny' };
+    });
 
     (this.store.get('overlays', []) || []).forEach(overlayUri => this.overlayManager.toggleOverlay({ url: overlayUri }));
   }
