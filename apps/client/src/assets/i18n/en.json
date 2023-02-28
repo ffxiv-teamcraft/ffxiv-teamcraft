@@ -3095,5 +3095,23 @@
       "Main_drop": "Main drop",
       "Rare_drop": "Rare drop"
     }
+  },
+  "FISH_TRAIN": {
+    "Not_found": "Fish train not found",
+    "Route": "Route",
+    "Current_fish": "Current fish",
+    "Details_title": "Fish train #{{id}}",
+    "Departure": "Departure: {{time}}",
+    "Departure_in": "Departure in {{time}}",
+    "Terminus": "Terminus: {{time}}",
+    "Stopped": "Stopped",
+    "Running": "Running",
+    "Waiting": "Waiting",
+    "Bait": "Bait",
+    "Copy_macro": "Copy macro",
+    "Are_you_on_spot": "Are you already on the fishing spot?",
+    "Copy_move_macro": "Copy train move macro",
+    "Current_position_macro": "/shout Fish train is currently fishing for {{itemName}} at {{mapName}}: {{coords}}. Preferred bait: {{bait}}, min gathering: {{minGathering}}",
+    "Next_position_macro": "/shout Choo Choo ! Fish train is moving to {{mapName}}: {{coords}} in order to fish {{itemName}}. Preferred bait: {{bait}}, min gathering: {{minGathering}}"
   }
 }

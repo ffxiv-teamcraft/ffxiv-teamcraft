@@ -3,7 +3,6 @@ import { ListRow } from '../../modules/list/model/list-row';
 import { tpWindowEntries } from '../../core/data/sources/tp-window-entries';
 import { LayoutRowFilter } from '../../core/layout/layout-row-filter';
 import { DataType, getItemSource } from '@ffxiv-teamcraft/types';
-import { GatheredBy } from '../../modules/list/model/gathered-by';
 import { Drop } from '../../modules/list/model/drop';
 import { PersistedAlarm } from '../../core/alarms/persisted-alarm';
 import { Vendor } from '../../modules/list/model/vendor';
@@ -17,7 +16,7 @@ export class ZoneBreakdown {
     rows.forEach(row => {
       if (getItemSource(row, DataType.GATHERED_BY, true).nodes !== undefined && getItemSource(row, DataType.GATHERED_BY, true).nodes.length !== 0
         && this.hasOneFilter(filterChain, LayoutRowFilter.IS_GATHERING, LayoutRowFilter.IS_GATHERED_BY_BTN, LayoutRowFilter.IS_GATHERED_BY_MIN, LayoutRowFilter.IS_GATHERED_BY_FSH)) {
-        getItemSource<GatheredBy>(row, DataType.GATHERED_BY, true).nodes.forEach(node => {
+        getItemSource(row, DataType.GATHERED_BY, true).nodes.forEach(node => {
           const coords = { x: node.x || 0, y: node.y || 0 };
           // In the case of fishing, we have to get the zone name differently, as the spot has zoneid for its own place name, not the map's name
           if (node.type === 4) {

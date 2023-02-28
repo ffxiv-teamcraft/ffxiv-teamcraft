@@ -1,0 +1,44 @@
+.inactive-step-icon {
+  filter: grayscale(1);
+}
+
+.hookset-icon {
+  border-radius: 50%;
+  width: 24px;
+}
+
+.current-details-block {
+  padding: 2px;
+
+  .details-content {
+    padding: 2px;
+  }
+}
+
+.details-column {
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: var(--topbar-color);
+
+  nz-steps {
+    height: calc(100vh - 90px - 72px - 140px);
+    overflow: auto;
+  }
+
+  nz-card {
+    background-color: var(--topbar-color);
+  }
+
+  > h3 {
+    border-bottom: 1px solid #444;
+  }
+
+  &.route {
+    height: 100%
+  }
+}
+
+.ant-divider {
+  margin: 8px 0;
+}
