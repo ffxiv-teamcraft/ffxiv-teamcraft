@@ -1,3 +1,3 @@
 export const patchNotes = `### Bug Fixes
 
-* **lists:** fixed lists creation being entirely broken.`;
+* **lists:** fixed lists creation being entirely broken.`;
