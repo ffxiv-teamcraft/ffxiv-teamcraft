@@ -327,7 +327,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   }
 
   public markPanelAsHQ(hq: boolean): void {
-    this.listsFacade.markAsHq(this.displayRow.rows.map(row => row.id), hq);
+    this.listsFacade.markAsHq(this.displayRow.rows.map(row => row.id), hq, this.finalItems);
   }
 
   public resetPanel(): void {

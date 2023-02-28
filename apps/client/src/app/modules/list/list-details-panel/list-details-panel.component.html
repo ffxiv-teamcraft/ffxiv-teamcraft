@@ -180,7 +180,7 @@
             </button>
           </div>
           <div [nzTooltipTitle]="'LIST.Mark_whole_panel_hq' | translate"
-               *ngIf="!aggregate && !displayRow.allHQ &&  permissionLevel >= 20 && !finalItems" nz-tooltip>
+               *ngIf="!aggregate && !displayRow.allHQ &&  permissionLevel >= 20" nz-tooltip>
             <button (click)="$event.stopPropagation()" (nzOnConfirm)="markPanelAsHQ(true)"
                     [nzPopconfirmTitle]="'Confirmation' | translate"
                     nz-button

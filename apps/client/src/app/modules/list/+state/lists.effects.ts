@@ -264,16 +264,28 @@ export class ListsEffects {
   markItemsHq$ = createEffect(() => this.actions$.pipe(
     ofType<MarkItemsHq>(ListsActionTypes.MarkItemsHq),
     withLatestFrom(this.selectedListClone$),
-    map(([{ itemIds, hq }, list]) => {
-      list.items = list.items.map(i => {
-        if (itemIds.includes(i.id)) {
-          return {
-            ...i,
-            forceRequiredHQ: hq
-          };
-        }
-        return i;
-      });
+    map(([{ itemIds, hq, finalItems }, list]) => {
+      if (finalItems) {
+        list.finalItems = list.finalItems.map(i => {
+          if (itemIds.includes(i.id)) {
+            return {
+              ...i,
+              forceRequiredHQ: hq
+            };
+          }
+          return i;
+        });
+      } else {
+        list.items = list.items.map(i => {
+          if (itemIds.includes(i.id)) {
+            return {
+              ...i,
+              forceRequiredHQ: hq
+            };
+          }
+          return i;
+        });
+      }
       ListController.updateAllStatuses(list);
       ListController.updateEtag(list);
       return new UpdateList(list);

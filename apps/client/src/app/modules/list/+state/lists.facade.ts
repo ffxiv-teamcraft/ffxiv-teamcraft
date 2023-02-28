@@ -323,8 +323,8 @@ export class ListsFacade {
     }, external, fromPacket, hq, listId));
   }
 
-  markAsHq(itemIds: number[], hq: boolean): void {
-    this.store.dispatch(new MarkItemsHq(itemIds, hq));
+  markAsHq(itemIds: number[], hq: boolean, finalItems: boolean): void {
+    this.store.dispatch(new MarkItemsHq(itemIds, hq, finalItems));
   }
 
   updateItem(item: ListRow, finalItem: boolean): void {

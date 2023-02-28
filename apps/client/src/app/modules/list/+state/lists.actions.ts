@@ -149,7 +149,8 @@ export class UpdateItem implements Action {
 export class MarkItemsHq implements Action {
   readonly type = ListsActionTypes.MarkItemsHq;
 
-  constructor(public readonly itemIds: number[], public readonly hq: boolean) {
+  constructor(public readonly itemIds: number[], public readonly hq: boolean,
+              public readonly finalItems: boolean) {
   }
 }
 
