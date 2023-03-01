@@ -5,6 +5,7 @@ import { FirestoreRelationalStorage } from './storage/firestore/firestore-relati
 import { WorkshopStatusData } from '../../pages/island-workshop/workshop-status-data';
 import { Firestore } from '@angular/fire/firestore';
 import { EnvironmentService } from '../environment.service';
+import { SettingsService } from '../../modules/settings/settings.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,13 @@ import { EnvironmentService } from '../environment.service';
 export class IslandWorkshopStatusService extends FirestoreRelationalStorage<WorkshopStatusData> {
 
   constructor(protected firestore: Firestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService, private environment: EnvironmentService) {
+              protected pendingChangesService: PendingChangesService, private environment: EnvironmentService,
+              private settings: SettingsService) {
     super(firestore, serializer, zone, pendingChangesService);
+    this.settings.region$.subscribe(() => {
+      this.clearCache();
+      this.regenerateCollectionRef = true;
+    });
   }
 
   protected getBaseUri(): string {
