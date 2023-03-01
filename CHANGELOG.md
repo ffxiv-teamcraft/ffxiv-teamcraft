@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.3.5"></a>
+## [10.3.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.4...v10.3.5) (2023-03-01)
+
+
+### Bug Fixes
+
+* **island-workshop:** better logic for KRCN & global data split ([e13fc01](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e13fc01))
+* **list:** fixed minimalist craft rows sometimes not turning green on completion ([74de17e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/74de17e))
+* **step-by-step:** fixed final crafts not listed under ordered crafts ([0d5868b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0d5868b))
+
+
+### Features
+
+* **data:** update for cn patch-6.25 ([#2525](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2525)) ([f5dd0ed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f5dd0ed))
+* **list:** you can now mark final items as HQ required ([3e036cb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3e036cb))
+
+
+
 <a name="10.3.4"></a>
 ## [10.3.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.3...v10.3.4) (2023-02-27)
 
