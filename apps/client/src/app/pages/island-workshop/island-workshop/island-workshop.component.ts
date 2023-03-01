@@ -19,8 +19,7 @@ import { WorkshopStatusData } from '../workshop-status-data';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { WorkshopPattern, workshopPatterns } from '../workshop-patterns';
 import { PlanningFormulaOptimizer } from '../optimizer/planning-formula-optimizer';
-import { getExtract, getItemSource } from '@ffxiv-teamcraft/types';
-import { DataType } from '@ffxiv-teamcraft/types';
+import { DataType, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 
@@ -250,8 +249,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     })
   );
 
-  private stateHistory$ = this.previousWeeklyReset$.pipe(
-    switchMap(reset => {
+  private stateHistory$ = combineLatest([this.previousWeeklyReset$, this.settings.region$]).pipe(
+    switchMap(([reset]) => {
       const historyEntriesToFetch = [reset.toString()];
       let nextDay = reset + 86400000;
       while (nextDay < Date.now()) {
@@ -344,8 +343,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     })
   );
 
-  public onlineState$ = this.previousReset$.pipe(
-    switchMap(reset => {
+  public onlineState$ = combineLatest([this.previousReset$, this.settings.region$]).pipe(
+    switchMap(([reset]) => {
       return this.mjiWorkshopStatusService.get(reset.toString()).pipe(
         retry({
           count: 60,
