@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { AlarmsFacade } from './+state/alarms.facade';
-import { combineLatest, of } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { distinctUntilChanged, filter, first, map, startWith, switchMap } from 'rxjs/operators';
 import { PersistedAlarm } from './persisted-alarm';
 import { SettingsService } from '../../modules/settings/settings.service';
@@ -16,6 +16,7 @@ import { SoundNotificationService } from '../sound-notification/sound-notificati
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { SoundNotificationType } from '../sound-notification/sound-notification-type';
+import { safeCombineLatest } from '../rxjs/safe-combine-latest';
 
 @Injectable({
   providedIn: 'root'
@@ -54,10 +55,10 @@ export class AlarmBellService {
     }
   }
 
-  public notify(_alarm: PersistedAlarm): void {
+  public notify(_alarm: PersistedAlarm): Observable<void> {
     if (Date.now() - 10000 >= this.getLastPlayed(_alarm)) {
       localStorage.setItem(`played:${_alarm.$key}`, Date.now().toString());
-      of(_alarm).pipe(
+      return of(_alarm).pipe(
         switchMap(alarm => {
           return this.mapService.getMapById(alarm.mapId)
             .pipe(
@@ -97,31 +98,38 @@ export class AlarmBellService {
               first()
             )
           ]);
+        }),
+        first(),
+        switchMap(([alarm, icon, itemName, aetheryteName, placeName]) => {
+          const notificationIcon = `https://xivapi.com${icon}`;
+          const notificationTitle = (alarm.itemId || alarm.bnpcName) ? itemName : alarm.name;
+          const notificationBody = `${placeName} - `
+            + `${aetheryteName ? aetheryteName : ''}`;
+          this.ring(alarm, itemName);
+          if (this.platform.isDesktop()) {
+            this.ipc.send('notification', {
+              title: notificationTitle,
+              content: notificationBody,
+              icon: notificationIcon
+            });
+            return of(null);
+          } else {
+            this.notificationService.info(notificationTitle, notificationBody);
+            return this.pushNotificationsService.create(notificationTitle,
+              {
+                icon: notificationIcon,
+                sticky: false,
+                renotify: false,
+                body: notificationBody
+              }
+            ).pipe(
+              map(() => void 0)
+            );
+          }
         })
-      ).subscribe(([alarm, icon, itemName, aetheryteName, placeName]) => {
-        const notificationIcon = `https://xivapi.com${icon}`;
-        const notificationTitle = (alarm.itemId || alarm.bnpcName) ? itemName : alarm.name;
-        const notificationBody = `${placeName} - `
-          + `${aetheryteName ? aetheryteName : ''}`;
-        if (this.platform.isDesktop()) {
-          this.ipc.send('notification', {
-            title: notificationTitle,
-            content: notificationBody,
-            icon: notificationIcon
-          });
-        } else {
-          this.pushNotificationsService.create(notificationTitle,
-            {
-              icon: notificationIcon,
-              sticky: false,
-              renotify: false,
-              body: notificationBody
-            }
-          ).subscribe();
-          this.notificationService.info(notificationTitle, notificationBody);
-        }
-        this.ring(alarm, itemName);
-      });
+      );
+    } else {
+      return of(null);
     }
   }
 
@@ -132,8 +140,10 @@ export class AlarmBellService {
       })
     );
     alarms$.pipe(
-      filter(alarms => alarms.length > 0),
       switchMap(alarms => {
+        if (alarms.length === 0) {
+          return of([]);
+        }
         return combineLatest([
           this.eorzeanTime.getEorzeanTime(),
           this.alarmsFacade.allGroups$,
@@ -175,16 +185,17 @@ export class AlarmBellService {
                   && timeBeforePlay <= 0;
               });
             })
-          )
-      })
-    )
-    .subscribe(alarmsToPlay => {
-      alarmsToPlay.forEach(alarm => {
+          );
+      }),
+      switchMap(alarmsToPlay => {
         if (!this.settings.alarmsMuted) {
-          this.notify(alarm);
+          return safeCombineLatest(alarmsToPlay.map(alarm => {
+            return this.notify(alarm);
+          }));
         }
-      });
-    });
+        return of(null);
+      })
+    ).subscribe();
   }
 
   private getLastPlayed(alarm: PersistedAlarm): number {

@@ -87,10 +87,13 @@ export class LayoutsFacade {
             }));
           } else if (stepByStepDisplay) {
             starter.push(...list.finalItems
-              .filter(i => getItemSource(i, DataType.CRAFTED_BY)?.length === 0)
-              .map(i => {
-                i.finalItem = true;
-                return i;
+              .map((row) => {
+                const craftedBySource = row.sources.find(s => s.type === DataType.CRAFTED_BY);
+                if (craftedBySource) {
+                  row.sources = [craftedBySource];
+                }
+                row.finalItem = true;
+                return row;
               }));
           }
 

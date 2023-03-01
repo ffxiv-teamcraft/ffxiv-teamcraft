@@ -31,7 +31,7 @@ export class SettingsService {
         localStorage.setItem('settings', JSON.stringify(this.cache));
       });
     }
-    this.region$ = this.regionChange$.pipe(map(change => change.next), startWith(this.region));
+    this.region$ = this.regionChange$.pipe(map(change => change.next), debounceTime(50), startWith(this.region));
   }
 
   private _cache: Record<string, string>;

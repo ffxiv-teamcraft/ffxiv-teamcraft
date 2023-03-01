@@ -78,7 +78,7 @@ export class CompactItemRowComponent extends TeamcraftComponent implements OnIni
 
   @HostBinding('class.craftable')
   get craftable(): boolean {
-    return this.item.canBeCrafted;
+    return !this.done && this.item.canBeCrafted;
   }
 
   @HostBinding('class.can-skip')
@@ -88,7 +88,7 @@ export class CompactItemRowComponent extends TeamcraftComponent implements OnIni
 
   @HostBinding('class.has-all-ingredients')
   get hasAllBaseIngredients(): boolean {
-    return this.item.hasAllBaseIngredients;
+    return !this.done && this.item.hasAllBaseIngredients;
   }
 
 

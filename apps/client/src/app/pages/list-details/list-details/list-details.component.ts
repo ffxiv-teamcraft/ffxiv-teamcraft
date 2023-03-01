@@ -164,9 +164,9 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.finalItemsRow$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$]).pipe(
       switchMap(([list, adaptativeFilter, overrideHideCompleted]) => this.layoutsFacade.getFinalItemsDisplay(list, adaptativeFilter, overrideHideCompleted))
     );
-    this.display$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$]).pipe(
-      switchMap(([list, adaptativeFilter, overrideHideCompleted]) => {
-        return this.layoutsFacade.getDisplay(list, adaptativeFilter, overrideHideCompleted, this.layoutsFacade.selectedLayout$);
+    this.display$ = combineLatest([this.list$, this.adaptativeFilter$, this.displayMode$, this.hideCompletedGlobal$]).pipe(
+      switchMap(([list, adaptativeFilter, displayMode, overrideHideCompleted]) => {
+        return this.layoutsFacade.getDisplay(list, adaptativeFilter, overrideHideCompleted, this.layoutsFacade.selectedLayout$, displayMode === ListDisplayMode.STEP_BY_STEP);
       }),
       shareReplay({ bufferSize: 1, refCount: true })
     );

@@ -95,7 +95,7 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
 
   loggedIn$: Observable<boolean>;
 
-  requiredForFinalCraft$: Observable<number>;
+  requiredHQ$: Observable<number>;
 
   team$: Observable<Team>;
 
@@ -287,7 +287,7 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
       shareReplay(1)
     );
 
-    this.requiredForFinalCraft$ = this.item$.pipe(
+    this.requiredHQ$ = this.item$.pipe(
       map((item) => {
         return item.requiredHQ;
       })

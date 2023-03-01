@@ -40,6 +40,8 @@ export abstract class FirestoreStorage<T extends DataModel> {
 
   protected skipClone = false;
 
+  protected regenerateCollectionRef = false;
+
   protected converter: FirestoreDataConverter<T> = {
     toFirestore: (modelObject: WithFieldValue<T>): DocumentData => {
       const workingCopy: Partial<WithFieldValue<T>> = (this.skipClone ? modelObject : { ...modelObject }) as Partial<WithFieldValue<T>>;
@@ -64,7 +66,8 @@ export abstract class FirestoreStorage<T extends DataModel> {
   private _collection: CollectionReference<T>;
 
   protected get collection() {
-    if (!this._collection) {
+    if (!this._collection || this.regenerateCollectionRef) {
+      this.regenerateCollectionRef = false;
       this._collection = collection(this.firestore, this.getBaseUri()).withConverter(this.converter);
     }
     return this._collection;
@@ -92,6 +95,10 @@ export abstract class FirestoreStorage<T extends DataModel> {
       });
       console.groupEnd();
     };
+  }
+
+  public clearCache(): void {
+    this.cache = {};
   }
 
   public docRef(key: string): DocumentReference<T> {

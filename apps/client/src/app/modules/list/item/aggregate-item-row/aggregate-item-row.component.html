@@ -22,7 +22,7 @@
                     nz-tooltip>
               <app-i18n-name content="items" [id]="item.id" [fallback]="item.name"></app-i18n-name>
             </span>
-              <span *ngIf="requiredForFinalCraft$ | async as requiredForFinal">
+              <span *ngIf="requiredHQ$ | async as requiredForFinal">
               <img [nzTooltipTitle]="'Required_for_final_craft' | translate:{amount: requiredForFinal}" alt="" nz-tooltip
                    src="./assets/icons/HQ.png"/>
             </span>
