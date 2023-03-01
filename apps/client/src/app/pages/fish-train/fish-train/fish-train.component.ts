@@ -8,6 +8,7 @@ import { DataType, FishTrainStop, GatheringNode, getExtract, getItemSource } fro
 import { combineLatest, interval } from 'rxjs';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 @Component({
   selector: 'app-fish-train',
@@ -42,9 +43,10 @@ export class FishTrainComponent extends TeamcraftComponent {
 
   display$ = combineLatest([
     this.time$,
-    this.fishTrainWithLocations$
+    this.fishTrainWithLocations$,
+    this.authFacade.userId$
   ]).pipe(
-    map(([time, train]) => {
+    map(([time, train, userId]) => {
       const stop = train.fish[train.fish.length - 1].end;
       const stopped = stop <= time;
       const running = !stopped && train.start <= time;
@@ -64,6 +66,23 @@ export class FishTrainComponent extends TeamcraftComponent {
     }),
     shareReplay(1)
   );
+
+  macroPopoverShown = false;
+
+  constructor(private fishTrainFacade: FishTrainFacade, private route: ActivatedRoute,
+              private lazyData: LazyDataFacade, private i18n: I18nToolsService,
+              private translate: TranslateService, private authFacade: AuthFacade) {
+    super();
+    route.paramMap
+      .pipe(
+        map(params => params.get('id')),
+        takeUntil(this.onDestroy$)
+      )
+      .subscribe(id => {
+        this.fishTrainFacade.load(id);
+        this.fishTrainFacade.select(id);
+      });
+  }
 
   getMacro = (current: FishTrainStop & { node: GatheringNode }, macroKey: string, useCurrentPos = false) => {
     return combineLatest([
@@ -85,22 +104,5 @@ export class FishTrainComponent extends TeamcraftComponent {
       })
     );
   };
-
-  macroPopoverShown = false;
-
-  constructor(private fishTrainFacade: FishTrainFacade, private route: ActivatedRoute,
-              private lazyData: LazyDataFacade, private i18n: I18nToolsService,
-              private translate: TranslateService) {
-    super();
-    route.paramMap
-      .pipe(
-        map(params => params.get('id')),
-        takeUntil(this.onDestroy$)
-      )
-      .subscribe(id => {
-        this.fishTrainFacade.load(id);
-        this.fishTrainFacade.select(id);
-      });
-  }
 
 }

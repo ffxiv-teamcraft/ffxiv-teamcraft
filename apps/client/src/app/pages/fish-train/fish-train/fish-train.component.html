@@ -12,6 +12,9 @@
         <nz-tag class="custom-tag" [style.border-color]="'#108ee9'" *ngIf="display.running">{{'FISH_TRAIN.Running' | translate}}</nz-tag>
         <nz-tag *ngIf="display.waiting">{{'FISH_TRAIN.Waiting' | translate}}</nz-tag>
       </nz-page-header-tags>
+      <nz-page-header-extra>
+        <button nz-button nzType="primary" *ngIf=""></button>
+      </nz-page-header-extra>
     </nz-page-header>
     <div nz-row [nzGutter]="[10,10]">
       <div nz-col [nzSm]="24" [nzXXl]="7">

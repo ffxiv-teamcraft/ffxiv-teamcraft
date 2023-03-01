@@ -7,4 +7,6 @@ export class PersistedFishTrain extends DataModel implements FishTrain {
   passengers: string[];
 
   start: number;
+
+  end: number;
 }

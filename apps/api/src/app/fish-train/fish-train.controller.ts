@@ -47,6 +47,7 @@ export class FishTrainController {
           end: new Date(stop.end).getTime()
         };
       }),
+      end: new Date(body.fish[body.fish.length - 1].end).getTime(),
       passengers: []
     };
     return this.firestore
