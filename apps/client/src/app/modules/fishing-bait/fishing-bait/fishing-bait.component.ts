@@ -12,7 +12,7 @@ export class FishingBaitComponent {
   baits: FishingBait[];
 
   @Input()
-  flex = 'column';
+  flex: 'row' | 'column' = 'column';
 
   @Input()
   hideNames = false;

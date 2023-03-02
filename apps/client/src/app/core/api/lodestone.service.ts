@@ -52,7 +52,6 @@ export class LodestoneService {
 
   public getCharacterFromLodestoneApi(id: number, columns?: string[]): Observable<Partial<CharacterResponse>> {
     return this.ngZone.runOutsideAngular(() => {
-
       let params = new HttpParams();
       if (columns) {
         params = params.set('columns', columns.join(','));

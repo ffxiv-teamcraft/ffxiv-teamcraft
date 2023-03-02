@@ -93,7 +93,7 @@ export const lazyFilesList = {
   },
   'desynth': {
     'fileName': 'desynth.json',
-    'hashedFileName': 'desynth.0dcd1edbb2b9298789c8611a729b47400170d4f9.json'
+    'hashedFileName': 'desynth.47c41501bc299cb418211fe08b4cb86c39bd1408.json'
   },
   'diademTerritory': {
     'fileName': 'diadem-territory.json',
@@ -101,7 +101,7 @@ export const lazyFilesList = {
   },
   'dropSources': {
     'fileName': 'drop-sources.json',
-    'hashedFileName': 'drop-sources.8916d382cdafdc9c4bb73fff0f90795cf4e2c0e8.json'
+    'hashedFileName': 'drop-sources.1f9f5c1cf55a9becdd0b8e2ad0d5256e6f0e260d.json'
   },
   'equipSlotCategories': {
     'fileName': 'equip-slot-categories.json',
@@ -121,7 +121,7 @@ export const lazyFilesList = {
   },
   'fateSources': {
     'fileName': 'fate-sources.json',
-    'hashedFileName': 'fate-sources.c6ea54c9acaef492423bad828c9b07e024e40af3.json'
+    'hashedFileName': 'fate-sources.41bbeb6ecbda7dbff29afccebf6e077e8e874a54.json'
   },
   'fates': {
     'fileName': 'fates.json',
@@ -145,7 +145,7 @@ export const lazyFilesList = {
   },
   'fishingSources': {
     'fileName': 'fishing-sources.json',
-    'hashedFileName': 'fishing-sources.51f2761db56f56b716acb17442d34f223445c8f7.json'
+    'hashedFileName': 'fishing-sources.55b6d61968a7a92cccb22009396e8b09cbeb5b20.json'
   },
   'fishingSpots': {
     'fileName': 'fishing-spots.json',
@@ -365,7 +365,7 @@ export const lazyFilesList = {
   },
   'mogstationSources': {
     'fileName': 'mogstation-sources.json',
-    'hashedFileName': 'mogstation-sources.41a2f4f8c1332e168152b635f9efa34d9aa8d933.json'
+    'hashedFileName': 'mogstation-sources.916056797121a30068e6903a160a23e7ab269c4d.json'
   },
   'monsters': {
     'fileName': 'monsters.json',

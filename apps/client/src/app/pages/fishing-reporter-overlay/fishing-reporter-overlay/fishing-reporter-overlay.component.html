@@ -5,6 +5,9 @@
         <div class="error" *ngFor="let error of errors">- {{error | translate}}</div>
       </div>
     </ng-container>
+    <nz-alert nzType="error" nzCloseable *ngIf="state.wrongSpot"
+              [nzMessage]="'FISH_TRAIN.Wrong_spot' | translate"
+              [nzDescription]="'FISH_TRAIN.Wrong_spot_description' | translate"></nz-alert>
     <nz-alert nzType="info"
               *ngIf="isIgnoredSpot$ | async"
               nzCloseable
@@ -41,6 +44,16 @@
             <i nz-icon nzType="info"></i>
           </button>
           <div>{{state.spot.zoneId | i18nRow:'places' | i18n}}</div>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="state.train">
+        <div>{{'FISH_TRAIN.Train' | translate}}</div>
+        <div>
+          <button nz-button nzSize="small" nzShape="circle" (click)="openTrainInMainWindow(state.train.$key)"
+                  nz-tooltip [nzTooltipTitle]="'COMMON.Open_in_main_window' | translate">
+            <i nz-icon nzType="info"></i>
+          </button>
+          {{state.train.$key}}
         </div>
       </div>
       <div fxLayout="row" fxLayoutAlign="space-between center">
