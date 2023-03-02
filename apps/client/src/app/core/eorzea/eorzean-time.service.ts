@@ -62,7 +62,7 @@ export class EorzeanTimeService {
   }
 
   public toStringTimer(duration: number, verbose = false): string {
-    const seconds = duration % 60;
+    const seconds = Math.floor(duration % 60);
     const minutes = Math.floor(duration / 60) % 60;
     const hours = Math.floor(duration / 3600) % 24;
     const days = Math.floor(duration / 86400);

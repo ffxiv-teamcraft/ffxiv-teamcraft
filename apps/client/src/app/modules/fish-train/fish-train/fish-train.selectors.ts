@@ -6,7 +6,12 @@ export const getFishTrainState = createFeatureSelector<fromFishTrain.State>(
   fromFishTrain.fishTrainFeatureKey
 );
 
-const { selectEntities } = fishTrainAdapter.getSelectors();
+const { selectEntities, selectAll } = fishTrainAdapter.getSelectors();
+
+export const getLoaded = createSelector(
+  getFishTrainState,
+  state => state.loaded
+);
 
 export const getSelectedId = createSelector(
   getFishTrainState,
@@ -22,6 +27,16 @@ export const getSelectedTrain = createSelector(
   getFishTrainEntities,
   getSelectedId,
   (entities, id) => id && entities[id]
+);
+
+export const getAllFishTrains = createSelector(
+  getFishTrainState,
+  state => selectAll(state)
+);
+
+export const getBoardedTrain = (userId: string) => createSelector(
+  getAllFishTrains,
+  (trains) => trains.find(train => train.passengers.includes(userId))
 );
 
 

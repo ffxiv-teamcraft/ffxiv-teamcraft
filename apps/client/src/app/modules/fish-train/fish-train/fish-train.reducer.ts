@@ -27,5 +27,9 @@ export const reducer = createReducer(
   on(FishTrainActions.selectFishTrain, (state, { id }) => ({
     ...state,
     selectedId: id
+  })),
+  on(FishTrainActions.loadFishTrainsSuccess, (state, { trains, loaded }) => fishTrainAdapter.setMany(trains, {
+    ...state,
+    loaded: state.loaded || loaded
   }))
 );

@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { FishTrainFacade } from '../../../modules/fish-train/fish-train/fish-train.facade';
 import { ActivatedRoute } from '@angular/router';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { first, map, shareReplay, switchMap, takeUntil } from 'rxjs/operators';
+import { distinctUntilChanged, first, map, shareReplay, switchMap, takeUntil } from 'rxjs/operators';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { DataType, FishTrainStop, GatheringNode, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
-import { combineLatest, interval } from 'rxjs';
+import { combineLatest } from 'rxjs';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
-import { AuthFacade } from '../../../+state/auth.facade';
+import { FishDataService } from '../../db/service/fish-data.service';
+import { findLastIndex } from 'lodash';
 
 @Component({
   selector: 'app-fish-train',
@@ -18,6 +19,14 @@ import { AuthFacade } from '../../../+state/auth.facade';
 export class FishTrainComponent extends TeamcraftComponent {
 
   fishTrain$ = this.fishTrainFacade.selectedFishTrain$;
+
+  gubalFishTrainStats$ = this.fishTrain$.pipe(
+    map(train => train.$key),
+    distinctUntilChanged(),
+    switchMap(trainId => {
+      return this.fishDataService.getTrainStats(trainId);
+    })
+  );
 
   fishTrainWithLocations$ = this.fishTrain$.pipe(
     switchMap(train => {
@@ -37,31 +46,49 @@ export class FishTrainComponent extends TeamcraftComponent {
     })
   );
 
-  time$ = interval(1000).pipe(
-    map(() => 1677285400000 - 10000)
-  );
-
   display$ = combineLatest([
-    this.time$,
+    this.fishTrainFacade.time$,
     this.fishTrainWithLocations$,
-    this.authFacade.userId$
+    this.fishTrainFacade.currentTrain$,
+    this.gubalFishTrainStats$
   ]).pipe(
-    map(([time, train, userId]) => {
+    map(([time, train, currentTrain, gubalStats]) => {
+      let stops = train.fish;
       const stop = train.fish[train.fish.length - 1].end;
       const stopped = stop <= time;
       const running = !stopped && train.start <= time;
       const waiting = train.start >= time;
-      const current = train.fish.find(stop => stop.start <= time && stop.end >= time);
-      const currentIndex = train.fish.indexOf(current);
+      let current = train.fish.find(stop => stop.start <= time && stop.end >= time);
+      // If there's no current fish but train is running, we're moving to the next one !
+      if (!current && running) {
+        const lastIndex = findLastIndex(train.fish, stop => stop.start <= time);
+        current = train.fish[lastIndex + 1] || null;
+      }
+      let currentIndex = train.fish.indexOf(current);
+      if (currentIndex > 1 && running) {
+        stops = stops.slice(currentIndex - 1);
+        currentIndex = 1;
+      }
+      const matchingItemIds = train.fish.map(fish => fish.id);
+      const accuracy = gubalStats.reports.length === 0 ? 0 :
+        gubalStats.reports.filter(report => matchingItemIds.includes(report.itemId)).length / gubalStats.reports.length;
+      const durationHours = (time - train.start) / (60000 * 60);
+      const rate = Math.floor(100 * gubalStats.reports.filter(report => matchingItemIds.includes(report.itemId)).length / durationHours) / 100;
       return {
         ...train,
+        stops,
         current,
         currentIndex,
         stop,
         stopped,
         running,
         waiting,
-        time
+        time,
+        currentTrain,
+        gubalStats,
+        accuracy,
+        rate,
+        reports: gubalStats.reports
       };
     }),
     shareReplay(1)
@@ -71,7 +98,7 @@ export class FishTrainComponent extends TeamcraftComponent {
 
   constructor(private fishTrainFacade: FishTrainFacade, private route: ActivatedRoute,
               private lazyData: LazyDataFacade, private i18n: I18nToolsService,
-              private translate: TranslateService, private authFacade: AuthFacade) {
+              private translate: TranslateService, private fishDataService: FishDataService) {
     super();
     route.paramMap
       .pipe(
@@ -104,5 +131,13 @@ export class FishTrainComponent extends TeamcraftComponent {
       })
     );
   };
+
+  boardTrain(id: string): void {
+    this.fishTrainFacade.boardTrain(id);
+  }
+
+  leaveTrain(id: string): void {
+    this.fishTrainFacade.leaveTrain(id);
+  }
 
 }

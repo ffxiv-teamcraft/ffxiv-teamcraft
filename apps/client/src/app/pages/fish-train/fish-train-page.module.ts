@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { FishTrainRoutingModule } from './fish-train-routing.module';
 import { FishTrainComponent } from './fish-train/fish-train.component';
-import { FishTrainModule } from '../../modules/fish-train/fish-train.module';
 import { LoadingScreenModule } from '../loading-screen/loading-screen.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { TranslateModule } from '@ngx-translate/core';
@@ -21,16 +20,16 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
-
+import { NzStatisticModule } from 'ng-zorro-antd/statistic';
+import { ContributionPerPassengerComponent } from './contribution-per-passenger/contribution-per-passenger.component';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 @NgModule({
-  declarations: [
-    FishTrainComponent
-  ],
+  declarations: [FishTrainComponent, ContributionPerPassengerComponent],
   imports: [
     CommonModule,
     FishTrainRoutingModule,
-    FishTrainModule,
     LoadingScreenModule,
     FullpageMessageModule,
     TranslateModule,
@@ -47,7 +46,10 @@ import { NzSpaceModule } from 'ng-zorro-antd/space';
     PipesModule,
     NzDividerModule,
     NzPopoverModule,
-    NzSpaceModule
+    NzSpaceModule,
+    NzStatisticModule,
+    NzEmptyModule,
+    NgxEchartsModule
   ]
 })
 export class FishTrainPageModule {

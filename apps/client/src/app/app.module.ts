@@ -127,6 +127,7 @@ import { getFunctions, provideFunctions } from '@angular/fire/functions';
 import { getPerformance, providePerformance } from '@angular/fire/performance';
 import { ListAggregateModule } from './modules/list-aggregate/list-aggregate.module';
 import { BreakpointDebugComponent } from './tools/breakpoint-debug/breakpoint-debug.component';
+import { FishTrainModule } from './modules/fish-train/fish-train.module';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -251,6 +252,7 @@ const nzConfig: NzConfig = {
     LoadingScreenModule,
     GearsetsModule,
     CraftingReplayModule,
+    FishTrainModule,
 
     ChangelogPopupModule,
 

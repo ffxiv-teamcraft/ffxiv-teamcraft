@@ -45,6 +45,10 @@ export class FishingReporterOverlayComponent {
     this.ipc.send('overlay:open-page', `/db/${this.translate.currentLang}/fishing-spot/${spot.id}`);
   }
 
+  openTrainInMainWindow(trainId: string): void {
+    this.ipc.send('overlay:open-page', `/fish-train/${trainId}`);
+  }
+
   getErrors(state: FishingReporterState): string[] {
     const errors = [];
     if (!state.baitId) {

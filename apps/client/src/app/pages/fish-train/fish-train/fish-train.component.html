@@ -13,7 +13,14 @@
         <nz-tag *ngIf="display.waiting">{{'FISH_TRAIN.Waiting' | translate}}</nz-tag>
       </nz-page-header-tags>
       <nz-page-header-extra>
-        <button nz-button nzType="primary" *ngIf=""></button>
+        <ng-container *ngIf="!display.stopped">
+          <button nz-button nzType="primary" *ngIf="!display.currentTrain" (click)="boardTrain(display.$key)">
+            {{'FISH_TRAIN.Board_train' | translate}}
+          </button>
+          <button nz-button nzDanger *ngIf="display.currentTrain?.$key === display.$key" (click)="leaveTrain(display.$key)">
+            {{'FISH_TRAIN.Leave_train' | translate}}
+          </button>
+        </ng-container>
       </nz-page-header-extra>
     </nz-page-header>
     <div nz-row [nzGutter]="[10,10]">
@@ -21,7 +28,7 @@
         <div class="details-column route">
           <h3>{{'FISH_TRAIN.Route' | translate}}</h3>
           <nz-steps nzDirection="vertical" [nzCurrent]="display.currentIndex">
-            <nz-step *ngFor="let fish of display.fish;trackById"
+            <nz-step *ngFor="let fish of display.stops;index as i;last as last;trackById"
                      [nzIcon]="iconTpl" [nzTitle]="titleTpl" [nzSubtitle]="subtitleTpl" [nzDescription]="descriptionTpl">
               <ng-template #iconTpl>
                 <app-item-icon [disableClick]="true"
@@ -31,17 +38,19 @@
               </ng-template>
               <ng-template #titleTpl>
                 <app-i18n-name content="items" [id]="fish.id"></app-i18n-name>
-                <span *ngIf="fish.id !== display.current?.id">
+                <span *ngIf="fish.start - display.time > 0">
                   ({{'FISH_TRAIN.Departure_in' | translate: { time: ((fish.start - display.time) / 1000) | timer:true } }})
                 </span>
                 &nbsp;
                 <button nz-button nzSize="small"
-                        *ngIf="fish.start - display.time < 120000"
+                        *ngIf="display.running && display.currentIndex <= i && fish.start - display.time < 120000"
                         nzType="primary" [clipboard]="getMacro"
                         [clipboardFnArgs]="[fish, 'Next_position_macro']"
                         nz-tooltip [nzTooltipTitle]="'FISH_TRAIN.Copy_move_macro' | translate">
                   <span nz-icon nzType="copy" nzTheme="outline"></span>
                 </button>
+                &nbsp;
+                <nz-tag *ngIf="last" class="custom-tag" [style.border-color]="'#f50'" >{{'FISH_TRAIN.Terminus_tag' | translate}}</nz-tag>
               </ng-template>
               <ng-template #subtitleTpl>
                 <app-map-position flex="row wrap" [mapId]="fish.node.map"
@@ -54,7 +63,7 @@
           </nz-steps>
         </div>
       </div>
-      <div nz-col [nzSm]="24" [nzXXl]="5">
+      <div nz-col [nzSm]="24" [nzXXl]="5" *ngIf="display.current">
         <div class="details-column">
           <h3>{{'FISH_TRAIN.Current_fish' | translate}}</h3>
           <nz-card [nzCover]="coverTpl" [nzActions]="[copyMacroTpl]">
@@ -129,10 +138,26 @@
           </ng-template>
         </div>
       </div>
-      <div nz-col [nzSm]="24" [nzXXl]="12">
-        <div class="details-column">
+      <div nz-col [nzSm]="24" [nzXXl]="display.running ? 12 : 17">
+        <div class="details-column stats">
           <h3>{{'FISH_TRAIN.Stats' | translate}}</h3>
-          TODO
+          <nz-row>
+            <nz-col [nzXXl]="6">
+              <nz-statistic [nzValue]="display.passengers.length" [nzTitle]="'FISH_TRAIN.Passengers' | translate"></nz-statistic>
+            </nz-col>
+            <nz-col [nzXXl]="6">
+              <nz-statistic [nzValue]="display.gubalStats.count" [nzTitle]="'FISH_TRAIN.Total_reports' | translate"></nz-statistic>
+            </nz-col>
+            <nz-col [nzXXl]="6">
+              <nz-statistic nzSuffix="%" [nzValue]="display.accuracy" [nzTitle]="'FISH_TRAIN.Accuracy' | translate"></nz-statistic>
+            </nz-col>
+            <nz-col [nzXXl]="6">
+              <nz-statistic nzSuffix="/h" [nzValue]="display.rate" [nzTitle]="'FISH_TRAIN.Fishing_rate' | translate"></nz-statistic>
+            </nz-col>
+            <nz-col [nzSpan]="24">
+              <app-contribution-per-passenger [train]="display" [reports]="display.reports"></app-contribution-per-passenger>
+            </nz-col>
+          </nz-row>
         </div>
       </div>
     </div>
