@@ -22,6 +22,7 @@ import { PlanningFormulaOptimizer } from '../optimizer/planning-formula-optimize
 import { DataType, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { EnvironmentService } from '../../../core/environment.service';
 
 interface ColumnItem {
   name: string;
@@ -283,7 +284,10 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
       const popularityEntry = islandPopularity[state.popularity];
       const predictedPopularityEntry = islandPopularity[state.predictedPopularity];
       return state.supplyDemand
-        .filter(row => row.id > 0 && islandCraftworks[row.id]?.itemId > 0)
+        .filter(row => {
+          const maxId = this.environment.gameVersion < 6.3 ? 50 : Infinity;
+          return row.id > 0 && row.id <= maxId && islandCraftworks[row.id]?.itemId > 0
+        })
         .filter(row => {
           let matches = true;
           if (excludePasture || excludeCrops) {
@@ -398,7 +402,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
               public translate: TranslateService, private dialog: NzModalService,
               private message: NzMessageService, private mjiWorkshopStatusService: IslandWorkshopStatusService,
               public platformService: PlatformService, public settings: SettingsService,
-              private authFacade: AuthFacade, private i18n: I18nToolsService) {
+              private authFacade: AuthFacade, private i18n: I18nToolsService,
+              private environment: EnvironmentService) {
     super();
 
     if (this.platformService.isDesktop()) {
