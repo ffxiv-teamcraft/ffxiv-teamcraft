@@ -14,17 +14,22 @@
       </nz-page-header-tags>
       <nz-page-header-extra>
         <ng-container *ngIf="!display.stopped">
-          <button nz-button nzType="primary" *ngIf="!display.currentTrain" (click)="boardTrain(display.$key)">
-            {{'FISH_TRAIN.Board_train' | translate}}
-          </button>
-          <button nz-button nzDanger *ngIf="display.currentTrain?.$key === display.$key" (click)="leaveTrain(display.$key)">
-            {{'FISH_TRAIN.Leave_train' | translate}}
-          </button>
+          <nz-space>
+            <button nz-button nzType="primary" *ngIf="!display.currentTrain" (click)="boardTrain(display.$key)">
+              {{'FISH_TRAIN.Board_train' | translate}}
+            </button>
+            <button nz-button nzDanger *ngIf="display.currentTrain?.$key === display.$key" (click)="leaveTrain(display.$key)">
+              {{'FISH_TRAIN.Leave_train' | translate}}
+            </button>
+            <button nz-button nzType="primary" *ngIf="display.currentTrain && platform.isDesktop()" (click)="openFishingOverlay()">
+              {{'FISH_TRAIN.Open_fishing_overlay' | translate}}
+            </button>
+          </nz-space>
         </ng-container>
       </nz-page-header-extra>
     </nz-page-header>
     <div nz-row [nzGutter]="[10,10]">
-      <div nz-col [nzSm]="24" [nzXXl]="7">
+      <div nz-col [nzXs]="24" [nzXl]="12" [nzXXl]="6">
         <div class="details-column route">
           <h3>{{'FISH_TRAIN.Route' | translate}}</h3>
           <nz-steps nzDirection="vertical" [nzCurrent]="display.currentIndex">
@@ -50,7 +55,7 @@
                   <span nz-icon nzType="copy" nzTheme="outline"></span>
                 </button>
                 &nbsp;
-                <nz-tag *ngIf="last" class="custom-tag" [style.border-color]="'#f50'" >{{'FISH_TRAIN.Terminus_tag' | translate}}</nz-tag>
+                <nz-tag *ngIf="last" class="custom-tag" [style.border-color]="'#f50'">{{'FISH_TRAIN.Terminus_tag' | translate}}</nz-tag>
               </ng-template>
               <ng-template #subtitleTpl>
                 <app-map-position flex="row wrap" [mapId]="fish.node.map"
@@ -63,7 +68,7 @@
           </nz-steps>
         </div>
       </div>
-      <div nz-col [nzSm]="24" [nzXXl]="5" *ngIf="display.current">
+      <div nz-col [nzXs]="24" [nzXl]="12" [nzXXl]="6" *ngIf="display.current">
         <div class="details-column">
           <h3>{{'FISH_TRAIN.Current_fish' | translate}}</h3>
           <nz-card [nzCover]="coverTpl" [nzActions]="[copyMacroTpl]">
@@ -138,23 +143,23 @@
           </ng-template>
         </div>
       </div>
-      <div nz-col [nzSm]="24" [nzXXl]="display.running ? 12 : 17">
+      <div nz-col [nzXs]="24" [nzXXl]="display.running ? 12 : 16">
         <div class="details-column stats">
           <h3>{{'FISH_TRAIN.Stats' | translate}}</h3>
           <nz-row>
-            <nz-col [nzXXl]="6">
+            <nz-col [nzSpan]="6">
               <nz-statistic [nzValue]="display.passengers.length" [nzTitle]="'FISH_TRAIN.Passengers' | translate"></nz-statistic>
             </nz-col>
-            <nz-col [nzXXl]="6">
+            <nz-col [nzSpan]="6">
               <nz-statistic [nzValue]="display.gubalStats.count" [nzTitle]="'FISH_TRAIN.Total_reports' | translate"></nz-statistic>
             </nz-col>
-            <nz-col [nzXXl]="6">
+            <nz-col [nzSpan]="6">
               <nz-statistic nzSuffix="%" [nzValue]="display.accuracy" [nzTitle]="'FISH_TRAIN.Accuracy' | translate"></nz-statistic>
             </nz-col>
-            <nz-col [nzXXl]="6">
+            <nz-col [nzSpan]="6">
               <nz-statistic nzSuffix="/h" [nzValue]="display.rate" [nzTitle]="'FISH_TRAIN.Fishing_rate' | translate"></nz-statistic>
             </nz-col>
-            <nz-col [nzSpan]="24">
+            <nz-col [nzSpan]="24" *ngIf="true | ifMobile:false">
               <app-contribution-per-passenger [train]="display" [reports]="display.reports"></app-contribution-per-passenger>
             </nz-col>
           </nz-row>

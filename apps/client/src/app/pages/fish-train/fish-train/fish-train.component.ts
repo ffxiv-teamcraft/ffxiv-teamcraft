@@ -10,6 +10,8 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { FishDataService } from '../../db/service/fish-data.service';
 import { findLastIndex } from 'lodash';
+import { PlatformService } from '../../../core/tools/platform.service';
+import { IpcService } from '../../../core/electron/ipc.service';
 
 @Component({
   selector: 'app-fish-train',
@@ -98,7 +100,8 @@ export class FishTrainComponent extends TeamcraftComponent {
 
   constructor(private fishTrainFacade: FishTrainFacade, private route: ActivatedRoute,
               private lazyData: LazyDataFacade, private i18n: I18nToolsService,
-              private translate: TranslateService, private fishDataService: FishDataService) {
+              private translate: TranslateService, private fishDataService: FishDataService,
+              public platform: PlatformService, private ipc: IpcService) {
     super();
     route.paramMap
       .pipe(
@@ -138,6 +141,10 @@ export class FishTrainComponent extends TeamcraftComponent {
 
   leaveTrain(id: string): void {
     this.fishTrainFacade.leaveTrain(id);
+  }
+
+  openFishingOverlay(): void {
+    this.ipc.openOverlay('/fishing-reporter-overlay');
   }
 
 }

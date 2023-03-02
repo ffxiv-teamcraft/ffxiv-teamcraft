@@ -67,6 +67,12 @@ export class ContributionPerPassengerComponent extends TeamcraftComponent {
 
   constructor(private translate: TranslateService, private settings: SettingsService,
               private lodestone: LodestoneService, private cd: ChangeDetectorRef) {
+    /**
+     * NOTE:
+     * If we want to implement chart race replay, it'd be quite easy:
+     *  - Add filter on data in parent to only consider data with date <= currentTime
+     *  - Add a function in train facade to replay a train, this function would simply emit values on time$ between start and stop of the given train
+     */
     super();
     const reports$ = observeInput(this, 'reports');
     const characters$ = reports$.pipe(
