@@ -8,4 +8,4 @@ export const patchNotes = `### Bug Fixes
 ### Features
 
 * **data:** update for cn patch-6.25.
-* **list:** you can now mark final items as HQ required.`;
+* **list:** you can now mark final items as HQ required.`;
