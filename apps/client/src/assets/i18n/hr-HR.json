@@ -523,6 +523,7 @@
     "Disable_hardware_acceleration": "Disable hardware acceleration",
     "Housing_map": "Housing map",
     "Housing_map_explain": "The housing map in which your house is",
+    "Reset_linked_characters_ok": "Character links have been reset",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -3094,5 +3095,37 @@
       "Main_drop": "Main drop",
       "Rare_drop": "Rare drop"
     }
+  },
+  "FISH_TRAIN": {
+    "Train": "Fishing train",
+    "Not_found": "Fish train not found",
+    "Route": "Route",
+    "Current_fish": "Current fish",
+    "Details_title": "Fish train #{{id}}",
+    "Departure": "Departure: {{time}}",
+    "Departure_in": "Departure in {{time}}",
+    "Terminus": "Terminus: {{time}}",
+    "Stopped": "Stopped",
+    "Running": "Running",
+    "Waiting": "Waiting",
+    "Bait": "Bait",
+    "Copy_macro": "Copy macro",
+    "Are_you_on_spot": "Are you already on the fishing spot?",
+    "Copy_move_macro": "Copy train move macro",
+    "Current_position_macro": "/shout Fish train is currently fishing for {{itemName}} at {{mapName}}: {{coords}}. Preferred bait: {{bait}}, min gathering: {{minGathering}}",
+    "Next_position_macro": "/shout Choo Choo ! Fish train is moving to {{mapName}}: {{coords}} in order to fish {{itemName}}. Preferred bait: {{bait}}, min gathering: {{minGathering}}",
+    "Board_train": "Board train",
+    "Leave_train": "Leave this train",
+    "Stats": "Stats",
+    "Passengers": "Passengers",
+    "Total_reports": "# of fish caught",
+    "Wrong_spot": "Wrong spot",
+    "Wrong_spot_description": "You are not on the right spot to contribute to the fishing train, please check current location in fish train details.",
+    "Accuracy": "Accuracy",
+    "Contribution_per_passenger": "Contributions per passenger",
+    "Fishing_rate": "Fishing rate",
+    "Nothing_to_show": "No contributions to display",
+    "Terminus_tag": "Terminus",
+    "Open_fishing_overlay": "Open fishing overlay"
   }
 }
