@@ -26,8 +26,7 @@ export class FishTrainController {
         return {
           start: data.start,
           fish: data.fish,
-          name: data.name || '',
-          conductorToken: data.conductorToken || ''
+          name: data.name || ''
         };
       })
       .catch(err => {

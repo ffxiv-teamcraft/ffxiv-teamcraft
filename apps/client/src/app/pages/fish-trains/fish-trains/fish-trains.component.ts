@@ -52,7 +52,7 @@ export class FishTrainsComponent {
   results$ = this.filtersForm.valueChanges.pipe(
     startWith(this.filtersForm.getRawValue()),
     switchMap(filters => {
-      return this.fishTrainFacade.allTrains$.pipe(
+      return this.fishTrainFacade.allPublicTrains$.pipe(
         map(trains => {
           return trains
             .map(train => {

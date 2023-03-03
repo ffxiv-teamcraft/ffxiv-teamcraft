@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { getAllFishTrains, getBoardedTrain, getLoaded, getSelectedTrain } from './fish-train.selectors';
+import { getAllFishTrains, getAllPublicFishingTrains, getBoardedTrain, getLoaded, getSelectedTrain } from './fish-train.selectors';
 import {
   boardTrain,
   claimConductorRole,
@@ -75,6 +75,15 @@ export class FishTrainFacade {
 
   allTrains$ = this.store.pipe(
     select(getAllFishTrains)
+  );
+
+  allPublicTrains$ = this.authFacade.userId$.pipe(
+    distinctUntilChanged(),
+    switchMap(userId => {
+      return this.store.pipe(
+        select(getAllPublicFishingTrains(userId))
+      )
+    })
   )
 
   constructor(private store: Store, private authFacade: AuthFacade,

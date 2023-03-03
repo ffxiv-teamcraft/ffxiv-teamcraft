@@ -39,4 +39,9 @@ export const getBoardedTrain = (userId: string) => createSelector(
   (trains) => trains.find(train => train.passengers.includes(userId))
 );
 
+export const getAllPublicFishingTrains = (userId: string) => createSelector(
+  getAllFishTrains,
+  (trains) => trains.filter(train => train.public || train.conductor === userId)
+);
+
 
