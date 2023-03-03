@@ -81,6 +81,7 @@ import { gameEnv } from '../environments/game-env';
 import { PacketCaptureStatus } from './core/electron/packet-capture-status';
 import { NzBadgeStatusType } from 'ng-zorro-antd/badge/types';
 import { InventoryCaptureStatus } from './modules/inventory/inventory-capture-status';
+import { PushNotificationsService } from 'ng-push-ivy';
 
 @Component({
   selector: 'app-root',
@@ -259,7 +260,12 @@ export class AppComponent implements OnInit {
               apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
               private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService,
               private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, private cd: ChangeDetectorRef,
-              private data: DataService, private allaganReportsService: AllaganReportsService) {
+              private data: DataService, private allaganReportsService: AllaganReportsService,
+              pushNotificationsService: PushNotificationsService) {
+
+    if(pushNotificationsService.isSupported() && pushNotificationsService.permission === "default"){
+      pushNotificationsService.requestPermission();
+    }
 
     const navigationEvents$ = this.router.events.pipe(
       filter(e => e instanceof NavigationStart),

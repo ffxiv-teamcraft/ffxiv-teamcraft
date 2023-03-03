@@ -149,7 +149,8 @@ export class SettingsPopupComponent {
     [SoundNotificationType.RESET_TIMER]: this.settings.getNotificationSettings(SoundNotificationType.RESET_TIMER),
     [SoundNotificationType.AUTOFILL]: this.settings.getNotificationSettings(SoundNotificationType.AUTOFILL),
     [SoundNotificationType.RETAINER]: this.settings.getNotificationSettings(SoundNotificationType.RETAINER),
-    [SoundNotificationType.VOYAGE]: this.settings.getNotificationSettings(SoundNotificationType.VOYAGE)
+    [SoundNotificationType.VOYAGE]: this.settings.getNotificationSettings(SoundNotificationType.VOYAGE),
+    [SoundNotificationType.FISH_TRAIN]: this.settings.getNotificationSettings(SoundNotificationType.FISH_TRAIN)
   };
 
   public enableCustomSound: Record<string, boolean> = Object.entries<NotificationSettings>(this.notificationSettings)

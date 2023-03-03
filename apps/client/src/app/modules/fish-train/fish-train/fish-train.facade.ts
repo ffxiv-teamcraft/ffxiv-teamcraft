@@ -1,12 +1,24 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { getBoardedTrain, getLoaded, getSelectedTrain } from './fish-train.selectors';
-import { boardTrain, leaveTrain, loadAllTrains, loadFishTrain, loadRunningTrains, selectFishTrain } from './fish-train.actions';
+import {
+  boardTrain,
+  claimConductorRole,
+  leaveTrain,
+  loadAllTrains,
+  loadFishTrain,
+  loadRunningTrains,
+  renameTrain,
+  selectFishTrain,
+  setFishSlap,
+  setFishTrainPublic
+} from './fish-train.actions';
 import { distinctUntilChanged, map, shareReplay, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { DataType, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
+import { DataType, FishTrainStop, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest, interval } from 'rxjs';
+import { PersistedFishTrain } from '../../../model/other/persisted-fish-train';
 
 @Injectable({
   providedIn: 'root'
@@ -83,7 +95,23 @@ export class FishTrainFacade {
     this.store.dispatch(boardTrain({ id }));
   }
 
+  claimConductorRole(id: string): void {
+    this.store.dispatch(claimConductorRole({ id }));
+  }
+
+  rename(id: string, name: string): void {
+    this.store.dispatch(renameTrain({ id, name }));
+  }
+
   leaveTrain(id: string): void {
     this.store.dispatch(leaveTrain({ id }));
+  }
+
+  setSlap(train: PersistedFishTrain, fish: FishTrainStop, slap: number): void {
+    this.store.dispatch(setFishSlap({ train, fish, slap }));
+  }
+
+  setPublicFlag(id: string, flag: boolean): void {
+    this.store.dispatch(setFishTrainPublic({ id, flag }));
   }
 }

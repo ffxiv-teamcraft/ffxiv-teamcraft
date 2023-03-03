@@ -4,19 +4,23 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, filter, map, mergeMap, switchMap, withLatestFrom } from 'rxjs/operators';
 import {
   boardTrain,
+  claimConductorRole,
   leaveTrain,
   loadAllTrains,
   loadFishTrain,
   loadFishTrainNotFound,
   loadFishTrainsSuccess,
   loadFishTrainSuccess,
-  loadRunningTrains
+  loadRunningTrains,
+  renameTrain,
+  setFishSlap, setFishTrainPublic
 } from './fish-train.actions';
 import { FishTrainService } from '../../../core/database/fish-train.service';
 import { of } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { arrayRemove, arrayUnion, where } from '@angular/fire/firestore';
+import { arrayRemove, arrayUnion, deleteField, where } from '@angular/fire/firestore';
 import { FishTrainFacade } from './fish-train.facade';
+import { FishTrainStop } from '@ffxiv-teamcraft/types';
 
 @Injectable()
 export class FishTrainEffects {
@@ -42,11 +46,52 @@ export class FishTrainEffects {
     );
   }, { dispatch: false });
 
+  claimConductorRole$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(claimConductorRole),
+      withLatestFrom(this.authFacade.userId$),
+      mergeMap(([{ id }, userId]) => this.fishTrainService.pureUpdate(id, { conductor: userId, conductorToken: deleteField() }))
+    );
+  }, { dispatch: false });
+
   leaveTrain$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(leaveTrain),
       withLatestFrom(this.authFacade.userId$),
       mergeMap(([{ id }, userId]) => this.fishTrainService.pureUpdate(id, { passengers: arrayRemove(userId) }))
+    );
+  }, { dispatch: false });
+
+  renameTrain$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(renameTrain),
+      mergeMap(({ id, name }) => this.fishTrainService.pureUpdate(id, { name: name }))
+    );
+  }, { dispatch: false });
+
+  setFishTrainPublic$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(setFishTrainPublic),
+      mergeMap(({ id, flag }) => this.fishTrainService.pureUpdate(id, { public: flag }))
+    );
+  }, { dispatch: false });
+
+  setFishSlap$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(setFishSlap),
+      mergeMap(({ train, fish, slap }) => {
+        const stops: FishTrainStop[] = train.fish.map(fish => {
+          return {
+            id: fish.id,
+            start: fish.start,
+            end: fish.end,
+            slap: fish.slap || null
+          };
+        });
+        const matchingFish = stops.find(stop => stop.start === fish.start && stop.id === fish.id);
+        matchingFish.slap = slap;
+        return this.fishTrainService.pureUpdate(train.$key, { fish: stops });
+      })
     );
   }, { dispatch: false });
 
