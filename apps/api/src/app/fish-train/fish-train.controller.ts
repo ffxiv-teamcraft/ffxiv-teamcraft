@@ -25,8 +25,10 @@ export class FishTrainController {
         const data = doc.data();
         return {
           start: data.start,
-          fish: data.fish
-        }
+          fish: data.fish,
+          name: data.name || '',
+          conductorToken: data.conductorToken || ''
+        };
       })
       .catch(err => {
         if (err.code === 7) {
@@ -39,6 +41,8 @@ export class FishTrainController {
   @Post()
   createFishTrain(@Body() body: any) {
     const fishTrain: FishTrain = {
+      name: body.name || '',
+      conductorToken: body.conductorToken || '',
       start: new Date(body.start).getTime(),
       fish: body.fish.map(stop => {
         return {

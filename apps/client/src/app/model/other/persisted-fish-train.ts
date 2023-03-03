@@ -9,4 +9,8 @@ export class PersistedFishTrain extends DataModel implements FishTrain {
   start: number;
 
   end: number;
+
+  name: string;
+
+  conductorToken: string;
 }

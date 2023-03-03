@@ -6,4 +6,6 @@ export interface FishTrain {
   end: number;
   fish: FishTrainStop[];
   passengers: string[];
+  name: string;
+  conductorToken: string;
 }
