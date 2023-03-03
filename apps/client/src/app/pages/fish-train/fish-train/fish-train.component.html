@@ -38,6 +38,9 @@
       </nz-page-header-tags>
       <nz-page-header-extra>
         <div *ngIf="!display.stopped" class="flex-row gap-5">
+          <a nz-button href="https://ff14fish.carbuncleplushy.com/trainpass?tcid={{fishTrain.$key}}" target="_blank">
+            {{'FISH_TRAIN.Open_in_carbuncleplushy' | translate}}
+          </a>
           <button nz-button nzType="primary" *ngIf="!fishTrain.conductor && fishTrain.conductorToken"
                   (click)="claimConductorRole(fishTrain.$key, fishTrain.conductorToken)">
             <span nz-icon nzType="crown" nzTheme="outline"></span> {{'FISH_TRAIN.Claim_conductor_role' | translate}}
