@@ -115,16 +115,19 @@ export class AlarmBellService {
             return of(null);
           } else {
             this.notificationService.info(notificationTitle, notificationBody);
-            return this.pushNotificationsService.create(notificationTitle,
-              {
-                icon: notificationIcon,
-                sticky: false,
-                renotify: false,
-                body: notificationBody
-              }
-            ).pipe(
-              map(() => void 0)
-            );
+            if (this.pushNotificationsService.isSupported() && this.pushNotificationsService.permission === 'granted') {
+              return this.pushNotificationsService.create(notificationTitle,
+                {
+                  icon: notificationIcon,
+                  sticky: false,
+                  renotify: false,
+                  body: notificationBody
+                }
+              ).pipe(
+                map(() => void 0)
+              );
+            }
+            return of(null);
           }
         })
       );

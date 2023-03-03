@@ -244,16 +244,19 @@ export class FishTrainComponent extends TeamcraftComponent {
           return of(null);
         } else {
           this.notificationService.info(title, body);
-          return this.pushNotificationsService.create(title,
-            {
-              icon: icon,
-              sticky: false,
-              renotify: false,
-              body: body
-            }
-          ).pipe(
-            map(() => void 0)
-          );
+          if (this.pushNotificationsService.isSupported() && this.pushNotificationsService.permission === 'granted') {
+            return this.pushNotificationsService.create(title,
+              {
+                icon: icon,
+                sticky: false,
+                renotify: false,
+                body: body
+              }
+            ).pipe(
+              map(() => void 0)
+            );
+          }
+          return of(null);
         }
       })
     ).subscribe();
