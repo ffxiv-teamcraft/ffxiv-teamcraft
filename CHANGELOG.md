@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.3.6"></a>
+## [10.3.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.5...v10.3.6) (2023-03-03)
+
+
+### Bug Fixes
+
+* **alarms:** fixed deleted alarms sometimes still ringing ([ba876ab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ba876ab))
+* **island-workshop:** better logic for KRCN & global data split ([5d8cbc3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5d8cbc3))
+* **island(workshop:** filter items based on game version for KR and CN ([33267c9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/33267c9))
+
+
+
 <a name="10.3.5"></a>
 ## [10.3.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.4...v10.3.5) (2023-03-01)
 
