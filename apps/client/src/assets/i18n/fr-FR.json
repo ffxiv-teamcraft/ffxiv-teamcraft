@@ -199,6 +199,9 @@
     "Reload": "Recharger",
     "Click_to_apply": "Cliquez pour appliquer",
     "Recommended": "Recommandé",
+    "Visibility": "Visibility",
+    "Public": "Public",
+    "Private": "Private",
     "DAYS": {
       "Monday": "Lundi",
       "Tuesday": "Mardi",
@@ -563,7 +566,8 @@
       "Autofill_completion": "Son de notification de complétion",
       "Retainer_tracker": "Notifications de servants",
       "Voyage_tracker": "Notifications de voyages",
-      "Reset_timer": "Timers de reset"
+      "Reset_timer": "Timers de reset",
+      "Fish_train": "Fish train"
     }
   },
   "PROFILE": {
@@ -3126,6 +3130,27 @@
     "Fishing_rate": "Fishing rate",
     "Nothing_to_show": "No contributions to display",
     "Terminus_tag": "Terminus",
-    "Open_fishing_overlay": "Open fishing overlay"
+    "Open_fishing_overlay": "Open fishing overlay",
+    "Claim_conductor_role": "Claim conductor role",
+    "Enter_conductor_token": "Enter conductor token",
+    "Conductor_role_claimed": "Successfully claimed train conductor role",
+    "Wrong_token": "Wrong token entered, claim failed",
+    "Train_conductor": "Train conductor: {{name}}",
+    "No_conductor": "No conductor",
+    "Rename_train": "Rename this train",
+    "No_slap": "No slap",
+    "Select_slap": "Pick a fish to slap",
+    "Visiblity_explain": "Public trains are visible in the Trains page",
+    "Moving_notification_title": "Train is moving to next spot",
+    "Moving_notification": "Train is moving to {{placeName}}: {{coords}} to fish next target: {{itemName}}",
+    "Fish_count": "{{amount}} fish",
+    "No_trains_found": "No trains found matching your filters",
+    "Open_details": "Open details",
+    "Open_in_carbuncleplushy": "Open on CarbunclePlushy",
+    "Private_display_explain": "Only you can see this here because you're the conductor of this train",
+    "List_title": "Fish trains",
+    "List_subtitle": "A cool way to fish with the community !",
+    "Name_filter_placeholder": "Search train by name",
+    "Create_new": "Create a train on CarbunclePlushy"
   }
 }
