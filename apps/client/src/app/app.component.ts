@@ -81,6 +81,7 @@ import { gameEnv } from '../environments/game-env';
 import { PacketCaptureStatus } from './core/electron/packet-capture-status';
 import { NzBadgeStatusType } from 'ng-zorro-antd/badge/types';
 import { InventoryCaptureStatus } from './modules/inventory/inventory-capture-status';
+import { PushNotificationsService } from 'ng-push-ivy';
 
 @Component({
   selector: 'app-root',
@@ -259,7 +260,12 @@ export class AppComponent implements OnInit {
               apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
               private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService,
               private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, private cd: ChangeDetectorRef,
-              private data: DataService, private allaganReportsService: AllaganReportsService) {
+              private data: DataService, private allaganReportsService: AllaganReportsService,
+              pushNotificationsService: PushNotificationsService) {
+
+    if(pushNotificationsService.isSupported() && pushNotificationsService.permission === "default"){
+      pushNotificationsService.requestPermission();
+    }
 
     const navigationEvents$ = this.router.events.pipe(
       filter(e => e instanceof NavigationStart),
@@ -270,8 +276,17 @@ export class AppComponent implements OnInit {
 
     combineLatest([this.authFacade.idToken$, this.authFacade.user$, navigationEvents$]).pipe(
       filter(([, user, nav]) => {
-        return user.allaganChecker || user.admin || nav.includes('allagan-reports')
-          || nav.includes('fishing-spot') || nav.includes('item') || this.desktop;
+        const pagesRequiringApollo = [
+          'allagan-reports',
+          'fishing-spot',
+          'item',
+          'fish-train',
+          'fish-trains'
+        ];
+        return pagesRequiringApollo.some(page => nav.includes(page))
+          || user.allaganChecker
+          || user.admin
+          || this.desktop;
       }),
       first()
     ).subscribe(() => {

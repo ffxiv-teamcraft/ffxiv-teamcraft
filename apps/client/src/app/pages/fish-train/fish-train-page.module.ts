@@ -24,6 +24,11 @@ import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 import { ContributionPerPassengerComponent } from './contribution-per-passenger/contribution-per-passenger.component';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
 
 @NgModule({
   declarations: [FishTrainComponent, ContributionPerPassengerComponent],
@@ -49,7 +54,12 @@ import { NgxEchartsModule } from 'ngx-echarts';
     NzSpaceModule,
     NzStatisticModule,
     NzEmptyModule,
-    NgxEchartsModule
+    NgxEchartsModule,
+    UserAvatarModule,
+    NzInputModule,
+    FormsModule,
+    NzSelectModule,
+    NzSwitchModule
   ]
 })
 export class FishTrainPageModule {

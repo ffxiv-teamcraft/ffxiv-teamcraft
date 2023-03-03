@@ -3,5 +3,6 @@ export enum SoundNotificationType {
   RETAINER = 'retainer',
   VOYAGE = 'voyage',
   AUTOFILL = 'autofill',
-  RESET_TIMER = 'reset_timer'
+  RESET_TIMER = 'reset_timer',
+  FISH_TRAIN = 'fish_train'
 }
