@@ -523,6 +523,7 @@
     "Disable_hardware_acceleration": "Hardwarebeschleunigung deaktivieren",
     "Housing_map": "Wohngebietskarte",
     "Housing_map_explain": "Die Karte des Wohngebiets, in dem dein Haus ist",
+    "Reset_linked_characters_ok": "Character links have been reset",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -788,7 +789,7 @@
       "Toggle_overlay": "Schritt-für-Schritt-Overlay öffnen/schließen",
       "Empty_map": "Nichts in der aktuellen Karte zu tun, die nächste Karte für diese Liste ist {{closest}}",
       "Unknown_map": "Unbekannte Karte, bitte wechsle die die Karte, damit TC sie erkennen kann.",
-      "No_list": "Keine Liste, bitte öffne eine Liste im Hauptfenster, damit das Overlay wie beabsichtigt arbeitet.",
+      "No_list": "No list selected, please open a list in main window to have the overlay work as intended.",
       "Others": "Others"
     },
     "DISPLAY_MODE": {
@@ -812,7 +813,7 @@
       "Layout_name": "Layoutname",
       "Invalid_import": "Ungültiger Layout Import Code!",
       "Global_options": "Allgemeine Optionen",
-      "Default_readonly_message": "Standardlayout ist schreibgeschützt. Erstelle mit dem + Button ein neues, um es zu ändern.",
+      "Default_readonly_message": "This is one of the default layouts and is read-only. Please create a new layout with the + button to customize your layout.",
       "Buttons": "Schaltflächen",
       "Menu": "Menü",
       "Edit_row_buttons_display": "Anzeige der Zeilenschaltflächen bearbeiten",
@@ -3094,5 +3095,37 @@
       "Main_drop": "Hauptbeute",
       "Rare_drop": "Seltene Beute"
     }
+  },
+  "FISH_TRAIN": {
+    "Train": "Fishing train",
+    "Not_found": "Fish train not found",
+    "Route": "Route",
+    "Current_fish": "Current fish",
+    "Details_title": "Fish train #{{id}}",
+    "Departure": "Departure: {{time}}",
+    "Departure_in": "Departure in {{time}}",
+    "Terminus": "Terminus: {{time}}",
+    "Stopped": "Stopped",
+    "Running": "Running",
+    "Waiting": "Waiting",
+    "Bait": "Bait",
+    "Copy_macro": "Copy macro",
+    "Are_you_on_spot": "Are you already on the fishing spot?",
+    "Copy_move_macro": "Copy train move macro",
+    "Current_position_macro": "/shout Fish train is currently fishing for {{itemName}} at {{mapName}}: {{coords}}. Preferred bait: {{bait}}, min gathering: {{minGathering}}",
+    "Next_position_macro": "/shout Choo Choo ! Fish train is moving to {{mapName}}: {{coords}} in order to fish {{itemName}}. Preferred bait: {{bait}}, min gathering: {{minGathering}}",
+    "Board_train": "Board train",
+    "Leave_train": "Leave this train",
+    "Stats": "Stats",
+    "Passengers": "Passengers",
+    "Total_reports": "# of fish caught",
+    "Wrong_spot": "Wrong spot",
+    "Wrong_spot_description": "You are not on the right spot to contribute to the fishing train, please check current location in fish train details.",
+    "Accuracy": "Accuracy",
+    "Contribution_per_passenger": "Contributions per passenger",
+    "Fishing_rate": "Fishing rate",
+    "Nothing_to_show": "No contributions to display",
+    "Terminus_tag": "Terminus",
+    "Open_fishing_overlay": "Open fishing overlay"
   }
 }
