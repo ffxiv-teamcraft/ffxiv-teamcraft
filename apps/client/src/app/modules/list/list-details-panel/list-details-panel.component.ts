@@ -26,7 +26,6 @@ import { DataType, getItemSource } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../settings/settings.service';
 import { Drop } from '../model/drop';
 import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
-import { GatheredBy } from '../model/gathered-by';
 import { TradeSource } from '../model/trade-source';
 import { Vendor } from '../model/vendor';
 import { LayoutRowDisplayMode } from '../../../core/layout/layout-row-display-mode';
@@ -436,7 +435,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   private getPosition(row: ListRow, zoneBreakdownRow: ZoneBreakdownRow): Partial<NavigationObjective> {
     const vendors = getItemSource<Vendor[]>(row, DataType.VENDORS);
     const tradeSources = getItemSource<TradeSource[]>(row, DataType.TRADE_SOURCES);
-    const gatheredBy = getItemSource<GatheredBy>(row, DataType.GATHERED_BY);
+    const gatheredBy = getItemSource(row, DataType.GATHERED_BY);
     const drops = getItemSource<Drop[]>(row, DataType.DROPS);
     const alarms = getItemSource<PersistedAlarm[]>(row, DataType.ALARMS);
     const positions = [];

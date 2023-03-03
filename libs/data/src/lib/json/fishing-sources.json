@@ -14094,8 +14094,6 @@
       "hookset": 2,
       "tug": 2,
       "bait": 22397,
-      "spawn": 4,
-      "duration": 4,
       "snagging": false,
       "minGathering": 0
     }
@@ -14334,8 +14332,6 @@
       "hookset": 2,
       "tug": 2,
       "bait": 21177,
-      "spawn": 0,
-      "duration": 4,
       "snagging": false,
       "minGathering": 0
     }

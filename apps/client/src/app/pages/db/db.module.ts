@@ -344,6 +344,9 @@ const routes: Routes = [
     AlarmButtonModule,
     NgxEchartsModule
   ],
+  exports: [
+    FishBaitsComponent
+  ],
   providers: [ItemContextService]
 })
 export class DbModule {

@@ -1,5 +1,6 @@
 import { LazyFishingSpot } from '@ffxiv-teamcraft/data/model/lazy-fishing-spot';
 import { Tug } from '@ffxiv-teamcraft/types';
+import { PersistedFishTrain } from '../../../model/other/persisted-fish-train';
 
 export interface FishingReporterState {
   isFishing: boolean;
@@ -20,5 +21,7 @@ export interface FishingReporterState {
     timestamp: number,
     tug: Tug
   };
+  train?: PersistedFishTrain;
+  wrongSpot?: boolean;
   reports: any[];
 }

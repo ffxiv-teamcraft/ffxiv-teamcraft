@@ -259,7 +259,8 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule),
     canLoad: [ModeratorGuard]
-  }
+  },
+  { path: 'fish-train', loadChildren: () => import('./pages/fish-train/fish-train-page.module').then(m => m.FishTrainPageModule) }
 ];
 
 @NgModule({

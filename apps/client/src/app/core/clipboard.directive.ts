@@ -52,7 +52,7 @@ export class ClipboardDirective {
         } else if (this.clipboardSuccessMessage) {
           this.message.success(this.clipboardSuccessMessage);
         } else {
-          this.message.success(this.translate.instant('Item_name_copied', { itemname: content }));
+          this.message.success(this.translate.instant('Item_name_copied', { itemname: `"${content}"` }));
         }
       }
     });
