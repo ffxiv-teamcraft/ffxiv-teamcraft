@@ -19,7 +19,7 @@ import {
 import { FishTrainService } from '../../../core/database/fish-train.service';
 import { combineLatest, of } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { arrayRemove, arrayUnion, deleteField, where } from '@angular/fire/firestore';
+import { arrayRemove, arrayUnion, where } from '@angular/fire/firestore';
 import { FishTrainFacade } from './fish-train.facade';
 import { FishTrainStop } from '@ffxiv-teamcraft/types';
 
@@ -51,7 +51,7 @@ export class FishTrainEffects {
     return this.actions$.pipe(
       ofType(claimConductorRole),
       withLatestFrom(this.authFacade.userId$),
-      mergeMap(([{ id }, userId]) => this.fishTrainService.pureUpdate(id, { conductor: userId, conductorToken: deleteField() }))
+      mergeMap(([{ id }, userId]) => this.fishTrainService.pureUpdate(id, { conductor: userId }))
     );
   }, { dispatch: false });
 

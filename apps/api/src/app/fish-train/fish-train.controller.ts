@@ -1,5 +1,5 @@
 import { FishTrain } from '@ffxiv-teamcraft/types';
-import { Body, Controller, Get, HttpException, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, HttpException, Param, Post, Put } from '@nestjs/common';
 import { initializeApp } from 'firebase-admin/app';
 import { getFirestore } from 'firebase-admin/firestore';
 import { credential } from 'firebase-admin';
@@ -60,6 +60,37 @@ export class FishTrainController {
         return {
           id: ref.id
         };
+      });
+  }
+
+  @Put(':id')
+  editFishTrain(@Body() body: Partial<FishTrain>, @Param('id') id: string) {
+    const fishTrain: FishTrain = {
+      name: body.name || '',
+      conductorToken: body.conductorToken || '',
+      start: new Date(body.start).getTime(),
+      fish: body.fish.map(stop => {
+        return {
+          id: stop.id,
+          start: new Date(stop.start).getTime(),
+          end: new Date(stop.end).getTime()
+        };
+      }),
+      end: new Date(body.fish[body.fish.length - 1].end).getTime(),
+      passengers: []
+    };
+    return this.firestore
+      .collection('fish-train')
+      .doc(id)
+      .get()
+      .then(doc => {
+        if (doc.data().conductorToken === body.conductorToken) {
+          return doc.ref.set(fishTrain)
+            .then(() => {
+              return fishTrain;
+            });
+        }
+        throw new HttpException('Wrong conductorToken provided', 400);
       });
   }
 }
