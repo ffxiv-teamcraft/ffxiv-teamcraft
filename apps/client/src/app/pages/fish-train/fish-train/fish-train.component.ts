@@ -1,8 +1,8 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { FishTrainFacade } from '../../../modules/fish-train/fish-train/fish-train.facade';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { delayWhen, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { DataType, FishTrainStop, GatheringNode, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
 import { combineLatest, of } from 'rxjs';
@@ -129,7 +129,7 @@ export class FishTrainComponent extends TeamcraftComponent {
               private dialog: NzModalService, private message: NzMessageService,
               private authFacade: AuthFacade, private soundNotificationService: SoundNotificationService,
               private notificationService: NzNotificationService, private pushNotificationsService: PushNotificationsService,
-              private cd: ChangeDetectorRef) {
+              private cd: ChangeDetectorRef, private router: Router) {
     super();
     route.paramMap
       .pipe(
@@ -140,6 +140,31 @@ export class FishTrainComponent extends TeamcraftComponent {
         this.fishTrainFacade.load(id);
         this.fishTrainFacade.select(id);
       });
+    route.queryParamMap.pipe(
+      switchMap(query => {
+        return this.fishTrain$.pipe(
+          filter(Boolean),
+          map(train => ({ query, train }))
+        );
+      }),
+      first(),
+      delayWhen(() => this.translate.get('LOADING'))
+    ).subscribe(({ query, train }) => {
+      const token = query.get('conductorToken');
+      if (token && !train.conductor) {
+        if (token === train.conductorToken) {
+          this.fishTrainFacade.claimConductorRole(train.$key);
+          this.message.success(this.translate.instant('FISH_TRAIN.Conductor_role_claimed'));
+        } else {
+          this.message.error(this.translate.instant('FISH_TRAIN.Wrong_token'));
+        }
+      }
+      if (token) {
+        router.navigate([], {
+          queryParams: {}
+        });
+      }
+    });
   }
 
   getMacro = (current: FishTrainStop & { node: GatheringNode }, macroKey: string, useCurrentPos = false) => {
