@@ -270,8 +270,17 @@ export class AppComponent implements OnInit {
 
     combineLatest([this.authFacade.idToken$, this.authFacade.user$, navigationEvents$]).pipe(
       filter(([, user, nav]) => {
-        return user.allaganChecker || user.admin || nav.includes('allagan-reports')
-          || nav.includes('fishing-spot') || nav.includes('item') || this.desktop;
+        const pagesRequiringApollo = [
+          'allagan-reports',
+          'fishing-spot',
+          'item',
+          'fish-train',
+          'fish-trains'
+        ];
+        return pagesRequiringApollo.some(page => nav.includes(page))
+          || user.allaganChecker
+          || user.admin
+          || this.desktop;
       }),
       first()
     ).subscribe(() => {
