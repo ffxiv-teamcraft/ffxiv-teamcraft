@@ -121,7 +121,7 @@ export const lazyFilesList = {
   },
   'fateSources': {
     'fileName': 'fate-sources.json',
-    'hashedFileName': 'fate-sources.41bbeb6ecbda7dbff29afccebf6e077e8e874a54.json'
+    'hashedFileName': 'fate-sources.87308af929c57cf28c99ec04e7a6c4eef5cd17d3.json'
   },
   'fates': {
     'fileName': 'fates.json',
@@ -365,7 +365,7 @@ export const lazyFilesList = {
   },
   'mogstationSources': {
     'fileName': 'mogstation-sources.json',
-    'hashedFileName': 'mogstation-sources.916056797121a30068e6903a160a23e7ab269c4d.json'
+    'hashedFileName': 'mogstation-sources.aaab3f54a72f1d1da3d9e2f029921ae0774414d8.json'
   },
   'monsters': {
     'fileName': 'monsters.json',
@@ -541,7 +541,7 @@ export const lazyFilesList = {
   },
   'voyageSources': {
     'fileName': 'voyage-sources.json',
-    'hashedFileName': 'voyage-sources.d6d90a60c6ba1ed9b6efdd80d58305a3cdd70496.json'
+    'hashedFileName': 'voyage-sources.73cfd193f57b21697a692a556ead8d42e3531350.json'
   },
   'weathers': {
     'fileName': 'weathers.json',
