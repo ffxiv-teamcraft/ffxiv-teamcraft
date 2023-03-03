@@ -260,7 +260,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule),
     canLoad: [ModeratorGuard]
   },
-  { path: 'fish-train', loadChildren: () => import('./pages/fish-train/fish-train-page.module').then(m => m.FishTrainPageModule) }
+  { path: 'fish-train', loadChildren: () => import('./pages/fish-train/fish-train-page.module').then(m => m.FishTrainPageModule) },
+  { path: 'fish-trains', loadChildren: () => import('./pages/fish-trains/fish-trains.module').then(m => m.FishTrainsModule) }
 ];
 
 @NgModule({

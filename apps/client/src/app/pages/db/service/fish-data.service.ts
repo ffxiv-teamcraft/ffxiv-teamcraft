@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { combineLatest, map, Observable, shareReplay, switchMap } from 'rxjs';
+import { map, Observable, shareReplay, switchMap } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import {
   BaitsPerFishPerSpotQuery,
@@ -152,13 +152,6 @@ export class FishDataService {
   }
 
   public getTrainStats(trainId: string): Observable<any> {
-    const statsQuery = gql`subscription FishTrainStats($trainId: String!) {
-      fishingresults_aggregate(where: {trainId: {_eq: $trainId}}) {
-        aggregate {
-          count
-        }
-      }
-    }`;
     const reportsQuery = gql`subscription FishTrainReports($trainId: String!) {
       fishingresults(where: {trainId: {_eq: $trainId}}) {
         itemId,
@@ -166,25 +159,16 @@ export class FishDataService {
         userId
       }
     }`;
-    return combineLatest([
-      this.apollo.subscribe<any>({
-        query: statsQuery,
-        fetchPolicy: 'network-only',
-        variables: {
-          trainId: trainId
-        }
-      }),
-      this.apollo.subscribe<any>({
-        query: reportsQuery,
-        fetchPolicy: 'network-only',
-        variables: {
-          trainId: trainId
-        }
-      })
-    ]).pipe(
-      map(([stats, reports]) => {
+    return this.apollo.subscribe<any>({
+      query: reportsQuery,
+      fetchPolicy: 'network-only',
+      variables: {
+        trainId: trainId
+      }
+    }).pipe(
+      map((reports) => {
         return {
-          count: stats.data.fishingresults_aggregate.aggregate.count,
+          count: reports.data.fishingresults.length,
           reports: reports.data.fishingresults
         };
       }),

@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FishTrainFacade } from '../../../modules/fish-train/fish-train/fish-train.facade';
 import { ActivatedRoute } from '@angular/router';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { DataType, FishTrainStop, GatheringNode, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
 import { combineLatest, of } from 'rxjs';
@@ -36,6 +36,10 @@ export class FishTrainComponent extends TeamcraftComponent {
     distinctUntilChanged(),
     switchMap(trainId => {
       return this.fishDataService.getTrainStats(trainId);
+    }),
+    startWith({
+      count: 0,
+      reports: []
     })
   );
 
@@ -105,10 +109,13 @@ export class FishTrainComponent extends TeamcraftComponent {
       };
     }),
     tap(display => {
-      const time = Math.floor(display.time / 1000);
-      if (time === Math.floor(display.current.end / 1000)) {
-        this.notifyMovement(display.fish[display.currentIndex + 1]);
+      if (display.current) {
+        const time = Math.floor(display.time / 1000);
+        if (time === Math.floor(display.current.end / 1000)) {
+          this.notifyMovement(display.fish[display.currentIndex + 1]);
+        }
       }
+      this.cd.detectChanges();
     }),
     shareReplay(1)
   );
@@ -121,7 +128,8 @@ export class FishTrainComponent extends TeamcraftComponent {
               public platform: PlatformService, private ipc: IpcService,
               private dialog: NzModalService, private message: NzMessageService,
               private authFacade: AuthFacade, private soundNotificationService: SoundNotificationService,
-              private notificationService: NzNotificationService, private pushNotificationsService: PushNotificationsService) {
+              private notificationService: NzNotificationService, private pushNotificationsService: PushNotificationsService,
+              private cd: ChangeDetectorRef) {
     super();
     route.paramMap
       .pipe(

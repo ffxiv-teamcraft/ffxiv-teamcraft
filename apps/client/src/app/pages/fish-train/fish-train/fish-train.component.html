@@ -23,13 +23,17 @@
           <nz-tag class="custom-tag" [style.border-color]="'#f50'" *ngIf="display.stopped">{{'FISH_TRAIN.Stopped' | translate}}</nz-tag>
           <nz-tag class="custom-tag" [style.border-color]="'#108ee9'" *ngIf="display.running">{{'FISH_TRAIN.Running' | translate}}</nz-tag>
           <nz-tag *ngIf="display.waiting">{{'FISH_TRAIN.Waiting' | translate}}</nz-tag>
-          <ng-container *ngIf="display.isConductor">
+          <ng-container *ngIf="display.isConductor; else visibilityTpl">
             {{'COMMON.Visibility' | translate}}:&nbsp;
             <nz-switch [(ngModel)]="fishTrain.public" (ngModelChange)="setPublicFlag(fishTrain.$key, $event)"
                        nzSize="small"
                        nz-tooltip [nzTooltipTitle]="'FISH_TRAIN.Visiblity_explain' | translate"
                        [nzCheckedChildren]="'COMMON.Public' | translate" [nzUnCheckedChildren]="'COMMON.Private' | translate"></nz-switch>
           </ng-container>
+          <ng-template #visibilityTpl>
+            <nz-tag class="custom-tag" [style.border-color]="'#f50'" *ngIf="!display.public">{{'COMMON.Private' | translate}}</nz-tag>
+            <nz-tag class="custom-tag" [style.border-color]="'#108ee9'" *ngIf="display.public">{{'COMMON.Public' | translate}}</nz-tag>
+          </ng-template>
         </div>
       </nz-page-header-tags>
       <nz-page-header-extra>

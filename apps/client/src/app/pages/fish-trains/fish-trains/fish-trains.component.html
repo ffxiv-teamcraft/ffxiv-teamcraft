@@ -1,0 +1,65 @@
+<nz-page-header>
+  <nz-page-header-title>
+    {{'FISH_TRAIN.List_title' | translate}}
+  </nz-page-header-title>
+  <nz-page-header-subtitle>
+    {{'FISH_TRAIN.List_subtitle' | translate}}
+  </nz-page-header-subtitle>
+  <nz-page-header-extra>
+    <a nz-button nzType="primary" href="https://ff14fish.carbuncleplushy.com/fishtrain.html" target="_blank">
+      {{'FISH_TRAIN.Create_new' | translate}}
+    </a>
+  </nz-page-header-extra>
+</nz-page-header>
+<form [formGroup]="filtersForm" class="flex-column align-center justify-center gap-5">
+  <input formControlName="name"
+         [placeholder]="'FISH_TRAIN.Name_filter_placeholder' | translate"
+         autofocus class="filter-input" nz-input type="text">
+  <nz-segmented formControlName="status" *ngIf="runningOptions$ | async as runningOptions" [nzOptions]="runningOptions"></nz-segmented>
+</form>
+<div class="results flex-column gap-5" *ngIf="results$ | async as results">
+  <a nz-row nzAlign="middle" class="train-row" *ngFor="let train of results;trackByKey" routerLink="/fish-train/{{train.$key}}">
+    <div nz-col [nzSpan]="4">
+      <app-user-avatar *ngIf="train.conductor" [userId]="train.conductor" messageKey="FISH_TRAIN.Train_conductor" [width]="32"></app-user-avatar>
+      <nz-avatar *ngIf="!train.conductor" nzText="?" nz-tooltip [nzTooltipTitle]="'FISH_TRAIN.No_conductor' | translate"></nz-avatar>
+      &nbsp;{{train.name}}
+    </div>
+    <div nz-col [nzSpan]="3">
+      <ng-container [ngSwitch]="train.status">
+        <nz-tag class="custom-tag" [style.border-color]="'#f50'" *ngSwitchCase="FishTrainStatus.STOPPED">{{'FISH_TRAIN.Stopped' | translate}}</nz-tag>
+        <nz-tag class="custom-tag" [style.border-color]="'#108ee9'" *ngSwitchCase="FishTrainStatus.RUNNING">{{'FISH_TRAIN.Running' | translate}}</nz-tag>
+        <nz-tag *ngSwitchCase="FishTrainStatus.WAITING">{{'FISH_TRAIN.Waiting' | translate}}</nz-tag>
+      </ng-container>
+      <nz-tag class="custom-tag" [style.border-color]="'#f50'" *ngIf="!train.public"
+              nz-tooltip [nzTooltipTitle]="'FISH_TRAIN.Private_display_explain' | translate">{{'COMMON.Private' | translate}}</nz-tag>
+    </div>
+    <div nz-col [nzSpan]="2">
+      <nz-tag>{{'FISH_TRAIN.Fish_count' | translate: { amount: train.fish.length } }}</nz-tag>
+    </div>
+    <div nz-col [nzSpan]="4">
+      {{'FISH_TRAIN.Departure' | translate: { time: train.start | date:'short':null:translate.currentLang } }}
+    </div>
+    <div nz-col [nzSpan]="4">
+      {{'FISH_TRAIN.Terminus' | translate: { time: train.end | date:'short':null:translate.currentLang } }}
+    </div>
+    <div nz-col [nzSpan]="7">
+      <div class="flex-row justify-end gap-5">
+        <div>
+          <a nz-button routerLink="/fish-train/{{train.$key}}" (click)="$event.stopPropagation()">
+            {{'FISH_TRAIN.Open_details' | translate}}
+          </a>
+        </div>
+        <div>
+          <a nz-button href="https://ff14fish.carbuncleplushy.com/trainpass?tcid={{train.$key}}" target="_blank"
+             (click)="$event.stopPropagation()">
+            {{'FISH_TRAIN.Open_in_carbuncleplushy' | translate}}
+          </a>
+        </div>
+      </div>
+    </div>
+  </a>
+  <app-fullpage-message *ngIf="results.length === 0" height="500px">
+    {{'FISH_TRAIN.No_trains_found' | translate}}
+  </app-fullpage-message>
+</div>
+

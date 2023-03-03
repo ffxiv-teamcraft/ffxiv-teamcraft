@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { getBoardedTrain, getLoaded, getSelectedTrain } from './fish-train.selectors';
+import { getAllFishTrains, getBoardedTrain, getLoaded, getSelectedTrain } from './fish-train.selectors';
 import {
   boardTrain,
   claimConductorRole,
@@ -13,7 +13,7 @@ import {
   setFishSlap,
   setFishTrainPublic
 } from './fish-train.actions';
-import { distinctUntilChanged, map, shareReplay, switchMap } from 'rxjs/operators';
+import { distinctUntilChanged, map, shareReplay, startWith, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { DataType, FishTrainStop, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
@@ -26,7 +26,9 @@ import { PersistedFishTrain } from '../../../model/other/persisted-fish-train';
 export class FishTrainFacade {
 
   time$ = interval(1000).pipe(
-    map(() => Date.now())
+    map(() => Date.now()),
+    startWith(Date.now()),
+    shareReplay(1)
   );
 
   loaded$ = this.store.pipe(
@@ -70,6 +72,10 @@ export class FishTrainFacade {
     }),
     distinctUntilChanged()
   );
+
+  allTrains$ = this.store.pipe(
+    select(getAllFishTrains)
+  )
 
   constructor(private store: Store, private authFacade: AuthFacade,
               private lazyData: LazyDataFacade) {

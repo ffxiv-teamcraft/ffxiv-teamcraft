@@ -13,10 +13,11 @@ import {
   loadFishTrainSuccess,
   loadRunningTrains,
   renameTrain,
-  setFishSlap, setFishTrainPublic
+  setFishSlap,
+  setFishTrainPublic
 } from './fish-train.actions';
 import { FishTrainService } from '../../../core/database/fish-train.service';
-import { of } from 'rxjs';
+import { combineLatest, of } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { arrayRemove, arrayUnion, deleteField, where } from '@angular/fire/firestore';
 import { FishTrainFacade } from './fish-train.facade';
@@ -102,7 +103,7 @@ export class FishTrainEffects {
       filter(([, loaded]) => !loaded),
       switchMap(() => {
         const now = Date.now();
-        return this.fishTrainService.query(where('end', '>', now)).pipe(
+        return this.fishTrainService.query(where('public', '==', true), where('end', '>', now)).pipe(
           map(trains => trains.filter(train => train.start <= now)),
           map((trains) => loadFishTrainsSuccess({ trains }))
         );
@@ -113,9 +114,13 @@ export class FishTrainEffects {
   loadAllTrains$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(loadAllTrains),
-      switchMap(() => {
-        return this.fishTrainService.query().pipe(
-          map((trains) => loadFishTrainsSuccess({ trains, loaded: true }))
+      switchMap(() => this.authFacade.userId$),
+      switchMap((userId) => {
+        return combineLatest([
+          this.fishTrainService.query(where('public', '==', true)),
+          this.fishTrainService.query(where('conductor', '==', userId))
+        ]).pipe(
+          map(([publicTrains, myTrains]) => loadFishTrainsSuccess({ trains: [...publicTrains, ...myTrains], loaded: true }))
         );
       })
     );
