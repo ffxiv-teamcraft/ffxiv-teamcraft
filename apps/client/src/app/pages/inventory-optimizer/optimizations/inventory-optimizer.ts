@@ -23,7 +23,6 @@ export abstract class InventoryOptimizer {
     ContainerType.FreeCompanyBag8,
     ContainerType.FreeCompanyBag9,
     ContainerType.FreeCompanyBag10,
-    ContainerType.RetainerMarket,
     ContainerType.RetainerEquippedGear,
     ContainerType.Crystal,
     ContainerType.RetainerCrystal,
