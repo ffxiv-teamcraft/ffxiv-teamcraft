@@ -37,8 +37,8 @@ export class WorldNavigationMapComponent extends TeamcraftComponent implements O
       filter((event: KeyboardEvent) => event.key === 'ArrowRight' || event.key === 'ArrowLeft'),
       takeUntil(this.onDestroy$)
     ).subscribe(event => {
-      const direction = event.key === 'ArrowRight' ? 1 : -1;
-      this.currentPathIndex$.next(this.currentPathIndex$.value - direction);
+      const direction = event.key === 'ArrowRight' ? -1 : 1;
+      this.currentPathIndex$.next(Math.max(this.currentPathIndex$.value - direction, 0));
     });
   }
 
