@@ -236,8 +236,8 @@ export class FishingReporter implements DataReporter {
       this.eorzea.previousWeatherId$.pipe(startWith(null), distinctUntilChanged()),
       throw$.pipe(startWith(null)),
       bite$.pipe(startWith(null)),
-      this.fishTrainFacade.currentTrain$,
-      this.fishTrainFacade.currentTrainSpotId$
+      this.fishTrainFacade.currentTrain$.pipe(startWith(null)),
+      this.fishTrainFacade.currentTrainSpotId$.pipe(startWith(null))
     ]).subscribe(([isFishing, mapId, baitId, spot, stats, mooch, statuses, weatherId, previousWeatherId, throwData, biteData, train, trainSpotId]) => {
       this.setState({
         isFishing,
@@ -252,7 +252,7 @@ export class FishingReporter implements DataReporter {
         throwData,
         biteData,
         train,
-        wrongSpot: spot && trainSpotId !== spot.id
+        wrongSpot: spot && train && trainSpotId !== spot.id
       });
     });
 
@@ -268,8 +268,8 @@ export class FishingReporter implements DataReporter {
         spot$,
         fisherStats$,
         mooch$,
-        this.fishTrainFacade.currentTrainSpotId$,
-        this.fishTrainFacade.currentTrain$
+        this.fishTrainFacade.currentTrainSpotId$.pipe(startWith(null)),
+        this.fishTrainFacade.currentTrain$.pipe(startWith(null))
       ),
       filter(([fish, , throwData, biteData, , spot, stats]) => {
         return (fish.id === -1 && stats?.gp > 1)

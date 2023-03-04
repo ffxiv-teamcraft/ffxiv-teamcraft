@@ -17,7 +17,7 @@ import { distinctUntilChanged, map, shareReplay, startWith, switchMap } from 'rx
 import { AuthFacade } from '../../../+state/auth.facade';
 import { DataType, FishTrainStop, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { combineLatest, interval } from 'rxjs';
+import { combineLatest, interval, of } from 'rxjs';
 import { PersistedFishTrain } from '../../../model/other/persisted-fish-train';
 
 @Injectable({
@@ -49,6 +49,9 @@ export class FishTrainFacade {
 
   currentTrainWithLocations$ = this.currentTrain$.pipe(
     switchMap(train => {
+      if (!train) {
+        return of(null);
+      }
       return this.lazyData.getRows('extracts', ...train.fish.map(stop => stop.id)).pipe(
         map(extracts => {
           return {
@@ -68,6 +71,9 @@ export class FishTrainFacade {
 
   currentTrainSpotId$ = combineLatest([this.time$, this.currentTrainWithLocations$]).pipe(
     map(([time, train]) => {
+      if (!train) {
+        return null;
+      }
       return train.fish.find(stop => stop.end > time && stop.start <= time)?.node.id;
     }),
     distinctUntilChanged()
@@ -82,9 +88,9 @@ export class FishTrainFacade {
     switchMap(userId => {
       return this.store.pipe(
         select(getAllPublicFishingTrains(userId))
-      )
+      );
     })
-  )
+  );
 
   constructor(private store: Store, private authFacade: AuthFacade,
               private lazyData: LazyDataFacade) {

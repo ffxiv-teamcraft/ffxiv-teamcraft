@@ -57,7 +57,7 @@ export const lazyFilesList = {
   },
   'collectablesPageData': {
     'fileName': 'collectables-page-data.json',
-    'hashedFileName': 'collectables-page-data.1d7763ddb472b9d77d280f4689388e0ea83251b3.json'
+    'hashedFileName': 'collectables-page-data.fba1d805383e5adaf8b0f8b66813679d96a3ddf8.json'
   },
   'collectablesShopItemGroup': {
     'fileName': 'collectables-shop-item-group.json',
@@ -101,7 +101,7 @@ export const lazyFilesList = {
   },
   'dropSources': {
     'fileName': 'drop-sources.json',
-    'hashedFileName': 'drop-sources.89510ac2382fbe27f40463887578f856086d20f4.json'
+    'hashedFileName': 'drop-sources.1d20da4f4ba7bd7dc7fc4dcc6e6155d84e7d3348.json'
   },
   'equipSlotCategories': {
     'fileName': 'equip-slot-categories.json',
@@ -145,7 +145,7 @@ export const lazyFilesList = {
   },
   'fishingSources': {
     'fileName': 'fishing-sources.json',
-    'hashedFileName': 'fishing-sources.c660e3408bb3b089150765c6e7caf5d78f8f98da.json'
+    'hashedFileName': 'fishing-sources.4d7f136e6c7b742a008f79b8e5df520157078159.json'
   },
   'fishingSpots': {
     'fileName': 'fishing-spots.json',
@@ -541,7 +541,7 @@ export const lazyFilesList = {
   },
   'voyageSources': {
     'fileName': 'voyage-sources.json',
-    'hashedFileName': 'voyage-sources.cc79e764e8472b7ce9c36f603cba6a034943359f.json'
+    'hashedFileName': 'voyage-sources.e5628a31dd5e92e93b2218f3fae4399dd0323629.json'
   },
   'weathers': {
     'fileName': 'weathers.json',
