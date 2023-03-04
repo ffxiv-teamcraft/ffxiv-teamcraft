@@ -22,6 +22,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { arrayRemove, arrayUnion, where } from '@angular/fire/firestore';
 import { FishTrainFacade } from './fish-train.facade';
 import { FishTrainStop } from '@ffxiv-teamcraft/types';
+import { uniqBy } from 'lodash';
 
 @Injectable()
 export class FishTrainEffects {
@@ -120,7 +121,7 @@ export class FishTrainEffects {
           this.fishTrainService.query(where('public', '==', true)),
           this.fishTrainService.query(where('conductor', '==', userId))
         ]).pipe(
-          map(([publicTrains, myTrains]) => loadFishTrainsSuccess({ trains: [...publicTrains, ...myTrains], loaded: true }))
+          map(([publicTrains, myTrains]) => loadFishTrainsSuccess({ trains: uniqBy([...publicTrains, ...myTrains], '$key'), loaded: true }))
         );
       })
     );
