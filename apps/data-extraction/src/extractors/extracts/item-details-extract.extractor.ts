@@ -341,12 +341,12 @@ export class ItemDetailsExtractExtractor extends AbstractExtractor {
             || collectable.levelMax % 10 === 0;
         }
         if (nerfedExp) {
-          return 10000;
+          return 1000;
         }
         const row = this.paramGrow[collectable.levelMax];
         return row.ExpToNext * ratio / 1000;
       })
-      .filter(v => v !== 10000);
+      .filter(v => v !== 1000);
   }
 
   private getFshData(itemId: number, spotId: number, extractor: AlarmsExtractor): { gatheringNode: GatheringNode, alarms: AlarmDetails[] }[] {
