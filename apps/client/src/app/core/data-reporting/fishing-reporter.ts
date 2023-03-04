@@ -12,6 +12,8 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { EventPlay } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { FishingReporterState } from './state/fishing-reporter-state';
 import { FishTrainFacade } from '../../modules/fish-train/fish-train/fish-train.facade';
+import { getFishTrainStatus } from '../../modules/fish-train/get-fish-train-status';
+import { FishTrainStatus } from '../../pages/fish-trains/fish-trains/fish-train-status';
 
 
 export class FishingReporter implements DataReporter {
@@ -239,6 +241,7 @@ export class FishingReporter implements DataReporter {
       this.fishTrainFacade.currentTrain$.pipe(startWith(null)),
       this.fishTrainFacade.currentTrainSpotId$.pipe(startWith(null))
     ]).subscribe(([isFishing, mapId, baitId, spot, stats, mooch, statuses, weatherId, previousWeatherId, throwData, biteData, train, trainSpotId]) => {
+      const shouldAddTrain = trainSpotId === spot?.id && getFishTrainStatus(train) === FishTrainStatus.RUNNING;
       this.setState({
         isFishing,
         mapId,
@@ -251,8 +254,8 @@ export class FishingReporter implements DataReporter {
         previousWeatherId,
         throwData,
         biteData,
-        train,
-        wrongSpot: spot && train && trainSpotId !== spot.id
+        train: shouldAddTrain ? train : null,
+        wrongSpot: spot && train && getFishTrainStatus(train) === FishTrainStatus.RUNNING && trainSpotId !== spot?.id
       });
     });
 
@@ -278,6 +281,7 @@ export class FishingReporter implements DataReporter {
           ) && throwData.weatherId !== null;
       }),
       map(([fish, baitId, throwData, biteData, hookset, spot, stats, mooch, trainSpotId, train]) => {
+        const shouldAddTrain = trainSpotId === spot?.id && getFishTrainStatus(train) === FishTrainStatus.RUNNING;
         const entry = {
           itemId: fish.id,
           etime: throwData.etime.getUTCHours(),
@@ -297,7 +301,7 @@ export class FishingReporter implements DataReporter {
           hookset,
           spot: spot.id,
           size: fish.size,
-          trainId: trainSpotId === spot.id ? train?.$key : null,
+          trainId: shouldAddTrain ? train?.$key : null,
           ...stats
         };
         if (mooch) {

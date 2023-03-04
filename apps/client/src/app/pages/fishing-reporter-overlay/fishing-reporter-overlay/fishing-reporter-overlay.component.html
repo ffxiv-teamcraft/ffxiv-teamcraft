@@ -53,7 +53,7 @@
                   nz-tooltip [nzTooltipTitle]="'COMMON.Open_in_main_window' | translate">
             <i nz-icon nzType="info"></i>
           </button>
-          {{state.train.name}}
+          {{state.train.name || ('FISH_TRAIN.Details_title' | translate:{ id: state.train.$key })}}
         </div>
       </div>
       <div fxLayout="row" fxLayoutAlign="space-between center">

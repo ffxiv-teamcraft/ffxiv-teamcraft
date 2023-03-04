@@ -5,7 +5,7 @@ import { combineLatest, map, switchMap } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { FishTrainStatus } from './fish-train-status';
 import { startWith, tap } from 'rxjs/operators';
-import { PersistedFishTrain } from '../../../model/other/persisted-fish-train';
+import { getFishTrainStatus } from '../../../modules/fish-train/get-fish-train-status';
 
 @Component({
   selector: 'app-fish-trains',
@@ -58,7 +58,7 @@ export class FishTrainsComponent {
             .map(train => {
               return {
                 ...train,
-                status: this.getTrainStatus(train)
+                status: getFishTrainStatus(train)
               };
             })
             .filter(train => {
@@ -75,16 +75,6 @@ export class FishTrainsComponent {
   constructor(private fishTrainFacade: FishTrainFacade, public translate: TranslateService,
               private cd: ChangeDetectorRef) {
     fishTrainFacade.loadAll();
-  }
-
-  private getTrainStatus(train: PersistedFishTrain): FishTrainStatus {
-    if (train.start > Date.now()) {
-      return FishTrainStatus.WAITING;
-    }
-    if (train.end < Date.now()) {
-      return FishTrainStatus.STOPPED;
-    }
-    return FishTrainStatus.RUNNING;
   }
 
 }

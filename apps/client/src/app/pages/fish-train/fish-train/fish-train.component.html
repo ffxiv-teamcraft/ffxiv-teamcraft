@@ -7,7 +7,7 @@
       <nz-page-header-title>
         <div class="flex-row gap-5 align-center">
           <app-user-avatar *ngIf="fishTrain.conductor" [userId]="fishTrain.conductor" [width]="32" messageKey="FISH_TRAIN.Train_conductor"></app-user-avatar>
-          {{fishTrain.name}}
+          {{fishTrain.name || ('FISH_TRAIN.Details_title' | translate:{ id: fishTrain.$key })}}
           <button nz-button *ngIf="display.isConductor"
                   (click)="renameTrain(fishTrain.$key, fishTrain.name)"
                   nzSize="small" nzShape="circle"
@@ -114,6 +114,11 @@
                   </ng-template>
                 </div>
               </ng-template>
+            </nz-step>
+            <nz-step *ngIf="display.running"
+                     nzIcon="stop"
+                     [nzTitle]="'FISH_TRAIN.Terminus_tag' | translate"
+                     [nzSubtitle]="((fishTrain.end - display.time) / 1000) | timer:true">
             </nz-step>
           </nz-steps>
         </div>

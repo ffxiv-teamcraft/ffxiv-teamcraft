@@ -22,7 +22,7 @@
     <div nz-col [nzSpan]="4">
       <app-user-avatar *ngIf="train.conductor" [userId]="train.conductor" messageKey="FISH_TRAIN.Train_conductor" [width]="32"></app-user-avatar>
       <nz-avatar *ngIf="!train.conductor" nzText="?" nz-tooltip [nzTooltipTitle]="'FISH_TRAIN.No_conductor' | translate"></nz-avatar>
-      &nbsp;{{train.name}}
+      &nbsp;{{train.name || ('FISH_TRAIN.Details_title' | translate:{ id: train.$key })}}
     </div>
     <div nz-col [nzSpan]="3">
       <ng-container [ngSwitch]="train.status">
@@ -33,10 +33,11 @@
       <nz-tag class="custom-tag" [style.border-color]="'#f50'" *ngIf="!train.public"
               nz-tooltip [nzTooltipTitle]="'FISH_TRAIN.Private_display_explain' | translate">{{'COMMON.Private' | translate}}</nz-tag>
     </div>
-    <div nz-col [nzSpan]="2">
+    <div nz-col [nzSpan]="3">
       <nz-tag>{{'FISH_TRAIN.Fish_count' | translate: { amount: train.fish.length } }}</nz-tag>
+      <nz-tag>{{train.passengers.length}} {{'FISH_TRAIN.Passengers' | translate | lowercase }}</nz-tag>
     </div>
-    <div nz-col [nzSpan]="4">
+    <div nz-col [nzSpan]="3">
       {{'FISH_TRAIN.Departure' | translate: { time: train.start | date:'short':null:translate.currentLang } }}
     </div>
     <div nz-col [nzSpan]="4">

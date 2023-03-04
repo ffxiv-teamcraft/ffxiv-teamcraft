@@ -88,8 +88,8 @@ export class FishTrainComponent extends TeamcraftComponent {
       const matchingItemIds = train.fish.map(fish => fish.id);
       const accuracy = gubalStats.reports.length === 0 ? 0 :
         gubalStats.reports.filter(report => matchingItemIds.includes(report.itemId)).length / gubalStats.reports.length;
-      const durationHours = (time - train.start) / (60000 * 60);
-      const rate = (durationHours === 0 || gubalStats.reports.length === 0) ? 0 : Math.floor(100 * gubalStats.reports.filter(report => matchingItemIds.includes(report.itemId)).length / durationHours) / 100;
+      const durationHours = (Math.min(time, train.end) - train.start) / (60000 * 60);
+      const rate = (durationHours === 0 || gubalStats.reports.length === 0) ? 0 : Math.floor(100 * gubalStats.reports.length / durationHours) / 100;
       return {
         ...train,
         stops,
