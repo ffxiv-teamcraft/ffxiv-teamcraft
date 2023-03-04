@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.3.7"></a>
+## [10.3.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.6...v10.3.7) (2023-03-04)
+
+
+### Bug Fixes
+
+* **alarms:** better check for push notification permission before notifying to prevent crash ([7c9c399](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7c9c399))
+* **allagan-reports:** fixed source change locking form on invalid mode ([984e946](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/984e946))
+* **collectables:** set nerfed exp to 1000 instead of 10000 ([ca94a28](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ca94a28))
+* **desktop:** fixed fishing reporter overlay ([fb5c5a8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fb5c5a8))
+* **inventory-optimizer:** remove Market listing from ignored containers ([4f6c4fc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4f6c4fc))
+* **path-optimizer:** fixed arrow navigation ([972895f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/972895f))
+
+
+### Features
+
+* **core:** new fish trains feature ([#2533](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2533)) ([95a5f4b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/95a5f4b))
+
+
+
 <a name="10.3.6"></a>
 ## [10.3.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.5...v10.3.6) (2023-03-03)
 
