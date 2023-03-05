@@ -122,6 +122,8 @@ export class FishTrainComponent extends TeamcraftComponent {
 
   public servers$ = this.lazyData.servers$;
 
+  public loggedIn$ = this.authFacade.loggedIn$;
+
   macroPopoverShown = false;
 
   constructor(private fishTrainFacade: FishTrainFacade, private route: ActivatedRoute,

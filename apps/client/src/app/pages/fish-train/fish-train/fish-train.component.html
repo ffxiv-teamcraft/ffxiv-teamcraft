@@ -63,7 +63,7 @@
                   (click)="claimConductorRole(fishTrain.$key, fishTrain.conductorToken)">
             <span nz-icon nzType="crown" nzTheme="outline"></span> {{'FISH_TRAIN.Claim_conductor_role' | translate}}
           </button>
-          <button nz-button nzType="primary" *ngIf="!display.currentTrain" (click)="boardTrain(fishTrain.$key)">
+          <button nz-button nzType="primary" *ngIf="!display.currentTrain && (loggedIn$ | async) === true" (click)="boardTrain(fishTrain.$key)">
             <span nz-icon nzType="user-add" nzTheme="outline"></span> {{'FISH_TRAIN.Board_train' | translate}}
           </button>
           <button nz-button nzDanger *ngIf="display.currentTrain?.$key === display.$key" (click)="leaveTrain(fishTrain.$key)">
