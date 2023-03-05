@@ -31,7 +31,7 @@ import { IpcService } from '../core/electron/ipc.service';
 import { CharacterLinkPopupComponent } from '../core/auth/character-link-popup/character-link-popup.component';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
-import { combineLatest, from, Observable, of, ReplaySubject } from 'rxjs';
+import { combineLatest, firstValueFrom, from, Observable, of, ReplaySubject } from 'rxjs';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { DefaultConsumables } from '../model/user/default-consumables';
 import { Favorites } from '../model/other/favorites';
@@ -269,8 +269,10 @@ export class AuthFacade {
   }
 
   public async getIdTokenResult(forceRefresh = false) {
-    const user = await this.auth.currentUser;
-    return await user.getIdTokenResult(forceRefresh);
+    return firstValueFrom(this.firebaseAuthState$.pipe(
+      filter(user => user !== null),
+      switchMap(user => from(user.getIdTokenResult(forceRefresh)))
+    ));
   }
 
   resetPassword(email: string): void {

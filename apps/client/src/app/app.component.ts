@@ -52,9 +52,6 @@ import { REQUEST } from '@nguniversal/express-engine/tokens';
 import * as semver from 'semver';
 import { UniversalisService } from './core/api/universalis.service';
 import { TextQuestionPopupComponent } from './modules/text-question-popup/text-question-popup/text-question-popup.component';
-import { Apollo } from 'apollo-angular';
-import { HttpLink } from 'apollo-angular-link-http';
-import { InMemoryCache } from 'apollo-cache-inmemory';
 import { QuickSearchService } from './modules/quick-search/quick-search.service';
 import { Region } from '@ffxiv-teamcraft/types';
 import { MappyReporterService } from './core/electron/mappy/mappy-reporter';
@@ -70,9 +67,6 @@ import { Language } from './core/data/language';
 import { InventoryService } from './modules/inventory/inventory.service';
 import { DataService } from './core/api/data.service';
 import { AllaganReportsService } from './pages/allagan-reports/allagan-reports.service';
-import { WebSocketLink } from 'apollo-link-ws';
-import { split } from 'apollo-link';
-import { getMainDefinition } from 'apollo-utilities';
 import { LazyDataFacade } from './lazy-data/+state/lazy-data.facade';
 import { IS_HEADLESS } from '../environments/is-headless';
 import { LocalStorageBehaviorSubject } from './core/rxjs/local-storage-behavior-subject';
@@ -94,8 +88,6 @@ export class AppComponent implements OnInit {
   public overlay = window.location.href.indexOf('?overlay') > -1;
 
   public newFeatureName = 'allagan-reports';
-
-  public showNewFeatureBanner = !this.overlay && localStorage.getItem(`new-feature:${this.newFeatureName}`) !== 'true' && !IS_HEADLESS;
 
   public availableLanguages = this.settings.availableLocales;
 
@@ -257,80 +249,22 @@ export class AppComponent implements OnInit {
               private message: NzMessageService, private universalis: UniversalisService,
               private inventoryService: InventoryService, @Inject(PLATFORM_ID) private platform: any,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
-              apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
+              private tutorialService: TutorialService,
               private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService,
               private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, private cd: ChangeDetectorRef,
               private data: DataService, private allaganReportsService: AllaganReportsService,
               pushNotificationsService: PushNotificationsService) {
 
-    if(pushNotificationsService.isSupported() && pushNotificationsService.permission === "default"){
+    if (pushNotificationsService.isSupported() && pushNotificationsService.permission === 'default') {
       pushNotificationsService.requestPermission();
     }
 
-    const navigationEvents$ = this.router.events.pipe(
-      filter(e => e instanceof NavigationStart),
-      map((e: NavigationStart) => e.url)
-    );
-
     this.desktop = this.platformService.isDesktop();
 
-    combineLatest([this.authFacade.idToken$, this.authFacade.user$, navigationEvents$]).pipe(
-      filter(([, user, nav]) => {
-        const pagesRequiringApollo = [
-          'allagan-reports',
-          'fishing-spot',
-          'item',
-          'fish-train',
-          'fish-trains'
-        ];
-        return pagesRequiringApollo.some(page => nav.includes(page))
-          || user.allaganChecker
-          || user.admin
-          || this.desktop;
-      }),
-      first()
-    ).subscribe(() => {
-      const ws = new WebSocketLink({
-        uri: `wss://gubal.hasura.app/v1/graphql`,
-        options: {
-          reconnect: true,
-          connectionParams: async () => {
-            let idToken = await this.authFacade.getIdTokenResult();
-            // If we're at least 5 minutes from expiration, refresh token
-            if (Date.now() - new Date(idToken.expirationTime).getTime() < 60000) {
-              idToken = await this.authFacade.getIdTokenResult(true);
-            }
-            return { headers: { Authorization: `Bearer ${idToken.token}` } };
-          }
-        }
-      });
-
-      const httpL = httpLink.create({ uri: 'https://gubal.hasura.app/v1/graphql' });
-
-      const link = split(
-        // split based on operation type
-        ({ query }) => {
-          const { kind, operation } = getMainDefinition(query) as any;
-          return kind === 'OperationDefinition' && operation === 'subscription';
-        },
-        ws,
-        httpL
-      );
-
-      apollo.create({
-        link: link,
-        cache: new InMemoryCache({
-          addTypename: false
-        })
-      });
-
-      setTimeout(() => {
-        this.allaganReportsQueueCount$ = this.allaganReportsService.getQueueStatus().pipe(
-          map(status => status.length)
-        );
-        this.allaganReportsUnappliedCount$ = this.allaganReportsService.getUnappliedCount();
-      }, 2000);
-    });
+    this.allaganReportsQueueCount$ = this.allaganReportsService.getQueueStatus().pipe(
+      map(status => status.length)
+    );
+    this.allaganReportsUnappliedCount$ = this.allaganReportsService.getUnappliedCount();
 
     fromEvent(document, 'keydown').subscribe((event: KeyboardEvent) => {
       this.handleKeypressShortcuts(event);

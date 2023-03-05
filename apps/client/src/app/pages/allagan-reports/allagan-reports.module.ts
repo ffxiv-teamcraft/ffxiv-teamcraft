@@ -40,7 +40,6 @@ import { ReportSourceDisplayComponent } from './report-source-display/report-sou
 import { ReportSourceCompactDetailsComponent } from './report-source-compact-details/report-source-compact-details.component';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { QuickSearchModule } from '../../modules/quick-search/quick-search.module';
-import { ApolloClientResolver } from '../../core/apollo-client.resolver';
 import { SpearfishingSpeedModule } from '../../modules/spearfishing-speed-tooltip/spearfishing-speed.module';
 
 
@@ -48,18 +47,12 @@ const routes: Routes = [
   {
     path: '',
     component: AllaganReportsComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard],
-    resolve: {
-      client: ApolloClientResolver
-    }
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   },
   {
     path: ':itemId',
     component: AllaganReportDetailsComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard],
-    resolve: {
-      client: ApolloClientResolver
-    }
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
 

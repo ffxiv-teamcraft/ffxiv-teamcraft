@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { ApolloQueryResult } from 'apollo-client';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { distinctUntilChanged, filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
@@ -10,6 +9,7 @@ import { mapIds } from '../../../core/data/sources/map-ids';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { ApolloQueryResult } from '@apollo/client/core';
 
 export interface Occurrence {
   id: number;
