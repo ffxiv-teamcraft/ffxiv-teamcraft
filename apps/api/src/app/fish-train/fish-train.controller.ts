@@ -26,7 +26,8 @@ export class FishTrainController {
         return {
           start: data.start,
           fish: data.fish,
-          name: data.name || ''
+          name: data.name || '',
+          world: data.world?.toLowerCase() || ''
         };
       })
       .catch(err => {
@@ -41,6 +42,7 @@ export class FishTrainController {
   createFishTrain(@Body() body: any) {
     const fishTrain: FishTrain = {
       name: body.name || '',
+      world: body.world?.toLowerCase() || '',
       conductorToken: body.conductorToken || '',
       start: new Date(body.start).getTime(),
       fish: body.fish.map(stop => {
@@ -67,6 +69,7 @@ export class FishTrainController {
   editFishTrain(@Body() body: Partial<FishTrain>, @Param('id') id: string) {
     const fishTrain: FishTrain = {
       name: body.name || '',
+      world: body.world?.toLowerCase() || '',
       conductorToken: body.conductorToken || '',
       start: new Date(body.start).getTime(),
       fish: body.fish.map(stop => {

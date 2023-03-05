@@ -1,6 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { PersistedFishTrain } from '../../../model/other/persisted-fish-train';
 import { FishTrainStop } from '@ffxiv-teamcraft/types';
+import { UpdateData } from '@angular/fire/firestore';
 
 export const loadFishTrain = createAction(
   '[FishTrain] Load FishTrain',
@@ -40,19 +41,14 @@ export const claimConductorRole = createAction(
   props<{ id: string }>()
 );
 
-export const renameTrain = createAction(
-  '[FishTrain] Rename FishTrain',
-  props<{ id: string, name: string }>()
-);
-
 export const setFishSlap = createAction(
   '[FishTrain] Set FishTrain Fish Slap',
   props<{ train: PersistedFishTrain, fish: FishTrainStop, slap: number }>()
 );
 
-export const setFishTrainPublic = createAction(
-  '[FishTrain] Set FishTrain Public',
-  props<{ id: string, flag: boolean }>()
+export const pureUpdateTrain = createAction(
+  '[FishTrain] Pure Update FishTrain',
+  props<{ id: string, train: UpdateData<PersistedFishTrain> }>()
 );
 
 export const leaveTrain = createAction(

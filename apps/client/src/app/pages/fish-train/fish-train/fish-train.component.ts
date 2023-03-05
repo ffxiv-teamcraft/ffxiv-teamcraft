@@ -120,6 +120,8 @@ export class FishTrainComponent extends TeamcraftComponent {
     shareReplay(1)
   );
 
+  public servers$ = this.lazyData.servers$;
+
   macroPopoverShown = false;
 
   constructor(private fishTrainFacade: FishTrainFacade, private route: ActivatedRoute,
@@ -241,6 +243,10 @@ export class FishTrainComponent extends TeamcraftComponent {
 
   setPublicFlag(id: string, flag: boolean): void {
     this.fishTrainFacade.setPublicFlag(id, flag);
+  }
+
+  setTrainWorld(id: string, world: string): void {
+    this.fishTrainFacade.setTrainWorld(id, world);
   }
 
   notifyMovement(fish: FishTrainStop & { node: GatheringNode }): void {

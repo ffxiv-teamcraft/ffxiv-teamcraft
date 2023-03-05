@@ -20,5 +20,7 @@ export class PersistedFishTrain extends DataModel implements FishTrain {
 
   conductorToken: string;
 
+  world?: string;
+
   public?: boolean;
 }

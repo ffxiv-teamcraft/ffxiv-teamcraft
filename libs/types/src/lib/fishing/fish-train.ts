@@ -8,4 +8,5 @@ export interface FishTrain {
   passengers: string[];
   name: string;
   conductorToken: string;
+  world?: string;
 }

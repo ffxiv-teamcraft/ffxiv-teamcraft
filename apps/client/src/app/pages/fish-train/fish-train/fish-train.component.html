@@ -18,11 +18,22 @@
       </nz-page-header-title>
       <nz-page-header-subtitle>{{'FISH_TRAIN.Departure' | translate:{ time: display.start | date:'short':null:translate.currentLang } }}
         , {{'FISH_TRAIN.Terminus' | translate:{ time: display.stop | date:'short':null:translate.currentLang } }}</nz-page-header-subtitle>
-      <nz-page-header-tags>
-        <div class="flex-row gap-2 align-center">
-          <nz-tag class="custom-tag" [style.border-color]="'#f50'" *ngIf="display.stopped">{{'FISH_TRAIN.Stopped' | translate}}</nz-tag>
-          <nz-tag class="custom-tag" [style.border-color]="'#108ee9'" *ngIf="display.running">{{'FISH_TRAIN.Running' | translate}}</nz-tag>
-          <nz-tag *ngIf="display.waiting">{{'FISH_TRAIN.Waiting' | translate}}</nz-tag>
+      <nz-page-header-content>
+        <div class="flex-row gap-5">
+          <ng-container *ngIf="display.isConductor; else serverTpl">
+            <nz-input-group [nzAddOnBefore]="'MARKETBOARD.Server' | translate" nzSize="small" class="server-selector">
+              <nz-select class="server-select" [nzPlaceHolder]="'FISH_TRAIN.Select_server' | translate"
+                         [(ngModel)]="fishTrain.world"
+                         (ngModelChange)="setTrainWorld(fishTrain.$key, $event)" nzShowSearch nzSize="small">
+                <nz-option *ngFor="let server of servers$ | async" [nzLabel]="server" [nzValue]="server | lowercase"></nz-option>
+              </nz-select>
+            </nz-input-group>
+          </ng-container>
+          <ng-template #serverTpl>
+            <nz-tag class="custom-tag" [style.border-color]="fishTrain.world ? 'var(--primary-color)' : '#f50'">
+              <span nz-icon nzType="global" nzTheme="outline"></span> {{'MARKETBOARD.Server' | translate}}:&nbsp;{{fishTrain.world || '???'}}
+            </nz-tag>
+          </ng-template>
           <ng-container *ngIf="display.isConductor; else visibilityTpl">
             {{'COMMON.Visibility' | translate}}:&nbsp;
             <nz-switch [(ngModel)]="fishTrain.public" (ngModelChange)="setPublicFlag(fishTrain.$key, $event)"
@@ -32,8 +43,15 @@
           </ng-container>
           <ng-template #visibilityTpl>
             <nz-tag class="custom-tag" [style.border-color]="'#f50'" *ngIf="!display.public">{{'COMMON.Private' | translate}}</nz-tag>
-            <nz-tag class="custom-tag" [style.border-color]="'#108ee9'" *ngIf="display.public">{{'COMMON.Public' | translate}}</nz-tag>
+            <nz-tag class="custom-tag" [style.border-color]="'var(--primary-color)'" *ngIf="display.public">{{'COMMON.Public' | translate}}</nz-tag>
           </ng-template>
+        </div>
+      </nz-page-header-content>
+      <nz-page-header-tags>
+        <div class="flex-row gap-2 align-center">
+          <nz-tag class="custom-tag" [style.border-color]="'#f50'" *ngIf="display.stopped">{{'FISH_TRAIN.Stopped' | translate}}</nz-tag>
+          <nz-tag class="custom-tag" [style.border-color]="'var(--primary-color)'" *ngIf="display.running">{{'FISH_TRAIN.Running' | translate}}</nz-tag>
+          <nz-tag *ngIf="display.waiting">{{'FISH_TRAIN.Waiting' | translate}}</nz-tag>
         </div>
       </nz-page-header-tags>
       <nz-page-header-extra>
@@ -58,6 +76,8 @@
       </nz-page-header-extra>
     </nz-page-header>
     <div nz-row [nzGutter]="[10,10]">
+      <nz-alert nz-col [nzSpan]="24" *ngIf="display.isConductor && !fishTrain.world" nzType="error" nzShowIcon [nzMessage]="'FISH_TRAIN.Missing_world' | translate"
+                [nzDescription]="'FISH_TRAIN.Missing_world_explain' | translate"></nz-alert>
       <div nz-col [nzXs]="24" [nzXl]="12" [nzXXl]="6">
         <div class="details-column route">
           <h3>{{'FISH_TRAIN.Route' | translate}}</h3>

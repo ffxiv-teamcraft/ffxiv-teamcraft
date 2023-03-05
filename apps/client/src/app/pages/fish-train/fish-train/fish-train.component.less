@@ -21,6 +21,19 @@ app-map {
   margin: auto;
 }
 
+.server-selector {
+  width: auto;
+
+  .server-select ::ng-deep {
+    min-width: 200px;
+
+    .ant-select-selector {
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
+  }
+}
+
 .details-column {
   border: 1px solid #444;
   border-radius: 4px;

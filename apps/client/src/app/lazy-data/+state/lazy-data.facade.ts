@@ -37,6 +37,10 @@ export class LazyDataFacade {
     shareReplay(1)
   );
 
+  public servers$ = this.xivapi.getServerList().pipe(
+    shareReplay(1)
+  );
+
   private searchIndexCache: Record<string, Observable<{ id: number, name: I18nName }[]>> = {};
 
   public isLoading$ = this.state.loading$;

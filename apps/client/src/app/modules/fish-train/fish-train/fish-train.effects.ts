@@ -11,10 +11,8 @@ import {
   loadFishTrainNotFound,
   loadFishTrainsSuccess,
   loadFishTrainSuccess,
-  loadRunningTrains,
-  renameTrain,
-  setFishSlap,
-  setFishTrainPublic
+  loadRunningTrains, pureUpdateTrain,
+  setFishSlap
 } from './fish-train.actions';
 import { FishTrainService } from '../../../core/database/fish-train.service';
 import { combineLatest, of } from 'rxjs';
@@ -48,6 +46,13 @@ export class FishTrainEffects {
     );
   }, { dispatch: false });
 
+  pureUpdateTrain$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(pureUpdateTrain),
+      mergeMap(({ id, train }) => this.fishTrainService.pureUpdate(id, train))
+    );
+  }, { dispatch: false });
+
   claimConductorRole$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(claimConductorRole),
@@ -61,20 +66,6 @@ export class FishTrainEffects {
       ofType(leaveTrain),
       withLatestFrom(this.authFacade.userId$),
       mergeMap(([{ id }, userId]) => this.fishTrainService.pureUpdate(id, { passengers: arrayRemove(userId) }))
-    );
-  }, { dispatch: false });
-
-  renameTrain$ = createEffect(() => {
-    return this.actions$.pipe(
-      ofType(renameTrain),
-      mergeMap(({ id, name }) => this.fishTrainService.pureUpdate(id, { name: name }))
-    );
-  }, { dispatch: false });
-
-  setFishTrainPublic$ = createEffect(() => {
-    return this.actions$.pipe(
-      ofType(setFishTrainPublic),
-      mergeMap(({ id, flag }) => this.fishTrainService.pureUpdate(id, { public: flag }))
     );
   }, { dispatch: false });
 

@@ -4,15 +4,19 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { combineLatest, map, switchMap } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { FishTrainStatus } from './fish-train-status';
-import { startWith, tap } from 'rxjs/operators';
+import { distinctUntilChanged, startWith, takeUntil, tap, withLatestFrom } from 'rxjs/operators';
 import { getFishTrainStatus } from '../../../modules/fish-train/get-fish-train-status';
+import { AuthFacade } from '../../../+state/auth.facade';
+import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { DataModel } from '../../../core/database/storage/data-model';
 
 @Component({
   selector: 'app-fish-trains',
   templateUrl: './fish-trains.component.html',
   styleUrls: ['./fish-trains.component.less']
 })
-export class FishTrainsComponent {
+export class FishTrainsComponent extends TeamcraftComponent {
 
   FishTrainStatus = FishTrainStatus;
 
@@ -46,12 +50,16 @@ export class FishTrainsComponent {
 
   filtersForm = new FormGroup({
     status: new FormControl<FishTrainStatus>(FishTrainStatus.ANY),
-    name: new FormControl<string>('')
+    name: new FormControl<string>(''),
+    datacenter: new FormControl<string>(null)
   });
+
+  public datacenters$ = this.lazyData.datacenters$;
 
   results$ = this.filtersForm.valueChanges.pipe(
     startWith(this.filtersForm.getRawValue()),
-    switchMap(filters => {
+    withLatestFrom(this.datacenters$),
+    switchMap(([filters, datacenters]) => {
       return this.fishTrainFacade.allPublicTrains$.pipe(
         map(trains => {
           return trains
@@ -63,6 +71,7 @@ export class FishTrainsComponent {
             })
             .filter(train => {
               return train.name.includes(filters.name)
+                && (!filters.datacenter || datacenters[filters.datacenter]?.some(server => server.toLowerCase() === train.world?.toLowerCase() || !train.world))
                 && (filters.status === FishTrainStatus.ANY || train.status === filters.status);
             })
             .sort((a, b) => b.start - a.start);
@@ -72,9 +81,42 @@ export class FishTrainsComponent {
     tap(() => this.cd.markForCheck())
   );
 
+  userTrains$ = combineLatest([
+    this.fishTrainFacade.allTrains$,
+    this.authFacade.userId$.pipe(distinctUntilChanged())
+  ]).pipe(
+    map(([trains, userId]) => trains.filter(train => train.conductor === userId))
+  );
+
+  public datacentersList$ = this.lazyData.datacenters$.pipe(
+    map(dc => Object.keys(dc))
+  );
+
   constructor(private fishTrainFacade: FishTrainFacade, public translate: TranslateService,
-              private cd: ChangeDetectorRef) {
+              private cd: ChangeDetectorRef, private authFacade: AuthFacade,
+              private lazyData: LazyDataFacade) {
+    super();
     fishTrainFacade.loadAll();
+    this.authFacade.mainCharacter$.pipe(
+      map(char => char?.Server),
+      distinctUntilChanged(),
+      switchMap(server => {
+        return this.datacenters$.pipe(
+          map(datacenters => {
+            return Object.keys(datacenters).find(dc => datacenters[dc].some(entry => entry.toLowerCase() === server.toLowerCase()));
+          })
+        );
+      }),
+      takeUntil(this.onDestroy$)
+    ).subscribe(datacenter => {
+      this.filtersForm.patchValue({
+        datacenter
+      });
+    });
+  }
+
+  trackByKey(index: number, element: DataModel): string {
+    return element.$key;
   }
 
 }

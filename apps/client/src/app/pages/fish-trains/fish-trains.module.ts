@@ -17,6 +17,8 @@ import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
     UserAvatarModule,
     NzAvatarModule,
     NzToolTipModule,
-    NzTagModule
+    NzTagModule,
+    NzSelectModule,
+    NzDividerModule
   ]
 })
 export class FishTrainsModule {

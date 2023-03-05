@@ -8,10 +8,9 @@ import {
   loadAllTrains,
   loadFishTrain,
   loadRunningTrains,
-  renameTrain,
+  pureUpdateTrain,
   selectFishTrain,
-  setFishSlap,
-  setFishTrainPublic
+  setFishSlap
 } from './fish-train.actions';
 import { distinctUntilChanged, map, shareReplay, startWith, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -83,13 +82,8 @@ export class FishTrainFacade {
     select(getAllFishTrains)
   );
 
-  allPublicTrains$ = this.authFacade.userId$.pipe(
-    distinctUntilChanged(),
-    switchMap(userId => {
-      return this.store.pipe(
-        select(getAllPublicFishingTrains(userId))
-      );
-    })
+  allPublicTrains$ = this.store.pipe(
+    select(getAllPublicFishingTrains)
   );
 
   constructor(private store: Store, private authFacade: AuthFacade,
@@ -121,7 +115,7 @@ export class FishTrainFacade {
   }
 
   rename(id: string, name: string): void {
-    this.store.dispatch(renameTrain({ id, name }));
+    this.store.dispatch(pureUpdateTrain({ id, train: { name } }));
   }
 
   leaveTrain(id: string): void {
@@ -133,6 +127,10 @@ export class FishTrainFacade {
   }
 
   setPublicFlag(id: string, flag: boolean): void {
-    this.store.dispatch(setFishTrainPublic({ id, flag }));
+    this.store.dispatch(pureUpdateTrain({ id, train: { public: flag } }));
+  }
+
+  setTrainWorld(id: string, world: string): void {
+    this.store.dispatch(pureUpdateTrain({ id, train: { world } }));
   }
 }
