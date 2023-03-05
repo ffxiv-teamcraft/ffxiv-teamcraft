@@ -11,7 +11,7 @@
     "skipLibCheck": true,
     "target": "es2015",
     "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom", "esnext.asynciterable", "esnext.array", "es2020.bigint"],
+    "lib": ["es2017", "dom", "esnext.array", "es2020"],
     "baseUrl": ".",
     "paths": {
       "@ffxiv-teamcraft/data": ["libs/data/src/lib/index.ts"],

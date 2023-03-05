@@ -95,8 +95,6 @@ import hr from '@angular/common/locales/hr';
 import ko from '@angular/common/locales/ko';
 import { InventoryModule } from './modules/inventory/inventory.module';
 import { EorzeaModule } from './modules/eorzea/eorzea.module';
-import { GraphQLModule } from './graphql.module';
-import { ApolloInterceptor } from './apollo-interceptor';
 import { QuickSearchModule } from './modules/quick-search/quick-search.module';
 import { GearsetsModule } from './modules/gearsets/gearsets.module';
 import { ChangelogPopupModule } from './modules/changelog-popup/changelog-popup.module';
@@ -117,7 +115,6 @@ import { NzNoAnimationModule } from 'ng-zorro-antd/core/no-animation';
 import * as AllaganReportsGQLProviders from './pages/allagan-reports/allagan-reports.gql';
 import { initialState as listsInitialState, listsReducer } from './modules/list/+state/lists.reducer';
 import { ListsEffects } from './modules/list/+state/lists.effects';
-import { ListsActionTypes, SetItemDone } from './modules/list/+state/lists.actions';
 import { GOOGLE_ANALYTICS_ROUTER_INITIALIZER_PROVIDER } from './core/analytics/analytics-router-initializer';
 import { enableMultiTabIndexedDbPersistence, getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -128,6 +125,10 @@ import { getPerformance, providePerformance } from '@angular/fire/performance';
 import { ListAggregateModule } from './modules/list-aggregate/list-aggregate.module';
 import { BreakpointDebugComponent } from './tools/breakpoint-debug/breakpoint-debug.component';
 import { FishTrainModule } from './modules/fish-train/fish-train.module';
+import { APOLLO_OPTIONS, ApolloModule } from 'apollo-angular';
+import { HttpLink } from 'apollo-angular/http';
+import { apolloClientFactory } from './apollo-client-factory';
+import { AuthFacade } from './+state/auth.facade';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -192,6 +193,11 @@ const nzConfig: NzConfig = {
   ],
   providers: [
     GOOGLE_ANALYTICS_ROUTER_INITIALIZER_PROVIDER,
+    {
+      provide: APOLLO_OPTIONS,
+      useFactory: apolloClientFactory,
+      deps: [HttpLink, AuthFacade]
+    },
     { provide: NZ_I18N, useValue: en_US },
     {
       provide: NZ_CONFIG,
@@ -199,7 +205,6 @@ const nzConfig: NzConfig = {
     },
     { provide: NZ_ICONS, useValue: icons },
     { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ApolloInterceptor, multi: true },
     ...APP_INITIALIZERS,
     ...Object.values(AllaganReportsGQLProviders)
   ],
@@ -306,7 +311,7 @@ const nzConfig: NzConfig = {
 
     ListAggregateModule,
 
-    GraphQLModule,
+    ApolloModule,
 
     PlayerMetricsModule,
     NzSpaceModule,

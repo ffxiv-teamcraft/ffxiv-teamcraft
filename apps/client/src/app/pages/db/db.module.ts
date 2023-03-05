@@ -73,7 +73,6 @@ import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
 import { SpearfishingSpotComponent } from './spearfishing-spot/spearfishing-spot.component';
 import { ChartModule } from 'angular2-chartjs';
 import 'chartjs-chart-box-and-violin-plot/build/Chart.BoxPlot.js';
-import { ApolloClientResolver } from '../../core/apollo-client.resolver';
 import { FishDataModule } from './fish/fish-data.module';
 import { FishingSpotHooksetDatagridComponent } from './fishing-spot/fishing-spot-hookset-datagrid/fishing-spot-hookset-datagrid.component';
 import { AlarmButtonModule } from '../../modules/alarm-button/alarm-button.module';
@@ -87,18 +86,12 @@ const routes: Routes = [
       {
         path: 'item/:itemId',
         component: ItemComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard],
-        resolve: {
-          client: ApolloClientResolver
-        }
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
       {
         path: 'item/:itemId/:slug',
         component: ItemComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard],
-        resolve: {
-          client: ApolloClientResolver
-        }
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
 
       {
@@ -248,18 +241,12 @@ const routes: Routes = [
       {
         path: 'fishing-spot/:spotId',
         component: FishingSpotComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard],
-        resolve: {
-          client: ApolloClientResolver
-        }
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       },
       {
         path: 'fishing-spot/:spotId/:slug',
         component: FishingSpotComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard],
-        resolve: {
-          client: ApolloClientResolver
-        }
+        canActivate: [MaintenanceGuard, VersionLockGuard]
       }
     ]
   }
