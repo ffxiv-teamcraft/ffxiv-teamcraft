@@ -3151,6 +3151,9 @@
     "List_title": "Fish trains",
     "List_subtitle": "A cool way to fish with the community !",
     "Name_filter_placeholder": "Search train by name",
-    "Create_new": "Create a train on CarbunclePlushy"
+    "Create_new": "Create a train on CarbunclePlushy",
+    "Your_trains": "Your trains",
+    "Missing_world": "Missing world",
+    "Missing_world_explain": "A train with no world set is way harder for people to follow or find, please select a server in the server dropdown above."
   }
 }
