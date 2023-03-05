@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.3.8"></a>
+## [10.3.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.7...v10.3.8) (2023-03-05)
+
+
+### Bug Fixes
+
+* **fish-trains:** display improvements and terminus timer addition ([d10adc7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d10adc7))
+* **fish-trains:** fixed trains sometimes showing twice in the listing page ([8d64123](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8d64123))
+
+
+### Features
+
+* **fish-trains:** added server to trains and datacenter filter in discovery page ([db6b015](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/db6b015))
+
+
+
 <a name="10.3.7"></a>
 ## [10.3.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.6...v10.3.7) (2023-03-04)
 
