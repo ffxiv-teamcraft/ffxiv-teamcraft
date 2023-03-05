@@ -1,13 +1,9 @@
 export const patchNotes = `### Bug Fixes
 
-* **alarms:** better check for push notification permission before notifying to prevent crash.
-* **allagan-reports:** fixed source change locking form on invalid mode.
-* **collectables:** set nerfed exp to 1000 instead of 10000.
-* **desktop:** fixed fishing reporter overlay.
-* **inventory-optimizer:** remove Market listing from ignored containers.
-* **path-optimizer:** fixed arrow navigation.
+* **fish-trains:** display improvements and terminus timer addition.
+* **fish-trains:** fixed trains sometimes showing twice in the listing page.
 
 
 ### Features
 
-* **core:** new fish trains feature.`;
+* **fish-trains:** added server to trains and datacenter filter in discovery page.`;
