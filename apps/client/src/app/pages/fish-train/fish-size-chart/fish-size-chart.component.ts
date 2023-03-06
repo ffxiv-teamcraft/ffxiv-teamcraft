@@ -165,7 +165,7 @@ export class FishSizeChartComponent extends TeamcraftComponent {
         }, {});
         return {
           echartsInstance,
-          chartData: Object.values<any>(smallestAndLargestByItemId),
+          chartData: Object.values<any>(smallestAndLargestByItemId).sort((a, b) => a.min.date - b.min.date),
           characters,
           names
         };

@@ -142,8 +142,8 @@ export class ContributionPerPassengerComponent extends TeamcraftComponent {
       takeUntil(this.onDestroy$),
       auditTime(300)
     ).subscribe(({ echartsInstance, accurateReportsByUserId, characters }) => {
+      this.options.empty = accurateReportsByUserId.length === 0;
       echartsInstance.setOption({
-        empty: accurateReportsByUserId.length === 0,
         yAxis: {
           data: accurateReportsByUserId.map(row => characters[row.userId]?.character?.Name || row.userId)
         },
@@ -164,8 +164,8 @@ export class ContributionPerPassengerComponent extends TeamcraftComponent {
           }
         }
       });
+      this.cd.markForCheck();
     });
-    this.cd.markForCheck();
   }
 
   onChartInit(instance: any): void {

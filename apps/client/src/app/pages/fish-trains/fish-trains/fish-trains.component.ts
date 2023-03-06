@@ -111,7 +111,7 @@ export class FishTrainsComponent extends TeamcraftComponent {
     ).subscribe(datacenter => {
       this.filtersForm.patchValue({
         datacenter
-      });
+      }, { emitEvent: true });
     });
   }
 
