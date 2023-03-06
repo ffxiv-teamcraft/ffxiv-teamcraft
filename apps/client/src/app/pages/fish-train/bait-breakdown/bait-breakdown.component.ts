@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { PersistedFishTrain } from '../../../model/other/persisted-fish-train';
-import { BehaviorSubject, combineLatest, ReplaySubject, switchMap } from 'rxjs';
+import { combineLatest, ReplaySubject, switchMap } from 'rxjs';
 import { EChartsOption } from 'echarts';
 import { observeInput } from '../../../core/rxjs/observe-input';
-import { auditTime, distinctUntilChanged, map, takeUntil, tap } from 'rxjs/operators';
-import { isEqual, uniq } from 'lodash';
+import { auditTime, map, takeUntil, tap } from 'rxjs/operators';
+import { uniq } from 'lodash';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
@@ -12,18 +12,15 @@ import { TranslateService } from '@ngx-translate/core';
 import { formatNumber } from '@angular/common';
 
 @Component({
-  selector: 'app-fish-breakdown',
-  templateUrl: './fish-breakdown.component.html',
-  styleUrls: ['./fish-breakdown.component.less']
+  selector: 'app-bait-breakdown',
+  templateUrl: './bait-breakdown.component.html',
+  styleUrls: ['./bait-breakdown.component.less']
 })
-export class FishBreakdownComponent extends TeamcraftComponent {
+export class BaitBreakdownComponent extends TeamcraftComponent {
   echartsInstance$ = new ReplaySubject<any>();
 
   @Input()
-  train: PersistedFishTrain & { stopped: boolean };
-
-  @Input()
-  reports: { itemId: number, userId: string, date: string }[];
+  reports: { itemId: number, userId: string, date: string, baitId: number, mooch: boolean }[];
 
   loading = true;
 
@@ -38,6 +35,10 @@ export class FishBreakdownComponent extends TeamcraftComponent {
       top: 20,
       bottom: 20,
       orient: 'vertical'
+    },
+    title: {
+      bottom: '5%',
+      left: 'center'
     },
     series: [
       {
@@ -69,35 +70,24 @@ export class FishBreakdownComponent extends TeamcraftComponent {
     empty: true
   };
 
-  onlyAccurate$ = new BehaviorSubject<boolean>(true);
-
   constructor(private i18n: I18nToolsService, private translate: TranslateService) {
     super();
-    const reports$ = observeInput(this, 'reports');
-    const train$ = observeInput(this, 'train').pipe(
-      distinctUntilChanged((a, b) => isEqual(a.fish, b.fish))
+    const reports$ = observeInput(this, 'reports').pipe(
+      map(reports => reports.filter(report => !report.mooch))
     );
-    const reportsWithNames$ = combineLatest([
-      reports$,
-      this.onlyAccurate$,
-      train$
-    ]).pipe(
-      map(([reports, onlyAccurate, train]) => {
-        const trainFishList = train.fish.map(fish => fish.id);
-        return onlyAccurate ? reports.filter(report => trainFishList.includes(report.itemId)) : reports;
-      }),
+    const reportsWithNames$ = reports$.pipe(
       switchMap(reports => {
-        return safeCombineLatest(uniq(reports.map(report => report.itemId))
-          .filter(itemId => itemId > 0)
-          .map(itemId => {
-            return this.i18n.getNameObservable('items', itemId).pipe(
-              map(name => ({ itemId, name }))
+        return safeCombineLatest(uniq(reports.map(report => report.baitId))
+          .filter(baitId => baitId > 0)
+          .map(baitId => {
+            return this.i18n.getNameObservable('items', baitId).pipe(
+              map(name => ({ baitId, name }))
             );
           })).pipe(
           map(names => {
             return {
               reports,
-              names: names.reduce((acc, entry) => ({ ...acc, [entry.itemId]: entry.name }), {})
+              names: names.reduce((acc, entry) => ({ ...acc, [entry.baitId]: entry.name }), {})
             };
           })
         );
@@ -110,16 +100,11 @@ export class FishBreakdownComponent extends TeamcraftComponent {
       auditTime(300)
     ).subscribe(([{ reports, names }, echarts]) => {
       const totalPerName = reports.reduce((acc, report) => {
-        const name = names[report.itemId] || this.translate.instant('DB.FISHING_SPOT.Miss');
+        const name = names[report.baitId];
         const entry = acc[name] || {
           name: name,
           value: 0
         };
-        if (report.itemId === -1) {
-          entry.itemStyle = {
-            color: '#f5222d'
-          };
-        }
         entry.value += 1;
         return {
           ...acc,
@@ -133,6 +118,9 @@ export class FishBreakdownComponent extends TeamcraftComponent {
           formatter: name => {
             return `${name}: ${formatNumber(seriesData.find(v => v.name === name)?.value || 0, this.translate.currentLang, '1.0-0')}`;
           }
+        },
+        title:{
+          text: `${this.translate.instant('COMMON.Total')}: ${formatNumber(seriesData.reduce((acc, v) => acc + v.value, 0), this.translate.currentLang, '1.0-0')}`
         },
         series: {
           data: seriesData
