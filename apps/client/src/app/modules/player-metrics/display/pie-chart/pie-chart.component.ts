@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AbstractMetricDisplayComponent } from '../abstract-metric-display-component';
-import { map, switchMap, tap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { ProbeReport } from '../../model/probe-report';
 import { ProbeSource } from '../../model/probe-source';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
@@ -54,8 +54,8 @@ export class PieChartComponent extends AbstractMetricDisplayComponent {
       return display;
     }),
     map(values => {
-      if(values.length === 0){
-        return { empty: true }
+      if (values.length === 0) {
+        return { empty: true };
       }
       return <EChartsOption>{
         tooltip: {
@@ -69,7 +69,7 @@ export class PieChartComponent extends AbstractMetricDisplayComponent {
           bottom: 20,
           orient: 'vertical',
           formatter: name => {
-            return `${name}: ${formatNumber(values.find(v => v.name === name)?.value || 0, this.translate.currentLang, '1.0-0')}`
+            return `${name}: ${formatNumber(values.find(v => v.name === name)?.value || 0, this.translate.currentLang, '1.0-0')}`;
           }
         },
         title: {
@@ -102,7 +102,7 @@ export class PieChartComponent extends AbstractMetricDisplayComponent {
             }
           }
         ]
-      }
+      };
     })
   );
 

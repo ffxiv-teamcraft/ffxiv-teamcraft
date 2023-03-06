@@ -1,0 +1,9 @@
+<app-page-loader *ngIf="loading"></app-page-loader>
+<ng-container *ngIf="!loading">
+  <nz-switch [ngModel]="onlyAccurate$ | async" (ngModelChange)="onlyAccurate$.next($event)"
+             [nzCheckedChildren]="'FISH_TRAIN.Only_target_fish' | translate" [nzUnCheckedChildren]="'FISH_TRAIN.All_fish' | translate"
+             class="accurate-switch"></nz-switch>
+  <div echarts theme="dark" [options]="options" (chartInit)="onChartInit($event)" [initOpts]="{height: '500px'}" [class.hidden]="options.empty"></div>
+  <nz-empty [nzNotFoundContent]="'FISH_TRAIN.Nothing_to_show' | translate" *ngIf="options.empty"></nz-empty>
+</ng-container>
+

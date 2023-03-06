@@ -80,32 +80,34 @@
                 [nzMessage]="'FISH_TRAIN.Missing_world' | translate"
                 [nzDescription]="'FISH_TRAIN.Missing_world_explain' | translate"></nz-alert>
       <div nz-col [nzSpan]="24" *ngIf="display.stopped | ifMobile: false">
-        <div class="details-column" *ngIf="sliderData$ | async as sliderData">
-          <h3>{{'FISH_TRAIN.Time_travel' | translate}}</h3>
-          <div class="slider-container flex-row gap-20 align-start">
-            <div class="flex-auto slider">
-              <nz-slider [nzMin]="sliderData.min" [nzMax]="sliderData.max" [nzStep]="60000" [ngModel]="sliderData.value"
-                         [nzMarks]="sliderData.marks" [nzTipFormatter]="sliderData.formatter"
-                         (ngModelChange)="timeTravel$.next($event)"></nz-slider>
-            </div>
-            <div class="time-control-buttons">
-              <nz-button-group>
-                <button nz-button nz-tooltip [disabled]="playSub !== undefined" nzType="primary" (click)="play(fishTrain.start, fishTrain.end)">
-                  <span nz-icon nzType="caret-right" nzTheme="outline"></span>
-                </button>
-                <button nz-button nz-tooltip [disabled]="playSub === undefined" nzType="primary" (click)="pause()">
-                  <span nz-icon nzType="pause" nzTheme="outline"></span>
-                </button>
-                <button nz-button nz-tooltip [nzTooltipTitle]="'COMMON.Speed' | translate" (click)="changeSpeed()">
-                  x{{playSpeed$ | async}}
-                </button>
-                <button nz-button nz-tooltip [nzTooltipTitle]="'COMMON.Reset' | translate" (click)="stop()">
-                  <span nz-icon nzType="reload" nzTheme="outline"></span>
-                </button>
-              </nz-button-group>
+        <nz-affix [nzOffsetTop]="10" nzTarget="#scroll-container">
+          <div class="details-column" *ngIf="sliderData$ | async as sliderData">
+            <h3>{{'FISH_TRAIN.Time_travel' | translate}}</h3>
+            <div class="slider-container flex-row gap-20 align-start">
+              <div class="flex-auto slider">
+                <nz-slider [nzMin]="sliderData.min" [nzMax]="sliderData.max" [nzStep]="60000" [ngModel]="sliderData.value"
+                           [nzMarks]="sliderData.marks" [nzTipFormatter]="sliderData.formatter"
+                           (ngModelChange)="timeTravel$.next($event)"></nz-slider>
+              </div>
+              <div class="time-control-buttons">
+                <nz-button-group>
+                  <button nz-button nz-tooltip [disabled]="playSub !== undefined" nzType="primary" (click)="play(fishTrain.start, fishTrain.end)">
+                    <span nz-icon nzType="caret-right" nzTheme="outline"></span>
+                  </button>
+                  <button nz-button nz-tooltip [disabled]="playSub === undefined" nzType="primary" (click)="pause()">
+                    <span nz-icon nzType="pause" nzTheme="outline"></span>
+                  </button>
+                  <button nz-button nz-tooltip [nzTooltipTitle]="'COMMON.Speed' | translate" (click)="changeSpeed()">
+                    x{{playSpeed$ | async}}
+                  </button>
+                  <button nz-button nz-tooltip [nzTooltipTitle]="'COMMON.Reset' | translate" (click)="stop()">
+                    <span nz-icon nzType="reload" nzTheme="outline"></span>
+                  </button>
+                </nz-button-group>
+              </div>
             </div>
           </div>
-        </div>
+        </nz-affix>
       </div>
       <div nz-col [nzXs]="24" [nzXl]="(display.current && display.running) ? 12 : 24" [nzXXl]="6">
         <div class="details-column" [class.route]="display.stopped">
@@ -286,7 +288,9 @@
             <nz-col [nzXs]="12" [nzSm]="6">
               <nz-statistic nzSuffix="%" [nzValue]="display.accuracy" [nzTitle]="accuracyTitleTpl">
                 <ng-template #accuracyTitleTpl>{{'FISH_TRAIN.Accuracy' | translate}}&nbsp;<span nz-icon nzType="info-circle" nzTheme="outline"
-                                                                                                nz-tooltip [nzTooltipTitle]="'FISH_TRAIN.Accuracy_explain' | translate"></span></ng-template>
+                                                                                                nz-tooltip
+                                                                                                [nzTooltipTitle]="'FISH_TRAIN.Accuracy_explain' | translate"></span>
+                </ng-template>
               </nz-statistic>
             </nz-col>
             <nz-col [nzXs]="12" [nzSm]="6">
@@ -296,6 +300,12 @@
               <app-contribution-per-passenger [train]="display" [reports]="display.reports"></app-contribution-per-passenger>
             </nz-col>
           </nz-row>
+        </div>
+      </div>
+      <div nz-col [nzXl]="24" [nzXXl]="12" *ngIf="true | ifMobile: false">
+        <div class="details-column stats">
+          <h3>{{'FISH_TRAIN.Fish_breakdown' | translate}}</h3>
+          <app-fish-breakdown [train]="display" [reports]="display.reports"></app-fish-breakdown>
         </div>
       </div>
     </div>
