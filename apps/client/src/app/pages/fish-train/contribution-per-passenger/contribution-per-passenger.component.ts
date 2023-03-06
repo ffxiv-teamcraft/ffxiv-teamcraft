@@ -7,7 +7,7 @@ import { LodestoneService } from '../../../core/api/lodestone.service';
 import { observeInput } from '../../../core/rxjs/observe-input';
 import { combineLatest, ReplaySubject } from 'rxjs';
 import { isEqual, uniq } from 'lodash';
-import { delay, distinctUntilChanged, map, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { delay, distinctUntilChanged, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { Character } from '@xivapi/angular-client';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
@@ -98,13 +98,18 @@ export class ContributionPerPassengerComponent extends TeamcraftComponent {
           };
         }, {});
       }),
-      tap(() => this.loading = false)
+      tap(() => this.loading = false),
+      shareReplay(1)
     );
 
-    combineLatest([this.echartsInstance$, characters$, reports$, observeInput(this, 'train')]).pipe(
+    const train$ = observeInput(this, 'train').pipe(
+      distinctUntilChanged((a, b) => isEqual(a.fish, b.fish))
+    );
+
+    combineLatest([this.echartsInstance$, characters$, reports$, train$]).pipe(
       delay(500),
-      map(([echartsInstance, characters, reports]) => {
-        const trainFishList = this.train.fish.map(fish => fish.id);
+      map(([echartsInstance, characters, reports, train]) => {
+        const trainFishList = train.fish.map(fish => fish.id);
         const accurateReports = reports
           .filter(report => {
             return trainFishList.includes(report.itemId);
@@ -140,7 +145,7 @@ export class ContributionPerPassengerComponent extends TeamcraftComponent {
         empty: accurateReportsByUserId.length === 0,
         animationDuration: this.train.stopped ? 3000 : 0,
         yAxis: {
-          data: accurateReportsByUserId.map(row => characters[row.userId].character.Name)
+          data: accurateReportsByUserId.map(row => characters[row.userId]?.character?.Name || row.userId)
         },
         series: {
           realtimeSort: true,

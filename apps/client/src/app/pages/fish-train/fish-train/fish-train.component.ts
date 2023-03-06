@@ -69,6 +69,7 @@ export class FishTrainComponent extends TeamcraftComponent {
     this.authFacade.userId$
   ]).pipe(
     map(([time, train, currentTrain, gubalStats, userId]) => {
+      const reports = gubalStats.reports.filter(report => new Date(report.date).getTime() <= time);
       let stops = train.fish;
       const stop = train.fish[train.fish.length - 1].end;
       const stopped = stop <= time;
@@ -86,10 +87,13 @@ export class FishTrainComponent extends TeamcraftComponent {
         currentIndex = 1;
       }
       const matchingItemIds = train.fish.map(fish => fish.id);
-      const accuracy = gubalStats.reports.length === 0 ? 0 :
-        gubalStats.reports.filter(report => matchingItemIds.includes(report.itemId)).length / gubalStats.reports.length;
+      let accuracy = 0;
+      if (reports.length > 0) {
+        accuracy = reports.filter(report => matchingItemIds.includes(report.itemId)).length / reports.length;
+        accuracy = Math.round(accuracy * 1000) / 1000;
+      }
       const durationHours = (Math.min(time, train.end) - train.start) / (60000 * 60);
-      const rate = (durationHours === 0 || gubalStats.reports.length === 0) ? 0 : Math.floor(100 * gubalStats.reports.length / durationHours) / 100;
+      const rate = (durationHours === 0 || reports.length === 0) ? 0 : Math.floor(100 * reports.length / durationHours) / 100;
       return {
         ...train,
         stops,
@@ -104,7 +108,7 @@ export class FishTrainComponent extends TeamcraftComponent {
         gubalStats,
         accuracy,
         rate,
-        reports: gubalStats.reports,
+        reports,
         isConductor: userId === train.conductor
       };
     }),
