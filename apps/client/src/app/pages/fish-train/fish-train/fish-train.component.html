@@ -76,74 +76,105 @@
       </nz-page-header-extra>
     </nz-page-header>
     <div nz-row [nzGutter]="[10,10]">
-      <nz-alert nz-col [nzSpan]="24" *ngIf="display.isConductor && !fishTrain.world" nzType="error" nzShowIcon [nzMessage]="'FISH_TRAIN.Missing_world' | translate"
+      <nz-alert nz-col [nzSpan]="24" *ngIf="display.isConductor && !fishTrain.world" nzType="error" nzShowIcon
+                [nzMessage]="'FISH_TRAIN.Missing_world' | translate"
                 [nzDescription]="'FISH_TRAIN.Missing_world_explain' | translate"></nz-alert>
-      <div nz-col [nzXs]="24" [nzXl]="12" [nzXXl]="6">
-        <div class="details-column route">
-          <h3>{{'FISH_TRAIN.Route' | translate}}</h3>
-          <nz-steps nzDirection="vertical" [nzCurrent]="display.currentIndex">
-            <nz-step *ngFor="let fish of display.stops;index as i;last as last;trackById"
-                     [nzIcon]="iconTpl" [nzTitle]="titleTpl" [nzSubtitle]="subtitleTpl" [nzDescription]="descriptionTpl">
-              <ng-template #iconTpl>
-                <app-item-icon [disableClick]="true"
-                               [itemId]="fish.id"
-                               [width]="30"
-                               [class.inactive-step-icon]="fish.id !== display.current?.id"></app-item-icon>
-              </ng-template>
-              <ng-template #titleTpl>
-                <app-i18n-name content="items" [id]="fish.id"></app-i18n-name>
-                <span *ngIf="fish.start - display.time > 0">
-                  ({{'FISH_TRAIN.Departure_in' | translate: { time: ((fish.start - display.time) / 1000) | timer:true } }})
-                </span>
-                &nbsp;
-                <button nz-button nzSize="small"
-                        *ngIf="display.running && display.currentIndex <= i && fish.start - display.time < 120000"
-                        nzType="primary" [clipboard]="getMacro"
-                        [clipboardFnArgs]="[fish, 'Next_position_macro']"
-                        nz-tooltip [nzTooltipTitle]="'FISH_TRAIN.Copy_move_macro' | translate">
-                  <span nz-icon nzType="copy" nzTheme="outline"></span>
+      <div nz-col [nzSpan]="24" *ngIf="display.stopped | ifMobile: false">
+        <div class="details-column" *ngIf="sliderData$ | async as sliderData">
+          <h3>{{'FISH_TRAIN.Time_travel' | translate}}</h3>
+          <div class="slider-container flex-row gap-20 align-start">
+            <div class="flex-auto slider">
+              <nz-slider [nzMin]="sliderData.min" [nzMax]="sliderData.max" [nzStep]="60000" [ngModel]="sliderData.value"
+                         [nzMarks]="sliderData.marks" [nzTipFormatter]="sliderData.formatter"
+                         (ngModelChange)="timeTravel$.next($event)"></nz-slider>
+            </div>
+            <div class="time-control-buttons">
+              <nz-button-group>
+                <button nz-button nz-tooltip [nzTooltipTitle]="'COMMON.Play' | translate" [disabled]="playSub !== undefined" nzType="primary" (click)="play(fishTrain.start, fishTrain.end)">
+                  <span nz-icon nzType="caret-right" nzTheme="outline"></span>
                 </button>
-                &nbsp;
-                <nz-tag *ngIf="last" class="custom-tag" [style.border-color]="'#f50'">{{'FISH_TRAIN.Terminus_tag' | translate}}</nz-tag>
-              </ng-template>
-              <ng-template #subtitleTpl>
-                <app-map-position flex="row wrap" [mapId]="fish.node.map"
-                                  [marker]="fish.node" showMapName="true"></app-map-position>
-              </ng-template>
-              <ng-template #descriptionTpl>
-                <app-fishing-bait [baits]="fish.node.baits" flex="row" [iconWidth]="24"></app-fishing-bait>
-                <div class="slap-suggestion">
-                  <div class="flex-row gap-2 align-center" *ngIf="display.isConductor && display.currentIndex <= i;else passengerSlapTpl">
-                    <img [src]="4595 | actionIcon | xivapiIcon" alt="" class="slap-icon" nz-tooltip [nzTooltipTitle]="4595 | actionName | i18n">
-                    <nz-select [(ngModel)]="fish.slap" (ngModelChange)="setSlap(fishTrain, fish, $event)"
-                               nzSize="small" class="slap-select" [nzPlaceHolder]="'FISH_TRAIN.Select_slap' | translate">
-                      <ng-container *ngFor="let target of fish.node.items">
-                        <nz-option *ngIf="target !== fish.id" [nzValue]="target" [nzLabel]="target | itemName | i18n"></nz-option>
-                      </ng-container>
-                    </nz-select>
-                  </div>
-
-                  <ng-template #passengerSlapTpl>
-                    <div class="flex-row gap-5" *ngIf="fish.slap">
-                      <img [src]="4595 | actionIcon | xivapiIcon" alt="" class="slap-icon passenger" nz-tooltip [nzTooltipTitle]="4595 | actionName | i18n">
-                      <div class="flex-row gap-2 align-center">
-                        <app-item-icon [width]="24" [itemId]="fish.slap"></app-item-icon>
-                        <app-i18n-name content="items" [id]="fish.slap"></app-i18n-name>
-                      </div>
-                    </div>
-                  </ng-template>
-                </div>
-              </ng-template>
-            </nz-step>
-            <nz-step *ngIf="display.running"
-                     nzIcon="stop"
-                     [nzTitle]="'FISH_TRAIN.Terminus_tag' | translate"
-                     [nzSubtitle]="((fishTrain.end - display.time) / 1000) | timer:true">
-            </nz-step>
-          </nz-steps>
+                <button nz-button nz-tooltip [nzTooltipTitle]="'COMMON.Pause' | translate" [disabled]="playSub === undefined" nzType="primary" (click)="pause()">
+                  <span nz-icon nzType="pause" nzTheme="outline"></span>
+                </button>
+                <button nz-button nz-tooltip [nzTooltipTitle]="'COMMON.Speed' | translate" (click)="changeSpeed()">
+                  x{{playSpeed$ | async}}
+                </button>
+                <button nz-button nz-tooltip [nzTooltipTitle]="'COMMON.Reset' | translate" (click)="stop()">
+                  <span nz-icon nzType="reload" nzTheme="outline"></span>
+                </button>
+              </nz-button-group>
+            </div>
+          </div>
         </div>
       </div>
-      <div nz-col [nzXs]="24" [nzXl]="12" [nzXXl]="6" *ngIf="display.current">
+      <div nz-col [nzXs]="24" [nzXl]="(display.current && display.running) ? 12 : 24" [nzXXl]="6">
+        <div class="details-column route">
+          <h3>{{'FISH_TRAIN.Route' | translate}}</h3>
+          <div class="steps-container">
+            <nz-steps nzDirection="vertical" [nzCurrent]="display.currentIndex">
+              <nz-step *ngFor="let fish of display.stops;index as i;last as last;trackById"
+                       [nzIcon]="iconTpl" [nzTitle]="titleTpl" [nzSubtitle]="subtitleTpl" [nzDescription]="descriptionTpl">
+                <ng-template #iconTpl>
+                  <app-item-icon [disableClick]="true"
+                                 [itemId]="fish.id"
+                                 [width]="30"
+                                 [class.inactive-step-icon]="fish.id !== display.current?.id"></app-item-icon>
+                </ng-template>
+                <ng-template #titleTpl>
+                  <app-i18n-name content="items" [id]="fish.id"></app-i18n-name>
+                  <span *ngIf="fish.start - display.time > 0">
+                  ({{'FISH_TRAIN.Departure_in' | translate: { time: ((fish.start - display.time) / 1000) | timer:true } }})
+                </span>
+                  &nbsp;
+                  <button nz-button nzSize="small"
+                          *ngIf="display.running && display.currentIndex <= i && fish.start - display.time < 120000"
+                          nzType="primary" [clipboard]="getMacro"
+                          [clipboardFnArgs]="[fish, 'Next_position_macro']"
+                          nz-tooltip [nzTooltipTitle]="'FISH_TRAIN.Copy_move_macro' | translate">
+                    <span nz-icon nzType="copy" nzTheme="outline"></span>
+                  </button>
+                  &nbsp;
+                  <nz-tag *ngIf="last" class="custom-tag" [style.border-color]="'#f50'">{{'FISH_TRAIN.Terminus_tag' | translate}}</nz-tag>
+                </ng-template>
+                <ng-template #subtitleTpl>
+                  <app-map-position flex="row wrap" [mapId]="fish.node.map"
+                                    [marker]="fish.node" showMapName="true"></app-map-position>
+                </ng-template>
+                <ng-template #descriptionTpl>
+                  <app-fishing-bait [baits]="fish.node.baits" flex="row" [iconWidth]="24"></app-fishing-bait>
+                  <div class="slap-suggestion">
+                    <div class="flex-row gap-2 align-center" *ngIf="display.isConductor && display.currentIndex <= i;else passengerSlapTpl">
+                      <img [src]="4595 | actionIcon | xivapiIcon" alt="" class="slap-icon" nz-tooltip [nzTooltipTitle]="4595 | actionName | i18n">
+                      <nz-select [(ngModel)]="fish.slap" (ngModelChange)="setSlap(fishTrain, fish, $event)"
+                                 nzSize="small" class="slap-select" [nzPlaceHolder]="'FISH_TRAIN.Select_slap' | translate">
+                        <ng-container *ngFor="let target of fish.node.items">
+                          <nz-option *ngIf="target !== fish.id" [nzValue]="target" [nzLabel]="target | itemName | i18n"></nz-option>
+                        </ng-container>
+                      </nz-select>
+                    </div>
+
+                    <ng-template #passengerSlapTpl>
+                      <div class="flex-row gap-5" *ngIf="fish.slap">
+                        <img [src]="4595 | actionIcon | xivapiIcon" alt="" class="slap-icon passenger" nz-tooltip [nzTooltipTitle]="4595 | actionName | i18n">
+                        <div class="flex-row gap-2 align-center">
+                          <app-item-icon [width]="24" [itemId]="fish.slap"></app-item-icon>
+                          <app-i18n-name content="items" [id]="fish.slap"></app-i18n-name>
+                        </div>
+                      </div>
+                    </ng-template>
+                  </div>
+                </ng-template>
+              </nz-step>
+              <nz-step *ngIf="display.running"
+                       nzIcon="stop"
+                       [nzTitle]="'FISH_TRAIN.Terminus_tag' | translate"
+                       [nzSubtitle]="((fishTrain.end - display.time) / 1000) | timer:true">
+              </nz-step>
+            </nz-steps>
+          </div>
+        </div>
+      </div>
+      <div nz-col [nzXs]="24" [nzXl]="12" [nzXXl]="6" *ngIf="display.current && display.running">
         <div class="details-column">
           <h3>{{'FISH_TRAIN.Current_fish' | translate}}</h3>
           <nz-card [nzCover]="coverTpl" [nzActions]="[copyMacroTpl]">
@@ -227,7 +258,7 @@
           </ng-template>
         </div>
       </div>
-      <div nz-col [nzXs]="24" [nzXXl]="display.current ? 12 : 18">
+      <div nz-col [nzXs]="24" [nzXXl]="(display.current && display.running) ? 12 : 18">
         <div class="details-column stats">
           <h3>{{'FISH_TRAIN.Stats' | translate}}</h3>
           <nz-row>

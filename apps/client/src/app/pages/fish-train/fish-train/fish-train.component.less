@@ -34,6 +34,18 @@ app-map {
   }
 }
 
+.slider-container {
+  padding: 0 20px;
+
+  .slider {
+    padding: 0 20px;
+  }
+
+  .time-control-buttons {
+    padding-top: 4px;
+  }
+}
+
 .details-column {
   border: 1px solid #444;
   border-radius: 4px;
@@ -52,6 +64,15 @@ app-map {
 
   > h3 {
     border-bottom: 1px solid #444;
+  }
+
+  &.route {
+    max-height: 740px;
+
+    .steps-container {
+      height: 100%;
+      overflow: auto;
+    }
   }
 }
 

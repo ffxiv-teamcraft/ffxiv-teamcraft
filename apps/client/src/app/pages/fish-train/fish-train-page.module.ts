@@ -31,6 +31,7 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzSliderModule } from 'ng-zorro-antd/slider';
 
 @NgModule({
   declarations: [FishTrainComponent, ContributionPerPassengerComponent],
@@ -63,7 +64,8 @@ import { NzAlertModule } from 'ng-zorro-antd/alert';
     NzSelectModule,
     NzSwitchModule,
     NzFormModule,
-    NzAlertModule
+    NzAlertModule,
+    NzSliderModule
   ]
 })
 export class FishTrainPageModule {
