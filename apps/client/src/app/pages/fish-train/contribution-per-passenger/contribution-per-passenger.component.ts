@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { LodestoneService } from '../../../core/api/lodestone.service';
 import { observeInput } from '../../../core/rxjs/observe-input';
-import { combineLatest, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, combineLatest, ReplaySubject } from 'rxjs';
 import { isEqual, uniq } from 'lodash';
 import { auditTime, delay, distinctUntilChanged, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
@@ -21,6 +21,8 @@ export class ContributionPerPassengerComponent extends TeamcraftComponent {
   echartsInstance$ = new ReplaySubject<any>();
 
   loading = true;
+
+  onlyAccurate$ = new BehaviorSubject<boolean>(true);
 
   @Input()
   train: PersistedFishTrain & { stopped: boolean };
@@ -104,13 +106,13 @@ export class ContributionPerPassengerComponent extends TeamcraftComponent {
       distinctUntilChanged((a, b) => isEqual(a.fish, b.fish))
     );
 
-    combineLatest([this.echartsInstance$, characters$, reports$, train$]).pipe(
+    combineLatest([this.echartsInstance$, characters$, reports$, train$, this.onlyAccurate$]).pipe(
       delay(500),
-      map(([echartsInstance, characters, reports, train]) => {
+      map(([echartsInstance, characters, reports, train, onlyAccurate]) => {
         const trainFishList = train.fish.map(fish => fish.id);
         const accurateReports = reports
           .filter(report => {
-            return trainFishList.includes(report.itemId);
+            return !onlyAccurate || trainFishList.includes(report.itemId);
           })
           .map(report => {
             return {
