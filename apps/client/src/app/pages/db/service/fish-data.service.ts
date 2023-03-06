@@ -156,7 +156,9 @@ export class FishDataService {
       fishingresults(where: {trainId: {_eq: $trainId}}) {
         itemId,
         date,
-        userId
+        userId,
+        baitId,
+        mooch
       }
     }`;
     return this.apollo.subscribe<any>({

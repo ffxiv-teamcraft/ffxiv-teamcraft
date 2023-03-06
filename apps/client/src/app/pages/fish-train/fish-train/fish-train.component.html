@@ -308,6 +308,12 @@
           <app-fish-breakdown [train]="display" [reports]="display.reports"></app-fish-breakdown>
         </div>
       </div>
+      <div nz-col [nzXl]="24" [nzXXl]="12" *ngIf="true | ifMobile: false">
+        <div class="details-column stats">
+          <h3>{{'FISH_TRAIN.Bait_breakdown' | translate}}</h3>
+          <app-bait-breakdown [reports]="display.reports"></app-bait-breakdown>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -27,7 +27,7 @@
 </form>
 <div class="results flex-column gap-5" *ngIf="results$ | async as results">
   <app-lazy-scroll *ngIf="results.length > 0"  [data]="results" [trackBy]="trackByKey" [displayedRows]="8"
-                   [rowTemplate]="trainRowTpl" [rowSize]="52"></app-lazy-scroll>
+                   [rowTemplate]="trainRowTpl" [rowSize]="57"></app-lazy-scroll>
   <app-fullpage-message *ngIf="results.length === 0" height="300px">
     {{'FISH_TRAIN.No_trains_found' | translate}}
   </app-fullpage-message>
@@ -36,7 +36,7 @@
   <div class="user-trains" *ngIf="userTrains.length > 0">
     <nz-divider [nzText]="'FISH_TRAIN.Your_trains' | translate" nzOrientation="left"></nz-divider>
     <app-lazy-scroll [data]="userTrains" [trackBy]="trackByKey" [displayedRows]="8"
-                     [rowTemplate]="trainRowTpl" [rowSize]="52"></app-lazy-scroll>
+                     [rowTemplate]="trainRowTpl" [rowSize]="57"></app-lazy-scroll>
   </div>
 </ng-container>
 
