@@ -12,11 +12,11 @@ import {
   selectFishTrain,
   setFishSlap
 } from './fish-train.actions';
-import { distinctUntilChanged, map, shareReplay, startWith, switchMap } from 'rxjs/operators';
+import { distinctUntilChanged, map, shareReplay, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { DataType, FishTrainStop, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { combineLatest, interval, of } from 'rxjs';
+import { combineLatest, of, timer } from 'rxjs';
 import { PersistedFishTrain } from '../../../model/other/persisted-fish-train';
 
 @Injectable({
@@ -24,9 +24,8 @@ import { PersistedFishTrain } from '../../../model/other/persisted-fish-train';
 })
 export class FishTrainFacade {
 
-  time$ = interval(1000).pipe(
+  time$ = timer(0, 1000).pipe(
     map(() => Date.now()),
-    startWith(Date.now()),
     shareReplay(1)
   );
 

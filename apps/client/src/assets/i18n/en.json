@@ -3111,6 +3111,7 @@
     "Details_title": "Fish train #{{id}}",
     "Departure": "Departure: {{time}}",
     "Departure_in": "Departure in {{time}}",
+    "Leaving_in": "Closing in {{time}}",
     "Terminus": "Terminus: {{time}}",
     "Stopped": "Stopped",
     "Running": "Running",
