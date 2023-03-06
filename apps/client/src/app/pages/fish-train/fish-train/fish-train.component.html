@@ -284,7 +284,10 @@
               <nz-statistic [nzValue]="display.reports.length" [nzTitle]="'FISH_TRAIN.Total_reports' | translate"></nz-statistic>
             </nz-col>
             <nz-col [nzXs]="12" [nzSm]="6">
-              <nz-statistic nzSuffix="%" [nzValue]="display.accuracy" [nzTitle]="'FISH_TRAIN.Accuracy' | translate"></nz-statistic>
+              <nz-statistic nzSuffix="%" [nzValue]="display.accuracy" [nzTitle]="accuracyTitleTpl">
+                <ng-template #accuracyTitleTpl>{{'FISH_TRAIN.Accuracy' | translate}}&nbsp;<span nz-icon nzType="info-circle" nzTheme="outline"
+                                                                                                nz-tooltip [nzTooltipTitle]="'FISH_TRAIN.Accuracy_explain' | translate"></span></ng-template>
+              </nz-statistic>
             </nz-col>
             <nz-col [nzXs]="12" [nzSm]="6">
               <nz-statistic nzSuffix="/h" [nzValue]="display.rate" [nzTitle]="'FISH_TRAIN.Fishing_rate' | translate"></nz-statistic>

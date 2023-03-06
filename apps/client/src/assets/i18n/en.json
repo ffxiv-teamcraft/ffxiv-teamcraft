@@ -3132,6 +3132,7 @@
     "Wrong_spot": "Wrong spot",
     "Wrong_spot_description": "You are not on the right spot to contribute to the fishing train, please check current location in fish train details.",
     "Accuracy": "Accuracy",
+    "Accuracy_explain": "% of fish caught matching the route",
     "Contribution_per_passenger": "Contributions per passenger",
     "Fishing_rate": "Fishing rate",
     "Nothing_to_show": "No contributions to display",

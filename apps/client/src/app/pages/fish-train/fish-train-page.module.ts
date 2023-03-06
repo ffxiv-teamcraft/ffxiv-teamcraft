@@ -32,9 +32,10 @@ import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzSliderModule } from 'ng-zorro-antd/slider';
+import { FishBreakdownComponent } from './fish-breakdown/fish-breakdown.component';
 
 @NgModule({
-  declarations: [FishTrainComponent, ContributionPerPassengerComponent],
+  declarations: [FishTrainComponent, ContributionPerPassengerComponent, FishBreakdownComponent],
   imports: [
     CommonModule,
     FishTrainRoutingModule,
@@ -65,8 +66,7 @@ import { NzSliderModule } from 'ng-zorro-antd/slider';
     NzSwitchModule,
     NzFormModule,
     NzAlertModule,
-    NzSliderModule
-  ]
+    NzSliderModule,
+  ],
 })
-export class FishTrainPageModule {
-}
+export class FishTrainPageModule {}
