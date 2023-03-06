@@ -151,12 +151,10 @@ export class ContributionPerPassengerComponent extends TeamcraftComponent {
           realtimeSort: true,
           name: 'X',
           type: 'bar',
+          colorBy: 'data',
           data: accurateReportsByUserId.map((row) => {
             return {
-              value: row.total,
-              itemStyle: {
-                color: this.settings.theme.primary
-              }
+              value: row.total
             };
           }),
           label: {

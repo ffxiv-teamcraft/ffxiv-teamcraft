@@ -314,6 +314,12 @@
           <app-bait-breakdown [reports]="display.reports"></app-bait-breakdown>
         </div>
       </div>
+      <div nz-col [nzSpan]="24" *ngIf="true | ifMobile: false">
+        <div class="details-column stats">
+          <h3>{{'FISH_TRAIN.Fish_size_chart' | translate}}</h3>
+          <app-fish-size-chart [train]="display" [reports]="display.reports"></app-fish-size-chart>
+        </div>
+      </div>
     </div>
   </div>
 </div>
