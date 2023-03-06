@@ -90,10 +90,10 @@
             </div>
             <div class="time-control-buttons">
               <nz-button-group>
-                <button nz-button nz-tooltip [nzTooltipTitle]="'COMMON.Play' | translate" [disabled]="playSub !== undefined" nzType="primary" (click)="play(fishTrain.start, fishTrain.end)">
+                <button nz-button nz-tooltip [disabled]="playSub !== undefined" nzType="primary" (click)="play(fishTrain.start, fishTrain.end)">
                   <span nz-icon nzType="caret-right" nzTheme="outline"></span>
                 </button>
-                <button nz-button nz-tooltip [nzTooltipTitle]="'COMMON.Pause' | translate" [disabled]="playSub === undefined" nzType="primary" (click)="pause()">
+                <button nz-button nz-tooltip [disabled]="playSub === undefined" nzType="primary" (click)="pause()">
                   <span nz-icon nzType="pause" nzTheme="outline"></span>
                 </button>
                 <button nz-button nz-tooltip [nzTooltipTitle]="'COMMON.Speed' | translate" (click)="changeSpeed()">
@@ -122,12 +122,17 @@
                 </ng-template>
                 <ng-template #titleTpl>
                   <app-i18n-name content="items" [id]="fish.id"></app-i18n-name>
-                  <span *ngIf="fish.start - display.time > 0">
+                  <span *ngIf="fish.start - display.time > 0; else leavingTpl">
                   ({{'FISH_TRAIN.Departure_in' | translate: { time: ((fish.start - display.time) / 1000) | timer:true } }})
-                </span>
+                  </span>
+                  <ng-template #leavingTpl>
+                    <span *ngIf="fish.end - display.time > 0">
+                    ({{'FISH_TRAIN.Leaving_in' | translate: { time: ((fish.end - display.time) / 1000) | timer:true } }})
+                    </span>
+                  </ng-template>
                   &nbsp;
                   <button nz-button nzSize="small"
-                          *ngIf="display.running && display.currentIndex <= i && fish.start - display.time < 120000"
+                          *ngIf="display.running && display.currentIndex <= i"
                           nzType="primary" [clipboard]="getMacro"
                           [clipboardFnArgs]="[fish, 'Next_position_macro']"
                           nz-tooltip [nzTooltipTitle]="'FISH_TRAIN.Copy_move_macro' | translate">
