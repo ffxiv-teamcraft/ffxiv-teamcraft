@@ -233,20 +233,33 @@ export class FishTrainComponent extends TeamcraftComponent {
   getMacro = (current: FishTrainStop & { node: GatheringNode }, macroKey: string, useCurrentPos = false) => {
     return combineLatest([
       this.i18n.getNameObservable('items', current.id),
-      this.i18n.getNameObservable('items', current.node.baits[current.node.baits.length - 1].id),
+      combineLatest(current.node.baits.map(bait => this.i18n.getNameObservable('items', bait.id))),
       this.lazyData.getEntry('mapEntries').pipe(
         switchMap(entries => this.i18n.getNameObservable('places', entries.find(e => e.id === current.node.map)?.zone))
-      )
+      ),
+      current.slap ? this.i18n.getNameObservable('items', current.slap) : of(null),
+      current.node.predators ? combineLatest(current.node.predators.map(predator => {
+        return this.i18n.getNameObservable('items', predator.id).pipe(
+          map(name => ({ name, amount: predator.amount }))
+        );
+      })) : of(null)
     ]).pipe(
       first(),
-      map(([itemName, baitName, mapName]) => {
-        return this.translate.instant(`FISH_TRAIN.${macroKey}`, {
+      map(([itemName, baits, mapName, slap, intuition]) => {
+        let macro = this.translate.instant(`FISH_TRAIN.${macroKey}`, {
           itemName,
           mapName,
           coords: useCurrentPos ? '<pos>' : `X:${current.node.x} - Y:${current.node.y}`,
-          bait: baitName,
+          bait: baits.join(' -> '),
           minGathering: current.node.minGathering
         });
+        if (slap) {
+          macro = `${macro} ${this.translate.instant('FISH_TRAIN.Slap', { target: slap })}.`;
+        }
+        if (intuition) {
+          macro = `${macro} ${this.translate.instant('FISH_TRAIN.Fish_before', { target: intuition.map(row => `${row.amount}x ${row.name}`).join(', ') })}.`;
+        }
+        return macro;
       })
     );
   };
