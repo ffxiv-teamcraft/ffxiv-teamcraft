@@ -108,7 +108,7 @@
         </div>
       </div>
       <div nz-col [nzXs]="24" [nzXl]="(display.current && display.running) ? 12 : 24" [nzXXl]="6">
-        <div class="details-column route">
+        <div class="details-column" [class.route]="display.stopped">
           <h3>{{'FISH_TRAIN.Route' | translate}}</h3>
           <div class="steps-container">
             <nz-steps nzDirection="vertical" [nzCurrent]="display.currentIndex">
