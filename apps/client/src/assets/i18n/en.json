@@ -3159,6 +3159,8 @@
     "Your_trains": "Your trains",
     "Missing_world": "Missing world",
     "Missing_world_explain": "A train with no world set is way harder for people to follow or find, please select a server in the server dropdown above.",
-    "Time_travel": "Time travel"
+    "Time_travel": "Time travel",
+    "Only_target_fish": "Only target fish",
+    "All_fish": "All fish"
   }
 }
