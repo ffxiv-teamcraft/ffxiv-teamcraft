@@ -35,9 +35,10 @@ import { NzSliderModule } from 'ng-zorro-antd/slider';
 import { FishBreakdownComponent } from './fish-breakdown/fish-breakdown.component';
 import { NzAffixModule } from 'ng-zorro-antd/affix';
 import { BaitBreakdownComponent } from './bait-breakdown/bait-breakdown.component';
+import { FishSizeChartComponent } from './fish-size-chart/fish-size-chart.component';
 
 @NgModule({
-  declarations: [FishTrainComponent, ContributionPerPassengerComponent, FishBreakdownComponent, BaitBreakdownComponent],
+  declarations: [FishTrainComponent, ContributionPerPassengerComponent, FishBreakdownComponent, BaitBreakdownComponent, FishSizeChartComponent],
   imports: [
     CommonModule,
     FishTrainRoutingModule,
@@ -72,4 +73,5 @@ import { BaitBreakdownComponent } from './bait-breakdown/bait-breakdown.componen
     NzAffixModule
   ]
 })
-export class FishTrainPageModule {}
+export class FishTrainPageModule {
+}

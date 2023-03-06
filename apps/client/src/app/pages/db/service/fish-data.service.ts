@@ -158,7 +158,8 @@ export class FishDataService {
         date,
         userId,
         baitId,
-        mooch
+        mooch,
+        size
       }
     }`;
     return this.apollo.subscribe<any>({
