@@ -135,6 +135,9 @@
     "Search": "Search"
   },
   "COMMON": {
+    "Play": "Play",
+    "Pause": "Pause",
+    "Speed": "Speed",
     "Done": "Done",
     "Length": "Duur",
     "Save": "Opslaan",
@@ -3108,6 +3111,7 @@
     "Details_title": "Fish train #{{id}}",
     "Departure": "Departure: {{time}}",
     "Departure_in": "Departure in {{time}}",
+    "Leaving_in": "Closing in {{time}}",
     "Terminus": "Terminus: {{time}}",
     "Stopped": "Stopped",
     "Running": "Running",
@@ -3116,8 +3120,10 @@
     "Copy_macro": "Copy macro",
     "Are_you_on_spot": "Are you already on the fishing spot?",
     "Copy_move_macro": "Copy train move macro",
-    "Current_position_macro": "/shout Fish train is currently fishing for {{itemName}} at {{mapName}}: {{coords}}. Preferred bait: {{bait}}, min gathering: {{minGathering}}",
-    "Next_position_macro": "/shout Choo Choo ! Fish train is moving to {{mapName}}: {{coords}} in order to fish {{itemName}}. Preferred bait: {{bait}}, min gathering: {{minGathering}}",
+    "Slap": "Slap: {{target}}",
+    "Fish_before": "Intuition Trigger Requirements: {{target}}",
+    "Current_position_macro": "/shout Fish train is currently fishing for {{itemName}} at {{mapName}}: {{coords}}. Preferred bait: {{bait}}, min gathering: {{minGathering}}.",
+    "Next_position_macro": "/shout Choo Choo ! Fish train is moving to {{mapName}}: {{coords}} in order to fish {{itemName}}. Preferred bait: {{bait}}, min gathering: {{minGathering}}.",
     "Board_train": "Board train",
     "Leave_train": "Leave this train",
     "Stats": "Stats",
@@ -3126,6 +3132,7 @@
     "Wrong_spot": "Wrong spot",
     "Wrong_spot_description": "You are not on the right spot to contribute to the fishing train, please check current location in fish train details.",
     "Accuracy": "Accuracy",
+    "Accuracy_explain": "% of fish caught matching the route",
     "Contribution_per_passenger": "Contributions per passenger",
     "Fishing_rate": "Fishing rate",
     "Nothing_to_show": "No contributions to display",
@@ -3154,6 +3161,11 @@
     "Create_new": "Create a train on CarbunclePlushy",
     "Your_trains": "Your trains",
     "Missing_world": "Missing world",
-    "Missing_world_explain": "A train with no world set is way harder for people to follow or find, please select a server in the server dropdown above."
+    "Missing_world_explain": "A train with no world set is way harder for people to follow or find, please select a server in the server dropdown above.",
+    "Time_travel": "Time travel",
+    "Only_target_fish": "Only target fish",
+    "All_fish": "All fish",
+    "Fish_breakdown": "Fish breakdown",
+    "Bait_breakdown": "Bait usage breakdown"
   }
 }
