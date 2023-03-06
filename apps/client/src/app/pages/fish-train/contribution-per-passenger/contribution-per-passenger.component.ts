@@ -7,7 +7,7 @@ import { LodestoneService } from '../../../core/api/lodestone.service';
 import { observeInput } from '../../../core/rxjs/observe-input';
 import { combineLatest, ReplaySubject } from 'rxjs';
 import { isEqual, uniq } from 'lodash';
-import { delay, distinctUntilChanged, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { auditTime, delay, distinctUntilChanged, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { Character } from '@xivapi/angular-client';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
@@ -59,9 +59,7 @@ export class ContributionPerPassengerComponent extends TeamcraftComponent {
       data: []
     },
     animationDuration: 0,
-    animationDurationUpdate: 5000,
-    animationEasing: 'linear',
-    animationEasingUpdate: 'linear',
+    animationDurationUpdate: 300,
     empty: true
   };
 
@@ -139,11 +137,11 @@ export class ContributionPerPassengerComponent extends TeamcraftComponent {
           characters
         };
       }),
-      takeUntil(this.onDestroy$)
+      takeUntil(this.onDestroy$),
+      auditTime(300)
     ).subscribe(({ echartsInstance, accurateReportsByUserId, characters }) => {
       echartsInstance.setOption({
         empty: accurateReportsByUserId.length === 0,
-        animationDuration: this.train.stopped ? 3000 : 0,
         yAxis: {
           data: accurateReportsByUserId.map(row => characters[row.userId]?.character?.Name || row.userId)
         },

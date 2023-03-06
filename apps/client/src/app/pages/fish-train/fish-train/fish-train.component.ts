@@ -4,12 +4,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { delayWhen, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { DataType, FishTrainStop, GatheringNode, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
-import { combineLatest, of } from 'rxjs';
+import { DataType, FishTrainStop, GatheringNode, getExtract, getItemSource, I18nName } from '@ffxiv-teamcraft/types';
+import { BehaviorSubject, combineLatest, of, Subscription, timer } from 'rxjs';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { FishDataService } from '../../db/service/fish-data.service';
-import { findLastIndex } from 'lodash';
+import { findLastIndex, isEqual } from 'lodash';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -28,6 +28,21 @@ import { PushNotificationsService } from 'ng-push-ivy';
   styleUrls: ['./fish-train.component.less']
 })
 export class FishTrainComponent extends TeamcraftComponent {
+
+  timeTravel$ = new BehaviorSubject<number | null>(null);
+
+  timeIncludingTravel$ = combineLatest([
+    this.fishTrainFacade.time$,
+    this.timeTravel$
+  ]).pipe(
+    map(([time, timeTravel]) => {
+      return timeTravel ? timeTravel : time;
+    })
+  );
+
+  playSpeed$ = new BehaviorSubject<number>(50);
+
+  playSub: Subscription;
 
   fishTrain$ = this.fishTrainFacade.selectedFishTrain$;
 
@@ -62,23 +77,24 @@ export class FishTrainComponent extends TeamcraftComponent {
   );
 
   display$ = combineLatest([
+    this.timeIncludingTravel$,
     this.fishTrainFacade.time$,
     this.fishTrainWithLocations$,
     this.fishTrainFacade.currentTrain$,
     this.gubalFishTrainStats$,
     this.authFacade.userId$
   ]).pipe(
-    map(([time, train, currentTrain, gubalStats, userId]) => {
-      const reports = gubalStats.reports.filter(report => new Date(report.date).getTime() <= time);
+    map(([timeIncludingTravel, time, train, currentTrain, gubalStats, userId]) => {
+      const reports = gubalStats.reports.filter(report => new Date(report.date).getTime() <= timeIncludingTravel);
       let stops = train.fish;
       const stop = train.fish[train.fish.length - 1].end;
       const stopped = stop <= time;
       const running = !stopped && train.start <= time;
       const waiting = train.start >= time;
-      let current = train.fish.find(stop => stop.start <= time && stop.end >= time);
+      let current = train.fish.find(stop => stop.start <= timeIncludingTravel && stop.end >= timeIncludingTravel);
       // If there's no current fish but train is running, we're moving to the next one !
       if (!current && running) {
-        const lastIndex = findLastIndex(train.fish, stop => stop.start <= time);
+        const lastIndex = findLastIndex(train.fish, stop => stop.start <= timeIncludingTravel);
         current = train.fish[lastIndex + 1] || null;
       }
       let currentIndex = train.fish.indexOf(current);
@@ -103,7 +119,7 @@ export class FishTrainComponent extends TeamcraftComponent {
         stopped,
         running,
         waiting,
-        time,
+        time: timeIncludingTravel,
         currentTrain,
         gubalStats,
         accuracy,
@@ -113,7 +129,7 @@ export class FishTrainComponent extends TeamcraftComponent {
       };
     }),
     tap(display => {
-      if (display.current) {
+      if (display.current && display.running) {
         const time = Math.floor(display.time / 1000);
         if (time === Math.floor(display.current.end / 1000)) {
           this.notifyMovement(display.fish[display.currentIndex + 1]);
@@ -122,6 +138,45 @@ export class FishTrainComponent extends TeamcraftComponent {
       this.cd.detectChanges();
     }),
     shareReplay(1)
+  );
+
+  private fishNames$ = this.fishTrain$.pipe(
+    distinctUntilChanged((a, b) => isEqual(a.fish, b.fish)),
+    switchMap(train => {
+      return this.lazyData.getRows('items', ...train.fish.map(fish => fish.id));
+    }),
+    map((rows: any) => {
+      return Object.entries<I18nName>(rows)
+        .reduce((acc, [id, name]) => {
+          return {
+            ...acc,
+            [id]: this.i18n.getName(name)
+          };
+        }, {});
+    })
+  );
+
+  public sliderData$ = combineLatest([
+    this.display$,
+    this.fishNames$
+  ]).pipe(
+    map(([display, fishNames]) => {
+      return {
+        min: display.start,
+        max: display.end,
+        value: Math.min(display.time, display.end),
+        marks: display.fish.reduce((acc, fish) => {
+          return {
+            ...acc,
+            [fish.start]: fishNames[fish.id]
+          };
+        }, {
+          [display.start]: 'Departure',
+          [display.end]: 'Terminus'
+        }),
+        formatter: timestamp => new Date(timestamp).toLocaleString()
+      };
+    })
   );
 
   public servers$ = this.lazyData.servers$;
@@ -297,6 +352,43 @@ export class FishTrainComponent extends TeamcraftComponent {
         }
       })
     ).subscribe();
+  }
+
+  play(start: number, end: number): void {
+    if (!this.timeTravel$.value || this.timeTravel$.value >= end) {
+      this.timeTravel$.next(start);
+    }
+    this.playSub = this.playSpeed$.pipe(
+      switchMap((speed) => timer(0, 1000 / speed))
+    ).subscribe(() => {
+      this.timeTravel$.next(this.timeTravel$.value + 1000);
+      if (this.timeTravel$.value >= end) {
+        this.pause();
+      }
+    });
+  }
+
+  pause(): void {
+    this.playSub.unsubscribe();
+    delete this.playSub;
+  }
+
+  stop(): void {
+    if (this.playSub) {
+      this.pause();
+    }
+    this.timeTravel$.next(null);
+  }
+
+  changeSpeed(): void {
+    const speeds = [
+      50,
+      100,
+      200,
+      500
+    ];
+    const currentSpeed = speeds.indexOf(this.playSpeed$.value);
+    this.playSpeed$.next(speeds[(currentSpeed + 1) % speeds.length]);
   }
 
 }
