@@ -10,7 +10,7 @@ export class ReductionsExtractor extends AbstractExtractor {
     const items = this.requireLazyFile('items');
     const sheetRows = [];
     // Credits to Hiems Whiterock / M'aila Batih for the data sheet
-    createReadStream(join(__dirname, '../../../input/shb-fish-desynth.csv'), 'utf-8')
+    createReadStream(join(__dirname, './assets/input/shb-fish-desynth.csv'), 'utf-8')
       .pipe(csv())
       .on('data', (row) => {
         sheetRows.push(row);

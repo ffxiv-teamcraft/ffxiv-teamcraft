@@ -1901,10 +1901,10 @@
   },
   "1054": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Loporrit Quests",
+      "ja": "レポリット族",
+      "de": "Aufträge der Loporrit",
+      "fr": "Quêtes loporrites"
     },
     "pages": [
       1432,
@@ -1916,15 +1916,15 @@
       1438,
       1439
     ],
-    "craftLevel": 0,
-    "gatheringLevel": 0
+    "craftLevel": 80,
+    "gatheringLevel": 255
   },
   "1055": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Splendorous Tools",
+      "ja": "モーエンツール",
+      "de": "Mowen-Werkzeuge",
+      "fr": "Outils des merveilles"
     },
     "pages": [
       1440,
@@ -1936,8 +1936,8 @@
       1446,
       1447
     ],
-    "craftLevel": 0,
-    "gatheringLevel": 0
+    "craftLevel": 90,
+    "gatheringLevel": 255
   },
   "1056": {
     "name": {
@@ -2241,10 +2241,10 @@
   },
   "2014": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Splendorous Tools",
+      "ja": "モーエンツール",
+      "de": "Mowen-Werkzeuge",
+      "fr": "Outils des merveilles"
     },
     "pages": [
       2056,
@@ -2256,8 +2256,8 @@
       -1,
       -1
     ],
-    "craftLevel": 0,
-    "gatheringLevel": 0
+    "craftLevel": 255,
+    "gatheringLevel": 90
   },
   "2015": {
     "name": {

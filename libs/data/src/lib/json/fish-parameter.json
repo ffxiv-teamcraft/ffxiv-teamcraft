@@ -13983,6 +13983,53 @@
     "folklore": 36609,
     "recordType": 2
   },
+  "38792": {
+    "id": 1168,
+    "itemId": 38792,
+    "level": 90,
+    "icon": "/i/029000/029906.png",
+    "mapId": 491,
+    "zoneId": 2953,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1,
+    "recordType": 3
+  },
+  "38793": {
+    "id": 1169,
+    "itemId": 38793,
+    "level": 90,
+    "icon": "/i/029000/029127.png",
+    "mapId": 492,
+    "zoneId": 2954,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1
+  },
+  "38798": {
+    "id": 1170,
+    "itemId": 38798,
+    "level": 90,
+    "icon": "/i/028000/028062.png",
+    "mapId": 494,
+    "zoneId": 2956,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 2,
+    "recordType": 3
+  },
+  "38799": {
+    "id": 1171,
+    "itemId": 38799,
+    "level": 90,
+    "icon": "/i/028000/028520.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 2,
+    "recordType": 3
+  },
   "38810": {
     "id": 1163,
     "itemId": 38810,

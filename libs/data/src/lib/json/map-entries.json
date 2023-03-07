@@ -6553,11 +6553,11 @@
   },
   {
     "id": 820,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 2529,
+    "name": "Eureka Orthos",
+    "territory": 1124,
+    "scale": 100,
+    "weatherRate": 0
   },
   {
     "id": 821,

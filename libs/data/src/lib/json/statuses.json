@@ -23863,18 +23863,18 @@
     "icon": ""
   },
   "3410": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Soul of Fire",
+    "ja": "属性偏向：火",
+    "de": "Elementarer Bias: Feuer",
+    "fr": "Déséquilibre éthéré&nbsp;: feu",
+    "icon": "/i/015000/015122.png"
   },
   "3411": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Soul of Ice",
+    "ja": "属性偏向：氷",
+    "de": "Elementarer Bias: Eis",
+    "fr": "Déséquilibre éthéré&nbsp;: glace",
+    "icon": "/i/015000/015123.png"
   },
   "3412": {
     "en": "Natural Alignment",
@@ -23905,39 +23905,39 @@
     "icon": "/i/015000/015053.png"
   },
   "3416": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Positive Charge",
+    "ja": "磁力【＋】",
+    "de": "Positive Ladung",
+    "fr": "Charge positive",
+    "icon": "/i/015000/015663.png"
   },
   "3417": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Negative Charge",
+    "ja": "磁力【－】",
+    "de": "Negative Ladung",
+    "fr": "Charge négative",
+    "icon": "/i/015000/015664.png"
   },
   "3418": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Positive Charge",
+    "ja": "磁力【＋】",
+    "de": "Positive Ladung",
+    "fr": "Charge positive",
+    "icon": "/i/015000/015663.png"
   },
   "3419": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Negative Charge",
+    "ja": "磁力【－】",
+    "de": "Negative Ladung",
+    "fr": "Charge négative",
+    "icon": "/i/015000/015664.png"
   },
   "3420": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Barofield",
+    "ja": "バロフィールド",
+    "de": "Baro-Feld",
+    "fr": "Barotraumatisme",
+    "icon": "/i/015000/015617.png"
   },
   "3421": {
     "en": "Fetters",
@@ -23947,18 +23947,18 @@
     "icon": "/i/015000/015545.png"
   },
   "3422": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Stoneskin",
+    "ja": "ストンスキン",
+    "de": "Steinhaut",
+    "fr": "Cuirasse",
+    "icon": "/i/010000/010401.png"
   },
   "3423": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "The Gentleman Fantastick",
+    "ja": "紳士の舞",
+    "de": "Tanz der Chevaliers",
+    "fr": "Extravadanse du gentilhomme",
+    "icon": "/i/016000/016408.png"
   },
   "3424": {
     "en": "Guided Missile Kyrios Incoming",
@@ -24199,11 +24199,11 @@
     "icon": "/i/015000/015003.png"
   },
   "3458": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Gloves Off",
+    "ja": "絶技実行可",
+    "de": "Ring frei",
+    "fr": "Attaque ultime du gentilhomme préparée",
+    "icon": "/i/016000/016409.png"
   },
   "3459": {
     "en": "Blooming Blue",
@@ -24220,11 +24220,11 @@
     "icon": "/i/015000/015125.png"
   },
   "3461": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Featherbrained",
+    "ja": "ピヨピヨ",
+    "de": "Gezwitscher",
+    "fr": "Cui cui",
+    "icon": "/i/016000/016410.png"
   },
   "3462": {
     "en": "Poison",
@@ -24311,11 +24311,11 @@
     "icon": "/i/015000/015002.png"
   },
   "3474": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Manderville Sprint",
+    "ja": "マンダヴィルスプリント",
+    "de": "Manderville-Sprint",
+    "fr": "Sprint des Manderville",
+    "icon": "/i/016000/016411.png"
   },
   "3475": {
     "en": "Penance",
@@ -24416,39 +24416,39 @@
     "icon": "/i/016000/016412.png"
   },
   "3489": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Demiclone Penalty",
+    "ja": "デミクローン禁止",
+    "de": "Demiklone blockiert",
+    "fr": "Semi-clones inutilisables",
+    "icon": "/i/016000/016838.png"
   },
   "3490": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Damage Up",
+    "ja": "ダメージ上昇",
+    "de": "Schaden +",
+    "fr": "Bonus de dégâts",
+    "icon": "/i/016000/016833.png"
   },
   "3491": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Vulnerability Down",
+    "ja": "被ダメージ低下",
+    "de": "Verringerte Verwundbarkeit",
+    "fr": "Vulnérabilité diminuée",
+    "icon": "/i/016000/016834.png"
   },
   "3492": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Rehabilitation",
+    "ja": "徐々にＨＰ回復",
+    "de": "Rehabilitation",
+    "fr": "Recouvrement",
+    "icon": "/i/016000/016835.png"
   },
   "3493": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Lethargy",
+    "ja": "スロウガ",
+    "de": "Gemachga",
+    "fr": "Méga Lenteur",
+    "icon": "/i/016000/016837.png"
   },
   "3494": {
     "en": "Blind",
@@ -24507,11 +24507,11 @@
     "icon": "/i/015000/015044.png"
   },
   "3502": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Owlet",
+    "ja": "オウレット",
+    "de": "Eulette",
+    "fr": "Bébé hibou",
+    "icon": "/i/016000/016836.png"
   },
   "3503": {
     "en": "Local Code Smell",
@@ -24598,11 +24598,11 @@
     "icon": ""
   },
   "3515": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Manderville Sprint",
+    "ja": "マンダヴィルスプリント",
+    "de": "Manderville-Sprint",
+    "fr": "Sprint des Manderville",
+    "icon": "/i/016000/016411.png"
   },
   "3516": {
     "en": "Magic Vulnerability Up",

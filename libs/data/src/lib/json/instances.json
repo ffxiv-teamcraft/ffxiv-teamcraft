@@ -1668,6 +1668,17 @@
       34800
     ]
   },
+  "5064": {
+    "en": "Generational Bonding",
+    "ja": "はつらつとした親子",
+    "de": "Väterliche Liebe",
+    "fr": "Tel gentilhomme, tel gentilhomme",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      35342,
+      35300
+    ]
+  },
   "5065": {
     "en": "An Unforeseen Bargain",
     "ja": "パンひとつと引き換えに",
@@ -5024,6 +5035,92 @@
     "de": "Himmelssäule (Ebenen 91-100)",
     "fr": "le Pilier des Cieux (étages 91-100)",
     "icon": "/i/061000/061824.png"
+  },
+  "60031": {
+    "en": "Eureka Orthos (Floors 1-10)",
+    "ja": "オルト・エウレカ B1～B10",
+    "de": "Eureka Orthos (Ebenen 1-10)",
+    "fr": "Eurêka Orthos (sous-sols 1-10)",
+    "icon": "/i/061000/061824.png",
+    "contentText": [
+      35603,
+      35600
+    ]
+  },
+  "60032": {
+    "en": "Eureka Orthos (Floors 11-20)",
+    "ja": "オルト・エウレカ B11～B20",
+    "de": "Eureka Orthos (Ebenen 11-20)",
+    "fr": "Eurêka Orthos (sous-sols 11-20)",
+    "icon": "/i/061000/061824.png",
+    "contentText": [
+      36002,
+      36000
+    ]
+  },
+  "60033": {
+    "en": "Eureka Orthos (Floors 21-30)",
+    "ja": "オルト・エウレカ B21～B30",
+    "de": "Eureka Orthos (Ebenen 21-30)",
+    "fr": "Eurêka Orthos (sous-sols 21-30)",
+    "icon": "/i/061000/061824.png",
+    "contentText": [
+      35904,
+      35900
+    ]
+  },
+  "60034": {
+    "en": "Eureka Orthos (Floors 31-40)",
+    "ja": "オルト・エウレカ B31～B40",
+    "de": "Eureka Orthos (Ebenen 31-40)",
+    "fr": "Eurêka Orthos (sous-sols 31-40)",
+    "icon": "/i/061000/061824.png"
+  },
+  "60035": {
+    "en": "Eureka Orthos (Floors 41-50)",
+    "ja": "オルト・エウレカ B41～B50",
+    "de": "Eureka Orthos (Ebenen 41-50)",
+    "fr": "Eurêka Orthos (sous-sols 41-50)",
+    "icon": "/i/061000/061824.png"
+  },
+  "60036": {
+    "en": "Eureka Orthos (Floors 51-60)",
+    "ja": "オルト・エウレカ B51～B60",
+    "de": "Eureka Orthos (Ebenen 51-60)",
+    "fr": "Eurêka Orthos (sous-sols 51-60)",
+    "icon": "/i/061000/061824.png"
+  },
+  "60037": {
+    "en": "Eureka Orthos (Floors 61-70)",
+    "ja": "オルト・エウレカ B61～B70",
+    "de": "Eureka Orthos (Ebenen 61-70)",
+    "fr": "Eurêka Orthos (sous-sols 61-70)",
+    "icon": "/i/061000/061824.png"
+  },
+  "60038": {
+    "en": "Eureka Orthos (Floors 71-80)",
+    "ja": "オルト・エウレカ B71～B80",
+    "de": "Eureka Orthos (Ebenen 71-80)",
+    "fr": "Eurêka Orthos (sous-sols 71-80)",
+    "icon": "/i/061000/061824.png"
+  },
+  "60039": {
+    "en": "Eureka Orthos (Floors 81-90)",
+    "ja": "オルト・エウレカ B81～B90",
+    "de": "Eureka Orthos (Ebenen 81-90)",
+    "fr": "Eurêka Orthos (sous-sols 81-90)",
+    "icon": "/i/061000/061824.png"
+  },
+  "60040": {
+    "en": "Eureka Orthos (Floors 91-100)",
+    "ja": "オルト・エウレカ B91～B100",
+    "de": "Eureka Orthos (Ebenen 91-100)",
+    "fr": "Eurêka Orthos (sous-sols 91-100)",
+    "icon": "/i/061000/061824.png",
+    "contentText": [
+      35408,
+      35400
+    ]
   },
   "61001": {
     "en": "Novice Mahjong (Full Ranked Match)",
