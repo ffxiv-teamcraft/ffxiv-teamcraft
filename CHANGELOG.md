@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.3.9"></a>
+## [10.3.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.8...v10.3.9) (2023-03-07)
+
+
+### Bug Fixes
+
+* **fish-train:** fixed contributions stats never showing ([fd311f5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fd311f5))
+* **fish-train:** macro copy button always available in route and closing timer on current step ([3699d05](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3699d05))
+* **fish-train:** removed the ability to join a train as anonymous user ([0cc39fa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0cc39fa))
+
+
+### Features
+
+* **db:** 6.35 content update ([ac8a0e1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ac8a0e1))
+* **fish-train:** added slap and intuition requirements in macros along with better bait details ([60acf90](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/60acf90))
+* **fish-train:** new bait breakdown chart ([b41da5e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b41da5e))
+* **fish-train:** new fish breakdown chart ([1c64c8b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1c64c8b))
+* **fish-train:** new fish size breakdown chart ([3097dd0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3097dd0))
+* **fish-train:** time travelling for replay features on stopped trains ([b536d01](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b536d01))
+* **fish-train:** toggle in contributions chart to filter target fish reports only ([d63f81f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d63f81f))
+
+
+### Performance Improvements
+
+* **core:** migrate to apollo 3 for more graphql stability and perfs ([49f95c4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/49f95c4))
+
+
+
 <a name="10.3.8"></a>
 ## [10.3.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.7...v10.3.8) (2023-03-05)
 
