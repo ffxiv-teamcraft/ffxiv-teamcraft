@@ -173,7 +173,7 @@ export class ShopsExtractor extends AbstractExtractor {
               const entry = {
                 id: cost,
                 amount: specialShop.CountCost[tradeIndex][costIndex] || (specialShop.UseCurrencyType === 8 ? specialShop.ItemReceive[tradeIndex][costIndex]?.PriceMid || 0 : 0),
-                hq: specialShop.HQCost[tradeIndex][costIndex] > 0,
+                hq: cost > 50 && specialShop.HQCost[tradeIndex][costIndex] > 0,
                 collectability: specialShop.CollectabilityRatingCost[tradeIndex][costIndex]
               };
 
@@ -190,6 +190,10 @@ export class ShopsExtractor extends AbstractExtractor {
               }
 
               if ([2, 4].includes(specialShop.UseCurrencyType) && entry.id < 10) {
+                entry.id = { ...StaticData.CURRENCIES }[entry.id];
+              }
+
+              if ([16].includes(specialShop.UseCurrencyType) && entry.id < 10) {
                 entry.id = { ...StaticData.CURRENCIES, ...StaticData.TOMESTONES }[entry.id];
               }
               return entry;
@@ -358,7 +362,7 @@ export class ShopsExtractor extends AbstractExtractor {
       '1769961': [1027892],
       '1769962': [1027665],
       '1769963': [1027709],
-      '1769964': [1027766],
+      '1769964': [1027766]
     };
     const hardcodedLinks = {
       721385: [262919]
