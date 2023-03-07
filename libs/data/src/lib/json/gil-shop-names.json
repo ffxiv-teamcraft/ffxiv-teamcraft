@@ -5802,10 +5802,10 @@
     "fr": "アイテムの購入"
   },
   "263151": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Purchase Manderville Weapon Replicas",
+    "ja": "「マンダヴィルウェポン」の複製",
+    "de": "Repliken der Manderville-Waffen",
+    "fr": "Répliques d'armes des Manderville"
   },
   "263152": {
     "en": "",
@@ -5838,21 +5838,21 @@
     "fr": ""
   },
   "263157": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
   },
   "263158": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Purchase Gear",
+    "ja": "防具の購入",
+    "de": "Rüstungen",
+    "fr": "Équipement"
   },
   "263159": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
   }
 }

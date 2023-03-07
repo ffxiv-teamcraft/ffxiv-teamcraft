@@ -9,7 +9,7 @@ export interface LazyCollectable {
   levelMax?:    number;
   levelMin?:    number;
   mid:          Base;
-  reward?:      number;
+  reward:       number;
   rewardType?:  number;
   shopId?:      number;
   type:         Type;

@@ -77,6 +77,7 @@ export interface GatheringNode {
   duration:          number;
   ephemeral:         boolean;
   folklore?:         number;
+  hiddenItems?:      number[];
   hookset?:          number;
   id:                number;
   items:             number[];

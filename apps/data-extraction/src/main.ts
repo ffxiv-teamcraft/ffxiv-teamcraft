@@ -24,7 +24,6 @@ import { AetherytesExtractor } from './extractors/aetherytes.extractor';
 import { RecipesExtractor } from './extractors/recipes.extractor';
 import { ActionsExtractor } from './extractors/actions.extractor';
 import { ReductionsExtractor } from './extractors/reductions.extractor';
-import { MonsterDropsExtractor } from './extractors/monster-drops.extractor';
 import { StatsExtractor } from './extractors/stats.extractor';
 import { PatchContentExtractor } from './extractors/patch-content.extractor';
 import { WorldsExtractor } from './extractors/worlds.extractor';
@@ -147,7 +146,6 @@ const extractors: AbstractExtractor[] = [
   new SeedsExtractor(),
   new ReductionsExtractor(),
   new PatchContentExtractor(),
-  new MonsterDropsExtractor(),
   new MappyExtractor(),
   new LgbExtractor(),
   new GubalExtractor(),
@@ -176,7 +174,7 @@ const extractors: AbstractExtractor[] = [
 
   const runExtractors = new Confirm({
     name: 'runExtractor',
-    message: 'Run extractors once it\'s done?'
+    message: 'Update extracts.json once it\'s done?'
   });
 
   if (argv['only']) {
