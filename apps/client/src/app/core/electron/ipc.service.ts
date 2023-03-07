@@ -4,7 +4,7 @@ import { IpcRendererEvent } from 'electron';
 import { Router } from '@angular/router';
 import { Vector2 } from '@ffxiv-teamcraft/types';
 import { BehaviorSubject, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
-import { bufferCount, debounceTime, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
+import { bufferCount, debounceTime, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap } from 'rxjs/operators';
 import { ofMessageType } from '../rxjs/of-message-type';
 import { Store } from '@ngrx/store';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -480,9 +480,10 @@ export class IpcService {
     this.on('pcap:status', (e, status) => this.pcapStatus$.next(status));
     // If we don't get a packet for an entire minute, something is wrong.
     this.packets$.pipe(
+      startWith(null),
       debounceTime(60000)
     ).subscribe(() => {
-      this.pcapStatus$.next(PacketCaptureStatus.WARNING);
+      this.pcapStatus$.next(PacketCaptureStatus.ERROR);
       this.send('log', {
         level: 'error',
         data: 'No ping received from the server during 60 seconds'
@@ -490,9 +491,10 @@ export class IpcService {
     });
     // If we don't get a packet for 5 minutes, attempt to restart pcap entirely.
     this.packets$.pipe(
+      startWith(null),
       debounceTime(300000)
     ).subscribe(() => {
-      this.pcapStatus$.next(PacketCaptureStatus.WARNING);
+      this.pcapStatus$.next(PacketCaptureStatus.ERROR);
       this.send('log', {
         level: 'error',
         data: 'No ping received from the server during 300 seconds, restarting pcap'
