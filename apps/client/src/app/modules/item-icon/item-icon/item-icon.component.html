@@ -1,9 +1,8 @@
 <a [appXivApiTooltipDisabled]="tooltipDisabled" [appXivApiTooltip]="itemId"
-   (mouseup)="handleClick($event)"
-   class="icon-container">
+   (click)="handleClick($event)" (auxclick)="handleClick($event)" class="icon-container">
   <img *ngIf="icon$ | async as icon; else skeleton" [src]="icon" [style.width.px]="width" alt="{{itemName}}" class="item-icon">
   <ng-template #skeleton>
-    <nz-skeleton-element nzType="avatar" nzShape="circle" [nzActive]="true" [nzSize]="width"  class="item-icon"></nz-skeleton-element>
+    <nz-skeleton-element nzType="avatar" nzShape="circle" [nzActive]="true" [nzSize]="width" class="item-icon"></nz-skeleton-element>
   </ng-template>
   <img *ngIf="hq" [style.width.px]="width" class="hq-overlay"
        src="https://www.garlandtools.org/db/images/item/HQOverlay.png">

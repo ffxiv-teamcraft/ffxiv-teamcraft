@@ -104,7 +104,7 @@ export class ItemIconComponent {
   handleClick(event: MouseEvent): void {
     event.preventDefault();
     event.stopPropagation();
-    if (this.disableClick || this.itemId === null) {
+    if (this.disableClick || this.itemId === null || event.type === 'mouseup') {
       return;
     }
     if (event.which === 2) {
