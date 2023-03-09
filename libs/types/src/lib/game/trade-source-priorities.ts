@@ -66,6 +66,7 @@ export const TRADE_SOURCES_PRIORITIES = {
   21081: 20, // Kojin
   21935: 20, // Ananta
   22525: 20, // Namazu
+  38952: 20, // Loporites
   // World bosses
   6155: 18, // Behemoth
   6164: 18, // Odin
