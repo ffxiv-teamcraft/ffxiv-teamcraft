@@ -26,7 +26,8 @@
               nzShape="circle" nzTooltipTitle="{{'Island_crop' | translate}}">
         <img class="gathering-icon" src="https://xivapi.com/i/063000/063950_hr1.png" alt="Island crop">
       </button>
-      <button (click)="openTradesPopup(item)" *ngSwitchCase="dataTypes.TRADE_SOURCES"
+      <button (click)="openTradesPopup(item)"
+              *ngSwitchCase="dataTypes.TRADE_SOURCES"
               nz-button [nzSize]="size"
               nz-tooltip nzShape="circle" nzTooltipTitle="{{'Trade' | translate}}">
         <span *ngIf="source.data | tradeIcon as icon; else gtFallBack">
