@@ -57,7 +57,7 @@ export const lazyFilesList = {
   },
   'collectablesPageData': {
     'fileName': 'collectables-page-data.json',
-    'hashedFileName': 'collectables-page-data.2be9f85c14841c94a477e6ffe84ba5d0cb192bdf.json'
+    'hashedFileName': 'collectables-page-data.12a54d8822ea1065c5312ac4237f057e8760056c.json'
   },
   'collectablesShopItemGroup': {
     'fileName': 'collectables-shop-item-group.json',
@@ -89,7 +89,7 @@ export const lazyFilesList = {
   },
   'deprecatedItems': {
     'fileName': 'deprecated-items.json',
-    'hashedFileName': 'deprecated-items.4b8b5d9e6260388e3dfcf87feb780e3b6c036a79.json'
+    'hashedFileName': 'deprecated-items.61100691343f1afb55c74b25ada572e051ea2c35.json'
   },
   'desynth': {
     'fileName': 'desynth.json',
@@ -121,7 +121,7 @@ export const lazyFilesList = {
   },
   'fateSources': {
     'fileName': 'fate-sources.json',
-    'hashedFileName': 'fate-sources.f94bf451f26b5735e3594ffb4ce1ebfb4bce1fa3.json'
+    'hashedFileName': 'fate-sources.87b71bd882221c47cc5e04848e05fc6fbd287cea.json'
   },
   'fates': {
     'fileName': 'fates.json',
@@ -137,7 +137,7 @@ export const lazyFilesList = {
   },
   'fishingLogTrackerPageData': {
     'fileName': 'fishing-log-tracker-page-data.json',
-    'hashedFileName': 'fishing-log-tracker-page-data.aaf46bd4a63ac894fb3fe428a4f59dcf95d460d4.json'
+    'hashedFileName': 'fishing-log-tracker-page-data.18838e705d8791a5eb48f64dba1866c3fc3bebcb.json'
   },
   'fishingLog': {
     'fileName': 'fishing-log.json',
@@ -145,7 +145,7 @@ export const lazyFilesList = {
   },
   'fishingSources': {
     'fileName': 'fishing-sources.json',
-    'hashedFileName': 'fishing-sources.4d7f136e6c7b742a008f79b8e5df520157078159.json'
+    'hashedFileName': 'fishing-sources.c9acec173e708ff8f295bdafbc34135a01cd7182.json'
   },
   'fishingSpots': {
     'fileName': 'fishing-spots.json',
@@ -365,7 +365,7 @@ export const lazyFilesList = {
   },
   'mogstationSources': {
     'fileName': 'mogstation-sources.json',
-    'hashedFileName': 'mogstation-sources.8377ade78c9ea7f50962ecddb3a584c2a895f0fd.json'
+    'hashedFileName': 'mogstation-sources.abd6c4a2af8e0eb73cd427380674f13a3cd47e8e.json'
   },
   'monsters': {
     'fileName': 'monsters.json',
@@ -541,7 +541,7 @@ export const lazyFilesList = {
   },
   'voyageSources': {
     'fileName': 'voyage-sources.json',
-    'hashedFileName': 'voyage-sources.dd701551f29ddbe63d04c3ed29c2549692a45980.json'
+    'hashedFileName': 'voyage-sources.fdf9175c0d4f7c2264ba92bf5ebc89c384bfc601.json'
   },
   'weathers': {
     'fileName': 'weathers.json',
