@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.3.11"></a>
+## [10.3.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.10...v10.3.11) (2023-03-09)
+
+
+### Bug Fixes
+
+* **desktop:** better error message for when deucalion has been deleted by AV ([3d7e4e3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3d7e4e3))
+* **desktop:** fixed extra 0 in debounceTime call for missing packets detection ([13eff71](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/13eff71))
+* **desktop:** multiple fixes and QoL improvements for new packet capture system ([9159928](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9159928))
+* **list-details:** add loporite carrots as available trade sources ([f00eb31](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f00eb31))
+* **list-details:** fixed trades details popup not opening ([4555d08](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4555d08))
+* **list-details:** fixed white scrips showing instead of tomestones in some trades ([f8e53e8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f8e53e8))
+
+
+
 <a name="10.3.10"></a>
 ## [10.3.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.9...v10.3.10) (2023-03-09)
 

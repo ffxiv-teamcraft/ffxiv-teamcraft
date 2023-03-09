@@ -13,6 +13,7 @@ import {
   Message as KRCNMessage
 } from '@ffxiv-teamcraft/pcap-ffxiv-krcn';
 import { DeucalionErrors } from './deucalion-errors';
+import { existsSync } from 'fs';
 
 const hash = require('object-hash');
 
@@ -173,46 +174,17 @@ export class PacketCapture {
     this.overlayListeners = this.overlayListeners.filter(l => l.id === id);
   }
 
-  private antiSpam = {
-    timestamp: BigInt(0),
-    seen: []
-  };
-
   sendToRenderer(packet: Message | KRCNMessage): void {
     if (this.mainWindow?.win) {
       try {
-        // If it's a global packet, apply antispam, this is temporary until deucalion's spam issue is fixed
-        // TODO if block remove once the fix happened on deucalion's end
-        if ((packet as Message).header.ipcTimestamp) {
-          const dPacket = packet as Message;
-          if (this.antiSpam.timestamp < dPacket.header.ipcTimestamp) {
-            this.antiSpam = {
-              timestamp: dPacket.header.ipcTimestamp,
-              seen: []
-            };
+        this.mainWindow.win.webContents.send('packet', packet);
+        this.overlayListeners.forEach(l => {
+          try {
+            l.listener(packet);
+          } catch (e) {
+            this.unregisterOverlayListener(l.id);
           }
-          const packetHash = `${dPacket.header.ipcTimestamp.toString()}:${dPacket.header.type}:${hash(packet.parsedIpcData)}`;
-          if (!this.antiSpam.seen.includes(packetHash)) {
-            this.antiSpam.seen.push(packetHash);
-            this.mainWindow.win.webContents.send('packet', packet);
-            this.overlayListeners.forEach(l => {
-              try {
-                l.listener(packet);
-              } catch (e) {
-                this.unregisterOverlayListener(l.id);
-              }
-            });
-          }
-        } else {
-          this.mainWindow.win.webContents.send('packet', packet);
-          this.overlayListeners.forEach(l => {
-            try {
-              l.listener(packet);
-            } catch (e) {
-              this.unregisterOverlayListener(l.id);
-            }
-          });
-        }
+        });
       } catch (e) {
         log.error(packet);
         log.error(e);
@@ -280,6 +252,16 @@ export class PacketCapture {
       }
     } else {
       options.deucalionExePath = PacketCapture.DEUCALION_EXE_PATH;
+    }
+
+    if (options.deucalionExePath && !existsSync(options.deucalionExePath)) {
+      this.mainWindow.win.webContents.send('pcap:status', 'error');
+      this.mainWindow.win.webContents.send('pcap:error:raw', {
+        code: 'DEUCALION_NOT_FOUND',
+        message: `File not found: ${options.deucalionExePath}`
+      });
+      log.error(`File not found: ${options.deucalionExePath}`);
+      return;
     }
 
     log.info(`Starting PacketCapture with options: ${JSON.stringify(options)}`);

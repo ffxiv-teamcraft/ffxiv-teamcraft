@@ -373,8 +373,17 @@ export class IpcService {
     this.on('pcap:error', (event, error: { message: string, retryDelay: number }) => {
       this.handlePcapError(error);
     });
-    this.on('pcap:error:raw', (event, error: { message: string, retryDelay: number }) => {
+    this.on('pcap:error:raw', (event, error: { message: string, code?: string, retryDelay: number }) => {
       console.log(error.message);
+      if (error.code === 'DEUCALION_NOT_FOUND') {
+        this.notification.error(
+          this.translate.instant(`PCAP_ERRORS.Default`),
+          this.translate.instant(`PCAP_ERRORS.DEUCALION_NOT_FOUND`),
+          {
+            nzDuration: 60000
+          }
+        );
+      }
     });
     this.on('metrics:importing', () => {
       this.message.info(this.translate.instant('METRICS.Importing'), {
@@ -473,13 +482,13 @@ export class IpcService {
         });
     });
     this.on('pcap:status', (e, status) => this.pcapStatus$.next(status));
-    // If we don't get a packet for an entire minute, something is wrong.
+    // If we don't get a packet for two entire minutes, something is wrong.
     this.packets$.pipe(
       skipUntil(this.pcapToggle$.pipe(
         filter(Boolean)
       )),
       startWith(null),
-      debounceTime(1200000)
+      debounceTime(120000)
     ).subscribe(() => {
       this.pcapStatus$.next(PacketCaptureStatus.ERROR);
       this.send('log', {
