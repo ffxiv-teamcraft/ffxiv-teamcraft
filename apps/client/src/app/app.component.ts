@@ -205,8 +205,6 @@ export class AppComponent implements OnInit {
 
   public suggestedRegion: Region = null;
 
-  public possibleMissingFirewallRule$ = this.ipc.possibleMissingFirewallRule$;
-
   public firewallRuleApplied = false;
 
   public showAd$ = this.authFacade.user$.pipe(
@@ -515,7 +513,7 @@ export class AppComponent implements OnInit {
   }
 
   startPcap(): void {
-    this.ipc.send('toggle-machina', true);
+    this.ipc.send('toggle-pcap', true);
     this.ipc.send('pcap:restart');
   }
 
@@ -528,17 +526,9 @@ export class AppComponent implements OnInit {
   }
 
   enablePacketCapture(): void {
-    this.ipc.machinaToggle$.next(true);
+    this.ipc.pcapToggle$.next(true);
     this.settings.enableUniversalisSourcing = true;
-    this.ipc.send('toggle-machina', true);
-  }
-
-  applyFirewallRule(): void {
-    this.ipc.once('machina:firewall:rule-set', () => {
-      this.firewallRuleApplied = true;
-      this.message.success(this.translate.instant('PACKET_CAPTURE.Firewall_rule_set'));
-    });
-    this.ipc.send('machina:firewall:set-rule');
+    this.ipc.send('toggle-pcap', true);
   }
 
   showPatchNotes(): Observable<any> {

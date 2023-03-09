@@ -286,7 +286,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
       return state.supplyDemand
         .filter(row => {
           const maxId = this.environment.gameVersion < 6.3 ? 50 : Infinity;
-          return row.id > 0 && row.id <= maxId && islandCraftworks[row.id]?.itemId > 0
+          return row.id > 0 && row.id <= maxId && islandCraftworks[row.id]?.itemId > 0;
         })
         .filter(row => {
           let matches = true;
@@ -392,7 +392,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     })
   );
 
-  public machinaToggle = false;
+  public pcapToggle = false;
 
   public getExport = () => {
     return JSON.stringify(this.state$.value);
@@ -407,10 +407,9 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     super();
 
     if (this.platformService.isDesktop()) {
-      this.ipc.on('toggle-machina:value', (event, value) => {
-        this.machinaToggle = value;
+      this.ipc.pcapToggle$.subscribe((value) => {
+        this.pcapToggle = value;
       });
-      this.ipc.send('toggle-machina:get');
       combineLatest([this.previousReset$, this.state$, this.authFacade.user$]).pipe(
         switchMap(([reset, state, user]) => {
           return this.mjiWorkshopStatusService.get(reset.toString()).pipe(

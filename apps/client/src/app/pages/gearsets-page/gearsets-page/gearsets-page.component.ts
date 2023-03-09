@@ -29,7 +29,7 @@ export class GearsetsPageComponent extends TeamcraftComponent implements OnInit 
 
   public favoritesDisplay$: Observable<TreeFolderDisplay<TeamcraftGearset>>;
 
-  public machinaToggle = false;
+  public pcapToggle = false;
 
   public dndConnections = ['gearsets-root', 'folder-root'];
 
@@ -37,10 +37,9 @@ export class GearsetsPageComponent extends TeamcraftComponent implements OnInit 
               private authFacade: AuthFacade, private ipc: IpcService,
               private foldersFacade: FoldersFacade) {
     super();
-    this.ipc.once('toggle-machina:value', (event, value) => {
-      this.machinaToggle = value;
+    this.ipc.pcapToggle$.subscribe(value => {
+      this.pcapToggle = value;
     });
-    this.ipc.send('toggle-machina:get');
 
     this.display$ = this.userId$.pipe(
       switchMap(userId => {

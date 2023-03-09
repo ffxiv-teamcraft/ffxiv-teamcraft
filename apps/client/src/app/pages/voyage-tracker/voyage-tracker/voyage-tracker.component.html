@@ -1,6 +1,6 @@
 <div fxLayout="row" fxLayoutGap="5px" style="margin-bottom: 20px">
   <div>
-    <button *ngIf="ipc.machinaToggle$ | async" nz-button (click)="importFromPcap()">{{'VOYAGE_TRACKER.Import_using_pcap' | translate}}</button>
+    <button *ngIf="ipc.pcapToggle$ | async" nz-button (click)="importFromPcap()">{{'VOYAGE_TRACKER.Import_using_pcap' | translate}}</button>
   </div>
   <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
     <nz-switch [(ngModel)]="settings.vesselVoyageAlarms"></nz-switch>
@@ -64,7 +64,7 @@
     <ng-template #subtitleTpl>
       <div class="flex-column align-center justify-center">
         {{'VOYAGE_TRACKER.Please_import_pcap' | translate}}
-        <button [disabled]="(ipc.machinaToggle$ | async) === false" nz-button (click)="importFromPcap()"
+        <button [disabled]="(ipc.pcapToggle$ | async) === false" nz-button (click)="importFromPcap()"
                 nzType="primary">{{'VOYAGE_TRACKER.Import_using_pcap' | translate}}</button>
       </div>
     </ng-template>

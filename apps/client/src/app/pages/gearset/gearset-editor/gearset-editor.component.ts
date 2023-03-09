@@ -36,7 +36,7 @@ import { EnvironmentService } from '../../../core/environment.service';
 })
 export class GearsetEditorComponent extends TeamcraftComponent implements OnInit {
 
-  public machinaToggle = false;
+  public pcapToggle = false;
 
   itemFiltersform: UntypedFormGroup = this.fb.group({
     ilvlMin: [this.environment.maxIlvl - 30],
@@ -391,10 +391,9 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         }
       });
     });
-    this.ipc.once('toggle-machina:value', (event, value) => {
-      this.machinaToggle = value;
+    this.ipc.pcapToggle$.subscribe((value) => {
+      this.pcapToggle = value;
     });
-    this.ipc.send('toggle-machina:get');
   }
 
   private _materiaCache = JSON.parse(localStorage.getItem('materias') || '{}');

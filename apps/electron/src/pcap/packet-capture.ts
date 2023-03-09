@@ -7,7 +7,14 @@ import isDev from 'electron-is-dev';
 import log from 'electron-log';
 import { default as isElevated } from 'native-is-elevated';
 import { CaptureInterface, CaptureInterfaceOptions, Message, Region } from '@ffxiv-teamcraft/pcap-ffxiv';
-import { CaptureInterface as KRCNCaptureInterface } from '@ffxiv-teamcraft/pcap-ffxiv-krcn';
+import {
+  CaptureInterface as KRCNCaptureInterface,
+  CaptureInterfaceOptions as KRCNCaptureInterfaceOptions,
+  Message as KRCNMessage
+} from '@ffxiv-teamcraft/pcap-ffxiv-krcn';
+import { DeucalionErrors } from './deucalion-errors';
+
+const hash = require('object-hash');
 
 export class PacketCapture {
 
@@ -82,9 +89,9 @@ export class PacketCapture {
     'objectSpawn'
   ];
 
-  private static readonly MACHINA_GLOBAL_EXE_PATH = join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
+  private static readonly DEUCALION_EXE_PATH = join(app.getAppPath(), '../../resources/deucalion/deucalion.exe');
 
-  private static readonly MACHINA_KRCN_EXE_PATH = join(app.getAppPath(), '../../resources/MachinaWrapper/krcn/MachinaWrapper.exe');
+  private static readonly MACHINA_EXE_PATH = join(app.getAppPath(), '../../resources/MachinaWrapper/krcn/MachinaWrapper.exe');
 
   private captureInterface: CaptureInterface | KRCNCaptureInterface;
 
@@ -98,13 +105,6 @@ export class PacketCapture {
     return this.store.get<Region>('region', 'Global');
   }
 
-  private get MACHINA_EXE_PATH() {
-    if (this.region === 'Global') {
-      return PacketCapture.MACHINA_GLOBAL_EXE_PATH;
-    }
-    return PacketCapture.MACHINA_KRCN_EXE_PATH;
-  }
-
   constructor(private mainWindow: MainWindow, private store: Store, private options: any) {
     this.mainWindow.closed$.subscribe(() => {
       this.stop();
@@ -113,17 +113,17 @@ export class PacketCapture {
 
   start(): void {
     if (this.store.get('rawsock', false)) {
-      this.startMachina();
+      this.startPcap();
     } else {
       try {
         execSync('Get-Service -Name Npcap', { 'shell': 'powershell.exe', 'timeout': 5000, 'stdio': ['ignore', 'pipe', 'ignore'], 'windowsHide': true });
         log.debug('The Npcap service was detected, starting Machina');
-        this.startMachina();
+        this.startPcap();
       } catch (err) {
         log.error(`Error and/or possible timeout while detecting the Npcap windows service: ${err}`);
         if (err.message.includes('ETIMEDOUT')) {
           log.log(`Starting machina since it's just a timeout`);
-          this.startMachina();
+          this.startPcap();
         } else {
           this.mainWindow.win.webContents.send('install-npcap-prompt', true);
         }
@@ -146,14 +146,17 @@ export class PacketCapture {
       clearTimeout(this.startTimeout);
       delete this.startTimeout;
     }
-    if (this.captureInterface) {
-      return this.captureInterface.stop().catch(err => log.error(err));
+    if (this.captureInterface instanceof KRCNCaptureInterface) {
+      return this.captureInterface.stop();
+    }
+    if (this.captureInterface instanceof CaptureInterface) {
+      this.captureInterface.stop();
     }
     return Promise.resolve();
   }
 
   addMachinaFirewallRule(): void {
-    exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - Machina" dir=in action=allow program="${this.MACHINA_EXE_PATH}" enable=yes`);
+    exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - Machina" dir=in action=allow program="${PacketCapture.MACHINA_EXE_PATH}" enable=yes`);
   }
 
   public registerOverlayListener(id: string, listener: (packet: Message) => void): void {
@@ -170,17 +173,46 @@ export class PacketCapture {
     this.overlayListeners = this.overlayListeners.filter(l => l.id === id);
   }
 
-  sendToRenderer(packet: Message): void {
+  private antiSpam = {
+    timestamp: BigInt(0),
+    seen: []
+  };
+
+  sendToRenderer(packet: Message | KRCNMessage): void {
     if (this.mainWindow?.win) {
       try {
-        this.mainWindow.win.webContents.send('packet', packet);
-        this.overlayListeners.forEach(l => {
-          try {
-            l.listener(packet);
-          } catch (e) {
-            this.unregisterOverlayListener(l.id);
+        // If it's a global packet, apply antispam, this is temporary until deucalion's spam issue is fixed
+        // TODO if block remove once the fix happened on deucalion's end
+        if ((packet as Message).header.ipcTimestamp) {
+          const dPacket = packet as Message;
+          if (this.antiSpam.timestamp < dPacket.header.ipcTimestamp) {
+            this.antiSpam = {
+              timestamp: dPacket.header.ipcTimestamp,
+              seen: []
+            };
           }
-        });
+          const packetHash = `${dPacket.header.ipcTimestamp.toString()}:${dPacket.header.type}:${hash(packet.parsedIpcData)}`;
+          if (!this.antiSpam.seen.includes(packetHash)) {
+            this.antiSpam.seen.push(packetHash);
+            this.mainWindow.win.webContents.send('packet', packet);
+            this.overlayListeners.forEach(l => {
+              try {
+                l.listener(packet);
+              } catch (e) {
+                this.unregisterOverlayListener(l.id);
+              }
+            });
+          }
+        } else {
+          this.mainWindow.win.webContents.send('packet', packet);
+          this.overlayListeners.forEach(l => {
+            try {
+              l.listener(packet);
+            } catch (e) {
+              this.unregisterOverlayListener(l.id);
+            }
+          });
+        }
       } catch (e) {
         log.error(packet);
         log.error(e);
@@ -206,16 +238,96 @@ export class PacketCapture {
     }
   }
 
-  private async startMachina(): Promise<void> {
+  private async startPcap(): Promise<void> {
     if (this.startTimeout) {
       clearTimeout(this.startTimeout);
       delete this.startTimeout;
     }
-    const region = this.store.get('region', 'Global');
-    const rawsock = this.store.get('rawsock', false);
+    const region = this.store.get<Region>('region', 'Global');
 
     this.mainWindow.win.webContents.send('pcap:status', 'starting');
 
+    if (region === 'KR' || region === 'CN') {
+      await this.startKRCNPcap(region);
+    } else {
+      this.startGlobalPcap(region);
+    }
+  }
+
+  private startGlobalPcap(region): void {
+    const options: Partial<CaptureInterfaceOptions> = {
+      region: region,
+      filter: (header, typeName: Message['type']) => {
+        if (header.sourceActor === header.targetActor) {
+          return PacketCapture.ACCEPTED_PACKETS.includes(typeName);
+        }
+        return PacketCapture.PACKETS_FROM_OTHERS.includes(typeName);
+      },
+      logger: message => {
+        if (message.type === 'info' && this.options.verbose) {
+          log.info(message.message);
+        } else if (message.type !== 'info') {
+          log[message.type || 'warn'](message.message);
+        }
+      }
+    };
+
+    if (isDev) {
+      const localDataPath = this.getLocalDataPath();
+      if (localDataPath) {
+        options.localDataPath = localDataPath;
+        log.info('[pcap] Using localOpcodes:', localDataPath);
+      }
+    } else {
+      options.deucalionExePath = PacketCapture.DEUCALION_EXE_PATH;
+    }
+
+    log.info(`Starting PacketCapture with options: ${JSON.stringify(options)}`);
+    this.captureInterface = new CaptureInterface(options);
+    this.captureInterface.on('error', err => {
+      this.mainWindow.win.webContents.send('pcap:status', 'error');
+      this.mainWindow.win.webContents.send('pcap:error:raw', {
+        message: err
+      });
+      log.error(err);
+    });
+    this.captureInterface.setMaxListeners(0);
+    this.captureInterface.on('message', (message) => {
+      if (this.options.verbose) {
+        log.log(JSON.stringify(message));
+      }
+      this.sendToRenderer(message);
+    });
+    this.captureInterface.on('ready', () => {
+      // Give it 200ms to make sure pipe is created
+      setTimeout(() => {
+        this.captureInterface.start()
+          .then(() => {
+            this.mainWindow.win.webContents.send('pcap:status', 'running');
+            log.info('Packet capture started');
+          }).catch(err => {
+          this.mainWindow.win.webContents.send('pcap:status', 'error');
+          log.error(`Couldn't start packet capture`);
+          log.error(err);
+          if (err.includes(DeucalionErrors.ERR_GAME_NOT_RUNNING)) {
+            this.mainWindow.win.webContents.send('pcap:error', {
+              message: 'ERR_GAME_NOT_RUNNING',
+              retryDelay: 60
+            });
+          } else {
+            this.mainWindow.win.webContents.send('pcap:error', {
+              message: 'Default',
+              retryDelay: 60
+            });
+          }
+          this.onStartError();
+        });
+      }, 200);
+    });
+  }
+
+  private async startKRCNPcap(region: Region) {
+    const rawsock = this.store.get('rawsock', false);
     if (rawsock) {
       const elevated = await isElevated();
       if (!elevated) {
@@ -233,7 +345,7 @@ export class PacketCapture {
       });
     }
 
-    const options: Partial<CaptureInterfaceOptions> = {
+    const options: Partial<KRCNCaptureInterfaceOptions> = {
       monitorType: rawsock ? 'RawSocket' : 'WinPCap',
       region: region,
       filter: (header, typeName: Message['type']) => {
@@ -262,11 +374,11 @@ export class PacketCapture {
         log.info('[pcap] Using localOpcodes:', localDataPath);
       }
     } else {
-      options.exePath = this.MACHINA_EXE_PATH;
+      options.exePath = PacketCapture.MACHINA_EXE_PATH;
     }
 
     log.info(`Starting PacketCapture with options: ${JSON.stringify(options)}`);
-    this.captureInterface = new CaptureInterface(options);
+    this.captureInterface = new KRCNCaptureInterface(options);
     this.captureInterface.on('error', err => {
       this.mainWindow.win.webContents.send('pcap:status', 'error');
       this.mainWindow.win.webContents.send('machina:error:raw', {

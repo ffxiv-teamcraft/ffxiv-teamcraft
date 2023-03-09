@@ -235,7 +235,7 @@ export class IpcListenersManager {
       }
     });
 
-    this.twoWayBinding('toggle-machina', 'machina', enabled => {
+    this.twoWayBinding('toggle-pcap', 'machina', enabled => {
       if (enabled) {
         this.pcap.start();
       } else {

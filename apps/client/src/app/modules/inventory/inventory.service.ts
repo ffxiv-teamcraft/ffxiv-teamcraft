@@ -103,7 +103,7 @@ export class InventoryService {
               private settings: SettingsService, private modal: NzModalService,
               private lazyData: LazyDataFacade, private platform: PlatformService) {
     if (!this.platform.isDesktop()) {
-      this.inventory$ = of(new UserInventory())
+      this.inventory$ = of(new UserInventory());
       return;
     }
     this.retainerInformations$.connect();
@@ -120,7 +120,9 @@ export class InventoryService {
       this.odr$.next(odr);
     });
 
-    const itemInfoMessages$ = this.ipc.packets$.pipe(ofMessageType('itemInfo'));
+    const itemInfoMessages$ = this.ipc.packets$.pipe(
+      ofMessageType('itemInfo')
+    );
     const containerInfoMessages$ = this.ipc.packets$.pipe(ofMessageType('containerInfo'));
     const currencyCrystalInfoMessages$ = this.ipc.packets$.pipe(ofMessageType('currencyCrystalInfo'));
     const inventoryModifyHandlerMessages$ = this.ipc.packets$.pipe(ofMessageType('inventoryModifyHandler'));
