@@ -1,6 +1,8 @@
 export const patchNotes = `### Bug Fixes
 
-* **db:** fixed some trades using HQ tomestone or tomestone instead of white scrips.
-* **desktop:** fixed heartbeat check for packet capture.
-* **desktop:** packet capture support for 6.35.
-* **list:** fixed mouseup triggering navigation on masterbook icons.`;
+* **desktop:** better error message for when deucalion has been deleted by AV.
+* **desktop:** fixed extra 0 in debounceTime call for missing packets detection.
+* **desktop:** multiple fixes and QoL improvements for new packet capture system.
+* **list-details:** add loporite carrots as available trade sources.
+* **list-details:** fixed trades details popup not opening.
+* **list-details:** fixed white scrips showing instead of tomestones in some trades.`;
