@@ -373,8 +373,17 @@ export class IpcService {
     this.on('pcap:error', (event, error: { message: string, retryDelay: number }) => {
       this.handlePcapError(error);
     });
-    this.on('pcap:error:raw', (event, error: { message: string, retryDelay: number }) => {
+    this.on('pcap:error:raw', (event, error: { message: string, code?: string, retryDelay: number }) => {
       console.log(error.message);
+      if (error.code === 'DEUCALION_NOT_FOUND') {
+        this.notification.error(
+          this.translate.instant(`PCAP_ERRORS.Default`),
+          this.translate.instant(`PCAP_ERRORS.DEUCALION_NOT_FOUND`),
+          {
+            nzDuration: 60000
+          }
+        );
+      }
     });
     this.on('metrics:importing', () => {
       this.message.info(this.translate.instant('METRICS.Importing'), {
