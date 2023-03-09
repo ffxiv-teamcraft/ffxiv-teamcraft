@@ -2077,10 +2077,10 @@
   dependencies:
     heap-js "^2.1.5"
 
-"@ffxiv-teamcraft/pcap-ffxiv@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.0.0.tgz#cf395f3f8707a794b30e49973b3155f0c6af4674"
-  integrity sha512-QjyfOUKVpw6uTdTcVcVMupHaUr/nDO4nZrkk1fkBd1csyr1A9ICX2tCDZyR9Ll77opfSMdDVQshs6ma4KIt7KA==
+"@ffxiv-teamcraft/pcap-ffxiv@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.0.1.tgz#cebe7b75ae4cb74c037e30f7e449cdb1fd8bc1a1"
+  integrity sha512-uULHDaCMG/BoWJkCsPli9ZopZfJP3IQDmtBpDyGsnADJ+WoJlbWFzUYlIM0KoIxPE+kIbtMzLbRpdG/lBcQYJQ==
 
 "@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@3.0.14", "@ffxiv-teamcraft/simulator-kr@npm:@ffxiv-teamcraft/simulator@3.0.14":
   version "3.0.14"
