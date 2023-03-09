@@ -3022,6 +3022,14 @@
       "Wrapper_failed_to_start": "게임이 실행 중인지, 그리고 관리자 권한으로 실행되었는지 확인해 주세요 (이 경우에는 팀크래프트앱을 관리자 권한으로 실행해 주세요).<br>만약 이 문제가 계속 지속된다면 팀크래프트 디스코드 #troubleshooting 채널에 오류 메세지와 함께 스크린샷을 올려주세요.<br><br> {{retryDelay}}초 후에 재시도"
     }
   },
+  "PCAP_ERRORS": {
+    "Default": "Packet Capture error",
+    "ERR_GAME_NOT_RUNNING": "Packet capture failed to start",
+    "DESCRIPTION": {
+      "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.<br><br> Retrying in {{retryDelay}}s",
+      "ERR_GAME_NOT_RUNNING": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.<br><br> Retrying in {{retryDelay}}s"
+    }
+  },
   "ISLAND_SANCTUARY": {
     "Animal_source": "당신은 이 아이템을 무인도 목장의 동물들에게서 채집해야 합니다",
     "Island_level": "개척 랭크",
