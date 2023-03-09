@@ -189,11 +189,11 @@ export class ShopsExtractor extends AbstractExtractor {
                 entry.id = StaticData.CURRENCIES[entry.id] || entry.id;
               }
 
-              if ([2, 4].includes(specialShop.UseCurrencyType) && entry.id < 10) {
+              if ([2].includes(specialShop.UseCurrencyType) && entry.id < 10) {
                 entry.id = { ...StaticData.CURRENCIES }[entry.id];
               }
 
-              if ([16].includes(specialShop.UseCurrencyType) && entry.id < 10) {
+              if ([16, 4].includes(specialShop.UseCurrencyType) && entry.id < 10) {
                 entry.id = { ...StaticData.CURRENCIES, ...StaticData.TOMESTONES }[entry.id];
               }
               return entry;
