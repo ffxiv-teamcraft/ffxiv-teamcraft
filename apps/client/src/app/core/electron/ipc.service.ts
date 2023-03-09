@@ -473,13 +473,13 @@ export class IpcService {
         });
     });
     this.on('pcap:status', (e, status) => this.pcapStatus$.next(status));
-    // If we don't get a packet for an entire minute, something is wrong.
+    // If we don't get a packet for two entire minutes, something is wrong.
     this.packets$.pipe(
       skipUntil(this.pcapToggle$.pipe(
         filter(Boolean)
       )),
       startWith(null),
-      debounceTime(1200000)
+      debounceTime(120000)
     ).subscribe(() => {
       this.pcapStatus$.next(PacketCaptureStatus.ERROR);
       this.send('log', {
