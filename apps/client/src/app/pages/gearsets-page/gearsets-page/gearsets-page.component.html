@@ -16,10 +16,10 @@
       <button nz-button (click)="importLodestoneGearset()">{{'GEARSETS.Import_from_lodestone' | translate}}</button>
     </div>
     <div>
-      <button nz-button *ngIf="machinaToggle" (click)="importFromPcap()">{{'GEARSETS.Import_using_pcap' | translate}}</button>
+      <button nz-button *ngIf="pcapToggle" (click)="importFromPcap()">{{'GEARSETS.Import_using_pcap' | translate}}</button>
     </div>
     <div>
-      <button nz-button *ngIf="machinaToggle" (click)="syncFromPcap()">{{'GEARSETS.Sync_with_pcap' | translate}}</button>
+      <button nz-button *ngIf="pcapToggle" (click)="syncFromPcap()">{{'GEARSETS.Sync_with_pcap' | translate}}</button>
     </div>
   </div>
 

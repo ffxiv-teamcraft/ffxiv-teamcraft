@@ -5,7 +5,7 @@
         <nz-divider [nzText]="'DB.FISH.Hooksets' | translate" nzOrientation="left"></nz-divider>
       </div>
       <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center" *ngFor="let row of hooksets$ | async">
-        <img src="{{ row.hookset | actionIcon | xivapiIcon }}" alt="" class="round-icon" />
+        <img src="{{ row.hookset | actionIcon | xivapiIcon }}" alt="" class="round-icon img-icon" />
         <div>
           <div>{{ row.hookset | actionName | i18n }}</div>
           <div>{{ row.percent | number: '1.0-1' }}%</div>

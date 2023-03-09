@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "10.3.9",
+  "version": "10.3.10",
   "license": "MIT",
   "main": "dist/apps/electron/src/main.js",
   "build": {
@@ -17,8 +17,8 @@
     ],
     "extraResources": [
       {
-        "from": "./node_modules/@ffxiv-teamcraft/pcap-ffxiv/lib/MachinaWrapper",
-        "to": "MachinaWrapper",
+        "from": "./node_modules/@ffxiv-teamcraft/pcap-ffxiv/lib/deucalion",
+        "to": "deucalion",
         "filter": [
           "**/*"
         ]
@@ -119,7 +119,7 @@
   },
   "private": true,
   "dependencies": {
-    "@ffxiv-teamcraft/pcap-ffxiv": "0.11.13",
+    "@ffxiv-teamcraft/pcap-ffxiv": "1.0.0",
     "@ffxiv-teamcraft/pcap-ffxiv-krcn": "npm:@ffxiv-teamcraft/pcap-ffxiv@0.11.5",
     "@ungap/structured-clone": "^1.0.1",
     "@xivapi/nodestone": "^0.2.5",

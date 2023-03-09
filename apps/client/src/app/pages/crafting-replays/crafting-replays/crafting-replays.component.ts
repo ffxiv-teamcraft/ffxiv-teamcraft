@@ -34,7 +34,7 @@ export class CraftingReplaysComponent {
 
   public showStatWarning$ = this.craftingReplayService.stats$.pipe(
     startWith(false),
-    map(stats => !stats && this.ipc.machinaToggle)
+    map(stats => !stats && this.ipc.pcapToggle)
   );
 
   public userId$ = this.authFacade.userId$;

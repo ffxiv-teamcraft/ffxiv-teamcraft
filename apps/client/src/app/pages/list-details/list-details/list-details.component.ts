@@ -155,10 +155,10 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
               public settings: SettingsService, public platform: PlatformService, private commissionsFacade: CommissionsFacade,
               private analyticsService: AnalyticsService) {
     super(seoService);
-    this.ipc.once('toggle-machina:value', (event, value) => {
+    this.ipc.once('toggle-pcap:value', (event, value) => {
       this.machinaToggle = value;
     });
-    this.ipc.send('toggle-machina:get');
+    this.ipc.send('toggle-pcap:get');
     this.layouts$ = this.layoutsFacade.allLayouts$;
     this.selectedLayout$ = this.layoutsFacade.selectedLayout$;
     this.finalItemsRow$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$]).pipe(

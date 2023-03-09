@@ -54,7 +54,7 @@ export class SettingsPopupComponent {
 
   disableInitialNavigation = false;
 
-  machinaToggle = false;
+  pcapToggle = false;
 
   startMinimized = false;
 
@@ -176,8 +176,8 @@ export class SettingsPopupComponent {
     this.ipc.once('disable-initial-navigation', (event, value) => {
       this.disableInitialNavigation = value;
     });
-    this.ipc.on('toggle-machina:value', (event, value) => {
-      this.machinaToggle = value;
+    this.ipc.pcapToggle$.subscribe((value) => {
+      this.pcapToggle = value;
     });
     this.ipc.once('start-minimized:value', (event, value) => {
       this.startMinimized = value;
@@ -242,7 +242,6 @@ export class SettingsPopupComponent {
     this.ipc.send('always-on-top:get');
     this.ipc.send('disable-initial-navigation:get');
     this.ipc.send('no-shortcut:get');
-    this.ipc.send('toggle-machina:get');
     this.ipc.send('start-minimized:get');
     this.ipc.send('hardware-acceleration:get');
     this.ipc.send('always-quit:get');
@@ -349,11 +348,11 @@ export class SettingsPopupComponent {
     }
   }
 
-  machinaToggleChange(value: boolean): void {
+  pcapToggleChange(value: boolean): void {
     if (value) {
       this.settings.enableUniversalisSourcing = true;
     }
-    this.ipc.send('toggle-machina', value);
+    this.ipc.send('toggle-pcap', value);
   }
 
   rawsockChange(value: boolean): void {

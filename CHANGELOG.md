@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.3.10"></a>
+## [10.3.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.9...v10.3.10) (2023-03-09)
+
+
+### Bug Fixes
+
+* **db:** fixed some trades using HQ tomestone or tomestone instead of white scrips ([339dcb6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/339dcb6))
+* **desktop:** fixed heartbeat check for packet capture ([37ab516](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/37ab516))
+* **desktop:** packet capture support for 6.35 ([3b10693](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3b10693))
+* **list:** fixed mouseup triggering navigation on masterbook icons ([bf1097a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bf1097a)), closes [#2509](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2509)
+
+
+
 <a name="10.3.9"></a>
 ## [10.3.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.8...v10.3.9) (2023-03-07)
 

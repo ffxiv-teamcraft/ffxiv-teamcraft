@@ -45,7 +45,7 @@
     </div>
     <div [nzGutter]="10" nz-row>
       <div [nzXXl]="12" [nzXs]="24" class="profile-card" nz-col>
-        <nz-card [nzExtra]="ipc.machinaToggle?autoFill:null" [nzTitle]="'PROFILE.Jobs' | translate">
+        <nz-card [nzExtra]="ipc.pcapToggle?autoFill:null" [nzTitle]="'PROFILE.Jobs' | translate">
           <ng-template #autoFill>
             <button (click)="openAutoFillPopup()" [nzTooltipTitle]="'PROFILE.Autofill_from_packets' | translate" nz-button nz-tooltip nzShape="circle"
                     nzType="primary">

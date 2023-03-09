@@ -9,7 +9,7 @@
     <button nz-button (click)="importState()">
       <span nz-icon nzType="upload" nzTheme="outline"></span> {{'ISLAND_SANCTUARY.WORKSHOP.Import_state' | translate}}
     </button>
-    <ng-container *ngIf="!machinaToggle">
+    <ng-container *ngIf="!pcapToggle">
       <ng-container *ngIf="onlineState$ | async as onlineState">
         <span nz-tooltip
               [nzTooltipTitle]="onlineState.objects.length === 0 ? ('ISLAND_SANCTUARY.WORKSHOP.Online_state_missing' | translate) : null">

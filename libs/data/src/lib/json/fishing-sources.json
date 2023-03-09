@@ -24535,6 +24535,42 @@
       "minGathering": 0
     }
   ],
+  "38792": [
+    {
+      "spot": 204,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 38808,
+      "minGathering": 0
+    }
+  ],
+  "38793": [
+    {
+      "spot": 212,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 38808,
+      "minGathering": 0
+    }
+  ],
+  "38798": [
+    {
+      "spot": 218,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 38808,
+      "minGathering": 0
+    }
+  ],
+  "38799": [
+    {
+      "spot": 225,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 38808,
+      "minGathering": 0
+    }
+  ],
   "38810": [
     {
       "spot": 213,

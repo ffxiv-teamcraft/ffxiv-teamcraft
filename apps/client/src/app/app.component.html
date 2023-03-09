@@ -68,7 +68,7 @@
               </nz-badge>
             </li>
           </ng-container>
-          <li *ngIf="desktop && ipc.machinaToggle">
+          <li *ngIf="desktop && ipc.pcapToggle">
             <ng-template #pcapStatusTpl>
               <div class="flex-row space-between">
                 <div>{{'PACKET_CAPTURE.Pcap' | translate}}</div>
@@ -76,6 +76,9 @@
                   <nz-badge [nzStatus]="pcapStatus"></nz-badge>
                   <button nz-button *ngIf="pcapStatus === 'default'" nzSize="small" nzType="primary" nzShape="circle" (click)="startPcap()">
                     <span nz-icon nzType="caret-right" nzTheme="outline"></span>
+                  </button>
+                  <button nz-button *ngIf="pcapStatus === 'error'" nzSize="small" nzType="primary" nzShape="circle" (click)="startPcap()">
+                    <span nz-icon nzType="reload" nzTheme="outline"></span>
                   </button>
                 </div>
               </div>
@@ -276,13 +279,13 @@
                 <i nz-icon nzType="bell"></i>
               </button>
               <button nz-button nzShape="circle"
-                      *ngIf="ipc.machinaToggle"
+                      *ngIf="ipc.pcapToggle"
                       nz-tooltip [nzTooltipTitle]="'DB.FISH.OVERLAY.Open' | translate"
                       (click)="openOverlay('/fishing-reporter-overlay')" class="button-with-img">
                 <img src="./assets/icons/classjob/fisher.png" alt="">
               </button>
               <button nz-button nzShape="circle"
-                      *ngIf="ipc.machinaToggle && mappy.available"
+                      *ngIf="ipc.pcapToggle && mappy.available"
                       nz-tooltip nzTooltipTitle="Open mappy overlay"
                       (click)="openOverlay('/mappy-overlay')">
                 <i nz-icon nzType="scan" nzTheme="outline"></i>
@@ -326,7 +329,7 @@
               {{'UPDATE.Web_instructions' | translate}}
             </ng-template>
           </nz-alert>
-          <nz-alert *ngIf="ipc.machinaToggle && (pcapOutDated$ | async) && !overlay"
+          <nz-alert *ngIf="ipc.pcapToggle && (pcapOutDated$ | async) && !overlay"
                     [nzMessage]="'PACKET_CAPTURE.Outdated' | translate"
                     [nzDescription]="'PACKET_CAPTURE.Outdated_description' | translate"
                     class="new-version-alert"
@@ -335,7 +338,7 @@
                     nzCloseable
                     nzType="warning">
           </nz-alert>
-          <nz-alert *ngIf="ipc.machinaToggle && !(loggedIn$ | async)"
+          <nz-alert *ngIf="ipc.pcapToggle && !(loggedIn$ | async)"
                     [nzMessage]="'PACKET_CAPTURE.Not_as_anonymous' | translate"
                     [nzDescription]="'PACKET_CAPTURE.Not_as_anonymous_description' | translate"
                     class="new-version-alert"
@@ -357,7 +360,7 @@
             </ng-template>
           </nz-alert>
           <nz-alert (nzOnClose)="settings.hideMachinaBanner = true"
-                    *ngIf="platformService.isDesktop() && !settings.hideMachinaBanner && !ipc.machinaToggle"
+                    *ngIf="platformService.isDesktop() && !settings.hideMachinaBanner && !ipc.pcapToggle"
                     [nzCloseText]="'Close' | translate"
                     [nzDescription]="description"
                     [nzMessage]="'PACKET_CAPTURE.Banner_title' | translate"
@@ -378,19 +381,7 @@
               </div>
             </ng-template>
           </nz-alert>
-          <nz-alert
-            *ngIf="!firewallRuleApplied && platformService.isDesktop() && ipc.machinaToggle && !overlay && (possibleMissingFirewallRule$ | async)  && !(pcapOutDated$ | async)"
-            class="new-version-alert"
-            [nzMessage]="'PACKET_CAPTURE.Possible_missing_firewall_rule' | translate"
-            nzBanner nzCloseable nzType="warning" [nzCloseText]="'Close' | translate"
-            [nzDescription]="pcapFirewallRuleDescription">
-            <ng-template #pcapFirewallRuleDescription>
-              {{'PACKET_CAPTURE.Possible_missing_firewall_rule_description' | translate}}<br>
-              <i>{{'PACKET_CAPTURE.Possible_missing_firewall_rule_check' | translate}}</i><br>
-              <button nz-button (click)="applyFirewallRule()">{{'PACKET_CAPTURE.Add_firewall_rule' | translate}}</button>
-            </ng-template>
-          </nz-alert>
-          <ng-container *ngIf="platformService.isDesktop() && ipc.machinaToggle && !overlay">
+          <ng-container *ngIf="platformService.isDesktop() && ipc.pcapToggle && !overlay">
             <nz-alert *ngIf="emptyInventory$ | async" [nzDescription]="'PACKET_CAPTURE.Please_zone' | translate"
                       [nzMessage]="'PACKET_CAPTURE.Empty_inventory' | translate"
                       class="new-version-alert"
