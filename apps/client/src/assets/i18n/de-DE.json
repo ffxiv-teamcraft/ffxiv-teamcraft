@@ -3022,6 +3022,14 @@
       "Wrapper_failed_to_start": "Bitte stelle sicher, dass das Spiel läuft und nicht als Admininstrator ausgeführt wird (oder, in diesem Fall, TC als Administrator starten).<br>Wenn dieses Problem weiterhin besteht, melde dich bitte an Discords Fehlerbehebungskanal #troubleshooting mit einem Screenshot der obigen Nachrichten.<br><br> Wiederholung in {{retryDelay}}s"
     }
   },
+  "PCAP_ERRORS": {
+    "Default": "Packet Capture error",
+    "ERR_GAME_NOT_RUNNING": "Packet capture failed to start",
+    "DESCRIPTION": {
+      "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.<br><br> Retrying in {{retryDelay}}s",
+      "ERR_GAME_NOT_RUNNING": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.<br><br> Retrying in {{retryDelay}}s"
+    }
+  },
   "ISLAND_SANCTUARY": {
     "Animal_source": "Du musst diesen Gegenstand von einem der folgenden Tiere in der Weide deines Inselparadieses sammeln",
     "Island_level": "Insel Level",
