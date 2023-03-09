@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Pirsch, PirschWebClient } from 'pirsch-sdk/web';
 import { environment } from '../../../environments/environment';
 import { PirschBrowserHit, Scalar } from 'pirsch-sdk';
+import { first } from 'rxjs/operators';
 
 declare const gtag: (...args: any[]) => void;
 
@@ -45,7 +46,15 @@ export class AnalyticsService {
       identificationCode: 'rfKDF2BBvfeaKFFLDuJVri1sV0zh5v4w',
       hostname: 'ffxivteamcraft.com'
     });
-    this.event('init', { app: desktop ? 'electron' : 'web', version: environment.version });
+    if (desktop) {
+      this.ipc.pcapToggle$.pipe(
+        first()
+      ).subscribe(enabled => {
+        this.event('init', { app: 'electron', version: environment.version, pcap: enabled });
+      });
+    } else {
+      this.event('init', { app: 'web', version: environment.version, pcap: false });
+    }
   }
 
   public pageView(url: string): void {
