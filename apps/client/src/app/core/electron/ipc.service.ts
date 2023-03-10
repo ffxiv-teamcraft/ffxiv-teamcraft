@@ -4,7 +4,7 @@ import { IpcRendererEvent } from 'electron';
 import { Router } from '@angular/router';
 import { Vector2 } from '@ffxiv-teamcraft/types';
 import { BehaviorSubject, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, first, map, skipUntil, startWith, switchMap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, first, map, switchMap } from 'rxjs/operators';
 import { ofMessageType } from '../rxjs/of-message-type';
 import { Store } from '@ngrx/store';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -366,11 +366,7 @@ export class IpcService {
     this.on('packet', (event, message: Message) => {
       this.handleMessage(message);
     });
-    // TODO remove once we remove machina
-    this.on('machina:error', (event, error: { message: string, retryDelay: number }) => {
-      this.handleMachinaError(error);
-    });
-    this.on('pcap:error', (event, error: { message: string, retryDelay: number }) => {
+    this.on('pcap:error', (event, error: { message: string }) => {
       this.handlePcapError(error);
     });
     this.on('pcap:error:raw', (event, error: { message: string, code?: string, retryDelay: number }) => {
@@ -482,35 +478,6 @@ export class IpcService {
         });
     });
     this.on('pcap:status', (e, status) => this.pcapStatus$.next(status));
-    // If we don't get a packet for two entire minutes, something is wrong.
-    this.packets$.pipe(
-      skipUntil(this.pcapToggle$.pipe(
-        filter(Boolean)
-      )),
-      startWith(null),
-      debounceTime(120000)
-    ).subscribe(() => {
-      this.pcapStatus$.next(PacketCaptureStatus.ERROR);
-      this.send('log', {
-        level: 'error',
-        data: 'No ping received from the server during 120 seconds'
-      });
-    });
-    // If we don't get a packet for 5 minutes, attempt to restart pcap entirely.
-    this.packets$.pipe(
-      skipUntil(this.pcapToggle$.pipe(
-        filter(Boolean)
-      )),
-      startWith(null),
-      debounceTime(300000)
-    ).subscribe(() => {
-      this.pcapStatus$.next(PacketCaptureStatus.ERROR);
-      this.send('log', {
-        level: 'error',
-        data: 'No ping received from the server during 300 seconds, restarting pcap'
-      });
-      this.send('pcap:restart');
-    });
     this.handleOverlayChange();
   }
 
@@ -555,47 +522,21 @@ export class IpcService {
     }
   }
 
-  /**
-   * @Deprecated bye bye machina
-   * @param error
-   * @param raw
-   * @private
-   */
-  private handleMachinaError(error: { message: string; retryDelay: number }, raw = false): void {
-    if (raw) {
-      this.notification.error(
-        this.translate.instant(`MACHINA_ERRORS.Default`),
-        error.message,
-        {
-          nzDuration: 60000
-        }
-      );
-    } else {
-      this.notification.error(
-        this.translate.instant(`MACHINA_ERRORS.${error.message}`),
-        this.translate.instant(`MACHINA_ERRORS.DESCRIPTION.${error.message}`, { retryDelay: error.retryDelay }),
-        {
-          nzDuration: error.retryDelay * 1000
-        }
-      );
-    }
-  }
-
-  private handlePcapError(error: { message: string; retryDelay: number }, raw = false): void {
+  private handlePcapError(error: { message: string }, raw = false): void {
     if (raw) {
       this.notification.error(
         this.translate.instant(`PCAP_ERRORS.Default`),
         error.message,
         {
-          nzDuration: 60000
+          nzDuration: 20000
         }
       );
     } else {
       this.notification.error(
         this.translate.instant(`PCAP_ERRORS.${error.message}`),
-        this.translate.instant(`PCAP_ERRORS.DESCRIPTION.${error.message}`, { retryDelay: error.retryDelay }),
+        this.translate.instant(`PCAP_ERRORS.DESCRIPTION.${error.message}`),
         {
-          nzDuration: error.retryDelay * 1000
+          nzDuration: 20000
         }
       );
     }

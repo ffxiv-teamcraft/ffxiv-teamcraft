@@ -1,7 +1,7 @@
 defaults: &defaults
   working_directory: ~/ffxiv-teamcraft
   docker:
-    - image: cimg/node:16.14-browsers
+    - image: cimg/node:18.15-browsers
 
 
 version: 2.1
@@ -22,7 +22,7 @@ jobs:
             - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: Install local dependencies
-          command: yarn install --immutable
+          command: yarn install --immutable --ignore-scripts
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
@@ -140,8 +140,6 @@ jobs:
       name: win/default
     working_directory: ~/ffxiv-teamcraft
     steps:
-      - attach_workspace:
-          at: ~/
       - restore_cache:
           keys:
             - v2-deps-{ .Branch }-{ checksum "yarn.lock" }

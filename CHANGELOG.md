@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.3.12"></a>
+## [10.3.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.11...v10.3.12) (2023-03-10)
+
+
+### Bug Fixes
+
+* **db:** allagan reports import and more shop fixes ([6f2c3d2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6f2c3d2))
+* **desktop:** better output for pcap errors, no more auto retry, new button in status when erroring ([ec6f9e0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec6f9e0))
+
+
+### Features
+
+* **desktop:** unified packet capture system for all regions, bye rawsock, bye npcap ([811a123](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/811a123))
+
+
+
 <a name="10.3.11"></a>
 ## [10.3.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.10...v10.3.11) (2023-03-09)
 

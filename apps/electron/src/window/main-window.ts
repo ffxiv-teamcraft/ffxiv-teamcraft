@@ -17,65 +17,63 @@ export class MainWindow {
   }
 
   public constructor(private store: Store, private overlayManager: OverlayManager, private proxyManager: ProxyManager) {
+  }
 
-    app
-      .whenReady()
-      .then(() => {
-        // Modify the user agent for all requests to the following urls.
-        const filter = {
-          urls: [
-            '*://cdn.intergient.com/*',
-            '*://securepubads.g.doubleclick.net/*',
-            '*://tpc.googlesyndication.com/*', // TODO: Still getting file:// ???
-            '*://tpc.googlesyndication.com/*/*',
-            '*://tpc.googlesyndication.com/**',
-            '*://www.googletagservices.com/*',
-            '*://www.googletagservices.com/**'
-          ]
-        };
+  public whenReady(): void {
+    // Modify the user agent for all requests to the following urls.
+    const filter = {
+      urls: [
+        '*://cdn.intergient.com/*',
+        '*://securepubads.g.doubleclick.net/*',
+        '*://tpc.googlesyndication.com/*', // TODO: Still getting file:// ???
+        '*://tpc.googlesyndication.com/*/*',
+        '*://tpc.googlesyndication.com/**',
+        '*://www.googletagservices.com/*',
+        '*://www.googletagservices.com/**'
+      ]
+    };
 
-        // Before sending headers
-        session.defaultSession.webRequest.onBeforeSendHeaders(
-          filter,
-          (details, callback) => {
-            // details.requestHeaders['User-Agent'] = 'MyAgent';
-            details.requestHeaders.referrer = 'https://ffxivteamcraft.com/';
-            details.requestHeaders.origin = 'https://ffxivteamcraft.com/';
+    // Before sending headers
+    session.defaultSession.webRequest.onBeforeSendHeaders(
+      filter,
+      (details, callback) => {
+        // details.requestHeaders['User-Agent'] = 'MyAgent';
+        details.requestHeaders.referrer = 'https://ffxivteamcraft.com/';
+        details.requestHeaders.origin = 'https://ffxivteamcraft.com/';
 
-            details.requestHeaders['sec-ch-ua-mobile'] = 'x-client-data';
+        details.requestHeaders['sec-ch-ua-mobile'] = 'x-client-data';
 
-            details.requestHeaders['sec-ch-ua-mobile'] = '?0';
-            details.requestHeaders['sec-ch-ua-platform'] = 'windows';
+        details.requestHeaders['sec-ch-ua-mobile'] = '?0';
+        details.requestHeaders['sec-ch-ua-platform'] = 'windows';
 
-            details.requestHeaders['sec-ch-ua'] =
-              '"Chromium";v="92", " Not A;Brand";v="99", "Google Chrome";v="92"';
-            details.referrer = 'https://ffxivteamcraft.com/';
-            callback({ requestHeaders: details.requestHeaders });
-          }
-        );
+        details.requestHeaders['sec-ch-ua'] =
+          '"Chromium";v="92", " Not A;Brand";v="99", "Google Chrome";v="92"';
+        details.referrer = 'https://ffxivteamcraft.com/';
+        callback({ requestHeaders: details.requestHeaders });
+      }
+    );
 
 
-        session.defaultSession.webRequest.onBeforeRequest((details, callback) => {
-          // We have to store the url because we're only allowed to call the callback once, so we're gonna edit
-          let url: string = details.url;
-          // First, let's handle request protocol
-          if (url.match(/^file:\/\/[^.\/]*\.[^\/]+\/.+$/mi)) {
-            url = url.replace('file://', 'https://');
-          }
-          // Then, ads request url details containing file protocol
-          if (url.includes('ads?') && url.includes('url=file')) {
-            url = url.replace(/url=file[^&]+/gm, `url=https://ffxivteamcraft.com`);
-          }
-          // If there's a redirect to do, do it !
-          if (url !== details.url) {
-            callback({
-              redirectURL: url
-            });
-          } else {
-            callback({});
-          }
+    session.defaultSession.webRequest.onBeforeRequest((details, callback) => {
+      // We have to store the url because we're only allowed to call the callback once, so we're gonna edit
+      let url: string = details.url;
+      // First, let's handle request protocol
+      if (url.match(/^file:\/\/[^.\/]*\.[^\/]+\/.+$/mi)) {
+        url = url.replace('file://', 'https://');
+      }
+      // Then, ads request url details containing file protocol
+      if (url.includes('ads?') && url.includes('url=file')) {
+        url = url.replace(/url=file[^&]+/gm, `url=https://ffxivteamcraft.com`);
+      }
+      // If there's a redirect to do, do it !
+      if (url !== details.url) {
+        callback({
+          redirectURL: url
         });
-      });
+      } else {
+        callback({});
+      }
+    });
   }
 
   public createWindow(deepLink: string = ''): void {

@@ -59,7 +59,7 @@ export class TrayMenu {
             click: (menuItem) => {
               this.store.set('machina', menuItem.checked);
               if (menuItem.checked) {
-                this.pcap.start();
+                this.pcap.startPcap();
               } else {
                 this.pcap.stop();
               }
