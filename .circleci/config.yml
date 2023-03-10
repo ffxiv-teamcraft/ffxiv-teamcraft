@@ -1,7 +1,7 @@
 defaults: &defaults
-  executor:
-    name: win/default
   working_directory: ~/ffxiv-teamcraft
+  docker:
+    - image: cimg/node:18.15-browsers
 
 
 version: 2.1
@@ -20,6 +20,9 @@ jobs:
           name: Restore Yarn Package Cache
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Removing dll-inject for unix # TODO remove this once we figure out a better way
+          command: yarn remove dll-inject
       - run:
           name: Install local dependencies
           command: yarn install --immutable
@@ -140,8 +143,7 @@ jobs:
       name: win/default
     working_directory: ~/ffxiv-teamcraft
     steps:
-      - attach_workspace:
-          at: ~/
+      - checkout
       - restore_cache:
           keys:
             - v2-deps-{ .Branch }-{ checksum "yarn.lock" }
