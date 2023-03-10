@@ -1,8 +1,9 @@
 export const patchNotes = `### Bug Fixes
 
-* **desktop:** better error message for when deucalion has been deleted by AV.
-* **desktop:** fixed extra 0 in debounceTime call for missing packets detection.
-* **desktop:** multiple fixes and QoL improvements for new packet capture system.
-* **list-details:** add loporite carrots as available trade sources.
-* **list-details:** fixed trades details popup not opening.
-* **list-details:** fixed white scrips showing instead of tomestones in some trades.`;
+* **db:** allagan reports import and more shop fixes.
+* **desktop:** better output for pcap errors, no more auto retry, new button in status when erroring.
+
+
+### Features
+
+* **desktop:** unified packet capture system for all regions, bye rawsock, bye npcap.`;
