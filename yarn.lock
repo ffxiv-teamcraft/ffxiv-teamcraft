@@ -2070,10 +2070,10 @@
   dependencies:
     text-decoding "^1.0.0"
 
-"@ffxiv-teamcraft/pcap-ffxiv@1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.0.4.tgz#d47ac180a6d5d3284bd77ee98f90d78d2fe07188"
-  integrity sha512-rMhVNEj7PhrOAnOaR6vObfqt6ieWeF+/LwdEOMTanIKv8GUh0LUGSdhwDVq09quTBEVBEPBEICsyvN1Qa6yyww==
+"@ffxiv-teamcraft/pcap-ffxiv@1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.0.5.tgz#d1a7b6a13b5c4575cdf1785e0eeb381ab1fee2f1"
+  integrity sha512-i7LgfclpuZFQgamLga10C74QIMipWBfYhUrO94vK2Fuhx0clWdJH1UMY9Cq7fSsFLLhYBO2ZJSPgPHyAEA5Wvg==
   dependencies:
     dll-inject "^0.0.3"
 

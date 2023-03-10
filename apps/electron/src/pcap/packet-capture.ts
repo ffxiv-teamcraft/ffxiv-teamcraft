@@ -1,10 +1,10 @@
 import { MainWindow } from '../window/main-window';
 import { Store } from '../store';
-import { resolve } from 'path';
+import { join, resolve } from 'path';
 import isDev from 'electron-is-dev';
 import log from 'electron-log';
-import { CaptureInterface, CaptureInterfaceOptions, Message, Region } from '@ffxiv-teamcraft/pcap-ffxiv';
-import { DeucalionErrors } from './deucalion-errors';
+import { CaptureInterface, CaptureInterfaceOptions, ErrorCodes, Message, Region } from '@ffxiv-teamcraft/pcap-ffxiv';
+import { app } from 'electron';
 
 export class PacketCapture {
 
@@ -81,10 +81,6 @@ export class PacketCapture {
 
   private captureInterface: CaptureInterface;
 
-  private startTimeout = null;
-
-  private tries = 0;
-
   private overlayListeners = [];
 
   private get region(): Region {
@@ -97,26 +93,16 @@ export class PacketCapture {
     });
   }
 
-  start(): void {
-    this.startPcap();
-  }
-
-  restart(): void {
-    this.tries = 0;
-    this.stop().then(() => {
+  restart() {
+    return this.stop().then(() => {
+      this.mainWindow.win.webContents.send('pcap:status', 'starting');
       setTimeout(() => {
-        this.mainWindow.win.webContents.send('pcap:status', 'starting');
-        this.start();
+        this.startPcap();
       }, 1000);
     });
   }
 
   stop(): Promise<void> {
-    this.mainWindow.win.webContents.send('pcap:status', 'stopped');
-    if (this.startTimeout) {
-      clearTimeout(this.startTimeout);
-      delete this.startTimeout;
-    }
     return this.captureInterface.stop();
   }
 
@@ -170,11 +156,7 @@ export class PacketCapture {
     }
   }
 
-  private async startPcap(): Promise<void> {
-    if (this.startTimeout) {
-      clearTimeout(this.startTimeout);
-      delete this.startTimeout;
-    }
+  public async startPcap(): Promise<void> {
     const region = this.store.get<Region>('region', 'Global');
 
     this.mainWindow.win.webContents.send('pcap:status', 'starting');
@@ -206,6 +188,8 @@ export class PacketCapture {
         options.localDataPath = localDataPath;
         log.info('[pcap] Using localOpcodes:', localDataPath);
       }
+    } else {
+      options.deucalionDllPath = join(app.getAppPath(), '../../deucalion/deucalion.dll');
     }
 
     log.info(`Starting PacketCapture with options: ${JSON.stringify(options)}`);
@@ -216,6 +200,9 @@ export class PacketCapture {
         message: err
       });
       log.error(err);
+    });
+    this.captureInterface.on('stopped', () => {
+      this.mainWindow.win.webContents.send('pcap:status', 'stopped');
     });
     this.captureInterface.setMaxListeners(0);
     this.captureInterface.on('message', (message) => {
@@ -231,39 +218,28 @@ export class PacketCapture {
           .then(() => {
             this.mainWindow.win.webContents.send('pcap:status', 'running');
             log.info('Packet capture started');
-          }).catch(err => {
-          this.mainWindow.win.webContents.send('pcap:status', 'error');
-          log.error(`Couldn't start packet capture`);
-          log.error(err);
-          if (err.includes(DeucalionErrors.ERR_GAME_NOT_RUNNING)) {
-            this.mainWindow.win.webContents.send('pcap:error', {
-              message: 'ERR_GAME_NOT_RUNNING',
-              retryDelay: 60
-            });
-          } else {
-            this.mainWindow.win.webContents.send('pcap:error', {
-              message: 'Default',
-              retryDelay: 60
-            });
-          }
-          this.onStartError();
-        });
+          })
+          .catch((errCode) => {
+            this.mainWindow.win.webContents.send('pcap:status', 'error');
+            log.error(`Couldn't start packet capture`);
+            log.error(ErrorCodes[errCode] || `CODE: ${errCode}`);
+
+            if (errCode === ErrorCodes.GAME_NOT_RUNNING) {
+              this.mainWindow.win.webContents.send('pcap:error', {
+                message: 'ERR_GAME_NOT_RUNNING'
+              });
+            } else if (errCode.toString().includes('ENOENT')) {
+              this.mainWindow.win.webContents.send('pcap:error', {
+                message: 'RESTART_GAME'
+              });
+            } else {
+              this.mainWindow.win.webContents.send('pcap:error', {
+                message: 'Default'
+              });
+            }
+          });
       }, 200);
     });
   }
 
-  private onStartError(): void {
-    console.log('On start error', this.tries);
-    this.tries++;
-    if (this.tries < 3) {
-      console.log('Failed to start pcap, retrying in 60s');
-      if (!this.startTimeout) {
-        this.startTimeout = setTimeout(() => {
-          this.start();
-        }, 60000);
-      }
-    } else {
-      this.stop();
-    }
-  }
 }

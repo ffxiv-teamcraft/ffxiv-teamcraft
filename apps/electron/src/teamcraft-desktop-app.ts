@@ -146,7 +146,7 @@ export class TeamcraftDesktopApp {
           this.mainWindow.win.webContents.send('navigate', deepLink);
         }
         if (this.store.get<boolean>('machina', false) === true) {
-          this.pcap.start();
+          this.pcap.startPcap();
         }
         loaderWindow.hide();
         loaderWindow.close();

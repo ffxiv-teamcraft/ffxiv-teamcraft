@@ -8,12 +8,10 @@ import { OverlayManager } from '../window/overlay-manager';
 import { join } from 'path';
 import { Constants } from '../constants';
 import { TrayMenu } from '../window/tray-menu';
-import { exec } from 'child_process';
-import isDev from 'electron-is-dev';
 import { ProxyManager } from '../tools/proxy-manager';
 import { existsSync, readFile, writeFileSync } from 'fs';
 import { createFileSync, readFileSync } from 'fs-extra';
-import { Character, CharacterSearch } from '@xivapi/nodestone';
+import { CharacterSearch } from '@xivapi/nodestone';
 import ua from 'universal-analytics';
 import { v4 as uuidv4 } from 'uuid';
 import fetch from 'electron-fetch';
@@ -34,11 +32,12 @@ export class IpcListenersManager {
               private trayMenu: TrayMenu, private proxyManager: ProxyManager) {
   }
 
-  private twoWayBinding(event: string, storeFieldName: string, onWrite?: (value) => void, defaultValue?: any) {
+  private twoWayBinding(event: string, storeFieldName: string, onWrite?: (value: any, previous: any) => void, defaultValue?: any) {
     ipcMain.on(event, (e, value) => {
+      const previous = this.store.get(storeFieldName, defaultValue);
       this.store.set(storeFieldName, value);
       if (onWrite) {
-        onWrite(value);
+        onWrite(value, previous);
       }
       e.sender.send(`${event}:value`, value);
     });
@@ -218,10 +217,6 @@ export class IpcListenersManager {
       try {
         if (settings.region && this.store.get('region', 'Global') !== settings.region) {
           this.store.set('region', settings.region);
-
-          if (this.store.get<boolean>('machina', false) === true) {
-            this.pcap.restart();
-          }
         }
 
         this.overlayManager.forEachOverlay(overlay => {
@@ -235,16 +230,12 @@ export class IpcListenersManager {
       }
     });
 
-    this.twoWayBinding('toggle-pcap', 'machina', enabled => {
-      if (enabled) {
-        this.pcap.start();
-      } else {
+    this.twoWayBinding('toggle-pcap', 'machina', (enabled, previous) => {
+      if (enabled && !previous) {
+        this.pcap.startPcap();
+      } else if (!enabled) {
         this.pcap.stop();
       }
-    });
-
-    this.twoWayBinding('rawsock', 'rawsock', () => {
-      this.pcap.restart();
     });
 
     this.twoWayBinding('always-on-top', 'win:alwaysOnTop', (onTop) => {
@@ -270,8 +261,8 @@ export class IpcListenersManager {
       this.mainWindow.win.minimize();
     });
 
-    ipcMain.on('pcap:restart', () => {
-      this.pcap.restart();
+    ipcMain.on('pcap:restart', async () => {
+      await this.pcap.restart();
     });
 
     ipcMain.on('language', (event, lang) => {
