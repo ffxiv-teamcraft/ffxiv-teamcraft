@@ -15,29 +15,6 @@
     "files": [
       "dist"
     ],
-    "extraResources": [
-      {
-        "from": "./node_modules/@ffxiv-teamcraft/pcap-ffxiv/lib/deucalion",
-        "to": "deucalion",
-        "filter": [
-          "**/*"
-        ]
-      },
-      {
-        "from": "./node_modules/@ffxiv-teamcraft/pcap-ffxiv-krcn/lib/MachinaWrapper",
-        "to": "MachinaWrapper/krcn",
-        "filter": [
-          "**/*"
-        ]
-      },
-      {
-        "from": "./desktop",
-        "to": "MachinaWrapper",
-        "filter": [
-          "**/*.exe"
-        ]
-      }
-    ],
     "asarUnpack": "./dist/apps/electron/src/workers/lodestone.js",
     "protocols": {
       "name": "ffxiv-teamcraft",
@@ -119,8 +96,7 @@
   },
   "private": true,
   "dependencies": {
-    "@ffxiv-teamcraft/pcap-ffxiv": "1.0.1",
-    "@ffxiv-teamcraft/pcap-ffxiv-krcn": "npm:@ffxiv-teamcraft/pcap-ffxiv@0.11.5",
+    "@ffxiv-teamcraft/pcap-ffxiv": "1.0.4",
     "@ungap/structured-clone": "^1.0.1",
     "@xivapi/nodestone": "^0.2.5",
     "buffer-reader": "^0.1.0",
@@ -129,12 +105,9 @@
     "electron-log": "^4.4.6",
     "electron-store": "^8.0.1",
     "fs-extra": "^10.0.0",
-    "is-elevated": "^4.0.0",
     "jwt-decode": "^3.1.2",
     "lodash": "^4.17.21",
-    "native-is-elevated": "^0.4.3",
     "ngx-google-analytics": "^11.2.1",
-    "object-hash": "^3.0.0",
     "request": "^2.88.2",
     "rxjs": "~7.5.0",
     "sqlite3": "^5.1.4",
@@ -243,7 +216,7 @@
     "dexie": "^3.2.3",
     "dotenv": "10.0.0",
     "echarts": "^5.4.0",
-    "electron": "^23.1.1",
+    "electron": "23.0.0",
     "electron-builder": "^23.6.0",
     "electron-builder-squirrel-windows": "^23.6.0",
     "enquirer": "^2.3.6",

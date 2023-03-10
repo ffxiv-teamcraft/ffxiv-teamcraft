@@ -286,11 +286,6 @@ export class IpcListenersManager {
   }
 
   private setupToolingListeners(): void {
-    ipcMain.on('machina:firewall:set-rule', (event) => {
-      this.pcap.addMachinaFirewallRule();
-      event.sender.send('machina:firewall:rule-set', true);
-    });
-
     ipcMain.on('show-devtools', () => {
       this.mainWindow.win.webContents.openDevTools();
     });
@@ -333,22 +328,6 @@ export class IpcListenersManager {
     ipcMain.on('zoom-out', () => {
       const currentzoom = this.mainWindow.win.webContents.getZoomLevel();
       this.mainWindow.win.webContents.setZoomLevel(currentzoom - 1);
-    });
-
-    ipcMain.on('install-npcap', () => {
-      const postInstallCallback = (err) => {
-        if (err) {
-          log.error(err);
-        } else {
-          app.relaunch();
-          app.exit();
-        }
-      };
-      if (isDev) {
-        exec(`"${join(__dirname, '../../../../../desktop/npcap-1.70.exe')}"`, postInstallCallback);
-      } else {
-        exec(`"${join(app.getAppPath(), '../../resources/MachinaWrapper/', 'npcap-1.70.exe')}"`, postInstallCallback);
-      }
     });
   }
 
@@ -418,8 +397,6 @@ export class IpcListenersManager {
         }
       });
     });
-
-
   }
 
   private setupFreeCompanyWorkshopsListeners(): void {

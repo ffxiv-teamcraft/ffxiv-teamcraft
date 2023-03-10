@@ -45,19 +45,13 @@ export class SquirrelEventHandler {
         if (!this.store.get('setup:noShortcut', false)) {
           spawnUpdate(['--createShortcut', exeName]);
         }
-        if (this.store.get('rawsock', false)) {
-          this.pcap.addMachinaFirewallRule();
-        }
-        break;
+        return false;
       case '--squirrel-updated':
         // Optionally do things such as:
         // - Add your .exe to the PATH
         // - Write to the registry for things like file associations and
         //   explorer context menus
         // Install desktop and start menu shortcuts
-        if (this.store.get('rawsock', false)) {
-          this.pcap.addMachinaFirewallRule();
-        }
         if (!this.store.get('setup:noShortcut', false)) {
           spawnUpdate(['--createShortcut', exeName]);
         }
@@ -82,5 +76,7 @@ export class SquirrelEventHandler {
         app.quit();
         return true;
     }
+
+    return false;
   }
 }

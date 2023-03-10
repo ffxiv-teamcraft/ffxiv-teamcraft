@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Pirsch, PirschWebClient } from 'pirsch-sdk/web';
 import { environment } from '../../../environments/environment';
 import { PirschBrowserHit, Scalar } from 'pirsch-sdk';
-import { first } from 'rxjs/operators';
+import { first, skip } from 'rxjs/operators';
 
 declare const gtag: (...args: any[]) => void;
 
@@ -48,6 +48,8 @@ export class AnalyticsService {
     });
     if (desktop) {
       this.ipc.pcapToggle$.pipe(
+        // Skip default value as it's a behaviorSubject
+        skip(1),
         first()
       ).subscribe(enabled => {
         this.event('init', { app: 'electron', version: environment.version, pcap: enabled });

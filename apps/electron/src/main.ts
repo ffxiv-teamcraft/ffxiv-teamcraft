@@ -65,15 +65,17 @@ const ipcListenersManager = new IpcListenersManager(pcapManager, overlayManager,
 
 // First of all, handle squirrel events and auto updater
 const squirrelEventHandler = new SquirrelEventHandler(pcapManager, store);
-squirrelEventHandler.handleSquirrelEvent();
+const isUpdating = squirrelEventHandler.handleSquirrelEvent();
 
-const autoUpdater = new AutoUpdater(mainWindow);
-autoUpdater.connectListeners();
+if (!isUpdating) {
+  const autoUpdater = new AutoUpdater(mainWindow);
+  autoUpdater.connectListeners();
 
 // Then, create the Electron application
-const desktopApp = new TeamcraftDesktopApp(mainWindow, trayMenu, store, pcapManager, metrics, argv);
-desktopApp.start();
+  const desktopApp = new TeamcraftDesktopApp(mainWindow, trayMenu, store, pcapManager, metrics, argv);
+  desktopApp.start();
 
 // Then start all our ipc listeners and dat files watcher
-ipcListenersManager.init();
-datFilesWatcher.start();
+  ipcListenersManager.init();
+  datFilesWatcher.start();
+}
