@@ -3012,20 +3012,14 @@
     "Requirement_items_count": "需要物品数",
     "Switch_panel": "切换面板"
   },
-  "MACHINA_ERRORS": {
-    "Default": "Machina Wrapper错误",
-    "Wrapper_failed_to_start": "Machina Wrapper无法启动",
-    "DESCRIPTION": {
-      "Wrapper_failed_to_start": "请确保游戏正在运行（如果以管理员权限启动，TC同样需要管理员权限）<br>如果问题仍然存在，请在discord的 #troubleshooting 频道报告含上述消息的截图。<br><br>将在{{retryDelay}}秒后重试"
-    }
-  },
   "PCAP_ERRORS": {
     "Default": "Packet Capture error",
     "ERR_GAME_NOT_RUNNING": "Packet capture failed to start",
+    "RESTART_GAME": "Packet capture didn't shut down properly",
     "DESCRIPTION": {
-      "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.<br><br> Retrying in {{retryDelay}}s",
-      "ERR_GAME_NOT_RUNNING": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.<br><br> Retrying in {{retryDelay}}s",
-      "DEUCALION_NOT_FOUND": "Your antivirus removed the deucalion.exe file that should be in \"%LocalAppData%\\ffxiv-teamcraft\\app-X.X.X\\resources\\deucalion\", please make sure to whitelist it before restarting Teamcraft."
+      "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.",
+      "ERR_GAME_NOT_RUNNING": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.",
+      "RESTART_GAME": "Please restart the game to be able to run packet capture properly."
     }
   },
   "ISLAND_SANCTUARY": {
