@@ -140,6 +140,8 @@ jobs:
       name: win/default
     working_directory: ~/ffxiv-teamcraft
     steps:
+      - attach_workspace:
+          at: ~/
       - restore_cache:
           keys:
             - v2-deps-{ .Branch }-{ checksum "yarn.lock" }
