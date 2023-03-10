@@ -1,7 +1,7 @@
 defaults: &defaults
+  executor:
+    name: win/default
   working_directory: ~/ffxiv-teamcraft
-  docker:
-    - image: cimg/node:16.14-browsers
 
 
 version: 2.1
