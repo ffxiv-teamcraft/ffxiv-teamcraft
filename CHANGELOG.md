@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.3.13"></a>
+## [10.3.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.12-hotfix...v10.3.13) (2023-03-11)
+
+
+### Bug Fixes
+
+* **desktop:** fixed packet capture not starting when using vanilla launcher ([dea67a0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dea67a0))
+
+
+
 <a name="10.3.12"></a>
 ## [10.3.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.11...v10.3.12) (2023-03-10)
 
