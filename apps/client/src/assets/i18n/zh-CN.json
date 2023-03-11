@@ -135,9 +135,9 @@
     "Search": "搜索"
   },
   "COMMON": {
-    "Play": "Play",
-    "Pause": "Pause",
-    "Speed": "Speed",
+    "Play": "播放",
+    "Pause": "暂停",
+    "Speed": "速度",
     "Done": "完成",
     "Length": "长度",
     "Save": "保存",
@@ -203,7 +203,7 @@
     "Click_to_apply": "应用",
     "Recommended": "推荐",
     "Visibility": "Visibility",
-    "Public": "Public",
+    "Public": "公开",
     "Private": "Private",
     "DAYS": {
       "Monday": "星期一",
@@ -526,7 +526,7 @@
     "Disable_hardware_acceleration": "禁用硬件加速",
     "Housing_map": "房区地图",
     "Housing_map_explain": "你的房屋所在的房区地图",
-    "Reset_linked_characters_ok": "Character links have been reset",
+    "Reset_linked_characters_ok": "已重置角色链接",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
