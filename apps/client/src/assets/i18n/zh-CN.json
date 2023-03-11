@@ -202,9 +202,9 @@
     "Reload": "刷新",
     "Click_to_apply": "应用",
     "Recommended": "推荐",
-    "Visibility": "Visibility",
+    "Visibility": "可见性",
     "Public": "公开",
-    "Private": "Private",
+    "Private": "私人",
     "DAYS": {
       "Monday": "星期一",
       "Tuesday": "星期二",
@@ -567,7 +567,7 @@
       "Retainer_tracker": "雇员探索",
       "Voyage_tracker": "远航探索",
       "Reset_timer": "重置计时器",
-      "Fish_train": "Fish train"
+      "Fish_train": "捕鱼车"
     }
   },
   "PROFILE": {
@@ -793,7 +793,7 @@
       "Toggle_overlay": "打开/关闭步骤模式叠加窗口",
       "Empty_map": "当前地图没有内容，该清单中最近的地图是{{closest}}",
       "Unknown_map": "未知地图，请更换地图以检测数据",
-      "No_list": "No list selected, please open a list in main window to have the overlay work as intended.",
+      "No_list": "未选择列表, 请在主窗口中打开一个列表, 以便悬浮窗如期工作。",
       "Others": "其他"
     },
     "DISPLAY_MODE": {
@@ -817,7 +817,7 @@
       "Layout_name": "布局名称",
       "Invalid_import": "无效的导入码",
       "Global_options": "通用选项",
-      "Default_readonly_message": "This is one of the default layouts and is read-only. Please create a new layout with the + button to customize your layout.",
+      "Default_readonly_message": "这是默认的布局之一，是只读的。请使用 + 按钮创建一个新布局来自定义您的布局。",
       "Buttons": "按钮",
       "Menu": "菜单",
       "Edit_row_buttons_display": "修改物品次级菜单",
@@ -2728,8 +2728,8 @@
     "Go_to_workshop": "进入部队工房",
     "Go_to_workshop_description": "如果已经在工房里，请退出并重新进入",
     "Open_fc_window": "打开部队详细窗口",
-    "Open_fc_window_description": "This will make TC get more important details about your free company, such as server \":\" is the default binding for it.",
-    "Interact_with_ships_subs": "Interact with each Submarine/Airship you want to import",
+    "Open_fc_window_description": "这将使TC 获得更多关于您的部队的重要信息，例如服务器\":\"是默认绑定。",
+    "Interact_with_ships_subs": "与您想要导入的每艘潜水艇/飞空艇互动",
     "Interact_with_ships_subs_description": "打开飞空艇/潜水艇管理窗口，以便Teamcraft收集可供显示的数据",
     "Airships": "飞空艇",
     "Submersibles": "潜水艇"
@@ -3013,15 +3013,15 @@
     "Switch_panel": "切换面板"
   },
   "PCAP_ERRORS": {
-    "Default": "Packet Capture error",
-    "GAME_NOT_RUNNING": "Packet capture failed to start",
-    "RESTART_GAME": "Packet capture didn't shut down properly",
-    "GAME_RUNNING_AS_ADMIN": "Cannot access game process",
+    "Default": "数据包捕获错误",
+    "GAME_NOT_RUNNING": "数据包捕获启动失败",
+    "RESTART_GAME": "数据包捕获未正确关闭",
+    "GAME_RUNNING_AS_ADMIN": "无法访问游戏进程",
     "DESCRIPTION": {
-      "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.",
-      "GAME_NOT_RUNNING": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.",
-      "RESTART_GAME": "Please restart the game to be able to run packet capture properly.",
-      "GAME_RUNNING_AS_ADMIN": "Game is running as admin, please either restart it normally or restart Teamcraft as admin."
+      "Default": "尝试启动数据包捕获时发生未知错误，请在 Discord 的 #troubleshooting 频道上报告。",
+      "GAME_NOT_RUNNING": "请确保游戏正在运行（如果以管理员权限启动，TC同样需要管理员权限）<br>如果问题仍然存在，请在discord的 #troubleshooting 频道报告含上述消息的截图。",
+      "RESTART_GAME": "请重新启动游戏以便能够正确运行数据包捕获。",
+      "GAME_RUNNING_AS_ADMIN": "游戏正以管理员权限运行，请正常重启或以管理员权限重启Teamcraft。"
     }
   },
   "ISLAND_SANCTUARY": {
@@ -3106,11 +3106,11 @@
     }
   },
   "FISH_TRAIN": {
-    "Train": "Fishing train",
-    "Not_found": "Fish train not found",
-    "Route": "Route",
-    "Current_fish": "Current fish",
-    "Details_title": "Fish train #{{id}}",
+    "Train": "捕鱼车",
+    "Not_found": "找不到捕鱼车",
+    "Route": "路线",
+    "Current_fish": "当前鱼",
+    "Details_title": "捕鱼车 #{{id}}",
     "Departure": "Departure: {{time}}",
     "Departure_in": "Departure in {{time}}",
     "Leaving_in": "Closing in {{time}}",
