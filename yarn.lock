@@ -2070,12 +2070,21 @@
   dependencies:
     text-decoding "^1.0.0"
 
-"@ffxiv-teamcraft/pcap-ffxiv@1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.0.5.tgz#d1a7b6a13b5c4575cdf1785e0eeb381ab1fee2f1"
-  integrity sha512-i7LgfclpuZFQgamLga10C74QIMipWBfYhUrO94vK2Fuhx0clWdJH1UMY9Cq7fSsFLLhYBO2ZJSPgPHyAEA5Wvg==
+"@ffxiv-teamcraft/dll-inject@0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/dll-inject/-/dll-inject-0.0.5.tgz#5ceb8b00d7b960dda6b536b6ee3feb21d3babb39"
+  integrity sha512-4qDeL+q/dZY5VtUsnShonIcPx9rqTolpV1GXwCUx62U83Ke4vMRNqWL9p61p6cadIvtCRRnC+8/xhSys+mkAuA==
   dependencies:
-    dll-inject "^0.0.3"
+    bindings "^1.3.0"
+    cross-spawn "^5.1.0"
+    nan "^2.11.1"
+
+"@ffxiv-teamcraft/pcap-ffxiv@1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.0.8.tgz#e0e0903e71f67b70efa82954f812fc6dc394e1bc"
+  integrity sha512-HpaMiNe+U/GcMZ1n5BXELfDCKuBCggKwubRzGgBQVbXQKFmv2NxFdkKN9hOk9aK01njkTmpIbJofppSlwmeUsQ==
+  dependencies:
+    "@ffxiv-teamcraft/dll-inject" "0.0.5"
 
 "@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@3.0.14", "@ffxiv-teamcraft/simulator-kr@npm:@ffxiv-teamcraft/simulator@3.0.14":
   version "3.0.14"
@@ -8088,10 +8097,10 @@ cross-env@^5.1.3:
   dependencies:
     cross-spawn "^6.0.5"
 
-cross-spawn@^5.0.1:
+cross-spawn@^5.0.1, cross-spawn@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
-  integrity sha1-6L0O/uWPz/b4+UUQoKVUu/ojVEk=
+  integrity sha512-pTgQJ5KC0d2hcY8eyL1IzlBPYjTkyH72XRZPnLyKus2mBfNjQs3klqbJU2VILqZryAZUt9JOb3h/mWMy23/f5A==
   dependencies:
     lru-cache "^4.0.1"
     shebang-command "^1.2.0"
@@ -9297,14 +9306,6 @@ dir-glob@^3.0.1:
   integrity sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==
   dependencies:
     path-type "^4.0.0"
-
-dll-inject@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/dll-inject/-/dll-inject-0.0.3.tgz#54261c46c0515590f30d09e9ea26cc4144c1043f"
-  integrity sha512-tWCJ/AweRzPKsghUXm3zqIcZtBhEU8L6su9IkynfudlQUiYoBaJkXrrpizY3GNRbkdcMI5sxycmjoWCOJpYDKQ==
-  dependencies:
-    bindings "^1.3.0"
-    nan "^2.11.1"
 
 dlv@^1.1.3:
   version "1.1.3"

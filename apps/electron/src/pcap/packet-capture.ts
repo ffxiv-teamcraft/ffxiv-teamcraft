@@ -174,11 +174,7 @@ export class PacketCapture {
         return PacketCapture.PACKETS_FROM_OTHERS.includes(typeName);
       },
       logger: message => {
-        if (message.type === 'info' && this.options.verbose) {
-          log.info(message.message);
-        } else if (message.type !== 'info') {
-          log[message.type || 'warn'](message.message);
-        }
+        log[message.type || 'warn'](message.message);
       }
     };
 
@@ -224,9 +220,9 @@ export class PacketCapture {
             log.error(`Couldn't start packet capture`);
             log.error(ErrorCodes[errCode] || `CODE: ${errCode}`);
 
-            if (errCode === ErrorCodes.GAME_NOT_RUNNING) {
+            if (ErrorCodes[errCode]) {
               this.mainWindow.win.webContents.send('pcap:error', {
-                message: 'ERR_GAME_NOT_RUNNING'
+                message: ErrorCodes[errCode]
               });
             } else if (errCode.toString().includes('ENOENT')) {
               this.mainWindow.win.webContents.send('pcap:error', {
