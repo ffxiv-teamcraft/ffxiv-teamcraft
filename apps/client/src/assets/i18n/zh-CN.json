@@ -1678,7 +1678,7 @@
         "Size": "尺寸",
         "Large": "大",
         "Time_since_thrown": "抛竿以来的时间",
-        "Ignored_spot": "报告工具不支持该钓鱼点，可能会显示不正常的数值。",
+        "Ignored_spot": "报告工具不支持该钓场，可能会显示不正常的数值。",
         "Ignored_spot_description": "报告工具不会上传你钓到的鱼",
         "ERRORS": {
           "No_bait": "未检测到钓饵，请重新“选饵”",
@@ -1697,7 +1697,7 @@
       "Include_misses": "包含提钩失败记录",
       "Miss": "提钩失败",
       "Remove_this_bait": "移除该鱼饵",
-      "Bait_removed": "鱼饵已从该钓鱼点移除",
+      "Bait_removed": "钓饵已从该钓场移除",
       "Position_unknown": "未知位置"
     },
     "NODE": {
