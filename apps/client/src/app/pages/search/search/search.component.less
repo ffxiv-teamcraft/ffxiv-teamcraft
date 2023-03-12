@@ -162,11 +162,22 @@
   }
 
   .search-box-footer {
-    font-size: 20px;
-    font-weight: 600;
     cursor: pointer;
     border-top: 1px solid var(--primary-color);
     padding: 8px 14px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media @mobile {
+      flex-direction: column;
+    }
+
+    .search-footer-toggle {
+      font-size: 18px;
+      font-weight: 600;
+    }
   }
 }
 
@@ -188,7 +199,9 @@ app-search-job-picker {
 }
 
 .order-boxes {
-  padding: 0 10px 10px;
+  @media @mobile {
+    flex-direction: column;
+  }
 
   > nz-select {
     min-width: 200px;

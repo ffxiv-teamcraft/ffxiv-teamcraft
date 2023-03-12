@@ -1,25 +1,51 @@
 <div fxLayout="column" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
-  <a class="button guides-button custom-button-color" href="https://guides.ffxivteamcraft.com" nz-button target="_blank">
-    <img src="./assets/guides_logo.png" alt="TC Guides" class="guides-logo">
-    {{"Check_guides" | translate}}
-  </a>
-  <a class="button discord-button custom-button-color" href="https://discord.gg/r6qxt6P" nz-button target="_blank">
-    <i class="fab fa-discord"></i>
-    {{"Join_discord_server" | translate}}
-  </a>
-  <a class="button" href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/latest" nz-button nzType="primary" target="_blank" *ngIf="!platform.isDesktop()">
-    <i nz-icon nzType="download" nzTheme="outline"></i>
-    {{"Download_desktop_app" | translate}}
-  </a>
-  <a class="button" href="https://donorbox.org/ffxiv-teamcraft-funding" nz-button target="_blank">
-    {{"SEARCH_INTRO.Donation_button" | translate}}
-  </a>
-  <a class="button" href="https://ffxiv-teamcraft.redbubble.com/" nz-button target="_blank">
-    {{"SEARCH_INTRO.Buy_merch" | translate}}
-  </a>
   <h1>{{'SEARCH_INTRO.Slogan' | translate}}</h1>
-  <h2
-    *ngIf="counter$ | async as counter">{{'SEARCH_INTRO.Lists_created_counter' | translate: { amount: counter | number:'1.0-0':translate.currentLang } }}</h2>
+  <h2 *ngIf="counter$ | async as counter">{{'SEARCH_INTRO.Lists_created_counter' | translate: { amount: counter | number:'1.0-0':translate.currentLang } }}</h2>
+  <nz-divider class="intro-divider"></nz-divider>
+  <div nz-row [nzGutter]="[10, 10]" class="buttons">
+    <div nz-col [nzXs]="24" [nzXl]="12">
+      <div class="buttons-section">
+        <div>
+          <a class="button guides-button custom-button-color" href="https://guides.ffxivteamcraft.com" nz-button target="_blank">
+            <img src="./assets/guides_logo.png" alt="TC Guides" class="guides-logo">
+            {{"Check_guides" | translate}}
+          </a>
+        </div>
+        <div>
+          <a class="button discord-button custom-button-color" href="https://discord.gg/r6qxt6P" nz-button target="_blank">
+            <i class="fab fa-discord"></i>
+            {{"Join_discord_server" | translate}}
+          </a>
+        </div>
+        <div>
+          <a class="button" href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/latest" nz-button nzType="primary" target="_blank"
+             *ngIf="!platform.isDesktop()">
+            <i nz-icon nzType="download" nzTheme="outline"></i>
+            {{"Download_desktop_app" | translate}}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div nz-col [nzXs]="0" [nzXl]="4">
+      <!-- JUST A SPACER-->
+    </div>
+    <div nz-col [nzXs]="24" [nzXl]="8">
+      <div class="buttons-section end">
+        <div>
+          <a class="button" href="https://tipeee.com/ffxiv-teamcraft/" nz-button target="_blank">
+            {{"SEARCH_INTRO.Donation_button" | translate}}
+          </a>
+        </div>
+        <div>
+          <a class="button" href="https://ffxiv-teamcraft.redbubble.com/" nz-button target="_blank">
+            {{"SEARCH_INTRO.Buy_merch" | translate}}
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
 <div class="list-container" fxLayout="column" fxLayoutAlign="flex-start">
   <nz-list [nzDataSource]="features" [nzHeader]="'SEARCH_INTRO.Features_header' | translate" [nzRenderItem]="featureRow"

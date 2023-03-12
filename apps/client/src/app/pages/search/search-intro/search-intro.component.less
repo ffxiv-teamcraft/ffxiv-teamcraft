@@ -30,6 +30,31 @@ a.patreon {
   width: 250px;
 }
 
+.buttons {
+  width: 100%;
+}
+
+.buttons-section {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  &.end {
+    justify-content: end;
+  }
+
+  @media @tablet, @mobile {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+
+    &.end {
+      justify-content: center;
+    }
+  }
+}
+
 .list-container {
   padding: 0 10%;
   @media @mobile {
