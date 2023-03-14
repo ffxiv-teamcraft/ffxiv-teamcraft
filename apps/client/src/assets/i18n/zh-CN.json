@@ -789,9 +789,9 @@
       "Next_incomplete": "下一张未完成的地图",
       "Global_list_progress": "全局清单进度",
       "Alarms": "限时项目",
-      "Crafts": "清单中的产品",
-      "Toggle_overlay": "打开/关闭步骤模式叠加窗口",
-      "Empty_map": "当前地图没有内容，该清单中最近的地图是{{closest}}",
+      "Crafts": "清单中的制品",
+      "Toggle_overlay": "打开/关闭逐步模式悬浮窗",
+      "Empty_map": "当前地图没有需要采集或者兑换的物品，该清单中最近的地图是{{closest}}",
       "Unknown_map": "未知地图，请更换地图以检测数据",
       "No_list": "未选择列表, 请在主窗口中打开一个列表, 以便悬浮窗如期工作。",
       "Others": "其他"
@@ -801,7 +801,7 @@
       "Full": "完整",
       "Minimalist": "简洁",
       "Step_by_step": "按步骤",
-      "Switched_to_minimalist_large_list": "由于清单过长，显示模式已切换为简略模式。您可以在设置中禁用"
+      "Switched_to_minimalist_large_list": "由于清单过长，显示模式已切换为简略模式。您可以在设置中禁用此设定。"
     },
     "SOURCES": {
       "Gatherable": "可以采集，点击查看更多细节",
@@ -1633,8 +1633,8 @@
       "Bite_time": "咬钩时间",
       "Spots": "钓场",
       "Min_gathering": "采集力要求",
-      "Min_observed_gathering": "有记录的最低采集力",
-      "Min_observed_gathering_explain": "迄今为止的自动报告中的最小值。不代表所需的最低采集力，仅供参考",
+      "Min_observed_gathering": "已记录的最低采集力",
+      "Min_observed_gathering_explain": "迄今为止的自动报告中记录的最小值。不代表采集所需的最低采集力，仅供参考。",
       "Min_size": "最小尺寸",
       "Max_size": "最大尺寸",
       "Avg_size": "平均尺寸",
@@ -2010,8 +2010,8 @@
     "Not_as_anonymous": "在未登录状态下数据包捕获无法正常工作。",
     "Not_as_anonymous_description": "请在界面右上角“匿名”标签悬停，并点击“注册”或在设置内禁用数据包捕获功能。",
     "Status": "数据包捕获状态",
-    "Pcap": "捕获数据包",
-    "Inventory": "物品栏跟踪"
+    "Pcap": "数据包捕获",
+    "Inventory": "物品栏追踪"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "建议将区域更改为 {{region}}",
@@ -2141,7 +2141,7 @@
     "Materia": "魔晶石",
     "Amount_needed": "数量",
     "Slots_used": "槽位数",
-    "Slots_used_explain": "该魔晶石的槽位使用数量",
+    "Slots_used_explain": "使用该魔晶石的槽位数量",
     "Cost": "消耗",
     "Modal_editor": "{{itemName}} 的魔晶石",
     "Unavailable_slot": "此孔不可用",
@@ -2727,7 +2727,7 @@
     "Import_using_pcap": "使用数据包捕获导入",
     "Go_to_workshop": "进入部队工房",
     "Go_to_workshop_description": "如果已经在工房里，请退出并重新进入",
-    "Open_fc_window": "打开部队详细窗口",
+    "Open_fc_window": "打开部队详请窗口",
     "Open_fc_window_description": "这将使TC 获得更多关于您的部队的重要信息，例如服务器\":\"是默认绑定。",
     "Interact_with_ships_subs": "与您想要导入的每艘潜水艇/飞空艇互动",
     "Interact_with_ships_subs_description": "打开飞空艇/潜水艇管理窗口，以便Teamcraft收集可供显示的数据",
