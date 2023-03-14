@@ -475,7 +475,7 @@
     "Enable_autofill_notification_by_default": "默认启用自动填充通知",
     "Enable_autofill_hq_filter": "只将 HQ 物品用于 HQ 需求的自动填充",
     "Enable_autofill_nq_filter": "只将 NQ 物品用于非 HQ 需求的自动填充",
-    "Auto_minimalist_large_lists": "将长清单自动切换到简略模式",
+    "Auto_minimalist_large_lists": "自动将长清单切换到简略模式",
     "Contribute_to_universalis": "向 Universalis 提交数据",
     "Track_items_on_sale": "追踪雇员出售的物品（需要重启应用或刷新页面）",
     "Change_email": "修改电子邮箱",
