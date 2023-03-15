@@ -47,20 +47,3 @@
 
   </div>
 </div>
-<div class="list-container" fxLayout="column" fxLayoutAlign="flex-start">
-  <nz-list [nzDataSource]="features" [nzHeader]="'SEARCH_INTRO.Features_header' | translate" [nzRenderItem]="featureRow"
-           nzSplit="false">
-    <ng-template #featureRow let-feature>
-      <nz-list-item [nzActions]="[navigateTo]">
-        <nz-list-item-meta [nzDescription]="('SEARCH_INTRO.DESCRIPTION.'+feature.description) | translate"
-                           [nzTitle]="feature.title | translate">
-        </nz-list-item-meta>
-        <ng-template #navigateTo>
-          <a pirschEvent="Clicked home page feature button" [routerLink]="feature.link" nz-button nzShape="circle">
-            <i nz-icon nzType="select"></i>
-          </a>
-        </ng-template>
-      </nz-list-item>
-    </ng-template>
-  </nz-list>
-</div>
