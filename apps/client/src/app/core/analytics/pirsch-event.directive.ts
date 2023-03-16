@@ -16,7 +16,7 @@ export class PirschEventDirective {
 
   @HostListener('click')
   onClick(): void {
-    this.analyticsService.event(this.code);
+    this.analyticsService.event(this.code, this.meta);
   }
 
   constructor(private analyticsService: AnalyticsService) {
