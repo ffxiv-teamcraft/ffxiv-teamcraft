@@ -1,5 +1,45 @@
 @import "../../../../styles";
 
+:host ::ng-deep {
+  .ant-card {
+    height: 100%;
+
+    &, .ant-card-head {
+      background-color: var(--topbar-color);
+    }
+  }
+}
+
+.intro-container {
+  padding: 0 40px;
+
+  @media @mobile {
+    padding: 0;
+  }
+}
+
+.guide-row {
+  display: flex;
+  gap: 10px;
+  padding: 5px 0;
+
+  &.with-border {
+    border-bottom: 1px solid #444;
+  }
+
+  .guide-banner {
+    max-height: 100px;
+  }
+
+  .guide-description {
+    margin-bottom: 0 !important;
+  }
+}
+
+.feature-icon {
+  font-size: 32px;
+}
+
 a.patreon {
   background-color: #F96854;
   margin: 10px 0;

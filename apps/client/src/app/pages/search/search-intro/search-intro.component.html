@@ -1,6 +1,7 @@
-<div fxLayout="column" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
-  <h1>{{'SEARCH_INTRO.Slogan' | translate}}</h1>
-  <h2 *ngIf="counter$ | async as counter">{{'SEARCH_INTRO.Lists_created_counter' | translate: { amount: counter | number:'1.0-0':translate.currentLang } }}</h2>
+<div fxLayout="column" fxLayoutAlign="flex-start stretch" fxLayoutGap="10px" class="intro-container">
+  <h1 fxFlexAlign="center">{{'SEARCH_INTRO.Slogan' | translate}}</h1>
+  <h2 fxFlexAlign="center"
+      *ngIf="counter$ | async as counter">{{'SEARCH_INTRO.Lists_created_counter' | translate: {amount: counter | number:'1.0-0':translate.currentLang} }}</h2>
   <nz-divider class="intro-divider"></nz-divider>
   <div nz-row [nzGutter]="[10, 10]" class="buttons">
     <div nz-col [nzXs]="24" [nzXl]="12">
@@ -46,21 +47,54 @@
     </div>
 
   </div>
-</div>
-<div class="list-container" fxLayout="column" fxLayoutAlign="flex-start">
-  <nz-list [nzDataSource]="features" [nzHeader]="'SEARCH_INTRO.Features_header' | translate" [nzRenderItem]="featureRow"
-           nzSplit="false">
-    <ng-template #featureRow let-feature>
-      <nz-list-item [nzActions]="[navigateTo]">
-        <nz-list-item-meta [nzDescription]="('SEARCH_INTRO.DESCRIPTION.'+feature.description) | translate"
-                           [nzTitle]="feature.title | translate">
-        </nz-list-item-meta>
-        <ng-template #navigateTo>
-          <a pirschEvent="Clicked home page feature button" [routerLink]="feature.link" nz-button nzShape="circle">
-            <i nz-icon nzType="select"></i>
-          </a>
-        </ng-template>
-      </nz-list-item>
-    </ng-template>
-  </nz-list>
+  <div fxFlex="1 1 auto" nz-row [nzGutter]="[10, 10]">
+    <div nz-col [nzMd]="24" [nzXXl]="16">
+      <nz-card [nzTitle]="'SEARCH_INTRO.Features_header' | translate">
+
+        <nz-list [nzDataSource]="features" [nzRenderItem]="featureRow"
+                 nzSplit="false">
+          <ng-template #featureRow let-feature>
+            <nz-list-item [nzActions]="[navigateTo]">
+              <nz-list-item-meta [nzDescription]="('SEARCH_INTRO.DESCRIPTION.'+feature.description) | translate"
+                                 [nzTitle]="feature.title | translate" [nzAvatar]="avatarTpl">
+              </nz-list-item-meta>
+              <ng-template #avatarTpl>
+                <div class="feature-icon">
+                  <ng-container [ngSwitch]="feature.icon.type">
+                    <i *ngSwitchCase="SidebarIconType.ANTD" nz-icon [nzType]="feature.icon.content"></i>
+                    <i *ngSwitchCase="SidebarIconType.ANTD_ICONFONT" nz-icon [nzIconfont]="feature.icon.content"></i>
+                    <i *ngSwitchCase="SidebarIconType.COMPANION_SVG" class="companion-svg anticon" [innerHTML]="feature.icon.content"></i>
+                    <i *ngSwitchCase="SidebarIconType.CUSTOM_FONT" class="teamcraft-svg anticon" [innerHTML]="feature.icon.content"></i>
+                    <span *ngSwitchCase="SidebarIconType.CUSTOM" [innerHTML]="feature.icon.content"></span>
+                  </ng-container>
+                </div>
+              </ng-template>
+              <ng-template #navigateTo>
+                <a pirschEvent="Clicked home page feature button" [meta]="feature.link" [routerLink]="feature.link" nz-button nzType="primary">
+                  <i nz-icon nzType="select"></i> {{'SEARCH_INTRO.Open_feature' | translate}}
+                </a>
+              </ng-template>
+            </nz-list-item>
+          </ng-template>
+        </nz-list>
+      </nz-card>
+    </div>
+    <div nz-col [nzMd]="24" [nzXXl]="8">
+      <nz-card [nzTitle]="'SEARCH_INTRO.Featured_guides' | translate">
+        <div class="flex-column gap-5">
+          <div class="guide-row" [class.with-border]="!last" *ngFor="let guide of guides$ | async; last as last">
+            <img src="{{guide.banner}}" alt="{{guide.title}}" class="guide-banner">
+            <div class="flex-column gap-2">
+              <h3>{{guide.title}}</h3>
+              <div nz-typography nzEllipsis [nzEllipsisRows]="2" class="guide-description">{{guide.description}}</div>
+              <a nz-button nzSize="small" nzType="primary" nzBlock href="https://guides.ffxivteamcraft.com/guide/{{guide.slug}}"
+                 pirschEvent="homepage guide click">
+                {{'SEARCH_INTRO.Open_in_guides' | translate}}
+              </a>
+            </div>
+          </div>
+        </div>
+      </nz-card>
+    </div>
+  </div>
 </div>
