@@ -10,6 +10,7 @@ export class TeamcraftGuide extends DataModel {
   published: boolean;
   category: string;
   subCategory: string;
+  slug: string;
 
   updated: number;
   featured: boolean;
