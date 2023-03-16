@@ -1,17 +1,11 @@
 <div fxLayout="column" fxLayoutAlign="flex-start stretch" fxLayoutGap="10px" class="intro-container">
   <h1 fxFlexAlign="center">{{'SEARCH_INTRO.Slogan' | translate}}</h1>
   <h2 fxFlexAlign="center"
-      *ngIf="counter$ | async as counter">{{'SEARCH_INTRO.Lists_created_counter' | translate: {amount: counter | number:'1.0-0':translate.currentLang} }}</h2>
+      *ngIf="counter$ | async as counter">{{'SEARCH_INTRO.Lists_created_counter' | translate: { amount: counter | number:'1.0-0':translate.currentLang } }}</h2>
   <nz-divider class="intro-divider"></nz-divider>
   <div nz-row [nzGutter]="[10, 10]" class="buttons">
     <div nz-col [nzXs]="24" [nzXl]="12">
       <div class="buttons-section">
-        <div>
-          <a class="button guides-button custom-button-color" href="https://guides.ffxivteamcraft.com" nz-button target="_blank">
-            <img src="./assets/guides_logo.png" alt="TC Guides" class="guides-logo">
-            {{"Check_guides" | translate}}
-          </a>
-        </div>
         <div>
           <a class="button discord-button custom-button-color" href="https://discord.gg/r6qxt6P" nz-button target="_blank">
             <i class="fab fa-discord"></i>
@@ -80,7 +74,12 @@
       </nz-card>
     </div>
     <div nz-col [nzMd]="24" [nzXXl]="8">
-      <nz-card [nzTitle]="'SEARCH_INTRO.Featured_guides' | translate">
+      <nz-card [nzTitle]="'SEARCH_INTRO.Featured_guides' | translate" [nzExtra]="openGuidesTpl">
+        <ng-template #openGuidesTpl>
+          <a href="https://guides.ffxivteamcraft.com" nz-button target="_blank" nzType="primary">
+            <i nz-icon nzType="select"></i> {{"Check_guides" | translate}}
+          </a>
+        </ng-template>
         <div class="flex-column gap-5">
           <div class="guide-row" [class.with-border]="!last" *ngFor="let guide of guides$ | async; last as last">
             <img src="{{guide.banner}}" alt="{{guide.title}}" class="guide-banner">
