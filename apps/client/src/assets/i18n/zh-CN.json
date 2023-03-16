@@ -1384,6 +1384,9 @@
     "Donation_button": "进行一次性捐赠",
     "Buy_merch": "购买 Teamcraft 周边",
     "Features_header": "开始吧！",
+    "Open_feature": "Open",
+    "Open_in_guides": "Read",
+    "Featured_guides": "Featured guides",
     "DESCRIPTION": {
       "Lists": "查看所有配方、材料并与您的朋友分享，一切都从创建清单开始！只需要搜索并选中物品就可以开始搓搓搓了。",
       "Public_lists": "从共享社区复制现成的清单。共享社区里有玩家分享的各等级段理符、制作笔记、飞空艇、毕业套等所有你感兴趣的生产清单。",
@@ -1391,7 +1394,8 @@
       "Gathering_location": "寻找采集物品信息，创建闹钟，获得采集点地图位置、最近传送点、所需传承录，还有更多！",
       "Rotations": "使用生产模拟器创建生产手法并即时测试，您还可以使用生产模拟器来检验您的理论手法！",
       "Levequests": "查找特定职业/等级的理符，查看报酬，并创建清单。",
-      "Macro_translation": "拿到一个制作宏但不是你需要的语言？使用宏转换器可以将其转换为任意语言！"
+      "Macro_translation": "拿到一个制作宏但不是你需要的语言？使用宏转换器可以将其转换为任意语言！",
+      "Island_sanctuary": "Optimize your planning and configure it in the island sanctuary workshop planner!"
     }
   },
   "UPDATE": {
