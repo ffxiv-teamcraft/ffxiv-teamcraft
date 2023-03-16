@@ -1384,6 +1384,9 @@
     "Donation_button": "Faites un don unique",
     "Buy_merch": "Acheter un objet Teamcraft",
     "Features_header": "Commencer !",
+    "Open_feature": "Open",
+    "Open_in_guides": "Read",
+    "Featured_guides": "Featured guides",
     "DESCRIPTION": {
       "Lists": "Create lists to get information about all materials, share them with your friends... everything starts here! Just search for an item, expand filters to get specific items, and start crafting things.",
       "Public_lists": "Clone lists created by the community that help you craft things, levekits, airships, BiS gear, everything can be found here.",
@@ -1391,7 +1394,8 @@
       "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required Folklore book, and more!",
       "Rotations": "Créez des rotations pour la synthèse, testez-les dans un simulateur ou créez vos rotations en prévision des nouveaux patchs en utilisant le simulateur configurable !",
       "Levequests": "Find some levequests for a given job and/or level range, see instant benefits on them and create lists for them.",
-      "Macro_translation": "Vous avez des macros mais elles ne sont pas dans votre langue ? Allez sur le traducteur de macro et traduisez-les dans votre langue pour les rendre utilisable dans votre langue de jeu FFXIV !"
+      "Macro_translation": "Vous avez des macros mais elles ne sont pas dans votre langue ? Allez sur le traducteur de macro et traduisez-les dans votre langue pour les rendre utilisable dans votre langue de jeu FFXIV !",
+      "Island_sanctuary": "Optimize your planning and configure it in the island sanctuary workshop planner!"
     }
   },
   "UPDATE": {
