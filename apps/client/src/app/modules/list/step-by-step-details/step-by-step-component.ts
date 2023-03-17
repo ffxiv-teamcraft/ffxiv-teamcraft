@@ -1,5 +1,5 @@
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { BehaviorSubject, combineLatest, map, merge, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, map, Observable } from 'rxjs';
 import { StepByStepDisplayData } from './step-by-step-display-data';
 import { filter, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { DataType, getItemSource, Vector2 } from '@ffxiv-teamcraft/types';
@@ -82,10 +82,19 @@ export abstract class StepByStepComponent extends TeamcraftComponent implements 
     );
 
     // This resets position on map change
-    const position$ = merge(
-      this.selectedMap$.pipe(map(() => null)),
-      this.ipc.updatePositionHandlerPackets$
+    const position$ = combineLatest([
+        this.selectedMap$,
+        this.ipc.updatePositionHandlerPackets$,
+        this.eorzeaFacade.mapId$
+      ]
     ).pipe(
+      map(([selectedMap, position, currentMapId]) => {
+        // TODO this needs some testing, I did it without access to game client.
+        if (selectedMap === currentMapId) {
+          return position;
+        }
+        return null;
+      }),
       startWith(null)
     );
 
