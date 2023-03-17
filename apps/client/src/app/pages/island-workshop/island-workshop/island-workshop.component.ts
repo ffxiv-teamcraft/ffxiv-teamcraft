@@ -449,7 +449,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
                   popularity: state.popularity,
                   predictedPopularity: state.predictedPopularity,
                   start: reset,
-                  lock: user.admin
+                  lock: user.admin || user.trustedMJI
                 });
               }
               return EMPTY;

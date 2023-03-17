@@ -35,6 +35,8 @@ export class TeamcraftUser extends DataModel {
 
   patron = false;
 
+  trustedMJI = false;
+
   // For shared benefits or one-time donations benefits.
   patreonBenefitsUntil: Timestamp;
 
