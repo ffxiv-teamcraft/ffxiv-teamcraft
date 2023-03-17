@@ -89,7 +89,6 @@ export abstract class StepByStepComponent extends TeamcraftComponent implements 
       ]
     ).pipe(
       map(([selectedMap, position, currentMapId]) => {
-        // TODO this needs some testing, I did it without access to game client.
         if (selectedMap === currentMapId) {
           return position;
         }
