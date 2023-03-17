@@ -263,8 +263,8 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
       .sort((a, b) => {
         if (level < this.environment.maxLevel) {
           if ([8, 9, 10, 11, 12, 13, 14, 15].includes(job)) {
-            const aTotalStat = (itemStats[+a].find(s => s.ID === BaseParam.CRAFTSMANSHIP)?.NQ || 0) + (itemStats[+a].find(s => s.ID === BaseParam.CONTROL)?.NQ || 0);
-            const bTotalStat = (itemStats[+b].find(s => s.ID === BaseParam.CRAFTSMANSHIP)?.NQ || 0) + (itemStats[+b].find(s => s.ID === BaseParam.CONTROL)?.NQ || 0);
+            const aTotalStat = this.getMainStatValue(+a, mainStat, equipSlotCategories, job, itemStats);
+            const bTotalStat = this.getMainStatValue(+b, mainStat, equipSlotCategories, job, itemStats);
             if (aTotalStat === bTotalStat) {
               return equipment[b].level - equipment[a].level;
             }
@@ -313,7 +313,8 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
       }
       if ([8, 9, 10, 11, 12, 13, 14, 15].includes(job)) {
         return (itemStats[itemId]?.find(stat => stat.ID === BaseParam.CRAFTSMANSHIP)?.NQ || 0)
-          + (itemStats[itemId]?.find(stat => stat.ID === BaseParam.CONTROL)?.NQ || 0);
+          + (itemStats[itemId]?.find(stat => stat.ID === BaseParam.CONTROL)?.NQ || 0)
+          + (itemStats[itemId]?.find(stat => stat.ID === BaseParam.CP)?.NQ || 0);
       }
     }
 
