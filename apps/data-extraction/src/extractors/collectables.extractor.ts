@@ -185,19 +185,19 @@ export class CollectablesExtractor extends AbstractExtractor {
                     quantity: lowQuantity,
                     rating: lowThreshold,
                     exp: collectable.CollectablesShopRewardScrip.ExpRatioLow,
-                    scrip: collectable.CollectablesShopRewardScrip.LowReward
+                    scrip: shop.RewardType === 2 ? collectable.CollectablesShopRewardScrip.LowReward : lowQuantity
                   },
                   mid: {
                     quantity: midQuantity,
                     rating: midThreshold,
                     exp: collectable.CollectablesShopRewardScrip.ExpRatioMid,
-                    scrip: collectable.CollectablesShopRewardScrip.MidReward
+                    scrip: shop.RewardType === 2 ? collectable.CollectablesShopRewardScrip.MidReward : midQuantity
                   },
                   high: {
                     quantity: highQuantity,
                     rating: highThreshold,
                     exp: collectable.CollectablesShopRewardScrip.ExpRatioHigh,
-                    scrip: collectable.CollectablesShopRewardScrip.HighReward
+                    scrip: shop.RewardType === 2 ? collectable.CollectablesShopRewardScrip.HighReward : highQuantity
                   }
                 };
                 if (+collectable.index < 10) {
