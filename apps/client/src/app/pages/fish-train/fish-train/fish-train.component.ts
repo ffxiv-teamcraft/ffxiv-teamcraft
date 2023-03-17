@@ -59,6 +59,7 @@ export class FishTrainComponent extends TeamcraftComponent {
   );
 
   fishTrainWithLocations$ = this.fishTrain$.pipe(
+    filter(train => !train.notFound),
     switchMap(train => {
       return this.lazyData.getRows('extracts', ...train.fish.map(stop => stop.id)).pipe(
         map(extracts => {
@@ -402,6 +403,10 @@ export class FishTrainComponent extends TeamcraftComponent {
     ];
     const currentSpeed = speeds.indexOf(this.playSpeed$.value);
     this.playSpeed$.next(speeds[(currentSpeed + 1) % speeds.length]);
+  }
+
+  deleteTrain(key: string): void {
+    this.fishTrainFacade.deleteTrain(key);
   }
 
 }

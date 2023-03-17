@@ -51,6 +51,11 @@ export const pureUpdateTrain = createAction(
   props<{ id: string, train: UpdateData<PersistedFishTrain> }>()
 );
 
+export const deleteTrain = createAction(
+  '[FishTrain] Delete FishTrain',
+  props<{ id: string }>()
+);
+
 export const leaveTrain = createAction(
   '[FishTrain] Leave FishTrain',
   props<{ id: string }>()

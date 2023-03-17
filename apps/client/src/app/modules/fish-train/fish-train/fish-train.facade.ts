@@ -4,6 +4,7 @@ import { getAllFishTrains, getAllPublicFishingTrains, getBoardedTrain, getLoaded
 import {
   boardTrain,
   claimConductorRole,
+  deleteTrain,
   leaveTrain,
   loadAllTrains,
   loadFishTrain,
@@ -131,5 +132,9 @@ export class FishTrainFacade {
 
   setTrainWorld(id: string, world: string): void {
     this.store.dispatch(pureUpdateTrain({ id, train: { world } }));
+  }
+
+  deleteTrain(key: string): void {
+    this.store.dispatch(deleteTrain({ id: key }));
   }
 }

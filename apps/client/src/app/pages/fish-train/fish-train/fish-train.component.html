@@ -72,6 +72,10 @@
           <button nz-button nzType="primary" *ngIf="display.currentTrain && platform.isDesktop()" (click)="openFishingOverlay()">
             <span nz-icon nzType="appstore" nzTheme="outline"></span> {{'FISH_TRAIN.Open_fishing_overlay' | translate}}
           </button>
+          <button nz-button nzDanger *ngIf="display.isConductor && !fishTrain.public && display.waiting"
+                  nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="deleteTrain(fishTrain.$key)">
+            <span nz-icon nzType="delete" nzTheme="outline"></span> {{'FISH_TRAIN.Delete_train' | translate}}
+          </button>
         </div>
       </nz-page-header-extra>
     </nz-page-header>

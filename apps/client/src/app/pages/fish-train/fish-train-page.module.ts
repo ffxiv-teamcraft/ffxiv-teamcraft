@@ -36,6 +36,7 @@ import { FishBreakdownComponent } from './fish-breakdown/fish-breakdown.componen
 import { NzAffixModule } from 'ng-zorro-antd/affix';
 import { BaitBreakdownComponent } from './bait-breakdown/bait-breakdown.component';
 import { FishSizeChartComponent } from './fish-size-chart/fish-size-chart.component';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 
 @NgModule({
   declarations: [FishTrainComponent, ContributionPerPassengerComponent, FishBreakdownComponent, BaitBreakdownComponent, FishSizeChartComponent],
@@ -70,7 +71,8 @@ import { FishSizeChartComponent } from './fish-size-chart/fish-size-chart.compon
     NzFormModule,
     NzAlertModule,
     NzSliderModule,
-    NzAffixModule
+    NzAffixModule,
+    NzPopconfirmModule
   ]
 })
 export class FishTrainPageModule {
