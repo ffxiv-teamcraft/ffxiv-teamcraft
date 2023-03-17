@@ -228,6 +228,10 @@ export class PacketCapture {
               this.mainWindow.win.webContents.send('pcap:error', {
                 message: 'RESTART_GAME'
               });
+            } else if(/[^\u0000-\u00ff]/.test(this.captureInterface._options.deucalionDllPath)) {
+              this.mainWindow.win.webContents.send('pcap:error', {
+                message: 'UNICODE_ERROR'
+              });
             } else {
               this.mainWindow.win.webContents.send('pcap:error', {
                 message: 'Default'
