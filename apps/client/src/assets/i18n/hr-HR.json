@@ -3021,11 +3021,13 @@
     "GAME_NOT_RUNNING": "Packet capture failed to start",
     "RESTART_GAME": "Packet capture didn't shut down properly",
     "GAME_RUNNING_AS_ADMIN": "Cannot access game process",
+    "UNICODE_ERROR": "Packet capture path error",
     "DESCRIPTION": {
       "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.",
       "GAME_NOT_RUNNING": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.",
       "RESTART_GAME": "Please restart the game to be able to run packet capture properly.",
-      "GAME_RUNNING_AS_ADMIN": "Game is running as admin, please either restart it normally or restart Teamcraft as admin."
+      "GAME_RUNNING_AS_ADMIN": "Game is running as admin, please either restart it normally or restart Teamcraft as admin.",
+      "UNICODE_ERROR": "Please enable UTF-8 Unicode support in windows language settings before restarting Packet Capture."
     }
   },
   "ISLAND_SANCTUARY": {
