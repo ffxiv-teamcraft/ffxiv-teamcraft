@@ -29,7 +29,7 @@ export class LogTrackerComponent extends TrackerComponent {
 
   private static PAGE_TABS = ['DoH', 'MIN-BTN', 'FSH'];
 
-  public anonymousState$ = this.authFacade.loggedIn$.pipe(map(loggedIn => ({ isAnonymous: !loggedIn })));
+  public anonymousState$ = this.authFacade.loggedIn$.pipe(map(loggedIn => ({isAnonymous: !loggedIn})));
 
   public dohTabs$ = this.lazyData.getEntry('logTrackerPageData').pipe(
     map(log => log.slice(0, 8))
@@ -123,6 +123,9 @@ export class LogTrackerComponent extends TrackerComponent {
     this.settings.hideCompletedLogEntries = hideCompleted;
     this.settings.showNotRequiredLogEntries = showNotRequired;
     const selectedSubTabIndex = [this.dohSubTabIndex, this.dolSubTabIndex][selectedTabIndex];
+    if (selectedTabIndex === undefined || selectedSubTabIndex === undefined) {
+      return;
+    }
     const pages = [dohTabs, dolTabs][selectedTabIndex][selectedSubTabIndex];
     const selectedPageIndex = [this.dohSelectedPage, this.dolSelectedPage][selectedTabIndex];
     const isPageDone = [this.isDoHPageDone, this.isDoLPageDone][selectedTabIndex];
@@ -180,7 +183,7 @@ export class LogTrackerComponent extends TrackerComponent {
   public createList(selection: Record<number, number>): void {
     const recipesToAdd = Object.entries(selection);
     this.listPicker.addToList(...recipesToAdd.map(([recipeId, itemId]) => {
-      return { id: +itemId, recipeId: recipeId, amount: 1 };
+      return {id: +itemId, recipeId: recipeId, amount: 1};
     }));
   }
 
