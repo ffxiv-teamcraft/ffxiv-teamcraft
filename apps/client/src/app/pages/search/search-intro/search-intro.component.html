@@ -64,7 +64,7 @@
                 </div>
               </ng-template>
               <ng-template #navigateTo>
-                <a pirschEvent="Clicked home page feature button" [meta]="feature.link" [routerLink]="feature.link" nz-button nzType="primary">
+                <a pirschEvent="Clicked home page feature button" [meta]="{link: feature.link}" [routerLink]="feature.link" nz-button nzType="primary">
                   <i nz-icon nzType="select"></i> {{'SEARCH_INTRO.Open_feature' | translate}}
                 </a>
               </ng-template>
