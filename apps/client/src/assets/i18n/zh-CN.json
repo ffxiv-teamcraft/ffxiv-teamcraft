@@ -3174,6 +3174,7 @@
     "Fish_breakdown": "按鱼分类",
     "Bait_breakdown": "按钓饵分类",
     "Fish_size_chart": "鱼的尺寸",
-    "Delete_train": "Delete"
+    "Delete_train": "Delete",
+    "Train_not_running": "Train not running"
   }
 }
