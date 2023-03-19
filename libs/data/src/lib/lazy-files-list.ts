@@ -57,7 +57,7 @@ export const lazyFilesList = {
   },
   'collectablesPageData': {
     'fileName': 'collectables-page-data.json',
-    'hashedFileName': 'collectables-page-data.72f81b4ed90069b9cd22813a51aa8b9fe797d9ab.json'
+    'hashedFileName': 'collectables-page-data.d7efa7658aacbbe609e83598ae01bf23555e7884.json'
   },
   'collectablesShopItemGroup': {
     'fileName': 'collectables-shop-item-group.json',
@@ -425,7 +425,7 @@ export const lazyFilesList = {
   },
   'reduction': {
     'fileName': 'reduction.json',
-    'hashedFileName': 'reduction.bf2f1d41b4187ab868d7a6cadb4cb4980a0a177a.json'
+    'hashedFileName': 'reduction.2df885e9e43f7dd64c9750819574c86f2c1a9e6e.json'
   },
   'retainerTasks': {
     'fileName': 'retainer-tasks.json',
@@ -541,7 +541,7 @@ export const lazyFilesList = {
   },
   'voyageSources': {
     'fileName': 'voyage-sources.json',
-    'hashedFileName': 'voyage-sources.b7424a521ad6c765cdd11c36b3640ea5cc02cf24.json'
+    'hashedFileName': 'voyage-sources.b76304e99dd0a4e1b079ed82eb28a5a987736490.json'
   },
   'weathers': {
     'fileName': 'weathers.json',
