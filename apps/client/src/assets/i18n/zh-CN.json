@@ -3021,13 +3021,11 @@
     "GAME_NOT_RUNNING": "数据包捕获启动失败",
     "RESTART_GAME": "数据包捕获未正确关闭",
     "GAME_RUNNING_AS_ADMIN": "无法访问游戏进程",
-    "UNICODE_ERROR": "Packet capture path error",
     "DESCRIPTION": {
       "Default": "尝试启动数据包捕获时发生未知错误，请在 Discord 的 #troubleshooting 频道上报告。",
       "GAME_NOT_RUNNING": "请确保游戏正在运行（如果以管理员权限启动，TC同样需要管理员权限）<br>如果问题仍然存在，请在discord的 #troubleshooting 频道报告含上述消息的截图。",
       "RESTART_GAME": "请重新启动游戏以便能够正确运行数据包捕获。",
-      "GAME_RUNNING_AS_ADMIN": "游戏正以管理员权限运行，请正常重启或以管理员权限重启Teamcraft。",
-      "UNICODE_ERROR": "Please enable UTF-8 Unicode support in windows language settings before restarting Packet Capture."
+      "GAME_RUNNING_AS_ADMIN": "游戏正以管理员权限运行，请正常重启或以管理员权限重启Teamcraft。"
     }
   },
   "ISLAND_SANCTUARY": {
