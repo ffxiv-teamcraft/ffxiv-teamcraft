@@ -1,12 +1,20 @@
-import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
-import { PlatformService } from '../../../core/tools/platform.service';
-import { Database, objectVal, ref } from '@angular/fire/database';
+import {Component} from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
+import {PlatformService} from '../../../core/tools/platform.service';
+import {Database, objectVal, ref} from '@angular/fire/database';
+import {GuidesService} from "../../../core/database/guides.service";
+import {where} from "@angular/fire/firestore";
+import {Observable} from "rxjs";
+import {TeamcraftGuide} from "../../../core/database/guides/teamcraft-guide";
+import {SidebarIconType} from "../../../modules/navigation-sidebar/sidebar-icon-type";
+import {SidebarEntry} from "../../../modules/navigation-sidebar/sidebar-entry";
+import {DomSanitizer} from "@angular/platform-browser";
 
 interface FeatureEntry {
   link: string;
   title: string;
   description: string;
+  icon: SidebarEntry['icon']
 }
 
 @Component({
@@ -16,48 +24,54 @@ interface FeatureEntry {
 })
 export class SearchIntroComponent {
 
-  counter$ = objectVal<string>(ref(this.firebase, 'lists_created'));
+  SidebarIconType = SidebarIconType;
 
   features: FeatureEntry[] = [
     {
       link: '/lists',
       title: 'Lists',
-      description: 'Lists'
-    },
-    {
-      link: '/community-lists',
-      title: 'Public_lists',
-      description: 'Public_lists'
-    },
-    {
-      link: '/alarms',
-      title: 'ALARMS.Title',
-      description: 'Alarms'
+      description: 'Lists',
+      icon: {
+        type: SidebarIconType.ANTD,
+        content: 'profile'
+      },
     },
     {
       link: '/gathering-location',
       title: 'GATHERING_LOCATIONS.Title',
-      description: 'Gathering_location'
+      description: 'Gathering_location',
+      icon: {
+        type: SidebarIconType.ANTD,
+        content: 'environment-o'
+      }
     },
     {
-      link: '/rotations',
-      title: 'SIMULATOR.Rotations',
-      description: 'Rotations'
+      link: '/simulator',
+      title: 'SIMULATOR.Title',
+      description: 'Rotations',
+      icon: {
+        type: SidebarIconType.COMPANION_SVG,
+        content: this.sanitizer.bypassSecurityTrustHtml('&#xF239;')
+      }
     },
     {
-      link: '/levequests',
-      title: 'LEVEQUESTS.Title',
-      description: 'Levequests'
-    },
-    {
-      link: '/macro-translator',
-      title: 'MACRO_TRANSLATION.Title',
-      description: 'Macro_translation'
+      link: '/island-workshop',
+      title: 'SIDEBAR.Island_Sanctuary',
+      description: 'Island_sanctuary',
+      icon: {
+        type: SidebarIconType.ANTD_ICONFONT,
+        content: 'icon-tree'
+      }
     }
   ];
 
+  counter$ = objectVal<string>(ref(this.firebase, 'lists_created'));
+
+  guides$: Observable<TeamcraftGuide[]> = this.guidesService.query(where('featured', "==", true));
+
   constructor(private firebase: Database, public translate: TranslateService,
-              public platform: PlatformService) {
+              public platform: PlatformService, private guidesService: GuidesService,
+              private sanitizer: DomSanitizer) {
   }
 
 }

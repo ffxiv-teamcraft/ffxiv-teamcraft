@@ -59,6 +59,7 @@ export class FishTrainComponent extends TeamcraftComponent {
   );
 
   fishTrainWithLocations$ = this.fishTrain$.pipe(
+    filter(train => !train.notFound),
     switchMap(train => {
       return this.lazyData.getRows('extracts', ...train.fish.map(stop => stop.id)).pipe(
         map(extracts => {
@@ -183,7 +184,9 @@ export class FishTrainComponent extends TeamcraftComponent {
 
   public loggedIn$ = this.authFacade.loggedIn$;
 
-  macroPopoverShown = false;
+  public macroPopoverShown = false;
+
+  public overlay = false;
 
   constructor(private fishTrainFacade: FishTrainFacade, private route: ActivatedRoute,
               private lazyData: LazyDataFacade, private i18n: I18nToolsService,
@@ -213,6 +216,7 @@ export class FishTrainComponent extends TeamcraftComponent {
       first(),
       delayWhen(() => this.translate.get('LOADING'))
     ).subscribe(({ query, train }) => {
+      this.overlay = query.get('overlay') !== null;
       const token = query.get('conductorToken');
       if (token && !train.conductor) {
         if (token === train.conductorToken) {
@@ -402,6 +406,10 @@ export class FishTrainComponent extends TeamcraftComponent {
     ];
     const currentSpeed = speeds.indexOf(this.playSpeed$.value);
     this.playSpeed$.next(speeds[(currentSpeed + 1) % speeds.length]);
+  }
+
+  deleteTrain(key: string): void {
+    this.fishTrainFacade.deleteTrain(key);
   }
 
 }

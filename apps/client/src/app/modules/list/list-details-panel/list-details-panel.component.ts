@@ -12,9 +12,9 @@ import { NavigationMapComponent } from '../../map/navigation-map/navigation-map.
 import { NavigationObjective } from '../../map/navigation-objective';
 import { ListsFacade } from '../+state/lists.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { merge, Observable, of, ReplaySubject } from 'rxjs';
+import { combineLatest, merge, Observable, of, ReplaySubject } from 'rxjs';
 import { ItemPickerService } from '../../item-picker/item-picker.service';
-import { filter, first, map, switchMap, takeUntil } from 'rxjs/operators';
+import { debounceTime, filter, first, map, switchMap, takeUntil } from 'rxjs/operators';
 import { ListManagerService } from '../list-manager.service';
 import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
@@ -37,6 +37,7 @@ import { observeInput } from '../../../core/rxjs/observe-input';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { ProcessedListAggregate } from '../../list-aggregate/model/processed-list-aggregate';
 import { getTiers } from '../../../core/tools/get-tiers';
+import { LayoutRowFilter } from '../../../core/layout/layout-row-filter';
 
 @Component({
   selector: 'app-list-details-panel',
@@ -76,8 +77,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   collapsed = false;
 
   zoneBreakdown: ZoneBreakdown;
-
-  npcBreakdown: NpcBreakdown;
 
   hasTrades = false;
 
@@ -121,6 +120,31 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         })
       );
     })
+  );
+
+  canSkip$: Observable<Record<number, number>> = this.displayRow$.pipe(
+    map(({ rows, filterChain }) => {
+      if (!filterChain.includes(LayoutRowFilter.IS_CRAFT.name)) {
+        return rows.reduce((registry, row) => {
+          return {
+            ...registry,
+            [row.id]: rows.reduce((acc, r) => {
+              const requirement = (r.requires || []).find(req => +req.id === +row.id);
+              if (requirement) {
+                return acc + requirement.amount * ((r.amount_needed || r.amount) - r.done);
+              }
+              return Math.max(acc, 0);
+            }, 0)
+          };
+        }, {});
+      }
+      return {};
+    })
+  );
+
+  npcBreakdown$: Observable<NpcBreakdown> = combineLatest([this.displayRow$, this.canSkip$]).pipe(
+    debounceTime(10),
+    map(([displayRow, canSkip]) => new NpcBreakdown(displayRow.rows, this.lazyData, this.settings.hasAccessToHousingVendors, canSkip))
   );
 
   constructor(private i18n: I18nToolsService, private message: NzMessageService, public translate: TranslateService,
@@ -209,7 +233,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       this.hasNavigationMap = this.getZoneBreakdownPathRows(this.zoneBreakdown).length > 0;
     }
     if (this.displayRow.npcBreakdown) {
-      this.npcBreakdown = new NpcBreakdown(this.displayRow.rows, this.lazyData, this.settings.hasAccessToHousingVendors);
       setTimeout(() => {
         this.cd.detectChanges();
       });

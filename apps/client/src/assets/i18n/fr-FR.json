@@ -448,9 +448,6 @@
     "No_nickname_warning": "Accédez à la page paramètres et configurer un pseudo pour pouvoir utiliser les fonctionnalités exclusives aux supporters patron correctement.",
     "Show_devtools": "Afficher les outils de debug",
     "Clear_cache": "Vider le cache (l'application va redémarrer)",
-    "Add_firewall_rule": "Ajouter une règle de pare-feu pour la capture de paquets",
-    "Installing_npcap": "Installation de Npcap en cours",
-    "Installing_npcap_description": "Pour que la capture de paquets fonctionne, nous devons installer npcap. Assurez-vous de conserver les paramètres par défaut tels qu'ils sont (ne décochez pas la compatibilité avec l'api de winpcap). Teamcraft redémarrera une fois que cela sera terminé.",
     "Enable_item_tags": "Activer les tags d'objets",
     "Show_copy_list_own_list": "Afficher le bouton copie sur les panneaux de mes listes",
     "Custom_theme": "Thème personnalisé",
@@ -3015,19 +3012,16 @@
     "Requirement_items_count": "# of required items",
     "Switch_panel": "Switch panel"
   },
-  "MACHINA_ERRORS": {
-    "Default": "Machina Wrapper error",
-    "Wrapper_failed_to_start": "Machina Wrapper failed to start",
-    "DESCRIPTION": {
-      "Wrapper_failed_to_start": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.<br><br> Retrying in {{retryDelay}}s"
-    }
-  },
   "PCAP_ERRORS": {
     "Default": "Packet Capture error",
-    "ERR_GAME_NOT_RUNNING": "Packet capture failed to start",
+    "GAME_NOT_RUNNING": "Packet capture failed to start",
+    "RESTART_GAME": "Packet capture didn't shut down properly",
+    "GAME_RUNNING_AS_ADMIN": "Cannot access game process",
     "DESCRIPTION": {
-      "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.<br><br> Retrying in {{retryDelay}}s",
-      "ERR_GAME_NOT_RUNNING": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.<br><br> Retrying in {{retryDelay}}s"
+      "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.",
+      "GAME_NOT_RUNNING": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.",
+      "RESTART_GAME": "Please restart the game to be able to run packet capture properly.",
+      "GAME_RUNNING_AS_ADMIN": "Game is running as admin, please either restart it normally or restart Teamcraft as admin."
     }
   },
   "ISLAND_SANCTUARY": {

@@ -122,9 +122,8 @@ export class DiscordWebhookService {
       return;
     } else if (row.done >= totalNeeded && !team.hasSettingEnabled(WebhookSettingType.ITEM_COMPLETION)) {
       return;
-    } else if (row.done < totalNeeded) {
-      amount = row.done;
     }
+    amount = row.done;
     if (!team.hasSettingEnabled(WebhookSettingType.LIST_PROGRESSION) && !finalItem) {
       return;
     }

@@ -5,13 +5,15 @@ import { catchError, filter, map, mergeMap, switchMap, withLatestFrom } from 'rx
 import {
   boardTrain,
   claimConductorRole,
+  deleteTrain,
   leaveTrain,
   loadAllTrains,
   loadFishTrain,
   loadFishTrainNotFound,
   loadFishTrainsSuccess,
   loadFishTrainSuccess,
-  loadRunningTrains, pureUpdateTrain,
+  loadRunningTrains,
+  pureUpdateTrain,
   setFishSlap
 } from './fish-train.actions';
 import { FishTrainService } from '../../../core/database/fish-train.service';
@@ -50,6 +52,13 @@ export class FishTrainEffects {
     return this.actions$.pipe(
       ofType(pureUpdateTrain),
       mergeMap(({ id, train }) => this.fishTrainService.pureUpdate(id, train))
+    );
+  }, { dispatch: false });
+
+  deleteTrain$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(deleteTrain),
+      mergeMap(({ id }) => this.fishTrainService.remove(id))
     );
   }, { dispatch: false });
 

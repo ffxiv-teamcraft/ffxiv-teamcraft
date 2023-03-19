@@ -123,6 +123,9 @@ export class LogTrackerComponent extends TrackerComponent {
     this.settings.hideCompletedLogEntries = hideCompleted;
     this.settings.showNotRequiredLogEntries = showNotRequired;
     const selectedSubTabIndex = [this.dohSubTabIndex, this.dolSubTabIndex][selectedTabIndex];
+    if (selectedTabIndex === undefined || selectedSubTabIndex === undefined) {
+      return;
+    }
     const pages = [dohTabs, dolTabs][selectedTabIndex][selectedSubTabIndex];
     const selectedPageIndex = [this.dohSelectedPage, this.dolSelectedPage][selectedTabIndex];
     const isPageDone = [this.isDoHPageDone, this.isDoLPageDone][selectedTabIndex];

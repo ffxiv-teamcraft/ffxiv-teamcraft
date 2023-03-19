@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.3.14"></a>
+## [10.3.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.13...v10.3.14) (2023-03-19)
+
+
+### Bug Fixes
+
+* **desktop:** fixed a crash after restarting packet capture on new game session ([67d9934](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/67d9934))
+* **desktop:** fixed step by step position not filtered based on map ID ([169e17b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/169e17b))
+* **desktop:** new pcap error message for missing UTF-8 support errors ([9513b3b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9513b3b))
+* **layout:** "can skip" tag is now displayed when not on NPC breakdown display mode ([f7d629d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f7d629d)), closes [#2554](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2554)
+* **leveling-equipment:** fixed DoL/W accessories sometimes shown for DoH jobs ([6288344](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6288344))
+* **search:** fixed É character not handled properly ([c05ef06](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c05ef06))
+* **teams:** fixed list progression message not being consistent on last progression tick ([e9478d5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e9478d5))
+
+
+### Features
+
+* **fish-train:** added embed/overlay display mode enabled by using ?overlay=true in url ([05e1584](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/05e1584))
+* **fish-train:** you can now delete empty waiting fish trains as conductor ([101ec9c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/101ec9c))
+* **search:** new search intro template ([6d6e169](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6d6e169))
+* **ux:** changed the layout of search page's welcome mode ([7e3bf36](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7e3bf36))
+
+
+
 <a name="10.3.13"></a>
 ## [10.3.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.12-hotfix...v10.3.13) (2023-03-11)
 

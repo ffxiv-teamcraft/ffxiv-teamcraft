@@ -319,24 +319,27 @@
         </div>
       </div>
     </div>
-    <div class="search-box-footer" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center"
-         *ngIf="hasAdditionalFilters(searchType)"
-         (click)="showFilters = !showFilters; settings.showSearchFilters = showFilters">
-      <i nz-icon [nzType]="showFilters ? 'eye-invisible' : 'eye'"></i>
-      <div>{{ (showFilters ? 'SEARCH.Hide_filters' : 'SEARCH.Show_filters') | translate}}</div>
-    </div>
-  </div>
+    <div class="search-box-footer"
+         *ngIf="(sortBy$ | async) === true || hasAdditionalFilters(searchType)"
+         (click)="hasAdditionalFilters(searchType) ? toggleFiltersDisplay() : null">
 
-  <div class="order-boxes" fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center center" fxLayoutGap="10px" *ngIf="showSort$ | async">
-    <div>{{'SEARCH.Sort_by' | translate}}</div>
-    <nz-select (ngModelChange)="sortBy$.next($event)" [ngModel]="sortBy$ | async" nzAllowClear>
-      <nz-option *ngFor="let entry of possibleSortEntries$ | async" [nzLabel]="('SEARCH.SORT_BY.'+entry.label) | translate"
-                 [nzValue]="entry.field"></nz-option>
-    </nz-select>
-    <nz-select (ngModelChange)="sortOrder$.next($event)" [ngModel]="sortOrder$ | async">
-      <nz-option [nzLabel]="'SEARCH.Sort_asc' | translate" nzValue="asc"></nz-option>
-      <nz-option [nzLabel]="'SEARCH.Sort_desc' | translate" nzValue="desc"></nz-option>
-    </nz-select>
+      <div *ngIf="hasAdditionalFilters(searchType)" class="flex-row align-center gap-5 search-footer-toggle">
+        <i nz-icon [nzType]="showFilters ? 'eye-invisible' : 'eye'"></i>
+        <div>{{ (showFilters ? 'SEARCH.Hide_filters' : 'SEARCH.Show_filters') | translate}}</div>
+      </div>
+
+      <div class="order-boxes flex-row align-center gap-10" *ngIf="showSort$ | async">
+        <div>{{'SEARCH.Sort_by' | translate}}</div>
+        <nz-select (ngModelChange)="sortBy$.next($event)" [ngModel]="sortBy$ | async" nzAllowClear (click)="$event.stopPropagation()">
+          <nz-option *ngFor="let entry of possibleSortEntries$ | async" [nzLabel]="('SEARCH.SORT_BY.'+entry.label) | translate"
+                     [nzValue]="entry.field"></nz-option>
+        </nz-select>
+        <nz-select (ngModelChange)="sortOrder$.next($event)" [ngModel]="sortOrder$ | async" (click)="$event.stopPropagation()">
+          <nz-option [nzLabel]="'SEARCH.Sort_asc' | translate" nzValue="asc"></nz-option>
+          <nz-option [nzLabel]="'SEARCH.Sort_desc' | translate" nzValue="desc"></nz-option>
+        </nz-select>
+      </div>
+    </div>
   </div>
 </div>
 <div *ngIf="(searchType$ | async) === searchTypes.LEVE" fxLayout="row" fxLayoutAlign="center center">

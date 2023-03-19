@@ -2,7 +2,6 @@ import { DataType, getItemSource, TRADE_SOURCES_PRIORITIES } from '@ffxiv-teamcr
 import { ListRow } from '../../modules/list/model/list-row';
 import { NpcBreakdownRow } from './npc-breakdown-row';
 import { TradeSource } from '../../modules/list/model/trade-source';
-import { TradeIconPipe } from '../../pipes/pipes/trade-icon.pipe';
 import { beastTribeNpcs } from '../../core/data/sources/beast-tribe-npcs';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { from, Observable } from 'rxjs';
@@ -12,13 +11,12 @@ import { Vendor } from '../../modules/list/model/vendor';
 import { TradeNpc } from '../../modules/list/model/trade-npc';
 
 export class NpcBreakdown {
-  private readonly canSkip: Record<number, number> = {};
-
   public rows$: Observable<NpcBreakdownRow[]>;
 
-  constructor(rows: ListRow[], private lazyData: LazyDataFacade, private prioritizeHousingSupplier: boolean) {
+  constructor(rows: ListRow[], private lazyData: LazyDataFacade, private prioritizeHousingSupplier: boolean,
+              private readonly canSkip?: Record<number, number>) {
     // You can skip an item if there's another item requiring it inside the same array
-    this.canSkip = rows.reduce((registry, row) => {
+    this.canSkip = this.canSkip || rows.reduce((registry, row) => {
       return {
         ...registry,
         [row.id]: rows.reduce((acc, r) => {

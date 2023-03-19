@@ -370,6 +370,11 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     return [SearchType.RECIPE, SearchType.ITEM, SearchType.INSTANCE, SearchType.ACTION, SearchType.LEVE, SearchType.TRAIT].includes(searchType);
   }
 
+  toggleFiltersDisplay():void{
+    this.showFilters = !this.showFilters;
+    this.settings.showSearchFilters = this.showFilters
+  }
+
   addFilter(type: 'stats' | 'bonuses'): void {
     (this.filtersForm.get(type) as UntypedFormArray).push(this.fb.group({
       name: ['Strength'],

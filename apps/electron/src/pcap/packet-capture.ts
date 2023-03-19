@@ -103,7 +103,12 @@ export class PacketCapture {
   }
 
   stop(): Promise<void> {
-    return this.captureInterface.stop();
+    if (this.captureInterface) {
+      return this.captureInterface.stop().then(() => {
+        delete this.captureInterface;
+      });
+    }
+    return Promise.resolve();
   }
 
   public registerOverlayListener(id: string, listener: (packet: Message) => void): void {

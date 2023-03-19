@@ -44,7 +44,7 @@ export class SearchController {
     }
     return this.searchService.search(
       type,
-      query,
+      query.toLowerCase(),
       transformedFilters,
       region,
       lang,
