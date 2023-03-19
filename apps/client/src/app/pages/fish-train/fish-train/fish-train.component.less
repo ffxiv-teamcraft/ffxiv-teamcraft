@@ -23,6 +23,10 @@
 }
 
 app-map {
+  &.overlay {
+    max-width: 700px;
+  }
+
   max-width: 450px;
   margin: auto;
 }
@@ -59,6 +63,11 @@ app-map {
   background-color: var(--topbar-color);
   height: 100%;
   width: 100%;
+
+  &.overlay {
+    height: ~"calc(100vh - 20px)";
+    overflow: auto;
+  }
 
   nz-steps {
     overflow: auto;

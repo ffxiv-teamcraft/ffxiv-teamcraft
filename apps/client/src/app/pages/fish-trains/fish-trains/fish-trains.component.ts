@@ -78,7 +78,7 @@ export class FishTrainsComponent extends TeamcraftComponent {
         })
       );
     }),
-    tap(() => this.cd.markForCheck())
+    tap(() => this.cd.detectChanges())
   );
 
   userTrains$ = combineLatest([

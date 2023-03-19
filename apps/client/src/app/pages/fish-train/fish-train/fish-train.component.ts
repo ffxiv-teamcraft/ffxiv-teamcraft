@@ -184,7 +184,9 @@ export class FishTrainComponent extends TeamcraftComponent {
 
   public loggedIn$ = this.authFacade.loggedIn$;
 
-  macroPopoverShown = false;
+  public macroPopoverShown = false;
+
+  public overlay = false;
 
   constructor(private fishTrainFacade: FishTrainFacade, private route: ActivatedRoute,
               private lazyData: LazyDataFacade, private i18n: I18nToolsService,
@@ -214,6 +216,7 @@ export class FishTrainComponent extends TeamcraftComponent {
       first(),
       delayWhen(() => this.translate.get('LOADING'))
     ).subscribe(({ query, train }) => {
+      this.overlay = query.get('overlay') !== null;
       const token = query.get('conductorToken');
       if (token && !train.conductor) {
         if (token === train.conductorToken) {
