@@ -54,6 +54,15 @@ const trayMenu = new TrayMenu(mainWindow, overlayManager, store, pcapManager);
 const metrics = new MetricsSystem(mainWindow, store);
 const datFilesWatcher = new DatFilesWatcher(mainWindow, store);
 
+['uncaughtException', 'unhandledRejection'].forEach(event => {
+  process.on(event, (message) => {
+    if (message.toString().includes('EBADF')) {
+      return;
+    }
+    log.error(event, message);
+  });
+});
+
 if (options.noHA || store.get('hardware-acceleration', false)) {
   app.disableHardwareAcceleration();
 }

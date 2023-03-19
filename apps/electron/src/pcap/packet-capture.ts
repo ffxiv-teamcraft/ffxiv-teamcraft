@@ -103,7 +103,12 @@ export class PacketCapture {
   }
 
   stop(): Promise<void> {
-    return this.captureInterface.stop();
+    if (this.captureInterface) {
+      return this.captureInterface.stop().then(() => {
+        delete this.captureInterface;
+      });
+    }
+    return Promise.resolve();
   }
 
   public registerOverlayListener(id: string, listener: (packet: Message) => void): void {
@@ -227,10 +232,6 @@ export class PacketCapture {
             } else if (errCode.toString().includes('ENOENT')) {
               this.mainWindow.win.webContents.send('pcap:error', {
                 message: 'RESTART_GAME'
-              });
-            } else if(/[^\u0000-\u00ff]/.test(this.captureInterface._options.deucalionDllPath)) {
-              this.mainWindow.win.webContents.send('pcap:error', {
-                message: 'UNICODE_ERROR'
               });
             } else {
               this.mainWindow.win.webContents.send('pcap:error', {
