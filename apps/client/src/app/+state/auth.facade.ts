@@ -25,7 +25,7 @@ import {
   UpdateUser,
   VerifyCharacter
 } from './auth.actions';
-import { catchError, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
+import { catchError, delay, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { PlatformService } from '../core/tools/platform.service';
 import { IpcService } from '../core/electron/ipc.service';
 import { CharacterLinkPopupComponent } from '../core/auth/character-link-popup/character-link-popup.component';
@@ -57,6 +57,7 @@ import {
 import { Functions, httpsCallable } from '@angular/fire/functions';
 import { lazyLoaded } from '../core/rxjs/lazy-loaded';
 import { isFoundAndDefined } from '../core/rxjs/is-found-and-defined';
+import { IdTokenResult } from '@firebase/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -88,7 +89,7 @@ export class AuthFacade {
 
   favorites$ = this.user$.pipe(map(user => user.favorites));
 
-  idToken$ = this.firebaseAuthState$.pipe(
+  idToken$: Observable<IdTokenResult> = this.firebaseAuthState$.pipe(
     filter(user => user !== null),
     switchMap(user => {
       return from(user.getIdTokenResult())
@@ -103,8 +104,9 @@ export class AuthFacade {
         return from(httpsCallable(this.fns, 'setCustomUserClaims')({
           uid: user.uid
         })).pipe(
+          delay(500),
           switchMap(() => {
-            return from(user.getIdTokenResult(true));
+            return from(user.getIdTokenResult(true)) as Observable<IdTokenResult>;
           })
         );
       }
