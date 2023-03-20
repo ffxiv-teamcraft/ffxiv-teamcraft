@@ -1384,9 +1384,9 @@
     "Donation_button": "进行一次性捐赠",
     "Buy_merch": "购买 Teamcraft 周边",
     "Features_header": "开始吧！",
-    "Open_feature": "Open",
-    "Open_in_guides": "Read",
-    "Featured_guides": "Featured guides",
+    "Open_feature": "打开",
+    "Open_in_guides": "查看",
+    "Featured_guides": "功能指南",
     "DESCRIPTION": {
       "Lists": "查看所有配方、材料并与您的朋友分享，一切都从创建清单开始！只需要搜索并选中物品就可以开始搓搓搓了。",
       "Public_lists": "从共享社区复制现成的清单。共享社区里有玩家分享的各等级段理符、制作笔记、飞空艇、毕业套等所有你感兴趣的生产清单。",
@@ -3174,7 +3174,7 @@
     "Fish_breakdown": "按鱼分类",
     "Bait_breakdown": "按钓饵分类",
     "Fish_size_chart": "鱼的尺寸",
-    "Delete_train": "Delete",
-    "Train_not_running": "Train not running"
+    "Delete_train": "删除",
+    "Train_not_running": "渔车未行车"
   }
 }
