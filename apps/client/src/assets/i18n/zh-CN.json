@@ -1395,7 +1395,7 @@
       "Rotations": "使用生产模拟器创建生产手法并即时测试，您还可以使用生产模拟器来检验您的理论手法！",
       "Levequests": "查找特定职业/等级的理符，查看报酬，并创建清单。",
       "Macro_translation": "拿到一个制作宏但不是你需要的语言？使用宏转换器可以将其转换为任意语言！",
-      "Island_sanctuary": "Optimize your planning and configure it in the island sanctuary workshop planner!"
+      "Island_sanctuary": "优化你的生产计划并在无人岛工房生产计划中配置它！"
     }
   },
   "UPDATE": {
@@ -3032,9 +3032,9 @@
     "Animal_source": "您需要从以下的牧场动物中获取该物品",
     "Island_level": "开拓等级",
     "Landmarks": "地标数量",
-    "Workshop_rank": "工坊等级",
+    "Workshop_rank": "工房等级",
     "WORKSHOP": {
-      "Title": "无人岛工坊",
+      "Title": "无人岛工房",
       "Subtitle": "追踪并管理您的工房",
       "Out_of_sync": "供求状态自上次重置起尚未更新",
       "Out_of_sync_explain": "请在登录后打开供需窗口以更新状态（状态只在第一次窗口打开时更新；如果之前已经打开过，需要重新登录）。如果您没有开启数据包捕获，可以从数据库导入，或者使用其他用户导出的状态。",
@@ -3062,7 +3062,7 @@
       "Unknown_day_planning": "在{{day}}可见",
       "Set_rest_day": "设置为第二个休息日",
       "Import_explain": "您可以在游戏内打开供需窗口以更新数据（需要在桌面端开启数据包捕获）",
-      "Amount_of_workshops": "工坊数量：",
+      "Amount_of_workshops": "工房数量：",
       "Create_list": "为此计划创建一个清单",
       "Exclude_pasture_materials": "排除畜牧物资",
       "Exclude_crop_materials": "排除耕种物资",
