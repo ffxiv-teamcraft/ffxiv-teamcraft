@@ -5,21 +5,29 @@
   <nz-divider class="intro-divider"></nz-divider>
   <div nz-row [nzGutter]="[10, 10]" class="buttons">
     <div nz-col [nzXs]="24" [nzXl]="12">
-      <div class="buttons-section">
-        <div>
+      <div nz-row [nzGutter]="[10, 10]">
+        <div nz-col [nzMd]="8">
           <a class="button discord-button custom-button-color" href="https://discord.gg/r6qxt6P" nz-button target="_blank">
             <i class="fab fa-discord"></i>
             {{"Join_discord_server" | translate}}
           </a>
         </div>
-        <div>
+        <div nz-col [nzMd]="8">
           <a class="button" href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/latest" nz-button nzType="primary" target="_blank"
              *ngIf="!platform.isDesktop()">
             <i nz-icon nzType="download" nzTheme="outline"></i>
             {{"Download_desktop_app" | translate}}
           </a>
         </div>
+        <div nz-col [nzMd]="8">
+          <button class="button patreon-button" nz-button *ngIf="showPatreonButton$ | async" (click)="openSupportPopup()">
+            <img alt="patreon logo" class="patreon-logo"
+                 src="https://c5.patreon.com/external/logo/downloads_logomark_color_on_coral.png">
+            <span>{{'COMMON.Support_us' | translate}}</span>
+          </button>
+        </div>
       </div>
+
     </div>
 
     <div nz-col [nzXs]="0" [nzXl]="4">

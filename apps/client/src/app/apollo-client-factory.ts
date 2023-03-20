@@ -18,7 +18,6 @@ export function apolloClientFactory(httpLink: HttpLink, authFacade: AuthFacade) 
         let idToken = await firstValueFrom(authFacade.idToken$.pipe(
           filter(token => token.claims['https://hasura.io/jwt/claims'] !== undefined)
         ));
-        console.log(idToken);
         // If we're at least 5 minutes from expiration, refresh token
         if (Date.now() - new Date(idToken.expirationTime).getTime() < 60000) {
           idToken = await authFacade.getIdTokenResult(true);
