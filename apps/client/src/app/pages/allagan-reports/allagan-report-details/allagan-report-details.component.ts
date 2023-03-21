@@ -558,7 +558,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
           return of([]);
         } else {
           return registry$.pipe(
-            map(registry => registry.filter(i => this.i18n.getName(i.name).toLowerCase().indexOf(value.toLowerCase()) > -1))
+            map(registry => registry.filter(i => this.i18n.getName(i.name)?.toLowerCase().indexOf(value?.toLowerCase()) > -1))
           );
         }
       })
