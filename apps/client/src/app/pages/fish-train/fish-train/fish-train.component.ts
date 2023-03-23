@@ -179,7 +179,7 @@ export class FishTrainComponent extends TeamcraftComponent {
         marks: display.fish.reduce((acc, fish) => {
           return {
             ...acc,
-            [fish.start]: fishNames[fish.id]
+            [fish.start]: ''
           };
         }, {
           [display.start]: 'Departure',
