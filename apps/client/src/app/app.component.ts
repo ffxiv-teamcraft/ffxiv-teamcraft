@@ -500,6 +500,7 @@ export class AppComponent implements OnInit {
         this.playerMetricsService.start();
         setTimeout(() => {
           this.ipc.send('app-ready', true);
+          this.ipc.send('log', `VERSION: ${environment.version}`);
           this.dataLoaded = true;
           this.desktopLoading$.next(false);
           this.cd.detectChanges();

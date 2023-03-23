@@ -19,7 +19,7 @@ const argv = process.argv.slice(1);
 
 // Log configuration
 log.transports.file.level = 'debug';
-log.log(argv);
+log.log(`START`);
 
 // Small optimizations
 app.commandLine.appendSwitch('disable-renderer-backgrounding');

@@ -47,12 +47,10 @@ export class TeamcraftDesktopApp {
       protocol.registerFileProtocol('teamcraft', (req) => {
         deepLink = req.url.substr(12);
         if (deepLink.endsWith('/')) {
-          log.info(`Opening from File protocol: `, deepLink);
           deepLink = deepLink.substr(0, deepLink.length - 1);
         }
       });
       if (process.platform === 'win32' && process.argv.slice(1).toString().indexOf('--') === -1 && process.argv.slice(1).toString().indexOf('.js') === -1) {
-        log.info(`Opening from argv : `, process.argv.slice(1));
         deepLink = process.argv.slice(1).toString().substr(12);
         if (!deepLink) {
           deepLink = this.store.get('router:uri', '');
