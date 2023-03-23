@@ -167,11 +167,8 @@ export class FishTrainComponent extends TeamcraftComponent {
     })
   );
 
-  public sliderData$ = combineLatest([
-    this.display$,
-    this.fishNames$
-  ]).pipe(
-    map(([display, fishNames]) => {
+  public sliderData$ = this.display$.pipe(
+    map((display) => {
       return {
         min: display.start,
         max: display.end,

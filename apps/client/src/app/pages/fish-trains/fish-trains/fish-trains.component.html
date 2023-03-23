@@ -26,7 +26,7 @@
   <nz-segmented formControlName="status" *ngIf="runningOptions$ | async as runningOptions" [nzOptions]="runningOptions"></nz-segmented>
 </form>
 <div class="results flex-column gap-5" *ngIf="results$ | async as results">
-  <app-lazy-scroll *ngIf="results.length > 0"  [data]="results" [trackBy]="trackByKey" [displayedRows]="8"
+  <app-lazy-scroll *ngIf="results.length > 0" [data]="results" [trackBy]="trackByKey" [displayedRows]="8"
                    [rowTemplate]="trainRowTpl" [rowSize]="57"></app-lazy-scroll>
   <app-fullpage-message *ngIf="results.length === 0" height="300px">
     {{'FISH_TRAIN.No_trains_found' | translate}}
@@ -42,12 +42,12 @@
 
 <ng-template #trainRowTpl let-train>
   <a nz-row nzAlign="middle" class="train-row" routerLink="/fish-train/{{train.$key}}">
-    <div nz-col [nzSpan]="4">
+    <div nz-col [nzXs]="24" [nzSm]="8" [nzXl]="4">
       <app-user-avatar *ngIf="train.conductor" [userId]="train.conductor" messageKey="FISH_TRAIN.Train_conductor" [width]="32"></app-user-avatar>
       <nz-avatar *ngIf="!train.conductor" nzText="?" nz-tooltip [nzTooltipTitle]="'FISH_TRAIN.No_conductor' | translate"></nz-avatar>
       &nbsp;{{train.name || ('FISH_TRAIN.Details_title' | translate:{ id: train.$key })}}
     </div>
-    <div nz-col [nzSpan]="3">
+    <div nz-col [nzXs]="24" [nzSm]="4" [nzXl]="3">
       <ng-container [ngSwitch]="train.status">
         <nz-tag class="custom-tag" [style.border-color]="'#f50'" *ngSwitchCase="FishTrainStatus.STOPPED">{{'FISH_TRAIN.Stopped' | translate}}</nz-tag>
         <nz-tag class="custom-tag" [style.border-color]="'#108ee9'" *ngSwitchCase="FishTrainStatus.RUNNING">{{'FISH_TRAIN.Running' | translate}}</nz-tag>
@@ -56,23 +56,23 @@
       <nz-tag class="custom-tag" [style.border-color]="'#f50'" *ngIf="!train.public"
               nz-tooltip [nzTooltipTitle]="'FISH_TRAIN.Private_display_explain' | translate">{{'COMMON.Private' | translate}}</nz-tag>
     </div>
-    <div nz-col [nzSpan]="3">
+    <div nz-col [nzXs]="24" [nzSm]="6" [nzMd]="6" [nzXl]="3">
       <nz-tag>{{'FISH_TRAIN.Fish_count' | translate: { amount: train.fish.length } }}</nz-tag>
       <nz-tag>{{train.passengers.length}} {{'FISH_TRAIN.Passengers' | translate | lowercase }}</nz-tag>
     </div>
-    <div nz-col [nzSpan]="3">
-      {{'FISH_TRAIN.Departure' | translate: { time: train.start | date:'short':null:translate.currentLang } }}
-    </div>
-    <div nz-col [nzSpan]="4">
-      {{'FISH_TRAIN.Terminus' | translate: { time: train.end | date:'short':null:translate.currentLang } }}
-    </div>
-    <div nz-col [nzSpan]="2">
+    <div nz-col [nzXs]="24" [nzSm]="6" [nzMd]="6" [nzXl]="3">
       <nz-tag>{{'MARKETBOARD.Server' | translate}}:&nbsp;{{train.world || '???'}}</nz-tag>
     </div>
-    <div nz-col [nzSpan]="5">
-      <div class="flex-row justify-end gap-5">
+    <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="{span: 6, offset: 4}" [nzXl]="{span: 3, offset: 0}">
+      {{'FISH_TRAIN.Departure' | translate: { time: train.start | date:'short':null:translate.currentLang } }}
+    </div>
+    <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="6" [nzXl]="3">
+      {{'FISH_TRAIN.Terminus' | translate: { time: train.end | date:'short':null:translate.currentLang } }}
+    </div>
+    <div nz-col [nzXs]="24" [nzSm]="24" [nzMd]="8" [nzXl]="5">
+      <div class="flex-row-wrap justify-end gap-5">
         <div>
-          <a nz-button routerLink="/fish-train/{{train.$key}}" (click)="$event.stopPropagation()">
+          <a nz-button routerLink="/fish-train/{{train.$key}}" nzType="primary" (click)="$event.stopPropagation()">
             {{'FISH_TRAIN.Open_details' | translate}}
           </a>
         </div>
