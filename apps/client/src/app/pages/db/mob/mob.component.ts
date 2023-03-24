@@ -16,6 +16,7 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { monsterDrops } from '@ffxiv-teamcraft/data/handmade/monster-drops';
+import { MapService } from '../../../modules/map/map.service';
 
 @Component({
   selector: 'app-mob',
@@ -36,7 +37,7 @@ export class MobComponent extends TeamcraftPageComponent {
               private gt: DataService,
               private i18n: I18nToolsService, private translate: TranslateService,
               private router: Router, private lazyData: LazyDataFacade, public settings: SettingsService,
-              seo: SeoService) {
+              private mapService: MapService, seo: SeoService) {
     super(seo);
     this.updateSlug(router, i18n, route, 'mobs', 'mobId');
 
@@ -86,11 +87,13 @@ export class MobComponent extends TeamcraftPageComponent {
                 map: position.map,
                 level: position.level,
                 zoneid: position.zoneid,
-                positions: []
+                positions: [],
+                marker: null
               });
               mapRow = spawns[spawns.length - 1];
             }
             mapRow.positions.push({ x: position.x, y: position.y });
+            mapRow.marker = this.mapService.getAvgPosition(mapRow.positions);
           }
         }
         const mobHuntSpawns = hunts.find(h => (h.hunts || []).some(hh => hh.name.toLowerCase() === mob.Name_en.toLowerCase()));

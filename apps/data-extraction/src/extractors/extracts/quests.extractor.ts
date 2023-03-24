@@ -16,7 +16,7 @@ export class QuestsExtractor extends AbstractItemDetailsExtractor<number[]> {
             || quest.trades?.some(t => t.items.some(reward => reward.id === itemId));
         })
         .map(key => +key),
-      ...(this.allaganReportQuests[itemId] || [])
+      ...(this.allaganReportQuests[itemId] as unknown as number[] || [])
     ]);
   }
 

@@ -72,6 +72,7 @@ export class GatheredByExtractor<T = GatheredBy> extends AbstractItemDetailsExtr
             x: spot.coords?.x,
             y: spot.coords?.y,
             z: 0,
+            radius: spot.radius,
 
             predators: entry.predators,
             spawns: [entry.spawn].filter(s => s !== undefined && s !== null),

@@ -79,6 +79,16 @@ export class MapComponent implements OnInit {
     };
   }
 
+  getRadiusStyle(map: MapData, marker: MapMarker): any {
+    const positionPercents = this.mapService.getPositionPercentOnMap(map, marker);
+    return {
+      top: `${positionPercents.y}%`,
+      left: `${positionPercents.x}%`,
+      width: `${250 * marker.radius / (map.size_factor * 20.48)}%`,
+      transform: 'translate(-50%, -50%);'
+    };
+  }
+
   getSubtitleStyle(map: MapData, marker: MapMarker, aetheryte = false): any {
     return {
       ...this.getMarkerStyle(map, marker, aetheryte),

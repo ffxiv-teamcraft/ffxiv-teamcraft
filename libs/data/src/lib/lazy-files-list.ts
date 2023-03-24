@@ -149,7 +149,7 @@ export const lazyFilesList = {
   },
   'fishingSpots': {
     'fileName': 'fishing-spots.json',
-    'hashedFileName': 'fishing-spots.5aeeb89bda405c847a48b2fdbc13bc0d2894921f.json'
+    'hashedFileName': 'fishing-spots.9c305fda6f13f62d0ae4117373f4800facc2ec6b.json'
   },
   'foods': {
     'fileName': 'foods.json',
@@ -373,7 +373,7 @@ export const lazyFilesList = {
   },
   'nodes': {
     'fileName': 'nodes.json',
-    'hashedFileName': 'nodes.930c1c9cacb359b723353ccf4442ade22f7e43b1.json'
+    'hashedFileName': 'nodes.e90433fb741f15469e807ecca5427e28b44c0ad3.json'
   },
   'notebookDivisionCategory': {
     'fileName': 'notebook-division-category.json',

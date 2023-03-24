@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
-import { Vector2 } from '@ffxiv-teamcraft/types';
 import { Drop } from '../../list/model/drop';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { MapMarker } from '../../map/map-marker';
+import { MapService } from '../../map/map.service';
 
 @Component({
   selector: 'app-hunting',
@@ -14,16 +15,15 @@ import { map } from 'rxjs/operators';
 })
 export class HuntingComponent extends ItemDetailsPopup<Drop[]> {
 
-  constructor(private lazyData: LazyDataFacade) {
+  constructor(private lazyData: LazyDataFacade, private mapService: MapService) {
     super();
   }
 
-  getAdditionalMarkers(drop: Drop): Observable<Vector2[]> {
+  getAdditionalMarkers(drop: Drop): Observable<MapMarker[]> {
     return this.lazyData.getRow('monsters', Math.floor(drop.id % 1000000)).pipe(
       map(monster => {
-        return monster?.positions.slice(1) || [];
+        return [this.mapService.getAvgPosition(monster.positions)];
       })
     );
   }
-
 }

@@ -41,7 +41,7 @@
       <div fxLayout="row" fxLayoutAlign="center center">
         <app-map [mapId]="node.map"
                  *ngIf="node"
-                 [markers]="[{x:node.x,y: node.y,iconImg: node.type | nodeTypeIcon: node.limited,iconType: 'img'}]"></app-map>
+                 [markers]="[{x:node.x,y: node.y,iconImg: node.type | nodeTypeIcon: node.limited,iconType: 'img', radius: node.radius}]"></app-map>
       </div>
       <nz-divider *ngIf="!last"></nz-divider>
     </div>

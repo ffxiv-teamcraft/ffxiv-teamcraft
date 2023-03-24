@@ -12,6 +12,7 @@ export interface AlarmDetails {
   type: number;
   coords: Vector3;
   spawns: number[];
+  radius?: number;
   folklore?: number;
   bnpcName?: number;
   reduction?: boolean;

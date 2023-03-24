@@ -15,8 +15,6 @@ export class NodesExtractor extends AbstractExtractor {
 
   private gatheringPointToBaseId = {};
 
-  public isSpecific = true;
-
   doExtract(xiv: XivDataService): void {
 
     const nodes$ = new Subject();
@@ -80,6 +78,7 @@ export class NodesExtractor extends AbstractExtractor {
             spawns: [],
             duration: 0,
             zoneid: point.PlaceName,
+            radius: point.ExportedGatheringPoint.Radius,
             ...(point.TerritoryType?.Map ? this.getCoords({
               x: +point.ExportedGatheringPoint.X,
               y: +point.ExportedGatheringPoint.Y,
@@ -123,7 +122,7 @@ export class NodesExtractor extends AbstractExtractor {
       gatheringItems$, gatheringPoints$, gatheringItemPoints$])
       .subscribe(([entries, items, gatheringPoints, gatheringItemPoints]: any[]) => {
         entries.forEach(node => {
-          let linkedPoints = Object.keys(gatheringPoints).filter(key => gatheringPoints[key].base === node.index).map(key => +key);
+          const linkedPoints = Object.keys(gatheringPoints).filter(key => gatheringPoints[key].base === node.index).map(key => +key);
 
           let point = gatheringPoints[linkedPoints[linkedPoints.length - 1]];
           // Hotfix for Rarefied Pyrite
