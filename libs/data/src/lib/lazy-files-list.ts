@@ -401,7 +401,7 @@ export const lazyFilesList = {
   },
   'questSources': {
     'fileName': 'quest-sources.json',
-    'hashedFileName': 'quest-sources.1d20da4f4ba7bd7dc7fc4dcc6e6155d84e7d3348.json'
+    'hashedFileName': 'quest-sources.25dec0d796b5e336a7a2b6f38808531fd7999563.json'
   },
   'quests': {
     'fileName': 'quests.json',
@@ -545,7 +545,7 @@ export const lazyFilesList = {
   },
   'voyageSources': {
     'fileName': 'voyage-sources.json',
-    'hashedFileName': 'voyage-sources.3f2ab353fd57ca8c2317b0dfab509a8eda8b1cf0.json'
+    'hashedFileName': 'voyage-sources.e5628a31dd5e92e93b2218f3fae4399dd0323629.json'
   },
   'weathers': {
     'fileName': 'weathers.json',

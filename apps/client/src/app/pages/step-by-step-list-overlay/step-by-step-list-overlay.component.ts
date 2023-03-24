@@ -64,6 +64,8 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
 
   public noListSelected = true;
 
+  protected override overlay = true;
+
   constructor(protected eorzeaFacade: EorzeaFacade, protected ipc: IpcService,
               protected listsFacade: ListsFacade, protected layoutsFacade: LayoutsFacade,
               protected settings: SettingsService, protected lazyData: LazyDataFacade,
