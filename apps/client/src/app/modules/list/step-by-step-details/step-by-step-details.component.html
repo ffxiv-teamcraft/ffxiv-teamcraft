@@ -47,7 +47,7 @@
         <div class="map-container">
           <div #container class="navigation-container">
             <ng-container *ngIf="currentPath$ | async as path">
-              <app-map [mapId]="mapDisplay.mapId" [hideDbButton]="true" [markers]="path.additionalMarkers"></app-map>
+              <app-map [mapId]="mapDisplay.mapId" [hideDbButton]="true" [markers]="path.additionalMarkers" [aetheryteZIndex]="100"></app-map>
               <svg class="navigation-svg" style="width:100%;height:100%;">
                 <defs>
                   <marker id="walkarrow" markerHeight="6" markerWidth="6" orient="auto" refX="10" refY="5" viewBox="0 0 10 10">
