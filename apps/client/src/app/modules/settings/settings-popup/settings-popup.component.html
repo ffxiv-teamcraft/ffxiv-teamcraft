@@ -193,6 +193,13 @@
           </nz-select>
         </nz-form-control>
       </nz-form-item>
+      <nz-form-item class="empty-label" *ngIf="pcapToggle">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label [(ngModel)]="settings.displaySlowModeNotification"
+                 nz-checkbox>{{'SETTINGS.Display_slow_mode_notification' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
       <nz-form-item class="empty-label">
         <nz-form-label [nzSpan]="5"></nz-form-label>
         <nz-form-control [nzSpan]="12">

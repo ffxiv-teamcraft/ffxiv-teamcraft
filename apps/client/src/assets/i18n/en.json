@@ -527,6 +527,7 @@
     "Housing_map": "Housing map",
     "Housing_map_explain": "The housing map in which your house is",
     "Reset_linked_characters_ok": "Character links have been reset",
+    "Display_slow_mode_notification": "Display crafting/gathering slow mode notification",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
