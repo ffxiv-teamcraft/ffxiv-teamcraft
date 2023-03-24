@@ -74,7 +74,8 @@
           </nz-tag>
         </div>
         <ng-container *ngIf="inventories$ | async as inventories">
-          <button nz-button nzType="primary" nzShape="circle" nz-tooltip
+          <button nz-button nzType="primary" nzShape="circle"
+                  nz-tooltip [nzTooltipTitle]="'LIST_DETAILS.Fill_with_inventory' | translate"
                   *ngIf="platform.isDesktop()"
                   nz-dropdown
                   [nzDropdownMenu]="menu">
