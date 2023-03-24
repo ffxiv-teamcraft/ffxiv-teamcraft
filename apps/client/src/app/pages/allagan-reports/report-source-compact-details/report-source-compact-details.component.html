@@ -67,6 +67,13 @@
       </div>
     </div>
   </ng-container>
+  <ng-container *ngSwitchCase="AllaganReportSource.QUEST">
+    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+      <img src="{{data.questId | lazyRow:'quests':'icon' | async | xivapiIcon}}" alt="" class="round-icon">
+      <div>{{data.questId | i18nRow:'quests' | i18n}}</div>
+      <app-db-button [id]="data.questId" type="quest"></app-db-button>
+    </div>
+  </ng-container>
   <ng-container *ngSwitchDefault>
     <div fxLayout="row" fxLayoutAlign="flex-start center" *ngIf="!fullDisplayMode">
       <div>{{'ALLAGAN_REPORTS.Open_details' | translate}}</div>

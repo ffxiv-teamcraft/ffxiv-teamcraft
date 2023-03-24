@@ -172,6 +172,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     venture: [null, this.requiredIfSource([AllaganReportSource.VENTURE], 'ventures$')],
     fate: [null, this.requiredIfSource([AllaganReportSource.FATE], 'fates$')],
     mob: [null, this.requiredIfSource([AllaganReportSource.DROP], 'mobs$')],
+    quest: [null, this.requiredIfSource([AllaganReportSource.QUEST], 'quests$')],
     islandAnimal: [false],
     voyageType: [null, this.requiredIfSource([AllaganReportSource.VOYAGE])],
     voyage: [null, this.requiredIfSource([AllaganReportSource.VOYAGE])],
@@ -301,9 +302,9 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
 
   public fateCompletion$ = this.makeCompletionObservable(this.fateInput$, this.fates$);
 
-  public achievementInput$: Subject<string> = new Subject<string>();
+  public questInput$: Subject<string> = new Subject<string>();
 
-  public achievementCompletion$ = this.makeCompletionObservable(this.achievementInput$, this.achievements$);
+  public questCompletion$ = this.makeCompletionObservable(this.questInput$, this.quests$);
 
   public voyageInput$: Subject<string> = new Subject<string>();
 
@@ -516,6 +517,10 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
         return this.getEntryName(this.mobs$, report.data.monsterId).pipe(
           map(name => ({ mob: name }))
         );
+      case AllaganReportSource.QUEST:
+        return this.getEntryName(this.quests$, report.data.questId).pipe(
+          map(name => ({ quest: name }))
+        );
       case AllaganReportSource.VOYAGE:
         return this.getEntryName([this.airshipVoyages$, this.submarineVoyages$][report.data.voyageType], report.data.voyageId).pipe(
           map(voyageName => ({
@@ -589,6 +594,10 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
       case AllaganReportSource.FATE:
         return of(this.getEntryId(formState.fate)).pipe(
           map(id => ({ fateId: id }))
+        );
+      case AllaganReportSource.QUEST:
+        return of(this.getEntryId(formState.quest)).pipe(
+          map(id => ({ questId: id }))
         );
       case AllaganReportSource.VENTURE:
         return of(this.getEntryId(formState.venture)).pipe(

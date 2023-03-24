@@ -99,6 +99,7 @@ export const LazyDataKeys = [
   'paramGrow',
   'patchContent',
   'places',
+  'questSources',
   'quests',
   'races',
   'rarities',

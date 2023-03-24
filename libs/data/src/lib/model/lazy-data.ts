@@ -211,6 +211,7 @@ export interface LazyData {
   paramGrow: Record<number, LazyParamGrow>;
   patchContent: Record<number, LazyPatchContent>;
   places: Record<number, LazyPlace>;
+  questSources: Record<number, number[]>;
   quests: Record<number, LazyQuest>;
   races: Record<number, LazyRace>;
   rarities: Record<number, number>;

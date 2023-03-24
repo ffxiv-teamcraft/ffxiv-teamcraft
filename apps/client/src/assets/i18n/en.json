@@ -2866,6 +2866,7 @@
     "Monster_placeholder": "Monster name",
     "Voyage_placeholder": "Voyage name",
     "Achievement_placeholder": "Achievement name",
+    "Quest_placeholder": "Quest name",
     "Voyage_type": "Voyage type",
     "Reported_by": "Reported by",
     "Approved_by": "Approved by",
@@ -2958,7 +2959,7 @@
       "MOGSTATION": "MOGSTATION",
       "DEPRECATED": "DEPRECATED",
       "ISLAND_ANIMAL": "ISLAND_ANIMAL",
-      "ACHIEVEMENT": "ACHIEVEMENT"
+      "QUEST": "QUEST"
     },
     "STATUS": {
       "PROPOSAL": "PROPOSAL",

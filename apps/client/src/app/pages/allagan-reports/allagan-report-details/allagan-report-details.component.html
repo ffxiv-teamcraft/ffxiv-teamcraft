@@ -124,6 +124,23 @@
             </nz-autocomplete>
           </nz-form-control>
         </nz-form-item>
+        <nz-form-item *ngIf="source === AllaganReportSource.QUEST">
+          <nz-form-label [nzSpan]="3" nzRequired>{{'SEARCH_TYPES.Quest' | translate}}</nz-form-label>
+          <nz-form-control [nzSpan]="10">
+            <input
+              formControlName="quest"
+              (input)="questInput$.next($event.target?.value)"
+              [nzAutocomplete]="auto"
+              [placeholder]="'ALLAGAN_REPORTS.Quest_placeholder' | translate"
+              nz-input
+            />
+            <nz-autocomplete #auto nzBackfill>
+              <nz-auto-option *ngFor="let option of questCompletion$ | async" nzValue="[{{option.id}}] {{ option.name | i18n }}">
+                [{{option.id}}] {{ option.name | i18n }}
+              </nz-auto-option>
+            </nz-autocomplete>
+          </nz-form-control>
+        </nz-form-item>
         <nz-form-item *ngIf="source === AllaganReportSource.FATE">
           <nz-form-label [nzSpan]="3" nzRequired>{{'COMMON.Fate' | translate}}</nz-form-label>
           <nz-form-control [nzSpan]="10">

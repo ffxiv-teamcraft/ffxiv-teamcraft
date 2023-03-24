@@ -12,6 +12,7 @@ export enum AllaganReportSource {
   INSTANCE = 'INSTANCE', // Obtained inside an instance
   FATE = 'FATE', // Obtained as fate reward
   MOGSTATION = 'MOGSTATION',
+  QUEST = 'QUEST',
 
   DEPRECATED = 'DEPRECATED' // Cannot be obtained anymore
 }
