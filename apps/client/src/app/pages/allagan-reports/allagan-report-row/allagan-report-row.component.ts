@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { AllaganReportSource } from '../model/allagan-report-source';
+import { AllaganReportSource } from '@ffxiv-teamcraft/types';
 import { AllaganReportQueueEntry } from '../model/allagan-report-queue-entry';
 import { AllaganReport } from '../model/allagan-report';
 import { AllaganReportStatus } from '../model/allagan-report-status';

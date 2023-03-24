@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { debounceTime, distinctUntilChanged, filter, first, map, pluck, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { AllaganReportsService } from '../allagan-reports.service';
-import { AllaganReportSource } from '../model/allagan-report-source';
+import { AllaganReportSource } from '@ffxiv-teamcraft/types';
 import { BehaviorSubject, combineLatest, merge, Observable, of, Subject } from 'rxjs';
 import { Hookset, I18nName, SearchType, SpearfishingShadowSize, SpearfishingSpeed, Tug } from '@ffxiv-teamcraft/types';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
@@ -300,6 +300,10 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   public fateInput$: Subject<string> = new Subject<string>();
 
   public fateCompletion$ = this.makeCompletionObservable(this.fateInput$, this.fates$);
+
+  public achievementInput$: Subject<string> = new Subject<string>();
+
+  public achievementCompletion$ = this.makeCompletionObservable(this.achievementInput$, this.achievements$);
 
   public voyageInput$: Subject<string> = new Subject<string>();
 

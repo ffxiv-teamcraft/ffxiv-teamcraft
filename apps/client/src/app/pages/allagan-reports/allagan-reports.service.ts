@@ -7,7 +7,7 @@ import { Apollo } from 'apollo-angular';
 import { AllaganReportStatus } from './model/allagan-report-status';
 import { AllaganReportQueueEntry } from './model/allagan-report-queue-entry';
 import { first, map, mapTo, shareReplay, switchMap, tap } from 'rxjs/operators';
-import { AllaganReportSource } from './model/allagan-report-source';
+import { AllaganReportSource } from '@ffxiv-teamcraft/types';
 import { AllaganMetricsDashboardData } from './model/allagan-metrics-dashboard-data';
 import { LocalStorageBehaviorSubject } from '../../core/rxjs/local-storage-behavior-subject';
 import { uniq } from 'lodash';

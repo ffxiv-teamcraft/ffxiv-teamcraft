@@ -22,6 +22,7 @@ import { RequirementsExtractor } from './requirements.extractor';
 import { MasterbooksExtractor } from './masterbooks.extractor';
 import { uniqBy } from 'lodash';
 import { createSpinner } from 'nanospinner';
+import { AchievementsExtractor } from './achievements.extractor';
 
 export class ItemDetailsExtractExtractor extends AbstractExtractor {
 
@@ -63,6 +64,7 @@ export class ItemDetailsExtractExtractor extends AbstractExtractor {
           new VendorsExtractor(patches),
           new TradeSourcesExtractor(patches),
           new DropsExtractor(patches),
+          new AchievementsExtractor(patches),
           new FatesExtractor(patches),
           new GardeningExtractor(patches),
           new ReducedFromExtractor(patches),

@@ -1,4 +1,4 @@
-import { AllaganReportSource } from './allagan-report-source';
+import { AllaganReportSource } from '@ffxiv-teamcraft/types';
 import { AllaganReportStatus } from './allagan-report-status';
 import { AllaganReport } from './allagan-report';
 

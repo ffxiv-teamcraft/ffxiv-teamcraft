@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { AllaganReportSource } from '../model/allagan-report-source';
+import { AllaganReportSource } from '@ffxiv-teamcraft/types';
 
 @Component({
   selector: 'app-report-source-compact-details',
