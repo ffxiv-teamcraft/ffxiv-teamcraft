@@ -48,10 +48,10 @@ export class ImportFromPcapPopupComponent extends TeamcraftComponent {
           const materias = (packet.materia || <number[]>[]).map((materia, index) => {
             return this.materiaService.getMateriaItemIdFromPacketMateria(+materia, packet.materiaTiers[index], materiasData) || 0;
           });
-          while (materias.length < itemMeldingData.slots) {
+          while (materias.length < itemMeldingData?.slots) {
             materias.push(0);
           }
-          if (itemMeldingData.overmeld) {
+          if (itemMeldingData?.overmeld) {
             while (materias.length < 5) {
               materias.push(0);
             }
@@ -60,9 +60,9 @@ export class ImportFromPcapPopupComponent extends TeamcraftComponent {
             itemId: packet.catalogId,
             hq: packet.hqFlag,
             materias: materias,
-            canOvermeld: itemMeldingData.overmeld,
-            materiaSlots: itemMeldingData.slots,
-            baseParamModifier: itemMeldingData.modifier
+            canOvermeld: itemMeldingData?.overmeld || false,
+            materiaSlots: itemMeldingData?.slots || 0,
+            baseParamModifier: itemMeldingData?.modifier || 1
           };
         });
       this.modalRef.close(gearset);
