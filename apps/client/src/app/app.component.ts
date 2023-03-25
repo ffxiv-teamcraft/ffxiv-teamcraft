@@ -532,7 +532,7 @@ export class AppComponent implements OnInit {
 
   showPatchNotes(): Observable<any> {
     const res$ = new Subject<void>();
-    this.translate.get('Patch_notes', { version: environment.version }).pipe(
+    this.translate.get('Patch_notes').pipe(
       switchMap(title => {
         return this.dialog.create({
           nzTitle: title,
