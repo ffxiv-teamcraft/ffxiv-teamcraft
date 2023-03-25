@@ -527,6 +527,7 @@
     "Housing_map": "Housing map",
     "Housing_map_explain": "The housing map in which your house is",
     "Reset_linked_characters_ok": "Character links have been reset",
+    "Display_slow_mode_notification": "Display crafting/gathering slow mode notification",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -769,7 +770,7 @@
     "Autofill_notification_body": "{{itemName}} est maintenant complété pour la liste {{listName}}",
     "Autofill_crafting_gathering_title": "Fabrication ou collecte détectée",
     "Autofill_crafting_gathering_message": "Le remplissage automatique est en mode lent jusqu'à ce que vous ayez terminé la fabrication ou la collecte afin d'éviter les problèmes de base de données avec le remplissage automatique trop rapide.",
-    "Fill_with_inventory": "Remplir avec l'inventaire (utilise uniquement l'inventaire personnel)",
+    "Fill_with_inventory": "Fill with inventory",
     "Filter_items_done": "Ignorer les objets complétés",
     "Inventory_synthesis": "Synthèse de l'inventaire (éléments par inventaire)",
     "X_needed": "{{amount}} requis",
@@ -1206,6 +1207,7 @@
       "Craftsmanship": "Habileté",
       "Control": "Contrôle",
       "Specialist": "Spécialiste",
+      "Splendorous": "Uses a splendorous tool",
       "Ingredients": "Ingrédients HQ",
       "Consumables": "Consommables",
       "Apply_stats": "Appliquer les caractéristiques",
@@ -2865,6 +2867,8 @@
     "Venture_placeholder": "Nom de la tâche",
     "Monster_placeholder": "Nom du monstre",
     "Voyage_placeholder": "Nom du voyage",
+    "Achievement_placeholder": "Achievement name",
+    "Quest_placeholder": "Quest name",
     "Voyage_type": "Type de voyage",
     "Reported_by": "Signalé par",
     "Approved_by": "Approuvé par",
@@ -2956,7 +2960,8 @@
       "FATE": "Aléa",
       "MOGSTATION": "MOGSTATION",
       "DEPRECATED": "Déprécié",
-      "ISLAND_ANIMAL": "Pâturage de la Félicité Insulaire"
+      "ISLAND_ANIMAL": "Pâturage de la Félicité Insulaire",
+      "QUEST": "QUEST"
     },
     "STATUS": {
       "PROPOSAL": "Proposition",
