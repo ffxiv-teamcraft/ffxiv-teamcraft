@@ -527,6 +527,7 @@
     "Housing_map": "房区地图",
     "Housing_map_explain": "你的房屋所在的房区地图",
     "Reset_linked_characters_ok": "已重置角色链接",
+    "Display_slow_mode_notification": "Display crafting/gathering slow mode notification",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -769,7 +770,7 @@
     "Autofill_notification_body": "{{listName}} 清单中的 {{itemName}} 已制作完成",
     "Autofill_crafting_gathering_title": "检测到正在制作或采集",
     "Autofill_crafting_gathering_message": "为避免变更速度过快导致的数据库问题，自动填写会工作在慢速模式，直到您结束制作（在游戏中站起）或采集（关闭采集窗口）。",
-    "Fill_with_inventory": "使用物品栏信息填充（只会使用个人物品栏的内容）",
+    "Fill_with_inventory": "Fill with inventory",
     "Filter_items_done": "忽略已完成的物品",
     "Inventory_synthesis": "物品栏聚合（查看每个物品栏中已有的物品）",
     "X_needed": "需要 {{amount}} 个",
@@ -1206,6 +1207,7 @@
       "Craftsmanship": "作业精度",
       "Control": "加工精度",
       "Specialist": "专家",
+      "Splendorous": "Uses a splendorous tool",
       "Ingredients": "HQ 材料",
       "Consumables": "消耗品",
       "Apply_stats": "应用面板属性",
@@ -2865,6 +2867,8 @@
     "Venture_placeholder": "商店名称",
     "Monster_placeholder": "怪物名称",
     "Voyage_placeholder": "探索名称",
+    "Achievement_placeholder": "Achievement name",
+    "Quest_placeholder": "Quest name",
     "Voyage_type": "探索类型",
     "Reported_by": "报告人",
     "Approved_by": "核准人",
@@ -2956,7 +2960,8 @@
       "FATE": "危命任务",
       "MOGSTATION": "商城物品",
       "DEPRECATED": "已弃用",
-      "ISLAND_ANIMAL": "无人岛动物"
+      "ISLAND_ANIMAL": "无人岛动物",
+      "QUEST": "QUEST"
     },
     "STATUS": {
       "PROPOSAL": "提议",
