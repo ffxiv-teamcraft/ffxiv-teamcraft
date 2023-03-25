@@ -70,7 +70,8 @@
                   </div>
                 </div>
                 <div fxLayout="column" fxLayoutAlign="center center" nz-col nzMd="2">
-                  <div><b>{{collectable.mid.rating}} - {{collectable.high.rating - 1}}</b></div>
+                  <ng-template #plusTpl>+</ng-template>
+                  <div><b>{{collectable.mid.rating}}<span *ngIf="collectable.high.scrip > 0; else plusTpl"> - {{collectable.high.rating - 1}}</span></b></div>
                   <div>
                     <app-item-icon [width]="24" [itemId]="collectable.reward"></app-item-icon>
                     x {{collectable.mid.scrip}}
@@ -80,7 +81,7 @@
                     {{(collectable.expMid[row.level - 1] || 1000) | number}}
                   </div>
                 </div>
-                <div fxLayout="column" fxLayoutAlign="center center" nz-col nzMd="2">
+                <div fxLayout="column" fxLayoutAlign="center center" nz-col nzMd="2" *ngIf="collectable.high.scrip > 0">
                   <div><b>{{collectable.high.rating}}+</b></div>
                   <div>
                     <app-item-icon [width]="24" [itemId]="collectable.reward"></app-item-icon>

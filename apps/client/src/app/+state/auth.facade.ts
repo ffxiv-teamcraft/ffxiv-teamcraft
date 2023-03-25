@@ -243,7 +243,8 @@ export class AuthFacade {
             cp: 0,
             control: 0,
             craftsmanship: 0,
-            specialist: false
+            specialist: false,
+            splendorous: false
           };
         }
         return set;

@@ -57,7 +57,7 @@ export const lazyFilesList = {
   },
   'collectablesPageData': {
     'fileName': 'collectables-page-data.json',
-    'hashedFileName': 'collectables-page-data.d7efa7658aacbbe609e83598ae01bf23555e7884.json'
+    'hashedFileName': 'collectables-page-data.1965e75dc672367c1dc2e0a40fc00a2f73ccfd32.json'
   },
   'collectablesShopItemGroup': {
     'fileName': 'collectables-shop-item-group.json',
@@ -137,7 +137,7 @@ export const lazyFilesList = {
   },
   'fishingLogTrackerPageData': {
     'fileName': 'fishing-log-tracker-page-data.json',
-    'hashedFileName': 'fishing-log-tracker-page-data.4ee42e6fdd1b96caa94593b6dbd83c236f376fd3.json'
+    'hashedFileName': 'fishing-log-tracker-page-data.4185054e285207fd9e8832aaef6e687bb637280d.json'
   },
   'fishingLog': {
     'fileName': 'fishing-log.json',
@@ -149,7 +149,7 @@ export const lazyFilesList = {
   },
   'fishingSpots': {
     'fileName': 'fishing-spots.json',
-    'hashedFileName': 'fishing-spots.9c305fda6f13f62d0ae4117373f4800facc2ec6b.json'
+    'hashedFileName': 'fishing-spots.21541448dd37db134b570b702c2425af9f46d00e.json'
   },
   'foods': {
     'fileName': 'foods.json',
@@ -333,7 +333,7 @@ export const lazyFilesList = {
   },
   'logTrackerPageData': {
     'fileName': 'log-tracker-page-data.json',
-    'hashedFileName': 'log-tracker-page-data.0b5f14d61225dbbb1855124ba77576400d8f63d8.json'
+    'hashedFileName': 'log-tracker-page-data.740ce769c0d50d7e0bf827a911035ffb28064245.json'
   },
   'lootSources': {
     'fileName': 'loot-sources.json',
@@ -369,7 +369,7 @@ export const lazyFilesList = {
   },
   'monsters': {
     'fileName': 'monsters.json',
-    'hashedFileName': 'monsters.8f870e6f83916f90ed1d1c037d162906db38e51f.json'
+    'hashedFileName': 'monsters.db614e2f4462faae983d0716114c45b781b56b6f.json'
   },
   'nodes': {
     'fileName': 'nodes.json',

@@ -100,6 +100,7 @@ export interface GatheringNode {
   minGathering?:     number;
   oceanFishingTime?: number | null;
   predators?:        Predator[];
+  radius?:           number;
   shadowSize?:       number;
   snagging?:         boolean;
   spawns:            number[];
