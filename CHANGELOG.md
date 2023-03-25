@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.4.0"></a>
+# [10.4.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.14...v10.4.0) (2023-03-25)
+
+
+### Bug Fixes
+
+* **allagan-reports:** fixed instance source input not suggesting values ([f7dd7e9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f7dd7e9))
+* **allagan-reports:** new QUEST data source ([07b8d75](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/07b8d75))
+* **allagan-reports:** remove currencies and auto extract achievements ([fdd7656](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fdd7656))
+* **desktop:** auto deny external media access, including audio and video ([2be850f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2be850f))
+* **fish-train:** fixed data fetching on first connection with anonymous account ([4bdcb86](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4bdcb86))
+* **fish-train:** remove labels from time travelling bar as they are unreadable in many cases ([66adb6d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/66adb6d))
+* **fish-trains:** better responsive layout for fish trains listing ([bacb6b9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bacb6b9))
+* **gearsets:** fixed import from pcap sometimes not working ([377c831](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/377c831))
+* **layout:** fixed final items sometimes shown as can be skipped entirely ([87a75f6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/87a75f6))
+* **leveling-equipment:** filter items that do not contribute main stats ([fd27ce0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fd27ce0))
+* **step-by-step:** fixed player location not shown in overlay ([bce9992](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bce9992))
+
+
+### Features
+
+* **alarm-button:** display map name in location popup ([8e4b4e6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8e4b4e6))
+* **db:** now showing radius around nodes and mob spawns on maps when they can have some ([0234575](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0234575))
+* **list-details:** add tooltip to the fill from inventory button ([29a09b2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/29a09b2))
+* **list-details:** new add items button at the top of the page ([a2c41c1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a2c41c1))
+* **settings:** new setting to disable slow mode notification for crafting/gathering ([974219b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/974219b))
+* **simulator:** min stats popup now accounts for collectable thresholds ([1d02f86](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1d02f86))
+* **simulator:** support for splendorous tools bonus on good condition ([d84118b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d84118b))
+* **step-by-step:** you can now hover aetherytes to see their name ([9198cc5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9198cc5))
+
+
+
 <a name="10.3.14"></a>
 ## [10.3.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.13...v10.3.14) (2023-03-19)
 
