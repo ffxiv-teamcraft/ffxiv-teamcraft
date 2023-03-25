@@ -6,7 +6,7 @@ const appVersion = require('../../package.json').version;
 console.log(colors.cyan('\nRunning pre-build tasks'));
 
 const versionFilePath = path.join(__dirname + '/../../apps/client/src/environments/version.ts');
-const patchNotesFilePath = path.join(__dirname + '/../../apps/client/src/environments/patch-notes.ts');
+const patchNotesFilePath = path.join(__dirname + '/../../apps/client/src/environments/patch-notes.json');
 
 const src = `export const version = '${appVersion}';
 `;
@@ -23,11 +23,19 @@ fs.writeFileSync(versionFilePath, src, { flat: 'w' }, function(err) {
 
 const changelog = fs.readFileSync(path.join(__dirname, '../../CHANGELOG.md'), 'utf8');
 
-const section = changelog.split('# [')[1].split('\n');
-const changes = section.slice(3, -5).join('\n').replace(/\s\(\[.+/gm, '.').replace(/`/gm, '\\`');
+const sections = changelog.split('# [');
+const changes = sections.slice(1, 11).reduce((acc, section) => {
+  const version = section.split('](h')[0];
+  return [...acc, {
+    version,
+    content: section.split('\n')
+      .slice(3, -5).join('\n')
+      .replace(/\s\(\[.+/gm, '.')
+      .replace(/`/gm, '\\`')
+  }];
+}, []);
 
-fs.writeFileSync(patchNotesFilePath, `export const patchNotes = \`${changes}\`;
-`, { flat: 'w' }, function(err) {
+fs.writeFileSync(patchNotesFilePath, JSON.stringify(changes), { flat: 'w' }, function(err) {
   if (err) {
     return console.log(colors.red(err));
   }

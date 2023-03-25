@@ -5,14 +5,14 @@
 
 import { version } from './version';
 import { gameEnv } from './game-env';
-import { patchNotes } from './patch-notes';
+import patchNotes from './patch-notes.json';
 
 export const environment = {
   production: false,
   beta: false,
   useLocalAPI: false, // Should we use localhost:333 as API for search?
   version: version,
-  patchNotes: patchNotes,
+  patchNotes: patchNotes as unknown as {version: string, content: string}[],
   ssrHost: 'https://beta.ffxivteamcraft.com',
   startTimestamp: Date.now(),
   noAnimations: false,

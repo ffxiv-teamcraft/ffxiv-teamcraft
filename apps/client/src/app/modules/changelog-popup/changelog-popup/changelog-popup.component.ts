@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { environment } from '../../../../environments/environment';
-import { NzModalRef } from 'ng-zorro-antd/modal';
+import { SettingsService } from '../../settings/settings.service';
+import * as semver from 'semver';
 
 @Component({
   selector: 'app-changelog-popup',
@@ -9,14 +10,19 @@ import { NzModalRef } from 'ng-zorro-antd/modal';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChangelogPopupComponent implements OnInit {
-  public patchNotes = environment.patchNotes;
+  public patchNotes: typeof environment.patchNotes;
 
-  constructor(private modalRef: NzModalRef) {
+  constructor(private settings: SettingsService) {
   }
 
   ngOnInit(): void {
-    if (this.patchNotes.replace(/\s/gm, '').length === 0) {
-      this.modalRef.close();
+    const notes = environment.patchNotes.filter(entry => {
+      return semver.gt(entry.version, this.settings.lastChangesSeen);
+    });
+    if (notes.length === 0) {
+      this.patchNotes = environment.patchNotes.slice(0, 1);
+    } else {
+      this.patchNotes = notes;
     }
   }
 }

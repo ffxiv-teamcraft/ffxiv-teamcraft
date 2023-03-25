@@ -1,3 +1,7 @@
-<markdown [data]="patchNotes"></markdown>
+<ng-container *ngFor="let entry of patchNotes">
+  <nz-divider nzOrientation="left" [nzText]="versionTpl"></nz-divider>
+  <ng-template #versionTpl><h2>{{entry.version}}</h2></ng-template>
+  <markdown [data]="entry.content"></markdown>
+</ng-container>
 <nz-divider></nz-divider>
 <b class="notes-footer">{{'Patch_notes_footer' | translate}}: <a href="https://www.patreon.com/bePatron?u=702160">https://www.patreon.com/ffxivteamcraft</a></b>
