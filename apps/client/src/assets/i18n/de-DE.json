@@ -527,6 +527,7 @@
     "Housing_map": "Wohngebietskarte",
     "Housing_map_explain": "Die Karte des Wohngebiets, in dem dein Haus ist",
     "Reset_linked_characters_ok": "Character links have been reset",
+    "Display_slow_mode_notification": "Display crafting/gathering slow mode notification",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -769,7 +770,7 @@
     "Autofill_notification_body": "{{itemName}} wurde in der Liste {{listName}} fertiggestellt",
     "Autofill_crafting_gathering_title": "Herstellungs- oder Sammelmethode erkannt",
     "Autofill_crafting_gathering_message": "Automatisches Ausfüllen ist im Slowmode solange du etwas herstellst (stehe ingame auf) oder sammelst (schließe das Fenster), um Datenbankprobleme durch zu schnelles Ausfüllen zu verhindern.",
-    "Fill_with_inventory": "Mit Inventar füllen (gilt nur für Gegenstände aus dem persönlichen Inventar)",
+    "Fill_with_inventory": "Fill with inventory",
     "Filter_items_done": "Fertige Gegenstände ignorieren",
     "Inventory_synthesis": "Inventar-Synthese (Gegenstände pro Inventar)",
     "X_needed": "{{amount}} benötigt",
@@ -1206,6 +1207,7 @@
       "Craftsmanship": "Kunstfertigkeit",
       "Control": "Kontrolle",
       "Specialist": "Spezialist",
+      "Splendorous": "Uses a splendorous tool",
       "Ingredients": "HQ Zutaten",
       "Consumables": "Verzehrbares",
       "Apply_stats": "Attribute übernehmen",
@@ -1384,6 +1386,9 @@
     "Donation_button": "Mach eine einmalige Spende",
     "Buy_merch": "Teamcraft-Merch kaufen",
     "Features_header": "Los geht's!",
+    "Open_feature": "Open",
+    "Open_in_guides": "Read",
+    "Featured_guides": "Featured guides",
     "DESCRIPTION": {
       "Lists": "Erstelle Listen um Informationen über alle Materialien zu erhalten, Teile sie mit deinen Freunden, alles startet hier! Suche einfach nach einem Gegenstand, filtere nach spezifischen Gegenstände, und fange an Dinge herzustellen.",
       "Public_lists": "Klone von der Community erstellte Listen, die dir helfen Dinge herzustellen. Ausrüstung, Freibriefe, Notizbücher, Luftschiffe, alles kann hier gefunden werden.",
@@ -1391,7 +1396,8 @@
       "Gathering_location": "Finde Informationen über alle Sammlergegenstände, erstelle Alarme, erhalte sofort Koordinaten, den nächsten Ätheryten, erforderliche Bücher, und mehr!",
       "Rotations": "Erstelle Rotationen zum Herstellen, teste sie im Simulator, oder teste theoretische Rotationen mit dem benutzerdefinierten Simulator!",
       "Levequests": "Finde Freibriefe für einen bestimmten Job und/oder Stufenbereich, schau dir den Fortschritt an und erstelle daraus Listen.",
-      "Macro_translation": "Du hast Makros, die nicht in deiner Sprache sind? Nutze die Makro-Übersetzung und übersetze es in deine Sprache damit es auch in deiner Sprachversion von FFXIV funktioniert!"
+      "Macro_translation": "Du hast Makros, die nicht in deiner Sprache sind? Nutze die Makro-Übersetzung und übersetze es in deine Sprache damit es auch in deiner Sprachversion von FFXIV funktioniert!",
+      "Island_sanctuary": "Optimize your planning and configure it in the island sanctuary workshop planner!"
     }
   },
   "UPDATE": {
@@ -2861,6 +2867,8 @@
     "Venture_placeholder": "Unternehmungsname",
     "Monster_placeholder": "Gegnername",
     "Voyage_placeholder": "Erkundungsname",
+    "Achievement_placeholder": "Achievement name",
+    "Quest_placeholder": "Quest name",
     "Voyage_type": "Erkundungstyp",
     "Reported_by": "Gemeldet von",
     "Approved_by": "Genehmigt von",
@@ -2952,7 +2960,8 @@
       "FATE": "FATE",
       "MOGSTATION": "ONLINE-SHOP",
       "DEPRECATED": "VERALTET",
-      "ISLAND_ANIMAL": "INSELPARADIES_WEIDETIER"
+      "ISLAND_ANIMAL": "INSELPARADIES_WEIDETIER",
+      "QUEST": "QUEST"
     },
     "STATUS": {
       "PROPOSAL": "VORSCHLAG",
@@ -3169,6 +3178,8 @@
     "All_fish": "All fish",
     "Fish_breakdown": "Fish breakdown",
     "Bait_breakdown": "Bait usage breakdown",
-    "Fish_size_chart": "Fish sizes"
+    "Fish_size_chart": "Fish sizes",
+    "Delete_train": "Delete",
+    "Train_not_running": "Train not running"
   }
 }

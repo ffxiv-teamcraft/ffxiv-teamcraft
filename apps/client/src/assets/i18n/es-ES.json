@@ -527,6 +527,7 @@
     "Housing_map": "Housing map",
     "Housing_map_explain": "The housing map in which your house is",
     "Reset_linked_characters_ok": "Character links have been reset",
+    "Display_slow_mode_notification": "Display crafting/gathering slow mode notification",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -769,7 +770,7 @@
     "Autofill_notification_body": "{{itemName}} se ha completado para la lista {{listName}}",
     "Autofill_crafting_gathering_title": "Detectada fabricación o recolección",
     "Autofill_crafting_gathering_message": "El autorellenado está en modo lento hasta que acabes de fabricar (te pongas de pie en el juego) o de recolectar (cierres la interfaz) para evitar problemas que ocurren cuando va demasiado rápido.",
-    "Fill_with_inventory": "Rellenar desde el inventario (sólo cuenta lo que llevas encima)",
+    "Fill_with_inventory": "Fill with inventory",
     "Filter_items_done": "Ignorar artículos completados",
     "Inventory_synthesis": "Síntesis de inventario (artículos por inventario)",
     "X_needed": "{{amount}} necesitados",
@@ -1206,6 +1207,7 @@
       "Craftsmanship": "Artesanía",
       "Control": "Control",
       "Specialist": "Especialista",
+      "Splendorous": "Uses a splendorous tool",
       "Ingredients": "Ingredientes HQ",
       "Consumables": "Consumibles",
       "Apply_stats": "Aplicar atributos",
@@ -1384,6 +1386,9 @@
     "Donation_button": "Haga una donación por única vez",
     "Buy_merch": "Obtener mercancía de Teamcraft",
     "Features_header": "Get started!",
+    "Open_feature": "Open",
+    "Open_in_guides": "Read",
+    "Featured_guides": "Featured guides",
     "DESCRIPTION": {
       "Lists": "Create lists to get information about all materials, share them with your friends... everything starts here! Just search for an item, expand filters to get specific items, and start crafting things.",
       "Public_lists": "Clone lists created by the community that help you craft things, levekits, airships, BiS gear, everything can be found here.",
@@ -1391,7 +1396,8 @@
       "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required Folklore book, and more!",
       "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator!",
       "Levequests": "Para encontrar misiones leve de una profesión y niveles determinados, ver sus bonos y crear listas para ellos.",
-      "Macro_translation": "Got some macros but not in your language? Go to the macro translator and translate it back to your language so it works in your FFXIV game language!"
+      "Macro_translation": "Got some macros but not in your language? Go to the macro translator and translate it back to your language so it works in your FFXIV game language!",
+      "Island_sanctuary": "Optimize your planning and configure it in the island sanctuary workshop planner!"
     }
   },
   "UPDATE": {
@@ -2861,6 +2867,8 @@
     "Venture_placeholder": "Venture name",
     "Monster_placeholder": "Monster name",
     "Voyage_placeholder": "Voyage name",
+    "Achievement_placeholder": "Achievement name",
+    "Quest_placeholder": "Quest name",
     "Voyage_type": "Voyage type",
     "Reported_by": "Reported by",
     "Approved_by": "Approved by",
@@ -2952,7 +2960,8 @@
       "FATE": "FATE",
       "MOGSTATION": "MOGSTATION",
       "DEPRECATED": "DEPRECATED",
-      "ISLAND_ANIMAL": "ISLAND_ANIMAL"
+      "ISLAND_ANIMAL": "ISLAND_ANIMAL",
+      "QUEST": "QUEST"
     },
     "STATUS": {
       "PROPOSAL": "PROPOSAL",
@@ -3169,6 +3178,8 @@
     "All_fish": "All fish",
     "Fish_breakdown": "Fish breakdown",
     "Bait_breakdown": "Bait usage breakdown",
-    "Fish_size_chart": "Fish sizes"
+    "Fish_size_chart": "Fish sizes",
+    "Delete_train": "Delete",
+    "Train_not_running": "Train not running"
   }
 }
