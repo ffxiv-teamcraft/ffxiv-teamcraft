@@ -539,10 +539,6 @@ export class ListsFacade {
 
   }
 
-  createId(): string {
-    return this.listsService.newId();
-  }
-
   addModificationsHistoryEntry(entry: ModificationEntry): void {
     // TODO local history
   }
