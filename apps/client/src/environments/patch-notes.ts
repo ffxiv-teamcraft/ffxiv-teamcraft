@@ -1,17 +1,25 @@
 export const patchNotes = `### Bug Fixes
 
-* **desktop:** fixed a crash after restarting packet capture on new game session.
-* **desktop:** fixed step by step position not filtered based on map ID.
-* **desktop:** new pcap error message for missing UTF-8 support errors.
-* **layout:** "can skip" tag is now displayed when not on NPC breakdown display mode.
-* **leveling-equipment:** fixed DoL/W accessories sometimes shown for DoH jobs.
-* **search:** fixed É character not handled properly.
-* **teams:** fixed list progression message not being consistent on last progression tick.
+* **allagan-reports:** fixed instance source input not suggesting values.
+* **allagan-reports:** new QUEST data source.
+* **allagan-reports:** remove currencies and auto extract achievements.
+* **desktop:** auto deny external media access, including audio and video.
+* **fish-train:** fixed data fetching on first connection with anonymous account.
+* **fish-train:** remove labels from time travelling bar as they are unreadable in many cases.
+* **fish-trains:** better responsive layout for fish trains listing.
+* **gearsets:** fixed import from pcap sometimes not working.
+* **layout:** fixed final items sometimes shown as can be skipped entirely.
+* **leveling-equipment:** filter items that do not contribute main stats.
+* **step-by-step:** fixed player location not shown in overlay.
 
 
 ### Features
 
-* **fish-train:** added embed/overlay display mode enabled by using ?overlay=true in url.
-* **fish-train:** you can now delete empty waiting fish trains as conductor.
-* **search:** new search intro template.
-* **ux:** changed the layout of search page's welcome mode.`;
+* **alarm-button:** display map name in location popup.
+* **db:** now showing radius around nodes and mob spawns on maps when they can have some.
+* **list-details:** add tooltip to the fill from inventory button.
+* **list-details:** new add items button at the top of the page.
+* **settings:** new setting to disable slow mode notification for crafting/gathering.
+* **simulator:** min stats popup now accounts for collectable thresholds.
+* **simulator:** support for splendorous tools bonus on good condition.
+* **step-by-step:** you can now hover aetherytes to see their name.`;
