@@ -527,6 +527,7 @@
     "Housing_map": "Housing map",
     "Housing_map_explain": "The housing map in which your house is",
     "Reset_linked_characters_ok": "Character links have been reset",
+    "Display_slow_mode_notification": "Display crafting/gathering slow mode notification",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -769,7 +770,7 @@
     "Autofill_notification_body": "{{itemName}} se ha completado para la lista {{listName}}",
     "Autofill_crafting_gathering_title": "Detectada fabricación o recolección",
     "Autofill_crafting_gathering_message": "El autorellenado está en modo lento hasta que acabes de fabricar (te pongas de pie en el juego) o de recolectar (cierres la interfaz) para evitar problemas que ocurren cuando va demasiado rápido.",
-    "Fill_with_inventory": "Rellenar desde el inventario (sólo cuenta lo que llevas encima)",
+    "Fill_with_inventory": "Fill with inventory",
     "Filter_items_done": "Ignorar artículos completados",
     "Inventory_synthesis": "Síntesis de inventario (artículos por inventario)",
     "X_needed": "{{amount}} necesitados",
@@ -1206,6 +1207,7 @@
       "Craftsmanship": "Artesanía",
       "Control": "Control",
       "Specialist": "Especialista",
+      "Splendorous": "Uses a splendorous tool",
       "Ingredients": "Ingredientes HQ",
       "Consumables": "Consumibles",
       "Apply_stats": "Aplicar atributos",
@@ -2865,6 +2867,8 @@
     "Venture_placeholder": "Venture name",
     "Monster_placeholder": "Monster name",
     "Voyage_placeholder": "Voyage name",
+    "Achievement_placeholder": "Achievement name",
+    "Quest_placeholder": "Quest name",
     "Voyage_type": "Voyage type",
     "Reported_by": "Reported by",
     "Approved_by": "Approved by",
@@ -2956,7 +2960,8 @@
       "FATE": "FATE",
       "MOGSTATION": "MOGSTATION",
       "DEPRECATED": "DEPRECATED",
-      "ISLAND_ANIMAL": "ISLAND_ANIMAL"
+      "ISLAND_ANIMAL": "ISLAND_ANIMAL",
+      "QUEST": "QUEST"
     },
     "STATUS": {
       "PROPOSAL": "PROPOSAL",
