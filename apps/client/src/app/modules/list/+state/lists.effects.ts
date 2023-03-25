@@ -531,9 +531,9 @@ export class ListsEffects {
   /**
    * History stuff
    */
-  clearModificationsHistory$ = createEffect(() => this.actions$.pipe(
-    ofType<ClearModificationsHistory>(ListsActionTypes.ClearModificationsHistory)
-  ))
+  // clearModificationsHistory$ = createEffect(() => this.actions$.pipe(
+  //   ofType<ClearModificationsHistory>(ListsActionTypes.ClearModificationsHistory)
+  // ))
 
   /**
    * LISTENERS
