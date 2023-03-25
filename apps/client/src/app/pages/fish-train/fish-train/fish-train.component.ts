@@ -21,6 +21,8 @@ import { SoundNotificationService } from '../../../core/sound-notification/sound
 import { SoundNotificationType } from '../../../core/sound-notification/sound-notification-type';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { PushNotificationsService } from 'ng-push-ivy';
+import { getFishTrainStatus } from '../../../modules/fish-train/get-fish-train-status';
+import { FishTrainStatus } from '../../fish-trains/fish-trains/fish-train-status';
 
 @Component({
   selector: 'app-fish-train',
@@ -47,10 +49,18 @@ export class FishTrainComponent extends TeamcraftComponent {
   fishTrain$ = this.fishTrainFacade.selectedFishTrain$;
 
   gubalFishTrainStats$ = this.fishTrain$.pipe(
-    map(train => train.$key),
-    distinctUntilChanged(),
-    switchMap(trainId => {
-      return this.fishDataService.getTrainStats(trainId);
+    map(train => {
+      return {
+        trainId: train.$key,
+        status: getFishTrainStatus(train)
+      };
+    }),
+    distinctUntilChanged((a, b) => isEqual(a, b)),
+    switchMap(({ trainId, status }) => {
+      if (status === FishTrainStatus.RUNNING) {
+        return this.fishDataService.getTrainStatsRealtime(trainId);
+      }
+      return this.fishDataService.getTrainStatsSnapshot(trainId);
     }),
     startWith({
       count: 0,
@@ -157,11 +167,8 @@ export class FishTrainComponent extends TeamcraftComponent {
     })
   );
 
-  public sliderData$ = combineLatest([
-    this.display$,
-    this.fishNames$
-  ]).pipe(
-    map(([display, fishNames]) => {
+  public sliderData$ = this.display$.pipe(
+    map((display) => {
       return {
         min: display.start,
         max: display.end,
@@ -169,7 +176,7 @@ export class FishTrainComponent extends TeamcraftComponent {
         marks: display.fish.reduce((acc, fish) => {
           return {
             ...acc,
-            [fish.start]: fishNames[fish.id]
+            [fish.start]: ''
           };
         }, {
           [display.start]: 'Departure',

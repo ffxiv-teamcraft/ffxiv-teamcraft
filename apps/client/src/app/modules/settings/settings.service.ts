@@ -422,6 +422,14 @@ export class SettingsService {
     this.setSetting('sidebar-favorites', JSON.stringify(favorites));
   }
 
+  public get displaySlowModeNotification(): boolean {
+    return this.getBoolean('displaySlowModeNotification', true);
+  }
+
+  public set displaySlowModeNotification(display: boolean) {
+    this.setSetting('displaySlowModeNotification', display.toString());
+  }
+
   public get autoMarkAsCompleted(): boolean {
     return this.getBoolean('auto-mark-as-completed', false);
   }

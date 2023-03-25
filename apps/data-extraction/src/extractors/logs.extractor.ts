@@ -265,7 +265,7 @@ export class LogsExtractor extends AbstractExtractor {
       [
         'Item.Icon',
         'TerritoryType.Map.SizeFactor', 'TerritoryType.PlaceName#',
-        'PlaceName#', 'GatheringLevel#', 'X', 'Y', 'Z', 'FishingSpotCategory#', 'Icon'],
+        'PlaceName#', 'GatheringLevel#', 'X', 'Y', 'Z', 'Radius', 'FishingSpotCategory#', 'Icon'],
       true, 2
     ).subscribe((completeFetch) => {
       const spots = [];
@@ -289,6 +289,7 @@ export class LogsExtractor extends AbstractExtractor {
               x: Math.floor(100 * (41.0 / c) * (spot.X / 2048.0) + 1) / 100 + 1,
               y: Math.floor(100 * (41.0 / c) * (spot.Z / 2048.0) + 1) / 100 + 1
             },
+            radius: spot.Radius / 41,
             fishes: spot.Item.filter(i => i.index > 0).map(i => i.index)
           });
           spot.Item

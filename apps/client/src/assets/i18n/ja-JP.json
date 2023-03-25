@@ -527,6 +527,7 @@
     "Housing_map": "Housing map",
     "Housing_map_explain": "The housing map in which your house is",
     "Reset_linked_characters_ok": "Character links have been reset",
+    "Display_slow_mode_notification": "Display crafting/gathering slow mode notification",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -769,7 +770,7 @@
     "Autofill_notification_body": "{{listName}} リストの{{itemName}} 作業が完了できました",
     "Autofill_crafting_gathering_title": "製作・収集中",
     "Autofill_crafting_gathering_message": "データベースの更新を安定化させるために、製作中または採集中はオートフィルの反応を遅らせています。製作を終わらせて、ゲーム内で立ち上がるか、採集UIを閉じたときに通常のオートフィルに戻ります。",
-    "Fill_with_inventory": "Fill with inventory (only accounts for what you have in personal inventory)",
+    "Fill_with_inventory": "Fill with inventory",
     "Filter_items_done": "完了したアイテムを非表示",
     "Inventory_synthesis": "所持品統合(各所持品ごとのアイテム)",
     "X_needed": "{{amount}} 個必要",
@@ -1206,6 +1207,7 @@
       "Craftsmanship": "作業精度",
       "Control": "加工精度",
       "Specialist": "マイスター",
+      "Splendorous": "Uses a splendorous tool",
       "Ingredients": "HQ材料",
       "Consumables": "薬品・調理品",
       "Apply_stats": "サブステを適用する",
@@ -1384,6 +1386,9 @@
     "Donation_button": "寄付する（1回）",
     "Buy_merch": "Teamcraftのグッズを買う",
     "Features_header": "始める！",
+    "Open_feature": "Open",
+    "Open_in_guides": "Read",
+    "Featured_guides": "Featured guides",
     "DESCRIPTION": {
       "Lists": "Create lists to get information about all materials, share them with your friends... everything starts here! Just search for an item, expand filters to get specific items, and start crafting things.",
       "Public_lists": "Clone lists created by the community that help you craft things, levekits, airships, BiS gear, everything can be found here.",
@@ -1391,7 +1396,8 @@
       "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required Folklore book, and more!",
       "Rotations": "スキル回しを作成し、シミュレーターで確認やカスタムシミュレーターを利用して理論上の制作マクロを構成することができます。",
       "Levequests": "Find some levequests for a given job and/or level range, see instant benefits on them and create lists for them.",
-      "Macro_translation": "Got some macros but not in your language? Go to the macro translator and translate it back to your language so it works in your FFXIV game language!"
+      "Macro_translation": "Got some macros but not in your language? Go to the macro translator and translate it back to your language so it works in your FFXIV game language!",
+      "Island_sanctuary": "Optimize your planning and configure it in the island sanctuary workshop planner!"
     }
   },
   "UPDATE": {
@@ -2861,6 +2867,8 @@
     "Venture_placeholder": "Venture name",
     "Monster_placeholder": "Monster name",
     "Voyage_placeholder": "Voyage name",
+    "Achievement_placeholder": "Achievement name",
+    "Quest_placeholder": "Quest name",
     "Voyage_type": "Voyage type",
     "Reported_by": "Reported by",
     "Approved_by": "Approved by",
@@ -2952,7 +2960,8 @@
       "FATE": "FATE",
       "MOGSTATION": "MOGSTATION",
       "DEPRECATED": "DEPRECATED",
-      "ISLAND_ANIMAL": "ISLAND_ANIMAL"
+      "ISLAND_ANIMAL": "ISLAND_ANIMAL",
+      "QUEST": "QUEST"
     },
     "STATUS": {
       "PROPOSAL": "PROPOSAL",
@@ -3169,6 +3178,8 @@
     "All_fish": "All fish",
     "Fish_breakdown": "Fish breakdown",
     "Bait_breakdown": "Bait usage breakdown",
-    "Fish_size_chart": "Fish sizes"
+    "Fish_size_chart": "Fish sizes",
+    "Delete_train": "Delete",
+    "Train_not_running": "Train not running"
   }
 }

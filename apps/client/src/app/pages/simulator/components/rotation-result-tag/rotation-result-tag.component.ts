@@ -106,6 +106,7 @@ export class RotationResultTagComponent implements OnInit {
               stats.control + this.getBonusValue('Control', stats.craftsmanship, food, medicine, fcActions),
               stats.cp + this.getBonusValue('CP', stats.craftsmanship, food, medicine, fcActions),
               stats.specialist,
+              stats.splendorous,
               stats.level,
               gearSets.length > 0 ? gearSets.map(set => set.level) as [number, number, number, number, number, number, number, number] : [this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel]);
             return new this.simulator.Simulation(recipe, this.registry.deserializeRotation(rotation.rotation), crafterStats).run(true);

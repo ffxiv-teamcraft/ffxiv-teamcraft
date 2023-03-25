@@ -12,7 +12,10 @@ export class SimulationMinStatsPopupComponent implements OnInit {
 
   stats: { control: number, craftsmanship: number, cp: number, found: boolean };
 
+  thresholds: number[];
+
   ngOnInit(): void {
+    // setTimeout to queue and make sure CD will see it ocne it's done
     setTimeout(() => {
       this.stats = this.simulation.getMinStats();
     });

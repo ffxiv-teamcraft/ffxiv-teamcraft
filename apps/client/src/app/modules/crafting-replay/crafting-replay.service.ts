@@ -25,6 +25,7 @@ export class CraftingReplayService {
         playerStats.control,
         playerStats.cp,
         false,
+        false,
         updateClassInfo.level,
         [this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel]
       );

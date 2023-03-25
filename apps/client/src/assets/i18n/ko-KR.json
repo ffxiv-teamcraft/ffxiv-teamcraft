@@ -527,6 +527,7 @@
     "Housing_map": "모험가 거주구 구역",
     "Housing_map_explain": "The housing map in which your house is",
     "Reset_linked_characters_ok": "Character links have been reset",
+    "Display_slow_mode_notification": "Display crafting/gathering slow mode notification",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -769,7 +770,7 @@
     "Autofill_notification_body": "{{listName}} 목록의 {{itemName}} 작업이 완료되었습니다",
     "Autofill_crafting_gathering_title": "제작 또는 채집이 탐지됨",
     "Autofill_crafting_gathering_message": "자동채우기는 기본적으로 제작/채집이 완료될 때까지(인게임에서, UI를 닫을 때까지) 슬로우 모드로 동작합니다. 이것은 빠르게 자동 채우기를 하는 경우에 데이터가 꼬이는 문제를 방지하기 위함입니다.",
-    "Fill_with_inventory": "소지품에서 채우기 (계정에 연동되어 있는 소지품에서만 채워집니다)",
+    "Fill_with_inventory": "Fill with inventory",
     "Filter_items_done": "완료된 아이템 무시",
     "Inventory_synthesis": "소지품 통합(각 소지품별 아이템)",
     "X_needed": "{{amount}}개 필요",
@@ -1206,6 +1207,7 @@
       "Craftsmanship": "작업 숙련도",
       "Control": "가공 숙련도",
       "Specialist": "전문장인",
+      "Splendorous": "Uses a splendorous tool",
       "Ingredients": "HQ재료",
       "Consumables": "소모품",
       "Apply_stats": "능력치 적용",
@@ -1384,6 +1386,9 @@
     "Donation_button": "후원하기[1회]",
     "Buy_merch": "팀크래프트 상품 구매하기",
     "Features_header": "시작하기!",
+    "Open_feature": "Open",
+    "Open_in_guides": "Read",
+    "Featured_guides": "Featured guides",
     "DESCRIPTION": {
       "Lists": "목록을 만들어 제작에 필요한 모든 재료를 확인하고, 친구들에게 공유할 수 있습니다. 아이템 검색에서 필터를 적용해 특정 아이템을 선택한 뒤 제작을 시작할 수 있습니다.",
       "Public_lists": "제작품, 길드의뢰 납품세트나 제작수첩 완료, 비공정, BiS 장비 등 모든 것을 당신의 커뮤니티 목록으로 복사할 수 있습니다.",
@@ -1391,7 +1396,8 @@
       "Gathering_location": "채집물에 대한 정보를 찾고, 알람을 만들고, 지도 좌표, 가장 가까운 에테레이트, 그리고 필요한 전승록과 추가 정보를 확인할 수 있습니다!",
       "Rotations": "제작 로테이션을 만들고 시뮬레이터에서 확인하거나, 사용자 지정 시뮬레이터를 이용해 이론 상의 로테이션을 구성할 수 있습니다.",
       "Levequests": "직업과 레벨에 맞는 길드의뢰를 찾고, 보상을 확인하고, 목록을 만들 수 있습니다.",
-      "Macro_translation": "매크로를 찾았지만 언어가 다른가요? 매크로 번역기에서는 당신이 플레이하는 FFXIV 게임 언어에 맞는 매크로로 번역할 수 있습니다."
+      "Macro_translation": "매크로를 찾았지만 언어가 다른가요? 매크로 번역기에서는 당신이 플레이하는 FFXIV 게임 언어에 맞는 매크로로 번역할 수 있습니다.",
+      "Island_sanctuary": "Optimize your planning and configure it in the island sanctuary workshop planner!"
     }
   },
   "UPDATE": {
@@ -2861,6 +2867,8 @@
     "Venture_placeholder": "집사 수행명",
     "Monster_placeholder": "몬스터 이름",
     "Voyage_placeholder": "탐사 이름",
+    "Achievement_placeholder": "Achievement name",
+    "Quest_placeholder": "Quest name",
     "Voyage_type": "탐사 종류",
     "Reported_by": "보고자",
     "Approved_by": "승인자",
@@ -2952,7 +2960,8 @@
       "FATE": "돌발 임무",
       "MOGSTATION": "모그스테이션",
       "DEPRECATED": "더 이상 사용되지 않음",
-      "ISLAND_ANIMAL": "ISLAND_ANIMAL"
+      "ISLAND_ANIMAL": "ISLAND_ANIMAL",
+      "QUEST": "QUEST"
     },
     "STATUS": {
       "PROPOSAL": "제안",
@@ -3169,6 +3178,8 @@
     "All_fish": "All fish",
     "Fish_breakdown": "Fish breakdown",
     "Bait_breakdown": "Bait usage breakdown",
-    "Fish_size_chart": "Fish sizes"
+    "Fish_size_chart": "Fish sizes",
+    "Delete_train": "Delete",
+    "Train_not_running": "Train not running"
   }
 }

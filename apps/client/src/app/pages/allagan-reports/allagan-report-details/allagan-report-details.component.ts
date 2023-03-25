@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { debounceTime, distinctUntilChanged, filter, first, map, pluck, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { AllaganReportsService } from '../allagan-reports.service';
-import { AllaganReportSource } from '../model/allagan-report-source';
+import { AllaganReportSource } from '@ffxiv-teamcraft/types';
 import { BehaviorSubject, combineLatest, merge, Observable, of, Subject } from 'rxjs';
 import { Hookset, I18nName, SearchType, SpearfishingShadowSize, SpearfishingSpeed, Tug } from '@ffxiv-teamcraft/types';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
@@ -172,6 +172,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     venture: [null, this.requiredIfSource([AllaganReportSource.VENTURE], 'ventures$')],
     fate: [null, this.requiredIfSource([AllaganReportSource.FATE], 'fates$')],
     mob: [null, this.requiredIfSource([AllaganReportSource.DROP], 'mobs$')],
+    quest: [null, this.requiredIfSource([AllaganReportSource.QUEST], 'quests$')],
     islandAnimal: [false],
     voyageType: [null, this.requiredIfSource([AllaganReportSource.VOYAGE])],
     voyage: [null, this.requiredIfSource([AllaganReportSource.VOYAGE])],
@@ -300,6 +301,10 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   public fateInput$: Subject<string> = new Subject<string>();
 
   public fateCompletion$ = this.makeCompletionObservable(this.fateInput$, this.fates$);
+
+  public questInput$: Subject<string> = new Subject<string>();
+
+  public questCompletion$ = this.makeCompletionObservable(this.questInput$, this.quests$);
 
   public voyageInput$: Subject<string> = new Subject<string>();
 
@@ -512,6 +517,10 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
         return this.getEntryName(this.mobs$, report.data.monsterId).pipe(
           map(name => ({ mob: name }))
         );
+      case AllaganReportSource.QUEST:
+        return this.getEntryName(this.quests$, report.data.questId).pipe(
+          map(name => ({ quest: name }))
+        );
       case AllaganReportSource.VOYAGE:
         return this.getEntryName([this.airshipVoyages$, this.submarineVoyages$][report.data.voyageType], report.data.voyageId).pipe(
           map(voyageName => ({
@@ -558,7 +567,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
           return of([]);
         } else {
           return registry$.pipe(
-            map(registry => registry.filter(i => this.i18n.getName(i.name).toLowerCase().indexOf(value.toLowerCase()) > -1))
+            map(registry => registry.filter(i => this.i18n.getName(i.name)?.toLowerCase().indexOf(value?.toLowerCase()) > -1))
           );
         }
       })
@@ -585,6 +594,10 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
       case AllaganReportSource.FATE:
         return of(this.getEntryId(formState.fate)).pipe(
           map(id => ({ fateId: id }))
+        );
+      case AllaganReportSource.QUEST:
+        return of(this.getEntryId(formState.quest)).pipe(
+          map(id => ({ questId: id }))
         );
       case AllaganReportSource.VENTURE:
         return of(this.getEntryId(formState.venture)).pipe(

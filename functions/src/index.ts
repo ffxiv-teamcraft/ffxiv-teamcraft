@@ -480,22 +480,21 @@ export const getUserByEmail = functions.runWith(runtimeOpts).https.onCall((data,
 });
 
 function getTokenClaims(user) {
-  if (!user) {
-    return {};
-  }
-  if (user.admin) {
-    return {
-      'x-hasura-default-role': 'checker',
-      'x-hasura-role': 'checker',
-      'x-hasura-allowed-roles': ['reporter', 'checker', 'admin']
-    };
-  }
-  if (user.moderator || user.allaganChecker) {
-    return {
-      'x-hasura-default-role': 'checker',
-      'x-hasura-role': 'checker',
-      'x-hasura-allowed-roles': ['reporter', 'checker']
-    };
+  if (user) {
+    if (user.admin) {
+      return {
+        'x-hasura-default-role': 'checker',
+        'x-hasura-role': 'checker',
+        'x-hasura-allowed-roles': ['reporter', 'checker', 'admin']
+      };
+    }
+    if (user.moderator || user.allaganChecker) {
+      return {
+        'x-hasura-default-role': 'checker',
+        'x-hasura-role': 'checker',
+        'x-hasura-allowed-roles': ['reporter', 'checker']
+      };
+    }
   }
   return {
     'x-hasura-default-role': 'reporter',

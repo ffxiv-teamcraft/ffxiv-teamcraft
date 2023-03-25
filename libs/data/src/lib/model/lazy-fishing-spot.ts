@@ -6,6 +6,7 @@ export interface LazyFishingSpot {
   level:    number;
   mapId:    number;
   placeId:  number;
+  radius:   number;
   zoneId:   number;
 }
 

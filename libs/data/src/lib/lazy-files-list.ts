@@ -57,7 +57,7 @@ export const lazyFilesList = {
   },
   'collectablesPageData': {
     'fileName': 'collectables-page-data.json',
-    'hashedFileName': 'collectables-page-data.d7efa7658aacbbe609e83598ae01bf23555e7884.json'
+    'hashedFileName': 'collectables-page-data.1965e75dc672367c1dc2e0a40fc00a2f73ccfd32.json'
   },
   'collectablesShopItemGroup': {
     'fileName': 'collectables-shop-item-group.json',
@@ -137,7 +137,7 @@ export const lazyFilesList = {
   },
   'fishingLogTrackerPageData': {
     'fileName': 'fishing-log-tracker-page-data.json',
-    'hashedFileName': 'fishing-log-tracker-page-data.18838e705d8791a5eb48f64dba1866c3fc3bebcb.json'
+    'hashedFileName': 'fishing-log-tracker-page-data.4185054e285207fd9e8832aaef6e687bb637280d.json'
   },
   'fishingLog': {
     'fileName': 'fishing-log.json',
@@ -145,11 +145,11 @@ export const lazyFilesList = {
   },
   'fishingSources': {
     'fileName': 'fishing-sources.json',
-    'hashedFileName': 'fishing-sources.c9acec173e708ff8f295bdafbc34135a01cd7182.json'
+    'hashedFileName': 'fishing-sources.f659383f94a53521dfe8f49051b3fa7ee217742c.json'
   },
   'fishingSpots': {
     'fileName': 'fishing-spots.json',
-    'hashedFileName': 'fishing-spots.5aeeb89bda405c847a48b2fdbc13bc0d2894921f.json'
+    'hashedFileName': 'fishing-spots.21541448dd37db134b570b702c2425af9f46d00e.json'
   },
   'foods': {
     'fileName': 'foods.json',
@@ -333,11 +333,11 @@ export const lazyFilesList = {
   },
   'logTrackerPageData': {
     'fileName': 'log-tracker-page-data.json',
-    'hashedFileName': 'log-tracker-page-data.0b5f14d61225dbbb1855124ba77576400d8f63d8.json'
+    'hashedFileName': 'log-tracker-page-data.740ce769c0d50d7e0bf827a911035ffb28064245.json'
   },
   'lootSources': {
     'fileName': 'loot-sources.json',
-    'hashedFileName': 'loot-sources.fb2b636b8a0f28ae282b00102a57028857ad1419.json'
+    'hashedFileName': 'loot-sources.748dfc5d6ee091940551b377aafac7b2a4a79f4e.json'
   },
   'mapEntries': {
     'fileName': 'map-entries.json',
@@ -369,11 +369,11 @@ export const lazyFilesList = {
   },
   'monsters': {
     'fileName': 'monsters.json',
-    'hashedFileName': 'monsters.8f870e6f83916f90ed1d1c037d162906db38e51f.json'
+    'hashedFileName': 'monsters.db614e2f4462faae983d0716114c45b781b56b6f.json'
   },
   'nodes': {
     'fileName': 'nodes.json',
-    'hashedFileName': 'nodes.930c1c9cacb359b723353ccf4442ade22f7e43b1.json'
+    'hashedFileName': 'nodes.e90433fb741f15469e807ecca5427e28b44c0ad3.json'
   },
   'notebookDivisionCategory': {
     'fileName': 'notebook-division-category.json',
@@ -398,6 +398,10 @@ export const lazyFilesList = {
   'places': {
     'fileName': 'places.json',
     'hashedFileName': 'places.a4e1a767ab97e8e833b5415d93a5c6e21b897833.json'
+  },
+  'questSources': {
+    'fileName': 'quest-sources.json',
+    'hashedFileName': 'quest-sources.25dec0d796b5e336a7a2b6f38808531fd7999563.json'
   },
   'quests': {
     'fileName': 'quests.json',
@@ -541,7 +545,7 @@ export const lazyFilesList = {
   },
   'voyageSources': {
     'fileName': 'voyage-sources.json',
-    'hashedFileName': 'voyage-sources.b76304e99dd0a4e1b079ed82eb28a5a987736490.json'
+    'hashedFileName': 'voyage-sources.e5628a31dd5e92e93b2218f3fae4399dd0323629.json'
   },
   'weathers': {
     'fileName': 'weathers.json',

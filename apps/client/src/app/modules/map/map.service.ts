@@ -8,6 +8,7 @@ import { NavigationObjective } from './navigation-objective';
 import { debounceTime, map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 import { XivapiService } from '@xivapi/angular-client';
 import * as _ from 'lodash';
+import { max, min } from 'lodash';
 import { WorldNavigationStep } from './world-navigation-step';
 import { SettingsService } from '../settings/settings.service';
 import { EorzeaFacade } from '../eorzea/+state/eorzea.facade';
@@ -198,6 +199,23 @@ export class MapService {
       x: x,
       y: y
     };
+  }
+
+  getAvgPosition(coords: Vector2[]): Vector2 & { radius: number } {
+    const amplitude = (this.getAmplitude(coords, 'x') + this.getAmplitude(coords, 'y')) / 2;
+    return {
+      x: this.avgAxis(coords, 'x'),
+      y: this.avgAxis(coords, 'y'),
+      radius: (amplitude * 41) || 100
+    };
+  }
+
+  private getAmplitude(data: Vector2[], axis: keyof Vector2): number {
+    return max(data.map(r => r[axis])) - min(data.map(r => r[axis]));
+  }
+
+  private avgAxis(data: Vector2[], axis: keyof Vector2): number {
+    return data.reduce((acc, row) => row[axis] + acc, 0) / data.length;
   }
 
   getCoordsOnMap(mapData: MapData, position: Vector2): Vector2 {

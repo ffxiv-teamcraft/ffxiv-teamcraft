@@ -1,4 +1,4 @@
-import { AllaganReportSource } from './allagan-report-source';
+import { AllaganReportSource } from '@ffxiv-teamcraft/types';
 
 export interface AllaganReport {
   itemId: number;

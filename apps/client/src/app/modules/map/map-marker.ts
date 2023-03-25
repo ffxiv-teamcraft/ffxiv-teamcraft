@@ -12,4 +12,5 @@ export interface MapMarker extends Vector2 {
   zIndex?: number;
   link?: string;
   size?: Vector2;
+  radius?: number;
 }

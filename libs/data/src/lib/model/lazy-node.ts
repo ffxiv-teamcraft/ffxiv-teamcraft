@@ -9,6 +9,7 @@ export interface LazyNode {
   level:        number;
   limited?:     boolean;
   map?:         number;
+  radius?:      number;
   spawns?:      number[];
   type:         number;
   x?:           number;

@@ -46,6 +46,8 @@ export abstract class StepByStepComponent extends TeamcraftComponent implements 
 
   public currentPath$: Observable<StepByStepDisplayData>;
 
+  protected overlay = false;
+
   protected constructor(protected eorzeaFacade: EorzeaFacade, protected ipc: IpcService,
                         protected listsFacade: ListsFacade, protected layoutsFacade: LayoutsFacade,
                         protected settings: SettingsService, protected lazyData: LazyDataFacade,
@@ -89,7 +91,7 @@ export abstract class StepByStepComponent extends TeamcraftComponent implements 
       ]
     ).pipe(
       map(([selectedMap, position, currentMapId]) => {
-        if (selectedMap === currentMapId) {
+        if (selectedMap === currentMapId || this.overlay) {
           return position;
         }
         return null;

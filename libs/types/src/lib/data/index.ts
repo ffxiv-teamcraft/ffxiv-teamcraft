@@ -4,3 +4,4 @@ export * from './hookset';
 export * from './territory-layer';
 export * from './tug';
 export * from './xivapi-patch';
+export * from './allagan-report-source';

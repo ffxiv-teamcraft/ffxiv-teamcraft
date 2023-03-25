@@ -34,6 +34,8 @@ export class ReportsManagementComponent extends TeamcraftComponent {
 
   protected readonly fates$ = this.lazyData.getSearchIndex('fates', 'name');
 
+  protected readonly quests$ = this.lazyData.getSearchIndex('quests', 'name');
+
   protected readonly ventures$ = this.lazyData.getSearchIndex('ventures');
 
   protected readonly submarineVoyages$ = this.lazyData.getSearchIndex('submarineVoyages');

@@ -62,6 +62,7 @@ export interface GatheringNode {
   map:                   number;
   matchingItemId:        number;
   matchingItemIsHidden?: boolean;
+  radius:                number;
   spawns:                number[];
   type:                  number;
   x:                     number;

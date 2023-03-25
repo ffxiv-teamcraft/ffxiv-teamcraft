@@ -1,24 +1,7 @@
 import { switchMap, tap } from 'rxjs/operators';
 import { AbstractExtractor } from '../abstract-extractor';
 import { pickBy, uniq } from 'lodash';
-
-enum AllaganReportSource {
-  FISHING = 'FISHING',
-  SPEARFISHING = 'SPEARFISHING',
-  DESYNTH = 'DESYNTH',
-  REDUCTION = 'REDUCTION',
-  GARDENING = 'GARDENING',
-  LOOT = 'LOOT', // Obtained by using a given item (timeworn maps, sacks, chests, etc)
-
-  VENTURE = 'VENTURE', // Retainer venture
-  VOYAGE = 'VOYAGE', // Airship/Submarine voyage
-  DROP = 'DROP', // Drop from monsters kill
-  INSTANCE = 'INSTANCE', // Obtained inside an instance
-  FATE = 'FATE', // Obtained as fate reward
-  MOGSTATION = 'MOGSTATION',
-
-  DEPRECATED = 'DEPRECATED' // Cannot be obtained anymore
-}
+import { AllaganReportSource } from '@ffxiv-teamcraft/types';
 
 export class AllaganReportsExtractor extends AbstractExtractor {
 
@@ -40,6 +23,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
         const drops = {};
         const instanceDrops = {};
         const fateSources = {};
+        const questSources = {};
         const mogstation = {};
         const gardening = {};
         const instances = this.requireLazyFile('instances');
@@ -118,6 +102,9 @@ export class AllaganReportsExtractor extends AbstractExtractor {
                 case AllaganReportSource.FATE:
                   this.addItemAsSource(fateSources, report.itemId, report.data.fateId, false, !report.applied);
                   break;
+                case AllaganReportSource.QUEST:
+                  this.addItemAsSource(questSources, report.itemId, report.data.questId, false, !report.applied);
+                  break;
                 case AllaganReportSource.VOYAGE:
                   this.addItemAsSource(voyageSources, report.itemId, { id: report.data.voyageId, type: report.data.voyageType }, false, !report.applied);
                   break;
@@ -157,6 +144,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
             this.persistToJsonAsset('loot-sources', loots);
             this.persistToJsonAsset('venture-sources', ventures);
             this.persistToJsonAsset('drop-sources', drops);
+            this.persistToJsonAsset('quest-sources', questSources);
             this.persistToJsonAsset('instance-sources', instanceDrops);
             this.persistToJsonAsset('reverse-instance-sources', this.reverseRecord(instanceDrops));
             this.persistToJsonAsset('fate-sources', fateSources);

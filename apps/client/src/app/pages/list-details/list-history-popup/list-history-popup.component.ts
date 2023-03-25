@@ -18,7 +18,7 @@ export class ListHistoryPopupComponent {
   public undo(entry: ModificationEntry): void {
     this.listsFacade.selectedListKey$
       .subscribe(([key]) => {
-        this.listsFacade.removeModificationsHistoryEntry(key, entry.$key);
+        // this.listsFacade.removeModificationsHistoryEntry(key, entry.$key);
         this.listsFacade.setItemDone(entry.itemId, null, entry.finalItem, -1 * entry.amount, entry.recipeId, entry.total);
       });
   }

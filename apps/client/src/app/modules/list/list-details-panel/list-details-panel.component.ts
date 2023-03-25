@@ -124,19 +124,23 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   canSkip$: Observable<Record<number, number>> = this.displayRow$.pipe(
     map(({ rows, filterChain }) => {
-      if (!filterChain.includes(LayoutRowFilter.IS_CRAFT.name)) {
-        return rows.reduce((registry, row) => {
-          return {
-            ...registry,
-            [row.id]: rows.reduce((acc, r) => {
-              const requirement = (r.requires || []).find(req => +req.id === +row.id);
-              if (requirement) {
-                return acc + requirement.amount * ((r.amount_needed || r.amount) - r.done);
-              }
-              return Math.max(acc, 0);
-            }, 0)
-          };
-        }, {});
+      if (!filterChain.includes(LayoutRowFilter.IS_CRAFT.name) && !this.finalItems) {
+        return rows
+          .filter(row => !row.finalItem)
+          .reduce((registry, row) => {
+            return {
+              ...registry,
+              [row.id]: rows
+                .filter(row => !row.finalItem)
+                .reduce((acc, r) => {
+                  const requirement = (r.requires || []).find(req => +req.id === +row.id);
+                  if (requirement) {
+                    return acc + requirement.amount * ((r.amount_needed || r.amount) - r.done);
+                  }
+                  return Math.max(acc, 0);
+                }, 0)
+            };
+          }, {});
       }
       return {};
     })

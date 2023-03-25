@@ -97,7 +97,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   public thresholds: number[] = [];
 
   @Input()
-  public routeStats: { craftsmanship: number, control: number, cp: number, spec: boolean, level: number };
+  public routeStats: { craftsmanship: number, control: number, cp: number, spec: boolean, level: number, splendorous: boolean };
 
   @Input()
   public routeConsumables: RouteConsumables;
@@ -259,7 +259,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       control: [0, Validators.required],
       cp: [180, Validators.required],
       level: [0, Validators.required],
-      specialist: [false]
+      specialist: [false],
+      splendorous: [false]
     });
 
     this.statsForm.valueChanges.pipe(
@@ -388,10 +389,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.dirtyFacade.removeEntry('simulator', DirtyScope.PAGE);
   }
 
-  disableEvent(event: any): void {
-    event.el.parentNode.removeChild(event.el);
-  }
-
   changeRotation(): void {
     this.rotationPicker.openInSimulator(this.itemId, this._recipeId, true, this.custom);
   }
@@ -488,7 +485,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.dialog.create({
       nzContent: SimulationMinStatsPopupComponent,
       nzComponentParams: {
-        simulation: simulation.clone()
+        simulation: simulation.clone(),
+        thresholds: this.thresholds
       },
       nzTitle: this.translate.instant('SIMULATOR.Min_stats'),
       nzFooter: null
@@ -570,7 +568,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         craftsmanship: stats.craftsmanship,
         cp: stats.cp,
         control: stats._control,
-        level: stats.level
+        level: stats.level,
+        splendorous: stats.splendorous
       };
       rotation.rotation = this.registry.serializeRotation(actions);
       rotation.custom = this.custom;
@@ -672,6 +671,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       rawForm.control,
       rawForm.cp,
       rawForm.specialist,
+      rawForm.splendorous,
       rawForm.level,
       this.availableLevels
     );
@@ -687,7 +687,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       control: rawForm.control,
       craftsmanship: rawForm.craftsmanship,
       cp: rawForm.cp,
-      specialist: rawForm.specialist
+      specialist: rawForm.specialist,
+      splendorous: rawForm.splendorous
     };
     this.authFacade.saveSet(set);
     this.savedSet = true;
@@ -833,8 +834,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
           set.cp = this.routeStats.cp;
           set.level = this.routeStats.level;
           set.specialist = this.routeStats.spec;
+          set.splendorous = this.routeStats.splendorous;
         }
-        return new this.simulator.CrafterStats(set.jobId, set.craftsmanship, set.control, set.cp, set.specialist, set.level, levels);
+        return new this.simulator.CrafterStats(set.jobId, set.craftsmanship, set.control, set.cp, set.specialist, set.splendorous, set.level, levels);
       }),
       distinctUntilChanged((before, after) => {
         return JSON.stringify(before) === JSON.stringify(after);
@@ -863,7 +865,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
           control: stats._control,
           cp: stats.cp,
           level: stats.level,
-          specialist: stats.specialist
+          specialist: stats.specialist,
+          splendorous: stats.splendorous
         }, { emitEvent: true });
       })
     );
@@ -883,6 +886,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
           stats._control + bonuses.control,
           stats.cp + bonuses.cp,
           stats.specialist,
+          stats.splendorous,
           stats.level,
           levels as CrafterLevels);
       })

@@ -16,6 +16,10 @@
          class="marker material-icons default-marker" nz-tooltip>
         location_on
       </i>
+      <img src="./assets/icons/map/circle.png" alt=""
+           *ngIf="marker.radius"
+           [ngStyle]="getRadiusStyle(map, marker)"
+           class="radius">
       <img *ngIf="marker.iconType === 'img'" [ngStyle]="getMarkerStyle(map, marker)"
            [nzTooltipTitle]="marker.tooltip || 'X: ' + (marker.x | number: '1.0-1') + ' - Y: ' + (marker.y | number: '1.0-1')"
            [routerLink]="marker.link"

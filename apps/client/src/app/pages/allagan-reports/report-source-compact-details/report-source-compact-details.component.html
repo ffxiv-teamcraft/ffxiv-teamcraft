@@ -36,7 +36,7 @@
   <ng-container *ngSwitchCase="AllaganReportSource.INSTANCE">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <ng-container *ngIf="data.instanceId > 0">
-        <img src="{{data.instanceId | lazyRow:'instances':'icon' | async}}" alt="" class="round-icon">
+        <img src="{{data.instanceId | lazyRow:'instances':'icon' | async | xivapiIcon}}" alt="" class="round-icon">
         <div>{{data.instanceId | i18nRow:'instances' | i18n}}</div>
         <app-db-button [id]="data.instanceId" type="instance"></app-db-button>
       </ng-container>
@@ -65,6 +65,13 @@
       <div>{{data.price | number:'1.2' | currency:'USD'}}</div>
       <div><a href="https://store.finalfantasyxiv.com/ffxivstore/en-us/product/{{data.productId}}" target="_blank">https://store.finalfantasyxiv.com/ffxivstore/en-us/product/{{data.productId}}</a>
       </div>
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchCase="AllaganReportSource.QUEST">
+    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+      <img src="{{data.questId | lazyRow:'quests':'icon' | async | xivapiIcon}}" alt="" class="round-icon">
+      <div>{{data.questId | i18nRow:'quests' | i18n}}</div>
+      <app-db-button [id]="data.questId" type="quest"></app-db-button>
     </div>
   </ng-container>
   <ng-container *ngSwitchDefault>

@@ -6,6 +6,7 @@ import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { MapComponent } from '../../map/map/map.component';
+import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-alarm-button',
@@ -40,11 +41,14 @@ export class AlarmButtonComponent {
   }
 
   openMap(): void {
-    this.i18n.getNameObservable('items', this.alarm.itemId).pipe(
+    combineLatest([
+      this.i18n.getNameObservable('items', this.alarm.itemId),
+      this.i18n.getMapName(this.alarm.mapId)
+    ]).pipe(
       first()
-    ).subscribe(itemName => {
+    ).subscribe(([itemName, mapName]) => {
       this.dialog.create({
-        nzTitle: itemName,
+        nzTitle: `${itemName} - ${mapName}`,
         nzContent: MapComponent,
         nzComponentParams: {
           mapId: this.alarm.mapId,

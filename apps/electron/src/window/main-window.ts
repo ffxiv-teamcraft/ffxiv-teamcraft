@@ -74,6 +74,12 @@ export class MainWindow {
         callback({});
       }
     });
+
+    session.defaultSession.setDevicePermissionHandler(() => false);
+    session.defaultSession.setPermissionRequestHandler((_, permission, callback, details) => {
+      console.log('REQ', permission, details);
+      callback(permission !== 'media');
+    });
   }
 
   public createWindow(deepLink: string = ''): void {

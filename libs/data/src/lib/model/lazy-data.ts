@@ -70,6 +70,7 @@ import {LazyNpc} from './lazy-npc';
 import {LazyParamGrow} from './lazy-param-grow';
 import {LazyPatchContent} from './lazy-patch-content';
 import {LazyPlace} from './lazy-place';
+import {LazyQuestSource} from './lazy-quest-source';
 import {LazyQuest} from './lazy-quest';
 import {LazyRace} from './lazy-race';
 import {LazyRecipesIngredientLookup} from './lazy-recipes-ingredient-lookup';
@@ -211,6 +212,7 @@ export interface LazyData {
   paramGrow: Record<number, LazyParamGrow>;
   patchContent: Record<number, LazyPatchContent>;
   places: Record<number, LazyPlace>;
+  questSources: Record<number, LazyQuestSource[]>;
   quests: Record<number, LazyQuest>;
   races: Record<number, LazyRace>;
   rarities: Record<number, number>;

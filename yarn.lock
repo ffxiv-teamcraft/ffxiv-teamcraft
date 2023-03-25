@@ -515,10 +515,10 @@
     call-me-maybe "^1.0.1"
     js-yaml "^4.1.0"
 
-"@apollo/client@^3.7.9":
-  version "3.7.9"
-  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.7.9.tgz#459454dc4a7c81adaa66e13e626ce41f633dc862"
-  integrity sha512-YnJvrJOVWrp4y/zdNvUaM8q4GuSHCEIecsRDTJhK/veT33P/B7lfqGJ24NeLdKMj8tDEuXYF7V0t+th4+rgC+Q==
+"@apollo/client@^3.7.10":
+  version "3.7.10"
+  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.7.10.tgz#addc5fcebaf016981d9476268a06d529be83f568"
+  integrity sha512-/k1MfrqPKYiPNdHcOzdxg9cEx96vhAGxAcSorzfBvV29XtFQcYW2cPNQOTjK/fpSMtqVo8UNmu5vwQAWD1gfCg==
   dependencies:
     "@graphql-typed-document-node/core" "^3.1.1"
     "@wry/context" "^0.7.0"
@@ -2093,10 +2093,10 @@
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 
-"@ffxiv-teamcraft/simulator@^3.1.6":
-  version "3.1.6"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-3.1.6.tgz#7eee70b28a612def218cc29e351579a08af2c697"
-  integrity sha512-7rlhO6beVO1wxACq8UVYSovfQrGTC7GKOyFPNLgNBIAgBsfIQ3Ex/nJsB4/Noo8HO4/uv2mNDrCGXRQWk9hXkg==
+"@ffxiv-teamcraft/simulator@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-3.2.0.tgz#71b01e0c6c2469f41350b4787618da169a65b966"
+  integrity sha512-CqX+lZcio/oKCW78umv867f85CS+M0V40vWTsgvCe52m5fc3V6ldBsewtwGiXdphaCte7iKpPthdyh5CyDfdFg==
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 

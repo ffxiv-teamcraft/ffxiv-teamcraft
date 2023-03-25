@@ -205,8 +205,6 @@ export class AppComponent implements OnInit {
 
   public suggestedRegion: Region = null;
 
-  public firewallRuleApplied = false;
-
   public showAd$ = this.authFacade.user$.pipe(
     map(user => {
       return !(user.admin || user.moderator || user.patron);
@@ -502,6 +500,7 @@ export class AppComponent implements OnInit {
         this.playerMetricsService.start();
         setTimeout(() => {
           this.ipc.send('app-ready', true);
+          this.ipc.send('log', `VERSION: ${environment.version}`);
           this.dataLoaded = true;
           this.desktopLoading$.next(false);
           this.cd.detectChanges();

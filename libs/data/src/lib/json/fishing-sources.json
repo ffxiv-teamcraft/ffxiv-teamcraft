@@ -5695,20 +5695,20 @@
   ],
   "4994": [
     {
-      "spot": 9,
+      "spot": 20,
       "hookset": 1,
       "tug": 0,
-      "bait": 2627,
+      "bait": 2601,
       "spawn": 17,
       "duration": 17,
       "snagging": false,
       "minGathering": 0
     },
     {
-      "spot": 20,
+      "spot": 9,
       "hookset": 1,
       "tug": 0,
-      "bait": 2627,
+      "bait": 2601,
       "spawn": 17,
       "duration": 17,
       "snagging": false,

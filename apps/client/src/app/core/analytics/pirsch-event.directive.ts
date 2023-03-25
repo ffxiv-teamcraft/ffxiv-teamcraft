@@ -1,6 +1,6 @@
-import {Directive, HostListener, Input} from '@angular/core';
-import {AnalyticsService} from './analytics.service';
-import {Scalar} from "pirsch-sdk";
+import { Directive, HostListener, Input } from '@angular/core';
+import { AnalyticsService } from './analytics.service';
+import { Scalar } from 'pirsch-sdk';
 
 @Directive({
   // eslint-disable-next-line @angular-eslint/directive-selector
@@ -16,7 +16,12 @@ export class PirschEventDirective {
 
   @HostListener('click')
   onClick(): void {
-    this.analyticsService.event(this.code, this.meta);
+    if (this.meta && typeof this.meta !== 'object') {
+      console.error('[Pirsch] Refusing to send non-object meta');
+      this.analyticsService.event(this.code);
+    } else {
+      this.analyticsService.event(this.code, this.meta);
+    }
   }
 
   constructor(private analyticsService: AnalyticsService) {

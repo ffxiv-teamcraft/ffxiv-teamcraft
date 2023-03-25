@@ -11,10 +11,13 @@ export function apolloClientFactory(httpLink: HttpLink, authFacade: AuthFacade) 
   const ws = new WebSocketLink({
     uri: `wss://gubal.hasura.app/v1/graphql`,
     options: {
+      timeout: 30000,
       reconnect: true,
       connectionParams: (async () => {
         // This is just because sometimes, injector seems to derp with the authFacade instance
-        let idToken = await authFacade.getIdTokenResult();
+        let idToken = await firstValueFrom(authFacade.idToken$.pipe(
+          filter(token => token.claims['https://hasura.io/jwt/claims'] !== undefined)
+        ));
         // If we're at least 5 minutes from expiration, refresh token
         if (Date.now() - new Date(idToken.expirationTime).getTime() < 60000) {
           idToken = await authFacade.getIdTokenResult(true);

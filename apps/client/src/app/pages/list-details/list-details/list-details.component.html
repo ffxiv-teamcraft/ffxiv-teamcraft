@@ -74,7 +74,8 @@
           </nz-tag>
         </div>
         <ng-container *ngIf="inventories$ | async as inventories">
-          <button nz-button nzType="primary" nzShape="circle" nz-tooltip
+          <button nz-button nzType="primary" nzShape="circle"
+                  nz-tooltip [nzTooltipTitle]="'LIST_DETAILS.Fill_with_inventory' | translate"
                   *ngIf="platform.isDesktop()"
                   nz-dropdown
                   [nzDropdownMenu]="menu">
@@ -204,6 +205,9 @@
          fxLayoutGap="5px">
       <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center" fxLayoutGap="5px">
         <div fxLayout="row" fxLayoutGap="5px">
+          <button nz-button nzSize="small" nzType="primary" (click)="addItems()">
+            <i nz-icon nzType="plus"></i> {{'LIST_DETAILS.Add_item' | translate}}
+          </button>
           <button (click)="createAlarms(list)" [nzTooltipTitle]="'LIST.Add_all_alarms' | translate" nz-button nz-tooltip
                   nzShape="circle" nzSize="small">
             <i nz-icon nzType="bell"></i>
