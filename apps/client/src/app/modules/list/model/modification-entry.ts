@@ -1,6 +1,8 @@
 export class ModificationEntry {
   id?: string;
 
+  listId?: string;
+
   userId: string;
 
   amount: number;

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
-  ArchivedListsLoaded,
+  ArchivedListsLoaded, ClearModificationsHistory,
   ConvertLists,
   CreateList,
   DeleteList,
@@ -527,6 +527,13 @@ export class ListsEffects {
       });
     })
   ), { dispatch: false });
+
+  /**
+   * History stuff
+   */
+  clearModificationsHistory$ = createEffect(() => this.actions$.pipe(
+    ofType<ClearModificationsHistory>(ListsActionTypes.ClearModificationsHistory)
+  ))
 
   /**
    * LISTENERS
