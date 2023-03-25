@@ -527,6 +527,7 @@
     "Housing_map": "모험가 거주구 구역",
     "Housing_map_explain": "The housing map in which your house is",
     "Reset_linked_characters_ok": "Character links have been reset",
+    "Display_slow_mode_notification": "Display crafting/gathering slow mode notification",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -769,7 +770,7 @@
     "Autofill_notification_body": "{{listName}} 목록의 {{itemName}} 작업이 완료되었습니다",
     "Autofill_crafting_gathering_title": "제작 또는 채집이 탐지됨",
     "Autofill_crafting_gathering_message": "자동채우기는 기본적으로 제작/채집이 완료될 때까지(인게임에서, UI를 닫을 때까지) 슬로우 모드로 동작합니다. 이것은 빠르게 자동 채우기를 하는 경우에 데이터가 꼬이는 문제를 방지하기 위함입니다.",
-    "Fill_with_inventory": "소지품에서 채우기 (계정에 연동되어 있는 소지품에서만 채워집니다)",
+    "Fill_with_inventory": "Fill with inventory",
     "Filter_items_done": "완료된 아이템 무시",
     "Inventory_synthesis": "소지품 통합(각 소지품별 아이템)",
     "X_needed": "{{amount}}개 필요",
@@ -1206,6 +1207,7 @@
       "Craftsmanship": "작업 숙련도",
       "Control": "가공 숙련도",
       "Specialist": "전문장인",
+      "Splendorous": "Uses a splendorous tool",
       "Ingredients": "HQ재료",
       "Consumables": "소모품",
       "Apply_stats": "능력치 적용",
@@ -2865,6 +2867,8 @@
     "Venture_placeholder": "집사 수행명",
     "Monster_placeholder": "몬스터 이름",
     "Voyage_placeholder": "탐사 이름",
+    "Achievement_placeholder": "Achievement name",
+    "Quest_placeholder": "Quest name",
     "Voyage_type": "탐사 종류",
     "Reported_by": "보고자",
     "Approved_by": "승인자",
@@ -2956,7 +2960,8 @@
       "FATE": "돌발 임무",
       "MOGSTATION": "모그스테이션",
       "DEPRECATED": "더 이상 사용되지 않음",
-      "ISLAND_ANIMAL": "ISLAND_ANIMAL"
+      "ISLAND_ANIMAL": "ISLAND_ANIMAL",
+      "QUEST": "QUEST"
     },
     "STATUS": {
       "PROPOSAL": "제안",
