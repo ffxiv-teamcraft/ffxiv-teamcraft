@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.4.1"></a>
+## [10.4.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.0...v10.4.1) (2023-03-25)
+
+
+### Bug Fixes
+
+* **fish-trains:** fixed board train button sometimes not showing ([c4c85e9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c4c85e9))
+* **list-details:** fixed list reset freezing the app entirely ([7edfed2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7edfed2))
+
+
+### Features
+
+* **patch-notes:** popup now shows up to 10 versions in the past based on last update seen ([715d671](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/715d671))
+
+
+
 <a name="10.4.0"></a>
 # [10.4.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.3.14...v10.4.0) (2023-03-25)
 
