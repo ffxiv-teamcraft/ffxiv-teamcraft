@@ -233,6 +233,15 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     });
   }
 
+  addItems(): void {
+    this.listsFacade.selectedList$.pipe(
+      first(),
+      switchMap(list => {
+        return this.listsFacade.addItems(list);
+      })
+    ).subscribe();
+  }
+
   public selectLayout(layout: ListLayout): void {
     this.layoutsFacade.select(layout);
   }
