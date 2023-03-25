@@ -527,6 +527,7 @@
     "Housing_map": "Wohngebietskarte",
     "Housing_map_explain": "Die Karte des Wohngebiets, in dem dein Haus ist",
     "Reset_linked_characters_ok": "Character links have been reset",
+    "Display_slow_mode_notification": "Display crafting/gathering slow mode notification",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -769,7 +770,7 @@
     "Autofill_notification_body": "{{itemName}} wurde in der Liste {{listName}} fertiggestellt",
     "Autofill_crafting_gathering_title": "Herstellungs- oder Sammelmethode erkannt",
     "Autofill_crafting_gathering_message": "Automatisches Ausfüllen ist im Slowmode solange du etwas herstellst (stehe ingame auf) oder sammelst (schließe das Fenster), um Datenbankprobleme durch zu schnelles Ausfüllen zu verhindern.",
-    "Fill_with_inventory": "Mit Inventar füllen (gilt nur für Gegenstände aus dem persönlichen Inventar)",
+    "Fill_with_inventory": "Fill with inventory",
     "Filter_items_done": "Fertige Gegenstände ignorieren",
     "Inventory_synthesis": "Inventar-Synthese (Gegenstände pro Inventar)",
     "X_needed": "{{amount}} benötigt",
@@ -1206,6 +1207,7 @@
       "Craftsmanship": "Kunstfertigkeit",
       "Control": "Kontrolle",
       "Specialist": "Spezialist",
+      "Splendorous": "Uses a splendorous tool",
       "Ingredients": "HQ Zutaten",
       "Consumables": "Verzehrbares",
       "Apply_stats": "Attribute übernehmen",
@@ -2865,6 +2867,8 @@
     "Venture_placeholder": "Unternehmungsname",
     "Monster_placeholder": "Gegnername",
     "Voyage_placeholder": "Erkundungsname",
+    "Achievement_placeholder": "Achievement name",
+    "Quest_placeholder": "Quest name",
     "Voyage_type": "Erkundungstyp",
     "Reported_by": "Gemeldet von",
     "Approved_by": "Genehmigt von",
@@ -2956,7 +2960,8 @@
       "FATE": "FATE",
       "MOGSTATION": "ONLINE-SHOP",
       "DEPRECATED": "VERALTET",
-      "ISLAND_ANIMAL": "INSELPARADIES_WEIDETIER"
+      "ISLAND_ANIMAL": "INSELPARADIES_WEIDETIER",
+      "QUEST": "QUEST"
     },
     "STATUS": {
       "PROPOSAL": "VORSCHLAG",
