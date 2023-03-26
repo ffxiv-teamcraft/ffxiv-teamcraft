@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { ModificationEntry } from '../../../modules/list/model/modification-entry';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
-import { Observable, switchMap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { NzModalRef } from 'ng-zorro-antd/modal';
-import { finalize, first, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-list-history-popup',
@@ -14,11 +14,8 @@ export class ListHistoryPopupComponent {
 
   loading = false;
 
-  public history$: Observable<ModificationEntry[]> = this.listsFacade.selectedListKey$.pipe(
-    first(),
-    switchMap(key => this.listsFacade.getListModificationsHistory(key)),
-    tap(() => this.loading = false),
-    finalize(() => console.log('CLEANED'))
+  public history$: Observable<ModificationEntry[]> = this.listsFacade.selectedListModificationHistory$.pipe(
+    tap(() => this.loading = false)
   );
 
   constructor(private listsFacade: ListsFacade, private modalRef: NzModalRef) {

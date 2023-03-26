@@ -53,8 +53,6 @@ export class List extends DataWithPermissions {
 
   archived = false;
 
-  contributionStats = { entries: [], total: 0, ilvlTotal: 0 };
-
   ignoreRequirementsRegistry: Record<string, 1> = {};
 
   constructor(settings?: SettingsService) {

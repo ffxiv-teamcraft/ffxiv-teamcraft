@@ -198,6 +198,10 @@ export class ListsFacade {
 
   completionNotificationEnabled$ = this.store.select(listsQuery.getCompletionNotificationEnabled);
 
+  selectedListModificationHistory$ = this.selectedListKey$.pipe(
+    switchMap(key => this.listsHistoryService.getHistory(key))
+  );
+
   private overlay: boolean;
 
   constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
@@ -245,10 +249,6 @@ export class ListsFacade {
       fromPacket: fromPacket,
       hq: hq
     }));
-  }
-
-  getListModificationsHistory(listId: string): Observable<ModificationEntry[]> {
-    return this.listsHistoryService.getHistory(listId);
   }
 
   removeModificationsHistoryEntry(entryId: string): void {
