@@ -141,7 +141,7 @@ export class FishContextService {
                 const next = { ...byId, [val.etime]: byId[val.etime] + val.occurences };
                 return { total: total + val.occurences, byId: next };
               },
-              { total: 0, byId: this.makeHoursDict() }
+              { total: 0, byId: this.makeHoursDict(4) }
             );
           return { ...res, data };
         })
@@ -406,9 +406,9 @@ export class FishContextService {
     );
   }
 
-  private makeHoursDict(): Record<number, number> {
+  private makeHoursDict(pointsPerHour = 1): Record<number, number> {
     const m = {};
-    for (let i = 0; i < 24; i++) m[i] = 0;
+    for (let i = 0; i < 24 * pointsPerHour; i++) m[i / pointsPerHour] = 0;
     return m;
   }
 }

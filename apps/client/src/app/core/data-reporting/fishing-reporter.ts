@@ -284,7 +284,7 @@ export class FishingReporter implements DataReporter {
         const shouldAddTrain = trainSpotId === spot?.id && getFishTrainStatus(train) === FishTrainStatus.RUNNING;
         const entry = {
           itemId: fish.id,
-          etime: throwData.etime.getUTCHours(),
+          etime: Math.round(throwData.etime.getTime() % 86400000 / 3600) / 1000,
           hq: fish.hq,
           mapId: spot.mapId,
           weatherId: throwData.weatherId,

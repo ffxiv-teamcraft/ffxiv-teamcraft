@@ -34,7 +34,19 @@ export class FishHoursComponent {
         xAxis: {
           type: 'category',
           boundaryGap: false,
-          data: new Array(24).fill(null).map((_, i) => `${i}:00`)
+          data: entries.sort((a, b) => +a.key - +b.key)
+            .map(({ key }) => `${Math.floor(+key).toString().padStart(2, '0')}:${(+key % 1 * 60) || '00'}`),
+          axisTick: {
+            interval: (index) => {
+              return index % 4 === 0;
+            }
+          },
+          axisLabel: {
+            interval: (index) => {
+              return index % 8 === 0;
+            }
+          },
+          splitNumber: 4
         },
         yAxis: {
           type: 'value'
