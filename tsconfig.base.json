@@ -8,6 +8,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "downlevelIteration": true,
     "skipLibCheck": true,
     "target": "es2015",
