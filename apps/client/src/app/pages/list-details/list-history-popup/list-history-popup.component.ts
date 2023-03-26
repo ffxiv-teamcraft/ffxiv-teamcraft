@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { ModificationEntry } from '../../../modules/list/model/modification-entry';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
-import { Observable, of } from 'rxjs';
+import { Observable, switchMap } from 'rxjs';
+import { NzModalRef } from 'ng-zorro-antd/modal';
+import { finalize, first, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-list-history-popup',
@@ -10,17 +12,34 @@ import { Observable, of } from 'rxjs';
 })
 export class ListHistoryPopupComponent {
 
-  public history$: Observable<ModificationEntry[]> = of([]);
+  loading = false;
 
-  constructor(private listsFacade: ListsFacade) {
+  public history$: Observable<ModificationEntry[]> = this.listsFacade.selectedListKey$.pipe(
+    first(),
+    switchMap(key => this.listsFacade.getListModificationsHistory(key)),
+    tap(() => this.loading = false),
+    finalize(() => console.log('CLEANED'))
+  );
+
+  constructor(private listsFacade: ListsFacade, private modalRef: NzModalRef) {
+    modalRef.afterClose.subscribe(() => modalRef.destroy());
   }
 
   public undo(entry: ModificationEntry): void {
-    this.listsFacade.selectedListKey$
-      .subscribe(([key]) => {
-        // this.listsFacade.removeModificationsHistoryEntry(key, entry.$key);
-        this.listsFacade.setItemDone(entry.itemId, null, entry.finalItem, -1 * entry.amount, entry.recipeId, entry.total);
-      });
+    this.loading = true;
+    this.listsFacade.removeModificationsHistoryEntry(entry.id);
+    this.listsFacade.setItemDone({
+      itemId: entry.itemId,
+      itemIcon: null,
+      finalItem: entry.finalItem,
+      delta: -1 * entry.amount,
+      recipeId: entry.recipeId,
+      totalNeeded: entry.total,
+      external: false,
+      fromPacket: false,
+      hq: false,
+      skipHistory: true
+    });
   }
 
 }

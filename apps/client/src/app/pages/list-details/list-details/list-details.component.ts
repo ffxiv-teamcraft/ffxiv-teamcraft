@@ -424,7 +424,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   resetList(list: List): void {
     ListController.reset(list);
     this.listsFacade.updateList(list);
-    this.listsFacade.clearModificationsHistory(list);
+    this.listsFacade.clearModificationsHistory(list.$key);
   }
 
   openLayoutOptions(): void {

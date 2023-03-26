@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { ListsState } from './lists.reducer';
 import { listsQuery } from './lists.selectors';
 import {
+  AddModificationHistoryEntries,
   ClearModificationsHistory,
   CreateList,
   DeleteList,
@@ -20,6 +21,7 @@ import {
   OfflineListsLoaded,
   PinList,
   PureUpdateList,
+  RemoveModificationHistoryEntry,
   SelectList,
   SetItemDone,
   ToggleAutocompletion,
@@ -56,6 +58,7 @@ import { ListController } from '../list-controller';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
 import { AnalyticsService } from '../../../core/analytics/analytics.service';
+import { ListHistoryService } from '../../../core/database/storage/list/list-history.service';
 
 declare const gtag: (...args: any[]) => void;
 
@@ -201,7 +204,7 @@ export class ListsFacade {
               private teamsFacade: TeamsFacade, private settings: SettingsService, private userInventoryService: InventoryService,
               private router: Router, private serializer: NgSerializerService, private itemPicker: ItemPickerService,
               private listManager: ListManagerService, private progress: ProgressPopupService, private ipc: IpcService,
-              private listsService: FirestoreListStorage, private analyticsService: AnalyticsService) {
+              private listsService: FirestoreListStorage, private analyticsService: AnalyticsService, private listsHistoryService: ListHistoryService) {
     router.events
       .pipe(
         distinctUntilChanged((previous: any, current: any) => {
@@ -216,15 +219,40 @@ export class ListsFacade {
 
     this.ipc.on('list:setItemDone', (event, {
       itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, external, fromPacket, hq
-    }) => this.setItemDone(itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, external, fromPacket, hq));
+    }) => this.setItemDone({
+      itemId: itemId,
+      itemIcon: itemIcon,
+      finalItem: finalItem,
+      delta: delta,
+      recipeId: recipeId,
+      totalNeeded: totalNeeded,
+      external: external,
+      fromPacket: fromPacket,
+      hq: hq
+    }));
 
     this.ipc.on('list:setListItemDone', (event, {
       listId, itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, external, fromPacket, hq
-    }) => this.setListItemDone(listId, itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, external, fromPacket, hq));
+    }) => this.setListItemDone({
+      listId: listId,
+      itemId: itemId,
+      itemIcon: itemIcon,
+      finalItem: finalItem,
+      delta: delta,
+      recipeId: recipeId,
+      totalNeeded: totalNeeded,
+      external: external,
+      fromPacket: fromPacket,
+      hq: hq
+    }));
   }
 
-  removeModificationsHistoryEntry(key: string, entryId: string): Observable<void> {
-    return of(null);
+  getListModificationsHistory(listId: string): Observable<ModificationEntry[]> {
+    return this.listsHistoryService.getHistory(listId);
+  }
+
+  removeModificationsHistoryEntry(entryId: string): void {
+    this.store.dispatch(new RemoveModificationHistoryEntry(entryId));
   }
 
   getTeamLists(team: Team): Observable<List[]> {
@@ -293,22 +321,46 @@ export class ListsFacade {
     return list;
   }
 
-  setItemDone(itemId: number, itemIcon: number, finalItem: boolean, delta: number, recipeId: string, totalNeeded: number, external = false, fromPacket = false, hq = false): void {
-    if (this.settings.autoMarkAsCompleted && delta > 0) {
-      this.authFacade.markAsDoneInLog(recipeId ? 'crafting' : 'gathering', +(recipeId || itemId), true);
-    }
-    if (this.ipc.overlayUri) {
-      this.ipc.send('list:setItemDone', {
-        itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, external, fromPacket, hq
-      });
-    }
-    this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, {
-      enableAutofillHQFilter: this.settings.enableAutofillHQFilter,
-      enableAutofillNQFilter: this.settings.enableAutofillNQFilter
-    }, external, fromPacket, hq));
+  setItemDone({
+                itemId,
+                itemIcon,
+                finalItem,
+                delta,
+                recipeId,
+                totalNeeded,
+                external = false,
+                fromPacket = false,
+                hq = false,
+                skipHistory = false
+              }: { itemId: number, itemIcon: number, finalItem: boolean, delta: number, recipeId: string, totalNeeded: number, external?: boolean, fromPacket?: boolean, hq?: boolean, skipHistory?: boolean }): void {
+    this.setListItemDone({
+      listId: null,
+      itemId: itemId,
+      itemIcon: itemIcon,
+      finalItem: finalItem,
+      delta: delta,
+      recipeId: recipeId,
+      totalNeeded: totalNeeded,
+      external: external,
+      fromPacket: fromPacket,
+      hq: hq,
+      skipHistory: skipHistory
+    });
   }
 
-  setListItemDone(listId: string, itemId: number, itemIcon: number, finalItem: boolean, delta: number, recipeId: string, totalNeeded: number, external = false, fromPacket = false, hq = false): void {
+  setListItemDone({
+                    listId,
+                    itemId,
+                    itemIcon,
+                    finalItem,
+                    delta,
+                    recipeId,
+                    totalNeeded,
+                    external = false,
+                    fromPacket = false,
+                    hq = false,
+                    skipHistory = false
+                  }: { listId: string, itemId: number, itemIcon: number, finalItem: boolean, delta: number, recipeId: string, totalNeeded: number, external?: boolean, fromPacket?: boolean, hq?: boolean, skipHistory?: boolean }): void {
     if (this.settings.autoMarkAsCompleted && delta > 0) {
       this.authFacade.markAsDoneInLog(recipeId ? 'crafting' : 'gathering', +(recipeId || itemId), true);
     }
@@ -320,7 +372,7 @@ export class ListsFacade {
     this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, {
       enableAutofillHQFilter: this.settings.enableAutofillHQFilter,
       enableAutofillNQFilter: this.settings.enableAutofillNQFilter
-    }, external, fromPacket, hq, listId));
+    }, external, fromPacket, hq, listId, skipHistory));
   }
 
   markAsHq(itemIds: number[], hq: boolean, finalItems: boolean): void {
@@ -362,8 +414,12 @@ export class ListsFacade {
     this.store.dispatch(new UpdateList(ListController.clone(list, true), updateCompact, force));
   }
 
-  clearModificationsHistory(list: List): void {
-    this.store.dispatch(new ClearModificationsHistory(list));
+  clearModificationsHistory(key: string): void {
+    this.store.dispatch(new ClearModificationsHistory(key));
+  }
+
+  addModificationsHistoryEntries(entries: ModificationEntry[]): void {
+    this.store.dispatch(new AddModificationHistoryEntries(entries));
   }
 
   pureUpdateList($key: string, data: Partial<List>): void {
@@ -537,9 +593,5 @@ export class ListsFacade {
       tap(l => this.updateList(l))
     );
 
-  }
-
-  addModificationsHistoryEntry(entry: ModificationEntry): void {
-    // TODO local history
   }
 }

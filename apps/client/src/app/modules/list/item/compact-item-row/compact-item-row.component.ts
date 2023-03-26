@@ -119,7 +119,15 @@ export class CompactItemRowComponent extends TeamcraftComponent implements OnIni
     if (this.aggregate) {
       this.aggregate.generateSetItemDone(item, +amount, this.finalItem)(this.listsFacade);
     } else {
-      this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, +amount, item.recipeId, item.amount, external);
+      this.listsFacade.setItemDone({
+        itemId: item.id,
+        itemIcon: item.icon,
+        finalItem: this.finalItem,
+        delta: +amount,
+        recipeId: item.recipeId,
+        totalNeeded: item.amount,
+        external: external
+      });
     }
   }
 

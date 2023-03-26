@@ -105,7 +105,15 @@ export class ProcessedListAggregate extends DataWithPermissions {
     return facade => {
       patches.forEach(row => {
         if (row.delta !== 0) {
-          facade.setListItemDone(row.list, item.id, item.icon, finalItem, row.delta, item.recipeId, item.amount);
+          facade.setListItemDone({
+            listId: row.list,
+            itemId: item.id,
+            itemIcon: item.icon,
+            finalItem: finalItem,
+            delta: row.delta,
+            recipeId: item.recipeId,
+            totalNeeded: item.amount
+          });
         }
       });
       ListController.setDone(this.aggregatedList, item.id, _delta, !finalItem, finalItem, false, item.recipeId, false);

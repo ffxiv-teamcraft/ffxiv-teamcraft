@@ -330,7 +330,14 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       }),
       takeUntil(ref.afterClose)
     ).subscribe(step => {
-      this.listsFacade.setItemDone(step.itemId, step.iconid, step.finalItem, step.item_amount, null, step.total_item_amount);
+      this.listsFacade.setItemDone({
+        itemId: step.itemId,
+        itemIcon: step.iconid,
+        finalItem: step.finalItem,
+        delta: step.item_amount,
+        recipeId: null,
+        totalNeeded: step.total_item_amount
+      });
     });
   }
 
@@ -339,7 +346,15 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       if (this.aggregate) {
         this.aggregate.generateSetItemDone(row, row.amount - row.done, this.finalItems || row.finalItem)(this.listsFacade);
       } else {
-        this.listsFacade.setItemDone(row.id, row.icon, this.finalItems || row.finalItem, row.amount - row.done, row.recipeId, row.amount, false);
+        this.listsFacade.setItemDone({
+          itemId: row.id,
+          itemIcon: row.icon,
+          finalItem: this.finalItems || row.finalItem,
+          delta: row.amount - row.done,
+          recipeId: row.recipeId,
+          totalNeeded: row.amount,
+          external: false
+        });
       }
       if (this.settings.autoMarkAsCompleted) {
         if (row.sources.some(s => s.type === DataType.GATHERED_BY)) {
@@ -361,7 +376,15 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       if (this.aggregate) {
         this.aggregate.generateSetItemDone(row, -row.done, this.finalItems || row.finalItem)(this.listsFacade);
       } else {
-        this.listsFacade.setItemDone(row.id, row.icon, this.finalItems || row.finalItem, -row.done, row.recipeId, row.amount, false);
+        this.listsFacade.setItemDone({
+          itemId: row.id,
+          itemIcon: row.icon,
+          finalItem: this.finalItems || row.finalItem,
+          delta: -row.done,
+          recipeId: row.recipeId,
+          totalNeeded: row.amount,
+          external: false
+        });
       }
     });
   }

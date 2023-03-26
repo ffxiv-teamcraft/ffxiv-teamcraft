@@ -53,7 +53,14 @@ export class CompactAmountInputComponent extends TeamcraftComponent {
     if (this.aggregate) {
       this.aggregate.generateSetItemDone(item, newValue - item.done, this.finalItem)(this.listsFacade);
     } else {
-      this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, newValue - item.done, item.recipeId, item.amount);
+      this.listsFacade.setItemDone({
+        itemId: item.id,
+        itemIcon: item.icon,
+        finalItem: this.finalItem,
+        delta: newValue - item.done,
+        recipeId: item.recipeId,
+        totalNeeded: item.amount
+      });
     }
     item.done = newValue;
   }
@@ -62,7 +69,15 @@ export class CompactAmountInputComponent extends TeamcraftComponent {
     if (this.aggregate) {
       this.aggregate.generateSetItemDone(item, +amount, this.finalItem)(this.listsFacade);
     } else {
-      this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, +amount, item.recipeId, item.amount, external);
+      this.listsFacade.setItemDone({
+        itemId: item.id,
+        itemIcon: item.icon,
+        finalItem: this.finalItem,
+        delta: +amount,
+        recipeId: item.recipeId,
+        totalNeeded: item.amount,
+        external: external
+      });
     }
     item.done += +amount;
   }
@@ -71,7 +86,15 @@ export class CompactAmountInputComponent extends TeamcraftComponent {
     if (this.aggregate) {
       this.aggregate.generateSetItemDone(item, -1 * (+amount), this.finalItem)(this.listsFacade);
     } else {
-      this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, -1 * (+amount), item.recipeId, item.amount, external);
+      this.listsFacade.setItemDone({
+        itemId: item.id,
+        itemIcon: item.icon,
+        finalItem: this.finalItem,
+        delta: -1 * (+amount),
+        recipeId: item.recipeId,
+        totalNeeded: item.amount,
+        external: external
+      });
     }
   }
 
@@ -79,7 +102,14 @@ export class CompactAmountInputComponent extends TeamcraftComponent {
     if (this.aggregate) {
       this.aggregate.generateSetItemDone(item, item.amount - item.done, this.finalItem)(this.listsFacade);
     } else {
-      this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, item.amount - item.done, item.recipeId, item.amount);
+      this.listsFacade.setItemDone({
+        itemId: item.id,
+        itemIcon: item.icon,
+        finalItem: this.finalItem,
+        delta: item.amount - item.done,
+        recipeId: item.recipeId,
+        totalNeeded: item.amount
+      });
     }
     item.done = item.amount;
   }
@@ -88,7 +118,14 @@ export class CompactAmountInputComponent extends TeamcraftComponent {
     if (this.aggregate) {
       this.aggregate.generateSetItemDone(item, -1 * item.done, this.finalItem)(this.listsFacade);
     } else {
-      this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, -1 * item.done, item.recipeId, item.amount);
+      this.listsFacade.setItemDone({
+        itemId: item.id,
+        itemIcon: item.icon,
+        finalItem: this.finalItem,
+        delta: -1 * item.done,
+        recipeId: item.recipeId,
+        totalNeeded: item.amount
+      });
     }
     item.done = 0;
   }
