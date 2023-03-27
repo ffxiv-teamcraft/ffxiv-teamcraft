@@ -101,7 +101,9 @@
     "*********** API STUFF **************": "",
     "api:build": "nx run api:build:production",
     "api:deploy": "yarn api:build && gcloud builds submit --config ./apps/api/cloudbuild.yaml . && gcloud beta run deploy api --image gcr.io/ffxivteamcraft/api --region us-central1 --update-secrets=XIVAPI_KEY=XIVAPI_KEY:latest --update-secrets=FFCAFE_KEY=FFCAFE_KEY:latest",
-    "api:start": "nx run api:serve"
+    "api:start": "nx run api:serve",
+    "lodestone-api:build": "nx run lodestone-api:build:production",
+    "lodestone-api:deploy": "yarn lodestone-api:build && gcloud builds submit --config ./apps/lodestone-api/cloudbuild.yaml . && gcloud beta run deploy lodestone-api --image gcr.io/ffxivteamcraft/lodestone-api --region us-central1"
   },
   "private": true,
   "dependencies": {
@@ -277,6 +279,7 @@
     "prettier": "2.6.2",
     "qs": "^6.11.0",
     "quicktype-core": "6.1.0",
+    "redis": "^4.6.5",
     "reflect-metadata": "^0.1.13",
     "semver": "^7.3.8",
     "standard-version": "^4.4.0",

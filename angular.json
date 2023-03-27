@@ -6,6 +6,7 @@
     "client": "apps/client",
     "data": "libs/data",
     "data-extraction": "apps/data-extraction",
+    "lodestone-api": "apps/lodestone-api",
     "types": "libs/types"
   }
 }
