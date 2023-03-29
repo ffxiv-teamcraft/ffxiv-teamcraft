@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { AuthState } from './auth.reducer';
-import { catchError, debounceTime, distinctUntilChanged, filter, first, map, mergeMap, switchMap, switchMapTo, tap, withLatestFrom } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, filter, map, mergeMap, switchMap, switchMapTo, tap, withLatestFrom } from 'rxjs/operators';
 import { EMPTY, from, of } from 'rxjs';
 import { UserService } from '../core/database/user.service';
 import {
@@ -28,7 +28,6 @@ import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { TranslateService } from '@ngx-translate/core';
-import { XivapiService } from '@xivapi/angular-client';
 import { LoadAlarms } from '../core/alarms/+state/alarms.actions';
 import { User } from '@firebase/auth-types';
 import { AuthFacade } from './auth.facade';
@@ -277,8 +276,7 @@ export class AuthEffects {
 
   constructor(private actions$: Actions, private auth: Auth, private userService: UserService,
               private store: Store<{ auth: AuthState }>, private dialog: NzModalService,
-              private translate: TranslateService, private xivapi: XivapiService,
-              private notificationService: NzNotificationService, private authFacade: AuthFacade,
+              private translate: TranslateService, private notificationService: NzNotificationService, private authFacade: AuthFacade,
               private patreonService: PatreonService, private logTrackingService: LogTrackingService,
               private commissionProfileService: CommissionProfileService, private settings: SettingsService) {
   }

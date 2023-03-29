@@ -47,6 +47,7 @@ export const LazyDataKeys = [
   'gatheringPointToNodeId',
   'gatheringSearchIndex',
   'gcNames',
+  'gcSupply',
   'gilShopNames',
   'gubalBnpcsIndex',
   'hqFlags',

@@ -2,9 +2,8 @@
 <form (ngSubmit)="getSupplies(form)" *ngIf="form$ | async as form" [formGroup]="form" [nzLayout]="'inline'" nz-form>
   <nz-form-item *ngFor="let control of form.controls | keys">
     <nz-form-control>
-      <nz-input-group [nzPrefix]="jobIcon">
-        <input [formControlName]="control" [nzTooltipTitle]="+control | i18nRow:'jobName' | i18n" class="lvl-input" min="0" nz-input
-               nz-tooltip
+      <nz-input-group [nzPrefix]="jobIcon" nz-tooltip [nzTooltipTitle]="+control | i18nRow:'jobName' | i18n" >
+        <input [formControlName]="control" class="lvl-input" min="0" nz-input
                required type="number"/>
       </nz-input-group>
       <ng-template #jobIcon>

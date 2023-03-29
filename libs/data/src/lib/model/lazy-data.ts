@@ -30,6 +30,7 @@ import {LazyGatheringItem} from './lazy-gathering-item';
 import {LazyGatheringLogPage} from './lazy-gathering-log-page';
 import {LazyGatheringSearchIndex} from './lazy-gathering-search-index';
 import {LazyGcName} from './lazy-gc-name';
+import {LazyGcSupply} from './lazy-gc-supply';
 import {LazyGilShopName} from './lazy-gil-shop-name';
 import {LazyHunt} from './lazy-hunt';
 import {LazyHwdInspection} from './lazy-hwd-inspection';
@@ -160,6 +161,7 @@ export interface LazyData {
   gatheringPointToNodeId: Record<number, number>;
   gatheringSearchIndex: Record<number, LazyGatheringSearchIndex>;
   gcNames: Record<number, LazyGcName>;
+  gcSupply: Record<number, LazyGcSupply>;
   gilShopNames: Record<number, LazyGilShopName>;
   gubalBnpcsIndex: Record<number, number>;
   hqFlags: Record<number, number>;

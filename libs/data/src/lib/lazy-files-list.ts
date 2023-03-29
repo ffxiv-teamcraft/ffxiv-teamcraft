@@ -89,7 +89,7 @@ export const lazyFilesList = {
   },
   'deprecatedItems': {
     'fileName': 'deprecated-items.json',
-    'hashedFileName': 'deprecated-items.61100691343f1afb55c74b25ada572e051ea2c35.json'
+    'hashedFileName': 'deprecated-items.b0614d447778a309a4254d34598e9d61d4391d5a.json'
   },
   'desynth': {
     'fileName': 'desynth.json',
@@ -161,7 +161,7 @@ export const lazyFilesList = {
   },
   'gardeningSources': {
     'fileName': 'gardening-sources.json',
-    'hashedFileName': 'gardening-sources.12676e07975f826b8cb42210a54f8c37ed25f078.json'
+    'hashedFileName': 'gardening-sources.f7437efceeff7596dba454900da3a9fdc957f89f.json'
   },
   'gatheringBonuses': {
     'fileName': 'gathering-bonuses.json',
@@ -190,6 +190,10 @@ export const lazyFilesList = {
   'gcNames': {
     'fileName': 'gc-names.json',
     'hashedFileName': 'gc-names.be23c8364d59e60ba9d6ae6d8d2e5ded6117e4bc.json'
+  },
+  'gcSupply': {
+    'fileName': 'gc-supply.json',
+    'hashedFileName': 'gc-supply.d202c77298075b8fe4bbf1280bc76e652adc63f3.json'
   },
   'gilShopNames': {
     'fileName': 'gil-shop-names.json',
@@ -221,7 +225,7 @@ export const lazyFilesList = {
   },
   'instanceSources': {
     'fileName': 'instance-sources.json',
-    'hashedFileName': 'instance-sources.7a51b97d24fc1e66d673223249b61731858e6f43.json'
+    'hashedFileName': 'instance-sources.6526adb31b63bc7b9794d92749da605979c78102.json'
   },
   'instances': {
     'fileName': 'instances.json',
@@ -337,7 +341,7 @@ export const lazyFilesList = {
   },
   'lootSources': {
     'fileName': 'loot-sources.json',
-    'hashedFileName': 'loot-sources.748dfc5d6ee091940551b377aafac7b2a4a79f4e.json'
+    'hashedFileName': 'loot-sources.14ac8b40a5e59efba7947a551289756455777b30.json'
   },
   'mapEntries': {
     'fileName': 'map-entries.json',
@@ -365,7 +369,7 @@ export const lazyFilesList = {
   },
   'mogstationSources': {
     'fileName': 'mogstation-sources.json',
-    'hashedFileName': 'mogstation-sources.abd6c4a2af8e0eb73cd427380674f13a3cd47e8e.json'
+    'hashedFileName': 'mogstation-sources.c51104c8d19d9368a111b3bee753e0d180cab90d.json'
   },
   'monsters': {
     'fileName': 'monsters.json',
@@ -401,7 +405,7 @@ export const lazyFilesList = {
   },
   'questSources': {
     'fileName': 'quest-sources.json',
-    'hashedFileName': 'quest-sources.25dec0d796b5e336a7a2b6f38808531fd7999563.json'
+    'hashedFileName': 'quest-sources.0ec15959be6b3559cc3bda0134c3ef17ad10616e.json'
   },
   'quests': {
     'fileName': 'quests.json',
@@ -437,7 +441,7 @@ export const lazyFilesList = {
   },
   'reverseInstanceSources': {
     'fileName': 'reverse-instance-sources.json',
-    'hashedFileName': 'reverse-instance-sources.027d7ec16b16028b72ad521a7584b451c1f09ae5.json'
+    'hashedFileName': 'reverse-instance-sources.c5826a8b3c274ae453a64bc67ff5b856326aa2b4.json'
   },
   'reverseReduction': {
     'fileName': 'reverse-reduction.json',
@@ -545,7 +549,7 @@ export const lazyFilesList = {
   },
   'voyageSources': {
     'fileName': 'voyage-sources.json',
-    'hashedFileName': 'voyage-sources.e5628a31dd5e92e93b2218f3fae4399dd0323629.json'
+    'hashedFileName': 'voyage-sources.04a134212aa09a0868c7694d7422e3206e5725c9.json'
   },
   'weathers': {
     'fileName': 'weathers.json',

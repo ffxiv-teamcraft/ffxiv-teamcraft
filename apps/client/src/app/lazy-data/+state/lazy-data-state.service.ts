@@ -101,7 +101,7 @@ export class LazyDataStateService {
         };
         this.loadingStates[propertyKey] = loadingState;
       }
-      if (id !== null && !loadingState.loaded.includes(id) && !loadingState.loading.includes(id)) {
+      if (id !== null && id !== undefined && !loadingState.loaded.includes(id) && !loadingState.loading.includes(id)) {
         this.loadingKeys$.next([...this.loadingKeys$.value, `${propertyKey}:${id.toString()}`]);
         loadingState.loading.push(id);
         this.loadRowAndSetupSubscription(propertyKey, id as keyof LazyDataWithExtracts[K]);

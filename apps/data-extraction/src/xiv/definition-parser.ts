@@ -205,7 +205,7 @@ export class DefinitionParser {
   }
 
   private generateRepeatReaderEntry(col: SaintRepeatColumnDefinition, index: number, parentCount = col.count): ReaderEntry[] {
-    let name = col.definition?.name || col.name;
+    const name = col.definition?.name || col.name;
     if (name) {
       return [{
         name: DefinitionParser.cleanupColumnName(name),
@@ -216,12 +216,16 @@ export class DefinitionParser {
     const type = col.definition.type;
     switch (type) {
       case 'repeat':
-        return [{
-          name: DefinitionParser.cleanupColumnName(col.definition.definition?.name || col.definition.name),
-          reader: new Array(col.count).fill(null).map((_, colIndex) => {
-            return this.generateRepeatReader((col.definition as SaintRepeatColumnDefinition).count, index + colIndex * col.count);
-          })
-        }];
+        if (col.definition.definition.type === 'group') {
+          return this.generateRepeatGroupReaderEntry(col, index);
+        } else {
+          return [{
+            name: DefinitionParser.cleanupColumnName(col.definition.definition?.name || col.definition.name),
+            reader: new Array(col.count).fill(null).map((_, colIndex) => {
+              return this.generateRepeatReader((col.definition as SaintRepeatColumnDefinition).count, index + colIndex * col.count);
+            })
+          }];
+        }
       case 'group':
         return this.generateGroupReaderEntry(col.definition as SaintGroupColumnDefinition, index, parentCount);
     }
@@ -251,6 +255,22 @@ export class DefinitionParser {
             return index + parentIndex * col.members.length + mi;
           }
         )
+      };
+    });
+  }
+
+  private generateRepeatGroupReaderEntry(baseRepeat: SaintRepeatColumnDefinition, index: number): ReaderEntry[] {
+    const childRepeat = baseRepeat.definition as SaintRepeatColumnDefinition;
+    const group = childRepeat.definition as SaintGroupColumnDefinition;
+    return group.members.map((member: BaseSaintColumnDefinition, mi) => {
+      const name = member.definition?.name || member.name;
+      return {
+        name: DefinitionParser.cleanupColumnName(name),
+        reader: new Array(baseRepeat.count).fill(null).map((_, colIndex) => {
+          return new Array(childRepeat.count).fill(null).map((__, childColIndex) => {
+            return index + (colIndex * childRepeat.count * group.members.length) + (childColIndex * group.members.length) + mi;
+          });
+        })
       };
     });
   }
