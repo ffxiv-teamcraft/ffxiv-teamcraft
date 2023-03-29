@@ -1522,7 +1522,7 @@
     "Search": "Search",
     "Generate_list": "Create a quick list",
     "Intro": "Input your levels and click search to get started",
-    "Loading_message": "Loading possible deliveries, this can take up to a minute"
+    "Loading_message": "Loading possible deliveries..."
   },
   "DESYNTH": {
     "Title": "Desynth guide",
