@@ -1522,7 +1522,7 @@
     "Search": "Pesquisa",
     "Generate_list": "Criar uma lista rápida",
     "Intro": "Insira os seus níveis e clique Pesquisar para começar",
-    "Loading_message": "A carregando possíveis entregas, pode demorar até um minuto"
+    "Loading_message": "Loading possible deliveries..."
   },
   "DESYNTH": {
     "Title": "Desynth guide",
