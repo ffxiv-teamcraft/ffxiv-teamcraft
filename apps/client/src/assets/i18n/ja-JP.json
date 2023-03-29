@@ -1522,7 +1522,7 @@
     "Search": "検索",
     "Generate_list": "クイックリストを作成",
     "Intro": "レベルを入力し、検索をクリックして開始します。",
-    "Loading_message": "可能な調達品を読み込み中... 時間が所要されます"
+    "Loading_message": "Loading possible deliveries..."
   },
   "DESYNTH": {
     "Title": "分解ガイド",
