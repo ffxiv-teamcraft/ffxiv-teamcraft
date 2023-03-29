@@ -1522,7 +1522,7 @@
     "Search": "Поиск",
     "Generate_list": "Создать быстрый список",
     "Intro": "Введите уровень и нажмите на поиск, чтобы начать",
-    "Loading_message": "Загрузка возможных доставок, это может занять до минуты"
+    "Loading_message": "Loading possible deliveries..."
   },
   "DESYNTH": {
     "Title": "Гид по дезинтезу",
