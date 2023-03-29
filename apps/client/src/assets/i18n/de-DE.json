@@ -1522,7 +1522,7 @@
     "Search": "Suche",
     "Generate_list": "Vergängliche Liste anlegen",
     "Intro": "Gib deine Stufen ein und drücke \"Suche\", um zu beginnen",
-    "Loading_message": "Lädt mögliche Liefereinsätze, dies kann bis zu einer Minute dauern"
+    "Loading_message": "Loading possible deliveries..."
   },
   "DESYNTH": {
     "Title": "Desynthese-Leitfaden",
