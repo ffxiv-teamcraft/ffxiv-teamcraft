@@ -1522,7 +1522,7 @@
     "Search": "Recherche",
     "Generate_list": "Créer une liste rapide",
     "Intro": "Saisissez vos niveaux et cliquez sur recherche pour commencer",
-    "Loading_message": "Chargement des livraisons possibles, cela peut prendre jusqu'à une minute"
+    "Loading_message": "Loading possible deliveries..."
   },
   "DESYNTH": {
     "Title": "Guide de recyclage",
