@@ -7,7 +7,7 @@ import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 import { StatsService } from '../../../modules/gearsets/stats.service';
-import { DataType, BaseParam, LazyDataWithExtracts, getItemSource, getExtract } from '@ffxiv-teamcraft/types';
+import { BaseParam, DataType, getExtract, getItemSource, LazyDataWithExtracts } from '@ffxiv-teamcraft/types';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -260,13 +260,15 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
         return this.allowItem(+key, filters, inventory, extracts, rarities)
           && (equipSlotCategories[0] !== 12 || +key !== (gearset.ring1?.itemId || gearset.ring2?.itemId) || !equipment[gearset.ring1?.itemId || gearset.ring2?.itemId]?.unique)
           && (this.getMainStatValue(+key, mainStat, equipSlotCategories, job, itemStats) > 0
-          || this.getSecondaryStatValue(+key, mainStat, equipSlotCategories, job, itemStats)) > 0;
+            || this.getSecondaryStatValue(+key, mainStat, equipSlotCategories, job, itemStats)) > 0;
       })
       .sort((a, b) => {
         if (level < this.environment.maxLevel) {
           if ([8, 9, 10, 11, 12, 13, 14, 15].includes(job)) {
-            const aTotalStat = this.getMainStatValue(+a, mainStat, equipSlotCategories, job, itemStats);
-            const bTotalStat = this.getMainStatValue(+b, mainStat, equipSlotCategories, job, itemStats);
+            const aTotalStat = this.getMainStatValue(+a, mainStat, equipSlotCategories, job, itemStats)
+              + this.getSecondaryStatValue(+a, mainStat, equipSlotCategories, job, itemStats);
+            const bTotalStat = this.getMainStatValue(+b, mainStat, equipSlotCategories, job, itemStats)
+              + this.getSecondaryStatValue(+b, mainStat, equipSlotCategories, job, itemStats);
             if (aTotalStat === bTotalStat) {
               return equipment[b].level - equipment[a].level;
             }
