@@ -18,7 +18,7 @@
   "List_fork_in_progress": "Копирование списка на ваш аккаунт…",
   "Network_error_logged_out": "Обнаружена сетевая ошибка, вы были разлогинены. Если эта проблема повторится, пожалуйста, свяжитесь с Miu в дискорд сервере.",
   "Hide_zone_duplicates": "Скрыть дубликаты зон (предметы из нескольких зон отображаются только один раз)",
-  "Patch_notes": "{{version}} изменения",
+  "Patch_notes": "Patch Notes",
   "Patch_notes_footer": "Вам нравятся новые возможности? Рассмотрите возможность поддержки проекта на patreon",
   "Selection": "Выбор",
   "Change_character": "Персонаж",
@@ -1522,7 +1522,7 @@
     "Search": "Поиск",
     "Generate_list": "Создать быстрый список",
     "Intro": "Введите уровень и нажмите на поиск, чтобы начать",
-    "Loading_message": "Загрузка возможных доставок, это может занять до минуты"
+    "Loading_message": "Loading possible deliveries..."
   },
   "DESYNTH": {
     "Title": "Гид по дезинтезу",
@@ -1612,7 +1612,7 @@
     "Currencies": "Валюты",
     "Rowena_splendor": "Rowena's splendors",
     "Unlocks": "Разблокирует",
-    "Jump_to_page": "Быстрый переход на другую страницу",
+    "Jump_to_page": "Open item db page",
     "Ishgard_restoration": "Восстановление Ишгарда",
     "ITEM": {
       "Masterpiece_exp_tooltip": "% опыта необходимого до следующего уровня",

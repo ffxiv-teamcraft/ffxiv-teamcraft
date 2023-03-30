@@ -18,7 +18,7 @@
   "List_fork_in_progress": "A copiar a lista para a sua conta…",
   "Network_error_logged_out": "A network error has been detected, and you have been logged out. If this issue persists, please contact Miu on the Discord server.",
   "Hide_zone_duplicates": "Hide zone duplicates (items that are in multiple zones are shown only once)",
-  "Patch_notes": "{{version}} changes",
+  "Patch_notes": "Patch Notes",
   "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on Patreon",
   "Selection": "Selection",
   "Change_character": "Personagem",
@@ -1522,7 +1522,7 @@
     "Search": "Pesquisa",
     "Generate_list": "Criar uma lista rápida",
     "Intro": "Insira os seus níveis e clique Pesquisar para começar",
-    "Loading_message": "A carregando possíveis entregas, pode demorar até um minuto"
+    "Loading_message": "Loading possible deliveries..."
   },
   "DESYNTH": {
     "Title": "Desynth guide",
@@ -1612,7 +1612,7 @@
     "Currencies": "Currencies",
     "Rowena_splendor": "Rowena's splendors",
     "Unlocks": "Unlocks",
-    "Jump_to_page": "Quick jump to another page",
+    "Jump_to_page": "Open item db page",
     "Ishgard_restoration": "Ishgardian restoration",
     "ITEM": {
       "Masterpiece_exp_tooltip": "% of exp needed for next level",

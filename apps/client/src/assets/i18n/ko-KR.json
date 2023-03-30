@@ -18,7 +18,7 @@
   "List_fork_in_progress": "목록을 내 계정으로 복사중...",
   "Network_error_logged_out": "네트워크 오류가 감지되었으며 로그아웃 되었습니다. 이 문제가 계속된다면 Tc디스코드 서버의 'Miu' 에게 문의하시길 바랍니다.",
   "Hide_zone_duplicates": "중복 영역 숨기기(여러 영역에 있는 아이템의 경우 한 번만 표시됩니다)",
-  "Patch_notes": "{{version}} 변경점",
+  "Patch_notes": "Patch Notes",
   "Patch_notes_footer": "새로운 기능에 만족하시나요? 그렇다면 저희의 프로젝트를 patreon으로 후원하는 것을 고려해보세요.",
   "Selection": "선택",
   "Change_character": "캐릭터",
@@ -1522,7 +1522,7 @@
     "Search": "검색",
     "Generate_list": "빠른 목록 만들기",
     "Intro": "시작하기 위해 레벨을 입력하고 검색을 클릭하세요",
-    "Loading_message": "가능한 조달품을 불러오는 중... 시간이 조금 소요됩니다"
+    "Loading_message": "Loading possible deliveries..."
   },
   "DESYNTH": {
     "Title": "분해 가이드",
@@ -1612,7 +1612,7 @@
     "Currencies": "화폐",
     "Rowena_splendor": "로웨나 거래",
     "Unlocks": "개방",
-    "Jump_to_page": "빠른 검색",
+    "Jump_to_page": "Open item db page",
     "Ishgard_restoration": "이슈가르드 부흥",
     "ITEM": {
       "Masterpiece_exp_tooltip": "다음 레벨까지 필요한 경험치 %입니다.",
