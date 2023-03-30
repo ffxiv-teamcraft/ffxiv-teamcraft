@@ -27,7 +27,7 @@ export function apolloClientFactory(httpLink: HttpLink, authFacade: AuthFacade) 
     }
   });
 
-  const httpL = httpLink.create({ uri: 'https://gubal.hasura.app/v1/graphql' });
+  const httpL = httpLink.create({ uri: 'https://gubal.ffxivteamcraft.com/v1/graphql' });
 
   const httpAuth = setContext((operation, context) => {
     return firstValueFrom(authFacade.idToken$.pipe(
