@@ -18,7 +18,7 @@
   "List_fork_in_progress": "このリストをマイアカウントにコピー中…",
   "Network_error_logged_out": "ネットワークエラーが検出されたため、ログアウトしました。この問題が解決しない場合は、DiscordでMiuにお問い合わせください。",
   "Hide_zone_duplicates": "複数のエリアで入手できるアイテムは一度だけ表示するようにする",
-  "Patch_notes": "{{version}} の変更",
+  "Patch_notes": "Patch Notes",
   "Patch_notes_footer": "新機能は気に入っていただけましたか？Patreonでのプロジェクトのサポートを検討してください",
   "Selection": "選択",
   "Change_character": "キャラクター",
@@ -1522,7 +1522,7 @@
     "Search": "検索",
     "Generate_list": "クイックリストを作成",
     "Intro": "レベルを入力し、検索をクリックして開始します。",
-    "Loading_message": "可能な調達品を読み込み中... 時間が所要されます"
+    "Loading_message": "Loading possible deliveries..."
   },
   "DESYNTH": {
     "Title": "分解ガイド",
@@ -1612,7 +1612,7 @@
     "Currencies": "通貨",
     "Rowena_splendor": "ロウェナ商会取引",
     "Unlocks": "ロック解除",
-    "Jump_to_page": "別のページへクイックジャンプする",
+    "Jump_to_page": "Open item db page",
     "Ishgard_restoration": "イシュガルド復興",
     "ITEM": {
       "Masterpiece_exp_tooltip": "次のレベルに必要な経験値の％",

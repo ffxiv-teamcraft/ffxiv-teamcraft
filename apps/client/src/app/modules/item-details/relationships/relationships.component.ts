@@ -92,7 +92,14 @@ export class RelationshipsComponent implements OnInit {
 
   markAsDone(item: ListRow, amount: number): void {
     this.markedAsDone[item.id] = true;
-    this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, +amount, item.recipeId, item.amount);
+    this.listsFacade.setItemDone({
+      itemId: item.id,
+      itemIcon: item.icon,
+      finalItem: this.finalItem,
+      delta: +amount,
+      recipeId: item.recipeId,
+      totalNeeded: item.amount
+    });
   }
 
   public trackByInventoryEntry(index: number, entry: { containerName: string, amount: number, hq: boolean }): string {

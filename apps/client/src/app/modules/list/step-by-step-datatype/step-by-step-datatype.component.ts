@@ -89,7 +89,14 @@ export class StepByStepDatatypeComponent {
 
   markPanelAsDone(): void {
     this.steps = this.steps.map(step => {
-      this.listsFacade.setItemDone(step.row.id, step.row.icon, step.row.finalItem, step.row.amount - step.row.done, step.row.recipeId, step.row.amount);
+      this.listsFacade.setItemDone({
+        itemId: step.row.id,
+        itemIcon: step.row.icon,
+        finalItem: step.row.finalItem,
+        delta: step.row.amount - step.row.done,
+        recipeId: step.row.recipeId,
+        totalNeeded: step.row.amount
+      });
       return {
         ...step,
         row: {

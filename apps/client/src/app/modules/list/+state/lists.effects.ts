@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
-  ArchivedListsLoaded, ClearModificationsHistory,
+  AddModificationHistoryEntries,
+  ArchivedListsLoaded,
+  ClearModificationsHistory,
   ConvertLists,
   CreateList,
   DeleteList,
@@ -13,6 +15,7 @@ import {
   MarkItemsHq,
   MyListsLoaded,
   PureUpdateList,
+  RemoveModificationHistoryEntry,
   SetItemDone,
   SharedListsLoaded,
   TeamListsLoaded,
@@ -68,6 +71,8 @@ import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 import { increment, UpdateData, where } from '@angular/fire/firestore';
 import { debounceBufferTime } from '../../../core/rxjs/debounce-buffer-time';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { ListHistoryService } from '../../../core/database/storage/list/list-history.service';
+import { ModificationEntry } from '../model/modification-entry';
 
 // noinspection JSUnusedGlobalSymbols
 @Injectable()
@@ -365,9 +370,11 @@ export class ListsEffects {
         this.removeFromLocalStorage(action.key);
         return EMPTY;
       }
-      return this.listService.remove(action.key);
+      return this.listService.remove(action.key).pipe(
+        map(() => new ClearModificationsHistory(action.key))
+      );
     })
-  ), { dispatch: false });
+  ));
 
   /**
    * Unit update stuff, for items, progression, the core of the realtime part.
@@ -476,6 +483,21 @@ export class ListsEffects {
             if (list.hasCommission) {
               this.updateCommission(list);
             }
+            const historyEntries = actions
+              .filter(action => !action.skipHistory)
+              .map((action: SetItemDone) => {
+                return <ModificationEntry>{
+                  listId: list.$key,
+                  amount: action.doneDelta,
+                  itemId: action.itemId,
+                  finalItem: action.finalItem || false,
+                  recipeId: action.recipeId,
+                  total: action.totalNeeded
+                };
+              });
+            if (historyEntries.length > 0) {
+              this.listsFacade.addModificationsHistoryEntries(historyEntries);
+            }
             return this.listService.runTransaction(list.$key, (transaction, serverCopy) => {
               const serverList = serverCopy.data() as List;
               actions.forEach(action => {
@@ -531,9 +553,20 @@ export class ListsEffects {
   /**
    * History stuff
    */
-  // clearModificationsHistory$ = createEffect(() => this.actions$.pipe(
-  //   ofType<ClearModificationsHistory>(ListsActionTypes.ClearModificationsHistory)
-  // ))
+  addModificationsHistoryEntry$ = createEffect(() => this.actions$.pipe(
+    ofType<AddModificationHistoryEntries>(ListsActionTypes.AddModificationHistoryEntries),
+    switchMap(({ entries }) => this.listHistoryService.addHistoryEntries(entries))
+  ), { dispatch: false });
+
+  removeModificationHistoryEntry$ = createEffect(() => this.actions$.pipe(
+    ofType<RemoveModificationHistoryEntry>(ListsActionTypes.RemoveModificationHistoryEntry),
+    switchMap(({ id }) => this.listHistoryService.removeEntry(id))
+  ), { dispatch: false });
+
+  clearModificationsHistory$ = createEffect(() => this.actions$.pipe(
+    ofType<ClearModificationsHistory>(ListsActionTypes.ClearModificationsHistory),
+    switchMap(({ key }) => this.listHistoryService.removeListEntries(key))
+  ), { dispatch: false });
 
   /**
    * LISTENERS
@@ -580,7 +613,8 @@ export class ListsEffects {
     private dirtyFacade: DirtyFacade,
     private commissionService: CommissionService,
     private soundNotificationService: SoundNotificationService,
-    private pricingService: ListPricingService
+    private pricingService: ListPricingService,
+    private listHistoryService: ListHistoryService
   ) {
   }
 

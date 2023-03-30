@@ -18,7 +18,7 @@
   "List_fork_in_progress": "正在复制清单到您的账号…",
   "Network_error_logged_out": "检测到网络错误，你已被注销。如果此问题一直存在，请在 Discord 上与 Miu 联系。",
   "Hide_zone_duplicates": "隐藏重复地图 (来自多个地图的物品只显示一次)",
-  "Patch_notes": "{{version}} 更新",
+  "Patch_notes": "Patch Notes",
   "Patch_notes_footer": "您喜欢新的功能吗？考虑下在Patreon支持这个项目？",
   "Selection": "已选中",
   "Change_character": "角色",
@@ -1522,7 +1522,7 @@
     "Search": "搜索",
     "Generate_list": "新建快速清单",
     "Intro": "输入等级并点击搜索",
-    "Loading_message": "正在加载筹备列表，可能需要一分钟"
+    "Loading_message": "Loading possible deliveries..."
   },
   "DESYNTH": {
     "Title": "分解指南",
@@ -1612,7 +1612,7 @@
     "Currencies": "货币",
     "Rowena_splendor": "罗薇娜显赫商会",
     "Unlocks": "解锁",
-    "Jump_to_page": "快速跳转到其他页面",
+    "Jump_to_page": "Open item db page",
     "Ishgard_restoration": "伊修加德重建",
     "ITEM": {
       "Masterpiece_exp_tooltip": "下一等级所需经验的百分比",

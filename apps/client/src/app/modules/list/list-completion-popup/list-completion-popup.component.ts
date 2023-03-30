@@ -36,7 +36,7 @@ export class ListCompletionPopupComponent {
   resetList(): void {
     ListController.reset(this.list);
     this.listsFacade.updateList(this.list);
-    this.listsFacade.clearModificationsHistory(this.list);
+    this.listsFacade.clearModificationsHistory(this.list.$key);
     this.close();
   }
 
@@ -48,7 +48,7 @@ export class ListCompletionPopupComponent {
   clearList(): void {
     this.list.finalItems = [];
     this.list.items = [];
-    this.listsFacade.clearModificationsHistory(this.list);
+    this.listsFacade.clearModificationsHistory(this.list.$key);
     this.listsFacade.updateList(this.list, true, true);
     this.close();
   }

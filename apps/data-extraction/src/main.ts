@@ -61,6 +61,7 @@ import { ItemSeriesExtractor } from './extractors/item-series.extractor';
 import { ShopsExtractor } from './extractors/shops.extractor';
 import { SeedsExtractor } from './extractors/seeds.extractor';
 import { ItemDetailsExtractExtractor } from './extractors/extracts/item-details-extract.extractor';
+import { GcSupplyExtractor } from './extractors/gc-supply.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -150,7 +151,8 @@ const extractors: AbstractExtractor[] = [
   new LgbExtractor(),
   new GubalExtractor(),
   new AllaganReportsExtractor(),
-  new GatheringSearchIndexExtractor()
+  new GatheringSearchIndexExtractor(),
+  new GcSupplyExtractor()
 ];
 
 (async () => {

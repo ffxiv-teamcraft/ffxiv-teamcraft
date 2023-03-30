@@ -1,11 +1,12 @@
 <div class="search-box">
   <nz-input-group [nzAddOnBefore]="searchType | ifMobile: null">
     <nz-select
+      autofocus
+      nzAutoFocus
       class="search-input"
       id="search-input"
       nzShowSearch
       nzServerSearch
-      [nzPlaceHolder]="'DB.Jump_to_page' | translate"
       [ngModel]="null"
       (ngModelChange)="navigateTo($event)"
       [nzShowArrow]="false"
@@ -82,41 +83,7 @@
     </nz-select>
     <ng-template #searchType>
       <span *ngIf="reportsMode">{{'ALLAGAN_REPORTS.Jump_to_item' | translate}}</span>
-      <nz-select (ngModelChange)="searchType$.next($event);" [ngModel]="searchType$ | async"
-                 *ngIf="!reportsMode"
-                 class="search-type"
-                 nzShowSearch>
-        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ANY) | translate"
-                   [nzValue]="searchTypes.ANY"></nz-option>
-        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ITEM) | translate"
-                   [nzValue]="searchTypes.ITEM"></nz-option>
-        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.RECIPE) | translate"
-                   [nzValue]="searchTypes.RECIPE"></nz-option>
-        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.INSTANCE) | translate"
-                   [nzValue]="searchTypes.INSTANCE"></nz-option>
-        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.QUEST) | translate"
-                   [nzValue]="searchTypes.QUEST"></nz-option>
-        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.NPC) | translate" [nzValue]="searchTypes.NPC"></nz-option>
-        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.LEVE) | translate"
-                   [nzValue]="searchTypes.LEVE"></nz-option>
-        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.MONSTER) | translate"
-                   [nzValue]="searchTypes.MONSTER"></nz-option>
-        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.FATE) | translate"
-                   [nzValue]="searchTypes.FATE"></nz-option>
-        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.MAP) | translate" [nzValue]="searchTypes.MAP"></nz-option>
-        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ACTION) | translate"
-                   [nzValue]="searchTypes.ACTION"></nz-option>
-        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.STATUS) | translate"
-                   [nzValue]="searchTypes.STATUS"></nz-option>
-        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.TRAIT) | translate"
-                   [nzValue]="searchTypes.TRAIT"></nz-option>
-        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ACHIEVEMENT) | translate"
-                   [nzValue]="searchTypes.ACHIEVEMENT"></nz-option>
-        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.FISHING_SPOT) | translate"
-                   [nzValue]="searchTypes.FISHING_SPOT"></nz-option>
-        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.GATHERING_NODE) | translate"
-                   [nzValue]="searchTypes.GATHERING_NODE"></nz-option>
-      </nz-select>
+      <span *ngIf="!reportsMode">{{'DB.Jump_to_page' | translate}}</span>
     </ng-template>
   </nz-input-group>
 </div>

@@ -396,25 +396,62 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
     if (this.settings.displayRemaining) {
       newValue += item.used;
     }
-    this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, newValue - item.done, item.recipeId, item.amount);
+    this.listsFacade.setItemDone({
+      itemId: item.id,
+      itemIcon: item.icon,
+      finalItem: this.finalItem,
+      delta: newValue - item.done,
+      recipeId: item.recipeId,
+      totalNeeded: item.amount
+    });
   }
 
   add(amount: string | number, item: ListRow, external = false): void {
     // Amount is typed to string because it's from input value, which is always considered as string.
-    this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, +amount, item.recipeId, item.amount, external);
+    this.listsFacade.setItemDone({
+      itemId: item.id,
+      itemIcon: item.icon,
+      finalItem: this.finalItem,
+      delta: +amount,
+      recipeId: item.recipeId,
+      totalNeeded: item.amount,
+      external: external
+    });
   }
 
   remove(amount: string, item: ListRow, external = false): void {
     // Amount is typed to string because it's from input value, which is always considered as string.
-    this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, -1 * (+amount), item.recipeId, item.amount, external);
+    this.listsFacade.setItemDone({
+      itemId: item.id,
+      itemIcon: item.icon,
+      finalItem: this.finalItem,
+      delta: -1 * (+amount),
+      recipeId: item.recipeId,
+      totalNeeded: item.amount,
+      external: external
+    });
   }
 
   markAsDone(item: ListRow): void {
-    this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, item.amount - item.done, item.recipeId, item.amount);
+    this.listsFacade.setItemDone({
+      itemId: item.id,
+      itemIcon: item.icon,
+      finalItem: this.finalItem,
+      delta: item.amount - item.done,
+      recipeId: item.recipeId,
+      totalNeeded: item.amount
+    });
   }
 
   resetDone(item: ListRow): void {
-    this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, -1 * item.done, item.recipeId, item.amount);
+    this.listsFacade.setItemDone({
+      itemId: item.id,
+      itemIcon: item.icon,
+      finalItem: this.finalItem,
+      delta: -1 * item.done,
+      recipeId: item.recipeId,
+      totalNeeded: item.amount
+    });
   }
 
   toggleAlarm(display: AlarmDisplay): void {

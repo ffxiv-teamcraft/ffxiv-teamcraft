@@ -1,6 +1,7 @@
 import { Action } from '@ngrx/store';
 import { List } from '../model/list';
 import { ListRow } from '../model/list-row';
+import { ModificationEntry } from '../model/modification-entry';
 
 export enum ListsActionTypes {
   LoadMyLists = '[Lists] Load My Lists',
@@ -40,6 +41,8 @@ export enum ListsActionTypes {
   OfflineListsLoaded = '[Lists] Offline lists loaded',
 
   ClearModificationsHistory = '[Lists] Clear modifications history',
+  AddModificationHistoryEntries = '[Lists] Add modifications history entries',
+  RemoveModificationHistoryEntry = '[Lists] Remove modifications history entry',
 
   NeedsVerification = '[Lists] Needs character verification',
   ToggleAutocompletion = '[Lists] Toggle autocompletion',
@@ -135,7 +138,7 @@ export class SetItemDone implements Action {
               public readonly finalItem: boolean, public readonly doneDelta: number,
               public readonly recipeId: string, public readonly totalNeeded: number, public readonly settings: { enableAutofillHQFilter: boolean, enableAutofillNQFilter: boolean },
               public readonly external = false, public readonly fromPacket = false,
-              public readonly hq = false, public readonly listId?: string) {
+              public readonly hq = false, public readonly listId?: string, public readonly skipHistory = false) {
   }
 }
 
@@ -217,7 +220,21 @@ export class UpdateList implements Action {
 export class ClearModificationsHistory implements Action {
   readonly type = ListsActionTypes.ClearModificationsHistory;
 
-  constructor(public readonly payload: List) {
+  constructor(public readonly key: string) {
+  }
+}
+
+export class AddModificationHistoryEntries implements Action {
+  readonly type = ListsActionTypes.AddModificationHistoryEntries;
+
+  constructor(public readonly entries: ModificationEntry[]) {
+  }
+}
+
+export class RemoveModificationHistoryEntry implements Action {
+  readonly type = ListsActionTypes.RemoveModificationHistoryEntry;
+
+  constructor(public readonly id: string) {
   }
 }
 
@@ -291,4 +308,6 @@ export type ListsAction =
   | MarkItemsHq
   | UnloadListDetails
   | ClearModificationsHistory
+  | AddModificationHistoryEntries
+  | RemoveModificationHistoryEntry
   | RemoveReadLock;

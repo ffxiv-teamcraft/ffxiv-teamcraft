@@ -1522,7 +1522,7 @@
     "Search": "Search",
     "Generate_list": "Create a quick list",
     "Intro": "Input your levels and click search to get started",
-    "Loading_message": "Loading possible deliveries, this can take up to a minute"
+    "Loading_message": "Loading possible deliveries..."
   },
   "DESYNTH": {
     "Title": "Desynth guide",
@@ -1612,7 +1612,7 @@
     "Currencies": "Currencies",
     "Rowena_splendor": "Rowena's splendors",
     "Unlocks": "Unlocks",
-    "Jump_to_page": "Quick jump to another page",
+    "Jump_to_page": "Open item db page",
     "Ishgard_restoration": "Ishgardian restoration",
     "ITEM": {
       "Masterpiece_exp_tooltip": "% of exp needed for next level",

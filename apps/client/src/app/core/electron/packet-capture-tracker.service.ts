@@ -169,9 +169,29 @@ export class PacketCaptureTrackerService {
           const itemsEntry = list.items.find(i => i.id === patch.itemId);
           const finalItemsEntry = list.finalItems.find(i => i.id === patch.itemId);
           if (itemsEntry && itemsEntry.done < itemsEntry.amount) {
-            this.listsFacade.setItemDone(patch.itemId, itemsEntry.icon, false, patch.quantity, itemsEntry.recipeId, itemsEntry.amount, false, true, patch.hq);
+            this.listsFacade.setItemDone({
+              itemId: patch.itemId,
+              itemIcon: itemsEntry.icon,
+              finalItem: false,
+              delta: patch.quantity,
+              recipeId: itemsEntry.recipeId,
+              totalNeeded: itemsEntry.amount,
+              external: false,
+              fromPacket: true,
+              hq: patch.hq
+            });
           } else if (finalItemsEntry && finalItemsEntry.done < finalItemsEntry.amount) {
-            this.listsFacade.setItemDone(patch.itemId, finalItemsEntry.icon, true, patch.quantity, finalItemsEntry.recipeId, finalItemsEntry.amount, false, true, patch.hq);
+            this.listsFacade.setItemDone({
+              itemId: patch.itemId,
+              itemIcon: finalItemsEntry.icon,
+              finalItem: true,
+              delta: patch.quantity,
+              recipeId: finalItemsEntry.recipeId,
+              totalNeeded: finalItemsEntry.amount,
+              external: false,
+              fromPacket: true,
+              hq: patch.hq
+            });
           }
         });
     });

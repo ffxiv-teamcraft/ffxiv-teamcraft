@@ -18,7 +18,7 @@
   "List_fork_in_progress": "Copie de la liste en cours",
   "Network_error_logged_out": "Une erreur réseau a été détectée et vous avez été déconnecté. Si le problème persiste, merci de contacter Miu sur le serveur Discord de Teamcraft.",
   "Hide_zone_duplicates": "Masquer les duplicatas dans le résumé par zones",
-  "Patch_notes": "Patch notes de la version {{version}}",
+  "Patch_notes": "Patch Notes",
   "Patch_notes_footer": "Vous aimez les nouvelles fonctionnalités ? Pensez à soutenir le projet sur Patreon",
   "Selection": "Sélection",
   "Change_character": "Personnage",
@@ -1522,7 +1522,7 @@
     "Search": "Recherche",
     "Generate_list": "Créer une liste rapide",
     "Intro": "Saisissez vos niveaux et cliquez sur recherche pour commencer",
-    "Loading_message": "Chargement des livraisons possibles, cela peut prendre jusqu'à une minute"
+    "Loading_message": "Loading possible deliveries..."
   },
   "DESYNTH": {
     "Title": "Guide de recyclage",
@@ -1612,7 +1612,7 @@
     "Currencies": "Devises",
     "Rowena_splendor": "Les splendeurs de Rowena",
     "Unlocks": "Déverrouille",
-    "Jump_to_page": "Accès rapide à une autre page",
+    "Jump_to_page": "Open item db page",
     "Ishgard_restoration": "Restauration d'Ishgard",
     "ITEM": {
       "Masterpiece_exp_tooltip": "% de l'EXP nécessaire pour le niveau suivant",

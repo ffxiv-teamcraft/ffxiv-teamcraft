@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 
 export function apolloClientFactory(httpLink: HttpLink, authFacade: AuthFacade) {
   const ws = new WebSocketLink({
-    uri: `wss://gubal.hasura.app/v1/graphql`,
+    uri: `wss://gubal.ffxivteamcraft.com/v1/graphql`,
     options: {
       timeout: 30000,
       reconnect: true,

@@ -34,7 +34,7 @@ export class AllaganReportsComponent {
   public selectCount = 0;
 
   public queueStatus$ = this.allaganReportsService.getQueueStatus().pipe(
-    filter(() => !this.dirty),
+    filter(() => !this.dirty && this.selectCount === 0),
     map(rows => {
       return rows.map(row => {
         return {

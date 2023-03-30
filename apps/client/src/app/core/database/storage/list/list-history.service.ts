@@ -11,7 +11,7 @@ export class ListHistoryService {
   }
 
   getHistory(listId: string): Observable<ModificationEntry[]> {
-    const query = gql`query listHistory($listId: String!) {
+    const query = gql`subscription listHistory($listId: String!) {
       list_history(where:{listId: {_eq: $listId}}) {
         id,
         userId,
@@ -23,7 +23,7 @@ export class ListHistoryService {
         recipeId
       }
     }`;
-    return this.apollo.query<{ list_history: ModificationEntry[] }>({
+    return this.apollo.subscribe<{ list_history: ModificationEntry[] }>({
       query,
       variables: { listId }
     }).pipe(
@@ -31,7 +31,7 @@ export class ListHistoryService {
     );
   }
 
-  addHistoryEntry(listId: string, entries: ModificationEntry[]): Observable<void> {
+  addHistoryEntries(entries: ModificationEntry[]): Observable<void> {
     const mutation = gql`mutation addListHistoryEntries($entries: [list_history_insert_input!]!) {
       insert_list_history(objects: $entries){
         affected_rows
