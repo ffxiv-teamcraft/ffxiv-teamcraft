@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.4.2"></a>
+## [10.4.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.1...v10.4.2) (2023-03-30)
+
+
+### Bug Fixes
+
+* **allagan-reports:** don't update list if rows are selected ([8f21de9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8f21de9))
+* **db:** fixed mogstation icon not loading ([4da7d33](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4da7d33))
+* **leveling-equipment:** fixed gloves always suggested as level 51 gloves ([e6c5f07](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e6c5f07))
+* **simulator:** fixed simulator not opening for KR/CN users ([12c255e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/12c255e))
+
+
+### Features
+
+* **db:** import of 300+ allagan reports ([9d71b59](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9d71b59))
+* **fishing:** increased accuracy in etime report and db chart ([cc3a7d6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cc3a7d6))
+* **lists:** basic version of the contribution stats popup ([5033d5f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5033d5f))
+* **lists:** list history system for online lists ([ef7939e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ef7939e))
+
+
+### Performance Improvements
+
+* **core:** new graphql API ([957c28b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/957c28b))
+* **core:** new lodestone api with cache layer for faster loading ([9cfd6b5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9cfd6b5))
+* **gc-supply:** now using lazy data for faster loading and better data ([53140f0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/53140f0))
+
+
+
 <a name="10.4.1"></a>
 ## [10.4.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.0...v10.4.1) (2023-03-25)
 
