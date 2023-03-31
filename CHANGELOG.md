@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.4.4"></a>
+## [10.4.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.3...v10.4.4) (2023-03-31)
+
+
+### Bug Fixes
+
+* **core:** removing lists history for now, it stresses the DB too hard for almost no user benefits ([7c8f5bb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7c8f5bb))
+
+
+
 <a name="10.4.3"></a>
 ## [10.4.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.1...v10.4.3) (2023-03-30)
 

@@ -415,11 +415,11 @@ export class ListsFacade {
   }
 
   clearModificationsHistory(key: string): void {
-    this.store.dispatch(new ClearModificationsHistory(key));
+    // this.store.dispatch(new ClearModificationsHistory(key));
   }
 
   addModificationsHistoryEntries(entries: ModificationEntry[]): void {
-    this.store.dispatch(new AddModificationHistoryEntries(entries));
+    // this.store.dispatch(new AddModificationHistoryEntries(entries));
   }
 
   pureUpdateList($key: string, data: Partial<List>): void {

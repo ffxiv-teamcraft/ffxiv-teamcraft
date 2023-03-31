@@ -137,22 +137,22 @@
                   nz-button nz-tooltip nzShape="circle">
             <i nz-icon nzType="number" nzTheme="outline"></i>
           </button>
-          <button (click)="openHistoryPopup()"
-                  [disabled]="(permissionLevel$ | async) < 20"
-                  [nzTooltipTitle]="'LIST.History' | translate" nz-button
-                  nz-tooltip
-                  nzShape="circle" nzType="primary">
-            <i nz-icon nzType="field-time" nzTheme="outline"></i>
-          </button>
-          <button (click)="openContributionsPopup()"
-                  [disabled]="(permissionLevel$ | async) < 20"
-                  [nzTooltipTitle]="'LIST_DETAILS.Contributions_popup' | translate"
-                  nz-button
-                  nz-tooltip
-                  nzShape="circle"
-                  nzType="default">
-            <i nz-icon nzType="pie-chart"></i>
-          </button>
+<!--          <button (click)="openHistoryPopup()"-->
+<!--                  [disabled]="(permissionLevel$ | async) < 20"-->
+<!--                  [nzTooltipTitle]="'LIST.History' | translate" nz-button-->
+<!--                  nz-tooltip-->
+<!--                  nzShape="circle" nzType="primary">-->
+<!--            <i nz-icon nzType="field-time" nzTheme="outline"></i>-->
+<!--          </button>-->
+<!--          <button (click)="openContributionsPopup()"-->
+<!--                  [disabled]="(permissionLevel$ | async) < 20"-->
+<!--                  [nzTooltipTitle]="'LIST_DETAILS.Contributions_popup' | translate"-->
+<!--                  nz-button-->
+<!--                  nz-tooltip-->
+<!--                  nzShape="circle"-->
+<!--                  nzType="default">-->
+<!--            <i nz-icon nzType="pie-chart"></i>-->
+<!--          </button>-->
         </div>
       </div>
     </div>
