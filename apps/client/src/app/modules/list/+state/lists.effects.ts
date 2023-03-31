@@ -553,20 +553,20 @@ export class ListsEffects {
   /**
    * History stuff
    */
-  addModificationsHistoryEntry$ = createEffect(() => this.actions$.pipe(
-    ofType<AddModificationHistoryEntries>(ListsActionTypes.AddModificationHistoryEntries),
-    switchMap(({ entries }) => this.listHistoryService.addHistoryEntries(entries))
-  ), { dispatch: false });
-
-  removeModificationHistoryEntry$ = createEffect(() => this.actions$.pipe(
-    ofType<RemoveModificationHistoryEntry>(ListsActionTypes.RemoveModificationHistoryEntry),
-    switchMap(({ id }) => this.listHistoryService.removeEntry(id))
-  ), { dispatch: false });
-
-  clearModificationsHistory$ = createEffect(() => this.actions$.pipe(
-    ofType<ClearModificationsHistory>(ListsActionTypes.ClearModificationsHistory),
-    switchMap(({ key }) => this.listHistoryService.removeListEntries(key))
-  ), { dispatch: false });
+  // addModificationsHistoryEntry$ = createEffect(() => this.actions$.pipe(
+  //   ofType<AddModificationHistoryEntries>(ListsActionTypes.AddModificationHistoryEntries),
+  //   switchMap(({ entries }) => this.listHistoryService.addHistoryEntries(entries))
+  // ), { dispatch: false });
+  //
+  // removeModificationHistoryEntry$ = createEffect(() => this.actions$.pipe(
+  //   ofType<RemoveModificationHistoryEntry>(ListsActionTypes.RemoveModificationHistoryEntry),
+  //   switchMap(({ id }) => this.listHistoryService.removeEntry(id))
+  // ), { dispatch: false });
+  //
+  // clearModificationsHistory$ = createEffect(() => this.actions$.pipe(
+  //   ofType<ClearModificationsHistory>(ListsActionTypes.ClearModificationsHistory),
+  //   switchMap(({ key }) => this.listHistoryService.removeListEntries(key))
+  // ), { dispatch: false });
 
   /**
    * LISTENERS
