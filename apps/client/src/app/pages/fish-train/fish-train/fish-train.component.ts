@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { delayWhen, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { DataType, FishTrainStop, GatheringNode, getExtract, getItemSource, I18nName } from '@ffxiv-teamcraft/types';
+import { DataType, FishTrainStop, GatheringNode, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
 import { BehaviorSubject, combineLatest, of, Subscription, timer } from 'rxjs';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -149,22 +149,6 @@ export class FishTrainComponent extends TeamcraftComponent {
       this.cd.detectChanges();
     }),
     shareReplay(1)
-  );
-
-  private fishNames$ = this.fishTrain$.pipe(
-    distinctUntilChanged((a, b) => isEqual(a.fish, b.fish)),
-    switchMap(train => {
-      return this.lazyData.getRows('items', ...train.fish.map(fish => fish.id));
-    }),
-    map((rows: any) => {
-      return Object.entries<I18nName>(rows)
-        .reduce((acc, [id, name]) => {
-          return {
-            ...acc,
-            [id]: this.i18n.getName(name)
-          };
-        }, {});
-    })
   );
 
   public sliderData$ = this.display$.pipe(

@@ -30,7 +30,7 @@ export class FishTrainEffects {
   loadFishTrains$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(loadFishTrain),
-      mergeMap(({ id }) => this.fishTrainService.get(id).pipe(
+      switchMap(({ id }) => this.fishTrainService.get(id).pipe(
         map((train) => loadFishTrainSuccess({ train })),
         catchError((err) => {
           console.log(err);

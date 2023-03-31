@@ -556,17 +556,17 @@ export class ListsEffects {
   addModificationsHistoryEntry$ = createEffect(() => this.actions$.pipe(
     ofType<AddModificationHistoryEntries>(ListsActionTypes.AddModificationHistoryEntries),
     switchMap(({ entries }) => this.listHistoryService.addHistoryEntries(entries))
-  ), { dispatch: false });
+  ), { dispatch: false, useEffectsErrorHandler: true });
 
   removeModificationHistoryEntry$ = createEffect(() => this.actions$.pipe(
     ofType<RemoveModificationHistoryEntry>(ListsActionTypes.RemoveModificationHistoryEntry),
     switchMap(({ id }) => this.listHistoryService.removeEntry(id))
-  ), { dispatch: false });
+  ), { dispatch: false, useEffectsErrorHandler: true });
 
   clearModificationsHistory$ = createEffect(() => this.actions$.pipe(
     ofType<ClearModificationsHistory>(ListsActionTypes.ClearModificationsHistory),
     switchMap(({ key }) => this.listHistoryService.removeListEntries(key))
-  ), { dispatch: false });
+  ), { dispatch: false, useEffectsErrorHandler: true });
 
   /**
    * LISTENERS
