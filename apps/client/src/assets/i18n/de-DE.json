@@ -818,7 +818,7 @@
       "Layout_name": "Layoutname",
       "Invalid_import": "Ungültiger Layout Import Code!",
       "Global_options": "Allgemeine Optionen",
-      "Default_readonly_message": "This is one of the default layouts and is read-only. Please create a new layout with the + button to customize your layout.",
+      "Default_readonly_message": "Dies ist eines der Standardlayouts und ist schreibgeschützt. Bitte erstelle ein neues Layout mit der + Schaltfläche, um dein Layout anzupassen.",
       "Buttons": "Schaltflächen",
       "Menu": "Menü",
       "Edit_row_buttons_display": "Anzeige der Zeilenschaltflächen bearbeiten",
@@ -1207,7 +1207,7 @@
       "Craftsmanship": "Kunstfertigkeit",
       "Control": "Kontrolle",
       "Specialist": "Spezialist",
-      "Splendorous": "Uses a splendorous tool",
+      "Splendorous": "Verwendet ein Mowen-Werkzeug",
       "Ingredients": "HQ Zutaten",
       "Consumables": "Verzehrbares",
       "Apply_stats": "Attribute übernehmen",
@@ -1397,7 +1397,7 @@
       "Rotations": "Erstelle Rotationen zum Herstellen, teste sie im Simulator, oder teste theoretische Rotationen mit dem benutzerdefinierten Simulator!",
       "Levequests": "Finde Freibriefe für einen bestimmten Job und/oder Stufenbereich, schau dir den Fortschritt an und erstelle daraus Listen.",
       "Macro_translation": "Du hast Makros, die nicht in deiner Sprache sind? Nutze die Makro-Übersetzung und übersetze es in deine Sprache damit es auch in deiner Sprachversion von FFXIV funktioniert!",
-      "Island_sanctuary": "Optimize your planning and configure it in the island sanctuary workshop planner!"
+      "Island_sanctuary": "Optimiere und konfiguriere deine Planung im Inselatelier Planer!"
     }
   },
   "UPDATE": {
@@ -2867,8 +2867,8 @@
     "Venture_placeholder": "Unternehmungsname",
     "Monster_placeholder": "Gegnername",
     "Voyage_placeholder": "Erkundungsname",
-    "Achievement_placeholder": "Achievement name",
-    "Quest_placeholder": "Quest name",
+    "Achievement_placeholder": "Name der Errungenschaft",
+    "Quest_placeholder": "Quest Name",
     "Voyage_type": "Erkundungstyp",
     "Reported_by": "Gemeldet von",
     "Approved_by": "Genehmigt von",
@@ -3006,7 +3006,7 @@
   },
   "LIST_AGGREGATE": {
     "Home_title": "List Aggregate",
-    "Home_subtitle": "Open multiple lists at once in an aggregated view",
+    "Home_subtitle": "Mehrere Listen gleichzeitig in einer Gesamtansicht öffnen",
     "Select_lists": "Wähle die Listen, die du zusammenfassen möchtest",
     "Select_layout": "Wähle ein Layout",
     "Open_aggregate": "Open an aggregated view",
