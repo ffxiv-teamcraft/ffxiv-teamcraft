@@ -239,7 +239,7 @@ export class SettingsService {
   }
 
   public get materiaConfidenceRate(): number {
-    return +this.getSetting('materias:confidence', '0.5');
+    return +this.getSetting('materias:confidence', '0.66');
   }
 
   public set materiaConfidenceRate(rate: number) {
