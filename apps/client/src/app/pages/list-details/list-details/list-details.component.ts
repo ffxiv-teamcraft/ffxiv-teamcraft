@@ -523,6 +523,23 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.inventoryFacade.inventory$.pipe(
       first(),
       map(inventory => {
+        list.finalItems.forEach(item => {
+          let inventoryItems = inventory.getItem(item.id)
+            .filter(e => {
+              return containerName === null || this.inventoryFacade.getContainerDisplayName(e) === containerName;
+            });
+          const requiredHq = item.requiredHQ > 0;
+          if (requiredHq && this.settings.enableAutofillHQFilter) {
+            inventoryItems = inventoryItems.filter(i => i.hq);
+          }
+          if (!requiredHq && this.settings.enableAutofillNQFilter) {
+            inventoryItems = inventoryItems.filter(i => !i.hq);
+          }
+          if (inventoryItems.length > 0) {
+            const totalAmount = inventoryItems.reduce((total, i) => total + i.quantity, 0);
+            ListController.setDone(list, item.id, Math.min(item.done + totalAmount, item.amount), false, true, false, null, true);
+          }
+        });
         list.items.forEach(item => {
           let inventoryItems = inventory.getItem(item.id)
             .filter(e => {
@@ -541,23 +558,6 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
               totalAmount = item.amount - item.done;
             }
             ListController.setDone(list, item.id, totalAmount, true, false);
-          }
-        });
-        list.finalItems.forEach(item => {
-          let inventoryItems = inventory.getItem(item.id)
-            .filter(e => {
-              return containerName === null || this.inventoryFacade.getContainerDisplayName(e) === containerName;
-            });
-          const requiredHq = item.requiredHQ > 0;
-          if (requiredHq && this.settings.enableAutofillHQFilter) {
-            inventoryItems = inventoryItems.filter(i => i.hq);
-          }
-          if (!requiredHq && this.settings.enableAutofillNQFilter) {
-            inventoryItems = inventoryItems.filter(i => !i.hq);
-          }
-          if (inventoryItems.length > 0) {
-            const totalAmount = inventoryItems.reduce((total, i) => total + i.quantity, 0);
-            ListController.setDone(list, item.id, Math.min(item.done + totalAmount, item.amount), false, true, false, null, true);
           }
         });
         ListController.updateAllStatuses(list);
