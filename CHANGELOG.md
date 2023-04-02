@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.4.5"></a>
+## [10.4.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.4...v10.4.5) (2023-04-02)
+
+
+### Bug Fixes
+
+* **db:** fixed fish bite etime chart on fishing spot pages ([c5baaa3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c5baaa3))
+* **db:** fixed some instances not loading properly, also made loading faster for instances ([0062f47](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0062f47)), closes [#2570](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2570) [#2494](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2494)
+* **gearset:** set base confidence rate to 0.66 for melding prediction for more intuitive results ([661ef28](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/661ef28))
+* **list:** filling from inventory now tarts with final items ([c8617a5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c8617a5))
+* **list-pricing:** fixed "exclude completed items" checkbox ([865f0f2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/865f0f2)), closes [#2565](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2565)
+
+
+### Features
+
+* **db:** hour of the day chart on fish is now using bars instead of line representation ([eda3f98](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eda3f98))
+* **patreon:** 6 new patrons, thanks for your support ! ([9b70dbb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9b70dbb))
+
+
+
 <a name="10.4.4"></a>
 ## [10.4.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.3...v10.4.4) (2023-03-31)
 
