@@ -63,7 +63,23 @@ export class FishingSpotHoursComponent implements OnInit, OnDestroy {
         xAxis: {
           type: 'category',
           boundaryGap: false,
-          data: new Array(24).fill(null).map((_, i) => `${i.toString().padStart(2, '0')}:00`)
+          data: new Array(96)
+            .fill(null)
+            .map((_, index) => {
+              const key = index / 4;
+              return `${Math.floor(key).toString().padStart(2, '0')}:${(key % 1 * 60) || '00'}`;
+            }),
+          axisTick: {
+            interval: (index) => {
+              return index % 4 === 0;
+            }
+          },
+          axisLabel: {
+            interval: (index) => {
+              return index % 8 === 0;
+            }
+          },
+          splitNumber: 4
         },
         yAxis: {
           type: 'value'
@@ -72,7 +88,7 @@ export class FishingSpotHoursComponent implements OnInit, OnDestroy {
           return {
             name: entry.name,
             stack: 'Total',
-            type: 'line',
+            type: 'bar',
             showSymbol: false,
             lineStyle: {
               width: 0

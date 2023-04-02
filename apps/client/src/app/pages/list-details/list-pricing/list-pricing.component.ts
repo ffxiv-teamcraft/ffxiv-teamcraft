@@ -33,7 +33,17 @@ export class ListPricingComponent extends TeamcraftComponent {
   pricingData$ = this.listsFacade.selectedList$.pipe(
     first(),
     switchMap(list => {
-      return this.pricingService.getPricingForList(list.$key);
+      return this.pricingService.getPricingForList(list.$key).pipe(
+        map(rows => {
+          if (this.settings.ignoreCompletedItemInPricing) {
+            return rows.filter(row => {
+              const listRow = ListController.getItemById(list, row.id);
+              return listRow.done < listRow.amount;
+            });
+          }
+          return rows;
+        })
+      );
     })
   );
 

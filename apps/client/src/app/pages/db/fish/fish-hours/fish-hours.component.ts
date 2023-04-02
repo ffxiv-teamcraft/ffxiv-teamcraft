@@ -55,7 +55,7 @@ export class FishHoursComponent {
           data: entries.map(({ value }) => {
             return value;
           }),
-          type: 'line'
+          type: 'bar'
         }
       };
     })

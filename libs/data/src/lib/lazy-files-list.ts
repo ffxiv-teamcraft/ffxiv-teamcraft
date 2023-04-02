@@ -71,6 +71,10 @@ export const lazyFilesList = {
     'fileName': 'collectables.json',
     'hashedFileName': 'collectables.ea66c03bff273629943a73857a6d666111bc7574.json'
   },
+  'contentType': {
+    'fileName': 'content-type.json',
+    'hashedFileName': 'content-type.552a2fff732b2bef5e5af3dcb36a7daccd61ea0a.json'
+  },
   'craftActions': {
     'fileName': 'craft-actions.json',
     'hashedFileName': 'craft-actions.c8c5a4eb00051ed47aa786cb551c3cc143ca564c.json'
@@ -229,7 +233,7 @@ export const lazyFilesList = {
   },
   'instances': {
     'fileName': 'instances.json',
-    'hashedFileName': 'instances.f8845cac945768fb4139d556184090681121037d.json'
+    'hashedFileName': 'instances.65fecee3f22d4dc2d28e1fab98f5b0f43030b6eb.json'
   },
   'islandAnimals': {
     'fileName': 'island-animals.json',

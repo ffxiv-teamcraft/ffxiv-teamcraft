@@ -254,7 +254,7 @@ export class FishContextService {
     map((res) => {
       const data = res.data?.etimes.reduce<{ total: number; byFish: Record<number, { total: number; byTime: Record<number, number> }> }>(
         ({ total, byFish }, val) => {
-          const fishEntry = byFish[val.itemId] ?? { total: 0, byTime: this.makeHoursDict() };
+          const fishEntry = byFish[val.itemId] ?? { total: 0, byTime: this.makeHoursDict(4) };
           fishEntry.total += val.occurences;
           fishEntry.byTime[val.etime] += val.occurences;
           const next = { ...byFish, [val.itemId]: fishEntry };

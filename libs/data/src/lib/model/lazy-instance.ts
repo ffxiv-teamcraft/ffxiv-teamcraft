@@ -1,10 +1,28 @@
 export interface LazyInstance {
+  banner:       string;
   contentText?: number[];
+  contentType:  number;
   de:           string;
+  description:  Description | null;
   en:           string;
+  exp:          number;
   fr:           string;
+  gamePatch:    number;
   icon:         Icon;
+  id:           number;
+  ilvlReq:      number;
   ja:           string;
+  levelReq:     number;
+  map:          number;
+  members:      Members;
+  sync:         number;
+}
+
+export interface Description {
+  de: string;
+  en: string;
+  fr: string;
+  ja: string;
 }
 
 export enum Icon {
@@ -22,4 +40,11 @@ export enum Icon {
   I061000061832PNG = "/i/061000/061832.png",
   I061000061836PNG = "/i/061000/061836.png",
   I061000061846PNG = "/i/061000/061846.png",
+}
+
+export interface Members {
+  HealersPerParty: number;
+  MeleesPerParty:  number;
+  RangedPerParty:  number;
+  TanksPerParty:   number;
 }
