@@ -11,6 +11,7 @@ import {LazyClassJobsModifier} from './lazy-class-jobs-modifier';
 import {LazyCollectablesPageData} from './lazy-collectables-page-data';
 import {LazyCollectablesShopItemGroup} from './lazy-collectables-shop-item-group';
 import {LazyCollectable} from './lazy-collectable';
+import {LazyContentType} from './lazy-content-type';
 import {LazyCraftAction} from './lazy-craft-action';
 import {LazyCraftingLogPage} from './lazy-crafting-log-page';
 import {LazyDiademTerritory} from './lazy-diadem-territory';
@@ -131,6 +132,7 @@ export interface LazyData {
   collectablesShopItemGroup: Record<number, LazyCollectablesShopItemGroup>;
   collectablesShops: Record<number, number[]>;
   collectables: Record<number, LazyCollectable>;
+  contentType: Record<number, LazyContentType>;
   craftActions: Record<number, LazyCraftAction>;
   craftingLevels: Record<number, number>;
   craftingLogPages: Array<LazyCraftingLogPage[]>;

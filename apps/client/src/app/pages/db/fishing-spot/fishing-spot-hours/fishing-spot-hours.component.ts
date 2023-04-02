@@ -88,7 +88,7 @@ export class FishingSpotHoursComponent implements OnInit, OnDestroy {
           return {
             name: entry.name,
             stack: 'Total',
-            type: 'line',
+            type: 'bar',
             showSymbol: false,
             lineStyle: {
               width: 0

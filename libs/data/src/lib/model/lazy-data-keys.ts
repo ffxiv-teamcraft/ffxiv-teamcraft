@@ -17,6 +17,7 @@ export const LazyDataKeys = [
   'collectablesShopItemGroup',
   'collectablesShops',
   'collectables',
+  'contentType',
   'craftActions',
   'craftingLevels',
   'craftingLogPages',

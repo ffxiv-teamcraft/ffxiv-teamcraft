@@ -1,24 +1,24 @@
-<div *ngIf="xivapiInstance$ | async as xivapiInstance; else loader" [style.padding]="'0 25px' | ifMobile: '0'"
+<div *ngIf="lazyInstance$ | async as lazyInstance; else loader" [style.padding]="'0 25px' | ifMobile: '0'"
      fxLayout="column" fxLayoutGap="10px">
   <div class="top-bar" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
        fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px" fxLayoutGap.lt-md="10px">
     <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
          fxLayoutAlign="space-between" fxLayoutGap="10px">
       <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-        <img [src]="xivapiInstance.Icon | xivapiIcon" alt="{{xivapiInstance.ID | i18nRow:'instances' | i18n}}"
+        <img [src]="lazyInstance.icon | xivapiIcon" alt="{{lazyInstance.id | i18nRow:'instances' | i18n}}"
              class="item-icon">
         <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-          <h2 class="item-name">{{xivapiInstance.ID | i18nRow:'instances' | i18n}}</h2>
-          <div *ngIf="xivapiInstance.ContentType" class="item-kind">
-            {{xivapiInstance.ContentType | xivapiL12n: 'contentTypes' | i18n}}
+          <h2 class="item-name">{{lazyInstance.id | i18nRow:'instances' | i18n}}</h2>
+          <div *ngIf="lazyInstance.contentType" class="item-kind">
+            {{lazyInstance.contentType | i18nRow:'contentType' | i18n}}
           </div>
-          <div *ngIf="xivapiInstance.GamePatch" class="patch">
-            {{xivapiInstance.GamePatch | xivapiL12n: 'patchs' | i18n}}
-            <app-db-button [id]="xivapiInstance.GamePatch.ID" type="patch"></app-db-button>
+          <div *ngIf="lazyInstance.gamePatch" class="patch">
+            {{lazyInstance.gamePatch | xivapiL12n: 'patchs' | i18n}}
+            <app-db-button [id]="lazyInstance.gamePatch" type="patch"></app-db-button>
           </div>
         </div>
       </div>
-      <img [src]="xivapiInstance.Banner | xivapiIcon" alt="" class="instance-banner">
+      <img [src]="lazyInstance.Banner | xivapiIcon" alt="" class="instance-banner">
       <div *ngIf="links$ | async as links" class="links" fxLayout="row" fxLayoutAlign="flex-start center"
            fxLayoutGap="5px">
         <a *ngFor="let link of links" [href]="link.url" [nzTooltipTitle]="link.title" nz-tooltip target="_blank">
@@ -27,51 +27,51 @@
       </div>
     </div>
     <div fxFlex="1 1 auto">
-      <p *ngIf="xivapiInstance.Description" [innerHTML]="xivapiInstance | xivapiL12n: 'instanceDescriptions':'Description' | i18n | xivUIText"></p>
+      <p *ngIf="lazyInstance.description" [innerHTML]="lazyInstance.description | i18n"></p>
     </div>
     <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
-                      [value]="xivapiInstance | i18nRow:'instances'"></app-i18n-display>
+                      [value]="lazyInstance"></app-i18n-display>
   </div>
   <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
     <div class="details-block">
       <div class="detail-name">{{'DB.Team_size' | translate}}</div>
-      <div class="detail-value">{{(xivapiInstance.ContentMemberType.HealersPerParty
-        + xivapiInstance.ContentMemberType.MeleesPerParty
-        + xivapiInstance.ContentMemberType.RangedPerParty
-        + xivapiInstance.ContentMemberType.TanksPerParty) || 1}}</div>
+      <div class="detail-value">{{(lazyInstance.members.HealersPerParty
+        + lazyInstance.members.MeleesPerParty
+        + lazyInstance.members.RangedPerParty
+        + lazyInstance.members.TanksPerParty) || 1}}</div>
     </div>
     <div class="details-block">
       <div class="detail-name">{{'DB.Time' | translate}}</div>
-      <div class="detail-value">{{xivapiInstance.TimeLimitMin}}</div>
+      <div class="detail-value">{{lazyInstance.timeLimit}}</div>
     </div>
     <div class="details-block">
       <div class="detail-name">{{'DB.Min_level' | translate}}</div>
-      <div class="detail-value">{{xivapiInstance.ContentFinderCondition.ClassJobLevelRequired}}</div>
+      <div class="detail-value">{{lazyInstance.levelReq}}</div>
     </div>
     <div class="details-block">
       <div class="detail-name">{{'DB.Sync_to' | translate}}</div>
-      <div class="detail-value">{{xivapiInstance.ContentFinderCondition.ClassJobLevelSync}}</div>
+      <div class="detail-value">{{lazyInstance.sync}}</div>
     </div>
     <div class="details-block">
       <div class="detail-name">{{'DB.Min_ilevel' | translate}}</div>
-      <div class="detail-value">{{xivapiInstance.ContentFinderCondition.ItemLevelRequired}}</div>
+      <div class="detail-value">{{lazyInstance.ilvlReq}}</div>
     </div>
     <div class="details-block">
       <div class="detail-name">{{'DB.Exp' | translate}}</div>
-      <div class="detail-value">{{xivapiInstance.InstanceClearExp | number}}</div>
+      <div class="detail-value">{{lazyInstance.exp | number}}</div>
     </div>
     <div class="details-block">
       <div class="detail-name">{{'DB.Week_restriction' | translate}}</div>
-      <div class="detail-value">{{(xivapiInstance.WeekRestriction === 1 ? 'Yes' : 'No') | translate}}</div>
+      <div class="detail-value">{{(lazyInstance.weekRestriction === 1 ? 'Yes' : 'No') | translate}}</div>
     </div>
   </div>
-  <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiInstance.ID"
+  <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="lazyInstance.id"
                    type="instance"></app-db-comments>
   <div>
     <nz-divider [nzText]="'DB.Instance_details' | translate" nzOrientation="left"></nz-divider>
   </div>
   <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
-    <nz-card [nzTitle]="mapTitle" class="details-card" fxFlex="1 1 auto" nzBordered="false" *ngIf="xivapiInstance.ContentFinderCondition.TerritoryType.Map">
+    <nz-card [nzTitle]="mapTitle" class="details-card" fxFlex="1 1 auto" nzBordered="false" *ngIf="lazyInstance.Cmap">
       <ng-template #mapTitle>
         <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <div>
@@ -79,7 +79,7 @@
           </div>
         </div>
       </ng-template>
-      <app-map [mapId]="xivapiInstance.ContentFinderCondition.TerritoryType.Map.ID"></app-map>
+      <app-map [mapId]="lazyInstance.map"></app-map>
     </nz-card>
     <nz-card *ngIf="drops$ | async as rewards" [nzTitle]="rewardsTitle" class="details-card" fxFlex="1 1 auto"
              nzBordered="false">
@@ -99,9 +99,9 @@
       </div>
     </nz-card>
   </div>
+  <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="lazyInstance.id"
+                   type="instance"></app-db-comments>
 </div>
-<app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="xivapiInstance.ID"
-                 type="instance"></app-db-comments>
 <ng-template #loader>
   <app-page-loader></app-page-loader>
 </ng-template>

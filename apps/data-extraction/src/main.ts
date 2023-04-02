@@ -98,6 +98,7 @@ const extractors: AbstractExtractor[] = [
   new I18nExtractor('AirshipExplorationPoint', 'airship-voyages', 'NameShort_', { index: 'id' }, true),
   new I18nExtractor('SubmarineExploration', 'submarine-voyages', 'Destination_', { index: 'id', Location_ja: 'location' }),
   new I18nExtractor('MJICraftworksObjectTheme', 'island-craftworks-theme'),
+  new I18nExtractor('ContentType', 'content-type'),
   new ItemSeriesExtractor(),
   new TraitsExtractor(),
   new WorldsExtractor(),

@@ -1,0 +1,182 @@
+{
+  "1": {
+    "en": "Duty Roulette",
+    "ja": "コンテンツルーレット",
+    "de": "Zufallsinhalt",
+    "fr": "Missions aléatoires"
+  },
+  "2": {
+    "en": "Dungeons",
+    "ja": "ダンジョン",
+    "de": "Dungeons",
+    "fr": "Donjons"
+  },
+  "3": {
+    "en": "Guildhests",
+    "ja": "ギルドオーダー",
+    "de": "Gildengeheiße",
+    "fr": "Opérations de guilde"
+  },
+  "4": {
+    "en": "Trials",
+    "ja": "討伐・討滅戦",
+    "de": "Prüfungen",
+    "fr": "Défis"
+  },
+  "5": {
+    "en": "Raids",
+    "ja": "レイド",
+    "de": "Raids",
+    "fr": "Raids"
+  },
+  "6": {
+    "en": "PvP",
+    "ja": "PvP",
+    "de": "PvP",
+    "fr": "JcJ"
+  },
+  "7": {
+    "en": "Quest Battles",
+    "ja": "クエストバトル",
+    "de": "Auftragskämpfe",
+    "fr": "Batailles de quête"
+  },
+  "8": {
+    "en": "FATEs",
+    "ja": "F.A.T.E.",
+    "de": "FATEs",
+    "fr": "ALÉA"
+  },
+  "9": {
+    "en": "Treasure Hunt",
+    "ja": "トレジャーハント",
+    "de": "Schatzsuche",
+    "fr": "Chasse aux trésors"
+  },
+  "10": {
+    "en": "Levequests",
+    "ja": "リーヴ",
+    "de": "Freibriefe",
+    "fr": "Mandats"
+  },
+  "11": {
+    "en": "Grand Company",
+    "ja": "グランドカンパニー",
+    "de": "Staatliche Gesellschaft",
+    "fr": "Grandes compagnies"
+  },
+  "12": {
+    "en": "Companions",
+    "ja": "バディ",
+    "de": "Mitstreiter",
+    "fr": "Compagnon"
+  },
+  "13": {
+    "en": "Tribal Quests",
+    "ja": "友好部族クエスト",
+    "de": "Stammesvölker",
+    "fr": "Quêtes tribales"
+  },
+  "14": {
+    "en": "Overall Completion",
+    "ja": "達成数ボーナス",
+    "de": "Agenda-Abschlusszahl",
+    "fr": "Bonus de réussites"
+  },
+  "15": {
+    "en": "Player Commendation",
+    "ja": "MIP",
+    "de": "Wertvollster Spieler",
+    "fr": "Honneurs"
+  },
+  "16": {
+    "en": "Disciples of the Land",
+    "ja": "ギャザラー",
+    "de": "Sammeln",
+    "fr": "Récolte"
+  },
+  "17": {
+    "en": "Disciples of the Hand",
+    "ja": "クラフター",
+    "de": "Synthese",
+    "fr": "Artisanat"
+  },
+  "18": {
+    "en": "Retainer Ventures",
+    "ja": "リテイナー",
+    "de": "Unternehmungen",
+    "fr": "Servants"
+  },
+  "19": {
+    "en": "Gold Saucer",
+    "ja": "ゴールドソーサー",
+    "de": "Gold Saucer",
+    "fr": "Gold Saucer"
+  },
+  "20": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "21": {
+    "en": "Deep Dungeons",
+    "ja": "ディープダンジョン",
+    "de": "Tiefe Gewölbe",
+    "fr": "Donjons sans fond"
+  },
+  "22": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "23": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "24": {
+    "en": "Wondrous Tails",
+    "ja": "空想帳",
+    "de": "Abenteueralbum",
+    "fr": "Aventures imaginaires"
+  },
+  "25": {
+    "en": "Custom Deliveries",
+    "ja": "お得意様取引",
+    "de": "Wunschlieferungen",
+    "fr": "Commandes spéciales"
+  },
+  "26": {
+    "en": "Eureka",
+    "ja": "エウレカ",
+    "de": "Eureka",
+    "fr": "Eurêka"
+  },
+  "27": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "28": {
+    "en": "Ultimate Raids",
+    "ja": "絶レイド",
+    "de": "Fatale Raids",
+    "fr": "Raids fatals"
+  },
+  "29": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "30": {
+    "en": "V&C Dungeon Finder",
+    "ja": "特殊ダンジョン探索",
+    "de": "Gewölbesuche",
+    "fr": "Donjons spéciaux"
+  }
+}
