@@ -13,6 +13,7 @@ export function apolloClientFactory(httpLink: HttpLink, authFacade: AuthFacade) 
     options: {
       timeout: 30000,
       reconnect: true,
+      reconnectionAttempts: 3,
       connectionParams: (async () => {
         // This is just because sometimes, injector seems to derp with the authFacade instance
         let idToken = await firstValueFrom(authFacade.idToken$.pipe(

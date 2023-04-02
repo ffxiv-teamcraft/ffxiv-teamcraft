@@ -53,6 +53,19 @@ async function getUsage(redis: RedisClientType, ip: string) {
   };
 }
 
+function parseJwt(token: string): Record<string, any> {
+  return JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString());
+}
+
+function logBan(req: any) {
+  const jwt = req.headers['authorization'].replace('Bearer ', '');
+  let userId = 'N/A';
+  if (jwt) {
+    userId = parseJwt(jwt)?.['https://securetoken.google.com/ffxivteamcraft']?.['user_id'] || 'MISSING';
+  }
+  console.log(`DENY ${req.method} ${req.url} from ${userId}`);
+}
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const port = process.env.PORT || 3333;
@@ -81,6 +94,7 @@ async function bootstrap() {
       secure: true,
       changeOrigin: true,
       ws: true,
+      logLevel: 'silent',
       onProxyReq: (proxyReq, req, res) => {
         if (req.method === 'OPTIONS') {
           return res.sendStatus(201);
@@ -95,6 +109,7 @@ async function bootstrap() {
           || +hourUsage > RATE_LIMIT_BYTES_PER_HOUR
           || +hourHit > RATE_LIMIT_HITS_PER_HOUR
         ) {
+          logBan(req);
           return res.sendStatus(429);
         }
         fixRequestBody(proxyReq, req);
