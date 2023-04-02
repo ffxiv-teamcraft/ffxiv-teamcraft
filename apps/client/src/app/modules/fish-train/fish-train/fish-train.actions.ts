@@ -2,6 +2,7 @@ import { createAction, props } from '@ngrx/store';
 import { PersistedFishTrain } from '../../../model/other/persisted-fish-train';
 import { FishTrainStop } from '@ffxiv-teamcraft/types';
 import { UpdateData } from '@angular/fire/firestore';
+import { FishingReport, TrainFishingReport } from '../../../core/data-reporting/fishing-report';
 
 export const loadFishTrain = createAction(
   '[FishTrain] Load FishTrain',
@@ -49,6 +50,11 @@ export const setFishSlap = createAction(
 export const pureUpdateTrain = createAction(
   '[FishTrain] Pure Update FishTrain',
   props<{ id: string, train: UpdateData<PersistedFishTrain> }>()
+);
+
+export const addReportToFishTrain = createAction(
+  '[FishTrain] Add Report to FishTrain',
+  props<{ report: TrainFishingReport }>()
 );
 
 export const deleteTrain = createAction(
