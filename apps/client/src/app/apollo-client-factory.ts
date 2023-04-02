@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 
 export function apolloClientFactory(httpLink: HttpLink, authFacade: AuthFacade) {
   const ws = new WebSocketLink({
-    uri: `wss://gubal.ffxivteamcraft.com/v1/graphql`,
+    uri: `wss://api.ffxivteamcraft.com/gubal`,
     options: {
       timeout: 30000,
       reconnect: true,
@@ -27,7 +27,7 @@ export function apolloClientFactory(httpLink: HttpLink, authFacade: AuthFacade) 
     }
   });
 
-  const httpL = httpLink.create({ uri: 'https://gubal.ffxivteamcraft.com/v1/graphql' });
+  const httpL = httpLink.create({ uri: 'https://api.ffxivteamcraft.com/gubal' });
 
   const httpAuth = setContext((operation, context) => {
     return firstValueFrom(authFacade.idToken$.pipe(

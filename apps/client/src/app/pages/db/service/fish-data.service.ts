@@ -165,7 +165,6 @@ export class FishDataService {
     }`;
     return defer(() => this.apollo.subscribe<any>({
       query: reportsQuery,
-      fetchPolicy: 'network-only',
       variables: {
         trainId: trainId
       }
@@ -197,7 +196,6 @@ export class FishDataService {
     }`;
     return this.apollo.query<any>({
       query: reportsQuery,
-      fetchPolicy: 'network-only',
       variables: {
         trainId: trainId
       }

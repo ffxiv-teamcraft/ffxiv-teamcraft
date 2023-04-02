@@ -24,6 +24,10 @@
     "express": "^4.17.1",
     "firebase-admin": "^11.5.0",
     "typescript": "4.8.4",
-    "reflect-metadata": "^0.1.13"
+    "reflect-metadata": "^0.1.13",
+    "http-proxy-middleware": "^2.0.6",
+    "body-parser-graphql": "^1.1.0",
+    "object-hash": "^3.0.0",
+    "redis": "^4.6.5"
   }
 }
