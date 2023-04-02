@@ -61,7 +61,12 @@ const patrons = [
   'Arimathean Industries™',
   'MommaMiah',
   'Chuang Mei@Faerie',
-  'Darn Tarn and Dam Tam'
+  'Darn Tarn and Dam Tam',
+  'Kaleo Aleo',
+  'Savia Constantin & Sen Lin\'ly',
+  'Leufia Leinfall',
+  'Melodia',
+  'Seyna Renbatal (Zodiark)'
 ];
 
 const gifs = [
