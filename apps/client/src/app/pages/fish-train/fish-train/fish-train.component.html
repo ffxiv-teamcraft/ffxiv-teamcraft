@@ -3,6 +3,7 @@
     {{'FISH_TRAIN.Not_found' | translate}}
   </app-fullpage-message>
   <div *ngIf="display$ | async as display">
+
     <ng-template #currentFishTpl>
       <div class="details-column" [class.overlay]="overlay">
         <h3>{{'FISH_TRAIN.Current_fish' | translate}}</h3>
@@ -170,6 +171,19 @@
         </nz-page-header-extra>
       </nz-page-header>
       <div nz-row [nzGutter]="[10,10]">
+        <nz-alert *ngIf="outdated$ | async" nzShowIcon nzType="error" nz-col [nzSpan]="24"
+                  [nzMessage]="'FISH_TRAIN.Outdated' | translate" [nzDescription]="descriptionTpl">
+          <ng-template #descriptionTpl>
+            <ng-container *ngIf="display.isConductor">
+              {{'FISH_TRAIN.Outdated_description' | translate}}
+              &nbsp;
+              <button nz-button nzType="primary" (click)="migrateTrain(fishTrain)">{{'FISH_TRAIN.Migrate' | translate}}</button>
+            </ng-container>
+            <ng-container *ngIf="!display.isConductor">
+              {{'FISH_TRAIN.Outdated_description_passenger' | translate}}
+            </ng-container>
+          </ng-template>
+        </nz-alert>
         <nz-alert nz-col [nzSpan]="24" *ngIf="display.isConductor && !fishTrain.world" nzType="error" nzShowIcon
                   [nzMessage]="'FISH_TRAIN.Missing_world' | translate"
                   [nzDescription]="'FISH_TRAIN.Missing_world_explain' | translate"></nz-alert>

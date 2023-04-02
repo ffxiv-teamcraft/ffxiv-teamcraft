@@ -3180,6 +3180,10 @@
     "Bait_breakdown": "Bait usage breakdown",
     "Fish_size_chart": "Fish sizes",
     "Delete_train": "Delete",
-    "Train_not_running": "Train not running"
+    "Train_not_running": "Train not running",
+    "Outdated": "This train is outdated",
+    "Outdated_description": "This train is using an outdated data storage approach, please migrate to be able to see your stats again",
+    "Outdated_description_passenger": "This train is using an outdated data storage approach, please ask the conductor to migrate it to see the stats again.",
+    "Migrate": "Migrate"
   }
 }

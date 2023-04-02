@@ -14,6 +14,8 @@ import { FishingReporterState } from './state/fishing-reporter-state';
 import { FishTrainFacade } from '../../modules/fish-train/fish-train/fish-train.facade';
 import { getFishTrainStatus } from '../../modules/fish-train/get-fish-train-status';
 import { FishTrainStatus } from '../../pages/fish-trains/fish-trains/fish-train-status';
+import { FishingReport } from './fishing-report';
+import { AuthFacade } from '../../+state/auth.facade';
 
 
 export class FishingReporter implements DataReporter {
@@ -22,7 +24,8 @@ export class FishingReporter implements DataReporter {
 
   constructor(private eorzea: EorzeaFacade, private lazyData: LazyDataFacade,
               private etime: EorzeanTimeService, private ipc: IpcService,
-              private settings: SettingsService, private fishTrainFacade: FishTrainFacade) {
+              private settings: SettingsService, private fishTrainFacade: FishTrainFacade,
+              private authFacade: AuthFacade) {
     this.fishTrainFacade.loadRunning();
   }
 
@@ -272,7 +275,11 @@ export class FishingReporter implements DataReporter {
         fisherStats$,
         mooch$,
         this.fishTrainFacade.currentTrainSpotId$.pipe(startWith(null)),
-        this.fishTrainFacade.currentTrain$.pipe(startWith(null))
+        this.fishTrainFacade.currentTrain$.pipe(startWith(null)),
+        this.authFacade.mainCharacter$.pipe(
+          map(char => char?.Name),
+          startWith(null)
+        )
       ),
       filter(([fish, , throwData, biteData, , spot, stats]) => {
         return (fish.id === -1 && stats?.gp > 1)
@@ -280,9 +287,9 @@ export class FishingReporter implements DataReporter {
             && spot.fishes.indexOf(fish.id) > -1
           ) && throwData.weatherId !== null;
       }),
-      map(([fish, baitId, throwData, biteData, hookset, spot, stats, mooch, trainSpotId, train]) => {
+      map(([fish, baitId, throwData, biteData, hookset, spot, stats, mooch, trainSpotId, train, name]) => {
         const shouldAddTrain = trainSpotId === spot?.id && getFishTrainStatus(train) === FishTrainStatus.RUNNING;
-        const entry = {
+        const entry: FishingReport = {
           itemId: fish.id,
           etime: Math.round(throwData.etime.getTime() % 86400000 / 3600) / 1000,
           hq: fish.hq,
@@ -307,17 +314,28 @@ export class FishingReporter implements DataReporter {
         if (mooch) {
           entry.baitId = mooch;
         }
+        if (entry.trainId) {
+          this.fishTrainFacade.addReport({
+            size: entry.size,
+            mooch: entry.mooch,
+            baitId: entry.baitId,
+            itemId: entry.itemId,
+            trainId: entry.trainId,
+            name: name || 'Anonymous',
+            date: Date.now()
+          });
+        }
         return [entry];
       }),
-      tap(reports => {
+      tap(([report]) => {
         this.setState({
           reports: [
             ...(this.state.reports || []),
-            ...reports
+            report
           ]
         });
         if (this.settings.localFishingDataDump) {
-          this.ipc.send('fishing-report', reports);
+          this.ipc.send('fishing-report', [report]);
         }
       }),
       filter(([entry]) => {

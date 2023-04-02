@@ -129,8 +129,8 @@ export abstract class FirestoreStorage<T extends DataModel> {
     });
   }
 
-  get(key: string, uriParams?: any): Observable<T> {
-    if (this.cache[key] === undefined) {
+  get(key: string, forceRefresh = false): Observable<T> {
+    if (this.cache[key] === undefined || forceRefresh) {
       this.cache[key] = docSnapshots(this.docRef(key))
         .pipe(
           catchError(error => {

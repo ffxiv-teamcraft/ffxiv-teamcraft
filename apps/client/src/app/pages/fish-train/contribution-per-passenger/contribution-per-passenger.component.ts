@@ -6,11 +6,9 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { LodestoneService } from '../../../core/api/lodestone.service';
 import { observeInput } from '../../../core/rxjs/observe-input';
 import { BehaviorSubject, combineLatest, ReplaySubject } from 'rxjs';
-import { isEqual, uniq } from 'lodash';
-import { auditTime, delay, distinctUntilChanged, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { isEqual } from 'lodash';
+import { auditTime, delay, distinctUntilChanged, map, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { Character } from '@xivapi/angular-client';
-import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 @Component({
   selector: 'app-contribution-per-passenger',
@@ -20,15 +18,13 @@ import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 export class ContributionPerPassengerComponent extends TeamcraftComponent {
   echartsInstance$ = new ReplaySubject<any>();
 
-  loading = true;
-
   onlyAccurate$ = new BehaviorSubject<boolean>(true);
 
   @Input()
   train: PersistedFishTrain & { stopped: boolean };
 
   @Input()
-  reports: { itemId: number, userId: string, date: string }[];
+  reports: { itemId: number, userId: string, date: string, name: string }[];
 
   options: EChartsOption = {
     grid: {
@@ -75,40 +71,14 @@ export class ContributionPerPassengerComponent extends TeamcraftComponent {
      */
     super();
     const reports$ = observeInput(this, 'reports');
-    const characters$ = reports$.pipe(
-      map(reports => uniq(reports.map(report => report.userId)).sort()),
-      distinctUntilChanged(isEqual),
-      switchMap(userIds => {
-        return safeCombineLatest(userIds.map(userId => {
-          return this.lodestone.getUserCharacter(userId).pipe(
-            map(entry => {
-              return {
-                ...entry,
-                userId
-              };
-            })
-          );
-        }));
-      }),
-      map((entries: { character: Character, verified: boolean, userId: string }[]) => {
-        return entries.reduce((acc, entry) => {
-          return {
-            ...acc,
-            [entry.userId]: entry
-          };
-        }, {});
-      }),
-      tap(() => this.loading = false),
-      shareReplay(1)
-    );
 
     const train$ = observeInput(this, 'train').pipe(
       distinctUntilChanged((a, b) => isEqual(a.fish, b.fish))
     );
 
-    combineLatest([this.echartsInstance$, characters$, reports$, train$, this.onlyAccurate$]).pipe(
+    combineLatest([this.echartsInstance$, reports$, train$, this.onlyAccurate$]).pipe(
       delay(500),
-      map(([echartsInstance, characters, reports, train, onlyAccurate]) => {
+      map(([echartsInstance, reports, train, onlyAccurate]) => {
         const trainFishList = train.fish.map(fish => fish.id);
         const accurateReports = reports
           .filter(report => {
@@ -121,11 +91,11 @@ export class ContributionPerPassengerComponent extends TeamcraftComponent {
             };
           })
           .sort((a, b) => a.date - b.date);
-        const accurateReportsByUserId = accurateReports.reduce((acc, report, index) => {
-          let userRow = acc.find(row => row.userId === report.userId);
+        const accurateReportsByUserId = accurateReports.reduce((acc, report) => {
+          let userRow = acc.find(row => row.name === report.name);
           if (!userRow) {
             acc.push({
-              userId: report.userId,
+              name: report.name,
               total: 0
             });
             userRow = acc[acc.length - 1];
@@ -135,17 +105,16 @@ export class ContributionPerPassengerComponent extends TeamcraftComponent {
         }, []);
         return {
           echartsInstance,
-          accurateReportsByUserId,
-          characters
+          accurateReportsByUserId
         };
       }),
       takeUntil(this.onDestroy$),
       auditTime(300)
-    ).subscribe(({ echartsInstance, accurateReportsByUserId, characters }) => {
+    ).subscribe(({ echartsInstance, accurateReportsByUserId }) => {
       this.options.empty = accurateReportsByUserId.length === 0;
       echartsInstance.setOption({
         yAxis: {
-          data: accurateReportsByUserId.map(row => characters[row.userId]?.character?.Name || row.userId)
+          data: accurateReportsByUserId.map(row => row.name)
         },
         series: {
           realtimeSort: true,

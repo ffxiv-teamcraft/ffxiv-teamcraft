@@ -3,6 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 
 import { catchError, filter, map, mergeMap, switchMap, withLatestFrom } from 'rxjs/operators';
 import {
+  addReportToFishTrain,
   boardTrain,
   claimConductorRole,
   deleteTrain,
@@ -52,6 +53,13 @@ export class FishTrainEffects {
     return this.actions$.pipe(
       ofType(pureUpdateTrain),
       mergeMap(({ id, train }) => this.fishTrainService.pureUpdate(id, train))
+    );
+  }, { dispatch: false });
+
+  addReportToFishTrain$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(addReportToFishTrain),
+      mergeMap(({ report }) => this.fishTrainService.addReport(report))
     );
   }, { dispatch: false });
 
