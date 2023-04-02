@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.4.6"></a>
+## [10.4.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.5...v10.4.6) (2023-04-02)
+
+
+### Bug Fixes
+
+* **core:** better handling of gubal websocket creation failing ([07a3648](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/07a3648))
+
+
+
 <a name="10.4.5"></a>
 ## [10.4.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.4...v10.4.5) (2023-04-02)
 
