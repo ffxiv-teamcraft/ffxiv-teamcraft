@@ -57,13 +57,13 @@ function parseJwt(token: string): Record<string, any> {
   return JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString());
 }
 
-function logBan(req: any) {
-  const jwt = req.headers['authorization'].replace('Bearer ', '');
+function logBan(req: any, ws: boolean) {
+  const jwt = req.headers['authorization']?.replace('Bearer ', '');
   let userId = 'N/A';
   if (jwt) {
     userId = parseJwt(jwt)?.['https://securetoken.google.com/ffxivteamcraft']?.['user_id'] || 'MISSING';
   }
-  console.log(`DENY ${req.method} ${req.url} from ${userId}`);
+  console.log(`DENY ${ws ? 'WS' : req.method} ${req.url} from ${userId}/${req.ip}`);
 }
 
 async function bootstrap() {
@@ -109,7 +109,7 @@ async function bootstrap() {
           || +hourUsage > RATE_LIMIT_BYTES_PER_HOUR
           || +hourHit > RATE_LIMIT_HITS_PER_HOUR
         ) {
-          logBan(req);
+          logBan(req, false);
           return res.sendStatus(429);
         }
         fixRequestBody(proxyReq, req);
@@ -120,6 +120,7 @@ async function bootstrap() {
           await addUsage(redis, addr.address, Buffer.byteLength(d));
           const { minBytes, hourBytes } = await getUsage(redis, addr.address);
           if (+minBytes > RATE_LIMIT_BYTES_PER_MINUTES || +hourBytes > RATE_LIMIT_BYTES_PER_HOUR) {
+            logBan(req, true);
             socket.end();
           }
         });
