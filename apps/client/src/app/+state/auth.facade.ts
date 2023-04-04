@@ -338,7 +338,7 @@ export class AuthFacade {
   }
 
   public register(email: string, password: string): Promise<any> {
-    return this.user$.pipe(
+    return firstValueFrom(this.user$.pipe(
       first(),
       switchMap((user) => {
         return from(createUserWithEmailAndPassword(this.auth, email, password)).pipe(
@@ -348,7 +348,7 @@ export class AuthFacade {
           })
         );
       })
-    ).toPromise();
+    ));
   }
 
   public googleOauth(): Observable<UserCredential> {
