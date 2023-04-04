@@ -16,7 +16,7 @@ import { OauthService } from '../auth/oauth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class PatreonService {
+export class SupportService {
 
   constructor(private http: HttpClient, private authFacade: AuthFacade,
               private dialog: NzModalService, private translate: TranslateService,

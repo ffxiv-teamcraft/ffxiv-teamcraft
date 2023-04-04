@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { PatreonService } from '../../../core/patreon/patreon.service';
+import { SupportService } from '../../../core/patreon/support.service';
 
 @Component({
   selector: 'app-remove-ads-popup',
@@ -9,11 +9,16 @@ import { PatreonService } from '../../../core/patreon/patreon.service';
 })
 export class RemoveAdsPopupComponent {
 
-  constructor(private patreonService: PatreonService) {
+  constructor(private supportService: SupportService) {
   }
 
   patreonOauth(): void {
-    this.patreonService.patreonOauth();
+    this.supportService.patreonOauth();
+  }
+
+  tipeeeOauth(): void {
+    //TODO: implement tipeee oauth
+    //this.supportService.tipeeeOauth();
   }
 
 }
