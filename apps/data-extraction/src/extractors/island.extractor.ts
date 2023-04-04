@@ -87,10 +87,10 @@ export class IslandExtractor extends AbstractExtractor {
     });
 
     combineLatest([
-      this.getSheet<any>(xiv, 'MJIAnimals', ['BNpcBase', 'Reward', 'Icon', 'Size']),
-      this.getNonXivapiUrl('https://gubal.hasura.app/api/rest/bnpc')
+      this.getSheet<any>(xiv, 'MJIAnimals', ['BNpcBase', 'Reward', 'Icon', 'Size'])
     ]).pipe(
-      map(([mjiAnimals, bnpcs]) => {
+      map(([mjiAnimals]) => {
+        const bnpcs = this.requireLazyFile('gubal-bnpcs-index');
         return mjiAnimals.reduce((acc, animal) => {
           return {
             ...acc,
@@ -98,7 +98,7 @@ export class IslandExtractor extends AbstractExtractor {
               id: animal.index,
               rewards: animal.Reward,
               icon: this.getIconHD(animal.Icon),
-              bnpcName: bnpcs.bnpc.find(e => e.bnpcBase === animal.BNpcBase)?.bnpcName,
+              bnpcName: bnpcs[animal.BNpcBase],
               bnpcBase: animal.BNpcBase,
               size: animal.Size
             }

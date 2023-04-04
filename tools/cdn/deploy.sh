@@ -19,4 +19,5 @@ ssh dalamud@51.83.37.191 << EOF
   cp -rn ./cdn.ffxivteamcraft.com/latest/* ./cdn.ffxivteamcraft.com/${PACKAGE_VERSION}/
   rm ./cdn.ffxivteamcraft.com/latest
   ln -s ./${PACKAGE_VERSION} ./cdn.ffxivteamcraft.com/latest
+  find . -maxdepth 1 -mindepth 1 -type d -not -name "${PACKAGE_VERSION}" -print0 | xargs -0 rm -rf
 EOF
