@@ -148,6 +148,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/patreon-redirect/patreon-redirect.module').then(m => m.PatreonRedirectModule)
   },
   {
+    path: 'tipeee-redirect',
+    loadChildren: () => import('./pages/tipeee-redirect/tipeee-redirect.module').then(m => m.TipeeeRedirectModule)
+  },
+  {
     path: 'list-import/:importString',
     redirectTo: 'import/:importString'
   },

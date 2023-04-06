@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { getAllFishTrains, getAllPublicFishingTrains, getBoardedTrain, getLoaded, getSelectedTrain } from './fish-train.selectors';
 import {
+  addReportToFishTrain,
   boardTrain,
   claimConductorRole,
   deleteTrain,
@@ -17,8 +18,11 @@ import { distinctUntilChanged, map, shareReplay, switchMap } from 'rxjs/operator
 import { AuthFacade } from '../../../+state/auth.facade';
 import { DataType, FishTrainStop, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { combineLatest, of, timer } from 'rxjs';
+import { combineLatest, Observable, of, timer } from 'rxjs';
 import { PersistedFishTrain } from '../../../model/other/persisted-fish-train';
+import { TrainFishingReport } from '../../../core/data-reporting/fishing-report';
+import { FishTrainService } from '../../../core/database/fish-train.service';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -87,7 +91,15 @@ export class FishTrainFacade {
   );
 
   constructor(private store: Store, private authFacade: AuthFacade,
-              private lazyData: LazyDataFacade) {
+              private lazyData: LazyDataFacade, private fishTrainService: FishTrainService) {
+  }
+
+  addReport(report: TrainFishingReport): void {
+    this.store.dispatch(addReportToFishTrain({ report }));
+  }
+
+  addReports(trainId: string, reports: TrainFishingReport[]): Observable<void> {
+    return this.fishTrainService.addReports(trainId, reports);
   }
 
   load(id: string): void {
@@ -116,6 +128,10 @@ export class FishTrainFacade {
 
   rename(id: string, name: string): void {
     this.store.dispatch(pureUpdateTrain({ id, train: { name } }));
+  }
+
+  markAsEmpty(id: string): void {
+    this.store.dispatch(pureUpdateTrain({ id, train: { empty: true } }));
   }
 
   leaveTrain(id: string): void {

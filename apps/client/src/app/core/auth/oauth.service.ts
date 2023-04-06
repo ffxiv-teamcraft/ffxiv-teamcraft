@@ -4,8 +4,9 @@ import { PlatformService } from '../tools/platform.service';
 import { IpcService } from '../electron/ipc.service';
 import { from, Observable, Subject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Auth, GoogleAuthProvider, signInWithCredential, signInWithPopup, UserCredential } from '@angular/fire/auth';
+import { OAuthProvider } from './o-auth-provider';
 
 @Injectable()
 export class OauthService {
@@ -22,25 +23,32 @@ export class OauthService {
       const provider = {
         authorize_url: 'https://accounts.google.com/o/oauth2/auth',
         client_id: '1082504004791-qjnubk6kj80kfvn3mg86lmu6eba16c6l.apps.googleusercontent.com',
-        redirect_uri: 'http://localhost:14500/oauth',
+        gcf: 'https://us-central1-ffxivteamcraft.cloudfunctions.net/google-oauth',
         response_type: 'code',
         scope: 'https://www.googleapis.com/auth/userinfo.profile'
       };
-      const authUrl = `${provider.authorize_url}?response_type=${provider.response_type}&redirect_uri=${provider.redirect_uri}&client_id=${provider.client_id}&scope=${provider.scope}`;
-      this._ipc.once('oauth-reply', (event, code) => {
-        const authorizationUrl = `https://us-central1-ffxivteamcraft.cloudfunctions.net/google-oauth?code=${code}&redirect_uri=http://localhost:14500/oauth`;
-        this.http.get(authorizationUrl)
-          .pipe(
-            switchMap((res: { access_token: string }) => {
-              return from(signInWithCredential(this.auth, GoogleAuthProvider.credential(null, res.access_token)));
-            })
-          )
-          .subscribe((res) => (<Subject<UserCredential>>signIn$).next(<any>res));
-      });
-      window.open(authUrl, '_blank');
+      this.desktopOauth(provider).pipe(
+        switchMap((res: { access_token: string }) => {
+          return from(signInWithCredential(this.auth, GoogleAuthProvider.credential(null, res.access_token)));
+        })
+      ).subscribe((res) => (<Subject<UserCredential>>signIn$).next(<any>res));
     } else {
       signIn$ = from(signInWithPopup(this.auth, new GoogleAuthProvider()));
     }
     return signIn$;
+  }
+
+  public desktopOauth<T = any>(provider: OAuthProvider): Observable<T> {
+    return new Observable<T>(subscriber => {
+      const authUrl = `${provider.authorize_url}?response_type=${provider.response_type}&redirect_uri=http://localhost:14500/oauth&client_id=${provider.client_id}&scope=${provider.scope}`;
+      this._ipc.once('oauth-reply', (event, code) => {
+        const params = new HttpParams().set('code', code).set('redirect_uri', 'http://localhost:14500/oauth');
+        this.http.get<T>(provider.gcf, { params }).subscribe(res => {
+          subscriber.next(res);
+          subscriber.complete();
+        });
+      });
+      window.open(authUrl, '_blank');
+    });
   }
 }

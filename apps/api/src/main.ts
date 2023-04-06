@@ -7,6 +7,7 @@ import { graphql } from 'body-parser-graphql';
 import { createClient, RedisClientType } from 'redis';
 import { AddressInfo } from 'ws';
 
+const RATE_LIMIT_BYTES_PER_REQUEST = 100_000;
 const RATE_LIMIT_BYTES_PER_MINUTES = 1_000_000;
 const RATE_LIMIT_BYTES_PER_HOUR = 20_000_000;
 
@@ -104,11 +105,13 @@ async function bootstrap() {
         }
         const [minUsage, hourUsage, minHit, hourHit] = req.headers['X-Gubal-Usage'].toString().split('|');
         delete req.headers['X-Gubal-Usage'];
-        if (+minUsage > RATE_LIMIT_BYTES_PER_MINUTES
+        const denied = +minUsage > RATE_LIMIT_BYTES_PER_MINUTES
           || +minHit > RATE_LIMIT_HITS_PER_MINUTES
           || +hourUsage > RATE_LIMIT_BYTES_PER_HOUR
-          || +hourHit > RATE_LIMIT_HITS_PER_HOUR
-        ) {
+          || +hourHit > RATE_LIMIT_HITS_PER_HOUR;
+        const isMutation = req.body.query.startsWith('mutation');
+        // Only deny if not mutation, to not prevent fishing data ingestion in the event of a wrong ban
+        if (denied && !isMutation) {
           logBan(req, false);
           return res.sendStatus(429);
         }
@@ -119,7 +122,8 @@ async function bootstrap() {
           const addr: AddressInfo = socket.address() as AddressInfo;
           await addUsage(redis, addr.address, Buffer.byteLength(d));
           const { minBytes, hourBytes } = await getUsage(redis, addr.address);
-          if (+minBytes > RATE_LIMIT_BYTES_PER_MINUTES || +hourBytes > RATE_LIMIT_BYTES_PER_HOUR) {
+          if (+minBytes > RATE_LIMIT_BYTES_PER_MINUTES || +hourBytes > RATE_LIMIT_BYTES_PER_HOUR
+            || Buffer.byteLength(d) > RATE_LIMIT_BYTES_PER_REQUEST) {
             logBan(req, true);
             socket.end();
           }
@@ -130,6 +134,9 @@ async function bootstrap() {
         res.write = (data, cb) => {
           const contentLength = Buffer.byteLength(data);
           addUsage(redis, req.ip, contentLength);
+          if (contentLength > RATE_LIMIT_BYTES_PER_REQUEST) {
+            return _write.call(res, Buffer.from(''), cb);
+          }
           return _write.call(res, data, cb);
         };
       },

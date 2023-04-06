@@ -12,14 +12,10 @@ const src = `export const version = '${appVersion}';
 `;
 
 // ensure version module pulls value from package.json
-fs.writeFileSync(versionFilePath, src, { flat: 'w' }, function(err) {
-  if (err) {
-    return console.log(colors.red(err));
-  }
+fs.writeFileSync(versionFilePath, src);
 
-  console.log(colors.green(`Updating application version ${colors.yellow(appVersion)}`));
-  console.log(`${colors.green('Writing version module to ')}${colors.yellow(versionFilePath)}\n`);
-});
+console.log(colors.green(`Updating application version ${colors.yellow(appVersion)}`));
+console.log(`${colors.green('Writing version module to ')}${colors.yellow(versionFilePath)}\n`);
 
 const changelog = fs.readFileSync(path.join(__dirname, '../../CHANGELOG.md'), 'utf8');
 
@@ -35,9 +31,9 @@ const changes = sections.slice(1, 11).reduce((acc, section) => {
   }];
 }, []);
 
-fs.writeFileSync(patchNotesFilePath, JSON.stringify(changes), { flat: 'w' }, function(err) {
-  if (err) {
-    return console.log(colors.red(err));
-  }
-  console.log(`${colors.green('Writing patch notes to ')}${colors.yellow(patchNotesFilePath)}\n`);
-});
+fs.writeFileSync(patchNotesFilePath, JSON.stringify(changes));
+console.log(`${colors.green('Writing patch notes to ')}${colors.yellow(patchNotesFilePath)}\n`);
+console.log('---LATEST CHANGES---');
+console.log(changes[0].content);
+
+console.log('--------------------');

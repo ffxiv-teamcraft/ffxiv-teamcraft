@@ -1,6 +1,5 @@
 import { app, ipcMain, nativeImage, shell } from 'electron';
 import log from 'electron-log';
-import { Oauth } from '../oauth/oauth';
 import { PacketCapture } from '../pcap/packet-capture';
 import { Store } from '../store';
 import { MainWindow } from '../window/main-window';
@@ -49,7 +48,6 @@ export class IpcListenersManager {
 
   public init(): void {
     this.setupLodestoneListeners();
-    this.setupOauthListeners();
     this.setupOverlayListeners();
     this.setupStateListeners();
     this.setupSettingsListeners();
@@ -59,41 +57,6 @@ export class IpcListenersManager {
     this.setupFreeCompanyWorkshopsListeners();
 
     this.setupAnalyticsListeners();
-  }
-
-  private setupOauthListeners(): void {
-    ipcMain.on('oauth', (event, providerId) => {
-      if (providerId === 'google.com') {
-        const provider = {
-          authorize_url: 'https://accounts.google.com/o/oauth2/auth',
-          client_id: '1082504004791-qjnubk6kj80kfvn3mg86lmu6eba16c6l.apps.googleusercontent.com',
-          redirect_uri: 'http://localhost'
-        };
-        new Oauth(provider).getCode({ scope: 'https://www.googleapis.com/auth/userinfo.profile' }).then(code => {
-          event.sender.send('oauth-reply', code);
-        });
-      }
-      if (providerId === 'discordapp.com') {
-        const provider = {
-          authorize_url: 'https://discordapp.com/api/oauth2/authorize',
-          client_id: '514350168678727681',
-          redirect_uri: 'http://localhost'
-        };
-        new Oauth(provider).getCode({ scope: 'webhook.incoming' }).then(code => {
-          event.sender.send('oauth-reply', code);
-        });
-      }
-      if (providerId === 'patreon.com') {
-        const provider = {
-          authorize_url: 'https://www.patreon.com/oauth2/authorize',
-          client_id: 'MMmud8pCDGgQkhd8H2g_SpRWgzvCYwyawjSqmvjl_pjOA7Yco6Cp-Ljv8InmGMUE',
-          redirect_uri: 'http://localhost'
-        };
-        new Oauth(provider).getCode({ scope: 'identity' }).then(code => {
-          event.sender.send('oauth-reply', code);
-        });
-      }
-    });
   }
 
   private forwardToMain(channel: string): void {

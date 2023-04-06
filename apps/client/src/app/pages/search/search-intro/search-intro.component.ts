@@ -75,7 +75,7 @@ export class SearchIntroComponent {
 
   public showPatreonButton$ = this.authFacade.user$.pipe(
     map(user => {
-      return !user.patron;
+      return !user.supporter;
     })
   );
 

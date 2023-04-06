@@ -40,12 +40,12 @@
             <nz-select (ngModelChange)="setTheme($event)" [ngModel]="settings.theme?.name">
               <nz-option *ngFor="let theme of availableThemes" [nzLabel]="theme?.name"
                          [nzValue]="theme?.name"></nz-option>
-              <nz-option *ngIf="user.patron || user.admin" [nzLabel]="'CUSTOM'"
+              <nz-option *ngIf="user.supporter || user.admin" [nzLabel]="'CUSTOM'"
                          [nzValue]="'CUSTOM'"></nz-option>
             </nz-select>
           </nz-form-control>
         </nz-form-item>
-        <nz-form-item *ngIf="(user.patron || user.admin) && settings.theme?.name === 'CUSTOM'" class="empty-label">
+        <nz-form-item *ngIf="(user.supporter || user.admin) && settings.theme?.name === 'CUSTOM'" class="empty-label">
           <nz-form-label [nzSpan]="5">{{'SETTINGS.Theme' | translate}}</nz-form-label>
           <nz-form-control [nzSpan]="12">
             <div class="custom-theme-editor" fxLayout="column" fxLayoutGap="5px">
@@ -413,12 +413,18 @@
       </button>
       <ng-container *ngIf="user$ | async as user">
         <div>UserID: {{user.$key}}</div>
-        <button (click)="patreonOauth()" *ngIf="user.patreonToken === undefined; else connectedWithPatreon" nz-button
-                nzType="primary">
-          {{'SETTINGS.Connect_with_patreon' | translate}}
-        </button>
-        <ng-template #connectedWithPatreon>
-          <div fxLayout="row" fxLayoutAlign="flex-start center">
+        <ng-container *ngIf="user.patreonToken === undefined && user.tipeeeToken === undefined; else connectedTpl">
+          <button (click)="patreonOauth()" *ngIf="user.patreonToken === undefined" nz-button
+                  nzType="primary">
+            {{'SETTINGS.Connect_with_patreon' | translate}}
+          </button>
+          <button (click)="tipeeeOauth()" *ngIf="user.tipeeeToken === undefined" nz-button
+                  nzType="primary">
+            {{'SETTINGS.Connect_with_tipeee' | translate}}
+          </button>
+        </ng-container>
+        <ng-template #connectedTpl>
+          <div fxLayout="row" fxLayoutAlign="flex-start center" *ngIf="user.patreonToken !== undefined">
             <div>
               {{'SETTINGS.Connected_with_patreon' | translate}}
             </div>
@@ -428,8 +434,21 @@
               <i nz-icon nzType="disconnect" nzTheme="outline"></i>
             </button>
           </div>
+          <div fxLayout="row" fxLayoutAlign="flex-start center" *ngIf="user.tipeeeToken !== undefined">
+            <div>
+              {{'SETTINGS.Connected_with_tipeee' | translate}}
+            </div>
+            <button nz-button nzShape="circle" nzSize="small" nzDanger
+                    nz-tooltip [nzTooltipTitle]="'SETTINGS.Disconnect_tipeee' | translate"
+                    nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="disconnectTipeee(user)">
+              <i nz-icon nzType="disconnect" nzTheme="outline"></i>
+            </button>
+          </div>
         </ng-template>
-        <div *ngIf="user.patron || user.admin" fxLayout="column" fxLayoutGap="5px">
+        <ng-template #connectedWithTipeee>
+
+        </ng-template>
+        <div *ngIf="user.supporter || user.admin" fxLayout="column" fxLayoutGap="5px">
           <nz-form-item>
             <nz-form-label>{{'SETTINGS.Nickname' | translate}}</nz-form-label>
             <nz-form-control [nzValidateStatus]="nicknameAvailable === false ? 'error' : null" nzHasFeedback

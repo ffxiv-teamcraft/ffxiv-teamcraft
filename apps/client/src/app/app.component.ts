@@ -59,7 +59,7 @@ import { TutorialService } from './core/tutorial/tutorial.service';
 import { ChangelogPopupComponent } from './modules/changelog-popup/changelog-popup/changelog-popup.component';
 import { version } from '../environments/version';
 import { PlayerMetricsService } from './modules/player-metrics/player-metrics.service';
-import { PatreonService } from './core/patreon/patreon.service';
+import { SupportService } from './core/patreon/support.service';
 import { UpdaterStatus } from './model/other/updater-status';
 import { RemoveAdsPopupComponent } from './modules/ads/remove-ads-popup/remove-ads-popup.component';
 import { FreeCompanyWorkshopFacade } from './modules/free-company-workshops/+state/free-company-workshop.facade';
@@ -207,13 +207,13 @@ export class AppComponent implements OnInit {
 
   public showAd$ = this.authFacade.user$.pipe(
     map(user => {
-      return !(user.admin || user.moderator || user.patron);
+      return !(user.admin || user.moderator || user.supporter);
     })
   );
 
   public showPatreonButton$ = this.authFacade.user$.pipe(
     map(user => {
-      return !user.patron;
+      return !user.supporter;
     })
   );
 
@@ -246,7 +246,7 @@ export class AppComponent implements OnInit {
               private inventoryService: InventoryService, @Inject(PLATFORM_ID) private platform: any,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               private tutorialService: TutorialService,
-              private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService,
+              private playerMetricsService: PlayerMetricsService, private patreonService: SupportService,
               private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, private cd: ChangeDetectorRef,
               private data: DataService, private allaganReportsService: AllaganReportsService,
               pushNotificationsService: PushNotificationsService) {
@@ -618,10 +618,10 @@ export class AppComponent implements OnInit {
       let increasedPageViews = false;
 
       this.user$.subscribe(user => {
-        if (!user.patron && !user.admin && this.settings.theme.name === 'CUSTOM') {
+        if (!user.supporter && !user.admin && this.settings.theme.name === 'CUSTOM') {
           this.settings.theme = Theme.DEFAULT;
         }
-        if (!user.patron && !increasedPageViews) {
+        if (!user.supporter && !increasedPageViews) {
           const viewTriggersForPatreonPopup = [20, 200, 500];
           this.settings.pageViews++;
           increasedPageViews = true;

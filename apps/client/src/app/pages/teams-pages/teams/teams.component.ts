@@ -15,6 +15,7 @@ import { DiscordWebhookService } from '../../../core/discord/discord-webhook.ser
 import { PlatformService } from '../../../core/tools/platform.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { WebhookSetting } from '../../../model/team/webhook-setting';
+import { OauthService } from '../../../core/auth/oauth.service';
 
 @Component({
   selector: 'app-teams',
@@ -42,7 +43,7 @@ export class TeamsComponent implements OnInit {
               private authFacade: AuthFacade, private discordWebhook: DiscordWebhookService,
               private message: NzMessageService, private route: ActivatedRoute, private router: Router,
               private http: HttpClient, private platform: PlatformService,
-              private ipc: IpcService) {
+              private ipc: IpcService, private oauth: OauthService) {
     this.teamsFacade.loadMyTeams();
   }
 
@@ -164,18 +165,19 @@ export class TeamsComponent implements OnInit {
 
   discordOauth(team: Team): void {
     if (this.platform.isDesktop()) {
-      this.ipc.once('oauth-reply', (event, code) => {
-        this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/create-webhook?code=${code}&redirect_uri=http://localhost`)
-          .pipe(
-            switchMap((response: any) => {
-              return this.setWebhook(team.$key, response.webhook.url);
-            })
-          )
-          .subscribe({
-            error: error => this.errorCode$.next(error.error)
-          });
+      this.oauth.desktopOauth({
+        authorize_url: 'https://discordapp.com/api/oauth2/authorize',
+        client_id: '514350168678727681',
+        scope: 'webhook.incoming',
+        gcf: 'https://us-central1-ffxivteamcraft.cloudfunctions.net/create-webhook',
+        response_type: 'code'
+      }).pipe(
+        switchMap((response: any) => {
+          return this.setWebhook(team.$key, response.webhook.url);
+        })
+      ).subscribe({
+        error: error => this.errorCode$.next(error.error)
       });
-      this.ipc.send('oauth', 'discordapp.com');
     } else {
       window.open(this.discordWebhook.oauthUrl(team.$key, this.redirectUri));
     }

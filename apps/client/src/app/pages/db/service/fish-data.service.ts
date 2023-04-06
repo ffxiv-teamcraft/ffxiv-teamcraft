@@ -152,37 +152,6 @@ export class FishDataService {
     });
   }
 
-  public getTrainStatsRealtime(trainId: string): Observable<any> {
-    const reportsQuery = gql`subscription FishTrainReports($trainId: String!) {
-      fishingresults(where: {trainId: {_eq: $trainId}}) {
-        itemId,
-        date,
-        userId,
-        baitId,
-        mooch,
-        size
-      }
-    }`;
-    return defer(() => this.apollo.subscribe<any>({
-      query: reportsQuery,
-      variables: {
-        trainId: trainId
-      }
-    })).pipe(
-      retry({
-        count: 5,
-        delay: 1000
-      }),
-      map((reports) => {
-        return {
-          count: reports.data.fishingresults.length,
-          reports: reports.data.fishingresults
-        };
-      }),
-      shareReplay({ bufferSize: 1, refCount: true })
-    );
-  }
-
   public getTrainStatsSnapshot(trainId: string): Observable<any> {
     const reportsQuery = gql`query FishTrainReportsSnapshot($trainId: String!) {
       fishingresults(where: {trainId: {_eq: $trainId}}) {
