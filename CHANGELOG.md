@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.4.7"></a>
+## [10.4.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.6...v10.4.7) (2023-04-06)
+
+
+### Bug Fixes
+
+* **desktop:** fixed patreon and discord oauth ([90ec4f3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/90ec4f3))
+* **patreon:** fix patron status sometimes removed after benefits were applied manually ([f93209f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f93209f))
+
+
+### Features
+
+* **core:** you can now connect with tipeee to get supporter perks ([4f9e1a1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4f9e1a1))
+* **db:** 6.38 update content ([fbf23af](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fbf23af))
+
+
+### Performance Improvements
+
+* **fish-train:** refactored fish train persistence to lower database stress ([f6861f9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f6861f9))
+
+
+
 <a name="10.4.6"></a>
 ## [10.4.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.5...v10.4.6) (2023-04-02)
 
