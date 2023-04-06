@@ -431,6 +431,10 @@ export class SettingsPopupComponent {
     this.patreonService.patreonOauth();
   }
 
+  tipeeeOauth(): void {
+    this.patreonService.tipeeeOauth();
+  }
+
   resetPassword(): void {
     sendPasswordResetEmail(this.auth, this.auth.currentUser.email).then(() => {
       this.message.success(this.translate.instant('SETTINGS.Password_reset_mail_sent'));
@@ -520,6 +524,13 @@ export class SettingsPopupComponent {
     delete user.patreonToken;
     delete user.patreonRefreshToken;
     delete user.lastPatreonRefresh;
+    this.authFacade.updateUser(user);
+  }
+
+  public disconnectTipeee(user: TeamcraftUser): void {
+    delete user.tipeeeToken;
+    delete user.tipeeeRefreshToken;
+    delete user.lastTipeeeRefresh;
     this.authFacade.updateUser(user);
   }
 

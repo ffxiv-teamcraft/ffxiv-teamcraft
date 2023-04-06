@@ -207,13 +207,13 @@ export class AppComponent implements OnInit {
 
   public showAd$ = this.authFacade.user$.pipe(
     map(user => {
-      return !(user.admin || user.moderator || user.patron);
+      return !(user.admin || user.moderator || user.supporter);
     })
   );
 
   public showPatreonButton$ = this.authFacade.user$.pipe(
     map(user => {
-      return !user.patron;
+      return !user.supporter;
     })
   );
 
@@ -618,10 +618,10 @@ export class AppComponent implements OnInit {
       let increasedPageViews = false;
 
       this.user$.subscribe(user => {
-        if (!user.patron && !user.admin && this.settings.theme.name === 'CUSTOM') {
+        if (!user.supporter && !user.admin && this.settings.theme.name === 'CUSTOM') {
           this.settings.theme = Theme.DEFAULT;
         }
-        if (!user.patron && !increasedPageViews) {
+        if (!user.supporter && !increasedPageViews) {
           const viewTriggersForPatreonPopup = [20, 200, 500];
           this.settings.pageViews++;
           increasedPageViews = true;

@@ -14,7 +14,7 @@ export class IsPatronPipe implements PipeTransform {
   transform(userId: string): Observable<boolean> {
     return this.userService.get(userId).pipe(
       map(user => {
-        return user.patron;
+        return user.supporter;
       }),
       shareReplay({ bufferSize: 1, refCount: true })
     );

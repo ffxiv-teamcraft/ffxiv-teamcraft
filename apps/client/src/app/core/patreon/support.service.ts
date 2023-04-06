@@ -56,7 +56,7 @@ export class SupportService {
     }
   }
 
-  public refreshToken(user: TeamcraftUser): void {
+  public refreshPatreonToken(user: TeamcraftUser): void {
     this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/patreon-oauth-refresh?refresh_token=${user.patreonRefreshToken}`)
       .pipe(catchError(() => {
         return of(null);
@@ -70,6 +70,56 @@ export class SupportService {
           user.patreonToken = response.access_token;
           user.patreonRefreshToken = response.refresh_token;
           user.lastPatreonRefresh = Date.now();
+        }
+        this.authFacade.updateUser(user);
+      });
+  }
+
+  public tipeeeOauth(): void {
+    if (this.platform.isDesktop()) {
+      this.oauth.desktopOauth({
+        authorize_url: 'https://tipeee.com/oauth/v2/auth',
+        client_id: '4_M3H9Otm5Td79MwS2IXQPJ9LCyYmGtOrMFgA3fLA0aM3rzDCAJ7',
+        gcf: 'https://us-central1-ffxivteamcraft.cloudfunctions.net/tipeee-oauth',
+        scope: 'PARTNER',
+        response_type: 'code'
+      }).pipe(
+        switchMap((response: any) => {
+          return this.authFacade.user$.pipe(
+            first(),
+            map(user => {
+              user.tipeeeToken = response.access_token;
+              user.tipeeeRefreshToken = response.refresh_token;
+              user.lastTipeeeRefresh = Date.now();
+              return user;
+            })
+          );
+        })
+      ).subscribe(updatedUser => {
+        this.authFacade.updateUser(updatedUser);
+        this.message.success(this.translate.instant('Tipeee_login_success'));
+        this.router.navigate(['/']);
+      });
+    } else {
+      window.open(`https://tipeee.com/oauth/v2/auth?response_type=code&client_id=4_M3H9Otm5Td79MwS2IXQPJ9LCyYmGtOrMFgA3fLA0aM3rzDCAJ7&redirect_uri=${
+        window.location.protocol}//${window.location.host}/tipeee-redirect&scope=PARTNER`);
+    }
+  }
+
+  public refreshTipeeeToken(user: TeamcraftUser): void {
+    this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/tipeee-oauth-refresh?refresh_token=${user.tipeeeRefreshToken}`)
+      .pipe(catchError(() => {
+        return of(null);
+      }))
+      .subscribe((response: any) => {
+        if (response === null) {
+          delete user.tipeeeToken;
+          delete user.tipeeeRefreshToken;
+          delete user.lastTipeeeRefresh;
+        } else {
+          user.tipeeeToken = response.access_token;
+          user.tipeeeRefreshToken = response.refresh_token;
+          user.lastTipeeeRefresh = Date.now();
         }
         this.authFacade.updateUser(user);
       });

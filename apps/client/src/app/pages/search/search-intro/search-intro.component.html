@@ -20,9 +20,7 @@
           </a>
         </div>
         <div nz-col [nzMd]="8">
-          <button class="button patreon-button" nz-button *ngIf="showPatreonButton$ | async" (click)="openSupportPopup()">
-            <img alt="patreon logo" class="patreon-logo"
-                 src="https://c5.patreon.com/external/logo/downloads_logomark_color_on_coral.png">
+          <button class="button patreon-button" nz-button nzType="primary" *ngIf="showPatreonButton$ | async" (click)="openSupportPopup()">
             <span>{{'COMMON.Support_us' | translate}}</span>
           </button>
         </div>

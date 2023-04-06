@@ -11,6 +11,6 @@ export class PatreonGuard implements CanActivate {
   }
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-    return this.authFacade.user$.pipe(map(user => user.patron || user.admin));
+    return this.authFacade.user$.pipe(map(user => user.supporter || user.admin));
   }
 }

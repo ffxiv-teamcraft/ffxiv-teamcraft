@@ -58,7 +58,7 @@
             </li>
             <ng-container *ngIf="(permissionLevel$ | async) >= 40">
               <ng-container *ngIf="user$ | async as user">
-                <ng-container *ngIf="user.patron || user.admin">
+                <ng-container *ngIf="user.supporter || user.admin">
                   <li (click)="createCustomLink(_workshop, user)" *ngIf="(customLink$ | async) === undefined; else copyLink"
                       [nzDisabled]="!user.nickname"
                       nz-menu-item>

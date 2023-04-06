@@ -214,7 +214,7 @@
               </ng-container>
               <ng-container *ngIf="(isOwner$ | async) === true && !_list.ephemeral && !_list.offline">
                 <ng-container *ngIf="user$ | async as user">
-                  <ng-container *ngIf="!publicDisplay && (user.patron || user.admin)">
+                  <ng-container *ngIf="!publicDisplay && (user.supporter || user.admin)">
                     <li (click)="user.nickname ? createTemplate(_list, user) : null" *ngIf="(listTemplate$ | async) === undefined; else copyTemplate"
                         [nzDisabled]="!user.nickname"
                         nz-menu-item>

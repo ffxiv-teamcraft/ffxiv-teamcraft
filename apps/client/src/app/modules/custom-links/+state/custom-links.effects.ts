@@ -25,7 +25,7 @@ export class CustomLinksEffects {
     ofType(CustomLinksActionTypes.LoadMyCustomLinks),
     switchMap(() => this.authFacade.user$),
     filter(user => {
-      return user.patron || user.moderator || user.admin;
+      return user.supporter || user.moderator || user.admin;
     }),
     map(user => user.$key),
     exhaustMap(userId => {

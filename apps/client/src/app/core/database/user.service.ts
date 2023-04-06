@@ -1,5 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
-import { EMPTY, Observable, of } from 'rxjs';
+import { combineLatest, EMPTY, Observable, of } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
 import { catchError, distinctUntilChanged, map, shareReplay, switchMap, tap } from 'rxjs/operators';
@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 import { Firestore, where } from '@angular/fire/firestore';
 import { Auth } from '@angular/fire/auth';
 import { isEqual } from 'lodash';
+import { addMonths } from 'date-fns';
 
 @Injectable({
   providedIn: 'root'
@@ -41,20 +42,34 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
           } else {
             delete user.notFound;
           }
-          if (!user.patreonToken && !user.patreonBenefitsUntil) {
-            user.patron = false;
+          if (!user.patreonToken && !user.tipeeeToken && !user.patreonBenefitsUntil) {
+            user.supporter = false;
             return of(user);
           }
           if (user.patreonBenefitsUntil) {
-            user.patron = user.patreonBenefitsUntil.seconds * 1000 >= Date.now();
-            if (user.patron) {
+            user.supporter = user.patreonBenefitsUntil.seconds * 1000 >= Date.now();
+            if (user.supporter) {
               return of(user);
             }
           }
-          return this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/patreon-pledges?token=${user.patreonToken}`).pipe(
-            map((response: any) => {
-              user.patron = response.included && response.included[0] && response.included[0].attributes &&
-                response.included[0].attributes.patron_status === 'active_patron';
+          return combineLatest([
+            user.patreonToken ? this.http.get<any>(`https://us-central1-ffxivteamcraft.cloudfunctions.net/patreon-pledges?token=${user.patreonToken}`) : of(null),
+            user.tipeeeToken ? this.http.get<any>(`https://api.tipeee.com/v2.0/partners/tips?access_token=${user.tipeeeToken}`) : of(null)
+          ]).pipe(
+            map(([patreon, tipeee]) => {
+              const patreonSupporter = patreon && patreon.included && patreon.included[0] && patreon.included[0].attributes &&
+                patreon.included[0].attributes.supporter_status === 'active_patron';
+              const tipeeeSupporter = tipeee && tipeee.items.some(i => i.donation_type === 'PER_MONTH' && i.is_active);
+              if (tipeee && !tipeeeSupporter) {
+                user.supporterUntil = tipeee.items
+                  // Only take direct donations into consideration
+                  .filter(i => i.donation_type === 'DIRECT_MONTH')
+                  // From the donation, compute end of supporter status based on donation date + <€ amount> months
+                  .map(tip => addMonths(new Date(tip.start_at), Math.ceil(tip.amount)).getTime())
+                  // Grab the highest timestamp produced
+                  .sort((a, b) => b - a)[0];
+              }
+              user.supporter = patreonSupporter || tipeeeSupporter || user.supporterUntil > Date.now();
               return user;
             })
           );

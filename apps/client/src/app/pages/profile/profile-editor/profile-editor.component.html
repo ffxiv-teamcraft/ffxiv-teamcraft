@@ -41,7 +41,7 @@
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
       <nz-tag *ngIf="user.admin" [nzColor]="'magenta'">{{'COMMON.Admin' | translate}}</nz-tag>
       <nz-tag *ngIf="user.moderator" [nzColor]="'volcano'">{{'COMMON.Moderator' | translate}}</nz-tag>
-      <nz-tag *ngIf="user.patron" [nzColor]="'purple'">{{'PROFILE.Patreon_supporter' | translate}}</nz-tag>
+      <nz-tag *ngIf="user.supporter" [nzColor]="'purple'">{{'PROFILE.Patreon_supporter' | translate}}</nz-tag>
     </div>
     <div [nzGutter]="10" nz-row>
       <div [nzXXl]="12" [nzXs]="24" class="profile-card" nz-col>

@@ -86,8 +86,12 @@ export class AuthEffects {
     }),
     map((user: TeamcraftUser) => {
       // If token has been refreshed more than 3 weeks ago, refresh it now.
-      if (user.patron && Date.now() - user.lastPatreonRefresh >= 3 * 7 * 86400000) {
-        this.patreonService.refreshToken(user);
+      if (user.supporter) {
+        if (user.lastPatreonRefresh && Date.now() - user.lastPatreonRefresh >= 3 * 7 * 86400000) {
+          this.supportService.refreshPatreonToken(user);
+        } else if (user.tipeeeRefreshToken && Date.now() - user.lastTipeeeRefresh >= 3600000) {
+          this.supportService.refreshTipeeeToken(user);
+        }
       }
       if (user.defaultLodestoneId === undefined && user.lodestoneIds?.length > 0) {
         user.defaultLodestoneId = user.lodestoneIds[0].id;
@@ -97,16 +101,6 @@ export class AuthEffects {
       }
       return user;
     }),
-    // catchError((error) => {
-    //   if (error.message.toLowerCase().indexOf('not found') > -1) {
-    //     return of(new TeamcraftUser());
-    //   } else {
-    //     this.authFacade.logout();
-    //     console.error(error);
-    //     this.notificationService.error(this.translate.instant('COMMON.Error'), this.translate.instant('Network_error_logged_out'));
-    //     return EMPTY;
-    //   }
-    // }),
     map(user => new UserFetched(user)),
     debounceTime(250)
   ));
@@ -266,7 +260,7 @@ export class AuthEffects {
     debounceTime(10000),
     tap((action: UserFetched) => {
       const user = action.user;
-      if (!this.nickNameWarningShown && user !== null && (user.patron || user.admin) && user.nickname === undefined) {
+      if (!this.nickNameWarningShown && user !== null && (user.supporter || user.admin) && user.nickname === undefined) {
         this.notificationService.warning(this.translate.instant('COMMON.Warning'), this.translate.instant('SETTINGS.No_nickname_warning'));
         this.nickNameWarningShown = true;
       }
@@ -277,7 +271,7 @@ export class AuthEffects {
   constructor(private actions$: Actions, private auth: Auth, private userService: UserService,
               private store: Store<{ auth: AuthState }>, private dialog: NzModalService,
               private translate: TranslateService, private notificationService: NzNotificationService, private authFacade: AuthFacade,
-              private patreonService: SupportService, private logTrackingService: LogTrackingService,
+              private supportService: SupportService, private logTrackingService: LogTrackingService,
               private commissionProfileService: CommissionProfileService, private settings: SettingsService) {
   }
 }

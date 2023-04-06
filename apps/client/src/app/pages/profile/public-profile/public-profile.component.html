@@ -13,7 +13,7 @@
       <ng-container *ngIf="user$ | async as user">
         <div fxLayout="row wrap" fxLayoutGap="5px">
           <nz-tag *ngIf="user.admin" [nzColor]="'magenta'">{{'COMMON.Admin' | translate}}</nz-tag>
-          <nz-tag *ngIf="user.patron" [nzColor]="'purple'">{{'PROFILE.Patreon_supporter' | translate}}</nz-tag>
+          <nz-tag *ngIf="user.supporter" [nzColor]="'purple'">{{'PROFILE.Patreon_supporter' | translate}}</nz-tag>
           <nz-tag *ngIf="user.stats?.listsCreated > 100"
                   [nzColor]="'orange'">{{'PROFILE.More_than_100_lists_created' | translate}}</nz-tag>
         </div>

@@ -17,8 +17,7 @@ export class RemoveAdsPopupComponent {
   }
 
   tipeeeOauth(): void {
-    //TODO: implement tipeee oauth
-    //this.supportService.tipeeeOauth();
+    this.supportService.tipeeeOauth();
   }
 
 }
