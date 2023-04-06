@@ -33,7 +33,3 @@ const changes = sections.slice(1, 11).reduce((acc, section) => {
 
 fs.writeFileSync(patchNotesFilePath, JSON.stringify(changes));
 console.log(`${colors.green('Writing patch notes to ')}${colors.yellow(patchNotesFilePath)}\n`);
-console.log('---LATEST CHANGES---');
-console.log(changes[0].content);
-
-console.log('--------------------');
