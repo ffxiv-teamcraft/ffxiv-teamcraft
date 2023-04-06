@@ -108,6 +108,8 @@ jobs:
       - run:
           name: Deploying cdn to OVH server
           command: bash tools/cdn/deploy.sh
+      - store_artifacts:
+          path: ./rsync.log
 
 
   deploy-firebase-hosting:
