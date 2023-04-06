@@ -47,6 +47,7 @@
   },
   "scripts": {
     "prebuild": "node ./tools/build/prebuild.js && yarn update-lazy-files && yarn web:copyfiles",
+    "release:print": "node ./tools/build/release-notes-print.js",
     "assets:hash": "node ./tools/build/prod-assets-hash.js",
     "start": "yarn prebuild && yarn nx serve --project=client",
     "build:watch": "yarn prebuild && yarn nx build --project=client --watch --configuration=electron-dev",
@@ -60,7 +61,7 @@
     "standard-version:minor": "git fetch origin && standard-version --release-as minor && yarn standard-version:after",
     "standard-version:major": "git fetch origin && standard-version --release-as major && yarn standard-version:after",
     "standard-version:dry": "standard-version --dry-run",
-    "standard-version:after": "yarn prebuild && git commit -am \"chore(release): Patch notes update\"",
+    "standard-version:after": "yarn prebuild && git commit -am \"chore(release): Patch notes update\" && yarn release:print",
     "release:prod": "git push --follow-tags origin master",
     "release:beta": "yarn standard-version --prerelease beta && git push --follow-tags origin beta",
     "test": "yarn prebuild && nx test --project=client --watch=false",
