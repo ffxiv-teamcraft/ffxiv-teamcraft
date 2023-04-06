@@ -13,6 +13,8 @@ echo VERSION ${PACKAGE_VERSION}
 touch ~/.ssh/known_hosts
 ssh-keyscan -H ssh.ffxivteamcraft.com >> ~/.ssh/known_hosts
 
+ls ./dist
+
 rsync -avz ./dist/apps/client/* dalamud@ssh.ffxivteamcraft.com:~/cdn.ffxivteamcraft.com/${PACKAGE_VERSION} --log-file ./rsync.log
 
 ssh dalamud@51.83.37.191 << EOF
