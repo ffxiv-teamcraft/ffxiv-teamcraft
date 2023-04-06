@@ -107,6 +107,7 @@
     "Contributors": "기여자"
   },
   "Patreon_login_success": "Patreon 로그인 성공!",
+  "Tipeee_login_success": "Tipeee login success!",
   "Hide_if_empty": "비어있는 경우 숨기기",
   "No_favorites": "즐겨찾기 없음",
   "Ephemeral_list": "완료 시 삭제 예정",
@@ -188,7 +189,7 @@
     "Never": "하지 않음",
     "Festival": "이벤트 기간에만 가능",
     "Back": "뒤로 가기",
-    "Support_us_remove_ads": "Patreon 후원하고 광고 없애기",
+    "Support_us_remove_ads": "Support us to remove ads",
     "Support_us": "후원하기",
     "Show_more": "더 보기",
     "Item": "아이템",
@@ -442,10 +443,12 @@
     "Reset_password_warning": "비밀번호를 재설정 하시겠습니까?",
     "Password_reset_mail_sent": "비밀번호 재설정 이메일이 전송되었습니다.",
     "Connect_with_patreon": "Patreon에 연결",
+    "Connect_with_tipeee": "Connect with Tipeee",
     "Connected_with_patreon": "Patreon에 연결되었습니다.",
+    "Connected_with_tipeee": "Connected with Tipeee",
     "Nickname": "닉네임",
     "Nickname_used": "이미 사용중인 닉네임입니다.",
-    "No_nickname_warning": "후원자 전용 기능들을 사용하기 위해 설정 페이지에서 닉네임을 설정하시기 바랍니다.",
+    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the supporter exclusive features properly.",
     "Show_devtools": "개발 도구 표시",
     "Clear_cache": "캐시 지우기(프로그램이 다시 시작됩니다)",
     "Enable_item_tags": "아이템 태그 사용",
@@ -513,6 +516,7 @@
     "Alarm_panels_collapsed_by_default": "알람 패널 간소화를 기본값으로 설정",
     "Alarm_groups_before_no_group": "그룹 지정이 안된 알람 앞에 그룹 알람을 표시",
     "Disconnect_patreon": "Patreon 연결 끊기",
+    "Disconnect_tipeee": "Disconnect from Tipeee",
     "Export_settings": "설정 내보내기",
     "Import_settings": "설정 가져오기",
     "Import_successful": "설정을 불러왔습니다",
@@ -2714,7 +2718,7 @@
     "Starting_at_X": "매달 ${{monthly}} 또는 매년 ${{yearly}} 으로 시작할 수 있습니다",
     "Footer_text": "한달에 1달러만 후원하셔도 팀크래프트 개발에 큰 기여를 할 수 있으며, 개발자가 팀크래프트 프로젝트에 모든 시간을 투자하여 더 나은 파이널 판타지14 툴 개발에 힘쓸 수 있습니다.",
     "Already_supporter": "이미 후원 중이신가요?",
-    "Disable_ads_explanation": "광고를 제거하기 위해서는 patreon 계정을 팀크래프트에 연동해야 합니다"
+    "Disable_ads_explanation": "To disable ads, connect with your Patreon or Tipeee account to make Teamcraft able to verify your support and disable ads automatically"
   },
   "SUPPORT_US": {
     "Popup_introduction": "안녕하세요, 저는 팀크래프트 개발자 Miu입니다.<br/> 팀크래프트는 지난 몇 년 전부터 저의 취미였고 현재는 취미가 아닌 제 직업으로 삼기 위한 꿈으로써, 그 꿈을 이루기 위해 노력하고 있습니다. <br/><br/>만약 여러분들이 patreon으로 도움을 주신다면, 팀크래프트를 더욱 더 개선시키고 저는 제 꿈을 현실로 이룰 수 있습니다.<br/><br/> patreon에서 프로젝트에 도움을 주신다면 다음과 같은 멋진 특전을 얻으실 수 있습니다.",
@@ -3180,6 +3184,10 @@
     "Bait_breakdown": "Bait usage breakdown",
     "Fish_size_chart": "Fish sizes",
     "Delete_train": "Delete",
-    "Train_not_running": "Train not running"
+    "Train_not_running": "Train not running",
+    "Outdated": "This train is outdated",
+    "Outdated_description": "This train is using an outdated data storage approach, please migrate to be able to see your stats again",
+    "Outdated_description_passenger": "This train is using an outdated data storage approach, please ask the conductor to migrate it to see the stats again.",
+    "Migrate": "Migrate"
   }
 }
