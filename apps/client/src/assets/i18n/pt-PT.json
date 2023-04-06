@@ -107,6 +107,7 @@
     "Contributors": "Colaboradores"
   },
   "Patreon_login_success": "Patreon login success!",
+  "Tipeee_login_success": "Tipeee login success!",
   "Hide_if_empty": "Esconder se estiver vazio",
   "No_favorites": "Não favorito",
   "Ephemeral_list": "Será eliminado assim que completo",
@@ -188,7 +189,7 @@
     "Never": "Never",
     "Festival": "Only during a festival",
     "Back": "Back",
-    "Support_us_remove_ads": "Support us on Patreon to remove ads",
+    "Support_us_remove_ads": "Support us to remove ads",
     "Support_us": "Support us",
     "Show_more": "Show more",
     "Item": "Item",
@@ -442,10 +443,12 @@
     "Reset_password_warning": "Tem a certeza que pretende repor a palavra-passe?",
     "Password_reset_mail_sent": "Alteração da palavra-passe enviada para o seu email",
     "Connect_with_patreon": "Connect with Patreon",
+    "Connect_with_tipeee": "Connect with Tipeee",
     "Connected_with_patreon": "Connected with Patreon",
+    "Connected_with_tipeee": "Connected with Tipeee",
     "Nickname": "Nome de utilizador",
     "Nickname_used": "Nome de utilizador já em utilização",
-    "No_nickname_warning": "Por favor vá à página de configurações e crie um nome de utilizador novo para aceder às funções exclusivas do patreon.",
+    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the supporter exclusive features properly.",
     "Show_devtools": "Mostrar ferramentas de desenvolvimento",
     "Clear_cache": "Limpar a cache (a app será reiniciada)",
     "Enable_item_tags": "Ligar tags de item",
@@ -513,6 +516,7 @@
     "Alarm_panels_collapsed_by_default": "Alarm group panels collapsed by default",
     "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
     "Disconnect_patreon": "Disconnect from Patreon",
+    "Disconnect_tipeee": "Disconnect from Tipeee",
     "Export_settings": "Export settings",
     "Import_settings": "Import settings",
     "Import_successful": "Settings imported",
@@ -2714,7 +2718,7 @@
     "Starting_at_X": "Starting at ${{monthly}} per month or ${{yearly}} per year",
     "Footer_text": "As little as $1 a month has a significant impact on Teamcraft's development and brings me closer to my dream of becoming a full-time developer on this project and expanding it beyond just being a tool for FFXIV.",
     "Already_supporter": "Already a supporter?",
-    "Disable_ads_explanation": "To disable ads, connect with your Patreon account to make Teamcraft able to verify your support and disable ads automatically"
+    "Disable_ads_explanation": "To disable ads, connect with your Patreon or Tipeee account to make Teamcraft able to verify your support and disable ads automatically"
   },
   "SUPPORT_US": {
     "Popup_introduction": "Hi, I'm Miu, the developer of the tool you're currently using.<br/> Teamcraft has been a hobby for me since the last few years and my dream is to make this my fulltime job. <br/><br/>With your help, this dream could become a reality, you can support the tool on patreon, every single dollar counts and will help me reach this goal. <br/><br/> Supporting the project on patreon also gives you some cool benefits:",
@@ -3180,6 +3184,10 @@
     "Bait_breakdown": "Bait usage breakdown",
     "Fish_size_chart": "Fish sizes",
     "Delete_train": "Delete",
-    "Train_not_running": "Train not running"
+    "Train_not_running": "Train not running",
+    "Outdated": "This train is outdated",
+    "Outdated_description": "This train is using an outdated data storage approach, please migrate to be able to see your stats again",
+    "Outdated_description_passenger": "This train is using an outdated data storage approach, please ask the conductor to migrate it to see the stats again.",
+    "Migrate": "Migrate"
   }
 }
