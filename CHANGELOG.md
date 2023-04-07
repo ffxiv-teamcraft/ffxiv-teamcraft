@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.4.8"></a>
+## [10.4.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.7...v10.4.8) (2023-04-07)
+
+
+### Bug Fixes
+
+* **support:** fixed patreon oauth and better tipeee connect logic ([fc78a85](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fc78a85))
+
+
+
 <a name="10.4.7"></a>
 ## [10.4.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.6...v10.4.7) (2023-04-06)
 
