@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
+import { UserService } from '../../../core/database/user.service';
 
 @Component({
   selector: 'app-tipeee-redirect',
@@ -16,7 +17,8 @@ export class TipeeeRedirectComponent {
   public errorCode: string;
 
   constructor(private route: ActivatedRoute, private http: HttpClient, private authFacade: AuthFacade,
-              private router: Router, private message: NzMessageService, private translate: TranslateService) {
+              private router: Router, private message: NzMessageService, private translate: TranslateService,
+              private userService: UserService) {
     this.route.queryParams.pipe(
       first()
     ).subscribe(params => {
@@ -36,6 +38,7 @@ export class TipeeeRedirectComponent {
                 tap(updatedUser => {
                   this.authFacade.updateUser(updatedUser);
                   this.message.success(this.translate.instant('Tipeee_login_success'));
+                  this.userService.reloader$.next();
                   this.router.navigate(['/']);
                 })
               );

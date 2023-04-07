@@ -531,6 +531,7 @@ export class SettingsPopupComponent {
     delete user.tipeeeToken;
     delete user.tipeeeRefreshToken;
     delete user.lastTipeeeRefresh;
+    delete user.supporterUntil;
     this.authFacade.updateUser(user);
   }
 
