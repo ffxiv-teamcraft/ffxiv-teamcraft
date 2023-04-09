@@ -11,9 +11,6 @@ const RATE_LIMIT_BYTES_PER_REQUEST = 100_000;
 const RATE_LIMIT_BYTES_PER_MINUTES = 1_000_000;
 const RATE_LIMIT_BYTES_PER_HOUR = 20_000_000;
 
-const RATE_LIMIT_HITS_PER_MINUTES = 100;
-const RATE_LIMIT_HITS_PER_HOUR = 3000;
-
 async function addUsage(redis: RedisClientType, ip: string, usage: number) {
   const minBytesUsageKey = `gubal:${ip}:${new Date().getUTCMinutes()}B`;
   const hourBytesUsageKey = `gubal:${ip}:h${new Date().getUTCHours()}B`;
@@ -44,13 +41,9 @@ async function addUsage(redis: RedisClientType, ip: string, usage: number) {
 async function getUsage(redis: RedisClientType, ip: string) {
   const minUsageKey = `gubal:${ip}:${new Date().getUTCMinutes()}B`;
   const hourUsageKey = `gubal:${ip}:h${new Date().getUTCHours()}B`;
-  const minHitUsageKey = `gubal:${ip}:${new Date().getUTCMinutes()}`;
-  const hourHitUsageKey = `gubal:${ip}:h${new Date().getUTCHours()}`;
   return {
-    minHit: await redis.get(minHitUsageKey),
     minBytes: await redis.get(minUsageKey),
-    hourBytes: await redis.get(hourUsageKey),
-    hourHit: await redis.get(hourHitUsageKey)
+    hourBytes: await redis.get(hourUsageKey)
   };
 }
 
@@ -103,12 +96,10 @@ async function bootstrap() {
         if (req.method !== 'POST') {
           return res.sendStatus(405);
         }
-        const [minUsage, hourUsage, minHit, hourHit] = req.headers['X-Gubal-Usage'].toString().split('|');
+        const [minUsage, hourUsage] = req.headers['X-Gubal-Usage'].toString().split('|');
         delete req.headers['X-Gubal-Usage'];
         const denied = +minUsage > RATE_LIMIT_BYTES_PER_MINUTES
-          || +minHit > RATE_LIMIT_HITS_PER_MINUTES
-          || +hourUsage > RATE_LIMIT_BYTES_PER_HOUR
-          || +hourHit > RATE_LIMIT_HITS_PER_HOUR;
+          || +hourUsage > RATE_LIMIT_BYTES_PER_HOUR;
         const isMutation = req.body.query.startsWith('mutation');
         // Only deny if not mutation, to not prevent fishing data ingestion in the event of a wrong ban
         if (denied && !isMutation) {
