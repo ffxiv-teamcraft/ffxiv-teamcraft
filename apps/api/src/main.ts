@@ -5,7 +5,6 @@ import { environment } from './environments/environment';
 import { createProxyMiddleware, fixRequestBody } from 'http-proxy-middleware';
 import { graphql } from 'body-parser-graphql';
 import { createClient, RedisClientType } from 'redis';
-import { AddressInfo } from 'ws';
 
 const RATE_LIMIT_BYTES_PER_REQUEST = 100_000;
 const RATE_LIMIT_BYTES_PER_MINUTES = 1_000_000;
@@ -108,18 +107,6 @@ async function bootstrap() {
         }
         fixRequestBody(proxyReq, req);
       },
-      onProxyReqWs: async (proxyReq, req, socket) => {
-        socket.on('data', async d => {
-          const addr: AddressInfo = socket.address() as AddressInfo;
-          await addUsage(redis, addr.address, Buffer.byteLength(d));
-          const { minBytes, hourBytes } = await getUsage(redis, addr.address);
-          if (+minBytes > RATE_LIMIT_BYTES_PER_MINUTES || +hourBytes > RATE_LIMIT_BYTES_PER_HOUR
-            || Buffer.byteLength(d) > RATE_LIMIT_BYTES_PER_REQUEST) {
-            logBan(req, true);
-            socket.end();
-          }
-        });
-      },
       onProxyRes: (proxyRes, req, res) => {
         const _write = res.write;
         res.write = (data, cb) => {
@@ -137,11 +124,8 @@ async function bootstrap() {
       '/gubal',
       proxy
     );
-    const server = await app.listen(port);
-    server.on('upgrade', proxy.upgrade);
-  } else {
-    await app.listen(port);
   }
+  await app.listen(port);
   Logger.log(`🚀 Application is running on: http://localhost:${port}, XIVAPI_KEY LOADED: ${environment.xivapiKey !== undefined}`);
 }
 
