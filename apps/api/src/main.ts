@@ -13,8 +13,6 @@ const RATE_LIMIT_BYTES_PER_HOUR = 20_000_000;
 async function addUsage(redis: RedisClientType, ip: string, usage: number) {
   const minBytesUsageKey = `gubal:${ip}:${new Date().getUTCMinutes()}B`;
   const hourBytesUsageKey = `gubal:${ip}:h${new Date().getUTCHours()}B`;
-  const minHitUsageKey = `gubal:${ip}:${new Date().getUTCMinutes()}`;
-  const hourHitUsageKey = `gubal:${ip}:h${new Date().getUTCHours()}`;
   await redis.set(minBytesUsageKey, 0, {
     NX: true,
     EX: 60
@@ -23,18 +21,8 @@ async function addUsage(redis: RedisClientType, ip: string, usage: number) {
     NX: true,
     EX: 3600
   });
-  await redis.set(minHitUsageKey, 0, {
-    NX: true,
-    EX: 60
-  });
-  await redis.set(hourHitUsageKey, 0, {
-    NX: true,
-    EX: 3600
-  });
   await redis.incrBy(minBytesUsageKey, usage);
   await redis.incrBy(hourBytesUsageKey, usage);
-  await redis.incr(minHitUsageKey);
-  await redis.incr(hourHitUsageKey);
 }
 
 async function getUsage(redis: RedisClientType, ip: string) {
@@ -96,7 +84,6 @@ async function bootstrap() {
           return res.sendStatus(405);
         }
         const [minUsage, hourUsage] = req.headers['X-Gubal-Usage'].toString().split('|');
-        delete req.headers['X-Gubal-Usage'];
         const denied = +minUsage > RATE_LIMIT_BYTES_PER_MINUTES
           || +hourUsage > RATE_LIMIT_BYTES_PER_HOUR;
         const isMutation = req.body.query.startsWith('mutation');

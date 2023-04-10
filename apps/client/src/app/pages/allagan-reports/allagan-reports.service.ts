@@ -121,9 +121,6 @@ export class AllaganReportsService {
         return this.apollo.watchQuery<any>({
           query,
           fetchPolicy: 'network-only',
-          variables: {
-            sources: filter
-          },
           pollInterval: 30000
         }).valueChanges.pipe(
           map(res => {
