@@ -13103,9 +13103,6 @@
   "70079": {
     "ko": "헤매는 양치기의 숲에 있는 힐디브랜드는 쓸데없이 기운이 넘치고 있다."
   },
-  "70080": {
-    "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n\n루비길 국제시장에 있는 '떠돌이 시인'은 모험가에게 부탁이 있는 듯하다."
-  },
   "70081": {
     "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n예드리만에 있는 칸차나는 걱정스러운 일이 있는 듯하다."
   },
@@ -13271,6 +13268,108 @@
   "70136": {
     "ko": "바람의 양잠소에 있는 바르샨은 미소를 짓고 있다."
   },
+  "70137": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n카페 '라스트 렘넌트'에 있는 재밍웨이는 N-7000과 함께 카페 운영을 시작한 듯하다."
+  },
+  "70138": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리서치 A4에 있는 N-7000은 카페의 운영이 순조롭다고 평가하고 있는 듯하다."
+  },
+  "70139": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리서치 A4에 있는 N-7000은 카페 운영이 순조롭다고 평가하고 있는 듯하다."
+  },
+  "70140": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리서치 A4에 있는 N-7000은 카페의 운영이 순조롭다고 평가하고 있는 듯하다."
+  },
+  "70141": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리서치 A4에 있는 N-7000은 카페 운영이 순조롭다고 평가하고 있는 듯하다."
+  },
+  "70142": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리서치 A4에 있는 N-7000은 카페의 운영이 순조롭다고 평가하고 있는 듯하다."
+  },
+  "70143": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 카렐리언들의 의뢰를 전달하고 싶은 듯하다."
+  },
+  "70144": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 말을 전해 달라고 부탁하고 싶은 듯하다."
+  },
+  "70145": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 시료를 구하고 있는 듯하다."
+  },
+  "70146": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 카페의 홍보 작전을 실행하고 싶은 듯하다."
+  },
+  "70147": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 커피 개량을 검토하고 있는 듯하다."
+  },
+  "70148": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 작업을 의뢰하고 싶은 듯하다."
+  },
+  "70149": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 배달을 부탁하고 싶은 듯하다."
+  },
+  "70150": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 해양 구획의 생체 견본을 구하고 있는 듯하다."
+  },
+  "70151": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 그레불로프들이 구하는 물건을 조달해 주었으면 하는 듯하다."
+  },
+  "70152": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 그레불로프의 수색을 부탁하고 싶은 듯하다."
+  },
+  "70153": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 조사를 위해 의뢰하고 싶은 일이 있는 듯하다."
+  },
+  "70154": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 카페 마스터에게 전언을 부탁받은 듯하다."
+  },
+  "70155": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 긴급 요청이 있는 듯하다."
+  },
+  "70156": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 식재료 조달을 도와줬으면 하는 듯하다."
+  },
+  "70157": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 이아들의 의뢰를 중개해 주려는 듯하다."
+  },
+  "70158": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 이아족에게 식재료를 전달하길 바라는 듯하다."
+  },
+  "70159": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 새로운 미각 데이터 취득용 식재료를 찾고 있는 듯하다."
+  },
+  "70160": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 특수한 임무를 맡기고 싶은 듯하다."
+  },
+  "70161": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 전달하고 싶은 의뢰가 있는 듯하다."
+  },
+  "70162": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 이아족의 의뢰를 전해주고 싶은 듯하다."
+  },
+  "70163": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 특수한 의뢰가 있는 듯하다."
+  },
+  "70164": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 미우 미쉬를 타고 가줬으면 하는 곳이 있는 듯하다."
+  },
+  "70165": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 리아 타라의 환경에 추가하고 싶은 것이 있는 듯하다."
+  },
+  "70166": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 재료 조달을 부탁하고 싶은 듯하다."
+  },
+  "70167": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 물자 배달을 부탁하고 싶은 듯하다."
+  },
+  "70168": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 배달을 부탁하고 싶은 듯하다."
+  },
+  "70169": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 이아들의 의뢰를 중개하고 싶은 듯하다."
+  },
+  "70170": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정(직업 변경 제한)<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※ 이 퀘스트는 퀘스트 수락 시점의 클래스로만 진행할 수 있습니다.\n\n리서치 A4에 있는 스티그마-4는 토양 정화용 재료를 찾고 있는 듯하다."
+  },
   "70171": {
     "ko": "아포리아 본부에 있는 클로디엥은 새로운 발견에 흥분하고 있는 듯하다."
   },
@@ -13289,17 +13388,35 @@
   "70176": {
     "ko": "생명신비 연구동에 있는 라하브레아는 에리크토니오스의 상태를 살펴보고 있는 듯하다."
   },
+  "70177": {
+    "ko": "라자한에 있는 나슈 마카라카는 모험가를 기다리고 있었던 듯하다."
+  },
+  "70178": {
+    "ko": "비탄의 바다 남쪽에 있는 힐디브랜드는 의욕이 넘치는 듯하다."
+  },
   "70179": {
     "ko": "아고라에 있는 대박 상점 신입 점원은 호객 행위를 하고 있는 듯하다."
   },
   "70181": {
     "ko": "개척 거점에 있는 연락돌이는 하고 싶은 말이 있는 듯하다."
   },
+  "70182": {
+    "ko": "줄기둥 화물보관소에 있는 얕은 황야는 모험가에게 건네고 싶은 물건이 있는 모양이다."
+  },
+  "70185": {
+    "ko": "모래늪 근처에 있는 코코슈는 모험가에게 전하고 싶은 말이 있는 듯하다."
+  },
   "70186": {
     "ko": "아고라에 있는 메지나는 이슈가르드 근방으로 견본품 배달을 의뢰하고 싶은 듯하다."
   },
+  "70188": {
+    "ko": "<UIForeground>F201F6</UIForeground><UIGlow>F201F7</UIGlow>특수 규칙:  직업 고정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n에테라이트 광장에 있는 맨더빌 가 하인은 모험가를 기다리고 있는 듯하다."
+  },
+  "70189": {
+    "ko": "<UIForeground>F201F6</UIForeground><UIGlow>F201F7</UIGlow>특수 규칙:  직업 고정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n알키미야 제약당에 있는 맨더빌 가 장인은 제작 준비를 하고 있는 듯하다."
+  },
   "70190": {
-    "ko": "※本クエストは、期間限定のクエストとなります。\n\nミィ・ケット野外音楽堂のリゼット・ド・ヴァレンティオンは、悩んでいるようだ。"
+    "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n미 케토 야외음악당에 있는 리제트 드 발렌티온은 고민하고 있는 듯하다."
   },
   "70191": {
     "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n미 케토 야외음악당에 있는 모험가 길드 조사원은 아무래도 무슨 계획이 있는 듯하다."
@@ -13314,7 +13431,7 @@
     "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n미 케토 야외음악당에 있는 아므 가란지는 모험가에게 부탁할 일이 있는 듯하다."
   },
   "70195": {
-    "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n원예가 길드 부근에 있는 로렌슨은 충격으로 어찌할 바를 모르고 있는 듯하다."
+    "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n원예가 길드 부근에 있는 로렌센은 충격으로 어찌할 바를 모르고 있는 듯하다."
   },
   "70196": {
     "ko": "다르마 구역에 있는 별빛전사단 보초병은 곤란한 일이 있는 듯하다."
