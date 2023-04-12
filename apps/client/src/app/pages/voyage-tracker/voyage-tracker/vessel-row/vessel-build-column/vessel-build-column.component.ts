@@ -60,10 +60,10 @@ export class VesselBuildColumnComponent {
   }
 
   conditionClass(): object {
-    let worstCondition = Math.min(...Object.keys(this.parts).map((slot) => (this.parts[slot].condition || 0) / 300));
+    const worstCondition = Math.min(...Object.keys(this.parts).map((slot) => (this.parts[slot].condition || 0) / 300));
     return {'good': worstCondition > 50,
-	    'caution': worstCondition <= 50 && worstCondition > 25,
-	    'warn': worstCondition <= 25 && worstCondition > 0,
-	    'broken': worstCondition <= 0}
+            'caution': worstCondition <= 50 && worstCondition > 25,
+            'warn': worstCondition <= 25 && worstCondition > 0,
+            'broken': worstCondition <= 0}
   }
 }
