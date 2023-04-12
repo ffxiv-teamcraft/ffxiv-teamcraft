@@ -15,6 +15,7 @@ import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { VesselRowComponent } from './voyage-tracker/vessel-row/vessel-row.component';
 import { VesselListComponent } from './voyage-tracker/vessel-list/vessel-list.component';
 import { VesselBuildColumnComponent } from './voyage-tracker/vessel-row/vessel-build-column/vessel-build-column.component';
+import { VesselRankColumnComponent } from './voyage-tracker/vessel-row/vessel-rank-column/vessel-rank-column.component';
 import { VesselVoyageColumnComponent } from './voyage-tracker/vessel-row/vessel-voyage-column/vessel-voyage-column.component';
 import { FormsModule } from '@angular/forms';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
@@ -33,6 +34,7 @@ const routes: Routes = [
     VesselRowComponent,
     VesselListComponent,
     VesselBuildColumnComponent,
+    VesselRankColumnComponent,
     VesselVoyageColumnComponent],
   imports: [
     CommonModule,

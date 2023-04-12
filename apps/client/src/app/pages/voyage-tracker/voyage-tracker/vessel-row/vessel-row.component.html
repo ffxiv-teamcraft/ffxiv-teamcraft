@@ -25,7 +25,13 @@
       </ng-template>
     </ng-template>
   </div>
-  <div fxFlex="0 0 90px" fxLayoutAlign="center center">{{ vessel?.rank }} / {{ maxRank }}</div>
+  <div fxFlex="0 0 90px" fxLayoutAlign="center center">
+    <app-vessel-rank-column [rank]="vessel?.rank"
+                            [currentExperience]="vessel?.currentExperience"
+                            [totalExperienceForNextRank]="vessel?.totalExperienceForNextRank"
+                            [maxRank]="maxRank"
+    ></app-vessel-rank-column>
+  </div>
   <div fxFlex="0 0 120px" fxLayoutAlign="center center">
     <app-vessel-build-column [type]="vessel?.vesselType"
                              [name]="vessel?.name"
