@@ -480,7 +480,9 @@
         </nz-collapse-panel>
       </nz-collapse>
 
-      <div *ngIf="result$ | async as resultData" fxLayout="column" fxLayoutGap="10px">
+      <div *ngIf="result$ | async as resultData;"
+           fxLayout="column"
+           fxLayoutGap="10px">
         <app-simulation-result [result]="resultData"
                                [itemId]="itemId"
                                [progressPer100]="progressPer100$ | async"
@@ -507,16 +509,39 @@
           <i *ngIf="dirty" [nzTooltipTitle]="'SIMULATOR.Unsaved_changes' | translate" [twoToneColor]="'#aa9400'"
              class="warning-icon" nz-icon
              nz-tooltip nzType="exclamation-circle" theme="twotone"></i>
-          <div class="actions-container" fxLayout="row wrap" cdkDropList cdkDropListOrientation="horizontal"
-               (cdkDropListDropped)="actionDrop($event)" id="action-results">
-            <div *ngFor="let step of resultData.steps;let i = index; trackBy: trackByAction"
-                 [cdkDragData]="step.action" [cdkDragDisabled]="!step.action.canBeMoved(i)"
-                 class="action-container rotation-action" cdkDrag>
-              <app-action (actionclick)="removeAction(i)"
+          <div class="rotation__container"
+               fxLayout="row wrap"
+               [ngStyle]="{ '--box-width': boxWidth, '--box-height': boxHeight }"
+               cdkDropListGroup
+               #rotationContainer>
+            <div cdkDropList
+                 id="rotation__container__step--template"
+                 class="rotation__container__step"
+                 (cdkDropListEntered)="actionEnter($event)"
+                 (cdkDropListDropped)="actionDrop($event)"
+                 #stepTemplate
+            ></div>
+            <div cdkDropList
+                 id="rotation__container__step--placeholder"
+                 class="rotation__container__step"
+                 (cdkDropListEntered)="actionEnter($event)"
+                 (cdkDropListDropped)="actionDrop($event)"
+                 #placeholder
+            ></div>
+            <div *ngFor="let step of resultData.steps; let i = index; trackBy: trackByAction"
+                 cdkDropList
+                 [id]="'rotation__container__step--' + i.toString()"
+                 class="rotation__container__step"
+                 (cdkDropListEntered)="actionEnter($event)"
+                 (cdkDropListDropped)="actionDrop($event)">
+              <app-action cdkDrag
                           tutorialStep="TUTORIAL.SIMULATOR.Right_click_condition"
                           tutorialStepIndex="6"
+                          (actionclick)="removeAction(i)"
                           (stepstate)="setState(i, $event)"
                           (failChange)="setFail(i, $event)"
+                          [cdkDragData]="step.action"
+                          [cdkDragDisabled]="!step.action.canBeMoved(i)"
                           [action]="step.action"
                           [cpCost]="step.cpDifference"
                           [disabled]="!step.success || step.skipped"
@@ -541,7 +566,8 @@
           </ng-container>
         </nz-card>
 
-        <nz-card [class.mobile-actions]="false | ifMobile: true">
+        <nz-card class="actions-card"
+                 [class.mobile-actions]="false | ifMobile: true">
           <div class="actions-card-content">
             <div class="detailed-toggle">
               <nz-switch [(ngModel)]="settings.detailedSimulatorActions"
@@ -555,13 +581,17 @@
             <div class="category-row">
               <div>
                 <h4>{{'SIMULATOR.CATEGORY.Progression' | translate}}</h4>
-                <div cdkDropList [cdkDropListConnectedTo]="['action-results']" cdkDropListSortingDisabled fxLayout="row wrap"
+                <div cdkDropList
+                     class="actions-row"
+                     fxLayout="row wrap"
+                     fxLayoutAlign="flex-start center"
                      [fxLayoutGap]="settings.detailedSimulatorActions ? '10px' : '5px'"
-                     fxLayoutAlign="flex-start center" class="actions-row">
+                     [cdkDropListConnectedTo]="connectedDropLists"
+                     cdkDropListSortingDisabled>
                   <ng-container *ngFor="let action of getProgressActions()">
                     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <app-action (actionclick)="addAction(action)"
-                                  cdkDrag
+                      <app-action cdkDrag
+                                  (actionclick)="addAction(action)"
                                   (cdkDragEnded)="tooltipsDisabled = false"
                                   (cdkDragStarted)="tooltipsDisabled = true"
                                   [cdkDragData]="action"
@@ -582,7 +612,11 @@
               </div>
               <div>
                 <h4>{{'SIMULATOR.CATEGORY.Quality' | translate}}</h4>
-                <div cdkDropList [cdkDropListConnectedTo]="['action-results']" cdkDropListSortingDisabled fxLayout="row wrap" fxLayoutGap="5px"
+                <div cdkDropList
+                     [cdkDropListConnectedTo]="connectedDropLists"
+                     cdkDropListSortingDisabled
+                     fxLayout="row wrap"
+                     fxLayoutGap="5px"
                      fxLayoutAlign="flex-start center" class="actions-row">
                   <ng-container *ngFor="let action of getQualityActions()">
                     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
@@ -610,7 +644,11 @@
             <div class="category-row">
               <div>
                 <h4>{{'SIMULATOR.CATEGORY.Buff' | translate}}</h4>
-                <div cdkDropList [cdkDropListConnectedTo]="['action-results']" cdkDropListSortingDisabled fxLayout="row wrap" fxLayoutGap="5px"
+                <div cdkDropList
+                     [cdkDropListConnectedTo]="connectedDropLists"
+                     cdkDropListSortingDisabled
+                     fxLayout="row wrap"
+                     fxLayoutGap="5px"
                      fxLayoutAlign="flex-start center" class="actions-row">
                   <ng-container *ngFor="let action of getBuffActions()">
                     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
@@ -637,7 +675,11 @@
               <div>
                 <h4>{{'SIMULATOR.CATEGORY.Repair' | translate}}</h4>
 
-                <div cdkDropList [cdkDropListConnectedTo]="['action-results']" cdkDropListSortingDisabled fxLayout="row wrap" fxLayoutGap="5px"
+                <div cdkDropList
+                     [cdkDropListConnectedTo]="connectedDropLists"
+                     cdkDropListSortingDisabled
+                     fxLayout="row wrap"
+                     fxLayoutGap="5px"
                      fxLayoutAlign="flex-start center" class="actions-row">
 
                   <ng-container *ngFor="let action of getRepairActions()">
@@ -664,8 +706,13 @@
               </div>
               <div>
                 <h4>{{'SIMULATOR.CATEGORY.Other' | translate}}</h4>
-                <div cdkDropList [cdkDropListConnectedTo]="['action-results']" cdkDropListSortingDisabled fxLayout="row wrap" fxLayoutGap="5px"
-                     fxLayoutAlign="flex-start center" class="actions-row">
+                <div cdkDropList
+                     [cdkDropListConnectedTo]="connectedDropLists"
+                     cdkDropListSortingDisabled
+                     fxLayout="row wrap"
+                     fxLayoutGap="5px"
+                     fxLayoutAlign="flex-start center"
+                     class="actions-row">
 
                   <ng-container *ngFor="let action of getOtherActions()">
                     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
