@@ -58,4 +58,12 @@ export class VesselBuildColumnComponent {
   get condition(): string {
     return Object.keys(this.parts).map((slot) => `${((this.parts[slot].condition || 0) / 300).toFixed(2)}%`).join(' - ');
   }
+
+  conditionClass(): object {
+    let worstCondition = Math.min(...Object.keys(this.parts).map((slot) => (this.parts[slot].condition || 0) / 300));
+    return {'good': worstCondition > 50,
+	    'caution': worstCondition <= 50 && worstCondition > 25,
+	    'warn': worstCondition <= 25 && worstCondition > 0,
+	    'broken': worstCondition <= 0}
+  }
 }

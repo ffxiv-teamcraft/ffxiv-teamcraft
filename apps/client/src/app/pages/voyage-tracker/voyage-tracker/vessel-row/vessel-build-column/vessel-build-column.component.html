@@ -3,7 +3,7 @@
        [nzPopoverTitle]="name"
        [nzPopoverContent]="vesselBuildDetails"
   >
-    {{ vesselBuild?.abbreviation }}
+    <div [ngClass]="conditionClass()" class="condition">{{ vesselBuild?.abbreviation }} </div>
   </div>
 
   <ng-template #vesselBuildDetails>
