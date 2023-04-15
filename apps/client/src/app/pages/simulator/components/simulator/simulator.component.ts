@@ -1,5 +1,5 @@
-import { ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { BehaviorSubject, combineLatest, merge, Observable, of, ReplaySubject, Subject } from 'rxjs';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { BehaviorSubject, combineLatest, merge, Observable, of, ReplaySubject, Subject, take } from 'rxjs';
 import { Craft } from '../../../../model/garland-tools/craft';
 import {
   catchError,
@@ -66,7 +66,7 @@ import {
   SimulationService,
   StepState
 } from '../../../../core/simulation/simulation.service';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, CdkDragEnter, CdkDropList, DragRef, moveItemInArray } from '@angular/cdk/drag-drop';
 import { RouteConsumables } from '../../model/route-consumables';
 import { CommunityRotationFinderPopupComponent } from '../community-rotation-finder-popup/community-rotation-finder-popup.component';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
@@ -83,9 +83,18 @@ import { NzOptionComponent } from 'ng-zorro-antd/select';
   templateUrl: './simulator.component.html',
   styleUrls: ['./simulator.component.less']
 })
-export class SimulatorComponent implements OnInit, OnDestroy {
+export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
 
   public dirtyScope = DirtyScope;
+
+  @ViewChildren('rotationContainer')
+  public rotationContainer: QueryList<ElementRef>;
+
+  @ViewChildren('stepTemplate', { read: CdkDropList })
+  public stepTemplate: QueryList<CdkDropList>;
+
+  @ViewChildren('placeholder', { read: CdkDropList })
+  public placeholder: QueryList<CdkDropList>;
 
   @Input()
   public custom = false;
@@ -168,8 +177,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     distinctUntilChanged(),
     tap(rotation => {
       if (rotation.$key === undefined && rotation.rotation.length > 0) {
-        this.dirty = true;
-        this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
+        this.markAsDirty();
       }
     }),
     shareReplay({ bufferSize: 1, refCount: true })
@@ -227,6 +235,22 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   public statsTooLow$: Observable<boolean>;
 
   public levelTooLow$: Observable<boolean>;
+
+  public connectedDropLists: string[] = [];
+
+  private target: CdkDropList = null;
+
+  private targetIndex: number;
+
+  private source: CdkDropList = null;
+
+  private sourceIndex: number;
+
+  private dragRef: DragRef = null;
+
+  public boxWidth = 50;
+
+  public boxHeight = 40;
 
   constructor(private htmlTools: HtmlToolsService, public settings: SettingsService,
               private authFacade: AuthFacade, private fb: UntypedFormBuilder, public consumablesService: ConsumablesService,
@@ -310,6 +334,11 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     return this.simulator.CraftingActionsRegistry;
   }
 
+  private markAsDirty(): void {
+    this.dirty = true;
+    this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
+  }
+
   filterOptions(input?: string, option?: NzOptionComponent): boolean {
     return option.nzLabel?.toString().toLowerCase().includes(input.toLowerCase());
   }
@@ -355,8 +384,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
       this.stepStates$.next({});
 
-      this.dirty = true;
-      this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
+      this.markAsDirty()
     });
   }
 
@@ -427,8 +455,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   renameRotation(rotation: CraftingRotation): void {
-    this.dirty = true;
-    this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
+    this.markAsDirty();
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
       nzComponentParams: { baseName: rotation.getName() },
@@ -600,32 +627,97 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   addAction(action: CraftingAction, index?: number) {
     if (index === undefined) {
       this.actions$.next([...this.actions$.value, action]);
-    } else {
-      const actions = this.actions$.value;
-      actions.splice(index, 0, action);
-      this.actions$.next([...actions]);
-      const stepStates = { ...this.stepStates$.value };
-      for (let i = index; i < actions.length; i++) {
-        delete stepStates[i];
-      }
-      this.stepStates$.next(stepStates);
+      this.markAsDirty();
+      return;
     }
-    this.dirty = true;
-    this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
+
+    const actions = this.actions$.value;
+    actions.splice(index, 0, action);
+    this.actions$.next([...actions]);
+
+    const stepStates = { ...this.stepStates$.value };
+    for (let i = index; i < actions.length; i++) {
+      delete stepStates[i];
+    }
+
+    this.stepStates$.next(stepStates);
+    this.markAsDirty();
   }
 
   actionDrop(event: CdkDragDrop<CraftingAction>): void {
-    // If we're just moving the action
-    if (event.previousContainer.id === 'action-results') {
-      const actions = [...this.actions$.value];
-      moveItemInArray(actions, event.previousIndex, event.currentIndex);
-      this.actions$.next(actions);
-    } else {
-      // If we're adding an action
-      this.addAction(event.item.data, event.currentIndex);
+    if (!this.target) return;
+    const source = this.source;
+    const stepTemplateElement: HTMLElement =
+      this.stepTemplate.first.element.nativeElement;
+    const rotationContainerElement: HTMLElement =
+      stepTemplateElement.parentElement;
+
+    stepTemplateElement.style.display = 'none';
+    rotationContainerElement.removeChild(stepTemplateElement);
+
+    if (this.stepTemplate.first._dropListRef.isDragging()) {
+      this.stepTemplate.first._dropListRef.exit(this.dragRef);
     }
-    this.dirty = true;
-    this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
+
+    this.target = null;
+    this.source = null;
+    this.dragRef = null;
+
+    if (!source?.id.startsWith('rotation__container__step')) {
+      this.addAction(event.item.data, this.targetIndex);
+      return;
+    }
+
+    if (this.sourceIndex === this.targetIndex) return;
+    const actions = [...this.actions$.value];
+    moveItemInArray(actions, this.sourceIndex, this.targetIndex);
+    this.actions$.next(actions);
+    this.markAsDirty();
+  }
+
+  actionEnter({ item, container }: CdkDragEnter) {
+    if (container === this.stepTemplate.first) return;
+    const stepTemplateElement: HTMLElement =
+      this.stepTemplate.first.element.nativeElement;
+    const sourceElement: HTMLElement = item.dropContainer.element.nativeElement;
+    const dropElement: HTMLElement = container.element.nativeElement;
+
+    const elements = [].slice.call(dropElement.parentElement.children);
+    if (this.source && sourceElement.id.startsWith('rotation__container__step')) {
+      elements.splice(this.sourceIndex, 1);
+    }
+
+    const dragIndex: number = elements.indexOf(
+      this.source ? stepTemplateElement : sourceElement
+    );
+
+    const dropIndex: number = elements.indexOf(dropElement);
+    if (!this.source) {
+      this.sourceIndex = dragIndex;
+      this.source = item.dropContainer;
+
+      stepTemplateElement.style.width = `${this.boxWidth}px`;
+      stepTemplateElement.style.height = `${this.boxHeight}px`;
+    }
+
+    this.targetIndex = dropIndex;
+    this.target = container;
+    this.dragRef = item._dragRef;
+
+    stepTemplateElement.style.display = '';
+
+    dropElement.parentElement.insertBefore(
+      stepTemplateElement,
+      dropIndex > dragIndex && dragIndex !== -1
+        ? dropElement.nextSibling
+        : dropElement
+    );
+
+    this.stepTemplate.first._dropListRef.enter(
+      item._dragRef,
+      item.element.nativeElement.offsetLeft,
+      item.element.nativeElement.offsetTop
+    );
   }
 
   removeAction(index: number): void {
@@ -636,9 +728,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     for (let i = index; i < actions.length; i++) {
       delete stepStates[i];
     }
+
     this.stepStates$.next(stepStates);
-    this.dirty = true;
-    this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
+    this.markAsDirty();
   }
 
   setState(index: number, state: StepState): void {
@@ -814,6 +906,18 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.unsavedChanges$.complete();
   }
 
+  ngAfterViewInit(): void {
+    combineLatest([
+      this.stepTemplate.changes,
+      this.rotationContainer.changes
+    ]).pipe(take(1)).subscribe(([stepTemplateQuery, rotationContainerQuery]) => {
+      const stepTemplateElement = stepTemplateQuery.first.element.nativeElement;
+      const rotationContainerElement = rotationContainerQuery.first.nativeElement;
+      stepTemplateElement.style.display = 'none';
+      rotationContainerElement.removeChild(stepTemplateElement);
+    });
+  }
+
   ngOnInit(): void {
     this.job$ = merge(
       this.recipe$.pipe(
@@ -986,6 +1090,31 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       }),
       shareReplay({ bufferSize: 1, refCount: true })
     );
+
+    this.result$.subscribe((resultData) => {
+      if (this.placeholder.first && this.rotationContainer) {
+        const placeholderElement = this.placeholder.first.element.nativeElement;
+        const rotationContainerElement = this.rotationContainer.first.nativeElement;
+        if (placeholderElement.style.display !== "none" && resultData.steps.length > 0) {
+          placeholderElement.style.display = 'none';
+          rotationContainerElement.removeChild(placeholderElement);
+        } else if (placeholderElement.style.display === "none" && resultData.steps.length === 0) {
+          placeholderElement.style.display = 'block';
+          rotationContainerElement.appendChild(placeholderElement);
+        }
+      }
+
+      const lists = [
+        'rotation__container__step--placeholder',
+        'rotation__container__step--template',
+      ];
+
+      for (const i in resultData.steps) {
+        lists.push(`rotation__container__step--${i.toString()}`)
+      }
+
+      this.connectedDropLists = [ ...lists ];
+    });
 
     this.qualityPer100$ = this.result$.pipe(
       map(result => {
