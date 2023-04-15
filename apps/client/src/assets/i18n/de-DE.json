@@ -107,6 +107,7 @@
     "Contributors": "Mitwirkende"
   },
   "Patreon_login_success": "Anmeldung mit Patreon erfolgreich!",
+  "Tipeee_login_success": "Tipeee login success!",
   "Hide_if_empty": "Verstecken, wenn leer",
   "No_favorites": "Keine Favoriten",
   "Ephemeral_list": "Wird bei Fertigstellung gelöscht",
@@ -188,7 +189,7 @@
     "Never": "Nie",
     "Festival": "Nur während eines Festivals",
     "Back": "Zurück",
-    "Support_us_remove_ads": "Unterstütze uns auf Patreon um Werbung zu entfernen",
+    "Support_us_remove_ads": "Support us to remove ads",
     "Support_us": "Unterstütze uns",
     "Show_more": "Mehr anzeigen",
     "Item": "Gegenstand",
@@ -442,10 +443,12 @@
     "Reset_password_warning": "Bist du sicher, dass du dein Passwort zurücksetzen möchtest?",
     "Password_reset_mail_sent": "E-Mail zur Zurücksetzung des Passworts wurde gesendet",
     "Connect_with_patreon": "Mit Patreon verbinden",
+    "Connect_with_tipeee": "Connect with Tipeee",
     "Connected_with_patreon": "Mit Patreon verbunden",
+    "Connected_with_tipeee": "Connected with Tipeee",
     "Nickname": "Benutzername",
     "Nickname_used": "Benutzername wird bereits verwendet",
-    "No_nickname_warning": "Bitte gehe in die Einstellungen und gib einen Benutzernamen an, um die Patreon-Funktionen vollständig nutzen zu können.",
+    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the supporter exclusive features properly.",
     "Show_devtools": "Entwicklerwerkzeuge zeigen",
     "Clear_cache": "Cache leeren (erfordert einen Neustart der App)",
     "Enable_item_tags": "Gegenstand-Markierungen aktivieren",
@@ -513,6 +516,7 @@
     "Alarm_panels_collapsed_by_default": "Alarmgruppen-Panels standardmäßig eingeklappt",
     "Alarm_groups_before_no_group": "Zeige Alarmgruppen vor ungruppierten Alarmen",
     "Disconnect_patreon": "Verbindung zu Patreon trennen",
+    "Disconnect_tipeee": "Disconnect from Tipeee",
     "Export_settings": "Einstellungen exportieren",
     "Import_settings": "Einstellungen importieren",
     "Import_successful": "Einstellungen importiert",
@@ -2714,7 +2718,7 @@
     "Starting_at_X": "Ab ${{monthly}} pro Monat oder ${{yearly}} pro Jahr",
     "Footer_text": "Auch schon $1 pro Monat hat einen erheblichen Einfluss auf die Entwicklung von Teamcraft und bringt mich meinem Traum näher, ein Vollzeit-Entwickler bei diesem Projekt zu werden und es mehr als ein bloßes Werkzeug für FFXIV werden zu lassen.",
     "Already_supporter": "Du bist bereits ein Unterstützer?",
-    "Disable_ads_explanation": "Um Werbung zu deaktivieren, verbinde dich mit deinem Patreon Konto, damit Teamcraft deine Unterstützung verifizieren und Werbung automatisch deaktivieren kann"
+    "Disable_ads_explanation": "To disable ads, connect with your Patreon or Tipeee account to make Teamcraft able to verify your support and disable ads automatically"
   },
   "SUPPORT_US": {
     "Popup_introduction": "Hallo, ich bin Miu, Entwickler jenes Programmes, dass du gerade verwendest.<br/> Teamcraft ist seit einigen Jahren ein Hobby für mich und mein Traum ist es, dieses Hobby zu meinem Vollzeitjob zu machen. <br/><br/>Mit deiner Hilfe könnte dieser Traum Wirklichkeit werden. Hierfür kannst du mich auf Patreon unterstützen. Jeder einzelne Euro zählt und wird mir helfen, dieses Ziel zu erreichen. <br/><br/> Die Unterstützung des Projekts auf Patreon bietet dir außerdem einige coole Vorteile:",
@@ -3180,6 +3184,10 @@
     "Bait_breakdown": "Auflistung der Köder",
     "Fish_size_chart": "Fischgrößen",
     "Delete_train": "Löschen",
-    "Train_not_running": "Zug läuft nicht"
+    "Train_not_running": "Zug läuft nicht",
+    "Outdated": "This train is outdated",
+    "Outdated_description": "This train is using an outdated data storage approach, please migrate to be able to see your stats again",
+    "Outdated_description_passenger": "This train is using an outdated data storage approach, please ask the conductor to migrate it to see the stats again.",
+    "Migrate": "Migrate"
   }
 }

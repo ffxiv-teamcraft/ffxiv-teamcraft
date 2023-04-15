@@ -107,6 +107,7 @@
     "Contributors": "贡献者"
   },
   "Patreon_login_success": "Patreon 登录成功！",
+  "Tipeee_login_success": "Tipeee login success!",
   "Hide_if_empty": "隐藏空栏",
   "No_favorites": "没有收藏",
   "Ephemeral_list": "完成后将被删除",
@@ -188,7 +189,7 @@
     "Never": "从不",
     "Festival": "季节活动期间限定",
     "Back": "返回",
-    "Support_us_remove_ads": "在 Patreon 上支持我们以移除广告",
+    "Support_us_remove_ads": "Support us to remove ads",
     "Support_us": "支持我们",
     "Show_more": "显示更多",
     "Item": "物品",
@@ -442,10 +443,12 @@
     "Reset_password_warning": "你确定要重置密码吗？",
     "Password_reset_mail_sent": "密码重置邮件已发送",
     "Connect_with_patreon": "关联 Patreon 账号",
+    "Connect_with_tipeee": "Connect with Tipeee",
     "Connected_with_patreon": "已关联 Patreon 账号",
+    "Connected_with_tipeee": "Connected with Tipeee",
     "Nickname": "昵称",
     "Nickname_used": "昵称已被使用",
-    "No_nickname_warning": "请到设置页面设置昵称以使用赞助人专属功能",
+    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the supporter exclusive features properly.",
     "Show_devtools": "显示开发者工具",
     "Clear_cache": "清除缓存 (将重新启动应用程序)",
     "Enable_item_tags": "启用物品标签",
@@ -513,6 +516,7 @@
     "Alarm_panels_collapsed_by_default": "默认折叠闹钟分组面板",
     "Alarm_groups_before_no_group": "将分组闹钟显示在未分组闹钟之前",
     "Disconnect_patreon": "取消与 Patreon 账号的关联",
+    "Disconnect_tipeee": "Disconnect from Tipeee",
     "Export_settings": "导出设置",
     "Import_settings": "导入设置",
     "Import_successful": "设置已导入！",
@@ -2714,7 +2718,7 @@
     "Starting_at_X": "按月支付 {{monthly}} 美元或按年支付 {{yearly}} 美元",
     "Footer_text": "仅需每月一美元即可显著推动 Teamcraft 的开发进程，并使我更接近梦想——专职与此项目的开发并使其不仅局限于作为一个 FFXIV 的工具。",
     "Already_supporter": "已经成为支持者？",
-    "Disable_ads_explanation": "要禁用广告，请连接你的 Patreon 账号，以验证赞助情况并自动禁用广告。"
+    "Disable_ads_explanation": "To disable ads, connect with your Patreon or Tipeee account to make Teamcraft able to verify your support and disable ads automatically"
   },
   "SUPPORT_US": {
     "Popup_introduction": "您好，我是 Miu ，您正在使用的工具的开发者。<br/> 自过去几年以来，Teamcraft对我来说一直是一个爱好，我的梦想是使这成为我的全职工作。 <br/><br/>在您的帮助下，这个梦想可能成为一个现实。 您可以在patreon上赞助这个工具，每一美元都很重要，并将帮助我实现这一目标。 <br/><br/> 在patreon赞助这个项目也给您一些好处：",
@@ -3180,6 +3184,10 @@
     "Bait_breakdown": "按钓饵分类",
     "Fish_size_chart": "鱼的尺寸",
     "Delete_train": "删除",
-    "Train_not_running": "渔车未行车"
+    "Train_not_running": "渔车未行车",
+    "Outdated": "This train is outdated",
+    "Outdated_description": "This train is using an outdated data storage approach, please migrate to be able to see your stats again",
+    "Outdated_description_passenger": "This train is using an outdated data storage approach, please ask the conductor to migrate it to see the stats again.",
+    "Migrate": "Migrate"
   }
 }

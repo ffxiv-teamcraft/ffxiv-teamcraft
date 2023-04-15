@@ -107,6 +107,7 @@
     "Contributors": "サポーター"
   },
   "Patreon_login_success": "Patreonのログインに成功しました！",
+  "Tipeee_login_success": "Tipeee login success!",
   "Hide_if_empty": "空欄を隠す",
   "No_favorites": "お気に入りなし",
   "Ephemeral_list": "完了した後、削除予定",
@@ -188,7 +189,7 @@
     "Never": "しない",
     "Festival": "フェスティバルの間のみ",
     "Back": "戻る",
-    "Support_us_remove_ads": "Patreonをサポートして広告を消す",
+    "Support_us_remove_ads": "Support us to remove ads",
     "Support_us": "サポート",
     "Show_more": "詳細を表示",
     "Item": "アイテム",
@@ -442,10 +443,12 @@
     "Reset_password_warning": "本当にパスワードを再設定しますか？",
     "Password_reset_mail_sent": "パスワード再設定メールに寄せされました",
     "Connect_with_patreon": "Patreonアカウントを連携する",
+    "Connect_with_tipeee": "Connect with Tipeee",
     "Connected_with_patreon": "Patreonアカウントに連携されています",
+    "Connected_with_tipeee": "Connected with Tipeee",
     "Nickname": "Patreonの通称名",
     "Nickname_used": "通称名は既に使用されてる",
-    "No_nickname_warning": "寄付者専用の機能を使用するためには、設定ページからニックネームを設定して下さい。",
+    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the supporter exclusive features properly.",
     "Show_devtools": "Devツールを表示",
     "Clear_cache": "キャッシュをクリア(アプリが再起動されます)",
     "Enable_item_tags": "アイテムダグを使用",
@@ -513,6 +516,7 @@
     "Alarm_panels_collapsed_by_default": "アラームパネル簡素化を基本値として設定",
     "Alarm_groups_before_no_group": "アラームグループをグループ指定のないアラームより前に表示",
     "Disconnect_patreon": "Patreonアカウントとの連携を解除する",
+    "Disconnect_tipeee": "Disconnect from Tipeee",
     "Export_settings": "設定をエクスポート",
     "Import_settings": "設定をインポート",
     "Import_successful": "設定を呼び出しました。",
@@ -2714,7 +2718,7 @@
     "Starting_at_X": "Starting at ${{monthly}} per month or ${{yearly}} per year",
     "Footer_text": "As little as $1 a month has a significant impact on Teamcraft's development and brings me closer to my dream of becoming a full-time developer on this project and expanding it beyond just being a tool for FFXIV.",
     "Already_supporter": "Already a supporter?",
-    "Disable_ads_explanation": "To disable ads, connect with your Patreon account to make Teamcraft able to verify your support and disable ads automatically"
+    "Disable_ads_explanation": "To disable ads, connect with your Patreon or Tipeee account to make Teamcraft able to verify your support and disable ads automatically"
   },
   "SUPPORT_US": {
     "Popup_introduction": "おはようございます、私はTeamcraft開発者Miuです。<br/>Teamcraftはここ数年前から私の趣味であり現在は趣味ではない私の職業にするための夢として、その夢を叶えるために頑張っています。<br/><br/>もし皆さんがpatreonでサポートしてくれるなら、Teamcraftをもっと改善して私は私の夢を現実にする事ができます。<br/><br/>patreonでプロジェクトにサポートしてくれるなら次のような素敵な特典を得る事ができます。",
@@ -3180,6 +3184,10 @@
     "Bait_breakdown": "Bait usage breakdown",
     "Fish_size_chart": "Fish sizes",
     "Delete_train": "Delete",
-    "Train_not_running": "Train not running"
+    "Train_not_running": "Train not running",
+    "Outdated": "This train is outdated",
+    "Outdated_description": "This train is using an outdated data storage approach, please migrate to be able to see your stats again",
+    "Outdated_description_passenger": "This train is using an outdated data storage approach, please ask the conductor to migrate it to see the stats again.",
+    "Migrate": "Migrate"
   }
 }
