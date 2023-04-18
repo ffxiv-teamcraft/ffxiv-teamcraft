@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ofMessageType } from '../../core/rxjs/of-message-type';
 import { debounceTime, distinctUntilChanged, filter, first, map, publish, scan, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
-import { BehaviorSubject, combineLatest, ConnectableObservable, merge, Observable, of, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, connectable, ConnectableObservable, merge, Observable, of, Subject } from 'rxjs';
 import { IpcService } from '../../core/electron/ipc.service';
 import { ItemSearchResult } from '../../model/user/inventory/item-search-result';
 import { ContainerType } from '../../model/user/inventory/container-type';
@@ -67,12 +67,12 @@ export class InventoryService {
 
   private retainerInformationsSync = {};
 
-  private retainerInformations$ = publish()(this.ipc.retainerInformationPackets$.pipe(
+  private retainerInformations$ = connectable(this.ipc.retainerInformationPackets$.pipe(
     map(packet => {
       this.retainerInformationsSync[packet.retainerId.toString()] = packet;
       return Object.values<any>(this.retainerInformationsSync);
     })
-  )) as ConnectableObservable<RetainerInformation[]>;
+  ));
 
   private retainerSpawn$: Observable<string> = this.ipc.npcSpawnPackets$.pipe(
     withLatestFrom(this.retainerInformations$),
@@ -645,6 +645,7 @@ export class InventoryService {
   }
 
   private handleInventoryModifyHandler(inventory: UserInventory, packet: InventoryModifyHandler, retainer: string): UserInventory {
+    console.log('handleInventoryModifyHandler', packet);
     try {
       const patch = inventory.operateTransaction(packet, retainer);
       if (patch) {

@@ -6,8 +6,8 @@ import { createProxyMiddleware, fixRequestBody } from 'http-proxy-middleware';
 import { graphql } from 'body-parser-graphql';
 import { createClient, RedisClientType } from 'redis';
 
-const RATE_LIMIT_BYTES_PER_REQUEST = 100_000;
-const RATE_LIMIT_BYTES_PER_MINUTES = 1_000_000;
+const RATE_LIMIT_BYTES_PER_REQUEST = 1_000_000;
+const RATE_LIMIT_BYTES_PER_MINUTES = 4_000_000;
 const RATE_LIMIT_BYTES_PER_HOUR = 20_000_000;
 
 async function addUsage(redis: RedisClientType, ip: string, usage: number) {

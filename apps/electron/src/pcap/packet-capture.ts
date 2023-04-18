@@ -180,7 +180,8 @@ export class PacketCapture {
       },
       logger: message => {
         log[message.type || 'warn'](message.message);
-      }
+      },
+      name: 'FFXIV_Teamcraft'
     };
 
     if (isDev) {

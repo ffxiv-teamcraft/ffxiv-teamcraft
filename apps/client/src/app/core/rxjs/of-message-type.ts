@@ -1,4 +1,4 @@
-import { Message } from '@ffxiv-teamcraft/pcap-ffxiv';
+import type { Message } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { Observable } from 'rxjs';
 
 export const ofMessageType = <T extends Message, MT extends Message['type'], ST extends Message['subType']>(typeName: MT, subTypeName?: ST) => (source: Observable<Extract<T, { type: MT, subType?: ST }>>) =>

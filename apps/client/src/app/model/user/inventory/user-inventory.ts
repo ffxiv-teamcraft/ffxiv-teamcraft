@@ -4,7 +4,7 @@ import { DataModel } from '../../../core/database/storage/data-model';
 import { ContainerType } from './container-type';
 import { CharacterInventory } from './character-inventory';
 import { ItemSearchResult } from './item-search-result';
-import { ClientTrigger, InventoryModifyHandler, InventoryTransaction, ItemMarketBoardInfo, UpdateInventorySlot } from '@ffxiv-teamcraft/pcap-ffxiv';
+import type { ClientTrigger, InventoryModifyHandler, InventoryTransaction, ItemMarketBoardInfo, UpdateInventorySlot } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { uniqBy } from 'lodash';
 
 export class UserInventory extends DataModel {
@@ -177,6 +177,7 @@ export class UserInventory extends DataModel {
 
     const fromContainer = this.items[this.contentId][fromContainerKey];
     if (fromContainer === undefined) {
+      console.warn('Tried to move an item from an inexisting container', JSON.stringify(packet));
       return null;
     }
     let toContainer = this.items[this.contentId][toContainerKey];
@@ -231,22 +232,31 @@ export class UserInventory extends DataModel {
       case 'split':
       case 'transferCrystal':
         fromItem.quantity -= packet.splitCount;
-        const newStack: InventoryItem = {
-          quantity: packet.splitCount,
-          containerId: packet.toContainer,
-          itemId: fromItem.itemId,
-          hq: fromItem.hq,
-          slot: packet.toSlot,
-          spiritBond: fromItem.spiritBond,
-          materias: []
-        };
-        if (isToRetainer) {
-          newStack.retainerName = lastSpawnedRetainer;
+        console.log(fromItem, toItem);
+        if (toItem) {
+          toItem.quantity += packet.splitCount;
+        } else {
+          const newStack: InventoryItem = {
+            quantity: packet.splitCount,
+            containerId: packet.toContainer,
+            itemId: fromItem.itemId,
+            hq: fromItem.hq,
+            slot: packet.toSlot,
+            spiritBond: fromItem.spiritBond,
+            materias: []
+          };
+          if (isToRetainer) {
+            newStack.retainerName = lastSpawnedRetainer;
+          }
+          this.items[this.contentId][toContainerKey][packet.toSlot] = newStack;
         }
-        this.items[this.contentId][toContainerKey][packet.toSlot] = newStack;
         if (packet.action === 'transferCrystal') {
           return {
-            ...newStack,
+            quantity: packet.splitCount,
+            containerId: packet.toContainer,
+            itemId: fromItem.itemId,
+            hq: fromItem.hq,
+            spiritBond: fromItem.spiritBond,
             retainerName: lastSpawnedRetainer
           };
         }
@@ -262,27 +272,44 @@ export class UserInventory extends DataModel {
           emptied: true
         };
       case 'move':
-        const moved = {
-          ...fromItem,
-          containerId: packet.toContainer,
-          slot: packet.toSlot
-        };
-        delete this.items[this.contentId][fromContainerKey][packet.fromSlot];
-        if (isFromRetainer && !isToRetainer) {
-          moved.retainerName = null;
-        } else if (!isFromRetainer && isToRetainer) {
-          moved.retainerName = lastSpawnedRetainer;
+        const isCrystalOrCurrency = [ContainerType.Crystal, ContainerType.RetainerCrystal, ContainerType.FreeCompanyCrystal,
+          ContainerType.RetainerGil, ContainerType.Currency, ContainerType.FreeCompanyGil].some(t => packet.fromContainer === t || packet.toContainer === t);
+        if (isCrystalOrCurrency && this.items[this.contentId][toContainerKey][packet.toSlot]) {
+          this.items[this.contentId][toContainerKey][packet.toSlot].quantity += fromItem.quantity;
+          delete this.items[this.contentId][fromContainerKey][packet.fromSlot];
+          if (isFromRetainer) {
+            return {
+              quantity: fromItem.quantity,
+              containerId: packet.toContainer,
+              itemId: fromItem.itemId,
+              hq: fromItem.hq,
+              spiritBond: fromItem.spiritBond,
+              retainerName: lastSpawnedRetainer
+            };
+          }
+        } else {
+          const moved = {
+            ...fromItem,
+            containerId: packet.toContainer,
+            slot: packet.toSlot
+          };
+          delete this.items[this.contentId][fromContainerKey][packet.fromSlot];
+          if (isFromRetainer && !isToRetainer) {
+            moved.retainerName = null;
+          } else if (!isFromRetainer && isToRetainer) {
+            moved.retainerName = lastSpawnedRetainer;
+          }
+          this.items[this.contentId][toContainerKey][packet.toSlot] = moved;
+          if (packet.toContainer === ContainerType.HandIn
+            || packet.fromContainer === ContainerType.HandIn
+            || (packet.fromContainer < 10 && packet.toContainer < 10)) {
+            return null;
+          }
+          return {
+            ...moved,
+            moved: true
+          };
         }
-        this.items[this.contentId][toContainerKey][packet.toSlot] = moved;
-        if (packet.toContainer === ContainerType.HandIn
-          || packet.fromContainer === ContainerType.HandIn
-          || (packet.fromContainer < 10 && packet.toContainer < 10)) {
-          return null;
-        }
-        return {
-          ...moved,
-          moved: true
-        };
     }
     return null;
   }

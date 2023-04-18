@@ -116,14 +116,14 @@
           ]
         },
         "electron-dev": {
-          "baseHref": "",
+          "optimization": false,
           "sourceMap": true,
-          "fileReplacements": [
-            {
-              "replace": "apps/client/src/environments/environment.ts",
-              "with": "apps/client/src/environments/environment.beta.ts"
-            }
-          ]
+          "namedChunks": true,
+          "aot": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "buildOptimizer": false,
+          "baseHref": ""
         },
         "beta": {
           "optimization": true,
