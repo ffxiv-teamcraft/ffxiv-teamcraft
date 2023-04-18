@@ -74,7 +74,6 @@ async function bootstrap() {
       },
       secure: true,
       changeOrigin: true,
-      ws: true,
       logLevel: 'silent',
       onProxyReq: (proxyReq, req, res) => {
         if (req.method === 'OPTIONS') {
