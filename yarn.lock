@@ -2079,10 +2079,10 @@
     cross-spawn "^5.1.0"
     nan "^2.11.1"
 
-"@ffxiv-teamcraft/pcap-ffxiv@1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.1.1.tgz#3747ea8a405b02bd3664461c216467a380d011ad"
-  integrity sha512-2yyWwwOme7NFsaGAjrkEnMEAL0echrSdsIEjIBxaZWj+58nSUBewmvCcWSon09MhzrKFZmplU7f8lvae/Vy9Qg==
+"@ffxiv-teamcraft/pcap-ffxiv@1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.1.2.tgz#43478271358dfad09acf51d9432732fe05b4c266"
+  integrity sha512-qEvy4r74F/HjTsJhlVHOlznL64nE0rTfJ60/VCGPdUs+PKaKA+vLqimORPYSuf82YbSgjcXqtnbAIa8QEx6rrQ==
   dependencies:
     "@ffxiv-teamcraft/dll-inject" "0.0.8"
 
