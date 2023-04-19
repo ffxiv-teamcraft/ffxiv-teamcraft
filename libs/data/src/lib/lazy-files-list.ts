@@ -69,7 +69,7 @@ export const lazyFilesList = {
   },
   'collectables': {
     'fileName': 'collectables.json',
-    'hashedFileName': 'collectables.ea66c03bff273629943a73857a6d666111bc7574.json'
+    'hashedFileName': 'collectables.55bdad9fd64518addd3e7f80ee6793ec1ec7cb09.json'
   },
   'contentType': {
     'fileName': 'content-type.json',

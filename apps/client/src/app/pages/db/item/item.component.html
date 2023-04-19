@@ -201,7 +201,7 @@
                 </app-lazy-scroll>
               </div>
               <div *ngIf="row.masterpiece" fxLayout="row wrap" fxLayoutGap="10px">
-                <div class="masterpiece-entry rowena">
+                <div class="masterpiece-entry rowena" *ngIf="row.masterpiece.base.scrip > 0">
                   <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
                     <div class="masterpiece-rating">{{row.masterpiece.base.rating}}
                       - {{row.masterpiece.mid.rating - 1}}</div>
