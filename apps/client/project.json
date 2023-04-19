@@ -53,13 +53,13 @@
       },
       "configurations": {
         "dev": {
-          "optimization": false,
+          "optimization": true,
           "sourceMap": true,
-          "namedChunks": true,
-          "aot": false,
+          "namedChunks": false,
+          "aot": true,
           "extractLicenses": true,
           "vendorChunk": false,
-          "buildOptimizer": false,
+          "buildOptimizer": true,
           "baseHref": "/",
           "deployUrl": "/"
         },
@@ -164,7 +164,7 @@
       "defaultConfiguration": "dev"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@angular-builders/custom-webpack:dev-server",
       "options": {
         "browserTarget": "client:build"
       },

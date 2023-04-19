@@ -9,7 +9,7 @@ import { toIpcData } from '../rxjs/to-ipc-data';
 import { Hookset, Tug } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
-import type { EventPlay } from '@ffxiv-teamcraft/pcap-ffxiv';
+import type { EventPlay } from '@ffxiv-teamcraft/pcap-ffxiv/models';
 import { FishingReporterState } from './state/fishing-reporter-state';
 import { FishTrainFacade } from '../../modules/fish-train/fish-train/fish-train.facade';
 import { getFishTrainStatus } from '../../modules/fish-train/get-fish-train-status';

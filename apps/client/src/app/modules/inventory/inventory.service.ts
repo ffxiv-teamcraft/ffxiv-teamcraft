@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ofMessageType } from '../../core/rxjs/of-message-type';
-import { debounceTime, distinctUntilChanged, filter, first, map, publish, scan, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
-import { BehaviorSubject, combineLatest, connectable, ConnectableObservable, merge, Observable, of, Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, filter, first, map, scan, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, connectable, merge, Observable, of, Subject } from 'rxjs';
 import { IpcService } from '../../core/electron/ipc.service';
 import { ItemSearchResult } from '../../model/user/inventory/item-search-result';
 import { ContainerType } from '../../model/user/inventory/container-type';
@@ -11,7 +11,7 @@ import { AuthFacade } from '../../+state/auth.facade';
 import { TranslateService } from '@ngx-translate/core';
 import { UserInventory } from '../../model/user/inventory/user-inventory';
 import { CharacterResponse } from '@xivapi/angular-client';
-import {
+import type {
   ClientTrigger,
   ContainerInfo,
   CurrencyCrystalInfo,
@@ -19,9 +19,8 @@ import {
   InventoryTransaction,
   ItemInfo,
   ItemMarketBoardInfo,
-  RetainerInformation,
   UpdateInventorySlot
-} from '@ffxiv-teamcraft/pcap-ffxiv';
+} from '@ffxiv-teamcraft/pcap-ffxiv/models';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { InventoryItem } from '../../model/user/inventory/inventory-item';
 import { InventoryPatch } from '../../model/user/inventory/inventory-patch';

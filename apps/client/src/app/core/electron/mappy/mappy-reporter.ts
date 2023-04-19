@@ -14,7 +14,7 @@ import { uniqBy } from 'lodash';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { XivapiReportEntry } from './xivapi-report-entry';
-import type { UpdatePositionHandler } from '@ffxiv-teamcraft/pcap-ffxiv';
+import type { UpdatePositionHandler } from '@ffxiv-teamcraft/pcap-ffxiv/models';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../rxjs/with-lazy-data';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';

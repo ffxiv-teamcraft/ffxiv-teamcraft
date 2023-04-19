@@ -6,7 +6,9 @@ module.exports = (config, options) => {
     ...config.resolve.fallback,
     fs: false,
     child_process: false,
-    bindings: false
+    bindings: false,
+    path: false,
+    https: false
   };
   config.plugins.push(new NodePolyfillPlugin());
   config.optimization.minimizer.push(new TerserPlugin({

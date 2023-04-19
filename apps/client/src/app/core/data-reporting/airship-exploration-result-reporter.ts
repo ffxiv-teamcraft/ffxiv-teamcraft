@@ -3,7 +3,7 @@ import { ofMessageType } from '../rxjs/of-message-type';
 import { filter, first, map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 import { ExplorationResultReporter } from './exploration-result.reporter';
 import { toIpcData } from '../rxjs/to-ipc-data';
-import type { AirshipStatus } from '@ffxiv-teamcraft/pcap-ffxiv';
+import type { AirshipStatus } from '@ffxiv-teamcraft/pcap-ffxiv/models';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { ExplorationType } from '@ffxiv-teamcraft/types';
 

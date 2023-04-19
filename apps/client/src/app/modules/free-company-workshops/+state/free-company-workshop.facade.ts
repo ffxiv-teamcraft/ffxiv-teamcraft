@@ -26,7 +26,7 @@ import { SettingsService } from '../../settings/settings.service';
 import { FreeCompanyWorkshop } from '../model/free-company-workshop';
 import { ofMessageType } from '../../../core/rxjs/of-message-type';
 import { toIpcData } from '../../../core/rxjs/to-ipc-data';
-import type { ItemInfo, UpdateInventorySlot } from '@ffxiv-teamcraft/pcap-ffxiv';
+import type { ItemInfo, UpdateInventorySlot } from '@ffxiv-teamcraft/pcap-ffxiv/models';
 import { SoundNotificationService } from '../../../core/sound-notification/sound-notification.service';
 import { SoundNotificationType } from '../../../core/sound-notification/sound-notification-type';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
