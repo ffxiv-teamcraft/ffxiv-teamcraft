@@ -53,13 +53,13 @@
       },
       "configurations": {
         "dev": {
-          "optimization": true,
+          "optimization": false,
           "sourceMap": true,
-          "namedChunks": false,
-          "aot": true,
+          "namedChunks": true,
+          "aot": false,
           "extractLicenses": true,
           "vendorChunk": false,
-          "buildOptimizer": true,
+          "buildOptimizer": false,
           "baseHref": "/",
           "deployUrl": "/"
         },
