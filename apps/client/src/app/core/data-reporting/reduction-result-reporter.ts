@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { DataReporter } from './data-reporter';
 import { filter, map } from 'rxjs/operators';
-import { Message } from '@ffxiv-teamcraft/pcap-ffxiv';
+import type { Message } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { ofMessageType } from '../rxjs/of-message-type';
 import { toIpcData } from '../rxjs/to-ipc-data';
 

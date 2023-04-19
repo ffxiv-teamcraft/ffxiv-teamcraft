@@ -21,14 +21,16 @@
           </div>
           <div *ngIf="data.craftedBy === undefined || data.craftedBy.length === 0">
             <div *ngIf="toSearchResult(data) as searchResult" fxFlex="0 0 150px" fxLayout="row" fxLayoutGap="5px">
-              <nz-input-group [nzAddOnAfter]="addButton" [nzCompact]="true" class="amount-input">
+              <nz-input-group nzSearch [nzAddOnAfter]="addButton" class="amount-input">
                 <input #amountInput (keydown.enter)="addItemsToList(searchResult, +amountInput.value)"
                        [ngModel]="1"
                        nz-input type="number">
               </nz-input-group>
               <ng-template #addButton>
-                <i (click)="addItemsToList(searchResult, +amountInput.value)" [nzTooltipTitle]="'ITEMS.Add_to_list' | translate" nz-icon nz-tooltip
-                   nzType="plus"></i>
+                <button nzSearch (click)="addItemsToList(searchResult, +amountInput.value)" nz-button nzType="primary" nz-tooltip
+                        [nzTooltipTitle]="'ITEMS.Add_to_list' | translate" class="plus-button">
+                  <i nz-icon nzType="plus"></i>
+                </button>
               </ng-template>
               <button (click)="createQuickList(searchResult, +amountInput.value)" [nzShape]="'circle'" [nzTooltipTitle]="'Quick_list_create' | translate"
                       fxFlex="0 0 auto"
@@ -199,7 +201,7 @@
                 </app-lazy-scroll>
               </div>
               <div *ngIf="row.masterpiece" fxLayout="row wrap" fxLayoutGap="10px">
-                <div class="masterpiece-entry rowena">
+                <div class="masterpiece-entry rowena" *ngIf="row.masterpiece.base.scrip > 0">
                   <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
                     <div class="masterpiece-rating">{{row.masterpiece.base.rating}}
                       - {{row.masterpiece.mid.rating - 1}}</div>

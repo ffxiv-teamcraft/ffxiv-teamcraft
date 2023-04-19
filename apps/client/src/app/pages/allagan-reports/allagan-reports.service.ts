@@ -6,7 +6,7 @@ import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
 import { AllaganReportStatus } from './model/allagan-report-status';
 import { AllaganReportQueueEntry } from './model/allagan-report-queue-entry';
-import { first, map, mapTo, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { AllaganReportSource } from '@ffxiv-teamcraft/types';
 import { AllaganMetricsDashboardData } from './model/allagan-metrics-dashboard-data';
 import { LocalStorageBehaviorSubject } from '../../core/rxjs/local-storage-behavior-subject';
@@ -32,8 +32,8 @@ export class AllaganReportsService {
     return this.getItemAllaganReportsQueueQuery.subscribe({ itemId }, { fetchPolicy: 'network-only' });
   };
 
-  getDashboardData(subscribe = false): Observable<AllaganMetricsDashboardData> {
-    const allReports = gql`subscription AllaganMetricsDashboardData {
+  getDashboardData(): Observable<AllaganMetricsDashboardData> {
+    const allReports = gql`query AllaganMetricsDashboardData {
         all_reports: allagan_reports_aggregate {
           aggregate {
             count
@@ -41,7 +41,7 @@ export class AllaganReportsService {
         }
       }`;
 
-    const appliedReports = gql`subscription AllaganMetricsDashboardData {
+    const appliedReports = gql`query AllaganMetricsDashboardData {
         applied_reports: allagan_reports_aggregate(where: {applied: {_eq: true}}) {
           aggregate {
             count
@@ -49,16 +49,15 @@ export class AllaganReportsService {
         }
       }`;
     return combineLatest([
-      this.apollo.subscribe<any>({
+      this.apollo.query<any>({
         query: allReports,
         fetchPolicy: 'network-only'
       }),
-      this.apollo.subscribe<any>({
+      this.apollo.query<any>({
         query: appliedReports,
         fetchPolicy: 'network-only'
       })
     ]).pipe(
-      subscribe ? tap() : first(),
       map(([resAll, resApplied]) => {
         return {
           reportsCount: resAll.data.all_reports.aggregate.count,
@@ -75,7 +74,7 @@ export class AllaganReportsService {
         if (filter.length === 0) {
           filter = uniq(Object.keys(AllaganReportSource)) as AllaganReportSource[];
         }
-        const query = gql`subscription AllaganReportsQueueStatus($sources: [String!]!) {
+        const query = gql`query AllaganReportsQueueStatus($sources: [String!]!) {
           allagan_reports_queue(where: {source: {_in: $sources}}) {
             itemId
             author
@@ -85,7 +84,7 @@ export class AllaganReportsService {
             type
           }
         }`;
-        return this.apollo.subscribe<any>({
+        return this.apollo.query<any>({
           query,
           fetchPolicy: 'network-only',
           variables: {
@@ -106,18 +105,46 @@ export class AllaganReportsService {
     );
   }
 
+  getReportsCount(): Observable<number> {
+    return this.filter$.pipe(
+      switchMap(filter => {
+        if (filter.length === 0) {
+          filter = uniq(Object.keys(AllaganReportSource)) as AllaganReportSource[];
+        }
+        const query = gql`query AllaganReportsQueueLength {
+          allagan_reports_queue_aggregate {
+            aggregate {
+              count
+            }
+          }
+        }`;
+        return this.apollo.watchQuery<any>({
+          query,
+          fetchPolicy: 'network-only',
+          pollInterval: 30000
+        }).valueChanges.pipe(
+          map(res => {
+            return res.data.allagan_reports_queue_aggregate.aggregate.count;
+          }),
+          shareReplay({ bufferSize: 1, refCount: true })
+        );
+      })
+    );
+  }
+
   getUnappliedCount(): Observable<number> {
-    const query = gql`subscription AllaganReportsToApplyCount {
+    const query = gql`query AllaganReportsToApplyCount {
           allagan_reports_aggregate(where: {applied: {_eq: false}}) {
             aggregate {
               count
             }
           }
         }`;
-    return this.apollo.subscribe<any>({
+    return this.apollo.watchQuery<any>({
       query,
-      fetchPolicy: 'network-only'
-    }).pipe(
+      fetchPolicy: 'network-only',
+      pollInterval: 30000
+    }).valueChanges.pipe(
       map(res => {
         return res.data.allagan_reports_aggregate.aggregate.count;
       }),

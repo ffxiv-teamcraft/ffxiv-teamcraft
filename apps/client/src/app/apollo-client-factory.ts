@@ -1,6 +1,4 @@
-import { ApolloLink, InMemoryCache, split } from '@apollo/client/core';
-import { WebSocketLink } from '@apollo/client/link/ws';
-import { getMainDefinition } from '@apollo/client/utilities';
+import { ApolloLink, InMemoryCache } from '@apollo/client/core';
 import { HttpLink } from 'apollo-angular/http';
 import { AuthFacade } from './+state/auth.facade';
 import { setContext } from '@apollo/client/link/context';
@@ -8,26 +6,6 @@ import { filter, firstValueFrom } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export function apolloClientFactory(httpLink: HttpLink, authFacade: AuthFacade) {
-  const ws = new WebSocketLink({
-    uri: `wss://api.ffxivteamcraft.com/gubal`,
-    options: {
-      timeout: 30000,
-      reconnect: true,
-      reconnectionAttempts: 15,
-      connectionParams: (async () => {
-        // This is just because sometimes, injector seems to derp with the authFacade instance
-        let idToken = await firstValueFrom(authFacade.idToken$.pipe(
-          filter(token => token.claims['https://hasura.io/jwt/claims'] !== undefined)
-        ));
-        // If we're at least 5 minutes from expiration, refresh token
-        if (Date.now() - new Date(idToken.expirationTime).getTime() < 60000) {
-          idToken = await authFacade.getIdTokenResult(true);
-        }
-        return { headers: { Authorization: `Bearer ${idToken.token}` } };
-      })()
-    }
-  });
-
   const httpL = httpLink.create({ uri: 'https://api.ffxivteamcraft.com/gubal' });
 
   const httpAuth = setContext((operation, context) => {
@@ -43,17 +21,7 @@ export function apolloClientFactory(httpLink: HttpLink, authFacade: AuthFacade) 
     ));
   });
 
-  const httpLinkWithAuth = ApolloLink.from([httpAuth, httpL]);
-
-  const link = split(
-    // split based on operation type
-    ({ query }) => {
-      const { kind, operation } = getMainDefinition(query) as any;
-      return kind === 'OperationDefinition' && operation === 'subscription';
-    },
-    ws,
-    httpLinkWithAuth
-  );
+  const link = ApolloLink.from([httpAuth, httpL]);
   return {
     link,
     cache: new InMemoryCache({

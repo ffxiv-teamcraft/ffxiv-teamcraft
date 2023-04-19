@@ -165,6 +165,26 @@
   margin-right: 40px;
 }
 
+.rotation__container {
+  .rotation__container__step {
+    width: var(--box-width);
+    height: var(--box-height);
+    margin-bottom: 10px;
+
+    &:last-child {
+      flex: 1;
+    }
+
+    & > * {
+      padding-left: 10px;
+    }
+  }
+}
+
+.actions-card, .rotation__container {
+  user-select: none;
+}
+
 .actions-card {
   position: relative;
 
@@ -181,7 +201,8 @@
     font-weight: bold;
   }
 
-  .actions-container {
+  .rotation__container {
+    margin-bottom: 5px;
     min-height: 45px;
 
     .action-from-bar:not(.gu-transit) {
@@ -190,10 +211,6 @@
 
     .action-container {
       margin-bottom: 5px;
-    }
-
-    .rotation-action {
-      padding: 0 5px;
     }
   }
 }

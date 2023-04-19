@@ -257,9 +257,7 @@ export class AppComponent implements OnInit {
 
     this.desktop = this.platformService.isDesktop();
 
-    this.allaganReportsQueueCount$ = this.allaganReportsService.getQueueStatus().pipe(
-      map(status => status.length)
-    );
+    this.allaganReportsQueueCount$ = this.allaganReportsService.getReportsCount();
     this.allaganReportsUnappliedCount$ = this.allaganReportsService.getUnappliedCount();
 
     fromEvent(document, 'keydown').subscribe((event: KeyboardEvent) => {

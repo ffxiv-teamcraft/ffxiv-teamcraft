@@ -1,4 +1,4 @@
-import { Message } from '@ffxiv-teamcraft/pcap-ffxiv';
+import type { Message } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { OperatorFunction } from 'rxjs';
 import { map } from 'rxjs/operators';
 

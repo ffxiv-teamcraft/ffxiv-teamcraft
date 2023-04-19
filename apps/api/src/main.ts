@@ -5,20 +5,14 @@ import { environment } from './environments/environment';
 import { createProxyMiddleware, fixRequestBody } from 'http-proxy-middleware';
 import { graphql } from 'body-parser-graphql';
 import { createClient, RedisClientType } from 'redis';
-import { AddressInfo } from 'ws';
 
-const RATE_LIMIT_BYTES_PER_REQUEST = 100_000;
-const RATE_LIMIT_BYTES_PER_MINUTES = 1_000_000;
+const RATE_LIMIT_BYTES_PER_REQUEST = 1_000_000;
+const RATE_LIMIT_BYTES_PER_MINUTES = 4_000_000;
 const RATE_LIMIT_BYTES_PER_HOUR = 20_000_000;
-
-const RATE_LIMIT_HITS_PER_MINUTES = 100;
-const RATE_LIMIT_HITS_PER_HOUR = 3000;
 
 async function addUsage(redis: RedisClientType, ip: string, usage: number) {
   const minBytesUsageKey = `gubal:${ip}:${new Date().getUTCMinutes()}B`;
   const hourBytesUsageKey = `gubal:${ip}:h${new Date().getUTCHours()}B`;
-  const minHitUsageKey = `gubal:${ip}:${new Date().getUTCMinutes()}`;
-  const hourHitUsageKey = `gubal:${ip}:h${new Date().getUTCHours()}`;
   await redis.set(minBytesUsageKey, 0, {
     NX: true,
     EX: 60
@@ -27,30 +21,16 @@ async function addUsage(redis: RedisClientType, ip: string, usage: number) {
     NX: true,
     EX: 3600
   });
-  await redis.set(minHitUsageKey, 0, {
-    NX: true,
-    EX: 60
-  });
-  await redis.set(hourHitUsageKey, 0, {
-    NX: true,
-    EX: 3600
-  });
   await redis.incrBy(minBytesUsageKey, usage);
   await redis.incrBy(hourBytesUsageKey, usage);
-  await redis.incr(minHitUsageKey);
-  await redis.incr(hourHitUsageKey);
 }
 
 async function getUsage(redis: RedisClientType, ip: string) {
   const minUsageKey = `gubal:${ip}:${new Date().getUTCMinutes()}B`;
   const hourUsageKey = `gubal:${ip}:h${new Date().getUTCHours()}B`;
-  const minHitUsageKey = `gubal:${ip}:${new Date().getUTCMinutes()}`;
-  const hourHitUsageKey = `gubal:${ip}:h${new Date().getUTCHours()}`;
   return {
-    minHit: await redis.get(minHitUsageKey),
     minBytes: await redis.get(minUsageKey),
-    hourBytes: await redis.get(hourUsageKey),
-    hourHit: await redis.get(hourHitUsageKey)
+    hourBytes: await redis.get(hourUsageKey)
   };
 }
 
@@ -94,7 +74,6 @@ async function bootstrap() {
       },
       secure: true,
       changeOrigin: true,
-      ws: true,
       logLevel: 'silent',
       onProxyReq: (proxyReq, req, res) => {
         if (req.method === 'OPTIONS') {
@@ -103,12 +82,9 @@ async function bootstrap() {
         if (req.method !== 'POST') {
           return res.sendStatus(405);
         }
-        const [minUsage, hourUsage, minHit, hourHit] = req.headers['X-Gubal-Usage'].toString().split('|');
-        delete req.headers['X-Gubal-Usage'];
+        const [minUsage, hourUsage] = req.headers['X-Gubal-Usage'].toString().split('|');
         const denied = +minUsage > RATE_LIMIT_BYTES_PER_MINUTES
-          || +minHit > RATE_LIMIT_HITS_PER_MINUTES
-          || +hourUsage > RATE_LIMIT_BYTES_PER_HOUR
-          || +hourHit > RATE_LIMIT_HITS_PER_HOUR;
+          || +hourUsage > RATE_LIMIT_BYTES_PER_HOUR;
         const isMutation = req.body.query.startsWith('mutation');
         // Only deny if not mutation, to not prevent fishing data ingestion in the event of a wrong ban
         if (denied && !isMutation) {
@@ -116,18 +92,6 @@ async function bootstrap() {
           return res.sendStatus(429);
         }
         fixRequestBody(proxyReq, req);
-      },
-      onProxyReqWs: async (proxyReq, req, socket) => {
-        socket.on('data', async d => {
-          const addr: AddressInfo = socket.address() as AddressInfo;
-          await addUsage(redis, addr.address, Buffer.byteLength(d));
-          const { minBytes, hourBytes } = await getUsage(redis, addr.address);
-          if (+minBytes > RATE_LIMIT_BYTES_PER_MINUTES || +hourBytes > RATE_LIMIT_BYTES_PER_HOUR
-            || Buffer.byteLength(d) > RATE_LIMIT_BYTES_PER_REQUEST) {
-            logBan(req, true);
-            socket.end();
-          }
-        });
       },
       onProxyRes: (proxyRes, req, res) => {
         const _write = res.write;
@@ -146,11 +110,8 @@ async function bootstrap() {
       '/gubal',
       proxy
     );
-    const server = await app.listen(port);
-    server.on('upgrade', proxy.upgrade);
-  } else {
-    await app.listen(port);
   }
+  await app.listen(port);
   Logger.log(`🚀 Application is running on: http://localhost:${port}, XIVAPI_KEY LOADED: ${environment.xivapiKey !== undefined}`);
 }
 

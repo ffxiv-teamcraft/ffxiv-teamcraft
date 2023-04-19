@@ -185,6 +185,16 @@ export class ShopsExtractor extends AbstractExtractor {
                 delete entry.collectability;
               }
 
+              if (specialShop.index === 1770637) {
+                entry.id = { ...StaticData.CURRENCIES }[entry.id];
+                return entry;
+              }
+
+              if (specialShop.index === 1770446) {
+                entry.id = { ...StaticData.CURRENCIES, ...StaticData.TOMESTONES }[entry.id];
+                return entry;
+              }
+
               if (specialShop.UseCurrencyType === 16 && entry.id !== 25) {
                 entry.id = StaticData.CURRENCIES[entry.id] || entry.id;
               }

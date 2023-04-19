@@ -107,6 +107,7 @@
     "Contributors": "Поддержавшие проект"
   },
   "Patreon_login_success": "Успешный вход в Patreon!",
+  "Tipeee_login_success": "Tipeee login success!",
   "Hide_if_empty": "Скрыть, если пусто",
   "No_favorites": "Нет избранного",
   "Ephemeral_list": "Будут удалены после завершения",
@@ -188,7 +189,7 @@
     "Never": "Никогда",
     "Festival": "Только во время фестиваля",
     "Back": "Назад",
-    "Support_us_remove_ads": "Поддержите нас на patreon, чтобы убрать рекламу",
+    "Support_us_remove_ads": "Support us to remove ads",
     "Support_us": "Поддержите нас",
     "Show_more": "Показать еще",
     "Item": "Предмет",
@@ -442,10 +443,12 @@
     "Reset_password_warning": "Вы уверены, что хотите сбросить пароль?",
     "Password_reset_mail_sent": "Отправлено электронное письмо о сбросе пароля",
     "Connect_with_patreon": "Присоединить Patreon",
+    "Connect_with_tipeee": "Connect with Tipeee",
     "Connected_with_patreon": "Соединено с Patreon",
+    "Connected_with_tipeee": "Connected with Tipeee",
     "Nickname": "Ник",
     "Nickname_used": "Данный ник уже используется",
-    "No_nickname_warning": "Пожалуйста, перейдите на страницу настроек и установите ник, чтобы иметь возможность использовать эксклюзивные функции Patreon'а.",
+    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the supporter exclusive features properly.",
     "Show_devtools": "Показать инструменты разработчика",
     "Clear_cache": "Очистить кэш (перезапустит приложение)",
     "Enable_item_tags": "Включить теги предметов",
@@ -513,6 +516,7 @@
     "Alarm_panels_collapsed_by_default": "Свернуть панель группы оповещений по умолчанию",
     "Alarm_groups_before_no_group": "Показывать группы оповещений перед оповещениями без группы",
     "Disconnect_patreon": "Disconnect from Patreon",
+    "Disconnect_tipeee": "Disconnect from Tipeee",
     "Export_settings": "Экспорт настроек",
     "Import_settings": "Импорт настроек",
     "Import_successful": "Настройки импортированы",
@@ -2714,7 +2718,7 @@
     "Starting_at_X": "Начиная с ${{monthly}} в месяц или ${{yearly}} в год",
     "Footer_text": "Всего 1 доллар в месяц оказывает существенное влияние на развитие Teamcraft и приближает меня к моей мечте стать полноправным разработчиком этого проекта и расширить его не только в качестве инструмента для FFXIV.",
     "Already_supporter": "Уже поддерживаете?",
-    "Disable_ads_explanation": "To disable ads, connect with your Patreon account to make Teamcraft able to verify your support and disable ads automatically"
+    "Disable_ads_explanation": "To disable ads, connect with your Patreon or Tipeee account to make Teamcraft able to verify your support and disable ads automatically"
   },
   "SUPPORT_US": {
     "Popup_introduction": "Привет, я Miu, разработчик инструмента, который вы сейчас используете.<br/> Teamcraft для меня последние года был хобби, и моя мечта состоит в том, чтобы сделать это основной работой. <br/><br/> С вашей помощью эта мечта может стать реальностью, вы можете поддержать проект на patreon, каждый доллар считается и поможет мне достичь этой цели. <br/><br/> Поддержка проекта на patreon также дает вам некоторые выгоды:",
@@ -3180,6 +3184,10 @@
     "Bait_breakdown": "Bait usage breakdown",
     "Fish_size_chart": "Fish sizes",
     "Delete_train": "Delete",
-    "Train_not_running": "Train not running"
+    "Train_not_running": "Train not running",
+    "Outdated": "This train is outdated",
+    "Outdated_description": "This train is using an outdated data storage approach, please migrate to be able to see your stats again",
+    "Outdated_description_passenger": "This train is using an outdated data storage approach, please ask the conductor to migrate it to see the stats again.",
+    "Migrate": "Migrate"
   }
 }

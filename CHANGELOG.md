@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.4.9"></a>
+## [10.4.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.8...v10.4.9) (2023-04-19)
+
+
+### Bug Fixes
+
+* **db:** fix collectable trade display ([8871b2f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8871b2f))
+* **db:** fixed add item to list input combo in item db pages ([d607366](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d607366))
+* **db:** fixed wrong currency shown on some tomestone trades ([4936631](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4936631))
+* **desktop:** fixed an issue with retainer crystals and gil tracking ([903525c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/903525c))
+* **simulator:** actions sort in multi-row rotations now drags properly ([db824c2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/db824c2)), closes [/github.com/angular/components/issues/13372#issuecomment-1264356365](https://github.com//github.com/angular/components/issues/13372/issues/issuecomment-1264356365)
+
+
+### Features
+
+* **db:** support for korean v6.25 update ([e273856](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e273856))
+
+
+
 <a name="10.4.8"></a>
 ## [10.4.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.7...v10.4.8) (2023-04-07)
 

@@ -166,9 +166,9 @@ export class CollectablesExtractor extends AbstractExtractor {
                     return cReward.index === collectable.CollectablesShopRewardScrip?.index;
                   });
                   rewardId = rewardEntry?.Item?.index;
-                  lowQuantity = rewardEntry.RewardLow;
-                  midQuantity = rewardEntry.RewardMid;
-                  highQuantity = rewardEntry.RewardHigh;
+                  lowQuantity = 0;
+                  midQuantity = rewardEntry.RewardLow;
+                  highQuantity = rewardEntry.RewardMid;
                 }
                 collectables[collectable.Item.index] = {
                   id: collectable.index,
@@ -185,19 +185,19 @@ export class CollectablesExtractor extends AbstractExtractor {
                     quantity: lowQuantity,
                     rating: lowThreshold,
                     exp: collectable.CollectablesShopRewardScrip.ExpRatioLow,
-                    scrip: shop.RewardType === 2 ? lowQuantity : collectable.CollectablesShopRewardScrip.LowReward
+                    scrip: shop.RewardType === 2 ? lowQuantity :0
                   },
                   mid: {
                     quantity: midQuantity,
                     rating: midThreshold,
                     exp: collectable.CollectablesShopRewardScrip.ExpRatioMid,
-                    scrip: shop.RewardType === 2 ? midQuantity : collectable.CollectablesShopRewardScrip.MidReward
+                    scrip: shop.RewardType === 2 ? midQuantity : collectable.CollectablesShopRewardScrip.HighReward
                   },
                   high: {
                     quantity: highQuantity,
                     rating: highThreshold,
                     exp: collectable.CollectablesShopRewardScrip.ExpRatioHigh,
-                    scrip: shop.RewardType === 2 ? highQuantity : collectable.CollectablesShopRewardScrip.HighReward
+                    scrip: shop.RewardType === 2 ? highQuantity : collectable.CollectablesShopRewardScrip.MidReward
                   }
                 };
                 if (+collectable.index < 10) {
