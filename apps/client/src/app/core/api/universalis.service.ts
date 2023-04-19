@@ -7,14 +7,14 @@ import { AuthFacade } from '../../+state/auth.facade';
 import { IpcService } from '../electron/ipc.service';
 import { SettingsService } from '../../modules/settings/settings.service';
 import * as _ from 'lodash';
-import {
+import type {
   MarketBoardItemListing,
   MarketBoardItemListingHistory,
   MarketBoardPurchaseHandler,
   MarketBoardSearchResult,
   MarketTaxRates,
   PlayerSetup
-} from '@ffxiv-teamcraft/pcap-ffxiv';
+} from '@ffxiv-teamcraft/pcap-ffxiv/models';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../rxjs/with-lazy-data';
 

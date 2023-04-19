@@ -4,7 +4,7 @@ import { DataModel } from '../../../core/database/storage/data-model';
 import { ContainerType } from './container-type';
 import { CharacterInventory } from './character-inventory';
 import { ItemSearchResult } from './item-search-result';
-import type { ClientTrigger, InventoryModifyHandler, InventoryTransaction, ItemMarketBoardInfo, UpdateInventorySlot } from '@ffxiv-teamcraft/pcap-ffxiv';
+import type { ClientTrigger, InventoryModifyHandler, InventoryTransaction, ItemMarketBoardInfo, UpdateInventorySlot } from '@ffxiv-teamcraft/pcap-ffxiv/models';
 import { uniqBy } from 'lodash';
 
 export class UserInventory extends DataModel {

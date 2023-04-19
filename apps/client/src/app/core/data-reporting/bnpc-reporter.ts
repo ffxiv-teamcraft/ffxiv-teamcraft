@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 import { ofMessageType } from '../rxjs/of-message-type';
 import { filter, map, switchMap } from 'rxjs/operators';
 import { toIpcData } from '../rxjs/to-ipc-data';
-import type { Message } from '@ffxiv-teamcraft/pcap-ffxiv';
+import type { Message } from '@ffxiv-teamcraft/pcap-ffxiv/models';
 import { DataReporter } from './data-reporter';
 import { debounceBufferTime } from '../rxjs/debounce-buffer-time';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';

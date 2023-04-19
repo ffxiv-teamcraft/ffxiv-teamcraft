@@ -11,7 +11,7 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { RawsockAdminErrorPopupComponent } from '../../modules/ipc-popups/rawsock-admin-error-popup/rawsock-admin-error-popup.component';
 import { NpcapInstallPopupComponent } from '../../modules/ipc-popups/npcap-install-popup/npcap-install-popup.component';
-import type { FreeCompanyDialog, Message } from '@ffxiv-teamcraft/pcap-ffxiv';
+import type { FreeCompanyDialog, Message } from '@ffxiv-teamcraft/pcap-ffxiv/models';
 import { toIpcData } from '../rxjs/to-ipc-data';
 import { UpdateInstallPopupComponent } from '../../modules/ipc-popups/update-install-popup/update-install-popup.component';
 import { NzNotificationService } from 'ng-zorro-antd/notification';

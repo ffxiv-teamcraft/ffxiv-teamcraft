@@ -164,7 +164,7 @@
       "defaultConfiguration": "dev"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@angular-builders/custom-webpack:dev-server",
       "options": {
         "browserTarget": "client:build"
       },

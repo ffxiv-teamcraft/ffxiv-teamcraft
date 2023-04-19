@@ -3,7 +3,7 @@ import { DataReporter } from './data-reporter';
 import { Injectable } from '@angular/core';
 import { ofMessageType } from '../rxjs/of-message-type';
 import { toIpcData } from '../rxjs/to-ipc-data';
-import type { Message } from '@ffxiv-teamcraft/pcap-ffxiv';
+import type { Message } from '@ffxiv-teamcraft/pcap-ffxiv/models';
 import { filter } from 'rxjs/operators';
 
 @Injectable()
