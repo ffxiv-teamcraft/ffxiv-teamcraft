@@ -18,6 +18,7 @@ import { VesselBuildColumnComponent } from './voyage-tracker/vessel-row/vessel-b
 import { VesselVoyageColumnComponent } from './voyage-tracker/vessel-row/vessel-voyage-column/vessel-voyage-column.component';
 import { FormsModule } from '@angular/forms';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
+import { NzPipesModule } from 'ng-zorro-antd/pipes';
 
 const routes: Routes = [
   {
@@ -49,7 +50,8 @@ const routes: Routes = [
     PageLoaderModule,
     NzBreadCrumbModule,
     NzPopoverModule,
-    FullpageMessageModule
+    FullpageMessageModule,
+    NzPipesModule
   ]
 })
 export class VoyageTrackerModule {
