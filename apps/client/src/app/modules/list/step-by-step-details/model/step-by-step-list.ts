@@ -46,7 +46,7 @@ export class StepByStepList {
         let hasCoords = false;
         let matchingSources = row.sources
           .filter(s => panel.layoutRow.filter.matchingSources.includes(s.type) || [DataType.ALARMS].includes(s.type))
-          .sort((a,b) => panel.layoutRow.filter.matchingSources.indexOf(a.type) - panel.layoutRow.filter.matchingSources.indexOf(b.type));
+          .sort((a, b) => panel.layoutRow.filter.matchingSources.indexOf(a.type) - panel.layoutRow.filter.matchingSources.indexOf(b.type));
         if (matchingSources.length === 0) {
           matchingSources = row.sources;
         }
@@ -56,12 +56,16 @@ export class StepByStepList {
             hasCoords = true;
             positions.forEach(position => {
               if (this.shouldAddMap(position.mapId)) {
-                const preparedSource = structuredClone(source);
-                if (source.type === DataType.TRADE_SOURCES) {
+                const preparedSource: ItemSource = structuredClone(source);
+                if (preparedSource.type === DataType.TRADE_SOURCES) {
                   // If it's a trade, we want to filter to make sure it's on this map, to avoid showing wrong currency and details.
                   preparedSource.data = preparedSource.data.filter(ts => {
                     return ts.npcs.some(npc => npc.mapId === position.mapId);
                   });
+                }
+                if (preparedSource.type === DataType.VENDORS) {
+                  // If it's a trade, we want to filter to make sure it's on this map, to avoid showing wrong currency and details.
+                  preparedSource.data = preparedSource.data.filter(npc => npc.mapId === position.mapId);
                 }
                 const sourcesToTransfer = row.sources.filter(s => [DataType.MASTERBOOKS, DataType.DEPRECATED].includes(s.type));
                 const sources = [...sourcesToTransfer, preparedSource];

@@ -87,7 +87,7 @@ export class NpcBreakdown {
       return 0;
     }
     // If it's sold by material supplier and setting is enabled, favor this over anything else.
-    if (this.prioritizeHousingSupplier && housingMaterialSuppliers.includes(+npcId)) {
+    if (this.prioritizeHousingSupplier && housingMaterialSuppliers.includes(+npcId) && npc.coords) {
       return 1000;
     }
     const commonNpcBonus = rowsWithNpcs.filter(row => row.npcs.some(n => this.getNpcId(n) === npcId)).length;
