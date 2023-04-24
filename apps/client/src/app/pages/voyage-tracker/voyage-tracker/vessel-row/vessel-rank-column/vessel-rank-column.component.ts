@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { FreeCompanyWorkshopFacade } from '../../../../../modules/free-company-workshops/+state/free-company-workshop.facade';
 import { observeInput } from '../../../../../core/rxjs/observe-input';
+import { combineLatest } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-vessel-rank-column',
@@ -24,7 +26,9 @@ export class VesselRankColumnComponent {
   constructor(private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade) {
   }
 
-  rankUpPercent(): number {
-    return Math.round(100 * (this.currentExperience / this.totalExperienceForNextRank));
-  }
+  rankupPercent$ = combineLatest([this.currentExperience$, this.totalExperienceForNextRank$]).pipe(
+    map(([current, nextRank]) => {
+      return Math.round(100 * (current / nextRank));
+    })
+  )
 }

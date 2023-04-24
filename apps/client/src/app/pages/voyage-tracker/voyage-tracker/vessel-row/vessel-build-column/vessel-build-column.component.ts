@@ -7,7 +7,7 @@ import { VesselType } from '../../../../../modules/free-company-workshops/model/
 import { observeInput } from '../../../../../core/rxjs/observe-input';
 import { combineLatest } from 'rxjs';
 import { safeCombineLatest } from '../../../../../core/rxjs/safe-combine-latest';
-import { switchMap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-vessel-build-column',
@@ -31,6 +31,16 @@ export class VesselBuildColumnComponent {
   @Input() parts: Record<AirshipPartType, VesselPart> | Record<SubmarinePartType, VesselPart>;
 
   parts$ = observeInput(this, 'parts');
+
+  conditionClass$ = this.parts$.pipe(
+    map(parts => {
+      const worstCondition = Math.min(...Object.keys(parts).map((slot) => (parts[slot].condition || 0) / 300));
+      return {'good': worstCondition > 50,
+              'caution': worstCondition <= 50 && worstCondition > 25,
+              'warn': worstCondition <= 25 && worstCondition > 0,
+              'broken': worstCondition <= 0}
+    })
+  )
 
   fullNameParts$ = combineLatest([
     this.parts$,
@@ -57,13 +67,5 @@ export class VesselBuildColumnComponent {
 
   get condition(): string {
     return Object.keys(this.parts).map((slot) => `${((this.parts[slot].condition || 0) / 300).toFixed(2)}%`).join(' - ');
-  }
-
-  conditionClass(): object {
-    const worstCondition = Math.min(...Object.keys(this.parts).map((slot) => (this.parts[slot].condition || 0) / 300));
-    return {'good': worstCondition > 50,
-            'caution': worstCondition <= 50 && worstCondition > 25,
-            'warn': worstCondition <= 25 && worstCondition > 0,
-            'broken': worstCondition <= 0}
   }
 }

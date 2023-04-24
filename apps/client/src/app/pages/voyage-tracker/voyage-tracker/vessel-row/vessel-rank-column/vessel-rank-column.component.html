@@ -12,7 +12,7 @@
   <div fxLaout="column">
     <div style="text-align: center">{{ currentExperience }} / {{ totalExperienceForNextRank }}</div>
     <div>
-      <nz-progress [nzPercent]="rankUpPercent()"></nz-progress>
+      <nz-progress [nzPercent]="rankupPercent$ | async"></nz-progress>
     </div>
   </div>
 </ng-template>
