@@ -66,12 +66,11 @@ export class GcSupplyComponent {
         const uniqLevels = _.uniq(levelsArray.map(entry => entry.level) as number[]);
         return this.lazyData.getRows('gcSupply', ...uniqLevels).pipe(
           map(supply => {
-            console.log(levelsArray);
             return levelsArray
               .map(entry => {
                 return {
                   job: entry.jobId,
-                  items: supply[entry.level][entry.jobId]
+                  items: supply[entry.level]?.[entry.jobId] || []
                 };
               })
               .reduce((entriesByJob, entry) => {
