@@ -11,8 +11,6 @@ import { observeInput } from '../../../../../core/rxjs/observe-input';
 export class VesselRankColumnComponent {
   @Input() rank: number;
 
-  vessel$ = observeInput(this, 'rank');
-
   @Input() currentExperience: number;
 
   currentExperience$ = observeInput(this, 'currentExperience');
