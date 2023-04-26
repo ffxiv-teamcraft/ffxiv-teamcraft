@@ -2783,6 +2783,9 @@
       "Speed": "Speed",
       "Range": "Range",
       "Favor": "Favor"
+    },
+    "RANK_DETAILS": {
+      "Experience_Points": "Experience Points"
     }
   },
   "AIRSHIP": {
