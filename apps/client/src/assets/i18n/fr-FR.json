@@ -2783,6 +2783,9 @@
       "Speed": "Vitesse",
       "Range": "Portée",
       "Favor": "Faveur"
+    },
+    "RANK_DETAILS": {
+      "Experience_Points": "Experience Points"
     }
   },
   "AIRSHIP": {
