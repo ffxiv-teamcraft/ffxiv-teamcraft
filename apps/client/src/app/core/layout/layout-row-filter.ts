@@ -342,7 +342,7 @@ export class LayoutRowFilter {
     if (operator !== undefined && filterString !== undefined && filter !== undefined) {
       const notGate = filterString.charAt(0) === '!';
       if (notGate) {
-        filterString = filterString.substr(1);
+        filterString = filterString.slice(1);
       }
       let nextFilter: LayoutRowFilter = LayoutRowFilter[filterString];
       if (notGate) {
@@ -399,6 +399,16 @@ export class LayoutRowFilter {
       }
     }
     return result;
+  }
+  /**
+   * Checks if an item matches this filter
+   * @param row
+   * @param list
+   * @param settings
+   * @returns {accepted: ListRow[]; rejected: ListRow[]} A set of data with rejected and accepted rows.
+   */
+  matches(row: ListRow, list: List, settings: SettingsService): boolean {
+    return this._filter(row, list, settings);
   }
 
   /**
