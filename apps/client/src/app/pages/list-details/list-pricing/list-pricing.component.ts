@@ -38,7 +38,7 @@ export class ListPricingComponent extends TeamcraftComponent {
           if (this.settings.ignoreCompletedItemInPricing) {
             return rows.filter(row => {
               const listRow = ListController.getItemById(list, row.id);
-              return listRow.done < listRow.amount;
+              return listRow && listRow.done < listRow.amount;
             });
           }
           return rows;
