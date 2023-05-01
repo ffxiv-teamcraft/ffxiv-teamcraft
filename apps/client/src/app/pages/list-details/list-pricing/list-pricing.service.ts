@@ -85,7 +85,7 @@ export class ListPricingService {
       const baseModel: Partial<DBEntry> = {
         ...(itemEntry || {
           use: true,
-          custom: true,
+          custom: getItemSource(item, DataType.CRAFTED_BY).length === 0,
           itemId: item.id,
           nq: Math.max(vendorPrice, 0),
           hq: 0,
@@ -101,6 +101,7 @@ export class ListPricingService {
           .add(
             {
               ...baseModel,
+              custom: true,
               amountNQ: hqFlags[item.id] ? 0 : item.amount,
               amountHQ: hqFlags[item.id] ? item.amount : 0
             }

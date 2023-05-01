@@ -7,6 +7,9 @@ import { getTiers } from '../../../../core/tools/get-tiers';
 import { NodeTypeIconPipe } from '../../../../pipes/pipes/node-type-icon.pipe';
 import { NavigationObjective } from '../../../map/navigation-objective';
 import structuredClone from '@ungap/structured-clone';
+import { LayoutRowFilter } from '../../../../core/layout/layout-row-filter';
+import { SettingsService } from '../../../settings/settings.service';
+import { List } from '../../model/list';
 
 export class StepByStepList {
   public alarms: ListRow[] = [];
@@ -25,8 +28,8 @@ export class StepByStepList {
 
   public progress = 0;
 
-  constructor(private readonly display: ListDisplay, private readonly housingMap: number,
-              private readonly lazyMapData: LazyData['maps']) {
+  constructor(private readonly list: List, private readonly display: ListDisplay, private readonly housingMap: number,
+              private readonly lazyMapData: LazyData['maps'], private readonly settings: SettingsService) {
     this.buildMapIndex();
     this.crafts = getTiers(this.crafts).map(tier => {
       return tier.sort((a, b) => {
@@ -40,13 +43,18 @@ export class StepByStepList {
     }).flat();
   }
 
+  private getMatchingSources(item: ListRow, filter: LayoutRowFilter): ItemSource[]{
+    return item.sources.filter(s => {
+      return filter.matches({...item, sources: [s]}, this.list, this.settings);
+    });
+  }
+
   private buildMapIndex(): void {
     this.display.rows.forEach(panel => {
       panel.rows.forEach(row => {
         let hasCoords = false;
-        let matchingSources = row.sources
-          .filter(s => panel.layoutRow.filter.matchingSources.includes(s.type) || [DataType.ALARMS].includes(s.type))
-          .sort((a,b) => panel.layoutRow.filter.matchingSources.indexOf(a.type) - panel.layoutRow.filter.matchingSources.indexOf(b.type));
+        let matchingSources = this.getMatchingSources(row, panel.layoutRow.filter)
+          .sort((a, b) => panel.layoutRow.filter.matchingSources.indexOf(a.type) - panel.layoutRow.filter.matchingSources.indexOf(b.type));
         if (matchingSources.length === 0) {
           matchingSources = row.sources;
         }
@@ -56,12 +64,16 @@ export class StepByStepList {
             hasCoords = true;
             positions.forEach(position => {
               if (this.shouldAddMap(position.mapId)) {
-                const preparedSource = structuredClone(source);
-                if (source.type === DataType.TRADE_SOURCES) {
+                const preparedSource: ItemSource = structuredClone(source);
+                if (preparedSource.type === DataType.TRADE_SOURCES) {
                   // If it's a trade, we want to filter to make sure it's on this map, to avoid showing wrong currency and details.
                   preparedSource.data = preparedSource.data.filter(ts => {
                     return ts.npcs.some(npc => npc.mapId === position.mapId);
                   });
+                }
+                if (preparedSource.type === DataType.VENDORS) {
+                  // If it's a trade, we want to filter to make sure it's on this map, to avoid showing wrong currency and details.
+                  preparedSource.data = preparedSource.data.filter(npc => npc.mapId === position.mapId);
                 }
                 const sourcesToTransfer = row.sources.filter(s => [DataType.MASTERBOOKS, DataType.DEPRECATED].includes(s.type));
                 const sources = [...sourcesToTransfer, preparedSource];

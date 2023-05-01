@@ -1,6 +1,26 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [10.4.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.9...v10.4.10) (2023-05-01)
+
+
+### Features
+
+* **voyage-tracker:** indicate part condition by coloring build column ([5e189a3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5e189a3f4646ee3cddf3910510abfe4f2a73a2b4))
+* **voyage-tracker:** show XP popover on rank column ([d43a86f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d43a86f729f206cc23f98b5960eb086e89f6f24d))
+
+
+### Bug Fixes
+
+* **db:** fixed gathering spot name sometimes including html tags ([d2c2589](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d2c258939385682fb38f0af425cb7d9ddc7d0d9e))
+* **db:** tooltips min gathering value now uses allagan reports data ([22a2edf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/22a2edfc772c66b3ae637fa049f4ac9f3243a837))
+* **gc-supply:** fixed a crash happening with at least one level set to 0 ([18c82a5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/18c82a53551920faae88b6d3c190532a1fb3f64b))
+* **list-pricing:** fixed pricing mode sometimes not loading at all ([9a26c75](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a26c7597c41d9588f2115756b61e5bbbbef3aa8))
+* **list-pricing:** precrafts now default to "price from craft" for new lists ([5a1122e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5a1122e47aba72aceb6662c8719fd738bafb054e))
+* **step-by-step:** fixed non-matching sources sometimes displayed in route ([2d4e64e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2d4e64e6a49021b3ae0ee63c8734728917e246c0)), closes [#2595](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2595)
+* **step-by-step:** fixed vendors not being filtered by current map ([5483be7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5483be7b33530d26bbd5d47b3dfb8d8133abffc7))
+* **voyage-tracker:** fixed sector name sometimes including html elements ([523792d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/523792d90726bc8fe0c15e300035f5bf6b7586d5))
 
 <a name="10.4.9"></a>
 ## [10.4.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.8...v10.4.9) (2023-04-19)

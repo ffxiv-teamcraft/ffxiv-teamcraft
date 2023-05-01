@@ -56,7 +56,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
               }
               return combineLatest([
                 user.patreonToken ? this.http.get<any>(`https://us-central1-ffxivteamcraft.cloudfunctions.net/patreon-pledges?token=${user.patreonToken}`) : of(null),
-                user.tipeeeToken ? this.http.get<any>(`https://api.tipeee.com/v2.0/partners/tips?access_token=${user.tipeeeToken}&cache_bust=${Date.now()}`) : of(null)
+                user.tipeeeToken ? this.http.get<any>(`https://api.tipeee.com/v2.0/partners/tips?access_token=${user.tipeeeToken}`) : of(null)
               ]).pipe(
                 map(([patreon, tipeee]) => {
                   const patreonSupporter = patreon?.included?.some(e => e.attributes?.patron_status === 'active_patron');

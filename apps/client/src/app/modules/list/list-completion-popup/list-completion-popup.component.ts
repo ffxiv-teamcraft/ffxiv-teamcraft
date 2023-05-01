@@ -5,6 +5,7 @@ import { List } from '../model/list';
 import { Router } from '@angular/router';
 import { CommissionsFacade } from '../../commission-board/+state/commissions.facade';
 import { ListController } from '../list-controller';
+import { ListPricingService } from '../../../pages/list-details/list-pricing/list-pricing.service';
 
 @Component({
   selector: 'app-list-completion-popup',
@@ -16,7 +17,7 @@ export class ListCompletionPopupComponent {
   list: List;
 
   constructor(private ref: NzModalRef, private listsFacade: ListsFacade, private router: Router,
-              private commissionsFacade: CommissionsFacade) {
+              private commissionsFacade: CommissionsFacade, private listPricingService: ListPricingService) {
   }
 
   close(): void {
@@ -48,6 +49,8 @@ export class ListCompletionPopupComponent {
   clearList(): void {
     this.list.finalItems = [];
     this.list.items = [];
+    ListController.reset(this.list);
+    this.listPricingService.removeEntriesForList(this.list.$key);
     this.listsFacade.clearModificationsHistory(this.list.$key);
     this.listsFacade.updateList(this.list, true, true);
     this.close();

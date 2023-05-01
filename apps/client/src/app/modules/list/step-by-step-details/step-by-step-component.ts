@@ -1,7 +1,7 @@
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { BehaviorSubject, combineLatest, map, Observable } from 'rxjs';
 import { StepByStepDisplayData } from './step-by-step-display-data';
-import { filter, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, filter, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { DataType, getItemSource, Vector2 } from '@ffxiv-teamcraft/types';
 import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
 import { MapMarker } from '../../map/map-marker';
@@ -57,12 +57,14 @@ export abstract class StepByStepComponent extends TeamcraftComponent implements 
 
   ngOnInit(): void {
     this.stepByStep$ = combineLatest([
+      this.listsFacade.selectedList$,
       this.getDisplay(),
       this.settings.watchSetting('housingMap', this.settings.housingMap),
       this.lazyData.getEntry('maps')
     ]).pipe(
-      map(([display, housingMap, maps]) => {
-        return new StepByStepList(display, housingMap, maps);
+      debounceTime(10),
+      map(([list, display, housingMap, maps]) => {
+        return new StepByStepList(list, display, housingMap, maps, this.settings);
       }),
       switchMap(list => {
         return this.mapService.sortMapIdsByTpCost(list.maps).pipe(
