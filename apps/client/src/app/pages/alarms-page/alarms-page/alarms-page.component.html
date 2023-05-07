@@ -226,12 +226,12 @@
           <div *ngIf="row.alarm.mapId | closestAetheryte:row.alarm.coords | async as aetheryte">
             {{aetheryte.nameid | i18nRow:'places' | i18n}}
           </div>
-          <div>
+          <div *ngIf="row.alarm.spawns">
             <span *ngFor="let spawn of row.alarm.spawns; last as last">
               {{spawn}}:00 - {{(spawn + row.alarm.duration) % 24}}:00<span *ngIf="!last">,&nbsp;</span>
             </span>
           </div>
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div *ngIf="row.remainingTime" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <div [timerTooltip]="row.remainingTime">{{row.remainingTime | timer}}</div>
             <div *ngIf="row.alarm.nodeContent" [nzPopoverContent]="nodeContent"
                  [nzPopoverTitle]="'ALARMS.Node_content' | translate"
@@ -263,7 +263,7 @@
                 <i nz-icon nzType="right" theme="outline"></i>
               </div>
             </ng-container>
-            <div fxLayout="row wrap" fxLayoutGap="5px">
+            <div *ngIf="row.alarm.weathers" fxLayout="row wrap" fxLayoutGap="5px">
               <div *ngFor="let weather of row.alarm.weathers">
                 <img [nzTooltipTitle]="weather | i18nRow:'weathers' | i18n" [src]="weather | weatherIcon" alt="{{weather | i18nRow:'weathers' | i18n}}"
                      nz-tooltip>
@@ -383,7 +383,7 @@
                src="./assets/icons/status/snagging.png">
         </div>
         <div nz-col nzMd="2">
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div *ngIf="row.remainingTime" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <div [timerTooltip]="row.remainingTime">{{row.remainingTime | timer}}</div>
             <div *ngIf="row.alarm.nodeContent" [nzPopoverContent]="nodeContent"
                  [nzPopoverTitle]="'ALARMS.Node_content' | translate"

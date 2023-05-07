@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { combineLatest, Observable } from 'rxjs';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
-import { filter, map, shareReplay } from 'rxjs/operators';
+import { filter, map, shareReplay, startWith } from 'rxjs/operators';
 import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { NzModalRef } from 'ng-zorro-antd/modal';
@@ -137,8 +137,12 @@ export class CustomAlarmPopupComponent implements OnInit {
       }),
       filter(m => m !== undefined),
       map((m: { TerritoryType: { WeatherRate: number } }) => {
-        return _.uniq(weatherIndex[m.TerritoryType.WeatherRate].map(row => +row.weatherId)) as number[];
+        const defaultWeather = weatherIndex[m.TerritoryType.WeatherRate];
+        if (defaultWeather != undefined)  {
+          return _.uniq(defaultWeather.map(row => +row.weatherId)) as number[];
+        }
       }),
+      startWith([]),
       shareReplay({ bufferSize: 1, refCount: true })
     );
   }
