@@ -25,7 +25,7 @@ export class LayoutService extends FirestoreRelationalStorage<ListLayout> {
     layout.rows = [
       new LayoutRow('Timed nodes', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_TIMED.name,
         0, true, false, false, false, true, false, false, true, false, true),
-      new LayoutRow('Vendors ', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.CAN_BE_BOUGHT.name,
+      new LayoutRow('Vendors', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.CAN_BE_BOUGHT.name,
         1, false, true, false, false, true, false, false, true, false, true),
       new LayoutRow('Reducible', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_REDUCTION.name,
         2, false, false, false, false, true, false, false, true, false, true),
