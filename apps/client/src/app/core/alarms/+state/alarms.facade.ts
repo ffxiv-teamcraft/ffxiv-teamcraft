@@ -284,7 +284,8 @@ export class AlarmsFacade {
   }
 
   public createDisplayArray<T extends AlarmDetails | PersistedAlarm = PersistedAlarm>(alarms: T[], date: Date): AlarmDisplay<T>[] {
-    return this.sortAlarmDisplays(alarms.map(alarm => {
+    return this.sortAlarmDisplays(alarms.filter(alarm => alarm.spawns !== undefined || alarm.weathers !== undefined)
+      .map(alarm => {
         return this.createDisplay(alarm, date);
       }));
   }

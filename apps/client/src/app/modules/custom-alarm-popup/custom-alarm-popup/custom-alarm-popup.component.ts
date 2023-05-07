@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { combineLatest, Observable } from 'rxjs';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { filter, map, shareReplay, startWith } from 'rxjs/operators';
@@ -129,6 +129,19 @@ export class CustomAlarmPopupComponent implements OnInit {
       y: [this.y, [Validators.min(this.Y_VALIDATOR.min), Validators.max(this.Y_VALIDATOR.max)]],
       weathers: [this.weathers],
       weathersFrom: [this.weathersFrom]
+    }, {
+      validators: (control: AbstractControl) => {
+        const spawn = control.value.spawn;
+        const weather = (control.value.weathers && control.value.weathers.length > 0);
+        if (spawn || weather) {
+          return null;
+        }
+
+        return {
+          spawn: true,
+          weathers : true
+         };
+      }
     });
 
     this.mapWeathers$ = combineLatest([this.form.valueChanges, this.maps$]).pipe(
