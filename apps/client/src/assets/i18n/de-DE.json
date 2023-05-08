@@ -260,7 +260,9 @@
       "DELIVERIES_RESET": "Liefereinsätze",
       "DELIVERIES_RESET_DESCRIPTION": "Reset der Liefereinsätze der Staatlichen Gesellschaft",
       "LEVE_ALLOWANCES": "Verfügbare Freibriefe",
-      "LEVE_ALLOWANCES_DESCRIPTION": "Du erhältst 3 weitere Vollmachten"
+      "LEVE_ALLOWANCES_DESCRIPTION": "Du erhältst 3 weitere Vollmachten",
+      "OCEAN_FISHING" : "Ocean fishing",
+      "OCEAN_FISHING_DESCRIPTION" : "Ocean fishing will start."
     },
     "CUSTOM": {
       "Title": "Eigenen Alarm hinzufügen",

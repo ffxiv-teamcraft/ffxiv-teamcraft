@@ -260,7 +260,9 @@
       "DELIVERIES_RESET": "Entregas",
       "DELIVERIES_RESET_DESCRIPTION": "Reset das entregas da GC",
       "LEVE_ALLOWANCES": "Permissões de Leves",
-      "LEVE_ALLOWANCES_DESCRIPTION": "Recebe mais 3 permissões de Leves"
+      "LEVE_ALLOWANCES_DESCRIPTION": "Recebe mais 3 permissões de Leves",
+      "OCEAN_FISHING" : "Ocean fishing",
+      "OCEAN_FISHING_DESCRIPTION" : "Ocean fishing will start."
     },
     "CUSTOM": {
       "Title": "Adicionar alarme personalizado",

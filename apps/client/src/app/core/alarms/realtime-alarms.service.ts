@@ -17,11 +17,12 @@ import { addHours } from 'date-fns';
 @Injectable({ providedIn: 'root' })
 export class RealtimeAlarmsService {
 
-  public static readonly REAL_TIME_ALARMS: { [idnex: string]: RealtimeAlarm } = {
+  public static readonly REAL_TIME_ALARMS: { [index: string]: RealtimeAlarm } = {
     'WEEKLY_RESETS': new RealtimeAlarm([8], 'WEEKLY_RESETS', UtcDay.TUESDAY),
     'ROULETTES_RESET': new RealtimeAlarm([15], 'ROULETTES_RESET'),
     'DELIVERIES_RESET': new RealtimeAlarm([20], 'DELIVERIES_RESET'),
-    'LEVE_ALLOWANCES': new RealtimeAlarm([0, 12], 'LEVE_ALLOWANCES')
+    'LEVE_ALLOWANCES': new RealtimeAlarm([0, 12], 'LEVE_ALLOWANCES'),
+    'OCEAN_FISHING': new RealtimeAlarm(new Array(12).fill(null).map((_, i) => i * 2), 'OCEAN_FISHING')
   };
 
   private reloader$ = new BehaviorSubject(null);
@@ -116,7 +117,7 @@ export class RealtimeAlarmsService {
     nextIteration.setUTCSeconds(0);
     nextIteration.setUTCMilliseconds(0);
     nextIteration.setUTCHours(hour);
-    if (new Date().getUTCHours() > hour && day === undefined) {
+    if (new Date().getUTCHours() >= hour && day === undefined) {
       nextIteration = addHours(nextIteration, 24);
     }
     if (day !== undefined) {

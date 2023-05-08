@@ -252,7 +252,7 @@
     "Click_to_show_all_alarms": "Cliquez pour afficher toutes les alarmes",
     "Enable_TTS": "Activer la synthèse vocale",
     "REALTIME": {
-      "Reset_timers": "Remises à zéro",
+      "Reset_timers": "Rappels",
       "WEEKLY_RESETS": "Resets hebdos",
       "WEEKLY_RESETS_DESCRIPTION": "Commandes spéciales, Carnet de Khloé, Récompenses hebdomadaires (raids 24 joueurs, raids sadiques, raids 8 joueurs), Méga Cactpot, Carnet d'objectifs, Revue de Mode, Chasse Rang B.",
       "ROULETTES_RESET": "Roulettes et quêtes tribales",
@@ -260,7 +260,9 @@
       "DELIVERIES_RESET": "Livraisons",
       "DELIVERIES_RESET_DESCRIPTION": "Réinitialisation des livraisons de grande compagnie",
       "LEVE_ALLOWANCES": "Autorisations de mandats",
-      "LEVE_ALLOWANCES_DESCRIPTION": "Vous obtenez 3 nouvelles autorisations de mandats"
+      "LEVE_ALLOWANCES_DESCRIPTION": "Vous obtenez 3 nouvelles autorisations de mandats",
+      "OCEAN_FISHING" : "Pêche en mer",
+      "OCEAN_FISHING_DESCRIPTION" : "La pêche en mer va commencer."
     },
     "CUSTOM": {
       "Title": "Ajouter une alarme personnalisée",
