@@ -3,8 +3,6 @@ import { List } from '../../../modules/list/model/list';
 import { Inventory } from '../../../model/other/inventory';
 import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { NzMessageService } from 'ng-zorro-antd/message';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-inventory-view',
@@ -19,7 +17,7 @@ export class InventoryViewComponent {
 
   private list$: ReplaySubject<List> = new ReplaySubject<List>();
 
-  public constructor(private messageService: NzMessageService, private translate: TranslateService) {
+  public constructor() {
     this.display$ = combineLatest([this.list$, this.showFinalItems$]).pipe(
       tap(([, showFinal]) => {
         localStorage.setItem('inventory-view:show-final', showFinal.toString());
