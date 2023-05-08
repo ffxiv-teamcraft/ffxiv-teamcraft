@@ -41,6 +41,8 @@ function durationRequired(control: AbstractControl) {
 })
 export class AllaganReportDetailsComponent extends ReportsManagementComponent {
 
+  private reloader$ = new BehaviorSubject<void>(void 0);
+
   loadingReports = false;
 
   loadingReportsQueue = false;
@@ -67,7 +69,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     })
   );
 
-  itemDetails$ = this.itemId$.pipe(
+  itemDetails$ = this.reloader$.pipe(
+    switchMap(() => this.itemId$),
     tap(() => this.loadingReports = true),
     withLazyData(this.lazyData, 'fishes', 'fishingSpots', 'fishParameter'),
     switchMap(([itemId, fishes, fishingSpots, fishParameter]) => {
@@ -102,7 +105,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     tap(() => this.loadingReports = false)
   );
 
-  itemReportsQueue$ = this.itemId$.pipe(
+  itemReportsQueue$ = this.reloader$.pipe(
+    switchMap(() => this.itemId$),
     tap(() => this.loadingReportsQueue = true),
     switchMap(itemId => {
       return combineLatest([
@@ -399,6 +403,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
         return this.allaganReportsService.addReportToQueue(report);
       })
     ).subscribe(() => {
+      this.reloader$.next();
       this.message.success(this.translate.instant('ALLAGAN_REPORTS.Report_added'));
       this.form.reset();
     });
@@ -423,6 +428,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
         return this.allaganReportsService.suggestModification(reportId, report);
       })
     ).subscribe(() => {
+      this.reloader$.next();
       this.message.success(this.translate.instant('ALLAGAN_REPORTS.Modification_suggestion_submitted'));
       this.form.reset();
     });
@@ -436,16 +442,19 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     switch (entry.type) {
       case AllaganReportStatus.PROPOSAL:
         this.allaganReportsService.acceptProposal(entry).subscribe(() => {
+      this.reloader$.next();
           this.message.success(this.translate.instant('ALLAGAN_REPORTS.Proposal_accepted'));
         });
         break;
       case AllaganReportStatus.DELETION:
         this.allaganReportsService.acceptDeletion(entry).subscribe(() => {
+      this.reloader$.next();
           this.message.success(this.translate.instant('ALLAGAN_REPORTS.Report_deleted'));
         });
         break;
       case AllaganReportStatus.MODIFICATION:
         this.allaganReportsService.acceptModification(entry).subscribe(() => {
+      this.reloader$.next();
           this.message.success(this.translate.instant('ALLAGAN_REPORTS.Modification_applied'));
         });
         break;
@@ -454,18 +463,21 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
 
   reject(entry: AllaganReportQueueEntry): void {
     this.allaganReportsService.reject(entry).subscribe(() => {
+      this.reloader$.next();
       this.message.success(this.translate.instant('ALLAGAN_REPORTS.Proposal_rejected'));
     });
   }
 
   suggestDeletion(report: AllaganReport): void {
     this.allaganReportsService.suggestDeletion(report).subscribe(() => {
+      this.reloader$.next();
       this.message.success(this.translate.instant('ALLAGAN_REPORTS.Deletion_suggestion_submitted'));
     });
   }
 
   deleteOwnProposal(report: AllaganReportQueueEntry): void {
     this.allaganReportsService.reject(report).subscribe(() => {
+      this.reloader$.next();
       this.message.success(this.translate.instant('ALLAGAN_REPORTS.Proposal_rejected'));
     });
   }
