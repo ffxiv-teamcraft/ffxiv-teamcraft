@@ -24,7 +24,12 @@ export class WeatherService {
     if (this.getWeather(mapId, nextWeatherTime) !== currentWeather) {
       return nextWeatherTime;
     }
-    return this.getNextDiffWeatherTime(nextWeatherTime, currentWeather, mapId);
+
+    try {
+      return this.getNextDiffWeatherTime(nextWeatherTime, currentWeather, mapId);
+    } catch (maxCallStack) {
+      return null;
+    }
   }
 
   public getNextWeatherStart(mapId: number, weatherId: number, timestamp: number, transition: boolean, spawns?: number[], duration?: number, weatherRate?: any, iterations = 0): Date | null {
