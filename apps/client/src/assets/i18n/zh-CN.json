@@ -2783,6 +2783,9 @@
       "Speed": "巡航速度",
       "Range": "航行距离",
       "Favor": "恩惠"
+    },
+    "RANK_DETAILS": {
+      "Experience_Points": "Experience Points"
     }
   },
   "AIRSHIP": {

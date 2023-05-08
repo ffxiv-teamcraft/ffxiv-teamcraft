@@ -2783,6 +2783,9 @@
       "Speed": "순항 속도",
       "Range": "항속 거리",
       "Favor": "운"
+    },
+    "RANK_DETAILS": {
+      "Experience_Points": "Experience Points"
     }
   },
   "AIRSHIP": {
