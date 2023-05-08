@@ -373,6 +373,7 @@ export class ListController {
       if (requirementItem !== undefined) {
         return ListController.hasAllBaseIngredients(list, requirementItem, requirement.amount * item.amount_needed) && hasAllBaseIngredients;
       }
+      return hasAllBaseIngredients;
     }, true);
   }
 
@@ -448,6 +449,7 @@ export class ListController {
     if ((<any>list.name)?.name) {
       list.name = (<any>list.name).name;
     }
+    ListController.updateAllStatuses(list);
   }
 
   public static shouldIgnoreRequirements(list: List, array: 'items' | 'finalItems', itemId: number): boolean {
