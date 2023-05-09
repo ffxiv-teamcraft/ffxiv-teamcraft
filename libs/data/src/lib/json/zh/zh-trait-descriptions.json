@@ -618,7 +618,7 @@
     "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>冲击预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>震荡命中时"
   },
   "207": {
-    "zh": "自身发动的全部魔法的魔力消耗减少50%，且咏唱不会被敌人的攻击打断"
+    "zh": "自身发动的全部魔法的魔力消耗减少50%，且咏唱不会被敌人的攻击打断\n同时，王权剑追加以下效果\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击成功：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>神圣魔法效果提高<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>神圣魔法效果提高效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>下次发动圣灵或圣环不需要咏唱时间，同时威力提高\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>王权剑连击成功时"
   },
   "208": {
     "zh": "可以追加获得<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>剑气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>除居合术之外的战技命中时"
@@ -777,13 +777,13 @@
     "zh": "战女神之怒变为王权剑"
   },
   "261": {
-    "zh": "日珥斩可恢复魔力"
+    "zh": "日珥斩追加以下效果\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击成功：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>恢复自身魔力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击成功：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>神圣魔法效果提高<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>神圣魔法效果提高效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>下次发动圣灵或圣环不需要咏唱时间，同时威力提高\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>日珥斩连击成功时"
   },
   "262": {
     "zh": "盾阵的持续时间延长到6秒"
   },
   "263": {
-    "zh": "一定时间内，咏唱魔法不需要咏唱时间\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>安魂祈祷<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态中"
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>悔罪预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>安魂祈祷发动时"
   },
   "264": {
     "zh": "对自身附加3档的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>忠义之剑<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>王权剑连击成功时"
@@ -1104,7 +1104,7 @@
     "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>注药的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发炎的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>400\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>均衡注药的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>40"
   },
   "373": {
-    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>蛇刺<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最大档数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>3档\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>均衡诊断<UIGlow>01</UIGlow><UIForeground>01</UIForeground>因吸收到足够的伤害而消失时"
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>蛇刺<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最大档数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>3档\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>均衡诊断<UIGlow>01</UIGlow><UIForeground>01</UIForeground>或对自身附加的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>均衡预后<UIGlow>01</UIGlow><UIForeground>01</UIForeground>因吸收到足够的伤害而消失时"
   },
   "374": {
     "zh": "注药变为注药II\n发炎变为发炎II\n均衡注药变为均衡注药II\n同时，箭毒的威力提高到300"
@@ -1233,7 +1233,7 @@
     "zh": "深奥之灵变为偿赎剑"
   },
   "416": {
-    "zh": "同时为获得圣光幕帘防护罩的同伴恢复体力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>400"
+    "zh": "圣光幕帘发动时为目标恢复体力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>400"
   },
   "417": {
     "zh": "发动摆脱后，为目标恢复体力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>300"
@@ -1494,7 +1494,7 @@
     "zh": "发动部分技能后星极超流发生变化\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动火神召唤时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>星极超流变为深红旋风\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动黄宝石之仪与黄宝石灾变时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>星极超流变为山崩\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动风神召唤时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>星极超流变为螺旋气流"
   },
   "504": {
-    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>先锋剑的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>暴乱剑的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>170\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>王权剑的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>130\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>圣灵的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>赎罪剑的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>420"
+    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>先锋剑的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>暴乱剑的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>120\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>王权剑的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>120\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>圣灵的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>350\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>赎罪剑的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>380"
   },
   "505": {
     "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>重劈的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>凶残裂的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>150\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>暴风斩的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>150\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>暴风碎的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>150"
@@ -1533,7 +1533,7 @@
     "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>绝风的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>120\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>旋风刃的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>140\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>强甲破点突的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>140"
   },
   "517": {
-    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>热分裂弹的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>热独头弹的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>120\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>热狙击弹的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>110"
+    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>热分裂弹的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>热独头弹的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>120\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>热狙击弹的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>120"
   },
   "518": {
     "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>210\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>正拳的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>崩拳的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>250\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>双掌打的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>280\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>破碎拳的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>70\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>双龙脚的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>320\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>阴阳斗气斩的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>340\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>六合星导脚的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>550"

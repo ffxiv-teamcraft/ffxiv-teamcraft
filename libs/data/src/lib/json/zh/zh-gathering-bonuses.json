@@ -2459,6 +2459,16 @@
       "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
     }
   },
+  "253": {
+    "value": 2,
+    "conditionValue": 3950,
+    "bonus": {
+      "zh": "采集次数/耐久＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "获得力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
   "259": {
     "value": 10,
     "conditionValue": 165,
@@ -4247,6 +4257,46 @@
     },
     "condition": {
       "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "471": {
+    "value": 30,
+    "conditionValue": 3145,
+    "bonus": {
+      "zh": "额外采集奖励发生率＋<Value>IntegerParameter(1)</Value>%（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "475": {
+    "value": 1,
+    "conditionValue": 900,
+    "bonus": {
+      "zh": "采集次数/耐久＋<Value>IntegerParameter(1)</Value>次"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "477": {
+    "value": 30,
+    "conditionValue": 3230,
+    "bonus": {
+      "zh": "额外采集奖励发生率＋<Value>IntegerParameter(1)</Value>%（上升型）"
+    },
+    "condition": {
+      "zh": "鉴别力 <Value>IntegerParameter(1)</Value>以上"
+    }
+  },
+  "481": {
+    "value": 2,
+    "conditionValue": 850,
+    "bonus": {
+      "zh": "采集次数/耐久＋<Value>IntegerParameter(1)</Value>次（上升型）"
+    },
+    "condition": {
+      "zh": "采集力上限 <Value>IntegerParameter(1)</Value>以上"
     }
   },
   "494": {
