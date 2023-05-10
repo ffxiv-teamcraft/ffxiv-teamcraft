@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [10.4.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.10...v10.4.11) (2023-05-10)
+
+
+### Features
+
+* **add-reminder-for-ocean-fishing:** add a new reminder for ocean fishing every two hours ([b5980ec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b5980eca67f889f1107d2fff77518d162db549a9))
+* **data:** update for cn patch-6.3 ([03884a9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/03884a99ed039c72df6ef457d93db67c0af3ede6))
+
+
+### Bug Fixes
+
+* **allagan-reports:** fixed details page not loading ([82a5f50](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/82a5f5069d4487fa39401f8bd692147ebe9d4048))
+* **custom-alarm-without-weather:** custom alarm without weather are now properly displayed ([823bc27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/823bc27b867f9c01a61c961f61383c1cdad8691c))
+* **custom-alarm-without-weather:** custom alarm without weather are now properly displayed ([66066fa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/66066fa88788ddbb9d379c9e3d70379add842f7b))
+* **list:** fixed dotted "has all base ingredients" line not showing when it should ([8658002](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8658002a51439ad82e8063611756993afb9b348b))
+* **list:** fixed inventory view showing 999 as 0 instead ([8c33e70](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8c33e7020393a63abcfa1be220003c5416bde338))
+* **safe-next-weather-transition:** make safe the next diff weather time ([6e9eed7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6e9eed7b427afec8e7a95402e0fd6e934675b1d5))
+* **translation:** remove blank space to allow word translation ([f8c44c7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f8c44c779d8428e91dcd793214314e0a14495881))
+* **voyage-tracker:** display rank when at max rank ([b08bff5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b08bff5d5dcd40f3bfe120407637cd0947d73fa3))
+
 ### [10.4.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.9...v10.4.10) (2023-05-01)
 
 
