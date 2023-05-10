@@ -260,7 +260,9 @@
       "DELIVERIES_RESET": "Доставки",
       "DELIVERIES_RESET_DESCRIPTION": "Сброс доставок для Grand Company",
       "LEVE_ALLOWANCES": "Разрешения ливквестов",
-      "LEVE_ALLOWANCES_DESCRIPTION": "Вы получите 3 разрешения для ливквестов"
+      "LEVE_ALLOWANCES_DESCRIPTION": "Вы получите 3 разрешения для ливквестов",
+      "OCEAN_FISHING" : "Ocean fishing",
+      "OCEAN_FISHING_DESCRIPTION" : "Ocean fishing will start."
     },
     "CUSTOM": {
       "Title": "Добавить настраиваемое оповещение",
