@@ -261,8 +261,8 @@
       "DELIVERIES_RESET_DESCRIPTION": "Réinitialisation des livraisons de grande compagnie",
       "LEVE_ALLOWANCES": "Autorisations de mandats",
       "LEVE_ALLOWANCES_DESCRIPTION": "Vous obtenez 3 nouvelles autorisations de mandats",
-      "OCEAN_FISHING" : "Pêche en mer",
-      "OCEAN_FISHING_DESCRIPTION" : "La pêche en mer va commencer."
+      "OCEAN_FISHING": "Pêche en mer",
+      "OCEAN_FISHING_DESCRIPTION": "La pêche en mer va commencer."
     },
     "CUSTOM": {
       "Title": "Ajouter une alarme personnalisée",
