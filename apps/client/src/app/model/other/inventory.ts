@@ -23,7 +23,7 @@ export class Inventory {
     for (let stack = 1; stack <= stacks; stack++) {
       let stackAmount = stackSize;
       // If it's the last stack, get the remaining items.
-      if (stack === stacks) {
+      if (stack === stacks && amount > stackSize) {
         stackAmount = amount % stackSize;
       }
       this.grid[this.nextFreeSlot] = { id: id, icon: icon, amount: stackAmount };

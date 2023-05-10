@@ -260,7 +260,9 @@
       "DELIVERIES_RESET": "军团筹备",
       "DELIVERIES_RESET_DESCRIPTION": "军团筹备CD刷新倒计时",
       "LEVE_ALLOWANCES": "理符受理限额",
-      "LEVE_ALLOWANCES_DESCRIPTION": "您将获得3个新的理符受理限额"
+      "LEVE_ALLOWANCES_DESCRIPTION": "您将获得3个新的理符受理限额",
+      "OCEAN_FISHING" : "Ocean fishing",
+      "OCEAN_FISHING_DESCRIPTION" : "Ocean fishing will start."
     },
     "CUSTOM": {
       "Title": "添加自定义闹钟",
@@ -2783,6 +2785,9 @@
       "Speed": "巡航速度",
       "Range": "航行距离",
       "Favor": "恩惠"
+    },
+    "RANK_DETAILS": {
+      "Experience_Points": "Experience Points"
     }
   },
   "AIRSHIP": {

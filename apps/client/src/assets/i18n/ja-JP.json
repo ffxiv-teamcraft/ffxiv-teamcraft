@@ -260,7 +260,9 @@
       "DELIVERIES_RESET": "調達依頼",
       "DELIVERIES_RESET_DESCRIPTION": "調達任務リセット",
       "LEVE_ALLOWANCES": "リーヴ受注権",
-      "LEVE_ALLOWANCES_DESCRIPTION": "リーヴ受注権3枚獲得"
+      "LEVE_ALLOWANCES_DESCRIPTION": "リーヴ受注権3枚獲得",
+      "OCEAN_FISHING" : "Ocean fishing",
+      "OCEAN_FISHING_DESCRIPTION" : "Ocean fishing will start."
     },
     "CUSTOM": {
       "Title": "カスタムアラームを追加する",
@@ -2783,6 +2785,9 @@
       "Speed": "Speed",
       "Range": "Range",
       "Favor": "Favor"
+    },
+    "RANK_DETAILS": {
+      "Experience_Points": "Experience Points"
     }
   },
   "AIRSHIP": {

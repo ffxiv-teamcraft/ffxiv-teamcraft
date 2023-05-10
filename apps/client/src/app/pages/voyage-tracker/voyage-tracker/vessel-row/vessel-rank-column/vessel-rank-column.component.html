@@ -1,8 +1,12 @@
-<div *ngIf="rank > 0 && rank < maxRank" nz-popover
+<div *ngIf="rank > 0 && rank < maxRank; else noPopover" nz-popover
      [nzPopoverTitle]="voyageRankTitle"
      [nzPopoverContent]="voyageRankContent">
   {{ rank }} / {{ maxRank }}
 </div>
+
+<ng-template #noPopover>
+  {{ rank }} / {{ maxRank }}
+</ng-template>
 
 <ng-template #voyageRankTitle>
   <div style="text-align: center">{{ 'VOYAGE_TRACKER.RANK_DETAILS.Experience_Points' | translate }}</div>
