@@ -1923,6 +1923,12 @@
       "hookset": 1,
       "tug": 0,
       "bait": 4872,
+      "weathers": [
+        1,
+        2,
+        4,
+        3
+      ],
       "snagging": false,
       "minGathering": 0
     }
@@ -8009,7 +8015,7 @@
       "hookset": 1,
       "tug": 1,
       "bait": 4937,
-      "spawn": 21,
+      "spawn": 20,
       "duration": 7,
       "weathers": [
         1,
@@ -8204,10 +8210,6 @@
       "spawn": 19,
       "duration": 7,
       "weathers": [
-        1,
-        2
-      ],
-      "weathersFrom": [
         1,
         2
       ],
@@ -9947,7 +9949,7 @@
       "tug": 0,
       "bait": 12754,
       "spawn": 18,
-      "duration": 11,
+      "duration": 12,
       "snagging": false,
       "minGathering": 0
     }
@@ -10094,7 +10096,7 @@
       "tug": 0,
       "bait": 12715,
       "spawn": 8,
-      "duration": 9,
+      "duration": 10,
       "snagging": false,
       "minGathering": 0
     }
@@ -10182,7 +10184,7 @@
       "tug": 1,
       "bait": 12711,
       "spawn": 18,
-      "duration": 8,
+      "duration": 9,
       "weathers": [
         3
       ],
@@ -10596,7 +10598,7 @@
       "tug": 1,
       "bait": 12754,
       "spawn": 9,
-      "duration": 7,
+      "duration": 8,
       "weathers": [
         1,
         2
@@ -10748,7 +10750,7 @@
       "tug": 0,
       "bait": 12711,
       "spawn": 0,
-      "duration": 5,
+      "duration": 6,
       "weathers": [
         3,
         4
@@ -11216,12 +11218,12 @@
       "tug": 1,
       "bait": 12715,
       "spawn": 10,
-      "duration": 6,
+      "duration": 8,
       "weathers": [
         16
       ],
       "snagging": false,
-      "minGathering": 720
+      "minGathering": 700
     }
   ],
   "16747": [
@@ -11237,7 +11239,8 @@
       ],
       "weathersFrom": [
         3,
-        11
+        11,
+        4
       ],
       "snagging": false,
       "minGathering": 720
@@ -13854,7 +13857,8 @@
       "bait": 20127,
       "weathers": [
         4,
-        3
+        3,
+        5
       ],
       "snagging": false,
       "minGathering": 0
