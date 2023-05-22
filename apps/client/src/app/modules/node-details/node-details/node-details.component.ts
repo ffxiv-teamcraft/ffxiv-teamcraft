@@ -19,8 +19,6 @@ export class NodeDetailsComponent {
 
   OceanFishingTime = OceanFishingTime;
 
-  alarmsLoaded$: Observable<boolean> = this.alarmsFacade.loaded$;
-
   alarms$: Observable<PersistedAlarm[]> = this.alarmsFacade.allAlarms$;
 
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
