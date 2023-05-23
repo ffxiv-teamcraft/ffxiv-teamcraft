@@ -11,7 +11,7 @@ export class IslandWorkshopSimulator {
 
   constructor(private supply: LazyData['islandSupply'], private workshops: number, landmarks: number, private workshopLevel: number) {
     this.maxGroove = [
-      10, 15, 20, 25, 35
+      10, 15, 20, 25, 35, 45
     ][landmarks] || 0;
     this.workshopRankRatio = (IslandWorkshopSimulator.RANK_RATIO[workshopLevel] || 100) / 100;
   }
@@ -44,7 +44,7 @@ export class IslandWorkshopSimulator {
         * (isEfficient ? 2 : 1);
       const hasGroove = day.planning[i + 1] && day.planning[i + 1].id !== object.id && day.planning[i + 1].craftworksEntry.themes.some(t => object.craftworksEntry.themes.includes(t));
       if (hasGroove) {
-        acc.groove = Math.min(this.maxGroove, acc.groove + 3);
+        acc.groove = Math.min(this.maxGroove, acc.groove + this.workshops);
       }
       acc.score += score;
       return acc;

@@ -34,8 +34,8 @@ export interface Fish {
   id:         number;
   itemId:     number;
   level:      number;
-  timed?:     boolean;
-  weathered?: boolean;
+  timed?:     boolean | number;
+  weathered?: number;
 }
 
 export interface Datum {

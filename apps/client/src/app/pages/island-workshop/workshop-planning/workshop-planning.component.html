@@ -60,16 +60,12 @@
     {{totalScore | number:'1.0-0':translate.currentLang}}
   </div>
   <div>
-    <nz-input-group nzSearch [nzAddOnBefore]="'ISLAND_SANCTUARY.WORKSHOP.Amount_of_workshops' | translate" [nzAddOnAfter]="createListButton">
-      <nz-input-number [(ngModel)]="workshops"></nz-input-number>
-      <ng-template #createListButton>
-        <button nz-button (click)="createList(planning)" nzSearch nzType="primary">{{'ISLAND_SANCTUARY.WORKSHOP.Create_list' | translate}}</button>
-      </ng-template>
-    </nz-input-group>
+    <button nz-button (click)="createList(planning)" nzType="primary">{{'ISLAND_SANCTUARY.WORKSHOP.Create_list' | translate}}</button>
   </div>
 </div>
 <div class="credits">
-  <em>Kudos to the <a href="https://discord.gg/overseascasuals" target="_blank">Overseas Casuals</a> team for the research, data and contribution to this solver.
+  <em>Kudos to the <a href="https://discord.gg/overseascasuals" target="_blank">Overseas Casuals</a> team for the research, data and contribution to this
+    solver.
     Support
     them on ko-fi <a href="https://ko-fi.com/leitongrey">here</a>.</em>
 </div>
