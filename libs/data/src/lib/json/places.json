@@ -25768,5 +25768,527 @@
     "ja": "ラピス・マナリス",
     "de": "Lapis Manalis",
     "fr": "Lapis Manalis"
+  },
+  "4296": {
+    "en": "The Voidcast Dais",
+    "ja": "立方魔法陣",
+    "de": "Krone der Schatten",
+    "fr": "Hypercube de Golbez"
+  },
+  "4297": {
+    "en": "The Aetherfont",
+    "ja": "ハーム島",
+    "de": "Haam",
+    "fr": "Île de Haam"
+  },
+  "4298": {
+    "en": "Ice Field",
+    "ja": "流氷帯",
+    "de": "Eisscholl-Atoll",
+    "fr": "Banquise de mer"
+  },
+  "4299": {
+    "en": "Isle of Haam",
+    "ja": "ハーム島",
+    "de": "Haam",
+    "fr": "Île de Haam"
+  },
+  "4300": {
+    "en": "The Aetherfont",
+    "ja": "星霊間欠泉群",
+    "de": "Geysirgrund",
+    "fr": "Geysers d'éther"
+  },
+  "4301": {
+    "en": "Landfast Floe",
+    "ja": "流氷の円庭",
+    "de": "Raureif-Rondell",
+    "fr": "Cirque glacé"
+  },
+  "4302": {
+    "en": "Cyancap Cavern",
+    "ja": "シアンキャップ中継地",
+    "de": "Zyanspitze",
+    "fr": "Caverne de Cap-cyan"
+  },
+  "4303": {
+    "en": "The Deep Below",
+    "ja": "エーテリックポンド",
+    "de": "Ätherpfuhl",
+    "fr": "Bassin éthéré"
+  },
+  "4304": {
+    "en": "Ice Field",
+    "ja": "流氷帯",
+    "de": "Eisscholl-Atoll",
+    "fr": "Banquise de mer"
+  },
+  "4305": {
+    "en": "Isle of Haam",
+    "ja": "ハーム島",
+    "de": "Haam",
+    "fr": "Île de Haam"
+  },
+  "4306": {
+    "en": "The Aetherfont",
+    "ja": "星霊間欠泉群",
+    "de": "Geysirgrund",
+    "fr": "Geysers d'éther"
+  },
+  "4307": {
+    "en": "The Chamber of Fourteen",
+    "ja": "十四座の間",
+    "de": "Halle der Vierzehn Sitze",
+    "fr": "Prétoire des Quatorze"
+  },
+  "4308": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4309": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4310": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4311": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4312": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4313": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4314": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4315": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4316": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4317": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4318": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4319": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4320": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4321": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4322": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4323": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4324": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4325": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4326": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4327": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4328": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4329": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4330": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4331": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4332": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4333": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4334": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4335": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4336": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4337": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4338": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4339": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4340": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4341": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4342": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4343": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4344": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4345": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4346": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4347": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4348": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4349": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4350": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4351": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4352": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4353": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4354": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4355": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4356": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4357": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4358": {
+    "en": "The Aetherial Slough",
+    "ja": "星海滞留域",
+    "de": "Sphäre des Pandæmoniums",
+    "fr": "Nappe stagnante"
+  },
+  "4359": {
+    "en": "Mountain Hollow",
+    "ja": "とんがり山の洞窟",
+    "de": "Piz Paradiesgrotte",
+    "fr": "Caverne du pic acéré"
+  },
+  "4360": {
+    "en": "Surface Terrain",
+    "ja": "陸上",
+    "de": "Inselparadies",
+    "fr": "Surface"
+  },
+  "4361": {
+    "en": "Cave System",
+    "ja": "洞窟",
+    "de": "Höhlensystem",
+    "fr": "Cavernes"
+  },
+  "4362": {
+    "en": "The Dæmons' Nest",
+    "ja": "万魔の産屋",
+    "de": "Dæmonisches Nest",
+    "fr": "Maternité démoniaque"
+  },
+  "4363": {
+    "en": "The Sirensong Sea",
+    "ja": "セイレーン海",
+    "de": "Sirenen-See",
+    "fr": "Mer du Chant des sirènes"
+  },
+  "4364": {
+    "en": "Kugane",
+    "ja": "クガネ",
+    "de": "Kugane-Gewässer",
+    "fr": "Baie de Kugane"
+  },
+  "4365": {
+    "en": "The Ruby Sea",
+    "ja": "紅玉海",
+    "de": "Rubinsee",
+    "fr": "Mer de Rubis"
+  },
+  "4366": {
+    "en": "The One River",
+    "ja": "無二江",
+    "de": "Einzig",
+    "fr": "Muni"
+  },
+  "4367": {
+    "en": "Open Sirensong Sea",
+    "ja": "セイレーン海沖合",
+    "de": "Sirenen-See - Hochsee",
+    "fr": "Large de la Mer du Chant des sirènes"
+  },
+  "4368": {
+    "en": "Sirensong Spectral Current",
+    "ja": "セイレーン海沖合：幻海流",
+    "de": "Sirenen-See - Phantomströmung",
+    "fr": "Courant spectral (large de la Mer du Chant des sirènes)"
+  },
+  "4369": {
+    "en": "Kugane Coast",
+    "ja": "クガネ沖合",
+    "de": "Kugane-Küste",
+    "fr": "Large de la baie de Kugane"
+  },
+  "4370": {
+    "en": "Kugane Spectral Current",
+    "ja": "クガネ沖合：幻海流",
+    "de": "Kugane-Küste - Phantomströmung",
+    "fr": "Courant spectral (large de la baie de Kugane)"
+  },
+  "4371": {
+    "en": "Open Ruby Sea",
+    "ja": "紅玉海沖合",
+    "de": "Rubinsee - Hochsee",
+    "fr": "Large de la Mer de Rubis"
+  },
+  "4372": {
+    "en": "Ruby Spectral Current",
+    "ja": "紅玉海沖合：幻海流",
+    "de": "Rubinsee - Phantomströmung",
+    "fr": "Courant spectral (large de la Mer de Rubis)"
+  },
+  "4373": {
+    "en": "Lower One River",
+    "ja": "無二江下流",
+    "de": "Einzig (Unterlauf)",
+    "fr": "Aval de la Muni"
+  },
+  "4374": {
+    "en": "One River Spectral Current",
+    "ja": "無二江下流：幻海流",
+    "de": "Einzig - Phantomströmung",
+    "fr": "Courant spectral (aval de la Muni)"
+  },
+  "4375": {
+    "en": "Ascension",
+    "ja": "神の座",
+    "de": "Göttlicher Thron",
+    "fr": "Trône divin"
+  },
+  "4376": {
+    "en": "Apex of Creation",
+    "ja": "創造世界",
+    "de": "Erschaffene Welt",
+    "fr": "Monde fantasmé"
+  },
+  "4377": {
+    "en": "The Gilded Araya",
+    "ja": "アラヤの宝塔",
+    "de": "Arayas Palast",
+    "fr": "Temple d'Araya"
+  },
+  "4378": {
+    "en": "Spriggan's Delight",
+    "ja": "魔石の鉱脈",
+    "de": "Funkelsteinstollen",
+    "fr": "Filon de magilithes"
+  },
+  "4379": {
+    "en": "Shiny Spring",
+    "ja": "つらら洞",
+    "de": "Spitzsteinbau",
+    "fr": "Grotte aux stalactites"
+  },
+  "4380": {
+    "en": "Estinien's Chambers",
+    "ja": "エスティニアンの客室",
+    "de": "Estiniens Räumlichkeiten",
+    "fr": "Chambre d'Estinien"
+  },
+  "4381": {
+    "en": "Senatus",
+    "ja": "セナトゥス駅",
+    "de": "Senatus",
+    "fr": "Gare de Senatus"
+  },
+  "4382": {
+    "en": "The Red Moon",
+    "ja": "赤き月",
+    "de": "Roter Mond",
+    "fr": "Lune rouge"
   }
 }

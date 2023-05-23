@@ -6545,10 +6545,10 @@
     "fr": "Actions améliorées",
     "icon": "/i/006000/006801.png",
     "description": {
-      "en": "Increases the potency of <span style=\"color:#ff7b1a\">Fast Blade</span> to 200, <span style=\"color:#ff7b1a\">Riot Blade</span> to 120, <span style=\"color:#ff7b1a\">Royal Authority</span> to 120, <span style=\"color:#ff7b1a\">Holy Spirit</span> to 350, and <span style=\"color:#ff7b1a\">Atonement</span> to 380.",
-      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffbfff\">Vortexschnitt</span>: 200<br>Attacke-Wert von <span style=\"color:#ffbfff\">Donnerklinge</span>: 120<br>Attacke-Wert von <span style=\"color:#ffbfff\">Königsklinge</span>: 120<br>Attacke-Wert von <span style=\"color:#ffbfff\">Heiliger Geist</span>: 350<br>Attacke-Wert von <span style=\"color:#ffbfff\">Absolution</span>: 380",
-      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffcc22\">ファストブレードの威力：</span>200<br><span style=\"color:#ffcc22\">ライオットソードの威力：</span>120<br><span style=\"color:#ffcc22\">ロイヤルアソリティの威力：</span>120<br><span style=\"color:#ffcc22\">ホーリースピリットの威力：</span>350<br><span style=\"color:#ffcc22\">ロイエの威力：</span>380",
-      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffff66\">Puissance de Lame rapide&nbsp;:</span> 200<br><span style=\"color:#ffff66\">Puissance de Lame déchaînée&nbsp;:</span> 120<br><span style=\"color:#ffff66\">Puissance d'Autorité royale&nbsp;:</span> 120<br><span style=\"color:#ffff66\">Puissance d'Esprit saint&nbsp;:</span> 350<br><span style=\"color:#ffff66\">Puissance d'Absolution&nbsp;:</span> 380"
+      "en": "Increases the potency of <span style=\"color:#ff7b1a\">Fast Blade</span> to 200, <span style=\"color:#ff7b1a\">Riot Blade</span> to 140, <span style=\"color:#ff7b1a\">Royal Authority</span> to 140, <span style=\"color:#ff7b1a\">Holy Spirit</span> to 350, and <span style=\"color:#ff7b1a\">Atonement</span> to 400.",
+      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffbfff\">Vortexschnitt</span>: 200<br>Attacke-Wert von <span style=\"color:#ffbfff\">Donnerklinge</span>: 140<br>Attacke-Wert von <span style=\"color:#ffbfff\">Königsklinge</span>: 140<br>Attacke-Wert von <span style=\"color:#ffbfff\">Heiliger Geist</span>: 350<br>Attacke-Wert von <span style=\"color:#ffbfff\">Absolution</span>: 400",
+      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffcc22\">ファストブレードの威力：</span>200<br><span style=\"color:#ffcc22\">ライオットソードの威力：</span>140<br><span style=\"color:#ffcc22\">ロイヤルアソリティの威力：</span>140<br><span style=\"color:#ffcc22\">ホーリースピリットの威力：</span>350<br><span style=\"color:#ffcc22\">ロイエの威力：</span>400",
+      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffff66\">Puissance de Lame rapide&nbsp;:</span> 200<br><span style=\"color:#ffff66\">Puissance de Lame déchaînée&nbsp;:</span> 140<br><span style=\"color:#ffff66\">Puissance d'Autorité royale&nbsp;:</span> 140<br><span style=\"color:#ffff66\">Puissance d'Esprit saint&nbsp;:</span> 350<br><span style=\"color:#ffff66\">Puissance d'Absolution&nbsp;:</span> 400"
     }
   },
   "505": {
@@ -6558,10 +6558,10 @@
     "fr": "Actions améliorées",
     "icon": "/i/006000/006801.png",
     "description": {
-      "en": "Increases the potency of <span style=\"color:#ff7b1a\">Heavy Swing</span> to 200, <span style=\"color:#ff7b1a\">Maim</span> to 150, <span style=\"color:#ff7b1a\">Storm's Path</span> to 150, and <span style=\"color:#ff7b1a\">Storm's Eye</span> to 150.",
-      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffbfff\">Gewaltiger Hieb</span>: 200<br>Attacke-Wert von <span style=\"color:#ffbfff\">Verstümmelung</span>: 150<br>Attacke-Wert von <span style=\"color:#ffbfff\">Sturmkeil</span>: 150<br>Attacke-Wert von <span style=\"color:#ffbfff\">Sturmbrecher</span>: 150",
-      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffcc22\">ヘヴィスウィングの威力：</span>200<br><span style=\"color:#ffcc22\">メイムの威力：</span>150<br><span style=\"color:#ffcc22\">シュトルムヴィントの威力：</span>150<br><span style=\"color:#ffcc22\">シュトルムブレハの威力：</span>150",
-      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffff66\">Puissance de Coup puissant&nbsp;:</span> 200<br><span style=\"color:#ffff66\">Puissance de Mutilation&nbsp;:</span> 150<br><span style=\"color:#ffff66\">Puissance de Couperet de justice&nbsp;:</span> 150<br><span style=\"color:#ffff66\">Puissance d'Œil de la tempête&nbsp;:</span> 150"
+      "en": "Increases the potency of <span style=\"color:#ff7b1a\">Heavy Swing</span> to 200, <span style=\"color:#ff7b1a\">Maim</span> to 150, <span style=\"color:#ff7b1a\">Storm's Path</span> to 160, and <span style=\"color:#ff7b1a\">Storm's Eye</span> to 160.",
+      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffbfff\">Gewaltiger Hieb</span>: 200<br>Attacke-Wert von <span style=\"color:#ffbfff\">Verstümmelung</span>: 150<br>Attacke-Wert von <span style=\"color:#ffbfff\">Sturmkeil</span>: 160<br>Attacke-Wert von <span style=\"color:#ffbfff\">Sturmbrecher</span>: 160",
+      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffcc22\">ヘヴィスウィングの威力：</span>200<br><span style=\"color:#ffcc22\">メイムの威力：</span>150<br><span style=\"color:#ffcc22\">シュトルムヴィントの威力：</span>160<br><span style=\"color:#ffcc22\">シュトルムブレハの威力：</span>160",
+      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffff66\">Puissance de Coup puissant&nbsp;:</span> 200<br><span style=\"color:#ffff66\">Puissance de Mutilation&nbsp;:</span> 150<br><span style=\"color:#ffff66\">Puissance de Couperet de justice&nbsp;:</span> 160<br><span style=\"color:#ffff66\">Puissance d'Œil de la tempête&nbsp;:</span> 160"
     }
   },
   "506": {
@@ -6584,10 +6584,10 @@
     "fr": "Actions améliorées",
     "icon": "/i/006000/006801.png",
     "description": {
-      "en": "Increases the potency of <span style=\"color:#ff7b1a\">Keen Edge</span> to 170, <span style=\"color:#ff7b1a\">Brutal Shell</span> to 130, and <span style=\"color:#ff7b1a\">Solid Barrel</span> to 140.",
-      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffbfff\">Zerfetzer</span>: 170<br>Attacke-Wert von <span style=\"color:#ffbfff\">Brutaler Einschlag</span>: 130<br>Attacke-Wert von <span style=\"color:#ffbfff\">Stahlwalze</span>: 140",
-      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffcc22\">キーンエッジの威力：</span>170<br><span style=\"color:#ffcc22\">ブルータルシェルの威力：</span>130<br><span style=\"color:#ffcc22\">ソリッドバレルの威力：</span>140",
-      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffff66\">Puissance de Tranchant acéré&nbsp;:</span> 170<br><span style=\"color:#ffff66\">Puissance d'Impact brutal&nbsp;:</span> 130<br><span style=\"color:#ffff66\">Puissance de Salve tranchante&nbsp;:</span> 140"
+      "en": "Increases the potency of <span style=\"color:#ff7b1a\">Keen Edge</span> to 200, <span style=\"color:#ff7b1a\">Brutal Shell</span> to 160, and <span style=\"color:#ff7b1a\">Solid Barrel</span> to 140.",
+      "de": "Erhöht den Attacke-Wert folgender Kommandos:<br>Attacke-Wert von <span style=\"color:#ffbfff\">Zerfetzer</span>: 200<br>Attacke-Wert von <span style=\"color:#ffbfff\">Brutaler Einschlag</span>: 160<br>Attacke-Wert von <span style=\"color:#ffbfff\">Stahlwalze</span>: 140",
+      "ja": "特定のアクションの威力を上昇させる。<br><br><span style=\"color:#ffcc22\">キーンエッジの威力：</span>200<br><span style=\"color:#ffcc22\">ブルータルシェルの威力：</span>160<br><span style=\"color:#ffcc22\">ソリッドバレルの威力：</span>140",
+      "fr": "Augmente la puissance de certaines actions.<br><br><span style=\"color:#ffff66\">Puissance de Tranchant acéré&nbsp;:</span> 200<br><span style=\"color:#ffff66\">Puissance d'Impact brutal&nbsp;:</span> 160<br><span style=\"color:#ffff66\">Puissance de Salve tranchante&nbsp;:</span> 140"
     }
   },
   "508": {
@@ -6610,10 +6610,10 @@
     "fr": "Énochien amélioré III",
     "icon": "/i/005000/005374.png",
     "description": {
-      "en": "Improves <span style=\"color:#ffff66\">Enochian</span>'s magic damage increase to 21%.",
-      "de": "Erhöht den Effekt von <span style=\"color:#ffff66\">Henochisch</span> auf 21&nbsp;%.",
-      "ja": "エノキアンの効果量を21％に上昇させる。",
-      "fr": "Augmente l'effet <span style=\"color:#ff7b1a\">Énochien</span> à 21%."
+      "en": "Improves <span style=\"color:#ffff66\">Enochian</span>'s magic damage increase to 23%.",
+      "de": "Erhöht den Effekt von <span style=\"color:#ffff66\">Henochisch</span> auf 23&nbsp;%.",
+      "ja": "エノキアンの効果量を23％に上昇させる。",
+      "fr": "Augmente l'effet <span style=\"color:#ff7b1a\">Énochien</span> à 23%."
     }
   },
   "510": {
@@ -6877,6 +6877,227 @@
     }
   },
   "530": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "531": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "532": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "533": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "534": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "535": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "536": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "537": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "538": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "539": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "540": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "541": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "542": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "543": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "544": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "545": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "546": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "547": {
     "en": "",
     "de": "",
     "ja": "",

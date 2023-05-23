@@ -1230,7 +1230,7 @@
     "de": "Pharos Sirius (schwer)",
     "fr": "le Phare de Sirius (brutal)",
     "description": {
-      "en": "Pharos Sirius, the pride of Limsa Lominsa, is yet again in peril. The fine men and women of Naldiq and Vymelli's were restoring the interior when they were taken by surprise by a pack of kobolds and their explosive arsenal. Barely escaping with their lives, the smiths sounded the alarum on the worrying plethora of bombs scattered throughout the lighthouse. Maelstrom Command enlists your aid, but proceed with caution—with one misplaced explosion, Pharos Sirius could be blown to smithereens!",
+      "en": "Pharos Sirius, the pride of Limsa Lominsa, is yet again in peril. The fine men and women of Naldiq & Vymelli's were restoring the interior when they were taken by surprise by a pack of kobolds and their explosive arsenal. Barely escaping with their lives, the smiths sounded the alarum on the worrying plethora of bombs scattered throughout the lighthouse. Maelstrom Command enlists your aid, but proceed with caution—with one misplaced explosion, Pharos Sirius could be blown to smithereens!",
       "ja": "再建作業が続くシリウス大灯台に、突如としてコボルド族の軍勢が乱入してきた。驚いたことに、オ・ゴモロ山中から地下坑道を掘り進め、地中深くを進んでやって来たようだ。命からがら脱出してきた作業員たちからの通報を受け、黒渦団が直ちに対策に動き出す。かつてシリウス大灯台から脅威を払いのけた冒険者たちを集め、飛空艇により最上層から送り込む。決死の灯台制圧作戦が今、始まる！",
       "de": "Der noch immer in Renovierung begriffene Pharos Sirius wurde von Kobolden eingenommen! Von O'Ghomoro aus haben sie sich - dem Mahlstrom völlig unbemerkt - bis unterhalb des Leuchtturms vorgegraben. Die in Panik geflüchteten Techniker berichten von großen Mengen Sprengstoff. Du hast den Turm schon einmal von der Sirene befreit - nun sollst du es mit deinen Kameraden erneut vollbringen. Steigt von oben in den Leuchtturm ein und bringt ihn unter eure Kontrolle!",
       "fr": "La nouvelle est tombée comme un couperet &nbsp;: les Kobolds ont envahi le Phare de Sirius. D'après les témoignages des ouvriers qui ont survécu à l'assaut, les hommes-taupes auraient rassemblé des dizaines de bombos dans la galerie qu'ils ont creusée sous l'édifice. L'état-major du Maelstrom redoute qu'ils ne cherchent à faire sauter le phare pour couper la voie de ravitaillement principale des forces déployées dans la Noscea occidentale. Cette fois encore, c'est vers vous que l'armée limséenne s'est tournée.<br>En compagnie d'une équipe d'aventuriers triés sur le volet, vous devez gagner les fondations de l'édifice afin d'y chasser la vermine qui s'y cache et éviter que le pire ne se produise."
@@ -1582,7 +1582,7 @@
     "de": "Tempel der Faust",
     "fr": "le Temple du Poing",
     "description": {
-      "en": "Countless monks once shed their blood, sweat, and tears here all in the name of strengthening their bond with Rhalgr, the Destroyer. As time passed, the very route to the Inner Fist became a grueling test for those hoping to train their body and soul atop the perilous mountain. Now the time has come for you to follow in their footsteps. Accompanied by an avid scholar named Marjorie, you focus your sights on the temple and steel yourself for the trials that lie ahead.",
+      "en": "Countless monks once shed their blood, sweat, and tears here all in the name of strengthening their bond with Rhalgr, the Destroyer. As time passed, the very route to the Closed Fist became a grueling test for those hoping to train their body and soul atop the perilous mountain. Now the time has come for you to follow in their footsteps. Accompanied by an avid scholar named Marjorie, you focus your sights on the temple and steel yourself for the trials that lie ahead.",
       "ja": "かつて、ラールガー星導教のモンク僧たちが、壊神ラールガーに一歩でも近づくためにと修行に明け暮れた岩山。頂にそびえる星導山寺院の本殿に至るまでの、この険しき山道は、それ自体が修行の場と化していたという。帝国支配下にあった20年を経ても、未だに荒々しい修行道は健在の様子。モンクについて調べているという女性、マージョリーを道連れに、光の戦士たちは本殿を目指す。",
       "de": "Auf dem Gipfel eines felsigen Berges befindet sich der Tempel der Faust. Einst übten sich dort die Mönche des Ordens der Faust in Meditation und Faustkampf, um ihrem Gott, Rhalgr dem Zerstörer, zu huldigen. Auch nach der Zerstörung des Tempels durch die Garlear ist der steile Weg zum Tempel noch immer mit zahlreichen gefährlichen Hindernissen und Fallen gepflastert. Gemeinsam mit Marjorie, einem fanatischen Mönchsfan, machst du dich auf den Weg zur Haupthalle des Tempels, um dich einer Mönchslegende zu stellen ...",
       "fr": "Autrefois site de pèlerinage, le Temple du Poing servait autrefois également de lieu d'entraînement aux moines. En effet, les nombreux obstacles qui parsèment le chemin qui conduit à la chapelle tout au sommet de la montagne leur permettait d'éprouver leur ascèse.<br>Vingt ans après les ravages causés par le tyran Theodoric et l'envahisseur garlemaldais, les mécanismes et autres pièges que recèle cet endroit pourraient bien être encore fonctionnels, et un légendaire adversaire attend peut-être les plus méritants..."
@@ -1635,7 +1635,7 @@
     "exp": 250000,
     "map": 359,
     "contentText": [
-      14513,
+      14517,
       14500
     ]
   },
@@ -1731,7 +1731,7 @@
     "exp": 389700,
     "map": 397,
     "contentText": [
-      15516,
+      15533,
       15500
     ]
   },
@@ -2473,7 +2473,7 @@
   },
   "79": {
     "id": 79,
-    "en": "The Stigma Dreamscape",
+    "en": "the Stigma Dreamscape",
     "ja": "電脳夢想 スティグマ・フォー",
     "de": "Stigma-Holometrie",
     "fr": "Rêve électrique de Stigma-4",
@@ -2821,6 +2821,38 @@
     "contentText": [
       35229,
       35200
+    ]
+  },
+  "90": {
+    "id": 90,
+    "en": "the Aetherfont",
+    "ja": "星霊間欠 ハーム島",
+    "de": "Ätherborn",
+    "fr": "L'île de Haam",
+    "description": {
+      "en": "North of the Sharlayan mainland lies the verdant Isle of Haam, a land long protected by the Forum as an academic asset due to its abundant wells of aether. Yet with plenty often comes peril, and the vicious beasts that live there will not so readily relinquish their claim to the island's lifeblood. Will you secure the energy you need to breach the void─or be returned to the very flows of aether you seek?",
+      "ja": "シャーレアン本島に連なる島々のひとつ、ハーム島。地下から可視化するほど高濃度なエーテルが湧き上がるこの島は、学術的価値が極めて高いとされ、哲学者議会の直轄地として長らく立ち入りが制限されてきた。そのエーテル豊かな環境の中で独自の生態系を築いた野生生物たちの中には、凶暴な種も多いとされるが躊躇してはいられない。ヴォイドゲートを開くためのエーテルを入手すべく、危険な島の最奥を目指せ！",
+      "de": "Unter den Inseln des Nordmeers, die Sharlayan umgeben, gibt es eine Ätherquelle von besonders großem Wert: Die Insel Haam, so reich an Äther, dass er geysirgleich an die Oberfläche sprudelt. Auf ein derart ätherreiches Eiland hat der Rat der Philosophen natürlich ein besonders wachsames Auge und erlaubt den Zutritt nur höchst selten&nbsp;...<br>Im Austausch gegen den Äther, den es für die Öffnung eines Nichtsportals zu sammeln gilt, sollst du dich zusammen mit deinen Gefährten um die wild gewordene Fauna kümmern, die rund um die Quelle gedeiht. Erkämpft euch den Weg zum Ätherborn und kommt der Rettung Azdajas somit einen Schritt näher!",
+      "fr": "Au large de Sharlayan se trouve l'île de Haam, une terre si riche en éther que son sol en serait luminescent. D'une valeur inestimable pour les érudits sharlayanais, elle est contrôlée par le Conseil qui en interdit strictement l'accès.<br>Vous avez cependant reçu l'autorisation exceptionnelle de la visiter, à condition d'y réguler la population de monstres enivrés de l'énergie bleutée... Préparez-vous à une excursion mouvementée jusqu'au centre de l'île, où vous attendent d'inépuisables geysers de l'éther que vous convoitez&nbsp;! "
+    },
+    "members": {
+      "HealersPerParty": 1,
+      "MeleesPerParty": 1,
+      "RangedPerParty": 1,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061801.png",
+    "banner": "/i/112000/112521.png",
+    "gamePatch": 77,
+    "contentType": 2,
+    "levelReq": 90,
+    "ilvlReq": 605,
+    "sync": 90,
+    "exp": 0,
+    "map": 831,
+    "contentText": [
+      36605,
+      36600
     ]
   },
   "5001": {
@@ -5844,34 +5876,29 @@
   },
   "20014": {
     "id": 20014,
-    "en": "Special Event III",
-    "ja": "イベント用コンテンツ：3",
-    "de": "Event-Inhalt 3",
-    "fr": "Défi spécial III",
-    "description": {
-      "en": "イベント用コンテンツ：3",
-      "ja": "イベント用コンテンツ：3",
-      "de": "0",
-      "fr": "0"
-    },
+    "en": "The Gilded Araya",
+    "ja": "アスラ討滅戦",
+    "de": "Arayas Palast",
+    "fr": "Le temple doré d'Araya",
+    "description": null,
     "members": {
-      "HealersPerParty": 1,
-      "MeleesPerParty": 1,
-      "RangedPerParty": 1,
-      "TanksPerParty": 1
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
-    "banner": "/i/112000/112018.png",
+    "banner": "/i/112000/112536.png",
     "gamePatch": 15,
     "contentType": 4,
-    "levelReq": 50,
+    "levelReq": 90,
     "ilvlReq": 0,
-    "sync": 50,
+    "sync": 90,
     "exp": 0,
-    "map": 33,
+    "map": 838,
     "contentText": [
-      3805,
-      3800
+      36814,
+      36800
     ]
   },
   "20015": {
@@ -7043,7 +7070,7 @@
     "de": "Jagd auf Rathalos",
     "fr": "Chasse au Rathalos",
     "description": {
-      "en": "The Hunt has always been simple business. Snatch a bill from the board, seek out your quarry, and claim your bounty. A peculiar posting in Kugane, however, has complicated matters. What began as a simple hunt in the Azim Steppe has quickly escalated into a harrowing undertaking, with a strange new Felyne companion, and even stranger prey─Rathalos, king of the skies. With mega potion in hand, you venture into the mountains. But do you have what it takes to stand against his fiery fury?",
+      "en": "The Hunt has always been simple business. Snatch a bill from the board, seek out your quarry, and claim your bounty. A peculiar posting in Kugane, however, has complicated matters. What began as a simple hunt in the Azim Steppe has quickly escalated into a harrowing undertaking, with a strange new Felyne companion, and even stranger prey─Rathalos, King of the Skies. With mega potion in hand, you venture into the mountains. But do you have what it takes to stand against his fiery fury?",
       "ja": "クガネのモブハントボードに貼られていたという、謎めいた手配書を手がかりとして、アジムステップへとやって来た冒険者。そこで出会ったのは、「アイルー」と名乗る二足歩行の獣人だった。手配書の書き手だというアイルーは語る。ここアジムステップの北西部に火竜「リオレウス」という、恐るべきモンスターが潜んでいる、と。アイルーから託された「回復薬グレート」を手に、火竜の狩猟に挑め！",
       "de": "Eine ungewöhnliche Tötungsanfrage vom Clan-Jagdbrett in Kugane führt dich bis in die Azim-Steppe. In Begleitung einer Felyne, einer aufrecht gehenden, sprechenden Katze aus einem unbekannten Land, jagst du einem Rathalos, einem fürchterlichen Feuerwyvern, hinterher. Die Felyne versorgt dich noch mit einem Mega-Trank, aber ab hier bist du mit deinen Abenteurerkollegen auf dich alleine gestellt. Gelingt es euch, das unbekannte Monster zu erjagen?",
       "fr": "Après avoir pris connaissance d'un contrat de chasse assez original sur le tableau de Kugane, vous avez mis le cap sur la Steppe d'Azim. Quelle ne fut pas votre surprise d'y rencontrer un Felyne, un homme-bête pour le moins exotique qui était à l'origine de l'annonce&nbsp;! Il vous a appris que le Rathalos, une wyverne féroce surnommée “le roi des cieux”, avait élu domicile quelque part dans la partie nord-ouest de la région. À vous de chasser et de dépecer la terrible créature en vous gorgeant de méga potions&nbsp;!"
@@ -8146,6 +8173,68 @@
     "contentText": [
       35729,
       35700
+    ]
+  },
+  "20089": {
+    "id": 20089,
+    "en": "The Voidcast Dais",
+    "ja": "ゴルベーザ討滅戦",
+    "de": "Prophetie - Golbez",
+    "fr": "La Chaire de l'Exilée",
+    "description": {
+      "en": "Having opened a voidgate of enormous proportions in Mare Lamentorum, you successfully cross over to the moon of the Thirteenth, beneath whose sanguine surface you find the imprisoned Azdaja. Alas, just when it seems the great wyrm's liberation is in sight, you are forced to watch as she is twisted into a being of Darkness by her captor Golbez. So it is that you sally forth into the black-clad villain's conjured stage, there to end his unholy crusade and free Azdaja from her torment.",
+      "ja": "嘆きの海に巨大なヴォイドゲートを開くことで、第十三世界の月へと乗り込んだ一行。そこには、血のように赤く染まった大地が広がっていた。そして、ゴルベーザの領域でもある赤き月の大穴にて、ついに囚われのアジュダヤを発見する。<br>しかし、救出の手が届きかけたそのとき、ゴルベーザによって、誇り高き月竜は妖異へと変異させられてしまう。原初世界への帰還――ただそれだけの願いを阻み、聖戦のためにアジュダヤを利用せんとする、黒鎧の騎士ゴルベーザを打ち破れ！",
+      "de": "Du hast es gemeinsam mit deinen Kameraden vollbracht, ein neues Nichtsportal im Mare Lamentorum zu öffnen und so die blutrote Oberfläche des Mond des dreizehnten Splitters erreicht. Dort entdeckt ihr endlich Azdaja, welche in einem gigantischen Krater des Himmelskörpers gefangen ist. Doch just, als ihr dabei wart, sie zu befreien, erscheint Golbez und verwandelt den Hohen Drachen endgültig in ein Nichtswesen. Der schwarze Ritter muss aufgehalten werden, bevor er Azdaja für seinen Heiligen Krieg weiter missbrauchen kann!",
+      "fr": "La porte vers le néant ouverte, vous et vos compagnons êtes arrivés sur la lune du treizième reflet, un astre teinté de rouge par le déluge de Ténèbres. Là, vous avez enfin retrouvé Azdaja, la captive millénaire du malfaisant Golbez. Sans surprise, ce dernier n'avait aucunement l'intention de vous céder sa prisonnière&nbsp;; pire, il l'a laissée se transformer en créature du néant afin de s'en servir pour vous éliminer... Faites face au mystérieux chevalier en armure noire et mettez fin à son projet insensé d'envahir votre monde&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112522.png",
+    "contentType": 4,
+    "levelReq": 90,
+    "ilvlReq": 615,
+    "sync": 90,
+    "exp": 0,
+    "map": 830,
+    "contentText": [
+      36721,
+      36700
+    ]
+  },
+  "20090": {
+    "id": 20090,
+    "en": "The Voidcast Dais (Extreme)",
+    "ja": "極ゴルベーザ討滅戦",
+    "de": "Eschatos - Golbez",
+    "fr": "La Chaire de l'Exilée (extrême)",
+    "description": {
+      "en": "In a world bereft of Light and death's release, where to live is to devour or be devoured, Golbez had concocted his crusade. Though he had minions to carry out his will, he ultimately trusted none but himself and abided in solitude for thousands of years. What was it that sustained him through such a purgatory as he sought to enact his dark designs? It is this question which lingers on the wandering minstrel's mind, inspiring him with a new verse. As you listen to his solemn dirge of the black-clad villain's unforgivable deeds, your thoughts race back to that terrible clash of wills upon the moon of the Thirteenth, where Azdaja's fate hung in the balance...",
+      "ja": "異邦の詩人は謳う。聖戦を掲げ、手段を選ばず歩み続けた男のことを。闇に堕ち、死の安寧すら消え果てた世界にて、ただ飢えるままに喰らい合う者たち。その穢れた命を正しき巡りに戻すため、彼は決して他者を信じず、ただ独り一万年の長きに亘って戦い続けたという。<br>その孤独を支え続けた、真なる想いとは如何なるものであったのか。黒鎧の騎士の生き様を謳った詩歌を聞きながら、光の戦士は今、ゴルベーザとの戦いを追体験する。",
+      "de": "Dunkel und einsam ist die Melodie, welche dem Fahrenden Sänger entspringt. Sie erzählt die Geschichte eines Mannes, gefangen in einer Welt ohne jegliches Licht, in welcher selbst der Tod keine Erlösung bringt, umgeben von Kreaturen verzert vor Hunger und Leid. Für tausende Jahre kämpfte er allein, um seinesgleichen endlich ein friedliches Ende zu bereiten. Welches Ausmaß hätte seine Einsamkeit annehmen können? Beflügelt von dieser Frage bringen dich deine Gedanken zurück zu jener schicksalshaften Schlacht mit dem schwarzen Ritter&nbsp;...",
+      "fr": "Frappé par la détermination inébranlable de Golbez, le maître du néant prêt à tout pour arracher les habitants de son monde déchu à leur pitoyable condition, le ménestrel errant s'est essayé à une recréation de votre épique affrontement sur la lune rouge. Revivez cette bataille décisive face au mystérieux chevalier en armure noire et à sa dragonne obscure, au paroxysme de leur pouvoir des Ténèbres&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112523.png",
+    "contentType": 4,
+    "levelReq": 90,
+    "ilvlReq": 630,
+    "sync": 90,
+    "exp": 0,
+    "map": 830,
+    "contentText": [
+      36721,
+      36700
     ]
   },
   "25001": {
@@ -12233,6 +12322,255 @@
       35100
     ]
   },
+  "30126": {
+    "id": 30126,
+    "en": "Anabaseios: The Ninth Circle",
+    "ja": "万魔殿パンデモニウム：天獄編1",
+    "de": "Anabaseios - Neunter Kreis",
+    "fr": "Le Paradis du Pandæmonium - Métempsycose",
+    "description": {
+      "en": "Like a blotch of dark ink on a serene canvas, Pandæmonium now floats foreboding upon the aetherial sea. From its gates has emerged a beast with an insatiable appetite for souls, and its feast threatens to sever the flow of life itself. Although Pandæmonium's mysteries beckon to you from the darkness, you must first quell this immediate threat to the star.",
+      "ja": "星海に突如として出現した「パンデモニウム」。この時代に存在するはずがない大監獄から、怪物が飛び出し、星海をたゆたうエーテルを吸収し始めたとの報告が届いた。その行いは死した魂の安らぎを乱す冒涜であるに留まらず、放置すれば命の巡りが絶たれ、新たな生命が生まれなくなる可能性すらある。<br>この暴挙を阻止するため、冒険者は、星海の未踏破地域「星海滞留域」を目指す。",
+      "de": "Das Pandæmonium ist im Sternengrund erschienen, und ihm ist eine Kreatur entsprungen, die in dieser Zeit eigentlich nicht existieren dürfte! Sie beginnt, den Äther, aus dem die Seelen aller Lebewesen geformt werden, aufzufressen. Der Kreislauf des Lebens ist bedroht!",
+      "fr": "L'heure est grave&nbsp;: des observateurs ont rapporté que des entrailles du Pandæmonium – réapparu comme par enchantement dans la mer des étoiles – avait surgi une entité inconnue, laquelle s'était mise à aspirer l'éther environnant. En plus de violer le repos des défunts, son action délétère menace à terme de rompre le cycle de la vie, et doit par conséquent être stoppée de toute urgence. Fourchenault vous a donné carte blanche&nbsp;; vous savez ce qu'il vous reste à faire."
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112524.png",
+    "gamePatch": 86,
+    "contentType": 5,
+    "levelReq": 90,
+    "ilvlReq": 615,
+    "sync": 90,
+    "exp": 0,
+    "map": 837,
+    "contentText": [
+      36225,
+      36200
+    ]
+  },
+  "30127": {
+    "id": 30127,
+    "en": "Anabaseios: The Ninth Circle (Savage)",
+    "ja": "万魔殿パンデモニウム零式：天獄編1",
+    "de": "Anabaseios - Neunter Kreis (episch)",
+    "fr": "Le Paradis du Pandæmonium - Métempsycose (sadique)",
+    "description": {
+      "en": "The return of Professor Claudien and the beginning of research into the Heart of Sabik has sparked the imaginations of everyone in Aporia, but perhaps Nemjiji's most of all. Emboldened by Claudien's encouragement to explore the very bounds of “theory,” she listens to your account of the battle with Kokytos with a mixture of scientific interest and artistic curiosity, and as her quill hurriedly scratches across parchment, you can hear the wheels of her mind turning as her “theories” pour onto the page.",
+      "ja": "クローディエンが、黒聖石サビクの研究を進める傍らで、その助手ネムジジは、パンデモニウムでの戦闘記録をまとめようとしていた。冒険者の記憶が鮮明なうちに、今回立ちはだかった脅威についても記録に残しておきたいというのだ。<br>しかし、脅威に満ちた証言をするほどに、ネムジジの発想力もまた膨らんでゆく。欠けた情報を推論で埋め、不確かな情報によって考察を進めるたびに、事実は幻想の域に達していく。果たしてそれは、記録と呼べるのだろうか……。",
+      "de": "Während Claudien den Auraciten Sabik erforscht, stellt seine Assistentin Nemjiji einen Kampfbericht über das Pandæmonium zusammen. Grundlage dafür sind deine Erinnerungen, doch Nemjiji scheut sich nicht, die Bedrohungen ungehemmt auszuschmücken.",
+      "fr": "Tandis que le professeur Claudien étudie d'arrache-pied le Cœur de Sabik, son assistante Nemjiji ressasse le récit de vos derniers exploits au sein du Pandæmonium. Mais à mesure qu'elle repense aux formidables adversaires que vous avez affrontés, son imagination prend une nouvelle fois le dessus, et elle se met à grossir le trait de façon particulièrement hardie – quand elle ne fabule pas purement et simplement. Bientôt, biologie et fantaisie ne font plus qu'un dans sa tête..."
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112525.png",
+    "contentType": 5,
+    "levelReq": 90,
+    "ilvlReq": 630,
+    "sync": 90,
+    "exp": 0,
+    "map": 837,
+    "contentText": [
+      36225,
+      36200
+    ]
+  },
+  "30128": {
+    "id": 30128,
+    "en": "Anabaseios: The Tenth Circle",
+    "ja": "万魔殿パンデモニウム：天獄編2",
+    "de": "Anabaseios - Zehnter Kreis",
+    "fr": "Le Paradis du Pandæmonium - Monochrome",
+    "description": {
+      "en": "You steel yourself to brave Pandæmonium once again, but your advance is blocked by a familiar face: Themis, who has been molded by Athena from memories of the past and souls of the present. Although his voice is friendly, he says that the strings of his creator force him to face you as foe. Before he departs, the massive stones and impregnable gates of Pandæmonium arrange into a twisted form. This verboten being serves a singular purpose─to crush any who would oppose its mother's plans. ",
+      "ja": "冒険者の前に姿を現した、かつての仲間テミス。過去の記憶から形作られた再現体だという彼は、精神呪縛により敵対者となっていた。しかし、アテナが用意した障害はそれだけではない。眼前の大監獄に魂が吹き込まれ、蠢き始めたのだ。<br>すべての黒幕たるアテナの下へとたどり着くためには、立ちふさがる者を排除して進まなければならない。今こそ、魂得たる万魔殿、パンデモニウムに挑め！",
+      "de": "Dein ehemaliger Gefährte Themis ist aufgetaucht&nbsp;- oder zumindest ein aus seinen Erinnerungen geformtes Abbild. Athenas Gedankenkontrolle macht ihn zu deinem Gegenspieler, aber er ist nicht das einzige Hindernis, das sie dir in den Weg stellt&nbsp;...",
+      "fr": "Sur le parvis du Pandæmonium, vous avez été accueillie par votre ancien allié Thémis, fraîchement recréé lui aussi à partir de souvenirs. Hélas, ce dernier vous a révélé qu'Athéna le tenait sous son emprise, et qu'il était de fait contraint de vous barrer la route. Des retrouvailles en demi-teinte, donc, qui préludaient à une autre surprise de taille&nbsp;: en effet, votre ennemie s'est ensuite permis de doter le Pandæmonium – l'édifice – d'une âme, le transformant en un gigantesque monstre arachnoïde. Dos au mur, vous allez devoir vaincre cette énième abomination pour espérer remonter jusqu'à sa créatrice."
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112526.png",
+    "contentType": 5,
+    "levelReq": 90,
+    "ilvlReq": 615,
+    "sync": 90,
+    "exp": 0,
+    "map": 834,
+    "contentText": [
+      37119,
+      37100
+    ]
+  },
+  "30129": {
+    "id": 30129,
+    "en": "Anabaseios: The Tenth Circle (Savage)",
+    "ja": "万魔殿パンデモニウム零式：天獄編2",
+    "de": "Anabaseios - Zehnter Kreis (episch)",
+    "fr": "Le Paradis du Pandæmonium - Monochrome (sadique)",
+    "description": {
+      "en": "Stone and steel moving by means of magicks or technology is hardly cause to raise an eyebrow, but the idea of inanimate objects being imbued with life is fantastic indeed. Nemjiji seems to agree, and to see the flourishes she adds to your report of the battle with Pandæmonium, you wonder if her power to create may rival even Athena's.",
+      "ja": "クローディエンが、黒聖石サビクの研究を進める傍らで、その助手ネムジジは、パンデモニウムでの戦闘記録をまとめようとしていた。冒険者の記憶が鮮明なうちに、今回立ちはだかった脅威についても記録に残しておきたいというのだ。<br>しかし、脅威に満ちた証言をするほどに、ネムジジの発想力もまた膨らんでゆく。欠けた情報を推論で埋め、不確かな情報によって考察を進めるたびに、事実は幻想の域に達していく。果たしてそれは、記録と呼べるのだろうか……。",
+      "de": "Während Claudien den Auraciten Sabik erforscht, stellt seine Assistentin Nemjiji einen Kampfbericht über das Pandæmonium zusammen. Grundlage dafür sind deine Erinnerungen, doch Nemjiji scheut sich nicht, die Bedrohungen ungehemmt auszuschmücken.",
+      "fr": "Tandis que le professeur Claudien étudie d'arrache-pied le Cœur de Sabik, son assistante Nemjiji ressasse le récit de vos derniers exploits au sein du Pandæmonium. Mais à mesure qu'elle repense aux formidables adversaires que vous avez affrontés, son imagination prend une nouvelle fois le dessus, et elle se met à grossir le trait de façon particulièrement hardie – quand elle ne fabule pas purement et simplement. Bientôt, biologie et fantaisie ne font plus qu'un dans sa tête..."
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112527.png",
+    "contentType": 5,
+    "levelReq": 90,
+    "ilvlReq": 635,
+    "sync": 90,
+    "exp": 0,
+    "map": 834,
+    "contentText": [
+      37119,
+      37100
+    ]
+  },
+  "30130": {
+    "id": 30130,
+    "en": "Anabaseios: The Eleventh Circle",
+    "ja": "万魔殿パンデモニウム：天獄編3",
+    "de": "Anabaseios - Elfter Kreis",
+    "fr": "Le Paradis du Pandæmonium - Tribunal",
+    "description": {
+      "en": "Given form so that he may serve as a tool to unlock the secret of your strength, Themis is unable to defy Athena's whims and now stands against you in battle. However, you know that his heart wishes to stand by your side as he did in ages past, so you resolve to break Athena's hold by any means necessary. Then you might join forces once again to walk through Pandæmonium's gates and fell the evil which lays beyond. ",
+      "ja": "すべての黒幕、アテナにより現代に創出されたテミスの記憶。彼は創造者から「冒険者の力を測る」という使命と、そのための肉体を与えられていた。アテナの討伐を望みながらも、同時に冒険者と戦うことを望むテミス。その矛盾を解消するためには、彼の力を削ぎ落とし、強固な精神呪縛の術を解かねばならない。<br>パンデモニウムの最奥部へと赴き、かつての仲間の記憶と対峙せよ！",
+      "de": "Athena gab Themis einen neuen Körper, um deine Stärke einer Prüfung zu unterziehen. Auch wenn dieser hofft, Athena bezwingen zu können, muss er doch gegen dich kämpfen. Hilf dem in Widersprüchen gefangenen Themis, sich Athenas Kontrolle zu entziehen, indem du seinen Körper schwächst!",
+      "fr": "Recréé à partir de souvenirs et doté d'une enveloppe charnelle temporaire, Thémis a reçu pour ordre d'évaluer vos aptitudes physiques et magiques. Et s'il ne souhaite en aucun cas voir triompher sa nouvelle maîtresse, son désir de vous combattre est bel et bien réel. C'est donc le cœur partagé qu'il entend se lancer contre vous, comme dans une ultime et jubilatoire fuite en avant. Ce qu'il ignore, en revanche, c'est que vous n'avez aucune intention de le laisser disparaître. Affaiblissez-le suffisamment pour tenter de le libérer du contrôle mental d'Athéna."
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112528.png",
+    "contentType": 5,
+    "levelReq": 90,
+    "ilvlReq": 615,
+    "sync": 90,
+    "exp": 0,
+    "map": 839,
+    "contentText": [
+      37015,
+      37000
+    ]
+  },
+  "30131": {
+    "id": 30131,
+    "en": "Anabaseios: The Eleventh Circle (Savage)",
+    "ja": "万魔殿パンデモニウム零式：天獄編3",
+    "de": "Anabaseios - Elfter Kreis (episch)",
+    "fr": "Le Paradis du Pandæmonium - Tribunal (sadique)",
+    "description": {
+      "en": "A tale of two friends pitted against each other by the hands of a cruel puppetmaster, every drop of blood spilled mixing with the tears shed at their lost fellowship... The mere facts of your battle with Themis would be enough to spin a compelling tale for most, but Nemjiji aspires to something greater. While she seems moved by your story of tragedy and triumph, her artist's eye is ever searching for spots where her “theories” might serve to add a dash of flavor. ",
+      "ja": "クローディエンが、黒聖石サビクの研究を進める傍らで、その助手ネムジジは、パンデモニウムでの戦闘記録をまとめようとしていた。冒険者の記憶が鮮明なうちに、今回立ちはだかった脅威についても記録に残しておきたいというのだ。<br>しかし、脅威に満ちた証言をするほどに、ネムジジの発想力もまた膨らんでゆく。欠けた情報を推論で埋め、不確かな情報によって考察を進めるたびに、事実は幻想の域に達していく。果たしてそれは、記録と呼べるのだろうか……。",
+      "de": "Während Claudien den Auraciten Sabik erforscht, stellt seine Assistentin Nemjiji einen Kampfbericht über das Pandæmonium zusammen. Grundlage dafür sind deine Erinnerungen, doch Nemjiji scheut sich nicht, die Bedrohungen ungehemmt auszuschmücken.",
+      "fr": "Tandis que le professeur Claudien étudie d'arrache-pied le Cœur de Sabik, son assistante Nemjiji ressasse le récit de vos derniers exploits au sein du Pandæmonium. Mais à mesure qu'elle repense aux formidables adversaires que vous avez affrontés, son imagination prend une nouvelle fois le dessus, et elle se met à grossir le trait de façon particulièrement hardie – quand elle ne fabule pas purement et simplement. Bientôt, biologie et fantaisie ne font plus qu'un dans sa tête..."
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112529.png",
+    "contentType": 5,
+    "levelReq": 90,
+    "ilvlReq": 640,
+    "sync": 90,
+    "exp": 0,
+    "map": 839,
+    "contentText": [
+      37015,
+      37000
+    ]
+  },
+  "30132": {
+    "id": 30132,
+    "en": "Anabaseios: The Twelfth Circle",
+    "ja": "万魔殿パンデモニウム：天獄編4",
+    "de": "Anabaseios - Zwölfter Kreis",
+    "fr": "Le Paradis du Pandæmonium - Apothéose",
+    "description": {
+      "en": "The chief keyward of Pandæmonium's appetite for godhood has been made only more keen by twelve millennia of slumber, and even her own flesh and blood are naught but tools with which to feed her hunger. No sacrifice too great, no price too high, Athena would see all life extinguished if it brought her even one ilm closer to her ultimate goal. Her wicked ambitions can be suffered no longer, so you must journey into Pandæmonium's heart and cut out their source.",
+      "ja": "パンデモニウムの長官アテナ。彼女は、人を超越した存在、すなわち「神」に至ろうと、監獄内の創造生物はおろか、自らの家族すらも利用して、醜悪な実験を繰り返していた。その執念は、1万2千年の時を超えて現代に復活してなお、消えるどころか燃え盛るばかり。<br>己の欲望を満たすため、周囲のすべてを犠牲にするような行いをこれ以上許してはおけない。星海に幻出せし大監獄の最奥にて、すべての元凶アテナを打倒せよ！",
+      "de": "Du stellst dich Athena, Leiterin des Pandæmoniums. In ihrem Streben, zu einem göttlichen Wesen zu werden, das jeden Bewohner des Planeten transzendiert, führte sie wieder und wieder grauenhafte Experimente durch&nbsp;- nicht nur an den eingekerkerten Schöpfungen, sondern auch an ihrer eigenen Familie. Selbst zwölftausend Jahre und eine Wiedergeburt reichten nicht, ihren wissenschaftlichen Wahnsinn zu brechen. Es ist Zeit, Athenas mörderischem Plan ein Ende zu bereiten!",
+      "fr": "La vérité est là&nbsp;: Athéna, l'ancienne directrice du Pandæmonium, s'est servie non seulement des créatures dont elle avait la charge, mais aussi des membres de sa propre famille, pour mener de sombres expériences visant à faire d'elle un être transcendant l'espèce humaine&nbsp;; autrement dit, une déesse. Quelque douze mille années n'auront pas suffi à éteindre son ambition, bien au contraire&nbsp;: désormais ressuscitée, elle est plus que jamais prête à sacrifier tout ce qui l'entoure pour accomplir ses égoïstes desseins. Cette folie n'a que trop duré&nbsp;: pénétrez dans le tréfonds du Pandæmonium, et terrassez la maîtresse des lieux pour de bon&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112530.png",
+    "contentType": 5,
+    "levelReq": 90,
+    "ilvlReq": 615,
+    "sync": 90,
+    "exp": 0,
+    "map": 835,
+    "contentText": [
+      36911,
+      36900
+    ]
+  },
+  "30133": {
+    "id": 30133,
+    "en": "Anabaseios: The Twelfth Circle (Savage)",
+    "ja": "万魔殿パンデモニウム零式：天獄編4",
+    "de": "Anabaseios - Zwölfter Kreis (episch)",
+    "fr": "Le Paradis du Pandæmonium - Apothéose (sadique)",
+    "description": {
+      "en": "While Nemjiji is plainly in awe at your bravery and relieved that the realm is saved once more, she seems almost disappointed in your descriptions of the chief keyward's prowess in battle. As you finish your recounting she lets out a despondent sigh before perking up and taking up her quill with aplomb, muttering to herself, “Nothing a little imagination cannot fix...”",
+      "ja": "クローディエンが、黒聖石サビクの研究を進める傍らで、その助手ネムジジは、パンデモニウムでの戦闘記録をまとめようとしていた。冒険者の記憶が鮮明なうちに、今回立ちはだかった脅威についても記録に残しておきたいというのだ。<br>しかし、脅威に満ちた証言をするほどに、ネムジジの発想力もまた膨らんでゆく。欠けた情報を推論で埋め、不確かな情報によって考察を進めるたびに、事実は幻想の域に達していく。果たしてそれは、記録と呼べるのだろうか……。",
+      "de": "Während Claudien den Auraciten Sabik erforscht, stellt seine Assistentin Nemjiji einen Kampfbericht über das Pandæmonium zusammen. Grundlage dafür sind deine Erinnerungen, doch Nemjiji scheut sich nicht, die Bedrohungen ungehemmt auszuschmücken.",
+      "fr": "Tandis que le professeur Claudien étudie d'arrache-pied le Cœur de Sabik, son assistante Nemjiji ressasse le récit de vos derniers exploits au sein du Pandæmonium. Mais à mesure qu'elle repense aux formidables adversaires que vous avez affrontés, son imagination prend une nouvelle fois le dessus, et elle se met à grossir le trait de façon particulièrement hardie – quand elle ne fabule pas purement et simplement. Bientôt, biologie et fantaisie ne font plus qu'un dans sa tête..."
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112531.png",
+    "contentType": 5,
+    "levelReq": 90,
+    "ilvlReq": 640,
+    "sync": 90,
+    "exp": 0,
+    "map": 835,
+    "contentText": [
+      36935,
+      36900
+    ]
+  },
   "35001": {
     "id": 35001,
     "en": "All's Well That Starts Well",
@@ -12952,7 +13290,7 @@
   },
   "36001": {
     "id": 36001,
-    "en": "The Sil'dihn Subterrane",
+    "en": "the Sil'dihn Subterrane",
     "ja": "ヴァリアントダンジョン シラディハ水道",
     "de": "Die Unterstadt von Sil'dih",
     "fr": "Les canalisations sildiennes - Donjon à embranchements",
@@ -15541,17 +15879,173 @@
       24900
     ]
   },
-  "64006": {
-    "id": 64006,
-    "en": "Containment Bay P1T6 (Unreal)",
-    "ja": "幻女神ソフィア討滅戦",
-    "de": "Traumprüfung - Sophia",
-    "fr": "Unité de contention P1P6 (irréel)",
+  "63012": {
+    "id": 63012,
+    "en": "Ocean Fishing",
+    "ja": "オーシャンフィッシング",
+    "de": "Auf großer Fahrt",
+    "fr": "Pêche en mer",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061815.png",
+    "banner": "/i/112000/112383.png",
+    "contentType": 16,
+    "levelReq": 1,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 604,
+    "contentText": [
+      24948,
+      24900
+    ]
+  },
+  "63013": {
+    "id": 63013,
+    "en": "Ocean Fishing",
+    "ja": "オーシャンフィッシング",
+    "de": "Auf großer Fahrt",
+    "fr": "Pêche en mer",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061815.png",
+    "banner": "/i/112000/112383.png",
+    "contentType": 16,
+    "levelReq": 1,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 604,
+    "contentText": [
+      24948,
+      24900
+    ]
+  },
+  "63014": {
+    "id": 63014,
+    "en": "Ocean Fishing",
+    "ja": "オーシャンフィッシング",
+    "de": "Auf großer Fahrt",
+    "fr": "Pêche en mer",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061815.png",
+    "banner": "/i/112000/112383.png",
+    "contentType": 16,
+    "levelReq": 1,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 604,
+    "contentText": [
+      24948,
+      24900
+    ]
+  },
+  "63015": {
+    "id": 63015,
+    "en": "Ocean Fishing",
+    "ja": "オーシャンフィッシング",
+    "de": "Auf großer Fahrt",
+    "fr": "Pêche en mer",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061815.png",
+    "banner": "/i/112000/112383.png",
+    "contentType": 16,
+    "levelReq": 1,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 604,
+    "contentText": [
+      24948,
+      24900
+    ]
+  },
+  "63016": {
+    "id": 63016,
+    "en": "Ocean Fishing",
+    "ja": "オーシャンフィッシング",
+    "de": "Auf großer Fahrt",
+    "fr": "Pêche en mer",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061815.png",
+    "banner": "/i/112000/112383.png",
+    "contentType": 16,
+    "levelReq": 1,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 604,
+    "contentText": [
+      24948,
+      24900
+    ]
+  },
+  "63017": {
+    "id": 63017,
+    "en": "Ocean Fishing",
+    "ja": "オーシャンフィッシング",
+    "de": "Auf großer Fahrt",
+    "fr": "Pêche en mer",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061815.png",
+    "banner": "/i/112000/112383.png",
+    "contentType": 16,
+    "levelReq": 1,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 604,
+    "contentText": [
+      24948,
+      24900
+    ]
+  },
+  "64007": {
+    "id": 64007,
+    "en": "Containment Bay Z1T9 (Unreal)",
+    "ja": "幻鬼神ズルワーン討滅戦",
+    "de": "Traumprüfung - Zurvan",
+    "fr": "Unité de contention Z1P9 (irréel)",
     "description": {
-      "en": "The faux commander believes that the best tales boast a balance of fact and fiction─and one cannot think of balance without thinking of Sophia, the goddess of equilibrium. Surrendering to your mind's eye, you place yourself upon the scales once more, but will you be left standing when all is weighed and done?",
-      "ja": "イディルシャイアに現れた奇妙なしゃべる狐、ソーチョーこと「点茶のソウタン」。茶飲み話のネタを求める彼のため、激闘の記憶を蘇らせよ。<br>此度、語るは女神ソフィアとの死闘。均衡を求めて揺れる天秤、振り落とされるは女神か、冒険者か。いま幻の激闘が語られる。",
-      "de": "Niemand weiß so gut, dass die besten aller Geschichten pikante Mischungen aus Fakt und Fiktion sind, wie der zungenfertige Sotan. Es kommt auf die perfekte Balance zwischen Körnchen aus Wahrheit und erdachter Garnierung an, weiß er immer zu betonen. Und wo es um Balance geht, ist die Erinnerung an Sophia nicht weit. Wird es dir gelingen, die Waagschalen der beharrlichen Göttin in Einklang zu bringen?",
-      "fr": "Désireux de renouveler son répertoire de contes et légendes, le Zuijû Sotan, un renard plus connu sous son surnom de “président”, vous a demandé de lui narrer vos batailles épiques contre les Primordiaux. Tout à coup, votre combat contre Sophia, la divinité guerrière assoiffée de vengeance, vous revient en mémoire... Terrassez-la afin de satisfaire la soif d'émotions fortes de votre nouvel ami à fourrure&nbsp;!"
+      "en": "The faux commander would hear a story of victory over injustice, and you immediately envision the nightmarish aspect of Zurvan, the Demon. This pillar of the Warring Triad was called forth to triumph over the wicked, but your memory of the eikon's incarnation runs thick with only fury and malevolence...",
+      "ja": "イディルシャイアに現れた奇妙なしゃべる狐、ソーチョーこと「点茶のソウタン」。茶飲み話のネタを求める彼のため、激闘の記憶を蘇らせよ。<br>此度、語るは鬼神ズルワーンとの死闘。善悪の狭間で打ち交わされる刃、永劫の勝利を手にするは鬼神か、冒険者か。いま幻の激闘が語られる。",
+      "de": "Sotans Zunge sitzt wie üblich sehr locker, und diesmal widmet er sich der epischen Schlacht gegen den mächtigen Zurvan.<br>Mit blumingen Worten lässt er den Dämon der Kriegstriade wiederauferstehen, auf dass du dich erneut mit ihm messen kannst!",
+      "fr": "Désireux de renouveler son répertoire de contes et légendes, le Zuijû Sotan, un renard plus connu sous son surnom de “président”, vous a demandé de lui narrer vos batailles épiques contre les Primordiaux. Tout à coup, votre combat contre Zurvan, le Démon de Méracydia, vous revient en mémoire... Terrassez-le afin de satisfaire la soif d'émotions fortes de votre ami à fourrure&nbsp;!"
     },
     "members": {
       "HealersPerParty": 2,
@@ -15560,17 +16054,17 @@
       "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
-    "banner": "/i/112000/112506.png",
-    "gamePatch": 85,
+    "banner": "/i/112000/112532.png",
+    "gamePatch": 86,
     "contentType": 4,
     "levelReq": 90,
     "ilvlReq": 560,
     "sync": 90,
     "exp": 0,
-    "map": 334,
+    "map": 353,
     "contentText": [
-      13113,
-      13100
+      14327,
+      14300
     ]
   }
 }

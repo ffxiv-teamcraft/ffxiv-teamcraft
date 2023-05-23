@@ -864,19 +864,19 @@
     }
   },
   "55": {
-    "value": 30,
-    "conditionValue": 271,
+    "value": 2,
+    "conditionValue": 4100,
     "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chance de récolte supp. +{{value}}%"
+      "en": " Gathering Attempts/Integrity +{{value}}",
+      "de": "Sammelversuche/Belastbarkeit +{{value}}",
+      "ja": "採集回数／耐久＋{{value}}",
+      "fr": " Nombre de tentatives + {{value}}"
     },
     "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
+      "en": "Gathering ≥ {{value}}",
+      "de": "Sammeln min. {{value}}",
+      "ja": "獲得力 {{value}}以上",
+      "fr": "Collecte ≧ {{value}}"
     }
   },
   "56": {
@@ -1120,100 +1120,76 @@
     }
   },
   "71": {
-    "value": 30,
-    "conditionValue": 688,
+    "value": 0,
+    "conditionValue": 38745,
     "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chance de récolte supp. +{{value}}%"
+      "en": " Available",
+      "de": "Verfügbar",
+      "ja": "獲得可能",
+      "fr": " récoltable"
     },
     "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
+      "en": "[UNHANDLED 0x28] Equipped",
+      "de": "[UNHANDLED 0x2B] ausgerüstet",
+      "ja": "[UNHANDLED 0x28]装備時",
+      "fr": "[UNHANDLED 0x28] [UNHANDLED 0x28]"
     }
   },
   "72": {
-    "value": 30,
-    "conditionValue": 688,
+    "value": 0,
+    "conditionValue": 39740,
     "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chance de récolte supp. +{{value}}%"
+      "en": " Available",
+      "de": "Verfügbar",
+      "ja": "獲得可能",
+      "fr": " récoltable"
     },
     "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
+      "en": "[UNHANDLED 0x28] Equipped",
+      "de": "[UNHANDLED 0x2B] ausgerüstet",
+      "ja": "[UNHANDLED 0x28]装備時",
+      "fr": "[UNHANDLED 0x28] [UNHANDLED 0x28]"
     }
   },
   "73": {
-    "value": 30,
-    "conditionValue": 784,
+    "value": 0,
+    "conditionValue": 38746,
     "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chance de récolte supp. +{{value}}%"
+      "en": " Available",
+      "de": "Verfügbar",
+      "ja": "獲得可能",
+      "fr": " récoltable"
     },
     "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
+      "en": "[UNHANDLED 0x28] Equipped",
+      "de": "[UNHANDLED 0x2B] ausgerüstet",
+      "ja": "[UNHANDLED 0x28]装備時",
+      "fr": "[UNHANDLED 0x28] [UNHANDLED 0x28]"
     }
   },
   "74": {
-    "value": 30,
-    "conditionValue": 1200,
+    "value": 0,
+    "conditionValue": 39741,
     "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chance de récolte supp. +{{value}}%"
+      "en": " Available",
+      "de": "Verfügbar",
+      "ja": "獲得可能",
+      "fr": " récoltable"
     },
     "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
+      "en": "[UNHANDLED 0x28] Equipped",
+      "de": "[UNHANDLED 0x2B] ausgerüstet",
+      "ja": "[UNHANDLED 0x28]装備時",
+      "fr": "[UNHANDLED 0x28] [UNHANDLED 0x28]"
     }
   },
   "75": {
-    "value": 30,
-    "conditionValue": 1350,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chance de récolte supp. +{{value}}%"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "76": {
-    "value": 30,
-    "conditionValue": 1840,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chance de récolte supp. +{{value}}%"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "77": {
     "value": 0,
@@ -1264,20 +1240,8 @@
     }
   },
   "80": {
-    "value": 30,
-    "conditionValue": 2140,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "81": {
     "value": 30,
@@ -1392,20 +1356,8 @@
     }
   },
   "88": {
-    "value": 50,
-    "conditionValue": 3910,
-    "bonus": {
-      "en": "Sublime Rate +{{value}}% (Requires Maximum Collectability)",
-      "de": "Bei maximalem Sammlerwert: Erhabenheitsrate +{{value}} %",
-      "ja": "収集価値MAX時：昇華率＋{{value}}%",
-      "fr": " Sublimation + {{value}}% lorsque la valeur de collection est au maximum."
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "89": {
     "value": 10,
@@ -1744,20 +1696,8 @@
     }
   },
   "110": {
-    "value": 1,
-    "conditionValue": 150,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}",
-      "de": "Sammelversuche/Belastbarkeit +{{value}}",
-      "ja": "採集回数／耐久＋{{value}}",
-      "fr": " Nombre de tentatives + {{value}}"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "111": {
     "value": 1,
@@ -1888,36 +1828,12 @@
     }
   },
   "119": {
-    "value": 1,
-    "conditionValue": 400,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}",
-      "de": "Sammelversuche/Belastbarkeit +{{value}}",
-      "ja": "採集回数／耐久＋{{value}}",
-      "fr": " Nombre de tentatives + {{value}}"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "120": {
-    "value": 1,
-    "conditionValue": 429,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}",
-      "de": "Sammelversuche/Belastbarkeit +{{value}}",
-      "ja": "採集回数／耐久＋{{value}}",
-      "fr": " Nombre de tentatives + {{value}}"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "121": {
     "value": 1,
@@ -1936,20 +1852,8 @@
     }
   },
   "122": {
-    "value": 1,
-    "conditionValue": 515,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}",
-      "de": "Sammelversuche/Belastbarkeit +{{value}}",
-      "ja": "採集回数／耐久＋{{value}}",
-      "fr": " Nombre de tentatives + {{value}}"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "123": {
     "value": 1,
@@ -2240,13 +2144,13 @@
     }
   },
   "141": {
-    "value": 2,
-    "conditionValue": 25,
+    "value": 30,
+    "conditionValue": 3550,
     "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
+      "en": " Gatherer's Boon Chance +{{value}}%～",
+      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
+      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
+      "fr": " Chance de récolte supp. +{{value}}% (↑)"
     },
     "condition": {
       "en": "Perception ≥ {{value}}",
@@ -2256,29 +2160,29 @@
     }
   },
   "142": {
-    "value": 2,
-    "conditionValue": 88,
+    "value": 1,
+    "conditionValue": 910,
     "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
+      "en": " Gathering Attempts/Integrity +{{value}}",
+      "de": "Sammelversuche/Belastbarkeit +{{value}}",
+      "ja": "採集回数／耐久＋{{value}}",
+      "fr": " Nombre de tentatives + {{value}}"
     },
     "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
+      "en": "Max GP ≥ {{value}}",
+      "de": "Max. SP ≥ {{value}}",
+      "ja": "GPmax {{value}}以上",
+      "fr": "PR ≧ {{value}}"
     }
   },
   "143": {
-    "value": 2,
-    "conditionValue": 150,
+    "value": 30,
+    "conditionValue": 4000,
     "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
+      "en": " Gatherer's Boon Chance +{{value}}%",
+      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
+      "ja": "獲得数ボーナス発生率＋{{value}}%",
+      "fr": " Chance de récolte supp. +{{value}}%"
     },
     "condition": {
       "en": "Perception ≥ {{value}}",
@@ -2288,8 +2192,8 @@
     }
   },
   "144": {
-    "value": 2,
-    "conditionValue": 182,
+    "value": 1,
+    "conditionValue": 3900,
     "bonus": {
       "en": " Gathering Yield +{{value}}～",
       "de": "Stückzahl +{{value}} (steigend)",
@@ -2297,26 +2201,26 @@
       "fr": " Quantité + {{value}} (↑)"
     },
     "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
+      "en": "Gathering ≥ {{value}}",
+      "de": "Sammeln min. {{value}}",
+      "ja": "獲得力 {{value}}以上",
+      "fr": "Collecte ≧ {{value}}"
     }
   },
   "145": {
-    "value": 2,
-    "conditionValue": 226,
+    "value": 1,
+    "conditionValue": 900,
     "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
+      "en": " Gathering Attempts/Integrity +{{value}}～",
+      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
+      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
+      "fr": " Nombre de tentatives + {{value}} (croissant)"
     },
     "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
+      "en": "Max GP ≥ {{value}}",
+      "de": "Max. SP ≥ {{value}}",
+      "ja": "GPmax {{value}}以上",
+      "fr": "PR ≧ {{value}}"
     }
   },
   "146": {
@@ -2416,13 +2320,13 @@
     }
   },
   "152": {
-    "value": 3,
-    "conditionValue": 25,
+    "value": 30,
+    "conditionValue": 3650,
     "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
+      "en": " Gatherer's Boon Chance +{{value}}%～",
+      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
+      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
+      "fr": " Chance de récolte supp. +{{value}}% (↑)"
     },
     "condition": {
       "en": "Perception ≥ {{value}}",
@@ -2432,68 +2336,32 @@
     }
   },
   "153": {
-    "value": 3,
-    "conditionValue": 88,
+    "value": 1,
+    "conditionValue": 920,
     "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
+      "en": " Gathering Attempts/Integrity +{{value}}",
+      "de": "Sammelversuche/Belastbarkeit +{{value}}",
+      "ja": "採集回数／耐久＋{{value}}",
+      "fr": " Nombre de tentatives + {{value}}"
     },
     "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
+      "en": "Max GP ≥ {{value}}",
+      "de": "Max. SP ≥ {{value}}",
+      "ja": "GPmax {{value}}以上",
+      "fr": "PR ≧ {{value}}"
     }
   },
   "154": {
-    "value": 3,
-    "conditionValue": 150,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "155": {
-    "value": 3,
-    "conditionValue": 182,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "156": {
-    "value": 3,
-    "conditionValue": 226,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "157": {
     "value": 4,
@@ -2912,20 +2780,8 @@
     }
   },
   "183": {
-    "value": 30,
-    "conditionValue": 2404,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "184": {
     "value": 1,
@@ -4769,339 +4625,87 @@
   },
   "305": {
     "value": 0,
-    "conditionValue": 408,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "306": {
     "value": 0,
-    "conditionValue": 408,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "307": {
     "value": 0,
-    "conditionValue": 408,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "308": {
     "value": 0,
-    "conditionValue": 408,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "309": {
     "value": 0,
-    "conditionValue": 408,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "310": {
     "value": 0,
-    "conditionValue": 408,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "311": {
     "value": 0,
-    "conditionValue": 408,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "312": {
     "value": 0,
-    "conditionValue": 408,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "313": {
     "value": 0,
-    "conditionValue": 408,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "314": {
     "value": 0,
-    "conditionValue": 353,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "315": {
     "value": 0,
-    "conditionValue": 353,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "316": {
     "value": 0,
-    "conditionValue": 353,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "317": {
     "value": 0,
-    "conditionValue": 353,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "318": {
     "value": 0,
-    "conditionValue": 408,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "319": {
     "value": 0,
-    "conditionValue": 408,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "320": {
     "value": 0,
-    "conditionValue": 420,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "321": {
     "value": 0,
-    "conditionValue": 420,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "322": {
     "value": 0,
-    "conditionValue": 420,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "323": {
     "value": 0,
-    "conditionValue": 420,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "324": {
     "value": 0,
-    "conditionValue": 450,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "325": {
     "value": 0,
-    "conditionValue": 450,
-    "bonus": {
-      "en": " Available",
-      "de": "Verfügbar",
-      "ja": "獲得可能",
-      "fr": " récoltable"
-    },
-    "condition": {
-      "en": "Gathering < {{value}}",
-      "de": "Sammeln max. {{value}}",
-      "ja": "獲得力 {{value}}未満",
-      "fr": "Collecte < {{value}}"
-    }
+    "conditionValue": 0
   },
   "326": {
     "value": 0,
@@ -5988,132 +5592,36 @@
     }
   },
   "382": {
-    "value": 30,
-    "conditionValue": 508,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chance de récolte supp. +{{value}}%"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "383": {
-    "value": 30,
-    "conditionValue": 512,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chance de récolte supp. +{{value}}%"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "384": {
-    "value": 30,
-    "conditionValue": 523,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chance de récolte supp. +{{value}}%"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "385": {
-    "value": 30,
-    "conditionValue": 527,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chance de récolte supp. +{{value}}%"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "386": {
-    "value": 30,
-    "conditionValue": 544,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chance de récolte supp. +{{value}}%"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "387": {
-    "value": 30,
-    "conditionValue": 688,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chance de récolte supp. +{{value}}%"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "388": {
-    "value": 30,
-    "conditionValue": 688,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chance de récolte supp. +{{value}}%"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "389": {
-    "value": 30,
-    "conditionValue": 784,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} %",
-      "ja": "獲得数ボーナス発生率＋{{value}}%",
-      "fr": " Chance de récolte supp. +{{value}}%"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "390": {
     "value": 1,
@@ -6196,52 +5704,16 @@
     }
   },
   "395": {
-    "value": 1,
-    "conditionValue": 767,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "396": {
-    "value": 1,
-    "conditionValue": 821,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "397": {
-    "value": 1,
-    "conditionValue": 874,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "398": {
     "value": 1,
@@ -6324,84 +5796,24 @@
     }
   },
   "403": {
-    "value": 1,
-    "conditionValue": 600,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "404": {
-    "value": 1,
-    "conditionValue": 600,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "405": {
-    "value": 1,
-    "conditionValue": 600,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "406": {
-    "value": 1,
-    "conditionValue": 495,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "407": {
-    "value": 1,
-    "conditionValue": 591,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "408": {
     "value": 0,
@@ -7436,20 +6848,8 @@
     "conditionValue": 0
   },
   "477": {
-    "value": 30,
-    "conditionValue": 3230,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "478": {
     "value": 0,
@@ -7464,20 +6864,8 @@
     "conditionValue": 0
   },
   "481": {
-    "value": 2,
-    "conditionValue": 850,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "482": {
     "value": 0,
@@ -8576,148 +7964,40 @@
     "conditionValue": 0
   },
   "600": {
-    "value": 30,
-    "conditionValue": 688,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "601": {
-    "value": 30,
-    "conditionValue": 832,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "602": {
-    "value": 30,
-    "conditionValue": 849,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "603": {
-    "value": 30,
-    "conditionValue": 884,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "604": {
-    "value": 30,
-    "conditionValue": 902,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "605": {
-    "value": 30,
-    "conditionValue": 920,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "606": {
-    "value": 30,
-    "conditionValue": 1200,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "607": {
-    "value": 30,
-    "conditionValue": 902,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "608": {
-    "value": 30,
-    "conditionValue": 1200,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "609": {
     "value": 1,
@@ -8784,20 +8064,8 @@
     }
   },
   "613": {
-    "value": 1,
-    "conditionValue": 1006,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "614": {
     "value": 1,
@@ -8848,520 +8116,136 @@
     }
   },
   "617": {
-    "value": 1,
-    "conditionValue": 1116,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "618": {
-    "value": 1,
-    "conditionValue": 948,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "619": {
-    "value": 1,
-    "conditionValue": 1116,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "620": {
     "value": 0,
     "conditionValue": 0
   },
   "621": {
-    "value": 10,
-    "conditionValue": 580,
-    "bonus": {
-      "en": " Gathering Rate +{{value}}%",
-      "de": "Sammelrate +{{value}} %",
-      "ja": "獲得率＋{{value}}％",
-      "fr": " Taux de récolte + {{value}}%"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "622": {
-    "value": 10,
-    "conditionValue": 599,
-    "bonus": {
-      "en": " Gathering Rate +{{value}}%",
-      "de": "Sammelrate +{{value}} %",
-      "ja": "獲得率＋{{value}}％",
-      "fr": " Taux de récolte + {{value}}%"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "623": {
-    "value": 10,
-    "conditionValue": 594,
-    "bonus": {
-      "en": " Gathering Rate +{{value}}%",
-      "de": "Sammelrate +{{value}} %",
-      "ja": "獲得率＋{{value}}％",
-      "fr": " Taux de récolte + {{value}}%"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "624": {
-    "value": 10,
-    "conditionValue": 620,
-    "bonus": {
-      "en": " Gathering Rate +{{value}}%",
-      "de": "Sammelrate +{{value}} %",
-      "ja": "獲得率＋{{value}}％",
-      "fr": " Taux de récolte + {{value}}%"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "625": {
-    "value": 10,
-    "conditionValue": 690,
-    "bonus": {
-      "en": " Gathering Rate +{{value}}%",
-      "de": "Sammelrate +{{value}} %",
-      "ja": "獲得率＋{{value}}％",
-      "fr": " Taux de récolte + {{value}}%"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "626": {
-    "value": 30,
-    "conditionValue": 472,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "627": {
-    "value": 30,
-    "conditionValue": 492,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "628": {
-    "value": 30,
-    "conditionValue": 483,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "629": {
-    "value": 30,
-    "conditionValue": 505,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "630": {
-    "value": 30,
-    "conditionValue": 526,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "631": {
-    "value": 1,
-    "conditionValue": 644,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "632": {
-    "value": 1,
-    "conditionValue": 654,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "633": {
-    "value": 1,
-    "conditionValue": 660,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "634": {
-    "value": 1,
-    "conditionValue": 669,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "635": {
-    "value": 1,
-    "conditionValue": 676,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "636": {
-    "value": 1,
-    "conditionValue": 580,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "637": {
-    "value": 1,
-    "conditionValue": 599,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "638": {
-    "value": 1,
-    "conditionValue": 594,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "639": {
-    "value": 1,
-    "conditionValue": 620,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "640": {
-    "value": 1,
-    "conditionValue": 690,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "641": {
-    "value": 1,
-    "conditionValue": 669,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "642": {
-    "value": 1,
-    "conditionValue": 669,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "643": {
-    "value": 1,
-    "conditionValue": 676,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "644": {
-    "value": 30,
-    "conditionValue": 505,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "645": {
-    "value": 30,
-    "conditionValue": 505,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "646": {
-    "value": 30,
-    "conditionValue": 526,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "647": {
-    "value": 1,
-    "conditionValue": 620,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "648": {
-    "value": 1,
-    "conditionValue": 620,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "649": {
-    "value": 1,
-    "conditionValue": 690,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "650": {
     "value": 1,
@@ -9476,68 +8360,20 @@
     }
   },
   "657": {
-    "value": 1,
-    "conditionValue": 640,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "658": {
-    "value": 1,
-    "conditionValue": 680,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "659": {
-    "value": 1,
-    "conditionValue": 625,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "660": {
-    "value": 1,
-    "conditionValue": 680,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "661": {
     "value": 0,
@@ -9560,40 +8396,16 @@
     "conditionValue": 0
   },
   "666": {
-    "value": 30,
-    "conditionValue": 1350,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "667": {
     "value": 0,
     "conditionValue": 0
   },
   "668": {
-    "value": 30,
-    "conditionValue": 1550,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "669": {
     "value": 1,
@@ -10564,148 +9376,40 @@
     "conditionValue": 0
   },
   "746": {
-    "value": 30,
-    "conditionValue": 1400,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "747": {
-    "value": 30,
-    "conditionValue": 1440,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "748": {
-    "value": 30,
-    "conditionValue": 1516,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "749": {
-    "value": 30,
-    "conditionValue": 1591,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "750": {
-    "value": 30,
-    "conditionValue": 1666,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "751": {
-    "value": 30,
-    "conditionValue": 1840,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "752": {
-    "value": 30,
-    "conditionValue": 1591,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "753": {
-    "value": 30,
-    "conditionValue": 1666,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "754": {
-    "value": 30,
-    "conditionValue": 1840,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "755": {
     "value": 1,
@@ -10804,100 +9508,28 @@
     }
   },
   "761": {
-    "value": 1,
-    "conditionValue": 1947,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "762": {
-    "value": 1,
-    "conditionValue": 1775,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "763": {
-    "value": 1,
-    "conditionValue": 1859,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "764": {
-    "value": 1,
-    "conditionValue": 1947,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "765": {
-    "value": 1,
-    "conditionValue": 1691,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "766": {
-    "value": 1,
-    "conditionValue": 1947,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "767": {
     "value": 1,
@@ -10996,707 +9628,179 @@
     }
   },
   "773": {
-    "value": 1,
-    "conditionValue": 740,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "774": {
-    "value": 1,
-    "conditionValue": 715,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "775": {
-    "value": 1,
-    "conditionValue": 725,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "776": {
-    "value": 1,
-    "conditionValue": 740,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "777": {
-    "value": 1,
-    "conditionValue": 705,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "778": {
-    "value": 1,
-    "conditionValue": 740,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "779": {
-    "value": 10,
-    "conditionValue": 987,
-    "bonus": {
-      "en": " Gathering Rate +{{value}}%",
-      "de": "Sammelrate +{{value}} %",
-      "ja": "獲得率＋{{value}}％",
-      "fr": " Taux de récolte + {{value}}%"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "780": {
-    "value": 10,
-    "conditionValue": 1034,
-    "bonus": {
-      "en": " Gathering Rate +{{value}}%",
-      "de": "Sammelrate +{{value}} %",
-      "ja": "獲得率＋{{value}}％",
-      "fr": " Taux de récolte + {{value}}%"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "781": {
-    "value": 10,
-    "conditionValue": 1061,
-    "bonus": {
-      "en": " Gathering Rate +{{value}}%",
-      "de": "Sammelrate +{{value}} %",
-      "ja": "獲得率＋{{value}}％",
-      "fr": " Taux de récolte + {{value}}%"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "782": {
-    "value": 10,
-    "conditionValue": 1113,
-    "bonus": {
-      "en": " Gathering Rate +{{value}}%",
-      "de": "Sammelrate +{{value}} %",
-      "ja": "獲得率＋{{value}}％",
-      "fr": " Taux de récolte + {{value}}%"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "783": {
-    "value": 10,
-    "conditionValue": 1166,
-    "bonus": {
-      "en": " Gathering Rate +{{value}}%",
-      "de": "Sammelrate +{{value}} %",
-      "ja": "獲得率＋{{value}}％",
-      "fr": " Taux de récolte + {{value}}%"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "784": {
-    "value": 30,
-    "conditionValue": 793,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "785": {
-    "value": 30,
-    "conditionValue": 831,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "786": {
-    "value": 30,
-    "conditionValue": 852,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "787": {
-    "value": 30,
-    "conditionValue": 895,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "788": {
-    "value": 30,
-    "conditionValue": 937,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "789": {
-    "value": 1,
-    "conditionValue": 710,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "790": {
-    "value": 1,
-    "conditionValue": 710,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "791": {
-    "value": 1,
-    "conditionValue": 710,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "792": {
-    "value": 1,
-    "conditionValue": 720,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "793": {
-    "value": 1,
-    "conditionValue": 730,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "794": {
-    "value": 1,
-    "conditionValue": 987,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "795": {
-    "value": 1,
-    "conditionValue": 1034,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "796": {
-    "value": 1,
-    "conditionValue": 1061,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "797": {
-    "value": 1,
-    "conditionValue": 1113,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "798": {
-    "value": 1,
-    "conditionValue": 1166,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "799": {
-    "value": 1,
-    "conditionValue": 710,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "800": {
-    "value": 1,
-    "conditionValue": 710,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "801": {
-    "value": 1,
-    "conditionValue": 710,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "802": {
-    "value": 30,
-    "conditionValue": 793,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "803": {
-    "value": 30,
-    "conditionValue": 810,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "804": {
-    "value": 30,
-    "conditionValue": 831,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "805": {
-    "value": 1,
-    "conditionValue": 987,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "806": {
-    "value": 1,
-    "conditionValue": 1008,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "807": {
-    "value": 1,
-    "conditionValue": 1034,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "808": {
-    "value": 1,
-    "conditionValue": 720,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "809": {
-    "value": 1,
-    "conditionValue": 730,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "810": {
-    "value": 1,
-    "conditionValue": 730,
-    "bonus": {
-      "en": " Gathering Attempts/Integrity +{{value}}～",
-      "de": "Sammelversuche/Belastbarkeit +{{value}} (↑)",
-      "ja": "採集回数／耐久＋{{value}}（上昇タイプ）",
-      "fr": " Nombre de tentatives + {{value}} (croissant)"
-    },
-    "condition": {
-      "en": "Max GP ≥ {{value}}",
-      "de": "Max. SP ≥ {{value}}",
-      "ja": "GPmax {{value}}以上",
-      "fr": "PR ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "811": {
-    "value": 30,
-    "conditionValue": 895,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "812": {
-    "value": 30,
-    "conditionValue": 916,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "813": {
-    "value": 30,
-    "conditionValue": 937,
-    "bonus": {
-      "en": " Gatherer's Boon Chance +{{value}}%～",
-      "de": "Chance auf Stückzahl-Bonus +{{value}} % (↑)",
-      "ja": "獲得数ボーナス発生率＋{{value}}%（上昇タイプ）",
-      "fr": " Chance de récolte supp. +{{value}}% (↑)"
-    },
-    "condition": {
-      "en": "Perception ≥ {{value}}",
-      "de": "Expertise min. {{value}}",
-      "ja": "技術力 {{value}}以上",
-      "fr": "Savoir-faire ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "814": {
-    "value": 1,
-    "conditionValue": 1113,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "815": {
-    "value": 1,
-    "conditionValue": 1140,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   },
   "816": {
-    "value": 1,
-    "conditionValue": 1166,
-    "bonus": {
-      "en": " Gathering Yield +{{value}}～",
-      "de": "Stückzahl +{{value}} (steigend)",
-      "ja": "獲得数＋{{value}}個（上昇タイプ）",
-      "fr": " Quantité + {{value}} (↑)"
-    },
-    "condition": {
-      "en": "Gathering ≥ {{value}}",
-      "de": "Sammeln min. {{value}}",
-      "ja": "獲得力 {{value}}以上",
-      "fr": "Collecte ≧ {{value}}"
-    }
+    "value": 0,
+    "conditionValue": 0
   }
 }

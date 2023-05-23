@@ -30778,5 +30778,221 @@
       }
     ],
     "category": 18
+  },
+  {
+    "id": 975,
+    "exp": 1327800,
+    "reqGathering": 2565,
+    "reqIlvl": 0,
+    "lvl": 90,
+    "cost": 1,
+    "item": 37817,
+    "quantities": [
+      {
+        "quantity": 3,
+        "stat": "perception"
+      },
+      {
+        "quantity": 5,
+        "stat": "perception",
+        "value": 2720
+      },
+      {
+        "quantity": 7,
+        "stat": "perception",
+        "value": 3885
+      },
+      {
+        "quantity": 8,
+        "stat": "perception",
+        "value": 4274
+      },
+      {
+        "quantity": 9,
+        "stat": "perception",
+        "value": 4662
+      }
+    ],
+    "category": 17
+  },
+  {
+    "id": 976,
+    "exp": 1327800,
+    "reqGathering": 2565,
+    "reqIlvl": 0,
+    "lvl": 90,
+    "cost": 1,
+    "item": 37820,
+    "quantities": [
+      {
+        "quantity": 3,
+        "stat": "perception"
+      },
+      {
+        "quantity": 5,
+        "stat": "perception",
+        "value": 2720
+      },
+      {
+        "quantity": 7,
+        "stat": "perception",
+        "value": 3885
+      },
+      {
+        "quantity": 8,
+        "stat": "perception",
+        "value": 4274
+      },
+      {
+        "quantity": 9,
+        "stat": "perception",
+        "value": 4662
+      }
+    ],
+    "category": 17
+  },
+  {
+    "id": 977,
+    "exp": 1327800,
+    "reqGathering": 2565,
+    "reqIlvl": 0,
+    "lvl": 90,
+    "cost": 1,
+    "item": 37822,
+    "quantities": [
+      {
+        "quantity": 3,
+        "stat": "perception"
+      },
+      {
+        "quantity": 5,
+        "stat": "perception",
+        "value": 2720
+      },
+      {
+        "quantity": 7,
+        "stat": "perception",
+        "value": 3885
+      },
+      {
+        "quantity": 8,
+        "stat": "perception",
+        "value": 4274
+      },
+      {
+        "quantity": 9,
+        "stat": "perception",
+        "value": 4662
+      }
+    ],
+    "category": 17
+  },
+  {
+    "id": 978,
+    "exp": 1327800,
+    "reqGathering": 2565,
+    "reqIlvl": 0,
+    "lvl": 90,
+    "cost": 1,
+    "item": 37818,
+    "quantities": [
+      {
+        "quantity": 3,
+        "stat": "perception"
+      },
+      {
+        "quantity": 5,
+        "stat": "perception",
+        "value": 2720
+      },
+      {
+        "quantity": 7,
+        "stat": "perception",
+        "value": 3885
+      },
+      {
+        "quantity": 8,
+        "stat": "perception",
+        "value": 4274
+      },
+      {
+        "quantity": 9,
+        "stat": "perception",
+        "value": 4662
+      }
+    ],
+    "category": 18
+  },
+  {
+    "id": 979,
+    "exp": 1327800,
+    "reqGathering": 2565,
+    "reqIlvl": 0,
+    "lvl": 90,
+    "cost": 1,
+    "item": 37819,
+    "quantities": [
+      {
+        "quantity": 3,
+        "stat": "perception"
+      },
+      {
+        "quantity": 5,
+        "stat": "perception",
+        "value": 2720
+      },
+      {
+        "quantity": 7,
+        "stat": "perception",
+        "value": 3885
+      },
+      {
+        "quantity": 8,
+        "stat": "perception",
+        "value": 4274
+      },
+      {
+        "quantity": 9,
+        "stat": "perception",
+        "value": 4662
+      }
+    ],
+    "category": 18
+  },
+  {
+    "id": 980,
+    "exp": 1327800,
+    "reqGathering": 2565,
+    "reqIlvl": 0,
+    "lvl": 90,
+    "cost": 1,
+    "item": 37821,
+    "quantities": [
+      {
+        "quantity": 3,
+        "stat": "perception"
+      },
+      {
+        "quantity": 5,
+        "stat": "perception",
+        "value": 2720
+      },
+      {
+        "quantity": 7,
+        "stat": "perception",
+        "value": 3885
+      },
+      {
+        "quantity": 8,
+        "stat": "perception",
+        "value": 4274
+      },
+      {
+        "quantity": 9,
+        "stat": "perception",
+        "value": 4662
+      }
+    ],
+    "category": 18
   }
 ]

@@ -5806,5 +5806,41 @@
     "ja": "サベネアンコーン",
     "de": "Thavnair-Maiskolben",
     "fr": "Épi de maïs thavnairois"
+  },
+  "975": {
+    "en": "Raw Rutilated Quartz",
+    "ja": "ルチルクォーツ原石",
+    "de": "Roh-Rutilquarz",
+    "fr": "Quartz rutile brut"
+  },
+  "976": {
+    "en": "Ilmenite",
+    "ja": "イルメナイト",
+    "de": "Ilmenit",
+    "fr": "Ilménite"
+  },
+  "977": {
+    "en": "Ash Diatomite",
+    "ja": "灰緑珪藻土",
+    "de": "Asch-Diatomit",
+    "fr": "Poudre de diatomite"
+  },
+  "978": {
+    "en": "Paldao Log",
+    "ja": "パルダオ原木",
+    "de": "Paldao-Holzscheit",
+    "fr": "Rondin de paldao"
+  },
+  "979": {
+    "en": "Haritaki",
+    "ja": "ミロバラン",
+    "de": "Haritaki",
+    "fr": "Haritaki"
+  },
+  "980": {
+    "en": "Bayberry",
+    "ja": "渋木",
+    "de": "Myrica-Zweig",
+    "fr": "Myrica"
   }
 }

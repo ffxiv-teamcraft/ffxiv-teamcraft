@@ -9532,5 +9532,315 @@
         "MaxHQ": 31
       }
     }
+  },
+  {
+    "ID": 39869,
+    "LevelEquip": 1,
+    "LevelItem": 640,
+    "Bonuses": {
+      "DirectHitRate": {
+        "ID": 22,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 82,
+        "MaxHQ": 103
+      },
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 114,
+        "MaxHQ": 143
+      },
+      "Determination": {
+        "ID": 44,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 49,
+        "MaxHQ": 62
+      }
+    }
+  },
+  {
+    "ID": 39870,
+    "LevelEquip": 1,
+    "LevelItem": 640,
+    "Bonuses": {
+      "SkillSpeed": {
+        "ID": 45,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 82,
+        "MaxHQ": 103
+      },
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 114,
+        "MaxHQ": 143
+      },
+      "DirectHitRate": {
+        "ID": 22,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 49,
+        "MaxHQ": 62
+      }
+    }
+  },
+  {
+    "ID": 39871,
+    "LevelEquip": 1,
+    "LevelItem": 640,
+    "Bonuses": {
+      "CriticalHit": {
+        "ID": 27,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 82,
+        "MaxHQ": 103
+      },
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 114,
+        "MaxHQ": 143
+      },
+      "SkillSpeed": {
+        "ID": 45,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 49,
+        "MaxHQ": 62
+      }
+    }
+  },
+  {
+    "ID": 39872,
+    "LevelEquip": 1,
+    "LevelItem": 640,
+    "Bonuses": {
+      "Determination": {
+        "ID": 44,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 82,
+        "MaxHQ": 103
+      },
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 114,
+        "MaxHQ": 143
+      },
+      "CriticalHit": {
+        "ID": 27,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 49,
+        "MaxHQ": 62
+      }
+    }
+  },
+  {
+    "ID": 39873,
+    "LevelEquip": 1,
+    "LevelItem": 640,
+    "Bonuses": {
+      "Piety": {
+        "ID": 6,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 82,
+        "MaxHQ": 103
+      },
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 114,
+        "MaxHQ": 143
+      },
+      "Determination": {
+        "ID": 44,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 49,
+        "MaxHQ": 62
+      }
+    }
+  },
+  {
+    "ID": 39874,
+    "LevelEquip": 1,
+    "LevelItem": 640,
+    "Bonuses": {
+      "SpellSpeed": {
+        "ID": 46,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 82,
+        "MaxHQ": 103
+      },
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 114,
+        "MaxHQ": 143
+      },
+      "Piety": {
+        "ID": 6,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 49,
+        "MaxHQ": 62
+      }
+    }
+  },
+  {
+    "ID": 39875,
+    "LevelEquip": 1,
+    "LevelItem": 640,
+    "Bonuses": {
+      "SpellSpeed": {
+        "ID": 46,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 82,
+        "MaxHQ": 103
+      },
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 114,
+        "MaxHQ": 143
+      },
+      "DirectHitRate": {
+        "ID": 22,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 49,
+        "MaxHQ": 62
+      }
+    }
+  },
+  {
+    "ID": 39876,
+    "LevelEquip": 1,
+    "LevelItem": 640,
+    "Bonuses": {
+      "CriticalHit": {
+        "ID": 27,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 82,
+        "MaxHQ": 103
+      },
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 114,
+        "MaxHQ": 143
+      },
+      "SpellSpeed": {
+        "ID": 46,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 49,
+        "MaxHQ": 62
+      }
+    }
+  },
+  {
+    "ID": 39877,
+    "LevelEquip": 1,
+    "LevelItem": 640,
+    "Bonuses": {
+      "Tenacity": {
+        "ID": 19,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 82,
+        "MaxHQ": 103
+      },
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 114,
+        "MaxHQ": 143
+      },
+      "Determination": {
+        "ID": 44,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 49,
+        "MaxHQ": 62
+      }
+    }
+  },
+  {
+    "ID": 39878,
+    "LevelEquip": 1,
+    "LevelItem": 640,
+    "Bonuses": {
+      "Determination": {
+        "ID": 44,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 82,
+        "MaxHQ": 103
+      },
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 114,
+        "MaxHQ": 143
+      },
+      "Tenacity": {
+        "ID": 19,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 49,
+        "MaxHQ": 62
+      }
+    }
   }
 ]

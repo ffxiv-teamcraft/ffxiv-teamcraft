@@ -615,6 +615,7 @@ export const worlds = {
   "톤베리": 2078,
   "캐트시": 2079,
   "펜리르": 2080,
+  "오메가": 2081,
   "koreacontents1": 2560,
   "koreacontents2": 2561,
   "krcontents1": 2562,

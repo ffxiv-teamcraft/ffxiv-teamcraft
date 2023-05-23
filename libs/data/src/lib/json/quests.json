@@ -80036,5 +80036,757 @@
       "fr": ""
     },
     "icon": "/i/071000/071221.png"
+  },
+  "70271": {
+    "name": {
+      "en": "Currying Flavor",
+      "ja": "ラザハンで腹ごしらえ",
+      "de": "Die Würze Radz-at-Hans",
+      "fr": "Un ravitaillement relevé"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 38269,
+        "amount": 2,
+        "hq": true
+      },
+      {
+        "id": 38261,
+        "amount": 2,
+        "hq": true
+      },
+      {
+        "id": 38265,
+        "amount": 2,
+        "hq": true
+      },
+      {
+        "id": 38267,
+        "amount": 2,
+        "hq": true
+      },
+      {
+        "id": 5825,
+        "amount": 3
+      }
+    ]
+  },
+  "70272": {
+    "name": {
+      "en": "Going Haam",
+      "ja": "冥き門を開くには",
+      "de": "Die Pforte zur Finsternis",
+      "fr": "Éther insulaire"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 33917,
+        "amount": 1
+      },
+      {
+        "id": 33921,
+        "amount": 1
+      },
+      {
+        "id": 33928,
+        "amount": 1
+      },
+      {
+        "id": 33929,
+        "amount": 1
+      }
+    ]
+  },
+  "70273": {
+    "name": {
+      "en": "Like Fear to Flame",
+      "ja": "エーテル供給計画",
+      "de": "Ätherdiplomatie",
+      "fr": "La tour de la discorde"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "70274": {
+    "name": {
+      "en": "The Fallen Empire",
+      "ja": "ガレマルドの今",
+      "de": "Garlemalds Gram",
+      "fr": "Le dilemme garlemaldais"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "70275": {
+    "name": {
+      "en": "Bonds of Trust",
+      "ja": "歩み寄る先に",
+      "de": "Handel mit Hoffnung",
+      "fr": "Sur un pied d'égalité"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 38270,
+        "amount": 2,
+        "hq": true
+      },
+      {
+        "id": 38262,
+        "amount": 2,
+        "hq": true
+      },
+      {
+        "id": 38268,
+        "amount": 2,
+        "hq": true
+      },
+      {
+        "id": 38266,
+        "amount": 2,
+        "hq": true
+      },
+      {
+        "id": 5825,
+        "amount": 3
+      }
+    ]
+  },
+  "70276": {
+    "name": {
+      "en": "Lunar Rendezvous",
+      "ja": "月の「剣」",
+      "de": "Des Mondes Schwerter",
+      "fr": "Relever les glaives"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "70277": {
+    "name": {
+      "en": "The Red Side of the Moon",
+      "ja": "ヴォイドの月",
+      "de": "So rot wie Blut",
+      "fr": "La lune rouge"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "70278": {
+    "name": {
+      "en": "Abyssal Dark",
+      "ja": "落ちゆくもの",
+      "de": "So schwarz wie das Nichts",
+      "fr": "Un souvenir sibyllin"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 33918,
+        "amount": 1
+      },
+      {
+        "id": 33919,
+        "amount": 1
+      },
+      {
+        "id": 33920,
+        "amount": 1
+      }
+    ]
+  },
+  "70279": {
+    "name": {
+      "en": "The Dark Throne",
+      "ja": "玉座の咎人",
+      "de": "Auf dunklem Thron",
+      "fr": "Le trône obscur"
+    },
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 40701,
+        "amount": 1
+      }
+    ]
+  },
+  "70280": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70281": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70282": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70283": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70284": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70285": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70286": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70287": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70288": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70289": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70290": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70291": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70292": {
+    "name": {
+      "en": "Eater of Souls",
+      "ja": "魂を集めし者",
+      "de": "Der Seelenfresser",
+      "fr": "Le dévoreur d'âmes"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 33928,
+        "amount": 5
+      },
+      {
+        "id": 33918,
+        "amount": 3
+      },
+      {
+        "id": 33919,
+        "amount": 3
+      },
+      {
+        "id": 33920,
+        "amount": 3
+      }
+    ]
+  },
+  "70293": {
+    "name": {
+      "en": "Pandæmonium Awakens",
+      "ja": "「パンデモニウム」はその目を開く",
+      "de": "Pandæmonium erwacht",
+      "fr": "Un monstre appelé Pandæmonium"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 33929,
+        "amount": 5
+      },
+      {
+        "id": 33918,
+        "amount": 3
+      },
+      {
+        "id": 33919,
+        "amount": 3
+      },
+      {
+        "id": 33920,
+        "amount": 3
+      }
+    ]
+  },
+  "70294": {
+    "name": {
+      "en": "The Emissary's Judgment",
+      "ja": "影法師の望み",
+      "de": "Die Rückkehr des Fürsprechers",
+      "fr": "Ennemi malgré lui"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 33921,
+        "amount": 5
+      },
+      {
+        "id": 33918,
+        "amount": 3
+      },
+      {
+        "id": 33919,
+        "amount": 3
+      },
+      {
+        "id": 33920,
+        "amount": 3
+      }
+    ]
+  },
+  "70295": {
+    "name": {
+      "en": "A Mother's Touch",
+      "ja": "獄の底より天を目指した女",
+      "de": "Ende der Göttlichkeit",
+      "fr": "Mère et fils"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 33917,
+        "amount": 5
+      },
+      {
+        "id": 33918,
+        "amount": 3
+      },
+      {
+        "id": 33919,
+        "amount": 3
+      },
+      {
+        "id": 33920,
+        "amount": 3
+      }
+    ]
+  },
+  "70296": {
+    "name": {
+      "en": "Guided by the Past",
+      "ja": "「星」に願いを",
+      "de": "Heute, gestern, morgen",
+      "fr": "Rétrospections"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 33918,
+        "amount": 1
+      },
+      {
+        "id": 33919,
+        "amount": 1
+      },
+      {
+        "id": 33920,
+        "amount": 1
+      },
+      {
+        "id": 33928,
+        "amount": 3
+      },
+      {
+        "id": 33929,
+        "amount": 3
+      },
+      {
+        "id": 33921,
+        "amount": 3
+      },
+      {
+        "id": 33917,
+        "amount": 3
+      }
+    ]
+  },
+  "70297": {
+    "name": {
+      "en": "Aggressive Expansion",
+      "ja": "漆黒の将に繋がれ、大繁盛の輪！",
+      "de": "Aggressive Expansion",
+      "fr": "Voyageur, représentant et... pilote"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70298": {
+    "name": {
+      "en": "Forever in Our Hearts",
+      "ja": "彼女の夢、家族の絆",
+      "de": "Ein Traum von einem Porträt",
+      "fr": "Son rêve, le temps d'une toile"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 40660,
+        "amount": 1
+      }
+    ]
+  },
+  "70299": {
+    "name": {
+      "en": "An Ideal Marriage",
+      "ja": "珍客？ エンジョイ野郎ども",
+      "de": "Wie Pech und Schwefel",
+      "fr": "Petite balade entre amis"
+    },
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 40426,
+        "amount": 1
+      },
+      {
+        "id": 40427,
+        "amount": 1
+      },
+      {
+        "id": 40428,
+        "amount": 1
+      },
+      {
+        "id": 40429,
+        "amount": 1
+      },
+      {
+        "id": 40430,
+        "amount": 1
+      }
+    ]
+  },
+  "70300": {
+    "name": {
+      "en": "A Faerie Tale Come True",
+      "ja": "変幻するフェアリー",
+      "de": "Die wandelbare Welt der Feen",
+      "fr": "Fée déguisée"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70301": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70302": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70303": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70304": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70305": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70306": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70307": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70308": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70309": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70310": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70311": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70312": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70313": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70314": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70315": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70316": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70317": {
+    "name": {
+      "en": "星芒祭と子どもたちの贈り物",
+      "ja": "星芒祭と子どもたちの贈り物",
+      "de": "Sternenlichtfest in Einsamkeit",
+      "fr": "星芒祭と子どもたちの贈り物"
+    },
+    "icon": "/i/080000/080106.png",
+    "rewards": [
+      {
+        "id": 40416,
+        "amount": 1
+      },
+      {
+        "id": 40417,
+        "amount": 1
+      },
+      {
+        "id": 40418,
+        "amount": 1
+      },
+      {
+        "id": 40419,
+        "amount": 1
+      },
+      {
+        "id": 40420,
+        "amount": 1
+      }
+    ]
+  },
+  "70318": {
+    "name": {
+      "en": "星芒祭と子どもたちの輪",
+      "ja": "星芒祭と子どもたちの輪",
+      "de": "Das größte Geschenk",
+      "fr": "星芒祭と子どもたちの輪"
+    },
+    "icon": "/i/080000/080106.png"
+  },
+  "70319": {
+    "name": {
+      "en": "星芒祭と想いの形",
+      "ja": "星芒祭と想いの形",
+      "de": "Arbeit als Aushilfshelferlein",
+      "fr": "星芒祭と想いの形"
+    },
+    "icon": "/i/080000/080106.png",
+    "rewards": [
+      {
+        "id": 7809,
+        "amount": 10
+      }
+    ]
+  },
+  "70320": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70321": {
+    "name": {
+      "en": "守護天節と怪しい契約",
+      "ja": "守護天節と怪しい契約",
+      "de": "Von der Freude an der Furcht",
+      "fr": "守護天節と怪しい契約"
+    },
+    "icon": "/i/080000/080103.png"
+  },
+  "70322": {
+    "name": {
+      "en": "守護天節と感謝の気持ち",
+      "ja": "守護天節と感謝の気持ち",
+      "de": "Spuk sei Dank",
+      "fr": "守護天節と感謝の気持ち"
+    },
+    "icon": "/i/080000/080103.png"
+  },
+  "70323": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70324": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70325": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "70326": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
   }
 }

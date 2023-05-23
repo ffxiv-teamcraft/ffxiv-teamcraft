@@ -33,7 +33,7 @@ export class EnvironmentService {
     if (this.gameVersion <= 6.3) {
       return 630;
     } else if (this.gameVersion <= 6.4) {
-      return 650;
+      return 665;
     }
   }
 }

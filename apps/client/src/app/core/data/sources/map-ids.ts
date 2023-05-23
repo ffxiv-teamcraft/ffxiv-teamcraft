@@ -2867,7 +2867,7 @@ export const mapIds = [
     "id": 359,
     "zone": 2297,
     "name": "The Sirensong Sea",
-    "territory": 626,
+    "territory": 1142,
     "scale": 200,
     "weatherRate": 36
   },
@@ -2979,7 +2979,7 @@ export const mapIds = [
     "id": 373,
     "zone": 2691,
     "name": "Ala Mhigo",
-    "territory": 689,
+    "territory": 1146,
     "scale": 200,
     "weatherRate": 0
   },
@@ -2987,7 +2987,7 @@ export const mapIds = [
     "id": 374,
     "zone": 2691,
     "name": "Ala Mhigo",
-    "territory": 689,
+    "territory": 1146,
     "scale": 200,
     "weatherRate": 0
   },
@@ -2995,7 +2995,7 @@ export const mapIds = [
     "id": 375,
     "zone": 2833,
     "name": "Bardam's Mettle",
-    "territory": 623,
+    "territory": 1143,
     "scale": 200,
     "weatherRate": 0
   },
@@ -3163,7 +3163,7 @@ export const mapIds = [
     "id": 396,
     "zone": 2810,
     "name": "Doma Castle",
-    "territory": 660,
+    "territory": 1144,
     "scale": 200,
     "weatherRate": 0
   },
@@ -3171,7 +3171,7 @@ export const mapIds = [
     "id": 397,
     "zone": 2665,
     "name": "Castrum Abania",
-    "territory": 661,
+    "territory": 1145,
     "scale": 200,
     "weatherRate": 0
   },
@@ -6003,7 +6003,7 @@ export const mapIds = [
     "id": 751,
     "zone": 3712,
     "name": "Ultima Thule",
-    "territory": 960,
+    "territory": 1027,
     "scale": 100,
     "weatherRate": 136
   },
@@ -6241,8 +6241,8 @@ export const mapIds = [
   },
   {
     "id": 781,
-    "zone": 0,
-    "name": "",
+    "zone": 4043,
+    "name": "Unnamed Island",
     "territory": 1055,
     "scale": 100,
     "weatherRate": 148
@@ -6337,16 +6337,16 @@ export const mapIds = [
   },
   {
     "id": 793,
-    "zone": 0,
-    "name": "",
+    "zone": 4043,
+    "name": "Unnamed Island",
     "territory": 1055,
     "scale": 100,
     "weatherRate": 148
   },
   {
     "id": 794,
-    "zone": 0,
-    "name": "",
+    "zone": 4043,
+    "name": "Unnamed Island",
     "territory": 1055,
     "scale": 100,
     "weatherRate": 148
@@ -6633,10 +6633,194 @@ export const mapIds = [
   },
   {
     "id": 830,
+    "zone": 4296,
+    "name": "The Voidcast Dais",
+    "territory": 1140,
+    "scale": 400,
+    "weatherRate": 149
+  },
+  {
+    "id": 831,
+    "zone": 4297,
+    "name": "The Aetherfont",
+    "territory": 1126,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 832,
+    "zone": 4297,
+    "name": "The Aetherfont",
+    "territory": 1126,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 833,
+    "zone": 4297,
+    "name": "The Aetherfont",
+    "territory": 1126,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 834,
+    "zone": 4362,
+    "name": "The Dæmons' Nest",
+    "territory": 1149,
+    "scale": 400,
+    "weatherRate": 145
+  },
+  {
+    "id": 835,
+    "zone": 4375,
+    "name": "Ascension",
+    "territory": 1153,
+    "scale": 400,
+    "weatherRate": 145
+  },
+  {
+    "id": 836,
+    "zone": 4376,
+    "name": "Apex of Creation",
+    "territory": 1154,
+    "scale": 400,
+    "weatherRate": 145
+  },
+  {
+    "id": 837,
+    "zone": 4358,
+    "name": "The Aetherial Slough",
+    "territory": 1147,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 838,
+    "zone": 4377,
+    "name": "The Gilded Araya",
+    "territory": 1136,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 839,
+    "zone": 4307,
+    "name": "The Chamber of Fourteen",
+    "territory": 1151,
+    "scale": 400,
+    "weatherRate": 145
+  },
+  {
+    "id": 840,
+    "zone": 4380,
+    "name": "Estinien's Chambers",
+    "territory": 1161,
+    "scale": 800,
+    "weatherRate": 138
+  },
+  {
+    "id": 841,
+    "zone": 4381,
+    "name": "Senatus",
+    "territory": 1160,
+    "scale": 400,
+    "weatherRate": 133
+  },
+  {
+    "id": 842,
+    "zone": 4382,
+    "name": "The Red Moon",
+    "territory": 1162,
+    "scale": 400,
+    "weatherRate": 149
+  },
+  {
+    "id": 843,
     "zone": 0,
     "name": "",
     "territory": null,
-    "scale": 100,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 844,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 845,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 846,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 847,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 848,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 849,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 850,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 851,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 852,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 853,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
     "weatherRate": null
   }
 ];
