@@ -217,19 +217,26 @@ export class LogsExtractor extends AbstractExtractor {
       this.fishingLogDone$.next();
     });
 
-    this.getSheet<any>(this.xiv, 'FishParameter',
-      [
-        'Item.Icon',
-        'FishingSpot.TerritoryType.Map#', 'FishingSpot.TerritoryType.PlaceName#',
-        'GatheringItemLevel.Stars', 'GatheringItemLevel.GatheringItemLevel', 'TimeRestricted', 'WeatherRestricted', 'FishingRecordType#', 'IsInLog', 'GatheringSubCategory.Item#'],
-      false,
-      2
-    ).pipe(
-      map(completeFetch => {
+    combineLatest([
+      this.getSheet<any>(this.xiv, 'FishParameter',
+        [
+          'Item.Icon',
+          'FishingSpot.TerritoryType.Map#', 'FishingSpot.TerritoryType.PlaceName#',
+          'GatheringItemLevel.Stars', 'GatheringItemLevel.GatheringItemLevel', 'FishingRecordType#', 'IsInLog', 'GatheringSubCategory.Item#'],
+        false,
+        2
+      ),
+      this.getSheet<any>(this.xiv, 'FishingNoteInfo',
+        ['Item#', 'WeatherRestriction', 'TimeRestriction', 'SpecialConditions', 'IsCollectable'],
+        false
+      )
+    ]).pipe(
+      map(([fishParameterSheet, fishingNoteInfoSheet]) => {
         const fishParameter = {};
-        completeFetch
+        fishParameterSheet
           .filter(fish => fish.Item.index > 0 && fish.FishingSpot.TerritoryType !== undefined)
           .forEach(fish => {
+            const fishingNote = fishingNoteInfoSheet.find(row => row.Item === fish.Item.index);
             if (fishes.indexOf(fish.Item.index) === -1) {
               fishes.push(fish.Item.index);
             }
@@ -240,8 +247,8 @@ export class LogsExtractor extends AbstractExtractor {
               icon: fish.Item.Icon,
               mapId: fish.FishingSpot.TerritoryType.Map,
               zoneId: fish.FishingSpot.TerritoryType.PlaceName,
-              timed: fish.TimeRestricted ? 1 : 0,
-              weathered: fish.WeatherRestricted ? 1 : 0,
+              timed: fishingNote.TimeRestriction,
+              weathered: fishingNote.WeatherRestriction,
               stars: fish.GatheringItemLevel.Stars || 0
             };
             if (fish.GatheringSubCategory) {

@@ -285,7 +285,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
       const predictedPopularityEntry = islandPopularity[state.predictedPopularity];
       return state.supplyDemand
         .filter(row => {
-          const maxId = this.environment.gameVersion < 6.3 ? 50 : Infinity;
+          const maxId = this.environment.gameVersion < 6.4 ? 60 : Infinity;
           return row.id > 0 && row.id <= maxId && islandCraftworks[row.id]?.itemId > 0;
         })
         .filter(row => {

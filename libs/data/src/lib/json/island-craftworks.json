@@ -583,69 +583,169 @@
     "lvl": 11
   },
   "61": {
-    "itemId": 0,
-    "value": 0,
-    "craftingTime": 0,
-    "themes": [],
-    "lvl": 0
+    "itemId": 40740,
+    "value": 54,
+    "craftingTime": 6,
+    "themes": [
+      6,
+      11
+    ],
+    "lvl": 12
   },
   "62": {
-    "itemId": 0,
-    "value": 0,
-    "craftingTime": 0,
-    "themes": [],
-    "lvl": 0
+    "itemId": 40741,
+    "value": 80,
+    "craftingTime": 8,
+    "themes": [
+      5
+    ],
+    "lvl": 12
   },
   "63": {
-    "itemId": 0,
-    "value": 0,
-    "craftingTime": 0,
-    "themes": [],
-    "lvl": 0
+    "itemId": 40742,
+    "value": 36,
+    "craftingTime": 4,
+    "themes": [
+      5,
+      8
+    ],
+    "lvl": 12
   },
   "64": {
-    "itemId": 0,
-    "value": 0,
-    "craftingTime": 0,
-    "themes": [],
-    "lvl": 0
+    "itemId": 40743,
+    "value": 136,
+    "craftingTime": 8,
+    "themes": [
+      3,
+      15
+    ],
+    "lvl": 12
   },
   "65": {
-    "itemId": 0,
-    "value": 0,
-    "craftingTime": 0,
-    "themes": [],
-    "lvl": 0
+    "itemId": 40744,
+    "value": 54,
+    "craftingTime": 6,
+    "themes": [
+      14,
+      16
+    ],
+    "lvl": 13
   },
   "66": {
-    "itemId": 0,
-    "value": 0,
-    "craftingTime": 0,
-    "themes": [],
-    "lvl": 0
+    "itemId": 40745,
+    "value": 72,
+    "craftingTime": 8,
+    "themes": [
+      6,
+      16
+    ],
+    "lvl": 13
   },
   "67": {
-    "itemId": 0,
-    "value": 0,
-    "craftingTime": 0,
-    "themes": [],
-    "lvl": 0
+    "itemId": 40746,
+    "value": 54,
+    "craftingTime": 6,
+    "themes": [
+      2,
+      5
+    ],
+    "lvl": 13
   },
   "68": {
-    "itemId": 0,
-    "value": 0,
-    "craftingTime": 0,
-    "themes": [],
-    "lvl": 0
+    "itemId": 40747,
+    "value": 80,
+    "craftingTime": 8,
+    "themes": [
+      16
+    ],
+    "lvl": 13
   },
   "69": {
+    "itemId": 40748,
+    "value": 52,
+    "craftingTime": 4,
+    "themes": [
+      3
+    ],
+    "lvl": 14
+  },
+  "70": {
+    "itemId": 40749,
+    "value": 78,
+    "craftingTime": 6,
+    "themes": [
+      3
+    ],
+    "lvl": 14
+  },
+  "71": {
+    "itemId": 40750,
+    "value": 90,
+    "craftingTime": 6,
+    "themes": [
+      3
+    ],
+    "lvl": 14
+  },
+  "72": {
+    "itemId": 40751,
+    "value": 104,
+    "craftingTime": 8,
+    "themes": [
+      1
+    ],
+    "lvl": 14
+  },
+  "73": {
     "itemId": 0,
     "value": 0,
     "craftingTime": 0,
     "themes": [],
     "lvl": 0
   },
-  "70": {
+  "74": {
+    "itemId": 0,
+    "value": 0,
+    "craftingTime": 0,
+    "themes": [],
+    "lvl": 0
+  },
+  "75": {
+    "itemId": 0,
+    "value": 0,
+    "craftingTime": 0,
+    "themes": [],
+    "lvl": 0
+  },
+  "76": {
+    "itemId": 0,
+    "value": 0,
+    "craftingTime": 0,
+    "themes": [],
+    "lvl": 0
+  },
+  "77": {
+    "itemId": 0,
+    "value": 0,
+    "craftingTime": 0,
+    "themes": [],
+    "lvl": 0
+  },
+  "78": {
+    "itemId": 0,
+    "value": 0,
+    "craftingTime": 0,
+    "themes": [],
+    "lvl": 0
+  },
+  "79": {
+    "itemId": 0,
+    "value": 0,
+    "craftingTime": 0,
+    "themes": [],
+    "lvl": 0
+  },
+  "80": {
     "itemId": 0,
     "value": 0,
     "craftingTime": 0,

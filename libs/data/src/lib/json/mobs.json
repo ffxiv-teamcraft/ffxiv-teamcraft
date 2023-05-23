@@ -39990,10 +39990,10 @@
     "fr": "sphère de chakra"
   },
   "6666": {
-    "en": "unconscious adventurer",
-    "ja": "昏倒した冒険者",
-    "de": "bewusstlos[a] Abenteurer",
-    "fr": "aventurier inconscient"
+    "en": "empty vessel",
+    "ja": "昏倒した身体",
+    "de": "bewusstlos[a] Person",
+    "fr": "corps inerte"
   },
   "6667": {
     "en": "salvaged slasher",
@@ -55572,7 +55572,7 @@
     "fr": "bulle sinistre"
   },
   "9263": {
-    "en": "Kyklops",
+    "en": "kyklops",
     "ja": "クリュプス",
     "de": "Kyklops",
     "fr": "Kyklops"
@@ -63723,7 +63723,7 @@
     "en": "Ophioneus",
     "ja": "オピオネウス",
     "de": "Ophioneus",
-    "fr": "Ophion"
+    "fr": "Ophioneus"
   },
   "10622": {
     "en": "Narrow-rift",
@@ -65406,16 +65406,16 @@
     "fr": "soldat impérial subjugué"
   },
   "10902": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "slippery armadillo",
+    "ja": "スリッパリー・アルマジロ",
+    "de": "flutschig[a] Gürteltier",
+    "fr": "tatou fuyard"
   },
   "10903": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "hardscale armadillo",
+    "ja": "ハードスケイル・アルマジロ",
+    "de": "geschuppt[a] Gürteltier",
+    "fr": "tatou chitineux"
   },
   "10904": {
     "en": "Thavnairian refugee",
@@ -65655,7 +65655,7 @@
     "en": "1st Legion soldier",
     "ja": "第I軍団の軍団兵",
     "de": "Soldat[p] der I. Legion",
-    "fr": "soldat de la 1ère légion"
+    "fr": "soldat de la 1re légion"
   },
   "10944": {
     "en": "Jullus pyr Norbanus",
@@ -66399,7 +66399,7 @@
     "en": "1st Legion hoplomachus",
     "ja": "Iレギオン・ホプロマクス",
     "de": "Hoplomachus[p] der I. Legion",
-    "fr": "hoplomachus de la 1ère légion"
+    "fr": "hoplomachus de la 1re légion"
   },
   "11068": {
     "en": "1st Legion eques",
@@ -73446,7 +73446,7 @@
     "fr": "mine pachypodium"
   },
   "12242": {
-    "en": "Tiamat clone",
+    "en": "Tiamat's clone",
     "ja": "ティアマット・クローン",
     "de": "Tiamat-Klon",
     "fr": "clone de Tiamat"
@@ -73530,10 +73530,10 @@
     "fr": "colosse d'Euphrosyne"
   },
   "12256": {
-    "en": "_rsv_12256_-1_1_0_0_S64755250_E64755250",
-    "ja": "_rsv_12256_-1_0_0_0_S64755250_E64755250",
-    "de": "_rsv_12256_-1_2_0_0_S64755250_E64755250",
-    "fr": "_rsv_12256_-1_3_0_0_S64755250_E64755250"
+    "en": "Alpha Omega",
+    "ja": "アルファオメガ",
+    "de": "Alpha-Omega",
+    "fr": "Alpha-Oméga"
   },
   "12257": {
     "en": "Omega-M",
@@ -73548,16 +73548,16 @@
     "fr": "Oméga-F"
   },
   "12259": {
-    "en": "_rsv_12259_-1_1_0_0_S64755250_E64755250",
-    "ja": "_rsv_12259_-1_0_0_0_S64755250_E64755250",
-    "de": "_rsv_12259_-1_2_0_0_S64755250_E64755250",
-    "fr": "_rsv_12259_-1_3_0_0_S64755250_E64755250"
+    "en": "cosmo meteor",
+    "ja": "コスモメテオ",
+    "de": "Kosmosmeteor",
+    "fr": "cosmométéore"
   },
   "12260": {
-    "en": "_rsv_12260_-1_1_0_0_S64755250_E64755250",
-    "ja": "_rsv_12260_-1_0_0_0_S64755250_E64755250",
-    "de": "_rsv_12260_-1_2_0_0_S64755250_E64755250",
-    "fr": "_rsv_12260_-1_3_0_0_S64755250_E64755250"
+    "en": "cosmo comet",
+    "ja": "コスモコメット",
+    "de": "Kosmoskomet",
+    "fr": "cosmocomète"
   },
   "12261": {
     "en": "cloning node",
@@ -73572,7 +73572,7 @@
     "fr": "clone de dragon blindé"
   },
   "12263": {
-    "en": "Twintania clone",
+    "en": "Twintania's clone",
     "ja": "ツインタニア・クローン",
     "de": "Twintania-Klon",
     "fr": "clone de Gémellia"
@@ -73998,102 +73998,1002 @@
     "fr": ""
   },
   "12334": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Octomammoth",
+    "ja": "オクトマンモス",
+    "de": "Oktomammut",
+    "fr": "octomammouth"
   },
   "12335": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "mammoth tentacle",
+    "ja": "オクトマンモスの腕",
+    "de": "Oktomammut-Tentakel",
+    "fr": "bras d'octomammouth"
   },
   "12336": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Lyngbakr",
+    "ja": "リングバーク",
+    "de": "Lyngbakr",
+    "fr": "Lyngbakr"
   },
   "12337": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Arkas",
+    "ja": "アルカス",
+    "de": "Arkas",
+    "fr": "Arkas"
   },
   "12338": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Haam frostbeast",
+    "ja": "ハーム・ブリーズビースト",
+    "de": "Haam-Eisbestie",
+    "fr": "bête glacée de Haam"
   },
   "12339": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Haam otodus",
+    "ja": "ハーム・オトドゥス",
+    "de": "Haam-Otodus",
+    "fr": "otodus de Haam"
   },
   "12340": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Haam aurelia",
+    "ja": "ハーム・オーレリア",
+    "de": "Haam-Aurelia",
+    "fr": "aurélie de Haam"
   },
   "12341": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Haam Halonid",
+    "ja": "ハーム・ハルオニッド",
+    "de": "Haam-Halonid",
+    "fr": "halonide de Haam"
   },
   "12342": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Haam auk",
+    "ja": "ハーム・キラーパフィン",
+    "de": "Haam-Taucher",
+    "fr": "alque tueur de Haam"
   },
   "12343": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Haam troll",
+    "ja": "ハーム・トロル",
+    "de": "Haam-Troll",
+    "fr": "troll de Haam"
   },
   "12344": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Haam yakow",
+    "ja": "ハーム・ヤーコウ",
+    "de": "Haam-Yakuh",
+    "fr": "dzo de Haam"
   },
   "12345": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Haam crystal",
+    "ja": "ハーム・リビングクリスタル",
+    "de": "Haam-Kristall",
+    "fr": "cristal vivant de Haam"
   },
   "12346": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Haam golem",
+    "ja": "ハーム・レインボーゴーレム",
+    "de": "Haam-Golem",
+    "fr": "golem arc-en-ciel de Haam"
   },
   "12347": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Haam myrrlith",
+    "ja": "ハーム・ミルリス",
+    "de": "Haam-Myrrlith",
+    "fr": "myrrlith de Haam"
   },
   "12348": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Haam polycrystal",
+    "ja": "ハーム・ポリクリスタル",
+    "de": "Haam-Polykristall",
+    "fr": "polycristal de Haam"
   },
   "12349": {
+    "en": "Haam Forlorn",
+    "ja": "ハーム・フォーローン",
+    "de": "Haam-Verloren[a]",
+    "fr": "délaissé de Haam"
+  },
+  "12350": {
+    "en": "Haam dhruva",
+    "ja": "ハーム・ドルヴァ",
+    "de": "Haam-Dhruva",
+    "fr": "dhruva de Haam"
+  },
+  "12351": {
+    "en": "Asura",
+    "ja": "アスラ",
+    "de": "Asura",
+    "fr": "Asura"
+  },
+  "12352": {
+    "en": "Asura image",
+    "ja": "アスラの化身",
+    "de": "Asuras Inkarnation",
+    "fr": "incarnation d'Asura"
+  },
+  "12353": {
+    "en": "phantom Asura",
+    "ja": "アスラの幻影",
+    "de": "Asura-Abbild",
+    "fr": "illusion d'Asura"
+  },
+  "12354": {
+    "en": "Pandæmonium",
+    "ja": "パンデモニウム",
+    "de": "Pandæmonium",
+    "fr": "Pandæmonium"
+  },
+  "12355": {
+    "en": "pandæmoniac pillar",
+    "ja": "万魔殿の塔",
+    "de": "pandæmonisch[a] Turm",
+    "fr": "pilier pandæmoniaque"
+  },
+  "12356": {
+    "en": "arcane sphere",
+    "ja": "立体魔法陣",
+    "de": "arkan[a] Körper",
+    "fr": "sphère arcanique"
+  },
+  "12357": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": ""
   },
-  "12350": {
+  "12358": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12359": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12360": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12361": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12362": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12363": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12364": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12365": {
+    "en": "Golbez",
+    "ja": "ゴルベーザ",
+    "de": "Golbez",
+    "fr": "Golbez"
+  },
+  "12366": {
+    "en": "Golbez's shadow",
+    "ja": "ゴルベーザの幻影",
+    "de": "Phantom-Golbez",
+    "fr": "spectre de Golbez"
+  },
+  "12367": {
+    "en": "shadow dragon",
+    "ja": "黒竜",
+    "de": "Schattendrache",
+    "fr": "dragonne obscure"
+  },
+  "12368": {
+    "en": "gale sphere",
+    "ja": "風球",
+    "de": "Windorbis",
+    "fr": "sphère de vent"
+  },
+  "12369": {
+    "en": "Kokytos",
+    "ja": "コキュートス",
+    "de": "Kokytos",
+    "fr": "Cocyte"
+  },
+  "12370": {
+    "en": "Kokytos's echo",
+    "ja": "コキュートスの幻影",
+    "de": "Phantom-Kokytos",
+    "fr": "spectre de Cocyte"
+  },
+  "12371": {
+    "en": "ball of levin",
+    "ja": "雷球",
+    "de": "Elektrosphäre",
+    "fr": "orbe de foudre"
+  },
+  "12372": {
+    "en": "comet",
+    "ja": "コメット",
+    "de": "Meteor",
+    "fr": "comète"
+  },
+  "12373": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12374": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12375": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12376": {
+    "en": "Kraken's Arms deckhand",
+    "ja": "百鬼夜行の甲板員",
+    "de": "Klabauter-Matrose",
+    "fr": "marin de la Horde du kraken"
+  },
+  "12377": {
+    "en": "Athena",
+    "ja": "アテナ",
+    "de": "Athena",
+    "fr": "Athéna"
+  },
+  "12378": {
+    "en": "anthropos",
+    "ja": "アンスロポス",
+    "de": "Anthropos",
+    "fr": "anthropos"
+  },
+  "12379": {
+    "en": "logou idea",
+    "ja": "ロゴス・イデア",
+    "de": "Logos",
+    "fr": "logou idea"
+  },
+  "12380": {
+    "en": "thymou idea",
+    "ja": "テューモス・イデア",
+    "de": "Thymos",
+    "fr": "thymou idea"
+  },
+  "12381": {
+    "en": "epithymias idea ",
+    "ja": "エピテューミア・イデア",
+    "de": "Epithymia",
+    "fr": "epithymia idea"
+  },
+  "12382": {
+    "en": "_rsv_12382_-1_1_0_0_S64755250_E64755250",
+    "ja": "_rsv_12382_-1_0_0_0_S64755250_E64755250",
+    "de": "_rsv_12382_-1_2_0_0_S64755250_E64755250",
+    "fr": "_rsv_12382_-1_3_0_0_S64755250_E64755250"
+  },
+  "12383": {
+    "en": "_rsv_12383_-1_1_0_0_S64755250_E64755250",
+    "ja": "_rsv_12383_-1_0_0_0_S64755250_E64755250",
+    "de": "_rsv_12383_-1_2_0_0_S64755250_E64755250",
+    "fr": "_rsv_12383_-1_3_0_0_S64755250_E64755250"
+  },
+  "12384": {
+    "en": "_rsv_12384_-1_1_0_0_S64755250_E64755250",
+    "ja": "_rsv_12384_-1_0_0_0_S64755250_E64755250",
+    "de": "_rsv_12384_-1_2_0_0_S64755250_E64755250",
+    "fr": "_rsv_12384_-1_3_0_0_S64755250_E64755250"
+  },
+  "12385": {
+    "en": "_rsv_12385_-1_1_0_0_S64755250_E64755250",
+    "ja": "_rsv_12385_-1_0_0_0_S64755250_E64755250",
+    "de": "_rsv_12385_-1_2_0_0_S64755250_E64755250",
+    "fr": "_rsv_12385_-1_3_0_0_S64755250_E64755250"
+  },
+  "12386": {
+    "en": "_rsv_12386_-1_1_0_0_S64755250_E64755250",
+    "ja": "_rsv_12386_-1_0_0_0_S64755250_E64755250",
+    "de": "_rsv_12386_-1_2_0_0_S64755250_E64755250",
+    "fr": "_rsv_12386_-1_3_0_0_S64755250_E64755250"
+  },
+  "12387": {
+    "en": "_rsv_12387_-1_1_0_0_S64755250_E64755250",
+    "ja": "_rsv_12387_-1_0_0_0_S64755250_E64755250",
+    "de": "_rsv_12387_-1_2_0_0_S64755250_E64755250",
+    "fr": "_rsv_12387_-1_3_0_0_S64755250_E64755250"
+  },
+  "12388": {
+    "en": "Themis",
+    "ja": "テミス",
+    "de": "Themis",
+    "fr": "Thémis"
+  },
+  "12389": {
+    "en": "illusory Themis",
+    "ja": "テミスの幻影",
+    "de": "Phantom-Themis",
+    "fr": "spectre de Thémis"
+  },
+  "12390": {
+    "en": "arcane sphere",
+    "ja": "立体魔法陣",
+    "de": "arkan[a] Körper",
+    "fr": "sphère arcanique"
+  },
+  "12391": {
+    "en": "arcane cylinder",
+    "ja": "指向魔法陣",
+    "de": "arkan[a] Zylinder",
+    "fr": "sphère arcanique orientée"
+  },
+  "12392": {
+    "en": "Subject Number XXIV",
+    "ja": "実験体ナンバーXXIV",
+    "de": "Experiment[p] Nummer XXIV",
+    "fr": "sujet expérimental Numéro XXIV"
+  },
+  "12393": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12394": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12395": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12396": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12397": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12398": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12399": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12400": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12401": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12402": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12403": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12404": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12405": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12406": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12407": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12408": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12409": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12410": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12411": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12412": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12413": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12414": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12415": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12416": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12417": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12418": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12419": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12420": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12421": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12422": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12423": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12424": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12425": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12426": {
+    "en": "pandæmoniac pillar",
+    "ja": "万魔殿の塔",
+    "de": "pandæmonisch[a] Turm",
+    "fr": "pilier pandæmoniaque"
+  },
+  "12427": {
+    "en": "pandæmoniac pillar",
+    "ja": "万魔殿の塔",
+    "de": "pandæmonisch[a] Turm",
+    "fr": "pilier pandæmoniaque"
+  },
+  "12428": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12429": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12430": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12431": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12432": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12433": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12434": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12435": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12436": {
+    "en": "puffin",
+    "ja": "パフィン",
+    "de": "Papageientaucher",
+    "fr": "macareux"
+  },
+  "12437": {
+    "en": "mossasaurus",
+    "ja": "モサモサウルス",
+    "de": "Mosasaurus",
+    "fr": "mossasaure"
+  },
+  "12438": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12439": {
+    "en": "posher otter",
+    "ja": "スチームウソウソ",
+    "de": "Dampf-Otter",
+    "fr": "loutre choute fringante"
+  },
+  "12440": {
+    "en": "Rubellite Weapon",
+    "ja": "ルベライトウェポン",
+    "de": "Rubellit-Waffe",
+    "fr": "Arme Rubellite"
+  },
+  "12441": {
+    "en": "chimpanzee",
+    "ja": "チンパンジー",
+    "de": "Schimpanse",
+    "fr": "chimpanzé"
+  },
+  "12442": {
+    "en": "exciting dynamite",
+    "ja": "エキサイティング・ダイナマイト",
+    "de": "aufgeregt[a] Dynamit",
+    "fr": "dynamite exaltante"
+  },
+  "12443": {
+    "en": "mikra Lyssa",
+    "ja": "ミクラ・リッサ",
+    "de": "Lyssa Mikra",
+    "fr": "mikra Lyssa"
+  },
+  "12444": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12445": {
+    "en": "wind-up Athena",
+    "ja": "マメット・アテナ",
+    "de": "Aufzieh-Athena",
+    "fr": "Athéna miniature"
+  },
+  "12446": {
+    "en": "wind-up Barbariccia",
+    "ja": "マメット・バルバリシア",
+    "de": "Aufzieh-Barbarizia",
+    "fr": "Barbariccia miniature"
+  },
+  "12447": {
+    "en": "goggle-eyed dogu",
+    "ja": "遮光器土偶",
+    "de": "Shakoki-Dogu",
+    "fr": "dogû globuleux"
+  },
+  "12448": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12449": {
+    "en": "fire sphere",
+    "ja": "ファイアスフィア",
+    "de": "Feuersphäre",
+    "fr": "sphère de feu"
+  },
+  "12450": {
+    "en": "ice sphere",
+    "ja": "アイススフィア",
+    "de": "Eissphäre",
+    "fr": "sphère gelée"
+  },
+  "12451": {
+    "en": "mage's lament",
+    "ja": "メイガス・コキュートス",
+    "de": "Kokytos-Magierin",
+    "fr": "Cocyte mage"
+  },
+  "12452": {
+    "en": "martialist's lament",
+    "ja": "マーシャリスト・コキュートス",
+    "de": "Kokytos-Krieger",
+    "fr": "Cocyte artiste martial"
+  },
+  "12453": {
+    "en": "beast's lament",
+    "ja": "ビースト・コキュートス",
+    "de": "Kokytos-Bestie",
+    "fr": "Cocyte bête sauvage"
+  },
+  "12454": {
+    "en": "_rsv_12454_-1_1_0_0_S64755250_E64755250",
+    "ja": "_rsv_12454_-1_0_0_0_S64755250_E64755250",
+    "de": "_rsv_12454_-1_2_0_0_S64755250_E64755250",
+    "fr": "_rsv_12454_-1_3_0_0_S64755250_E64755250"
+  },
+  "12455": {
+    "en": "runaway satellite",
+    "ja": "ランナウェイ・サテライト",
+    "de": "Satellit[p] auf Abwegen",
+    "fr": "satellite fugitif"
+  },
+  "12456": {
+    "en": "quartz spriggan",
+    "ja": "スプリガン・アルバ",
+    "de": "Quarz-Spriggan",
+    "fr": "spriggan albâtre"
+  },
+  "12457": {
+    "en": "amethyst spriggan",
+    "ja": "スプリガン・リラ",
+    "de": "Amethyst-Spriggan",
+    "fr": "spriggan lilas"
+  },
+  "12458": {
+    "en": "wild boar",
+    "ja": "ワイルドボア",
+    "de": "wild[a] Keiler",
+    "fr": "sanglier sauvage"
+  },
+  "12459": {
+    "en": "boar of paradise",
+    "ja": "パライソボア",
+    "de": "Paradies-Keiler",
+    "fr": "sanglier paradisiaque"
+  },
+  "12460": {
+    "en": "weird spriggan",
+    "ja": "ウィアード・スプリガン",
+    "de": "Weird",
+    "fr": "spriggan extravagant"
+  },
+  "12461": {
+    "en": "funguar",
+    "ja": "ファンガー",
+    "de": "Fungus",
+    "fr": "fungus"
+  },
+  "12462": {
+    "en": "alkonost",
+    "ja": "アルコノスト",
+    "de": "Alkonost",
+    "fr": "alkonost"
+  },
+  "12463": {
+    "en": "Carvallain",
+    "ja": "カルヴァラン",
+    "de": "Carvallain",
+    "fr": "Carvallain"
+  },
+  "12464": {
+    "en": "Gosetsu",
+    "ja": "ゴウセツ",
+    "de": "Gosetsu",
+    "fr": "Gosetsu"
+  },
+  "12465": {
+    "en": "Mol youth",
+    "ja": "モル族の若者",
+    "de": "jung[a] Mol",
+    "fr": "jeune Mol"
+  },
+  "12466": {
+    "en": "Yugiri",
+    "ja": "ユウギリ",
+    "de": "Yugiri",
+    "fr": "Yugiri"
+  },
+  "12467": {
+    "en": "Doman liberator",
+    "ja": "ドマの烈士",
+    "de": "domanisch[a] Befreierin",
+    "fr": "intrépide de Doma"
+  },
+  "12468": {
+    "en": "Doman shaman",
+    "ja": "ドマの巫士",
+    "de": "domanisch[a] Priester",
+    "fr": "prêtre de Doma"
+  },
+  "12469": {
+    "en": "Resistance fighter",
+    "ja": "解放軍の闘士",
+    "de": "Befreiungskämpfer",
+    "fr": "combattant de l'armée de libération"
+  },
+  "12470": {
+    "en": "Resistance pikedancer",
+    "ja": "解放軍のパイク兵",
+    "de": "Befreiungsarmee-Pikenier",
+    "fr": "piquière de l'armée de libération"
+  },
+  "12471": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12472": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12473": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12474": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12475": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12476": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12477": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12478": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12479": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12480": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12481": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12482": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12483": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12484": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12485": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12486": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12487": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12488": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12489": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12490": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12491": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12492": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12493": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12494": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12495": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12496": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12497": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12498": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12499": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12500": {
     "en": "",
     "ja": "",
     "de": "",

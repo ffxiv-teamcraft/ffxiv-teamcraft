@@ -5322,10 +5322,10 @@
     "fr": "Mémoquartz allagois aphoristiques (magie)"
   },
   "1770436": {
-    "en": "Allagan Tomestones of Astronomy (Other)",
-    "ja": "アラガントームストーン:天文の取引（その他）",
-    "de": "Allagische Steine der Astronomie (Anderes)",
-    "fr": "Mémoquartz allagois astronomiques (divers)"
+    "en": "Allagan Tomestones of Causality (Other)",
+    "ja": "アラガントームストーン:因果の取引（その他）",
+    "de": "Allagische Steine der Kausalität (Anderes)",
+    "fr": "Mémoquartz allagois déterministes (divers)"
   },
   "1770437": {
     "en": "Allagan Tomestones of Astronomy (DoW)",
@@ -6666,6 +6666,306 @@
     "fr": ""
   },
   "1770660": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770661": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770662": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770663": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770664": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770665": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770666": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770667": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770668": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770669": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770670": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770671": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770672": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770673": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770674": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770675": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770676": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770677": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770678": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770679": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770680": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770681": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770682": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770683": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770684": {
+    "en": "コメンデーションクリスタルの取引",
+    "ja": "コメンデーションクリスタルの取引",
+    "de": "コメンデーションクリスタルの取引",
+    "fr": "コメンデーションクリスタルの取引"
+  },
+  "1770685": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770686": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770687": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770688": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770689": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770690": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770691": {
+    "en": "Allagan Tomestones of Comedy (DoW)",
+    "ja": "アラガントームストーン:神曲の取引（ファイター）",
+    "de": "Allagische Steine der Komödie (Krieger)",
+    "fr": "Mémoquartz allagois dantesques (guerre)"
+  },
+  "1770692": {
+    "en": "Allagan Tomestones of Comedy (DoM)",
+    "ja": "アラガントームストーン:神曲の取引（ソーサラー）",
+    "de": "Allagische Steine der Komödie (Magier)",
+    "fr": "Mémoquartz allagois dantesques (magie)"
+  },
+  "1770693": {
+    "en": "Unsung Relic of Anabaseios Exchange (DoW) I",
+    "ja": "朽ちた装備【天獄】の取引（ファイターその1）",
+    "de": "Anabaseische Ausrüstung (Krieger I)",
+    "fr": "Équipements rouillés du Paradis (guerre 1)"
+  },
+  "1770694": {
+    "en": "Unsung Relic of Anabaseios Exchange (DoW) II",
+    "ja": "朽ちた装備【天獄】の取引（ファイターその2）",
+    "de": "Anabaseische Ausrüstung (Krieger II)",
+    "fr": "Équipements rouillés du Paradis (guerre 2)"
+  },
+  "1770695": {
+    "en": "Unsung Relic of Anabaseios Exchange (DoM)",
+    "ja": "朽ちた装備【天獄】の取引（ソーサラー）",
+    "de": "Anabaseische Ausrüstung (Magier)",
+    "fr": "Équipements rouillés du Paradis (magie)"
+  },
+  "1770696": {
+    "en": "Anabaseios Mythos Exchange (DoW) I",
+    "ja": "天獄の断章の取引（ファイターその1）",
+    "de": "Anabaseische Kodizes (Krieger I)",
+    "fr": "Codex du Paradis (guerre 1)"
+  },
+  "1770697": {
+    "en": "Anabaseios Mythos Exchange (DoW) II",
+    "ja": "天獄の断章の取引（ファイターその2）",
+    "de": "Anabaseische Kodizes (Krieger II)",
+    "fr": "Codex du Paradis (guerre 2)"
+  },
+  "1770698": {
+    "en": "Anabaseios Mythos Exchange (DoM)",
+    "ja": "天獄の断章の取引（ソーサラー）",
+    "de": "Anabaseische Kodizes (Magier)",
+    "fr": "Codex du Paradis (magie)"
+  },
+  "1770699": {
+    "en": "Allagan Tomestones of Comedy Exchange (Weapons)",
+    "ja": "アラガントームストーン:神曲の取引（武器）",
+    "de": "Allagische Steine der Komödie (Waffen)",
+    "fr": "Mémoquartz allagois dantesques (armes)"
+  },
+  "1770700": {
+    "en": "Credendum Gear Augmentation (DoW) I",
+    "ja": "「クレデンダム装備」の強化（ファイターその1）",
+    "de": "Verstärkung von Credendum-Ausrüstung (Krieger I)",
+    "fr": "Amélioration d'équipements du credo (guerre 1)"
+  },
+  "1770701": {
+    "en": "Credendum Gear Augmentation (DoW) II",
+    "ja": "「クレデンダム装備」の強化（ファイターその2）",
+    "de": "Verstärkung von Credendum-Ausrüstung (Krieger II)",
+    "fr": "Amélioration d'équipements du credo (guerre 2)"
+  },
+  "1770702": {
+    "en": "Credendum Gear Augmentation (DoM)",
+    "ja": "「クレデンダム装備」の強化（ソーサラー）",
+    "de": "Verstärkung von Credendum-Ausrüstung (Magier)",
+    "fr": "Amélioration d'équipements du credo (magie)"
+  },
+  "1770703": {
+    "en": "Totem Gear (Golbez)",
+    "ja": "報酬装備の取引（ゴルベーザ）",
+    "de": "Golbez-Ausrüstung",
+    "fr": "Équipements totémiques (Golbez)"
+  },
+  "1770704": {
+    "en": "Radiant's Gear (DoW)",
+    "ja": "「レディアント装備」の取引（ファイター）",
+    "de": "Himmelsheer-Ausrüstung (Krieger)",
+    "fr": "Échange d'équipements radieux (guerre)"
+  },
+  "1770705": {
+    "en": "Radiant's Gear (DoM)",
+    "ja": "「レディアント装備」の取引（ソーサラー）",
+    "de": "Himmelsheer-Ausrüstung (Magier)",
+    "fr": "Échange d'équipements radieux (magie)"
+  },
+  "1770706": {
+    "en": "Purple Scrip Exchange (Lv. 90/IL 620)",
+    "ja": "紫貨の取引：Lv90～向け【ILv620】",
+    "de": "Violette Scheine (ab St. 90) [G.-St. 620]",
+    "fr": "Assignats mauves (Nv ≧ 90) [NvObj 620]"
+  },
+  "1770707": {
+    "en": "Purple Scrip Exchange (Lv. 90/IL 620)",
+    "ja": "紫貨の取引：Lv90～向け【ILv620】",
+    "de": "Violette Scheine (ab St. 90) [G.-St. 620]",
+    "fr": "Assignats mauves (Nv ≧ 90) [NvObj 620]"
+  },
+  "1770708": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770709": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770710": {
     "en": "",
     "ja": "",
     "de": "",

@@ -30,10 +30,10 @@ export class EnvironmentService {
   }
 
   public get maxIlvl(): number {
-    if (this.gameVersion <= 6.2) {
-      return 610;
-    } else if (this.gameVersion <= 6.3) {
+    if (this.gameVersion <= 6.3) {
       return 630;
+    } else if (this.gameVersion <= 6.4) {
+      return 665;
     }
   }
 }

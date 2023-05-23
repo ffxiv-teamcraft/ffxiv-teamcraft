@@ -1567,6 +1567,26 @@
           "lvl": 90,
           "stars": 3,
           "hidden": 0
+        },
+        {
+          "itemId": 39706,
+          "ilvl": 620,
+          "lvl": 90,
+          "stars": 3,
+          "hidden": 0
+        }
+      ]
+    },
+    {
+      "id": 2032,
+      "startLevel": 90,
+      "items": [
+        {
+          "itemId": 39707,
+          "ilvl": 620,
+          "lvl": 90,
+          "stars": 3,
+          "hidden": 0
         }
       ]
     }
@@ -2750,6 +2770,27 @@
           "ilvl": 600,
           "lvl": 90,
           "stars": 2,
+          "hidden": 0
+        },
+        {
+          "itemId": 39708,
+          "ilvl": 620,
+          "lvl": 90,
+          "stars": 3,
+          "hidden": 0
+        },
+        {
+          "itemId": 39909,
+          "ilvl": 620,
+          "lvl": 90,
+          "stars": 3,
+          "hidden": 0
+        },
+        {
+          "itemId": 39910,
+          "ilvl": 620,
+          "lvl": 90,
+          "stars": 3,
           "hidden": 0
         }
       ]
@@ -4134,6 +4175,27 @@
           "ilvl": 600,
           "lvl": 90,
           "stars": 2,
+          "hidden": 0
+        },
+        {
+          "itemId": 39705,
+          "ilvl": 620,
+          "lvl": 90,
+          "stars": 3,
+          "hidden": 0
+        },
+        {
+          "itemId": 39906,
+          "ilvl": 620,
+          "lvl": 90,
+          "stars": 3,
+          "hidden": 0
+        },
+        {
+          "itemId": 39907,
+          "ilvl": 620,
+          "lvl": 90,
+          "stars": 3,
           "hidden": 0
         }
       ]
@@ -6429,6 +6491,13 @@
           "lvl": 90,
           "stars": 1,
           "hidden": 0
+        },
+        {
+          "itemId": 39709,
+          "ilvl": 620,
+          "lvl": 90,
+          "stars": 3,
+          "hidden": 0
         }
       ]
     },
@@ -6462,6 +6531,13 @@
           "ilvl": 590,
           "lvl": 90,
           "stars": 2,
+          "hidden": 0
+        },
+        {
+          "itemId": 39710,
+          "ilvl": 620,
+          "lvl": 90,
+          "stars": 3,
           "hidden": 0
         }
       ]

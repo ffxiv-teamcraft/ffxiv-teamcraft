@@ -7,7 +7,7 @@ export interface LazyFishParameter {
   mapId:       number;
   recordType?: number;
   stars:       number;
-  timed:       number;
-  weathered:   number;
+  timed:       boolean;
+  weathered:   boolean;
   zoneId:      number;
 }

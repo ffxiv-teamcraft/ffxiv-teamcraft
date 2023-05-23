@@ -39,14 +39,6 @@ function getType(file) {
     };
   }
 
-  // We need to override this case, weird quicktype derp
-  if (className === 'LazyIslandLandmark') {
-    return {
-      type: 'Record<number, The110>',
-      importStr: `import {The110} from './${_.kebabCase(className)}';`
-    };
-  }
-
   const valuesAreArrays = Array.isArray(dataObj[0] || dataObj[Object.keys(dataObj)[0]]);
   if (valuesAreArrays) {
     indexType = indexType.replace('T', 'T[]');

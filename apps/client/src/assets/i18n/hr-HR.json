@@ -261,8 +261,8 @@
       "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
       "LEVE_ALLOWANCES": "Leve allowances",
       "LEVE_ALLOWANCES_DESCRIPTION": "You get 3 more leve allowances",
-      "OCEAN_FISHING" : "Ocean fishing",
-      "OCEAN_FISHING_DESCRIPTION" : "Ocean fishing will start."
+      "OCEAN_FISHING": "Ocean fishing",
+      "OCEAN_FISHING_DESCRIPTION": "Ocean fishing will start."
     },
     "CUSTOM": {
       "Title": "Dodajte zadani alarm",

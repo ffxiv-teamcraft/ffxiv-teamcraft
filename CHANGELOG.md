@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [10.5.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.11...v10.5.0) (2023-05-23)
+
+
+### Features
+
+* **db:** added 6.4 game data ([5e4aa8d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5e4aa8d353a573f8782e23721ffcf6bcdc9c44b2))
+
+
+### Bug Fixes
+
+* **db:** fixed collectable sometimes not showing accurate scrip rewards ([8177893](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/81778931a6030fd62e85407386cc9ef5f5272ebb)), closes [#2609](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2609)
+* **desktop:** pcap will now fallback to xivcdn when github cannot be reached ([863b084](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/863b084f57dff5fe5080b0ced602f283f29cd68a))
+* **gearset:** fixed min ilvl sometimes set to NaN ([ae98a06](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ae98a067aa5ad764808052fa1908f615d3992a72))
+* **inventory-optimizer:** fishing nodes are no longer considered as easy ([c065947](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c0659475eddff9de93b9cd04d6d36bbe8c4f6db8))
+* **inventory-optimizer:** optimizer now ignores island sanctuary inventory ([00b4b0d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/00b4b0df3db0ea51530d443547bb1862a10c42cb))
+* **levequests:** search is now faster and returns more accurate results ([23d7193](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/23d7193f8a984e4038e26b3b92ccc4adc2f3de8d))
+* **list:** fixed inventory view always showing quantity as 999 ([a6cd33e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a6cd33e08b2ec446205a7ab28c3ba916e286eacd))
+* **profile:** fixed splendorous applying specialist buff on stats ([2abf76f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2abf76fe16a6cd00c684772a9b93590846ac8a4d))
+
 ### [10.4.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.10...v10.4.11) (2023-05-10)
 
 

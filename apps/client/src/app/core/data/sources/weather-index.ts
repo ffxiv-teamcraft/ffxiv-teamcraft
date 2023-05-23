@@ -2343,10 +2343,94 @@ export const weatherIndex = {
       "weatherId": 77
     }
   ],
-  "151": [],
-  "152": [],
-  "153": [],
-  "154": [],
+  "151": [
+    {
+      "rate": 50,
+      "weatherId": 2
+    },
+    {
+      "rate": 65,
+      "weatherId": 3
+    },
+    {
+      "rate": 80,
+      "weatherId": 4
+    },
+    {
+      "rate": 95,
+      "weatherId": 7
+    },
+    {
+      "rate": 100,
+      "weatherId": 10
+    }
+  ],
+  "152": [
+    {
+      "rate": 50,
+      "weatherId": 2
+    },
+    {
+      "rate": 65,
+      "weatherId": 3
+    },
+    {
+      "rate": 80,
+      "weatherId": 4
+    },
+    {
+      "rate": 95,
+      "weatherId": 7
+    },
+    {
+      "rate": 100,
+      "weatherId": 8
+    }
+  ],
+  "153": [
+    {
+      "rate": 40,
+      "weatherId": 2
+    },
+    {
+      "rate": 55,
+      "weatherId": 3
+    },
+    {
+      "rate": 70,
+      "weatherId": 4
+    },
+    {
+      "rate": 90,
+      "weatherId": 5
+    },
+    {
+      "rate": 100,
+      "weatherId": 9
+    }
+  ],
+  "154": [
+    {
+      "rate": 50,
+      "weatherId": 2
+    },
+    {
+      "rate": 65,
+      "weatherId": 3
+    },
+    {
+      "rate": 80,
+      "weatherId": 4
+    },
+    {
+      "rate": 95,
+      "weatherId": 7
+    },
+    {
+      "rate": 100,
+      "weatherId": 8
+    }
+  ],
   "155": [],
   "156": [],
   "157": [],

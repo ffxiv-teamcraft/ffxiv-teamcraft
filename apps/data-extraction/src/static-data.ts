@@ -31,8 +31,8 @@ export class StaticData {
   };
 
   public static readonly TOMESTONES = {
-    '1': 28,
-    '2': 43,
-    '3': 44
+    '1': 28, // Legacy (poetics)
+    '2': 44, // Current unlimited
+    '3': 45 // Current limited
   };
 }

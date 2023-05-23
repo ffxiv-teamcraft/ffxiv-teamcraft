@@ -2073,7 +2073,7 @@
     "en": "Rhalgr's Right Fist",
     "ja": "Rhalgr's Saint",
     "de": "Rhalgrs rechte Faust",
-    "fr": "Limier d'Oschon"
+    "fr": "Limier de Rhalgr"
   },
   "347": {
     "en": "Tablesetter",
@@ -3987,7 +3987,7 @@
     "en": "Sovereign Hero",
     "ja": "Sovereign Hero",
     "de": "Hoheitlicher Held",
-    "fr": "Héro souverain"
+    "fr": "Héros souverain"
   },
   "666": {
     "en": "Dreaming Worker",
@@ -4054,5 +4054,125 @@
     "ja": "of the Rising Conflict",
     "de": "vom zunehmenden Konflikt",
     "fr": "Parcours conflictuel"
+  },
+  "677": {
+    "en": "Throneshaker",
+    "ja": "Throneshaker",
+    "de": "Häscher des dunklen Throns",
+    "fr": "Détrôneur déterminé"
+  },
+  "678": {
+    "en": "Wolf of Easy Street",
+    "ja": "Wolf of Easy Street",
+    "de": "Kaurikoloss",
+    "fr": "Expert du marché"
+  },
+  "679": {
+    "en": "Doom of the Deep",
+    "ja": "Doom of the Deep",
+    "de": "Terror der Tiefe",
+    "fr": "Terreur des profondeurs"
+  },
+  "680": {
+    "en": "Sea Comber",
+    "ja": "Sea Comber",
+    "de": "Muschelmeister",
+    "fr": "Malacologue"
+  },
+  "681": {
+    "en": "Squidzure Dragoon",
+    "ja": "Squidzure Dragoon",
+    "de": "Tintenfischfanatiker",
+    "fr": "Surume dragon"
+  },
+  "682": {
+    "en": "Shrimp Mariner",
+    "ja": "Shrimp Mariner",
+    "de": "Garnelengenießer",
+    "fr": "La crevette"
+  },
+  "683": {
+    "en": "Of the Final Conflict",
+    "ja": "of the Final Conflict",
+    "de": "vom finalen Konflikt",
+    "fr": "Légende conflictuelle"
+  },
+  "684": {
+    "en": "Of the Endless Conflict",
+    "ja": "of the Endless Conflict",
+    "de": "vom endlosen Konflikt",
+    "fr": "Histoire conflictuelle"
+  },
+  "685": {
+    "en": "Of the Rising Conflict",
+    "ja": "of the Rising Conflict",
+    "de": "vom zunehmenden Konflikt",
+    "fr": "Parcours conflictuel"
+  },
+  "686": {
+    "en": "Of the Final Conflict",
+    "ja": "of the Final Conflict",
+    "de": "vom finalen Konflikt",
+    "fr": "Légende conflictuelle"
+  },
+  "687": {
+    "en": "Of the Endless Conflict",
+    "ja": "of the Endless Conflict",
+    "de": "vom endlosen Konflikt",
+    "fr": "Histoire conflictuelle"
+  },
+  "688": {
+    "en": "Of the Rising Conflict",
+    "ja": "of the Rising Conflict",
+    "de": "vom zunehmenden Konflikt",
+    "fr": "Parcours conflictuel"
+  },
+  "689": {
+    "en": "CCRC 2023 Champion",
+    "ja": "CCRC2023 Champion",
+    "de": "CCRC 2023 Champion",
+    "fr": "Champion CCRC2023"
+  },
+  "690": {
+    "en": "CCRC 2023 Finalist",
+    "ja": "CCRC2023 Finalist",
+    "de": "CCRC 2023 Finalist",
+    "fr": "Finaliste CCRC2023"
+  },
+  "691": {
+    "en": "CCRC 2023 Ranker",
+    "ja": "CCRC2023 Ranker",
+    "de": "CCRC 2023 Rangspieler",
+    "fr": "Classé CCRC2023"
+  },
+  "692": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "693": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "694": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "695": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "696": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   }
 }

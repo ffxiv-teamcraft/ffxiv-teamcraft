@@ -178,5 +178,65 @@
         "amount": 5
       }
     ]
+  },
+  "-11070": {
+    "key": 7,
+    "icon": "/i/053000/053931_hr1.png",
+    "en": "Uncharted Course",
+    "de": "Gymnastikutter",
+    "ja": "アイランドアスレチックシップ",
+    "fr": "Accrobranche insulaire",
+    "ingredients": [
+      {
+        "id": 37561,
+        "amount": 20
+      },
+      {
+        "id": 37572,
+        "amount": 10
+      },
+      {
+        "id": 37568,
+        "amount": 10
+      },
+      {
+        "id": 37562,
+        "amount": 10
+      },
+      {
+        "id": 39894,
+        "amount": 5
+      }
+    ]
+  },
+  "-11080": {
+    "key": 8,
+    "icon": "/i/053000/053932_hr1.png",
+    "en": "Quaint Clock Tower",
+    "de": "Glockenturm",
+    "ja": "アイランドクロックタワー",
+    "fr": "Beffroi insulaire",
+    "ingredients": [
+      {
+        "id": 39891,
+        "amount": 15
+      },
+      {
+        "id": 37574,
+        "amount": 15
+      },
+      {
+        "id": 39227,
+        "amount": 10
+      },
+      {
+        "id": 37560,
+        "amount": 10
+      },
+      {
+        "id": 37582,
+        "amount": 5
+      }
+    ]
   }
 }
