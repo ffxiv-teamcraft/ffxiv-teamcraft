@@ -39,6 +39,7 @@ export enum Ja {
   Empty = "",
   EternalBond = "ETERNAL BOND",
   Eureka = "EUREKA",
+  Explore = "EXPLORE",
   FATETrade = "F.A.T.E. TRADE",
   FalconPorter = "FALCON PORTER",
   Feeder = "FEEDER",
