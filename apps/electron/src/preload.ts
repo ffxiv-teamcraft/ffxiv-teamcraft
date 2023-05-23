@@ -11,9 +11,7 @@ const allowedChannels = [
   'machina:error:raw',
   'machina:firewall:rule-set',
   'machina:firewall:set-rule',
-  'toggle-pcap:value',
-  'toggle-pcap:get',
-  'toggle-pcap',
+  ...twoWayBinding('toggle-pcap'),
   'metrics:importing',
   'metrics:imported',
   'metrics:delete',
@@ -115,9 +113,16 @@ const allowedChannels = [
   'clear-cache',
   'fishing-state:get',
   'mappy-state:get',
-  'hardware-acceleration:get',
-  'hardware-acceleration:value'
+  ...twoWayBinding('hardware-acceleration')
 ];
+
+function twoWayBinding(channel: string): string[] {
+  return [
+    channel,
+    `${channel}:get`,
+    `${channel}:value`
+  ];
+}
 
 function checkChannel(channel: string): boolean {
   const isAllowed =
