@@ -477,7 +477,10 @@ export class FreeCompanyWorkshopFacade {
     if (this.env.gameVersion < 6.3) {
       return of(100);
     }
-    return of(105);
+    else if (this.env.gameVersion < 6.4) {
+      return of(105);
+    }
+    return of(110);
   }
 
   @Memoized()

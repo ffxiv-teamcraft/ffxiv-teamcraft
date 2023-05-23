@@ -1,11 +1,17 @@
 export interface LazyLeve {
-  de:    string;
-  en:    string;
-  fr:    string;
-  items: Item[];
-  ja:    string;
-  job:   Job;
-  lvl:   number;
+  cost:            number;
+  de:              string;
+  deliveryPlaceId: number;
+  en:              string;
+  expReward:       number;
+  fr:              string;
+  gilReward:       number;
+  items:           Item[];
+  ja:              string;
+  job:             Job;
+  lvl:             number;
+  repeats?:        number;
+  startPlaceId:    number;
 }
 
 export interface Item {
@@ -17,6 +23,7 @@ export interface Job {
   de: De;
   en: En;
   fr: Fr;
+  id: number;
   ja: Ja;
 }
 

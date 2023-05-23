@@ -22,6 +22,9 @@ export class Inventory {
     const stacks = Math.ceil(amount / stackSize);
     for (let stack = 1; stack <= stacks; stack++) {
       let stackAmount = stackSize;
+      if (stacks === 1) {
+        stackAmount = amount;
+      }
       // If it's the last stack, get the remaining items.
       if (stack === stacks && amount > stackSize) {
         stackAmount = amount % stackSize;

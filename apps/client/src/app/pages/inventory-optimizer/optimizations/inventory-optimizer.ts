@@ -32,7 +32,8 @@ export abstract class InventoryOptimizer {
     ContainerType.GearSet0,
     ContainerType.GearSet1,
     ContainerType.Mail,
-    ContainerType.UNKNOWN_1
+    ContainerType.UNKNOWN_1,
+    ContainerType.IslandSanctuaryBag
   ];
 
   /// Compare two InventoryItem objects to determine whether they consume the same slot in the same

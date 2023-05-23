@@ -13,7 +13,7 @@ export class CanBeGatheredEasily extends InventoryOptimizer {
       const gatheredBy = getItemSource(data, DataType.GATHERED_BY);
       if (gatheredBy && gatheredBy.nodes) {
         if (gatheredBy.nodes.some(node => {
-          return node.type < 4 && !node.duration && !node.matchingItemIsHidden && !node.limited && (!node.spawns || node.spawns.length === 0) && !node.weathers && !node.weathersFrom;
+          return node.type < 4 && node.type >= 0 && !node.duration && !node.matchingItemIsHidden && !node.limited && (!node.spawns || node.spawns.length === 0) && !node.weathers && !node.weathersFrom;
         })) {
           return of({ level: gatheredBy.level });
         }

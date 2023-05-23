@@ -1,26 +1,24 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SearchIndex, XivapiService } from '@xivapi/angular-client';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { BehaviorSubject, combineLatest, concat, Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
-import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { List } from '../../../modules/list/model/list';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
-import { Levequest } from '@ffxiv-teamcraft/types';
+import { I18nName, Levequest } from '@ffxiv-teamcraft/types';
 import { DataService } from '../../../core/api/data.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { IpcService } from '../../../core/electron/ipc.service';
-import { I18nName } from '@ffxiv-teamcraft/types';
 import { EnvironmentService } from '../../../core/environment.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 
 interface ExpObj {
   exp: number,
@@ -81,15 +79,27 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
   @ViewChild('notificationRef', { static: true })
   notification: TemplateRef<any>;
 
-  constructor(private xivapi: XivapiService, private listsFacade: ListsFacade,
-              private router: Router, private route: ActivatedRoute, private listManager: ListManagerService,
-              private notificationService: NzNotificationService, private gt: GarlandToolsService,
+  paramGrow: LazyData['paramGrow'] = {};
+
+  levesIndex$ = this.lazyData.getEntry('leves').pipe(
+    map(leves => Object.entries(leves).map(([k, v]) => ({ id: +k, ...v }))),
+    shareReplay({ refCount: true, bufferSize: 1 })
+  );
+
+  constructor(private listsFacade: ListsFacade,
+              private router: Router, private route: ActivatedRoute,
+              private listManager: ListManagerService, private notificationService: NzNotificationService,
               private i18n: I18nToolsService, private lazyData: LazyDataFacade,
               private listPicker: ListPickerService, private progressService: ProgressPopupService,
               private dataService: DataService, private auth: AuthFacade,
               private settings: SettingsService, private platformService: PlatformService, private ipc: IpcService,
               private environment: EnvironmentService) {
     super();
+    this.lazyData.getEntry('paramGrow').pipe(
+      first()
+    ).subscribe(paramGrow => {
+      this.paramGrow = paramGrow;
+    });
   }
 
   ngOnInit(): void {
@@ -111,54 +121,47 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
         this.allSelected = false;
       }),
       switchMap(([query, job, levelMin, levelMax]) => {
-        let filters;
+        return this.levesIndex$.pipe(
+          map(leves => {
+            return leves.filter(leve => {
+              let matches = !query || this.i18n.getName(leve).includes(query);
 
-        if (job) {
-          filters = [{ column: 'ClassJobCategoryTargetID', operator: '=', value: +job + 1 }];
-        } else {
-          filters = [{ column: 'ClassJobCategoryTargetID', operator: '>=', value: 9 },
-            { column: 'ClassJobCategoryTargetID', operator: '<=', value: 16 }];
-        }
+              if (job) {
+                matches = matches && leve.job.id === +job + 1;
+              } else {
+                matches = matches && leve.job.id >= 9 && leve.job.id <= 16;
+              }
 
-        filters.push({ column: 'ClassJobLevel', operator: '>=', value: levelMin },
-          { column: 'ClassJobLevel', operator: '<=', value: levelMax });
+              matches = matches && leve.lvl >= levelMin && leve.lvl <= levelMax;
 
-        return this.xivapi.search({
-          indexes: [SearchIndex.LEVE], string: query, filters: filters,
-          columns: ['LevelLevemete.Map.ID', 'CraftLeve.Item0TargetID', 'CraftLeve.Item0.Icon',
-            'CraftLeve.ItemCount0', 'CraftLeve.ItemCount1', 'CraftLeve.ItemCount2', 'CraftLeve.ItemCount3',
-            'CraftLeve.Repeats', 'Name_*', 'GilReward', 'ExpReward', 'ClassJobCategoryTargetID', 'ClassJobLevel',
-            'LevelLevemete.Map.PlaceNameTargetID', 'LevelLevemete.Y', 'PlaceNameStart.ID', 'ID', 'AllowanceCost'],
-          // 105 is the amount of leves from 1 to 70 for a single job
-          limit: 105
-        });
+              return matches;
+            });
+          })
+        );
       }),
       shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.results$ = combineLatest([this.globalExpChange$, res$, this.hideLargeChange$, this.roadToBuffChange$]).pipe(
-      map(([globalExp, list, hideLarge, roadToBuff]) => {
+      map(([globalExp, leves, hideLarge, roadToBuff]) => {
         this.settings.hideLargeLeves = hideLarge;
         const results: Levequest[] = [];
-        (<any>list).Results.forEach(leve => {
+        leves.forEach(leve => {
           results.push({
-            id: leve.ID,
-            level: leve.ClassJobLevel,
-            jobId: leve.ClassJobCategoryTargetID - 1,
-            itemId: leve.CraftLeve.Item0TargetID,
-            exp: leve.ExpReward * (roadToBuff ? 2 : 1),
-            gil: leve.GilReward * (roadToBuff ? 2 : 1),
-            hq: this.settings.alwaysHQLeves && leve.ClassJobCategoryTargetID - 1 !== 18,
+            id: leve.id,
+            level: leve.lvl,
+            jobId: leve.job.id - 1,
+            itemId: leve.items[0].itemId,
+            exp: leve.expReward * (roadToBuff ? 2 : 1),
+            gil: leve.gilReward * (roadToBuff ? 2 : 1),
+            hq: this.settings.alwaysHQLeves && leve.job.id - 1 !== 18,
             allDeliveries: this.settings.alwaysAllDeliveries,
             amount: globalExp ? 0 : 1,
-            itemQuantity: leve.CraftLeve.ItemCount0
-              + leve.CraftLeve.ItemCount1
-              + leve.CraftLeve.ItemCount2
-              + leve.CraftLeve.ItemCount3,
-            startPlaceId: leve.PlaceNameStart.ID,
-            deliveryPlaceId: leve.LevelLevemete.Map.PlaceNameTargetID,
-            repeats: leve.CraftLeve.Repeats,
-            allowanceCost: leve.AllowanceCost
+            itemQuantity: leve.items.reduce((acc, item) => acc + item.amount, 0),
+            startPlaceId: leve.startPlaceId,
+            deliveryPlaceId: leve.deliveryPlaceId,
+            repeats: leve.repeats,
+            allowanceCost: leve.cost
           });
         });
 
@@ -197,7 +200,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
   }
 
   public getMaxExp(level: number): number {
-    return this.gt.getMaxXp(level);
+    return this.paramGrow[level]?.ExpToNext || 1;
   }
 
   public setJob(value: number): void {

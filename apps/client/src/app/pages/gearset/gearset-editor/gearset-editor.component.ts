@@ -372,7 +372,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
       if (!usedDefaultValues) {
         if (lowestIlvl !== Infinity) {
           this.itemFiltersform.controls.ilvlMax.patchValue(highestIlvl);
-          this.itemFiltersform.controls.ilvlMin.patchValue(lowestIlvl);
+          this.itemFiltersform.controls.ilvlMin.patchValue(lowestIlvl || 5);
         }
         didChange = true;
       }
