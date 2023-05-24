@@ -99,15 +99,7 @@ export class CommissionsFacade {
     if (list) {
       this.store.dispatch(createCommission({ list: list, name: list.name, template }));
     } else {
-      this.dialog.create({
-        nzContent: NameQuestionPopupComponent,
-        nzFooter: null,
-        nzTitle: this.translate.instant('COMMISSIONS.New_commission')
-      }).afterClose.pipe(
-        filter(res => res && res.length > 0)
-      ).subscribe(res => {
-        this.store.dispatch(createCommission({ name: res }));
-      });
+      this.store.dispatch(createCommission({ name: 'New commission' }));
     }
   }
 
