@@ -12,9 +12,8 @@
             {{"Join_discord_server" | translate}}
           </a>
         </div>
-        <div nz-col [nzMd]="8">
-          <a class="button" href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/latest" nz-button nzType="primary" target="_blank"
-             *ngIf="!platform.isDesktop()">
+        <div nz-col [nzMd]="8" *ngIf="!platform.isDesktop()">
+          <a class="button" href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/latest" nz-button nzType="primary" target="_blank">
             <i nz-icon nzType="download" nzTheme="outline"></i>
             {{"Download_desktop_app" | translate}}
           </a>
