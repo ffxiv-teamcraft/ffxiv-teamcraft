@@ -171,5 +171,52 @@ export const animalsSpawnData: Record<number, Vector2 & { weather?: number, spaw
     spawn: 3,
     duration: 3,
     weather: 3
+  },
+  33: {
+    // Quartz Spriggan
+    x: 26.8,
+    y: 20.9
+  },
+  34: {
+    // Amethyst Spriggan
+    x: 28,
+    y: 16,
+    spawn: 21,
+    duration: 3
+  },
+  35: {
+    // Wild Boar
+    x: 16,
+    y: 16
+  },
+  36: {
+    // Boar of Paradise
+    x: 17,
+    y: 16,
+    weather: 8
+  },
+  37: {
+    // Weird Spriggan
+    x: 24,
+    y: 18,
+    spawn: 0,
+    duration: 3,
+    weather: 4
+  },
+  38: {
+    // Fungar
+    x: 20,
+    y: 27,
+    spawn: 15,
+    duration: 3,
+    weather: 7
+  },
+  39: {
+    // Alkonost
+    x: 23,
+    y: 30.5,
+    spawn: 21,
+    duration: 3,
+    weather: 1
   }
 };

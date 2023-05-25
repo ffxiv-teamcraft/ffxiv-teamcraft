@@ -97,7 +97,7 @@ export const lazyFilesList = {
   },
   'desynth': {
     'fileName': 'desynth.json',
-    'hashedFileName': 'desynth.47c41501bc299cb418211fe08b4cb86c39bd1408.json'
+    'hashedFileName': 'desynth.e9fdd51d36e588ab1de511cb237da9cab384c1b6.json'
   },
   'diademTerritory': {
     'fileName': 'diadem-territory.json',
@@ -165,7 +165,7 @@ export const lazyFilesList = {
   },
   'gardeningSources': {
     'fileName': 'gardening-sources.json',
-    'hashedFileName': 'gardening-sources.f7437efceeff7596dba454900da3a9fdc957f89f.json'
+    'hashedFileName': 'gardening-sources.bdcbc8d973284ee00b05fa8a4fbedfb560fb5887.json'
   },
   'gatheringBonuses': {
     'fileName': 'gathering-bonuses.json',
@@ -205,7 +205,7 @@ export const lazyFilesList = {
   },
   'gubalBnpcsIndex': {
     'fileName': 'gubal-bnpcs-index.json',
-    'hashedFileName': 'gubal-bnpcs-index.3487f41a89c9ace863c1b4520910c18a7c769239.json'
+    'hashedFileName': 'gubal-bnpcs-index.db826a49c2c7970028304069ef4b7d6247c8b4aa.json'
   },
   'hqFlags': {
     'fileName': 'hq-flags.json',
@@ -229,7 +229,7 @@ export const lazyFilesList = {
   },
   'instanceSources': {
     'fileName': 'instance-sources.json',
-    'hashedFileName': 'instance-sources.3eb332ab786bdcce11ca054d1df14ff7b7a3180a.json'
+    'hashedFileName': 'instance-sources.f5da7f297f2fb7efbbf940a4892f288dd0078cd3.json'
   },
   'instances': {
     'fileName': 'instances.json',
@@ -345,7 +345,7 @@ export const lazyFilesList = {
   },
   'lootSources': {
     'fileName': 'loot-sources.json',
-    'hashedFileName': 'loot-sources.14ac8b40a5e59efba7947a551289756455777b30.json'
+    'hashedFileName': 'loot-sources.2fbb922548d0de56494450d07422d9901cc4221e.json'
   },
   'mapEntries': {
     'fileName': 'map-entries.json',
@@ -373,7 +373,7 @@ export const lazyFilesList = {
   },
   'mogstationSources': {
     'fileName': 'mogstation-sources.json',
-    'hashedFileName': 'mogstation-sources.c51104c8d19d9368a111b3bee753e0d180cab90d.json'
+    'hashedFileName': 'mogstation-sources.57ef2407830b30dc6ced243ff80a76ee21f81a7b.json'
   },
   'monsters': {
     'fileName': 'monsters.json',
@@ -437,7 +437,7 @@ export const lazyFilesList = {
   },
   'reduction': {
     'fileName': 'reduction.json',
-    'hashedFileName': 'reduction.98d118ac37e062eb2fb679aec84c32ff7fabf5b2.json'
+    'hashedFileName': 'reduction.1a6673b9bb7b4d30d228370aedbbcfe68c509383.json'
   },
   'retainerTasks': {
     'fileName': 'retainer-tasks.json',
@@ -445,11 +445,11 @@ export const lazyFilesList = {
   },
   'reverseInstanceSources': {
     'fileName': 'reverse-instance-sources.json',
-    'hashedFileName': 'reverse-instance-sources.556b3d700839ac83fe39abd82297641ba50a11f5.json'
+    'hashedFileName': 'reverse-instance-sources.3f625abfee201e8d9c253870659252e8daf768c7.json'
   },
   'reverseReduction': {
     'fileName': 'reverse-reduction.json',
-    'hashedFileName': 'reverse-reduction.45a94525efa7b9f5e43a1ee9e73d0043f07193a8.json'
+    'hashedFileName': 'reverse-reduction.5452d104460debee384c1151d9ef7123b8bffa64.json'
   },
   'scripIndex': {
     'fileName': 'scrip-index.json',
@@ -465,11 +465,11 @@ export const lazyFilesList = {
   },
   'shopsByNpc': {
     'fileName': 'shops-by-npc.json',
-    'hashedFileName': 'shops-by-npc.4e06da1d9b8308aa0eb7b387b267f43b271d251d.json'
+    'hashedFileName': 'shops-by-npc.b1606527726411106e0e065faa87d6b5648878c0.json'
   },
   'shops': {
     'fileName': 'shops.json',
-    'hashedFileName': 'shops.fe29244f17f1007b7496765b5d183f0236d455ec.json'
+    'hashedFileName': 'shops.46c75ac8a510947ed60676853dc14d7de800a9e9.json'
   },
   'spearFishingFish': {
     'fileName': 'spear-fishing-fish.json',
@@ -545,7 +545,7 @@ export const lazyFilesList = {
   },
   'ventureSources': {
     'fileName': 'venture-sources.json',
-    'hashedFileName': 'venture-sources.f970fba2daed46ebd1d2b819b7e94908b6d570d7.json'
+    'hashedFileName': 'venture-sources.dc051dc3ab3550bf87bc70613bf0b9b2463f8daf.json'
   },
   'ventures': {
     'fileName': 'ventures.json',
@@ -553,7 +553,7 @@ export const lazyFilesList = {
   },
   'voyageSources': {
     'fileName': 'voyage-sources.json',
-    'hashedFileName': 'voyage-sources.dd701551f29ddbe63d04c3ed29c2549692a45980.json'
+    'hashedFileName': 'voyage-sources.9422c0315261153299d76ddf671284781317407f.json'
   },
   'weathers': {
     'fileName': 'weathers.json',
