@@ -57,7 +57,7 @@
   "Download_desktop_app": "Télécharger l'application",
   "Find_us_on_twitter": "Suivez-nous sur Twitter",
   "Join_discord_server": "Rejoignez notre serveur Discord",
-  "See_code_github": "Star the project on Github",
+  "See_code_github": "Ajouter une étoile au projet sur GitHub",
   "Support_on_patreon": "Soutenir le projet sur Patreon",
   "Access_patreon_page": "Rendez-vous sur notre page Patreon",
   "Like_the_tool": "Vous appréciez cet outil jusqu'à présent ?",
@@ -107,7 +107,7 @@
     "Contributors": "Contributeurs"
   },
   "Patreon_login_success": "Connexion avec Patreon réussie !",
-  "Tipeee_login_success": "Tipeee login success!",
+  "Tipeee_login_success": "Connexion avec Tipeee réussie !",
   "Hide_if_empty": "Masquer si vide",
   "No_favorites": "Aucun favori",
   "Ephemeral_list": "Cette liste sera supprimée une fois complétée",
@@ -136,9 +136,9 @@
     "Search": "Rechercher"
   },
   "COMMON": {
-    "Play": "Play",
+    "Play": "Lire",
     "Pause": "Pause",
-    "Speed": "Speed",
+    "Speed": "Vitesse",
     "Done": "Terminé",
     "Length": "Longueur",
     "Save": "Sauvegarder",
@@ -189,7 +189,7 @@
     "Never": "Jamais",
     "Festival": "Seulement pendant un festival",
     "Back": "Précédent",
-    "Support_us_remove_ads": "Support us to remove ads",
+    "Support_us_remove_ads": "Soutenez-nous pour supprimer les publicités",
     "Support_us": "Soutenez-nous",
     "Show_more": "Voir plus",
     "Item": "Objet",
