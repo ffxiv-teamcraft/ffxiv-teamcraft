@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [10.5.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.5.0...v10.5.1) (2023-05-26)
+
+
+### Features
+
+* **island-workshop:** new input to specify the # of workshop you have for optimizer ([e60d717](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e60d7172369d27f489d0f139a7a86ca5ef7931e7))
+* **island:** added new animals ([d4e2f6a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d4e2f6aca54d485745b239f64aa1294596644207))
+* **rotations:** new flags system for guide writers ([b3d4011](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b3d40112a44395398e7c1b0f888368d377065d6a))
+
+
+### Bug Fixes
+
+* **db:** fixed some trades using red scrips instead of current tomestones ([7c38bf4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7c38bf4d0a5e5198f2ec866503e919e8fbae339b))
+* **settings:** fixed hardware acceleration setting not applied properly ([470bdc4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/470bdc442c55bb9a80a99fbb30e5d91f14795d8d))
+* **ux:** better ordering for open buttons on list panels ([9416c5e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9416c5ed58b94a868880bcf39cac56a6433a7730))
+* **ux:** creating a commission now opens the commission editor directly ([4087c66](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4087c66122c43cc8055154ab6c7f8aa20e351575))
+
 ## [10.5.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.4.11...v10.5.0) (2023-05-23)
 
 
