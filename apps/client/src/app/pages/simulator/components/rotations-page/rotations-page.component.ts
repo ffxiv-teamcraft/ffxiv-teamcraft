@@ -184,6 +184,4 @@ export class RotationsPageComponent {
   trackByKey(index: number, rotation: CraftingRotation): string {
     return rotation.$key;
   }
-
-  protected readonly user = user;
 }
