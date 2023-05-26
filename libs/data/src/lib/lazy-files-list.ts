@@ -93,7 +93,7 @@ export const lazyFilesList = {
   },
   'deprecatedItems': {
     'fileName': 'deprecated-items.json',
-    'hashedFileName': 'deprecated-items.b0614d447778a309a4254d34598e9d61d4391d5a.json'
+    'hashedFileName': 'deprecated-items.f8a2fe73fd9ca8650f454614ab65714893acd989.json'
   },
   'desynth': {
     'fileName': 'desynth.json',
@@ -229,7 +229,7 @@ export const lazyFilesList = {
   },
   'instanceSources': {
     'fileName': 'instance-sources.json',
-    'hashedFileName': 'instance-sources.f5da7f297f2fb7efbbf940a4892f288dd0078cd3.json'
+    'hashedFileName': 'instance-sources.f23cc445c051dbade24c9a3af60d82a81907334a.json'
   },
   'instances': {
     'fileName': 'instances.json',
@@ -345,7 +345,7 @@ export const lazyFilesList = {
   },
   'lootSources': {
     'fileName': 'loot-sources.json',
-    'hashedFileName': 'loot-sources.2fbb922548d0de56494450d07422d9901cc4221e.json'
+    'hashedFileName': 'loot-sources.3c45a5c73a3ba77fdabe54e778d0d9d405f0a893.json'
   },
   'mapEntries': {
     'fileName': 'map-entries.json',
@@ -373,7 +373,7 @@ export const lazyFilesList = {
   },
   'mogstationSources': {
     'fileName': 'mogstation-sources.json',
-    'hashedFileName': 'mogstation-sources.57ef2407830b30dc6ced243ff80a76ee21f81a7b.json'
+    'hashedFileName': 'mogstation-sources.c1711b630d66f2454e852ee2999cdf316933e310.json'
   },
   'monsters': {
     'fileName': 'monsters.json',
@@ -445,7 +445,7 @@ export const lazyFilesList = {
   },
   'reverseInstanceSources': {
     'fileName': 'reverse-instance-sources.json',
-    'hashedFileName': 'reverse-instance-sources.3f625abfee201e8d9c253870659252e8daf768c7.json'
+    'hashedFileName': 'reverse-instance-sources.3d5b170c4d452e71f21315182f5fcde5db6d59b8.json'
   },
   'reverseReduction': {
     'fileName': 'reverse-reduction.json',
@@ -545,7 +545,7 @@ export const lazyFilesList = {
   },
   'ventureSources': {
     'fileName': 'venture-sources.json',
-    'hashedFileName': 'venture-sources.dc051dc3ab3550bf87bc70613bf0b9b2463f8daf.json'
+    'hashedFileName': 'venture-sources.0d4ec2ec6e3f78810434eead7fd1a9f8afeb6611.json'
   },
   'ventures': {
     'fileName': 'ventures.json',
@@ -553,7 +553,7 @@ export const lazyFilesList = {
   },
   'voyageSources': {
     'fileName': 'voyage-sources.json',
-    'hashedFileName': 'voyage-sources.9422c0315261153299d76ddf671284781317407f.json'
+    'hashedFileName': 'voyage-sources.38912e737f506183a84972737cc619c6ffdc1deb.json'
   },
   'weathers': {
     'fileName': 'weathers.json',
