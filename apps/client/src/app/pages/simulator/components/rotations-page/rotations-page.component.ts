@@ -12,7 +12,6 @@ import { RotationFoldersFacade } from '../../../../modules/rotation-folders/+sta
 import { GuidesService } from '../../../../core/database/guides.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { uniq } from 'lodash';
-import { user } from '@angular/fire/auth';
 import { AuthFacade } from '../../../../+state/auth.facade';
 
 @Component({
