@@ -29,6 +29,8 @@ export class TeamcraftUser extends DataModel {
 
   admin = false;
 
+  editor = false;
+
   moderator = false;
 
   allaganChecker = false;

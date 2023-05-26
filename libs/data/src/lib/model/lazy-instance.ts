@@ -7,7 +7,7 @@ export interface LazyInstance {
   en:           string;
   exp:          number;
   fr:           string;
-  gamePatch?:   number;
+  gamePatch:    number;
   icon:         Icon;
   id:           number;
   ilvlReq:      number;

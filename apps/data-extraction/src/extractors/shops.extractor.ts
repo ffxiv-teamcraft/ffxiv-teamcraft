@@ -190,7 +190,7 @@ export class ShopsExtractor extends AbstractExtractor {
                 return entry;
               }
 
-              if (specialShop.index === 1770446) {
+              if (specialShop.index === 1770446 || (specialShop.index === 1770699 && entry.id < 10)) {
                 entry.id = { ...StaticData.CURRENCIES, ...StaticData.TOMESTONES }[entry.id];
                 return entry;
               }

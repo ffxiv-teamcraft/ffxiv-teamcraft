@@ -142,6 +142,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
 
   public rank$ = new LocalStorageBehaviorSubject<number>('island-workshop:rank', 1);
 
+  public workshops$ = new LocalStorageBehaviorSubject<number>('island-workshop:workshops', 4);
+
   public excludePastureMaterials$ = new LocalStorageBehaviorSubject<boolean>('island-workshop:exclude_pasture', false);
 
   public excludeCropMaterials$ = new LocalStorageBehaviorSubject<boolean>('island-workshop:exclude_crops', false);
@@ -329,15 +331,16 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     this.craftworksObjects$,
     this.lazyData.getEntry('islandSupply'),
     this.landmarks$,
+    this.workshops$,
     this.rank$,
     this.settings.watchSetting<number>('island-workshop:rest-day', this.settings.islandWorkshopRestDay),
     this.today$,
     this.stateHistory$
   ]).pipe(
     filter(([objects]) => objects.length > 0),
-    map(([objects, supply, landmarks, rank, secondRestDay, today, history]) => {
+    map(([objects, supply, landmarks, workshops, rank, secondRestDay, today, history]) => {
       try {
-        return new PlanningFormulaOptimizer(objects, history, 3, landmarks, rank, supply, secondRestDay, today).run();
+        return new PlanningFormulaOptimizer(objects, history, workshops, landmarks, rank, supply, secondRestDay, today).run();
       } catch (e) {
         return {
           planning: null,

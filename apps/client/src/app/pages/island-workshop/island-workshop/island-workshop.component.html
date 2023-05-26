@@ -32,6 +32,11 @@
         </nz-input-group>
       </div>
       <div>
+        <nz-input-group [nzAddOnBefore]="'ISLAND_SANCTUARY.WORKSHOP.Amount_of_workshops' | translate">
+          <nz-input-number [ngModel]="workshops$ | async" (ngModelChange)="workshops$.next($event)" [nzMin]="0"></nz-input-number>
+        </nz-input-group>
+      </div>
+      <div>
         <nz-input-group [nzAddOnBefore]="'ISLAND_SANCTUARY.Landmarks' | translate">
           <nz-input-number [ngModel]="landmarks$ | async" (ngModelChange)="landmarks$.next($event)" [nzMin]="0"></nz-input-number>
         </nz-input-group>

@@ -37,11 +37,13 @@ export class CraftingRotation extends DataWithPermissions {
 
   public public = false;
 
+  public usedInGuides: string[] = [];
+
   public tags: string[] = [];
 
   public community: CommunityRotationData;
 
-  public xivVersion = '6.0';
+  public xivVersion = '6.4';
 
   public getName(): string {
     if (this.recipe || this.name) {

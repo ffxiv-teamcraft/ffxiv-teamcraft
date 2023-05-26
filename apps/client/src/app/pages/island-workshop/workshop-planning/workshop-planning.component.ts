@@ -41,7 +41,7 @@ export class WorkshopPlanningComponent {
     'Monday'
   ];
 
-  workshops = 3;
+  workshops = 4;
 
   constructor(public translate: TranslateService, public settings: SettingsService,
               private listPicker: ListPickerService) {
@@ -53,7 +53,7 @@ export class WorkshopPlanningComponent {
         return {
           id: craft.itemId,
           recipeId: `mji-craftworks-${craft.id}`,
-          amount: this.workshops
+          amount: +localStorage.getItem('island-workshop:workshops') || 4
         };
       });
     }).flat());
