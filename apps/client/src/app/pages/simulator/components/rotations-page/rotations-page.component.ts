@@ -6,9 +6,14 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { filter, map, tap } from 'rxjs/operators';
+import { filter, first, map, tap } from 'rxjs/operators';
 import { CraftingRotationsFolder } from '../../../../model/other/crafting-rotations-folder';
 import { RotationFoldersFacade } from '../../../../modules/rotation-folders/+state/rotation-folders.facade';
+import { GuidesService } from '../../../../core/database/guides.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { uniq } from 'lodash';
+import { user } from '@angular/fire/auth';
+import { AuthFacade } from '../../../../+state/auth.facade';
 
 @Component({
   selector: 'app-rotations-page',
@@ -24,8 +29,11 @@ export class RotationsPageComponent {
 
   public rotationFoldersDisplay$: Observable<{ folder: CraftingRotationsFolder, rotations: CraftingRotation[] }[]>;
 
+  public user$ = this.authFacade.user$;
+
   constructor(private rotationsFacade: RotationsFacade, private dialog: NzModalService, private translate: TranslateService,
-              private foldersFacade: RotationFoldersFacade) {
+              private foldersFacade: RotationFoldersFacade, private guidesService: GuidesService,
+              private message: NzMessageService, private authFacade: AuthFacade) {
     this.rotationsFacade.loadMyRotations();
     this.rotationFoldersDisplay$ = combineLatest([this.foldersFacade.myRotationFolders$, this.rotationsFacade.myRotations$]).pipe(
       tap(([folders, rotations]) => {
@@ -108,6 +116,37 @@ export class RotationsPageComponent {
       });
   }
 
+  scanGuideRotations(): void {
+    const guides$ = this.guidesService.query().pipe(
+      first()
+    );
+    combineLatest([
+      this.rotations$.pipe(first()),
+      guides$
+    ]).subscribe(([rotations, guides]) => {
+      const rotationsUsed = guides.reduce((acc, guide) => {
+        const matches = [...guide.content.matchAll(/\[Rotation:([^\]]+)]/gmi)].map(m => {
+          return {
+            title: guide.title,
+            rotation: m[1]
+          };
+        });
+        return [
+          ...acc,
+          ...matches
+        ];
+      }, [] as Array<{ title: string, rotation: string }>);
+      rotations.forEach(rotation => {
+        const previousUsed = rotation.usedInGuides || [];
+        rotation.usedInGuides = uniq(rotationsUsed.filter(entry => entry.rotation === rotation.$key).map(e => e.title));
+        if (rotation.usedInGuides.length !== previousUsed.length) {
+          this.rotationsFacade.updateRotation(rotation);
+        }
+      });
+      this.message.success(this.translate.instant('SIMULATOR.ROTATIONS.Guides_flags_updated'));
+    });
+  }
+
   newFolder(): void {
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
@@ -146,4 +185,5 @@ export class RotationsPageComponent {
     return rotation.$key;
   }
 
+  protected readonly user = user;
 }

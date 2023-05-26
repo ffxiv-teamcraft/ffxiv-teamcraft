@@ -237,7 +237,7 @@ export const lazyFilesList = {
   },
   'islandAnimals': {
     'fileName': 'island-animals.json',
-    'hashedFileName': 'island-animals.9f90bceadc191e88fb523d0925fb75d2c7a29ad7.json'
+    'hashedFileName': 'island-animals.e65b1dd92262ed923ff1c65ec2742ac2ca10ee6f.json'
   },
   'islandBuildings': {
     'fileName': 'island-buildings.json',

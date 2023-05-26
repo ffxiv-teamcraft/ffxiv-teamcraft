@@ -1,5 +1,5 @@
 <nz-collapse *ngIf="rotation$ | async as rotation">
-  <nz-collapse-panel [nzHeader]="header" #panel>
+  <nz-collapse-panel [nzHeader]="header" #panel [class.used-in-guide]="rotation.usedInGuides?.length > 0">
     <ng-template #header>
       <div class="panel-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
         <div (dblclick)="openRotation(rotation)" fxLayout="row" fxLayoutAlign="flex-start center"
@@ -8,6 +8,11 @@
           <app-user-avatar *ngIf="publicDisplay" [userId]="rotation.authorId" [width]="24"></app-user-avatar>
         </div>
         <div fxFlex="1 1 auto" fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <ng-container *ngIf="!publicDisplay">
+            <nz-tag *ngFor="let guideTitle of rotation.usedInGuides" [style.border-color]="'rgba(38,233,16,0.65)'" class="custom-tag">
+              {{'SIMULATOR.ROTATIONS.Guide' | translate}}: {{guideTitle}}
+            </nz-tag>
+          </ng-container>
           <ng-container *ngIf="rotation.public">
             <nz-tag *ngIf="rotation.public && !publicDisplay" [style.border-color]="'#108ee9'" class="custom-tag">
               {{'SIMULATOR.COMMUNITY_ROTATIONS.Community_rotation' | translate}}
@@ -46,7 +51,8 @@
               <app-rotation-result-tag [rotation]="rotation" [simulationSet]="simulationSet$ | async"></app-rotation-result-tag>
             </div>
           </ng-container>
-          <button (click)="$event.stopPropagation();openRotationMacroPopup(rotation)" [nzTooltipTitle]="'SIMULATOR.Generate_ingame_macro' | translate" nz-button nz-tooltip
+          <button (click)="$event.stopPropagation();openRotationMacroPopup(rotation)" [nzTooltipTitle]="'SIMULATOR.Generate_ingame_macro' | translate" nz-button
+                  nz-tooltip
                   nzShape="circle"
                   nzType="primary">
             <span class="text-icon">XIV</span>
@@ -79,12 +85,15 @@
                   nz-tooltip>
             <i nz-icon nzType="desktop"></i>
           </button>
-          <button (click)="$event.stopPropagation()" (nzOnConfirm)="delete(rotation)" *ngIf="(permissionLevel$ | async) >= 40" [nzShape]="'circle'"
-                  [nzPopconfirmTitle]="'SIMULATOR.Confirm_delete' | translate"
-                  nzDanger nz-button
-                  nz-popconfirm>
-            <i nz-icon nzType="delete"></i>
-          </button>
+          <span nz-tooltip [nzTooltipTitle]="rotation.usedInGuides?.length > 0 ? ('SIMULATOR.ROTATIONS.Cannot_delete_guide_rotation' | translate) : null">
+            <button (click)="$event.stopPropagation()" (nzOnConfirm)="delete(rotation)" *ngIf="(permissionLevel$ | async) >= 40" [nzShape]="'circle'"
+                    [nzPopconfirmTitle]="'SIMULATOR.Confirm_delete' | translate"
+                    [disabled]="rotation.usedInGuides?.length > 0"
+                    nzDanger nz-button
+                    nz-popconfirm>
+              <i nz-icon nzType="delete"></i>
+            </button>
+          </span>
           <ng-container *ngIf="(permissionLevel$ | async) >= 40">
             <ng-container *ngIf="user$ | async as user">
               <ng-container *ngIf="user.supporter || user.admin">

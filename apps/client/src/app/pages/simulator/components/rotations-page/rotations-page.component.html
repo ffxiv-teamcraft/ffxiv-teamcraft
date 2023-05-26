@@ -8,12 +8,17 @@
           nzShape="circle" nzType="primary">
     <i nz-icon nzType="folder-add"></i>
   </button>
+  <ng-container *ngIf="user$ | async as user">
+    <button (click)="scanGuideRotations()" class="new-rotation" nz-button *ngIf="user.editor || user.admin">
+      <span nz-icon nzType="tags" nzTheme="outline"></span> {{'SIMULATOR.ROTATIONS.Scan_guides' | translate}}
+    </button>
+  </ng-container>
 </div>
 <ng-container></ng-container>
 
 <app-page-loader [loading]="loading$ | async">
   <div *ngIf="rotations$ | async as rotations" class="rotations-container">
-    <div (drop)="setRotationIndex($event.value, $event.dropIndex, rotations)" *ngIf="rotations.length > 0; else noRotations" class="ngx-dnd-container"
+    <div (drop)="setRotationIndex($event.value, $event.dropIndex, rotations)" *ngIf="rotations.length > 0" class="ngx-dnd-container"
          fxLayout="column" fxLayoutGap="5px"
          ngxDroppable="rotation">
       <div *ngFor="let rotation of rotations; trackBy: trackByKey" [model]="rotation" class="ngx-dnd-item"
