@@ -1,6 +1,6 @@
 {
   "Mogstation": "Mogstation",
-  "Quests": "Opdrachten",
+  "Quests": "Quests",
   "Facebook_notice": "Facebook login is niet langer beschikbaar. Je kunt een wachtwoord toevoegen aan je account door het \"wachtwoord opnieuw instellen\" systeem te gebruiken, of door het aan Miu te vragen op Discord.",
   "Pick_a_list": "Kies een lijst",
   "Pick_a_user": "Kies een gebruiker",
@@ -261,8 +261,8 @@
       "DELIVERIES_RESET_DESCRIPTION": "Reset van GC inleveringen",
       "LEVE_ALLOWANCES": "Leve toeslagen",
       "LEVE_ALLOWANCES_DESCRIPTION": "Je krijgt nog 3 leve toeslagen",
-      "OCEAN_FISHING" : "Oceaan vissen",
-      "OCEAN_FISHING_DESCRIPTION" : "Het oceaan vissen zal beginnen."
+      "OCEAN_FISHING": "Oceaan vissen",
+      "OCEAN_FISHING_DESCRIPTION": "Het oceaan vissen zal beginnen."
     },
     "CUSTOM": {
       "Title": "Voeg aangepast alarm toe",
@@ -1179,6 +1179,10 @@
     },
     "ROTATIONS": {
       "Search_placeholder": "Search a rotation",
+      "Scan_guides": "Update guide links",
+      "Guide": "Guide",
+      "Cannot_delete_guide_rotation": "You cannot delete rotations that are used in guides",
+      "Guides_flags_updated": "Guide links have been updated",
       "FOLDERS": {
         "Not_found": "Rotation folder not found",
         "Folders": "Rotation folders",

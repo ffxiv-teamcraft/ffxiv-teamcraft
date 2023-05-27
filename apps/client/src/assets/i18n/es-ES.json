@@ -1179,6 +1179,10 @@
     },
     "ROTATIONS": {
       "Search_placeholder": "Buscar una rotación",
+      "Scan_guides": "Update guide links",
+      "Guide": "Guide",
+      "Cannot_delete_guide_rotation": "You cannot delete rotations that are used in guides",
+      "Guides_flags_updated": "Guide links have been updated",
       "FOLDERS": {
         "Not_found": "Carpeta de rotaciones no encontrada",
         "Folders": "Carpetas de rotación",
