@@ -319,7 +319,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
             predictedPopularity
           };
         })
-        .filter(row => row.craftworksEntry.lvl <= islandLevel)
+        .filter(row => row.craftworksEntry.lvl <= islandLevel && history.every(day => Boolean(day.objects[row.id])))
         .map(item => {
           item.patterns = this.findPatterns(history, item);
           return item;
@@ -418,6 +418,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
           return this.mjiWorkshopStatusService.get(reset.toString()).pipe(
             map((historyEntry) => {
               const shouldUpdate = user.admin ||
+                (!state.edited && [...historyEntry.objects].length < state.supplyDemand.length) ||
                 (!historyEntry.lock
                   && !state.edited
                   && historyEntry.objects.some((obj, i) => {
@@ -437,15 +438,18 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
               if (shouldUpdate && state.updated >= reset) {
                 let supplyDemand = state.supplyDemand;
                 if (historyEntry) {
-                  supplyDemand = historyEntry.objects.map((historyRow, i) => {
-                    const stateRow = state.supplyDemand[i];
-                    // If supply is >= 3, it's probably a missing item, just return history row (and fallback if it's undefined).
-                    if (stateRow.supply >= 3) {
-                      return historyRow || stateRow;
-                    }
-                    // Pick the row that has the lowest supply
-                    return stateRow.supply > historyRow.supply ? historyRow : stateRow;
-                  });
+                  supplyDemand = [
+                    ...historyEntry.objects.map((historyRow, i) => {
+                      const stateRow = state.supplyDemand[i];
+                      // If supply is >= 3, it's probably a missing item, just return history row (and fallback if it's undefined).
+                      if (stateRow.supply >= 3) {
+                        return historyRow || stateRow;
+                      }
+                      // Pick the row that has the lowest supply
+                      return stateRow.supply > historyRow.supply ? historyRow : stateRow;
+                    }),
+                    ...state.supplyDemand.filter(e => !historyEntry.objects.some(he => he.id === e.id))
+                  ];
                 }
                 return this.mjiWorkshopStatusService.set(reset.toString(), {
                   objects: supplyDemand,
@@ -504,7 +508,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
 
   private findPatterns(history: WorkshopStatusData[], item: CraftworksObject): { index: number, pattern: WorkshopPattern }[] {
     const itemHistory = history.map(day => {
-      return [day.objects[item.id].supply, day.objects[item.id].demand];
+      return [day.objects[item.id]?.supply || 0, day.objects[item.id]?.demand || 0];
     });
     let matches = workshopPatterns.map((pattern, i) => ({ pattern, i }));
     for (let index = 0; index < itemHistory.length; index++) {
