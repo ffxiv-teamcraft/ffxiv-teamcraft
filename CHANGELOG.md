@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [10.5.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.5.1...v10.5.2) (2023-05-27)
+
+
+### Features
+
+* **db:** allagan reports import ([b66d856](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b66d856f25c7d30176e16d23d7a6b63c5d008b06))
+
+
+### Bug Fixes
+
+* **island-sanctuary:** fixed wrong state reporting and broken planning for island level > 13 ([c5cfdd4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c5cfdd47ca54313f9eb7be85a3a3a8ef9f5979b4))
+
 ### [10.5.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.5.0...v10.5.1) (2023-05-26)
 
 
