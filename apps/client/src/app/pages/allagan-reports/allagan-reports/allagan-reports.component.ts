@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/
 import { AllaganReportsService } from '../allagan-reports.service';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
-import { distinctUntilChanged, filter, map, shareReplay } from 'rxjs/operators';
-import { combineLatest } from 'rxjs';
+import { distinctUntilChanged, filter, map, shareReplay, switchMap } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, Subject } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { AllaganReportQueueEntry } from '../model/allagan-report-queue-entry';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -33,15 +33,21 @@ export class AllaganReportsComponent {
 
   public selectCount = 0;
 
-  public queueStatus$ = this.allaganReportsService.getQueueStatus().pipe(
-    filter(() => !this.dirty && this.selectCount === 0),
-    map(rows => {
-      return rows.map(row => {
-        return {
-          ...row,
-          selected: false
-        };
-      });
+  private reloader$ = new BehaviorSubject<void>(void 0);
+
+  public queueStatus$ = this.reloader$.pipe(
+    switchMap(() => {
+      return this.allaganReportsService.getQueueStatus().pipe(
+        filter(() => !this.dirty && this.selectCount === 0),
+        map(rows => {
+          return rows.map(row => {
+            return {
+              ...row,
+              selected: false
+            };
+          });
+        })
+      )
     })
   );
 
@@ -151,6 +157,7 @@ export class AllaganReportsComponent {
       this.message.success(this.translate.instant('ALLAGAN_REPORTS.Proposal_accepted'));
       this.applyingChange = false;
       this.cd.detectChanges();
+      this.reloader$.next();
     });
   }
 
@@ -160,6 +167,7 @@ export class AllaganReportsComponent {
       this.message.success(this.translate.instant('ALLAGAN_REPORTS.Proposal_rejected'));
       this.applyingChange = false;
       this.cd.detectChanges();
+      this.reloader$.next();
     });
   }
 
@@ -173,6 +181,7 @@ export class AllaganReportsComponent {
       this.applyingChange = false;
       this.selectCount = 0;
       this.cd.detectChanges();
+      this.reloader$.next();
     });
   }
 
@@ -186,6 +195,7 @@ export class AllaganReportsComponent {
       this.applyingChange = false;
       this.selectCount = 0;
       this.cd.detectChanges();
+      this.reloader$.next();
     });
   }
 }
