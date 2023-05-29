@@ -4,15 +4,16 @@ import { PlatformService } from '../../../core/tools/platform.service';
 import { Database, objectVal, ref } from '@angular/fire/database';
 import { GuidesService } from '../../../core/database/guides.service';
 import { where } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { Observable, timer } from 'rxjs';
 import { TeamcraftGuide } from '../../../core/database/guides/teamcraft-guide';
 import { SidebarIconType } from '../../../modules/navigation-sidebar/sidebar-icon-type';
 import { SidebarEntry } from '../../../modules/navigation-sidebar/sidebar-entry';
 import { DomSanitizer } from '@angular/platform-browser';
 import { RemoveAdsPopupComponent } from '../../../modules/ads/remove-ads-popup/remove-ads-popup.component';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { map } from 'rxjs/operators';
+import { first, map, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { cachedFirebaseValue } from '../../../core/rxjs/cached-firebase-value';
 
 interface FeatureEntry {
   link: string;
@@ -69,7 +70,7 @@ export class SearchIntroComponent {
     }
   ];
 
-  counter$ = objectVal<string>(ref(this.firebase, 'lists_created'));
+  counter$ = cachedFirebaseValue<number>(this.firebase, 'lists_created', 60000);
 
   guides$: Observable<TeamcraftGuide[]> = this.guidesService.query(where('featured', '==', true));
 
