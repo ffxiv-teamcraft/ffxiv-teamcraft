@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [10.5.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.5.2...v10.5.3) (2023-05-29)
+
+
+### Features
+
+* **db:** allagan reports import, mostly new fish info ! ([dde826b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dde826bb80e1dda034429e04c2914e381a7c883b))
+
+
+### Bug Fixes
+
+* **allagan-reports:** fixed list sometimes not refreshing properly ([0343451](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0343451213656016e142c4bae86db2f9ae02dc1e))
+
 ### [10.5.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.5.1...v10.5.2) (2023-05-27)
 
 
