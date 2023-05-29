@@ -3,15 +3,14 @@ import { AllaganReportsService } from '../allagan-reports.service';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { distinctUntilChanged, filter, map, shareReplay, switchMap } from 'rxjs/operators';
-import { BehaviorSubject, combineLatest, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { AllaganReportQueueEntry } from '../model/allagan-report-queue-entry';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { AllaganReportStatus } from '../model/allagan-report-status';
-import { AllaganReportSource, TRADE_SOURCES_PRIORITIES } from '@ffxiv-teamcraft/types';
+import { AllaganReportSource, getExtract, TRADE_SOURCES_PRIORITIES } from '@ffxiv-teamcraft/types';
 import { uniq } from 'lodash';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { getExtract } from '@ffxiv-teamcraft/types';
 
 @Component({
   selector: 'app-allagan-reports',
@@ -47,7 +46,7 @@ export class AllaganReportsComponent {
             };
           });
         })
-      )
+      );
     })
   );
 
@@ -76,16 +75,16 @@ export class AllaganReportsComponent {
         fishWithNoData,
         itemsWithNoSource: Object.keys(items)
           .filter(id => {
-          if (+id <= 1 || TRADE_SOURCES_PRIORITIES[+id] >= 20) {
-            return false;
-          }
-          const enName = items[id].en;
-          const frName = items[id].fr;
-          return !fishWithNoData.includes(+id)
-            && !['Dated', 'Skybuilders'].some(ignored => enName.indexOf(ignored) > -1)
-            && !/S\d{1,2}$/.test(frName) && enName.length > 0
-            && getExtract(extracts, +id).sources.length === 0;
-        }).sort((a, b) => +b - +a)
+            if (+id <= 1 || TRADE_SOURCES_PRIORITIES[+id] >= 20) {
+              return false;
+            }
+            const enName = items[id].en;
+            const frName = items[id].fr;
+            return !fishWithNoData.includes(+id)
+              && !['Dated', 'Skybuilders'].some(ignored => enName.indexOf(ignored) > -1)
+              && !/S\d{1,2}$/.test(frName) && enName.length > 0
+              && getExtract(extracts, +id).sources.length === 0;
+          }).sort((a, b) => +b - +a)
       };
     })
   );
