@@ -553,7 +553,7 @@ export const lazyFilesList = {
   },
   'voyageSources': {
     'fileName': 'voyage-sources.json',
-    'hashedFileName': 'voyage-sources.a8a7b8a8347b43c60306d804c89fc35b22c95ea7.json'
+    'hashedFileName': 'voyage-sources.12b42055436036d01f22c40490a8dd87a7a7d3c9.json'
   },
   'weathers': {
     'fileName': 'weathers.json',

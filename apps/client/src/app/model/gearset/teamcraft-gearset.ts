@@ -9,6 +9,8 @@ export class TeamcraftGearset extends DataWithPermissions {
    */
   fromSync = false;
 
+  usedInGuides: string[] = [];
+
   job: number;
 
   index = -1;

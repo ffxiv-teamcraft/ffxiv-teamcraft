@@ -1,4 +1,4 @@
-<div class="gearset-row" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+<div class="gearset-row" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" [class.used-in-guide]="gearset.usedInGuides?.length > 0">
   <div [innerHTML]="gearset.job | jobUnicode" class="companion-svg job-icon"></div>
   <div>{{gearset.name}}</div>
   <button nz-button nzSize="small" nzShape="circle" *ngIf="!gearset.fromSync" (click)="rename(gearset)" nz-tooltip
@@ -7,6 +7,9 @@
   </button>
   <nz-tag *ngIf="gearset.authorId === userId && gearset.fromSync" [nzTooltipTitle]="'GEARSETS.SYNC.Tag_tooltip' | translate" [style.border-color]="'#bd0ef2'" nz-tooltip>
     {{'GEARSETS.SYNC.Tag' | translate}}
+  </nz-tag>
+  <nz-tag *ngFor="let guideTitle of gearset.usedInGuides" [style.border-color]="'rgba(38,233,16,0.65)'" class="custom-tag">
+    {{'SIMULATOR.ROTATIONS.Guide' | translate}}: {{guideTitle}}
   </nz-tag>
   <div fxFlex="1 1 auto"></div>
   <button (click)="$event.stopPropagation()" [clipboard]="getLink"
