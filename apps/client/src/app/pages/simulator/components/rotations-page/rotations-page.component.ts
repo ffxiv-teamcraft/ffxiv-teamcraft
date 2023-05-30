@@ -6,7 +6,7 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { filter, first, map, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, tap } from 'rxjs/operators';
 import { CraftingRotationsFolder } from '../../../../model/other/crafting-rotations-folder';
 import { RotationFoldersFacade } from '../../../../modules/rotation-folders/+state/rotation-folders.facade';
 import { GuidesService } from '../../../../core/database/guides.service';
@@ -117,6 +117,7 @@ export class RotationsPageComponent {
 
   scanGuideRotations(): void {
     const guides$ = this.guidesService.query().pipe(
+      debounceTime(1000),
       first()
     );
     combineLatest([
