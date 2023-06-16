@@ -77,6 +77,7 @@ export class PlanningFormulaOptimizer {
       while (totalTime < 24) {
         const bestFirstItem = projectedSupplyObjects.filter(obj => {
           return obj.craftworksEntry.craftingTime <= (24 - totalTime)
+            && obj.craftworksEntry.craftingTime != (22 - totalTime)
             && obj.craftworksEntry.themes.some(t => day.planning[0].craftworksEntry.themes.includes(t))
             && obj.id !== day.planning[0].id;
         }).sort((a, b) => {
@@ -88,6 +89,7 @@ export class PlanningFormulaOptimizer {
         } else {
           const noComboFirstItem = projectedSupplyObjects.filter(obj => {
             return obj.craftworksEntry.craftingTime <= (24 - totalTime)
+              && obj.craftworksEntry.craftingTime != (22 - totalTime)
               && obj.id !== day.planning[0].id;
           }).sort((a, b) => {
             return this.getBoostedValue(b, objectsUsage[b.id]) - this.getBoostedValue(a, objectsUsage[a.id]);
