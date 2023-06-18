@@ -13,6 +13,8 @@ export class WorkshopStatusData extends DataModel {
 
   lock: boolean;
 
+  updated: number;
+
   constructor() {
     super();
   }
