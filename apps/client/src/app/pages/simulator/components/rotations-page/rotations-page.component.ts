@@ -28,6 +28,8 @@ export class RotationsPageComponent {
 
   public rotationFoldersDisplay$: Observable<{ folder: CraftingRotationsFolder, rotations: CraftingRotation[] }[]>;
 
+  public favoriteRotationsFoldersDisplay$: Observable<{ folder: CraftingRotationsFolder, rotations: CraftingRotation[] }[]>;
+
   public user$ = this.authFacade.user$;
 
   constructor(private rotationsFacade: RotationsFacade, private dialog: NzModalService, private translate: TranslateService,
@@ -70,6 +72,16 @@ export class RotationsPageComponent {
       map(displays => displays.sort((a, b) => a.folder.index - b.folder.index))
     );
 
+    this.favoriteRotationsFoldersDisplay$ = this.foldersFacade.favoriteRotationFolders$.pipe(
+      map((folders) => {
+        return folders
+          .map(folder => {
+            folder.rotations = folder.rotations.filter(rotation => rotation && !rotation.notFound);
+            return folder;
+          });
+      })
+    );
+
     this.rotations$ = combineLatest([this.rotationsFacade.myRotations$, this.foldersFacade.myRotationFolders$]).pipe(
       map(([rotations, folders]) => {
         return rotations.filter(rotation => {
@@ -81,6 +93,8 @@ export class RotationsPageComponent {
     );
 
     this.foldersFacade.loadMyRotationFolders();
+
+
   }
 
   newRotation(): void {

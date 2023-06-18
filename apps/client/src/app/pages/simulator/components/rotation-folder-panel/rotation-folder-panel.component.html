@@ -1,22 +1,33 @@
-<nz-collapse>
+<nz-collapse *ngIf="permissionLevel$ | async as permissionLevel">
   <nz-collapse-panel [nzHeader]="panelHeader" #panel>
-    <div (drop)="onCraftingRotationDrop($event)" (remove)="removeCraftingRotation($event.value)" [removeOnSpill]="true"
-         class="ngx-dnd-container rotations-container"
-         fxLayout="column" fxLayoutGap="5px" ngxDroppable="rotation" *ngIf="panel.nzActive">
-      <ng-container *ngFor="let rotation of rotations; trackBy: trackByCraftingRotation">
-        <div *ngIf="rotation !== undefined"
-             [model]="rotation"
-             class="ngx-dnd-item"
-             ngxDraggable="rotation">
-          <app-rotation-panel [rotation]="rotation"></app-rotation-panel>
+    <ng-container *ngIf="panel.nzActive">
+      <div *ngIf="permissionLevel >= 30; else noDragTpl"
+           (drop)="onCraftingRotationDrop($event)"
+           (remove)="removeCraftingRotation($event.value)"
+           [removeOnSpill]="true"
+           class="ngx-dnd-container rotations-container"
+           fxLayout="column" fxLayoutGap="5px" ngxDroppable="rotation">
+        <ng-container *ngFor="let rotation of rotations; trackBy: trackByCraftingRotation">
+          <ng-container *ngIf="rotation !== undefined">
+            <div [model]="rotation" class="ngx-dnd-item" ngxDraggable="rotation">
+              <app-rotation-panel [rotation]="rotation"></app-rotation-panel>
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+      <ng-template #noDragTpl>
+        <div class="flex-column gap-5">
+          <div *ngFor="let rotation of rotations; trackBy: trackByCraftingRotation">
+            <app-rotation-panel [rotation]="rotation"></app-rotation-panel>
+          </div>
         </div>
-      </ng-container>
-    </div>
+      </ng-template>
+    </ng-container>
   </nz-collapse-panel>
   <ng-template #panelHeader>
     <div class="panel-header" fxLayout="row wrap" fxLayoutAlign="space-between center">
       <div>
-        {{_folder.name}}
+        {{_folder.name}} {{permissionLevel}}
       </div>
       <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="2px" nz-col nzMd="4">
         <a (click)="$event.stopPropagation()" [nzShape]="'circle'"
@@ -35,20 +46,20 @@
           <i nz-icon nzType="share-alt"></i>
         </button>
         <app-favorite-button (click)="$event.stopPropagation()" type="rotationFolders" [key]="_folder.$key"></app-favorite-button>
-        <button (click)="$event.stopPropagation(); addRotations()" *ngIf="(permissionLevel$ | async) >= 30" [nzShape]="'circle'"
+        <button (click)="$event.stopPropagation(); addRotations()" *ngIf="(permissionLevel) >= 30" [nzShape]="'circle'"
                 [nzTooltipTitle]="'SIMULATOR.ROTATIONS.FOLDERS.Add_rotations' | translate"
                 [nzType]="'primary'"
                 nz-button
                 nz-tooltip>
           <i nz-icon nzType="plus"></i>
         </button>
-        <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteFolder()" *ngIf="(permissionLevel$ | async) >= 40"
+        <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteFolder()" *ngIf="(permissionLevel) >= 40"
                 [nzShape]="'circle'"
                 [nzPopconfirmTitle]="'SIMULATOR.ROTATIONS.FOLDERS.Delete_message' | translate" nzDanger nz-button
                 nz-popconfirm>
           <i nz-icon nzType="delete"></i>
         </button>
-        <button (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) >= 30" [nzDropdownMenu]="menu"
+        <button (click)="$event.stopPropagation()" *ngIf="(permissionLevel) >= 30" [nzDropdownMenu]="menu"
                 [nzPlacement]="'bottomRight'"
                 [nzShape]="'circle'" [nzTrigger]="'click'" nz-button
                 nz-dropdown>
@@ -56,10 +67,10 @@
         </button>
         <nz-dropdown-menu #menu="nzDropdownMenu">
           <ul nz-menu>
-            <li (click)="renameFolder()" [nzDisabled]="(permissionLevel$ | async) < 40" nz-menu-item>
+            <li (click)="renameFolder()" [nzDisabled]="(permissionLevel) < 40" nz-menu-item>
               {{'SIMULATOR.ROTATIONS.FOLDERS.Rename' | translate}}
             </li>
-            <ng-container *ngIf="(permissionLevel$ | async) >= 40">
+            <ng-container *ngIf="(permissionLevel) >= 40">
               <ng-container *ngIf="user$ | async as user">
                 <ng-container *ngIf="user.supporter || user.admin">
                   <li (click)="createCustomLink(_folder, user)" *ngIf="(customLink$ | async) === undefined; else copyLink"

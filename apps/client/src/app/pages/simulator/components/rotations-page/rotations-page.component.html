@@ -40,6 +40,17 @@
         </div>
       </div>
     </ng-container>
+    <ng-container *ngIf="favoriteRotationsFoldersDisplay$ | async as folders">
+      <div *ngIf="folders.length > 0" class="folders" fxLayout="column" fxLayoutGap="10px">
+        <h2>{{'SIMULATOR.ROTATIONS.FOLDERS.Favorite_folders' | translate}}</h2>
+        <div              fxLayout="column" fxLayoutGap="5px">
+          <div *ngFor="let folderDisplay of folders; trackBy: trackByKey">
+            <app-rotation-folder-panel [folder]="folderDisplay.folder"
+                                       [rotations]="folderDisplay.rotations"></app-rotation-folder-panel>
+          </div>
+        </div>
+      </div>
+    </ng-container>
   </div>
   <app-fullpage-message *ngIf="(rotations$ | async)?.length === 0 && (rotationFoldersDisplay$ | async)?.length === 0"
                         height="200px">
