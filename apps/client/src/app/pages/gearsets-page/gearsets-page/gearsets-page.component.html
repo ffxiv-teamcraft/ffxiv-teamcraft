@@ -21,6 +21,11 @@
     <div>
       <button nz-button *ngIf="pcapToggle" (click)="syncFromPcap()">{{'GEARSETS.Sync_with_pcap' | translate}}</button>
     </div>
+    <ng-container *ngIf="user$ | async as user">
+      <button (click)="scanGuideGearsets()" class="new-rotation" nz-button *ngIf="user.editor || user.admin">
+        <span nz-icon nzType="tags" nzTheme="outline"></span> {{'SIMULATOR.ROTATIONS.Scan_guides' | translate}}
+      </button>
+    </ng-container>
   </div>
 
   <ng-container *ngIf="userId$ | async as userId">

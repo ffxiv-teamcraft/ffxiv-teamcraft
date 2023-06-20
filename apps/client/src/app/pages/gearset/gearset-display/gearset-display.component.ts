@@ -164,7 +164,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
   }
 
   generateList(gearset: TeamcraftGearset, progression: GearsetProgression): void {
-    this.materiaService.getTotalNeededMaterias(gearset, this.includeAllTools, progression).pipe(
+    this.materiaService.getTotalNeededMaterias(gearset, [8, 9, 10, 11, 12, 13, 14, 15].includes(gearset.job) && this.includeAllTools, progression).pipe(
       map(materias => {
         return [
           ...this.gearsetsFacade.toArray(gearset)

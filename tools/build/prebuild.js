@@ -25,7 +25,8 @@ const changes = sections.slice(1, 11).reduce((acc, section) => {
   return [...acc, {
     version,
     content: section.split('\n')
-      .slice(3, -5).join('\n')
+      .slice(3, -2)
+      .join('\n')
       .replace(/\s\(\[.+/gm, '.')
       .replace(/`/gm, '\\`')
   }];

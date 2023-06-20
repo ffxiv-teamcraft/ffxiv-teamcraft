@@ -23,6 +23,7 @@ import { DataType, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { EnvironmentService } from '../../../core/environment.service';
+import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 
 interface ColumnItem {
   name: string;
@@ -340,6 +341,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     filter(([objects]) => objects.length > 0),
     map(([objects, supply, landmarks, workshops, rank, secondRestDay, today, history]) => {
       try {
+        // eslint-disable-next-line no-restricted-syntax
+        console.debug('PlanningFormulaOptimizer.run()');
         return new PlanningFormulaOptimizer(objects, history, workshops, landmarks, rank, supply, secondRestDay, today).run();
       } catch (e) {
         return {
@@ -417,15 +420,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
         switchMap(([reset, state, user]) => {
           return this.mjiWorkshopStatusService.get(reset.toString()).pipe(
             map((historyEntry) => {
-              const shouldUpdate = user.admin ||
-                (!state.edited && [...historyEntry.objects].length < state.supplyDemand.length) ||
-                (!historyEntry.lock
-                  && !state.edited
-                  && historyEntry.objects.some((obj, i) => {
-                    return state.supplyDemand[i].supply < obj.supply;
-                  })
-                  && !state.supplyDemand.some(entry => entry.supply > 3)
-                  && !state.supplyDemand.every(entry => entry.supply === 0 && entry.demand === 0));
+              const shouldUpdate = this.shouldUpdateDb(user, state.edited, historyEntry, state.supplyDemand);
               return {
                 shouldUpdate,
                 historyEntry
@@ -456,7 +451,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
                   popularity: state.popularity,
                   predictedPopularity: state.predictedPopularity,
                   start: reset,
-                  lock: user.admin || user.trustedMJI
+                  lock: user.admin || user.trustedMJI,
+                  updated: Date.now()
                 });
               }
               return EMPTY;
@@ -472,6 +468,26 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
         });
       });
     }
+  }
+
+  shouldUpdateDb(user: TeamcraftUser, edited: boolean, historyEntry: WorkshopStatusData, supplyDemand: CraftworksObject[]): boolean {
+    if (edited) {
+      return false;
+    }
+    if (user.admin) {
+      return true;
+    }
+    if (historyEntry.lock || historyEntry.updated + 2000 > Date.now()) {
+      return false;
+    }
+    if (historyEntry.objects.length < supplyDemand.length) {
+      return true;
+    }
+    return historyEntry.objects.some((obj, i) => {
+        return supplyDemand[i].supply < obj.supply;
+      })
+      && !supplyDemand.some(entry => entry.supply > 3)
+      && !supplyDemand.every(entry => entry.supply === 0 && entry.demand === 0);
   }
 
   importState(): void {

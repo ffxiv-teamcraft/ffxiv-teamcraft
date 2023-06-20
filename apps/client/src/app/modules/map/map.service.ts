@@ -206,7 +206,7 @@ export class MapService {
     return {
       x: this.avgAxis(coords, 'x'),
       y: this.avgAxis(coords, 'y'),
-      radius: (amplitude * 41) || 100
+      radius: Math.min((amplitude * 41) || 100, 600)
     };
   }
 

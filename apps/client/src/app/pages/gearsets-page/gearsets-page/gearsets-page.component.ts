@@ -11,8 +11,12 @@ import { DataModel } from '../../../core/database/storage/data-model';
 import { Folder } from '../../../model/folder/folder';
 import { CdkDrag, moveItemInArray } from '@angular/cdk/drag-drop';
 import { FolderDisplay } from '../../../model/folder/folder-display';
-import { map, switchMap, takeUntil } from 'rxjs/operators';
+import { debounceTime, first, map, switchMap, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
+import { uniq } from 'lodash';
+import { GuidesService } from '../../../core/database/guides.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-gearsets-page',
@@ -33,9 +37,12 @@ export class GearsetsPageComponent extends TeamcraftComponent implements OnInit 
 
   public dndConnections = ['gearsets-root', 'folder-root'];
 
+  public user$ = this.authFacade.user$;
+
   constructor(private dialog: NzModalService, private gearsetsFacade: GearsetsFacade,
               private authFacade: AuthFacade, private ipc: IpcService,
-              private foldersFacade: FoldersFacade) {
+              private foldersFacade: FoldersFacade, private guidesService: GuidesService,
+              private message: NzMessageService, private translate: TranslateService) {
     super();
     this.ipc.pcapToggle$.subscribe(value => {
       this.pcapToggle = value;
@@ -67,6 +74,38 @@ export class GearsetsPageComponent extends TeamcraftComponent implements OnInit 
     ).subscribe(favorites => {
       (favorites.gearsetFolders || []).forEach(key => this.foldersFacade.load(key));
       (favorites.gearsets || []).forEach(key => this.gearsetsFacade.load(key));
+    });
+  }
+
+  scanGuideGearsets(): void {
+    const guides$ = this.guidesService.query().pipe(
+      debounceTime(1000),
+      first()
+    );
+    combineLatest([
+      this.gearsetsFacade.myGearsets$.pipe(first()),
+      guides$
+    ]).subscribe(([rotations, guides]) => {
+      const gearsetsUsed = guides.reduce((acc, guide) => {
+        const matches = [...guide.content.matchAll(/\[Gearset:([^\]]+)]/gmi)].map(m => {
+          return {
+            title: guide.title,
+            gearset: m[1]
+          };
+        });
+        return [
+          ...acc,
+          ...matches
+        ];
+      }, [] as Array<{ title: string, gearset: string }>);
+      rotations.forEach(gearset => {
+        const previousUsed = gearset.usedInGuides || [];
+        gearset.usedInGuides = uniq(gearsetsUsed.filter(entry => entry.gearset === gearset.$key).map(e => e.title));
+        if (gearset.usedInGuides.length !== previousUsed.length) {
+          this.gearsetsFacade.pureUpdate(gearset.$key, { usedInGuides: gearset.usedInGuides });
+        }
+      });
+      this.message.success(this.translate.instant('SIMULATOR.ROTATIONS.Guides_flags_updated'));
     });
   }
 

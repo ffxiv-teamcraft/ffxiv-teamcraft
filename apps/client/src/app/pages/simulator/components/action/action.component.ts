@@ -127,6 +127,8 @@ export class ActionComponent {
         return 'darkblue';
       case StepState.PRIMED:
         return 'darkmagenta';
+      case StepState.GOOD_OMEN:
+        return 'gold';
     }
   }
 

@@ -7,8 +7,8 @@ import { graphql } from 'body-parser-graphql';
 import { createClient, RedisClientType } from 'redis';
 
 const RATE_LIMIT_BYTES_PER_REQUEST = 2_000_000;
-const RATE_LIMIT_BYTES_PER_MINUTES = 100_000_000;
-const RATE_LIMIT_BYTES_PER_HOUR = 500_000_000;
+const RATE_LIMIT_BYTES_PER_MINUTES = 1_000_000_000;
+const RATE_LIMIT_BYTES_PER_HOUR = 5_000_000_000;
 
 async function addUsage(redis: RedisClientType, ip: string, usage: number) {
   const minBytesUsageKey = `gubal:${ip}:${new Date().getUTCMinutes()}B`;

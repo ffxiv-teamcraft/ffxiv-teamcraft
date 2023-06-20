@@ -24821,5 +24821,32 @@
       "duration": 3,
       "minGathering": 3200
     }
+  ],
+  "40542": [
+    {
+      "spot": 288,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29714,
+      "minGathering": 0
+    }
+  ],
+  "40543": [
+    {
+      "spot": 288,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29714,
+      "minGathering": 0
+    }
+  ],
+  "40544": [
+    {
+      "spot": 288,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 29716,
+      "minGathering": 0
+    }
   ]
 }

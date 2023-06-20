@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [10.5.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.5.3...v10.5.4) (2023-06-20)
+
+
+### Features
+
+* **data:** update for cn patch-6.31 ([004960a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/004960ae0be1bbe846057583995a6fe9a9f9d57a))
+* **gearsets:** new guides flagging system for guide editors ([d660848](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d6608480f6c292bdcb4767ae447c9fc156f475be))
+* **rotations:** favorite rotation folders are now properly shown in rotations page ([d83eca4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d83eca49e149c9cd8d957a0920f42465b08b392a))
+* **simulator:** added support for new expert recipe Good Omen condition ([7d9809c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7d9809c9cd8ded74eaba81f0b27704749fb22e15))
+
+
+### Bug Fixes
+
+* **collectables:** fixed exp computation issues ([8c4c866](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8c4c866f7156d1938e57ed60ae17a5dd4602893e))
+* **core:** fixed patch notes slicer removing the last 3 lines ([94a2e51](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/94a2e5102385e5fe19c59a72a6248b77b0fa0524))
+* **db:** spawn radius now has a maximum value ([080dd07](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/080dd0741dbbc3e2cbe7723ebb07e5cfe77bda60))
+* **db:** updated GamerEscape icon ([7920396](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7920396222b57d33d6b268b4d096d8ecf9474ba4))
+* **gearset:** fixed an issue with tools sometimes accounted as 8 for no reason ([f9b6b63](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f9b6b63b2cc8bcb52341f30a119b0ee170c185ad))
+* **island-workshop:** fixed optimizer spam on some days ([f90389f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f90389fc0e2ca25e5921b266719dcc6018d4f60f))
+* **island-workshop:** prevented a case where 22 hour schedules occured ([ff4c7b1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ff4c7b1c2e2086e9444826544b123a9a106e9f65))
+* **rotations:** fixed guide flag for editors not applied properly ([c2f3dbd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c2f3dbd8e06257888a980f0e96efcba76c3ec19c))
+* **simulator:** copying a rotation from a guide won't make it undeletable anymore ([c6f1274](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c6f12742819d721c63effc49a7b901d855f79730))
+* **timers:** fixed tooltip sometimes not being updated properly ([94e55b4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/94e55b43a79a55cebc06db936dab12ff110d2c8e))
+
 ### [10.5.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.5.2...v10.5.3) (2023-05-29)
 
 

@@ -621,6 +621,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
     delete rotation.$key;
     delete rotation.community;
     delete rotation.public;
+    delete rotation.usedInGuides;
     this.saveRotation(rotation);
   }
 

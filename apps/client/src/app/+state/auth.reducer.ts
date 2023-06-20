@@ -2,6 +2,7 @@ import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { AuthActions, AuthActionTypes } from './auth.actions';
 import { CommissionProfile } from '../model/user/commission-profile';
 import { LogTracking } from '../model/user/log-tracking';
+import { cloneDeep } from 'lodash';
 
 /**
  * Interface for the 'Auth' data used in
@@ -45,21 +46,18 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
       return { ...state, linkingCharacter: true };
 
     case AuthActionTypes.ToggleFavorite: {
-      if (state.user.favorites[action.dataType] === undefined) {
-        state.user.favorites[action.dataType] = [];
+      const user = cloneDeep(state.user);
+      if (user.favorites[action.dataType] === undefined) {
+        user.favorites[action.dataType] = [];
       }
-      if (state.user.favorites[action.dataType].indexOf(action.key) > -1) {
-        state.user.favorites[action.dataType] = state.user.favorites[action.dataType].filter(fav => fav !== action.key);
+      if (user.favorites[action.dataType].indexOf(action.key) > -1) {
+        user.favorites[action.dataType] = user.favorites[action.dataType].filter(fav => fav !== action.key);
       } else {
-        state.user.favorites[action.dataType].push(action.key);
+        user.favorites[action.dataType].push(action.key);
       }
-      const newFavorites = { ...state.user.favorites };
       return {
         ...state,
-        user: {
-          ...state.user,
-          favorites: newFavorites
-        }
+        user
       };
     }
 

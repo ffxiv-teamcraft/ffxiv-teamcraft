@@ -1,5 +1,15 @@
-import { ComponentFactoryResolver, Directive, ElementRef, Input, OnChanges, Renderer2, SimpleChanges, ViewContainerRef } from '@angular/core';
-import { NzTooltipDirective } from 'ng-zorro-antd/tooltip';
+import {
+  ChangeDetectorRef,
+  ComponentFactoryResolver,
+  Directive,
+  ElementRef,
+  Input,
+  OnChanges,
+  Renderer2,
+  SimpleChanges,
+  ViewContainerRef
+} from '@angular/core';
+import { NzToolTipComponent, NzTooltipDirective } from 'ng-zorro-antd/tooltip';
 import { DatePipe } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -13,7 +23,7 @@ export class TimerTooltipDirective extends NzTooltipDirective implements OnChang
   timerSeconds: number;
 
   constructor(elementRef: ElementRef, hostView: ViewContainerRef, resolver: ComponentFactoryResolver, renderer: Renderer2,
-              private datePipe: DatePipe, private translate: TranslateService) {
+              private datePipe: DatePipe, private translate: TranslateService, private cd: ChangeDetectorRef) {
     super(elementRef, hostView, resolver, renderer);
   }
 
@@ -21,7 +31,18 @@ export class TimerTooltipDirective extends NzTooltipDirective implements OnChang
     if (this.timerSeconds === null) {
       this.title = null;
     } else {
-      this.title = this.datePipe.transform(new Date(Date.now() + this.timerSeconds * 1000), 'medium', null, this.translate.currentLang);
+      const newTitle = this.datePipe.transform(new Date(Date.now() + this.timerSeconds * 1000), 'medium', null, this.translate.currentLang);
+      if (newTitle !== this.title) {
+        this.title = newTitle;
+        const visible = this.visible;
+        if (visible) {
+          this.hide();
+        }
+        this.componentRef = this.hostView.createComponent(NzToolTipComponent);
+        if (visible) {
+          this.show();
+        }
+      }
     }
     super.ngOnChanges(changes);
   }

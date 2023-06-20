@@ -177,7 +177,7 @@ export class AuthEffects {
 
   updateUser$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateUser>(AuthActionTypes.UpdateUser),
-    debounceTime(2000),
+    debounceTime(1000),
     switchMap((action) => {
       return this.userService.set(action.user.$key, action.user);
     }),

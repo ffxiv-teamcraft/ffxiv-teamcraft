@@ -6,7 +6,7 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { filter, first, map, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, tap } from 'rxjs/operators';
 import { CraftingRotationsFolder } from '../../../../model/other/crafting-rotations-folder';
 import { RotationFoldersFacade } from '../../../../modules/rotation-folders/+state/rotation-folders.facade';
 import { GuidesService } from '../../../../core/database/guides.service';
@@ -27,6 +27,8 @@ export class RotationsPageComponent {
   public rotations$: Observable<CraftingRotation[]>;
 
   public rotationFoldersDisplay$: Observable<{ folder: CraftingRotationsFolder, rotations: CraftingRotation[] }[]>;
+
+  public favoriteRotationsFoldersDisplay$: Observable<{ folder: CraftingRotationsFolder, rotations: CraftingRotation[] }[]>;
 
   public user$ = this.authFacade.user$;
 
@@ -70,6 +72,16 @@ export class RotationsPageComponent {
       map(displays => displays.sort((a, b) => a.folder.index - b.folder.index))
     );
 
+    this.favoriteRotationsFoldersDisplay$ = this.foldersFacade.favoriteRotationFolders$.pipe(
+      map((folders) => {
+        return folders
+          .map(folder => {
+            folder.rotations = folder.rotations.filter(rotation => rotation && !rotation.notFound);
+            return folder;
+          });
+      })
+    );
+
     this.rotations$ = combineLatest([this.rotationsFacade.myRotations$, this.foldersFacade.myRotationFolders$]).pipe(
       map(([rotations, folders]) => {
         return rotations.filter(rotation => {
@@ -81,6 +93,8 @@ export class RotationsPageComponent {
     );
 
     this.foldersFacade.loadMyRotationFolders();
+
+
   }
 
   newRotation(): void {
@@ -117,6 +131,7 @@ export class RotationsPageComponent {
 
   scanGuideRotations(): void {
     const guides$ = this.guidesService.query().pipe(
+      debounceTime(1000),
       first()
     );
     combineLatest([
