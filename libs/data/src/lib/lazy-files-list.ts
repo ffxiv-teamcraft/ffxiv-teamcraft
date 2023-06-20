@@ -57,7 +57,7 @@ export const lazyFilesList = {
   },
   'collectablesPageData': {
     'fileName': 'collectables-page-data.json',
-    'hashedFileName': 'collectables-page-data.cb4693c25e5901f6bad30db601b5cb4041f48f61.json'
+    'hashedFileName': 'collectables-page-data.bbaa0349af827c39d76221d8d9082c0518dc5de4.json'
   },
   'collectablesShopItemGroup': {
     'fileName': 'collectables-shop-item-group.json',
@@ -97,7 +97,7 @@ export const lazyFilesList = {
   },
   'desynth': {
     'fileName': 'desynth.json',
-    'hashedFileName': 'desynth.47c41501bc299cb418211fe08b4cb86c39bd1408.json'
+    'hashedFileName': 'desynth.4d8d34df9d3d9f315a906a9e69bdca04c810f48b.json'
   },
   'diademTerritory': {
     'fileName': 'diadem-territory.json',
@@ -141,7 +141,7 @@ export const lazyFilesList = {
   },
   'fishingLogTrackerPageData': {
     'fileName': 'fishing-log-tracker-page-data.json',
-    'hashedFileName': 'fishing-log-tracker-page-data.cc518e5df22e967ba4873bfe473b6586cccf40f6.json'
+    'hashedFileName': 'fishing-log-tracker-page-data.dc06110f9163ecbce37604bf5dc79251e75c9721.json'
   },
   'fishingLog': {
     'fileName': 'fishing-log.json',
@@ -149,7 +149,7 @@ export const lazyFilesList = {
   },
   'fishingSources': {
     'fileName': 'fishing-sources.json',
-    'hashedFileName': 'fishing-sources.06d227e2e95fbf5536081a49a83d94c78e587df6.json'
+    'hashedFileName': 'fishing-sources.eee983befda2ee92e4aad49eeb76e31a5ff39f19.json'
   },
   'fishingSpots': {
     'fileName': 'fishing-spots.json',
@@ -345,7 +345,7 @@ export const lazyFilesList = {
   },
   'lootSources': {
     'fileName': 'loot-sources.json',
-    'hashedFileName': 'loot-sources.3c45a5c73a3ba77fdabe54e778d0d9d405f0a893.json'
+    'hashedFileName': 'loot-sources.78f12ae7e566c298fd88101f165099bc76c489b4.json'
   },
   'mapEntries': {
     'fileName': 'map-entries.json',
@@ -553,7 +553,7 @@ export const lazyFilesList = {
   },
   'voyageSources': {
     'fileName': 'voyage-sources.json',
-    'hashedFileName': 'voyage-sources.12b42055436036d01f22c40490a8dd87a7a7d3c9.json'
+    'hashedFileName': 'voyage-sources.fa21d359cb701b71a4cc993bdff258249b0b6bb3.json'
   },
   'weathers': {
     'fileName': 'weathers.json',
