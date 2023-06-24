@@ -285,7 +285,7 @@
     "quicktype-core": "6.1.0",
     "redis": "^4.6.5",
     "reflect-metadata": "^0.1.13",
-    "semver": "^7.3.8",
+    "semver": "^7.5.2",
     "standard-version": "^9.5.0",
     "subscriptions-transport-ws": "^0.9.19",
     "superjson": "^1.12.2",
