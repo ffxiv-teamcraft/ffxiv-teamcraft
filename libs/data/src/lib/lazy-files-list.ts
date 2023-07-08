@@ -197,7 +197,7 @@ export const lazyFilesList = {
   },
   'gcSupply': {
     'fileName': 'gc-supply.json',
-    'hashedFileName': 'gc-supply.e83fcd83e4ed02719926bd5646c2a31fbd0159ed.json'
+    'hashedFileName': 'gc-supply.15a28b30719963c2eed576a7c04f64c558344694.json'
   },
   'gilShopNames': {
     'fileName': 'gil-shop-names.json',

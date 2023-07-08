@@ -81,6 +81,7 @@ export abstract class StepByStepComponent extends TeamcraftComponent implements 
     this.currentMapDisplay$ = combineLatest([this.stepByStep$, this.getMapId()]).pipe(
       map(([stepByStep, mapId]) => {
         this.loading = false;
+        // Island: 773
         return stepByStep.steps[mapId];
       })
     );
