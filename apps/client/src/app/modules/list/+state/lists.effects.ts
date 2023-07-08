@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
-  AddModificationHistoryEntries,
   ArchivedListsLoaded,
   ClearModificationsHistory,
   ConvertLists,
@@ -15,7 +14,6 @@ import {
   MarkItemsHq,
   MyListsLoaded,
   PureUpdateList,
-  RemoveModificationHistoryEntry,
   SetItemDone,
   SharedListsLoaded,
   TeamListsLoaded,
