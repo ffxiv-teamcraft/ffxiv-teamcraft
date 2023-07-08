@@ -43,9 +43,9 @@ export class StepByStepList {
     }).flat();
   }
 
-  private getMatchingSources(item: ListRow, filter: LayoutRowFilter): ItemSource[]{
+  private getMatchingSources(item: ListRow, filter: LayoutRowFilter): ItemSource[] {
     return item.sources.filter(s => {
-      return filter.matches({...item, sources: [s]}, this.list, this.settings);
+      return filter.matches({ ...item, sources: [s] }, this.list, this.settings);
     });
   }
 
@@ -161,6 +161,10 @@ export class StepByStepList {
   }
 
   private addToMapIndex(mapId: number, row: ListRow, sources: ItemSource[], position?: Omit<ListStep, 'uniqId' | 'row' | 'sources'>): void {
+    // Hotfix for island because there's two map ids and client sends #773 instead of #772 that's in game file sources
+    if (mapId === 772) {
+      mapId = 773;
+    }
     let entry: MapListStep = this.steps[mapId];
     if (!entry) {
       this.steps[mapId] = {

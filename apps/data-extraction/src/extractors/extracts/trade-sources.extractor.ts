@@ -59,16 +59,18 @@ export class TradeSourcesExtractor extends AbstractItemDetailsExtractor<TradeSou
       }];
     }
     if (collectableReward) {
+      // Specific case for fishing trade goods exchange.
+      const npc = collectableReward[1].group === 73 ? 1045069 : 1035014
       return [{
         type: 'CollectableReward',
         id: +collectableReward[0],
         npcs: [{
-          id: 1035014,
-          zoneId: this.npcs[1035014].position.zoneid,
-          mapId: this.npcs[1035014].position.map,
+          id: npc,
+          zoneId: this.npcs[npc].position.zoneid,
+          mapId: this.npcs[npc].position.map,
           coords: {
-            x: this.npcs[1035014].position.x,
-            y: this.npcs[1035014].position.y
+            x: this.npcs[npc].position.x,
+            y: this.npcs[npc].position.y
           }
         }],
         shopName: this.collectablesShopItemGroup[collectableReward[1].group],
@@ -89,6 +91,7 @@ export class TradeSourcesExtractor extends AbstractItemDetailsExtractor<TradeSou
             ]
           };
         })
+          .filter(row => row.items[0].amount > 0)
       }];
     }
 

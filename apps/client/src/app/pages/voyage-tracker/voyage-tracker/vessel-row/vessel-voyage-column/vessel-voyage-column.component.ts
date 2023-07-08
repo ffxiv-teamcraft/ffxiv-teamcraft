@@ -2,9 +2,10 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Vessel } from '../../../../../modules/free-company-workshops/model/vessel';
 import { FreeCompanyWorkshopFacade } from '../../../../../modules/free-company-workshops/+state/free-company-workshop.facade';
 import { observeInput } from '../../../../../core/rxjs/observe-input';
-import { switchMap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { VesselType } from '../../../../../modules/free-company-workshops/model/vessel-type';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-vessel-voyage-column',
@@ -22,10 +23,12 @@ export class VesselVoyageColumnComponent {
       if (!vessel) {
         return of(null);
       }
-      return this.freeCompanyWorkshopFacade.toDestinationNames(this.vessel.vesselType, this.vessel.destinations);
+      return this.freeCompanyWorkshopFacade.toDestinationNames(this.vessel.vesselType, this.vessel.destinations).pipe(
+        map(names => names.map(name => this.sanitizer.bypassSecurityTrustHtml(name)))
+      );
     })
   );
 
-  constructor(private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade) {
+  constructor(private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, private sanitizer: DomSanitizer) {
   }
 }

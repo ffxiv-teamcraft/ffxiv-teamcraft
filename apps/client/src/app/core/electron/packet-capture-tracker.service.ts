@@ -95,12 +95,16 @@ export class PacketCaptureTrackerService {
           return (patch.containerId < ContainerType.ArmoryOff || patch.containerId > ContainerType.ArmoryMain)
             || isCrafting;
         }),
-        map(([patch]) => patch),
         withLatestFrom(this.listsFacade.autocompleteEnabled$),
-        filter(([patch, autocompleteEnabled]) => {
+        filter(([[patch, isCrafting], autocompleteEnabled]) => {
           return autocompleteEnabled && patch.quantity > 0;
         }),
-        map(([patch]) => patch)
+        map(([[patch, isCrafting]]) => {
+          return {
+            ...patch,
+            fromCrafting: isCrafting
+          }
+        })
       );
 
     const statusIsNull$ = combineLatest([patches$, eventStatus$, this.listsFacade.selectedList$]).pipe(
@@ -176,7 +180,7 @@ export class PacketCaptureTrackerService {
               delta: patch.quantity,
               recipeId: itemsEntry.recipeId,
               totalNeeded: itemsEntry.amount,
-              external: false,
+              external: !patch.fromCrafting,
               fromPacket: true,
               hq: patch.hq
             });
@@ -188,7 +192,7 @@ export class PacketCaptureTrackerService {
               delta: patch.quantity,
               recipeId: finalItemsEntry.recipeId,
               totalNeeded: finalItemsEntry.amount,
-              external: false,
+              external: !patch.fromCrafting,
               fromPacket: true,
               hq: patch.hq
             });

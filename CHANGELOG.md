@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [10.5.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.5.4...v10.5.5) (2023-07-08)
+
+
+### Features
+
+* **db:** support for korean v6.3 update ([90a604a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/90a604ac38a7dfa8415a79405fb653b7b768b10a))
+
+
+### Bug Fixes
+
+* **autofill:** filling from purchased items now count as external rather than crafted ([b839640](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b83964072da2a561460fab6848a1739113c1f628))
+* **db:** fixed wrong NPC source for Adaptive Fishing Reel Component ([96728a8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/96728a8fd30c56c2d2b879941912869ab0514fc2))
+* **gc-supply:** fixed wrong values for max lvl supplies ([53ae74d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/53ae74dc3a0aecaeb24e811a1df93d108e018d05))
+* **list-details:** fixed selected layout not propagating to overlay ([a71d3c6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a71d3c60a9cdfeb078bb48b59f7c42dbd1b49d1e)), closes [#2633](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2633)
+* **step-by-step:** fixed island never detected properly in overlay ([ef97ef6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ef97ef66689938ad6367993591dfdbe8b68c7422))
+* **step-by-step:** fixed selected layout not propagating to overlay ([494e75a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/494e75a775addfa90e89aa77150c3f6201116ecb)), closes [#2632](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2632)
+* **voyage-tracker:** better display of submarine spots ([f8e803f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f8e803f8080ad8261e41648a1502547691ea7328))
+
 ### [10.5.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.5.3...v10.5.4) (2023-06-20)
 
 

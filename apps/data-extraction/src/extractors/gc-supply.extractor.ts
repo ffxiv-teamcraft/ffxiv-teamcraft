@@ -28,8 +28,8 @@ export class GcSupplyExtractor extends AbstractExtractor {
               itemId: item,
               count: row.ItemCount[i][index],
               reward: {
-                xp: rewards[row.index].ExperienceSupply,
-                seals: rewards[row.index].SealsProvisioning
+                xp: rewards[row.index - 1].ExperienceSupply,
+                seals: rewards[row.index - 1].SealsSupply
               }
             };
           });
