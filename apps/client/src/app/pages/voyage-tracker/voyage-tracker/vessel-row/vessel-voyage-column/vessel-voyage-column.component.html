@@ -18,7 +18,7 @@
 <ng-template #voyageDetailsContent>
   <nz-breadcrumb [nzSeparator]="iconTemplate">
     <nz-breadcrumb-item *ngFor="let sector of destinationNames$ | async">
-      {{ sector }}
+      <span [innerHtml]="sector"></span>
     </nz-breadcrumb-item>
   </nz-breadcrumb>
 </ng-template>
