@@ -18,7 +18,7 @@
   "List_fork_in_progress": "正在复制清单到您的账号…",
   "Network_error_logged_out": "检测到网络错误，你已被注销。如果此问题一直存在，请在 Discord 上与 Miu 联系。",
   "Hide_zone_duplicates": "隐藏重复地图 (来自多个地图的物品只显示一次)",
-  "Patch_notes": "Patch Notes",
+  "Patch_notes": "版本日志",
   "Patch_notes_footer": "您喜欢新的功能吗？考虑下在Patreon支持这个项目？",
   "Selection": "已选中",
   "Change_character": "角色",
@@ -107,7 +107,7 @@
     "Contributors": "贡献者"
   },
   "Patreon_login_success": "Patreon 登录成功！",
-  "Tipeee_login_success": "Tipeee login success!",
+  "Tipeee_login_success": "Tipeee 登录成功！",
   "Hide_if_empty": "隐藏空栏",
   "No_favorites": "没有收藏",
   "Ephemeral_list": "完成后将被删除",
