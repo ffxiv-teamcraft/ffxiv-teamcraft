@@ -1089,7 +1089,6 @@
     "Open_in_external": "Open in {{name}}'s sim",
     "Select_job_please": "Please select a job",
     "Rename_rotation": "Rename Rotation",
-    "Cross_class_setup": "Cross-class skills setup",
     "Include_sound_end": "Include end of macro sound",
     "Step_by_step_report": "Step by step report",
     "Save_as_new": "Save as new (navigates to the newly created rotation)",
@@ -1232,7 +1231,6 @@
       "No_food": "No food",
       "No_medicine": "No medicine",
       "No_fc_buffs": "No FC buffs",
-      "Quest_warning": "Make sure you have done the lvl 70 quest for Stroke of Genius",
       "Starting_quality": "Starting quality",
       "STATS": {
         "CP": "CP",
@@ -1246,27 +1244,17 @@
       "NOT_ENOUGH_CP": "Not enough CP",
       "MISSING_LEVEL_REQUIREMENT": "You don't have the required level to craft this item.",
       "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
-      "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled",
       "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft",
       "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
     },
     "ROTATION_TIPS": {
-      "Use_inner_quiet": "Almost all the rotations should include Inner Quiet if your goal is to HQ the item. It provides a really good quality boost and enables actions like Byregot's Blessing.",
-      "Use_inner_quiet_before_quality_increase": "You should apply Inner Quiet before any quality increase, not doing that means that you're wasting Inner Quiet stacks.",
-      "Use_byregot_blessing_high_iq_stacks": "You used Byregot's Brow with more than 6 stacks. Using Byregot's Blessing is better in this case as it will produce more quality.",
       "Use_observe_before_focused": "You should use Observe before the Focused action at step {{index}} in order to get a free 100% success rate.",
       "Use_durability_restoration_later": "You should use the durability restoration action at step {{index}} later in order to avoid wasting durability restoration.",
-      "Use_patient_touch_faster": "You should use Patient Touch before adding Inner Quiet stacks, in order to minimize wasted stacks if the action fails.",
       "Do_not_overlap_buffs": "You overlapped the buff applied at step {{overlappedIndex}} with the buff applied at step {{overlappingIndex}}, you should delay the second one in order to get maximum benefits from your buffs.",
-      "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's Blessing for the same quality added but 6 less CP used.",
-      "Use_ingenuity_before_byregot": "You should use Ingenuity before Byregot's action in order to get a boost on quality gain.",
       "Use_more_quality_actions": "You have remaining durability at the end of the craft, you should probably use it to add more quality-related actions.",
       "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
       "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the failure of the action is better for your rotation's reliability.",
-      "Do_not_use_brand_without_name": "Do not use Brand of the Elements without Name of the Elements active.",
       "Avoid_using_good_actions": "Avoid using actions that require the Good state in a macro, as they can't be predicted",
-      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a Reuse proc.",
-      "Use_reuse": "Your rotation reaches 100% HQ and you have enough CP to use Reuse, consider adding it to get extra mats back."
     }
   },
   "PRICING": {
