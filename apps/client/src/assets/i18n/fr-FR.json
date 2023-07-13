@@ -1089,7 +1089,6 @@
     "Open_in_external": "Ouvrir dans le simulateur de {{name}}",
     "Select_job_please": "Merci de sélectionner un job",
     "Rename_rotation": "Renommer la rotation",
-    "Cross_class_setup": "Macro de sélection des talents",
     "Include_sound_end": "Inclure un son en fin de macro",
     "Step_by_step_report": "Rapport étape par étape",
     "Save_as_new": "Sauvegarder une copie (navigue sur la copie de la rotation)",
@@ -1232,7 +1231,6 @@
       "No_food": "Pas de nourriture",
       "No_medicine": "Aucune boisson",
       "No_fc_buffs": "Aucun bienfait",
-      "Quest_warning": "Make sure you have done the lvl 70 quest for Stroke of Genius",
       "Starting_quality": "Qualité de départ",
       "STATS": {
         "CP": "PS",
@@ -1246,27 +1244,17 @@
       "NOT_ENOUGH_CP": "Pas assez de PS",
       "MISSING_LEVEL_REQUIREMENT": "Vous n'avez pas le niveau requis pour fabriquer cet objet.",
       "NOT_SPECIALIST": "Rotation de spécialiste, mais vous n'êtes pas spécialiste",
-      "NO_INNER_QUIET": "Essayé d'utiliser une action qui requiert Calme Intérieur sans avoir le bonus Calme Intérieur activé",
       "MISSING_STATS_REQUIREMENT": "Vous n'avez pas les statistiques minimales requises pour cette recette",
       "QUALITY_TOO_LOW": "La qualité ne correspond pas à la qualité requise de la recette"
     },
     "ROTATION_TIPS": {
-      "Use_inner_quiet": "Si vous souhaitez ajouter de la qualité sur votre rotation, elle se doit d'intégrer Calme Intérieur afin d'ajouter un bonus non négligeable et de pouvoir utiliser des actions comme la Bénédiction de Byregot.",
-      "Use_inner_quiet_before_quality_increase": "Calme Intérieur doit être appliqué avant toute autre action afin de maximiser le gain en qualité.",
-      "Use_byregot_blessing_high_iq_stacks": "Vous avez utilisé Contenance de Byregot avec plus de 6 cumuls de Calme Intérieur. Utiliser Bénédiction de Byregot à la place permettrait de gagner plus de qualité.",
       "Use_observe_before_focused": "Vous devriez utiliser Observation avant l'action au tour {{index}} afin de monter son taux de réussite à 100%.",
       "Use_durability_restoration_later": "Vous devriez utiliser l'action de réparation au tour {{index}} plus tôt afin d'éviter de gâcher une partie de son effet.",
-      "Use_patient_touch_faster": "Vous devriez utiliser Ouvrage appliqué avant toute autre action de qualité afin de minimiser la perte de cumuls de Calme Intérieur en cas d'échec.",
       "Do_not_overlap_buffs": "Vous avez écrasé le buff appliqué au tour {{overlappedIndex}} avec le buff appliqué au tour {{overlappingIndex}}, vous appliquer le second buff plus tard pour éviter de perdre des tours d'effet sur le premier.",
-      "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's Blessing for the same quality added but 6 less CP used.",
-      "Use_ingenuity_before_byregot": "Vous devriez utiliser Ingeniosité avant l'action de Byregot afin d'obtenir un bonus sur le gain de qualité.",
       "Use_more_quality_actions": "Vous avez encore de la solidité à la fin de l'artisanat, vous devriez probablement l'utiliser pour ajouter des actions de qualité.",
       "Use_prudent_touch_manipulation": "Comme vous êtes niveau 66+, vous devriez utiliser le combo Manipulation + Ouvrage parcimonieux afin d'obtenir un avantage maximum de qualité et plus de fiabilité.",
       "Use_rapid_synthesis_earlier": "Vous ne devriez pas utiliser la Synthèse Rapide comme une action finale, la mettre plus tôt pour pouvoir gérer l'échec de l'action est mieux pour la fiabilité de votre rotation.",
-      "Do_not_use_brand_without_name": "N'utilisez pas de Marque des Éléments sans Nom des Éléments actifs.",
-      "Avoid_using_good_actions": "Évitez d'utiliser des actions qui nécessitent un état \"Bon\" dans une macro, car cet état n'est pas prévisible",
-      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a Reuse proc.",
-      "Use_reuse": "Votre rotation atteint 100% HQ et vous avez assez de PS pour utiliser Récupération de chutes, pensez à l'ajouter pour récupérer des ingrédients supplémentaires."
+      "Avoid_using_good_actions": "Évitez d'utiliser des actions qui nécessitent un état \"Bon\" dans une macro, car cet état n'est pas prévisible"
     }
   },
   "PRICING": {
