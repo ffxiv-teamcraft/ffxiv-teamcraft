@@ -1089,7 +1089,6 @@
     "Open_in_external": "Abrir en el simulador de {{name}}",
     "Select_job_please": "Favor de seleccionar una profesión",
     "Rename_rotation": "Renombrar Rotación",
-    "Cross_class_setup": "Crear macro para activar habilidades de clase cruzada",
     "Include_sound_end": "Incluir sonido al final de la macro",
     "Step_by_step_report": "Reporte paso a paso",
     "Save_as_new": "Guardar como (navega a la nueva rotation creada)",
@@ -1232,7 +1231,6 @@
       "No_food": "Sin comida",
       "No_medicine": "Sin medicina",
       "No_fc_buffs": "Sin bonos de Gremio Independiente (FC)",
-      "Quest_warning": "Make sure you have done the lvl 70 quest for Stroke of Genius",
       "Starting_quality": "Calidad inicial",
       "STATS": {
         "CP": "CP",
@@ -1246,27 +1244,17 @@
       "NOT_ENOUGH_CP": "CP Insuficiente",
       "MISSING_LEVEL_REQUIREMENT": "You don't have the required level to craft this item.",
       "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
-      "NO_INNER_QUIET": "Intento de usar acción de Inner Quiet sin tener Inner Quiet habilitado",
       "MISSING_STATS_REQUIREMENT": "No tiene los atributos mínimos necesarios para fabricar esto",
       "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
     },
     "ROTATION_TIPS": {
-      "Use_inner_quiet": "Casi todas las rotaciones deberían incluir \"Inner Quiet\" si su objetivo es un objeto HQ. Proporciona un buen impulso de calidad y permite acciones como \"Byregot's Blessing\".",
-      "Use_inner_quiet_before_quality_increase": "Debería aplicar \"Inner Quiet\" antes de cualquier aumento de calidad, no hacerlo significa que está desperdiciando cargas de \"Inner Quiet\".",
-      "Use_byregot_blessing_high_iq_stacks": "Utilizó \"Byregot Brow\" con más de 6 cargas. Usar \"Byregot Blessing\" es mejor en este caso, ya que producirá más calidad.",
       "Use_observe_before_focused": "Debería usar \"Observe\" antes de la acción \"enfocada\" en el paso {{index}} para obtener una tasa de éxito del 100% gratis.",
       "Use_durability_restoration_later": "Debería usar la acción de restauración de durabilidad en el paso {{index}} más tarde para evitar desperdiciar la restauración de durabilidad.",
-      "Use_patient_touch_faster": "Debería usar \"Patient Touch\" antes de añadir cargas de \"Inner Quiet\", para minimizar las cargas desperdiciadas si la acción falla.",
       "Do_not_overlap_buffs": "Ha traslapado el bono aplicado en el paso {{overlappedIndex}} con el bono aplicado en el paso {{overlappingIndex}}, debería retrasar el segundo para obtener los máximos beneficios de sus bonos.",
-      "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's Blessing for the same quality added but 6 less CP used.",
-      "Use_ingenuity_before_byregot": "Debería usar \"Ingenuity\" antes de la acción de \"Byregot\" para obtener un aumento en la ganancia de calidad.",
       "Use_more_quality_actions": "Le sobra durabilidad al final del proceso, probablemente debería usarla para más acciones relacionadas con la calidad.",
       "Use_prudent_touch_manipulation": "Como usted es nivel 66+, debería usar el combo \"Manipulation\" + \"Prudent Touch\" para obtener calidad para la mejor ganancia de calidad y más confiabilidad.",
       "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the failure of the action is better for your rotation's reliability.",
-      "Do_not_use_brand_without_name": "No utilice Brand of the Elements sin Name of the Elements activo.",
-      "Avoid_using_good_actions": "Avoid using actions that require the Good state in a macro, as they can't be predicted",
-      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a Reuse proc.",
-      "Use_reuse": "Su rotación alcanza el 100% de HQ y tiene suficiente CP para usar \"Reuse\", considere añadirlo para recuperar materiales extra."
+      "Avoid_using_good_actions": "Avoid using actions that require the Good state in a macro, as they can't be predicted"
     }
   },
   "PRICING": {
