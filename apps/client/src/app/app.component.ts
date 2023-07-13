@@ -47,7 +47,7 @@ import { CustomItemsFacade } from './modules/custom-items/+state/custom-items.fa
 import { DirtyFacade } from './core/dirty/+state/dirty.facade';
 import { SeoService } from './core/seo/seo.service';
 import { Theme } from './modules/settings/theme';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { DOCUMENT, isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 import * as semver from 'semver';
 import { UniversalisService } from './core/api/universalis.service';
@@ -232,7 +232,8 @@ export class AppComponent implements OnInit {
 
   public currentLink = () => `https://ffxivteamcraft.com${window.location.hash.replace('#', '')}`;
 
-  constructor(private gt: GarlandToolsService, public translate: TranslateService,
+  constructor(@Inject(DOCUMENT) private document: Document,
+              private gt: GarlandToolsService, public translate: TranslateService,
               public ipc: IpcService, private router: Router, private firebase: Database,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
               public listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService,
@@ -757,6 +758,7 @@ export class AppComponent implements OnInit {
     if (!fromIpc) {
       this.ipc.send('language', lang);
     }
+    this.document.documentElement.lang = lang;
   }
 
   startTutorial(): void {
