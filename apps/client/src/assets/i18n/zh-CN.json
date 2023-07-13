@@ -1089,7 +1089,6 @@
     "Open_in_external": "在 {{name}} 的模拟器中打开",
     "Select_job_please": "请选择职业",
     "Rename_rotation": "重命名手法",
-    "Cross_class_setup": "共通技能设置",
     "Include_sound_end": "添加宏结束提示音",
     "Step_by_step_report": "逐步报告",
     "Save_as_new": "保存为新的 (跳转到新创建的手法)",
@@ -1232,7 +1231,6 @@
       "No_food": "无料理",
       "No_medicine": "无强化药",
       "No_fc_buffs": "无部队特效",
-      "Quest_warning": "要触发“魔匠的闪念”，请确保你完成了 70 级职业任务",
       "Starting_quality": "初始品质",
       "STATS": {
         "CP": "制作力",
@@ -1246,27 +1244,17 @@
       "NOT_ENOUGH_CP": "制作力不足",
       "MISSING_LEVEL_REQUIREMENT": "您的职业等级无法制作此物品。",
       "NOT_SPECIALIST": "使用了专家手法，但你不是专家",
-      "NO_INNER_QUIET": "没有内静 buff 但使用了内静技能",
       "MISSING_STATS_REQUIREMENT": "您不满足此配方所需要的最低属性",
       "QUALITY_TOO_LOW": "品质不符合配方要求"
     },
     "ROTATION_TIPS": {
-      "Use_inner_quiet": "如果你的目标是制作HQ成品，那么几乎所有手法都要包括内静。内静能够提供很大的品质增益，并触发“比尔格的祝福”等技能。",
-      "Use_inner_quiet_before_quality_increase": "应在提高制品品质前使用内静，否则就是在浪费内静层数。",
-      "Use_byregot_blessing_high_iq_stacks": "高于6层内静时使用了比尔格的技巧。替换为比尔格的祝福更好，因为这将获得更高的品质。",
       "Use_observe_before_focused": "在第 {{index}} 步的注视系技能前应该使用观察，以获得 100% 成功率。",
       "Use_durability_restoration_later": "在第 {{index}} 使用的耐久回复技能应该向后移动，避免浪费耐久回复。",
-      "Use_patient_touch_faster": "应在增加内静层数前使用专心加工，避免失败时浪费内静层数。",
       "Do_not_overlap_buffs": "在第 {{overlappedIndex}} 步的 buff 和第 {{overlappingIndex}} 步已有的 buff 重叠了。第二个 buff 应当推迟以获得最佳效果。",
-      "Use_byregot_brow_5_stacks": "应使用比尔格的技巧替换比尔格的祝福，可获得同样质量并节约 6 点 CP。",
-      "Use_ingenuity_before_byregot": "应在使用比尔格技能前使用新颖以提升品质收益。",
       "Use_more_quality_actions": "在结束制作前你还有剩余耐久，应使用更多加工系技能提升品质。",
       "Use_prudent_touch_manipulation": "66 级以上应使用 掌握 + 俭约加工 来提升品质，以获得最高的稳定性和收益",
       "Use_rapid_synthesis_earlier": "高速制作不是100%成功，不应将其用作收尾技能。建议更早地使用高速制作以备万一，即使失败也能调整后续手法。",
-      "Do_not_use_brand_without_name": "不要在没有“元素之美名”状态时使用“元素之印记”。",
-      "Avoid_using_good_actions": "避免在宏中使用需要“高品质”状态的技能，因为你无法预测技能执行时物品的状态。",
-      "Requires_reuse_to_proc": "您的循环需要触发“再利用”才能正常工作，请确保其在没有触发“再利用”时也能运行。",
-      "Use_reuse": "您的手法达到了 100% 的品质，且有足够的制作力使用“再利用”。请考虑将其添加到手法中以节约素材。"
+      "Avoid_using_good_actions": "避免在宏中使用需要“高品质”状态的技能，因为你无法预测技能执行时物品的状态。"
     }
   },
   "PRICING": {
