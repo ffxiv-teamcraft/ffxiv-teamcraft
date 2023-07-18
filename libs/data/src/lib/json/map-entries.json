@@ -6737,90 +6737,90 @@
   },
   {
     "id": 843,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4308,
+    "name": "Mount Rokkon",
+    "territory": 1137,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 844,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4308,
+    "name": "Mount Rokkon",
+    "territory": 1137,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 845,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4308,
+    "name": "Mount Rokkon",
+    "territory": 1137,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 846,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4308,
+    "name": "Mount Rokkon",
+    "territory": 1137,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 847,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4308,
+    "name": "Mount Rokkon",
+    "territory": 1137,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 848,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4308,
+    "name": "Mount Rokkon",
+    "territory": 1137,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 849,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4308,
+    "name": "Mount Rokkon",
+    "territory": 1137,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 850,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4308,
+    "name": "Mount Rokkon",
+    "territory": 1137,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 851,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4338,
+    "name": "Another Mount Rokkon",
+    "territory": 1155,
+    "scale": 200,
+    "weatherRate": 74
   },
   {
     "id": 852,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4338,
+    "name": "Another Mount Rokkon",
+    "territory": 1155,
+    "scale": 200,
+    "weatherRate": 74
   },
   {
     "id": 853,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4338,
+    "name": "Another Mount Rokkon",
+    "territory": 1155,
+    "scale": 200,
+    "weatherRate": 74
   }
 ]

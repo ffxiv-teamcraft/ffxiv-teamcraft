@@ -15450,10 +15450,10 @@
     "fr": "Canalisations sildiennes<br>[Donjons spéciaux]"
   },
   "2576": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Mount Rokkon<br>(Dungeon Entry)",
+    "ja": "六根山<br>[特殊ダンジョン探索]",
+    "de": "Der Rokkon (Gewölbesuche)",
+    "fr": "Mont Rokkon<br>[Donjons spéciaux]"
   },
   "2577": {
     "en": "",
@@ -25778,7 +25778,7 @@
   "4297": {
     "en": "The Aetherfont",
     "ja": "ハーム島",
-    "de": "Haam",
+    "de": "Ätherborn",
     "fr": "Île de Haam"
   },
   "4298": {
@@ -25842,256 +25842,256 @@
     "fr": "Prétoire des Quatorze"
   },
   "4308": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Mount Rokkon",
+    "ja": "六根山",
+    "de": "Rokkon",
+    "fr": "Mont Rokkon"
   },
   "4309": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Mountain Base",
+    "ja": "六根山麓",
+    "de": "Fuß des Rokkon",
+    "fr": "Pied du mont Rokkon"
   },
   "4310": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Shaded Approach",
+    "ja": "六根山林道",
+    "de": "Schattiger Aufgang",
+    "fr": "Chemin boisé du mont Rokkon"
   },
   "4311": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Lower Pagoda",
+    "ja": "五堂塔下層",
+    "de": "Untere Pagode",
+    "fr": "Pagode inférieure"
   },
   "4312": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Upper Pagoda",
+    "ja": "五堂塔中層",
+    "de": "Obere Pagode",
+    "fr": "Pagode intermédiaire"
   },
   "4313": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Fifth Story",
+    "ja": "五堂塔上層",
+    "de": "Fünfter Stock",
+    "fr": "Pagode supérieure"
   },
   "4314": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Pilgrim's Road",
+    "ja": "六根山参道",
+    "de": "Pilgerweg",
+    "fr": "Parcours des pèlerins"
   },
   "4315": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Ascetic's Climb",
+    "ja": "六根山山道",
+    "de": "Aufstieg des Asketen",
+    "fr": "Parcours des ascètes"
   },
   "4316": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Last Glimpse",
+    "ja": "眼根の木間",
+    "de": "Letzter Blick",
+    "fr": "Clairière du Discernement"
   },
   "4317": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Hall of Temptation",
+    "ja": "金堂",
+    "de": "Halle der Versuchungen",
+    "fr": "Vestibule doré"
   },
   "4318": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Autumn Rivers' End",
+    "ja": "落葉川河畔",
+    "de": "Ufer des Herbstflusses",
+    "fr": "Clairière de l'Équinoxe"
   },
   "4319": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Hall of the Unseen",
+    "ja": "眼根の御堂",
+    "de": "Halle der Verhüllung",
+    "fr": "Hall du Discernement"
   },
   "4320": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Hall of Becoming",
+    "ja": "宝蔵の間",
+    "de": "Halle des Werdens",
+    "fr": "Salle des trésors du Shôjôin"
   },
   "4321": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Stone's Silence",
+    "ja": "怪鳴石の磐座",
+    "de": "Steines Schweigen",
+    "fr": "Jardin des pierres silencieuses"
   },
   "4322": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Pond of Spring Rain",
+    "ja": "浄桜湖",
+    "de": "Teich des Frühlingsregens",
+    "fr": "Bassin de la Pureté absolue"
   },
   "4323": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Cardinal Gate",
+    "ja": "赤青の像廟",
+    "de": "Kardinalstor",
+    "fr": "Porte cardinale"
   },
   "4324": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Untouched Spring",
+    "ja": "身根の湯",
+    "de": "Reiner Quell",
+    "fr": "Source de l'Étreinte"
   },
   "4325": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Shrine of the Sixth Sense",
+    "ja": "意根の古堂",
+    "de": "Schrein des Sechsten Sinnes",
+    "fr": "Asile du Sixième sens"
   },
   "4326": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Mountain Base",
+    "ja": "六根山麓",
+    "de": "Fuß des Rokkon",
+    "fr": "Pied du mont Rokkon"
   },
   "4327": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Scenic Path",
+    "ja": "眼根の林道",
+    "de": "Malerischer Pfad",
+    "fr": "Sentier du Discernement"
   },
   "4328": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Lower Pagoda",
+    "ja": "五堂塔下層",
+    "de": "Untere Pagode",
+    "fr": "Pagode inférieure"
   },
   "4329": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Upper Pagoda",
+    "ja": "五堂塔中層",
+    "de": "Obere Pagode",
+    "fr": "Pagode intermédiaire"
   },
   "4330": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Fifth Story",
+    "ja": "五堂塔上層",
+    "de": "Fünfter Stock",
+    "fr": "Pagode supérieure"
   },
   "4331": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Fragrant Forest",
+    "ja": "鼻根の竹林",
+    "de": "Wald des Wohlgeruchs",
+    "fr": "Forêt de bambous de l'Émanation"
   },
   "4332": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Shojo Sanctum",
+    "ja": "聖浄院本堂",
+    "de": "Shojo-in Haupthalle",
+    "fr": "Sanctuaire du Shôjôin"
   },
   "4333": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Way of Naught",
+    "ja": "聖浄院回廊",
+    "de": "Weg des Nichts",
+    "fr": "Corridor du Shôjôin"
   },
   "4334": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sacred Stores",
+    "ja": "聖浄院宝蔵堂",
+    "de": "Geweihte Lager",
+    "fr": "Dôme des trésors du Shôjôin"
   },
   "4335": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sweet Path",
+    "ja": "舌根の険道",
+    "de": "Süßer Pfad",
+    "fr": "Route de l'Appétence"
   },
   "4336": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Singing Path",
+    "ja": "耳根の険道",
+    "de": "Singender Pfad",
+    "fr": "Route de la Résonance"
   },
   "4337": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Shore of Far Sight",
+    "ja": "望桜の湖畔",
+    "de": "Ufer des Weitblicks",
+    "fr": "Lac des cerisiers"
   },
   "4338": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Another Mount Rokkon",
+    "ja": "異聞六根山",
+    "de": "Kurioser Rokkon",
+    "fr": "Mont Rokkon annexe"
   },
   "4339": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Path of the First Virtue",
+    "ja": "福徳の層",
+    "de": "Pfad der Ersten Tugend",
+    "fr": "Strate de la Prospérité"
   },
   "4340": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Path of the Second Virtue",
+    "ja": "智徳の層",
+    "de": "Pfad der Zweiten Tugend",
+    "fr": "Strate de la Connaissance"
   },
   "4341": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Path of the Third Virtue",
+    "ja": "寿徳の層",
+    "de": "Pfad der Dritten Tugend",
+    "fr": "Strate de la Longévité"
   },
   "4342": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Single Step",
+    "ja": "福徳の狭間",
+    "de": "Erster Schritt",
+    "fr": "Passage de la Prospérité"
   },
   "4343": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Clever Roost",
+    "ja": "智徳の狭間",
+    "de": "Letzter Schluss",
+    "fr": "Passage de la Connaissance"
   },
   "4344": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Trial of Benevolence",
+    "ja": "福徳の試練",
+    "de": "Probe der Güte",
+    "fr": "Épreuve de la Prospérité"
   },
   "4345": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Trial of Wisdom",
+    "ja": "智徳の試練",
+    "de": "Probe der Weisheit",
+    "fr": "Épreuve de la Connaissance"
   },
   "4346": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Trial of Responsibility",
+    "ja": "寿徳の試練",
+    "de": "Probe der Pflicht",
+    "fr": "Épreuve de la Longévité"
   },
   "4347": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Path of the First Virtue",
+    "ja": "福徳の道",
+    "de": "Pfad der Ersten Tugend",
+    "fr": "Voie de la Prospérité"
   },
   "4348": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Path of the Second Virtue",
+    "ja": "智徳の道",
+    "de": "Pfad der Zweiten Tugend",
+    "fr": "Voie de la Connaissance"
   },
   "4349": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Path of the Third Virtue",
+    "ja": "寿徳の道",
+    "de": "Pfad der Dritten Tugend",
+    "fr": "Voie de la Longévité"
   },
   "4350": {
     "en": "",
