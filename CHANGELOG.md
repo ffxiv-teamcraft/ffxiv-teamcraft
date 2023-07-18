@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [10.5.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.5.5...v10.5.6) (2023-07-18)
+
+
+### Features
+
+* **data:** update for cn patch-6.35 ([a311791](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a3117913dbb35e824475d9c450485b48af09440b))
+* **db:** support for korean v6.31 update ([bdc672e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bdc672e9f75b08b51165fd9ec937ef3cf035dbfc))
+* **db:** support for new 6.45 content ([cd0eb5a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cd0eb5aa52f68e0cb67dd0fbd6b5371fb978b5df))
+
+
+### Bug Fixes
+
+* **accessibility:** add lang attribute to html ([9c62843](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9c62843f19e9a172f9b8fcf3e595d0876093e69d))
+* **i18n:** en language file ([66f09f5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/66f09f59137539655cbb136c50ae2fd681a218c0))
+* **lists:** fixed split removing items from list before confirmation ([4ec7e1c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4ec7e1caa14249faf2b8ae7547d9e0118ea0ba8e))
+
 ### [10.5.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.5.4...v10.5.5) (2023-07-08)
 
 
