@@ -1089,7 +1089,6 @@
     "Open_in_external": "In {{name}}'s Simulator öffnen",
     "Select_job_please": "Bitte einen Job auswählen",
     "Rename_rotation": "Rotation umbenennen",
-    "Cross_class_setup": "Makro für klassenübergreifende Fähigkeiten erstellen",
     "Include_sound_end": "Klangeffekt am Makroende hinzufügen",
     "Step_by_step_report": "Schritt-für-Schritt Report",
     "Save_as_new": "Als neue Rotation speichern (bringt dich zur neu erstellten Rotation)",
@@ -1232,7 +1231,6 @@
       "No_food": "Kein Gericht",
       "No_medicine": "Keine Arznei",
       "No_fc_buffs": "Keine FG Buffs",
-      "Quest_warning": "Stelle sicher, dass die Stufe 70-Quest für die Eigenschaft \"Genialer Funke\" erledigt wurde",
       "Starting_quality": "Anfangsqualität",
       "STATS": {
         "CP": "HP",
@@ -1246,27 +1244,17 @@
       "NOT_ENOUGH_CP": "Nicht genug HP",
       "MISSING_LEVEL_REQUIREMENT": "Du hast nicht das benötigte Level, um diesen Gegenstand herzustellen.",
       "NOT_SPECIALIST": "Spezialisten-Rotation, aber du bist kein Spezialist",
-      "NO_INNER_QUIET": "Innere Ruhe-Kommando verwendet, ohne Innere Ruhe-Statuseffekt zu haben",
       "MISSING_STATS_REQUIREMENT": "Du hast nicht die benötigten Werte, um diesen Gegenstand zu bauen",
       "QUALITY_TOO_LOW": "Qualität entspricht nicht der geforderten Qualität des Rezepts"
     },
     "ROTATION_TIPS": {
-      "Use_inner_quiet": "So gut wie alle Rotationen sollten Innere Ruhe beinhalten, wenn das Ziel ist, den Gegenstand in HQ herzustellen. Es erhöht stark die Kontrolle und somit die Qualität, und erlaubt die Verwendung von Kommandos wie Byregots Benediktion.",
-      "Use_inner_quiet_before_quality_increase": "Du solltest Innere Ruhe vor allen Veredelungen ausführen, da diese ansonsten den Innere Ruhe-Statuseffekt nicht erhöhen.",
-      "Use_byregot_blessing_high_iq_stacks": "Du hast Byregots Schwung mit mehr als 6 Stacks von Innere Ruhe verwendet. Byregots Benediktion erzielt an dieser Stelle einen höheren Gewinn an Qualität.",
       "Use_observe_before_focused": "Du solltest Beobachten vor dem \"Aufmerksamen\" Kommando auf Schritt {{index}} verwenden, um die Erfolgsrate auf 100% zu erhöhen.",
       "Use_durability_restoration_later": "Du solltest das Kommando zum Wiederherstellen der Belastbarkeit in Schritt {{index}} später nutzen, um keine Belastbarkeit zu verschwenden.",
-      "Use_patient_touch_faster": "Du solltest Hingebungsvolle Veredelung nutzen bevor du Innere Ruhe aufbaust, um den Verlust beim Fehlschlagen zu minimieren.",
       "Do_not_overlap_buffs": "Du hast den bei Schritt {{overlappedIndex}} genutzten Statuseffekt in Schritt {{overlappingIndex}} überschnitten. Du solltest den zweiten verzögern um den maximalen Nutzen aus den Effekten zu ziehen.",
-      "Use_byregot_brow_5_stacks": "Du solltest lieber Byregots Schwung anstelle von Byregots Benediktion benutzen, da dies die gleiche Qualität für 6 HP weniger gibt.",
-      "Use_ingenuity_before_byregot": "Du solltest Einfallsreichtum vor einem Byregots Kommando nutzen um mehr Qualität zu erhalten.",
       "Use_more_quality_actions": "Du hast nach Fertigstellung noch Belastbarkeit übrig. Diese solltest du am besten für Qualitäts-Kommandos nutzen.",
       "Use_prudent_touch_manipulation": "Da du Stufe 66+ bist, solltest du die Kombination Manipulation + Nachhaltige Veredelung nutzen, um die maximale Qualität und höhere Zuverlässigkeit zu erhalten.",
       "Use_rapid_synthesis_earlier": "Du solltest Schnelle Bearbeitung nicht zur Fertigstellung nutzen. Nutze es früher um einen Fehlschlag besser ausgleichen zu können und die Zuverlässigkeit der Rotation zu verbessern.",
-      "Do_not_use_brand_without_name": "Benutze nicht Zeichen der Elemente ohne Name der Elemente.",
-      "Avoid_using_good_actions": "Vermeide Aktionen in einem Makro, die den Zustand \"gut\" erfordern, da sie nicht vorhergesagt werden können",
-      "Requires_reuse_to_proc": "Deine Rotation ist davon abhängig, dass Wiederverwertung aktiviert wird. Stelle sicher, dass sie auch ohne Wiederverwertung funktionieren kann.",
-      "Use_reuse": "Deine Rotation erreicht 100% HQ und du hast genügend HP, um Wiederverwerten zu benutzen. Ziehe in Erwähnung dies einzusetzen, um Materialien zurückzugewinnen."
+      "Avoid_using_good_actions": "Vermeide Aktionen in einem Makro, die den Zustand \"gut\" erfordern, da sie nicht vorhergesagt werden können"
     }
   },
   "PRICING": {

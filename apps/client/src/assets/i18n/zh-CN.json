@@ -18,7 +18,7 @@
   "List_fork_in_progress": "正在复制清单到您的账号…",
   "Network_error_logged_out": "检测到网络错误，你已被注销。如果此问题一直存在，请在 Discord 上与 Miu 联系。",
   "Hide_zone_duplicates": "隐藏重复地图 (来自多个地图的物品只显示一次)",
-  "Patch_notes": "Patch Notes",
+  "Patch_notes": "版本日志",
   "Patch_notes_footer": "您喜欢新的功能吗？考虑下在Patreon支持这个项目？",
   "Selection": "已选中",
   "Change_character": "角色",
@@ -107,7 +107,7 @@
     "Contributors": "贡献者"
   },
   "Patreon_login_success": "Patreon 登录成功！",
-  "Tipeee_login_success": "Tipeee login success!",
+  "Tipeee_login_success": "Tipeee 登录成功！",
   "Hide_if_empty": "隐藏空栏",
   "No_favorites": "没有收藏",
   "Ephemeral_list": "完成后将被删除",
@@ -189,7 +189,7 @@
     "Never": "从不",
     "Festival": "季节活动期间限定",
     "Back": "返回",
-    "Support_us_remove_ads": "Support us to remove ads",
+    "Support_us_remove_ads": "支持我们并移除广告",
     "Support_us": "支持我们",
     "Show_more": "显示更多",
     "Item": "物品",
@@ -261,8 +261,8 @@
       "DELIVERIES_RESET_DESCRIPTION": "军团筹备CD刷新倒计时",
       "LEVE_ALLOWANCES": "理符受理限额",
       "LEVE_ALLOWANCES_DESCRIPTION": "您将获得3个新的理符受理限额",
-      "OCEAN_FISHING": "Ocean fishing",
-      "OCEAN_FISHING_DESCRIPTION": "Ocean fishing will start."
+      "OCEAN_FISHING": "出海垂钓",
+      "OCEAN_FISHING_DESCRIPTION": "出海垂钓即将开始"
     },
     "CUSTOM": {
       "Title": "添加自定义闹钟",
@@ -445,12 +445,12 @@
     "Reset_password_warning": "你确定要重置密码吗？",
     "Password_reset_mail_sent": "密码重置邮件已发送",
     "Connect_with_patreon": "关联 Patreon 账号",
-    "Connect_with_tipeee": "Connect with Tipeee",
+    "Connect_with_tipeee": "关联 Tipeee 账号",
     "Connected_with_patreon": "已关联 Patreon 账号",
-    "Connected_with_tipeee": "Connected with Tipeee",
+    "Connected_with_tipeee": "已关联 Tipeee 账号",
     "Nickname": "昵称",
     "Nickname_used": "昵称已被使用",
-    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the supporter exclusive features properly.",
+    "No_nickname_warning": "请到设置页面设置昵称以使用赞助人专属功能",
     "Show_devtools": "显示开发者工具",
     "Clear_cache": "清除缓存 (将重新启动应用程序)",
     "Enable_item_tags": "启用物品标签",
@@ -518,7 +518,7 @@
     "Alarm_panels_collapsed_by_default": "默认折叠闹钟分组面板",
     "Alarm_groups_before_no_group": "将分组闹钟显示在未分组闹钟之前",
     "Disconnect_patreon": "取消与 Patreon 账号的关联",
-    "Disconnect_tipeee": "Disconnect from Tipeee",
+    "Disconnect_tipeee": "取消与 Tipeee 账号的关联",
     "Export_settings": "导出设置",
     "Import_settings": "导入设置",
     "Import_successful": "设置已导入！",
@@ -533,7 +533,7 @@
     "Housing_map": "房区地图",
     "Housing_map_explain": "你的房屋所在的房区地图",
     "Reset_linked_characters_ok": "已重置角色链接",
-    "Display_slow_mode_notification": "Display crafting/gathering slow mode notification",
+    "Display_slow_mode_notification": "显示 制作/采集 慢速模式通知",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -776,7 +776,7 @@
     "Autofill_notification_body": "{{listName}} 清单中的 {{itemName}} 已制作完成",
     "Autofill_crafting_gathering_title": "检测到正在制作或采集",
     "Autofill_crafting_gathering_message": "为避免变更速度过快导致的数据库问题，自动填写会工作在慢速模式，直到您结束制作（在游戏中站起）或采集（关闭采集窗口）。",
-    "Fill_with_inventory": "Fill with inventory",
+    "Fill_with_inventory": "使用物品栏信息填充",
     "Filter_items_done": "忽略已完成的物品",
     "Inventory_synthesis": "物品栏聚合（查看每个物品栏中已有的物品）",
     "X_needed": "需要 {{amount}} 个",
@@ -1089,7 +1089,6 @@
     "Open_in_external": "在 {{name}} 的模拟器中打开",
     "Select_job_please": "请选择职业",
     "Rename_rotation": "重命名手法",
-    "Cross_class_setup": "共通技能设置",
     "Include_sound_end": "添加宏结束提示音",
     "Step_by_step_report": "逐步报告",
     "Save_as_new": "保存为新的 (跳转到新创建的手法)",
@@ -1179,10 +1178,10 @@
     },
     "ROTATIONS": {
       "Search_placeholder": "搜索工序",
-      "Scan_guides": "Update guide links",
-      "Guide": "Guide",
-      "Cannot_delete_guide_rotation": "You cannot delete rotations that are used in guides",
-      "Guides_flags_updated": "Guide links have been updated",
+      "Scan_guides": "更新指南链接",
+      "Guide": "指南",
+      "Cannot_delete_guide_rotation": "您不能删除指南中使用的手法",
+      "Guides_flags_updated": "指南链接已更新",
       "FOLDERS": {
         "Not_found": "未找到手法文件夹",
         "Folders": "手法文件夹",
@@ -1232,7 +1231,6 @@
       "No_food": "无料理",
       "No_medicine": "无强化药",
       "No_fc_buffs": "无部队特效",
-      "Quest_warning": "要触发“魔匠的闪念”，请确保你完成了 70 级职业任务",
       "Starting_quality": "初始品质",
       "STATS": {
         "CP": "制作力",
@@ -1246,27 +1244,17 @@
       "NOT_ENOUGH_CP": "制作力不足",
       "MISSING_LEVEL_REQUIREMENT": "您的职业等级无法制作此物品。",
       "NOT_SPECIALIST": "使用了专家手法，但你不是专家",
-      "NO_INNER_QUIET": "没有内静 buff 但使用了内静技能",
       "MISSING_STATS_REQUIREMENT": "您不满足此配方所需要的最低属性",
       "QUALITY_TOO_LOW": "品质不符合配方要求"
     },
     "ROTATION_TIPS": {
-      "Use_inner_quiet": "如果你的目标是制作HQ成品，那么几乎所有手法都要包括内静。内静能够提供很大的品质增益，并触发“比尔格的祝福”等技能。",
-      "Use_inner_quiet_before_quality_increase": "应在提高制品品质前使用内静，否则就是在浪费内静层数。",
-      "Use_byregot_blessing_high_iq_stacks": "高于6层内静时使用了比尔格的技巧。替换为比尔格的祝福更好，因为这将获得更高的品质。",
       "Use_observe_before_focused": "在第 {{index}} 步的注视系技能前应该使用观察，以获得 100% 成功率。",
       "Use_durability_restoration_later": "在第 {{index}} 使用的耐久回复技能应该向后移动，避免浪费耐久回复。",
-      "Use_patient_touch_faster": "应在增加内静层数前使用专心加工，避免失败时浪费内静层数。",
       "Do_not_overlap_buffs": "在第 {{overlappedIndex}} 步的 buff 和第 {{overlappingIndex}} 步已有的 buff 重叠了。第二个 buff 应当推迟以获得最佳效果。",
-      "Use_byregot_brow_5_stacks": "应使用比尔格的技巧替换比尔格的祝福，可获得同样质量并节约 6 点 CP。",
-      "Use_ingenuity_before_byregot": "应在使用比尔格技能前使用新颖以提升品质收益。",
       "Use_more_quality_actions": "在结束制作前你还有剩余耐久，应使用更多加工系技能提升品质。",
       "Use_prudent_touch_manipulation": "66 级以上应使用 掌握 + 俭约加工 来提升品质，以获得最高的稳定性和收益",
       "Use_rapid_synthesis_earlier": "高速制作不是100%成功，不应将其用作收尾技能。建议更早地使用高速制作以备万一，即使失败也能调整后续手法。",
-      "Do_not_use_brand_without_name": "不要在没有“元素之美名”状态时使用“元素之印记”。",
-      "Avoid_using_good_actions": "避免在宏中使用需要“高品质”状态的技能，因为你无法预测技能执行时物品的状态。",
-      "Requires_reuse_to_proc": "您的循环需要触发“再利用”才能正常工作，请确保其在没有触发“再利用”时也能运行。",
-      "Use_reuse": "您的手法达到了 100% 的品质，且有足够的制作力使用“再利用”。请考虑将其添加到手法中以节约素材。"
+      "Avoid_using_good_actions": "避免在宏中使用需要“高品质”状态的技能，因为你无法预测技能执行时物品的状态。"
     }
   },
   "PRICING": {
@@ -1532,7 +1520,7 @@
     "Search": "搜索",
     "Generate_list": "新建快速清单",
     "Intro": "输入等级并点击搜索",
-    "Loading_message": "Loading possible deliveries..."
+    "Loading_message": "正在加载筹备列表..."
   },
   "DESYNTH": {
     "Title": "分解指南",
@@ -1622,7 +1610,7 @@
     "Currencies": "货币",
     "Rowena_splendor": "罗薇娜显赫商会",
     "Unlocks": "解锁",
-    "Jump_to_page": "Open item db page",
+    "Jump_to_page": "打开物品数据库页面",
     "Ishgard_restoration": "伊修加德重建",
     "ITEM": {
       "Masterpiece_exp_tooltip": "下一等级所需经验的百分比",
@@ -2724,7 +2712,7 @@
     "Starting_at_X": "按月支付 {{monthly}} 美元或按年支付 {{yearly}} 美元",
     "Footer_text": "仅需每月一美元即可显著推动 Teamcraft 的开发进程，并使我更接近梦想——专职与此项目的开发并使其不仅局限于作为一个 FFXIV 的工具。",
     "Already_supporter": "已经成为支持者？",
-    "Disable_ads_explanation": "To disable ads, connect with your Patreon or Tipeee account to make Teamcraft able to verify your support and disable ads automatically"
+    "Disable_ads_explanation": "要禁用广告，请连接你的 Patreon 或 Tipeee 账号，以验证赞助情况并自动禁用广告。"
   },
   "SUPPORT_US": {
     "Popup_introduction": "您好，我是 Miu ，您正在使用的工具的开发者。<br/> 自过去几年以来，Teamcraft对我来说一直是一个爱好，我的梦想是使这成为我的全职工作。 <br/><br/>在您的帮助下，这个梦想可能成为一个现实。 您可以在patreon上赞助这个工具，每一美元都很重要，并将帮助我实现这一目标。 <br/><br/> 在patreon赞助这个项目也给您一些好处：",
@@ -2791,7 +2779,7 @@
       "Favor": "恩惠"
     },
     "RANK_DETAILS": {
-      "Experience_Points": "Experience Points"
+      "Experience_Points": "经验"
     }
   },
   "AIRSHIP": {
@@ -2880,8 +2868,8 @@
     "Venture_placeholder": "商店名称",
     "Monster_placeholder": "怪物名称",
     "Voyage_placeholder": "探索名称",
-    "Achievement_placeholder": "Achievement name",
-    "Quest_placeholder": "Quest name",
+    "Achievement_placeholder": "成就名称",
+    "Quest_placeholder": "任务名称",
     "Voyage_type": "探索类型",
     "Reported_by": "报告人",
     "Approved_by": "核准人",
@@ -2974,7 +2962,7 @@
       "MOGSTATION": "商城物品",
       "DEPRECATED": "已弃用",
       "ISLAND_ANIMAL": "无人岛动物",
-      "QUEST": "QUEST"
+      "QUEST": "任务"
     },
     "STATUS": {
       "PROPOSAL": "提议",
@@ -3194,9 +3182,9 @@
     "Fish_size_chart": "鱼的尺寸",
     "Delete_train": "删除",
     "Train_not_running": "渔车未行车",
-    "Outdated": "This train is outdated",
-    "Outdated_description": "This train is using an outdated data storage approach, please migrate to be able to see your stats again",
-    "Outdated_description_passenger": "This train is using an outdated data storage approach, please ask the conductor to migrate it to see the stats again.",
-    "Migrate": "Migrate"
+    "Outdated": "此渔车已过期",
+    "Outdated_description": "此渔车使用过时的数据存储方法，请迁移以再次查看您的统计",
+    "Outdated_description_passenger": "此渔车使用过时的数据存储方法，请联系车头对其迁移以再次查看统计.",
+    "Migrate": "迁移"
   }
 }

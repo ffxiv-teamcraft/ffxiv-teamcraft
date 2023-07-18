@@ -24,7 +24,7 @@ export class ListAggregateComponent {
 
   public ListDisplayMode = ListDisplayMode;
 
-  public displayMode$ = new LocalStorageBehaviorSubject<ListDisplayMode>('list-aggregate:display-mode', ListDisplayMode.MINIMALIST);
+  public displayMode$ = new LocalStorageBehaviorSubject<ListDisplayMode>('list-aggregate:display-mode', ListDisplayMode.FULL);
 
   public selectedPanelTitle$ = this.route.paramMap.pipe(
     map(params => {
@@ -76,6 +76,8 @@ export class ListAggregateComponent {
     }),
     filter(Boolean)
   );
+
+  public layouts$ = this.layoutsFacade.allLayouts$;
 
   public lists$ = this.listIds$.pipe(
     switchMap(keys => {
@@ -195,5 +197,19 @@ export class ListAggregateComponent {
     this.aggregatesFacade.pureUpdate(key, {
       lists: arrayRemove(...missingLists)
     });
+  }
+
+  selectLayout(layoutId: string, aggregate: ListAggregate, selectedPanel: string): void {
+    if (aggregate) {
+      aggregate.layout = layoutId;
+      this.aggregatesFacade.pureUpdate(aggregate.$key, {
+        layout: layoutId
+      });
+      if (selectedPanel) {
+        this.router.navigate(['..'], { relativeTo: this.route });
+      }
+    } else {
+      this.router.navigate([...(selectedPanel ? ['../..'] : ['..']), layoutId], { relativeTo: this.route });
+    }
   }
 }

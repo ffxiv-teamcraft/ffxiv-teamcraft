@@ -1089,7 +1089,6 @@
     "Open_in_external": "{{name}} のシミュレーターに開く",
     "Select_job_please": "ジョブを選び出します",
     "Rename_rotation": "スキル回し名を変更する",
-    "Cross_class_setup": "ロールスキル設定",
     "Include_sound_end": "マクロが終了した後に、アラームを追加する",
     "Step_by_step_report": "制作ターン情報",
     "Save_as_new": "新たに保存する （新たに生成されたスキル回しに開く）",
@@ -1232,7 +1231,6 @@
       "No_food": "飯なし",
       "No_medicine": "薬なし",
       "No_fc_buffs": "フリーカンパニーのバフなし",
-      "Quest_warning": "Make sure you have done the lvl 70 quest for Stroke of Genius",
       "Starting_quality": "初期品質",
       "STATS": {
         "CP": "CP",
@@ -1246,27 +1244,17 @@
       "NOT_ENOUGH_CP": "CP不足",
       "MISSING_LEVEL_REQUIREMENT": "このアイテムを製作するにはレベルが足りません。",
       "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
-      "NO_INNER_QUIET": "インナーク ワイエットを使わず、インナーク ワイエットを要求するスキルを使用",
       "MISSING_STATS_REQUIREMENT": "このアイテムを制作するにはステータスが足りません。",
       "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
     },
     "ROTATION_TIPS": {
-      "Use_inner_quiet": "殆どのすべてのスキル回しは、HQ制作を目指しにするには '精神集中' が含まれる必要があります。このスキルは、品質を向上させつつ 'ビエルゴの祝福' と同じようなスキルが使うことができます。",
-      "Use_inner_quiet_before_quality_increase": "品質を向上される前に '精神集中' スキルを使用しなければなりません。使用しない場合 '精神集中' スキルのスタックが、無駄遣いになる恐れがあります。",
-      "Use_byregot_blessing_high_iq_stacks": "'精神集中' 7スタック以上で 'ビエルゴの技巧' を使用しました。この場合は 'ビエルゴの祝福' の方がより良い品質となります。",
       "Use_observe_before_focused": "注視作業/加工を100％の成功率を得るためには {{index}} 回目の工程で '経過観察' を使用して下さい。",
       "Use_durability_restoration_later": "耐久度の回復スキルを無駄遣いにしないためには、{{index}} 回目の工程で耐久度の回復スキルを使用して下さい。",
-      "Use_patient_touch_faster": "'専心加工' は '精神集中' のスタックが積もる前に使用して下さい。もしスキルが失敗したら、スタックが無駄遣いになる恐れがあります。",
       "Do_not_overlap_buffs": "{{overlappedIndex}} 回目の工程で使用したバフが {{overlappingIndex}} 回目の工程で使用したバフと重複されます。バフの効果が最大限貰えるように、少し遅れて使う必要があります。",
-      "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's Blessing for the same quality added but 6 less CP used.",
-      "Use_ingenuity_before_byregot": "もっと高い品質の向上するために 'ビエルゴ' アクションを使用する前に '工面算段' を使用しなければなりません",
       "Use_more_quality_actions": "耐久度が残ってる状態で制作が完了しました。残ってる耐久度を利用して、多い加工スキルに使用する事ができます。",
       "Use_prudent_touch_manipulation": "66レベル以上の場合 'マニピュレーションⅡ' と '倹約加工'を使用して、もっと高い品質を得なければなりません",
       "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the failure of the action is better for your rotation's reliability.",
-      "Do_not_use_brand_without_name": "「ブランド・オブ・エレメンタル\"スキルは\" アート・オブ・エレメンタルの芸術」スキルを活性化して使用してください",
-      "Avoid_using_good_actions": "Avoid using actions that require the Good state in a macro, as they can't be predicted",
-      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a Reuse proc.",
-      "Use_reuse": "100%HQになる上、リユースできるCPが残っています。リユースを追加して素材を取り戻すことを検討してみてください。"
+      "Avoid_using_good_actions": "Avoid using actions that require the Good state in a macro, as they can't be predicted"
     }
   },
   "PRICING": {
