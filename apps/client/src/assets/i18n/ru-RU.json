@@ -3010,6 +3010,7 @@
     "Home_subtitle": "Open multiple lists at once in an aggregated view",
     "Select_lists": "Select the lists you want to aggregate",
     "Select_layout": "Select a layout",
+    "Select_layout_dropdown": "Display layout",
     "Open_aggregate": "Open an aggregated view",
     "Title": "Aggregated list view",
     "Select_panel": "Select a panel to open its view",
