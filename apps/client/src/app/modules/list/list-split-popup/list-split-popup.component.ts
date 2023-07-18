@@ -6,7 +6,8 @@ import { ListsFacade } from '../+state/lists.facade';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { ListController } from '../list-controller';
 import { ListManagerService } from '../list-manager.service';
-import { first } from 'rxjs/operators';
+import { first, switchMap, tap } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-list-split-popup',
@@ -46,16 +47,20 @@ export class ListSplitPopupComponent {
 
   split(): void {
     const itemsToAdd = this.list.finalItems.filter(row => this.selectedItems.includes(row.id));
-    this.listPicker.addToList(...itemsToAdd);
-    if (this.removeFromList) {
-      this.list.finalItems = this.list.finalItems.filter(row => !this.selectedItems.includes(row.id));
-      this.listManager.upgradeList(ListController.updateEtag(ListController.clean(this.list))).pipe(
-        first()
-      ).subscribe(res => {
-        this.listsFacade.updateList(res);
-      });
-    }
-    this.modalRef.close();
+    this.listPicker.addToList(...itemsToAdd).pipe(
+      switchMap(() => {
+        if (this.removeFromList) {
+          this.list.finalItems = this.list.finalItems.filter(row => !this.selectedItems.includes(row.id));
+          return this.listManager.upgradeList(ListController.updateEtag(ListController.clean(this.list))).pipe(
+            first(),
+            tap(res =>              this.listsFacade.updateList(res))
+          );
+        }
+        return of(null)
+      })
+    ).subscribe(() => {
+      this.modalRef.close();
+    });
   }
 
 }

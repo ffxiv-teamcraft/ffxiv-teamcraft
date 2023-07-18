@@ -9268,5 +9268,53 @@
     "stars": 0,
     "itemId": 39591,
     "hidden": 0
+  },
+  "10841": {
+    "level": 90,
+    "stars": 3,
+    "itemId": 39805,
+    "hidden": 0
+  },
+  "10842": {
+    "level": 90,
+    "stars": 3,
+    "itemId": 39806,
+    "hidden": 1
+  },
+  "10843": {
+    "level": 90,
+    "stars": 3,
+    "itemId": 39807,
+    "hidden": 0
+  },
+  "10844": {
+    "level": 90,
+    "stars": 3,
+    "itemId": 39808,
+    "hidden": 1
+  },
+  "10845": {
+    "level": 90,
+    "stars": 3,
+    "itemId": 39811,
+    "hidden": 0
+  },
+  "10846": {
+    "level": 90,
+    "stars": 3,
+    "itemId": 39812,
+    "hidden": 1
+  },
+  "10847": {
+    "level": 90,
+    "stars": 3,
+    "itemId": 39813,
+    "hidden": 0
+  },
+  "10848": {
+    "level": 90,
+    "stars": 3,
+    "itemId": 39814,
+    "hidden": 1
   }
 }

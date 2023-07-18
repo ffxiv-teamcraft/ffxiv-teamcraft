@@ -13297,9 +13297,36 @@
       26200
     ]
   },
+  "35032": {
+    "id": 35032,
+    "en": "A Golden Opportunity",
+    "ja": "黄金闘士「ゴールドル」",
+    "de": "Goldor der Güldene",
+    "fr": "Goldor, le mage doré",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061836.png",
+    "banner": "/i/112000/112332.png",
+    "gamePatch": 72,
+    "contentType": 27,
+    "levelReq": 80,
+    "ilvlReq": 0,
+    "sync": 80,
+    "exp": 0,
+    "map": 490,
+    "contentText": [
+      37305,
+      37300
+    ]
+  },
   "36001": {
     "id": 36001,
-    "en": "the Sil'dihn Subterrane",
+    "en": "The Sil'dihn Subterrane",
     "ja": "ヴァリアントダンジョン シラディハ水道",
     "de": "Die Unterstadt von Sil'dih",
     "fr": "Les canalisations sildiennes - Donjon à embranchements",
@@ -13327,6 +13354,38 @@
     "contentText": [
       34267,
       34000
+    ]
+  },
+  "36002": {
+    "id": 36002,
+    "en": "Mount Rokkon",
+    "ja": "ヴァリアントダンジョン 六根山",
+    "de": "Der Rokkon",
+    "fr": "Le mont Rokkon - Donjon à embranchements",
+    "description": {
+      "en": "On Hingashi's westernmost isle of Shishu lies the long-venerated Mount Rokkon. Once refuge for humble monks and weary pilgrims, the holy site lately fell to a host of malevolent mononoke, spurring the local liege lord to take the unprecedented step of inviting ijin to assist in reclaiming its slopes. As is his wont, Hancock has secured the promise of valuable rewards in exchange for his─and your─assistance, but each of these treasures has a life of its own...",
+      "ja": "ひんがしの国最西端の島、シシュウ――その北部に「六根山」という名の霊山あり。古くより信仰の対象とされてきた、この静謐なる霊場は今、魑魅魍魎であふれかえっているという。ハンコックの誘いに応じ、物見遊山に繰り出した冒険者は、異変の元凶となった「いわくつきの品」の捜索に挑む。",
+      "de": "Auf Shishu, der westlichsten Insel Hingashis, ruht der Rokkon - ein heiliger Berg, seit Jahrhunderten verehrt. Doch nun werden seine seligen Hänge von bösartigen Geistern heimgesucht. Du bist Hancocks Bitten gefolgt, diesen Berg mit ihm zu erklimmen, um nach Antiquitäten nicht nur besonderer Herkunft sondern auch besonderer Mächte zu suchen und so hoffentlich den Grund für den ganzen Spuk aufzudecken.",
+      "fr": "L'île de Shishû, à l'extrémité occidentale du pays insulaire de Hingashi... Dans sa partie septentrionale se dresse le mont Rokkon, un sommet vénéré depuis les temps anciens et dont la quiétude vient d'être perturbée par des esprits malfaisants. Parviendrez-vous à les chasser de ce lieu sacré de pèlerinage&nbsp;? De plus, Hancock compte sur vous pour l'aider à récupérer de précieux artefacts, alors tâchez de ne pas le décevoir&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061846.png",
+    "banner": "/i/112000/112533.png",
+    "gamePatch": 80,
+    "contentType": 30,
+    "levelReq": 90,
+    "ilvlReq": 605,
+    "sync": 90,
+    "exp": 0,
+    "map": 843,
+    "contentText": [
+      36506,
+      36300
     ]
   },
   "37001": {
@@ -13391,6 +13450,70 @@
     "contentText": [
       34272,
       34000
+    ]
+  },
+  "37003": {
+    "id": 37003,
+    "en": "Another Mount Rokkon",
+    "ja": "アナザーダンジョン 異聞六根山",
+    "de": "Der kuriose Rokkon",
+    "fr": "Le mont Rokkon annexe - Donjon alternatif",
+    "description": {
+      "en": "Delighted beyond measure to hear tell of the mononoke haunting Mount Rokkon, Osmon cannot help but speculate upon the nature of spirits─and what should result were they to grow more powerful than nature is wont to allow...",
+      "ja": "冒険者の土産話を聞いて、オスモンは想像を膨らませる。「六根山」に現れた怪異は多種多様であり、顕現した瞬間こそがもっとも力あるものもいれば、長い年月を経て力が高まるものもいたはずである。ならば全盛期の怪異たちが集まったとしたら、いかなる惨状と成り得たのか。冒険者は想像の果てにある異聞の激闘を追体験する。",
+      "de": "Die Nacherzählung deiner Abenteuer von garstigen Geistern und verfluchten Artefakten hat Osmons Vorstellungskraft befeuert. Er fragt sich jedoch, ob jene Wesen, die den Rokkon heimgesucht haben, durch die heilige Natur des Berges nicht noch viel stärker hätten sein können,&nbsp;hätte man sie nur länger gewähren lassen. Und welch grausamer Spuk wäre dann auf den Hängen des Berges getrieben worden?",
+      "fr": "L'imagination d'Osmon s'est immédiatement enflammée en écoutant le récit de votre ascension du mont Rokkon&nbsp;: que serait-il advenu si, comme il le pense, les créatures orientales que vous avez affrontées n'avaient pas perdu de leur vigueur au fil des années&nbsp;? A contrario, se pourrait-il que certaines d'entre elles deviennent de plus en plus puissantes en prenant de l'âge&nbsp;? Et voilà qu'en y réfléchissant, vous vous laissez prendre au jeu à votre tour, mais vous n'y pouvez rien car votre âme d'aventurière doit absolument obtenir le fin mot de l'histoire&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 1,
+      "MeleesPerParty": 1,
+      "RangedPerParty": 1,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061846.png",
+    "banner": "/i/112000/112534.png",
+    "gamePatch": 85,
+    "contentType": 30,
+    "levelReq": 90,
+    "ilvlReq": 640,
+    "sync": 90,
+    "exp": 0,
+    "map": 851,
+    "contentText": [
+      36502,
+      36300
+    ]
+  },
+  "37004": {
+    "id": 37004,
+    "en": "Another Mount Rokkon (Savage)",
+    "ja": "アナザーダンジョン 異聞六根山 零式",
+    "de": "Der kuriose Rokkon (episch)",
+    "fr": "Le mont Rokkon annexe - Donjon alternatif (sadique)",
+    "description": {
+      "en": "Rokkon's mononoke having stoked the embers of his imagination, Osmon commits your─roundly embellished─adventures to paper. As you review the novel, you find yourself enraptured by the battles that might have been, were Far Eastern faerie tales significantly more violent.",
+      "ja": "オスモンは「六根山」を巡る探索の結果をもとに、1冊の本を書き上げたという。そこに記されていたのは、彼の語彙力と想像力の限りを尽くして盛りに盛られた白熱の激闘……。明らかに異邦の詩人の影響を受けたであろう、その物語を目にしたとき、冒険者は否が応でも禁断の追体験に没入してしまうのだった。",
+      "de": "Anhand der Details deiner Wanderung auf den Rokkon hat Osmon seine Feder aufs Pergament gesetzt und seinen idealen Abenteuerroman verfasst. Die Seiten strotzen nur so vor bewegenden Beschreibungen und atemberaubenden Kämpfen&nbsp;- die epische Dramatisierung erinnert an die Kompositionen eines gewissen Fahrenden Sängers. Und auf ähnliche Weise wirst du in eine Welt hineingezogen, die es nie gegeben hat und sich dennoch so unerklärlich real anfühlt&nbsp;...",
+      "fr": "Osmon a terminé la rédaction de son roman d'aventures, amplement inspiré par vos exploits sur le mont Rokkon. La puissance de son imagination et l'énergie de son style ne sont pas sans rappeler celles d'un certain ménestrel errant, d'ailleurs... Comment pourriez-vous leur résister&nbsp;? Laissez-vous emporter par les visions d'âpres batailles qui se bousculent dans votre tête&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 1,
+      "MeleesPerParty": 1,
+      "RangedPerParty": 1,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061846.png",
+    "banner": "/i/112000/112535.png",
+    "gamePatch": 88,
+    "contentType": 30,
+    "levelReq": 90,
+    "ilvlReq": 0,
+    "sync": 90,
+    "exp": 0,
+    "map": 851,
+    "contentText": [
+      36502,
+      36300
     ]
   },
   "40027": {

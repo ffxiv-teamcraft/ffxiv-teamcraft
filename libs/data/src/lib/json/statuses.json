@@ -21787,7 +21787,7 @@
     "en": "Toxikon",
     "ja": "トキシコン",
     "de": "Toxikon",
-    "fr": "Toxicon",
+    "fr": "Toxikon",
     "icon": "/i/014000/014908.png"
   },
   "3114": {
@@ -24633,11 +24633,11 @@
     "icon": "/i/015000/015637.png"
   },
   "3520": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Mirrored Smoke",
+    "ja": "分煙羅",
+    "de": "Viel Rauch um nichts",
+    "fr": "Fumée sans feu",
+    "icon": "/i/016000/016744.png"
   },
   "3521": {
     "en": "Concussion",
@@ -24892,11 +24892,11 @@
     "icon": "/i/015000/015194.png"
   },
   "3557": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Vulnerability Up",
+    "ja": "被ダメージ上昇",
+    "de": "Erhöhte Verwundbarkeit",
+    "fr": "Vulnérabilité augmentée",
+    "icon": "/i/017000/017101.png"
   },
   "3558": {
     "en": "",
@@ -24934,52 +24934,52 @@
     "icon": "/i/015000/015020.png"
   },
   "3563": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Scattered Wailing",
+    "ja": "鵺の呪声：散",
+    "de": "Nues Heulen: Auseinander",
+    "fr": "Hurlement contre nature&nbsp;: dispersion",
+    "icon": "/i/016000/016745.png"
   },
   "3564": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Intensified Wailing",
+    "ja": "鵺の呪声：集",
+    "de": "Nues Heulen: Versammeln",
+    "fr": "Hurlement contre nature&nbsp;: congrégation",
+    "icon": "/i/016000/016746.png"
   },
   "3565": {
-    "en": "ヴァリアント・ケアル設定",
+    "en": "Variant Cure Set",
     "ja": "ヴァリアント・ケアル設定",
-    "de": "ヴァリアント・ケアル設定",
-    "fr": "ヴァリアント・ケアル設定",
+    "de": "Flüchtige Macht: Unstetes Vita",
+    "fr": "Soin embranché",
     "icon": "/i/016000/016739.png"
   },
   "3566": {
-    "en": "ヴァリアント・アルティメイタム設定",
+    "en": "Variant Ultimatum Set",
     "ja": "ヴァリアント・アルティメイタム設定",
-    "de": "ヴァリアント・アルティメイタム設定",
-    "fr": "ヴァリアント・アルティメイタム設定",
+    "de": "Flüchtige Macht: Unstetes Ultimatum",
+    "fr": "Ultimatum embranché",
     "icon": "/i/016000/016740.png"
   },
   "3567": {
-    "en": "ヴァリアント・レイズ設定",
+    "en": "Variant Raise Set",
     "ja": "ヴァリアント・レイズ設定",
-    "de": "ヴァリアント・レイズ設定",
-    "fr": "ヴァリアント・レイズ設定",
+    "de": "Flüchtige Macht: Unstetes Wiederbeleben",
+    "fr": "Vie embranchée",
     "icon": "/i/016000/016741.png"
   },
   "3568": {
-    "en": "ヴァリアント・スピリットダート設定",
+    "en": "Variant Spirit Dart Set",
     "ja": "ヴァリアント・スピリットダート設定",
-    "de": "ヴァリアント・スピリットダート設定",
-    "fr": "ヴァリアント・スピリットダート設定",
+    "de": "Flüchtige Macht: Unsteter Geistpfeil",
+    "fr": "Flèche spirituelle embranchée",
     "icon": "/i/016000/016742.png"
   },
   "3569": {
-    "en": "ヴァリアント・ランパート設定",
+    "en": "Variant Rampart Set",
     "ja": "ヴァリアント・ランパート設定",
-    "de": "ヴァリアント・ランパート設定",
-    "fr": "ヴァリアント・ランパート設定",
+    "de": "Flüchtige Macht: Unsteter Schutzwall",
+    "fr": "Rempart embranché",
     "icon": "/i/016000/016743.png"
   },
   "3570": {
@@ -25158,123 +25158,123 @@
     "icon": "/i/015000/015200.png"
   },
   "3595": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Drunk with Power",
+    "ja": "般若湯",
+    "de": "Kräftigender Schluck",
+    "fr": "Esprits spiritueux",
+    "icon": "/i/016000/016725.png"
   },
   "3596": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "爆身変化",
+    "ja": "爆身変化",
+    "de": "Explosive Verwandlung",
+    "fr": "爆身変化",
+    "icon": "/i/016000/016736.png"
   },
   "3597": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Rodential Rebirth",
+    "ja": "モモンガの呪い",
+    "de": "Fluch des Flughörnchens",
+    "fr": "Malédiction du momonga",
+    "icon": "/i/016000/016726.png"
   },
   "3598": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Rodential Rebirth",
+    "ja": "モモンガの呪い",
+    "de": "Fluch des Flughörnchens",
+    "fr": "Malédiction du momonga",
+    "icon": "/i/016000/016727.png"
   },
   "3599": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Rodential Rebirth",
+    "ja": "モモンガの呪い",
+    "de": "Fluch des Flughörnchens",
+    "fr": "Malédiction du momonga",
+    "icon": "/i/016000/016728.png"
   },
   "3600": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Rodential Rebirth",
+    "ja": "モモンガの呪い",
+    "de": "Fluch des Flughörnchens",
+    "fr": "Malédiction du momonga",
+    "icon": "/i/016000/016729.png"
   },
   "3601": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Odder Incarnation",
+    "ja": "ウソウソの呪い",
+    "de": "Fluch des Otters",
+    "fr": "Malédiction de la loutre choute",
+    "icon": "/i/016000/016730.png"
   },
   "3602": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Odder Incarnation",
+    "ja": "ウソウソの呪い",
+    "de": "Fluch des Otters",
+    "fr": "Malédiction de la loutre choute",
+    "icon": "/i/016000/016731.png"
   },
   "3603": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Odder Incarnation",
+    "ja": "ウソウソの呪い",
+    "de": "Fluch des Otters",
+    "fr": "Malédiction de la loutre choute",
+    "icon": "/i/016000/016732.png"
   },
   "3604": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Odder Incarnation",
+    "ja": "ウソウソの呪い",
+    "de": "Fluch des Otters",
+    "fr": "Malédiction de la loutre choute",
+    "icon": "/i/016000/016733.png"
   },
   "3605": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Squirrelly Prayer",
+    "ja": "呪珠印：モモンガ",
+    "de": "Verflucht: Flughörnchen",
+    "fr": "Prière difforme&nbsp;: momonga",
+    "icon": "/i/016000/016734.png"
   },
   "3606": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Odder Prayer",
+    "ja": "呪珠印：ウソウソ",
+    "de": "Verflucht: Otter",
+    "fr": "Prière difforme&nbsp;: loutre choute",
+    "icon": "/i/016000/016735.png"
   },
   "3607": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Live Brazier",
+    "ja": "重火印",
+    "de": "Zeichen des Feuers",
+    "fr": "Grand sceau de feu",
+    "icon": "/i/016000/016737.png"
   },
   "3608": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Live Candle",
+    "ja": "火印",
+    "de": "Zeichen der Flamme",
+    "fr": "Sceau de feu",
+    "icon": "/i/016000/016738.png"
   },
   "3609": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Rat and Mouse",
+    "ja": "狙い付け",
+    "de": "Im Visier",
+    "fr": "Ciblage",
+    "icon": "/i/015000/015026.png"
   },
   "3610": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Vengeful Flame",
+    "ja": "怨呪の火",
+    "de": "Vergeltende Flamme",
+    "fr": "Flamme vengeresse",
+    "icon": "/i/016000/016738.png"
   },
   "3611": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Vengeful Pyre",
+    "ja": "怨呪の重火",
+    "de": "Vergeltendes Feuer",
+    "fr": "Bûcher vengeur",
+    "icon": "/i/016000/016737.png"
   },
   "3612": {
     "en": "Spicy Circulation XXII",
@@ -25305,11 +25305,11 @@
     "icon": "/i/013000/013314.png"
   },
   "3616": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Huton",
+    "ja": "風遁の術",
+    "de": "Huton",
+    "fr": "Fûton",
+    "icon": "/i/012000/012903.png"
   },
   "3617": {
     "en": "_rsv_3617_-1_1_0_0_S74CFC3B0_E74CFC3B0",
@@ -25340,39 +25340,39 @@
     "icon": "/i/016000/016232.png"
   },
   "3621": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Magic Resistance",
+    "ja": "魔法無効",
+    "de": "Immun gegen Magieattacken",
+    "fr": "Invincibilité magique",
+    "icon": "/i/015000/015682.png"
   },
   "3622": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Storm's Succor",
+    "ja": "風雷の加護",
+    "de": "Segen des Gewitters",
+    "fr": "Bénédiction de vent et de foudre",
+    "icon": "/i/015000/015760.png"
   },
   "3623": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Seasons of the Fleeting",
+    "ja": "四君子の術",
+    "de": "Shikunshi",
+    "fr": "Quatre saisons",
+    "icon": "/i/012000/012911.png"
   },
   "3624": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Seduced",
+    "ja": "誘惑",
+    "de": "Versuchung",
+    "fr": "Séduction",
+    "icon": "/i/015000/015552.png"
   },
   "3625": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Bind",
+    "ja": "バインド",
+    "de": "Fessel",
+    "fr": "Entrave",
+    "icon": "/i/015000/015003.png"
   },
   "3626": {
     "en": "Fire Loaded",
@@ -25410,102 +25410,102 @@
     "icon": ""
   },
   "3631": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Schiltron",
+    "ja": "スキルトロン",
+    "de": "Skiltron",
+    "fr": "Sheltron",
+    "icon": "/i/013000/013542.png"
   },
   "3632": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "●必滅の炎",
+    "ja": "●必滅の炎",
+    "de": "●必滅の炎",
+    "fr": "Sheltron",
+    "icon": "/i/013000/013551.png"
   },
   "3633": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "マジカルブレス：雷",
+    "ja": "マジカルブレス：雷",
+    "de": "Zauberatem: Blitz",
+    "fr": "マジカルブレス：雷",
+    "icon": "/i/013000/013543.png"
   },
   "3634": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "マジカルブレス：氷",
+    "ja": "マジカルブレス：氷",
+    "de": "Zauberatem: Eis",
+    "fr": "マジカルブレス：氷",
+    "icon": "/i/013000/013544.png"
   },
   "3635": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "マジカルブレス：火",
+    "ja": "マジカルブレス：火",
+    "de": "Zauberatem: Feuer",
+    "fr": "マジカルブレス：火",
+    "icon": "/i/013000/013545.png"
   },
   "3636": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Begrimed",
+    "ja": "泥汚れ",
+    "de": "Drecksspatz",
+    "fr": "Bain de boue",
+    "icon": "/i/013000/013546.png"
   },
   "3637": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Spick-and-span",
+    "ja": "大掃除",
+    "de": "Blitzblank",
+    "fr": "Grand nettoyage",
+    "icon": "/i/019000/019447.png"
   },
   "3638": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Physical Vulnerability Down",
+    "ja": "被物理ダメージ軽減",
+    "de": "Verringerte physische Verwundbarkeit",
+    "fr": "Vulnérabilité physique diminuée",
+    "icon": "/i/013000/013547.png"
   },
   "3639": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Magic Vulnerability Down",
+    "ja": "被魔法ダメージ軽減",
+    "de": "Verringerte Magie-Verwundbarkeit",
+    "fr": "Vulnérabilité magique diminuée",
+    "icon": "/i/013000/013548.png"
   },
   "3640": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Winged Reprobation",
+    "ja": "断罪の飛翔",
+    "de": "Schwinge des Urteils",
+    "fr": "Réprobation ailée",
+    "icon": "/i/019000/019454.png"
   },
   "3641": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Winged Redemption",
+    "ja": "全能者の祝福",
+    "de": "Segen des Allmächtigen",
+    "fr": "Bénédiction de l'Immaculé",
+    "icon": "/i/013000/013549.png"
   },
   "3642": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Candy Cane",
+    "ja": "キャンディケーン",
+    "de": "Quietschehammer",
+    "fr": "Canne en sucre d'orge",
+    "icon": "/i/013000/013550.png"
   },
   "3643": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Mortal Flame",
+    "ja": "必滅の炎",
+    "de": "Ewige Flammen",
+    "fr": "Flamme mortelle",
+    "icon": "/i/013000/013551.png"
   },
   "3644": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Apokalypsis",
+    "ja": "アポカリュプシス",
+    "de": "Apokalypsis",
+    "fr": "Apokalypsis",
+    "icon": "/i/013000/013552.png"
   },
   "3645": {
     "en": "",
@@ -25942,11 +25942,11 @@
     "icon": "/i/015000/015526.png"
   },
   "3707": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Magic Damage Up",
+    "ja": "魔法ダメージ上昇",
+    "de": "Magieschaden +",
+    "fr": "Bonus de dégâts magiques",
+    "icon": "/i/015000/015054.png"
   },
   "3708": {
     "en": "",
@@ -25977,11 +25977,11 @@
     "icon": ""
   },
   "3712": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Breath of Magic",
+    "ja": "マジカルブレス",
+    "de": "Zauberatem",
+    "fr": "Souffle magique",
+    "icon": "/i/013000/013553.png"
   },
   "3713": {
     "en": "",
