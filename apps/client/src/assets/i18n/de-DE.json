@@ -3010,6 +3010,7 @@
     "Home_subtitle": "Mehrere Listen gleichzeitig in einer Gesamtansicht öffnen",
     "Select_lists": "Wähle die Listen, die du zusammenfassen möchtest",
     "Select_layout": "Wähle ein Layout",
+    "Select_layout_dropdown": "Display layout",
     "Open_aggregate": "Open an aggregated view",
     "Title": "Aggregated list view",
     "Select_panel": "Select a panel to open its view",
