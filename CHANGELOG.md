@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [10.5.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.5.6...v10.5.7) (2023-07-18)
+
+
+### Features
+
+* **aggregates:** you can now change the layout use din aggregates ([7e43b8b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7e43b8b49aad27b3eab66053691cac7b7c7d857c)), closes [#2622](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2622)
+* **db:** support for new 6.45 content ([823a2d5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/823a2d5119e7d88430187d86a37b18d4e1d25c02))
+
+
+### Bug Fixes
+
+* **rotation-folder:** remove permission level next to folder's name ([759c06b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/759c06bd17e7c7419f8b3ebc76d877f6a3b7e3ba)), closes [#2645](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2645)
+
 ### [10.5.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.5.5...v10.5.6) (2023-07-18)
 
 
