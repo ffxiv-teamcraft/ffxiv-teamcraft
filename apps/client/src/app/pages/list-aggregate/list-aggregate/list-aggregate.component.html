@@ -16,6 +16,13 @@
   </nz-page-header-extra>
   <nz-page-header-content *ngIf="aggregate$ | async as aggregate">
     <div class="flex-row gap-10">
+      <div *ngIf="{panel: selectedPanelTitle$ | async, aggregateFromRoute: aggregateFromRoute$ | async} as ctxHack">
+        <nz-input-group [nzAddOnBefore]="'LIST_AGGREGATE.Select_layout_dropdown' | translate">
+          <nz-select (ngModelChange)="selectLayout($event, ctxHack.aggregateFromRoute, ctxHack.panel)" [ngModel]="layoutId$ | async">
+            <nz-option *ngFor="let layout of layouts$ | async" [nzValue]="layout.$key" [nzLabel]="layout.name"></nz-option>
+          </nz-select>
+        </nz-input-group>
+      </div>
       <ng-container *ngIf="(selectedPanelTitle$ | async) !== null">
         <div *ngIf="withLayoutApplied$ | async as withLayoutApplied" class="flex-auto">
           <button nz-button nz-dropdown nzBlock [nzDropdownMenu]="menu" nzPlacement="bottomLeft"><span nz-icon nzType="swap"
