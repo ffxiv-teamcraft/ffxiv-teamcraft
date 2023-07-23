@@ -1,0 +1,656 @@
+{
+  "1": {
+    "en": "Pugilist's Arm",
+    "ja": "格闘武器",
+    "de": "Hauptwaffe der Faustkämpfer",
+    "fr": "Arme de pugiliste"
+  },
+  "2": {
+    "en": "Gladiator's Arm",
+    "ja": "片手剣",
+    "de": "Hauptwaffe der Gladiatoren",
+    "fr": "Arme de gladiateur"
+  },
+  "3": {
+    "en": "Marauder's Arm",
+    "ja": "両手斧",
+    "de": "Hauptwaffe der Marodeure",
+    "fr": "Arme de maraudeur"
+  },
+  "4": {
+    "en": "Archer's Arm",
+    "ja": "弓",
+    "de": "Hauptwaffe der Waldläufer",
+    "fr": "Arme d'archer"
+  },
+  "5": {
+    "en": "Lancer's Arm",
+    "ja": "両手槍",
+    "de": "Hauptwaffe der Pikeniere",
+    "fr": "Arme d'hast"
+  },
+  "6": {
+    "en": "One-handed Thaumaturge's Arm",
+    "ja": "片手呪具",
+    "de": "Thaumaturgen-Waffe",
+    "fr": "Arme d'occultiste"
+  },
+  "7": {
+    "en": "Two-handed Thaumaturge's Arm",
+    "ja": "両手呪具",
+    "de": "Thaumaturgen-Zweihandwaffe",
+    "fr": "Arme à deux mains d'occultiste"
+  },
+  "8": {
+    "en": "One-handed Conjurer's Arm",
+    "ja": "片手幻具",
+    "de": "Druiden-Waffe",
+    "fr": "Arme d'élémentaliste"
+  },
+  "9": {
+    "en": "Two-handed Conjurer's Arm",
+    "ja": "両手幻具",
+    "de": "Druiden-Zweihandwaffe",
+    "fr": "Arme à deux mains d'élémentaliste"
+  },
+  "10": {
+    "en": "Arcanist's Grimoire",
+    "ja": "魔道書",
+    "de": "Grimoire",
+    "fr": "Arme d'arcaniste"
+  },
+  "11": {
+    "en": "Shield",
+    "ja": "盾",
+    "de": "Schild",
+    "fr": "Bouclier"
+  },
+  "12": {
+    "en": "Carpenter's Primary Tool",
+    "ja": "木工道具(主道具)",
+    "de": "Zimmermannszeug",
+    "fr": "Outil principal de menuisier"
+  },
+  "13": {
+    "en": "Carpenter's Secondary Tool",
+    "ja": "木工道具(副道具)",
+    "de": "Zimmermannszeug (sekundär)",
+    "fr": "Outil secondaire de menuisier"
+  },
+  "14": {
+    "en": "Blacksmith's Primary Tool",
+    "ja": "鍛冶道具(主道具)",
+    "de": "Schmiedezeug",
+    "fr": "Outil principal de forgeron"
+  },
+  "15": {
+    "en": "Blacksmith's Secondary Tool",
+    "ja": "鍛冶道具(副道具)",
+    "de": "Schmiedezeug (sekundär)",
+    "fr": "Outil secondaire de forgeron"
+  },
+  "16": {
+    "en": "Armorer's Primary Tool",
+    "ja": "甲冑道具(主道具)",
+    "de": "Plattnerzeug",
+    "fr": "Outil principal d'armurier"
+  },
+  "17": {
+    "en": "Armorer's Secondary Tool",
+    "ja": "甲冑道具(副道具)",
+    "de": "Plattnerzeug (sekundär)",
+    "fr": "Outil secondaire d'armurier"
+  },
+  "18": {
+    "en": "Goldsmith's Primary Tool",
+    "ja": "彫金道具(主道具)",
+    "de": "Goldschmiedezeug",
+    "fr": "Outil principal d'orfèvre"
+  },
+  "19": {
+    "en": "Goldsmith's Secondary Tool",
+    "ja": "彫金道具(副道具)",
+    "de": "Goldschmiedezeug (sekundär)",
+    "fr": "Outil secondaire d'orfèvre"
+  },
+  "20": {
+    "en": "Leatherworker's Primary Tool",
+    "ja": "革細工道具(主道具)",
+    "de": "Gerberzeug",
+    "fr": "Outil principal de tanneur"
+  },
+  "21": {
+    "en": "Leatherworker's Secondary Tool",
+    "ja": "革細工道具(副道具)",
+    "de": "Gerberzeug (sekundär)",
+    "fr": "Outil secondaire de tanneur"
+  },
+  "22": {
+    "en": "Weaver's Primary Tool",
+    "ja": "裁縫道具(主道具)",
+    "de": "Weberzeug",
+    "fr": "Outil principal de couturier"
+  },
+  "23": {
+    "en": "Weaver's Secondary Tool",
+    "ja": "裁縫道具(副道具)",
+    "de": "Weberzeug (sekundär)",
+    "fr": "Outil secondaire de couturier"
+  },
+  "24": {
+    "en": "Alchemist's Primary Tool",
+    "ja": "錬金道具(主道具)",
+    "de": "Alchemistenzeug",
+    "fr": "Outil principal d'alchimiste"
+  },
+  "25": {
+    "en": "Alchemist's Secondary Tool",
+    "ja": "錬金道具(副道具)",
+    "de": "Alchemistenzeug (sekundär)",
+    "fr": "Outil secondaire d'alchimiste"
+  },
+  "26": {
+    "en": "Culinarian's Primary Tool",
+    "ja": "調理道具(主道具)",
+    "de": "Gourmetzeug",
+    "fr": "Outil principal de cuisinier"
+  },
+  "27": {
+    "en": "Culinarian's Secondary Tool",
+    "ja": "調理道具(副道具)",
+    "de": "Gourmetzeug (sekundär)",
+    "fr": "Outil secondaire de cuisinier"
+  },
+  "28": {
+    "en": "Miner's Primary Tool",
+    "ja": "採掘道具(主道具)",
+    "de": "Minenarbeiterzeug",
+    "fr": "Outil principal de mineur"
+  },
+  "29": {
+    "en": "Miner's Secondary Tool",
+    "ja": "採掘道具(副道具)",
+    "de": "Minenarbeiterzeug (sekundär)",
+    "fr": "Outil secondaire de mineur"
+  },
+  "30": {
+    "en": "Botanist's Primary Tool",
+    "ja": "園芸道具(主道具)",
+    "de": "Gärtnerzeug",
+    "fr": "Outil principal de botaniste"
+  },
+  "31": {
+    "en": "Botanist's Secondary Tool",
+    "ja": "園芸道具(副道具)",
+    "de": "Gärtnerzeug (sekundär)",
+    "fr": "Outil secondaire de botaniste"
+  },
+  "32": {
+    "en": "Fisher's Primary Tool",
+    "ja": "漁道具(主道具)",
+    "de": "Fischerzeug",
+    "fr": "Outil principal de pêcheur"
+  },
+  "33": {
+    "en": "Fishing Tackle",
+    "ja": "釣り餌",
+    "de": "Angelköder",
+    "fr": "Appât de pêche"
+  },
+  "34": {
+    "en": "Head",
+    "ja": "頭防具",
+    "de": "Kopf",
+    "fr": "Tête"
+  },
+  "35": {
+    "en": "Body",
+    "ja": "胴防具",
+    "de": "Rumpf",
+    "fr": "Torse"
+  },
+  "36": {
+    "en": "Legs",
+    "ja": "脚防具",
+    "de": "Beine",
+    "fr": "Jambes"
+  },
+  "37": {
+    "en": "Hands",
+    "ja": "手防具",
+    "de": "Hände",
+    "fr": "Mains"
+  },
+  "38": {
+    "en": "Feet",
+    "ja": "足防具",
+    "de": "Füße",
+    "fr": "Pieds"
+  },
+  "39": {
+    "en": "Unobtainable",
+    "ja": "排出停止アイテム",
+    "de": "Eingestellte Gegenstände",
+    "fr": "Objet désuet"
+  },
+  "40": {
+    "en": "Necklace",
+    "ja": "首飾り",
+    "de": "Halskette",
+    "fr": "Collier"
+  },
+  "41": {
+    "en": "Earrings",
+    "ja": "耳飾り",
+    "de": "Ohrring",
+    "fr": "Boucle d'oreille"
+  },
+  "42": {
+    "en": "Bracelets",
+    "ja": "腕輪",
+    "de": "Armreif",
+    "fr": "Bracelet"
+  },
+  "43": {
+    "en": "Ring",
+    "ja": "指輪",
+    "de": "Ring",
+    "fr": "Bague"
+  },
+  "44": {
+    "en": "Medicine",
+    "ja": "薬品",
+    "de": "Arznei",
+    "fr": "Médicament"
+  },
+  "45": {
+    "en": "Ingredient",
+    "ja": "食材",
+    "de": "Zutat",
+    "fr": "Ingrédient"
+  },
+  "46": {
+    "en": "Meal",
+    "ja": "調理品",
+    "de": "Gericht",
+    "fr": "Plat ou boisson"
+  },
+  "47": {
+    "en": "Seafood",
+    "ja": "水産物",
+    "de": "Meeresfrüchte",
+    "fr": "Produit de la pêche"
+  },
+  "48": {
+    "en": "Stone",
+    "ja": "石材",
+    "de": "Baustein",
+    "fr": "Pierre"
+  },
+  "49": {
+    "en": "Metal",
+    "ja": "金属材",
+    "de": "Metall",
+    "fr": "Métal"
+  },
+  "50": {
+    "en": "Lumber",
+    "ja": "木材",
+    "de": "Nutzholz",
+    "fr": "Bois"
+  },
+  "51": {
+    "en": "Cloth",
+    "ja": "布材",
+    "de": "Stoff",
+    "fr": "Tissu"
+  },
+  "52": {
+    "en": "Leather",
+    "ja": "皮革材",
+    "de": "Leder",
+    "fr": "Cuir"
+  },
+  "53": {
+    "en": "Bone",
+    "ja": "骨材",
+    "de": "Knochen/Horn",
+    "fr": "Os"
+  },
+  "54": {
+    "en": "Reagent",
+    "ja": "錬金術材",
+    "de": "Reagenz",
+    "fr": "Réactif"
+  },
+  "55": {
+    "en": "Dye",
+    "ja": "染料",
+    "de": "Farbstoff",
+    "fr": "Teinture"
+  },
+  "56": {
+    "en": "Part",
+    "ja": "部品",
+    "de": "Einzelteil",
+    "fr": "Composant"
+  },
+  "57": {
+    "en": "Furnishing",
+    "ja": "調度品",
+    "de": "Mobiliar",
+    "fr": "Meuble"
+  },
+  "58": {
+    "en": "Materia",
+    "ja": "マテリア",
+    "de": "Materia",
+    "fr": "Matéria"
+  },
+  "59": {
+    "en": "Crystal",
+    "ja": "クリスタル",
+    "de": "Kristall",
+    "fr": "Cristal"
+  },
+  "60": {
+    "en": "Catalyst",
+    "ja": "触媒",
+    "de": "Katalysator",
+    "fr": "Catalyseur"
+  },
+  "61": {
+    "en": "Miscellany",
+    "ja": "雑貨",
+    "de": "Verschiedenes",
+    "fr": "Divers"
+  },
+  "62": {
+    "en": "Soul Crystal",
+    "ja": "ソウルクリスタル",
+    "de": "Jobkristall",
+    "fr": "Cristal d'âme"
+  },
+  "63": {
+    "en": "Other",
+    "ja": "その他",
+    "de": "Anderes",
+    "fr": "Autre"
+  },
+  "64": {
+    "en": "Construction Permit",
+    "ja": "建築物権利証書",
+    "de": "Baugenehmigung",
+    "fr": "Titre immobilier"
+  },
+  "65": {
+    "en": "Roof",
+    "ja": "外装建材(屋根)",
+    "de": "Dach",
+    "fr": "Toit"
+  },
+  "66": {
+    "en": "Exterior Wall",
+    "ja": "外装建材(外壁)",
+    "de": "Mauer",
+    "fr": "Élément de façade"
+  },
+  "67": {
+    "en": "Window",
+    "ja": "外装建材(窓)",
+    "de": "Fenster",
+    "fr": "Fenêtre"
+  },
+  "68": {
+    "en": "Door",
+    "ja": "外装建材(扉)",
+    "de": "Tür",
+    "fr": "Porte"
+  },
+  "69": {
+    "en": "Roof Decoration",
+    "ja": "外装建材(屋根装飾)",
+    "de": "Dachdekoration",
+    "fr": "Décoration de toit"
+  },
+  "70": {
+    "en": "Exterior Wall Decoration",
+    "ja": "外装建材(外壁装飾)",
+    "de": "Fassadendekoration",
+    "fr": "Décoration de façade"
+  },
+  "71": {
+    "en": "Placard",
+    "ja": "外装建材(看板)",
+    "de": "Tafel",
+    "fr": "Panneau"
+  },
+  "72": {
+    "en": "Fence",
+    "ja": "外装建材(塀)",
+    "de": "Zaun",
+    "fr": "Muret"
+  },
+  "73": {
+    "en": "Interior Wall",
+    "ja": "内装建材(内壁)",
+    "de": "Innenwand",
+    "fr": "Tapisserie"
+  },
+  "74": {
+    "en": "Flooring",
+    "ja": "内装建材(床)",
+    "de": "Boden",
+    "fr": "Sol"
+  },
+  "75": {
+    "en": "Ceiling Light",
+    "ja": "内装建材(天井照明)",
+    "de": "Deckenleuchte",
+    "fr": "Luminaire"
+  },
+  "76": {
+    "en": "Outdoor Furnishing",
+    "ja": "庭具",
+    "de": "Gartenausstattung",
+    "fr": "Meuble de jardin"
+  },
+  "77": {
+    "en": "Table",
+    "ja": "調度品(台座)",
+    "de": "Tisch/Ablage",
+    "fr": "Table"
+  },
+  "78": {
+    "en": "Tabletop",
+    "ja": "調度品(卓上)",
+    "de": "Tischdekoration",
+    "fr": "Mobilier de table"
+  },
+  "79": {
+    "en": "Wall-mounted",
+    "ja": "調度品(壁掛)",
+    "de": "Wanddekoration",
+    "fr": "Mobilier mural"
+  },
+  "80": {
+    "en": "Rug",
+    "ja": "調度品(敷物)",
+    "de": "Teppich",
+    "fr": "Tapis"
+  },
+  "81": {
+    "en": "Minion",
+    "ja": "ミニオン",
+    "de": "Begleiter",
+    "fr": "Mascotte"
+  },
+  "82": {
+    "en": "Gardening",
+    "ja": "栽培用品",
+    "de": "Gartenbau",
+    "fr": "Jardinage"
+  },
+  "83": {
+    "en": "Demimateria",
+    "ja": "デミマテリア",
+    "de": "Demimateria",
+    "fr": "Demi-matéria"
+  },
+  "84": {
+    "en": "Rogue's Arm",
+    "ja": "双剣",
+    "de": "Hauptwaffe der Schurken",
+    "fr": "Arme de surineur"
+  },
+  "85": {
+    "en": "Seasonal Miscellany",
+    "ja": "雑貨(シーズナル)",
+    "de": "Saisonaler Gegenstand",
+    "fr": "Divers (événements)"
+  },
+  "86": {
+    "en": "Triple Triad Card",
+    "ja": "トリプルトライアドカード",
+    "de": "Triple Triad-Karte",
+    "fr": "Carte de Triple Triade"
+  },
+  "87": {
+    "en": "Dark Knight's Arm",
+    "ja": "両手剣",
+    "de": "Hauptwaffe der Dunkelritter",
+    "fr": "Arme de chevalier noir"
+  },
+  "88": {
+    "en": "Machinist's Arm",
+    "ja": "銃",
+    "de": "Hauptwaffe der Maschinisten",
+    "fr": "Arme de machiniste"
+  },
+  "89": {
+    "en": "Astrologian's Arm",
+    "ja": "天球儀",
+    "de": "Hauptwaffe der Astrologen",
+    "fr": "Arme d'astromancien"
+  },
+  "90": {
+    "en": "Airship Hull",
+    "ja": "飛空艇部品(船体)",
+    "de": "Schiffbauteil (Rumpf)",
+    "fr": "Élément d'aéronef (coque)"
+  },
+  "91": {
+    "en": "Airship Rigging",
+    "ja": "飛空艇部品(艤装)",
+    "de": "Schiffbauteil (Takelage)",
+    "fr": "Élément d'aéronef (gréement)"
+  },
+  "92": {
+    "en": "Airship Aftcastle",
+    "ja": "飛空艇部品(船尾)",
+    "de": "Schiffbauteil (Heck)",
+    "fr": "Élément d'aéronef (poupe)"
+  },
+  "93": {
+    "en": "Airship Forecastle",
+    "ja": "飛空艇部品(船首)",
+    "de": "Schiffbauteil (Bug)",
+    "fr": "Élément d'aéronef (proue)"
+  },
+  "94": {
+    "en": "Orchestrion Roll",
+    "ja": "オーケストリオン譜",
+    "de": "Notenrolle",
+    "fr": "Rouleau pour orchestrion"
+  },
+  "95": {
+    "en": "Painting",
+    "ja": "絵画",
+    "de": "Gemälde",
+    "fr": "Peinture"
+  },
+  "96": {
+    "en": "Samurai's Arm",
+    "ja": "刀",
+    "de": "Hauptwaffe der Samurai",
+    "fr": "Arme de samouraï"
+  },
+  "97": {
+    "en": "Red Mage's Arm",
+    "ja": "細剣",
+    "de": "Hauptwaffe der Rotmagier",
+    "fr": "Arme de mage rouge"
+  },
+  "98": {
+    "en": "Scholar's Arm",
+    "ja": "魔道書(学者専用)",
+    "de": "Hauptwaffe der Gelehrten",
+    "fr": "Arme d'érudit"
+  },
+  "99": {
+    "en": "Fisher's Secondary Tool",
+    "ja": "漁道具(副道具)",
+    "de": "Fischerzeug (sekundär)",
+    "fr": "Outil secondaire de pêcheur"
+  },
+  "100": {
+    "en": "Currency",
+    "ja": "通貨",
+    "de": "Währung",
+    "fr": "Devises"
+  },
+  "101": {
+    "en": "Submersible Hull",
+    "ja": "潜水艦パーツ(艦体)",
+    "de": "Tauchboot-Bauteil (Rumpf)",
+    "fr": "Élément de sous-marin (coque)"
+  },
+  "102": {
+    "en": "Submersible Stern",
+    "ja": "潜水艦パーツ(艦尾)",
+    "de": "Tauchboot-Bauteil (Heck)",
+    "fr": "Élément de sous-marin (poupe)"
+  },
+  "103": {
+    "en": "Submersible Bow",
+    "ja": "潜水艦パーツ(艦首)",
+    "de": "Tauchboot-Bauteil (Bug)",
+    "fr": "Élément de sous-marin (proue)"
+  },
+  "104": {
+    "en": "Submersible Bridge",
+    "ja": "潜水艦パーツ(艦橋)",
+    "de": "Tauchboot-Bauteil (Brücke)",
+    "fr": "Élément de sous-marin (pont)"
+  },
+  "105": {
+    "en": "Blue Mage's Arm",
+    "ja": "青魔器",
+    "de": "Blaumagier-Waffe",
+    "fr": "Arme de mage bleu"
+  },
+  "106": {
+    "en": "Gunbreaker's Arm",
+    "ja": "ガンブレード",
+    "de": "Hauptwaffe der Revolverklingen",
+    "fr": "Arme de pistosabreur"
+  },
+  "107": {
+    "en": "Dancer's Arm",
+    "ja": "投擲武器",
+    "de": "Hauptwaffe der Tänzer",
+    "fr": "Arme de danseur"
+  },
+  "108": {
+    "en": "Reaper's Arm",
+    "ja": "両手鎌",
+    "de": "Hauptwaffe der Schnitter",
+    "fr": "Arme de faucheur"
+  },
+  "109": {
+    "en": "Sage's Arm",
+    "ja": "賢具",
+    "de": "Hauptwaffe der Weisen",
+    "fr": "Arme de sage"
+  }
+}

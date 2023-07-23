@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
-import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, of, throttleTime } from 'rxjs';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
-import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, pairwise, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, pairwise, skip, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
@@ -13,13 +13,14 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { AbstractControl, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
+import { XivapiService } from '@xivapi/angular-client';
 import { I18nName, SearchFilter, SearchResult, SearchType, XivapiPatch } from '@ffxiv-teamcraft/types';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import * as _ from 'lodash';
+import { isEqual } from 'lodash';
 import { stats } from '../../../core/data/sources/stats';
 import { KeysOfType } from '../../../core/tools/key-of-type';
 import { Language } from '../../../core/data/language';
@@ -27,9 +28,9 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { PlatformService } from '../../../core/tools/platform.service';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { IS_HEADLESS } from '../../../../environments/is-headless';
 import { EnvironmentService } from '../../../core/environment.service';
+import { toIndex } from '../../../core/rxjs/to-index';
 
 @Component({
   selector: 'app-search',
@@ -88,15 +89,11 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
 
   availableStats = stats;
 
-  availableLeveJobCategories = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 34];
-
-  availableCraftJobs = [];
+  availableCraftJobs = [8, 9, 10, 11, 12, 13, 14, 15];
 
   availableJobs = [];
 
-  availableJobCategories = [30, 31, 32, 33];
-
-  uiCategories$: Observable<{ id: number, name: I18nName }[]>;
+  uiCategories$: Observable<{ id: number, data: I18nName }[]>;
 
   patches$: Observable<XivapiPatch[]> = this.lazyData.patches$.pipe(
     map(patches => patches.reverse())
@@ -205,7 +202,6 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   );
 
   results$: Observable<SearchResult[]> = combineLatest([this.query$.pipe(distinctUntilChanged()), this.searchType$, this.filters$, this.sort$, this.searchLang$]).pipe(
-    debounceTime(400),
     filter(([query, , filters, , lang]) => {
       if (['ko', 'zh'].indexOf(lang.toLowerCase()) > -1) {
         // Chinese and korean characters system use fewer chars for the same thing, filters have to be handled accordingly.
@@ -213,6 +209,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       }
       return query.length > 2 || (lang === 'ja' && query.length > 0) || filters.length > 0;
     }),
+    throttleTime(400, undefined, { leading: true, trailing: false }),
     tap(([query, type, filters, [sortBy, sortOrder], lang]) => {
       this.allSelected = false;
       this.showIntro = false;
@@ -237,11 +234,13 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
         localStorage.setItem('search:history', JSON.stringify(searchHistory));
       }
       this.data.setSearchLang(lang);
-      this.router.navigate([], {
-        queryParamsHandling: 'merge',
-        queryParams: queryParams,
-        relativeTo: this.route
-      });
+      if (!isEqual(this.route.snapshot.queryParams, queryParams)) {
+        this.router.navigate([], {
+          queryParamsHandling: 'merge',
+          queryParams: queryParams,
+          relativeTo: this.route
+        });
+      }
     }),
     switchMap(([query, type, filters, sort]) => {
       return this.data.search(query.trim(), type, filters, sort);
@@ -261,40 +260,18 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
               private analytics: GoogleAnalyticsService, private environment: EnvironmentService,
               private platformService: PlatformService, @Inject(PLATFORM_ID) private platform: any) {
     super();
-    this.uiCategories$ = this.xivapi.getList(XivapiEndpoint.ItemUICategory, {
-      columns: ['ID', 'Name_de', 'Name_en', 'Name_fr', 'Name_ja'],
-      max_items: 200
-    }).pipe(
-      switchMap(contentList => {
-        return safeCombineLatest(contentList.Results.map(result => {
-          const res: any = {
-            id: result.ID,
-            name: {
-              en: result.Name_en,
-              fr: result.Name_fr,
-              de: result.Name_de,
-              ja: result.Name_ja
-            }
-          };
-          if (this.settings.searchLanguage === 'zh') {
-            return this.lazyData.getRow('zhItemUiCategories', result.ID).pipe(
-              map(zhRow => {
-                res.name.zh = zhRow?.zh || result.Name_en;
-                return res;
-              })
-            );
-          } else if (this.settings.searchLanguage === 'ko') {
-            return this.lazyData.getRow('koItemUiCategories', result.ID).pipe(
-              map(koRow => {
-                res.name.ko = koRow?.ko || result.Name_en;
-                return res;
-              })
-            );
-          } else {
-            return of(res);
-          }
-        }));
-      })
+    this.uiCategories$ = this.settings.watchSetting('search:language', 'en').pipe(
+      switchMap(lang => {
+        switch (lang) {
+          case 'zh':
+            return this.lazyData.getEntry('zhItemUiCategories');
+          case 'ko':
+            return this.lazyData.getEntry('koItemUiCategories');
+          default:
+            return this.lazyData.getEntry('itemCategory');
+        }
+      }),
+      toIndex()
     );
     if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
       this.searchType$.subscribe(value => {
@@ -327,7 +304,6 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       }
     });
     this.gt.onceLoaded$.pipe(first()).subscribe(() => {
-      this.availableCraftJobs = this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1);
       this.availableJobs = this.gt.getJobs().filter(job => job.id > 0).map(job => job.id);
     });
 
@@ -370,9 +346,9 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     return [SearchType.RECIPE, SearchType.ITEM, SearchType.INSTANCE, SearchType.ACTION, SearchType.LEVE, SearchType.TRAIT].includes(searchType);
   }
 
-  toggleFiltersDisplay():void{
+  toggleFiltersDisplay(): void {
     this.showFilters = !this.showFilters;
-    this.settings.showSearchFilters = this.showFilters
+    this.settings.showSearchFilters = this.showFilters;
   }
 
   addFilter(type: 'stats' | 'bonuses'): void {

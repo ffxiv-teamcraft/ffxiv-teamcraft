@@ -72,6 +72,7 @@ const { MultiSelect, Confirm } = require('enquirer');
 
 const extractors: AbstractExtractor[] = [
   new I18nExtractor('BNpcName', 'mobs', 'Singular_'),
+  new I18nExtractor('ItemUICategory', 'item-category'),
   new I18nExtractor('Title', 'titles', 'Masculine_', {}),
   new I18nExtractor('PlaceName', 'places', 'Name_', {}, false, (row, entities) => {
     if (row.ID === 4043) {

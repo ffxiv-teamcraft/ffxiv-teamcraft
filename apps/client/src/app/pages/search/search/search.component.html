@@ -67,7 +67,7 @@
                 <nz-select class="filter-select-compact with-addon-before" formControlName="itemCategories"
                            nzMode="multiple" nzShowSearch [nzPlaceHolder]="'SEARCH.Item_type_placeholder' | translate">
                   <nz-option [nzLabel]="'SEARCH.Any' | translate" [nzValue]="null"></nz-option>
-                  <nz-option *ngFor="let uiCategory of uiCategories$ | async" [nzLabel]="uiCategory.name | i18n"
+                  <nz-option *ngFor="let uiCategory of uiCategories$ | async" [nzLabel]="uiCategory.data | i18n"
                              [nzValue]="uiCategory.id">
                   </nz-option>
                 </nz-select>
@@ -101,7 +101,7 @@
             <input #searchInput (input)="queryChange(searchInput.value, false)"
                    (keydown.enter)="queryChange(searchInput.value, true)"
                    [ngModelOptions]="{standalone: true}"
-                   (ngModelChange)="!settings.disableSearchDebounce?query$.next($event):null" [ngModel]="query$.value"
+                   (ngModelChange)="!settings.disableSearchDebounce?query$.next($event):null" [ngModel]="query$ | async"
                    [nzAutocomplete]="settings.disableSearchHistory||settings.disableSearchDebounce?emptyFill:auto"
                    autofocus
                    class="search-input"
@@ -188,11 +188,11 @@
             <!--CraftedBy filter-->
             <nz-input-group *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE" [nzAddOnBefore]="'SEARCH.Crafted_by' | translate">
               <nz-select nzSize="large" class="with-addon-before" formControlName="craftJob" nzAllowClear nzShowSearch>
-                <nz-option *ngFor="let job of availableCraftJobs" [nzLabel]="job.id | i18nRow:'jobAbbr' | i18n"
-                           [nzValue]="job.id" nzCustomContent>
+                <nz-option *ngFor="let job of availableCraftJobs" [nzLabel]="job | i18nRow:'jobAbbr' | i18n"
+                           [nzValue]="job" nzCustomContent>
                   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                    <div class="companion-svg job-icon" [innerHtml]="job.id | jobUnicode"></div>
-                    <div>{{job.id | i18nRow:'jobAbbr' | i18n}}</div>
+                    <div class="companion-svg job-icon" [innerHtml]="job | jobUnicode"></div>
+                    <div>{{job | i18nRow:'jobAbbr' | i18n}}</div>
                   </div>
                 </nz-option>
               </nz-select>

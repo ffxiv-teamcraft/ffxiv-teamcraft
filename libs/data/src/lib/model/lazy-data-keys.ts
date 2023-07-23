@@ -67,6 +67,7 @@ export const LazyDataKeys = [
   'islandLandmarks',
   'islandPopularity',
   'islandSupply',
+  'itemCategory',
   'itemEquipSlotCategory',
   'itemIcons',
   'itemLevel',

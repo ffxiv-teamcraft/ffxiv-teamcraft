@@ -271,6 +271,10 @@ export const lazyFilesList = {
     'fileName': 'island-supply.json',
     'hashedFileName': 'island-supply.4aa37837a6b0fb8ff57b1ee178b44a4405304a7a.json'
   },
+  'itemCategory': {
+    'fileName': 'item-category.json',
+    'hashedFileName': 'item-category.03643e00d3b9480695baf51095ffeb1f0af94420.json'
+  },
   'itemEquipSlotCategory': {
     'fileName': 'item-equip-slot-category.json',
     'hashedFileName': 'item-equip-slot-category.c1eab50c131fd2a1f974ac84ef5a385a42376bea.json'

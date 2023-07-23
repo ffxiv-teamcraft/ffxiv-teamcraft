@@ -45,6 +45,7 @@ import {LazyIslandCrop} from './lazy-island-crop';
 import {LazyIslandGatheringItem} from './lazy-island-gathering-item';
 import {LazyIslandLandmark} from './lazy-island-landmark';
 import {LazyIslandPopularity} from './lazy-island-popularity';
+import {LazyItemCategory} from './lazy-item-category';
 import {LazyItemLevel} from './lazy-item-level';
 import {LazyItemMainAttribute} from './lazy-item-main-attribute';
 import {LazyItemMeldingData} from './lazy-item-melding-data';
@@ -182,6 +183,7 @@ export interface LazyData {
   islandLandmarks: Record<number, LazyIslandLandmark>;
   islandPopularity: Record<number, LazyIslandPopularity>;
   islandSupply: Record<number, number>;
+  itemCategory: Record<number, LazyItemCategory>;
   itemEquipSlotCategory: Record<number, number>;
   itemIcons: Record<number, string>;
   itemLevel: Record<number, LazyItemLevel>;
