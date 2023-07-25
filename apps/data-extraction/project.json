@@ -6,18 +6,14 @@
   "targets": {
     "build": {
       "executor": "@nrwl/webpack:webpack",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "target": "node",
         "compiler": "tsc",
         "outputPath": "dist/apps/data-extraction",
         "main": "apps/data-extraction/src/main.ts",
         "tsConfig": "apps/data-extraction/tsconfig.app.json",
-        "assets": [
-          "apps/data-extraction/src/assets"
-        ]
+        "assets": ["apps/data-extraction/src/assets"]
       },
       "configurations": {
         "production": {
@@ -46,20 +42,14 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "apps/data-extraction/**/*.ts"
-        ]
+        "lintFilePatterns": ["apps/data-extraction/**/*.ts"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/data-extraction"
-      ],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/data-extraction"],
       "options": {
         "jestConfig": "apps/data-extraction/jest.config.ts",
         "passWithNoTests": true

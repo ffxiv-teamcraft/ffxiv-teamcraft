@@ -9,10 +9,6 @@
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/schematics": "^9.0.0",
-    "@nrwl/eslint-plugin-nx": "^14.8.4",
-    "@nrwl/nest": "^14.8.4",
-    "@nrwl/node": "^14.8.4",
-    "@nrwl/workspace": "14.8.4",
     "@types/express": "^4.17.0",
     "@types/node": "16.11.26",
     "@ungap/structured-clone": "^1.0.1",
@@ -28,6 +24,10 @@
     "http-proxy-middleware": "^2.0.6",
     "body-parser-graphql": "^1.1.0",
     "object-hash": "^3.0.0",
-    "redis": "^4.6.5"
+    "redis": "^4.6.5",
+    "@nx/workspace": "14.8.4",
+    "@nx/nest": "^14.8.4",
+    "@nx/node": "^14.8.4",
+    "@nx/eslint-plugin": "^14.8.4"
   }
 }

@@ -22,8 +22,8 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/data"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/data"],
       "options": {
         "jestConfig": "libs/data/jest.config.ts",
         "passWithNoTests": true

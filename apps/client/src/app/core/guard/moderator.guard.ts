@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { CanLoad, Route, UrlSegment } from '@angular/router';
+import { Route, UrlSegment } from '@angular/router';
 import { Observable } from 'rxjs';
 import { first, map } from 'rxjs/operators';
 import { AuthFacade } from '../../+state/auth.facade';
 
 @Injectable()
-export class ModeratorGuard implements CanLoad {
+export class ModeratorGuard  {
 
   constructor(private authFacade: AuthFacade) {
   }
