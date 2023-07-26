@@ -18,7 +18,7 @@ export class FishingSpotUtilsService {
   constructor(private readonly settings: SettingsService) {
   }
 
-  public getHighlightColor(weight: number = 1) {
+  public getHighlightColor(weight = 1) {
     return this.highlightColor$.pipe(
       map((colors) => {
         return `rgba(${colors[0]}, ${colors[1]}, ${colors[2]}, ${Math.floor(weight * 90) / 100})`;
