@@ -17,7 +17,6 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
     UserAvatarModule,
     FormsModule
   ],
-  providers: [CommentsService],
   declarations: [CommentsPopupComponent],
   exports: [CommentsPopupComponent]
 })

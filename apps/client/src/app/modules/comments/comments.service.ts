@@ -8,7 +8,9 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { Firestore, where } from '@angular/fire/firestore';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class CommentsService extends FirestoreRelationalStorage<ResourceComment> {
 
   constructor(protected firestore: Firestore, protected serializer: NgSerializerService, protected zone: NgZone,

@@ -31,21 +31,28 @@ export class ItemRowComponent extends AbstractItemRowComponent implements OnInit
   ngOnInit() {
     super.ngOnInit();
 
-    this.commentBadge$ = this.commentBadgeReloader$.pipe(
-      exhaustMap(() => combineLatest([this.list$, this.item$.pipe(map(i => i.id))])),
-      switchMap(([list, itemId]) => {
-        if (this.buttonsCache[ItemRowMenuElement.COMMENTS]) {
-          return of([]);
+    this.commentBadge$ = this.list$.pipe(
+      switchMap(list => {
+        if(list.offline){
+          return of(false);
         }
-        return this.commentsService.getComments(
-          CommentTargetType.LIST,
-          list.$key,
-          `${this.finalItem ? 'finalItems' : 'items'}:${itemId}`
+        return this.commentBadgeReloader$.pipe(
+          exhaustMap(() => combineLatest([this.list$, this.item$.pipe(map(i => i.id))])),
+          switchMap(([list, itemId]) => {
+            if (this.buttonsCache[ItemRowMenuElement.COMMENTS]) {
+              return of([]);
+            }
+            return this.commentsService.getComments(
+              CommentTargetType.LIST,
+              list.$key,
+              `${this.finalItem ? 'finalItems' : 'items'}:${itemId}`
+            );
+          }),
+          map(comments => comments.length > 0),
+          startWith(false)
         );
-      }),
-      map(comments => comments.length > 0),
-      startWith(false)
-    );
+      })
+    )
   }
 
   openCommentsPopup(isAuthor: boolean, item: ListRow): void {
