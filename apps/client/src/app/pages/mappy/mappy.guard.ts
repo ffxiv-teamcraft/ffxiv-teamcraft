@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, CanLoad, Route, RouterStateSnapshot, UrlSegment } from '@angular/router';
+import { ActivatedRouteSnapshot, Route, RouterStateSnapshot, UrlSegment } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AuthFacade } from '../../+state/auth.facade';
@@ -8,7 +8,7 @@ import { SettingsService } from '../../modules/settings/settings.service';
 @Injectable({
   providedIn: 'root'
 })
-export class MappyGuard implements CanActivate, CanLoad {
+export class MappyGuard  {
 
   private hasAccess$ = this.authFacade.user$.pipe(
     map(user => {

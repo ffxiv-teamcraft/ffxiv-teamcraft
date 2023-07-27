@@ -3,20 +3,12 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "module": "esnext",
-    "types": [
-      "node"
-    ],
+    "types": ["node"],
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
-    "target": "es2020",
+    "target": "es2021",
     "allowSyntheticDefaultImports": true
   },
-  "exclude": [
-    "jest.config.ts",
-    "**/*.spec.ts",
-    "**/*.test.ts"
-  ],
-  "include": [
-    "**/*.ts"
-  ]
+  "exclude": ["jest.config.ts", "**/*.spec.ts", "**/*.test.ts"],
+  "include": ["**/*.ts"]
 }

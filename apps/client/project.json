@@ -1,4 +1,5 @@
 {
+  "name": "client",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/client/src",
@@ -217,7 +218,8 @@
           "@firebase/performance",
           "@firebase/remote-config",
           "@firebase/util"
-        ]
+        ],
+        "buildOptimizer": false
       },
       "defaultConfiguration": ""
     },
@@ -246,8 +248,8 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/client"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/client"],
       "options": {
         "jestConfig": "apps/client/jest.config.ts",
         "passWithNoTests": true
