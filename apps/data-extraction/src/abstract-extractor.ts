@@ -8,6 +8,7 @@ import { XivDataService } from './xiv/xiv-data.service';
 import { ParsedRow } from './xiv/parsed-row';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { kebabCase } from 'lodash';
+import * as zlib from 'zlib';
 
 export abstract class AbstractExtractor {
 
@@ -78,7 +79,15 @@ export abstract class AbstractExtractor {
 
 
   protected requireLazyFileByKey<K extends keyof LazyData>(key: K): LazyData[K] {
-  return JSON.parse(readFileSync(join(AbstractExtractor.assetOutputFolder, `${kebabCase(key)}.json`), 'utf-8'));
+    const kebab = kebabCase(key);
+    let path = join(AbstractExtractor.assetOutputFolder, `${kebabCase(key)}.json`);
+    if (kebab.startsWith('ko-')) {
+      path = join(AbstractExtractor.assetOutputFolder, 'ko', `${kebabCase(key)}.json`);
+    }
+    if (kebab.startsWith('zh-')) {
+      path = join(AbstractExtractor.assetOutputFolder, 'zh', `${kebabCase(key)}.json`);
+    }
+    return JSON.parse(readFileSync(path, 'utf-8'));
   }
 
   protected addQueryParam(url: string, paramName: string, paramValue: string | number): string {
@@ -94,7 +103,11 @@ export abstract class AbstractExtractor {
     this.done$.complete();
   }
 
-  protected getCoords(coords: { x: number, y: number, z: number }, mapData: { size_factor: number, offset_y: number, offset_x: number, offset_z: number }): { x: number, y: number, z: number } {
+  protected getCoords(coords: { x: number, y: number, z: number }, mapData: { size_factor: number, offset_y: number, offset_x: number, offset_z: number }): {
+    x: number,
+    y: number,
+    z: number
+  } {
     const c = mapData.size_factor / 100;
     const x = ((+coords.x) + mapData.offset_x) * c;
     const y = ((+coords.y) + mapData.offset_y) * c;
@@ -251,6 +264,10 @@ export abstract class AbstractExtractor {
 
   protected persistToMinifiedJsonAsset(fileName: string, content: any): void {
     writeFileSync(join(AbstractExtractor.assetOutputFolder, `${fileName}.json`), JSON.stringify(content));
+  }
+
+  protected persistToCompressedJsonAsset(fileName: string, content: any): void {
+    writeFileSync(join(AbstractExtractor.assetOutputFolder, `${fileName}.json`), zlib.deflateSync(JSON.stringify(content), { level: 9 }));
   }
 
   protected persistToTypescript(fileName: string, variableName: string, content: any): void {

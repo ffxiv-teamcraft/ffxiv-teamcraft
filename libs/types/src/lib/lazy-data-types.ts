@@ -23,6 +23,10 @@ type LazyDataRecordEntries = { [K in LazyDataKey]: LazyDataWithExtracts[K] exten
 
 export type LazyDataRecordKey = keyof Pick<LazyDataWithExtracts, LazyDataRecordEntries>;
 
+type LazyDataSearchEntries = { [K in keyof LazyData]: LazyData[K] extends Array<object> ? K : never }[keyof LazyData];
+
+export type LazyDataSearchIndexKey = keyof Pick<LazyDataWithExtracts, LazyDataSearchEntries>;
+
 export type I18nElement = Record<number, (I18nName | { name: I18nName } | XivapiI18nName)>;
 
 type LazyDataI18nEntries = { [K in keyof LazyData]: LazyData[K] extends I18nElement ? K : never }[keyof LazyData];

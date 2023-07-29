@@ -11,6 +11,10 @@ export const lazyFilesList = {
     'fileName': 'action-icons.json',
     'hashedFileName': 'action-icons.96a7eb8437c26e5e180ef71ef6998d47478fe761.json'
   },
+  'actionSearch': {
+    'fileName': 'action-search.json',
+    'hashedFileName': 'action-search.6682633396dbc260720e32609deeaa44945d71f7.json'
+  },
   'actionTimeline': {
     'fileName': 'action-timeline.json',
     'hashedFileName': 'action-timeline.1d20862ce94c3343496ad6eec43dd026db3ab77d.json'
@@ -271,9 +275,13 @@ export const lazyFilesList = {
     'fileName': 'island-supply.json',
     'hashedFileName': 'island-supply.4aa37837a6b0fb8ff57b1ee178b44a4405304a7a.json'
   },
+  'itemBonuses': {
+    'fileName': 'item-bonuses.json',
+    'hashedFileName': 'item-bonuses.44e84f4e881502b1bfa3c00482767a311144e0d4.json'
+  },
   'itemCategory': {
     'fileName': 'item-category.json',
-    'hashedFileName': 'item-category.03643e00d3b9480695baf51095ffeb1f0af94420.json'
+    'hashedFileName': 'item-category.3348973115b225819b262c889f8127173f07f304.json'
   },
   'itemEquipSlotCategory': {
     'fileName': 'item-equip-slot-category.json',
@@ -298,6 +306,10 @@ export const lazyFilesList = {
   'itemPatch': {
     'fileName': 'item-patch.json',
     'hashedFileName': 'item-patch.8a950cec6f9b4a5a6ba84950415e62b40bb4c332.json'
+  },
+  'itemSearch': {
+    'fileName': 'item-search.json',
+    'hashedFileName': 'item-search.64852ff36f9e8d817319c0656ef6435e3336ef5c.json'
   },
   'itemSeries': {
     'fileName': 'item-series.json',

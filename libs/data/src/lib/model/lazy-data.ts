@@ -1,5 +1,6 @@
 
 import {LazyAchievement} from './lazy-achievement';
+import {LazyActionSearch} from './lazy-action-search';
 import {LazyAction} from './lazy-action';
 import {LazyAetheryte} from './lazy-aetheryte';
 import {LazyAirshipPart} from './lazy-airship-part';
@@ -45,10 +46,12 @@ import {LazyIslandCrop} from './lazy-island-crop';
 import {LazyIslandGatheringItem} from './lazy-island-gathering-item';
 import {LazyIslandLandmark} from './lazy-island-landmark';
 import {LazyIslandPopularity} from './lazy-island-popularity';
+import {LazyItemBonus} from './lazy-item-bonus';
 import {LazyItemCategory} from './lazy-item-category';
 import {LazyItemLevel} from './lazy-item-level';
 import {LazyItemMainAttribute} from './lazy-item-main-attribute';
 import {LazyItemMeldingData} from './lazy-item-melding-data';
+import {LazyItemSearch} from './lazy-item-search';
 import {LazyItemSeries} from './lazy-item-series';
 import {LazyItemSetBonus} from './lazy-item-set-bonus';
 import {LazyItemStat} from './lazy-item-stat';
@@ -118,6 +121,7 @@ export interface LazyData {
   achievements: Record<number, LazyAchievement>;
   actionCdGroups: Record<number, number[]>;
   actionIcons: Record<number, string>;
+  actionSearch: Array<LazyActionSearch>;
   actionTimeline: Record<number, string>;
   actions: Record<number, LazyAction>;
   aetherialReduce: Record<number, number>;
@@ -183,6 +187,7 @@ export interface LazyData {
   islandLandmarks: Record<number, LazyIslandLandmark>;
   islandPopularity: Record<number, LazyIslandPopularity>;
   islandSupply: Record<number, number>;
+  itemBonuses: Record<number, LazyItemBonus[]>;
   itemCategory: Record<number, LazyItemCategory>;
   itemEquipSlotCategory: Record<number, number>;
   itemIcons: Record<number, string>;
@@ -190,6 +195,7 @@ export interface LazyData {
   itemMainAttributes: Record<number, LazyItemMainAttribute[]>;
   itemMeldingData: Record<number, LazyItemMeldingData>;
   itemPatch: Record<number, number>;
+  itemSearch: Array<LazyItemSearch>;
   itemSeries: Record<number, LazyItemSeries>;
   itemSetBonuses: Record<number, LazyItemSetBonus>;
   itemStats: Record<number, LazyItemStat[]>;

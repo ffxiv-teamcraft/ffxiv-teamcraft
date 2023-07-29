@@ -39,6 +39,7 @@ export class ItemsExtractor extends AbstractExtractor {
     const stackSizes = {};
     const equipment = {};
     const itemStats = {};
+    const itemBonuses = {};
     const itemMainAttributes = {};
     const itemMeldingData = {};
     const hqFlags = {};
@@ -57,10 +58,11 @@ export class ItemsExtractor extends AbstractExtractor {
         ['AlwaysCollectable', 'AetherialReduce', 'Patch', 'DamagePhys', 'DamageMag', 'DefensePhys', 'DefenseMag', 'Name', 'Description',
           'IsUnique', 'IsUntradable', 'MaterializeType', 'CanBeHq', 'Rarity', 'Icon', 'LevelItem#', 'LevelEquip', 'StackSize',
           'EquipSlotCategory#', 'ClassJobCategory', 'MateriaSlotCount', 'BaseParamModifier', 'IsAdvancedMeldingPermitted',
-          'ItemSearchCategory#', 'ItemSeries#', 'BaseParam#', 'BaseParamValue', 'BaseParamSpecial#', 'BaseParamValueSpecial'], false, 1),
-      this.getNonXivapiUrl('https://raw.githubusercontent.com/xivapi/ffxiv-datamining-patches/master/patchdata/Item.json')
+          'ItemSearchCategory#', 'ItemSeries#', 'BaseParam#', 'BaseParamValue', 'BaseParamSpecial#', 'BaseParamValueSpecial', 'ItemAction'], false, 1),
+      this.getNonXivapiUrl('https://raw.githubusercontent.com/xivapi/ffxiv-datamining-patches/master/patchdata/Item.json'),
+      this.getSheet(xiv, 'ItemFood', ['Value', 'ValueHQ', 'BaseParam', 'IsRelative', 'Max', 'MaxHQ'])
     ])
-      .subscribe(([items, patchData]) => {
+      .subscribe(([items, patchData, itemFood]) => {
         items.forEach(item => {
           try {
             itemIcons[item.index] = this.getIconHD(item.Icon);
@@ -141,6 +143,9 @@ export class ItemsExtractor extends AbstractExtractor {
           }
           if (item.AlwaysCollectable) {
             collectableFlags[item.index] = 1;
+          }
+          if ([844, 845, 846].includes(item.ItemAction?.Type)) {
+            itemBonuses[item.index] = this.processBonuses(itemFood.find(food => food.index === item.ItemAction.Data[1]));
           }
           if (item.BaseParam.some(p => p > 0)) {
             itemStats[item.index] = this.processStats(item);
@@ -230,6 +235,7 @@ export class ItemsExtractor extends AbstractExtractor {
         this.persistToJsonAsset('aetherial-reduce', aetherialReduce);
         this.persistToJsonAsset('collectable-flags', collectableFlags);
         this.persistToJsonAsset('item-stats', itemStats);
+        this.persistToJsonAsset('item-bonuses', itemBonuses);
         this.persistToJsonAsset('item-patch', itemPatch);
         this.done();
       });
@@ -259,6 +265,27 @@ export class ItemsExtractor extends AbstractExtractor {
       stats.push(entry);
     });
     return stats;
+  }
+
+  private processBonuses(itemFood: any): any[] {
+    const bonuses = [];
+    itemFood.BaseParam.forEach((paramId, index) => {
+      if (paramId === 0) {
+        return;
+      }
+      const entry: { ID: number, NQ: number, HQ: number, Relative: boolean, Max?: number, MaxHQ?: number } = {
+        ID: paramId,
+        NQ: itemFood.Value[index],
+        HQ: itemFood.ValueHQ[index],
+        Relative: itemFood.IsRelative[index]
+      };
+      if (entry.Relative) {
+        entry.Max = itemFood.Max[index];
+        entry.MaxHQ = itemFood.MaxHQ[index];
+      }
+      bonuses.push(entry);
+    });
+    return bonuses;
   }
 
   getName(): string {
