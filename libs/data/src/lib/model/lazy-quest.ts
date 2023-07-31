@@ -1,4 +1,5 @@
 export interface LazyQuest {
+  banner?:  string;
   icon:     string;
   name:     Name;
   rewards?: Reward[];

@@ -187,6 +187,10 @@ const extractors: AbstractExtractor[] = [
     startExtractors(extractors.filter(e => {
       return only.includes(e.getName());
     }));
+  } else if (argv['only-search']) {
+    startExtractors([
+      new SearchExtractor()
+    ]);
   } else {
     const selection = await operationsSelection.run();
     const runExtractor = await runExtractors.run();
@@ -194,8 +198,8 @@ const extractors: AbstractExtractor[] = [
         ...extractors.filter(e => {
           return selection.includes('everything') || selection.includes(e.getName());
         }),
-      new SearchExtractor(),
-      ...(runExtractor ? [new ItemDetailsExtractExtractor()] : [])
+        new SearchExtractor(),
+        ...(runExtractor ? [new ItemDetailsExtractExtractor()] : [])
       ]
     );
   }

@@ -1,5 +1,6 @@
 import { XivDataService } from '../xiv/xiv-data.service';
 import { AbstractExtractor } from '../abstract-extractor';
+import { makeIcon } from '../xiv/make-icon';
 
 export class LevesExtractor extends AbstractExtractor {
   protected doExtract(xiv: XivDataService): any {
@@ -7,7 +8,7 @@ export class LevesExtractor extends AbstractExtractor {
     const levesPerItem = {};
     this.getSheet<any>(xiv, 'Leve', [
       'Name', 'ClassJobCategory.Name',
-      'LevelLevemete.Map.PlaceName#',
+      'LevelLevemete.Map.PlaceName#', 'IconIssuer#',
       'AllowanceCost', 'PlaceNameStart#', 'GilReward', 'ExpReward',
       'ClassJobLevel', 'CraftLeve', 'ClassJobCategory#',
       'DataId.Item#', 'DataId.ItemCount', 'DataId.Repeats#'], false, 2)
@@ -30,6 +31,7 @@ export class LevesExtractor extends AbstractExtractor {
             ja: leve.Name_ja,
             de: leve.Name_de,
             fr: leve.Name_fr,
+            banner: makeIcon(leve.IconIssuer),
             job: {
               id: leve.ClassJobCategory.index,
               en: leve.ClassJobCategory.Name_en,

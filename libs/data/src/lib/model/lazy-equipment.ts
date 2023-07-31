@@ -1,7 +1,12 @@
 export interface LazyEquipment {
+  delay:             number;
   equipSlotCategory: number;
   jobs:              Job[];
   level:             number;
+  mDef:              number;
+  mDmg:              number;
+  pDef:              number;
+  pDmg:              number;
   unique:            number;
 }
 

@@ -58,7 +58,8 @@ export class ItemsExtractor extends AbstractExtractor {
         ['AlwaysCollectable', 'AetherialReduce', 'Patch', 'DamagePhys', 'DamageMag', 'DefensePhys', 'DefenseMag', 'Name', 'Description',
           'IsUnique', 'IsUntradable', 'MaterializeType', 'CanBeHq', 'Rarity', 'Icon', 'LevelItem#', 'LevelEquip', 'StackSize',
           'EquipSlotCategory#', 'ClassJobCategory', 'MateriaSlotCount', 'BaseParamModifier', 'IsAdvancedMeldingPermitted',
-          'ItemSearchCategory#', 'ItemSeries#', 'BaseParam#', 'BaseParamValue', 'BaseParamSpecial#', 'BaseParamValueSpecial', 'ItemAction'], false, 1),
+          'ItemSearchCategory#', 'ItemSeries#', 'BaseParam#', 'BaseParamValue', 'BaseParamSpecial#', 'BaseParamValueSpecial', 'ItemAction',
+          'Delayms'], false, 1),
       this.getNonXivapiUrl('https://raw.githubusercontent.com/xivapi/ffxiv-datamining-patches/master/patchdata/Item.json'),
       this.getSheet(xiv, 'ItemFood', ['Value', 'ValueHQ', 'BaseParam', 'IsRelative', 'Max', 'MaxHQ'])
     ])
@@ -205,7 +206,12 @@ export class ItemsExtractor extends AbstractExtractor {
                 equipSlotCategory: item.EquipSlotCategory,
                 level: item.LevelEquip,
                 unique: item.IsUnique ? 1 : 0,
-                jobs: Object.keys(item.ClassJobCategory).filter(jobAbbr => item.ClassJobCategory[jobAbbr] === true)
+                jobs: Object.keys(item.ClassJobCategory).filter(jobAbbr => item.ClassJobCategory[jobAbbr] === true),
+                pDmg: item.DamagePhys,
+                mDmg: item.DamageMag,
+                pDef: item.DefensePhys,
+                mDef: item.DefenseMag,
+                delay: item.Delayms
               };
               itemMeldingData[item.index] = {
                 modifier: item.BaseParamModifier,

@@ -1,27 +1,20 @@
 export interface LazyActionSearch {
-  data: Data;
-  de:   string;
-  en:   string;
-  fr:   string;
-  id:   string;
-  ja:   string;
-  job:  number;
-  ko?:  Ko;
-  lvl:  number;
-  zh?:  Zh;
+  data:  Data;
+  de:    string;
+  en:    string;
+  fr:    string;
+  id:    string;
+  ja:    string;
+  job:   number;
+  ko?:   string;
+  lvl:   number;
+  patch: number;
+  zh?:   string;
 }
 
 export interface Data {
   icon:  string;
-  id:    string;
+  id:    number;
   job:   number;
   level: number;
-}
-
-export interface Ko {
-  ko: string;
-}
-
-export interface Zh {
-  zh: string;
 }

@@ -1,8 +1,9 @@
 import { Controller, Get, Header, Query } from '@nestjs/common';
-import { Observable } from 'rxjs';
+import { first, Observable } from 'rxjs';
 import { SearchService } from './search.service';
-import { Region, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
-import type { XivapiSearchFilter } from '@xivapi/angular-client';
+import { SearchResult, SearchType } from '@ffxiv-teamcraft/types';
+import { XIVSearchFilter } from '@ffxiv-teamcraft/search';
+import { map } from 'rxjs/operators';
 
 @Controller({
   path: '/search'
@@ -20,36 +21,46 @@ export class SearchController {
     @Query('sort_order') order: 'asc' | 'desc' = 'desc',
     @Query('sort_field') sortField?: string,
     @Query('lang') lang = 'en',
-    @Query('region') region: Region = Region.Global,
     @Query('filters') filters = ''
   ): Observable<SearchResult[]> {
-    let transformedFilters: XivapiSearchFilter[] = [];
+    let transformedFilters: XIVSearchFilter[] = [];
     try {
       transformedFilters = (filters || '').split(',')
         .filter(Boolean)
         .map(fragment => {
-          const [, column, operator, value] = fragment.match(/([^><=?!|]+)([><=?!|]{1,2})(.*)/);
+          const [, field, operator, value] = fragment.match(/([^><=?!|]+)([><=?!|]{1,2})(.*)/);
+          let processedValue: string | number | boolean | any[] = value;
           if (value === '' && operator !== '!!') {
             return null;
           }
+          if (value === 'false') {
+            processedValue = false;
+          } else if (value === 'true') {
+            processedValue = true;
+          } else if (!isNaN(Number(value))) {
+            processedValue = +value;
+          }
           return {
-            column,
-            operator: operator as XivapiSearchFilter['operator'],
-            value: isNaN(Number(value)) ? value : +value
+            field,
+            operator: operator as any,
+            value: processedValue
           };
         })
         .filter(Boolean);
     } catch (e) {
       console.error(filters, e);
     }
-    return this.searchService.search(
-      type,
-      query.toLowerCase(),
-      transformedFilters,
-      region,
-      lang,
-      lang === 'ko' || lang === 'zh' && region !== Region.China,
-      [sortField, order]
+    return this.searchService.ready$.pipe(
+      map(() => {
+        return this.searchService.search(
+          type,
+          query.toLowerCase(),
+          transformedFilters,
+          lang,
+          [sortField, order]
+        );
+      }),
+      first()
     );
   }
 }

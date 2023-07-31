@@ -1,13 +1,16 @@
 export interface LazyItemSearch {
   amount?:      number;
-  bonuses?:     Bonus[];
+  bonuses?:     { [key: string]: Bonus };
   category?:    number;
+  cjc?:         { [key: string]: number };
   clvl?:        number;
+  collectible?: number;
   contentType?: LazyItemSearchContentType;
   craftJob?:    number;
   craftable?:   boolean;
   data?:        Data;
   de?:          string;
+  delay?:       number;
   elvl?:        number;
   en?:          string;
   fr?:          string;
@@ -16,16 +19,19 @@ export interface LazyItemSearch {
   ilvl?:        number;
   itemId?:      number;
   ja?:          string;
-  ko?:          Ko;
+  ko?:          string;
+  mDef?:        number;
+  mDmg?:        number;
+  pDef?:        number;
+  pDmg?:        number;
   patch?:       number;
   recipe?:      LazyItemSearchRecipe;
-  stats?:       Stat[];
-  zh?:          Zh;
+  stats?:       { [key: string]: number };
+  zh?:          string;
 }
 
 export interface Bonus {
   HQ:       number;
-  ID:       number;
   Max?:     number;
   MaxHQ?:   number;
   NQ:       number;
@@ -58,10 +64,6 @@ export interface DataRecipe {
   stars?:       number;
 }
 
-export interface Ko {
-  ko: string;
-}
-
 export interface LazyItemSearchRecipe {
   collectible: boolean;
   icon:        string;
@@ -70,14 +72,4 @@ export interface LazyItemSearchRecipe {
   lvl:         number;
   recipeId:    string;
   stars:       number;
-}
-
-export interface Stat {
-  HQ?: number;
-  ID:  number;
-  NQ:  number;
-}
-
-export interface Zh {
-  zh: string;
 }

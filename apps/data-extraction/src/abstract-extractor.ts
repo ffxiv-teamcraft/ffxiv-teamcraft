@@ -8,7 +8,6 @@ import { XivDataService } from './xiv/xiv-data.service';
 import { ParsedRow } from './xiv/parsed-row';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { kebabCase } from 'lodash';
-import * as zlib from 'zlib';
 
 export abstract class AbstractExtractor {
 
@@ -264,10 +263,6 @@ export abstract class AbstractExtractor {
 
   protected persistToMinifiedJsonAsset(fileName: string, content: any): void {
     writeFileSync(join(AbstractExtractor.assetOutputFolder, `${fileName}.json`), JSON.stringify(content));
-  }
-
-  protected persistToCompressedJsonAsset(fileName: string, content: any): void {
-    writeFileSync(join(AbstractExtractor.assetOutputFolder, `${fileName}.json`), zlib.deflateSync(JSON.stringify(content), { level: 9 }));
   }
 
   protected persistToTypescript(fileName: string, variableName: string, content: any): void {
