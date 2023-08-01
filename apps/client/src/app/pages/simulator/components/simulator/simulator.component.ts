@@ -951,7 +951,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
     this.hqIngredientsData$ = this.recipe$.pipe(
       map(recipe => {
         return (recipe.ingredients || [])
-          .filter(i => i.id > 20 && i.quality > 0)
+          .filter(i => +i.id > 20 && i.quality > 0)
           .map(ingredient => ({ id: +ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality }));
       }),
       shareReplay({ bufferSize: 1, refCount: true })

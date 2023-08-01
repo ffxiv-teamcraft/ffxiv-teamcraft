@@ -8,7 +8,6 @@ import { SettingsService } from '../../modules/settings/settings.service';
 import { PlatformService } from '../tools/platform.service';
 import { IpcService } from '../electron/ipc.service';
 import { TranslateService } from '@ngx-translate/core';
-import { PushNotificationsService } from 'ng-push-ivy';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { MapService } from '../../modules/map/map.service';
@@ -17,6 +16,7 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { SoundNotificationType } from '../sound-notification/sound-notification-type';
 import { safeCombineLatest } from '../rxjs/safe-combine-latest';
+import { PushNotificationsService } from '../push-notifications.service';
 
 @Injectable({
   providedIn: 'root'
@@ -55,7 +55,7 @@ export class AlarmBellService {
     }
   }
 
-  public notify(_alarm: PersistedAlarm): Observable<void> {
+  public notify(_alarm: PersistedAlarm): Observable<unknown> {
     if (Date.now() - 10000 >= this.getLastPlayed(_alarm)) {
       localStorage.setItem(`played:${_alarm.$key}`, Date.now().toString());
       return of(_alarm).pipe(
@@ -116,15 +116,12 @@ export class AlarmBellService {
           } else {
             this.notificationService.info(notificationTitle, notificationBody);
             if (this.pushNotificationsService.isSupported() && this.pushNotificationsService.permission === 'granted') {
-              return this.pushNotificationsService.create(notificationTitle,
+              this.pushNotificationsService.create(notificationTitle,
                 {
                   icon: notificationIcon,
-                  sticky: false,
                   renotify: false,
                   body: notificationBody
                 }
-              ).pipe(
-                map(() => void 0)
               );
             }
             return of(null);

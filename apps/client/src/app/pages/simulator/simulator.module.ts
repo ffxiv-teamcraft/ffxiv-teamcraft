@@ -26,7 +26,6 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 import { RotationFolderPageComponent } from './components/rotation-folder-page/rotation-folder-page.component';
 import { StepByStepReportComponent } from './components/step-by-step-report/step-by-step-report.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { RotationsModule } from '../../modules/rotations/rotations.module';
 import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-question-popup.module';
@@ -117,7 +116,6 @@ const routes: Routes = [
 
     TranslateModule,
     ItemIconModule,
-    NgxDnDModule,
     FullpageMessageModule,
     RotationsModule,
     RotationFoldersModule,

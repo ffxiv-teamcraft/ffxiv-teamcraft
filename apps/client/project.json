@@ -49,8 +49,14 @@
           },
           "apps/client/src/oembed.json"
         ],
-        "styles": ["apps/client/src/cdk.less", "apps/client/src/styles.less", "apps/client/src/theme.less"],
-        "scripts": ["node_modules/marked/marked.min.js"]
+        "styles": [
+          "apps/client/src/cdk.less",
+          "apps/client/src/styles.less",
+          "apps/client/src/theme.less"
+        ],
+        "scripts": [
+          "node_modules/marked/marked.min.js"
+        ]
       },
       "configurations": {
         "dev": {
@@ -194,7 +200,10 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["apps/client/**/*.ts", "apps/client/**/*.html"]
+        "lintFilePatterns": [
+          "apps/client/**/*.ts",
+          "apps/client/**/*.html"
+        ]
       }
     },
     "server": {
@@ -241,7 +250,9 @@
       "options": {
         "browserTarget": "client:build:production",
         "serverTarget": "client:server:production",
-        "routes": ["/"]
+        "routes": [
+          "/"
+        ]
       },
       "configurations": {
         "production": {}
@@ -249,7 +260,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/client"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/client"
+      ],
       "options": {
         "jestConfig": "apps/client/jest.config.ts",
         "passWithNoTests": true

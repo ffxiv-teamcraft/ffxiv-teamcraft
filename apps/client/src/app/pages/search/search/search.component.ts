@@ -118,7 +118,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       const sortEntries = [
         {
           label: 'ID',
-          field: 'ID'
+          field: 'id'
         },
         {
           label: 'Relevance',
@@ -130,11 +130,11 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
           sortEntries.push(...[
             {
               label: 'Level',
-              field: 'LevelEquip'
+              field: 'elvl'
             },
             {
               label: 'Ilvl',
-              field: 'LevelItem'
+              field: 'ilvl'
             }
           ]);
           break;
@@ -142,36 +142,25 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
           sortEntries.push(...[
             {
               label: 'Level',
-              field: 'LevelEquip'
+              field: 'elvl'
             },
             {
               label: 'Ilvl',
-              field: 'LevelItem'
+              field: 'ilvl'
             },
             {
               label: 'Rlvl',
-              field: 'Recipes.Level'
+              field: 'clvl'
             }
           ]);
           break;
         case SearchType.INSTANCE:
-          sortEntries.push({
-            label: 'Level',
-            field: 'ContentFinderCondition.ClassJobLevelRequired'
-          });
-          break;
-        case SearchType.QUEST:
-          sortEntries.push({
-            label: 'Level',
-            field: 'ClassJobLevel0'
-          });
-          break;
         case SearchType.LEVE:
         case SearchType.ACTION:
         case SearchType.TRAIT:
           sortEntries.push({
             label: 'Level',
-            field: 'ClassJobLevel'
+            field: 'level'
           });
           break;
         default:
@@ -623,7 +612,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.ilvlMax.value < 999 || controls.ilvlMin.value > 0) {
       filters.push({
         minMax: true,
-        name: 'LevelItem',
+        name: 'ilvl',
         value: {
           min: controls.ilvlMin.value,
           max: controls.ilvlMax.value
@@ -636,23 +625,23 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
         let valueMultiplier = 1;
         switch (entry.name) {
           case 'PhysicalDamage':
-            fieldName = 'DamagePhys';
+            fieldName = 'pDmg';
             break;
           case 'MagicalDamage':
-            fieldName = 'DamageMag';
+            fieldName = 'mDmg';
             break;
           case 'Defense':
-            fieldName = 'DefensePhys';
+            fieldName = 'pDef';
             break;
           case 'MagicDefense':
-            fieldName = 'DefenseMag';
+            fieldName = 'mDef';
             break;
           case 'Delay':
-            fieldName = 'DelayMs';
+            fieldName = 'delay';
             valueMultiplier = 1000;
             break;
           default:
-            fieldName = `Stats.${entry.name}.NQ`;
+            fieldName = `stats.${entry.id}`;
             break;
         }
         return {
@@ -673,7 +662,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
         return {
           minMax: true,
           formArray: 'bonuses',
-          name: `Bonuses.${entry.name}.Max`,
+          name: `bonuses.${entry.id}.Max`,
           entryName: entry.name,
           value: {
             min: entry.min,
@@ -686,7 +675,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.elvlMax.value < this.curMaxLevel || controls.elvlMin.value > 0) {
       filters.push({
         minMax: true,
-        name: 'LevelEquip',
+        name: 'elvl',
         value: {
           min: controls.elvlMin.value,
           max: controls.elvlMax.value
@@ -696,7 +685,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.clvlMax.value < this.curMaxLevel || controls.clvlMin.value > 0) {
       filters.push({
         minMax: true,
-        name: 'Recipes.Level',
+        name: 'clvl',
         value: {
           min: controls.clvlMin.value,
           max: controls.clvlMax.value
@@ -706,7 +695,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.jobCategories.value && controls.jobCategories.value.length > 0) {
       filters.push(...controls.jobCategories.value.map(jobId => {
           return {
-            name: `ClassJobCategory.${this.gt.getJob(jobId).abbreviation}`,
+            name: `cjc.${this.gt.getJob(jobId).abbreviation}`,
             value: 1
           };
         })
@@ -714,20 +703,20 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     }
     if (controls.craftJob.value) {
       filters.push({
-        name: 'Recipes.ClassJobID',
+        name: 'craftJob',
         value: controls.craftJob.value
       });
     }
     if (controls.collectable.value) {
       filters.push({
-        name: 'AlwaysCollectable',
+        name: 'collectible',
         value: 1
       });
     }
     if (controls.itemCategories.value && controls.itemCategories.value.length > 0) {
       filters.push({
         array: true,
-        name: 'ItemUICategoryTargetID',
+        name: 'category',
         value: controls.itemCategories.value
       });
     }
