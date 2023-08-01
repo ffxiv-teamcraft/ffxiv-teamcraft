@@ -26,6 +26,7 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzSliderModule } from 'ng-zorro-antd/slider';
 import { NodeDetailsModule } from '../../modules/node-details/node-details.module';
+import { CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
 
 const routes: Routes = [
   {
@@ -66,7 +67,9 @@ const routes: Routes = [
     ListModule,
     NzAvatarModule,
     NzSliderModule,
-    NodeDetailsModule
+    NodeDetailsModule,
+    CdkDropList,
+    CdkDrag
   ],
   declarations: [AlarmsPageComponent, AlarmsOptionsPopupComponent]
 })
