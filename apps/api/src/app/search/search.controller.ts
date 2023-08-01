@@ -33,12 +33,21 @@ export class SearchController {
           if (value === '' && operator !== '!!') {
             return null;
           }
-          if (value === 'false') {
-            processedValue = false;
-          } else if (value === 'true') {
-            processedValue = true;
-          } else if (!isNaN(Number(value))) {
-            processedValue = +value;
+          if (operator === '|=') {
+            processedValue = value.split(';').map(v => {
+              if (isNaN(Number(v))) {
+                return v;
+              }
+              return +v;
+            });
+          } else {
+            if (value === 'false') {
+              processedValue = false;
+            } else if (value === 'true') {
+              processedValue = true;
+            } else if (!isNaN(Number(value))) {
+              processedValue = +value;
+            }
           }
           return {
             field,

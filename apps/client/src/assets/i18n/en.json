@@ -206,6 +206,7 @@
     "Visibility": "Visibility",
     "Public": "Public",
     "Private": "Private",
+    "Pagination_text": "{{start}}-{{end}} of {{total}} items",
     "DAYS": {
       "Monday": "Monday",
       "Tuesday": "Tuesday",

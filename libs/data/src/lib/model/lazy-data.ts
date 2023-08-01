@@ -281,6 +281,7 @@ export interface LazyData {
   treasures: Array<LazyTreasure>;
   tribes: Record<number, LazyTribe>;
   tripleTriadRules: Record<number, LazyTripleTriadRule>;
+  uiCategories: Record<number, number>;
   usedInQuests: Record<number, number[]>;
   ventureSources: Record<number, number[]>;
   ventures: Record<number, LazyVenture>;

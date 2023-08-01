@@ -52,6 +52,7 @@ export class ItemsExtractor extends AbstractExtractor {
     const extractableItems = {};
     const aetherialReduce = {};
     const collectableFlags = {};
+    const uiCategories = {};
 
     combineLatest([
       this.getSheet<any>(xiv, 'Item',
@@ -59,7 +60,7 @@ export class ItemsExtractor extends AbstractExtractor {
           'IsUnique', 'IsUntradable', 'MaterializeType', 'CanBeHq', 'Rarity', 'Icon', 'LevelItem#', 'LevelEquip', 'StackSize',
           'EquipSlotCategory#', 'ClassJobCategory', 'MateriaSlotCount', 'BaseParamModifier', 'IsAdvancedMeldingPermitted',
           'ItemSearchCategory#', 'ItemSeries#', 'BaseParam#', 'BaseParamValue', 'BaseParamSpecial#', 'BaseParamValueSpecial', 'ItemAction',
-          'Delayms'], false, 1),
+          'Delayms', 'ItemUICategory#'], false, 1),
       this.getNonXivapiUrl('https://raw.githubusercontent.com/xivapi/ffxiv-datamining-patches/master/patchdata/Item.json'),
       this.getSheet(xiv, 'ItemFood', ['Value', 'ValueHQ', 'BaseParam', 'IsRelative', 'Max', 'MaxHQ'])
     ])
@@ -76,6 +77,7 @@ export class ItemsExtractor extends AbstractExtractor {
             ja: item.Name_ja,
             fr: item.Name_fr
           };
+          uiCategories[item.index] = item.ItemUICategory;
           rarities[item.index] = item.Rarity;
           ilvls[item.index] = item.LevelItem;
           stackSizes[item.index] = item.StackSize;
@@ -228,6 +230,7 @@ export class ItemsExtractor extends AbstractExtractor {
         this.persistToJsonAsset('ilvls', ilvls);
         this.persistToJsonAsset('stack-sizes', stackSizes);
         this.persistToJsonAsset('equipment', equipment);
+        this.persistToJsonAsset('ui-categories', uiCategories);
         this.persistToJsonAsset('item-main-attributes', itemMainAttributes);
         this.persistToJsonAsset('item-melding-data', itemMeldingData);
         this.persistToJsonAsset('hq-flags', hqFlags);

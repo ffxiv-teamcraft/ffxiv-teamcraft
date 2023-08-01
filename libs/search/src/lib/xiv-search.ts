@@ -1,5 +1,5 @@
 // eslint-disable-next-line @nx/enforce-module-boundaries
-import { I18nName, LazyDataKey, LazyDataSearchIndexKey, LazyDataWithExtracts, SearchType } from '@ffxiv-teamcraft/types';
+import { I18nName, LazyDataKey, LazyDataSearchIndexKey, LazyDataWithExtracts, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
 import { combineLatest, Observable, of, switchMap } from 'rxjs';
 import { readFile } from 'fs';
 import { join } from 'path';
@@ -70,8 +70,7 @@ export class XIVSearch {
     );
   }
 
-  // TODO create a proper SearchResult typing and signature overrides here
-  public search(content: SearchType, query: string, filters: XIVSearchFilter[] = []): any[] {
+  public search(content: SearchType, query: string, filters: XIVSearchFilter[] = []): SearchResult[] {
     if (query.length === 0 && filters.length === 0) {
       return [];
     }
@@ -82,7 +81,7 @@ export class XIVSearch {
     if (query.length === 0) {
       results = this.rawData[content];
     } else {
-      results = this.indexes[content].search<true>(query, 0, { enrich: true })
+      results = this.indexes[content].search<true>(query, 1000, { enrich: true, limit: Infinity })
         .map(res => {
           return res.result.map(row => {
             return row.doc;
@@ -96,7 +95,17 @@ export class XIVSearch {
           return this.doCompare(get(doc, f.field), f.operator, f.value);
         });
       })
-      .map(doc => doc.data);
+      .map(doc => {
+        return {
+          en: doc.en,
+          de: doc.de,
+          ja: doc.ja,
+          fr: doc.fr,
+          ko: doc.ko,
+          zh: doc.zh,
+          ...doc.data
+        };
+      });
   }
 
   private doCompare(value: any, operator: XIVSearchFilter['operator'], filterValue?: XIVSearchFilter['value']): boolean {
@@ -114,7 +123,7 @@ export class XIVSearch {
       case '!!':
         return value == null;
       case '|=':
-        return (filterValue as ArrayIncludesXIVSearchFilter['value']).includes(value);
+        return (filterValue as ArrayIncludesXIVSearchFilter['value']).includes(+value);
     }
   }
 

@@ -150,6 +150,7 @@ export const LazyDataKeys = [
   'treasures',
   'tribes',
   'tripleTriadRules',
+  'uiCategories',
   'usedInQuests',
   'ventureSources',
   'ventures',

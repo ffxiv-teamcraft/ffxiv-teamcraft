@@ -65,6 +65,9 @@ export class ItemIconComponent {
       if (icon && icon.toString() === icon && icon.toString().indexOf('custom/') > -1 && !icon.toString().startsWith('t/')) {
         return of(icon);
       }
+      if (icon?.toString().startsWith('https://')) {
+        return of(icon);
+      }
       return this.lazyData.getRow('itemIcons', itemId).pipe(
         map(xivapiIcon => {
           if (xivapiIcon) {

@@ -17,7 +17,7 @@ export const lazyFilesList = {
   },
   'actionSearch': {
     'fileName': 'action-search.index',
-    'hashedFileName': 'action-search.3fb76780866ce79184f815dfde4422f07d3ade53.index'
+    'hashedFileName': 'action-search.77dd5e5cbf633156445e170e39db33090335acc0.index'
   },
   'actionTimeline': {
     'fileName': 'action-timeline.json',
@@ -329,7 +329,7 @@ export const lazyFilesList = {
   },
   'itemSearch': {
     'fileName': 'item-search.index',
-    'hashedFileName': 'item-search.4b5abe0c0a3cfd3f37ba2d445568c0d6234fea47.index'
+    'hashedFileName': 'item-search.4c0f70c3550176829b682c7dc0878902362285ff.index'
   },
   'itemSeries': {
     'fileName': 'item-series.json',
@@ -549,11 +549,11 @@ export const lazyFilesList = {
   },
   'statusSearch': {
     'fileName': 'status-search.index',
-    'hashedFileName': 'status-search.3ec353de1245e641c9d42c827aa66ce40cb9b0e8.index'
+    'hashedFileName': 'status-search.30b2cd74a476f731fc9ff6f5e244b73a229fb979.index'
   },
   'statuses': {
     'fileName': 'statuses.json',
-    'hashedFileName': 'statuses.baa9ff162a05a1688f56c42888a0772b886b4a69.json'
+    'hashedFileName': 'statuses.aed2eb7f2f55a34a52d7214dfa7be22413ffba5f.json'
   },
   'submarineParts': {
     'fileName': 'submarine-parts.json',
@@ -602,6 +602,10 @@ export const lazyFilesList = {
   'tripleTriadRules': {
     'fileName': 'triple-triad-rules.json',
     'hashedFileName': 'triple-triad-rules.91c64a1c0d616c54e43064535023080c1daef0c2.json'
+  },
+  'uiCategories': {
+    'fileName': 'ui-categories.json',
+    'hashedFileName': 'ui-categories.b934d6c24dc80c390993cf87c0df011a5eb46849.json'
   },
   'usedInQuests': {
     'fileName': 'used-in-quests.json',

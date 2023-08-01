@@ -173,7 +173,6 @@ describe('search', () => {
         // Should at least return classical cane
         const results = search.search(SearchType.ITEM, '', [
           {
-            // 70 is Craftsmanship
             field: 'category',
             operator: '|=',
             value: [1, 2, 3]
@@ -323,5 +322,29 @@ describe('search', () => {
         done();
       });
     }, 0);
+
+
+    it('should support every filter that TC has to offer for actions', () => {
+      expect(search.search(SearchType.ACTION, '', [
+        {
+          field: 'lvl',
+          operator: '>=',
+          value: 90
+        },
+        {
+          field: 'lvl',
+          operator: '<=',
+          value: 90
+        }
+      ]).length).toBeGreaterThan(0);
+      expect(search.search(SearchType.ACTION, '', [
+        {
+          field: 'job',
+          operator: '=',
+          value: 14
+        }
+      ]).length).toBeGreaterThan(0);
+
+  });
   });
 });

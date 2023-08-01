@@ -60,7 +60,7 @@ export class SearchService implements OnApplicationBootstrap {
     }
     if (type === SearchType.ANY) {
       return Object.values(SearchType)
-        .filter(v => !['Recipe', 'Any'].includes(v))
+        .filter(v => !['Recipe', 'Any', 'Lore'].includes(v))
         .map(content => {
           return index.search(content, query, filters)
             .map(row => {

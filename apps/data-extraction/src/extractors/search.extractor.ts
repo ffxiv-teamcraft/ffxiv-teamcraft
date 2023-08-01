@@ -68,6 +68,7 @@ export class SearchExtractor extends AbstractExtractor {
       const stats = this.requireLazyFileByKey('itemStats');
       const patches = this.requireLazyFileByKey('itemPatch');
       const equipment = this.requireLazyFileByKey('equipment');
+      const uiCategories = this.requireLazyFileByKey('uiCategories');
       const bonuses = this.requireLazyFileByKey('itemBonuses');
       const icons = this.requireLazyFileByKey('itemIcons');
       const recipes = this.requireLazyFileByKey('recipesPerItem');
@@ -98,7 +99,7 @@ export class SearchExtractor extends AbstractExtractor {
                 }
               };
             }, {}),
-            category: equipment[+id]?.equipSlotCategory,
+            category: uiCategories[+id],
             cjc: equipment[+id]?.jobs?.reduce((acc, job) => {
               return {
                 ...acc,
@@ -200,8 +201,8 @@ export class SearchExtractor extends AbstractExtractor {
 
   private buildActionIndex(xiv: XivDataService): Observable<unknown> {
     return combineLatest([
-      this.getSheet(xiv, 'Action', ['ClassJob#', 'ClassJobCategory#', 'ClassJobLevel']),
-      this.getSheet(xiv, 'CraftAction', ['ClassJob#', 'ClassJobCategory#', 'ClassJobLevel'])
+      this.getSheet(xiv, 'Action', ['ClassJob#', 'ClassJobCategory#', 'ClassJobLevel#']),
+      this.getSheet(xiv, 'CraftAction', ['ClassJob#', 'ClassJobCategory#', 'ClassJobLevel#'])
     ]).pipe(
       tap(([actions, craftActions]) => {
         const index = [];
@@ -218,14 +219,15 @@ export class SearchExtractor extends AbstractExtractor {
             || craftActions.find(row => row.index === +action.id);
           index.push({
             ...action,
+            id: +action.id,
             lvl: xivAction?.ClassJobLevel,
             job: xivAction?.ClassJob,
             patch: patch,
             data: {
               id: +action.id,
               icon: icons[action.id],
-              job: xivAction.ClassJob || xivAction.ClassJobCategory,
-              level: xivAction.ClassJobLevel
+              job: xivAction?.ClassJob || xivAction?.ClassJobCategory,
+              level: xivAction?.ClassJobLevel
             }
           });
         });
@@ -399,13 +401,20 @@ export class SearchExtractor extends AbstractExtractor {
   private buildStatusIndex(): Observable<unknown> {
     return new Observable(subscriber => {
       const names = this.getExtendedNames<LazyStatus>('statuses');
+      const koDescriptions = this.requireLazyFileByKey('koStatusDescriptions');
+      const zhDescriptions = this.requireLazyFileByKey('zhStatusDescriptions');
       const index = names.map((row) => {
         return {
           ...this.getBaseEntry(row),
           patch: this.findPatch('status', row.id),
           data: {
             id: row.id,
-            icon: row.icon
+            icon: row.icon,
+            description: {
+              ...row.description,
+              ...koDescriptions[row.id],
+              ...zhDescriptions[row.id]
+            }
           }
         };
       });

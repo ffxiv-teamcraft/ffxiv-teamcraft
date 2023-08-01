@@ -240,7 +240,7 @@
                 </ng-container>
               </div>
             </ng-template>
-            <app-search-job-picker formControlName="jobCategories"></app-search-job-picker>
+            <app-search-job-picker formControlName="jobCategories" [single]="searchType === searchTypes.ACTION || searchType === searchTypes.TRAIT || searchType === searchTypes.LEVE"></app-search-job-picker>
           </nz-card>
           <div fxFlexOrder="3" fxFlexOrder.lt-lg="2" *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE"
                class="stats-filters-container" fxFlex="0 1 540px" fxFlex.lt-lg="1 1 auto">
@@ -263,7 +263,7 @@
                       <nz-select nzSize="large" class="stat-selector" formControlName="name" nzShowSearch
                                  [nzPlaceHolder]="'SEARCH.Select_stat' | translate">
                         <nz-option *ngFor="let stat of availableStats" [nzLabel]="stat | i18n"
-                                   [nzValue]="stat.filterName">
+                                   [nzValue]="stat.id">
                         </nz-option>
                       </nz-select>
                     </div>
@@ -390,8 +390,6 @@
         </div>
       </div>
     </ng-container>
-    <nz-alert *ngIf="results.length >= 100" [nzMessage]="'ITEMS.Too_many_results_warning' | translate" class="dark" nzShowIcon
-              nzType="warning"></nz-alert>
     <div *ngIf="patch$ | async as patch" class="patch" fxLayout="column" fxLayoutAlign="center center">
       <a fxLayout="column" fxLayoutAlign="center center" routerLink="/db/{{translate.currentLang}}/patch/{{patch.ID}}">
         <img *ngIf="patch.Banner; else patchName" [alt]="patch | xivapiL12n: 'patchs' | i18n" [src]="patch.Banner" class="patch-banner">
@@ -401,7 +399,12 @@
     </div>
     <div class="results">
       <app-page-loader [loading]="loading">
-        <app-search-result *ngFor="let row of results; trackBy: trackByItem; let odd = odd"
+        <nz-pagination *ngIf="results.total > 50"
+                       class="flex-row align-center justify-center"
+                       (nzPageIndexChange)="page$.next($event)"
+                       [nzPageIndex]="page$ | async" [nzTotal]="results.total"
+                       [nzPageSize]="pageSize" [nzShowTotal]="rangeTemplate"></nz-pagination>
+        <app-search-result *ngFor="let row of results.paginated; trackBy: trackByItem; let odd = odd"
                            [odd]="odd" [row]="row" [currentLang]="translate.currentLang"
                            [selected]="row.selected"
                            (addItemsToList)="addItemsToList([row])"
@@ -410,8 +413,16 @@
                            (amountChanged)="afterAmountChanged($event)"
                            (openInSimulator)="openInSimulator(row.itemId, row.recipe.recipeId)"
         ></app-search-result>
+        <nz-pagination *ngIf="results.total > 50"
+                       class="flex-row align-center justify-center"
+                       (nzPageIndexChange)="page$.next($event)"
+                       [nzPageIndex]="page$ | async" [nzTotal]="results.total"
+                       [nzPageSize]="pageSize" [nzShowTotal]="rangeTemplate"></nz-pagination>
+        <ng-template #rangeTemplate let-range="range" let-total>
+          {{'COMMON.Pagination_text' | translate: {start: range[0], end:range[1], total} }}
+        </ng-template>
       </app-page-loader>
-      <div *ngIf="results.length === 0">
+      <div *ngIf="results.total === 0">
         <app-fullpage-message *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE  || searchType === searchTypes.ANY"
                               height="300px">{{'No_items_found' | translate}}</app-fullpage-message>
         <app-fullpage-message *ngIf="searchType === searchTypes.INSTANCE"

@@ -2,7 +2,7 @@ import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable, of, throttleTime } from 'rxjs';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
-import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, pairwise, skip, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, pairwise, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
@@ -190,7 +190,11 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     map(type => [SearchType.ITEM, SearchType.RECIPE].includes(type))
   );
 
-  results$: Observable<SearchResult[]> = combineLatest([this.query$.pipe(distinctUntilChanged()), this.searchType$, this.filters$, this.sort$, this.searchLang$]).pipe(
+  page$ = new BehaviorSubject(1);
+
+  pageSize = 50;
+
+  results$: Observable<{paginated: SearchResult[], total: number}> = combineLatest([this.query$.pipe(distinctUntilChanged()), this.searchType$, this.filters$, this.sort$, this.searchLang$]).pipe(
     filter(([query, , filters, , lang]) => {
       if (['ko', 'zh'].indexOf(lang.toLowerCase()) > -1) {
         // Chinese and korean characters system use fewer chars for the same thing, filters have to be handled accordingly.
@@ -198,7 +202,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       }
       return query.length > 2 || (lang === 'ja' && query.length > 0) || filters.length > 0;
     }),
-    throttleTime(400, undefined, { leading: true, trailing: false }),
+    debounceTime(500),
     tap(([query, type, filters, [sortBy, sortOrder], lang]) => {
       this.allSelected = false;
       this.showIntro = false;
@@ -233,6 +237,17 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     }),
     switchMap(([query, type, filters, sort]) => {
       return this.data.search(query.trim(), type, filters, sort);
+    }),
+    switchMap((results) => {
+      this.page$.next(1);
+      return this.page$.pipe(
+        map(page => {
+          return {
+            total: results.length,
+            paginated: results.slice(this.pageSize * (page - 1), this.pageSize * page)
+          };
+        })
+      );
     }),
     tap(() => {
       this.loading = false;
@@ -300,7 +315,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       filter(params => {
         return params.query !== undefined && params.type !== undefined;
       }),
-      debounceTime(100),
+      debounceTime(500),
       first(),
       switchMap(params => {
         this.searchType$.next(params.type);
@@ -641,7 +656,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
             valueMultiplier = 1000;
             break;
           default:
-            fieldName = `stats.${entry.id}`;
+            fieldName = `stats.${entry.name}`;
             break;
         }
         return {
@@ -727,7 +742,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     const filters = [];
     if (controls.Patch.value > -1) {
       filters.push({
-        name: 'Patch',
+        name: 'patch',
         value: controls.Patch.value
       });
     }
@@ -739,7 +754,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.lvlMin.value > 0 || controls.lvlMax.value < this.curMaxLevel) {
       filters.push({
         minMax: true,
-        name: 'ContentFinderCondition.ClassJobLevelRequired',
+        name: 'lvl',
         value: {
           min: controls.lvlMin.value,
           max: controls.lvlMax.value
@@ -754,7 +769,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.lvlMin.value > 0 || controls.lvlMax.value < this.curMaxLevel) {
       filters.push({
         minMax: true,
-        name: 'ClassJobLevel',
+        name: 'lvl',
         value: {
           min: controls.lvlMin.value,
           max: controls.lvlMax.value
@@ -764,8 +779,8 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.jobCategories.value && controls.jobCategories.value.length > 0) {
       filters.push(...controls.jobCategories.value.map(jobId => {
           return {
-            name: `ClassJobCategory.${this.gt.getJob(jobId).abbreviation}`,
-            value: 1
+            name: `job`,
+            value: jobId
           };
         })
       );
@@ -778,7 +793,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.lvlMin.value > 0 || controls.lvlMax.value < this.curMaxLevel) {
       filters.push({
         minMax: true,
-        name: 'ClassJobLevel',
+        name: 'lvl',
         value: {
           min: controls.lvlMin.value,
           max: controls.lvlMax.value
@@ -788,8 +803,8 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.jobCategories.value && controls.jobCategories.value.length > 0) {
       filters.push(...controls.jobCategories.value.map(jobId => {
           return {
-            name: `ClassJobCategory.${this.gt.getJob(jobId).abbreviation}`,
-            value: 1
+            name: `job`,
+            value: jobId
           };
         })
       );
@@ -802,7 +817,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.lvlMin.value > 0 || controls.lvlMax.value < this.curMaxLevel) {
       filters.push({
         minMax: true,
-        name: 'Level',
+        name: 'lvl',
         value: {
           min: controls.lvlMin.value,
           max: controls.lvlMax.value
@@ -812,16 +827,12 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.jobCategories.value && controls.jobCategories.value.length > 0) {
       filters.push(...controls.jobCategories.value.map(jobId => {
           return {
-            name: `ClassJobCategory.${this.gt.getJob(jobId).abbreviation}`,
-            value: 1
+            name: `job`,
+            value: jobId
           };
         })
       );
     }
     return filters;
-  }
-
-  changes(...args: any[]): void {
-    console.log(args);
   }
 }

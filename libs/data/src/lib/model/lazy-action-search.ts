@@ -3,7 +3,7 @@ export interface LazyActionSearch {
   de:    string;
   en:    string;
   fr:    string;
-  id:    string;
+  id:    number;
   ja:    string;
   job:   number;
   ko?:   string;

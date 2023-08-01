@@ -63,6 +63,7 @@ import { SeedsExtractor } from './extractors/seeds.extractor';
 import { ItemDetailsExtractExtractor } from './extractors/extracts/item-details-extract.extractor';
 import { GcSupplyExtractor } from './extractors/gc-supply.extractor';
 import { SearchExtractor } from './extractors/search.extractor';
+import { StatusesExtractor } from './extractors/statuses.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -88,7 +89,6 @@ const extractors: AbstractExtractor[] = [
     }
     return row;
   }),
-  new I18nExtractor('Status', 'statuses', 'Name_', { Icon: 'icon' }),
   new I18nExtractor('Achievement', 'achievements', 'Name_', { Icon: 'icon', Item: 'itemReward' }),
   new I18nExtractor('CollectablesShopItemGroup', 'collectables-shop-item-group'),
   new I18nExtractor('HWDGathereInspectTerm', 'hwd-phases'),
@@ -101,6 +101,7 @@ const extractors: AbstractExtractor[] = [
   new I18nExtractor('SubmarineExploration', 'submarine-voyages', 'Destination_', { index: 'id', Location_ja: 'location' }),
   new I18nExtractor('MJICraftworksObjectTheme', 'island-craftworks-theme'),
   new I18nExtractor('ContentType', 'content-type'),
+  new StatusesExtractor(),
   new ItemSeriesExtractor(),
   new TraitsExtractor(),
   new WorldsExtractor(),
@@ -182,6 +183,11 @@ const extractors: AbstractExtractor[] = [
     message: 'Update extracts.json once it\'s done?'
   });
 
+  const runSearchIndexes = new Confirm({
+    name: 'runSearchIndexes',
+    message: 'Update search indexes once it\'s done?'
+  });
+
   if (argv['only']) {
     const only = argv['only'].split(',');
     startExtractors(extractors.filter(e => {
@@ -194,12 +200,13 @@ const extractors: AbstractExtractor[] = [
   } else {
     const selection = await operationsSelection.run();
     const runExtractor = await runExtractors.run();
+    const runSearchIndex = await runSearchIndexes.run();
     startExtractors([
         ...extractors.filter(e => {
           return selection.includes('everything') || selection.includes(e.getName());
         }),
-        new SearchExtractor(),
-        ...(runExtractor ? [new ItemDetailsExtractExtractor()] : [])
+        ...(runExtractor ? [new ItemDetailsExtractExtractor()] : []),
+        ...(runSearchIndex ? [new SearchExtractor()] : [])
       ]
     );
   }
