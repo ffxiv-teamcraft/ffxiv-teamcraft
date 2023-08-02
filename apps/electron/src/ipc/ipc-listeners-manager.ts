@@ -274,6 +274,10 @@ export class IpcListenersManager {
       }
     });
 
+    ipcMain.on('child:new', (event, uri) => {
+      this.mainWindow.createChildWindow(uri || '')
+    });
+
     ipcMain.on('zoom-in', () => {
       const currentzoom = this.mainWindow.win.webContents.getZoomLevel();
       this.mainWindow.win.webContents.setZoomLevel(currentzoom + 1);

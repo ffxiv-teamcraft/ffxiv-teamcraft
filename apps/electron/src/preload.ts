@@ -3,6 +3,7 @@ import { IpcRendererEvent } from 'electron';
 const { contextBridge, ipcRenderer } = require('electron');
 
 const allowedChannels = [
+  'child:new',
   'pcap:status',
   'pcap:restart',
   'pcap:error',

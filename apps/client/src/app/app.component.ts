@@ -87,6 +87,8 @@ export class AppComponent implements OnInit {
 
   public overlay = window.location.href.indexOf('?overlay') > -1;
 
+  public childWindow = this.ipc.isChildWindow;
+
   public newFeatureName = 'allagan-reports';
 
   public availableLanguages = this.settings.availableLocales;
@@ -191,7 +193,7 @@ export class AppComponent implements OnInit {
 
   public desktopLoading$ = new BehaviorSubject(this.platformService.isDesktop() && !this.overlay);
 
-  public showGiveaway = false;
+  public showChildWindowTip = localStorage.getItem('child-window-tip-closed') !== 'true';
 
   UpdaterStatus = UpdaterStatus;
 
@@ -265,11 +267,9 @@ export class AppComponent implements OnInit {
       this.handleKeypressShortcuts(event);
     });
 
-    this.showGiveaway = false;
-
     this.applyTheme(this.settings.theme);
 
-    this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/c/font_931253_ylxiqmgyxl.js' });
+    this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/c/font_931253_yqf3nprxput.js' });
 
     this.time$ = this.reloadTime$.pipe(
       switchMap(() => {
@@ -827,5 +827,14 @@ export class AppComponent implements OnInit {
       document.documentElement.style.setProperty('--sider-trigger-hover-color', theme.triggerHover);
       document.documentElement.style.setProperty('--zero-width-sider-trigger-color', theme.trigger);
     }
+  }
+
+  hideChildWindowTip(): void {
+    this.showChildWindowTip = false;
+    localStorage.setItem('child-window-tip-closed', 'true');
+  }
+
+  newChildWindow(): void {
+    this.ipc.send('child:new', this.router.url);
   }
 }

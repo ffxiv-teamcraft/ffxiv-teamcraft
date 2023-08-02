@@ -25,7 +25,12 @@
             </span>
           </a>
         </div>
-        <div *ngIf="platformService.isDesktop() && newVersionAvailable$ | async" class="update-status">
+        <div *ngIf="platformService.isDesktop()" class="new-window">
+          <button nz-button nz-tooltip [nzTooltipTitle]="'SETTINGS.New_child_window' | translate" (click)="newChildWindow()">
+            <span nz-icon nzIconfont="icon-new-window"></span>
+          </button>
+        </div>
+        <div *ngIf="!childWindow && platformService.isDesktop() && newVersionAvailable$ | async" class="update-status">
           <ng-container *ngIf="checkingForUpdate$ | async as updateStatus">
             <div [ngSwitch]="updateStatus">
               <div *ngSwitchCase="UpdaterStatus.UPDATE_AVAILABLE">
@@ -68,7 +73,7 @@
               </nz-badge>
             </li>
           </ng-container>
-          <li *ngIf="desktop && ipc.pcapToggle">
+          <li *ngIf="desktop && ipc.pcapToggle && !childWindow">
             <ng-template #pcapStatusTpl>
               <div class="flex-row space-between">
                 <div>{{'PACKET_CAPTURE.Pcap' | translate}}</div>
@@ -186,7 +191,7 @@
                 </span>
               </ng-template>
             </span>
-            <div>
+            <div *ngIf="!childWindow">
               <a *ngIf="loggedIn$ | async" nz-menu-item routerLink="/profile">
                 <i nz-icon nzType="idcard"></i>
                 {{'Profile' | translate}}
@@ -269,7 +274,7 @@
             </div>
 
             <div [fxLayout]="settings.compactSidebar?'column':'row'" fxLayoutAlign="center center" fxLayoutGap="5px" class="overlay-buttons"
-                 *ngIf="platformService.isDesktop()">
+                 *ngIf="platformService.isDesktop()&& !childWindow">
               <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'Copy_current_link' | translate"
                       [clipboard]="currentLink">
                 <i nz-icon nzType="share-alt"></i>
@@ -309,100 +314,112 @@
           </div>
         </div>
       </nz-sider>
-      <nz-content  id="scroll-container">
+      <nz-content id="scroll-container">
         <div class="slider" *ngIf="loadingLazyData$ | async">
           <div class="line"></div>
           <div class="subline inc"></div>
           <div class="subline dec"></div>
         </div>
         <div [class.overlay]="overlay" [class.with-clock]="settings.getOverlayClockDisplay(ipc.overlayUri)" class="page-container">
-          <nz-alert *ngIf="(newVersionAvailable$ | async) && !platformService.isDesktop()" [nzMessage]="message" class="new-version-alert"
-                    nzBanner
-                    nzShowIcon
-                    nzType="info">
-            <ng-template #message>
-              {{'UPDATE.New_update_available' | translate}}
-              {{'UPDATE.Web_instructions' | translate}}
-            </ng-template>
-          </nz-alert>
-          <nz-alert *ngIf="ipc.pcapToggle && (pcapOutDated$ | async) && !overlay"
-                    [nzMessage]="'PACKET_CAPTURE.Outdated' | translate"
-                    [nzDescription]="'PACKET_CAPTURE.Outdated_description' | translate"
-                    class="new-version-alert"
-                    nzBanner
-                    nzShowIcon
-                    nzCloseable
-                    nzType="warning">
-          </nz-alert>
-          <nz-alert *ngIf="ipc.pcapToggle && !(loggedIn$ | async)"
-                    [nzMessage]="'PACKET_CAPTURE.Not_as_anonymous' | translate"
-                    [nzDescription]="'PACKET_CAPTURE.Not_as_anonymous_description' | translate"
-                    class="new-version-alert"
-                    nzBanner nzShowIcon nzType="error">
-          </nz-alert>
-          <nz-alert (nzOnClose)="settings.hideRegionBanner = true" *ngIf="!settings.hideRegionBanner && suggestedRegion"
-                    [nzCloseText]="'Close' | translate"
-                    [nzDescription]="description"
-                    [nzMessage]="'SUGGESTED_REGION.Banner_title' | translate: { region: ('SETTINGS.REGIONS.' + suggestedRegion | translate) }"
-                    class="new-version-alert"
-                    nzBanner
-                    nzShowIcon
-                    nzType="info">
-            <ng-template #description>
-              {{'SUGGESTED_REGION.Banner_description' | translate}}<br>
-              <button (click)="changeToSuggestedRegion()" nz-button>
-                {{'SUGGESTED_REGION.Button_label' | translate}}
-              </button>
-            </ng-template>
-          </nz-alert>
-          <nz-alert (nzOnClose)="settings.hideMachinaBanner = true"
-                    *ngIf="platformService.isDesktop() && !settings.hideMachinaBanner && !ipc.pcapToggle"
-                    [nzCloseText]="'Close' | translate"
-                    [nzDescription]="description"
-                    [nzMessage]="'PACKET_CAPTURE.Banner_title' | translate"
-                    class="new-version-alert"
-                    nzBanner
-                    nzShowIcon
-                    nzCloseable
-                    nzType="info">
-            <ng-template #description>
-              {{'PACKET_CAPTURE.Banner_description' | translate}}<br>
-              <i>{{'PACKET_CAPTURE.Banner_description_warning' | translate}}</i><br>
-              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                <button (click)="enablePacketCapture()" nz-button>
-                  {{'PACKET_CAPTURE.Button_label' | translate}}
+          <ng-container *ngIf="!childWindow">
+            <nz-alert *ngIf="(newVersionAvailable$ | async) && !platformService.isDesktop()" [nzMessage]="message" class="new-version-alert"
+                      nzBanner
+                      nzShowIcon
+                      nzType="info">
+              <ng-template #message>
+                {{'UPDATE.New_update_available' | translate}}
+                {{'UPDATE.Web_instructions' | translate}}
+              </ng-template>
+            </nz-alert>
+            <nz-alert *ngIf="ipc.pcapToggle && (pcapOutDated$ | async) && !overlay"
+                      [nzMessage]="'PACKET_CAPTURE.Outdated' | translate"
+                      [nzDescription]="'PACKET_CAPTURE.Outdated_description' | translate"
+                      class="new-version-alert"
+                      nzBanner
+                      nzShowIcon
+                      nzCloseable
+                      nzType="warning">
+            </nz-alert>
+            <nz-alert *ngIf="showChildWindowTip && platformService.isDesktop() && !overlay && !childWindow"
+                      [nzMessage]="'SETTINGS.Child_windows_title' | translate"
+                      [nzDescription]="'SETTINGS.Child_windows_description' | translate"
+                      class="new-version-alert"
+                      nzBanner
+                      nzShowIcon
+                      nzCloseable
+                      (nzOnClose)="hideChildWindowTip()"
+                      nzType="info">
+            </nz-alert>
+            <nz-alert *ngIf="ipc.pcapToggle && !(loggedIn$ | async)"
+                      [nzMessage]="'PACKET_CAPTURE.Not_as_anonymous' | translate"
+                      [nzDescription]="'PACKET_CAPTURE.Not_as_anonymous_description' | translate"
+                      class="new-version-alert"
+                      nzBanner nzShowIcon nzType="error">
+            </nz-alert>
+            <nz-alert (nzOnClose)="settings.hideRegionBanner = true" *ngIf="!settings.hideRegionBanner && suggestedRegion"
+                      [nzCloseText]="'Close' | translate"
+                      [nzDescription]="description"
+                      [nzMessage]="'SUGGESTED_REGION.Banner_title' | translate: { region: ('SETTINGS.REGIONS.' + suggestedRegion | translate) }"
+                      class="new-version-alert"
+                      nzBanner
+                      nzShowIcon
+                      nzType="info">
+              <ng-template #description>
+                {{'SUGGESTED_REGION.Banner_description' | translate}}<br>
+                <button (click)="changeToSuggestedRegion()" nz-button>
+                  {{'SUGGESTED_REGION.Button_label' | translate}}
                 </button>
-                <div>{{'Or' | translate}}</div>
-                <a href="https://wiki.ffxivteamcraft.com/advanced-features/packet-capture">{{'COMMON.Read_more_on_wiki' | translate}}</a>
-              </div>
-            </ng-template>
-          </nz-alert>
-          <ng-container *ngIf="platformService.isDesktop() && ipc.pcapToggle && !overlay">
-            <nz-alert *ngIf="emptyInventory$ | async" [nzDescription]="'PACKET_CAPTURE.Please_zone' | translate"
-                      [nzMessage]="'PACKET_CAPTURE.Empty_inventory' | translate"
+              </ng-template>
+            </nz-alert>
+            <nz-alert (nzOnClose)="settings.hideMachinaBanner = true"
+                      *ngIf="platformService.isDesktop() && !settings.hideMachinaBanner && !ipc.pcapToggle"
+                      [nzCloseText]="'Close' | translate"
+                      [nzDescription]="description"
+                      [nzMessage]="'PACKET_CAPTURE.Banner_title' | translate"
                       class="new-version-alert"
                       nzBanner
                       nzShowIcon
                       nzCloseable
-                      nzType="warning">
+                      nzType="info">
+              <ng-template #description>
+                {{'PACKET_CAPTURE.Banner_description' | translate}}<br>
+                <i>{{'PACKET_CAPTURE.Banner_description_warning' | translate}}</i><br>
+                <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                  <button (click)="enablePacketCapture()" nz-button>
+                    {{'PACKET_CAPTURE.Button_label' | translate}}
+                  </button>
+                  <div>{{'Or' | translate}}</div>
+                  <a href="https://wiki.ffxivteamcraft.com/advanced-features/packet-capture">{{'COMMON.Read_more_on_wiki' | translate}}</a>
+                </div>
+              </ng-template>
             </nz-alert>
-            <nz-alert *ngIf="unknownContentId$ | async" [nzDescription]="'PACKET_CAPTURE.Please_sort' | translate"
-                      [nzMessage]="'PACKET_CAPTURE.Unknown_character' | translate"
-                      class="new-version-alert"
-                      nzBanner
-                      nzShowIcon
-                      nzCloseable
-                      nzType="warning">
-            </nz-alert>
-            <ng-container *ngIf="user$ | async as user">
-              <nz-alert *ngIf="user.cid === undefined && (loggedIn$ | async) && settings.enableUniversalisSourcing && !overlay"
-                        [nzDescription]="'PACKET_CAPTURE.Please_relog' | translate"
-                        [nzMessage]="'PACKET_CAPTURE.No_character_id' | translate"
+            <ng-container *ngIf="platformService.isDesktop() && ipc.pcapToggle && !overlay">
+              <nz-alert *ngIf="emptyInventory$ | async" [nzDescription]="'PACKET_CAPTURE.Please_zone' | translate"
+                        [nzMessage]="'PACKET_CAPTURE.Empty_inventory' | translate"
                         class="new-version-alert"
                         nzBanner
                         nzShowIcon
+                        nzCloseable
                         nzType="warning">
               </nz-alert>
+              <nz-alert *ngIf="unknownContentId$ | async" [nzDescription]="'PACKET_CAPTURE.Please_sort' | translate"
+                        [nzMessage]="'PACKET_CAPTURE.Unknown_character' | translate"
+                        class="new-version-alert"
+                        nzBanner
+                        nzShowIcon
+                        nzCloseable
+                        nzType="warning">
+              </nz-alert>
+              <ng-container *ngIf="user$ | async as user">
+                <nz-alert *ngIf="user.cid === undefined && (loggedIn$ | async) && settings.enableUniversalisSourcing && !overlay"
+                          [nzDescription]="'PACKET_CAPTURE.Please_relog' | translate"
+                          [nzMessage]="'PACKET_CAPTURE.No_character_id' | translate"
+                          class="new-version-alert"
+                          nzBanner
+                          nzShowIcon
+                          nzType="warning">
+                </nz-alert>
+              </ng-container>
             </ng-container>
           </ng-container>
           <nz-spin [nzSize]="'large'" [nzSpinning]="navigating" class="app-container">

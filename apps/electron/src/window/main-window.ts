@@ -12,11 +12,75 @@ export class MainWindow {
 
   public closed$: Subject<void> = new Subject<void>();
 
+  private childWindows: Record<string, BrowserWindow> = {};
+
   public get win(): BrowserWindow {
     return this._win;
   }
 
   public constructor(private store: Store, private overlayManager: OverlayManager, private proxyManager: ProxyManager) {
+  }
+
+  private initWindow(title: string, deepLink = ''): BrowserWindow {
+    const opts: BrowserWindowConstructorOptions = {
+      show: false,
+      backgroundColor: '#2f3237',
+      autoHideMenuBar: true,
+      frame: true,
+      icon: `file://${Constants.BASE_APP_PATH}/assets/app-icon.png`,
+      title: title,
+      webPreferences: {
+        backgroundThrottling: false,
+        sandbox: true,
+        preload: join(__dirname, '../preload.js')
+      }
+    };
+    Object.assign(opts, this.store.get('win:bounds', {}));
+    const win = new BrowserWindow(opts);
+    const proxyRule = this.store.get('proxy-rule', '');
+    const proxyPac = this.store.get('proxy-pac', '');
+    if (proxyRule || proxyPac) {
+      this.proxyManager.setProxy(win, {
+        rule: proxyRule,
+        pac: proxyPac
+      });
+    }
+
+    win.loadURL(`file://${Constants.BASE_APP_PATH}/index.html#${deepLink}`);
+
+    win.on('app-command', (e, cmd) => {
+      if (cmd === 'browser-backward' && win.webContents.canGoBack()) {
+        win.webContents.goBack();
+      }
+      if (cmd === 'browser-forward' && win.webContents.canGoForward()) {
+        win.webContents.goForward();
+      }
+    });
+
+    const handleRedirect = (e, url) => {
+      if (url !== win.webContents.getURL()) {
+        e.preventDefault();
+        if (url.indexOf('ffxivteamcraft.com') > -1 || url.indexOf('index.html#') > -1) {
+
+          url = `${url}${url.indexOf('?') > -1 ? '&' : '?'}noDesktop=true`;
+        }
+        require('electron').shell.openExternal(url);
+      }
+    };
+
+    win.webContents.on('will-navigate', handleRedirect);
+    win.webContents.setWindowOpenHandler(details => {
+      let url = details.url;
+      if (url.indexOf('ffxivteamcraft.com') > -1 || url.indexOf('index.html#') > -1) {
+        this.createChildWindow(url.split('#')[1]);
+        //url = `${url}${url.indexOf('?') > -1 ? '&' : '?'}noDesktop=true`;
+      } else {
+        require('electron').shell.openExternal(url);
+      }
+      return { action: 'deny' };
+    });
+
+    return win;
   }
 
   public whenReady(): void {
@@ -83,34 +147,10 @@ export class MainWindow {
   }
 
   public createWindow(deepLink: string = ''): void {
-    const opts: BrowserWindowConstructorOptions = {
-      show: false,
-      backgroundColor: '#2f3237',
-      autoHideMenuBar: true,
-      frame: true,
-      icon: `file://${Constants.BASE_APP_PATH}/assets/app-icon.png`,
-      title: 'FFXIV Teamcraft',
-      webPreferences: {
-        backgroundThrottling: false,
-        sandbox: true,
-        preload: join(__dirname, '../preload.js')
-      }
-    };
-    Object.assign(opts, this.store.get('win:bounds', {}));
-    this._win = new BrowserWindow(opts);
+    // Make sure we don't keep child flag on main win by mistake !
+    this._win = this.initWindow('FFXIV Teamcraft - Main Window', deepLink.replace('?child=true', ''));
 
-    const proxyRule = this.store.get('proxy-rule', '');
-    const proxyPac = this.store.get('proxy-pac', '');
-    if (proxyRule || proxyPac) {
-      this.proxyManager.setProxy(this.win, {
-        rule: proxyRule,
-        pac: proxyPac
-      });
-    }
-
-    this.win.loadURL(`file://${Constants.BASE_APP_PATH}/index.html#${deepLink}`);
     this.win.setAlwaysOnTop(this.store.get('win:alwaysOnTop', false), 'normal');
-
 
     if (!this.store.get('start-minimized', false)) {
       this.win.show();
@@ -130,16 +170,6 @@ export class MainWindow {
       } catch (e) {
         // Window already destroyed, so we don't care :)
       }
-
-    });
-
-    this.win.on('app-command', (e, cmd) => {
-      if (cmd === 'browser-backward' && this.win.webContents.canGoBack()) {
-        this.win.webContents.goBack();
-      }
-      if (cmd === 'browser-forward' && this.win.webContents.canGoForward()) {
-        this.win.webContents.goForward();
-      }
     });
 
     // save window size and position
@@ -150,10 +180,20 @@ export class MainWindow {
         return false;
       }
       this.overlayManager.persistOverlays();
+      Object.values(this.childWindows).forEach(win => {
+        if (win) {
+          win.close();
+          win.destroy();
+        }
+      });
       this.store.set('win:bounds', this.win.getBounds());
       this.store.set('win:fullscreen', this.win.isMaximized());
       this.store.set('win:alwaysOnTop', this.win.isAlwaysOnTop());
       this.store.set('win:zoom', this.win.webContents.getZoomFactor());
+    });
+
+    this.win.on('page-title-updated', (event, title) => {
+      setTimeout(() => this.win.setTitle(`${title} - Main Window`));
     });
 
     this.win.on('minimize', (event) => {
@@ -163,27 +203,25 @@ export class MainWindow {
       }
     });
 
-    const handleRedirect = (e, url) => {
-      if (url !== this.win.webContents.getURL()) {
-        e.preventDefault();
-        if (url.indexOf('ffxivteamcraft.com') > -1 || url.indexOf('index.html#') > -1) {
-          url = `${url}${url.indexOf('?') > -1 ? '&' : '?'}noDesktop=true`;
-        }
-        require('electron').shell.openExternal(url);
-      }
-    };
-
-    this.win.webContents.on('will-navigate', handleRedirect);
-    this.win.webContents.setWindowOpenHandler(details => {
-      let url = details.url;
-      if (url.indexOf('ffxivteamcraft.com') > -1 || url.indexOf('index.html#') > -1) {
-        url = `${url}${url.indexOf('?') > -1 ? '&' : '?'}noDesktop=true`;
-      }
-      require('electron').shell.openExternal(url);
-      return { action: 'deny' };
-    });
-
     (this.store.get('overlays', []) || []).forEach(overlayUri => this.overlayManager.toggleOverlay({ url: overlayUri }));
+  }
+
+  public createChildWindow(deepLink: string): void {
+    if (!this.childWindows[deepLink]) {
+      const win = this.initWindow('FFXIV Teamcraft', `${deepLink}?child=true`);
+      win.once('ready-to-show', () => {
+        win.show();
+        win.focus();
+        win.webContents.send('displayed', true);
+      });
+      win.webContents.ipc.on('toggle-pcap:get', e => {
+        e.sender.send('toggle-pcap:value', false);
+      });
+      win.on('closed', () => delete this.childWindows[deepLink]);
+      this.childWindows[deepLink] = win;
+    } else {
+      this.childWindows[deepLink].focus();
+    }
   }
 
   public show(): void {

@@ -273,7 +273,7 @@ export const lazyFilesList = {
   },
   'itemCategory': {
     'fileName': 'item-category.json',
-    'hashedFileName': 'item-category.03643e00d3b9480695baf51095ffeb1f0af94420.json'
+    'hashedFileName': 'item-category.3348973115b225819b262c889f8127173f07f304.json'
   },
   'itemEquipSlotCategory': {
     'fileName': 'item-equip-slot-category.json',
