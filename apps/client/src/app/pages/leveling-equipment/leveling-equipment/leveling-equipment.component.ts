@@ -259,7 +259,7 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
       .filter(key => {
         return this.allowItem(+key, filters, inventory, extracts, rarities)
           && (equipSlotCategories[0] !== 12 || +key !== (gearset.ring1?.itemId || gearset.ring2?.itemId) || !equipment[gearset.ring1?.itemId || gearset.ring2?.itemId]?.unique)
-          && (this.getMainStatValue(+key, mainStat, equipSlotCategories, job, itemStats) > 0
+          && +(this.getMainStatValue(+key, mainStat, equipSlotCategories, job, itemStats) > 0
             || this.getSecondaryStatValue(+key, mainStat, equipSlotCategories, job, itemStats)) > 0;
       })
       .sort((a, b) => {

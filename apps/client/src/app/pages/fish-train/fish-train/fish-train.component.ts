@@ -20,11 +20,11 @@ import { PersistedFishTrain } from '../../../model/other/persisted-fish-train';
 import { SoundNotificationService } from '../../../core/sound-notification/sound-notification.service';
 import { SoundNotificationType } from '../../../core/sound-notification/sound-notification-type';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { PushNotificationsService } from 'ng-push-ivy';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { LodestoneService } from '../../../core/api/lodestone.service';
 import { TrainFishingReport } from '../../../core/data-reporting/fishing-report';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { PushNotificationsService } from '../../../core/push-notifications.service';
 
 @Component({
   selector: 'app-fish-train',
@@ -344,15 +344,12 @@ export class FishTrainComponent extends TeamcraftComponent {
         } else {
           this.notificationService.info(title, body);
           if (this.pushNotificationsService.isSupported() && this.pushNotificationsService.permission === 'granted') {
-            return this.pushNotificationsService.create(title,
+            this.pushNotificationsService.create(title,
               {
                 icon: icon,
-                sticky: false,
                 renotify: false,
                 body: body
               }
-            ).pipe(
-              map(() => void 0)
             );
           }
           return of(null);

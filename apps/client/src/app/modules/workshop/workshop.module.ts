@@ -10,7 +10,6 @@ import { WorkshopPanelComponent } from './workshop-panel/workshop-panel.componen
 import { TranslateModule } from '@ngx-translate/core';
 import { ListModule } from '../list/list.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { CoreModule } from '../../core/core.module';
 
 import { CustomLinksModule } from '../custom-links/custom-links.module';
@@ -18,6 +17,7 @@ import { ListPickerModule } from '../list-picker/list-picker.module';
 import { FolderAdditionPickerModule } from '../folder-addition-picker/folder-addition-picker.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { RouterModule } from '@angular/router';
+import { CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
 
 
 @NgModule({
@@ -26,7 +26,6 @@ import { RouterModule } from '@angular/router';
     TranslateModule,
     AntdSharedModule,
     FlexLayoutModule,
-    NgxDnDModule,
     CoreModule,
 
     CustomLinksModule,
@@ -41,6 +40,8 @@ import { RouterModule } from '@angular/router';
     }),
     EffectsModule.forFeature([WorkshopsEffects]),
     RouterModule,
+    CdkDropList,
+    CdkDrag
   ],
   declarations: [WorkshopPanelComponent],
   exports: [WorkshopPanelComponent],

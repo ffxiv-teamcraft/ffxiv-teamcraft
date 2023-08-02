@@ -4,7 +4,6 @@ import { GarlandToolsService } from './api/garland-tools.service';
 import { NgSerializerModule } from '@kaiu/ng-serializer';
 import { I18nPipe } from './i18n.pipe';
 import { TranslateModule } from '@ngx-translate/core';
-import { PushNotificationsModule } from 'ng-push-ivy';
 import { AbstractNotification } from './notification/abstract-notification';
 import { ListCommentNotification } from '../model/notification/list-comment-notification';
 import { PendingChangesService } from './database/pending-changes/pending-changes.service';
@@ -81,7 +80,6 @@ import { PirschEventDirective } from './analytics/pirsch-event.directive';
         }
       }
     ]),
-    PushNotificationsModule,
     MaintenanceModule,
     VersionLockModule,
     RouterModule,
@@ -130,7 +128,6 @@ import { PirschEventDirective } from './analytics/pirsch-event.directive';
   exports: [
     I18nPipe,
     TranslateModule,
-    PushNotificationsModule,
     MaintenanceModule,
     TimerPipe,
     DbButtonComponent,

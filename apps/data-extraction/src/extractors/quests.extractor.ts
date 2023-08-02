@@ -29,7 +29,8 @@ export class QuestsExtractor extends AbstractExtractor {
       `OptionalItemReward.RequiredItem#`,
       `OptionalItemReward.RewardAmount#`,
       `OptionalItemReward.RewardItem#`,
-      `ItemRewardType`
+      `ItemRewardType`,
+      'ClassJobLevel[0]'
     ], false, 1).subscribe(entries => {
       entries.forEach(quest => {
         quests[quest.index] = {
@@ -43,6 +44,10 @@ export class QuestsExtractor extends AbstractExtractor {
           rewards: [],
           trades: []
         };
+
+        if (quest.Icon) {
+          quests[quest.index].banner = quest.Icon;
+        }
 
         if (quest.OtherReward?.index > 0) {
           const itemId = Object.keys(itemNames).find(key => itemNames[key].en === quest.OtherReward.Name_en);

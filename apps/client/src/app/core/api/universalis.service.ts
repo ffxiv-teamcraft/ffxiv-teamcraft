@@ -276,7 +276,7 @@ export class UniversalisService {
                       materiaId: materiaItemId,
                       slotId: index
                     };
-                  }).filter(entry => entry.materiaId > 0),
+                  }).filter(entry => +entry.materiaId > 0),
                   pricePerUnit: item.pricePerUnit,
                   quantity: item.quantity,
                   total: item.quantity * item.pricePerUnit,

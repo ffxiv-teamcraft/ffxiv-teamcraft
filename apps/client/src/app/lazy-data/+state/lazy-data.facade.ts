@@ -149,7 +149,7 @@ export class LazyDataFacade {
     }
     return this.settings.region$.pipe(
       switchMap(region => {
-        return this.getRow(propertyKey, id).pipe(
+        return this.getRow(propertyKey as LazyDataRecordKey, id).pipe(
           map(row => {
             if (!row) {
               return null;
@@ -170,7 +170,7 @@ export class LazyDataFacade {
               case Region.Global:
                 return of(row);
               case Region.China:
-                return this.getRow(this.findPrefixedProperty(propertyKey, 'zh'), id).pipe(
+                return this.getRow(this.findPrefixedProperty(propertyKey, 'zh') as LazyDataRecordKey, id).pipe(
                   map(zhRow => {
                     if (zhRow === null) {
                       return row;
@@ -182,7 +182,7 @@ export class LazyDataFacade {
                   })
                 );
               case Region.Korea:
-                return this.getRow(this.findPrefixedProperty(propertyKey, 'ko'), id).pipe(
+                return this.getRow(this.findPrefixedProperty(propertyKey, 'ko') as LazyDataRecordKey, id).pipe(
                   map(koRow => {
                     if (koRow === null) {
                       return row;
@@ -228,8 +228,7 @@ export class LazyDataFacade {
       de: world,
       ja: world,
       zh: zhWorlds[world] ?? world,
-      ko: koWorlds[world] ?? world,
-      ru: world
+      ko: koWorlds[world] ?? world
     };
   }
 

@@ -190,7 +190,7 @@ export class InventoryComponent {
       first(),
       map(inventory => {
         display.containerIds.forEach(containerId => {
-          const isRetainer = containerId >= 10000 && containerId < 20000;
+          const isRetainer = +containerId >= 10000 && +containerId < 20000;
           if (isRetainer) {
             inventory.items[display.contentId][`${display.containerName}:${containerId}`] = {};
           } else {

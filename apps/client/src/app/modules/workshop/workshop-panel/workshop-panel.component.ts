@@ -166,6 +166,9 @@ export class WorkshopPanelComponent {
     this._workshop.listIds = this._workshop.listIds.filter(key => key !== list.$key);
     this._workshop.listIds.splice(index, 0, list.$key);
     this.workshopsFacade.updateWorkshop(this._workshop);
+    this.listsFacade.pureUpdateList(list.$key, {
+      workshopId: this._workshop.$key
+    });
   }
 
   removeList(list: List): void {

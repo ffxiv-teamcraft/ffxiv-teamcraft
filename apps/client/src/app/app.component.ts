@@ -15,7 +15,7 @@ import { environment } from '../environments/environment';
 import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { IpcService } from './core/electron/ipc.service';
-import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from '@angular/router';
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
@@ -75,7 +75,7 @@ import { gameEnv } from '../environments/game-env';
 import { PacketCaptureStatus } from './core/electron/packet-capture-status';
 import { NzBadgeStatusType } from 'ng-zorro-antd/badge/types';
 import { InventoryCaptureStatus } from './modules/inventory/inventory-capture-status';
-import { PushNotificationsService } from 'ng-push-ivy';
+import { PushNotificationsService } from './core/push-notifications.service';
 
 @Component({
   selector: 'app-root',
@@ -407,7 +407,7 @@ export class AppComponent implements OnInit {
       this.dirtyFacade.hasEntries$.subscribe(dirty => this.dirty = dirty);
 
       // Navigation handle for a proper loader display
-      router.events.subscribe((event: RouterEvent) => {
+      router.events.subscribe((event) => {
         if (event instanceof NavigationStart) {
           this.navigating = true;
         }

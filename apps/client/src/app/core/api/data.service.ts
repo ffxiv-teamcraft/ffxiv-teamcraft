@@ -179,7 +179,6 @@ export class DataService {
     const params: any = {
       query,
       type,
-      region: this.settings.region,
       lang: this.searchLang
     };
     if (filters.length > 0) {

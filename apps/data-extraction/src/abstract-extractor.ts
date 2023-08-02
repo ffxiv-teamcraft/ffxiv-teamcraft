@@ -78,7 +78,15 @@ export abstract class AbstractExtractor {
 
 
   protected requireLazyFileByKey<K extends keyof LazyData>(key: K): LazyData[K] {
-  return JSON.parse(readFileSync(join(AbstractExtractor.assetOutputFolder, `${kebabCase(key)}.json`), 'utf-8'));
+    const kebab = kebabCase(key);
+    let path = join(AbstractExtractor.assetOutputFolder, `${kebabCase(key)}.json`);
+    if (kebab.startsWith('ko-')) {
+      path = join(AbstractExtractor.assetOutputFolder, 'ko', `${kebabCase(key)}.json`);
+    }
+    if (kebab.startsWith('zh-')) {
+      path = join(AbstractExtractor.assetOutputFolder, 'zh', `${kebabCase(key)}.json`);
+    }
+    return JSON.parse(readFileSync(path, 'utf-8'));
   }
 
   protected addQueryParam(url: string, paramName: string, paramValue: string | number): string {
@@ -94,7 +102,11 @@ export abstract class AbstractExtractor {
     this.done$.complete();
   }
 
-  protected getCoords(coords: { x: number, y: number, z: number }, mapData: { size_factor: number, offset_y: number, offset_x: number, offset_z: number }): { x: number, y: number, z: number } {
+  protected getCoords(coords: { x: number, y: number, z: number }, mapData: { size_factor: number, offset_y: number, offset_x: number, offset_z: number }): {
+    x: number,
+    y: number,
+    z: number
+  } {
     const c = mapData.size_factor / 100;
     const x = ((+coords.x) + mapData.offset_x) * c;
     const y = ((+coords.y) + mapData.offset_y) * c;
