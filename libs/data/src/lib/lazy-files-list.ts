@@ -121,7 +121,7 @@ export const lazyFilesList = {
   },
   'equipment': {
     'fileName': 'equipment.json',
-    'hashedFileName': 'equipment.e59a0b23327e4482730b921c63a4119d41809fdb.json'
+    'hashedFileName': 'equipment.2fac6227ac98e3f724f56d22beed56c89b3e614a.json'
   },
   'exVersions': {
     'fileName': 'ex-versions.json',
@@ -297,7 +297,7 @@ export const lazyFilesList = {
   },
   'itemBonuses': {
     'fileName': 'item-bonuses.json',
-    'hashedFileName': 'item-bonuses.44e84f4e881502b1bfa3c00482767a311144e0d4.json'
+    'hashedFileName': 'item-bonuses.5229e174af1ed5cc278804ab4f9db9c351d981f0.json'
   },
   'itemCategory': {
     'fileName': 'item-category.json',
@@ -377,7 +377,7 @@ export const lazyFilesList = {
   },
   'leves': {
     'fileName': 'leves.json',
-    'hashedFileName': 'leves.94447378efd1804ccea8eb289c1529e3d75cd39d.json'
+    'hashedFileName': 'leves.56f022e4b2bc4ce580176a6f1504d3c02b99e5e1.json'
   },
   'logTrackerPageData': {
     'fileName': 'log-tracker-page-data.json',
@@ -469,7 +469,7 @@ export const lazyFilesList = {
   },
   'quests': {
     'fileName': 'quests.json',
-    'hashedFileName': 'quests.36c5e13bc4cf85832fc0946fd2d9ca39d9dc703f.json'
+    'hashedFileName': 'quests.94d9dc312a17c4f0ab89f58c9d2e11602c561f9e.json'
   },
   'races': {
     'fileName': 'races.json',
@@ -553,7 +553,7 @@ export const lazyFilesList = {
   },
   'statuses': {
     'fileName': 'statuses.json',
-    'hashedFileName': 'statuses.aed2eb7f2f55a34a52d7214dfa7be22413ffba5f.json'
+    'hashedFileName': 'statuses.d0ccdadf50380a223e20a45997545516828524bf.json'
   },
   'submarineParts': {
     'fileName': 'submarine-parts.json',
@@ -589,7 +589,7 @@ export const lazyFilesList = {
   },
   'traits': {
     'fileName': 'traits.json',
-    'hashedFileName': 'traits.1e7cadd6729dd377559ccf7b8b06c523dc2d2a7e.json'
+    'hashedFileName': 'traits.785b451bb6a6de09244e5d859a81919b0d119441.json'
   },
   'treasures': {
     'fileName': 'treasures.json',
@@ -605,7 +605,7 @@ export const lazyFilesList = {
   },
   'uiCategories': {
     'fileName': 'ui-categories.json',
-    'hashedFileName': 'ui-categories.b934d6c24dc80c390993cf87c0df011a5eb46849.json'
+    'hashedFileName': 'ui-categories.67332bc3726c96cfe4b0dfb1b309b81d29ab1c66.json'
   },
   'usedInQuests': {
     'fileName': 'used-in-quests.json',

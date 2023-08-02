@@ -4,13 +4,14 @@ import { SearchService } from './search.service';
 import { SearchResult, SearchType } from '@ffxiv-teamcraft/types';
 import { XIVSearchFilter } from '@ffxiv-teamcraft/search';
 import { map } from 'rxjs/operators';
+import { LazyDataLoader } from '../lazy-data/lazy-data.loader';
 
 @Controller({
   path: '/search'
 })
 export class SearchController {
 
-  constructor(private searchService: SearchService) {
+  constructor(private searchService: SearchService, private lazyData: LazyDataLoader) {
   }
 
   @Get()
@@ -59,15 +60,23 @@ export class SearchController {
     } catch (e) {
       console.error(filters, e);
     }
-    return this.searchService.ready$.pipe(
-      map(() => {
+    return this.lazyData.get('extracts').pipe(
+      map((extracts) => {
         return this.searchService.search(
           type,
           query.toLowerCase(),
           transformedFilters,
           lang,
           [sortField, order]
-        );
+        ).map(row => {
+          if ([SearchType.ITEM, SearchType.RECIPE].includes(row.type)) {
+            return {
+              ...row,
+              source: extracts[row.itemId]
+            };
+          }
+          return row;
+        });
       }),
       first()
     );

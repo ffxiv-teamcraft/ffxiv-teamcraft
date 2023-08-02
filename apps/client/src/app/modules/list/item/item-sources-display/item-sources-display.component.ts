@@ -39,6 +39,9 @@ import { shareReplay } from 'rxjs/operators';
 })
 export class ItemSourcesDisplayComponent extends TeamcraftComponent {
   @Input()
+  dbDisplay = false;
+
+  @Input()
   sources: ItemSource[];
 
   @Input()
@@ -172,7 +175,8 @@ export class ItemSourcesDisplayComponent extends TeamcraftComponent {
         nzCloseOnNavigation: true,
         nzComponentParams: {
           item: item,
-          details: getItemSource(item, dataType)
+          details: getItemSource(item, dataType),
+          dbDisplay: true
         },
         nzFooter: null
       });

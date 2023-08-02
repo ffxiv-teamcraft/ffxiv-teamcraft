@@ -12,6 +12,9 @@ export class ItemDetailsPopup<T = any> implements OnInit {
   public item: ListRow;
 
   @Input()
+  public dbDisplay?: boolean;
+
+  @Input()
   public details?: T;
 
   public details$ = new ReplaySubject<T>();
