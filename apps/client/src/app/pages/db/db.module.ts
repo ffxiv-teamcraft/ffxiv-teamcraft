@@ -71,12 +71,11 @@ import { NzCommentModule } from 'ng-zorro-antd/comment';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
 import { SpearfishingSpotComponent } from './spearfishing-spot/spearfishing-spot.component';
-import { ChartModule } from 'angular2-chartjs';
-import 'chartjs-chart-box-and-violin-plot/build/Chart.BoxPlot.js';
 import { FishDataModule } from './fish/fish-data.module';
 import { FishingSpotHooksetDatagridComponent } from './fishing-spot/fishing-spot-hookset-datagrid/fishing-spot-hookset-datagrid.component';
 import { AlarmButtonModule } from '../../modules/alarm-button/alarm-button.module';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { ChartComponent } from './fishing-spot/fishing-spot-bite-times/chart.component';
 
 const routes: Routes = [
   {
@@ -255,6 +254,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     DbComponent,
+    ChartComponent,
     InstanceComponent,
     ItemComponent,
     QuestComponent,
@@ -326,7 +326,6 @@ const routes: Routes = [
     NzCommentModule,
     NzAvatarModule,
     LazyScrollModule,
-    ChartModule,
     FishDataModule,
     AlarmButtonModule,
     NgxEchartsModule
