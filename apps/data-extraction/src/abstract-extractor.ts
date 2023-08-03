@@ -8,6 +8,8 @@ import { XivDataService } from './xiv/xiv-data.service';
 import { ParsedRow } from './xiv/parsed-row';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { kebabCase } from 'lodash';
+import { I18nName, LazyDataI18nKey } from '@ffxiv-teamcraft/types';
+import zlib from 'zlib';
 
 export abstract class AbstractExtractor {
 
@@ -270,9 +272,42 @@ export abstract class AbstractExtractor {
     writeFileSync(join(AbstractExtractor.outputFolder, `${fileName}.ts`), ts);
   }
 
+  protected persistToCompressedJsonAsset(fileName: string, content: any): void {
+    writeFileSync(join(AbstractExtractor.assetOutputFolder, `${fileName}.index`), zlib.deflateSync(JSON.stringify(content), { level: 9 }));
+  }
+
   protected removeIndexes(data: ParsedRow): Omit<ParsedRow, 'index' | 'subIndex' | '__sheet'> {
     const { index, subIndex, __sheet, ...cleaned } = data;
     return cleaned;
+  }
+
+  private findPrefixedProperty(property: LazyDataI18nKey, prefix: 'ko' | 'zh'): LazyDataI18nKey {
+    return `${prefix}${property[0].toUpperCase()}${property.slice(1)}` as unknown as LazyDataI18nKey;
+  }
+
+  protected getExtendedNames<T = unknown>(property: LazyDataI18nKey,
+                                          getNameFn: (data: T) => I18nName = (data) => data as I18nName,
+                                          getPrefixedProperty = this.findPrefixedProperty): Array<T & { id: string } & I18nName> {
+    const baseEntry = this.requireLazyFileByKey(property);
+    const koEntries = this.requireLazyFileByKey(getPrefixedProperty(property, 'ko'));
+    const zhEntries = this.requireLazyFileByKey(getPrefixedProperty(property, 'zh'));
+    return Object.entries<T>(baseEntry as any)
+      .filter(([, entry]) => getNameFn(entry).en?.length > 0)
+      .map(([id, entry]) => {
+        const globalName = getNameFn(entry);
+        const row: T & { id: string } & I18nName = {
+          id,
+          ...globalName,
+          ...entry
+        };
+        if (koEntries[id]) {
+          row.ko = koEntries[id].ko;
+        }
+        if (zhEntries[id]) {
+          row.zh = zhEntries[id].zh;
+        }
+        return row;
+      });
   }
 
   protected sortProperties(data: any): any {

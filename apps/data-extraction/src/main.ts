@@ -64,6 +64,8 @@ import { ItemDetailsExtractExtractor } from './extractors/extracts/item-details-
 import { GcSupplyExtractor } from './extractors/gc-supply.extractor';
 import { SearchExtractor } from './extractors/search.extractor';
 import { StatusesExtractor } from './extractors/statuses.extractor';
+import { ItemsDbPagesExtractor } from './extractors/items-db-pages.extractor';
+import { PatchListExtractor } from './extractors/patch-list-extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -75,6 +77,7 @@ const { MultiSelect, Confirm } = require('enquirer');
 const extractors: AbstractExtractor[] = [
   new I18nExtractor('BNpcName', 'mobs', 'Singular_'),
   new I18nExtractor('ItemUICategory', 'item-category'),
+  new I18nExtractor('ItemSearchCategory', 'search-category'),
   new I18nExtractor('Title', 'titles', 'Masculine_', {}),
   new I18nExtractor('PlaceName', 'places', 'Name_', {}, false, (row, entities) => {
     if (row.ID === 4043) {
@@ -107,6 +110,7 @@ const extractors: AbstractExtractor[] = [
   new WorldsExtractor(),
   new TerritoriesExtractor(),
   new ItemsExtractor(),
+  new ItemsDbPagesExtractor(),
   new ItemLevelExtractor(),
   new BaseParamExtractor(),
   new MateriasExtractor(),
@@ -156,7 +160,8 @@ const extractors: AbstractExtractor[] = [
   new GubalExtractor(),
   new AllaganReportsExtractor(),
   new GatheringSearchIndexExtractor(),
-  new GcSupplyExtractor()
+  new GcSupplyExtractor(),
+  new PatchListExtractor()
 ];
 
 (async () => {

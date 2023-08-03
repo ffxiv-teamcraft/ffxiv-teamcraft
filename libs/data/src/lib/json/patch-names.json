@@ -1,0 +1,698 @@
+{
+  "0": {
+    "en": "Patch 2.0: A Realm Reborn",
+    "de": "Patch 2.0: A Realm Reborn",
+    "ja": "新生エオルゼア 2.0",
+    "fr": "Patch 2.0: A Realm Reborn",
+    "ko": "Patch 2.0: A Realm Reborn",
+    "zh": "Patch 2.0: A Realm Reborn"
+  },
+  "2": {
+    "en": "Patch 2.0: A Realm Reborn",
+    "de": "Patch 2.0: A Realm Reborn",
+    "ja": "新生エオルゼア 2.0",
+    "fr": "Patch 2.0: A Realm Reborn",
+    "ko": "Patch 2.0: A Realm Reborn",
+    "zh": "Patch 2.0: A Realm Reborn"
+  },
+  "3": {
+    "en": "Patch 2.05",
+    "de": "Patch 2.05",
+    "ja": "Patch 2.05",
+    "fr": "Patch 2.05",
+    "ko": "Patch 2.05",
+    "zh": "Patch 2.05"
+  },
+  "4": {
+    "en": "Patch 2.1: A Realm Awoken",
+    "de": "Patch 2.1: A Realm Awoken",
+    "ja": "Patch 2.1: A Realm Awoken",
+    "fr": "Patch 2.1: A Realm Awoken",
+    "ko": "Patch 2.1: A Realm Awoken",
+    "zh": "Patch 2.1: A Realm Awoken"
+  },
+  "5": {
+    "en": "Patch 2.1b: A Realm Awoken",
+    "de": "Patch 2.1b: A Realm Awoken",
+    "ja": "Patch 2.1b: A Realm Awoken",
+    "fr": "Patch 2.1b: A Realm Awoken",
+    "ko": "Patch 2.1b: A Realm Awoken",
+    "zh": "Patch 2.1b: A Realm Awoken"
+  },
+  "6": {
+    "en": "Patch 2.15",
+    "de": "Patch 2.15",
+    "ja": "Patch 2.15",
+    "fr": "Patch 2.15",
+    "ko": "Patch 2.15",
+    "zh": "Patch 2.15"
+  },
+  "7": {
+    "en": "Patch 2.16",
+    "de": "Patch 2.16",
+    "ja": "Patch 2.16",
+    "fr": "Patch 2.16",
+    "ko": "Patch 2.16",
+    "zh": "Patch 2.16"
+  },
+  "8": {
+    "en": "Patch 2.2: Through The Maelstrom",
+    "de": "Patch 2.2: Through The Maelstrom",
+    "ja": "Patch 2.2: Through The Maelstrom",
+    "fr": "Patch 2.2: Through The Maelstrom",
+    "ko": "Patch 2.2: Through The Maelstrom",
+    "zh": "Patch 2.2: Through The Maelstrom"
+  },
+  "9": {
+    "en": "Patch 2.25",
+    "de": "Patch 2.25",
+    "ja": "Patch 2.25",
+    "fr": "Patch 2.25",
+    "ko": "Patch 2.25",
+    "zh": "Patch 2.25"
+  },
+  "10": {
+    "en": "Patch 2.28",
+    "de": "Patch 2.28",
+    "ja": "Patch 2.28",
+    "fr": "Patch 2.28",
+    "ko": "Patch 2.28",
+    "zh": "Patch 2.28"
+  },
+  "11": {
+    "en": "Patch 2.3: Defenders Of Eorzea",
+    "de": "Patch 2.3: Defenders Of Eorzea",
+    "ja": "Patch 2.3: Defenders Of Eorzea",
+    "fr": "Patch 2.3: Defenders Of Eorzea",
+    "ko": "Patch 2.3: Defenders Of Eorzea",
+    "zh": "Patch 2.3: Defenders Of Eorzea"
+  },
+  "12": {
+    "en": "Patch 2.35",
+    "de": "Patch 2.35",
+    "ja": "Patch 2.35",
+    "fr": "Patch 2.35",
+    "ko": "Patch 2.35",
+    "zh": "Patch 2.35"
+  },
+  "13": {
+    "en": "Patch 2.38",
+    "de": "Patch 2.38",
+    "ja": "Patch 2.38",
+    "fr": "Patch 2.38",
+    "ko": "Patch 2.38",
+    "zh": "Patch 2.38"
+  },
+  "14": {
+    "en": "Patch 2.4: Dreams Of Ice",
+    "de": "Patch 2.4: Dreams Of Ice",
+    "ja": "Patch 2.4: Dreams Of Ice",
+    "fr": "Patch 2.4: Dreams Of Ice",
+    "ko": "Patch 2.4: Dreams Of Ice",
+    "zh": "Patch 2.4: Dreams Of Ice"
+  },
+  "15": {
+    "en": "Patch 2.45",
+    "de": "Patch 2.45",
+    "ja": "Patch 2.45",
+    "fr": "Patch 2.45",
+    "ko": "Patch 2.45",
+    "zh": "Patch 2.45"
+  },
+  "16": {
+    "en": "Patch 2.5: Before The Fall",
+    "de": "Patch 2.5: Before The Fall",
+    "ja": "Patch 2.5: Before The Fall",
+    "fr": "Patch 2.5: Before The Fall",
+    "ko": "Patch 2.5: Before The Fall",
+    "zh": "Patch 2.5: Before The Fall"
+  },
+  "17": {
+    "en": "Patch 2.51",
+    "de": "Patch 2.51",
+    "ja": "Patch 2.51",
+    "fr": "Patch 2.51",
+    "ko": "Patch 2.51",
+    "zh": "Patch 2.51"
+  },
+  "18": {
+    "en": "Patch 2.55",
+    "de": "Patch 2.55",
+    "ja": "Patch 2.55",
+    "fr": "Patch 2.55",
+    "ko": "Patch 2.55",
+    "zh": "Patch 2.55"
+  },
+  "19": {
+    "en": "Patch 3.0: Heavensward",
+    "de": "Patch 3.0: Heavensward",
+    "ja": "Patch 3.0: Heavensward",
+    "fr": "Patch 3.0: Heavensward",
+    "ko": "Patch 3.0: Heavensward",
+    "zh": "Patch 3.0: Heavensward"
+  },
+  "20": {
+    "en": "Patch 3.01",
+    "de": "Patch 3.01",
+    "ja": "Patch 3.01",
+    "fr": "Patch 3.01",
+    "ko": "Patch 3.01",
+    "zh": "Patch 3.01"
+  },
+  "21": {
+    "en": "Patch 3.05",
+    "de": "Patch 3.05",
+    "ja": "Patch 3.05",
+    "fr": "Patch 3.05",
+    "ko": "Patch 3.05",
+    "zh": "Patch 3.05"
+  },
+  "22": {
+    "en": "Patch 3.07",
+    "de": "Patch 3.07",
+    "ja": "Patch 3.07",
+    "fr": "Patch 3.07",
+    "ko": "Patch 3.07",
+    "zh": "Patch 3.07"
+  },
+  "23": {
+    "en": "Patch 3.1: As Goes Light, So Goes Darkness",
+    "de": "Patch 3.1: As Goes Light, So Goes Darkness",
+    "ja": "Patch 3.1: As Goes Light, So Goes Darkness",
+    "fr": "Patch 3.1: As Goes Light, So Goes Darkness",
+    "ko": "Patch 3.1: As Goes Light, So Goes Darkness",
+    "zh": "Patch 3.1: As Goes Light, So Goes Darkness"
+  },
+  "24": {
+    "en": "Patch 3.15",
+    "de": "Patch 3.15",
+    "ja": "Patch 3.15",
+    "fr": "Patch 3.15",
+    "ko": "Patch 3.15",
+    "zh": "Patch 3.15"
+  },
+  "25": {
+    "en": "Patch 3.2: The Gears Of Change",
+    "de": "Patch 3.2: The Gears Of Change",
+    "ja": "Patch 3.2: The Gears Of Change",
+    "fr": "Patch 3.2: The Gears Of Change",
+    "ko": "Patch 3.2: The Gears Of Change",
+    "zh": "Patch 3.2: The Gears Of Change"
+  },
+  "26": {
+    "en": "Patch 3.25",
+    "de": "Patch 3.25",
+    "ja": "Patch 3.25",
+    "fr": "Patch 3.25",
+    "ko": "Patch 3.25",
+    "zh": "Patch 3.25"
+  },
+  "27": {
+    "en": "Patch 3.3: Revenge Of The Horde",
+    "de": "Patch 3.3: Revenge Of The Horde",
+    "ja": "Patch 3.3: Revenge Of The Horde",
+    "fr": "Patch 3.3: Revenge Of The Horde",
+    "ko": "Patch 3.3: Revenge Of The Horde",
+    "zh": "Patch 3.3: Revenge Of The Horde"
+  },
+  "28": {
+    "en": "Patch 3.35",
+    "de": "Patch 3.35",
+    "ja": "Patch 3.35",
+    "fr": "Patch 3.35",
+    "ko": "Patch 3.35",
+    "zh": "Patch 3.35"
+  },
+  "30": {
+    "en": "Patch 3.4: Soul Surrender",
+    "de": "Patch 3.4: Soul Surrender",
+    "ja": "Patch 3.4: Soul Surrender",
+    "fr": "Patch 3.4: Soul Surrender",
+    "ko": "Patch 3.4: Soul Surrender",
+    "zh": "Patch 3.4: Soul Surrender"
+  },
+  "31": {
+    "en": "Patch 3.45",
+    "de": "Patch 3.45",
+    "ja": "Patch 3.45",
+    "fr": "Patch 3.45",
+    "ko": "Patch 3.45",
+    "zh": "Patch 3.45"
+  },
+  "32": {
+    "en": "Patch 3.5: The Far Edge Of Fate",
+    "de": "Patch 3.5: The Far Edge Of Fate",
+    "ja": "Patch 3.5: The Far Edge Of Fate",
+    "fr": "Patch 3.5: The Far Edge Of Fate",
+    "ko": "Patch 3.5: The Far Edge Of Fate",
+    "zh": "Patch 3.5: The Far Edge Of Fate"
+  },
+  "33": {
+    "en": "Patch 3.55a",
+    "de": "Patch 3.55a",
+    "ja": "Patch 3.55a",
+    "fr": "Patch 3.55a",
+    "ko": "Patch 3.55a",
+    "zh": "Patch 3.55a"
+  },
+  "34": {
+    "en": "Patch 3.55b",
+    "de": "Patch 3.55b",
+    "ja": "Patch 3.55b",
+    "fr": "Patch 3.55b",
+    "ko": "Patch 3.55b",
+    "zh": "Patch 3.55b"
+  },
+  "35": {
+    "en": "Patch 3.56",
+    "de": "Patch 3.56",
+    "ja": "Patch 3.56",
+    "fr": "Patch 3.56",
+    "ko": "Patch 3.56",
+    "zh": "Patch 3.56"
+  },
+  "36": {
+    "en": "Patch 4.0: Stormblood",
+    "de": "Patch 4.0: Stormblood",
+    "ja": "Patch 4.0: Stormblood",
+    "fr": "Patch 4.0: Stormblood",
+    "ko": "Patch 4.0: Stormblood",
+    "zh": "Patch 4.0: Stormblood"
+  },
+  "37": {
+    "en": "Patch 4.01",
+    "de": "Patch 4.01",
+    "ja": "Patch 4.01",
+    "fr": "Patch 4.01",
+    "ko": "Patch 4.01",
+    "zh": "Patch 4.01"
+  },
+  "38": {
+    "en": "Patch 4.05",
+    "de": "Patch 4.05",
+    "ja": "Patch 4.05",
+    "fr": "Patch 4.05",
+    "ko": "Patch 4.05",
+    "zh": "Patch 4.05"
+  },
+  "39": {
+    "en": "Patch 4.06",
+    "de": "Patch 4.06",
+    "ja": "Patch 4.06",
+    "fr": "Patch 4.06",
+    "ko": "Patch 4.06",
+    "zh": "Patch 4.06"
+  },
+  "40": {
+    "en": "Patch 4.1: The Legend Returns",
+    "de": "Patch 4.1: The Legend Returns",
+    "ja": "Patch 4.1: The Legend Returns",
+    "fr": "Patch 4.1: The Legend Returns",
+    "ko": "Patch 4.1: The Legend Returns",
+    "zh": "Patch 4.1: The Legend Returns"
+  },
+  "41": {
+    "en": "Patch 4.11",
+    "de": "Patch 4.11",
+    "ja": "Patch 4.11",
+    "fr": "Patch 4.11",
+    "ko": "Patch 4.11",
+    "zh": "Patch 4.11"
+  },
+  "42": {
+    "en": "Patch 4.15",
+    "de": "Patch 4.15",
+    "ja": "Patch 4.15",
+    "fr": "Patch 4.15",
+    "ko": "Patch 4.15",
+    "zh": "Patch 4.15"
+  },
+  "43": {
+    "en": "Patch 4.2: Rise of a New Sun",
+    "de": "Patch 4.2: Rise of a New Sun",
+    "ja": "Patch 4.2: Rise of a New Sun",
+    "fr": "Patch 4.2: Rise of a New Sun",
+    "ko": "Patch 4.2: Rise of a New Sun",
+    "zh": "Patch 4.2: Rise of a New Sun"
+  },
+  "44": {
+    "en": "Patch 4.25",
+    "de": "Patch 4.25",
+    "ja": "Patch 4.25",
+    "fr": "Patch 4.25",
+    "ko": "Patch 4.25",
+    "zh": "Patch 4.25"
+  },
+  "45": {
+    "en": "Patch 4.3: Under The Moonlight",
+    "de": "Patch 4.3: Under The Moonlight",
+    "ja": "Patch 4.3: Under The Moonlight",
+    "fr": "Patch 4.3: Under The Moonlight",
+    "ko": "Patch 4.3: Under The Moonlight",
+    "zh": "Patch 4.3: Under The Moonlight"
+  },
+  "46": {
+    "en": "Patch 4.31",
+    "de": "Patch 4.31",
+    "ja": "Patch 4.31",
+    "fr": "Patch 4.31",
+    "ko": "Patch 4.31",
+    "zh": "Patch 4.31"
+  },
+  "47": {
+    "en": "Patch 4.35",
+    "de": "Patch 4.35",
+    "ja": "Patch 4.35",
+    "fr": "Patch 4.35",
+    "ko": "Patch 4.35",
+    "zh": "Patch 4.35"
+  },
+  "48": {
+    "en": "Patch 4.36",
+    "de": "Patch 4.36",
+    "ja": "Patch 4.36",
+    "fr": "Patch 4.36",
+    "ko": "Patch 4.36",
+    "zh": "Patch 4.36"
+  },
+  "49": {
+    "en": "Patch 4.4: Prelude In Violet",
+    "de": "Patch 4.4: Prelude In Violet",
+    "ja": "Patch 4.4: Prelude In Violet",
+    "fr": "Patch 4.4: Prelude In Violet",
+    "ko": "Patch 4.4: Prelude In Violet",
+    "zh": "Patch 4.4: Prelude In Violet"
+  },
+  "50": {
+    "en": "Patch 4.41",
+    "de": "Patch 4.41",
+    "ja": "Patch 4.41",
+    "fr": "Patch 4.41",
+    "ko": "Patch 4.41",
+    "zh": "Patch 4.41"
+  },
+  "51": {
+    "en": "Patch 4.45",
+    "de": "Patch 4.45",
+    "ja": "Patch 4.45",
+    "fr": "Patch 4.45",
+    "ko": "Patch 4.45",
+    "zh": "Patch 4.45"
+  },
+  "52": {
+    "en": "Patch 4.5: A Requiem for Heroes",
+    "de": "Patch 4.5: A Requiem for Heroes",
+    "ja": "Patch 4.5: A Requiem for Heroes",
+    "fr": "Patch 4.5: A Requiem for Heroes",
+    "ko": "Patch 4.5: A Requiem for Heroes",
+    "zh": "Patch 4.5: A Requiem for Heroes"
+  },
+  "54": {
+    "en": "Patch 4.55",
+    "de": "Patch 4.55",
+    "ja": "Patch 4.55",
+    "fr": "Patch 4.55",
+    "ko": "Patch 4.55",
+    "zh": "Patch 4.55"
+  },
+  "55": {
+    "en": "Patch 4.56",
+    "de": "Patch 4.56",
+    "ja": "Patch 4.56",
+    "fr": "Patch 4.56",
+    "ko": "Patch 4.56",
+    "zh": "Patch 4.56"
+  },
+  "56": {
+    "en": "Patch 4.57",
+    "de": "Patch 4.57",
+    "ja": "Patch 4.57",
+    "fr": "Patch 4.57",
+    "ko": "Patch 4.57",
+    "zh": "Patch 4.57"
+  },
+  "57": {
+    "en": "Patch 4.58",
+    "de": "Patch 4.58",
+    "ja": "Patch 4.58",
+    "fr": "Patch 4.58",
+    "ko": "Patch 4.58",
+    "zh": "Patch 4.58"
+  },
+  "58": {
+    "en": "Patch 5.0: ShadowBringers",
+    "de": "Patch 5.0: ShadowBringers",
+    "ja": "Patch 5.0: ShadowBringers",
+    "fr": "Patch 5.0: ShadowBringers",
+    "ko": "Patch 5.0: ShadowBringers",
+    "zh": "Patch 5.0: ShadowBringers"
+  },
+  "59": {
+    "en": "Patch 5.01",
+    "de": "Patch 5.01",
+    "ja": "Patch 5.01",
+    "fr": "Patch 5.01",
+    "ko": "Patch 5.01",
+    "zh": "Patch 5.01"
+  },
+  "60": {
+    "en": "Patch 5.05",
+    "de": "Patch 5.05",
+    "ja": "Patch 5.05",
+    "fr": "Patch 5.05",
+    "ko": "Patch 5.05",
+    "zh": "Patch 5.05"
+  },
+  "61": {
+    "en": "Patch 5.08",
+    "de": "Patch 5.08",
+    "ja": "Patch 5.08",
+    "fr": "Patch 5.08",
+    "ko": "Patch 5.08",
+    "zh": "Patch 5.08"
+  },
+  "62": {
+    "en": "Patch 5.1",
+    "de": "Patch 5.1",
+    "ja": "Patch 5.1",
+    "fr": "Patch 5.1",
+    "ko": "Patch 5.1",
+    "zh": "Patch 5.1"
+  },
+  "63": {
+    "en": "Patch 5.11",
+    "de": "Patch 5.11",
+    "ja": "Patch 5.11",
+    "fr": "Patch 5.11",
+    "ko": "Patch 5.11",
+    "zh": "Patch 5.11"
+  },
+  "64": {
+    "en": "Patch 5.15",
+    "de": "Patch 5.15",
+    "ja": "Patch 5.15",
+    "fr": "Patch 5.15",
+    "ko": "Patch 5.15",
+    "zh": "Patch 5.15"
+  },
+  "65": {
+    "en": "Patch 5.18",
+    "de": "Patch 5.18",
+    "ja": "Patch 5.18",
+    "fr": "Patch 5.18",
+    "ko": "Patch 5.18",
+    "zh": "Patch 5.18"
+  },
+  "66": {
+    "en": "Patch 5.2",
+    "de": "Patch 5.2",
+    "ja": "Patch 5.2",
+    "fr": "Patch 5.2",
+    "ko": "Patch 5.2",
+    "zh": "Patch 5.2"
+  },
+  "67": {
+    "en": "Patch 5.21",
+    "de": "Patch 5.21",
+    "ja": "Patch 5.21",
+    "fr": "Patch 5.21",
+    "ko": "Patch 5.21",
+    "zh": "Patch 5.21"
+  },
+  "68": {
+    "en": "Patch 5.25",
+    "de": "Patch 5.25",
+    "ja": "Patch 5.25",
+    "fr": "Patch 5.25",
+    "ko": "Patch 5.25",
+    "zh": "Patch 5.25"
+  },
+  "69": {
+    "en": "Patch 5.3",
+    "de": "Patch 5.3",
+    "ja": "Patch 5.3",
+    "fr": "Patch 5.3",
+    "ko": "Patch 5.3",
+    "zh": "Patch 5.3"
+  },
+  "70": {
+    "en": "Patch 5.31",
+    "de": "Patch 5.31",
+    "ja": "Patch 5.31",
+    "fr": "Patch 5.31",
+    "ko": "Patch 5.31",
+    "zh": "Patch 5.31"
+  },
+  "71": {
+    "en": "Patch 5.35",
+    "de": "Patch 5.35",
+    "ja": "Patch 5.35",
+    "fr": "Patch 5.35",
+    "ko": "Patch 5.35",
+    "zh": "Patch 5.35"
+  },
+  "72": {
+    "en": "Patch 5.4",
+    "de": "Patch 5.4",
+    "ja": "Patch 5.4",
+    "fr": "Patch 5.4",
+    "ko": "Patch 5.4",
+    "zh": "Patch 5.4"
+  },
+  "73": {
+    "en": "Patch 5.41",
+    "de": "Patch 5.41",
+    "ja": "Patch 5.41",
+    "fr": "Patch 5.41",
+    "ko": "Patch 5.41",
+    "zh": "Patch 5.41"
+  },
+  "74": {
+    "en": "Patch 5.45",
+    "de": "Patch 5.45",
+    "ja": "Patch 5.45",
+    "fr": "Patch 5.45",
+    "ko": "Patch 5.45",
+    "zh": "Patch 5.45"
+  },
+  "75": {
+    "en": "Patch 5.5",
+    "de": "Patch 5.5",
+    "ja": "Patch 5.5",
+    "fr": "Patch 5.5",
+    "ko": "Patch 5.5",
+    "zh": "Patch 5.5"
+  },
+  "76": {
+    "en": "Patch 5.55",
+    "de": "Patch 5.55",
+    "ja": "Patch 5.55",
+    "fr": "Patch 5.55",
+    "ko": "Patch 5.55",
+    "zh": "Patch 5.55"
+  },
+  "77": {
+    "en": "Patch 6.0",
+    "de": "Patch 6.0",
+    "ja": "Patch 6.0",
+    "fr": "Patch 6.0",
+    "ko": "Patch 6.0",
+    "zh": "Patch 6.0"
+  },
+  "78": {
+    "en": "Patch 6.01",
+    "de": "Patch 6.01",
+    "ja": "Patch 6.01",
+    "fr": "Patch 6.01",
+    "ko": "Patch 6.01",
+    "zh": "Patch 6.01"
+  },
+  "79": {
+    "en": "Patch 6.05",
+    "de": "Patch 6.05",
+    "ja": "Patch 6.05",
+    "fr": "Patch 6.05",
+    "ko": "Patch 6.05",
+    "zh": "Patch 6.05"
+  },
+  "80": {
+    "en": "Patch 6.1",
+    "de": "Patch 6.1",
+    "ja": "Patch 6.1",
+    "fr": "Patch 6.1",
+    "ko": "Patch 6.1",
+    "zh": "Patch 6.1"
+  },
+  "81": {
+    "en": "Patch 6.11",
+    "de": "Patch 6.11",
+    "ja": "Patch 6.11",
+    "fr": "Patch 6.11",
+    "ko": "Patch 6.11",
+    "zh": "Patch 6.11"
+  },
+  "82": {
+    "en": "Patch 6.15",
+    "de": "Patch 6.15",
+    "ja": "Patch 6.15",
+    "fr": "Patch 6.15",
+    "ko": "Patch 6.15",
+    "zh": "Patch 6.15"
+  },
+  "83": {
+    "en": "Patch 6.2",
+    "de": "Patch 6.2",
+    "ja": "Patch 6.2",
+    "fr": "Patch 6.2",
+    "ko": "Patch 6.2",
+    "zh": "Patch 6.2"
+  },
+  "84": {
+    "en": "Patch 6.25",
+    "de": "Patch 6.25",
+    "ja": "Patch 6.25",
+    "fr": "Patch 6.25",
+    "ko": "Patch 6.25",
+    "zh": "Patch 6.25"
+  },
+  "85": {
+    "en": "Patch 6.28",
+    "de": "Patch 6.28",
+    "ja": "Patch 6.28",
+    "fr": "Patch 6.28",
+    "ko": "Patch 6.28",
+    "zh": "Patch 6.28"
+  },
+  "86": {
+    "en": "Patch 6.3",
+    "de": "Patch 6.3",
+    "ja": "Patch 6.3",
+    "fr": "Patch 6.3",
+    "ko": "Patch 6.3",
+    "zh": "Patch 6.3"
+  },
+  "87": {
+    "en": "Patch 6.35",
+    "de": "Patch 6.35",
+    "ja": "Patch 6.35",
+    "fr": "Patch 6.35",
+    "ko": "Patch 6.35",
+    "zh": "Patch 6.35"
+  },
+  "88": {
+    "en": "Patch 6.4",
+    "de": "Patch 6.4",
+    "ja": "Patch 6.4",
+    "fr": "Patch 6.4",
+    "ko": "Patch 6.4",
+    "zh": "Patch 6.4"
+  },
+  "89": {
+    "en": "Patch 6.45",
+    "de": "Patch 6.45",
+    "ja": "Patch 6.45",
+    "fr": "Patch 6.45",
+    "ko": "Patch 6.45",
+    "zh": "Patch 6.45"
+  }
+}

@@ -217,7 +217,7 @@ export const lazyFilesList = {
   },
   'gcSupply': {
     'fileName': 'gc-supply.json',
-    'hashedFileName': 'gc-supply.15a28b30719963c2eed576a7c04f64c558344694.json'
+    'hashedFileName': 'gc-supply.c71e508c6ff72ccdd588ddfe26d4e7ca8e771569.json'
   },
   'gilShopNames': {
     'fileName': 'gil-shop-names.json',
@@ -343,6 +343,10 @@ export const lazyFilesList = {
     'fileName': 'item-stats.json',
     'hashedFileName': 'item-stats.8449ee823f1d415b937f2f1605be8c8165c95af2.json'
   },
+  'itemsDatabasePages': {
+    'fileName': 'items-database-pages.json',
+    'hashedFileName': 'items-database-pages.c3dee38e7a3f4fab52323a6fc839c180a0cbc4b9.json'
+  },
   'items': {
     'fileName': 'items.json',
     'hashedFileName': 'items.94a323b234b1b7932b4c2fd235e226178f140fe8.json'
@@ -455,6 +459,10 @@ export const lazyFilesList = {
     'fileName': 'patch-content.json',
     'hashedFileName': 'patch-content.5659b8d1b709c19053aeb75aef5eeb8267ca701d.json'
   },
+  'patchNames': {
+    'fileName': 'patch-names.json',
+    'hashedFileName': 'patch-names.e506ca02ae76817e6cce5506464b6b9cd762702b.json'
+  },
   'places': {
     'fileName': 'places.json',
     'hashedFileName': 'places.8663782c3309c66f6d7362982ed608583f07f7af.json'
@@ -510,6 +518,10 @@ export const lazyFilesList = {
   'scripIndex': {
     'fileName': 'scrip-index.json',
     'hashedFileName': 'scrip-index.a71d193122500aaedaf87d57ca1e936f29917de0.json'
+  },
+  'searchCategory': {
+    'fileName': 'search-category.json',
+    'hashedFileName': 'search-category.935e8754b71db827dd50d4f771d2b78ad9ada2f8.json'
   },
   'seeds': {
     'fileName': 'seeds.json',

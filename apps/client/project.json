@@ -38,7 +38,7 @@
             "output": "/assets/"
           },
           {
-            "glob": "**/*",
+            "glob": "**/*.json",
             "input": "./libs/data/src/lib/json/",
             "output": "/assets/data/"
           },

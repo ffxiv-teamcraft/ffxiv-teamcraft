@@ -525,39 +525,6 @@ export class SearchExtractor extends AbstractExtractor {
     return names.find(name => +name.id === map?.zone);
   }
 
-
-  private getExtendedNames<T = unknown>(property: LazyDataI18nKey,
-                                        getNameFn: (data: T) => I18nName = (data) => data as I18nName): Array<T & { id: string } & I18nName> {
-    const baseEntry = this.requireLazyFileByKey(property);
-    const koEntries = this.requireLazyFileByKey(this.findPrefixedProperty(property, 'ko'));
-    const zhEntries = this.requireLazyFileByKey(this.findPrefixedProperty(property, 'zh'));
-    return Object.entries<T>(baseEntry as any)
-      .filter(([, entry]) => getNameFn(entry).en?.length > 0)
-      .map(([id, entry]) => {
-        const globalName = getNameFn(entry);
-        const row: T & { id: string } & I18nName = {
-          id,
-          ...globalName,
-          ...entry
-        };
-        if (koEntries[id]) {
-          row.ko = koEntries[id].ko;
-        }
-        if (zhEntries[id]) {
-          row.zh = zhEntries[id].zh;
-        }
-        return row;
-      });
-  }
-
-  private findPrefixedProperty(property: LazyDataI18nKey, prefix: 'ko' | 'zh'): LazyDataI18nKey {
-    return `${prefix}${property[0].toUpperCase()}${property.slice(1)}` as unknown as LazyDataI18nKey;
-  }
-
-  protected persistToCompressedJsonAsset(fileName: string, content: any): void {
-    writeFileSync(join(AbstractExtractor.assetOutputFolder, `${fileName}.index`), zlib.deflateSync(JSON.stringify(content), { level: 9 }));
-  }
-
   getName(): string {
     return 'Search Indexes';
   }
