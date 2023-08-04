@@ -45,11 +45,6 @@ export class SearchExtractor extends AbstractExtractor {
     });
   }
 
-  private findPatch(content: keyof LazyPatchContent | 'quest', id: number | string): number {
-    return +Object.entries(this.requireLazyFileByKey('patchContent'))
-      .find(([, value]) => (value[content] || []).includes(+id))?.[0] || 1;
-  }
-
   private getBaseEntry(row: I18nName & { id: string }): I18nName & { id: number } {
     return {
       id: +row.id,

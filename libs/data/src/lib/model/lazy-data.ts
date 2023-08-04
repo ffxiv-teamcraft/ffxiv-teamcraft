@@ -1,5 +1,6 @@
 
 import {LazyAchievementSearch} from './lazy-achievement-search';
+import {LazyAchievementsDatabasePage} from './lazy-achievements-database-page';
 import {LazyAchievement} from './lazy-achievement';
 import {LazyActionSearch} from './lazy-action-search';
 import {LazyAction} from './lazy-action';
@@ -134,6 +135,7 @@ import {LazyZhSubmarineVoyage} from './lazy-zh-submarine-voyage';
 
 export interface LazyData {
   achievementSearch: Array<LazyAchievementSearch>;
+  achievementsDatabasePages: Record<number, LazyAchievementsDatabasePage>;
   achievements: Record<number, LazyAchievement>;
   actionCdGroups: Record<number, number[]>;
   actionIcons: Record<number, string>;

@@ -64,8 +64,9 @@ import { ItemDetailsExtractExtractor } from './extractors/extracts/item-details-
 import { GcSupplyExtractor } from './extractors/gc-supply.extractor';
 import { SearchExtractor } from './extractors/search.extractor';
 import { StatusesExtractor } from './extractors/statuses.extractor';
-import { ItemsDbPagesExtractor } from './extractors/items-db-pages.extractor';
+import { ItemsDbPagesExtractor } from './extractors/db/items-db-pages.extractor';
 import { PatchListExtractor } from './extractors/patch-list-extractor';
+import { AchievementsDbPagesExtractor } from './extractors/db/achievements-db-pages.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -110,7 +111,6 @@ const extractors: AbstractExtractor[] = [
   new WorldsExtractor(),
   new TerritoriesExtractor(),
   new ItemsExtractor(),
-  new ItemsDbPagesExtractor(),
   new ItemLevelExtractor(),
   new BaseParamExtractor(),
   new MateriasExtractor(),
@@ -193,6 +193,16 @@ const extractors: AbstractExtractor[] = [
     message: 'Update search indexes once it\'s done?'
   });
 
+  const runDbUpdates = new Confirm({
+    name: 'runDbUpdates',
+    message: 'Update database pages once it\'s done?'
+  });
+
+  const dbExtractors = [
+    new ItemsDbPagesExtractor(),
+    new AchievementsDbPagesExtractor()
+  ];
+
   if (argv['only']) {
     const only = argv['only'].split(',');
     startExtractors(extractors.filter(e => {
@@ -200,17 +210,20 @@ const extractors: AbstractExtractor[] = [
     }));
   } else if (argv['only-search']) {
     startExtractors([
-      new SearchExtractor()
+      new SearchExtractor(),
+      ...dbExtractors
     ]);
   } else {
     const selection = await operationsSelection.run();
     const runExtractor = await runExtractors.run();
     const runSearchIndex = await runSearchIndexes.run();
+    const runDbUpdate = await runDbUpdates.run();
     startExtractors([
         ...extractors.filter(e => {
           return selection.includes('everything') || selection.includes(e.getName());
         }),
         ...(runExtractor ? [new ItemDetailsExtractExtractor()] : []),
+        ...(runDbUpdate ? dbExtractors : []),
         ...(runSearchIndex ? [new SearchExtractor()] : [])
       ]
     );

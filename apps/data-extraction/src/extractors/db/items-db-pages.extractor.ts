@@ -1,5 +1,5 @@
-import { AbstractExtractor } from '../abstract-extractor';
-import { XivDataService } from '../xiv/xiv-data.service';
+import { AbstractExtractor } from '../../abstract-extractor';
+import { XivDataService } from '../../xiv/xiv-data.service';
 import { omitBy } from 'lodash';
 import { LazyGcSupply } from '@ffxiv-teamcraft/data/model/lazy-gc-supply';
 

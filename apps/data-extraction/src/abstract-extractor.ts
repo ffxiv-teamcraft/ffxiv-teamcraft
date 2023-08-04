@@ -8,8 +8,9 @@ import { XivDataService } from './xiv/xiv-data.service';
 import { ParsedRow } from './xiv/parsed-row';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { kebabCase } from 'lodash';
-import { I18nName, LazyDataI18nKey } from '@ffxiv-teamcraft/types';
+import { I18nName, LazyDataChineseKey, LazyDataI18nKey, LazyDataKoreanKey } from '@ffxiv-teamcraft/types';
 import zlib from 'zlib';
+import { LazyPatchContent } from '@ffxiv-teamcraft/data/model/lazy-patch-content';
 
 export abstract class AbstractExtractor {
 
@@ -286,11 +287,11 @@ export abstract class AbstractExtractor {
   }
 
   protected getExtendedNames<T = unknown>(property: LazyDataI18nKey,
-                                          getNameFn: (data: T) => I18nName = (data) => data as I18nName,
-                                          getPrefixedProperty = this.findPrefixedProperty): Array<T & { id: string } & I18nName> {
+                                          getNameFn: (data: T) => I18nName = (data) => data as I18nName
+  ): Array<T & { id: string } & I18nName> {
     const baseEntry = this.requireLazyFileByKey(property);
-    const koEntries = this.requireLazyFileByKey(getPrefixedProperty(property, 'ko'));
-    const zhEntries = this.requireLazyFileByKey(getPrefixedProperty(property, 'zh'));
+    const koEntries = this.requireLazyFileByKey(this.findPrefixedProperty(property, 'ko'));
+    const zhEntries = this.requireLazyFileByKey(this.findPrefixedProperty(property, 'zh'));
     return Object.entries<T>(baseEntry as any)
       .filter(([, entry]) => getNameFn(entry).en?.length > 0)
       .map(([id, entry]) => {
@@ -308,6 +309,50 @@ export abstract class AbstractExtractor {
         }
         return row;
       });
+  }
+
+  protected extendNames<K extends LazyDataI18nKey>(data: ParsedRow[], sources: {
+    field: string,
+    targetField?: string,
+    koSource: LazyDataKoreanKey,
+    zhSource: LazyDataChineseKey
+  }[]): { row: ParsedRow, extended: any }[] {
+    const preloadedAsianSources = {};
+    sources.forEach(source => {
+      preloadedAsianSources[source.field] = {
+        ko: this.requireLazyFileByKey(source.koSource),
+        zh: this.requireLazyFileByKey(source.zhSource)
+      };
+    });
+    return data
+      .map((row: any) => {
+        const extended = {};
+        sources.forEach(({ field, targetField }) => {
+          if (targetField) {
+            extended[targetField] = {};
+          }
+          const target = targetField ? extended[targetField] : extended;
+          const ko = preloadedAsianSources[field]['ko'][row.index];
+          const zh = preloadedAsianSources[field]['zh'][row.index];
+
+          target.en = row[`${field}_en`];
+          target.de = row[`${field}_de`];
+          target.ja = row[`${field}_ja`];
+          target.fr = row[`${field}_fr`];
+          if (ko) {
+            target.ko = ko.ko;
+          }
+          if (zh) {
+            target.zh = zh.zh;
+          }
+        });
+        return { row, extended };
+      });
+  }
+
+  protected findPatch(content: keyof LazyPatchContent | 'quest', id: number | string): number {
+    return +Object.entries(this.requireLazyFileByKey('patchContent'))
+      .find(([, value]) => (value[content] || []).includes(+id))?.[0] || 1;
   }
 
   protected sortProperties(data: any): any {

@@ -3,6 +3,10 @@ export const lazyFilesList = {
     'fileName': 'achievement-search.index',
     'hashedFileName': 'achievement-search.353bd14c8ea09a29111b983fb87357f6133e4808.index'
   },
+  'achievementsDatabasePages': {
+    'fileName': 'achievements-database-pages.json',
+    'hashedFileName': 'achievements-database-pages.802ea6693ef9d9cf64b0c6e3292e7a050c0008ad.json'
+  },
   'achievements': {
     'fileName': 'achievements.json',
     'hashedFileName': 'achievements.d1e7f5836df03dbd6dff27c1e06c32577d0f6062.json'

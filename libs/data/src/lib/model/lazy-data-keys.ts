@@ -1,5 +1,6 @@
 export const LazyDataKeys = [
   'achievementSearch',
+  'achievementsDatabasePages',
   'achievements',
   'actionCdGroups',
   'actionIcons',
