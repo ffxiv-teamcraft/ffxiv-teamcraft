@@ -2,7 +2,9 @@
 import {LazyAchievementSearch} from './lazy-achievement-search';
 import {LazyAchievementsDatabasePage} from './lazy-achievements-database-page';
 import {LazyAchievement} from './lazy-achievement';
+import {LazyActionCategory} from './lazy-action-category';
 import {LazyActionSearch} from './lazy-action-search';
+import {LazyActionsDatabasePage} from './lazy-actions-database-page';
 import {LazyAction} from './lazy-action';
 import {LazyAetheryte} from './lazy-aetheryte';
 import {LazyAirshipPart} from './lazy-airship-part';
@@ -137,10 +139,12 @@ export interface LazyData {
   achievementSearch: Array<LazyAchievementSearch>;
   achievementsDatabasePages: Record<number, LazyAchievementsDatabasePage>;
   achievements: Record<number, LazyAchievement>;
+  actionCategories: Record<number, LazyActionCategory>;
   actionCdGroups: Record<number, number[]>;
   actionIcons: Record<number, string>;
   actionSearch: Array<LazyActionSearch>;
   actionTimeline: Record<number, string>;
+  actionsDatabasePages: Record<number, LazyActionsDatabasePage>;
   actions: Record<number, LazyAction>;
   aetherialReduce: Record<number, number>;
   aetherytes: Array<LazyAetheryte>;

@@ -29,6 +29,7 @@ export class QuestsExtractor extends AbstractExtractor {
       `OptionalItemReward.RequiredItem#`,
       `OptionalItemReward.RewardAmount#`,
       `OptionalItemReward.RewardItem#`,
+      'ActionReward#',
       `ItemRewardType`,
       'ClassJobLevel[0]'
     ], false, 1).subscribe(entries => {
@@ -44,6 +45,10 @@ export class QuestsExtractor extends AbstractExtractor {
           rewards: [],
           trades: []
         };
+
+        if (quest.ActionReward) {
+          quests[quest.index].action = quest.ActionReward;
+        }
 
         if (quest.Icon) {
           quests[quest.index].banner = quest.Icon;

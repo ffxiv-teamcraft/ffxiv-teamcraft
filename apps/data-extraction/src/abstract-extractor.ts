@@ -316,7 +316,7 @@ export abstract class AbstractExtractor {
     targetField?: string,
     koSource: LazyDataKoreanKey,
     zhSource: LazyDataChineseKey
-  }[]): { row: ParsedRow, extended: any }[] {
+  }[]): { row: any, extended: any }[] {
     const preloadedAsianSources = {};
     sources.forEach(source => {
       preloadedAsianSources[source.field] = {

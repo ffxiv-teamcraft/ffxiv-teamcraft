@@ -5,11 +5,15 @@ export const lazyFilesList = {
   },
   'achievementsDatabasePages': {
     'fileName': 'achievements-database-pages.json',
-    'hashedFileName': 'achievements-database-pages.802ea6693ef9d9cf64b0c6e3292e7a050c0008ad.json'
+    'hashedFileName': 'achievements-database-pages.d4667ddd3634227e732100e207685650316a5793.json'
   },
   'achievements': {
     'fileName': 'achievements.json',
-    'hashedFileName': 'achievements.d1e7f5836df03dbd6dff27c1e06c32577d0f6062.json'
+    'hashedFileName': 'achievements.b924c9a777a81ab452861ed094420f345b7cf136.json'
+  },
+  'actionCategories': {
+    'fileName': 'action-categories.json',
+    'hashedFileName': 'action-categories.19605c5f17b37c566a98b01a6c52cfdce9c0ef73.json'
   },
   'actionCdGroups': {
     'fileName': 'action-cd-groups.json',
@@ -26,6 +30,10 @@ export const lazyFilesList = {
   'actionTimeline': {
     'fileName': 'action-timeline.json',
     'hashedFileName': 'action-timeline.1d20862ce94c3343496ad6eec43dd026db3ab77d.json'
+  },
+  'actionsDatabasePages': {
+    'fileName': 'actions-database-pages.json',
+    'hashedFileName': 'actions-database-pages.de76c38ceae91d5757dbca4916b6fad6b45d0987.json'
   },
   'actions': {
     'fileName': 'actions.json',
@@ -221,7 +229,7 @@ export const lazyFilesList = {
   },
   'gcSupply': {
     'fileName': 'gc-supply.json',
-    'hashedFileName': 'gc-supply.c71e508c6ff72ccdd588ddfe26d4e7ca8e771569.json'
+    'hashedFileName': 'gc-supply.eab0bcd35df73befd86257aa31e843de5b7fc85e.json'
   },
   'gilShopNames': {
     'fileName': 'gil-shop-names.json',
@@ -349,7 +357,7 @@ export const lazyFilesList = {
   },
   'itemsDatabasePages': {
     'fileName': 'items-database-pages.json',
-    'hashedFileName': 'items-database-pages.c3dee38e7a3f4fab52323a6fc839c180a0cbc4b9.json'
+    'hashedFileName': 'items-database-pages.1b19011298b97ffd5e184e0ea6534eda17022337.json'
   },
   'items': {
     'fileName': 'items.json',
@@ -465,7 +473,7 @@ export const lazyFilesList = {
   },
   'patchNames': {
     'fileName': 'patch-names.json',
-    'hashedFileName': 'patch-names.e506ca02ae76817e6cce5506464b6b9cd762702b.json'
+    'hashedFileName': 'patch-names.992334efe35f8823417c5563513f4b0f836879f3.json'
   },
   'places': {
     'fileName': 'places.json',
@@ -481,7 +489,7 @@ export const lazyFilesList = {
   },
   'quests': {
     'fileName': 'quests.json',
-    'hashedFileName': 'quests.94d9dc312a17c4f0ab89f58c9d2e11602c561f9e.json'
+    'hashedFileName': 'quests.4768b7fc684c06a9ee69399b151ec3dad24b8c72.json'
   },
   'races': {
     'fileName': 'races.json',
@@ -525,7 +533,7 @@ export const lazyFilesList = {
   },
   'searchCategory': {
     'fileName': 'search-category.json',
-    'hashedFileName': 'search-category.935e8754b71db827dd50d4f771d2b78ad9ada2f8.json'
+    'hashedFileName': 'search-category.6f56a1fd0ad95940c9aae6c198ea2f3a0af69292.json'
   },
   'seeds': {
     'fileName': 'seeds.json',

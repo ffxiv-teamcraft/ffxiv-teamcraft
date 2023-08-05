@@ -67,6 +67,7 @@ import { StatusesExtractor } from './extractors/statuses.extractor';
 import { ItemsDbPagesExtractor } from './extractors/db/items-db-pages.extractor';
 import { PatchListExtractor } from './extractors/patch-list-extractor';
 import { AchievementsDbPagesExtractor } from './extractors/db/achievements-db-pages.extractor';
+import { ActionsDbPagesExtractor } from './extractors/db/actions-db-pages.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -77,6 +78,7 @@ const { MultiSelect, Confirm } = require('enquirer');
 
 const extractors: AbstractExtractor[] = [
   new I18nExtractor('BNpcName', 'mobs', 'Singular_'),
+  new I18nExtractor('ActionCategory', 'action-categories'),
   new I18nExtractor('ItemUICategory', 'item-category'),
   new I18nExtractor('ItemSearchCategory', 'search-category'),
   new I18nExtractor('Title', 'titles', 'Masculine_', {}),
@@ -161,7 +163,8 @@ const extractors: AbstractExtractor[] = [
   new AllaganReportsExtractor(),
   new GatheringSearchIndexExtractor(),
   new GcSupplyExtractor(),
-  new PatchListExtractor()
+  new PatchListExtractor(),
+  new ActionsDbPagesExtractor()
 ];
 
 (async () => {
