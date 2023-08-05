@@ -314,14 +314,14 @@ export abstract class AbstractExtractor {
   protected extendNames<K extends LazyDataI18nKey>(data: ParsedRow[], sources: {
     field: string,
     targetField?: string,
-    koSource: LazyDataKoreanKey,
-    zhSource: LazyDataChineseKey
+    koSource?: LazyDataKoreanKey,
+    zhSource?: LazyDataChineseKey
   }[]): { row: any, extended: any }[] {
     const preloadedAsianSources = {};
     sources.forEach(source => {
       preloadedAsianSources[source.field] = {
-        ko: this.requireLazyFileByKey(source.koSource),
-        zh: this.requireLazyFileByKey(source.zhSource)
+        ko: source.koSource ? this.requireLazyFileByKey(source.koSource) : null,
+        zh: source.zhSource ? this.requireLazyFileByKey(source.zhSource) : null
       };
     });
     return data
@@ -332,8 +332,8 @@ export abstract class AbstractExtractor {
             extended[targetField] = {};
           }
           const target = targetField ? extended[targetField] : extended;
-          const ko = preloadedAsianSources[field]['ko'][row.index];
-          const zh = preloadedAsianSources[field]['zh'][row.index];
+          const ko = preloadedAsianSources[field]?.['ko']?.[row.index];
+          const zh = preloadedAsianSources[field]?.['zh']?.[row.index];
 
           target.en = row[`${field}_en`];
           target.de = row[`${field}_de`];

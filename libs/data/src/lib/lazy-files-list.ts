@@ -33,7 +33,7 @@ export const lazyFilesList = {
   },
   'actionsDatabasePages': {
     'fileName': 'actions-database-pages.json',
-    'hashedFileName': 'actions-database-pages.f411ec3bc82e31ee23ade49769f776a9bac2c877.json'
+    'hashedFileName': 'actions-database-pages.c65d1a713b429519ff539069015578fd89eeb0fd.json'
   },
   'actions': {
     'fileName': 'actions.json',
@@ -150,6 +150,10 @@ export const lazyFilesList = {
   'fateSources': {
     'fileName': 'fate-sources.json',
     'hashedFileName': 'fate-sources.b43a9be3436eeb68a1a8bbf25f6ba9b82a3b085e.json'
+  },
+  'fatesDatabasePages': {
+    'fileName': 'fates-database-pages.json',
+    'hashedFileName': 'fates-database-pages.8f3a51e98267230be897330d65cfa78edd58c0db.json'
   },
   'fates': {
     'fileName': 'fates.json',

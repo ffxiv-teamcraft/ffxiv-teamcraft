@@ -10,9 +10,6 @@ export class I18nExtractor extends AbstractExtractor {
 
   protected doExtract(xiv: XivDataService): any {
     const entities = {};
-    const transient = xiv.getFromSaintCSV('ActionTransient');
-    // console.log(transient);
-    this.done();
     this.getSheet(xiv, this.contentName, [`${this.nameColumn}*`, ...Object.keys(this.additionalColumns).map(key => key.replace(/_\w+/, ''))], this.startsAt0, 0)
       .subscribe({
         next: rows => {

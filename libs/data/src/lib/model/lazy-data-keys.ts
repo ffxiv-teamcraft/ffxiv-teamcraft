@@ -37,6 +37,7 @@ export const LazyDataKeys = [
   'extractableItems',
   'fateSearch',
   'fateSources',
+  'fatesDatabasePages',
   'fates',
   'fishParameter',
   'fishes',

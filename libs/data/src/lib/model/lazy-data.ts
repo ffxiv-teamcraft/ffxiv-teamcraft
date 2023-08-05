@@ -24,6 +24,7 @@ import {LazyEquipSlotCategory} from './lazy-equip-slot-category';
 import {LazyEquipment} from './lazy-equipment';
 import {LazyExVersion} from './lazy-ex-version';
 import {LazyFateSearch} from './lazy-fate-search';
+import {LazyFatesDatabasePage} from './lazy-fates-database-page';
 import {LazyFate} from './lazy-fate';
 import {LazyFishParameter} from './lazy-fish-parameter';
 import {LazyFishingLogTrackerPageData} from './lazy-fishing-log-tracker-page-data';
@@ -174,6 +175,7 @@ export interface LazyData {
   extractableItems: Record<number, number>;
   fateSearch: Array<LazyFateSearch>;
   fateSources: Record<number, number[]>;
+  fatesDatabasePages: Record<number, LazyFatesDatabasePage>;
   fates: Record<number, LazyFate>;
   fishParameter: Record<number, LazyFishParameter>;
   fishes: Array<number>;
