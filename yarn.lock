@@ -6094,13 +6094,6 @@ algoliasearch@^4.14.2:
     "@algolia/requester-node-http" "4.14.2"
     "@algolia/transporter" "4.14.2"
 
-angular2-chartjs@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/angular2-chartjs/-/angular2-chartjs-0.5.1.tgz#147204c44bfdfe81f1fab946e1610ee0746b49e6"
-  integrity sha512-bxEVxVEv7llMcgwuc9jlc5KmuOEngT7ZlUyCddmsXwQQAahrTeNgFJ1Nc1SVQnq2fl2d8efh6m70DqF5beiA+A==
-  dependencies:
-    chart.js "^2.3.0"
-
 ansi-align@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ansi-align/-/ansi-align-2.0.0.tgz#c36aeccba563b89ceb556f3690f0b1d9e3547f7f"
@@ -7825,7 +7818,7 @@ chardet@^0.7.0:
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
 
-chart.js@^2.3.0, chart.js@^2.8.0, chart.js@^2.9.4:
+chart.js@^2.8.0, chart.js@^2.9.4:
   version "2.9.4"
   resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-2.9.4.tgz#0827f9563faffb2dc5c06562f8eb10337d5b9684"
   integrity sha512-B07aAzxcrikjAPyV+01j7BmOpxtQETxTSlQ26BEYJ+3iUkbNKaOJ/nDbT6JjyqYxseM0ON12COHYdU2cTIjC7A==
