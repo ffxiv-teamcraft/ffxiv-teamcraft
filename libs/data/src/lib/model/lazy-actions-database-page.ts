@@ -30,10 +30,10 @@ export interface LazyActionsDatabasePage {
 }
 
 export interface Description {
-  de:  string;
-  en:  string;
-  fr:  string;
-  ja:  string;
+  de?: string;
+  en?: string;
+  fr?: string;
+  ja?: string;
   ko?: string;
   zh?: string;
 }

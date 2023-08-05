@@ -1,93 +1,93 @@
 {
   "1": {
-    "en": "Auto-attac",
-    "ja": "オートアタッ�",
-    "de": "Auto-Attack",
-    "fr": "Attaque automatiqu"
+    "en": "Auto-attack",
+    "ja": "オートアタック",
+    "de": "Auto-Attacke",
+    "fr": "Attaque automatique"
   },
   "2": {
-    "en": "Spel",
-    "ja": "魔�",
-    "de": "Zaube",
-    "fr": "Sor"
+    "en": "Spell",
+    "ja": "魔法",
+    "de": "Zauber",
+    "fr": "Sort"
   },
   "3": {
-    "en": "Weaponskil",
-    "ja": "ウェポンスキ�",
-    "de": "Waffenfertigkei",
-    "fr": "Technique d'arm"
+    "en": "Weaponskill",
+    "ja": "ウェポンスキル",
+    "de": "Waffenfertigkeit",
+    "fr": "Technique d'arme"
   },
   "4": {
-    "en": "Abilit",
-    "ja": "アビリテ�",
-    "de": "Talen",
-    "fr": "Aptitud"
+    "en": "Ability",
+    "ja": "アビリティ",
+    "de": "Talent",
+    "fr": "Aptitude"
   },
   "5": {
-    "en": "Ite",
-    "ja": "アイテ�",
-    "de": "Gegenstan",
-    "fr": "Obje"
+    "en": "Item",
+    "ja": "アイテム",
+    "de": "Gegenstand",
+    "fr": "Objet"
   },
   "6": {
-    "en": "DoL Abilit",
-    "ja": "採集アビリテ�",
-    "de": "Talent (Sammeln",
-    "fr": "Aptitude de récolt"
+    "en": "DoL Ability",
+    "ja": "採集アビリティ",
+    "de": "Talent (Sammeln)",
+    "fr": "Aptitude de récolte"
   },
   "7": {
-    "en": "DoH Abilit",
-    "ja": "製作アビリテ�",
-    "de": "Talent (Synthese",
-    "fr": "Aptitude d'artisana"
+    "en": "DoH Ability",
+    "ja": "製作アビリティ",
+    "de": "Talent (Synthese)",
+    "fr": "Aptitude d'artisanat"
   },
   "8": {
-    "en": "Even",
-    "ja": "イベン�",
-    "de": "Ereigni",
-    "fr": "Événemen"
+    "en": "Event",
+    "ja": "イベント",
+    "de": "Ereignis",
+    "fr": "Événement"
   },
   "9": {
-    "en": "Limit Brea",
-    "ja": "リミットブレイ�",
-    "de": "Limitrausc",
-    "fr": "Transcendanc"
+    "en": "Limit Break",
+    "ja": "リミットブレイク",
+    "de": "Limitrausch",
+    "fr": "Transcendance"
   },
   "10": {
-    "en": "Syste",
-    "ja": "システ�",
-    "de": "Syste",
-    "fr": "Systèm"
+    "en": "System",
+    "ja": "システム",
+    "de": "System",
+    "fr": "Système"
   },
   "11": {
-    "en": "Syste",
-    "ja": "システ�",
-    "de": "Syste",
-    "fr": "Systèm"
+    "en": "System",
+    "ja": "システム",
+    "de": "System",
+    "fr": "Système"
   },
   "12": {
-    "en": "Moun",
-    "ja": "マウン�",
-    "de": "Reittie",
-    "fr": "Montur"
+    "en": "Mount",
+    "ja": "マウント",
+    "de": "Reittier",
+    "fr": "Monture"
   },
   "13": {
-    "en": "Specia",
-    "ja": "EXアクショ�",
-    "de": "Extrakommand",
-    "fr": "Action spécial"
+    "en": "Special",
+    "ja": "EXアクション",
+    "de": "Extrakommando",
+    "fr": "Action spéciale"
   },
   "14": {
-    "en": "Item Manipulatio",
-    "ja": "アイテム操�",
-    "de": "Umgestaltun",
-    "fr": "Manipulation d'obje"
+    "en": "Item Manipulation",
+    "ja": "アイテム操作",
+    "de": "Umgestaltung",
+    "fr": "Manipulation d'objet"
   },
   "15": {
-    "en": "Limit Brea",
-    "ja": "リミットブレイ�",
-    "de": "Limitrausc",
-    "fr": "Transcendanc"
+    "en": "Limit Break",
+    "ja": "リミットブレイク",
+    "de": "Limitrausch",
+    "fr": "Transcendance"
   },
   "16": {
     "en": "",
@@ -96,10 +96,10 @@
     "fr": ""
   },
   "17": {
-    "en": "Artiller",
-    "ja": "バリス�",
-    "de": "Artilleri",
-    "fr": "Balist"
+    "en": "Artillery",
+    "ja": "バリスタ",
+    "de": "Artillerie",
+    "fr": "Baliste"
   },
   "18": {
     "en": "",

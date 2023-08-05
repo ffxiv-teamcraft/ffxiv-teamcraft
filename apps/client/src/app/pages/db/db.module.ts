@@ -76,6 +76,7 @@ import { FishingSpotHooksetDatagridComponent } from './fishing-spot/fishing-spot
 import { AlarmButtonModule } from '../../modules/alarm-button/alarm-button.module';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { ChartComponent } from './fishing-spot/fishing-spot-bite-times/chart.component';
+import { NzPipesModule } from 'ng-zorro-antd/pipes';
 
 const routes: Routes = [
   {
@@ -328,7 +329,8 @@ const routes: Routes = [
     LazyScrollModule,
     FishDataModule,
     AlarmButtonModule,
-    NgxEchartsModule
+    NgxEchartsModule,
+    NzPipesModule
   ],
   exports: [
     FishBaitsComponent

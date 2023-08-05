@@ -5,15 +5,15 @@ export const lazyFilesList = {
   },
   'achievementsDatabasePages': {
     'fileName': 'achievements-database-pages.json',
-    'hashedFileName': 'achievements-database-pages.d4667ddd3634227e732100e207685650316a5793.json'
+    'hashedFileName': 'achievements-database-pages.9a84dfad360ca00b04488073439c2c216f356791.json'
   },
   'achievements': {
     'fileName': 'achievements.json',
-    'hashedFileName': 'achievements.b924c9a777a81ab452861ed094420f345b7cf136.json'
+    'hashedFileName': 'achievements.d1e7f5836df03dbd6dff27c1e06c32577d0f6062.json'
   },
   'actionCategories': {
     'fileName': 'action-categories.json',
-    'hashedFileName': 'action-categories.19605c5f17b37c566a98b01a6c52cfdce9c0ef73.json'
+    'hashedFileName': 'action-categories.35b4feb743bc4d9de6b8e35771efcc319c7cc338.json'
   },
   'actionCdGroups': {
     'fileName': 'action-cd-groups.json',
@@ -33,7 +33,7 @@ export const lazyFilesList = {
   },
   'actionsDatabasePages': {
     'fileName': 'actions-database-pages.json',
-    'hashedFileName': 'actions-database-pages.de76c38ceae91d5757dbca4916b6fad6b45d0987.json'
+    'hashedFileName': 'actions-database-pages.f411ec3bc82e31ee23ade49769f776a9bac2c877.json'
   },
   'actions': {
     'fileName': 'actions.json',
@@ -489,7 +489,7 @@ export const lazyFilesList = {
   },
   'quests': {
     'fileName': 'quests.json',
-    'hashedFileName': 'quests.4768b7fc684c06a9ee69399b151ec3dad24b8c72.json'
+    'hashedFileName': 'quests.bf92af7cedd9d41fc1efb09ebc3c45141bddac5b.json'
   },
   'races': {
     'fileName': 'races.json',

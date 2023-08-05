@@ -1,7 +1,8 @@
 import { AbstractExtractor } from '../../abstract-extractor';
 import { XivDataService } from '../../xiv/xiv-data.service';
-import { combineLatest } from 'rxjs';
+import { combineLatest, of } from 'rxjs';
 import { omitBy } from 'lodash';
+import { I18nName } from '@ffxiv-teamcraft/types';
 
 export class ActionsDbPagesExtractor extends AbstractExtractor {
   protected doExtract(xiv: XivDataService): void {
@@ -12,7 +13,7 @@ export class ActionsDbPagesExtractor extends AbstractExtractor {
         'IsPlayerAction', 'ClassJobLevel#', 'ClassJob#', 'ActionCategory#',
         'Range', 'EffectRange', 'PrimaryCostType#', 'PrimaryCostValue#', 'Cost#', 'IsPvP', 'PreservesCombo', 'AffectsPosition',
         'ActionProcStatus.Status.Icon', 'ActionProcStatus.Status.Name'], false, 2),
-      this.getSheet<any>(xiv, 'ActionTransient', ['Description']),
+      of(xiv.getFromSaintCSV<{'#': string, Description: I18nName}>('ActionTransient')),
       this.getSheet<any>(xiv, 'CraftAction', ['Name', 'Description', 'Icon']),
       this.getSheet<any>(xiv, 'Trait', ['Name', 'Icon']),
       this.getSheet<any>(xiv, 'TraitTransient', ['Description'])
@@ -20,7 +21,7 @@ export class ActionsDbPagesExtractor extends AbstractExtractor {
       const everyActions = [
         ...this.extendNames(actions.map(action => {
           return {
-            ...(actionTransient.find(t => t.index === action.index) || {}),
+            ...(actionTransient.find(t => +t['#'] === action.index) || {}),
             ...action
           };
         }), [

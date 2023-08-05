@@ -226,6 +226,7 @@
     "copyfiles": "^2.1.0",
     "core-js": "^2.5.4",
     "cors": "^2.8.5",
+    "csv": "^6.3.1",
     "csv-parser": "^3.0.0",
     "cz-conventional-changelog": "^2.1.0",
     "date-fns": "^2.12.0",

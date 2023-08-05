@@ -15,6 +15,7 @@
             </div>
             <div *ngIf="action.patch" class="flex-row align-center gap-5">
               <app-i18n-name content="patchNames" [id]="action.patch"></app-i18n-name>
+              <app-db-button [id]="action.patch" type="patch"></app-db-button>
             </div>
           </div>
         </div>
@@ -26,7 +27,7 @@
         </div>
       </div>
       <div fxFlex="1 1 auto">
-        <p *ngIf="action.description?.en" [innerHTML]="action.description | i18n"></p>
+        <p *ngIf="action.description?.en" [innerHTML]="action.description | i18n | nzSanitizer:'html'"></p>
       </div>
       <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
                         [value]="action"></app-i18n-display>
