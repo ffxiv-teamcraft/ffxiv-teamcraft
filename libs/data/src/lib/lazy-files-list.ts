@@ -235,6 +235,10 @@ export const lazyFilesList = {
     'fileName': 'gathering-search-index.json',
     'hashedFileName': 'gathering-search-index.be537032cf55b21c904e98b4c9e41e87523b0c75.json'
   },
+  'gatheringTypes': {
+    'fileName': 'gathering-types.json',
+    'hashedFileName': 'gathering-types.2a74c9ecedce5c24277a1cce7bd26fdb86f8b772.json'
+  },
   'gcNames': {
     'fileName': 'gc-names.json',
     'hashedFileName': 'gc-names.be23c8364d59e60ba9d6ae6d8d2e5ded6117e4bc.json'
@@ -466,6 +470,10 @@ export const lazyFilesList = {
   'monsters': {
     'fileName': 'monsters.json',
     'hashedFileName': 'monsters.db614e2f4462faae983d0716114c45b781b56b6f.json'
+  },
+  'nodesDatabasePages': {
+    'fileName': 'nodes-database-pages.json',
+    'hashedFileName': 'nodes-database-pages.8c1cd45850b15a8f50f021197c022d20639f81ce.json'
   },
   'nodes': {
     'fileName': 'nodes.json',

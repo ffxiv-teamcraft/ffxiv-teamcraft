@@ -72,6 +72,7 @@ import { FatesDatabasePagesExtractor } from './extractors/db/fates-database-page
 import { FishingSpotsDatabasePagesExtractor } from './extractors/db/fishing-spots-database-pages.extractor';
 import { LevesDatabasePagesExtractor } from './extractors/db/leves-database-pages.extractor';
 import { MobsDatabasePagesExtractor } from './extractors/db/mobs-database-pages.extractor';
+import { NodesDatabasePagesExtractor } from './extractors/db/nodes-database-pages.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -83,6 +84,7 @@ const { MultiSelect, Confirm } = require('enquirer');
 const extractors: AbstractExtractor[] = [
   new I18nExtractor('BNpcName', 'mobs', 'Singular_'),
   new I18nExtractor('ActionCategory', 'action-categories'),
+  new I18nExtractor('GatheringType', 'gathering-types'),
   new I18nExtractor('ItemUICategory', 'item-category'),
   new I18nExtractor('EventItem', 'event-items', 'Name_', { Icon: 'icon' }),
   new I18nExtractor('JournalGenre', 'journal-genre'),
@@ -213,7 +215,8 @@ const extractors: AbstractExtractor[] = [
     new FatesDatabasePagesExtractor(),
     new FishingSpotsDatabasePagesExtractor(),
     new LevesDatabasePagesExtractor(),
-    new MobsDatabasePagesExtractor()
+    new MobsDatabasePagesExtractor(),
+    new NodesDatabasePagesExtractor()
   ];
 
   if (argv['only']) {
