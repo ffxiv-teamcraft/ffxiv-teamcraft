@@ -142,6 +142,16 @@ export abstract class AbstractExtractor {
     return res$.asObservable();
   }
 
+  protected findZoneName(names: Array<I18nName & { id: string }>, zoneId: number, mapId: number): I18nName & { id: string } {
+    const zoneMatch = names.find(name => +name.id === zoneId);
+    if (zoneMatch) {
+      return zoneMatch;
+    }
+    const maps = this.requireLazyFileByKey('mapEntries');
+    const map = maps.find(m => m.id === mapId);
+    return names.find(name => +name.id === map?.zone);
+  }
+
   private hashString(str: string): string {
     let hash = 0, i, chr;
     if (str.length === 0) return hash.toString(16);

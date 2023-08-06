@@ -183,6 +183,10 @@ export const lazyFilesList = {
     'fileName': 'fishing-spot-search.index',
     'hashedFileName': 'fishing-spot-search.010e68b293df6c254e96bc132ea40455337bec11.index'
   },
+  'fishingSpotsDatabasePages': {
+    'fileName': 'fishing-spots-database-pages.json',
+    'hashedFileName': 'fishing-spots-database-pages.5c0d353f7769632d6b2de99c237e11d4caeae2f2.json'
+  },
   'fishingSpots': {
     'fileName': 'fishing-spots.json',
     'hashedFileName': 'fishing-spots.930b2fca1e8f2f9c92fcc3c434a1366d36d010af.json'

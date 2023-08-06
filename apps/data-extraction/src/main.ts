@@ -69,6 +69,7 @@ import { PatchListExtractor } from './extractors/patch-list-extractor';
 import { AchievementsDbPagesExtractor } from './extractors/db/achievements-db-pages.extractor';
 import { ActionsDbPagesExtractor } from './extractors/db/actions-db-pages.extractor';
 import { FatesDatabasePagesExtractor } from './extractors/db/fates-database-pages.extractor';
+import { FishingSpotsDatabasePagesExtractor } from './extractors/db/fishing-spots-database-pages.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -165,7 +166,7 @@ const extractors: AbstractExtractor[] = [
   new GatheringSearchIndexExtractor(),
   new GcSupplyExtractor(),
   new PatchListExtractor(),
-  new FatesDatabasePagesExtractor()
+  new FishingSpotsDatabasePagesExtractor()
 ];
 
 (async () => {
@@ -205,7 +206,8 @@ const extractors: AbstractExtractor[] = [
   const dbExtractors = [
     new ItemsDbPagesExtractor(),
     new AchievementsDbPagesExtractor(),
-    new ActionsDbPagesExtractor()
+    new ActionsDbPagesExtractor(),
+    new FatesDatabasePagesExtractor()
   ];
 
   if (argv['only']) {

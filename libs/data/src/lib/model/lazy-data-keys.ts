@@ -45,6 +45,7 @@ export const LazyDataKeys = [
   'fishingLog',
   'fishingSources',
   'fishingSpotSearch',
+  'fishingSpotsDatabasePages',
   'fishingSpots',
   'foods',
   'freeCompanyActions',

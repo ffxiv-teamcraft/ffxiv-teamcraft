@@ -31,6 +31,7 @@ import {LazyFishingLogTrackerPageData} from './lazy-fishing-log-tracker-page-dat
 import {LazyFishingLog} from './lazy-fishing-log';
 import {LazyFishingSource} from './lazy-fishing-source';
 import {LazyFishingSpotSearch} from './lazy-fishing-spot-search';
+import {LazyFishingSpotsDatabasePage} from './lazy-fishing-spots-database-page';
 import {LazyFishingSpot} from './lazy-fishing-spot';
 import {LazyFood} from './lazy-food';
 import {LazyFreeCompanyAction} from './lazy-free-company-action';
@@ -183,6 +184,7 @@ export interface LazyData {
   fishingLog: Array<LazyFishingLog>;
   fishingSources: Record<number, LazyFishingSource[]>;
   fishingSpotSearch: Array<LazyFishingSpotSearch>;
+  fishingSpotsDatabasePages: Record<number, LazyFishingSpotsDatabasePage>;
   fishingSpots: Array<LazyFishingSpot>;
   foods: Array<LazyFood>;
   freeCompanyActions: Record<number, LazyFreeCompanyAction>;

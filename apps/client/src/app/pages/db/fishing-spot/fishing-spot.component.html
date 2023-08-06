@@ -1,4 +1,4 @@
-<ng-container *ngIf="xivapiFishingSpot$ | async as spot; else loader">
+<ng-container *ngIf="fishingSpot$ | async as spot; else loader">
   <div [style.padding]="'0 25px' | ifMobile: '0'" fxLayout="column" fxLayoutGap="10px">
     <div
       class="top-bar"
@@ -13,8 +13,8 @@
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <img src="./assets/icons/classjob/fisher.png" fxFlex="0 0 auto"/>
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{ spot.PlaceName | xivapiL12n: 'places' | i18n }}</h2>
-            <div class="item-kind">{{ spot.TerritoryType.PlaceName | xivapiL12n: 'places' | i18n }}</div>
+            <h2 class="item-name">{{ spot | i18n }}</h2>
+            <div class="item-kind">{{ spot.mapId | mapName | i18n }}</div>
           </div>
         </div>
       </div>
@@ -24,29 +24,29 @@
         fxFlex.lt-md="1 1 auto"
         fxLayout="column"
         fxLayoutGap="5px"
-        [value]="spot.PlaceName | xivapiL12n: 'places'"
+        [value]="spot | i18n"
       ></app-i18n-display>
     </div>
 
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
       <div class="details-block">
         <div class="detail-name">{{ 'DB.Level' | translate }}</div>
-        <div class="detail-value">{{ spot.GatheringLevel }}</div>
+        <div class="detail-value">{{ spot.level }}</div>
       </div>
       <div fxFlex="1 1 auto"></div>
-      <button nz-button (click)="showMissesPopup(spot.ID)">{{ 'DB.FISH.Show_misses' | translate }}</button>
+      <button nz-button (click)="showMissesPopup(spot.id)">{{ 'DB.FISH.Show_misses' | translate }}</button>
     </div>
 
-    <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="spot.ID" type="fishing-spot"></app-db-comments>
+    <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="spot.id" type="fishing-spot"></app-db-comments>
 
     <div>
       <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     </div>
 
     <div fxLayout="row wrap" fxLayoutGap="10px grid" fxLayoutGap.lt-md="5px grid" fxLayoutAlign="space-between stretch" fxLayout.lt-sm="column">
-      <app-fishing-spot-position fxFlex="nogrow" [spot]="xivapiFishingSpot$ | async" [loading]="loading$ | async"></app-fishing-spot-position>
-      <app-fishing-spot-weathers fxFlex="1 1 auto" [spot]="xivapiFishingSpot$ | async"></app-fishing-spot-weathers>
-      <app-fishing-spot-weather-transitions fxFlex="1 1 auto" [spot]="xivapiFishingSpot$ | async"></app-fishing-spot-weather-transitions>
+      <app-fishing-spot-position fxFlex="nogrow" [spot]="fishingSpot$ | async" [loading]="loading$ | async"></app-fishing-spot-position>
+      <app-fishing-spot-weathers fxFlex="1 1 auto" [spot]="fishingSpot$ | async"></app-fishing-spot-weathers>
+      <app-fishing-spot-weather-transitions fxFlex="1 1 auto" [spot]="fishingSpot$ | async"></app-fishing-spot-weather-transitions>
       <app-fishing-spot-available-fishes fxFlex="1 1 auto"></app-fishing-spot-available-fishes>
       <app-fishing-spot-hours fxFlex="100" [activeFish]="highlightedFish$ | async" (activeFishChange)="highlightedFish$.next($event)"></app-fishing-spot-hours>
       <app-fishing-spot-bait-datagrid
@@ -77,7 +77,7 @@
         (activeFishChange)="highlightedFish$.next($event)"
       ></app-fishing-spot-bite-times>
     </div>
-    <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="spot.ID" type="fishing-spot"></app-db-comments>
+    <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="spot.id" type="fishing-spot"></app-db-comments>
   </div>
 </ng-container>
 <ng-template #loader>
