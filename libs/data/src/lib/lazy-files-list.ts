@@ -447,6 +447,10 @@ export const lazyFilesList = {
     'fileName': 'medicines.json',
     'hashedFileName': 'medicines.6a75893d5a762f48234e82e46c2fc6a878b70071.json'
   },
+  'mobsDatabasePages': {
+    'fileName': 'mobs-database-pages.json',
+    'hashedFileName': 'mobs-database-pages.482fb7b33316e4b859597ce8d52a74800605ba38.json'
+  },
   'mobs': {
     'fileName': 'mobs.json',
     'hashedFileName': 'mobs.df63177dcca091e67b10f71468bdc5c19e72b5a6.json'

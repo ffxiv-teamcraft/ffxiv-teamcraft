@@ -111,6 +111,7 @@ export const LazyDataKeys = [
   'marketItems',
   'materias',
   'medicines',
+  'mobsDatabasePages',
   'mobs',
   'mogstationSources',
   'monsterSearch',

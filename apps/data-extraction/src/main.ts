@@ -71,6 +71,7 @@ import { ActionsDbPagesExtractor } from './extractors/db/actions-db-pages.extrac
 import { FatesDatabasePagesExtractor } from './extractors/db/fates-database-pages.extractor';
 import { FishingSpotsDatabasePagesExtractor } from './extractors/db/fishing-spots-database-pages.extractor';
 import { LevesDatabasePagesExtractor } from './extractors/db/leves-database-pages.extractor';
+import { MobsDatabasePagesExtractor } from './extractors/db/mobs-database-pages.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -211,7 +212,8 @@ const extractors: AbstractExtractor[] = [
     new ActionsDbPagesExtractor(),
     new FatesDatabasePagesExtractor(),
     new FishingSpotsDatabasePagesExtractor(),
-    new LevesDatabasePagesExtractor()
+    new LevesDatabasePagesExtractor(),
+    new MobsDatabasePagesExtractor()
   ];
 
   if (argv['only']) {

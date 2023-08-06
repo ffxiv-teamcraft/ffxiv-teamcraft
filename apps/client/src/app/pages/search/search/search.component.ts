@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
-import { BehaviorSubject, combineLatest, Observable, of, throttleTime } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
 import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, pairwise, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
@@ -194,7 +194,10 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
 
   pageSize = 50;
 
-  results$: Observable<{paginated: SearchResult[], total: number}> = combineLatest([this.query$.pipe(distinctUntilChanged()), this.searchType$, this.filters$, this.sort$, this.searchLang$]).pipe(
+  results$: Observable<{
+    paginated: SearchResult[],
+    total: number
+  }> = combineLatest([this.query$.pipe(distinctUntilChanged()), this.searchType$, this.filters$, this.sort$, this.searchLang$]).pipe(
     filter(([query, , filters, , lang]) => {
       if (['ko', 'zh'].indexOf(lang.toLowerCase()) > -1) {
         // Chinese and korean characters system use fewer chars for the same thing, filters have to be handled accordingly.
@@ -438,6 +441,8 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       case SearchType.TRAIT:
         this.filters$.next(this.getTraitFilters(this.filtersForm.controls));
         break;
+      default:
+        this.filters$.next(this.getCommonFilters(this.filtersForm.controls));
     }
   }
 

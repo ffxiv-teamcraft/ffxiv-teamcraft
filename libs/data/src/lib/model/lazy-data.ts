@@ -82,6 +82,7 @@ import {LazyMapSearch} from './lazy-map-search';
 import {LazyMap} from './lazy-map';
 import {LazyMateria} from './lazy-materia';
 import {LazyMedicine} from './lazy-medicine';
+import {LazyMobsDatabasePage} from './lazy-mobs-database-page';
 import {LazyMob} from './lazy-mob';
 import {LazyMogstationSource} from './lazy-mogstation-source';
 import {LazyMonsterSearch} from './lazy-monster-search';
@@ -253,6 +254,7 @@ export interface LazyData {
   marketItems: Array<number>;
   materias: Array<LazyMateria>;
   medicines: Array<LazyMedicine>;
+  mobsDatabasePages: Record<number, LazyMobsDatabasePage>;
   mobs: Record<number, LazyMob>;
   mogstationSources: Record<number, LazyMogstationSource>;
   monsterSearch: Array<LazyMonsterSearch>;
