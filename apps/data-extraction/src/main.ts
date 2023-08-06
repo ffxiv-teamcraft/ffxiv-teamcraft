@@ -70,6 +70,7 @@ import { AchievementsDbPagesExtractor } from './extractors/db/achievements-db-pa
 import { ActionsDbPagesExtractor } from './extractors/db/actions-db-pages.extractor';
 import { FatesDatabasePagesExtractor } from './extractors/db/fates-database-pages.extractor';
 import { FishingSpotsDatabasePagesExtractor } from './extractors/db/fishing-spots-database-pages.extractor';
+import { LevesDatabasePagesExtractor } from './extractors/db/leves-database-pages.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -82,6 +83,8 @@ const extractors: AbstractExtractor[] = [
   new I18nExtractor('BNpcName', 'mobs', 'Singular_'),
   new I18nExtractor('ActionCategory', 'action-categories'),
   new I18nExtractor('ItemUICategory', 'item-category'),
+  new I18nExtractor('EventItem', 'event-items', 'Name_', { Icon: 'icon' }),
+  new I18nExtractor('JournalGenre', 'journal-genre'),
   new I18nExtractor('ItemSearchCategory', 'search-category'),
   new I18nExtractor('Title', 'titles', 'Masculine_', {}),
   new I18nExtractor('PlaceName', 'places', 'Name_', {}, false, (row, entities) => {
@@ -165,8 +168,7 @@ const extractors: AbstractExtractor[] = [
   new AllaganReportsExtractor(),
   new GatheringSearchIndexExtractor(),
   new GcSupplyExtractor(),
-  new PatchListExtractor(),
-  new FishingSpotsDatabasePagesExtractor()
+  new PatchListExtractor()
 ];
 
 (async () => {
@@ -207,7 +209,9 @@ const extractors: AbstractExtractor[] = [
     new ItemsDbPagesExtractor(),
     new AchievementsDbPagesExtractor(),
     new ActionsDbPagesExtractor(),
-    new FatesDatabasePagesExtractor()
+    new FatesDatabasePagesExtractor(),
+    new FishingSpotsDatabasePagesExtractor(),
+    new LevesDatabasePagesExtractor()
   ];
 
   if (argv['only']) {

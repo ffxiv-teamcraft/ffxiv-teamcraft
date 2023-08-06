@@ -135,6 +135,10 @@ export const lazyFilesList = {
     'fileName': 'equipment.json',
     'hashedFileName': 'equipment.2fac6227ac98e3f724f56d22beed56c89b3e614a.json'
   },
+  'eventItems': {
+    'fileName': 'event-items.json',
+    'hashedFileName': 'event-items.35bc6f374e7c7b4155d608b11d1003260b9b3924.json'
+  },
   'exVersions': {
     'fileName': 'ex-versions.json',
     'hashedFileName': 'ex-versions.0619162866b8ad009e0ff847cd5a46ae00362fa8.json'
@@ -387,6 +391,10 @@ export const lazyFilesList = {
     'fileName': 'job-sort-index.json',
     'hashedFileName': 'job-sort-index.1f313c47bee0b69bddc94a4c7aee85ae507b7ef5.json'
   },
+  'journalGenre': {
+    'fileName': 'journal-genre.json',
+    'hashedFileName': 'journal-genre.acacb5662380e26d159f73bfb6927531c9448936.json'
+  },
   'legendaryFish': {
     'fileName': 'legendary-fish.json',
     'hashedFileName': 'legendary-fish.2c9b027604c2890837babb7e8588c1e7eadc11a1.json'
@@ -394,6 +402,10 @@ export const lazyFilesList = {
   'leveSearch': {
     'fileName': 'leve-search.index',
     'hashedFileName': 'leve-search.b4e927aaf2493a2cfaa2e2421188ecfd0c452902.index'
+  },
+  'levesDatabasePages': {
+    'fileName': 'leves-database-pages.json',
+    'hashedFileName': 'leves-database-pages.a6fa056708d6059b5c2661b8c22caa1161215831.json'
   },
   'levesPerItem': {
     'fileName': 'leves-per-item.json',

@@ -12,9 +12,9 @@ import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-c
 import { NpcData } from '../../../model/garland-tools/npc-data';
 import { TradeSource } from '../../../modules/list/model/trade-source';
 import { TradeNpc } from '../../../modules/list/model/trade-npc';
-import { levemetes } from '../../../core/data/sources/levemetes';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { levemetes } from '@ffxiv-teamcraft/data/handmade/levemetes';
 
 @Component({
   selector: 'app-npc',
