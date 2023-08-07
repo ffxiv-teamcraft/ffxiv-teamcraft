@@ -14,7 +14,6 @@ import { TradeNpc } from '../../../modules/list/model/trade-npc';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyNpcsDatabasePage } from '@ffxiv-teamcraft/data/model/lazy-npcs-database-page';
-import { withLazyRow } from '../../../core/rxjs/with-lazy-row';
 
 @Component({
   selector: 'app-npc',

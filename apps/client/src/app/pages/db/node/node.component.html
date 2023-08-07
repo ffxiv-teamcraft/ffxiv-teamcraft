@@ -6,7 +6,7 @@
            fxLayoutAlign="space-between" fxLayoutGap="10px">
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <img
-            [src]="node.type | nodeTypeIcon"
+            [src]="node.type | nodeTypeIcon: node.limited"
             class="img-icon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
             <h2 class="item-name">{{node | i18n}}</h2>

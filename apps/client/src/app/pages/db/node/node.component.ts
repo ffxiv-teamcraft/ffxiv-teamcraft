@@ -33,7 +33,11 @@ export class NodeComponent extends TeamcraftPageComponent {
     shareReplay({ bufferSize: 1, refCount: true })
   );
 
-  public bonuses$: Observable<any[]>;
+  public bonuses$ = this.node$.pipe(
+    map(node => {
+      return node.bonuses;
+    })
+  );
 
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
 
@@ -47,12 +51,6 @@ export class NodeComponent extends TeamcraftPageComponent {
               private alarmsFacade: AlarmsFacade, private gatheringNodesService: GatheringNodesService,
               private mapService: MapService, public settings: SettingsService, seo: SeoService) {
     super(seo);
-
-    this.bonuses$ = this.node$.pipe(
-      map(node => {
-        return node.bonuses;
-      })
-    );
 
     this.links$ = this.node$.pipe(
       map((node) => {
