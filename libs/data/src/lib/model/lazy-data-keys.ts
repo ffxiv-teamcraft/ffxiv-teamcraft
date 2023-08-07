@@ -152,6 +152,7 @@ export const LazyDataKeys = [
   'specialShopNames',
   'stackSizes',
   'statusSearch',
+  'statusesDatabasePages',
   'statuses',
   'submarineParts',
   'submarineRanks',

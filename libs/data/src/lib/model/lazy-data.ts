@@ -116,6 +116,7 @@ import {LazySpearFishingLog} from './lazy-spear-fishing-log';
 import {LazySpearfishingSource} from './lazy-spearfishing-source';
 import {LazySpecialShopName} from './lazy-special-shop-name';
 import {LazyStatusSearch} from './lazy-status-search';
+import {LazyStatusesDatabasePage} from './lazy-statuses-database-page';
 import {LazyStatus} from './lazy-status';
 import {LazySubmarinePart} from './lazy-submarine-part';
 import {LazySubmarineRank} from './lazy-submarine-rank';
@@ -298,6 +299,7 @@ export interface LazyData {
   specialShopNames: Record<number, LazySpecialShopName>;
   stackSizes: Record<number, number>;
   statusSearch: Array<LazyStatusSearch>;
+  statusesDatabasePages: Record<number, LazyStatusesDatabasePage>;
   statuses: Record<number, LazyStatus>;
   submarineParts: Record<number, LazySubmarinePart>;
   submarineRanks: Record<number, LazySubmarineRank>;

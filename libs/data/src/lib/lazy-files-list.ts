@@ -611,6 +611,10 @@ export const lazyFilesList = {
     'fileName': 'status-search.index',
     'hashedFileName': 'status-search.30b2cd74a476f731fc9ff6f5e244b73a229fb979.index'
   },
+  'statusesDatabasePages': {
+    'fileName': 'statuses-database-pages.json',
+    'hashedFileName': 'statuses-database-pages.18cf1f47f808ba0b9531d011b887a1fff5053290.json'
+  },
   'statuses': {
     'fileName': 'statuses.json',
     'hashedFileName': 'statuses.d0ccdadf50380a223e20a45997545516828524bf.json'

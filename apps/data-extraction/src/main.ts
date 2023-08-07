@@ -74,6 +74,7 @@ import { LevesDatabasePagesExtractor } from './extractors/db/leves-database-page
 import { MobsDatabasePagesExtractor } from './extractors/db/mobs-database-pages.extractor';
 import { NodesDatabasePagesExtractor } from './extractors/db/nodes-database-pages.extractor';
 import { NpcsDbPagesExtractor } from './extractors/db/npcs-db-pages.extractor';
+import { StatusesDbPagesExtractor } from './extractors/db/statuses-db-pages.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -172,7 +173,8 @@ const extractors: AbstractExtractor[] = [
   new AllaganReportsExtractor(),
   new GatheringSearchIndexExtractor(),
   new GcSupplyExtractor(),
-  new PatchListExtractor()
+  new PatchListExtractor(),
+  new StatusesDbPagesExtractor()
 ];
 
 (async () => {
