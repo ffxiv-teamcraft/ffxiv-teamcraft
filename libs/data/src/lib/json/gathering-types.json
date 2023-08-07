@@ -1,0 +1,32 @@
+{
+  "1": {
+    "en": "Quarrying",
+    "ja": "砕岩",
+    "de": "Minenarbeiter (Herausbrechen)",
+    "fr": "Extraction de pierre"
+  },
+  "2": {
+    "en": "Logging",
+    "ja": "伐採",
+    "de": "Gärtner (Abholzen)",
+    "fr": "Coupe"
+  },
+  "3": {
+    "en": "Harvesting",
+    "ja": "草刈",
+    "de": "Gärtner (Abernten)",
+    "fr": "Fauche"
+  },
+  "4": {
+    "en": "●銛",
+    "ja": "●銛",
+    "de": "●銛",
+    "fr": "●銛"
+  },
+  "5": {
+    "en": "●銛",
+    "ja": "●銛",
+    "de": "●銛",
+    "fr": "●銛"
+  }
+}

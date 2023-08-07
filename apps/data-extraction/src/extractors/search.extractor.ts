@@ -1,15 +1,11 @@
 import { AbstractExtractor } from '../abstract-extractor';
 import { XivDataService } from '../xiv/xiv-data.service';
-import { I18nName, LazyDataI18nKey, SearchResult } from '@ffxiv-teamcraft/types';
+import { I18nName, SearchResult } from '@ffxiv-teamcraft/types';
 import { combineLatest, concat, Observable, tap } from 'rxjs';
 import { LazyItemStat } from '@ffxiv-teamcraft/data/model/lazy-item-stat';
 import { LazyItemBonus } from '@ffxiv-teamcraft/data/model/lazy-item-bonus';
 import { LazyInstance } from '@ffxiv-teamcraft/data/model/lazy-instance';
-import { writeFileSync } from 'fs';
-import { join } from 'path';
-import zlib from 'zlib';
 import { LazyQuest } from '@ffxiv-teamcraft/data/model/lazy-quest';
-import { LazyPatchContent } from '@ffxiv-teamcraft/data/model/lazy-patch-content';
 import { LazyNpc } from '@ffxiv-teamcraft/data/model/lazy-npc';
 import { LazyLeve } from '@ffxiv-teamcraft/data/model/lazy-leve';
 import { LazyMob } from '@ffxiv-teamcraft/data/model/lazy-mob';
@@ -43,11 +39,6 @@ export class SearchExtractor extends AbstractExtractor {
       },
       complete: () => this.done()
     });
-  }
-
-  private findPatch(content: keyof LazyPatchContent | 'quest', id: number | string): number {
-    return +Object.entries(this.requireLazyFileByKey('patchContent'))
-      .find(([, value]) => (value[content] || []).includes(+id))?.[0] || 1;
   }
 
   private getBaseEntry(row: I18nName & { id: string }): I18nName & { id: number } {
@@ -269,7 +260,7 @@ export class SearchExtractor extends AbstractExtractor {
           data: {
             id: row.id,
             icon: row.icon,
-            banner: row.banner,
+            banner: row.banner
             // level: row.lvl
           }
         });
@@ -472,7 +463,10 @@ export class SearchExtractor extends AbstractExtractor {
       const spots = this.requireLazyFileByKey('fishingSpots');
       const names = this.getExtendedNames<LazyPlace>('places');
       const index = spots.map((spot) => {
-        const name = this.findZoneName(names, spot.zoneId, spot.mapId);
+        let name = this.findZoneName(names, spot.zoneId, spot.mapId);
+        if (name === undefined && spot.id >= 10000) {
+          name = names.find(row => +row.id === 1647);
+        }
         if (name === undefined) {
           return null;
         }
@@ -513,49 +507,6 @@ export class SearchExtractor extends AbstractExtractor {
       subscriber.next();
       subscriber.complete();
     });
-  }
-
-  private findZoneName(names: Array<I18nName & { id: string }>, zoneId: number, mapId: number): I18nName & { id: string } {
-    const zoneMatch = names.find(name => +name.id === zoneId);
-    if (zoneMatch) {
-      return zoneMatch;
-    }
-    const maps = this.requireLazyFileByKey('mapEntries');
-    const map = maps.find(m => m.id === mapId);
-    return names.find(name => +name.id === map?.zone);
-  }
-
-
-  private getExtendedNames<T = unknown>(property: LazyDataI18nKey,
-                                        getNameFn: (data: T) => I18nName = (data) => data as I18nName): Array<T & { id: string } & I18nName> {
-    const baseEntry = this.requireLazyFileByKey(property);
-    const koEntries = this.requireLazyFileByKey(this.findPrefixedProperty(property, 'ko'));
-    const zhEntries = this.requireLazyFileByKey(this.findPrefixedProperty(property, 'zh'));
-    return Object.entries<T>(baseEntry as any)
-      .filter(([, entry]) => getNameFn(entry).en?.length > 0)
-      .map(([id, entry]) => {
-        const globalName = getNameFn(entry);
-        const row: T & { id: string } & I18nName = {
-          id,
-          ...globalName,
-          ...entry
-        };
-        if (koEntries[id]) {
-          row.ko = koEntries[id].ko;
-        }
-        if (zhEntries[id]) {
-          row.zh = zhEntries[id].zh;
-        }
-        return row;
-      });
-  }
-
-  private findPrefixedProperty(property: LazyDataI18nKey, prefix: 'ko' | 'zh'): LazyDataI18nKey {
-    return `${prefix}${property[0].toUpperCase()}${property.slice(1)}` as unknown as LazyDataI18nKey;
-  }
-
-  protected persistToCompressedJsonAsset(fileName: string, content: any): void {
-    writeFileSync(join(AbstractExtractor.assetOutputFolder, `${fileName}.index`), zlib.deflateSync(JSON.stringify(content), { level: 9 }));
   }
 
   getName(): string {

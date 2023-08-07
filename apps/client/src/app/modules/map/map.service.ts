@@ -35,7 +35,7 @@ export class MapService {
 
   private cache: { [index: number]: Observable<MapData> } = {};
 
-  constructor(private xivapi: XivapiService, private mathService: MathToolsService, private i18n: I18nToolsService,
+  constructor(private mathService: MathToolsService, private i18n: I18nToolsService,
               private settings: SettingsService, private lazyData: LazyDataFacade, private eorzea: EorzeaFacade) {
   }
 

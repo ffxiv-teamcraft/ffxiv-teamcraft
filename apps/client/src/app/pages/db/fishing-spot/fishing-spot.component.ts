@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { distinctUntilChanged, filter, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
@@ -13,10 +12,6 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { FishingMissesPopupComponent } from '../fishing-misses-popup/fishing-misses-popup.component';
 import { FishContextService } from '../service/fish-context.service';
-import { LazyFishingSpot } from '@ffxiv-teamcraft/data/model/lazy-fishing-spot';
-
-// TODO: Type me
-export type XivApiFishingSpot = any;
 
 @Component({
   selector: 'app-fishing-spot',
@@ -31,19 +26,11 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
 
   public readonly loading$ = this.loadingSub$.pipe(distinctUntilChanged());
 
-  public readonly xivapiFishingSpot$: Observable<XivApiFishingSpot> = this.fishContext.spotId$.pipe(
+  public readonly fishingSpot$ = this.fishContext.spotId$.pipe(
     filter((spotId) => spotId >= 0),
     switchMap((id) => {
       this.loadingSub$.next(true);
-      return combineLatest([this.xivapi.get(XivapiEndpoint.FishingSpot, id), this.lazyData.getEntry('fishingSpots'), this.lazyData.getEntry('diademTerritory')]);
-    }),
-    map(([spot, allSpots, diademTerritory]) => {
-      spot.customData = allSpots.find((s) => s.id === spot.ID) as LazyFishingSpot;
-      if (spot.TerritoryType === null && spot.ID >= 10000) {
-        spot.TerritoryType = diademTerritory;
-      }
-      spot.categoryLabel = ['Unknown', 'Saltwater', 'Freshwater', 'Dune', 'Sky', 'Clouds', 'Magma', 'Aetherochemical pool', 'Salt Lake', 'Space'][spot.customData.category];
-      return spot;
+      return this.lazyData.getRow('fishingSpotsDatabasePages', id);
     }),
     tap(() => this.loadingSub$.next(false)),
     shareReplay({ bufferSize: 1, refCount: true })
@@ -51,7 +38,6 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
 
   constructor(
     private readonly route: ActivatedRoute,
-    private readonly xivapi: XivapiService,
     private readonly i18n: I18nToolsService,
     public readonly translate: TranslateService,
     private readonly router: Router,
@@ -102,13 +88,12 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return this.xivapiFishingSpot$.pipe(
-      switchMap((fishingSpot) => combineLatest([of(fishingSpot), this.i18n.getNameObservable('places', fishingSpot.PlaceNameTargetID)])),
-      map(([fishingSpot, title]) => {
+    return this.fishingSpot$.pipe(
+      map((fishingSpot) => {
         return {
-          title,
+          title: this.i18n.getName(fishingSpot),
           description: '',
-          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/fishing-spot/${fishingSpot.ID}/${title.split(' ').join('-')}`,
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/fishing-spot/${fishingSpot.id}/${this.i18n.getName(fishingSpot).split(' ').join('-')}`,
           image: `https://cdn.ffxivteamcraft.com/assets/icons/classjob/fisher.png`
         };
       })

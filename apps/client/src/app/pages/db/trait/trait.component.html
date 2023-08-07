@@ -1,20 +1,20 @@
-<ng-container *ngIf="xivapiTrait$ | async as trait; else loader">
+<ng-container *ngIf="trait$ | async as trait; else loader">
   <div [style.padding]="'0 25px' | ifMobile: '0'" fxLayout="column" fxLayoutGap="10px">
     <div class="top-bar" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
          fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px" fxLayoutGap.lt-md="10px">
       <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
            fxLayoutAlign="space-between" fxLayoutGap="10px">
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img [src]="trait.Icon | xivapiIcon" class="img-icon" fxFlex="0 0 auto">
+          <img [src]="trait.icon | xivapiIcon" class="img-icon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{trait | xivapiL12n: 'traits' | i18n}}</h2>
+            <h2 class="item-name">{{trait | i18n}}</h2>
             <div class="item-kind" fxLayout="row" fxLayoutGap="5px">
-              <div>Lvl {{trait.Level}}</div>
-              <div [innerHTML]="trait.ClassJob | xivapiL12n: 'jobAbbr':'Abbreviation' | i18n"></div>
+              <div>Lvl {{trait.level}}</div>
+              <app-i18n-name content="jobAbbr" [id]="trait.classJob"></app-i18n-name>
             </div>
-            <div *ngIf="trait.GamePatch" class="patch">
-              {{trait.GamePatch | xivapiL12n: 'patchs' | i18n}}
-              <app-db-button [id]="trait.GamePatch.ID" type="patch"></app-db-button>
+            <div *ngIf="trait.patch" class="flew-row align-center gap-5">
+              <app-i18n-name content="patchNames" [id]="trait.patch"></app-i18n-name>
+              <app-db-button [id]="trait.patch" type="patch"></app-db-button>
             </div>
           </div>
         </div>
@@ -26,14 +26,14 @@
         </div>
       </div>
       <div fxFlex="1 1 auto">
-        <p *ngIf="trait.Description" [innerHTML]="trait.ID | lazyRow: 'traits':'description' | i18n | xivUIText"></p>
+        <p *ngIf="trait.description?.en" [innerHTML]="trait.description | i18n | nzSanitizer:'html'"></p>
       </div>
     </div>
-    <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="trait.ID" type="trait"></app-db-comments>
+    <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="trait.id" type="trait"></app-db-comments>
 
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
-      <nz-card *ngIf="trait.QuestTargetID" [nzTitle]="title"
+      <nz-card *ngIf="trait.quest" [nzTitle]="title"
                class="details-card"
                fxFlex="1 1 30%"
                nzBordered="false">
@@ -41,9 +41,9 @@
           {{'DB.ACTION.Unlocked_by_quest' | translate}}
         </ng-template>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
-          <img [src]="trait.Quest.JournalGenre.Icon | xivapiIcon" alt="">
-          <div>{{trait.QuestTargetID | i18nRow:'quests' | i18n}}</div>
-          <app-db-button [id]="trait.QuestTargetID" type="quest"></app-db-button>
+          <img [src]="trait.quest.icon | xivapiIcon" alt="">
+          <app-i18n-name content="quests" [id]="trait.quest.id"></app-i18n-name>
+          <app-db-button [id]="trait.quest.id" type="quest"></app-db-button>
         </div>
       </nz-card>
       <ng-container *ngIf="relatedActions$ | async as relatedActions">
@@ -81,7 +81,7 @@
       </ng-container>
     </div>
   </div>
-  <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="trait.ID" type="trait"></app-db-comments>
+  <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="trait.id" type="trait"></app-db-comments>
 </ng-container>
 <ng-template #loader>
   <app-page-loader></app-page-loader>

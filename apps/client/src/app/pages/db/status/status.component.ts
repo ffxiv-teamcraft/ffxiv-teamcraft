@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
-import { DataService } from '../../../core/api/data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { LazyStatusesDatabasePage } from '@ffxiv-teamcraft/data/model/lazy-statuses-database-page';
 
 @Component({
   selector: 'app-status',
@@ -18,56 +18,42 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 })
 export class StatusComponent extends TeamcraftPageComponent {
 
-  public xivapiStatus$: Observable<any>;
+  public status$ = this.route.paramMap.pipe(
+    filter(params => params.get('slug') !== null),
+    map(params => params.get('statusId')),
+    switchMap(id => this.lazyData.getRow('statusesDatabasePages', +id)),
+    shareReplay({ bufferSize: 1, refCount: true })
+  );
 
-  public links$: Observable<{ title: string, icon: string, url: string }[]>;
+  public links$: Observable<{ title: string, icon: string, url: string }[]> = of([]);
 
-  constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private gt: DataService, private i18n: I18nToolsService,
+  constructor(private route: ActivatedRoute, private lazyData: LazyDataFacade,
+              private i18n: I18nToolsService,
               private translate: TranslateService, private router: Router,
               public settings: SettingsService, seo: SeoService) {
     super(seo);
     this.updateSlug(router, i18n, route, 'statuses', 'statusId');
-
-    const statusId$ = this.route.paramMap.pipe(
-      filter(params => params.get('slug') !== null),
-      map(params => params.get('statusId'))
-    );
-
-
-    this.xivapiStatus$ = statusId$.pipe(
-      switchMap(id => {
-        return this.xivapi.get(XivapiEndpoint.Status, +id);
-      }),
-      shareReplay({ bufferSize: 1, refCount: true })
-    );
-
-    this.links$ = this.xivapiStatus$.pipe(
-      map(() => {
-        return [];
-      })
-    );
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return this.xivapiStatus$.pipe(
+    return this.status$.pipe(
       map(status => {
         return {
           title: this.getName(status),
           description: this.getDescription(status),
-          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/status/${status.ID}/${this.getName(status).split(' ').join('-')}`,
-          image: `https://xivapi.com${status.Icon}`
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/status/${status.id}/${this.getName(status).split(' ').join('-')}`,
+          image: `https://xivapi.com${status.icon}`
         };
       })
     );
   }
 
-  private getDescription(status: any): string {
-    return this.i18n.getName(this.i18n.xivapiToI18n(status, 'Description'));
+  private getDescription(status: LazyStatusesDatabasePage): string {
+    return this.i18n.getName(status.description);
   }
 
-  private getName(status: any): string {
+  private getName(status: LazyStatusesDatabasePage): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.i18n.xivapiToI18n(status, 'statuses'));
+    return this.i18n.getName(status);
   }
 }

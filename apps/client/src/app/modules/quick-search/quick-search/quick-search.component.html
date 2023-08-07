@@ -19,61 +19,21 @@
                  [nzValue]="row">
         <div fxLayout="row" fxLayoutGap="10px">
           <div [ngSwitch]="row.type">
-            <img class="result-icon" *ngSwitchCase="searchTypes.ITEM" src="{{row.icon}}" alt="">
-            <img class="result-icon" *ngSwitchCase="searchTypes.RECIPE" src="{{row.icon}}" alt="">
-            <img class="result-icon" *ngSwitchCase="searchTypes.RECIPE" src="{{row.icon}}" alt="">
             <img class="result-icon" *ngSwitchCase="searchTypes.MAP" src="{{'/c/PlaceName.png' | xivapiIcon}}" alt="">
             <img class="result-icon" *ngSwitchCase="searchTypes.FISHING_SPOT" src="./assets/icons/classjob/fisher.png" alt="">
             <img class="result-icon" *ngSwitchCase="searchTypes.GATHERING_NODE" [src]="row.node.type | nodeTypeIcon" alt="">
+            <img class="result-icon" *ngSwitchCase="searchTypes.MONSTER" src="https://xivapi.com/c/BNpcName.png" alt="">
+            <img class="result-icon" *ngSwitchCase="searchTypes.NPC" src="https://xivapi.com/c/ENpcResident.png" alt="">
             <img class="result-icon" *ngSwitchDefault src="{{row.icon | xivapiIcon}}" alt="">
           </div>
           <div fxLayout="column">
             <div class="result-name" [ngSwitch]="row.type">
-                <span *ngSwitchCase="searchTypes.ITEM">
-                  {{row.itemId | itemName | i18n}}
-                </span>
-              <span *ngSwitchCase="searchTypes.RECIPE">
-                  {{row.itemId | itemName | i18n}}
-                </span>
-              <span *ngSwitchCase="searchTypes.INSTANCE">
-                  {{row.id | i18nRow:'instances' | i18n}}
-                </span>
-              <span *ngSwitchCase="searchTypes.QUEST">
-                  {{row.id | i18nRow:'quests' | i18n}}
-                </span>
-              <span *ngSwitchCase="searchTypes.NPC">
-                  {{row.id | i18nRow:'npcs' | i18n}}
-                </span>
-              <span *ngSwitchCase="searchTypes.LEVE">
-                  {{row.id | i18nRow:'leves' | i18n}}
-                </span>
               <span *ngSwitchCase="searchTypes.MONSTER">
-                  {{row.id | i18nRow:'mobs' | i18n}}
+                  {{row | i18n}}
                   <div *ngIf="row.zoneid">{{row.zoneid | i18nRow:'places' | i18n}}</div>
               </span>
-              <span *ngSwitchCase="searchTypes.FATE">
-                  {{row.id | i18nRow:'fates' | i18n}}
-                </span>
-              <span *ngSwitchCase="searchTypes.MAP">
-                  {{row.zoneid | i18nRow:'places' | i18n}}
-                </span>
-              <span *ngSwitchCase="searchTypes.ACTION">
-                  {{row.id | actionName | i18n}}
-                </span>
-              <span *ngSwitchCase="searchTypes.STATUS">
-                  {{row.id | i18nRow:'statuses' | async | i18n}}
-                </span>
-              <span *ngSwitchCase="searchTypes.TRAIT">
-                  {{row.id | i18nRow:'traits' | i18n}}
-                </span>
-              <span *ngSwitchCase="searchTypes.ACHIEVEMENT">
-                  {{row.id | i18nRow:'achievements' | i18n}}
-                </span>
-              <span *ngSwitchCase="searchTypes.FISHING_SPOT">
-                  {{row.spot.zoneId | i18nRow:'places' | i18n}}
-                </span>
-              <span *ngSwitchCase="searchTypes.GATHERING_NODE">
-                  {{row.node.zoneid | i18nRow:'places' | i18n}}
+              <span *ngSwitchDefault>
+                  {{row | i18n}}
                 </span>
             </div>
             <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>

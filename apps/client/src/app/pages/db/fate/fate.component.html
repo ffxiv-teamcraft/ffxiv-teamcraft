@@ -1,98 +1,96 @@
-<ng-container *ngIf="gtData$ | async as gtData; else loader">
-  <div *ngIf="xivapiFate$ | async as xivapiFate" [style.padding]="'0 25px' | ifMobile: '0'"
-       fxLayout="column" fxLayoutGap="10px">
-    <div class="top-bar" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
-         fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px" fxLayoutGap.lt-md="10px">
-      <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
-           fxLayoutAlign="space-between" fxLayoutGap="10px">
-        <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img [src]="xivapiFate.IconMap | xivapiIcon" alt="{{xivapiFate.ID | i18nRow:'fates' | i18n}}"
-               class="img-icon" fxFlex="0 0 auto">
-          <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{xivapiFate.ID | i18nRow:'fates' | i18n}}</h2>
-            <div *ngIf="xivapiFate.GamePatch" class="patch">
-              {{xivapiFate.GamePatch | xivapiL12n: 'patchs' | i18n}}
-              <app-db-button [id]="xivapiFate.GamePatch.ID" type="patch"></app-db-button>
-            </div>
+<div *ngIf="fate$ | async as fate; else loader" [style.padding]="'0 25px' | ifMobile: '0'"
+     fxLayout="column" fxLayoutGap="10px">
+  <div class="top-bar" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
+       fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px" fxLayoutGap.lt-md="10px">
+    <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
+         fxLayoutAlign="space-between" fxLayoutGap="10px">
+      <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+        <img [src]="fate.icon | xivapiIcon" alt="{{fate | i18n}}"
+             class="img-icon" fxFlex="0 0 auto">
+        <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
+          <h2 class="item-name">{{fate | i18n}}</h2>
+          <div *ngIf="fate.patch" class="flew-row align-center gap-5">
+            <app-i18n-name content="patchNames" [id]="fate.patch"></app-i18n-name>
+            <app-db-button [id]="fate.patch" type="patch"></app-db-button>
           </div>
         </div>
-        <div *ngIf="links$ | async as links" class="links" fxLayout="row" fxLayoutAlign="flex-start center"
-             fxLayoutGap="5px">
-          <a *ngFor="let link of links" [href]="link.url" [nzTooltipTitle]="link.title" nz-tooltip target="_blank">
-            <img [alt]="link.title" [src]="link.icon" class="link-icon">
-          </a>
-        </div>
       </div>
-      <div fxFlex="1 1 auto">
-        <span *ngIf="xivapiFate.Description" [innerHTML]="xivapiFate.ID | i18nRow:'fates':'description' | i18n | xivUIText"></span>
-      </div>
-      <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
-                        [value]="xivapiFate.ID | i18nRow:'fates'"></app-i18n-display>
-    </div>
-
-    <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
-      <div class="details-block">
-        <div class="detail-name">{{'DB.Level' | translate}}</div>
-        <div class="detail-value">{{xivapiFate.ClassJobLevel}}</div>
-      </div>
-      <div class="details-block">
-        <div class="detail-name">{{'DB.Sync_to' | translate}}</div>
-        <div class="detail-value">{{xivapiFate.ClassJobLevelMax}}</div>
+      <div *ngIf="links$ | async as links" class="links" fxLayout="row" fxLayoutAlign="flex-start center"
+           fxLayoutGap="5px">
+        <a *ngFor="let link of links" [href]="link.url" [nzTooltipTitle]="link.title" nz-tooltip target="_blank">
+          <img [alt]="link.title" [src]="link.icon" class="link-icon">
+        </a>
       </div>
     </div>
-    <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiFate.ID" type="fate"></app-db-comments>
-
-    <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
-    <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
-      <nz-card *ngIf="gtData.fate.mapid" [nzTitle]="title"
-               class="details-card"
-               fxFlex="1 1 30%"
-               nzBordered="false">
-        <ng-template #title>
-          <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            {{gtData.fate.zoneid | i18nRow:'places' |i18n}} - X:{{gtData.fate.coords[0]}} Y:{{gtData.fate.coords[1]}}
-          </div>
-        </ng-template>
-        <app-map [mapId]="gtData.fate.mapid"
-                 [markers]="[{x: gtData.fate.coords[0], y: gtData.fate.coords[1]}]"></app-map>
-      </nz-card>
+    <div fxFlex="1 1 auto">
+      <span *ngIf="fate.description.en" [innerHTML]="fate.description | i18n | xivUIText"></span>
     </div>
-    <ng-container *ngIf="gtData.fate.items">
-      <nz-card *ngIf="gtData.fate.items.length > 0" [nzTitle]="title"
-               class="details-card"
-               fxFlex="1 1 auto"
-               nzBordered="false">
-        <ng-template #title>
-          <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            {{'DB.MOB.Known_drops' | translate}}
-          </div>
-        </ng-template>
-        <nz-list [nzDataSource]="gtData.fate.items" [nzItemLayout]="'horizontal'"
-                 [nzRenderItem]="dropTemplate">
-          <ng-template #dropTemplate let-item>
-            <nz-list-item [nzContent]="more">
-              <nz-list-item-meta
-                [nzAvatar]="itemAvatar"
-                [nzTitle]="itemTitle">
-                <ng-template #itemTitle>
-                  <span [appItemRarity]="item">{{item | itemName | i18n}}</span>
-                </ng-template>
-                <ng-template #itemAvatar>
-                  <app-item-icon [icon]="item | lazyIcon" [itemId]="item"
-                                 [width]="32"></app-item-icon>
-                </ng-template>
-                <ng-template #more>
-                  <app-db-button [id]="item" type="item"></app-db-button>
-                </ng-template>
-              </nz-list-item-meta>
-            </nz-list-item>
-          </ng-template>
-        </nz-list>
-      </nz-card>
-    </ng-container>
+    <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
+                      [value]="fate.id | i18nRow:'fates'"></app-i18n-display>
   </div>
-  <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="xivapiFate.ID" type="fate"></app-db-comments>
-</ng-container>
+
+  <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
+    <div class="details-block">
+      <div class="detail-name">{{'DB.Level' | translate}}</div>
+      <div class="detail-value">{{fate.lvl}}</div>
+    </div>
+    <div class="details-block">
+      <div class="detail-name">{{'DB.Sync_to' | translate}}</div>
+      <div class="detail-value">{{fate.lvlMax}}</div>
+    </div>
+  </div>
+  <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="fate.id" type="fate"></app-db-comments>
+
+  <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
+  <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
+    <nz-card *ngIf="fate.map" [nzTitle]="title"
+             class="details-card"
+             fxFlex="1 1 30%"
+             nzBordered="false">
+      <ng-template #title>
+        <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          {{fate.zoneid | i18nRow:'places' |i18n}} - X:{{fate.x}} Y:{{fate.y}}
+        </div>
+      </ng-template>
+      <app-map [mapId]="fate.map"
+               [markers]="[{x: fate.x, y: fate.y}]"></app-map>
+    </nz-card>
+  </div>
+  <ng-container *ngIf="fate.items?.length > 0">
+    <nz-card *ngIf="fate.items" [nzTitle]="title"
+             class="details-card"
+             fxFlex="1 1 auto"
+             nzBordered="false">
+      <ng-template #title>
+        <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          {{'DB.MOB.Known_drops' | translate}}
+        </div>
+      </ng-template>
+      <nz-list [nzDataSource]="fate.items" [nzItemLayout]="'horizontal'"
+               [nzRenderItem]="dropTemplate">
+        <ng-template #dropTemplate let-item>
+          <nz-list-item [nzContent]="more">
+            <nz-list-item-meta
+              [nzAvatar]="itemAvatar"
+              [nzTitle]="itemTitle">
+              <ng-template #itemTitle>
+                <span [appItemRarity]="item">{{item | itemName | i18n}}</span>
+              </ng-template>
+              <ng-template #itemAvatar>
+                <app-item-icon [itemId]="item" [width]="32"></app-item-icon>
+              </ng-template>
+              <ng-template #more>
+                <app-db-button [id]="item" type="item"></app-db-button>
+              </ng-template>
+            </nz-list-item-meta>
+          </nz-list-item>
+        </ng-template>
+      </nz-list>
+    </nz-card>
+  </ng-container>
+  <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="fate.id" type="fate"></app-db-comments>
+</div>
+
 <ng-template #loader>
   <app-page-loader></app-page-loader>
 </ng-template>

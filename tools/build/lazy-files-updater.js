@@ -11,15 +11,17 @@ const {
 const zlib = require('zlib');
 
 const baseFiles = fs.readdirSync(path.join(__dirname, '../../libs/data/src/lib/json/'));
+const dbFiles = fs.readdirSync(path.join(__dirname, '../../libs/data/src/lib/json/db/')).map((row) => `/db/${row}`);
 const koFiles = fs.readdirSync(path.join(__dirname, '../../libs/data/src/lib/json/ko/')).map((row) => `/ko/${row}`);
 const zhFiles = fs.readdirSync(path.join(__dirname, '../../libs/data/src/lib/json/zh/')).map((row) => `/zh/${row}`);
 
-const getPropertyName = (filename) => _.camelCase(filename.replace('.json', '').replace('.index', '').replace(/\/\w+\//, ''));
+const getPropertyName = (filename) => _.camelCase(filename.replace('/db/', '').replace('.json', '').replace('.index', '').replace(/\/\w+\//, ''));
 
 function getClassName(file) {
   const baseName = file
     .replace('/ko/', '')
     .replace('/zh/', '')
+    .replace('/db/', '')
     .replace('ies.json', 'y')
     .replace(/s?\.json/, '')
     .replace(/s?\.index/, '')
@@ -97,7 +99,7 @@ function validateLines(lines) {
   fs.writeFileSync(
     path.join(__dirname, '../../libs/data/src/lib/lazy-files-list.ts'),
     `export const lazyFilesList = ${JSON.stringify(
-      [...baseFiles, ...koFiles, ...zhFiles]
+      [...baseFiles, ...koFiles, ...zhFiles, ...dbFiles]
         .filter((row) => {
           return row.includes('.json') || row.includes('.index');
         })
@@ -158,7 +160,7 @@ function validateLines(lines) {
   console.log(colors.cyan(`Updating lazy loaded data interface`));
 
   const { imports, properties } =
-    [...baseFiles, ...koFiles, ...zhFiles]
+    [...baseFiles, ...koFiles, ...zhFiles, ...dbFiles]
       .filter((row) => {
         return row.includes('.json') || row.includes('.index');
       })
@@ -186,7 +188,7 @@ export interface LazyData {${properties}
   console.log(colors.cyan(`Updating keys list`));
 
   const keys =
-    [...baseFiles, ...koFiles, ...zhFiles]
+    [...baseFiles, ...koFiles, ...zhFiles, ...dbFiles]
       .filter((row) => {
         return row.includes('.json') || row.includes('.index');
       })

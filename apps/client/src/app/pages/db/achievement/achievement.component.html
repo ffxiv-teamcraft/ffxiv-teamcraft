@@ -5,12 +5,12 @@
       <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
            fxLayoutAlign="space-between" fxLayoutGap="10px">
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img [src]="achievement.Icon | xivapiIcon" fxFlex="0 0 auto">
+          <img [src]="achievement.icon | xivapiIcon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{achievement | xivapiL12n: 'achievements' | i18n}}</h2>
-            <div *ngIf="achievement.GamePatch" class="patch">
-              {{achievement.GamePatch | xivapiL12n: 'patchs' | i18n}}
-              <app-db-button [id]="achievement.GamePatch.ID" type="patch"></app-db-button>
+            <h2 class="item-name">{{achievement | i18n}}</h2>
+            <div *ngIf="achievement.patch" class="flex-row gap-5 align-center">
+              <app-i18n-name content="patchNames" [id]="achievement.patch"></app-i18n-name>
+              <app-db-button [id]="achievement.patch" type="patch"></app-db-button>
             </div>
           </div>
         </div>
@@ -22,13 +22,13 @@
         </div>
       </div>
       <div fxFlex="1 1 auto">
-        <p *ngIf="achievement.Description" [innerHTML]="achievement | xivapiL12n: 'achievementDescriptions':'Description' | i18n | xivUIText"></p>
+        <p *ngIf="achievement.description.en" [innerHTML]="achievement.description | i18n"></p>
       </div>
       <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
-                        [value]="achievement | xivapiL12n: 'achievements'"></app-i18n-display>
+                        [value]="achievement"></app-i18n-display>
     </div>
     <div>
-      <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="achievement.ID" type="achievement"></app-db-comments>
+      <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="achievement.id" type="achievement"></app-db-comments>
     </div>
     <div fxLayout="column" fxLayoutGap="10px">
       <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
@@ -50,9 +50,8 @@
                   [nzTitle]="rewardTitle">
                   <ng-template #rewardAvatar>
                     <app-item-icon *ngIf="reward.type === 'item'" [hq]="reward.hq"
-                                   [icon]="reward.id | lazyIcon"
                                    [itemId]="reward.id" [width]="32"></app-item-icon>
-                    <img *ngIf="reward.type === 'title'" src="https://xivapi.com/c/Title.png">
+                    <img *ngIf="reward.type === 'title'" src="https://xivapi.com/c/Title.png" class="larger-img-icon">
                   </ng-template>
                   <ng-template #rewardTitle>
                     <div *ngIf="reward.type === 'item'" [appItemRarity]="reward.id">
@@ -74,7 +73,7 @@
         </nz-card>
       </div>
       <div>
-        <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="achievement.ID"
+        <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="achievement.id"
                          type="achievement"></app-db-comments>
       </div>
     </div>

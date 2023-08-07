@@ -1,20 +1,17 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
-import { DataService } from '../../../core/api/data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
-import * as _ from 'lodash';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { LeveData } from '../../../model/garland-tools/leve-data';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
-import { levemetes } from '../../../core/data/sources/levemetes';
 import { I18nName } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { LazyLevesDatabasePage } from '@ffxiv-teamcraft/data/model/lazy-leves-database-page';
 
 @Component({
   selector: 'app-leve',
@@ -23,9 +20,12 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 })
 export class LeveComponent extends TeamcraftPageComponent {
 
-  public gtData$: Observable<LeveData>;
-
-  public xivapiLeve$: Observable<any>;
+  public leve$ = this.route.paramMap.pipe(
+    filter(params => params.get('slug') !== null),
+    map(params => params.get('leveId')),
+    switchMap(id => this.lazyData.getRow('levesDatabasePages', +id)),
+    shareReplay({ bufferSize: 1, refCount: true })
+  );
 
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
 
@@ -39,137 +39,111 @@ export class LeveComponent extends TeamcraftPageComponent {
 
   public npcs$: Observable<{ id: number, issuer?: boolean, client?: boolean }[]>;
 
-  constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private gt: DataService,
+  constructor(private route: ActivatedRoute, private lazyData: LazyDataFacade,
               private i18n: I18nToolsService, public translate: TranslateService,
               private router: Router, private linkTools: LinkToolsService,
               public settings: SettingsService, seo: SeoService) {
     super(seo);
     this.updateSlug(router, i18n, route, 'leves', 'leveId');
 
-    const leveId$ = this.route.paramMap.pipe(
-      filter(params => params.get('slug') !== null),
-      map(params => params.get('leveId'))
-    );
-
-    this.gtData$ = leveId$.pipe(
-      switchMap(id => {
-        return this.gt.getLeve(+id);
+    this.items$ = this.leve$.pipe(
+      map(leve => {
+        return leve.items;
+        // return [0, 1, 2, 3]
+        //   .filter(index => leve.CraftLeve[`Item${index}TargetID`] > 0)
+        //   .map(index => {
+        //     return {
+        //       id: leve.CraftLeve[`Item${index}TargetID`],
+        //       amount: leve.CraftLeve[`ItemCount${index}`]
+        //     };
+        //   });
       }),
-      shareReplay({ bufferSize: 1, refCount: true })
+      filter(Boolean)
     );
 
-    this.xivapiLeve$ = leveId$.pipe(
-      switchMap(id => {
-        return this.xivapi.get(XivapiEndpoint.Leve, +id);
+    this.battleItems$ = this.leve$.pipe(
+      map(leve => {
+        return leve.battleItems;
+        // return [0, 1, 2, 3]
+        //   .filter(index => leve.BattleLeve[`ItemsInvolved${index}TargetID`] > 0)
+        //   .map(index => {
+        //     const item = leve.BattleLeve[`ItemsInvolved${index}`];
+        //     return {
+        //       id: item.ID,
+        //       name: this.i18n.xivapiToI18n(item, 'eventItems'),
+        //       icon: item.Icon,
+        //       amount: leve.BattleLeve[`ItemsInvolvedQty${index}`],
+        //       dropRate: leve.BattleLeve[`ItemDropRate${index}`]
+        //     };
+        //   });
       }),
-      shareReplay({ bufferSize: 1, refCount: true })
+      filter(Boolean)
     );
 
-    this.items$ = this.xivapiLeve$.pipe(
-      filter(leve => leve.CraftLeve),
+    this.enemies$ = this.leve$.pipe(
       map(leve => {
-        return [0, 1, 2, 3]
-          .filter(index => leve.CraftLeve[`Item${index}TargetID`] > 0)
-          .map(index => {
-            return {
-              id: leve.CraftLeve[`Item${index}TargetID`],
-              amount: leve.CraftLeve[`ItemCount${index}`]
-            };
-          });
-      })
+        return leve.enemies;
+        // return [0, 1, 2, 3, 4, 5, 6, 7]
+        //   .filter(index => {
+        //     return leve.BattleLeve[`BNpcName${index}TargetID`] > 0;
+        //   })
+        //   .reduce((enemies, index) => {
+        //     const enemy = leve.BattleLeve[`BNpcName${index}`];
+        //     enemies.push({
+        //       id: enemy.ID,
+        //       level: leve.BattleLeve[`EnemyLevel${index}`]
+        //     });
+        //     return enemies;
+        //   }, []);
+      }),
+      filter(Boolean)
     );
 
-    this.battleItems$ = this.xivapiLeve$.pipe(
-      filter(leve => leve.BattleLeve),
-      map(leve => {
-        return [0, 1, 2, 3]
-          .filter(index => leve.BattleLeve[`ItemsInvolved${index}TargetID`] > 0)
-          .map(index => {
-            const item = leve.BattleLeve[`ItemsInvolved${index}`];
-            return {
-              id: item.ID,
-              name: this.i18n.xivapiToI18n(item, 'eventItems'),
-              icon: item.Icon,
-              amount: leve.BattleLeve[`ItemsInvolvedQty${index}`],
-              dropRate: leve.BattleLeve[`ItemDropRate${index}`]
-            };
-          });
-      })
-    );
-
-    this.enemies$ = this.xivapiLeve$.pipe(
-      map(leve => {
-        return [0, 1, 2, 3, 4, 5, 6, 7]
-          .filter(index => {
-            return leve.BattleLeve[`BNpcName${index}TargetID`] > 0;
-          })
-          .reduce((enemies, index) => {
-            const enemy = leve.BattleLeve[`BNpcName${index}`];
-            enemies.push({
-              id: enemy.ID,
-              level: leve.BattleLeve[`EnemyLevel${index}`]
-            });
-            return enemies;
-          }, []);
-      })
-    );
-
-    this.rewards$ = this.xivapiLeve$.pipe(
+    this.rewards$ = this.leve$.pipe(
       map((leve) => {
-        return [0, 1, 2, 3, 4, 5, 6, 7]
-          .filter(index => {
-            return leve.LeveRewardItem[`LeveRewardItemGroup${index}TargetID`] > 0;
-          })
-          .reduce((rewards, index) => {
-            const group = leve.LeveRewardItem[`LeveRewardItemGroup${index}`];
-            rewards.push(...[0, 1, 2, 3, 4, 5, 6, 7, 8]
-              .filter(itemIndex => group[`Item${itemIndex}TargetID`] > 0)
-              .reduce((items, itemIndex, i, array) => {
-                items.push({
-                  id: group[`Item${itemIndex}TargetID`],
-                  amount: group[`Count${itemIndex}`],
-                  hq: group[`HQ${itemIndex}`] === 1,
-                  chances: Math.floor(leve.LeveRewardItem[`Probability%${index}`] / array.length)
-                });
-                return items;
-              }, [])
-            );
-            return rewards;
-          }, []);
-      })
+        return leve.rewards;
+        // return [0, 1, 2, 3, 4, 5, 6, 7]
+        //   .filter(index => {
+        //     return leve.LeveRewardItem[`LeveRewardItemGroup${index}TargetID`] > 0;
+        //   })
+        //   .reduce((rewards, index) => {
+        //     const group = leve.LeveRewardItem[`LeveRewardItemGroup${index}`];
+        //     rewards.push(...[0, 1, 2, 3, 4, 5, 6, 7, 8]
+        //       .filter(itemIndex => group[`Item${itemIndex}TargetID`] > 0)
+        //       .reduce((items, itemIndex, i, array) => {
+        //         items.push({
+        //           id: group[`Item${itemIndex}TargetID`],
+        //           amount: group[`Count${itemIndex}`],
+        //           hq: group[`HQ${itemIndex}`] === 1,
+        //           chances: Math.floor(leve.LeveRewardItem[`Probability%${index}`] / array.length)
+        //         });
+        //         return items;
+        //       }, [])
+        //     );
+        //     return rewards;
+        //   }, []);
+      }),
+      filter(Boolean)
     );
 
-    this.npcs$ = this.xivapiLeve$.pipe(
+    this.npcs$ = this.leve$.pipe(
       map((leve) => {
-        const npcs: any[] = [
-          {
-            id: leve.LevelLevemete.Object?.ID,
-            client: true
-          }
-        ];
-        const levemete = Object.keys(levemetes).find(key => levemetes[key].indexOf(leve.ID) > -1);
-        if (levemete !== undefined) {
-          npcs.push({
-            id: +levemete,
-            issuer: true
-          });
-        }
-        return npcs.reverse();
-      })
+        return leve.npcs;
+      }),
+      filter(Boolean)
     );
 
-    this.links$ = this.xivapiLeve$.pipe(
-      map((xivapiLeve) => {
+    this.links$ = this.leve$.pipe(
+      map((leve) => {
         return [
           {
             title: 'GarlandTools',
-            url: `https://www.garlandtools.org/db/#leve/${xivapiLeve.ID}`,
+            url: `https://www.garlandtools.org/db/#leve/${leve.id}`,
             icon: 'https://garlandtools.org/favicon.png'
           },
           {
             title: 'Gamer Escape',
-            url: `https://ffxiv.gamerescape.com/wiki/${encodeURIComponent(xivapiLeve.Name_en.toString().split(' ').join('_'))}`,
+            url: `https://ffxiv.gamerescape.com/wiki/${encodeURIComponent(leve.en.toString().split(' ').join('_'))}`,
             icon: './assets/icons/ge.png'
           }
         ];
@@ -178,26 +152,26 @@ export class LeveComponent extends TeamcraftPageComponent {
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return this.xivapiLeve$.pipe(
+    return this.leve$.pipe(
       map((leve) => {
         return {
           title: this.getName(leve),
           description: this.getDescription(leve),
-          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/leve/${leve.ID}/${this.getName(leve).split(' ').join('-')}`,
-          image: `https://xivapi.com/${leve.IconIssuer}`
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/leve/${leve.id}/${this.getName(leve).split(' ').join('-')}`,
+          image: `https://xivapi.com${leve.icon}`
         };
       })
     );
   }
 
-  private getName(item: any): string {
+  private getName(leve: LazyLevesDatabasePage): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.i18n.xivapiToI18n(item));
+    return this.i18n.getName(leve);
   }
 
-  private getDescription(item: any): string {
+  private getDescription(leve: LazyLevesDatabasePage): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.i18n.xivapiToI18n(item, 'Description'));
+    return this.i18n.getName(leve.description);
   }
 
 }

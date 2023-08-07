@@ -7,6 +7,10 @@ export const lazyFilesList = {
     'fileName': 'achievements.json',
     'hashedFileName': 'achievements.d1e7f5836df03dbd6dff27c1e06c32577d0f6062.json'
   },
+  'actionCategories': {
+    'fileName': 'action-categories.json',
+    'hashedFileName': 'action-categories.35b4feb743bc4d9de6b8e35771efcc319c7cc338.json'
+  },
   'actionCdGroups': {
     'fileName': 'action-cd-groups.json',
     'hashedFileName': 'action-cd-groups.c0207b9491eb78e53a53d0f85a29f133d7647333.json'
@@ -54,6 +58,10 @@ export const lazyFilesList = {
   'baseParams': {
     'fileName': 'base-params.json',
     'hashedFileName': 'base-params.72659430dd5f5de05bb29281786c16ec9304b479.json'
+  },
+  'beastReputationRanks': {
+    'fileName': 'beast-reputation-ranks.json',
+    'hashedFileName': 'beast-reputation-ranks.b20c623e40145d5d5973f9462e1cd7d2f4c7e19b.json'
   },
   'classJobsModifiers': {
     'fileName': 'class-jobs-modifiers.json',
@@ -122,6 +130,10 @@ export const lazyFilesList = {
   'equipment': {
     'fileName': 'equipment.json',
     'hashedFileName': 'equipment.2fac6227ac98e3f724f56d22beed56c89b3e614a.json'
+  },
+  'eventItems': {
+    'fileName': 'event-items.json',
+    'hashedFileName': 'event-items.35bc6f374e7c7b4155d608b11d1003260b9b3924.json'
   },
   'exVersions': {
     'fileName': 'ex-versions.json',
@@ -211,13 +223,17 @@ export const lazyFilesList = {
     'fileName': 'gathering-search-index.json',
     'hashedFileName': 'gathering-search-index.be537032cf55b21c904e98b4c9e41e87523b0c75.json'
   },
+  'gatheringTypes': {
+    'fileName': 'gathering-types.json',
+    'hashedFileName': 'gathering-types.2a74c9ecedce5c24277a1cce7bd26fdb86f8b772.json'
+  },
   'gcNames': {
     'fileName': 'gc-names.json',
     'hashedFileName': 'gc-names.be23c8364d59e60ba9d6ae6d8d2e5ded6117e4bc.json'
   },
   'gcSupply': {
     'fileName': 'gc-supply.json',
-    'hashedFileName': 'gc-supply.76587febb3a65785771bab618583d0491259da50.json'
+    'hashedFileName': 'gc-supply.eab0bcd35df73befd86257aa31e843de5b7fc85e.json'
   },
   'gilShopNames': {
     'fileName': 'gil-shop-names.json',
@@ -363,6 +379,10 @@ export const lazyFilesList = {
     'fileName': 'job-sort-index.json',
     'hashedFileName': 'job-sort-index.1f313c47bee0b69bddc94a4c7aee85ae507b7ef5.json'
   },
+  'journalGenre': {
+    'fileName': 'journal-genre.json',
+    'hashedFileName': 'journal-genre.acacb5662380e26d159f73bfb6927531c9448936.json'
+  },
   'legendaryFish': {
     'fileName': 'legendary-fish.json',
     'hashedFileName': 'legendary-fish.2c9b027604c2890837babb7e8588c1e7eadc11a1.json'
@@ -455,6 +475,10 @@ export const lazyFilesList = {
     'fileName': 'patch-content.json',
     'hashedFileName': 'patch-content.5659b8d1b709c19053aeb75aef5eeb8267ca701d.json'
   },
+  'patchNames': {
+    'fileName': 'patch-names.json',
+    'hashedFileName': 'patch-names.992334efe35f8823417c5563513f4b0f836879f3.json'
+  },
   'places': {
     'fileName': 'places.json',
     'hashedFileName': 'places.8663782c3309c66f6d7362982ed608583f07f7af.json'
@@ -469,7 +493,7 @@ export const lazyFilesList = {
   },
   'quests': {
     'fileName': 'quests.json',
-    'hashedFileName': 'quests.94d9dc312a17c4f0ab89f58c9d2e11602c561f9e.json'
+    'hashedFileName': 'quests.bf92af7cedd9d41fc1efb09ebc3c45141bddac5b.json'
   },
   'races': {
     'fileName': 'races.json',
@@ -510,6 +534,10 @@ export const lazyFilesList = {
   'scripIndex': {
     'fileName': 'scrip-index.json',
     'hashedFileName': 'scrip-index.a71d193122500aaedaf87d57ca1e936f29917de0.json'
+  },
+  'searchCategory': {
+    'fileName': 'search-category.json',
+    'hashedFileName': 'search-category.6f56a1fd0ad95940c9aae6c198ea2f3a0af69292.json'
   },
   'seeds': {
     'fileName': 'seeds.json',
@@ -1062,5 +1090,53 @@ export const lazyFilesList = {
   'zhWeathers': {
     'fileName': '/zh/zh-weathers.json',
     'hashedFileName': '/zh/zh-weathers.03f5904d725cc5d1a70fd759da7dc43518364c62.json'
+  },
+  'achievementsDatabasePages': {
+    'fileName': '/db/achievements-database-pages.json',
+    'hashedFileName': '/db/achievements-database-pages.802ea6693ef9d9cf64b0c6e3292e7a050c0008ad.json'
+  },
+  'actionsDatabasePages': {
+    'fileName': '/db/actions-database-pages.json',
+    'hashedFileName': '/db/actions-database-pages.c65d1a713b429519ff539069015578fd89eeb0fd.json'
+  },
+  'fatesDatabasePages': {
+    'fileName': '/db/fates-database-pages.json',
+    'hashedFileName': '/db/fates-database-pages.d503c5c875d145aca1a10240b1a7cac263808086.json'
+  },
+  'fishingSpotsDatabasePages': {
+    'fileName': '/db/fishing-spots-database-pages.json',
+    'hashedFileName': '/db/fishing-spots-database-pages.dfe23fb849a914e19fa8e08eb453594212eace41.json'
+  },
+  'itemsDatabasePages': {
+    'fileName': '/db/items-database-pages.json',
+    'hashedFileName': '/db/items-database-pages.c3dee38e7a3f4fab52323a6fc839c180a0cbc4b9.json'
+  },
+  'levesDatabasePages': {
+    'fileName': '/db/leves-database-pages.json',
+    'hashedFileName': '/db/leves-database-pages.50dbd6c1800723fd8988903ca027f4de8426338c.json'
+  },
+  'mobsDatabasePages': {
+    'fileName': '/db/mobs-database-pages.json',
+    'hashedFileName': '/db/mobs-database-pages.cd04eaa4a0d308ec6c3ae32737739db92a86c871.json'
+  },
+  'nodesDatabasePages': {
+    'fileName': '/db/nodes-database-pages.json',
+    'hashedFileName': '/db/nodes-database-pages.ee12208dac4e148ad78803aede5810321f063bd1.json'
+  },
+  'npcsDatabasePages': {
+    'fileName': '/db/npcs-database-pages.json',
+    'hashedFileName': '/db/npcs-database-pages.ffcf2d3c01723f94afd683bb5a6514a63ca3b033.json'
+  },
+  'questsDatabasePages': {
+    'fileName': '/db/quests-database-pages.json',
+    'hashedFileName': '/db/quests-database-pages.5050366d779d3df7c70020414c4df00d77bbfe4b.json'
+  },
+  'statusesDatabasePages': {
+    'fileName': '/db/statuses-database-pages.json',
+    'hashedFileName': '/db/statuses-database-pages.18cf1f47f808ba0b9531d011b887a1fff5053290.json'
+  },
+  'traitsDatabasePages': {
+    'fileName': '/db/traits-database-pages.json',
+    'hashedFileName': '/db/traits-database-pages.0ae3d3b056d54f5a164699f617ab72bbdb4c9149.json'
   }
 };
