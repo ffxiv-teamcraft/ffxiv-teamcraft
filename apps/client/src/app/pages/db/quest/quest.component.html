@@ -1,24 +1,24 @@
-<ng-container *ngIf="gtData$ | async as gtData; else loader">
-  <div *ngIf="xivapiQuest$ | async as xivapiQuest" [style.padding]="'0 25px' | ifMobile: '0'"
+<ng-container *ngIf="quest$ | async as quest; else loader">
+  <div [style.padding]="'0 25px' | ifMobile: '0'"
        fxLayout="column" fxLayoutGap="10px">
     <div class="top-bar" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
          fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px" fxLayoutGap.lt-md="10px">
       <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
            fxLayoutAlign="space-between" fxLayoutGap="10px">
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img [src]="xivapiQuest.Icon | xivapiIcon" alt="{{getName(xivapiQuest)}}"
+          <img [src]="quest.icon | xivapiIcon" alt="{{quest | i18n}}"
                class="img-icon">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{getName(xivapiQuest)}}</h2>
-            <div *ngIf="xivapiQuest.JournalGenre" class="item-kind">{{xivapiQuest.JournalGenre | xivapiL12n: 'journalGenre' | i18n}}</div>
-            <div *ngIf="xivapiQuest.GamePatch" class="patch">
-              {{xivapiQuest.GamePatch | xivapiL12n: 'patchs' | i18n}}
-              <app-db-button [id]="xivapiQuest.GamePatch.ID" type="patch"></app-db-button>
+            <h2 class="item-name">{{quest | i18n}}</h2>
+            <div *ngIf="quest.genre" class="item-kind">{{quest.genre | lazyRow: 'journalGenre' | i18n}}</div>
+            <div *ngIf="quest.patch" class="flex-row gap-5 align-center">
+              <app-i18n-name content="patchNames" [id]="quest.patch"></app-i18n-name>
+              <app-db-button [id]="quest.patch" type="patch"></app-db-button>
             </div>
           </div>
         </div>
-        <img *ngIf="xivapiQuest.Banner && xivapiQuest.Banner !== '/071000/071221.png' && xivapiQuest.Banner !== xivapiQuest.Icon"
-             [src]="xivapiQuest.Banner | xivapiIcon" alt="" class="instance-banner">
+        <img *ngIf="quest.banner && quest.banner !== '/071000/071221.png' && quest.banner !== quest.icon"
+             [src]="quest.banner | xivapiIcon" alt="" class="instance-banner">
         <div *ngIf="links$ | async as links" class="links" fxLayout="row" fxLayoutAlign="flex-start center"
              fxLayoutGap="5px">
           <a *ngFor="let link of links" [href]="link.url" [nzTooltipTitle]="link.title" nz-tooltip target="_blank">
@@ -27,25 +27,25 @@
         </div>
       </div>
       <div fxFlex="1 1 auto">
-        <p [innerHTML]="getDescription(xivapiQuest) | async | xivUIText"></p>
+        <p [innerHTML]="quest.description | i18n"></p>
       </div>
       <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
-                        [value]="xivapiQuest.ID | i18nRow:'quests'"></app-i18n-display>
+                        [value]="quest"></app-i18n-display>
     </div>
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
       <div class="details-block">
-        <div class="detail-value">{{xivapiQuest.ClassJobCategory0 | xivapiL12n: 'jobCategories' | i18n}}</div>
+        <div class="detail-value">{{quest.jobCategory | i18nRow: 'jobCategories' | i18n}}</div>
       </div>
-      <div *ngIf="xivapiQuest.IsRepeatable === 1" class="details-block">
+      <div *ngIf="quest.repeatable" class="details-block">
         <div class="detail-value">{{'DB.QUEST.Repeatable' | translate}}</div>
       </div>
       <div class="details-block">
         <div class="detail-name">{{'DB.Level' | translate}}</div>
-        <div class="detail-value">{{xivapiQuest.ClassJobLevel0}}</div>
+        <div class="detail-value">{{quest.level}}</div>
       </div>
-      <div *ngIf="xivapiQuest.BeastReputationRank" class="details-block">
+      <div *ngIf="quest.beastRank" class="details-block">
         <div class="detail-name">{{'DB.QUEST.Beast_tribe_rank' | translate}}</div>
-        <div class="detail-value">{{xivapiQuest.BeastReputationRank | xivapiL12n: 'beastReputationRanks' | i18n}}</div>
+        <div class="detail-value">{{quest.beastRank | lazyRow: 'beastReputationRanks' | i18n}}</div>
       </div>
       <div *ngIf="startingPoint$ | async as startingPoint" class="details-block">
         <div class="detail-value">
@@ -56,18 +56,18 @@
                             flex="row"></app-map-position>
         </div>
       </div>
-      <div *ngIf="xivapiQuest.chainLength !== undefined" class="details-block">
+      <div *ngIf="quest.chainLength !== undefined" class="details-block">
         <div class="detail-name">{{'DB.QUEST.Chain_length' | translate}}</div>
-        <div class="detail-value">{{xivapiQuest.chainLength}}<span *ngIf="xivapiQuest.chainLength >= 99">+</span></div>
+        <div class="detail-value">{{quest.chainLength}}<span *ngIf="quest.chainLength >= 99">+</span></div>
       </div>
     </div>
-    <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiQuest.ID" type="quest"></app-db-comments>
+    <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="quest.id" type="quest"></app-db-comments>
     <div>
       <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     </div>
     <div fxLayout="column" fxLayoutGap="10px">
       <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
-        <nz-card *ngIf="textData$ | async as textData" [nzTitle]="title" class="details-card" fxFlex="1 1 auto"
+        <nz-card *ngIf="quest.text as textData" [nzTitle]="title" class="details-card" fxFlex="1 1 auto"
                  nzBordered="false">
           <ng-template #title>
             <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
@@ -82,22 +82,16 @@
             [nzRenderItem]="todoTemplate">
             <ng-template #todoTemplate let-index="index" let-todo>
               <nz-list-item>
-                <nz-list-item-meta [nzDescription]="description"
-                                   [nzTitle]="stepTitle">
+                <nz-list-item-meta [nzTitle]="stepTitle">
                   <ng-template #stepTitle>
-                    <span [innerHTML]="todo.Text | xivUIText"></span>
-                  </ng-template>
-                  <ng-template #description>
-                    <div *ngIf="xivapiQuest['ToDoMainLocation'+index]">
-                      {{xivapiQuest['ToDoMainLocation' + index].Map.PlaceName.ID | i18nRow:'places' | i18n}}
-                    </div>
+                    <span [innerHTML]="todo.text | i18n"></span>
                   </ng-template>
                 </nz-list-item-meta>
               </nz-list-item>
             </ng-template>
           </nz-list>
         </nz-card>
-        <nz-card *ngIf="gtData.quest.reqs && gtData.quest.reqs.quests && gtData.quest.reqs.quests.length > 0" [nzTitle]="title" class="details-card"
+        <nz-card *ngIf="quest.requires?.length > 0" [nzTitle]="title" class="details-card"
                  fxFlex="1 1 auto"
                  nzBordered="false">
           <ng-template #title>
@@ -108,7 +102,7 @@
             </div>
           </ng-template>
           <nz-list
-            [nzDataSource]="gtData.quest.reqs.quests"
+            [nzDataSource]="quest.requires"
             [nzItemLayout]="'horizontal'"
             [nzRenderItem]="questTemplate">
             <ng-template #questTemplate let-quest>
@@ -129,7 +123,7 @@
             </ng-template>
           </nz-list>
         </nz-card>
-        <nz-card *ngIf="gtData.quest.next" [nzTitle]="title" class="details-card" fxFlex="1 1 auto" nzBordered="false">
+        <nz-card *ngIf="quest.next" [nzTitle]="title" class="details-card" fxFlex="1 1 auto" nzBordered="false">
           <ng-template #title>
             <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <div>
@@ -137,7 +131,7 @@
               </div>
             </div>
           </ng-template>
-          <nz-list [nzDataSource]="gtData.quest.next" [nzItemLayout]="'horizontal'"
+          <nz-list [nzDataSource]="quest.next" [nzItemLayout]="'horizontal'"
                    [nzRenderItem]="questTemplate">
             <ng-template #questTemplate let-quest>
               <nz-list-item [nzContent]="more">
@@ -178,8 +172,8 @@
                     </a>
                   </ng-template>
                   <ng-template #more>
-                    <nz-tag *ngIf="npc === xivapiQuest.IssuerStart">{{'DB.QUEST.Start' | translate}}</nz-tag>
-                    <nz-tag *ngIf="npc === xivapiQuest.TargetEnd">{{'DB.QUEST.End' | translate}}</nz-tag>
+                    <nz-tag *ngIf="npc === quest.start">{{'DB.QUEST.Start' | translate}}</nz-tag>
+                    <nz-tag *ngIf="npc === quest.end">{{'DB.QUEST.End' | translate}}</nz-tag>
                     <app-db-button [id]="npc" type="npc"></app-db-button>
                   </ng-template>
                 </nz-list-item-meta>
@@ -216,7 +210,8 @@
                   </ng-template>
                   <ng-template #rewardTitle>
                     <div *ngIf="reward.type === 'item'" [appItemRarity]="reward.id">
-                      <app-i18n-name [id]="reward.id" content="items"></app-i18n-name> x{{reward.amount}}
+                      <app-i18n-name [id]="reward.id" content="items"></app-i18n-name>
+                      x{{reward.amount}}
                     </div>
                     <div *ngIf="reward.type === 'exp'">
                       {{'DB.Experience_points' | translate}} x{{reward.amount}}
@@ -252,13 +247,13 @@
           <div class="trades" fxLayout="column" fxLayoutGap="5px">
             <div class="trade" *ngFor="let trade of trades" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
               <div *ngFor="let currency of trade.currencies" class="item-container">
-                <app-item-icon [hq]="currency.hq" [icon]="currency.icon" [itemId]="currency.id"
+                <app-item-icon [hq]="currency.hq" [icon]="currency.icon" [itemId]="+currency.id"
                                [itemName]="currency.id | itemName | i18n" [width]="32"></app-item-icon>
                 <span>x{{currency.amount}}</span>
               </div>
               <i nz-icon nzType="arrow-right"></i>
               <div *ngFor="let tradeItem of trade.items" class="item-container">
-                <app-item-icon [hq]="tradeItem.hq" [icon]="tradeItem.icon" [itemId]="tradeItem.id"
+                <app-item-icon [hq]="tradeItem.hq" [icon]="tradeItem.icon" [itemId]="+tradeItem.id"
                                [itemName]="tradeItem.id | itemName | i18n" [width]="32"></app-item-icon>
                 <span>x{{tradeItem.amount}}</span>
               </div>
@@ -272,7 +267,7 @@
       <nz-divider [nzText]="'DB.RP_Details' | translate" nzOrientation="left"></nz-divider>
     </div>
     <div fxLayout="column" fxLayoutGap="10px">
-      <nz-card *ngIf="textData$ | async as textData" [nzTitle]="title" class="details-card" fxFlex="1 1 100%"
+      <nz-card *ngIf="quest.text as textData" [nzTitle]="title" class="details-card" fxFlex="1 1 100%"
                nzBordered="false">
         <ng-template #title>
           <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
@@ -289,13 +284,13 @@
           <ng-template #journalTemplate let-entry>
             <nz-list-item [nzContent]="content">
               <ng-template #content>
-                <span [innerHtml]="entry.Text | xivUIText"></span>
+                <span [innerHtml]="entry.text | i18n"></span>
               </ng-template>
             </nz-list-item>
           </ng-template>
         </nz-list>
       </nz-card>
-      <nz-card *ngIf="textData$ | async as textData" [nzTitle]="title" class="details-card" fxFlex="1 1 100%"
+      <nz-card *ngIf="quest.text as textData" [nzTitle]="title" class="details-card" fxFlex="1 1 100%"
                nzBordered="false">
         <ng-template #title>
           <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
@@ -315,10 +310,10 @@
                                  [nzTitle]="title">
                 <ng-template #title>
                   <a
-                    routerLink="/db/{{translate.currentLang}}/npc/{{dialogue.Npc[0]}}">{{dialogue.Npc[0] | i18nRow:'npcs' | i18n}}</a>
+                    routerLink="/db/{{translate.currentLang}}/npc/{{dialogue.npc}}">{{dialogue.npc | i18nRow:'npcs' | i18n}}</a>
                 </ng-template>
                 <ng-template #description>
-                  <span [innerHtml]="dialogue.Text | xivUIText"></span>
+                  <span [innerHtml]="dialogue.text | i18n"></span>
                 </ng-template>
               </nz-list-item-meta>
             </nz-list-item>
@@ -327,7 +322,7 @@
       </nz-card>
     </div>
   </div>
-  <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="xivapiQuest.ID"
+  <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="quest.id"
                    type="quest"></app-db-comments>
 </ng-container>
 <ng-template #loader>

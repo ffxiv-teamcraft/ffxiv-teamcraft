@@ -138,7 +138,7 @@ export class ActionsDbPagesExtractor extends AbstractExtractor {
           return !value || value?.length === 0;
         });
       });
-      this.persistToMinifiedJsonAsset('actions-database-pages', pages);
+      this.persistToMinifiedJsonAsset('db/actions-database-pages', pages);
       this.done();
     });
   }

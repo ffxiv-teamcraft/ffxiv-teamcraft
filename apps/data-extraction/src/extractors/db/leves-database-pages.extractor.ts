@@ -115,7 +115,7 @@ export class LevesDatabasePagesExtractor extends AbstractExtractor {
         }
       });
 
-      this.persistToJsonAsset('leves-database-pages', pages);
+      this.persistToMinifiedJsonAsset('db/leves-database-pages', pages);
       this.done();
     });
   }

@@ -31,7 +31,7 @@ export class StatusesDbPagesExtractor extends AbstractExtractor {
           lockMovement: row.LockMovement
         };
       });
-      this.persistToMinifiedJsonAsset('statuses-database-pages', pages);
+      this.persistToMinifiedJsonAsset('db/statuses-database-pages', pages);
       this.done();
     });
   }

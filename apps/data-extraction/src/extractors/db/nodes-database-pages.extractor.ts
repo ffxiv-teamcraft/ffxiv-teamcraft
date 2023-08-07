@@ -93,7 +93,7 @@ export class NodesDatabasePagesExtractor extends AbstractExtractor {
             };
           });
       });
-      this.persistToJsonAsset('nodes-database-pages', pages);
+      this.persistToMinifiedJsonAsset('db/nodes-database-pages', pages);
       this.done();
     });
   }

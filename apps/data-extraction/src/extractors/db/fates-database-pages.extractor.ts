@@ -46,7 +46,7 @@ export class FatesDatabasePagesExtractor extends AbstractExtractor {
           }
         });
 
-        this.persistToJsonAsset('fates-database-pages', pages);
+        this.persistToMinifiedJsonAsset('db/fates-database-pages', pages);
         this.done();
       });
   }

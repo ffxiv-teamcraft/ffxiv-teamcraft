@@ -1,0 +1,50 @@
+{
+  "1": {
+    "en": "Neutral",
+    "ja": "中立",
+    "de": "Neutral",
+    "fr": "Neutre"
+  },
+  "2": {
+    "en": "Recognized",
+    "ja": "認定",
+    "de": "Anerkannt",
+    "fr": "Reconnu"
+  },
+  "3": {
+    "en": "Friendly",
+    "ja": "友好",
+    "de": "Freundlich",
+    "fr": "Ami"
+  },
+  "4": {
+    "en": "Trusted",
+    "ja": "信頼",
+    "de": "Vertraut",
+    "fr": "Estimé"
+  },
+  "5": {
+    "en": "Respected",
+    "ja": "敬意",
+    "de": "Respektiert",
+    "fr": "Respecté"
+  },
+  "6": {
+    "en": "Honored",
+    "ja": "名誉",
+    "de": "Geachtet",
+    "fr": "Émérite"
+  },
+  "7": {
+    "en": "Sworn",
+    "ja": "誓約",
+    "de": "Solidarisch",
+    "fr": "Assermenté"
+  },
+  "8": {
+    "en": "Allied",
+    "ja": "盟友",
+    "de": "Verbündet",
+    "fr": "Allié"
+  }
+}

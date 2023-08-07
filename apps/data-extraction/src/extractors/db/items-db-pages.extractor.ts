@@ -218,7 +218,7 @@ export class ItemsDbPagesExtractor extends AbstractExtractor {
             return !value || value?.length === 0;
           });
         });
-        this.persistToMinifiedJsonAsset('items-database-pages', dbData);
+        this.persistToMinifiedJsonAsset('db/items-database-pages', dbData);
         this.done();
       });
   }

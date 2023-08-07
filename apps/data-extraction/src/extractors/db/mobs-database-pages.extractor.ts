@@ -25,7 +25,7 @@ export class MobsDatabasePagesExtractor extends AbstractExtractor {
         monster: monsters[mob.id]
       };
     });
-    this.persistToJsonAsset('mobs-database-pages', pages);
+    this.persistToMinifiedJsonAsset('db/mobs-database-pages', pages);
     this.done();
   }
 

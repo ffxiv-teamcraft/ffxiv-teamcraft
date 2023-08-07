@@ -51,9 +51,8 @@ export class TraitsDbPagesExtractor extends AbstractExtractor {
               icon: row.Quest.JournalGenre.Icon
             };
           }
-
         });
-        this.persistToMinifiedJsonAsset('traits-database-pages', pages);
+        this.persistToMinifiedJsonAsset('db/traits-database-pages', pages);
         this.done();
       });
   }

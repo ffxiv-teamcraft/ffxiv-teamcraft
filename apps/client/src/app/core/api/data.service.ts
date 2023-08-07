@@ -73,17 +73,6 @@ export class DataService {
   }
 
   /**
-   * Gets an instance based on its id.
-   * @deprecated
-   * @param {number} id
-   * @returns {Observable<NpcData>}
-   */
-  public getNpc(id: number): Observable<NpcData> {
-    return this.getGarlandData(`/npc/en/${this.garlandtoolsVersions.npc}/${id}`)
-      .pipe(map(item => this.serializer.deserialize<NpcData>(item, NpcData)));
-  }
-
-  /**
    * Gets a quest based on its id.
    * @deprecated
    * @param {number} id
@@ -92,28 +81,6 @@ export class DataService {
   public getQuest(id: number): Observable<QuestData> {
     return this.getGarlandData(`/quest/en/${this.garlandtoolsVersions.quest}/${id}`)
       .pipe(map(item => this.serializer.deserialize<QuestData>(item, QuestData)));
-  }
-
-  /**
-   * Gets a quest based on its id.
-   * @deprecated
-   * @param {number} id
-   * @returns {Observable<LeveData>}
-   */
-  public getLeve(id: number): Observable<LeveData> {
-    return this.getGarlandData(`/leve/en/${this.garlandtoolsVersions.leve}/${id}`)
-      .pipe(map(item => this.serializer.deserialize<LeveData>(item, LeveData)));
-  }
-
-  /**
-   * Gets a mob based on its id.
-   * @deprecated
-   * @param {number} id
-   * @returns {Observable<MobData>}
-   */
-  public getFate(id: number): Observable<FateData> {
-    return this.getGarlandData(`/fate/en/${this.garlandtoolsVersions.fate}/${id}`)
-      .pipe(map(item => this.serializer.deserialize<FateData>(item, FateData)));
   }
 
   /**

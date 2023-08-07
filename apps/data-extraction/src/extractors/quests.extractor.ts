@@ -30,8 +30,7 @@ export class QuestsExtractor extends AbstractExtractor {
       `OptionalItemReward.RewardAmount#`,
       `OptionalItemReward.RewardItem#`,
       'ActionReward#',
-      `ItemRewardType`,
-      'ClassJobLevel[0]'
+      `ItemRewardType`
     ], false, 1).subscribe(entries => {
       entries.forEach(quest => {
         quests[quest.index] = {
@@ -97,7 +96,7 @@ export class QuestsExtractor extends AbstractExtractor {
         });
       this.persistToJsonAsset('quests', quests);
       this.persistToJsonAsset('used-in-quests', usedInQuests);
-      this.persistToTypescript('quests-chain-lengths', 'questChainLengths', questChainLengths);
+      this.persistToTypescriptData('quests-chain-lengths', 'questChainLengths', questChainLengths);
       this.done();
     });
   }

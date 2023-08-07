@@ -41,14 +41,6 @@ export class GarlandToolsService {
   }
 
   /**
-   * Gets max exp for a given level, based on garlandtools informations.
-   * @param level
-   */
-  getMaxXp(level: number): number {
-    return this.gt.xp[level];
-  }
-
-  /**
    * Gets all the jobs stored by garlandtools.
    * @returns {any[]}
    */

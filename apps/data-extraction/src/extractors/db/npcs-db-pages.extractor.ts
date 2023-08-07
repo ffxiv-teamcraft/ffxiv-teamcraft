@@ -38,7 +38,7 @@ export class NpcsDbPagesExtractor extends AbstractExtractor {
           }).filter(Boolean)
         };
       });
-      this.persistToJsonAsset('npcs-database-pages', pages);
+      this.persistToMinifiedJsonAsset('db/npcs-database-pages', pages);
       this.done();
     });
 

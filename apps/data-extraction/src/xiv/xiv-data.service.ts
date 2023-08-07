@@ -34,8 +34,9 @@ export class XivDataService {
    *
    * It'll return everything that's a string in the form of an I18nName
    * @param sheetName
+   * @param useFirstColumnAsHeader
    */
-  public getFromSaintCSV<T = ParsedRow>(sheetName: string): T[] {
+  public getFromSaintCSV<T = ParsedRow>(sheetName: string, useFirstColumnAsHeader = false): T[] {
     const saintBuildPath = join(this.saintPath, '../SaintCoinach.Cmd/bin/Debug/');
     const latestExtractFolder = readdirSync(saintBuildPath)
       .filter(folder => /\d+\.\d+\.\d+\.\d+\.\d+/.test(folder))
@@ -45,19 +46,19 @@ export class XivDataService {
     const parsed = {
       en: parse(readFileSync(join(rawExdPath, `${sheetName}.en.csv`)), {
         columns: true,
-        from_line: 2
+        from_line: useFirstColumnAsHeader ? 1 : 2
       }),
       ja: parse(readFileSync(join(rawExdPath, `${sheetName}.ja.csv`)), {
         columns: true,
-        from_line: 2
+        from_line: useFirstColumnAsHeader ? 1 : 2
       }),
       de: parse(readFileSync(join(rawExdPath, `${sheetName}.de.csv`)), {
         columns: true,
-        from_line: 2
+        from_line: useFirstColumnAsHeader ? 1 : 2
       }),
       fr: parse(readFileSync(join(rawExdPath, `${sheetName}.fr.csv`)), {
         columns: true,
-        from_line: 2
+        from_line: useFirstColumnAsHeader ? 1 : 2
       })
     };
     return parsed.en.map((row, index) => {

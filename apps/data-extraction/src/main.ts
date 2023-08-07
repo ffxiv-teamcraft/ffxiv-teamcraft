@@ -76,6 +76,7 @@ import { NodesDatabasePagesExtractor } from './extractors/db/nodes-database-page
 import { NpcsDbPagesExtractor } from './extractors/db/npcs-db-pages.extractor';
 import { StatusesDbPagesExtractor } from './extractors/db/statuses-db-pages.extractor';
 import { TraitsDbPagesExtractor } from './extractors/db/traits-db-pages.extractor';
+import { QuestsDbPagesExtractor } from './extractors/db/quests-db-pages.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -87,6 +88,7 @@ const { MultiSelect, Confirm } = require('enquirer');
 const extractors: AbstractExtractor[] = [
   new I18nExtractor('BNpcName', 'mobs', 'Singular_'),
   new I18nExtractor('ActionCategory', 'action-categories'),
+  new I18nExtractor('BeastReputationRank', 'beast-reputation-ranks'),
   new I18nExtractor('GatheringType', 'gathering-types'),
   new I18nExtractor('ItemUICategory', 'item-category'),
   new I18nExtractor('EventItem', 'event-items', 'Name_', { Icon: 'icon' }),
@@ -222,7 +224,8 @@ const extractors: AbstractExtractor[] = [
     new NodesDatabasePagesExtractor(),
     new NpcsDbPagesExtractor(),
     new StatusesDbPagesExtractor(),
-    new TraitsDbPagesExtractor()
+    new TraitsDbPagesExtractor(),
+    new QuestsDbPagesExtractor()
   ];
 
   if (argv['only']) {

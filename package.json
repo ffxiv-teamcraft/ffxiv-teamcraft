@@ -201,7 +201,7 @@
     "@types/jest": "29.4.4",
     "@types/jwt-decode": "^2.2.1",
     "@types/lodash": "^4.14.178",
-    "@types/node": "~18.7.1",
+    "@types/node": "18.15.11",
     "@types/object-hash": "^3.0.2",
     "@types/request": "^2.48.8",
     "@types/semver": "^7.3.12",
@@ -235,7 +235,7 @@
     "dexie": "^3.2.3",
     "dotenv": "10.0.0",
     "echarts": "^5.4.0",
-    "electron": "23.0.0",
+    "electron": "25.4.0",
     "electron-builder": "^23.6.0",
     "electron-builder-squirrel-windows": "^23.6.0",
     "enquirer": "^2.3.6",
@@ -308,7 +308,7 @@
     "zone.js": "0.13.1"
   },
   "resolutions": {
-    "@types/node": "16.11.26"
+    "@types/node": "18.15.11"
   },
   "config": {
     "commitizen": {

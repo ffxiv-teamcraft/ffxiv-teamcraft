@@ -278,7 +278,15 @@ export abstract class AbstractExtractor {
     writeFileSync(join(AbstractExtractor.assetOutputFolder, `${fileName}.json`), JSON.stringify(content));
   }
 
+  /**
+   * @deprecated
+   */
   protected persistToTypescript(fileName: string, variableName: string, content: any): void {
+    const ts = `export const ${variableName} = ${JSON.stringify(content, null, 2)};`;
+    writeFileSync(join(AbstractExtractor.outputFolder, `${fileName}.ts`), ts);
+  }
+
+  protected persistToTypescriptData(fileName: string, variableName: string, content: any): void {
     const ts = `export const ${variableName} = ${JSON.stringify(content, null, 2)};`;
     writeFileSync(join(AbstractExtractor.outputFolder, `${fileName}.ts`), ts);
   }

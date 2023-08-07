@@ -30,7 +30,7 @@ export class AchievementsDbPagesExtractor extends AbstractExtractor {
             }
           };
         }, {});
-        this.persistToJsonAsset('achievements-database-pages', pages);
+        this.persistToJsonAsset('db/achievements-database-pages', pages);
         this.done();
       });
   }

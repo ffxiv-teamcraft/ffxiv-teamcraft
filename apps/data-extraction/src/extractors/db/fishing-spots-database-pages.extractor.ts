@@ -22,7 +22,7 @@ export class FishingSpotsDatabasePagesExtractor extends AbstractExtractor {
         categoryLabel: ['Unknown', 'Saltwater', 'Freshwater', 'Dune', 'Sky', 'Clouds', 'Magma', 'Aetherochemical pool', 'Salt Lake', 'Space'][spot.category]
       };
     });
-    this.persistToJsonAsset('fishing-spots-database-pages', pages);
+    this.persistToMinifiedJsonAsset('db/fishing-spots-database-pages', pages);
     this.done();
   }
 
