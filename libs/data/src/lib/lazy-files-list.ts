@@ -473,7 +473,7 @@ export const lazyFilesList = {
   },
   'nodesDatabasePages': {
     'fileName': 'nodes-database-pages.json',
-    'hashedFileName': 'nodes-database-pages.8c1cd45850b15a8f50f021197c022d20639f81ce.json'
+    'hashedFileName': 'nodes-database-pages.5199ca9286ef555ad469855ab9dcc15e2e47f187.json'
   },
   'nodes': {
     'fileName': 'nodes.json',
@@ -490,6 +490,10 @@ export const lazyFilesList = {
   'npcSearch': {
     'fileName': 'npc-search.index',
     'hashedFileName': 'npc-search.ff531527c7228f2fa8dc6766a99b418991a8cc33.index'
+  },
+  'npcsDatabasePages': {
+    'fileName': 'npcs-database-pages.json',
+    'hashedFileName': 'npcs-database-pages.34c67669ea5b17fb040a905d9b01bcd62bcd2c1f.json'
   },
   'npcs': {
     'fileName': 'npcs.json',

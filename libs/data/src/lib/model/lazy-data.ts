@@ -93,6 +93,7 @@ import {LazyNode} from './lazy-node';
 import {LazyNotebookDivisionCategory} from './lazy-notebook-division-category';
 import {LazyNotebookDivision} from './lazy-notebook-division';
 import {LazyNpcSearch} from './lazy-npc-search';
+import {LazyNpcsDatabasePage} from './lazy-npcs-database-page';
 import {LazyNpc} from './lazy-npc';
 import {LazyParamGrow} from './lazy-param-grow';
 import {LazyPatchContent} from './lazy-patch-content';
@@ -267,6 +268,7 @@ export interface LazyData {
   notebookDivisionCategory: Record<number, LazyNotebookDivisionCategory>;
   notebookDivision: Record<number, LazyNotebookDivision>;
   npcSearch: Array<LazyNpcSearch>;
+  npcsDatabasePages: Record<number, LazyNpcsDatabasePage>;
   npcs: Record<number, LazyNpc>;
   paramGrow: Record<number, LazyParamGrow>;
   patchContent: Record<number, LazyPatchContent>;

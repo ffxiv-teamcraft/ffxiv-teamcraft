@@ -122,6 +122,7 @@ export const LazyDataKeys = [
   'notebookDivisionCategory',
   'notebookDivision',
   'npcSearch',
+  'npcsDatabasePages',
   'npcs',
   'paramGrow',
   'patchContent',
