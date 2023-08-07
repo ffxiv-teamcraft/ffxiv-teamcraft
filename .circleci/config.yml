@@ -14,6 +14,12 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install git LFS
+          command: |
+            curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+            apt-get install git-lfs
+            git lfs install
+      - run:
           name: Show current branch
           command: echo ${CIRCLE_BRANCH}
       - restore_cache:
