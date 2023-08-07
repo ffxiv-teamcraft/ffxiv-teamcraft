@@ -47,6 +47,7 @@ export class MarketboardPopupComponent implements OnInit {
 
   ngOnInit() {
     this.server$ = this.authFacade.mainCharacter$.pipe(
+      tap(console.log),
       map(character => character.Server),
       shareReplay({ bufferSize: 1, refCount: true })
     );
@@ -56,6 +57,9 @@ export class MarketboardPopupComponent implements OnInit {
         return this.lazyData.datacenters$.pipe(
           first(),
           map(datacenters => {
+            if (server.startsWith('Korea')) {
+              return ['Korea', server];
+            }
             const dc = Object.keys(datacenters).find(key => {
               return datacenters[key].indexOf(server) > -1;
             });

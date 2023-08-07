@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { Character, CharacterSearchResultRow, XivapiService } from '@xivapi/angular-client';
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { debounceTime, filter, map, mergeMap, startWith, tap } from 'rxjs/operators';
 import { UntypedFormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { AddCharacter, AddCustomCharacter, Logout } from '../../../+state/auth.actions';
+import { AddCharacter, AddCustomCharacter, Logout, VerifyCharacter } from '../../../+state/auth.actions';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { uniq } from 'lodash';
 import { LodestoneService } from '../../api/lodestone.service';
+import { CHINESE_GAME_SERVERS, GAME_SERVERS, KOREAN_GAME_SERVERS } from '@ffxiv-teamcraft/data/handmade/game-servers';
 
 @Component({
   selector: 'app-character-link-popup',
@@ -36,62 +37,11 @@ export class CharacterLinkPopupComponent {
 
   public mandatory = false;
 
-  public chineseServers = [
-    'HongYuHai',
-    'ShenYiZhiDi',
-    'LaNuoXiYa',
-    'HuanYingQunDao',
-    'MengYaChi',
-    'YuZhouHeYin',
-    'WoXianXiRan',
-    'ChenXiWangZuo',
-    'ZiShuiZhanQiao',
-    'YanXia',
-    'JingYuZhuangYuan',
-    'MoDuNa',
-    'HaiMaoChaWu',
-    'RouFengHaiWan',
-    'HuPoYuan',
-    'HongYuHai',
-    'ShenYiZhiDi',
-    'LaNuoXiYa',
-    'HuanYingQunDao',
-    'MengYaChi',
-    'YuZhouHeYin',
-    'WoXianXiRan',
-    'ChenXiWangZuo',
-    'BaiYinXiang',
-    'BaiJinHuanXiang',
-    'ShenQuanHen',
-    'ChaoFengTing',
-    'LvRenZhanQiao',
-    'FuXiaoZhiJian',
-    'Longchaoshendian',
-    'MengYuBaoJing',
-    'ZiShuiZhanQiao',
-    'YanXia',
-    'JingYuZhuangYuan',
-    'MoDuNa',
-    'HaiMaoChaWu',
-    'RouFengHaiWan',
-    'HuPoYuan',
-    'ShuiJingTa2',
-    'YinLeiHu2',
-    'TaiYangHaiAn2',
-    'YiXiuJiaDe2',
-    'HongChaChuan2'
-  ];
-
-  private koreanServers = ['초코보', '모그리', '카벙클', '톤베리', '펜리르'];
-
   constructor(private xivapi: XivapiService, private store: Store<any>, private modalRef: NzModalRef,
               private lodestoneService: LodestoneService) {
-    this.servers$ = this.xivapi.getServerList().pipe(
+    this.servers$ = of(GAME_SERVERS).pipe(
       map(servers => {
-        return [
-          ...uniq(servers),
-          ...this.koreanServers.map(server => `Korean Server (${server})`)
-        ].sort();
+        return uniq(servers).sort();
       })
     );
 
@@ -105,7 +55,7 @@ export class CharacterLinkPopupComponent {
     this.result$ = combineLatest([this.selectedServer.valueChanges, this.characterName.valueChanges])
       .pipe(
         tap(([selectedServer]) => {
-          this.loadingResults = !this.chineseServers.includes(selectedServer) && !this.koreanServers.includes(selectedServer);
+          this.loadingResults = !CHINESE_GAME_SERVERS.includes(selectedServer) && !KOREAN_GAME_SERVERS.includes(selectedServer);
         }),
         debounceTime(500),
         mergeMap(([selectedServer, characterName]) => {
@@ -130,10 +80,11 @@ export class CharacterLinkPopupComponent {
     const customCharacter: Partial<Character> = {
       ID: fakeLodestoneId,
       Name: this.characterName.value,
-      Server: this.selectedServer.value
+      Server: this.selectedServer.value,
     };
     this.store.dispatch(new AddCharacter(fakeLodestoneId, this.useAsDefault));
     this.store.dispatch(new AddCustomCharacter(fakeLodestoneId, customCharacter));
+    this.store.dispatch(new VerifyCharacter(fakeLodestoneId));
     this.modalRef.close();
   }
 
