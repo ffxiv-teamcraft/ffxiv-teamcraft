@@ -70,9 +70,6 @@ export class XivDataService {
             row[`${key}_fr`] = this.processSaintString(parsed.fr[index][key]);
           }
         });
-      if (row['#'] === '120') {
-        console.log(row);
-      }
       return row;
     });
   }

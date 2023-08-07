@@ -651,6 +651,10 @@ export const lazyFilesList = {
     'fileName': 'trait-search.index',
     'hashedFileName': 'trait-search.35a1c86b35a0e02bbe84bcabec1b0e1e5db53b2a.index'
   },
+  'traitsDatabasePages': {
+    'fileName': 'traits-database-pages.json',
+    'hashedFileName': 'traits-database-pages.73146f5fdd80d1999a8535cf7215c8b328936358.json'
+  },
   'traits': {
     'fileName': 'traits.json',
     'hashedFileName': 'traits.785b451bb6a6de09244e5d859a81919b0d119441.json'

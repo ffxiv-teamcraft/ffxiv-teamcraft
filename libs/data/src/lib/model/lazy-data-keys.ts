@@ -162,6 +162,7 @@ export const LazyDataKeys = [
   'topicSelectNames',
   'tradeFlags',
   'traitSearch',
+  'traitsDatabasePages',
   'traits',
   'treasures',
   'tribes',

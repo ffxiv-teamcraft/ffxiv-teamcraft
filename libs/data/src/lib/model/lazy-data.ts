@@ -125,6 +125,7 @@ import {LazyTerritoryLayer} from './lazy-territory-layer';
 import {LazyTitle} from './lazy-title';
 import {LazyTopicSelectName} from './lazy-topic-select-name';
 import {LazyTraitSearch} from './lazy-trait-search';
+import {LazyTraitsDatabasePage} from './lazy-traits-database-page';
 import {LazyTrait} from './lazy-trait';
 import {LazyTreasure} from './lazy-treasure';
 import {LazyTribe} from './lazy-tribe';
@@ -309,6 +310,7 @@ export interface LazyData {
   topicSelectNames: Record<number, LazyTopicSelectName>;
   tradeFlags: Record<number, number>;
   traitSearch: Array<LazyTraitSearch>;
+  traitsDatabasePages: Record<number, LazyTraitsDatabasePage>;
   traits: Record<number, LazyTrait>;
   treasures: Array<LazyTreasure>;
   tribes: Record<number, LazyTribe>;
