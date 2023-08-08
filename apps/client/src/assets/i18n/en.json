@@ -207,6 +207,7 @@
     "Public": "Public",
     "Private": "Private",
     "Pagination_text": "{{start}}-{{end}} of {{total}} items",
+    "And_X_more": "and {{amount}} more...",
     "DAYS": {
       "Monday": "Monday",
       "Tuesday": "Tuesday",
@@ -1377,10 +1378,7 @@
     "Ilvl": "ilvl",
     "Cost": "Cost",
     "Class_job": "Class/Job",
-    "Damage_phys": "Phys. Damage",
-    "Damage_mag": "Mag. Damage",
-    "Defense_phys": "Phys. Defense",
-    "Defense_mag": "Mag. Defense"
+    "Masterbooks": "Requires a masterbook"
   },
   "SEARCH_INTRO": {
     "Slogan": "Craft, share, contribute",

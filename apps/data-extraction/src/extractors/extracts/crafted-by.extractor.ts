@@ -21,7 +21,7 @@ export class CraftedByExtractor extends AbstractItemDetailsExtractor<CraftedBy[]
             quality: craft.quality,
             yield: craft.yields,
             isIslandRecipe: craft.isIslandRecipe || false,
-            ingredients: craft.ingredients
+            ingredients: craft.ingredients.reverse()
           };
           if (craft.masterbook) {
             let masterbookEntry: CompactMasterbook = {

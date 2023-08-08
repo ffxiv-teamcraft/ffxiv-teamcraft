@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { UntypedFormControl, Validators } from '@angular/forms';
-import { CharacterSearchResultRow, XivapiService } from '@xivapi/angular-client';
+import { CharacterSearchResultRow } from '@xivapi/angular-client';
 import { NzModalRef } from 'ng-zorro-antd/modal';
-import { debounceTime, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, map, switchMap, tap } from 'rxjs/operators';
 import { UserService } from '../../../core/database/user.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { LodestoneService } from '../../../core/api/lodestone.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-user-picker',
@@ -15,7 +16,7 @@ import { LodestoneService } from '../../../core/api/lodestone.service';
 })
 export class UserPickerComponent {
 
-  public servers$: Observable<string[]>;
+  public servers$ = this.lazyData.servers$;
 
   public autoCompleteRows$: Observable<string[]>;
 
@@ -35,9 +36,8 @@ export class UserPickerComponent {
     map(user => user.contacts)
   );
 
-  constructor(private xivapi: XivapiService, private lodestone: LodestoneService, private modalRef: NzModalRef,
+  constructor(private lazyData: LazyDataFacade, private lodestone: LodestoneService, private modalRef: NzModalRef,
               private userService: UserService, private authFacade: AuthFacade) {
-    this.servers$ = this.xivapi.getServerList().pipe(shareReplay({ bufferSize: 1, refCount: true }));
 
     this.autoCompleteRows$ = combineLatest([this.servers$, this.selectedServer.valueChanges])
       .pipe(

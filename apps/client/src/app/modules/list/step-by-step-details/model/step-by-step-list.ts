@@ -142,7 +142,7 @@ export class StepByStepList {
           return {
             mapId: drop.mapid,
             coords: drop.position,
-            icon: './assets/icons/Mob.png',
+            icon: './assets/icons/mob.png',
             type: 'Hunting',
             monster: drop.id
           };

@@ -440,7 +440,7 @@
                          nzBordered="false">
                   <ng-template #title>
                     <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <img alt="Drops" class="img-icon" src="./assets/icons/Mob.png">
+                      <img alt="Drops" class="img-icon" src="./assets/icons/mob.png">
                       <div>
                         {{'Hunting' | translate}}
                       </div>
@@ -465,8 +465,7 @@
                          nzBordered="false">
                   <ng-template #title>
                     <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <img class="img-icon round-icon"
-                           src="./assets/icons/Shop.png">
+                      <img class="img-icon round-icon" src="./assets/icons/Shop.png">
                       <div>
                         {{'Trade' | translate}}
                       </div>
@@ -628,7 +627,7 @@
                          nzBordered="false">
                   <ng-template #title>
                     <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <img [src]="source.data[0].icon | lazyRow:'instances':'icon' | async" class="img-icon round-icon">
+                      <img [src]="source.data[0] | lazyRow:'instances':'icon' | async | xivapiIcon" class="img-icon round-icon">
                       <div>
                         {{'DB.Dungeons' | translate}}
                       </div>

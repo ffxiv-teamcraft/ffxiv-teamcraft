@@ -3,7 +3,6 @@ import { forkJoin, Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map, switchMap } from 'rxjs/operators';
 import { AriyalaMateriaOptions } from './ariyala-materia-options';
-import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { StaticData } from '../../../../lazy-data/static-data';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { LazyMateria } from '@ffxiv-teamcraft/data/model/lazy-materia';
@@ -16,8 +15,7 @@ export class AriyalaLinkParser implements ExternalListLinkParser {
 
   private materiaOptions: AriyalaMateriaOptions;
 
-  constructor(private http: HttpClient, private xivapi: XivapiService,
-              private lazyData: LazyDataFacade) {
+  constructor(private http: HttpClient, private lazyData: LazyDataFacade) {
   }
 
   canParse(url: string): boolean {
@@ -49,10 +47,10 @@ export class AriyalaLinkParser implements ExternalListLinkParser {
         // Retrieve number of overmeld slots from api, to properly calculate success rates
         if (estimateOvermeldMateria) {
           return forkJoin(Object.entries(gear.items).map(([k, itemId]) => {
-            return this.xivapi.get(XivapiEndpoint.Item, itemId as number);
+            return this.lazyData.getRow('itemMeldingData', +itemId);
           })).pipe(
             map(itemData => {
-              gear.itemMateriaSlots = itemData.map(id => id.MateriaSlotCount);
+              gear.itemMateriaSlots = itemData.map(id => id.slots);
               return gear;
             })
           );

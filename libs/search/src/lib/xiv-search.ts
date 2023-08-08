@@ -70,7 +70,7 @@ export class XIVSearch {
     );
   }
 
-  public search(content: SearchType, query: string, filters: XIVSearchFilter[] = []): SearchResult[] {
+  public search(content: SearchType, query: string, filters: XIVSearchFilter[] = [], fullData = false): SearchResult[] {
     if (query.length === 0 && filters.length === 0) {
       return [];
     }
@@ -95,15 +95,22 @@ export class XIVSearch {
           return this.doCompare(get(doc, f.field), f.operator, f.value);
         });
       })
-      .map(doc => {
+      .map(row => {
+        if (fullData) {
+          const { data, ...flat } = row;
+          return {
+            ...flat,
+            ...data
+          };
+        }
         return {
-          en: doc.en,
-          de: doc.de,
-          ja: doc.ja,
-          fr: doc.fr,
-          ko: doc.ko,
-          zh: doc.zh,
-          ...doc.data
+          en: row.en,
+          de: row.de,
+          ja: row.ja,
+          fr: row.fr,
+          ko: row.ko,
+          zh: row.zh,
+          ...row.data
         };
       });
   }

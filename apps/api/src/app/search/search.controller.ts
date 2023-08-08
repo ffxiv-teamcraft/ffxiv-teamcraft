@@ -22,7 +22,8 @@ export class SearchController {
     @Query('sort_order') order: 'asc' | 'desc' = 'desc',
     @Query('sort_field') sortField?: string,
     @Query('lang') lang = 'en',
-    @Query('filters') filters = ''
+    @Query('filters') filters = '',
+    @Query('full') fullData = 'false'
   ): Observable<SearchResult[]> {
     let transformedFilters: XIVSearchFilter[] = [];
     try {
@@ -64,10 +65,11 @@ export class SearchController {
       map((extracts) => {
         return this.searchService.search(
           type,
-          query.toLowerCase(),
+          (query || '').toLowerCase(),
           transformedFilters,
           lang,
-          [sortField, order]
+          [sortField, order],
+          fullData === 'true'
         ).map(row => {
           if ([SearchType.ITEM, SearchType.RECIPE].includes(row.type)) {
             return {

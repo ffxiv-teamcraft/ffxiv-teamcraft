@@ -17,6 +17,9 @@ import { FishTooltipDirective } from './fish-tooltip/fish-tooltip.directive';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { NodeDetailsModule } from '../node-details/node-details.module';
 import { FishDataModule } from '../../pages/db/fish/fish-data.module';
+import { NzPipesModule } from 'ng-zorro-antd/pipes';
+import { MapModule } from '../map/map.module';
+import { AlarmsModule } from '../../core/alarms/alarms.module';
 
 @NgModule({
   imports: [
@@ -29,7 +32,10 @@ import { FishDataModule } from '../../pages/db/fish/fish-data.module';
     PipesModule,
     CoreModule,
     NodeDetailsModule,
-    FishDataModule
+    FishDataModule,
+    NzPipesModule,
+    MapModule,
+    AlarmsModule
   ],
   declarations: [XivapiActionTooltipComponent, XivapiItemTooltipComponent, FishTooltipComponent, XivapiItemTooltipDirective, XivapiActionTooltipDirective, FishTooltipDirective, UiTextPipe],
   exports: [XivapiItemTooltipDirective, XivapiActionTooltipDirective, FishTooltipDirective, UiTextPipe],

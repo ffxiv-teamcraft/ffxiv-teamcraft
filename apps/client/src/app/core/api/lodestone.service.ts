@@ -1,10 +1,11 @@
 import { Injectable, NgZone } from '@angular/core';
 import { UserService } from '../database/user.service';
-import { Character, CharacterResponse, XivapiService } from '@xivapi/angular-client';
+import { Character, CharacterResponse } from '@xivapi/angular-client';
 import { EMPTY, interval, Observable, of, ReplaySubject, Subject, Subscription } from 'rxjs';
-import { filter, map, shareReplay, startWith, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { filter, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { IpcService } from '../electron/ipc.service';
+import { FreeCompany } from '@xivapi/nodestone';
 
 @Injectable({ providedIn: 'root' })
 export class LodestoneService {
@@ -15,10 +16,10 @@ export class LodestoneService {
 
   private static CACHE: { [index: number]: Observable<Partial<CharacterResponse>> } = {};
 
-  constructor(private userService: UserService, private xivapi: XivapiService,
-              private http: HttpClient, private ipc: IpcService, private ngZone: NgZone) {
+  constructor(private userService: UserService, private http: HttpClient,
+              private ipc: IpcService, private ngZone: NgZone) {
     if (!LodestoneService.INTERVAL) {
-      LodestoneService.INTERVAL = interval(200).subscribe((i) => {
+      LodestoneService.INTERVAL = interval(200).subscribe(() => {
         const subject = LodestoneService.QUEUE.shift();
         if (subject !== undefined) {
           subject.next();
@@ -50,6 +51,11 @@ export class LodestoneService {
     );
   }
 
+  public searchFreeCompany(name: string, server: string): Observable<{List: FreeCompany[]}> {
+    const params = new HttpParams().set('name', name).set('server', server);
+    return this.http.get<{List: FreeCompany[]}>(`https://lodestone.ffxivteamcraft.com/FreeCompany/Search`, { params });
+  }
+
   public getCharacterFromLodestoneApi(id: number, columns?: string[]): Observable<Partial<CharacterResponse>> {
     return this.ngZone.runOutsideAngular(() => {
       let params = new HttpParams();
@@ -70,7 +76,12 @@ export class LodestoneService {
         })
       );
     });
+  }
 
+  public getFreeCompanyFromLodestoneApi(id: string): Observable<Partial<FreeCompany>> {
+    return this.ngZone.runOutsideAngular(() => {
+      return this.http.get<FreeCompany>(`https://lodestone.ffxivteamcraft.com/FreeCompany/${id}`);
+    });
   }
 
   public getCharacter(id: number, cacheCharacter = false): Observable<Partial<CharacterResponse>> {
@@ -100,7 +111,7 @@ export class LodestoneService {
     if (LodestoneService.CACHE[id] === undefined) {
       const trigger = new Subject<void>();
       LodestoneService.CACHE[id] = trigger.pipe(
-        switchMapTo(this.xivapi.getFreeCompany(id)),
+        switchMap(() => this.getFreeCompanyFromLodestoneApi(id)),
         shareReplay(1)
       );
       this.addToQueue(trigger);

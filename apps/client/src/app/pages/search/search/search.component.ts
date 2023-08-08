@@ -12,7 +12,6 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { AbstractControl, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-import { XivapiService } from '@xivapi/angular-client';
 import { I18nName, SearchFilter, SearchResult, SearchType, XivapiPatch } from '@ffxiv-teamcraft/types';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
@@ -259,7 +258,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private notificationService: NzNotificationService,
               private i18n: I18nToolsService, private listPicker: ListPickerService,
-              private progressService: ProgressPopupService, private fb: UntypedFormBuilder, private xivapi: XivapiService,
+              private progressService: ProgressPopupService, private fb: UntypedFormBuilder,
               private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService,
               private message: NzMessageService, public translate: TranslateService, private lazyData: LazyDataFacade,
               private analytics: GoogleAnalyticsService, private environment: EnvironmentService,

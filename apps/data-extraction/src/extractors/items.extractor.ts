@@ -46,6 +46,7 @@ export class ItemsExtractor extends AbstractExtractor {
     const tradeFlags = {};
     const equipSlotCategoryId = {};
     const itemPatch = {};
+    const additionalItemData = {};
     const itemSetBonuses = {};
     const marketItems = [];
     const baits = [];
@@ -60,7 +61,7 @@ export class ItemsExtractor extends AbstractExtractor {
           'IsUnique', 'IsUntradable', 'MaterializeType', 'CanBeHq', 'Rarity', 'Icon', 'LevelItem#', 'LevelEquip', 'StackSize',
           'EquipSlotCategory#', 'ClassJobCategory', 'MateriaSlotCount', 'BaseParamModifier', 'IsAdvancedMeldingPermitted',
           'ItemSearchCategory#', 'ItemSeries#', 'BaseParam#', 'BaseParamValue', 'BaseParamSpecial#', 'BaseParamValueSpecial', 'ItemAction',
-          'Delayms', 'ItemUICategory#'], false, 1),
+          'Delayms', 'ItemUICategory#', 'ClassJobRepair#', 'Desynth'], false, 1),
       this.getNonXivapiUrl('https://raw.githubusercontent.com/xivapi/ffxiv-datamining-patches/master/patchdata/Item.json'),
       this.getSheet(xiv, 'ItemFood', ['Value', 'ValueHQ', 'BaseParam', 'IsRelative', 'Max', 'MaxHQ'])
     ])
@@ -77,6 +78,11 @@ export class ItemsExtractor extends AbstractExtractor {
             ja: item.Name_ja,
             fr: item.Name_fr
           };
+          additionalItemData[item.index] = {
+            repair: item.ClassJobRepair,
+            desynth: item.Desynth,
+            bpvSpecial: item.BaseParamValueSpecial.filter(Boolean)
+          }
           uiCategories[item.index] = item.ItemUICategory;
           rarities[item.index] = item.Rarity;
           ilvls[item.index] = item.LevelItem;
@@ -246,6 +252,7 @@ export class ItemsExtractor extends AbstractExtractor {
         this.persistToJsonAsset('item-stats', itemStats);
         this.persistToJsonAsset('item-bonuses', itemBonuses);
         this.persistToJsonAsset('item-patch', itemPatch);
+        this.persistToJsonAsset('additional-item-data', additionalItemData);
         this.done();
       });
   }

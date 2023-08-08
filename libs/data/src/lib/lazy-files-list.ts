@@ -1,7 +1,7 @@
 export const lazyFilesList = {
   'achievementSearch': {
     'fileName': 'achievement-search.index',
-    'hashedFileName': 'achievement-search.7812b8f92938f24853b24a216025e776dd1c0661.index'
+    'hashedFileName': 'achievement-search.b890e8c76903657e43061e0819dd711509b42c03.index'
   },
   'achievements': {
     'fileName': 'achievements.json',
@@ -21,7 +21,7 @@ export const lazyFilesList = {
   },
   'actionSearch': {
     'fileName': 'action-search.index',
-    'hashedFileName': 'action-search.68877fbe0d64591a3d31e2edbd8a1365486401d6.index'
+    'hashedFileName': 'action-search.c7895d002176798b267b193e33f4c6287591a03a.index'
   },
   'actionTimeline': {
     'fileName': 'action-timeline.json',
@@ -30,6 +30,10 @@ export const lazyFilesList = {
   'actions': {
     'fileName': 'actions.json',
     'hashedFileName': 'actions.848b78cb5d08405873c7f400aebedcc3a5024e57.json'
+  },
+  'additionalItemData': {
+    'fileName': 'additional-item-data.json',
+    'hashedFileName': 'additional-item-data.e2f94d4f9687aa932a3e4fc357ae6921569d10ed.json'
   },
   'aetherialReduce': {
     'fileName': 'aetherial-reduce.json',
@@ -345,7 +349,7 @@ export const lazyFilesList = {
   },
   'itemSearch': {
     'fileName': 'item-search.index',
-    'hashedFileName': 'item-search.4297990366209d914412d89083fdb0021489b474.index'
+    'hashedFileName': 'item-search.48fa3df79d5c7f07c7821884bdbda2da586062bf.index'
   },
   'itemSeries': {
     'fileName': 'item-series.json',
@@ -461,7 +465,7 @@ export const lazyFilesList = {
   },
   'npcSearch': {
     'fileName': 'npc-search.index',
-    'hashedFileName': 'npc-search.293b7671e72efa782e1e77503ea7d34ad5992902.index'
+    'hashedFileName': 'npc-search.10515d53dd7404451b7c4a4a8f8aea6888dfca6e.index'
   },
   'npcs': {
     'fileName': 'npcs.json',
@@ -485,7 +489,7 @@ export const lazyFilesList = {
   },
   'questSearch': {
     'fileName': 'quest-search.index',
-    'hashedFileName': 'quest-search.4e81a4e1230441fd4c72c8c70468555edbc233d5.index'
+    'hashedFileName': 'quest-search.5862bf77f198b90466b1f60e208892bcc5ab382d.index'
   },
   'questSources': {
     'fileName': 'quest-sources.json',
@@ -502,6 +506,10 @@ export const lazyFilesList = {
   'rarities': {
     'fileName': 'rarities.json',
     'hashedFileName': 'rarities.99cda865552b1a6610425b6dcadd4e0c675cfece.json'
+  },
+  'recipeLevelTable': {
+    'fileName': 'recipe-level-table.json',
+    'hashedFileName': 'recipe-level-table.8eaa339736afc4f2ee37a58bcc33aa96fa842484.json'
   },
   'recipesIngredientLookup': {
     'fileName': 'recipes-ingredient-lookup.json',

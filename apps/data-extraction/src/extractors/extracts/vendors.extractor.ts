@@ -1,5 +1,5 @@
 import { AbstractItemDetailsExtractor } from './abstract-item-details-extractor';
-import { DataType, Vendor, Vector2 } from '@ffxiv-teamcraft/types';
+import { DataType, Vector2, Vendor } from '@ffxiv-teamcraft/types';
 import { uniqBy } from 'lodash';
 
 export class VendorsExtractor extends AbstractItemDetailsExtractor<Vendor[]> {
@@ -47,7 +47,15 @@ export class VendorsExtractor extends AbstractItemDetailsExtractor<Vendor[]> {
         }
         return vendor;
       });
-    }).flat(), v => {
+    }).flat().sort((a, b) => {
+      if (a.zoneId && !b.zoneId) {
+        return -1;
+      } else if (b.zoneId) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }), v => {
       return `${this.npcs[v.npcId]?.en}:${v.mapId}`;
     });
   }

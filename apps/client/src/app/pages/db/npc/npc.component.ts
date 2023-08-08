@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { XivapiService } from '@xivapi/angular-client';
-import { DataService } from '../../../core/api/data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SeoService } from '../../../core/seo/seo.service';
@@ -37,8 +35,7 @@ export class NpcComponent extends TeamcraftPageComponent {
 
   public leves$: Observable<number[]>;
 
-  constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private gt: DataService,
+  constructor(private route: ActivatedRoute,
               private i18n: I18nToolsService, public translate: TranslateService,
               private router: Router, private lazyData: LazyDataFacade, public settings: SettingsService,
               seo: SeoService) {

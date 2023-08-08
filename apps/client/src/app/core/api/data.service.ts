@@ -5,13 +5,27 @@ import { TranslateService } from '@ngx-translate/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { catchError, map } from 'rxjs/operators';
 import { XivapiOptions, XivapiService } from '@xivapi/angular-client';
-import { Region, SearchFilter, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
+import { ExtractRow, I18nName, Region, SearchFilter, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Language } from '../data/language';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../rxjs/with-lazy-data';
 import { environment } from '../../../environments/environment';
+import { LazyItemSearch } from '@ffxiv-teamcraft/data/model/lazy-item-search';
+import { LazyActionSearch } from '@ffxiv-teamcraft/data/model/lazy-action-search';
+import { LazyMonsterSearch } from '@ffxiv-teamcraft/data/model/lazy-monster-search';
+import { LazyLeveSearch } from '@ffxiv-teamcraft/data/model/lazy-leve-search';
+import { LazyInstanceSearch } from '@ffxiv-teamcraft/data/model/lazy-instance-search';
+import { LazyMapSearch } from '@ffxiv-teamcraft/data/model/lazy-map-search';
+import { LazyQuestSearch } from '@ffxiv-teamcraft/data/model/lazy-quest-search';
+import { LazyAchievementSearch } from '@ffxiv-teamcraft/data/model/lazy-achievement-search';
+import { LazyFateSearch } from '@ffxiv-teamcraft/data/model/lazy-fate-search';
+import { LazyFishingSpotSearch } from '@ffxiv-teamcraft/data/model/lazy-fishing-spot-search';
+import { LazyGatheringNodeSearch } from '@ffxiv-teamcraft/data/model/lazy-gathering-node-search';
+import { LazyNpcSearch } from '@ffxiv-teamcraft/data/model/lazy-npc-search';
+import { LazyStatusSearch } from '@ffxiv-teamcraft/data/model/lazy-status-search';
+import { LazyTraitSearch } from '@ffxiv-teamcraft/data/model/lazy-trait-search';
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
@@ -52,11 +66,31 @@ export class DataService {
    * @param ignoreLanguageSetting
    * @returns {Observable<Recipe[]>}
    */
-  public searchItem(query: string, filters: SearchFilter[], onlyCraftable: boolean, sort: [string, 'asc' | 'desc'] = [null, 'desc'], ignoreLanguageSetting = false): Observable<SearchResult[]> {
+  public searchItem(query: string, filters: SearchFilter[], onlyCraftable: boolean, sort: [string, 'asc' | 'desc'] = [null, 'desc'], ignoreLanguageSetting = false) {
     return this.search(query, onlyCraftable ? SearchType.RECIPE : SearchType.ITEM, filters, sort);
   }
 
-  public search(query: string, type: SearchType, rawFilters: SearchFilter[], sort: [string, 'asc' | 'desc'] = [null, 'desc']): Observable<SearchResult[]> {
+  public search(query: string, type: SearchType.ITEM, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyItemSearch['data'] & I18nName & {
+    sources: ExtractRow['sources']
+  }>>
+  public search(query: string, type: SearchType.RECIPE, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyItemSearch['data'] & I18nName & {
+    sources: ExtractRow['sources']
+  }>>
+  public search(query: string, type: SearchType.ACTION, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyActionSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.MONSTER, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyMonsterSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.LEVE, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyLeveSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.INSTANCE, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyInstanceSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.MAP, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyMapSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.QUEST, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyQuestSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.ACHIEVEMENT, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyAchievementSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.FATE, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyFateSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.FISHING_SPOT, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyFishingSpotSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.GATHERING_NODE, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyGatheringNodeSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.NPC, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyNpcSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.STATUS, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyStatusSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.TRAIT, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyTraitSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<SearchResult & I18nName>>
+  public search(query: string, type: SearchType, rawFilters: SearchFilter[], sort: [string, 'asc' | 'desc'] = [null, 'desc']) {
     if (type === SearchType.LORE) {
       return this.searchLore(query);
     }

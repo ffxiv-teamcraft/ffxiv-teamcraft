@@ -66,6 +66,7 @@ export class SearchExtractor extends AbstractExtractor {
       const collectableFlags = this.requireLazyFileByKey('collectableFlags');
       const mjiBuildings = this.requireLazyFileByKey('islandBuildings');
       const mjiLandmarks = this.requireLazyFileByKey('islandLandmarks');
+      const additionalData = this.requireLazyFileByKey('additionalItemData');
 
       const searchIndex = [];
 
@@ -75,6 +76,8 @@ export class SearchExtractor extends AbstractExtractor {
           const itemRecipes = recipes[id];
           const baseSearchInfo = {
             ...name,
+            iconId: icons[id]?.split('/').reverse()[0].split('_')[0] || 0,
+            ...additionalData[id],
             stats: stats[id]?.reduce((acc, stat: LazyItemStat) => {
               return {
                 ...acc,
@@ -118,6 +121,7 @@ export class SearchExtractor extends AbstractExtractor {
                 data: <SearchResult>{
                   itemId: +id,
                   icon: icons[id],
+                  ilvl: ilvls[id],
                   amount: 1,
                   contentType: 'items',
                   recipe: {
@@ -138,6 +142,7 @@ export class SearchExtractor extends AbstractExtractor {
               craftable: false,
               data: <SearchResult>{
                 itemId: +id,
+                ilvl: ilvls[id],
                 icon: icons[id],
                 amount: 1,
                 contentType: 'items'

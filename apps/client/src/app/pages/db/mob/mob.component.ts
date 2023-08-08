@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { XivapiService } from '@xivapi/angular-client';
-import { DataService } from '../../../core/api/data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SeoService } from '../../../core/seo/seo.service';
@@ -38,8 +36,7 @@ export class MobComponent extends TeamcraftPageComponent {
 
   public spawns$: Observable<{ map: number, zoneid: number, level: number, positions: Vector2[] }[]>;
 
-  constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private gt: DataService,
+  constructor(private route: ActivatedRoute,
               private i18n: I18nToolsService, private translate: TranslateService,
               private router: Router, private lazyData: LazyDataFacade, public settings: SettingsService,
               private mapService: MapService, seo: SeoService) {

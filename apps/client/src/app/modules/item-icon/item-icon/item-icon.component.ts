@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { booleanAttribute, ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { Router } from '@angular/router';
@@ -39,13 +39,13 @@ export class ItemIconComponent {
   @Input()
   width = 48;
 
-  @Input()
+  @Input({ transform: booleanAttribute })
   tooltipDisabled = false;
 
-  @Input()
+  @Input({ transform: booleanAttribute })
   disableClick = false;
 
-  @Input()
+  @Input({ transform: booleanAttribute })
   forceCollectable = false;
 
   itemId$ = observeInput(this, 'itemId');

@@ -9,8 +9,8 @@ import { SeoMetaConfig } from '../../../../core/seo/seo-meta-config';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { AbstractSimulationPage } from '../../abstract-simulation-page';
 import { EnvironmentService } from '../../../../core/environment.service';
-import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { Craft } from '@ffxiv-teamcraft/simulator';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-custom-simulator-page',
@@ -27,7 +27,7 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
 
   constructor(private fb: UntypedFormBuilder, protected route: ActivatedRoute,
               private rotationsFacade: RotationsFacade, protected seo: SeoService,
-              private env: EnvironmentService, private xivapi: XivapiService) {
+              private env: EnvironmentService, private lazyData: LazyDataFacade) {
     super(route, seo);
     this.route.paramMap.pipe(
       map(params => params.get('rotationId'))
@@ -84,17 +84,14 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
         return recipe;
       }),
       switchMap(recipe => {
-        return this.xivapi.get(XivapiEndpoint.RecipeLevelTable, recipe.rlvl).pipe(
+        return this.lazyData.getRow('recipeLevelTable', recipe.rlvl).pipe(
           map(rlt => {
             return <Craft>{
               ...recipe,
-              progressDivider: rlt.ProgressDivider,
-              progressModifier: rlt.ProgressModifier,
-              qualityDivider: rlt.QualityDivider,
-              qualityModifier: rlt.QualityModifier,
-            }
+              ...rlt
+            };
           })
-        )
+        );
       }),
       tap(recipe => {
         this.recipeForm.patchValue({

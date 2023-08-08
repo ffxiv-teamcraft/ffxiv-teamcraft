@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Character, CharacterSearchResultRow, XivapiService } from '@xivapi/angular-client';
+import { Character, CharacterSearchResultRow } from '@xivapi/angular-client';
 import { combineLatest, Observable, of } from 'rxjs';
 import { debounceTime, filter, map, mergeMap, startWith, tap } from 'rxjs/operators';
 import { UntypedFormControl, Validators } from '@angular/forms';
@@ -37,7 +37,7 @@ export class CharacterLinkPopupComponent {
 
   public mandatory = false;
 
-  constructor(private xivapi: XivapiService, private store: Store<any>, private modalRef: NzModalRef,
+  constructor(private store: Store<any>, private modalRef: NzModalRef,
               private lodestoneService: LodestoneService) {
     this.servers$ = of(GAME_SERVERS).pipe(
       map(servers => {
@@ -80,7 +80,7 @@ export class CharacterLinkPopupComponent {
     const customCharacter: Partial<Character> = {
       ID: fakeLodestoneId,
       Name: this.characterName.value,
-      Server: this.selectedServer.value,
+      Server: this.selectedServer.value
     };
     this.store.dispatch(new AddCharacter(fakeLodestoneId, this.useAsDefault));
     this.store.dispatch(new AddCustomCharacter(fakeLodestoneId, customCharacter));

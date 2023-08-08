@@ -131,6 +131,19 @@ describe('search', () => {
         expect(results.find(row => row.itemId === 35028)).toBeDefined();
       });
 
+      it('should work with an id filter', () => {
+        // Susano Miniature
+        const results = search.search(SearchType.ITEM, '', [
+          {
+            field: 'data.itemId',
+            operator: '=',
+            value: 17962
+          }
+        ]);
+        expect(results.length).toBe(1);
+        expect(results[0].itemId).toBe(17962);
+      });
+
       it('should work with bonus filters', () => {
         // Should at least return classical cane
         const results = search.search(SearchType.ITEM, '', [
@@ -148,6 +161,16 @@ describe('search', () => {
           }
         ]);
         expect(results.find(row => row.itemId === 19824)).toBeDefined();
+        // Should at least return classical cane
+        const results2 = search.search(SearchType.ITEM, '', [
+          {
+            // 70 is Craftsmanship
+            field: 'bonuses.70.NQ',
+            operator: '>',
+            value: 0
+          }
+        ]);
+        expect(results2.find(row => row.itemId === 19824)).toBeDefined();
       });
 
       it('should work with exclude filter operator', () => {

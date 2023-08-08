@@ -18,11 +18,11 @@ import { koWorlds } from '../../core/data/sources/ko-worlds';
 import { LazyRecipe } from '@ffxiv-teamcraft/data/model/lazy-recipe';
 import { HttpClient } from '@angular/common/http';
 import { mapIds } from '../../core/data/sources/map-ids';
-import { XivapiService } from '@xivapi/angular-client';
 import { Language } from '../../core/data/language';
 import { normalizeI18nName } from '../../core/tools/normalize-i18n';
 import { TranslateService } from '@ngx-translate/core';
 import { LazyDataStateService } from './lazy-data-state.service';
+import { GAME_SERVERS, GAME_SERVERS_PER_DC } from '@ffxiv-teamcraft/data/handmade/game-servers';
 
 @Injectable({
   providedIn: 'root'
@@ -33,11 +33,11 @@ export class LazyDataFacade {
     shareReplay(1)
   );
 
-  public datacenters$ = this.xivapi.getDCList().pipe(
+  public datacenters$ = of(GAME_SERVERS_PER_DC).pipe(
     shareReplay(1)
   );
 
-  public servers$ = this.xivapi.getServerList().pipe(
+  public servers$ = of(GAME_SERVERS).pipe(
     shareReplay(1)
   );
 
@@ -47,7 +47,7 @@ export class LazyDataFacade {
 
   constructor(private state: LazyDataStateService,
               private settings: SettingsService, private http: HttpClient,
-              private xivapi: XivapiService, private translate: TranslateService) {
+              private translate: TranslateService) {
     this.isLoading$
       .pipe(
         skipWhile(loading => !loading),
@@ -332,7 +332,10 @@ export class LazyDataFacade {
     );
   }
 
-  public getSearchIndex<K extends LazyDataI18nKey | 'koItems' | 'zhItems'>(entry: K, additionalProperty?: keyof LazyDataEntries[K]): Observable<{ id: number, name: I18nName }[]> {
+  public getSearchIndex<K extends LazyDataI18nKey | 'koItems' | 'zhItems'>(entry: K, additionalProperty?: keyof LazyDataEntries[K]): Observable<{
+    id: number,
+    name: I18nName
+  }[]> {
     if (!this.searchIndexCache[entry]) {
       this.searchIndexCache[entry] = this.getEntry(entry).pipe(
         map(lazyEntry => {
