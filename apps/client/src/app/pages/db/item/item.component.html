@@ -532,11 +532,11 @@
                     </div>
                   </ng-template>
                   <div class="recipes" fxLayout="column" fxLayoutGap="10px">
-                    <nz-card *ngFor="let recipeSource of source.data" [nzActions]="recipeSource.job > 0 ?[addToList, openSimulator]: [addToList]"
+                    <nz-card *ngFor="let recipe of source.data" [nzActions]="recipe.job > 0 ?[addToList, openSimulator]: [addToList]"
                              fxLayoutGap="5px">
                       <nz-card-meta [nzTitle]="recipeTitle">
                         <ng-template #recipeTitle>
-                          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="getRecipe(recipeSource.id, gtData) | async as recipe">
+                          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                             <ng-container *ngIf="recipe.job > 0">
                               <div class="recipe-title" fxLayout="column">
                                 <div fxLayout="row" fxLayoutGap="5px">
@@ -546,9 +546,9 @@
                                   <div *ngIf="recipe.craftsmanshipReq > 0">{{'DB.ITEM.Required_craftsmanship' | translate}}: {{recipe.craftsmanshipReq}}</div>
                                   <div *ngIf="recipe.controlReq > 0">{{'DB.ITEM.Required_control' | translate}}: {{recipe.controlReq}}</div>
                                 </div>
-                                <div *ngIf="recipeSource.masterbook" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                                  <app-item-icon [itemId]="recipeSource.masterbook.id" width="24"></app-item-icon>
-                                  <div>{{recipeSource.masterbook.id | itemName | i18n}}</div>
+                                <div *ngIf="recipe.masterbook" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                                  <app-item-icon [itemId]="recipe.masterbook.id" width="24"></app-item-icon>
+                                  <div>{{recipe.masterbook.id | itemName | i18n}}</div>
                                 </div>
                                 <div fxLayout="row" fxLayoutGap="5px">
                                   <b>rlvl</b>:
@@ -577,8 +577,8 @@
                           </div>
                         </ng-template>
                       </nz-card-meta>
-                      <div *ngIf="getRecipe(recipeSource.id, gtData) | async as craft" fxLayout="column" fxLayoutGap="5px">
-                        <div *ngFor="let item of craft.ingredients">
+                      <div fxLayout="column" fxLayoutGap="5px">
+                        <div *ngFor="let item of recipe.ingredients">
                           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                             <app-item-icon [icon]="+item.id | lazyIcon" [itemId]="+item.id" width="32"></app-item-icon>
                             <div fxLayout="column">
