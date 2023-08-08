@@ -49114,16 +49114,16 @@
     }
   },
   "3779": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Electrocution",
+    "de": "Stromschlag",
+    "ja": "感電",
+    "fr": "Électrocution",
+    "icon": "/i/015000/015528.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining lightning damage over time.",
+      "de": "Erleidet schrittweise Blitzschaden.",
+      "ja": "雷属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques de foudre sont subis."
     }
   },
   "3780": {

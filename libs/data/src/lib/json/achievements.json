@@ -26240,19 +26240,19 @@
     "itemReward": 0
   },
   "3281": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "A Decade of Adventure",
+    "ja": "ありがとう10周年！！",
+    "de": "Danke für zehn abenteuerliche Jahre!",
+    "fr": "Une décennie d'aventures",
+    "icon": "/i/026000/026107.png",
     "itemReward": 0
   },
   "3282": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "The Man, the Myth, the Legend",
+    "ja": "終焉より継がれしもの",
+    "de": "Der Hoffnung Saat",
+    "fr": "Porteur d'espoir",
+    "icon": "/i/026000/026002.png",
     "itemReward": 0
   },
   "3283": {
@@ -26610,7 +26610,7 @@
   "3327": {
     "en": "Mightier than the Gate",
     "ja": "覚醒に至りしエデンを制覇せし青魔道士",
-    "de": "Team Blau gegen Titan",
+    "de": "Team Blau gegen Edens Erwachen",
     "fr": "Des bleus pour Éden I",
     "icon": "/i/062000/062969.png",
     "itemReward": 0
@@ -26618,7 +26618,7 @@
   "3328": {
     "en": "Mightier than the Verse",
     "ja": "共鳴に至りしエデンを制覇せし青魔道士",
-    "de": "Team Blau gegen Shiva ",
+    "de": "Team Blau gegen Edens Resonanz",
     "fr": "Des bleus pour Éden II",
     "icon": "/i/062000/062969.png",
     "itemReward": 0

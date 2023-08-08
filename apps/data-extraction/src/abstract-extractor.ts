@@ -18,6 +18,8 @@ export abstract class AbstractExtractor {
 
   public static assetOutputFolder = join(__dirname, '../../../libs/data/src/lib/json/');
 
+  public static tsOutputFolder = join(__dirname, '../../../libs/data/src/lib/handmade/');
+
   protected static XIVAPI_KEY = process.env.XIVAPI_KEY;
 
   protected static TOTAL_REQUESTS = 0;
@@ -288,7 +290,7 @@ export abstract class AbstractExtractor {
 
   protected persistToTypescriptData(fileName: string, variableName: string, content: any): void {
     const ts = `export const ${variableName} = ${JSON.stringify(content, null, 2)};`;
-    writeFileSync(join(AbstractExtractor.outputFolder, `${fileName}.ts`), ts);
+    writeFileSync(join(AbstractExtractor.tsOutputFolder, `${fileName}.ts`), ts);
   }
 
   protected persistToCompressedJsonAsset(fileName: string, content: any): void {
