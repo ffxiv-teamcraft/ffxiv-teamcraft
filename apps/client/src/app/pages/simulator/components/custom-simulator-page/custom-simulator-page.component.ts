@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
-import { Craft } from '../../../../model/garland-tools/craft';
 import { combineLatest, merge, Observable } from 'rxjs';
 import { filter, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
@@ -11,6 +10,7 @@ import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { AbstractSimulationPage } from '../../abstract-simulation-page';
 import { EnvironmentService } from '../../../../core/environment.service';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
+import { Craft } from '@ffxiv-teamcraft/simulator';
 
 @Component({
   selector: 'app-custom-simulator-page',

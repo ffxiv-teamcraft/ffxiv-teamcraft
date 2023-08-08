@@ -2,14 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
-import { ItemData } from '../../model/garland-tools/item-data';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { catchError, map } from 'rxjs/operators';
-import { QuestData } from '../../model/garland-tools/quest-data';
-import { NpcData } from '../../model/garland-tools/npc-data';
-import { LeveData } from '../../model/garland-tools/leve-data';
-import { MobData } from '../../model/garland-tools/mob-data';
-import { FateData } from '../../model/garland-tools/fate-data';
 import { XivapiOptions, XivapiService } from '@xivapi/angular-client';
 import { Region, SearchFilter, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
 import { I18nToolsService } from '../tools/i18n-tools.service';
@@ -22,19 +16,7 @@ import { environment } from '../../../environments/environment';
 @Injectable({ providedIn: 'root' })
 export class DataService {
 
-  public garlandtoolsVersions = {
-    item: 3,
-    instance: 2,
-    quest: 2,
-    npc: 2,
-    leve: 3,
-    mob: 2,
-    fate: 2
-  };
-
   public searchLang = this.translate.currentLang;
-
-  private garlandUrl = 'https://www.garlandtools.org/db/doc';
 
   constructor(private http: HttpClient,
               private i18n: I18nToolsService,
@@ -59,28 +41,6 @@ export class DataService {
 
   public setSearchLang(lang: Language): void {
     this.searchLang = lang;
-  }
-
-  /**
-   * Gets an item based on its id.
-   * @deprecated
-   * @param {number} id
-   * @returns {Observable<ItemData>}
-   */
-  public getItem(id: number): Observable<ItemData> {
-    return this.getGarlandData(`/item/en/${this.garlandtoolsVersions.item}/${id}`)
-      .pipe(map(item => this.serializer.deserialize<ItemData>(item, ItemData)));
-  }
-
-  /**
-   * Gets a quest based on its id.
-   * @deprecated
-   * @param {number} id
-   * @returns {Observable<QuestData>}
-   */
-  public getQuest(id: number): Observable<QuestData> {
-    return this.getGarlandData(`/quest/en/${this.garlandtoolsVersions.quest}/${id}`)
-      .pipe(map(item => this.serializer.deserialize<QuestData>(item, QuestData)));
   }
 
   /**
@@ -170,15 +130,6 @@ export class DataService {
 
   private prodSearch(params: any): Observable<SearchResult[]> {
     return this.http.get<SearchResult[]>('https://api.ffxivteamcraft.com/search', { params });
-  }
-
-  /**
-   * Creates a request to garlandtools.org.
-   * @param {string} uri
-   * @returns {Observable}
-   */
-  public getGarlandData(uri: string): Observable<any> {
-    return this.http.get<any>(this.garlandUrl + uri + '.json');
   }
 
   getSearchLang(): string {

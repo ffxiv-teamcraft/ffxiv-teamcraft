@@ -531,6 +531,10 @@ export const lazyFilesList = {
     'fileName': 'reverse-reduction.json',
     'hashedFileName': 'reverse-reduction.8c5a355f7c62a9301eb439cd3dc91c504365e839.json'
   },
+  'satisfactionThresholds': {
+    'fileName': 'satisfaction-thresholds.json',
+    'hashedFileName': 'satisfaction-thresholds.e858539138c5516be93ac33bef2f53f322c4d44d.json'
+  },
   'scripIndex': {
     'fileName': 'scrip-index.json',
     'hashedFileName': 'scrip-index.a71d193122500aaedaf87d57ca1e936f29917de0.json'

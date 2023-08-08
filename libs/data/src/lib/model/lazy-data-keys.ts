@@ -132,6 +132,7 @@ export const LazyDataKeys = [
   'retainerTasks',
   'reverseInstanceSources',
   'reverseReduction',
+  'satisfactionThresholds',
   'scripIndex',
   'searchCategory',
   'seeds',

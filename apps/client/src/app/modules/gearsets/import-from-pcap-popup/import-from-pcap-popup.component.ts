@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd/modal';
-import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { filter, map, takeUntil } from 'rxjs/operators';
@@ -12,6 +11,7 @@ import { GearsetsFacade } from '../+state/gearsets.facade';
 import { MateriaService } from '../materia.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
+import { jobAbbrs } from '@ffxiv-teamcraft/data/handmade/job-abbr-en';
 
 @Component({
   selector: 'app-import-from-pcap-popup',
@@ -26,10 +26,9 @@ export class ImportFromPcapPopupComponent extends TeamcraftComponent {
 
   public gearsetName: string;
 
-  public availableJobs = this.gt.getJobs().filter(job => job.id > 0);
+  public availableJobs = Object.keys(jobAbbrs).map(k => +k).filter(Boolean);
 
-  constructor(private modalRef: NzModalRef, private gt: GarlandToolsService,
-              private ipc: IpcService, private lazyData: LazyDataFacade,
+  constructor(private modalRef: NzModalRef, private ipc: IpcService, private lazyData: LazyDataFacade,
               private gearsetsFacade: GearsetsFacade, private materiaService: MateriaService) {
     super();
     combineLatest([this.ipc.itemInfoPackets$.pipe(debounceBufferTime(2000)), this.ipc.updateClassInfoPackets$]).pipe(

@@ -282,6 +282,7 @@ export interface LazyData {
   retainerTasks: Array<LazyRetainerTask>;
   reverseInstanceSources: Record<number, number[]>;
   reverseReduction: Record<number, number[]>;
+  satisfactionThresholds: Record<number, number[]>;
   scripIndex: Record<number, number>;
   searchCategory: Record<number, LazySearchCategory>;
   seeds: Record<number, LazySeed>;

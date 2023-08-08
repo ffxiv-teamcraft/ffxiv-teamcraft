@@ -10,7 +10,6 @@ import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { List } from '../../../modules/list/model/list';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { I18nName, Levequest } from '@ffxiv-teamcraft/types';
-import { DataService } from '../../../core/api/data.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { SettingsService } from '../../../modules/settings/settings.service';
@@ -91,7 +90,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
               private listManager: ListManagerService, private notificationService: NzNotificationService,
               private i18n: I18nToolsService, private lazyData: LazyDataFacade,
               private listPicker: ListPickerService, private progressService: ProgressPopupService,
-              private dataService: DataService, private auth: AuthFacade,
+              private auth: AuthFacade,
               private settings: SettingsService, private platformService: PlatformService, private ipc: IpcService,
               private environment: EnvironmentService) {
     super();
@@ -228,10 +227,10 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
       mergeMap(list => {
         const operation$ = concat(
           ...leves.map(leve => {
-            return this.dataService.getItem(leve.itemId).pipe(
-              switchMap(itemData => {
-                if (itemData.isCraft()) {
-                  const craft = itemData.item.craft.find(c => c.job === leve.jobId);
+            return this.lazyData.getRow('recipesPerItem', leve.itemId, []).pipe(
+              switchMap(recipes => {
+                if (recipes.length > 0) {
+                  const craft = recipes.find(c => c.job === leve.jobId);
                   return this.listManager.addToList({
                     itemId: leve.itemId,
                     list: list,
@@ -275,9 +274,9 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
       switchMap(itemName => {
         const list = this.listsFacade.newEphemeralList(itemName);
 
-        const operation$ = this.dataService.getItem(leve.itemId).pipe(
-          switchMap(itemData => {
-            const craft = itemData.item.craft.find(c => c.job === leve.jobId);
+        const operation$ = this.lazyData.getRow('recipesPerItem', leve.itemId, []).pipe(
+          switchMap(recipes => {
+            const craft = recipes.find(c => c.job === leve.jobId);
             return this.listManager
               .addToList({
                 itemId: leve.itemId,

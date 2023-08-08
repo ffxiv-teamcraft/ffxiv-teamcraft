@@ -1,6 +1,5 @@
 import { ErrorHandler, ModuleWithProviders, NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { GarlandToolsService } from './api/garland-tools.service';
 import { NgSerializerModule } from '@kaiu/ng-serializer';
 import { I18nPipe } from './i18n.pipe';
 import { TranslateModule } from '@ngx-translate/core';
@@ -153,7 +152,6 @@ export class CoreModule {
     return {
       ngModule: CoreModule,
       providers: [
-        GarlandToolsService,
         EorzeanTimeService,
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
         { provide: ErrorHandler, useClass: TeamcraftErrorHandler }

@@ -1,6 +1,5 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
-import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
 import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, pairwise, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SettingsService } from '../../../modules/settings/settings.service';
@@ -31,6 +30,7 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { IS_HEADLESS } from '../../../../environments/is-headless';
 import { EnvironmentService } from '../../../core/environment.service';
 import { toIndex } from '../../../core/rxjs/to-index';
+import { jobAbbrs } from '@ffxiv-teamcraft/data/handmade/job-abbr-en';
 
 @Component({
   selector: 'app-search',
@@ -90,8 +90,6 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   availableStats = stats;
 
   availableCraftJobs = [8, 9, 10, 11, 12, 13, 14, 15];
-
-  availableJobs = [];
 
   uiCategories$: Observable<{ id: number, data: I18nName }[]>;
 
@@ -257,7 +255,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     })
   );
 
-  constructor(private gt: GarlandToolsService, private data: DataService, public settings: SettingsService,
+  constructor(private data: DataService, public settings: SettingsService,
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private notificationService: NzNotificationService,
               private i18n: I18nToolsService, private listPicker: ListPickerService,
@@ -309,9 +307,6 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       if (before.lang === this.searchLang$.value) {
         this.searchLang$.next(after.lang as Language);
       }
-    });
-    this.gt.onceLoaded$.pipe(first()).subscribe(() => {
-      this.availableJobs = this.gt.getJobs().filter(job => job.id > 0).map(job => job.id);
     });
 
     this.route.queryParams.pipe(
@@ -715,7 +710,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.jobCategories.value && controls.jobCategories.value.length > 0) {
       filters.push(...controls.jobCategories.value.map(jobId => {
           return {
-            name: `cjc.${this.gt.getJob(jobId).abbreviation}`,
+            name: `cjc.${jobAbbrs[jobId]}`,
             value: 1
           };
         })

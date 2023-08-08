@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
 import { DataService } from '../../../../core/api/data.service';
 import { NzModalRef } from 'ng-zorro-antd/modal';
-import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { debounceTime, filter, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
@@ -33,7 +32,7 @@ export class RecipeChoicePopupComponent {
   pickRotation: boolean;
 
   constructor(private dataService: DataService, private dialogRef: NzModalRef,
-              private gt: GarlandToolsService, private htmlTools: HtmlToolsService,
+              private htmlTools: HtmlToolsService,
               private translate: TranslateService, private rotationPickerService: RotationPickerService) {
     this.results$ = this.query$.pipe(
       filter(query => {
@@ -54,15 +53,6 @@ export class RecipeChoicePopupComponent {
       tap(() => this.loading = false),
       startWith([])
     );
-  }
-
-  /**
-   * Gets job informations from a given job id.
-   * @param {number} id
-   * @returns {any}
-   */
-  getJob(id: number): any {
-    return this.gt.getJob(id);
   }
 
   /**

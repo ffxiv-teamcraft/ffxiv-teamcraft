@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { TranslateService } from '@ngx-translate/core';
 import { RotationPickerDrawerComponent } from './rotation-picker-drawer/rotation-picker-drawer.component';
-import { Craft } from '../../model/garland-tools/craft';
 import { CraftingRotation } from '../../model/other/crafting-rotation';
 import { Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { Craft } from '@ffxiv-teamcraft/simulator';
 
 @Injectable({
   providedIn: 'root'

@@ -206,7 +206,7 @@
                          src="./assets/icons/instance.png">
                     <img *ngIf="reward.type === 'action'" [appXivdbActionTooltip]="reward.id" [src]="reward.id | actionIcon | xivapiIcon"
                          alt="">
-                    <img *ngIf="reward.type === 'rep'" src="https://www.garlandtools.org/db/images/Mob.png">
+                    <img *ngIf="reward.type === 'rep'" src="./assets/icons/Mob.png">
                   </ng-template>
                   <ng-template #rewardTitle>
                     <div *ngIf="reward.type === 'item'" [appItemRarity]="reward.id">

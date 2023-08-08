@@ -22,7 +22,7 @@ export class I18nNameComponent {
   ]).pipe(
     filter(([, id]) => id !== null),
     switchMap(([content, id, fallback, field]) => {
-      return this.lazyData.getI18nName(content, id, field as keyof Extract<LazyDataEntries[this['content']], I18nName>).pipe(
+      return this.lazyData.getI18nName(content, +id, field as keyof Extract<LazyDataEntries[this['content']], I18nName>).pipe(
         map(name => name || (fallback && this.i18n.createFakeI18n(fallback)))
       );
     })
@@ -32,7 +32,7 @@ export class I18nNameComponent {
   content: LazyDataI18nKey;
 
   @Input()
-  id: number;
+  id: number | string;
 
   @Input()
   width = 150;

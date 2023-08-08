@@ -8,11 +8,9 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { combineLatest, concat, Observable, of } from 'rxjs';
 import { filter, first, map, mergeMap, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { Memoized } from '../../../core/decorators/memoized';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { SeoService } from '../../../core/seo/seo.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { ItemData } from '../../../model/garland-tools/item-data';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { DataType, getItemSource, SearchResult, TripleTriadDuel } from '@ffxiv-teamcraft/types';
@@ -127,7 +125,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           type: UsedForType.REDUCTION,
           flex: '1 1 auto',
           title: 'DB.Reduces_to',
-          icon: 'https://garlandtools.org/db/images/item/Reduce.png',
+          icon: './assets/icons/Reduce.png',
           links: item.reductions.map((itemId) => {
             return {
               itemId: +itemId
@@ -186,7 +184,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           flex: '1 1 auto',
           type: UsedForType.TRADES,
           title: 'DB.Used_for_trades',
-          icon: 'https://www.garlandtools.org/db/images/marker/Shop.png',
+          icon: './assets/icons/Shop.png',
           trades: item.tradeEntries
         });
       }
@@ -483,18 +481,6 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
   ngOnDestroy() {
     super.ngOnDestroy();
     this.itemContext.setItemId(undefined);
-  }
-
-  @Memoized()
-  public getRecipe(recipeId: string, fallbackData: ItemData): Observable<any> {
-    return this.lazyData.getRecipe(recipeId).pipe(
-      map((recipe) => {
-        if (!recipe) {
-          return fallbackData.getCraft(recipeId);
-        }
-        return recipe;
-      })
-    );
   }
 
   markAsDoneInLog(id: number): void {

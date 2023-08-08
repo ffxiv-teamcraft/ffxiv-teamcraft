@@ -240,7 +240,8 @@
                 </ng-container>
               </div>
             </ng-template>
-            <app-search-job-picker formControlName="jobCategories" [single]="searchType === searchTypes.ACTION || searchType === searchTypes.TRAIT || searchType === searchTypes.LEVE"></app-search-job-picker>
+            <app-search-job-picker formControlName="jobCategories"
+                                   [single]="searchType === searchTypes.ACTION || searchType === searchTypes.TRAIT || searchType === searchTypes.LEVE"></app-search-job-picker>
           </nz-card>
           <div fxFlexOrder="3" fxFlexOrder.lt-lg="2" *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE"
                class="stats-filters-container" fxFlex="0 1 540px" fxFlex.lt-lg="1 1 auto">
@@ -372,14 +373,11 @@
               </div>
               <div fxLayout="row" fxLayoutGap="5px">
                 <div>x{{item.amount | number:'1.0':translate.currentLang}}</div>
-                <ng-container *ngIf="item.recipe && item.recipe.job > 0">
-                  <img *ngIf="(item.recipe.job | i18nRow:'jobAbbr' | async).en as icon"
-                       alt="{{item.recipe.job | i18nRow:'jobAbbr' | i18n}}"
-                       class="job-icon small"
-                       src="https://garlandtools.org/db/images/job/{{icon}}.png">
+                <div *ngIf="item.recipe && item.recipe.job > 0" class="flex-row align-center gap-2">
+                  <div class="companion-svg" [innerHtml]="item.recipe.job | jobUnicode"></div>
                   lvl{{item.recipe.lvl}} <span
                   *ngIf="item.recipe.stars !== undefined">{{getStars(item.recipe.stars)}}</span>
-                </ng-container>
+                </div>
               </div>
             </div>
           </div>
@@ -419,7 +417,7 @@
                        [nzPageIndex]="page$ | async" [nzTotal]="results.total"
                        [nzPageSize]="pageSize" [nzShowTotal]="rangeTemplate"></nz-pagination>
         <ng-template #rangeTemplate let-range="range" let-total>
-          {{'COMMON.Pagination_text' | translate: {start: range[0], end:range[1], total} }}
+          {{'COMMON.Pagination_text' | translate: { start: range[0], end: range[1], total } }}
         </ng-template>
       </app-page-loader>
       <div *ngIf="results.total === 0">

@@ -24,8 +24,9 @@
                      nzSize="small" [nzTabBarExtraContent]="hideCompletedToggle">
             <nz-tab *ngFor="let tab of dohTabs$ | async; let index = index" [nzTitle]="titleTemplate">
               <ng-template #titleTemplate>
-                <img [class.small-icon]="false | ifMobile: true" [src]="getDohIcon(index)" alt=""
-                     class="job-icon">{{ (index + 8) | i18nRow:'jobName' | i18n }}
+                <div class="flex-row align-center gap-2">
+                  <span class="companion-svg" [innerHtml]="(index + 8) | jobUnicode"></span>{{ (index + 8) | i18nRow:'jobName' | i18n }}
+                </div>
               </ng-template>
               <nz-tabset nzAnimated="false" nzSize="small" nzTabPosition="left" class="vertical-tabs">
                 <ng-container *ngFor="let page of tab">

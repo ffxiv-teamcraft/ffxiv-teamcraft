@@ -5,7 +5,6 @@ import { getCraftByPriority, ListRow } from './model/list-row';
 import { DataService } from '../../core/api/data.service';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 import { filter, first, map, skip, switchMap, tap, withLatestFrom } from 'rxjs/operators';
-import { GarlandToolsService } from '../../core/api/garland-tools.service';
 import { DiscordWebhookService } from '../../core/discord/discord-webhook.service';
 import { TeamsFacade } from '../teams/+state/teams.facade';
 import { environment } from '../../../environments/environment';
@@ -35,7 +34,6 @@ export interface ListAdditionParams {
 export class ListManagerService {
 
   constructor(protected db: DataService,
-              private gt: GarlandToolsService,
               protected i18n: I18nToolsService,
               private zone: NgZone,
               private discordWebhookService: DiscordWebhookService,

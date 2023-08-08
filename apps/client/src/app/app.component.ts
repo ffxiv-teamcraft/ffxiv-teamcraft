@@ -12,7 +12,6 @@ import {
   ViewChild
 } from '@angular/core';
 import { environment } from '../environments/environment';
-import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { IpcService } from './core/electron/ipc.service';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
@@ -234,8 +233,7 @@ export class AppComponent implements OnInit {
 
   public currentLink = () => `https://ffxivteamcraft.com${window.location.hash.replace('#', '')}`;
 
-  constructor(@Inject(DOCUMENT) private document: Document,
-              private gt: GarlandToolsService, public translate: TranslateService,
+  constructor(@Inject(DOCUMENT) private document: Document, public translate: TranslateService,
               public ipc: IpcService, private router: Router, private firebase: Database,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
               public listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService,

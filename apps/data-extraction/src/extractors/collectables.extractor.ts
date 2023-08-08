@@ -37,6 +37,7 @@ export class CollectablesExtractor extends AbstractExtractor {
       '4.3': 31749
     };
     const collectables = {};
+    const satisfactionThresholds = {};
     const scripIndex = {};
     combineLatest([
       this.getSheet<any>(xiv, 'HWDCrafterSupply',
@@ -56,9 +57,19 @@ export class CollectablesExtractor extends AbstractExtractor {
         ], false, 2),
       this.getSheet<any>(xiv, 'CollectablesShopRewardItem', ['CollectablesShopRefine#', 'CollectablesShopRewardScrip#', 'Item.AlwaysCollectable',
         'Item.IsCollectable', 'LevelMin', 'LevelMax', 'CollectablesShopItemGroup#', 'RewardLow', 'RewardMid', 'RewardHigh'
+      ], false, 1),
+      this.getSheet<any>(xiv, 'SatisfactionSupply', [
+        'Item#', 'CollectabilityLow', 'CollectabilityMid', 'CollectabilityHigh'
       ], false, 1)
     ])
-      .subscribe(([hwdCompleteFetch, shopsCompleteFetch, collectablesCompleteFetch, collectableRewardsCompleteFetch]) => {
+      .subscribe(([hwdCompleteFetch, shopsCompleteFetch, collectablesCompleteFetch, collectableRewardsCompleteFetch, satisfaction]) => {
+        satisfaction.forEach(row => {
+          satisfactionThresholds[row.Item] = [
+            row.CollectabilityLow * 10,
+            row.CollectabilityMid * 10,
+            row.CollectabilityHigh * 10
+          ];
+        });
         // HWDCrafterSupply
         hwdCompleteFetch.forEach(supply => {
           for (let i = 0; i < 32; i++) {
@@ -210,6 +221,7 @@ export class CollectablesExtractor extends AbstractExtractor {
               });
             });
           });
+        this.persistToJsonAsset('satisfaction-thresholds', satisfactionThresholds);
         this.persistToJsonAsset('collectables', collectables);
         this.persistToJsonAsset('scrip-index', scripIndex);
         this.done();
