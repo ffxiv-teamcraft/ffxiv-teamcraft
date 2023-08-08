@@ -1,6 +1,6 @@
 import { inject, TestBed } from '@angular/core/testing';
 import { StatsService } from './stats.service';
-import { BaseParam } from '@ffxiv-teamcraft/data';
+import { BaseParam } from '@ffxiv-teamcraft/types';
 
 xdescribe('StatsService', () => {
   beforeEach(() => {
@@ -145,9 +145,7 @@ xdescribe('StatsService', () => {
         }, {});
 
       entry.stats.forEach(stat => {
-        expect(stats[stat.id]).toBeCloseTo(stat.value,
-          -1,
-          `${BaseParam[stat.id]}, lvl ${entry.level}, job ${entry.job}, tribe ${entry.tribe}`);
+        expect(stats[stat.id]).toBeCloseTo(stat.value, -1);
       });
     });
   }));
