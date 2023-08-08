@@ -620,7 +620,7 @@ export class AppComponent implements OnInit {
         if (!user.supporter && !user.admin && this.settings.theme.name === 'CUSTOM') {
           this.settings.theme = Theme.DEFAULT;
         }
-        if (!user.supporter && !increasedPageViews) {
+        if (!user.supporter && !increasedPageViews && !this.overlay && !this.childWindow) {
           const viewTriggersForPatreonPopup = [20, 200, 500];
           this.settings.pageViews++;
           increasedPageViews = true;
