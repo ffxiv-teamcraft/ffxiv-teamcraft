@@ -285,6 +285,7 @@ export const LazyDataKeys = [
   'nodesDatabasePages',
   'npcsDatabasePages',
   'questsDatabasePages',
+  'questsText',
   'statusesDatabasePages',
   'traitsDatabasePages'
 ]

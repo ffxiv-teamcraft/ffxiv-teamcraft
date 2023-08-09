@@ -16,6 +16,7 @@ export class QuestsDbPagesExtractor extends AbstractExtractor {
 
   protected doExtract(xiv: XivDataService): void {
     const pages = {};
+    const textIndex = {};
     const koDescriptions = this.requireLazyFileByKey('koQuestDescriptions');
     const zhDescriptions = this.requireLazyFileByKey('zhQuestDescriptions');
     this.getSheet<any>(xiv, 'Quest',
@@ -38,10 +39,11 @@ export class QuestsDbPagesExtractor extends AbstractExtractor {
         'Id'
       ], false, 1)
       .subscribe(quests => {
-        this.getExtendedNames<LazyQuest>('quests', q => q.name).forEach(quest => {
-          const row = quests.find(q => q.index === +quest.id);
+        this.getExtendedNames<LazyQuest>('quests', q => q.name).forEach(extended => {
+          const row = quests.find(q => q.index === +extended.id);
           const folder = row.Id.split('_')[1].slice(-6, 3);
           const textCSV = xiv.getFromSaintCSV<{ key: string, 0: string, 1: string }>(`quest/${folder}/${row.Id}`, true);
+          const { name, ...quest } = extended;
           pages[quest.id] = {
             ...quest,
             id: +quest.id,
@@ -57,7 +59,7 @@ export class QuestsDbPagesExtractor extends AbstractExtractor {
             chainLength: questChainLengths[+quest.id],
             genre: row.JournalGenre,
             requires: row.PreviousQuest.filter(Boolean),
-            next: quests.filter(q => q.PreviousQuest.includes(row.index)),
+            next: quests.filter(q => q.PreviousQuest.includes(row.index)).map(q => q.index),
             start: row.IssuerStart,
             end: row.TargetEnd,
             startingPoint: this.npcs[row.IssuerStart]?.position ?? null,
@@ -76,11 +78,12 @@ export class QuestsDbPagesExtractor extends AbstractExtractor {
             jobCategory: row.ClassJobCategory0,
             level: row.ClassJobLevel0,
             repeatable: row.IsRepeatable,
-            beastRank: row.BeastReputationRank,
-            text: this.processText(textCSV)
+            beastRank: row.BeastReputationRank
           };
+          textIndex[row.index] = this.processText(textCSV);
         });
         this.persistToMinifiedJsonAsset('db/quests-database-pages', pages);
+        this.persistToCompressedJsonAsset('db/quests-text', textIndex);
         this.done();
       });
   }

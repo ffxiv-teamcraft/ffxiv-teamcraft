@@ -437,6 +437,7 @@ export interface LazyData {
   nodesDatabasePages: Record<number, LazyNodesDatabasePage>;
   npcsDatabasePages: Record<number, LazyNpcsDatabasePage>;
   questsDatabasePages: Record<number, LazyQuestsDatabasePage>;
+  questsText: Record<number, object>;
   statusesDatabasePages: Record<number, LazyStatusesDatabasePage>;
   traitsDatabasePages: Record<number, LazyTraitsDatabasePage>;
 }

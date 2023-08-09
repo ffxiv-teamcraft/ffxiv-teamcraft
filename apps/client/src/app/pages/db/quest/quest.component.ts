@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -20,14 +20,22 @@ import { I18nName } from '@ffxiv-teamcraft/types';
 })
 export class QuestComponent extends TeamcraftPageComponent {
 
-  public quest$ = this.route.paramMap.pipe(
+  public quest$: Observable<LazyQuestsDatabasePage & { text: any }> = this.route.paramMap.pipe(
     filter(params => params.get('slug') !== null),
     map(params => params.get('questId')),
-    switchMap(id => this.lazyData.getRow('questsDatabasePages', +id)),
+    switchMap(id => {
+      return combineLatest([
+        this.lazyData.getRow('questsDatabasePages', +id),
+        this.lazyData.getRow('questsText', +id)
+      ]).pipe(
+        map(([quest, text]) => {
+          (quest as any).text = text;
+          return quest;
+        })
+      );
+    }),
     shareReplay({ bufferSize: 1, refCount: true })
   );
-
-  public textData$: Observable<any>;
 
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
 

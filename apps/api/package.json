@@ -25,7 +25,6 @@
     "http-proxy-middleware": "^2.0.6",
     "body-parser-graphql": "^1.1.0",
     "object-hash": "^3.0.0",
-    "redis": "^4.6.5",
     "@nx/nest": "16.5.5",
     "@nx/node": "16.5.5",
     "@nx/workspace": "16.5.5",

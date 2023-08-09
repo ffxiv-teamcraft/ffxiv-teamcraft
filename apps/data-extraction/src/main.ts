@@ -176,7 +176,8 @@ const extractors: AbstractExtractor[] = [
   new AllaganReportsExtractor(),
   new GatheringSearchIndexExtractor(),
   new GcSupplyExtractor(),
-  new PatchListExtractor()
+  new PatchListExtractor(),
+  new QuestsDbPagesExtractor()
 ];
 
 (async () => {
