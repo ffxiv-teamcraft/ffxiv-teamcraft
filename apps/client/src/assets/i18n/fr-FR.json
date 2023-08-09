@@ -51,7 +51,8 @@
     "Only_craftable": "Recettes uniquement",
     "Want_filters": "Besoin de plus de filtres ?",
     "Open_search": "Ouvrir la page de recherche",
-    "Island_recipe": "Recettes de Félicité Insulaire"
+    "Island_recipe": "Recettes de Félicité Insulaire",
+    "Ingesting_index": "Ingesting content for the newly selected language, this should take few seconds..."
   },
   "Use_as_default_character": "Utiliser comme personnage par défaut",
   "Download_desktop_app": "Télécharger l'application",
@@ -206,6 +207,8 @@
     "Visibility": "Visibilité",
     "Public": "Public",
     "Private": "Privé",
+    "Pagination_text": "{{start}}-{{end}} of {{total}} items",
+    "And_X_more": "and {{amount}} more...",
     "DAYS": {
       "Monday": "Lundi",
       "Tuesday": "Mardi",
@@ -534,6 +537,9 @@
     "Housing_map_explain": "La carte du logement de votre maison",
     "Reset_linked_characters_ok": "Les liens des personnages ont été réinitialisés",
     "Display_slow_mode_notification": "Afficher les notifications en mode ralenti pour le craft/la récolte",
+    "New_child_window": "Create a new child window",
+    "Child_windows_title": "You can now open child windows in Teamcraft desktop !",
+    "Child_windows_description": "When clicking something that navigates (like the \"i\" button for database pages or any link in the app), use ctrl + click or middle click instead to open in a new window. Additionally, you can create a new window using the new button next to the github stars count.",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -1373,10 +1379,7 @@
     "Ilvl": "ilvl",
     "Cost": "Coût",
     "Class_job": "Classe/Job",
-    "Damage_phys": "Dégâts Phys.",
-    "Damage_mag": "Dégâts Mag.",
-    "Defense_phys": "Défense Phys.",
-    "Defense_mag": "Défense Mag."
+    "Masterbooks": "Requires a masterbook"
   },
   "SEARCH_INTRO": {
     "Slogan": "Fabriquez, Partagez, Contribuez",
@@ -1610,7 +1613,7 @@
     "Currencies": "Devises",
     "Rowena_splendor": "Les splendeurs de Rowena",
     "Unlocks": "Déverrouille",
-    "Jump_to_page": "Ouvrir la page DB associée",
+    "Jump_to_page": "Open db page",
     "Ishgard_restoration": "Restauration d'Ishgard",
     "ITEM": {
       "Masterpiece_exp_tooltip": "% de l'EXP nécessaire pour le niveau suivant",
