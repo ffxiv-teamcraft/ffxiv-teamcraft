@@ -1,4 +1,4 @@
-<ng-container *ngIf="nodeData$ | async as nodeData; else loader">
+<ng-container *ngIf="node$ | async as node; else loader">
   <div [style.padding]="'0 25px' | ifMobile: '0'" fxLayout="column" fxLayoutGap="10px">
     <div class="top-bar" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
          fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px" fxLayoutGap.lt-md="10px">
@@ -6,17 +6,17 @@
            fxLayoutAlign="space-between" fxLayoutGap="10px">
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <img
-            [src]="(nodeData.mappyData.limited ? nodeData.GatheringType.IconOff : nodeData.GatheringType.IconMain) | xivapiIcon"
+            [src]="node.type | nodeTypeIcon: node.limited"
             class="img-icon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{getName(nodeData) | async}}</h2>
+            <h2 class="item-name">{{node | i18n}}</h2>
             <div class="item-kind">
-              Lvl {{nodeData.GatheringLevel}} <span
-              [innerHTML]="nodeData.GatheringType | xivapiL12n: 'gatheringTypes' | i18n"></span>
+              Lvl {{node.level}} <span
+              [innerHTML]="node.type | lazyRow:'gatheringTypes' | async | i18n"></span>
             </div>
-            <div *ngIf="nodeData.GamePatch" class="patch">
-              {{nodeData.GamePatch | xivapiL12n: 'patchs' | i18n}}
-              <app-db-button [id]="nodeData.GamePatch.ID" type="patch"></app-db-button>
+            <div *ngIf="node.patch" class="flew-row align-center gap-5">
+              <app-i18n-name content="patchNames" [id]="node.patch"></app-i18n-name>
+              <app-db-button [id]="node.patch" type="patch"></app-db-button>
             </div>
           </div>
         </div>
@@ -33,20 +33,20 @@
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
       <div class="details-block">
         <div class="detail-name">{{'DB.Limited' | translate}}</div>
-        <div class="detail-value">{{(nodeData.mappyData.limited === 0 ? 'No' : 'Yes') | translate}}</div>
+        <div class="detail-value">{{(node.limited === 0 ? 'No' : 'Yes') | translate}}</div>
       </div>
-      <div *ngIf="nodeData.mappyData.limited" class="details-block">
+      <div *ngIf="node.limited" class="details-block">
         <div class="detail-name">{{'DB.NODE.Spawn_duration' | translate}}</div>
-        <div class="detail-value">{{nodeData.mappyData.duration / 60}}h</div>
+        <div class="detail-value">{{node.duration / 60}}h</div>
       </div>
-      <div *ngIf="nodeData.mappyData.limited" class="details-block">
+      <div *ngIf="node.limited" class="details-block">
         <div class="detail-name">{{'DB.NODE.Spawns' | translate}}</div>
-        <div class="detail-value"><span *ngFor="let hour of nodeData.mappyData.spawns; let last = last">{{hour}}:00<span
+        <div class="detail-value"><span *ngFor="let hour of node.spawns; let last = last">{{hour}}:00<span
           *ngIf="!last">, </span></span></div>
       </div>
-      <div *ngIf="nodeData.mappyData.limited" class="details-block">
+      <div *ngIf="node.limited" class="details-block">
         <div class="detail-value">
-          <ng-container *ngFor="let alarmEntry of nodeData.alarms">
+          <ng-container *ngFor="let alarmEntry of node.alarms">
             <div *ngIf="(alarmEntry | alarmDisplay | async) as alarm"
                  [class.played-timer]="alarm.played"
                  [class.spawned-timer]="alarm.spawned">
@@ -56,11 +56,11 @@
         </div>
       </div>
     </div>
-    <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="nodeData.ID" type="node"></app-db-comments>
+    <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="node.id" type="node"></app-db-comments>
     <div>
       <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     </div>
-    <div *ngIf="nodeData.mappyData as data" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
+    <div *ngIf="node as data" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
       <nz-card *ngIf="data.zoneid" [nzTitle]="title"
                class="details-card"
                fxFlex="1 1 30%"
@@ -97,11 +97,11 @@
                   </div>
                 </ng-template>
                 <ng-template #itemAvatar>
-                  <app-item-icon [itemId]="item.item" [width]="32"></app-item-icon>
+                  <app-item-icon [itemId]="item.itemId" [width]="32"></app-item-icon>
                 </ng-template>
                 <ng-template #title>
                   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                    <div [appItemRarity]="item"><app-i18n-name [id]="item.item" content="items"></app-i18n-name></div>
+                    <div [appItemRarity]="item.itemId"><app-i18n-name [id]="item.itemId" content="items"></app-i18n-name></div>
                     <nz-tag *ngIf="item.gatheringItem?.hidden" nzColor="#108ee9">{{'GATHERING_LOCATIONS.Hidden_item' | translate}}</nz-tag>
                   </div>
                 </ng-template>
@@ -117,7 +117,7 @@
                       </ng-container>
                     </div>
                     <nz-divider nzType="vertical"></nz-divider>
-                    <app-db-button [id]="item.item" type="item"></app-db-button>
+                    <app-db-button [id]="item.itemId" type="item"></app-db-button>
                   </div>
                 </ng-template>
               </nz-list-item-meta>
@@ -153,7 +153,7 @@
       </ng-container>
     </div>
   </div>
-  <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="nodeData.ID" type="node"></app-db-comments>
+  <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="node.id" type="node"></app-db-comments>
 </ng-container>
 <ng-template #loader>
   <app-page-loader></app-page-loader>

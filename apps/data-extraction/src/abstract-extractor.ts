@@ -8,12 +8,17 @@ import { XivDataService } from './xiv/xiv-data.service';
 import { ParsedRow } from './xiv/parsed-row';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { kebabCase } from 'lodash';
+import { I18nName, LazyDataChineseKey, LazyDataI18nKey, LazyDataKoreanKey } from '@ffxiv-teamcraft/types';
+import zlib from 'zlib';
+import { LazyPatchContent } from '@ffxiv-teamcraft/data/model/lazy-patch-content';
 
 export abstract class AbstractExtractor {
 
   public static outputFolder = join(__dirname, '../../../apps/client/src/app/core/data/sources/');
 
   public static assetOutputFolder = join(__dirname, '../../../libs/data/src/lib/json/');
+
+  public static tsOutputFolder = join(__dirname, '../../../libs/data/src/lib/handmade/');
 
   protected static XIVAPI_KEY = process.env.XIVAPI_KEY;
 
@@ -78,7 +83,15 @@ export abstract class AbstractExtractor {
 
 
   protected requireLazyFileByKey<K extends keyof LazyData>(key: K): LazyData[K] {
-  return JSON.parse(readFileSync(join(AbstractExtractor.assetOutputFolder, `${kebabCase(key)}.json`), 'utf-8'));
+    const kebab = kebabCase(key);
+    let path = join(AbstractExtractor.assetOutputFolder, `${kebabCase(key)}.json`);
+    if (kebab.startsWith('ko-')) {
+      path = join(AbstractExtractor.assetOutputFolder, 'ko', `${kebabCase(key)}.json`);
+    }
+    if (kebab.startsWith('zh-')) {
+      path = join(AbstractExtractor.assetOutputFolder, 'zh', `${kebabCase(key)}.json`);
+    }
+    return JSON.parse(readFileSync(path, 'utf-8'));
   }
 
   protected addQueryParam(url: string, paramName: string, paramValue: string | number): string {
@@ -94,7 +107,11 @@ export abstract class AbstractExtractor {
     this.done$.complete();
   }
 
-  protected getCoords(coords: { x: number, y: number, z: number }, mapData: { size_factor: number, offset_y: number, offset_x: number, offset_z: number }): { x: number, y: number, z: number } {
+  protected getCoords(coords: { x: number, y: number, z: number }, mapData: { size_factor: number, offset_y: number, offset_x: number, offset_z: number }): {
+    x: number,
+    y: number,
+    z: number
+  } {
     const c = mapData.size_factor / 100;
     const x = ((+coords.x) + mapData.offset_x) * c;
     const y = ((+coords.y) + mapData.offset_y) * c;
@@ -125,6 +142,16 @@ export abstract class AbstractExtractor {
       }
     });
     return res$.asObservable();
+  }
+
+  protected findZoneName(names: Array<I18nName & { id: string }>, zoneId: number, mapId: number): I18nName & { id: string } {
+    const zoneMatch = names.find(name => +name.id === zoneId);
+    if (zoneMatch) {
+      return zoneMatch;
+    }
+    const maps = this.requireLazyFileByKey('mapEntries');
+    const map = maps.find(m => m.id === mapId);
+    return names.find(name => +name.id === map?.zone);
   }
 
   private hashString(str: string): string {
@@ -253,14 +280,99 @@ export abstract class AbstractExtractor {
     writeFileSync(join(AbstractExtractor.assetOutputFolder, `${fileName}.json`), JSON.stringify(content));
   }
 
+  /**
+   * @deprecated
+   */
   protected persistToTypescript(fileName: string, variableName: string, content: any): void {
     const ts = `export const ${variableName} = ${JSON.stringify(content, null, 2)};`;
     writeFileSync(join(AbstractExtractor.outputFolder, `${fileName}.ts`), ts);
   }
 
+  protected persistToTypescriptData(fileName: string, variableName: string, content: any): void {
+    const ts = `export const ${variableName} = ${JSON.stringify(content, null, 2)};`;
+    writeFileSync(join(AbstractExtractor.tsOutputFolder, `${fileName}.ts`), ts);
+  }
+
+  protected persistToCompressedJsonAsset(fileName: string, content: any): void {
+    writeFileSync(join(AbstractExtractor.assetOutputFolder, `${fileName}.index`), zlib.deflateSync(JSON.stringify(content), { level: 9 }));
+  }
+
   protected removeIndexes(data: ParsedRow): Omit<ParsedRow, 'index' | 'subIndex' | '__sheet'> {
     const { index, subIndex, __sheet, ...cleaned } = data;
     return cleaned;
+  }
+
+  private findPrefixedProperty(property: LazyDataI18nKey, prefix: 'ko' | 'zh'): LazyDataI18nKey {
+    return `${prefix}${property[0].toUpperCase()}${property.slice(1)}` as unknown as LazyDataI18nKey;
+  }
+
+  protected getExtendedNames<T = unknown>(property: LazyDataI18nKey,
+                                          getNameFn: (data: T) => I18nName = (data) => data as I18nName
+  ): Array<T & { id: string } & I18nName> {
+    const baseEntry = this.requireLazyFileByKey(property);
+    const koEntries = this.requireLazyFileByKey(this.findPrefixedProperty(property, 'ko'));
+    const zhEntries = this.requireLazyFileByKey(this.findPrefixedProperty(property, 'zh'));
+    return Object.entries<T>(baseEntry as any)
+      .filter(([, entry]) => getNameFn(entry).en?.length > 0)
+      .map(([id, entry]) => {
+        const globalName = getNameFn(entry);
+        const row: T & { id: string } & I18nName = {
+          id,
+          ...globalName,
+          ...entry
+        };
+        if (koEntries[id]) {
+          row.ko = koEntries[id].ko;
+        }
+        if (zhEntries[id]) {
+          row.zh = zhEntries[id].zh;
+        }
+        return row;
+      });
+  }
+
+  protected extendNames<K extends LazyDataI18nKey>(data: ParsedRow[], sources: {
+    field: string,
+    targetField?: string,
+    koSource?: LazyDataKoreanKey,
+    zhSource?: LazyDataChineseKey
+  }[]): { row: any, extended: any }[] {
+    const preloadedAsianSources = {};
+    sources.forEach(source => {
+      preloadedAsianSources[source.field] = {
+        ko: source.koSource ? this.requireLazyFileByKey(source.koSource) : null,
+        zh: source.zhSource ? this.requireLazyFileByKey(source.zhSource) : null
+      };
+    });
+    return data
+      .map((row: any) => {
+        const extended = {};
+        sources.forEach(({ field, targetField }) => {
+          if (targetField) {
+            extended[targetField] = {};
+          }
+          const target = targetField ? extended[targetField] : extended;
+          const ko = preloadedAsianSources[field]?.['ko']?.[row.index];
+          const zh = preloadedAsianSources[field]?.['zh']?.[row.index];
+
+          target.en = row[`${field}_en`];
+          target.de = row[`${field}_de`];
+          target.ja = row[`${field}_ja`];
+          target.fr = row[`${field}_fr`];
+          if (ko) {
+            target.ko = ko.ko;
+          }
+          if (zh) {
+            target.zh = zh.zh;
+          }
+        });
+        return { row, extended };
+      });
+  }
+
+  protected findPatch(content: keyof LazyPatchContent | 'quest', id: number | string): number {
+    return +Object.entries(this.requireLazyFileByKey('patchContent'))
+      .find(([, value]) => (value[content] || []).includes(+id))?.[0] || 1;
   }
 
   protected sortProperties(data: any): any {

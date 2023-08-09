@@ -10,8 +10,10 @@
                    tutorialStepIndex="0"
                    nzShowSearch>
           <nz-option *ngFor="let job of jobList$ | async" [nzLabel]="+job[0] | lazyRow:'jobAbbr' |  i18n" [nzValue]="job[0]" nzCustomContent>
-            <span class="companion-svg" [innerHTML]="+job[0] | jobUnicode"></span>
-            {{+job[0] | lazyRow:'jobAbbr' |  i18n}}
+            <div class="flex-row align-center gap-2">
+              <span class="companion-svg" [innerHTML]="+job[0] | jobUnicode"></span>
+              {{+job[0] | lazyRow:'jobAbbr' |  i18n}}
+            </div>
           </nz-option>
         </nz-select>
       </nz-form-control>

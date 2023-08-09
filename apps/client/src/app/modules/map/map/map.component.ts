@@ -17,6 +17,9 @@ export class MapComponent implements OnInit {
   public unknownPosition = false;
 
   @Input()
+  small = false;
+
+  @Input()
   hideDbButton = false;
 
   @Input()

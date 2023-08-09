@@ -11,7 +11,6 @@ import { RotationFoldersEffects } from './+state/rotation-folders.effects';
 import { RotationFoldersFacade } from './+state/rotation-folders.facade';
 import { CoreModule } from '../../core/core.module';
 import { RotationsModule } from '../rotations/rotations.module';
-import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { DatabaseModule } from '../../core/database/database.module';
 
 @NgModule({
@@ -20,7 +19,6 @@ import { DatabaseModule } from '../../core/database/database.module';
     CoreModule,
     DatabaseModule,
     RotationsModule,
-    NgxDnDModule,
 
     StoreModule.forFeature(
       ROTATIONFOLDERS_FEATURE_KEY,

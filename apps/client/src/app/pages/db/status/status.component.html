@@ -1,16 +1,16 @@
-<ng-container *ngIf="xivapiStatus$ | async as status; else loader">
+<ng-container *ngIf="status$ | async as status; else loader">
   <div [style.padding]="'0 25px' | ifMobile: '0'" fxLayout="column" fxLayoutGap="10px">
     <div class="top-bar" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
          fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px" fxLayoutGap.lt-md="10px">
       <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
            fxLayoutAlign="space-between" fxLayoutGap="10px">
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img [src]="status.Icon | xivapiIcon" fxFlex="0 0 auto">
+          <img [src]="status.icon | xivapiIcon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{status | xivapiL12n: 'statuses' | i18n}}</h2>
-            <div *ngIf="status.GamePatch" class="patch">
-              {{status.GamePatch | xivapiL12n: 'patchs' | i18n}}
-              <app-db-button [id]="status.GamePatch.ID" type="patch"></app-db-button>
+            <h2 class="item-name">{{status | i18n}}</h2>
+            <div *ngIf="status.patch" class="flew-row align-center gap-5">
+              <app-i18n-name content="patchNames" [id]="status.patch"></app-i18n-name>
+              <app-db-button [id]="status.patch" type="patch"></app-db-button>
             </div>
           </div>
         </div>
@@ -22,35 +22,35 @@
         </div>
       </div>
       <div fxFlex="1 1 auto">
-        <p *ngIf="status.Description" [innerHTML]="status | xivapiL12n: 'statusDescriptions':'Description' | i18n | xivUIText"></p>
+        <p *ngIf="status.description.en" [innerHTML]="status.description | i18n"></p>
       </div>
       <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
-           [value]="status | xivapiL12n: 'statuses'"></app-i18n-display>
+                        [value]="status"></app-i18n-display>
     </div>
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
       <div class="details-block">
         <div class="detail-name">{{'DB.STATUS.Type' | translate}}</div>
         <div
-          class="detail-value">{{(status.Category === 1 ? 'DB.STATUS.Type_buff' : 'DB.STATUS.Type_debuff') | translate}}</div>
+          class="detail-value">{{(status.category === 1 ? 'DB.STATUS.Type_buff' : 'DB.STATUS.Type_debuff') | translate}}</div>
       </div>
       <div class="details-block">
         <div class="detail-name">{{'DB.STATUS.Max_stacks' | translate}}</div>
-        <div class="detail-value">{{status.MaxStacks ? status.MaxStacks : ('COMMON.None' | translate)}}</div>
+        <div class="detail-value">{{status.stacks || ('COMMON.None' | translate)}}</div>
       </div>
       <div class="details-block">
         <div class="detail-name">{{'DB.STATUS.Locks_actions' | translate}}</div>
-        <div class="detail-value">{{(status.LockActions === 1 ? 'Yes' : 'No') | translate}}</div>
+        <div class="detail-value">{{(status.lockActions ? 'Yes' : 'No') | translate}}</div>
       </div>
       <div class="details-block">
         <div class="detail-name">{{'DB.STATUS.Locks_control' | translate}}</div>
-        <div class="detail-value">{{(status.LockControl === 1 ? 'Yes' : 'No') | translate}}</div>
+        <div class="detail-value">{{(status.lockControl ? 'Yes' : 'No') | translate}}</div>
       </div>
       <div class="details-block">
         <div class="detail-name">{{'DB.STATUS.Locks_movement' | translate}}</div>
-        <div class="detail-value">{{(status.LockMovement === 1 ? 'Yes' : 'No') | translate}}</div>
+        <div class="detail-value">{{(status.lockMovement ? 'Yes' : 'No') | translate}}</div>
       </div>
     </div>
-    <app-db-comments [id]="status.ID" type="status"></app-db-comments>
+    <app-db-comments [id]="status.id" type="status"></app-db-comments>
   </div>
 </ng-container>
 <ng-template #loader>

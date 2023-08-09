@@ -6,7 +6,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from '../../core/core.module';
 import { FormsModule } from '@angular/forms';
 import { LayoutEditorRowComponent } from './layout-editor-row/layout-editor-row.component';
-import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PipesModule } from '../../pipes/pipes.module';
 
@@ -28,7 +27,6 @@ import { NzRadioModule } from 'ng-zorro-antd/radio';
 
     CoreModule,
     LayoutModule,
-    NgxDnDModule,
     PipesModule,
     TextQuestionPopupModule,
 

@@ -62,6 +62,21 @@ import { ShopsExtractor } from './extractors/shops.extractor';
 import { SeedsExtractor } from './extractors/seeds.extractor';
 import { ItemDetailsExtractExtractor } from './extractors/extracts/item-details-extract.extractor';
 import { GcSupplyExtractor } from './extractors/gc-supply.extractor';
+import { SearchExtractor } from './extractors/search.extractor';
+import { StatusesExtractor } from './extractors/statuses.extractor';
+import { ItemsDbPagesExtractor } from './extractors/db/items-db-pages.extractor';
+import { PatchListExtractor } from './extractors/patch-list-extractor';
+import { AchievementsDbPagesExtractor } from './extractors/db/achievements-db-pages.extractor';
+import { ActionsDbPagesExtractor } from './extractors/db/actions-db-pages.extractor';
+import { FatesDatabasePagesExtractor } from './extractors/db/fates-database-pages.extractor';
+import { FishingSpotsDatabasePagesExtractor } from './extractors/db/fishing-spots-database-pages.extractor';
+import { LevesDatabasePagesExtractor } from './extractors/db/leves-database-pages.extractor';
+import { MobsDatabasePagesExtractor } from './extractors/db/mobs-database-pages.extractor';
+import { NodesDatabasePagesExtractor } from './extractors/db/nodes-database-pages.extractor';
+import { NpcsDbPagesExtractor } from './extractors/db/npcs-db-pages.extractor';
+import { StatusesDbPagesExtractor } from './extractors/db/statuses-db-pages.extractor';
+import { TraitsDbPagesExtractor } from './extractors/db/traits-db-pages.extractor';
+import { QuestsDbPagesExtractor } from './extractors/db/quests-db-pages.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -72,7 +87,13 @@ const { MultiSelect, Confirm } = require('enquirer');
 
 const extractors: AbstractExtractor[] = [
   new I18nExtractor('BNpcName', 'mobs', 'Singular_'),
+  new I18nExtractor('ActionCategory', 'action-categories'),
+  new I18nExtractor('BeastReputationRank', 'beast-reputation-ranks'),
+  new I18nExtractor('GatheringType', 'gathering-types'),
   new I18nExtractor('ItemUICategory', 'item-category'),
+  new I18nExtractor('EventItem', 'event-items', 'Name_', { Icon: 'icon' }),
+  new I18nExtractor('JournalGenre', 'journal-genre'),
+  new I18nExtractor('ItemSearchCategory', 'search-category'),
   new I18nExtractor('Title', 'titles', 'Masculine_', {}),
   new I18nExtractor('PlaceName', 'places', 'Name_', {}, false, (row, entities) => {
     if (row.ID === 4043) {
@@ -87,7 +108,6 @@ const extractors: AbstractExtractor[] = [
     }
     return row;
   }),
-  new I18nExtractor('Status', 'statuses', 'Name_', { Icon: 'icon' }),
   new I18nExtractor('Achievement', 'achievements', 'Name_', { Icon: 'icon', Item: 'itemReward' }),
   new I18nExtractor('CollectablesShopItemGroup', 'collectables-shop-item-group'),
   new I18nExtractor('HWDGathereInspectTerm', 'hwd-phases'),
@@ -100,6 +120,7 @@ const extractors: AbstractExtractor[] = [
   new I18nExtractor('SubmarineExploration', 'submarine-voyages', 'Destination_', { index: 'id', Location_ja: 'location' }),
   new I18nExtractor('MJICraftworksObjectTheme', 'island-craftworks-theme'),
   new I18nExtractor('ContentType', 'content-type'),
+  new StatusesExtractor(),
   new ItemSeriesExtractor(),
   new TraitsExtractor(),
   new WorldsExtractor(),
@@ -154,7 +175,8 @@ const extractors: AbstractExtractor[] = [
   new GubalExtractor(),
   new AllaganReportsExtractor(),
   new GatheringSearchIndexExtractor(),
-  new GcSupplyExtractor()
+  new GcSupplyExtractor(),
+  new PatchListExtractor()
 ];
 
 (async () => {
@@ -181,19 +203,53 @@ const extractors: AbstractExtractor[] = [
     message: 'Update extracts.json once it\'s done?'
   });
 
+  const runSearchIndexes = new Confirm({
+    name: 'runSearchIndexes',
+    message: 'Update search indexes once it\'s done?'
+  });
+
+  const runDbUpdates = new Confirm({
+    name: 'runDbUpdates',
+    message: 'Update database pages once it\'s done?'
+  });
+
+  const dbExtractors = [
+    new ItemsDbPagesExtractor(),
+    new AchievementsDbPagesExtractor(),
+    new ActionsDbPagesExtractor(),
+    new FatesDatabasePagesExtractor(),
+    new FishingSpotsDatabasePagesExtractor(),
+    new LevesDatabasePagesExtractor(),
+    new MobsDatabasePagesExtractor(),
+    new NodesDatabasePagesExtractor(),
+    new NpcsDbPagesExtractor(),
+    new StatusesDbPagesExtractor(),
+    new TraitsDbPagesExtractor(),
+    new QuestsDbPagesExtractor()
+  ];
+
   if (argv['only']) {
     const only = argv['only'].split(',');
     startExtractors(extractors.filter(e => {
       return only.includes(e.getName());
     }));
+  } else if (argv['only-search']) {
+    startExtractors([
+      new SearchExtractor(),
+      ...dbExtractors
+    ]);
   } else {
     const selection = await operationsSelection.run();
     const runExtractor = await runExtractors.run();
+    const runSearchIndex = await runSearchIndexes.run();
+    const runDbUpdate = await runDbUpdates.run();
     startExtractors([
         ...extractors.filter(e => {
           return selection.includes('everything') || selection.includes(e.getName());
         }),
-        ...(runExtractor ? [new ItemDetailsExtractExtractor()] : [])
+        ...(runExtractor ? [new ItemDetailsExtractExtractor()] : []),
+        ...(runDbUpdate ? dbExtractors : []),
+        ...(runSearchIndex ? [new SearchExtractor()] : [])
       ]
     );
   }

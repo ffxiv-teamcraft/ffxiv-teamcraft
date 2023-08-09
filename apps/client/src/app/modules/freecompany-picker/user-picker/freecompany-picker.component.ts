@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
 import { UntypedFormControl, Validators } from '@angular/forms';
-import { CharacterSearchResult, XivapiService } from '@xivapi/angular-client';
 import { NzModalRef } from 'ng-zorro-antd/modal';
-import { debounceTime, filter, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, filter, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { LodestoneService } from '../../../core/api/lodestone.service';
 
 @Component({
   selector: 'app-freecompany-picker',
@@ -13,7 +14,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
 })
 export class FreecompanyPickerComponent {
 
-  public servers$: Observable<string[]>;
+  public servers$ = this.lazyData.servers$;
 
   public autoCompleteRows$: Observable<string[]>;
 
@@ -23,36 +24,32 @@ export class FreecompanyPickerComponent {
 
   public lodestoneId = new UntypedFormControl(null);
 
-  public result$: Observable<any[]>;
+  public result$ = combineLatest([this.selectedServer.valueChanges, this.fcName.valueChanges])
+    .pipe(
+      tap(() => this.loadingResults = true),
+      debounceTime(500),
+      switchMap(([selectedServer, fcName]) => {
+        return this.lodestone.searchFreeCompany(fcName, selectedServer);
+      }),
+      map((result) => result.List || []),
+      tap(() => this.loadingResults = false),
+      startWith([])
+    );
 
   public loadingResults = false;
 
   public currentUserFc$ = this.authFacade.fcId$.pipe(
     filter(Boolean),
-    switchMap(fcId => this.xivapi.getFreeCompany(fcId)),
+    switchMap(fcId => this.lodestone.getFreeCompany(fcId)),
     map(res => res.FreeCompany)
   );
 
-  constructor(private xivapi: XivapiService, private modalRef: NzModalRef, private authFacade: AuthFacade) {
-    this.servers$ = this.xivapi.getServerList().pipe(shareReplay({ bufferSize: 1, refCount: true }));
-
+  constructor(private lodestone: LodestoneService, private lazyData: LazyDataFacade, private modalRef: NzModalRef, private authFacade: AuthFacade) {
     this.autoCompleteRows$ = combineLatest([this.servers$, this.selectedServer.valueChanges])
       .pipe(
         map(([servers, inputValue]) => {
           return servers.filter(server => server.indexOf(inputValue) > -1);
         })
-      );
-
-    this.result$ = combineLatest([this.selectedServer.valueChanges, this.fcName.valueChanges])
-      .pipe(
-        tap(() => this.loadingResults = true),
-        debounceTime(500),
-        switchMap(([selectedServer, fcName]) => {
-          return this.xivapi.searchFreeCompany(fcName, selectedServer);
-        }),
-        map((result: CharacterSearchResult) => result.Results || []),
-        tap(() => this.loadingResults = false),
-        startWith([])
       );
   }
 

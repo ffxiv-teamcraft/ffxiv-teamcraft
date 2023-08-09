@@ -23,7 +23,7 @@ export class TimerTooltipDirective extends NzTooltipDirective implements OnChang
   timerSeconds: number;
 
   constructor(elementRef: ElementRef, hostView: ViewContainerRef, resolver: ComponentFactoryResolver, renderer: Renderer2,
-              private datePipe: DatePipe, private translate: TranslateService, private cd: ChangeDetectorRef) {
+              private datePipe: DatePipe, private translate: TranslateService) {
     super(elementRef, hostView, resolver, renderer);
   }
 
@@ -38,7 +38,6 @@ export class TimerTooltipDirective extends NzTooltipDirective implements OnChang
         if (visible) {
           this.hide();
         }
-        this.componentRef = this.hostView.createComponent(NzToolTipComponent);
         if (visible) {
           this.show();
         }

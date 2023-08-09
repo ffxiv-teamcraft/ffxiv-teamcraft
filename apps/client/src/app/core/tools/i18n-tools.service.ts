@@ -25,7 +25,7 @@ export class I18nToolsService {
     this.currentLang$.next(lang);
   }
 
-  public resolveName = (i18nName: I18nNameLazy): Observable<string | undefined> => {
+  public resolveName = (i18nName: I18nNameLazy): Observable<string | unknown> => {
     return this.currentLang$.pipe(
       switchMap((lang) => {
         return i18nName[lang] ?? i18nName[this.defaultLang] ?? of(undefined);

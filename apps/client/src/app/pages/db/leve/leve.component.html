@@ -1,225 +1,222 @@
-<ng-container *ngIf="gtData$ | async as gtData; else loader">
-  <div *ngIf="xivapiLeve$ | async as xivapiLeve" [style.padding]="'0 25px' | ifMobile: '0'"
-       fxLayout="column" fxLayoutGap="10px">
-    <div class="top-bar" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
-         fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px" fxLayoutGap.lt-md="10px">
-      <div class="top-left-block" fxFlex="0 0 350px" fxFlex.lt-md="1 1 auto" fxLayout="column"
-           fxLayoutAlign="space-between" fxLayoutGap="10px">
-        <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img [src]="xivapiLeve.Icon | xivapiIcon" alt="{{xivapiLeve.ID | i18nRow:'leves' | i18n}}"
-               class="larger-img-icon">
-          <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 [innerHTML]="xivapiLeve.ID | i18nRow:'leves' | i18n" class="item-name"></h2>
-            <div *ngIf="xivapiLeve.JournalGenre" [innerHTML]="xivapiLeve.JournalGenre | xivapiL12n: 'journalGenre' | i18n" class="item-kind">
-            </div>
-            <div *ngIf="xivapiLeve.GamePatch" class="patch">
-              {{xivapiLeve.GamePatch | xivapiL12n: 'patchs' | i18n}}
-              <app-db-button [id]="xivapiLeve.GamePatch.ID" type="patch"></app-db-button>
-            </div>
+<div *ngIf="leve$ | async as leve; else loader" [style.padding]="'0 25px' | ifMobile: '0'"
+     fxLayout="column" fxLayoutGap="10px">
+  <div class="top-bar" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
+       fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px" fxLayoutGap.lt-md="10px">
+    <div class="top-left-block" fxFlex="0 0 350px" fxFlex.lt-md="1 1 auto" fxLayout="column"
+         fxLayoutAlign="space-between" fxLayoutGap="10px">
+      <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+        <img [src]="'/c/Leve.png' | xivapiIcon" alt="{{leve | i18n}}"
+             class="larger-img-icon">
+        <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
+          <h2 [innerHTML]="leve | i18n" class="item-name"></h2>
+          <app-i18n-name content="journalGenre" [id]="leve.genre" class="item-kind"></app-i18n-name>
+          <div *ngIf="leve.patch" class="flew-row gap-5 align-center">
+            <app-i18n-name content="patchNames" [id]="leve.patch"></app-i18n-name>
+            <app-db-button [id]="leve.patch" type="patch"></app-db-button>
           </div>
         </div>
-        <img [src]="xivapiLeve.IconIssuer | xivapiIcon" alt="" class="instance-banner">
-        <div *ngIf="links$ | async as links" class="links" fxLayout="row" fxLayoutAlign="flex-start center"
-             fxLayoutGap="5px">
-          <a *ngFor="let link of links" [href]="link.url" [nzTooltipTitle]="link.title" nz-tooltip target="_blank">
-            <img [alt]="link.title" [src]="link.icon" class="link-icon">
-          </a>
-        </div>
       </div>
-      <div fxFlex="1 1 auto">
-        <p *ngIf="xivapiLeve.Description" [innerHTML]="xivapiLeve | xivapiL12n: 'leveDescriptions':'Description' | i18n | xivUIText"></p>
-      </div>
-      <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
-           [value]="xivapiLeve.ID | i18nRow:'leves'"></app-i18n-display>
-    </div>
-    <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
-      <div class="details-block">
-        <div class="detail-name">{{'DB.LEVE.Allowance_cost' | translate}}</div>
-        <div class="detail-value">{{xivapiLeve.AllowanceCost}}</div>
-      </div>
-      <div class="details-block">
-        <div class="detail-name">{{'DB.Level' | translate}}</div>
-        <div class="detail-value">{{xivapiLeve.ClassJobLevel}}</div>
-      </div>
-      <div class="details-block">
-        <div class="detail-name">{{'DB.Exp' | translate}}</div>
-        <div class="detail-value">{{xivapiLeve.ExpReward | number}}</div>
-      </div>
-      <div class="details-block">
-        <div class="detail-name">{{'DB.Gil' | translate}}</div>
-        <div class="detail-value">{{xivapiLeve.GilReward | number}}</div>
-      </div>
-      <div *ngIf="xivapiLeve.CraftLeve" class="details-block">
-        <div class="detail-name">{{'DB.LEVE.Turn_ins' | translate}}</div>
-        <div class="detail-value">{{xivapiLeve.CraftLeve.Repeats + 1}}</div>
+      <img [src]="leve.icon | xivapiIcon" alt="" class="instance-banner">
+      <div *ngIf="links$ | async as links" class="links" fxLayout="row" fxLayoutAlign="flex-start center"
+           fxLayoutGap="5px">
+        <a *ngFor="let link of links" [href]="link.url" [nzTooltipTitle]="link.title" nz-tooltip target="_blank">
+          <img [alt]="link.title" [src]="link.icon" class="link-icon">
+        </a>
       </div>
     </div>
-    <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiLeve.ID" type="leve"></app-db-comments>
-    <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
-    <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
-      <nz-card *ngIf="xivapiLeve.CraftLeve" [nzTitle]="title" class="details-card" fxFlex="1 1 auto" nzBordered="false">
-        <ng-template #title>
-          <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div>
-              {{'DB.LEVE.Required_items' | translate}}
-            </div>
-          </div>
-        </ng-template>
-        <nz-list [nzDataSource]="items$ | async" [nzItemLayout]="'horizontal'"
-                 [nzRenderItem]="itemTemplate">
-          <ng-template #itemTemplate let-item>
-            <nz-list-item [nzContent]="more">
-              <nz-list-item-meta
-                [nzAvatar]="itemAvatar"
-                [nzTitle]="item.id | itemName | i18n"
-                nzDescription="x{{item.amount}}">
-                <ng-template #itemAvatar>
-                  <app-item-icon [icon]="item.id | lazyIcon" [itemId]="item.id" [width]="48"></app-item-icon>
-                </ng-template>
-                <ng-template #more>
-                  <app-db-button [id]="item.id" type="item"></app-db-button>
-                </ng-template>
-              </nz-list-item-meta>
-            </nz-list-item>
-          </ng-template>
-        </nz-list>
-      </nz-card>
-      <nz-card *ngIf="xivapiLeve.BattleLeve" [nzTitle]="title" class="details-card" fxFlex="1 1 auto"
-               nzBordered="false">
-        <ng-template #title>
-          <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div>
-              {{'DB.LEVE.Required_items' | translate}}
-            </div>
-          </div>
-        </ng-template>
-        <nz-list [nzDataSource]="battleItems$ | async" [nzItemLayout]="'horizontal'"
-                 [nzRenderItem]="itemTemplate">
-          <ng-template #itemTemplate let-item>
-            <nz-list-item [nzContent]="more">
-              <nz-list-item-meta
-                [nzAvatar]="itemAvatar"
-                [nzTitle]="title"
-                nzDescription="x{{item.amount}}">
-                <ng-template #title>
-                  <span [appItemRarity]="item.id">{{item.name | i18n}}</span>
-                </ng-template>
-                <ng-template #itemAvatar>
-                  <img [src]="item.icon | xivapiIcon" alt="" class="larger-img-icon round-icon">
-                </ng-template>
-                <ng-template #more>
-                  {{'DB.Drop_rate' | translate}}: {{item.dropRate}}%
-                </ng-template>
-              </nz-list-item-meta>
-            </nz-list-item>
-          </ng-template>
-        </nz-list>
-      </nz-card>
-      <nz-card *ngIf="xivapiLeve.BattleLeve" [nzTitle]="title" class="details-card" fxFlex="1 1 auto"
-               nzBordered="false">
-        <ng-template #title>
-          <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div>
-              {{'DB.Involved_monsters' | translate}}
-            </div>
-          </div>
-        </ng-template>
-        <nz-list [nzDataSource]="enemies$ | async" [nzItemLayout]="'horizontal'"
-                 [nzRenderItem]="enemyTemplate">
-          <ng-template #enemyTemplate let-enemy>
-            <nz-list-item [nzContent]="more">
-              <nz-list-item-meta
-                [nzAvatar]="enemyAvatar"
-                [nzTitle]="enemy.id | i18nRow:'mobs' | i18n"
-                nzDescription="lvl {{enemy.level}}">
-                <ng-template #enemyAvatar>
-                  <img alt="" class="larger-img-icon" src="./assets/icons/mob.png">
-                </ng-template>
-                <ng-template #more>
-                  <app-db-button [id]="enemy.id" type="mob"></app-db-button>
-                </ng-template>
-              </nz-list-item-meta>
-            </nz-list-item>
-          </ng-template>
-        </nz-list>
-      </nz-card>
-      <nz-card [nzTitle]="title" class="details-card" fxFlex="1 1 auto" nzBordered="false">
-        <ng-template #title>
-          <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div>
-              {{'DB.LEVE.Rewards' | translate}}
-            </div>
-          </div>
-        </ng-template>
-        <nz-list [nzDataSource]="rewards$ | async" [nzItemLayout]="'horizontal'"
-                 [nzRenderItem]="rewardTemplate">
-          <ng-template #rewardTemplate let-item>
-            <nz-list-item [nzContent]="more">
-              <nz-list-item-meta
-                [nzAvatar]="itemAvatar"
-                [nzTitle]="title"
-                nzDescription="x{{item.amount}}">
-                <ng-template #title>
-                  <span [appItemRarity]="item.id"><app-i18n-name [id]="item.id" content="items"></app-i18n-name> ({{item.chances}}%)</span>
-                </ng-template>
-                <ng-template #itemAvatar>
-                  <app-item-icon [hq]="item.hq" [icon]="item.id | lazyIcon" [itemId]="item.id"
-                                 [width]="48"></app-item-icon>
-                </ng-template>
-                <ng-template #more>
-                  <app-db-button [id]="item.id" type="item"></app-db-button>
-                </ng-template>
-              </nz-list-item-meta>
-            </nz-list-item>
-          </ng-template>
-        </nz-list>
-      </nz-card>
-      <nz-card [nzTitle]="npcsTitle" class="details-card" fxFlex="1 1 auto" nzBordered="false">
-        <ng-template #npcsTitle>
-          <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div>
-              {{'DB.QUEST.Involved_npcs' | translate}}
-            </div>
-          </div>
-        </ng-template>
-        <nz-list [nzDataSource]="npcs$ | async" [nzItemLayout]="'horizontal'"
-                 [nzRenderItem]="npcTemplate">
-          <ng-template #npcTemplate let-npc>
-            <nz-list-item [nzContent]="more">
-              <nz-list-item-meta
-                [nzAvatar]="npcAvatar"
-                [nzDescription]="npcDescription"
-                [nzTitle]="npcTitle">
-                <ng-template #npcTitle>
-                  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                    <div>{{npc.id | i18nRow:'npcs' | i18n}}</div>
-                    <app-db-button [id]="npc.id" type="npc"></app-db-button>
-                  </div>
-                </ng-template>
-                <ng-template #more>
-                  <app-map-position *ngIf="(npc.id | i18nRow:'npcs')?.position as npcPosition"
-                                    [mapId]="npcPosition.map" [marker]="{x: npcPosition.x, y: npcPosition.y}"
-                                    [showZoneName]="true"
-                                    [zoneId]="npcPosition.zoneid"></app-map-position>
-                </ng-template>
-                <ng-template #npcAvatar>
-                  <a routerLink="/db/{{translate.currentLang}}/npc/{{npc.id}}">
-                    <img class="img-icon round-icon" src="./assets/icons/npc.png">
-                  </a>
-                </ng-template>
-                <ng-template #npcDescription>
-                  <nz-tag *ngIf="npc.issuer">{{'DB.LEVE.Issuer' | translate}}</nz-tag>
-                  <nz-tag *ngIf="npc.client">{{'DB.LEVE.Client' | translate}}</nz-tag>
-                </ng-template>
-              </nz-list-item-meta>
-            </nz-list-item>
-          </ng-template>
-        </nz-list>
-      </nz-card>
+    <div fxFlex="1 1 auto">
+      <p *ngIf="leve.description.en" [innerHTML]="leve.description | i18n"></p>
+    </div>
+    <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
+                      [value]="leve"></app-i18n-display>
+  </div>
+  <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
+    <div class="details-block">
+      <div class="detail-name">{{'DB.LEVE.Allowance_cost' | translate}}</div>
+      <div class="detail-value">{{leve.cost}}</div>
+    </div>
+    <div class="details-block">
+      <div class="detail-name">{{'DB.Level' | translate}}</div>
+      <div class="detail-value">{{leve.level}}</div>
+    </div>
+    <div class="details-block">
+      <div class="detail-name">{{'DB.Exp' | translate}}</div>
+      <div class="detail-value">{{leve.exp | number}}</div>
+    </div>
+    <div class="details-block">
+      <div class="detail-name">{{'DB.Gil' | translate}}</div>
+      <div class="detail-value">{{leve.gil | number}}</div>
+    </div>
+    <div *ngIf="leve.repeats" class="details-block">
+      <div class="detail-name">{{'DB.LEVE.Turn_ins' | translate}}</div>
+      <div class="detail-value">{{leve.repeats + 1}}</div>
     </div>
   </div>
-  <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="xivapiLeve.ID" type="leve"></app-db-comments>
-</ng-container>
+  <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="leve.id" type="leve"></app-db-comments>
+  <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
+  <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
+    <nz-card *ngIf="leve.items" [nzTitle]="title" class="details-card" fxFlex="1 1 auto" nzBordered="false">
+      <ng-template #title>
+        <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div>
+            {{'DB.LEVE.Required_items' | translate}}
+          </div>
+        </div>
+      </ng-template>
+      <nz-list [nzDataSource]="items$ | async" [nzItemLayout]="'horizontal'"
+               [nzRenderItem]="itemTemplate">
+        <ng-template #itemTemplate let-item>
+          <nz-list-item [nzContent]="more">
+            <nz-list-item-meta
+              [nzAvatar]="itemAvatar"
+              [nzTitle]="item.id | itemName | i18n"
+              nzDescription="x{{item.amount}}">
+              <ng-template #itemAvatar>
+                <app-item-icon [itemId]="item.id" [width]="48"></app-item-icon>
+              </ng-template>
+              <ng-template #more>
+                <app-db-button [id]="item.id" type="item"></app-db-button>
+              </ng-template>
+            </nz-list-item-meta>
+          </nz-list-item>
+        </ng-template>
+      </nz-list>
+    </nz-card>
+    <nz-card *ngIf="leve.battleItems" [nzTitle]="title" class="details-card" fxFlex="1 1 auto"
+             nzBordered="false">
+      <ng-template #title>
+        <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div>
+            {{'DB.LEVE.Required_items' | translate}}
+          </div>
+        </div>
+      </ng-template>
+      <nz-list [nzDataSource]="battleItems$ | async" [nzItemLayout]="'horizontal'"
+               [nzRenderItem]="itemTemplate">
+        <ng-template #itemTemplate let-item>
+          <nz-list-item [nzContent]="more">
+            <nz-list-item-meta
+              [nzAvatar]="itemAvatar"
+              [nzTitle]="title"
+              nzDescription="x{{item.amount}}">
+              <ng-template #title>
+                <span [appItemRarity]="item.id">{{item.name | i18n}}</span>
+              </ng-template>
+              <ng-template #itemAvatar>
+                <img [src]="item.icon | xivapiIcon" alt="" class="larger-img-icon round-icon">
+              </ng-template>
+              <ng-template #more>
+                {{'DB.Drop_rate' | translate}}: {{item.dropRate}}%
+              </ng-template>
+            </nz-list-item-meta>
+          </nz-list-item>
+        </ng-template>
+      </nz-list>
+    </nz-card>
+    <nz-card *ngIf="leve.enemies" [nzTitle]="title" class="details-card" fxFlex="1 1 auto"
+             nzBordered="false">
+      <ng-template #title>
+        <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div>
+            {{'DB.Involved_monsters' | translate}}
+          </div>
+        </div>
+      </ng-template>
+      <nz-list [nzDataSource]="enemies$ | async" [nzItemLayout]="'horizontal'"
+               [nzRenderItem]="enemyTemplate">
+        <ng-template #enemyTemplate let-enemy>
+          <nz-list-item [nzContent]="more">
+            <nz-list-item-meta
+              [nzAvatar]="enemyAvatar"
+              [nzTitle]="enemy.id | i18nRow:'mobs' | i18n"
+              nzDescription="lvl {{enemy.level}}">
+              <ng-template #enemyAvatar>
+                <img alt="" class="larger-img-icon" src="./assets/icons/mob.png">
+              </ng-template>
+              <ng-template #more>
+                <app-db-button [id]="enemy.id" type="mob"></app-db-button>
+              </ng-template>
+            </nz-list-item-meta>
+          </nz-list-item>
+        </ng-template>
+      </nz-list>
+    </nz-card>
+    <nz-card [nzTitle]="title" class="details-card" fxFlex="1 1 auto" nzBordered="false">
+      <ng-template #title>
+        <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div>
+            {{'DB.LEVE.Rewards' | translate}}
+          </div>
+        </div>
+      </ng-template>
+      <nz-list [nzDataSource]="rewards$ | async" [nzItemLayout]="'horizontal'"
+               [nzRenderItem]="rewardTemplate">
+        <ng-template #rewardTemplate let-item>
+          <nz-list-item [nzContent]="more">
+            <nz-list-item-meta
+              [nzAvatar]="itemAvatar"
+              [nzTitle]="title"
+              nzDescription="x{{item.amount}}">
+              <ng-template #title>
+                <span [appItemRarity]="item.id"><app-i18n-name [id]="item.id" content="items"></app-i18n-name> ({{item.chances}}%)</span>
+              </ng-template>
+              <ng-template #itemAvatar>
+                <app-item-icon [hq]="item.hq" [icon]="item.id | lazyIcon" [itemId]="item.id"
+                               [width]="48"></app-item-icon>
+              </ng-template>
+              <ng-template #more>
+                <app-db-button [id]="item.id" type="item"></app-db-button>
+              </ng-template>
+            </nz-list-item-meta>
+          </nz-list-item>
+        </ng-template>
+      </nz-list>
+    </nz-card>
+    <nz-card [nzTitle]="npcsTitle" class="details-card" fxFlex="1 1 auto" nzBordered="false">
+      <ng-template #npcsTitle>
+        <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div>
+            {{'DB.QUEST.Involved_npcs' | translate}}
+          </div>
+        </div>
+      </ng-template>
+      <nz-list [nzDataSource]="npcs$ | async" [nzItemLayout]="'horizontal'"
+               [nzRenderItem]="npcTemplate">
+        <ng-template #npcTemplate let-npc>
+          <nz-list-item [nzContent]="more">
+            <nz-list-item-meta
+              [nzAvatar]="npcAvatar"
+              [nzDescription]="npcDescription"
+              [nzTitle]="npcTitle">
+              <ng-template #npcTitle>
+                <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                  <div>{{npc.id | i18nRow:'npcs' | i18n}}</div>
+                  <app-db-button [id]="npc.id" type="npc"></app-db-button>
+                </div>
+              </ng-template>
+              <ng-template #more>
+                <app-map-position *ngIf="(npc.id | i18nRow:'npcs')?.position as npcPosition"
+                                  [mapId]="npcPosition.map" [marker]="{x: npcPosition.x, y: npcPosition.y}"
+                                  [showZoneName]="true"
+                                  [zoneId]="npcPosition.zoneid"></app-map-position>
+              </ng-template>
+              <ng-template #npcAvatar>
+                <a routerLink="/db/{{translate.currentLang}}/npc/{{npc.id}}">
+                  <img class="img-icon round-icon" src="./assets/icons/npc.png">
+                </a>
+              </ng-template>
+              <ng-template #npcDescription>
+                <nz-tag *ngIf="npc.issuer">{{'DB.LEVE.Issuer' | translate}}</nz-tag>
+                <nz-tag *ngIf="npc.client">{{'DB.LEVE.Client' | translate}}</nz-tag>
+              </ng-template>
+            </nz-list-item-meta>
+          </nz-list-item>
+        </ng-template>
+      </nz-list>
+    </nz-card>
+  </div>
+  <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="leve.id" type="leve"></app-db-comments>
+</div>
 <ng-template #loader>
   <app-page-loader></app-page-loader>
 </ng-template>

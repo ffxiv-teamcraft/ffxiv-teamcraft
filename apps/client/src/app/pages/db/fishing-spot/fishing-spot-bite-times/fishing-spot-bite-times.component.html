@@ -22,7 +22,7 @@
       </div>
     </div>
     <ng-container  *ngIf="biteTimesChartJSData$ | async as data">
-      <chart type="horizontalBoxplot" *ngIf="data.datasets.length > 0; else noData" [data]="data" [options]="options"></chart>
+      <app-chart type="horizontalBoxplot" *ngIf="data.datasets.length > 0; else noData" [data]="data" [options]="options"></app-chart>
       <ng-template #noData>
         <nz-empty [nzNotFoundContent]="'DB.FISH.Not_enough_data_points' | translate"></nz-empty>
       </ng-template>

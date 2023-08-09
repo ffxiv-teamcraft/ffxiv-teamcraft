@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
-import { SearchIndex, XivapiService } from '@xivapi/angular-client';
 import { debounce, filter, first, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DesynthSearchResult } from '../desynth-search-result';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
@@ -12,7 +10,8 @@ import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyJobAbbr } from '@ffxiv-teamcraft/data/model/lazy-job-abbr';
-import { SearchResult } from '@ffxiv-teamcraft/types';
+import { DataType, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
+import { DataService } from '../../../core/api/data.service';
 
 @Component({
   selector: 'app-desynth',
@@ -21,7 +20,9 @@ import { SearchResult } from '@ffxiv-teamcraft/types';
 })
 export class DesynthComponent {
 
-  jobList$: Observable<[string, LazyJobAbbr][]>;
+  jobList$: Observable<[string, LazyJobAbbr][]> = this.lazyData.getEntry('jobAbbr').pipe(
+    map(record => Object.entries(record).filter(([key]) => +key >= 8 && +key < 16))
+  );
 
   job$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
 
@@ -33,115 +34,105 @@ export class DesynthComponent {
 
   pristine = true;
 
-  results$: Observable<DesynthSearchResult[]>;
+  private searchResults$ = combineLatest([this.job$, this.level$, this.jobList$]).pipe(
+    debounce(() => this.search$),
+    filter(([job, level]) => job !== null && level !== null),
+    tap(([job, level, jobList]) => {
+      this.pristine = false;
+      this.loading = true;
+      this.router.navigate([], {
+        queryParams: {
+          job: jobList.find(([key]) => +key === +job)[1].en,
+          level: level
+        },
+        relativeTo: this.route
+      });
+    }),
+    switchMap(([job, level]) => {
+      const dlvl = Math.round(level / 10) * 10;
+      return this.dataService.search('', SearchType.ITEM, [
+        {
+          name: 'ilvl',
+          minMax: true,
+          value: {
+            min: Math.max(dlvl - 10, 0),
+            max: dlvl + 10
+          }
+        },
+        {
+          name: 'repair',
+          value: job
+        },
+        {
+          name: 'desynth',
+          minMax: true,
+          value: {
+            min: 0,
+            max: 99999999
+          }
+        }
+      ]);
+    }),
+    map((searchResult) => {
+      return searchResult
+        .map(item => {
+          let score = 0;
+          if (item.sources) {
+            item.sources.forEach(source => {
+              switch (source.type) {
+                case DataType.TRADE_SOURCES:
+                  score += 10;
+                  break;
+                case DataType.CRAFTED_BY:
+                  score += 50;
+                  break;
+                case DataType.VENDORS:
+                  score += 100;
+                  break;
+                case DataType.GATHERED_BY:
+                  score += 100;
+                  break;
+                default:
+                  break;
+              }
+            });
+          }
+          return {
+            itemId: item.itemId,
+            icon: item.icon,
+            dlvl: item.ilvl,
+            score: score,
+            amount: 1
+          };
+        }).sort((a, b) => {
+          return a.score === b.score ? a.itemId - b.itemId : b.score - a.score;
+        });
+    }),
+    tap((res) => {
+      this.totalLength = res.length;
+      this.loading = false;
+    })
+  );
 
   public page$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
+
+  results$ = combineLatest([this.searchResults$, this.page$])
+    .pipe(
+      map(([results, page]) => {
+        const pageStart = Math.max(0, (page - 1) * this.pageSize);
+        return results.slice(pageStart, pageStart + this.pageSize);
+      })
+    );
 
   public pageSize = 50;
 
   public totalLength = 0;
 
-  constructor(private xivapi: XivapiService, private lazyData: LazyDataFacade,
-              private router: Router, route: ActivatedRoute,
+  constructor(private dataService: DataService, private lazyData: LazyDataFacade,
+              private router: Router, private route: ActivatedRoute,
               private listManager: ListManagerService, private notificationService: NzNotificationService,
               private i18n: I18nToolsService, private listPicker: ListPickerService,
               private listsFacade: ListsFacade, private progressService: ProgressPopupService) {
-    this.jobList$ = this.lazyData.getEntry('jobAbbr').pipe(
-      map(record => Object.entries(record).filter(([key]) => +key >= 8 && +key < 16))
-    );
-    const searchResults$ = combineLatest([this.job$, this.level$, this.jobList$]).pipe(
-      debounce(() => this.search$),
-      filter(([job, level]) => job !== null && level !== null),
-      tap(([job, level, jobList]) => {
-        this.pristine = false;
-        this.loading = true;
-        router.navigate([], {
-          queryParams: {
-            job: jobList.find(([key]) => +key === +job)[1].en,
-            level: level
-          },
-          relativeTo: route
-        });
-      }),
-      switchMap(([job, level]) => {
-        const dlvl = Math.round(level / 10) * 10;
-        return this.xivapi.search({
-          indexes: [SearchIndex.ITEM],
-          filters: [
-            {
-              column: 'LevelItem',
-              operator: '>=',
-              value: Math.max(dlvl - 10, 0)
-            },
-            {
-              column: 'LevelItem',
-              operator: '<=',
-              value: dlvl + 10
-            },
-            {
-              column: 'Desynth',
-              operator: '>',
-              value: 0
-            },
-            {
-              column: 'ClassJobRepairTargetID',
-              operator: '=',
-              value: job
-            }
-          ],
-          limit: 250,
-          columns: [
-            'Icon', 'LevelItem', 'ID', 'GameContentLinks'
-          ]
-        });
-      }),
-      map((searchResult) => {
-        return searchResult.Results
-          .map(item => {
-            let score = 0;
-            if (item.GameContentLinks) {
-              if (item.GameContentLinks.SpecialShop !== undefined
-                && Object.keys(item.GameContentLinks.SpecialShop).some(key => key.startsWith('ItemReceive'))) {
-                score += 10;
-              }
-              if (item.GameContentLinks.Recipe !== undefined && item.GameContentLinks.Recipe.ItemResult !== undefined) {
-                score += 50;
-              }
-              if (item.GameContentLinks.GilShopItem !== undefined) {
-                score += 100;
-              }
-              if (item.GameContentLinks.FishParameter !== undefined) {
-                score += 100;
-              }
-              if (item.GameContentLinks.SpearfishingItem !== undefined) {
-                score += 100;
-              }
-            }
-            return {
-              itemId: item.ID,
-              icon: item.Icon,
-              dlvl: item.LevelItem,
-              score: score,
-              amount: 1
-            };
-          }).sort((a, b) => {
-            return a.score === b.score ? a.itemId - b.itemId : b.score - a.score;
-          });
-      }),
-      tap((res) => {
-        this.totalLength = res.length;
-        this.loading = false;
-      })
-    );
-
-    this.results$ = combineLatest([searchResults$, this.page$])
-      .pipe(
-        map(([results, page]) => {
-          const pageStart = Math.max(0, (page - 1) * this.pageSize);
-          return results.slice(pageStart, pageStart + this.pageSize);
-        })
-      );
-
     route.queryParamMap
       .pipe(
         first(),

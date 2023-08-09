@@ -1,15 +1,15 @@
 <div class="tooltip-container">
   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
     <div class="icon">
-      <img alt="{{action.ID | actionName | i18n}}" src="https://xivapi.com{{action.Icon}}">
+      <img alt="{{action | i18n}}" src="https://xivapi.com{{action.icon}}">
     </div>
     <div class="name">
-      <div>{{action.ID | actionName | i18n}}</div>
+      <div>{{action | i18n}}</div>
       <i *ngIf="state > 1" class="state" [style.color]="stateColor">{{('SIMULATOR.STATE.' + stateName) | translate}}</i>
     </div>
   </div>
   <div class="description">
-    <span [innerHtml]="getDescription(action) | xivUIText"></span>
+    <span [innerHtml]="action.description | i18n | nzSanitizer:'html'"></span>
   </div>
   <div class="details">
     <div *ngFor="let row of details" nz-row nzGutter="10">
@@ -28,5 +28,4 @@
       </div>
     </div>
   </div>
-  <div class="xivapi">xivapi.com</div>
 </div>

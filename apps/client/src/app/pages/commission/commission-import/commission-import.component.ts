@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { combineLatest, concat, Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { DataService } from '../../../core/api/data.service';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
@@ -30,7 +29,7 @@ export class CommissionImportComponent {
   wrongFormat = false;
 
   constructor(private route: ActivatedRoute, private listPicker: ListPickerService,
-              private dataService: DataService, private router: Router,
+              private router: Router,
               private listManager: ListManagerService, private progressService: ProgressPopupService,
               private listsFacade: ListsFacade, private http: HttpClient, private linkTools: LinkToolsService,
               private commissionsFacade: CommissionsFacade, private lazyData: LazyDataFacade) {
@@ -75,16 +74,16 @@ export class CommissionImportComponent {
         if (parsed.items.length === 0) {
           return of(parsed);
         }
-        return combineLatest((parsed.items as any[]).map(row => {
-            return this.dataService.getItem(row.itemId).pipe(
-              map(itemData => {
+        return combineLatest(parsed.items.map(row => {
+            return this.lazyData.getRow('recipesPerItem', row.itemId).pipe(
+              map(recipes => {
                 const res: any = {
-                  itemData: itemData,
+                  itemData: row.itemId,
                   recipeId: row.recipeId,
                   quantity: row.quantity
                 };
-                if (res.recipeId === null && itemData.isCraft()) {
-                  res.recipeId = itemData.item.craft[0].id.toString();
+                if (recipes.length > 0) {
+                  res.recipeId = recipes[0].id;
                 }
                 return res;
               })
@@ -94,7 +93,7 @@ export class CommissionImportComponent {
           map(items => {
             return {
               ...parsed,
-              items: items as any[]
+              items: items
             };
           })
         );
@@ -103,7 +102,7 @@ export class CommissionImportComponent {
   }
 
   canDoImport(data: CommissionImportTemplate): boolean {
-    return data.items.length > 0 && data.items.every(row => !row.itemData.isCraft() || row.recipeId !== null);
+    return data.items.length > 0 && data.items.every(row => row.recipeId !== null);
   }
 
   doImport(data: CommissionImportTemplate): void {
@@ -112,7 +111,7 @@ export class CommissionImportComponent {
     list.name = data.name;
     const operations = data.items.map(item => {
       return this.listManager.addToList({
-        itemId: item.itemData.item.id,
+        itemId: item.id,
         list: list,
         recipeId: item.recipeId,
         amount: item.quantity
@@ -141,7 +140,7 @@ export class CommissionImportComponent {
           items: data.items.map(i => {
             return {
               amount: i.quantity,
-              id: i.itemData.item.id,
+              id: i.id,
               done: 0
             };
           })

@@ -6,14 +6,14 @@
   <div *ngIf="items$ | async as data; else loading" class="items-container" fxLayout="column">
     <div *ngFor="let row of data.items; let odd = odd;" [class.odd]="odd" class="item-row" fxLayout="row"
          fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <app-item-icon [icon]="row.itemData.item.icon" [itemId]="row.itemData.item.id" [width]="32"></app-item-icon>
-      <div class="item-name"><app-i18n-name content="items" [id]="row.itemData.item.id"></app-i18n-name> x{{row.quantity}}</div>
+      <app-item-icon [itemId]="row.id" [width]="32"></app-item-icon>
+      <div class="item-name"><app-i18n-name content="items" [id]="row.id"></app-i18n-name> x{{row.quantity}}</div>
       <div fxFlex="1 1 auto">
-        <nz-alert *ngIf="row.itemData.isCraft() && row.recipeId === null" [nzMessage]="'LISTS.Please_pick_recipe' | translate"
+        <nz-alert *ngIf="row.recipes?.length > 0 && row.recipeId === null" [nzMessage]="'LISTS.Please_pick_recipe' | translate"
                   nzShowIcon nzType="error"></nz-alert>
       </div>
-      <nz-radio-group *ngIf="row.itemData.isCraft()" [(ngModel)]="row.recipeId">
-        <label *ngFor="let craft of row.itemData.item.craft" [nzValue]="craft.id.toString()" nz-radio-button>
+      <nz-radio-group *ngIf="row.recipes?.length > 0" [(ngModel)]="row.recipeId">
+        <label *ngFor="let craft of row.recipes" [nzValue]="craft.id.toString()" nz-radio-button>
           {{craft.job | i18nRow:'jobAbbr' | i18n}} {{craft.lvl}}
         </label>
       </nz-radio-group>

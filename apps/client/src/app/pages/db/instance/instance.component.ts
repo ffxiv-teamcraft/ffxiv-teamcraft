@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { SeoService } from '../../../core/seo/seo.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { XivapiService } from '@xivapi/angular-client';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
@@ -26,11 +25,9 @@ export class InstanceComponent extends TeamcraftPageComponent {
 
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
 
-  constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private lazyData: LazyDataFacade,
+  constructor(private route: ActivatedRoute, private lazyData: LazyDataFacade,
               private i18n: I18nToolsService, private translate: TranslateService,
-              private router: Router, public settings: SettingsService,
-              seo: SeoService) {
+              private router: Router, public settings: SettingsService, seo: SeoService) {
     super(seo);
     this.updateSlug(router, i18n, route, 'instances', 'instanceId');
 

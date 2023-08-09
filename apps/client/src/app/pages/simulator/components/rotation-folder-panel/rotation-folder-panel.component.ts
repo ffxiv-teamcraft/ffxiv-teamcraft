@@ -18,6 +18,7 @@ import { CustomLink } from '../../../../core/database/custom-links/custom-link';
 import { FolderAdditionPickerComponent } from '../../../../modules/folder-addition-picker/folder-addition-picker/folder-addition-picker.component';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { PermissionsController } from '../../../../core/database/permissions-controller';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-rotation-folder-panel',
@@ -139,9 +140,9 @@ export class RotationFolderPanelComponent {
     });
   }
 
-  onCraftingRotationDrop(event: any): void {
-    const index = event.dropIndex;
-    const rotation = event.value;
+  onCraftingRotationDrop(event: CdkDragDrop<CraftingRotation>): void {
+    const index = event.currentIndex;
+    const rotation = event.item.data;
     this._folder.rotationIds = this._folder.rotationIds.filter(key => key !== rotation.$key);
     this._folder.rotationIds.splice(index, 0, rotation.$key);
     this.foldersFacade.updateFolder(this._folder);

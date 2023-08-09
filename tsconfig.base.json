@@ -18,6 +18,7 @@
     "paths": {
       "@ffxiv-teamcraft/data": ["libs/data/src/lib/index.ts"],
       "@ffxiv-teamcraft/data/*": ["libs/data/src/lib/*"],
+      "@ffxiv-teamcraft/search": ["libs/search/src/index.ts"],
       "@ffxiv-teamcraft/types": ["libs/types/src/index.ts"]
     },
     "rootDir": "."

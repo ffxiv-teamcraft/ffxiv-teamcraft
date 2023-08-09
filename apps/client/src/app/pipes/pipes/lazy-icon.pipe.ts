@@ -19,7 +19,7 @@ export class LazyIconPipe implements PipeTransform, OnDestroy {
     }),
     map(([itemId, itemIcon]) => {
       if (!itemIcon && itemId?.toString().indexOf('draft') > -1) {
-        return `https://garlandtools.org/files/icons/item/custom/draft.png`;
+        return `./assets/icons/draft.png`;
       } else if (!itemIcon) {
         return 'https://xivapi.com/img-misc/code-regular.svg';
       } else {

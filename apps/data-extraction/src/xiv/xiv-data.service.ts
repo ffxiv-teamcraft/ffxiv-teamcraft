@@ -10,17 +10,93 @@ import { ExtendedRow } from './extended-row';
 import { GetSheetOptions } from './get-sheet-options';
 import { ColumnMapper, DefinitionParser, ReaderIndex } from './definition-parser';
 import { makeIcon } from './make-icon';
+import { parse } from 'csv-parse/sync';
+import { readdirSync } from 'fs-extra';
+import { numberToCssColor } from './string/number-to-css-color';
 
 export class XivDataService {
 
   // TODO make this configurable
-  private readonly saintPath = 'H:\\WebstormProjects\\SaintCoinach\\SaintCoinach\\Definitions';
+  private readonly saintPath = 'H:\\WebstormProjects\\SaintCoinach\\SaintCoinach';
 
   private definitionsCache: Record<string, SaintDefinition> = {};
 
   public UIColor: ParsedRow[];
 
   constructor(private readonly kobold: KoboldService) {
+  }
+
+  /**
+   * Gets a sheet from Saint extracts directly.
+   *
+   * This is far from being perfect and it is mostly aiming at parsing Transient strings and such that Saint parses nicely
+   * so we don't have to implement it too.
+   *
+   * It'll return everything that's a string in the form of an I18nName
+   * @param sheetName
+   * @param useFirstColumnAsHeader
+   */
+  public getFromSaintCSV<T = ParsedRow>(sheetName: string, useFirstColumnAsHeader = false): T[] {
+    const saintBuildPath = join(this.saintPath, '../SaintCoinach.Cmd/bin/Debug/');
+    const latestExtractFolder = readdirSync(saintBuildPath)
+      .filter(folder => /\d+\.\d+\.\d+\.\d+\.\d+/.test(folder))
+      .sort()
+      .reverse()[0];
+    const rawExdPath = join(saintBuildPath, latestExtractFolder, 'raw-exd-all');
+    const parsed = {
+      en: parse(readFileSync(join(rawExdPath, `${sheetName}.en.csv`)), {
+        columns: true,
+        from_line: useFirstColumnAsHeader ? 1 : 2
+      }),
+      ja: parse(readFileSync(join(rawExdPath, `${sheetName}.ja.csv`)), {
+        columns: true,
+        from_line: useFirstColumnAsHeader ? 1 : 2
+      }),
+      de: parse(readFileSync(join(rawExdPath, `${sheetName}.de.csv`)), {
+        columns: true,
+        from_line: useFirstColumnAsHeader ? 1 : 2
+      }),
+      fr: parse(readFileSync(join(rawExdPath, `${sheetName}.fr.csv`)), {
+        columns: true,
+        from_line: useFirstColumnAsHeader ? 1 : 2
+      })
+    };
+    return parsed.en.map((row, index) => {
+      Object.entries(row)
+        .forEach(([key, value]) => {
+          if (typeof value === 'string' && isNaN(+value)) {
+            row[`${key}_en`] = this.processSaintString(value, sheetName === 'CraftAction');
+            row[`${key}_de`] = this.processSaintString(parsed.de[index][key], sheetName === 'CraftAction');
+            row[`${key}_ja`] = this.processSaintString(parsed.ja[index][key], sheetName === 'CraftAction');
+            row[`${key}_fr`] = this.processSaintString(parsed.fr[index][key], sheetName === 'CraftAction');
+          }
+        });
+      return row;
+    });
+  }
+
+  private processSaintString(input: string, useAlternateRegexp = false): string {
+    const conditionsRegexp = useAlternateRegexp ? /(<If[^>]+>)+([^<]+)(<Else\/>[^<]*(<\/?If([^<]*)>)?)+/gmi : /(<If[^>]+>)+([^<]+)(<Else\/>[^<]*(<\/?If([^<]*)>)?([^<])*)+/gmi;
+    return input
+      .replace(/\r\n/gmi, '[br]')
+      .replace(/<UIGlow>.*?<\/UIGlow>/gmi, '')
+      .replace(/<SoftHyphen\/>/gmi, '-')
+      .replace(/<Indent\/>/gmi, ' ')
+      .replace(/<UIForeground>01<\/UIForeground>/gmi, '[/span]')
+      .replace(/<UIForeground>(.*?)<\/UIForeground>/gmi, (value, match) => {
+        const colorId = Number(`0x${match.slice(-4)}`);
+        const color = Number(this.UIColor.find(c => c.index === colorId)?.UIForeground || 0xFFFFFF);
+        return `[span style="color:${numberToCssColor(color)}"]`;
+      })
+      .replace(conditionsRegexp, (value, conditions, match) => match)
+      .replace(/<Else\/>/gmi, '')
+      .replace(/<\/If>/gmi, '')
+      // Starting here we're just converting those [...] tags back to html
+      .replace(/\[span([^\]]+)]+/gmi, (value, match) => {
+        return `<span${match}>`;
+      })
+      .replace(/\[br]/gmi, '<br>')
+      .replace(/\[\/span]/gmi, '</span>');
   }
 
   private getSubColumns(targetProp: string, columns?: string[]): string[] | null {
@@ -139,7 +215,7 @@ export class XivDataService {
   private getDefinition(sheetName: string): SaintDefinition {
     if (!this.definitionsCache[sheetName]) {
       try {
-        const raw = readFileSync(join(this.saintPath, `${sheetName}.json`), 'utf8');
+        const raw = readFileSync(join(this.saintPath, 'Definitions', `${sheetName}.json`), 'utf8');
         this.definitionsCache[sheetName] = JSON.parse(raw) as SaintDefinition;
       } catch (e) {
         // console.error(`Missing sheet ${sheetName}.json: ${e.message}`);

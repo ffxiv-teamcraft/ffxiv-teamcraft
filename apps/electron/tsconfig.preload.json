@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.app.json",
+  "include": [
+    "src/preload.ts"
+  ],
+  "compilerOptions": {
+    "outDir": "../../dist/"
+  }
+}

@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-import { combineLatest, Observable, of } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Item } from '../../../../model/garland-tools/item';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
-import { DataService } from '../../../../core/api/data.service';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { SeoService } from '../../../../core/seo/seo.service';
 import { SeoMetaConfig } from '../../../../core/seo/seo-meta-config';
@@ -19,59 +17,55 @@ import { LazyRecipe } from '@ffxiv-teamcraft/data/model/lazy-recipe';
 })
 export class SimulatorPageComponent extends AbstractSimulationPage {
 
-  item$: Observable<Item> = this.route.paramMap.pipe(
-    switchMap(params => {
-      return this.dataService.getItem(+params.get('itemId'));
-    }),
-    map(itemData => itemData.item),
-    shareReplay({ bufferSize: 1, refCount: true })
+  itemId$: Observable<number> = this.route.paramMap.pipe(
+    map(params => +params.get('itemId'))
   );
 
-  recipe$: Observable<Craft | LazyRecipe> = this.route.paramMap.pipe(
+  recipe$: Observable<LazyRecipe> = this.route.paramMap.pipe(
     switchMap(params => {
-      return this.item$.pipe(
-        switchMap(item => {
-          if (params.get('recipeId') === null && item.craft.length > 0) {
-            this.router.navigate([item.craft[0].id], { relativeTo: this.route });
-            return this.lazyData.getRecipe(params.get('recipeId'));
-          }
-          return this.lazyData.getRecipe(params.get('recipeId'));
+      return this.itemId$.pipe(
+        switchMap(itemId => {
+          return this.lazyData.getRow('recipesPerItem', itemId).pipe(
+            switchMap(recipes => {
+              if (params.get('recipeId') === null && recipes.length > 0) {
+                this.router.navigate([recipes[0].id], { relativeTo: this.route });
+                return this.lazyData.getRecipe(params.get('recipeId'));
+              }
+              return this.lazyData.getRecipe(params.get('recipeId'));
+            })
+          );
         })
       );
     }),
     shareReplay({ bufferSize: 1, refCount: true })
   );
 
-  thresholds$: Observable<number[]> = combineLatest([this.item$, this.recipe$]).pipe(
-    switchMap(([item, recipe]) => {
-      if (item.collectable === 1) {
-        // If it's a delivery item
-        if (item.satisfaction !== undefined) {
-          // We want thresholds on quality, not collectable score.
-          return of(item.satisfaction[0].rating.map(r => r * 10));
-        } else if (item.masterpiece !== undefined) {
-          return of(item.masterpiece.rating.map(r => r * 10));
-        } else {
-          return this.lazyData.getRow('collectables', item.id).pipe(
-            map(supply => {
-              if (supply) {
-                return [
-                  supply.base.rating * 10,
-                  supply.mid.rating * 10,
-                  supply.high.rating * 10
-                ];
-              }
-              return [];
-            })
-          );
-        }
+  thresholds$: Observable<number[]> = combineLatest([
+    this.itemId$.pipe(
+      switchMap(itemId => this.lazyData.getRow('collectables', itemId))
+    ),
+    this.itemId$.pipe(
+      switchMap(itemId => this.lazyData.getRow('satisfactionThresholds', itemId))
+    ),
+    this.recipe$
+  ]).pipe(
+    map(([collectable, satisfaction, recipe]) => {
+      if (satisfaction) {
+        return satisfaction;
+      } else if (collectable) {
+        return [
+          collectable.base.rating * 10,
+          collectable.mid.rating * 10,
+          collectable.high.rating * 10
+        ];
       } else if (recipe.requiredQuality) {
-        return of([recipe.requiredQuality]);
+        return [recipe.requiredQuality];
       }
+      return [];
     })
   );
 
-  constructor(protected route: ActivatedRoute, private dataService: DataService,
+  constructor(protected route: ActivatedRoute,
               private rotationsFacade: RotationsFacade, private router: Router,
               protected seo: SeoService, private lazyData: LazyDataFacade) {
     super(route, seo);
@@ -90,13 +84,13 @@ export class SimulatorPageComponent extends AbstractSimulationPage {
 
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return combineLatest([this.rotationsFacade.selectedRotation$, this.recipe$, this.item$]).pipe(
+    return combineLatest([this.rotationsFacade.selectedRotation$, this.recipe$, this.itemId$]).pipe(
       filter(([, recipe]) => recipe !== undefined),
-      map(([rotation, recipe, item]) => {
+      map(([rotation, recipe, itemId]) => {
         return {
           title: rotation.getName(),
           description: `rlvl ${recipe.rlvl}, ${recipe.durability} durability, ${rotation.rotation.length} steps`,
-          url: `https://ffxivteamcraft.com/simulator/${item.id}/${recipe.id}/${rotation.$key}`
+          url: `https://ffxivteamcraft.com/simulator/${itemId}/${recipe.id}/${rotation.$key}`
         };
       })
     );

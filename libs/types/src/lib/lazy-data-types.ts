@@ -19,15 +19,25 @@ type LazyDataEntryElement<K extends LazyDataKey> =
 
 export type LazyDataEntries = { [K in LazyDataKey]: LazyDataEntryElement<K> };
 
-type LazyDataRecordEntries = { [K in LazyDataKey]: LazyDataWithExtracts[K] extends Array<any> ? never : K }[LazyDataKey];
+export type LazyDataRecordEntries = { [K in LazyDataKey]: LazyDataWithExtracts[K] extends Array<any> ? never : K }[LazyDataKey];
 
 export type LazyDataRecordKey = keyof Pick<LazyDataWithExtracts, LazyDataRecordEntries>;
 
+type LazyDataSearchEntries = { [K in keyof LazyData]: LazyData[K] extends Array<object> ? K : never }[keyof LazyData];
+
+export type LazyDataSearchIndexKey = keyof Pick<LazyDataWithExtracts, LazyDataSearchEntries>;
+
 export type I18nElement = Record<number, (I18nName | { name: I18nName } | XivapiI18nName)>;
 
-type LazyDataI18nEntries = { [K in keyof LazyData]: LazyData[K] extends I18nElement ? K : never }[keyof LazyData];
+export type LazyDataI18nEntries = { [K in keyof LazyData]: LazyData[K] extends I18nElement ? K : never }[keyof LazyData];
+
+type LazyDataKoreanEntries = { [K in keyof LazyData]: K extends `ko${string}` ? K : never }[keyof LazyData];
+
+type LazyDataChineseEntries = { [K in keyof LazyData]: K extends `zh${string}` ? K : never }[keyof LazyData];
 
 export type LazyDataI18nKey = keyof Pick<LazyData, LazyDataI18nEntries>;
+export type LazyDataKoreanKey = keyof Pick<LazyData, LazyDataKoreanEntries>;
+export type LazyDataChineseKey = keyof Pick<LazyData, LazyDataChineseEntries>;
 
 
 

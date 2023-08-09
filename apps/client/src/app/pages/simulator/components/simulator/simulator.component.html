@@ -224,8 +224,10 @@
                          [nzDisabled]="!custom" class="job-selector">
                 <nz-option *ngFor="let job of [8,9,10,11,12,13,14,15]" [nzLabel]="job | i18nRow:'jobAbbr' | i18n"
                            [nzValue]="job" nzCustomContent>
-                  <img *ngIf="((job | i18nRow:'jobAbbr').en | async) as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/{{icon}}.png">
-                  {{job | i18nRow:'jobAbbr' | i18n}}
+                  <div class="flex-row align-center gap-2">
+                    <div class="companion-svg" [innerHtml]="job | jobUnicode"></div>
+                    {{job | i18nRow:'jobAbbr' | i18n}}
+                  </div>
                 </nz-option>
               </nz-select>
               <nz-alert *ngIf="(stats$ | async)?.craftsmanship === 0" [nzMessage]="((loggedIn$ | async)?'SIMULATOR.CONFIGURATION.Job_not_configured':

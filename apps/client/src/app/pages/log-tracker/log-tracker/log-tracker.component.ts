@@ -1,6 +1,5 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { map, switchMap, takeUntil } from 'rxjs/operators';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
@@ -60,7 +59,7 @@ export class LogTrackerComponent extends TrackerComponent {
 
   private lastSelectedTabIndex = -1;
 
-  constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private translate: TranslateService,
+  constructor(private authFacade: AuthFacade, private translate: TranslateService,
               private listsFacade: ListsFacade, private listManager: ListManagerService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private router: Router, private route: ActivatedRoute,
               protected alarmsFacade: AlarmsFacade, private gatheringNodesService: GatheringNodesService,
@@ -202,10 +201,6 @@ export class LogTrackerComponent extends TrackerComponent {
   public isDoHPageDone = (page: any) => {
     return !!page && page.recipes.filter(r => this.userCompletion[r.recipeId]).length >= page.recipes.length;
   };
-
-  public getDohIcon(index: number): string {
-    return `./assets/icons/classjob/${this.gt.getJob(index + 8).name.toLowerCase()}.png`;
-  }
 
   public getDolIcon(index: number): string {
     return [

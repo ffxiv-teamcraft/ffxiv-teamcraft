@@ -1,0 +1,3908 @@
+{
+  "0": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "1": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "2": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "3": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "4": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "5": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "6": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "7": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "8": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "9": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "10": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "11": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "12": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "13": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "14": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "15": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "16": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "17": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "18": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "19": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "20": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "21": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "22": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "23": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "24": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "25": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "26": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "27": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "28": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "29": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "30": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "31": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "32": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "33": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "34": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "35": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "36": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "37": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "38": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "39": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "40": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "41": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "42": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "43": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "44": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "45": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "46": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "47": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "48": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "49": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "50": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "51": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "52": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "53": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "54": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "55": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "56": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "57": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "58": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "59": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "60": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "61": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "62": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "63": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "64": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "65": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "66": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "67": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "68": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "69": {
+    "progressDivider": 50,
+    "progressModifier": 100,
+    "qualityDivider": 30,
+    "qualityModifier": 100
+  },
+  "70": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "71": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "72": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "73": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "74": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "75": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "76": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "77": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "78": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "79": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "80": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "81": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "82": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "83": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "84": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "85": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "86": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "87": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "88": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "89": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "90": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "91": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "92": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "93": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "94": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "95": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "96": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "97": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "98": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "99": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "100": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "101": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "102": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "103": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "104": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "105": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "106": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "107": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "108": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "109": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "110": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "111": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "112": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "113": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "114": {
+    "progressDivider": 50,
+    "progressModifier": 80,
+    "qualityDivider": 30,
+    "qualityModifier": 70
+  },
+  "115": {
+    "progressDivider": 61,
+    "progressModifier": 100,
+    "qualityDivider": 39,
+    "qualityModifier": 100
+  },
+  "116": {
+    "progressDivider": 61,
+    "progressModifier": 100,
+    "qualityDivider": 39,
+    "qualityModifier": 100
+  },
+  "117": {
+    "progressDivider": 61,
+    "progressModifier": 100,
+    "qualityDivider": 39,
+    "qualityModifier": 100
+  },
+  "118": {
+    "progressDivider": 61,
+    "progressModifier": 100,
+    "qualityDivider": 39,
+    "qualityModifier": 100
+  },
+  "119": {
+    "progressDivider": 61,
+    "progressModifier": 100,
+    "qualityDivider": 39,
+    "qualityModifier": 100
+  },
+  "120": {
+    "progressDivider": 61,
+    "progressModifier": 100,
+    "qualityDivider": 39,
+    "qualityModifier": 100
+  },
+  "121": {
+    "progressDivider": 61,
+    "progressModifier": 100,
+    "qualityDivider": 39,
+    "qualityModifier": 100
+  },
+  "122": {
+    "progressDivider": 61,
+    "progressModifier": 100,
+    "qualityDivider": 39,
+    "qualityModifier": 100
+  },
+  "123": {
+    "progressDivider": 61,
+    "progressModifier": 100,
+    "qualityDivider": 39,
+    "qualityModifier": 100
+  },
+  "124": {
+    "progressDivider": 61,
+    "progressModifier": 100,
+    "qualityDivider": 39,
+    "qualityModifier": 100
+  },
+  "125": {
+    "progressDivider": 62,
+    "progressModifier": 100,
+    "qualityDivider": 43,
+    "qualityModifier": 100
+  },
+  "126": {
+    "progressDivider": 62,
+    "progressModifier": 100,
+    "qualityDivider": 43,
+    "qualityModifier": 100
+  },
+  "127": {
+    "progressDivider": 62,
+    "progressModifier": 100,
+    "qualityDivider": 43,
+    "qualityModifier": 100
+  },
+  "128": {
+    "progressDivider": 62,
+    "progressModifier": 100,
+    "qualityDivider": 43,
+    "qualityModifier": 100
+  },
+  "129": {
+    "progressDivider": 62,
+    "progressModifier": 100,
+    "qualityDivider": 43,
+    "qualityModifier": 100
+  },
+  "130": {
+    "progressDivider": 63,
+    "progressModifier": 100,
+    "qualityDivider": 43,
+    "qualityModifier": 100
+  },
+  "131": {
+    "progressDivider": 63,
+    "progressModifier": 100,
+    "qualityDivider": 43,
+    "qualityModifier": 100
+  },
+  "132": {
+    "progressDivider": 63,
+    "progressModifier": 100,
+    "qualityDivider": 43,
+    "qualityModifier": 100
+  },
+  "133": {
+    "progressDivider": 64,
+    "progressModifier": 100,
+    "qualityDivider": 44,
+    "qualityModifier": 100
+  },
+  "134": {
+    "progressDivider": 64,
+    "progressModifier": 100,
+    "qualityDivider": 44,
+    "qualityModifier": 100
+  },
+  "135": {
+    "progressDivider": 64,
+    "progressModifier": 100,
+    "qualityDivider": 44,
+    "qualityModifier": 100
+  },
+  "136": {
+    "progressDivider": 65,
+    "progressModifier": 100,
+    "qualityDivider": 45,
+    "qualityModifier": 100
+  },
+  "137": {
+    "progressDivider": 65,
+    "progressModifier": 100,
+    "qualityDivider": 45,
+    "qualityModifier": 100
+  },
+  "138": {
+    "progressDivider": 65,
+    "progressModifier": 100,
+    "qualityDivider": 45,
+    "qualityModifier": 100
+  },
+  "139": {
+    "progressDivider": 66,
+    "progressModifier": 100,
+    "qualityDivider": 46,
+    "qualityModifier": 100
+  },
+  "140": {
+    "progressDivider": 66,
+    "progressModifier": 100,
+    "qualityDivider": 46,
+    "qualityModifier": 100
+  },
+  "141": {
+    "progressDivider": 66,
+    "progressModifier": 100,
+    "qualityDivider": 46,
+    "qualityModifier": 100
+  },
+  "142": {
+    "progressDivider": 67,
+    "progressModifier": 100,
+    "qualityDivider": 47,
+    "qualityModifier": 100
+  },
+  "143": {
+    "progressDivider": 67,
+    "progressModifier": 100,
+    "qualityDivider": 47,
+    "qualityModifier": 100
+  },
+  "144": {
+    "progressDivider": 67,
+    "progressModifier": 100,
+    "qualityDivider": 47,
+    "qualityModifier": 100
+  },
+  "145": {
+    "progressDivider": 68,
+    "progressModifier": 100,
+    "qualityDivider": 48,
+    "qualityModifier": 100
+  },
+  "146": {
+    "progressDivider": 68,
+    "progressModifier": 100,
+    "qualityDivider": 48,
+    "qualityModifier": 100
+  },
+  "147": {
+    "progressDivider": 68,
+    "progressModifier": 100,
+    "qualityDivider": 48,
+    "qualityModifier": 100
+  },
+  "148": {
+    "progressDivider": 69,
+    "progressModifier": 100,
+    "qualityDivider": 49,
+    "qualityModifier": 100
+  },
+  "149": {
+    "progressDivider": 69,
+    "progressModifier": 100,
+    "qualityDivider": 49,
+    "qualityModifier": 100
+  },
+  "150": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "151": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "152": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "153": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "154": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "155": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "156": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "157": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "158": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "159": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "160": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "161": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "162": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "163": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "164": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "165": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "166": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "167": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "168": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "169": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "170": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "171": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "172": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "173": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "174": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "175": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "176": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "177": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "178": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "179": {
+    "progressDivider": 70,
+    "progressModifier": 100,
+    "qualityDivider": 50,
+    "qualityModifier": 100
+  },
+  "180": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "181": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "182": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "183": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "184": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "185": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "186": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "187": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "188": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "189": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "190": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "191": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "192": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "193": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "194": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "195": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "196": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "197": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "198": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "199": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "200": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "201": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "202": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "203": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "204": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "205": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "206": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "207": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "208": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "209": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "210": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "211": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "212": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "213": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "214": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "215": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "216": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "217": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "218": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "219": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "220": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "221": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "222": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "223": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "224": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "225": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "226": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "227": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "228": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "229": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "230": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "231": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "232": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "233": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "234": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "235": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "236": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "237": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "238": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "239": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "240": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "241": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "242": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "243": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "244": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "245": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "246": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "247": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "248": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "249": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "250": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "251": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "252": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "253": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "254": {
+    "progressDivider": 70,
+    "progressModifier": 80,
+    "qualityDivider": 50,
+    "qualityModifier": 70
+  },
+  "255": {
+    "progressDivider": 81,
+    "progressModifier": 100,
+    "qualityDivider": 58,
+    "qualityModifier": 100
+  },
+  "256": {
+    "progressDivider": 81,
+    "progressModifier": 100,
+    "qualityDivider": 58,
+    "qualityModifier": 100
+  },
+  "257": {
+    "progressDivider": 81,
+    "progressModifier": 100,
+    "qualityDivider": 58,
+    "qualityModifier": 100
+  },
+  "258": {
+    "progressDivider": 81,
+    "progressModifier": 100,
+    "qualityDivider": 58,
+    "qualityModifier": 100
+  },
+  "259": {
+    "progressDivider": 81,
+    "progressModifier": 100,
+    "qualityDivider": 58,
+    "qualityModifier": 100
+  },
+  "260": {
+    "progressDivider": 81,
+    "progressModifier": 100,
+    "qualityDivider": 58,
+    "qualityModifier": 100
+  },
+  "261": {
+    "progressDivider": 81,
+    "progressModifier": 100,
+    "qualityDivider": 58,
+    "qualityModifier": 100
+  },
+  "262": {
+    "progressDivider": 81,
+    "progressModifier": 100,
+    "qualityDivider": 58,
+    "qualityModifier": 100
+  },
+  "263": {
+    "progressDivider": 81,
+    "progressModifier": 100,
+    "qualityDivider": 58,
+    "qualityModifier": 100
+  },
+  "264": {
+    "progressDivider": 81,
+    "progressModifier": 100,
+    "qualityDivider": 58,
+    "qualityModifier": 100
+  },
+  "265": {
+    "progressDivider": 82,
+    "progressModifier": 100,
+    "qualityDivider": 61,
+    "qualityModifier": 100
+  },
+  "266": {
+    "progressDivider": 82,
+    "progressModifier": 100,
+    "qualityDivider": 61,
+    "qualityModifier": 100
+  },
+  "267": {
+    "progressDivider": 82,
+    "progressModifier": 100,
+    "qualityDivider": 61,
+    "qualityModifier": 100
+  },
+  "268": {
+    "progressDivider": 82,
+    "progressModifier": 100,
+    "qualityDivider": 61,
+    "qualityModifier": 100
+  },
+  "269": {
+    "progressDivider": 82,
+    "progressModifier": 100,
+    "qualityDivider": 61,
+    "qualityModifier": 100
+  },
+  "270": {
+    "progressDivider": 83,
+    "progressModifier": 100,
+    "qualityDivider": 64,
+    "qualityModifier": 100
+  },
+  "271": {
+    "progressDivider": 83,
+    "progressModifier": 100,
+    "qualityDivider": 64,
+    "qualityModifier": 100
+  },
+  "272": {
+    "progressDivider": 83,
+    "progressModifier": 100,
+    "qualityDivider": 64,
+    "qualityModifier": 100
+  },
+  "273": {
+    "progressDivider": 84,
+    "progressModifier": 100,
+    "qualityDivider": 65,
+    "qualityModifier": 100
+  },
+  "274": {
+    "progressDivider": 84,
+    "progressModifier": 100,
+    "qualityDivider": 65,
+    "qualityModifier": 100
+  },
+  "275": {
+    "progressDivider": 84,
+    "progressModifier": 100,
+    "qualityDivider": 65,
+    "qualityModifier": 100
+  },
+  "276": {
+    "progressDivider": 85,
+    "progressModifier": 100,
+    "qualityDivider": 66,
+    "qualityModifier": 100
+  },
+  "277": {
+    "progressDivider": 85,
+    "progressModifier": 100,
+    "qualityDivider": 66,
+    "qualityModifier": 100
+  },
+  "278": {
+    "progressDivider": 85,
+    "progressModifier": 100,
+    "qualityDivider": 66,
+    "qualityModifier": 100
+  },
+  "279": {
+    "progressDivider": 86,
+    "progressModifier": 100,
+    "qualityDivider": 66,
+    "qualityModifier": 100
+  },
+  "280": {
+    "progressDivider": 86,
+    "progressModifier": 100,
+    "qualityDivider": 66,
+    "qualityModifier": 100
+  },
+  "281": {
+    "progressDivider": 86,
+    "progressModifier": 100,
+    "qualityDivider": 66,
+    "qualityModifier": 100
+  },
+  "282": {
+    "progressDivider": 87,
+    "progressModifier": 100,
+    "qualityDivider": 68,
+    "qualityModifier": 100
+  },
+  "283": {
+    "progressDivider": 87,
+    "progressModifier": 100,
+    "qualityDivider": 68,
+    "qualityModifier": 100
+  },
+  "284": {
+    "progressDivider": 87,
+    "progressModifier": 100,
+    "qualityDivider": 68,
+    "qualityModifier": 100
+  },
+  "285": {
+    "progressDivider": 88,
+    "progressModifier": 100,
+    "qualityDivider": 68,
+    "qualityModifier": 100
+  },
+  "286": {
+    "progressDivider": 88,
+    "progressModifier": 100,
+    "qualityDivider": 68,
+    "qualityModifier": 100
+  },
+  "287": {
+    "progressDivider": 88,
+    "progressModifier": 100,
+    "qualityDivider": 68,
+    "qualityModifier": 100
+  },
+  "288": {
+    "progressDivider": 89,
+    "progressModifier": 100,
+    "qualityDivider": 68,
+    "qualityModifier": 100
+  },
+  "289": {
+    "progressDivider": 89,
+    "progressModifier": 100,
+    "qualityDivider": 68,
+    "qualityModifier": 100
+  },
+  "290": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "291": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "292": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "293": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "294": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "295": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "296": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "297": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "298": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "299": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "300": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "301": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "302": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "303": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "304": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "305": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "306": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "307": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "308": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "309": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "310": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "311": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "312": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "313": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "314": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "315": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "316": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "317": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "318": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "319": {
+    "progressDivider": 90,
+    "progressModifier": 100,
+    "qualityDivider": 70,
+    "qualityModifier": 100
+  },
+  "320": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "321": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "322": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "323": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "324": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "325": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "326": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "327": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "328": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "329": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "330": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "331": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "332": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "333": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "334": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "335": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "336": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "337": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "338": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "339": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "340": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "341": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "342": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "343": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "344": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "345": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "346": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "347": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "348": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "349": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "350": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "351": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "352": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "353": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "354": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "355": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "356": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "357": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "358": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "359": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "360": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "361": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "362": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "363": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "364": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "365": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "366": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "367": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "368": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "369": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "370": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "371": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "372": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "373": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "374": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "375": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "376": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "377": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "378": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "379": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "380": {
+    "progressDivider": 90,
+    "progressModifier": 80,
+    "qualityDivider": 70,
+    "qualityModifier": 70
+  },
+  "381": {
+    "progressDivider": 101,
+    "progressModifier": 100,
+    "qualityDivider": 81,
+    "qualityModifier": 100
+  },
+  "382": {
+    "progressDivider": 101,
+    "progressModifier": 100,
+    "qualityDivider": 81,
+    "qualityModifier": 100
+  },
+  "383": {
+    "progressDivider": 101,
+    "progressModifier": 100,
+    "qualityDivider": 81,
+    "qualityModifier": 100
+  },
+  "384": {
+    "progressDivider": 101,
+    "progressModifier": 100,
+    "qualityDivider": 81,
+    "qualityModifier": 100
+  },
+  "385": {
+    "progressDivider": 101,
+    "progressModifier": 100,
+    "qualityDivider": 81,
+    "qualityModifier": 100
+  },
+  "386": {
+    "progressDivider": 101,
+    "progressModifier": 100,
+    "qualityDivider": 81,
+    "qualityModifier": 100
+  },
+  "387": {
+    "progressDivider": 101,
+    "progressModifier": 100,
+    "qualityDivider": 81,
+    "qualityModifier": 100
+  },
+  "388": {
+    "progressDivider": 101,
+    "progressModifier": 100,
+    "qualityDivider": 81,
+    "qualityModifier": 100
+  },
+  "389": {
+    "progressDivider": 101,
+    "progressModifier": 100,
+    "qualityDivider": 81,
+    "qualityModifier": 100
+  },
+  "390": {
+    "progressDivider": 101,
+    "progressModifier": 100,
+    "qualityDivider": 81,
+    "qualityModifier": 100
+  },
+  "391": {
+    "progressDivider": 101,
+    "progressModifier": 100,
+    "qualityDivider": 81,
+    "qualityModifier": 100
+  },
+  "392": {
+    "progressDivider": 101,
+    "progressModifier": 100,
+    "qualityDivider": 81,
+    "qualityModifier": 100
+  },
+  "393": {
+    "progressDivider": 101,
+    "progressModifier": 100,
+    "qualityDivider": 81,
+    "qualityModifier": 100
+  },
+  "394": {
+    "progressDivider": 101,
+    "progressModifier": 100,
+    "qualityDivider": 81,
+    "qualityModifier": 100
+  },
+  "395": {
+    "progressDivider": 102,
+    "progressModifier": 100,
+    "qualityDivider": 82,
+    "qualityModifier": 100
+  },
+  "396": {
+    "progressDivider": 102,
+    "progressModifier": 100,
+    "qualityDivider": 82,
+    "qualityModifier": 100
+  },
+  "397": {
+    "progressDivider": 102,
+    "progressModifier": 100,
+    "qualityDivider": 82,
+    "qualityModifier": 100
+  },
+  "398": {
+    "progressDivider": 102,
+    "progressModifier": 100,
+    "qualityDivider": 82,
+    "qualityModifier": 100
+  },
+  "399": {
+    "progressDivider": 102,
+    "progressModifier": 100,
+    "qualityDivider": 82,
+    "qualityModifier": 100
+  },
+  "400": {
+    "progressDivider": 103,
+    "progressModifier": 100,
+    "qualityDivider": 83,
+    "qualityModifier": 100
+  },
+  "401": {
+    "progressDivider": 103,
+    "progressModifier": 100,
+    "qualityDivider": 83,
+    "qualityModifier": 100
+  },
+  "402": {
+    "progressDivider": 103,
+    "progressModifier": 100,
+    "qualityDivider": 83,
+    "qualityModifier": 100
+  },
+  "403": {
+    "progressDivider": 104,
+    "progressModifier": 100,
+    "qualityDivider": 84,
+    "qualityModifier": 100
+  },
+  "404": {
+    "progressDivider": 104,
+    "progressModifier": 100,
+    "qualityDivider": 84,
+    "qualityModifier": 100
+  },
+  "405": {
+    "progressDivider": 104,
+    "progressModifier": 100,
+    "qualityDivider": 84,
+    "qualityModifier": 100
+  },
+  "406": {
+    "progressDivider": 105,
+    "progressModifier": 100,
+    "qualityDivider": 85,
+    "qualityModifier": 100
+  },
+  "407": {
+    "progressDivider": 105,
+    "progressModifier": 100,
+    "qualityDivider": 85,
+    "qualityModifier": 100
+  },
+  "408": {
+    "progressDivider": 105,
+    "progressModifier": 100,
+    "qualityDivider": 85,
+    "qualityModifier": 100
+  },
+  "409": {
+    "progressDivider": 106,
+    "progressModifier": 100,
+    "qualityDivider": 86,
+    "qualityModifier": 100
+  },
+  "410": {
+    "progressDivider": 106,
+    "progressModifier": 100,
+    "qualityDivider": 86,
+    "qualityModifier": 100
+  },
+  "411": {
+    "progressDivider": 106,
+    "progressModifier": 100,
+    "qualityDivider": 86,
+    "qualityModifier": 100
+  },
+  "412": {
+    "progressDivider": 107,
+    "progressModifier": 100,
+    "qualityDivider": 87,
+    "qualityModifier": 100
+  },
+  "413": {
+    "progressDivider": 107,
+    "progressModifier": 100,
+    "qualityDivider": 87,
+    "qualityModifier": 100
+  },
+  "414": {
+    "progressDivider": 107,
+    "progressModifier": 100,
+    "qualityDivider": 87,
+    "qualityModifier": 100
+  },
+  "415": {
+    "progressDivider": 108,
+    "progressModifier": 100,
+    "qualityDivider": 88,
+    "qualityModifier": 100
+  },
+  "416": {
+    "progressDivider": 108,
+    "progressModifier": 100,
+    "qualityDivider": 88,
+    "qualityModifier": 100
+  },
+  "417": {
+    "progressDivider": 108,
+    "progressModifier": 100,
+    "qualityDivider": 88,
+    "qualityModifier": 100
+  },
+  "418": {
+    "progressDivider": 109,
+    "progressModifier": 100,
+    "qualityDivider": 89,
+    "qualityModifier": 100
+  },
+  "419": {
+    "progressDivider": 109,
+    "progressModifier": 100,
+    "qualityDivider": 89,
+    "qualityModifier": 100
+  },
+  "420": {
+    "progressDivider": 109,
+    "progressModifier": 100,
+    "qualityDivider": 89,
+    "qualityModifier": 100
+  },
+  "421": {
+    "progressDivider": 109,
+    "progressModifier": 100,
+    "qualityDivider": 89,
+    "qualityModifier": 100
+  },
+  "422": {
+    "progressDivider": 109,
+    "progressModifier": 100,
+    "qualityDivider": 89,
+    "qualityModifier": 100
+  },
+  "423": {
+    "progressDivider": 109,
+    "progressModifier": 100,
+    "qualityDivider": 89,
+    "qualityModifier": 100
+  },
+  "424": {
+    "progressDivider": 109,
+    "progressModifier": 100,
+    "qualityDivider": 89,
+    "qualityModifier": 100
+  },
+  "425": {
+    "progressDivider": 109,
+    "progressModifier": 100,
+    "qualityDivider": 89,
+    "qualityModifier": 100
+  },
+  "426": {
+    "progressDivider": 109,
+    "progressModifier": 100,
+    "qualityDivider": 89,
+    "qualityModifier": 100
+  },
+  "427": {
+    "progressDivider": 109,
+    "progressModifier": 100,
+    "qualityDivider": 89,
+    "qualityModifier": 100
+  },
+  "428": {
+    "progressDivider": 109,
+    "progressModifier": 100,
+    "qualityDivider": 89,
+    "qualityModifier": 100
+  },
+  "429": {
+    "progressDivider": 109,
+    "progressModifier": 100,
+    "qualityDivider": 89,
+    "qualityModifier": 100
+  },
+  "430": {
+    "progressDivider": 110,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "431": {
+    "progressDivider": 110,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "432": {
+    "progressDivider": 110,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "433": {
+    "progressDivider": 110,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "434": {
+    "progressDivider": 110,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "435": {
+    "progressDivider": 110,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "436": {
+    "progressDivider": 110,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "437": {
+    "progressDivider": 110,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "438": {
+    "progressDivider": 110,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "439": {
+    "progressDivider": 110,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "440": {
+    "progressDivider": 110,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "441": {
+    "progressDivider": 110,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "442": {
+    "progressDivider": 110,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "443": {
+    "progressDivider": 110,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "444": {
+    "progressDivider": 110,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "445": {
+    "progressDivider": 110,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "446": {
+    "progressDivider": 110,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "447": {
+    "progressDivider": 110,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "448": {
+    "progressDivider": 110,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "449": {
+    "progressDivider": 110,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "450": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "451": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "452": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "453": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "454": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "455": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "456": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "457": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "458": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "459": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "460": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "461": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "462": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "463": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "464": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "465": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "466": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "467": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "468": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "469": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "470": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "471": {
+    "progressDivider": 140,
+    "progressModifier": 100,
+    "qualityDivider": 90,
+    "qualityModifier": 100
+  },
+  "472": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "473": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "474": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "475": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "476": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "477": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "478": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "479": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "480": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "481": {
+    "progressDivider": 140,
+    "progressModifier": 100,
+    "qualityDivider": 130,
+    "qualityModifier": 100
+  },
+  "482": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "483": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "484": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "485": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "486": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "487": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "488": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "489": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "490": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "491": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "492": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "493": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "494": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "495": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "496": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "497": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "498": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "499": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "500": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "501": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "502": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "503": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "504": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "505": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "506": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "507": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "508": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "509": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "510": {
+    "progressDivider": 110,
+    "progressModifier": 80,
+    "qualityDivider": 90,
+    "qualityModifier": 70
+  },
+  "511": {
+    "progressDivider": 140,
+    "progressModifier": 100,
+    "qualityDivider": 130,
+    "qualityModifier": 100
+  },
+  "512": {
+    "progressDivider": 140,
+    "progressModifier": 100,
+    "qualityDivider": 130,
+    "qualityModifier": 100
+  },
+  "513": {
+    "progressDivider": 140,
+    "progressModifier": 100,
+    "qualityDivider": 130,
+    "qualityModifier": 100
+  },
+  "514": {
+    "progressDivider": 140,
+    "progressModifier": 100,
+    "qualityDivider": 130,
+    "qualityModifier": 100
+  },
+  "515": {
+    "progressDivider": 140,
+    "progressModifier": 100,
+    "qualityDivider": 130,
+    "qualityModifier": 100
+  },
+  "516": {
+    "progressDivider": 140,
+    "progressModifier": 100,
+    "qualityDivider": 130,
+    "qualityModifier": 100
+  },
+  "517": {
+    "progressDivider": 121,
+    "progressModifier": 100,
+    "qualityDivider": 105,
+    "qualityModifier": 100
+  },
+  "518": {
+    "progressDivider": 121,
+    "progressModifier": 100,
+    "qualityDivider": 105,
+    "qualityModifier": 100
+  },
+  "519": {
+    "progressDivider": 121,
+    "progressModifier": 100,
+    "qualityDivider": 105,
+    "qualityModifier": 100
+  },
+  "520": {
+    "progressDivider": 122,
+    "progressModifier": 100,
+    "qualityDivider": 106,
+    "qualityModifier": 100
+  },
+  "521": {
+    "progressDivider": 122,
+    "progressModifier": 100,
+    "qualityDivider": 106,
+    "qualityModifier": 100
+  },
+  "522": {
+    "progressDivider": 122,
+    "progressModifier": 100,
+    "qualityDivider": 106,
+    "qualityModifier": 100
+  },
+  "523": {
+    "progressDivider": 122,
+    "progressModifier": 100,
+    "qualityDivider": 106,
+    "qualityModifier": 100
+  },
+  "524": {
+    "progressDivider": 122,
+    "progressModifier": 100,
+    "qualityDivider": 106,
+    "qualityModifier": 100
+  },
+  "525": {
+    "progressDivider": 123,
+    "progressModifier": 100,
+    "qualityDivider": 107,
+    "qualityModifier": 100
+  },
+  "526": {
+    "progressDivider": 123,
+    "progressModifier": 100,
+    "qualityDivider": 107,
+    "qualityModifier": 100
+  },
+  "527": {
+    "progressDivider": 123,
+    "progressModifier": 100,
+    "qualityDivider": 107,
+    "qualityModifier": 100
+  },
+  "528": {
+    "progressDivider": 123,
+    "progressModifier": 100,
+    "qualityDivider": 107,
+    "qualityModifier": 100
+  },
+  "529": {
+    "progressDivider": 123,
+    "progressModifier": 100,
+    "qualityDivider": 107,
+    "qualityModifier": 100
+  },
+  "530": {
+    "progressDivider": 124,
+    "progressModifier": 100,
+    "qualityDivider": 108,
+    "qualityModifier": 100
+  },
+  "531": {
+    "progressDivider": 124,
+    "progressModifier": 100,
+    "qualityDivider": 108,
+    "qualityModifier": 100
+  },
+  "532": {
+    "progressDivider": 124,
+    "progressModifier": 100,
+    "qualityDivider": 108,
+    "qualityModifier": 100
+  },
+  "533": {
+    "progressDivider": 124,
+    "progressModifier": 100,
+    "qualityDivider": 108,
+    "qualityModifier": 100
+  },
+  "534": {
+    "progressDivider": 124,
+    "progressModifier": 100,
+    "qualityDivider": 108,
+    "qualityModifier": 100
+  },
+  "535": {
+    "progressDivider": 125,
+    "progressModifier": 100,
+    "qualityDivider": 109,
+    "qualityModifier": 100
+  },
+  "536": {
+    "progressDivider": 125,
+    "progressModifier": 100,
+    "qualityDivider": 109,
+    "qualityModifier": 100
+  },
+  "537": {
+    "progressDivider": 125,
+    "progressModifier": 100,
+    "qualityDivider": 109,
+    "qualityModifier": 100
+  },
+  "538": {
+    "progressDivider": 125,
+    "progressModifier": 100,
+    "qualityDivider": 109,
+    "qualityModifier": 100
+  },
+  "539": {
+    "progressDivider": 125,
+    "progressModifier": 100,
+    "qualityDivider": 109,
+    "qualityModifier": 100
+  },
+  "540": {
+    "progressDivider": 126,
+    "progressModifier": 100,
+    "qualityDivider": 110,
+    "qualityModifier": 100
+  },
+  "541": {
+    "progressDivider": 126,
+    "progressModifier": 100,
+    "qualityDivider": 110,
+    "qualityModifier": 100
+  },
+  "542": {
+    "progressDivider": 126,
+    "progressModifier": 100,
+    "qualityDivider": 110,
+    "qualityModifier": 100
+  },
+  "543": {
+    "progressDivider": 126,
+    "progressModifier": 100,
+    "qualityDivider": 110,
+    "qualityModifier": 100
+  },
+  "544": {
+    "progressDivider": 126,
+    "progressModifier": 100,
+    "qualityDivider": 110,
+    "qualityModifier": 100
+  },
+  "545": {
+    "progressDivider": 127,
+    "progressModifier": 100,
+    "qualityDivider": 111,
+    "qualityModifier": 100
+  },
+  "546": {
+    "progressDivider": 127,
+    "progressModifier": 100,
+    "qualityDivider": 111,
+    "qualityModifier": 100
+  },
+  "547": {
+    "progressDivider": 127,
+    "progressModifier": 100,
+    "qualityDivider": 111,
+    "qualityModifier": 100
+  },
+  "548": {
+    "progressDivider": 127,
+    "progressModifier": 100,
+    "qualityDivider": 111,
+    "qualityModifier": 100
+  },
+  "549": {
+    "progressDivider": 127,
+    "progressModifier": 100,
+    "qualityDivider": 111,
+    "qualityModifier": 100
+  },
+  "550": {
+    "progressDivider": 128,
+    "progressModifier": 100,
+    "qualityDivider": 112,
+    "qualityModifier": 100
+  },
+  "551": {
+    "progressDivider": 128,
+    "progressModifier": 100,
+    "qualityDivider": 112,
+    "qualityModifier": 100
+  },
+  "552": {
+    "progressDivider": 128,
+    "progressModifier": 100,
+    "qualityDivider": 112,
+    "qualityModifier": 100
+  },
+  "553": {
+    "progressDivider": 128,
+    "progressModifier": 100,
+    "qualityDivider": 112,
+    "qualityModifier": 100
+  },
+  "554": {
+    "progressDivider": 128,
+    "progressModifier": 100,
+    "qualityDivider": 112,
+    "qualityModifier": 100
+  },
+  "555": {
+    "progressDivider": 129,
+    "progressModifier": 100,
+    "qualityDivider": 113,
+    "qualityModifier": 100
+  },
+  "556": {
+    "progressDivider": 129,
+    "progressModifier": 100,
+    "qualityDivider": 113,
+    "qualityModifier": 100
+  },
+  "557": {
+    "progressDivider": 129,
+    "progressModifier": 100,
+    "qualityDivider": 113,
+    "qualityModifier": 100
+  },
+  "558": {
+    "progressDivider": 129,
+    "progressModifier": 100,
+    "qualityDivider": 113,
+    "qualityModifier": 100
+  },
+  "559": {
+    "progressDivider": 129,
+    "progressModifier": 100,
+    "qualityDivider": 113,
+    "qualityModifier": 100
+  },
+  "560": {
+    "progressDivider": 130,
+    "progressModifier": 90,
+    "qualityDivider": 115,
+    "qualityModifier": 80
+  },
+  "561": {
+    "progressDivider": 130,
+    "progressModifier": 90,
+    "qualityDivider": 115,
+    "qualityModifier": 80
+  },
+  "562": {
+    "progressDivider": 130,
+    "progressModifier": 90,
+    "qualityDivider": 115,
+    "qualityModifier": 80
+  },
+  "563": {
+    "progressDivider": 130,
+    "progressModifier": 90,
+    "qualityDivider": 115,
+    "qualityModifier": 80
+  },
+  "564": {
+    "progressDivider": 130,
+    "progressModifier": 90,
+    "qualityDivider": 115,
+    "qualityModifier": 80
+  },
+  "565": {
+    "progressDivider": 130,
+    "progressModifier": 90,
+    "qualityDivider": 115,
+    "qualityModifier": 80
+  },
+  "566": {
+    "progressDivider": 130,
+    "progressModifier": 90,
+    "qualityDivider": 115,
+    "qualityModifier": 80
+  },
+  "567": {
+    "progressDivider": 130,
+    "progressModifier": 90,
+    "qualityDivider": 115,
+    "qualityModifier": 80
+  },
+  "568": {
+    "progressDivider": 130,
+    "progressModifier": 90,
+    "qualityDivider": 115,
+    "qualityModifier": 80
+  },
+  "569": {
+    "progressDivider": 130,
+    "progressModifier": 90,
+    "qualityDivider": 115,
+    "qualityModifier": 80
+  },
+  "570": {
+    "progressDivider": 130,
+    "progressModifier": 90,
+    "qualityDivider": 115,
+    "qualityModifier": 80
+  },
+  "571": {
+    "progressDivider": 130,
+    "progressModifier": 90,
+    "qualityDivider": 115,
+    "qualityModifier": 80
+  },
+  "572": {
+    "progressDivider": 130,
+    "progressModifier": 90,
+    "qualityDivider": 115,
+    "qualityModifier": 80
+  },
+  "573": {
+    "progressDivider": 130,
+    "progressModifier": 90,
+    "qualityDivider": 115,
+    "qualityModifier": 80
+  },
+  "574": {
+    "progressDivider": 130,
+    "progressModifier": 90,
+    "qualityDivider": 115,
+    "qualityModifier": 80
+  },
+  "575": {
+    "progressDivider": 130,
+    "progressModifier": 90,
+    "qualityDivider": 115,
+    "qualityModifier": 80
+  },
+  "576": {
+    "progressDivider": 130,
+    "progressModifier": 90,
+    "qualityDivider": 115,
+    "qualityModifier": 80
+  },
+  "577": {
+    "progressDivider": 130,
+    "progressModifier": 90,
+    "qualityDivider": 115,
+    "qualityModifier": 80
+  },
+  "578": {
+    "progressDivider": 130,
+    "progressModifier": 90,
+    "qualityDivider": 115,
+    "qualityModifier": 80
+  },
+  "579": {
+    "progressDivider": 130,
+    "progressModifier": 90,
+    "qualityDivider": 115,
+    "qualityModifier": 80
+  },
+  "580": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "581": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "582": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "583": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "584": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "585": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "586": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "587": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "588": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "589": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "590": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "591": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "592": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "593": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "594": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "595": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "596": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "597": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "598": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "599": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "600": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "601": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "602": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "603": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "604": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "605": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "606": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "607": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "608": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "609": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "610": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "611": {
+    "progressDivider": 180,
+    "progressModifier": 100,
+    "qualityDivider": 180,
+    "qualityModifier": 100
+  },
+  "612": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "613": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "614": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "615": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "616": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "617": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "618": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "619": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "620": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "621": {
+    "progressDivider": 180,
+    "progressModifier": 100,
+    "qualityDivider": 180,
+    "qualityModifier": 100
+  },
+  "622": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "623": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "624": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "625": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "626": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "627": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "628": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "629": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "630": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "631": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "632": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "633": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "634": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "635": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "636": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "637": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "638": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "639": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "640": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "641": {
+    "progressDivider": 180,
+    "progressModifier": 100,
+    "qualityDivider": 180,
+    "qualityModifier": 100
+  },
+  "642": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "643": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "644": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "645": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "646": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "647": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "648": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "649": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  },
+  "650": {
+    "progressDivider": 130,
+    "progressModifier": 80,
+    "qualityDivider": 115,
+    "qualityModifier": 70
+  }
+}

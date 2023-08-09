@@ -48,7 +48,7 @@ export class GatheringLocationComponent {
     {
       needsTranslate: true,
       value: 'Reduction',
-      icon: 'https://www.garlandtools.org/db/images/item/Reduce.png'
+      icon: './assets/icons/Reduce.png'
     },
     {
       value: 25200

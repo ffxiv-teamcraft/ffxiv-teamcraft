@@ -1,43 +1,32 @@
 import { Component, OnDestroy, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
-import { uniq } from 'lodash';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { combineLatest, concat, Observable, of } from 'rxjs';
 import { filter, first, map, mergeMap, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
-import { DataService } from '../../../core/api/data.service';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { Memoized } from '../../../core/decorators/memoized';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { SeoService } from '../../../core/seo/seo.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { ItemData } from '../../../model/garland-tools/item-data';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { DataType, getItemSource, SearchResult, TripleTriadDuel } from '@ffxiv-teamcraft/types';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { List } from '../../../modules/list/model/list';
 import { ListRow } from '../../../modules/list/model/list-row';
-import { Trade } from '../../../modules/list/model/trade';
-import { TradeEntry } from '../../../modules/list/model/trade-entry';
-import { TradeNpc } from '../../../modules/list/model/trade-npc';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { UsedForType } from '../model/used-for-type';
 import { ATTTService } from '../service/attt.service';
 import { ItemContextService } from '../service/item-context.service';
-import { ModelViewerComponent } from './model-viewer/model-viewer.component';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
-import { withLazyRow } from '../../../core/rxjs/with-lazy-row';
-import { LazyRecipesPerItem } from '@ffxiv-teamcraft/data/model/lazy-recipes-per-item';
+import { LazyItemsDatabasePage } from '@ffxiv-teamcraft/data/model/lazy-items-database-page';
 
 @Component({
   selector: 'app-item',
@@ -52,90 +41,22 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     map(([_, itemId]) => itemId)
   );
 
-  public readonly xivapiItem$: Observable<any> = this.itemId$.pipe(
+  public readonly lazyItem$ = this.itemId$.pipe(
     switchMap((itemId) => {
-      return this.xivapi.get(XivapiEndpoint.Item, itemId);
-    }),
-    withLazyData(this.lazyData, 'fishes'),
-    switchMap(([item, fishes]) => {
-      item.IsFish = fishes.indexOf(item.ID) > -1;
-      // If it's a  consumable, get item action details and put it inside item action itself.
-      if (item.ItemAction && [844, 845, 846].indexOf(item.ItemAction.Type) > -1) {
-        return this.xivapi.get(XivapiEndpoint.ItemFood, item.ItemAction.Data1).pipe(
-          map((itemFood) => {
-            item.ItemFood = itemFood;
-            return item;
-          })
-        );
-      }
-      // If it's a fish, add the ingame drawing image link
-      item.ingameDrawing = item.Icon.split('/')
-        .map((fragment) => {
-          if (+fragment > 0 || fragment.endsWith('.png')) {
-            return `07${fragment.slice(2)}`;
-          }
-          return fragment;
-        })
-        .join('/');
-
-      // For now we only have more details if there's an associated series
-      item.hasMoreDetails = item.ItemSeries !== null;
-
-      // if (item.ItemSeries) {
-      //   return this.lazyData.getRow('itemSeries', item.ItemSeries.ID).pipe(
-      //     switchMap(itemSeries => {
-      //       if (itemSeries.items.length > 20) {
-      //         return of(item);
-      //       }
-      //       return safeCombineLatest(itemSeries.items.map(itemId => {
-      //         return this.lazyData.getRow('itemSetBonuses', itemId, { bonuses: [], itemSeriesId: item.ItemSeries.ID }).pipe(
-      //           map(bonuses => {
-      //             return {
-      //               itemId,
-      //               bonuses
-      //             };
-      //           })
-      //         );
-      //       })).pipe(
-      //         map(bonuses => {
-      //           return {
-      //             ...item,
-      //             bonuses
-      //           };
-      //         })
-      //       );
-      //     })
-      //   );
-      // }
-      return of(item);
+      return this.lazyData.getRow('itemsDatabasePages', itemId);
     }),
     shareReplay({ bufferSize: 1, refCount: true })
   );
 
-  public readonly garlandToolsItem$: Observable<ItemData> = this.itemId$.pipe(
-    switchMap((itemId) => {
-      return this.gt.getItem(itemId);
-    }),
-    shareReplay({ bufferSize: 1, refCount: true })
-  );
-
-  public readonly data$: Observable<ListRow> = combineLatest([this.garlandToolsItem$, this.xivapiItem$, this.authFacade.logTracking$.pipe(startWith(null))]).pipe(
-    switchMap(([data, xivapiItem, logTracking]) => {
-      const mockRow: any = {
-        id: data.item.id,
-        icon: data.item.icon,
-        amount: 1,
-        done: 0,
-        used: 0,
-        yield: 1
-      };
-      return this.lazyData.getRow('extracts', data.item.id).pipe(
+  public readonly data$: Observable<ListRow> = combineLatest([this.lazyItem$, this.authFacade.logTracking$.pipe(startWith(null))]).pipe(
+    switchMap(([item, logTracking]) => {
+      return this.lazyData.getRow('extracts', item.id).pipe(
         switchMap((item: any) => {
           item.canBeGathered = getItemSource(item, DataType.GATHERED_BY).type !== undefined;
           if (item.canBeGathered) {
             item.isDoneInLog = logTracking?.gathering.includes(item.id);
           }
-          return this.handleAdditionalData(item, xivapiItem);
+          return this.handleAdditionalData(item, item);
         })
       );
     }),
@@ -150,14 +71,14 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     })
   );
 
-  public readonly usedFor$: Observable<any> = combineLatest([this.garlandToolsItem$, this.xivapiItem$]).pipe(
-    switchMap(([data, xivapiItem]) => {
-      if (xivapiItem.ItemSearchCategoryTargetID === 30) {
+  public readonly usedFor$: Observable<any> = this.lazyItem$.pipe(
+    switchMap((item) => {
+      if (item.searchCategory === 30) {
         return this.apollo
           .query<any>({
             query: gql`
         query fishData {
-          baits_per_fish(where: {baitId: {_eq: ${xivapiItem.ID}}, occurences: {_gt: 5}}) {
+          baits_per_fish(where: {baitId: {_eq: ${item.id}}, occurences: {_gt: 5}}) {
             itemId
           }
         }
@@ -165,203 +86,130 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           })
           .pipe(
             map((result) => {
-              xivapiItem.BaitInfo = result.data.baits_per_fish.filter((row) => row.itemId > 0);
-              return [data, xivapiItem];
+              (item as any).BaitInfo = result.data.baits_per_fish.filter((row) => row.itemId > 0);
+              return item;
             })
           );
       }
-      return of([data, xivapiItem]);
+      return of(item);
     }),
-    withLazyData(this.lazyData, 'recipes', 'reduction', 'collectables', 'desynth', 'npcs', 'lootSources'),
-    withLazyRow(this.lazyData, 'usedInQuests', ([[, xivapiItem]]) => xivapiItem.ID),
-    withLazyRow(this.lazyData, 'levesPerItem', ([[[, xivapiItem]]]) => xivapiItem.ID),
-    switchMap(([[[[data, xivapiItem], recipes, reduction, collectables, desynth, npcs, loots], usedInQuests], usedForLeves]) => {
+    map((item) => {
       const usedFor = [];
-      if (data.item.ingredient_of !== undefined) {
+      // Ex: Iron ore
+      if (item.ingredientFor) {
         usedFor.push({
           type: UsedForType.CRAFT,
           flex: '1 1 auto',
           title: 'DB.Crafts',
           icon: './assets/icons/classjob/blacksmith.png',
-          links: Object.keys(data.item.ingredient_of).map((itemId) => {
-            return {
-              itemId: +itemId,
-              recipes: recipes.filter((r) => r.result === +itemId)
-            };
-          })
+          links: item.ingredientFor
         });
       }
-      if (xivapiItem.BaitInfo !== undefined && xivapiItem.BaitInfo.length > 0) {
+      // Ex: Harbor Herring
+      if ((item as any).BaitInfo !== undefined && (item as any).BaitInfo.length > 0) {
         usedFor.push({
           type: UsedForType.FISH_BAIT,
           flex: '1 1 auto',
           title: 'DB.FISH.Bait',
           icon: './assets/icons/classjob/fisher.png',
-          links: xivapiItem.BaitInfo.map((row) => {
+          links: (item as any).BaitInfo.map((row) => {
             return {
               itemId: +row.itemId
             };
           })
         });
       }
-      const lazyReductions = Object.keys(reduction)
-        .filter((key) => reduction[key].indexOf(data.item.id) > -1)
-        .map((key) => +key);
-      const reductions = uniq([...(data.item.reducesTo || []), ...(lazyReductions || [])]);
-      if (reductions.length > 0) {
+      // Ex: bog sage
+      if (item.reductions) {
         usedFor.push({
           type: UsedForType.REDUCTION,
           flex: '1 1 auto',
           title: 'DB.Reduces_to',
-          icon: 'https://www.garlandtools.org/db/images/Reduce.png',
-          links: reductions.map((itemId) => {
+          icon: './assets/icons/Reduce.png',
+          links: item.reductions.map((itemId) => {
             return {
               itemId: +itemId
             };
           })
         });
       }
-      const collectable = collectables[data.item.id];
-      if (collectable !== undefined) {
-        if (collectable.hwd) {
+      if (item.collectable !== undefined) {
+        if (item.collectable.hwd) {
+          // Ex: Skybuilders' Pedestal
           usedFor.push({
             type: UsedForType.ISHGARD_RESTORATION,
             flex: '1 1 auto',
             title: 'DB.Ishgard_restoration',
             icon: './assets/icons/status/collectors_glove.png',
-            ishgardRestoration: collectables[data.item.id]
+            ishgardRestoration: item.collectable
           });
         } else {
+          // Ex: Connoisseur's Chair
           usedFor.push({
             type: UsedForType.ROWENA_SPLENDOR,
             flex: '1 1 auto',
             title: 'DB.Rowena_splendor',
             icon: './assets/icons/status/collectors_glove.png',
-            masterpiece: collectables[data.item.id]
+            masterpiece: item.collectable
           });
         }
       }
-      const lazyDesynths = Object.keys(desynth)
-        .filter((key) => desynth[key].indexOf(data.item.id) > -1)
-        .map((key) => +key);
-      const desynths = uniq([...(data.item.desynthedTo || []), ...(lazyDesynths || [])]);
-      if (desynths.length > 0) {
+      if (item.desynths) {
+        // Ex: Shadeshifter
         usedFor.push({
           type: UsedForType.DESYNTH,
           flex: '1 1 auto',
           title: 'DB.Desynths_to',
           icon: './assets/icons/desynth.png',
-          links: desynths.map((itemId) => {
+          links: item.desynths.map((itemId) => {
             return {
               itemId: +itemId
             };
           })
         });
       }
-      if (xivapiItem.ItemActionTargetID === 1389) {
+      if (item.action === 1389) {
+        // Ex: Susano Card
         usedFor.push({
           flex: '0 0 auto',
           type: UsedForType.TT_CARD_UNLOCK,
           title: 'DB.TT_card_unlock',
           icon: 'https://triad.raelys.com/images/logo.png',
-          cardId: xivapiItem.ItemAction.Data0
+          cardId: item.actionData
         });
       }
-      if (data.item.tradeCurrency) {
-        const trades = data.item.tradeCurrency.map((ts) => {
-          return {
-            npcs: ts.npcs.map((npcId) => {
-              const npc: TradeNpc = { id: npcId };
-              const npcEntry = npcs[npcId];
-              if (npcEntry.position) {
-                npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
-                npc.zoneId = npcEntry.position.zoneid;
-                npc.mapId = npcEntry.position.map;
-              }
-              return npc;
-            }),
-            trades: ts.listings.map((row) => {
-              return <Trade>{
-                currencies: row.currency
-                  .map((currency) => {
-                    const partial = data.getPartial(currency.id, 'item');
-                    const currencyPartial = partial && partial.obj;
-                    if (currencyPartial) {
-                      return <TradeEntry>{
-                        id: currencyPartial.i,
-                        icon: currencyPartial.c,
-                        amount: currency.amount,
-                        hq: currency.hq === 1
-                      };
-                    } else if (+currency.id === data.item.id) {
-                      return <TradeEntry>{
-                        id: data.item.id,
-                        icon: data.item.icon,
-                        amount: currency.amount,
-                        hq: currency.hq === 1
-                      };
-                    }
-                    return undefined;
-                  })
-                  .filter((res) => res !== undefined),
-                items: row.item
-                  .map((tradeItem) => {
-                    const itemPartialFetch = data.getPartial(tradeItem.id, 'item');
-                    if (itemPartialFetch !== undefined) {
-                      const itemPartial = itemPartialFetch.obj;
-                      return <TradeEntry>{
-                        id: itemPartial.i,
-                        icon: itemPartial.c,
-                        amount: tradeItem.amount,
-                        hq: tradeItem.hq === 1
-                      };
-                    } else if (+tradeItem.id === data.item.id) {
-                      return <TradeEntry>{
-                        id: data.item.id,
-                        icon: data.item.icon,
-                        amount: tradeItem.amount,
-                        hq: tradeItem.hq === 1
-                      };
-                    }
-                    return undefined;
-                  })
-                  .filter((res) => res !== undefined)
-              };
-            }),
-            shopName: ts.shop
-          };
-        });
+      if (item.tradeEntries) {
+        // Ex: Irregular Tomestone of Pageantry
         usedFor.push({
           flex: '1 1 auto',
           type: UsedForType.TRADES,
           title: 'DB.Used_for_trades',
-          icon: 'https://www.garlandtools.org/db/images/marker/Shop.png',
-          trades
+          icon: './assets/icons/Shop.png',
+          trades: item.tradeEntries
         });
       }
-      const lootEntries = Object.keys(loots).filter(key => {
-        return loots[key].includes(xivapiItem.ID);
-      });
-      if (lootEntries.length > 0) {
+      if (item.loots) {
+        //Ex: Idealized Chest Gear Coffer (IL 480)
         usedFor.push({
           type: UsedForType.CAN_CONTAIN_ITEMS,
           flex: '1 1 auto',
           title: 'DB.Can_contain_items',
           icon: './assets/icons/chest_open.png',
-          links: lootEntries.map((itemId) => {
+          links: item.loots.map((itemId) => {
             return {
               itemId: +itemId
             };
           })
         });
       }
-      if (usedForLeves?.length > 0) {
+      if (item.usedForLeves) {
+        // Ex: Iron Ingot
         usedFor.push({
           type: UsedForType.LEVES,
           flex: '1 1 auto',
           title: 'DB.Leves',
           icon: './assets/icons/leve.png',
-          leves: usedForLeves.map((leve) => {
+          leves: item.usedForLeves.map((leve) => {
             return {
               leveId: leve.leve,
               amount: leve.amount,
@@ -371,82 +219,79 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           })
         });
       }
-      if (data.item.usedInQuest) {
+      if (item.usedInQuests) {
+        // Ex: Almace (Item#13223)
         usedFor.push({
           type: UsedForType.QUEST,
           flex: '1 1 auto',
           title: 'Quests',
           icon: './assets/icons/quest.png',
-          quests: data.item.usedInQuest
-        });
-      } else if (usedInQuests) {
-        usedFor.push({
-          type: UsedForType.QUEST,
-          flex: '1 1 auto',
-          title: 'Quests',
-          icon: './assets/icons/quest.png',
-          quests: usedInQuests
+          quests: item.usedInQuests
         });
       }
-      if (data.item.supply) {
+      if (item.supply) {
+        // Ex: Integral Fishing Rod
         usedFor.push({
           type: UsedForType.SUPPLY,
           flex: '1 1 auto',
           title: 'DB.GC_Delivery',
           icon: './assets/icons/supply.png',
-          supply: {
-            amount: data.item.supply.count,
-            xp: data.item.supply.xp,
-            seals: data.item.supply.seals
-          }
+          supply: item.supply
         });
       }
-      if (data.item.unlocks) {
-        return safeCombineLatest(
-          data.item.unlocks.map(itemId => this.lazyData.getRow('recipesPerItem', itemId, []))
-        ).pipe(
-          map(unlockedRecipes => {
-            usedFor.push({
-              type: UsedForType.UNLOCKS,
-              flex: '1 1 auto',
-              title: 'DB.Unlocks',
-              icon: './assets/icons/unlocks.png',
-              links: unlockedRecipes.flat().map((recipe: LazyRecipesPerItem) => {
-                const res: any = {
-                  itemId: recipe.result
-                };
-                if (recipe) {
-                  res.recipes = [recipe];
-                }
-                return res;
-              })
-            });
+      if (item.recipesUnlock) {
+        // Ex: Master Culinarian II
+        usedFor.push({
+          type: UsedForType.UNLOCKS,
+          flex: '1 1 auto',
+          title: 'DB.Unlocks',
+          icon: './assets/icons/unlocks.png',
+          links: item.recipesUnlock.map((recipe) => {
+            return {
+              itemId: recipe.itemId,
+              recipes: [recipe]
+            };
           })
-        );
+        });
       }
-      return of(usedFor);
+      if (item.nodesUnlock) {
+        // Ex: Tome of Botanical Folklore - Dravania
+        // Ex: Tome of Ichthyological Folklore - Coerthas
+        usedFor.push({
+          type: UsedForType.UNLOCKS,
+          flex: '1 1 auto',
+          title: 'DB.Unlocks',
+          icon: './assets/icons/unlocks.png',
+          links: item.nodesUnlock.map((itemId) => {
+            return {
+              itemId
+            };
+          })
+        });
+      }
+      return usedFor;
     })
   );
 
-  public readonly links$: Observable<{ title: string; icon: string; url: string }[]> = combineLatest([this.xivapiItem$, this.data$]).pipe(
-    map(([xivapiItem, listRow]) => {
+  public readonly links$: Observable<{ title: string; icon: string; url: string }[]> = combineLatest([this.lazyItem$, this.data$]).pipe(
+    map(([item, listRow]) => {
       const links = [
         {
           title: 'GarlandTools',
-          url: `https://www.garlandtools.org/db/#item/${xivapiItem.ID}`,
+          url: `https://www.garlandtools.org/db/#item/${item.id}`,
           icon: 'https://garlandtools.org/favicon.png'
         },
         {
           title: 'Gamer Escape',
-          url: `https://ffxiv.gamerescape.com/wiki/${encodeURIComponent(xivapiItem.Name_en.toString().split(' ').join('_'))}`,
+          url: `https://ffxiv.gamerescape.com/wiki/${encodeURIComponent(item.name.en.toString().split(' ').join('_'))}`,
           icon: './assets/icons/ge.png'
         }
       ];
-      if (!xivapiItem.IsUntradable) {
+      if (item.trade) {
         links.push({
           title: 'Universalis',
           icon: 'https://universalis.app/i/universalis/universalis.png',
-          url: `https://universalis.app/market/${xivapiItem.ID}`
+          url: `https://universalis.app/market/${item.id}`
         });
       }
       const gardening = getItemSource(listRow, DataType.GARDENING);
@@ -457,54 +302,54 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           url: `http://www.ffxivgardening.com/seed-details.php?SeedID=${gardening}${this.translate.currentLang === 'en' ? '' : ('&lang=' + this.translate.currentLang + '_' + this.translate.currentLang.toUpperCase())}`
         });
       }
-      if (xivapiItem.ItemActionTargetID === 1389) {
+      if (item.action === 1389) {
         links.push({
           title: 'Another Triple Triad Tracker',
           icon: 'https://triad.raelys.com/images/logo.png',
-          url: `https://triad.raelys.com/cards/${xivapiItem.AdditionalData}`
+          url: `https://triad.raelys.com/cards/${item.additionalData}`
         });
       }
-      if (xivapiItem.ItemAction) {
-        if (xivapiItem.ItemAction.Type === 1322) {
+      if (item.action) {
+        if (item.action === 1322) {
           links.push({
             title: 'FFXIV Collect',
             icon: 'https://ffxivcollect.com/images/logo_small.png',
-            url: `https://ffxivcollect.com/mounts/${xivapiItem.ItemAction.Data0}`
+            url: `https://ffxivcollect.com/mounts/${item.actionData}`
           });
         }
-        if (xivapiItem.ItemAction.Type === 853) {
+        if (item.action === 853) {
           links.push({
             title: 'FFXIV Collect',
             icon: 'https://ffxivcollect.com/images/logo_small.png',
-            url: `https://ffxivcollect.com/minions/${xivapiItem.ItemAction.Data0}`
+            url: `https://ffxivcollect.com/minions/${item.actionData}`
           });
         }
-        if (xivapiItem.ItemAction.Type === 5845) {
+        if (item.action === 5845) {
           links.push({
             title: 'FFXIV Collect',
             icon: 'https://ffxivcollect.com/images/logo_small.png',
-            url: `https://ffxivcollect.com/orchestrions/${xivapiItem.ItemAction.Data0}`
+            url: `https://ffxivcollect.com/orchestrions/${item.actionData}`
           });
         }
-        if (xivapiItem.ItemAction.Type === 2633 && xivapiItem.Name_en.indexOf('Ballroom Etiquette') > -1) {
+        if (item.action === 2633 && item.name.en.indexOf('Ballroom Etiquette') > -1) {
           links.push({
             title: 'FFXIV Collect',
             icon: 'https://ffxivcollect.com/images/logo_small.png',
-            url: `https://ffxivcollect.com/emotes/${xivapiItem.ItemAction.Data0}`
+            url: `https://ffxivcollect.com/emotes/${item.actionData}`
           });
         }
-        if (xivapiItem.ItemAction.Type === 2633 && xivapiItem.Name_en.indexOf('Modern Aesthetics') > -1) {
+        if (item.action === 2633 && item.name.en.indexOf('Modern Aesthetics') > -1) {
           links.push({
             title: 'FFXIV Collect',
             icon: 'https://ffxivcollect.com/images/logo_small.png',
-            url: `https://ffxivcollect.com/hairstyles/${xivapiItem.ItemAction.Data0}`
+            url: `https://ffxivcollect.com/hairstyles/${item.actionData}`
           });
         }
-        if (xivapiItem.ItemAction.Type === 1013) {
+        if (item.action === 1013) {
           links.push({
             title: 'FFXIV Collect',
             icon: 'https://ffxivcollect.com/images/logo_small.png',
-            url: `https://ffxivcollect.com/bardings/${xivapiItem.ItemAction.Data0}`
+            url: `https://ffxivcollect.com/bardings/${item.actionData}`
           });
         }
       }
@@ -512,115 +357,74 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     })
   );
 
-  public readonly mainAttributes$: Observable<any[]> = this.xivapiItem$.pipe(
+  public readonly mainAttributes$: Observable<any[]> = this.lazyItem$.pipe(
     map((item) => {
       const mainAttributes = [];
-      if (item.ClassJobUseTargetID) {
+      if (item.cjUse) {
         mainAttributes.push({
           name: 'DB.Class_job',
-          value: this.i18n.getName(this.i18n.xivapiToI18n(item.ClassJobCategory))
+          value: this.lazyData.getI18nName('jobAbbr', item.cjUse),
+          valueRequiresPipe: true
         });
       }
       mainAttributes.push({
         name: 'TOOLTIP.Level',
-        value: item.LevelEquip
+        value: item.elvl
       });
       mainAttributes.push({
         name: 'TOOLTIP.Ilvl',
-        value: item.LevelItem
+        value: item.ilvl
       });
-      if (item.ClassJobUseTargetID) {
+      if (item.cjUse) {
         mainAttributes.push({
           name: 'DB.Delay',
-          value: item.DelayMs / 1000
+          value: item.delay
         });
         mainAttributes.push({
           name: 'DB.Auto',
-          value: Math.floor((item.DamagePhys * item.DelayMs) / 30) / 100,
-          valueHq: Math.floor(((item.DamagePhys + item.BaseParamValueSpecial0) * item.DelayMs) / 30) / 100
+          value: Math.floor((item.pDmg * item.delay) / 30) / 100,
+          valueHq: Math.floor(((item.pDmg + item.bpSpecial[0]) * item.delay) / 30) / 100
         });
       }
       // If the item has some damage, handle it.
-      if (item.DamagePhys || item.DamageMag) {
-        if (item.DamagePhys > item.DamageMag) {
+      if (item.pDmg || item.mDmg) {
+        if (item.pDmg > item.mDmg) {
           mainAttributes.push({
             name: 'TOOLTIP.Damage_phys',
-            value: item.DamagePhys,
-            valueHq: item.DamagePhys + item.BaseParamValueSpecial0
+            value: item.pDmg,
+            valueHq: item.pDmg + item.bpSpecial[0]
           });
         } else {
           mainAttributes.push({
             name: 'TOOLTIP.Damage_mag',
-            value: item.DamageMag,
-            valueHq: item.DamageMag + item.BaseParamValueSpecial1
+            value: item.mDmg,
+            valueHq: item.mDmg + item.bpSpecial[1]
           });
         }
       }
       // If the item has some defense, handle it.
-      if (item.DefensePhys || item.DefenseMag) {
+      if (item.pDef || item.mDef) {
         mainAttributes.push({
           name: 'TOOLTIP.Defense_phys',
-          value: item.DefensePhys,
-          valueHq: item.DefensePhys + item.BaseParamValueSpecial0
+          value: item.pDef,
+          valueHq: item.pDef + item.bpSpecial[0]
         });
         mainAttributes.push({
           name: 'TOOLTIP.Defense_mag',
-          value: item.DefenseMag,
-          valueHq: item.DefenseMag + item.BaseParamValueSpecial1
+          value: item.mDef,
+          valueHq: item.mDef + item.bpSpecial[1]
         });
       }
       return mainAttributes;
     })
   );
 
-  public readonly stats$: Observable<any[]> = this.xivapiItem$.pipe(
+  public readonly stats$: Observable<any[]> = this.lazyItem$.pipe(
     map((item) => {
-      const stats = Object.keys(item)
-        .filter((key) => /^BaseParam\d+$/.test(key) && item[key] && key !== undefined)
-        .map((key) => {
-          const statIndex = key.match(/(\d+)/)[0];
-          const res: any = {
-            name: this.i18n.xivapiToI18n(item[key]),
-            value: item[`BaseParamValue${statIndex}`],
-            requiresPipe: true
-          };
-          if (item.CanBeHq === 1) {
-            const statId = item[`BaseParam${statIndex}TargetID`];
-            const specialParamKey = Object.keys(item)
-              .filter((k) => /^BaseParamSpecial\d+TargetID$/.test(k) && item[k])
-              .find((k) => item[k] === statId);
-            if (specialParamKey !== undefined) {
-              const specialParamIndex = specialParamKey.match(/(\d+)/)[0];
-              res.valueHq = res.value + item[`BaseParamValueSpecial${specialParamIndex}`];
-            } else {
-              res.valueHq = res.value;
-            }
-          }
-          return res;
-        });
-      if (item.ItemFood !== undefined) {
-        const food = item.ItemFood;
-        for (let i = 0; i < 3; i++) {
-          const statsEntry: any = {};
-          const value = food[`Value${i}`];
-          const valueHq = food[`ValueHQ${i}`];
-          const isRelative = food[`IsRelative${i}`] === 1;
-          const max = food[`Max${i}`];
-          const maxHq = food[`MaxHQ${i}`];
-          if (value > 0) {
-            statsEntry.name = this.i18n.xivapiToI18n(food[`BaseParam${i}`]);
-            statsEntry.requiresPipe = true;
-            if (isRelative) {
-              statsEntry.value = `${value}% (${max})`;
-              statsEntry.valueHq = `${valueHq}% (${maxHq})`;
-            } else {
-              statsEntry.value = value.toString();
-            }
-            stats.push(statsEntry);
-          }
-        }
-      }
-      return stats;
+      return [
+        ...(item.stats || []),
+        ...(item.bonuses || [])
+      ];
     })
   );
 
@@ -636,8 +440,6 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
 
   constructor(
     private readonly route: ActivatedRoute,
-    private readonly xivapi: XivapiService,
-    private readonly gt: DataService,
     private readonly i18n: I18nToolsService,
     public readonly translate: TranslateService,
     private readonly router: Router,
@@ -681,18 +483,6 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     this.itemContext.setItemId(undefined);
   }
 
-  @Memoized()
-  public getRecipe(recipeId: string, fallbackData: ItemData): Observable<any> {
-    return this.lazyData.getRecipe(recipeId).pipe(
-      map((recipe) => {
-        if (!recipe) {
-          return fallbackData.getCraft(recipeId);
-        }
-        return recipe;
-      })
-    );
-  }
-
   markAsDoneInLog(id: number): void {
     this.authFacade.markAsDoneInLog('gathering', id, true);
   }
@@ -711,28 +501,28 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     };
   }
 
-  public openModelViewer(xivapiItem: any, gtData: ItemData): void {
-    let slot: number | string = 1;
-    if (gtData.item.mount) {
-      slot = 'mount';
-    } else if (gtData.item.minionrace) {
-      slot = 'minion';
-    } else if (gtData.item.furniture) {
-      slot = 'furniture';
-    } else {
-      slot = gtData.item.slot;
-    }
-    this.dialog.create({
-      nzTitle: this.translate.instant('DB.3d_model_viewer'),
-      nzContent: ModelViewerComponent,
-      nzComponentParams: {
-        slot: slot,
-        models: gtData.item.models
-      },
-      nzFooter: null,
-      nzClassName: 'model-viewer-modal'
-    });
-  }
+  // public openModelViewer(xivapiItem: any, gtData: ItemData): void {
+  //   let slot: number | string;
+  //   if (gtData.item.mount) {
+  //     slot = 'mount';
+  //   } else if (gtData.item.minionrace) {
+  //     slot = 'minion';
+  //   } else if (gtData.item.furniture) {
+  //     slot = 'furniture';
+  //   } else {
+  //     slot = gtData.item.slot;
+  //   }
+  //   this.dialog.create({
+  //     nzTitle: this.translate.instant('DB.3d_model_viewer'),
+  //     nzContent: ModelViewerComponent,
+  //     nzComponentParams: {
+  //       slot: slot,
+  //       models: gtData.item.models
+  //     },
+  //     nzFooter: null,
+  //     nzClassName: 'model-viewer-modal'
+  //   });
+  // }
 
   public createQuickList(item: SearchResult, amount: number): void {
     this.i18n.getNameObservable('items', +item.itemId).pipe(
@@ -807,35 +597,35 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return this.xivapiItem$.pipe(
+    return this.lazyItem$.pipe(
       map((item) => {
         return {
           title: this.getName(item),
           description: this.getDescription(item),
-          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/item/${item.ID}/${this.getName(item).split(' ').join('+')}`,
-          image: `https://xivapi.com/i2/ls/${item.ID}.png`
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/item/${item.id}/${this.getName(item).split(' ').join('+')}`,
+          image: `https://xivapi.com/i2/ls/${item.id}.png`
         };
       })
     );
   }
 
-  private getDescription(item: any): string {
+  private getDescription(item: LazyItemsDatabasePage): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.i18n.xivapiToI18n(item, 'Description'));
+    return this.i18n.getName(item.description);
   }
 
-  private getName(item: any): string {
+  private getName(item: LazyItemsDatabasePage): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.i18n.xivapiToI18n(item));
+    return this.i18n.getName(item.name);
   }
 
-  private handleAdditionalData(_item: ListRow, xivapiItem: any): Observable<ListRow> {
+  private handleAdditionalData(_item: ListRow, lazyItem: LazyItemsDatabasePage): Observable<ListRow> {
     let res$: Observable<ListRow> = of(_item);
     // TT card
-    if (xivapiItem.ItemActionTargetID === 1389) {
+    if (lazyItem.action === 1389) {
       res$ = res$.pipe(
         switchMap((item) => {
-          return this.attt.getCard(xivapiItem.ItemAction.Data0).pipe(
+          return this.attt.getCard(lazyItem.actionData).pipe(
             switchMap(card => {
               return safeCombineLatest(card.sources.npcs.map(npc => {
                 return this.lazyData.getRow('npcs', npc.resident_id).pipe(

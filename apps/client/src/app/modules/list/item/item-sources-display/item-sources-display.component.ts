@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, Type } from '@angular/core';
 import { DataType, getItemSource, ItemSource } from '@ffxiv-teamcraft/types';
-import { Craft } from '../../../../model/garland-tools/craft';
 import { ListRow } from '../../model/list-row';
 import { GatheredByComponent } from '../../../item-details/gathered-by/gathered-by.component';
 import { HuntingComponent } from '../../../item-details/hunting/hunting.component';
@@ -30,6 +29,7 @@ import { NzSizeLDSType } from 'ng-zorro-antd/core/types';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { observeInput } from '../../../../core/rxjs/observe-input';
 import { shareReplay } from 'rxjs/operators';
+import { Craft } from '@ffxiv-teamcraft/simulator';
 
 @Component({
   selector: 'app-item-sources-display',
@@ -38,6 +38,9 @@ import { shareReplay } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemSourcesDisplayComponent extends TeamcraftComponent {
+  @Input()
+  dbDisplay = false;
+
   @Input()
   sources: ItemSource[];
 
@@ -172,7 +175,8 @@ export class ItemSourcesDisplayComponent extends TeamcraftComponent {
         nzCloseOnNavigation: true,
         nzComponentParams: {
           item: item,
-          details: getItemSource(item, dataType)
+          details: getItemSource(item, dataType),
+          dbDisplay: true
         },
         nzFooter: null
       });

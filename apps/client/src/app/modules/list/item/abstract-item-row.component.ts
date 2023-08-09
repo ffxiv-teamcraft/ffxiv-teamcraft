@@ -18,7 +18,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { UserService } from '../../../core/database/user.service';
-import { XivapiService } from '@xivapi/angular-client';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
@@ -243,7 +242,7 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
               protected messageService: NzMessageService, protected translate: TranslateService,
               protected modal: NzModalService,
               protected i18n: I18nToolsService, protected cdRef: ChangeDetectorRef,
-              protected userService: UserService, protected xivapi: XivapiService,
+              protected userService: UserService,
               protected authFacade: AuthFacade, protected teamsFacade: TeamsFacade,
               protected discordWebhookService: DiscordWebhookService,
               public settings: SettingsService,

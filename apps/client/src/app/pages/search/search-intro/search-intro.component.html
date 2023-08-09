@@ -1,4 +1,4 @@
-<div fxLayout="column" fxLayoutAlign="flex-start stretch" fxLayoutGap="10px" class="intro-container">
+<div class="flex-column align-start gap-10 intro-container">
   <h1 fxFlexAlign="center">{{'SEARCH_INTRO.Slogan' | translate}}</h1>
   <h2 fxFlexAlign="center"
       *ngIf="counter$ | async as counter">{{'SEARCH_INTRO.Lists_created_counter' | translate: { amount: counter | number:'1.0-0':translate.currentLang } }}</h2>

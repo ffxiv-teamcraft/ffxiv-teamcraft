@@ -26,6 +26,7 @@ import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { groupBy } from 'lodash';
 import { AdditionPickerEntry } from '../../../modules/folder-addition-picker/folder-addition-picker/addition-picker-entry';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
+import { CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-alarms-page',
@@ -73,13 +74,19 @@ export class AlarmsPageComponent implements OnInit {
     this.alarmsFacade.updateGroup(group);
   }
 
-  setAlarmGroup(alarm: PersistedAlarm, groupKey: string): void {
+  setAlarmGroup(alarm: PersistedAlarm, groupKey: any): void {
     this.alarmsFacade.assignAlarmGroup(alarm.$key, groupKey);
   }
 
+  canEnterGroup(drag: CdkDrag, drop: CdkDropList): boolean {
+    return drag.data?.alarm !== undefined;
+  }
+
   removeAlarmFromGroup(alarmKey: string, group: AlarmGroup): void {
-    group.alarms = group.alarms.filter(key => key !== alarmKey);
-    this.alarmsFacade.updateGroup(group);
+    if(group){
+      group.alarms = group.alarms.filter(key => key !== alarmKey);
+      this.alarmsFacade.updateGroup(group);
+    }
   }
 
   addNote(alarm: PersistedAlarm): void {

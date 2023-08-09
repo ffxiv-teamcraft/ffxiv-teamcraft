@@ -123,7 +123,7 @@ export class StepByStepList {
             return {
               mapId: npc.mapId,
               coords: npc.coords,
-              icon: 'https://www.garlandtools.org/db/images/marker/Shop.png',
+              icon: './assets/icons/Shop.png',
               type: 'Trade' as NavigationObjective['type']
             };
           });
@@ -142,7 +142,7 @@ export class StepByStepList {
           return {
             mapId: drop.mapid,
             coords: drop.position,
-            icon: 'https://www.garlandtools.org/db/images/Mob.png',
+            icon: './assets/icons/mob.png',
             type: 'Hunting',
             monster: drop.id
           };

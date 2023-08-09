@@ -431,7 +431,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
             }),
             switchMap(({ shouldUpdate, historyEntry }) => {
               if (shouldUpdate && state.updated >= reset) {
-                console.log("shouldUpdate true");
+                console.debug("shouldUpdate true");
                 let supplyDemand = state.supplyDemand;
                 if (historyEntry) {
                   supplyDemand = [
@@ -442,6 +442,10 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
                         return historyRow || stateRow;
                       }
                       // Pick the row that has the lowest supply
+                      if (stateRow.supply < historyRow.supply)
+                      {
+                        console.debug("State update for: %d", i);
+                      }
                       return stateRow.supply > historyRow.supply ? historyRow : stateRow;
                     }),
                     ...state.supplyDemand.filter(e => !historyEntry.objects.some(he => he.id === e.id))
@@ -473,18 +477,18 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
 
   shouldUpdateDb(user: TeamcraftUser, edited: boolean, historyEntry: WorkshopStatusData, supplyDemand: CraftworksObject[]): boolean {
     if (edited) {
-      console.log("edited");
+      console.debug("edited");
       return false;
     }
     if (user.admin) {
       return true;
     }
     if (historyEntry.lock || historyEntry.updated + 2000 > Date.now()) {
-      console.log("time/lock");
+      console.debug("time/lock");
       return false;
     }
     if (historyEntry.objects.length < supplyDemand.length) {
-      console.log("length");
+      console.debug("length");
       return true;
     }
     return historyEntry.objects.some((obj, i) => {

@@ -10,7 +10,6 @@ import { BaseParam } from '@ffxiv-teamcraft/types';
 import { UniversalisService } from '../../../core/api/universalis.service';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import * as _ from 'lodash';
-import { XivapiService } from '@xivapi/angular-client';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { SpendingEntry } from '../../currency-spending/spending-entry';
@@ -182,10 +181,10 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
   constructor(private retainersService: RetainersService, private inventoryFacade: InventoryService,
               private lazyData: LazyDataFacade, private fb: UntypedFormBuilder, private gearsetsFacade: GearsetsFacade,
               private statsService: StatsService, private universalis: UniversalisService,
-              private xivapi: XivapiService, private authFacade: AuthFacade,
+              private authFacade: AuthFacade,
               public translate: TranslateService, private environment: EnvironmentService) {
     super();
-    this.servers$ = this.xivapi.getServerList().pipe(
+    this.servers$ = this.lazyData.servers$.pipe(
       map(servers => {
         return servers.sort();
       })

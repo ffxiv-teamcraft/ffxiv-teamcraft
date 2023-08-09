@@ -1,6 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { BehaviorSubject, combineLatest, merge, Observable, of, ReplaySubject, Subject, take } from 'rxjs';
-import { Craft } from '../../../../model/garland-tools/craft';
 import {
   catchError,
   debounceTime,
@@ -77,6 +76,7 @@ import { withLazyData } from '../../../../core/rxjs/with-lazy-data';
 import { LocalStorageBehaviorSubject } from '../../../../core/rxjs/local-storage-behavior-subject';
 import { PermissionsController } from '../../../../core/database/permissions-controller';
 import { NzOptionComponent } from 'ng-zorro-antd/select';
+import { LazyRecipe } from '@ffxiv-teamcraft/data/model/lazy-recipe';
 
 @Component({
   selector: 'app-simulator',
@@ -207,7 +207,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private _recipeId: string;
 
-  private recipe$ = new ReplaySubject<Craft>();
+  private recipe$ = new ReplaySubject<LazyRecipe>();
 
   // Cache field for levels to be passed to the form validation.
   private availableLevels: CrafterLevels;
@@ -307,14 +307,14 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
       .sort(this.freeCompanyActionsSortFn);
   }
 
-  private _recipe: Craft;
+  private _recipe: LazyRecipe;
 
   @Input()
-  public set recipe(recipe: Craft) {
+  public set recipe(recipe: LazyRecipe) {
     this.recipe$.next(recipe);
     this._recipe = recipe;
     if (recipe.id) {
-      this._recipeId = recipe.id;
+      this._recipeId = recipe.id.toString();
     }
   }
 
@@ -384,7 +384,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
       this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
       this.stepStates$.next({});
 
-      this.markAsDirty()
+      this.markAsDirty();
     });
   }
 
@@ -531,10 +531,6 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
     });
   }
 
-  afterLinkCopy(): void {
-    this.message.success(this.translate.instant('SIMULATOR.Share_link_copied'));
-  }
-
   importFromXIVMacro(): void {
     this.dialog.create({
       nzContent: TextQuestionPopupComponent,
@@ -588,7 +584,11 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
         rotation.defaultItemId = this.itemId;
         rotation.defaultRecipeId = this._recipeId;
       }
-      rotation.recipe = this._recipe;
+      rotation.recipe = {
+        ...this._recipe,
+        id: this._recipe.id.toString(),
+        hq: this._recipe.hq ? 1 : 0
+      };
       rotation.stats = {
         jobId: stats.jobId,
         specialist: stats.specialist,
@@ -821,18 +821,6 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
     return actions.find(action => action.type === type && action.actionId !== actionId) !== undefined;
   }
 
-  barFormat(current: number, max: number): () => string {
-    return () => `${current}/${max}`;
-  }
-
-  barPercent(current: number, max: number): number {
-    return Math.min(100 * current / max, 100);
-  }
-
-  getStars(stars: number): string {
-    return this.htmlTools.generateStars(stars);
-  }
-
   getBuffIcon(effBuff: EffectiveBuff): string {
     return `./assets/icons/status/${this.simulator.Buff[effBuff.buff].toLowerCase()}.png`;
   }
@@ -951,7 +939,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
     this.hqIngredientsData$ = this.recipe$.pipe(
       map(recipe => {
         return (recipe.ingredients || [])
-          .filter(i => i.id > 20 && i.quality > 0)
+          .filter(i => +i.id > 20 && i.quality > 0)
           .map(ingredient => ({ id: +ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality }));
       }),
       shareReplay({ bufferSize: 1, refCount: true })
@@ -1096,10 +1084,10 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
       if (this.placeholder.first && this.rotationContainer) {
         const placeholderElement = this.placeholder.first.element.nativeElement;
         const rotationContainerElement = this.rotationContainer.first.nativeElement;
-        if (placeholderElement.style.display !== "none" && resultData.steps.length > 0) {
+        if (placeholderElement.style.display !== 'none' && resultData.steps.length > 0) {
           placeholderElement.style.display = 'none';
           rotationContainerElement.removeChild(placeholderElement);
-        } else if (placeholderElement.style.display === "none" && resultData.steps.length === 0) {
+        } else if (placeholderElement.style.display === 'none' && resultData.steps.length === 0) {
           placeholderElement.style.display = 'block';
           rotationContainerElement.appendChild(placeholderElement);
         }
@@ -1107,14 +1095,14 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
 
       const lists = [
         'rotation__container__step--placeholder',
-        'rotation__container__step--template',
+        'rotation__container__step--template'
       ];
 
       for (const i in resultData.steps) {
-        lists.push(`rotation__container__step--${i.toString()}`)
+        lists.push(`rotation__container__step--${i.toString()}`);
       }
 
-      this.connectedDropLists = [ ...lists ];
+      this.connectedDropLists = [...lists];
     });
 
     this.qualityPer100$ = this.result$.pipe(

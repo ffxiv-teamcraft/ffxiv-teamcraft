@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd/modal';
-import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { map, switchMap, takeUntil, withLatestFrom } from 'rxjs/operators';
@@ -24,7 +23,7 @@ export class SyncFromPcapPopupComponent extends TeamcraftComponent {
 
   public timeline: { color: string, label: string }[] = [];
 
-  constructor(private modalRef: NzModalRef, private gt: GarlandToolsService,
+  constructor(private modalRef: NzModalRef,
               private ipc: IpcService, private lazyData: LazyDataFacade,
               private i18n: I18nToolsService, private materiaService: MateriaService,
               private gearsetsFacade: GearsetsFacade, private translate: TranslateService

@@ -5,7 +5,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { CoreModule } from '../../core/core.module';
 import { ListModule } from '../../modules/list/list.module';
 import { TranslateModule } from '@ngx-translate/core';
-import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-question-popup.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
@@ -48,7 +47,6 @@ const routes: Routes = [
 
     TranslateModule,
     AntdSharedModule,
-    NgxDnDModule,
     DragDropModule,
 
     RouterModule.forChild(routes),

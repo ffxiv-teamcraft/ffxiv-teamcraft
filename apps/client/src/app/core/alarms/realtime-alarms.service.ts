@@ -6,13 +6,13 @@ import { map } from 'rxjs/operators';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { PlatformService } from '../tools/platform.service';
 import { IpcService } from '../electron/ipc.service';
-import { PushNotificationsService } from 'ng-push-ivy';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { SoundNotificationService } from '../sound-notification/sound-notification.service';
 import { SoundNotificationType } from '../sound-notification/sound-notification-type';
 import { addHours } from 'date-fns';
+import { PushNotificationsService } from '../push-notifications.service';
 
 @Injectable({ providedIn: 'root' })
 export class RealtimeAlarmsService {
@@ -71,10 +71,9 @@ export class RealtimeAlarmsService {
       this.pushNotificationsService.create(this.translate.instant(`ALARMS.REALTIME.${alarm.label}`),
         {
           icon: '/assets/icons/notice.png',
-          sticky: false,
           renotify: false
         }
-      ).subscribe();
+      );
       this.notificationService.info(this.translate.instant(`ALARMS.REALTIME.${alarm.label}`), '');
     }
   }

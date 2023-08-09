@@ -11,6 +11,7 @@ export class CdGroupsExtractor extends AbstractExtractor {
           action.index
         ];
       });
+      delete groups[0];
       this.persistToJsonAsset('action-cd-groups', groups);
       this.done();
     });

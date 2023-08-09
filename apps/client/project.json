@@ -38,7 +38,12 @@
             "output": "/assets/"
           },
           {
-            "glob": "**/*",
+            "glob": "!(db)/*.json",
+            "input": "./libs/data/src/lib/json/",
+            "output": "/assets/data/"
+          },
+          {
+            "glob": "*.json",
             "input": "./libs/data/src/lib/json/",
             "output": "/assets/data/"
           },
@@ -49,8 +54,14 @@
           },
           "apps/client/src/oembed.json"
         ],
-        "styles": ["apps/client/src/cdk.less", "apps/client/src/styles.less", "apps/client/src/theme.less"],
-        "scripts": ["node_modules/marked/marked.min.js"]
+        "styles": [
+          "apps/client/src/cdk.less",
+          "apps/client/src/styles.less",
+          "apps/client/src/theme.less"
+        ],
+        "scripts": [
+          "node_modules/marked/marked.min.js"
+        ]
       },
       "configurations": {
         "dev": {
@@ -114,6 +125,30 @@
               "replace": "apps/client/src/environments/environment.ts",
               "with": "apps/client/src/environments/environment.prod.ts"
             }
+          ],
+          "assets": [
+            "apps/client/src/favicon.ico",
+            "apps/client/src/assets",
+            {
+              "glob": "**/*",
+              "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+              "output": "/assets/"
+            },
+            {
+              "glob": "!(db)/*.json",
+              "input": "./libs/data/src/lib/json/",
+              "output": "/assets/data/"
+            },
+            {
+              "glob": "*",
+              "input": "./libs/data/src/lib/json/",
+              "output": "/assets/data/"
+            },
+            {
+              "glob": "**/*",
+              "input": "./libs/data/src/lib/extracts/",
+              "output": "/assets/extracts/"
+            }
           ]
         },
         "electron-dev": {
@@ -124,7 +159,31 @@
           "extractLicenses": true,
           "vendorChunk": false,
           "buildOptimizer": false,
-          "baseHref": ""
+          "baseHref": "",
+          "assets": [
+            "apps/client/src/favicon.ico",
+            "apps/client/src/assets",
+            {
+              "glob": "**/*",
+              "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+              "output": "/assets/"
+            },
+            {
+              "glob": "!(db)/*.json",
+              "input": "./libs/data/src/lib/json/",
+              "output": "/assets/data/"
+            },
+            {
+              "glob": "*",
+              "input": "./libs/data/src/lib/json/",
+              "output": "/assets/data/"
+            },
+            {
+              "glob": "**/*",
+              "input": "./libs/data/src/lib/extracts/",
+              "output": "/assets/extracts/"
+            }
+          ]
         },
         "beta": {
           "optimization": true,
@@ -194,7 +253,10 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["apps/client/**/*.ts", "apps/client/**/*.html"]
+        "lintFilePatterns": [
+          "apps/client/**/*.ts",
+          "apps/client/**/*.html"
+        ]
       }
     },
     "server": {
@@ -241,7 +303,9 @@
       "options": {
         "browserTarget": "client:build:production",
         "serverTarget": "client:server:production",
-        "routes": ["/"]
+        "routes": [
+          "/"
+        ]
       },
       "configurations": {
         "production": {}
@@ -249,7 +313,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/client"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/client"
+      ],
       "options": {
         "jestConfig": "apps/client/jest.config.ts",
         "passWithNoTests": true

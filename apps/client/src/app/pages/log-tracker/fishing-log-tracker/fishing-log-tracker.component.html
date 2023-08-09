@@ -71,8 +71,6 @@
                       <div [nzMd]="6" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px" nz-col>
                         <app-item-icon *ngIf="true | ifMobile: false"
                                        [itemId]="item.itemId"
-                                       [tooltipDisabled]="true"
-                                       [appFishTooltip]="item.itemId"
                                        [width]="32">
                         </app-item-icon>
                         <div fxLayout="column" fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px">
@@ -142,8 +140,7 @@
                                 <div *ngFor="let predator of entry.gatheringNode.predators" fxLayout="row" fxLayoutAlign="flex-start center"
                                      fxLayoutGap="5px">
                                   <div>{{predator.amount}}x</div>
-                                  <app-item-icon [appFishTooltip]="predator.id" [icon]="predator.icon" [itemId]="predator.id"
-                                                 [tooltipDisabled]="true" [width]="32"></app-item-icon>
+                                  <app-item-icon [icon]="predator.icon" [itemId]="predator.id" [width]="32"></app-item-icon>
                                 </div>
                               </div>
                               <div *ngIf="entry.gatheringNode.speed !== undefined">

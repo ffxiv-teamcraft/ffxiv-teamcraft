@@ -263,6 +263,9 @@ export class ListPricingComponent extends TeamcraftComponent {
             return this.lazyData.datacenters$.pipe(
               first(),
               map(datacenters => {
+                if (server.startsWith('Korea')) {
+                  return { dc: 'Korea', server };
+                }
                 const dc = Object.keys(datacenters).find(key => {
                   return datacenters[key].indexOf(server) > -1;
                 });

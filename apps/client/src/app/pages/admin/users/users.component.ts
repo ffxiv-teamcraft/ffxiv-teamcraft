@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../../core/database/user.service';
 import { combineLatest, merge, Observable, of } from 'rxjs';
-import { XivapiService } from '@xivapi/angular-client';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { debounceTime, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, map, switchMap, tap } from 'rxjs/operators';
 import { UntypedFormControl, Validators } from '@angular/forms';
 import { UserSearchMode } from './user-search-mode.enum';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -12,6 +11,7 @@ import { IntegrityCheckPopupComponent } from './integrity-check-popup/integrity-
 import { LodestoneService } from '../../../core/api/lodestone.service';
 import { Functions, httpsCallable } from '@angular/fire/functions';
 import { User } from '@angular/fire/auth';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-users',
@@ -44,7 +44,7 @@ export class UsersComponent {
 
   results$: Observable<TeamcraftUser[]>;
 
-  constructor(private userService: UserService, private xivapi: XivapiService,
+  constructor(private userService: UserService, private lazyData: LazyDataFacade,
               private gcf: Functions, private modal: NzModalService,
               private translate: TranslateService, private lodestone: LodestoneService) {
 
@@ -75,7 +75,7 @@ export class UsersComponent {
     );
 
     // From char name
-    this.servers$ = this.xivapi.getServerList().pipe(shareReplay({ bufferSize: 1, refCount: true }));
+    this.servers$ = this.lazyData.servers$;
 
     this.autoCompleteRows$ = combineLatest([this.servers$, this.selectedServer.valueChanges])
       .pipe(

@@ -4,6 +4,7 @@ import { join } from 'path';
 import { LazyDataKey, LazyDataWithExtracts } from '@ffxiv-teamcraft/types';
 import { lazyFilesList } from '@ffxiv-teamcraft/data/lazy-files-list';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
+import zlib from 'zlib';
 
 export class LazyDataLoader {
 
@@ -22,14 +23,25 @@ export class LazyDataLoader {
     }
     if (!this.cache[contentName]) {
       this.cache[contentName] = new Observable(observer => {
-        readFile(join(__dirname, folder, fileName), 'utf-8', (err, content) => {
-          if (err) {
-            observer.error(err);
-          } else {
-            observer.next(JSON.parse(content));
-          }
-          observer.complete();
-        });
+        if (fileName.endsWith('.index')) {
+          readFile(join(__dirname, folder, fileName), (err, content) => {
+            if (err) {
+              observer.error(err);
+            } else {
+              observer.next(JSON.parse(zlib.inflateSync(content, { level: 9 }).toString('utf-8')) as LazyDataWithExtracts[K]);
+            }
+            observer.complete();
+          });
+        } else {
+          readFile(join(__dirname, folder, fileName), 'utf-8', (err, content) => {
+            if (err) {
+              observer.error(err);
+            } else {
+              observer.next(JSON.parse(content));
+            }
+            observer.complete();
+          });
+        }
       }).pipe(
         shareReplay(1)
       );

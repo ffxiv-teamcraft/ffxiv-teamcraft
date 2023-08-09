@@ -6,7 +6,7 @@ export class TraitsExtractor extends AbstractExtractor {
   protected doExtract(xiv: XivDataService): any {
     const traits = {};
     combineLatest([
-      this.getSheet(xiv, 'Trait', ['Name_*', 'Description_*', 'Icon']),
+      this.getSheet(xiv, 'Trait', ['Name_*', 'Description_*', 'Icon', 'Level', 'ClassJob#', 'ClassJobCategory#']),
       this.getSheet(xiv, 'TraitTransient', ['Description_*'])
     ]).subscribe(([rows, transientRows]) => {
       rows.forEach((trait, i) => {
@@ -16,6 +16,8 @@ export class TraitsExtractor extends AbstractExtractor {
           ja: trait.Name_ja,
           fr: trait.Name_fr,
           icon: trait.Icon,
+          level: trait.Level,
+          job: trait.ClassJob || trait.ClassJobCategory,
           description: {
             en: transientRows[i].Description_en,
             de: transientRows[i].Description_de,

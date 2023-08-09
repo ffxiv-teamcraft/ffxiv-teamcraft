@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchIndex, XivapiService } from '@xivapi/angular-client';
 import { BehaviorSubject, combineLatest, Observable, of, Subject } from 'rxjs';
 import { bufferCount, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SpendingEntry } from '../spending-entry';
@@ -10,8 +9,7 @@ import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { UniversalisService } from '../../../core/api/universalis.service';
-import { getItemSource } from '@ffxiv-teamcraft/types';
-import { DataType } from '@ffxiv-teamcraft/types';
+import { DataType, getItemSource, SearchType } from '@ffxiv-teamcraft/types';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
@@ -40,37 +38,28 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
 
   public loadedPrices = 0;
 
-  constructor(private xivapi: XivapiService, private dataService: DataService,
-              private authFacade: AuthFacade, private universalis: UniversalisService,
-              private lazyData: LazyDataFacade) {
+  constructor(private dataService: DataService, private lazyData: LazyDataFacade,
+              private authFacade: AuthFacade, private universalis: UniversalisService) {
     super();
-    this.servers$ = this.xivapi.getServerList().pipe(
+    this.servers$ = lazyData.servers$.pipe(
       map(servers => {
         return servers.sort();
       })
     );
 
-    this.currencies$ = this.xivapi.search({
-      indexes: [SearchIndex.ITEM],
-      filters: [
-        {
-          column: 'IconID',
-          operator: '>=',
-          value: 65000
-        },
-        {
-          column: 'IconID',
-          operator: '<',
-          value: 66000
-        }
-      ]
-    }).pipe(
+    this.currencies$ = this.dataService.search('', SearchType.ITEM, [
+      {
+        name: 'iconId',
+        minMax: true,
+        value: { min: 65000, max: 66000 }
+      }
+    ]).pipe(
       map(res => {
         return [
-          ...res.Results.filter(item => {
+          ...res.filter(item => {
             // Remove gil, venture and outdated tomes/scrips
-            return [1, 23, 24, 26, 30, 31, 32, 33, 34, 35, 36, 37, 38, 10308, 10309, 10310, 10311, 21072].indexOf(item.ID) === -1;
-          }).map(item => item.ID as number),
+            return [1, 23, 24, 26, 30, 31, 32, 33, 34, 35, 36, 37, 38, 10308, 10309, 10310, 10311, 21072].indexOf(+item.itemId) === -1;
+          }).map(item => item.itemId as number),
           33870,
           15857,
           15858

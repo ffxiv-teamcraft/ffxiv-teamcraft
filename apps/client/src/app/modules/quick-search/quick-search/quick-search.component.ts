@@ -1,7 +1,7 @@
 import { Component, Inject, Input, Optional, PLATFORM_ID } from '@angular/core';
 import { SearchResult, SearchType } from '@ffxiv-teamcraft/types';
 import { BehaviorSubject, combineLatest, merge, Subject } from 'rxjs';
-import { debounceTime, filter, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, filter, map, switchMap, tap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SettingsService } from '../../settings/settings.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -22,20 +22,20 @@ export class QuickSearchComponent extends TeamcraftComponent {
 
   public cleanResults$: Subject<SearchResult[]> = new Subject<SearchResult[]>();
 
-  public searchType$: BehaviorSubject<SearchType> =
-    new BehaviorSubject<SearchType>(<SearchType>localStorage.getItem('search:type') || SearchType.ITEM);
+  public searchType$: BehaviorSubject<SearchType> = new BehaviorSubject<SearchType>(SearchType.ANY);
 
   @Input()
   public reportsMode = false;
 
   public loading = false;
 
-  public results$ = merge(this.cleanResults$, combineLatest([this.query$.pipe(debounceTime(800)), this.searchType$]).pipe(
+  public results$ = merge(this.cleanResults$, combineLatest([this.query$.pipe(debounceTime(200)), this.searchType$]).pipe(
     filter(([query]) => query.length > 1),
     switchMap(([query, searchType]) => {
       this.loading = true;
       return this.data.search(query.trim(), searchType, []);
     }),
+    map(res => res.slice(0, 50)),
     tap(() => this.loading = false)
   ));
 

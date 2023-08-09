@@ -59,7 +59,7 @@ export class TeamcraftDesktopApp {
         deepLink = this.store.get('router:uri', '');
       }
       // It seems like somehow, this could happen.
-      if (deepLink.indexOf('overlay') > -1) {
+      if (deepLink.indexOf('overlay') > -1 || deepLink.indexOf('?child') > -1) {
         deepLink = '';
       }
 
@@ -108,7 +108,7 @@ export class TeamcraftDesktopApp {
       backgroundColor: '#2f3237',
       icon: `file://${Constants.BASE_APP_PATH}/assets/app-icon.png`,
       webPreferences: {
-        preload: join(__dirname, 'preload.js')
+        preload: join(__dirname, 'src/preload.js')
       }
     });
 
@@ -128,7 +128,7 @@ export class TeamcraftDesktopApp {
         }
         this.mainWindow.win.focus();
         this.mainWindow.win.show();
-        console.log(req.url);
+        log.log(req.url);
         res.writeHead(200);
         if (req.url.startsWith('/oauth')) {
           this.mainWindow.win.webContents.send('oauth-reply', parse(req.url, true).query.code);
@@ -141,7 +141,7 @@ export class TeamcraftDesktopApp {
 
       ipcMain.once('app-ready', () => {
         if (deepLink.length > 0 && !this.store.get('disable-initial-navigation', false)) {
-          this.mainWindow.win.webContents.send('navigate', deepLink);
+          this.mainWindow.win.webContents.send('navigate', deepLink.replace('?child=true', ''));
         }
         if (this.store.get<boolean>('machina', false) === true) {
           this.pcap.startPcap();

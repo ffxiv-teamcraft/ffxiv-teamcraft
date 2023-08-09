@@ -26,7 +26,7 @@ export class XivapiItemTooltipDirective implements OnDestroy {
 
   /* tslint:enable:no-input-rename */
 
-  /** Subscription for the XivDB request. */
+  /** Subscription for the request. */
   private _subscription?: Subscription;
 
   /** Overlay reference used to remove the tooltip. */
@@ -83,7 +83,7 @@ export class XivapiItemTooltipDirective implements OnDestroy {
       .flexibleConnectedTo(this._elementRef)
       .withPositions([
         { originX: 'end', originY: 'bottom', overlayX: 'start', overlayY: 'top' },
-        { originX: 'start', originY: 'bottom', overlayX: 'end', overlayY: 'top' },
+        { originX: 'start', originY: 'bottom', overlayX: 'end', overlayY: 'top' }
       ]);
 
     // Create the overlay that will contain the tooltip.

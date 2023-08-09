@@ -1,15 +1,20 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
-import { ItemData } from '../../../model/garland-tools/item-data';
 import { combineLatest, Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { DataService } from '../../../core/api/data.service';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { HttpClient } from '@angular/common/http';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { LazyRecipesPerItem } from '@ffxiv-teamcraft/data/model/lazy-recipes-per-item';
+
+interface ImportData {
+  items: { id: number, recipes?: LazyRecipesPerItem[], quantity: number, recipeId?: string }[],
+  url: string
+}
 
 @Component({
   selector: 'app-import',
@@ -18,12 +23,12 @@ import { LinkToolsService } from '../../../core/tools/link-tools.service';
 })
 export class ImportComponent {
 
-  public items$: Observable<{ items: { itemData: ItemData, quantity: number, recipeId?: string }[], url: string }>;
+  public items$: Observable<ImportData>;
 
   wrongFormat = false;
 
   constructor(private route: ActivatedRoute, private listPicker: ListPickerService,
-              private dataService: DataService, private router: Router,
+              private lazyData: LazyDataFacade, private router: Router,
               private listManager: ListManagerService, private progressService: ProgressPopupService,
               private listsFacade: ListsFacade, private http: HttpClient, private linkTools: LinkToolsService) {
 
@@ -54,16 +59,16 @@ export class ImportComponent {
       }),
       switchMap(parsed => {
         return combineLatest(parsed.items.map(row => {
-          return this.dataService.getItem(row.itemId).pipe(
-            map(itemData => {
+          return this.lazyData.getRow('recipesPerItem', row.itemId, []).pipe(
+            map(recipes => {
               const res = {
-                itemData: itemData,
+                id: row.itemId,
                 recipeId: row.recipeId,
-                quantity: row.quantity
+                quantity: row.quantity,
+                recipes: recipes
               };
-
-              if (res.recipeId === null && itemData.isCraft()) {
-                res.recipeId = itemData.item.craft[0].id.toString();
+              if (recipes?.length > 0) {
+                res.recipeId = recipes[0].id.toString();
               }
               return res;
             })
@@ -80,16 +85,16 @@ export class ImportComponent {
     );
   }
 
-  canDoImport(data: { items: { itemData: ItemData, quantity: number, recipeId?: string }[], url: string }): boolean {
+  canDoImport(data: ImportData): boolean {
     return data.items.reduce((valid, row) => {
-      return valid && (!row.itemData.isCraft() || row.recipeId !== null);
+      return valid && (row.recipes.length === 0 || row.recipeId !== null);
     }, true);
   }
 
-  doImport(data: { items: { itemData: ItemData, quantity: number, recipeId?: string }[], url: string }): void {
+  doImport(data: ImportData): void {
     this.listPicker.addToList(...data.items.map(row => {
       return {
-        id: row.itemData.item.id,
+        id: row.id,
         recipeId: row.recipeId,
         amount: row.quantity
       };

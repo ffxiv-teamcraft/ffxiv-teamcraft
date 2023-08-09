@@ -24,8 +24,7 @@
         <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutAlign="flex-start center"
              fxLayoutGap="5px">
           <div>{{predator.amount}}x</div>
-          <app-item-icon [appFishTooltip]="predator.id" [itemId]="predator.id"
-                         [tooltipDisabled]="true" [width]="32"></app-item-icon>
+          <app-item-icon [itemId]="predator.id" [width]="32"></app-item-icon>
         </div>
       </div>
       <div *ngIf="node.speed !== undefined">

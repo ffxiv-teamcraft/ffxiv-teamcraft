@@ -8,29 +8,41 @@ const {
   InputData,
   jsonInputForTargetLanguage
 } = require('quicktype-core');
+const zlib = require('zlib');
 
 const baseFiles = fs.readdirSync(path.join(__dirname, '../../libs/data/src/lib/json/'));
+const dbFiles = fs.readdirSync(path.join(__dirname, '../../libs/data/src/lib/json/db/')).map((row) => `/db/${row}`);
 const koFiles = fs.readdirSync(path.join(__dirname, '../../libs/data/src/lib/json/ko/')).map((row) => `/ko/${row}`);
 const zhFiles = fs.readdirSync(path.join(__dirname, '../../libs/data/src/lib/json/zh/')).map((row) => `/zh/${row}`);
 
-const getPropertyName = (filename) => _.camelCase(filename.replace('.json', '').replace(/\/\w+\//, ''));
+const getPropertyName = (filename) => _.camelCase(filename.replace('/db/', '').replace('.json', '').replace('.index', '').replace(/\/\w+\//, ''));
 
 function getClassName(file) {
   const baseName = file
     .replace('/ko/', '')
     .replace('/zh/', '')
+    .replace('/db/', '')
     .replace('ies.json', 'y')
     .replace(/s?\.json/, '')
+    .replace(/s?\.index/, '')
     .replace(/bonuse$/, 'bonus')
     .replace(/statuse$/, 'status')
     .replace(/sery$/, 'series');
   return 'Lazy' + _.startCase(_.camelCase(baseName)).replace(/\s/g, '');
 }
 
+function getFileContent(filePath) {
+  let data = fs.readFileSync(filePath, 'utf8');
+  if(filePath.endsWith('.json')) {
+    return JSON.parse(data);
+  } else {
+    return JSON.parse(zlib.inflateSync(fs.readFileSync(filePath), { level: 9 }).toString('utf-8'));
+  }
+}
+
 function getType(file) {
   const className = getClassName(file);
-  const data = fs.readFileSync(path.join(__dirname, '../../libs/data/src/lib/json/', file), 'utf8');
-  const dataObj = JSON.parse(data);
+  const dataObj = getFileContent(path.join(__dirname, '../../libs/data/src/lib/json/', file));
   let indexType = Array.isArray(dataObj) ? 'Array<T>' : 'Record<number, T>';
   if (Object.keys(dataObj).filter(k => !isNaN(k)).length === 0) {
     return {
@@ -87,18 +99,20 @@ function validateLines(lines) {
   fs.writeFileSync(
     path.join(__dirname, '../../libs/data/src/lib/lazy-files-list.ts'),
     `export const lazyFilesList = ${JSON.stringify(
-      [...baseFiles, ...koFiles, ...zhFiles]
+      [...baseFiles, ...koFiles, ...zhFiles, ...dbFiles]
         .filter((row) => {
-          return row.indexOf('.json') > -1;
+          return row.includes('.json') || row.includes('.index');
         })
         .reduce((acc, row) => {
           const hash = hashFiles.sync({ files: [path.join(__dirname, '../../libs/data/src/lib/json/', row)] });
           const propertyName = getPropertyName(row);
+          const splitRow = row.split('.');
+          const fileType = splitRow[splitRow.length - 1];
           return {
             ...acc,
             [propertyName]: {
               fileName: row,
-              hashedFileName: `${row.replace('.json', '')}.${hash}.json`
+              hashedFileName: `${row.replace(`.${fileType}`, '')}.${hash}.${fileType}`
             }
           };
         }, {}),
@@ -112,15 +126,15 @@ function validateLines(lines) {
   console.log(colors.cyan(`Updating lazy loaded data Models`));
 
   for (const file of [...baseFiles, ...koFiles, ...zhFiles]) {
-    if (file.indexOf('.json') === -1) {
+    if (file.indexOf('.json') === -1 && file.indexOf('.index') === -1) {
       continue;
     }
     const className = getClassName(file);
-    const jsonString = fs.readFileSync(path.join(__dirname, '../../libs/data/src/lib/json/', file), 'utf-8');
+    const jsonData = getFileContent(path.join(__dirname, '../../libs/data/src/lib/json/', file));
     const jsonInput = jsonInputForTargetLanguage('typescript');
     await jsonInput.addSource({
       name: className,
-      samples: [jsonString]
+      samples: [JSON.stringify(jsonData)]
     });
 
     const inputData = new InputData();
@@ -146,9 +160,9 @@ function validateLines(lines) {
   console.log(colors.cyan(`Updating lazy loaded data interface`));
 
   const { imports, properties } =
-    [...baseFiles, ...koFiles, ...zhFiles]
+    [...baseFiles, ...koFiles, ...zhFiles, ...dbFiles]
       .filter((row) => {
-        return row.indexOf('.json') > -1;
+        return row.includes('.json') || row.includes('.index');
       })
       .reduce((acc, row) => {
         const { type, importStr } = getType(row);
@@ -174,9 +188,9 @@ export interface LazyData {${properties}
   console.log(colors.cyan(`Updating keys list`));
 
   const keys =
-    [...baseFiles, ...koFiles, ...zhFiles]
+    [...baseFiles, ...koFiles, ...zhFiles, ...dbFiles]
       .filter((row) => {
-        return row.indexOf('.json') > -1;
+        return row.includes('.json') || row.includes('.index');
       })
       .map(row => getPropertyName(row));
 

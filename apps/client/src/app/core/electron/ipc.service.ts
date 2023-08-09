@@ -9,7 +9,6 @@ import { ofMessageType } from '../rxjs/of-message-type';
 import { Store } from '@ngrx/store';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
-import { RawsockAdminErrorPopupComponent } from '../../modules/ipc-popups/rawsock-admin-error-popup/rawsock-admin-error-popup.component';
 import { NpcapInstallPopupComponent } from '../../modules/ipc-popups/npcap-install-popup/npcap-install-popup.component';
 import type { FreeCompanyDialog, Message } from '@ffxiv-teamcraft/pcap-ffxiv/models';
 import { toIpcData } from '../rxjs/to-ipc-data';
@@ -64,12 +63,19 @@ export class IpcService {
 
   private stateSubscription: Subscription;
 
+  private readonly _isChildWindow: boolean;
+
+  public get isChildWindow(): boolean {
+    return this._isChildWindow;
+  }
+
   constructor(private platformService: PlatformService, private router: Router,
               private store: Store<any>, private zone: NgZone, private dialog: NzModalService,
               private translate: TranslateService, private notification: NzNotificationService,
               private message: NzMessageService) {
     // Only load ipc if we're running inside electron
     if (platformService.isDesktop()) {
+      this._isChildWindow = window.location.toString().includes('?child=true');
       if (window.ipc) {
         this._ipc = window.ipc;
         this._ipc.init();
@@ -355,6 +361,9 @@ export class IpcService {
   }
 
   private connectListeners(): void {
+    if (this.isChildWindow) {
+      return;
+    }
     (<any>window).packetsPerSecond = () => {
       const durationSeconds = (Date.now() - this.start) / 1000;
       console.log('Packets per second: ', Math.floor(this.totalPacketsHandled * 10 / durationSeconds) / 10);
@@ -453,30 +462,6 @@ export class IpcService {
           }
         });
     });
-    this.on('rawsock-needs-admin', () => {
-      this.translate.get('PACKET_CAPTURE.Rawsock_needs_admin')
-        .pipe(
-          first(),
-          switchMap(title => {
-            return this.dialog.create({
-              nzFooter: null,
-              nzTitle: title,
-              nzContent: RawsockAdminErrorPopupComponent
-            }).afterClose;
-          })
-        )
-        .subscribe(res => {
-          switch (res) {
-            case 'winpcap':
-              this.send('rawsock', false);
-              break;
-            case 'disable':
-              this.send('toggle-pcap', false);
-              this.pcapToggle$.next(false);
-              break;
-          }
-        });
-    });
     this.on('pcap:status', (e, status) => this.pcapStatus$.next(status));
     this.handleOverlayChange();
   }
@@ -509,7 +494,6 @@ export class IpcService {
   }
 
   private handleMessage(packet: Message): void {
-    // If we're inside an overlay, don't do anything with the packet, we don't care.
     this.totalPacketsHandled++;
     if (this.pcapStatus$.value !== PacketCaptureStatus.RUNNING) {
       this.pcapStatus$.next(PacketCaptureStatus.RUNNING);

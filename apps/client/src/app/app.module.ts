@@ -9,7 +9,6 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { NgSerializerModule } from '@kaiu/ng-serializer';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MarkdownModule } from 'ngx-markdown';
-import { NgDragDropModule } from 'ng-drag-drop';
 import { IS_ELECTRON, PlatformService } from './core/tools/platform.service';
 import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
@@ -29,7 +28,6 @@ import { AlarmsSidebarModule } from './modules/alarms-sidebar/alarms-sidebar.mod
 import { AlarmsModule } from './core/alarms/alarms.module';
 import { ListModule } from './modules/list/list.module';
 import { XivapiClientModule } from '@xivapi/angular-client';
-import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { TranslationsLoaderFactory } from './translations-loader';
 import { IconDefinition } from '@ant-design/icons-angular';
 import { NgxEchartsModule } from 'ngx-echarts';
@@ -213,8 +211,6 @@ const nzConfig: NzConfig = {
 
     MarkdownModule.forRoot(),
 
-    NgDragDropModule.forRoot(),
-
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -287,8 +283,6 @@ const nzConfig: NzConfig = {
 
     AntdSharedModule,
     NzMenuModule,
-    NgDragDropModule.forRoot(),
-    NgxDnDModule,
 
     StoreModule.forRoot({}, {
       runtimeChecks: {
