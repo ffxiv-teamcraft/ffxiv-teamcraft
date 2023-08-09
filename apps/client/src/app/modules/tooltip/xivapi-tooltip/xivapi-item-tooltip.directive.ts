@@ -38,7 +38,6 @@ export class XivapiItemTooltipDirective implements OnDestroy {
               private _viewContainerRef: ViewContainerRef,
               private _overlay: Overlay,
               @Optional() private _directionality: Directionality) {
-    setTimeout(() => this.show(), 2000);
   }
 
   ngOnDestroy(): void {
