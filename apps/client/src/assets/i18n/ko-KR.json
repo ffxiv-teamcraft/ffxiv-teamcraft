@@ -51,7 +51,8 @@
     "Only_craftable": "제작가능한 제작법만 검색",
     "Want_filters": "더 많은 필터가 필요한가요?",
     "Open_search": "대신 검색 페이지 열기",
-    "Island_recipe": "무인도 제작법"
+    "Island_recipe": "무인도 제작법",
+    "Ingesting_index": "Ingesting content for the newly selected language, this should take few seconds..."
   },
   "Use_as_default_character": "기본 캐릭터로 사용",
   "Download_desktop_app": "데스크톱 앱 다운로드",
@@ -206,6 +207,8 @@
     "Visibility": "Visibility",
     "Public": "Public",
     "Private": "Private",
+    "Pagination_text": "{{start}}-{{end}} of {{total}} items",
+    "And_X_more": "and {{amount}} more...",
     "DAYS": {
       "Monday": "월요일",
       "Tuesday": "화요일",
@@ -534,6 +537,9 @@
     "Housing_map_explain": "The housing map in which your house is",
     "Reset_linked_characters_ok": "Character links have been reset",
     "Display_slow_mode_notification": "Display crafting/gathering slow mode notification",
+    "New_child_window": "Create a new child window",
+    "Child_windows_title": "You can now open child windows in Teamcraft desktop !",
+    "Child_windows_description": "When clicking something that navigates (like the \"i\" button for database pages or any link in the app), use ctrl + click or middle click instead to open in a new window. Additionally, you can create a new window using the new button next to the github stars count.",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -1373,10 +1379,7 @@
     "Ilvl": "아이템레벨",
     "Cost": "CP",
     "Class_job": "클래스/직업",
-    "Damage_phys": "물리 공격력",
-    "Damage_mag": "공격마법 위력",
-    "Defense_phys": "물리 방어력",
-    "Defense_mag": "마법 방어력"
+    "Masterbooks": "Requires a masterbook"
   },
   "SEARCH_INTRO": {
     "Slogan": "제작하고, 공유하고, 기여하세요",
@@ -1610,7 +1613,7 @@
     "Currencies": "화폐",
     "Rowena_splendor": "로웨나 거래",
     "Unlocks": "개방",
-    "Jump_to_page": "Open item db page",
+    "Jump_to_page": "Open db page",
     "Ishgard_restoration": "이슈가르드 부흥",
     "ITEM": {
       "Masterpiece_exp_tooltip": "다음 레벨까지 필요한 경험치 %입니다.",
