@@ -82,19 +82,58 @@
         </div>
       </ng-container>
     </div>
+    <div *ngIf="minGathering$ | async as minGathering">
+      <span>{{'DB.FISH.Min_gathering' | translate}}: {{minGathering}}</span>
+    </div>
+    <div *ngIf="fshData$ | async as nodes" class="details">
+      <div *ngFor="let node of nodes; let last = last; trackBy: trackByNode">
+        <div fxLayout="column" fxLayoutGap="5px">
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+            <img *ngIf="node.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
+                 src="./assets/icons/status/snagging.png">
+          </div>
+          <div fxLayout="row" fxLayoutAlign="flex-start">
+            <div *ngFor="let bait of node.baits; let index = index; let last = last; trackBy: trackByBait" fxLayout="row" fxLayoutAlign="center center"
+                 fxLayoutGap="5px">
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <div class="icon-container">
+                  <img [src]="bait.id | lazyIcon" class="item-icon small-icon">
+                  <img *ngIf="index > 0" class="hq-overlay small-icon"
+                       src="./assets/icons/HQOverlay.png">
+                </div>
+                <div>{{bait.id | itemName | i18n}}</div>
+              </div>
+              <i *ngIf="!last" nz-icon nzType="caret-right" theme="outline"></i>
+            </div>
+          </div>
+          <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
+               fxLayoutGap="10px">
+            <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
+                 src="./assets/icons/status/predators.png">
+            <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutAlign="flex-start center"
+                 fxLayoutGap="5px">
+              <div>{{predator.amount}}x</div>
+              <img class="small-icon" src="{{predator.id | lazyIcon}}"/>
+              <div>{{predator.id | itemName | i18n}}</div>
+            </div>
+          </div>
+        </div>
+        <nz-divider *ngIf="!last"></nz-divider>
+      </div>
+    </div>
     <div class="xivapi">Item#{{item.id}}</div>
   </div>
   <div nz-col [nzSpan]="12" class="sources" *ngIf="item.sources?.length > 0">
     <div class="sources-title">{{'DB.How_to_obtain' | translate}}</div>
-    <div class="source" *ngFor="let source of item.sources; last as last">
+    <ng-container  *ngFor="let source of item.sources; last as last">
       <ng-container [ngSwitch]="source.type">
-        <ng-container *ngSwitchCase="DataType.DEPRECATED">
+        <div class="source" *ngSwitchCase="DataType.DEPRECATED">
           <div class="source-title">
             <span nz-icon nzType="close-circle" nzTheme="twotone" [nzTwotoneColor]="'#F5222DFF'"></span>
             {{'ALLAGAN_REPORTS.Deprecated' | translate}}
           </div>
-        </ng-container>
-        <ng-container *ngSwitchCase="DataType.CRAFTED_BY">
+        </div>
+        <div class="source" *ngSwitchCase="DataType.CRAFTED_BY">
           <ng-container *ngIf="source.data[0] as craft">
             <div class="source-title flex-row align-center space-between gap-5">
               <div class="flex-row align-center gap-5">
@@ -121,8 +160,8 @@
               <i *ngIf="source.data.length > 1" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 1 } }}</i>
             </div>
           </ng-container>
-        </ng-container>
-        <ng-container *ngSwitchCase="DataType.TREASURES">
+        </div>
+        <div class="source" *ngSwitchCase="DataType.TREASURES">
           <div class="source-title flex-row align-center gap-2">
             <img class="img-icon" src="./assets/icons/chest_open.png">
             <div>
@@ -136,8 +175,8 @@
             </div>
             <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
           </div>
-        </ng-container>
-        <ng-container *ngSwitchCase="DataType.DESYNTHS">
+        </div>
+        <div class="source" *ngSwitchCase="DataType.DESYNTHS">
           <div class="source-title flex-row align-center gap-2">
             <i nzIconfont="icon-vectorcombine" nz-icon></i>
             <div>
@@ -151,8 +190,8 @@
             </div>
             <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
           </div>
-        </ng-container>
-        <ng-container *ngSwitchCase="DataType.INSTANCES">
+        </div>
+        <div class="source" *ngSwitchCase="DataType.INSTANCES">
           <div class="source-title flex-row align-center gap-2">
             <img [src]="source.data[0] | lazyRow:'instances':'icon' | async | xivapiIcon" class="img-icon round-icon">
             <div>
@@ -164,17 +203,15 @@
               <img [src]="instance | lazyRow:'instances':'icon' | async | xivapiIcon" class="small-icon">
               <ng-container *ngIf="instance > 0; else mapDisplay">
                 <div>{{instance | i18nRow:'instances' | i18n}}</div>
-                <app-db-button [id]="instance" type="instance"></app-db-button>
               </ng-container>
               <ng-template #mapDisplay>
                 <div>{{-1 * instance | mapName | i18n}}</div>
-                <app-db-button [id]="-1 * instance" type="map"></app-db-button>
               </ng-template>
             </div>
             <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
           </div>
-        </ng-container>
-        <ng-container *ngSwitchCase="DataType.ACHIEVEMENTS">
+        </div>
+        <div class="source" *ngSwitchCase="DataType.ACHIEVEMENTS">
           <div class="source-title flex-row align-center gap-2">
             <img [src]="source.data[0] | lazyRow:'achievements':'icon' | async | xivapiIcon" class="img-icon round-icon">
             <div>
@@ -188,8 +225,8 @@
             </div>
             <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
           </div>
-        </ng-container>
-        <ng-container *ngSwitchCase="DataType.DROPS">
+        </div>
+        <div class="source" *ngSwitchCase="DataType.DROPS">
           <div class="source-title flex-row align-center gap-2">
             <img alt="Drops" class="img-icon" src="./assets/icons/mob.png">
             <div>
@@ -202,8 +239,8 @@
             </div>
             <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
           </div>
-        </ng-container>
-        <ng-container *ngSwitchCase="DataType.REDUCED_FROM">
+        </div>
+        <div class="source" *ngSwitchCase="DataType.REDUCED_FROM">
           <div class="source-title flex-row align-center gap-2">
             <img class="img-icon round-icon" src="./assets/icons/Reduce.png">
             <div>
@@ -217,8 +254,8 @@
             </div>
             <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
           </div>
-        </ng-container>
-        <ng-container *ngSwitchCase="DataType.QUESTS">
+        </div>
+        <div class="source" *ngSwitchCase="DataType.QUESTS">
           <div class="source-title flex-row align-center gap-2">
             <img class="img-icon round-icon" src="./assets/icons/quest.png">
             <div>
@@ -231,8 +268,8 @@
             </div>
             <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
           </div>
-        </ng-container>
-        <ng-container *ngSwitchCase="DataType.VOYAGES">
+        </div>
+        <div class="source" *ngSwitchCase="DataType.VOYAGES">
           <div class="source-title flex-row align-center gap-2">
             <img alt="Voyages" class="img-icon" src="./assets/icons/Voyage.png">
             <div>
@@ -245,8 +282,8 @@
             </div>
             <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
           </div>
-        </ng-container>
-        <ng-container *ngSwitchCase="DataType.VENTURES">
+        </div>
+        <div class="source" *ngSwitchCase="DataType.VENTURES">
           <div class="source-title flex-row align-center gap-2">
             <img [src]="21072 | lazyIcon" alt="Ventures" class="img-icon">
             <div>
@@ -259,8 +296,8 @@
             </div>
             <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
           </div>
-        </ng-container>
-        <ng-container *ngSwitchCase="DataType.MASTERBOOKS">
+        </div>
+        <div class="source" *ngSwitchCase="DataType.MASTERBOOKS">
           <div class="source-title flex-row align-center gap-2">
             <i nz-icon nzType="book"></i>
             <div>
@@ -273,8 +310,8 @@
               {{item.id | i18nRow: 'items' | i18n}}
             </div>
           </div>
-        </ng-container>
-        <ng-container *ngSwitchCase="DataType.VENDORS">
+        </div>
+        <div class="source" *ngSwitchCase="DataType.VENDORS">
           <div class="source-title flex-row align-center gap-2">
             <img alt="Gil" class="img-icon" src="https://xivapi.com/i/065000/065002.png">
             <div>
@@ -300,8 +337,8 @@
             </div>
             <i *ngIf="source.data.length > 2" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 2 } }}</i>
           </div>
-        </ng-container>
-        <ng-container *ngSwitchCase="DataType.TRADE_SOURCES">
+        </div>
+        <div class="source" *ngSwitchCase="DataType.TRADE_SOURCES">
           <div class="source-title flex-row align-center gap-2">
             <img class="img-icon round-icon" src="./assets/icons/Shop.png">
             <div>
@@ -336,8 +373,8 @@
             </div>
             <i *ngIf="source.data.length > 2" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 2 } }}</i>
           </div>
-        </ng-container>
-        <ng-container *ngSwitchCase="DataType.GATHERED_BY">
+        </div>
+        <div class="source" *ngSwitchCase="DataType.GATHERED_BY">
           <div class="source-title flex-row align-center space-between gap-2">
             <div class="flex-row align-center gap-2">
               <img class="img-icon gathering-icon" src="{{source.data.type | nodeTypeIcon}}">
@@ -354,14 +391,7 @@
             <div class="flex-row align-start gap-5 details-row" *ngFor="let node of source.data.nodes.slice(0,1)">
               <app-map [mapId]="node.map" [markers]="[node]" [hideDbButton]="true" [small]="true"></app-map>
               <div class="flex-column gap-2">
-                {{node.map | mapName | i18n}}
-                <app-i18n-name content="places" [id]="node.zoneId"></app-i18n-name>
-                X:{{node.x}} Y: {{node.y}}
-                <span *ngIf="node.spawns !== undefined">
-                  <i *ngFor="let time of node.spawns">
-                    {{time}}:00 - {{getDespawnTime(time, node.duration)}}:00
-                  </i>
-                </span>
+                <app-node-details [node]="node" [showAlarmsIntegration]="false" [hideDbButton]="true"></app-node-details>
                 <div class="flex-row align-center gap-2" *ngIf="node.map | closestAetheryte:node | async as aetheryte">
                   <img src="./assets/icons/Aetheryte.png" alt="" class="small-icon">
                   {{aetheryte.nameid | i18nRow:'places' | i18n}}
@@ -370,8 +400,8 @@
             </div>
             <i *ngIf="source.data.nodes.length > 1" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.nodes.length - 1 } }}</i>
           </div>
-        </ng-container>
+        </div>
       </ng-container>
-    </div>
+    </ng-container>
   </div>
 </div>

@@ -1,6 +1,9 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { LazyItemsDatabasePage } from '@ffxiv-teamcraft/data/model/lazy-items-database-page';
-import { BaseParam, DataType, ExplorationType, ExtractRow } from '@ffxiv-teamcraft/types';
+import { BaseParam, DataType, ExplorationType, ExtractRow, FishingBait, GatheringNode, getItemSource } from '@ffxiv-teamcraft/types';
+import { Observable } from 'rxjs';
+import { observeInput } from '../../../core/rxjs/observe-input';
+import { filter, map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-xivdb-tooltip-component',
@@ -18,6 +21,25 @@ export class XivapiItemTooltipComponent implements OnInit {
 
   @Input() item: LazyItemsDatabasePage & ExtractRow;
 
+  public fshData$: Observable<GatheringNode[]> = observeInput(this, 'item').pipe(
+    filter(item => item.sources.some(s => s.type === DataType.GATHERED_BY)),
+    map(item => {
+      return getItemSource(item, DataType.GATHERED_BY);
+    }),
+    filter(gatheredBy => gatheredBy?.type === -5),
+    map(gatheredBy => gatheredBy.nodes)
+  );
+
+  public minGathering$: Observable<number> = this.fshData$.pipe(
+    map(data => {
+      return data
+        .map(node => {
+          return node.minGathering;
+        })
+        .sort((a, b) => a - b)[0];
+    })
+  );
+
   /**
    * Main attributes are ilvl, attack damage or duration for foods.
    */
@@ -26,6 +48,14 @@ export class XivapiItemTooltipComponent implements OnInit {
   getDespawnTime(time: number, uptime: number): string {
     const res = (time + uptime / 60) % 24;
     return res.toString();
+  }
+
+  public trackByNode(index: number, node: GatheringNode): number {
+    return node.id;
+  }
+
+  public trackByBait(index: number, bait: FishingBait): number {
+    return bait.id;
   }
 
   ngOnInit(): void {

@@ -257,7 +257,7 @@
                            src="./assets/icons/status/predators.png">
                       <div *ngFor="let predator of fish.node.predators" class="flex-row align-center gap-2">
                         <div>{{predator.amount}}x</div>
-                        <app-item-icon [appFishTooltip]="predator.id" [itemId]="predator.id" [width]="24"></app-item-icon>
+                        <app-item-icon [itemId]="predator.id" [width]="24"></app-item-icon>
                       </div>
                     </div>
                   </ng-template>

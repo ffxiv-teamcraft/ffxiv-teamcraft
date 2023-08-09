@@ -80,7 +80,6 @@ export class ItemIconComponent {
     shareReplay({ bufferSize: 1, refCount: true })
   );
 
-
   collectable$ = combineLatest([
     this.itemId$,
     observeInput(this, 'forceCollectable', true)
