@@ -31,7 +31,7 @@ import { SearchParams, XIVSearchFilter } from '@ffxiv-teamcraft/search';
 @Injectable({ providedIn: 'root' })
 export class DataService {
 
-  public searchLang = this.translate.currentLang;
+  public searchLang = this.settings.searchLanguage || this.translate.currentLang;
 
   public ingesting$ = new BehaviorSubject(false);
 
@@ -62,9 +62,8 @@ export class DataService {
   }
 
   public setSearchLang(lang: Language): void {
-    const changed = lang !== this.searchLang;
     this.searchLang = lang;
-    if (changed && this.platform.isDesktop()) {
+    if (this.platform.isDesktop()) {
       this.ipc.send('search:lang', lang);
     }
   }

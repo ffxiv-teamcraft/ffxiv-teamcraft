@@ -287,6 +287,7 @@ export class AppComponent implements OnInit {
     if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
       // Preload item names and icons !
       this.lazyDataFacade.preloadEntry('items');
+      this.lazyDataFacade.preloadEntry('rarities');
       this.lazyDataFacade.preloadEntry('itemIcons');
       this.lazyDataFacade.preloadEntry('extracts');
       // Translation
@@ -742,6 +743,7 @@ export class AppComponent implements OnInit {
     }
     this.locale = lang;
     this.data.setSearchLang(lang as Language);
+    this.settings.searchLanguage = lang as Language;
     if (!skipStorage) {
       localStorage.setItem('locale', lang);
     }

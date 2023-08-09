@@ -282,7 +282,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       });
     }
     if (this.searchLang$.value === null) {
-      this.searchLang$.next(this.translate.currentLang as Language);
+      this.searchLang$.next(this.settings.searchLanguage || this.translate.currentLang as Language);
     }
   }
 
@@ -308,7 +308,6 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     });
 
     this.route.queryParams.pipe(
-      debounceTime(500),
       first(),
       switchMap(params => {
         if (!params.query || !params.type) {
@@ -832,5 +831,11 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       );
     }
     return filters;
+  }
+
+  updateSearchLang(lang: Language): void {
+    this.searchLang$.next(lang);
+    this.settings.searchLanguage = lang;
+    this.data.setSearchLang(lang);
   }
 }

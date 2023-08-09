@@ -153,7 +153,7 @@ export class IpcListenersManager {
         log.error(err);
       }
     });
-    this.loadLanguage(this.store.get('search:lang', 'en')).subscribe();
+    this.loadLanguage(this.store.get<keyof I18nName>('search:lang', 'en')).subscribe();
     this.setupSearchListeners();
     this.setupLodestoneListeners();
     this.setupOverlayListeners();

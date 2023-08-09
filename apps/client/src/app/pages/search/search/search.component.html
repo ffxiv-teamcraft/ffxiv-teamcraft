@@ -36,7 +36,7 @@
   </ng-template>
 
   <ng-template #languageSelector>
-    <nz-select (ngModelChange)="searchLang$.next($event);settings.searchLanguage = $event" [ngModel]="searchLang$ | async"
+    <nz-select (ngModelChange)="updateSearchLang($event)" [ngModel]="searchLang$ | async"
                class="search-language with-addon-before">
       <nz-option *ngFor="let locale of availableLanguages" [nzLabel]="locale | uppercase"
                  [nzValue]="locale"></nz-option>

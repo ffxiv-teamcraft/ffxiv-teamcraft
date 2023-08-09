@@ -5,7 +5,7 @@
   "author": "FFXIV Teamcraft",
   "version": "10.5.7",
   "license": "MIT",
-  "main": "dist/apps/electron/src/main.js",
+  "main": "dist/apps/electron/main.js",
   "build": {
     "appId": "ffxiv-teamcraft",
     "productName": "FFXIV Teamcraft",
@@ -24,7 +24,7 @@
         ]
       }
     ],
-    "asarUnpack": "./dist/apps/electron/src/workers/lodestone.js",
+    "asarUnpack": "./dist/apps/electron/workers/lodestone.js",
     "protocols": {
       "name": "ffxiv-teamcraft",
       "schemes": [

@@ -1,11 +1,21 @@
 import { ChangeDetectorRef, OnDestroy, Pipe, PipeTransform } from '@angular/core';
 import { isNil } from 'lodash';
-import { isObservable, Observable, Subscription } from 'rxjs';
+import { combineLatest, isObservable, Observable, of, Subscription } from 'rxjs';
 import { I18nName } from '@ffxiv-teamcraft/types';
 import { I18nNameLazy } from '../model/common/i18n-name-lazy';
 import { I18nToolsService } from './tools/i18n-tools.service';
+import { map, switchMap } from 'rxjs/operators';
+import { observeInput } from './rxjs/observe-input';
 
-type I18nInput = { name: I18nName } | I18nName | Partial<I18nName> | I18nNameLazy | Observable<I18nName> | Observable<{ name: I18nName }> | string | Observable<string>;
+type I18nInput =
+  { name: I18nName }
+  | I18nName
+  | Partial<I18nName>
+  | I18nNameLazy
+  | Observable<I18nName>
+  | Observable<{ name: I18nName }>
+  | string
+  | Observable<string>;
 
 /**
  * A pipe that coerces an I18nName object into a string matching the user's preferred language.
@@ -19,9 +29,36 @@ type I18nInput = { name: I18nName } | I18nName | Partial<I18nName> | I18nNameLaz
 export class I18nPipe implements PipeTransform, OnDestroy {
   private currentValue?: string;
 
-  private input?: I18nInput;
+  public input?: I18nInput;
 
-  private sub?: Subscription;
+  private sub: Subscription = combineLatest([
+    observeInput(this, 'input', true),
+    this.i18n.currentLang$
+  ]).pipe(
+    // Ignoring lang here because it's only used to trigger the change anyways
+    switchMap(([input]) => {
+      if (typeof input === 'string') {
+        return of(input);
+      } else if (this.isI18nWithName(input)) {
+        return of(this.i18n.getName(input.name));
+      } else if (this.isI18nEntry(input)) {
+        return of(this.i18n.getName(input));
+      } else if (this.isI18nLazy(input)) {
+        return this.i18n.resolveName(input);
+      } else if (isObservable(input)) {
+        return (input as Observable<I18nName>).pipe(
+          map(i18nName => {
+            if (typeof i18nName === 'string') {
+              return i18nName;
+            } else {
+              return this.i18n.getName(i18nName);
+            }
+          })
+        );
+      }
+      return of(null);
+    })
+  ).subscribe((value: string) => this.setCurrentValue(value));
 
   constructor(private readonly i18n: I18nToolsService, private readonly cd: ChangeDetectorRef) {
   }
@@ -32,24 +69,6 @@ export class I18nPipe implements PipeTransform, OnDestroy {
 
   transform<T extends I18nInput>(input?: T | null, fallback?: string): string | undefined {
     if (!this.i18nEquals(this.input, input)) {
-      this.sub?.unsubscribe();
-      if (typeof input === 'string') {
-        this.setCurrentValue(input);
-      } else if (this.isI18nWithName(input)) {
-        this.setCurrentValue(this.i18n.getName(input.name));
-      } else if (this.isI18nEntry(input)) {
-        this.setCurrentValue(this.i18n.getName(input));
-      } else if (this.isI18nLazy(input)) {
-        this.sub = this.i18n.resolveName(input).subscribe(this.setCurrentValue);
-      } else if (isObservable(input)) {
-        this.sub = (input as Observable<I18nName>).subscribe(i18nName => {
-          if (typeof i18nName === 'string') {
-            this.setCurrentValue(i18nName);
-          } else {
-            this.setCurrentValue(this.i18n.getName(i18nName));
-          }
-        });
-      }
       this.input = input;
     }
     return this.currentValue || fallback;
@@ -90,7 +109,7 @@ export class I18nPipe implements PipeTransform, OnDestroy {
     }
   }
 
-  private setCurrentValue = (val?: string) => {
+  private setCurrentValue(val?: string): void {
     const next = this.uppercaseFirst(val);
     const didUpdate = this.currentValue !== next;
     this.currentValue = next;
