@@ -51,7 +51,8 @@
     "Only_craftable": "レシピのみ",
     "Want_filters": "さらにフィルターが必要ですか？",
     "Open_search": "代わりに検索ページを開く",
-    "Island_recipe": "無人島レシピ"
+    "Island_recipe": "無人島レシピ",
+    "Ingesting_index": "Ingesting content for the newly selected language, this should take few seconds..."
   },
   "Use_as_default_character": "デフォルトキャラとして使う",
   "Download_desktop_app": "デスクトップアプリをダウンロード",
@@ -206,6 +207,8 @@
     "Visibility": "Visibility",
     "Public": "Public",
     "Private": "Private",
+    "Pagination_text": "{{start}}-{{end}} of {{total}} items",
+    "And_X_more": "and {{amount}} more...",
     "DAYS": {
       "Monday": "月曜日",
       "Tuesday": "火曜日",
@@ -534,6 +537,9 @@
     "Housing_map_explain": "The housing map in which your house is",
     "Reset_linked_characters_ok": "Character links have been reset",
     "Display_slow_mode_notification": "Display crafting/gathering slow mode notification",
+    "New_child_window": "Create a new child window",
+    "Child_windows_title": "You can now open child windows in Teamcraft desktop !",
+    "Child_windows_description": "When clicking something that navigates (like the \"i\" button for database pages or any link in the app), use ctrl + click or middle click instead to open in a new window. Additionally, you can create a new window using the new button next to the github stars count.",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -1373,10 +1379,7 @@
     "Ilvl": "IL",
     "Cost": "費用",
     "Class_job": "ジョブ",
-    "Damage_phys": "物理ダメージ",
-    "Damage_mag": "魔法ダメージ",
-    "Defense_phys": "物理防御力",
-    "Defense_mag": "魔法防御力"
+    "Masterbooks": "Requires a masterbook"
   },
   "SEARCH_INTRO": {
     "Slogan": "制作、シェア、貢献",
@@ -1610,7 +1613,7 @@
     "Currencies": "通貨",
     "Rowena_splendor": "ロウェナ商会取引",
     "Unlocks": "ロック解除",
-    "Jump_to_page": "Open item db page",
+    "Jump_to_page": "Open db page",
     "Ishgard_restoration": "イシュガルド復興",
     "ITEM": {
       "Masterpiece_exp_tooltip": "次のレベルに必要な経験値の％",
