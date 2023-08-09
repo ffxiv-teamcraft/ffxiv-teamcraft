@@ -87,10 +87,13 @@
     </div>
     <div *ngIf="fshData$ | async as nodes" class="details">
       <div *ngFor="let node of nodes; let last = last; trackBy: trackByNode">
-        <div fxLayout="column" fxLayoutGap="5px">
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+        <div class="flex-column gap-5">
+          <div class="flex-column gap-5 align-start">
             <img *ngIf="node.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                  src="./assets/icons/status/snagging.png">
+            <div *ngIf="node.hookset !== undefined">{{'DB.FISH.OVERLAY.Hookset' | translate}}:&nbsp;<img [src]="node.hookset | hooksetActionId | actionIcon | xivapiIcon" alt=""
+                                                          class="small-icon">&nbsp;{{node.hookset | hooksetActionId | i18nRow:'actions' | i18n}}</div>
+            <div *ngIf="node.tug !== undefined">{{'DB.FISH.OVERLAY.Tug' | translate}}:&nbsp;{{node.tug | tugName | translate}}</div>
           </div>
           <div fxLayout="row" fxLayoutAlign="flex-start">
             <div *ngFor="let bait of node.baits; let index = index; let last = last; trackBy: trackByBait" fxLayout="row" fxLayoutAlign="center center"
@@ -125,7 +128,7 @@
   </div>
   <div nz-col [nzSpan]="12" class="sources" *ngIf="item.sources?.length > 0">
     <div class="sources-title">{{'DB.How_to_obtain' | translate}}</div>
-    <ng-container  *ngFor="let source of item.sources; last as last">
+    <ng-container *ngFor="let source of item.sources; last as last">
       <ng-container [ngSwitch]="source.type">
         <div class="source" *ngSwitchCase="DataType.DEPRECATED">
           <div class="source-title">
@@ -235,7 +238,11 @@
           </div>
           <div class="source-details">
             <div class="flex-row align-center justify-start gap-2 details-row" *ngFor="let drop of source.data.slice(0,3)">
-              <div>{{drop.id | i18nRow:'mobs' | i18n}}: <ng-container *ngIf="drop.mapid">{{drop.mapid | i18nRow:'places' | i18n}}</ng-container> - <ng-container *ngIf="drop.zoneid">{{drop.zoneid | i18nRow:'places' | i18n}}</ng-container></div>
+              <div>{{drop.id | i18nRow:'mobs' | i18n}}:
+                <ng-container *ngIf="drop.mapid">{{drop.mapid | i18nRow:'places' | i18n}}</ng-container>
+                -
+                <ng-container *ngIf="drop.zoneid">{{drop.zoneid | i18nRow:'places' | i18n}}</ng-container>
+              </div>
             </div>
             <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
           </div>
