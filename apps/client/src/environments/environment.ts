@@ -10,7 +10,7 @@ import patchNotes from './patch-notes.json';
 export const environment = {
   production: false,
   beta: false,
-  useLocalAPI: true, // Should we use localhost:333 as API for search?
+  useLocalAPI: false, // Should we use localhost:333 as API for search?
   version: version,
   patchNotes: patchNotes as unknown as {version: string, content: string}[],
   ssrHost: 'https://beta.ffxivteamcraft.com',
