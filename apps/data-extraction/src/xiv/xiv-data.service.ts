@@ -65,17 +65,18 @@ export class XivDataService {
       Object.entries(row)
         .forEach(([key, value]) => {
           if (typeof value === 'string' && isNaN(+value)) {
-            row[`${key}_en`] = this.processSaintString(value);
-            row[`${key}_de`] = this.processSaintString(parsed.de[index][key]);
-            row[`${key}_ja`] = this.processSaintString(parsed.ja[index][key]);
-            row[`${key}_fr`] = this.processSaintString(parsed.fr[index][key]);
+            row[`${key}_en`] = this.processSaintString(value, sheetName === 'CraftAction');
+            row[`${key}_de`] = this.processSaintString(parsed.de[index][key], sheetName === 'CraftAction');
+            row[`${key}_ja`] = this.processSaintString(parsed.ja[index][key], sheetName === 'CraftAction');
+            row[`${key}_fr`] = this.processSaintString(parsed.fr[index][key], sheetName === 'CraftAction');
           }
         });
       return row;
     });
   }
 
-  private processSaintString(input: string): string {
+  private processSaintString(input: string, useAlternateRegexp = false): string {
+    const conditionsRegexp = useAlternateRegexp ? /(<If[^>]+>)+([^<]+)(<Else\/>[^<]*(<\/?If([^<]*)>)?)+/gmi : /(<If[^>]+>)+([^<]+)(<Else\/>[^<]*(<\/?If([^<]*)>)?([^<])*)+/gmi;
     return input
       .replace(/\r\n/gmi, '[br]')
       .replace(/<UIGlow>.*?<\/UIGlow>/gmi, '')
@@ -87,7 +88,7 @@ export class XivDataService {
         const color = Number(this.UIColor.find(c => c.index === colorId)?.UIForeground || 0xFFFFFF);
         return `[span style="color:${numberToCssColor(color)}"]`;
       })
-      .replace(/(<If[^>]+>)+([^<]+)(<Else\/>[^<]*(<\/?If([^<]*)>)?([^<])*)+/gmi, (value, conditions, match) => match)
+      .replace(conditionsRegexp, (value, conditions, match) => match)
       .replace(/<Else\/>/gmi, '')
       .replace(/<\/If>/gmi, '')
       // Starting here we're just converting those [...] tags back to html
