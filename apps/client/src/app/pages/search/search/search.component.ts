@@ -6,8 +6,6 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
-import { NzMessageService } from 'ng-zorro-antd/message';
-import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
@@ -24,7 +22,6 @@ import { KeysOfType } from '../../../core/tools/key-of-type';
 import { Language } from '../../../core/data/language';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { PlatformService } from '../../../core/tools/platform.service';
-import { GoogleAnalyticsService } from 'ngx-google-analytics';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { IS_HEADLESS } from '../../../../environments/is-headless';
 import { EnvironmentService } from '../../../core/environment.service';
@@ -254,14 +251,16 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     })
   );
 
+  public ingesting$ = this.data.ingesting$;
+
   constructor(private data: DataService, public settings: SettingsService,
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
-              private listManager: ListManagerService, private notificationService: NzNotificationService,
+              private listManager: ListManagerService,
               private i18n: I18nToolsService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private fb: UntypedFormBuilder,
               private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService,
-              private message: NzMessageService, public translate: TranslateService, private lazyData: LazyDataFacade,
-              private analytics: GoogleAnalyticsService, private environment: EnvironmentService,
+              public translate: TranslateService, private lazyData: LazyDataFacade,
+              private environment: EnvironmentService,
               private platformService: PlatformService, @Inject(PLATFORM_ID) private platform: any) {
     super();
     this.uiCategories$ = this.settings.watchSetting('search:language', 'en').pipe(
@@ -309,12 +308,12 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     });
 
     this.route.queryParams.pipe(
-      filter(params => {
-        return params.query !== undefined && params.type !== undefined;
-      }),
       debounceTime(500),
       first(),
       switchMap(params => {
+        if (!params.query || !params.type) {
+          return of(null);
+        }
         this.searchType$.next(params.type);
         this.query$.next(params.query);
         if (params.filters !== undefined) {

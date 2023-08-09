@@ -125,6 +125,30 @@
               "replace": "apps/client/src/environments/environment.ts",
               "with": "apps/client/src/environments/environment.prod.ts"
             }
+          ],
+          "assets": [
+            "apps/client/src/favicon.ico",
+            "apps/client/src/assets",
+            {
+              "glob": "**/*",
+              "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+              "output": "/assets/"
+            },
+            {
+              "glob": "!(db)/*.json",
+              "input": "./libs/data/src/lib/json/",
+              "output": "/assets/data/"
+            },
+            {
+              "glob": "*",
+              "input": "./libs/data/src/lib/json/",
+              "output": "/assets/data/"
+            },
+            {
+              "glob": "**/*",
+              "input": "./libs/data/src/lib/extracts/",
+              "output": "/assets/extracts/"
+            }
           ]
         },
         "electron-dev": {
@@ -135,7 +159,31 @@
           "extractLicenses": true,
           "vendorChunk": false,
           "buildOptimizer": false,
-          "baseHref": ""
+          "baseHref": "",
+          "assets": [
+            "apps/client/src/favicon.ico",
+            "apps/client/src/assets",
+            {
+              "glob": "**/*",
+              "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+              "output": "/assets/"
+            },
+            {
+              "glob": "!(db)/*.json",
+              "input": "./libs/data/src/lib/json/",
+              "output": "/assets/data/"
+            },
+            {
+              "glob": "*",
+              "input": "./libs/data/src/lib/json/",
+              "output": "/assets/data/"
+            },
+            {
+              "glob": "**/*",
+              "input": "./libs/data/src/lib/extracts/",
+              "output": "/assets/extracts/"
+            }
+          ]
         },
         "beta": {
           "optimization": true,

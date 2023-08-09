@@ -3,6 +3,10 @@ import { IpcRendererEvent } from 'electron';
 const { contextBridge, ipcRenderer } = require('electron');
 
 const allowedChannels = [
+  'search',
+  'search:results',
+  'search:ingest',
+  'search:lang',
   'child:new',
   'pcap:status',
   'pcap:restart',

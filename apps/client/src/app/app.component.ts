@@ -8,7 +8,6 @@ import {
   Injector,
   OnInit,
   PLATFORM_ID,
-  Renderer2,
   ViewChild
 } from '@angular/core';
 import { environment } from '../environments/environment';
@@ -18,31 +17,23 @@ import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Rout
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
-import { catchError, delay, distinctUntilChanged, filter, first, map, mapTo, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
+import { catchError, delay, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, fromEvent, Observable, of, Subject } from 'rxjs';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
 import { NzIconService } from 'ng-zorro-antd/icon';
-import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { RegisterPopupComponent } from './core/auth/register-popup/register-popup.component';
 import { LoginPopupComponent } from './core/auth/login-popup/login-popup.component';
 import { EorzeanTimeService } from './core/eorzea/eorzean-time.service';
 import { ListsFacade } from './modules/list/+state/lists.facade';
-import { WorkshopsFacade } from './modules/workshop/+state/workshops.facade';
 import { SettingsService } from './modules/settings/settings.service';
 import { TeamsFacade } from './modules/teams/+state/teams.facade';
 import { NotificationsFacade } from './modules/notifications/+state/notifications.facade';
 import { AbstractNotification } from './core/notification/abstract-notification';
-import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
 import { PlatformService } from './core/tools/platform.service';
 import { SettingsPopupService } from './modules/settings/settings-popup.service';
 import { HttpClient } from '@angular/common/http';
-import { DomSanitizer } from '@angular/platform-browser';
-import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
-import { MediaObserver } from '@angular/flex-layout';
-import { LayoutsFacade } from './core/layout/+state/layouts.facade';
-import { CustomItemsFacade } from './modules/custom-items/+state/custom-items.facade';
 import { DirtyFacade } from './core/dirty/+state/dirty.facade';
 import { SeoService } from './core/seo/seo.service';
 import { Theme } from './modules/settings/theme';
@@ -236,14 +227,13 @@ export class AppComponent implements OnInit {
   constructor(@Inject(DOCUMENT) private document: Document, public translate: TranslateService,
               public ipc: IpcService, private router: Router, private firebase: Database,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
-              public listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService,
+              public listsFacade: ListsFacade, public settings: SettingsService,
               public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade,
-              private iconService: NzIconService, private rotationsFacade: RotationsFacade, public platformService: PlatformService,
-              private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer,
-              private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: MediaObserver,
-              private layoutsFacade: LayoutsFacade, private lazyDataFacade: LazyDataFacade,
-              private customItemsFacade: CustomItemsFacade, private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
-              private message: NzMessageService, private universalis: UniversalisService,
+              private iconService: NzIconService, public platformService: PlatformService,
+              private settingsPopupService: SettingsPopupService, private http: HttpClient,
+              private lazyDataFacade: LazyDataFacade,
+              private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
+              private universalis: UniversalisService,
               private inventoryService: InventoryService, @Inject(PLATFORM_ID) private platform: any,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               private tutorialService: TutorialService,
@@ -295,7 +285,10 @@ export class AppComponent implements OnInit {
     this.translate.setDefaultLang('en');
 
     if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
-
+      // Preload item names and icons !
+      this.lazyDataFacade.preloadEntry('items');
+      this.lazyDataFacade.preloadEntry('itemIcons');
+      this.lazyDataFacade.preloadEntry('extracts');
       // Translation
       this.use(this.getLang());
       if (this.platformService.isDesktop()) {
@@ -710,7 +703,7 @@ export class AppComponent implements OnInit {
   openInApp(): void {
     if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
       this.http.get(`http://localhost:14500${window.location.pathname}`).pipe(
-        mapTo(true),
+        map(() => true),
         catchError(() => {
           return of(false);
         })

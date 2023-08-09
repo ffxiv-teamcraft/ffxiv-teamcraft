@@ -51,7 +51,8 @@
     "Only_craftable": "Only recipes",
     "Want_filters": "Need more filters?",
     "Open_search": "Open search page instead",
-    "Island_recipe": "Island Sanctuary recipe"
+    "Island_recipe": "Island Sanctuary recipe",
+    "Ingesting_index": "Ingesting content for the newly selected language, this should take few seconds..."
   },
   "Use_as_default_character": "Use as default character",
   "Download_desktop_app": "Download desktop app",

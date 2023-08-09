@@ -181,8 +181,15 @@ export class XIVSearch {
         if (err) {
           throw err;
         }
-        observer.next(JSON.parse(zlib.inflateSync(content, { level: 9 }).toString()) as LazyDataWithExtracts[K]);
-        observer.complete();
+        zlib.inflate(content, { level: 9 }, (err, data) => {
+          if (err) {
+            observer.error(err);
+            observer.complete();
+          } else {
+            observer.next(JSON.parse(data.toString()));
+            observer.complete();
+          }
+        });
       });
     });
   }

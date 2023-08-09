@@ -108,7 +108,7 @@ export class TeamcraftDesktopApp {
       backgroundColor: '#2f3237',
       icon: `file://${Constants.BASE_APP_PATH}/assets/app-icon.png`,
       webPreferences: {
-        preload: join(__dirname, 'preload.js')
+        preload: join(__dirname, 'src/preload.js')
       }
     });
 

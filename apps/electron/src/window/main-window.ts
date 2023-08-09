@@ -32,7 +32,7 @@ export class MainWindow {
       webPreferences: {
         backgroundThrottling: false,
         sandbox: true,
-        preload: join(__dirname, '../preload.js')
+        preload: join(__dirname, './src/preload.js')
       }
     };
     Object.assign(opts, this.store.get('win:bounds', {}));

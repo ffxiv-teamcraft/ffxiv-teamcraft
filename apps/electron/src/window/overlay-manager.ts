@@ -30,7 +30,7 @@ export class OverlayManager {
       height: dimensions.y,
       webPreferences: {
         backgroundThrottling: false,
-        preload: join(__dirname, '../preload.js')
+        preload: join(__dirname, 'src/preload.js')
       }
     };
     Object.assign(opts, this.store.get(`overlay:${url}:bounds`, {}));

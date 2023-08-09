@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
-import { NgSerializerService } from '@kaiu/ng-serializer';
 import { catchError, map } from 'rxjs/operators';
 import { XivapiOptions, XivapiService } from '@xivapi/angular-client';
 import { ExtractRow, I18nName, Region, SearchFilter, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
-import { I18nToolsService } from '../tools/i18n-tools.service';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Language } from '../data/language';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
@@ -26,19 +24,29 @@ import { LazyGatheringNodeSearch } from '@ffxiv-teamcraft/data/model/lazy-gather
 import { LazyNpcSearch } from '@ffxiv-teamcraft/data/model/lazy-npc-search';
 import { LazyStatusSearch } from '@ffxiv-teamcraft/data/model/lazy-status-search';
 import { LazyTraitSearch } from '@ffxiv-teamcraft/data/model/lazy-trait-search';
+import { IpcService } from '../electron/ipc.service';
+import { PlatformService } from '../tools/platform.service';
+import { SearchParams, XIVSearchFilter } from '@ffxiv-teamcraft/search';
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
 
   public searchLang = this.translate.currentLang;
 
+  public ingesting$ = new BehaviorSubject(false);
+
   constructor(private http: HttpClient,
-              private i18n: I18nToolsService,
+              private ipc: IpcService,
+              private platform: PlatformService,
               private settings: SettingsService,
               private xivapi: XivapiService,
-              private serializer: NgSerializerService,
               private lazyData: LazyDataFacade,
               private translate: TranslateService) {
+    if (this.platform.isDesktop()) {
+      this.ipc.on('search:ingest', (event, ingesting) => {
+        this.ingesting$.next(ingesting);
+      });
+    }
   }
 
   private get isCompatible() {
@@ -54,18 +62,13 @@ export class DataService {
   }
 
   public setSearchLang(lang: Language): void {
+    const changed = lang !== this.searchLang;
     this.searchLang = lang;
+    if (changed && this.platform.isDesktop()) {
+      this.ipc.send('search:lang', lang);
+    }
   }
 
-  /**
-   * Fires a search request to the search api in order to get results based on filters.
-   * @param {string} query
-   * @param {SearchFilter[]} filters
-   * @param onlyCraftable
-   * @param sort
-   * @param ignoreLanguageSetting
-   * @returns {Observable<Recipe[]>}
-   */
   public searchItem(query: string, filters: SearchFilter[], onlyCraftable: boolean, sort: [string, 'asc' | 'desc'] = [null, 'desc'], ignoreLanguageSetting = false) {
     return this.search(query, onlyCraftable ? SearchType.RECIPE : SearchType.ITEM, filters, sort);
   }
@@ -101,7 +104,7 @@ export class DataService {
           if (f.value.exclude) {
             return [
               {
-                column: f.name,
+                field: f.name,
                 operator: '!!',
                 value: ''
               }
@@ -109,12 +112,12 @@ export class DataService {
           } else {
             return [
               {
-                column: f.name,
+                field: f.name,
                 operator: '>=',
                 value: f.value.min
               },
               {
-                column: f.name,
+                field: f.name,
                 operator: '<=',
                 value: f.value.max
               }
@@ -122,37 +125,49 @@ export class DataService {
           }
         } else if (Array.isArray(f.value)) {
           return [{
-            column: f.name,
+            field: f.name,
             operator: '|=',
-            value: f.value.filter(Boolean).join(';')
+            value: f.value.filter(Boolean)
           }];
         } else {
           return [{
-            column: f.name,
+            field: f.name,
             operator: '=',
             value: f.value
           }];
         }
       })
-      .flat()
-      .map(filter => `${filter.column}${filter.operator}${filter.value}`)
-      .join(',');
-    const params: any = {
+      .flat();
+    const params: SearchParams = {
       query,
       type,
-      lang: this.searchLang
+      sort,
+      filters: filters as XIVSearchFilter[],
+      lang: this.searchLang as keyof I18nName
     };
-    if (filters.length > 0) {
-      params['filters'] = filters;
+    if (this.platform.isDesktop()) {
+      return new Observable(subscriber => {
+        this.ipc.once('search:results', (event, res) => {
+          subscriber.next(res);
+          subscriber.complete();
+        });
+        this.ipc.send('search', { ...params, filters, sort });
+      });
+    } else {
+      if (filters.length > 0) {
+        (params as any).filters = filters
+          .map(filter => `${filter.field}${filter.operator}${Array.isArray(filter.value) ? filter.value.join(';') : filter.value}`)
+          .join(',');
+      }
+      if (sort[0]) {
+        params['sort_field'] = sort[0];
+        params['sort_order'] = sort[1];
+      }
+      if (environment.useLocalAPI) {
+        return this.devSearch(params);
+      }
+      return this.prodSearch(params);
     }
-    if (sort[0]) {
-      params['sort_field'] = sort[0];
-      params['sort_order'] = sort[1];
-    }
-    if (environment.useLocalAPI) {
-      return this.devSearch(params);
-    }
-    return this.prodSearch(params);
   }
 
   private devSearch(params: any): Observable<SearchResult[]> {

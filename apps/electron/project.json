@@ -1,0 +1,41 @@
+{
+  "name": "electron",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/electron/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/electron",
+        "main": "apps/electron/src/main.ts",
+        "tsConfig": "apps/electron/tsconfig.app.json",
+        "assets": [
+          "apps/electron/src/loader.html"
+        ]
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "electron:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "electron:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/electron/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,27 +1,17 @@
 {
-  "compileOnSave": false,
+  "extends": "../../tsconfig.base.json",
+  "files": [],
+  "include": [],
   "compilerOptions": {
-    "target": "ES2017",
-    "importHelpers": true,
-    "module": "commonjs",
-    "sourceMap": false,
-    "declaration": false,
-    "moduleResolution": "Node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "downlevelIteration": true,
     "esModuleInterop": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "baseUrl": ".",
-    "paths": {},
-    "rootDir": ".",
-    "outDir": "../../dist/apps/electron"
+    "sourceMap": true
   },
-  "files": [
-    "src/main.ts",
-    "src/workers/index.ts",
-    "src/preload.ts"
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
   ]
 }
