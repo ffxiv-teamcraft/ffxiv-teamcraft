@@ -51,7 +51,8 @@
     "Only_craftable": "Only recipes",
     "Want_filters": "Need more filters?",
     "Open_search": "Open search page instead",
-    "Island_recipe": "Island Sanctuary recipe"
+    "Island_recipe": "Island Sanctuary recipe",
+    "Ingesting_index": "Ingesting content for the newly selected language, this should take few seconds..."
   },
   "Use_as_default_character": "Usar como personagem padrão",
   "Download_desktop_app": "Baixar app desktop",
@@ -206,6 +207,8 @@
     "Visibility": "Visibility",
     "Public": "Public",
     "Private": "Private",
+    "Pagination_text": "{{start}}-{{end}} of {{total}} items",
+    "And_X_more": "and {{amount}} more...",
     "DAYS": {
       "Monday": "Monday",
       "Tuesday": "Tuesday",
@@ -534,6 +537,9 @@
     "Housing_map_explain": "The housing map in which your house is",
     "Reset_linked_characters_ok": "Character links have been reset",
     "Display_slow_mode_notification": "Display crafting/gathering slow mode notification",
+    "New_child_window": "Create a new child window",
+    "Child_windows_title": "You can now open child windows in Teamcraft desktop !",
+    "Child_windows_description": "When clicking something that navigates (like the \"i\" button for database pages or any link in the app), use ctrl + click or middle click instead to open in a new window. Additionally, you can create a new window using the new button next to the github stars count.",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -1373,10 +1379,7 @@
     "Ilvl": "ilvl",
     "Cost": "Custo",
     "Class_job": "Class/Job",
-    "Damage_phys": "Dano Físico",
-    "Damage_mag": "Dano Mágico",
-    "Defense_phys": "Defesa Física",
-    "Defense_mag": "Defesa Mágica"
+    "Masterbooks": "Requires a masterbook"
   },
   "SEARCH_INTRO": {
     "Slogan": "Crafte, compartilhe, contribua",
@@ -1610,7 +1613,7 @@
     "Currencies": "Currencies",
     "Rowena_splendor": "Rowena's splendors",
     "Unlocks": "Unlocks",
-    "Jump_to_page": "Open item db page",
+    "Jump_to_page": "Open db page",
     "Ishgard_restoration": "Ishgardian restoration",
     "ITEM": {
       "Masterpiece_exp_tooltip": "% of exp needed for next level",
