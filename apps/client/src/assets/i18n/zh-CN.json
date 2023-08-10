@@ -1853,6 +1853,7 @@
     "NPC": "NPC",
     "Leve": "理符任务",
     "Leve_info_message": "左侧的理符任务功能可以帮你准备材料并计算经验奖励",
+    "Comparison_tip": "You can compare items by selecting them and setting selection to comparison mode",
     "Monster": "怪物",
     "Lore": "台词&设定",
     "Fate": "危命任务",
@@ -1964,6 +1965,10 @@
     "Exclude": "反选",
     "Select_stat": "选择属性",
     "Level": "等级",
+    "SELECTION_MODE": {
+      "List": "List",
+      "Compare": "Compare"
+    },
     "SORT_BY": {
       "Relevance": "相关性",
       "ID": "ID",
