@@ -1853,6 +1853,7 @@
     "NPC": "PNJ",
     "Leve": "Mandat",
     "Leve_info_message": "Vous pouvez utiliser la page /levequests pour préparer des kits de mandats et calculer le gain en exp total",
+    "Comparison_tip": "You can compare items by selecting them and setting selection to comparison mode",
     "Monster": "Monstre",
     "Lore": "Histoire",
     "Fate": "Aléa",
@@ -1964,6 +1965,10 @@
     "Exclude": "Exclure",
     "Select_stat": "Sélectionnez une stat",
     "Level": "Niveau",
+    "SELECTION_MODE": {
+      "List": "List",
+      "Compare": "Compare"
+    },
     "SORT_BY": {
       "Relevance": "Pertinence",
       "ID": "ID",
