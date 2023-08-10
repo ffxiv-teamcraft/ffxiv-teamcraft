@@ -1853,6 +1853,7 @@
     "NPC": "NPC",
     "Leve": "길드 의뢰",
     "Leve_info_message": "길드의뢰 페이지를 이용하여 의뢰 물품들을 제작하고 의뢰당 경험치를 미리 계산할 수 있습니다.",
+    "Comparison_tip": "You can compare items by selecting them and setting selection to comparison mode",
     "Monster": "몬스터",
     "Lore": "대사 및 설정",
     "Fate": "돌발 임무",
@@ -1964,6 +1965,10 @@
     "Exclude": "제외",
     "Select_stat": "능력치 선택",
     "Level": "레벨",
+    "SELECTION_MODE": {
+      "List": "List",
+      "Compare": "Compare"
+    },
     "SORT_BY": {
       "Relevance": "관련성",
       "ID": "ID",
