@@ -48,7 +48,7 @@ export class SearchService implements OnApplicationBootstrap {
     }));
   }
 
-  public search(type: SearchType, query: string, filters: XIVSearchFilter[], lang: string, sort: [string, 'asc' | 'desc'] = ['', 'desc'], fullData = false): SearchResult[] {
+  public search(type: SearchType, query: string, filters: XIVSearchFilter[], lang: string, sort: [string, 'asc' | 'desc'] = ['', 'desc']): SearchResult[] {
     const index: XIVSearch = this.indexes[lang];
     if (type === SearchType.RECIPE) {
       type = SearchType.ITEM;
@@ -62,7 +62,7 @@ export class SearchService implements OnApplicationBootstrap {
       return Object.values(SearchType)
         .filter(v => !['Recipe', 'Any', 'Lore'].includes(v))
         .map(content => {
-          return index.search(content, query, filters, fullData)
+          return index.search(content, query, filters, sort)
             .map(row => {
               row.type = content;
               return row;
@@ -70,7 +70,7 @@ export class SearchService implements OnApplicationBootstrap {
         })
         .flat();
     } else {
-      return index.search(type, query, filters, fullData)
+      return index.search(type, query, filters, sort)
         .map(row => {
           row.type = type;
           return row;

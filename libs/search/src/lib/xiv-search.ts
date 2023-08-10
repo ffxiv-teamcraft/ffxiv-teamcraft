@@ -70,7 +70,7 @@ export class XIVSearch {
     );
   }
 
-  public search(content: SearchType, query: string, filters: XIVSearchFilter[] = [], fullData = false): SearchResult[] {
+  public search(content: SearchType, query: string, filters: XIVSearchFilter[] = [], sort: [string, 'asc' | 'desc']): SearchResult[] {
     if (query.length === 0 && filters.length === 0) {
       return [];
     }
@@ -95,14 +95,17 @@ export class XIVSearch {
           return this.doCompare(get(doc, f.field), f.operator, f.value);
         });
       })
-      .map(row => {
-        if (fullData) {
-          const { data, ...flat } = row;
-          return {
-            ...flat,
-            ...data
-          };
+      .sort((a, b) => {
+        const [field, direction] = sort;
+        if (field === '') {
+          return 0;
         }
+        if (direction === 'asc') {
+          return a[field] < b[field] ? -1 : 1;
+        }
+        return b[field] < a[field] ? -1 : 1;
+      })
+      .map(row => {
         return {
           en: row.en,
           de: row.de,

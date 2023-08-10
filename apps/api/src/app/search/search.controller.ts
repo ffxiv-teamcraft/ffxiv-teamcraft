@@ -68,8 +68,7 @@ export class SearchController {
           (query || '').toLowerCase(),
           transformedFilters,
           lang,
-          [sortField, order],
-          fullData === 'true'
+          [sortField, order]
         ).map(row => {
           if ([SearchType.ITEM, SearchType.RECIPE].includes(row.type)) {
             return {

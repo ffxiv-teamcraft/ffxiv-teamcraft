@@ -336,7 +336,7 @@
             <nz-option *ngFor="let entry of possibleSortEntries$ | async" [nzLabel]="('SEARCH.SORT_BY.'+entry.label) | translate"
                        [nzValue]="entry.field"></nz-option>
           </nz-select>
-          <nz-select (ngModelChange)="sortOrder$.next($event)" [ngModel]="sortOrder$ | async" (click)="$event.stopPropagation()">
+          <nz-select (ngModelChange)="sortOrder$.next($event)" [ngModel]="sortOrder$ | async" (click)="$event.stopPropagation()" [disabled]="(sortBy$ | async) === ''">
             <nz-option [nzLabel]="'SEARCH.Sort_asc' | translate" nzValue="asc"></nz-option>
             <nz-option [nzLabel]="'SEARCH.Sort_desc' | translate" nzValue="desc"></nz-option>
           </nz-select>
