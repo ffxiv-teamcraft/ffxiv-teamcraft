@@ -1853,6 +1853,7 @@
     "NPC": "NPC",
     "Leve": "Ливквест",
     "Leve_info_message": "Вы можете использовать страницу с ливквестами для подготовки списков и расчета опыта за них",
+    "Comparison_tip": "You can compare items by selecting them and setting selection to comparison mode",
     "Monster": "Монстр",
     "Lore": "История",
     "Fate": "Fate",
@@ -1964,6 +1965,10 @@
     "Exclude": "Исключить",
     "Select_stat": "Выберите параметр",
     "Level": "Уровень",
+    "SELECTION_MODE": {
+      "List": "List",
+      "Compare": "Compare"
+    },
     "SORT_BY": {
       "Relevance": "Релевантность",
       "ID": "ID",
