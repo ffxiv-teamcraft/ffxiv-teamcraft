@@ -1853,6 +1853,7 @@
     "NPC": "PNJ",
     "Leve": "Misión Leve",
     "Leve_info_message": "Puede usar la página de misiones leve para preparar conjuntos leve y calcular la recompensa de exp por sus leves",
+    "Comparison_tip": "You can compare items by selecting them and setting selection to comparison mode",
     "Monster": "Monstruo",
     "Lore": "Historia",
     "Fate": "Fate",
@@ -1964,6 +1965,10 @@
     "Exclude": "Exclude",
     "Select_stat": "Select a stat",
     "Level": "Level",
+    "SELECTION_MODE": {
+      "List": "List",
+      "Compare": "Compare"
+    },
     "SORT_BY": {
       "Relevance": "Relevancia",
       "ID": "ID",
