@@ -6,7 +6,7 @@ import { observeInput } from '../../../core/rxjs/observe-input';
 import { filter, map, switchMap } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-xivdb-tooltip-component',
+  selector: 'app-item-tooltip-component',
   templateUrl: './xivapi-item-tooltip.component.html',
   styleUrls: ['./xivapi-item-tooltip.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -44,11 +44,6 @@ export class XivapiItemTooltipComponent implements OnInit {
    * Main attributes are ilvl, attack damage or duration for foods.
    */
   public mainAttributes = [];
-
-  getDespawnTime(time: number, uptime: number): string {
-    const res = (time + uptime / 60) % 24;
-    return res.toString();
-  }
 
   public trackByNode(index: number, node: GatheringNode): number {
     return node.id;

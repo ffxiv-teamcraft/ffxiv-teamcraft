@@ -36,7 +36,7 @@ import { AlarmsModule } from '../../core/alarms/alarms.module';
     AlarmsModule
   ],
   declarations: [XivapiActionTooltipComponent, XivapiItemTooltipComponent, XivapiItemTooltipDirective, XivapiActionTooltipDirective, UiTextPipe],
-  exports: [XivapiItemTooltipDirective, XivapiActionTooltipDirective, UiTextPipe],
+  exports: [XivapiItemTooltipDirective, XivapiActionTooltipDirective, UiTextPipe, XivapiItemTooltipComponent],
   providers: [TooltipDataService]
 })
 export class TooltipModule {

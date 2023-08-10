@@ -27,6 +27,7 @@ import { IS_HEADLESS } from '../../../../environments/is-headless';
 import { EnvironmentService } from '../../../core/environment.service';
 import { toIndex } from '../../../core/rxjs/to-index';
 import { jobAbbrs } from '@ffxiv-teamcraft/data/handmade/job-abbr-en';
+import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 
 @Component({
   selector: 'app-search',
@@ -57,6 +58,14 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
 
   public searchType$: BehaviorSubject<SearchType> =
     new BehaviorSubject<SearchType>(<SearchType>localStorage.getItem('search:type') || SearchType.ITEM);
+
+  public showComparisonTip$ = this.searchType$.pipe(
+    map(type => {
+      return [SearchType.ITEM, SearchType.RECIPE, SearchType.ANY].includes(type);
+    })
+  );
+
+  public selectionMode$ = new LocalStorageBehaviorSubject<'list' | 'compare'>('search:selection-mode', 'list');
 
   public availableLanguages = ['en', 'de', 'fr', 'ja', 'ko', 'zh'];
 
@@ -499,7 +508,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
 
   public removeSelection(row: SearchResult, items: SearchResult[]): void {
     row.selected = false;
-    this.rowSelectionChange(row);
+    this.rowSelectionChange(items, row);
     items.forEach(i => i.itemId === row.itemId ? i.selected = false : null);
   }
 
@@ -513,7 +522,12 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     this.allSelected = selected;
   }
 
-  public rowSelectionChange(row: SearchResult): void {
+  public rowSelectionChange(items: SearchResult[], row: SearchResult): void {
+    (items || []).forEach(item => {
+      if (item.itemId === row.itemId) {
+        item.selected = row.selected;
+      }
+    });
     if (row.selected) {
       this.selection$.next([...this.selection$.value, row]);
     } else {

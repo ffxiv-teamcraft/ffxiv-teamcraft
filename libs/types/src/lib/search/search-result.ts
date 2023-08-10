@@ -16,5 +16,5 @@ export interface SearchResult extends BaseSearchResult {
   selected?: boolean;
   // Is it a custom item?
   isCustom?: boolean;
-  source?: { id: number, sources: ItemSource[] };
+  sources: ItemSource[];
 }

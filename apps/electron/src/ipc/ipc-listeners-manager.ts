@@ -115,7 +115,7 @@ export class IpcListenersManager {
     let res = [];
     if (params.type === SearchType.ANY) {
       res = IpcListenersManager.SEARCHABLE_CONTENT.map(content => {
-        return index.search(content, params.query, params.filters)
+        return index.search(content, params.query, params.filters, params.sort)
           .map(row => {
             row.type = content;
             return row;
@@ -123,7 +123,7 @@ export class IpcListenersManager {
       })
         .flat();
     } else {
-      res = index.search(params.type, params.query, params.filters)
+      res = index.search(params.type, params.query, params.filters, params.sort)
         .map(row => {
           row.type = params.type;
           return row;
@@ -133,7 +133,7 @@ export class IpcListenersManager {
       if ([SearchType.ITEM, SearchType.RECIPE].includes(row.type)) {
         return {
           ...row,
-          source: this.extracts[row.itemId]
+          sources: this.extracts[row.itemId]?.sources || []
         };
       }
       return row;

@@ -25,15 +25,18 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
 import { CompanyWorkshopTreeModule } from '../../modules/company-workshop-tree/company-workshop-tree.module';
 import { SearchJobPickerComponent } from './search-job-picker/search-job-picker.component';
 import { SimpleTabsetModule } from '../../modules/simple-tabset/simple-tabset.module';
-import {NzTypographyModule} from "ng-zorro-antd/typography";
+import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { ItemDetailsBoxComponent } from './item-details-box/item-details-box.component';
+import { TooltipModule } from '../../modules/tooltip/tooltip.module';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
 
 const routes: Routes = [
   {
     path: '',
     component: SearchComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
-  }
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+  },
 ];
 
 @NgModule({
@@ -42,7 +45,6 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-
 
     CoreModule,
     ListModule,
@@ -63,9 +65,10 @@ const routes: Routes = [
     CompanyWorkshopTreeModule,
     SimpleTabsetModule,
     NzTypographyModule,
-    NzPaginationModule
+    NzPaginationModule,
+    TooltipModule,
+    NzRadioModule
   ],
-  declarations: [SearchComponent, SearchIntroComponent, SearchResultComponent, SearchJobPickerComponent]
+  declarations: [SearchComponent, SearchIntroComponent, SearchResultComponent, SearchJobPickerComponent, ItemDetailsBoxComponent],
 })
-export class SearchModule {
-}
+export class SearchModule {}

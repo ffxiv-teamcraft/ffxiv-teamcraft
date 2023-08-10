@@ -45,7 +45,7 @@ export class ItemSourcesDisplayComponent extends TeamcraftComponent {
   sources: ItemSource[];
 
   @Input()
-  item: ListRow;
+  item: Pick<ListRow, 'id' | 'sources'>;
 
   @Input()
   overlay = false;

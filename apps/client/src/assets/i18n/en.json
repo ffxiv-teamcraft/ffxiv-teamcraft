@@ -264,8 +264,8 @@
       "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
       "LEVE_ALLOWANCES": "Leve allowances",
       "LEVE_ALLOWANCES_DESCRIPTION": "You get 3 more leve allowances",
-      "OCEAN_FISHING" : "Ocean fishing",
-      "OCEAN_FISHING_DESCRIPTION" : "Ocean fishing will start."
+      "OCEAN_FISHING": "Ocean fishing",
+      "OCEAN_FISHING_DESCRIPTION": "Ocean fishing will start."
     },
     "CUSTOM": {
       "Title": "Add custom alarm",
@@ -1853,6 +1853,7 @@
     "NPC": "NPC",
     "Leve": "Levequest",
     "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves",
+    "Comparison_tip": "You can compare items by selecting them and setting selection to comparison mode",
     "Monster": "Monster",
     "Lore": "Lore",
     "Fate": "Fate",
@@ -1964,6 +1965,10 @@
     "Exclude": "Exclude",
     "Select_stat": "Select a stat",
     "Level": "Level",
+    "SELECTION_MODE": {
+      "List": "List",
+      "Compare": "Compare"
+    },
     "SORT_BY": {
       "Relevance": "Relevance",
       "ID": "ID",

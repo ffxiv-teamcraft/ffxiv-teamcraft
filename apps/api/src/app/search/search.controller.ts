@@ -73,7 +73,7 @@ export class SearchController {
           if ([SearchType.ITEM, SearchType.RECIPE].includes(row.type)) {
             return {
               ...row,
-              source: extracts[row.itemId]
+              sources: extracts[row.itemId]?.sources || []
             };
           }
           return row;

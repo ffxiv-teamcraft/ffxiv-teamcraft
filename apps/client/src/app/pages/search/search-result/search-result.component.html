@@ -30,7 +30,7 @@
         <app-company-workshop-tree-button *ngIf="row.recipe?.job === 0" [recipeId]="row.recipe.recipeId" size="small"></app-company-workshop-tree-button>
       </div>
       <div class="flex-row align-center">
-        <app-item-sources-display *ngIf="row.source" [forceHorizontal]="true" [item]="row.source" [sources]="row.source.sources" [dbDisplay]="true"></app-item-sources-display>
+        <app-item-sources-display *ngIf="row.sources.length > 0" [forceHorizontal]="true" [item]="{id: row.itemId, sources: row.sources}" [sources]="row.sources" [dbDisplay]="true"></app-item-sources-display>
       </div>
     </div>
   </div>

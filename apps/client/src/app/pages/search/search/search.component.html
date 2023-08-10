@@ -336,7 +336,8 @@
             <nz-option *ngFor="let entry of possibleSortEntries$ | async" [nzLabel]="('SEARCH.SORT_BY.'+entry.label) | translate"
                        [nzValue]="entry.field"></nz-option>
           </nz-select>
-          <nz-select (ngModelChange)="sortOrder$.next($event)" [ngModel]="sortOrder$ | async" (click)="$event.stopPropagation()" [disabled]="(sortBy$ | async) === ''">
+          <nz-select (ngModelChange)="sortOrder$.next($event)" [ngModel]="sortOrder$ | async" (click)="$event.stopPropagation()"
+                     [disabled]="(sortBy$ | async) === ''">
             <nz-option [nzLabel]="'SEARCH.Sort_asc' | translate" nzValue="asc"></nz-option>
             <nz-option [nzLabel]="'SEARCH.Sort_desc' | translate" nzValue="desc"></nz-option>
           </nz-select>
@@ -348,6 +349,9 @@
 <div *ngIf="(searchType$ | async) === searchTypes.LEVE" fxLayout="row" fxLayoutAlign="center center">
   <i>{{'SEARCH_TYPES.Leve_info_message' | translate}}</i>
 </div>
+<div *ngIf="showComparisonTip$ | async | ifMobile: false" fxLayout="row" fxLayoutAlign="center center">
+  <i>{{'SEARCH_TYPES.Comparison_tip' | translate}}</i>
+</div>
 <div *ngIf="showIntro">
   <app-search-intro></app-search-intro>
 </div>
@@ -355,40 +359,55 @@
   <div *ngIf="results$ | async as results" class="flex-column justify-start align-center">
     <div *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE  || searchType === searchTypes.ANY"
          class="addition-buttons">
-      <button nz-button (click)="selectAll(results, !allSelected)">{{(allSelected ? 'Unselect_all' : 'Select_all') | translate}}</button>
+      <button nz-button (click)="selectAll(results.paginated, !allSelected)">{{(allSelected ? 'Unselect_all' : 'Select_all') | translate}}</button>
     </div>
     <ng-container *ngIf="selection$ | async as selection">
-      <div *ngIf="selection.length > 0" class="selection">
-        <nz-divider nzOrientation="left" [nzText]="'Selection' | translate"></nz-divider>
-        <div nz-row>
-          <div nz-col nzMd="4" nzSm="24" *ngFor="let item of selection" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center"
-               class="selection-row">
-            <div (nzOnConfirm)="removeSelection(item, results)" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" class="delete-icon">
-              <i nz-icon nzType="close"></i>
-            </div>
-            <app-item-icon *ngIf="item.contentType === 'items'" [icon]="item.icon" [itemId]="item.itemId" [width]="24"></app-item-icon>
-            <app-item-icon *ngIf="item.contentType === 'islandBuildings'" [icon]="item.icon" [itemId]="null" [width]="24"
-                           [tooltipDisabled]="true"></app-item-icon>
-            <div fxLayout="column">
-              <div>
-                <app-i18n-name [content]="item.contentType" [id]="item.itemId"></app-i18n-name>
+      <nz-card *ngIf="selection.length > 0" class="selection" [nzTitle]="'Selection' | translate" nzSize="small"
+               [nzExtra]="selectionModeToggle | ifMobile: null">
+        <ng-template #selectionModeToggle>
+          <nz-radio-group [ngModel]="selectionMode$ | async" (ngModelChange)="selectionMode$.next($event)" nzButtonStyle="solid">
+            <label nz-radio-button nzValue="list">{{'SEARCH.SELECTION_MODE.List' | translate}}</label>
+            <label nz-radio-button nzValue="compare">{{'SEARCH.SELECTION_MODE.Compare' | translate}}</label>
+          </nz-radio-group>
+        </ng-template>
+        <div nz-row class="selection-content">
+          <ng-container *ngIf="(selectionMode$ | async) === 'list'">
+            <div nz-col nzMd="4" nzSm="24" *ngFor="let item of selection" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center"
+                 class="selection-row">
+              <div (nzOnConfirm)="removeSelection(item, results.paginated)" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" class="delete-icon">
+                <i nz-icon nzType="close"></i>
               </div>
-              <div fxLayout="row" fxLayoutGap="5px">
-                <div>x{{item.amount | number:'1.0':translate.currentLang}}</div>
-                <div *ngIf="item.recipe && item.recipe.job > 0" class="flex-row align-center gap-2">
-                  <div class="companion-svg" [innerHtml]="item.recipe.job | jobUnicode"></div>
-                  lvl{{item.recipe.lvl}} <span
-                  *ngIf="item.recipe.stars !== undefined">{{getStars(item.recipe.stars)}}</span>
+              <app-item-icon *ngIf="item.contentType === 'items'" [icon]="item.icon" [itemId]="item.itemId" [width]="24"></app-item-icon>
+              <app-item-icon *ngIf="item.contentType === 'islandBuildings'" [icon]="item.icon" [itemId]="null" [width]="24"
+                             [tooltipDisabled]="true"></app-item-icon>
+              <div fxLayout="column">
+                <div>
+                  <app-i18n-name [content]="item.contentType" [id]="item.itemId"></app-i18n-name>
+                </div>
+                <div fxLayout="row" fxLayoutGap="5px">
+                  <div>x{{item.amount | number:'1.0':translate.currentLang}}</div>
+                  <div *ngIf="item.recipe && item.recipe.job > 0" class="flex-row align-center gap-2">
+                    <div class="companion-svg" [innerHtml]="item.recipe.job | jobUnicode"></div>
+                    lvl{{item.recipe.lvl}} <span
+                    *ngIf="item.recipe.stars !== undefined">{{getStars(item.recipe.stars)}}</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </ng-container>
+          <ng-container *ngIf="(selectionMode$ | async) === 'compare'">
+            <div class="flex-row flex-row-wrap gap-10 space-between">
+              <div *ngFor="let item of selection">
+                <app-item-details-box [searchResult]="item" (remove)="removeSelection(item, results.paginated)"></app-item-details-box>
+              </div>
+            </div>
+          </ng-container>
         </div>
         <div fxLayout="row" fxLayoutGap="10px" class="selection-buttons">
           <button (click)="addSelectedItemsToList(selection)" nz-button nzBlock>{{'LISTS.Add_selection' | translate}}</button>
-          <button (click)="selection$.next([])" nz-button nzDanger nzBlock>{{'LISTS.Reset_selection' | translate}}</button>
+          <button (click)="selection$.next([]);selectAll(results.paginated, false)" nz-button nzDanger nzBlock>{{'LISTS.Reset_selection' | translate}}</button>
         </div>
-      </div>
+      </nz-card>
     </ng-container>
     <div *ngIf="patch$ | async as patch" class="patch" fxLayout="column" fxLayoutAlign="center center">
       <a fxLayout="column" fxLayoutAlign="center center" routerLink="/db/{{translate.currentLang}}/patch/{{patch.ID}}">
@@ -408,7 +427,7 @@
                            [odd]="odd" [row]="row" [currentLang]="translate.currentLang"
                            [selected]="row.selected"
                            (addItemsToList)="addItemsToList([row])"
-                           (selectedChange)="rowSelectionChange($event)"
+                           (selectedChange)="rowSelectionChange(results.paginated, $event)"
                            (createQuickList)="createQuickList(row)"
                            (amountChanged)="afterAmountChanged($event)"
                            (openInSimulator)="openInSimulator(row.itemId, row.recipe.recipeId)"

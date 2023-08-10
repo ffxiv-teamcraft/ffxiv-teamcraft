@@ -497,7 +497,8 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
       icon: '',
       contentType: 'items',
       addCrafts: false,
-      amount: 1
+      amount: 1,
+      sources: []
     };
   }
 
