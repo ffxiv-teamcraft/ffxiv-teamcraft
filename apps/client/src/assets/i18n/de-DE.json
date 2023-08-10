@@ -1853,6 +1853,7 @@
     "NPC": "NPC",
     "Leve": "Freibrief",
     "Leve_info_message": "Du kannst die Freibrief-Seite nutzen, um Levekits vorzubereiten und Erfahrungspunkte für deine Freibriefe zu berechnen",
+    "Comparison_tip": "You can compare items by selecting them and setting selection to comparison mode",
     "Monster": "Monster",
     "Lore": "Handlung",
     "Fate": "FATE",
@@ -1964,6 +1965,10 @@
     "Exclude": "Ausschließen",
     "Select_stat": "Attribut auswählen",
     "Level": "Stufe",
+    "SELECTION_MODE": {
+      "List": "List",
+      "Compare": "Compare"
+    },
     "SORT_BY": {
       "Relevance": "Relevanz",
       "ID": "ID",
