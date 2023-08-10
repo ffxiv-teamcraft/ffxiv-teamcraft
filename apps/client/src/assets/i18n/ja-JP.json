@@ -1853,6 +1853,7 @@
     "NPC": "NPC",
     "Leve": "ギルドリーヴ",
     "Leve_info_message": "ギルドリーヴのページを利用して依頼物品を制作し、依頼当たり経験値を予め計算することができます。",
+    "Comparison_tip": "You can compare items by selecting them and setting selection to comparison mode",
     "Monster": "モンスター",
     "Lore": "台詞及び設定",
     "Fate": "F.A.T.E",
@@ -1964,6 +1965,10 @@
     "Exclude": "除く",
     "Select_stat": "ステータス選択",
     "Level": "レベル",
+    "SELECTION_MODE": {
+      "List": "List",
+      "Compare": "Compare"
+    },
     "SORT_BY": {
       "Relevance": "関連性",
       "ID": "ID",
