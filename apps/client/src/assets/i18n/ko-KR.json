@@ -453,7 +453,7 @@
     "Connected_with_tipeee": "Tipeee에 연결됨",
     "Nickname": "닉네임",
     "Nickname_used": "이미 사용중인 닉네임입니다.",
-    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the supporter exclusive features properly.",
+    "No_nickname_warning": "후원자 전용 기능들을 사용하기 위해 설정 페이지에서 닉네임을 설정하시기 바랍니다.",
     "Show_devtools": "개발 도구 표시",
     "Clear_cache": "캐시 지우기(프로그램이 다시 시작됩니다)",
     "Enable_item_tags": "아이템 태그 사용",
@@ -535,13 +535,13 @@
     "Disable_hardware_acceleration": "하드웨어 가속 비활성화",
     "Housing_map": "모험가 거주구 구역",
     "Housing_map_explain": "The housing map in which your house is",
-    "Reset_linked_characters_ok": "Character links have been reset",
-    "Display_slow_mode_notification": "Display crafting/gathering slow mode notification",
+    "Reset_linked_characters_ok": "캐릭터 링크가 재설정되었습니다",
+    "Display_slow_mode_notification": "제작/채집 슬로우 모드 알림 표시",
     "New_child_window": "라라펠만 한 팀크래프트 창 열기",
     "Child_windows_title": "라라펠만 한 팀크래프트 앱을 열 수 있습니다 !",
     "Child_windows_description": "When clicking something that navigates (like the \"i\" button for database pages or any link in the app), use ctrl + click or middle click instead to open in a new window. Additionally, you can create a new window using the new button next to the github stars count.",
     "Desktop_tip_title": "Teamcraft has a desktop app ! Better, faster, stronger",
-    "Desktop_tip_description": "Desktop app is way faster by using offline search, it also adds overlay features and more using packet capture (which is disabled by default if you want to avoid using packet capture). It's strongly advized to use it instead of web version for a better experience.",
+    "Desktop_tip_description": "데스크톱 앱은 더 빠른 오프라인 검색 기능을 사용할 수 있으며, 오버레이 기능과 패킷 캡쳐 기능을 사용할 수 있습니다(기본적으로 패킷 캡쳐는 비활성화된 상태입니다). 더 나은 경험을 원하신다면 데스크톱 앱을 적극 권장합니다.",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -620,7 +620,7 @@
       "Success": "캐릭터가 인증되었습니다! 이 팝업을 닫으셔도 됩니다. 더 이상 코드가 필요없기 때문에, 프로필에서 코드를 제거하셔도 됩니다.",
       "Validate": "인증",
       "Submitted": "로드스톤 프로필 확인 중...",
-      "Error": "Couldn't find the code in your bio. Please make sure you pasted it and applied the changes. If you did so correctly and the verification still failed, please try again in a few hours due to how Lodestone caching works. However, verification only affects Free Company lists and the Commission System, so you can continue using all other features without issue."
+      "Error": "Bio코드를 찾을 수 없습니다. 코드를 붙여넣고 변경사항을 저장했는지 다시 확인해주세요. 만약 올바르게 적용했음에도 계속 실패한다면, 로드스톤의 캐싱 작동 방식에 따라 몇 시간 후에 다시 시도해주세요. 코드가 적용되지 않은 상태에서는 자유부대 목록과 유저 의뢰 기능만 비활성화되며, 다른 기능들은 계속 사용할 수 있습니다."
     }
   },
   "LISTS": {
@@ -637,8 +637,8 @@
     "Add_selection_to_list": "선택항목을 목록에 추가",
     "Your_lists": "내 목록",
     "Outdated_tag": "만료",
-    "No_lists": "No lists to display here",
-    "List_aggregates": "List aggregates",
+    "No_lists": "표시할 목록이 없습니다",
+    "List_aggregates": "목록 집계",
     "Lists_search_placeholder": "목록 검색...",
     "Add_to_a_list": "목록에 추가",
     "Please_pick_recipe": "이 아이템에 대한 제작법을 선택해주세요.",
@@ -798,29 +798,29 @@
     "Consider_requirements": "재료 포함하기",
     "Ignore_requirements": "재료 무시하기",
     "STEP_BY_STEP": {
-      "Previous": "Previous map",
-      "Previous_incomplete": "Previous incomplete map",
-      "Next": "Next map",
-      "Next_incomplete": "Next incomplete map",
-      "Global_list_progress": "Global list progress",
+      "Previous": "이전 지역",
+      "Previous_incomplete": "완료되지 않은 이전 지역",
+      "Next": "다음 지역",
+      "Next_incomplete": "완료되지 않은 다음 지역",
+      "Global_list_progress": "전체 목록 진행률",
       "Alarms": "시간제 목록",
       "Crafts": "Ordered crafts",
       "Toggle_overlay": "단계별 오버레이 켜기/끄기",
-      "Empty_map": "Nothing to do in the current map, closest map for this list is {{closest}}",
-      "Unknown_map": "Unknown map, please change map to allow TC to detect it.",
-      "No_list": "No list selected, please open a list in main window to have the overlay work as intended.",
-      "Others": "Others"
+      "Empty_map": "현재 맵에서는 할 게 없으며, 목록에서 가장 가까운 맵은 {{closest}} 입니다",
+      "Unknown_map": "알 수 없는 지역, 팀크래프트가 감지할 수 있도록 지역을 이동해 주세요.",
+      "No_list": "선택된 목록이 없습니다. 메인 화면에서 목록을 열어 오버레이가 의도한 대로 작동하도록 하세요.",
+      "Others": "기타"
     },
     "DISPLAY_MODE": {
       "Title": "표시 모드",
       "Full": "전체화",
       "Minimalist": "간소화",
       "Step_by_step": "단계별",
-      "Switched_to_minimalist_large_list": "Display mode has been switched to minimalist because this is a large list. You can disable this in settings."
+      "Switched_to_minimalist_large_list": "목록이 너무 많기 때문에 최소화 모드로 보여집니다. 설정에서 이 기능을 해제할 수 있습니다."
     },
     "SOURCES": {
       "Gatherable": "채집 가능, 클릭하여 자세히 보기",
-      "Instances": "Instances"
+      "Instances": "던전"
     },
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
@@ -832,7 +832,7 @@
       "Layout_name": "레이아웃 이름",
       "Invalid_import": "유효하지 않은 불러오기 코드입니다",
       "Global_options": "일반 설정",
-      "Default_readonly_message": "This is one of the default layouts and is read-only. Please create a new layout with the + button to customize your layout.",
+      "Default_readonly_message": "해당 레이아웃은 기본값으로 설정된 레이아웃이며 읽기 전용입니다. 레이아웃을 편집하고 싶다면 + 버튼을 눌러서 새로운 레이아웃을 만드세요.",
       "Buttons": "버튼",
       "Menu": "메뉴",
       "Edit_row_buttons_display": "행 버튼 편집",
