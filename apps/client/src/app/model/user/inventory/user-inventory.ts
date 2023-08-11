@@ -232,7 +232,6 @@ export class UserInventory extends DataModel {
       case 'split':
       case 'transferCrystal':
         fromItem.quantity -= packet.splitCount;
-        console.log(fromItem, toItem);
         if (toItem) {
           toItem.quantity += packet.splitCount;
         } else {

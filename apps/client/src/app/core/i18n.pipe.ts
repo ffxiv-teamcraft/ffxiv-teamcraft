@@ -32,7 +32,7 @@ export class I18nPipe implements PipeTransform, OnDestroy {
   public input?: I18nInput;
 
   private sub: Subscription = combineLatest([
-    observeInput(this, 'input', true),
+    observeInput<I18nPipe, 'input'>(this, 'input'),
     this.i18n.currentLang$
   ]).pipe(
     // Ignoring lang here because it's only used to trigger the change anyways
@@ -58,7 +58,9 @@ export class I18nPipe implements PipeTransform, OnDestroy {
       }
       return of(null);
     })
-  ).subscribe((value: string) => this.setCurrentValue(value));
+  ).subscribe((value: string) => {
+    this.setCurrentValue(value);
+  });
 
   constructor(private readonly i18n: I18nToolsService, private readonly cd: ChangeDetectorRef) {
   }
@@ -79,7 +81,12 @@ export class I18nPipe implements PipeTransform, OnDestroy {
   }
 
   private isI18nEntry(data: any): data is I18nName {
-    return !isNil(data) && typeof data.en === 'string' && typeof data.de === 'string' && typeof data.ja === 'string' && typeof data.fr === 'string';
+    if (isNil(data)) {
+      return false;
+    }
+    const isGlobalEntry = typeof data.en === 'string' && typeof data.de === 'string' && typeof data.ja === 'string' && typeof data.fr === 'string';
+    const isKorenOrChineseEntry = typeof data.ko === 'string' || typeof data.zh === 'string';
+    return isGlobalEntry || isKorenOrChineseEntry;
   }
 
   private isI18nLazy(data: any): data is I18nNameLazy {
@@ -102,10 +109,13 @@ export class I18nPipe implements PipeTransform, OnDestroy {
         next?.name?.de === current?.name?.de &&
         next?.name?.en === current?.name?.en &&
         next?.name?.ja === current?.name?.ja &&
-        next?.name?.fr === current?.name?.fr
+        next?.name?.fr === current?.name?.fr &&
+        next?.name?.ko === current?.name?.ko &&
+        next?.name?.zh === current?.name?.zh
       );
     } else {
-      return next?.de === current?.de && next?.en === current?.en && next?.ja === current?.ja && next?.fr === current?.fr;
+      return next?.de === current?.de && next?.en === current?.en && next?.ja === current?.ja
+        && next?.fr === current?.fr && next?.ko === current?.ko && next?.zh === current?.zh;
     }
   }
 
