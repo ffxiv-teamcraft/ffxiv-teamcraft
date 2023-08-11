@@ -1,6 +1,6 @@
-<div class="flex-column align-start gap-10 intro-container">
-  <h1 fxFlexAlign="center">{{'SEARCH_INTRO.Slogan' | translate}}</h1>
-  <h2 fxFlexAlign="center"
+<div class="flex-column align-stretch gap-10 intro-container">
+  <h1 class="align-self-center">{{'SEARCH_INTRO.Slogan' | translate}}</h1>
+  <h2 class="align-self-center"
       *ngIf="counter$ | async as counter">{{'SEARCH_INTRO.Lists_created_counter' | translate: { amount: counter | number:'1.0-0':translate.currentLang } }}</h2>
   <nz-divider class="intro-divider"></nz-divider>
   <div nz-row [nzGutter]="[10, 10]" class="buttons">
@@ -46,7 +46,7 @@
     </div>
 
   </div>
-  <div fxFlex="1 1 auto" nz-row [nzGutter]="[10, 10]">
+  <div class="flex-auto" nz-row [nzGutter]="[10, 10]">
     <div nz-col [nzMd]="24" [nzXXl]="16">
       <nz-card [nzTitle]="'SEARCH_INTRO.Features_header' | translate">
 

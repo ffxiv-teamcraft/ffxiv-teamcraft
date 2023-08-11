@@ -96,6 +96,7 @@ export class DataService {
     if (type === SearchType.LORE) {
       return this.searchLore(query);
     }
+    performance.mark('search:start');
     const filters = rawFilters
       .filter(f => f.value !== null)
       .map(f => {

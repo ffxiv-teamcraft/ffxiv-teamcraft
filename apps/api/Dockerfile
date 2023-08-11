@@ -7,4 +7,4 @@ COPY --chown=node:node ./apps/api/package.json ./
 RUN yarn
 COPY --chown=node:node ./dist ./dist
 # Run the web service on container startup.
-CMD [ "node", "dist/apps/api/main.js" ]
+CMD [ "node", "--max-old-space-size=8192", "dist/apps/api/main.js" ]
