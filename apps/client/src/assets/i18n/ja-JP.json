@@ -540,6 +540,8 @@
     "New_child_window": "Create a new child window",
     "Child_windows_title": "You can now open child windows in Teamcraft desktop !",
     "Child_windows_description": "When clicking something that navigates (like the \"i\" button for database pages or any link in the app), use ctrl + click or middle click instead to open in a new window. Additionally, you can create a new window using the new button next to the github stars count.",
+    "Desktop_tip_title": "Teamcraft has a desktop app ! Better, faster, stronger",
+    "Desktop_tip_description": "Desktop app is way faster by using offline search, it also adds overlay features and more using packet capture (which is disabled by default if you want to avoid using packet capture). It's strongly advized to use it instead of web version for a better experience.",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
