@@ -3,15 +3,12 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 import { createProxyMiddleware, fixRequestBody } from 'http-proxy-middleware';
-import { graphql } from 'body-parser-graphql';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const port = process.env.PORT || 3333;
   app.enableCors();
   if (environment.production) {
-    app.use(graphql());
-
     const proxy = createProxyMiddleware({
       target: 'https://gubal.ffxivteamcraft.com/v1/graphql',
       pathRewrite: {
