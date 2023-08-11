@@ -90,7 +90,8 @@ export class XivapiItemTooltipDirective implements OnDestroy {
     this._overlayRef = this._overlay.create({
       positionStrategy,
       panelClass: 'app-xivapi-tooltip-panel',
-      direction: this._directionality ? this._directionality.value : 'ltr'
+      direction: this._directionality ? this._directionality.value : 'ltr',
+      width: 575
     });
 
     // Create the portal that will be injected into the overlay, with our component inside.

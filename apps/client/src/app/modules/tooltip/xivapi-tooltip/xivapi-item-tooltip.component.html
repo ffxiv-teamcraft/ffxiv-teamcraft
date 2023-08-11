@@ -85,47 +85,43 @@
     <div *ngIf="minGathering$ | async as minGathering">
       <span>{{'DB.FISH.Min_gathering' | translate}}: {{minGathering}}</span>
     </div>
-    <div *ngIf="fshData$ | async as nodes" class="details">
-      <div *ngFor="let node of nodes; let last = last; trackBy: trackByNode">
-        <div class="flex-column gap-5">
-          <div class="flex-column gap-5 align-start">
-            <img *ngIf="node.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
-                 src="./assets/icons/status/snagging.png">
-            <div *ngIf="node.hookset !== undefined">{{'DB.FISH.OVERLAY.Hookset' | translate}}:&nbsp;<img [src]="node.hookset | hooksetActionId | actionIcon | xivapiIcon" alt=""
-                                                          class="small-icon">&nbsp;{{node.hookset | hooksetActionId | i18nRow:'actions' | i18n}}</div>
-            <div *ngIf="node.tug !== undefined">{{'DB.FISH.OVERLAY.Tug' | translate}}:&nbsp;{{node.tug | tugName | translate}}</div>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="flex-start">
-            <div *ngFor="let bait of node.baits; let index = index; let last = last; trackBy: trackByBait" fxLayout="row" fxLayoutAlign="center center"
-                 fxLayoutGap="5px">
-              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                <div class="icon-container">
-                  <img [src]="bait.id | lazyIcon" class="item-icon small-icon">
-                  <img *ngIf="index > 0" class="hq-overlay small-icon"
-                       src="./assets/icons/HQOverlay.png">
-                </div>
-                <div>{{bait.id | itemName | i18n}}</div>
-              </div>
-              <i *ngIf="!last" nz-icon nzType="caret-right" theme="outline"></i>
+    <div *ngIf="globalFshInfo$ | async as node" class="details">
+      <div class="flex-column gap-5 align-start">
+        <img *ngIf="node.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
+             src="./assets/icons/status/snagging.png">
+        <div *ngIf="node.hookset !== undefined">{{'DB.FISH.OVERLAY.Hookset' | translate}}:&nbsp;<img
+          [src]="node.hookset | hooksetActionId | actionIcon | xivapiIcon" alt=""
+          class="small-icon">&nbsp;{{node.hookset | hooksetActionId | i18nRow:'actions' | i18n}}</div>
+        <div *ngIf="node.tug !== undefined">{{'DB.FISH.OVERLAY.Tug' | translate}}:&nbsp;{{node.tug | tugName | translate}}</div>
+      </div>
+      <ng-container *ngFor="let row of baits$ | async">
+        <div *ngFor="let bait of row; let index = index; let last = last; trackBy: trackByBait"
+             class="flex-row align-center gap-5 bait-row">
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+            <div class="icon-container">
+              <img [src]="bait.id | lazyIcon" class="item-icon small-icon">
+              <img *ngIf="index > 0" class="hq-overlay small-icon"
+                   src="./assets/icons/HQOverlay.png">
             </div>
+            <div>{{bait.id | itemName | i18n}}</div>
           </div>
-          <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
-               fxLayoutGap="10px">
-            <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
-                 src="./assets/icons/status/predators.png">
-            <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutAlign="flex-start center"
-                 fxLayoutGap="5px">
-              <div>{{predator.amount}}x</div>
-              <img class="small-icon" src="{{predator.id | lazyIcon}}"/>
-              <div>{{predator.id | itemName | i18n}}</div>
-            </div>
-          </div>
+          <i *ngIf="!last" nz-icon nzType="caret-right" theme="outline"></i>
         </div>
-        <nz-divider *ngIf="!last"></nz-divider>
+      </ng-container>
+      <div *ngIf="predators$ | async as predators" fxLayout="row" fxLayoutAlign="flex-start center"
+           fxLayoutGap="10px">
+        <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
+             src="./assets/icons/status/predators.png">
+        <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutAlign="flex-start center"
+             fxLayoutGap="5px">
+          <div>{{predator.amount}}x</div>
+          <img class="small-icon" src="{{predator.id | lazyIcon}}"/>
+          <div>{{predator.id | itemName | i18n}}</div>
+        </div>
       </div>
     </div>
-    <div class="xivapi">Item#{{item.id}}</div>
   </div>
+  <div class="xivapi">Item#{{item.id}}</div>
   <div nz-col [nzSpan]="12" class="sources" *ngIf="item.sources?.length > 0">
     <div class="sources-title">{{'DB.How_to_obtain' | translate}}</div>
     <ng-container *ngFor="let source of item.sources; last as last">
