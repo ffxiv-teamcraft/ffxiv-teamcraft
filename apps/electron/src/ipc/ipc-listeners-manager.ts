@@ -408,13 +408,13 @@ export class IpcListenersManager {
     });
 
     ipcMain.on('zoom-in', () => {
-      const currentzoom = this.mainWindow.win.webContents.getZoomLevel();
-      this.mainWindow.win.webContents.setZoomLevel(currentzoom + 1);
+      const currentzoom = this.mainWindow.win.webContents.getZoomFactor();
+      this.mainWindow.win.webContents.setZoomFactor(currentzoom + 0.1);
     });
 
     ipcMain.on('zoom-out', () => {
-      const currentzoom = this.mainWindow.win.webContents.getZoomLevel();
-      this.mainWindow.win.webContents.setZoomLevel(currentzoom - 1);
+      const currentzoom = this.mainWindow.win.webContents.getZoomFactor();
+      this.mainWindow.win.webContents.setZoomFactor(currentzoom - 0.1);
     });
   }
 
