@@ -18,7 +18,7 @@
   "List_fork_in_progress": "목록을 내 계정으로 복사중...",
   "Network_error_logged_out": "네트워크 오류가 감지되었으며 로그아웃 되었습니다. 이 문제가 계속된다면 Tc디스코드 서버의 'Miu' 에게 문의하시길 바랍니다.",
   "Hide_zone_duplicates": "중복 영역 숨기기(여러 영역에 있는 아이템의 경우 한 번만 표시됩니다)",
-  "Patch_notes": "Patch Notes",
+  "Patch_notes": "패치 노트",
   "Patch_notes_footer": "새로운 기능에 만족하시나요? 그렇다면 저희의 프로젝트를 patreon으로 후원하는 것을 고려해보세요.",
   "Selection": "선택",
   "Change_character": "캐릭터",
@@ -52,7 +52,7 @@
     "Want_filters": "더 많은 필터가 필요한가요?",
     "Open_search": "대신 검색 페이지 열기",
     "Island_recipe": "무인도 제작법",
-    "Ingesting_index": "Ingesting content for the newly selected language, this should take few seconds..."
+    "Ingesting_index": "새로 선택한 언어의 데이터를 확인하는 데, 시간이 소요됩니다.."
   },
   "Use_as_default_character": "기본 캐릭터로 사용",
   "Download_desktop_app": "데스크톱 앱 다운로드",
@@ -108,7 +108,7 @@
     "Contributors": "기여자"
   },
   "Patreon_login_success": "Patreon 로그인 성공!",
-  "Tipeee_login_success": "Tipeee login success!",
+  "Tipeee_login_success": "Tipeee 로그인 성공!",
   "Hide_if_empty": "비어있는 경우 숨기기",
   "No_favorites": "즐겨찾기 없음",
   "Ephemeral_list": "완료 시 삭제 예정",
@@ -137,9 +137,9 @@
     "Search": "검색"
   },
   "COMMON": {
-    "Play": "Play",
-    "Pause": "Pause",
-    "Speed": "Speed",
+    "Play": "재생",
+    "Pause": "일시정지",
+    "Speed": "속도",
     "Done": "완료",
     "Length": "길이",
     "Save": "저장",
@@ -190,7 +190,7 @@
     "Never": "하지 않음",
     "Festival": "이벤트 기간에만 가능",
     "Back": "뒤로 가기",
-    "Support_us_remove_ads": "Support us to remove ads",
+    "Support_us_remove_ads": "후원하고 광고 제거",
     "Support_us": "후원하기",
     "Show_more": "더 보기",
     "Item": "아이템",
@@ -203,10 +203,10 @@
     "Fate": "돌발 임무",
     "Reload": "새로고침",
     "Click_to_apply": "클릭하여 적용",
-    "Recommended": "Recommended",
+    "Recommended": "권장",
     "Visibility": "Visibility",
-    "Public": "Public",
-    "Private": "Private",
+    "Public": "공개",
+    "Private": "비공개",
     "Pagination_text": "{{start}}-{{end}} of {{total}} items",
     "And_X_more": "and {{amount}} more...",
     "DAYS": {
@@ -264,8 +264,8 @@
       "DELIVERIES_RESET_DESCRIPTION": "총사령부 조달 품목 초기화",
       "LEVE_ALLOWANCES": "의뢰 수주권",
       "LEVE_ALLOWANCES_DESCRIPTION": "의뢰 수주권 3장 획득",
-      "OCEAN_FISHING": "Ocean fishing",
-      "OCEAN_FISHING_DESCRIPTION": "Ocean fishing will start."
+      "OCEAN_FISHING": "먼바다 낚시",
+      "OCEAN_FISHING_DESCRIPTION": "먼바다 낚시가 시작됩니다."
     },
     "CUSTOM": {
       "Title": "사용자 지정 알람 추가",
@@ -448,9 +448,9 @@
     "Reset_password_warning": "비밀번호를 재설정 하시겠습니까?",
     "Password_reset_mail_sent": "비밀번호 재설정 이메일이 전송되었습니다.",
     "Connect_with_patreon": "Patreon에 연결",
-    "Connect_with_tipeee": "Connect with Tipeee",
+    "Connect_with_tipeee": "Tipeee에 연결하기",
     "Connected_with_patreon": "Patreon에 연결되었습니다.",
-    "Connected_with_tipeee": "Connected with Tipeee",
+    "Connected_with_tipeee": "Tipeee에 연결됨",
     "Nickname": "닉네임",
     "Nickname_used": "이미 사용중인 닉네임입니다.",
     "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the supporter exclusive features properly.",
@@ -521,7 +521,7 @@
     "Alarm_panels_collapsed_by_default": "알람 패널 간소화를 기본값으로 설정",
     "Alarm_groups_before_no_group": "그룹 지정이 안된 알람 앞에 그룹 알람을 표시",
     "Disconnect_patreon": "Patreon 연결 끊기",
-    "Disconnect_tipeee": "Disconnect from Tipeee",
+    "Disconnect_tipeee": "Tipeee와 연결 끊기",
     "Export_settings": "설정 내보내기",
     "Import_settings": "설정 가져오기",
     "Import_successful": "설정을 불러왔습니다",
@@ -540,6 +540,8 @@
     "New_child_window": "Create a new child window",
     "Child_windows_title": "You can now open child windows in Teamcraft desktop !",
     "Child_windows_description": "When clicking something that navigates (like the \"i\" button for database pages or any link in the app), use ctrl + click or middle click instead to open in a new window. Additionally, you can create a new window using the new button next to the github stars count.",
+    "Desktop_tip_title": "Teamcraft has a desktop app ! Better, faster, stronger",
+    "Desktop_tip_description": "Desktop app is way faster by using offline search, it also adds overlay features and more using packet capture (which is disabled by default if you want to avoid using packet capture). It's strongly advized to use it instead of web version for a better experience.",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -617,7 +619,7 @@
       "Guide": "계정 인증을 위해 Lodestone Profile에 \"{{userId}}\"를 붙여넣고 아래의 인증버튼을 눌러주세요. 자세한 정보는 <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">위키</a>를 참고해주세요.",
       "Success": "캐릭터가 인증되었습니다! 이 팝업을 닫으셔도 됩니다. 더 이상 코드가 필요없기 때문에, 프로필에서 코드를 제거하셔도 됩니다.",
       "Validate": "인증",
-      "Submitted": "Checking your Lodestone profile...",
+      "Submitted": "로드스톤 프로필 확인 중...",
       "Error": "Couldn't find the code in your bio. Please make sure you pasted it and applied the changes. If you did so correctly and the verification still failed, please try again in a few hours due to how Lodestone caching works. However, verification only affects Free Company lists and the Commission System, so you can continue using all other features without issue."
     }
   },
@@ -1892,7 +1894,7 @@
     "Clipboard_content_malformed": "클립보드에 복사된 내용의 형식이 잘못되었습니다",
     "Import_from_clipboard": "클립보드 내용을 불러오기",
     "Import_from_inventory": "소지품에서 불러오기",
-    "Extension_tip": "[글로벌 서버 전용] 크롬 확장 앱 [Lodestone inventory grabber] 을 이용하여 집사 인벤토리내 아이템들을 클립보드에 복사할 수 있습니다: ",
+    "Extension_tip": "크롬 확장 앱 [Lodestone inventory grabber] 을 이용하여 집사 인벤토리내 아이템들을 클립보드에 복사할 수 있습니다: ",
     "Extension_link": "크롬 웹 스토어에서 확장 앱 다운받기",
     "Clear": "아이템 목록 초기화",
     "Clipboard_import_duplicates": "목록에 중복되어 보이는 아이템이 있을 수 있습니다. 이 기능은 로드스톤과 연동된 집사 소지품 상태를 보여주기 때문에, 집사 내 소지품에서 해당 아이템이 소지품칸을 여러 칸 차지하는 경우에 중복되어 보일 수 있습니다.",
@@ -1910,7 +1912,7 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "화폐 소비 가이드",
-    "Description": "[글로벌 서버 전용] 석판 또는 화폐가 많나요? 원하는 석판 또는 화폐를 선택하고, 수량을 입력하고, 서버를 고르세요. 그러면 현재 자신의 화폐/석판으로 교환 가능한 품목 중에서 가장 비싼 품목을 찾아줍니다!",
+    "Description": "석판 또는 화폐가 많나요? 원하는 석판 또는 화폐를 선택하고, 수량을 입력하고, 서버를 고르세요. 그러면 현재 자신의 화폐/석판으로 교환 가능한 품목 중에서 가장 비싼 품목을 찾아줍니다!",
     "Pick_currency": "교환용 아이템 선택",
     "You_can_buy": "{{amount}}개 구매 가능",
     "Disabled": "화폐 소비 가이드는 더 이상 이용할 수 없습니다.",
