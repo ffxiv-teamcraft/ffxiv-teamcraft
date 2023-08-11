@@ -116,5 +116,5 @@ export class I18nPipe implements PipeTransform, OnDestroy {
     if (didUpdate) {
       this.cd.markForCheck();
     }
-  };
+  }
 }
