@@ -1,12 +1,12 @@
 <nz-card [nzTitle]="'DB.Position' | translate" class="card-with-list expanded" [style.max-width.px]="360" [nzLoading]="loading">
   <app-map
-    *ngIf="spot.customData.coords; else noPos"
+    *ngIf="spot.coords; else noPos"
     [hideDbButton]="true"
-    [mapId]="spot.TerritoryType.MapTargetID"
+    [mapId]="spot.mapId"
     [markers]="[
       {
-        x: spot.customData.coords.x,
-        y: spot.customData.coords.y
+        x: spot.coords.x,
+        y: spot.coords.y
       }
     ]"
   ></app-map>

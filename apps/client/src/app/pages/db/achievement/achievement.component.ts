@@ -2,14 +2,15 @@ import { Component } from '@angular/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
-import { DataService } from '../../../core/api/data.service';
+import { XivapiEndpoint } from '@xivapi/angular-client';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { LazyAchievementsDatabasePage } from '@ffxiv-teamcraft/data/model/lazy-achievements-database-page';
 
 @Component({
   selector: 'app-achievement',
@@ -18,46 +19,39 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 })
 export class AchievementComponent extends TeamcraftPageComponent {
 
-  public achievement$: Observable<any>;
+  public achievement$= this.route.paramMap.pipe(
+    filter(params => params.get('slug') !== null),
+    map(params => params.get('achievementId')),
+    switchMap(id => {
+      return this.lazyData.getRow('achievementsDatabasePages', +id);
+    }),
+    shareReplay({ bufferSize: 1, refCount: true })
+  );
 
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
 
   public rewards$: Observable<{ type: string, id: number, amount: number }[]>;
 
-  constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private gt: DataService,
-              private i18n: I18nToolsService, public translate: TranslateService,
+  constructor(private route: ActivatedRoute, private i18n: I18nToolsService,
+              public translate: TranslateService, private lazyData: LazyDataFacade,
               private router: Router, public settings: SettingsService,
               seo: SeoService) {
     super(seo);
     this.updateSlug(router, i18n, route, 'achievements', 'achievementId');
 
-    const achievementId$ = this.route.paramMap.pipe(
-      filter(params => params.get('slug') !== null),
-      map(params => params.get('achievementId'))
-    );
-
-
-    this.achievement$ = achievementId$.pipe(
-      switchMap(id => {
-        return this.xivapi.get(XivapiEndpoint.Achievement, +id);
-      }),
-      shareReplay({ bufferSize: 1, refCount: true })
-    );
-
     this.rewards$ = this.achievement$.pipe(
       map(achievement => {
         const rewards = [];
-        if (achievement.ItemTargetID) {
+        if (achievement.item) {
           rewards.push({
             type: 'item',
-            id: achievement.ItemTargetID
+            id: achievement.item
           });
         }
-        if (achievement.TitleTargetID) {
+        if (achievement.title) {
           rewards.push({
             type: 'title',
-            id: achievement.TitleTargetID
+            id: achievement.title
           });
         }
 
@@ -71,7 +65,7 @@ export class AchievementComponent extends TeamcraftPageComponent {
           {
             title: 'FFXIV Collect',
             icon: 'https://ffxivcollect.com/images/logo_small.png',
-            url: `https://ffxivcollect.com/achievements/${achievement.ID}`
+            url: `https://ffxivcollect.com/achievements/${achievement.id}`
           }
         ];
       })
@@ -84,19 +78,19 @@ export class AchievementComponent extends TeamcraftPageComponent {
         return {
           title: this.getName(achievement),
           description: this.getDescription(achievement),
-          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/achievement/${achievement.ID}/${this.getName(achievement).split(' ').join('-')}`,
-          image: `https://xivapi.com${achievement.Icon}`
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/achievement/${achievement.id}/${this.getName(achievement).split(' ').join('-')}`,
+          image: `https://xivapi.com${achievement.icon}`
         };
       })
     );
   }
 
-  private getDescription(status: any): string {
-    return this.i18n.getName(this.i18n.xivapiToI18n(status, 'Description'));
+  private getDescription(achievement: LazyAchievementsDatabasePage): string {
+    return this.i18n.getName(achievement.description);
   }
 
-  private getName(status: any): string {
+  private getName(achievement: LazyAchievementsDatabasePage): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.i18n.xivapiToI18n(status));
+    return this.i18n.getName(achievement);
   }
 }

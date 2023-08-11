@@ -1,5 +1,4 @@
 import { CompactMasterbook } from '@ffxiv-teamcraft/types';
-import { Complexity } from '../../../model/garland-tools/complexity';
 
 export interface CraftedBy {
   itemId: number | string;
@@ -18,6 +17,5 @@ export interface CraftedBy {
   controlReq?: number;
   craftsmanshipReq?: number;
   unlockId?: number;
-  complexity?: Complexity;
   isIslandRecipe?: boolean;
 }

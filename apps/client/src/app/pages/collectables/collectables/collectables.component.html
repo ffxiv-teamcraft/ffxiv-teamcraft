@@ -8,7 +8,7 @@
                  required type="number"/>
         </nz-input-group>
         <ng-template #jobIcon>
-          <img *ngIf="(+control | i18nRow:'jobAbbr' | async)?.en as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/job/{{icon}}.png">
+          <span class="companion-svg" [innerHtml]="+control | jobUnicode"></span>
         </ng-template>
       </nz-form-control>
     </nz-form-item>
@@ -24,8 +24,8 @@
   <nz-tabset *ngIf="results$ | async as results" [nzAnimated]="false" [nzSelectedIndex]="selectedTab$ | async" (nzSelectedIndexChange)="selectTab($event)">
     <nz-tab *ngFor="let row of results" [nzTitle]="title">
       <ng-template #title>
-        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-          <img *ngIf="((row.job | i18nRow:'jobAbbr') | async)?.en as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/job/{{icon}}.png">
+        <div class="flex-row align-center gap-5">
+          <div class="companion-svg" [innerHtml]="row.job | jobUnicode"></div>
           <div>{{row.job | i18nRow:'jobName' | i18n}}</div>
         </div>
       </ng-template>

@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { combineLatest, Observable } from 'rxjs';
-import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { filter, map, shareReplay, startWith } from 'rxjs/operators';
 import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
 import * as _ from 'lodash';
-import { uniqBy } from 'lodash';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-custom-alarm-popup',
@@ -43,7 +42,7 @@ export class CustomAlarmPopupComponent implements OnInit {
     max: 99
   };
 
-  public maps$: Observable<any[]>;
+  public maps$ = this.lazyData.getEntry('mapEntries');
 
   /**
    * Should we just return the alarm instead of creating it directly?
@@ -74,15 +73,8 @@ export class CustomAlarmPopupComponent implements OnInit {
 
   public mapWeathers$: Observable<number[]>;
 
-  constructor(private fb: UntypedFormBuilder, private xivapi: XivapiService, private alarmsFacade: AlarmsFacade,
+  constructor(private fb: UntypedFormBuilder, private lazyData: LazyDataFacade, private alarmsFacade: AlarmsFacade,
               private modalRef: NzModalRef) {
-    this.maps$ = this.xivapi.getList(XivapiEndpoint.Map, {
-      columns: ['ID', 'PlaceNameTargetID', 'PlaceName.ID', 'TerritoryType.WeatherRate', 'PlaceNameSub'],
-      max_items: 1000
-    }).pipe(
-      map(list => uniqBy(list.Results, 'PlaceNameTargetID')),
-      shareReplay({ bufferSize: 1, refCount: true })
-    );
   }
 
   submit(): void {
@@ -139,19 +131,19 @@ export class CustomAlarmPopupComponent implements OnInit {
 
         return {
           spawn: true,
-          weathers : true
-         };
+          weathers: true
+        };
       }
     });
 
     this.mapWeathers$ = combineLatest([this.form.valueChanges, this.maps$]).pipe(
       map(([form, maps]) => {
-        return maps.find(m => m.ID === form.mapId);
+        return maps.find(m => m.id === form.mapId);
       }),
       filter(m => m !== undefined),
-      map((m: { TerritoryType: { WeatherRate: number } }) => {
-        const defaultWeather = weatherIndex[m.TerritoryType.WeatherRate];
-        if (defaultWeather != undefined)  {
+      map((m) => {
+        const defaultWeather = weatherIndex[m.weatherRate];
+        if (defaultWeather != undefined) {
           return _.uniq(defaultWeather.map(row => +row.weatherId)) as number[];
         }
       }),

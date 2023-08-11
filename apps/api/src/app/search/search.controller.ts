@@ -1,15 +1,17 @@
 import { Controller, Get, Header, Query } from '@nestjs/common';
-import { Observable } from 'rxjs';
+import { first, Observable } from 'rxjs';
 import { SearchService } from './search.service';
-import { Region, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
-import type { XivapiSearchFilter } from '@xivapi/angular-client';
+import { SearchResult, SearchType } from '@ffxiv-teamcraft/types';
+import { XIVSearchFilter } from '@ffxiv-teamcraft/search';
+import { map } from 'rxjs/operators';
+import { LazyDataLoader } from '../lazy-data/lazy-data.loader';
 
 @Controller({
   path: '/search'
 })
 export class SearchController {
 
-  constructor(private searchService: SearchService) {
+  constructor(private searchService: SearchService, private lazyData: LazyDataLoader) {
   }
 
   @Get()
@@ -20,36 +22,64 @@ export class SearchController {
     @Query('sort_order') order: 'asc' | 'desc' = 'desc',
     @Query('sort_field') sortField?: string,
     @Query('lang') lang = 'en',
-    @Query('region') region: Region = Region.Global,
-    @Query('filters') filters = ''
+    @Query('filters') filters = '',
+    @Query('full') fullData = 'false'
   ): Observable<SearchResult[]> {
-    let transformedFilters: XivapiSearchFilter[] = [];
+    let transformedFilters: XIVSearchFilter[] = [];
     try {
       transformedFilters = (filters || '').split(',')
         .filter(Boolean)
         .map(fragment => {
-          const [, column, operator, value] = fragment.match(/([^><=?!|]+)([><=?!|]{1,2})(.*)/);
+          const [, field, operator, value] = fragment.match(/([^><=?!|]+)([><=?!|]{1,2})(.*)/);
+          let processedValue: string | number | boolean | any[] = value;
           if (value === '' && operator !== '!!') {
             return null;
           }
+          if (operator === '|=') {
+            processedValue = value.split(';').map(v => {
+              if (isNaN(Number(v))) {
+                return v;
+              }
+              return +v;
+            });
+          } else {
+            if (value === 'false') {
+              processedValue = false;
+            } else if (value === 'true') {
+              processedValue = true;
+            } else if (!isNaN(Number(value))) {
+              processedValue = +value;
+            }
+          }
           return {
-            column,
-            operator: operator as XivapiSearchFilter['operator'],
-            value: isNaN(Number(value)) ? value : +value
+            field,
+            operator: operator as any,
+            value: processedValue
           };
         })
         .filter(Boolean);
     } catch (e) {
       console.error(filters, e);
     }
-    return this.searchService.search(
-      type,
-      query.toLowerCase(),
-      transformedFilters,
-      region,
-      lang,
-      lang === 'ko' || lang === 'zh' && region !== Region.China,
-      [sortField, order]
+    return this.lazyData.get('extracts').pipe(
+      map((extracts) => {
+        return this.searchService.search(
+          type,
+          (query || '').toLowerCase(),
+          transformedFilters,
+          lang,
+          [sortField, order]
+        ).map(row => {
+          if ([SearchType.ITEM, SearchType.RECIPE].includes(row.type)) {
+            return {
+              ...row,
+              sources: extracts[row.itemId]?.sources || []
+            };
+          }
+          return row;
+        });
+      }),
+      first()
     );
   }
 }

@@ -20,15 +20,17 @@
           <app-item-icon [icon]="recipe.icon" [itemId]="recipe.itemId" [width]="32"></app-item-icon>
         </ng-template>
         <ng-template #description>
-          <img class="crafted-by" src="https://www.garlandtools.org/db/images/job/{{getJob(recipe.job)?.abbreviation}}.png">
-          {{recipe.lvl}}
-          {{getStars(recipe.stars)}}
+          <div class="flex-row align-center gap-2">
+            <span class="companion-svg" [innerHtml]="recipe.job | jobUnicode"></span>
+            {{recipe.lvl}}
+            {{getStars(recipe.stars)}}
+          </div>
         </ng-template>
       </nz-list-item-meta>
       <ng-template #content>
         <a (click)="close()" [nzShape]="'circle'" [nzType]="'primary'" nz-button
-                *ngIf="!pickRotation"
-                routerLink="/simulator/{{recipe.itemId}}/{{recipe.recipeId}}/{{rotationId}}" [queryParams]="statsStr?{stats: statsStr}:null">
+           *ngIf="!pickRotation"
+           routerLink="/simulator/{{recipe.itemId}}/{{recipe.recipeId}}/{{rotationId}}" [queryParams]="statsStr?{stats: statsStr}:null">
           <i nz-icon nzType="check"></i>
         </a>
 

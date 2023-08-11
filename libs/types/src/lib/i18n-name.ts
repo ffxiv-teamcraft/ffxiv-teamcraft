@@ -5,5 +5,4 @@ export interface I18nName {
   ja: string;
   ko?: string;
   zh?: string;
-  ru?: string;
 }

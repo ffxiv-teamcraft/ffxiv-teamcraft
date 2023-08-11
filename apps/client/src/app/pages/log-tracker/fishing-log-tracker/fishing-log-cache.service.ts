@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { map, shareReplay, startWith } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { fshSpearLogAreas } from '../fsh-spear-log-order';
 import { fshLogAreas } from '../fsh-log-order';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
@@ -89,7 +88,7 @@ export class FishingLogCacheService {
     shareReplay(1)
   );
 
-  constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private lazyData: LazyDataFacade) {
+  constructor(private authFacade: AuthFacade, private lazyData: LazyDataFacade) {
   }
 
 }

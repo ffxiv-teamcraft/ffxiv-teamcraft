@@ -1,35 +1,33 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
-import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
 import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, pairwise, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
-import { NzMessageService } from 'ng-zorro-antd/message';
-import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { AbstractControl, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { I18nName, SearchFilter, SearchResult, SearchType, XivapiPatch } from '@ffxiv-teamcraft/types';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import * as _ from 'lodash';
+import { isEqual } from 'lodash';
 import { stats } from '../../../core/data/sources/stats';
 import { KeysOfType } from '../../../core/tools/key-of-type';
 import { Language } from '../../../core/data/language';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { PlatformService } from '../../../core/tools/platform.service';
-import { GoogleAnalyticsService } from 'ngx-google-analytics';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { IS_HEADLESS } from '../../../../environments/is-headless';
 import { EnvironmentService } from '../../../core/environment.service';
+import { toIndex } from '../../../core/rxjs/to-index';
+import { jobAbbrs } from '@ffxiv-teamcraft/data/handmade/job-abbr-en';
+import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 
 @Component({
   selector: 'app-search',
@@ -61,6 +59,14 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   public searchType$: BehaviorSubject<SearchType> =
     new BehaviorSubject<SearchType>(<SearchType>localStorage.getItem('search:type') || SearchType.ITEM);
 
+  public showComparisonTip$ = this.searchType$.pipe(
+    map(type => {
+      return [SearchType.ITEM, SearchType.RECIPE, SearchType.ANY].includes(type);
+    })
+  );
+
+  public selectionMode$ = new LocalStorageBehaviorSubject<'list' | 'compare'>('search:selection-mode', 'list');
+
   public availableLanguages = ['en', 'de', 'fr', 'ja', 'ko', 'zh'];
 
   public searchLang$: BehaviorSubject<Language> = new BehaviorSubject<Language>(this.settings.searchLanguage);
@@ -88,15 +94,9 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
 
   availableStats = stats;
 
-  availableLeveJobCategories = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 34];
+  availableCraftJobs = [8, 9, 10, 11, 12, 13, 14, 15];
 
-  availableCraftJobs = [];
-
-  availableJobs = [];
-
-  availableJobCategories = [30, 31, 32, 33];
-
-  uiCategories$: Observable<{ id: number, name: I18nName }[]>;
+  uiCategories$: Observable<{ id: number, data: I18nName }[]>;
 
   patches$: Observable<XivapiPatch[]> = this.lazyData.patches$.pipe(
     map(patches => patches.reverse())
@@ -121,7 +121,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       const sortEntries = [
         {
           label: 'ID',
-          field: 'ID'
+          field: 'id'
         },
         {
           label: 'Relevance',
@@ -133,11 +133,11 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
           sortEntries.push(...[
             {
               label: 'Level',
-              field: 'LevelEquip'
+              field: 'elvl'
             },
             {
               label: 'Ilvl',
-              field: 'LevelItem'
+              field: 'ilvl'
             }
           ]);
           break;
@@ -145,36 +145,25 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
           sortEntries.push(...[
             {
               label: 'Level',
-              field: 'LevelEquip'
+              field: 'elvl'
             },
             {
               label: 'Ilvl',
-              field: 'LevelItem'
+              field: 'ilvl'
             },
             {
               label: 'Rlvl',
-              field: 'Recipes.Level'
+              field: 'clvl'
             }
           ]);
           break;
         case SearchType.INSTANCE:
-          sortEntries.push({
-            label: 'Level',
-            field: 'ContentFinderCondition.ClassJobLevelRequired'
-          });
-          break;
-        case SearchType.QUEST:
-          sortEntries.push({
-            label: 'Level',
-            field: 'ClassJobLevel0'
-          });
-          break;
         case SearchType.LEVE:
         case SearchType.ACTION:
         case SearchType.TRAIT:
           sortEntries.push({
             label: 'Level',
-            field: 'ClassJobLevel'
+            field: 'level'
           });
           break;
         default:
@@ -204,8 +193,14 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     map(type => [SearchType.ITEM, SearchType.RECIPE].includes(type))
   );
 
-  results$: Observable<SearchResult[]> = combineLatest([this.query$.pipe(distinctUntilChanged()), this.searchType$, this.filters$, this.sort$, this.searchLang$]).pipe(
-    debounceTime(400),
+  page$ = new BehaviorSubject(1);
+
+  pageSize = 50;
+
+  results$: Observable<{
+    paginated: SearchResult[],
+    total: number
+  }> = combineLatest([this.query$.pipe(distinctUntilChanged()), this.searchType$, this.filters$, this.sort$, this.searchLang$]).pipe(
     filter(([query, , filters, , lang]) => {
       if (['ko', 'zh'].indexOf(lang.toLowerCase()) > -1) {
         // Chinese and korean characters system use fewer chars for the same thing, filters have to be handled accordingly.
@@ -213,6 +208,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       }
       return query.length > 2 || (lang === 'ja' && query.length > 0) || filters.length > 0;
     }),
+    debounceTime(500),
     tap(([query, type, filters, [sortBy, sortOrder], lang]) => {
       this.allSelected = false;
       this.showIntro = false;
@@ -237,64 +233,57 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
         localStorage.setItem('search:history', JSON.stringify(searchHistory));
       }
       this.data.setSearchLang(lang);
-      this.router.navigate([], {
-        queryParamsHandling: 'merge',
-        queryParams: queryParams,
-        relativeTo: this.route
-      });
+      if (!isEqual(this.route.snapshot.queryParams, queryParams)) {
+        this.router.navigate([], {
+          queryParamsHandling: 'merge',
+          queryParams: queryParams,
+          relativeTo: this.route
+        });
+      }
     }),
     switchMap(([query, type, filters, sort]) => {
       return this.data.search(query.trim(), type, filters, sort);
+    }),
+    switchMap((results) => {
+      this.page$.next(1);
+      return this.page$.pipe(
+        map(page => {
+          return {
+            total: results.length,
+            paginated: results.slice(this.pageSize * (page - 1), this.pageSize * page)
+          };
+        })
+      );
     }),
     tap(() => {
       this.loading = false;
     })
   );
 
-  constructor(private gt: GarlandToolsService, private data: DataService, public settings: SettingsService,
+  public ingesting$ = this.data.ingesting$;
+
+  constructor(private data: DataService, public settings: SettingsService,
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
-              private listManager: ListManagerService, private notificationService: NzNotificationService,
+              private listManager: ListManagerService,
               private i18n: I18nToolsService, private listPicker: ListPickerService,
-              private progressService: ProgressPopupService, private fb: UntypedFormBuilder, private xivapi: XivapiService,
+              private progressService: ProgressPopupService, private fb: UntypedFormBuilder,
               private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService,
-              private message: NzMessageService, public translate: TranslateService, private lazyData: LazyDataFacade,
-              private analytics: GoogleAnalyticsService, private environment: EnvironmentService,
+              public translate: TranslateService, private lazyData: LazyDataFacade,
+              private environment: EnvironmentService,
               private platformService: PlatformService, @Inject(PLATFORM_ID) private platform: any) {
     super();
-    this.uiCategories$ = this.xivapi.getList(XivapiEndpoint.ItemUICategory, {
-      columns: ['ID', 'Name_de', 'Name_en', 'Name_fr', 'Name_ja'],
-      max_items: 200
-    }).pipe(
-      switchMap(contentList => {
-        return safeCombineLatest(contentList.Results.map(result => {
-          const res: any = {
-            id: result.ID,
-            name: {
-              en: result.Name_en,
-              fr: result.Name_fr,
-              de: result.Name_de,
-              ja: result.Name_ja
-            }
-          };
-          if (this.settings.searchLanguage === 'zh') {
-            return this.lazyData.getRow('zhItemUiCategories', result.ID).pipe(
-              map(zhRow => {
-                res.name.zh = zhRow?.zh || result.Name_en;
-                return res;
-              })
-            );
-          } else if (this.settings.searchLanguage === 'ko') {
-            return this.lazyData.getRow('koItemUiCategories', result.ID).pipe(
-              map(koRow => {
-                res.name.ko = koRow?.ko || result.Name_en;
-                return res;
-              })
-            );
-          } else {
-            return of(res);
-          }
-        }));
-      })
+    this.uiCategories$ = this.settings.watchSetting('search:language', 'en').pipe(
+      switchMap(lang => {
+        switch (lang) {
+          case 'zh':
+            return this.lazyData.getEntry('zhItemUiCategories');
+          case 'ko':
+            return this.lazyData.getEntry('koItemUiCategories');
+          default:
+            return this.lazyData.getEntry('itemCategory');
+        }
+      }),
+      toIndex()
     );
     if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
       this.searchType$.subscribe(value => {
@@ -302,7 +291,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       });
     }
     if (this.searchLang$.value === null) {
-      this.searchLang$.next(this.translate.currentLang as Language);
+      this.searchLang$.next(this.settings.searchLanguage || this.translate.currentLang as Language);
     }
   }
 
@@ -326,18 +315,13 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
         this.searchLang$.next(after.lang as Language);
       }
     });
-    this.gt.onceLoaded$.pipe(first()).subscribe(() => {
-      this.availableCraftJobs = this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1);
-      this.availableJobs = this.gt.getJobs().filter(job => job.id > 0).map(job => job.id);
-    });
 
     this.route.queryParams.pipe(
-      filter(params => {
-        return params.query !== undefined && params.type !== undefined;
-      }),
-      debounceTime(100),
       first(),
       switchMap(params => {
+        if (!params.query || !params.type) {
+          return of(null);
+        }
         this.searchType$.next(params.type);
         this.query$.next(params.query);
         if (params.filters !== undefined) {
@@ -370,9 +354,9 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     return [SearchType.RECIPE, SearchType.ITEM, SearchType.INSTANCE, SearchType.ACTION, SearchType.LEVE, SearchType.TRAIT].includes(searchType);
   }
 
-  toggleFiltersDisplay():void{
+  toggleFiltersDisplay(): void {
     this.showFilters = !this.showFilters;
-    this.settings.showSearchFilters = this.showFilters
+    this.settings.showSearchFilters = this.showFilters;
   }
 
   addFilter(type: 'stats' | 'bonuses'): void {
@@ -458,6 +442,8 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       case SearchType.TRAIT:
         this.filters$.next(this.getTraitFilters(this.filtersForm.controls));
         break;
+      default:
+        this.filters$.next(this.getCommonFilters(this.filtersForm.controls));
     }
   }
 
@@ -522,7 +508,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
 
   public removeSelection(row: SearchResult, items: SearchResult[]): void {
     row.selected = false;
-    this.rowSelectionChange(row);
+    this.rowSelectionChange(items, row);
     items.forEach(i => i.itemId === row.itemId ? i.selected = false : null);
   }
 
@@ -536,7 +522,12 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     this.allSelected = selected;
   }
 
-  public rowSelectionChange(row: SearchResult): void {
+  public rowSelectionChange(items: SearchResult[], row: SearchResult): void {
+    (items || []).forEach(item => {
+      if (item.itemId === row.itemId) {
+        item.selected = row.selected;
+      }
+    });
     if (row.selected) {
       this.selection$.next([...this.selection$.value, row]);
     } else {
@@ -647,7 +638,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.ilvlMax.value < 999 || controls.ilvlMin.value > 0) {
       filters.push({
         minMax: true,
-        name: 'LevelItem',
+        name: 'ilvl',
         value: {
           min: controls.ilvlMin.value,
           max: controls.ilvlMax.value
@@ -660,23 +651,23 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
         let valueMultiplier = 1;
         switch (entry.name) {
           case 'PhysicalDamage':
-            fieldName = 'DamagePhys';
+            fieldName = 'pDmg';
             break;
           case 'MagicalDamage':
-            fieldName = 'DamageMag';
+            fieldName = 'mDmg';
             break;
           case 'Defense':
-            fieldName = 'DefensePhys';
+            fieldName = 'pDef';
             break;
           case 'MagicDefense':
-            fieldName = 'DefenseMag';
+            fieldName = 'mDef';
             break;
           case 'Delay':
-            fieldName = 'DelayMs';
+            fieldName = 'delay';
             valueMultiplier = 1000;
             break;
           default:
-            fieldName = `Stats.${entry.name}.NQ`;
+            fieldName = `stats.${entry.name}`;
             break;
         }
         return {
@@ -697,7 +688,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
         return {
           minMax: true,
           formArray: 'bonuses',
-          name: `Bonuses.${entry.name}.Max`,
+          name: `bonuses.${entry.id}.Max`,
           entryName: entry.name,
           value: {
             min: entry.min,
@@ -710,7 +701,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.elvlMax.value < this.curMaxLevel || controls.elvlMin.value > 0) {
       filters.push({
         minMax: true,
-        name: 'LevelEquip',
+        name: 'elvl',
         value: {
           min: controls.elvlMin.value,
           max: controls.elvlMax.value
@@ -720,7 +711,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.clvlMax.value < this.curMaxLevel || controls.clvlMin.value > 0) {
       filters.push({
         minMax: true,
-        name: 'Recipes.Level',
+        name: 'clvl',
         value: {
           min: controls.clvlMin.value,
           max: controls.clvlMax.value
@@ -730,7 +721,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.jobCategories.value && controls.jobCategories.value.length > 0) {
       filters.push(...controls.jobCategories.value.map(jobId => {
           return {
-            name: `ClassJobCategory.${this.gt.getJob(jobId).abbreviation}`,
+            name: `cjc.${jobAbbrs[jobId]}`,
             value: 1
           };
         })
@@ -738,20 +729,20 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     }
     if (controls.craftJob.value) {
       filters.push({
-        name: 'Recipes.ClassJobID',
+        name: 'craftJob',
         value: controls.craftJob.value
       });
     }
     if (controls.collectable.value) {
       filters.push({
-        name: 'AlwaysCollectable',
+        name: 'collectible',
         value: 1
       });
     }
     if (controls.itemCategories.value && controls.itemCategories.value.length > 0) {
       filters.push({
         array: true,
-        name: 'ItemUICategoryTargetID',
+        name: 'category',
         value: controls.itemCategories.value
       });
     }
@@ -762,7 +753,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     const filters = [];
     if (controls.Patch.value > -1) {
       filters.push({
-        name: 'Patch',
+        name: 'patch',
         value: controls.Patch.value
       });
     }
@@ -774,7 +765,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.lvlMin.value > 0 || controls.lvlMax.value < this.curMaxLevel) {
       filters.push({
         minMax: true,
-        name: 'ContentFinderCondition.ClassJobLevelRequired',
+        name: 'lvl',
         value: {
           min: controls.lvlMin.value,
           max: controls.lvlMax.value
@@ -789,7 +780,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.lvlMin.value > 0 || controls.lvlMax.value < this.curMaxLevel) {
       filters.push({
         minMax: true,
-        name: 'ClassJobLevel',
+        name: 'lvl',
         value: {
           min: controls.lvlMin.value,
           max: controls.lvlMax.value
@@ -799,8 +790,8 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.jobCategories.value && controls.jobCategories.value.length > 0) {
       filters.push(...controls.jobCategories.value.map(jobId => {
           return {
-            name: `ClassJobCategory.${this.gt.getJob(jobId).abbreviation}`,
-            value: 1
+            name: `job`,
+            value: jobId
           };
         })
       );
@@ -813,7 +804,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.lvlMin.value > 0 || controls.lvlMax.value < this.curMaxLevel) {
       filters.push({
         minMax: true,
-        name: 'ClassJobLevel',
+        name: 'lvl',
         value: {
           min: controls.lvlMin.value,
           max: controls.lvlMax.value
@@ -823,8 +814,8 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.jobCategories.value && controls.jobCategories.value.length > 0) {
       filters.push(...controls.jobCategories.value.map(jobId => {
           return {
-            name: `ClassJobCategory.${this.gt.getJob(jobId).abbreviation}`,
-            value: 1
+            name: `job`,
+            value: jobId
           };
         })
       );
@@ -837,7 +828,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.lvlMin.value > 0 || controls.lvlMax.value < this.curMaxLevel) {
       filters.push({
         minMax: true,
-        name: 'Level',
+        name: 'lvl',
         value: {
           min: controls.lvlMin.value,
           max: controls.lvlMax.value
@@ -847,8 +838,8 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     if (controls.jobCategories.value && controls.jobCategories.value.length > 0) {
       filters.push(...controls.jobCategories.value.map(jobId => {
           return {
-            name: `ClassJobCategory.${this.gt.getJob(jobId).abbreviation}`,
-            value: 1
+            name: `job`,
+            value: jobId
           };
         })
       );
@@ -856,7 +847,9 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     return filters;
   }
 
-  changes(...args: any[]): void {
-    console.log(args);
+  updateSearchLang(lang: Language): void {
+    this.searchLang$.next(lang);
+    this.settings.searchLanguage = lang;
+    this.data.setSearchLang(lang);
   }
 }

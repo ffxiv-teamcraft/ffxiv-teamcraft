@@ -51,7 +51,8 @@
     "Only_craftable": "仅显示有配方的物品",
     "Want_filters": "需要更多过滤方式？",
     "Open_search": "打开搜索页面",
-    "Island_recipe": "无人岛配方"
+    "Island_recipe": "无人岛配方",
+    "Ingesting_index": "Ingesting content for the newly selected language, this should take few seconds..."
   },
   "Use_as_default_character": "设为默认角色",
   "Download_desktop_app": "下载客户端",
@@ -206,6 +207,8 @@
     "Visibility": "可见性",
     "Public": "公开",
     "Private": "私人",
+    "Pagination_text": "{{start}}-{{end}} of {{total}} items",
+    "And_X_more": "and {{amount}} more...",
     "DAYS": {
       "Monday": "星期一",
       "Tuesday": "星期二",
@@ -534,6 +537,9 @@
     "Housing_map_explain": "你的房屋所在的房区地图",
     "Reset_linked_characters_ok": "已重置角色链接",
     "Display_slow_mode_notification": "显示 制作/采集 慢速模式通知",
+    "New_child_window": "Create a new child window",
+    "Child_windows_title": "You can now open child windows in Teamcraft desktop !",
+    "Child_windows_description": "When clicking something that navigates (like the \"i\" button for database pages or any link in the app), use ctrl + click or middle click instead to open in a new window. Additionally, you can create a new window using the new button next to the github stars count.",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -1373,10 +1379,7 @@
     "Ilvl": "品级",
     "Cost": "消耗",
     "Class_job": "职业/特职",
-    "Damage_phys": "物理伤害",
-    "Damage_mag": "魔法伤害",
-    "Defense_phys": "物理防御力",
-    "Defense_mag": "魔法防御力"
+    "Masterbooks": "Requires a masterbook"
   },
   "SEARCH_INTRO": {
     "Slogan": "制作，分享，贡献",
@@ -1610,7 +1613,7 @@
     "Currencies": "货币",
     "Rowena_splendor": "罗薇娜显赫商会",
     "Unlocks": "解锁",
-    "Jump_to_page": "打开物品数据库页面",
+    "Jump_to_page": "Open db page",
     "Ishgard_restoration": "伊修加德重建",
     "ITEM": {
       "Masterpiece_exp_tooltip": "下一等级所需经验的百分比",
@@ -1850,6 +1853,7 @@
     "NPC": "NPC",
     "Leve": "理符任务",
     "Leve_info_message": "左侧的理符任务功能可以帮你准备材料并计算经验奖励",
+    "Comparison_tip": "You can compare items by selecting them and setting selection to comparison mode",
     "Monster": "怪物",
     "Lore": "台词&设定",
     "Fate": "危命任务",
@@ -1961,6 +1965,10 @@
     "Exclude": "反选",
     "Select_stat": "选择属性",
     "Level": "等级",
+    "SELECTION_MODE": {
+      "List": "List",
+      "Compare": "Compare"
+    },
     "SORT_BY": {
       "Relevance": "相关性",
       "ID": "ID",
@@ -3010,6 +3018,7 @@
     "Home_subtitle": "在合并视图中同时打开多个清单",
     "Select_lists": "选择需要合并的清单",
     "Select_layout": "选择布局",
+    "Select_layout_dropdown": "Display layout",
     "Open_aggregate": "打开合并视图",
     "Title": "合并清单视图",
     "Select_panel": "选择一个面板以打开视图",

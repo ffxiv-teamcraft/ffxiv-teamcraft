@@ -191,7 +191,7 @@ export class ListController {
     }
   }
 
-  public static getItemById(list: List, id: number | string, excludeFinalItems: boolean = false, onlyFinalItems = false, recipeId?: string): ListRow {
+  public static getItemById(list: List, id: number | string, excludeFinalItems = false, onlyFinalItems = false, recipeId?: string): ListRow {
     let array = list.items.filter(i => !i.finalItem);
     if (!excludeFinalItems && !onlyFinalItems) {
       array = array.concat(list.finalItems);
@@ -298,7 +298,7 @@ export class ListController {
         break;
       }
       // If the requirement is a crystal, don't mind it.
-      if (requirement.id < 20 && requirement.id > 1) {
+      if (+requirement.id < 20 && +requirement.id > 1) {
         continue;
       }
       const requirementItem = ListController.getItemById(list, requirement.id, true);
@@ -367,7 +367,7 @@ export class ListController {
       return true;
     }
     // Don't mind crystals
-    const requirements = item.requires.filter(req => req.id <= 1 || req.id > 20);
+    const requirements = item.requires.filter(req => +req.id <= 1 || +req.id > 20);
     return requirements.reduce((hasAllBaseIngredients, requirement) => {
       const requirementItem = ListController.getItemById(list, requirement.id, true);
       if (requirementItem !== undefined) {

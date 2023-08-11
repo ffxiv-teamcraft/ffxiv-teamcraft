@@ -83,7 +83,7 @@ export class LazyDataStateService {
    * @param fallback fallback value if nothing is found
    */
   public getRow<K extends LazyDataRecordKey>(propertyKey: K, id: string | number | symbol, fallback: Partial<LazyDataEntries[K]> = null): Observable<LazyDataEntries[K] | null> | Observable<Partial<LazyDataEntries[K]> | LazyDataEntries[K]> {
-    if (this.platformService.isDesktop()) {
+    if (this.platformService.isDesktop() && !this.getUrl(propertyKey).includes('/db/')) {
       this.preloadEntry(propertyKey);
     }
     if (propertyKey === 'extracts' && !fallback) {

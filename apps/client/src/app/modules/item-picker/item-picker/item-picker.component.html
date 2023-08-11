@@ -36,12 +36,11 @@
             </div>
           </ng-template>
           <ng-template #description>
-            <img alt="{{getJob(result.recipe.job)?.abbreviation}}"
-                 *ngIf="result.recipe?.job > 1"
-                 class="crafted-by"
-                 src="https://www.garlandtools.org/db/images/job/{{getJob(result.recipe.job)?.abbreviation}}.png">
-            {{result.recipe.lvl}}
-            {{getStars(result.recipe.stars)}}
+            <div class="flex-row align-center gap-2">
+              <span class="companion-svg" [innerHtml]="result.recipe.job | jobUnicode"></span>
+              {{result.recipe.lvl}}
+              {{getStars(result.recipe.stars)}}
+            </div>
           </ng-template>
         </nz-list-item-meta>
         <ng-template #content>

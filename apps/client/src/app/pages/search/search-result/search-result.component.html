@@ -11,13 +11,13 @@
              nz-checkbox></label>
     </div>
     <div class="avatar">
-      <app-item-icon *ngIf="row.contentType === 'items'" [icon]="row.icon" [itemId]="row.itemId" [width]="32"></app-item-icon>
-      <app-item-icon *ngIf="row.contentType !== 'items'" [icon]="row.icon" [itemId]="null" [width]="32" [tooltipDisabled]="true"></app-item-icon>
+      <app-item-icon *ngIf="row.contentType === 'items'" [icon]="row.icon | xivapiIcon" [itemId]="+row.itemId" [width]="32"></app-item-icon>
+      <app-item-icon *ngIf="row.contentType !== 'items'" [icon]="row.icon" [width]="32" [tooltipDisabled]="true"></app-item-icon>
     </div>
     <div class="flex-column">
       <div [appItemRarity]="+row.itemId" class="item-name flex-row gap-5">
-        <app-i18n-name [content]="row.contentType" [id]="row.itemId"></app-i18n-name>
-        <app-db-button [id]="row.itemId" type="item" tutorialStep="TUTORIAL.DB.Button"
+        {{row | i18n}}
+        <app-db-button [id]="+row.itemId" type="item" tutorialStep="TUTORIAL.DB.Button"
                        *ngIf="row.contentType === 'items'"></app-db-button>
         <div>
           <a nz-button nzSize="small" nzShape="circle" routerLink="/allagan-reports/{{row.itemId}}" nz-tooltip
@@ -26,24 +26,11 @@
             <i nz-icon nzType="reconciliation" nzTheme="outline"></i>
           </a>
         </div>
-        <app-marketboard-icon [itemId]="row.itemId" [showHistory]="true" *ngIf="row.contentType === 'items'"></app-marketboard-icon>
+        <app-marketboard-icon [itemId]="+row.itemId" [showHistory]="true" *ngIf="row.contentType === 'items'"></app-marketboard-icon>
         <app-company-workshop-tree-button *ngIf="row.recipe?.job === 0" [recipeId]="row.recipe.recipeId" size="small"></app-company-workshop-tree-button>
       </div>
-      <div *ngIf="row.recipe?.job > 1" class="description">
-        <img *ngIf="(row.recipe.job | i18nRow:'jobAbbr' | async)?.en as icon"
-             alt="{{row.recipe.job | i18nRow:'jobAbbr' | i18n}}"
-             class="job-icon small"
-             src="https://garlandtools.org/db/images/job/{{icon}}.png">
-        lvl{{row.recipe.lvl}} <span
-        *ngIf="row.recipe.stars !== undefined">{{getStars(row.recipe.stars)}}</span>
-      </div>
-      <div *ngIf="row.recipe?.job <= 0 && row.recipe?.job > -10" class="result-type">
-        {{('SEARCH_TYPES.' + row.type) | translate}}
-      </div>
-      <!-- Island craft-->
-      <div *ngIf="row.recipe?.job === -10">
-        <img src="./assets/icons/island.png" alt="Island Recipe" class="job-icon small">
-        {{'ITEMS.Island_recipe' | translate}}
+      <div class="flex-row align-center">
+        <app-item-sources-display *ngIf="row.sources.length > 0" [forceHorizontal]="true" [item]="{id: row.itemId, sources: row.sources}" [sources]="row.sources" [dbDisplay]="true"></app-item-sources-display>
       </div>
     </div>
   </div>
@@ -98,8 +85,8 @@
     </a>
     <div class="flex-column gap-5">
       <div class="flex-row justify-start align-center gap-5">
-        <img [src]="row.id | lazyRow:'instances':'icon' | async | xivapiIcon" alt="">
-        <app-i18n-name content="instances" [id]="row.id"></app-i18n-name>
+        <img [src]="row.icon | xivapiIcon" alt="">
+        {{row | i18n}}
         <app-db-button [id]="row.id" type="instance"></app-db-button>
       </div>
       <div class="flex-row gap-5">
@@ -120,8 +107,8 @@
     </a>
     <div class="flex-column gap-5">
       <div class="flex-row justify-start align-center gap-5">
-        <img [src]="row.id | lazyRow: 'quests':'icon' | async | xivapiIcon" alt="" class="quest-icon">
-        <app-i18n-name content="quests" [id]="row.id"></app-i18n-name>
+        <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon">
+        {{row | i18n}}
         <app-db-button [id]="row.id" type="quest"></app-db-button>
       </div>
       <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
@@ -135,13 +122,13 @@
        fxLayoutAlign.lt-md="center center"
        fxLayoutGap="5px">
     <a routerLink="/db/{{currentLang}}/npc/{{row.id}}">
-      <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon">
+      <img src="https://xivapi.com/c/ENpcResident.png" alt="" class="quest-icon">
     </a>
     <div class="flex-column gap-5">
       <div class="flex-row justify-start align-center gap-5">
         <div fxLayout="row" fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px">
           <div class="flex-column">
-            <app-i18n-name content="npcs" [id]="row.id"></app-i18n-name>
+            {{row | i18n}}
             <div class="flex-row gap-5">
               <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
               <div><span
@@ -163,13 +150,13 @@
        fxLayoutAlign.lt-md="center center"
        fxLayoutGap="5px">
     <a routerLink="/db/{{currentLang}}/mob/{{row.id}}">
-      <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon">
+      <img src="https://xivapi.com/c/BNpcName.png" alt="" class="quest-icon">
     </a>
     <div class="flex-column gap-5">
       <div class="flex-row justify-start align-center gap-5">
         <div class="flex-row justify-start align-start gap-5">
           <div class="flex-column">
-            <app-i18n-name content="mobs" [id]="row.id"></app-i18n-name>
+            {{row | i18n}}
             <div class="flex-row gap-5">
               <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
               <div *ngIf="row.zoneid">{{row.zoneid | i18nRow:'places' | i18n}}</div>
@@ -193,7 +180,7 @@
     <div class="flex-column gap-5">
       <div class="flex-row justify-start align-center gap-5">
         <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon">
-        <app-i18n-name content="leves" [id]="row.id"></app-i18n-name>
+        {{row | i18n}}
         <app-db-button [id]="row.id" type="leve"></app-db-button>
       </div>
       <div class="flex-row gap-5">
@@ -212,7 +199,7 @@
     <div class="flex-column gap-5">
       <div class="flex-row justify-start align-center gap-5">
         <img [src]="'/c/PlaceName.png' | xivapiIcon" alt="" class="quest-icon">
-        <app-i18n-name content="places" [id]="row.zoneid"></app-i18n-name>
+        {{row | i18n}}
         <app-db-button [id]="row.id" type="map"></app-db-button>
       </div>
       <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
@@ -251,7 +238,7 @@
     <div class="flex-column gap-5">
       <div class="flex-row justify-start align-center gap-5">
         <div>
-          <app-i18n-name content="fates" [id]="row.id"></app-i18n-name>
+          {{row | i18n}}
           - lvl{{row.level}}</div>
         <app-db-button [id]="row.id" type="fate"></app-db-button>
       </div>
@@ -295,11 +282,11 @@
     <div class="flex-column gap-5">
       <div class="flex-row justify-start align-center gap-5">
         <div class="flex-column">
-          <div>{{row.data | xivapiL12n: 'statuses' | i18n}}</div>
+          <div>{{row | i18n}}</div>
           <div class="flex-row gap-5">
             <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
             <div>
-              <i>{{row.data | xivapiL12n: 'statusDescriptions':'Description' | i18n}}</i>
+              <i>{{row.description | i18n}}</i>
             </div>
           </div>
         </div>
@@ -314,11 +301,11 @@
        fxLayoutAlign="flex-start flex-start"
        fxLayoutAlign.lt-md="center center"
        fxLayoutGap="5px">
-    <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon" fxFlex="0 0 auto">
+    <img *ngIf="row.icon" [src]="row.icon | xivapiIcon" alt="" class="quest-icon" fxFlex="0 0 auto">
     <div class="flex-column gap-5">
       <div class="flex-row justify-start align-center gap-5">
         <div class="flex-column">
-          <app-i18n-name content="traits" [id]="row.id"></app-i18n-name>
+          {{row | i18n}}
           <div class="flex-row gap-5">
             <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
             <div>
@@ -341,7 +328,7 @@
     <div class="flex-column gap-5">
       <div class="flex-row justify-start align-center gap-5">
         <div class="flex-column">
-          <app-i18n-name content="achievements" [id]="row.id"></app-i18n-name>
+          {{row | i18n}}
           <div class="flex-row gap-5">
             <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
           </div>

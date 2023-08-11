@@ -6,7 +6,7 @@ import { WeatherService } from '../../../../core/eorzea/weather.service';
 import { BehaviorSubject, combineLatest } from 'rxjs';
 import { distinctUntilChanged, map, shareReplay } from 'rxjs/operators';
 import { FishingSpotUtilsService } from '../fishing-spot-utils.service';
-import { XivApiFishingSpot } from '../fishing-spot.component';
+import { LazyFishingSpotsDatabasePage } from '@ffxiv-teamcraft/data/model/lazy-fishing-spots-database-page';
 
 @Component({
   selector: 'app-fishing-spot-weather-transitions',
@@ -18,29 +18,29 @@ import { XivApiFishingSpot } from '../fishing-spot.component';
 export class FishingSpotWeatherTransitionsComponent {
   public readonly highlightColor$ = this.utils.getHighlightColor(0.5).pipe(distinctUntilChanged());
 
-  private readonly spot$ = new BehaviorSubject<XivApiFishingSpot | undefined>(undefined);
+  private readonly spot$ = new BehaviorSubject<LazyFishingSpotsDatabasePage | undefined>(undefined);
 
   private readonly time$ = this.etime.getEorzeanTime().pipe(distinctUntilChanged((a, b) => a.getUTCHours() % 8 === b.getUTCHours() % 8));
 
   public readonly weatherTransitions$ = combineLatest([this.spot$, this.time$]).pipe(
     map(([spot, time]) => {
-      const rates: any[] = weatherIndex[spot.TerritoryType.WeatherRate];
+      const rates: any[] = weatherIndex[spot.weatherRate];
       return rates
         ?.flatMap((to) => {
           return rates?.map((from) => {
-            const nextSpawn = this.weatherService.getNextWeatherTransition(spot.TerritoryType.MapTargetID, [from.weatherId], to.weatherId, time.getTime());
+            const nextSpawn = this.weatherService.getNextWeatherTransition(spot.mapId, [from.weatherId], to.weatherId, time.getTime());
             return {
               chances:
                 100 *
-                this.utils.getWeatherChances(spot.TerritoryType.MapTargetID, to.weatherId) *
-                this.utils.getWeatherChances(spot.TerritoryType.MapTargetID, from.weatherId),
+                this.utils.getWeatherChances(spot.mapId, to.weatherId) *
+                this.utils.getWeatherChances(spot.mapId, from.weatherId),
               next: this.etime.toEarthDate(nextSpawn),
               nextET: nextSpawn.getUTCHours(),
               weatherId: to.weatherId,
               previousWeatherId: from.weatherId,
               active:
-                this.weatherService.getWeather(spot.TerritoryType.MapTargetID, time.getTime()) === to.weatherId &&
-                this.weatherService.getWeather(spot.TerritoryType.MapTargetID, time.getTime() - 8 * 60 * 60 * 1000 - 1) === from.weatherId
+                this.weatherService.getWeather(spot.mapId, time.getTime()) === to.weatherId &&
+                this.weatherService.getWeather(spot.mapId, time.getTime() - 8 * 60 * 60 * 1000 - 1) === from.weatherId
             };
           });
         })
@@ -58,7 +58,7 @@ export class FishingSpotWeatherTransitionsComponent {
   }
 
   @Input()
-  public set spot(value: XivApiFishingSpot | undefined) {
+  public set spot(value: LazyFishingSpotsDatabasePage | undefined) {
     this.spot$.next(value);
   }
 }

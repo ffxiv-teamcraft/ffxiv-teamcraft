@@ -1,48 +1,52 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
-import { ItemData } from '../../model/garland-tools/item-data';
-import { NgSerializerService } from '@kaiu/ng-serializer';
 import { catchError, map } from 'rxjs/operators';
-import { QuestData } from '../../model/garland-tools/quest-data';
-import { NpcData } from '../../model/garland-tools/npc-data';
-import { LeveData } from '../../model/garland-tools/leve-data';
-import { MobData } from '../../model/garland-tools/mob-data';
-import { FateData } from '../../model/garland-tools/fate-data';
 import { XivapiOptions, XivapiService } from '@xivapi/angular-client';
-import { Region, SearchFilter, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
-import { I18nToolsService } from '../tools/i18n-tools.service';
+import { ExtractRow, I18nName, Region, SearchFilter, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Language } from '../data/language';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../rxjs/with-lazy-data';
 import { environment } from '../../../environments/environment';
+import { LazyItemSearch } from '@ffxiv-teamcraft/data/model/lazy-item-search';
+import { LazyActionSearch } from '@ffxiv-teamcraft/data/model/lazy-action-search';
+import { LazyMonsterSearch } from '@ffxiv-teamcraft/data/model/lazy-monster-search';
+import { LazyLeveSearch } from '@ffxiv-teamcraft/data/model/lazy-leve-search';
+import { LazyInstanceSearch } from '@ffxiv-teamcraft/data/model/lazy-instance-search';
+import { LazyMapSearch } from '@ffxiv-teamcraft/data/model/lazy-map-search';
+import { LazyQuestSearch } from '@ffxiv-teamcraft/data/model/lazy-quest-search';
+import { LazyAchievementSearch } from '@ffxiv-teamcraft/data/model/lazy-achievement-search';
+import { LazyFateSearch } from '@ffxiv-teamcraft/data/model/lazy-fate-search';
+import { LazyFishingSpotSearch } from '@ffxiv-teamcraft/data/model/lazy-fishing-spot-search';
+import { LazyGatheringNodeSearch } from '@ffxiv-teamcraft/data/model/lazy-gathering-node-search';
+import { LazyNpcSearch } from '@ffxiv-teamcraft/data/model/lazy-npc-search';
+import { LazyStatusSearch } from '@ffxiv-teamcraft/data/model/lazy-status-search';
+import { LazyTraitSearch } from '@ffxiv-teamcraft/data/model/lazy-trait-search';
+import { IpcService } from '../electron/ipc.service';
+import { PlatformService } from '../tools/platform.service';
+import { SearchParams, XIVSearchFilter } from '@ffxiv-teamcraft/search';
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
 
-  public garlandtoolsVersions = {
-    item: 3,
-    instance: 2,
-    quest: 2,
-    npc: 2,
-    leve: 3,
-    mob: 2,
-    fate: 2
-  };
+  public searchLang = this.settings.searchLanguage || this.translate.currentLang;
 
-  public searchLang = this.translate.currentLang;
-
-  private garlandUrl = 'https://www.garlandtools.org/db/doc';
+  public ingesting$ = new BehaviorSubject(false);
 
   constructor(private http: HttpClient,
-              private i18n: I18nToolsService,
+              private ipc: IpcService,
+              private platform: PlatformService,
               private settings: SettingsService,
               private xivapi: XivapiService,
-              private serializer: NgSerializerService,
               private lazyData: LazyDataFacade,
               private translate: TranslateService) {
+    if (this.platform.isDesktop()) {
+      this.ipc.on('search:ingest', (event, ingesting) => {
+        this.ingesting$.next(ingesting);
+      });
+    }
   }
 
   private get isCompatible() {
@@ -59,77 +63,36 @@ export class DataService {
 
   public setSearchLang(lang: Language): void {
     this.searchLang = lang;
+    if (this.platform.isDesktop()) {
+      this.ipc.send('search:lang', lang);
+    }
   }
 
-  /**
-   * Gets an item based on its id.
-   * @deprecated
-   * @param {number} id
-   * @returns {Observable<ItemData>}
-   */
-  public getItem(id: number): Observable<ItemData> {
-    return this.getGarlandData(`/item/en/${this.garlandtoolsVersions.item}/${id}`)
-      .pipe(map(item => this.serializer.deserialize<ItemData>(item, ItemData)));
-  }
-
-  /**
-   * Gets an instance based on its id.
-   * @deprecated
-   * @param {number} id
-   * @returns {Observable<NpcData>}
-   */
-  public getNpc(id: number): Observable<NpcData> {
-    return this.getGarlandData(`/npc/en/${this.garlandtoolsVersions.npc}/${id}`)
-      .pipe(map(item => this.serializer.deserialize<NpcData>(item, NpcData)));
-  }
-
-  /**
-   * Gets a quest based on its id.
-   * @deprecated
-   * @param {number} id
-   * @returns {Observable<QuestData>}
-   */
-  public getQuest(id: number): Observable<QuestData> {
-    return this.getGarlandData(`/quest/en/${this.garlandtoolsVersions.quest}/${id}`)
-      .pipe(map(item => this.serializer.deserialize<QuestData>(item, QuestData)));
-  }
-
-  /**
-   * Gets a quest based on its id.
-   * @deprecated
-   * @param {number} id
-   * @returns {Observable<LeveData>}
-   */
-  public getLeve(id: number): Observable<LeveData> {
-    return this.getGarlandData(`/leve/en/${this.garlandtoolsVersions.leve}/${id}`)
-      .pipe(map(item => this.serializer.deserialize<LeveData>(item, LeveData)));
-  }
-
-  /**
-   * Gets a mob based on its id.
-   * @deprecated
-   * @param {number} id
-   * @returns {Observable<MobData>}
-   */
-  public getFate(id: number): Observable<FateData> {
-    return this.getGarlandData(`/fate/en/${this.garlandtoolsVersions.fate}/${id}`)
-      .pipe(map(item => this.serializer.deserialize<FateData>(item, FateData)));
-  }
-
-  /**
-   * Fires a search request to the search api in order to get results based on filters.
-   * @param {string} query
-   * @param {SearchFilter[]} filters
-   * @param onlyCraftable
-   * @param sort
-   * @param ignoreLanguageSetting
-   * @returns {Observable<Recipe[]>}
-   */
-  public searchItem(query: string, filters: SearchFilter[], onlyCraftable: boolean, sort: [string, 'asc' | 'desc'] = [null, 'desc'], ignoreLanguageSetting = false): Observable<SearchResult[]> {
+  public searchItem(query: string, filters: SearchFilter[], onlyCraftable: boolean, sort: [string, 'asc' | 'desc'] = [null, 'desc'], ignoreLanguageSetting = false) {
     return this.search(query, onlyCraftable ? SearchType.RECIPE : SearchType.ITEM, filters, sort);
   }
 
-  public search(query: string, type: SearchType, rawFilters: SearchFilter[], sort: [string, 'asc' | 'desc'] = [null, 'desc']): Observable<SearchResult[]> {
+  public search(query: string, type: SearchType.ITEM, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyItemSearch['data'] & I18nName & {
+    sources: ExtractRow['sources']
+  }>>
+  public search(query: string, type: SearchType.RECIPE, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyItemSearch['data'] & I18nName & {
+    sources: ExtractRow['sources']
+  }>>
+  public search(query: string, type: SearchType.ACTION, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyActionSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.MONSTER, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyMonsterSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.LEVE, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyLeveSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.INSTANCE, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyInstanceSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.MAP, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyMapSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.QUEST, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyQuestSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.ACHIEVEMENT, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyAchievementSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.FATE, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyFateSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.FISHING_SPOT, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyFishingSpotSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.GATHERING_NODE, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyGatheringNodeSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.NPC, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyNpcSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.STATUS, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyStatusSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType.TRAIT, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyTraitSearch['data'] & I18nName>>
+  public search(query: string, type: SearchType, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<SearchResult & I18nName>>
+  public search(query: string, type: SearchType, rawFilters: SearchFilter[], sort: [string, 'asc' | 'desc'] = [null, 'desc']) {
     if (type === SearchType.LORE) {
       return this.searchLore(query);
     }
@@ -140,7 +103,7 @@ export class DataService {
           if (f.value.exclude) {
             return [
               {
-                column: f.name,
+                field: f.name,
                 operator: '!!',
                 value: ''
               }
@@ -148,12 +111,12 @@ export class DataService {
           } else {
             return [
               {
-                column: f.name,
+                field: f.name,
                 operator: '>=',
                 value: f.value.min
               },
               {
-                column: f.name,
+                field: f.name,
                 operator: '<=',
                 value: f.value.max
               }
@@ -161,38 +124,49 @@ export class DataService {
           }
         } else if (Array.isArray(f.value)) {
           return [{
-            column: f.name,
+            field: f.name,
             operator: '|=',
-            value: f.value.filter(Boolean).join(';')
+            value: f.value.filter(Boolean)
           }];
         } else {
           return [{
-            column: f.name,
+            field: f.name,
             operator: '=',
             value: f.value
           }];
         }
       })
-      .flat()
-      .map(filter => `${filter.column}${filter.operator}${filter.value}`)
-      .join(',');
-    const params: any = {
+      .flat();
+    const params: SearchParams = {
       query,
       type,
-      region: this.settings.region,
-      lang: this.searchLang
+      sort,
+      filters: filters as XIVSearchFilter[],
+      lang: this.searchLang as keyof I18nName
     };
-    if (filters.length > 0) {
-      params['filters'] = filters;
+    if (this.platform.isDesktop()) {
+      return new Observable(subscriber => {
+        this.ipc.once('search:results', (event, res) => {
+          subscriber.next(res);
+          subscriber.complete();
+        });
+        this.ipc.send('search', { ...params, filters, sort });
+      });
+    } else {
+      if (filters.length > 0) {
+        (params as any).filters = filters
+          .map(filter => `${filter.field}${filter.operator}${Array.isArray(filter.value) ? filter.value.join(';') : filter.value}`)
+          .join(',');
+      }
+      if (sort[0]) {
+        params['sort_field'] = sort[0];
+        params['sort_order'] = sort[1];
+      }
+      if (environment.useLocalAPI) {
+        return this.devSearch(params);
+      }
+      return this.prodSearch(params);
     }
-    if (sort[0]) {
-      params['sort_field'] = sort[0];
-      params['sort_order'] = sort[1];
-    }
-    if (environment.useLocalAPI) {
-      return this.devSearch(params);
-    }
-    return this.prodSearch(params);
   }
 
   private devSearch(params: any): Observable<SearchResult[]> {
@@ -204,15 +178,6 @@ export class DataService {
 
   private prodSearch(params: any): Observable<SearchResult[]> {
     return this.http.get<SearchResult[]>('https://api.ffxivteamcraft.com/search', { params });
-  }
-
-  /**
-   * Creates a request to garlandtools.org.
-   * @param {string} uri
-   * @returns {Observable}
-   */
-  public getGarlandData(uri: string): Observable<any> {
-    return this.http.get<any>(this.garlandUrl + uri + '.json');
   }
 
   getSearchLang(): string {

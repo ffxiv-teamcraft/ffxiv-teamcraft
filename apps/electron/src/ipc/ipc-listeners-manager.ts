@@ -14,6 +14,11 @@ import { CharacterSearch } from '@xivapi/nodestone';
 import ua from 'universal-analytics';
 import { v4 as uuidv4 } from 'uuid';
 import fetch from 'electron-fetch';
+import { SearchParams, XIVSearch } from '@ffxiv-teamcraft/search';
+import { combineLatest, filter, first, interval, map, Observable, skip, tap } from 'rxjs';
+import { Extracts, I18nName, SearchType } from '@ffxiv-teamcraft/types';
+import { extractsHash } from '@ffxiv-teamcraft/data/extracts-hash';
+import isDev from 'electron-is-dev';
 
 
 export class IpcListenersManager {
@@ -26,9 +31,60 @@ export class IpcListenersManager {
 
   private characterSearchParser = new CharacterSearch();
 
+  private searchIndexes: Record<keyof I18nName, XIVSearch> = {
+    en: this.getXivSearch('en'),
+    ja: this.getXivSearch('ja'),
+    de: this.getXivSearch('de'),
+    fr: this.getXivSearch('fr'),
+    ko: this.getXivSearch('ko'),
+    zh: this.getXivSearch('zh')
+  };
+
+  private loading: Array<keyof I18nName> = [];
+
+  private extracts: Extracts;
+
+  static SEARCHABLE_CONTENT = Object.values(SearchType).filter(v => !['Recipe', 'Any', 'Lore'].includes(v));
+
   constructor(private pcap: PacketCapture, private overlayManager: OverlayManager,
               private mainWindow: MainWindow, private store: Store,
               private trayMenu: TrayMenu, private proxyManager: ProxyManager) {
+  }
+
+  private loadLanguage(lang: keyof I18nName): Observable<unknown> {
+    if (this.loading.includes(lang)) {
+      return interval(200).pipe(
+        map(() => {
+          return IpcListenersManager.SEARCHABLE_CONTENT.every(c => {
+            return this.searchIndexes[lang].hasIndex(c);
+          });
+        }),
+        filter(Boolean),
+        skip(1),
+        first()
+      );
+    }
+    this.loading.push(lang);
+    performance.mark('ingest:start');
+    if (this.mainWindow.win) {
+      this.mainWindow.win.webContents.send('search:ingest', true);
+    }
+    return combineLatest(IpcListenersManager.SEARCHABLE_CONTENT.map(content => {
+      return this.searchIndexes[lang].buildIndex(content);
+    })).pipe(
+      first(),
+      tap(() => {
+        performance.mark('ingest:done');
+        log.log(`SEARCH INGEST ${lang}: ${Math.floor(performance.measure('search:ingest', 'ingest:start', 'ingest:done').duration)}ms`);
+        if (this.mainWindow.win) {
+          this.mainWindow.win.webContents.send('search:ingest', false);
+        }
+      })
+    );
+  }
+
+  private getXivSearch(lang: keyof I18nName): XIVSearch {
+    return new XIVSearch(lang, join(Constants.BASE_APP_PATH, `/assets/data/`));
   }
 
   private twoWayBinding(event: string, storeFieldName: string, onWrite?: (value: any, previous: any) => void, defaultValue?: any) {
@@ -46,7 +102,59 @@ export class IpcListenersManager {
     });
   }
 
+  private doSearch(params: SearchParams) {
+    if (params.type === SearchType.RECIPE) {
+      params.type = SearchType.ITEM;
+      params.filters.push({
+        field: 'craftable',
+        operator: '=',
+        value: true
+      });
+    }
+    const index = this.searchIndexes[params.lang];
+    let res = [];
+    if (params.type === SearchType.ANY) {
+      res = IpcListenersManager.SEARCHABLE_CONTENT.map(content => {
+        return index.search(content, params.query, params.filters, params.sort)
+          .map(row => {
+            row.type = content;
+            return row;
+          });
+      })
+        .flat();
+    } else {
+      res = index.search(params.type, params.query, params.filters, params.sort)
+        .map(row => {
+          row.type = params.type;
+          return row;
+        });
+    }
+    return res.map(row => {
+      if ([SearchType.ITEM, SearchType.RECIPE].includes(row.type)) {
+        return {
+          ...row,
+          sources: this.extracts[row.itemId]?.sources || []
+        };
+      }
+      return row;
+    });
+  }
+
   public init(): void {
+    performance.mark('start');
+    const extractsFileName = isDev ? 'extracts.json' : `extracts.${extractsHash}.json`;
+    readFile(join(Constants.BASE_APP_PATH, `/assets/extracts/`, extractsFileName), 'utf-8', (err, data) => {
+      if (data) {
+        performance.mark('extracts');
+        this.extracts = JSON.parse(data);
+        log.log(`EXTRACTS LOAD ${Math.floor(performance.measure('search:load', 'start', 'extracts').duration)}ms`);
+      }
+      if (err) {
+        log.error(err);
+      }
+    });
+    this.loadLanguage(this.store.get<keyof I18nName>('search:lang', 'en')).subscribe();
+    this.setupSearchListeners();
     this.setupLodestoneListeners();
     this.setupOverlayListeners();
     this.setupStateListeners();
@@ -57,6 +165,27 @@ export class IpcListenersManager {
     this.setupFreeCompanyWorkshopsListeners();
 
     this.setupAnalyticsListeners();
+  }
+
+  private setupSearchListeners(): void {
+    ipcMain.on('search', (event, data: SearchParams) => {
+      if (this.searchIndexes[data.lang].hasIndex(data.type)) {
+        event.sender.send('search:results', this.doSearch(data));
+      } else {
+        this.loadLanguage(data.lang).subscribe(() => {
+          event.sender.send('search:results', this.doSearch(data));
+        });
+      }
+    });
+    ipcMain.on('search:lang', (event, data: keyof I18nName) => {
+      if (!this.searchIndexes[data]) {
+        data = 'en';
+      }
+      this.store.set('search:lang', data);
+      if (!this.searchIndexes[data].hasIndex(SearchType.ITEM)) {
+        this.loadLanguage(data).subscribe();
+      }
+    });
   }
 
   private forwardToMain(channel: string): void {
@@ -272,6 +401,10 @@ export class IpcListenersManager {
       if (uri.length > 1) {
         this.store.set('router:uri', uri);
       }
+    });
+
+    ipcMain.on('child:new', (event, uri) => {
+      this.mainWindow.createChildWindow(uri || '');
     });
 
     ipcMain.on('zoom-in', () => {

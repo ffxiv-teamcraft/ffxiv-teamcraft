@@ -44,7 +44,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
   private highlight$ = new BehaviorSubject<MapRelatedElement>(null);
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private gt: DataService, private i18n: I18nToolsService, private translate: TranslateService,
+              private i18n: I18nToolsService, private translate: TranslateService,
               private router: Router, private lazyData: LazyDataFacade,
               private htmlTools: HtmlToolsService, private http: HttpClient, public settings: SettingsService,
               seo: SeoService) {

@@ -2,12 +2,12 @@
 <form (ngSubmit)="getSupplies(form)" *ngIf="form$ | async as form" [formGroup]="form" [nzLayout]="'inline'" nz-form>
   <nz-form-item *ngFor="let control of form.controls | keys">
     <nz-form-control>
-      <nz-input-group [nzPrefix]="jobIcon" nz-tooltip [nzTooltipTitle]="+control | i18nRow:'jobName' | i18n" >
+      <nz-input-group [nzPrefix]="jobIcon" nz-tooltip [nzTooltipTitle]="+control | i18nRow:'jobName' | i18n">
         <input [formControlName]="control" class="lvl-input" min="0" nz-input
                required type="number"/>
       </nz-input-group>
       <ng-template #jobIcon>
-        <img *ngIf="(+control | i18nRow:'jobAbbr' | async)?.en as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/job/{{icon}}.png">
+        <span class="companion-svg" [innerHtml]="+control | jobUnicode"></span>
       </ng-template>
     </nz-form-control>
   </nz-form-item>
@@ -21,8 +21,8 @@
 </form>
 <div *ngIf="items$ | async as supplies" class="results" fxLayout="column" fxLayoutGap="10px">
   <div *ngFor="let row of supplies" nz-row nzGutter="10">
-    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="6" nzSm="24">
-      <img *ngIf="(row.job  | i18nRow:'jobAbbr' | async)?.en as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/job/{{icon}}.png">
+    <div class="flex-row align-center gap-5" nz-col nzMd="6" nzSm="24">
+      <div class="companion-svg" [innerHtml]="row.job | jobUnicode"></div>
       <div>{{row.job | i18nRow:'jobName' | i18n}}</div>
     </div>
     <nz-select #selectBox (ngModelChange)="select(row.job, $event.itemId, $event.count)" [ngModel]="null"

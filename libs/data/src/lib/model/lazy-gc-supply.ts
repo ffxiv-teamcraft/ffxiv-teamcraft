@@ -5,5 +5,6 @@ export interface LazyGcSupply {
 }
 
 export interface Reward {
-  xp: number;
+  seals: number;
+  xp:    number;
 }

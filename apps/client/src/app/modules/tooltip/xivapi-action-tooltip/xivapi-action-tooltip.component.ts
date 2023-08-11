@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { StepState } from '@ffxiv-teamcraft/simulator';
+import { LazyActionsDatabasePage } from '@ffxiv-teamcraft/data/model/lazy-actions-database-page';
 
 @Component({
   selector: 'app-xivdb-tooltip-component',
@@ -10,7 +11,7 @@ import { StepState } from '@ffxiv-teamcraft/simulator';
 })
 export class XivapiActionTooltipComponent implements OnInit {
 
-  @Input() action: any;
+  @Input() action: LazyActionsDatabasePage;
 
   @Input() state: StepState;
 
@@ -30,18 +31,14 @@ export class XivapiActionTooltipComponent implements OnInit {
 
   ngOnInit(): void {
     this.details = [];
-    if (this.action.ClassJobLevel) {
-      this.details.push({ name: 'TOOLTIP.Level', value: this.action.ClassJobLevel.toString(), requiresPipe: false });
+    if (this.action.level) {
+      this.details.push({ name: 'TOOLTIP.Level', value: this.action.level.toString(), requiresPipe: false });
     }
-    if (this.action.PrimaryCostValue) {
-      this.details.push({ name: 'TOOLTIP.Cost', value: this.action.PrimaryCostValue.toString(), requiresPipe: false });
+    if (this.action.primaryCostValue) {
+      this.details.push({ name: 'TOOLTIP.Cost', value: this.action.primaryCostValue.toString(), requiresPipe: false });
     }
-    if (this.action.ClassJobCategory) {
-      this.details.push({ name: 'TOOLTIP.Class_job', value: this.i18n.xivapiToI18n(this.action.ClassJobCategory), requiresPipe: true });
+    if (this.action.job) {
+      this.details.push({ name: 'TOOLTIP.Class_job', value: this.i18n.getNameObservable('jobAbbr', this.action.job), requiresPipe: true });
     }
-  }
-
-  public getDescription(action: any): string {
-    return this.i18n.getName(this.i18n.xivapiToI18n(action, 'Description'));
   }
 }

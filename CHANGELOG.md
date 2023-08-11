@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.0.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.5.7...v11.0.0) (2023-08-09)
+
+
+### Features
+
+* **core:** item tooltips now have more info and are way faster ([b35c39e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b35c39ea195ebf4b2d4bf91c366533f6c3544cf5))
+* **core:** new drag and drop implementation everywhere ! ([bc19701](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bc1970140f2bdfe84a0542d1668c69598426c13e))
+* **data:** update for cn patch-6.38 ([9ad3e5f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9ad3e5f5564e61c86470d9e125f0d065fc119494))
+* **desktop:** offline search, way faster for everything ! ([5e224e3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5e224e32e606a375b2164ff269f5d855f0cb89bd))
+* **desktop:** you can now create child windows ([1169b54](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1169b54c30079273a8046b438364ad55225c6d02))
+* **marketboard:** support for korean servers in marketboard-related features ([ada0884](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ada08848fdb658171399f15e536966bccae6f14e))
+* **search:** brand new search API, faster than ever ! ([1ee087d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1ee087da94647d96372d29c4116d811beebc69f8))
+* **search:** item results now show their sources directly in the search page ([2a35e50](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2a35e50b2bf7c27fa5a7c16e878fdac45a65e981))
+
+
+### Bug Fixes
+
+* **alarms:** fixed timer drifting name as it updates ([f4b0723](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f4b07237e7289811d3e4078df67d234e4092d696)), closes [#2626](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2626)
+* **core:** don't show support popup on overlays and child windows ([427ad58](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/427ad58c9916e13befe51f9e298b95c50fc4885a))
+* **island-workshop:** allowed better island state updating ([a9cde5e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a9cde5e07d57f294cd294765056245caf263448b))
+* **layout:** fixed housing vendors sometimes not prioritized properly ([72ed9d5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/72ed9d5cee1fa38fa295d9a1a5e7c04dafc03aa8))
+
 ### [10.5.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.5.6...v10.5.7) (2023-07-18)
 
 

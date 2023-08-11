@@ -29,6 +29,7 @@ export class QuestsExtractor extends AbstractExtractor {
       `OptionalItemReward.RequiredItem#`,
       `OptionalItemReward.RewardAmount#`,
       `OptionalItemReward.RewardItem#`,
+      'ActionReward#',
       `ItemRewardType`
     ], false, 1).subscribe(entries => {
       entries.forEach(quest => {
@@ -43,6 +44,14 @@ export class QuestsExtractor extends AbstractExtractor {
           rewards: [],
           trades: []
         };
+
+        if (quest.ActionReward) {
+          quests[quest.index].action = quest.ActionReward;
+        }
+
+        if (quest.Icon) {
+          quests[quest.index].banner = quest.Icon;
+        }
 
         if (quest.OtherReward?.index > 0) {
           const itemId = Object.keys(itemNames).find(key => itemNames[key].en === quest.OtherReward.Name_en);
@@ -87,7 +96,7 @@ export class QuestsExtractor extends AbstractExtractor {
         });
       this.persistToJsonAsset('quests', quests);
       this.persistToJsonAsset('used-in-quests', usedInQuests);
-      this.persistToTypescript('quests-chain-lengths', 'questChainLengths', questChainLengths);
+      this.persistToTypescriptData('quests-chain-lengths', 'questChainLengths', questChainLengths);
       this.done();
     });
   }

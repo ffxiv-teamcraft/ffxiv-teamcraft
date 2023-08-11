@@ -14,7 +14,7 @@
       <button (click)="openHuntingPopup(item)" *ngSwitchCase="dataTypes.DROPS" nz-button [nzSize]="size"
               nz-tooltip
               nzShape="circle" nzTooltipTitle="{{'Hunting' | translate}}">
-        <img alt="Drops" class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png">
+        <img alt="Drops" class="img-icon" src="./assets/icons/mob.png">
       </button>
       <button (click)="openIslandAnimalsPopup(item)" *ngSwitchCase="dataTypes.ISLAND_PASTURE" nz-button [nzSize]="size"
               nz-tooltip
@@ -34,7 +34,7 @@
           <app-item-icon width="24" disableClick="true" tooltipDisabled="true" [itemId]="icon"></app-item-icon>
         </span>
         <ng-template #gtFallBack>
-          <img src="https://www.garlandtools.org/db/images/marker/Shop.png" class="img-icon round-icon">
+          <img src="./assets/icons/Shop.png" class="img-icon round-icon">
         </ng-template>
       </button>
       <button (click)="openInstancesPopup(item)" *ngSwitchCase="dataTypes.INSTANCES"
@@ -60,7 +60,7 @@
       <button (click)="openReducedFromPopup(item)" *ngSwitchCase="dataTypes.REDUCED_FROM"
               nz-button [nzSize]="size"
               nz-tooltip nzShape="circle" nzTooltipTitle="{{'Reduction' | translate}}">
-        <img class="img-icon round-icon" src="https://www.garlandtools.org/db/images/item/Reduce.png">
+        <img class="img-icon round-icon" src="./assets/icons/Reduce.png">
       </button>
       <button (click)="openDesynthsPopup(item)" *ngSwitchCase="dataTypes.DESYNTHS"
               nz-button [nzSize]="size"
@@ -75,7 +75,7 @@
       <button (click)="openVoyagesPopup(item)" *ngSwitchCase="dataTypes.VOYAGES"
               [nzTooltipTitle]="'Voyages' | translate"
               nz-button [nzSize]="size" nz-tooltip nzShape="circle">
-        <img alt="Voyages" class="img-icon" src="https://www.garlandtools.org/db/images/Voyage.png">
+        <img alt="Voyages" class="img-icon" src="./assets/icons/Voyage.png">
       </button>
       <button (click)="openVenturesPopup(item)" *ngSwitchCase="dataTypes.VENTURES"
               [nzTooltipTitle]="'Retainer_ventures' | translate"

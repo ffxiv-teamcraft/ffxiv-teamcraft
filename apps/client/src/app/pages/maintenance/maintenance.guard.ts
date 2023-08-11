@@ -1,5 +1,5 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { map } from 'rxjs/operators';
@@ -8,7 +8,7 @@ import { IS_HEADLESS } from '../../../environments/is-headless';
 import { Database, objectVal, ref } from '@angular/fire/database';
 
 @Injectable()
-export class MaintenanceGuard implements CanActivate {
+export class MaintenanceGuard  {
 
   constructor(private firebase: Database, @Inject(PLATFORM_ID) private platform: any) {
   }

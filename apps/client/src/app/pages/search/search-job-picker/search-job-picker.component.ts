@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component, forwardRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
@@ -56,7 +56,7 @@ export class SearchJobPickerComponent implements ControlValueAccessor {
 
   private onTouched: () => void;
 
-  private selectedJobs$: BehaviorSubject<number[]> = new BehaviorSubject([]);
+  public selectedJobs$: BehaviorSubject<number[]> = new BehaviorSubject([]);
 
   public display$ = combineLatest([this.jobsDisplay$, this.selectedJobs$]).pipe(
     map(([display, selected]) => {
@@ -70,6 +70,9 @@ export class SearchJobPickerComponent implements ControlValueAccessor {
   );
 
   private pristine = true;
+
+  @Input()
+  public single = false;
 
   constructor(private lazyData: LazyDataFacade) {
   }
@@ -88,7 +91,11 @@ export class SearchJobPickerComponent implements ControlValueAccessor {
 
   toggleJob(job: number, newState: boolean): void {
     if (newState) {
-      this.selectedJobs$.next([...this.selectedJobs$.value, job]);
+      if (this.single) {
+        this.selectedJobs$.next([job]);
+      } else {
+        this.selectedJobs$.next([...this.selectedJobs$.value, job]);
+      }
     } else {
       this.selectedJobs$.next(this.selectedJobs$.value.filter(j => j !== job));
     }

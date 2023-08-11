@@ -18,7 +18,7 @@ export class BufferReader {
   }
 
   public get reachedEnd(): boolean {
-    return this.offset === this.buf.length;
+    return this.offset >= this.buf.length;
   }
 
   public get remainingSize(): number {
@@ -181,7 +181,7 @@ export class BufferReader {
         `Tried to read data using a non-function buffer prop, this shouldn't happen: ${String(fn)}`
       );
     }
-    const value: T = (this.buf[fn] as Function)(this.offset);
+    const value: T = (this.buf[fn] as (offset: number) => T)(this.offset);
     this.offset += size;
     return value;
   }

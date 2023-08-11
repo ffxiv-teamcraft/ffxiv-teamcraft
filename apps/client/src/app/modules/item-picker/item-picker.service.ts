@@ -11,15 +11,6 @@ export class ItemPickerService {
   constructor(private dialog: NzModalService, private translate: TranslateService) {
   }
 
-  public pickItem(): Observable<SearchResult> {
-    return this.dialog.create({
-      nzContent: ItemPickerComponent,
-      nzFooter: null,
-      nzCloseOnNavigation: true,
-      nzTitle: this.translate.instant('Pick_an_item')
-    }).afterClose;
-  }
-
   public pickItems(): Observable<SearchResult[]> {
     return this.dialog.create({
       nzContent: ItemPickerComponent,

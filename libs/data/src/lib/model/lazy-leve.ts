@@ -1,4 +1,5 @@
 export interface LazyLeve {
+  banner:          string;
   cost:            number;
   de:              string;
   deliveryPlaceId: number;

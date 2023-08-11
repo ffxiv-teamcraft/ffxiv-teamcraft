@@ -2,8 +2,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { filter, map, switchMap } from 'rxjs/operators';
-import { Craft } from '../../../../model/garland-tools/craft';
-import { SimulationResult } from '@ffxiv-teamcraft/simulator';
+import { Craft, SimulationResult } from '@ffxiv-teamcraft/simulator';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { ConsumablesService } from '../../model/consumables.service';
 import { Consumable } from '../../model/consumable';

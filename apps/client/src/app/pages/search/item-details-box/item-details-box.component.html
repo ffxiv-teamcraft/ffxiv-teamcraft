@@ -1,0 +1,9 @@
+<div class="remove">
+  <button nz-button nzDanger nzSize="small" nzShape="circle" (click)="remove.emit()">
+    <span nz-icon nzType="close"></span>
+  </button>
+</div>
+<app-item-tooltip-component *ngIf="data$ | async as data; else loader" [item]="data"></app-item-tooltip-component>
+<ng-template #loader>
+  <nz-spin nzSpinning></nz-spin>
+</ng-template>

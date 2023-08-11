@@ -51,7 +51,8 @@
     "Only_craftable": "Only recipes",
     "Want_filters": "Need more filters?",
     "Open_search": "Open search page instead",
-    "Island_recipe": "Island Sanctuary recipe"
+    "Island_recipe": "Island Sanctuary recipe",
+    "Ingesting_index": "Ingesting content for the newly selected language, this should take few seconds..."
   },
   "Use_as_default_character": "Use as default character",
   "Download_desktop_app": "Download desktop app",
@@ -206,6 +207,8 @@
     "Visibility": "Visibility",
     "Public": "Public",
     "Private": "Private",
+    "Pagination_text": "{{start}}-{{end}} of {{total}} items",
+    "And_X_more": "and {{amount}} more...",
     "DAYS": {
       "Monday": "Monday",
       "Tuesday": "Tuesday",
@@ -261,8 +264,8 @@
       "DELIVERIES_RESET_DESCRIPTION": "Reset of GC hand-ins",
       "LEVE_ALLOWANCES": "Leve allowances",
       "LEVE_ALLOWANCES_DESCRIPTION": "You get 3 more leve allowances",
-      "OCEAN_FISHING" : "Ocean fishing",
-      "OCEAN_FISHING_DESCRIPTION" : "Ocean fishing will start."
+      "OCEAN_FISHING": "Ocean fishing",
+      "OCEAN_FISHING_DESCRIPTION": "Ocean fishing will start."
     },
     "CUSTOM": {
       "Title": "Add custom alarm",
@@ -534,6 +537,9 @@
     "Housing_map_explain": "The housing map in which your house is",
     "Reset_linked_characters_ok": "Character links have been reset",
     "Display_slow_mode_notification": "Display crafting/gathering slow mode notification",
+    "New_child_window": "Create a new child window",
+    "Child_windows_title": "You can now open child windows in Teamcraft desktop !",
+    "Child_windows_description": "When clicking something that navigates (like the \"i\" button for database pages or any link in the app), use ctrl + click or middle click instead to open in a new window. Additionally, you can create a new window using the new button next to the github stars count.",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -1373,10 +1379,7 @@
     "Ilvl": "ilvl",
     "Cost": "Cost",
     "Class_job": "Class/Job",
-    "Damage_phys": "Phys. Damage",
-    "Damage_mag": "Mag. Damage",
-    "Defense_phys": "Phys. Defense",
-    "Defense_mag": "Mag. Defense"
+    "Masterbooks": "Requires a masterbook"
   },
   "SEARCH_INTRO": {
     "Slogan": "Craft, share, contribute",
@@ -1610,7 +1613,7 @@
     "Currencies": "Currencies",
     "Rowena_splendor": "Rowena's splendors",
     "Unlocks": "Unlocks",
-    "Jump_to_page": "Open item db page",
+    "Jump_to_page": "Open db page",
     "Ishgard_restoration": "Ishgardian restoration",
     "ITEM": {
       "Masterpiece_exp_tooltip": "% of exp needed for next level",
@@ -1850,6 +1853,7 @@
     "NPC": "NPC",
     "Leve": "Levequest",
     "Leve_info_message": "You can use the levequests page to prepare levekits and compute exp reward for your leves",
+    "Comparison_tip": "You can compare items by selecting them and setting selection to comparison mode",
     "Monster": "Monster",
     "Lore": "Lore",
     "Fate": "Fate",
@@ -1961,6 +1965,10 @@
     "Exclude": "Exclude",
     "Select_stat": "Select a stat",
     "Level": "Level",
+    "SELECTION_MODE": {
+      "List": "List",
+      "Compare": "Compare"
+    },
     "SORT_BY": {
       "Relevance": "Relevance",
       "ID": "ID",

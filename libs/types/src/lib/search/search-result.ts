@@ -1,6 +1,7 @@
 import { Recipe } from './recipe';
 import { BaseSearchResult } from './base-search-result';
 import { LazyDataI18nKey } from '../lazy-data-types';
+import { ItemSource } from '../list';
 
 export interface SearchResult extends BaseSearchResult {
   itemId: number | string;
@@ -15,4 +16,5 @@ export interface SearchResult extends BaseSearchResult {
   selected?: boolean;
   // Is it a custom item?
   isCustom?: boolean;
+  sources: ItemSource[];
 }

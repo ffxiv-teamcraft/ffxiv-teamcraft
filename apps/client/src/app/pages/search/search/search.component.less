@@ -353,10 +353,11 @@ nz-form-item {
 }
 
 .selection {
-  padding: 0 50px;
   width: 100%;
-  @media @mobile {
-    padding: 0 10px;
+
+  .selection-content {
+    max-height: 1000px;
+    overflow: auto;
   }
 
   .selection-row {
@@ -375,6 +376,7 @@ nz-form-item {
 
   .selection-buttons {
     width: 100%;
+    margin-top: 10px;
 
     > button:first-child {
       margin-right: 10px;

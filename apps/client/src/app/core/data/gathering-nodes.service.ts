@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { GarlandToolsService } from '../api/garland-tools.service';
-import { DataType, FishingBait, GatheringNode } from '@ffxiv-teamcraft/types';
-import { getItemSource } from '@ffxiv-teamcraft/types';
+import { DataType, FishingBait, GatheringNode, getItemSource } from '@ffxiv-teamcraft/types';
 import { Observable, of } from 'rxjs';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { map } from 'rxjs/operators';
@@ -14,7 +12,7 @@ import { safeCombineLatest } from '../rxjs/safe-combine-latest';
 })
 export class GatheringNodesService {
 
-  constructor(private gtData: GarlandToolsService, private lazyData: LazyDataFacade) {
+  constructor(private lazyData: LazyDataFacade) {
   }
 
   public getItemNodes(itemId: number, onlyDirectGathering = false): Observable<GatheringNode[]> {

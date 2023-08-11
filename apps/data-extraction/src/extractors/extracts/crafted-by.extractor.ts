@@ -9,34 +9,35 @@ export class CraftedByExtractor extends AbstractItemDetailsExtractor<CraftedBy[]
     return this.recipes
       .filter(recipe => recipe.result === itemId)
       .map(craft => {
-        const craftedBy: CraftedBy = {
-          itemId: itemId,
-          job: craft.job,
-          lvl: craft.lvl,
-          stars_tooltip: craft.stars > 0 ? `(${craft.stars}★)` : '',
-          id: craft.id.toString(),
-          rlvl: craft.rlvl,
-          durability: craft.durability,
-          progression: craft.progress,
-          quality: craft.quality,
-          yield: craft.yields,
-          isIslandRecipe: craft.isIslandRecipe || false
-        };
-        if (craft.masterbook) {
-          let masterbookEntry: CompactMasterbook = {
-            id: craft.masterbook as number
+          const craftedBy: CraftedBy = {
+            itemId: itemId,
+            job: craft.job,
+            lvl: craft.lvl,
+            stars_tooltip: craft.stars > 0 ? `(${craft.stars}★)` : '',
+            id: craft.id.toString(),
+            rlvl: craft.rlvl,
+            durability: craft.durability,
+            progression: craft.progress,
+            quality: craft.quality,
+            yield: craft.yields,
+            isIslandRecipe: craft.isIslandRecipe || false,
+            ingredients: craft.ingredients.reverse()
           };
-          if (craft.masterbook && typeof craft.masterbook !== 'number' && (craft.masterbook as MasterbookClass).id) {
-            masterbookEntry = {
-              id: (craft.masterbook as MasterbookClass).id,
-              name: (craft.masterbook as MasterbookClass).name
+          if (craft.masterbook) {
+            let masterbookEntry: CompactMasterbook = {
+              id: craft.masterbook as number
             };
+            if (craft.masterbook && typeof craft.masterbook !== 'number' && (craft.masterbook as MasterbookClass).id) {
+              masterbookEntry = {
+                id: (craft.masterbook as MasterbookClass).id,
+                name: (craft.masterbook as MasterbookClass).name
+              };
+            }
+            craftedBy.masterbook = masterbookEntry;
           }
-          craftedBy.masterbook = masterbookEntry;
+          return craftedBy;
         }
-        return craftedBy;
-      }
-    );
+      );
   }
 
   getDataType(): DataType {

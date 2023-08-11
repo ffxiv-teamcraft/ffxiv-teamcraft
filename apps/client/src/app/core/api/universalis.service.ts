@@ -52,7 +52,9 @@ export class UniversalisService {
   public getDCPrices(dc: string, ...itemIds: number[]): Observable<MarketboardItem[]> {
     return this.http.get<any>(`https://universalis.app/api/${dc}/${itemIds.join(',')}`)
       .pipe(
-        catchError(() => of([])),
+        catchError(() => of({
+          items: []
+        })),
         map(response => {
           const data = response.items || [response];
           return data.map(res => {
@@ -90,6 +92,9 @@ export class UniversalisService {
   }
 
   public getServerPrices(server: string, ...itemIds: number[]): Observable<MarketboardItem[]> {
+    if (server.toLowerCase().startsWith('korean server')) {
+      server = server.toLowerCase().replace('korean server (', '').replace(')', '');
+    }
     const chunks = _.chunk(itemIds, 100);
     return combineLatest(chunks.map(chunk => {
       return this.http.get<any>(`https://universalis.app/api/${server}/${chunk.join(',')}`)
@@ -276,7 +281,7 @@ export class UniversalisService {
                       materiaId: materiaItemId,
                       slotId: index
                     };
-                  }).filter(entry => entry.materiaId > 0),
+                  }).filter(entry => +entry.materiaId > 0),
                   pricePerUnit: item.pricePerUnit,
                   quantity: item.quantity,
                   total: item.quantity * item.pricePerUnit,

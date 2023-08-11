@@ -126,10 +126,14 @@ export class SupportService {
   }
 
   public showSupportUsPopup(): void {
-    this.dialog.create({
-      nzTitle: this.translate.instant('Like_the_tool'),
-      nzContent: SupportUsPopupComponent,
-      nzFooter: null
+    this.translate.get('Like_the_tool').pipe(
+      first()
+    ).subscribe(title => {
+      this.dialog.create({
+        nzTitle: title,
+        nzContent: SupportUsPopupComponent,
+        nzFooter: null
+      });
     });
   }
 }

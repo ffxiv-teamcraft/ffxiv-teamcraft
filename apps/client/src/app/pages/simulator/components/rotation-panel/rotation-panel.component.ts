@@ -22,13 +22,13 @@ import { FreeCompanyActionsService } from '../../model/free-company-actions.serv
 import { Consumable } from '../../model/consumable';
 import { FreeCompanyAction } from '../../model/free-company-action';
 import { BonusType } from '../../model/consumable-bonus';
-import { Craft } from '../../../../model/garland-tools/craft';
 import { IpcService } from '../../../../core/electron/ipc.service';
 import { PlatformService } from '../../../../core/tools/platform.service';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { EnvironmentService } from '../../../../core/environment.service';
 import { PermissionsController } from '../../../../core/database/permissions-controller';
+import { Craft } from '@ffxiv-teamcraft/simulator';
 
 @Component({
   selector: 'app-rotation-panel',

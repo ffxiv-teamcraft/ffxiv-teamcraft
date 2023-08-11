@@ -1,129 +1,89 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { first } from 'rxjs/operators';
-import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { LazyItemsDatabasePage } from '@ffxiv-teamcraft/data/model/lazy-items-database-page';
+import { BaseParam, DataType, ExplorationType, ExtractRow, FishingBait, GatheringNode, getItemSource } from '@ffxiv-teamcraft/types';
+import { Observable } from 'rxjs';
+import { observeInput } from '../../../core/rxjs/observe-input';
+import { filter, map, switchMap } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-xivdb-tooltip-component',
+  selector: 'app-item-tooltip-component',
   templateUrl: './xivapi-item-tooltip.component.html',
   styleUrls: ['./xivapi-item-tooltip.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class XivapiItemTooltipComponent implements OnInit {
 
-  @Input() item: any;
+  DataType = DataType;
+
+  ExplorationType = ExplorationType;
+
+  DOWM = { 'en': 'Disciple of War/Magic', 'ja': '戦闘職', 'de': 'Krieger/Magier', 'fr': 'Combattant' };
+
+  @Input() item: LazyItemsDatabasePage & ExtractRow;
+
+  public fshData$: Observable<GatheringNode[]> = observeInput(this, 'item').pipe(
+    filter(item => item.sources.some(s => s.type === DataType.GATHERED_BY)),
+    map(item => {
+      return getItemSource(item, DataType.GATHERED_BY);
+    }),
+    filter(gatheredBy => gatheredBy?.type === -5),
+    map(gatheredBy => gatheredBy.nodes)
+  );
+
+  public minGathering$: Observable<number> = this.fshData$.pipe(
+    map(data => {
+      return data
+        .map(node => {
+          return node.minGathering;
+        })
+        .sort((a, b) => a - b)[0];
+    })
+  );
 
   /**
    * Main attributes are ilvl, attack damage or duration for foods.
    */
   public mainAttributes = [];
 
-  public stats = [];
+  public trackByNode(index: number, node: GatheringNode): number {
+    return node.id;
+  }
 
-  public patch: any;
-
-  constructor(private lazyData: LazyDataFacade, private i18n: I18nToolsService) {
+  public trackByBait(index: number, bait: FishingBait): number {
+    return bait.id;
   }
 
   ngOnInit(): void {
     if (this.item === undefined) {
       return;
     }
-    this.lazyData.patches$.pipe(
-      first()
-    ).subscribe(patches => {
-      this.patch = patches.find(patch => patch.ID === this.item.Patch);
-    });
-
-    this.mainAttributes.push({
-      name: 'TOOLTIP.Level',
-      value: this.item.LevelEquip
-    });
-    this.mainAttributes.push({
-      name: 'TOOLTIP.Ilvl',
-      value: this.item.LevelItem
-    });
     // If the item has some damage, handle it.
-    if (this.item.DamagePhys || this.item.DamageMag) {
-      if (this.item.DamagePhys > this.item.DamageMag) {
+    if (this.item.pDmg || this.item.mDmg) {
+      if (this.item.pDmg > this.item.mDmg) {
         this.mainAttributes.push({
-          name: 'TOOLTIP.Damage_phys',
-          value: this.item.DamagePhys,
-          valueHq: this.item.DamagePhys + this.item.BaseParamValueSpecial0
+          ID: BaseParam.PHYSICAL_DAMAGE,
+          NQ: this.item.pDmg,
+          HQ: this.item.pDmg + this.item.bpSpecial[0]
         });
       } else {
         this.mainAttributes.push({
-          name: 'TOOLTIP.Damage_mag',
-          value: this.item.DamageMag,
-          valueHq: this.item.DamageMag + this.item.BaseParamValueSpecial1
+          ID: BaseParam.MAGIC_DAMAGE,
+          NQ: this.item.mDmg,
+          HQ: this.item.mDmg + this.item.bpSpecial[1]
         });
       }
     }
     // If the item has some defense, handle it.
-    if (this.item.DefensePhys || this.item.DefenseMag) {
+    if (this.item.pDef || this.item.mDef) {
       this.mainAttributes.push({
-        name: 'TOOLTIP.Defense_phys',
-        value: this.item.DefensePhys,
-        valueHq: this.item.DefensePhys + this.item.BaseParamValueSpecial0
+        ID: BaseParam.DEFENSE,
+        NQ: this.item.pDef,
+        HQ: this.item.pDef + this.item.bpSpecial[0]
       });
       this.mainAttributes.push({
-        name: 'TOOLTIP.Defense_mag',
-        value: this.item.DefenseMag,
-        valueHq: this.item.DefenseMag + this.item.BaseParamValueSpecial1
-      });
-    }
-    // Handle stats
-    this.stats.push(...Object.keys(this.item)
-      .filter(key => /^BaseParam\d+$/.test(key) && this.item[key] && key !== undefined)
-      .map(key => {
-        const statIndex = key.match(/(\d+)/)[0];
-        const res: any = {
-          name: this.i18n.xivapiToI18n(this.item[key]),
-          value: this.item[`BaseParamValue${statIndex}`],
-          requiresPipe: true
-        };
-        if (this.item.CanBeHq === 1) {
-          const statId = this.item[`BaseParam${statIndex}TargetID`];
-          const specialParamKey = Object.keys(this.item)
-            .filter(k => /^BaseParamSpecial\d+TargetID$/.test(k) && this.item[k])
-            .find(k => this.item[k] === statId);
-          if (specialParamKey) {
-            const specialParamIndex = specialParamKey.match(/(\d+)/)[0];
-            res.valueHq = res.value + this.item[`BaseParamValueSpecial${specialParamIndex}`];
-          } else {
-            res.valueHq = res.value;
-          }
-        }
-        return res;
-      })
-    );
-
-    if (this.item.ItemFood !== undefined) {
-      const food = this.item.ItemFood;
-      for (let i = 0; i <= 2; i++) {
-        const statsEntry: any = {};
-        const value = food[`Value${i}`];
-        const valueHq = food[`ValueHQ${i}`];
-        const isRelative = food[`IsRelative${i}`] === 1;
-        const max = food[`Max${i}`];
-        const maxHq = food[`MaxHQ${i}`];
-        if (value > 0) {
-          statsEntry.name = this.i18n.xivapiToI18n(food[`BaseParam${i}`]);
-          statsEntry.requiresPipe = true;
-          if (isRelative) {
-            statsEntry.value = `${value}% (${max})`;
-            statsEntry.valueHq = `${valueHq}% (${maxHq})`;
-          } else {
-            statsEntry.value = value.toString();
-          }
-          this.stats.push(statsEntry);
-        }
-      }
-    }
-
-    if (this.item.ItemSpecialBonus) {
-      this.lazyData.getRow('itemSetBonuses', this.item.ID).subscribe(row => {
-        this.item.SetBonuses = row?.bonuses;
+        ID: BaseParam.MAGIC_DEFENSE,
+        NQ: this.item.mDef,
+        HQ: this.item.mDef + this.item.bpSpecial[1]
       });
     }
   }

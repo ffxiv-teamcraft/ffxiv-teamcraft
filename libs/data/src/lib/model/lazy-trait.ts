@@ -5,6 +5,8 @@ export interface LazyTrait {
   fr:          string;
   icon:        string;
   ja:          string;
+  job:         number;
+  level:       number;
 }
 
 export interface Description {

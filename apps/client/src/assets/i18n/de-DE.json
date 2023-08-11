@@ -51,7 +51,8 @@
     "Only_craftable": "Nur Rezepte",
     "Want_filters": "Brauchen Sie mehr Filter?",
     "Open_search": "Suchseite stattdessen öffnen",
-    "Island_recipe": "Inselparadiesrezept"
+    "Island_recipe": "Inselparadiesrezept",
+    "Ingesting_index": "Ingesting content for the newly selected language, this should take few seconds..."
   },
   "Use_as_default_character": "Als Standard-Charakter setzen",
   "Download_desktop_app": "Desktopanwendung herunterladen",
@@ -206,6 +207,8 @@
     "Visibility": "Sichtbarkeit",
     "Public": "Öffentlich",
     "Private": "Privat",
+    "Pagination_text": "{{start}}-{{end}} of {{total}} items",
+    "And_X_more": "and {{amount}} more...",
     "DAYS": {
       "Monday": "Montag",
       "Tuesday": "Dienstag",
@@ -534,6 +537,9 @@
     "Housing_map_explain": "Die Karte des Wohngebiets, in dem dein Haus ist",
     "Reset_linked_characters_ok": "Charakterverknüpfungen wurden zurückgesetzt",
     "Display_slow_mode_notification": "Display crafting/gathering slow mode notification",
+    "New_child_window": "Create a new child window",
+    "Child_windows_title": "You can now open child windows in Teamcraft desktop !",
+    "Child_windows_description": "When clicking something that navigates (like the \"i\" button for database pages or any link in the app), use ctrl + click or middle click instead to open in a new window. Additionally, you can create a new window using the new button next to the github stars count.",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -1373,10 +1379,7 @@
     "Ilvl": "G.-St.",
     "Cost": "Kosten",
     "Class_job": "Klasse/Job",
-    "Damage_phys": "Phys. Basiswert",
-    "Damage_mag": "Mag. Basiswert",
-    "Defense_phys": "Verteidigung",
-    "Defense_mag": "Magieabwehr"
+    "Masterbooks": "Requires a masterbook"
   },
   "SEARCH_INTRO": {
     "Slogan": "Herstellen, Teilen, Mitwirken",
@@ -1610,7 +1613,7 @@
     "Currencies": "Währungen",
     "Rowena_splendor": "Rowenas Haus der Wunder",
     "Unlocks": "Freischaltung von",
-    "Jump_to_page": "Open item db page",
+    "Jump_to_page": "Open db page",
     "Ishgard_restoration": "Wiederaufbau Ishgards",
     "ITEM": {
       "Masterpiece_exp_tooltip": "% an Routine, die für das nächste Level benötigt wird",
@@ -1850,6 +1853,7 @@
     "NPC": "NPC",
     "Leve": "Freibrief",
     "Leve_info_message": "Du kannst die Freibrief-Seite nutzen, um Levekits vorzubereiten und Erfahrungspunkte für deine Freibriefe zu berechnen",
+    "Comparison_tip": "You can compare items by selecting them and setting selection to comparison mode",
     "Monster": "Monster",
     "Lore": "Handlung",
     "Fate": "FATE",
@@ -1961,6 +1965,10 @@
     "Exclude": "Ausschließen",
     "Select_stat": "Attribut auswählen",
     "Level": "Stufe",
+    "SELECTION_MODE": {
+      "List": "List",
+      "Compare": "Compare"
+    },
     "SORT_BY": {
       "Relevance": "Relevanz",
       "ID": "ID",
@@ -3010,6 +3018,7 @@
     "Home_subtitle": "Mehrere Listen gleichzeitig in einer Gesamtansicht öffnen",
     "Select_lists": "Wähle die Listen, die du zusammenfassen möchtest",
     "Select_layout": "Wähle ein Layout",
+    "Select_layout_dropdown": "Display layout",
     "Open_aggregate": "Open an aggregated view",
     "Title": "Aggregated list view",
     "Select_panel": "Select a panel to open its view",

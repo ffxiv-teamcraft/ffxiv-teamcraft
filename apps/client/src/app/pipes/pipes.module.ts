@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { ItemNamePipe } from './pipes/item-name.pipe';
 import { CeilPipe } from './pipes/ceil.pipe';
-import { IconPipe } from './pipes/icon.pipe';
 import { ActionIconPipe } from './pipes/action-icon.pipe';
 import { AbsolutePipe } from './pipes/absolute.pipe';
 import { IfMobilePipe } from './pipes/if-mobile.pipe';
@@ -19,7 +18,6 @@ import { CustomItemNamePipe } from './pipes/custom-item-name.pipe';
 import { IngameStarsPipe } from './pipes/ingame-stars.pipe';
 import { LazyIconPipe } from './pipes/lazy-icon.pipe';
 import { PermissionLevelPipe } from './pipes/permission-level.pipe';
-import { ElementIconPipe } from './pipes/element-icon.pipe';
 import { FishEyesDurationPipe } from './pipes/fish-eyes-duration.pipe';
 import { KeysPipe } from './pipes/keys.pipe';
 import { AetheryteNamePipe } from './pipes/aetheryte-name.pipe';
@@ -51,7 +49,6 @@ const pipes = [
   ItemNamePipe,
   CeilPipe,
   FloorPipe,
-  IconPipe,
   ActionIconPipe,
   ActionNamePipe,
   AbsolutePipe,
@@ -70,7 +67,6 @@ const pipes = [
   LazyIconPipe,
   CustomItemNamePipe,
   PermissionLevelPipe,
-  ElementIconPipe,
   FishEyesDurationPipe,
   KeysPipe,
   AetheryteNamePipe,

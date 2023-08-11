@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Region, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
-import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 
 @Component({
   selector: 'app-search-result',
@@ -44,15 +43,8 @@ export class SearchResultComponent {
 
   public Region = Region;
 
-  constructor(private htmlTools: HtmlToolsService) {
-  }
-
   selectionChange(row: SearchResult, selected: boolean): void {
     this.selectedChange.emit({ ...row, selected });
-  }
-
-  public getStars(amount: number): string {
-    return this.htmlTools.generateStars(amount);
   }
 
   //Increment/Decrement nz-input-number value through mouse wheel

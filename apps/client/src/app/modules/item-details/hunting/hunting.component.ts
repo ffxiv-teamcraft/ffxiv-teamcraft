@@ -19,10 +19,10 @@ export class HuntingComponent extends ItemDetailsPopup<Drop[]> {
     super();
   }
 
-  getAdditionalMarkers(drop: Drop): Observable<MapMarker[]> {
+  getMarkers(drop: Drop): Observable<MapMarker[]> {
     return this.lazyData.getRow('monsters', Math.floor(drop.id % 1000000)).pipe(
       map(monster => {
-        return [this.mapService.getAvgPosition(monster.positions)];
+        return [drop?.position, this.mapService.getAvgPosition(monster.positions)];
       })
     );
   }

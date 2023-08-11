@@ -14,7 +14,7 @@ export class GcSupplyExtractor extends AbstractExtractor {
         'Item#', 'ItemCount#', 'Icon', 'ExperienceSupply', 'SealsSupply'
       ]),
       this.getSheet<any>(xiv, 'GCSupplyDutyReward', [
-        'ExperienceSupply', 'SealsProvisioning'
+        'ExperienceSupply', 'SealsProvisioning', 'SealsSupply'
       ])
     ])
     .subscribe(([entries, rewards]) => {

@@ -10,7 +10,6 @@ import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-question-popup.module';
-import { NgDragDropModule } from 'ng-drag-drop';
 import { TextQuestionPopupModule } from '../../modules/text-question-popup/text-question-popup.module';
 import { AlarmsOptionsPopupComponent } from './alarms-options-popup/alarms-options-popup.component';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
@@ -27,6 +26,7 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzSliderModule } from 'ng-zorro-antd/slider';
 import { NodeDetailsModule } from '../../modules/node-details/node-details.module';
+import { CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
 
 const routes: Routes = [
   {
@@ -61,12 +61,15 @@ const routes: Routes = [
     CustomAlarmPopupModule,
 
     AntdSharedModule,
-    NgDragDropModule,
+    // TODO migrate to cdk
+    // NgDragDropModule,
 
     ListModule,
     NzAvatarModule,
     NzSliderModule,
-    NodeDetailsModule
+    NodeDetailsModule,
+    CdkDropList,
+    CdkDrag
   ],
   declarations: [AlarmsPageComponent, AlarmsOptionsPopupComponent]
 })

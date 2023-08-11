@@ -6,7 +6,7 @@ import { Workshop } from '../../../model/other/workshop';
 import { Observable, of } from 'rxjs';
 import { catchError, filter, first, map, switchMap, tap } from 'rxjs/operators';
 import { List } from '../../../modules/list/model/list';
-import { Character, XivapiService } from '@xivapi/angular-client';
+import { Character } from '@xivapi/angular-client';
 import { UserService } from '../../../core/database/user.service';
 import { LodestoneService } from '../../../core/api/lodestone.service';
 
@@ -55,7 +55,7 @@ export class WorkshopDetailsComponent {
   );
 
   constructor(private route: ActivatedRoute, private workshopsFacade: WorkshopsFacade,
-              private listsFacade: ListsFacade, private xivapi: XivapiService,
+              private listsFacade: ListsFacade,
               private userService: UserService, private characterService: LodestoneService) {
     this.route.paramMap.pipe(
       map(params => params.get('id')),

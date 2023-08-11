@@ -25,45 +25,50 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
 import { CompanyWorkshopTreeModule } from '../../modules/company-workshop-tree/company-workshop-tree.module';
 import { SearchJobPickerComponent } from './search-job-picker/search-job-picker.component';
 import { SimpleTabsetModule } from '../../modules/simple-tabset/simple-tabset.module';
-import {NzTypographyModule} from "ng-zorro-antd/typography";
+import { NzTypographyModule } from 'ng-zorro-antd/typography';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { ItemDetailsBoxComponent } from './item-details-box/item-details-box.component';
+import { TooltipModule } from '../../modules/tooltip/tooltip.module';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
 
 const routes: Routes = [
   {
     path: '',
     component: SearchComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
-  }
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+  },
 ];
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        FlexLayoutModule,
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    FlexLayoutModule,
 
+    CoreModule,
+    ListModule,
+    TranslateModule,
+    FullpageMessageModule,
+    PageLoaderModule,
+    PipesModule,
+    SettingsModule,
+    ListPickerModule,
+    ProgressPopupModule,
+    MarketboardModule,
+    RotationsModule,
+    ItemIconModule,
 
-        CoreModule,
-        ListModule,
-        TranslateModule,
-        FullpageMessageModule,
-        PageLoaderModule,
-        PipesModule,
-        SettingsModule,
-        ListPickerModule,
-        ProgressPopupModule,
-        MarketboardModule,
-        RotationsModule,
-        ItemIconModule,
+    AntdSharedModule,
 
-        AntdSharedModule,
-
-        RouterModule.forChild(routes),
-        CompanyWorkshopTreeModule,
-        SimpleTabsetModule,
-        NzTypographyModule
-    ],
-  declarations: [SearchComponent, SearchIntroComponent, SearchResultComponent, SearchJobPickerComponent]
+    RouterModule.forChild(routes),
+    CompanyWorkshopTreeModule,
+    SimpleTabsetModule,
+    NzTypographyModule,
+    NzPaginationModule,
+    TooltipModule,
+    NzRadioModule
+  ],
+  declarations: [SearchComponent, SearchIntroComponent, SearchResultComponent, SearchJobPickerComponent, ItemDetailsBoxComponent],
 })
-export class SearchModule {
-}
+export class SearchModule {}

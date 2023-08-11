@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
-import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { map, switchMap } from 'rxjs/operators';
 import { combineLatest, of } from 'rxjs';
+import { jobAbbrs } from '@ffxiv-teamcraft/data/handmade/job-abbr-en';
 
 @Component({
   selector: 'app-gearset-creation-popup',
@@ -21,7 +21,7 @@ export class GearsetCreationPopupComponent implements OnInit {
   public gearset: TeamcraftGearset;
 
   constructor(private modalRef: NzModalRef, private fb: UntypedFormBuilder,
-              private gt: GarlandToolsService, private lazyData: LazyDataFacade) {
+              private lazyData: LazyDataFacade) {
   }
 
   public submit(): void {
@@ -37,7 +37,7 @@ export class GearsetCreationPopupComponent implements OnInit {
     this.availableJobs$ = of(this.gearset).pipe(
       switchMap(gearset => {
         if (!gearset) {
-          return of(this.gt.getJobs().filter(job => job.id > 0));
+          return of(Object.keys(jobAbbrs).map(k => +k).filter(Boolean));
         }
         return combineLatest([
           this.lazyData.getEntry('jobCategories'),
@@ -48,7 +48,7 @@ export class GearsetCreationPopupComponent implements OnInit {
               return jobCategories[categoryId.toString()].jobs.includes(jobAbbr[this.gearset.job.toString()].en);
             });
             const category = jobCategories[jobCategoryId.toString()];
-            return this.gt.getJobs().filter(job => job.id > 0).filter(job => category.jobs.includes(job.abbreviation));
+            return Object.keys(jobAbbrs).map(k => +k).filter(Boolean).filter(job => category.jobs.includes(jobAbbrs[job]));
           })
         );
       })

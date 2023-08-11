@@ -22,6 +22,8 @@ export class RecipesExtractor extends AbstractExtractor {
       14,
       15
     ];
+
+    const rlt = {};
     combineLatest([
       this.getSheet<any>(xiv, 'CompanyCraftSequence',
         ['ResultItem#', 'CompanyCraftDraft.Name', 'CompanyCraftPart.CompanyCraftProcess.SupplyItem.Item#', 'CompanyCraftPart.CompanyCraftProcess.SetQuantity', 'CompanyCraftPart.CompanyCraftProcess.SetsRequired'], false, 4),
@@ -30,9 +32,17 @@ export class RecipesExtractor extends AbstractExtractor {
       this.getSheet<any>(xiv, 'MJIRecipe', ['Material.ItemPouch.Item#', 'Amount', 'KeyItem.Item#', 'ItemPouch.Item#'], true, 2),
       this.getSheet<any>(xiv, 'MJICraftworksObject', ['Material.Item#', 'Amount', 'Item#'], true, 1),
       this.getSheet<any>(xiv, 'MJIBuilding', ['Material.Item#', 'Amount'], true, 1),
-      this.getSheet<any>(xiv, 'MJILandmark', ['Material.Item#', 'Amount'], true, 1)
-    ]).subscribe(([companyCrafts, xivRecipes, mjiRecipes, mjiCraftworksObjects, mjiBuildings, mjiLandmarks]) => {
-
+      this.getSheet<any>(xiv, 'MJILandmark', ['Material.Item#', 'Amount'], true, 1),
+      this.getSheet<any>(xiv, 'RecipeLevelTable', ['ProgressDivider', 'ProgressModifier', 'QualityDivider', 'QualityModifier'], true, 1)
+    ]).subscribe(([companyCrafts, xivRecipes, mjiRecipes, mjiCraftworksObjects, mjiBuildings, mjiLandmarks, recipeLevelTable]) => {
+      recipeLevelTable.forEach(lvl => {
+        rlt[lvl.index] = {
+          progressDivider: lvl.ProgressDivider,
+          progressModifier: lvl.ProgressModifier,
+          qualityDivider: lvl.QualityDivider,
+          qualityModifier: lvl.QualityModifier
+        };
+      });
       xivRecipes.forEach(recipe => {
         if (!recipe.RecipeLevelTable || recipe.RecipeLevelTable?.index === 0) {
           return;
@@ -367,6 +377,7 @@ export class RecipesExtractor extends AbstractExtractor {
       this.persistToJsonAsset('recipes', recipes);
       this.persistToJsonAsset('recipes-ingredient-lookup', rlookup);
       this.persistToJsonAsset('recipes-per-item', recipesPerItem);
+      this.persistToJsonAsset('recipe-level-table', rlt);
       this.done();
     });
   }

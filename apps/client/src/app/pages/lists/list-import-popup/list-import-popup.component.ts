@@ -4,7 +4,6 @@ import { FfxivCraftingLinkParser } from './link-parser/ffxiv-crafting-link-parse
 import { AriyalaLinkParser } from './link-parser/ariyala-link-parser';
 import { AriyalaMateriaOptions } from './link-parser/ariyala-materia-options';
 import { HttpClient } from '@angular/common/http';
-import { XivapiService } from '@xivapi/angular-client';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { NzModalRef } from 'ng-zorro-antd/modal';
@@ -24,7 +23,7 @@ export class ListImportPopupComponent {
 
   linkParsers: ExternalListLinkParser[] = [
     new FfxivCraftingLinkParser(),
-    new AriyalaLinkParser(this.http, this.xivapi, this.lazyData),
+    new AriyalaLinkParser(this.http, this.lazyData),
     new GarlandtoolsGroupLinkParser()
   ];
 
@@ -36,7 +35,7 @@ export class ListImportPopupComponent {
 
   inProgress = false;
 
-  constructor(private http: HttpClient, private xivapi: XivapiService, private router: Router,
+  constructor(private http: HttpClient, private router: Router,
               private ref: NzModalRef, private lazyData: LazyDataFacade) {
     this.linkTypes = this.linkParsers.map(parser => parser.getName()).join(', ');
   }

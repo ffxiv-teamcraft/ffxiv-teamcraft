@@ -7,7 +7,6 @@ import { CommentTargetType } from '../../../comments/comment-target-type';
 import { ListRow } from '../../model/list-row';
 import { CommentsPopupComponent } from '../../../comments/comments-popup/comments-popup.component';
 import { ListItemCommentNotification } from '../../../../model/notification/list-item-comment-notification';
-import { Craft } from '../../../../model/garland-tools/craft';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { freeCompanyActions } from '../../../../core/data/sources/free-company-actions';
 import { MacroPopupComponent } from '../../../../pages/simulator/components/macro-popup/macro-popup.component';
@@ -15,6 +14,7 @@ import { NumberQuestionPopupComponent } from '../../../number-question-popup/num
 import { List } from '../../model/list';
 import { ListController } from '../../list-controller';
 import { Team } from '../../../../model/team/team';
+import { Craft } from '@ffxiv-teamcraft/simulator';
 
 @Component({
   selector: 'app-item-row',
@@ -31,21 +31,28 @@ export class ItemRowComponent extends AbstractItemRowComponent implements OnInit
   ngOnInit() {
     super.ngOnInit();
 
-    this.commentBadge$ = this.commentBadgeReloader$.pipe(
-      exhaustMap(() => combineLatest([this.list$, this.item$.pipe(map(i => i.id))])),
-      switchMap(([list, itemId]) => {
-        if (this.buttonsCache[ItemRowMenuElement.COMMENTS]) {
-          return of([]);
+    this.commentBadge$ = this.list$.pipe(
+      switchMap(list => {
+        if(list.offline){
+          return of(false);
         }
-        return this.commentsService.getComments(
-          CommentTargetType.LIST,
-          list.$key,
-          `${this.finalItem ? 'finalItems' : 'items'}:${itemId}`
+        return this.commentBadgeReloader$.pipe(
+          exhaustMap(() => combineLatest([this.list$, this.item$.pipe(map(i => i.id))])),
+          switchMap(([list, itemId]) => {
+            if (this.buttonsCache[ItemRowMenuElement.COMMENTS]) {
+              return of([]);
+            }
+            return this.commentsService.getComments(
+              CommentTargetType.LIST,
+              list.$key,
+              `${this.finalItem ? 'finalItems' : 'items'}:${itemId}`
+            );
+          }),
+          map(comments => comments.length > 0),
+          startWith(false)
         );
-      }),
-      map(comments => comments.length > 0),
-      startWith(false)
-    );
+      })
+    )
   }
 
   openCommentsPopup(isAuthor: boolean, item: ListRow): void {

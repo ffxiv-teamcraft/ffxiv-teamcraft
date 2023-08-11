@@ -1,4 +1,4 @@
-import { ActivatedRouteSnapshot, CanDeactivate, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable, of, Subject } from 'rxjs';
 import { DirtyFacade } from './+state/dirty.facade';
 import { Injectable } from '@angular/core';
@@ -8,7 +8,7 @@ import { DirtyScope } from './dirty-scope';
 import { first, switchMap, tap } from 'rxjs/operators';
 
 @Injectable()
-export class DirtyGuard implements CanDeactivate<any> {
+export class DirtyGuard  {
 
   constructor(private dirtyFacade: DirtyFacade, private translate: TranslateService, private dialog: NzModalService) {
   }

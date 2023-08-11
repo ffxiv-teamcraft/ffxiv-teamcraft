@@ -2,9 +2,8 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { debounceTime, distinctUntilChanged, filter, first, map, pluck, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { AllaganReportsService } from '../allagan-reports.service';
-import { AllaganReportSource } from '@ffxiv-teamcraft/types';
+import { AllaganReportSource, Hookset, I18nName, SearchType, SpearfishingShadowSize, SpearfishingSpeed, Tug } from '@ffxiv-teamcraft/types';
 import { BehaviorSubject, combineLatest, merge, Observable, of, Subject } from 'rxjs';
-import { Hookset, I18nName, SearchType, SpearfishingShadowSize, SpearfishingSpeed, Tug } from '@ffxiv-teamcraft/types';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { AllaganReport } from '../model/allagan-report';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -16,7 +15,6 @@ import { AllaganReportStatus } from '../model/allagan-report-status';
 import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
 import { mapIds } from '../../../core/data/sources/map-ids';
-import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { FishContextService } from '../../db/service/fish-context.service';
 import { ItemContextService } from '../../db/service/item-context.service';
 import { ReportsManagementComponent } from '../reports-management.component';
@@ -221,11 +219,9 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     map(spot => spot.fishes.filter(f => f > 0))
   );
 
-  public possibleBaits$ = combineLatest([this.possibleFish$, this.xivapi.get(XivapiEndpoint.ItemSearchCategory, 30, {
-    columns: ['GameContentLinks']
-  })]).pipe(
-    map(([possibleFish, fishingTackleCategory]) => {
-      return [...possibleFish, ...fishingTackleCategory.GameContentLinks.Item.ItemSearchCategory];
+  public possibleBaits$ = combineLatest([this.possibleFish$, this.lazyData.getEntry('baits')]).pipe(
+    map(([possibleFish, baits]) => {
+      return [...possibleFish, ...baits.map(bait => bait.id)];
     }),
     startWith([])
   );
@@ -333,9 +329,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
               protected lazyData: LazyDataFacade, private i18n: I18nToolsService,
               private message: NzMessageService, private translate: TranslateService,
               private authFacade: AuthFacade, private cd: ChangeDetectorRef,
-              private xivapi: XivapiService, private fb: UntypedFormBuilder,
-              private fishCtx: FishContextService, private itemCtx: ItemContextService,
-              private router: Router) {
+              private fb: UntypedFormBuilder, private router: Router,
+              private fishCtx: FishContextService, private itemCtx: ItemContextService) {
     super(lazyData);
     this.form.valueChanges.pipe(
       takeUntil(this.onDestroy$)
@@ -442,19 +437,19 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     switch (entry.type) {
       case AllaganReportStatus.PROPOSAL:
         this.allaganReportsService.acceptProposal(entry).subscribe(() => {
-      this.reloader$.next();
+          this.reloader$.next();
           this.message.success(this.translate.instant('ALLAGAN_REPORTS.Proposal_accepted'));
         });
         break;
       case AllaganReportStatus.DELETION:
         this.allaganReportsService.acceptDeletion(entry).subscribe(() => {
-      this.reloader$.next();
+          this.reloader$.next();
           this.message.success(this.translate.instant('ALLAGAN_REPORTS.Report_deleted'));
         });
         break;
       case AllaganReportStatus.MODIFICATION:
         this.allaganReportsService.acceptModification(entry).subscribe(() => {
-      this.reloader$.next();
+          this.reloader$.next();
           this.message.success(this.translate.instant('ALLAGAN_REPORTS.Modification_applied'));
         });
         break;
@@ -571,7 +566,11 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     }
   }
 
-  private makeCompletionObservable(subject: Subject<string>, registry$: Observable<{ id: number, name: I18nName }[]>): Observable<{ id: number, name: I18nName, details?: any }[]> {
+  private makeCompletionObservable(subject: Subject<string>, registry$: Observable<{ id: number, name: I18nName }[]>): Observable<{
+    id: number,
+    name: I18nName,
+    details?: any
+  }[]> {
     return subject.pipe(
       debounceTime(500),
       switchMap(value => {

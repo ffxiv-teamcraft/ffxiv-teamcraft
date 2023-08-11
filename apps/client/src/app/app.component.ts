@@ -8,42 +8,32 @@ import {
   Injector,
   OnInit,
   PLATFORM_ID,
-  Renderer2,
   ViewChild
 } from '@angular/core';
 import { environment } from '../environments/environment';
-import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { IpcService } from './core/electron/ipc.service';
-import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from '@angular/router';
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
-import { catchError, delay, distinctUntilChanged, filter, first, map, mapTo, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
+import { catchError, delay, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, fromEvent, Observable, of, Subject } from 'rxjs';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
 import { NzIconService } from 'ng-zorro-antd/icon';
-import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { RegisterPopupComponent } from './core/auth/register-popup/register-popup.component';
 import { LoginPopupComponent } from './core/auth/login-popup/login-popup.component';
 import { EorzeanTimeService } from './core/eorzea/eorzean-time.service';
 import { ListsFacade } from './modules/list/+state/lists.facade';
-import { WorkshopsFacade } from './modules/workshop/+state/workshops.facade';
 import { SettingsService } from './modules/settings/settings.service';
 import { TeamsFacade } from './modules/teams/+state/teams.facade';
 import { NotificationsFacade } from './modules/notifications/+state/notifications.facade';
 import { AbstractNotification } from './core/notification/abstract-notification';
-import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
 import { PlatformService } from './core/tools/platform.service';
 import { SettingsPopupService } from './modules/settings/settings-popup.service';
 import { HttpClient } from '@angular/common/http';
-import { DomSanitizer } from '@angular/platform-browser';
-import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
-import { MediaObserver } from '@angular/flex-layout';
-import { LayoutsFacade } from './core/layout/+state/layouts.facade';
-import { CustomItemsFacade } from './modules/custom-items/+state/custom-items.facade';
 import { DirtyFacade } from './core/dirty/+state/dirty.facade';
 import { SeoService } from './core/seo/seo.service';
 import { Theme } from './modules/settings/theme';
@@ -75,7 +65,7 @@ import { gameEnv } from '../environments/game-env';
 import { PacketCaptureStatus } from './core/electron/packet-capture-status';
 import { NzBadgeStatusType } from 'ng-zorro-antd/badge/types';
 import { InventoryCaptureStatus } from './modules/inventory/inventory-capture-status';
-import { PushNotificationsService } from 'ng-push-ivy';
+import { PushNotificationsService } from './core/push-notifications.service';
 
 @Component({
   selector: 'app-root',
@@ -86,6 +76,8 @@ import { PushNotificationsService } from 'ng-push-ivy';
 export class AppComponent implements OnInit {
 
   public overlay = window.location.href.indexOf('?overlay') > -1;
+
+  public childWindow = this.ipc.isChildWindow;
 
   public newFeatureName = 'allagan-reports';
 
@@ -191,7 +183,7 @@ export class AppComponent implements OnInit {
 
   public desktopLoading$ = new BehaviorSubject(this.platformService.isDesktop() && !this.overlay);
 
-  public showGiveaway = false;
+  public showChildWindowTip = localStorage.getItem('child-window-tip-closed') !== 'true';
 
   UpdaterStatus = UpdaterStatus;
 
@@ -232,18 +224,16 @@ export class AppComponent implements OnInit {
 
   public currentLink = () => `https://ffxivteamcraft.com${window.location.hash.replace('#', '')}`;
 
-  constructor(@Inject(DOCUMENT) private document: Document,
-              private gt: GarlandToolsService, public translate: TranslateService,
+  constructor(@Inject(DOCUMENT) private document: Document, public translate: TranslateService,
               public ipc: IpcService, private router: Router, private firebase: Database,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
-              public listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService,
+              public listsFacade: ListsFacade, public settings: SettingsService,
               public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade,
-              private iconService: NzIconService, private rotationsFacade: RotationsFacade, public platformService: PlatformService,
-              private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer,
-              private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: MediaObserver,
-              private layoutsFacade: LayoutsFacade, private lazyDataFacade: LazyDataFacade,
-              private customItemsFacade: CustomItemsFacade, private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
-              private message: NzMessageService, private universalis: UniversalisService,
+              private iconService: NzIconService, public platformService: PlatformService,
+              private settingsPopupService: SettingsPopupService, private http: HttpClient,
+              private lazyDataFacade: LazyDataFacade,
+              private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
+              private universalis: UniversalisService,
               private inventoryService: InventoryService, @Inject(PLATFORM_ID) private platform: any,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               private tutorialService: TutorialService,
@@ -265,11 +255,9 @@ export class AppComponent implements OnInit {
       this.handleKeypressShortcuts(event);
     });
 
-    this.showGiveaway = false;
-
     this.applyTheme(this.settings.theme);
 
-    this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/c/font_931253_ylxiqmgyxl.js' });
+    this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/c/font_931253_yqf3nprxput.js' });
 
     this.time$ = this.reloadTime$.pipe(
       switchMap(() => {
@@ -297,7 +285,11 @@ export class AppComponent implements OnInit {
     this.translate.setDefaultLang('en');
 
     if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
-
+      // Preload item names and icons !
+      this.lazyDataFacade.preloadEntry('items');
+      this.lazyDataFacade.preloadEntry('rarities');
+      this.lazyDataFacade.preloadEntry('itemIcons');
+      this.lazyDataFacade.preloadEntry('extracts');
       // Translation
       this.use(this.getLang());
       if (this.platformService.isDesktop()) {
@@ -407,7 +399,7 @@ export class AppComponent implements OnInit {
       this.dirtyFacade.hasEntries$.subscribe(dirty => this.dirty = dirty);
 
       // Navigation handle for a proper loader display
-      router.events.subscribe((event: RouterEvent) => {
+      router.events.subscribe((event) => {
         if (event instanceof NavigationStart) {
           this.navigating = true;
         }
@@ -620,7 +612,7 @@ export class AppComponent implements OnInit {
         if (!user.supporter && !user.admin && this.settings.theme.name === 'CUSTOM') {
           this.settings.theme = Theme.DEFAULT;
         }
-        if (!user.supporter && !increasedPageViews) {
+        if (!user.supporter && !increasedPageViews && !this.overlay && !this.childWindow) {
           const viewTriggersForPatreonPopup = [20, 200, 500];
           this.settings.pageViews++;
           increasedPageViews = true;
@@ -712,7 +704,7 @@ export class AppComponent implements OnInit {
   openInApp(): void {
     if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
       this.http.get(`http://localhost:14500${window.location.pathname}`).pipe(
-        mapTo(true),
+        map(() => true),
         catchError(() => {
           return of(false);
         })
@@ -751,6 +743,7 @@ export class AppComponent implements OnInit {
     }
     this.locale = lang;
     this.data.setSearchLang(lang as Language);
+    this.settings.searchLanguage = lang as Language;
     if (!skipStorage) {
       localStorage.setItem('locale', lang);
     }
@@ -827,5 +820,14 @@ export class AppComponent implements OnInit {
       document.documentElement.style.setProperty('--sider-trigger-hover-color', theme.triggerHover);
       document.documentElement.style.setProperty('--zero-width-sider-trigger-color', theme.trigger);
     }
+  }
+
+  hideChildWindowTip(): void {
+    this.showChildWindowTip = false;
+    localStorage.setItem('child-window-tip-closed', 'true');
+  }
+
+  newChildWindow(): void {
+    this.ipc.send('child:new', this.router.url);
   }
 }

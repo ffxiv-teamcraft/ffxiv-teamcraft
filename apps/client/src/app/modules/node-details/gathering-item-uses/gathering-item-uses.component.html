@@ -1,7 +1,7 @@
 <ng-container *ngIf="reduction$ | async as reduction">
   <img *ngIf="reduction.length > 0" [nzPopoverTitle]="'Reduction' | translate"
        [nzPopoverContent]="reductionsTpl"
-       nz-popover src="https://www.garlandtools.org/db/images/item/Reduce.png"
+       nz-popover src="./assets/icons/Reduce.png"
        class="reduction-icon" [class.compact]="compact">
   <ng-template #reductionsTpl>
     <div fxLayout="column" fxLayoutGap="5px">

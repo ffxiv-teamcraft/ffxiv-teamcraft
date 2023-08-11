@@ -12,13 +12,6 @@
     "analytics": false,
     "packageManager": "yarn"
   },
-  "implicitDependencies": {
-    "angular.json": "*",
-    "package.json": "*",
-    "tsconfig.json": "*",
-    "tslint.json": "*",
-    "nx.json": "*"
-  },
   "tasksRunnerOptions": {
     "default": {
       "runner": "nx/tasks-runners/default",
@@ -29,26 +22,36 @@
   },
   "defaultProject": "client",
   "generators": {
-    "@nrwl/angular:application": {
+    "@nx/angular:application": {
       "style": "less",
       "linter": "tslint",
-      "unitTestRunner": "karma",
       "e2eTestRunner": "cypress"
     },
-    "@nrwl/angular:library": {
-      "linter": "tslint",
-      "unitTestRunner": "karma"
+    "@nx/angular:library": {
+      "linter": "tslint"
     },
-    "@nrwl/angular:component": {
+    "@nx/angular:component": {
       "style": "less"
     }
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     },
     "test": {
       "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
     }
+  },
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "sharedGlobals": ["{workspaceRoot}/angular.json", "{workspaceRoot}/tsconfig.json", "{workspaceRoot}/tslint.json", "{workspaceRoot}/nx.json"],
+    "production": [
+      "default",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/src/test-setup.[jt]s"
+    ]
   }
 }

@@ -87,20 +87,6 @@ async function ssr(path, browserWSEndpoint, prerender = false, baseUrl = 'http:/
         });
       }
 
-      if (req.url() === 'https://www.garlandtools.org/bell/fish.js') {
-        return req.respond({
-          contentType: 'application/javascript',
-          body: GtFish
-        });
-      }
-
-      if (req.url() === 'https://www.garlandtools.org/bell/nodes.js') {
-        return req.respond({
-          contentType: 'application/javascript',
-          body: GtNodes
-        });
-      }
-
       // 3. Pass through all other requests.
       req.continue();
     });
