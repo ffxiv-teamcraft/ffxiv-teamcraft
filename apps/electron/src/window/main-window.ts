@@ -57,11 +57,10 @@ export class MainWindow {
       }
     });
 
-    const handleRedirect = (e, url) => {
+    const handleRedirect = (e, url: string) => {
       if (url !== win.webContents.getURL()) {
         e.preventDefault();
-        if (url.indexOf('ffxivteamcraft.com') > -1 || url.indexOf('index.html#') > -1) {
-
+        if (url.includes('ffxivteamcraft.com') || url.includes('index.html#')) {
           url = `${url}${url.indexOf('?') > -1 ? '&' : '?'}noDesktop=true`;
         }
         require('electron').shell.openExternal(url);
@@ -71,7 +70,7 @@ export class MainWindow {
     win.webContents.on('will-navigate', handleRedirect);
     win.webContents.setWindowOpenHandler(details => {
       let url = details.url;
-      if (url.indexOf('ffxivteamcraft.com') > -1 || url.indexOf('index.html#') > -1) {
+      if (url.startsWith('https://ffxivteamcraft.com') || url.includes('index.html#')) {
         this.createChildWindow(url.split('#')[1]);
         //url = `${url}${url.indexOf('?') > -1 ? '&' : '?'}noDesktop=true`;
       } else {
