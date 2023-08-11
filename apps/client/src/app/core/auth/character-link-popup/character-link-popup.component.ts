@@ -37,6 +37,10 @@ export class CharacterLinkPopupComponent {
 
   public mandatory = false;
 
+  private isKoreanOrChinese(server) {
+    return CHINESE_GAME_SERVERS.includes(server) || KOREAN_GAME_SERVERS.includes(server);
+  }
+
   constructor(private store: Store<any>, private modalRef: NzModalRef,
               private lodestoneService: LodestoneService) {
     this.servers$ = of(GAME_SERVERS).pipe(
@@ -55,7 +59,7 @@ export class CharacterLinkPopupComponent {
     this.result$ = combineLatest([this.selectedServer.valueChanges, this.characterName.valueChanges])
       .pipe(
         tap(([selectedServer]) => {
-          this.loadingResults = !CHINESE_GAME_SERVERS.includes(selectedServer) && !KOREAN_GAME_SERVERS.includes(selectedServer);
+          this.loadingResults = !this.isKoreanOrChinese(selectedServer);
         }),
         debounceTime(500),
         mergeMap(([selectedServer, characterName]) => {
