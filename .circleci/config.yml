@@ -95,23 +95,6 @@ jobs:
             - .cache/*
 
 
-  deploy-hosting:
-    working_directory: ~/ffxiv-teamcraft
-    docker:
-      - image: google/cloud-sdk
-    steps:
-      - attach_workspace:
-          at: ~/
-      - add_ssh_keys:
-          fingerprints:
-            - "fe:16:5e:5a:4c:4a:3e:36:80:a7:13:5b:1f:64:7b:e0"
-      - run:
-          name: Deploying cdn to OVH server
-          command: bash tools/cdn/deploy.sh
-      - store_artifacts:
-          path: ./rsync.log
-
-
   deploy-firebase-hosting:
     <<: *defaults
     steps:
@@ -196,12 +179,6 @@ workflows:
       - build-api:
           requires:
             - lint
-      - deploy-hosting:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
       - deploy-api:
           requires:
             - build-api
@@ -210,7 +187,7 @@ workflows:
               only: master
       - deploy-firebase-hosting:
           requires:
-            - deploy-hosting
+            - build
           filters:
             branches:
               only: master

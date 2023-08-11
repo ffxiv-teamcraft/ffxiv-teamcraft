@@ -30,7 +30,7 @@
     ],
     "headers": [
       {
-        "source": "**/*.@(css|js|jpg|jpeg|gif|svg|png|json)",
+        "source": "**/*.@(jpg|jpeg|gif|svg|png)",
         "headers": [
           {
             "key": "Cache-control",
@@ -39,16 +39,7 @@
         ]
       },
       {
-        "source": "**/*.@(js)",
-        "headers": [
-          {
-            "key": "Cache-control",
-            "value": "max-age=31536000"
-          }
-        ]
-      },
-      {
-        "source": "**/extracts.json",
+        "source": "**/*.@(css|js|json)",
         "headers": [
           {
             "key": "Cache-control",

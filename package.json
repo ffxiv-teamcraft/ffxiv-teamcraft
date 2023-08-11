@@ -51,7 +51,7 @@
     "assets:hash": "node ./tools/build/prod-assets-hash.js",
     "start": "yarn prebuild && yarn nx serve --project=client",
     "build:watch": "yarn prebuild && yarn nx build --project=client --watch --configuration=electron-dev",
-    "build:prod": "yarn prebuild && yarn nx build --project=client --configuration production --no-progress && yarn assets:hash",
+    "build:prod": "yarn prebuild && nx run client:build:production && yarn assets:hash",
     "build:functions": "yarn prebuild && yarn nx build --project=client --configuration=functions --no-progress",
     "build:electron-prod": "yarn prebuild && yarn nx build --project=client --configuration=electron && yarn assets:hash",
     "build:electron-dev": "yarn prebuild && yarn nx build --project=client --configuration=electron-dev",
