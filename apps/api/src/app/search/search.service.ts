@@ -49,7 +49,7 @@ export class SearchService implements OnApplicationBootstrap {
   }
 
   public search(type: SearchType, query: string, filters: XIVSearchFilter[], lang: string, sort: [string, 'asc' | 'desc'] = ['', 'desc']): SearchResult[] {
-    const index: XIVSearch = this.indexes[lang];
+    const index: XIVSearch = this.indexes[lang] || this.indexes['en'];
     if (type === SearchType.RECIPE) {
       type = SearchType.ITEM;
       filters.push({
