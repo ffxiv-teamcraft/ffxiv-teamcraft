@@ -37,7 +37,7 @@ export class CharacterLinkPopupComponent {
 
   public mandatory = false;
 
-  private isKoreanOrChinese(server) {
+  public isKoreanOrChinese(server: string): boolean {
     return CHINESE_GAME_SERVERS.includes(server) || KOREAN_GAME_SERVERS.includes(server);
   }
 
