@@ -3,13 +3,13 @@ import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-c
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
-import { DataService } from '../../../core/api/data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import * as _ from 'lodash';
+import { cloneDeep } from 'lodash';
 import { MapRelatedElement } from './map-related-element';
 import { MapMarker } from '../../../modules/map/map-marker';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
@@ -18,7 +18,6 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { mapIds } from '../../../core/data/sources/map-ids';
 import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
-import { cloneDeep } from 'lodash';
 
 @Component({
   selector: 'app-map-page',
@@ -316,44 +315,9 @@ export class MapPageComponent extends TeamcraftPageComponent {
               }
             };
           });
-        const fromBell = (window as any).gt.bell.nodes
-          .filter(node => {
-            return this.lazyData.getMapId(node.zone) === mapId;
-          })
-          .map(node => {
-            node.type = ['Rocky Outcropping', 'Mineral Deposit', 'Mature Tree', 'Lush Vegetation'].indexOf(node.type);
-            return <MapRelatedElement>{
-              type: 'node',
-              id: node.id,
-              name: this.i18n.createFakeI18n(`lvl ${node.lvl}`),
-              additionalData: node.items.map(i => {
-                return {
-                  id: i.id,
-                  slot: i.slot
-                };
-              }),
-              coords: {
-                x: node.coords[0],
-                y: node.coords[1]
-              },
-              marker: {
-                iconType: 'img',
-                iconImg: [
-                  './assets/icons/map/min4.png',
-                  './assets/icons/map/min3.png',
-                  './assets/icons/map/btn4.png',
-                  './assets/icons/map/btn3.png',
-                  './assets/icons/map/fsh2.png'
-                ][node.type],
-                x: node.coords[0],
-                y: node.coords[1],
-                link: `/db/${this.translate.currentLang}/node/${node.id}`
-              }
-            };
-          });
 
 
-        return _.uniqBy([...fromBell, ...fromNodePositions], 'id');
+        return _.uniqBy(fromNodePositions, 'id');
       })
     );
   }

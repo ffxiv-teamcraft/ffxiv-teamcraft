@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.0...v11.0.1) (2023-08-11)
+
+
+### Bug Fixes
+
+* **desktop:** don't show outdated inventory warning on child windows ([e04bd5a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e04bd5a29181f535c52bfdd812c473c4e2ea08e1))
+* **list:** fixed list details not loading if you had a timer filter in layout ([3e70611](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3e706112ad95a5491f26bf65bcd179b9e912dc73))
+* **profile:** Fix regression on character link popup ([0fd82f0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0fd82f0d1f618dc95f245b67da9ba9b99ea81d11))
+
 ## [11.0.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v10.5.7...v11.0.0) (2023-08-09)
 
 

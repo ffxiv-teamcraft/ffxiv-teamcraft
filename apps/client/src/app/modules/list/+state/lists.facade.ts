@@ -5,8 +5,6 @@ import { Store } from '@ngrx/store';
 import { ListsState } from './lists.reducer';
 import { listsQuery } from './lists.selectors';
 import {
-  AddModificationHistoryEntries,
-  ClearModificationsHistory,
   CreateList,
   DeleteList,
   DeleteLists,
@@ -332,7 +330,18 @@ export class ListsFacade {
                 fromPacket = false,
                 hq = false,
                 skipHistory = false
-              }: { itemId: number, itemIcon: number, finalItem: boolean, delta: number, recipeId: string, totalNeeded: number, external?: boolean, fromPacket?: boolean, hq?: boolean, skipHistory?: boolean }): void {
+              }: {
+    itemId: number,
+    itemIcon: number,
+    finalItem: boolean,
+    delta: number,
+    recipeId: string,
+    totalNeeded: number,
+    external?: boolean,
+    fromPacket?: boolean,
+    hq?: boolean,
+    skipHistory?: boolean
+  }): void {
     this.setListItemDone({
       listId: null,
       itemId: itemId,
@@ -360,7 +369,19 @@ export class ListsFacade {
                     fromPacket = false,
                     hq = false,
                     skipHistory = false
-                  }: { listId: string, itemId: number, itemIcon: number, finalItem: boolean, delta: number, recipeId: string, totalNeeded: number, external?: boolean, fromPacket?: boolean, hq?: boolean, skipHistory?: boolean }): void {
+                  }: {
+    listId: string,
+    itemId: number,
+    itemIcon: number,
+    finalItem: boolean,
+    delta: number,
+    recipeId: string,
+    totalNeeded: number,
+    external?: boolean,
+    fromPacket?: boolean,
+    hq?: boolean,
+    skipHistory?: boolean
+  }): void {
     if (this.settings.autoMarkAsCompleted && delta > 0) {
       this.authFacade.markAsDoneInLog(recipeId ? 'crafting' : 'gathering', +(recipeId || itemId), true);
     }
@@ -452,6 +473,9 @@ export class ListsFacade {
   }
 
   toggleAutocomplete(newValue: boolean): void {
+    if (this.ipc.isChildWindow) {
+      return;
+    }
     this.store.dispatch(new ToggleAutocompletion(newValue));
     if (newValue && !this.overlay) {
       this.userInventoryService.inventory$.pipe(

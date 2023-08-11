@@ -350,6 +350,21 @@
                       (nzOnClose)="hideChildWindowTip()"
                       nzType="info">
             </nz-alert>
+            <nz-alert *ngIf="showDesktopTip && !platformService.isDesktop() && !overlay && !childWindow"
+                      [nzMessage]="'SETTINGS.Desktop_tip_title' | translate"
+                      [nzDescription]="'SETTINGS.Desktop_tip_description' | translate"
+                      class="new-version-alert"
+                      nzBanner
+                      nzShowIcon
+                      nzCloseable
+                      (nzOnClose)="hideDesktopTip()"
+                      nzType="info" [nzAction]="downloadButtonTpl">
+              <ng-template #downloadButtonTpl>
+                <a nz-button nzType="link" href="https://ffxivteamcraft.com/desktop" target="_blank">
+                  {{'Download_desktop_app' | translate}}
+                </a>
+              </ng-template>
+            </nz-alert>
             <nz-alert *ngIf="ipc.pcapToggle && !(loggedIn$ | async)"
                       [nzMessage]="'PACKET_CAPTURE.Not_as_anonymous' | translate"
                       [nzDescription]="'PACKET_CAPTURE.Not_as_anonymous_description' | translate"

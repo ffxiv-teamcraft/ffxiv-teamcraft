@@ -187,14 +187,7 @@ export class LayoutRowFilter {
     ._and(new LayoutRowFilter(row => (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).find(node => node.folklore !== undefined) !== undefined, 'IS_FOLKLORE', [DataType.GATHERED_BY]));
 
   static IS_TIMED = new LayoutRowFilter(row => {
-    const isTimedGathering = (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).filter(node => node.limited).length > 0;
-    const isTimedReduction = getItemSource(row, DataType.REDUCED_FROM)
-      .filter(reduction => {
-        return (<any>window).gt.bell.nodes.find(node => {
-          return node.items.find(item => item.id === reduction) !== undefined;
-        }) !== undefined;
-      }).length > 0;
-    return isTimedGathering || isTimedReduction;
+    return getItemSource(row, DataType.ALARMS)?.length > 0;
   }, 'IS_TIMED', [DataType.REDUCED_FROM, DataType.GATHERED_BY]);
 
   static IS_NORMAL_GATHERING = LayoutRowFilter.IS_GATHERING
@@ -400,6 +393,7 @@ export class LayoutRowFilter {
     }
     return result;
   }
+
   /**
    * Checks if an item matches this filter
    * @param row
