@@ -185,6 +185,8 @@ export class AppComponent implements OnInit {
 
   public showChildWindowTip = localStorage.getItem('child-window-tip-closed') !== 'true';
 
+  public showDesktopTip = localStorage.getItem('desktop-tip-closed') !== 'true';
+
   UpdaterStatus = UpdaterStatus;
 
   public checkingForUpdate$ = new BehaviorSubject<number>(UpdaterStatus.NO_UPDATE);
@@ -825,6 +827,11 @@ export class AppComponent implements OnInit {
   hideChildWindowTip(): void {
     this.showChildWindowTip = false;
     localStorage.setItem('child-window-tip-closed', 'true');
+  }
+
+  hideDesktopTip(): void {
+    this.showChildWindowTip = false;
+    localStorage.setItem('desktop-tip-closed', 'true');
   }
 
   newChildWindow(): void {
