@@ -2585,10 +2585,10 @@
   dependencies:
     "@ffxiv-teamcraft/dll-inject" "0.0.8"
 
-"@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@3.3.0", "@ffxiv-teamcraft/simulator-kr@npm:@ffxiv-teamcraft/simulator@3.3.0", "@ffxiv-teamcraft/simulator@^3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-3.3.0.tgz#d4360da2ae20fd8026f7a9bb189bab1c6bfcc917"
-  integrity sha512-8XfW1YAL2csfV0VZECofauJPQrpeqECx0CwExwEQv3J0W0rB9XXGsOqXFEw7VYAzHAq+/Rcmknh/uH3owmQ71A==
+"@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@3.3.1", "@ffxiv-teamcraft/simulator-kr@npm:@ffxiv-teamcraft/simulator@3.3.1", "@ffxiv-teamcraft/simulator@^3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-3.3.1.tgz#32a1957c293bd6c91133242f11f681cca6eecbeb"
+  integrity sha512-ZhllpX7cxrDrIxVjFhA6JqkBdhHFZ6tMNjTmBx4bDNVM1leoUbqhnq4oWD1mK+A4yDGi2z2qKgdmnhz3sVrb7A==
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 

@@ -586,7 +586,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
       }
       rotation.recipe = {
         ...this._recipe,
-        id: this._recipe.id.toString(),
+        id: this._recipe.id?.toString(),
         hq: this._recipe.hq ? 1 : 0
       };
       rotation.stats = {
