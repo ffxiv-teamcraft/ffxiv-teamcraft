@@ -349,7 +349,7 @@ export const lazyFilesList = {
   },
   'itemSearch': {
     'fileName': 'item-search.index',
-    'hashedFileName': 'item-search.48fa3df79d5c7f07c7821884bdbda2da586062bf.index'
+    'hashedFileName': 'item-search.a061b06b4472b0579324c328df06f495de47885a.index'
   },
   'itemSeries': {
     'fileName': 'item-series.json',
@@ -1105,7 +1105,7 @@ export const lazyFilesList = {
   },
   'achievementsDatabasePages': {
     'fileName': '/db/achievements-database-pages.json',
-    'hashedFileName': '/db/achievements-database-pages.29dcc100064a98f1c058a1eedfd9c0e74aa87e44.json'
+    'hashedFileName': '/db/achievements-database-pages.094043a07a70d840c8f79cb80f9b837dea3a6f91.json'
   },
   'actionsDatabasePages': {
     'fileName': '/db/actions-database-pages.json',

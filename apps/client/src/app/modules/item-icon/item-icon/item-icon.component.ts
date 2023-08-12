@@ -48,7 +48,7 @@ export class ItemIconComponent {
   @Input({ transform: booleanAttribute })
   forceCollectable = false;
 
-  itemId$ = observeInput(this, 'itemId');
+  itemId$ = observeInput(this, 'itemId', true);
 
   icon$ = combineLatest([
     this.itemId$,

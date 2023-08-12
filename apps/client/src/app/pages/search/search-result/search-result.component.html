@@ -12,7 +12,7 @@
     </div>
     <div class="avatar">
       <app-item-icon *ngIf="row.contentType === 'items'" [icon]="row.icon | xivapiIcon" [itemId]="+row.itemId" [width]="32"></app-item-icon>
-      <app-item-icon *ngIf="row.contentType !== 'items'" [icon]="row.icon" [width]="32" [tooltipDisabled]="true"></app-item-icon>
+      <app-item-icon *ngIf="row.contentType !== 'items'" [icon]="row.icon | xivapiIcon" [width]="32" [tooltipDisabled]="true"></app-item-icon>
     </div>
     <div class="flex-column">
       <div [appItemRarity]="+row.itemId" class="item-name flex-row gap-5">
