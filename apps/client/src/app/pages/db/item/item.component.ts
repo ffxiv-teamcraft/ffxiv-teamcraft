@@ -363,7 +363,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
       if (item.cjc) {
         mainAttributes.push({
           name: 'DB.Class_job',
-          value: this.lazyData.getI18nName('jobCategories', item.cjUse),
+          value: this.lazyData.getI18nName('jobCategories', item.cjc),
           valueRequiresPipe: true
         });
       }
