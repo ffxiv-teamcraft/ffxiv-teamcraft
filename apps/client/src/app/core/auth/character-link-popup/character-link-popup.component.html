@@ -14,8 +14,8 @@
     </nz-form-label>
     <input [formControl]="characterName" id="characterName" nz-input type="text">
   </nz-form-item>
-  <button (click)="setKoreanCharacter()" *ngIf="selectedServer.value
-   && isKoreanOrChinese(selectedServer)" nz-button
+  <button (click)="setCustomCharacter()" *ngIf="selectedServer.value
+   && isKoreanOrChinese(selectedServer.value)" nz-button
           nzType="primary">
     {{'Add_manual_character' | translate}}
   </button>

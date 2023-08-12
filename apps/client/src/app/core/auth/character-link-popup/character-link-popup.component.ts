@@ -79,7 +79,7 @@ export class CharacterLinkPopupComponent {
     );
   }
 
-  setKoreanCharacter(): void {
+  setCustomCharacter(): void {
     const fakeLodestoneId = -1 * Math.floor((Math.random() * 999999999));
     const customCharacter: Partial<Character> = {
       ID: fakeLodestoneId,
