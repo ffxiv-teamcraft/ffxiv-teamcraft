@@ -3,8 +3,6 @@ import { combineLatest, Observable, Subject } from 'rxjs';
 import { ExtractRow, I18nName } from '@ffxiv-teamcraft/types';
 import { debounceTime, filter, map, startWith, switchMap } from 'rxjs/operators';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { UniversalisService } from '../../../core/api/universalis.service';
-import { AuthFacade } from '../../../+state/auth.facade';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { TranslateService } from '@ngx-translate/core';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
@@ -101,8 +99,8 @@ export class ItemSearchOverlayComponent {
   );
 
   constructor(private i18n: I18nToolsService, private lazyData: LazyDataFacade,
-              private inventoryFacade: InventoryService, private universalisService: UniversalisService,
-              private authFacade: AuthFacade, private ipc: IpcService, private translate: TranslateService) {
+              private inventoryFacade: InventoryService,
+              private ipc: IpcService, private translate: TranslateService) {
   }
 
   openInMainWindow(id: number): void {

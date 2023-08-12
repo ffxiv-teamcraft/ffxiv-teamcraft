@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.1...v11.0.2) (2023-08-12)
+
+
+### Features
+
+* **item-icons:** middle click or ctrl + click now opens a child window on desktop app ([6848363](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/684836395fc9b48754f580525c7de75ca222ab86))
+
+
+### Bug Fixes
+
+* **db:** fixed "craft in simulator" button not working as intended ([ec51e31](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec51e31bdaec505b5e1b1c5bfdd857571bc8a1fc))
+* **db:** fixed missing TOOLTIP.xxx translations ([3e7ccc3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3e7ccc33d2f38a7286c1dd29eb256444abdce431))
+* **desktop:** fixed zoom behavior and persistence ([ce5ac79](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ce5ac7996f7060623b30ea209fb75196982a0a43))
+* **gearset:** fixed gearset creation popup job select box ([1efb5d4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1efb5d42cefc5dc1523e6e881d34d16b71a3325f))
+* **i18n:** fixed koren names sometimes not displayed properly ([e83bef0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e83bef04bf1501d3f2865a2b2a048028ca7c6c54))
+* **list:** fixed dungeon names sometimes including html tags ([9f832db](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9f832dbd234a1eeb9fe7d214321f9e9725569ac7))
+* **profile:** fixed CN and KR characters not being added properly as custom characters ([5532fa1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5532fa1321799198bac322affd9accc1670d6472))
+* **search:** fixed island recipes not showing properly ([020c3b4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/020c3b467a3eb312a1be7afff262fcdeb6a7bd9f))
+* **search:** fixed items with multiple recipes always showing them all ([7798da0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7798da0b1788d76832ca484aecd9643367a5046f))
+* **tooltips:** fixed class/job value not accurate ([bbc92c8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bbc92c8ea1b6eb80fdabae7ea32775aaa14e2d16))
+* **tooltips:** fixed some fish tooltips being way too long ([9f906c9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9f906c9234ed3e674d808ffbb76589fe70765d86))
+
 ### [11.0.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.0...v11.0.1) (2023-08-11)
 
 

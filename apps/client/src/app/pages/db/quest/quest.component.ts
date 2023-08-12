@@ -20,7 +20,7 @@ import { I18nName } from '@ffxiv-teamcraft/types';
 })
 export class QuestComponent extends TeamcraftPageComponent {
 
-  public quest$: Observable<LazyQuestsDatabasePage & { text: any }> = this.route.paramMap.pipe(
+  public quest$ = this.route.paramMap.pipe(
     filter(params => params.get('slug') !== null),
     map(params => params.get('questId')),
     switchMap(id => {

@@ -48,7 +48,7 @@ export class ItemIconComponent {
   @Input({ transform: booleanAttribute })
   forceCollectable = false;
 
-  itemId$ = observeInput(this, 'itemId');
+  itemId$ = observeInput(this, 'itemId', true);
 
   icon$ = combineLatest([
     this.itemId$,
@@ -105,12 +105,12 @@ export class ItemIconComponent {
 
   handleClick(event: MouseEvent): void {
     event.preventDefault();
-    if (this.disableClick || this.itemId === null || event.type === 'mouseup') {
+    if (this.disableClick || this.itemId === null || (event.type === 'mouseup' && event.button !== 1)) {
       return;
     }
-    if (event.which === 2) {
+    if (event.button === 1 || event.ctrlKey) {
       if (this.ipc.ready) {
-        this.ipc.send('open-link', 'https://ffxivteamcraft.com' + this.getLink());
+        this.ipc.send('child:new', this.getLink());
       } else {
         window.open('https://ffxivteamcraft.com' + this.getLink(), '_blank');
       }

@@ -1,6 +1,6 @@
 import { AbstractExtractor } from '../abstract-extractor';
 import { XivDataService } from '../xiv/xiv-data.service';
-import { I18nName, SearchResult } from '@ffxiv-teamcraft/types';
+import { I18nName } from '@ffxiv-teamcraft/types';
 import { combineLatest, concat, Observable, tap } from 'rxjs';
 import { LazyItemStat } from '@ffxiv-teamcraft/data/model/lazy-item-stat';
 import { LazyItemBonus } from '@ffxiv-teamcraft/data/model/lazy-item-bonus';
@@ -14,6 +14,7 @@ import { LazyPlace } from '@ffxiv-teamcraft/data/model/lazy-place';
 import { LazyStatus } from '@ffxiv-teamcraft/data/model/lazy-status';
 import { LazyTrait } from '@ffxiv-teamcraft/data/model/lazy-trait';
 import { LazyAchievement } from '@ffxiv-teamcraft/data/model/lazy-achievement';
+import { LazyRecipesPerItem } from '@ffxiv-teamcraft/data/model/lazy-recipes-per-item';
 
 export class SearchExtractor extends AbstractExtractor {
   protected doExtract(xiv: XivDataService): void {
@@ -73,7 +74,7 @@ export class SearchExtractor extends AbstractExtractor {
       this.getExtendedNames('items')
         .filter(({ en }) => !en.startsWith('Dated'))
         .forEach(({ id, ...name }) => {
-          const itemRecipes = recipes[id];
+          const itemRecipes: LazyRecipesPerItem[] = recipes[id];
           const baseSearchInfo = {
             ...name,
             iconId: icons[id]?.split('/').reverse()[0].split('_')[0] || 0,
@@ -118,7 +119,7 @@ export class SearchExtractor extends AbstractExtractor {
                 clvl: recipe.lvl,
                 craftJob: recipe.job,
                 collectible: collectableFlags[id],
-                data: <SearchResult>{
+                data: {
                   itemId: +id,
                   icon: icons[id],
                   ilvl: ilvls[id],
@@ -140,7 +141,7 @@ export class SearchExtractor extends AbstractExtractor {
               id,
               ...baseSearchInfo,
               craftable: false,
-              data: <SearchResult>{
+              data: {
                 itemId: +id,
                 ilvl: ilvls[id],
                 icon: icons[id],
@@ -152,40 +153,52 @@ export class SearchExtractor extends AbstractExtractor {
         });
       searchIndex.push(
         ...Object.entries(mjiBuildings)
-          .map(([key, building]) => {
-            return <SearchResult>{
-              id: +key,
-              itemId: +key,
-              icon: building.icon,
-              contentType: 'islandBuildings',
-              amount: 1,
-              recipe: {
-                recipeId: `mjibuilding-${key}`,
-                itemId: +key,
-                collectible: false,
-                job: -10,
-                stars: 0,
-                lvl: 1,
-                icon: building.icon
+          .map(([id, building]) => {
+            const { ingredients, key, ...name } = building;
+            return {
+              id: +id,
+              itemId: +id,
+              ...name,
+              data: {
+                itemId: +id,
+                icon: building.icon,
+                amount: 1,
+                contentType: 'islandBuildings',
+                recipe: {
+                  recipeId: `mjibuilding-${id}`,
+                  itemId: +id,
+                  collectible: false,
+                  job: -10,
+                  stars: 0,
+                  lvl: 1,
+                  icon: building.icon,
+                  isIslandRecipe: true
+                }
               }
             };
           }),
         ...Object.entries(mjiLandmarks)
-          .map(([key, landmark]) => {
-            return <SearchResult>{
-              id: +key,
-              itemId: +key,
-              icon: landmark.icon,
-              contentType: 'islandLandmarks',
-              amount: 1,
-              recipe: {
-                recipeId: `mjilandmark-${key}`,
-                itemId: +key,
-                collectible: false,
-                job: -10,
-                stars: 0,
-                lvl: 1,
-                icon: landmark.icon
+          .map(([id, landmark]) => {
+            const { ingredients, key, ...name } = landmark;
+            return {
+              id: +id,
+              itemId: +id,
+              ...name,
+              data: {
+                itemId: +id,
+                icon: landmark.icon,
+                amount: 1,
+                contentType: 'islandLandmarks',
+                recipe: {
+                  recipeId: `mjilandmark-${id}`,
+                  itemId: +id,
+                  collectible: false,
+                  job: -10,
+                  stars: 0,
+                  lvl: 1,
+                  icon: landmark.icon,
+                  isIslandRecipe: true
+                }
               }
             };
           }));

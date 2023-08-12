@@ -15,6 +15,13 @@ const dbFiles = fs.readdirSync(path.join(__dirname, '../../libs/data/src/lib/jso
 const koFiles = fs.readdirSync(path.join(__dirname, '../../libs/data/src/lib/json/ko/')).map((row) => `/ko/${row}`);
 const zhFiles = fs.readdirSync(path.join(__dirname, '../../libs/data/src/lib/json/zh/')).map((row) => `/zh/${row}`);
 
+const allFiles = [
+  ...baseFiles,
+  ...dbFiles,
+  ...koFiles,
+  ...zhFiles
+];
+
 const getPropertyName = (filename) => _.camelCase(filename.replace('/db/', '').replace('.json', '').replace('.index', '').replace(/\/\w+\//, ''));
 
 function getClassName(file) {
@@ -33,7 +40,7 @@ function getClassName(file) {
 
 function getFileContent(filePath) {
   let data = fs.readFileSync(filePath, 'utf8');
-  if(filePath.endsWith('.json')) {
+  if (filePath.endsWith('.json')) {
     return JSON.parse(data);
   } else {
     return JSON.parse(zlib.inflateSync(fs.readFileSync(filePath), { level: 9 }).toString('utf-8'));
@@ -99,7 +106,7 @@ function validateLines(lines) {
   fs.writeFileSync(
     path.join(__dirname, '../../libs/data/src/lib/lazy-files-list.ts'),
     `export const lazyFilesList = ${JSON.stringify(
-      [...baseFiles, ...koFiles, ...zhFiles, ...dbFiles]
+      allFiles
         .filter((row) => {
           return row.includes('.json') || row.includes('.index');
         })
@@ -125,7 +132,7 @@ function validateLines(lines) {
 
   console.log(colors.cyan(`Updating lazy loaded data Models`));
 
-  for (const file of [...baseFiles, ...koFiles, ...zhFiles]) {
+  for (const file of allFiles) {
     if (file.indexOf('.json') === -1 && file.indexOf('.index') === -1) {
       continue;
     }
@@ -160,7 +167,7 @@ function validateLines(lines) {
   console.log(colors.cyan(`Updating lazy loaded data interface`));
 
   const { imports, properties } =
-    [...baseFiles, ...koFiles, ...zhFiles, ...dbFiles]
+    allFiles
       .filter((row) => {
         return row.includes('.json') || row.includes('.index');
       })
@@ -187,12 +194,11 @@ export interface LazyData {${properties}
 
   console.log(colors.cyan(`Updating keys list`));
 
-  const keys =
-    [...baseFiles, ...koFiles, ...zhFiles, ...dbFiles]
-      .filter((row) => {
-        return row.includes('.json') || row.includes('.index');
-      })
-      .map(row => getPropertyName(row));
+  const keys = allFiles
+    .filter((row) => {
+      return row.includes('.json') || row.includes('.index');
+    })
+    .map(row => getPropertyName(row));
 
 
   fs.writeFileSync(

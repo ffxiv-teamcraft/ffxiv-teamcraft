@@ -12,7 +12,7 @@
     </div>
     <div class="avatar">
       <app-item-icon *ngIf="row.contentType === 'items'" [icon]="row.icon | xivapiIcon" [itemId]="+row.itemId" [width]="32"></app-item-icon>
-      <app-item-icon *ngIf="row.contentType !== 'items'" [icon]="row.icon" [width]="32" [tooltipDisabled]="true"></app-item-icon>
+      <app-item-icon *ngIf="row.contentType !== 'items'" [icon]="row.icon | xivapiIcon" [width]="32" [tooltipDisabled]="true"></app-item-icon>
     </div>
     <div class="flex-column">
       <div [appItemRarity]="+row.itemId" class="item-name flex-row gap-5">
@@ -29,8 +29,8 @@
         <app-marketboard-icon [itemId]="+row.itemId" [showHistory]="true" *ngIf="row.contentType === 'items'"></app-marketboard-icon>
         <app-company-workshop-tree-button *ngIf="row.recipe?.job === 0" [recipeId]="row.recipe.recipeId" size="small"></app-company-workshop-tree-button>
       </div>
-      <div class="flex-row align-center">
-        <app-item-sources-display *ngIf="row.sources.length > 0" [forceHorizontal]="true" [item]="{id: row.itemId, sources: row.sources}" [sources]="row.sources" [dbDisplay]="true"></app-item-sources-display>
+      <div class="flex-row align-center" *ngIf="rowWithSources$ | async as rowWithSources">
+        <app-item-sources-display *ngIf="rowWithSources.sources.length > 0" [forceHorizontal]="true" [item]="{id: row.itemId, sources: rowWithSources.sources}" [sources]="rowWithSources.sources" [dbDisplay]="true"></app-item-sources-display>
       </div>
     </div>
   </div>

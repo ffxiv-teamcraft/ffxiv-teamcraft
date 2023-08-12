@@ -235,6 +235,10 @@ const extractors: AbstractExtractor[] = [
     }));
   } else if (argv['only-search']) {
     startExtractors([
+      new SearchExtractor()
+    ]);
+  } else if (argv['only-db']) {
+    startExtractors([
       new SearchExtractor(),
       ...dbExtractors
     ]);

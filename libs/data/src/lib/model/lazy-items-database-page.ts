@@ -5,6 +5,7 @@ export interface LazyItemsDatabasePage {
   bonuses?:           Bonus[];
   bpSpecial:          number[];
   cjUse?:             number;
+  cjc?:               number;
   collectable?:       Collectable;
   delay?:             number;
   description:        Description;

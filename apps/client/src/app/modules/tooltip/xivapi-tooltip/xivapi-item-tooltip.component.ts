@@ -3,7 +3,8 @@ import { LazyItemsDatabasePage } from '@ffxiv-teamcraft/data/model/lazy-items-da
 import { BaseParam, DataType, ExplorationType, ExtractRow, FishingBait, GatheringNode, getItemSource } from '@ffxiv-teamcraft/types';
 import { Observable } from 'rxjs';
 import { observeInput } from '../../../core/rxjs/observe-input';
-import { filter, map, switchMap } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
+import { uniqBy } from 'lodash';
 
 @Component({
   selector: 'app-item-tooltip-component',
@@ -28,6 +29,25 @@ export class XivapiItemTooltipComponent implements OnInit {
     }),
     filter(gatheredBy => gatheredBy?.type === -5),
     map(gatheredBy => gatheredBy.nodes)
+  );
+
+  public globalFshInfo$ = this.fshData$.pipe(
+    map(data => {
+      return data.find(d => d.hookset !== undefined && d.tug !== undefined);
+    })
+  );
+
+  public baits$ = this.fshData$.pipe(
+    map(data => {
+      return uniqBy(data, node => node.baits.map(bait => bait.id).join(';'))
+        .map(node => node.baits);
+    })
+  );
+
+  public predators$ = this.fshData$.pipe(
+    map(data => {
+      return data.find(node => node.predators?.length > 0)?.predators;
+    })
   );
 
   public minGathering$: Observable<number> = this.fshData$.pipe(

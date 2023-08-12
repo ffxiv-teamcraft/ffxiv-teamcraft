@@ -110,7 +110,7 @@ export class ItemsDbPagesExtractor extends AbstractExtractor {
 
 
     this.getSheet<any>(xiv, 'Item', ['ClassJobRepair#', 'PriceMid', 'PriceLow', 'ItemSeries#', 'ItemAction.Data#','ItemAction.Type#',
-      'AdditionalData#', 'Name', 'Description', 'IsUntradable', 'ClassJobUse#', 'LevelEquip#', 'LevelItem#',
+      'AdditionalData#', 'Name', 'Description', 'IsUntradable', 'ClassJobUse#', 'ClassJobCategory#', 'LevelEquip#', 'LevelItem#',
       'BaseParamValueSpecial#', 'CanBeHq', 'ItemSearchCategory#', 'ItemUICategory#', 'Icon', 'IsUnique'], false, 1)
       .subscribe(items => {
         items.forEach(item => {
@@ -174,6 +174,7 @@ export class ItemsDbPagesExtractor extends AbstractExtractor {
             trade: !item.IsUntradable,
             additionalData: item.AdditionalData,
             cjUse: item.ClassJobUse,
+            cjc: item.ClassJobCategory,
             elvl: item.LevelEquip,
             ilvl: item.LevelItem,
             bpSpecial: item.BaseParamValueSpecial,
