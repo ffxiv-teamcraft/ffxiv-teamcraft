@@ -1267,7 +1267,7 @@
   },
   "PRICING": {
     "Expect_to_sell_everything": "전체 판매 가정",
-    "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
+    "Expect_to_sell_everything_explain": "사용되지 않고 남은 재료들은 재판매되기 때문에 원가에 포함되지 않습니다",
     "Autofill_panel_prices": "장터게시판 가격으로 자동입력",
     "Autofill_panel_prices_your_server": "장터게시판 가격으로 자동입력 (캐릭터의 서버기준)",
     "Content_copied": "클립보드로 내용이 복사되었습니다.",
@@ -1687,7 +1687,7 @@
         "Size": "크기",
         "Large": "월척",
         "Time_since_thrown": "[낚싯대 던지기] 사용 후 시간",
-        "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
+        "Ignored_spot": "해당 낚시터는 리포트 기능을 지원하지 않기 때문에, 이상한 값이 보일 수도 있습니다.",
         "Ignored_spot_description": "잡은 물고기는 낚시 리포트에 포함되지 않습니다",
         "ERRORS": {
           "No_bait": "미끼가 확인되지 않습니다. 재인식을 위해 미끼를 한번 바꿔주세요",
