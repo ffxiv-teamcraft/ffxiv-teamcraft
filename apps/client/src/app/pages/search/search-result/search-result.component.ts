@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { Region, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
+import { DataType, Region, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
+import { observeInput } from '../../../core/rxjs/observe-input';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-search-result',
@@ -14,6 +16,23 @@ export class SearchResultComponent {
 
   @Input()
   row: SearchResult;
+
+  rowWithSources$ = observeInput(this, 'row').pipe(
+    map(row => {
+      if (row.recipe) {
+        row.sources = row.sources.map(source => {
+          if (source.type === DataType.CRAFTED_BY) {
+            return {
+              ...source,
+              data: source.data.filter(r => r.id.toString() === row.recipe.recipeId.toString())
+            };
+          }
+          return source;
+        });
+      }
+      return row;
+    })
+  );
 
   @Input()
   odd: boolean;
