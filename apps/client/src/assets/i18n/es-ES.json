@@ -1381,6 +1381,10 @@
     "Ilvl": "ilvl",
     "Cost": "Costo",
     "Class_job": "Clase/Profesión",
+    "Damage_phys": "Phys. Damage",
+    "Damage_mag": "Mag. Damage",
+    "Defense_phys": "Phys. Defense",
+    "Defense_mag": "Mag. Defense",
     "Masterbooks": "Requires a masterbook"
   },
   "SEARCH_INTRO": {
