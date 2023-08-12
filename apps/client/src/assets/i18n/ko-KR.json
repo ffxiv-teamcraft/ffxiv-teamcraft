@@ -1381,6 +1381,10 @@
     "Ilvl": "아이템레벨",
     "Cost": "CP",
     "Class_job": "클래스/직업",
+    "Damage_phys": "Phys. Damage",
+    "Damage_mag": "Mag. Damage",
+    "Defense_phys": "Phys. Defense",
+    "Defense_mag": "Mag. Defense",
     "Masterbooks": "비전서 필요"
   },
   "SEARCH_INTRO": {
