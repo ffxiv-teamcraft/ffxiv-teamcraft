@@ -667,6 +667,58 @@ export const lazyFilesList = {
     'fileName': 'weathers.json',
     'hashedFileName': 'weathers.d7f015e330790d7736330513aec6c14fa459a3ae.json'
   },
+  'achievementsDatabasePages': {
+    'fileName': '/db/achievements-database-pages.json',
+    'hashedFileName': '/db/achievements-database-pages.094043a07a70d840c8f79cb80f9b837dea3a6f91.json'
+  },
+  'actionsDatabasePages': {
+    'fileName': '/db/actions-database-pages.json',
+    'hashedFileName': '/db/actions-database-pages.0acdbb8190f8f323610959d7a66e4ee0911647ff.json'
+  },
+  'fatesDatabasePages': {
+    'fileName': '/db/fates-database-pages.json',
+    'hashedFileName': '/db/fates-database-pages.d503c5c875d145aca1a10240b1a7cac263808086.json'
+  },
+  'fishingSpotsDatabasePages': {
+    'fileName': '/db/fishing-spots-database-pages.json',
+    'hashedFileName': '/db/fishing-spots-database-pages.dfe23fb849a914e19fa8e08eb453594212eace41.json'
+  },
+  'itemsDatabasePages': {
+    'fileName': '/db/items-database-pages.json',
+    'hashedFileName': '/db/items-database-pages.e82d388d13335c038d2379f2cb789b40e15c9651.json'
+  },
+  'levesDatabasePages': {
+    'fileName': '/db/leves-database-pages.json',
+    'hashedFileName': '/db/leves-database-pages.8c720bdf0fac29f71a6538aeb23e2ab881aeea11.json'
+  },
+  'mobsDatabasePages': {
+    'fileName': '/db/mobs-database-pages.json',
+    'hashedFileName': '/db/mobs-database-pages.37985ee2a585b92bafb6079f30cec64d4d0e0b09.json'
+  },
+  'nodesDatabasePages': {
+    'fileName': '/db/nodes-database-pages.json',
+    'hashedFileName': '/db/nodes-database-pages.ee12208dac4e148ad78803aede5810321f063bd1.json'
+  },
+  'npcsDatabasePages': {
+    'fileName': '/db/npcs-database-pages.json',
+    'hashedFileName': '/db/npcs-database-pages.07e9333b1975acd92525b59e3e84fbfb1b3fd563.json'
+  },
+  'questsDatabasePages': {
+    'fileName': '/db/quests-database-pages.json',
+    'hashedFileName': '/db/quests-database-pages.57a03d3a253f9db2d8af847f3dab1c6ed376ef7d.json'
+  },
+  'questsText': {
+    'fileName': '/db/quests-text.index',
+    'hashedFileName': '/db/quests-text.a49554582807e8651552a8e0f2409eb6be030706.index'
+  },
+  'statusesDatabasePages': {
+    'fileName': '/db/statuses-database-pages.json',
+    'hashedFileName': '/db/statuses-database-pages.ecd9e35e92afe336fdf6bad95403a52813ea75d0.json'
+  },
+  'traitsDatabasePages': {
+    'fileName': '/db/traits-database-pages.json',
+    'hashedFileName': '/db/traits-database-pages.0ae3d3b056d54f5a164699f617ab72bbdb4c9149.json'
+  },
   'koAchievementDescriptions': {
     'fileName': '/ko/ko-achievement-descriptions.json',
     'hashedFileName': '/ko/ko-achievement-descriptions.e87fd795f214218f5d18cc63a0c95f981cf05b94.json'
@@ -1102,57 +1154,5 @@ export const lazyFilesList = {
   'zhWeathers': {
     'fileName': '/zh/zh-weathers.json',
     'hashedFileName': '/zh/zh-weathers.03f5904d725cc5d1a70fd759da7dc43518364c62.json'
-  },
-  'achievementsDatabasePages': {
-    'fileName': '/db/achievements-database-pages.json',
-    'hashedFileName': '/db/achievements-database-pages.094043a07a70d840c8f79cb80f9b837dea3a6f91.json'
-  },
-  'actionsDatabasePages': {
-    'fileName': '/db/actions-database-pages.json',
-    'hashedFileName': '/db/actions-database-pages.0acdbb8190f8f323610959d7a66e4ee0911647ff.json'
-  },
-  'fatesDatabasePages': {
-    'fileName': '/db/fates-database-pages.json',
-    'hashedFileName': '/db/fates-database-pages.d503c5c875d145aca1a10240b1a7cac263808086.json'
-  },
-  'fishingSpotsDatabasePages': {
-    'fileName': '/db/fishing-spots-database-pages.json',
-    'hashedFileName': '/db/fishing-spots-database-pages.dfe23fb849a914e19fa8e08eb453594212eace41.json'
-  },
-  'itemsDatabasePages': {
-    'fileName': '/db/items-database-pages.json',
-    'hashedFileName': '/db/items-database-pages.bc298520dd568a9db5195ced1a1866e9ba40e150.json'
-  },
-  'levesDatabasePages': {
-    'fileName': '/db/leves-database-pages.json',
-    'hashedFileName': '/db/leves-database-pages.8c720bdf0fac29f71a6538aeb23e2ab881aeea11.json'
-  },
-  'mobsDatabasePages': {
-    'fileName': '/db/mobs-database-pages.json',
-    'hashedFileName': '/db/mobs-database-pages.37985ee2a585b92bafb6079f30cec64d4d0e0b09.json'
-  },
-  'nodesDatabasePages': {
-    'fileName': '/db/nodes-database-pages.json',
-    'hashedFileName': '/db/nodes-database-pages.ee12208dac4e148ad78803aede5810321f063bd1.json'
-  },
-  'npcsDatabasePages': {
-    'fileName': '/db/npcs-database-pages.json',
-    'hashedFileName': '/db/npcs-database-pages.07e9333b1975acd92525b59e3e84fbfb1b3fd563.json'
-  },
-  'questsDatabasePages': {
-    'fileName': '/db/quests-database-pages.json',
-    'hashedFileName': '/db/quests-database-pages.57a03d3a253f9db2d8af847f3dab1c6ed376ef7d.json'
-  },
-  'questsText': {
-    'fileName': '/db/quests-text.index',
-    'hashedFileName': '/db/quests-text.a49554582807e8651552a8e0f2409eb6be030706.index'
-  },
-  'statusesDatabasePages': {
-    'fileName': '/db/statuses-database-pages.json',
-    'hashedFileName': '/db/statuses-database-pages.ecd9e35e92afe336fdf6bad95403a52813ea75d0.json'
-  },
-  'traitsDatabasePages': {
-    'fileName': '/db/traits-database-pages.json',
-    'hashedFileName': '/db/traits-database-pages.0ae3d3b056d54f5a164699f617ab72bbdb4c9149.json'
   }
 };

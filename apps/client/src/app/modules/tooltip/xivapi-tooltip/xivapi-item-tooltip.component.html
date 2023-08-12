@@ -16,7 +16,7 @@
     <div *ngIf="item.patch" class="patch">
       <app-i18n-name content="patchNames" [id]="item.patch"></app-i18n-name>
     </div>
-    <div *ngIf="item.cjUse" class="class-jobs" nz-row [nzGutter]="[5, 5]">
+    <div *ngIf="item.cjc" class="class-jobs" nz-row [nzGutter]="[5, 5]">
       <div [nzXs]="12" nz-col>
       <span class="detail-name">
         {{'TOOLTIP.Class_job' | translate}}
@@ -24,7 +24,7 @@
       </div>
       <div [nzXs]="12" nz-col>
       <span class="detail-value">
-        {{item.cjUse | i18nRow: 'jobCategories' | i18n}}
+        {{item.cjc | i18nRow: 'jobCategories' | i18n}}
       </span>
       </div>
     </div>

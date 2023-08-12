@@ -360,10 +360,10 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
   public readonly mainAttributes$: Observable<any[]> = this.lazyItem$.pipe(
     map((item) => {
       const mainAttributes = [];
-      if (item.cjUse) {
+      if (item.cjc) {
         mainAttributes.push({
           name: 'DB.Class_job',
-          value: this.lazyData.getI18nName('jobAbbr', item.cjUse),
+          value: this.lazyData.getI18nName('jobCategories', item.cjUse),
           valueRequiresPipe: true
         });
       }
