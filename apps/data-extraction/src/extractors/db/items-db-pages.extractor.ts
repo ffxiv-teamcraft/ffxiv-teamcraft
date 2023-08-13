@@ -2,6 +2,7 @@ import { AbstractExtractor } from '../../abstract-extractor';
 import { XivDataService } from '../../xiv/xiv-data.service';
 import { omitBy } from 'lodash';
 import { LazyGcSupply } from '@ffxiv-teamcraft/data/model/lazy-gc-supply';
+import { combineLatest } from 'rxjs';
 
 export class ItemsDbPagesExtractor extends AbstractExtractor {
   protected doExtract(xiv: XivDataService): void {
@@ -109,10 +110,13 @@ export class ItemsDbPagesExtractor extends AbstractExtractor {
     ];
 
 
-    this.getSheet<any>(xiv, 'Item', ['ClassJobRepair#', 'PriceMid', 'PriceLow', 'ItemSeries#', 'ItemAction.Data#','ItemAction.Type#',
-      'AdditionalData#', 'Name', 'Description', 'IsUntradable', 'ClassJobUse#', 'ClassJobCategory#', 'LevelEquip#', 'LevelItem#',
-      'BaseParamValueSpecial#', 'CanBeHq', 'ItemSearchCategory#', 'ItemUICategory#', 'Icon', 'IsUnique'], false, 1)
-      .subscribe(items => {
+    combineLatest([
+      this.getSheet<any>(xiv, 'Item', ['ClassJobRepair#', 'PriceMid', 'PriceLow', 'ItemSeries#', 'ItemAction.Data#','ItemAction.Type#',
+        'AdditionalData#', 'Name', 'Description', 'IsUntradable', 'ClassJobUse#', 'ClassJobCategory#', 'LevelEquip#', 'LevelItem#',
+        'BaseParamValueSpecial#', 'CanBeHq', 'ItemSearchCategory#', 'ItemUICategory#', 'Icon', 'IsUnique'], false, 1)      ,
+      this.getSheet(xiv, 'GcSupplyDutyReward', ['SealsExpertDelivery'])
+    ])
+      .subscribe(([items, supplyDutyReward]) => {
         items.forEach(item => {
           const kind = ItemKind.findIndex(row => row.includes(item.ItemUICategory)) || 7;
 
@@ -154,6 +158,7 @@ export class ItemsDbPagesExtractor extends AbstractExtractor {
               ...(koDescriptions[item.index] || {}),
               ...(zhDescriptions[item.index] || {})
             },
+            gcReward: supplyDutyReward.find(r => r.index === item.LevelItem)?.SealsExpertDelivery,
             kind: item.ItemKind,
             unique: item.IsUnique,
             dyeable: item.IsDyeable,

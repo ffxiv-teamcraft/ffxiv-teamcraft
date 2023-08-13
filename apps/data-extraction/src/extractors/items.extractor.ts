@@ -82,7 +82,7 @@ export class ItemsExtractor extends AbstractExtractor {
             repair: item.ClassJobRepair,
             desynth: item.Desynth,
             bpvSpecial: item.BaseParamValueSpecial.filter(Boolean)
-          }
+          };
           uiCategories[item.index] = item.ItemUICategory;
           rarities[item.index] = item.Rarity;
           ilvls[item.index] = item.LevelItem;
