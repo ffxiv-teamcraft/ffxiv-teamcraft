@@ -1381,6 +1381,10 @@
     "Ilvl": "ilvl",
     "Cost": "Coût",
     "Class_job": "Classe/Job",
+    "Damage_phys": "Phys. Damage",
+    "Damage_mag": "Mag. Damage",
+    "Defense_phys": "Phys. Defense",
+    "Defense_mag": "Mag. Defense",
     "Masterbooks": "Requires a masterbook"
   },
   "SEARCH_INTRO": {
@@ -2090,6 +2094,10 @@
     "DUPLICATES": {
       "Title": "Éléments qui sont dupliqués à travers plusieurs conteneurs",
       "Message": "Cet objet est également présent dans : {{containers}}."
+    },
+    "NOT_IN_LIST": {
+      "Title": "Items that are not used in any of your lists",
+      "Message": "This item is not used in any of your lists."
     },
     "HAS_TOO_FEW": {
       "Title": "Objets que vous avez en très petite quantité",

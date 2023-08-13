@@ -1381,6 +1381,10 @@
     "Ilvl": "品级",
     "Cost": "消耗",
     "Class_job": "职业/特职",
+    "Damage_phys": "Phys. Damage",
+    "Damage_mag": "Mag. Damage",
+    "Defense_phys": "Phys. Defense",
+    "Defense_mag": "Mag. Defense",
     "Masterbooks": "Requires a masterbook"
   },
   "SEARCH_INTRO": {
@@ -2090,6 +2094,10 @@
     "DUPLICATES": {
       "Title": "存放在多个物品栏的物品",
       "Message": "物品还存放于： {{containers}}。"
+    },
+    "NOT_IN_LIST": {
+      "Title": "Items that are not used in any of your lists",
+      "Message": "This item is not used in any of your lists."
     },
     "HAS_TOO_FEW": {
       "Title": "持有数量非常少的物品",
