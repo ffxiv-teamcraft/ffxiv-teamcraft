@@ -1381,6 +1381,10 @@
     "Ilvl": "G.-St.",
     "Cost": "Kosten",
     "Class_job": "Klasse/Job",
+    "Damage_phys": "Phys. Damage",
+    "Damage_mag": "Mag. Damage",
+    "Defense_phys": "Phys. Defense",
+    "Defense_mag": "Mag. Defense",
     "Masterbooks": "Requires a masterbook"
   },
   "SEARCH_INTRO": {
@@ -2090,6 +2094,10 @@
     "DUPLICATES": {
       "Title": "Gegenstände, die in mehreren Inventaren enthalten sind",
       "Message": "Dieser Gegenstand ist ebenfalls in folgendem Inventar enthalten: {{containers}}."
+    },
+    "NOT_IN_LIST": {
+      "Title": "Items that are not used in any of your lists",
+      "Message": "This item is not used in any of your lists."
     },
     "HAS_TOO_FEW": {
       "Title": "Gegenstände, die du in sehr kleinen Stapeln hast",

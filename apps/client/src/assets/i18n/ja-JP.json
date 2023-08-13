@@ -1381,6 +1381,10 @@
     "Ilvl": "IL",
     "Cost": "費用",
     "Class_job": "ジョブ",
+    "Damage_phys": "Phys. Damage",
+    "Damage_mag": "Mag. Damage",
+    "Defense_phys": "Phys. Defense",
+    "Defense_mag": "Mag. Defense",
     "Masterbooks": "Requires a masterbook"
   },
   "SEARCH_INTRO": {
@@ -2090,6 +2094,10 @@
     "DUPLICATES": {
       "Title": "アイテムが複数の場所に分散されています",
       "Message": "このアイテムは{{containers}} もあります"
+    },
+    "NOT_IN_LIST": {
+      "Title": "Items that are not used in any of your lists",
+      "Message": "This item is not used in any of your lists."
     },
     "HAS_TOO_FEW": {
       "Title": "少量で所有しているアイテム",

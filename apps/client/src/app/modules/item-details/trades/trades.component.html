@@ -6,7 +6,7 @@
       </ng-template>
     </nz-card-meta>
     <div nz-row>
-      <div *ngFor="let trade of tradeSource.trades" class="trades" nz-col [nzMd]="6" [nzSm]="12" [nzXs]="24">
+      <div *ngFor="let trade of tradeSource.trades" class="trades" nz-col [nzMd]="8" [nzSm]="12" [nzXs]="24">
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
           <div *ngFor="let currency of trade.currencies" class="item-container flex-row align-center gap-2">
             <app-item-icon [hq]="currency.hq" [icon]="currency.icon" [itemId]="+currency.id"
