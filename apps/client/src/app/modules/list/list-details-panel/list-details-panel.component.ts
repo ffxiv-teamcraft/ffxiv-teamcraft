@@ -3,7 +3,6 @@ import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { ListRow } from '../model/list-row';
 import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { ZoneBreakdown } from '../../../model/common/zone-breakdown';
@@ -13,10 +12,7 @@ import { NavigationObjective } from '../../map/navigation-objective';
 import { ListsFacade } from '../+state/lists.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { combineLatest, merge, Observable, of, ReplaySubject } from 'rxjs';
-import { ItemPickerService } from '../../item-picker/item-picker.service';
 import { debounceTime, filter, first, map, switchMap, takeUntil } from 'rxjs/operators';
-import { ListManagerService } from '../list-manager.service';
-import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
 import { WorldNavigationMapComponent } from '../../map/world-navigation-map/world-navigation-map.component';
 import { EorzeaFacade } from '../../eorzea/+state/eorzea.facade';
@@ -151,10 +147,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     map(([displayRow, canSkip]) => new NpcBreakdown(displayRow.rows, this.lazyData, this.settings.hasAccessToHousingVendors, canSkip))
   );
 
-  constructor(private i18n: I18nToolsService, private message: NzMessageService, public translate: TranslateService,
+  constructor(private i18n: I18nToolsService, public translate: TranslateService,
               private dialog: NzModalService, private listsFacade: ListsFacade,
-              private itemPicker: ItemPickerService, private listManager: ListManagerService,
-              private progress: ProgressPopupService, private layoutOrderService: LayoutOrderService,
+              private layoutOrderService: LayoutOrderService,
               private eorzeaFacade: EorzeaFacade, private alarmsFacade: AlarmsFacade,
               public settings: SettingsService, private lazyData: LazyDataFacade,
               private cd: ChangeDetectorRef, private authFacade: AuthFacade) {
