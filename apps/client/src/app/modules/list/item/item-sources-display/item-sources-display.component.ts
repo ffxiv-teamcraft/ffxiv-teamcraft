@@ -176,7 +176,7 @@ export class ItemSourcesDisplayComponent extends TeamcraftComponent {
         nzComponentParams: {
           item: item,
           details: getItemSource(item, dataType),
-          dbDisplay: true
+          dbDisplay: this.dbDisplay
         },
         nzFooter: null
       });

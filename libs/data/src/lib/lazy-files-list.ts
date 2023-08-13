@@ -497,7 +497,7 @@ export const lazyFilesList = {
   },
   'quests': {
     'fileName': 'quests.json',
-    'hashedFileName': 'quests.92be1802200399332439991b971ddc2011875503.json'
+    'hashedFileName': 'quests.43a080b69498e6f54ca8f22d79ef19e7d280f88f.json'
   },
   'races': {
     'fileName': 'races.json',
