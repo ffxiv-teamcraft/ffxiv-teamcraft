@@ -1,7 +1,6 @@
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { InjectionToken } from '@angular/core';
-import { ListRow } from '../../../modules/list/model/list-row';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { Observable, of } from 'rxjs';
 import { ExtractRow, Extracts, getExtract, LazyDataKey } from '@ffxiv-teamcraft/types';

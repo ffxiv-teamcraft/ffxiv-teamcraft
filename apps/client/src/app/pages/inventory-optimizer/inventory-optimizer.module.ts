@@ -32,6 +32,8 @@ import { OnlyForOneMaterial } from './optimizations/only-for-one-material';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { DeprecatedHq } from './optimizations/deprecated-hq';
+import { NotInList } from './optimizations/not-in-list';
+import { ListsFacade } from '../../modules/list/+state/lists.facade';
 
 const optimisations: Provider[] = [
   {
@@ -85,6 +87,12 @@ const optimisations: Provider[] = [
     useClass: OnlyForOneMaterial,
     multi: true,
     deps: [LazyDataFacade, I18nToolsService]
+  },
+  {
+    provide: INVENTORY_OPTIMIZER,
+    useClass: NotInList,
+    multi: true,
+    deps: [ListsFacade]
   }
 ];
 
