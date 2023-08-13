@@ -45,8 +45,7 @@ export class DefinitionParser {
     if (!name) {
       return null;
     }
-    return name
-      .replace(/[{}\[\]<>()]/gi, '');
+    return name.replace(/[{}\[\]<>()]/gi, '');
   }
 
   public static columnIsParsed(name: string, columns: string[], isForLinks = false): boolean {
