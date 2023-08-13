@@ -2095,6 +2095,10 @@
       "Title": "Artículos duplicados en múltiples contenedores",
       "Message": "Este elemento también está presente en: {{containers}}."
     },
+    "NOT_IN_LIST": {
+      "Title": "Items that are not used in any of your lists",
+      "Message": "This item is not used in any of your lists."
+    },
     "HAS_TOO_FEW": {
       "Title": "Objetos que tiene en pilas muy pequeñas",
       "Message": "Sólo tiene {{amount}} de este objeto, ¿vale la pena conservarlos?",
