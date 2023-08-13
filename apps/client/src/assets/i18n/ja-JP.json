@@ -2095,6 +2095,10 @@
       "Title": "アイテムが複数の場所に分散されています",
       "Message": "このアイテムは{{containers}} もあります"
     },
+    "NOT_IN_LIST": {
+      "Title": "Items that are not used in any of your lists",
+      "Message": "This item is not used in any of your lists."
+    },
     "HAS_TOO_FEW": {
       "Title": "少量で所有しているアイテム",
       "Message": "このアイテムを{{amount}} ほど持っているが処分をお勧めする",
