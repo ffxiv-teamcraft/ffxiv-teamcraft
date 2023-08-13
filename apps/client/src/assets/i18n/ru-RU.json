@@ -2095,6 +2095,10 @@
       "Title": "Элементы, дублирующиеся по нескольким ретейнерам",
       "Message": "Этот предмет также присутствует в: {{containers}}."
     },
+    "NOT_IN_LIST": {
+      "Title": "Items that are not used in any of your lists",
+      "Message": "This item is not used in any of your lists."
+    },
     "HAS_TOO_FEW": {
       "Title": "Предметы, которые у вас есть в маленьком количестве",
       "Message": "У вас только {{amount}} этого предмета, стоит ли сохранить их?",
