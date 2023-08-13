@@ -92,7 +92,7 @@ export function listsReducer(
 
     case ListsActionTypes.SetItemDone: {
       const listId = action.listId || state.selectedId;
-      const list = ListController.clone(state.listDetails.entities[listId], true);
+      const list = state.listDetails.entities[listId].offline ? state.listDetails.entities[listId] : ListController.clone(state.listDetails.entities[listId], true);
       const item = ListController.getItemById(list, action.itemId, !action.finalItem, action.finalItem);
       let fill = true;
       if (state.autocompletionEnabled && action.settings.enableAutofillHQFilter && item.requiredHQ) {
