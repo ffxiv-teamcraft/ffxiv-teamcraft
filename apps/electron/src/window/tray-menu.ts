@@ -66,6 +66,16 @@ export class TrayMenu {
             }
           },
           {
+            label: 'Always on top',
+            type: 'checkbox',
+            checked: this.store.get('win:alwaysOnTop', false),
+            click: (menuItem) => {
+              this.store.set('win:alwaysOnTop', menuItem.checked);
+              this.mainWindow.win.setAlwaysOnTop(menuItem.checked, 'normal');
+              this.mainWindow.win.webContents.send('always-on-top:value', menuItem.checked);
+            }
+          },
+          {
             label: 'Overlay',
             type: 'submenu',
             submenu: [
