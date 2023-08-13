@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.2...v11.0.3) (2023-08-13)
+
+
+### Features
+
+* **desktop:** new option in tray menu to toggle always on top ([987340d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/987340d7b04cce44b070e10928e06e0a8f237a73)), closes [#2337](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2337)
+* **inventory-optimizer:** new "items not used in any of your lists" optimizer ([fae87cd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fae87cd2dc7cea276ebf9f510fe1407575d95281)), closes [#2151](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2151)
+* **tooltips:** added rlvl and quality to recipe details ([d0f7d13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d0f7d138eec61308dce4e29d0b077397f2434b0e))
+
+
+### Bug Fixes
+
+* **core:** hide desktop tip banner on mobile ([455e618](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/455e618aac44582f623bb8b8a09742e0a6fefb23))
+* **db:** fixed items showing wrong value for Class/job ([3783f47](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3783f47aae7652f5e653d5db7ecdc07f38c34bee))
+* **db:** fixed progress value not shown on recipe details ([ca0619b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ca0619be69932a2e78b086eb97a868d71cc8f528))
+* **ios:** possible fix for older ios browsers ([c93c744](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c93c74446618953c9caf761e02a9b4ae62bc83f1))
+* **list:** monster icon is now larger ([c7881e0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c7881e0e7143e1858efb12d3de2909c48ddaf9e1))
+* **lists:** fixed "mark panel content as done" on offline lists ([ef0aa01](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ef0aa01e42d686a45935ea27ad6b50845be42c8d))
+* **simulator:** fixed a bug preventing custom rotations from saving ([278c7f9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/278c7f903ef3251a709ba8dafd5de8fa98663f13))
+* **simulator:** fixed rotation finder not loading and poor simulator perfs ([2614ad4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2614ad411eb8b6db2c4f2e487964f59ff7b358b3))
+* **tooltips:** added 500ms delay before closing and they now stay opened on mouseover ([c9c9a53](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c9c9a53e647ef9c1db864980f2bd03619fa8bd8b))
+
 ### [11.0.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.1...v11.0.2) (2023-08-12)
 
 
