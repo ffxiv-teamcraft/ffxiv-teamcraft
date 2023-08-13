@@ -2095,6 +2095,10 @@
       "Title": "여러 곳에 분산된 아이템",
       "Message": "이 아이템은 {{containers}} 에도 있습니다"
     },
+    "NOT_IN_LIST": {
+      "Title": "Items that are not used in any of your lists",
+      "Message": "This item is not used in any of your lists."
+    },
     "HAS_TOO_FEW": {
       "Title": "매우 소량으로 소유하고 있는 아이템",
       "Message": "이 아이템을 {{amount}} 개 만큼 가지고 있지만 처리하는 것을 추천함",
