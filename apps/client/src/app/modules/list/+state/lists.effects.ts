@@ -473,6 +473,7 @@ export class ListsEffects {
         .map(({ list, actions }) => {
           if (list.offline) {
             actions.forEach(action => {
+              ListController.setDone(list, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
               ListController.updateAllStatuses(list, action.itemId);
             });
             this.saveToLocalstorage(list, false);

@@ -165,7 +165,7 @@ export class LazyDataStateService {
         // Small 20ms debounce to make sure we catch all demands before starting our request
         debounceBufferTime(20),
         mergeMap((ids) => {
-          let url = `${baseUrl}/data/${contentName}/${hash}/${ids.join(',')}`;
+          let url = `${baseUrl}/data/${contentName}/${hash}/${ids.sort().join(',')}`;
           const fullLoading = url.length >= 4096;
           // If we're over max url length, load the whole damn thing at once.
           if (fullLoading) {

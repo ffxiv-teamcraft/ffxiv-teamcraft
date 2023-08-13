@@ -9,17 +9,21 @@ export class PushNotificationsService {
   public permission: 'default' | NotificationPermission = 'default';
 
   isSupported(): boolean {
-    return true;
+    return !!Notification;
   }
 
   requestPermission(): void {
-    Notification.requestPermission().then(res => {
-      this.permission = res;
-    });
+    if (this.isSupported()) {
+      Notification.requestPermission().then(res => {
+        this.permission = res;
+      });
+    }
   }
 
-  create(title: string, options:NotificationOptions): void {
-    new Notification(title, options);
+  create(title: string, options: NotificationOptions): void {
+    if (this.isSupported()) {
+      new Notification(title, options);
+    }
   }
 
 }

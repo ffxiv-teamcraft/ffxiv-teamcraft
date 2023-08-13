@@ -350,7 +350,7 @@
                       (nzOnClose)="hideChildWindowTip()"
                       nzType="info">
             </nz-alert>
-            <nz-alert *ngIf="showDesktopTip && !platformService.isDesktop() && !overlay && !childWindow"
+            <nz-alert *ngIf="(showDesktopTip | ifMobile: false) && !platformService.isDesktop() && !overlay && !childWindow"
                       [nzMessage]="'SETTINGS.Desktop_tip_title' | translate"
                       [nzDescription]="'SETTINGS.Desktop_tip_description' | translate"
                       class="new-version-alert"

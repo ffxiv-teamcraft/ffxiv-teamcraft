@@ -36,6 +36,8 @@ If you want to work on this API, simply run `yarn api:start`, which will run a w
 
 Then edit `environment.ts` and set `useLocalAPI: true` to make sure it'll use the local API instead of the production one.
 
+Data exposed by the API is extracted by the `data-extraction` project located in `apps/data-extraction` (the one at root folder is for chinese and korean data extraction), more details in the `README.md` file located there.
+
 ## Contributing
 
 ### Getting Started
