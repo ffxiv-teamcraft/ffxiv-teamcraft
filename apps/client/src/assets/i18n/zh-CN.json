@@ -2095,6 +2095,10 @@
       "Title": "存放在多个物品栏的物品",
       "Message": "物品还存放于： {{containers}}。"
     },
+    "NOT_IN_LIST": {
+      "Title": "Items that are not used in any of your lists",
+      "Message": "This item is not used in any of your lists."
+    },
     "HAS_TOO_FEW": {
       "Title": "持有数量非常少的物品",
       "Message": "这件物品你只有 {{amount}} 个，值得保留吗？",
