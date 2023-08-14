@@ -132,6 +132,10 @@
           <div class="detail-name">{{'DB.Sells_for' | translate}}</div>
           <div class="detail-value">{{item.sellPrice}}</div>
         </div>
+        <div *ngIf="item.gcReward" class="details-block">
+          <div class="detail-name">{{'DB.GC_supply_value' | translate}}</div>
+          <div class="detail-value"><img src="https://xivapi.com/i/065000/065004_hr1.png" alt="Seals" class="img-icon">{{item.gcReward}}</div>
+        </div>
       </div>
       <ng-container *ngIf="item.isFish;else classicItemDetails">
         <app-fish [usedForTpl]="usedForTpl" [obtentionTpl]="howToObtainTpl"></app-fish>

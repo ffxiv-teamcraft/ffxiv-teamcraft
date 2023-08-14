@@ -32,8 +32,11 @@ export class XivapiItemTooltipDirective implements OnDestroy {
   /** Overlay reference used to remove the tooltip. */
   private _overlayRef?: OverlayRef;
 
-// Using any here because it's using Node types for whatever reason but it's a number
+  // Using any here because it's using Node types for whatever reason but it's a number
   private _hideDelayId: any | undefined;
+
+  // Using any here because it's using Node types for whatever reason but it's a number
+  private _showDelayId: any | undefined;
 
   constructor(private _detectorRef: ChangeDetectorRef,
               private _elementRef: ElementRef,
@@ -55,17 +58,21 @@ export class XivapiItemTooltipDirective implements OnDestroy {
       return;
     }
 
-    // Unsubscribe from previous request.
-    if (this._subscription) {
-      this._subscription.unsubscribe();
-    }
+    this._showDelayId = setTimeout(() => {
 
-    // Request information for the item in lazy files.
-    this._subscription = this._tooltipData.getItemTooltipData(this.itemId).subscribe(this._createTooltip);
+      // Unsubscribe from previous request.
+      if (this._subscription) {
+        this._subscription.unsubscribe();
+      }
+
+      // Request information for the item in lazy files.
+      this._subscription = this._tooltipData.getItemTooltipData(this.itemId).subscribe(this._createTooltip);
+    }, 300);
   }
 
   @HostListener('mouseleave', ['$event'])
   hide(event: MouseEvent | null) {
+    clearTimeout(this._showDelayId);
     this._hideDelayId = setTimeout(() => {
       const newTarget = event?.relatedTarget as Node | null;
       if (!newTarget || !this._overlayRef?.overlayElement.contains(newTarget)) {
