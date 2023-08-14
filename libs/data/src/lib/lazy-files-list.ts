@@ -685,7 +685,7 @@ export const lazyFilesList = {
   },
   'itemsDatabasePages': {
     'fileName': '/db/items-database-pages.json',
-    'hashedFileName': '/db/items-database-pages.e82d388d13335c038d2379f2cb789b40e15c9651.json'
+    'hashedFileName': '/db/items-database-pages.17c3ccac302065f187f89052609552706edc786a.json'
   },
   'levesDatabasePages': {
     'fileName': '/db/leves-database-pages.json',

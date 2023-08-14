@@ -13,6 +13,7 @@ export interface LazyItemsDatabasePage {
   elvl?:              number;
   equipSlotCategory?: number;
   equipable?:         boolean;
+  gcReward?:          number;
   hasMoreDetails?:    boolean;
   hq?:                boolean;
   icon?:              string;
