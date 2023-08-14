@@ -9,7 +9,7 @@ export class PushNotificationsService {
   public permission: 'default' | NotificationPermission = 'default';
 
   isSupported(): boolean {
-    return !!Notification;
+    return 'Notification' in window;
   }
 
   requestPermission(): void {
