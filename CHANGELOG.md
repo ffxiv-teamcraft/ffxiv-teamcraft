@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.3...v11.0.4) (2023-08-14)
+
+
+### Features
+
+* **db:** show expert delivery seals value in db pages ([6dedb25](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6dedb2594c361c1ca41ac6643221f09e6e6c8228))
+
+
+### Bug Fixes
+
+* **list:** fixed offline list interactions being accounted twice ([255eb5f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/255eb5fbd46cb152aede83bf11c642239f07e207))
+* **tooltips:** added 300ms delay between hover and tooltip opening for better UX ([fd07b5c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fd07b5c2271f7c212b1055bb30feda3f4fe31f79))
+
 ### [11.0.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.2...v11.0.3) (2023-08-13)
 
 
