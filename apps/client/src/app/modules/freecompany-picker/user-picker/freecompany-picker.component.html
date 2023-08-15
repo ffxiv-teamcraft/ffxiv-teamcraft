@@ -1,4 +1,4 @@
-<div *ngIf="servers$ | async as availableServers; else loading">
+<div>
   <nz-form-item>
     <nz-form-label nzFor="serverName" nzRequired>{{'Server_name' | translate}}</nz-form-label>
     <input [formControl]="selectedServer" [nzAutocomplete]="auto" id="serverName" nz-input type="text">
@@ -27,7 +27,7 @@
         [nzTitle]="fc.Name">
         <ng-template #crest>
           <div class="crest-container">
-            <img *ngFor="let layer of fc.Crest" alt="" class="crest-layer" src="{{layer}}">
+            <img *ngFor="let layer of fc.avatar" alt="" class="crest-layer" src="{{layer}}">
           </div>
         </ng-template>
       </nz-list-item-meta>
@@ -47,7 +47,7 @@
           [nzTitle]="fc.Name">
           <ng-template #crest>
             <div class="crest-container">
-              <img *ngFor="let layer of fc.Crest" alt="" class="crest-layer" src="{{layer}}">
+              <img *ngFor="let layer of fc.avatar" alt="" class="crest-layer" src="{{layer}}">
             </div>
           </ng-template>
         </nz-list-item-meta>
@@ -55,7 +55,3 @@
     </ng-template>
   </nz-list>
 </div>
-
-<ng-template #loading>
-  <nz-spin></nz-spin>
-</ng-template>

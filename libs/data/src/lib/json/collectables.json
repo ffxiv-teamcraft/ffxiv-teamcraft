@@ -36117,24 +36117,23 @@
     "shopId": 1,
     "reward": 30315,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 360,
       "exp": 100,
-      "scrip": 0
-    },
-    "mid": {
-      "quantity": 2,
-      "rating": 540,
-      "exp": 120,
       "scrip": 2
     },
-    "high": {
-      "quantity": 3,
-      "rating": 720,
-      "exp": 150,
+    "mid": {
+      "quantity": 1,
+      "rating": 540,
+      "exp": 120,
       "scrip": 3
     },
-    "hwd": true
+    "high": {
+      "quantity": 1,
+      "rating": 720,
+      "exp": 150,
+      "scrip": 5
+    }
   },
   "31102": {
     "id": 2,
@@ -36148,24 +36147,23 @@
     "shopId": 2,
     "reward": 30317,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 360,
       "exp": 130,
-      "scrip": 0
-    },
-    "mid": {
-      "quantity": 2,
-      "rating": 540,
-      "exp": 143,
       "scrip": 2
     },
-    "high": {
-      "quantity": 3,
-      "rating": 720,
-      "exp": 156,
+    "mid": {
+      "quantity": 1,
+      "rating": 540,
+      "exp": 143,
       "scrip": 3
     },
-    "hwd": true
+    "high": {
+      "quantity": 1,
+      "rating": 720,
+      "exp": 156,
+      "scrip": 5
+    }
   },
   "31103": {
     "id": 3,
@@ -36179,24 +36177,23 @@
     "shopId": 3,
     "reward": 30319,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 360,
       "exp": 121,
-      "scrip": 0
-    },
-    "mid": {
-      "quantity": 2,
-      "rating": 540,
-      "exp": 133,
       "scrip": 2
     },
-    "high": {
-      "quantity": 3,
-      "rating": 720,
-      "exp": 146,
+    "mid": {
+      "quantity": 1,
+      "rating": 540,
+      "exp": 133,
       "scrip": 3
     },
-    "hwd": true
+    "high": {
+      "quantity": 1,
+      "rating": 720,
+      "exp": 146,
+      "scrip": 5
+    }
   },
   "31104": {
     "id": 4,
@@ -36210,24 +36207,23 @@
     "shopId": 4,
     "reward": 30321,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 360,
       "exp": 170,
-      "scrip": 0
-    },
-    "mid": {
-      "quantity": 2,
-      "rating": 540,
-      "exp": 187,
       "scrip": 2
     },
-    "high": {
-      "quantity": 3,
-      "rating": 720,
-      "exp": 204,
+    "mid": {
+      "quantity": 1,
+      "rating": 540,
+      "exp": 187,
       "scrip": 3
     },
-    "hwd": true
+    "high": {
+      "quantity": 1,
+      "rating": 720,
+      "exp": 204,
+      "scrip": 5
+    }
   },
   "31105": {
     "id": 5,
@@ -36241,24 +36237,23 @@
     "shopId": 5,
     "reward": 30323,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 360,
       "exp": 181,
-      "scrip": 0
-    },
-    "mid": {
-      "quantity": 2,
-      "rating": 540,
-      "exp": 199,
       "scrip": 2
     },
-    "high": {
-      "quantity": 3,
-      "rating": 720,
-      "exp": 217,
+    "mid": {
+      "quantity": 1,
+      "rating": 540,
+      "exp": 199,
       "scrip": 3
     },
-    "hwd": true
+    "high": {
+      "quantity": 1,
+      "rating": 720,
+      "exp": 217,
+      "scrip": 5
+    }
   },
   "31106": {
     "id": 6,
@@ -36272,24 +36267,23 @@
     "shopId": 6,
     "reward": 30325,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 360,
       "exp": 129,
-      "scrip": 0
-    },
-    "mid": {
-      "quantity": 2,
-      "rating": 540,
-      "exp": 142,
       "scrip": 2
     },
-    "high": {
-      "quantity": 3,
-      "rating": 720,
-      "exp": 155,
+    "mid": {
+      "quantity": 1,
+      "rating": 540,
+      "exp": 142,
       "scrip": 3
     },
-    "hwd": true
+    "high": {
+      "quantity": 1,
+      "rating": 720,
+      "exp": 155,
+      "scrip": 5
+    }
   },
   "31107": {
     "id": 7,
@@ -36303,24 +36297,23 @@
     "shopId": 7,
     "reward": 30327,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 360,
       "exp": 345,
-      "scrip": 0
-    },
-    "mid": {
-      "quantity": 2,
-      "rating": 540,
-      "exp": 380,
       "scrip": 2
     },
-    "high": {
-      "quantity": 3,
-      "rating": 720,
-      "exp": 414,
+    "mid": {
+      "quantity": 1,
+      "rating": 540,
+      "exp": 380,
       "scrip": 3
     },
-    "hwd": true
+    "high": {
+      "quantity": 1,
+      "rating": 720,
+      "exp": 414,
+      "scrip": 5
+    }
   },
   "31108": {
     "id": 8,
@@ -36334,24 +36327,23 @@
     "shopId": 8,
     "reward": 30329,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 360,
       "exp": 263,
-      "scrip": 0
-    },
-    "mid": {
-      "quantity": 2,
-      "rating": 540,
-      "exp": 289,
       "scrip": 2
     },
-    "high": {
-      "quantity": 3,
-      "rating": 720,
-      "exp": 316,
+    "mid": {
+      "quantity": 1,
+      "rating": 540,
+      "exp": 289,
       "scrip": 3
     },
-    "hwd": true
+    "high": {
+      "quantity": 1,
+      "rating": 720,
+      "exp": 316,
+      "scrip": 5
+    }
   },
   "31109": {
     "id": 1,
@@ -36365,24 +36357,23 @@
     "shopId": 1,
     "reward": 30316,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 400,
       "exp": 66,
-      "scrip": 0
-    },
-    "mid": {
-      "quantity": 2,
-      "rating": 600,
-      "exp": 72,
       "scrip": 2
     },
-    "high": {
-      "quantity": 3,
-      "rating": 800,
-      "exp": 79,
+    "mid": {
+      "quantity": 1,
+      "rating": 600,
+      "exp": 72,
       "scrip": 3
     },
-    "hwd": true
+    "high": {
+      "quantity": 1,
+      "rating": 800,
+      "exp": 79,
+      "scrip": 5
+    }
   },
   "31110": {
     "id": 2,
@@ -36396,24 +36387,23 @@
     "shopId": 2,
     "reward": 30318,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 400,
       "exp": 360,
-      "scrip": 0
-    },
-    "mid": {
-      "quantity": 2,
-      "rating": 600,
-      "exp": 396,
       "scrip": 2
     },
-    "high": {
-      "quantity": 3,
-      "rating": 800,
-      "exp": 432,
+    "mid": {
+      "quantity": 1,
+      "rating": 600,
+      "exp": 396,
       "scrip": 3
     },
-    "hwd": true
+    "high": {
+      "quantity": 1,
+      "rating": 800,
+      "exp": 432,
+      "scrip": 5
+    }
   },
   "31111": {
     "id": 3,
@@ -36427,24 +36417,23 @@
     "shopId": 3,
     "reward": 30320,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 400,
       "exp": 92,
-      "scrip": 0
-    },
-    "mid": {
-      "quantity": 2,
-      "rating": 600,
-      "exp": 101,
       "scrip": 2
     },
-    "high": {
-      "quantity": 3,
-      "rating": 800,
-      "exp": 110,
+    "mid": {
+      "quantity": 1,
+      "rating": 600,
+      "exp": 101,
       "scrip": 3
     },
-    "hwd": true
+    "high": {
+      "quantity": 1,
+      "rating": 800,
+      "exp": 110,
+      "scrip": 5
+    }
   },
   "31112": {
     "id": 4,
@@ -36458,24 +36447,23 @@
     "shopId": 4,
     "reward": 30322,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 400,
       "exp": 163,
-      "scrip": 0
-    },
-    "mid": {
-      "quantity": 2,
-      "rating": 600,
-      "exp": 179,
       "scrip": 2
     },
-    "high": {
-      "quantity": 3,
-      "rating": 800,
-      "exp": 195,
+    "mid": {
+      "quantity": 1,
+      "rating": 600,
+      "exp": 179,
       "scrip": 3
     },
-    "hwd": true
+    "high": {
+      "quantity": 1,
+      "rating": 800,
+      "exp": 195,
+      "scrip": 5
+    }
   },
   "31113": {
     "id": 5,
@@ -36489,24 +36477,23 @@
     "shopId": 5,
     "reward": 30324,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 400,
       "exp": 170,
-      "scrip": 0
-    },
-    "mid": {
-      "quantity": 2,
-      "rating": 600,
-      "exp": 187,
       "scrip": 2
     },
-    "high": {
-      "quantity": 3,
-      "rating": 800,
-      "exp": 204,
+    "mid": {
+      "quantity": 1,
+      "rating": 600,
+      "exp": 187,
       "scrip": 3
     },
-    "hwd": true
+    "high": {
+      "quantity": 1,
+      "rating": 800,
+      "exp": 204,
+      "scrip": 5
+    }
   },
   "31114": {
     "id": 6,
@@ -36520,24 +36507,23 @@
     "shopId": 6,
     "reward": 30326,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 400,
       "exp": 198,
-      "scrip": 0
-    },
-    "mid": {
-      "quantity": 2,
-      "rating": 600,
-      "exp": 218,
       "scrip": 2
     },
-    "high": {
-      "quantity": 3,
-      "rating": 800,
-      "exp": 238,
+    "mid": {
+      "quantity": 1,
+      "rating": 600,
+      "exp": 218,
       "scrip": 3
     },
-    "hwd": true
+    "high": {
+      "quantity": 1,
+      "rating": 800,
+      "exp": 238,
+      "scrip": 5
+    }
   },
   "31115": {
     "id": 7,
@@ -36551,24 +36537,23 @@
     "shopId": 7,
     "reward": 30328,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 400,
       "exp": 345,
-      "scrip": 0
-    },
-    "mid": {
-      "quantity": 2,
-      "rating": 600,
-      "exp": 380,
       "scrip": 2
     },
-    "high": {
-      "quantity": 3,
-      "rating": 800,
-      "exp": 414,
+    "mid": {
+      "quantity": 1,
+      "rating": 600,
+      "exp": 380,
       "scrip": 3
     },
-    "hwd": true
+    "high": {
+      "quantity": 1,
+      "rating": 800,
+      "exp": 414,
+      "scrip": 5
+    }
   },
   "31116": {
     "id": 8,
@@ -36582,24 +36567,23 @@
     "shopId": 8,
     "reward": 30330,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 400,
       "exp": 360,
-      "scrip": 0
-    },
-    "mid": {
-      "quantity": 2,
-      "rating": 600,
-      "exp": 396,
       "scrip": 2
     },
-    "high": {
-      "quantity": 3,
-      "rating": 800,
-      "exp": 432,
+    "mid": {
+      "quantity": 1,
+      "rating": 600,
+      "exp": 396,
       "scrip": 3
     },
-    "hwd": true
+    "high": {
+      "quantity": 1,
+      "rating": 800,
+      "exp": 432,
+      "scrip": 5
+    }
   },
   "31184": {
     "hwd": true,
@@ -37909,22 +37893,22 @@
     "shopId": 33,
     "reward": 31736,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 470,
       "exp": 150,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 850,
       "exp": 165,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
+      "quantity": 1,
       "rating": 1230,
       "exp": 180,
-      "scrip": 2
+      "scrip": 3
     }
   },
   "31751": {
@@ -37939,22 +37923,22 @@
     "shopId": 34,
     "reward": 31737,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 470,
       "exp": 300,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 850,
       "exp": 330,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
+      "quantity": 1,
       "rating": 1230,
       "exp": 360,
-      "scrip": 2
+      "scrip": 3
     }
   },
   "31752": {
@@ -37969,22 +37953,22 @@
     "shopId": 35,
     "reward": 31738,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 470,
       "exp": 47,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 850,
       "exp": 52,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
+      "quantity": 1,
       "rating": 1230,
       "exp": 57,
-      "scrip": 2
+      "scrip": 3
     }
   },
   "31753": {
@@ -37999,22 +37983,22 @@
     "shopId": 36,
     "reward": 31739,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 470,
       "exp": 345,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 850,
       "exp": 380,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
+      "quantity": 1,
       "rating": 1230,
       "exp": 414,
-      "scrip": 2
+      "scrip": 3
     }
   },
   "31754": {
@@ -38029,22 +38013,22 @@
     "shopId": 37,
     "reward": 31740,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 470,
       "exp": 176,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 850,
       "exp": 194,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
+      "quantity": 1,
       "rating": 1230,
       "exp": 212,
-      "scrip": 2
+      "scrip": 3
     }
   },
   "31755": {
@@ -38059,22 +38043,22 @@
     "shopId": 38,
     "reward": 31741,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 470,
       "exp": 231,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 850,
       "exp": 254,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
+      "quantity": 1,
       "rating": 1230,
       "exp": 277,
-      "scrip": 2
+      "scrip": 3
     }
   },
   "31756": {
@@ -38089,22 +38073,22 @@
     "shopId": 39,
     "reward": 31742,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 470,
       "exp": 203,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 850,
       "exp": 223,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
+      "quantity": 1,
       "rating": 1230,
       "exp": 243,
-      "scrip": 2
+      "scrip": 3
     }
   },
   "31757": {
@@ -38119,22 +38103,22 @@
     "shopId": 40,
     "reward": 31743,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 470,
       "exp": 193,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 850,
       "exp": 212,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
+      "quantity": 1,
       "rating": 1230,
       "exp": 231,
-      "scrip": 2
+      "scrip": 3
     }
   },
   "31766": {
@@ -38149,22 +38133,22 @@
     "shopId": 42,
     "reward": 31744,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 400,
       "exp": 184,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 700,
       "exp": 202,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
+      "quantity": 1,
       "rating": 1000,
       "exp": 221,
-      "scrip": 3
+      "scrip": 7
     }
   },
   "31768": {
@@ -38179,22 +38163,22 @@
     "shopId": 41,
     "reward": 31746,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 400,
       "exp": 326,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 700,
       "exp": 358,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
+      "quantity": 1,
       "rating": 1000,
       "exp": 391,
-      "scrip": 3
+      "scrip": 7
     }
   },
   "31770": {
@@ -38209,22 +38193,22 @@
     "shopId": 43,
     "reward": 31748,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 126,
       "exp": 189,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 296,
       "exp": 208,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
+      "quantity": 1,
       "rating": 305,
       "exp": 227,
-      "scrip": 2
+      "scrip": 4
     }
   },
   "31771": {
@@ -38239,22 +38223,22 @@
     "shopId": 43,
     "reward": 31749,
     "base": {
-      "quantity": 0,
+      "quantity": 1,
       "rating": 62,
       "exp": 113,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
       "rating": 147,
       "exp": 124,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
+      "quantity": 1,
       "rating": 152,
       "exp": 135,
-      "scrip": 2
+      "scrip": 4
     }
   },
   "31913": {
@@ -40645,22 +40629,22 @@
     "shopId": 44,
     "reward": 33194,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 6300,
       "exp": 116,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 6300,
+      "rating": 7500,
       "exp": 127,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 7500,
+      "quantity": 1,
+      "rating": 0,
       "exp": 139,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33163": {
@@ -40675,22 +40659,22 @@
     "shopId": 45,
     "reward": 33195,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 6300,
       "exp": 278,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 6300,
+      "rating": 7500,
       "exp": 305,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 7500,
+      "quantity": 1,
+      "rating": 0,
       "exp": 333,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33164": {
@@ -40705,22 +40689,22 @@
     "shopId": 46,
     "reward": 33196,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 6300,
       "exp": 297,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 6300,
+      "rating": 7500,
       "exp": 326,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 7500,
+      "quantity": 1,
+      "rating": 0,
       "exp": 356,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33165": {
@@ -40735,22 +40719,22 @@
     "shopId": 47,
     "reward": 33197,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 6300,
       "exp": 80,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 6300,
+      "rating": 7500,
       "exp": 88,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 7500,
+      "quantity": 1,
+      "rating": 0,
       "exp": 96,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33166": {
@@ -40765,22 +40749,22 @@
     "shopId": 48,
     "reward": 33198,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 6300,
       "exp": 82,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 6300,
+      "rating": 7500,
       "exp": 90,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 7500,
+      "quantity": 1,
+      "rating": 0,
       "exp": 99,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33167": {
@@ -40795,22 +40779,22 @@
     "shopId": 49,
     "reward": 33199,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 6300,
       "exp": 146,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 6300,
+      "rating": 7500,
       "exp": 160,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 7500,
+      "quantity": 1,
+      "rating": 0,
       "exp": 175,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33168": {
@@ -40825,22 +40809,22 @@
     "shopId": 50,
     "reward": 33200,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 6300,
       "exp": 77,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 6300,
+      "rating": 7500,
       "exp": 85,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 7500,
+      "quantity": 1,
+      "rating": 0,
       "exp": 93,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33169": {
@@ -40855,22 +40839,22 @@
     "shopId": 51,
     "reward": 33201,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 6300,
       "exp": 50,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 6300,
+      "rating": 7500,
       "exp": 55,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 7500,
+      "quantity": 1,
+      "rating": 0,
       "exp": 60,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33170": {
@@ -40885,22 +40869,22 @@
     "shopId": 44,
     "reward": 33202,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 6500,
       "exp": 128,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 6500,
+      "rating": 7800,
       "exp": 141,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 7800,
+      "quantity": 1,
+      "rating": 0,
       "exp": 154,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33171": {
@@ -40915,22 +40899,22 @@
     "shopId": 45,
     "reward": 33203,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 6500,
       "exp": 218,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 6500,
+      "rating": 7800,
       "exp": 240,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 7800,
+      "quantity": 1,
+      "rating": 0,
       "exp": 262,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33172": {
@@ -40945,22 +40929,22 @@
     "shopId": 46,
     "reward": 33204,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 6500,
       "exp": 220,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 6500,
+      "rating": 7800,
       "exp": 242,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 7800,
+      "quantity": 1,
+      "rating": 0,
       "exp": 264,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33173": {
@@ -40975,22 +40959,22 @@
     "shopId": 47,
     "reward": 33205,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 6500,
       "exp": 84,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 6500,
+      "rating": 7800,
       "exp": 92,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 7800,
+      "quantity": 1,
+      "rating": 0,
       "exp": 101,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33174": {
@@ -41005,22 +40989,22 @@
     "shopId": 48,
     "reward": 33206,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 6500,
       "exp": 70,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 6500,
+      "rating": 7800,
       "exp": 77,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 7800,
+      "quantity": 1,
+      "rating": 0,
       "exp": 84,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33175": {
@@ -41035,22 +41019,22 @@
     "shopId": 49,
     "reward": 33207,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 6500,
       "exp": 121,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 6500,
+      "rating": 7800,
       "exp": 133,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 7800,
+      "quantity": 1,
+      "rating": 0,
       "exp": 146,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33176": {
@@ -41065,22 +41049,22 @@
     "shopId": 50,
     "reward": 33208,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 6500,
       "exp": 150,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 6500,
+      "rating": 7800,
       "exp": 165,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 7800,
+      "quantity": 1,
+      "rating": 0,
       "exp": 180,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33177": {
@@ -41095,22 +41079,22 @@
     "shopId": 51,
     "reward": 33209,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 6500,
       "exp": 95,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 6500,
+      "rating": 7800,
       "exp": 105,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 7800,
+      "quantity": 1,
+      "rating": 0,
       "exp": 114,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33178": {
@@ -41125,22 +41109,22 @@
     "shopId": 44,
     "reward": 33210,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 7000,
       "exp": 305,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 7000,
+      "rating": 8500,
       "exp": 336,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 8500,
+      "quantity": 1,
+      "rating": 0,
       "exp": 366,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33179": {
@@ -41155,22 +41139,22 @@
     "shopId": 45,
     "reward": 33211,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 7000,
       "exp": 146,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 7000,
+      "rating": 8500,
       "exp": 161,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 8500,
+      "quantity": 1,
+      "rating": 0,
       "exp": 175,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33180": {
@@ -41185,22 +41169,22 @@
     "shopId": 46,
     "reward": 33212,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 7000,
       "exp": 67,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 7000,
+      "rating": 8500,
       "exp": 74,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 8500,
+      "quantity": 1,
+      "rating": 0,
       "exp": 80,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33181": {
@@ -41215,22 +41199,22 @@
     "shopId": 47,
     "reward": 33213,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 7000,
       "exp": 137,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 7000,
+      "rating": 8500,
       "exp": 151,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 8500,
+      "quantity": 1,
+      "rating": 0,
       "exp": 164,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33182": {
@@ -41245,22 +41229,22 @@
     "shopId": 48,
     "reward": 33214,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 7000,
       "exp": 127,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 7000,
+      "rating": 8500,
       "exp": 139,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 8500,
+      "quantity": 1,
+      "rating": 0,
       "exp": 152,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33183": {
@@ -41275,22 +41259,22 @@
     "shopId": 49,
     "reward": 33215,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 7000,
       "exp": 120,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 7000,
+      "rating": 8500,
       "exp": 132,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 8500,
+      "quantity": 1,
+      "rating": 0,
       "exp": 143,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33184": {
@@ -41305,22 +41289,22 @@
     "shopId": 50,
     "reward": 33216,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 7000,
       "exp": 63,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 7000,
+      "rating": 8500,
       "exp": 69,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 8500,
+      "quantity": 1,
+      "rating": 0,
       "exp": 75,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "33185": {
@@ -41335,22 +41319,22 @@
     "shopId": 51,
     "reward": 33217,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 7000,
       "exp": 85,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 7000,
+      "rating": 8500,
       "exp": 94,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 8500,
+      "quantity": 1,
+      "rating": 0,
       "exp": 102,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "35626": {
@@ -43165,22 +43149,22 @@
     "shopId": 52,
     "reward": 33194,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1200,
       "exp": 116,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1200,
+      "rating": 1420,
       "exp": 127,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1420,
+      "quantity": 1,
+      "rating": 0,
       "exp": 139,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36312": {
@@ -43195,22 +43179,22 @@
     "shopId": 53,
     "reward": 33195,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1200,
       "exp": 278,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1200,
+      "rating": 1420,
       "exp": 305,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1420,
+      "quantity": 1,
+      "rating": 0,
       "exp": 333,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36313": {
@@ -43225,22 +43209,22 @@
     "shopId": 54,
     "reward": 33196,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1200,
       "exp": 297,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1200,
+      "rating": 1420,
       "exp": 326,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1420,
+      "quantity": 1,
+      "rating": 0,
       "exp": 356,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36314": {
@@ -43255,22 +43239,22 @@
     "shopId": 55,
     "reward": 33197,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1200,
       "exp": 80,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1200,
+      "rating": 1420,
       "exp": 88,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1420,
+      "quantity": 1,
+      "rating": 0,
       "exp": 96,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36315": {
@@ -43285,22 +43269,22 @@
     "shopId": 56,
     "reward": 33198,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1200,
       "exp": 82,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1200,
+      "rating": 1420,
       "exp": 90,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1420,
+      "quantity": 1,
+      "rating": 0,
       "exp": 99,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36316": {
@@ -43315,22 +43299,22 @@
     "shopId": 57,
     "reward": 33199,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1200,
       "exp": 146,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1200,
+      "rating": 1420,
       "exp": 160,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1420,
+      "quantity": 1,
+      "rating": 0,
       "exp": 175,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36317": {
@@ -43345,22 +43329,22 @@
     "shopId": 58,
     "reward": 33200,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1200,
       "exp": 77,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1200,
+      "rating": 1420,
       "exp": 85,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1420,
+      "quantity": 1,
+      "rating": 0,
       "exp": 93,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36318": {
@@ -43375,22 +43359,22 @@
     "shopId": 59,
     "reward": 33201,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1200,
       "exp": 50,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1200,
+      "rating": 1420,
       "exp": 55,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1420,
+      "quantity": 1,
+      "rating": 0,
       "exp": 60,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36319": {
@@ -43405,22 +43389,22 @@
     "shopId": 52,
     "reward": 33202,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1230,
       "exp": 128,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1230,
+      "rating": 1480,
       "exp": 141,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1480,
+      "quantity": 1,
+      "rating": 0,
       "exp": 154,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36320": {
@@ -43435,22 +43419,22 @@
     "shopId": 53,
     "reward": 33203,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1230,
       "exp": 218,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1230,
+      "rating": 1480,
       "exp": 240,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1480,
+      "quantity": 1,
+      "rating": 0,
       "exp": 262,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36321": {
@@ -43465,22 +43449,22 @@
     "shopId": 54,
     "reward": 33204,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1230,
       "exp": 220,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1230,
+      "rating": 1480,
       "exp": 242,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1480,
+      "quantity": 1,
+      "rating": 0,
       "exp": 264,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36322": {
@@ -43495,22 +43479,22 @@
     "shopId": 55,
     "reward": 33205,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1230,
       "exp": 84,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1230,
+      "rating": 1480,
       "exp": 92,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1480,
+      "quantity": 1,
+      "rating": 0,
       "exp": 101,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36323": {
@@ -43525,22 +43509,22 @@
     "shopId": 56,
     "reward": 33206,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1230,
       "exp": 70,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1230,
+      "rating": 1480,
       "exp": 77,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1480,
+      "quantity": 1,
+      "rating": 0,
       "exp": 84,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36324": {
@@ -43555,22 +43539,22 @@
     "shopId": 57,
     "reward": 33207,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1230,
       "exp": 121,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1230,
+      "rating": 1480,
       "exp": 133,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1480,
+      "quantity": 1,
+      "rating": 0,
       "exp": 146,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36325": {
@@ -43585,22 +43569,22 @@
     "shopId": 58,
     "reward": 33208,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1230,
       "exp": 150,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1230,
+      "rating": 1480,
       "exp": 165,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1480,
+      "quantity": 1,
+      "rating": 0,
       "exp": 180,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36326": {
@@ -43615,22 +43599,22 @@
     "shopId": 59,
     "reward": 33209,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1230,
       "exp": 95,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1230,
+      "rating": 1480,
       "exp": 105,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1480,
+      "quantity": 1,
+      "rating": 0,
       "exp": 114,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36327": {
@@ -43645,22 +43629,22 @@
     "shopId": 52,
     "reward": 33210,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1330,
       "exp": 305,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1330,
+      "rating": 1610,
       "exp": 336,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1610,
+      "quantity": 1,
+      "rating": 0,
       "exp": 366,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36328": {
@@ -43675,22 +43659,22 @@
     "shopId": 53,
     "reward": 33211,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1330,
       "exp": 146,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1330,
+      "rating": 1610,
       "exp": 161,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1610,
+      "quantity": 1,
+      "rating": 0,
       "exp": 175,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36329": {
@@ -43705,22 +43689,22 @@
     "shopId": 54,
     "reward": 33212,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1330,
       "exp": 67,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1330,
+      "rating": 1610,
       "exp": 74,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1610,
+      "quantity": 1,
+      "rating": 0,
       "exp": 80,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36330": {
@@ -43735,22 +43719,22 @@
     "shopId": 55,
     "reward": 33213,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1330,
       "exp": 137,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1330,
+      "rating": 1610,
       "exp": 151,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1610,
+      "quantity": 1,
+      "rating": 0,
       "exp": 164,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36331": {
@@ -43765,22 +43749,22 @@
     "shopId": 56,
     "reward": 33214,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1330,
       "exp": 127,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1330,
+      "rating": 1610,
       "exp": 139,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1610,
+      "quantity": 1,
+      "rating": 0,
       "exp": 152,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36332": {
@@ -43795,22 +43779,22 @@
     "shopId": 57,
     "reward": 33215,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1330,
       "exp": 120,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1330,
+      "rating": 1610,
       "exp": 132,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1610,
+      "quantity": 1,
+      "rating": 0,
       "exp": 143,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36333": {
@@ -43825,22 +43809,22 @@
     "shopId": 58,
     "reward": 33216,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1330,
       "exp": 63,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1330,
+      "rating": 1610,
       "exp": 69,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1610,
+      "quantity": 1,
+      "rating": 0,
       "exp": 75,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36334": {
@@ -43855,22 +43839,22 @@
     "shopId": 59,
     "reward": 33217,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 1330,
       "exp": 85,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 1330,
+      "rating": 1610,
       "exp": 94,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 1610,
+      "quantity": 1,
+      "rating": 0,
       "exp": 102,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "36399": {
@@ -44725,22 +44709,22 @@
     "shopId": 60,
     "reward": 38772,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 540,
       "exp": 75,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 540,
+      "rating": 900,
       "exp": 83,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 900,
+      "quantity": 1,
+      "rating": 0,
       "exp": 90,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "38757": {
@@ -44755,22 +44739,22 @@
     "shopId": 61,
     "reward": 38773,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 540,
       "exp": 78,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 540,
+      "rating": 900,
       "exp": 85,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 900,
+      "quantity": 1,
+      "rating": 0,
       "exp": 93,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "38758": {
@@ -44785,22 +44769,22 @@
     "shopId": 62,
     "reward": 38774,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 540,
       "exp": 85,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 540,
+      "rating": 900,
       "exp": 94,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 900,
+      "quantity": 1,
+      "rating": 0,
       "exp": 102,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "38759": {
@@ -44815,22 +44799,22 @@
     "shopId": 63,
     "reward": 38775,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 540,
       "exp": 71,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 540,
+      "rating": 900,
       "exp": 78,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 900,
+      "quantity": 1,
+      "rating": 0,
       "exp": 85,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "38760": {
@@ -44845,22 +44829,22 @@
     "shopId": 64,
     "reward": 38776,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 540,
       "exp": 67,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 540,
+      "rating": 900,
       "exp": 74,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 900,
+      "quantity": 1,
+      "rating": 0,
       "exp": 80,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "38761": {
@@ -44875,22 +44859,22 @@
     "shopId": 65,
     "reward": 38777,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 540,
       "exp": 63,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 540,
+      "rating": 900,
       "exp": 70,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 900,
+      "quantity": 1,
+      "rating": 0,
       "exp": 76,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "38762": {
@@ -44905,22 +44889,22 @@
     "shopId": 66,
     "reward": 38778,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 540,
       "exp": 60,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 540,
+      "rating": 900,
       "exp": 66,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 900,
+      "quantity": 1,
+      "rating": 0,
       "exp": 72,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "38763": {
@@ -44935,22 +44919,22 @@
     "shopId": 67,
     "reward": 38779,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 540,
       "exp": 109,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 540,
+      "rating": 900,
       "exp": 120,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 900,
+      "quantity": 1,
+      "rating": 0,
       "exp": 131,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "38764": {
@@ -44965,22 +44949,22 @@
     "shopId": 60,
     "reward": 38780,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 660,
       "exp": 70,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 660,
+      "rating": 1100,
       "exp": 77,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1100,
+      "quantity": 1,
+      "rating": 0,
       "exp": 84,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "38765": {
@@ -44995,22 +44979,22 @@
     "shopId": 61,
     "reward": 38781,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 660,
       "exp": 102,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 660,
+      "rating": 1100,
       "exp": 112,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1100,
+      "quantity": 1,
+      "rating": 0,
       "exp": 122,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "38766": {
@@ -45025,22 +45009,22 @@
     "shopId": 62,
     "reward": 38782,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 660,
       "exp": 94,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 660,
+      "rating": 1100,
       "exp": 103,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1100,
+      "quantity": 1,
+      "rating": 0,
       "exp": 112,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "38767": {
@@ -45055,22 +45039,22 @@
     "shopId": 63,
     "reward": 38783,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 660,
       "exp": 102,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 660,
+      "rating": 1100,
       "exp": 112,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1100,
+      "quantity": 1,
+      "rating": 0,
       "exp": 122,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "38768": {
@@ -45085,22 +45069,22 @@
     "shopId": 64,
     "reward": 38784,
     "base": {
-      "quantity": 0,
-      "rating": 0,
-      "exp": 0,
-      "scrip": 0
-    },
-    "mid": {
       "quantity": 1,
       "rating": 660,
       "exp": 0,
       "scrip": 1
     },
-    "high": {
-      "quantity": 3,
+    "mid": {
+      "quantity": 1,
       "rating": 1100,
       "exp": 0,
       "scrip": 3
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 0,
+      "exp": 0,
+      "scrip": 0
     }
   },
   "38769": {
@@ -45115,22 +45099,22 @@
     "shopId": 65,
     "reward": 38785,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 660,
       "exp": 173,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 660,
+      "rating": 1100,
       "exp": 190,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1100,
+      "quantity": 1,
+      "rating": 0,
       "exp": 207,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "38770": {
@@ -45145,22 +45129,22 @@
     "shopId": 66,
     "reward": 38786,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 660,
       "exp": 250,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 660,
+      "rating": 1100,
       "exp": 275,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1100,
+      "quantity": 1,
+      "rating": 0,
       "exp": 300,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "38771": {
@@ -45175,22 +45159,22 @@
     "shopId": 67,
     "reward": 38787,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 660,
       "exp": 322,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 660,
+      "rating": 1100,
       "exp": 354,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1100,
+      "quantity": 1,
+      "rating": 0,
       "exp": 386,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "38788": {
@@ -45205,22 +45189,22 @@
     "shopId": 69,
     "reward": 38800,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 570,
       "exp": 353,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 570,
+      "rating": 1000,
       "exp": 388,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1000,
+      "quantity": 1,
+      "rating": 0,
       "exp": 423,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "38790": {
@@ -45235,22 +45219,22 @@
     "shopId": 68,
     "reward": 38801,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 570,
       "exp": 235,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 570,
+      "rating": 1000,
       "exp": 258,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1000,
+      "quantity": 1,
+      "rating": 0,
       "exp": 282,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "38792": {
@@ -45265,22 +45249,22 @@
     "shopId": 70,
     "reward": 38802,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 47,
       "exp": 188,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 47,
+      "rating": 110,
       "exp": 206,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 110,
+      "quantity": 1,
+      "rating": 0,
       "exp": 225,
-      "scrip": 2
+      "scrip": 3
     }
   },
   "38793": {
@@ -45295,22 +45279,22 @@
     "shopId": 70,
     "reward": 38803,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 283,
       "exp": 197,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 283,
+      "rating": 665,
       "exp": 216,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 665,
+      "quantity": 1,
+      "rating": 0,
       "exp": 236,
-      "scrip": 2
+      "scrip": 3
     }
   },
   "38794": {
@@ -45325,22 +45309,22 @@
     "shopId": 69,
     "reward": 38804,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 570,
       "exp": 299,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 570,
+      "rating": 1000,
       "exp": 328,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1000,
+      "quantity": 1,
+      "rating": 0,
       "exp": 358,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "38796": {
@@ -45355,22 +45339,22 @@
     "shopId": 68,
     "reward": 38805,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 570,
       "exp": 599,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 570,
+      "rating": 1000,
       "exp": 658,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1000,
+      "quantity": 1,
+      "rating": 0,
       "exp": 718,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "38798": {
@@ -45385,22 +45369,22 @@
     "shopId": 70,
     "reward": 38806,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 9,
       "exp": 316,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 9,
+      "rating": 21,
       "exp": 347,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 21,
+      "quantity": 1,
+      "rating": 0,
       "exp": 379,
-      "scrip": 2
+      "scrip": 3
     }
   },
   "38799": {
@@ -45415,22 +45399,22 @@
     "shopId": 70,
     "reward": 38807,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 425,
       "exp": 346,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 425,
+      "rating": 998,
       "exp": 380,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 998,
+      "quantity": 1,
+      "rating": 0,
       "exp": 415,
-      "scrip": 2
+      "scrip": 3
     }
   },
   "39773": {
@@ -45445,22 +45429,22 @@
     "shopId": 60,
     "reward": 39789,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 720,
       "exp": 353,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 720,
+      "rating": 1200,
       "exp": 388,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1200,
+      "quantity": 1,
+      "rating": 0,
       "exp": 423,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "39774": {
@@ -45475,22 +45459,22 @@
     "shopId": 61,
     "reward": 39790,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 720,
       "exp": 455,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 720,
+      "rating": 1200,
       "exp": 500,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1200,
+      "quantity": 1,
+      "rating": 0,
       "exp": 546,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "39775": {
@@ -45505,22 +45489,22 @@
     "shopId": 62,
     "reward": 39791,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 720,
       "exp": 158,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 720,
+      "rating": 1200,
       "exp": 173,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1200,
+      "quantity": 1,
+      "rating": 0,
       "exp": 189,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "39776": {
@@ -45535,22 +45519,22 @@
     "shopId": 63,
     "reward": 39792,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 720,
       "exp": 233,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 720,
+      "rating": 1200,
       "exp": 256,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1200,
+      "quantity": 1,
+      "rating": 0,
       "exp": 279,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "39777": {
@@ -45565,22 +45549,22 @@
     "shopId": 64,
     "reward": 39793,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 720,
       "exp": 477,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 720,
+      "rating": 1200,
       "exp": 524,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1200,
+      "quantity": 1,
+      "rating": 0,
       "exp": 572,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "39778": {
@@ -45595,22 +45579,22 @@
     "shopId": 65,
     "reward": 39794,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 720,
       "exp": 479,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 720,
+      "rating": 1200,
       "exp": 526,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1200,
+      "quantity": 1,
+      "rating": 0,
       "exp": 574,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "39779": {
@@ -45625,22 +45609,22 @@
     "shopId": 66,
     "reward": 39795,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 720,
       "exp": 526,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 720,
+      "rating": 1200,
       "exp": 578,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1200,
+      "quantity": 1,
+      "rating": 0,
       "exp": 631,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "39780": {
@@ -45655,22 +45639,22 @@
     "shopId": 67,
     "reward": 39796,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 720,
       "exp": 537,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 720,
+      "rating": 1200,
       "exp": 590,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1200,
+      "quantity": 1,
+      "rating": 0,
       "exp": 644,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "39781": {
@@ -45685,22 +45669,22 @@
     "shopId": 60,
     "reward": 39797,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 780,
       "exp": 557,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 780,
+      "rating": 1300,
       "exp": 612,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1300,
+      "quantity": 1,
+      "rating": 0,
       "exp": 668,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "39782": {
@@ -45715,22 +45699,22 @@
     "shopId": 61,
     "reward": 39798,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 780,
       "exp": 406,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 780,
+      "rating": 1300,
       "exp": 446,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1300,
+      "quantity": 1,
+      "rating": 0,
       "exp": 487,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "39783": {
@@ -45745,22 +45729,22 @@
     "shopId": 62,
     "reward": 39799,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 780,
       "exp": 455,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 780,
+      "rating": 1300,
       "exp": 500,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1300,
+      "quantity": 1,
+      "rating": 0,
       "exp": 546,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "39784": {
@@ -45775,22 +45759,22 @@
     "shopId": 63,
     "reward": 39800,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 780,
       "exp": 557,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 780,
+      "rating": 1300,
       "exp": 612,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1300,
+      "quantity": 1,
+      "rating": 0,
       "exp": 668,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "39785": {
@@ -45805,22 +45789,22 @@
     "shopId": 64,
     "reward": 39801,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 780,
       "exp": 188,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 780,
+      "rating": 1300,
       "exp": 206,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1300,
+      "quantity": 1,
+      "rating": 0,
       "exp": 225,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "39786": {
@@ -45835,22 +45819,22 @@
     "shopId": 65,
     "reward": 39802,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 780,
       "exp": 230,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 780,
+      "rating": 1300,
       "exp": 253,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1300,
+      "quantity": 1,
+      "rating": 0,
       "exp": 276,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "39787": {
@@ -45865,22 +45849,22 @@
     "shopId": 66,
     "reward": 39803,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 780,
       "exp": 286,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 780,
+      "rating": 1300,
       "exp": 314,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1300,
+      "quantity": 1,
+      "rating": 0,
       "exp": 343,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "39788": {
@@ -45895,22 +45879,22 @@
     "shopId": 67,
     "reward": 39804,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 780,
       "exp": 455,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 780,
+      "rating": 1300,
       "exp": 500,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1300,
+      "quantity": 1,
+      "rating": 0,
       "exp": 546,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "39805": {
@@ -45925,22 +45909,22 @@
     "shopId": 68,
     "reward": 39817,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 570,
       "exp": 541,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 570,
+      "rating": 1000,
       "exp": 595,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1000,
+      "quantity": 1,
+      "rating": 0,
       "exp": 649,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "39807": {
@@ -45955,22 +45939,22 @@
     "shopId": 69,
     "reward": 39818,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 570,
       "exp": 557,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 570,
+      "rating": 1000,
       "exp": 612,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1000,
+      "quantity": 1,
+      "rating": 0,
       "exp": 668,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "39809": {
@@ -45985,22 +45969,22 @@
     "shopId": 70,
     "reward": 39819,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 82,
       "exp": 104,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 82,
+      "rating": 193,
       "exp": 114,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 193,
+      "quantity": 1,
+      "rating": 0,
       "exp": 124,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "39810": {
@@ -46015,22 +45999,22 @@
     "shopId": 70,
     "reward": 39820,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 322,
       "exp": 141,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 322,
+      "rating": 758,
       "exp": 155,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 758,
+      "quantity": 1,
+      "rating": 0,
       "exp": 169,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "39811": {
@@ -46045,22 +46029,22 @@
     "shopId": 68,
     "reward": 39821,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 580,
       "exp": 353,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 580,
+      "rating": 1000,
       "exp": 388,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1000,
+      "quantity": 1,
+      "rating": 0,
       "exp": 423,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "39813": {
@@ -46075,22 +46059,22 @@
     "shopId": 69,
     "reward": 39822,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 580,
       "exp": 465,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 580,
+      "rating": 1000,
       "exp": 511,
-      "scrip": 1
+      "scrip": 3
     },
     "high": {
-      "quantity": 3,
-      "rating": 1000,
+      "quantity": 1,
+      "rating": 0,
       "exp": 558,
-      "scrip": 3
+      "scrip": 0
     }
   },
   "39815": {
@@ -46105,22 +46089,22 @@
     "shopId": 70,
     "reward": 39823,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 94,
       "exp": 557,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 94,
+      "rating": 220,
       "exp": 612,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 220,
+      "quantity": 1,
+      "rating": 0,
       "exp": 668,
-      "scrip": 2
+      "scrip": 0
     }
   },
   "39816": {
@@ -46135,22 +46119,22 @@
     "shopId": 70,
     "reward": 39824,
     "base": {
-      "quantity": 0,
-      "rating": 0,
+      "quantity": 1,
+      "rating": 47,
       "exp": 222,
-      "scrip": 0
+      "scrip": 1
     },
     "mid": {
       "quantity": 1,
-      "rating": 47,
+      "rating": 110,
       "exp": 244,
-      "scrip": 1
+      "scrip": 2
     },
     "high": {
-      "quantity": 2,
-      "rating": 110,
+      "quantity": 1,
+      "rating": 0,
       "exp": 266,
-      "scrip": 2
+      "scrip": 0
     }
   }
 }

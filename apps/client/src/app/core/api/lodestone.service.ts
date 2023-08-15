@@ -51,9 +51,19 @@ export class LodestoneService {
     );
   }
 
-  public searchFreeCompany(name: string, server: string): Observable<{List: FreeCompany[]}> {
+  public searchFreeCompany(name: string, server: string): Observable<{ List: FreeCompany[] }> {
     const params = new HttpParams().set('name', name).set('server', server);
-    return this.http.get<{List: FreeCompany[]}>(`https://lodestone.ffxivteamcraft.com/FreeCompany/Search`, { params });
+    return this.http.get<{ List: FreeCompany[] }>(`https://lodestone.ffxivteamcraft.com/FreeCompany/Search`, { params }).pipe(
+      map(results => {
+        return {
+          ...results,
+          List: results.List.map((row: any) => {
+            row.avatar = [row.CrestLayers.Bottom, row.CrestLayers.MIDdle, row.CrestLayers.Top];
+            return row;
+          })
+        };
+      })
+    );
   }
 
   public getCharacterFromLodestoneApi(id: number, columns?: string[]): Observable<Partial<CharacterResponse>> {
@@ -80,7 +90,12 @@ export class LodestoneService {
 
   public getFreeCompanyFromLodestoneApi(id: string): Observable<Partial<FreeCompany>> {
     return this.ngZone.runOutsideAngular(() => {
-      return this.http.get<FreeCompany>(`https://lodestone.ffxivteamcraft.com/FreeCompany/${id}`);
+      return this.http.get<FreeCompany>(`https://lodestone.ffxivteamcraft.com/FreeCompany/${id}`).pipe(
+        map((row: any)  => {
+          row.FreeCompany.avatar = [row.FreeCompany.CrestLayers.Bottom, row.FreeCompany.CrestLayers.MIDdle, row.FreeCompany.CrestLayers.Top];
+          return row;
+        })
+      );
     });
   }
 

@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.4...v11.0.5) (2023-08-15)
+
+
+### Features
+
+* **tooltips:** add fates data ([c5b0503](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c5b05033be6adace5d20afa0fda37c15421458c5))
+
+
+### Bug Fixes
+
+* **data-extraction:** Fix collectable rating, quantities and rewards ([de4f155](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/de4f15521ce8149d1d39a5b956961f8136e1fef8))
+* **desktop:** fixed desynth guide not loading results ([08ff6f2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/08ff6f209f073a9ccc9900a977695b54e8c2a5d2))
+* **import:** fixed import on desktop redirect not parsing properly ([f1f499f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f1f499f09dc7783d8734c1f2d5fe17976b5a20b6))
+* **inventory-optimizer:** fixed "not used in any lists" optimizer ([ca86dda](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ca86ddae89b652e7d310d5eac289aecbb8e82bca))
+* **permissions:** fixed FC entries crashing permissions popup ([73fcb31](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/73fcb31ee7e320e7c3ebd8aaa08e33d8fe32d58d))
+
 ### [11.0.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.3...v11.0.4) (2023-08-14)
 
 
