@@ -3,9 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { combineLatest, Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { ListManagerService } from '../../../modules/list/list-manager.service';
-import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
-import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { HttpClient } from '@angular/common/http';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
@@ -29,14 +26,13 @@ export class ImportComponent {
 
   constructor(private route: ActivatedRoute, private listPicker: ListPickerService,
               private lazyData: LazyDataFacade, private router: Router,
-              private listManager: ListManagerService, private progressService: ProgressPopupService,
-              private listsFacade: ListsFacade, private http: HttpClient, private linkTools: LinkToolsService) {
+              private http: HttpClient, private linkTools: LinkToolsService) {
 
     // To test: http://localhost:4200/import/MjA1NDUsbnVsbCwzOzE3OTYyLDMyMzA4LDE7MjAyNDcsbnVsbCwx&url=https://example.org
     this.items$ = combineLatest([this.route.paramMap, this.route.queryParamMap]).pipe(
       map(([params, query]) => [params.get('importString'), query.get('url')]),
       map(([importString, url]) => {
-        const parsed = atob(importString);
+        const parsed = atob(decodeURIComponent(importString.replace(/%25/gm, '%')));
         if (parsed.indexOf(',') === -1) {
           this.wrongFormat = true;
           return { items: [], url: url };
