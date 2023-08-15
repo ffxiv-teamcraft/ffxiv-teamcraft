@@ -79,7 +79,7 @@ export class PermissionsBoxComponent implements OnInit {
               // If the id has no character in it, it's a free company id, not a TC user id
               if (/^\d+$/im.test(id)) {
                 entityDetails$ = this.lodestoneService.getFreeCompany(id).pipe(
-                  map((res: any) => ({ name: res.FreeCompany.Name, avatar: res.FreeCompany.Crest }))
+                  map((res: any) => ({ name: res.FreeCompany.Name, avatar: res.FreeCompany.avatar }))
                 );
               } else if (id.startsWith('team:')) {
                 const teamKey = id.replace('team:', '');
