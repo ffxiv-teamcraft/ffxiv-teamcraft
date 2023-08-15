@@ -545,7 +545,7 @@ export const lazyFilesList = {
   },
   'scripIndex': {
     'fileName': 'scrip-index.json',
-    'hashedFileName': 'scrip-index.bf21a9e8fbc5a3846fb05b4fa0859e0917b2202f.json'
+    'hashedFileName': 'scrip-index.a71d193122500aaedaf87d57ca1e936f29917de0.json'
   },
   'searchCategory': {
     'fileName': 'search-category.json',

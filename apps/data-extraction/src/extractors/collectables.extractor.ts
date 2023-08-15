@@ -77,6 +77,7 @@ export class CollectablesExtractor extends AbstractExtractor {
                   // Skip entries that have no low collectability as they are probably bogus.
                   return;
                 }
+                scripIndex[collectable.Item.index] = StaticData.CURRENCIES[collectable.CollectablesShopRewardScrip.Currency];
                 let rewardId = StaticData.CURRENCIES[collectable.CollectablesShopRewardScrip.Currency];
                 let rewardLow = collectable.CollectablesShopRewardScrip.LowReward;
                 let rewardMid = collectable.CollectablesShopRewardScrip.MidReward;
