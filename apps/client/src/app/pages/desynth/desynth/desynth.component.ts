@@ -61,7 +61,7 @@ export class DesynthComponent {
         },
         {
           name: 'repair',
-          value: job
+          value: +job
         },
         {
           name: 'desynth',
