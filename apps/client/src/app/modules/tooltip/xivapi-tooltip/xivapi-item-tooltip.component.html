@@ -179,6 +179,21 @@
             <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
           </div>
         </div>
+        <div class="source" *ngSwitchCase="DataType.FATES">
+          <div class="source-title flex-row align-center gap-2">
+            <img [src]="source.data[0].id | lazyRow:'fates':'icon' | async | xivapiIcon" class="img-icon">
+            <div>
+              {{'Fates' | translate}}
+            </div>
+          </div>
+          <div class="source-details">
+            <div class="flex-row align-center justify-start gap-2 details-row" *ngFor="let fate of source.data.slice(0,3)">
+              <div>{{fate.id | i18nRow:'fates' | i18n}} - lvl {{fate.level}}</div>
+              {{fate.zoneId | i18nRow:'places' | i18n}} X: {{fate.coords.x}} - Y: {{fate.coords.y}}
+            </div>
+            <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
+          </div>
+        </div>
         <div class="source" *ngSwitchCase="DataType.DESYNTHS">
           <div class="source-title flex-row align-center gap-2">
             <i nzIconfont="icon-vectorcombine" nz-icon></i>
