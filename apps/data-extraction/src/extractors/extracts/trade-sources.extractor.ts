@@ -80,7 +80,7 @@ export class TradeSourcesExtractor extends AbstractItemDetailsExtractor<TradeSou
               {
                 id: +collectableReward[0],
                 amount: collectableReward[1][tier].quantity || 1,
-                minCollectability: collectableReward[1].base.rating
+                minCollectability: collectableReward[1][tier].rating
               }
             ],
             items: [
