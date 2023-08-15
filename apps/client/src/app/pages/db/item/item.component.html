@@ -213,8 +213,9 @@
                 </div>
                 <div class="masterpiece-entry rowena">
                   <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+                    <ng-template #plusTpl>+</ng-template>
                     <div class="masterpiece-rating">{{row.masterpiece.mid.rating}}
-                      - {{row.masterpiece.high.rating - 1}}</div>
+                      <span *ngIf="row.masterpiece.high.rating > 0; else plusTpl">- {{row.masterpiece.high.rating - 1}}</span></div>
                     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
                       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                         <app-item-icon [icon]="row.masterpiece.reward | lazyIcon"
@@ -229,7 +230,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="masterpiece-entry rowena">
+                <div class="masterpiece-entry rowena" *ngIf="row.masterpiece.high.rating > 0">
                   <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
                     <div class="masterpiece-rating">{{row.masterpiece.high.rating}} +</div>
                     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
