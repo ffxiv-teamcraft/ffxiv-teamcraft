@@ -101,6 +101,7 @@ import {LazyRecipesIngredientLookup} from './lazy-recipes-ingredient-lookup';
 import {LazyRecipesPerItem} from './lazy-recipes-per-item';
 import {LazyRecipe} from './lazy-recipe';
 import {LazyRetainerTask} from './lazy-retainer-task';
+import {LazyScripIndex} from './lazy-scrip-index';
 import {LazySearchCategory} from './lazy-search-category';
 import {LazySeed} from './lazy-seed';
 import {LazyShopName} from './lazy-shop-name';
@@ -288,7 +289,7 @@ export interface LazyData {
   reverseInstanceSources: Record<number, number[]>;
   reverseReduction: Record<number, number[]>;
   satisfactionThresholds: Record<number, number[]>;
-  scripIndex: Record<number, number>;
+  scripIndex: LazyScripIndex;
   searchCategory: Record<number, LazySearchCategory>;
   seeds: Record<number, LazySeed>;
   shopNames: Record<number, LazyShopName>;
