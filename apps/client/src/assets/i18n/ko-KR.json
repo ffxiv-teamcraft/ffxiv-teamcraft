@@ -1383,8 +1383,8 @@
     "Class_job": "클래스/직업",
     "Damage_phys": "Phys. Damage",
     "Damage_mag": "Mag. Damage",
-    "Defense_phys": "Phys. Defense",
-    "Defense_mag": "Mag. Defense",
+    "Defense_phys": "물리 방어력",
+    "Defense_mag": "마법 방어력",
     "Masterbooks": "비전서 필요"
   },
   "SEARCH_INTRO": {
@@ -2097,8 +2097,8 @@
       "Message": "이 아이템은 {{containers}} 에도 있습니다"
     },
     "NOT_IN_LIST": {
-      "Title": "Items that are not used in any of your lists",
-      "Message": "This item is not used in any of your lists."
+      "Title": "목록에서 사용되지 않는 아이템",
+      "Message": "해당 아이템은 목록에서 사용되지 않습니다."
     },
     "HAS_TOO_FEW": {
       "Title": "매우 소량으로 소유하고 있는 아이템",
