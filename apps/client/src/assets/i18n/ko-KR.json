@@ -1381,8 +1381,8 @@
     "Ilvl": "아이템레벨",
     "Cost": "CP",
     "Class_job": "클래스/직업",
-    "Damage_phys": "Phys. Damage",
-    "Damage_mag": "Mag. Damage",
+    "Damage_phys": "물리 공격력",
+    "Damage_mag": "공격마법 위력",
     "Defense_phys": "물리 방어력",
     "Defense_mag": "마법 방어력",
     "Masterbooks": "비전서 필요"
@@ -1621,7 +1621,7 @@
     "Unlocks": "개방",
     "Jump_to_page": "DB 페이지 열기",
     "Ishgard_restoration": "이슈가르드 부흥",
-    "GC_supply_value": "Expert Delivery",
+    "GC_supply_value": "희귀품 조달",
     "ITEM": {
       "Masterpiece_exp_tooltip": "다음 레벨까지 필요한 경험치 %입니다.",
       "Required_craftsmanship": "필요 작업 숙련도",
