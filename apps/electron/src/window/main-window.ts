@@ -72,7 +72,6 @@ export class MainWindow {
       let url = details.url;
       if (url.startsWith('https://ffxivteamcraft.com') || url.includes('index.html#')) {
         this.createChildWindow(url.split('#')[1]);
-        //url = `${url}${url.indexOf('?') > -1 ? '&' : '?'}noDesktop=true`;
       } else {
         require('electron').shell.openExternal(url);
       }
