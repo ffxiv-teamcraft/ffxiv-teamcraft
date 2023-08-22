@@ -66,6 +66,7 @@ describe('search', () => {
       koSearch.buildIndex(SearchType.ITEM).subscribe(() => {
         expect(koSearch.search(SearchType.ITEM, '몰리브덴 주괴')[0].itemId).toBe(19947);
         expect(koSearch.search(SearchType.ITEM, '몰리브덴').find(row => row.itemId === 19947)).toBeDefined();
+        expect(koSearch.search(SearchType.ITEM, 'Oblivion').length).toBeGreaterThan(0);
         done();
       });
     }, 10000);
@@ -368,6 +369,6 @@ describe('search', () => {
         }
       ]).length).toBeGreaterThan(0);
 
-  });
+    });
   });
 });
