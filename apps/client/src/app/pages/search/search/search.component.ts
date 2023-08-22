@@ -67,7 +67,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
 
   public selectionMode$ = new LocalStorageBehaviorSubject<'list' | 'compare'>('search:selection-mode', 'list');
 
-  public availableLanguages = ['en', 'de', 'fr', 'ja', 'ko', 'zh'];
+  public availableLanguages = this.data.availableLanguages;
 
   public searchLang$: BehaviorSubject<Language> = new BehaviorSubject<Language>(this.settings.searchLanguage);
 
@@ -290,8 +290,13 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
         localStorage.setItem('search:type', value);
       });
     }
-    if (this.searchLang$.value === null) {
-      this.searchLang$.next(this.settings.searchLanguage || this.translate.currentLang as Language);
+    if (this.searchLang$.value === null || !this.availableLanguages.includes(this.searchLang$.value)) {
+      const defaultSearchLang: Language = this.settings.searchLanguage || this.translate.currentLang as Language;
+      if (this.availableLanguages.includes(defaultSearchLang)) {
+        this.searchLang$.next(defaultSearchLang);
+      } else {
+        this.searchLang$.next('en');
+      }
     }
   }
 
