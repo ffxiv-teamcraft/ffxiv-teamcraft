@@ -1,20 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
-import {
-  distinctUntilChanged,
-  distinctUntilKeyChanged,
-  expand,
-  filter,
-  first,
-  last,
-  map,
-  shareReplay,
-  switchMap,
-  switchMapTo,
-  takeUntil,
-  tap
-} from 'rxjs/operators';
+import { distinctUntilChanged, expand, filter, first, last, map, shareReplay, switchMap, switchMapTo, takeUntil, tap } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { ActivatedRoute } from '@angular/router';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
@@ -25,6 +12,7 @@ import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 import { TranslateService } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { MateriasPopupComponent } from '../materias-popup/materias-popup.component';
+import { MateriaService } from '../../../modules/gearsets/materia.service';
 import { StatsService } from '../../../modules/gearsets/stats.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { MateriasNeededPopupComponent } from '../materias-needed-popup/materias-needed-popup.component';
@@ -350,11 +338,11 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
               private activatedRoute: ActivatedRoute, private xivapi: XivapiService,
               private lazyData: LazyDataFacade, private cd: ChangeDetectorRef,
               public translate: TranslateService, private dialog: NzModalService,
-              private statsService: StatsService,
+              private materiasService: MateriaService, private statsService: StatsService,
               private i18n: I18nToolsService, private ipc: IpcService, private environment: EnvironmentService) {
     super();
     this.gearset$.pipe(
-      distinctUntilKeyChanged('$key'),
+      first(),
       switchMap(gearset => {
         return this.lazyData.getEntry('ilvls')
           .pipe(

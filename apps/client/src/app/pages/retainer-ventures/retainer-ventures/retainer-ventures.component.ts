@@ -155,7 +155,7 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
             };
           });
         return combineLatest([
-          gearset.mainHand ? this.statsService.getStats(gearset, retainer.level, 1) : of([]),
+          this.statsService.getStats(gearset, retainer.level, 1),
           this.statsService.getAvgIlvl(gearset)
         ]).pipe(
           map(([stats, avgIlvl]) => {

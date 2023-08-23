@@ -20,8 +20,4 @@ export class PlatformService {
   public isOverlay(): boolean {
     return window.location.href.indexOf('?overlay') > -1;
   }
-
-  public isChildWindow(): boolean {
-    return window.location.toString().includes('?child=true');
-  }
 }

@@ -8,10 +8,10 @@ import { ChangeDetectionStrategy, Component, Input, TemplateRef, TrackByFunction
 })
 export class LazyScrollComponent {
 
-  @Input({required: true})
+  @Input()
   data: any[];
 
-  @Input({required: true})
+  @Input()
   rowTemplate: TemplateRef<any>;
 
   @Input()

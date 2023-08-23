@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
@@ -265,7 +265,6 @@ export class ListsComponent {
       }
       return l;
     }));
-    inject(ChangeDetectorRef).markForCheck();
   }
 
   setWorkshopIndex(event: CdkDragDrop<WorkshopDisplay>, workshopDisplays: WorkshopDisplay[]): void {

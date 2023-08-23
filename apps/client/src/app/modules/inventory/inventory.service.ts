@@ -154,7 +154,7 @@ export class InventoryService {
 
     const baseInventoryState$ = new Subject<UserInventory>();
 
-    if (this.platform.isOverlay() || this.platform.isChildWindow()) {
+    if (this.platform.isOverlay()) {
       this.inventory$ = new Observable<UserInventory>(observer => {
         this.ipc.on('inventory:overlay:set', (e, data) => {
           const inventoryInstance = this.serializer.deserialize<UserInventory>(data, UserInventory);
@@ -336,7 +336,7 @@ export class InventoryService {
   }
 
   public init(): void {
-    if (this.platform.isDesktop() && !this.platform.isOverlay() && !this.platform.isChildWindow()) {
+    if (this.platform.isDesktop() && !this.platform.isOverlay()) {
       this.inventory$.subscribe(inventory => {
         this.ipc.send('inventory:set', inventory);
       });
@@ -577,11 +577,7 @@ export class InventoryService {
     return inventory;
   }
 
-  private handleActorControlTokenPacket(inventory: UserInventory, action: {
-    type: 'ActorControlTokenPacket',
-    itemId: number,
-    quantity: number
-  }): UserInventory {
+  private handleActorControlTokenPacket(inventory: UserInventory, action: { type: 'ActorControlTokenPacket', itemId: number, quantity: number }): UserInventory {
     // TODO handle currencies in their own inventory, for now just skip it.
     if ((window as any).debugToken) {
       console.log(action);
@@ -648,6 +644,7 @@ export class InventoryService {
   }
 
   private handleInventoryModifyHandler(inventory: UserInventory, packet: InventoryModifyHandler, retainer: string): UserInventory {
+    console.log('handleInventoryModifyHandler', packet);
     try {
       const patch = inventory.operateTransaction(packet, retainer);
       if (patch) {

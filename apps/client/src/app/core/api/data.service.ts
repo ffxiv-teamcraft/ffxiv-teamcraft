@@ -31,8 +31,6 @@ import { SearchParams, XIVSearchFilter } from '@ffxiv-teamcraft/search';
 @Injectable({ providedIn: 'root' })
 export class DataService {
 
-  public readonly availableLanguages = ['en', 'de', 'fr', 'ja', 'ko', 'zh'];
-
   public searchLang = this.settings.searchLanguage || this.translate.currentLang;
 
   public ingesting$ = new BehaviorSubject(false);
@@ -49,9 +47,6 @@ export class DataService {
         this.ingesting$.next(ingesting);
       });
     }
-    if (!this.availableLanguages.includes(this.searchLang)) {
-      this.searchLang = 'en';
-    }
   }
 
   private get isCompatible() {
@@ -67,9 +62,6 @@ export class DataService {
   }
 
   public setSearchLang(lang: Language): void {
-    if (!this.availableLanguages.includes(lang)) {
-      lang = 'en';
-    }
     this.searchLang = lang;
     if (this.platform.isDesktop()) {
       this.ipc.send('search:lang', lang);

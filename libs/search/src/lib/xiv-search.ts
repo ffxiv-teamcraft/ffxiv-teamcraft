@@ -41,7 +41,7 @@ export class XIVSearch {
               str = doc[this.lang];
             }
             // eslint-disable-next-line no-control-regex
-            return str.split('');
+            return str.replace(/[\x00-\x7F]/g, '').split('');
           } : null,
           document: {
             id: 'id',
@@ -70,7 +70,7 @@ export class XIVSearch {
     );
   }
 
-  public search(content: SearchType, query: string, filters: XIVSearchFilter[] = [], sort: [string, 'asc' | 'desc'] = ['', 'asc']): SearchResult[] {
+  public search(content: SearchType, query: string, filters: XIVSearchFilter[] = [], sort: [string, 'asc' | 'desc']): SearchResult[] {
     if (query.length === 0 && filters.length === 0) {
       return [];
     }

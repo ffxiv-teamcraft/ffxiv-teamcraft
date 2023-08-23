@@ -1,18 +1,16 @@
-<div class="flex-column gap-10">
-  <app-lazy-scroll [data]="elements" [rowTemplate]="rowTpl">
-    <ng-template #rowTpl let-element>
-      <div class="flex-row align-center gap-10">
-        <label (ngModelChange)="setSelection(element, $event)" [ngModel]="false" nz-checkbox></label>
-        <div class="flex-column">
-          <b>{{element.name | async}}</b>
-          <i>{{element.description}}</i>
-        </div>
-      </div>
-    </ng-template>
-  </app-lazy-scroll>
+<nz-list [nzDataSource]="elements" [nzRenderItem]="listTemplate">
+  <ng-template #listTemplate let-element>
+    <nz-list-item>
+      <nz-list-item-meta [nzAvatar]="checkbox" [nzDescription]="element.description" [nzTitle]="element.name | async">
+        <ng-template #checkbox>
+          <label (ngModelChange)="setSelection(element, $event)" [ngModel]="false" nz-checkbox></label>
+        </ng-template>
+      </nz-list-item-meta>
+    </nz-list-item>
+  </ng-template>
+</nz-list>
 
-  <div>
-    <button (click)="close()" nz-button>{{'Confirm' | translate}}
-    </button>
-  </div>
+<div fxLayout="row" fxLayoutGap="10px">
+  <button (click)="close()" nz-button>{{'Confirm' | translate}}
+  </button>
 </div>
