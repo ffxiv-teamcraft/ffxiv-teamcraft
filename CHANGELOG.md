@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.5...v11.0.6) (2023-08-23)
+
+
+### Bug Fixes
+
+* **alarms:** new scrolling system for folder addition popup ([0dd620d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0dd620dd7d8c7757b59e7f5fd25bb356b319fae3))
+* **desktop:** fixed child windows not having inventory up to date ([afd8ddf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/afd8ddf45f884be4657c6f717e1d60e9f80648fd))
+* **desktop:** fixed middle click on "i" db button opening web page with child window ([658da4f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/658da4f2a1269cc3e47c7e551304a1ef02a41341))
+* **gearset:** fixed ilvl filter not updating when selecting a different set ([8e5520d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8e5520d8067a666d07a6f9583f6e3ec8f995cf03))
+* **gearsets:** fixed editor not showing stats without main hand equipped ([476d95a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/476d95a9baa85af4e6c148cb0dd44198ffd26149))
+* **gearsets:** fixed import from pcap showing undefined icons and job names ([c0fada8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c0fada82ae9421b9134e2e217c1a720b2c610f92))
+* **search:** fixed asian search langs not working with latin characters ([5720df5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5720df592abcca9d2dbf16204d864d368f1a9a56))
+* **search:** fixed non-game languages for UI sometimes breaking search ([c53cdcf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c53cdcfd1cc9e815e441bada99584a8bc2a26ffe))
+* **simulator:** Fix logic for manipulation check in use-durability-restoration-later tip ([527e6b1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/527e6b12d08051f4eeddffe76946aebf9d6b8882))
+
 ### [11.0.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.4...v11.0.5) (2023-08-15)
 
 
