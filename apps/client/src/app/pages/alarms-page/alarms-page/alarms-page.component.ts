@@ -1,13 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
-import { AlarmBellService } from '../../../core/alarms/alarm-bell.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { AlarmsPageDisplay } from '../../../core/alarms/alarms-page-display';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
-import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
@@ -42,11 +40,10 @@ export class AlarmsPageComponent implements OnInit {
 
   public activePanels$ = new LocalStorageBehaviorSubject<Record<string, boolean>>('alarms:groups-collapse', {});
 
-  constructor(private alarmBell: AlarmBellService, public alarmsFacade: AlarmsFacade,
+  constructor(public alarmsFacade: AlarmsFacade,
               private _settings: SettingsService, private dialog: NzModalService,
-              private translate: TranslateService,
+              private translate: TranslateService, private ipc: IpcService,
               private i18n: I18nToolsService, private etime: EorzeanTimeService,
-              private message: NzMessageService, private ipc: IpcService,
               public platform: PlatformService, private linkService: LinkToolsService) {
   }
 
@@ -74,16 +71,8 @@ export class AlarmsPageComponent implements OnInit {
     this.alarmsFacade.updateGroup(group);
   }
 
-  setAlarmGroup(alarm: PersistedAlarm, groupKey: any): void {
-    this.alarmsFacade.assignAlarmGroup(alarm.$key, groupKey);
-  }
-
-  canEnterGroup(drag: CdkDrag, drop: CdkDropList): boolean {
-    return drag.data?.alarm !== undefined;
-  }
-
   removeAlarmFromGroup(alarmKey: string, group: AlarmGroup): void {
-    if(group){
+    if (group) {
       group.alarms = group.alarms.filter(key => key !== alarmKey);
       this.alarmsFacade.updateGroup(group);
     }

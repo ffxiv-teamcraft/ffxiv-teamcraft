@@ -469,6 +469,9 @@ export class IpcListenersManager {
           overlay.webContents.send('inventory:overlay:set', inventory);
         }
       });
+      this.mainWindow.forEachChildWindow(win => {
+        win.webContents.send('inventory:overlay:set', inventory);
+      });
     });
 
     ipcMain.on('inventory:get', (event, inventory) => {

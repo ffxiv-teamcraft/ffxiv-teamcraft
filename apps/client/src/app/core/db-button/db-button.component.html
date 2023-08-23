@@ -1,7 +1,6 @@
 <a [nzTooltipTitle]="'DB.Open_in_db' | translate" nz-button nz-tooltip
    nzShape="circle"
    nzSize="small"
-   [routerLink]="getLink()"
-   (mouseup)="$event.which === 2 ? openInBrowser('https://ffxivteamcraft.com' + getLink()) : null">
+   [routerLink]="getLink()">
   <i nz-icon nzType="info" class="db-icon"></i>
 </a>

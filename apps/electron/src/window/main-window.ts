@@ -21,6 +21,12 @@ export class MainWindow {
   public constructor(private store: Store, private overlayManager: OverlayManager, private proxyManager: ProxyManager) {
   }
 
+  public forEachChildWindow(fn: (win: BrowserWindow) => void): void {
+    Object.values(this.childWindows)
+      .filter(win => win && !win.isDestroyed())
+      .forEach(fn);
+  }
+
   private initWindow(title: string, deepLink = ''): BrowserWindow {
     const opts: BrowserWindowConstructorOptions = {
       show: false,
@@ -72,7 +78,6 @@ export class MainWindow {
       let url = details.url;
       if (url.startsWith('https://ffxivteamcraft.com') || url.includes('index.html#')) {
         this.createChildWindow(url.split('#')[1]);
-        //url = `${url}${url.indexOf('?') > -1 ? '&' : '?'}noDesktop=true`;
       } else {
         require('electron').shell.openExternal(url);
       }

@@ -172,9 +172,6 @@ export class StatsService {
   }
 
   public getStats(set: TeamcraftGearset, level: number, tribe: number, food?: any): Observable<{ id: number, value: number }[]> {
-    if (!set.mainHand) {
-      return of([]);
-    }
     return safeCombineLatest(this.getRelevantBaseStats(set.job).map(stat => {
       return this.getBaseValue(stat, set.job, level, tribe).pipe(
         map(value => {
