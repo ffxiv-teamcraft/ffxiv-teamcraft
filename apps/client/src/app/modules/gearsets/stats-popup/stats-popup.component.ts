@@ -39,16 +39,4 @@ export class StatsPopupComponent {
 
   constructor(private statsService: StatsService, public translate: TranslateService) {
   }
-
-  _hideDisclaimer = localStorage.getItem('gearset:hide_disclaimer') === 'true';
-
-  get hideDisclaimer(): boolean {
-    return this._hideDisclaimer;
-  }
-
-  set hideDisclaimer(hide: boolean) {
-    this._hideDisclaimer = hide;
-    localStorage.setItem('gearset:hide_disclaimer', hide.toString());
-  }
-
 }
