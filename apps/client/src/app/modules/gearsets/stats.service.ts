@@ -270,7 +270,7 @@ export class StatsService {
                     statsRow = acc.stats[acc.stats.length - 1];
                   }
                   if (equipmentPiece.hq) {
-                    statsRow.value += stat.HQ || 0;
+                    statsRow.value += stat.HQ || stat.NQ || 0;
                   } else {
                     statsRow.value += stat.NQ || 0;
                   }
