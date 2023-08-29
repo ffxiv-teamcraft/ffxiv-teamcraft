@@ -72,7 +72,7 @@
     "web:copyfiles": "copyfiles ./libs/loader/tc-loader.js ./apps/client/src/assets/ -f",
     "update-lazy-files": "node ./tools/build/lazy-files-updater.js",
     "data-extractor": "nx run data-extraction:build && node --max-old-space-size=8192 dist/apps/data-extraction/main.js",
-    "data-extractor:search": "yarn data-extractor --only-search && yarn update-lazy-files",
+    "data-extractor:db": "yarn data-extractor --only-db && yarn update-lazy-files",
     "profits-api:build": "tsc -p apps/profits-api/tsconfig.json",
     "************ELECTRON STUFF*****************": "",
     "electron": "electron",

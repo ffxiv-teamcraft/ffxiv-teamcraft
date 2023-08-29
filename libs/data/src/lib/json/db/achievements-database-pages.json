@@ -34764,7 +34764,7 @@
       "de": "Einen verborgenen Schatz ohne ein Tongefäß des Finders oder Ätherogefäß des Finders gefunden.",
       "ja": "埋もれた財宝を、魔土器：財宝感知もしくは魔科学器：財宝感知を使わずに初めて発見した",
       "fr": "Découvrir un trésor caché dans un donjon sans fond sans utiliser de poterie magique ou de magismobjet d'intuition.",
-      "ko": "마토기: 보물 탐지를 쓰지 않고 파묻힌 보물 발견",
+      "ko": "마토기: 보물 탐지 또는 마과학기: 보물 탐지를 쓰지 않고 파묻힌 보물 발견",
       "zh": "初次在未使用“魔陶器：感知宝藏”和“魔科学器：感知宝藏”的情况下发现埋藏的宝藏。"
     },
     "item": 0,
@@ -34785,7 +34785,7 @@
       "de": "100 verborgene Schätze ohne ein Tongefäß des Finders oder Ätherogefäß des Finders gefunden.",
       "ja": "埋もれた財宝を、魔土器：財宝感知もしくは魔科学器：財宝感知を使わずに100個発見した",
       "fr": "Découvrir 100 trésors cachés dans un donjon sans fond sans utiliser de poterie magique ou de magismobjet d'intuition.",
-      "ko": "마토기: 보물 탐지를 쓰지 않고 파묻힌 보물 100회 발견",
+      "ko": "마토기: 보물 탐지 또는 마과학기: 보물 탐지를 쓰지 않고 파묻힌 보물 100회 발견",
       "zh": "在未使用“魔陶器：感知宝藏”和“魔科学器：感知宝藏”的情况下发现埋藏的宝藏100个。"
     },
     "item": 0,
@@ -66376,12 +66376,14 @@
     "de": "Orthosstürmer I",
     "ja": "オルト・エウレカの探索者：ランク1",
     "fr": "Plongée heuristique I",
+    "ko": "에우레카 오르토스 탐색자: 1단계",
     "zh": "正统优雷卡的探索者1",
     "description": {
       "en": "Clear the 10th floor of Eureka Orthos.",
       "de": "Die 10. Ebene von Eureka Orthos erreicht.",
       "ja": "オルト・エウレカのB10を攻略する",
       "fr": "Conquérir le 10e sous-sol d'Eurêka Orthos.",
+      "ko": "에우레카 오르토스 B10 완료",
       "zh": "成功突破正统优雷卡地下10层。"
     },
     "item": 0,
@@ -66395,12 +66397,14 @@
     "de": "Orthosstürmer II",
     "ja": "オルト・エウレカの探索者：ランク2",
     "fr": "Plongée heuristique II",
+    "ko": "에우레카 오르토스 탐색자: 2단계",
     "zh": "正统优雷卡的探索者2",
     "description": {
       "en": "Clear the 20th floor of Eureka Orthos.",
       "de": "Die 20. Ebene von Eureka Orthos erreicht.",
       "ja": "オルト・エウレカのB20を攻略する",
       "fr": "Conquérir le 20e sous-sol d'Eurêka Orthos.",
+      "ko": "에우레카 오르토스 B20 완료",
       "zh": "成功突破正统优雷卡地下20层。"
     },
     "item": 0,
@@ -66414,12 +66418,14 @@
     "de": "Orthosstürmer III",
     "ja": "オルト・エウレカの探索者：ランク3",
     "fr": "Plongée heuristique III",
+    "ko": "에우레카 오르토스 탐색자: 3단계",
     "zh": "正统优雷卡的探索者3",
     "description": {
       "en": "Clear the 30th floor of Eureka Orthos.",
       "de": "Die 30. Ebene von Eureka Orthos erreicht.",
       "ja": "オルト・エウレカのB30を攻略する",
       "fr": "Conquérir le 30e sous-sol d'Eurêka Orthos.",
+      "ko": "에우레카 오르토스 B30 완료",
       "zh": "成功突破正统优雷卡地下30层。"
     },
     "item": 0,
@@ -66433,12 +66439,14 @@
     "de": "Orthosstürmer IV",
     "ja": "オルト・エウレカの探索者：ランク4",
     "fr": "Plongée heuristique IV",
+    "ko": "에우레카 오르토스 탐색자: 4단계",
     "zh": "正统优雷卡的探索者4",
     "description": {
       "en": "Clear the 50th floor of Eureka Orthos.",
       "de": "Die 50. Ebene von Eureka Orthos erreicht.",
       "ja": "オルト・エウレカのB50を攻略する",
       "fr": "Conquérir le 50e sous-sol d'Eurêka Orthos.",
+      "ko": "에우레카 오르토스 B50 완료",
       "zh": "成功突破正统优雷卡地下50层。"
     },
     "item": 0,
@@ -66452,12 +66460,14 @@
     "de": "Orthosstürmer V",
     "ja": "オルト・エウレカの探索者：ランク5",
     "fr": "Plongée heuristique V",
+    "ko": "에우레카 오르토스 탐색자: 5단계",
     "zh": "正统优雷卡的探索者5",
     "description": {
       "en": "Clear the 100th floor of Eureka Orthos.",
       "de": "Die 100. Ebene von Eureka Orthos erreicht.",
       "ja": "オルト・エウレカのB100を攻略する",
       "fr": "Conquérir le 100e sous-sol d'Eurêka Orthos.",
+      "ko": "에우레카 오르토스 B100 완료",
       "zh": "成功突破正统优雷卡地下100层。"
     },
     "item": 0,
@@ -66488,12 +66498,14 @@
     "de": "Waffe des Orthos",
     "ja": "強化されしオルト魔器",
     "fr": "Passer l'arme à droite",
+    "ko": "강화된 오르토스 마기",
     "zh": "正统之光",
     "description": {
       "en": "Obtain an Orthos weapon.",
       "de": "Eine Orthos-Waffe erhalten.",
       "ja": "「オルト武器」のいずれかを入手する",
       "fr": "Obtenir une des armes Orthos.",
+      "ko": "'오르토스 무기' 중 하나 입수",
       "zh": "获得任意一把“正统武器”。"
     },
     "item": 0,
@@ -66507,12 +66519,14 @@
     "de": "Enigmatisches Enaretos",
     "ja": "さらに強化されしエナレトス魔器",
     "fr": "Arsenal correct",
+    "ko": "더욱 강화된 에나레토스 마기",
     "zh": "高尚之光",
     "description": {
       "en": "Obtain an enaretos weapon.",
       "de": "Eine Enaretos-Waffe erhalten.",
       "ja": "「エナレトス武器」のいずれかを入手する",
       "fr": "Obtenir une des armes enaretos.",
+      "ko": "'에나레토스 무기' 중 하나 입수",
       "zh": "获得任意一把“高尚武器”。"
     },
     "item": 0,
@@ -66526,12 +66540,14 @@
     "de": "Einsamer Orthosstürmer I",
     "ja": "崇高なる挑戦者：ランク1",
     "fr": "Solitude sublimée I",
+    "ko": "숭고한 도전자: 1단계",
     "zh": "崇高的挑战者1",
     "description": {
       "en": "Clear the 1st through the 50th floors of Eureka Orthos solo and record a score on floor 51 or below.",
       "de": "Die 1. bis 50. Ebene von Eureka Orthos alleine erobert und in einer höheren Ebene als der 50. das Ergebnis erhalten. ",
       "ja": "オルト・エウレカにソロでB1から突入しB50より深い階層で、スコアを記録した",
       "fr": "Obtenir un score en solo dans Eurêka Orthos en commençant par le 1er sous-sol et en s'aventurant au-delà du 50e.",
+      "ko": "단독으로 에우레카 오르토스 B1에 진입하여 B50 이후에서 점수 기록",
       "zh": "单人从地下1层进入正统优雷卡，并在通过地下50层后记录积分。"
     },
     "item": 0,
@@ -66545,12 +66561,14 @@
     "de": "Einsamer Orthosstürmer II",
     "ja": "崇高なる挑戦者：ランク2",
     "fr": "Solitude sublimée II",
+    "ko": "숭고한 도전자: 2단계",
     "zh": "崇高的挑战者2",
     "description": {
       "en": "Clear the 1st through the 100th floors of Eureka Orthos solo.",
       "de": "Eureka Orthos alleine auf der 1. Ebene betreten und bis zur 100. Ebene erkundet.",
       "ja": "オルト・エウレカにソロでB1から突入しB100に到達する",
       "fr": "Atteindre le 100e sous-sol en solo dans Eurêka Orthos en commençant par le 1er.",
+      "ko": "단독으로 에우레카 오르토스 B1에 진입하여 B100 도달",
       "zh": "单人从地下1层进入正统优雷卡并突破至地下100层。"
     },
     "item": 0,
@@ -66564,12 +66582,14 @@
     "de": "Mein Schatz VI",
     "ja": "埋もれた財宝：ランク6",
     "fr": "Exhumation profonde VI",
+    "ko": "파묻힌 보물: 6단계",
     "zh": "埋藏的宝藏6",
     "description": {
       "en": "Discover 20,000 pieces of the Accursed Hoard.",
       "de": "20.000 verborgene Schätze gefunden.",
       "ja": "埋もれた財宝を20,000個発見した",
       "fr": "Découvrir 20 000 trésors cachés.",
+      "ko": "파묻힌 보물 20,000회 발견",
       "zh": "发现埋藏的宝藏20000个。"
     },
     "item": 0,
@@ -66583,12 +66603,14 @@
     "de": "Enaretische Erscheinung",
     "ja": "崇高なる英雄の証",
     "fr": "Vêtements vertueux",
+    "ko": "숭고한 영웅의 증거",
     "zh": "崇高英雄的证明",
     "description": {
       "en": "Speak with Koh Rabntah while in possession of all four of the enaretos accessories.",
       "de": "Mit Koh Rabntah gesprochen, während du alle vier enaretischen Schmuckstücke angelegt oder in Besitz hast.",
       "ja": "「エナレトス・イヤリング」「エナレトス・ネックレス」「エナレトス・ブレスレット」「エナレトス・リング」を所持または装備した状態で、コー・ラブンタと話す",
       "fr": "Parler à Koh Rabntah en étant en possession ou en s'étant équipé d'une boucle d'oreille enaretos, d'un collier enaretos, d'un bracelet enaretos et d'une bague enaretos.",
+      "ko": "에나레토스 귀걸이, 에나레토스 목걸이, 에나레토스 팔찌, 에나레토스 반지를 소지 또는 장비하고 코 라븐타와 대화",
       "zh": "持有或装备“高尚耳坠”“高尚项链”“高尚手环”“高尚戒指”时，与珂尔·拉布恩塔对话。"
     },
     "item": 0,
@@ -66644,12 +66666,14 @@
     "de": "Die größten Träumer I ",
     "ja": "レポリット族：ランク1",
     "fr": "Rêveur sélène I",
+    "ko": "레포릿족: 1단계",
     "zh": "梦明工作室1",
     "description": {
       "en": "Attain rank 3 reputation (friendly) with the Dreaming Ways.",
       "de": "Ein freundliches Verhältnis zu den Loporrit erworben.",
       "ja": "レポリット族「ドリーミング・ワークショップ」の友好関係をランク3「友好」にする",
       "fr": "Atteindre le rang 3 (Ami) de réputation auprès des Loporrites des Ateliers Dreaming.",
+      "ko": "레포릿족 '꿈꾸는 체험관'의 우호 관계 3단계 '우호' 달성",
       "zh": "与兔兔族的“梦明工作室”之间的关系程度到达3级“友好”。"
     },
     "item": 0,
@@ -66663,12 +66687,14 @@
     "de": "Die größten Träumer II",
     "ja": "レポリット族：ランク2",
     "fr": "Rêveur sélène II",
+    "ko": "레포릿족: 2단계",
     "zh": "梦明工作室2",
     "description": {
       "en": "Attain rank 4 reputation (trusted) with the Dreaming Ways.",
       "de": "Ein vertrautes Verhältnis zu den Loporrit erworben.",
       "ja": "レポリット族「ドリーミング・ワークショップ」の友好関係をランク4「信頼」にする",
       "fr": "Atteindre le rang 4 (Estimé) de réputation auprès des Loporrites des Ateliers Dreaming.",
+      "ko": "레포릿족 '꿈꾸는 체험관'의 우호 관계 4단계 '신뢰' 달성",
       "zh": "与兔兔族的“梦明工作室”之间的关系程度到达4级“信赖”。"
     },
     "item": 0,
@@ -66682,12 +66708,14 @@
     "de": "Die größten Träumer III",
     "ja": "レポリット族：ランク3",
     "fr": "Rêveur sélène III",
+    "ko": "레포릿족: 3단계",
     "zh": "梦明工作室3",
     "description": {
       "en": "Attain rank 6 reputation (honored) with the Dreaming Ways.",
       "de": "Ein geachtetes Verhältnis zu den Loporrit erworben.",
       "ja": "レポリット族「ドリーミング・ワークショップ」の友好関係をランク6「名誉」にする",
       "fr": "Atteindre le rang 6 (Émérite) de réputation auprès des Loporrites des Ateliers Dreaming.",
+      "ko": "레포릿족 '꿈꾸는 체험관'의 우호 관계 6단계 '명예' 달성",
       "zh": "与兔兔族的“梦明工作室”之间的关系程度到达6级“名誉”。"
     },
     "item": 0,
@@ -66701,12 +66729,14 @@
     "de": "Wer nicht träumt, der nicht gewinnt",
     "ja": "ずっと一緒にドリーミング",
     "fr": "Marchand de sable lunaire",
+    "ko": "언제나 함께 꿈을",
     "zh": "一起为梦想而努力",
     "description": {
       "en": "Attain rank 7 reputation (sworn) with the Dreaming Ways.",
       "de": "Ein solidarisches Verhältnis zu den Loporrit erworben.",
       "ja": "レポリット族「ドリーミング・ワークショップ」の友好関係をランク7「誓約」にする",
       "fr": "Atteindre le rang 7 (Assermenté) de réputation auprès des Loporrites des Ateliers Dreaming.",
+      "ko": "레포릿족 '꿈꾸는 체험관'의 우호 관계 7단계 '서약' 달성",
       "zh": "与兔兔族的“梦明工作室”之间的关系程度到达7级“誓约”。"
     },
     "item": 0,
@@ -66720,12 +66750,14 @@
     "de": "Mowen-Verifiziert",
     "ja": "モーエン商会の認定職人",
     "fr": "Merveille attitrée de Mowen",
+    "ko": "모웬 상회가 인정한 장인",
     "zh": "莫雯卓越商会的认定商人",
     "description": {
       "en": "Complete the quest “An Adaptive Tool.”",
       "de": "Den Auftrag „Werkzeug voller Gefühle“ abgeschlossen.",
       "ja": "クエスト「想い伝える改良計画」をコンプリートする",
       "fr": "Accomplir la quête “Dites-le avec des outils”.",
+      "ko": "퀘스트 '마음을 전하는 개량 계획' 완료",
       "zh": "完成任务“回应思想的改良计划”。"
     },
     "item": 0,
@@ -66739,12 +66771,14 @@
     "de": "Mowen-Werkzeug: Kristallin-Säge",
     "ja": "モーエンツール：クリスタライン・ソー",
     "fr": "Outils des merveilles : scie cristalline",
+    "ko": "모웬 도구: 공예관 톱",
     "zh": "莫雯卓越工具：水晶手锯",
     "description": {
       "en": "Obtain a crystalline saw.",
       "de": "Eine Kristallin-Säge erlangt.",
       "ja": "クリスタライン・ソーを入手する",
       "fr": "Obtenir une scie cristalline.",
+      "ko": "공예관 톱 입수",
       "zh": "获得水晶手锯。"
     },
     "item": 0,
@@ -66758,12 +66792,14 @@
     "de": "Mowen-Werkzeug: Kristallin-Kreuzschlaghammer",
     "ja": "モーエンツール：クリスタライン・クロスペインハンマー",
     "fr": "Outils des merveilles : marteau à panne croisée cristallin",
+    "ko": "모웬 도구: 공예관 단조망치",
     "zh": "莫雯卓越工具：水晶横头锤",
     "description": {
       "en": "Obtain a crystalline cross-pein hammer.",
       "de": "Einen Kristallin-Kreuzschlaghammer erlangt.",
       "ja": "クリスタライン・クロスペインハンマーを入手する",
       "fr": "Obtenir un marteau à panne croisée cristallin.",
+      "ko": "공예관 단조망치 입수",
       "zh": "获得水晶横头锤。"
     },
     "item": 0,
@@ -66777,12 +66813,14 @@
     "de": "Mowen-Werkzeug: Kristallin-Schlichthammer",
     "ja": "モーエンツール：クリスタライン・レイジングハンマー",
     "fr": "Outils des merveilles : marteau de batteur cristallin",
+    "ko": "모웬 도구: 공예관 돋을무늬 망치",
     "zh": "莫雯卓越工具：水晶圆头锤",
     "description": {
       "en": "Obtain a crystalline raising hammer.",
       "de": "Einen Kristallin-Schlichthammer erlangt.",
       "ja": "クリスタライン・レイジングハンマーを入手する",
       "fr": "Obtenir un marteau de batteur cristallin.",
+      "ko": "공예관 돋을무늬 망치 입수",
       "zh": "获得水晶圆头锤。"
     },
     "item": 0,
@@ -66796,12 +66834,14 @@
     "de": "Mowen-Werkzeug: Kristallin-Fäustel",
     "ja": "モーエンツール：クリスタライン・マレット",
     "fr": "Outils des merveilles : massette cristalline",
+    "ko": "모웬 도구: 공예관 세공망치",
     "zh": "莫雯卓越工具：水晶工艺锤",
     "description": {
       "en": "Obtain a crystalline mallet.",
       "de": "Einen Kristallin-Fäustel erlangt.",
       "ja": "クリスタライン・マレットを入手する",
       "fr": "Obtenir une massette cristalline.",
+      "ko": "공예관 세공망치 입수",
       "zh": "获得水晶工艺锤。"
     },
     "item": 0,
@@ -66815,12 +66855,14 @@
     "de": "Mowen-Werkzeug: Kristallin-Rundmesser",
     "ja": "モーエンツール：クリスタライン・ラウンドナイフ",
     "fr": "Outils des merveilles : couteau arrondi cristallin",
+    "ko": "모웬 도구: 공예관 둥근칼",
     "zh": "莫雯卓越工具：水晶圆革刀",
     "description": {
       "en": "Obtain a crystalline round knife.",
       "de": "Ein Kristallin-Rundmesser erlangt.",
       "ja": "クリスタライン・ラウンドナイフを入手する",
       "fr": "Obtenir un couteau arrondi cristallin.",
+      "ko": "공예관 둥근칼 입수",
       "zh": "获得水晶圆革刀。"
     },
     "item": 0,
@@ -66834,12 +66876,14 @@
     "de": "Mowen-Werkzeug: Kristallin-Nadel",
     "ja": "モーエンツール：クリスタライン・ニードル",
     "fr": "Outils des merveilles : aiguille cristalline",
+    "ko": "모웬 도구: 공예관 바늘",
     "zh": "莫雯卓越工具：水晶缝针",
     "description": {
       "en": "Obtain a crystalline needle.",
       "de": "Eine Kristallin-Nadel erlangt.",
       "ja": "クリスタライン・ニードルを入手する",
       "fr": "Obtenir une aiguille cristalline.",
+      "ko": "공예관 바늘 입수",
       "zh": "获得水晶缝针。"
     },
     "item": 0,
@@ -66853,12 +66897,14 @@
     "de": "Mowen-Werkzeug: Kristallin-Destillierkolben",
     "ja": "モーエンツール：クリスタライン・アレンビック",
     "fr": "Outils des merveilles : alambic cristallin",
+    "ko": "모웬 도구: 공예관 증류기",
     "zh": "莫雯卓越工具：水晶蒸馏器",
     "description": {
       "en": "Obtain a crystalline alembic.",
       "de": "Einen Kristallin-Destillierkolben erlangt.",
       "ja": "クリスタライン・アレンビックを入手する",
       "fr": "Obtenir un alambic cristallin.",
+      "ko": "공예관 증류기 입수",
       "zh": "获得水晶蒸馏器。"
     },
     "item": 0,
@@ -66872,12 +66918,14 @@
     "de": "Mowen-Werkzeug: Kristallin-Bratpfanne",
     "ja": "モーエンツール：クリスタライン・フライパン",
     "fr": "Outils des merveilles : poêle à frire cristalline",
+    "ko": "모웬 도구: 공예관 프라이팬",
     "zh": "莫雯卓越工具：水晶煎锅",
     "description": {
       "en": "Obtain a crystalline frypan.",
       "de": "Eine Kristallin-Bratpfanne erlangt.",
       "ja": "クリスタライン・フライパンを入手する",
       "fr": "Obtenir une poêle à frire cristalline.",
+      "ko": "공예관 프라이팬 입수",
       "zh": "获得水晶煎锅。"
     },
     "item": 0,
@@ -66891,12 +66939,14 @@
     "de": "Mowen-Werkzeug: Kristallin-Spitzhacke",
     "ja": "モーエンツール：クリスタライン・ピック",
     "fr": "Outils des merveilles : pioche cristalline",
+    "ko": "모웬 도구: 공예관 곡괭이",
     "zh": "莫雯卓越工具：水晶鹤嘴锄",
     "description": {
       "en": "Obtain a crystalline pickaxe.",
       "de": "Eine Kristallin-Spitzhacke erlangt.",
       "ja": "クリスタライン・ピックを入手する",
       "fr": "Obtenir une pioche cristalline.",
+      "ko": "공예관 곡괭이 입수",
       "zh": "获得水晶鹤嘴锄。"
     },
     "item": 0,
@@ -66910,12 +66960,14 @@
     "de": "Mowen-Werkzeug: Kristallin-Handbeil",
     "ja": "モーエンツール：クリスタライン・ハチェット",
     "fr": "Outils des merveilles : hachette cristalline",
+    "ko": "모웬 도구: 공예관 손도끼",
     "zh": "莫雯卓越工具：水晶手斧",
     "description": {
       "en": "Obtain a crystalline hatchet.",
       "de": "Ein Kristallin-Handbeil erlangt.",
       "ja": "クリスタライン・ハチェットを入手する",
       "fr": "Obtenir une hachette cristalline.",
+      "ko": "공예관 손도끼 입수",
       "zh": "获得水晶手斧。"
     },
     "item": 0,
@@ -66929,12 +66981,14 @@
     "de": "Mowen-Werkzeug: Kristallin-Angelrute",
     "ja": "モーエンツール：クリスタライン・フィッシングロッド",
     "fr": "Outils des merveilles : canne à pêche cristalline",
+    "ko": "모웬 도구: 공예관 낚싯대",
     "zh": "莫雯卓越工具：水晶钓竿",
     "description": {
       "en": "Obtain a crystalline fishing rod.",
       "de": "Eine Kristallin-Angelrute erlangt.",
       "ja": "クリスタライン・フィッシングロッドを入手する",
       "fr": "Obtenir une canne à pêche cristalline.",
+      "ko": "공예관 낚싯대 입수",
       "zh": "获得水晶钓竿。"
     },
     "item": 0,
@@ -67049,12 +67103,14 @@
     "de": "Tripledecker XII",
     "ja": "カードコレクター：ランク12",
     "fr": "Porte-cartes XII",
+    "ko": "카드 수집가: 10단계",
     "zh": "九宫卡手12",
     "description": {
       "en": "Obtain 376 unique Triple Triad cards.",
       "de": "376 verschiedene Triple Triad-Karten erhalten.",
       "ja": "トリプルトライアドのカードを376種類入手する",
       "fr": "Obtenir 376 cartes de Triple Triade différentes.",
+      "ko": "트리플 트라이어드 카드 376종류 입수",
       "zh": "获得376种九宫幻卡。"
     },
     "item": 39376,
@@ -67362,12 +67418,14 @@
     "de": "Manderville-Waffen: Fantastisches Manderville-Schwert und fantastischer Manderville-Drachenschild",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・ソード＆マンダヴィル・アメイジング・カイトシールド",
     "fr": "Armes des Manderville : épée éblouissante et écu mandorle éblouissant",
+    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 한손검과 훌륭한 맨더빌 연모양 방패",
     "zh": "曼德维尔之骑士·惊异",
     "description": {
       "en": "Obtain an amazing Manderville sword and amazing Manderville kite shield.",
       "de": "Das fantastische Manderville-Schwert und den fantastischen Manderville-Drachenschild erhalten.",
       "ja": "マンダヴィル・アメイジング・ソードとマンダヴィル・アメイジング・カイトシールドを入手する",
       "fr": "Obtenir l'épée éblouissante et l'écu mandorle éblouissant des Manderville.",
+      "ko": "훌륭한 맨더빌 한손검과 훌륭한 맨더빌 연모양 방패 입수",
       "zh": "获得曼德维尔惊异长剑和曼德维尔惊异鸢盾。"
     },
     "item": 0,
@@ -67381,12 +67439,14 @@
     "de": "Manderville-Waffen: Fantastische Manderville-Axt",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・アクス",
     "fr": "Armes des Manderville : hache éblouissante",
+    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 도끼",
     "zh": "曼德维尔之战士·惊异",
     "description": {
       "en": "Obtain an amazing Manderville axe.",
       "de": "Die fantastische Manderville-Axt erhalten.",
       "ja": "マンダヴィル・アメイジング・アクスを入手する",
       "fr": "Obtenir la hache éblouissante des Manderville.",
+      "ko": "훌륭한 맨더빌 도끼 입수",
       "zh": "获得曼德维尔惊异战斧。"
     },
     "item": 0,
@@ -67400,12 +67460,14 @@
     "de": "Manderville-Waffen: Fantastischer Manderville-Zweihänder",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・ツヴァイハンダー",
     "fr": "Armes des Manderville : espadon éblouissant",
+    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 츠바이헨더",
     "zh": "曼德维尔之暗黑骑士·惊异",
     "description": {
       "en": "Obtain an amazing Manderville zweihander.",
       "de": "Den fantastischen Manderville-Zweihänder erhalten.",
       "ja": "マンダヴィル・アメイジング・ツヴァイハンダーを入手する",
       "fr": "Obtenir l'espadon éblouissant des Manderville.",
+      "ko": "훌륭한 맨더빌 츠바이헨더 입수",
       "zh": "获得曼德维尔惊异双手剑。"
     },
     "item": 0,
@@ -67419,12 +67481,14 @@
     "de": "Manderville-Waffen: Fantastische Manderville-Revolverklinge",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・ガンブレード",
     "fr": "Armes des Manderville : pistolame éblouissante",
+    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 건블레이드",
     "zh": "曼德维尔之绝枪战士·惊异",
     "description": {
       "en": "Obtain an amazing Manderville gunblade.",
       "de": "Die fantastische Manderville-Revolverklinge erhalten.",
       "ja": "マンダヴィル・アメイジング・ガンブレードを入手する",
       "fr": "Obtenir la pistolame éblouissante des Manderville.",
+      "ko": "훌륭한 맨더빌 건블레이드 입수",
       "zh": "获得曼德维尔惊异枪刃。"
     },
     "item": 0,
@@ -67438,12 +67502,14 @@
     "de": "Manderville-Waffen: Fantastischer Manderville-Speer",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・スピア",
     "fr": "Armes des Manderville : hast éblouissant",
+    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 창",
     "zh": "曼德维尔之龙骑士·惊异",
     "description": {
       "en": "Obtain an amazing Manderville spear.",
       "de": "Den fantastischen Manderville-Speer erhalten.",
       "ja": "マンダヴィル・アメイジング・スピアを入手する",
       "fr": "Obtenir l'hast éblouissant des Manderville.",
+      "ko": "훌륭한 맨더빌 창 입수",
       "zh": "获得曼德维尔惊异长枪。"
     },
     "item": 0,
@@ -67457,12 +67523,14 @@
     "de": "Manderville-Waffen: Fantastische Manderville-Klauen",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・ナックル",
     "fr": "Armes des Manderville : poings éblouissants",
+    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 너클",
     "zh": "曼德维尔之武僧·惊异",
     "description": {
       "en": "Obtain a pair of amazing Manderville knuckles.",
       "de": "Die fantastischen Manderville-Klauen erhalten.",
       "ja": "マンダヴィル・アメイジング・ナックルを入手する",
       "fr": "Obtenir les poings éblouissants des Manderville.",
+      "ko": "훌륭한 맨더빌 너클 입수",
       "zh": "获得曼德维尔惊异指虎。"
     },
     "item": 0,
@@ -67476,12 +67544,14 @@
     "de": "Manderville-Waffen: Fantastische Manderville-Messer",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・ナイフ",
     "fr": "Armes des Manderville : couteaux éblouissants",
+    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 단검",
     "zh": "曼德维尔之忍者·惊异",
     "description": {
       "en": "Obtain a pair of amazing Manderville knives.",
       "de": "Die fantastischen Manderville-Messer erhalten.",
       "ja": "マンダヴィル・アメイジング・ナイフを入手する",
       "fr": "Obtenir les couteaux éblouissants des Manderville.",
+      "ko": "훌륭한 맨더빌 단검 입수",
       "zh": "获得曼德维尔惊异匕首。"
     },
     "item": 0,
@@ -67495,12 +67565,14 @@
     "de": "Manderville-Waffen: Fantastische Manderville-Samuraiklinge",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・サムライブレード",
     "fr": "Armes des Manderville : lame de samouraï éblouissante",
+    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 외날검",
     "zh": "曼德维尔之武士·惊异",
     "description": {
       "en": "Obtain an amazing Manderville samurai blade.",
       "de": "Die fantastische Manderville-Samuraiklinge erhalten.",
       "ja": "マンダヴィル・アメイジング・サムライブレードを入手する",
       "fr": "Obtenir la lame de samouraï éblouissante des Manderville.",
+      "ko": "훌륭한 맨더빌 외날검 입수",
       "zh": "获得曼德维尔惊异武士刀。"
     },
     "item": 0,
@@ -67514,12 +67586,14 @@
     "de": "Manderville-Waffen: Fantastische Manderville-Sense",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・サイズ",
     "fr": "Armes des Manderville : faux éblouissante",
+    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 큰낫",
     "zh": "曼德维尔之钐镰客·惊异",
     "description": {
       "en": "Obtain an amazing Manderville scythe.",
       "de": "Die fantastische Manderville-Sense erhalten.",
       "ja": "マンダヴィル・アメイジング・サイズを入手する",
       "fr": "Obtenir la faux éblouissante des Manderville.",
+      "ko": "훌륭한 맨더빌 큰낫 입수",
       "zh": "获得曼德维尔惊异镰刀。"
     },
     "item": 0,
@@ -67533,12 +67607,14 @@
     "de": "Manderville-Waffen: Fantastischer Manderville-Harfenbogen",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・ハープボウ",
     "fr": "Armes des Manderville : arc-harpe éblouissant",
+    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 현악궁",
     "zh": "曼德维尔之吟游诗人·惊异",
     "description": {
       "en": "Obtain an amazing Manderville harp bow.",
       "de": "Den fantastischen Manderville-Harfenbogen erhalten.",
       "ja": "マンダヴィル・アメイジング・ハープボウを入手する",
       "fr": "Obtenir l'arc-harpe éblouissant des Manderville.",
+      "ko": "훌륭한 맨더빌 현악궁 입수",
       "zh": "获得曼德维尔惊异琴弓。"
     },
     "item": 0,
@@ -67552,12 +67628,14 @@
     "de": "Manderville-Waffen: Fantastischer Manderville-Revolver",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・リボルバー",
     "fr": "Armes des Manderville : revolver éblouissant",
+    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 연발권총",
     "zh": "曼德维尔之机工士·惊异",
     "description": {
       "en": "Obtain an amazing Manderville revolver.",
       "de": "Den fantastischen Manderville-Revolver erhalten.",
       "ja": "マンダヴィル・アメイジング・リボルバーを入手する",
       "fr": "Obtenir le revolver éblouissant des Manderville.",
+      "ko": "훌륭한 맨더빌 연발권총 입수",
       "zh": "获得曼德维尔惊异左轮枪。"
     },
     "item": 0,
@@ -67571,12 +67649,14 @@
     "de": "Manderville-Waffen: Fantastische Manderville-Chakrams",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・チャクラム",
     "fr": "Armes des Manderville : chakrams éblouissants",
+    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 차크람",
     "zh": "曼德维尔之舞者·惊异",
     "description": {
       "en": "Obtain a pair of amazing Manderville chakrams.",
       "de": "Die fantastischen Manderville-Chakrams erhalten.",
       "ja": "マンダヴィル・アメイジング・チャクラムを入手する",
       "fr": "Obtenir les chakrams éblouissants des Manderville.",
+      "ko": "훌륭한 맨더빌 차크람 입수",
       "zh": "获得曼德维尔惊异圆月轮。"
     },
     "item": 0,
@@ -67590,12 +67670,14 @@
     "de": "Manderville-Waffen: Fantastischer Manderville-Stab",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・ロッド",
     "fr": "Armes des Manderville : sceptre éblouissant",
+    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 주술봉",
     "zh": "曼德维尔之黑魔法师·惊异",
     "description": {
       "en": "Obtain an amazing Manderville rod.",
       "de": "Den fantastischen Manderville-Stab erhalten.",
       "ja": "マンダヴィル・アメイジング・ロッドを入手する",
       "fr": "Obtenir le sceptre éblouissant des Manderville.",
+      "ko": "훌륭한 맨더빌 주술봉 입수",
       "zh": "获得曼德维尔惊异法杖。"
     },
     "item": 0,
@@ -67609,12 +67691,14 @@
     "de": "Manderville-Waffen: Fantastischer Manderville-Index",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・インデックス",
     "fr": "Armes des Manderville : index éblouissant",
+    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 금서",
     "zh": "曼德维尔之召唤师·惊异",
     "description": {
       "en": "Obtain an amazing Manderville index.",
       "de": "Den fantastischen Manderville-Index erhalten.",
       "ja": "マンダヴィル・アメイジング・インデックスを入手する",
       "fr": "Obtenir l'index éblouissant des Manderville.",
+      "ko": "훌륭한 맨더빌 금서 입수",
       "zh": "获得曼德维尔惊异魔导书。"
     },
     "item": 0,
@@ -67628,12 +67712,14 @@
     "de": "Manderville-Waffen: Fantastisches Manderville-Rapier",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・レイピア",
     "fr": "Armes des Manderville : rapière éblouissante",
+    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 레이피어",
     "zh": "曼德维尔之赤魔法师·惊异",
     "description": {
       "en": "Obtain an amazing Manderville rapier.",
       "de": "Das fantastische Manderville-Rapier erhalten.",
       "ja": "マンダヴィル・アメイジング・レイピアを入手する",
       "fr": "Obtenir la rapière éblouissante des Manderville.",
+      "ko": "훌륭한 맨더빌 레이피어 입수",
       "zh": "获得曼德维尔惊异刺剑。"
     },
     "item": 0,
@@ -67647,12 +67733,14 @@
     "de": "Manderville-Waffen: Fantastischer Manderville-Stock",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・ケーン",
     "fr": "Armes des Manderville : canne éblouissante",
+    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 환술봉",
     "zh": "曼德维尔之白魔法师·惊异",
     "description": {
       "en": "Obtain an amazing Manderville cane.",
       "de": "Den fantastischen Manderville-Stock erhalten.",
       "ja": "マンダヴィル・アメイジング・ケーンを入手する",
       "fr": "Obtenir la canne éblouissante des Manderville.",
+      "ko": "훌륭한 맨더빌 환술봉 입수",
       "zh": "获得曼德维尔惊异牧杖。"
     },
     "item": 0,
@@ -67666,12 +67754,14 @@
     "de": "Manderville-Waffen: Fantastischer Manderville-Kodex",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・コーデックス",
     "fr": "Armes des Manderville : codex éblouissant",
+    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 치유서",
     "zh": "曼德维尔之学者·惊异",
     "description": {
       "en": "Obtain an amazing Manderville codex.",
       "de": "Den fantastischen Manderville-Kodex erhalten.",
       "ja": "マンダヴィル・アメイジング・コーデックスを入手する",
       "fr": "Obtenir le codex éblouissant des Manderville.",
+      "ko": "훌륭한 맨더빌 치유서 입수",
       "zh": "获得曼德维尔惊异魔导典。"
     },
     "item": 0,
@@ -67685,12 +67775,14 @@
     "de": "Manderville-Waffen: Fantastisches Manderville-Torquetum",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・トルクエタム",
     "fr": "Armes des Manderville : torquetum éblouissant",
+    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 좌표기",
     "zh": "曼德维尔之占星术士·惊异",
     "description": {
       "en": "Obtain an amazing Manderville torquetum.",
       "de": "Das fantastische Manderville-Torquetum erhalten.",
       "ja": "マンダヴィル・アメイジング・トルクエタムを入手する",
       "fr": "Obtenir le torquetum éblouissant des Manderville.",
+      "ko": "훌륭한 맨더빌 좌표기 입수",
       "zh": "获得曼德维尔惊异黄道仪。"
     },
     "item": 0,
@@ -67704,12 +67796,14 @@
     "de": "Manderville-Waffen: Fantastische Manderville-Hascherlite",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・ミルプレーヴェ",
     "fr": "Armes des Manderville : mein gwrac'h éblouissants",
+    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 밀프레베",
     "zh": "曼德维尔之贤者·惊异",
     "description": {
       "en": "Obtain an array of amazing Manderville milpreves.",
       "de": "Die fantastischen Manderville-Hascherlite erhalten.",
       "ja": "マンダヴィル・アメイジング・ミルプレーヴェを入手する",
       "fr": "Obtenir les mein gwrac'h éblouissants des Manderville.",
+      "ko": "훌륭한 맨더빌 밀프레베 입수",
       "zh": "获得曼德维尔惊异蛇石针。"
     },
     "item": 0,
