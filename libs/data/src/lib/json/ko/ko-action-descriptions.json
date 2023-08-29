@@ -7841,8 +7841,26 @@
   "31109": {
     "ko": "AA"
   },
+  "31116": {
+    "ko": "신나는 음악을 틉니다."
+  },
+  "31117": {
+    "ko": "신나는 음악을 틉니다.\n※ 전투 효과는 없습니다."
+  },
   "31314": {
     "ko": "20초 동안 자신의 이동 속도를 향상시킵니다."
+  },
+  "31396": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>초절 기술 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과를 소비하여, 자신을 중심으로 주위 적에게 신사적인 범위 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 1600"
+  },
+  "31397": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>초절 기술 시전 가능<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과를 소비하여, 대상을 향해 뛰어들면서 대상과 이동 경로상의 적에게 신사적인 물리 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 900"
+  },
+  "31398": {
+    "ko": "15초 동안 자신의 이동 속도를 신사적으로 크게 향상시킵니다."
+  },
+  "31399": {
+    "ko": "대상에게 강력하고 신사적인 리미트 브레이크를 시전합니다."
   },
   "31472": {
     "ko": "오랜 원한을 담아 대상을 놀라게 합니다."
@@ -7873,6 +7891,12 @@
   },
   "32068": {
     "ko": "여왕의 호위를 해제합니다."
+  },
+  "32781": {
+    "ko": "대상에게 피해를 줍니다."
+  },
+  "32782": {
+    "ko": "대상을 중심으로 범위 피해를 주고, 받는 피해 증가 상태를 부여합니다."
   },
   "33013": {
     "ko": "20초 동안 자신이 주는 물리 공격 피해량의 일부를 HP로 흡수합니다."
