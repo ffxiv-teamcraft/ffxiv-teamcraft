@@ -151,6 +151,30 @@ export class LogTrackerComponent extends TrackerComponent {
     }
   }
 
+  public ensureCorrectDoLPageDisplayed(dolTab: any, currentPageIndex = 0, forceSet = false): void {
+    if (dolTab === undefined) {
+      return;
+    }
+    if (this.hideCompleted && this.isDoLPageDone(dolTab[currentPageIndex])) {
+      const nextIncompletePage = [...dolTab.slice(currentPageIndex), ...dolTab.slice(0, currentPageIndex)].find(page => !this.isDoLPageDone(page));
+      this.dolSelectedPage = nextIncompletePage.id;
+    } else if (forceSet && this.dolSelectedPage !== dolTab[currentPageIndex].id) {
+      this.dolSelectedPage = dolTab[currentPageIndex].id;
+    }
+  }
+
+  public ensureCorrectDoHPageDisplayed(dohTab: any, currentPageIndex = 0, forceSet = false): void {
+    if (dohTab === undefined) {
+      return;
+    }
+    if (this.hideCompleted && this.isDoHPageDone(dohTab[currentPageIndex])) {
+      const nextIncompletePage = [...dohTab.slice(currentPageIndex), ...dohTab.slice(0, currentPageIndex)].find(page => !this.isDoHPageDone(page))
+      this.dohSelectedPage = nextIncompletePage.id;
+    } else if (forceSet && this.dohSelectedPage !== dohTab[currentPageIndex].id) {
+      this.dohSelectedPage = dohTab[currentPageIndex].id;
+    }
+  }
+
   public setType(index: number): void {
     this.router.navigate(['../', LogTrackerComponent.PAGE_TABS[index]], {
       relativeTo: this.route
