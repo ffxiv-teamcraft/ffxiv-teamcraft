@@ -10,26 +10,26 @@
             <div fxLayout="row" fxLayoutGap="10px">
               <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
                 <nz-switch [(ngModel)]="hideCompleted"
-                           (ngModelChange)="updateSelectedPage($event, showNotRequired, trackerType, dohTabs, [], true); selectedRecipes = {}"></nz-switch>
+                           (ngModelChange)="updateSelectedPage($event, showNotRequired, trackerType, dohTabs, [], true); selectedRecipes = {}; ensureCorrectDoHPageDisplayed(dohTabs[dohSubTabIndex])"></nz-switch>
                 <div>{{'LOG_TRACKER.Hide_completed' | translate}}</div>
               </div>
               <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
                 <nz-switch [(ngModel)]="showNotRequired"
-                           (ngModelChange)="updateSelectedPage(hideCompleted, $event, trackerType, dohTabs, [], true); selectedRecipes = {}"></nz-switch>
+                           (ngModelChange)="updateSelectedPage(hideCompleted, $event, trackerType, dohTabs, [], true); selectedRecipes = {}; ensureCorrectDoHPageDisplayed(dohTabs[dohSubTabIndex])"></nz-switch>
                 <div>{{'LOG_TRACKER.Show_not_required' | translate}}</div>
               </div>
             </div>
           </ng-template>
-          <nz-tabset (nzSelectedIndexChange)="dohSelectedPage = dohTabs[$event][0].id; selectedRecipes = {}" nzAnimated="false"
+          <nz-tabset (nzSelectedIndexChange)="dohSubTabIndex = $event; selectedRecipes = {}; ensureCorrectDoHPageDisplayed(dohTabs[$event], 0, true);" nzAnimated="false"
                      nzSize="small" [nzTabBarExtraContent]="hideCompletedToggle">
-            <nz-tab *ngFor="let tab of dohTabs$ | async; let index = index" [nzTitle]="titleTemplate">
+            <nz-tab *ngFor="let tab of dohTabs$ | async; let tabIndex = index" [nzTitle]="titleTemplate">
               <ng-template #titleTemplate>
                 <div class="flex-row align-center gap-2">
-                  <span class="companion-svg" [innerHtml]="(index + 8) | jobUnicode"></span>{{ (index + 8) | i18nRow:'jobName' | i18n }}
+                  <span class="companion-svg" [innerHtml]="(tabIndex + 8) | jobUnicode"></span>{{ (tabIndex + 8) | i18nRow:'jobName' | i18n }}
                 </div>
               </ng-template>
               <nz-tabset nzAnimated="false" nzSize="small" nzTabPosition="left" class="vertical-tabs">
-                <ng-container *ngFor="let page of tab">
+                <ng-container *ngFor="let page of tab; let pageIndex = index">
                   <nz-tab *ngIf="(!hideCompleted || !isDoHPageDone(page)) && (showNotRequired || page.requiredForAchievement)" [nzTitle]="dohTitleTemplate"
                           (nzSelect)="dohSelectedPage = page.id; selectedRecipes = {}">
                     <ng-template #dohTitleTemplate>
@@ -43,7 +43,7 @@
                     <nz-spin [nzSpinning]="userCompletion === {}">
                       <div *ngIf="dohSelectedPage === page.id" fxLayout="column" fxLayoutGap="5px" class="log-page-container">
                         <div class="toolbar" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="5px">
-                          <button (nzOnConfirm)="markDohPageAsDone(page)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
+                          <button (nzOnConfirm)="markDohPageAsDone(page); ensureCorrectDoHPageDisplayed(tab, pageIndex)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
                                   nz-popconfirm>
                             <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Mark_page_as_done' | translate}}
                           </button>
@@ -80,7 +80,7 @@
                                 <div class="recipe-details">rlvl {{recipe.rlvl}}</div>
                               </div>
                               <div>
-                                <button (click)="markDohAsDone(recipe.recipeId, true)" *ngIf="!userCompletion[recipe.recipeId]"
+                                <button (click)="markDohAsDone(recipe.recipeId, true); ensureCorrectDoHPageDisplayed(tab, pageIndex)" *ngIf="!userCompletion[recipe.recipeId]"
                                         [nzTooltipTitle]="'LOG_TRACKER.Mark_as_done' | translate"
                                         nz-button
                                         nz-tooltip
@@ -88,7 +88,7 @@
                                         nzSize="small">
                                   <i nz-icon nzType="check"></i>
                                 </button>
-                                <button (click)="markDohAsDone(recipe.recipeId, false)" *ngIf="userCompletion[recipe.recipeId]"
+                                <button (click)="markDohAsDone(recipe.recipeId, false); ensureCorrectDoHPageDisplayed(tab, pageIndex)" *ngIf="userCompletion[recipe.recipeId]"
                                         [nzTooltipTitle]="'LOG_TRACKER.Mark_as_not_done' | translate"
                                         nz-button
                                         nz-tooltip
@@ -116,7 +116,7 @@
         <ng-template #extraTemplate>
           <div class="dol-path-buttons" fxLayout="row" fxLayoutGap="10px">
             <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
-              <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="updateSelectedPage($event, showNotRequired, trackerType, [], dolTabs, true)"></nz-switch>
+              <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="updateSelectedPage($event, showNotRequired, trackerType, [], dolTabs, true); ensureCorrectDoLPageDisplayed(dolTabs[dolSubTabIndex])"></nz-switch>
               <div>{{'LOG_TRACKER.Hide_completed_items' | translate}}</div>
             </div>
             <button (click)="showOptimizedMap(dolTabs, 0)" [nzTooltipTitle]="'LOG_TRACKER.MIN_optimized_path' | translate" nz-button
@@ -132,30 +132,30 @@
           </div>
         </ng-template>
         <ng-template nz-tab>
-          <nz-tabset (nzSelectedIndexChange)="dolSelectedPage = dolTabs[$event][0].id;dolSubTabIndex = $event"
+          <nz-tabset (nzSelectedIndexChange)="dolSubTabIndex = $event; ensureCorrectDoLPageDisplayed(dolTabs[$event], 0, true)"
                      [nzTabBarExtraContent]="extraTemplate"
                      nzAnimated="false"
                      nzSize="small">
-            <nz-tab *ngFor="let tab of dolTabs$ | async; let index = index" [nzTitle]="titleTemplate">
+            <nz-tab *ngFor="let tab of dolTabs$ | async; let tabIndex = index" [nzTitle]="titleTemplate">
               <ng-template #titleTemplate>
-                <img [class.small-icon]="false | ifMobile: true" [src]="getDolIcon(index)" alt=""
+                <img [class.small-icon]="false | ifMobile: true" [src]="getDolIcon(tabIndex)" alt=""
                      class="job-icon">{{ tab.name }}
               </ng-template>
               <ng-template nz-tab>
                 <nz-tabset nzAnimated="false" nzSize="small" nzTabPosition="left" class="vertical-tabs">
-                  <ng-container *ngFor="let page of tab">
+                  <ng-container *ngFor="let page of tab; let pageIndex = index" nzSize="small" nzTabPosition="left" class="vertical-tabs">
                     <nz-tab *ngIf="!hideCompleted || !isDoLPageDone(page)" [nzTitle]="titleTemplate" (nzSelect)="dolSelectedPage = page.id">
                       <ng-template #titleTemplate>
-                    <span>{{ page.divisionId | i18nRow:'notebookDivision' | i18n }}
-                      ({{getDolPageCompletion(page)}})
-                    </span>
+                        <span>{{ page.divisionId | i18nRow:'notebookDivision' | i18n }}
+                          ({{getDolPageCompletion(page)}})
+                        </span>
                       </ng-template>
                       <ng-template nz-tab>
                         <nz-spin [nzSpinning]="userCompletion === {}">
                           <div *ngIf="dolSelectedPage === page.id" fxLayout="column" fxLayoutGap="5px" class="log-page-container">
                             <div class="toolbar" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="flex-end"
                                  fxLayoutGap="5px">
-                              <button (click)="markDolPageAsDone(page)" nz-button>
+                              <button (click)="markDolPageAsDone(page); ensureCorrectDoLPageDisplayed(tab, pageIndex)" nz-button>
                                 <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Mark_page_as_done' | translate}}
                               </button>
                             </div>
@@ -231,7 +231,7 @@
                                     </div>
                                     <div [nzMd]="4" nz-col></div>
                                     <div [nzMd]="2" nz-col>
-                                      <button (click)="markDolAsDone(item.itemId, true)" *ngIf="!userGatheringCompletion[item.itemId]"
+                                      <button (click)="markDolAsDone(item.itemId, true); ensureCorrectDoLPageDisplayed(tab, pageIndex)" *ngIf="!userGatheringCompletion[item.itemId]"
                                               [nzTooltipTitle]="'LOG_TRACKER.Mark_as_done' | translate"
                                               nz-button
                                               nz-tooltip
@@ -239,7 +239,7 @@
                                               nzType="primary" [disabled]="state.isAnonymous">
                                         <i nz-icon nzType="check"></i>
                                       </button>
-                                      <button (click)="markDolAsDone(item.itemId, false)" *ngIf="userGatheringCompletion[item.itemId]"
+                                      <button (click)="markDolAsDone(item.itemId, false); ensureCorrectDoLPageDisplayed(tab, pageIndex)" *ngIf="userGatheringCompletion[item.itemId]"
                                               [nzTooltipTitle]="'LOG_TRACKER.Mark_as_not_done' | translate"
                                               nz-button
                                               nz-tooltip
