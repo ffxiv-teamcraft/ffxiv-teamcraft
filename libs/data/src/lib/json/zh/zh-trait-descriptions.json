@@ -1494,22 +1494,22 @@
     "zh": "发动部分技能后星极超流发生变化\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动火神召唤时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>星极超流变为深红旋风\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动黄宝石之仪与黄宝石灾变时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>星极超流变为山崩\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动风神召唤时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>星极超流变为螺旋气流"
   },
   "504": {
-    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>先锋剑的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>暴乱剑的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>120\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>王权剑的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>120\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>圣灵的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>350\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>赎罪剑的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>380"
+    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>先锋剑的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>暴乱剑的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>140\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>王权剑的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>140\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>圣灵的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>350\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>赎罪剑的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>400"
   },
   "505": {
-    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>重劈的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>凶残裂的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>150\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>暴风斩的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>150\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>暴风碎的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>150"
+    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>重劈的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>凶残裂的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>150\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>暴风斩的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>160\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>暴风碎的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>160"
   },
   "506": {
     "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>重斩的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>170\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>吸收斩的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>120\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>噬魂斩的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>120"
   },
   "507": {
-    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>利刃斩的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>170\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>残暴弹的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>130\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>迅连斩的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>140"
+    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>利刃斩的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>残暴弹的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>160\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>迅连斩的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>140"
   },
   "508": {
     "zh": "武神枪的威力提高至260，死者之岸的威力提高至360\n另外，在使用龙眼雷电与龙眼苍穹时，对自身附加1档<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>天龙眼<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最大档数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2档"
   },
   "509": {
-    "zh": "天语的效果量提高到21%"
+    "zh": "天语的效果量提高到23%"
   },
   "510": {
     "zh": "自生变为自生II"
