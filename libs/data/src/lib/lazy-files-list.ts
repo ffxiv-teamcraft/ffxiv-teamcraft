@@ -365,7 +365,7 @@ export const lazyFilesList = {
   },
   'items': {
     'fileName': 'items.json',
-    'hashedFileName': 'items.8f9b8a132a0e4aaa1131432daa8cd2b001e5a3cb.json'
+    'hashedFileName': 'items.f506028975817a4470c7df0297713a77832282db.json'
   },
   'jobAbbr': {
     'fileName': 'job-abbr.json',
