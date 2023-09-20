@@ -95,6 +95,8 @@ export class MacroPopupComponent implements OnInit {
       switchMap(notification => {
         if (notification) {
           this.macro[0].push(notification);
+          this.totalDuration += this.addConsumablesWaitTime;
+          this.durationPerFragment[0] = this.addConsumablesWaitTime;
         }
         return safeCombineLatest([
           this.i18n.getActionName(new FinalAppraisal().getIds()[0]).pipe(
