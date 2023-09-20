@@ -3,7 +3,7 @@ import { PlatformService } from '../tools/platform.service';
 import { IpcRendererEvent } from 'electron';
 import { Router } from '@angular/router';
 import { Vector2 } from '@ffxiv-teamcraft/types';
-import { BehaviorSubject, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, first, map, switchMap } from 'rxjs/operators';
 import { ofMessageType } from '../rxjs/of-message-type';
 import { Store } from '@ngrx/store';
@@ -508,21 +508,32 @@ export class IpcService {
 
   private handlePcapError(error: { message: string }, raw = false): void {
     if (raw) {
-      this.notification.error(
-        this.translate.instant(`PCAP_ERRORS.Default`),
-        error.message,
-        {
-          nzDuration: 20000
-        }
-      );
+      this.translate.get(`PCAP_ERRORS.Default`).pipe(
+        first()
+      ).subscribe(title => {
+        this.notification.error(
+          title,
+          error.message,
+          {
+            nzDuration: 20000
+          }
+        );
+      });
     } else {
-      this.notification.error(
-        this.translate.instant(`PCAP_ERRORS.${error.message}`),
-        this.translate.instant(`PCAP_ERRORS.DESCRIPTION.${error.message}`),
-        {
-          nzDuration: 20000
-        }
-      );
+      combineLatest([
+        this.translate.get(`PCAP_ERRORS.${error.message}`),
+        this.translate.get(`PCAP_ERRORS.DESCRIPTION.${error.message}`)
+      ]).pipe(
+        first()
+      ).subscribe(([title, description]) => {
+        this.notification.error(
+          title,
+          description,
+          {
+            nzDuration: 20000
+          }
+        );
+      });
     }
   }
 }
