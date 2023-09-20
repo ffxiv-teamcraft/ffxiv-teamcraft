@@ -1048,7 +1048,7 @@
       "spot": 71,
       "hookset": 1,
       "tug": 0,
-      "bait": 2599,
+      "bait": 2611,
       "snagging": false,
       "minGathering": 0
     }
@@ -1927,7 +1927,9 @@
         1,
         2,
         4,
-        3
+        3,
+        5,
+        6
       ],
       "snagging": false,
       "minGathering": 0
@@ -2293,33 +2295,33 @@
   ],
   "4930": [
     {
-      "spot": 39,
-      "hookset": 1,
-      "tug": 0,
-      "bait": 2588,
-      "snagging": false,
-      "minGathering": 0
-    },
-    {
       "spot": 40,
-      "hookset": 1,
-      "tug": 0,
+      "hookset": 2,
+      "tug": 2,
       "bait": 2588,
       "snagging": false,
       "minGathering": 0
     },
     {
       "spot": 41,
-      "hookset": 1,
-      "tug": 0,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 2588,
+      "snagging": false,
+      "minGathering": 0
+    },
+    {
+      "spot": 39,
+      "hookset": 2,
+      "tug": 2,
       "bait": 2588,
       "snagging": false,
       "minGathering": 0
     },
     {
       "spot": 43,
-      "hookset": 1,
-      "tug": 0,
+      "hookset": 2,
+      "tug": 2,
       "bait": 2588,
       "snagging": false,
       "minGathering": 0
@@ -24789,8 +24791,6 @@
       "hookset": 1,
       "tug": 1,
       "bait": 36589,
-      "spawn": 8,
-      "duration": 16,
       "weathers": [
         3
       ],
