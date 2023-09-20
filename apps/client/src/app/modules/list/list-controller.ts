@@ -146,7 +146,7 @@ export class ListController {
       if (['finalItems', 'items'].indexOf(prop) > -1) {
         // We don't want to check the amount of items required for recipes, as they can't be wrong (provided by the user only).
         if (prop !== 'finalItems') {
-          list[prop].forEach(row => {
+          list[prop].forEach((row: ListRow) => {
             if (getItemSource(row, DataType.CRAFTED_BY).length === 0) {
               row.amount = row.amount_needed = ListController.totalAmountRequired(list, row);
             } else {
@@ -155,7 +155,7 @@ export class ListController {
             }
           });
         }
-        list[prop] = list[prop].filter(row => row.amount > 0);
+        list[prop] = list[prop].filter((row: ListRow) => row.amount > 0);
       }
     }
     return list;
@@ -470,16 +470,17 @@ export class ListController {
     let craft: CraftedBy;
     const crafts = getItemSource(addition.item, DataType.CRAFTED_BY);
     if (recipeId !== undefined) {
-      craft = crafts.find(c => c.id.toString() === recipeId.toString()) || crafts[0];
+      craft = crafts.find(c => c.id.toString() === recipeId.toString()) || getCraftByPriority(crafts, gearsets);
     } else {
       craft = getCraftByPriority(crafts, gearsets);
     }
-    const ingredients = craft ? recipes.find(r => r.id.toString() === craft.id.toString()).ingredients : getItemSource(addition.item, DataType.REQUIREMENTS);
+    const ingredients = craft ? craft.ingredients : getItemSource(addition.item, DataType.REQUIREMENTS);
 
     if (ListController.shouldIgnoreRequirements(list, finalItem ? 'finalItems' : 'items', addition.item.id)) {
       return [];
     }
-    return ingredients.map(element => {
+
+    return ingredients.map((element: { id: number; amount: number; }) => {
       const elementDetails = getExtract(extracts, +element.id);
       const nextIteration: CraftAddition[] = [];
       if (element.id < 20 && element.id > 1) {
@@ -501,7 +502,7 @@ export class ListController {
           const added = ListController.add(list, list.items, {
             id: elementDetails.id,
             amount: element.amount * addition.amount,
-            requires: recipes.find((r) => (r as any).result.toString() === element.id.toString()).ingredients,
+            requires: craftToAdd.ingredients,
             done: 0,
             used: 0,
             yield: yields,

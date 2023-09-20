@@ -16,7 +16,7 @@ import { numberToCssColor } from './string/number-to-css-color';
 
 export class XivDataService {
 
-  private readonly saintPath = process.env.SAINT_COINACH_PATH || 'H:\\WebstormProjects\\SaintCoinach\\SaintCoinach';
+  private readonly saintPath = process.env.SAINT_COINACH_PATH || 'G:\\WebstormProjects\\SaintCoinach\\SaintCoinach';
 
   private definitionsCache: Record<string, SaintDefinition> = {};
 

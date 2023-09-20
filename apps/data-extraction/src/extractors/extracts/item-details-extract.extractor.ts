@@ -336,9 +336,10 @@ export class ItemDetailsExtractExtractor extends AbstractExtractor {
         const level = index + 1;
         const firstCollectableDigit = Math.ceil(collectable.levelMax / 10);
         const firstLevelDigit = Math.ceil(level / 10);
-        let nerfedExp = firstCollectableDigit < firstLevelDigit && collectable.levelMax + 10 < level;
+        let nerfedExp = firstCollectableDigit < firstLevelDigit && collectable.levelMax + 10 < level && level >= 80;
         if (level % 10 === 0 && level > collectable.levelMax) {
-          nerfedExp = nerfedExp && (firstCollectableDigit + 1) < firstLevelDigit
+          nerfedExp = nerfedExp
+            && (firstCollectableDigit + 1) < firstLevelDigit
             || (level - collectable.levelMax) >= 10
             || collectable.levelMax % 10 === 0;
         }

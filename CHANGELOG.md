@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.6...v11.0.7) (2023-09-20)
+
+
+### Features
+
+* **data:** update for cn patch-6.4 ([de7371e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/de7371e90fdc71e102c6b0c4ccb715253f1d8f00))
+* **db:** support for CN 6.4 and allagan reports import ([2c16f02](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2c16f023898534600b66e2f3dbfb53a4cfccc943))
+* **db:** support for korean v6.35 update ([396a95c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/396a95c704082980ec9b3e68cd22a77f80c9bf25))
+
+
+### Bug Fixes
+
+* **collectables:** fix collectables exp nerf when lvl is too high ([1bc1671](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1bc1671b564355b823655040776f5f8b83884223))
+* **desktop:** bring back google oauth registration ([0e539ea](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0e539ea2512f769c81fb5846778ca9d035471e14))
+* **desktop:** handle free company crystal inventory ([fe0c56b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fe0c56b37726f902a7c03da9f627dfa9fa6e1a87))
+* **desktop:** translation fix for pcap errors ([ff6d952](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ff6d952c12cdaf51da689a1d051246e0b8145bac))
+* **gearset:** fixed stats sometimes not showing in details ([ba4830c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ba4830cca2f89835405251e39e54dbb452ea4fc8))
+* **list:** fixed jobs priority not taken into account for some crafts ([92836c9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/92836c99a5cc222cbfc8801f3a8acdafacfb3a63))
+* **log-tracker:** Ensure correct page is displayed when 'Hide Completed' is enabled ([ba62cb2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ba62cb2cb59f9e8368e847f94d5a693bedb20d05))
+* **settings:** fixed aetheryte names in French ([e873c66](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e873c663306c9110ad87cff6f666c4a1b65e35b1))
+* **simulator:** fixed macro duration computing with consumables notification ([63cdd81](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/63cdd8190151e4a97f25fa9294b0521f7db5a14e))
+
 ### [11.0.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.5...v11.0.6) (2023-08-23)
 
 

@@ -1,4 +1,5 @@
 import { CompactMasterbook } from '@ffxiv-teamcraft/types';
+import { LazyRecipe } from '@ffxiv-teamcraft/data/model/lazy-recipe';
 
 export interface CraftedBy {
   itemId: number | string;
@@ -7,6 +8,7 @@ export interface CraftedBy {
   id: string;
   job: number;
   yield: number;
+  ingredients: LazyRecipe['ingredients'];
   masterbook?: CompactMasterbook;
   rlvl?: number;
   durability?: number;

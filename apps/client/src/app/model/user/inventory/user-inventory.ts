@@ -26,6 +26,7 @@ export class UserInventory extends DataModel {
     ContainerType.SaddleBag1,
     ContainerType.PremiumSaddleBag0,
     ContainerType.PremiumSaddleBag1,
+    ContainerType.FreeCompanyCrystal,
     ContainerType.FreeCompanyBag0,
     ContainerType.FreeCompanyBag1,
     ContainerType.FreeCompanyBag2,

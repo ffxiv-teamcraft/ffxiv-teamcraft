@@ -270,9 +270,9 @@ export class StatsService {
                     statsRow = acc.stats[acc.stats.length - 1];
                   }
                   if (equipmentPiece.hq) {
-                    statsRow.value += stat.HQ;
+                    statsRow.value += stat.HQ || stat.NQ || 0;
                   } else {
-                    statsRow.value += stat.NQ;
+                    statsRow.value += stat.NQ || 0;
                   }
                 });
               materias.forEach(([materia, bonus]) => {
@@ -343,7 +343,6 @@ export class StatsService {
     );
   }
 
-  @Memoized()
   public getBaseValue(baseParamId: number, job: number, level: number, tribe: number): Observable<number> {
     if (baseParamId === BaseParam.CP) {
       return of(180);
@@ -358,11 +357,11 @@ export class StatsService {
       map(([modifier, tribeBonus]) => {
         if (StatsService.MAIN_STATS.indexOf(baseParamId) > -1) {
           return Math.floor(StatsService.LEVEL_TABLE[level][0] * modifier)
-            + tribeBonus;
+            + (tribeBonus || 0);
         }
         if (StatsService.SUB_STATS.indexOf(baseParamId) > -1) {
           return Math.floor(StatsService.LEVEL_TABLE[level][1] * modifier)
-            + tribeBonus;
+            + (tribeBonus || 0);
         }
         return 0;
       }),
@@ -491,7 +490,14 @@ export class StatsService {
     return 0;
   }
 
-  public getStatsDisplay(set: TeamcraftGearset, level: number, tribe: number, food?: any): Observable<{ baseParamIds: number[], name: string, value: number, next?: number, previous?: number, suffix?: string }[]> {
+  public getStatsDisplay(set: TeamcraftGearset, level: number, tribe: number, food?: any): Observable<{
+    baseParamIds: number[],
+    name: string,
+    value: number,
+    next?: number,
+    previous?: number,
+    suffix?: string
+  }[]> {
     return this.getAvgIlvl(set).pipe(
       switchMap(avgIlvl => {
         const display: { baseParamIds: number[], name: string, value: number, next?: number, previous?: number, suffix?: string }[] = [
