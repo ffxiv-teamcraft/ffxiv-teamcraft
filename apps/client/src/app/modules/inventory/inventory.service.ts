@@ -455,6 +455,7 @@ export class InventoryService {
       case ContainerType.PremiumSaddleBag0:
       case ContainerType.PremiumSaddleBag1:
         return 'SaddleBag';
+      case ContainerType.FreeCompanyCrystal:
       case ContainerType.FreeCompanyBag0:
       case ContainerType.FreeCompanyBag1:
       case ContainerType.FreeCompanyBag2:
