@@ -21,7 +21,7 @@ export class AnalyticsService {
   private pirsch: PirschWebClient;
 
   constructor(private platformService: PlatformService, private ipc: IpcService,
-              private translate: TranslateService) {
+              translate: TranslateService) {
     this.initPirsch(this.platformService.isDesktop());
     if (this.platformService.isDesktop()) {
       this.ipc.send('analytics:init', {
@@ -42,10 +42,14 @@ export class AnalyticsService {
   }
 
   private initPirsch(desktop: boolean): void {
-    this.pirsch = new Pirsch({
-      identificationCode: 'rfKDF2BBvfeaKFFLDuJVri1sV0zh5v4w',
-      hostname: 'ffxivteamcraft.com'
-    });
+    try {
+      this.pirsch = new Pirsch({
+        identificationCode: 'rfKDF2BBvfeaKFFLDuJVri1sV0zh5v4w',
+        hostname: 'ffxivteamcraft.com'
+      });
+    } catch (e) {
+      console.error('[Teamcraft] Pirsch Init has been blocked');
+    }
     if (desktop) {
       this.ipc.pcapToggle$.pipe(
         // Skip default value as it's a behaviorSubject
@@ -79,13 +83,21 @@ export class AnalyticsService {
 
   private pirschHit(): void {
     if (environment.production) {
-      this.pirsch.hit(this.generatePirschHit());
+      try {
+        this.pirsch.hit(this.generatePirschHit());
+      } catch (e) {
+        console.error('[Teamcraft] Pirsch API is blocked');
+      }
     }
   }
 
   public event(code: string, meta?: Record<string, Scalar>): void {
     if (environment.production) {
-      this.pirsch.event(code, 0, meta, this.generatePirschHit());
+      try {
+        this.pirsch.event(code, 0, meta, this.generatePirschHit());
+      } catch (e) {
+        console.error('[Teamcraft] Pirsch API is blocked');
+      }
     }
   }
 }
