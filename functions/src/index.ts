@@ -235,7 +235,7 @@ export const firestoreIslandStatePreventiveLock = functions.runWith(runtimeOpts)
   .onUpdate(async (change, context) => {
     const monitoringRef = admin.database().ref(`/mji_monitoring/${change.before.id}`);
     const updates = await monitoringRef.get().then(ref => ref.val());
-    console.log(`MJI Status update #${updates + 1} from user ${context.auth.uid}`);
+    console.log(`MJI Status update #${updates + 1} from user ${context.auth?.uid || 'Anonymous'}`);
     if (updates >= 2000 && !change.after.data().lock) {
       await firestore.doc(`mji-workshop-status/${change.before.id}`).update({ lock: true });
       await axios.post(functions.config().mji.webhook, {

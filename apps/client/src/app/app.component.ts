@@ -17,7 +17,7 @@ import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Rout
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
-import { catchError, delay, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
+import { catchError, delay, distinctUntilChanged, filter, first, map, shareReplay, skip, startWith, switchMap, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, fromEvent, Observable, of, Subject } from 'rxjs';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
@@ -579,10 +579,16 @@ export class AppComponent implements OnInit {
   updateDesktopApp(): void {
     this.ipc.send('update:check');
     this.checkingForUpdate$.next(UpdaterStatus.DOWNLOADING);
-    // After 5 minutes, maybe there's something wrong in the update download...
-    setTimeout(() => {
-      this.checkingForUpdate$.next(UpdaterStatus.POSSIBLE_ERROR);
-    }, 300000);
+    this.checkingForUpdate$.pipe(
+      filter(status => status === UpdaterStatus.NO_UPDATE || status === UpdaterStatus.UPDATE_AVAILABLE),
+      startWith(null),
+      skip(1),
+      first()
+    ).subscribe((status) => {
+      if (status === null) {
+        this.checkingForUpdate$.next(UpdaterStatus.POSSIBLE_ERROR);
+      }
+    });
   }
 
   ngOnInit(): void {
