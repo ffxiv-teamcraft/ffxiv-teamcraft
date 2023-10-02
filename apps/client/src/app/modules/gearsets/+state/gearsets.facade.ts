@@ -95,8 +95,7 @@ export class GearsetsFacade {
     );
 
   constructor(private store: Store<GearsetsPartialState>, private authFacade: AuthFacade,
-              private statsService: StatsService, private lazyData: LazyDataFacade,
-              private materiasService: MateriaService, private http: HttpClient,
+              private lazyData: LazyDataFacade, private http: HttpClient,
               private xivapi: XivapiService) {
   }
 

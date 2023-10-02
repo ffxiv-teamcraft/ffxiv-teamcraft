@@ -2,13 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
-import { catchError, map } from 'rxjs/operators';
-import { XivapiOptions, XivapiService } from '@xivapi/angular-client';
+import { catchError } from 'rxjs/operators';
 import { ExtractRow, I18nName, Region, SearchFilter, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Language } from '../data/language';
-import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
-import { withLazyData } from '../rxjs/with-lazy-data';
 import { environment } from '../../../environments/environment';
 import { LazyItemSearch } from '@ffxiv-teamcraft/data/model/lazy-item-search';
 import { LazyActionSearch } from '@ffxiv-teamcraft/data/model/lazy-action-search';
@@ -41,8 +38,6 @@ export class DataService {
               private ipc: IpcService,
               private platform: PlatformService,
               private settings: SettingsService,
-              private xivapi: XivapiService,
-              private lazyData: LazyDataFacade,
               private translate: TranslateService) {
     if (this.platform.isDesktop()) {
       this.ipc.on('search:ingest', (event, ingesting) => {
@@ -101,9 +96,6 @@ export class DataService {
   public search(query: string, type: SearchType.TRAIT, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<LazyTraitSearch['data'] & I18nName>>
   public search(query: string, type: SearchType, rawFilters: SearchFilter[], sort?: [string, 'asc' | 'desc']): Observable<Array<SearchResult & I18nName>>
   public search(query: string, type: SearchType, rawFilters: SearchFilter[], sort: [string, 'asc' | 'desc'] = [null, 'desc']) {
-    if (type === SearchType.LORE) {
-      return this.searchLore(query);
-    }
     const filters = rawFilters
       .filter(f => f.value !== null)
       .map(f => {
@@ -186,76 +178,5 @@ export class DataService {
 
   private prodSearch(params: any): Observable<SearchResult[]> {
     return this.http.get<SearchResult[]>('https://api.ffxivteamcraft.com/search', { params });
-  }
-
-  getSearchLang(): string {
-    const lang = this.searchLang;
-    if (lang === 'zh' && !this.isCompatible) {
-      return 'chs';
-    } else if (lang === 'ko' && !this.isCompatible) {
-      return lang;
-    } else if (['fr', 'en', 'ja', 'de'].indexOf(lang) === -1) {
-      return 'en';
-    }
-    return lang;
-  }
-
-  searchLore(query: string): Observable<any[]> {
-    const options: XivapiOptions = {};
-    if (this.settings.region === Region.China) {
-      options.baseUrl = this.baseUrl;
-    }
-
-    return this.xivapi.searchLore(query, this.getSearchLang(), true, ['Icon', 'Name_*', 'Banner'], 1, options).pipe(
-      withLazyData(this.lazyData, 'npcs', 'instances'),
-      map(([searchResult, npcs, instances]) => {
-        return searchResult.Results.map(row => {
-          switch (row.Source.toLowerCase()) {
-            case 'item':
-            case 'leve':
-            case 'quest': {
-              row.Data.showButton = true;
-              break;
-            }
-            case 'defaulttalk': {
-              const npcId = Object.keys(npcs)
-                .find(key => npcs[key].defaultTalks.indexOf(row.SourceID) > -1);
-              if (npcId === undefined) {
-                break;
-              }
-              row.Source = 'npc';
-              row.SourceID = +npcId;
-              row.Data.Icon = '/c/ENpcResident.png';
-              row.Data.showButton = true;
-              break;
-            }
-            case 'balloon': {
-              const npcId = Object.keys(npcs)
-                .find(key => npcs[key].balloon === row.SourceID);
-              if (npcId === undefined) {
-                break;
-              }
-              row.Source = 'npc';
-              row.SourceID = +npcId;
-              row.Data.Icon = '/c/ENpcResident.png';
-              row.Data.showButton = true;
-              break;
-            }
-            case 'instancecontenttextdata': {
-              const instanceId = Object.keys(instances)
-                .find(key => (instances[key].contentText || []).indexOf(row.SourceID) > -1);
-              if (instanceId === undefined) {
-                break;
-              }
-              row.Source = 'instance';
-              row.SourceID = +instanceId;
-              row.Data.showButton = true;
-              break;
-            }
-          }
-          return row;
-        });
-      })
-    );
   }
 }
