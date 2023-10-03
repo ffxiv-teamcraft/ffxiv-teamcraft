@@ -29,7 +29,8 @@ import { GAME_SERVERS, GAME_SERVERS_PER_DC } from '@ffxiv-teamcraft/data/handmad
 })
 export class LazyDataFacade {
 
-  public patches$ = this.http.get<XivapiPatch[]>('https://xivapi.com/patchlist').pipe(
+  public patches$ = this.getEntry('patchNames').pipe(
+    map(record => Object.values(record)),
     shareReplay(1)
   );
 

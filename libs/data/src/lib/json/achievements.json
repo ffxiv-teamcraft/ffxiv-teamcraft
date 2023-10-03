@@ -25284,7 +25284,7 @@
     "ja": "エウプロシュネを制覇せし者",
     "de": "Göttliche Freude",
     "fr": "Divine allégresse",
-    "icon": "/i/064000/064849.png",
+    "icon": "/i/002000/002669.png",
     "itemReward": 0
   },
   "3162": {
@@ -25656,11 +25656,11 @@
     "itemReward": 0
   },
   "3208": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Next Time, on Dragon 'Bo",
+    "ja": "東方のかわいいドラゴン",
+    "de": "Glücksdrache",
+    "fr": "Et le dragon piou",
+    "icon": "/i/059000/059861.png",
     "itemReward": 0
   },
   "3209": {
@@ -26717,6 +26717,710 @@
     "de": "Einen Berg versetzt",
     "fr": "Supplicier des montagnes",
     "icon": "/i/000000/000317.png",
+    "itemReward": 0
+  },
+  "3341": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3342": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3343": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3344": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3345": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3346": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3347": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3348": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3349": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3350": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3351": {
+    "en": "Satisfaction Guaranteed: Margrat I",
+    "ja": "マーグラット：ランク1",
+    "de": "Wer rastet, der rostet I",
+    "fr": "Je sers la science et c'est ma joie I",
+    "icon": "/i/025000/025507.png",
+    "itemReward": 0
+  },
+  "3352": {
+    "en": "Satisfaction Guaranteed: Margrat II",
+    "ja": "マーグラット：ランク2",
+    "de": "Wer rastet, der rostet II",
+    "fr": "Je sers la science et c'est ma joie II",
+    "icon": "/i/025000/025507.png",
+    "itemReward": 0
+  },
+  "3353": {
+    "en": "Satisfaction Guaranteed: Margrat III",
+    "ja": "マーグラット：ランク3",
+    "de": "Wer rastet, der rostet III",
+    "fr": "Je sers la science et c'est ma joie III",
+    "icon": "/i/025000/025507.png",
+    "itemReward": 0
+  },
+  "3354": {
+    "en": "Satisfaction Guaranteed: Margrat IV",
+    "ja": "マーグラット：ランク4",
+    "de": "Wer rastet, der rostet IV ",
+    "fr": "Je sers la science et c'est ma joie IV",
+    "icon": "/i/025000/025507.png",
+    "itemReward": 0
+  },
+  "3355": {
+    "en": "Satisfaction Guaranteed: Margrat V",
+    "ja": "マーグラット：ランク5",
+    "de": "Wer rastet, der rostet V ",
+    "fr": "Je sers la science et c'est ma joie V",
+    "icon": "/i/025000/025507.png",
+    "itemReward": 0
+  },
+  "3356": {
+    "en": "The Customer Is Always Right: Margrat I",
+    "ja": "マーグラットの得意先：ランク1",
+    "de": "Für die Wissenschaft I",
+    "fr": "Fournisseur officiel de Margrat I",
+    "icon": "/i/026000/026551.png",
+    "itemReward": 0
+  },
+  "3357": {
+    "en": "The Customer Is Always Right: Margrat II",
+    "ja": "マーグラットの得意先：ランク2",
+    "de": "Für die Wissenschaft II ",
+    "fr": "Fournisseur officiel de Margrat II",
+    "icon": "/i/026000/026551.png",
+    "itemReward": 0
+  },
+  "3358": {
+    "en": "The Customer Is Always Right: Margrat III",
+    "ja": "マーグラットの得意先：ランク3",
+    "de": "Für die Wissenschaft III",
+    "fr": "Fournisseur officiel de Margrat III",
+    "icon": "/i/026000/026551.png",
+    "itemReward": 0
+  },
+  "3359": {
+    "en": "The Customer Is Always Right: Margrat IV",
+    "ja": "マーグラットの得意先：ランク4",
+    "de": "Für die Wissenschaft IV ",
+    "fr": "Fournisseur officiel de Margrat IV",
+    "icon": "/i/026000/026551.png",
+    "itemReward": 0
+  },
+  "3360": {
+    "en": "The Customer Is Always Right: Margrat V",
+    "ja": "マーグラットの得意先：ランク5",
+    "de": "Für die Wissenschaft V",
+    "fr": "Fournisseur officiel de Margrat V",
+    "icon": "/i/026000/026551.png",
+    "itemReward": 0
+  },
+  "3361": {
+    "en": "The Customer Is Always Right: Margrat VI",
+    "ja": "マーグラットの得意先：ランク6",
+    "de": "Für die Wissenschaft VI",
+    "fr": "Fournisseur officiel de Margrat VI",
+    "icon": "/i/026000/026551.png",
+    "itemReward": 0
+  },
+  "3362": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3363": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3364": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3365": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3366": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3367": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3368": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3369": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3370": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3371": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3372": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3373": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3374": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3375": {
+    "en": "I Found That: Miner VIII",
+    "ja": "手帳好きの採掘師：ランク8",
+    "de": "Ich hab's gefunden: Minenarbeiter VIII",
+    "fr": "Carnet de notes : mineur VIII",
+    "icon": "/i/001000/001015.png",
+    "itemReward": 0
+  },
+  "3376": {
+    "en": "I Found That: Botanist VIII",
+    "ja": "手帳好きの園芸師：ランク8",
+    "de": "Ich hab's gefunden: Gärtner VIII",
+    "fr": "Carnet de notes : botaniste VIII",
+    "icon": "/i/001000/001065.png",
+    "itemReward": 0
+  },
+  "3377": {
+    "en": "I Caught That VIII",
+    "ja": "手帳好きの漁師：ランク8",
+    "de": "Dicker Fang VIII",
+    "fr": "Carnet de notes : pêcheur VIII",
+    "icon": "/i/001000/001104.png",
+    "itemReward": 0
+  },
+  "3378": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3379": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3380": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3381": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3382": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3383": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3384": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3385": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3386": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3387": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3388": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3389": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3390": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3391": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3392": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3393": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3394": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3395": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3396": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3397": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3398": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3399": {
+    "en": "Mammet Is the Measure of Most Things",
+    "ja": "無人島のレジェンド開拓者",
+    "de": "Krone aus Sand",
+    "fr": "Félicité légendaire",
+    "icon": "/i/001000/001052.png",
+    "itemReward": 0
+  },
+  "3400": {
+    "en": "Mapping the Realm: The Lunar Subterrane",
+    "ja": "月の地下渓谷を踏破せし者",
+    "de": "Kartograph: Monduntergrund",
+    "fr": "Cartographe du continent : Souterrain lunaire",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3401": {
+    "en": "Mapping the Realm: Thaleia",
+    "ja": "タレイアを踏破せし者",
+    "de": "Kartograph: Thaleia",
+    "fr": "Cartographe du continent : Thalie",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3402": {
+    "en": "Dusk to Dusk",
+    "ja": "暗黒妖異を狩りし者",
+    "de": "Schlächter der Dunkelheit",
+    "fr": "Disperser l'amalgame du néant",
+    "icon": "/i/000000/000317.png",
+    "itemReward": 0
+  },
+  "3403": {
+    "en": "Divine Satisfaction",
+    "ja": "タレイアを制覇せし者",
+    "de": "Mythenmacher",
+    "fr": "Divine abondance",
+    "icon": "/i/002000/002669.png",
+    "itemReward": 0
+  },
+  "3404": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3405": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3406": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3407": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3408": {
+    "en": "For Eorzea, For Etheirys",
+    "ja": "神々に愛されし者",
+    "de": "Geliebtes Kind",
+    "fr": "Enfant béni des Dieux",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "3409": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3410": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3411": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3412": {
+    "en": "Dragon-sitting",
+    "ja": "月に灯りし想い",
+    "de": "Drachengesang im Mondlicht",
+    "fr": "Cantate au clair de lune",
+    "icon": "/i/026000/026038.png",
+    "itemReward": 0
+  },
+  "3413": {
+    "en": "For Others to Follow",
+    "ja": "光明の起点",
+    "de": "Ein strahlender Neuanfang",
+    "fr": "Nitescence nouvelle",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "3414": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3415": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3416": {
+    "en": "愛と勇気の伝道師",
+    "ja": "愛と勇気の伝道師",
+    "de": "愛と勇気の伝道師",
+    "fr": "Tout un symbole",
+    "icon": "/i/052000/052793.png",
+    "itemReward": 0
+  },
+  "3417": {
+    "en": "花咲か姫様",
+    "ja": "花咲か姫様",
+    "de": "花咲か姫様",
+    "fr": "花咲か姫様",
+    "icon": "/i/004000/004276.png",
+    "itemReward": 0
+  },
+  "3418": {
+    "en": "カパパッパ！",
+    "ja": "カパパッパ！",
+    "de": "Plitschplatsch!",
+    "fr": "カパパッパ！",
+    "icon": "/i/056000/056635.png",
+    "itemReward": 0
+  },
+  "3419": {
+    "en": "Top Tier: Season Eight",
+    "ja": "コンフリクトの王者：シーズン8",
+    "de": "Kristallkönig (8. Saison)",
+    "fr": "Roi du conflit : saison 8",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3420": {
+    "en": "Crystal in the Rough: Season Eight",
+    "ja": "コンフリクトの勇者：シーズン8",
+    "de": "Kristallfürst (8. Saison)",
+    "fr": "Prince du conflit : saison 8",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3421": {
+    "en": "Ranked and Filed: Season Eight",
+    "ja": "コンフリクトの入賞者：シーズン8",
+    "de": "Kristallkämpfer (8. Saison)",
+    "fr": "As du conflit : saison 8",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3422": {
+    "en": "Top Tier: Season Nine",
+    "ja": "コンフリクトの王者：シーズン9",
+    "de": "Kristallkönig (9. Saison)",
+    "fr": "Roi du conflit : saison 9",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3423": {
+    "en": "Crystal in the Rough: Season Nine",
+    "ja": "コンフリクトの勇者：シーズン9",
+    "de": "Kristallfürst (9. Saison)",
+    "fr": "Prince du conflit : saison 9",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3424": {
+    "en": "Ranked and Filed: Season Nine",
+    "ja": "コンフリクトの入賞者：シーズン9",
+    "de": "Kristallkämpfer (9. Saison)",
+    "fr": "As du conflit : saison 9",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3425": {
+    "en": "Top Tier: Season Ten",
+    "ja": "コンフリクトの王者：シーズン10",
+    "de": "Kristallkönig (10. Saison)",
+    "fr": "Roi du conflit : saison 10",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3426": {
+    "en": "Crystal in the Rough: Season Ten",
+    "ja": "コンフリクトの勇者：シーズン10",
+    "de": "Kristallfürst (10. Saison)",
+    "fr": "Prince du conflit : saison 10",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3427": {
+    "en": "Ranked and Filed: Season Ten",
+    "ja": "コンフリクトの入賞者：シーズン10",
+    "de": "Kristallkämpfer (10. Saison)",
+    "fr": "As du conflit : saison 10",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3428": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
     "itemReward": 0
   }
 }

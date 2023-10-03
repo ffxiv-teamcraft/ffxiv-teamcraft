@@ -4,11 +4,12 @@ import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { TranslateService } from '@ngx-translate/core';
 import { Memoized } from '../../../core/decorators/memoized';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
-import { ExtractRow, LazyDataKey, XivapiPatch } from '@ffxiv-teamcraft/types';
+import { ExtractRow, LazyDataKey } from '@ffxiv-teamcraft/types';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { LazyPatchName } from '@ffxiv-teamcraft/data/model/lazy-patch-name';
 
 export class ConsolidateStacks extends InventoryOptimizer {
 
@@ -19,8 +20,8 @@ export class ConsolidateStacks extends InventoryOptimizer {
   }
 
   @Memoized()
-  getPatch(patches: XivapiPatch[], id: number): any {
-    return patches.find(p => p.ID === id);
+  getPatch(patches: LazyPatchName[], id: number): LazyPatchName {
+    return patches.find(p => p.id === id);
   }
 
   itemInExpansion(itemId: number, expansion: number): Observable<boolean> {
@@ -39,7 +40,7 @@ export class ConsolidateStacks extends InventoryOptimizer {
         if (!patch) {
           return true;
         }
-        return patch.ExVersion <= expansion;
+        return patch.ex <= expansion;
       })
     );
   }

@@ -3852,22 +3852,22 @@
     "qualityModifier": 100
   },
   "642": {
-    "progressDivider": 130,
-    "progressModifier": 80,
-    "qualityDivider": 115,
-    "qualityModifier": 70
+    "progressDivider": 180,
+    "progressModifier": 100,
+    "qualityDivider": 180,
+    "qualityModifier": 100
   },
   "643": {
-    "progressDivider": 130,
-    "progressModifier": 80,
-    "qualityDivider": 115,
-    "qualityModifier": 70
+    "progressDivider": 180,
+    "progressModifier": 100,
+    "qualityDivider": 180,
+    "qualityModifier": 100
   },
   "644": {
-    "progressDivider": 130,
-    "progressModifier": 80,
-    "qualityDivider": 115,
-    "qualityModifier": 70
+    "progressDivider": 180,
+    "progressModifier": 100,
+    "qualityDivider": 180,
+    "qualityModifier": 100
   },
   "645": {
     "progressDivider": 130,

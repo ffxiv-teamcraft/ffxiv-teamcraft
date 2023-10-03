@@ -21597,7 +21597,7 @@
   "2003318": {
     "en": "Family Portrait",
     "ja": "",
-    "de": "Familienporträt",
+    "de": "Familienportrait",
     "fr": "Portrait de famille",
     "icon": "/i/026000/026179.png"
   },
@@ -22510,5 +22510,19 @@
     "de": "Signierter Armreif",
     "fr": "Bracelet gravé",
     "icon": "/i/026000/026107.png"
+  },
+  "2003471": {
+    "en": "Curiously Carrot-shaped Amplifier",
+    "ja": "",
+    "de": "Rübikator Mk-1",
+    "fr": "Amplificarotteur",
+    "icon": "/i/025000/025207.png"
+  },
+  "2003472": {
+    "en": "Apocryphal Horn",
+    "ja": "",
+    "de": "Apokryph-Horn",
+    "fr": "Cor de l'éternité",
+    "icon": "/i/026000/026038.png"
   }
 }

@@ -350,8 +350,8 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
               private activatedRoute: ActivatedRoute, private xivapi: XivapiService,
               private lazyData: LazyDataFacade, private cd: ChangeDetectorRef,
               public translate: TranslateService, private dialog: NzModalService,
-              private statsService: StatsService,
-              private i18n: I18nToolsService, private ipc: IpcService, private environment: EnvironmentService) {
+              private statsService: StatsService, private i18n: I18nToolsService,
+              private ipc: IpcService, private environment: EnvironmentService) {
     super();
     this.gearset$.pipe(
       distinctUntilKeyChanged('$key'),

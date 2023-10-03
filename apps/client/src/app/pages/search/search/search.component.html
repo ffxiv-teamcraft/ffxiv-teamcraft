@@ -78,8 +78,8 @@
                 <nz-input-group [nzAddOnBefore]="'SEARCH.Patch' | translate">
                   <nz-select class="patch-select with-addon-before" formControlName="Patch" nzShowSearch>
                     <nz-option [nzLabel]="'SEARCH.Any' | translate" [nzValue]="-1"></nz-option>
-                    <nz-option *ngFor="let patch of patches$ | async" [nzLabel]="patch.Version"
-                               [nzValue]="patch.ID">
+                    <nz-option *ngFor="let patch of patches$ | async" [nzLabel]="patch.version"
+                               [nzValue]="patch.id">
                     </nz-option>
                   </nz-select>
                 </nz-input-group>
@@ -410,8 +410,8 @@
       </nz-card>
     </ng-container>
     <div *ngIf="patch$ | async as patch" class="patch" fxLayout="column" fxLayoutAlign="center center">
-      <a fxLayout="column" fxLayoutAlign="center center" routerLink="/db/{{translate.currentLang}}/patch/{{patch.ID}}">
-        <img *ngIf="patch.Banner; else patchName" [alt]="patch | xivapiL12n: 'patchs' | i18n" [src]="patch.Banner" class="patch-banner">
+      <a fxLayout="column" fxLayoutAlign="center center" routerLink="/db/{{translate.currentLang}}/patch/{{patch.id}}">
+        <img *ngIf="patch.banner; else patchName" [alt]="patch | xivapiL12n: 'patchs' | i18n" [src]="patch.banner" class="patch-banner">
         <ng-template #patchName><h3 [innerHTML]="patch | xivapiL12n: 'patchs' | i18n"></h3></ng-template>
         <div>{{'DB.PATCH.Open_patch_page' | translate}}</div>
       </a>

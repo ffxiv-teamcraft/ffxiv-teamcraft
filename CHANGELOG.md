@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.7...v11.0.8) (2023-10-03)
+
+
+### Features
+
+* **db:** 6.5 content update ([4edf057](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4edf057595409b23e584ad7297070344f550bf2e))
+* **db:** support for korean v6.38 update ([90afca7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/90afca76ba2c28e976050931eddb6c2671d48990))
+* **search:** removed LORE search type to lower XIVAPI dependency # ([b937101](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b937101e86eaffbf0b50a5a1066d978332ebef67))
+
+
+### Bug Fixes
+
+* **core:** prevent some crashes when pirsch API is blocked ([331fc56](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/331fc56da8f46d0410be910051888e19285f2477))
+* **core:** updated dependencies for security fixes ([c740509](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c7405097b7c016ed76ec4b2b2a9fc1871b39659e))
+* **desktop:** better status report for updater ([bac30e3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bac30e32c02efe7d3e2a5f2add0b479a872e0c08))
+* **fish-mooches:** fix mooches data loading feedback ([#2709](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2709)) ([c4d4e37](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c4d4e374cff54293cdd24f2cfa8af91923b92f50)), closes [#2693](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2693)
+
 ### [11.0.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.6...v11.0.7) (2023-09-20)
 
 

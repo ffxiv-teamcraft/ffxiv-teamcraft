@@ -3299,7 +3299,7 @@ export const mapIds = [
     "id": 413,
     "zone": 2367,
     "name": "The Drowned City of Skalla",
-    "territory": 731,
+    "territory": 1172,
     "scale": 200,
     "weatherRate": 0
   },
@@ -3315,7 +3315,7 @@ export const mapIds = [
     "id": 415,
     "zone": 2367,
     "name": "The Drowned City of Skalla",
-    "territory": 731,
+    "territory": 1172,
     "scale": 200,
     "weatherRate": 0
   },
@@ -3835,7 +3835,7 @@ export const mapIds = [
     "id": 480,
     "zone": 2851,
     "name": "The Burn",
-    "territory": 789,
+    "territory": 1173,
     "scale": 200,
     "weatherRate": 97
   },
@@ -3995,7 +3995,7 @@ export const mapIds = [
     "id": 500,
     "zone": 2586,
     "name": "The Ghimlyt Dark",
-    "territory": 793,
+    "territory": 1174,
     "scale": 200,
     "weatherRate": 0
   },
@@ -6822,5 +6822,381 @@ export const mapIds = [
     "territory": 1155,
     "scale": 200,
     "weatherRate": 74
+  },
+  {
+    "id": 854,
+    "zone": 4094,
+    "name": "",
+    "territory": 1138,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 855,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 856,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 857,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 858,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 859,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 860,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 861,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 862,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 863,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 864,
+    "zone": 4431,
+    "name": "The Lunar Subterrane",
+    "territory": 1164,
+    "scale": 200,
+    "weatherRate": 149
+  },
+  {
+    "id": 865,
+    "zone": 4431,
+    "name": "The Lunar Subterrane",
+    "territory": 1164,
+    "scale": 200,
+    "weatherRate": 149
+  },
+  {
+    "id": 866,
+    "zone": 4043,
+    "name": "Unnamed Island",
+    "territory": 1055,
+    "scale": 100,
+    "weatherRate": 148
+  },
+  {
+    "id": 867,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 868,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 869,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 870,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 871,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 872,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 873,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 874,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 875,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 876,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 877,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 878,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 879,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 880,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 881,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 882,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 883,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 884,
+    "zone": 4443,
+    "name": "Thaleia",
+    "territory": 1178,
+    "scale": 200,
+    "weatherRate": 147
+  },
+  {
+    "id": 885,
+    "zone": 4443,
+    "name": "Thaleia",
+    "territory": 1178,
+    "scale": 200,
+    "weatherRate": 147
+  },
+  {
+    "id": 886,
+    "zone": 4443,
+    "name": "Thaleia",
+    "territory": 1178,
+    "scale": 200,
+    "weatherRate": 147
+  },
+  {
+    "id": 887,
+    "zone": 4443,
+    "name": "Thaleia",
+    "territory": 1178,
+    "scale": 200,
+    "weatherRate": 147
+  },
+  {
+    "id": 888,
+    "zone": 4443,
+    "name": "Thaleia",
+    "territory": 1178,
+    "scale": 200,
+    "weatherRate": 147
+  },
+  {
+    "id": 889,
+    "zone": 4443,
+    "name": "Thaleia",
+    "territory": 1178,
+    "scale": 200,
+    "weatherRate": 147
+  },
+  {
+    "id": 890,
+    "zone": 4443,
+    "name": "Thaleia",
+    "territory": 1178,
+    "scale": 200,
+    "weatherRate": 147
+  },
+  {
+    "id": 891,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 892,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 893,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 894,
+    "zone": 4441,
+    "name": "The Abyssal Fracture",
+    "territory": 1168,
+    "scale": 400,
+    "weatherRate": 149
+  },
+  {
+    "id": 895,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 896,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 897,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 898,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 899,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
+  },
+  {
+    "id": 900,
+    "zone": 0,
+    "name": "",
+    "territory": null,
+    "scale": 0,
+    "weatherRate": null
   }
 ];

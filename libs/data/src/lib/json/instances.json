@@ -494,7 +494,7 @@
     "description": {
       "en": "The once-proud Pharos Sirius is twice dishonored─once by the Calamity, and now by the deadly siren of Umbra, who plots to hold the lighthouse as a personal stronghold with the aid of her minions. Silence her lunatic song, dispatch the usual suspects─ashkin and winged monstrosities─and reclaim the light of the civilized world.",
       "ja": "霊災によって被災し、巨大な偏属性クリスタルに貫かれてしまった「シリウス大灯台」。その修繕作業は、伝説の魔物「セイレーン」の妨害により、遅々として進んでいなかった。<br>一度は撃退したものの、再び現われたセイレーンは大灯台を占拠。亡者と怪鳥を呼び寄せ、自らの城として守りを固めたのだった。エオルゼア最大の灯台を攻略せよ！",
-      "de": "Einst warnte der eindrucksvolle Pharos Sirius Seefahrer, die den nahegelegenen Bierhafen anliefen, vor den trügerischen Phantominseln. Seit der Katastrophe ist der Leuchtturm jedoch stark beschädigt und von energiereichen Kristallen durchwuchert. Die Sirene, das legendäre Fabelwesen der Phantominseln, hat seitdem jegliche Versuche, den Leuchtturm instandzusetzen, unmöglich gemacht. Einmal wurde die Sirene vertrieben, doch sie ist zurückgekehrt und hat sich im Pharos Sirius eingenistet. Die Fischer von Bierhafen munkeln, dass sie nachts die Schreie längst verschollen geglaubter Seeleute aus dem Turm dringen hören. Was für ein fürchterliches Spiel treibt das abscheuliche Sirenenwesen? Sie und ihre monströse Brut gehören aus dem Pharos Sirius vertrieben!",
+      "de": "Einst warnte der eindrucksvolle Pharos Sirius Seefahrer, die den nahegelegenen Bierhafen anliefen, vor den trügerischen Phantominseln. Seit der Katastrophe ist der Leuchtturm jedoch stark beschädigt und von energiereichen Kristallen durchwuchert. Die Sirene, das legendäre Fabelwesen der Phantominseln, hat seitdem jegliche Versuche, den Leuchtturm instand zu setzen, unmöglich gemacht. Einmal wurde die Sirene vertrieben, doch sie ist zurückgekehrt und hat sich im Pharos Sirius eingenistet. Die Fischer von Bierhafen munkeln, dass sie nachts die Schreie längst verschollen geglaubter Seeleute aus dem Turm dringen hören. Was für ein fürchterliches Spiel treibt das abscheuliche Sirenenwesen? Sie und ihre monströse Brut gehören aus dem Pharos Sirius vertrieben!",
       "fr": "N'ayant pas échappé aux dégâts du Fléau, le gigantesque Phare de Sirius est désormais transpercé par un immense cristal corrompu. Désireuses de remettre en état cette installation cruciale pour le trafic maritime, les autorités limséennes ont lancé des travaux de réfection de grande envergure, mais elles se heurtent à un problème imprévu, la présence dans les lieux d'une créature marine légendaire, la sirène.<br>Suite à la défaite que lui ont récemment infligée des aventuriers, elle s'est installée dans le phare et accompagnée de nombreux morts-vivants et d'autres rapaces côtiers, elle compte bien défendre bec et ongles son nouveau domaine. Braves combattants d'Éorzéa, vous allez devoir affronter cette abomination, tout en vous méfiant de ses chants, pour lui reprendre cet édifice&nbsp;!"
     },
     "members": {
@@ -2853,6 +2853,38 @@
     "contentText": [
       36605,
       36600
+    ]
+  },
+  "91": {
+    "id": 91,
+    "en": "The Lunar Subterrane",
+    "ja": "深淵潜行 月の地下渓谷",
+    "de": "Monduntergrund",
+    "fr": "Le Souterrain lunaire",
+    "description": {
+      "en": "Long has Golbez guarded the location of his domain, a solemn sanctuary wherein he conspired to break the barrier between worlds. It is there, within the recesses of the Thirteenth's moon, Zeromus bides its time, gathering the strength that will see Golbez's plan to fruition. But what else could he be guarding in this subterranean labyrinth? What secrets might be laid bare by those willing to brave its abyssal depths?",
+      "ja": "ゴルベーザの企てにより、次元の壁を打ち破るために生み出された大妖異ゼロムス。その贄となった月竜アジュダヤを救い出すためには、深き闇で覆われた赤き月の大穴へと向かわなければならない。<br>光の戦士たち一行は、第一世界からヴォイドへと光を転移させることで突破口の生成に成功。ゴルべーザの領域でもある月の地下渓谷を下ることになる。さあ、今こそ妄執渦巻く月の底に、ひと筋の光を届けるのだ！",
+      "de": "Endlich ist es so weit&nbsp;- Euer Vorhaben, Golbez' finstere Pläne zu vereiteln und eine Möglichkeit zu finden, die von Zeromus vereinnahmte Azdaja zu retten, ist in greifbarer Nähe. Und so begibt sich die Gruppe ein letztes Mal zu jenem von Dunkelheit verhüllten Krater auf dem roten Mond des dreizehnten Splitters.<br>Mithilfe des aus dem ersten Splitter über die Dimensionen hinweg transportierten Lichts gelingt es schließlich auch die wabernde Dunkelheit zu durchbrechen und einen Weg in die Tiefen des unheilvollen Kraters freizumachen. Nun liegt es an euch, einen Funken Licht der Hoffnung bis zum Grunde des Mondes zu tragen.",
+      "fr": "Golbez vous a dévoilé ses plans sous l'apparence grotesque de Zeromus, une gigantesque créature du néant capable de déchirer la barrière entre les dimensions. Afin de sauver Azdaja, vous n'avez d'autre choix que de vous précipiter dans le trou béant défigurant la lune du néant, et pour percer le manteau de Ténèbres vous en empêchant, vos compagnons et vous-même y avez opposé une immense quantité de Lumière, envoyée directement depuis le premier reflet. Nul doute que Golbez vous attend de pied ferme dans les tréfonds de la lune rouge. À vous maintenant d'y accompagner cet éclat de Lumière&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 1,
+      "MeleesPerParty": 1,
+      "RangedPerParty": 1,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061801.png",
+    "banner": "/i/112000/112543.png",
+    "gamePatch": 77,
+    "contentType": 2,
+    "levelReq": 90,
+    "ilvlReq": 620,
+    "sync": 90,
+    "exp": 0,
+    "map": 864,
+    "contentText": [
+      37852,
+      37800
     ]
   },
   "5001": {
@@ -8239,6 +8271,70 @@
       36700
     ]
   },
+  "20091": {
+    "id": 20091,
+    "en": "The Abyssal Fracture",
+    "ja": "ゼロムス討滅戦",
+    "de": "Prophetie - Zeromus",
+    "fr": "La Fracture abyssale",
+    "description": {
+      "en": "'Twas only when the Ascians' god was brought low, its remnants dispersed into aether, that Golbez could piece together his plan. In the red moon's answer to the Cradle of Darkness did he use that aether to birth the dread voidsent Zeromus, which, driven by Azdaja's longing to return home, is now poised to break the barrier between worlds. And so the Warrior of Light stands fast against the Darkness, a flickering beacon of hope. Should they fail, the Thirteenth's deliverance will prove the Source's destruction.",
+      "ja": "かつて、英雄ゴルベーザの親友だったドゥランテという男がいた。英雄を自らの手で封印しその名を継いだ男は、ゾディアークのエーテルの残滓にアジュダヤの魂を喰らわせ、大妖異ゼロムスを誕生させる。それにより引き起こされる次元の壁の崩壊こそが、世界の救済になると信じて。<br>ゼロムスの完全なる覚醒まで、もはや一刻の猶予もない。原初世界を護り、アジュダヤを救い出すため、ヴォイドの英雄の名を冠する大妖異ゼロムスを討て！",
+      "de": "Es ward einmal ein Mann namens Durante, seines Zeichens bester Freund des Helden Golbez. Der Fall eben jenes Freundes brachte Durante dazu, nicht nur seinen Namen, sondern auch Golbez' Ambitionen ihrer Welt zu einer besseren Zukunft zu verhelfen, anzunehmen. Doch wie das Schicksal manchmal so ist, führten ihn die tugendhaften Ambitionen seines Freundes auf einen Irrpfad voller Leid und Zerstörung, an dessen Ende er das mächtige Nichtswesen Zeromus beschwört, um den Wall zwischen den Welten niederzureißen. Nun rückt das vollständigen Erwachen der Bestie immer näher. Um deine Heimat vor seinem dunklen Einfluss zu bewahren und Azdaja endgültig zu retten, gilt es Zeromus niederzustrecken!",
+      "fr": "Le nom de Golbez est aujourd'hui encore connu de tous, mais peu se souviennent qu'un certain Durante combattait à ses côtés. Ce que l'Histoire ne dit pas, c'est que ce dernier fut contraint de sceller Golbez après qu'il eut succombé aux Ténèbres, et décida d'endosser l'armure noire du héros afin de poursuivre son œuvre à travers les âges. C'est également en son nom que Durante a jeté en pâture la dragonne Azdaja aux fragments de Zordiarche. Ceci permit la naissance de la créature qu'il a baptisée “Zeromus”, injuste hommage à un héros des temps anciens. Cette gigantesque aberration, capable de briser le mur entre les dimensions, serait la clef nécessaire pour concrétiser l'ultime salut du néant tel que le conçoit son créateur. <br>Pour sauver le monde primitif et Azdaja, triomphez de cet abominable amalgame du néant avant qu'il n'atteigne le paroxysme de sa puissance&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112544.png",
+    "gamePatch": 88,
+    "contentType": 4,
+    "levelReq": 90,
+    "ilvlReq": 625,
+    "sync": 90,
+    "exp": 0,
+    "map": 894,
+    "contentText": [
+      38032,
+      38000
+    ]
+  },
+  "20092": {
+    "id": 20092,
+    "en": "The Abyssal Fracture (Extreme)",
+    "ja": "極ゼロムス討滅戦",
+    "de": "Eschatos - Zeromus",
+    "fr": "La Fracture abyssale (extrême)",
+    "description": {
+      "en": "Fueled by a yearning not its own, the voidsent Zeromus was poised to shatter the barrier between worlds. Its passage would be halted thanks in part to another denizen of the void, one who wielded splendorous Light to change both her fate and that of the Thirteenth. Yet what if Light's refulgence proved too great for this voidsent vagabond steeped in Darkness? Would aught else have stayed Zeromus's hand? These questions and more fuel the Wandering Minstrel's imagination as he weaves his benighted ballad, its measured tones calling your mind back to a most harrowing encounter.",
+      "ja": "異邦の詩人は謳う。愛しき故郷への帰還を夢見、世界の壁を打ち砕こうとした妖異の願いを。もしも闇衣の妖異が次元を越え、光に呑まれた世界で己の運命を変える決意をしていなければ、囚われし月竜の行く末も違ったものになっていただろうか。ヴォイドの未来に思いを馳せながら謳われた歌を聴き、冒険者は今、ゼロムスとの戦いを追体験する。",
+      "de": "Des Fahrenden Sängers Klänge zeugen von Sehnsucht und Trauer, aber auch von Hoffnung. Eine lang erwartete Heimkehr. Ein Traum, der nicht der eigene ist. Was das Schicksal wohl bereitgehalten hätte, wenn der Engel im dunklen Mantel nicht mit dem Licht in Berührung gekommen wäre? Als dir all diese Gedanken beim Zuhören durch den Kopf gehen, fühlst du dich plötzlich in eine frühere Zeit zurückversetzt&nbsp;- eine Zeit, in der jenes Nichtswesen noch den Wall der Welten zu zerteilen suchte&nbsp;...",
+      "fr": "Le ménestrel errant écoutant attentivement le récit de vos aventures au cœur de la lune rouge, de funestes possibilités l'ont inspiré. C'est ce qu'il a tenté de retranscrire au travers de cette mélopée lugubre, dépeignant le destin tragique d'une Azdaja ayant abandonné tout espoir de revoir un jour son monde natal. Saurez-vous triompher à nouveau d'une créature gigantesque telle que Zeromus, consumée par le désespoir et plus sauvage que jamais&nbsp;?"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112545.png",
+    "gamePatch": 91,
+    "contentType": 4,
+    "levelReq": 90,
+    "ilvlReq": 640,
+    "sync": 90,
+    "exp": 0,
+    "map": 894,
+    "contentText": [
+      38032,
+      38000
+    ]
+  },
   "25001": {
     "id": 25001,
     "en": "the Haunted Manor",
@@ -10509,7 +10605,7 @@
     "description": {
       "en": "While you recuperated from the latest round of testing, Omega's trials proceeded apace. Of the eighty-nine combatants in Psi group, four emerged victorious. Of those four, one proved itself the mightiest entity of the last remaining test world: a champion designated as “Psi IV.” This immensely powerful being will be your opponent as you strive to complete the final stage of Omega's grueling experiments.",
       "ja": "オメガによる検証は、いよいよ最終段階へと入りつつあった。そんな中、アルファグループとして勝利を重ねてきた光の戦士たちに対し、オメガは残る被検世界の勝者との対戦を命じる。戦闘対象は、コード「プサイIV」。オメガが生成した89体の疑似生命体のうち、勝ち上がったプサイグループの4体を、さらに競わせ生き残った個体である。今、最強の1体との検証が始まる！",
-      "de": "Bisher hat sich eure Gruppe Alpha gut geschlagen, doch der härteste Test steht euch noch bevor. Von den 89 Kreaturen, die Omega erschaffen hatte, schafften es vier in die enge Auswahl der Psigruppe. Von ihnen hat sich eine endgültig duchgesetzt, die mächtigste von allen. Diesen Gegner müsst ihr besiegen, um Omegas Tests zum Abschluss zu bringen!",
+      "de": "Bisher hat sich eure Gruppe Alpha gut geschlagen, doch der härteste Test steht euch noch bevor. Von den 89 Kreaturen, die Omega erschaffen hatte, schafften es vier in die enge Auswahl der Psigruppe. Von ihnen hat sich eine endgültig durchgesetzt, die mächtigste von allen. Diesen Gegner müsst ihr besiegen, um Omegas Tests zum Abschluss zu bringen!",
       "fr": "Alors que son test est entré dans sa dernière phase, l'arme autonome décide de vous opposer l'adversaire ultime, le combattant sorti vainqueur des autres mondes de test avant de prendre le dessus sur ses équipiers du groupe Psi. Son nom de code&nbsp;: Psi IV. Cette fois ça y est, vous voilà face au meilleur des quatre-vingt-neuf sujets de test créés par Oméga&nbsp;!"
     },
     "members": {
@@ -12580,6 +12676,38 @@
       36900
     ]
   },
+  "30134": {
+    "id": 30134,
+    "en": "Thaleia",
+    "ja": "華めく神域 タレイア",
+    "de": "Thaleia",
+    "fr": "Domaine divin - Thalie",
+    "description": {
+      "en": "It was out of their undying love for mankind that the Twelve constructed the monument at the heart of the Omphalos, that they might never lose sight of their purpose. To answer that love, you must sally forth into their sanctum one last time to grant them their heart's desire. Oschon─or Deryk, as you had known him─awaits with his brethren Thaliak and Llymlaen in their heavenly domain. Brave torrential waters, weather stormy winds, and vanquish these remaining deities, and you shall finally arrive at the truth of their mysterious objective.",
+      "ja": "エオルゼア十二神は人を愛し、人の神で在り続けるためにくびきを記し、そして同じ心で人との戦いを望む。その想いに応え、彼らの真意に至るために、神々との最後の戦いを始めよう。<br>調査を共にしたデリックは、旅神オシュオンとして神域の最奥で真実を伝えると話した。ハイデリンと想いを同じくする十二神が、終末を退けた人へ抱く願いとは何なのか。すべての神々に勝利したときに何が起こるのか。そのすべてを受け止める「人」を、水うねり、風が華めく神域が迎え入れん。",
+      "de": "Aus ihrer unsterblichen Liebe zu den Sterblichen haben die Zwölf das Monument im Herzen des Omphalos errichtet, damit sie ihr Ziel niemals aus den Augen verlieren. Um diese Liebe zu erwidern, musst du ein letztes Mal in ihre Domäne vordringen, um ihnen ihren Herzenswunsch zu erfüllen. Oschon&nbsp;- oder Deryk, wie du ihn kanntest&nbsp;- wartet mit Thaliak und Llymlaen in ihrem himmlischen Reich. Trotzt den reißenden Fluten, übersteht die stürmischen Winde und besiegt die verbleibenden Gottheiten, und ihr werdet endlich die Wahrheit über ihr geheimnisvolles Ziel erfahren.",
+      "fr": "Dans leur sacerdoce de préservation de l'équilibre d'Ætherys, les Douze ont émis le vœu de se mesurer à l'humanité. Assurés par le veilleur sélénien du bien-fondé de leurs intentions, vous et vos amis êtes résolus à les exaucer jusqu'au bout, en réponse à l'amour inconditionnel qu'ils portent à la planète. Pour cette ultime affrontement, vous devrez vaincre Thaliak, Llymlaen et Oschon, qui se cachait sous les traits de votre compagnon, Deryk l'explorateur... Faites honneur au panthéon éorzéen et remportez la victoire afin de lever le voile sur la destinée de votre monde&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 3,
+      "RangedPerParty": 2,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061802.png",
+    "banner": "/i/112000/112546.png",
+    "gamePatch": 88,
+    "contentType": 5,
+    "levelReq": 90,
+    "ilvlReq": 625,
+    "sync": 90,
+    "exp": 0,
+    "map": 884,
+    "contentText": [
+      34423,
+      34300
+    ]
+  },
   "35001": {
     "id": 35001,
     "en": "All's Well That Starts Well",
@@ -13429,7 +13557,7 @@
     "description": {
       "en": "Building on the details of your expedition into the Sil'dihn Subterrane, Osmon has put quill to parchment and produced his ideal adventure novel. The pages fairly drip with evocative descriptions and breathtaking action, the epic dramatization putting you in mind of a certain wandering minstrel's compositions. And in similar fashion, you are drawn into a world that never was, yet feels so inexplicably real...",
       "ja": "オスモンは「シラディハ水道」を巡る探索の結果をもとに、1冊の本を書き上げたという。そこに記されていたのは、彼の語彙力と想像力の限りを尽くして盛りに盛られた白熱の激闘……。明らかに異邦の詩人の影響を受けたであろう、その物語を目にしたとき、冒険者は否が応でも禁断の追体験に没入してしまうのだった。",
-      "de": "Anhand der Details deiner Expedition in die Unterstadt von Sil'dih hat Osmon seine Feder aufs Pergament gesetzt und seinen idealen Abenteuerroman verfasst. Die Seiten strotzen nur so vor bewegenden Beschreibungen und atemberaubender Action&nbsp;- die epische Dramatisierung erinnert an die Kompositionen eines gewissen Fahrenden Sängers. Und auf ähnliche Weise wirst du in eine Welt hineingezogen, die es nie gegeben hat und sich dennoch so unerklärlich real anfühlt&nbsp;...",
+      "de": "Anhand der Details deiner Expedition in die Unterstadt von Sil'dih hat Osmon seine Feder aufs Pergament gesetzt und seinen idealen Abenteuerroman verfasst. Die Seiten strotzen nur so vor bewegenden Beschreibungen und atemberaubender Kämpfe&nbsp;- die epische Dramatisierung erinnert an die Kompositionen eines gewissen Fahrenden Sängers. Und auf ähnliche Weise wirst du in eine Welt hineingezogen, die es nie gegeben hat und sich dennoch so unerklärlich real anfühlt&nbsp;...",
       "fr": "Osmon a terminé la rédaction de son roman d'aventures, amplement inspiré par vos exploits dans les canalisations sildiennes. La puissance de son imagination et l'énergie de son style ne sont pas sans rappeler celles d'un certain ménestrel errant, d'ailleurs... Comment pourriez-vous leur résister&nbsp;? Laissez-vous emporter par les visions d'âpres batailles qui se bousculent dans votre tête&nbsp;!"
     },
     "members": {
@@ -13822,7 +13950,7 @@
     "en": "Crystalline Conflict (Custom Match - The Clockwork Castletown)",
     "ja": "クリスタルコンフリクト(東方絡繰御殿：カスタムマッチ)",
     "de": "Crystalline Conflict: Die Mechanische Menagerie (Schaukampf)",
-    "fr": "Crystalline Conflict (partie personnalisée - Le Traquenard oriental)",
+    "fr": "Crys. Conflict (partie perso. - Le Traquenard oriental)",
     "description": {
       "en": "Far Eastern ingenuity beguiles in the Clockwork Castletown! With Astra and Umbra at the mercy of the arena's art and artifice, newcome pups and Wolves' Den regulars alike must keep their wits about them if they are to triumph on an ever-changing battlefield.<br><br>At the end of the crystal line, who will stand victorious? Will it be you?",
       "ja": "「クリスタルコンフリクト」、それはエオルゼア都市軍事同盟が、少人数による局地戦を想定した新たなる模擬戦である。既存の対人戦闘に、重要物資「タクティカルクリスタル」を確保して目的地に移送するという戦略要素を加味。最新の幻影投射技術で再現された、多彩な環境下で勝利を目指せ！",
@@ -16173,17 +16301,17 @@
       24900
     ]
   },
-  "64007": {
-    "id": 64007,
-    "en": "Containment Bay Z1T9 (Unreal)",
-    "ja": "幻鬼神ズルワーン討滅戦",
-    "de": "Traumprüfung - Zurvan",
-    "fr": "Unité de contention Z1P9 (irréel)",
+  "64008": {
+    "id": 64008,
+    "en": "The Singularity Reactor (Unreal)",
+    "ja": "幻ナイツ・オブ・ラウンド討滅戦",
+    "de": "Traumprüfung - Singularitäts-Reaktor",
+    "fr": "Le Réacteur de singularité (irréel)",
     "description": {
-      "en": "The faux commander would hear a story of victory over injustice, and you immediately envision the nightmarish aspect of Zurvan, the Demon. This pillar of the Warring Triad was called forth to triumph over the wicked, but your memory of the eikon's incarnation runs thick with only fury and malevolence...",
-      "ja": "イディルシャイアに現れた奇妙なしゃべる狐、ソーチョーこと「点茶のソウタン」。茶飲み話のネタを求める彼のため、激闘の記憶を蘇らせよ。<br>此度、語るは鬼神ズルワーンとの死闘。善悪の狭間で打ち交わされる刃、永劫の勝利を手にするは鬼神か、冒険者か。いま幻の激闘が語られる。",
-      "de": "Sotans Zunge sitzt wie üblich sehr locker, und diesmal widmet er sich der epischen Schlacht gegen den mächtigen Zurvan.<br>Mit blumingen Worten lässt er den Dämon der Kriegstriade wiederauferstehen, auf dass du dich erneut mit ihm messen kannst!",
-      "fr": "Désireux de renouveler son répertoire de contes et légendes, le Zuijû Sotan, un renard plus connu sous son surnom de “président”, vous a demandé de lui narrer vos batailles épiques contre les Primordiaux. Tout à coup, votre combat contre Zurvan, le Démon de Méracydia, vous revient en mémoire... Terrassez-le afin de satisfaire la soif d'émotions fortes de votre ami à fourrure&nbsp;!"
+      "en": "The faux commander is in the mood for a classic tale featuring knights in shining armor, and naught could fit the bill better than your mortal struggle with King Thordan and his knights twelve. Letting your mind roam free in memory's cathedral, you face the self-proclaimed god-king once more in a battle to determine the fate of man and dragon both...",
+      "ja": "イディルシャイアに現れた奇妙なしゃべる狐、ソーチョーこと「点茶のソウタン」。茶飲み話のネタを求める彼のため、激闘の記憶を蘇らせよ。<br>此度、語るはナイツ・オブ・ラウンドとの死闘。千年もの戦を終結に導くのは教皇トールダンと蒼天騎士たちか、あるいは冒険者か。いま魔大陸での決戦が語られる。",
+      "de": "Niemand weiß besser als du, dass es nur einer guten Tasse Tee bedarf, damit Sotan ins Reden kommt und eine Geschichte zum Besten gibt. Diesmal geht es um die Ritter der Tafelrunde und ihre Treue zu Thordan, die so unerschütterlich ist wie ihre Klingen scharf. Stelle dich abermals jener Schlacht, die den Ausgang eines tausend Jahre währenden Krieges entscheiden sollte&nbsp;...",
+      "fr": "Désireux de renouveler son répertoire de contes et légendes, le Zuijû Sotan, un renard plus connu sous son surnom de “président”, vous a demandé de lui narrer vos batailles épiques contre les Primordiaux. Tout à coup, votre combat contre Thordan et ses chevaliers de la Table ronde, qui mit fin à une guerre millénaire, vous revient en mémoire... Terrassez-les afin de satisfaire la soif d'émotions fortes de votre ami à fourrure&nbsp;!"
     },
     "members": {
       "HealersPerParty": 2,
@@ -16192,17 +16320,17 @@
       "TanksPerParty": 2
     },
     "icon": "/i/061000/061804.png",
-    "banner": "/i/112000/112532.png",
-    "gamePatch": 86,
+    "banner": "/i/112000/112547.png",
+    "gamePatch": 88,
     "contentType": 4,
     "levelReq": 90,
     "ilvlReq": 560,
     "sync": 90,
     "exp": 0,
-    "map": 353,
+    "map": 236,
     "contentText": [
-      14327,
-      14300
+      8808,
+      8800
     ]
   }
 }

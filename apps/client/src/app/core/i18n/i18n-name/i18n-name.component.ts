@@ -25,7 +25,8 @@ export class I18nNameComponent {
       return this.lazyData.getI18nName(content, +id, field as keyof Extract<LazyDataEntries[this['content']], I18nName>).pipe(
         map(name => name || (fallback && this.i18n.createFakeI18n(fallback)))
       );
-    })
+    }),
+    filter(Boolean)
   );
 
   @Input()

@@ -65,7 +65,7 @@ export class MappyDashboardComponent {
     ))
   );
 
-  constructor(private activatedRoute: ActivatedRoute, private xivapi: XivapiService,
+  constructor(private xivapi: XivapiService,
               private lazyData: LazyDataFacade, public translate: TranslateService) {
   }
 

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SeoService } from '../../../core/seo/seo.service';
@@ -12,8 +11,6 @@ import * as _ from 'lodash';
 import { cloneDeep } from 'lodash';
 import { MapRelatedElement } from './map-related-element';
 import { MapMarker } from '../../../modules/map/map-marker';
-import { HtmlToolsService } from '../../../core/tools/html-tools.service';
-import { HttpClient } from '@angular/common/http';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { mapIds } from '../../../core/data/sources/map-ids';
@@ -26,7 +23,7 @@ import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
 })
 export class MapPageComponent extends TeamcraftPageComponent {
 
-  public map$: Observable<any>;
+  public mapId$: Observable<number>;
 
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
 
@@ -42,10 +39,8 @@ export class MapPageComponent extends TeamcraftPageComponent {
 
   private highlight$ = new BehaviorSubject<MapRelatedElement>(null);
 
-  constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private i18n: I18nToolsService, private translate: TranslateService,
-              private router: Router, private lazyData: LazyDataFacade,
-              private htmlTools: HtmlToolsService, private http: HttpClient, public settings: SettingsService,
+  constructor(private route: ActivatedRoute, private i18n: I18nToolsService, private translate: TranslateService,
+              router: Router, private lazyData: LazyDataFacade, public settings: SettingsService,
               seo: SeoService) {
     super(seo);
     route.paramMap.pipe(
@@ -79,34 +74,18 @@ export class MapPageComponent extends TeamcraftPageComponent {
       }
     });
 
-    const mapId$ = this.route.paramMap.pipe(
+    this.mapId$ = this.route.paramMap.pipe(
       filter(params => params.get('slug') !== null),
-      map(params => params.get('mapId'))
+      map(params => +params.get('mapId'))
     );
 
-    this.map$ = mapId$.pipe(
+    this.related$ = this.mapId$.pipe(
       switchMap(id => {
-        return this.xivapi.get(XivapiEndpoint.Map, +id);
-      }),
-      switchMap(mapData => {
-        return this.xivapi.get(XivapiEndpoint.PlaceName, mapData.PlaceNameTargetID)
-          .pipe(
-            map(placeName => {
-              mapData.GameContentLinks = this.mergeGameContentLinks(mapData, placeName);
-              return mapData;
-            })
-          );
-      }),
-      shareReplay({ bufferSize: 1, refCount: true })
-    );
-
-    this.related$ = this.map$.pipe(
-      switchMap(mapData => {
         return combineLatest([
-          this.getFates(mapData.ID),
-          this.getMobs(mapData.ID),
-          this.getNpcs(mapData.ID),
-          this.getNodes(mapData.ID)
+          this.getFates(id),
+          this.getMobs(id),
+          this.getNpcs(id),
+          this.getNodes(id)
         ]);
       }),
       map((res) => res.flat()),
@@ -176,9 +155,9 @@ export class MapPageComponent extends TeamcraftPageComponent {
       })
     );
 
-    this.links$ = this.map$.pipe(
-      switchMap((mapData) => {
-        const entry = mapIds.find((m) => m.id === mapData.ID);
+    this.links$ = this.mapId$.pipe(
+      switchMap((id) => {
+        const entry = mapIds.find((m) => m.id === id);
         return this.lazyData.getRow('places', entry?.zone).pipe(
           map(place => {
             return [
@@ -203,15 +182,18 @@ export class MapPageComponent extends TeamcraftPageComponent {
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return this.map$.pipe(
-      switchMap((mapData) => {
-        return this.getName(mapData).pipe(
-          map(title => {
+    return this.mapId$.pipe(
+      switchMap((id) => {
+        return combineLatest([
+          this.getName(id),
+          this.lazyData.getRow('maps', id)
+        ]).pipe(
+          map(([title, mapData]) => {
             return {
               title,
               description: '',
-              url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/map/${mapData.ID}/${title.split(' ').join('-')}`,
-              image: `https://xivapi.com${mapData.MapFilename}`
+              url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/map/${id}/${title.split(' ').join('-')}`,
+              image: mapData.image
             };
           })
         );
@@ -361,30 +343,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
     );
   }
 
-  private mergeGameContentLinks(mapData: any, placeName: any): any {
-    mapData.GameContentLinks = mapData.GameContentLinks || {};
-    Object.keys(placeName.GameContentLinks || {}).forEach(key => {
-      if (mapData.GameContentLinks[key] === undefined) {
-        mapData.GameContentLinks[key] = placeName.GameContentLinks[key];
-      } else {
-        const mapLink = mapData.GameContentLinks[key];
-        const placeNameLink = placeName.GameContentLinks[key];
-        Object.keys(placeNameLink).forEach(linkKey => {
-          if (mapLink[linkKey] !== undefined) {
-            mapLink[linkKey] = _.uniq([
-              ...mapLink[linkKey],
-              ...placeNameLink[linkKey]
-            ]);
-          } else {
-            mapLink[linkKey] = placeNameLink[linkKey];
-          }
-        });
-      }
-    });
-    return mapData.GameContentLinks;
-  }
-
-  private getName(mapData: any): Observable<string> {
-    return this.i18n.getMapName(mapData.ID);
+  private getName(id: number): Observable<string> {
+    return this.i18n.getMapName(id);
   }
 }

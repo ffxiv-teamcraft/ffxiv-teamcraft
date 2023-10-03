@@ -552,10 +552,10 @@
     "fr": "Armures Garo (guerre 2)"
   },
   "3276892": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Earn Hannish Certificates of Grade 3 Import",
+    "ja": "ラザハンの手形G3との交換（NQ）",
+    "de": "Radz-at-Han-Marken III (NQ)",
+    "fr": "Échange de pièces d'équipement (QN) contre des avoirs de Radz-at-Han III"
   },
   "3276893": {
     "en": "Earn Hannish Certificates of Grade 2 Import",
@@ -588,15 +588,15 @@
     "fr": "Échanger des artefacts du mont Rokkon"
   },
   "3276898": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Earn Hannish Certificates of Grade 3 Import (HQ)",
+    "ja": "ラザハンの手形G3との交換（HQ）",
+    "de": "Radz-at-Han-Marken III (HQ)",
+    "fr": "Échange de pièces d'équipement (HQ) contre des avoirs de Radz-at-Han III"
   },
   "3276899": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Purchase Augmented Diadochos Equipment",
+    "ja": "ディアドコス強化装備の取引",
+    "de": "Modifizierte Diadochen-Ausrüstung",
+    "fr": "Amélioration de pièces d'équipement de diadoque"
   }
 }

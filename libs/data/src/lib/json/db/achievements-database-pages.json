@@ -8684,7 +8684,7 @@
     "zh": "古典战斗主义者",
     "description": {
       "en": "Obtain the following nine achievements: “Like a Knight in Shining Armor I,” “Bulletproof I,” “I Am the Warrior I,” Dragoon Age I,“ ”A Bard's Tale I,“ ”Seeing White I,“ ”Back in Black I,“ ”Soul Summoner I,“ and ”Flying Colors I.“ ",
-      "de": "Folgende Jobaufträge wurden abgeschlossen: „Das heilige Schwert“,  „Das siebte Chakra“, „Wahre Stärke“, „Klüfte der Feindschaft“, „Requiem“, „In Freiheit verbunden“, „Im Nichts vereint“, „Seelenbeschwörer“ und „Mit wehenden Fahnen“.",
+      "de": "Folgende Jobaufträge wurden abgeschlossen: „Das heilige Schwert“, „Das siebte Chakra“, „Wahre Stärke“, „Klüfte der Feindschaft“, „Requiem“, „In Freiheit verbunden“, „Im Nichts vereint“, „Seelenbeschwörer“ und „Mit wehenden Fahnen“.",
       "ja": "アチーブメント「白銀の騎士」「練気の闘士」「原初の戦士」「蒼の竜騎士」「古の吟遊詩人」「白き魔道士」「黒き魔道士」「正道の召喚士」「次代の軍学者」をすべて達成する",
       "fr": "Accomplir les neuf hauts faits de la série “modèle d'excellence” pour les jobs paladin, moine, guerrier, chevalier dragon, barde, mage blanc, mage noir, invocateur et érudit.",
       "ko": "업적 '백은의 기사', '끈기의 투사', '원초의 전사', '푸른 용기사', '옛 음유시인', '하얀 마도사', '검은 마도사', '바른 길을 걷는 소환사' '차세대 군학자'를 모두 달성",
@@ -40746,7 +40746,7 @@
       "en": "Clear the 1st through the 200th floors of the Palace of the Dead solo.",
       "de": "Die 1. bis 200. Ebene des Palastes der Toten alleine erobert und tiefer in das Gewölbe vorgestoßen.",
       "ja": "死者の宮殿にソロでB1から突入しB200に到達する",
-      "fr": "Conquérir le 200e sous-sol du Palais des morts en solo, en commençant par le sous-sol 1.",
+      "fr": "Atteindre le 200e sous-sol du Palais des morts en solo en commençant par le 1er.",
       "ko": "단독으로 망자의 궁전 B1에 진입하여 B200 도달",
       "zh": "单人从地下1层进入死者宫殿，并到达地下200层。"
     },
@@ -42901,7 +42901,7 @@
       "en": "Clear the 1st through the 100th floors of Heaven-on-High solo.",
       "de": "Die 1. bis 100. Ebene der Himmelssäule alleine erobert und in einer höheren Ebene als der 100. das Ergebnis erhalten.",
       "ja": "アメノミハシラにソロで1層から突入し100層に到達する",
-      "fr": "Obtenir un score en solo dans le Pilier des Cieux en commençant par le 1er étage et en s'aventurant jusqu'au 100e.",
+      "fr": "Atteindre le 100e étage du Pilier des Cieux en solo en commençant par le 1er.",
       "ko": "단독으로 천궁탑 1층에 진입하여 100층 도달",
       "zh": "单人从第1层进入天之御柱，并到达第100层。"
     },
@@ -55210,7 +55210,7 @@
     "zh": "水晶的残光",
     "description": {
       "en": "Complete the main scenario quest “Reflections in Crystal.”",
-      "de": "Den Auftrag „Kristall-Reflektionen“ abgeschlossen.",
+      "de": "Den Auftrag „Kristall-Reflexionen“ abgeschlossen.",
       "ja": "クエスト「クリスタルの残光」をコンプリートする",
       "fr": "Accomplir la quête “Rémanences de cristal”.",
       "ko": "퀘스트 '크리스탈의 잔광' 완료",
@@ -64347,7 +64347,7 @@
       "en": "Catch 7 different varieties of big fish in areas explored during Endwalker.",
       "de": "7 verschiedene Kapitalfische in den Arealen von Endwalker gefangen.",
       "ja": "暁月のフィナーレのエリアにいるヌシを7種類、釣り上げる",
-      "fr": "Pêcher 7 prises légendaires différentes dans les zones explorées lors de Endwalker.",
+      "fr": "Pêcher 7 prises légendaires différentes dans les zones explorées lors d'Endwalker.",
       "ko": "효월의 종언 지역의 터주 7종류 낚기",
       "zh": "在晓月区域钓上7种钓场之王。"
     },
@@ -65834,7 +65834,7 @@
     "zh": "扫除总动员",
     "description": {
       "en": "Defeat the silkie in the Sil'dihn Subterrane variant dungeon.",
-      "de": "Das Silkie in der Unterstadt von Sil'dih (unstetes Gewölbe) besiegt.",
+      "de": "Das Silkie in der Unterstadt von Sil'dih (Unstetes Gewölbe) besiegt.",
       "ja": "シラディハ水道（ヴァリアントダンジョン）で、シルキーを討伐する",
       "fr": "Vaincre Silkie dans “Les canalisations sildiennes - Donjon à embranchements”.",
       "ko": "변형 던전: 실디하 지하수도에서 실키 처치",
@@ -65855,7 +65855,7 @@
     "zh": "勇士安眠",
     "description": {
       "en": "Defeat Shadowcaster Zeless Gah in the Sil'dihn Subterrane variant dungeon.",
-      "de": "Schattenwirker Zeless Gah in der Unterstadt von Sil'dih (unstetes Gewölbe) besiegt.",
+      "de": "Schattenwirker Zeless Gah in der Unterstadt von Sil'dih (Unstetes Gewölbe) besiegt.",
       "ja": "シラディハ水道（ヴァリアントダンジョン）で、影火のゼレズ・ガーを討伐する",
       "fr": "Vaincre Zeless Gah dans “Les canalisations sildiennes - Donjon à embranchements”.",
       "ko": "변형 던전: 실디하 지하수도에서 그림자불 젤레즈 가 처치",
@@ -65876,7 +65876,7 @@
     "zh": "斗场无情",
     "description": {
       "en": "Defeat the gladiator of Sil'dih in the Sil'dihn Subterrane variant dungeon.",
-      "de": "Den Gladiator von Sil'dih in der Unterstadt von Sil'dih (unstetes Gewölbe) besiegt.",
+      "de": "Den Gladiator von Sil'dih in der Unterstadt von Sil'dih (Unstetes Gewölbe) besiegt.",
       "ja": "シラディハ水道（ヴァリアントダンジョン）で、シラディハ・グラディアトルを討伐する",
       "fr": "Vaincre le gladiateur sildien dans “Les canalisations sildiennes - Donjon à embranchements”.",
       "ko": "변형 던전: 실디하 지하수도에서 실디하 검투사 처치",
@@ -65897,7 +65897,7 @@
     "zh": "希拉狄哈之谜",
     "description": {
       "en": "Defeat the Thorne Knight in the Sil'dihn Subterrane variant dungeon.",
-      "de": "Den Ritter der Thorne in der Unterstadt von Sil'dih (unstetes Gewölbe) besiegt.",
+      "de": "Den Ritter der Thorne in der Unterstadt von Sil'dih (Unstetes Gewölbe) besiegt.",
       "ja": "シラディハ水道（ヴァリアントダンジョン）で、ソーン・マジックナイトを討伐する",
       "fr": "Vaincre le chevalier-mage des Thorne dans “Les canalisations sildiennes - Donjon à embranchements”.",
       "ko": "변형 던전: 실디하 지하수도에서 손 마법기사 처치",
@@ -66097,7 +66097,7 @@
   },
   "3161": {
     "id": 3161,
-    "icon": "/i/064000/064849.png",
+    "icon": "/i/002000/002669.png",
     "patch": 86,
     "en": "Divine Revelry",
     "de": "Göttliche Freude",
@@ -66651,7 +66651,7 @@
       "en": "Catch 23 different varieties of big fish in areas explored during Endwalker.",
       "de": "23 verschiedene Kapitalfische in den Arealen von Endwalker gefangen.",
       "ja": "暁月のフィナーレのエリアにいるヌシを23種類、釣り上げる",
-      "fr": "Pêcher 23 prises légendaires différentes dans les zones explorées lors de Endwalker.",
+      "fr": "Pêcher 23 prises légendaires différentes dans les zones explorées lors d'Endwalker.",
       "ko": "효월의 종언 지역의 터주 23종류 낚기",
       "zh": "在晓月区域钓上23种钓场之王。"
     },
@@ -67080,17 +67080,17 @@
   },
   "3208": {
     "id": 3208,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/059000/059861.png",
+    "patch": 91,
+    "en": "Next Time, on Dragon 'Bo",
+    "de": "Glücksdrache",
+    "ja": "東方のかわいいドラゴン",
+    "fr": "Et le dragon piou",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “Unlike a Dragon.”",
+      "de": "Den Auftrag „Drachen bringen Glück“ abgeschlossen.",
+      "ja": "クエスト「縁起物と降神祭」をコンプリートする",
+      "fr": "Accomplir la quête “Sous le signe du dragon d'eau”."
     },
     "item": 0,
     "title": 0
@@ -67103,7 +67103,7 @@
     "de": "Tripledecker XII",
     "ja": "カードコレクター：ランク12",
     "fr": "Porte-cartes XII",
-    "ko": "카드 수집가: 10단계",
+    "ko": "카드 수집가: 12단계",
     "zh": "九宫卡手12",
     "description": {
       "en": "Obtain 376 unique Triple Triad cards.",
@@ -69556,5 +69556,1501 @@
     },
     "item": 0,
     "title": 696
+  },
+  "3341": {
+    "id": 3341,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3342": {
+    "id": 3342,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3343": {
+    "id": 3343,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3344": {
+    "id": 3344,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3345": {
+    "id": 3345,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3346": {
+    "id": 3346,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3347": {
+    "id": 3347,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3348": {
+    "id": 3348,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3349": {
+    "id": 3349,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3350": {
+    "id": 3350,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3351": {
+    "id": 3351,
+    "icon": "/i/025000/025507.png",
+    "patch": 91,
+    "en": "Satisfaction Guaranteed: Margrat I",
+    "de": "Wer rastet, der rostet I",
+    "ja": "マーグラット：ランク1",
+    "fr": "Je sers la science et c'est ma joie I",
+    "description": {
+      "en": "Achieve a satisfaction level of 1 with Margrat.",
+      "de": "Zufriedenheitsrang 1 bei Margrat erlangt.",
+      "ja": "マーグラットの信頼ランクを1にする",
+      "fr": "Atteindre le rang 1 de satisfaction auprès de Margrat."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3352": {
+    "id": 3352,
+    "icon": "/i/025000/025507.png",
+    "patch": 91,
+    "en": "Satisfaction Guaranteed: Margrat II",
+    "de": "Wer rastet, der rostet II",
+    "ja": "マーグラット：ランク2",
+    "fr": "Je sers la science et c'est ma joie II",
+    "description": {
+      "en": "Achieve a satisfaction level of 2 with Margrat.",
+      "de": "Zufriedenheitsrang 2 bei Margrat erlangt.",
+      "ja": "マーグラットの信頼ランクを2にする",
+      "fr": "Atteindre le rang 2 de satisfaction auprès de Margrat."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3353": {
+    "id": 3353,
+    "icon": "/i/025000/025507.png",
+    "patch": 91,
+    "en": "Satisfaction Guaranteed: Margrat III",
+    "de": "Wer rastet, der rostet III",
+    "ja": "マーグラット：ランク3",
+    "fr": "Je sers la science et c'est ma joie III",
+    "description": {
+      "en": "Achieve a satisfaction level of 3 with Margrat.",
+      "de": "Zufriedenheitsrang 3 bei Margrat erlangt.",
+      "ja": "マーグラットの信頼ランクを3にする",
+      "fr": "Atteindre le rang 3 de satisfaction auprès de Margrat."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3354": {
+    "id": 3354,
+    "icon": "/i/025000/025507.png",
+    "patch": 91,
+    "en": "Satisfaction Guaranteed: Margrat IV",
+    "de": "Wer rastet, der rostet IV ",
+    "ja": "マーグラット：ランク4",
+    "fr": "Je sers la science et c'est ma joie IV",
+    "description": {
+      "en": "Achieve a satisfaction level of 4 with Margrat.",
+      "de": "Zufriedenheitsrang 4 bei Margrat erlangt.",
+      "ja": "マーグラットの信頼ランクを4にする",
+      "fr": "Atteindre le rang 4 de satisfaction auprès de Margrat."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3355": {
+    "id": 3355,
+    "icon": "/i/025000/025507.png",
+    "patch": 91,
+    "en": "Satisfaction Guaranteed: Margrat V",
+    "de": "Wer rastet, der rostet V ",
+    "ja": "マーグラット：ランク5",
+    "fr": "Je sers la science et c'est ma joie V",
+    "description": {
+      "en": "Achieve a satisfaction level of 5 with Margrat.",
+      "de": "Zufriedenheitsrang 5 bei Margrat erlangt.",
+      "ja": "マーグラットの信頼ランクを5にする",
+      "fr": "Atteindre le rang 5 de satisfaction auprès de Margrat."
+    },
+    "item": 0,
+    "title": 699
+  },
+  "3356": {
+    "id": 3356,
+    "icon": "/i/026000/026551.png",
+    "patch": 91,
+    "en": "The Customer Is Always Right: Margrat I",
+    "de": "Für die Wissenschaft I",
+    "ja": "マーグラットの得意先：ランク1",
+    "fr": "Fournisseur officiel de Margrat I",
+    "description": {
+      "en": "Deliver 36 collectables to Margrat.",
+      "de": "Margrat 36 Sammlerstücke geliefert.",
+      "ja": "マーグラットに収集品を計36回納品する",
+      "fr": "Échanger 36 objets collectionnables à Margrat."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3357": {
+    "id": 3357,
+    "icon": "/i/026000/026551.png",
+    "patch": 91,
+    "en": "The Customer Is Always Right: Margrat II",
+    "de": "Für die Wissenschaft II ",
+    "ja": "マーグラットの得意先：ランク2",
+    "fr": "Fournisseur officiel de Margrat II",
+    "description": {
+      "en": "Deliver 48 collectables to Margrat.",
+      "de": "Margrat 48 Sammlerstücke geliefert.",
+      "ja": "マーグラットに収集品を計48回納品する",
+      "fr": "Échanger 48 objets collectionnables à Margrat."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3358": {
+    "id": 3358,
+    "icon": "/i/026000/026551.png",
+    "patch": 91,
+    "en": "The Customer Is Always Right: Margrat III",
+    "de": "Für die Wissenschaft III",
+    "ja": "マーグラットの得意先：ランク3",
+    "fr": "Fournisseur officiel de Margrat III",
+    "description": {
+      "en": "Deliver 60 collectables to Margrat.",
+      "de": "Margrat 60 Sammlerstücke geliefert.",
+      "ja": "マーグラットに収集品を計60回納品する",
+      "fr": "Échanger 60 objets collectionnables à Margrat."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3359": {
+    "id": 3359,
+    "icon": "/i/026000/026551.png",
+    "patch": 91,
+    "en": "The Customer Is Always Right: Margrat IV",
+    "de": "Für die Wissenschaft IV ",
+    "ja": "マーグラットの得意先：ランク4",
+    "fr": "Fournisseur officiel de Margrat IV",
+    "description": {
+      "en": "Deliver 90 collectables to Margrat.",
+      "de": "Margrat 90 Sammlerstücke geliefert.",
+      "ja": "マーグラットに収集品を計90回納品する",
+      "fr": "Échanger 90 objets collectionnables à Margrat."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3360": {
+    "id": 3360,
+    "icon": "/i/026000/026551.png",
+    "patch": 91,
+    "en": "The Customer Is Always Right: Margrat V",
+    "de": "Für die Wissenschaft V",
+    "ja": "マーグラットの得意先：ランク5",
+    "fr": "Fournisseur officiel de Margrat V",
+    "description": {
+      "en": "Deliver 120 collectables to Margrat.",
+      "de": "Margrat 120 Sammlerstücke geliefert.",
+      "ja": "マーグラットに収集品を計120回納品する",
+      "fr": "Échanger 120 objets collectionnables à Margrat."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3361": {
+    "id": 3361,
+    "icon": "/i/026000/026551.png",
+    "patch": 91,
+    "en": "The Customer Is Always Right: Margrat VI",
+    "de": "Für die Wissenschaft VI",
+    "ja": "マーグラットの得意先：ランク6",
+    "fr": "Fournisseur officiel de Margrat VI",
+    "description": {
+      "en": "Deliver 150 collectables to Margrat.",
+      "de": "Margrat 150 Sammlerstücke geliefert.",
+      "ja": "マーグラットに収集品を計150回納品する",
+      "fr": "Échanger 150 objets collectionnables à Margrat."
+    },
+    "item": 0,
+    "title": 700
+  },
+  "3362": {
+    "id": 3362,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3363": {
+    "id": 3363,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3364": {
+    "id": 3364,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3365": {
+    "id": 3365,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3366": {
+    "id": 3366,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3367": {
+    "id": 3367,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3368": {
+    "id": 3368,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3369": {
+    "id": 3369,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3370": {
+    "id": 3370,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3371": {
+    "id": 3371,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3372": {
+    "id": 3372,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3373": {
+    "id": 3373,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3374": {
+    "id": 3374,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3375": {
+    "id": 3375,
+    "icon": "/i/001000/001015.png",
+    "patch": 91,
+    "en": "I Found That: Miner VIII",
+    "de": "Ich hab's gefunden: Minenarbeiter VIII",
+    "ja": "手帳好きの採掘師：ランク8",
+    "fr": "Carnet de notes : mineur VIII",
+    "description": {
+      "en": "Mine and record discovery of 260 unique items that can only be gathered as a miner.",
+      "de": "260 verschiedene Gegenstände als Minenarbeiter gesammelt und im Sammler-Notizbuch vermerkt.",
+      "ja": "採掘師でのみ採集可能アイテムのうち、260種類を採集し、採集手帳に印を付ける",
+      "fr": "Récolter 260 objets différents en tant que mineur et les avoir notés dans le carnet de récolte."
+    },
+    "item": 0,
+    "title": 702
+  },
+  "3376": {
+    "id": 3376,
+    "icon": "/i/001000/001065.png",
+    "patch": 91,
+    "en": "I Found That: Botanist VIII",
+    "de": "Ich hab's gefunden: Gärtner VIII",
+    "ja": "手帳好きの園芸師：ランク8",
+    "fr": "Carnet de notes : botaniste VIII",
+    "description": {
+      "en": "Harvest and record discovery of 380 unique items that can only be gathered as a botanist.",
+      "de": "380 verschiedene Gegenstände als Gärtner gesammelt und im Sammler-Notizbuch vermerkt.",
+      "ja": "園芸師でのみ採集可能アイテムのうち、380種類を採集し、採集手帳に印を付ける",
+      "fr": "Récolter 380 objets différents en tant que botaniste et les avoir notés dans le carnet de récolte."
+    },
+    "item": 0,
+    "title": 703
+  },
+  "3377": {
+    "id": 3377,
+    "icon": "/i/001000/001104.png",
+    "patch": 91,
+    "en": "I Caught That VIII",
+    "de": "Dicker Fang VIII",
+    "ja": "手帳好きの漁師：ランク8",
+    "fr": "Carnet de notes : pêcheur VIII",
+    "description": {
+      "en": "Catch and record discovery of 1,460 unique fish.",
+      "de": "1.460 verschiedene Fische gefangen und im Fischer-Notizbuch vermerkt.",
+      "ja": "漁師の採集可能アイテムのうち、1,460種類を採集し、釣り手帳に印を付ける",
+      "fr": "Pêcher 1 460 prises différentes et les avoir notées dans le carnet de pêche."
+    },
+    "item": 0,
+    "title": 704
+  },
+  "3378": {
+    "id": 3378,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3379": {
+    "id": 3379,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3380": {
+    "id": 3380,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3381": {
+    "id": 3381,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3382": {
+    "id": 3382,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3383": {
+    "id": 3383,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3384": {
+    "id": 3384,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3385": {
+    "id": 3385,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3386": {
+    "id": 3386,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3387": {
+    "id": 3387,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3388": {
+    "id": 3388,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3389": {
+    "id": 3389,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3390": {
+    "id": 3390,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3391": {
+    "id": 3391,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3392": {
+    "id": 3392,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3393": {
+    "id": 3393,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3394": {
+    "id": 3394,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3395": {
+    "id": 3395,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3396": {
+    "id": 3396,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3397": {
+    "id": 3397,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3398": {
+    "id": 3398,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3399": {
+    "id": 3399,
+    "icon": "/i/001000/001052.png",
+    "patch": 91,
+    "en": "Mammet Is the Measure of Most Things",
+    "de": "Krone aus Sand",
+    "ja": "無人島のレジェンド開拓者",
+    "fr": "Félicité légendaire",
+    "description": {
+      "en": "Achieve sanctuary rank 20 in your island sanctuary.",
+      "de": "Inselstufe 20 in deinem Inselparadies erreicht.",
+      "ja": "無人島開拓にて、開拓ランクが20に到達する",
+      "fr": "Atteindre le rang 20 sur la Félicité insulaire."
+    },
+    "item": 0,
+    "title": 707
+  },
+  "3400": {
+    "id": 3400,
+    "icon": "/i/001000/001001.png",
+    "patch": 91,
+    "en": "Mapping the Realm: The Lunar Subterrane",
+    "de": "Kartograph: Monduntergrund",
+    "ja": "月の地下渓谷を踏破せし者",
+    "fr": "Cartographe du continent : Souterrain lunaire",
+    "description": {
+      "en": "Discover every location within the Lunar Subterrane.",
+      "de": "Alle Orte im Monduntergrund erkundet.",
+      "ja": "月の地下渓谷（深淵潜行）を踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte du Souterrain lunaire."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3401": {
+    "id": 3401,
+    "icon": "/i/001000/001001.png",
+    "patch": 91,
+    "en": "Mapping the Realm: Thaleia",
+    "de": "Kartograph: Thaleia",
+    "ja": "タレイアを踏破せし者",
+    "fr": "Cartographe du continent : Thalie",
+    "description": {
+      "en": "Discover every location within Thaleia.",
+      "de": "Alle Orte in Thaleia erkundet.",
+      "ja": "華めく神域 タレイアを踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte du domaine divin - Thalie."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3402": {
+    "id": 3402,
+    "icon": "/i/000000/000317.png",
+    "patch": 91,
+    "en": "Dusk to Dusk",
+    "de": "Schlächter der Dunkelheit",
+    "ja": "暗黒妖異を狩りし者",
+    "fr": "Disperser l'amalgame du néant",
+    "description": {
+      "en": "Defeat Zeromus in the Abyssal Fracture (Extreme).",
+      "de": "Zeromus in „Eschatos - Zeromus“ besiegt.",
+      "ja": "極ゼロムス討滅戦でゼロムスを討伐する",
+      "fr": "Vaincre Zeromus dans le défi “La Fracture abyssale (extrême)”."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3403": {
+    "id": 3403,
+    "icon": "/i/002000/002669.png",
+    "patch": 91,
+    "en": "Divine Satisfaction",
+    "de": "Mythenmacher",
+    "ja": "タレイアを制覇せし者",
+    "fr": "Divine abondance",
+    "description": {
+      "en": "Complete Thaleia.",
+      "de": "Thaleia erfolgreich abgeschlossen.",
+      "ja": "華めく神域 タレイアを攻略する",
+      "fr": "Finir le domaine divin - Thalie."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3404": {
+    "id": 3404,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3405": {
+    "id": 3405,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3406": {
+    "id": 3406,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3407": {
+    "id": 3407,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3408": {
+    "id": 3408,
+    "icon": "/i/026000/026002.png",
+    "patch": 91,
+    "en": "For Eorzea, For Etheirys",
+    "de": "Geliebtes Kind",
+    "ja": "神々に愛されし者",
+    "fr": "Enfant béni des Dieux",
+    "description": {
+      "en": "Complete the quest “Embraced by Gods.”",
+      "de": "Den Auftrag „Von den Göttern umarmt“ abgeschlossen.",
+      "ja": "クエスト「神々に愛されし地、エオルゼア」をコンプリートする",
+      "fr": "Accomplir la quête “Éorzéa, terre bénie des Dieux”."
+    },
+    "item": 0,
+    "title": 709
+  },
+  "3409": {
+    "id": 3409,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3410": {
+    "id": 3410,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3411": {
+    "id": 3411,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3412": {
+    "id": 3412,
+    "icon": "/i/026000/026038.png",
+    "patch": 91,
+    "en": "Dragon-sitting",
+    "de": "Drachengesang im Mondlicht",
+    "ja": "月に灯りし想い",
+    "fr": "Cantate au clair de lune",
+    "description": {
+      "en": "Obtain an apocryphal Bahamut horn.",
+      "de": "Das Reittier „Apokryph-Bahamut“ erhalten.",
+      "ja": "バハムート・アポクリファの魔笛を入手する",
+      "fr": "Obtenir le cor Bahamut apocryphe."
+    },
+    "item": 0,
+    "title": 711
+  },
+  "3413": {
+    "id": 3413,
+    "icon": "/i/026000/026002.png",
+    "patch": 91,
+    "en": "For Others to Follow",
+    "de": "Ein strahlender Neuanfang",
+    "ja": "光明の起点",
+    "fr": "Nitescence nouvelle",
+    "description": {
+      "en": "Complete the main scenario quest “Growing Light.”",
+      "de": "Den Auftrag „Ein strahlender Neuanfang“ abgeschlossen.",
+      "ja": "クエスト「光明の起点」をコンプリートする",
+      "fr": "Accomplir la quête de l'épopée “Nitescence nouvelle”."
+    },
+    "item": 0,
+    "title": 712
+  },
+  "3414": {
+    "id": 3414,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3415": {
+    "id": 3415,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3416": {
+    "id": 3416,
+    "icon": "/i/052000/052793.png",
+    "patch": 91,
+    "en": "愛と勇気の伝道師",
+    "de": "愛と勇気の伝道師",
+    "ja": "愛と勇気の伝道師",
+    "fr": "Tout un symbole",
+    "description": {
+      "en": "クエスト「ヴァレンティオンデーに勇気を出して」をコンプリートする",
+      "de": "クエスト「ヴァレンティオンデーに勇気を出して」をコンプリートする",
+      "ja": "クエスト「ヴァレンティオンデーに勇気を出して」をコンプリートする",
+      "fr": "Accomplir la quête “Le symbole de l'amour”."
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3417": {
+    "id": 3417,
+    "icon": "/i/004000/004276.png",
+    "patch": 91,
+    "en": "花咲か姫様",
+    "de": "花咲か姫様",
+    "ja": "花咲か姫様",
+    "fr": "花咲か姫様",
+    "description": {
+      "en": "クエスト「プリンセスデーに咲く笑顔の花」をコンプリートする",
+      "de": "クエスト「プリンセスデーに咲く笑顔の花」をコンプリートする",
+      "ja": "クエスト「プリンセスデーに咲く笑顔の花」をコンプリートする",
+      "fr": "クエスト「プリンセスデーに咲く笑顔の花」をコンプリートする"
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3418": {
+    "id": 3418,
+    "icon": "/i/056000/056635.png",
+    "patch": 91,
+    "en": "カパパッパ！",
+    "de": "Plitschplatsch!",
+    "ja": "カパパッパ！",
+    "fr": "カパパッパ！",
+    "description": {
+      "en": "クエスト「ゴールドソーサーとカッパの謎」をコンプリートする",
+      "de": "Den Auftrag „Auf der Suche nach der goldenen Schlagzeile“ abgeschlossen.",
+      "ja": "クエスト「ゴールドソーサーとカッパの謎」をコンプリートする",
+      "fr": "クエスト「ゴールドソーサーとカッパの謎」をコンプリートする"
+    },
+    "item": 0,
+    "title": 0
+  },
+  "3419": {
+    "id": 3419,
+    "icon": "/i/000000/000210.png",
+    "patch": 91,
+    "en": "Top Tier: Season Eight",
+    "de": "Kristallkönig (8. Saison)",
+    "ja": "コンフリクトの王者：シーズン8",
+    "fr": "Roi du conflit : saison 8",
+    "description": {
+      "en": "Complete Crystalline Conflict Season Eight ranked #1.",
+      "de": "Die 8. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン8にて、ランキングで1位になる",
+      "fr": "Terminer la saison 8 de Crystalline Conflict à la 1re place du classement."
+    },
+    "item": 0,
+    "title": 714
+  },
+  "3420": {
+    "id": 3420,
+    "icon": "/i/000000/000210.png",
+    "patch": 91,
+    "en": "Crystal in the Rough: Season Eight",
+    "de": "Kristallfürst (8. Saison)",
+    "ja": "コンフリクトの勇者：シーズン8",
+    "fr": "Prince du conflit : saison 8",
+    "description": {
+      "en": "Complete Crystalline Conflict Season Eight ranked within the top 30.",
+      "de": "Die 8. Saison von „Crystalline Conflict“ in den Top 30 abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン8にて、ランキングで30位以内に入る",
+      "fr": "Terminer la saison 8 de Crystalline Conflict dans les 30 premières places du classement."
+    },
+    "item": 0,
+    "title": 715
+  },
+  "3421": {
+    "id": 3421,
+    "icon": "/i/000000/000210.png",
+    "patch": 91,
+    "en": "Ranked and Filed: Season Eight",
+    "de": "Kristallkämpfer (8. Saison)",
+    "ja": "コンフリクトの入賞者：シーズン8",
+    "fr": "As du conflit : saison 8",
+    "description": {
+      "en": "Complete Crystalline Conflict Season Eight ranked within the top 100.",
+      "de": "Die 8. Saison von „Crystalline Conflict“ in den Top 100 abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン8にて、ランキングで100位以内に入る",
+      "fr": "Terminer la saison 8 de Crystalline Conflict dans les 100 premières places du classement."
+    },
+    "item": 0,
+    "title": 716
+  },
+  "3422": {
+    "id": 3422,
+    "icon": "/i/000000/000210.png",
+    "patch": 91,
+    "en": "Top Tier: Season Nine",
+    "de": "Kristallkönig (9. Saison)",
+    "ja": "コンフリクトの王者：シーズン9",
+    "fr": "Roi du conflit : saison 9",
+    "description": {
+      "en": "Complete Crystalline Conflict Season Nine ranked #1.",
+      "de": "Die 9. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン9にて、ランキングで1位になる",
+      "fr": "Terminer la saison 9 de Crystalline Conflict à la 1re place du classement."
+    },
+    "item": 0,
+    "title": 717
+  },
+  "3423": {
+    "id": 3423,
+    "icon": "/i/000000/000210.png",
+    "patch": 91,
+    "en": "Crystal in the Rough: Season Nine",
+    "de": "Kristallfürst (9. Saison)",
+    "ja": "コンフリクトの勇者：シーズン9",
+    "fr": "Prince du conflit : saison 9",
+    "description": {
+      "en": "Complete Crystalline Conflict Season Nine ranked within the top 30.",
+      "de": "Die 9. Saison von „Crystalline Conflict“ in den Top 30 abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン9にて、ランキングで30位以内に入る",
+      "fr": "Terminer la saison 9 de Crystalline Conflict dans les 30 premières places du classement."
+    },
+    "item": 0,
+    "title": 718
+  },
+  "3424": {
+    "id": 3424,
+    "icon": "/i/000000/000210.png",
+    "patch": 91,
+    "en": "Ranked and Filed: Season Nine",
+    "de": "Kristallkämpfer (9. Saison)",
+    "ja": "コンフリクトの入賞者：シーズン9",
+    "fr": "As du conflit : saison 9",
+    "description": {
+      "en": "Complete Crystalline Conflict Season Nine ranked within the top 100.",
+      "de": "Die 9. Saison von „Crystalline Conflict“ in den Top 100 abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン9にて、ランキングで100位以内に入る",
+      "fr": "Terminer la saison 9 de Crystalline Conflict dans les 100 premières places du classement."
+    },
+    "item": 0,
+    "title": 719
+  },
+  "3425": {
+    "id": 3425,
+    "icon": "/i/000000/000210.png",
+    "patch": 91,
+    "en": "Top Tier: Season Ten",
+    "de": "Kristallkönig (10. Saison)",
+    "ja": "コンフリクトの王者：シーズン10",
+    "fr": "Roi du conflit : saison 10",
+    "description": {
+      "en": "Complete Crystalline Conflict Season Ten ranked #1.",
+      "de": "Die 10. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン10にて、ランキングで1位になる",
+      "fr": "Terminer la saison 10 de Crystalline Conflict à la 1re place du classement."
+    },
+    "item": 0,
+    "title": 720
+  },
+  "3426": {
+    "id": 3426,
+    "icon": "/i/000000/000210.png",
+    "patch": 91,
+    "en": "Crystal in the Rough: Season Ten",
+    "de": "Kristallfürst (10. Saison)",
+    "ja": "コンフリクトの勇者：シーズン10",
+    "fr": "Prince du conflit : saison 10",
+    "description": {
+      "en": "Complete Crystalline Conflict Season Ten ranked within the top 30.",
+      "de": "Die 10. Saison von „Crystalline Conflict“ in den Top 30 abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン10にて、ランキングで30位以内に入る",
+      "fr": "Terminer la saison 10 de Crystalline Conflict dans les 30 premières places du classement."
+    },
+    "item": 0,
+    "title": 721
+  },
+  "3427": {
+    "id": 3427,
+    "icon": "/i/000000/000210.png",
+    "patch": 91,
+    "en": "Ranked and Filed: Season Ten",
+    "de": "Kristallkämpfer (10. Saison)",
+    "ja": "コンフリクトの入賞者：シーズン10",
+    "fr": "As du conflit : saison 10",
+    "description": {
+      "en": "Complete Crystalline Conflict Season Ten ranked within the top 100.",
+      "de": "Die 10. Saison von „Crystalline Conflict“ in den Top 100 abgeschlossen.",
+      "ja": "クリスタルコンフリクトのシーズン10にて、ランキングで100位以内に入る",
+      "fr": "Terminer la saison 10 de Crystalline Conflict dans les 100 premières places du classement."
+    },
+    "item": 0,
+    "title": 722
+  },
+  "3428": {
+    "id": 3428,
+    "icon": "",
+    "patch": 1,
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    },
+    "item": 0,
+    "title": 0
   }
 }

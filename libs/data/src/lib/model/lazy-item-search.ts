@@ -14,7 +14,6 @@ export interface LazyItemSearch {
   elvl?:        number;
   en:           string;
   fr:           string;
-  gcReward?:    number;
   icon?:        string;
   iconId?:      string;
   id:           number | string;

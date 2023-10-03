@@ -1,698 +1,1159 @@
 {
   "0": {
+    "id": 0,
+    "banner": "https://i.imgur.com/ZUUtGzH.png",
+    "ex": 0,
+    "release": 1376611200,
     "en": "Patch 2.0: A Realm Reborn",
     "de": "Patch 2.0: A Realm Reborn",
     "ja": "新生エオルゼア 2.0",
     "fr": "Patch 2.0: A Realm Reborn",
     "ko": "Patch 2.0: A Realm Reborn",
-    "zh": "Patch 2.0: A Realm Reborn"
+    "zh": "Patch 2.0: A Realm Reborn",
+    "version": "2.0"
   },
   "2": {
+    "id": 2,
+    "banner": "https://i.imgur.com/ZUUtGzH.png",
+    "ex": 0,
+    "release": 1376611200,
     "en": "Patch 2.0: A Realm Reborn",
     "de": "Patch 2.0: A Realm Reborn",
     "ja": "新生エオルゼア 2.0",
     "fr": "Patch 2.0: A Realm Reborn",
     "ko": "Patch 2.0: A Realm Reborn",
-    "zh": "Patch 2.0: A Realm Reborn"
+    "zh": "Patch 2.0: A Realm Reborn",
+    "version": "2.0"
   },
   "3": {
+    "id": 3,
+    "banner": null,
+    "ex": 0,
+    "release": 1382036400,
     "en": "Patch 2.05",
     "de": "Patch 2.05",
     "ja": "Patch 2.05",
     "fr": "Patch 2.05",
     "ko": "Patch 2.05",
-    "zh": "Patch 2.05"
+    "zh": "Patch 2.05",
+    "version": "2.05"
   },
   "4": {
+    "id": 4,
+    "banner": "https://img.finalfantasyxiv.com/lds/h/X/NsELex3yMQ6Htgnfdc5wUleM2A.png",
+    "ex": 0,
+    "release": 1387245600,
     "en": "Patch 2.1: A Realm Awoken",
     "de": "Patch 2.1: A Realm Awoken",
     "ja": "Patch 2.1: A Realm Awoken",
     "fr": "Patch 2.1: A Realm Awoken",
     "ko": "Patch 2.1: A Realm Awoken",
-    "zh": "Patch 2.1: A Realm Awoken"
+    "zh": "Patch 2.1: A Realm Awoken",
+    "version": "2.1"
   },
   "5": {
+    "id": 5,
+    "banner": null,
+    "ex": 0,
+    "release": 1387245600,
     "en": "Patch 2.1b: A Realm Awoken",
     "de": "Patch 2.1b: A Realm Awoken",
     "ja": "Patch 2.1b: A Realm Awoken",
     "fr": "Patch 2.1b: A Realm Awoken",
     "ko": "Patch 2.1b: A Realm Awoken",
-    "zh": "Patch 2.1b: A Realm Awoken"
+    "zh": "Patch 2.1b: A Realm Awoken",
+    "version": "2.1b"
   },
   "6": {
+    "id": 6,
+    "banner": null,
+    "ex": 0,
+    "release": 1390255200,
     "en": "Patch 2.15",
     "de": "Patch 2.15",
     "ja": "Patch 2.15",
     "fr": "Patch 2.15",
     "ko": "Patch 2.15",
-    "zh": "Patch 2.15"
+    "zh": "Patch 2.15",
+    "version": "2.15"
   },
   "7": {
+    "id": 7,
+    "banner": null,
+    "ex": 0,
+    "release": 1392919200,
     "en": "Patch 2.16",
     "de": "Patch 2.16",
     "ja": "Patch 2.16",
     "fr": "Patch 2.16",
     "ko": "Patch 2.16",
-    "zh": "Patch 2.16"
+    "zh": "Patch 2.16",
+    "version": "2.16"
   },
   "8": {
+    "id": 8,
+    "banner": "https://img.finalfantasyxiv.com/lds/h/V/Tvn9xPR13FNwXg7JvpbozlY9BQ.png",
+    "ex": 0,
+    "release": 1395831600,
     "en": "Patch 2.2: Through The Maelstrom",
     "de": "Patch 2.2: Through The Maelstrom",
     "ja": "Patch 2.2: Through The Maelstrom",
     "fr": "Patch 2.2: Through The Maelstrom",
     "ko": "Patch 2.2: Through The Maelstrom",
-    "zh": "Patch 2.2: Through The Maelstrom"
+    "zh": "Patch 2.2: Through The Maelstrom",
+    "version": "2.2"
   },
   "9": {
+    "id": 9,
+    "banner": null,
+    "ex": 0,
+    "release": 1398330000,
     "en": "Patch 2.25",
     "de": "Patch 2.25",
     "ja": "Patch 2.25",
     "fr": "Patch 2.25",
     "ko": "Patch 2.25",
-    "zh": "Patch 2.25"
+    "zh": "Patch 2.25",
+    "version": "2.25"
   },
   "10": {
+    "id": 10,
+    "banner": null,
+    "ex": 0,
+    "release": 1401951600,
     "en": "Patch 2.28",
     "de": "Patch 2.28",
     "ja": "Patch 2.28",
     "fr": "Patch 2.28",
     "ko": "Patch 2.28",
-    "zh": "Patch 2.28"
+    "zh": "Patch 2.28",
+    "version": "2.28"
   },
   "11": {
+    "id": 11,
+    "banner": "https://img.finalfantasyxiv.com/lds/h/p/cNT1F2vDxKS2QXXP8MWWP8-XsE.png",
+    "ex": 0,
+    "release": 1404777600,
     "en": "Patch 2.3: Defenders Of Eorzea",
     "de": "Patch 2.3: Defenders Of Eorzea",
     "ja": "Patch 2.3: Defenders Of Eorzea",
     "fr": "Patch 2.3: Defenders Of Eorzea",
     "ko": "Patch 2.3: Defenders Of Eorzea",
-    "zh": "Patch 2.3: Defenders Of Eorzea"
+    "zh": "Patch 2.3: Defenders Of Eorzea",
+    "version": "2.3"
   },
   "12": {
+    "id": 12,
+    "banner": null,
+    "ex": 0,
+    "release": 1408424400,
     "en": "Patch 2.35",
     "de": "Patch 2.35",
     "ja": "Patch 2.35",
     "fr": "Patch 2.35",
     "ko": "Patch 2.35",
-    "zh": "Patch 2.35"
+    "zh": "Patch 2.35",
+    "version": "2.35"
   },
   "13": {
+    "id": 13,
+    "banner": null,
+    "ex": 0,
+    "release": 1410807600,
     "en": "Patch 2.38",
     "de": "Patch 2.38",
     "ja": "Patch 2.38",
     "fr": "Patch 2.38",
     "ko": "Patch 2.38",
-    "zh": "Patch 2.38"
+    "zh": "Patch 2.38",
+    "version": "2.38"
   },
   "14": {
+    "id": 14,
+    "banner": "https://img.finalfantasyxiv.com/lds/h/t/KjFhnmNFDl3a35sDfmWYqn5JQg.png",
+    "ex": 0,
+    "release": 1414465200,
     "en": "Patch 2.4: Dreams Of Ice",
     "de": "Patch 2.4: Dreams Of Ice",
     "ja": "Patch 2.4: Dreams Of Ice",
     "fr": "Patch 2.4: Dreams Of Ice",
     "ko": "Patch 2.4: Dreams Of Ice",
-    "zh": "Patch 2.4: Dreams Of Ice"
+    "zh": "Patch 2.4: Dreams Of Ice",
+    "version": "2.4"
   },
   "15": {
+    "id": 15,
+    "banner": null,
+    "ex": 0,
+    "release": 1418097600,
     "en": "Patch 2.45",
     "de": "Patch 2.45",
     "ja": "Patch 2.45",
     "fr": "Patch 2.45",
     "ko": "Patch 2.45",
-    "zh": "Patch 2.45"
+    "zh": "Patch 2.45",
+    "version": "2.45"
   },
   "16": {
+    "id": 16,
+    "banner": "https://img.finalfantasyxiv.com/lds/h/J/9KjGL7nqywcMnEkQ72mJaXP6d8.png",
+    "ex": 0,
+    "release": 1421722800,
     "en": "Patch 2.5: Before The Fall",
     "de": "Patch 2.5: Before The Fall",
     "ja": "Patch 2.5: Before The Fall",
     "fr": "Patch 2.5: Before The Fall",
     "ko": "Patch 2.5: Before The Fall",
-    "zh": "Patch 2.5: Before The Fall"
+    "zh": "Patch 2.5: Before The Fall",
+    "version": "2.5"
   },
   "17": {
+    "id": 17,
+    "banner": null,
+    "ex": 0,
+    "release": 1424746800,
     "en": "Patch 2.51",
     "de": "Patch 2.51",
     "ja": "Patch 2.51",
     "fr": "Patch 2.51",
     "ko": "Patch 2.51",
-    "zh": "Patch 2.51"
+    "zh": "Patch 2.51",
+    "version": "2.51"
   },
   "18": {
+    "id": 18,
+    "banner": null,
+    "ex": 0,
+    "release": 1427763600,
     "en": "Patch 2.55",
     "de": "Patch 2.55",
     "ja": "Patch 2.55",
     "fr": "Patch 2.55",
     "ko": "Patch 2.55",
-    "zh": "Patch 2.55"
+    "zh": "Patch 2.55",
+    "version": "2.55"
   },
   "19": {
+    "id": 19,
+    "banner": "https://img.finalfantasyxiv.com/lds/h/O/U5TufT2QVnzXONyLf61X468dFU.png",
+    "ex": 1,
+    "release": 1434682800,
     "en": "Patch 3.0: Heavensward",
     "de": "Patch 3.0: Heavensward",
     "ja": "Patch 3.0: Heavensward",
     "fr": "Patch 3.0: Heavensward",
     "ko": "Patch 3.0: Heavensward",
-    "zh": "Patch 3.0: Heavensward"
+    "zh": "Patch 3.0: Heavensward",
+    "version": "3.0"
   },
   "20": {
+    "id": 20,
+    "banner": null,
+    "ex": 1,
+    "release": 1436263200,
     "en": "Patch 3.01",
     "de": "Patch 3.01",
     "ja": "Patch 3.01",
     "fr": "Patch 3.01",
     "ko": "Patch 3.01",
-    "zh": "Patch 3.01"
+    "zh": "Patch 3.01",
+    "version": "3.01"
   },
   "21": {
+    "id": 21,
+    "banner": null,
+    "ex": 1,
+    "release": 1437472800,
     "en": "Patch 3.05",
     "de": "Patch 3.05",
     "ja": "Patch 3.05",
     "fr": "Patch 3.05",
     "ko": "Patch 3.05",
-    "zh": "Patch 3.05"
+    "zh": "Patch 3.05",
+    "version": "3.05"
   },
   "22": {
+    "id": 22,
+    "banner": null,
+    "ex": 1,
+    "release": 1440498600,
     "en": "Patch 3.07",
     "de": "Patch 3.07",
     "ja": "Patch 3.07",
     "fr": "Patch 3.07",
     "ko": "Patch 3.07",
-    "zh": "Patch 3.07"
+    "zh": "Patch 3.07",
+    "version": "3.07"
   },
   "23": {
+    "id": 23,
+    "banner": "https://img.finalfantasyxiv.com/lds/h/i/8PcPQObRv2R3N8cEiPFQW6bo38.png",
+    "ex": 1,
+    "release": 1447063200,
     "en": "Patch 3.1: As Goes Light, So Goes Darkness",
     "de": "Patch 3.1: As Goes Light, So Goes Darkness",
     "ja": "Patch 3.1: As Goes Light, So Goes Darkness",
     "fr": "Patch 3.1: As Goes Light, So Goes Darkness",
     "ko": "Patch 3.1: As Goes Light, So Goes Darkness",
-    "zh": "Patch 3.1: As Goes Light, So Goes Darkness"
+    "zh": "Patch 3.1: As Goes Light, So Goes Darkness",
+    "version": "3.1"
   },
   "24": {
+    "id": 24,
+    "banner": null,
+    "ex": 1,
+    "release": 1450263600,
     "en": "Patch 3.15",
     "de": "Patch 3.15",
     "ja": "Patch 3.15",
     "fr": "Patch 3.15",
     "ko": "Patch 3.15",
-    "zh": "Patch 3.15"
+    "zh": "Patch 3.15",
+    "version": "3.15"
   },
   "25": {
+    "id": 25,
+    "banner": "https://img.finalfantasyxiv.com/lds/h/x/V-EzNfDS5pAsRiA-9d7Wr5ypPo.png",
+    "ex": 1,
+    "release": 1456221650,
     "en": "Patch 3.2: The Gears Of Change",
     "de": "Patch 3.2: The Gears Of Change",
     "ja": "Patch 3.2: The Gears Of Change",
     "fr": "Patch 3.2: The Gears Of Change",
     "ko": "Patch 3.2: The Gears Of Change",
-    "zh": "Patch 3.2: The Gears Of Change"
+    "zh": "Patch 3.2: The Gears Of Change",
+    "version": "3.2"
   },
   "26": {
+    "id": 26,
+    "banner": null,
+    "ex": 1,
+    "release": 1459238400,
     "en": "Patch 3.25",
     "de": "Patch 3.25",
     "ja": "Patch 3.25",
     "fr": "Patch 3.25",
     "ko": "Patch 3.25",
-    "zh": "Patch 3.25"
+    "zh": "Patch 3.25",
+    "version": "3.25"
   },
   "27": {
+    "id": 27,
+    "banner": "https://img.finalfantasyxiv.com/lds/h/N/5hPSYO8hzFnPtmWHUl1WdKUP6Y.png",
+    "ex": 1,
+    "release": 1465207200,
     "en": "Patch 3.3: Revenge Of The Horde",
     "de": "Patch 3.3: Revenge Of The Horde",
     "ja": "Patch 3.3: Revenge Of The Horde",
     "fr": "Patch 3.3: Revenge Of The Horde",
     "ko": "Patch 3.3: Revenge Of The Horde",
-    "zh": "Patch 3.3: Revenge Of The Horde"
+    "zh": "Patch 3.3: Revenge Of The Horde",
+    "version": "3.3"
   },
   "28": {
+    "id": 28,
+    "banner": null,
+    "ex": 1,
+    "release": 1468918800,
     "en": "Patch 3.35",
     "de": "Patch 3.35",
     "ja": "Patch 3.35",
     "fr": "Patch 3.35",
     "ko": "Patch 3.35",
-    "zh": "Patch 3.35"
+    "zh": "Patch 3.35",
+    "version": "3.35"
   },
   "30": {
+    "id": 30,
+    "banner": "https://img.finalfantasyxiv.com/lds/h/1/NiJCSH6UdB0Tmfri6l3aI8bwVk.png",
+    "ex": 1,
+    "release": 1474963200,
     "en": "Patch 3.4: Soul Surrender",
     "de": "Patch 3.4: Soul Surrender",
     "ja": "Patch 3.4: Soul Surrender",
     "fr": "Patch 3.4: Soul Surrender",
     "ko": "Patch 3.4: Soul Surrender",
-    "zh": "Patch 3.4: Soul Surrender"
+    "zh": "Patch 3.4: Soul Surrender",
+    "version": "3.4"
   },
   "31": {
+    "id": 31,
+    "banner": null,
+    "ex": 1,
+    "release": 1477994400,
     "en": "Patch 3.45",
     "de": "Patch 3.45",
     "ja": "Patch 3.45",
     "fr": "Patch 3.45",
     "ko": "Patch 3.45",
-    "zh": "Patch 3.45"
+    "zh": "Patch 3.45",
+    "version": "3.45"
   },
   "32": {
+    "id": 32,
+    "banner": "https://img.finalfantasyxiv.com/lds/h/X/Fn6c_Pg2ARmXfetGQPs3M0f9Sg.png",
+    "ex": 1,
+    "release": 1484643600,
     "en": "Patch 3.5: The Far Edge Of Fate",
     "de": "Patch 3.5: The Far Edge Of Fate",
     "ja": "Patch 3.5: The Far Edge Of Fate",
     "fr": "Patch 3.5: The Far Edge Of Fate",
     "ko": "Patch 3.5: The Far Edge Of Fate",
-    "zh": "Patch 3.5: The Far Edge Of Fate"
+    "zh": "Patch 3.5: The Far Edge Of Fate",
+    "version": "3.5"
   },
   "33": {
+    "id": 33,
+    "banner": null,
+    "ex": 1,
+    "release": 1485594000,
     "en": "Patch 3.55a",
     "de": "Patch 3.55a",
     "ja": "Patch 3.55a",
     "fr": "Patch 3.55a",
     "ko": "Patch 3.55a",
-    "zh": "Patch 3.55a"
+    "zh": "Patch 3.55a",
+    "version": "3.55a"
   },
   "34": {
+    "id": 34,
+    "banner": null,
+    "ex": 1,
+    "release": 1489050000,
     "en": "Patch 3.55b",
     "de": "Patch 3.55b",
     "ja": "Patch 3.55b",
     "fr": "Patch 3.55b",
     "ko": "Patch 3.55b",
-    "zh": "Patch 3.55b"
+    "zh": "Patch 3.55b",
+    "version": "3.55b"
   },
   "35": {
+    "id": 35,
+    "banner": null,
+    "ex": 1,
+    "release": 1490691600,
     "en": "Patch 3.56",
     "de": "Patch 3.56",
     "ja": "Patch 3.56",
     "fr": "Patch 3.56",
     "ko": "Patch 3.56",
-    "zh": "Patch 3.56"
+    "zh": "Patch 3.56",
+    "version": "3.56"
   },
   "36": {
+    "id": 36,
+    "banner": "https://img.finalfantasyxiv.com/lds/h/H/zB-YYp8BN78u99OjjR0rI66_pk.png",
+    "ex": 2,
+    "release": 1497517200,
     "en": "Patch 4.0: Stormblood",
     "de": "Patch 4.0: Stormblood",
     "ja": "Patch 4.0: Stormblood",
     "fr": "Patch 4.0: Stormblood",
     "ko": "Patch 4.0: Stormblood",
-    "zh": "Patch 4.0: Stormblood"
+    "zh": "Patch 4.0: Stormblood",
+    "version": "4.0"
   },
   "37": {
+    "id": 37,
+    "banner": null,
+    "ex": 2,
+    "release": 1499162101,
     "en": "Patch 4.01",
     "de": "Patch 4.01",
     "ja": "Patch 4.01",
     "fr": "Patch 4.01",
     "ko": "Patch 4.01",
-    "zh": "Patch 4.01"
+    "zh": "Patch 4.01",
+    "version": "4.01"
   },
   "38": {
+    "id": 38,
+    "banner": null,
+    "ex": 2,
+    "release": 1500368961,
     "en": "Patch 4.05",
     "de": "Patch 4.05",
     "ja": "Patch 4.05",
     "fr": "Patch 4.05",
     "ko": "Patch 4.05",
-    "zh": "Patch 4.05"
+    "zh": "Patch 4.05",
+    "version": "4.05"
   },
   "39": {
+    "id": 39,
+    "banner": null,
+    "ex": 2,
+    "release": 1501747200,
     "en": "Patch 4.06",
     "de": "Patch 4.06",
     "ja": "Patch 4.06",
     "fr": "Patch 4.06",
     "ko": "Patch 4.06",
-    "zh": "Patch 4.06"
+    "zh": "Patch 4.06",
+    "version": "4.06"
   },
   "40": {
+    "id": 40,
+    "banner": "https://img.finalfantasyxiv.com/lds/h/k/i4m9KdxaQkwYVT_F6JOcytNdEs.png",
+    "ex": 2,
+    "release": 1507622400,
     "en": "Patch 4.1: The Legend Returns",
     "de": "Patch 4.1: The Legend Returns",
     "ja": "Patch 4.1: The Legend Returns",
     "fr": "Patch 4.1: The Legend Returns",
     "ko": "Patch 4.1: The Legend Returns",
-    "zh": "Patch 4.1: The Legend Returns"
+    "zh": "Patch 4.1: The Legend Returns",
+    "version": "4.1"
   },
   "41": {
+    "id": 41,
+    "banner": null,
+    "ex": 2,
+    "release": 1508839200,
     "en": "Patch 4.11",
     "de": "Patch 4.11",
     "ja": "Patch 4.11",
     "fr": "Patch 4.11",
     "ko": "Patch 4.11",
-    "zh": "Patch 4.11"
+    "zh": "Patch 4.11",
+    "version": "4.11"
   },
   "42": {
+    "id": 42,
+    "banner": null,
+    "ex": 2,
+    "release": 1511258400,
     "en": "Patch 4.15",
     "de": "Patch 4.15",
     "ja": "Patch 4.15",
     "fr": "Patch 4.15",
     "ko": "Patch 4.15",
-    "zh": "Patch 4.15"
+    "zh": "Patch 4.15",
+    "version": "4.15"
   },
   "43": {
+    "id": 43,
+    "banner": "https://img.finalfantasyxiv.com/lds/h/H/e79nKU10GEAFUGSb0RtWYaZduQ.png",
+    "ex": 2,
+    "release": 1517227200,
     "en": "Patch 4.2: Rise of a New Sun",
     "de": "Patch 4.2: Rise of a New Sun",
     "ja": "Patch 4.2: Rise of a New Sun",
     "fr": "Patch 4.2: Rise of a New Sun",
     "ko": "Patch 4.2: Rise of a New Sun",
-    "zh": "Patch 4.2: Rise of a New Sun"
+    "zh": "Patch 4.2: Rise of a New Sun",
+    "version": "4.2"
   },
   "44": {
+    "id": 44,
+    "banner": null,
+    "ex": 2,
+    "release": 1520935200,
     "en": "Patch 4.25",
     "de": "Patch 4.25",
     "ja": "Patch 4.25",
     "fr": "Patch 4.25",
     "ko": "Patch 4.25",
-    "zh": "Patch 4.25"
+    "zh": "Patch 4.25",
+    "version": "4.25"
   },
   "45": {
+    "id": 45,
+    "banner": "https://img.finalfantasyxiv.com/lds/h/k/TraAoRNM1Il0EgEMRK9w2sskYY.png",
+    "ex": 2,
+    "release": 1526976000,
     "en": "Patch 4.3: Under The Moonlight",
     "de": "Patch 4.3: Under The Moonlight",
     "ja": "Patch 4.3: Under The Moonlight",
     "fr": "Patch 4.3: Under The Moonlight",
     "ko": "Patch 4.3: Under The Moonlight",
-    "zh": "Patch 4.3: Under The Moonlight"
+    "zh": "Patch 4.3: Under The Moonlight",
+    "version": "4.3"
   },
   "46": {
+    "id": 46,
+    "banner": null,
+    "ex": 2,
+    "release": 1528223134,
     "en": "Patch 4.31",
     "de": "Patch 4.31",
     "ja": "Patch 4.31",
     "fr": "Patch 4.31",
     "ko": "Patch 4.31",
-    "zh": "Patch 4.31"
+    "zh": "Patch 4.31",
+    "version": "4.31"
   },
   "47": {
+    "id": 47,
+    "banner": null,
+    "ex": 2,
+    "release": 1530617875,
     "en": "Patch 4.35",
     "de": "Patch 4.35",
     "ja": "Patch 4.35",
     "fr": "Patch 4.35",
     "ko": "Patch 4.35",
-    "zh": "Patch 4.35"
+    "zh": "Patch 4.35",
+    "version": "4.35"
   },
   "48": {
+    "id": 48,
+    "banner": null,
+    "ex": 2,
+    "release": 1533635005,
     "en": "Patch 4.36",
     "de": "Patch 4.36",
     "ja": "Patch 4.36",
     "fr": "Patch 4.36",
     "ko": "Patch 4.36",
-    "zh": "Patch 4.36"
+    "zh": "Patch 4.36",
+    "version": "4.36"
   },
   "49": {
+    "id": 49,
+    "banner": "https://img.finalfantasyxiv.com/lds/h/t/VDlhxD8xw1UA28AP5nBRWfc6Tc.png",
+    "ex": 2,
+    "release": 1537264800,
     "en": "Patch 4.4: Prelude In Violet",
     "de": "Patch 4.4: Prelude In Violet",
     "ja": "Patch 4.4: Prelude In Violet",
     "fr": "Patch 4.4: Prelude In Violet",
     "ko": "Patch 4.4: Prelude In Violet",
-    "zh": "Patch 4.4: Prelude In Violet"
+    "zh": "Patch 4.4: Prelude In Violet",
+    "version": "4.4"
   },
   "50": {
+    "id": 50,
+    "banner": null,
+    "ex": 2,
+    "release": 1538467200,
     "en": "Patch 4.41",
     "de": "Patch 4.41",
     "ja": "Patch 4.41",
     "fr": "Patch 4.41",
     "ko": "Patch 4.41",
-    "zh": "Patch 4.41"
+    "zh": "Patch 4.41",
+    "version": "4.41"
   },
   "51": {
+    "id": 51,
+    "banner": null,
+    "ex": 2,
+    "release": 1541498400,
     "en": "Patch 4.45",
     "de": "Patch 4.45",
     "ja": "Patch 4.45",
     "fr": "Patch 4.45",
     "ko": "Patch 4.45",
-    "zh": "Patch 4.45"
+    "zh": "Patch 4.45",
+    "version": "4.45"
   },
   "52": {
+    "id": 52,
+    "banner": "https://img.finalfantasyxiv.com/lds/h/3/Jv-nF8an7MBqS0Cdp5DHnNLTy4.png",
+    "ex": 2,
+    "release": 1546941600,
     "en": "Patch 4.5: A Requiem for Heroes",
     "de": "Patch 4.5: A Requiem for Heroes",
     "ja": "Patch 4.5: A Requiem for Heroes",
     "fr": "Patch 4.5: A Requiem for Heroes",
     "ko": "Patch 4.5: A Requiem for Heroes",
-    "zh": "Patch 4.5: A Requiem for Heroes"
+    "zh": "Patch 4.5: A Requiem for Heroes",
+    "version": "4.5"
   },
   "54": {
+    "id": 54,
+    "banner": null,
+    "ex": 2,
+    "release": 1546941600,
     "en": "Patch 4.55",
     "de": "Patch 4.55",
     "ja": "Patch 4.55",
     "fr": "Patch 4.55",
     "ko": "Patch 4.55",
-    "zh": "Patch 4.55"
+    "zh": "Patch 4.55",
+    "version": "4.55"
   },
   "55": {
+    "id": 55,
+    "banner": null,
+    "ex": 2,
+    "release": 1546941600,
     "en": "Patch 4.56",
     "de": "Patch 4.56",
     "ja": "Patch 4.56",
     "fr": "Patch 4.56",
     "ko": "Patch 4.56",
-    "zh": "Patch 4.56"
+    "zh": "Patch 4.56",
+    "version": "4.56"
   },
   "56": {
+    "id": 56,
+    "banner": null,
+    "ex": 2,
+    "release": 1546941600,
     "en": "Patch 4.57",
     "de": "Patch 4.57",
     "ja": "Patch 4.57",
     "fr": "Patch 4.57",
     "ko": "Patch 4.57",
-    "zh": "Patch 4.57"
+    "zh": "Patch 4.57",
+    "version": "4.57"
   },
   "57": {
+    "id": 57,
+    "banner": null,
+    "ex": 2,
+    "release": 1546941600,
     "en": "Patch 4.58",
     "de": "Patch 4.58",
     "ja": "Patch 4.58",
     "fr": "Patch 4.58",
     "ko": "Patch 4.58",
-    "zh": "Patch 4.58"
+    "zh": "Patch 4.58",
+    "version": "4.58"
   },
   "58": {
+    "id": 58,
+    "banner": "https://img.finalfantasyxiv.com/lds/promo/h/M/jmK4Q5CcFnBD1FfV90aw1zeUG8.png",
+    "ex": 3,
+    "release": 1561712400,
     "en": "Patch 5.0: ShadowBringers",
     "de": "Patch 5.0: ShadowBringers",
     "ja": "Patch 5.0: ShadowBringers",
     "fr": "Patch 5.0: ShadowBringers",
     "ko": "Patch 5.0: ShadowBringers",
-    "zh": "Patch 5.0: ShadowBringers"
+    "zh": "Patch 5.0: ShadowBringers",
+    "version": "5.0"
   },
   "59": {
+    "id": 59,
+    "banner": null,
+    "ex": 3,
+    "release": 1563274800,
     "en": "Patch 5.01",
     "de": "Patch 5.01",
     "ja": "Patch 5.01",
     "fr": "Patch 5.01",
     "ko": "Patch 5.01",
-    "zh": "Patch 5.01"
+    "zh": "Patch 5.01",
+    "version": "5.01"
   },
   "60": {
+    "id": 60,
+    "banner": null,
+    "ex": 3,
+    "release": 1564484400,
     "en": "Patch 5.05",
     "de": "Patch 5.05",
     "ja": "Patch 5.05",
     "fr": "Patch 5.05",
     "ko": "Patch 5.05",
-    "zh": "Patch 5.05"
+    "zh": "Patch 5.05",
+    "version": "5.05"
   },
   "61": {
+    "id": 61,
+    "banner": null,
+    "ex": 3,
+    "release": 1567080000,
     "en": "Patch 5.08",
     "de": "Patch 5.08",
     "ja": "Patch 5.08",
     "fr": "Patch 5.08",
     "ko": "Patch 5.08",
-    "zh": "Patch 5.08"
+    "zh": "Patch 5.08",
+    "version": "5.08"
   },
   "62": {
+    "id": 62,
+    "banner": null,
+    "ex": 3,
+    "release": 1572346800,
     "en": "Patch 5.1",
     "de": "Patch 5.1",
     "ja": "Patch 5.1",
     "fr": "Patch 5.1",
     "ko": "Patch 5.1",
-    "zh": "Patch 5.1"
+    "zh": "Patch 5.1",
+    "version": "5.1"
   },
   "63": {
+    "id": 63,
+    "banner": null,
+    "ex": 3,
+    "release": 1573556400,
     "en": "Patch 5.11",
     "de": "Patch 5.11",
     "ja": "Patch 5.11",
     "fr": "Patch 5.11",
     "ko": "Patch 5.11",
-    "zh": "Patch 5.11"
+    "zh": "Patch 5.11",
+    "version": "5.11"
   },
   "64": {
+    "id": 64,
+    "banner": null,
+    "ex": 3,
+    "release": 1576022400,
     "en": "Patch 5.15",
     "de": "Patch 5.15",
     "ja": "Patch 5.15",
     "fr": "Patch 5.15",
     "ko": "Patch 5.15",
-    "zh": "Patch 5.15"
+    "zh": "Patch 5.15",
+    "version": "5.15"
   },
   "65": {
+    "id": 65,
+    "banner": null,
+    "ex": 3,
+    "release": 1577185200,
     "en": "Patch 5.18",
     "de": "Patch 5.18",
     "ja": "Patch 5.18",
     "fr": "Patch 5.18",
     "ko": "Patch 5.18",
-    "zh": "Patch 5.18"
+    "zh": "Patch 5.18",
+    "version": "5.18"
   },
   "66": {
+    "id": 66,
+    "banner": "https://img.finalfantasyxiv.com/t/e6a6aeea3b4816a71340407bfae2acc01d1f73f3.png",
+    "ex": 3,
+    "release": 1582020000,
     "en": "Patch 5.2",
     "de": "Patch 5.2",
     "ja": "Patch 5.2",
     "fr": "Patch 5.2",
     "ko": "Patch 5.2",
-    "zh": "Patch 5.2"
+    "zh": "Patch 5.2",
+    "version": "5.2"
   },
   "67": {
+    "id": 67,
+    "banner": null,
+    "ex": 3,
+    "release": 1583798400,
     "en": "Patch 5.21",
     "de": "Patch 5.21",
     "ja": "Patch 5.21",
     "fr": "Patch 5.21",
     "ko": "Patch 5.21",
-    "zh": "Patch 5.21"
+    "zh": "Patch 5.21",
+    "version": "5.21"
   },
   "68": {
+    "id": 68,
+    "banner": null,
+    "ex": 3,
+    "release": 1586260800,
     "en": "Patch 5.25",
     "de": "Patch 5.25",
     "ja": "Patch 5.25",
     "fr": "Patch 5.25",
     "ko": "Patch 5.25",
-    "zh": "Patch 5.25"
+    "zh": "Patch 5.25",
+    "version": "5.25"
   },
   "69": {
+    "id": 69,
+    "banner": "https://img.finalfantasyxiv.com/t/de58e70494f03af0b5e341a9a794afa20fdc1642.png?1596700674?1596525244",
+    "ex": 3,
+    "release": 1586260800,
     "en": "Patch 5.3",
     "de": "Patch 5.3",
     "ja": "Patch 5.3",
     "fr": "Patch 5.3",
     "ko": "Patch 5.3",
-    "zh": "Patch 5.3"
+    "zh": "Patch 5.3",
+    "version": "5.3"
   },
   "70": {
+    "id": 70,
+    "banner": null,
+    "ex": 3,
+    "release": 1599555600,
     "en": "Patch 5.31",
     "de": "Patch 5.31",
     "ja": "Patch 5.31",
     "fr": "Patch 5.31",
     "ko": "Patch 5.31",
-    "zh": "Patch 5.31"
+    "zh": "Patch 5.31",
+    "version": "5.31"
   },
   "71": {
+    "id": 71,
+    "banner": null,
+    "ex": 3,
+    "release": 1602374400,
     "en": "Patch 5.35",
     "de": "Patch 5.35",
     "ja": "Patch 5.35",
     "fr": "Patch 5.35",
     "ko": "Patch 5.35",
-    "zh": "Patch 5.35"
+    "zh": "Patch 5.35",
+    "version": "5.35"
   },
   "72": {
+    "id": 72,
+    "banner": null,
+    "ex": 3,
+    "release": 1607425200,
     "en": "Patch 5.4",
     "de": "Patch 5.4",
     "ja": "Patch 5.4",
     "fr": "Patch 5.4",
     "ko": "Patch 5.4",
-    "zh": "Patch 5.4"
+    "zh": "Patch 5.4",
+    "version": "5.4"
   },
   "73": {
+    "id": 73,
+    "banner": null,
+    "ex": 3,
+    "release": 1610451000,
     "en": "Patch 5.41",
     "de": "Patch 5.41",
     "ja": "Patch 5.41",
     "fr": "Patch 5.41",
     "ko": "Patch 5.41",
-    "zh": "Patch 5.41"
+    "zh": "Patch 5.41",
+    "version": "5.41"
   },
   "74": {
+    "id": 74,
+    "banner": null,
+    "ex": 3,
+    "release": 1612263600,
     "en": "Patch 5.45",
     "de": "Patch 5.45",
     "ja": "Patch 5.45",
     "fr": "Patch 5.45",
     "ko": "Patch 5.45",
-    "zh": "Patch 5.45"
+    "zh": "Patch 5.45",
+    "version": "5.45"
   },
   "75": {
+    "id": 75,
+    "banner": null,
+    "ex": 3,
+    "release": 1618315200,
     "en": "Patch 5.5",
     "de": "Patch 5.5",
     "ja": "Patch 5.5",
     "fr": "Patch 5.5",
     "ko": "Patch 5.5",
-    "zh": "Patch 5.5"
+    "zh": "Patch 5.5",
+    "version": "5.5"
   },
   "76": {
+    "id": 76,
+    "banner": null,
+    "ex": 3,
+    "release": 1621940400,
     "en": "Patch 5.55",
     "de": "Patch 5.55",
     "ja": "Patch 5.55",
     "fr": "Patch 5.55",
     "ko": "Patch 5.55",
-    "zh": "Patch 5.55"
+    "zh": "Patch 5.55",
+    "version": "5.55"
   },
   "77": {
+    "id": 77,
+    "banner": null,
+    "ex": 4,
+    "release": 1638525600,
     "en": "Patch 6.0",
     "de": "Patch 6.0",
     "ja": "Patch 6.0",
     "fr": "Patch 6.0",
     "ko": "Patch 6.0",
-    "zh": "Patch 6.0"
+    "zh": "Patch 6.0",
+    "version": "6.0"
   },
   "78": {
+    "id": 78,
+    "banner": null,
+    "ex": 4,
+    "release": 1640075652,
     "en": "Patch 6.01",
     "de": "Patch 6.01",
     "ja": "Patch 6.01",
     "fr": "Patch 6.01",
     "ko": "Patch 6.01",
-    "zh": "Patch 6.01"
+    "zh": "Patch 6.01",
+    "version": "6.01"
   },
   "79": {
+    "id": 79,
+    "banner": null,
+    "ex": 4,
+    "release": 1641290400,
     "en": "Patch 6.05",
     "de": "Patch 6.05",
     "ja": "Patch 6.05",
     "fr": "Patch 6.05",
     "ko": "Patch 6.05",
-    "zh": "Patch 6.05"
+    "zh": "Patch 6.05",
+    "version": "6.05"
   },
   "80": {
+    "id": 80,
+    "banner": null,
+    "ex": 4,
+    "release": 1649754000,
     "en": "Patch 6.1",
     "de": "Patch 6.1",
     "ja": "Patch 6.1",
     "fr": "Patch 6.1",
     "ko": "Patch 6.1",
-    "zh": "Patch 6.1"
+    "zh": "Patch 6.1",
+    "version": "6.1"
   },
   "81": {
+    "id": 81,
+    "banner": null,
+    "ex": 4,
+    "release": 1650963600,
     "en": "Patch 6.11",
     "de": "Patch 6.11",
     "ja": "Patch 6.11",
     "fr": "Patch 6.11",
     "ko": "Patch 6.11",
-    "zh": "Patch 6.11"
+    "zh": "Patch 6.11",
+    "version": "6.11"
   },
   "82": {
+    "id": 82,
+    "banner": null,
+    "ex": 4,
+    "release": 1654596000,
     "en": "Patch 6.15",
     "de": "Patch 6.15",
     "ja": "Patch 6.15",
     "fr": "Patch 6.15",
     "ko": "Patch 6.15",
-    "zh": "Patch 6.15"
+    "zh": "Patch 6.15",
+    "version": "6.15"
   },
   "83": {
+    "id": 83,
+    "banner": null,
+    "ex": 4,
+    "release": 1661248800,
     "en": "Patch 6.2",
     "de": "Patch 6.2",
     "ja": "Patch 6.2",
     "fr": "Patch 6.2",
     "ko": "Patch 6.2",
-    "zh": "Patch 6.2"
+    "zh": "Patch 6.2",
+    "version": "6.2"
   },
   "84": {
+    "id": 84,
+    "banner": null,
+    "ex": 4,
+    "release": 1666087200,
     "en": "Patch 6.25",
     "de": "Patch 6.25",
     "ja": "Patch 6.25",
     "fr": "Patch 6.25",
     "ko": "Patch 6.25",
-    "zh": "Patch 6.25"
+    "zh": "Patch 6.25",
+    "version": "6.25"
   },
   "85": {
+    "id": 85,
+    "banner": null,
+    "ex": 4,
+    "release": 1666087200,
     "en": "Patch 6.28",
     "de": "Patch 6.28",
     "ja": "Patch 6.28",
     "fr": "Patch 6.28",
     "ko": "Patch 6.28",
-    "zh": "Patch 6.28"
+    "zh": "Patch 6.28",
+    "version": "6.28"
   },
   "86": {
+    "id": 86,
+    "banner": null,
+    "ex": 4,
+    "release": 1673342100,
     "en": "Patch 6.3",
     "de": "Patch 6.3",
     "ja": "Patch 6.3",
     "fr": "Patch 6.3",
     "ko": "Patch 6.3",
-    "zh": "Patch 6.3"
+    "zh": "Patch 6.3",
+    "version": "6.3"
   },
   "87": {
+    "id": 87,
+    "banner": null,
+    "ex": 4,
+    "release": 1678180310,
     "en": "Patch 6.35",
     "de": "Patch 6.35",
     "ja": "Patch 6.35",
     "fr": "Patch 6.35",
     "ko": "Patch 6.35",
-    "zh": "Patch 6.35"
+    "zh": "Patch 6.35",
+    "version": "6.35"
   },
   "88": {
+    "id": 88,
+    "banner": "https://img.finalfantasyxiv.com/t/73a2f86640b92c655f23b2a6e8111039e28605d5.png?1684396865",
+    "ex": 4,
+    "release": 1684828800,
     "en": "Patch 6.4",
     "de": "Patch 6.4",
     "ja": "Patch 6.4",
     "fr": "Patch 6.4",
     "ko": "Patch 6.4",
-    "zh": "Patch 6.4"
+    "zh": "Patch 6.4",
+    "version": "6.4"
   },
   "89": {
+    "id": 89,
+    "banner": null,
+    "ex": 4,
+    "release": 1689671812,
     "en": "Patch 6.45",
     "de": "Patch 6.45",
     "ja": "Patch 6.45",
     "fr": "Patch 6.45",
     "ko": "Patch 6.45",
-    "zh": "Patch 6.45"
+    "zh": "Patch 6.45",
+    "version": "6.45"
+  },
+  "90": {
+    "id": 90,
+    "banner": null,
+    "ex": 4,
+    "release": 1691481600,
+    "en": "Patch 6.48",
+    "de": "Patch 6.48",
+    "ja": "Patch 6.48",
+    "fr": "Patch 6.48",
+    "ko": "Patch 6.48",
+    "zh": "Patch 6.48",
+    "version": "6.48"
+  },
+  "91": {
+    "id": 91,
+    "banner": null,
+    "ex": 4,
+    "release": 1696322767,
+    "en": "Patch 6.5",
+    "de": "Patch 6.5",
+    "ja": "Patch 6.5",
+    "fr": "Patch 6.5",
+    "ko": "Patch 6.5",
+    "zh": "Patch 6.5",
+    "version": "6.5"
   }
 }

@@ -231,6 +231,30 @@ export const firestoreCountReplaysCreate = functions.runWith(runtimeOpts).firest
   }).then(() => null);
 });
 
+export const firestoreIslandStatePreventiveLock = functions.runWith(runtimeOpts).firestore.document('/mji-workshop-status/{timestamp}')
+  .onUpdate(async (change, context) => {
+    const monitoringRef = admin.database().ref(`/mji_monitoring/${change.before.id}`);
+    const updates = await monitoringRef.get().then(ref => ref.val());
+    console.log(`MJI Status update #${updates + 1} from user ${context.auth?.uid || 'Anonymous'}`);
+    if (updates >= 2000 && !change.after.data().lock) {
+      await firestore.doc(`mji-workshop-status/${change.before.id}`).update({ lock: true });
+      await axios.post(functions.config().mji.webhook, {
+        content: null,
+        embeds: [{
+          title: 'Locked MJI status update',
+          description: `MJI status update has been locked after ${updates} were performed since the last reset at <t:${change.before.id}>.`,
+          color: 16711680
+        }],
+        username: 'Teamcraft Cloud Function'
+      }).catch(err => {
+        console.log(`[DISCORD ERROR HOOK] ${err.message}`)
+      });
+    }
+    await monitoringRef.transaction(current => {
+      return current + 1;
+    });
+  });
+
 export const desktopUpdater = functions.runWith(runtimeOpts).https.onRequest((req, res) => {
   if (req.path === '/RELEASES') {
     res.redirect(301, `https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/latest/download/RELEASES`);

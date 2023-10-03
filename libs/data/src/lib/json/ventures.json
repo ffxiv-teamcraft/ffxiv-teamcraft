@@ -1394,7 +1394,7 @@
   "237": {
     "en": "Chamomile",
     "ja": "カモミール",
-    "de": "Bund Kamille",
+    "de": "Kamille",
     "fr": "Camomille"
   },
   "238": {
@@ -5842,5 +5842,23 @@
     "ja": "渋木",
     "de": "Myrica-Zweig",
     "fr": "Myrica"
+  },
+  "981": {
+    "en": "Raw Zoisite",
+    "ja": "ゾイサイト原石",
+    "de": "Roh-Zoisit",
+    "fr": "Zoïsite brute"
+  },
+  "982": {
+    "en": "Mornveil Tree Bark",
+    "ja": "朝霧の樹皮",
+    "de": "Morgennebel-Rinde",
+    "fr": "Écorce de brume matinale"
+  },
+  "983": {
+    "en": "Jhinga",
+    "ja": "ジンガ",
+    "de": "Zingarnele",
+    "fr": "Jhinga"
   }
 }

@@ -776,7 +776,7 @@
     "location": "C"
   },
   "98": {
-    "en": "the Lilac Sea 1",
+    "en": "Lilac Sea 1",
     "ja": "D　紫礁海01",
     "de": "Fliedermeer 1 (D)",
     "fr": "Mer de lilas 1 (D)",
@@ -800,7 +800,7 @@
     "location": "F"
   },
   "101": {
-    "en": "the Lilac Sea 2",
+    "en": "Lilac Sea 2",
     "ja": "G　紫礁海02",
     "de": "Fliedermeer 2 (G)",
     "fr": "Mer de lilas 2 (G)",
@@ -808,52 +808,52 @@
     "location": "G"
   },
   "102": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Lilac Sea 3",
+    "ja": "H　紫礁海03",
+    "de": "Fliedermeer 3 (H)",
+    "fr": "Mer de lilas 3 (H)",
     "id": 102,
-    "location": ""
+    "location": "H"
   },
   "103": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Northwest Bellflower",
+    "ja": "I　桔梗海溝北西",
+    "de": "Nordwesten des Asterngrabens (I)",
+    "fr": "Nord-ouest de la fosse des campanules (I)",
     "id": 103,
-    "location": ""
+    "location": "I"
   },
   "104": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Corolla Isle",
+    "ja": "J　花冠島",
+    "de": "Korolleninsel (J)",
+    "fr": "Île des couronnes florales (J)",
     "id": 104,
-    "location": ""
+    "location": "J"
   },
   "105": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Southeast Bellflower",
+    "ja": "K　桔梗海溝南東",
+    "de": "Südosten des Asterngrabens (K)",
+    "fr": "Sud-est de la fosse des campanules (K)",
     "id": 105,
-    "location": ""
+    "location": "K"
   },
   "106": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "the Floral Reef",
+    "ja": "L　咲き誇る礁池",
+    "de": "Blühende Lagune (L)",
+    "fr": "Lagon en fleur (L)",
     "id": 106,
-    "location": ""
+    "location": "L"
   },
   "107": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Wingsreach",
+    "ja": "M　翼弁島",
+    "de": "Vexilleninsel (M)",
+    "fr": "Île des tiges ailées (M)",
     "id": 107,
-    "location": ""
+    "location": "M"
   },
   "108": {
     "en": "",

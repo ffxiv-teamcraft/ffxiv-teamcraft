@@ -5,8 +5,6 @@ import { first, map, switchMap } from 'rxjs/operators';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { UniversalisService } from '../../../core/api/universalis.service';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { NzMessageService } from 'ng-zorro-antd/message';
-import { TranslateService } from '@ngx-translate/core';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ContainerType } from '../../../model/user/inventory/container-type';
@@ -123,7 +121,7 @@ export class InventoryComponent {
               if (selectedExpansion !== null && selectedExpansion >= 0) {
                 // Find the patch this item was released in, and then get that patch's expansion
                 const itemExpansion: any = patches.find(p => {
-                  return p.ID === itemPatch[item.itemId];
+                  return p.id === itemPatch[item.itemId];
                 });
 
                 // We test if false and return false here instead of the inverse so that we can continue through the rest of our search
@@ -149,8 +147,7 @@ export class InventoryComponent {
   );
 
   constructor(private inventoryService: InventoryService, private universalis: UniversalisService,
-              private authFacade: AuthFacade, private message: NzMessageService,
-              private translate: TranslateService,
+              private authFacade: AuthFacade,
               private i18n: I18nToolsService, private lazyData: LazyDataFacade,
               private settings: SettingsService) {
   }

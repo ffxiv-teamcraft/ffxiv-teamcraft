@@ -46136,5 +46136,725 @@
       "exp": 266,
       "scrip": 0
     }
+  },
+  "41254": {
+    "id": 60,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 63,
+    "shopId": 60,
+    "reward": 41270,
+    "base": {
+      "quantity": 1,
+      "rating": 750,
+      "exp": 323,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1125,
+      "exp": 355,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 1500,
+      "exp": 387,
+      "scrip": 3
+    }
+  },
+  "41255": {
+    "id": 61,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 64,
+    "shopId": 61,
+    "reward": 41271,
+    "base": {
+      "quantity": 1,
+      "rating": 750,
+      "exp": 455,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1125,
+      "exp": 500,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 1500,
+      "exp": 546,
+      "scrip": 3
+    }
+  },
+  "41256": {
+    "id": 62,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 65,
+    "shopId": 62,
+    "reward": 41272,
+    "base": {
+      "quantity": 1,
+      "rating": 750,
+      "exp": 679,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1125,
+      "exp": 746,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 1500,
+      "exp": 814,
+      "scrip": 3
+    }
+  },
+  "41257": {
+    "id": 63,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 66,
+    "shopId": 63,
+    "reward": 41273,
+    "base": {
+      "quantity": 1,
+      "rating": 750,
+      "exp": 92,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1125,
+      "exp": 101,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 1500,
+      "exp": 110,
+      "scrip": 3
+    }
+  },
+  "41258": {
+    "id": 64,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 67,
+    "shopId": 64,
+    "reward": 41274,
+    "base": {
+      "quantity": 1,
+      "rating": 750,
+      "exp": 283,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1125,
+      "exp": 311,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 1500,
+      "exp": 339,
+      "scrip": 3
+    }
+  },
+  "41259": {
+    "id": 65,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 68,
+    "shopId": 65,
+    "reward": 41275,
+    "base": {
+      "quantity": 1,
+      "rating": 750,
+      "exp": 417,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1125,
+      "exp": 458,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 1500,
+      "exp": 500,
+      "scrip": 3
+    }
+  },
+  "41260": {
+    "id": 66,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 69,
+    "shopId": 66,
+    "reward": 41276,
+    "base": {
+      "quantity": 1,
+      "rating": 750,
+      "exp": 455,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1125,
+      "exp": 500,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 1500,
+      "exp": 546,
+      "scrip": 3
+    }
+  },
+  "41261": {
+    "id": 67,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 70,
+    "shopId": 67,
+    "reward": 41277,
+    "base": {
+      "quantity": 1,
+      "rating": 750,
+      "exp": 557,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1125,
+      "exp": 612,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 1500,
+      "exp": 668,
+      "scrip": 3
+    }
+  },
+  "41262": {
+    "id": 60,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 63,
+    "shopId": 60,
+    "reward": 41278,
+    "base": {
+      "quantity": 1,
+      "rating": 800,
+      "exp": 762,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1200,
+      "exp": 838,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 1600,
+      "exp": 914,
+      "scrip": 3
+    }
+  },
+  "41263": {
+    "id": 61,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 64,
+    "shopId": 61,
+    "reward": 41279,
+    "base": {
+      "quantity": 1,
+      "rating": 800,
+      "exp": 184,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1200,
+      "exp": 202,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 1600,
+      "exp": 220,
+      "scrip": 3
+    }
+  },
+  "41264": {
+    "id": 62,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 65,
+    "shopId": 62,
+    "reward": 41280,
+    "base": {
+      "quantity": 1,
+      "rating": 800,
+      "exp": 417,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1200,
+      "exp": 458,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 1600,
+      "exp": 500,
+      "scrip": 3
+    }
+  },
+  "41265": {
+    "id": 63,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 66,
+    "shopId": 63,
+    "reward": 41281,
+    "base": {
+      "quantity": 1,
+      "rating": 800,
+      "exp": 762,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1200,
+      "exp": 838,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 1600,
+      "exp": 914,
+      "scrip": 3
+    }
+  },
+  "41266": {
+    "id": 64,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 67,
+    "shopId": 64,
+    "reward": 41282,
+    "base": {
+      "quantity": 1,
+      "rating": 800,
+      "exp": 168,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1200,
+      "exp": 184,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 1600,
+      "exp": 201,
+      "scrip": 3
+    }
+  },
+  "41267": {
+    "id": 65,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 68,
+    "shopId": 65,
+    "reward": 41283,
+    "base": {
+      "quantity": 1,
+      "rating": 800,
+      "exp": 225,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1200,
+      "exp": 247,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 1600,
+      "exp": 270,
+      "scrip": 3
+    }
+  },
+  "41268": {
+    "id": 66,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 69,
+    "shopId": 66,
+    "reward": 41284,
+    "base": {
+      "quantity": 1,
+      "rating": 800,
+      "exp": 455,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1200,
+      "exp": 500,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 1600,
+      "exp": 546,
+      "scrip": 3
+    }
+  },
+  "41269": {
+    "id": 67,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 70,
+    "shopId": 67,
+    "reward": 41285,
+    "base": {
+      "quantity": 1,
+      "rating": 800,
+      "exp": 462,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1200,
+      "exp": 508,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 1600,
+      "exp": 554,
+      "scrip": 3
+    }
+  },
+  "41286": {
+    "id": 68,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 71,
+    "shopId": 68,
+    "reward": 41294,
+    "base": {
+      "quantity": 1,
+      "rating": 570,
+      "exp": 762,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1000,
+      "exp": 838,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 0,
+      "exp": 914,
+      "scrip": 0
+    }
+  },
+  "41288": {
+    "id": 69,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 72,
+    "shopId": 69,
+    "reward": 41295,
+    "base": {
+      "quantity": 1,
+      "rating": 570,
+      "exp": 143,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1000,
+      "exp": 157,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 0,
+      "exp": 171,
+      "scrip": 0
+    }
+  },
+  "41290": {
+    "id": 68,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 71,
+    "shopId": 68,
+    "reward": 41296,
+    "base": {
+      "quantity": 1,
+      "rating": 580,
+      "exp": 239,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1000,
+      "exp": 262,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 0,
+      "exp": 286,
+      "scrip": 0
+    }
+  },
+  "41292": {
+    "id": 69,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 72,
+    "shopId": 69,
+    "reward": 41297,
+    "base": {
+      "quantity": 1,
+      "rating": 580,
+      "exp": 323,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1000,
+      "exp": 355,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 0,
+      "exp": 387,
+      "scrip": 0
+    }
+  },
+  "41298": {
+    "id": 70,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 73,
+    "shopId": 70,
+    "reward": 41303,
+    "base": {
+      "quantity": 1,
+      "rating": 501,
+      "exp": 181,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1177,
+      "exp": 199,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 0,
+      "exp": 217,
+      "scrip": 0
+    }
+  },
+  "41299": {
+    "id": 70,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 73,
+    "shopId": 70,
+    "reward": 41303,
+    "base": {
+      "quantity": 1,
+      "rating": 501,
+      "exp": 197,
+      "scrip": 3
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 1177,
+      "exp": 216,
+      "scrip": 4
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 0,
+      "exp": 236,
+      "scrip": 0
+    }
+  },
+  "41300": {
+    "id": 70,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 73,
+    "shopId": 70,
+    "reward": 41304,
+    "base": {
+      "quantity": 1,
+      "rating": 9,
+      "exp": 417,
+      "scrip": 1
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 21,
+      "exp": 458,
+      "scrip": 2
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 0,
+      "exp": 500,
+      "scrip": 0
+    }
+  },
+  "41301": {
+    "id": 70,
+    "type": "CollectablesShopItem",
+    "rewardType": 2,
+    "collectable": 0,
+    "level": 90,
+    "levelMin": 90,
+    "levelMax": 90,
+    "group": 73,
+    "shopId": 70,
+    "reward": 41304,
+    "base": {
+      "quantity": 1,
+      "rating": 384,
+      "exp": 451,
+      "scrip": 3
+    },
+    "mid": {
+      "quantity": 1,
+      "rating": 902,
+      "exp": 496,
+      "scrip": 4
+    },
+    "high": {
+      "quantity": 1,
+      "rating": 0,
+      "exp": 541,
+      "scrip": 0
+    }
   }
 }
