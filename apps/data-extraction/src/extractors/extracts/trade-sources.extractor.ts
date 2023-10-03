@@ -27,7 +27,8 @@ export class TradeSourcesExtractor extends AbstractItemDetailsExtractor<TradeSou
     const inspection = this.hwdInspections.find(row => {
       return row.receivedItem === itemId;
     });
-    const collectableReward = Object.entries<any>(this.collectables).find(([, c]) => {
+    // reverse so we start from the end, finding newer trades first, to avoid using obsolete materials as sources
+    const collectableReward = Object.entries<any>(this.collectables).reverse().find(([, c]) => {
       return c.reward === itemId;
     });
     if (inspection) {
