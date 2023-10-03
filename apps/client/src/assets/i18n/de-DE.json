@@ -108,7 +108,7 @@
     "Contributors": "Mitwirkende"
   },
   "Patreon_login_success": "Anmeldung mit Patreon erfolgreich!",
-  "Tipeee_login_success": "Tipeee login success!",
+  "Tipeee_login_success": "Tipeee Login erfolgreich!",
   "Hide_if_empty": "Verstecken, wenn leer",
   "No_favorites": "Keine Favoriten",
   "Ephemeral_list": "Wird bei Fertigstellung gelöscht",
@@ -208,7 +208,7 @@
     "Public": "Öffentlich",
     "Private": "Privat",
     "Pagination_text": "{{start}}-{{end}} of {{total}} items",
-    "And_X_more": "and {{amount}} more...",
+    "And_X_more": "und {{amount}} mehr...",
     "DAYS": {
       "Monday": "Montag",
       "Tuesday": "Dienstag",
@@ -264,8 +264,8 @@
       "DELIVERIES_RESET_DESCRIPTION": "Reset der Liefereinsätze der Staatlichen Gesellschaft",
       "LEVE_ALLOWANCES": "Verfügbare Freibriefe",
       "LEVE_ALLOWANCES_DESCRIPTION": "Du erhältst 3 weitere Vollmachten",
-      "OCEAN_FISHING": "Ocean fishing",
-      "OCEAN_FISHING_DESCRIPTION": "Ocean fishing will start."
+      "OCEAN_FISHING": "Hochseefischen",
+      "OCEAN_FISHING_DESCRIPTION": "Hochseefischen startet."
     },
     "CUSTOM": {
       "Title": "Eigenen Alarm hinzufügen",
@@ -448,12 +448,12 @@
     "Reset_password_warning": "Bist du sicher, dass du dein Passwort zurücksetzen möchtest?",
     "Password_reset_mail_sent": "E-Mail zur Zurücksetzung des Passworts wurde gesendet",
     "Connect_with_patreon": "Mit Patreon verbinden",
-    "Connect_with_tipeee": "Connect with Tipeee",
+    "Connect_with_tipeee": "Mit Tipeee verbinden",
     "Connected_with_patreon": "Mit Patreon verbunden",
-    "Connected_with_tipeee": "Connected with Tipeee",
+    "Connected_with_tipeee": "Mit Tipeee verbunden",
     "Nickname": "Benutzername",
     "Nickname_used": "Benutzername wird bereits verwendet",
-    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the supporter exclusive features properly.",
+    "No_nickname_warning": "Bitte gehe in die Einstellungen und gib einen Benutzernamen an, um die Unterstützer-Funktionen vollständig nutzen zu können.",
     "Show_devtools": "Entwicklerwerkzeuge zeigen",
     "Clear_cache": "Cache leeren (erfordert einen Neustart der App)",
     "Enable_item_tags": "Gegenstand-Markierungen aktivieren",
@@ -521,7 +521,7 @@
     "Alarm_panels_collapsed_by_default": "Alarmgruppen-Panels standardmäßig eingeklappt",
     "Alarm_groups_before_no_group": "Zeige Alarmgruppen vor ungruppierten Alarmen",
     "Disconnect_patreon": "Verbindung zu Patreon trennen",
-    "Disconnect_tipeee": "Disconnect from Tipeee",
+    "Disconnect_tipeee": "Verbindung zu Tipeee trennen",
     "Export_settings": "Einstellungen exportieren",
     "Import_settings": "Einstellungen importieren",
     "Import_successful": "Einstellungen importiert",
@@ -540,8 +540,8 @@
     "New_child_window": "Create a new child window",
     "Child_windows_title": "You can now open child windows in Teamcraft desktop !",
     "Child_windows_description": "When clicking something that navigates (like the \"i\" button for database pages or any link in the app), use ctrl + click or middle click instead to open in a new window. Additionally, you can create a new window using the new button next to the github stars count.",
-    "Desktop_tip_title": "Teamcraft has a desktop app ! Better, faster, stronger",
-    "Desktop_tip_description": "Desktop app is way faster by using offline search, it also adds overlay features and more using packet capture (which is disabled by default if you want to avoid using packet capture). It's strongly advized to use it instead of web version for a better experience.",
+    "Desktop_tip_title": "Teamcraft hat eine Desktop-App! Besser, schneller, stärker",
+    "Desktop_tip_description": "Desktop-App ist viel schneller durch die Offline-Suche. Es fügt auch Overlay-Funktionen und mehr mit der Paketerfassung hinzu (dies ist standardmäßig deaktiviert, wenn Sie die Paketerfassung vermeiden wollen). Es ist sehr empfehlenswert, sie anstelle der Web-Version für eine bessere Erfahrung zu verwenden.",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -784,7 +784,7 @@
     "Autofill_notification_body": "{{itemName}} wurde in der Liste {{listName}} fertiggestellt",
     "Autofill_crafting_gathering_title": "Herstellungs- oder Sammelmethode erkannt",
     "Autofill_crafting_gathering_message": "Automatisches Ausfüllen ist im Slowmode solange du etwas herstellst (stehe ingame auf) oder sammelst (schließe das Fenster), um Datenbankprobleme durch zu schnelles Ausfüllen zu verhindern.",
-    "Fill_with_inventory": "Fill with inventory",
+    "Fill_with_inventory": "Mit Inventar füllen",
     "Filter_items_done": "Fertige Gegenstände ignorieren",
     "Inventory_synthesis": "Inventar-Synthese (Gegenstände pro Inventar)",
     "X_needed": "{{amount}} benötigt",
@@ -820,7 +820,7 @@
     },
     "SOURCES": {
       "Gatherable": "Kann gesammelt werden, klicke um mehr Details zu sehen",
-      "Instances": "Instances"
+      "Instances": "Instanzen"
     },
     "LAYOUT_DIALOG": {
       "Title": "Layout",
@@ -1385,7 +1385,7 @@
     "Damage_mag": "Mag. Damage",
     "Defense_phys": "Phys. Defense",
     "Defense_mag": "Mag. Defense",
-    "Masterbooks": "Requires a masterbook"
+    "Masterbooks": "Benötigt ein Meisterbuch"
   },
   "SEARCH_INTRO": {
     "Slogan": "Herstellen, Teilen, Mitwirken",
@@ -1394,7 +1394,7 @@
     "Buy_merch": "Teamcraft-Merch kaufen",
     "Features_header": "Los geht's!",
     "Open_feature": "Öffnen",
-    "Open_in_guides": "Read",
+    "Open_in_guides": "Lesen",
     "Featured_guides": "Empfohlene Anleitungen",
     "DESCRIPTION": {
       "Lists": "Erstelle Listen um Informationen über alle Materialien zu erhalten, Teile sie mit deinen Freunden, alles startet hier! Suche einfach nach einem Gegenstand, filtere nach spezifischen Gegenstände, und fange an Dinge herzustellen.",
