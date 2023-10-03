@@ -254,9 +254,7 @@
           <div class="source-details">
             <div class="flex-row align-center justify-start gap-2 details-row" *ngFor="let drop of source.data.slice(0,3)">
               <div>{{drop.id | i18nRow:'mobs' | i18n}}:
-                <ng-container *ngIf="drop.mapid">{{drop.mapid | i18nRow:'places' | i18n}}</ng-container>
-                -
-                <ng-container *ngIf="drop.zoneid">{{drop.zoneid | i18nRow:'places' | i18n}}</ng-container>
+                <ng-container *ngIf="drop.mapid">{{drop.mapid | mapName | i18n}}</ng-container>
               </div>
             </div>
             <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
