@@ -205,28 +205,6 @@
       <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
     </div>
   </div>
-  <div *ngSwitchCase="searchTypes.LORE" [class.odd]="odd"
-       class="result-row"
-       fxLayout="row"
-       fxLayout.lt-md="column"
-       fxLayoutAlign="flex-start flex-start"
-       fxLayoutAlign.lt-md="center center"
-       fxLayoutGap="5px">
-    <img [src]="row.Data.Icon | xivapiIcon" alt="" class="job-icon">
-    <div class="flex-column gap-5">
-      <div class="flex-row justify-start align-center gap-5">
-        <div fxLayout="row" fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px">
-          <div class="flex-column">
-            <div [innerHTML]="(row.Data | xivapiI18n) || row.Source"></div>
-            <span [innerHTML]="row | xivapiI18n: 'Text'"></span>
-          </div>
-          <app-db-button *ngIf="row.Data.showButton"
-                         [id]="row.SourceID"
-                         [type]="row.Source.toLowerCase()"></app-db-button>
-        </div>
-      </div>
-    </div>
-  </div>
   <div *ngSwitchCase="searchTypes.FATE" [class.odd]="odd"
        class="result-row"
        fxLayout="row"
