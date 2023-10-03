@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.8...v11.0.9) (2023-10-03)
+
+
+### Bug Fixes
+
+* **island-workshop:** fixed state import crash ([1f01a7a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1f01a7a8504a197a0755e18176be89b93fe0de07))
+
 ### [11.0.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.7...v11.0.8) (2023-10-03)
 
 
