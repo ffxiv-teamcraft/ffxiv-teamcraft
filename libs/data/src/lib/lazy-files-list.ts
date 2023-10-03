@@ -281,11 +281,11 @@ export const lazyFilesList = {
   },
   'islandAnimals': {
     'fileName': 'island-animals.json',
-    'hashedFileName': 'island-animals.5bcfda4e1be0a5af90ffda06437f3c1e1b4e824c.json'
+    'hashedFileName': 'island-animals.88fcdef8e7913220bd162336177bbc78be9029b4.json'
   },
   'islandBuildings': {
     'fileName': 'island-buildings.json',
-    'hashedFileName': 'island-buildings.fc779b5e6da69c796726663bc25f77afe942c51a.json'
+    'hashedFileName': 'island-buildings.c9a26e63f8069e9822b67055632617ef129bf7ac.json'
   },
   'islandCraftworksTheme': {
     'fileName': 'island-craftworks-theme.json',
@@ -293,15 +293,15 @@ export const lazyFilesList = {
   },
   'islandCraftworks': {
     'fileName': 'island-craftworks.json',
-    'hashedFileName': 'island-craftworks.5fde755d203f39bc4c604f3a4fe39237413d7dda.json'
+    'hashedFileName': 'island-craftworks.d3b47c7e70c89cbd02efba76797e2c1ee43d4ddb.json'
   },
   'islandCrops': {
     'fileName': 'island-crops.json',
-    'hashedFileName': 'island-crops.865bb7e8b710c08508a11bbfb8fdd5586f34ec69.json'
+    'hashedFileName': 'island-crops.4c34241b04ba2e015d699c51981ece145ea45dbf.json'
   },
   'islandGatheringItems': {
     'fileName': 'island-gathering-items.json',
-    'hashedFileName': 'island-gathering-items.652cbdea6051854509a95b741af607ce0c963baa.json'
+    'hashedFileName': 'island-gathering-items.4033c5928fff3f8b9e2e8161121d1786663ff053.json'
   },
   'islandLandmarks': {
     'fileName': 'island-landmarks.json',
@@ -309,7 +309,7 @@ export const lazyFilesList = {
   },
   'islandPopularity': {
     'fileName': 'island-popularity.json',
-    'hashedFileName': 'island-popularity.003497f05c8b760555bb382f85f8362b76c0c364.json'
+    'hashedFileName': 'island-popularity.139efdbed76141a8d2f9c6175afa666090051d69.json'
   },
   'islandSupply': {
     'fileName': 'island-supply.json',

@@ -480,7 +480,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
       console.debug("edited");
       return false;
     }
-    if (user.admin) {
+    if (user.admin && supplyDemand.length > 0) {
       return true;
     }
     if (historyEntry.lock || historyEntry.updated + 2000 > Date.now()) {
