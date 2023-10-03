@@ -17,6 +17,7 @@ import { numberToCssColor } from './string/number-to-css-color';
 export class XivDataService {
 
   private readonly saintPath = process.env.SAINT_COINACH_PATH || 'G:\\WebstormProjects\\SaintCoinach\\SaintCoinach';
+  private readonly rawExdPath = process.env.RAW_EXD_PATH || 'G:\\WebstormProjects\\xivapi.com\\data\\SaintCoinach.Cmd';
 
   private definitionsCache: Record<string, SaintDefinition> = {};
 
@@ -36,12 +37,11 @@ export class XivDataService {
    * @param useFirstColumnAsHeader
    */
   public getFromSaintCSV<T = ParsedRow>(sheetName: string, useFirstColumnAsHeader = false): T[] {
-    const saintBuildPath = join(this.saintPath, '../SaintCoinach.Cmd/bin/Debug/');
-    const latestExtractFolder = readdirSync(saintBuildPath)
+    const latestExtractFolder = readdirSync(this.rawExdPath)
       .filter(folder => /\d+\.\d+\.\d+\.\d+\.\d+/.test(folder))
       .sort()
       .reverse()[0];
-    const rawExdPath = join(saintBuildPath, latestExtractFolder, 'raw-exd-all');
+    const rawExdPath = join(this.rawExdPath, latestExtractFolder, 'raw-exd-all');
     const parsed = {
       en: parse(readFileSync(join(rawExdPath, `${sheetName}.en.csv`)), {
         columns: true,

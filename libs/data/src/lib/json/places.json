@@ -25692,10 +25692,10 @@
     "fr": "Alentours de l'Abbaye de l'Aurore"
   },
   "4283": {
-    "en": "Northeast Bronze Lake",
+    "en": "Northeast Bronze Lake Depths",
     "ja": "ブロンズレイク北東湖底",
-    "de": "Grund des Bronzesees (Nordosten)",
-    "fr": "Nord-est du lac d'Airain"
+    "de": "Bronzesee (Nordosten)",
+    "fr": "Fond du lac d'Airin (nord-est)"
   },
   "4284": {
     "en": "The Chamber of Revolutions",
@@ -26290,5 +26290,677 @@
     "ja": "赤き月",
     "de": "Roter Mond",
     "fr": "Lune rouge"
+  },
+  "4383": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4384": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4385": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4386": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4387": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4388": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4389": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4390": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4391": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4392": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4393": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4394": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4395": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4396": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4397": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4398": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4399": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4400": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4401": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4402": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4403": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4404": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4405": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4406": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4407": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4408": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4409": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4410": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4411": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4412": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4413": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4414": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4415": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4416": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4417": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4418": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4419": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4420": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4421": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4422": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4423": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4424": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4425": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4426": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4427": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4428": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4429": {
+    "en": "Saibai Cavern",
+    "ja": "サイバイ洞周辺",
+    "de": "Saibai-Höhle",
+    "fr": "Alentours de la grotte de Saibai"
+  },
+  "4430": {
+    "en": "Northwest Bronze Lake Depths",
+    "ja": "ブロンズレイク北西湖底",
+    "de": "Bronzesee (Nordwesten)",
+    "fr": "Fond du lac d'Airin (nord-ouest)"
+  },
+  "4431": {
+    "en": "The Lunar Subterrane",
+    "ja": "月の地下渓谷",
+    "de": "Monduntergrund",
+    "fr": "Souterrain lunaire"
+  },
+  "4432": {
+    "en": "The Lunar Subterrane",
+    "ja": "月の地下渓谷",
+    "de": "Tiefen",
+    "fr": "Souterrain lunaire"
+  },
+  "4433": {
+    "en": "Baron",
+    "ja": "バロンの町",
+    "de": "Baron",
+    "fr": "Ville de Baron"
+  },
+  "4434": {
+    "en": "Baron Castle",
+    "ja": "バロン城",
+    "de": "Schloss Baron",
+    "fr": "Château de Baron"
+  },
+  "4435": {
+    "en": "Cloven Crystal Square",
+    "ja": "クリスタル広場",
+    "de": "Kristall-Platz",
+    "fr": "Place du cristal"
+  },
+  "4436": {
+    "en": "Bloodied Barbican",
+    "ja": "バロン城正門",
+    "de": "Schlosspforte",
+    "fr": "Portes du château de Baron"
+  },
+  "4437": {
+    "en": "Carnelian Courtyard",
+    "ja": "バロン城中庭",
+    "de": "Schlossgarten",
+    "fr": "Cour du château de Baron"
+  },
+  "4438": {
+    "en": "The Lunar Subterrane",
+    "ja": "月の地下渓谷",
+    "de": "Tiefen",
+    "fr": "Souterrain lunaire"
+  },
+  "4439": {
+    "en": "Baron",
+    "ja": "バロンの町",
+    "de": "Baron",
+    "fr": "Ville de Baron"
+  },
+  "4440": {
+    "en": "Baron Castle",
+    "ja": "バロン城",
+    "de": "Schloss Baron",
+    "fr": "Château de Baron"
+  },
+  "4441": {
+    "en": "The Abyssal Fracture",
+    "ja": "赤き月の底",
+    "de": "Tiefen des roten Mondes",
+    "fr": "Cœur de la lune rouge"
+  },
+  "4442": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4443": {
+    "en": "Thaleia",
+    "ja": "華めく神域 タレイア",
+    "de": "Thaleia",
+    "fr": "Domaine divin - Thalie"
+  },
+  "4444": {
+    "en": "Heaven of Water",
+    "ja": "水天",
+    "de": "Himmel des Wassers",
+    "fr": "Voûte de l'eau"
+  },
+  "4445": {
+    "en": "Mind's Libation",
+    "ja": "知神の水郷",
+    "de": "Gelehrtenbecken",
+    "fr": "Bassin de l'Érudit"
+  },
+  "4446": {
+    "en": "Heaven of Wind",
+    "ja": "風天",
+    "de": "Himmel des Windes",
+    "fr": "Voûte du vent"
+  },
+  "4447": {
+    "en": "Mythic Mountains",
+    "ja": "旅神の霊峰",
+    "de": "Heilige Gipfel des Wanderers",
+    "fr": "Pics sacrés du Vagabond"
+  },
+  "4448": {
+    "en": "The Wanderer's Heights",
+    "ja": "オシュオン神殿",
+    "de": "Tempel des Wanderers",
+    "fr": "Temple d'Oschon"
+  },
+  "4449": {
+    "en": "The Omphalos",
+    "ja": "オムファロス",
+    "de": "Omphalos",
+    "fr": "Omphalos"
+  },
+  "4450": {
+    "en": "Highest Heaven",
+    "ja": "星天",
+    "de": "Sternenhimmel",
+    "fr": "Voûte astrale"
+  },
+  "4451": {
+    "en": "Heaven of Water",
+    "ja": "水天",
+    "de": "Himmel des Wassers",
+    "fr": "Voûte de l'eau"
+  },
+  "4452": {
+    "en": "Mind's Libation",
+    "ja": "知神の水郷",
+    "de": "Gelehrtenbecken",
+    "fr": "Bassin de l'Érudit"
+  },
+  "4453": {
+    "en": "Heaven of Wind",
+    "ja": "風天",
+    "de": "Himmel des Windes",
+    "fr": "Voûte du vent"
+  },
+  "4454": {
+    "en": "Mythic Mountains",
+    "ja": "旅神の霊峰",
+    "de": "Heilige Gipfel des Wanderers",
+    "fr": "Pics sacrés du Vagabond"
+  },
+  "4455": {
+    "en": "The Omphalos",
+    "ja": "オムファロス",
+    "de": "Omphalos",
+    "fr": "Omphalos"
+  },
+  "4456": {
+    "en": "Highest Heaven",
+    "ja": "星天",
+    "de": "Sternenhimmel",
+    "fr": "Voûte astrale"
+  },
+  "4457": {
+    "en": "River of Knowledge",
+    "ja": "知恵の河",
+    "de": "Fluss der Weisheit",
+    "fr": "Rivière du savoir"
+  },
+  "4458": {
+    "en": "Briny Deep",
+    "ja": "大洋の虚",
+    "de": "Auge des Meeres",
+    "fr": "Œil de l'océan"
+  },
+  "4459": {
+    "en": "Windward Pass",
+    "ja": "風の通り道",
+    "de": "Pfad des Windes",
+    "fr": "Voie des vents"
+  },
+  "4460": {
+    "en": "The Wanderer's Heights",
+    "ja": "オシュオン神殿",
+    "de": "Tempel des Wanderers",
+    "fr": "Temple d'Oschon"
+  },
+  "4461": {
+    "en": "The Twelve's Embrace",
+    "ja": "祝福の天球",
+    "de": "Himmlische Sphäre des Segens",
+    "fr": "Sphère céleste de la bénédiction"
+  },
+  "4462": {
+    "en": "Way of the Wise",
+    "ja": "導きの水廊",
+    "de": "Kanal des Wissens",
+    "fr": "Canaux de la connaissance"
+  },
+  "4463": {
+    "en": "Seventh Gate",
+    "ja": "六天座の門",
+    "de": "Pforte zum Firmament",
+    "fr": "Porte du firmament"
+  },
+  "4464": {
+    "en": "Stairway to the Seventh",
+    "ja": "六天座の階",
+    "de": "Aufgang zum Firmament",
+    "fr": "Marches du firmament"
+  },
+  "4465": {
+    "en": "Mother Lode",
+    "ja": "水晶の地底湖",
+    "de": "Kristallkratersee",
+    "fr": "Souterrain cristallin"
+  },
+  "4466": {
+    "en": "What Once Was",
+    "ja": "ゴルベーザの記憶",
+    "de": "Golbez' Erinnerungen",
+    "fr": "Souvenirs de Golbez"
+  },
+  "4467": {
+    "en": "Darkened Vestibule",
+    "ja": "渓谷の底",
+    "de": "Kratergrund",
+    "fr": "Souterrain lunaire"
+  },
+  "4468": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4469": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4470": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4471": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4472": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4473": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4474": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4475": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4476": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4477": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4478": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4479": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4480": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4481": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4482": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4483": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4484": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4485": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4486": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4487": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4488": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4489": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4490": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4491": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4492": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4493": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4494": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   }
 }

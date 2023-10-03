@@ -12,7 +12,7 @@ export interface LazyNodesDatabasePage {
   id:           string;
   items:        Item[];
   ja:           string;
-  ko:           string;
+  ko?:          string;
   legendary:    boolean;
   level:        number;
   limited:      boolean;
@@ -24,7 +24,7 @@ export interface LazyNodesDatabasePage {
   x:            number;
   y:            number;
   z:            number;
-  zh:           string;
+  zh?:          string;
   zoneid:       number;
 }
 

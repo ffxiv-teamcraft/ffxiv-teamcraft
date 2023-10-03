@@ -1676,7 +1676,7 @@
   "280": {
     "en": "The Devourer",
     "ja": "the Devourer",
-    "de": "Alpha-Wolf",
+    "de": "der Verschlinger",
     "fr": "Le Dévoreur"
   },
   "281": {
@@ -2612,7 +2612,7 @@
   "436": {
     "en": "The Transcendent",
     "ja": "the Transcendent",
-    "de": "der Transzendent",
+    "de": "der Transzendente",
     "fr": "Le Transcendantal"
   },
   "437": {
@@ -3968,7 +3968,7 @@
   "662": {
     "en": "True Steel",
     "ja": "True Steel",
-    "de": "des Wahren Stahls",
+    "de": "des wahren Stahls",
     "fr": "Lame d'acier"
   },
   "663": {
@@ -4174,5 +4174,173 @@
     "ja": "Ascendant Ascetic",
     "de": "Aszendenter Asket",
     "fr": "Ascète ascendant"
+  },
+  "697": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "698": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "699": {
+    "en": "Sleepless Scholar",
+    "ja": "Sleepless Scholar",
+    "de": "Schlafloser Forscher",
+    "fr": "Dévoué à la science"
+  },
+  "700": {
+    "en": "The Resourceful",
+    "ja": "the Resourceful",
+    "de": "der Tatkräftige",
+    "fr": "Plein de ressources"
+  },
+  "701": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "702": {
+    "en": "Of the Relentless Sledge",
+    "ja": "of the Relentless Sledge",
+    "de": "des unnachgiebigen Hammers",
+    "fr": "Pioche passionnée"
+  },
+  "703": {
+    "en": "Of the Keen Hatchet",
+    "ja": "of the Keen Hatchet",
+    "de": "des scharfen Beils",
+    "fr": "Hachette ardente"
+  },
+  "704": {
+    "en": "Of the Irresistible Lure",
+    "ja": "of the Irresistible Lure",
+    "de": "des unwiderstehlichen Köders",
+    "fr": "Appât acharné"
+  },
+  "705": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "706": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "707": {
+    "en": "Count of Monte Cowrie",
+    "ja": "Count of Monte Cowrie",
+    "de": "Graf von Monte Kauri",
+    "fr": "Amasseur d'assignats azur"
+  },
+  "708": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "709": {
+    "en": "Embraced by Gods",
+    "ja": "Embraced by Gods",
+    "de": "Von den Göttern umarmt",
+    "fr": "Béni des Dieux"
+  },
+  "710": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "711": {
+    "en": "Wyrm Whisperer",
+    "ja": "Wyrm Whisperer",
+    "de": "Wyrmflüsterer",
+    "fr": "Apocryphe de Bahamut"
+  },
+  "712": {
+    "en": "Growing Light",
+    "ja": "Growing Light",
+    "de": "Wachsendes Licht",
+    "fr": "Nitescence nouvelle"
+  },
+  "713": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "714": {
+    "en": "Of the Final Conflict",
+    "ja": "of the Final Conflict",
+    "de": "vom finalen Konflikt",
+    "fr": "Légende conflictuelle"
+  },
+  "715": {
+    "en": "Of the Endless Conflict",
+    "ja": "of the Endless Conflict",
+    "de": "vom endlosen Konflikt",
+    "fr": "Histoire conflictuelle"
+  },
+  "716": {
+    "en": "Of the Rising Conflict",
+    "ja": "of the Rising Conflict",
+    "de": "vom zunehmenden Konflikt",
+    "fr": "Parcours conflictuel"
+  },
+  "717": {
+    "en": "Of the Final Conflict",
+    "ja": "of the Final Conflict",
+    "de": "vom finalen Konflikt",
+    "fr": "Légende conflictuelle"
+  },
+  "718": {
+    "en": "Of the Endless Conflict",
+    "ja": "of the Endless Conflict",
+    "de": "vom endlosen Konflikt",
+    "fr": "Histoire conflictuelle"
+  },
+  "719": {
+    "en": "Of the Rising Conflict",
+    "ja": "of the Rising Conflict",
+    "de": "vom zunehmenden Konflikt",
+    "fr": "Parcours conflictuel"
+  },
+  "720": {
+    "en": "Of the Final Conflict",
+    "ja": "of the Final Conflict",
+    "de": "vom finalen Konflikt",
+    "fr": "Légende conflictuelle"
+  },
+  "721": {
+    "en": "Of the Endless Conflict",
+    "ja": "of the Endless Conflict",
+    "de": "vom endlosen Konflikt",
+    "fr": "Histoire conflictuelle"
+  },
+  "722": {
+    "en": "Of the Rising Conflict",
+    "ja": "of the Rising Conflict",
+    "de": "vom zunehmenden Konflikt",
+    "fr": "Parcours conflictuel"
+  },
+  "723": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "724": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   }
 }

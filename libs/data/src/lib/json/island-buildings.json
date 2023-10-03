@@ -119,6 +119,36 @@
       }
     ]
   },
+  "-10040": {
+    "key": "0.4",
+    "icon": "/i/053000/053936_hr1.png",
+    "en": "Cozy Cabin V",
+    "de": "Strandhütte V",
+    "ja": "アイランドホール V",
+    "fr": "Hutte placide V",
+    "ingredients": [
+      {
+        "id": 41634,
+        "amount": 15
+      },
+      {
+        "id": 41631,
+        "amount": 15
+      },
+      {
+        "id": 39891,
+        "amount": 15
+      },
+      {
+        "id": 37570,
+        "amount": 15
+      },
+      {
+        "id": 37574,
+        "amount": 10
+      }
+    ]
+  },
   "-10100": {
     "key": "1.0",
     "icon": "/i/053000/053916_hr1.png",
@@ -239,6 +269,36 @@
       }
     ]
   },
+  "-10140": {
+    "key": "1.4",
+    "icon": "/i/053000/053937_hr1.png",
+    "en": "Workshop V",
+    "de": "Inselatelier V",
+    "ja": "開拓工房 V",
+    "fr": "Fabrique V",
+    "ingredients": [
+      {
+        "id": 41634,
+        "amount": 15
+      },
+      {
+        "id": 41631,
+        "amount": 15
+      },
+      {
+        "id": 39891,
+        "amount": 10
+      },
+      {
+        "id": 37570,
+        "amount": 10
+      },
+      {
+        "id": 37579,
+        "amount": 5
+      }
+    ]
+  },
   "-10200": {
     "key": "2.0",
     "icon": "/i/053000/053922_hr1.png",
@@ -356,6 +416,36 @@
       {
         "id": 39893,
         "amount": 10
+      }
+    ]
+  },
+  "-10240": {
+    "key": "2.4",
+    "icon": "/i/053000/053938_hr1.png",
+    "en": "Granary V",
+    "de": "Kornkammer V",
+    "ja": "グラナリーオフィス V",
+    "fr": "Grange V",
+    "ingredients": [
+      {
+        "id": 41634,
+        "amount": 15
+      },
+      {
+        "id": 41631,
+        "amount": 15
+      },
+      {
+        "id": 37574,
+        "amount": 10
+      },
+      {
+        "id": 37570,
+        "amount": 10
+      },
+      {
+        "id": 37580,
+        "amount": 5
       }
     ]
   }

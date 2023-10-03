@@ -5802,10 +5802,10 @@
     "fr": "アイテムの購入"
   },
   "263151": {
-    "en": "Purchase Manderville Weapon Replicas",
-    "ja": "「マンダヴィルウェポン」の複製",
+    "en": "Purchase Manderville Weapon Replicas (DoW) I",
+    "ja": "「マンダヴィルウェポン」の複製（ファイターその1）",
     "de": "Repliken der Manderville-Waffen",
-    "fr": "Répliques d'armes des Manderville"
+    "fr": "Répliques d'armes des Manderville (guerre 1)"
   },
   "263152": {
     "en": "",
@@ -5884,5 +5884,47 @@
     "ja": "アイテムの購入",
     "de": "Waren",
     "fr": "Objets"
+  },
+  "263165": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263166": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263167": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263168": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263169": {
+    "en": "Purchase Manderville Weapon Replicas (DoW) II",
+    "ja": "「マンダヴィルウェポン」の複製（ファイターその2）",
+    "de": "「マンダヴィルウェポン」の複製（ファイターその2）",
+    "fr": "Répliques d'armes des Manderville (guerre 2)"
+  },
+  "263170": {
+    "en": "Purchase Furnishings (Phasmascapes)",
+    "ja": "アイテムの購入（マジックランドスケープ）",
+    "de": "Magitek-Simulationen",
+    "fr": "Objets (paysages magiques)"
+  },
+  "263171": {
+    "en": "Purchase Manderville Weapon Replicas (DoM)",
+    "ja": "「マンダヴィルウェポン」の複製（ソーサラー）",
+    "de": "「マンダヴィルウェポン」の複製（ソーサラー）",
+    "fr": "Répliques d'armes des Manderville (magie)"
   }
 }

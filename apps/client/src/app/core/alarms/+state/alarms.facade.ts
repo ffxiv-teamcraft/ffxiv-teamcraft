@@ -32,17 +32,16 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { WeatherService } from '../../eorzea/weather.service';
 import { NextSpawn } from '../next-spawn';
 import { mapIds } from '../../data/sources/map-ids';
-import { AlarmDetails, GatheringNode, XivapiPatch } from '@ffxiv-teamcraft/types';
-import { MapService } from '../../../modules/map/map.service';
+import { AlarmDetails, GatheringNode } from '@ffxiv-teamcraft/types';
 import { GatheringNodesService } from '../../data/gathering-nodes.service';
 import * as semver from 'semver';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { environment } from '../../../../environments/environment';
-import { Actions } from '@ngrx/effects';
 import { TimeUtils } from '../time.utils';
 import { safeCombineLatest } from '../../rxjs/safe-combine-latest';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
+import { LazyPatchName } from '@ffxiv-teamcraft/data/model/lazy-patch-name';
 
 @Injectable({
   providedIn: 'root'
@@ -136,13 +135,13 @@ export class AlarmsFacade {
 
   private itemPatch: LazyData['itemPatch'];
 
-  private patches: XivapiPatch[] = [];
+  private patches: LazyPatchName[] = [];
 
   private legendaryFish: LazyData['legendaryFish'];
 
-  constructor(private actions$: Actions, private store: Store<{ alarms: AlarmsState }>, private etime: EorzeanTimeService,
+  constructor(private store: Store<{ alarms: AlarmsState }>, private etime: EorzeanTimeService,
               private settings: SettingsService, private weatherService: WeatherService,
-              private lazyData: LazyDataFacade, private mapService: MapService,
+              private lazyData: LazyDataFacade,
               private gatheringNodesService: GatheringNodesService, private progressService: ProgressPopupService) {
   }
 
@@ -248,7 +247,7 @@ export class AlarmsFacade {
     });
   }
 
-  public createDisplay<T extends  AlarmDetails | PersistedAlarm = PersistedAlarm>(alarm: T, date: Date): AlarmDisplay<T> {
+  public createDisplay<T extends AlarmDetails | PersistedAlarm = PersistedAlarm>(alarm: T, date: Date): AlarmDisplay<T> {
     const display = new AlarmDisplay(alarm);
     const nextSpawn = { ...this.getNextSpawn(alarm, date) };
     display.spawned = this.isSpawned(alarm, date);
@@ -478,7 +477,7 @@ export class AlarmsFacade {
     this.progressService.showProgress(operation$, 1, 'ALARMS.Regenerating_alarms').subscribe();
   }
 
-  private sortAlarmDisplays<T extends  AlarmDetails | PersistedAlarm = PersistedAlarm>(alarms: AlarmDisplay<T>[]): AlarmDisplay<T>[] {
+  private sortAlarmDisplays<T extends AlarmDetails | PersistedAlarm = PersistedAlarm>(alarms: AlarmDisplay<T>[]): AlarmDisplay<T>[] {
     return alarms.sort((a, b) => {
       if (a.spawned && a.done) {
         return 1;
@@ -608,7 +607,7 @@ export class AlarmsFacade {
 
   private applyFishEyes(alarm: AlarmDetails): AlarmDetails[] {
     const patch = this.itemPatch && this.itemPatch[alarm.itemId];
-    const expansion = this.patches.find(p => p.ID === patch)?.ExVersion;
+    const expansion = this.patches.find(p => p.id === patch)?.ex;
     const isLegendary = this.legendaryFish && this.legendaryFish[alarm.itemId];
     // The changes only apply to fishes pre-ShB and non-legendary
     if (expansion < 3 && alarm.weathers?.length > 0 && alarm.spawns && !isLegendary) {

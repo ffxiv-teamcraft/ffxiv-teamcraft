@@ -9,7 +9,7 @@ import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { XivapiPatch } from '@ffxiv-teamcraft/types';
+import { LazyPatchName } from '@ffxiv-teamcraft/data/model/lazy-patch-name';
 
 @Component({
   selector: 'app-patch',
@@ -18,7 +18,7 @@ import { XivapiPatch } from '@ffxiv-teamcraft/types';
 })
 export class PatchComponent extends TeamcraftPageComponent {
 
-  public patch$: Observable<any>;
+  public patch$: Observable<LazyPatchName>;
 
   public fallbackIcon = 'https://img.finalfantasyxiv.com/lds/h/k/aL011xxU_6LyWUio1Gi2Fx7-qo.svg';
 
@@ -37,19 +37,19 @@ export class PatchComponent extends TeamcraftPageComponent {
           );
         })
       )
-      .subscribe(([params, patches]: [ParamMap, XivapiPatch[]]) => {
+      .subscribe(([params, patches]: [ParamMap, LazyPatchName[]]) => {
         const slug = params.get('slug');
         if (slug === null) {
           this.router.navigate(
-            [this.getName(patches.find(patch => patch.ID === +params.get('patchId'))).split(' ').join('-')],
+            [this.getName(patches.find(patch => patch.id === +params.get('patchId'))).split(' ').join('-')],
             {
               relativeTo: this.route,
               replaceUrl: true
             }
           );
-        } else if (slug !== this.getName(patches.find(patch => patch.ID === +params.get('patchId'))).split(' ').join('-')) {
+        } else if (slug !== this.getName(patches.find(patch => patch.id === +params.get('patchId'))).split(' ').join('-')) {
           this.router.navigate(
-            ['../', this.getName(patches.find(patch => patch.ID === +params.get('patchId'))).split(' ').join('-')],
+            ['../', this.getName(patches.find(patch => patch.id === +params.get('patchId'))).split(' ').join('-')],
             {
               relativeTo: this.route,
               replaceUrl: true
@@ -67,15 +67,15 @@ export class PatchComponent extends TeamcraftPageComponent {
       switchMap(patchId => {
         return this.lazyData.patches$.pipe(
           map(patches => {
-            return [patchId, patches] as [number, XivapiPatch[]];
+            return [patchId, patches] as [number, LazyPatchName[]];
           })
         );
       }),
       map(([id, patches]) => {
-        return patches.find(p => p.ID === id);
+        return patches.find(p => p.id === id);
       }),
       switchMap(patch => {
-        return this.lazyData.getRow('patchContent', patch.ID).pipe(
+        return this.lazyData.getRow('patchContent', patch.id).pipe(
           map(patchContent => {
             return {
               ...patch,
@@ -95,8 +95,8 @@ export class PatchComponent extends TeamcraftPageComponent {
         return {
           title: this.getName(patch),
           description: this.getDescription(patch),
-          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/patch/${patch.ID}/${this.getName(patch).split(' ').join('-')}`,
-          image: patch.Banner || this.fallbackIcon
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/patch/${patch.id}/${this.getName(patch).split(' ').join('-')}`,
+          image: patch.banner || this.fallbackIcon
         };
       })
     );
@@ -106,8 +106,8 @@ export class PatchComponent extends TeamcraftPageComponent {
     return `Everything added in patch ${patch.Version}`;
   }
 
-  private getName(patch: any): string {
+  private getName(patch: LazyPatchName): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return patch[`Name_${this.translate.currentLang}`] || patch.Name_en;
+    return this.i18n.getName(patch);
   }
 }

@@ -59492,13 +59492,13 @@
   "9916": {
     "en": "viscous clot",
     "ja": "ヴィスカス・クロット",
-    "de": "zäh[a] Blutgerinsel",
+    "de": "zäh[a] Blutgerinnsel",
     "fr": "caillot visqueux"
   },
   "9917": {
     "en": "sanguine clot",
     "ja": "オウガリッシュ・クロット",
-    "de": "schauerlich[a] Blutgerinsel",
+    "de": "schauerlich[a] Blutgerinnsel",
     "fr": "caillot terrifiant"
   },
   "9918": {
@@ -67572,10 +67572,10 @@
     "fr": "Aymeric"
   },
   "11263": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "divine sprite",
+    "ja": "ディヴァインスプライト",
+    "de": "göttlich[a] Exergon",
+    "fr": "élémentaire divin"
   },
   "11264": {
     "en": "Alphinaud's avatar",
@@ -67782,28 +67782,28 @@
     "fr": "flamme spectrale"
   },
   "11298": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Thaliak",
+    "ja": "サリャク",
+    "de": "Thaliak",
+    "fr": "Thaliak"
   },
   "11299": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Llymlaen",
+    "ja": "リムレーン",
+    "de": "Llymlaen",
+    "fr": "Llymlaen"
   },
   "11300": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Oschon",
+    "ja": "オシュオン",
+    "de": "Oschon",
+    "fr": "Oschon"
   },
   "11301": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Eulogia",
+    "ja": "エウロギア",
+    "de": "Eulogia",
+    "fr": "Eulogie"
   },
   "11302": {
     "en": "Rhalgr",
@@ -69728,7 +69728,7 @@
   "11622": {
     "en": "naughty nanka",
     "ja": "タイニーナンカ",
-    "de": "Ninki-Nanka-Puppe",
+    "de": "Ninki Nanka-Puppe",
     "fr": "nanka narquois"
   },
   "11623": {
@@ -70952,7 +70952,7 @@
   "11826": {
     "en": "wind-up G'raha Tia",
     "ja": "マメット・グ・ラハ",
-    "de": "G'raha-Tia-Puppe",
+    "de": "G'raha Tia-Puppe",
     "fr": "G'raha Tia miniature"
   },
   "11827": {
@@ -71072,7 +71072,7 @@
   "11846": {
     "en": "wind-up Nu Mou",
     "ja": "マメット・ン・モゥ",
-    "de": "Nu-Mou-Stofftier",
+    "de": "Nu Mou-Stofftier",
     "fr": "Nu Mou miniature"
   },
   "11847": {
@@ -71880,10 +71880,10 @@
     "fr": "Scarmiglione miniature"
   },
   "11981": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Ryunosuke",
+    "ja": "辰チョコチョコボ",
+    "de": "Dragobo-Küken",
+    "fr": "poussin dragon"
   },
   "11982": {
     "en": "pterosquirrel",
@@ -74286,40 +74286,40 @@
     "fr": "epithymia idea"
   },
   "12382": {
-    "en": "_rsv_12382_-1_1_0_0_S64755250_E64755250",
-    "ja": "_rsv_12382_-1_0_0_0_S64755250_E64755250",
-    "de": "_rsv_12382_-1_2_0_0_S64755250_E64755250",
-    "fr": "_rsv_12382_-1_3_0_0_S64755250_E64755250"
+    "en": "Pallas Athena",
+    "ja": "パラスアテナ",
+    "de": "Pallas Athena",
+    "fr": "Pallas Athéna"
   },
   "12383": {
-    "en": "_rsv_12383_-1_1_0_0_S64755250_E64755250",
-    "ja": "_rsv_12383_-1_0_0_0_S64755250_E64755250",
-    "de": "_rsv_12383_-1_2_0_0_S64755250_E64755250",
-    "fr": "_rsv_12383_-1_3_0_0_S64755250_E64755250"
+    "en": "hemitheos",
+    "ja": "ヘーミテオス",
+    "de": "Hemitheos",
+    "fr": "hémithéos"
   },
   "12384": {
-    "en": "_rsv_12384_-1_1_0_0_S64755250_E64755250",
-    "ja": "_rsv_12384_-1_0_0_0_S64755250_E64755250",
-    "de": "_rsv_12384_-1_2_0_0_S64755250_E64755250",
-    "fr": "_rsv_12384_-1_3_0_0_S64755250_E64755250"
+    "en": "concept of fire",
+    "ja": "火の概念",
+    "de": "Substanz[p] des Feuers",
+    "fr": "concept du feu"
   },
   "12385": {
-    "en": "_rsv_12385_-1_1_0_0_S64755250_E64755250",
-    "ja": "_rsv_12385_-1_0_0_0_S64755250_E64755250",
-    "de": "_rsv_12385_-1_2_0_0_S64755250_E64755250",
-    "fr": "_rsv_12385_-1_3_0_0_S64755250_E64755250"
+    "en": "concept of water",
+    "ja": "水の概念",
+    "de": "Substanz[p] des Wassers",
+    "fr": "concept de l'eau"
   },
   "12386": {
-    "en": "_rsv_12386_-1_1_0_0_S64755250_E64755250",
-    "ja": "_rsv_12386_-1_0_0_0_S64755250_E64755250",
-    "de": "_rsv_12386_-1_2_0_0_S64755250_E64755250",
-    "fr": "_rsv_12386_-1_3_0_0_S64755250_E64755250"
+    "en": "concept of earth",
+    "ja": "土の概念",
+    "de": "Substanz[p] der Erde",
+    "fr": "concept de la terre"
   },
   "12387": {
-    "en": "_rsv_12387_-1_1_0_0_S64755250_E64755250",
-    "ja": "_rsv_12387_-1_0_0_0_S64755250_E64755250",
-    "de": "_rsv_12387_-1_2_0_0_S64755250_E64755250",
-    "fr": "_rsv_12387_-1_3_0_0_S64755250_E64755250"
+    "en": "forbidden factor",
+    "ja": "禁忌因子",
+    "de": "Tabu",
+    "fr": "facteur tabou"
   },
   "12388": {
     "en": "Themis",
@@ -74718,10 +74718,10 @@
     "fr": "Cocyte bête sauvage"
   },
   "12454": {
-    "en": "_rsv_12454_-1_1_0_0_S64755250_E64755250",
-    "ja": "_rsv_12454_-1_0_0_0_S64755250_E64755250",
-    "de": "_rsv_12454_-1_2_0_0_S64755250_E64755250",
-    "fr": "_rsv_12454_-1_3_0_0_S64755250_E64755250"
+    "en": "chimera's lament",
+    "ja": "キメリック・コキュートス",
+    "de": "Kokytos-Chimäre",
+    "fr": "Cocyte chimère"
   },
   "12455": {
     "en": "runaway satellite",
@@ -74862,58 +74862,58 @@
     "fr": "gluant de Goldor"
   },
   "12478": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "serpent of Thaleia",
+    "ja": "タレイア・シーサーペント",
+    "de": "Thaleia-Seeschlange",
+    "fr": "serpent marin de Thalie"
   },
   "12479": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "triton of Thaleia",
+    "ja": "タレイア・トリトン",
+    "de": "Thaleia-Triton",
+    "fr": "triton de Thalie"
   },
   "12480": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "water sprite",
+    "ja": "ウォータースプライト",
+    "de": "Wasser-Exergon",
+    "fr": "élémentaire d'eau"
   },
   "12481": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "angelos",
+    "ja": "アンゲロス",
+    "de": "Angelos",
+    "fr": "angélos"
   },
   "12482": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "angelos mikros",
+    "ja": "ミクロアンゲロス",
+    "de": "Angelos[p] mikros",
+    "fr": "micro-angélos"
   },
   "12483": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Snoegeim Museseeker",
+    "ja": "専心のスノーゲイム",
+    "de": "Snoegeim[p] [t] Unverdrossen[a]",
+    "fr": "Snoegeim"
   },
   "12484": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Damcyan antlion",
+    "ja": "ダムシアン・アントリオン",
+    "de": "damcyanisch[a] Ameisenlöwe",
+    "fr": "fourmilion de Damcyan"
   },
   "12485": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "stone pillar",
+    "ja": "石柱",
+    "de": "Steinsäule",
+    "fr": "colonne"
   },
   "12486": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Oschon's avatar",
+    "ja": "オシュオンの分体",
+    "de": "Oschons Abbild",
+    "fr": "double d'Oschon"
   },
   "12487": {
     "en": "",
@@ -74994,6 +74994,1206 @@
     "fr": ""
   },
   "12500": {
+    "en": "dark elf",
+    "ja": "ダークエルフ",
+    "de": "Dunkelelf",
+    "fr": "Elfe noir"
+  },
+  "12501": {
+    "en": "hexing staff",
+    "ja": "闇の杖",
+    "de": "Stab[p] der Dunkelheit",
+    "fr": "canne des ténèbres"
+  },
+  "12502": {
+    "en": "Perykos",
+    "ja": "ペリュコス",
+    "de": "Perykos",
+    "fr": "Pérykos"
+  },
+  "12503": {
+    "en": "Thalaos",
+    "ja": "サラオス",
+    "de": "Thalaos",
+    "fr": "Thalaos"
+  },
+  "12504": {
+    "en": "trident",
+    "ja": "トライデント",
+    "de": "Dreizack",
+    "fr": "trident"
+  },
+  "12505": {
+    "en": "sea-foam",
+    "ja": "海泡",
+    "de": "Gischtklumpen",
+    "fr": "amas d'écume"
+  },
+  "12506": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12507": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12508": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12509": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12510": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12511": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12512": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12513": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12514": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12515": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12516": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12517": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12518": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12519": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12520": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12521": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12522": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12523": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12524": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12525": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12526": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12527": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12528": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12529": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12530": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12531": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12532": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12533": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12534": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12535": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12536": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12537": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12538": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12539": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12540": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12541": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12542": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12543": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12544": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12545": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12546": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12547": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12548": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12549": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12550": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12551": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12552": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12553": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12554": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12555": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12556": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12557": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12558": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12559": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12560": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12561": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12562": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12563": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12564": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12565": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12566": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12567": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12568": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12569": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12570": {
+    "en": "voidmoon panopt",
+    "ja": "ヴォイドムーン・パノプト",
+    "de": "Finstermond-Panopt",
+    "fr": "panopt lunaire du néant"
+  },
+  "12571": {
+    "en": "ヴォイドムーン・ペルソナ",
+    "ja": "ヴォイドムーン・ペルソナ",
+    "de": "Finstermond-Persona",
+    "fr": "persona lunaire du néant"
+  },
+  "12572": {
+    "en": "ヴォイドムーン・プリンセス",
+    "ja": "ヴォイドムーン・プリンセス",
+    "de": "Finstermond-Prinzessin",
+    "fr": "princesse lunaire du néant"
+  },
+  "12573": {
+    "en": "voidmoon plague",
+    "ja": "ヴォイドムーン・プレイグ",
+    "de": "Finstermond-Teufelsauge",
+    "fr": "ahriman lunaire du néant"
+  },
+  "12574": {
+    "en": "frenzied goblin",
+    "ja": "フレンジー・ゴブリン",
+    "de": "rasend[a] Goblin",
+    "fr": "gobelin enragé"
+  },
+  "12575": {
+    "en": "frenzied peiste",
+    "ja": "フレンジー・ペイスト",
+    "de": "rasend[a] Peiste",
+    "fr": "peiste enragé"
+  },
+  "12576": {
+    "en": "フレンジー・ズー",
+    "ja": "フレンジー・ズー",
+    "de": "rasend[a] Montisaurus",
+    "fr": "zu enragé"
+  },
+  "12577": {
+    "en": "frenzied cockerel",
+    "ja": "フレンジー・クックル",
+    "de": "rasend[a] Hahn",
+    "fr": "coquelet enragé"
+  },
+  "12578": {
+    "en": "frenzied morbol",
+    "ja": "フレンジー・モルボル",
+    "de": "rasend[a] Morbol",
+    "fr": "morbol enragé"
+  },
+  "12579": {
+    "en": "armor of Baron",
+    "ja": "バロン・リビングアーマー",
+    "de": "wandelnd[a] Rüstung[p] von Baron",
+    "fr": "armure animée de Baron"
+  },
+  "12580": {
+    "en": "memoriate of Darkness",
+    "ja": "闇のメモリア使い",
+    "de": "Erwählt[a] der Dunkelheit",
+    "fr": "manieur de mémorias des Ténèbres"
+  },
+  "12581": {
+    "en": "dark grenade",
+    "ja": "ダークグレネード",
+    "de": "Dunkel-Granate",
+    "fr": "grenade ténébreuse"
+  },
+  "12582": {
+    "en": "vampiress",
+    "ja": "ヴァンプレス",
+    "de": "Vampirin",
+    "fr": "vampiresse"
+  },
+  "12583": {
+    "en": "original blackguard",
+    "ja": "オリジン・ブラックガード",
+    "de": "Ur-Düsterwächter",
+    "fr": "garde noir originel"
+  },
+  "12584": {
+    "en": "Durante",
+    "ja": "ドゥランテ",
+    "de": "Durante",
+    "fr": "Durante"
+  },
+  "12585": {
+    "en": "aetheric charge",
+    "ja": "魔力球",
+    "de": "magisch[a] Sphäre",
+    "fr": "globe magique"
+  },
+  "12586": {
+    "en": "Zeromus",
+    "ja": "ゼロムス",
+    "de": "Zeromus",
+    "fr": "Zeromus"
+  },
+  "12587": {
+    "en": "comet",
+    "ja": "コメット",
+    "de": "Komet",
+    "fr": "comète"
+  },
+  "12588": {
+    "en": "toxic bubble",
+    "ja": "ポイズナスバブル",
+    "de": "Giftblase",
+    "fr": "bulle empoisonnée"
+  },
+  "12589": {
+    "en": "corroded bubble",
+    "ja": "メルテッドバブル",
+    "de": "Schmelzblase",
+    "fr": "bulle liquéfiée"
+  },
+  "12590": {
+    "en": "Durante",
+    "ja": "ドゥランテ",
+    "de": "Durante",
+    "fr": "Durante"
+  },
+  "12591": {
+    "en": "Baron knight",
+    "ja": "バロン王国の兵士",
+    "de": "Soldat[p] aus Baron",
+    "fr": "soldat de Baron"
+  },
+  "12592": {
+    "en": "Baron knight",
+    "ja": "バロン王国の兵士",
+    "de": "Soldat[p] aus Baron",
+    "fr": "soldat de Baron"
+  },
+  "12593": {
+    "en": "Baron knight",
+    "ja": "バロン王国の兵士",
+    "de": "Soldat[p] aus Baron",
+    "fr": "soldat de Baron"
+  },
+  "12594": {
+    "en": "Baron knight-captain",
+    "ja": "バロン王国の兵士長",
+    "de": "Soldaten-Anführer[p] aus Baron",
+    "fr": "capitaine de Baron"
+  },
+  "12595": {
+    "en": "Baron knight",
+    "ja": "バロン王国の兵士",
+    "de": "Soldat[p] aus Baron",
+    "fr": "soldate de Baron"
+  },
+  "12596": {
+    "en": "Baron knight",
+    "ja": "バロン王国の兵士",
+    "de": "Soldat[p] aus Baron",
+    "fr": "soldate de Baron"
+  },
+  "12597": {
+    "en": "Baron knight",
+    "ja": "バロン王国の兵士",
+    "de": "Soldat[p] aus Baron",
+    "fr": "soldate de Baron"
+  },
+  "12598": {
+    "en": "Baron knight-captain",
+    "ja": "バロン王国の兵士長",
+    "de": "Soldaten-Anführer[p] aus Baron",
+    "fr": "capitaine de Baron"
+  },
+  "12599": {
+    "en": "Baron citizen",
+    "ja": "バロン王国の市民",
+    "de": "Bürger[p] aus Baron",
+    "fr": "habitant de Baron"
+  },
+  "12600": {
+    "en": "Baron citizen",
+    "ja": "バロン王国の市民",
+    "de": "Bürger[p] aus Baron",
+    "fr": "habitante de Baron"
+  },
+  "12601": {
+    "en": "Baron citizen",
+    "ja": "バロン王国の市民",
+    "de": "Bürger[p] aus Baron",
+    "fr": "enfant de Baron"
+  },
+  "12602": {
+    "en": "Baron citizen",
+    "ja": "バロン王国の市民",
+    "de": "Bürger[p] aus Baron",
+    "fr": "habitant de Baron"
+  },
+  "12603": {
+    "en": "Baron citizen",
+    "ja": "バロン王国の市民",
+    "de": "Bürger[p] aus Baron",
+    "fr": "habitante de Baron"
+  },
+  "12604": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12605": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12606": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12607": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12608": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12609": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12610": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12611": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12612": {
+    "en": "●仮2",
+    "ja": "●仮2",
+    "de": "●仮2",
+    "fr": "●仮2"
+  },
+  "12613": {
+    "en": "Tourmaline Weapon",
+    "ja": "トルマリンウェポン",
+    "de": "Turmalin-Waffe",
+    "fr": "Arme Tourmaline"
+  },
+  "12614": {
+    "en": "wind-up Oschon",
+    "ja": "マメット・オシュオン",
+    "de": "Aufzieh-Oschon",
+    "fr": "Oschon miniature"
+  },
+  "12615": {
+    "en": "Kydonia Strolls",
+    "ja": "シドニア・ストロールズ",
+    "de": "Kydonias Ausgang",
+    "fr": "rocher de Cydonia"
+  },
+  "12616": {
+    "en": "vicarious vacationer",
+    "ja": "おやすみくん",
+    "de": "Badesion",
+    "fr": "Barnabaigneur"
+  },
+  "12617": {
+    "en": "wind-up Golbez",
+    "ja": "マメット・ゴルベーザ",
+    "de": "Aufzieh-Golbez",
+    "fr": "Golbez miniature"
+  },
+  "12618": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12619": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12620": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12621": {
+    "en": "Hydaelyn idol",
+    "ja": "ハイデリン・アイドル",
+    "de": "Hydaelyn-Götze",
+    "fr": "idole Hydaelyn"
+  },
+  "12622": {
+    "en": "Zodiark idol",
+    "ja": "ゾディアーク・アイドル",
+    "de": "Zodiark-Götze",
+    "fr": "idole Zordiarche"
+  },
+  "12623": {
+    "en": "wind-up Fourchenault",
+    "ja": "マメット・フルシュノ",
+    "de": "Aufzieh-Fourchenault",
+    "fr": "Fourchenault miniature"
+  },
+  "12624": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12625": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12626": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12627": {
+    "en": "morbol",
+    "ja": "モルボル",
+    "de": "Morbol",
+    "fr": "morbol"
+  },
+  "12628": {
+    "en": "adamantoise",
+    "ja": "アダマンタス",
+    "de": "Adaman-Taimai",
+    "fr": "adamankhélone"
+  },
+  "12629": {
+    "en": "pteranodon",
+    "ja": "プテラノドン",
+    "de": "Pteranodon",
+    "fr": "ptéranodon"
+  },
+  "12630": {
+    "en": "grand doblyn",
+    "ja": "グラン・ドブラン",
+    "de": "Gigandobalos",
+    "fr": "doblyn géant"
+  },
+  "12631": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12632": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12633": {
+    "en": "Eulogia's avatar",
+    "ja": "エウロギアの分体",
+    "de": "Eulogias Abbild",
+    "fr": "double d'Eulogie"
+  },
+  "12634": {
+    "en": "starlight",
+    "ja": "星天光",
+    "de": "Himmelshalo",
+    "fr": "halo céleste"
+  },
+  "12635": {
+    "en": "J'moldva",
+    "ja": "ジャ・モルバ",
+    "de": "J'moldva",
+    "fr": "J'moldva"
+  },
+  "12636": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12637": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12638": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12639": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12640": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12641": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12642": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12643": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12644": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12645": {
+    "en": "original demon",
+    "ja": "オリジン・デーモン",
+    "de": "Ur-Dämon",
+    "fr": "démon originel"
+  },
+  "12646": {
+    "en": "Baron knight",
+    "ja": "バロン王国の兵士",
+    "de": "Soldat[p] aus Baron",
+    "fr": "soldat de Baron"
+  },
+  "12647": {
+    "en": "Baron knight",
+    "ja": "バロン王国の兵士",
+    "de": "Soldat[p] aus Baron",
+    "fr": "soldat de Baron"
+  },
+  "12648": {
+    "en": "Baron knight",
+    "ja": "バロン王国の兵士",
+    "de": "Soldat[p] aus Baron",
+    "fr": "soldat de Baron"
+  },
+  "12649": {
+    "en": "memoriate of Darkness",
+    "ja": "闇のメモリア使い",
+    "de": "Erwählt[a] der Dunkelheit",
+    "fr": "manieur de mémorias des Ténèbres"
+  },
+  "12650": {
+    "en": "voidmoon arch demon",
+    "ja": "ヴォイドムーン・アークデーモン",
+    "de": "Finstermond-Erzdämon",
+    "fr": "archidémon lunaire du néant"
+  },
+  "12651": {
+    "en": "voidmoon dahak",
+    "ja": "ヴォイドムーン・ダハーカ",
+    "de": "Finstermond-Dahak",
+    "fr": "dahaka lunaire du néant"
+  },
+  "12652": {
+    "en": "voidmoon archaeodemon",
+    "ja": "ヴォイドムーン・アルケオデーモン",
+    "de": "Finstermond-Archaeodämon",
+    "fr": "archéodémon lunaire du néant"
+  },
+  "12653": {
+    "en": "voidmoon Humbaba",
+    "ja": "ヴォイドムーン・フンババ",
+    "de": "Finstermond-Hunbaba",
+    "fr": "humbaba lunaire du néant"
+  },
+  "12654": {
+    "en": "frenzied morbol",
+    "ja": "フレンジー・モルボル",
+    "de": "rasend[a] Morbol",
+    "fr": "morbol enragé"
+  },
+  "12655": {
+    "en": "frenzied manticore",
+    "ja": "フレンジー・マンティコア",
+    "de": "rasend[a] Manticore",
+    "fr": "manticore enragée"
+  },
+  "12656": {
+    "en": "frenzied behemoth",
+    "ja": "フレンジー・ベヒーモス",
+    "de": "rasend[a] Behemoth",
+    "fr": "béhémoth enragé"
+  },
+  "12657": {
+    "en": "Damcyan worker ant",
+    "ja": "ダムシアン・ワーカーアント",
+    "de": "damcyanisch[a] Arbeiterameise",
+    "fr": "ouvrière de Damcyan"
+  },
+  "12658": {
+    "en": "original hellhound",
+    "ja": "オリジン・ヘルハウンド",
+    "de": "Ur-Höllenhund",
+    "fr": "limier originel"
+  },
+  "12659": {
+    "en": "Baron jester",
+    "ja": "オリジン・ジェスター",
+    "de": "Ur-Narr",
+    "fr": "bouffon originel"
+  },
+  "12660": {
+    "en": "original gargoyle",
+    "ja": "オリジン・ガーゴイル",
+    "de": "Ur-Gargoyle",
+    "fr": "gargouille originelle"
+  },
+  "12661": {
+    "en": "original Progenitrix",
+    "ja": "オリジン・マザーボム",
+    "de": "Ur-Progenitrix",
+    "fr": "maman bombo originelle"
+  },
+  "12662": {
+    "en": "memoriate of Darkness",
+    "ja": "闇のメモリア使い",
+    "de": "Erwählt[a] der Dunkelheit",
+    "fr": "manieur de mémorias des Ténèbres"
+  },
+  "12663": {
+    "en": "Damcyan soldier ant",
+    "ja": "ダムシアン・ソルジャーアント",
+    "de": "damcyanisch[a] Soldatenameise",
+    "fr": "soldat de Damcyan"
+  },
+  "12664": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12665": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12666": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12667": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12668": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12669": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12670": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12671": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12672": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12673": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12674": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12675": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12676": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12677": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12678": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12679": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12680": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12681": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12682": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12683": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12684": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12685": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12686": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12687": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12688": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12689": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12690": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12691": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12692": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12693": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12694": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12695": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12696": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12697": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12698": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12699": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12700": {
     "en": "",
     "ja": "",
     "de": "",

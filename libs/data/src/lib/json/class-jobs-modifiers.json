@@ -478,5 +478,29 @@
     "ModifierPiety": 100,
     "Role": 4,
     "PrimaryStat": 5
+  },
+  "41": {
+    "ModifierHitPoints": 0,
+    "ModifierManaPoints": 0,
+    "ModifierStrength": 0,
+    "ModifierVitality": 0,
+    "ModifierDexterity": 0,
+    "ModifierIntelligence": 0,
+    "ModifierMind": 0,
+    "ModifierPiety": 0,
+    "Role": 0,
+    "PrimaryStat": 0
+  },
+  "42": {
+    "ModifierHitPoints": 0,
+    "ModifierManaPoints": 0,
+    "ModifierStrength": 0,
+    "ModifierVitality": 0,
+    "ModifierDexterity": 0,
+    "ModifierIntelligence": 0,
+    "ModifierMind": 0,
+    "ModifierPiety": 0,
+    "Role": 0,
+    "PrimaryStat": 0
   }
 }

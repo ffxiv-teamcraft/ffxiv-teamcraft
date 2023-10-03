@@ -6722,7 +6722,7 @@
   },
   "518": {
     "en": "Reflect",
-    "de": "Reflektion",
+    "de": "Reflexion",
     "ja": "リフレク",
     "fr": "Miroir",
     "icon": "/i/015000/015035.png",
@@ -7690,7 +7690,7 @@
     "icon": "/i/015000/015628.png",
     "description": {
       "en": "Enveloped in protective flames. Invulnerable to all damage.",
-      "de": "Durch einem Wall wirbelnder Flammen vor Schaden geschützt.",
+      "de": "Durch einen Wall wirbelnder Flammen vor Schaden geschützt.",
       "ja": "炎の渦に包まれ、被ダメージを無効化する状態。",
       "fr": "Un tourbillon de feu enveloppe le corps, protégeant des attaques."
     }
@@ -8321,7 +8321,7 @@
   },
   "641": {
     "en": "Choco Reflect",
-    "de": "Chocobo-Reflektion",
+    "de": "Chocobo-Reflexion",
     "ja": "弱体効果反射",
     "fr": "Chocoboomerang",
     "icon": "/i/016000/016582.png",
@@ -13189,7 +13189,7 @@
     "icon": "/i/018000/018661.png",
     "description": {
       "en": "Each stacked seed staves off the hands of death.",
-      "de": "Von neu eingehauchter Lebenskraft erfüllt. Durch den Verbrauch eines Status des Stapels kann je ein K.o. verhindert werden.",
+      "de": "Von neu eingehauchter Lebenskraft erfüllt. Durch den Verbrauch eines Status des Stapels kann je ein K. o. verhindert werden.",
       "ja": "仮初めの生命を得た状態。スタック数を消費することで、戦闘不能状態を避けることができる。",
       "fr": "En état de survie temporaire. L'utilisation d'un degré permet d'annuler l'état inconscient une fois."
     }
@@ -21425,7 +21425,7 @@
   },
   "1649": {
     "en": "Reflect L",
-    "de": "Logos-Reflektion",
+    "de": "Logos-Reflexion",
     "ja": "ロゴス・リフレク",
     "fr": "Évocation Logos&nbsp;: Miroir",
     "icon": "/i/016000/016645.png",
@@ -30369,7 +30369,7 @@
   },
   "2337": {
     "en": "Lost Reflect",
-    "de": "Verschollene Reflektion",
+    "de": "Verschollene Reflexion",
     "ja": "ロスト・リフレク",
     "fr": "Miroir oublié",
     "icon": "/i/016000/016680.png",
@@ -32467,10 +32467,10 @@
     "fr": "Instinct profond",
     "icon": "/i/013000/013537.png",
     "description": {
-      "en": "Movement speed, damage dealt, and healing magic potency are increased. <span style=\"color:#ffff66\">Mighty Guard</span> will not reduce damage dealt while <span style=\"color:#ffff66\">Basic Instinct</span> is in effect.",
-      "de": "Bewegungsgeschwindigkeit, Wirkung von Heilmagie und ausgeteilter Schaden sind erhöht. Immun gegen Schadensreduzierung durch <span style=\"color:#ffff66\">Totalabwehr</span>.",
-      "ja": "与ダメージと回復魔法の回復量、さらに移動速度が上昇した状態。加えて、「マイティガード」による与ダメージ低下の効果を無効化する。",
-      "fr": "La vitesse de déplacement, les dégâts infligés ainsi que la puissance de la magie curative sont augmentés. Garde puissante ne réduit plus les dégâts infligés."
+      "en": "Movement speed, damage dealt, and healing potency are increased. <span style=\"color:#ffff66\">Mighty Guard</span> will not reduce damage dealt while <span style=\"color:#ffff66\">Basic Instinct</span> is in effect.",
+      "de": "Bewegungsgeschwindigkeit, Wirkung von eigenen Heileffekten und ausgeteilter Schaden sind erhöht. Immun gegen Schadensreduzierung durch <span style=\"color:#ffff66\">Totalabwehr</span>.",
+      "ja": "与ダメージと自身からのＨＰ回復効果、さらに移動速度が上昇した状態。加えて、「マイティガード」による与ダメージ低下の効果を無効化する。",
+      "fr": "La vitesse de déplacement, les dégâts infligés ainsi que la puissance des effets curatifs sont augmentés. Garde puissante ne réduit plus les dégâts infligés."
     }
   },
   "2499": {
@@ -42179,7 +42179,7 @@
     "icon": "/i/014000/014977.png",
     "description": {
       "en": "Augments certain actions with beneficial effects.",
-      "de": "Gewisste Kommandos erhalten einen positiven Effekt.",
+      "de": "Gewisse Kommandos erhalten einen positiven Effekt.",
       "ja": "一部のアクションにバフステータスが追加発動する状態。",
       "fr": "Certaines actions s'accompagnent d'effets bénéfiques supplémentaires."
     }
@@ -43473,7 +43473,7 @@
   },
   "3345": {
     "en": "Solosplice",
-    "de": "Einfache Konzeptreflektion",
+    "de": "Einfache Konzeptreflexion",
     "ja": "単相式反発概念",
     "fr": "Concept adverse simple",
     "icon": "/i/015000/015104.png",
@@ -43486,7 +43486,7 @@
   },
   "3346": {
     "en": "Multisplice",
-    "de": "Multiple Konzeptreflektion",
+    "de": "Multiple Konzeptreflexion",
     "ja": "複相式反発概念",
     "fr": "Concepts adverses multiples",
     "icon": "/i/015000/015105.png",
@@ -43499,7 +43499,7 @@
   },
   "3347": {
     "en": "Supersplice",
-    "de": "Komplexe Konzeptreflektion",
+    "de": "Komplexe Konzeptreflexion",
     "ja": "重相式反発概念",
     "fr": "Concept adverse puissant",
     "icon": "/i/015000/015106.png",
@@ -43771,7 +43771,7 @@
     }
   },
   "3368": {
-    "en": "Sewer-dweller",
+    "en": "Powerful",
     "de": "Angepasstes Miasma",
     "ja": "瘴気順応",
     "fr": "Mithridatisation",
@@ -44776,7 +44776,7 @@
     "de": "",
     "ja": "",
     "fr": "",
-    "icon": "",
+    "icon": "/i/015000/015143.png",
     "description": {
       "en": "",
       "de": "",
@@ -46072,16 +46072,16 @@
     }
   },
   "3545": {
-    "en": "_rsv_3545_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3545_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3545_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3545_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Chimeric Soul",
+    "de": "Chimärenseele",
+    "ja": "キメリックソウル",
+    "fr": "Âme de chimère",
     "icon": "/i/015000/015176.png",
     "description": {
-      "en": "_rsv_3545_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3545_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3545_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3545_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Wielding the power of multiple ancient souls.",
+      "de": "Hat mehrere Seelen gefressen und deren Kräfte übernommen.",
+      "ja": "複数の魂を喰らい、その力を共存させた状態。",
+      "fr": "Plusieurs âmes ont été avalées, et leurs pouvoirs ont été mélangés."
     }
   },
   "3546": {
@@ -46137,29 +46137,29 @@
     }
   },
   "3550": {
-    "en": "_rsv_3550_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3550_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3550_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3550_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Dæmoniac Bonds",
+    "de": "Dæmonische Fessel",
+    "ja": "パンデモニックボンド",
+    "fr": "Lien pandæmoniaque",
     "icon": "/i/015000/015192.png",
     "description": {
-      "en": "_rsv_3550_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3550_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3550_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3550_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Fated to take damage when this effect expires.",
+      "de": "Erleidet nach Ablauf Schaden.",
+      "ja": "呪いを受け、効果時間終了時に被害が発生する状態。",
+      "fr": "La victime est maudite, et subit des dégâts à la fin de l'effet."
     }
   },
   "3551": {
-    "en": "_rsv_3551_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3551_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3551_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3551_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Duodæmoniac Bonds",
+    "de": "Duodæmonische Fessel",
+    "ja": "パンデモニックボンド・ダブル",
+    "fr": "Double lien pandæmoniaque",
     "icon": "/i/015000/015193.png",
     "description": {
-      "en": "_rsv_3551_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3551_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3551_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3551_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Fated twofold to take damage when this effect expires.",
+      "de": "Erleidet nach Ablauf Schaden.",
+      "ja": "二重の呪いを受け、効果時間終了時に被害が発生する状態。",
+      "fr": "La victime est doublement maudite, et subit des dégâts à la fin de l'effet."
     }
   },
   "3552": {
@@ -46475,120 +46475,120 @@
     }
   },
   "3576": {
-    "en": "_rsv_3576_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3576_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3576_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3576_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Umbral Tilt",
+    "de": "Ätherbalance: Dunkel",
+    "ja": "極性偏向：霊",
+    "fr": "Polarisation ombrale",
     "icon": "/i/015000/015179.png",
     "description": {
-      "en": "_rsv_3576_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3576_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3576_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3576_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Internal aether is dramatically polarized toward the umbral. Damage taken from umbral attacks is increased, though explosive damage from astral attacks can be quelled. ",
+      "de": "Die Ätherbalance tendiert gefährlich stark zur Dunkelheit. Erlittener Schaden durch dunkelbasierte Attacken ist erhöht. Erhält die Kraft, lichtbasierten Detonationen zu widerstehen.",
+      "ja": "体内エーテルが霊極性に偏り、限界を迎えつつある状態。霊極性攻撃で受けるダメージが増加するが、星極性攻撃の大爆発を抑える力を得る。",
+      "fr": "L'éther corporel penche fortement du côté ombral. Les dégâts ombraux subis sont augmentés, mais la grosse explosion liée aux attaques astrales sera neutralisée."
     }
   },
   "3577": {
-    "en": "_rsv_3577_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3577_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3577_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3577_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Astral Tilt",
+    "de": "Ätherbalance: Licht",
+    "ja": "極性偏向：星",
+    "fr": "Polarisation astrale",
     "icon": "/i/015000/015180.png",
     "description": {
-      "en": "_rsv_3577_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3577_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3577_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3577_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Internal aether is dramatically polarized toward the astral. Damage taken from astral attacks is increased, though explosive damage from umbral attacks can be quelled. ",
+      "de": "Die Ätherbalance tendiert gefährlich stark zum Licht. Erlittener Schaden durch lichtbasierte Attacken ist erhöht. Erhält die Kraft, dunkelbasierten Detonationen zu widerstehen.",
+      "ja": "体内エーテルが星極性に偏り、限界を迎えつつある状態。星極性攻撃で受けるダメージが増加するが、霊極性攻撃の大爆発を抑える力を得る。",
+      "fr": "L'éther corporel penche fortement du côté astral. Les dégâts astraux subis sont augmentés, mais la grosse explosion liée aux attaques ombrales sera neutralisée."
     }
   },
   "3578": {
-    "en": "_rsv_3578_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3578_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3578_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3578_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Heavensflame Soul",
+    "de": "Siegel des Feuers",
+    "ja": "天火の刻印",
+    "fr": "Marque de feu du ciel",
     "icon": "/i/015000/015181.png",
     "description": {
-      "en": "_rsv_3578_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3578_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3578_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3578_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Soul has been commandeered to unleash Theos's Holy when this effect expires.",
+      "de": "Ins Visier genommen. Löst nach Ablauf <span style=\"color:#ffff66\">Theisches Sanctus</span> auf die Umgebung aus.",
+      "ja": "標的となった状態。効果時間が終了すると、周囲にテオス・ホーリーが発動する。",
+      "fr": "La victime est marquée. Miracle de théos se déclenche autour d'elle à la fin de l'effet."
     }
   },
   "3579": {
-    "en": "_rsv_3579_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3579_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3579_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3579_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Umbralbright Soul",
+    "de": "Siegel des Dunkelglühens",
+    "ja": "霊臨の刻印",
+    "fr": "Marque de manifestation ombrale",
     "icon": "/i/015000/015182.png",
     "description": {
-      "en": "_rsv_3579_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3579_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3579_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3579_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Soul has been commandeered to unleash Umbral Glow when this effect expires.",
+      "de": "Ins Visier genommen. Löst nach Ablauf <span style=\"color:#ffff66\">Dunkelglühen</span> aus.",
+      "ja": "標的となった状態。効果時間が終了すると、アンブラルグロウが発動する。",
+      "fr": "La victime est marquée. Lueur ombrale se déclenche à la fin de l'effet."
     }
   },
   "3580": {
-    "en": "_rsv_3580_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3580_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3580_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3580_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Astralbright Soul",
+    "de": "Siegel des Lichtglühens",
+    "ja": "星臨の刻印",
+    "fr": "Marque de manifestation astrale",
     "icon": "/i/015000/015183.png",
     "description": {
-      "en": "_rsv_3580_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3580_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3580_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3580_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Soul has been commandeered to unleash Astral Glow when this effect expires.",
+      "de": "Ins Visier genommen. Löst nach Ablauf <span style=\"color:#ffff66\">Lichtglühen</span> aus.",
+      "ja": "標的となった状態。効果時間が終了すると、アストラルグロウが発動する。",
+      "fr": "La victime est marquée. Lueur astrale se déclenche à la fin de l'effet."
     }
   },
   "3581": {
-    "en": "_rsv_3581_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3581_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3581_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3581_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Umbralstrong Soul",
+    "de": "Siegel des Dunkelschlags",
+    "ja": "霊撃の刻印",
+    "fr": "Marque d'attaque ombrale",
     "icon": "/i/015000/015184.png",
     "description": {
-      "en": "_rsv_3581_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3581_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3581_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3581_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Soul has been commandeered to unleash Umbral Impact when this effect expires.",
+      "de": "Ins Visier genommen. Löst nach Ablauf <span style=\"color:#ffff66\">Dunkelschlag</span> aus.",
+      "ja": "標的となった状態。効果時間が終了すると霊撃が発動する。",
+      "fr": "La victime est marquée. Attaque ombrale se déclenche à la fin de l'effet."
     }
   },
   "3582": {
-    "en": "_rsv_3582_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3582_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3582_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3582_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Astralstrong Soul",
+    "de": "Siegel des Lichtschlags",
+    "ja": "星撃の刻印",
+    "fr": "Marque d'attaque astrale",
     "icon": "/i/015000/015185.png",
     "description": {
-      "en": "_rsv_3582_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3582_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3582_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3582_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Soul has been commandeered to unleash Astral Impact when this effect expires.",
+      "de": "Ins Visier genommen. Löst nach Ablauf <span style=\"color:#ffff66\">Lichtschlag</span> aus.",
+      "ja": "標的となった状態。効果時間が終了すると星撃が発動する。",
+      "fr": "La victime est marquée. Attaque astrale se déclenche à la fin de l'effet."
     }
   },
   "3583": {
-    "en": "_rsv_3583_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3583_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3583_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3583_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Quartered Soul",
+    "de": "Siegel des Kreuzes",
+    "ja": "十字の刻印",
+    "fr": "Marque de croix",
     "icon": "/i/015000/015186.png",
     "description": {
-      "en": "_rsv_3583_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3583_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3583_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3583_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Soul has been commandeered to unleash Theos's Cross when this effect expires.",
+      "de": "Ins Visier genommen. Löst nach Ablauf <span style=\"color:#ffff66\">Theisches Kreuz</span> am aktuellen Ort aus.",
+      "ja": "標的となった状態。効果時間が終了すると、その場にテオス・クロスが発動する。",
+      "fr": "La victime est marquée. Croix de théos se déclenche là où elle se trouve à la fin de l'effet."
     }
   },
   "3584": {
-    "en": "_rsv_3584_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3584_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3584_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3584_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "X-marked Soul",
+    "de": "Siegel des Schrägkreuzes",
+    "ja": "交差の刻印",
+    "fr": "Marque de croix décussée",
     "icon": "/i/015000/015187.png",
     "description": {
-      "en": "_rsv_3584_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3584_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3584_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3584_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Soul has been commandeered to unleash Theos's Saltire when this effect expires.",
+      "de": "Ins Visier genommen. Löst nach Ablauf <span style=\"color:#ffff66\">Theisches Schrägkreuz</span> am aktuellen Ort aus.",
+      "ja": "標的となった状態。効果時間が終了すると、その場にテオス・サルタイアーが発動する。",
+      "fr": "La victime est marquée. Croix décussée de théos se déclenche là où elle se trouve à la fin de l'effet."
     }
   },
   "3585": {
@@ -46605,16 +46605,16 @@
     }
   },
   "3586": {
-    "en": "_rsv_3586_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3586_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3586_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3586_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Ascended",
+    "de": "Weltenerschaffung",
+    "ja": "天地創造",
+    "fr": "Monde créé",
     "icon": "/i/015000/015189.png",
     "description": {
-      "en": "_rsv_3586_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3586_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3586_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3586_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Drawn into the celestial realm created by Athena.",
+      "de": "Von Athena in eine von ihr geschaffene Welt verbannt.",
+      "ja": "アテナが創造した世界に組み込まれた状態。",
+      "fr": "Évolue dans le monde créé par Athéna."
     }
   },
   "3587": {
@@ -46631,94 +46631,94 @@
     }
   },
   "3588": {
-    "en": "_rsv_3588_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3588_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3588_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3588_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Shackled Together",
+    "de": "Schattenfesseln",
+    "ja": "束縛の鎖",
+    "fr": "Chaînes d'union",
     "icon": "/i/015000/015328.png",
     "description": {
-      "en": "_rsv_3588_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3588_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3588_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3588_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Chained to an ally. Drawing too far from this partner will result in increased damage taken.",
+      "de": "Erleidet erhöhten Schaden, wenn zu weit von dem anderen Gefesselten entfernt.",
+      "ja": "鎖で繋がれた仲間から離れると、被害が増大する状態。",
+      "fr": "S'éloigner des équipiers affectés augmente les dégâts subis."
     }
   },
   "3589": {
-    "en": "_rsv_3589_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3589_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3589_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3589_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Close Caloric",
+    "de": "Phlogiston",
+    "ja": "熱素",
+    "fr": "Chaleur matérielle",
     "icon": "/i/018000/018826.png",
     "description": {
-      "en": "_rsv_3589_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3589_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3589_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3589_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Movement causes the accumulation of a physical substance composed of pure heat. Accumulating 5 stacks will result in a massive explosion.",
+      "de": "Erhöht Zahl der Stapel bei Bewegung. Löst bei 5 Stapeln <span style=\"color:#ffff66\">Detonation</span> aus.",
+      "ja": "物質化した熱が付着した状態。移動するとスタック数が増し、5スタック付与されると大爆発を起こす。",
+      "fr": "Le corps est recouvert de chaleur matérialisée. L'effet se cumule en cas de déplacement, et Grosse explosion se déclenche lorsque le 5e degré est atteint."
     }
   },
   "3590": {
-    "en": "_rsv_3590_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3590_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3590_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3590_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Pyrefaction",
+    "de": "Omen des pyrischen Pulses",
+    "ja": "重火の兆し",
+    "fr": "Présage de grand feu",
     "icon": "/i/015000/015198.png",
     "description": {
-      "en": "_rsv_3590_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3590_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3590_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3590_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Subject to unleashing Pyre Pulse when this effect expires.",
+      "de": "Ins Visier genommen. Löst nach Ablauf <span style=\"color:#ffff66\">Pyrischer Puls</span> aus.",
+      "ja": "標的となった状態。効果時間が終了すると重熱波が発動する。",
+      "fr": "La victime est visée. Vague de chaleur intense se déclenche à la fin de l'effet."
     }
   },
   "3591": {
-    "en": "_rsv_3591_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3591_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3591_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3591_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Atmosfaction",
+    "de": "Omen der dynamischen Atmosphäre",
+    "ja": "誘風の兆し",
+    "fr": "Présage de courant d'air",
     "icon": "/i/015000/015199.png",
     "description": {
-      "en": "_rsv_3591_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3591_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3591_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3591_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Subject to unleashing Dynamic Atmosphere when this effect expires.",
+      "de": "Ins Visier genommen. Löst nach Ablauf <span style=\"color:#ffff66\">Dynamische Atmosphäre</span> aus.",
+      "ja": "標的となった状態。効果時間が終了すると衝風が発動する。",
+      "fr": "La victime est marquée. Vent perçant se déclenche à la fin de l'effet."
     }
   },
   "3592": {
-    "en": "_rsv_3592_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3592_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3592_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3592_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Entropifaction",
+    "de": "Omen des entropischen Exzesses",
+    "ja": "発火の兆し",
+    "fr": "Présage d'ignition",
     "icon": "/i/018000/018052.png",
     "description": {
-      "en": "_rsv_3592_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3592_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3592_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3592_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Subject to unleashing Entropic Excess periodically. Each release of Entropic Excess will decrease the stacks of this effect. The effect may be transferred to another subject via physical contact.",
+      "de": "Ins Visier genommen. Löst in gewissen Abständen <span style=\"color:#ffff66\">Entropischer Exzess</span> aus und verringert Stapel. Omen kann durch Berührung an andere Spieler abgegeben werden.",
+      "ja": "標的となった状態。一定時間ごとに焦熱波が発動し、スタック数が減少する。<br>他のプレイヤーと接触した場合、兆しが移譲される。",
+      "fr": "La victime est marquée. Vague de chaleur ardente se déclenche périodiquement, et l'effet perd à chaque fois un degré.<br>Si un autre personnage est touché, l'effet est transféré à ce dernier."
     }
   },
   "3593": {
-    "en": "_rsv_3593_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3593_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3593_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3593_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Unstable Factor",
+    "de": "Faktorausgleich",
+    "ja": "消滅因子",
+    "fr": "Facteur d'extinction",
     "icon": "/i/017000/017178.png",
     "description": {
-      "en": "_rsv_3593_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3593_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3593_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3593_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Subject to a factor that will cause explosive damage when this effect ends. Physical contact with another subject with unstable factors will result in both subjects' stack counts being added together, divided by two, and redistributed. Fractions will be rounded down to the nearest whole number.",
+      "de": "Erhält einen Faktor, der nach Ablauf <span style=\"color:#ffff66\">Detonation</span> auslöst.<br>Wenn sich zwei Spieler berühren, werden ihre Stapel zusammengezählt und durch zwei geteilt auf beide verteilt. (Brüche werden abgerundet.)",
+      "ja": "効果時間終了時に大爆発を起こす因子を付与された状態。<br>他のプレイヤーと接触した場合、お互いの消滅因子のスタック数を合計し、二分割する。その際、割り切れない数は切り捨てられる。",
+      "fr": "Un mystérieux facteur est associé. Une grosse explosion se déclenche à la fin de l'effet.<br>Si deux personnages se touchent, les degrés qu'ils ont cumulés sont additionnés, puis répartis équitablement entre eux. Les restes indivisibles sont supprimés."
     }
   },
   "3594": {
-    "en": "_rsv_3594_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3594_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3594_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3594_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Critical Factor",
+    "de": "Faktorisiertes Tabu",
+    "ja": "致命因子",
+    "fr": "Facteur létal",
     "icon": "/i/015000/015200.png",
     "description": {
-      "en": "_rsv_3594_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3594_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3594_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3594_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Subject to an as-yet-unknown element that increases damage taken from attacks by forbidden factors.",
+      "de": "Erhält einen unbekannten Faktor. Erlittener Schaden durch Tabu ist erhöht.",
+      "ja": "未知の因子が付与され、禁忌因子からの被ダメージが増加する状態。",
+      "fr": "Un mystérieux facteur est associé. Les dégâts provenant des facteurs tabous sont augmentés."
     }
   },
   "3595": {
@@ -47008,29 +47008,29 @@
     }
   },
   "3617": {
-    "en": "_rsv_3617_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3617_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3617_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3617_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Entropy Resistance",
+    "de": "Pyrische Resistenz",
+    "ja": "発火耐性",
+    "fr": "Ininflammable",
     "icon": "/i/014000/014107.png",
     "description": {
-      "en": "_rsv_3617_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3617_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3617_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3617_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Invulnerable to entropifaction.",
+      "de": "Steht nicht mehr unter dem Einfluss von <span style=\"color:#ffff66\">Omen des entropischen Exzesses</span>.",
+      "ja": "発火の兆しにかからなくなった状態。",
+      "fr": "Ne peut plus subir Présage d'ignition."
     }
   },
   "3618": {
-    "en": "_rsv_3618_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3618_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3618_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3618_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Stable System",
+    "de": "Schutzfaktor X",
+    "ja": "反消滅因子",
+    "fr": "Anti-facteur d'extinction",
     "icon": "/i/014000/014108.png",
     "description": {
-      "en": "_rsv_3618_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3618_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3618_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3618_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Unaffected by contact with subjects with unstable factors.",
+      "de": "Schützt während der Dauer vor der Wirkung von <span style=\"color:#ffff66\">Faktorausgleich</span> durch andere Spieler.",
+      "ja": "効果時間終了まで他者の消滅因子の影響を受けない状態。",
+      "fr": "Ne peut plus recevoir Facteur d'extinction d'un autre personnage pendant la durée de l'effet."
     }
   },
   "3619": {
@@ -47334,7 +47334,7 @@
   },
   "3642": {
     "en": "Candy Cane",
-    "de": "Quietschehammer",
+    "de": "Zuckerstange",
     "ja": "キャンディケーン",
     "fr": "Canne en sucre d'orge",
     "icon": "/i/013000/013550.png",
@@ -48035,16 +48035,16 @@
     }
   },
   "3696": {
-    "en": "_rsv_3696_-1_1_0_0_S74CFC3B0_E74CFC3B0",
-    "de": "_rsv_3696_-1_2_0_0_S74CFC3B0_E74CFC3B0",
-    "ja": "_rsv_3696_-1_0_0_0_S74CFC3B0_E74CFC3B0",
-    "fr": "_rsv_3696_-1_3_0_0_S74CFC3B0_E74CFC3B0",
+    "en": "Tetradæmoniac Bonds",
+    "de": "Tetradæmonische Fessel",
+    "ja": "パンデモニックボンド・クアドラ",
+    "fr": "Quadruple lien pandæmoniaque",
     "icon": "/i/014000/014110.png",
     "description": {
-      "en": "_rsv_3696_-1_1_1_0_S74CFC3B0_E74CFC3B0",
-      "de": "_rsv_3696_-1_2_1_0_S74CFC3B0_E74CFC3B0",
-      "ja": "_rsv_3696_-1_0_1_0_S74CFC3B0_E74CFC3B0",
-      "fr": "_rsv_3696_-1_3_1_0_S74CFC3B0_E74CFC3B0"
+      "en": "Fated fourfold to take damage when this effect expires.",
+      "de": "Erleidet nach Ablauf Schaden.",
+      "ja": "四重の呪いを受け、効果時間終了時に被害が発生する状態。",
+      "fr": "La victime est quadruplement maudite, et subit des dégâts à la fin de l'effet."
     }
   },
   "3697": {
@@ -48269,16 +48269,16 @@
     }
   },
   "3714": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Prey",
+    "de": "Markiert",
+    "ja": "マーキング",
+    "fr": "Marquage",
+    "icon": "/i/015000/015026.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Marked as prey.",
+      "de": "Als Beute markiert.",
+      "ja": "獲物として狙いを付けられた状態。",
+      "fr": "Fait l'objet du marquage d'un prédateur."
     }
   },
   "3715": {
@@ -48490,29 +48490,29 @@
     }
   },
   "3731": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Dark Whispers",
+    "de": "Finsteres Mal",
+    "ja": "闇の烙印",
+    "fr": "Marque des Ténèbres",
+    "icon": "/i/018000/018307.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Hexed by the dark elf. The moment of Doom draws ever nearer as stacks increase.",
+      "de": "Mit einem Fluch belegt. Je mehr Stapel gesammelt werden, desto schneller wird <span style=\"color:#ffff66\">Verhängnis</span> ausgelöst.",
+      "ja": "ダークエルフの呪いを受けた状態。スタック数が増えるほど、「死の宣告」発動までの時間が短くなる。",
+      "fr": "Si l'effet de la malédiction de l'Elfe noir est cumulé, réduit davantage le délai d'activation de Glas."
     }
   },
   "3732": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Inscribed",
+    "de": "Hieroglyphe des Gelehrten",
+    "ja": "知神の聖刻",
+    "fr": "Hiéroglyphe de l'Érudit",
+    "icon": "/i/014000/014124.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Marked by a binding glyph that will activate when this effect expires.",
+      "de": "Mit einer Hieroglyphe versehen. Löst nach Ablauf <span style=\"color:#ffff66\">Fessel</span> aus.",
+      "ja": "知神の聖刻が刻まれた状態。効果時間が終了するとバインド状態になる。",
+      "fr": "Le corps est marqué par un hiéroglyphe. Inflige Entrave à la fin de l'effet."
     }
   },
   "3733": {
@@ -48594,42 +48594,42 @@
     }
   },
   "3739": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Time and Tide",
+    "de": "Zeit und Gezeiten",
+    "ja": "時間操作",
+    "fr": "Manipulation temporelle",
+    "icon": "/i/010000/010454.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Cast time of next spell cast is greatly reduced.",
+      "de": "Der nächste Zauber kann weitaus schneller gewirkt werden.",
+      "ja": "次に実行する魔法の詠唱が急激に加速する状態。",
+      "fr": "Le temps de lancement du prochain sort est grandement réduit."
     }
   },
   "3740": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Bright Pulse",
+    "de": "Sichtblende",
+    "ja": "閃光",
+    "fr": "Éblouissement",
+    "icon": "/i/015000/015012.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Bright light has obscured vision, lowering accuracy.",
+      "de": "Blendendes Licht senkt kurzzeitig die Präzision.",
+      "ja": "光に目が眩み、命中率が低下した状態。",
+      "fr": "Une lumière aveuglante diminue la précision."
     }
   },
   "3741": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Seventh Heaven",
+    "de": "Macht des Astralen Himmels",
+    "ja": "星天の力",
+    "fr": "Pouvoir céleste",
+    "icon": "/i/015000/015245.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Imbued with the power collected in the highest heaven.",
+      "de": "Von der Macht des Astralen Himmels erfüllt.",
+      "ja": "星天に蓄積されていた力を身に受けた状態。",
+      "fr": "Le corps est empli de l'énergie accumulée dans les cieux."
     }
   },
   "3742": {
@@ -48854,120 +48854,120 @@
     }
   },
   "3759": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Impassioned",
+    "de": "Raserei",
+    "ja": "狂騒",
+    "fr": "Psychose",
+    "icon": "/i/014000/014115.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Overcome with emotion.",
+      "de": "Die Gedanken spielen aufgrund der zwecklosen Situation verrückt.",
+      "ja": "追い詰められ、想いだけが暴走している状態。",
+      "fr": "Un puissant sentiment de désespoir suscite un trouble profond."
     }
   },
   "3760": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Big Bang",
+    "de": "Großer Knall",
+    "ja": "ビッグバーン",
+    "fr": "Big bang",
+    "icon": "/i/014000/014116.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Invigorated by the exponential expansion of Darkness.",
+      "de": "Die plötzliche Ausbreitung der Dunkelheit sorgt für Revitalisierung.",
+      "ja": "爆発的に展開された闇の力により、活性化している状態。",
+      "fr": "Le corps entre en résonance avec l'énergie d'une explosion ténébreuse."
     }
   },
   "3761": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Big Bounce",
+    "de": "Großer Praller",
+    "ja": "ビッグバウンス",
+    "fr": "Big bounce",
+    "icon": "/i/014000/014117.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining damage over time.",
+      "de": "Erleidet schrittweise Schaden.",
+      "ja": "無属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques neutres sont subis."
     }
   },
   "3762": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Divisive Dark",
+    "de": "Fressende Finsternis: Zerschmetterung",
+    "ja": "闇の侵食：砕",
+    "fr": "Ténèbres rongeuses&nbsp;: Pulvérisation",
+    "icon": "/i/014000/014118.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Devoured by Darkness, resulting in an explosion when this effect expires.",
+      "de": "Verschlungen von der Dunkelheit. Beim Ende des Effekts wird eine Explosion ausgelöst.",
+      "ja": "闇の力に蝕まれている状態。効果終了時に爆発を起こす。",
+      "fr": "Corruption ténébreuse. Provoque une explosion à la fin de l'effet."
     }
   },
   "3763": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Beckoning Dark",
+    "de": "Fressende Finsternis: Last",
+    "ja": "闇の侵食：重",
+    "fr": "Ténèbres rongeuses&nbsp;: Gravité",
+    "icon": "/i/014000/014119.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Devoured by Darkness, resulting in a massive explosion when this effect expires.",
+      "de": "Verschlungen von der Dunkelheit. Beim Ende des Effekts wird eine schwere Explosion ausgelöst.",
+      "ja": "闇の力に蝕まれている状態。効果終了時に重爆発を起こす。",
+      "fr": "Corruption ténébreuse. Provoque une explosion massive à la fin de l'effet."
     }
   },
   "3764": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Doubled Dark",
+    "de": "Fressende Finsternis: Zwilling",
+    "ja": "闇の侵食：双",
+    "fr": "Ténèbres rongeuses&nbsp;: Dualité",
+    "icon": "/i/014000/014120.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Devoured by Darkness, resulting in an explosion when this effect expires.",
+      "de": "Verschlungen von der Dunkelheit. Beim Ende des Effekts wird eine Explosion ausgelöst.",
+      "ja": "闇の力に蝕まれている状態。効果終了時に爆発を起こす。",
+      "fr": "Corruption ténébreuse. Provoque une explosion à la fin de l'effet."
     }
   },
   "3765": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Glowering Dark",
+    "de": "Fressende Finsternis: Auge",
+    "ja": "闇の侵食：眼",
+    "fr": "Ténèbres rongeuses&nbsp;: Regard",
+    "icon": "/i/014000/014121.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Devoured by Darkness, resulting in a forward burst of damage when this effect expires.",
+      "de": "Verschlungen von der Dunkelheit. Beim Ende des Effekts folgt ein Angriff nach vorne.",
+      "ja": "闇の力に蝕まれている状態。効果時間終了時、前方に攻撃を放つ。",
+      "fr": "Corruption ténébreuse. Provoque une attaque vers l'avant à la fin de l'effet."
     }
   },
   "3766": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Binding Dark",
+    "de": "Fressende Finsternis: Kette",
+    "ja": "闇の侵食：鎖",
+    "fr": "Ténèbres rongeuses&nbsp;: Chaînes",
+    "icon": "/i/014000/014122.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Devoured by Darkness, resulting in enchainment to another player when this effect expires.",
+      "de": "Verschlungen von der Dunkelheit. Wird bei Ende dieses Effekts mit dunklen Ketten an jemanden gefesselt.",
+      "ja": "闇の力に蝕まれている状態。効果終了時に他者と闇の呪鎖で繋がれてしまう。",
+      "fr": "Corruption ténébreuse. Une chaîne abyssale relie à autrui à la fin de l'effet."
     }
   },
   "3767": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Bonds of Darkness",
+    "de": "Dunkle Kette",
+    "ja": "闇の呪鎖",
+    "fr": "Chaîne abyssale",
+    "icon": "/i/014000/014123.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Bound by stygian chains, causing damage over time.",
+      "de": "Von Ketten gefesselt, die schrittweise Schaden verursachen.",
+      "ja": "鎖で繋がれ、ＨＰが徐々に失われる状態。",
+      "fr": "La victime est enchaînée. Des dégâts périodiques sont subis."
     }
   },
   "3768": {
@@ -49088,29 +49088,29 @@
     }
   },
   "3777": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Dropsy",
+    "de": "Wassersucht",
+    "ja": "水毒",
+    "fr": "Œdème",
+    "icon": "/i/015000/015529.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining water damage over time.",
+      "de": "Erleidet schrittweise Wasserschaden.",
+      "ja": "水属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques d'eau sont subis."
     }
   },
   "3778": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Dropsy",
+    "de": "Wassersucht",
+    "ja": "水毒",
+    "fr": "Œdème",
+    "icon": "/i/015000/015529.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining water damage over time.",
+      "de": "Erleidet schrittweise Wasserschaden.",
+      "ja": "水属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques d'eau sont subis."
     }
   },
   "3779": {
@@ -49296,42 +49296,42 @@
     }
   },
   "3793": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Acceleration Bomb",
+    "de": "Beschleunigungsbombe",
+    "ja": "加速度爆弾",
+    "fr": "Bombe à accélération",
+    "icon": "/i/015000/015727.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "An acceleration-trigger explosive is affixed to the body. Any movement when effect wears off will result in detonation.",
+      "de": "Eine Bombe mit Beschleunigungssensor haftet am Körper. Bewegung während des Status führt zur Detonation.",
+      "ja": "加速度爆弾が付着した状態。この状態の効果が切れる際に動いていた場合、爆発する。",
+      "fr": "Une bombe sensible aux accélérations est fixée au corps. Tout mouvement à la fin de l'effet déclenchera le mécanisme d'explosion."
     }
   },
   "3794": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Beckoning Dark",
+    "de": "Fressende Finsternis: Last",
+    "ja": "闇の侵食：重",
+    "fr": "Ténèbres rongeuses&nbsp;: Gravité",
+    "icon": "/i/014000/014119.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Devoured by Darkness, resulting in a massive explosion when this effect expires.",
+      "de": "Verschlungen von der Dunkelheit. Beim Ende des Effekts wird eine schwere Explosion ausgelöst.",
+      "ja": "闇の力に蝕まれている状態。効果終了時に重爆発を起こす。",
+      "fr": "Corruption ténébreuse. Provoque une explosion massive à la fin de l'effet."
     }
   },
   "3795": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Sustained Damage",
+    "de": "Schaden über Zeit",
+    "ja": "継続ダメージ",
+    "fr": "Dégâts continus",
+    "icon": "/i/015000/015067.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining damage over time.",
+      "de": "Erleidet schrittweise Schaden.",
+      "ja": "無属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques neutres sont subis."
     }
   },
   "3796": {
@@ -49374,6 +49374,19 @@
     }
   },
   "3799": {
+    "en": "Forked Lightning",
+    "de": "Gabelblitz",
+    "ja": "フォークライトニング",
+    "fr": "Éclair ramifié",
+    "icon": "/i/015000/015623.png",
+    "description": {
+      "en": "Storing an electric charge which, when released, will deal lightning damage to those nearby.",
+      "de": "Statisch aufgeladen. Bei Ende des Effekts verursacht eine Entladung blitzbasierten Schaden an Zielen im Umkreis.",
+      "ja": "帯電した状態。効果終了時に放電し、周囲に雷属性ダメージを与える。",
+      "fr": "De l'énergie électrique est emmagasinée, qui sera libérée à la fin de l'effet et infligera des dégâts de foudre aux alentours."
+    }
+  },
+  "3800": {
     "en": "",
     "de": "",
     "ja": "",
@@ -49386,7 +49399,1294 @@
       "fr": ""
     }
   },
-  "3800": {
+  "3801": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3802": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3803": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3804": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3805": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3806": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3807": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3808": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3809": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3810": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3811": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3812": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3813": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3814": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3815": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3816": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3817": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3818": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3819": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3820": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3821": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3822": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3823": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3824": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3825": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3826": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3827": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3828": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3829": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3830": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3831": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3832": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3833": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3834": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3835": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3836": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3837": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3838": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3839": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3840": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3841": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3842": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3843": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3844": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3845": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3846": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3847": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3848": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3849": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3850": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3851": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3852": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3853": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3854": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3855": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3856": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3857": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3858": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3859": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3860": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3861": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3862": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3863": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3864": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3865": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3866": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3867": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3868": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3869": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3870": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3871": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3872": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3873": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3874": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3875": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3876": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3877": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3878": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3879": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3880": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3881": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3882": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3883": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3884": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3885": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3886": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3887": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3888": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3889": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3890": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3891": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3892": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3893": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3894": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3895": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3896": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3897": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3898": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3899": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3900": {
     "en": "",
     "de": "",
     "ja": "",

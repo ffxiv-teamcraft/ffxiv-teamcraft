@@ -1,8 +1,13 @@
 export interface LazyPatchName {
-  de: string;
-  en: string;
-  fr: string;
-  ja: string;
-  ko: string;
-  zh: string;
+  banner:  null | string;
+  de:      string;
+  en:      string;
+  ex:      number;
+  fr:      string;
+  id:      number;
+  ja:      string;
+  ko:      string;
+  release: number;
+  version: string;
+  zh:      string;
 }

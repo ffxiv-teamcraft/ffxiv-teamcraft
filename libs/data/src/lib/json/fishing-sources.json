@@ -2295,14 +2295,6 @@
   ],
   "4930": [
     {
-      "spot": 40,
-      "hookset": 2,
-      "tug": 2,
-      "bait": 2588,
-      "snagging": false,
-      "minGathering": 0
-    },
-    {
       "spot": 41,
       "hookset": 2,
       "tug": 2,
@@ -2311,7 +2303,7 @@
       "minGathering": 0
     },
     {
-      "spot": 39,
+      "spot": 43,
       "hookset": 2,
       "tug": 2,
       "bait": 2588,
@@ -2319,7 +2311,15 @@
       "minGathering": 0
     },
     {
-      "spot": 43,
+      "spot": 40,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 2588,
+      "snagging": false,
+      "minGathering": 0
+    },
+    {
+      "spot": 39,
       "hookset": 2,
       "tug": 2,
       "bait": 2588,
@@ -11462,7 +11462,7 @@
         4
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 803
     }
   ],
   "17580": [

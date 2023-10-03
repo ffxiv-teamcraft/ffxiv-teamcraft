@@ -98,7 +98,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
 
   uiCategories$: Observable<{ id: number, data: I18nName }[]>;
 
-  patches$: Observable<XivapiPatch[]> = this.lazyData.patches$.pipe(
+  patches$: Observable<Array<I18nName & { id: number }>> = this.lazyData.patches$.pipe(
     map(patches => patches.reverse())
   );
 
@@ -173,13 +173,13 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     })
   );
 
-  patch$: Observable<XivapiPatch> = this.filters$.pipe(
+  patch$ = this.filters$.pipe(
     switchMap(filters => {
       const patchFilter = filters.find(f => f.name === 'Patch');
       if (patchFilter) {
         return this.lazyData.patches$.pipe(
           map(patches => patches.find(p => {
-            return p.ID === patchFilter.value;
+            return p.id === patchFilter.value;
           }))
         );
       }

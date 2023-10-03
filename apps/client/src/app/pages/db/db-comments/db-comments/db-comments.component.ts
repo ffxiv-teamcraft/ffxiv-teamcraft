@@ -15,6 +15,7 @@ import { environment } from '../../../../../environments/environment';
 import { DbCommentReplyNotification } from '../../../../model/notification/db-comment-reply-notification';
 import { XivapiPatch } from '@ffxiv-teamcraft/types';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { LazyPatchName } from '@ffxiv-teamcraft/data/model/lazy-patch-name';
 
 @Component({
   selector: 'app-db-comments',
@@ -112,12 +113,12 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
     });
   }
 
-  getPatch(comment: DbComment): Observable<XivapiPatch> {
+  getPatch(comment: DbComment): Observable<LazyPatchName> {
     return this.lazyData.patches$.pipe(
       map(patches => {
         let version = patches[0];
         for (const patch of patches) {
-          if (patch.ReleaseDate <= comment.date / 1000) {
+          if (patch.release <= comment.date / 1000) {
             version = patch;
           } else {
             break;
