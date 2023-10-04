@@ -541,7 +541,7 @@
     "Child_windows_title": "Vous pouvez maintenant ouvrir des fenêtres enfant dans l'application Teamcraft !",
     "Child_windows_description": "Lorsque vous cliquez et que cela changera de page (comme le bouton \"i\" pour les pages de la base de données ou tout lien dans l'application), utilisez ctrl + clic ou le clic molette pour ouvrir une nouvelle fenêtre. De plus, vous pouvez créer une nouvelle fenêtre en utilisant le nouveau bouton à côté du nombre d'étoiles Github.",
     "Desktop_tip_title": "Teamcraft a une application de bureau ! Essayez-là",
-    "Desktop_tip_description": "Desktop app is way faster by using offline search, it also adds overlay features and more using packet capture (which is disabled by default if you want to avoid using packet capture). It's strongly advized to use it instead of web version for a better experience.",
+    "Desktop_tip_description": "L'application de bureau est beaucoup plus rapide en utilisant la recherche hors ligne, elle ajoute aussi des fonctionnalités d'overlays et plus encore si vous activez la capture de paquets (qui est désactivée par défaut). Il est fortement recommandé de l'utiliser au lieu de la version web pour une meilleure expérience.",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -1385,7 +1385,7 @@
     "Damage_mag": "Dégâts Mag.",
     "Defense_phys": "Défense Phys.",
     "Defense_mag": "Défense Mag.",
-    "Masterbooks": "Requires a masterbook"
+    "Masterbooks": "Nécessite un livre de recettes expertes"
   },
   "SEARCH_INTRO": {
     "Slogan": "Fabriquez, Partagez, Contribuez",
@@ -1860,7 +1860,7 @@
     "NPC": "PNJ",
     "Leve": "Mandat",
     "Leve_info_message": "Vous pouvez utiliser la page /levequests pour préparer des kits de mandats et calculer le gain en exp total",
-    "Comparison_tip": "You can compare items by selecting them and setting selection to comparison mode",
+    "Comparison_tip": "Vous pouvez comparer les éléments en les sélectionnant et en activant le mode de comparaison \"Sélection\"",
     "Monster": "Monstre",
     "Lore": "Histoire",
     "Fate": "Aléa",
@@ -3029,7 +3029,7 @@
     "Home_subtitle": "Ouvrir plusieurs listes à la fois dans une vue agrégée",
     "Select_lists": "Sélectionnez les listes que vous voulez agréger",
     "Select_layout": "Sélectionnez une disposition",
-    "Select_layout_dropdown": "Display layout",
+    "Select_layout_dropdown": "Type d'affichage",
     "Open_aggregate": "Ouvrir une vue agrégée",
     "Title": "Vue de liste agrégée",
     "Select_panel": "Sélectionnez un panneau pour ouvrir sa vue",
