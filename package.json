@@ -235,7 +235,7 @@
     "dexie": "^3.2.3",
     "dotenv": "10.0.0",
     "echarts": "^5.4.0",
-    "electron": "25.8.1",
+    "electron": "25.8.4",
     "electron-builder": "^23.6.0",
     "electron-builder-squirrel-windows": "^23.6.0",
     "enquirer": "^2.3.6",
