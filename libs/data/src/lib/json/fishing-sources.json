@@ -25561,5 +25561,23 @@
       "oceanFishingTime": 2,
       "minGathering": 0
     }
+  ],
+  "41058": [
+    {
+      "spot": 272,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 28634,
+      "minGathering": 0
+    }
+  ],
+  "41059": [
+    {
+      "spot": 271,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 28634,
+      "minGathering": 0
+    }
   ]
 }
