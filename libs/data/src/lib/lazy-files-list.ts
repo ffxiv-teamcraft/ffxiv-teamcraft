@@ -581,7 +581,7 @@ export const lazyFilesList = {
   },
   'specialShopNames': {
     'fileName': 'special-shop-names.json',
-    'hashedFileName': 'special-shop-names.957dc1c3b694fb7e531bcccc620fbbf0c07180ab.json'
+    'hashedFileName': 'special-shop-names.9af5c9437f78b872e38522935ca4f37edb2db697.json'
   },
   'stackSizes': {
     'fileName': 'stack-sizes.json',
@@ -669,7 +669,7 @@ export const lazyFilesList = {
   },
   'achievementsDatabasePages': {
     'fileName': '/db/achievements-database-pages.json',
-    'hashedFileName': '/db/achievements-database-pages.585163d487b8425d7f0a5c77d412f44bc6c37cb3.json'
+    'hashedFileName': '/db/achievements-database-pages.d366f147dc4d0200d43302f42fc0903a38a5f431.json'
   },
   'actionsDatabasePages': {
     'fileName': '/db/actions-database-pages.json',
