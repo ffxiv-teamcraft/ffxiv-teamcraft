@@ -23,7 +23,7 @@ export class IslandWorkshopStatusService extends FirestoreRelationalStorage<Work
   }
 
   protected getBaseUri(): string {
-    return this.environment.gameVersion < 6.4 ? '/mji-workshop-status-pre63' : '/mji-workshop-status';
+    return this.environment.gameVersion < 6.5 ? '/mji-workshop-status-pre63' : '/mji-workshop-status';
   }
 
   protected getClass(): any {
