@@ -130,7 +130,8 @@ export class AllaganReportsExtractor extends AbstractExtractor {
                     snagging: report.data.snagging,
                     predators: report.data.predators,
                     oceanFishingTime: report.data.oceanFishingTime,
-                    minGathering: report.data.minGathering || 0
+                    minGathering: report.data.minGathering || 0,
+                    video: report.data.fruityVideo || null
                   }, this.identity), false, !report.applied);
               }
             });

@@ -693,7 +693,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
         return {
           minMax: true,
           formArray: 'bonuses',
-          name: `bonuses.${entry.id}.Max`,
+          name: `bonuses.${entry.name}.Max`,
           entryName: entry.name,
           value: {
             min: entry.min,

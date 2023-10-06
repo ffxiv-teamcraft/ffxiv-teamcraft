@@ -52,7 +52,7 @@
     "Want_filters": "Besoin de plus de filtres ?",
     "Open_search": "Ouvrir la page de recherche",
     "Island_recipe": "Recettes de Félicité Insulaire",
-    "Ingesting_index": "Ingesting content for the newly selected language, this should take few seconds..."
+    "Ingesting_index": "Intégration du contenu dans la langue sélectionnée, cela devrait prendre quelques secondes..."
   },
   "Use_as_default_character": "Utiliser comme personnage par défaut",
   "Download_desktop_app": "Télécharger l'application",
@@ -207,8 +207,8 @@
     "Visibility": "Visibilité",
     "Public": "Public",
     "Private": "Privé",
-    "Pagination_text": "{{start}}-{{end}} of {{total}} items",
-    "And_X_more": "and {{amount}} more...",
+    "Pagination_text": "{{start}}-{{end}} sur {{total}} élément(s)",
+    "And_X_more": "et {{amount}} autres...",
     "DAYS": {
       "Monday": "Lundi",
       "Tuesday": "Mardi",
@@ -537,11 +537,11 @@
     "Housing_map_explain": "La carte du logement de votre maison",
     "Reset_linked_characters_ok": "Les liens des personnages ont été réinitialisés",
     "Display_slow_mode_notification": "Afficher les notifications en mode ralenti pour le craft/la récolte",
-    "New_child_window": "Create a new child window",
-    "Child_windows_title": "You can now open child windows in Teamcraft desktop !",
-    "Child_windows_description": "When clicking something that navigates (like the \"i\" button for database pages or any link in the app), use ctrl + click or middle click instead to open in a new window. Additionally, you can create a new window using the new button next to the github stars count.",
-    "Desktop_tip_title": "Teamcraft has a desktop app ! Better, faster, stronger",
-    "Desktop_tip_description": "Desktop app is way faster by using offline search, it also adds overlay features and more using packet capture (which is disabled by default if you want to avoid using packet capture). It's strongly advized to use it instead of web version for a better experience.",
+    "New_child_window": "Créer une nouvelle fenêtre enfant",
+    "Child_windows_title": "Vous pouvez maintenant ouvrir des fenêtres enfant dans l'application Teamcraft !",
+    "Child_windows_description": "Lorsque vous cliquez et que cela changera de page (comme le bouton \"i\" pour les pages de la base de données ou tout lien dans l'application), utilisez ctrl + clic ou le clic molette pour ouvrir une nouvelle fenêtre. De plus, vous pouvez créer une nouvelle fenêtre en utilisant le nouveau bouton à côté du nombre d'étoiles Github.",
+    "Desktop_tip_title": "Teamcraft a une application de bureau ! Essayez-là",
+    "Desktop_tip_description": "L'application de bureau est beaucoup plus rapide en utilisant la recherche hors ligne, elle ajoute aussi des fonctionnalités d'overlays et plus encore si vous activez la capture de paquets (qui est désactivée par défaut). Il est fortement recommandé de l'utiliser au lieu de la version web pour une meilleure expérience.",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -1381,11 +1381,11 @@
     "Ilvl": "ilvl",
     "Cost": "Coût",
     "Class_job": "Classe/Job",
-    "Damage_phys": "Phys. Damage",
-    "Damage_mag": "Mag. Damage",
-    "Defense_phys": "Phys. Defense",
-    "Defense_mag": "Mag. Defense",
-    "Masterbooks": "Requires a masterbook"
+    "Damage_phys": "Dégâts Phys.",
+    "Damage_mag": "Dégâts Mag.",
+    "Defense_phys": "Défense Phys.",
+    "Defense_mag": "Défense Mag.",
+    "Masterbooks": "Nécessite un livre de recettes expertes"
   },
   "SEARCH_INTRO": {
     "Slogan": "Fabriquez, Partagez, Contribuez",
@@ -1619,9 +1619,9 @@
     "Currencies": "Devises",
     "Rowena_splendor": "Les splendeurs de Rowena",
     "Unlocks": "Déverrouille",
-    "Jump_to_page": "Open db page",
+    "Jump_to_page": "Ouvrir la page DB",
     "Ishgard_restoration": "Restauration d'Ishgard",
-    "GC_supply_value": "Expert Delivery",
+    "GC_supply_value": "Livraison experte",
     "ITEM": {
       "Masterpiece_exp_tooltip": "% de l'EXP nécessaire pour le niveau suivant",
       "Required_craftsmanship": "Habileté requise",
@@ -1633,6 +1633,8 @@
       "Requires_gc_rank": "Nécessite le rang de Grand Compagnie {{rank}}"
     },
     "FISH": {
+      "Fruity_video": "How to catch video",
+      "Fruity_video_description": "Link to the \"how catch video\" from Fruity Snacks for this fish",
       "Hour": "Heure du jour",
       "Etime": "Heure éorzéenne",
       "Misses_popup_title": "Ratés sur ce spot",
@@ -1860,7 +1862,7 @@
     "NPC": "PNJ",
     "Leve": "Mandat",
     "Leve_info_message": "Vous pouvez utiliser la page /levequests pour préparer des kits de mandats et calculer le gain en exp total",
-    "Comparison_tip": "You can compare items by selecting them and setting selection to comparison mode",
+    "Comparison_tip": "Vous pouvez comparer les éléments en les sélectionnant et en activant le mode de comparaison \"Sélection\"",
     "Monster": "Monstre",
     "Lore": "Histoire",
     "Fate": "Aléa",
@@ -1973,8 +1975,8 @@
     "Select_stat": "Sélectionnez une stat",
     "Level": "Niveau",
     "SELECTION_MODE": {
-      "List": "List",
-      "Compare": "Compare"
+      "List": "Liste",
+      "Compare": "Comparer"
     },
     "SORT_BY": {
       "Relevance": "Pertinence",
@@ -2097,8 +2099,8 @@
       "Message": "Cet objet est également présent dans : {{containers}}."
     },
     "NOT_IN_LIST": {
-      "Title": "Items that are not used in any of your lists",
-      "Message": "This item is not used in any of your lists."
+      "Title": "Éléments qui ne sont utilisés dans aucune de vos listes",
+      "Message": "Cet élément n'est utilisé dans aucune de vos listes."
     },
     "HAS_TOO_FEW": {
       "Title": "Objets que vous avez en très petite quantité",
@@ -3029,7 +3031,7 @@
     "Home_subtitle": "Ouvrir plusieurs listes à la fois dans une vue agrégée",
     "Select_lists": "Sélectionnez les listes que vous voulez agréger",
     "Select_layout": "Sélectionnez une disposition",
-    "Select_layout_dropdown": "Display layout",
+    "Select_layout_dropdown": "Type d'affichage",
     "Open_aggregate": "Ouvrir une vue agrégée",
     "Title": "Vue de liste agrégée",
     "Select_panel": "Sélectionnez un panneau pour ouvrir sa vue",

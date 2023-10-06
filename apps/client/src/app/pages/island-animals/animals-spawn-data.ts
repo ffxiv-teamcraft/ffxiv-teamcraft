@@ -218,5 +218,37 @@ export const animalsSpawnData: Record<number, Vector2 & { weather?: number, spaw
     spawn: 21,
     duration: 3,
     weather: 1
+  },
+  40: {
+    // Morbol
+    x: 29,
+    y: 24,
+    spawn: 9,
+    duration: 3,
+    weather: 8
+  },
+  41: {
+    // Adamantoise
+    x: 32,
+    y: 12.5,
+    spawn: 12,
+    duration: 3,
+    weather: 4
+  },
+  42: {
+    // Pteranodon
+    x: 25,
+    y: 16,
+    spawn: 9,
+    duration: 3,
+    weather: 1
+  },
+  43: {
+    // Grand Doblyn
+    x: 24,
+    y: 21,
+    spawn: 3,
+    duration: 3,
+    weather: 2
   }
 };

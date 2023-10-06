@@ -1,9 +1,9 @@
-<div fxLayout="column">
-  <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="center center" *ngIf="details.type !== -10">
+<div class="flex-column gap-10">
+  <div class="flex-row align-center flex-auto justify-center" *ngIf="details.type !== -10">
     lvl {{details.level}}{{details.stars_tooltip}}
   </div>
-  <div fxLayout="column" fxLayoutGap="10px">
-    <div *ngFor="let node of details.nodes; let last = last" fxLayout="column" fxLayoutGap="5px">
+  <div class="flex-column gap-10">
+    <div *ngFor="let node of details.nodes; let last = last" class="flex-column gap-5">
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="node.id > 0">
         <div [innerHTML]="node.zoneId | i18nRow:'places' | i18n | nzSanitizer:'html'"></div>
         <div [ngSwitch]="node.type">
@@ -12,21 +12,29 @@
           <app-db-button *ngSwitchDefault [id]="node.id" type="node"></app-db-button>
         </div>
       </div>
-      <app-node-details [node]="node" [showAlarmsIntegration]="showAlarmsIntegration" [hideDbButton]="true"></app-node-details>
-      <ng-container *ngIf="node.baits !== undefined" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-        <app-fishing-bait [baits]="node.baits" flex="row"></app-fishing-bait>
-      </ng-container>
-      <nz-tag *ngIf="node.tug !== undefined">{{'DB.FISH.TUG.' + ['Medium', 'Big', 'Light'][node.tug] | translate}}</nz-tag>
-      <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
-           fxLayoutGap="10px">
-        <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
-             src="./assets/icons/status/predators.png">
-        <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutAlign="flex-start center"
-             fxLayoutGap="5px">
-          <div>{{predator.amount}}x</div>
-          <app-item-icon [itemId]="predator.id" [width]="32"></app-item-icon>
+      <div class="flex-row space-between">
+        <div class="flex-column">
+          <app-node-details [node]="node" [showAlarmsIntegration]="showAlarmsIntegration" [hideDbButton]="true"></app-node-details>
+          <ng-container *ngIf="node.baits !== undefined" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+            <app-fishing-bait [baits]="node.baits" flex="row"></app-fishing-bait>
+          </ng-container>
+          <nz-tag *ngIf="node.tug !== undefined">{{'DB.FISH.TUG.' + ['Medium', 'Big', 'Light'][node.tug] | translate}}</nz-tag>
+          <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
+               fxLayoutGap="10px">
+            <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
+                 src="./assets/icons/status/predators.png">
+            <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutAlign="flex-start center"
+                 fxLayoutGap="5px">
+              <div>{{predator.amount}}x</div>
+              <app-item-icon [itemId]="predator.id" [width]="32"></app-item-icon>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="node.video">
+          <iframe width="250" height="140" [src]="node.video | tcYoutubeEmbed | nzSanitizer:'resourceUrl'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </div>
+
       <div *ngIf="node.speed !== undefined">
         {{'ALLAGAN_REPORTS.Speed' | translate}}: {{('ALLAGAN_REPORTS.SPEEDS.' + SpearfishingSpeed[node.speed]) | translate}}
         <app-spearfishing-speed [speed]="node.speed"></app-spearfishing-speed>

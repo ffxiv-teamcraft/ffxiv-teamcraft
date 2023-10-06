@@ -9,6 +9,7 @@ export interface LazyFishingSource {
   spawn?:            number;
   spot:              number;
   tug:               number;
+  video?:            string;
   weathers?:         number[];
   weathersFrom?:     number[];
 }

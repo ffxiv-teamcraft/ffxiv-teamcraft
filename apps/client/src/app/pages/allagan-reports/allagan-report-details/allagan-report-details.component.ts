@@ -189,6 +189,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     weathersFrom: [[]],
     predators: [[]],
     snagging: [false],
+    fruityVideo: [''],
     speed: [null, this.requiredIfSource([AllaganReportSource.SPEARFISHING])],
     shadowSize: [null, this.requiredIfSource([AllaganReportSource.SPEARFISHING])],
     oceanFishingTime: [0],
@@ -199,7 +200,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
 
   fishingSpotPatch$ = new Subject<any>();
 
-  fishingSpot$ = merge(this.form.valueChanges.pipe(pluck('spot')), this.fishingSpotPatch$).pipe(
+  fishingSpot$ = merge(this.form.valueChanges.pipe(map((v) => v.spot)), this.fishingSpotPatch$).pipe(
     shareReplay({ bufferSize: 1, refCount: true })
   );
 
@@ -559,7 +560,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
               snagging: report.data.snagging,
               predators: report.data.predators,
               oceanFishingTime: report.data.oceanFishingTime,
-              minGathering: report.data.minGathering
+              minGathering: report.data.minGathering,
+              fruityVideo: report.data.fruityVideo
             }, value => value !== undefined && value !== null);
           })
         );
@@ -645,6 +647,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
           weathers: formState.weathers,
           weathersFrom: formState.weathersFrom,
           snagging: formState.snagging,
+          fruityVideo: formState.fruityVideo,
           predators: formState.predators,
           oceanFishingTime: this.isOceanFishingSpot(formState.spot) ? formState.oceanFishingTime : null,
           minGathering: formState.minGathering

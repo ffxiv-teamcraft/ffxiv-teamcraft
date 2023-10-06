@@ -154,6 +154,7 @@ export class ShopsExtractor extends AbstractExtractor {
 
   private handleSpecialShops(specialShops: any[]): Shop[] {
     return specialShops.map(specialShop => {
+
       // Inverting 2D arrays to make them easier to process for trades
       specialShop.ItemReceive = this.invert2DArray(specialShop.ItemReceive);
       specialShop.ItemCost = this.invert2DArray(specialShop.ItemCost);
@@ -243,7 +244,9 @@ export class ShopsExtractor extends AbstractExtractor {
       + shop.trades.map(t => t.items.map(item => `${item.id}|${item.amount}|${item.hq}`).join(',')).join(':');
   }
 
-  private linkNpcs(shops: Shop[], npcs: { index: number }[], npcBases: any[], topicSelect: any[], customTalk: any[], preHandler: any[], fateShops: any[], inclusionShops: any[], specialShops: any[]): Shop[] {
+  private linkNpcs(shops: Shop[], npcs: {
+    index: number
+  }[], npcBases: any[], topicSelect: any[], customTalk: any[], preHandler: any[], fateShops: any[], inclusionShops: any[], specialShops: any[]): Shop[] {
     const {
       npcsByShopID,
       topicSelects,
@@ -304,7 +307,9 @@ export class ShopsExtractor extends AbstractExtractor {
     return 'shops';
   }
 
-  private buildShopLinkMaps(npcData: { index: number }[], npcBases: any[], topicSelect: any[], customTalk: any[], preHandlers: any[], fateShops: any[], inclusionShops: any[], specialShops: any[]): ShopLinkMaps {
+  private buildShopLinkMaps(npcData: {
+    index: number
+  }[], npcBases: any[], topicSelect: any[], customTalk: any[], preHandlers: any[], fateShops: any[], inclusionShops: any[], specialShops: any[]): ShopLinkMaps {
     const questReqs = {};
     const topicSelects = {};
 

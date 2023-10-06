@@ -1633,6 +1633,8 @@
       "Requires_gc_rank": "Requires Grand Company rank {{rank}}"
     },
     "FISH": {
+      "Fruity_video": "How to catch video",
+      "Fruity_video_description": "Link to the \"how catch video\" from Fruity Snacks for this fish",
       "Hour": "Hour of the day",
       "Etime": "Eorzean time",
       "Misses_popup_title": "Misses for this spot",

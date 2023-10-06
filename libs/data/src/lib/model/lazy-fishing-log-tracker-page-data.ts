@@ -108,6 +108,7 @@ export interface GatheringNode {
   speed?:            number;
   tug?:              number;
   type:              number;
+  video?:            string;
   weathers?:         number[];
   weathersFrom?:     number[];
   x:                 number;

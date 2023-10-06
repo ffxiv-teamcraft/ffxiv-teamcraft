@@ -177,6 +177,10 @@
               <img [src]="weather | weatherIcon | xivapiIcon" nz-tooltip [nzTooltipTitle]="weather | i18nRow:'weathers' | i18n">
             </ng-container>
           </div>
+          <div *ngIf="data.fruityVideo">
+            {{'DB.FISH.Fruity_video' | translate}}:
+            <a href="{{data.fruityVideo}}" target="_blank">{{data.fruityVideo}}</a>
+          </div>
         </div>
       </div>
     </ng-container>

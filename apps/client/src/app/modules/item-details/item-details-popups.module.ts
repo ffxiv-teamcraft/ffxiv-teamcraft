@@ -37,6 +37,7 @@ import { SpearfishingSpeedModule } from '../spearfishing-speed-tooltip/spearfish
 import { IslandAnimalComponent } from './island-animal/island-animal.component';
 import { IslandCropComponent } from './island-crop/island-crop.component';
 import { NzPipesModule } from 'ng-zorro-antd/pipes';
+import { YoutubeEmbedPipe } from './gathered-by/youtube-embed.pipe';
 
 @NgModule({
   imports: [
@@ -63,7 +64,8 @@ import { NzPipesModule } from 'ng-zorro-antd/pipes';
     LazyScrollModule,
     PageLoaderModule,
     SpearfishingSpeedModule,
-    NzPipesModule
+    NzPipesModule,
+    YoutubeEmbedPipe
   ],
   declarations: [
     GatheredByComponent,

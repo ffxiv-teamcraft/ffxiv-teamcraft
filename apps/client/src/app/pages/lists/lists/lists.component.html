@@ -32,7 +32,7 @@
       <div class="spacer">
       </div>
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-        <nz-switch [ngModel]="false" (ngModelChange)="$event?loadArchivedLists():unLoadArchivedLists()"></nz-switch>
+        <nz-switch [ngModel]="archivedListsLoaded$ | async" (ngModelChange)="$event?loadArchivedLists():unLoadArchivedLists()"></nz-switch>
         <div>{{'LISTS.Load_archived' | translate}}</div>
       </div>
       <button (click)="deleteMultipleLists()"
