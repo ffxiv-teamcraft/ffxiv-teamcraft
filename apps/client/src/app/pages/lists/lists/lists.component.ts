@@ -3,12 +3,11 @@ import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { debounceTime, filter, first, map, mergeMap, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
-import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
-import { ListManagerService } from '../../../modules/list/list-manager.service';
-import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
-import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
+import {
+  NameQuestionPopupComponent
+} from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { Workshop } from '../../../model/other/workshop';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
 import { WorkshopDisplay } from '../../../model/other/workshop-display';
@@ -17,7 +16,9 @@ import { Team } from '../../../model/team/team';
 import { MergeListsPopupComponent } from '../merge-lists-popup/merge-lists-popup.component';
 import { ListImportPopupComponent } from '../list-import-popup/list-import-popup.component';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { DeleteMultipleListsPopupComponent } from '../delete-multiple-lists-popup/delete-multiple-lists-popup.component';
+import {
+  DeleteMultipleListsPopupComponent
+} from '../delete-multiple-lists-popup/delete-multiple-lists-popup.component';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { ListAggregate } from '../../../modules/list-aggregate/model/list-aggregate';
 import { ListAggregatesFacade } from '../../../modules/list-aggregate/+state/list-aggregates.facade';
@@ -31,32 +32,158 @@ import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 })
 export class ListsComponent {
 
-  public lists$: Observable<{ communityLists: List[], otherLists: List[] }>;
+  public teamsDisplays$: Observable<{ team: Team, lists: List[] }[]> = this.teamsFacade.myTeams$.pipe(
+    switchMap(teams => {
+      if (teams.length === 0) {
+        return of([]);
+      }
+      teams.forEach(team => {
+        this.listsFacade.loadTeamLists(team.$key);
+      });
+      return combineLatest(teams.map(team => this.listsFacade.getTeamLists(team).pipe(
+        map(lists => {
+          return { team: team, lists: this.listsFacade.sortLists(lists) };
+        })
+      )));
+    }),
+    shareReplay({ bufferSize: 1, refCount: true })
+  );
 
-  public teamsDisplays$: Observable<{ team: Team, lists: List[] }[]>;
+  public sharedLists$: Observable<List[]> = combineLatest([this.listsFacade.sharedLists$, this.workshopsFacade.sharedWorkshops$]).pipe(
+    debounceTime(100),
+    map(([lists, workshops]) => {
+      return lists.filter(l => !workshops.some(w => w.listIds.some(id => id === l.$key)));
+    }),
+    shareReplay({ bufferSize: 1, refCount: true })
+  );
 
-  public sharedLists$: Observable<List[]>;
+  public favoriteLists$: Observable<List[]> = this.authFacade.favorites$.pipe(
+    filter(favorites => favorites !== undefined),
+    map(favorites => (favorites.lists || [])),
+    tap(lists => lists.forEach(list => this.listsFacade.load(list))),
+    mergeMap(lists => {
+      return this.listsFacade.allListDetails$.pipe(
+        map(compacts => compacts.filter(c => lists.indexOf(c.$key) > -1 && !c.notFound))
+      );
+    })
+  );
 
-  public favoriteLists$: Observable<List[]>;
+  public workshops$: Observable<WorkshopDisplay[]> = combineLatest([this.workshopsFacade.myWorkshops$, this.listsFacade.allListDetails$]).pipe(
+    debounceTime(100),
+    map(([workshops, lists]) => {
+      return workshops
+        .map(workshop => {
+          return {
+            workshop: workshop,
+            lists: workshop.listIds
+              .map(key => {
+                const list = lists.find(c => c.$key === key);
+                if (list !== undefined) {
+                  list.workshopId = workshop.$key;
+                }
+                return list;
+              })
+              .filter(l => l !== undefined)
+          };
+        })
+        .sort((a, b) => a.workshop.index - b.workshop.index);
+    }),
+    shareReplay({ bufferSize: 1, refCount: true })
+  );
 
-  public workshops$: Observable<WorkshopDisplay[]>;
+  public aggregates$: Observable<{ listNames: string, layoutName: string, aggregate: ListAggregate }[]> = this.listAggregatesFacade.allListAggregates$.pipe(
+    switchMap(aggregates => {
+      return combineLatest(aggregates.map(aggregate => {
+        aggregate.lists.forEach(id => this.listsFacade.load(id));
+        if (!aggregate.layout.startsWith('default') && !aggregate.layout.startsWith('venili')) {
+          this.layoutsFacade.load(aggregate.layout);
+        }
+        return safeCombineLatest([
+          this.listsFacade.allListDetails$,
+          this.layoutsFacade.allLayouts$
+        ]).pipe(
+          map(([details, layouts]) => {
+            return {
+              layoutName: layouts.find(l => l.$key === aggregate.layout)?.name,
+              listNames: details.filter(list => aggregate.lists.includes(list.$key)).map(l => l.name).join(', '),
+              aggregate
+            };
+          })
+        );
+      }));
+    })
+  );
 
-  public aggregates$: Observable<{ listNames: string, layoutName: string, aggregate: ListAggregate }[]>;
-
-  public sharedWorkshops$: Observable<WorkshopDisplay[]>;
+  public sharedWorkshops$: Observable<WorkshopDisplay[]> = combineLatest([this.workshopsFacade.sharedWorkshops$, this.listsFacade.allListDetails$]).pipe(
+    debounceTime(100),
+    map(([workshops, lists]) => {
+      return workshops
+        .map(workshop => {
+          return {
+            workshop: workshop,
+            lists: workshop.listIds
+              .map(key => {
+                const list = lists.find(c => c.$key === key);
+                if (list !== undefined) {
+                  list.workshopId = workshop.$key;
+                } else if (!this.loadingLists.includes(key)) {
+                  this.loadingLists.push(key);
+                  this.listsFacade.load(key);
+                }
+                return list;
+              })
+              .filter(l => l !== undefined)
+          };
+        });
+    }),
+    shareReplay({ bufferSize: 1, refCount: true })
+  );
 
   public query$ = new BehaviorSubject<string>('');
 
+  public lists$: Observable<{ communityLists: List[], otherLists: List[] }> = combineLatest([this.listsFacade.loadingMyLists$, this.listsFacade.myLists$, this.workshops$, this.sharedWorkshops$, this.teamsDisplays$, this.query$]).pipe(
+    filter(([loading]) => !loading),
+    debounceTime(100),
+    map(([, lists, myWorkshops, workshopsWithWriteAccess, teamDisplays, query]: [boolean, List[], WorkshopDisplay[], WorkshopDisplay[], any[], string]) => {
+      const workshops = [...myWorkshops, ...workshopsWithWriteAccess];
+      // lists category shows only lists that have no workshop.
+      return lists
+        .filter(l => {
+          return workshops.find(w => w.workshop.listIds.indexOf(l.$key) > -1) === undefined
+            && teamDisplays.find(td => td.lists.find(tl => tl.$key === l.$key) !== undefined) === undefined;
+        })
+        .filter(l => !l.notFound && l.name !== undefined && l.name.toLowerCase().indexOf((query || '').toLowerCase()) > -1)
+        .map(l => {
+          delete l.workshopId;
+          return l;
+        });
+    }),
+    map(lists => this.listsFacade.sortLists(lists)),
+    map(lists => {
+      return {
+        communityLists: lists.filter(l => l.public),
+        otherLists: lists.filter(l => !l.public)
+      };
+    }),
+    shareReplay({ bufferSize: 1, refCount: true })
+  );
+
+  public archivedListsLoaded$ = this.listsFacade.allListDetails$.pipe(
+    map(lists => lists.some(l => l.archived))
+  );
+
   public myLists$ = this.listsFacade.myLists$.pipe(debounceTime(50));
 
-  public loading$: Observable<boolean>;
+  public loading$: Observable<boolean> = combineLatest([this.lists$, this.workshops$, this.sharedWorkshops$, this.teamsDisplays$]).pipe(
+    map(() => false),
+    startWith(true)
+  );
 
   public needsVerification$ = this.listsFacade.needsVerification$;
 
   private loadingLists = [];
 
-  constructor(private listsFacade: ListsFacade, private progress: ProgressPopupService,
-              private listManager: ListManagerService, private message: NzMessageService,
+  constructor(private listsFacade: ListsFacade,
               private translate: TranslateService, private dialog: NzModalService,
               private workshopsFacade: WorkshopsFacade, private teamsFacade: TeamsFacade,
               private authFacade: AuthFacade, private listAggregatesFacade: ListAggregatesFacade,
@@ -67,145 +194,6 @@ export class ListsComponent {
     this.workshopsFacade.loadWorkshopsWithWriteAccess();
     this.teamsFacade.loadMyTeams();
     this.layoutsFacade.loadAll();
-
-    this.workshops$ = combineLatest([this.workshopsFacade.myWorkshops$, this.listsFacade.allListDetails$]).pipe(
-      debounceTime(100),
-      map(([workshops, lists]) => {
-        return workshops
-          .map(workshop => {
-            return {
-              workshop: workshop,
-              lists: workshop.listIds
-                .map(key => {
-                  const list = lists.find(c => c.$key === key);
-                  if (list !== undefined) {
-                    list.workshopId = workshop.$key;
-                  }
-                  return list;
-                })
-                .filter(l => l !== undefined)
-            };
-          })
-          .sort((a, b) => a.workshop.index - b.workshop.index);
-      }),
-      shareReplay({ bufferSize: 1, refCount: true })
-    );
-
-    this.favoriteLists$ = this.authFacade.favorites$.pipe(
-      filter(favorites => favorites !== undefined),
-      map(favorites => (favorites.lists || [])),
-      tap(lists => lists.forEach(list => this.listsFacade.load(list))),
-      mergeMap(lists => {
-        return this.listsFacade.allListDetails$.pipe(
-          map(compacts => compacts.filter(c => lists.indexOf(c.$key) > -1 && !c.notFound))
-        );
-      })
-    );
-
-    this.sharedWorkshops$ = combineLatest([this.workshopsFacade.sharedWorkshops$, this.listsFacade.allListDetails$]).pipe(
-      debounceTime(100),
-      map(([workshops, lists]) => {
-        return workshops
-          .map(workshop => {
-            return {
-              workshop: workshop,
-              lists: workshop.listIds
-                .map(key => {
-                  const list = lists.find(c => c.$key === key);
-                  if (list !== undefined) {
-                    list.workshopId = workshop.$key;
-                  } else if (!this.loadingLists.includes(key)) {
-                    this.loadingLists.push(key);
-                    this.listsFacade.load(key);
-                  }
-                  return list;
-                })
-                .filter(l => l !== undefined)
-            };
-          });
-      }),
-      shareReplay({ bufferSize: 1, refCount: true })
-    );
-
-    this.teamsDisplays$ = this.teamsFacade.myTeams$.pipe(
-      switchMap(teams => {
-        if (teams.length === 0) {
-          return of([]);
-        }
-        teams.forEach(team => {
-          this.listsFacade.loadTeamLists(team.$key);
-        });
-        return combineLatest(teams.map(team => this.listsFacade.getTeamLists(team).pipe(
-          map(lists => {
-            return { team: team, lists: this.listsFacade.sortLists(lists) };
-          })
-        )));
-      }),
-      shareReplay({ bufferSize: 1, refCount: true })
-    );
-
-    this.lists$ = combineLatest([this.listsFacade.loadingMyLists$, this.listsFacade.myLists$, this.workshops$, this.sharedWorkshops$, this.teamsDisplays$, this.query$]).pipe(
-      filter(([loading]) => !loading),
-      debounceTime(100),
-      map(([, lists, myWorkshops, workshopsWithWriteAccess, teamDisplays, query]: [boolean, List[], WorkshopDisplay[], WorkshopDisplay[], any[], string]) => {
-        const workshops = [...myWorkshops, ...workshopsWithWriteAccess];
-        // lists category shows only lists that have no workshop.
-        return lists
-          .filter(l => {
-            return workshops.find(w => w.workshop.listIds.indexOf(l.$key) > -1) === undefined
-              && teamDisplays.find(td => td.lists.find(tl => tl.$key === l.$key) !== undefined) === undefined;
-          })
-          .filter(l => !l.notFound && l.name !== undefined && l.name.toLowerCase().indexOf((query || '').toLowerCase()) > -1)
-          .map(l => {
-            delete l.workshopId;
-            return l;
-          });
-      }),
-      map(lists => this.listsFacade.sortLists(lists)),
-      map(lists => {
-        return {
-          communityLists: lists.filter(l => l.public),
-          otherLists: lists.filter(l => !l.public)
-        };
-      }),
-      shareReplay({ bufferSize: 1, refCount: true })
-    );
-    this.sharedLists$ = combineLatest([this.listsFacade.sharedLists$, this.workshopsFacade.sharedWorkshops$]).pipe(
-      debounceTime(100),
-      map(([lists, workshops]) => {
-        return lists.filter(l => !workshops.some(w => w.listIds.some(id => id === l.$key)));
-      }),
-      shareReplay({ bufferSize: 1, refCount: true })
-    );
-
-    this.aggregates$ = this.listAggregatesFacade.allListAggregates$.pipe(
-      switchMap(aggregates => {
-        return combineLatest(aggregates.map(aggregate => {
-          aggregate.lists.forEach(id => this.listsFacade.load(id));
-          if (!aggregate.layout.startsWith('default') && !aggregate.layout.startsWith('venili')) {
-            layoutsFacade.load(aggregate.layout);
-          }
-          return safeCombineLatest([
-            this.listsFacade.allListDetails$,
-            this.layoutsFacade.allLayouts$
-          ]).pipe(
-            map(([details, layouts]) => {
-              return {
-                layoutName: layouts.find(l => l.$key === aggregate.layout)?.name,
-                listNames: details.filter(list => aggregate.lists.includes(list.$key)).map(l => l.name).join(', '),
-                aggregate
-              };
-            })
-          );
-        }));
-      })
-    );
-
-    this.loading$ = combineLatest([this.lists$, this.workshops$, this.sharedWorkshops$, this.teamsDisplays$]).pipe(
-      map(() => false),
-      startWith(true)
-    );
-
     this.teamsFacade.loadMyTeams();
   }
 

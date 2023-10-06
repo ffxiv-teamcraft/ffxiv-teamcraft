@@ -1,11 +1,9 @@
 import { LayoutRowOrder } from './layout-row-order.enum';
 import { Injectable } from '@angular/core';
 import { ListRow } from '../../modules/list/model/list-row';
-import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { AlarmDetails, DataType, getItemSource } from '@ffxiv-teamcraft/types';
 import { AlarmsFacade } from '../alarms/+state/alarms.facade';
-import { PersistedAlarm } from '../alarms/persisted-alarm';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { MathTools } from '../../tools/math-tools';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
@@ -73,7 +71,7 @@ export class LayoutOrderService {
     }
   };
 
-  constructor(private translate: TranslateService, private i18n: I18nToolsService,
+  constructor(private i18n: I18nToolsService,
               private lazyData: LazyDataFacade, private alarmsFacade: AlarmsFacade,
               private etime: EorzeanTimeService) {
   }
