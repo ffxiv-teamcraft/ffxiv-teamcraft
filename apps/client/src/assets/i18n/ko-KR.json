@@ -784,7 +784,7 @@
     "Autofill_notification_body": "{{listName}} 목록의 {{itemName}} 작업이 완료되었습니다",
     "Autofill_crafting_gathering_title": "제작 또는 채집이 탐지됨",
     "Autofill_crafting_gathering_message": "자동채우기는 기본적으로 제작/채집이 완료될 때까지(인게임에서, UI를 닫을 때까지) 슬로우 모드로 동작합니다. 이것은 빠르게 자동 채우기를 하는 경우에 데이터가 꼬이는 문제를 방지하기 위함입니다.",
-    "Fill_with_inventory": "Fill with inventory",
+    "Fill_with_inventory": "인벤토리에서 채우기",
     "Filter_items_done": "완료된 아이템 무시",
     "Inventory_synthesis": "소지품 통합(각 소지품별 아이템)",
     "X_needed": "{{amount}}개 필요",
@@ -1224,7 +1224,7 @@
       "Craftsmanship": "작업 숙련도",
       "Control": "가공 숙련도",
       "Specialist": "전문장인",
-      "Splendorous": "Uses a splendorous tool",
+      "Splendorous": "목수 도구 사용하기",
       "Ingredients": "HQ재료",
       "Consumables": "소모품",
       "Apply_stats": "능력치 적용",
@@ -1633,6 +1633,8 @@
       "Requires_gc_rank": "자유부대 {{rank}} 랭크 필요"
     },
     "FISH": {
+      "Fruity_video": "How to catch video",
+      "Fruity_video_description": "Link to the \"how catch video\" from Fruity Snacks for this fish",
       "Hour": "시간 통계",
       "Etime": "에오르제아 시간",
       "Misses_popup_title": "해당 낚싯터에서 놓친 물고기",
@@ -2798,7 +2800,7 @@
       "Favor": "운"
     },
     "RANK_DETAILS": {
-      "Experience_Points": "Experience Points"
+      "Experience_Points": "경험치량"
     }
   },
   "AIRSHIP": {
