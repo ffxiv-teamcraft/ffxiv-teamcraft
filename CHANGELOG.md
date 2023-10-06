@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.9...v11.0.10) (2023-10-06)
+
+
+### Features
+
+* **allagan-reports:** new Fishing report field for FruitySnacks' video link ([dcb2c38](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dcb2c3835f081ff2d44bf6dd7d0fbe440dc0e90b))
+* **gathering:** rendering for fishing video embed ([b401129](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b4011292afd8a3470acccd7d1deb9bba58bdf2d6))
+* **island-sanctuary:** add rare animals from 6.5 update ([4024086](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4024086f67968f9de02326d671ba13ae567cdee5))
+
+
+### Bug Fixes
+
+* **db:** fixed trades sometimes referencing obsolete items ([ea248ec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ea248ec5552fbe0cbe29bce87cbc7f70b5a55f50))
+* **db:** fixed wrong currencies in many shops ([379c3a0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/379c3a068d0ef362d5951060ba616ce0ec0e5b5b)), closes [#2714](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2714)
+* **lists:** fixed archived toggle not always up to date ([506b747](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/506b7475863473d0b0c5b933515be5fe77d7251b))
+* **search:** fixed consumable stats filter ([d96ded4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d96ded48c5a325424542324253808cb13cce3115))
+* **tooltips:** fixed hunting location maps ([21f01cc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/21f01ccd2d237bb9510802e5138cc6661cdd1f0f))
+
 ### [11.0.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.8...v11.0.9) (2023-10-03)
 
 
