@@ -1633,6 +1633,8 @@
       "Requires_gc_rank": "Erfordert Rang {{rank}} bei der Staatlichen Gesellschaft"
     },
     "FISH": {
+      "Fruity_video": "How to catch video",
+      "Fruity_video_description": "Link to the \"how catch video\" from Fruity Snacks for this fish",
       "Hour": "Eorzea-Zeit",
       "Etime": "Eorzea-Zeit",
       "Misses_popup_title": "Fehlschläge für diesen Ort",
