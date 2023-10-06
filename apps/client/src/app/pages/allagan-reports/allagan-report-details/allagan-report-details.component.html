@@ -6,7 +6,9 @@
     <div class="top-bar">
       <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
         <app-item-icon [itemId]="itemId"></app-item-icon>
-        <div class="item-name-title"><app-i18n-name [id]="itemId" content="items"></app-i18n-name></div>
+        <div class="item-name-title">
+          <app-i18n-name [id]="itemId" content="items"></app-i18n-name>
+        </div>
       </div>
     </div>
     <nz-divider [nzText]="'ALLAGAN_REPORTS.Reports' | translate" nzOrientation="left"></nz-divider>
@@ -233,6 +235,12 @@
             </ng-template>
             <ng-container *ngIf="canSuggestForThisSpot$ | async; else cantSuggestForThisSpotTpl">
               <nz-spin [nzSpinning]="loadingGubal" [nzTip]="'ALLAGAN_REPORTS.Loading_gubal_analysis' | translate">
+                <nz-form-item>
+                  <nz-form-label [nzSpan]="3">{{'DB.FISH.Fruity_video' | translate}}</nz-form-label>
+                  <nz-form-control [nzSpan]="10" nzExtra="{{'DB.FISH.Fruity_video_description' | translate}}">
+                    <input type="text" nz-input formControlName="fruityVideo">
+                  </nz-form-control>
+                </nz-form-item>
                 <nz-form-item>
                   <nz-form-label [nzSpan]="3">{{'DB.FISH.OVERLAY.Hookset' | translate}}</nz-form-label>
                   <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisHookset">

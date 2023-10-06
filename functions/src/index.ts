@@ -242,7 +242,7 @@ export const firestoreIslandStatePreventiveLock = functions.runWith(runtimeOpts)
         content: null,
         embeds: [{
           title: 'Locked MJI status update',
-          description: `MJI status update has been locked after ${updates} were performed since the last reset at <t:${change.before.id}>.`,
+          description: `MJI status update has been locked after ${updates} were performed since the last reset at <t:${(+change.before.id)/1000}>.`,
           color: 16711680
         }],
         username: 'Teamcraft Cloud Function'

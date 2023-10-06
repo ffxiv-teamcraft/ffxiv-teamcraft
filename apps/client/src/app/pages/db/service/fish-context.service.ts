@@ -192,7 +192,10 @@ export class FishContextService {
               );
             })).pipe(
               map(weathers => {
-                res.data.weathers = weathers.filter(w => w.matches);
+                res.data = {
+                  ...res.data,
+                  weathers: weathers.filter(w => w.matches)
+                };
                 return res;
               })
             );
