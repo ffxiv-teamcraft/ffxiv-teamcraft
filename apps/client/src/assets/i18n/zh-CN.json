@@ -1633,6 +1633,8 @@
       "Requires_gc_rank": "所需大国防联军军衔 {{rank}}"
     },
     "FISH": {
+      "Fruity_video": "How to catch video",
+      "Fruity_video_description": "Link to the \"how catch video\" from Fruity Snacks for this fish",
       "Hour": "上钩时间",
       "Etime": "艾欧泽亚时间",
       "Misses_popup_title": "此钓场的提钩失败记录",
