@@ -80,11 +80,11 @@ export class EorzeanTimeService {
   private tick(): void {
     // How to mock time:
     // Set date here and uncomment the next 3 lines
-    const mockDate = new Date(new Date(1696882260000).getTime() + this.mockTicks);
-    this.mockTicks += 20000 / EorzeanTimeService.EPOCH_TIME_FACTOR;
-    this._timerObservable.next(this.toEorzeanDate(mockDate));
+    // const mockDate = new Date(new Date(1696882260000).getTime() + this.mockTicks);
+    // this.mockTicks += 20000 / EorzeanTimeService.EPOCH_TIME_FACTOR;
+    // this._timerObservable.next(this.toEorzeanDate(mockDate));
 
     // Then comment this one:
-    // this._timerObservable.next(this.toEorzeanDate(new Date()));
+    this._timerObservable.next(this.toEorzeanDate(new Date()));
   }
 }
