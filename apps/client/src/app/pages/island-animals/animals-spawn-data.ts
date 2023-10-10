@@ -223,7 +223,7 @@ export const animalsSpawnData: Record<number, Vector2 & { weather?: number, spaw
     // Morbol
     x: 29,
     y: 24,
-    spawn: 9,
+    spawn: 21,
     duration: 3,
     weather: 8
   },
