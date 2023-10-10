@@ -279,32 +279,34 @@
                       [clipboard]="currentLink">
                 <i nz-icon nzType="share-alt"></i>
               </button>
-              <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'ALARMS.Open_alarms_overlay' | translate"
-                      (click)="openOverlay('/alarms-overlay')">
-                <i nz-icon nzType="bell"></i>
-              </button>
-              <button nz-button nzShape="circle"
-                      *ngIf="ipc.pcapToggle"
-                      nz-tooltip [nzTooltipTitle]="'DB.FISH.OVERLAY.Open' | translate"
-                      (click)="openOverlay('/fishing-reporter-overlay')" class="button-with-img">
-                <img src="./assets/icons/classjob/fisher.png" alt="">
-              </button>
-              <button nz-button nzShape="circle"
-                      *ngIf="ipc.pcapToggle && mappy.available"
-                      nz-tooltip nzTooltipTitle="Open mappy overlay"
-                      (click)="openOverlay('/mappy-overlay')">
-                <i nz-icon nzType="scan" nzTheme="outline"></i>
-              </button>
-              <button nz-button nzShape="circle"
-                      nz-tooltip [nzTooltipTitle]="'LIST_DETAILS.OVERLAY.Open' | translate"
-                      (click)="openOverlay('/list-panel-overlay')">
-                <i nz-icon nzType="unordered-list" nzTheme="outline"></i>
-              </button>
-              <button nz-button nzShape="circle"
-                      nz-tooltip [nzTooltipTitle]="'ITEM_SEARCH_OVERLAY.Open' | translate"
-                      (click)="openOverlay('/item-search-overlay')">
-                <i nz-icon nzType="search" nzTheme="outline"></i>
-              </button>
+              <ng-container *ngIf="!childWindow">
+                <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'ALARMS.Open_alarms_overlay' | translate"
+                        (click)="openOverlay('/alarms-overlay')">
+                  <i nz-icon nzType="bell"></i>
+                </button>
+                <button nz-button nzShape="circle"
+                        *ngIf="ipc.pcapToggle"
+                        nz-tooltip [nzTooltipTitle]="'DB.FISH.OVERLAY.Open' | translate"
+                        (click)="openOverlay('/fishing-reporter-overlay')" class="button-with-img">
+                  <img src="./assets/icons/classjob/fisher.png" alt="">
+                </button>
+                <button nz-button nzShape="circle"
+                        *ngIf="ipc.pcapToggle && mappy.available"
+                        nz-tooltip nzTooltipTitle="Open mappy overlay"
+                        (click)="openOverlay('/mappy-overlay')">
+                  <i nz-icon nzType="scan" nzTheme="outline"></i>
+                </button>
+                <button nz-button nzShape="circle"
+                        nz-tooltip [nzTooltipTitle]="'LIST_DETAILS.OVERLAY.Open' | translate"
+                        (click)="openOverlay('/list-panel-overlay')">
+                  <i nz-icon nzType="unordered-list" nzTheme="outline"></i>
+                </button>
+                <button nz-button nzShape="circle"
+                        nz-tooltip [nzTooltipTitle]="'ITEM_SEARCH_OVERLAY.Open' | translate"
+                        (click)="openOverlay('/item-search-overlay')">
+                  <i nz-icon nzType="search" nzTheme="outline"></i>
+                </button>
+              </ng-container>
             </div>
 
             <button class="support-button" *ngIf="showPatreonButton$ | async" (click)="openSupportPopup()">
