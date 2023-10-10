@@ -39,7 +39,7 @@
         <label nz-checkbox formControlName="includePurchases"></label>
       </nz-form-control>
     </nz-form-item>
-    <nz-form-item *ngIf="desktop">
+    <nz-form-item *ngIf="desktop && !platformService.isChildWindow()">
       <nz-form-label>{{'LEVELING_EQUIPMENT.Only_inventory' | translate}}</nz-form-label>
       <nz-form-control>
         <label nz-checkbox formControlName="onlyInventoryContent"></label>

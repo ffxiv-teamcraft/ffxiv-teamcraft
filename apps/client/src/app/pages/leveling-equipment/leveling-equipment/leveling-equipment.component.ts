@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { combineLatest, Observable, Subject } from 'rxjs';
 import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { debounceTime, first, map, startWith, switchMap, takeUntil } from 'rxjs/operators';
-import { DataService } from '../../../core/api/data.service';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
@@ -59,10 +58,10 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
   desktop = this.platformService.isDesktop();
 
   constructor(private inventoryFacade: InventoryService, private lazyData: LazyDataFacade,
-              private fb: UntypedFormBuilder, private dataService: DataService,
+              private fb: UntypedFormBuilder,
               private gearsetsFacade: GearsetsFacade, private statsService: StatsService,
               private listPicker: ListPickerService, private router: Router,
-              private platformService: PlatformService, private settings: SettingsService,
+              public platformService: PlatformService, private settings: SettingsService,
               private route: ActivatedRoute, private environment: EnvironmentService) {
     super();
     this.jobList$ = this.lazyData.getEntry('jobName').pipe(
@@ -76,7 +75,7 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
       includeCrafting: [this.settings.getBoolean('leveling-equipment:includeCrafting', true)],
       includeTrades: [this.settings.getBoolean('leveling-equipment:includeTrades', true)],
       includePurchases: [this.settings.getBoolean('leveling-equipment:includePurchases', true)],
-      onlyInventoryContent: [this.desktop ? this.settings.getBoolean('leveling-equipment:onlyInventoryContent', false) : false]
+      onlyInventoryContent: [(this.desktop && !this.platformService.isChildWindow()) ? this.settings.getBoolean('leveling-equipment:onlyInventoryContent', false) : false]
     }, {
       validators: (control: AbstractControl) => {
         if (control.value.includeCrafting || control.value.includeTrades || control.value.includePurchases) {
@@ -158,7 +157,7 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
             .forEach(slot => {
               if (!row.gearset[slot.property]) {
                 (row as any).gearset[slot.property] = this.getSlotPiece(row.level, mainStat, slot.equipSlotCategoryIds, filters, inventory, filters.job, row.gearset, extracts, equipment, jobAbbr, itemMeldingData, itemStats, rarities);
-                if (row.gearset[slot.property] && this.desktop) {
+                if (row.gearset[slot.property] && this.desktop && inventory) {
                   row.gearset[slot.property].isInInventory = inventory.hasItem(row.gearset[slot.property].itemId, true);
                 }
               }
@@ -168,7 +167,7 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
             if (row.gearset.ring1) {
               if (equipment[row.gearset.ring1.itemId].unique) {
                 row.gearset.ring2 = this.getSlotPiece(row.level, mainStat, [12], filters, inventory, filters.job, row.gearset, extracts, equipment, jobAbbr, itemMeldingData, itemStats, rarities);
-                if (row.gearset.ring2 && this.desktop) {
+                if (row.gearset.ring2 && this.desktop && inventory) {
                   (row.gearset.ring2 as any).isInInventory = inventory.hasItem(row.gearset.ring2.itemId, true);
                 }
               } else {
@@ -249,7 +248,9 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
   private getSlotPiece(level: number, mainStat: BaseParam, equipSlotCategories: number[], filters: any, inventory: UserInventory, job: number,
                        gearset: TeamcraftGearset, extracts: LazyDataWithExtracts['extracts'], equipment: LazyDataWithExtracts['equipment'],
                        jobAbbr: LazyDataWithExtracts['jobAbbr'], itemMeldingData: LazyDataWithExtracts['itemMeldingData'],
-                       itemStats: LazyDataWithExtracts['itemStats'], rarities: LazyDataWithExtracts['rarities']): EquipmentPiece & { isInInventory: boolean } | null {
+                       itemStats: LazyDataWithExtracts['itemStats'], rarities: LazyDataWithExtracts['rarities']): EquipmentPiece & {
+    isInInventory: boolean
+  } | null {
     const itemId = +Object.keys(equipment)
       .filter(key => {
         return equipSlotCategories.includes(equipment[key].equipSlotCategory)
