@@ -101,15 +101,15 @@ export const lazyFilesList = {
   },
   'craftingLevels': {
     'fileName': 'crafting-levels.json',
-    'hashedFileName': 'crafting-levels.7d7d3dd9571a7bb1010ece8da2afcac28381acbb.json'
+    'hashedFileName': 'crafting-levels.30ae8c7104f60ccd7e18a66ab90bf18905bb1382.json'
   },
   'craftingLogPages': {
     'fileName': 'crafting-log-pages.json',
-    'hashedFileName': 'crafting-log-pages.74f8ce6356d391c1f44628a8d93dd6c7448929bf.json'
+    'hashedFileName': 'crafting-log-pages.7ec771604501ff30ab5f2544423a02f6f70d5eed.json'
   },
   'craftingLog': {
     'fileName': 'crafting-log.json',
-    'hashedFileName': 'crafting-log.04f13caa51b060eeee948f7d9772e69238d193e1.json'
+    'hashedFileName': 'crafting-log.fbb61d925d86eb429e70b2e7f4d3907c19f89cd2.json'
   },
   'deprecatedItems': {
     'fileName': 'deprecated-items.json',
@@ -161,11 +161,11 @@ export const lazyFilesList = {
   },
   'fishParameter': {
     'fileName': 'fish-parameter.json',
-    'hashedFileName': 'fish-parameter.b2d9ad8031a3960200939089448941da1e7f254a.json'
+    'hashedFileName': 'fish-parameter.508d75f13db6dc4f9ea74305ad4107d320dee41d.json'
   },
   'fishes': {
     'fileName': 'fishes.json',
-    'hashedFileName': 'fishes.0da4c8eb984d8f442c965064db4e0b4d188a9c0a.json'
+    'hashedFileName': 'fishes.4ac30567d4d5c4b522212b721c8299e7d4e2fd36.json'
   },
   'fishingLogTrackerPageData': {
     'fileName': 'fishing-log-tracker-page-data.json',
@@ -173,7 +173,7 @@ export const lazyFilesList = {
   },
   'fishingLog': {
     'fileName': 'fishing-log.json',
-    'hashedFileName': 'fishing-log.4a5a45e9d7f74b75326cf8c296d019b5f3f0de16.json'
+    'hashedFileName': 'fishing-log.d9743485d6ea34a9dded55c140eb29ad1477aa1e.json'
   },
   'fishingSources': {
     'fileName': 'fishing-sources.json',
@@ -185,7 +185,7 @@ export const lazyFilesList = {
   },
   'fishingSpots': {
     'fileName': 'fishing-spots.json',
-    'hashedFileName': 'fishing-spots.e66304582b6d275ae2a1dcea3c2e94455d28a091.json'
+    'hashedFileName': 'fishing-spots.41cc50b4bdbde503fe1e9bde4067f875a2ea7a35.json'
   },
   'foods': {
     'fileName': 'foods.json',
@@ -209,11 +209,11 @@ export const lazyFilesList = {
   },
   'gatheringLevels': {
     'fileName': 'gathering-levels.json',
-    'hashedFileName': 'gathering-levels.868d6dadace31fc63513c55efedb17a1137af89f.json'
+    'hashedFileName': 'gathering-levels.c361360fd7ceb319560f5c08bee71130e40db73f.json'
   },
   'gatheringLogPages': {
     'fileName': 'gathering-log-pages.json',
-    'hashedFileName': 'gathering-log-pages.63d0a1d7eeb6c4635f99747e43fe7c8536895178.json'
+    'hashedFileName': 'gathering-log-pages.8d0620293c006af3a2c7d83a81db85a2c89e2bb7.json'
   },
   'gatheringNodeSearch': {
     'fileName': 'gathering-node-search.index',
@@ -461,7 +461,7 @@ export const lazyFilesList = {
   },
   'notebookDivision': {
     'fileName': 'notebook-division.json',
-    'hashedFileName': 'notebook-division.8cb16b246f0c374cf7dc1422b89f4239f56aa628.json'
+    'hashedFileName': 'notebook-division.cf1606707977e23b3aee86df43cb40db5f907fb5.json'
   },
   'npcSearch': {
     'fileName': 'npc-search.index',
@@ -569,11 +569,11 @@ export const lazyFilesList = {
   },
   'spearFishingFish': {
     'fileName': 'spear-fishing-fish.json',
-    'hashedFileName': 'spear-fishing-fish.28eb2da8c31039687bf147a1295c5121edbe9aee.json'
+    'hashedFileName': 'spear-fishing-fish.8bd6fd2172653fb6c3123865c0940f914e444d69.json'
   },
   'spearFishingLog': {
     'fileName': 'spear-fishing-log.json',
-    'hashedFileName': 'spear-fishing-log.5f9c715feb7a3ed8ffcecb1df733bf9f36aa244e.json'
+    'hashedFileName': 'spear-fishing-log.1d2d9a0b8efed5306cbd0a00c0585df8c59fcfe0.json'
   },
   'spearfishingSources': {
     'fileName': 'spearfishing-sources.json',

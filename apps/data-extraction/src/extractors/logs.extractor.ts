@@ -397,6 +397,7 @@ export class LogsExtractor extends AbstractExtractor {
       itemId: entry.ItemResult,
       rlvl: entry.RecipeLevelTable
     });
+    page.recipes.sort((a, b) => +a.recipeId - +b.recipeId);
   }
 
   private addToGatheringLogPage(entry: any, pageId: number, gathererIndex: number) {

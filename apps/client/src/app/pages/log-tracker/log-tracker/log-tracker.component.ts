@@ -2,19 +2,14 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TranslateService } from '@ngx-translate/core';
 import { map, switchMap, takeUntil } from 'rxjs/operators';
-import { ListsFacade } from '../../../modules/list/+state/lists.facade';
-import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { combineLatest, Observable } from 'rxjs';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
-import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { TrackerComponent } from '../tracker-component';
 import { NavigationObjective } from '../../../modules/map/navigation-objective';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { WorldNavigationMapComponent } from '../../../modules/map/world-navigation-map/world-navigation-map.component';
-import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyLogTrackerPageData } from '@ffxiv-teamcraft/data/model/lazy-log-tracker-page-data';
@@ -60,10 +55,10 @@ export class LogTrackerComponent extends TrackerComponent {
   private lastSelectedTabIndex = -1;
 
   constructor(private authFacade: AuthFacade, private translate: TranslateService,
-              private listsFacade: ListsFacade, private listManager: ListManagerService, private listPicker: ListPickerService,
-              private progressService: ProgressPopupService, private router: Router, private route: ActivatedRoute,
-              protected alarmsFacade: AlarmsFacade, private gatheringNodesService: GatheringNodesService,
-              private lazyData: LazyDataFacade, private dialog: NzModalService, private notificationService: NzNotificationService,
+              private listPicker: ListPickerService,
+              private router: Router, private route: ActivatedRoute,
+              protected alarmsFacade: AlarmsFacade,
+              private lazyData: LazyDataFacade, private dialog: NzModalService,
               public settings: SettingsService, private cdr: ChangeDetectorRef) {
     super(alarmsFacade);
     this.type$ = this.route.paramMap.pipe(
@@ -168,7 +163,7 @@ export class LogTrackerComponent extends TrackerComponent {
       return;
     }
     if (this.hideCompleted && this.isDoHPageDone(dohTab[currentPageIndex])) {
-      const nextIncompletePage = [...dohTab.slice(currentPageIndex), ...dohTab.slice(0, currentPageIndex)].find(page => !this.isDoHPageDone(page))
+      const nextIncompletePage = [...dohTab.slice(currentPageIndex), ...dohTab.slice(0, currentPageIndex)].find(page => !this.isDoHPageDone(page));
       this.dohSelectedPage = nextIncompletePage.id;
     } else if (forceSet && this.dohSelectedPage !== dohTab[currentPageIndex].id) {
       this.dohSelectedPage = dohTab[currentPageIndex].id;
