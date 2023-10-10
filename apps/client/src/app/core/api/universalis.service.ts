@@ -388,12 +388,12 @@ export class UniversalisService {
   }
 
   public uploadCid(packet: PlayerSetup): void {
-    const data = {
-      contentID: packet.contentId.toString(),
-      characterName: packet.name
-    };
-    this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalisPublisher', data, {
-      headers: new HttpHeaders().append('Content-Type', 'application/json')
-    }).subscribe();
+    // const data = {
+    //   contentID: packet.contentId.toString(),
+    //   characterName: packet.name
+    // };
+    // this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalisPublisher', data, {
+    //   headers: new HttpHeaders().append('Content-Type', 'application/json')
+    // }).subscribe();
   }
 }
