@@ -2,19 +2,19 @@ export const aetheryteNames = {
   "2": {
     "en": "Gridania Aetheryte Plaza",
     "de": "Ätherytenplatz",
-    "ja": "エーテライト・プラザ（冒険者・木工師ギルド/双蛇党）",
+    "ja": "グリダニア エーテライト・プラザ",
     "fr": "Place de l'Éthérite (Guilde des aventuriers/menuisiers/Deux Vipères)"
   },
   "8": {
     "en": "Limsa Lominsa Aetheryte Plaza",
     "de": "Ätherytenplatz",
-    "ja": "エーテライト・プラザ",
+    "ja": "リムサ・ロミンサ エーテライト・プラザ",
     "fr": "Place de l'Éthérite"
   },
   "9": {
     "en": "Ul'dah Aetheryte Plaza",
     "de": "Ätherytenplatz",
-    "ja": "エーテライト・プラザ（格闘士ギルド/不滅隊）",
+    "ja": "ウルダハ エーテライト・プラザ",
     "fr": "Place de l'Éthérite (Guilde des pugilistes/Immortels)"
   },
   "25": {
@@ -188,7 +188,7 @@ export const aetheryteNames = {
   "62": {
     "en": "Gold Saucer Aetheryte Plaza",
     "de": "Gold Saucer-Ätherytenplatz",
-    "ja": "エーテライト・プラザ",
+    "ja": "ゴールドソーサー エーテライト・プラザ",
     "fr": "Place de l'Éthérite du Gold Saucer"
   },
   "63": {
@@ -236,13 +236,13 @@ export const aetheryteNames = {
   "70": {
     "en": "Ishgard Aetheryte Plaza",
     "de": "Ätherytenplatz",
-    "ja": "エーテライト・プラザ",
+    "ja": "イシュガルド エーテライト・プラザ",
     "fr": "Place de l'Éthérite"
   },
   "75": {
     "en": "Idyllshire Aetheryte Plaza",
     "de": "Ätherytenplatz",
-    "ja": "エーテライト・プラザ",
+    "ja": "イディルシャイア エーテライト・プラザ",
     "fr": "Place de l'Éthérite"
   },
   "80": {
@@ -344,13 +344,13 @@ export const aetheryteNames = {
   "104": {
     "en": "Rhalgr's Reach Aetheryte Plaza",
     "de": "Ätherytenplatz",
-    "ja": "エーテライト・プラザ",
+    "ja": "ラールガーズリーチ エーテライト・プラザ",
     "fr": "Place de l'Éthérite"
   },
   "111": {
     "en": "Kugane Aetheryte Plaza",
     "de": "Ätherytenplatz",
-    "ja": "エーテライト・プラザ",
+    "ja": "クガネ エーテライト・プラザ",
     "fr": "Place Tenkonto"
   },
   "112": {
@@ -446,7 +446,7 @@ export const aetheryteNames = {
   "127": {
     "en": "Doman Enclave Aetheryte Plaza",
     "de": "Ätherytenplatz",
-    "ja": "エーテライト・プラザ",
+    "ja": "ドマ町人地 エーテライト・プラザ",
     "fr": "Place de l'Éthérite"
   },
   "129": {
@@ -470,13 +470,13 @@ export const aetheryteNames = {
   "133": {
     "en": "The Crystarium Aetheryte Plaza",
     "de": "Ätherytenplatz",
-    "ja": "エーテライト・プラザ",
+    "ja": "クリスタリウム エーテライト・プラザ",
     "fr": "Place de l'Éthérite"
   },
   "134": {
     "en": "Eulmore Aetheryte Plaza",
     "de": "Ätherytenplatz",
-    "ja": "エーテライト・プラザ",
+    "ja": "ユールモア エーテライト・プラザ",
     "fr": "Place de l'Éthérite"
   },
   "135": {
@@ -572,13 +572,13 @@ export const aetheryteNames = {
   "182": {
     "en": "Old Sharlayan Aetheryte Plaza",
     "de": "Ätherytenplatz",
-    "ja": "エーテライト・プラザ",
+    "ja": "オールド・シャーレアン エーテライト・プラザ",
     "fr": "Place de l'Éthérite"
   },
   "183": {
     "en": "Radz-at-Han Aetheryte Plaza",
     "de": "Ätherytenplatz",
-    "ja": "エーテライト・プラザ",
+    "ja": "ラザハン エーテライト・プラザ",
     "fr": "Place de l'Éthérite"
   },
   "184": {
