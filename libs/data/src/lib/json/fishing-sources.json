@@ -16743,7 +16743,8 @@
       "spawn": 18,
       "duration": 4,
       "snagging": false,
-      "minGathering": 1500
+      "minGathering": 1500,
+      "video": "https://youtu.be/LjwJHmR4x40"
     }
   ],
   "28066": [
@@ -16922,7 +16923,8 @@
         2
       ],
       "snagging": false,
-      "minGathering": 1850
+      "minGathering": 1850,
+      "video": "https://youtu.be/gQUbgScFOYU"
     }
   ],
   "28926": [
@@ -19733,7 +19735,8 @@
         2
       ],
       "snagging": false,
-      "minGathering": 1900
+      "minGathering": 1900,
+      "video": "https://youtu.be/91kA82wd2O4"
     }
   ],
   "30433": [
@@ -19830,7 +19833,8 @@
         3
       ],
       "snagging": false,
-      "minGathering": 1900
+      "minGathering": 1900,
+      "video": "https://youtu.be/t7KgGicZWyY"
     }
   ],
   "30439": [
@@ -20036,7 +20040,8 @@
         1
       ],
       "snagging": false,
-      "minGathering": 1950
+      "minGathering": 1950,
+      "video": "https://youtu.be/Y-C_45RJ2Ic"
     }
   ],
   "32050": [
@@ -22470,7 +22475,8 @@
         4
       ],
       "snagging": false,
-      "minGathering": 2250
+      "minGathering": 2250,
+      "video": "https://youtu.be/gQUbgScFOYU"
     }
   ],
   "33240": [
@@ -22574,7 +22580,8 @@
           "amount": 2
         }
       ],
-      "minGathering": 2250
+      "minGathering": 2250,
+      "video": "https://youtu.be/q2tlJvcN6A4"
     }
   ],
   "33316": [
@@ -22592,7 +22599,8 @@
         1
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 2150,
+      "video": "https://youtu.be/ifRPcjV4i3w"
     }
   ],
   "33317": [
@@ -22608,7 +22616,8 @@
         7
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 2150,
+      "video": "https://youtu.be/nBDBfK9_8ts"
     }
   ],
   "33318": [
@@ -22620,7 +22629,8 @@
       "spawn": 6,
       "duration": 2,
       "snagging": false,
-      "minGathering": 2150
+      "minGathering": 2150,
+      "video": "https://youtu.be/VUN4dkhL9AQ"
     }
   ],
   "33319": [
@@ -22708,7 +22718,8 @@
         3
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 2150,
+      "video": "https://youtu.be/W_Wcvu5HdXo"
     }
   ],
   "33324": [
@@ -22720,7 +22731,8 @@
       "spawn": 6,
       "duration": 1,
       "snagging": false,
-      "minGathering": 2150
+      "minGathering": 2150,
+      "video": "https://youtu.be/YTup694lP8s"
     }
   ],
   "33325": [
@@ -22750,7 +22762,8 @@
         3
       ],
       "snagging": false,
-      "minGathering": 2150
+      "minGathering": 2150,
+      "video": "https://youtu.be/nor__VGBkFM"
     }
   ],
   "35604": [
@@ -22760,7 +22773,8 @@
       "tug": 2,
       "bait": 36588,
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 0,
+      "video": "https://youtu.be/LKRstQ4qFTE"
     }
   ],
   "35605": [
@@ -22770,23 +22784,26 @@
       "tug": 0,
       "bait": 36592,
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 0,
+      "video": "https://youtu.be/ZDvGdnaja_U"
     }
   ],
   "35606": [
-    {
-      "spot": 271,
-      "hookset": 2,
-      "tug": 2,
-      "bait": 36588,
-      "minGathering": 0
-    },
     {
       "spot": 270,
       "hookset": 2,
       "tug": 2,
       "bait": 36589,
-      "minGathering": 0
+      "minGathering": 0,
+      "video": "https://youtu.be/NtqYO4-p4bU"
+    },
+    {
+      "spot": 271,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 36588,
+      "minGathering": 0,
+      "video": "https://youtu.be/NtqYO4-p4bU"
     }
   ],
   "35607": [
@@ -22795,7 +22812,8 @@
       "hookset": 1,
       "tug": 0,
       "bait": 36590,
-      "minGathering": 0
+      "minGathering": 0,
+      "video": "https://youtu.be/_ITgW5s3P8Q"
     }
   ],
   "35849": [
@@ -22814,7 +22832,8 @@
       "hookset": 1,
       "tug": 0,
       "bait": 36594,
-      "minGathering": 0
+      "minGathering": 0,
+      "video": "https://youtu.be/hdkBV2-rCjs"
     }
   ],
   "36385": [
@@ -22912,7 +22931,8 @@
       "hookset": 2,
       "tug": 2,
       "bait": 36590,
-      "minGathering": 0
+      "minGathering": 0,
+      "video": "https://youtu.be/lmG_rVuWADc"
     }
   ],
   "36396": [
@@ -23063,7 +23083,8 @@
       "hookset": 1,
       "tug": 0,
       "bait": 36591,
-      "minGathering": 0
+      "minGathering": 0,
+      "video": "https://youtu.be/v0sdSGYjNkY"
     }
   ],
   "36409": [
@@ -23113,7 +23134,8 @@
       "weathers": [
         2
       ],
-      "minGathering": 0
+      "minGathering": 0,
+      "video": "https://youtu.be/_ub2AihmNSU"
     }
   ],
   "36415": [
@@ -23485,7 +23507,8 @@
         2
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 0,
+      "video": "https://youtu.be/4DflDXXZeP0"
     }
   ],
   "36456": [
@@ -23646,7 +23669,8 @@
       "weathers": [
         2
       ],
-      "minGathering": 0
+      "minGathering": 0,
+      "video": "https://youtu.be/DGKwbWEdO3s"
     }
   ],
   "36473": [
@@ -23655,7 +23679,8 @@
       "hookset": 1,
       "tug": 0,
       "bait": 29717,
-      "minGathering": 0
+      "minGathering": 0,
+      "video": "https://youtu.be/G7hHN5NnN0s"
     }
   ],
   "36475": [
@@ -23741,7 +23766,8 @@
         3
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 0,
+      "video": "https://youtu.be/goy8ztqckMQ"
     }
   ],
   "36481": [
@@ -23768,7 +23794,8 @@
       "hookset": 1,
       "tug": 0,
       "bait": 36591,
-      "minGathering": 0
+      "minGathering": 0,
+      "video": "https://youtu.be/bpeoUxSQK6M"
     }
   ],
   "36487": [
@@ -23850,7 +23877,8 @@
       "hookset": 1,
       "tug": 0,
       "bait": 36595,
-      "minGathering": 0
+      "minGathering": 0,
+      "video": "https://youtu.be/4gSGeh2KVo0"
     }
   ],
   "36495": [
@@ -24117,7 +24145,8 @@
       "bait": 36518,
       "spawn": 0,
       "duration": 4,
-      "minGathering": 0
+      "minGathering": 0,
+      "video": "https://youtu.be/tD0E7nQLq18"
     }
   ],
   "36612": [
@@ -24179,7 +24208,8 @@
       "weathers": [
         3
       ],
-      "minGathering": 2400
+      "minGathering": 2400,
+      "video": "https://youtu.be/Sn86CTFPMcc"
     }
   ],
   "36681": [
@@ -24203,7 +24233,8 @@
       "weathers": [
         8
       ],
-      "minGathering": 2400
+      "minGathering": 2400,
+      "video": "https://youtu.be/H4tjuH9cafA"
     }
   ],
   "36683": [
@@ -24215,7 +24246,8 @@
       "weathers": [
         15
       ],
-      "minGathering": 2400
+      "minGathering": 2400,
+      "video": "https://youtu.be/s55BuOveMSI"
     }
   ],
   "36684": [
@@ -24229,7 +24261,8 @@
       "weathers": [
         49
       ],
-      "minGathering": 2400
+      "minGathering": 2400,
+      "video": "https://youtu.be/4_LOm8VzKBI"
     }
   ],
   "36685": [
@@ -24243,7 +24276,8 @@
       "weathers": [
         149
       ],
-      "minGathering": 2400
+      "minGathering": 2400,
+      "video": "https://youtu.be/8oLcTi53xbU"
     }
   ],
   "36686": [
@@ -24252,7 +24286,8 @@
       "hookset": 1,
       "tug": 0,
       "bait": 36593,
-      "minGathering": 0
+      "minGathering": 0,
+      "video": "https://youtu.be/So7h1pBw8tc"
     }
   ],
   "37697": [
@@ -24263,7 +24298,8 @@
       "bait": 36447,
       "spawn": 3,
       "duration": 3,
-      "minGathering": 2960
+      "minGathering": 2960,
+      "video": "https://youtu.be/9bqf7Qd_a-4"
     }
   ],
   "37845": [
@@ -24277,7 +24313,8 @@
       "weathers": [
         15
       ],
-      "minGathering": 2780
+      "minGathering": 2780,
+      "video": "https://youtu.be/VSvEK9xMdzU"
     }
   ],
   "37846": [
@@ -24295,7 +24332,8 @@
         1,
         2
       ],
-      "minGathering": 2780
+      "minGathering": 2780,
+      "video": "https://youtu.be/EHNDRne7434"
     }
   ],
   "37847": [
@@ -24311,7 +24349,8 @@
         1,
         2
       ],
-      "minGathering": 2780
+      "minGathering": 2780,
+      "video": "https://youtu.be/HgxUllAscwg"
     }
   ],
   "37848": [
@@ -24330,7 +24369,8 @@
         2,
         1
       ],
-      "minGathering": 2780
+      "minGathering": 2780,
+      "video": "https://youtu.be/pi_7oLORVWo"
     }
   ],
   "37849": [
@@ -24359,7 +24399,8 @@
       "bait": 36591,
       "spawn": 0,
       "duration": 2,
-      "minGathering": 2780
+      "minGathering": 2780,
+      "video": "https://youtu.be/hcdDz3tQu6s"
     }
   ],
   "37851": [
@@ -24372,7 +24413,8 @@
       "weathers": [
         149
       ],
-      "minGathering": 2780
+      "minGathering": 2780,
+      "video": "https://youtu.be/nhWi3LFNTNs"
     }
   ],
   "37852": [
@@ -24386,7 +24428,8 @@
       "weathers": [
         49
       ],
-      "minGathering": 2780
+      "minGathering": 2780,
+      "video": "https://youtu.be/L7riXx4ziS8"
     }
   ],
   "37853": [
@@ -24398,7 +24441,8 @@
       "weathers": [
         49
       ],
-      "minGathering": 2780
+      "minGathering": 2780,
+      "video": "https://youtu.be/S8GR8BkyBOM"
     }
   ],
   "38325": [
@@ -24667,7 +24711,8 @@
       "weathersFrom": [
         2
       ],
-      "minGathering": 2950
+      "minGathering": 2950,
+      "video": "https://youtu.be/h5wkF9TUIWI"
     }
   ],
   "38831": [
@@ -24682,7 +24727,8 @@
       "weathersFrom": [
         3
       ],
-      "minGathering": 2950
+      "minGathering": 2950,
+      "video": "https://youtu.be/6eAAveK-lv8"
     }
   ],
   "38832": [
@@ -24699,7 +24745,8 @@
       "weathersFrom": [
         3
       ],
-      "minGathering": 2950
+      "minGathering": 2950,
+      "video": "https://youtu.be/j2Ciiwl6eGw"
     }
   ],
   "38833": [
@@ -24713,7 +24760,8 @@
       "weathers": [
         7
       ],
-      "minGathering": 2950
+      "minGathering": 2950,
+      "video": "https://youtu.be/t19RNEOJLFQ"
     }
   ],
   "38834": [
@@ -24768,7 +24816,8 @@
       "hookset": 2,
       "tug": 2,
       "bait": 36593,
-      "minGathering": 0
+      "minGathering": 0,
+      "video": "https://youtu.be/ql64knkY11k"
     }
   ],
   "39240": [
@@ -24779,7 +24828,8 @@
       "bait": 36591,
       "spawn": 5,
       "duration": 3,
-      "minGathering": 3150
+      "minGathering": 3150,
+      "video": "https://youtu.be/UWaQO_15bbg"
     }
   ],
   "39809": [
@@ -25743,7 +25793,8 @@
       "weathersFrom": [
         2
       ],
-      "minGathering": 3150
+      "minGathering": 3150,
+      "video": "https://youtu.be/sS3BTppus1Y"
     }
   ],
   "41419": [
