@@ -426,14 +426,20 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
                 historyEntry
               };
             }),
-            catchError(() => {
+            catchError((err) => {
+              console.error(err);
               return of({ shouldUpdate: true, historyEntry: null });
             }),
-            switchMap(({ shouldUpdate, historyEntry }) => {
+            switchMap(({ shouldUpdate, historyEntry }: { shouldUpdate: boolean, historyEntry: WorkshopStatusData | null }) => {
               if (shouldUpdate && state.updated >= reset) {
-                console.debug("shouldUpdate true");
+                console.debug('shouldUpdate true');
                 let supplyDemand = state.supplyDemand;
-                if (historyEntry) {
+                //This is meant to force update if state has already been updated by current user and is admin, because it means that the base state was corrupted anyways.
+                const forceStateUpdate = historyEntry?.lastUpdatedBy === user.$key
+                  && Date.now() - historyEntry?.updated < 60000
+                  && (user.admin || user.trustedMJI);
+                // If force status update, then just send supplyDemand as-is
+                if (!forceStateUpdate && historyEntry) {
                   supplyDemand = [
                     ...historyEntry.objects.map((historyRow, i) => {
                       const stateRow = state.supplyDemand[i];
@@ -442,9 +448,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
                         return historyRow || stateRow;
                       }
                       // Pick the row that has the lowest supply
-                      if (stateRow.supply < historyRow.supply)
-                      {
-                        console.debug("State update for: %d", i);
+                      if (stateRow.supply < historyRow.supply) {
+                        console.debug('State update for: %d', i);
                       }
                       return stateRow.supply > historyRow.supply ? historyRow : stateRow;
                     }),
@@ -457,6 +462,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
                   predictedPopularity: state.predictedPopularity,
                   start: reset,
                   lock: user.admin || user.trustedMJI,
+                  lastUpdatedBy: user.$key,
                   updated: Date.now()
                 });
               }
@@ -477,18 +483,18 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
 
   shouldUpdateDb(user: TeamcraftUser, edited: boolean, historyEntry: WorkshopStatusData, supplyDemand: CraftworksObject[]): boolean {
     if (edited) {
-      console.debug("edited");
+      console.debug('edited');
       return false;
     }
-    if (user.admin && supplyDemand.length > 0) {
+    if (user.admin && supplyDemand.length > 0 && historyEntry.lastUpdatedBy !== user.$key) {
       return true;
     }
     if (historyEntry.lock || historyEntry.updated + 2000 > Date.now()) {
-      console.debug("time/lock");
+      console.debug('time/lock');
       return false;
     }
     if (historyEntry.objects.length < supplyDemand.length) {
-      console.debug("length");
+      console.debug('length');
       return true;
     }
     return historyEntry.objects.some((obj, i) => {
