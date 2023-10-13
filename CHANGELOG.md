@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.10...v11.0.11) (2023-10-13)
+
+
+### Features
+
+* **db:** added youtube video embed to many fish, thanks fruitysnacks ! ([5f0cb99](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5f0cb9908866ceaf876aef824006990b827bf990))
+
+
+### Bug Fixes
+
+* **alarms:** fixed fishing alarms with two consecutive valid different weathers ([8505ff0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8505ff05a54bce48da43691b80ce3606efdcf436))
+* **db:** better IS workshop rank handling, removed fate rank req ([966b02c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/966b02c3808a457f231ce55a4bebe9096edc68fd))
+* **db:** removed a lot of outdated collectable turn-ins ([a6754b7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a6754b7fec133461d5a5946e152547db18dcd3a2))
+* **desktop:** bring back share icon in sidebar for child windows ([6487796](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/64877966322f0b15afdafc7c197d511b4589f6c5))
+* **desktop:** fixed leveling equipment freezing in child windows ([1e277ab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1e277ab299aa878e35d18c56fa9ce6d52ad41015))
+* **fishing-reporter:** more filtering on systemLogMessage for spot detection ([9fd13e2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9fd13e214ba82be5f5937b311fd90ee2d20e3f6b))
+* **island-animals:** fixed morbol spawn time ([22a4da0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/22a4da038228f3820c1d414aff191753e007ff33))
+* **island-workshop:** better lock and state update logic ([a09bbd4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a09bbd4833a961cc550cd9bbb90a5bd5e51ac3b4))
+* **logs:** fixed recipes ordering in log tracker ([1cf5778](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1cf57781a65c5124eacd57e502a3ca1a7c4bae28))
+
 ### [11.0.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.9...v11.0.10) (2023-10-06)
 
 
