@@ -223,14 +223,6 @@ export class ShopsExtractor extends AbstractExtractor {
               return entry;
             }).filter(row => row.id > 0 && row.amount > 0)
           };
-          const req = specialShop.QuestItem[tradeIndex];
-          if (req > 0) {
-            // This cannot be a quest, it's for fate shop rank flags !
-            if (req < 120) {
-              const allRanks = uniq([0, 1, 2].map(id => specialShop.QuestItem[id])).sort();
-              trade.requiredFateRank = allRanks.indexOf(req);
-            }
-          }
           return trade;
         }).filter(t => t.currencies.length > 0 && t.items.length > 0)
       };

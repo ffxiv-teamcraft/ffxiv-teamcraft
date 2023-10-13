@@ -1618,5 +1618,11 @@
       "speed": 4,
       "shadowSize": 0
     }
+  ],
+  "41060": [
+    {
+      "speed": 3,
+      "shadowSize": 0
+    }
   ]
 }

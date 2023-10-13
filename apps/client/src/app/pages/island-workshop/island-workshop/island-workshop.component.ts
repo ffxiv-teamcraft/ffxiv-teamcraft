@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
@@ -22,8 +22,9 @@ import { PlanningFormulaOptimizer } from '../optimizer/planning-formula-optimize
 import { DataType, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { EnvironmentService } from '../../../core/environment.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { islandWorkshopRankRatio } from '@ffxiv-teamcraft/data/handmade/island-workshop-rank-ratio';
 
 interface ColumnItem {
   name: string;
@@ -143,7 +144,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
 
   public rank$ = new LocalStorageBehaviorSubject<number>('island-workshop:rank', 1);
 
-  public workshops$ = new LocalStorageBehaviorSubject<number>('island-workshop:workshops', 4);
+  public workshops$ = new LocalStorageBehaviorSubject<number>('island-workshop:workshops', islandWorkshopRankRatio.length);
 
   public excludePastureMaterials$ = new LocalStorageBehaviorSubject<boolean>('island-workshop:exclude_pasture', false);
 
@@ -288,8 +289,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
       const predictedPopularityEntry = islandPopularity[state.predictedPopularity];
       return state.supplyDemand
         .filter(row => {
-          const maxId = this.environment.gameVersion < 6.4 ? 60 : Infinity;
-          return row.id > 0 && row.id <= maxId && islandCraftworks[row.id]?.itemId > 0;
+          return row.id > 0 && islandCraftworks[row.id]?.itemId > 0;
         })
         .filter(row => {
           let matches = true;
@@ -408,8 +408,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
               public translate: TranslateService, private dialog: NzModalService,
               private message: NzMessageService, private mjiWorkshopStatusService: IslandWorkshopStatusService,
               public platformService: PlatformService, public settings: SettingsService,
-              private authFacade: AuthFacade, private i18n: I18nToolsService,
-              private environment: EnvironmentService) {
+              private authFacade: AuthFacade, private i18n: I18nToolsService, destroyRef: DestroyRef) {
     super();
 
     if (this.platformService.isDesktop()) {
@@ -469,9 +468,12 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
               return EMPTY;
             })
           );
-        })
+        }),
+        takeUntilDestroyed(destroyRef)
       ).subscribe();
-      this.ipc.islandWorkshopSupplyDemandPackets$.subscribe(packet => {
+      this.ipc.islandWorkshopSupplyDemandPackets$.pipe(
+        takeUntilDestroyed(destroyRef)
+      ).subscribe(packet => {
         this.state$.next({
           ...packet,
           updated: Date.now(),

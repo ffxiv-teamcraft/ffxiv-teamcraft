@@ -22790,18 +22790,18 @@
   ],
   "35606": [
     {
-      "spot": 270,
-      "hookset": 2,
-      "tug": 2,
-      "bait": 36589,
-      "minGathering": 0,
-      "video": "https://youtu.be/NtqYO4-p4bU"
-    },
-    {
       "spot": 271,
       "hookset": 2,
       "tug": 2,
       "bait": 36588,
+      "minGathering": 0,
+      "video": "https://youtu.be/NtqYO4-p4bU"
+    },
+    {
+      "spot": 270,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 36589,
       "minGathering": 0,
       "video": "https://youtu.be/NtqYO4-p4bU"
     }
