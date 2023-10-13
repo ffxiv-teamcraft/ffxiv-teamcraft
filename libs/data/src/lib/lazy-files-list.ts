@@ -169,7 +169,7 @@ export const lazyFilesList = {
   },
   'fishingLogTrackerPageData': {
     'fileName': 'fishing-log-tracker-page-data.json',
-    'hashedFileName': 'fishing-log-tracker-page-data.c18f3b98d0eb47441acb278ddd28c6f001a1e4ff.json'
+    'hashedFileName': 'fishing-log-tracker-page-data.3b13f22776614fd24aa8ae4b620add8cfb4a8165.json'
   },
   'fishingLog': {
     'fileName': 'fishing-log.json',
@@ -177,7 +177,7 @@ export const lazyFilesList = {
   },
   'fishingSources': {
     'fileName': 'fishing-sources.json',
-    'hashedFileName': 'fishing-sources.93c46e606941d9632938613bd7629127f9ba99bb.json'
+    'hashedFileName': 'fishing-sources.910348eb6a7fc9274fd4009805969cefe6f3238d.json'
   },
   'fishingSpotSearch': {
     'fileName': 'fishing-spot-search.index',
@@ -281,7 +281,7 @@ export const lazyFilesList = {
   },
   'islandAnimals': {
     'fileName': 'island-animals.json',
-    'hashedFileName': 'island-animals.ff48bda69e651b77234937961c32d25128a8e30b.json'
+    'hashedFileName': 'island-animals.88fcdef8e7913220bd162336177bbc78be9029b4.json'
   },
   'islandBuildings': {
     'fileName': 'island-buildings.json',
@@ -305,7 +305,7 @@ export const lazyFilesList = {
   },
   'islandLandmarks': {
     'fileName': 'island-landmarks.json',
-    'hashedFileName': 'island-landmarks.6179cd3cd43fc92f02b08677645f70d3b7a1a57d.json'
+    'hashedFileName': 'island-landmarks.4d5076bfbf1540b823c1f0f855a7114ac6cbadac.json'
   },
   'islandPopularity': {
     'fileName': 'island-popularity.json',
@@ -561,11 +561,11 @@ export const lazyFilesList = {
   },
   'shopsByNpc': {
     'fileName': 'shops-by-npc.json',
-    'hashedFileName': 'shops-by-npc.9fe22d4bf8d954141d0cd8cf3480b6fe2c504f61.json'
+    'hashedFileName': 'shops-by-npc.4b25ea19a8cb45784498be20fc192f8caf3da3a1.json'
   },
   'shops': {
     'fileName': 'shops.json',
-    'hashedFileName': 'shops.1b3a0ee7a6cdf775cb7384a38cb75a249588ad8a.json'
+    'hashedFileName': 'shops.ad4f38e007e5f9c3b2be3de5b658f8b45241f6a0.json'
   },
   'spearFishingFish': {
     'fileName': 'spear-fishing-fish.json',
@@ -577,7 +577,7 @@ export const lazyFilesList = {
   },
   'spearfishingSources': {
     'fileName': 'spearfishing-sources.json',
-    'hashedFileName': 'spearfishing-sources.c9029f0a7d633e520e8e4f04f46aa8a43fdd96c6.json'
+    'hashedFileName': 'spearfishing-sources.faddd76ae7c4f3b50681a10adcef90f131ef9ac4.json'
   },
   'specialShopNames': {
     'fileName': 'special-shop-names.json',
@@ -661,7 +661,7 @@ export const lazyFilesList = {
   },
   'voyageSources': {
     'fileName': 'voyage-sources.json',
-    'hashedFileName': 'voyage-sources.ff920efdc3100c47926775c0fbafac64404b390a.json'
+    'hashedFileName': 'voyage-sources.e6a502e1965afa1837cd6f02efd0c76cd53b3ceb.json'
   },
   'weathers': {
     'fileName': 'weathers.json',
