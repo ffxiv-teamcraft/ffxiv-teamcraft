@@ -1,19 +1,18 @@
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { WorkshopPlanning } from './workshop-planning';
+import { islandWorkshopRankRatio } from '@ffxiv-teamcraft/data/handmade/island-workshop-rank-ratio';
 
 export class IslandWorkshopSimulator {
-
-  static RANK_RATIO = [100, 100, 110, 120, 130];
 
   private readonly maxGroove: number;
 
   private readonly workshopRankRatio: number;
 
-  constructor(private supply: LazyData['islandSupply'], private workshops: number, landmarks: number, private workshopLevel: number) {
+  constructor(private supply: LazyData['islandSupply'], private workshops: number, landmarks: number, workshopLevel: number) {
     this.maxGroove = [
       10, 15, 20, 25, 35, 45
     ][landmarks] || 0;
-    this.workshopRankRatio = (IslandWorkshopSimulator.RANK_RATIO[workshopLevel] || 100) / 100;
+    this.workshopRankRatio = (islandWorkshopRankRatio[workshopLevel] || 100) / 100;
   }
 
   public getScore(planning: WorkshopPlanning[]): number {

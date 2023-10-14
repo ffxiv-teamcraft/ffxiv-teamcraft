@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
@@ -22,8 +22,9 @@ import { PlanningFormulaOptimizer } from '../optimizer/planning-formula-optimize
 import { DataType, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { EnvironmentService } from '../../../core/environment.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { islandWorkshopRankRatio } from '@ffxiv-teamcraft/data/handmade/island-workshop-rank-ratio';
 
 interface ColumnItem {
   name: string;
@@ -143,7 +144,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
 
   public rank$ = new LocalStorageBehaviorSubject<number>('island-workshop:rank', 1);
 
-  public workshops$ = new LocalStorageBehaviorSubject<number>('island-workshop:workshops', 4);
+  public workshops$ = new LocalStorageBehaviorSubject<number>('island-workshop:workshops', islandWorkshopRankRatio.length);
 
   public excludePastureMaterials$ = new LocalStorageBehaviorSubject<boolean>('island-workshop:exclude_pasture', false);
 
@@ -288,8 +289,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
       const predictedPopularityEntry = islandPopularity[state.predictedPopularity];
       return state.supplyDemand
         .filter(row => {
-          const maxId = this.environment.gameVersion < 6.4 ? 60 : Infinity;
-          return row.id > 0 && row.id <= maxId && islandCraftworks[row.id]?.itemId > 0;
+          return row.id > 0 && islandCraftworks[row.id]?.itemId > 0;
         })
         .filter(row => {
           let matches = true;
@@ -408,8 +408,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
               public translate: TranslateService, private dialog: NzModalService,
               private message: NzMessageService, private mjiWorkshopStatusService: IslandWorkshopStatusService,
               public platformService: PlatformService, public settings: SettingsService,
-              private authFacade: AuthFacade, private i18n: I18nToolsService,
-              private environment: EnvironmentService) {
+              private authFacade: AuthFacade, private i18n: I18nToolsService, destroyRef: DestroyRef) {
     super();
 
     if (this.platformService.isDesktop()) {
@@ -426,14 +425,20 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
                 historyEntry
               };
             }),
-            catchError(() => {
+            catchError((err) => {
+              console.error(err);
               return of({ shouldUpdate: true, historyEntry: null });
             }),
-            switchMap(({ shouldUpdate, historyEntry }) => {
+            switchMap(({ shouldUpdate, historyEntry }: { shouldUpdate: boolean, historyEntry: WorkshopStatusData | null }) => {
               if (shouldUpdate && state.updated >= reset) {
-                console.debug("shouldUpdate true");
+                console.debug('shouldUpdate true');
                 let supplyDemand = state.supplyDemand;
-                if (historyEntry) {
+                //This is meant to force update if state has already been updated by current user and is admin, because it means that the base state was corrupted anyways.
+                const forceStateUpdate = historyEntry?.lastUpdatedBy === user.$key
+                  && Date.now() - historyEntry?.updated < 60000
+                  && (user.admin || user.trustedMJI);
+                // If force status update, then just send supplyDemand as-is
+                if (!forceStateUpdate && historyEntry) {
                   supplyDemand = [
                     ...historyEntry.objects.map((historyRow, i) => {
                       const stateRow = state.supplyDemand[i];
@@ -442,9 +447,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
                         return historyRow || stateRow;
                       }
                       // Pick the row that has the lowest supply
-                      if (stateRow.supply < historyRow.supply)
-                      {
-                        console.debug("State update for: %d", i);
+                      if (stateRow.supply < historyRow.supply) {
+                        console.debug('State update for: %d', i);
                       }
                       return stateRow.supply > historyRow.supply ? historyRow : stateRow;
                     }),
@@ -457,15 +461,19 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
                   predictedPopularity: state.predictedPopularity,
                   start: reset,
                   lock: user.admin || user.trustedMJI,
+                  lastUpdatedBy: user.$key,
                   updated: Date.now()
                 });
               }
               return EMPTY;
             })
           );
-        })
+        }),
+        takeUntilDestroyed(destroyRef)
       ).subscribe();
-      this.ipc.islandWorkshopSupplyDemandPackets$.subscribe(packet => {
+      this.ipc.islandWorkshopSupplyDemandPackets$.pipe(
+        takeUntilDestroyed(destroyRef)
+      ).subscribe(packet => {
         this.state$.next({
           ...packet,
           updated: Date.now(),
@@ -477,18 +485,18 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
 
   shouldUpdateDb(user: TeamcraftUser, edited: boolean, historyEntry: WorkshopStatusData, supplyDemand: CraftworksObject[]): boolean {
     if (edited) {
-      console.debug("edited");
+      console.debug('edited');
       return false;
     }
-    if (user.admin && supplyDemand.length > 0) {
+    if (user.admin && supplyDemand.length > 0 && historyEntry.lastUpdatedBy !== user.$key) {
       return true;
     }
     if (historyEntry.lock || historyEntry.updated + 2000 > Date.now()) {
-      console.debug("time/lock");
+      console.debug('time/lock');
       return false;
     }
     if (historyEntry.objects.length < supplyDemand.length) {
-      console.debug("length");
+      console.debug('length');
       return true;
     }
     return historyEntry.objects.some((obj, i) => {

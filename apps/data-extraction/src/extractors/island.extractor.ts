@@ -149,7 +149,7 @@ export class IslandExtractor extends AbstractExtractor {
       this.getSheet<any>(xiv, 'MJICraftworksObject', ['Item#', 'CraftingTime', 'Value', 'Theme', 'LevelReq']),
       this.getSheet<any>(xiv, 'MJICraftworksRankRatio', ['Ratio'])
     ]).pipe(
-      map(([popularity, supplyDefine, craftworksObjects]) => {
+      map(([popularity, supplyDefine, craftworksObjects, ratio]) => {
         const supplyObj = supplyDefine.reduce((acc, row) => {
           return {
             ...acc,
@@ -190,13 +190,15 @@ export class IslandExtractor extends AbstractExtractor {
         return {
           supplyObj,
           popularityMatrix,
-          craftworksIndex
+          craftworksIndex,
+          rankRatio: ratio.map(row => row.Ratio).filter(Boolean)
         };
       })
-    ).subscribe(({ supplyObj, popularityMatrix, craftworksIndex }) => {
+    ).subscribe(({ supplyObj, popularityMatrix, craftworksIndex, rankRatio }) => {
       this.persistToJsonAsset('island-supply', supplyObj);
       this.persistToJsonAsset('island-popularity', popularityMatrix);
       this.persistToJsonAsset('island-craftworks', craftworksIndex);
+      this.persistToTypescriptData('island-workshop-rank-ratio', 'islandWorkshopRankRatio', rankRatio);
       workshopDone$.next(true);
     });
 

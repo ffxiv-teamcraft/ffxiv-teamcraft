@@ -23,8 +23,8 @@ export class SearchService implements OnApplicationBootstrap {
         performance.mark('search:built');
         console.log(`SEARCH INIT: ${performance.measure('search ingest', 'search:build', 'search:built').duration}ms`);
         this._ready$.next(true);
-        resolve();
       });
+      resolve();
     });
   }
 
@@ -49,6 +49,9 @@ export class SearchService implements OnApplicationBootstrap {
   }
 
   public search(type: SearchType, query: string, filters: XIVSearchFilter[], lang: string, sort: [string, 'asc' | 'desc'] = ['', 'desc']): SearchResult[] {
+    if (!this._ready$.value) {
+      return [];
+    }
     const index: XIVSearch = this.indexes[lang] || this.indexes['en'];
     if (type === SearchType.RECIPE) {
       type = SearchType.ITEM;

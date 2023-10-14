@@ -19,14 +19,14 @@ export class WeatherService {
     return 1;
   }
 
-  public getNextDiffWeatherTime(timestamp: number, currentWeather: number, mapId: number): number {
+  public getNextDiffWeatherTime(timestamp: number, allowedWeathers: number[], mapId: number): number {
     const nextWeatherTime = this.nextWeatherTime(timestamp);
-    if (this.getWeather(mapId, nextWeatherTime) !== currentWeather) {
+    if (!allowedWeathers.includes(this.getWeather(mapId, nextWeatherTime))) {
       return nextWeatherTime;
     }
 
     try {
-      return this.getNextDiffWeatherTime(nextWeatherTime, currentWeather, mapId);
+      return this.getNextDiffWeatherTime(nextWeatherTime, allowedWeathers, mapId);
     } catch (maxCallStack) {
       return null;
     }
@@ -39,6 +39,7 @@ export class WeatherService {
       if (spawns?.length > 0) {
         const spawnHour = new Date(timestamp).getUTCHours();
         const transitionDespawnHour = new Date(this.nextWeatherTime(timestamp)).getUTCHours();
+
         const normalDespawnHour = new Date(this.nextWeatherTime(timestamp)).getUTCHours();
         const despawnHour = transition ? transitionDespawnHour : normalDespawnHour;
         if (spawns.some(spawn => TimeUtils.getIntersection([spawn, (spawn + duration) % 24], [spawnHour, despawnHour]) !== null)) {

@@ -15,6 +15,8 @@ export class WorkshopStatusData extends DataModel {
 
   updated: number;
 
+  lastUpdatedBy: string;
+
   constructor() {
     super();
   }

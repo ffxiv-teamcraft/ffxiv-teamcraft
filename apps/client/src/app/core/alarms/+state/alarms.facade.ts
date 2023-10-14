@@ -554,7 +554,7 @@ export class AlarmsFacade {
       for (const spawn of sortedSpawns) {
         const despawn = (spawn + alarm.duration) % 24;
         const weatherStart = weatherSpawn.spawn.getUTCHours();
-        const normalWeatherStop = new Date(this.weatherService.getNextDiffWeatherTime(weatherSpawn.spawn.getTime(), weatherSpawn.weather, alarm.mapId)).getUTCHours() || 24;
+        const normalWeatherStop = new Date(this.weatherService.getNextDiffWeatherTime(weatherSpawn.spawn.getTime(), alarm.weathers, alarm.mapId)).getUTCHours() || 24;
         const transitionWeatherStop = new Date(this.weatherService.nextWeatherTime(weatherSpawn.spawn.getTime())).getUTCHours() || 24;
         const weatherStop = alarm.weathersFrom?.length > 0 ? transitionWeatherStop : normalWeatherStop;
         const range = TimeUtils.getIntersection([spawn, despawn], [weatherStart, weatherStop % 24]);
@@ -592,7 +592,7 @@ export class AlarmsFacade {
         hours: weatherSpawn.spawn.getUTCHours(),
         days: days,
         date: weatherSpawn.spawn,
-        despawn: new Date(this.weatherService.nextWeatherTime(weatherSpawn.spawn.getTime())).getUTCHours() || 24,
+        despawn: new Date(this.weatherService.getNextDiffWeatherTime(weatherSpawn.spawn.getTime(), alarm.weathers, alarm.mapId)).getUTCHours() || 24,
         weather: weatherSpawn.weather
       };
     }

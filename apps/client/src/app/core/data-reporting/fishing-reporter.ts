@@ -16,6 +16,9 @@ import { getFishTrainStatus } from '../../modules/fish-train/get-fish-train-stat
 import { FishTrainStatus } from '../../pages/fish-trains/fish-trains/fish-train-status';
 import { FishingReport } from './fishing-report';
 import { AuthFacade } from '../../+state/auth.facade';
+import { weatherIndex } from '../data/sources/weather-index';
+import { mapIds } from '../data/sources/map-ids';
+import { WeatherService } from '../eorzea/weather.service';
 
 
 export class FishingReporter implements DataReporter {
@@ -55,6 +58,7 @@ export class FishingReporter implements DataReporter {
         return packets$.pipe(
           ofMessageType('systemLogMessage'),
           toIpcData(),
+          filter(packet => packet.eventId === 0x150001),
           map((packet) => {
             return fishingSpots.find(spot => spot.zoneId === packet.param3);
           }),
