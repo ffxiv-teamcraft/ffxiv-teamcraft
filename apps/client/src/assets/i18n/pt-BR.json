@@ -424,6 +424,7 @@
     "Title": "Configurações",
     "General": "Geral",
     "Link_base": "Links de item",
+    "DateFormat": "Date Format",
     "Region": "Region",
     "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain regions.",
     "Proxy": "Proxy",
