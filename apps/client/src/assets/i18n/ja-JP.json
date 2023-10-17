@@ -424,6 +424,7 @@
     "Title": "設定",
     "General": "一般",
     "Link_base": "アイテムリンク",
+    "DateFormat": "Date Format",
     "Region": "地域",
     "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain regions.",
     "Proxy": "プロキシ",
