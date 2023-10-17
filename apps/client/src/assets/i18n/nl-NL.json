@@ -424,6 +424,7 @@
     "Title": "Instellingen",
     "General": "Algemeen",
     "Link_base": "Item koppelingen",
+    "DateFormat": "Date Format",
     "Region": "Regio",
     "Region_explain": "Gegevensbron en functies op basis van specifieke spelversie worden per regio aangepast. Sommige zijn mogelijk niet beschikbaar in bepaalde regio's.",
     "Proxy": "Proxy",
