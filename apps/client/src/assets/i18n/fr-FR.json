@@ -424,6 +424,7 @@
     "Title": "Options",
     "General": "Général",
     "Link_base": "Liens des objets",
+    "DateFormat": "Date Format",
     "Region": "Région",
     "Region_explain": "La source de données et les fonctions basées sur une version spécifique du jeu seront ajustées par région. Certaines d'entre elles peuvent ne pas être disponibles dans certaines régions.",
     "Proxy": "Proxy",
