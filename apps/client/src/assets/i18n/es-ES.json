@@ -424,6 +424,7 @@
     "Title": "Ajustes",
     "General": "General",
     "Link_base": "Vínculos de artículos",
+    "DateFormat": "Date Format",
     "Region": "Región",
     "Region_explain": "La fuente de datos y las funciones basadas en una versión específica del juego se ajustarán por región. Algunas de ellas pueden no estar disponibles en ciertas regiones.",
     "Proxy": "Proxy",
