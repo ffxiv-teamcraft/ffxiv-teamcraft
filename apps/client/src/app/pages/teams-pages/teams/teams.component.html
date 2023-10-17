@@ -80,7 +80,7 @@
                         </button>
                         <div class="spacer"></div>
                         <div>{{'TEAMS.Invite_expires' | translate}}: {{invite.expires === undefined ? ('Never' |
-                          translate) : invite.expires | date:'short'}}
+                          translate) : invite.expires | date:'short':null:settings.dateFormat}}
                         </div>
                         <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteInvite(invite)" [nzShape]="'circle'" [nzPopconfirmTitle]="'Confirmation' | translate"
                                 nzDanger nz-button

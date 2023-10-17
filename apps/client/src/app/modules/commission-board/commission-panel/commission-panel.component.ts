@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 import { CommissionsFacade } from '../+state/commissions.facade';
 import { NotificationType } from '../../../core/notification/notification-type';
 import { map } from 'rxjs/operators';
+import { SettingsService } from '../../settings/settings.service';
 
 @Component({
   selector: 'app-commission-panel',
@@ -33,7 +34,8 @@ export class CommissionPanelComponent implements OnInit {
   public userId$: Observable<string> = this.authFacade.userId$;
 
   constructor(private router: Router, public translate: TranslateService,
-              private authFacade: AuthFacade, public commissionsFacade: CommissionsFacade) {
+              private authFacade: AuthFacade, public commissionsFacade: CommissionsFacade,
+              public settings: SettingsService) {
   }
 
   openCommission(): void {

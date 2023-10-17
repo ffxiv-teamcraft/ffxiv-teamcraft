@@ -11,7 +11,7 @@
         : {{priceToCraft.price.nq | number:'1.0-0':translate.currentLang}}</nz-tag>
     </div>
     <div *ngIf="itemPrice.price.updated" fxLayout="row" fxLayoutGap="5px">
-      <nz-tag>{{'PRICING.Last_update' | translate}}: {{itemPrice.price.updated | date:'short':null:translate.currentLang}}</nz-tag>
+      <nz-tag>{{'PRICING.Last_update' | translate}}: {{itemPrice.price.updated | date:'short':null:settings.dateFormat}}</nz-tag>
     </div>
     <div *ngIf="cheapestAtVendor$ | async as cheapestAtVendor" fxLayout="row" fxLayoutGap="5px">
       <button nz-button nzSize="small" nzType="primary"

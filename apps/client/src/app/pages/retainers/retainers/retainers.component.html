@@ -21,7 +21,7 @@
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <div>{{row.characterName}}</div>
             <div *ngIf="fetchStatus$ | async as fetchStatus" nz-tooltip
-                 [nzTooltipTitle]="fetchStatus.canFetch ? null : ('RETAINERS.Cannot_fetch' | translate: {date: fetchStatus.lastFetch | date:'medium':null:translate.currentLang})">
+                 [nzTooltipTitle]="fetchStatus.canFetch ? null : ('RETAINERS.Cannot_fetch' | translate: {date: fetchStatus.lastFetch | date:'medium':null:settings.dateFormat})">
               <button nz-button nzShape="circle" nzSize="small" nzType="primary"
                       nz-tooltip [nzTooltipTitle]="fetchStatus.canFetch? ('RETAINERS.Check_prices' | translate) : null"
                       [disabled]="!fetchStatus.canFetch || row.server === 'Unknown'"

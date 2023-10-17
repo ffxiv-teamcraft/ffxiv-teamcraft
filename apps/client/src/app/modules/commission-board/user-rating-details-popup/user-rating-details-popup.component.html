@@ -13,13 +13,13 @@
   <div fxLayout="column" fxLayoutAlign="center center" *ngFor="let fired of profile.firedFeedbacks">
     <b><i nz-icon nzType="fire" nzTheme="outline"></i> {{'COMMISSIONS.PROFILE.Fired' | translate}}</b>
     <p>{{('COMMISSIONS.FIRED.' + fired.reason) | translate}}</p>
-    <p>{{fired.date.seconds * 1000 | date:'medium':translate.currentLang}}</p>
+    <p>{{fired.date.seconds * 1000 | date:'medium':null:settings.dateFormat}}</p>
     <a nz-button nzBlock routerLink="/commission/{{fired.commissionId}}" (click)="close()">{{'COMMISSIONS.Open_commission_details' | translate}}</a>
   </div>
   <div fxLayout="column" fxLayoutAlign="center center" *ngFor="let resigned of profile.resignedFeedback">
     <b><i nz-icon nzType="stop" nzTheme="outline"></i> {{'COMMISSIONS.PROFILE.Resigned' | translate}}</b>
     <p>{{('COMMISSIONS.RESIGNED.' + resigned.reason) | translate}}</p>
-    <p>{{resigned.date.seconds * 1000 | date:'medium':translate.currentLang}}</p>
+    <p>{{resigned.date.seconds * 1000 | date:'medium':null:settings.dateFormat}}</p>
     <a nz-button nzBlock routerLink="/commission/{{resigned.commissionId}}" (click)="close()">{{'COMMISSIONS.Open_commission_details' | translate}}</a>
   </div>
 </div>
