@@ -81,6 +81,7 @@ import { WorkshopModule } from './modules/workshop/workshop.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { CustomItemsModule } from './modules/custom-items/custom-items.module';
 import en from '@angular/common/locales/en';
+import enGB from '@angular/common/locales/en-GB';
 import fr from '@angular/common/locales/fr';
 import de from '@angular/common/locales/de';
 import ja from '@angular/common/locales/ja';
@@ -164,6 +165,7 @@ const icons: IconDefinition[] = [
 ];
 
 registerLocaleData(en);
+registerLocaleData(enGB);
 registerLocaleData(fr);
 registerLocaleData(de);
 registerLocaleData(ja);

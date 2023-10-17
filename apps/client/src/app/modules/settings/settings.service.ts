@@ -7,6 +7,7 @@ import { debounceTime, filter, map, startWith } from 'rxjs/operators';
 import { CommissionTag } from '../commission-board/model/commission-tag';
 import { Language } from '../../core/data/language';
 import { NotificationSettings } from './notification-settings';
+import { TranslateService } from '@ngx-translate/core';
 import { SoundNotificationType } from '../../core/sound-notification/sound-notification-type';
 import { IS_HEADLESS } from '../../../environments/is-headless';
 
@@ -23,7 +24,7 @@ export class SettingsService {
 
   public settingsChange$ = new Subject<string>();
 
-  constructor(@Optional() private ipc: IpcService) {
+  constructor(@Optional() private ipc: IpcService, private translate: TranslateService) {
     this.cache = JSON.parse(localStorage.getItem('settings')) || {};
     if (this.ipc) {
       this.ipc.on('update-settings', (e, settings) => {
@@ -47,6 +48,10 @@ export class SettingsService {
 
   public get availableLocales(): string[] {
     return ['en', 'de', 'fr', 'ja', 'pt', 'br', 'es', 'ko', 'zh', 'ru'];
+  }
+
+  public get availableDateLocales(): string[] {
+    return ['en-US', 'en-GB'];
   }
 
   public get availableRegions(): Region[] {
@@ -140,6 +145,14 @@ export class SettingsService {
 
   public set timeFormat(format: '24H' | '12H') {
     this.setSetting('time-format', format);
+  }
+
+  public get dateFormat(): string {
+    return this.translate.currentLang == "en" ? this.getString('date-format', "en-us") : this.translate.currentLang; 
+  }
+
+  public set dateFormat(lang: string) {
+    this.setString('date-format', lang);
   }
 
   public get listScrollingMode(): 'default' | 'large' | 'never' {

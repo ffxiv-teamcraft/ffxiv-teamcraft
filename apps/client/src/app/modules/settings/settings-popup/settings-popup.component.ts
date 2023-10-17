@@ -40,6 +40,8 @@ export class SettingsPopupComponent {
 
   availableLanguages = this.settings.availableLocales;
 
+  availableDateLocales = this.settings.availableDateLocales;
+
   availableRegions = this.settings.availableRegions;
 
   loggedIn$ = this.authFacade.loggedIn$;
@@ -480,6 +482,10 @@ export class SettingsPopupComponent {
     localStorage.setItem('locale', lang);
     this.translate.use(lang);
     this.ipc.send('language', lang);
+  }
+
+  setDateLocale(dateLang: string): void {
+    this.settings.dateFormat = dateLang;
   }
 
   saveCustomTheme(): void {
