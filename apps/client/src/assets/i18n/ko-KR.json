@@ -424,6 +424,7 @@
     "Title": "설정",
     "General": "일반",
     "Link_base": "아이템 링크",
+    "DateFormat": "Date Format",
     "Region": "지역",
     "Region_explain": "특정 게임 버전에 따라 데이터 소스와 기능이 맞춰집니다. 일부 소스나 기능은 지역에 따라서 이용 못할 수도 있습니다",
     "Proxy": "프록시",
