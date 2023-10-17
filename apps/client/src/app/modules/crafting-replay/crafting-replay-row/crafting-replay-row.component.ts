@@ -7,6 +7,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { PermissionsController } from '../../../core/database/permissions-controller';
+import { SettingsService } from '../../settings/settings.service';
 
 @Component({
   selector: 'app-crafting-replay-row',
@@ -23,7 +24,7 @@ export class CraftingReplayRowComponent {
   userId: string;
 
   constructor(private craftingReplayFacade: CraftingReplayFacade, public translate: TranslateService,
-              private message: NzMessageService, private dialog: NzModalService) {
+              private message: NzMessageService, private dialog: NzModalService, public settings: SettingsService) {
   }
 
   get permissionLevel(): PermissionLevel {

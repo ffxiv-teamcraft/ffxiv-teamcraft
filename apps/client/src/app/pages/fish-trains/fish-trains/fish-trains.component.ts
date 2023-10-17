@@ -10,6 +10,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { DataModel } from '../../../core/database/storage/data-model';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-fish-trains',
@@ -94,7 +95,7 @@ export class FishTrainsComponent extends TeamcraftComponent {
 
   constructor(private fishTrainFacade: FishTrainFacade, public translate: TranslateService,
               private cd: ChangeDetectorRef, private authFacade: AuthFacade,
-              private lazyData: LazyDataFacade) {
+              private lazyData: LazyDataFacade, public settings: SettingsService) {
     super();
     fishTrainFacade.loadAll();
     this.authFacade.mainCharacter$.pipe(

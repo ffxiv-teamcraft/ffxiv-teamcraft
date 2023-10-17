@@ -15,6 +15,7 @@ import { FirestoreListStorage } from '../../../core/database/storage/list/firest
 import { Apollo } from 'apollo-angular';
 import { TranslateService } from '@ngx-translate/core';
 import * as semver from 'semver';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-public-profile',
@@ -42,7 +43,8 @@ export class PublicProfileComponent {
   constructor(private route: ActivatedRoute, private characterService: LodestoneService,
               private listsService: FirestoreListStorage, private authFacade: AuthFacade,
               private userService: UserService, private craftingRotationsService: CraftingRotationService,
-              private apollo: Apollo, public translate: TranslateService) {
+              private apollo: Apollo, public translate: TranslateService,
+              public settings: SettingsService) {
     const userId$ = this.route.paramMap.pipe(
       map(params => params.get('userId')),
       shareReplay({ bufferSize: 1, refCount: true })

@@ -12,6 +12,7 @@ import { observeInput } from '../../../core/rxjs/observe-input';
 import { filter, map, switchMap } from 'rxjs/operators';
 import { SpearfishingShadowSize } from '@ffxiv-teamcraft/types';
 import { SpearfishingSpeed } from '@ffxiv-teamcraft/types';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-allagan-report-row',
@@ -83,7 +84,7 @@ export class AllaganReportRowComponent {
     })
   );
 
-  constructor(public translate: TranslateService, private lazyData: LazyDataFacade) {
+  constructor(public translate: TranslateService, private lazyData: LazyDataFacade, public settings: SettingsService) {
   }
 
   @Input()

@@ -25,6 +25,7 @@ import { LodestoneService } from '../../../core/api/lodestone.service';
 import { TrainFishingReport } from '../../../core/data-reporting/fishing-report';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { PushNotificationsService } from '../../../core/push-notifications.service';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-fish-train',
@@ -185,7 +186,7 @@ export class FishTrainComponent extends TeamcraftComponent {
               private authFacade: AuthFacade, private soundNotificationService: SoundNotificationService,
               private notificationService: NzNotificationService, private pushNotificationsService: PushNotificationsService,
               private cd: ChangeDetectorRef, private router: Router, private progressPopup: ProgressPopupService,
-              private lodestone: LodestoneService) {
+              private lodestone: LodestoneService, public settings: SettingsService) {
     super();
     route.paramMap
       .pipe(

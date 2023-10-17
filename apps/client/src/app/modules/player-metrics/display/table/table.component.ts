@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 import { IpcService } from '../../../../core/electron/ipc.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { PlayerMetricsService } from '../../player-metrics.service';
+import { SettingsService } from '../../../settings/settings.service';
 
 @Component({
   selector: 'app-table',
@@ -58,7 +59,8 @@ export class TableComponent extends AbstractMetricDisplayComponent implements On
   public sortState: Record<string, string | null> = {};
 
   constructor(public translate: TranslateService, private ipc: IpcService,
-              private message: NzMessageService, private metricsService: PlayerMetricsService) {
+              private message: NzMessageService, private metricsService: PlayerMetricsService,
+              public settings: SettingsService) {
     super();
   }
 

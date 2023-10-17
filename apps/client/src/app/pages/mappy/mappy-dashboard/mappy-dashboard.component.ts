@@ -7,6 +7,7 @@ import { map, switchMapTo, tap } from 'rxjs/operators';
 import { subMonths } from 'date-fns';
 import { StaticData } from '../../../lazy-data/static-data';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-mappy-dashboard',
@@ -66,7 +67,8 @@ export class MappyDashboardComponent {
   );
 
   constructor(private xivapi: XivapiService,
-              private lazyData: LazyDataFacade, public translate: TranslateService) {
+              private lazyData: LazyDataFacade, public translate: TranslateService,
+              public settigns: SettingsService) {
   }
 
 }

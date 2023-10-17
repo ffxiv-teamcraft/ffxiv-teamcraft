@@ -6,6 +6,7 @@ import { CraftingReplayFacade } from '../../../modules/crafting-replay/+state/cr
 import { CraftingReplay } from '../../../modules/crafting-replay/model/crafting-replay';
 import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-crafting-replay',
@@ -18,7 +19,7 @@ export class CraftingReplayComponent extends TeamcraftComponent {
   public replay$: Observable<CraftingReplay> = this.craftingReplayFacade.selectedCraftingReplay$;
 
   constructor(private activeRoute: ActivatedRoute, private craftingReplayFacade: CraftingReplayFacade,
-              public translate: TranslateService) {
+              public translate: TranslateService, public settings: SettingsService) {
     super();
     this.activeRoute.paramMap.pipe(
       takeUntil(this.onDestroy$)

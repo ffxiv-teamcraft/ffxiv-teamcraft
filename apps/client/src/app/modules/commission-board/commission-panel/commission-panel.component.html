@@ -11,7 +11,7 @@
           </nz-badge>
         </div>
         <div nz-col nzMd="4" nzSm="12" fxLayout="row" fxLayoutAlign="space-between center">
-          <div>{{commission.createdAt.seconds * 1000 | date:'short':null:translate.currentLang}}</div>
+          <div>{{commission.createdAt.seconds * 1000 | date:'short':null:settings.dateFormat}}</div>
           <div [ngSwitch]="commission.status" *ngIf="showStatus">
             <nz-tag *ngSwitchCase="CommissionStatus.OPENED" [style.border-color]="'#108ee9'">{{'COMMISSIONS.STATUS.Label' | translate}}
               : {{'COMMISSIONS.STATUS.OPENED' | translate}}</nz-tag>

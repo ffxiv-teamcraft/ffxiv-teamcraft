@@ -2,11 +2,13 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Vessel } from '../../../../modules/free-company-workshops/model/vessel';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { TranslateService } from '@ngx-translate/core';
+import { SettingsService } from '../../../../modules/settings/settings.service';
 import { FreeCompanyWorkshopFacade } from '../../../../modules/free-company-workshops/+state/free-company-workshop.facade';
 import { Submarine } from '../../../../modules/free-company-workshops/model/submarine';
 import { timer } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 import { Airship } from '../../../../modules/free-company-workshops/model/airship';
+
 
 @Component({
   selector: 'app-vessel-row',
@@ -26,7 +28,7 @@ export class VesselRowComponent extends TeamcraftComponent {
     takeUntil(this.onDestroy$)
   );
 
-  constructor(private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, public translate: TranslateService) {
+  constructor(private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, public translate: TranslateService, public settings: SettingsService) {
     super();
   }
 

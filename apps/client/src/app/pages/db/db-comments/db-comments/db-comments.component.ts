@@ -16,6 +16,7 @@ import { DbCommentReplyNotification } from '../../../../model/notification/db-co
 import { XivapiPatch } from '@ffxiv-teamcraft/types';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { LazyPatchName } from '@ffxiv-teamcraft/data/model/lazy-patch-name';
+import { SettingsService } from '../../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-db-comments',
@@ -59,7 +60,8 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
     public translate: TranslateService,
     private router: Router,
     private lazyData: LazyDataFacade,
-    private notificationService: NotificationService
+    private notificationService: NotificationService,
+    public settings: SettingsService
   ) {
     super();
 
