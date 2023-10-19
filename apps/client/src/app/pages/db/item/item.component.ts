@@ -293,6 +293,11 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           icon: 'https://universalis.app/i/universalis/universalis.png',
           url: `https://universalis.app/market/${item.id}`
         });
+        links.push({
+          title: 'Saddlebag Exchange',
+          icon: 'https://saddlebagexchange.com/images/tiny-chocobo.png',
+          url: `https://saddlebagexchange.com/queries/item-data/${item.id}`
+        });
       }
       const gardening = getItemSource(listRow, DataType.GARDENING);
       if (Number.isInteger(gardening)) {
