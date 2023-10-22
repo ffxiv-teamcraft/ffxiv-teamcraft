@@ -1695,6 +1695,7 @@
         "Size": "Taille",
         "Large": "Grand",
         "Time_since_thrown": "Temps écoulé depuis le lancement",
+        "Throw_etime": "Line throw etime",
         "Ignored_spot": "Cet emplacement n'est pas supporté par l'outil de rapport, attendez-vous à des valeurs étranges.",
         "Ignored_spot_description": "Aucun de vos poissons capturés ne sera signalé par l'outil de rapport.",
         "ERRORS": {
