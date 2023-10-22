@@ -60,7 +60,7 @@
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
           <div *ngIf="display.commission.authorId | characterName | async as authorName">
             {{'COMMISSIONS.DETAILS.Created_by' | translate: { name: authorName } }}, {{
-            display.commission.createdAt.seconds * 1000 | date:'medium':null:translate.currentLang}}
+            display.commission.createdAt.seconds * 1000 | date:'medium':null:settings.dateFormat}}
           </div>
           <app-user-rating-display [userId]="display.commission.authorId"></app-user-rating-display>
         </div>
@@ -199,7 +199,7 @@
                 <div>{{display.userOffer.offer | number:'1.0':translate.currentLang}}</div>
               </div>
               <div>
-                {{display.userOffer.date.seconds * 1000 | date:'medium':null:translate.currentLang}}
+                {{display.userOffer.date.seconds * 1000 | date:'medium':null:settings.dateFormat}}
               </div>
               <button nz-button nzDanger nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
                       (nzOnConfirm)="removeOffer(display.commission, display.userId)">
@@ -299,7 +299,7 @@
               {{'COMMISSIONS.CREATION.Contact_info' | translate}}: <br>{{candidate.contact}}
             </div>
             <div>
-              {{candidate.date.seconds * 1000 | date:'medium':null:translate.currentLang}}
+              {{candidate.date.seconds * 1000 | date:'medium':null:settings.dateFormat}}
             </div>
           </div>
           <div *ngIf="display.commission.candidates.length === 0">

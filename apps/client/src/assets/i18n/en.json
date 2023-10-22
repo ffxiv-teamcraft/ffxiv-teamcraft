@@ -424,6 +424,7 @@
     "Title": "Settings",
     "General": "General",
     "Link_base": "Item links",
+    "DateFormat": "Date Format",
     "Region": "Region",
     "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain regions.",
     "Proxy": "Proxy",
@@ -1694,6 +1695,7 @@
         "Size": "Size",
         "Large": "Large",
         "Time_since_thrown": "Time since throw",
+        "Throw_etime": "Line throw etime",
         "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
         "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
         "ERRORS": {

@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.11...v11.0.12) (2023-10-22)
+
+
+### Features
+
+* **fishing-overlay:** display throw etime ([8b41bbb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8b41bbbc6333108dff79fdcb9e2a257c3b20f34e)), closes [#2724](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2724)
+
+
+### Bug Fixes
+
+* **alarms:** fixed timer for spawns with weather transitions and no time restriction ([06d0f43](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/06d0f433a6ee41853bff8e666d1ca921eedfb94f))
+* **desktop:** removed notification for Teamcraft started in the background ([a16b3aa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a16b3aaed04df8381a5e30efab95024bf2ebb03c))
+* **island-sanctuary:** names for new animals now loading properly ([c990770](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c9907704da4f430821346e7bfcbe978aaf179eb8))
+
 ### [11.0.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.10...v11.0.11) (2023-10-13)
 
 

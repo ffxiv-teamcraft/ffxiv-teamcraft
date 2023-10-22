@@ -9,7 +9,7 @@
         <div fxLayout="column">
           <div>{{replay.authorId | characterName | async}}</div>
           <div>
-            {{(replay.startTime.seconds * 1000) | date:'short':translate.currentLang}}
+            {{(replay.startTime.seconds * 1000) | date:'short':null:settings.dateFormat}}
             - {{replay.playerStats.craftsmanship}}
             /{{replay.playerStats._control}}/{{replay.playerStats.cp}}
           </div>

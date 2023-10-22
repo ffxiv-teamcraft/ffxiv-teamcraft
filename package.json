@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "11.0.11",
+  "version": "11.0.12",
   "license": "MIT",
   "main": "dist/apps/electron/main.js",
   "build": {
@@ -299,6 +299,7 @@
     "typescript": "5.1.6",
     "utf-8-validate": "^5.0.7",
     "validate-commit-msg": "^2.14.0",
+    "webpack-bundle-analyzer": "^4.9.1",
     "webpack-merge": "^5.9.0",
     "ws": "^8.2.3",
     "xhr2": "^0.2.1",

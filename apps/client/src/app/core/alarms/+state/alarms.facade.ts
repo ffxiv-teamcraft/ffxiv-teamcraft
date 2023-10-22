@@ -588,11 +588,13 @@ export class AlarmsFacade {
     if (sortedSpawns?.length === 0) {
       const weatherSpawn = weatherSpawns[0];
       const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
+      const normalWeatherStop = new Date(this.weatherService.getNextDiffWeatherTime(weatherSpawn.spawn.getTime(), alarm.weathers, alarm.mapId)).getUTCHours() || 24;
+      const transitionWeatherStop = new Date(this.weatherService.nextWeatherTime(weatherSpawn.spawn.getTime())).getUTCHours() || 24;
       return {
         hours: weatherSpawn.spawn.getUTCHours(),
         days: days,
         date: weatherSpawn.spawn,
-        despawn: new Date(this.weatherService.getNextDiffWeatherTime(weatherSpawn.spawn.getTime(), alarm.weathers, alarm.mapId)).getUTCHours() || 24,
+        despawn: alarm.weathersFrom.length > 0 ? transitionWeatherStop : normalWeatherStop,
         weather: weatherSpawn.weather
       };
     }

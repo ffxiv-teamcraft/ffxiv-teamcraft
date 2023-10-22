@@ -107,8 +107,8 @@
             </button>
           </div>
         </nz-page-header-title>
-        <nz-page-header-subtitle>{{'FISH_TRAIN.Departure' | translate:{ time: display.start | date:'short':null:translate.currentLang } }}
-          , {{'FISH_TRAIN.Terminus' | translate:{ time: display.stop | date:'short':null:translate.currentLang } }}</nz-page-header-subtitle>
+        <nz-page-header-subtitle>{{'FISH_TRAIN.Departure' | translate:{ time: display.start | date:'short':null:settings.dateFormat } }}
+          , {{'FISH_TRAIN.Terminus' | translate:{ time: display.stop | date:'short':null:settings.dateFormat } }}</nz-page-header-subtitle>
         <nz-page-header-content>
           <div class="flex-row gap-5">
             <ng-container *ngIf="display.isConductor; else serverTpl">

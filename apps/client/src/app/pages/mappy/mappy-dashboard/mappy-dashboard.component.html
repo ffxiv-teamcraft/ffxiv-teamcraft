@@ -29,11 +29,11 @@
         <ng-template #description>
           <nz-tag class="custom-tag" [style.border-color]="map.updates?.BNPC && !map.old.BNPC ? '#87d068' : '#f50'">
             <span class="companion-svg">&#x0F202;</span>
-            {{map.updates?.BNPC ? (map.updates?.BNPC * 1000 | date:'medium':null:translate.currentLang) : 'COMMON.Never' | translate}}
+            {{map.updates?.BNPC ? (map.updates?.BNPC * 1000 | date:'medium':null:settings.dateFormat) : 'COMMON.Never' | translate}}
           </nz-tag>
           <nz-tag class="custom-tag" [style.border-color]="map.updates?.Node && !map.old.Node ? '#87d068' : '#f50'">
             <span class="companion-svg">&#x0F016;</span>
-            {{map.updates?.Node ? (map.updates?.Node * 1000 | date:'medium':null:translate.currentLang) : 'COMMON.Never' | translate}}
+            {{map.updates?.Node ? (map.updates?.Node * 1000 | date:'medium':null:settings.dateFormat) : 'COMMON.Never' | translate}}
           </nz-tag>
           <nz-tag [nzColor]="'#f50'" *ngIf="map.missingNodes > 0">{{'MAPPY.X_Missing_nodes' | translate:{ amount: map.missingNodes } }}</nz-tag>
         </ng-template>

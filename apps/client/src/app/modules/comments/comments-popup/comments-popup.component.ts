@@ -7,6 +7,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { shareReplay } from 'rxjs/operators';
 import { AbstractNotification } from '../../../core/notification/abstract-notification';
 import { NotificationService } from '../../../core/notification/notification.service';
+import { SettingsService } from '../../settings/settings.service';
 
 @Component({
   selector: 'app-comments-popup',
@@ -32,7 +33,7 @@ export class CommentsPopupComponent implements OnInit {
   userId$ = this.authFacade.userId$.pipe(shareReplay({ bufferSize: 1, refCount: true }));
 
   constructor(private commentsService: CommentsService, private authFacade: AuthFacade,
-              private notificationService: NotificationService) {
+              private notificationService: NotificationService, public settings: SettingsService) {
   }
 
   ngOnInit() {

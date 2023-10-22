@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { combineLatest, interval, Observable, ReplaySubject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
-import { map } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 import { FishingReporterState } from '../../../core/data-reporting/state/fishing-reporter-state';
 import { LazyFishingSpot } from '@ffxiv-teamcraft/data/model/lazy-fishing-spot';
 
@@ -15,7 +15,7 @@ export class FishingReporterOverlayComponent {
 
   public state$: ReplaySubject<FishingReporterState> = new ReplaySubject<FishingReporterState>();
 
-  public throwTime$: Observable<number> = combineLatest([interval(1000), this.state$]).pipe(
+  public timeSinceThrown$: Observable<number> = combineLatest([interval(1000), this.state$]).pipe(
     map(([, state]) => {
       // If they never threw
       if (!state.throwData || !state.isFishing) {
@@ -28,6 +28,17 @@ export class FishingReporterOverlayComponent {
       // If they threw and bite happened
       return Math.floor((state.biteData.timestamp - state.throwData.timestamp) / 1000);
     })
+  );
+
+  public throwTime$: Observable<number> = this.state$.pipe(
+    map((state) => {
+      // If they never threw
+      if (!state.throwData || !state.isFishing) {
+        return 0;
+      }
+      return state.throwData.etime;
+    }),
+    filter(Boolean)
   );
 
   public isIgnoredSpot$ = this.state$.pipe(

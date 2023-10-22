@@ -9,10 +9,10 @@
 
       <div *ngIf="report?.created_at" fxFlex="0 0 auto" fxLayoutAlign="flex-end flex-end" fxFlexAlign="flex-end flex-end"
            class="last-update">{{'ALLAGAN_REPORTS.Last_updated' | translate}}
-        : {{report.created_at | date:'short':translate.currentLang}}</div>
+        : {{report.created_at | date:'short':null:settings.dateFormat}}</div>
       <div *ngIf="queueEntry?.created_at" fxFlex="0 0 auto" fxLayoutAlign="flex-end flex-end" fxFlexAlign="flex-end flex-end"
            class="last-update">{{'ALLAGAN_REPORTS.Submitted' | translate}}
-        : {{queueEntry.created_at | date:'short':translate.currentLang}}</div>
+        : {{queueEntry.created_at | date:'short':null:settings.dateFormat}}</div>
     </div>
     <div fxLayout="row" fxLayoutGap="10px">
       <nz-tag class="custom-tag" *ngIf="status !== AllaganReportStatus.ACCEPTED"

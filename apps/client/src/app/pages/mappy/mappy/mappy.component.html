@@ -40,9 +40,9 @@
 
     <div fxLayout="column">
       <nz-statistic [nzValue]="display.entries.length" [nzTitle]="'MAPPY.Total_entries' | translate"></nz-statistic>
-      <nz-statistic [nzValue]="display.updates?.BNPC ? (display.updates?.BNPC* 1000 | date:'medium':null:translate.currentLang) : 'COMMON.Never' | translate"
+      <nz-statistic [nzValue]="display.updates?.BNPC ? (display.updates?.BNPC* 1000 | date:'medium':null:settings.dateFormat) : 'COMMON.Never' | translate"
                     [nzTitle]="'MAPPY.Last_bnpc_update' | translate"></nz-statistic>
-      <nz-statistic [nzValue]="display.updates?.Node ? (display.updates?.Node * 1000 | date:'medium':null:translate.currentLang) : 'COMMON.Never' | translate"
+      <nz-statistic [nzValue]="display.updates?.Node ? (display.updates?.Node * 1000 | date:'medium':null:settings.dateFormat) : 'COMMON.Never' | translate"
                     [nzTitle]="'MAPPY.Last_node_update' | translate"></nz-statistic>
 
       <nz-divider nzOrientation="left" nzText="{{'MAPPY.Missing_nodes' | translate}}"></nz-divider>

@@ -10,6 +10,7 @@ import { ListPricingService } from '../list-pricing.service';
 import { DataType } from '@ffxiv-teamcraft/types';
 import { TranslateService } from '@ngx-translate/core';
 import { Price } from '../model/price';
+import { SettingsService } from '../../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-list-pricing-row',
@@ -96,7 +97,7 @@ export class ListPricingRowComponent extends TeamcraftComponent {
   );
 
   constructor(private lazyData: LazyDataFacade, private listPricingService: ListPricingService,
-              public translate: TranslateService) {
+              public translate: TranslateService, public settings: SettingsService) {
     super();
 
     this.updates$.pipe(

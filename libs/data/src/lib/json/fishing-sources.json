@@ -22894,6 +22894,13 @@
       "bait": 36588,
       "snagging": false,
       "minGathering": 0
+    },
+    {
+      "spot": 254,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 36588,
+      "minGathering": 0
     }
   ],
   "36392": [

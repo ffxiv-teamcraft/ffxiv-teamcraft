@@ -62,7 +62,8 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
           }).map(item => item.itemId as number),
           33870,
           15857,
-          15858
+          15858,
+          39884
         ];
       })
     );

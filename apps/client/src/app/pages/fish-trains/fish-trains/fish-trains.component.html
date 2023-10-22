@@ -64,10 +64,10 @@
       <nz-tag>{{'MARKETBOARD.Server' | translate}}:&nbsp;{{train.world || '???'}}</nz-tag>
     </div>
     <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="{span: 6, offset: 4}" [nzXl]="{span: 3, offset: 0}">
-      {{'FISH_TRAIN.Departure' | translate: { time: train.start | date:'short':null:translate.currentLang } }}
+      {{'FISH_TRAIN.Departure' | translate: { time: train.start | date:'short':null:settings.dateFormat } }}
     </div>
     <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="6" [nzXl]="3">
-      {{'FISH_TRAIN.Terminus' | translate: { time: train.end | date:'short':null:translate.currentLang } }}
+      {{'FISH_TRAIN.Terminus' | translate: { time: train.end | date:'short':null:settings.dateFormat } }}
     </div>
     <div nz-col [nzXs]="24" [nzSm]="24" [nzMd]="8" [nzXl]="5">
       <div class="flex-row-wrap justify-end gap-5">

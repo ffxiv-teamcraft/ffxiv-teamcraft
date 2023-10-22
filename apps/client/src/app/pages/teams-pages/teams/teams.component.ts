@@ -16,6 +16,7 @@ import { PlatformService } from '../../../core/tools/platform.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { WebhookSetting } from '../../../model/team/webhook-setting';
 import { OauthService } from '../../../core/auth/oauth.service';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-teams',
@@ -43,7 +44,8 @@ export class TeamsComponent implements OnInit {
               private authFacade: AuthFacade, private discordWebhook: DiscordWebhookService,
               private message: NzMessageService, private route: ActivatedRoute, private router: Router,
               private http: HttpClient, private platform: PlatformService,
-              private ipc: IpcService, private oauth: OauthService) {
+              private ipc: IpcService, private oauth: OauthService,
+              public settings: SettingsService) {
     this.teamsFacade.loadMyTeams();
   }
 

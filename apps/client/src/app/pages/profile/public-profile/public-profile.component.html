@@ -49,7 +49,7 @@
           <ng-template #summary>{{'PROFILE.Total_rankings' | translate}}: #1: {{fishingRankings.summary[1]}}, #2: {{fishingRankings.summary[2]}},
             #3: {{fishingRankings.summary[3]}}</ng-template>
           <cdk-virtual-scroll-viewport itemSize="73" class="fish-rankings-viewport">
-            <nz-list-item *cdkVirtualFor="let row of fishingRankings.data" [nzContent]="row.date | date:'short':undefined:translate.currentLang">
+            <nz-list-item *cdkVirtualFor="let row of fishingRankings.data" [nzContent]="row.date | date:'short':undefined:settings.dateFormat">
               <nz-skeleton *ngIf="!row" [nzAvatar]="true" [nzParagraph]="{ rows: 1 }"></nz-skeleton>
               <nz-list-item-meta [nzAvatar]="avatar"
                                  nzTitle="#{{row.ranking.rank}} - {{row.itemId | itemName | i18n}}"

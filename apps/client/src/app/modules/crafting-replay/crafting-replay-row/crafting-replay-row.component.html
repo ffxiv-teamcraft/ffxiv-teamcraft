@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutGap="10px">
   <div fxLayout="row wrap" fxLayoutGap="5px" fxLayoutAlign="space-between center">
     <div>
-      {{(replay.startTime.seconds * 1000) | date:'short':translate.currentLang}} - {{replay.itemId | itemName | i18n}} - {{replay.playerStats.craftsmanship}}
+      {{(replay.startTime.seconds * 1000) | date:'short':null:settings.dateFormat}} - {{replay.itemId | itemName | i18n}} - {{replay.playerStats.craftsmanship}}
       /{{replay.playerStats._control}}/{{replay.playerStats.cp}}
     </div>
     <div fxLayout="row wrap" fxLayoutGap="5px">

@@ -38,14 +38,6 @@ export class TrayMenu {
       }
       this.mainWindow.win.isVisible() ? this.mainWindow.win.hide() : this.mainWindow.win.show();
     });
-    this.mainWindow.win.once('ready-to-show', () => {
-      if (this.store.get('start-minimized', false)) {
-        this._tray.displayBalloon({
-          title: 'Teamcraft launched in the background',
-          content: 'To change this behavior, visit Settings -> Desktop.'
-        });
-      }
-    });
     this.mainWindow.win.webContents
       .executeJavaScript('localStorage.getItem("settings") || "{}";', true)
       .then(settingsString => {

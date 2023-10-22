@@ -9,6 +9,7 @@ import { ListRow } from '../../../modules/list/model/list-row';
 import { ProfitEntry } from '../model/profit-entry';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ListAdditionRecord } from '../../../modules/list-picker/list-addition-record';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-profits-helper',
@@ -89,7 +90,8 @@ export class ProfitsHelperComponent {
   itemsInList: Record<number, 1> = {};
 
   constructor(private profitsService: ProfitsService, private authFacade: AuthFacade,
-              public translate: TranslateService, private listPicker: ListPickerService) {
+              public translate: TranslateService, private listPicker: ListPickerService,
+              public settings: SettingsService) {
   }
 
   addItemToList(row: ProfitEntry): void {

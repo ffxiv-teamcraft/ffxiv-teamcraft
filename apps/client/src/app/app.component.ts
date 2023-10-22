@@ -83,6 +83,8 @@ export class AppComponent implements OnInit {
 
   public availableLanguages = this.settings.availableLocales;
 
+  public availableDateLocales = this.settings.availableLocales;
+
   public pcapStatus$: Observable<NzBadgeStatusType> = this.ipc.pcapStatus$.pipe(
     map(status => {
       return (<Record<PacketCaptureStatus, NzBadgeStatusType>>{
