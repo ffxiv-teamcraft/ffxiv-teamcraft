@@ -1695,6 +1695,7 @@
         "Size": "Größe",
         "Large": "Groß",
         "Time_since_thrown": "Zeit seit Wurf",
+        "Throw_etime": "Line throw etime",
         "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
         "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
         "ERRORS": {
