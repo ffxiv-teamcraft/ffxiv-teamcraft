@@ -1695,6 +1695,7 @@
         "Size": "尺寸",
         "Large": "大",
         "Time_since_thrown": "抛竿以来的时间",
+        "Throw_etime": "Line throw etime",
         "Ignored_spot": "报告工具不支持该钓场，可能会显示不正常的数值。",
         "Ignored_spot_description": "报告工具不会上传你钓到的鱼",
         "ERRORS": {
