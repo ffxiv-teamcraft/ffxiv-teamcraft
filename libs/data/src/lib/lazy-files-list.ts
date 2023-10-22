@@ -245,7 +245,7 @@ export const lazyFilesList = {
   },
   'gubalBnpcsIndex': {
     'fileName': 'gubal-bnpcs-index.json',
-    'hashedFileName': 'gubal-bnpcs-index.75fa0d2241c81718741a501328562bf418916942.json'
+    'hashedFileName': 'gubal-bnpcs-index.d471ab90f016d0f3caf343a90f42b116642186c8.json'
   },
   'hqFlags': {
     'fileName': 'hq-flags.json',
@@ -281,7 +281,7 @@ export const lazyFilesList = {
   },
   'islandAnimals': {
     'fileName': 'island-animals.json',
-    'hashedFileName': 'island-animals.88fcdef8e7913220bd162336177bbc78be9029b4.json'
+    'hashedFileName': 'island-animals.513eb378803b134c4245a5c2ac05594ad4a47764.json'
   },
   'islandBuildings': {
     'fileName': 'island-buildings.json',
@@ -525,7 +525,7 @@ export const lazyFilesList = {
   },
   'reduction': {
     'fileName': 'reduction.json',
-    'hashedFileName': 'reduction.0e7b8c7525b3bd33f2231434e002cfd5bcff6dfd.json'
+    'hashedFileName': 'reduction.5a57133067f6e303574f7114b8967bc1ae3222cf.json'
   },
   'retainerTasks': {
     'fileName': 'retainer-tasks.json',
@@ -661,7 +661,7 @@ export const lazyFilesList = {
   },
   'voyageSources': {
     'fileName': 'voyage-sources.json',
-    'hashedFileName': 'voyage-sources.e6a502e1965afa1837cd6f02efd0c76cd53b3ceb.json'
+    'hashedFileName': 'voyage-sources.c180cc7d2fcd556bdbdc756896b3f4275231a30b.json'
   },
   'weathers': {
     'fileName': 'weathers.json',
