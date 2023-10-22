@@ -1695,6 +1695,7 @@
         "Size": "크기",
         "Large": "월척",
         "Time_since_thrown": "[낚싯대 던지기] 사용 후 시간",
+        "Throw_etime": "Line throw etime",
         "Ignored_spot": "해당 낚시터는 리포트 기능을 지원하지 않기 때문에, 이상한 값이 보일 수도 있습니다.",
         "Ignored_spot_description": "잡은 물고기는 낚시 리포트에 포함되지 않습니다",
         "ERRORS": {
