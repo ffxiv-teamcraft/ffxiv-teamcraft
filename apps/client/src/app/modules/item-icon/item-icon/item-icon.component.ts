@@ -59,12 +59,19 @@ export class ItemIconComponent {
         this.tooltipDisabled = true;
         this.disableClick = true;
       }
+      // Asset icons
+      if (icon?.toString().startsWith('./')) {
+        return of(icon);
+      }
+      // No item id? just return the icon that we have
       if (!itemId) {
         return of(icon);
       }
+      // GT icons
       if (icon && icon.toString() === icon && icon.toString().indexOf('custom/') > -1 && !icon.toString().startsWith('t/')) {
         return of(icon);
       }
+      // Direct icons
       if (icon?.toString().startsWith('https://')) {
         return of(icon);
       }

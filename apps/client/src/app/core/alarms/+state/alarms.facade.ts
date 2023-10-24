@@ -594,7 +594,7 @@ export class AlarmsFacade {
         hours: weatherSpawn.spawn.getUTCHours(),
         days: days,
         date: weatherSpawn.spawn,
-        despawn: alarm.weathersFrom.length > 0 ? transitionWeatherStop : normalWeatherStop,
+        despawn: alarm.weathersFrom?.length > 0 ? transitionWeatherStop : normalWeatherStop,
         weather: weatherSpawn.weather
       };
     }
