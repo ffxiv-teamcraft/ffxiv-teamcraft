@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.12...v11.0.13) (2023-10-24)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarms page not loading for some users ([45d5409](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/45d5409ea56ac5bd0be2c2ee7675ee5998ca8575))
+* **icon:** fixed airship drafts not loading icon ([e55a9e6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e55a9e601b14f5d12e313891b0bf3f930782764f))
+
 ### [11.0.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.11...v11.0.12) (2023-10-22)
 
 
