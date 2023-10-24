@@ -441,7 +441,7 @@ export const lazyFilesList = {
   },
   'mogstationSources': {
     'fileName': 'mogstation-sources.json',
-    'hashedFileName': 'mogstation-sources.686491396e21512aeb0953c5753cd8ad3586af2f.json'
+    'hashedFileName': 'mogstation-sources.d9fb2fe7bec3953fe6d0d66f007603a20d07ef15.json'
   },
   'monsterSearch': {
     'fileName': 'monster-search.index',
@@ -661,7 +661,7 @@ export const lazyFilesList = {
   },
   'voyageSources': {
     'fileName': 'voyage-sources.json',
-    'hashedFileName': 'voyage-sources.08bd0555d262429f77e305bde79d20bd4aef8a1a.json'
+    'hashedFileName': 'voyage-sources.059205905981a60673b58a8d832fd67e7f526164.json'
   },
   'weathers': {
     'fileName': 'weathers.json',
