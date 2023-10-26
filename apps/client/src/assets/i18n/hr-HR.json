@@ -379,7 +379,7 @@
   "Use_lodestoneId": "Koristite Lodestone ID",
   "LodestoneId": "Lodestone ID",
   "List_forked": "Popis kopiran na vaš račun",
-  "List_fork": "Kopirajte ovaj popis na račun",
+  "List_fork": "Copy this list to your account (ctrl + click to copy as offline list)",
   "List_not_found": "Popis nije pronađen ili nemate pristup",
   "Requirements_for_craft": "Vidjeti zahtjeve",
   "Zone_breakdown": "Opis područja",
