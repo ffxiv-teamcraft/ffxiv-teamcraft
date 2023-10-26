@@ -421,6 +421,7 @@
   "Precraft_tier": "Nível",
   "Regenerating_lists": "Recriando listas",
   "SETTINGS": {
+    "Requires_restart": "Requires restart/refresh to be taken into account",
     "Title": "Configurações",
     "General": "Geral",
     "Link_base": "Links de item",
@@ -457,6 +458,7 @@
     "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the supporter exclusive features properly.",
     "Show_devtools": "Mostrar ferramentas de desenvolvimento",
     "Clear_cache": "Limpar a cache (a app será reiniciada)",
+    "Disable_fc_integration": "Disable FC sharing features",
     "Enable_item_tags": "Ligar tags de item",
     "Show_copy_list_own_list": "Mostrar botão de cópia em painéis de lista próprios",
     "Custom_theme": "Tema personalizado",
