@@ -343,10 +343,13 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     });
   }
 
-  cloneList(list: List): void {
+  cloneList(list: List, event: MouseEvent): void {
     this.listsFacade.loadMyLists();
     const clone = ListController.clone(list);
     this.analyticsService.event('List created');
+    if (event.ctrlKey) {
+      clone.offline = true;
+    }
     this.listsFacade.updateList(list);
     this.listManager.upgradeList(clone).pipe(
       first()

@@ -28,6 +28,13 @@
           </nz-select>
         </nz-form-control>
       </nz-form-item>
+      <nz-form-item *ngIf="!platform.isDesktop()" class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label [(ngModel)]="settings.autoOpenInDesktop"
+                 nz-checkbox>{{'SETTINGS.Auto_open_in_desktop' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
       <div>
         <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Theme' | translate"></nz-divider>
       </div>
@@ -326,13 +333,6 @@
           <label [(ngModel)]="trackItemsOnSale" nz-checkbox>
             {{'SETTINGS.Track_items_on_sale' | translate}}
           </label>
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item *ngIf="!platform.isDesktop()" class="empty-label">
-        <nz-form-label [nzSpan]="5"></nz-form-label>
-        <nz-form-control [nzSpan]="12">
-          <label [(ngModel)]="settings.autoOpenInDesktop"
-                 nz-checkbox>{{'SETTINGS.Auto_open_in_desktop' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
 

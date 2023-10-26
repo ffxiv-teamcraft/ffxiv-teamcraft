@@ -379,7 +379,7 @@
   "Use_lodestoneId": "Use lodestone ID",
   "LodestoneId": "Lodestone ID",
   "List_forked": "List copied to your account",
-  "List_fork": "Copy this list to your account",
+  "List_fork": "Copy this list to your account (ctrl + click to copy as offline list)",
   "List_not_found": "List not found or you don't have access to it",
   "Requirements_for_craft": "See requirements",
   "Zone_breakdown": "Area breakdown",

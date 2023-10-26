@@ -195,9 +195,12 @@ export class ListPanelComponent extends TeamcraftComponent {
     this.listsFacade.updateList(list);
   }
 
-  cloneList(list: List): void {
+  cloneList(list: List, event: MouseEvent): void {
     this.listsFacade.loadMyLists();
     const clone = ListController.clone(list);
+    if (event.ctrlKey) {
+      clone.offline = true;
+    }
     this.listsFacade.updateList(list);
     this.listManager.upgradeList(clone).pipe(
       first(),

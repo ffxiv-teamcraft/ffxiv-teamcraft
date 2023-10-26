@@ -35,7 +35,7 @@
                 nzShape="circle" nzType="primary">
           <i nz-icon nzType="lock"></i>
         </button>
-        <button (click)="cloneList(list)" [nzTooltipTitle]="'List_fork' | translate" nz-button nz-tooltip nzShape="circle"
+        <button (click)="cloneList(list, $event)" [nzTooltipTitle]="'List_fork' | translate" nz-button nz-tooltip nzShape="circle"
                 nzType="primary">
           <i nz-icon nzType="copy" theme="outline"></i>
         </button>
