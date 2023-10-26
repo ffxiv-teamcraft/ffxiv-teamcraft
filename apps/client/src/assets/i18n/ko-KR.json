@@ -421,6 +421,7 @@
   "Precraft_tier": "단계",
   "Regenerating_lists": "목록 갱신",
   "SETTINGS": {
+    "Requires_restart": "Requires restart/refresh to be taken into account",
     "Title": "설정",
     "General": "일반",
     "Link_base": "아이템 링크",
@@ -457,6 +458,7 @@
     "No_nickname_warning": "후원자 전용 기능들을 사용하기 위해 설정 페이지에서 닉네임을 설정하시기 바랍니다.",
     "Show_devtools": "개발 도구 표시",
     "Clear_cache": "캐시 지우기(프로그램이 다시 시작됩니다)",
+    "Disable_fc_integration": "Disable FC sharing features",
     "Enable_item_tags": "아이템 태그 사용",
     "Show_copy_list_own_list": "내 목록 패널에 복사 버튼 표시",
     "Custom_theme": "사용자 지정 테마",
