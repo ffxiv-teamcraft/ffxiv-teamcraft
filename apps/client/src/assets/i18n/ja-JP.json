@@ -421,6 +421,7 @@
   "Precraft_tier": "段階",
   "Regenerating_lists": "リストの更新",
   "SETTINGS": {
+    "Requires_restart": "Requires restart/refresh to be taken into account",
     "Title": "設定",
     "General": "一般",
     "Link_base": "アイテムリンク",
@@ -457,6 +458,7 @@
     "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the supporter exclusive features properly.",
     "Show_devtools": "Devツールを表示",
     "Clear_cache": "キャッシュをクリア(アプリが再起動されます)",
+    "Disable_fc_integration": "Disable FC sharing features",
     "Enable_item_tags": "アイテムダグを使用",
     "Show_copy_list_own_list": "マイリストバネルにコピーボタンを表示する",
     "Custom_theme": "カスタムテーマ",
