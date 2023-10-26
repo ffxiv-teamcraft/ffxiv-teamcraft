@@ -421,6 +421,7 @@
   "Precraft_tier": "阶段",
   "Regenerating_lists": "重新生成清单",
   "SETTINGS": {
+    "Requires_restart": "Requires restart/refresh to be taken into account",
     "Title": "设置",
     "General": "通用",
     "Link_base": "物品链接",
@@ -457,6 +458,7 @@
     "No_nickname_warning": "请到设置页面设置昵称以使用赞助人专属功能",
     "Show_devtools": "显示开发者工具",
     "Clear_cache": "清除缓存 (将重新启动应用程序)",
+    "Disable_fc_integration": "Disable FC sharing features",
     "Enable_item_tags": "启用物品标签",
     "Show_copy_list_own_list": "在自己的清单页也显示复制清单按钮",
     "Custom_theme": "自定义主题",
