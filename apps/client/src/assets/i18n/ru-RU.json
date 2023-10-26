@@ -379,7 +379,7 @@
   "Use_lodestoneId": "Использовать lodestone ID",
   "LodestoneId": "Lodestone ID",
   "List_forked": "Список скопирован на ваш аккаунт",
-  "List_fork": "Копировать список на ваш аккаунт",
+  "List_fork": "Copy this list to your account (ctrl + click to copy as offline list)",
   "List_not_found": "Список не найден или у вас нет к нему доступа",
   "Requirements_for_craft": "Посмотреть требования",
   "Zone_breakdown": "Площадь зоны",
