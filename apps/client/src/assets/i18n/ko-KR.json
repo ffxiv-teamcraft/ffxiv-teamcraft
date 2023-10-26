@@ -379,7 +379,7 @@
   "Use_lodestoneId": "Lodestone ID 사용",
   "LodestoneId": "Lodestone ID",
   "List_forked": "목록이 내 계정에 복사되었습니다",
-  "List_fork": "이 목록을 내 계정에 복사하기",
+  "List_fork": "Copy this list to your account (ctrl + click to copy as offline list)",
   "List_not_found": "목록이 없거나 접근할 권한이 없습니다",
   "Requirements_for_craft": "상세정보",
   "Zone_breakdown": "지역 그룹화",
