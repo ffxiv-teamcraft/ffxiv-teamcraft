@@ -177,6 +177,13 @@
       <div>
         <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Lists' | translate"></nz-divider>
       </div>
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12" [nzExtra]="'SETTINGS.Requires_restart' | translate">
+          <label [(ngModel)]="settings.disableFcIntegration"
+                 nz-checkbox>{{'SETTINGS.Disable_fc_integration' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
       <nz-form-item>
         <nz-form-label [nzSpan]="5">{{'SETTINGS.Scrolling_behavior' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12" nzValidateStatus="validating" [nzValidatingTip]="'SETTINGS.Scrolling_behavior_explain' | translate">

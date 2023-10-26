@@ -148,7 +148,7 @@ export class SettingsService {
   }
 
   public get dateFormat(): string {
-    return this.translate.currentLang == "en" ? this.getString('date-format', "en-us") : this.translate.currentLang; 
+    return this.translate.currentLang == "en" ? this.getString('date-format', "en-us") : this.translate.currentLang;
   }
 
   public set dateFormat(lang: string) {
@@ -638,6 +638,14 @@ export class SettingsService {
 
   public set displayRemaining(displayRemaining: boolean) {
     this.setSetting('displayRemaining', displayRemaining.toString());
+  }
+
+  public get disableFcIntegration(): boolean {
+    return this.getBoolean('disableFcIntegration', false);
+  }
+
+  public set disableFcIntegration(disable: boolean) {
+    this.setSetting('disableFcIntegration', disable.toString());
   }
 
   public get disableCrossWorld(): boolean {
