@@ -379,7 +379,7 @@
   "Use_lodestoneId": "使用 Lodestone ID",
   "LodestoneId": "Lodestone ID",
   "List_forked": "清单已复制到你的账号",
-  "List_fork": "将此清单复制到你的账号",
+  "List_fork": "Copy this list to your account (ctrl + click to copy as offline list)",
   "List_not_found": "没有找到清单或者你没有权限访问",
   "Requirements_for_craft": "查看要求",
   "Zone_breakdown": "按地图显示",
