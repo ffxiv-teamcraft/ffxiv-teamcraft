@@ -379,7 +379,7 @@
   "Use_lodestoneId": "キャラクターIDで検索",
   "LodestoneId": "ロドストID",
   "List_forked": "このリストが自分のアカウントにコピーされました",
-  "List_fork": "このリストを自分のアカウントにコピーする",
+  "List_fork": "Copy this list to your account (ctrl + click to copy as offline list)",
   "List_not_found": "リストになかったり、接近する権限がありません",
   "Requirements_for_craft": "詳細情報",
   "Zone_breakdown": "エリアを纏めて表示する",
