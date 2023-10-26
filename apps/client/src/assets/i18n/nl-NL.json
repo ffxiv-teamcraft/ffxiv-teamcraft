@@ -421,6 +421,7 @@
   "Precraft_tier": "Niveaus",
   "Regenerating_lists": "Lijsten regenereren",
   "SETTINGS": {
+    "Requires_restart": "Requires restart/refresh to be taken into account",
     "Title": "Instellingen",
     "General": "Algemeen",
     "Link_base": "Item koppelingen",
@@ -457,6 +458,7 @@
     "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the supporter exclusive features properly.",
     "Show_devtools": "Show dev tools",
     "Clear_cache": "Clear cache (will restart the app)",
+    "Disable_fc_integration": "Disable FC sharing features",
     "Enable_item_tags": "Enable item tags",
     "Show_copy_list_own_list": "Show copy button on own list panels",
     "Custom_theme": "Custom theme",
