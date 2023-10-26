@@ -379,7 +379,7 @@
   "Use_lodestoneId": "Usar ID de lodestone",
   "LodestoneId": "ID de Lodestone",
   "List_forked": "Lista copiada a su cuenta",
-  "List_fork": "Copie esta lista a su cuenta",
+  "List_fork": "Copy this list to your account (ctrl + click to copy as offline list)",
   "List_not_found": "Lista no encontrada o no tiene acceso a ella",
   "Requirements_for_craft": "Ver requerimientos",
   "Zone_breakdown": "Desglose por área",
