@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { IpcService } from './ipc.service';
-import { UniversalisService } from '../api/universalis.service';
 import { buffer, debounce, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { combineLatest, merge, timer } from 'rxjs';
 import { AuthFacade } from '../../+state/auth.facade';
@@ -29,8 +28,7 @@ export class PacketCaptureTrackerService {
   private notificationRef: NzNotificationRef;
 
   constructor(private ipc: IpcService, private inventoryService: InventoryService,
-              private universalis: UniversalisService, private authFacade: AuthFacade,
-              private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade,
+              private authFacade: AuthFacade, private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade,
               private settings: SettingsService, private lazyData: LazyDataFacade,
               private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade,
               private nzNotification: NzNotificationService, private translate: TranslateService,
@@ -103,7 +101,7 @@ export class PacketCaptureTrackerService {
           return {
             ...patch,
             fromCrafting: isCrafting
-          }
+          };
         })
       );
 

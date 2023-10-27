@@ -1,6 +1,7 @@
 import { Action } from '@ngrx/store';
 
 export enum EorzeaActionTypes {
+  Reset = '[Eorzea] Reset',
   SetZone = '[Eorzea] Set Zone',
   SetMap = '[Eorzea] Set Map',
   SetPcapWeather = '[Eorzea] Set Weather',
@@ -8,6 +9,10 @@ export enum EorzeaActionTypes {
   RemoveStatus = '[Eorzea] Remove Status',
   AddStatus = '[Eorzea] Add Status',
   SetStatuses = '[Eorzea] Set Statuses',
+}
+
+export class Reset implements Action {
+  readonly type = EorzeaActionTypes.Reset;
 }
 
 export class SetZone implements Action {
@@ -59,4 +64,4 @@ export class SetStatuses implements Action {
   }
 }
 
-export type EorzeaAction = SetZone | SetMap | SetPcapWeather | SetBait | RemoveStatus | AddStatus | SetStatuses;
+export type EorzeaAction = SetZone | SetMap | SetPcapWeather | SetBait | RemoveStatus | AddStatus | SetStatuses | Reset;

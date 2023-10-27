@@ -29,6 +29,12 @@ export function eorzeaReducer(
   action: EorzeaAction
 ): EorzeaState {
   switch (action.type) {
+    case EorzeaActionTypes.Reset: {
+      state = {
+        ...initialState
+      }
+      break;
+    }
     case EorzeaActionTypes.SetZone: {
       state = {
         ...state,
