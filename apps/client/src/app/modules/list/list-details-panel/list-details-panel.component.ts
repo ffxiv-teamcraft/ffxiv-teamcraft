@@ -438,8 +438,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     return item.id;
   }
 
-  trackByTier(index: number, item: ListRow[]) {
-    return item.length;
+  trackByTier(index: number) {
+    return index;
   }
 
   trackByZone(index: number, item: ZoneBreakdownRow) {
