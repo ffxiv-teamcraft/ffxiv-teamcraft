@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.13...v11.0.14) (2023-10-31)
+
+
+### Features
+
+* **db:** support for global 6.51 content ([924e7cd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/924e7cd2f103c7717a578187621b05be7f7233fc))
+* **list:** new ctrl + click on copy button to copy as offline ([591a833](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/591a83313a06b6f89ba99b7762490e793de81aed))
+* **list:** new setting to disable FC-related sharing ([f0ed403](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f0ed403b32a1f92681f7a694c2e6d2884fb17dc6))
+
+
+### Bug Fixes
+
+* **fishing-reporter:** fixed inconsistent state after game restart ([25fd079](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/25fd0794c29f3a049b792e3cc2df4b53802783b1))
+* **layout:** properly filter dungeon drops in drops/instances panel ([9a0e2a7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a0e2a74c103a7fadb152e145eff7878796e655e))
+* **list-details:** fixed tiers flickering with hide completed items ([99ab96f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/99ab96f5b6472bd508e2515e5c5754692f9c1464))
+
 ### [11.0.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.12...v11.0.13) (2023-10-24)
 
 
