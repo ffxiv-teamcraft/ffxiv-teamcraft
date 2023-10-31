@@ -6826,7 +6826,7 @@
   {
     "id": 854,
     "zone": 4094,
-    "name": "",
+    "name": "The Red Sands",
     "territory": 1138,
     "scale": 400,
     "weatherRate": 0
@@ -6929,139 +6929,139 @@
   },
   {
     "id": 867,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4383,
+    "name": "Aloalo Island",
+    "territory": 1176,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 868,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4383,
+    "name": "Aloalo Island",
+    "territory": 1176,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 869,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4383,
+    "name": "Aloalo Island",
+    "territory": 1176,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 870,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4383,
+    "name": "Aloalo Island",
+    "territory": 1176,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 871,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4383,
+    "name": "Aloalo Island",
+    "territory": 1176,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 872,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4383,
+    "name": "Aloalo Island",
+    "territory": 1176,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 873,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4383,
+    "name": "Aloalo Island",
+    "territory": 1176,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 874,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4383,
+    "name": "Aloalo Island",
+    "territory": 1176,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 875,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4416,
+    "name": "Another Aloalo Island",
+    "territory": 1179,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 876,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4416,
+    "name": "Another Aloalo Island",
+    "territory": 1179,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 877,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4416,
+    "name": "Another Aloalo Island",
+    "territory": 1179,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 878,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4469,
+    "name": "Blunderville",
+    "territory": 1165,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 879,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4469,
+    "name": "Blunderville",
+    "territory": 1165,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 880,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4469,
+    "name": "Blunderville",
+    "territory": 1165,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 881,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4469,
+    "name": "Blunderville",
+    "territory": 1165,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 882,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4469,
+    "name": "Blunderville",
+    "territory": 1165,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 883,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4469,
+    "name": "Blunderville",
+    "territory": 1165,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 884,
@@ -7121,27 +7121,27 @@
   },
   {
     "id": 891,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4468,
+    "name": "Blunderville Square",
+    "territory": 1197,
+    "scale": 800,
+    "weatherRate": 0
   },
   {
     "id": 892,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4383,
+    "name": "Aloalo Island",
+    "territory": 1176,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 893,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4383,
+    "name": "Aloalo Island",
+    "territory": 1176,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 894,
@@ -7153,11 +7153,11 @@
   },
   {
     "id": 895,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4383,
+    "name": "Aloalo Island",
+    "territory": 1176,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 896,

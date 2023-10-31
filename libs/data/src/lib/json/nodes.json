@@ -19735,24 +19735,92 @@
     "folklore": 36602
   },
   "938": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      41286
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 0,
+    "base": 938,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3155,
+    "radius": 155,
+    "x": 13.79,
+    "y": 10.18,
+    "z": 0,
+    "map": 494,
+    "hiddenItems": [
+      41287
+    ]
   },
   "939": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      41290
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 0,
+    "base": 939,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3195,
+    "radius": 151,
+    "x": 34.46,
+    "y": 22.43,
+    "z": 0,
+    "map": 496,
+    "hiddenItems": [
+      41291
+    ]
   },
   "940": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      41288
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 2,
+    "base": 940,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3361,
+    "radius": 135,
+    "x": 15.74,
+    "y": 35.28,
+    "z": 0,
+    "map": 495,
+    "hiddenItems": [
+      41289
+    ]
   },
   "941": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      41292
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 2,
+    "base": 941,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3195,
+    "radius": 122,
+    "x": 37.54,
+    "y": 13.46,
+    "z": 0,
+    "map": 496,
+    "hiddenItems": [
+      41293
+    ]
   },
   "942": {
     "items": [

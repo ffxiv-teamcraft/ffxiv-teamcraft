@@ -22511,6 +22511,27 @@
     "fr": "Bracelet gravé",
     "icon": "/i/026000/026107.png"
   },
+  "2003468": {
+    "en": "Sparrow Statue",
+    "ja": "",
+    "de": "Holzfigur des Finken",
+    "fr": "Statue de passereau",
+    "icon": "/i/025000/025919.png"
+  },
+  "2003469": {
+    "en": "Southern Sow Bug",
+    "ja": "",
+    "de": "Südlicher Sägerücken",
+    "fr": "Cloporte du sud",
+    "icon": "/i/025000/025919.png"
+  },
+  "2003470": {
+    "en": "Southern Worm",
+    "ja": "",
+    "de": "Südlicher Wurm",
+    "fr": "Ver du sud",
+    "icon": "/i/025000/025919.png"
+  },
   "2003471": {
     "en": "Curiously Carrot-shaped Amplifier",
     "ja": "",
@@ -22524,5 +22545,19 @@
     "de": "Apokryph-Horn",
     "fr": "Cor de l'éternité",
     "icon": "/i/026000/026038.png"
+  },
+  "2003474": {
+    "en": "Turtle Statue",
+    "ja": "",
+    "de": "Holzfigur der Schildkröte",
+    "fr": "Statue de tortue",
+    "icon": "/i/025000/025919.png"
+  },
+  "2003475": {
+    "en": "Whale Statue",
+    "ja": "",
+    "de": "Holzfigur des Wals",
+    "fr": "Statue de baleine",
+    "icon": "/i/025000/025919.png"
   }
 }

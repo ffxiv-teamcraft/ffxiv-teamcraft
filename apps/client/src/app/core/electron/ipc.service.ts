@@ -4,7 +4,7 @@ import { IpcRendererEvent } from 'electron';
 import { Router } from '@angular/router';
 import { Vector2 } from '@ffxiv-teamcraft/types';
 import { BehaviorSubject, combineLatest, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, first, map, switchMap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, first, map, pairwise, switchMap } from 'rxjs/operators';
 import { ofMessageType } from '../rxjs/of-message-type';
 import { Store } from '@ngrx/store';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -62,6 +62,12 @@ export class IpcService {
   private start = Date.now();
 
   private stateSubscription: Subscription;
+
+  public pcapStopped$: Observable<void> = this.pcapStatus$.pipe(
+    pairwise(),
+    filter(([before, after]) => before === PacketCaptureStatus.RUNNING && (after === PacketCaptureStatus.STOPPED || after === PacketCaptureStatus.ERROR)),
+    map(() => void 0)
+  );
 
   private readonly _isChildWindow: boolean;
 

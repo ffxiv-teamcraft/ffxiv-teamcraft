@@ -14582,7 +14582,8 @@
         6
       ],
       "snagging": false,
-      "minGathering": 0
+      "minGathering": 1250,
+      "video": "https://youtu.be/U_oxigpEJtc"
     }
   ],
   "24218": [
@@ -25710,7 +25711,8 @@
       "weathersFrom": [
         3
       ],
-      "minGathering": 3150
+      "minGathering": 3150,
+      "video": "https://youtu.be/riZ90Q-ujiE"
     }
   ],
   "41402": [
@@ -25727,7 +25729,8 @@
       "weathersFrom": [
         2
       ],
-      "minGathering": 3150
+      "minGathering": 3150,
+      "video": "https://youtu.be/4THUzV5A0eY"
     }
   ],
   "41403": [
@@ -25784,7 +25787,8 @@
       "weathersFrom": [
         149
       ],
-      "minGathering": 3150
+      "minGathering": 3150,
+      "video": "https://youtu.be/_tF0sB7LBpM"
     }
   ],
   "41406": [

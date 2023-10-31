@@ -123,7 +123,7 @@ export class ListsEffects {
       return this.listService.getShared(user.$key).pipe(
         switchMap((lists) => {
           // If we don't have fc information yet, return the lists directly.
-          if (!fcId) {
+          if (!fcId || this.settings.disableFcIntegration) {
             return of(lists);
           }
           // Else add fc lists

@@ -16,20 +16,24 @@ import { getFishTrainStatus } from '../../modules/fish-train/get-fish-train-stat
 import { FishTrainStatus } from '../../pages/fish-trains/fish-trains/fish-train-status';
 import { FishingReport } from './fishing-report';
 import { AuthFacade } from '../../+state/auth.facade';
-import { weatherIndex } from '../data/sources/weather-index';
-import { mapIds } from '../data/sources/map-ids';
-import { WeatherService } from '../eorzea/weather.service';
 
 
 export class FishingReporter implements DataReporter {
 
   private state: Partial<FishingReporterState> = {};
 
+  private pcapStopped$ = this.ipc.pcapStopped$;
+
   constructor(private eorzea: EorzeaFacade, private lazyData: LazyDataFacade,
               private etime: EorzeanTimeService, private ipc: IpcService,
               private settings: SettingsService, private fishTrainFacade: FishTrainFacade,
               private authFacade: AuthFacade) {
     this.fishTrainFacade.loadRunning();
+    this.pcapStopped$.subscribe(() => {
+      this.state = {};
+      this.setState({});
+      this.eorzea.reset();
+    });
   }
 
   getDataReports(_packets$: Observable<any>): Observable<any[]> {
@@ -236,7 +240,7 @@ export class FishingReporter implements DataReporter {
     combineLatest([
       isFishing$,
       this.eorzea.mapId$,
-      this.eorzea.baitId$.pipe(startWith(null)),
+      this.eorzea.baitId$,
       spot$.pipe(startWith(null)),
       fisherStats$.pipe(startWith(null)),
       mooch$,
@@ -285,11 +289,11 @@ export class FishingReporter implements DataReporter {
           startWith(null)
         )
       ),
-      filter(([fish, , throwData, biteData, , spot, stats]) => {
+      filter(([fish, baitId, throwData, biteData, , spot, stats]) => {
         return (fish.id === -1 && stats?.gp > 1)
           || (biteData.tug !== null
             && spot.fishes.indexOf(fish.id) > -1
-          ) && throwData.weatherId !== null;
+          ) && throwData.weatherId !== null && baitId > 0;
       }),
       map(([fish, baitId, throwData, biteData, hookset, spot, stats, mooch, trainSpotId, train, name]) => {
         const shouldAddTrain = trainSpotId === spot?.id && getFishTrainStatus(train) === FishTrainStatus.RUNNING;

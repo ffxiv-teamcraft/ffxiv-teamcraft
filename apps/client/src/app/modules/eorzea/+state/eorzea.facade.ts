@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { EorzeaPartialState } from './eorzea.reducer';
-import { AddStatus, RemoveStatus, SetBait, SetMap, SetPcapWeather, SetStatuses, SetZone } from './eorzea.actions';
+import { AddStatus, RemoveStatus, Reset, SetBait, SetMap, SetPcapWeather, SetStatuses, SetZone } from './eorzea.actions';
 import { eorzeaQuery } from './eorzea.selectors';
 import { debounceTime, filter, first, map, shareReplay, startWith, switchMap } from 'rxjs/operators';
 import { WeatherService } from '../../../core/eorzea/weather.service';
@@ -45,7 +45,7 @@ export class EorzeaFacade {
     shareReplay({ bufferSize: 1, refCount: true })
   );
 
-  public baitId$ = this.store.pipe(select(eorzeaQuery.getBait)).pipe(filter(baitId => baitId > 0));
+  public baitId$ = this.store.pipe(select(eorzeaQuery.getBait));
 
   public statuses$ = this.store.pipe(select(eorzeaQuery.getStatuses));
 
@@ -97,6 +97,10 @@ export class EorzeaFacade {
         this.setZone(state.eorzea.zoneId);
       }
     });
+  }
+
+  reset(): void {
+    this.store.dispatch(new Reset())
   }
 
   setZone(zoneId: number) {
