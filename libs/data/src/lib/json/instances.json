@@ -13516,6 +13516,38 @@
       36300
     ]
   },
+  "36003": {
+    "id": 36003,
+    "en": "Aloalo Island",
+    "ja": "ヴァリアントダンジョン アロアロ島",
+    "de": "Aloalo",
+    "fr": "L'île d'Aloalo - Donjon à embranchements",
+    "description": {
+      "en": "In a seldom-traveled corner of the south sea isles lies Aloalo, an island filled with lush vegetation and teeming with vibrant wildlife. Yet the survival of this paradise hinges on a delicate natural balance which has only grown more precarious since the island's stewards departed a century ago. Answering the plea of a messenger most peculiar, you must join Matsya on a journey to restore order to Aloalo, and in the process uncover secrets long forgotten. ",
+      "ja": "南洋の片隅に浮かぶ「アロアロ島」――そこは鮮やかな草木に彩られ、多くの生き物たちが命を謳歌する繁栄の島。しかし、無人化して久しいこの島の環境は、美しい景観とは裏腹に滅びの淵に立たされているという。不思議な導き手の言葉に従い、マトシャとともに海を渡った冒険者は、環境の崩壊を防ぐため、忘れられし島内の探索に挑む。",
+      "de": "In den südlichen Meeren ragt die Insel Aloalo aus dem Wasser - ein paradiesisches Fleckchen voller satter Natur und einer lebhaften Fauna. Doch gerade der abgelegene Standort der Insel scheint sich nun zu einem Problem zu entwickeln. Ohne Jäger, die der Population an Wildtieren Einhalt gebieten, droht die Insel, schon bald ratzekahl gefressen zu werden. So berichtet es ein kleiner Vogel namens Kalika, seines Zeichens Bote der mysteriösen Sprecherin, der nun ausgerechnet Matsya zu seinem vom Schicksal vorherbestimmten Jäger auserkoren hat. In seiner Not bittet Matsya nun dich, Aloalo mit ihm zu erkunden und das kleine Paradies vor dem ökologischen Untergang zu retten.",
+      "fr": "L'île d'Aloalo, un paradis tropical situé au sud de Thavnair. Un endroit où la nature règne en maître depuis que les hommes ont fui le courroux d'un volcan, il y a un siècle de cela. Toutefois, avec la disparition de ce maillon important de la chaîne alimentaire, c'est tout l'équilibre de l'île qui menace à présent d'être détruit. Sur la demande d'un étrange oiseau doté de parole, vous prenez la mer avec votre ami Matsya, afin de chasser les monstres qui rôdent et d'empêcher l'île de tomber encore plus dans l'oubli."
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061846.png",
+    "banner": "/i/112000/112549.png",
+    "gamePatch": 88,
+    "contentType": 30,
+    "levelReq": 90,
+    "ilvlReq": 605,
+    "sync": 90,
+    "exp": 0,
+    "map": 867,
+    "contentText": [
+      37671,
+      37400
+    ]
+  },
   "37001": {
     "id": 37001,
     "en": "Another Sil'dihn Subterrane",
@@ -13642,6 +13674,70 @@
     "contentText": [
       36502,
       36300
+    ]
+  },
+  "37005": {
+    "id": 37005,
+    "en": "Another Aloalo Island",
+    "ja": "アナザーダンジョン 異聞アロアロ島",
+    "de": "Kurioses Aloalo",
+    "fr": "L'île d'Aloalo annexe - Donjon alternatif",
+    "description": {
+      "en": "Inspired by your tale, Osmon rejoices as his imagination soars to heights untold. Visions of the glorious civilizations the peoples of Aloalo built take shape in his mind, populating the island with beasts imbued by esoteric magicks. Drawn into this tide of fantasy and swept to its remotest edge, you must now do battle with the mundane made legendary.",
+      "ja": "冒険者の土産話を聞いて、オスモンは想像を膨らませる。「アロアロ島」の先住民である「忘れられた人々」が今もなお島に残っていたら、どのような文明を築いていたのだろうか、と。彼ら独自の魔法技術をもって、島の生物はいかなる力を持つ存在と成り得たのか。冒険者は想像の果てにある異聞の激闘を追体験する。",
+      "de": "Die Nacherzählung deiner Abenteuer von den Mysterien und Gefahren Aloalos hat Osmons Vorstellungskraft befeuert. Nun fragt er sich jedoch, was die vergessene Zivilisation mit ihren ominösen Magien alles erschaffen und verändern hätten können, wenn sie nur nie verschwunden wären? ",
+      "fr": "L'imagination d'Osmon s'est immédiatement enflammée en écoutant le récit de votre exploration de l'île d'Aloalo&nbsp;: que serait-il advenu si, le fameux peuple oublié n'avait jamais quitté l'île&nbsp;? Les créatures auraient-elles bénéficié d'une croissance encore plus incroyable&nbsp;? Seraient-elles devenues encore plus redoutables&nbsp;? Et voilà qu'en y réfléchissant, vous vous laissez prendre au jeu à votre tour, mais vous n'y pouvez rien car votre âme d'aventurière doit absolument obtenir le fin mot de l'histoire&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 1,
+      "MeleesPerParty": 1,
+      "RangedPerParty": 1,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061846.png",
+    "banner": "/i/112000/112550.png",
+    "gamePatch": 88,
+    "contentType": 30,
+    "levelReq": 90,
+    "ilvlReq": 640,
+    "sync": 90,
+    "exp": 0,
+    "map": 875,
+    "contentText": [
+      37647,
+      37400
+    ]
+  },
+  "37006": {
+    "id": 37006,
+    "en": "Another Aloalo Island (Savage)",
+    "ja": "アナザーダンジョン 異聞アロアロ島 零式",
+    "de": "Kurioses Aloalo (episch)",
+    "fr": "L'île d'Aloalo annexe - Donjon alternatif (sadique)",
+    "description": {
+      "en": "Osmon has completed his novel based on your adventures with an alacrity so remarkable that one might wonder if it was half written already. As you turn the pages, you cannot help but imagine yourself confronting the mighty foes of his tale. With embellishments so fabulous as to make a wandering minstrel blush, the idyllic Aloalo is transformed into a gauntlet of monsters most foul.",
+      "ja": "オスモンは「アロアロ島」を巡る探索の結果をもとに、1冊の本を書き上げたという。そこに記されていたのは、彼の語彙力と想像力の限りを尽くして盛りに盛られた白熱の激闘……。明らかに異邦の詩人の影響を受けたであろう、その物語を目にしたとき、冒険者は否が応でも禁断の追体験に没入してしまうのだった。",
+      "de": "Anhand der Details deiner Erkundung von Aloalo hat Osmon seine Feder aufs Pergament gesetzt und seinen idealen Abenteuerroman verfasst. Die Seiten strotzen nur so vor bewegenden Beschreibungen und atemberaubenden Kämpfen&nbsp;- die epische Dramatisierung erinnert an die Kompositionen eines gewissen Fahrenden Sängers. Und auf ähnliche Weise wirst du in eine Welt hineingezogen, die es nie gegeben hat und sich dennoch so unerklärlich real anfühlt&nbsp;...",
+      "fr": "Osmon a terminé la rédaction de son roman d'aventures, amplement inspiré par vos exploits sur l'île d'Aloalo. La puissance de son imagination et l'énergie de son style ne sont pas sans rappeler celles d'un certain ménestrel errant, d'ailleurs... Comment pourriez-vous leur résister&nbsp;? Laissez-vous emporter par les visions d'âpres batailles qui se bousculent dans votre tête&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 1,
+      "MeleesPerParty": 1,
+      "RangedPerParty": 1,
+      "TanksPerParty": 1
+    },
+    "icon": "/i/061000/061846.png",
+    "banner": "/i/112000/112551.png",
+    "gamePatch": 91,
+    "contentType": 30,
+    "levelReq": 90,
+    "ilvlReq": 0,
+    "sync": 90,
+    "exp": 0,
+    "map": 875,
+    "contentText": [
+      37647,
+      37400
     ]
   },
   "40027": {
@@ -13976,6 +14072,90 @@
       36105,
       36100
     ]
+  },
+  "40039": {
+    "id": 40039,
+    "en": "The Red Sands",
+    "ja": "レッド・サンズ",
+    "de": "Die Roten Sande",
+    "fr": "Les Sables sanglants",
+    "description": {
+      "en": "A dazzling array of arenas await at the Grand Companies' glamour-woven tactical training grounds. Designed with adventurers in mind, these strategic confrontations of but few competitors make for a thrilling challenge for newcome pups and Wolves' Den regulars alike.<br><br>At the end of the crystal line, who will stand victorious? Will it be you?",
+      "ja": "「クリスタルコンフリクト」、それはエオルゼア都市軍事同盟が、少人数による局地戦を想定した新たなる模擬戦である。既存の対人戦闘に、重要物資「タクティカルクリスタル」を確保して目的地に移送するという戦略要素を加味。最新の幻影投射技術で再現された、多彩な環境下で勝利を目指せ！",
+      "de": "Crystalline Conflict - so nennt die Eorzäische Allianz ihre neueste Gefechtsübung, die ein Scharmützel zwischen zwei kleinen Trupps simuliert. Es gilt, ein hitziges Schlachtfeld voller magischer Mechanismen zu dominieren und einen Kristall, der das Herzstück der Übung darstellt, sicher an sein Ziel zu bringen!",
+      "fr": "Crystalline Conflict, le nouveau scénario d'entraînement militaire imaginé par l'Alliance éorzéenne, met en scène de petites escouades se livrant de féroces escarmouches. Il ne s'agit pas simplement de vaincre l'équipe adverse, mais d'acheminer une ressource clef unique, le cristal tactique, jusqu'à l'objectif&nbsp;; le tout dans des décors variés, fruits d'un illusionnisme de haut vol. Aux armes, combattants, la victoire se trouve au bout du chemin&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061806.png",
+    "banner": "/i/112000/112471.png",
+    "gamePatch": 86,
+    "contentType": 6,
+    "levelReq": 30,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 854
+  },
+  "40040": {
+    "id": 40040,
+    "en": "The Red Sands",
+    "ja": "レッド・サンズ",
+    "de": "Die Roten Sande",
+    "fr": "Les Sables sanglants",
+    "description": {
+      "en": "A dazzling array of arenas await at the Grand Companies' glamour-woven tactical training grounds. Designed with adventurers in mind, these strategic confrontations of but few competitors make for a thrilling challenge for newcome pups and Wolves' Den regulars alike.<br><br>At the end of the crystal line, who will stand victorious? Will it be you?<br><br>※Match results will affect Rising Stars and Crystal Credit.<br>※Players with comparable PvP tiers and risers will be matched with one another.<br>※Parties will be sorted by role, tier, riser, and credit to ensure relatively equal averages.",
+      "ja": "「クリスタルコンフリクト」、それはエオルゼア都市軍事同盟が、少人数による局地戦を想定した新たなる模擬戦である。既存の対人戦闘に、重要物資「タクティカルクリスタル」を確保して目的地に移送するという戦略要素を加味。最新の幻影投射技術で再現された、多彩な環境下で勝利を目指せ！<br><br>※試合の勝敗で勝ち星やクリスタルポイントが変動します。<br>※対戦相手とのマッチングは階級や階位が近い相手と行われます。<br>※パーティ同士のロール構成、階級、階位、クリスタルポイントが近くなるように、メンバー分けが行われます。",
+      "de": "Crystalline Conflict - so nennt die Eorzäische Allianz ihre neueste Gefechtsübung, die ein Scharmützel zwischen zwei kleinen Trupps simuliert. Es gilt, ein hitziges Schlachtfeld voller magischer Mechanismen zu dominieren und einen Kristall, der das Herzstück der Übung darstellt, sicher an sein Ziel zu bringen!<br><br>※ Siegessterne und Kristallpunkte werden je nach Ausgang der Partie bestimmt.<br>※ Es werden Gegner mit ähnlichem Rang und Kampfklasse vermittelt.<br>※ Gruppen werden nach ausgewogener Rollenverteilung und ähnlichem Rang, Kampfklasse und Kristallpunkten gebildet.",
+      "fr": "Crystalline Conflict, le nouveau scénario d'entraînement militaire imaginé par l'Alliance éorzéenne, met en scène de petites escouades se livrant de féroces escarmouches. Il ne s'agit pas simplement de vaincre l'équipe adverse, mais d'acheminer une ressource clef unique, le cristal tactique, jusqu'à l'objectif&nbsp;; le tout dans des décors variés, fruits d'un illusionnisme de haut vol. Aux armes, combattants, la victoire se trouve au bout du chemin&nbsp;!<br><br>* Vos étoiles de victoire et vos points de cristal évolueront en fonction du résultat de la partie.<br>* Vos adversaires seront sélectionnés parmi des joueurs d'échelon et de palier proches.<br>* Les joueurs seront répartis en fonction de leur rôle, échelon, palier et points de cristal de façon à obtenir des équipes équilibrées."
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061806.png",
+    "banner": "/i/112000/112472.png",
+    "gamePatch": 91,
+    "contentType": 6,
+    "levelReq": 30,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 854
+  },
+  "40041": {
+    "id": 40041,
+    "en": "Crystalline Conflict (Custom Match - The Red Sands)",
+    "ja": "クリスタルコンフリクト(レッド・サンズ：カスタムマッチ)",
+    "de": "Crystalline Conflict: Die Roten Sande (Schaukampf)",
+    "fr": "Crystalline Conflict (partie personnalisée - Les Sables sanglants)",
+    "description": {
+      "en": "The sting of the blade is but one scourge among many atop the Red Sands! With Astra and Umbra on uncertain ground in this unforgiving arena, newcome pups and Wolves' Den regulars alike must give their all to triumph beneath the desert sun.<br><br>At the end of the crystal line, who will stand victorious? Will it be you?",
+      "ja": "「クリスタルコンフリクト」、それはエオルゼア都市軍事同盟が、少人数による局地戦を想定した新たなる模擬戦である。既存の対人戦闘に、重要物資「タクティカルクリスタル」を確保して目的地に移送するという戦略要素を加味。最新の幻影投射技術で再現された、多彩な環境下で勝利を目指せ！",
+      "de": "Crystalline Conflict - so nennt die Eorzäische Allianz ihre neueste Gefechtsübung, die ein Scharmützel zwischen zwei kleinen Trupps simuliert. Es gilt, ein hitziges Schlachtfeld voller magischer Mechanismen zu dominieren und einen Kristall, der das Herzstück der Übung darstellt, sicher an sein Ziel zu bringen!",
+      "fr": "Crystalline Conflict, le nouveau scénario d'entraînement militaire imaginé par l'Alliance éorzéenne, met en scène de petites escouades se livrant de féroces escarmouches. Il ne s'agit pas simplement de vaincre l'équipe adverse, mais d'acheminer une ressource clef unique, le cristal tactique, jusqu'à l'objectif&nbsp;; le tout dans des décors variés, fruits d'un illusionnisme de haut vol. Aux armes, combattants, la victoire se trouve au bout du chemin&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061806.png",
+    "banner": "/i/112000/112548.png",
+    "gamePatch": 91,
+    "contentType": 6,
+    "levelReq": 30,
+    "ilvlReq": 0,
+    "sync": 0,
+    "exp": 0,
+    "map": 854
   },
   "50001": {
     "id": 50001,

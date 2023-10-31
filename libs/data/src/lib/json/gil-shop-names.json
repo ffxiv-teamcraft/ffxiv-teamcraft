@@ -5804,7 +5804,7 @@
   "263151": {
     "en": "Purchase Manderville Weapon Replicas (DoW) I",
     "ja": "「マンダヴィルウェポン」の複製（ファイターその1）",
-    "de": "Repliken der Manderville-Waffen",
+    "de": "Repliken der Manderville-Waffen (Krieger I)",
     "fr": "Répliques d'armes des Manderville (guerre 1)"
   },
   "263152": {
@@ -5912,7 +5912,7 @@
   "263169": {
     "en": "Purchase Manderville Weapon Replicas (DoW) II",
     "ja": "「マンダヴィルウェポン」の複製（ファイターその2）",
-    "de": "「マンダヴィルウェポン」の複製（ファイターその2）",
+    "de": "Repliken der Manderville-Waffen (Krieger II)",
     "fr": "Répliques d'armes des Manderville (guerre 2)"
   },
   "263170": {
@@ -5924,7 +5924,7 @@
   "263171": {
     "en": "Purchase Manderville Weapon Replicas (DoM)",
     "ja": "「マンダヴィルウェポン」の複製（ソーサラー）",
-    "de": "「マンダヴィルウェポン」の複製（ソーサラー）",
+    "de": "Repliken der Manderville-Waffen (Magier)",
     "fr": "Répliques d'armes des Manderville (magie)"
   }
 }

@@ -103,6 +103,7 @@ export const worlds = {
   "e-coloria": 119,
   "e-gouldiae": 120,
   "e-contents3": 121,
+  "e-contents4": 122,
   "e-trichroa": 123,
   "e-hyperion": 124,
   "e-ragnarok": 126,

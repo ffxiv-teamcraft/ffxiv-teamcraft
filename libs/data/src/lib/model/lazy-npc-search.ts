@@ -27,6 +27,7 @@ export interface Title {
 export enum Ja {
   Achievement = "ACHIEVEMENT",
   AmaroPorter = "AMARO PORTER",
+  Blunderville = "BLUNDERVILLE",
   Cactpot = "CACTPOT",
   CeremonyShop = "CEREMONY SHOP",
   Chocobo = "CHOCOBO",

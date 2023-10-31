@@ -69559,173 +69559,173 @@
   },
   "3341": {
     "id": 3341,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/001000/001001.png",
+    "patch": 92,
+    "en": "Mapping the Realm: Aloalo Island",
+    "de": "Kartograph: Aloalo",
+    "ja": "アロアロ島を踏破せし者",
+    "fr": "Cartographe du continent : Île d'Aloalo",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Discover every location within the Aloalo Island variant dungeon.",
+      "de": "Alle Orte auf Aloalo erkundet.",
+      "ja": "アロアロ島（ヴァリアントダンジョン）を踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte de l'île d'Aloalo."
     },
     "item": 0,
     "title": 0
   },
   "3342": {
     "id": 3342,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/002000/002513.png",
+    "patch": 92,
+    "en": "Lord of the Skies",
+    "de": "Auf Walfischflügeln",
+    "ja": "ケトゥドゥケを狩りし者",
+    "fr": "C'est assez !",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Defeat Ketuduke in the Aloalo Island variant dungeon.",
+      "de": "Ketuduke auf Aloalo besiegt.",
+      "ja": "アロアロ島（ヴァリアントダンジョン）で、ケトゥドゥケを討伐する",
+      "fr": "Vaincre Ketuduke dans “L'île d'Aloalo - Donjon à embranchements”."
     },
     "item": 0,
     "title": 0
   },
   "3343": {
     "id": 3343,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/002000/002513.png",
+    "patch": 92,
+    "en": "Number Cruncher",
+    "de": "Mathematisches Meisterstück",
+    "ja": "ララを狩りし者",
+    "fr": "Problème résolu",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Defeat the lala in the Aloalo Island variant dungeon.",
+      "de": "Lala auf Aloalo besiegt.",
+      "ja": "アロアロ島（ヴァリアントダンジョン）で、ララを討伐する",
+      "fr": "Vaincre Lala dans “L'île d'Aloalo - Donjon à embranchements”."
     },
     "item": 0,
     "title": 0
   },
   "3344": {
     "id": 3344,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/002000/002513.png",
+    "patch": 92,
+    "en": "A Prank Too Far",
+    "de": "Zwischen Nieten und Gewinnen",
+    "ja": "スターチスを狩りし者",
+    "fr": "Fée du logis",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Defeat Statice in the Aloalo Island variant dungeon.",
+      "de": "Statice auf Aloalo besiegt.",
+      "ja": "アロアロ島（ヴァリアントダンジョン）で、スターチスを討伐する",
+      "fr": "Vaincre Statice dans “L'île d'Aloalo - Donjon à embranchements”."
     },
     "item": 0,
     "title": 0
   },
   "3345": {
     "id": 3345,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/002000/002513.png",
+    "patch": 92,
+    "en": "The Frailty of Words",
+    "de": "Weisheit in Worten",
+    "ja": "ロクロクイを狩りし者",
+    "fr": "Joyau endormi",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Defeat the Loquloqui in the Aloalo Island variant dungeon.",
+      "de": "Loquloqui auf Aloalo besiegt.",
+      "ja": "アロアロ島（ヴァリアントダンジョン）で、ロクロクイを討伐する",
+      "fr": "Vaincre Loquloqui dans “L'île d'Aloalo - Donjon à embranchements”."
     },
     "item": 0,
     "title": 0
   },
   "3346": {
     "id": 3346,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/026000/026002.png",
+    "patch": 92,
+    "en": "Aloalo's Greatest Gift",
+    "de": "Wer auf steinig Pfaden wandelt",
+    "ja": "焼けた道を行く君へ",
+    "fr": "Du poisson pour le poupon",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “A Fish a Day.”",
+      "de": "Den Auftrag „Wer auf steinig Pfaden wandelt“ abgeschlossen.",
+      "ja": "クエスト「焼けた道を行く君へ」をコンプリートする",
+      "fr": "Accomplir la quête “Le cadeau de Matsya”."
     },
     "item": 0,
-    "title": 0
+    "title": 697
   },
   "3347": {
     "id": 3347,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/026000/026182.png",
+    "patch": 92,
+    "en": "Good-willed Hunting",
+    "de": "Auf den Grund gegangen: Aloalo",
+    "ja": "アロアロ島 探索記",
+    "fr": "Les mots de Matsya",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unlock all conservation records on Aloalo Island.",
+      "de": "Alle Einträge des Naturschutzberichtes von Aloalo aufgedeckt.",
+      "ja": "アロアロ島 探索記をすべて開示する",
+      "fr": "Découvrir toutes les entrées du journal d'exploration de l'île d'Aloalo."
     },
-    "item": 0,
+    "item": 41495,
     "title": 0
   },
   "3348": {
     "id": 3348,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/001000/001001.png",
+    "patch": 92,
+    "en": "Mapping the Realm: Another Aloalo Island",
+    "de": "Kartograph: Kurioses Aloalo",
+    "ja": "異聞アロアロ島を踏破せし者",
+    "fr": "Cartographe du continent : Île d'Aloalo annexe",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Discover every location within Another Aloalo Island.",
+      "de": "Alle Orte auf dem kuriosen Aloalo erkundet.",
+      "ja": "異聞アロアロ島（アナザーダンジョン）を踏破し、マップをすべて開示する",
+      "fr": "Découvrir toute la carte de l'île d'Aloalo annexe."
     },
     "item": 0,
     "title": 0
   },
   "3349": {
     "id": 3349,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/000000/000317.png",
+    "patch": 92,
+    "en": "Charting the Unknown",
+    "de": "Mit dem Finken geflogen",
+    "ja": "異聞アロアロ島を制覇せし者",
+    "fr": "À l'huile !",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the criterion dungeon Another Aloalo Island.",
+      "de": "Das kuriose Aloalo abgeschlossen.",
+      "ja": "異聞アロアロ島（アナザーダンジョン）を攻略する",
+      "fr": "Finir L'île d'Aloalo annexe - Donjon alternatif."
     },
     "item": 0,
     "title": 0
   },
   "3350": {
     "id": 3350,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/000000/000317.png",
+    "patch": 92,
+    "en": "Charting the Savage Unknown",
+    "de": "Mit dem Finken gesungen",
+    "ja": "異聞アロアロ島を完全制覇せし者",
+    "fr": "Île cauchemardesque",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the criterion dungeon Another Aloalo Island (Savage).",
+      "de": "Das kuriose Aloalo (episch) abgeschlossen.",
+      "ja": "異聞アロアロ島 零式（アナザーダンジョン）を攻略する",
+      "fr": "Finir L'île d'Aloalo annexe - Donjon alternatif (sadique)."
     },
     "item": 0,
-    "title": 0
+    "title": 698
   },
   "3351": {
     "id": 3351,
@@ -69916,207 +69916,207 @@
   },
   "3362": {
     "id": 3362,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/039000/039005.png",
+    "patch": 92,
+    "en": "Vrandtastic: Lodestar Saw",
+    "de": "Mowen-Werkzeug: Leitstern-Säge",
+    "ja": "モーエンツール：ロードスター・ソー",
+    "fr": "Outils des merveilles : scie superstellaire",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a lodestar saw.",
+      "de": "Eine Leitstern-Säge erlangt.",
+      "ja": "ロードスター・ソーを入手する",
+      "fr": "Obtenir une scie superstellaire."
     },
     "item": 0,
     "title": 0
   },
   "3363": {
     "id": 3363,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/039000/039104.png",
+    "patch": 92,
+    "en": "Vrandtastic: Lodestar Cross-pein Hammer",
+    "de": "Mowen-Werkzeug: Leitstern-Kreuzschlaghammer",
+    "ja": "モーエンツール：ロードスター・クロスペインハンマー",
+    "fr": "Outils des merveilles : marteau à panne croisée superstellaire",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a lodestar cross-pein hammer.",
+      "de": "Einen Leitstern-Kreuzschlaghammer erlangt.",
+      "ja": "ロードスター・クロスペインハンマーを入手する",
+      "fr": "Obtenir un marteau à panne croisée superstellaire."
     },
     "item": 0,
     "title": 0
   },
   "3364": {
     "id": 3364,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/039000/039204.png",
+    "patch": 92,
+    "en": "Vrandtastic: Lodestar Raising Hammer",
+    "de": "Mowen-Werkzeug: Leitstern-Schlichthammer",
+    "ja": "モーエンツール：ロードスター・レイジングハンマー",
+    "fr": "Outils des merveilles : marteau de batteur superstellaire",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a lodestar raising hammer.",
+      "de": "Einen Leitstern-Schlichthammer erlangt.",
+      "ja": "ロードスター・レイジングハンマーを入手する",
+      "fr": "Obtenir un marteau de batteur superstellaire."
     },
     "item": 0,
     "title": 0
   },
   "3365": {
     "id": 3365,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/039000/039303.png",
+    "patch": 92,
+    "en": "Vrandtastic: Lodestar Mallet",
+    "de": "Mowen-Werkzeug: Leitstern-Fäustel",
+    "ja": "モーエンツール：ロードスター・マレット",
+    "fr": "Outils des merveilles : massette superstellaire",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a lodestar mallet.",
+      "de": "Einen Leitstern-Fäustel erlangt.",
+      "ja": "ロードスター・マレットを入手する",
+      "fr": "Obtenir une massette superstellaire."
     },
     "item": 0,
     "title": 0
   },
   "3366": {
     "id": 3366,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/039000/039404.png",
+    "patch": 92,
+    "en": "Vrandtastic: Lodestar Round Knife",
+    "de": "Mowen-Werkzeug: Leitstern-Rundmesser",
+    "ja": "モーエンツール：ロードスター・ラウンドナイフ",
+    "fr": "Outils des merveilles : couteau arrondi superstellaire",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a lodestar round knife.",
+      "de": "Ein Leitstern-Rundmesser erlangt.",
+      "ja": "ロードスター・ラウンドナイフを入手する",
+      "fr": "Obtenir un couteau arrondi superstellaire."
     },
     "item": 0,
     "title": 0
   },
   "3367": {
     "id": 3367,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/039000/039504.png",
+    "patch": 92,
+    "en": "Vrandtastic: Lodestar Needle",
+    "de": "Mowen-Werkzeug: Leitstern-Nadel",
+    "ja": "モーエンツール：ロードスター・ニードル",
+    "fr": "Outils des merveilles : aiguille superstellaire",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a lodestar needle.",
+      "de": "Eine Leitstern-Nadel erlangt.",
+      "ja": "ロードスター・ニードルを入手する",
+      "fr": "Obtenir une aiguille superstellaire."
     },
     "item": 0,
     "title": 0
   },
   "3368": {
     "id": 3368,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/039000/039603.png",
+    "patch": 92,
+    "en": "Vrandtastic: Lodestar Alembic",
+    "de": "Mowen-Werkzeug: Leitstern-Destillierkolben",
+    "ja": "モーエンツール：ロードスター・アレンビック",
+    "fr": "Outils des merveilles : alambic superstellaire",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a lodestar alembic.",
+      "de": "Einen Leitstern-Destillierkolben erlangt.",
+      "ja": "ロードスター・アレンビックを入手する",
+      "fr": "Obtenir un alambic superstellaire."
     },
     "item": 0,
     "title": 0
   },
   "3369": {
     "id": 3369,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/039000/039706.png",
+    "patch": 92,
+    "en": "Vrandtastic: Lodestar Frypan",
+    "de": "Mowen-Werkzeug: Leitstern-Bratpfanne",
+    "ja": "モーエンツール：ロードスター・フライパン",
+    "fr": "Outils des merveilles : poêle à frire superstellaire",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a lodestar frypan.",
+      "de": "Eine Leitstern-Bratpfanne erlangt.",
+      "ja": "ロードスター・フライパンを入手する",
+      "fr": "Obtenir une poêle à frire superstellaire."
     },
     "item": 0,
     "title": 0
   },
   "3370": {
     "id": 3370,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/038000/038306.png",
+    "patch": 92,
+    "en": "Vrandtastic: Lodestar Pickaxe",
+    "de": "Mowen-Werkzeug: Leitstern-Spitzhacke",
+    "ja": "モーエンツール：ロードスター・ピック",
+    "fr": "Outils des merveilles : pioche superstellaire",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a lodestar pickaxe.",
+      "de": "Eine Leitstern-Spitzhacke erlangt.",
+      "ja": "ロードスター・ピックを入手する",
+      "fr": "Obtenir une pioche superstellaire."
     },
     "item": 0,
     "title": 0
   },
   "3371": {
     "id": 3371,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/038000/038404.png",
+    "patch": 92,
+    "en": "Vrandtastic: Lodestar Hatchet",
+    "de": "Mowen-Werkzeug: Leitstern-Handbeil",
+    "ja": "モーエンツール：ロードスター・ハチェット",
+    "fr": "Outils des merveilles : hachette superstellaire",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a lodestar hatchet.",
+      "de": "Ein Leitstern-Handbeil erlangt.",
+      "ja": "ロードスター・ハチェットを入手する",
+      "fr": "Obtenir une hachette superstellaire."
     },
     "item": 0,
     "title": 0
   },
   "3372": {
     "id": 3372,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/038000/038507.png",
+    "patch": 92,
+    "en": "Vrandtastic: Lodestar Fishing Rod",
+    "de": "Mowen-Werkzeug: Leitstern-Angelrute",
+    "ja": "モーエンツール：ロードスター・フィッシングロッド",
+    "fr": "Outils des merveilles : canne à pêche superstellaire",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a lodestar fishing rod.",
+      "de": "Eine Leitstern-Angelrute erlangt.",
+      "ja": "ロードスター・フィッシングロッドを入手する",
+      "fr": "Obtenir une canne à pêche superstellaire."
     },
     "item": 0,
     "title": 0
   },
   "3373": {
     "id": 3373,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/026000/026002.png",
+    "patch": 92,
+    "en": "Many-splendored",
+    "de": "Mowen-Hoflieferant",
+    "ja": "モーエン商会の御用達職人",
+    "fr": "Merveille d'honneur de Mowen",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “Dearly Bekettled.”",
+      "de": "Den Auftrag „Kessel der Liebe“ abgeschlossen.",
+      "ja": "クエスト「ふたりのヤカン」をコンプリートする",
+      "fr": "Accomplir la quête “Une bouilloire pour deux”."
     },
     "item": 0,
-    "title": 0
+    "title": 724
   },
   "3374": {
     "id": 3374,
@@ -70630,71 +70630,71 @@
   },
   "3404": {
     "id": 3404,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/056000/056611.png",
+    "patch": 92,
+    "en": "It's a Blunderful Life I",
+    "de": "Kampf um die Krone: Rang 1",
+    "ja": "ゲットザクラウン：ランク1",
+    "fr": "À moi la couronne I",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Place first in Blunderville.",
+      "de": "1 Mal Platz 1 in Stolperville erreicht.",
+      "ja": "ブランダーヴィルで1位を1回獲得する",
+      "fr": "Remporter le Blunderville 1 fois."
     },
     "item": 0,
     "title": 0
   },
   "3405": {
     "id": 3405,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/056000/056611.png",
+    "patch": 92,
+    "en": "It's a Blunderful Life II",
+    "de": "Kampf um die Krone: Rang 2",
+    "ja": "ゲットザクラウン：ランク2",
+    "fr": "À moi la couronne II",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Place first in Blunderville 10 times.",
+      "de": "10 Mal Platz 1 in Stolperville erreicht.",
+      "ja": "ブランダーヴィルで1位を10回獲得する",
+      "fr": "Remporter le Blunderville 10 fois."
     },
     "item": 0,
     "title": 0
   },
   "3406": {
     "id": 3406,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/056000/056611.png",
+    "patch": 92,
+    "en": "It's a Blunderful Life III",
+    "de": "Kampf um die Krone: Rang 3",
+    "ja": "ゲットザクラウン：ランク3",
+    "fr": "À moi la couronne III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Place first in Blunderville 50 times.",
+      "de": "50 Mal Platz 1 in Stolperville erreicht.",
+      "ja": "ブランダーヴィルで1位を50回獲得する",
+      "fr": "Remporter le Blunderville 50 fois."
     },
     "item": 0,
     "title": 0
   },
   "3407": {
     "id": 3407,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/056000/056611.png",
+    "patch": 92,
+    "en": "It's a Blunderful Life IV",
+    "de": "Kampf um die Krone: Rang 4",
+    "ja": "ゲットザクラウン：ランク4",
+    "fr": "À moi la couronne IV",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Place first in Blunderville 100 times.",
+      "de": "100 Mal Platz 1 in Stolperville erreicht.",
+      "ja": "ブランダーヴィルで1位を100回獲得する",
+      "fr": "Remporter le Blunderville 100 fois."
     },
     "item": 0,
-    "title": 0
+    "title": 708
   },
   "3408": {
     "id": 3408,
@@ -70837,12 +70837,12 @@
     "icon": "/i/052000/052793.png",
     "patch": 91,
     "en": "愛と勇気の伝道師",
-    "de": "愛と勇気の伝道師",
+    "de": "Liebe liegt in der Luft",
     "ja": "愛と勇気の伝道師",
     "fr": "Tout un symbole",
     "description": {
       "en": "クエスト「ヴァレンティオンデーに勇気を出して」をコンプリートする",
-      "de": "クエスト「ヴァレンティオンデーに勇気を出して」をコンプリートする",
+      "de": "Den Auftrag „Fass dir ein Herz“ abgeschlossen.",
       "ja": "クエスト「ヴァレンティオンデーに勇気を出して」をコンプリートする",
       "fr": "Accomplir la quête “Le symbole de l'amour”."
     },
@@ -70854,12 +70854,12 @@
     "icon": "/i/004000/004276.png",
     "patch": 91,
     "en": "花咲か姫様",
-    "de": "花咲か姫様",
+    "de": "Prinzessin der Herzen",
     "ja": "花咲か姫様",
     "fr": "花咲か姫様",
     "description": {
       "en": "クエスト「プリンセスデーに咲く笑顔の花」をコンプリートする",
-      "de": "クエスト「プリンセスデーに咲く笑顔の花」をコンプリートする",
+      "de": "Den Auftrag „Aufblühende Gemüter“ abgeschlossen.",
       "ja": "クエスト「プリンセスデーに咲く笑顔の花」をコンプリートする",
       "fr": "クエスト「プリンセスデーに咲く笑顔の花」をコンプリートする"
     },
@@ -70876,7 +70876,7 @@
     "fr": "カパパッパ！",
     "description": {
       "en": "クエスト「ゴールドソーサーとカッパの謎」をコンプリートする",
-      "de": "Den Auftrag „Auf der Suche nach der goldenen Schlagzeile“ abgeschlossen.",
+      "de": "Den Auftrag „Im Namen der Wahrheit“ abgeschlossen.",
       "ja": "クエスト「ゴールドソーサーとカッパの謎」をコンプリートする",
       "fr": "クエスト「ゴールドソーサーとカッパの謎」をコンプリートする"
     },
@@ -71038,19 +71038,19 @@
   },
   "3428": {
     "id": 3428,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/003000/003054.png",
+    "patch": 92,
+    "en": "Criterion Core",
+    "de": "Heldenhaftes Epos",
+    "ja": "異聞奇譚の勇傑",
+    "fr": "Accroc de l'annexe",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain the achievements “The Savage Sands Below,” “Moving a Savage Mountain,” and “Charting the Savage Unknown.”",
+      "de": "Die Errungenschaften „Auf epischen Sanden“, „Einen Berg versetzt“ und „Mit dem Finken gesungen“ wurden freigespielt.",
+      "ja": "アチーブメント「異聞シラディハ水道を完全制覇せし者」「異聞六根山を完全制覇せし者」「異聞アロアロ島を完全制覇せし者」をすべて達成する",
+      "fr": "Accomplir les hauts faits “L'égout et les couleurs”, “Supplicier des montagnes” et “Île cauchemardesque”."
     },
     "item": 0,
-    "title": 0
+    "title": 723
   }
 }

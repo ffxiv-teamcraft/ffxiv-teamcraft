@@ -14079,7 +14079,7 @@
     }
   },
   "1084": {
-    "en": "Squadron Rationing Manual",
+    "en": "Rationing",
     "de": "Längere Nahrungseffekte",
     "ja": "食事効果時間延長",
     "fr": "À boire et à manger",
@@ -47996,29 +47996,29 @@
     }
   },
   "3693": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Slippery Ground",
+    "de": "Spiegelglatt",
+    "ja": "ツルツル",
+    "fr": "Ça glisse",
+    "icon": "/i/016000/016759.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Having trouble maintaining a solid foothold upon the ground.",
+      "de": "Befindet sich auf glattem Boden. Rutscht bei Bewegung aus.",
+      "ja": "滑りやすい地面の上にいる状態。移動すると滑る。",
+      "fr": "Le sol sous les pieds est glissant."
     }
   },
   "3694": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Temporary Misdirection",
+    "de": "Plötzliche Panik",
+    "ja": "心神喪失",
+    "fr": "Fulguration",
+    "icon": "/i/015000/015809.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Overcome with confusion and can only move in the direction indicated.",
+      "de": "Von Furcht überwältigt. Läuft bei Bewegung in Richtung des Cursors.",
+      "ja": "心神喪失した状態。移動した際に、指カーソルの方向へ動いてしまう。",
+      "fr": "Tout déplacement a lieu dans la direction vers laquelle pointe le curseur tournoyant au-dessus de la tête."
     }
   },
   "3695": {
@@ -48061,94 +48061,94 @@
     }
   },
   "3698": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Forward March",
+    "de": "Geistlenkung vorwärts",
+    "ja": "移動命令：前",
+    "fr": "Contrainte mentale&nbsp;: avancer",
+    "icon": "/i/015000/015774.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Have received the order to advance. Order will be executed when status fades.",
+      "de": "Ist bei Ende des Effekts gezwungen, geradeaus weiterzugehen.",
+      "ja": "移動命令を受けた状態。この状態の効果が切れた際に、前方向に移動してしまう。",
+      "fr": "Un ordre de mouvement est intimé par télépathie. À la fin de l'effet, le corps est contraint d'aller vers l'avant."
     }
   },
   "3699": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "About Face",
+    "de": "Geistlenkung rückwärts",
+    "ja": "移動命令：後",
+    "fr": "Contrainte mentale&nbsp;: reculer",
+    "icon": "/i/015000/015775.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Have received the order to retreat. Order will be executed when status fades.",
+      "de": "Ist bei Ende des Effekts gezwungen, in die umgekehrte Richtung zu marschieren.",
+      "ja": "移動命令を受けた状態。この状態の効果が切れた際に、後方向に移動してしまう。",
+      "fr": "Un ordre de mouvement est intimé par télépathie. À la fin de l'effet, le corps est contraint d'aller vers l'arrière."
     }
   },
   "3700": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Left Face",
+    "de": "Geistlenkung links",
+    "ja": "移動命令：左",
+    "fr": "Contrainte mentale&nbsp;: virage à gauche",
+    "icon": "/i/015000/015776.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Have received the order to move left. Order will be executed when status fades.",
+      "de": "Ist bei Ende des Effekts gezwungen, nach links zu marschieren.",
+      "ja": "移動命令を受けた状態。この状態の効果が切れた際に、左方向に移動してしまう。",
+      "fr": "Un ordre de mouvement est intimé par télépathie. À la fin de l'effet, le corps est contraint d'aller vers la gauche."
     }
   },
   "3701": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Right Face",
+    "de": "Geistlenkung rechts",
+    "ja": "移動命令：右",
+    "fr": "Contrainte mentale&nbsp;: virage à droite",
+    "icon": "/i/015000/015777.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Have received the order to move right. Order will be executed when status fades.",
+      "de": "Ist bei Ende des Effekts gezwungen, nach rechts zu marschieren.",
+      "ja": "移動命令を受けた状態。この状態の効果が切れた際に、右方向に移動してしまう。",
+      "fr": "Un ordre de mouvement est intimé par télépathie. À la fin de l'effet, le corps est contraint d'aller vers la droite."
     }
   },
   "3702": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Spinning",
+    "de": "Spinnend",
+    "ja": "回転移動",
+    "fr": "Tournis",
+    "icon": "/i/015000/015441.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Spinning in circles across the field and unable to stop.",
+      "de": "Dreht sich unaufhörlich vorwärts.",
+      "ja": "回転しながら強制的に移動し続けてしまう状態。",
+      "fr": "Le corps est incontrôlable et se déplace en tournoyant."
     }
   },
   "3703": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Slippery Slope",
+    "de": "Glibberglitschig",
+    "ja": "ズルズル",
+    "fr": "Ça dérape",
+    "icon": "/i/016000/016760.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Slipping in one direction. Unable to jump or execute actions.",
+      "de": "Befindet sich auf glattem Boden. Jegliche Aktionen und selbst das Springen sind unmöglich gemacht.",
+      "ja": "滑りやすい地面の上にいる状態。ジャンプおよびアクションが実行不可となり、特定の方向に移動してしまう。",
+      "fr": "Le sol sous les pieds est glissant. Le saut et les actions sont impossibles à réaliser, les déplacements sont hors de contrôle."
     }
   },
   "3704": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Crystal Courier",
+    "de": "Kristallträger",
+    "ja": "クリスタル運搬",
+    "fr": "Cristal en mains",
+    "icon": "/i/016000/016208.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Carrying a crystal. Will score points upon arrival at the corresponding goal.",
+      "de": "Trägt einen Kristall, der beim Erreichen des Ziels ordentlich Punkte einbringt.",
+      "ja": "クリスタルを運んでいる状態。ゴールに到達すると得点できる。",
+      "fr": "Un cristal est transporté. Atteindre l'arrivée correspondante permet de marquer un point."
     }
   },
   "3705": {
@@ -48191,16 +48191,16 @@
     }
   },
   "3708": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Spectator",
+    "de": "Zuschauer",
+    "ja": "観戦中",
+    "fr": "Mode spectateur",
+    "icon": "/i/016000/016761.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Watching the show from a safe distance.",
+      "de": "Beobachtet das Geschehen gebannt.",
+      "ja": "ステージを観戦している状態。",
+      "fr": "Le mode spectateur est activé."
     }
   },
   "3709": {
@@ -48282,211 +48282,211 @@
     }
   },
   "3715": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Forward March",
+    "de": "Geistlenkung vorwärts",
+    "ja": "移動命令：前",
+    "fr": "Contrainte mentale&nbsp;: avancer",
+    "icon": "/i/015000/015774.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Have received the order to advance. Order will be executed when status fades.",
+      "de": "Ist bei Ende des Effekts gezwungen, geradeaus zu marschieren.",
+      "ja": "移動命令を受けた状態。この状態の効果が切れた際に、前方向に移動してしまう。",
+      "fr": "Un ordre de mouvement est intimé par télépathie. À la fin de l'effet, le corps est contraint d'aller vers l'avant."
     }
   },
   "3716": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "About Face",
+    "de": "Geistlenkung rückwärts",
+    "ja": "移動命令：後",
+    "fr": "Contrainte mentale&nbsp;: reculer",
+    "icon": "/i/015000/015775.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Have received the order to retreat. Order will be executed when status fades.",
+      "de": "Ist bei Ende des Effekts gezwungen, in die umgekehrte Richtung zu marschieren.",
+      "ja": "移動命令を受けた状態。この状態の効果が切れた際に、後方向に移動してしまう。",
+      "fr": "Un ordre de mouvement est intimé par télépathie. À la fin de l'effet, le corps est contraint d'aller vers l'arrière."
     }
   },
   "3717": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Left Face",
+    "de": "Geistlenkung links",
+    "ja": "移動命令：左",
+    "fr": "Contrainte mentale&nbsp;: virage à gauche",
+    "icon": "/i/015000/015776.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Have received the order to move left. Order will be executed when status fades.",
+      "de": "Ist bei Ende des Effekts gezwungen, nach links zu marschieren.",
+      "ja": "移動命令を受けた状態。この状態の効果が切れた際に、左方向に移動してしまう。",
+      "fr": "Un ordre de mouvement est intimé par télépathie. À la fin de l'effet, le corps est contraint d'aller vers la gauche."
     }
   },
   "3718": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Right Face",
+    "de": "Geistlenkung rechts",
+    "ja": "移動命令：右",
+    "fr": "Contrainte mentale&nbsp;: virage à droite",
+    "icon": "/i/015000/015777.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Have received the order to move right. Order will be executed when status fades.",
+      "de": "Ist bei Ende des Effekts gezwungen, nach rechts zu marschieren.",
+      "ja": "移動命令を受けた状態。この状態の効果が切れた際に、右方向に移動してしまう。",
+      "fr": "Un ordre de mouvement est intimé par télépathie. À la fin de l'effet, le corps est contraint d'aller vers la droite."
     }
   },
   "3719": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Forced March",
+    "de": "Marschbefehl",
+    "ja": "強制移動",
+    "fr": "Marche forcée",
+    "icon": "/i/015000/015773.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Advancing in the ordered direction.",
+      "de": "Wird gezwungen, sich in eine bestimmte Richtung zu bewegen.",
+      "ja": "指定方向に移動し続けてしまう状態。",
+      "fr": "Le corps obéit et avance dans la direction indiquée."
     }
   },
   "3720": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "回転角2倍",
+    "de": "2-fache Winkeladdition",
+    "ja": "回転角2倍",
+    "fr": "回転角2倍",
     "icon": "",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "次に発動する攻撃の回転角が2倍になる状態。",
+      "de": "Der Drehwinkel der nächsten Attacke ist verdoppelt.",
+      "ja": "次に発動する攻撃の回転角が2倍になる状態。",
+      "fr": "次に発動する攻撃の回転角が2倍になる状態。"
     }
   },
   "3721": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Times Three",
+    "de": "3-fache Winkeladdition",
+    "ja": "回転角3倍",
+    "fr": "Triple rotation",
+    "icon": "/i/016000/016748.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "The angle of effect for the next rotational attack executed will be tripled.",
+      "de": "Der Drehwinkel der nächsten Attacke ist verdreifacht.",
+      "ja": "次に発動する攻撃の回転角が3倍になる状態。",
+      "fr": "Le corps tournera trois fois plus que la normale lors de la prochaine attaque."
     }
   },
   "3722": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "en": "回転角4倍",
+    "de": "4-fache Winkeladdition",
+    "ja": "回転角4倍",
+    "fr": "回転角4倍",
     "icon": "",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "次に発動する攻撃の回転角が4倍になる状態。",
+      "de": "Der Drehwinkel der nächsten Attacke ist vervierfacht.",
+      "ja": "次に発動する攻撃の回転角が4倍になる状態。",
+      "fr": "次に発動する攻撃の回転角が4倍になる状態。"
     }
   },
   "3723": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Surge Vector",
+    "de": "Schubziel",
+    "ja": "爆撃目標",
+    "fr": "Cible de bombardement",
+    "icon": "/i/016000/016750.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Targeted for destruction. Dual explosives will impact target and its surrounds when this effect expires.",
+      "de": "Ins Visier genommen. Löst nach Ablauf <span style=\"color:#ffff66\">Symmetrischer Schub</span> in der Umgebung aus.",
+      "ja": "標的となった状態。効果時間が終了すると、周囲に双数爆撃が発動する。",
+      "fr": "La victime est marquée. Déferlement symétrique se déclenche autour d'elle à la fin de l'effet."
     }
   },
   "3724": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Subtractive Suppressor Alpha",
+    "de": "Subtraktionstaktiken α",
+    "ja": "減算爆雷α",
+    "fr": "Éthéroplasma diminutif α",
+    "icon": "/i/018000/018391.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Affixed with high-powered explosives that will detonate when this effect expires. Taking damage from arcane geometries on the ground will reduce stacks. Effect will be removed when stacks reach 0.",
+      "de": "Löst nach Ablauf eine schwere Explosion aus. Die Stapel verringern sich bei erlittener <span style=\"color:#ffbfff\">Arkaner Mine</span>. Bei 0 Stapeln wird der Status aufgehoben.",
+      "ja": "減算爆雷が付着し、効果時間が終了すると大爆発を起こす状態。地雷魔紋の攻撃を受けることでスタック数が減少し、0になると解除される。",
+      "fr": "L'éthéroplasma est activé, provoquant une grosse explosion à la fin de l'effet. Encaisser Mine arcanique permet de réduire les degrés de l'effet. S'annule s'il tombe à 0."
     }
   },
   "3725": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Subtractive Suppressor Beta",
+    "de": "Subtraktionstaktiken β",
+    "ja": "減算爆雷β",
+    "fr": "Éthéroplasma diminutif β",
+    "icon": "/i/018000/018396.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Affixed with high-powered explosives that will detonate when this effect expires. Taking damage from freestanding arcane geometries will reduce stacks. Effect will be removed when stacks reach 0.",
+      "de": "Löst nach Ablauf eine schwere Explosion aus. Die Stapel verringern sich bei erlittenen Attacken durch arkane Kugeln und Körper. Bei 0 Stapeln wird der Status aufgehoben.",
+      "ja": "減算爆雷が付着し、効果時間が終了すると大爆発を起こす状態。立体魔紋の攻撃を受けることでスタック数が減少し、0になると解除される。",
+      "fr": "L'éthéroplasma est activé, provoquant une grosse explosion à la fin de l'effet. Encaisser les attaques de sphères ou de globes acaniques permet de réduire les degrés de l'effet. S'annule s'il tombe à 0."
     }
   },
   "3726": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Front Unseen",
+    "de": "Ungeschätzte Vorderseite",
+    "ja": "正面未解析",
+    "fr": "Devant protégé",
+    "icon": "/i/015000/015369.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Only vulnerabilities on the front of the body remain undetected. Hits to the back, right, and left sides of the body will result in severe damage.",
+      "de": "Schwachstellen auf der Vorderseite des Körpers bleiben verborgen.<br>Treffer an der hinteren, linken und rechten Seite des Körpers führen zu hohem Schaden.",
+      "ja": "身体の正面のみ急所を見抜かれていない状態。<br>背面、右側、左側から攻撃を受けると、大ダメージを受ける。",
+      "fr": "Seuls les points faibles de l'avant du corps restent inconnus de l'ennemi. Les attaques en provenance de l'arrière, de la droite et de la gauche infligent d'importants dégâts."
     }
   },
   "3727": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Back Unseen",
+    "de": "Ungeschätzte Rückseite",
+    "ja": "背面未解析",
+    "fr": "Dos protégé",
+    "icon": "/i/015000/015941.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Only vulnerabilities on the back of the body remain undetected. Hits to the front, right, and left sides of the body will result in severe damage.",
+      "de": "Schwachstellen auf der Rückseite des Körpers bleiben verborgen.<br>Treffer an der vorderen, linken und rechten Seite des Körpers führen zu hohem Schaden.",
+      "ja": "身体の背面のみ急所を見抜かれていない状態。<br>正面、右側、左側から攻撃を受けると、大ダメージを受ける。",
+      "fr": "Seuls les points faibles à l'arrière du corps restent inconnus de l'ennemi. Les attaques en provenance de l'avant, de la droite et de la gauche infligent d'importants dégâts."
     }
   },
   "3728": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Right Unseen",
+    "de": "Ungeschätzte Rechte",
+    "ja": "右側未解析",
+    "fr": "Flanc droit protégé",
+    "icon": "/i/015000/015939.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Only vulnerabilities on the right side of the body remain undetected. Hits to the front, back, and left sides of the body will result in severe damage.",
+      "de": "Schwachstellen auf der rechten Seite des Körpers bleiben verborgen.<br>Treffer an der vorderen, hinteren und linken Seite des Körpers führen zu hohem Schaden.",
+      "ja": "身体の右側面のみ急所を見抜かれていない状態。<br>正面、左側、背面から攻撃を受けると、大ダメージを受ける。",
+      "fr": "Seuls les points faibles du côté droit restent inconnus de l'ennemi. Les attaques en provenance de l'avant, de la gauche et de l'arrière infligent d'importants dégâts."
     }
   },
   "3729": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Left Unseen",
+    "de": "Ungeschätzte Linke",
+    "ja": "左側未解析",
+    "fr": "Flanc gauche protégé",
+    "icon": "/i/015000/015940.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Only vulnerabilities on the left side of the body remain undetected. Hits to the front, back, and right sides of the body will result in severe damage.",
+      "de": "Schwachstellen auf der linken Seite des Körpers bleiben verborgen.<br>Treffer an der vorderen, hinteren und rechten Seite des Körpers führen zu hohem Schaden.",
+      "ja": "身体の左側面のみ急所を見抜かれていない状態。<br>正面、右側、背面から攻撃を受けると、大ダメージを受ける。",
+      "fr": "Seuls les points faibles du côté gauche restent inconnus de l'ennemi. Les attaques en provenance de l'avant, de la droite et de l'arrière infligent d'importants dégâts."
     }
   },
   "3730": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Down for the Count",
+    "de": "Am Boden",
+    "ja": "ノックダウン",
+    "fr": "Au tapis",
+    "icon": "/i/015000/015044.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to move or execute actions.",
+      "de": "Bewegungsunfähig, Kommandos können nicht ausgeführt werden.",
+      "ja": "ノックダウンした状態。移動およびアクション実行不可。",
+      "fr": "Impossible d'utiliser des actions ou de se déplacer."
     }
   },
   "3731": {
@@ -48516,68 +48516,68 @@
     }
   },
   "3733": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rite of the Sparrow",
+    "de": "Pilger des Finken",
+    "ja": "巡礼：霊鳥",
+    "fr": "Révérence&nbsp;: oiseau sacré",
+    "icon": "/i/016000/016751.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Paying respects to a venerable uolosapa.",
+      "de": "Auf Wallfahrt des Finken.",
+      "ja": "霊鳥の像に巡礼を行っている状態。",
+      "fr": "En pèlerinage face à la statue de l'oiseau sacré."
     }
   },
   "3734": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rite of the Sea Turtle",
+    "de": "Pilger der Schildkröte",
+    "ja": "巡礼：霊亀",
+    "fr": "Révérence&nbsp;: tortue sacrée",
+    "icon": "/i/016000/016752.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Paying respects to a venerable tesata.",
+      "de": "Auf Wallfahrt der Schildkröte.",
+      "ja": "霊亀の像に巡礼を行っている状態。",
+      "fr": "En pèlerinage face à la statue de la tortue sacrée."
     }
   },
   "3735": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rite of the Great Whale",
+    "de": "Pilger des Wals",
+    "ja": "巡礼：霊鯨",
+    "fr": "Révérence&nbsp;: baleine sacrée",
+    "icon": "/i/016000/016753.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Paying respects to a venerable ketu.",
+      "de": "Auf Wallfahrt des Wals.",
+      "ja": "霊鯨の像に巡礼を行っている状態。",
+      "fr": "En pèlerinage face à la statue de la baleine sacrée."
     }
   },
   "3736": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "吸魔",
+    "de": "吸魔",
+    "ja": "吸魔",
+    "fr": "吸魔",
+    "icon": "/i/016000/016754.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "大樹に描かれた魔紋に、エーテルを吸われている状態。",
+      "de": "大樹に描かれた魔紋に、エーテルを吸われている状態。",
+      "ja": "大樹に描かれた魔紋に、エーテルを吸われている状態。",
+      "fr": "大樹に描かれた魔紋に、エーテルを吸われている状態。"
     }
   },
   "3737": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Forced March",
+    "de": "Marschbefehl",
+    "ja": "強制移動",
+    "fr": "Marche forcée",
+    "icon": "/i/015000/015773.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Advancing in the ordered direction.",
+      "de": "Wird gezwungen, sich in eine bestimmte Richtung zu bewegen.",
+      "ja": "指定方向に移動し続けてしまう状態。",
+      "fr": "Le corps obéit et avance dans la direction indiquée."
     }
   },
   "3738": {
@@ -48633,42 +48633,42 @@
     }
   },
   "3742": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Bull's-eye",
+    "de": "Donnerdarts",
+    "ja": "サンダーダート",
+    "fr": "Fléchette de tonnerre",
+    "icon": "/i/016000/016757.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Targeted by Statice. Shock darts will rain like levin upon the surrounding area when this effect expires.",
+      "de": "Ins Visier genommen. Nach Ablauf stürzen im Umkreis Donnerpfeile herab.",
+      "ja": "標的となった状態。効果時間が終了すると、周囲に雷の矢が落ちる。",
+      "fr": "La victime est marquée. Des flèches de foudre tombent autour d'elle à la fin de l'effet."
     }
   },
   "3743": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Bubble Weave",
+    "de": "Ahnung des Blasennetzes",
+    "ja": "バブルネットエコー",
+    "fr": "Filet de bulles&nbsp;: écho",
+    "icon": "/i/016000/016755.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Aetherial seafoam is coalescing around the body, resulting in ensnarement by a Bubble Net when this effect expires.",
+      "de": "Von magischen Blasen bedeckt. Bei Ablauf der Wirkungsdauer tritt <span style=\"color:#ffff66\">Blasennetz</span> ein.",
+      "ja": "魔力の泡が付着した状態。効果時間終了時にバブルネット状態になる。",
+      "fr": "Le corps est encerclé par des bulles magiques. Provoque l'effet Filet de bulles à la fin de l'effet."
     }
   },
   "3744": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Bubble Net",
+    "de": "Blasennetz",
+    "ja": "バブルネット",
+    "fr": "Filet de bulles",
+    "icon": "/i/016000/016756.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Ensnared by aetherial seafoam and unable to move except as the wind wills.",
+      "de": "In magischen Blasen verfangen, die jegliche Bewegung verhindern. Wird vom Wind fortgeweht.",
+      "ja": "魔力の泡に絡めとられた状態。移動できず、風に流されてしまう。",
+      "fr": "Le corps est enveloppé dans une bulle. Il ne peut plus se déplacer et peut être emporté par le vent."
     }
   },
   "3745": {
@@ -48685,42 +48685,42 @@
     }
   },
   "3746": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Bubble Gaol",
+    "de": "Blasenkerker",
+    "ja": "バブルプリズン",
+    "fr": "Prison de bulles",
+    "icon": "/i/015000/015301.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Bound by aetherial seafoam and unable to move except as the wind wills.",
+      "de": "In magischen Blasen eingekerkert, die jegliche Handlung verhindern. Wird vom Wind fortgeweht.",
+      "ja": "魔力の泡に閉じ込められた状態。行動できず、風に流されてしまう。",
+      "fr": "Le corps est retenu prisonnier dans une bulle. Il ne peut plus effectuer aucun geste et peut être emporté par le vent."
     }
   },
   "3747": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Hydrofall Target",
+    "de": "Ziel von Hydro-Sturz",
+    "ja": "ターゲッティング：ハイドロフォール",
+    "fr": "Cible de pilonnage hydrique",
+    "icon": "/i/015000/015969.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Designated target of Hydrofall, which will activate when this effect expires.",
+      "de": "Ins Visier genommen. Bei Ende dieses Effekts wird <span style=\"color:#ffbfff\">Hydro-Sturz</span> ausgelöst.",
+      "ja": "標的となっている状態。効果終了時に、ハイドロフォールが発動する。",
+      "fr": "Dans la mire d'un canon hydrique. Pilonnage hydrique se déclenche à la fin de l'effet."
     }
   },
   "3748": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Hydrobullet Target",
+    "de": "Ziel von Hydro-Kugel",
+    "ja": "ターゲッティング：ハイドロバレット",
+    "fr": "Cible de barillet hydrique",
+    "icon": "/i/015000/015996.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Designated target of Hydrobullet, which will activate when this effect expires.",
+      "de": "Ins Visier genommen. Bei Ende dieses Effekts wird <span style=\"color:#ffbfff\">Hydro-Kugel</span> ausgelöst.",
+      "ja": "標的となっている状態。効果終了時に、ハイドロバレットが発動する。",
+      "fr": "Dans la mire d'un canon hydrique. Barillet hydrique se déclenche à la fin de l'effet."
     }
   },
   "3749": {
@@ -48737,68 +48737,68 @@
     }
   },
   "3750": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "拘束",
+    "de": "拘束",
+    "ja": "拘束",
+    "fr": "拘束",
+    "icon": "/i/015000/015545.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "行動できなくなった状態。",
+      "de": "行動できなくなった状態。",
+      "ja": "行動できなくなった状態。",
+      "fr": "行動できなくなった状態。"
     }
   },
   "3751": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Needle Veil",
+    "de": "Nadelschleier",
+    "ja": "鍼バリア",
+    "fr": "Barrière thérapeutique",
+    "icon": "/i/014000/014988.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "A magicked barrier is nullifying damage.",
+      "de": "Erlittener Schaden ist um einen bestimmten Betrag verringert.",
+      "ja": "一定量のダメージを軽減する状態。",
+      "fr": "Insensible à un certain montant de dégâts."
     }
   },
   "3752": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Oasal Balm",
+    "de": "Balsam der Oase",
+    "ja": "憩いの水",
+    "fr": "Baume oasien",
+    "icon": "/i/014000/014989.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Regenerating HP over time.",
+      "de": "Regeneriert schrittweise LP.",
+      "ja": "連続してＨＰが回復している状態。",
+      "fr": "Des PV sont récupérés périodiquement."
     }
   },
   "3753": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Oasal Balm",
+    "de": "Balsam der Oase",
+    "ja": "憩いの水",
+    "fr": "Baume oasien",
+    "icon": "/i/014000/014989.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Regenerating HP over time.",
+      "de": "Regeneriert schrittweise LP.",
+      "ja": "連続してＨＰが回復している状態。",
+      "fr": "Des PV sont récupérés périodiquement."
     }
   },
   "3754": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Heat Wave",
+    "de": "Gluthitze",
+    "ja": "灼熱波",
+    "fr": "Vague caniculaire",
+    "icon": "/i/014000/014990.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining damage over time.",
+      "de": "Erleidet schrittweise Schaden.",
+      "ja": "ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques sont subis."
     }
   },
   "3755": {
@@ -48815,29 +48815,29 @@
     }
   },
   "3756": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Damage Up",
+    "de": "Schaden +",
+    "ja": "ダメージ上昇",
+    "fr": "Bonus de dégâts",
+    "icon": "/i/015000/015519.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage dealt is greatly increased.",
+      "de": "Ausgeteilter Schaden ist immens erhöht.",
+      "ja": "与ダメージが大きく上昇した状態。",
+      "fr": "Les dégâts infligés sont considérablement augmentés."
     }
   },
   "3757": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Vulnerability Down",
+    "de": "Verringerte Verwundbarkeit",
+    "ja": "被ダメージ低下",
+    "fr": "Vulnérabilité diminuée",
+    "icon": "/i/015000/015021.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage taken is greatly reduced.",
+      "de": "Erlittener Schaden ist immens verringert.",
+      "ja": "受けるダメージが大きく軽減される状態。",
+      "fr": "Les dégâts reçus sont considérablement réduits."
     }
   },
   "3758": {
@@ -48971,16 +48971,16 @@
     }
   },
   "3768": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Area of Influence Up",
+    "de": "Erweiterter Wirkungsbereich",
+    "ja": "アクション効果幅拡大",
+    "fr": "Aire d'effet élargie",
+    "icon": "/i/017000/017981.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Area of effect for actions is expanded.",
+      "de": "Der Wirkungsbereich von Kommandos ist erweitert.",
+      "ja": "アクションの効果幅が拡大した状態。",
+      "fr": "L'aire d'effet des actions est élargie."
     }
   },
   "3769": {
@@ -49075,16 +49075,16 @@
     }
   },
   "3776": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Bind",
+    "de": "Fessel",
+    "ja": "バインド",
+    "fr": "Entrave",
+    "icon": "/i/015000/015003.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to move.",
+      "de": "Bewegungsunfähig.",
+      "ja": "移動できなくなった状態。",
+      "fr": "Tout déplacement est impossible."
     }
   },
   "3777": {
@@ -49153,16 +49153,16 @@
     }
   },
   "3782": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Bind",
+    "de": "Fessel",
+    "ja": "バインド",
+    "fr": "Entrave",
+    "icon": "/i/015000/015003.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to move.",
+      "de": "Bewegungsunfähig.",
+      "ja": "移動できなくなった状態。",
+      "fr": "Tout déplacement est impossible."
     }
   },
   "3783": {
@@ -49205,16 +49205,16 @@
     }
   },
   "3786": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Full-grown",
+    "de": "Ausgewachsen",
+    "ja": "成形",
+    "fr": "Mature",
+    "icon": "/i/015000/015971.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Fully matured.",
+      "de": "Vollständig ausgewachsen.",
+      "ja": "生長しきった状態。",
+      "fr": "L'organisme est arrivé à maturité."
     }
   },
   "3787": {
@@ -49231,55 +49231,55 @@
     }
   },
   "3788": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Foamy Fetters",
+    "de": "Blasenbindung",
+    "ja": "バブルフィッター",
+    "fr": "Agglutination de bulles",
+    "icon": "/i/016000/016749.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Aetherial seafoam is coalescing around the body, resulting in Bind when this effect expires.",
+      "de": "Löst nach Ablauf <span style=\"color:#ffff66\">Fessel</span> aus.",
+      "ja": "魔力の泡にまとわりつかれた状態。効果時間が終了するとバインド状態になる。",
+      "fr": "Le corps est ceinturé par des bulles magiques. Provoque l'effet Entrave à la fin de l'effet."
     }
   },
   "3789": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Bind",
+    "de": "Fessel",
+    "ja": "バインド",
+    "fr": "Entrave",
+    "icon": "/i/015000/015003.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to move.",
+      "de": "Bewegungsunfähig.",
+      "ja": "移動できなくなった状態。",
+      "fr": "Tout déplacement est impossible."
     }
   },
   "3790": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Times Five",
+    "de": "5-fache Winkeladdition",
+    "ja": "回転角5倍",
+    "fr": "Quintuple rotation",
+    "icon": "/i/016000/016747.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "The angle of effect for the next rotational attack executed will be quintupled.",
+      "de": "Der Drehwinkel der nächsten Attacke ist verfünffacht.",
+      "ja": "次に発動する攻撃の回転角が5倍になる状態。",
+      "fr": "Le corps tournera cinq fois plus que la normale lors de la prochaine attaque."
     }
   },
   "3791": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Movement Speed Up",
+    "de": "Geschwindigkeit +",
+    "ja": "移動速度上昇",
+    "fr": "Vitesse de déplacement accrue",
+    "icon": "/i/010000/010101.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Movement speed is increased.",
+      "de": "Bewegungsgeschwindigkeit ist erhöht.",
+      "ja": "移動速度が上昇した状態。",
+      "fr": "La vitesse de déplacement est augmentée."
     }
   },
   "3792": {
@@ -49348,29 +49348,29 @@
     }
   },
   "3797": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Dropsy",
+    "de": "Wassersucht",
+    "ja": "水毒",
+    "fr": "Œdème",
+    "icon": "/i/015000/015529.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining water damage over time.",
+      "de": "Erleidet schrittweise Wasserschaden.",
+      "ja": "水属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques d'eau sont subis."
     }
   },
   "3798": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Dropsy",
+    "de": "Wassersucht",
+    "ja": "水毒",
+    "fr": "Œdème",
+    "icon": "/i/015000/015529.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Sustaining water damage over time.",
+      "de": "Erleidet schrittweise Wasserschaden.",
+      "ja": "水属性ダメージにより、ＨＰが徐々に失われる状態。",
+      "fr": "Des dégâts périodiques d'eau sont subis."
     }
   },
   "3799": {
@@ -49413,16 +49413,16 @@
     }
   },
   "3802": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Acceleration Bomb",
+    "de": "Beschleunigungsbombe",
+    "ja": "加速度爆弾",
+    "fr": "Bombe à accélération",
+    "icon": "/i/015000/015727.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "An acceleration-trigger explosive is affixed to the body. Any movement when effect wears off will result in detonation.",
+      "de": "Eine Bombe mit Beschleunigungssensor haftet am Körper. Bewegung während des Status führt zur Detonation.",
+      "ja": "加速度爆弾が付着した状態。この状態の効果が切れる際に動いていた場合、爆発する。",
+      "fr": "Une bombe sensible aux accélérations est fixée au corps. Tout mouvement à la fin de l'effet déclenchera le mécanisme d'explosion."
     }
   },
   "3803": {
@@ -50687,6 +50687,1306 @@
     }
   },
   "3900": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3901": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3902": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3903": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3904": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3905": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3906": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3907": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3908": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3909": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3910": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3911": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3912": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3913": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3914": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3915": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3916": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3917": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3918": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3919": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3920": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3921": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3922": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3923": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3924": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3925": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3926": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3927": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3928": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3929": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3930": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3931": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3932": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3933": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3934": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3935": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3936": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3937": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3938": {
+    "en": "Times Three",
+    "de": "3-fache Winkeladdition",
+    "ja": "回転角3倍",
+    "fr": "Triple rotation",
+    "icon": "/i/016000/016748.png",
+    "description": {
+      "en": "The angle of effect for the next rotational attack executed will be tripled.",
+      "de": "Der Drehwinkel der nächsten Attacke ist verdreifacht.",
+      "ja": "次に発動する攻撃の回転角が3倍になる状態。",
+      "fr": "Le corps tournera trois fois plus que la normale lors de la prochaine attaque."
+    }
+  },
+  "3939": {
+    "en": "Times Five",
+    "de": "5-fache Winkeladdition",
+    "ja": "回転角5倍",
+    "fr": "Quintuple rotation",
+    "icon": "/i/016000/016747.png",
+    "description": {
+      "en": "The angle of effect for the next rotational attack executed will be quintupled.",
+      "de": "Der Drehwinkel der nächsten Attacke ist verfünffacht.",
+      "ja": "次に発動する攻撃の回転角が5倍になる状態。",
+      "fr": "Le corps tournera cinq fois plus que la normale lors de la prochaine attaque."
+    }
+  },
+  "3940": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3941": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3942": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3943": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3944": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3945": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3946": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3947": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3948": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3949": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3950": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3951": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3952": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3953": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3954": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3955": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3956": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3957": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3958": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3959": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3960": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3961": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3962": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3963": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3964": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3965": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3966": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3967": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3968": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3969": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3970": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3971": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3972": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3973": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3974": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3975": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3976": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3977": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3978": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3979": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3980": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3981": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3982": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3983": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3984": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3985": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3986": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3987": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3988": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3989": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3990": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3991": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3992": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3993": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3994": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3995": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3996": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3997": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3998": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "3999": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "",
+    "description": {
+      "en": "",
+      "de": "",
+      "ja": "",
+      "fr": ""
+    }
+  },
+  "4000": {
     "en": "",
     "de": "",
     "ja": "",

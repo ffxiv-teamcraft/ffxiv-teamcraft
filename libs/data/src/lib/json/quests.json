@@ -84234,21 +84234,28 @@
   },
   "70325": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Stranger from Paradise",
+      "ja": "神子の使いと忘れられた島",
+      "de": "Des Vogels Paradies",
+      "fr": "L'île du peuple oublié"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101268.png"
   },
   "70326": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Fish a Day",
+      "ja": "焼けた道を行く君へ",
+      "de": "Wer auf steinig Pfaden wandelt",
+      "fr": "Le cadeau de Matsya"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36057,
+        "amount": 3
+      }
+    ]
   },
   "70327": {
     "name": {
@@ -84379,48 +84386,468 @@
   },
   "70337": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Just Crowning Around",
+      "ja": "つかめ、勝利のクラウン！",
+      "de": "Gut gestolpert ist halb gewonnen",
+      "fr": "Les gars qui tombent"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080132.png"
   },
   "70338": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Dance Like Mowen Is Watching",
+      "ja": "覚悟の最高傑作",
+      "de": "Ein großer Entschluss",
+      "fr": "La grande décision"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101281.png"
   },
   "70339": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " A Tool for the Ages",
+      "ja": " 澄み輝ける改良計画",
+      "de": " Perfekt ist gerade gut genug",
+      "fr": " Plus qu'un outil, un symbole"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "trades": [
+      {
+        "currencies": [
+          {
+            "id": 39743,
+            "amount": 1
+          },
+          {
+            "id": 41270,
+            "amount": 60
+          }
+        ],
+        "items": [
+          {
+            "id": 41180,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39744,
+            "amount": 1
+          },
+          {
+            "id": 41271,
+            "amount": 60
+          }
+        ],
+        "items": [
+          {
+            "id": 41181,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39745,
+            "amount": 1
+          },
+          {
+            "id": 41272,
+            "amount": 60
+          }
+        ],
+        "items": [
+          {
+            "id": 41182,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39746,
+            "amount": 1
+          },
+          {
+            "id": 41273,
+            "amount": 60
+          }
+        ],
+        "items": [
+          {
+            "id": 41183,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39747,
+            "amount": 1
+          },
+          {
+            "id": 41274,
+            "amount": 60
+          }
+        ],
+        "items": [
+          {
+            "id": 41184,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39748,
+            "amount": 1
+          },
+          {
+            "id": 41275,
+            "amount": 60
+          }
+        ],
+        "items": [
+          {
+            "id": 41185,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39749,
+            "amount": 1
+          },
+          {
+            "id": 41276,
+            "amount": 60
+          }
+        ],
+        "items": [
+          {
+            "id": 41186,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39750,
+            "amount": 1
+          },
+          {
+            "id": 41277,
+            "amount": 60
+          }
+        ],
+        "items": [
+          {
+            "id": 41187,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39751,
+            "amount": 1
+          },
+          {
+            "id": 41294,
+            "amount": 220
+          },
+          {
+            "id": 41287,
+            "amount": 220
+          }
+        ],
+        "items": [
+          {
+            "id": 41188,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39752,
+            "amount": 1
+          },
+          {
+            "id": 41295,
+            "amount": 220
+          },
+          {
+            "id": 41289,
+            "amount": 220
+          }
+        ],
+        "items": [
+          {
+            "id": 41189,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39753,
+            "amount": 1
+          },
+          {
+            "id": 41303,
+            "amount": 170
+          }
+        ],
+        "items": [
+          {
+            "id": 41190,
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "banner": "/i/101000/101281.png"
   },
   "70340": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Stand Tool, My Friend",
+      "ja": " 至高の改良計画",
+      "de": " Ende einer langen Reise",
+      "fr": " Finition scintillante"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "trades": [
+      {
+        "currencies": [
+          {
+            "id": 41180,
+            "amount": 1
+          },
+          {
+            "id": 41278,
+            "amount": 60
+          }
+        ],
+        "items": [
+          {
+            "id": 41191,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 41181,
+            "amount": 1
+          },
+          {
+            "id": 41279,
+            "amount": 60
+          }
+        ],
+        "items": [
+          {
+            "id": 41192,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 41182,
+            "amount": 1
+          },
+          {
+            "id": 41280,
+            "amount": 60
+          }
+        ],
+        "items": [
+          {
+            "id": 41193,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 41183,
+            "amount": 1
+          },
+          {
+            "id": 41281,
+            "amount": 60
+          }
+        ],
+        "items": [
+          {
+            "id": 41194,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 41184,
+            "amount": 1
+          },
+          {
+            "id": 41282,
+            "amount": 60
+          }
+        ],
+        "items": [
+          {
+            "id": 41195,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 41185,
+            "amount": 1
+          },
+          {
+            "id": 41283,
+            "amount": 60
+          }
+        ],
+        "items": [
+          {
+            "id": 41196,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 41186,
+            "amount": 1
+          },
+          {
+            "id": 41284,
+            "amount": 60
+          }
+        ],
+        "items": [
+          {
+            "id": 41197,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 41187,
+            "amount": 1
+          },
+          {
+            "id": 41285,
+            "amount": 60
+          }
+        ],
+        "items": [
+          {
+            "id": 41198,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 41188,
+            "amount": 1
+          },
+          {
+            "id": 41296,
+            "amount": 220
+          },
+          {
+            "id": 41291,
+            "amount": 220
+          }
+        ],
+        "items": [
+          {
+            "id": 41199,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 41189,
+            "amount": 1
+          },
+          {
+            "id": 41297,
+            "amount": 220
+          },
+          {
+            "id": 41293,
+            "amount": 220
+          }
+        ],
+        "items": [
+          {
+            "id": 41200,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 41190,
+            "amount": 1
+          },
+          {
+            "id": 41304,
+            "amount": 170
+          }
+        ],
+        "items": [
+          {
+            "id": 41201,
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "banner": "/i/101000/101281.png"
   },
   "70341": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Dearly Bekettled",
+      "ja": " ふたりのヤカン",
+      "de": " Kessel der Liebe",
+      "fr": " Une bouilloire pour deux"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101281.png"
   },
   "70342": {
     "name": {
@@ -84444,7 +84871,7 @@
     "name": {
       "en": "ヴァレンティオンデーにハートを込めて",
       "ja": "ヴァレンティオンデーにハートを込めて",
-      "de": "ヴァレンティオンデーにハートを込めて",
+      "de": "Ein Tag, um Herz zu zeigen",
       "fr": "L'angle parfait"
     },
     "icon": "/i/080000/080108.png",
@@ -84454,7 +84881,7 @@
     "name": {
       "en": "ヴァレンティオンデーに勇気を出して",
       "ja": "ヴァレンティオンデーに勇気を出して",
-      "de": "ヴァレンティオンデーに勇気を出して",
+      "de": "Fass dir ein Herz",
       "fr": "Le symbole de l'amour"
     },
     "icon": "/i/080000/080108.png",
@@ -84464,7 +84891,7 @@
     "name": {
       "en": "エッグハントと桃色のグゥーブー",
       "ja": "エッグハントと桃色のグゥーブー",
-      "de": "エッグハントと桃色のグゥーブー",
+      "de": "Ein Überraschungsei zum Prinzessinnenfest",
       "fr": "エッグハントと桃色のグゥーブー"
     },
     "icon": "/i/080000/080131.png",
@@ -84474,7 +84901,7 @@
     "name": {
       "en": "プリンセスデーに咲く笑顔の花",
       "ja": "プリンセスデーに咲く笑顔の花",
-      "de": "プリンセスデーに咲く笑顔の花",
+      "de": "Aufblühende Gemüter",
       "fr": "プリンセスデーに咲く笑顔の花"
     },
     "icon": "/i/080000/080131.png",
@@ -84508,7 +84935,7 @@
     "name": {
       "en": "ゴールドソーサーとカッパの謎",
       "ja": "ゴールドソーサーとカッパの謎",
-      "de": "Auf der Suche nach der goldenen Schlagzeile",
+      "de": "Im Namen der Wahrheit",
       "fr": "ゴールドソーサーとカッパの謎"
     },
     "icon": "/i/080000/080116.png",
