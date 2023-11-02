@@ -93,11 +93,14 @@ export class CommentLinksPipe implements PipeTransform {
               type: groups[0],
               language: comment.language
             };
-            const registryEntry = registry.find(row => row.name[comment.language]?.toLowerCase() === data.id.toLowerCase() && row.type === data.type);
-            return `<a href='${this.getTeamcraftLink(match, {
-              ...registryEntry,
-              language: comment.language
-            })}' target='_blank'>${this.getI18nName(registryEntry?.name, locale, match)}</a>`;
+            const registryEntry = registry.find(row => row.name?.[comment.language]?.toLowerCase() === data.id.toLowerCase() && row.type === data.type);
+            if(registryEntry){
+              return `<a href='${this.getTeamcraftLink(match, {
+                ...registryEntry,
+                language: comment.language
+              })}' target='_blank'>${this.getI18nName(registryEntry?.name, locale, match)}</a>`;
+            }
+            return value;
           });
 
           value = value.replace(this.tcRegexp, (match, ...groups) => {
