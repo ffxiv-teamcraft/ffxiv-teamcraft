@@ -1,5 +1,4 @@
 import { KoboldService } from '../kobold/kobold.service';
-import { SaintDefinition } from './saint/saint-definition';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { ColumnSeekOptions, Row } from '@kobold/excel/dist/row';
@@ -13,13 +12,18 @@ import { makeIcon } from './make-icon';
 import { parse } from 'csv-parse/sync';
 import { readdirSync } from 'fs-extra';
 import { numberToCssColor } from './string/number-to-css-color';
+import { ExdYamlParser } from './exd/exd-yaml-parser';
+import { EXDSchema } from './exd/EXDSchema';
 
 export class XivDataService {
 
-  private readonly saintPath = process.env.SAINT_COINACH_PATH || 'G:\\WebstormProjects\\SaintCoinach\\SaintCoinach';
   private readonly rawExdPath = process.env.RAW_EXD_PATH || 'G:\\WebstormProjects\\xivapi.com\\data\\SaintCoinach.Cmd';
 
-  private definitionsCache: Record<string, SaintDefinition> = {};
+  private readonly EXDSchemaPath = process.env.EXD_SCHEMA_PATH || 'G:\\WebstormProjects\\EXDSchema';
+
+  private readonly EXDParser = new ExdYamlParser(this.EXDSchemaPath, 'latest');
+
+  private definitionsCache: Record<string, EXDSchema> = {};
 
   public UIColor: ParsedRow[];
 
@@ -185,13 +189,16 @@ export class XivDataService {
     const depth = options?.depth ?? 1;
     const columns = options?.columns;
     const definition = this.getDefinition(sheetName);
-    if (definition.definitions.length === 0) {
+    if (definition.fields.length === 0) {
       return []; // Nothing to parse if there's no definitions
     }
     const parser = new DefinitionParser(definition, options?.columns);
     const sheetClass = this.generateSheetClass(parser, columns);
     const data = await this.kobold.getSheetData<typeof sheetClass, ExtendedRow>(sheetClass, options?.skipFirst, options?.progress);
     const parsed = data.map(row => this.getParsedRow(row));
+    if (sheetName === 'SpecialShop') {
+      console.log(parser.reader);
+    }
     if (depth > 0) {
       return await this.handleLinks(parser, parsed, columns, depth - 1, options?.progress);
     }
@@ -211,14 +218,13 @@ export class XivDataService {
     };
   }
 
-  private getDefinition(sheetName: string): SaintDefinition {
+  private getDefinition(sheetName: string): EXDSchema {
     if (!this.definitionsCache[sheetName]) {
       try {
-        const raw = readFileSync(join(this.saintPath, 'Definitions', `${sheetName}.json`), 'utf8');
-        this.definitionsCache[sheetName] = JSON.parse(raw) as SaintDefinition;
+        this.definitionsCache[sheetName] = this.EXDParser.parseEXDYaml(sheetName);
       } catch (e) {
-        // console.error(`Missing sheet ${sheetName}.json: ${e.message}`);
-        return { sheet: sheetName, definitions: [] };
+        console.error(`Missing sheet ${sheetName}.yml: ${e.message}`);
+        return { name: sheetName, fields: [] };
       }
     }
     return this.definitionsCache[sheetName];
@@ -238,9 +244,7 @@ export class XivDataService {
           .map(({ dataType }, index) => ({ dataType, index }))
           .filter(col => col.dataType === ColumnDataType.STRING)
           .map(col => {
-            return definition.definitions.find(c => {
-              return (c.index || 0) === col.index;
-            });
+            return definition.fields[col.index];
           })
           .filter(c => !!c && !!c.name && DefinitionParser.columnIsParsed(c.name, columns))
           .map(c => DefinitionParser.cleanupColumnName(c.name));
