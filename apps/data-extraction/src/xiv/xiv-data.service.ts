@@ -7,7 +7,7 @@ import { SeString } from './string/se-string';
 import { ColumnDataType } from '@kobold/excel';
 import { ExtendedRow } from './extended-row';
 import { GetSheetOptions } from './get-sheet-options';
-import { ColumnMapper, DefinitionParser, ReaderIndex } from './definition-parser';
+import { DefinitionParser, MapperEntry, ReaderEntry } from './definition-parser';
 import { makeIcon } from './make-icon';
 import { parse } from 'csv-parse/sync';
 import { readdirSync } from 'fs-extra';
@@ -131,12 +131,16 @@ export class XivDataService {
       return content;
     }
     // Let's make kobold preload our linked sheets first
-    const flattenPreload = mappers.map(m => {
-      return m.mapper.preload.map(preload => ({
+    const preloadFn = (m: MapperEntry) => {
+      if (m.mappers) {
+        return m.mappers.filter(m => (m.mapper || m.mappers)).map(preloadFn).flat();
+      }
+      return (m.mapper.preload || []).map(preload => ({
         preload,
-        columns: this.getSubColumns(m.name, columns)
+        columns: this.getSubColumns(m.flatName, columns)
       }));
-    }).flat();
+    };
+    const flattenPreload = mappers.map(preloadFn).flat();
     const sheetsArray = flattenPreload
       .reduce((acc, { preload, columns }) => {
         const existing = acc.find(r => r.sheet === preload);
@@ -169,20 +173,31 @@ export class XivDataService {
 
     return content.map(row => {
       return mappers.reduce((acc, entry) => {
-        row[entry.name] = this.mapEntry(row[entry.name] as number | number[], entry.mapper, sheets, row);
-        return row;
+        acc[entry.name] = this.mapEntry(row[entry.name] as number | number[], entry, sheets, row);
+        return acc;
       }, row);
     });
   }
 
-  private mapEntry(row: number | number[], mapper: ColumnMapper, sheets: Record<string, ParsedRow[]>, fullRow: ParsedRow) {
+  private mapEntry(row: any, entry: MapperEntry, sheets: Record<string, ParsedRow[]>, fullRow: ParsedRow) {
     if (Array.isArray(row)) {
+      if (entry.mappers) {
+        return row.map(childrow => {
+          return entry.mappers.reduce((acc, mapper) => {
+            return {
+              ...acc,
+              [mapper.name]: this.mapEntry(childrow[mapper.name], mapper, sheets, fullRow)
+            };
+          }, childrow);
+        });
+      }
       return (row as number[] | number[][]).map((e: number | number[]) => {
-        return this.mapEntry(e, mapper, sheets, fullRow);
+        return this.mapEntry(e, entry, sheets, fullRow);
       });
-    } else {
-      return mapper.fn(Number(row), fullRow, sheets);
+    } else if(entry.mapper) {
+      return entry.mapper.fn(Number(row), fullRow, sheets);
     }
+    return row;
   }
 
   public async getSheet(sheetName: string, options?: GetSheetOptions) {
@@ -196,9 +211,6 @@ export class XivDataService {
     const sheetClass = this.generateSheetClass(parser, columns);
     const data = await this.kobold.getSheetData<typeof sheetClass, ExtendedRow>(sheetClass, options?.skipFirst, options?.progress);
     const parsed = data.map(row => this.getParsedRow(row));
-    if (sheetName === 'SpecialShop') {
-      console.log(parser.reader);
-    }
     if (depth > 0) {
       return await this.handleLinks(parser, parsed, columns, depth - 1, options?.progress);
     }
@@ -264,8 +276,19 @@ export class XivDataService {
           });
       }
 
-      private generateReader(reader: ReaderIndex): any {
+      private generateReader(reader: ReaderEntry['reader']): any {
         if (Array.isArray(reader)) {
+          // This means we have a child struct
+          if (Array.isArray(reader[0])) {
+            return reader.map(child => {
+              return child.reduce((acc, entry: ReaderEntry) => {
+                return {
+                  ...acc,
+                  [entry.name]: this.generateReader(entry.reader)
+                };
+              }, {});
+            });
+          }
           return reader.map(e => this.generateReader(e));
         } else {
           return this.unknown({ column: reader });

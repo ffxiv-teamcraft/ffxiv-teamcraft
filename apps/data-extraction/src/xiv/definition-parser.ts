@@ -6,14 +6,28 @@ export interface ColumnMapper {
   fn: (id: number, row: ParsedRow, sheets: Record<string, ParsedRow[]>) => ParsedRow | ParsedRow[] | null | number;
 }
 
-export type ReaderIndex = number | Array<ReaderIndex>;
+export type ReaderIndex = number | number[];
 
 export interface ReaderEntry {
   name: string;
-  reader: ReaderIndex;
+  flatName: string;
+  /**
+   * ReaderIndex is for flat values or flat arrays
+   * ReaderEntry[][] is for when we have arrays of objects
+   */
+  reader: ReaderIndex | ReaderEntry[][];
+}
+
+export interface MapperEntry {
+  name: string,
+  flatName: string;
+  mapper?: ColumnMapper,
+  mappers?: MapperEntry[]
 }
 
 export class DefinitionParser {
+
+  private index = 0;
 
   public get sheet(): string {
     return this.schema.name;
@@ -23,16 +37,42 @@ export class DefinitionParser {
     return this.schema.fields;
   }
 
-  private _flatColumns: { name: string, mapper: ColumnMapper }[] = [];
+  private _flatColumns: MapperEntry[] = [];
 
   private _reader: ReaderEntry[] = [];
 
   public get linkMappers() {
-    return this._flatColumns.filter(c => c.mapper && DefinitionParser.columnIsParsed(c.name, this.columns, true));
+    return this._flatColumns
+      .filter(c => {
+        return (c.mapper || c.mappers) && DefinitionParser.columnIsParsed(c.name, this.columns, true);
+      })
+      .map(c => {
+        const copy = { ...c };
+        if (c.mappers) {
+          copy.mappers = copy.mappers.filter(m => {
+            return m.mapper && DefinitionParser.columnIsParsed(m.flatName, this.columns, true);
+          });
+          return copy;
+        }
+        return c;
+      })
+      .filter(Boolean);
   }
 
   public get reader() {
-    return this._reader.filter(c => DefinitionParser.columnIsParsed(c.name, this.columns));
+    return this._reader.map(c => {
+      const copy = { ...c };
+      if (Array.isArray(c.reader) && Array.isArray(c.reader[0])) {
+        const readerArray = c.reader as ReaderEntry[][];
+        copy.reader = readerArray.map(subarray => {
+          return subarray.filter(prop => {
+            return DefinitionParser.columnIsParsed(prop.flatName, this.columns);
+          });
+        });
+        return copy;
+      }
+      return DefinitionParser.columnIsParsed(c.name, this.columns) ? c : null;
+    }).filter(Boolean);
   }
 
   public static cleanupColumnName(name: string): string {
@@ -62,24 +102,38 @@ export class DefinitionParser {
   }
 
   constructor(private readonly schema: EXDSchema, private readonly columns?: string[]) {
-    let index = 0;
-    schema.fields.forEach((field) => {
-      this.handleField(field);
-      index = this.generateReader(field, index);
-    });
+    this._flatColumns = this.generateMappers(schema.fields);
+    this._reader = this.generateReaders(schema.fields);
   }
 
-  private addReaders(readers: ReaderEntry[]): void {
-    if (readers.some(r => !r.name)) {
-      throw new Error(`Tried to add a reader with no name in ${this.sheet}: ${JSON.stringify(readers)}`);
-    }
-    this._reader.push(...readers);
-  }
-
-  private handleField(field: EXDField): void {
-    this._flatColumns.push({
-      name: DefinitionParser.cleanupColumnName(field.name),
-      mapper: this.generateMapper(field)
+  private generateMappers(fields: EXDField[], prefix = ''): MapperEntry[] {
+    return fields.map(field => {
+      const name = DefinitionParser.cleanupColumnName(field.name);
+      const flatName = prefix ? `${prefix}:${name}` : name;
+      if (field.type === 'array') {
+        const arrayField = field as ArrayField;
+        // If first field has no name, it's just a basic mapper, else go into recursion with prefix
+        if (arrayField.fields) {
+          if (arrayField.fields[0]?.name) {
+            return {
+              name,
+              flatName,
+              mappers: this.generateMappers(arrayField.fields, name)
+            };
+          } else {
+            return {
+              name,
+              flatName,
+              mapper: this.generateMapper(arrayField.fields[0])
+            };
+          }
+        }
+      }
+      return {
+        name,
+        flatName,
+        mapper: this.generateMapper(field)
+      };
     });
   }
 
@@ -138,41 +192,36 @@ export class DefinitionParser {
     }
   }
 
-  /**
-   * Generates a reader for a given field
-   *
-   * Returns new index after reader has been applied.
-   * @param field
-   * @param index
-   * @private
-   */
-  private generateReader(field: EXDField, index = 0): number {
-    switch (field.type) {
-      case 'array':
-        return this.generateRepeatReader(field as ArrayField, index);
-      default:
-        this.addReaders([{ name: DefinitionParser.cleanupColumnName(field.name), reader: index }]);
-        return index + 1;
-    }
+  private generateReaders(fields: EXDField[], prefix = ''): ReaderEntry[] {
+    return fields.map(field => {
+      const name = DefinitionParser.cleanupColumnName(field.name);
+      const flatName = prefix ? `${prefix}:${name}` : name;
+      if (field.type === 'array') {
+        return this.generateArrayReader(field as ArrayField, prefix);
+      }
+      return { name, flatName, reader: this.index++ };
+    });
   }
 
-  private generateRepeatReader(field: ArrayField, index: number): number {
-    // TODO Fine tune this by checking what's the expected output before breaking everything
-    if (field.fields?.length > 0) {
-      let newIndex = index;
-      new Array(field.count).fill(null)
-        .map((_, colIndex) => {
-          field.fields.forEach((subfield) => {
-            newIndex = this.generateReader(subfield, newIndex + colIndex * field.count);
-          });
-        });
-      return newIndex;
+  private generateArrayReader(field: ArrayField, prefix = ''): ReaderEntry {
+    const name = DefinitionParser.cleanupColumnName(field.name);
+    const flatName = prefix ? `${prefix}:${name}` : name;
+    if (field.fields?.length > 0 && field.fields[0]?.name) {
+      return {
+        name,
+        flatName,
+        reader: new Array(field.count)
+          .fill(null)
+          .map(() => {
+            return this.generateReaders(field.fields, name);
+          })
+      };
     }
 
-    this.addReaders([{
-      name: DefinitionParser.cleanupColumnName(field.name),
-      reader: new Array(field.count).fill(null).map((_, i) => index + i)
-    }]);
-    return index + field.count;
+    return {
+      name,
+      flatName,
+      reader: new Array(field.count).fill(null).map((_) => this.index++)
+    };
   }
 }
