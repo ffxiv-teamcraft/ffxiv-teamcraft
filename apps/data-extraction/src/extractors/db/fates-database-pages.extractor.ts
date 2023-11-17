@@ -29,7 +29,7 @@ export class FatesDatabasePagesExtractor extends AbstractExtractor {
           const lazyFate = lazyFates[row.index];
           pages[row.index] = {
             id: row.index,
-            icon: makeIcon(row.IconMap),
+            icon: makeIcon(row.MapIcon),
             patch: this.findPatch('fate', row.index),
             ...extended,
             lvl: row.ClassJobLevel,
