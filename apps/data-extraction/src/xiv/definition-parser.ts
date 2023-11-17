@@ -44,7 +44,7 @@ export class DefinitionParser {
   public get linkMappers() {
     return this._flatColumns
       .filter(c => {
-        return (c.mapper || c.mappers) && DefinitionParser.columnIsParsed(c.name, this.columns, true);
+        return c.mappers || (c.mapper && DefinitionParser.columnIsParsed(c.flatName, this.columns, true));
       })
       .map(c => {
         const copy = { ...c };
@@ -162,9 +162,9 @@ export class DefinitionParser {
             preload: link.targets,
             fn: (id, row, sheets) => {
               for (const t of link.targets) {
-                const match = sheets[t].find(r => r.index === id);
-                if (match) {
-                  return match;
+                const data = this.getLinkedData(sheets[t], id);
+                if (data) {
+                  return data;
                 }
               }
               return id;
@@ -180,9 +180,9 @@ export class DefinitionParser {
                 return id;
               }
               for (const t of targets) {
-                const match = sheets[t].find(r => r.index === id);
-                if (match) {
-                  return match;
+                const data = this.getLinkedData(sheets[t], id);
+                if (data) {
+                  return data;
                 }
               }
               return id;
@@ -190,6 +190,22 @@ export class DefinitionParser {
           };
         }
     }
+  }
+
+  private getLinkedData(sheet: ParsedRow[], id: number): ParsedRow | ParsedRow[] | null {
+    if (sheet.some(row => row.subIndex > 0)) {
+      const match = sheet.filter(row => row.index === id);
+      if (match.length > 0) {
+        return match;
+      }
+    } else {
+      const match = sheet.find(row => row.index === id);
+      if (!match) {
+        return null;
+      }
+      return match;
+    }
+    return null;
   }
 
   private generateReaders(fields: EXDField[], prefix = ''): ReaderEntry[] {
