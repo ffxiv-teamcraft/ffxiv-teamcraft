@@ -1140,7 +1140,8 @@
       "Centered": "Stabil",
       "Malleable": "Formbar",
       "Primed": "Präpariert",
-      "Normal": "Normal"
+      "Normal": "Normal",
+      "Good_omen": "Good Omen"
     },
     "SOLVER": {
       "Hq_target": "Zielwert für HQ%",
