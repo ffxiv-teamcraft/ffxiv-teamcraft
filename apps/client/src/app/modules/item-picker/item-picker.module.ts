@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { PipesModule } from '../../pipes/pipes.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { RouterModule } from '@angular/router';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
 
 @NgModule({
   imports: [
@@ -21,7 +23,9 @@ import { RouterModule } from '@angular/router';
     TranslateModule,
     FormsModule,
     PipesModule,
-    RouterModule
+    RouterModule,
+    ScrollingModule,
+    LazyScrollModule
   ],
   declarations: [ItemPickerComponent],
   providers: [
