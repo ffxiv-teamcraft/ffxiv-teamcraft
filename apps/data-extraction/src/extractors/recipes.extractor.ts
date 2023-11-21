@@ -27,7 +27,7 @@ export class RecipesExtractor extends AbstractExtractor {
     combineLatest([
       this.getSheet<any>(xiv, 'CompanyCraftSequence',
         ['ResultItem#', 'CompanyCraftDraft.Name', 'CompanyCraftPart.CompanyCraftProcess.SupplyItem.Item#', 'CompanyCraftPart.CompanyCraftProcess.SetQuantity', 'CompanyCraftPart.CompanyCraftProcess.SetsRequired'], false, 4),
-      this.getSheet<any>(xiv, 'Recipe', ['RecipeLevelTable', 'QualityFactor', 'ItemIngredient.LevelItem#', 'AmountIngredient', 'LevelItem#', 'MaterialQualityFactor', 'CraftType#', 'AmountResult', 'ItemResult#', 'DurabilityFactor', 'DifficultyFactor',
+      this.getSheet<any>(xiv, 'Recipe', ['RecipeLevelTable', 'QualityFactor', 'Ingredient.LevelItem#', 'AmountIngredient', 'LevelItem#', 'MaterialQualityFactor', 'CraftType#', 'AmountResult', 'ItemResult#', 'DurabilityFactor', 'DifficultyFactor',
         'CanQuickSynth', 'CanHq', 'RequiredControl', 'RequiredCraftsmanship', 'SecretRecipeBook.Item#', 'RequiredQuality', 'IsExpert'], false, 1),
       this.getSheet<any>(xiv, 'MJIRecipe', ['Material.ItemPouch.Item#', 'Amount', 'KeyItem.Item#', 'ItemPouch.Item#'], true, 2),
       this.getSheet<any>(xiv, 'MJICraftworksObject', ['Material.Item#', 'Amount', 'Item#'], true, 1),
@@ -48,9 +48,9 @@ export class RecipesExtractor extends AbstractExtractor {
           return;
         }
         const maxQuality = Math.floor(recipe.RecipeLevelTable.Quality * recipe.QualityFactor / 100);
-        const ingredients = recipe.ItemIngredient
+        const ingredients = recipe.Ingredient
           .map((item, index) => {
-            if (!item || item.index === 0) {
+            if (!item || item.index === 0 || item === -1) {
               return;
             }
             return {

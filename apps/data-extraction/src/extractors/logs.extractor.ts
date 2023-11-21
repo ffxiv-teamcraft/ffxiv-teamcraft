@@ -111,7 +111,7 @@ export class LogsExtractor extends AbstractExtractor {
           return;
         }
         page.Recipe.forEach((recipe) => {
-          if (!recipe || recipe?.index <= 0) {
+          if (recipe === -1 || !recipe || recipe?.index <= 0) {
             return;
           }
           this.craftingLog[recipe.CraftType].push(recipe.index);
@@ -134,7 +134,7 @@ export class LogsExtractor extends AbstractExtractor {
           return;
         }
         page.GatheringItem.forEach(gatheringItem => {
-          if (!gatheringItem) {
+          if (!gatheringItem || gatheringItem === -1) {
             return;
           }
           if (page.index >= 2200) {
@@ -409,6 +409,9 @@ export class LogsExtractor extends AbstractExtractor {
         items: []
       });
       page = this.gatheringLogPages[gathererIndex].find(p => p.id === pageId);
+    }
+    if(!entry.GatheringItemLevel){
+      console.log(entry);
     }
     page.items.push({
       itemId: entry.Item,

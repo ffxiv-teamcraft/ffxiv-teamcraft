@@ -17,10 +17,10 @@ export class QuestsExtractor extends AbstractExtractor {
       'OtherReward.Name',
       'JournalGenre.Icon#',
       'RewardItem#',
-      'ItemReward.RequiredAmount#',
-      'ItemReward.RequiredItem#',
-      'ItemReward.RewardAmount#',
-      'ItemReward.RewardItem#',
+      'Reward.RequiredAmount#',
+      'Reward.RequiredItem#',
+      'Reward.RewardAmount#',
+      'Reward.RewardItem#',
       `OptionalItemIsHQReward#`,
       `IsHQReward#`,
       `ItemCountReward#`,
@@ -64,7 +64,7 @@ export class QuestsExtractor extends AbstractExtractor {
           }
         }
 
-        const fromItemRewards = this.parseReward(quest.ItemReward, quest, 'Item', usedInQuests);
+        const fromItemRewards = this.parseReward(quest.Reward, quest, 'Item', usedInQuests);
         const fromOptionalItemRewards = this.parseReward(quest.OptionalItemReward, quest, 'OptionalItem', usedInQuests);
 
         quests[quest.index].rewards.push(...fromItemRewards.rewards, ...fromOptionalItemRewards.rewards);
@@ -130,7 +130,7 @@ export class QuestsExtractor extends AbstractExtractor {
     _rewards.forEach((reward, i) => {
       if (Array.isArray(reward)) {
         reward.forEach(questReward => {
-          if (questReward.index === 0) {
+          if (questReward.index === 0 || questReward === -1) {
             return;
           }
           // If it's a trade

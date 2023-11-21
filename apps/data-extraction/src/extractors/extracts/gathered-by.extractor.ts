@@ -151,6 +151,9 @@ export class GatheredByExtractor<T = GatheredBy> extends AbstractItemDetailsExtr
     // If it's a mooch
     if (fishingSpot.fishes.includes(baitId) && fishingSources[baitId] && fishingSources[baitId].some(s => s.spot === fishingSpot.id)) {
       const fishingSource = fishingSources[baitId].find(s => s.spot === fishingSpot.id);
+      if (fishingSource.bait === baitId) {
+        return [...currentChain, { id: baitId }].reverse();
+      }
       return this.getBaitChain(fishingSource.bait, fishingSpot, fishingSources, [...currentChain, {
         id: baitId,
         tug: fishingSource?.tug

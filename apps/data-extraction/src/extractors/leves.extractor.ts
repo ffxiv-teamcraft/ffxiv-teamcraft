@@ -45,7 +45,7 @@ export class LevesExtractor extends AbstractExtractor {
             expReward: leve.ExpReward,
             cost: leve.AllowanceCost,
             startPlaceId: leve.PlaceNameStart,
-            deliveryPlaceId: leve.LevelLevemete?.Map.PlaceName || 0
+            deliveryPlaceId: leve.LevelLevemete?.Map?.PlaceName || 0
           };
           if (leve.DataId.__sheet === 'CraftLeve') {
             leves[leve.index].items = leve.DataId.Item

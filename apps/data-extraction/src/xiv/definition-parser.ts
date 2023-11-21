@@ -1,51 +1,85 @@
-import { SaintDefinition } from './saint/saint-definition';
-import { BaseSaintColumnDefinition, SaintColumnDefinition, SaintGroupColumnDefinition, SaintRepeatColumnDefinition } from './saint/saint-column-definition';
 import { ParsedRow } from './parsed-row';
-import { ComplexLinkConverter, LinkConverter, MultiRefConverter } from './saint/saint-converter';
+import { ArrayField, EXDField, EXDSchema, LinkField } from './exd/EXDSchema';
 
 export interface ColumnMapper {
   preload: string[];
   fn: (id: number, row: ParsedRow, sheets: Record<string, ParsedRow[]>) => ParsedRow | ParsedRow[] | null | number;
 }
 
-export type ReaderIndex = number | Array<ReaderIndex>;
+export type ReaderIndex = number | number[];
 
 export interface ReaderEntry {
   name: string;
-  reader: ReaderIndex;
+  flatName: string;
+  /**
+   * ReaderIndex is for flat values or flat arrays
+   * ReaderEntry[][] is for when we have arrays of objects
+   */
+  reader: ReaderIndex | ReaderEntry[][];
+}
+
+export interface MapperEntry {
+  name: string,
+  flatName: string;
+  mapper?: ColumnMapper,
+  mappers?: MapperEntry[]
 }
 
 export class DefinitionParser {
 
+  private index = 0;
+
   public get sheet(): string {
-    return this.definition.sheet;
+    return this.schema.name;
   }
 
-  public get definitions() {
-    return this.definition.definitions;
+  public get fields() {
+    return this.schema.fields;
   }
 
-  private _flatColumns: { name: string, mapper: ColumnMapper }[] = [];
+  private _flatColumns: MapperEntry[] = [];
 
   private _reader: ReaderEntry[] = [];
 
-  public get flatColumns() {
-    return this._flatColumns.filter(c => DefinitionParser.columnIsParsed(c.name, this.columns));
-  }
-
   public get linkMappers() {
-    return this._flatColumns.filter(c => c.mapper && DefinitionParser.columnIsParsed(c.name, this.columns, true));
+    return this._flatColumns
+      .filter(c => {
+        return c.mappers || (c.mapper && DefinitionParser.columnIsParsed(c.flatName, this.columns, true));
+      })
+      .map(c => {
+        const copy = { ...c };
+        if (c.mappers) {
+          copy.mappers = copy.mappers.filter(m => {
+            return m.mapper && DefinitionParser.columnIsParsed(m.flatName, this.columns, true);
+          });
+          return copy;
+        }
+        return c;
+      })
+      .filter(Boolean);
   }
 
   public get reader() {
-    return this._reader.filter(c => DefinitionParser.columnIsParsed(c.name, this.columns));
+    return this._reader.map(c => {
+      const copy = { ...c };
+      if (Array.isArray(c.reader) && Array.isArray(c.reader[0])) {
+        const readerArray = c.reader as ReaderEntry[][];
+        copy.reader = readerArray.map(subarray => {
+          return subarray.filter(prop => {
+            return DefinitionParser.columnIsParsed(prop.flatName, this.columns);
+          });
+        });
+        return copy;
+      }
+      return DefinitionParser.columnIsParsed(c.name, this.columns) ? c : null;
+    }).filter(Boolean);
   }
 
   public static cleanupColumnName(name: string): string {
     if (!name) {
       return null;
     }
-    return name.replace(/[{}\[\]<>()]/gi, '');
+    return name;
   }
 
   public static columnIsParsed(name: string, columns: string[], isForLinks = false): boolean {
@@ -67,210 +101,143 @@ export class DefinitionParser {
     });
   }
 
-  constructor(private readonly definition: SaintDefinition, private readonly columns?: string[]) {
-    definition.definitions.forEach(col => {
-      this.handleColumnDefinition(col as SaintColumnDefinition);
-      this.generateReader(col as SaintColumnDefinition);
+  constructor(private readonly schema: EXDSchema, private readonly columns?: string[]) {
+    this._flatColumns = this.generateMappers(schema.fields);
+    this._reader = this.generateReaders(schema.fields);
+  }
+
+  private generateMappers(fields: EXDField[], prefix = ''): MapperEntry[] {
+    return fields.map(field => {
+      const name = DefinitionParser.cleanupColumnName(field.name);
+      const flatName = prefix ? `${prefix}:${name}` : name;
+      if (field.type === 'array') {
+        const arrayField = field as ArrayField;
+        // If first field has no name, it's just a basic mapper, else go into recursion with prefix
+        if (arrayField.fields) {
+          if (arrayField.fields[0]?.name) {
+            return {
+              name,
+              flatName,
+              mappers: this.generateMappers(arrayField.fields, name)
+            };
+          } else {
+            return {
+              name,
+              flatName,
+              mapper: this.generateMapper(arrayField.fields[0])
+            };
+          }
+        }
+      }
+      return {
+        name,
+        flatName,
+        mapper: this.generateMapper(field)
+      };
     });
   }
 
-  private addReaders(readers: ReaderEntry[]): void {
-    if (readers.some(r => !r.name)) {
-      throw new Error(`Tried to add a reader with no name in ${this.sheet}: ${JSON.stringify(readers)}`);
-    }
-    this._reader.push(...readers);
-  }
-
-  private handleColumnDefinition(col: SaintColumnDefinition): void {
-    switch (col.type) {
-      case 'repeat':
-        this.handleRepeatDefinition(col as SaintRepeatColumnDefinition);
-        break;
-      case 'group':
-        this.handleGroupDefinition(col as SaintGroupColumnDefinition);
-        break;
-      default:
-        this._flatColumns.push({
-          name: DefinitionParser.cleanupColumnName(col.name),
-          mapper: this.generateMapper(col)
-        });
-        break;
-    }
-  }
-
-  private handleRepeatDefinition(col: SaintRepeatColumnDefinition): void {
-    if (col.definition) {
-      this.handleColumnDefinition(col.definition);
-    } else if (col.name) {
-      this._flatColumns.push({
-        name: DefinitionParser.cleanupColumnName(col.name),
-        mapper: this.generateMapper(col)
-      });
-    } else {
-      throw new Error(`Trying to handle repeat with no definition and no name: ${this.sheet}::${JSON.stringify(col)}`);
-    }
-  }
-
-  private handleGroupDefinition(col: SaintGroupColumnDefinition): void {
-    if (col.members) {
-      col.members.forEach(member => this.handleColumnDefinition(member));
-    } else {
-      throw new Error(`Trying to handle group with no members: ${JSON.stringify(col)}`);
-    }
-  }
-
-  private generateMapper(col: SaintColumnDefinition): ColumnMapper {
-    if (!col.converter && !col.type) {
+  /**
+   * Mappers are used to map raw data (like numbers, strings, etc) to more meaningful data.
+   * It's mainly used for links, to place the row directly at the spot where the link value is.
+   *
+   * @param field
+   * @private
+   */
+  private generateMapper(field: EXDField): ColumnMapper {
+    if (!field.type) {
       return null;
     }
-    if (col.converter) {
-      switch (col.converter.type) {
-        case 'color':
-        case 'tomestone':
-        case 'generic':
-        case 'icon':
-        case 'quad':
-          return null; // We don't need to handle those but enumerating them here to make sure we didn't miss them
-        case 'complexlink':
+    switch (field.type) {
+      case 'color':
+      case 'scalar':
+      case 'modelId':
+      case 'icon':
+      case 'array':
+        return null; // We don't need to handle those but enumerating them here to make sure we didn't miss them
+      case 'link':
+        const link = field as LinkField;
+        if (link.targets) {
           return {
-            preload: col.converter.links.map(link => link.sheet ? [link.sheet] : link.sheets).flat(),
+            preload: link.targets,
             fn: (id, row, sheets) => {
-              const target = (col.converter as ComplexLinkConverter).links.find(link => {
-                // This is a special case that happens in Quest for instance
-                if (!link.when) {
-                  return true;
-                }
-                if (row[link.when.key] === undefined) {
-                  throw new Error(`Cannot process complexlink with missing property ${link.when.key}, please add it to the columns you're getting.`);
-                }
-                return row[link.when.key] === link.when.value;
-              })?.sheet;
-              if (!target) {
-                return id;
-              }
-              const sheet = sheets[target];
-              if (!sheet) {
-                throw new Error(`Tried to link to a sheet that's not loaded??? ${target}`);
-              }
-              if (sheet.some(row => row.subIndex > 0)) {
-                return sheet.filter(row => row.index === id);
-              }
-              return sheet.find(row => row.index === id);
-            }
-          };
-        case 'multiref':
-          return {
-            preload: col.converter.targets,
-            fn: (id, row, sheets) => {
-              for (let t of (col.converter as MultiRefConverter).targets) {
-                const match = sheets[t].find(r => r.index === id);
-                if (match) {
-                  return match;
+              for (const t of link.targets) {
+                const data = this.getLinkedData(sheets[t], id);
+                if (data) {
+                  return data;
                 }
               }
               return id;
             }
           };
-        case 'link':
-          const target = (col.converter as LinkConverter).target;
+        } else if (link.condition) {
           return {
-            preload: [target],
+            preload: Object.values(link.condition.cases).flat(),
             fn: (id, row, sheets) => {
-              const sheet = sheets[target];
-              if (!sheet) {
-                throw new Error(`Tried to link to a sheet that's not loaded??? ${target}`);
+              const rowValue = row[link.condition.switch] as any;
+              const targets = link.condition.cases[rowValue];
+              if (!targets) {
+                return id;
               }
-              if (sheet.some(row => row.subIndex > 0)) {
-                return sheet.filter(row => row.index === id);
+              for (const t of targets) {
+                const data = this.getLinkedData(sheets[t], id);
+                if (data) {
+                  return data;
+                }
               }
-              return sheet.find(row => row.index === id);
+              return id;
             }
           };
-      }
-    }
-  }
-
-  private generateReader(col: SaintColumnDefinition, index = col.index || 0): void {
-    switch (col.type) {
-      case 'repeat':
-        this.addReaders(this.generateRepeatReaderEntry(col as SaintRepeatColumnDefinition, index));
-        break;
-      case 'group':
-        this.addReaders(this.generateGroupReaderEntry(col as SaintGroupColumnDefinition, index));
-        break;
-      default:
-        this.addReaders([{ name: DefinitionParser.cleanupColumnName(col.name), reader: col.index || 0 }]);
-    }
-  }
-
-  private generateRepeatReaderEntry(col: SaintRepeatColumnDefinition, index: number, parentCount = col.count): ReaderEntry[] {
-    const name = col.definition?.name || col.name;
-    if (name) {
-      return [{
-        name: DefinitionParser.cleanupColumnName(name),
-        reader: this.generateRepeatReader(col.count, index)
-      }];
-    }
-    // If there's no name, it's probably either nested repeat or group repeat
-    const type = col.definition.type;
-    switch (type) {
-      case 'repeat':
-        if (col.definition.definition.type === 'group') {
-          return this.generateRepeatGroupReaderEntry(col, index);
-        } else {
-          return [{
-            name: DefinitionParser.cleanupColumnName(col.definition.definition?.name || col.definition.name),
-            reader: new Array(col.count).fill(null).map((_, colIndex) => {
-              return this.generateRepeatReader((col.definition as SaintRepeatColumnDefinition).count, index + colIndex * col.count);
-            })
-          }];
         }
-      case 'group':
-        return this.generateGroupReaderEntry(col.definition as SaintGroupColumnDefinition, index, parentCount);
     }
   }
 
-  private generateRepeatReader(count: number, index: number): ReaderIndex[] {
-    return new Array(count).fill(null).map((_, i) => index + i);
+  private getLinkedData(sheet: ParsedRow[], id: number): ParsedRow | ParsedRow[] | null {
+    if (sheet.some(row => row.subIndex > 0)) {
+      const match = sheet.filter(row => row.index === id);
+      if (match.length > 0) {
+        return match;
+      }
+    } else {
+      const match = sheet.find(row => row.index === id);
+      if (!match) {
+        return null;
+      }
+      return match;
+    }
+    return null;
   }
 
-  private generateGroupReaderEntry(col: SaintGroupColumnDefinition, index: number, parentCount?: number): ReaderEntry[] {
-    return col.members.map((member: BaseSaintColumnDefinition, mi) => {
-      const name = member.definition?.name || member.name;
-      return {
-        name: DefinitionParser.cleanupColumnName(name),
-        reader: new Array(parentCount).fill(null).map(
-          (_, parentIndex) => {
-            if (member.type === 'repeat') {
-              return new Array(member.count).fill(null).map((_, memberIndex) => {
-                const fullGroupSize = col.members
-                  .reduce((acc, m) => acc + (m as SaintRepeatColumnDefinition).count, 0);
-                const totalPreviousMembersSize = col.members
-                  .slice(0, mi)
-                  .reduce((acc, m) => acc + (m as SaintRepeatColumnDefinition).count, 0);
-                return index + parentIndex * fullGroupSize + totalPreviousMembersSize + memberIndex;
-              });
-            }
-            return index + parentIndex * col.members.length + mi;
-          }
-        )
-      };
+  private generateReaders(fields: EXDField[], prefix = ''): ReaderEntry[] {
+    return fields.map(field => {
+      const name = DefinitionParser.cleanupColumnName(field.name);
+      const flatName = prefix ? `${prefix}:${name}` : name;
+      if (field.type === 'array') {
+        return this.generateArrayReader(field as ArrayField, prefix);
+      }
+      return { name, flatName, reader: this.index++ };
     });
   }
 
-  private generateRepeatGroupReaderEntry(baseRepeat: SaintRepeatColumnDefinition, index: number): ReaderEntry[] {
-    const childRepeat = baseRepeat.definition as SaintRepeatColumnDefinition;
-    const group = childRepeat.definition as SaintGroupColumnDefinition;
-    return group.members.map((member: BaseSaintColumnDefinition, mi) => {
-      const name = member.definition?.name || member.name;
+  private generateArrayReader(field: ArrayField, prefix = ''): ReaderEntry {
+    const name = DefinitionParser.cleanupColumnName(field.name);
+    const flatName = prefix ? `${prefix}:${name}` : name;
+    if (field.fields?.length > 0 && field.fields[0]?.name) {
       return {
-        name: DefinitionParser.cleanupColumnName(name),
-        reader: new Array(baseRepeat.count).fill(null).map((_, colIndex) => {
-          return new Array(childRepeat.count).fill(null).map((__, childColIndex) => {
-            return index + (colIndex * childRepeat.count * group.members.length) + (childColIndex * group.members.length) + mi;
-          });
-        })
+        name,
+        flatName,
+        reader: new Array(field.count)
+          .fill(null)
+          .map(() => {
+            return this.generateReaders(field.fields, name);
+          })
       };
-    });
+    }
+
+    return {
+      name,
+      flatName,
+      reader: new Array(field.count).fill(null).map((_) => this.index++)
+    };
   }
 }

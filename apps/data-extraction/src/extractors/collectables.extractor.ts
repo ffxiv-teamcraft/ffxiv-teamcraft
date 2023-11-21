@@ -10,7 +10,7 @@ export class CollectablesExtractor extends AbstractExtractor {
     const scripIndex = {};
     combineLatest([
       this.getSheet<any>(xiv, 'HWDCrafterSupply',
-        ['ItemTradeIn#', 'BaseCollectableReward', 'MidCollectableReward', 'HighCollectableReward', 'BaseCollectableRating', 'MidCollectableRating', 'HighCollectableRating', 'Level#']
+        ['HWDCrafterSupplyParams:ItemTradeIn#', 'HWDCrafterSupplyParams:BaseCollectableReward', 'HWDCrafterSupplyParams:MidCollectableReward', 'HWDCrafterSupplyParams:HighCollectableReward', 'HWDCrafterSupplyParams:BaseCollectableRating', 'HWDCrafterSupplyParams:MidCollectableRating', 'HWDCrafterSupplyParams:HighCollectableRating', 'HWDCrafterSupplyParams:Level#']
         , false, 1),
       this.getSheet<any>(xiv, 'CollectablesShop',
         [
@@ -35,34 +35,34 @@ export class CollectablesExtractor extends AbstractExtractor {
         });
         // HWDCrafterSupply
         hwdCompleteFetch.forEach(supply => {
-          for (let i = 0; i < 32; i++) {
-            if (!supply.ItemTradeIn[i]) {
-              continue;
+          supply.HWDCrafterSupplyParams.forEach(row => {
+            if (!row.ItemTradeIn || row.ItemTradeIn === -1) {
+              return;
             }
-            const baseReward = supply.BaseCollectableReward[i];
-            collectables[supply.ItemTradeIn[i]] = {
+            const baseReward = row.BaseCollectableReward;
+            collectables[row.ItemTradeIn] = {
               hwd: true,
               id: supply.index,
               type: 'HWDCrafterSupply',
-              level: supply.Level[i],
+              level: row.Level,
               reward: 28063,
               base: {
-                rating: supply.BaseCollectableRating[i],
+                rating: row.BaseCollectableRating,
                 exp: baseReward ? baseReward.ExpReward : 0,
                 scrip: baseReward ? baseReward.ScriptRewardAmount : 0
               },
               mid: {
-                rating: supply.MidCollectableRating[i],
-                exp: supply.MidCollectableReward[i].ExpReward,
-                scrip: supply.MidCollectableReward[i].ScriptRewardAmount
+                rating: row.MidCollectableRating,
+                exp: row.MidCollectableReward.ExpReward,
+                scrip: row.MidCollectableReward.ScriptRewardAmount
               },
               high: {
-                rating: supply.HighCollectableRating[i],
-                exp: supply.HighCollectableReward[i].ExpReward,
-                scrip: supply.HighCollectableReward[i].ScriptRewardAmount
+                rating: row.HighCollectableRating,
+                exp: row.HighCollectableReward.ExpReward,
+                scrip: row.HighCollectableReward.ScriptRewardAmount
               }
             };
-          }
+          })
         });
 
         // CollectablesShop & CollectablesShopRewardItem

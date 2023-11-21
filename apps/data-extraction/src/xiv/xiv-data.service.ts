@@ -1,5 +1,4 @@
 import { KoboldService } from '../kobold/kobold.service';
-import { SaintDefinition } from './saint/saint-definition';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { ColumnSeekOptions, Row } from '@kobold/excel/dist/row';
@@ -8,18 +7,23 @@ import { SeString } from './string/se-string';
 import { ColumnDataType } from '@kobold/excel';
 import { ExtendedRow } from './extended-row';
 import { GetSheetOptions } from './get-sheet-options';
-import { ColumnMapper, DefinitionParser, ReaderIndex } from './definition-parser';
+import { DefinitionParser, MapperEntry, ReaderEntry } from './definition-parser';
 import { makeIcon } from './make-icon';
 import { parse } from 'csv-parse/sync';
 import { readdirSync } from 'fs-extra';
 import { numberToCssColor } from './string/number-to-css-color';
+import { ExdYamlParser } from './exd/exd-yaml-parser';
+import { EXDSchema } from './exd/EXDSchema';
 
 export class XivDataService {
 
-  private readonly saintPath = process.env.SAINT_COINACH_PATH || 'G:\\WebstormProjects\\SaintCoinach\\SaintCoinach';
   private readonly rawExdPath = process.env.RAW_EXD_PATH || 'G:\\WebstormProjects\\xivapi.com\\data\\SaintCoinach.Cmd';
 
-  private definitionsCache: Record<string, SaintDefinition> = {};
+  private readonly EXDSchemaPath = process.env.EXD_SCHEMA_PATH || 'G:\\WebstormProjects\\EXDSchema';
+
+  private readonly EXDParser = new ExdYamlParser(this.EXDSchemaPath, 'latest');
+
+  private definitionsCache: Record<string, EXDSchema> = {};
 
   public UIColor: ParsedRow[];
 
@@ -127,12 +131,16 @@ export class XivDataService {
       return content;
     }
     // Let's make kobold preload our linked sheets first
-    const flattenPreload = mappers.map(m => {
-      return m.mapper.preload.map(preload => ({
+    const preloadFn = (m: MapperEntry) => {
+      if (m.mappers) {
+        return m.mappers.filter(m => (m.mapper || m.mappers)).map(preloadFn).flat();
+      }
+      return (m.mapper.preload || []).map(preload => ({
         preload,
-        columns: this.getSubColumns(m.name, columns)
+        columns: this.getSubColumns(m.flatName, columns)
       }));
-    }).flat();
+    };
+    const flattenPreload = mappers.map(preloadFn).flat();
     const sheetsArray = flattenPreload
       .reduce((acc, { preload, columns }) => {
         const existing = acc.find(r => r.sheet === preload);
@@ -165,27 +173,38 @@ export class XivDataService {
 
     return content.map(row => {
       return mappers.reduce((acc, entry) => {
-        row[entry.name] = this.mapEntry(row[entry.name] as number | number[], entry.mapper, sheets, row);
-        return row;
+        acc[entry.name] = this.mapEntry(row[entry.name] as number | number[], entry, sheets, row);
+        return acc;
       }, row);
     });
   }
 
-  private mapEntry(row: number | number[], mapper: ColumnMapper, sheets: Record<string, ParsedRow[]>, fullRow: ParsedRow) {
+  private mapEntry(row: any, entry: MapperEntry, sheets: Record<string, ParsedRow[]>, fullRow: ParsedRow) {
     if (Array.isArray(row)) {
+      if (entry.mappers) {
+        return row.map(childrow => {
+          return entry.mappers.reduce((acc, mapper) => {
+            return {
+              ...acc,
+              [mapper.name]: this.mapEntry(childrow[mapper.name], mapper, sheets, fullRow)
+            };
+          }, childrow);
+        });
+      }
       return (row as number[] | number[][]).map((e: number | number[]) => {
-        return this.mapEntry(e, mapper, sheets, fullRow);
+        return this.mapEntry(e, entry, sheets, fullRow);
       });
-    } else {
-      return mapper.fn(Number(row), fullRow, sheets);
+    } else if(entry.mapper) {
+      return entry.mapper.fn(Number(row), fullRow, sheets);
     }
+    return row;
   }
 
   public async getSheet(sheetName: string, options?: GetSheetOptions) {
     const depth = options?.depth ?? 1;
     const columns = options?.columns;
     const definition = this.getDefinition(sheetName);
-    if (definition.definitions.length === 0) {
+    if (definition.fields.length === 0) {
       return []; // Nothing to parse if there's no definitions
     }
     const parser = new DefinitionParser(definition, options?.columns);
@@ -211,14 +230,13 @@ export class XivDataService {
     };
   }
 
-  private getDefinition(sheetName: string): SaintDefinition {
+  private getDefinition(sheetName: string): EXDSchema {
     if (!this.definitionsCache[sheetName]) {
       try {
-        const raw = readFileSync(join(this.saintPath, 'Definitions', `${sheetName}.json`), 'utf8');
-        this.definitionsCache[sheetName] = JSON.parse(raw) as SaintDefinition;
+        this.definitionsCache[sheetName] = this.EXDParser.parseEXDYaml(sheetName);
       } catch (e) {
-        // console.error(`Missing sheet ${sheetName}.json: ${e.message}`);
-        return { sheet: sheetName, definitions: [] };
+        console.error(`Missing sheet ${sheetName}.yml: ${e.message}`);
+        return { name: sheetName, fields: [] };
       }
     }
     return this.definitionsCache[sheetName];
@@ -238,9 +256,7 @@ export class XivDataService {
           .map(({ dataType }, index) => ({ dataType, index }))
           .filter(col => col.dataType === ColumnDataType.STRING)
           .map(col => {
-            return definition.definitions.find(c => {
-              return (c.index || 0) === col.index;
-            });
+            return definition.fields[col.index];
           })
           .filter(c => !!c && !!c.name && DefinitionParser.columnIsParsed(c.name, columns))
           .map(c => DefinitionParser.cleanupColumnName(c.name));
@@ -260,8 +276,19 @@ export class XivDataService {
           });
       }
 
-      private generateReader(reader: ReaderIndex): any {
+      private generateReader(reader: ReaderEntry['reader']): any {
         if (Array.isArray(reader)) {
+          // This means we have a child struct
+          if (Array.isArray(reader[0])) {
+            return reader.map(child => {
+              return child.reduce((acc, entry: ReaderEntry) => {
+                return {
+                  ...acc,
+                  [entry.name]: this.generateReader(entry.reader)
+                };
+              }, {});
+            });
+          }
           return reader.map(e => this.generateReader(e));
         } else {
           return this.unknown({ column: reader });
