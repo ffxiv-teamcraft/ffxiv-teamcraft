@@ -80,7 +80,7 @@ export class LogsExtractor extends AbstractExtractor {
                   // Quarrying, Mining, Logging, Harvesting
                   [2025, 2024, 2026, 2027], // Ilsabard
                   [2028, 2029, -1, 2031], // Sea of Stars
-                  [2033, -1, 2034, -1]  // World Sundered
+                  [2033, 2032, 2034, -1]  // World Sundered
                 ][row.index - 2010][index] || -1;
               } else if ([2006, 2007, 2008, 2009].includes(row.index)) {
                 return -1;

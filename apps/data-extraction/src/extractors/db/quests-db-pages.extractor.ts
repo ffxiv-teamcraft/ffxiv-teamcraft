@@ -23,7 +23,7 @@ export class QuestsDbPagesExtractor extends AbstractExtractor {
       [
         'IssuerStart#',
         'TargetEnd#',
-        'ActorSpawnSeq#',
+        'QuestListenerParams:ActorSpawnSeq',
         'InstanceContentUnlock#',
         'GilReward',
         'ActionReward#',
@@ -33,7 +33,7 @@ export class QuestsDbPagesExtractor extends AbstractExtractor {
         'PreviousQuest#',
         'JournalGenre#',
         'ClassJobCategory0#',
-        'ClassJobLevel0#',
+        'ClassJobLevel#',
         'IsRepeatable',
         'BeastReputationRank#',
         'Id'
@@ -44,6 +44,7 @@ export class QuestsDbPagesExtractor extends AbstractExtractor {
           const folder = row.Id.split('_')[1].slice(-6, 3);
           const textCSV = xiv.getFromSaintCSV<{ key: string, 0: string, 1: string }>(`quest/${folder}/${row.Id}`, true);
           const { name, ...quest } = extended;
+          const ActorSpawnSeq = row.QuestListenerParams.map(({ActorSpawnSeq}) => ActorSpawnSeq).filter(Boolean)
           pages[quest.id] = {
             ...quest,
             id: +quest.id,
@@ -64,7 +65,7 @@ export class QuestsDbPagesExtractor extends AbstractExtractor {
             end: row.TargetEnd,
             startingPoint: this.npcs[row.IssuerStart]?.position ?? null,
             npcs: uniq([
-              ...row.ActorSpawnSeq.filter(Boolean),
+              ...ActorSpawnSeq,
               row.IssuerStart
             ]).filter(id => this.npcs[id] !== undefined),
             rewards: [
@@ -76,7 +77,7 @@ export class QuestsDbPagesExtractor extends AbstractExtractor {
               row.ReputationReward ? { amount: row.ReputationReward, type: 'rep' } : null
             ].filter(Boolean),
             jobCategory: row.ClassJobCategory0,
-            level: row.ClassJobLevel0,
+            level: row.ClassJobLevel[0],
             repeatable: row.IsRepeatable,
             beastRank: row.BeastReputationRank
           };

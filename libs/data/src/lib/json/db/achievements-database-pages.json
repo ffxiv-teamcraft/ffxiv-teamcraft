@@ -53484,14 +53484,14 @@
     "de": "Hochseefischer I",
     "ja": "オーシャンフィッシャー：ランク1",
     "fr": "Ratisseur des océans I",
-    "ko": "먼바다의 낚시꾼: 1단계",
+    "ko": "먼바다의 낚시꾼(근해): 1단계",
     "zh": "游钓大洋1",
     "description": {
       "en": "Score at least 5,000 points during a single ocean fishing voyage on the Indigo route.",
       "de": "5.000 Punkte auf der Küstenroute im Inhalt „Auf großer Fahrt“ erreicht.",
       "ja": "オーシャンフィッシング（近海）で、1回の航海で5,000ポイント以上の合計釣果点を記録する",
       "fr": "Atteindre un score de 5 000 points au cours d'une expédition de pêche en mer (côtière).",
-      "ko": "먼바다 낚시 항해 한 번에 5,000점 이상의 총점을 기록",
+      "ko": "먼바다 낚시(근해) 항해 한 번에 5,000점 이상의 총점을 기록",
       "zh": "在1次出海垂钓（近海）中获得5,000以上渔分。"
     },
     "item": 30097,
@@ -53505,14 +53505,14 @@
     "de": "Hochseefischer II",
     "ja": "オーシャンフィッシャー：ランク2",
     "fr": "Ratisseur des océans II",
-    "ko": "먼바다의 낚시꾼: 2단계",
+    "ko": "먼바다의 낚시꾼(근해): 2단계",
     "zh": "游钓大洋2",
     "description": {
       "en": "Score at least 10,000 points during a single ocean fishing voyage on the Indigo route.",
       "de": "10.000 Punkte auf der Küstenroute im Inhalt „Auf großer Fahrt“ erreicht.",
       "ja": "オーシャンフィッシング（近海）で、1回の航海で10,000ポイント以上の合計釣果点を記録する",
       "fr": "Atteindre un score de 10 000 points au cours d'une expédition de pêche en mer (côtière).",
-      "ko": "먼바다 낚시 항해 한 번에 10,000점 이상의 총점을 기록",
+      "ko": "먼바다 낚시(근해) 항해 한 번에 10,000점 이상의 총점을 기록",
       "zh": "在1次出海垂钓（近海）中获得10,000以上渔分。"
     },
     "item": 30106,
@@ -53526,14 +53526,14 @@
     "de": "Hochseefischer III",
     "ja": "オーシャンフィッシャー：ランク3",
     "fr": "Ratisseur des océans III",
-    "ko": "먼바다의 낚시꾼: 3단계",
+    "ko": "먼바다의 낚시꾼(근해): 3단계",
     "zh": "游钓大洋3",
     "description": {
       "en": "Score at least 16,000 points during a single ocean fishing voyage on the Indigo route.",
       "de": "16.000 Punkte auf der Küstenroute im Inhalt „Auf großer Fahrt“ erreicht.",
       "ja": "オーシャンフィッシング（近海）で、1回の航海で16,000ポイント以上の合計釣果点を記録する",
       "fr": "Atteindre un score de 16 000 points au cours d'une expédition de pêche en mer (côtière).",
-      "ko": "먼바다 낚시 항해 한 번에 16,000점 이상의 총점을 기록",
+      "ko": "먼바다 낚시(근해) 항해 한 번에 16,000점 이상의 총점을 기록",
       "zh": "在1次出海垂钓（近海）中获得16,000以上渔分。"
     },
     "item": 0,
@@ -53554,7 +53554,7 @@
       "de": "Im Inhalt „Auf großer Fahrt“ das Ziel „Oktopusreiter“ auf der Küstenroute erfüllt.",
       "ja": "オーシャンフィッシング（近海）にて、オクトパストラベラーを達成する",
       "fr": "Obtenir le bonus Octo-opus au cours d'une expédition de pêche en mer (côtière).",
-      "ko": "먼바다 낚시에서 '문어 여행자' 달성",
+      "ko": "먼바다 낚시(근해)에서 '문어 여행자' 달성",
       "zh": "在出海垂钓（近海）中达成八爪旅人。"
     },
     "item": 0,
@@ -53575,7 +53575,7 @@
       "de": "Im Inhalt „Auf großer Fahrt“ das Ziel „Haijäger“ auf der Küstenroute erfüllt.",
       "ja": "オーシャンフィッシング（近海）にて、シャークハンターを達成する",
       "fr": "Obtenir le bonus Chasseurs de requins au cours d'une expédition de pêche en mer (côtière).",
-      "ko": "먼바다 낚시에서 '상어 사냥꾼' 달성",
+      "ko": "먼바다 낚시(근해)에서 '상어 사냥꾼' 달성",
       "zh": "在出海垂钓（近海）中达成捕鲨人。"
     },
     "item": 0,
@@ -53596,7 +53596,7 @@
       "de": "Im Inhalt „Auf großer Fahrt“ das Ziel „Quallenfänger“ auf der Küstenroute erfüllt.",
       "ja": "オーシャンフィッシング（近海）にて、クラゲマニアを達成する",
       "fr": "Obtenir le bonus Le bateau de la méduse au cours d'une expédition de pêche en mer (côtière).",
-      "ko": "먼바다 낚시에서 '해파리 애호가' 달성",
+      "ko": "먼바다 낚시(근해)에서 '해파리 애호가' 달성",
       "zh": "在出海垂钓（近海）中达成水母狂魔。"
     },
     "item": 0,
@@ -53617,7 +53617,7 @@
       "de": "Im Inhalt „Auf großer Fahrt“ das Ziel „Seepferdchenbändiger“ auf der Küstenroute erfüllt.",
       "ja": "オーシャンフィッシング（近海）にて、シードラゴンキラーを達成する",
       "fr": "Obtenir le bonus Fièvre de cheval des mers au cours d'une expédition de pêche en mer (côtière).",
-      "ko": "먼바다 낚시에서 '해마 기수' 달성",
+      "ko": "먼바다 낚시(근해)에서 '해마 기수' 달성",
       "zh": "在出海垂钓（近海）中达成龙马惊神。"
     },
     "item": 0,
@@ -57565,7 +57565,7 @@
       "de": "Im Inhalt „Auf großer Fahrt“ das Ziel „Ballonfänger“ auf der Küstenroute erfüllt.",
       "ja": "オーシャンフィッシング（近海）にて、バルーンキャッチャーを達成する",
       "fr": "Obtenir le bonus Amateur du ballon rond au cours d'une expédition de pêche en mer (côtière).",
-      "ko": "먼바다 낚시에서 '풍선잡이' 달성",
+      "ko": "먼바다 낚시(근해)에서 '풍선잡이' 달성",
       "zh": "在出海垂钓（近海）中达成气鲀四海。"
     },
     "item": 0,
@@ -57586,7 +57586,7 @@
       "de": "Im Inhalt „Auf großer Fahrt“ das Ziel „Krabbenschiffsbesatzung“ auf der Küstenroute erfüllt.",
       "ja": "オーシャンフィッシング（近海）にて、蟹工船を達成する",
       "fr": "Obtenir le bonus Pince-sans-rire au cours d'une expédition de pêche en mer (côtière).",
-      "ko": "먼바다 낚시에서 '게잡이배' 달성",
+      "ko": "먼바다 낚시(근해)에서 '게잡이배' 달성",
       "zh": "在出海垂钓（近海）中达成横路不通。"
     },
     "item": 0,
@@ -57607,7 +57607,7 @@
       "de": "Im Inhalt „Auf großer Fahrt“ das Ziel „Manta! Manta!“ auf der Küstenroute erfüllt.",
       "ja": "オーシャンフィッシング（近海）にて、エイエイオーを達成する",
       "fr": "Obtenir le bonus Raies arraisonnées au cours d'une expédition de pêche en mer (côtière).",
-      "ko": "먼바다 낚시에서 '가오가오리' 달성",
+      "ko": "먼바다 낚시(근해)에서 '가오가오리' 달성",
       "zh": "在出海垂钓（近海）中达成只有我最鳐摆。"
     },
     "item": 0,
@@ -57663,14 +57663,14 @@
     "de": "Hochseefischer IV",
     "ja": "オーシャンフィッシャー：ランク4",
     "fr": "Ratisseur des océans IV",
-    "ko": "먼바다의 낚시꾼: 4단계",
+    "ko": "먼바다의 낚시꾼(근해): 4단계",
     "zh": "游钓大洋4",
     "description": {
       "en": "Score at least 20,000 points during a single ocean fishing voyage on the Indigo route.",
       "de": "20.000 Punkte auf der Küstenroute im Inhalt „Auf großer Fahrt“ erreicht.",
       "ja": "オーシャンフィッシング（近海）で、1回の航海で20,000ポイント以上の合計釣果点を記録する",
       "fr": "Atteindre un score de 20 000 points au cours d'une expédition de pêche en mer (côtière).",
-      "ko": "먼바다 낚시 항해 한 번에 20,000점 이상의 총점을 기록",
+      "ko": "먼바다 낚시(근해) 항해 한 번에 20,000점 이상의 총점을 기록",
       "zh": "在1次出海垂钓（近海）中获得20,000以上渔分。"
     },
     "item": 0,
@@ -63816,7 +63816,7 @@
     "de": "Kristallkönig",
     "ja": "コンフリクトの王者",
     "fr": "Roi du conflit",
-    "ko": "컨플릭트의 패왕",
+    "ko": "컨플릭트의 제왕",
     "zh": "冲突的王者",
     "description": {
       "en": "Complete Crystalline Conflict Season One ranked #1.",
@@ -65116,7 +65116,7 @@
     "de": "Kristallkönig (2. Saison)",
     "ja": "コンフリクトの王者：シーズン2",
     "fr": "Roi du conflit : saison 2",
-    "ko": "컨플릭트의 패왕: 시즌 2",
+    "ko": "컨플릭트의 제왕: 시즌 2",
     "zh": "冲突的王者第2赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Two ranked #1.",
@@ -65179,7 +65179,7 @@
     "de": "Kristallkönig (3. Saison)",
     "ja": "コンフリクトの王者：シーズン3",
     "fr": "Roi du conflit : saison 3",
-    "ko": "컨플릭트의 패왕: 시즌 3",
+    "ko": "컨플릭트의 제왕: 시즌 3",
     "zh": "冲突的王者第3赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Three ranked #1.",
@@ -67086,11 +67086,13 @@
     "de": "Glücksdrache",
     "ja": "東方のかわいいドラゴン",
     "fr": "Et le dragon piou",
+    "ko": "동방의 귀여운 드래곤",
     "description": {
       "en": "Complete the quest “Unlike a Dragon.”",
       "de": "Den Auftrag „Drachen bringen Glück“ abgeschlossen.",
       "ja": "クエスト「縁起物と降神祭」をコンプリートする",
-      "fr": "Accomplir la quête “Sous le signe du dragon d'eau”."
+      "fr": "Accomplir la quête “Sous le signe du dragon d'eau”.",
+      "ko": "퀘스트 '복을 부르는 용과 강신제' 완료"
     },
     "item": 0,
     "title": 0
@@ -67292,7 +67294,7 @@
     "de": "Kristallkönig (4. Saison)",
     "ja": "コンフリクトの王者：シーズン4",
     "fr": "Roi du conflit : saison 4",
-    "ko": "컨플릭트의 패왕: 시즌 4",
+    "ko": "컨플릭트의 제왕: 시즌 4",
     "zh": "冲突的王者第4赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Four ranked #1.",
@@ -67355,7 +67357,7 @@
     "de": "Kristallkönig (5. Saison)",
     "ja": "コンフリクトの王者：シーズン5",
     "fr": "Roi du conflit : saison 5",
-    "ko": "컨플릭트의 패왕: 시즌 5",
+    "ko": "컨플릭트의 제왕: 시즌 5",
     "zh": "冲突的王者第5赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Five ranked #1.",
@@ -67838,12 +67840,14 @@
     "de": "Hatz auf den Thron",
     "ja": "玉座の咎人",
     "fr": "Le trône obscur",
+    "ko": "옥좌의 죄인",
     "zh": "负罪的王座",
     "description": {
       "en": "Complete the main scenario quest “The Dark Throne.”",
       "de": "Den Auftrag „Hatz auf den Thron“ abgeschlossen.",
       "ja": "クエスト「玉座の咎人」をコンプリートする",
       "fr": "Accomplir la quête “Le trône obscur”.",
+      "ko": "퀘스트 '옥좌의 죄인' 완료",
       "zh": "完成任务“负罪的王座”。"
     },
     "item": 0,
@@ -67857,12 +67861,14 @@
     "de": "Kartograph: Ätherborn",
     "ja": "ハーム島を踏破せし者",
     "fr": "Cartographe du continent : Île de Haam",
+    "ko": "함 섬 탐험가",
     "zh": "踏遍哈姆岛",
     "description": {
       "en": "Discover every location within the Aetherfont.",
       "de": "Alle Orte in Ätherborn erkundet.",
       "ja": "ハーム島（星霊間欠）を踏破し、マップをすべて開示する",
       "fr": "Découvrir toute la carte de l'île de Haam.",
+      "ko": "함 섬을 탐험하여 모든 지역 발견",
       "zh": "成功探索哈姆岛（间歇灵泉）的所有地区。"
     },
     "item": 0,
@@ -67876,12 +67882,14 @@
     "de": "Ritter des Nichts",
     "ja": "妖皇を狩りし者",
     "fr": "Anéantir le maître du néant",
+    "ko": "요마의 왕을 쓰러뜨린 자",
     "zh": "众魔的降妖者",
     "description": {
       "en": "Defeat Golbez on the Voidcast Dais (Extreme).",
       "de": "Golbez in Eschatos - Golbez bezwungen.",
       "ja": "極ゴルベーザ討滅戦でゴルベーザを討伐する",
       "fr": "Vaincre Golbez dans le défi “La Chaire de l'Exilée (extrême)”.",
+      "ko": "극 골베자 토벌전에서 골베자 처치",
       "zh": "在高贝扎歼殛战中战胜高贝扎。"
     },
     "item": 0,
@@ -67895,12 +67903,14 @@
     "de": "Heute, gestern, morgen",
     "ja": "「星」に願いを",
     "fr": "Entrelacs temporel",
+    "ko": "'별'에게 소원을",
     "zh": "向星星许愿",
     "description": {
       "en": "Complete the quest “Guided by the Past.”",
       "de": "Den Auftrag „Heute, gestern, morgen“ abgeschlossen.",
       "ja": "クエスト「「星」に願いを」をコンプリートする",
       "fr": "Accomplir la quête “Rétrospections”.",
+      "ko": "퀘스트 ''별'에게 소원을' 완료",
       "zh": "完成任务“向星星许愿”。"
     },
     "item": 0,
@@ -67914,12 +67924,14 @@
     "de": "Pandæmonium Obscuricum I",
     "ja": "万魔殿の天獄を制覇せし者：ランク1",
     "fr": "Rendez-vous au Paradis I",
+    "ko": "판데모니움 천옥을 제패한 자: 1단계",
     "zh": "称霸万魔殿荒天之狱1",
     "description": {
       "en": "Complete Pandæmonium: Anabaseios.",
       "de": "Pandæmonium - Anabaseios erfolgreich abgeschlossen.",
       "ja": "万魔殿パンデモニウム：天獄編を攻略する",
       "fr": "Finir le Paradis du Pandæmonium 1 fois.",
+      "ko": "마의 전당 판데모니움: 천옥편 완료",
       "zh": "成功挑战万魔殿荒天之狱。"
     },
     "item": 0,
@@ -67933,12 +67945,14 @@
     "de": "Pandæmonium Obscuricum II",
     "ja": "万魔殿の天獄を制覇せし者：ランク2",
     "fr": "Rendez-vous au Paradis II",
+    "ko": "판데모니움 천옥을 제패한 자: 2단계",
     "zh": "称霸万魔殿荒天之狱2",
     "description": {
       "en": "Complete Pandæmonium: Anabaseios 5 times.",
       "de": "5 Mal Pandæmonium - Anabaseios erfolgreich abgeschlossen.",
       "ja": "万魔殿パンデモニウム：天獄編を計5回攻略する",
       "fr": "Finir le Paradis du Pandæmonium 5 fois.",
+      "ko": "마의 전당 판데모니움: 천옥편 5회 완료",
       "zh": "累计成功挑战万魔殿荒天之狱5次。"
     },
     "item": 0,
@@ -67952,12 +67966,14 @@
     "de": "Pandæmonium Obscuricum III",
     "ja": "万魔殿の天獄を制覇せし者：ランク3",
     "fr": "Rendez-vous au Paradis III",
+    "ko": "판데모니움 천옥을 제패한 자: 3단계",
     "zh": "称霸万魔殿荒天之狱3",
     "description": {
       "en": "Complete Pandæmonium: Anabaseios 10 times.",
       "de": "10 Mal Pandæmonium - Anabaseios erfolgreich abgeschlossen.",
       "ja": "万魔殿パンデモニウム：天獄編を計10回攻略する",
       "fr": "Finir le Paradis du Pandæmonium 10 fois.",
+      "ko": "마의 전당 판데모니움: 천옥편 10회 완료",
       "zh": "累计成功挑战万魔殿荒天之狱10次。"
     },
     "item": 0,
@@ -67971,12 +67987,14 @@
     "de": "Pandæmonium Obscuricum, Ungekürzt I",
     "ja": "万魔殿の天獄を完全制覇せし者：ランク1",
     "fr": "Paradis imaginaire I",
+    "ko": "판데모니움 천옥을 완벽히 제패한 자: 1단계",
     "zh": "完全称霸万魔殿荒天之狱1",
     "description": {
       "en": "Complete Pandæmonium: Anabaseios (Savage).",
       "de": "Pandæmonium - Anabaseios (episch) erfolgreich abgeschlossen.",
       "ja": "万魔殿パンデモニウム零式：天獄編を攻略する",
       "fr": "Finir le Paradis du Pandæmonium (sadique) 1 fois.",
+      "ko": "마의 전당 판데모니움: 천옥편(영웅) 완료",
       "zh": "成功挑战零式万魔殿荒天之狱。"
     },
     "item": 0,
@@ -67990,12 +68008,14 @@
     "de": "Pandæmonium Obscuricum, Ungekürzt II",
     "ja": "万魔殿の天獄を完全制覇せし者：ランク2",
     "fr": "Paradis imaginaire II",
+    "ko": "판데모니움 천옥을 완벽히 제패한 자: 2단계",
     "zh": "完全称霸万魔殿荒天之狱2",
     "description": {
       "en": "Complete Pandæmonium: Anabaseios (Savage) 5 times.",
       "de": "5 Mal Pandæmonium - Anabaseios (episch) erfolgreich abgeschlossen.",
       "ja": "万魔殿パンデモニウム零式：天獄編を計5回攻略する",
       "fr": "Finir le Paradis du Pandæmonium (sadique) 5 fois.",
+      "ko": "마의 전당 판데모니움: 천옥편(영웅) 5회 완료",
       "zh": "累计成功挑战零式万魔殿荒天之狱5次。"
     },
     "item": 0,
@@ -68009,12 +68029,14 @@
     "de": "Pandæmonium Obscuricum, Ungekürzt III",
     "ja": "万魔殿の天獄を完全制覇せし者：ランク3",
     "fr": "Paradis imaginaire III",
+    "ko": "판데모니움 천옥을 완벽히 제패한 자: 3단계",
     "zh": "完全称霸万魔殿荒天之狱3",
     "description": {
       "en": "Complete Pandæmonium: Anabaseios (Savage) 10 times.",
       "de": "10 Mal Pandæmonium - Anabaseios (episch) erfolgreich abgeschlossen.",
       "ja": "万魔殿パンデモニウム零式：天獄編を計10回攻略する",
       "fr": "Finir le Paradis du Pandæmonium (sadique) 10 fois.",
+      "ko": "마의 전당 판데모니움: 천옥편(영웅) 10회 완료",
       "zh": "累计成功挑战零式万魔殿荒天之狱10次。"
     },
     "item": 0,
@@ -68028,12 +68050,14 @@
     "de": "Schlösser aus Sand",
     "ja": "無人島のグレート開拓者",
     "fr": "Luxe, calme et Félicité",
+    "ko": "무인도의 위대한 개척자",
     "zh": "无人岛的伟大开拓者",
     "description": {
       "en": "Achieve sanctuary rank 16 in your island sanctuary.",
       "de": "Inselstufe 16 in deinem Inselparadies erreicht.",
       "ja": "無人島開拓にて、開拓ランクが16に到達する",
       "fr": "Atteindre le rang 16 sur la Félicité insulaire.",
+      "ko": "무인도 개척 랭크 16 달성",
       "zh": "在开拓无人岛的开拓等级升到16级。"
     },
     "item": 0,
@@ -68047,12 +68071,14 @@
     "de": "Müßiggang ist aller Laster Anfang III",
     "ja": "ぼうえきマスター：ランク3",
     "fr": "Commerçant né II",
+    "ko": "무역 통달: 3단계",
     "zh": "贸易大师3",
     "description": {
       "en": "Accrue isleworks earnings totaling at least 33,000 cowries across a seven-cycle period.",
       "de": "Mindestens 33.000 Kauris in sieben Schichten deines Inselateliers verdient.",
       "ja": "無人島開拓の諸島貿易にて、7サイクル通算売り上げ33,000を達成する",
       "fr": "Obtenir 33 000 assignats grâce au commerce insulaire sur une période de 7 cycles.",
+      "ko": "무인도 무역으로 제작 주기 7회 동안 매출 33,000 달성",
       "zh": "在开拓无人岛的群岛贸易中7个生产日的总计营业额达到33000点。"
     },
     "item": 0,
@@ -68066,12 +68092,14 @@
     "de": "Meisterfischer der Sirenen-See",
     "ja": "セイレーン海沖合の魚拓王",
     "fr": "Ichtyogrammiste de la Mer du Chant des sirènes",
+    "ko": "세이렌 해 먼바다의 어탁왕",
     "zh": "妖歌海海面的鱼拓王",
     "description": {
       "en": "Catch every type of fish in the Sirensong Sea when a spectral current is not present.",
       "de": "In der Sirenen-See alle Fischarten gefangen, die außerhalb des Wetterphänomens der Phantomströmung gefangen werden können.",
       "ja": "セイレーン海沖合で天候が幻海流ではない時に釣れる魚を、全種類釣り上げる",
       "fr": "Pêcher un poisson de chaque espèce dans la Mer du Chant des sirènes, sauf ceux apparaissant dans les courants spectraux.",
+      "ko": "세이렌 해 먼바다에서 환해류가 흐르지 않을 때 낚을 수 있는 모든 종류의 물고기 낚기",
       "zh": "钓上妖歌海海面幻海流期间以外的所有鱼类。"
     },
     "item": 0,
@@ -68085,12 +68113,14 @@
     "de": "Meisterfischer von Kugane",
     "ja": "クガネ沖合の魚拓王",
     "fr": "Ichtyogrammiste de la baie de Kugane",
+    "ko": "쿠가네 먼바다의 어탁왕",
     "zh": "黄金港近海的鱼拓王",
     "description": {
       "en": "Catch every type of fish off the Kugane Coast when a spectral current is not present.",
       "de": "In den Gewässern von Kugane alle Fischarten gefangen, die außerhalb des Wetterphänomens der Phantomströmung gefangen werden können.",
       "ja": "クガネ沖合で天候が幻海流ではない時に釣れる魚を、全種類釣り上げる",
       "fr": "Pêcher un poisson de chaque espèce dans la baie de Kugane, sauf ceux apparaissant dans les courants spectraux.",
+      "ko": "쿠가네 먼바다에서 환해류가 흐르지 않을 때 낚을 수 있는 모든 종류의 물고기 낚기",
       "zh": "钓上黄金港近海幻海流期间以外的所有鱼类。"
     },
     "item": 0,
@@ -68104,12 +68134,14 @@
     "de": "Meisterfischer der Rubinsee",
     "ja": "紅玉海沖合の魚拓王",
     "fr": "Ichtyogrammiste de la Mer de Rubis",
+    "ko": "홍옥해 먼바다의 어탁왕",
     "zh": "红玉海海面的鱼拓王",
     "description": {
       "en": "Catch every type of fish on the Ruby Sea when a spectral current is not present.",
       "de": "In der Rubinsee alle Fischarten gefangen, die außerhalb des Wetterphänomens der Phantomströmung gefangen werden können.",
       "ja": "紅玉海沖合で天候が幻海流ではない時に釣れる魚を、全種類釣り上げる",
       "fr": "Pêcher un poisson de chaque espèce dans la Mer de Rubis, sauf ceux apparaissant dans les courants spectraux.",
+      "ko": "홍옥해 먼바다에서 환해류가 흐르지 않을 때 낚을 수 있는 모든 종류의 물고기 낚기",
       "zh": "钓上红玉海海面幻海流期间以外的所有鱼类。"
     },
     "item": 0,
@@ -68123,12 +68155,14 @@
     "de": "Meisterfischer von Yanxia",
     "ja": "ヤンサ下流の魚拓王",
     "fr": "Ichtyogrammiste de Yanxia",
+    "ko": "얀샤 하류의 어탁왕",
     "zh": "延夏下游的鱼拓王",
     "description": {
       "en": "Catch every type of fish in the One River when a spectral current is not present.",
       "de": "In den Gewässern von Yanxia alle Fischarten gefangen, die außerhalb des Wetterphänomens der Phantomströmung gefangen werden können.",
       "ja": "ヤンサ下流で天候が幻海流ではない時に釣れる魚を、全種類釣り上げる",
       "fr": "Pêcher un poisson de chaque espèce en aval de Yanxia, sauf ceux apparaissant dans les courants spectraux.",
+      "ko": "얀샤 하류에서 환해류가 흐르지 않을 때 낚을 수 있는 모든 종류의 물고기 낚기",
       "zh": "钓上延夏下游幻海流期间以外的所有鱼类。"
     },
     "item": 0,
@@ -68142,12 +68176,14 @@
     "de": "Phantomfischer der Sirenen-See",
     "ja": "セイレーン海沖合の幻海王",
     "fr": "Spectre de la Mer du Chant des sirènes",
+    "ko": "세이렌 해 먼바다의 환해왕",
     "zh": "妖歌海海面的幻海王",
     "description": {
       "en": "Catch every type of fish in the Sirensong Sea when a spectral current is present.",
       "de": "In der Sirenen-See alle Fischarten gefangen, die während des Wetterphänomens der Phantomströmung gefangen werden können.",
       "ja": "セイレーン海沖合で天候が幻海流の時に釣れる魚を、全種類釣り上げる",
       "fr": "Pêcher un poisson de chaque espèce apparaissant dans les courants spectraux de la Mer du Chant des sirènes.",
+      "ko": "세이렌 해 먼바다에서 환해류가 흐를 때 낚을 수 있는 모든 종류의 물고기 낚기",
       "zh": "钓上妖歌海海面幻海流期间的所有鱼类。"
     },
     "item": 0,
@@ -68161,12 +68197,14 @@
     "de": "Phantomfischer von Kugane",
     "ja": "クガネ沖合の幻海王",
     "fr": "Spectre de la baie de Kugane",
+    "ko": "쿠가네 먼바다의 환해왕",
     "zh": "黄金港近海的幻海王",
     "description": {
       "en": "Catch every type of fish off the Kugane Coast when a spectral current is present.",
       "de": "In den Gewässern von Kugane alle Fischarten gefangen, die während des Wetterphänomens der Phantomströmung gefangen werden können.",
       "ja": "クガネ沖合で天候が幻海流の時に釣れる魚を、全種類釣り上げる",
       "fr": "Pêcher un poisson de chaque espèce apparaissant dans les courants spectraux de la baie de Kugane.",
+      "ko": "쿠가네 먼바다에서 환해류가 흐를 때 낚을 수 있는 모든 종류의 물고기 낚기",
       "zh": "钓上黄金港近海幻海流期间的所有鱼类。"
     },
     "item": 0,
@@ -68180,12 +68218,14 @@
     "de": "Phantomfischer der Rubinsee",
     "ja": "紅玉海沖合の幻海王",
     "fr": "Spectre de la Mer de Rubis",
+    "ko": "홍옥해 먼바다의 환해왕",
     "zh": "红玉海海面的幻海王",
     "description": {
       "en": "Catch every type of fish on the Ruby Sea when a spectral current is present.",
       "de": "In der Rubinsee alle Fischarten gefangen, die während des Wetterphänomens der Phantomströmung gefangen werden können.",
       "ja": "紅玉海沖合で天候が幻海流の時に釣れる魚を、全種類釣り上げる",
       "fr": "Pêcher un poisson de chaque espèce apparaissant dans les courants spectraux de la Mer de Rubis.",
+      "ko": "홍옥해 먼바다에서 환해류가 흐를 때 낚을 수 있는 모든 종류의 물고기 낚기",
       "zh": "钓上红玉海海面幻海流期间的所有鱼类。"
     },
     "item": 0,
@@ -68199,12 +68239,14 @@
     "de": "Phantomfischer von Yanxia",
     "ja": "ヤンサ下流の幻海王",
     "fr": "Spectre de Yanxia",
+    "ko": "얀샤 하류의 환해왕",
     "zh": "延夏下游的幻海王",
     "description": {
       "en": "Catch every type of fish in the One River when a spectral current is present.",
       "de": "In den Gewässern von Yanxia alle Fischarten gefangen, die während des Wetterphänomens der Phantomströmung gefangen werden können.",
       "ja": "ヤンサ下流で天候が幻海流の時に釣れる魚を、全種類釣り上げる",
       "fr": "Pêcher un poisson de chaque espèce apparaissant dans les courants spectraux en aval de Yanxia.",
+      "ko": "얀샤 하류에서 환해류가 흐를 때 낚을 수 있는 모든 종류의 물고기 낚기",
       "zh": "钓上延夏下游幻海流期间的所有鱼类。"
     },
     "item": 0,
@@ -68218,12 +68260,14 @@
     "de": "Ozeanfischer I",
     "ja": "ビッグオーシャンフィッシャー：ランク1",
     "fr": "Ratisseur des hautes mers I",
+    "ko": "먼바다의 낚시꾼(원양): 1단계",
     "zh": "游钓远洋1",
     "description": {
       "en": "Score at least 5,000 points during a single ocean fishing voyage on the Ruby route.",
       "de": "5.000 Punkte auf einer Fahrt der Ozeanroute im Inhalt „Auf großer Fahrt“ erreicht.",
       "ja": "オーシャンフィッシング（遠洋）で、1回の航海で5,000ポイント以上の合計釣果点を記録する",
       "fr": "Atteindre un score de 5 000 points au cours d'une expédition de pêche en mer (haute mer).",
+      "ko": "먼바다 낚시(원양) 항해 한 번에 5,000점 이상의 총점을 기록",
       "zh": "在1次远洋垂钓中获得5,000以上渔分。"
     },
     "item": 0,
@@ -68237,12 +68281,14 @@
     "de": "Ozeanfischer II",
     "ja": "ビッグオーシャンフィッシャー：ランク2",
     "fr": "Ratisseur des hautes mers II",
+    "ko": "먼바다의 낚시꾼(원양): 2단계",
     "zh": "游钓远洋2",
     "description": {
       "en": "Score at least 10,000 points during a single ocean fishing voyage on the Ruby route.",
       "de": "10.000 Punkte auf einer Fahrt der Ozeanroute im Inhalt „Auf großer Fahrt“ erreicht.",
       "ja": "オーシャンフィッシング（遠洋）で、1回の航海で10,000ポイント以上の合計釣果点を記録する",
       "fr": "Atteindre un score de 10 000 points au cours d'une expédition de pêche en mer (haute mer).",
+      "ko": "먼바다 낚시(원양) 항해 한 번에 10,000점 이상의 총점을 기록",
       "zh": "在1次远洋垂钓中获得10,000以上渔分。"
     },
     "item": 40370,
@@ -68256,12 +68302,14 @@
     "de": "Ozeanfischer III",
     "ja": "ビッグオーシャンフィッシャー：ランク3",
     "fr": "Ratisseur des hautes mers III",
+    "ko": "먼바다의 낚시꾼(원양): 3단계",
     "zh": "游钓远洋3",
     "description": {
       "en": "Score at least 16,000 points during a single ocean fishing voyage on the Ruby route.",
       "de": "16.000 Punkte auf einer Fahrt der Ozeanroute im Inhalt „Auf großer Fahrt“ erreicht.",
       "ja": "オーシャンフィッシング（遠洋）で、1回の航海で16,000ポイント以上の合計釣果点を記録する",
       "fr": "Atteindre un score de 16 000 points au cours d'une expédition de pêche en mer (haute mer).",
+      "ko": "먼바다 낚시(원양) 항해 한 번에 16,000점 이상의 총점을 기록",
       "zh": "在1次远洋垂钓中获得16,000以上渔分。"
     },
     "item": 0,
@@ -68275,12 +68323,14 @@
     "de": "Muschelmeister",
     "ja": "貝殻収集家",
     "fr": "Malacologue",
+    "ko": "조개 수집가",
     "zh": "四海大宝贝",
     "description": {
       "en": "Earn the “Maximum Mussel” bonus during an ocean fishing voyage on the Ruby route.",
       "de": "Den Bonus „Muschelmeister“ auf einer Fahrt der Ozeanroute im Inhalt „Auf großer Fahrt“ erreicht.",
       "ja": "オーシャンフィッシング（遠洋）にて、貝殻収集家を達成する",
       "fr": "Obtenir le bonus Malacologie au cours d'une expédition de pêche en mer (haute mer).",
+      "ko": "먼바다 낚시(원양)에서 '조개 수집가' 달성",
       "zh": "在远洋垂钓中达成四海大宝贝。"
     },
     "item": 0,
@@ -68294,12 +68344,14 @@
     "de": "Tintenfischfanatiker",
     "ja": "スルメドラグーン",
     "fr": "Surume dragon",
+    "ko": "오징어 용기사",
     "zh": "鱿型中队精英",
     "description": {
       "en": "Earn the “Squid Squadron” bonus during an ocean fishing voyage on the Ruby route.",
       "de": "Den Bonus „Tintenfischfanatiker“ auf einer Fahrt der Ozeanroute im Inhalt „Auf großer Fahrt“ erreicht.",
       "ja": "オーシャンフィッシング（遠洋）にて、スルメドラグーンを達成する",
       "fr": "Obtenir le bonus Surume dragon au cours d'une expédition de pêche en mer (haute mer).",
+      "ko": "먼바다 낚시(원양)에서 '오징어 용기사' 달성",
       "zh": "在远洋垂钓中达成鱿型中队精英。"
     },
     "item": 0,
@@ -68313,12 +68365,14 @@
     "de": "Garnelengenießer",
     "ja": "海老散らない",
     "fr": "La crevette",
+    "ko": "새우잡이",
     "zh": "大虾可重新来过",
     "description": {
       "en": "Earn the “Shrimp Smorgasbord” bonus during an ocean fishing voyage on the Ruby route.",
       "de": "Den Bonus „Garnelengenießer“ auf einer Fahrt der Ozeanroute im Inhalt „Auf großer Fahrt“ erreicht.",
       "ja": "オーシャンフィッシング（遠洋）にて、海老散らないを達成する",
       "fr": "Obtenir le bonus Banc de crevettes au cours d'une expédition de pêche en mer (haute mer).",
+      "ko": "먼바다 낚시(원양)에서 '새우잡이' 달성",
       "zh": "在远洋垂钓中达成大虾可重新来过。"
     },
     "item": 0,
@@ -68332,12 +68386,14 @@
     "de": "Kristallkönig (6. Saison)",
     "ja": "コンフリクトの王者：シーズン6",
     "fr": "Roi du conflit : saison 6",
+    "ko": "컨플릭트의 제왕: 시즌 6",
     "zh": "冲突的王者第6赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Six ranked #1.",
       "de": "Die 6. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン6にて、ランキングで1位になる",
       "fr": "Terminer la saison 6 de Crystalline Conflict à la 1re place du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 6에서 1위 입상",
       "zh": "在水晶冲突的第6赛季中取得排名第1名的成绩。"
     },
     "item": 0,
@@ -68351,12 +68407,14 @@
     "de": "Kristallfürst (6. Saison)",
     "ja": "コンフリクトの勇者：シーズン6",
     "fr": "Prince du conflit : saison 6",
+    "ko": "컨플릭트의 용자: 시즌 6",
     "zh": "冲突的勇者第6赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Six ranked within the top 30.",
       "de": "Die 6. Saison von „Crystalline Conflict“ in den Top 30 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン6にて、ランキングで30位以内に入る",
       "fr": "Terminer la saison 6 de Crystalline Conflict dans les 30 premières places du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 6에서 30위 이내 입상",
       "zh": "在水晶冲突的第6赛季中取得排名前30名的成绩。"
     },
     "item": 0,
@@ -68370,12 +68428,14 @@
     "de": "Kristallkämpfer (6. Saison)",
     "ja": "コンフリクトの入賞者：シーズン6",
     "fr": "As du conflit : saison 6",
+    "ko": "컨플릭트의 입상자: 시즌 6",
     "zh": "冲突的获奖者第6赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Six ranked within the top 100.",
       "de": "Die 6. Saison von „Crystalline Conflict“ in den Top 100 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン6にて、ランキングで100位以内に入る",
       "fr": "Terminer la saison 6 de Crystalline Conflict dans les 100 premières places du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 6에서 100위 이내 입상",
       "zh": "在水晶冲突的第6赛季中取得排名前100名的成绩。"
     },
     "item": 0,
@@ -68389,12 +68449,14 @@
     "de": "Kristallkönig (7. Saison)",
     "ja": "コンフリクトの王者：シーズン7",
     "fr": "Roi du conflit : saison 7",
+    "ko": "컨플릭트의 제왕: 시즌 7",
     "zh": "冲突的王者第7赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Seven ranked #1.",
       "de": "Die 7. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン7にて、ランキングで1位になる",
       "fr": "Terminer la saison 7 de Crystalline Conflict à la 1re place du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 7에서 1위 입상",
       "zh": "在水晶冲突的第7赛季中取得排名第1名的成绩。"
     },
     "item": 0,
@@ -68408,12 +68470,14 @@
     "de": "Kristallfürst (7. Saison)",
     "ja": "コンフリクトの勇者：シーズン7",
     "fr": "Prince du conflit : saison 7",
+    "ko": "컨플릭트의 용자: 시즌 7",
     "zh": "冲突的勇者第7赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Seven ranked within the top 30.",
       "de": "Die 7. Saison von „Crystalline Conflict“ in den Top 30 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン7にて、ランキングで30位以内に入る",
       "fr": "Terminer la saison 7 de Crystalline Conflict dans les 30 premières places du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 7에서 30위 이내 입상",
       "zh": "在水晶冲突的第7赛季中取得排名前30名的成绩。"
     },
     "item": 0,
@@ -68427,12 +68491,14 @@
     "de": "Kristallkämpfer (7. Saison)",
     "ja": "コンフリクトの入賞者：シーズン7",
     "fr": "As du conflit : saison 7",
+    "ko": "컨플릭트의 입상자: 시즌 7",
     "zh": "冲突的获奖者第7赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Seven ranked within the top 100.",
       "de": "Die 7. Saison von „Crystalline Conflict“ in den Top 100 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン7にて、ランキングで100位以内に入る",
       "fr": "Terminer la saison 7 de Crystalline Conflict dans les 100 premières places du classement.",
+      "ko": "크리스탈라인 컨플릭트 시즌 7에서 100위 이내 입상",
       "zh": "在水晶冲突的第7赛季中取得排名前100名的成绩。"
     },
     "item": 0,
@@ -68446,12 +68512,14 @@
     "de": "Regionalmatador 2023",
     "ja": "リージョンチャンピオン：CCRC2023",
     "fr": "Belligérant régional 2023",
+    "ko": "지역 챔피언: CCRC2023",
     "zh": "2023年度水晶冲突区域锦标赛冠军",
     "description": {
       "en": "Emerge victorious in the 2023 Crystalline Conflict Regional Championship (Japan).",
       "de": "Crystalline Conflict Regional Championship 2023 in der Region Japan gewonnen.",
       "ja": "Crystalline Conflictリージョンチャンピオンシップ2023にて、日本リージョンで優勝する",
       "fr": "Sortir vainqueur du championnat “Crystalline Conflict Regional Championship 2023” de la zone Japon.",
+      "ko": "'크리스탈라인 컨플릭트 지역 챔피언십 2023' 일본 지역에서 우승",
       "zh": "在2023年度水晶冲突区域锦标赛中取得赛区冠军。"
     },
     "item": 0,
@@ -68465,12 +68533,14 @@
     "de": "Regionalmatador 2023",
     "ja": "リージョンチャンピオン：CCRC2023",
     "fr": "Belligérant régional 2023",
+    "ko": "지역 챔피언: CCRC2023",
     "zh": "2023年度水晶冲突区域锦标赛冠军",
     "description": {
       "en": "Emerge victorious in the 2023 Crystalline Conflict Regional Championship (North America).",
       "de": "Crystalline Conflict Regional Championship 2023 in der Region Nordamerika gewonnen.",
       "ja": "Crystalline Conflictリージョンチャンピオンシップ2023にて、北米リージョンで優勝する",
       "fr": "Sortir vainqueur du championnat “Crystalline Conflict Regional Championship 2023” de la zone Amérique du Nord.",
+      "ko": "'크리스탈라인 컨플릭트 지역 챔피언십 2023' 북미 지역에서 우승",
       "zh": "在2023年度水晶冲突区域锦标赛中取得赛区冠军。"
     },
     "item": 0,
@@ -68484,12 +68554,14 @@
     "de": "Regionalmatador 2023",
     "ja": "リージョンチャンピオン：CCRC2023",
     "fr": "Belligérant régional 2023",
+    "ko": "지역 챔피언: CCRC2023",
     "zh": "2023年度水晶冲突区域锦标赛冠军",
     "description": {
       "en": "Emerge victorious in the 2023 Crystalline Conflict Regional Championship (Europe).",
       "de": "Crystalline Conflict Regional Championship 2023 in der Region Europa gewonnen.",
       "ja": "Crystalline Conflictリージョンチャンピオンシップ2023にて、欧州/太平洋リージョンで優勝する",
       "fr": "Sortir vainqueur du championnat “Crystalline Conflict Regional Championship 2023” de la zone Europe/Pacifique.",
+      "ko": "'크리스탈라인 컨플릭트 지역 챔피언십 2023' 유럽 지역에서 우승",
       "zh": "在2023年度水晶冲突区域锦标赛中取得赛区冠军。"
     },
     "item": 0,
@@ -68503,12 +68575,14 @@
     "de": "Regionalmatador 2023 - Finalist",
     "ja": "リージョンファイナリスト：CCRC2023",
     "fr": "Belligérant régional 2023 : Finaliste",
+    "ko": "지역 파이널리스트: CCRC2023",
     "zh": "2023年度水晶冲突区域锦标赛决胜者",
     "description": {
       "en": "Reach the finals in the 2023 Crystalline Conflict Regional Championship.",
       "de": "Crystalline Conflict Regional Championship 2023 als Finalist bestritten.",
       "ja": "Crystalline Conflictリージョンチャンピオンシップ2023にて、ファイナルに進出する",
       "fr": "Accéder à la finale d'un championnat “Crystalline Conflict Regional Championship 2023”.",
+      "ko": "'크리스탈라인 컨플릭트 지역 챔피언십 2023' 4강 진출",
       "zh": "在2023年度水晶冲突区域锦标赛中进入总决赛。"
     },
     "item": 0,
@@ -68522,12 +68596,14 @@
     "de": "Regionalmatador 2023 - Vorentscheidungen",
     "ja": "リージョンランカー：CCRC2023",
     "fr": "Belligérant régional 2023 : Classé",
+    "ko": "지역 랭커: CCRC2023",
     "zh": "2023年度水晶冲突区域锦标赛突破者",
     "description": {
       "en": "Place in the top 8 in the 2023 Crystalline Conflict Regional Championship preliminaries.",
       "de": "Crystalline Conflict Regional Championship 2023 unter den Besten 8 der Vorrunde abgeschlossen.",
       "ja": "Crystalline Conflictリージョンチャンピオンシップ2023にて、予選ラウンドでベスト8になる",
       "fr": "Être classé parmi les 8 premiers lors la phase éliminatoire d'un championnat “Crystalline Conflict Regional Championship 2023”.",
+      "ko": "'크리스탈라인 컨플릭트 지역 챔피언십 2023' 예선 1위~8위",
       "zh": "在2023年度水晶冲突区域锦标赛预赛中进入八强。"
     },
     "item": 0,
@@ -68575,12 +68651,14 @@
     "de": "Des einen Freud, des anderen Schreck",
     "ja": "パパの楽しい変身ライフ",
     "fr": "Les citrouilles de la trouille",
+    "ko": "아빠의 즐거운 변신 생활",
     "zh": "爸爸的欢乐变身生活",
     "description": {
       "en": "Complete the quest “A Charmed Life.”",
       "de": "Den saisonalen Auftrag „Spuk sei Dank“ abgeschlossen.",
       "ja": "クエスト「守護天節と感謝の気持ち」をコンプリートする",
       "fr": "Accomplir la quête “Le goût de la gratitude”.",
+      "ko": "퀘스트 '수호천절과 감사하는 마음' 완료",
       "zh": "完成任务“守护天节与感谢的心情”。"
     },
     "item": 0,
@@ -68594,12 +68672,14 @@
     "de": "Das größte Geschenk",
     "ja": "友情を結ぶプレゼント",
     "fr": "Amitiés intercités",
+    "ko": "우정을 맺는 선물",
     "zh": "连接友谊的礼物",
     "description": {
       "en": "Complete the quest “Together at a Distance.”",
       "de": "Den saisonalen Auftrag „Das größte Geschenk“ abgeschlossen.",
       "ja": "クエスト「星芒祭と子どもたちの輪」をコンプリートする",
       "fr": "Accomplir la quête “N'oublie pas mon petit bracelet”.",
+      "ko": "퀘스트 '별빛축제와 아이들의 유대' 완료",
       "zh": "完成任务“星芒节与孩子们的友情”。"
     },
     "item": 0,

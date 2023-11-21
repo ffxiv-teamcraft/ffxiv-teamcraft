@@ -12,7 +12,7 @@ export class FatesDatabasePagesExtractor extends AbstractExtractor {
         });
         return acc;
       }, {});
-    this.getSheet(xiv, 'Fate', ['Name', 'Description', 'IconMap', 'ClassJobLevel#', 'ClassJobLevelMax#']).subscribe(
+    this.getSheet(xiv, 'Fate', ['Name', 'Description', 'MapIcon', 'ClassJobLevel#', 'ClassJobLevelMax#']).subscribe(
       fates => {
         const pages = {};
         this.extendNames(fates, [
