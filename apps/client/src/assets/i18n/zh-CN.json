@@ -1141,7 +1141,7 @@
       "Malleable": "大进展",
       "Primed": "长持续",
       "Normal": "通常",
-      "Good_omen": "Good Omen"
+      "Good_omen": "好兆头"
     },
     "SOLVER": {
       "Hq_target": "目标HQ率",
@@ -1625,7 +1625,7 @@
     "Unlocks": "解锁",
     "Jump_to_page": "打开数据库页面",
     "Ishgard_restoration": "伊修加德重建",
-    "GC_supply_value": "Expert Delivery",
+    "GC_supply_value": "筹备稀有品",
     "ITEM": {
       "Masterpiece_exp_tooltip": "下一等级所需经验的百分比",
       "Required_craftsmanship": "需要作业精度",
@@ -1637,8 +1637,8 @@
       "Requires_gc_rank": "所需大国防联军军衔 {{rank}}"
     },
     "FISH": {
-      "Fruity_video": "How to catch video",
-      "Fruity_video_description": "Link to the \"how catch video\" from Fruity Snacks for this fish",
+      "Fruity_video": "如何捕获的视频",
+      "Fruity_video_description": "连接到 Fruity Snacks “如何捕获这条鱼”的视频",
       "Hour": "上钩时间",
       "Etime": "艾欧泽亚时间",
       "Misses_popup_title": "此钓场的提钩失败记录",
@@ -1698,7 +1698,7 @@
         "Size": "尺寸",
         "Large": "大",
         "Time_since_thrown": "抛竿以来的时间",
-        "Throw_etime": "Line throw etime",
+        "Throw_etime": "抛竿时间(艾)",
         "Ignored_spot": "报告工具不支持该钓场，可能会显示不正常的数值。",
         "Ignored_spot_description": "报告工具不会上传你钓到的鱼",
         "ERRORS": {
