@@ -379,7 +379,7 @@
   "Use_lodestoneId": "使用 Lodestone ID",
   "LodestoneId": "Lodestone ID",
   "List_forked": "清单已复制到你的账号",
-  "List_fork": "将此清单复制到你的账号",
+  "List_fork": "Copy this list to your account (ctrl + click to copy as offline list)",
   "List_not_found": "没有找到清单或者你没有权限访问",
   "Requirements_for_craft": "查看要求",
   "Zone_breakdown": "按地图显示",
@@ -421,9 +421,11 @@
   "Precraft_tier": "阶段",
   "Regenerating_lists": "重新生成清单",
   "SETTINGS": {
+    "Requires_restart": "Requires restart/refresh to be taken into account",
     "Title": "设置",
     "General": "通用",
     "Link_base": "物品链接",
+    "DateFormat": "日期格式",
     "Region": "区域",
     "Region_explain": "数据源和基于特定游戏版本的功能将根据区域而做调整。在特定区域下某些功能可能无法使用。",
     "Proxy": "代理",
@@ -456,6 +458,7 @@
     "No_nickname_warning": "请到设置页面设置昵称以使用赞助人专属功能",
     "Show_devtools": "显示开发者工具",
     "Clear_cache": "清除缓存 (将重新启动应用程序)",
+    "Disable_fc_integration": "Disable FC sharing features",
     "Enable_item_tags": "启用物品标签",
     "Show_copy_list_own_list": "在自己的清单页也显示复制清单按钮",
     "Custom_theme": "自定义主题",
@@ -1619,7 +1622,7 @@
     "Currencies": "货币",
     "Rowena_splendor": "罗薇娜显赫商会",
     "Unlocks": "解锁",
-    "Jump_to_page": "Open db page",
+    "Jump_to_page": "打开数据库页面",
     "Ishgard_restoration": "伊修加德重建",
     "GC_supply_value": "Expert Delivery",
     "ITEM": {
@@ -1694,6 +1697,7 @@
         "Size": "尺寸",
         "Large": "大",
         "Time_since_thrown": "抛竿以来的时间",
+        "Throw_etime": "Line throw etime",
         "Ignored_spot": "报告工具不支持该钓场，可能会显示不正常的数值。",
         "Ignored_spot_description": "报告工具不会上传你钓到的鱼",
         "ERRORS": {
@@ -1862,7 +1866,7 @@
     "NPC": "NPC",
     "Leve": "理符任务",
     "Leve_info_message": "左侧的理符任务功能可以帮你准备材料并计算经验奖励",
-    "Comparison_tip": "You can compare items by selecting them and setting selection to comparison mode",
+    "Comparison_tip": "您可以通过选择项目并设置选区进行比较模式来比较项目",
     "Monster": "怪物",
     "Lore": "台词&设定",
     "Fate": "危命任务",
@@ -1975,8 +1979,8 @@
     "Select_stat": "选择属性",
     "Level": "等级",
     "SELECTION_MODE": {
-      "List": "List",
-      "Compare": "Compare"
+      "List": "清单",
+      "Compare": "比较"
     },
     "SORT_BY": {
       "Relevance": "相关性",
@@ -2099,8 +2103,8 @@
       "Message": "物品还存放于： {{containers}}。"
     },
     "NOT_IN_LIST": {
-      "Title": "Items that are not used in any of your lists",
-      "Message": "This item is not used in any of your lists."
+      "Title": "您的列表中没有使用的项目",
+      "Message": "此物品不在您的任何列表中使用。"
     },
     "HAS_TOO_FEW": {
       "Title": "持有数量非常少的物品",
@@ -3031,7 +3035,7 @@
     "Home_subtitle": "在合并视图中同时打开多个清单",
     "Select_lists": "选择需要合并的清单",
     "Select_layout": "选择布局",
-    "Select_layout_dropdown": "Display layout",
+    "Select_layout_dropdown": "显示布局",
     "Open_aggregate": "打开合并视图",
     "Title": "合并清单视图",
     "Select_panel": "选择一个面板以打开视图",
