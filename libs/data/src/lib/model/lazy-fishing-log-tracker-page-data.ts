@@ -110,8 +110,8 @@ export interface GatheringNode {
   video?:            string;
   weathers?:         number[];
   weathersFrom?:     number[];
-  x:                 number;
-  y:                 number;
+  x?:                number;
+  y?:                number;
   z:                 number;
   zoneId:            number;
 }
