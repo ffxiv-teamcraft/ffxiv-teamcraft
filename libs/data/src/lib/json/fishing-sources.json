@@ -11651,7 +11651,7 @@
         }
       ],
       "minGathering": 800,
-      "video": "https://youtu.be/Tk1L3jBM0gU"
+      "video": "https://www.youtube.com/watch?v=pWQbh47dThg"
     }
   ],
   "17589": [
@@ -14583,7 +14583,7 @@
       ],
       "snagging": false,
       "minGathering": 1250,
-      "video": "https://youtu.be/U_oxigpEJtc"
+      "video": "https://youtu.be/1k0znkpkC5Y"
     }
   ],
   "24218": [
@@ -14919,7 +14919,7 @@
         }
       ],
       "minGathering": 1300,
-      "video": "https://youtu.be/02btuCpUpiU"
+      "video": "https://youtu.be/Exd9ch9an2Y"
     }
   ],
   "24993": [
@@ -22475,6 +22475,10 @@
       "weathers": [
         4
       ],
+      "weathersFrom": [
+        1,
+        2
+      ],
       "snagging": false,
       "minGathering": 2250,
       "video": "https://youtu.be/gQUbgScFOYU"
@@ -25697,6 +25701,57 @@
       "minGathering": 0
     }
   ],
+  "41298": [
+    {
+      "spot": 245,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 38808,
+      "minGathering": 0
+    }
+  ],
+  "41299": [
+    {
+      "spot": 245,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 41299,
+      "minGathering": 0
+    }
+  ],
+  "41300": [
+    {
+      "spot": 224,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 38808,
+      "minGathering": 0
+    }
+  ],
+  "41301": [
+    {
+      "spot": 224,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 38808,
+      "predators": [
+        {
+          "id": 41300,
+          "amount": 3
+        }
+      ],
+      "minGathering": 0
+    }
+  ],
+  "41302": [
+    {
+      "spot": 245,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 38808,
+      "minGathering": 0
+    }
+  ],
   "41401": [
     {
       "spot": 259,
@@ -25753,7 +25808,8 @@
           "amount": 5
         }
       ],
-      "minGathering": 3150
+      "minGathering": 3150,
+      "video": "https://youtu.be/5O_uhVte9jU"
     }
   ],
   "41404": [

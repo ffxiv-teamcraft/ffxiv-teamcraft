@@ -18,8 +18,7 @@ export class LevesDatabasePagesExtractor extends AbstractExtractor {
         'LevelLevemete.Object#', 'LeveRewardItem', 'AllowanceCost',
         'ClassJobLevel', 'ExpReward', 'GilReward',
         'DataId.Item#', 'DataId.ItemCount#', 'DataId.Repeats#',
-        'DataId.ItemsInvolved#', 'DataId.ItemsInvolvedQty', 'DataId.ItemDropRate',
-        'DataId.BNpcName#', 'DataId.EnemyLevel'
+        'DataId.LeveData*', 'DataId.BNpcName#', 'DataId.EnemyLevel'
       ],
       false, 2).subscribe(leves => {
       const pages = {};
@@ -93,23 +92,23 @@ export class LevesDatabasePagesExtractor extends AbstractExtractor {
         }
 
         if (row.DataId.__sheet === 'BattleLeve') {
-          pages[row.index].battleItems = row.DataId.ItemsInvolved
-            .filter(Boolean)
-            .map((item, index) => {
+          pages[row.index].battleItems = row.DataId.LeveData
+            .filter(data => data.ItemsInvolved)
+            .map((data) => {
               return {
-                id: item,
-                name: eventItems[item],
-                icon: eventItems[item]?.icon,
-                amount: row.DataId.ItemsInvolvedQty[index],
-                dropRate: row.DataId.ItemDropRate[index]
+                id: data.ItemsInvolved.index,
+                name: eventItems[data.ItemsInvolved.index],
+                icon: eventItems[data.ItemsInvolved.index]?.icon,
+                amount: data.ItemsInvolvedQty,
+                dropRate: data.ItemDropRate
               };
             });
-          pages[row.index].enemies = row.DataId.BNpcName
-            .filter(Boolean)
-            .map((id, index) => {
+          pages[row.index].enemies = row.DataId.LeveData
+            .filter(data => data.BNpcName.index)
+            .map((data) => {
               return {
-                id,
-                level: row.DataId.EnemyLevel[index]
+                id: data.BNpcName.index,
+                level: data.EnemyLevel
               };
             });
         }

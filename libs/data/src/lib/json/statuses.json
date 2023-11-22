@@ -48405,10 +48405,10 @@
     "fr": "Éthéroplasma diminutif α",
     "icon": "/i/018000/018391.png",
     "description": {
-      "en": "Affixed with high-powered explosives that will detonate when this effect expires. Taking damage from arcane geometries on the ground will reduce stacks. Effect will be removed when stacks reach 0.",
-      "de": "Löst nach Ablauf eine schwere Explosion aus. Die Stapel verringern sich bei erlittener <span style=\"color:#ffbfff\">Arkaner Mine</span>. Bei 0 Stapeln wird der Status aufgehoben.",
-      "ja": "減算爆雷が付着し、効果時間が終了すると大爆発を起こす状態。地雷魔紋の攻撃を受けることでスタック数が減少し、0になると解除される。",
-      "fr": "L'éthéroplasma est activé, provoquant une grosse explosion à la fin de l'effet. Encaisser Mine arcanique permet de réduire les degrés de l'effet. S'annule s'il tombe à 0."
+      "en": "Affixed with high-powered explosives that will detonate if KO'd. Taking damage from arcane geometries on the ground will reduce stacks. Effect will be removed when stacks reach 0.",
+      "de": "Löst bei Kampfunfähigkeit eine schwere Explosion aus. Die Stapel verringern sich bei erlittener <span style=\"color:#ffbfff\">Arkaner Mine</span>. Bei 0 Stapeln wird der Status aufgehoben.",
+      "ja": "減算爆雷が付着し、戦闘不能時に大爆発を起こす状態。地雷魔紋の攻撃を受けることでスタック数が減少し、0になると解除される。",
+      "fr": "L'éthéroplasma est activé, provoquant une grosse explosion en cas de K.O. Encaisser Mine arcanique permet de réduire les degrés de l'effet. S'annule s'il tombe à 0."
     }
   },
   "3725": {

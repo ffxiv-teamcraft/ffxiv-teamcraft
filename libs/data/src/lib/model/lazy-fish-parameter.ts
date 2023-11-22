@@ -4,10 +4,10 @@ export interface LazyFishParameter {
   id:          number;
   itemId:      number;
   level:       number;
-  mapId:       number;
+  mapId?:      number;
   recordType?: number;
   stars:       number;
   timed:       number;
   weathered:   number;
-  zoneId:      number;
+  zoneId?:     number;
 }

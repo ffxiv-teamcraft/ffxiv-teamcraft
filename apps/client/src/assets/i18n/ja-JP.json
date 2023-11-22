@@ -379,7 +379,7 @@
   "Use_lodestoneId": "キャラクターIDで検索",
   "LodestoneId": "ロドストID",
   "List_forked": "このリストが自分のアカウントにコピーされました",
-  "List_fork": "このリストを自分のアカウントにコピーする",
+  "List_fork": "Copy this list to your account (ctrl + click to copy as offline list)",
   "List_not_found": "リストになかったり、接近する権限がありません",
   "Requirements_for_craft": "詳細情報",
   "Zone_breakdown": "エリアを纏めて表示する",
@@ -421,9 +421,11 @@
   "Precraft_tier": "段階",
   "Regenerating_lists": "リストの更新",
   "SETTINGS": {
+    "Requires_restart": "Requires restart/refresh to be taken into account",
     "Title": "設定",
     "General": "一般",
     "Link_base": "アイテムリンク",
+    "DateFormat": "Date Format",
     "Region": "地域",
     "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain regions.",
     "Proxy": "プロキシ",
@@ -456,6 +458,7 @@
     "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the supporter exclusive features properly.",
     "Show_devtools": "Devツールを表示",
     "Clear_cache": "キャッシュをクリア(アプリが再起動されます)",
+    "Disable_fc_integration": "Disable FC sharing features",
     "Enable_item_tags": "アイテムダグを使用",
     "Show_copy_list_own_list": "マイリストバネルにコピーボタンを表示する",
     "Custom_theme": "カスタムテーマ",
@@ -1137,7 +1140,8 @@
       "Centered": "安定",
       "Malleable": "高進捗",
       "Primed": "長持続",
-      "Normal": "通常"
+      "Normal": "通常",
+      "Good_omen": "Good Omen"
     },
     "SOLVER": {
       "Hq_target": "HQ目標値",
@@ -1694,6 +1698,7 @@
         "Size": "サイズ",
         "Large": "Large",
         "Time_since_thrown": "キャスティング使用後時間",
+        "Throw_etime": "Line throw etime",
         "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
         "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
         "ERRORS": {

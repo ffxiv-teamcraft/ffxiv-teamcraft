@@ -8,7 +8,7 @@ export interface LazyFishingSpotsDatabasePage {
   fr:            string;
   id:            number;
   ja:            string;
-  ko?:           string;
+  ko:            string;
   level:         number;
   mapId:         number;
   patch:         number;

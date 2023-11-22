@@ -379,7 +379,7 @@
   "Use_lodestoneId": "Использовать lodestone ID",
   "LodestoneId": "Lodestone ID",
   "List_forked": "Список скопирован на ваш аккаунт",
-  "List_fork": "Копировать список на ваш аккаунт",
+  "List_fork": "Copy this list to your account (ctrl + click to copy as offline list)",
   "List_not_found": "Список не найден или у вас нет к нему доступа",
   "Requirements_for_craft": "Посмотреть требования",
   "Zone_breakdown": "Площадь зоны",
@@ -421,9 +421,11 @@
   "Precraft_tier": "Уровень",
   "Regenerating_lists": "Пересоздать списки",
   "SETTINGS": {
+    "Requires_restart": "Requires restart/refresh to be taken into account",
     "Title": "Настройки",
     "General": "Главное",
     "Link_base": "Ссылка на предмет",
+    "DateFormat": "Date Format",
     "Region": "Регион",
     "Region_explain": "Источники данных и функции, основанные на конкретной версии игры будут меняться зависимо от региона. Некоторые из них могут быть недоступны в некоторых регионах.",
     "Proxy": "Прокси",
@@ -456,6 +458,7 @@
     "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the supporter exclusive features properly.",
     "Show_devtools": "Показать инструменты разработчика",
     "Clear_cache": "Очистить кэш (перезапустит приложение)",
+    "Disable_fc_integration": "Disable FC sharing features",
     "Enable_item_tags": "Включить теги предметов",
     "Show_copy_list_own_list": "Показать кнопку копирования на панели своих списков",
     "Custom_theme": "Пользовательская тема",
@@ -1137,7 +1140,8 @@
       "Centered": "Centered",
       "Malleable": "Malleable",
       "Primed": "Primed",
-      "Normal": "Обычное"
+      "Normal": "Обычное",
+      "Good_omen": "Good Omen"
     },
     "SOLVER": {
       "Hq_target": "Целевой шанс HQ",
@@ -1694,6 +1698,7 @@
         "Size": "Размер",
         "Large": "Large",
         "Time_since_thrown": "Время с момента броска",
+        "Throw_etime": "Line throw etime",
         "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
         "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
         "ERRORS": {

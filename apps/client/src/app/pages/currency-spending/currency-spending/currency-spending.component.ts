@@ -63,7 +63,9 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
           33870,
           15857,
           15858,
-          39884
+          38533, // Sil'dihn Potsherd
+          39884, // Rokkon Potsherd
+          41078 // Aloalo Potsherd
         ];
       })
     );

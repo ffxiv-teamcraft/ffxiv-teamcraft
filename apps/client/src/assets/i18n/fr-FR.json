@@ -379,7 +379,7 @@
   "Use_lodestoneId": "Utiliser l'ID lodestone",
   "LodestoneId": "ID lodestone",
   "List_forked": "Liste copiée sur votre compte",
-  "List_fork": "Copier cette liste sur votre compte",
+  "List_fork": "Copiez cette liste sur votre compte (ctrl + clic pour la copier en tant que liste hors ligne)",
   "List_not_found": "Liste introuvable ou vous n'avez pas les droits d'accès",
   "Requirements_for_craft": "Voir les prérequis",
   "Zone_breakdown": "Résumé par zone",
@@ -421,9 +421,11 @@
   "Precraft_tier": "Étape",
   "Regenerating_lists": "Regénération des listes en cours",
   "SETTINGS": {
+    "Requires_restart": "Nécessite un redémarrage/actualisation pour être pris en compte",
     "Title": "Options",
     "General": "Général",
     "Link_base": "Liens des objets",
+    "DateFormat": "Format de date",
     "Region": "Région",
     "Region_explain": "La source de données et les fonctions basées sur une version spécifique du jeu seront ajustées par région. Certaines d'entre elles peuvent ne pas être disponibles dans certaines régions.",
     "Proxy": "Proxy",
@@ -456,6 +458,7 @@
     "No_nickname_warning": "Accédez aux options et configurez un pseudo pour pouvoir utiliser les fonctionnalités exclusives aux supporters.",
     "Show_devtools": "Afficher les outils de debug",
     "Clear_cache": "Vider le cache (l'application va redémarrer)",
+    "Disable_fc_integration": "Désactiver les fonctionnalités de partage de CL",
     "Enable_item_tags": "Activer les tags d'objets",
     "Show_copy_list_own_list": "Afficher le bouton copie sur les panneaux de mes listes",
     "Custom_theme": "Thème personnalisé",
@@ -1137,7 +1140,8 @@
       "Centered": "Stable",
       "Malleable": "Malléable",
       "Primed": "Apprêté",
-      "Normal": "Normal"
+      "Normal": "Normal",
+      "Good_omen": "Good Omen"
     },
     "SOLVER": {
       "Hq_target": "%HQ Ciblé",
@@ -1633,8 +1637,8 @@
       "Requires_gc_rank": "Nécessite le rang de Grand Compagnie {{rank}}"
     },
     "FISH": {
-      "Fruity_video": "How to catch video",
-      "Fruity_video_description": "Link to the \"how catch video\" from Fruity Snacks for this fish",
+      "Fruity_video": "Vidéo comment capturer",
+      "Fruity_video_description": "Lien vers la \"Vidéo comment attraper\" de Fruity Snacks pour ce poisson",
       "Hour": "Heure du jour",
       "Etime": "Heure éorzéenne",
       "Misses_popup_title": "Ratés sur ce spot",
@@ -1694,6 +1698,7 @@
         "Size": "Taille",
         "Large": "Grand",
         "Time_since_thrown": "Temps écoulé depuis le lancement",
+        "Throw_etime": "Line throw etime",
         "Ignored_spot": "Cet emplacement n'est pas supporté par l'outil de rapport, attendez-vous à des valeurs étranges.",
         "Ignored_spot_description": "Aucun de vos poissons capturés ne sera signalé par l'outil de rapport.",
         "ERRORS": {
