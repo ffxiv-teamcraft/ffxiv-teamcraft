@@ -1140,7 +1140,8 @@
       "Centered": "안정",
       "Malleable": "빠른 진행",
       "Primed": "장기 지속",
-      "Normal": "보통"
+      "Normal": "보통",
+      "Good_omen": "Good Omen"
     },
     "SOLVER": {
       "Hq_target": "HQ 목표치",
