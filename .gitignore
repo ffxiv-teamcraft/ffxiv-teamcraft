@@ -59,3 +59,5 @@ Thumbs.db
 /apps/client/src/assets/tc-loader.js
 /ssr/dist/
 /functions/lib/
+
+.nx/cache

@@ -51,8 +51,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/data-extraction"],
       "options": {
-        "jestConfig": "apps/data-extraction/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "apps/data-extraction/jest.config.ts"
       }
     }
   },

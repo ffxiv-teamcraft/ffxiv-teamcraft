@@ -1,12 +1,10 @@
 import { Inject, Injectable, Optional } from '@angular/core';
 import { HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
-import { REQUEST } from '@nguniversal/express-engine/tokens';
+import { REQUEST } from '../express.tokens';
 
 @Injectable()
 export class UniversalInterceptor implements HttpInterceptor {
-
-  constructor(@Optional() @Inject(REQUEST) protected request: any) {
-  }
+  constructor(@Optional() @Inject(REQUEST) protected request: any) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     if (req.url.includes('http')) {
@@ -28,4 +26,3 @@ export class UniversalInterceptor implements HttpInterceptor {
     return next.handle(serverReq);
   }
 }
-
