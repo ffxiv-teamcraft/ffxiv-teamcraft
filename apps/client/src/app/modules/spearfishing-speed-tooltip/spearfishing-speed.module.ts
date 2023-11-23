@@ -7,18 +7,16 @@ import { NzPopoverModule } from 'ng-zorro-antd/popover';
 
 
 @NgModule({
-  declarations: [
-    SpearfishingSpeedComponent
-  ],
-  exports: [
-    SpearfishingSpeedComponent
-  ],
-  imports: [
-    CommonModule,
-    NzToolTipModule,
-    NzIconModule,
-    NzPopoverModule
-  ]
+    exports: [
+        SpearfishingSpeedComponent
+    ],
+    imports: [
+        CommonModule,
+        NzToolTipModule,
+        NzIconModule,
+        NzPopoverModule,
+        SpearfishingSpeedComponent
+    ]
 })
 export class SpearfishingSpeedModule {
 }

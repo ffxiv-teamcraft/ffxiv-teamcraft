@@ -17,7 +17,7 @@ import {
 } from 'rxjs/operators';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { AuthFacade } from '../../../../+state/auth.facade';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConsumablesService } from '../../model/consumables.service';
 import { FreeCompanyActionsService } from '../../model/free-company-actions.service';
 import { Consumable } from '../../model/consumable';
@@ -32,7 +32,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TextQuestionPopupComponent } from '../../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { Language } from '../../../../core/data/language';
 import { MacroPopupComponent } from '../macro-popup/macro-popup.component';
 import { SimulationMinStatsPopupComponent } from '../simulation-min-stats-popup/simulation-min-stats-popup.component';
@@ -65,7 +65,7 @@ import {
   SimulationService,
   StepState
 } from '../../../../core/simulation/simulation.service';
-import { CdkDragDrop, CdkDragEnter, CdkDropList, DragRef, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, CdkDragEnter, CdkDropList, DragRef, moveItemInArray, CdkDropListGroup, CdkDrag } from '@angular/cdk/drag-drop';
 import { RouteConsumables } from '../../model/route-consumables';
 import { CommunityRotationFinderPopupComponent } from '../community-rotation-finder-popup/community-rotation-finder-popup.component';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
@@ -75,13 +75,49 @@ import { observeInput } from '../../../../core/rxjs/observe-input';
 import { withLazyData } from '../../../../core/rxjs/with-lazy-data';
 import { LocalStorageBehaviorSubject } from '../../../../core/rxjs/local-storage-behavior-subject';
 import { PermissionsController } from '../../../../core/database/permissions-controller';
-import { NzOptionComponent } from 'ng-zorro-antd/select';
+import { NzOptionComponent, NzSelectModule } from 'ng-zorro-antd/select';
 import { LazyRecipe } from '@ffxiv-teamcraft/data/model/lazy-recipe';
+import { I18nRowPipe } from '../../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../../core/i18n.pipe';
+import { JobUnicodePipe } from '../../../../pipes/pipes/job-unicode.pipe';
+import { IfMobilePipe } from '../../../../pipes/pipes/if-mobile.pipe';
+import { ActionNamePipe } from '../../../../pipes/pipes/action-name.pipe';
+import { FloorPipe } from '../../../../pipes/pipes/floor.pipe';
+import { ItemNamePipe } from '../../../../pipes/pipes/item-name.pipe';
+import { FullpageMessageComponent } from '../../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { ActionComponent } from '../action/action.component';
+import { ExtendedModule } from '@angular/flex-layout/extended';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { SimulationResultComponent } from '../simulation-result/simulation-result.component';
+import { ItemIconComponent } from '../../../../modules/item-icon/item-icon/item-icon.component';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { FavoriteButtonComponent } from '../../../../modules/favorites/favorite-button/favorite-button.component';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { ClipboardDirective } from '../../../../core/clipboard.directive';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { TutorialStepDirective } from '../../../../core/tutorial/tutorial-step.directive';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-simulator',
-  templateUrl: './simulator.component.html',
-  styleUrls: ['./simulator.component.less']
+    selector: 'app-simulator',
+    templateUrl: './simulator.component.html',
+    styleUrls: ['./simulator.component.less'],
+    standalone: true,
+    imports: [NgIf, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, TutorialStepDirective, NzIconModule, NzPopconfirmModule, ClipboardDirective, NzBadgeModule, FavoriteButtonComponent, NzTagModule, NzSwitchModule, FormsModule, NzCollapseModule, NzSelectModule, NgFor, NzAlertModule, ReactiveFormsModule, NzGridModule, NzFormModule, NzInputModule, NzInputNumberModule, NzCheckboxModule, NzListModule, ItemIconComponent, SimulationResultComponent, NzCardModule, CdkDropListGroup, NgStyle, ExtendedModule, CdkDropList, ActionComponent, CdkDrag, NgSwitch, NgSwitchCase, NgSwitchDefault, FullpageMessageComponent, AsyncPipe, TranslateModule, ItemNamePipe, FloorPipe, ActionNamePipe, IfMobilePipe, JobUnicodePipe, I18nPipe, I18nRowPipe]
 })
 export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
 

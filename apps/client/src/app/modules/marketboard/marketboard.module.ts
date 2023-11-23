@@ -11,19 +11,18 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    CoreModule,
-    PipesModule,
-    TranslateModule,
-    XivapiClientModule,
-    PageLoaderModule,
-    FlexLayoutModule,
-
-    AntdSharedModule
-  ],
-  declarations: [MarketboardIconComponent, MarketboardPopupComponent],
-  exports: [MarketboardIconComponent, MarketboardPopupComponent]
+    imports: [
+        CommonModule,
+        CoreModule,
+        PipesModule,
+        TranslateModule,
+        XivapiClientModule,
+        PageLoaderModule,
+        FlexLayoutModule,
+        AntdSharedModule,
+        MarketboardIconComponent, MarketboardPopupComponent
+    ],
+    exports: [MarketboardIconComponent, MarketboardPopupComponent]
 })
 export class MarketboardModule {
 }

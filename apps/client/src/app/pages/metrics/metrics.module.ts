@@ -30,31 +30,27 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    MetricsComponent
-  ],
-  imports: [
-    CoreModule,
-    CommonModule,
-    FormsModule,
-    FlexLayoutModule,
-    PlayerMetricsModule,
-
-    RouterModule.forChild(routes),
-    NzCardModule,
-    NzDatePickerModule,
-    NzButtonModule,
-    NzIconModule,
-    TranslateModule,
-    NzPopconfirmModule,
-    DragDropModule,
-    NzToolTipModule,
-    NzSelectModule,
-    NzInputModule,
-
-    TutorialModule,
-    NzAlertModule
-  ]
+    imports: [
+        CoreModule,
+        CommonModule,
+        FormsModule,
+        FlexLayoutModule,
+        PlayerMetricsModule,
+        RouterModule.forChild(routes),
+        NzCardModule,
+        NzDatePickerModule,
+        NzButtonModule,
+        NzIconModule,
+        TranslateModule,
+        NzPopconfirmModule,
+        DragDropModule,
+        NzToolTipModule,
+        NzSelectModule,
+        NzInputModule,
+        TutorialModule,
+        NzAlertModule,
+        MetricsComponent
+    ]
 })
 export class MetricsModule {
 }

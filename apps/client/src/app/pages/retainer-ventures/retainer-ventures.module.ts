@@ -31,27 +31,27 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [RetainerVenturesComponent],
-  imports: [
-    CommonModule,
-    CoreModule,
-    FormsModule,
-    ReactiveFormsModule,
-    FlexLayoutModule,
-    TranslateModule,
-    RouterModule.forChild(routes),
-    FullpageMessageModule,
-    NzGridModule,
-    PipesModule,
-    ItemIconModule,
-    NzSwitchModule,
-    NzSelectModule,
-    NzInputNumberModule,
-    MarketboardModule,
-    NzFormModule,
-    PageLoaderModule,
-    NzAlertModule
-  ]
+    imports: [
+        CommonModule,
+        CoreModule,
+        FormsModule,
+        ReactiveFormsModule,
+        FlexLayoutModule,
+        TranslateModule,
+        RouterModule.forChild(routes),
+        FullpageMessageModule,
+        NzGridModule,
+        PipesModule,
+        ItemIconModule,
+        NzSwitchModule,
+        NzSelectModule,
+        NzInputNumberModule,
+        MarketboardModule,
+        NzFormModule,
+        PageLoaderModule,
+        NzAlertModule,
+        RetainerVenturesComponent
+    ]
 })
 export class RetainerVenturesModule {
 }

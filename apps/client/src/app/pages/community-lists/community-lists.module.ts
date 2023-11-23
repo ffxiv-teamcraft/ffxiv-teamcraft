@@ -22,21 +22,19 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    TranslateModule,
-    FormsModule,
-
-    RouterModule.forChild(routes),
-
-    AntdSharedModule,
-    FullpageMessageModule,
-    ListModule,
-    FlexLayoutModule,
-    PageLoaderModule,
-    NzPaginationModule
-  ],
-  declarations: [CommunityListsComponent]
+    imports: [
+        CommonModule,
+        TranslateModule,
+        FormsModule,
+        RouterModule.forChild(routes),
+        AntdSharedModule,
+        FullpageMessageModule,
+        ListModule,
+        FlexLayoutModule,
+        PageLoaderModule,
+        NzPaginationModule,
+        CommunityListsComponent
+    ]
 })
 export class CommunityListsModule {
 }

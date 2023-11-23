@@ -2,19 +2,32 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output
 import { DataModel } from '../../../core/database/storage/data-model';
 import { FolderDisplay } from '../../../model/folder/folder-display';
 import { FoldersFacade } from '../+state/folders.facade';
-import { CdkDrag, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDrag, moveItemInArray, CdkDropList } from '@angular/cdk/drag-drop';
 import { first } from 'rxjs/operators';
 import { Folder } from '../../../model/folder/folder';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { SettingsService } from '../../settings/settings.service';
+import { FoldersModule } from '../folders.module';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { RouterLink } from '@angular/router';
+import { NgIf, NgFor, NgTemplateOutlet } from '@angular/common';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 
 @Component({
-  selector: 'app-folder',
-  templateUrl: './folder.component.html',
-  styleUrls: ['./folder.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-folder',
+    templateUrl: './folder.component.html',
+    styleUrls: ['./folder.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzCollapseModule, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, ClipboardDirective, NgIf, RouterLink, NzPopconfirmModule, CdkDropList, NgFor, CdkDrag, NgTemplateOutlet, FoldersModule, TranslateModule]
 })
 export class FolderComponent<T extends DataModel> implements OnInit {
 

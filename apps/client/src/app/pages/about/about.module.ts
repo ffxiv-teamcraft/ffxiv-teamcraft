@@ -15,13 +15,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    TranslateModule,
-
-    RouterModule.forChild(routes)
-  ],
-  declarations: [AboutComponent]
+    imports: [
+        CommonModule,
+        TranslateModule,
+        RouterModule.forChild(routes),
+        AboutComponent
+    ]
 })
 export class AboutModule {
 }

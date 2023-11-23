@@ -6,14 +6,14 @@ import { CoreModule } from '../../core/core.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    CoreModule,
-    TranslateModule,
-    AntdSharedModule
-  ],
-  declarations: [FavoriteButtonComponent],
-  exports: [FavoriteButtonComponent]
+    imports: [
+        CommonModule,
+        CoreModule,
+        TranslateModule,
+        AntdSharedModule,
+        FavoriteButtonComponent
+    ],
+    exports: [FavoriteButtonComponent]
 })
 export class FavoritesModule {
 }

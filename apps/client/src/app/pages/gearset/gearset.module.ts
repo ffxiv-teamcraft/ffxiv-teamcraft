@@ -41,31 +41,27 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [GearsetEditorComponent, GearsetDisplayComponent, MateriasPopupComponent, MateriasNeededPopupComponent, GearsetEditorRowComponent, GearsetDisplaySlotComponent, StatDisplayPipe],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    TranslateModule,
-    CoreModule,
-    FlexLayoutModule,
-    TooltipModule,
-    ProgressPopupModule,
-    FullpageMessageModule,
-    GearsetsModule,
-
-    ListModule,
-    ListPickerModule,
-
-    AntdSharedModule,
-    PipesModule,
-    ItemIconModule,
-    PageLoaderModule,
-
-
-    RouterModule.forChild(routes),
-    FavoritesModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        TranslateModule,
+        CoreModule,
+        FlexLayoutModule,
+        TooltipModule,
+        ProgressPopupModule,
+        FullpageMessageModule,
+        GearsetsModule,
+        ListModule,
+        ListPickerModule,
+        AntdSharedModule,
+        PipesModule,
+        ItemIconModule,
+        PageLoaderModule,
+        RouterModule.forChild(routes),
+        FavoritesModule,
+        GearsetEditorComponent, GearsetDisplayComponent, MateriasPopupComponent, MateriasNeededPopupComponent, GearsetEditorRowComponent, GearsetDisplaySlotComponent, StatDisplayPipe
+    ]
 })
 export class GearsetModule {
 }

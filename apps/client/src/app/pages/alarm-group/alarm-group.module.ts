@@ -34,33 +34,30 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AlarmGroupComponent],
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-    FormsModule,
-
-    RouterModule.forChild(routes),
-
-    TranslateModule,
-
-    MapModule,
-    CoreModule,
-    PipesModule,
-    ItemIconModule,
-    AlarmsModule,
-    SettingsModule,
-    PageLoaderModule,
-    FullpageMessageModule,
-    NzCardModule,
-    NzAvatarModule,
-    ListModule,
-    NzGridModule,
-    NzToolTipModule,
-    NzButtonModule,
-    NzIconModule,
-    AlarmButtonModule
-  ]
+    imports: [
+        CommonModule,
+        FlexLayoutModule,
+        FormsModule,
+        RouterModule.forChild(routes),
+        TranslateModule,
+        MapModule,
+        CoreModule,
+        PipesModule,
+        ItemIconModule,
+        AlarmsModule,
+        SettingsModule,
+        PageLoaderModule,
+        FullpageMessageModule,
+        NzCardModule,
+        NzAvatarModule,
+        ListModule,
+        NzGridModule,
+        NzToolTipModule,
+        NzButtonModule,
+        NzIconModule,
+        AlarmButtonModule,
+        AlarmGroupComponent
+    ]
 })
 export class AlarmGroupModule {
 }

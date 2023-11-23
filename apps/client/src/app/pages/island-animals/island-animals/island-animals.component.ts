@@ -7,12 +7,24 @@ import { Observable } from 'rxjs';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
+import { WeatherIconPipe } from '../../../pipes/pipes/weather-icon.pipe';
+import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { AlarmButtonComponent } from '../../../modules/alarm-button/alarm-button/alarm-button.component';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { MapPositionComponent } from '../../../modules/map/map-position/map-position.component';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 
 @Component({
-  selector: 'app-island-animals',
-  templateUrl: './island-animals.component.html',
-  styleUrls: ['./island-animals.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-island-animals',
+    templateUrl: './island-animals.component.html',
+    styleUrls: ['./island-animals.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzPageHeaderModule, NzTableModule, NgFor, I18nNameComponent, MapPositionComponent, ItemIconComponent, NgIf, AlarmButtonComponent, AsyncPipe, TranslateModule, XivapiIconPipe, WeatherIconPipe]
 })
 export class IslandAnimalsComponent {
 

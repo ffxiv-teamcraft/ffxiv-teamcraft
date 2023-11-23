@@ -6,13 +6,13 @@ import { TooltipModule } from '../tooltip/tooltip.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-    TooltipModule
-  ],
-  declarations: [I18nDisplayComponent],
-  exports: [I18nDisplayComponent]
+    imports: [
+        CommonModule,
+        FlexLayoutModule,
+        TooltipModule,
+        I18nDisplayComponent
+    ],
+    exports: [I18nDisplayComponent]
 })
 export class I18nDisplayModule {
 }

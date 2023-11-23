@@ -1,11 +1,15 @@
 import { AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, QueryList } from '@angular/core';
 import { SimpleTabComponent } from '../simple-tab/simple-tab.component';
+import { NgFor } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-simple-tabset',
-  templateUrl: './simple-tabset.component.html',
-  styleUrls: ['./simple-tabset.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-simple-tabset',
+    templateUrl: './simple-tabset.component.html',
+    styleUrls: ['./simple-tabset.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FlexModule, NgFor]
 })
 export class SimpleTabsetComponent implements AfterContentInit {
 

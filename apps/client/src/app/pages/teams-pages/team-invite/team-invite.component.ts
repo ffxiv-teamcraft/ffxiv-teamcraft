@@ -8,11 +8,17 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { Team } from '../../../model/team/team';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
 import { LodestoneService } from '../../../core/api/lodestone.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-team-invite',
-  templateUrl: './team-invite.component.html',
-  styleUrls: ['./team-invite.component.less']
+    selector: 'app-team-invite',
+    templateUrl: './team-invite.component.html',
+    styleUrls: ['./team-invite.component.less'],
+    standalone: true,
+    imports: [NgIf, PageLoaderComponent, FullpageMessageComponent, AsyncPipe, TranslateModule]
 })
 export class TeamInviteComponent implements OnInit {
 

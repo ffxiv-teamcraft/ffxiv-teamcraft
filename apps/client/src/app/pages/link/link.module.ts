@@ -18,15 +18,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [LinkComponent],
-  imports: [
-    CommonModule,
-    PageLoaderModule,
-    FullpageMessageModule,
-    TranslateModule,
-    CustomLinksModule,
-    RouterModule.forChild(routes)
-  ]
+    imports: [
+        CommonModule,
+        PageLoaderModule,
+        FullpageMessageModule,
+        TranslateModule,
+        CustomLinksModule,
+        RouterModule.forChild(routes),
+        LinkComponent
+    ]
 })
 export class LinkModule {
 }

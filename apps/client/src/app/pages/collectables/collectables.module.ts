@@ -41,39 +41,33 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [
-    CoreModule,
-    PipesModule,
-
-    FormsModule,
-    ReactiveFormsModule,
-    CommonModule,
-
-    FlexLayoutModule,
-
-    NzCollapseModule,
-    NzTabsModule,
-    NzInputModule,
-    NzFormModule,
-    NzButtonModule,
-    NzToolTipModule,
-    NzNotificationModule,
-    NzIconModule,
-    NzCheckboxModule,
-
-    RouterModule.forChild(routes),
-    ItemIconModule,
-    NzInputNumberModule,
-    FullpageMessageModule,
-    PageLoaderModule,
-    NodeDetailsModule,
-    MapModule,
-    ListModule,
-    AlarmButtonModule
-  ],
-  declarations: [
-    CollectablesComponent
-  ]
+    imports: [
+        CoreModule,
+        PipesModule,
+        FormsModule,
+        ReactiveFormsModule,
+        CommonModule,
+        FlexLayoutModule,
+        NzCollapseModule,
+        NzTabsModule,
+        NzInputModule,
+        NzFormModule,
+        NzButtonModule,
+        NzToolTipModule,
+        NzNotificationModule,
+        NzIconModule,
+        NzCheckboxModule,
+        RouterModule.forChild(routes),
+        ItemIconModule,
+        NzInputNumberModule,
+        FullpageMessageModule,
+        PageLoaderModule,
+        NodeDetailsModule,
+        MapModule,
+        ListModule,
+        AlarmButtonModule,
+        CollectablesComponent
+    ]
 })
 export class CollectablesModule {
 }

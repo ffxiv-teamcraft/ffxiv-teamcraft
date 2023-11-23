@@ -3,7 +3,8 @@ import { I18nName } from '@ffxiv-teamcraft/types';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 
 @Pipe({
-  name: 'xivapiL12n'
+    name: 'xivapiL12n',
+    standalone: true
 })
 export class XivapiL12nPipe implements PipeTransform {
 

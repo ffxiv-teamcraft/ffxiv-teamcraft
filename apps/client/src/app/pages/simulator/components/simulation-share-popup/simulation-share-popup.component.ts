@@ -4,14 +4,23 @@ import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalRef } from 'ng-zorro-antd/modal';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { Consumable } from '../../model/consumable';
 import { FreeCompanyAction } from '../../model/free-company-action';
+import { ClipboardDirective } from '../../../../core/clipboard.directive';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FormsModule } from '@angular/forms';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-simulation-share-popup',
-  templateUrl: './simulation-share-popup.component.html',
-  styleUrls: ['./simulation-share-popup.component.less']
+    selector: 'app-simulation-share-popup',
+    templateUrl: './simulation-share-popup.component.html',
+    styleUrls: ['./simulation-share-popup.component.less'],
+    standalone: true,
+    imports: [FlexModule, NzCheckboxModule, FormsModule, NzButtonModule, NzInputModule, NzWaveModule, ClipboardDirective, TranslateModule]
 })
 export class SimulationSharePopupComponent {
 

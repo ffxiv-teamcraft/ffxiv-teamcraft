@@ -17,14 +17,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [TipeeeRedirectComponent],
-  imports: [
-    CommonModule,
-    PageLoaderModule,
-    AntdSharedModule,
-    TranslateModule,
-    RouterModule.forChild(routes)
-  ]
+    imports: [
+        CommonModule,
+        PageLoaderModule,
+        AntdSharedModule,
+        TranslateModule,
+        RouterModule.forChild(routes),
+        TipeeeRedirectComponent
+    ]
 })
 export class TipeeeRedirectModule {
 }

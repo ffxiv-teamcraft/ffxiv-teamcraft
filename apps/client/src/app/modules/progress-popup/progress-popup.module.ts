@@ -5,15 +5,14 @@ import { ProgressPopupService } from './progress-popup.service';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-
-    AntdSharedModule
-  ],
-  providers: [
-    ProgressPopupService
-  ],
-  declarations: [ProgressPopupComponent]
+    imports: [
+        CommonModule,
+        AntdSharedModule,
+        ProgressPopupComponent
+    ],
+    providers: [
+        ProgressPopupService
+    ]
 })
 export class ProgressPopupModule {
 }

@@ -4,9 +4,10 @@ import 'chartjs-chart-box-and-violin-plot/build/Chart.BoxPlot.js';
 declare const Chart;
 
 @Component({
-  selector: 'app-chart',
-  template: '',
-  styles: [':host { display: block; }']
+    selector: 'app-chart',
+    template: '',
+    styles: [':host { display: block; }'],
+    standalone: true
 })
 export class ChartComponent implements OnInit, OnChanges {
   chart: any;

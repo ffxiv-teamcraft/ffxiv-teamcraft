@@ -1,15 +1,31 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { CommissionTag } from '../model/commission-tag';
 import { Commission } from '../model/commission';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-commission-edition-popup',
-  templateUrl: './commission-edition-popup.component.html',
-  styleUrls: ['./commission-edition-popup.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-commission-edition-popup',
+    templateUrl: './commission-edition-popup.component.html',
+    styleUrls: ['./commission-edition-popup.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, NzAlertModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NzSelectModule, NgFor, NzInputNumberModule, NzCheckboxModule, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, ClipboardDirective, TranslateModule]
 })
 export class CommissionEditionPopupComponent implements OnInit {
 

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { combineLatest, of } from 'rxjs';
 import { filter, first, map, switchMap } from 'rxjs/operators';
@@ -8,14 +8,28 @@ import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { FishDataService } from '../../service/fish-data.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { FishingSpotDatagridComponent } from '../fishing-spot-datagrid/fishing-spot-datagrid.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { ItemIconComponent } from '../../../../modules/item-icon/item-icon/item-icon.component';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzCardModule } from 'ng-zorro-antd/card';
 
 @Component({
-  selector: 'app-fishing-spot-bait-datagrid',
-  templateUrl: './fishing-spot-bait-datagrid.component.html',
-  styleUrls: [
-    './fishing-spot-bait-datagrid.component.less'
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-fishing-spot-bait-datagrid',
+    templateUrl: './fishing-spot-bait-datagrid.component.html',
+    styleUrls: [
+        './fishing-spot-bait-datagrid.component.less'
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzCardModule, FlexModule, NzSwitchModule, FormsModule, NgIf, ItemIconComponent, NzButtonModule, NzWaveModule, NzToolTipModule, NzPopconfirmModule, NzIconModule, FishingSpotDatagridComponent, AsyncPipe, TranslateModule]
 })
 export class FishingSpotBaitDatagridComponent {
   @Input()

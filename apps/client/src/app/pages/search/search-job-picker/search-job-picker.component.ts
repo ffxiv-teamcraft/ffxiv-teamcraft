@@ -3,19 +3,25 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { NgFor, NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-search-job-picker',
-  templateUrl: './search-job-picker.component.html',
-  styleUrls: ['./search-job-picker.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => SearchJobPickerComponent),
-      multi: true
-    }
-  ]
+    selector: 'app-search-job-picker',
+    templateUrl: './search-job-picker.component.html',
+    styleUrls: ['./search-job-picker.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => SearchJobPickerComponent),
+            multi: true
+        }
+    ],
+    standalone: true,
+    imports: [FlexModule, NgFor, NgIf, NgTemplateOutlet, AsyncPipe, TranslateModule, JobUnicodePipe]
 })
 export class SearchJobPickerComponent implements ControlValueAccessor {
 

@@ -21,9 +21,7 @@ import { TutorialPopupComponent } from './tutorial-popup/tutorial-popup.componen
         NzButtonModule,
         FlexLayoutModule,
         NzDividerModule,
-        NzModalModule
-    ],
-    declarations: [
+        NzModalModule,
         TutorialStepDirective,
         TutorialStepComponent,
         TutorialPopupComponent

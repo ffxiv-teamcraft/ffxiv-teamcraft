@@ -10,17 +10,16 @@ import { RouterModule } from '@angular/router';
 import { TimerTooltipDirective } from './timer-tooltip.directive';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    SettingsModule,
-    RouterModule,
-
-    StoreModule.forFeature('alarms', alarmsReducer, { initialState: alarmsInitialState }),
-    EffectsModule.forFeature([AlarmsEffects])
-  ],
-  declarations: [AlarmDisplayPipe, TimerTooltipDirective],
-  providers: [DatePipe],
-  exports: [AlarmDisplayPipe, TimerTooltipDirective]
+    imports: [
+        CommonModule,
+        SettingsModule,
+        RouterModule,
+        StoreModule.forFeature('alarms', alarmsReducer, { initialState: alarmsInitialState }),
+        EffectsModule.forFeature([AlarmsEffects]),
+        AlarmDisplayPipe, TimerTooltipDirective
+    ],
+    providers: [DatePipe],
+    exports: [AlarmDisplayPipe, TimerTooltipDirective]
 })
 export class AlarmsModule {
 }

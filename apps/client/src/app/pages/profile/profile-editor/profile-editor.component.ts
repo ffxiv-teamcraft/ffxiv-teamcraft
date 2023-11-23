@@ -4,7 +4,7 @@ import { BehaviorSubject, combineLatest } from 'rxjs';
 import { filter, first, map, shareReplay } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { MasterbooksPopupComponent } from './masterbooks-popup/masterbooks-popup.component';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { StatsPopupComponent } from './stats-popup/stats-popup.component';
 import { UserPickerService } from '../../../modules/user-picker/user-picker.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
@@ -12,11 +12,35 @@ import { VerificationPopupComponent } from './verification-popup/verification-po
 import { IpcService } from '../../../core/electron/ipc.service';
 import { AutofillStatsPopupComponent } from './autofill-stats-popup/autofill-stats-popup.component';
 import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-stats';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
+import { CharacterNamePipe } from '../../../pipes/pipes/character-name.pipe';
+import { IfMobilePipe } from '../../../pipes/pipes/if-mobile.pipe';
+import { UserAvatarComponent } from '../../../modules/user-avatar/user-avatar/user-avatar.component';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzSliderModule } from 'ng-zorro-antd/slider';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { RouterLink } from '@angular/router';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-profile-editor',
-  templateUrl: './profile-editor.component.html',
-  styleUrls: ['./profile-editor.component.less']
+    selector: 'app-profile-editor',
+    templateUrl: './profile-editor.component.html',
+    styleUrls: ['./profile-editor.component.less'],
+    standalone: true,
+    imports: [NgIf, FlexModule, NzAvatarModule, NzSelectModule, FormsModule, NgFor, NzButtonModule, NzIconModule, NzToolTipModule, NzWaveModule, RouterLink, NzTagModule, NzGridModule, NzCardModule, NzListModule, NzSliderModule, NzPopconfirmModule, UserAvatarComponent, AsyncPipe, TranslateModule, IfMobilePipe, CharacterNamePipe, JobUnicodePipe, I18nPipe, I18nRowPipe]
 })
 export class ProfileEditorComponent {
 

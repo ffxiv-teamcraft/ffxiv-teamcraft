@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { map, switchMap, takeUntil } from 'rxjs/operators';
 import { combineLatest, Observable } from 'rxjs';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
@@ -13,11 +13,44 @@ import { WorldNavigationMapComponent } from '../../../modules/map/world-navigati
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyLogTrackerPageData } from '@ffxiv-teamcraft/data/model/lazy-log-tracker-page-data';
+import { AlarmDisplayPipe } from '../../../core/alarms/alarm-display.pipe';
+import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
+import { LazyIconPipe } from '../../../pipes/pipes/lazy-icon.pipe';
+import { IngameStarsPipe } from '../../../pipes/pipes/ingame-stars.pipe';
+import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
+import { IfMobilePipe } from '../../../pipes/pipes/if-mobile.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { TimerPipe } from '../../../core/eorzea/timer.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { FishingLogTrackerComponent } from '../fishing-log-tracker/fishing-log-tracker.component';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { MapPositionComponent } from '../../../modules/map/map-position/map-position.component';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { ItemRarityDirective } from '../../../core/item-rarity/item-rarity.directive';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { FormsModule } from '@angular/forms';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-log-tracker',
-  templateUrl: './log-tracker.component.html',
-  styleUrls: ['./log-tracker.component.less']
+    selector: 'app-log-tracker',
+    templateUrl: './log-tracker.component.html',
+    styleUrls: ['./log-tracker.component.less'],
+    standalone: true,
+    imports: [NgIf, NzAlertModule, NzTabsModule, FlexModule, NzSwitchModule, FormsModule, NgFor, I18nNameComponent, NzToolTipModule, NzSpinModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, NzCheckboxModule, ItemIconComponent, ItemRarityDirective, NzGridModule, MapPositionComponent, NzDropDownModule, NzMenuModule, NzDividerModule, FishingLogTrackerComponent, AsyncPipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, IfMobilePipe, NodeTypeIconPipe, IngameStarsPipe, LazyIconPipe, JobUnicodePipe, AlarmDisplayPipe]
 })
 export class LogTrackerComponent extends TrackerComponent {
 

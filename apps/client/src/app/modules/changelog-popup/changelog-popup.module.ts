@@ -7,14 +7,14 @@ import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
-  declarations: [ChangelogPopupComponent],
-  exports: [ChangelogPopupComponent],
-  imports: [
-    CommonModule,
-    MarkdownModule,
-    NzDividerModule,
-    TranslateModule
-  ]
+    exports: [ChangelogPopupComponent],
+    imports: [
+        CommonModule,
+        MarkdownModule,
+        NzDividerModule,
+        TranslateModule,
+        ChangelogPopupComponent
+    ]
 })
 export class ChangelogPopupModule {
 }

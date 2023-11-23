@@ -36,36 +36,31 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    CraftingReplaysComponent
-  ],
-  imports: [
-    CommonModule,
-    TranslateModule,
-    FormsModule,
-
-    RouterModule.forChild(routes),
-
-    FullpageMessageModule,
-    CraftingReplayModule,
-    FlexLayoutModule,
-    PageLoaderModule,
-    SimulatorModule,
-    NzAlertModule,
-    ItemIconModule,
-    PipesModule,
-    CoreModule,
-    NzDividerModule,
-    NzButtonModule,
-    NzIconModule,
-    NzMessageModule,
-    NzToolTipModule,
-
-    FoldersModule,
-    DragDropModule,
-    LazyScrollModule,
-    NzPopconfirmModule
-  ]
+    imports: [
+        CommonModule,
+        TranslateModule,
+        FormsModule,
+        RouterModule.forChild(routes),
+        FullpageMessageModule,
+        CraftingReplayModule,
+        FlexLayoutModule,
+        PageLoaderModule,
+        SimulatorModule,
+        NzAlertModule,
+        ItemIconModule,
+        PipesModule,
+        CoreModule,
+        NzDividerModule,
+        NzButtonModule,
+        NzIconModule,
+        NzMessageModule,
+        NzToolTipModule,
+        FoldersModule,
+        DragDropModule,
+        LazyScrollModule,
+        NzPopconfirmModule,
+        CraftingReplaysComponent
+    ]
 })
 export class CraftingReplaysModule {
 }

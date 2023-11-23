@@ -14,23 +14,22 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-    TranslateModule,
-    AntdSharedModule,
-    NzListModule,
-    NzAvatarModule,
-    FormsModule,
-
-    PipesModule,
-    CoreModule,
-    PageLoaderModule,
-    UserPickerModule,
-    FreecompanyPickerModule
-  ],
-  declarations: [PermissionsBoxComponent],
-  exports: [PermissionsBoxComponent]
+    imports: [
+        CommonModule,
+        FlexLayoutModule,
+        TranslateModule,
+        AntdSharedModule,
+        NzListModule,
+        NzAvatarModule,
+        FormsModule,
+        PipesModule,
+        CoreModule,
+        PageLoaderModule,
+        UserPickerModule,
+        FreecompanyPickerModule,
+        PermissionsBoxComponent
+    ],
+    exports: [PermissionsBoxComponent]
 })
 export class PermissionsModule {
 }

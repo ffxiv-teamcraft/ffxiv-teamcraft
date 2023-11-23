@@ -14,16 +14,33 @@ import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { first, map, switchMap } from 'rxjs/operators';
 import { SettingsService } from '../../../../modules/settings/settings.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { withLazyData } from '../../../../core/rxjs/with-lazy-data';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { ConsumablesService } from '../../model/consumables.service';
+import { PageLoaderComponent } from '../../../../modules/page-loader/page-loader/page-loader.component';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { ActionComponent } from '../action/action.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { UserAvatarComponent } from '../../../../modules/user-avatar/user-avatar/user-avatar.component';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzCardModule } from 'ng-zorro-antd/card';
 
 @Component({
-  selector: 'app-community-rotation-finder-popup',
-  templateUrl: './community-rotation-finder-popup.component.html',
-  styleUrls: ['./community-rotation-finder-popup.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-community-rotation-finder-popup',
+    templateUrl: './community-rotation-finder-popup.component.html',
+    styleUrls: ['./community-rotation-finder-popup.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzCardModule, FlexModule, NzCheckboxModule, FormsModule, NgIf, NzEmptyModule, NzDividerModule, NgFor, UserAvatarComponent, NzButtonModule, NzIconModule, NzToolTipModule, NzTagModule, ActionComponent, NzWaveModule, PageLoaderComponent, AsyncPipe, TranslateModule]
 })
 export class CommunityRotationFinderPopupComponent implements OnInit {
 

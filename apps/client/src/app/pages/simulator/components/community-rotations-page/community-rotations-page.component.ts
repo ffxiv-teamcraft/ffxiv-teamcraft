@@ -8,11 +8,31 @@ import { RotationTag } from './rotation-tag';
 import { CraftingRotationService } from '../../../../core/database/crafting-rotation/crafting-rotation.service';
 import { CommunityRotationFilters } from '../../../../core/database/crafting-rotation/community-rotation-filters';
 import { AuthFacade } from '../../../../+state/auth.facade';
+import { I18nRowPipe } from '../../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../../core/i18n.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { FullpageMessageComponent } from '../../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { RotationPanelComponent } from '../rotation-panel/rotation-panel.component';
+import { PageLoaderComponent } from '../../../../modules/page-loader/page-loader/page-loader.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { TutorialStepDirective } from '../../../../core/tutorial/tutorial-step.directive';
+import { FormsModule } from '@angular/forms';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-community-rotations-page',
-  templateUrl: './community-rotations-page.component.html',
-  styleUrls: ['./community-rotations-page.component.less']
+    selector: 'app-community-rotations-page',
+    templateUrl: './community-rotations-page.component.html',
+    styleUrls: ['./community-rotations-page.component.less'],
+    standalone: true,
+    imports: [FlexModule, NzInputModule, FormsModule, TutorialStepDirective, NzSelectModule, NgFor, NzButtonModule, NzInputNumberModule, NgIf, NzWaveModule, NzToolTipModule, NzIconModule, PageLoaderComponent, RotationPanelComponent, NzPaginationModule, FullpageMessageComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe]
 })
 export class CommunityRotationsPageComponent {
 

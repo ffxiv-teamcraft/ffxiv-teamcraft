@@ -10,19 +10,18 @@ import { ItemIconModule } from '../item-icon/item-icon.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
-  declarations: [CustomAlarmPopupComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    FlexLayoutModule,
-    TranslateModule,
-    AntdSharedModule,
-
-    CoreModule,
-    PipesModule,
-    ItemIconModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        FlexLayoutModule,
+        TranslateModule,
+        AntdSharedModule,
+        CoreModule,
+        PipesModule,
+        ItemIconModule,
+        CustomAlarmPopupComponent
+    ]
 })
 export class CustomAlarmPopupModule {
 }

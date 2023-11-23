@@ -22,21 +22,19 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    CoreModule,
-    TranslateModule,
-    ListModule,
-    WorkshopModule,
-    RotationsModule,
-    RotationFoldersModule,
-    SimulatorModule,
-
-    AntdSharedModule,
-
-    RouterModule.forChild(routes)
-  ],
-  declarations: [FavoritesComponent]
+    imports: [
+        CommonModule,
+        CoreModule,
+        TranslateModule,
+        ListModule,
+        WorkshopModule,
+        RotationsModule,
+        RotationFoldersModule,
+        SimulatorModule,
+        AntdSharedModule,
+        RouterModule.forChild(routes),
+        FavoritesComponent
+    ]
 })
 export class FavoritesPageModule {
 }

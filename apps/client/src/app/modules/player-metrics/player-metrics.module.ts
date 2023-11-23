@@ -103,46 +103,41 @@ const filters: Provider[] = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    NzCardModule,
-    TranslateModule,
-    NzTableModule,
-    PipesModule,
-    CoreModule,
-    RouterModule,
-    NzDividerModule,
-    NzSelectModule,
-    FormsModule,
-    NzFormModule,
-    NzInputModule,
-    NzButtonModule,
-    NzPopconfirmModule,
-    NzIconModule,
-    FlexLayoutModule,
-    NzAutocompleteModule,
-    NzInputNumberModule,
-    DragDropModule,
-    NzCheckboxModule,
-    StoreModule.forFeature(
-      fromMetricsDashboards.METRICSDASHBOARDS_FEATURE_KEY,
-      fromMetricsDashboards.reducer
-    ),
-    EffectsModule.forFeature([MetricsDashboardsEffects]),
-    NzStatisticModule,
-    NgxEchartsModule,
-    NzEmptyModule
-  ],
-  providers: [...probes, ...filters, MetricsDashboardsFacade],
-  exports: [MetricDisplayComponent, MetricsDisplayEditorComponent],
-  declarations: [
-    TotalComponent,
-    MetricDisplayComponent,
-    HistogramComponent,
-    PieChartComponent,
-    TableComponent,
-    MetricsDisplayEditorComponent
-  ]
+    imports: [
+        CommonModule,
+        NzCardModule,
+        TranslateModule,
+        NzTableModule,
+        PipesModule,
+        CoreModule,
+        RouterModule,
+        NzDividerModule,
+        NzSelectModule,
+        FormsModule,
+        NzFormModule,
+        NzInputModule,
+        NzButtonModule,
+        NzPopconfirmModule,
+        NzIconModule,
+        FlexLayoutModule,
+        NzAutocompleteModule,
+        NzInputNumberModule,
+        DragDropModule,
+        NzCheckboxModule,
+        StoreModule.forFeature(fromMetricsDashboards.METRICSDASHBOARDS_FEATURE_KEY, fromMetricsDashboards.reducer),
+        EffectsModule.forFeature([MetricsDashboardsEffects]),
+        NzStatisticModule,
+        NgxEchartsModule,
+        NzEmptyModule,
+        TotalComponent,
+        MetricDisplayComponent,
+        HistogramComponent,
+        PieChartComponent,
+        TableComponent,
+        MetricsDisplayEditorComponent
+    ],
+    providers: [...probes, ...filters, MetricsDashboardsFacade],
+    exports: [MetricDisplayComponent, MetricsDisplayEditorComponent]
 })
 export class PlayerMetricsModule {
 }

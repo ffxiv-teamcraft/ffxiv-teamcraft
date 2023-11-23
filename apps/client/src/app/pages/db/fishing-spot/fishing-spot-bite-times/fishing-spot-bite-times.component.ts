@@ -4,11 +4,22 @@ import { SettingsService } from '../../../../modules/settings/settings.service';
 import { combineLatest, Observable, of, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { Chart, ChartOptions } from 'chart.js';
 import { Tug } from '@ffxiv-teamcraft/types';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../../core/rxjs/with-lazy-data';
+import { TugNamePipe } from '../../../../pipes/pipes/tug-name.pipe';
+import { LazyIconPipe } from '../../../../pipes/pipes/lazy-icon.pipe';
+import { ItemNamePipe } from '../../../../pipes/pipes/item-name.pipe';
+import { I18nPipe } from '../../../../core/i18n.pipe';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { ChartComponent } from './chart.component';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { NzCardModule } from 'ng-zorro-antd/card';
 
 const fishImageUrls = [];
 
@@ -34,10 +45,12 @@ interface FishingSpotChartData {
 }
 
 @Component({
-  selector: 'app-fishing-spot-bite-times',
-  templateUrl: './fishing-spot-bite-times.component.html',
-  styleUrls: ['./fishing-spot-bite-times.component.less', '../../common-db.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-fishing-spot-bite-times',
+    templateUrl: './fishing-spot-bite-times.component.html',
+    styleUrls: ['./fishing-spot-bite-times.component.less', '../../common-db.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzCardModule, NgIf, NzSelectModule, FormsModule, NgFor, FlexModule, ChartComponent, NzEmptyModule, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, LazyIconPipe, TugNamePipe]
 })
 export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
   public readonly colors = [{ tug: Tug.LIGHT, color: '184, 245, 110' }, { tug: Tug.MEDIUM, color: '245, 196, 110' }, { tug: Tug.BIG, color: '245, 153, 110' }];

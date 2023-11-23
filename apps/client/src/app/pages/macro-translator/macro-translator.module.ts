@@ -21,19 +21,17 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    FlexLayoutModule,
-    AntdSharedModule,
-    CoreModule,
-    TranslateModule,
-
-    RouterModule.forChild(routes),
-
-    NzRadioModule
-  ],
-  declarations: [MacroTranslatorComponent]
+    imports: [
+        CommonModule,
+        FormsModule,
+        FlexLayoutModule,
+        AntdSharedModule,
+        CoreModule,
+        TranslateModule,
+        RouterModule.forChild(routes),
+        NzRadioModule,
+        MacroTranslatorComponent
+    ]
 })
 export class MacroTranslatorModule {
 }

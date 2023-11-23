@@ -2,15 +2,28 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { map } from 'rxjs/operators';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NgFor } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 
 @Component({
-  selector: 'app-list-crystals-panel',
-  templateUrl: './list-crystals-panel.component.html',
-  styleUrls: ['./list-crystals-panel.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-list-crystals-panel',
+    templateUrl: './list-crystals-panel.component.html',
+    styleUrls: ['./list-crystals-panel.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzCollapseModule, FlexModule, NgFor, ItemIconComponent, NzButtonModule, NzWaveModule, NzToolTipModule, ClipboardDirective, NzIconModule, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class ListCrystalsPanelComponent {
 

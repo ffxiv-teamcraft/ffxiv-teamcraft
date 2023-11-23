@@ -2,8 +2,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 
 @Pipe({
-  name: 'ifMobile',
-  pure: false
+    name: 'ifMobile',
+    pure: false,
+    standalone: true
 })
 export class IfMobilePipe implements PipeTransform {
 

@@ -7,12 +7,12 @@ import { BehaviorSubject, combineLatest, merge, Observable, of, Subject } from '
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { AllaganReport } from '../model/allagan-report';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { pickBy, uniq } from 'lodash';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { AllaganReportQueueEntry } from '../model/allagan-report-queue-entry';
 import { AllaganReportStatus } from '../model/allagan-report-status';
-import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
 import { mapIds } from '../../../core/data/sources/map-ids';
 import { FishContextService } from '../../db/service/fish-context.service';
@@ -21,6 +21,35 @@ import { ReportsManagementComponent } from '../reports-management.component';
 import { OceanFishingTime } from '../model/ocean-fishing-time';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
+import { HooksetActionIdPipe } from '../../../pipes/pipes/hookset-action-id.pipe';
+import { TugNamePipe } from '../../../pipes/pipes/tug-name.pipe';
+import { MapNamePipe } from '../../../pipes/pipes/map-name.pipe';
+import { AbsolutePipe } from '../../../pipes/pipes/absolute.pipe';
+import { ActionNamePipe } from '../../../pipes/pipes/action-name.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { PredatorsInputComponent } from '../predators-input/predators-input.component';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { AllaganReportRowComponent } from '../allagan-report-row/allagan-report-row.component';
+import { LazyScrollComponent } from '../../../modules/lazy-scroll/lazy-scroll/lazy-scroll.component';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { QuickSearchComponent } from '../../../modules/quick-search/quick-search/quick-search.component';
 
 
 function durationRequired(control: AbstractControl) {
@@ -32,10 +61,12 @@ function durationRequired(control: AbstractControl) {
 }
 
 @Component({
-  selector: 'app-allagan-report-details',
-  templateUrl: './allagan-report-details.component.html',
-  styleUrls: ['./allagan-report-details.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-allagan-report-details',
+    templateUrl: './allagan-report-details.component.html',
+    styleUrls: ['./allagan-report-details.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [QuickSearchComponent, NgIf, FlexModule, ItemIconComponent, I18nNameComponent, NzDividerModule, PageLoaderComponent, NzEmptyModule, LazyScrollComponent, AllaganReportRowComponent, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzSelectModule, NgFor, NzInputModule, NzAutocompleteModule, NzButtonModule, NzInputNumberModule, NzAlertModule, NzSpinModule, PredatorsInputComponent, NzWaveModule, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, ActionNamePipe, AbsolutePipe, MapNamePipe, TugNamePipe, HooksetActionIdPipe]
 })
 export class AllaganReportDetailsComponent extends ReportsManagementComponent {
 

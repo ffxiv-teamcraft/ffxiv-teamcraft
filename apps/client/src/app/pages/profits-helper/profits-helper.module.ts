@@ -31,28 +31,27 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ProfitsHelperComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    TranslateModule,
-    PipesModule,
-    CoreModule,
-    ListModule,
-    FlexLayoutModule,
-    FullpageMessageModule,
-
-    RouterModule.forChild(routes),
-    ItemIconModule,
-    MarketboardModule,
-    NzCardModule,
-    NzTableModule,
-    NzSpinModule,
-    NzCheckboxModule,
-    NzEmptyModule,
-    NzGridModule,
-    NzInputNumberModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        TranslateModule,
+        PipesModule,
+        CoreModule,
+        ListModule,
+        FlexLayoutModule,
+        FullpageMessageModule,
+        RouterModule.forChild(routes),
+        ItemIconModule,
+        MarketboardModule,
+        NzCardModule,
+        NzTableModule,
+        NzSpinModule,
+        NzCheckboxModule,
+        NzEmptyModule,
+        NzGridModule,
+        NzInputNumberModule,
+        ProfitsHelperComponent
+    ]
 })
 export class ProfitsHelperModule {
 }

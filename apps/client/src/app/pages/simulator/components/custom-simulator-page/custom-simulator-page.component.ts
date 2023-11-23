@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { combineLatest, merge, Observable } from 'rxjs';
 import { filter, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
@@ -11,11 +11,23 @@ import { AbstractSimulationPage } from '../../abstract-simulation-page';
 import { EnvironmentService } from '../../../../core/environment.service';
 import { Craft } from '@ffxiv-teamcraft/simulator';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { TranslateModule } from '@ngx-translate/core';
+import { SimulatorComponent } from '../simulator/simulator.component';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { MouseWheelDirective } from '../../../../core/event/mouse-wheel/mouse-wheel.directive';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-custom-simulator-page',
-  templateUrl: './custom-simulator-page.component.html',
-  styleUrls: ['./custom-simulator-page.component.less']
+    selector: 'app-custom-simulator-page',
+    templateUrl: './custom-simulator-page.component.html',
+    styleUrls: ['./custom-simulator-page.component.less'],
+    standalone: true,
+    imports: [FlexModule, NzCollapseModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputNumberModule, MouseWheelDirective, NzCheckboxModule, NgIf, SimulatorComponent, AsyncPipe, TranslateModule]
 })
 export class CustomSimulatorPageComponent extends AbstractSimulationPage {
 

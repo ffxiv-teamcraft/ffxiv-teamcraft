@@ -23,8 +23,9 @@ type I18nInput =
  * the value matching the user's language will be asyncronously unwrapped.
  */
 @Pipe({
-  name: 'i18n',
-  pure: false
+    name: 'i18n',
+    pure: false,
+    standalone: true
 })
 export class I18nPipe implements PipeTransform, OnDestroy {
   private currentValue?: string;

@@ -4,13 +4,12 @@ import { PageLoaderComponent } from './page-loader/page-loader.component';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-
-    AntdSharedModule
-  ],
-  declarations: [PageLoaderComponent],
-  exports: [PageLoaderComponent]
+    imports: [
+        CommonModule,
+        AntdSharedModule,
+        PageLoaderComponent
+    ],
+    exports: [PageLoaderComponent]
 })
 export class PageLoaderModule {
 }

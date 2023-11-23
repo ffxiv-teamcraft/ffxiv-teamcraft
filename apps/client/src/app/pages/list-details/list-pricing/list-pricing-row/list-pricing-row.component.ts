@@ -8,15 +8,36 @@ import { ListRow } from '../../../../modules/list/model/list-row';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { ListPricingService } from '../list-pricing.service';
 import { DataType } from '@ffxiv-teamcraft/types';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { Price } from '../model/price';
 import { SettingsService } from '../../../../modules/settings/settings.service';
+import { WorldNamePipe } from '../../../../pipes/pipes/world-name.pipe';
+import { ItemNamePipe } from '../../../../pipes/pipes/item-name.pipe';
+import { I18nPipe } from '../../../../core/i18n.pipe';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { MarketboardIconComponent } from '../../../../modules/marketboard/marketboard-icon/marketboard-icon.component';
+import { ClipboardDirective } from '../../../../core/clipboard.directive';
+import { I18nNameComponent } from '../../../../core/i18n/i18n-name/i18n-name.component';
+import { ItemIconComponent } from '../../../../modules/item-icon/item-icon/item-icon.component';
+import { FormsModule } from '@angular/forms';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NgIf, AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-list-pricing-row',
-  templateUrl: './list-pricing-row.component.html',
-  styleUrls: ['./list-pricing-row.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-list-pricing-row',
+    templateUrl: './list-pricing-row.component.html',
+    styleUrls: ['./list-pricing-row.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, NzGridModule, FlexModule, NzCheckboxModule, FormsModule, ItemIconComponent, I18nNameComponent, ClipboardDirective, MarketboardIconComponent, NzTagModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzSwitchModule, NzIconModule, NzInputModule, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, ItemNamePipe, WorldNamePipe]
 })
 export class ListPricingRowComponent extends TeamcraftComponent {
 

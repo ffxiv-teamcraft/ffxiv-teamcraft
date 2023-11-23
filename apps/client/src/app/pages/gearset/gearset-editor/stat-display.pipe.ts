@@ -5,7 +5,8 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 @Pipe({
-  name: 'statDisplay'
+    name: 'statDisplay',
+    standalone: true
 })
 export class StatDisplayPipe implements PipeTransform {
 

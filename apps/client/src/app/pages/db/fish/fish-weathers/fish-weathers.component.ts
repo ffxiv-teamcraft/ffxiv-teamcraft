@@ -8,12 +8,18 @@ import { combineLatest, Observable, of } from 'rxjs';
 import { debounceTime, map, startWith, switchMap } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
 import { EChartsOption } from 'echarts';
+import { TranslateModule } from '@ngx-translate/core';
+import { AsyncPipe } from '@angular/common';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { NzCardModule } from 'ng-zorro-antd/card';
 
 @Component({
-  selector: 'app-fish-weathers',
-  templateUrl: './fish-weathers.component.html',
-  styleUrls: ['./fish-weathers.component.less', '../../common-db.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-fish-weathers',
+    templateUrl: './fish-weathers.component.html',
+    styleUrls: ['./fish-weathers.component.less', '../../common-db.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzCardModule, NgxEchartsModule, AsyncPipe, TranslateModule]
 })
 export class FishWeathersComponent {
   public readonly loading$ = this.fishCtx.weathersByFish$.pipe(map((res) => res.loading));

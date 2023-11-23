@@ -4,8 +4,9 @@ import { distinctUntilChanged, map, switchMap } from 'rxjs/operators';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 @Pipe({
-  name: 'lazyIcon',
-  pure: false
+    name: 'lazyIcon',
+    pure: false,
+    standalone: true
 })
 export class LazyIconPipe implements PipeTransform, OnDestroy {
   private readonly itemId$ = new Subject<number | undefined>();

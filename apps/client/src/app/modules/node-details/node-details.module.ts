@@ -15,28 +15,25 @@ import { AlarmButtonModule } from '../alarm-button/alarm-button.module';
 
 
 @NgModule({
-  declarations: [
-    NodeDetailsComponent,
-    GatheringItemUsesComponent
-  ],
-  exports: [
-    NodeDetailsComponent,
-    GatheringItemUsesComponent
-  ],
-  imports: [
-    CommonModule,
-
-    TranslateModule,
-    FlexLayoutModule,
-    NzTagModule,
-    PipesModule,
-    CoreModule,
-    AlarmsModule,
-    NzDropDownModule,
-    MapModule,
-    NzPopoverModule,
-    AlarmButtonModule
-  ]
+    exports: [
+        NodeDetailsComponent,
+        GatheringItemUsesComponent
+    ],
+    imports: [
+        CommonModule,
+        TranslateModule,
+        FlexLayoutModule,
+        NzTagModule,
+        PipesModule,
+        CoreModule,
+        AlarmsModule,
+        NzDropDownModule,
+        MapModule,
+        NzPopoverModule,
+        AlarmButtonModule,
+        NodeDetailsComponent,
+        GatheringItemUsesComponent
+    ]
 })
 export class NodeDetailsModule {
 }

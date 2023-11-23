@@ -17,14 +17,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [PatreonRedirectComponent],
-  imports: [
-    CommonModule,
-    PageLoaderModule,
-    AntdSharedModule,
-    TranslateModule,
-    RouterModule.forChild(routes)
-  ]
+    imports: [
+        CommonModule,
+        PageLoaderModule,
+        AntdSharedModule,
+        TranslateModule,
+        RouterModule.forChild(routes),
+        PatreonRedirectComponent
+    ]
 })
 export class PatreonRedirectModule {
 }

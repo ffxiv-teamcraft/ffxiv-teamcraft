@@ -7,17 +7,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    FlexLayoutModule,
-
-    TranslateModule,
-
-    AntdSharedModule
-  ],
-  declarations: [NameQuestionPopupComponent]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        FlexLayoutModule,
+        TranslateModule,
+        AntdSharedModule,
+        NameQuestionPopupComponent
+    ]
 })
 export class NameQuestionPopupModule {
 }

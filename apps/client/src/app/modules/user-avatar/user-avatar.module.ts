@@ -10,20 +10,18 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-    CoreModule,
-    FlexLayoutModule,
-
-    DatabaseModule,
-    XivapiClientModule,
-
-    AntdSharedModule,
-    NzAvatarModule
-  ],
-  declarations: [UserAvatarComponent],
-  exports: [UserAvatarComponent]
+    imports: [
+        CommonModule,
+        RouterModule,
+        CoreModule,
+        FlexLayoutModule,
+        DatabaseModule,
+        XivapiClientModule,
+        AntdSharedModule,
+        NzAvatarModule,
+        UserAvatarComponent
+    ],
+    exports: [UserAvatarComponent]
 })
 export class UserAvatarModule {
 }

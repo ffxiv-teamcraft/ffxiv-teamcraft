@@ -40,35 +40,32 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    FlexLayoutModule,
-
-    CoreModule,
-    ListModule,
-    TranslateModule,
-    FullpageMessageModule,
-    PageLoaderModule,
-    PipesModule,
-    SettingsModule,
-    ListPickerModule,
-    ProgressPopupModule,
-    MarketboardModule,
-    RotationsModule,
-    ItemIconModule,
-
-    AntdSharedModule,
-
-    RouterModule.forChild(routes),
-    CompanyWorkshopTreeModule,
-    SimpleTabsetModule,
-    NzTypographyModule,
-    NzPaginationModule,
-    TooltipModule,
-    NzRadioModule
-  ],
-  declarations: [SearchComponent, SearchIntroComponent, SearchResultComponent, SearchJobPickerComponent, ItemDetailsBoxComponent],
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        FlexLayoutModule,
+        CoreModule,
+        ListModule,
+        TranslateModule,
+        FullpageMessageModule,
+        PageLoaderModule,
+        PipesModule,
+        SettingsModule,
+        ListPickerModule,
+        ProgressPopupModule,
+        MarketboardModule,
+        RotationsModule,
+        ItemIconModule,
+        AntdSharedModule,
+        RouterModule.forChild(routes),
+        CompanyWorkshopTreeModule,
+        SimpleTabsetModule,
+        NzTypographyModule,
+        NzPaginationModule,
+        TooltipModule,
+        NzRadioModule,
+        SearchComponent, SearchIntroComponent, SearchResultComponent, SearchJobPickerComponent, ItemDetailsBoxComponent
+    ],
 })
 export class SearchModule {}

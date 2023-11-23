@@ -26,37 +26,31 @@ import { FullpageMessageModule } from '../fullpage-message/fullpage-message.modu
 import { FavoritesModule } from '../favorites/favorites.module';
 
 @NgModule({
-  declarations: [FolderComponent, FolderPageComponent],
-  exports: [FolderComponent, FolderPageComponent],
-  imports: [
-    CommonModule,
-    StoreModule.forFeature(
-      fromFolders.FOLDERS_FEATURE_KEY,
-      fromFolders.reducer
-    ),
-    EffectsModule.forFeature([FoldersEffects]),
-
-    NzCollapseModule,
-    NzModalModule,
-    NzButtonModule,
-    NzToolTipModule,
-    NzPopconfirmModule,
-    NzIconModule,
-
-
-    TranslateModule,
-    CoreModule,
-    PipesModule,
-    NameQuestionPopupModule,
-    DragDropModule,
-    FlexLayoutModule,
-    NzDividerModule,
-    RouterModule,
-    UserAvatarModule,
-    FullpageMessageModule,
-    FavoritesModule
-  ],
-  providers: [FoldersFacade]
+    exports: [FolderComponent, FolderPageComponent],
+    imports: [
+        CommonModule,
+        StoreModule.forFeature(fromFolders.FOLDERS_FEATURE_KEY, fromFolders.reducer),
+        EffectsModule.forFeature([FoldersEffects]),
+        NzCollapseModule,
+        NzModalModule,
+        NzButtonModule,
+        NzToolTipModule,
+        NzPopconfirmModule,
+        NzIconModule,
+        TranslateModule,
+        CoreModule,
+        PipesModule,
+        NameQuestionPopupModule,
+        DragDropModule,
+        FlexLayoutModule,
+        NzDividerModule,
+        RouterModule,
+        UserAvatarModule,
+        FullpageMessageModule,
+        FavoritesModule,
+        FolderComponent, FolderPageComponent
+    ],
+    providers: [FoldersFacade]
 })
 export class FoldersModule {
 }

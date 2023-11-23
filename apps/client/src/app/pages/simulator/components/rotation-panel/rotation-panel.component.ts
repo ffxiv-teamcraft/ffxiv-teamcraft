@@ -7,14 +7,14 @@ import { LinkToolsService } from '../../../../core/tools/link-tools.service';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { PermissionLevel } from '../../../../core/database/permissions/permission-level.enum';
 import { CustomLink } from '../../../../core/database/custom-links/custom-link';
 import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
 import { CustomLinksFacade } from '../../../../modules/custom-links/+state/custom-links.facade';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MacroPopupComponent } from '../macro-popup/macro-popup.component';
 import { freeCompanyActions } from '../../../../core/data/sources/free-company-actions';
 import { ConsumablesService } from '../../model/consumables.service';
@@ -29,12 +29,29 @@ import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { EnvironmentService } from '../../../../core/environment.service';
 import { PermissionsController } from '../../../../core/database/permissions-controller';
 import { Craft } from '@ffxiv-teamcraft/simulator';
+import { ActionComponent } from '../action/action.component';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { ClipboardDirective } from '../../../../core/clipboard.directive';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { RotationResultTagComponent } from '../rotation-result-tag/rotation-result-tag.component';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { UserAvatarComponent } from '../../../../modules/user-avatar/user-avatar/user-avatar.component';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-rotation-panel',
-  templateUrl: './rotation-panel.component.html',
-  styleUrls: ['./rotation-panel.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-rotation-panel',
+    templateUrl: './rotation-panel.component.html',
+    styleUrls: ['./rotation-panel.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, NzCollapseModule, FlexModule, UserAvatarComponent, NgFor, NzTagModule, NzButtonModule, NzIconModule, NzToolTipModule, RotationResultTagComponent, NzWaveModule, ClipboardDirective, RouterLink, NzPopconfirmModule, NzDropDownModule, NzMenuModule, ActionComponent, AsyncPipe, DecimalPipe, TranslateModule]
 })
 export class RotationPanelComponent implements OnInit {
 

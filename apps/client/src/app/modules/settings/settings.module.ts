@@ -14,25 +14,23 @@ import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    AntdSharedModule,
-    FlexLayoutModule,
-    TranslateModule,
-    FormsModule,
-    ColorPickerModule,
-    PipesModule,
-    CoreModule,
-    NzSliderModule,
-    NzUploadModule,
-    NzIconModule
-  ],
-  declarations: [
-    SettingsPopupComponent
-  ],
-  providers: [
-    SettingsPopupService
-  ]
+    imports: [
+        CommonModule,
+        AntdSharedModule,
+        FlexLayoutModule,
+        TranslateModule,
+        FormsModule,
+        ColorPickerModule,
+        PipesModule,
+        CoreModule,
+        NzSliderModule,
+        NzUploadModule,
+        NzIconModule,
+        SettingsPopupComponent
+    ],
+    providers: [
+        SettingsPopupService
+    ]
 })
 export class SettingsModule {
   static forRoot(): ModuleWithProviders<SettingsModule> {

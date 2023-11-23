@@ -6,14 +6,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
-  declarations: [LoadingScreenComponent],
-  exports: [LoadingScreenComponent],
-  imports: [
-    CommonModule,
-    TranslateModule,
-    FlexLayoutModule,
-    AntdSharedModule
-  ]
+    exports: [LoadingScreenComponent],
+    imports: [
+        CommonModule,
+        TranslateModule,
+        FlexLayoutModule,
+        AntdSharedModule,
+        LoadingScreenComponent
+    ]
 })
 export class LoadingScreenModule {
 }

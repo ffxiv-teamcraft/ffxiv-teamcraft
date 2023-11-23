@@ -10,16 +10,16 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
-  declarations: [AdComponent, RemoveAdsPopupComponent],
-  exports: [AdComponent, RemoveAdsPopupComponent],
-  imports: [
-    CommonModule,
-    NzModalModule,
-    NzButtonModule,
-    TranslateModule,
-    NzDividerModule,
-    FlexLayoutModule
-  ]
+    exports: [AdComponent, RemoveAdsPopupComponent],
+    imports: [
+        CommonModule,
+        NzModalModule,
+        NzButtonModule,
+        TranslateModule,
+        NzDividerModule,
+        FlexLayoutModule,
+        AdComponent, RemoveAdsPopupComponent
+    ]
 })
 export class AdsModule {
 }

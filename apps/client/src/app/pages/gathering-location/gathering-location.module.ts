@@ -31,33 +31,29 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    CoreModule,
-    FlexLayoutModule,
-    FormsModule,
-
-    RouterModule.forChild(routes),
-
-    TranslateModule,
-
-    MapModule,
-    PipesModule,
-    ItemIconModule,
-    AlarmsModule,
-    PageLoaderModule,
-    FullpageMessageModule,
-    FishingBaitModule,
-    TooltipModule,
-
-    AntdSharedModule,
-    NodeDetailsModule,
-    SpearfishingSpeedModule,
-    ReactiveFormsModule,
-    NzPaginationModule,
-    AlarmButtonModule
-  ],
-  declarations: [GatheringLocationComponent]
+    imports: [
+        CommonModule,
+        CoreModule,
+        FlexLayoutModule,
+        FormsModule,
+        RouterModule.forChild(routes),
+        TranslateModule,
+        MapModule,
+        PipesModule,
+        ItemIconModule,
+        AlarmsModule,
+        PageLoaderModule,
+        FullpageMessageModule,
+        FishingBaitModule,
+        TooltipModule,
+        AntdSharedModule,
+        NodeDetailsModule,
+        SpearfishingSpeedModule,
+        ReactiveFormsModule,
+        NzPaginationModule,
+        AlarmButtonModule,
+        GatheringLocationComponent
+    ]
 })
 export class GatheringLocationModule {
 }

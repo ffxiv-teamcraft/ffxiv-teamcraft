@@ -9,17 +9,17 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
 import { NzSliderModule } from 'ng-zorro-antd/slider';
 
 @NgModule({
-  declarations: [OverlayContainerComponent],
-  exports: [OverlayContainerComponent],
-  imports: [
-    CommonModule,
-    AntdSharedModule,
-    FormsModule,
-    FlexLayoutModule,
-    TranslateModule,
-    CoreModule,
-    NzSliderModule
-  ]
+    exports: [OverlayContainerComponent],
+    imports: [
+        CommonModule,
+        AntdSharedModule,
+        FormsModule,
+        FlexLayoutModule,
+        TranslateModule,
+        CoreModule,
+        NzSliderModule,
+        OverlayContainerComponent
+    ]
 })
 export class OverlayContainerModule {
 }

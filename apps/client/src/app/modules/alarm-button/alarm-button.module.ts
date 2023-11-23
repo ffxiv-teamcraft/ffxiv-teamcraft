@@ -12,21 +12,19 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 
 
 @NgModule({
-  declarations: [
-    AlarmButtonComponent
-  ],
-  exports: [
-    AlarmButtonComponent
-  ],
-  imports: [
-    CommonModule,
-    NzButtonModule,
-    AlarmsModule,
-    CoreModule,
-    PipesModule,
-    NzDropDownModule,
-    NzToolTipModule,
-    NzIconModule
-  ]
+    exports: [
+        AlarmButtonComponent
+    ],
+    imports: [
+        CommonModule,
+        NzButtonModule,
+        AlarmsModule,
+        CoreModule,
+        PipesModule,
+        NzDropDownModule,
+        NzToolTipModule,
+        NzIconModule,
+        AlarmButtonComponent
+    ]
 })
 export class AlarmButtonModule { }

@@ -35,27 +35,26 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [LogTrackerComponent, FishingLogTrackerComponent],
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-    FormsModule,
-    CoreModule,
-    PipesModule,
-    ItemIconModule,
-    ListPickerModule,
-    ProgressPopupModule,
-    MapModule,
-    AlarmsModule,
-    FishingBaitModule,
-    RouterModule.forChild(routes),
-    TooltipModule,
-    FullpageMessageModule,
-
-    AntdSharedModule,
-    TextQuestionPopupModule,
-    SpearfishingSpeedModule
-  ]
+    imports: [
+        CommonModule,
+        FlexLayoutModule,
+        FormsModule,
+        CoreModule,
+        PipesModule,
+        ItemIconModule,
+        ListPickerModule,
+        ProgressPopupModule,
+        MapModule,
+        AlarmsModule,
+        FishingBaitModule,
+        RouterModule.forChild(routes),
+        TooltipModule,
+        FullpageMessageModule,
+        AntdSharedModule,
+        TextQuestionPopupModule,
+        SpearfishingSpeedModule,
+        LogTrackerComponent, FishingLogTrackerComponent
+    ]
 })
 export class LogTrackerModule {
 }

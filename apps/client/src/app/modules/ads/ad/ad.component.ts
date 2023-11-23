@@ -8,9 +8,10 @@ declare const ramp: any;
 declare const gtag: any;
 
 @Component({
-  selector: 'app-ad',
-  templateUrl: './ad.component.html',
-  styleUrls: ['./ad.component.less']
+    selector: 'app-ad',
+    templateUrl: './ad.component.html',
+    styleUrls: ['./ad.component.less'],
+    standalone: true
 })
 export class AdComponent extends TeamcraftComponent {
 

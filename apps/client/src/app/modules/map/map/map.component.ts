@@ -5,12 +5,25 @@ import { MapService } from '../map.service';
 import { switchMap } from 'rxjs/operators';
 import { MapMarker } from '../map-marker';
 import { Vector2 } from '@ffxiv-teamcraft/types';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { AetheryteNamePipe } from '../../../pipes/pipes/aetheryte-name.pipe';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { RouterLink } from '@angular/router';
+import { ExtendedModule } from '@angular/flex-layout/extended';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { DbButtonComponent } from '../../../core/db-button/db-button.component';
+import { NgIf, NgFor, NgStyle, AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-map',
-  templateUrl: './map.component.html',
-  styleUrls: ['./map.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-map',
+    templateUrl: './map.component.html',
+    styleUrls: ['./map.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, DbButtonComponent, NgFor, NzToolTipModule, NgStyle, ExtendedModule, RouterLink, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, AetheryteNamePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class MapComponent implements OnInit {
 

@@ -5,12 +5,24 @@ import { MapComponent } from '../map/map.component';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { BehaviorSubject, combineLatest } from 'rxjs';
 import { distinctUntilChanged, filter, first, switchMap } from 'rxjs/operators';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { MapNamePipe } from '../../../pipes/pipes/map-name.pipe';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NgIf } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-map-position',
-  templateUrl: './map-position.component.html',
-  styleUrls: ['./map-position.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-map-position',
+    templateUrl: './map-position.component.html',
+    styleUrls: ['./map-position.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FlexModule, NgIf, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, MapNamePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class MapPositionComponent {
   @Input()

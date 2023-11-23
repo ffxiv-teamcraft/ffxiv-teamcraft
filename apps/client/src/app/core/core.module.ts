@@ -56,96 +56,92 @@ import { PirschEventDirective } from './analytics/pirsch-event.directive';
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    TranslateModule,
-    HttpClientModule,
-    NgSerializerModule.forChild([
-      {
-        parent: AbstractNotification,
-        children: {
-          LIST_COMMENT: ListCommentNotification,
-          LIST_ITEM_COMMENT: ListItemCommentNotification,
-          DB_ITEM_COMMENT: DbItemCommentNotification,
-          DB_COMMENT_REPLY: DbCommentReplyNotification,
-          COMMISSION: CommissionNotification
-        }
-      },
-      {
-        parent: CustomLink,
-        children: {
-          link: CustomLink,
-          template: ListTemplate
-        }
-      }
-    ]),
-    MaintenanceModule,
-    VersionLockModule,
-    RouterModule,
-    TutorialModule,
-    ClipboardModule,
-    IpcPopupsModule,
-
-    NzButtonModule,
-    NzToolTipModule,
-    NzIconModule,
-    NzDividerModule,
-    NzModalModule,
-    NzSkeletonModule,
-    NzNotificationModule
-  ],
-  providers: [
-    PendingChangesService,
-    PlatformService,
-    MathToolsService,
-    HtmlToolsService,
-    LinkToolsService,
-    DiscordWebhookService,
-    SupportService,
-    WeatherService,
-    AdminGuard,
-    ModeratorGuard,
-    DevGuard,
-    ...DATA_REPORTERS
-  ],
-  declarations: [
-    I18nPipe,
-    TimerPipe,
-    DbButtonComponent,
-    ItemRarityDirective,
-    LazyComponentDirective,
-    MouseWheelDirective,
-    SupportUsPopupComponent,
-    ClipboardDirective,
-    ItemNameClipboardDirective,
-    I18nNameComponent,
-    I18nRowPipe,
-    NgForTrackByIdDirective,
-    NgForTrackByKeyDirective,
-    PirschEventDirective
-  ],
-  exports: [
-    I18nPipe,
-    TranslateModule,
-    MaintenanceModule,
-    TimerPipe,
-    DbButtonComponent,
-    ItemRarityDirective,
-    LazyComponentDirective,
-    TutorialModule,
-    MouseWheelDirective,
-    ClipboardDirective,
-    ItemNameClipboardDirective,
-    I18nNameComponent,
-
-    NzButtonModule,
-    NzToolTipModule,
-    NzIconModule,
-    I18nRowPipe,
-    PirschEventDirective,
-    NgForTrackByIdDirective,
-    NgForTrackByKeyDirective
-  ]
+    imports: [
+        CommonModule,
+        TranslateModule,
+        HttpClientModule,
+        NgSerializerModule.forChild([
+            {
+                parent: AbstractNotification,
+                children: {
+                    LIST_COMMENT: ListCommentNotification,
+                    LIST_ITEM_COMMENT: ListItemCommentNotification,
+                    DB_ITEM_COMMENT: DbItemCommentNotification,
+                    DB_COMMENT_REPLY: DbCommentReplyNotification,
+                    COMMISSION: CommissionNotification
+                }
+            },
+            {
+                parent: CustomLink,
+                children: {
+                    link: CustomLink,
+                    template: ListTemplate
+                }
+            }
+        ]),
+        MaintenanceModule,
+        VersionLockModule,
+        RouterModule,
+        TutorialModule,
+        ClipboardModule,
+        IpcPopupsModule,
+        NzButtonModule,
+        NzToolTipModule,
+        NzIconModule,
+        NzDividerModule,
+        NzModalModule,
+        NzSkeletonModule,
+        NzNotificationModule,
+        I18nPipe,
+        TimerPipe,
+        DbButtonComponent,
+        ItemRarityDirective,
+        LazyComponentDirective,
+        MouseWheelDirective,
+        SupportUsPopupComponent,
+        ClipboardDirective,
+        ItemNameClipboardDirective,
+        I18nNameComponent,
+        I18nRowPipe,
+        NgForTrackByIdDirective,
+        NgForTrackByKeyDirective,
+        PirschEventDirective
+    ],
+    providers: [
+        PendingChangesService,
+        PlatformService,
+        MathToolsService,
+        HtmlToolsService,
+        LinkToolsService,
+        DiscordWebhookService,
+        SupportService,
+        WeatherService,
+        AdminGuard,
+        ModeratorGuard,
+        DevGuard,
+        ...DATA_REPORTERS
+    ],
+    exports: [
+        I18nPipe,
+        TranslateModule,
+        MaintenanceModule,
+        TimerPipe,
+        DbButtonComponent,
+        ItemRarityDirective,
+        LazyComponentDirective,
+        TutorialModule,
+        MouseWheelDirective,
+        ClipboardDirective,
+        ItemNameClipboardDirective,
+        I18nNameComponent,
+        NzButtonModule,
+        NzToolTipModule,
+        NzIconModule,
+        I18nRowPipe,
+        PirschEventDirective,
+        NgForTrackByIdDirective,
+        NgForTrackByKeyDirective
+    ]
 })
 export class CoreModule {
   static forRoot(): ModuleWithProviders<CoreModule> {

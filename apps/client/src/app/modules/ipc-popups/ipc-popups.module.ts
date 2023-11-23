@@ -10,14 +10,14 @@ import { UpdateInstallPopupComponent } from './update-install-popup/update-insta
 
 
 @NgModule({
-  declarations: [NpcapInstallPopupComponent, RawsockAdminErrorPopupComponent, UpdateInstallPopupComponent],
-  imports: [
-    CommonModule,
-    TranslateModule,
-    NzButtonModule,
-    FlexModule,
-    NzDividerModule
-  ]
+    imports: [
+        CommonModule,
+        TranslateModule,
+        NzButtonModule,
+        FlexModule,
+        NzDividerModule,
+        NpcapInstallPopupComponent, RawsockAdminErrorPopupComponent, UpdateInstallPopupComponent
+    ]
 })
 export class IpcPopupsModule {
 }

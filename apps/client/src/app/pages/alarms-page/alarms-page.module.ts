@@ -37,41 +37,36 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    FlexLayoutModule,
-
-    RouterModule.forChild(routes),
-
-    TranslateModule,
-
-    MapModule,
-    CoreModule,
-    PipesModule,
-    ItemIconModule,
-    AlarmsModule,
-    SettingsModule,
-    NameQuestionPopupModule,
-    TextQuestionPopupModule,
-    PageLoaderModule,
-    FullpageMessageModule,
-    FishingBaitModule,
-    CustomAlarmPopupModule,
-
-    AntdSharedModule,
-    // TODO migrate to cdk
-    // NgDragDropModule,
-
-    ListModule,
-    NzAvatarModule,
-    NzSliderModule,
-    NodeDetailsModule,
-    CdkDropList,
-    CdkDrag
-  ],
-  declarations: [AlarmsPageComponent, AlarmsOptionsPopupComponent]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        FlexLayoutModule,
+        RouterModule.forChild(routes),
+        TranslateModule,
+        MapModule,
+        CoreModule,
+        PipesModule,
+        ItemIconModule,
+        AlarmsModule,
+        SettingsModule,
+        NameQuestionPopupModule,
+        TextQuestionPopupModule,
+        PageLoaderModule,
+        FullpageMessageModule,
+        FishingBaitModule,
+        CustomAlarmPopupModule,
+        AntdSharedModule,
+        // TODO migrate to cdk
+        // NgDragDropModule,
+        ListModule,
+        NzAvatarModule,
+        NzSliderModule,
+        NodeDetailsModule,
+        CdkDropList,
+        CdkDrag,
+        AlarmsPageComponent, AlarmsOptionsPopupComponent
+    ]
 })
 export class AlarmsPageModule {
 }

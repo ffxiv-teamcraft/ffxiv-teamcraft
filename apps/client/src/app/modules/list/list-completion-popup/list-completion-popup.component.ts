@@ -6,11 +6,20 @@ import { Router } from '@angular/router';
 import { CommissionsFacade } from '../../commission-board/+state/commissions.facade';
 import { ListController } from '../list-controller';
 import { ListPricingService } from '../../../pages/list-details/list-pricing/list-pricing.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { LowerCasePipe } from '@angular/common';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-list-completion-popup',
-  templateUrl: './list-completion-popup.component.html',
-  styleUrls: ['./list-completion-popup.component.less']
+    selector: 'app-list-completion-popup',
+    templateUrl: './list-completion-popup.component.html',
+    styleUrls: ['./list-completion-popup.component.less'],
+    standalone: true,
+    imports: [FlexModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, LowerCasePipe, TranslateModule]
 })
 export class ListCompletionPopupComponent {
 

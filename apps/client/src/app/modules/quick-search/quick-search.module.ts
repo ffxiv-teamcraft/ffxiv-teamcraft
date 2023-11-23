@@ -10,18 +10,18 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
-  declarations: [QuickSearchComponent],
-  imports: [
-    CommonModule,
-    RouterModule,
-    FormsModule,
-    FlexLayoutModule,
-    PipesModule,
-    CoreModule,
-    TranslateModule,
-    AntdSharedModule
-  ],
-  exports: [QuickSearchComponent]
+    imports: [
+        CommonModule,
+        RouterModule,
+        FormsModule,
+        FlexLayoutModule,
+        PipesModule,
+        CoreModule,
+        TranslateModule,
+        AntdSharedModule,
+        QuickSearchComponent
+    ],
+    exports: [QuickSearchComponent]
 })
 export class QuickSearchModule {
 }

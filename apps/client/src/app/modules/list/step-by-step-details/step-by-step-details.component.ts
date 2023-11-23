@@ -20,12 +20,30 @@ import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
 import { ListRow } from '../model/list-row';
+import { MapNamePipe } from '../../../pipes/pipes/map-name.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { StepByStepRowComponent } from '../step-by-step-row/step-by-step-row.component';
+import { LazyScrollComponent } from '../../lazy-scroll/lazy-scroll/lazy-scroll.component';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { StepByStepDatatypeComponent } from '../step-by-step-datatype/step-by-step-datatype.component';
+import { MapComponent } from '../../map/map/map.component';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NgIf, NgFor, AsyncPipe, LowerCasePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-step-by-step-details',
-  templateUrl: './step-by-step-details.component.html',
-  styleUrls: ['./step-by-step-details.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-step-by-step-details',
+    templateUrl: './step-by-step-details.component.html',
+    styleUrls: ['./step-by-step-details.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, NzGridModule, NzProgressModule, NzSelectModule, FormsModule, NgFor, NzButtonModule, NzIconModule, NzWaveModule, MapComponent, StepByStepDatatypeComponent, NzCardModule, LazyScrollComponent, StepByStepRowComponent, AsyncPipe, LowerCasePipe, I18nPipe, TranslateModule, MapNamePipe]
 })
 export class StepByStepDetailsComponent extends StepByStepComponent implements OnInit {
   DataType = DataType;

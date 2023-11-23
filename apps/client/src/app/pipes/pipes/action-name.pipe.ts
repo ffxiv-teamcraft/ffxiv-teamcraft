@@ -5,7 +5,8 @@ import { combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Pipe({
-  name: 'actionName'
+    name: 'actionName',
+    standalone: true
 })
 export class ActionNamePipe implements PipeTransform {
   constructor(private lazyData: LazyDataFacade) {

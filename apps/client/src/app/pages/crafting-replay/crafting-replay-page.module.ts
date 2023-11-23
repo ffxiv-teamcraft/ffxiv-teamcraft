@@ -22,20 +22,19 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [CraftingReplayComponent],
-  imports: [
-    CommonModule,
-    PageLoaderModule,
-    FullpageMessageModule,
-    TranslateModule,
-    CraftingReplayModule,
-    FlexLayoutModule,
-
-    RouterModule.forChild(routes),
-    PipesModule,
-    CoreModule,
-    UserAvatarModule
-  ]
+    imports: [
+        CommonModule,
+        PageLoaderModule,
+        FullpageMessageModule,
+        TranslateModule,
+        CraftingReplayModule,
+        FlexLayoutModule,
+        RouterModule.forChild(routes),
+        PipesModule,
+        CoreModule,
+        UserAvatarModule,
+        CraftingReplayComponent
+    ]
 })
 export class CraftingReplayPageModule {
 }

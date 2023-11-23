@@ -6,11 +6,17 @@ import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ListTemplate } from '../../../core/database/custom-links/list-template';
 import { List } from '../../../modules/list/model/list';
 import { ListController } from '../../../modules/list/list-controller';
+import { TranslateModule } from '@ngx-translate/core';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-template',
-  templateUrl: './template.component.html',
-  styleUrls: ['./template.component.less']
+    selector: 'app-template',
+    templateUrl: './template.component.html',
+    styleUrls: ['./template.component.less'],
+    standalone: true,
+    imports: [NgIf, PageLoaderComponent, FullpageMessageComponent, TranslateModule]
 })
 export class TemplateComponent {
 

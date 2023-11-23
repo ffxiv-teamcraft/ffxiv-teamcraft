@@ -5,7 +5,8 @@ import { filter, map } from 'rxjs/operators';
 import { CraftingRotation } from '../../model/other/crafting-rotation';
 
 @Pipe({
-  name: 'rotation'
+    name: 'rotation',
+    standalone: true
 })
 export class RotationPipe implements PipeTransform {
 

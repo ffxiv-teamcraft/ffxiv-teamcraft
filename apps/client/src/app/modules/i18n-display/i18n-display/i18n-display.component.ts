@@ -2,12 +2,17 @@ import { ChangeDetectionStrategy, Component, Input, OnChanges } from '@angular/c
 import { Observable, of } from 'rxjs';
 import { I18nName } from '@ffxiv-teamcraft/types';
 import { I18nNameLazy } from '../../../model/common/i18n-name-lazy';
+import { UiTextPipe } from '../../tooltip/xiv-ui-text.pipe';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgFor, AsyncPipe, UpperCasePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-i18n-display',
-  templateUrl: './i18n-display.component.html',
-  styleUrls: ['./i18n-display.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-i18n-display',
+    templateUrl: './i18n-display.component.html',
+    styleUrls: ['./i18n-display.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgFor, FlexModule, AsyncPipe, UpperCasePipe, UiTextPipe]
 })
 export class I18nDisplayComponent implements OnChanges {
   /**

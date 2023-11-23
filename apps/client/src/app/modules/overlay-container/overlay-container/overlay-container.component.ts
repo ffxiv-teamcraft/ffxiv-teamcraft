@@ -2,11 +2,20 @@ import { Component, Input, OnInit } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { SettingsService } from '../../settings/settings.service';
 import { Title } from '@angular/platform-browser';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NzSliderModule } from 'ng-zorro-antd/slider';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-overlay-container',
-  templateUrl: './overlay-container.component.html',
-  styleUrls: ['./overlay-container.component.less']
+    selector: 'app-overlay-container',
+    templateUrl: './overlay-container.component.html',
+    styleUrls: ['./overlay-container.component.less'],
+    standalone: true,
+    imports: [FlexModule, NzButtonModule, NzIconModule, NzSliderModule, FormsModule, NgIf, NzSwitchModule]
 })
 export class OverlayContainerComponent implements OnInit {
 

@@ -11,22 +11,20 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    TranslateModule,
-    FormsModule,
-    ReactiveFormsModule,
-    PageLoaderModule,
-    UserAvatarModule,
-    PipesModule,
-
-    DatabaseModule,
-
-    AntdSharedModule
-  ],
-  declarations: [UserPickerComponent],
-  exports: [UserPickerComponent],
-  providers: [UserPickerService]
+    imports: [
+        CommonModule,
+        TranslateModule,
+        FormsModule,
+        ReactiveFormsModule,
+        PageLoaderModule,
+        UserAvatarModule,
+        PipesModule,
+        DatabaseModule,
+        AntdSharedModule,
+        UserPickerComponent
+    ],
+    exports: [UserPickerComponent],
+    providers: [UserPickerService]
 })
 export class UserPickerModule {
 }

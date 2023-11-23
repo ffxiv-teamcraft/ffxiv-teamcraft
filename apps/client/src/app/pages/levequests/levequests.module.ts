@@ -30,30 +30,27 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    FlexLayoutModule,
-
-    CoreModule,
-    ListModule,
-    TranslateModule,
-    FullpageMessageModule,
-    PageLoaderModule,
-    PipesModule,
-    SettingsModule,
-    ListPickerModule,
-    ProgressPopupModule,
-    MapModule,
-    ItemIconModule,
-
-    AntdSharedModule,
-    NzProgressModule,
-
-    RouterModule.forChild(routes)
-  ],
-  declarations: [LevequestsComponent]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        FlexLayoutModule,
+        CoreModule,
+        ListModule,
+        TranslateModule,
+        FullpageMessageModule,
+        PageLoaderModule,
+        PipesModule,
+        SettingsModule,
+        ListPickerModule,
+        ProgressPopupModule,
+        MapModule,
+        ItemIconModule,
+        AntdSharedModule,
+        NzProgressModule,
+        RouterModule.forChild(routes),
+        LevequestsComponent
+    ]
 })
 export class LevequestsModule {
 }

@@ -31,28 +31,25 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    FlexLayoutModule,
-
-    CoreModule,
-    ListModule,
-    TeamsModule,
-    WorkshopModule,
-    PageLoaderModule,
-    NameQuestionPopupModule,
-    FullpageMessageModule,
-    ProgressPopupModule,
-
-    TranslateModule,
-    AntdSharedModule,
-    DragDropModule,
-
-    RouterModule.forChild(routes),
-    PipesModule
-  ],
-  declarations: [ListsComponent, MergeListsPopupComponent, ListImportPopupComponent, DeleteMultipleListsPopupComponent]
+    imports: [
+        CommonModule,
+        FormsModule,
+        FlexLayoutModule,
+        CoreModule,
+        ListModule,
+        TeamsModule,
+        WorkshopModule,
+        PageLoaderModule,
+        NameQuestionPopupModule,
+        FullpageMessageModule,
+        ProgressPopupModule,
+        TranslateModule,
+        AntdSharedModule,
+        DragDropModule,
+        RouterModule.forChild(routes),
+        PipesModule,
+        ListsComponent, MergeListsPopupComponent, ListImportPopupComponent, DeleteMultipleListsPopupComponent
+    ]
 })
 export class ListsPageModule {
 }

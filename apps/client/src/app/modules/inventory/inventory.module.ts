@@ -11,20 +11,20 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { InventoryPositionComponent } from './inventory-position/inventory-position.component';
 
 @NgModule({
-  declarations: [ContentIdLinkingPopupComponent, InventoryPositionComponent],
-  exports: [
-    InventoryPositionComponent
-  ],
-  imports: [
-    CommonModule,
-    CoreModule,
-    NzAvatarModule,
-    NzDividerModule,
-    NzTagModule,
-    NzPopconfirmModule,
-    NzToolTipModule,
-    FlexLayoutModule
-  ]
+    exports: [
+        InventoryPositionComponent
+    ],
+    imports: [
+        CommonModule,
+        CoreModule,
+        NzAvatarModule,
+        NzDividerModule,
+        NzTagModule,
+        NzPopconfirmModule,
+        NzToolTipModule,
+        FlexLayoutModule,
+        ContentIdLinkingPopupComponent, InventoryPositionComponent
+    ]
 })
 export class InventoryModule {
 }

@@ -37,26 +37,25 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [MappyComponent, MappyDashboardComponent],
-  imports: [
-    CommonModule,
-    MapModule,
-    FlexLayoutModule,
-    FormsModule,
-
-    RouterModule.forChild(routes),
-    NzDividerModule,
-    PipesModule,
-    CoreModule,
-    NzStatisticModule,
-    PageLoaderModule,
-    NzButtonModule,
-    NzPopconfirmModule,
-    NzTagModule,
-    NzCardModule,
-    NzEmptyModule,
-    NzSwitchModule
-  ]
+    imports: [
+        CommonModule,
+        MapModule,
+        FlexLayoutModule,
+        FormsModule,
+        RouterModule.forChild(routes),
+        NzDividerModule,
+        PipesModule,
+        CoreModule,
+        NzStatisticModule,
+        PageLoaderModule,
+        NzButtonModule,
+        NzPopconfirmModule,
+        NzTagModule,
+        NzCardModule,
+        NzEmptyModule,
+        NzSwitchModule,
+        MappyComponent, MappyDashboardComponent
+    ]
 })
 export class MappyModule {
 }

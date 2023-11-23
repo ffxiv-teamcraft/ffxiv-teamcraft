@@ -21,24 +21,22 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  declarations: [CurrencySpendingComponent],
-  imports: [
-    CommonModule,
-    CoreModule,
-    FormsModule,
-
-    PipesModule,
-    PageLoaderModule,
-    FullpageMessageModule,
-    MapModule,
-    ItemIconModule,
-
-    TranslateModule,
-    AntdSharedModule,
-    FlexLayoutModule,
-    RouterModule.forChild(routes),
-    MarketboardModule
-  ]
+    imports: [
+        CommonModule,
+        CoreModule,
+        FormsModule,
+        PipesModule,
+        PageLoaderModule,
+        FullpageMessageModule,
+        MapModule,
+        ItemIconModule,
+        TranslateModule,
+        AntdSharedModule,
+        FlexLayoutModule,
+        RouterModule.forChild(routes),
+        MarketboardModule,
+        CurrencySpendingComponent
+    ]
 })
 export class CurrencySpendingModule {
 }

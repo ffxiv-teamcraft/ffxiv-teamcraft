@@ -20,24 +20,24 @@ import { MapModule } from '../map/map.module';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    OverlayModule,
-    FlexLayoutModule,
-    AntdSharedModule,
-    TranslateModule,
-    PipesModule,
-    CoreModule,
-    NodeDetailsModule,
-    FishDataModule,
-    NzPipesModule,
-    MapModule,
-    AlarmsModule
-  ],
-  declarations: [XivapiActionTooltipComponent, XivapiItemTooltipComponent, XivapiItemTooltipDirective, XivapiActionTooltipDirective, UiTextPipe],
-  exports: [XivapiItemTooltipDirective, XivapiActionTooltipDirective, UiTextPipe, XivapiItemTooltipComponent],
-  providers: [TooltipDataService]
+    imports: [
+        CommonModule,
+        HttpClientModule,
+        OverlayModule,
+        FlexLayoutModule,
+        AntdSharedModule,
+        TranslateModule,
+        PipesModule,
+        CoreModule,
+        NodeDetailsModule,
+        FishDataModule,
+        NzPipesModule,
+        MapModule,
+        AlarmsModule,
+        XivapiActionTooltipComponent, XivapiItemTooltipComponent, XivapiItemTooltipDirective, XivapiActionTooltipDirective, UiTextPipe
+    ],
+    exports: [XivapiItemTooltipDirective, XivapiActionTooltipDirective, UiTextPipe, XivapiItemTooltipComponent],
+    providers: [TooltipDataService]
 })
 export class TooltipModule {
 }

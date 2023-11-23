@@ -7,15 +7,54 @@ import { TrackerComponent } from '../tracker-component';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { FishingLogCacheService } from './fishing-log-cache.service';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { SpearfishingShadowSize, SpearfishingSpeed } from '@ffxiv-teamcraft/types';
+import { AlarmDisplayPipe } from '../../../core/alarms/alarm-display.pipe';
+import { LazyRowPipe } from '../../../pipes/pipes/lazy-row.pipe';
+import { HooksetActionIdPipe } from '../../../pipes/pipes/hookset-action-id.pipe';
+import { TugNamePipe } from '../../../pipes/pipes/tug-name.pipe';
+import { WeatherIconPipe } from '../../../pipes/pipes/weather-icon.pipe';
+import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
+import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
+import { IfMobilePipe } from '../../../pipes/pipes/if-mobile.pipe';
+import { ActionNamePipe } from '../../../pipes/pipes/action-name.pipe';
+import { ActionIconPipe } from '../../../pipes/pipes/action-icon.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { TimerPipe } from '../../../core/eorzea/timer.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { SpearfishingSpeedComponent } from '../../../modules/spearfishing-speed-tooltip/spearfishing-speed/spearfishing-speed.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { FishingBaitComponent } from '../../../modules/fishing-bait/fishing-bait/fishing-bait.component';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { ItemRarityDirective } from '../../../core/item-rarity/item-rarity.directive';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { MapComponent } from '../../../modules/map/map/map.component';
+import { DbButtonComponent } from '../../../core/db-button/db-button.component';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { FormsModule } from '@angular/forms';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NgIf, NgFor, AsyncPipe, JsonPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-fishing-log-tracker',
-  templateUrl: './fishing-log-tracker.component.html',
-  styleUrls: ['./fishing-log-tracker.component.less']
+    selector: 'app-fishing-log-tracker',
+    templateUrl: './fishing-log-tracker.component.html',
+    styleUrls: ['./fishing-log-tracker.component.less'],
+    standalone: true,
+    imports: [NgIf, NzTabsModule, FlexModule, NzButtonModule, NzWaveModule, ClipboardDirective, NzSwitchModule, FormsModule, NgFor, NzMenuModule, DbButtonComponent, MapComponent, NzPopconfirmModule, NzIconModule, NzGridModule, ItemIconComponent, ItemRarityDirective, NzToolTipModule, NzDropDownModule, FishingBaitComponent, NzTagModule, SpearfishingSpeedComponent, NzDividerModule, FullpageMessageComponent, AsyncPipe, JsonPipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, IfMobilePipe, NodeTypeIconPipe, XivapiIconPipe, WeatherIconPipe, TugNamePipe, HooksetActionIdPipe, LazyRowPipe, AlarmDisplayPipe]
 })
 export class FishingLogTrackerComponent extends TrackerComponent {
 

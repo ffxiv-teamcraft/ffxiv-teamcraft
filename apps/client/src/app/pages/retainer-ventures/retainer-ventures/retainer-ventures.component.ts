@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Retainer, RetainersService } from '../../../core/electron/retainers.service';
 import { map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { combineLatest, Observable, of, Subject } from 'rxjs';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { StatsService } from '../../../modules/gearsets/stats.service';
@@ -13,17 +13,38 @@ import * as _ from 'lodash';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { SpendingEntry } from '../../currency-spending/spending-entry';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { EnvironmentService } from '../../../core/environment.service';
+import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
+import { LazyIconPipe } from '../../../pipes/pipes/lazy-icon.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { MarketboardIconComponent } from '../../../modules/marketboard/marketboard-icon/marketboard-icon.component';
+import { DbButtonComponent } from '../../../core/db-button/db-button.component';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-retainer-ventures',
-  templateUrl: './retainer-ventures.component.html',
-  styleUrls: ['./retainer-ventures.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-retainer-ventures',
+    templateUrl: './retainer-ventures.component.html',
+    styleUrls: ['./retainer-ventures.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FlexModule, NgIf, NzAlertModule, NgFor, NzSelectModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputNumberModule, NzButtonModule, NzWaveModule, NzIconModule, PageLoaderComponent, ItemIconComponent, DbButtonComponent, MarketboardIconComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, LazyIconPipe, JobUnicodePipe]
 })
 export class RetainerVenturesComponent extends TeamcraftComponent implements OnInit {
 

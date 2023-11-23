@@ -3,7 +3,7 @@ import { List } from '../model/list';
 import { ListsFacade } from '../+state/lists.facade';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { ListRow } from '../model/list-row';
 import { TagsPopupComponent } from '../tags-popup/tags-popup.component';
@@ -24,7 +24,7 @@ import { CustomLinksFacade } from '../../custom-links/+state/custom-links.facade
 import { Team } from '../../../model/team/team';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
 import { SettingsService } from '../../settings/settings.service';
@@ -33,12 +33,41 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { ListSplitPopupComponent } from '../list-split-popup/list-split-popup.component';
 import { ListController } from '../list-controller';
 import { PermissionsController } from '../../../core/database/permissions-controller';
+import { PermissionLevelPipe } from '../../../pipes/pipes/permission-level.pipe';
+import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { TutorialStepDirective } from '../../../core/tutorial/tutorial-step.directive';
+import { ListProgressbarComponent } from '../list-progressbar/list-progressbar.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { UserAvatarComponent } from '../../user-avatar/user-avatar/user-avatar.component';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FormsModule } from '@angular/forms';
+import { MouseWheelDirective } from '../../../core/event/mouse-wheel/mouse-wheel.directive';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { LazyScrollComponent } from '../../lazy-scroll/lazy-scroll/lazy-scroll.component';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NgIf, NgSwitch, NgSwitchCase, NgFor, AsyncPipe, UpperCasePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-list-panel',
-  templateUrl: './list-panel.component.html',
-  styleUrls: ['./list-panel.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-list-panel',
+    templateUrl: './list-panel.component.html',
+    styleUrls: ['./list-panel.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, NzCollapseModule, LazyScrollComponent, FlexModule, ItemIconComponent, I18nNameComponent, NzInputNumberModule, MouseWheelDirective, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, NzGridModule, NzToolTipModule, NgSwitch, NgSwitchCase, UserAvatarComponent, NzTagModule, RouterLink, NgFor, ListProgressbarComponent, TutorialStepDirective, ClipboardDirective, NzBadgeModule, NzPopconfirmModule, NzDropDownModule, NzMenuModule, AsyncPipe, UpperCasePipe, I18nPipe, TranslateModule, ItemNamePipe, XivapiIconPipe, PermissionLevelPipe]
 })
 export class ListPanelComponent extends TeamcraftComponent {
 

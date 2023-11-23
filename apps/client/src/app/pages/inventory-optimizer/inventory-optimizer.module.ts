@@ -105,29 +105,26 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    InventoryOptimizerComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    CoreModule,
-    PipesModule,
-    AntdSharedModule,
-    TranslateModule,
-    FlexLayoutModule,
-    RouterModule.forChild(routes),
-    PageLoaderModule,
-    FullpageMessageModule,
-    ItemIconModule,
-
-    ScrollingModule,
-    LazyScrollModule,
-    InventoryModule
-  ],
-  providers: [
-    ...optimisations
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        CoreModule,
+        PipesModule,
+        AntdSharedModule,
+        TranslateModule,
+        FlexLayoutModule,
+        RouterModule.forChild(routes),
+        PageLoaderModule,
+        FullpageMessageModule,
+        ItemIconModule,
+        ScrollingModule,
+        LazyScrollModule,
+        InventoryModule,
+        InventoryOptimizerComponent
+    ],
+    providers: [
+        ...optimisations
+    ]
 })
 export class InventoryOptimizerModule {
 }

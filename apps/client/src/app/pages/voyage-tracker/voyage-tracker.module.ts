@@ -30,31 +30,27 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    VoyageTrackerComponent,
-    VesselRowComponent,
-    VesselListComponent,
-    VesselBuildColumnComponent,
-    VesselRankColumnComponent,
-    VesselVoyageColumnComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    FlexLayoutModule,
-    AntdSharedModule,
-
-    CoreModule,
-    PipesModule,
-
-    FreeCompanyWorkshopsModule,
-
-    RouterModule.forChild(routes),
-    PageLoaderModule,
-    NzBreadCrumbModule,
-    NzPopoverModule,
-    FullpageMessageModule,
-    NzPipesModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        FlexLayoutModule,
+        AntdSharedModule,
+        CoreModule,
+        PipesModule,
+        FreeCompanyWorkshopsModule,
+        RouterModule.forChild(routes),
+        PageLoaderModule,
+        NzBreadCrumbModule,
+        NzPopoverModule,
+        FullpageMessageModule,
+        NzPipesModule,
+        VoyageTrackerComponent,
+        VesselRowComponent,
+        VesselListComponent,
+        VesselBuildColumnComponent,
+        VesselRankColumnComponent,
+        VesselVoyageColumnComponent
+    ]
 })
 export class VoyageTrackerModule {
 }

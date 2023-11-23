@@ -30,31 +30,28 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [GearsetsPageComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    TranslateModule,
-    CoreModule,
-    FlexLayoutModule,
-    TooltipModule,
-    ProgressPopupModule,
-    FullpageMessageModule,
-    DragDropModule,
-
-    ListModule,
-    ListPickerModule,
-
-    AntdSharedModule,
-    PipesModule,
-    ItemIconModule,
-    PageLoaderModule,
-    FoldersModule,
-
-    RouterModule.forChild(routes),
-    GearsetsModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        TranslateModule,
+        CoreModule,
+        FlexLayoutModule,
+        TooltipModule,
+        ProgressPopupModule,
+        FullpageMessageModule,
+        DragDropModule,
+        ListModule,
+        ListPickerModule,
+        AntdSharedModule,
+        PipesModule,
+        ItemIconModule,
+        PageLoaderModule,
+        FoldersModule,
+        RouterModule.forChild(routes),
+        GearsetsModule,
+        GearsetsPageComponent
+    ]
 })
 export class GearsetsPageModule {
 }

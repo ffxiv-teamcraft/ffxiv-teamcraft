@@ -4,12 +4,18 @@ import { Observable, Subject, Subscription } from 'rxjs';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { LodestoneService } from '../../../../core/api/lodestone.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-verification-popup',
-  templateUrl: './verification-popup.component.html',
-  styleUrls: ['./verification-popup.component.less']
+    selector: 'app-verification-popup',
+    templateUrl: './verification-popup.component.html',
+    styleUrls: ['./verification-popup.component.less'],
+    standalone: true,
+    imports: [NgIf, NzAlertModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
 })
 export class VerificationPopupComponent implements OnDestroy {
 

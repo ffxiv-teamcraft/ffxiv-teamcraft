@@ -28,24 +28,24 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [RetainersComponent],
-  imports: [
-    CommonModule,
-    CoreModule,
-    FormsModule,
-    FlexLayoutModule,
-    TranslateModule,
-    RouterModule.forChild(routes),
-    FullpageMessageModule,
-    NzGridModule,
-    PipesModule,
-    ItemIconModule,
-    NzSwitchModule,
-    PageLoaderModule,
-    NzDividerModule,
-    NzTagModule,
-    NzCollapseModule
-  ]
+    imports: [
+        CommonModule,
+        CoreModule,
+        FormsModule,
+        FlexLayoutModule,
+        TranslateModule,
+        RouterModule.forChild(routes),
+        FullpageMessageModule,
+        NzGridModule,
+        PipesModule,
+        ItemIconModule,
+        NzSwitchModule,
+        PageLoaderModule,
+        NzDividerModule,
+        NzTagModule,
+        NzCollapseModule,
+        RetainersComponent
+    ]
 })
 export class RetainersModule {
 }

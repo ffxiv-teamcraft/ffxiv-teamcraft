@@ -21,31 +21,28 @@ import { CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    TranslateModule,
-    AntdSharedModule,
-    FlexLayoutModule,
-    CoreModule,
-
-    CustomLinksModule,
-    FolderAdditionPickerModule,
-
-    DatabaseModule,
-    ListModule,
-    ListPickerModule,
-
-    StoreModule.forFeature('workshops', workshopsReducer, {
-      initialState: workshopsInitialState
-    }),
-    EffectsModule.forFeature([WorkshopsEffects]),
-    RouterModule,
-    CdkDropList,
-    CdkDrag
-  ],
-  declarations: [WorkshopPanelComponent],
-  exports: [WorkshopPanelComponent],
-  providers: [WorkshopsFacade]
+    imports: [
+        CommonModule,
+        TranslateModule,
+        AntdSharedModule,
+        FlexLayoutModule,
+        CoreModule,
+        CustomLinksModule,
+        FolderAdditionPickerModule,
+        DatabaseModule,
+        ListModule,
+        ListPickerModule,
+        StoreModule.forFeature('workshops', workshopsReducer, {
+            initialState: workshopsInitialState
+        }),
+        EffectsModule.forFeature([WorkshopsEffects]),
+        RouterModule,
+        CdkDropList,
+        CdkDrag,
+        WorkshopPanelComponent
+    ],
+    exports: [WorkshopPanelComponent],
+    providers: [WorkshopsFacade]
 })
 export class WorkshopModule {
 }

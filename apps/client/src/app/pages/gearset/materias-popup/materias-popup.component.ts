@@ -9,6 +9,24 @@ import { combineLatest, Observable, of } from 'rxjs';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { first, map, shareReplay } from 'rxjs/operators';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { IfMobilePipe } from '../../../pipes/pipes/if-mobile.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { ItemCapsTableComponent } from '../../../modules/gearsets/item-caps-table/item-caps-table.component';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 
 interface MateriaMenuEntry {
@@ -17,10 +35,12 @@ interface MateriaMenuEntry {
 }
 
 @Component({
-  selector: 'app-materias-popup',
-  templateUrl: './materias-popup.component.html',
-  styleUrls: ['./materias-popup.component.less'],
-  changeDetection: ChangeDetectionStrategy.Default
+    selector: 'app-materias-popup',
+    templateUrl: './materias-popup.component.html',
+    styleUrls: ['./materias-popup.component.less'],
+    changeDetection: ChangeDetectionStrategy.Default,
+    standalone: true,
+    imports: [FlexModule, ItemCapsTableComponent, NzDividerModule, NgFor, NgIf, ItemIconComponent, NzButtonModule, NzIconModule, I18nNameComponent, NzWaveModule, NzDropDownModule, NzSelectModule, FormsModule, NzMenuModule, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, IfMobilePipe]
 })
 export class MateriasPopupComponent {
 

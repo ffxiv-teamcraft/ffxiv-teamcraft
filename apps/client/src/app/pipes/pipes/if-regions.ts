@@ -3,8 +3,9 @@ import { Region } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../modules/settings/settings.service';
 
 @Pipe({
-  name: 'ifRegions',
-  pure: false
+    name: 'ifRegions',
+    pure: false,
+    standalone: true
 })
 export class IfRegionsPipe implements PipeTransform {
 

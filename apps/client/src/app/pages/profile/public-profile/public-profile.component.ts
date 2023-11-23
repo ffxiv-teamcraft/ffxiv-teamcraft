@@ -13,14 +13,36 @@ import { CraftingRotation } from '../../../model/other/crafting-rotation';
 import { CraftingRotationService } from '../../../core/database/crafting-rotation/crafting-rotation.service';
 import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
 import { Apollo } from 'apollo-angular';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import * as semver from 'semver';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
+import { IfMobilePipe } from '../../../pipes/pipes/if-mobile.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
+import { CdkVirtualScrollViewport, CdkFixedSizeVirtualScroll, CdkVirtualForOf } from '@angular/cdk/scrolling';
+import { RotationPanelComponent } from '../../simulator/components/rotation-panel/rotation-panel.component';
+import { ListPanelComponent } from '../../../modules/list/list-panel/list-panel.component';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { UserRatingDisplayComponent } from '../../../modules/commission-board/user-rating-display/user-rating-display.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, AsyncPipe, DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-public-profile',
-  templateUrl: './public-profile.component.html',
-  styleUrls: ['./public-profile.component.less']
+    selector: 'app-public-profile',
+    templateUrl: './public-profile.component.html',
+    styleUrls: ['./public-profile.component.less'],
+    standalone: true,
+    imports: [NgIf, FlexModule, NzButtonModule, NzIconModule, NzToolTipModule, NzTagModule, UserRatingDisplayComponent, NgFor, NzDividerModule, NzCollapseModule, NzListModule, ListPanelComponent, RotationPanelComponent, CdkVirtualScrollViewport, CdkFixedSizeVirtualScroll, CdkVirtualForOf, NzSkeletonModule, ItemIconComponent, FullpageMessageComponent, AsyncPipe, DatePipe, TranslateModule, ItemNamePipe, IfMobilePipe, JobUnicodePipe, I18nPipe]
 })
 export class PublicProfileComponent {
 

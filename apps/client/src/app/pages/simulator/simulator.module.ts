@@ -107,75 +107,69 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule.forChild(routes),
-    FlexLayoutModule,
-
-    TranslateModule,
-    ItemIconModule,
-    FullpageMessageModule,
-    RotationsModule,
-    RotationFoldersModule,
-    NameQuestionPopupModule,
-    TextQuestionPopupModule,
-    PageLoaderModule,
-    FavoritesModule,
-    UserAvatarModule,
-    CustomLinksModule,
-    RotationTipsModule,
-
-    AntdSharedModule,
-    NzIconModule,
-
-
-    // CustomLinksModule,
-    TooltipModule,
-    PipesModule,
-    CoreModule,
-    SettingsModule,
-    DirtyModule,
-    DragDropModule,
-    NzPaginationModule,
-    NzCheckboxModule,
-    LazyScrollModule
-  ],
-  declarations: [
-    CustomSimulatorPageComponent,
-    SimulatorPageComponent,
-    SimulatorComponent,
-    ActionComponent,
-    RotationsPageComponent,
-    MacroPopupComponent,
-    SimulationMinStatsPopupComponent,
-    RecipeChoicePopupComponent,
-    RotationPanelComponent,
-    RotationFolderPageComponent,
-    StepByStepReportComponent,
-    RotationFolderPanelComponent,
-    RotationTipsPopupComponent,
-    CommunityRotationsPageComponent,
-    CommunityRotationPopupComponent,
-    SimulatorOpenerComponent,
-    SimulationSharePopupComponent,
-    SimulationResultComponent,
-    RotationResultTagComponent,
-    CommunityRotationFinderPopupComponent
-  ],
-  exports: [
-    RotationPanelComponent,
-    RotationFolderPanelComponent,
-    ActionComponent,
-    SimulatorComponent,
-    SimulationResultComponent,
-    RotationResultTagComponent
-  ],
-  providers: [
-    ConsumablesService,
-    FreeCompanyActionsService
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        RouterModule.forChild(routes),
+        FlexLayoutModule,
+        TranslateModule,
+        ItemIconModule,
+        FullpageMessageModule,
+        RotationsModule,
+        RotationFoldersModule,
+        NameQuestionPopupModule,
+        TextQuestionPopupModule,
+        PageLoaderModule,
+        FavoritesModule,
+        UserAvatarModule,
+        CustomLinksModule,
+        RotationTipsModule,
+        AntdSharedModule,
+        NzIconModule,
+        // CustomLinksModule,
+        TooltipModule,
+        PipesModule,
+        CoreModule,
+        SettingsModule,
+        DirtyModule,
+        DragDropModule,
+        NzPaginationModule,
+        NzCheckboxModule,
+        LazyScrollModule,
+        CustomSimulatorPageComponent,
+        SimulatorPageComponent,
+        SimulatorComponent,
+        ActionComponent,
+        RotationsPageComponent,
+        MacroPopupComponent,
+        SimulationMinStatsPopupComponent,
+        RecipeChoicePopupComponent,
+        RotationPanelComponent,
+        RotationFolderPageComponent,
+        StepByStepReportComponent,
+        RotationFolderPanelComponent,
+        RotationTipsPopupComponent,
+        CommunityRotationsPageComponent,
+        CommunityRotationPopupComponent,
+        SimulatorOpenerComponent,
+        SimulationSharePopupComponent,
+        SimulationResultComponent,
+        RotationResultTagComponent,
+        CommunityRotationFinderPopupComponent
+    ],
+    exports: [
+        RotationPanelComponent,
+        RotationFolderPanelComponent,
+        ActionComponent,
+        SimulatorComponent,
+        SimulationResultComponent,
+        RotationResultTagComponent
+    ],
+    providers: [
+        ConsumablesService,
+        FreeCompanyActionsService
+    ]
 })
 export class SimulatorModule {
 }

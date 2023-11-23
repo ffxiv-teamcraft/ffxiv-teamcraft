@@ -42,30 +42,28 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    TranslateModule,
-    AntdSharedModule,
-
-    PipesModule,
-    CoreModule,
-    ListModule,
-    FlexLayoutModule,
-    FullpageMessageModule,
-    UserPickerModule,
-    UserAvatarModule,
-
-    RouterModule.forChild(routes),
-    SimulatorModule,
-    ItemIconModule,
-    ScrollingModule,
-    CommissionBoardModule,
-    NzSkeletonModule,
-    NzSliderModule,
-    NzAvatarModule
-  ],
-  declarations: [PublicProfileComponent, ProfileEditorComponent, MasterbooksPopupComponent, StatsPopupComponent, VerificationPopupComponent, AutofillStatsPopupComponent]
+    imports: [
+        CommonModule,
+        FormsModule,
+        TranslateModule,
+        AntdSharedModule,
+        PipesModule,
+        CoreModule,
+        ListModule,
+        FlexLayoutModule,
+        FullpageMessageModule,
+        UserPickerModule,
+        UserAvatarModule,
+        RouterModule.forChild(routes),
+        SimulatorModule,
+        ItemIconModule,
+        ScrollingModule,
+        CommissionBoardModule,
+        NzSkeletonModule,
+        NzSliderModule,
+        NzAvatarModule,
+        PublicProfileComponent, ProfileEditorComponent, MasterbooksPopupComponent, StatsPopupComponent, VerificationPopupComponent, AutofillStatsPopupComponent
+    ]
 })
 export class ProfileModule {
 }

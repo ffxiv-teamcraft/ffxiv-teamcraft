@@ -9,17 +9,16 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @NgModule({
-  declarations: [FolderAdditionPickerComponent],
-  imports: [
-    CommonModule,
-    TranslateModule,
-    FormsModule,
-
-    NzCheckboxModule,
-    NzButtonModule,
-    ScrollingModule,
-    LazyScrollModule
-  ]
+    imports: [
+        CommonModule,
+        TranslateModule,
+        FormsModule,
+        NzCheckboxModule,
+        NzButtonModule,
+        ScrollingModule,
+        LazyScrollModule,
+        FolderAdditionPickerComponent
+    ]
 })
 export class FolderAdditionPickerModule {
 }

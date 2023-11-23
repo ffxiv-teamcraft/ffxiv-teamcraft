@@ -3,11 +3,17 @@ import { combineLatest } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { TranslateModule } from '@ngx-translate/core';
+import { AsyncPipe } from '@angular/common';
+import { FishingSpotDatagridComponent } from '../fishing-spot-datagrid/fishing-spot-datagrid.component';
+import { NzCardModule } from 'ng-zorro-antd/card';
 
 @Component({
-  selector: 'app-fishing-spot-tug-datagrid',
-  templateUrl: './fishing-spot-tug-datagrid.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-fishing-spot-tug-datagrid',
+    templateUrl: './fishing-spot-tug-datagrid.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzCardModule, FishingSpotDatagridComponent, AsyncPipe, TranslateModule]
 })
 export class FishingSpotTugDatagridComponent {
   @Input()

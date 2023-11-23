@@ -32,24 +32,22 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    CoreModule,
-
-    FlexLayoutModule,
-    TranslateModule,
-    TeamsModule,
-    UserAvatarModule,
-    PipesModule,
-    AntdSharedModule,
-    FullpageMessageModule,
-    PageLoaderModule,
-    NameQuestionPopupModule,
-
-    RouterModule.forChild(routes)
-  ],
-  declarations: [TeamsComponent, TeamInviteComponent]
+    imports: [
+        CommonModule,
+        FormsModule,
+        CoreModule,
+        FlexLayoutModule,
+        TranslateModule,
+        TeamsModule,
+        UserAvatarModule,
+        PipesModule,
+        AntdSharedModule,
+        FullpageMessageModule,
+        PageLoaderModule,
+        NameQuestionPopupModule,
+        RouterModule.forChild(routes),
+        TeamsComponent, TeamInviteComponent
+    ]
 })
 export class TeamsPagesModule {
 }

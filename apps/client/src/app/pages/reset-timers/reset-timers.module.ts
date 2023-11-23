@@ -22,21 +22,18 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ResetTimersComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    FlexLayoutModule,
-
-    RouterModule.forChild(routes),
-
-    TranslateModule,
-
-    SettingsModule,
-    AntdSharedModule,
-    PipesModule,
-    CoreModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        FlexLayoutModule,
+        RouterModule.forChild(routes),
+        TranslateModule,
+        SettingsModule,
+        AntdSharedModule,
+        PipesModule,
+        CoreModule,
+        ResetTimersComponent
+    ]
 })
 export class ResetTimersModule {
 }

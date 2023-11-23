@@ -8,17 +8,15 @@ import { FormsModule } from '@angular/forms';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-
-    ListModule,
-
-    AntdSharedModule,
-    TranslateModule
-  ],
-  declarations: [ListPickerDrawerComponent],
-  providers: [ListPickerService]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ListModule,
+        AntdSharedModule,
+        TranslateModule,
+        ListPickerDrawerComponent
+    ],
+    providers: [ListPickerService]
 })
 export class ListPickerModule {
 }

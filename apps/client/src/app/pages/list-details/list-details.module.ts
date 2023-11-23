@@ -57,58 +57,50 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-
-    RouterModule.forChild(routes),
-
-    CoreModule,
-    ListModule,
-    LayoutModule,
-    TeamsModule,
-    ItemIconModule,
-    PipesModule,
-    AlarmsModule,
-
-    PageLoaderModule,
-    FullpageMessageModule,
-    LayoutEditorModule,
-    ProgressPopupModule,
-    MapModule,
-    PermissionsModule,
-    UserAvatarModule,
-    FavoritesModule,
-    MarketboardModule,
-    NumberQuestionPopupModule,
-    FishingBaitModule,
-    ItemPickerModule,
-    LayoutModule,
-    ListPickerModule,
-    TooltipModule,
-
-    FlexLayoutModule,
-
-    TranslateModule,
-    AntdSharedModule,
-
-    CommissionBoardModule,
-    InventoryModule,
-    LazyScrollModule,
-    NzRadioModule
-  ],
-  declarations: [
-    ListDetailsComponent,
-    ListCrystalsPanelComponent,
-    ListHistoryPopupComponent,
-    InventoryViewComponent,
-    TotalPanelPricePopupComponent,
-    ListContributionsComponent,
-    InventorySynthesisPopupComponent,
-    InventoryCleanupPopupComponent,
-    ListPricingComponent,
-    ListPricingRowComponent
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        RouterModule.forChild(routes),
+        CoreModule,
+        ListModule,
+        LayoutModule,
+        TeamsModule,
+        ItemIconModule,
+        PipesModule,
+        AlarmsModule,
+        PageLoaderModule,
+        FullpageMessageModule,
+        LayoutEditorModule,
+        ProgressPopupModule,
+        MapModule,
+        PermissionsModule,
+        UserAvatarModule,
+        FavoritesModule,
+        MarketboardModule,
+        NumberQuestionPopupModule,
+        FishingBaitModule,
+        ItemPickerModule,
+        LayoutModule,
+        ListPickerModule,
+        TooltipModule,
+        FlexLayoutModule,
+        TranslateModule,
+        AntdSharedModule,
+        CommissionBoardModule,
+        InventoryModule,
+        LazyScrollModule,
+        NzRadioModule,
+        ListDetailsComponent,
+        ListCrystalsPanelComponent,
+        ListHistoryPopupComponent,
+        InventoryViewComponent,
+        TotalPanelPricePopupComponent,
+        ListContributionsComponent,
+        InventorySynthesisPopupComponent,
+        InventoryCleanupPopupComponent,
+        ListPricingComponent,
+        ListPricingRowComponent
+    ]
 })
 export class ListDetailsModule {
 }

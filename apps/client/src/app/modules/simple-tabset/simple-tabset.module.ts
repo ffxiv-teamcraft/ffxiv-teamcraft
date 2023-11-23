@@ -6,12 +6,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
-  declarations: [SimpleTabsetComponent, SimpleTabComponent],
-  exports: [SimpleTabsetComponent, SimpleTabComponent],
-  imports: [
-    CommonModule,
-    FlexLayoutModule
-  ]
+    exports: [SimpleTabsetComponent, SimpleTabComponent],
+    imports: [
+        CommonModule,
+        FlexLayoutModule,
+        SimpleTabsetComponent, SimpleTabComponent
+    ]
 })
 export class SimpleTabsetModule {
 }

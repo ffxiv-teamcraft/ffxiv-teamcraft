@@ -12,17 +12,16 @@ import { NzStepsModule } from 'ng-zorro-antd/steps';
 
 
 @NgModule({
-  declarations: [ImportWorkshopFromPcapPopupComponent],
-  imports: [
-    CommonModule,
-    StoreModule.forFeature(fromFreeCompanyWorkshop.freeCompanyWorkshopsFeatureKey, fromFreeCompanyWorkshop.reducer),
-    EffectsModule.forFeature([FreeCompanyWorkshopEffects]),
-
-    FlexLayoutModule,
-    AntdSharedModule,
-    CoreModule,
-    NzStepsModule
-  ]
+    imports: [
+        CommonModule,
+        StoreModule.forFeature(fromFreeCompanyWorkshop.freeCompanyWorkshopsFeatureKey, fromFreeCompanyWorkshop.reducer),
+        EffectsModule.forFeature([FreeCompanyWorkshopEffects]),
+        FlexLayoutModule,
+        AntdSharedModule,
+        CoreModule,
+        NzStepsModule,
+        ImportWorkshopFromPcapPopupComponent
+    ]
 })
 export class FreeCompanyWorkshopsModule {
 }

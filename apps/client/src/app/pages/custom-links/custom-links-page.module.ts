@@ -23,24 +23,21 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  declarations: [CustomLinksComponent],
-  imports: [
-    CommonModule,
-    CoreModule,
-    FlexLayoutModule,
-    AntdSharedModule,
-    DatabaseModule,
-    FullpageMessageModule,
-    PageLoaderModule,
-
-
-    ListModule,
-    RotationsModule,
-    RotationFoldersModule,
-    WorkshopModule,
-
-    RouterModule.forChild(routes)
-  ]
+    imports: [
+        CommonModule,
+        CoreModule,
+        FlexLayoutModule,
+        AntdSharedModule,
+        DatabaseModule,
+        FullpageMessageModule,
+        PageLoaderModule,
+        ListModule,
+        RotationsModule,
+        RotationFoldersModule,
+        WorkshopModule,
+        RouterModule.forChild(routes),
+        CustomLinksComponent
+    ]
 })
 export class CustomLinksPageModule {
 }

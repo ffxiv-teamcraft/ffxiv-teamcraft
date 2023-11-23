@@ -24,22 +24,20 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [GearsetFolderComponent],
-  imports: [
-    CommonModule,
-    TranslateModule,
-    CoreModule,
-    FlexLayoutModule,
-    ProgressPopupModule,
-    FullpageMessageModule,
-
-    PipesModule,
-    PageLoaderModule,
-    FoldersModule,
-    GearsetsModule,
-
-    RouterModule.forChild(routes)
-  ]
+    imports: [
+        CommonModule,
+        TranslateModule,
+        CoreModule,
+        FlexLayoutModule,
+        ProgressPopupModule,
+        FullpageMessageModule,
+        PipesModule,
+        PageLoaderModule,
+        FoldersModule,
+        GearsetsModule,
+        RouterModule.forChild(routes),
+        GearsetFolderComponent
+    ]
 })
 export class GearsetFolderModule {
 }

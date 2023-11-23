@@ -20,24 +20,22 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  declarations: [FoodPickerComponent],
-  imports: [
-    CommonModule,
-    CoreModule,
-    FormsModule,
-
-    PipesModule,
-    PageLoaderModule,
-    FullpageMessageModule,
-    MapModule,
-    ItemIconModule,
-
-    TranslateModule,
-    AntdSharedModule,
-    FlexLayoutModule,
-    RouterModule.forChild(routes),
-    MarketboardModule
-  ]
+    imports: [
+        CommonModule,
+        CoreModule,
+        FormsModule,
+        PipesModule,
+        PageLoaderModule,
+        FullpageMessageModule,
+        MapModule,
+        ItemIconModule,
+        TranslateModule,
+        AntdSharedModule,
+        FlexLayoutModule,
+        RouterModule.forChild(routes),
+        MarketboardModule,
+        FoodPickerComponent
+    ]
 })
 export class FoodPickerModule {
 }

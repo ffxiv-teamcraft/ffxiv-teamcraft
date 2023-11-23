@@ -22,29 +22,27 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 
 
 @NgModule({
-  declarations: [
-    FishTrainsComponent
-  ],
-  imports: [
-    CommonModule,
-    FishTrainsRoutingModule,
-    NzPageHeaderModule,
-    TranslateModule,
-    NzButtonModule,
-    NzInputModule,
-    NzFormModule,
-    ReactiveFormsModule,
-    NzSegmentedModule,
-    NzListModule,
-    FullpageMessageModule,
-    LazyScrollModule,
-    UserAvatarModule,
-    NzAvatarModule,
-    NzToolTipModule,
-    NzTagModule,
-    NzSelectModule,
-    NzDividerModule
-  ]
+    imports: [
+        CommonModule,
+        FishTrainsRoutingModule,
+        NzPageHeaderModule,
+        TranslateModule,
+        NzButtonModule,
+        NzInputModule,
+        NzFormModule,
+        ReactiveFormsModule,
+        NzSegmentedModule,
+        NzListModule,
+        FullpageMessageModule,
+        LazyScrollModule,
+        UserAvatarModule,
+        NzAvatarModule,
+        NzToolTipModule,
+        NzTagModule,
+        NzSelectModule,
+        NzDividerModule,
+        FishTrainsComponent
+    ]
 })
 export class FishTrainsModule {
 }

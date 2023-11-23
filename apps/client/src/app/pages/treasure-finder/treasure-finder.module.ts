@@ -28,24 +28,24 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [TreasureFinderComponent],
-  imports: [
-    CommonModule,
-    CoreModule,
-    FlexLayoutModule,
-    FormsModule,
-    PipesModule,
-    PageLoaderModule,
-    TranslateModule,
-    FullpageMessageModule,
-    RouterModule.forChild(routes),
-    NzSelectModule,
-    NzSpinModule,
-    MapModule,
-    NzDividerModule,
-    NzGridModule,
-    NzFormModule
-  ]
+    imports: [
+        CommonModule,
+        CoreModule,
+        FlexLayoutModule,
+        FormsModule,
+        PipesModule,
+        PageLoaderModule,
+        TranslateModule,
+        FullpageMessageModule,
+        RouterModule.forChild(routes),
+        NzSelectModule,
+        NzSpinModule,
+        MapModule,
+        NzDividerModule,
+        NzGridModule,
+        NzFormModule,
+        TreasureFinderComponent
+    ]
 })
 export class TreasureFinderModule {
 }

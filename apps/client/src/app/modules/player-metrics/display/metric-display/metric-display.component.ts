@@ -16,12 +16,16 @@ import { takeUntil } from 'rxjs/operators';
 import { HistogramComponent } from '../histogram/histogram.component';
 import { PieChartComponent } from '../pie-chart/pie-chart.component';
 import { TableComponent } from '../table/table.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzCardModule } from 'ng-zorro-antd/card';
 
 @Component({
-  selector: 'app-metric-display',
-  templateUrl: './metric-display.component.html',
-  styleUrls: ['./metric-display.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-metric-display',
+    templateUrl: './metric-display.component.html',
+    styleUrls: ['./metric-display.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzCardModule, TranslateModule]
 })
 export class MetricDisplayComponent extends AbstractMetricDisplayComponent implements AfterViewInit, OnDestroy {
 

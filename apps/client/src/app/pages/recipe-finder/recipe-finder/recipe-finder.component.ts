@@ -1,6 +1,6 @@
 import { Component, OnDestroy, TemplateRef, ViewChild } from '@angular/core';
 import { BehaviorSubject, combineLatest, concat, from, Observable, of, Subject } from 'rxjs';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { I18nName } from '@ffxiv-teamcraft/types';
 import { debounceTime, filter, first, map, mergeMap, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
@@ -8,7 +8,7 @@ import * as _ from 'lodash';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { List } from '../../../modules/list/model/list';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -27,11 +27,44 @@ import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { LazyRecipe } from '@ffxiv-teamcraft/data/model/lazy-recipe';
 import { EnvironmentService } from '../../../core/environment.service';
 import { LazyLeve } from '@ffxiv-teamcraft/data/model/lazy-leve';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { LazyIconPipe } from '../../../pipes/pipes/lazy-icon.pipe';
+import { IngameStarsPipe } from '../../../pipes/pipes/ingame-stars.pipe';
+import { IfMobilePipe } from '../../../pipes/pipes/if-mobile.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { DbButtonComponent } from '../../../core/db-button/db-button.component';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { MarketboardIconComponent } from '../../../modules/marketboard/marketboard-icon/marketboard-icon.component';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { MouseWheelDirective } from '../../../core/event/mouse-wheel/mouse-wheel.directive';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FormsModule } from '@angular/forms';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-recipe-finder',
-  templateUrl: './recipe-finder.component.html',
-  styleUrls: ['./recipe-finder.component.less']
+    selector: 'app-recipe-finder',
+    templateUrl: './recipe-finder.component.html',
+    styleUrls: ['./recipe-finder.component.less'],
+    standalone: true,
+    imports: [FlexModule, NgIf, NzAlertModule, NzInputModule, NzAutocompleteModule, FormsModule, NgFor, NzButtonModule, NzWaveModule, NzIconModule, NzInputNumberModule, MouseWheelDirective, NzCheckboxModule, NzCollapseModule, NzToolTipModule, ClipboardDirective, NzPopconfirmModule, ItemIconComponent, I18nNameComponent, NzDividerModule, NzPaginationModule, NzListModule, MarketboardIconComponent, NzTagModule, NzEmptyModule, DbButtonComponent, RouterLink, AsyncPipe, TranslateModule, ItemNamePipe, IfMobilePipe, IngameStarsPipe, LazyIconPipe, I18nPipe, I18nRowPipe]
 })
 export class RecipeFinderComponent implements OnDestroy {
 

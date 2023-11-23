@@ -24,25 +24,21 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [RotationOverlayComponent],
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-    FormsModule,
-
-    RouterModule.forChild(routes),
-
-    TranslateModule,
-
-    CoreModule,
-    PipesModule,
-    PageLoaderModule,
-    SimulatorModule,
-    FullpageMessageModule,
-
-    AntdSharedModule,
-    OverlayContainerModule
-  ]
+    imports: [
+        CommonModule,
+        FlexLayoutModule,
+        FormsModule,
+        RouterModule.forChild(routes),
+        TranslateModule,
+        CoreModule,
+        PipesModule,
+        PageLoaderModule,
+        SimulatorModule,
+        FullpageMessageModule,
+        AntdSharedModule,
+        OverlayContainerModule,
+        RotationOverlayComponent
+    ]
 })
 export class RotationOverlayModule {
 }

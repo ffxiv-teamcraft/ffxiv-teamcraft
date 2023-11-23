@@ -6,12 +6,28 @@ import { BehaviorSubject, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import * as _ from 'lodash';
+import { IfMobilePipe } from '../../../pipes/pipes/if-mobile.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { FormsModule } from '@angular/forms';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzCardModule } from 'ng-zorro-antd/card';
 
 @Component({
-  selector: 'app-layout-editor-row',
-  templateUrl: './layout-editor-row.component.html',
-  styleUrls: ['./layout-editor-row.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-layout-editor-row',
+    templateUrl: './layout-editor-row.component.html',
+    styleUrls: ['./layout-editor-row.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzCardModule, FlexModule, NgIf, NgFor, NzCheckboxModule, FormsModule, NzSelectModule, NzButtonModule, NzWaveModule, NzIconModule, NzRadioModule, NzInputModule, NzAutocompleteModule, AsyncPipe, TranslateModule, IfMobilePipe]
 })
 export class LayoutEditorRowComponent implements OnInit {
 

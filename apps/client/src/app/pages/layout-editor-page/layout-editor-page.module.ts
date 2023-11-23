@@ -28,27 +28,26 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [LayoutEditorPageComponent],
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-    TranslateModule,
-    CoreModule,
-
-    RouterModule.forChild(routes),
-    LayoutEditorModule,
-    PipesModule,
-    ReactiveFormsModule,
-    NzCheckboxModule,
-    NzInputNumberModule,
-    ItemIconModule,
-    FullpageMessageModule,
-    NzDividerModule,
-    FormsModule,
-    NzSelectModule,
-    NzCollapseModule,
-    NzTagModule
-  ]
+    imports: [
+        CommonModule,
+        FlexLayoutModule,
+        TranslateModule,
+        CoreModule,
+        RouterModule.forChild(routes),
+        LayoutEditorModule,
+        PipesModule,
+        ReactiveFormsModule,
+        NzCheckboxModule,
+        NzInputNumberModule,
+        ItemIconModule,
+        FullpageMessageModule,
+        NzDividerModule,
+        FormsModule,
+        NzSelectModule,
+        NzCollapseModule,
+        NzTagModule,
+        LayoutEditorPageComponent
+    ]
 })
 export class LayoutEditorPageModule {
 }

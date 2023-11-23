@@ -27,25 +27,24 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    CoreModule,
-    FormsModule,
-    RouterModule.forChild(routes),
-    TranslateModule,
-    ListModule,
-    AntdSharedModule,
-    NzRadioModule,
-    FlexLayoutModule,
-    ItemIconModule,
-    PipesModule,
-    ProgressPopupModule,
-    ListPickerModule,
-    HttpClientModule,
-
-    PageLoaderModule
-  ],
-  declarations: [ImportComponent]
+    imports: [
+        CommonModule,
+        CoreModule,
+        FormsModule,
+        RouterModule.forChild(routes),
+        TranslateModule,
+        ListModule,
+        AntdSharedModule,
+        NzRadioModule,
+        FlexLayoutModule,
+        ItemIconModule,
+        PipesModule,
+        ProgressPopupModule,
+        ListPickerModule,
+        HttpClientModule,
+        PageLoaderModule,
+        ImportComponent
+    ]
 })
 export class ImportModule {
 }

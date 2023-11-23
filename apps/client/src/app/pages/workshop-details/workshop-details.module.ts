@@ -26,26 +26,23 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    TranslateModule,
-    AntdSharedModule,
-    CoreModule,
-    FlexLayoutModule,
-    FavoritesModule,
-
-    XivapiClientModule,
-
-    RouterModule.forChild(routes),
-
-    WorkshopModule,
-    ListModule,
-    PermissionsModule,
-    PageLoaderModule,
-    FullpageMessageModule,
-    NzAvatarModule
-  ],
-  declarations: [WorkshopDetailsComponent]
+    imports: [
+        CommonModule,
+        TranslateModule,
+        AntdSharedModule,
+        CoreModule,
+        FlexLayoutModule,
+        FavoritesModule,
+        XivapiClientModule,
+        RouterModule.forChild(routes),
+        WorkshopModule,
+        ListModule,
+        PermissionsModule,
+        PageLoaderModule,
+        FullpageMessageModule,
+        NzAvatarModule,
+        WorkshopDetailsComponent
+    ]
 })
 export class WorkshopDetailsModule {
 }

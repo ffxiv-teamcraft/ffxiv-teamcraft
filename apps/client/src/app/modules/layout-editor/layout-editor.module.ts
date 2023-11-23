@@ -18,26 +18,22 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    FlexLayoutModule,
-
-    DragDropModule,
-
-    CoreModule,
-    LayoutModule,
-    PipesModule,
-    TextQuestionPopupModule,
-
-    NgSerializerModule,
-
-    TranslateModule,
-    AntdSharedModule,
-    NzRadioModule
-  ],
-  declarations: [LayoutEditorComponent, LayoutEditorRowComponent, LayoutRowDisplayEditorComponent, LayoutOrderPopupComponent],
-  exports: [LayoutEditorComponent, LayoutRowDisplayEditorComponent]
+    imports: [
+        CommonModule,
+        FormsModule,
+        FlexLayoutModule,
+        DragDropModule,
+        CoreModule,
+        LayoutModule,
+        PipesModule,
+        TextQuestionPopupModule,
+        NgSerializerModule,
+        TranslateModule,
+        AntdSharedModule,
+        NzRadioModule,
+        LayoutEditorComponent, LayoutEditorRowComponent, LayoutRowDisplayEditorComponent, LayoutOrderPopupComponent
+    ],
+    exports: [LayoutEditorComponent, LayoutRowDisplayEditorComponent]
 })
 export class LayoutEditorModule {
 }

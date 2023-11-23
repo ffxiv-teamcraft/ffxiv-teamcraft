@@ -16,26 +16,25 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 
 
 @NgModule({
-  declarations: [NavigationSidebarComponent],
-  exports: [
-    NavigationSidebarComponent
-  ],
-  imports: [
-    CommonModule,
-    PipesModule,
-    TranslateModule,
-    FlexLayoutModule,
-    RouterModule,
-    FormsModule,
-
-    NzIconModule,
-    NzLayoutModule,
-    NzBadgeModule,
-    NzButtonModule,
-    NzMenuModule,
-    NzToolTipModule,
-    NzDropDownModule
-  ]
+    exports: [
+        NavigationSidebarComponent
+    ],
+    imports: [
+        CommonModule,
+        PipesModule,
+        TranslateModule,
+        FlexLayoutModule,
+        RouterModule,
+        FormsModule,
+        NzIconModule,
+        NzLayoutModule,
+        NzBadgeModule,
+        NzButtonModule,
+        NzMenuModule,
+        NzToolTipModule,
+        NzDropDownModule,
+        NavigationSidebarComponent
+    ]
 })
 export class NavigationSidebarModule {
 }

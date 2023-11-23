@@ -25,26 +25,24 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [DesynthComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    TranslateModule,
-    AntdSharedModule,
-
-    PipesModule,
-    CoreModule,
-    ListModule,
-    FlexLayoutModule,
-    FullpageMessageModule,
-    MarketboardModule,
-    ProgressPopupModule,
-    PageLoaderModule,
-
-    RouterModule.forChild(routes),
-    ItemIconModule,
-    NzPaginationModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        TranslateModule,
+        AntdSharedModule,
+        PipesModule,
+        CoreModule,
+        ListModule,
+        FlexLayoutModule,
+        FullpageMessageModule,
+        MarketboardModule,
+        ProgressPopupModule,
+        PageLoaderModule,
+        RouterModule.forChild(routes),
+        ItemIconModule,
+        NzPaginationModule,
+        DesynthComponent
+    ]
 })
 export class DesynthModule {
 }

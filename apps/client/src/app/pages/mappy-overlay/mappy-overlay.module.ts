@@ -26,27 +26,23 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-    FormsModule,
-
-    RouterModule.forChild(routes),
-
-    TranslateModule,
-
-    CoreModule,
-    PipesModule,
-    ItemIconModule,
-    SettingsModule,
-    PageLoaderModule,
-    FullpageMessageModule,
-    MapModule,
-
-    AntdSharedModule,
-    OverlayContainerModule
-  ],
-  declarations: [MappyOverlayComponent]
+    imports: [
+        CommonModule,
+        FlexLayoutModule,
+        FormsModule,
+        RouterModule.forChild(routes),
+        TranslateModule,
+        CoreModule,
+        PipesModule,
+        ItemIconModule,
+        SettingsModule,
+        PageLoaderModule,
+        FullpageMessageModule,
+        MapModule,
+        AntdSharedModule,
+        OverlayContainerModule,
+        MappyOverlayComponent
+    ]
 })
 export class MappyOverlayModule {
 }

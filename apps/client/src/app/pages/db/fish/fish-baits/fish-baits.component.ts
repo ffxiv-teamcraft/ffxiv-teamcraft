@@ -6,14 +6,19 @@ import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
 import { EChartsOption } from 'echarts';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
-import { formatNumber } from '@angular/common';
-import { TranslateService } from '@ngx-translate/core';
+import { formatNumber, NgIf, AsyncPipe } from '@angular/common';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { NzCardModule } from 'ng-zorro-antd/card';
 
 @Component({
-  selector: 'app-fish-baits',
-  templateUrl: './fish-baits.component.html',
-  styleUrls: ['./fish-baits.component.less', '../../common-db.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-fish-baits',
+    templateUrl: './fish-baits.component.html',
+    styleUrls: ['./fish-baits.component.less', '../../common-db.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzCardModule, NgIf, NgxEchartsModule, NzSpinModule, AsyncPipe, TranslateModule]
 })
 export class FishBaitsComponent {
   public readonly loading$ = this.fishCtx.hoursByFish$.pipe(map((res) => res.loading));

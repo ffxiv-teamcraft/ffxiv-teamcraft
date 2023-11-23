@@ -6,16 +6,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-
-    TranslateModule,
-
-    AntdSharedModule
-  ],
-  declarations: [TextQuestionPopupComponent]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        TranslateModule,
+        AntdSharedModule,
+        TextQuestionPopupComponent
+    ]
 })
 export class TextQuestionPopupModule {
 }

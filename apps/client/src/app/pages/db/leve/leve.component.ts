@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
@@ -12,11 +12,34 @@ import { I18nName } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyLevesDatabasePage } from '@ffxiv-teamcraft/data/model/lazy-leves-database-page';
+import { LazyIconPipe } from '../../../pipes/pipes/lazy-icon.pipe';
+import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
+import { IfMobilePipe } from '../../../pipes/pipes/if-mobile.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { MapPositionComponent } from '../../../modules/map/map-position/map-position.component';
+import { ItemRarityDirective } from '../../../core/item-rarity/item-rarity.directive';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { DbCommentsComponent } from '../db-comments/db-comments/db-comments.component';
+import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display/i18n-display.component';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { DbButtonComponent } from '../../../core/db-button/db-button.component';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-leve',
-  templateUrl: './leve.component.html',
-  styleUrls: ['./leve.component.less']
+    selector: 'app-leve',
+    templateUrl: './leve.component.html',
+    styleUrls: ['./leve.component.less'],
+    standalone: true,
+    imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, NzListModule, ItemIconComponent, ItemRarityDirective, MapPositionComponent, RouterLink, NzTagModule, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, IfMobilePipe, XivapiIconPipe, LazyIconPipe]
 })
 export class LeveComponent extends TeamcraftPageComponent {
 

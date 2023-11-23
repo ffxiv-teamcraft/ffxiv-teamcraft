@@ -4,14 +4,28 @@ import { DataService } from '../../../../core/api/data.service';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { debounceTime, filter, map, startWith, switchMap, tap } from 'rxjs/operators';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { RotationPickerService } from '../../../../modules/rotations/rotation-picker.service';
 import { Recipe } from '@ffxiv-teamcraft/types';
+import { JobUnicodePipe } from '../../../../pipes/pipes/job-unicode.pipe';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { RouterLink } from '@angular/router';
+import { ItemIconComponent } from '../../../../modules/item-icon/item-icon/item-icon.component';
+import { I18nNameComponent } from '../../../../core/i18n/i18n-name/i18n-name.component';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-recipe-choice-popup',
-  templateUrl: './recipe-choice-popup.component.html',
-  styleUrls: ['./recipe-choice-popup.component.less']
+    selector: 'app-recipe-choice-popup',
+    templateUrl: './recipe-choice-popup.component.html',
+    styleUrls: ['./recipe-choice-popup.component.less'],
+    standalone: true,
+    imports: [NgIf, NzAlertModule, NzButtonModule, NzInputModule, NzIconModule, NzListModule, I18nNameComponent, ItemIconComponent, RouterLink, NzWaveModule, NzDividerModule, AsyncPipe, TranslateModule, JobUnicodePipe]
 })
 export class RecipeChoicePopupComponent {
 

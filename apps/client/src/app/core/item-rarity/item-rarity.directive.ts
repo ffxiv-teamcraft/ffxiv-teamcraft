@@ -3,7 +3,8 @@ import { first } from 'rxjs/operators';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 @Directive({
-  selector: '[appItemRarity]'
+    selector: '[appItemRarity]',
+    standalone: true
 })
 export class ItemRarityDirective implements OnInit {
 

@@ -25,26 +25,22 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-
-    RouterModule.forChild(routes),
-
-    TranslateModule,
-
-    CoreModule,
-    PipesModule,
-    ItemIconModule,
-    AlarmsModule,
-    SettingsModule,
-    PageLoaderModule,
-    FullpageMessageModule,
-
-    AntdSharedModule,
-    OverlayContainerModule
-  ],
-  declarations: [FishingReporterOverlayComponent]
+    imports: [
+        CommonModule,
+        FlexLayoutModule,
+        RouterModule.forChild(routes),
+        TranslateModule,
+        CoreModule,
+        PipesModule,
+        ItemIconModule,
+        AlarmsModule,
+        SettingsModule,
+        PageLoaderModule,
+        FullpageMessageModule,
+        AntdSharedModule,
+        OverlayContainerModule,
+        FishingReporterOverlayComponent
+    ]
 })
 export class FishingReporterOverlayModule {
 }

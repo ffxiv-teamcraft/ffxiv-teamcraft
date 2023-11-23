@@ -16,30 +16,26 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    FlexLayoutModule,
-    XivapiClientModule,
-    FormsModule,
-    RouterModule,
-
-    AntdSharedModule,
-    NzToolTipModule,
-
-    PipesModule,
-    CoreModule
-  ],
-  declarations: [
-    MapPositionComponent,
-    MapComponent,
-    NavigationMapComponent,
-    WorldNavigationMapComponent
-  ],
-  exports: [
-    MapPositionComponent,
-    MapComponent
-  ]
+    imports: [
+        CommonModule,
+        HttpClientModule,
+        FlexLayoutModule,
+        XivapiClientModule,
+        FormsModule,
+        RouterModule,
+        AntdSharedModule,
+        NzToolTipModule,
+        PipesModule,
+        CoreModule,
+        MapPositionComponent,
+        MapComponent,
+        NavigationMapComponent,
+        WorldNavigationMapComponent
+    ],
+    exports: [
+        MapPositionComponent,
+        MapComponent
+    ]
 })
 export class MapModule {
 

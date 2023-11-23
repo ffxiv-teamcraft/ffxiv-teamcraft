@@ -6,12 +6,25 @@ import { MapService } from '../../../modules/map/map.service';
 import { Vector2 } from '@ffxiv-teamcraft/types';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { MappyMarker, MappyReporterState } from '../../../core/electron/mappy/mappy-reporter';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FormsModule } from '@angular/forms';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { OverlayContainerComponent } from '../../../modules/overlay-container/overlay-container/overlay-container.component';
 
 @Component({
-  selector: 'app-mappy-overlay',
-  templateUrl: './mappy-overlay.component.html',
-  styleUrls: ['./mappy-overlay.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-mappy-overlay',
+    templateUrl: './mappy-overlay.component.html',
+    styleUrls: ['./mappy-overlay.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [OverlayContainerComponent, NgIf, NgFor, NzToolTipModule, NzCheckboxModule, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, FullpageMessageComponent, AsyncPipe, DecimalPipe, I18nPipe, I18nRowPipe]
 })
 export class MappyOverlayComponent implements OnInit {
 

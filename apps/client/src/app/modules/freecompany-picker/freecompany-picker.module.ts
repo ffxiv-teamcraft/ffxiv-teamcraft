@@ -8,19 +8,17 @@ import { FreecompanyPickerComponent } from './user-picker/freecompany-picker.com
 import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    TranslateModule,
-    FormsModule,
-    ReactiveFormsModule,
-
-    DatabaseModule,
-
-    AntdSharedModule
-  ],
-  declarations: [FreecompanyPickerComponent],
-  exports: [FreecompanyPickerComponent],
-  providers: [FreecompanyPickerService]
+    imports: [
+        CommonModule,
+        TranslateModule,
+        FormsModule,
+        ReactiveFormsModule,
+        DatabaseModule,
+        AntdSharedModule,
+        FreecompanyPickerComponent
+    ],
+    exports: [FreecompanyPickerComponent],
+    providers: [FreecompanyPickerService]
 })
 export class FreecompanyPickerModule {
 }

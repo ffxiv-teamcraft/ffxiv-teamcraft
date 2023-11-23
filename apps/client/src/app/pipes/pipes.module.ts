@@ -95,8 +95,8 @@ const pipes = [
 ];
 
 @NgModule({
-  declarations: pipes,
-  exports: pipes
+    imports: [...pipes],
+    exports: pipes
 })
 export class PipesModule {
 

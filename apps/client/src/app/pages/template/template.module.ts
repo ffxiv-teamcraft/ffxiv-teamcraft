@@ -18,15 +18,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [TemplateComponent],
-  imports: [
-    CommonModule,
-    PageLoaderModule,
-    TranslateModule,
-    FullpageMessageModule,
-    CustomLinksModule,
-    RouterModule.forChild(routes)
-  ]
+    imports: [
+        CommonModule,
+        PageLoaderModule,
+        TranslateModule,
+        FullpageMessageModule,
+        CustomLinksModule,
+        RouterModule.forChild(routes),
+        TemplateComponent
+    ]
 })
 export class TemplateModule {
 }

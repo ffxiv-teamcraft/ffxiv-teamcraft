@@ -24,22 +24,20 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [CraftingReplayFolderComponent],
-  imports: [
-    CommonModule,
-    TranslateModule,
-    CoreModule,
-    FlexLayoutModule,
-    ProgressPopupModule,
-    FullpageMessageModule,
-
-    PipesModule,
-    PageLoaderModule,
-    FoldersModule,
-    CraftingReplayModule,
-
-    RouterModule.forChild(routes)
-  ]
+    imports: [
+        CommonModule,
+        TranslateModule,
+        CoreModule,
+        FlexLayoutModule,
+        ProgressPopupModule,
+        FullpageMessageModule,
+        PipesModule,
+        PageLoaderModule,
+        FoldersModule,
+        CraftingReplayModule,
+        RouterModule.forChild(routes),
+        CraftingReplayFolderComponent
+    ]
 })
 export class CraftingReplayFolderModule {
 }

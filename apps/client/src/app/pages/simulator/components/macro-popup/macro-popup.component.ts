@@ -1,18 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { ByregotsBlessing, CraftingAction, CraftingJob, FinalAppraisal, Simulation } from '@ffxiv-teamcraft/simulator';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { Consumable } from '../../model/consumable';
 import { FreeCompanyAction } from '../../model/free-company-action';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { safeCombineLatest } from '../../../../core/rxjs/safe-combine-latest';
 import { map, switchMap } from 'rxjs/operators';
 import { combineLatest, Observable, of } from 'rxjs';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { ClipboardDirective } from '../../../../core/clipboard.directive';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { FormsModule } from '@angular/forms';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NgIf, NgFor } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-macro-popup',
-  templateUrl: './macro-popup.component.html',
-  styleUrls: ['./macro-popup.component.less']
+    selector: 'app-macro-popup',
+    templateUrl: './macro-popup.component.html',
+    styleUrls: ['./macro-popup.component.less'],
+    standalone: true,
+    imports: [FlexModule, NgIf, NzAlertModule, NzCheckboxModule, FormsModule, NzGridModule, NzFormModule, NzInputNumberModule, NzInputModule, NgFor, NzButtonModule, NzWaveModule, ClipboardDirective, NzIconModule, TranslateModule]
 })
 export class MacroPopupComponent implements OnInit {
 

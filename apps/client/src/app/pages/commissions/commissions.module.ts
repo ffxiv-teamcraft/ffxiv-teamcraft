@@ -40,28 +40,25 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [CommissionBoardComponent, CommissionsPageComponent, CommissionArchivesComponent],
-  imports: [
-    CommonModule,
-    CoreModule,
-
-    FlexLayoutModule,
-
-    RouterModule.forChild(routes),
-
-    NzButtonModule,
-    PageLoaderModule,
-    CommissionBoardModule,
-    FormsModule,
-    NzSelectModule,
-    NzInputModule,
-    NzDividerModule,
-    FullpageMessageModule,
-    NzInputNumberModule,
-    NzCheckboxModule,
-    NzAlertModule,
-    NzGridModule
-  ]
+    imports: [
+        CommonModule,
+        CoreModule,
+        FlexLayoutModule,
+        RouterModule.forChild(routes),
+        NzButtonModule,
+        PageLoaderModule,
+        CommissionBoardModule,
+        FormsModule,
+        NzSelectModule,
+        NzInputModule,
+        NzDividerModule,
+        FullpageMessageModule,
+        NzInputNumberModule,
+        NzCheckboxModule,
+        NzAlertModule,
+        NzGridModule,
+        CommissionBoardComponent, CommissionsPageComponent, CommissionArchivesComponent
+    ]
 })
 export class CommissionsModule {
 }

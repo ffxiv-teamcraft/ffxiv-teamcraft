@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Hookset } from '@ffxiv-teamcraft/types';
 
 @Pipe({
-  name: 'hooksetActionId'
+    name: 'hooksetActionId',
+    standalone: true
 })
 export class HooksetActionIdPipe implements PipeTransform {
 

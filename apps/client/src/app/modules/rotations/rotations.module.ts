@@ -14,22 +14,21 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    CoreModule,
-    FormsModule,
-    TranslateModule,
-    AntdSharedModule,
-    RouterModule,
-    FlexLayoutModule,
-
-    StoreModule.forFeature('rotations', rotationsReducer, {
-      initialState: rotationsInitialState
-    }),
-    EffectsModule.forFeature([RotationsEffects])
-  ],
-  declarations: [RotationPickerDrawerComponent],
-  providers: [RotationsFacade]
+    imports: [
+        CommonModule,
+        CoreModule,
+        FormsModule,
+        TranslateModule,
+        AntdSharedModule,
+        RouterModule,
+        FlexLayoutModule,
+        StoreModule.forFeature('rotations', rotationsReducer, {
+            initialState: rotationsInitialState
+        }),
+        EffectsModule.forFeature([RotationsEffects]),
+        RotationPickerDrawerComponent
+    ],
+    providers: [RotationsFacade]
 })
 export class RotationsModule {
 }

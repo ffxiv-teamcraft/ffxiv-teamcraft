@@ -9,17 +9,17 @@ import { TooltipModule } from '../tooltip/tooltip.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    CoreModule,
-    FlexLayoutModule,
-    ItemIconModule,
-    PipesModule,
-    AntdSharedModule,
-    TooltipModule
-  ],
-  declarations: [FishingBaitComponent],
-  exports: [FishingBaitComponent]
+    imports: [
+        CommonModule,
+        CoreModule,
+        FlexLayoutModule,
+        ItemIconModule,
+        PipesModule,
+        AntdSharedModule,
+        TooltipModule,
+        FishingBaitComponent
+    ],
+    exports: [FishingBaitComponent]
 })
 export class FishingBaitModule {
 }

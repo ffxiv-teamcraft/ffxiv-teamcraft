@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { combineLatest, concat, Observable, of, Subject } from 'rxjs';
 import { GearSet } from '@ffxiv-teamcraft/simulator';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
@@ -12,11 +12,32 @@ import { Router } from '@angular/router';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { EnvironmentService } from '../../../core/environment.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
+import { KeysPipe } from '../../../pipes/pipes/keys.pipe';
+import { LazyIconPipe } from '../../../pipes/pipes/lazy-icon.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-gc-supply',
-  templateUrl: './gc-supply.component.html',
-  styleUrls: ['./gc-supply.component.less']
+    selector: 'app-gc-supply',
+    templateUrl: './gc-supply.component.html',
+    styleUrls: ['./gc-supply.component.less'],
+    standalone: true,
+    imports: [NgIf, FormsModule, NzFormModule, ReactiveFormsModule, NgFor, NzGridModule, NzButtonModule, NzInputModule, NzToolTipModule, NzWaveModule, NzIconModule, FlexModule, NzSelectModule, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, LazyIconPipe, KeysPipe, JobUnicodePipe]
 })
 export class GcSupplyComponent {
 

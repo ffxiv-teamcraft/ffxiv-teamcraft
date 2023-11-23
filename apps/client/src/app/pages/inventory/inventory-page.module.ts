@@ -26,23 +26,22 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [InventoryComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    CoreModule,
-    RouterModule.forChild(routes),
-    TranslateModule,
-    AntdSharedModule,
-    FlexLayoutModule,
-    ItemIconModule,
-    PipesModule,
-    HttpClientModule,
-    FullpageMessageModule,
-
-    ScrollingModule,
-    InventoryModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        CoreModule,
+        RouterModule.forChild(routes),
+        TranslateModule,
+        AntdSharedModule,
+        FlexLayoutModule,
+        ItemIconModule,
+        PipesModule,
+        HttpClientModule,
+        FullpageMessageModule,
+        ScrollingModule,
+        InventoryModule,
+        InventoryComponent
+    ]
 })
 export class InventoryPageModule {
 }

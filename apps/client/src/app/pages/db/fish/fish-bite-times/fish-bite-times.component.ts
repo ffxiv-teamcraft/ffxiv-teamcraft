@@ -2,12 +2,18 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { map, shareReplay } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
+import { NzStatisticModule } from 'ng-zorro-antd/statistic';
+import { NzCardModule } from 'ng-zorro-antd/card';
 
 @Component({
-  selector: 'app-fish-bite-times',
-  templateUrl: './fish-bite-times.component.html',
-  styleUrls: ['./fish-bite-times.component.less', '../../common-db.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-fish-bite-times',
+    templateUrl: './fish-bite-times.component.html',
+    styleUrls: ['./fish-bite-times.component.less', '../../common-db.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzCardModule, NzStatisticModule, AsyncPipe, DecimalPipe, TranslateModule]
 })
 export class FishBiteTimesComponent {
   public readonly loading$ = this.fishCtx.biteTimesByFish$.pipe(map((res) => res.loading));

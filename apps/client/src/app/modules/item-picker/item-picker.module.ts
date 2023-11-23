@@ -14,23 +14,23 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    CoreModule,
-    FlexLayoutModule,
-    AntdSharedModule,
-    ItemIconModule,
-    TranslateModule,
-    FormsModule,
-    PipesModule,
-    RouterModule,
-    ScrollingModule,
-    LazyScrollModule
-  ],
-  declarations: [ItemPickerComponent],
-  providers: [
-    ItemPickerService
-  ]
+    imports: [
+        CommonModule,
+        CoreModule,
+        FlexLayoutModule,
+        AntdSharedModule,
+        ItemIconModule,
+        TranslateModule,
+        FormsModule,
+        PipesModule,
+        RouterModule,
+        ScrollingModule,
+        LazyScrollModule,
+        ItemPickerComponent
+    ],
+    providers: [
+        ItemPickerService
+    ]
 })
 export class ItemPickerModule {
 }

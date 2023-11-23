@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { combineLatest, Observable } from 'rxjs';
 import { filter, map, shareReplay, startWith } from 'rxjs/operators';
 import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
@@ -8,11 +8,30 @@ import { NzModalRef } from 'ng-zorro-antd/modal';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
 import * as _ from 'lodash';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { MapNamePipe } from '../../../pipes/pipes/map-name.pipe';
+import { NodeTypeNamePipe } from '../../../pipes/pipes/node-type-name';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { MouseWheelDirective } from '../../../core/event/mouse-wheel/mouse-wheel.directive';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzFormModule } from 'ng-zorro-antd/form';
 
 @Component({
-  selector: 'app-custom-alarm-popup',
-  templateUrl: './custom-alarm-popup.component.html',
-  styleUrls: ['./custom-alarm-popup.component.less']
+    selector: 'app-custom-alarm-popup',
+    templateUrl: './custom-alarm-popup.component.html',
+    styleUrls: ['./custom-alarm-popup.component.less'],
+    standalone: true,
+    imports: [FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NzButtonModule, NzInputNumberModule, MouseWheelDirective, NzCheckboxModule, NzToolTipModule, NzSelectModule, NgIf, NgFor, NzSpinModule, NzWaveModule, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, NodeTypeNamePipe, MapNamePipe]
 })
 export class CustomAlarmPopupComponent implements OnInit {
 

@@ -15,12 +15,24 @@ import { Commission } from '../../../modules/commission-board/model/commission';
 import { CommissionTag } from '../../../modules/commission-board/model/commission-tag';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 
 @Component({
-  selector: 'app-commission-import',
-  templateUrl: './commission-import.component.html',
-  styleUrls: ['./commission-import.component.less']
+    selector: 'app-commission-import',
+    templateUrl: './commission-import.component.html',
+    styleUrls: ['./commission-import.component.less'],
+    standalone: true,
+    imports: [NgIf, FlexModule, NgFor, ItemIconComponent, FullpageMessageComponent, NzButtonModule, NzWaveModule, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class CommissionImportComponent {
 

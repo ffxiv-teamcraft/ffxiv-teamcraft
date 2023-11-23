@@ -17,29 +17,25 @@ import { NodeDetailsModule } from '../node-details/node-details.module';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    CoreModule,
-    ItemIconModule,
-    FlexLayoutModule,
-    FormsModule,
-
-    AlarmsModule,
-    MapModule,
-
-    FullpageMessageModule,
-    PageLoaderModule,
-
-    TranslateModule,
-
-    PipesModule,
-    AntdSharedModule,
-    FishingBaitModule,
-    NodeDetailsModule,
-    RouterModule
-  ],
-  declarations: [AlarmsSidebarComponent],
-  exports: [AlarmsSidebarComponent]
+    imports: [
+        CommonModule,
+        CoreModule,
+        ItemIconModule,
+        FlexLayoutModule,
+        FormsModule,
+        AlarmsModule,
+        MapModule,
+        FullpageMessageModule,
+        PageLoaderModule,
+        TranslateModule,
+        PipesModule,
+        AntdSharedModule,
+        FishingBaitModule,
+        NodeDetailsModule,
+        RouterModule,
+        AlarmsSidebarComponent
+    ],
+    exports: [AlarmsSidebarComponent]
 })
 export class AlarmsSidebarModule {
 }

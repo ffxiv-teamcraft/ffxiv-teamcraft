@@ -4,11 +4,19 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { map } from 'rxjs/operators';
 import { Favorites } from '../../../model/other/favorites';
 import { NzSizeLDSType } from 'ng-zorro-antd/core/types';
+import { TranslateModule } from '@ngx-translate/core';
+import { AsyncPipe } from '@angular/common';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @Component({
-  selector: 'app-favorite-button',
-  templateUrl: './favorite-button.component.html',
-  styleUrls: ['./favorite-button.component.less']
+    selector: 'app-favorite-button',
+    templateUrl: './favorite-button.component.html',
+    styleUrls: ['./favorite-button.component.less'],
+    standalone: true,
+    imports: [NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, AsyncPipe, TranslateModule]
 })
 export class FavoriteButtonComponent implements OnInit {
 

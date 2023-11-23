@@ -41,46 +41,41 @@ import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 
 @NgModule({
-  declarations: [CommissionPanelComponent, CommissionEditionPopupComponent, ApplyPopupComponent, CommissionRatingPopupComponent, UserRatingDisplayComponent, UserRatingDetailsPopupComponent, FiredFeedbackPopupComponent, ResignedFeedbackPopupComponent],
-  exports: [CommissionPanelComponent, UserRatingDisplayComponent],
-  imports: [
-    CommonModule,
-    RouterModule,
-    ReactiveFormsModule,
-    FormsModule,
-    FlexLayoutModule,
-    StoreModule.forFeature(
-      fromCommissions.COMMISSIONS_FEATURE_KEY,
-      fromCommissions.reducer
-    ),
-    EffectsModule.forFeature([CommissionsEffects]),
-    TranslateModule,
-
-    NzModalModule,
-    NzCollapseModule,
-    NzTagModule,
-    NzFormModule,
-    NzInputModule,
-    NzCheckboxModule,
-    NzSelectModule,
-
-    NameQuestionPopupModule,
-    UserAvatarModule,
-    LazyScrollModule,
-    ItemIconModule,
-    PipesModule,
-    CoreModule,
-    NzPopconfirmModule,
-    NzDropDownModule,
-    NzRateModule,
-    NzDividerModule,
-    NzEmptyModule,
-    NzRadioModule,
-    NzInputNumberModule,
-    NzBadgeModule,
-    NzAlertModule
-  ],
-  providers: [CommissionsFacade]
+    exports: [CommissionPanelComponent, UserRatingDisplayComponent],
+    imports: [
+        CommonModule,
+        RouterModule,
+        ReactiveFormsModule,
+        FormsModule,
+        FlexLayoutModule,
+        StoreModule.forFeature(fromCommissions.COMMISSIONS_FEATURE_KEY, fromCommissions.reducer),
+        EffectsModule.forFeature([CommissionsEffects]),
+        TranslateModule,
+        NzModalModule,
+        NzCollapseModule,
+        NzTagModule,
+        NzFormModule,
+        NzInputModule,
+        NzCheckboxModule,
+        NzSelectModule,
+        NameQuestionPopupModule,
+        UserAvatarModule,
+        LazyScrollModule,
+        ItemIconModule,
+        PipesModule,
+        CoreModule,
+        NzPopconfirmModule,
+        NzDropDownModule,
+        NzRateModule,
+        NzDividerModule,
+        NzEmptyModule,
+        NzRadioModule,
+        NzInputNumberModule,
+        NzBadgeModule,
+        NzAlertModule,
+        CommissionPanelComponent, CommissionEditionPopupComponent, ApplyPopupComponent, CommissionRatingPopupComponent, UserRatingDisplayComponent, UserRatingDetailsPopupComponent, FiredFeedbackPopupComponent, ResignedFeedbackPopupComponent
+    ],
+    providers: [CommissionsFacade]
 })
 export class CommissionBoardModule {
 }

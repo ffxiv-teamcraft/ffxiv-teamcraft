@@ -28,24 +28,23 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [RecipeFinderComponent, ClipboardImportPopupComponent, InventoryImportPopupComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    TranslateModule,
-    AntdSharedModule,
-    PipesModule,
-    CoreModule,
-    ListModule,
-    FlexLayoutModule,
-    FullpageMessageModule,
-
-    RouterModule.forChild(routes),
-    ItemIconModule,
-    MarketboardModule,
-    NzPaginationModule,
-    NzToolTipModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        TranslateModule,
+        AntdSharedModule,
+        PipesModule,
+        CoreModule,
+        ListModule,
+        FlexLayoutModule,
+        FullpageMessageModule,
+        RouterModule.forChild(routes),
+        ItemIconModule,
+        MarketboardModule,
+        NzPaginationModule,
+        NzToolTipModule,
+        RecipeFinderComponent, ClipboardImportPopupComponent, InventoryImportPopupComponent
+    ]
 })
 export class RecipeFinderModule {
 }

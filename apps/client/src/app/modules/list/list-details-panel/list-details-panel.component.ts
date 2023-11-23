@@ -4,7 +4,7 @@ import { ListRow } from '../model/list-row';
 import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { ZoneBreakdown } from '../../../model/common/zone-breakdown';
 import { TotalPanelPricePopupComponent } from '../../../pages/list-details/total-panel-price-popup/total-panel-price-popup.component';
 import { NavigationMapComponent } from '../../map/navigation-map/navigation-map.component';
@@ -34,12 +34,34 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { ProcessedListAggregate } from '../../list-aggregate/model/processed-list-aggregate';
 import { getTiers } from '../../../core/tools/get-tiers';
 import { LayoutRowFilter } from '../../../core/layout/layout-row-filter';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { MapPositionComponent } from '../../map/map-position/map-position.component';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { CompactItemRowComponent } from '../item/compact-item-row/compact-item-row.component';
+import { NgForTrackByIdDirective } from '../../../core/track-by/ng-for-track-by-id.directive';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { AggregateItemRowComponent } from '../item/aggregate-item-row/aggregate-item-row.component';
+import { ItemRowComponent } from '../item/item-row/item-row.component';
+import { LazyScrollComponent } from '../../lazy-scroll/lazy-scroll/lazy-scroll.component';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NgIf, NgFor, NgTemplateOutlet, NgSwitch, NgSwitchCase, NgSwitchDefault, AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-list-details-panel',
-  templateUrl: './list-details-panel.component.html',
-  styleUrls: ['./list-details-panel.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-list-details-panel',
+    templateUrl: './list-details-panel.component.html',
+    styleUrls: ['./list-details-panel.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, NzCollapseModule, LazyScrollComponent, ItemRowComponent, AggregateItemRowComponent, NzGridModule, NgFor, NgForTrackByIdDirective, CompactItemRowComponent, NzDividerModule, NgTemplateOutlet, NgSwitch, NgSwitchCase, FlexModule, NzButtonModule, NzIconModule, NzToolTipModule, NzWaveModule, MapPositionComponent, NgSwitchDefault, NzProgressModule, NzPopconfirmModule, ClipboardDirective, NzSpinModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule]
 })
 export class ListDetailsPanelComponent implements OnChanges, OnInit {
 

@@ -8,7 +8,8 @@ import { LazyDataKeys } from '@ffxiv-teamcraft/data/model/lazy-data-keys';
 import { LazyDataEntries, LazyDataRecordKey } from '@ffxiv-teamcraft/types';
 
 @Pipe({
-  name: 'lazyRow'
+    name: 'lazyRow',
+    standalone: true
 })
 export class LazyRowPipe implements PipeTransform {
 

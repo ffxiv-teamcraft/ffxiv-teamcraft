@@ -42,65 +42,56 @@ import { PageLoaderModule } from '../page-loader/page-loader.module';
 import { EtroImportPopupComponent } from './etro-import-popup/etro-import-popup.component';
 
 @NgModule({
-  declarations: [
-    GearsetCreationPopupComponent,
-    MateriaSlotIconComponent,
-    StatPipe,
-    AriyalaImportPopupComponent,
-    LodestoneImportPopupComponent,
-    GearsetComparatorPopupComponent,
-    ImportFromPcapPopupComponent,
-    GearsetRowComponent,
-    GearsetCostPopupComponent,
-    ItemCapsTableComponent,
-    StatsPopupComponent,
-    SyncFromPcapPopupComponent,
-    EtroImportPopupComponent
-  ],
-  imports: [
-    CommonModule,
-
-    NzFormModule,
-    NzSelectModule,
-    NzInputModule,
-    NzButtonModule,
-    NzAlertModule,
-    NzDividerModule,
-    NzModalModule,
-    NzToolTipModule,
-    NzPopconfirmModule,
-    NzIconModule,
-    NzMessageModule,
-
-    FormsModule,
-    ReactiveFormsModule,
-    PipesModule,
-    CoreModule,
-    FlexLayoutModule,
-
-    StoreModule.forFeature(
-      fromGearsets.GEARSETS_FEATURE_KEY,
-      fromGearsets.reducer
-    ),
-    EffectsModule.forFeature([GearsetsEffects]),
-
-    TranslateModule,
-    RouterModule,
-    ItemIconModule,
-    FullpageMessageModule,
-    NzTagModule,
-    NzTimelineModule,
-    FavoritesModule,
-    PageLoaderModule
-  ],
-  exports: [
-    MateriaSlotIconComponent,
-    StatPipe,
-    GearsetRowComponent,
-    GearsetCostPopupComponent,
-    ItemCapsTableComponent,
-    StatsPopupComponent
-  ]
+    imports: [
+        CommonModule,
+        NzFormModule,
+        NzSelectModule,
+        NzInputModule,
+        NzButtonModule,
+        NzAlertModule,
+        NzDividerModule,
+        NzModalModule,
+        NzToolTipModule,
+        NzPopconfirmModule,
+        NzIconModule,
+        NzMessageModule,
+        FormsModule,
+        ReactiveFormsModule,
+        PipesModule,
+        CoreModule,
+        FlexLayoutModule,
+        StoreModule.forFeature(fromGearsets.GEARSETS_FEATURE_KEY, fromGearsets.reducer),
+        EffectsModule.forFeature([GearsetsEffects]),
+        TranslateModule,
+        RouterModule,
+        ItemIconModule,
+        FullpageMessageModule,
+        NzTagModule,
+        NzTimelineModule,
+        FavoritesModule,
+        PageLoaderModule,
+        GearsetCreationPopupComponent,
+        MateriaSlotIconComponent,
+        StatPipe,
+        AriyalaImportPopupComponent,
+        LodestoneImportPopupComponent,
+        GearsetComparatorPopupComponent,
+        ImportFromPcapPopupComponent,
+        GearsetRowComponent,
+        GearsetCostPopupComponent,
+        ItemCapsTableComponent,
+        StatsPopupComponent,
+        SyncFromPcapPopupComponent,
+        EtroImportPopupComponent
+    ],
+    exports: [
+        MateriaSlotIconComponent,
+        StatPipe,
+        GearsetRowComponent,
+        GearsetCostPopupComponent,
+        ItemCapsTableComponent,
+        StatsPopupComponent
+    ]
 })
 export class GearsetsModule {
 }

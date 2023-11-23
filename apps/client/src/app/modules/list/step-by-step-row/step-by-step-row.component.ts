@@ -14,12 +14,35 @@ import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { ListsFacade } from '../+state/lists.facade';
 import { InventoryService } from '../../inventory/inventory.service';
 import { List } from '../model/list';
+import { LazyIconPipe } from '../../../pipes/pipes/lazy-icon.pipe';
+import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
+import { CeilPipe } from '../../../pipes/pipes/ceil.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { CompactAmountInputComponent } from '../item/compact-amount-input/compact-amount-input.component';
+import { NgForTrackByIdDirective } from '../../../core/track-by/ng-for-track-by-id.directive';
+import { ItemSourcesDisplayComponent } from '../item/item-sources-display/item-sources-display.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { AlarmButtonComponent } from '../../alarm-button/alarm-button/alarm-button.component';
+import { NgForTrackByKeyDirective } from '../../../core/track-by/ng-for-track-by-key.directive';
+import { ItemInventoryButtonComponent } from '../item-inventory-button/item-inventory-button.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { ItemNameClipboardDirective } from '../../../core/item-name-clipboard.directive';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { NzGridModule } from 'ng-zorro-antd/grid';
 
 @Component({
-  selector: 'app-step-by-step-row',
-  templateUrl: './step-by-step-row.component.html',
-  styleUrls: ['./step-by-step-row.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-step-by-step-row',
+    templateUrl: './step-by-step-row.component.html',
+    styleUrls: ['./step-by-step-row.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzGridModule, NgIf, ItemIconComponent, I18nNameComponent, ItemNameClipboardDirective, NzToolTipModule, NzButtonModule, NzIconModule, ItemInventoryButtonComponent, NgFor, NgForTrackByKeyDirective, AlarmButtonComponent, NzTagModule, ItemSourcesDisplayComponent, NgForTrackByIdDirective, CompactAmountInputComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, CeilPipe, XivapiIconPipe, LazyIconPipe]
 })
 export class StepByStepRowComponent {
   @Input()

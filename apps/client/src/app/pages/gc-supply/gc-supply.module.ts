@@ -27,28 +27,25 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [GcSupplyComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    TranslateModule,
-    CoreModule,
-    FlexLayoutModule,
-    TooltipModule,
-    ProgressPopupModule,
-    FullpageMessageModule,
-
-    ListModule,
-    ListPickerModule,
-
-    AntdSharedModule,
-    PipesModule,
-    ItemIconModule,
-    PageLoaderModule,
-
-    RouterModule.forChild(routes)
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        TranslateModule,
+        CoreModule,
+        FlexLayoutModule,
+        TooltipModule,
+        ProgressPopupModule,
+        FullpageMessageModule,
+        ListModule,
+        ListPickerModule,
+        AntdSharedModule,
+        PipesModule,
+        ItemIconModule,
+        PageLoaderModule,
+        RouterModule.forChild(routes),
+        GcSupplyComponent
+    ]
 })
 export class GcSupplyModule {
 }

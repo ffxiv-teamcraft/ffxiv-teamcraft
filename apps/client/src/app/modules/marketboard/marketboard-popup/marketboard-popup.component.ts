@@ -6,13 +6,21 @@ import { MarketboardItem } from '../../../core/api/market/marketboard-item';
 import { SettingsService } from '../../settings/settings.service';
 import { HttpClient } from '@angular/common/http';
 import { UniversalisService } from '../../../core/api/universalis.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { WorldNamePipe } from '../../../pipes/pipes/world-name.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NgIf, NgFor, AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-marketboard-popup',
-  templateUrl: './marketboard-popup.component.html',
-  styleUrls: ['./marketboard-popup.component.less']
+    selector: 'app-marketboard-popup',
+    templateUrl: './marketboard-popup.component.html',
+    styleUrls: ['./marketboard-popup.component.less'],
+    standalone: true,
+    imports: [NgIf, NzAlertModule, FlexModule, NzTableModule, NgFor, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, WorldNamePipe]
 })
 export class MarketboardPopupComponent implements OnInit {
 

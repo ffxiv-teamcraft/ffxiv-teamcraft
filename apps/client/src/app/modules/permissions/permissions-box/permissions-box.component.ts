@@ -14,12 +14,26 @@ import { LodestoneService } from '../../../core/api/lodestone.service';
 import { PermissionsController } from '../../../core/database/permissions-controller';
 import { WorkshopsFacade } from '../../workshop/+state/workshops.facade';
 import { Workshop } from '../../../model/other/workshop';
+import { IfMobilePipe } from '../../../pipes/pipes/if-mobile.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { PageLoaderComponent } from '../../page-loader/page-loader/page-loader.component';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NgIf, NgFor, AsyncPipe, UpperCasePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-permissions-box',
-  templateUrl: './permissions-box.component.html',
-  styleUrls: ['./permissions-box.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-permissions-box',
+    templateUrl: './permissions-box.component.html',
+    styleUrls: ['./permissions-box.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, NzListModule, NgFor, NzAvatarModule, NzSelectModule, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, FlexModule, PageLoaderComponent, AsyncPipe, UpperCasePipe, TranslateModule, IfMobilePipe]
 })
 export class PermissionsBoxComponent implements OnInit {
 

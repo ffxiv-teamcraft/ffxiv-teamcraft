@@ -28,29 +28,25 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-    FormsModule,
-
-    RouterModule.forChild(routes),
-
-    TranslateModule,
-
-    MapModule,
-    CoreModule,
-    PipesModule,
-    ItemIconModule,
-    AlarmsModule,
-    SettingsModule,
-    PageLoaderModule,
-    FullpageMessageModule,
-    AlarmsSidebarModule,
-
-    AntdSharedModule,
-    OverlayContainerModule
-  ],
-  declarations: [AlarmsOverlayComponent]
+    imports: [
+        CommonModule,
+        FlexLayoutModule,
+        FormsModule,
+        RouterModule.forChild(routes),
+        TranslateModule,
+        MapModule,
+        CoreModule,
+        PipesModule,
+        ItemIconModule,
+        AlarmsModule,
+        SettingsModule,
+        PageLoaderModule,
+        FullpageMessageModule,
+        AlarmsSidebarModule,
+        AntdSharedModule,
+        OverlayContainerModule,
+        AlarmsOverlayComponent
+    ]
 })
 export class AlarmsOverlayModule {
 }

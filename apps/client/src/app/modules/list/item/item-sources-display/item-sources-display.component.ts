@@ -30,12 +30,30 @@ import { TeamcraftComponent } from '../../../../core/component/teamcraft-compone
 import { observeInput } from '../../../../core/rxjs/observe-input';
 import { shareReplay } from 'rxjs/operators';
 import { Craft } from '@ffxiv-teamcraft/simulator';
+import { LazyRowPipe } from '../../../../pipes/pipes/lazy-row.pipe';
+import { JobUnicodePipe } from '../../../../pipes/pipes/job-unicode.pipe';
+import { TradeIconPipe } from '../../../../pipes/pipes/trade-icon.pipe';
+import { LazyIconPipe } from '../../../../pipes/pipes/lazy-icon.pipe';
+import { XivapiIconPipe } from '../../../../pipes/pipes/xivapi-icon.pipe';
+import { NodeTypeIconPipe } from '../../../../pipes/pipes/node-type-icon.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nPipe } from '../../../../core/i18n.pipe';
+import { CompanyWorkshopTreeButtonComponent } from '../../../company-workshop-tree/company-workshop-tree-button/company-workshop-tree-button.component';
+import { ItemIconComponent } from '../../../item-icon/item-icon/item-icon.component';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NgFor, NgSwitch, NgSwitchCase, NgIf, AsyncPipe } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-item-sources-display',
-  templateUrl: './item-sources-display.component.html',
-  styleUrls: ['./item-sources-display.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-item-sources-display',
+    templateUrl: './item-sources-display.component.html',
+    styleUrls: ['./item-sources-display.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FlexModule, NgFor, NgSwitch, NgSwitchCase, NzButtonModule, NzIconModule, NzToolTipModule, NzWaveModule, NgIf, ItemIconComponent, CompanyWorkshopTreeButtonComponent, AsyncPipe, I18nPipe, TranslateModule, NodeTypeIconPipe, XivapiIconPipe, LazyIconPipe, TradeIconPipe, JobUnicodePipe, LazyRowPipe]
 })
 export class ItemSourcesDisplayComponent extends TeamcraftComponent {
   @Input()

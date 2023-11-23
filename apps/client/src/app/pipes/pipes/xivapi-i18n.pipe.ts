@@ -4,7 +4,8 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { REQUEST } from '../../../express.tokens';
 
 @Pipe({
-  name: 'xivapiI18n',
+    name: 'xivapiI18n',
+    standalone: true,
 })
 export class XivapiI18nPipe implements PipeTransform {
   constructor(private translate: TranslateService, private sanitizer: DomSanitizer, @Inject(REQUEST) @Optional() private request: any) {}
