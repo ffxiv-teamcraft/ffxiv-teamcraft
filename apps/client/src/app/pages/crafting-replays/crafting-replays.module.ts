@@ -8,7 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { CraftingReplayModule } from '../../modules/crafting-replay/crafting-replay.module';
 import { SimulatorModule } from '../simulator/simulator.module';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
@@ -24,7 +24,7 @@ import { CoreModule } from '../../core/core.module';
 
 import { FoldersModule } from '../../modules/folders/folders.module';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
+
 
 
 const routes: Routes = [
@@ -37,30 +37,28 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        CommonModule,
-        TranslateModule,
-        FormsModule,
-        RouterModule.forChild(routes),
-        FullpageMessageModule,
-        CraftingReplayModule,
-        FlexLayoutModule,
-        PageLoaderModule,
-        SimulatorModule,
-        NzAlertModule,
-        ItemIconModule,
-        PipesModule,
-        CoreModule,
-        NzDividerModule,
-        NzButtonModule,
-        NzIconModule,
-        NzMessageModule,
-        NzToolTipModule,
-        FoldersModule,
-        DragDropModule,
-        LazyScrollModule,
-        NzPopconfirmModule,
-        CraftingReplaysComponent
-    ]
+    CommonModule,
+    TranslateModule,
+    FormsModule,
+    RouterModule.forChild(routes),
+    FullpageMessageModule,
+    CraftingReplayModule,
+    FlexLayoutModule,
+    SimulatorModule,
+    NzAlertModule,
+    ItemIconModule,
+    PipesModule,
+    CoreModule,
+    NzDividerModule,
+    NzButtonModule,
+    NzIconModule,
+    NzMessageModule,
+    NzToolTipModule,
+    FoldersModule,
+    DragDropModule,
+    NzPopconfirmModule,
+    CraftingReplaysComponent
+]
 })
 export class CraftingReplaysModule {
 }

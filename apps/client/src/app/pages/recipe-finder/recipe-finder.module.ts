@@ -15,7 +15,7 @@ import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { MarketboardModule } from '../../modules/marketboard/marketboard.module';
 import { ClipboardImportPopupComponent } from './clipboard-import-popup/clipboard-import-popup.component';
 import { InventoryImportPopupComponent } from './inventory-import-popup/inventory-import-popup.component';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 
@@ -29,22 +29,21 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        CommonModule,
-        FormsModule,
-        TranslateModule,
-        AntdSharedModule,
-        PipesModule,
-        CoreModule,
-        ListModule,
-        FlexLayoutModule,
-        FullpageMessageModule,
-        RouterModule.forChild(routes),
-        ItemIconModule,
-        MarketboardModule,
-        NzPaginationModule,
-        NzToolTipModule,
-        RecipeFinderComponent, ClipboardImportPopupComponent, InventoryImportPopupComponent
-    ]
+    CommonModule,
+    FormsModule,
+    TranslateModule,
+    PipesModule,
+    CoreModule,
+    ListModule,
+    FlexLayoutModule,
+    FullpageMessageModule,
+    RouterModule.forChild(routes),
+    ItemIconModule,
+    MarketboardModule,
+    NzPaginationModule,
+    NzToolTipModule,
+    RecipeFinderComponent, ClipboardImportPopupComponent, InventoryImportPopupComponent
+]
 })
 export class RecipeFinderModule {
 }

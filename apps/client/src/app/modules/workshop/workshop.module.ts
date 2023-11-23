@@ -14,33 +14,31 @@ import { CoreModule } from '../../core/core.module';
 
 import { CustomLinksModule } from '../custom-links/custom-links.module';
 import { ListPickerModule } from '../list-picker/list-picker.module';
-import { FolderAdditionPickerModule } from '../folder-addition-picker/folder-addition-picker.module';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
+
 import { RouterModule } from '@angular/router';
 import { CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
 
 
 @NgModule({
     imports: [
-        CommonModule,
-        TranslateModule,
-        AntdSharedModule,
-        FlexLayoutModule,
-        CoreModule,
-        CustomLinksModule,
-        FolderAdditionPickerModule,
-        DatabaseModule,
-        ListModule,
-        ListPickerModule,
-        StoreModule.forFeature('workshops', workshopsReducer, {
-            initialState: workshopsInitialState
-        }),
-        EffectsModule.forFeature([WorkshopsEffects]),
-        RouterModule,
-        CdkDropList,
-        CdkDrag,
-        WorkshopPanelComponent
-    ],
+    CommonModule,
+    TranslateModule,
+    FlexLayoutModule,
+    CoreModule,
+    CustomLinksModule,
+    DatabaseModule,
+    ListModule,
+    ListPickerModule,
+    StoreModule.forFeature('workshops', workshopsReducer, {
+        initialState: workshopsInitialState
+    }),
+    EffectsModule.forFeature([WorkshopsEffects]),
+    RouterModule,
+    CdkDropList,
+    CdkDrag,
+    WorkshopPanelComponent
+],
     exports: [WorkshopPanelComponent],
     providers: [WorkshopsFacade]
 })

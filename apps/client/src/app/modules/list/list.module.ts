@@ -4,12 +4,12 @@ import { DatabaseModule } from '../../core/database/database.module';
 import { ListPanelComponent } from './list-panel/list-panel.component';
 import { CommonModule } from '@angular/common';
 import { PipesModule } from '../../pipes/pipes.module';
-import { NameQuestionPopupModule } from '../name-question-popup/name-question-popup.module';
+
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TagsPopupComponent } from './tags-popup/tags-popup.component';
-import { PageLoaderModule } from '../page-loader/page-loader.module';
+
 import { PermissionsModule } from '../permissions/permissions.module';
 import { UserAvatarModule } from '../user-avatar/user-avatar.module';
 import { TeamsModule } from '../teams/teams.module';
@@ -28,9 +28,9 @@ import { ItemDetailsPopupsModule } from '../item-details/item-details-popups.mod
 import { ItemSourcesDisplayComponent } from './item/item-sources-display/item-sources-display.component';
 import { ItemRowButtonsComponent } from './item/item-row-buttons/item-row-buttons.component';
 import { ListProgressbarComponent } from './list-progressbar/list-progressbar.component';
-import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
+
 import { ListSplitPopupComponent } from './list-split-popup/list-split-popup.component';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 import { ItemPickerModule } from '../item-picker/item-picker.module';
 import { SimulatorModule } from '../../pages/simulator/simulator.module';
 import { CompanyWorkshopTreeModule } from '../company-workshop-tree/company-workshop-tree.module';
@@ -48,53 +48,49 @@ import { ItemInventoryButtonComponent } from './item-inventory-button/item-inven
 
 @NgModule({
     imports: [
-        CommonModule,
-        CoreModule,
-        FormsModule,
-        DatabaseModule,
-        PipesModule,
-        NameQuestionPopupModule,
-        RouterModule,
-        PageLoaderModule,
-        PermissionsModule,
-        ProgressPopupModule,
-        UserAvatarModule,
-        TeamsModule,
-        CommentsModule,
-        CustomLinksModule,
-        ItemIconModule,
-        LayoutModule,
-        AntdSharedModule,
-        FlexLayoutModule,
-        MarketboardModule,
-        AlarmsModule,
-        MapModule,
-        ItemDetailsPopupsModule,
-        ItemPickerModule,
-        LazyScrollModule,
-        SimulatorModule,
-        CompanyWorkshopTreeModule,
-        InventoryModule,
-        HttpClientModule,
-        AlarmButtonModule,
-        ListPanelComponent,
-        ListDetailsPanelComponent,
-        ItemRowComponent,
-        TagsPopupComponent,
-        ListCompletionPopupComponent,
-        ItemSourcesDisplayComponent,
-        ItemRowButtonsComponent,
-        ListProgressbarComponent,
-        ListSplitPopupComponent,
-        ItemRowMenuComponent,
-        AggregateItemRowComponent,
-        CompactItemRowComponent,
-        StepByStepDetailsComponent,
-        StepByStepDatatypeComponent,
-        StepByStepRowComponent,
-        CompactAmountInputComponent,
-        ItemInventoryButtonComponent
-    ],
+    CommonModule,
+    CoreModule,
+    FormsModule,
+    DatabaseModule,
+    PipesModule,
+    RouterModule,
+    PermissionsModule,
+    ProgressPopupModule,
+    UserAvatarModule,
+    TeamsModule,
+    CommentsModule,
+    CustomLinksModule,
+    ItemIconModule,
+    LayoutModule,
+    FlexLayoutModule,
+    MarketboardModule,
+    AlarmsModule,
+    MapModule,
+    ItemDetailsPopupsModule,
+    ItemPickerModule,
+    SimulatorModule,
+    CompanyWorkshopTreeModule,
+    InventoryModule,
+    HttpClientModule,
+    AlarmButtonModule,
+    ListPanelComponent,
+    ListDetailsPanelComponent,
+    ItemRowComponent,
+    TagsPopupComponent,
+    ListCompletionPopupComponent,
+    ItemSourcesDisplayComponent,
+    ItemRowButtonsComponent,
+    ListProgressbarComponent,
+    ListSplitPopupComponent,
+    ItemRowMenuComponent,
+    AggregateItemRowComponent,
+    CompactItemRowComponent,
+    StepByStepDetailsComponent,
+    StepByStepDatatypeComponent,
+    StepByStepRowComponent,
+    CompactAmountInputComponent,
+    ItemInventoryButtonComponent
+],
     exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent, StepByStepDetailsComponent, CompactAmountInputComponent]
 })
 export class ListModule {

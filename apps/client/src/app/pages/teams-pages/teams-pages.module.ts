@@ -6,8 +6,8 @@ import { TeamsModule } from '../../modules/teams/teams.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
-import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-question-popup.module';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
+
 import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { FormsModule } from '@angular/forms';
@@ -15,7 +15,7 @@ import { TeamInviteComponent } from './team-invite/team-invite.component';
 
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 import { CoreModule } from '../../core/core.module';
 
 const routes: Routes = [
@@ -33,21 +33,18 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        CommonModule,
-        FormsModule,
-        CoreModule,
-        FlexLayoutModule,
-        TranslateModule,
-        TeamsModule,
-        UserAvatarModule,
-        PipesModule,
-        AntdSharedModule,
-        FullpageMessageModule,
-        PageLoaderModule,
-        NameQuestionPopupModule,
-        RouterModule.forChild(routes),
-        TeamsComponent, TeamInviteComponent
-    ]
+    CommonModule,
+    FormsModule,
+    CoreModule,
+    FlexLayoutModule,
+    TranslateModule,
+    TeamsModule,
+    UserAvatarModule,
+    PipesModule,
+    FullpageMessageModule,
+    RouterModule.forChild(routes),
+    TeamsComponent, TeamInviteComponent
+]
 })
 export class TeamsPagesModule {
 }

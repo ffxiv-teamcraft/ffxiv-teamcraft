@@ -11,9 +11,9 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 import { OverlayContainerModule } from '../../modules/overlay-container/overlay-container.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { SimulatorModule } from '../simulator/simulator.module';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 
 const routes: Routes = [
   {
@@ -25,20 +25,18 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        CommonModule,
-        FlexLayoutModule,
-        FormsModule,
-        RouterModule.forChild(routes),
-        TranslateModule,
-        CoreModule,
-        PipesModule,
-        PageLoaderModule,
-        SimulatorModule,
-        FullpageMessageModule,
-        AntdSharedModule,
-        OverlayContainerModule,
-        RotationOverlayComponent
-    ]
+    CommonModule,
+    FlexLayoutModule,
+    FormsModule,
+    RouterModule.forChild(routes),
+    TranslateModule,
+    CoreModule,
+    PipesModule,
+    SimulatorModule,
+    FullpageMessageModule,
+    OverlayContainerModule,
+    RotationOverlayComponent
+]
 })
 export class RotationOverlayModule {
 }

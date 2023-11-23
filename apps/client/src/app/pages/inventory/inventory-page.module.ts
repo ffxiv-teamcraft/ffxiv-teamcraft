@@ -14,7 +14,7 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { FormsModule } from '@angular/forms';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 import { InventoryModule } from '../../modules/inventory/inventory.module';
 
 const routes: Routes = [
@@ -27,21 +27,20 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        CommonModule,
-        FormsModule,
-        CoreModule,
-        RouterModule.forChild(routes),
-        TranslateModule,
-        AntdSharedModule,
-        FlexLayoutModule,
-        ItemIconModule,
-        PipesModule,
-        HttpClientModule,
-        FullpageMessageModule,
-        ScrollingModule,
-        InventoryModule,
-        InventoryComponent
-    ]
+    CommonModule,
+    FormsModule,
+    CoreModule,
+    RouterModule.forChild(routes),
+    TranslateModule,
+    FlexLayoutModule,
+    ItemIconModule,
+    PipesModule,
+    HttpClientModule,
+    FullpageMessageModule,
+    ScrollingModule,
+    InventoryModule,
+    InventoryComponent
+]
 })
 export class InventoryPageModule {
 }

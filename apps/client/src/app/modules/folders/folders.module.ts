@@ -16,7 +16,7 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
-import { NameQuestionPopupModule } from '../name-question-popup/name-question-popup.module';
+
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FolderPageComponent } from './folder-page/folder-page.component';
@@ -28,28 +28,27 @@ import { FavoritesModule } from '../favorites/favorites.module';
 @NgModule({
     exports: [FolderComponent, FolderPageComponent],
     imports: [
-        CommonModule,
-        StoreModule.forFeature(fromFolders.FOLDERS_FEATURE_KEY, fromFolders.reducer),
-        EffectsModule.forFeature([FoldersEffects]),
-        NzCollapseModule,
-        NzModalModule,
-        NzButtonModule,
-        NzToolTipModule,
-        NzPopconfirmModule,
-        NzIconModule,
-        TranslateModule,
-        CoreModule,
-        PipesModule,
-        NameQuestionPopupModule,
-        DragDropModule,
-        FlexLayoutModule,
-        NzDividerModule,
-        RouterModule,
-        UserAvatarModule,
-        FullpageMessageModule,
-        FavoritesModule,
-        FolderComponent, FolderPageComponent
-    ],
+    CommonModule,
+    StoreModule.forFeature(fromFolders.FOLDERS_FEATURE_KEY, fromFolders.reducer),
+    EffectsModule.forFeature([FoldersEffects]),
+    NzCollapseModule,
+    NzModalModule,
+    NzButtonModule,
+    NzToolTipModule,
+    NzPopconfirmModule,
+    NzIconModule,
+    TranslateModule,
+    CoreModule,
+    PipesModule,
+    DragDropModule,
+    FlexLayoutModule,
+    NzDividerModule,
+    RouterModule,
+    UserAvatarModule,
+    FullpageMessageModule,
+    FavoritesModule,
+    FolderComponent, FolderPageComponent
+],
     providers: [FoldersFacade]
 })
 export class FoldersModule {

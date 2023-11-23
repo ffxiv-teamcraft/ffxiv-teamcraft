@@ -13,7 +13,7 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { FormsModule } from '@angular/forms';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
@@ -29,23 +29,22 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        CommonModule,
-        CoreModule,
-        FormsModule,
-        FlexLayoutModule,
-        TranslateModule,
-        RouterModule.forChild(routes),
-        FullpageMessageModule,
-        NzGridModule,
-        PipesModule,
-        ItemIconModule,
-        NzSwitchModule,
-        PageLoaderModule,
-        NzDividerModule,
-        NzTagModule,
-        NzCollapseModule,
-        RetainersComponent
-    ]
+    CommonModule,
+    CoreModule,
+    FormsModule,
+    FlexLayoutModule,
+    TranslateModule,
+    RouterModule.forChild(routes),
+    FullpageMessageModule,
+    NzGridModule,
+    PipesModule,
+    ItemIconModule,
+    NzSwitchModule,
+    NzDividerModule,
+    NzTagModule,
+    NzCollapseModule,
+    RetainersComponent
+]
 })
 export class RetainersModule {
 }

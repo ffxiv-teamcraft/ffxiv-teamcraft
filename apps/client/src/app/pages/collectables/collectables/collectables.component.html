@@ -2,10 +2,8 @@
   <form (ngSubmit)="applyNewLevels(form)" *ngIf="form$ | async as form" [formGroup]="form" [nzLayout]="'inline'" nz-form>
     <nz-form-item *ngFor="let control of form.controls | keys">
       <nz-form-control>
-        <nz-input-group [nzPrefix]="jobIcon">
-          <input [formControlName]="control" [nzTooltipTitle]="+control | i18nRow:'jobName' | i18n" class="lvl-input" min="0" nz-input
-                 nz-tooltip
-                 required type="number"/>
+        <nz-input-group [nzPrefix]="jobIcon" nz-tooltip [nzTooltipTitle]="+control | i18nRow:'jobName' | i18n">
+          <input [formControlName]="control" class="lvl-input" min="0" nz-input required type="number"/>
         </nz-input-group>
         <ng-template #jobIcon>
           <span class="companion-svg" [innerHtml]="+control | jobUnicode"></span>
@@ -31,7 +29,8 @@
       </ng-template>
       <ng-template nz-tab>
         <nz-collapse *ngIf="row.groups.length > 0; else noCollectables">
-          <nz-collapse-panel [nzHeader]="group.groupId | i18nRow:'collectablesShopItemGroup' | i18n" [nzActive]="first" *ngFor="let group of row.groups; first as first">
+          <nz-collapse-panel [nzHeader]="group.groupId | i18nRow:'collectablesShopItemGroup' | i18n" [nzActive]="first"
+                             *ngFor="let group of row.groups; first as first">
             <div fxLayout="column" fxLayoutGap="10px">
               <div *ngFor="let collectable of group.collectables" nz-row>
                 <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="4">
@@ -39,7 +38,9 @@
                          (ngModelChange)="selectItem(group.groupId, collectable.itemId, $event)"></label>
                   <app-item-icon [itemId]="collectable.itemId" [width]="32"></app-item-icon>
                   <div fxLayout="column">
-                    <div><app-i18n-name [id]="collectable.itemId" content="items"></app-i18n-name></div>
+                    <div>
+                      <app-i18n-name [id]="collectable.itemId" content="items"></app-i18n-name>
+                    </div>
                     <div>{{'Level' | translate}} {{collectable.levelMax}}</div>
                   </div>
                 </div>

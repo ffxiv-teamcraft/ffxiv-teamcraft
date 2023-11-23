@@ -5,18 +5,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatabaseModule } from '../../core/database/database.module';
 import { FreecompanyPickerService } from './freecompany-picker.service';
 import { FreecompanyPickerComponent } from './user-picker/freecompany-picker.component';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 
 @NgModule({
     imports: [
-        CommonModule,
-        TranslateModule,
-        FormsModule,
-        ReactiveFormsModule,
-        DatabaseModule,
-        AntdSharedModule,
-        FreecompanyPickerComponent
-    ],
+    CommonModule,
+    TranslateModule,
+    FormsModule,
+    ReactiveFormsModule,
+    DatabaseModule,
+    FreecompanyPickerComponent
+],
     exports: [FreecompanyPickerComponent],
     providers: [FreecompanyPickerService]
 })

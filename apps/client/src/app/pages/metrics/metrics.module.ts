@@ -18,7 +18,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { TranslateModule } from '@ngx-translate/core';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
-import { TutorialModule } from '../../core/tutorial/tutorial.module';
+
 import { CoreModule } from '../../core/core.module';
 
 const routes: Routes = [
@@ -31,26 +31,25 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        CoreModule,
-        CommonModule,
-        FormsModule,
-        FlexLayoutModule,
-        PlayerMetricsModule,
-        RouterModule.forChild(routes),
-        NzCardModule,
-        NzDatePickerModule,
-        NzButtonModule,
-        NzIconModule,
-        TranslateModule,
-        NzPopconfirmModule,
-        DragDropModule,
-        NzToolTipModule,
-        NzSelectModule,
-        NzInputModule,
-        TutorialModule,
-        NzAlertModule,
-        MetricsComponent
-    ]
+    CoreModule,
+    CommonModule,
+    FormsModule,
+    FlexLayoutModule,
+    PlayerMetricsModule,
+    RouterModule.forChild(routes),
+    NzCardModule,
+    NzDatePickerModule,
+    NzButtonModule,
+    NzIconModule,
+    TranslateModule,
+    NzPopconfirmModule,
+    DragDropModule,
+    NzToolTipModule,
+    NzSelectModule,
+    NzInputModule,
+    NzAlertModule,
+    MetricsComponent
+]
 })
 export class MetricsModule {
 }

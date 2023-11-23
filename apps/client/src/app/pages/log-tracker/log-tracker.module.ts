@@ -17,9 +17,9 @@ import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.modul
 import { TooltipModule } from '../../modules/tooltip/tooltip.module';
 import { FishingLogTrackerComponent } from './fishing-log-tracker/fishing-log-tracker.component';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
-import { AntdSharedModule } from '../../core/antd-shared.module';
-import { TextQuestionPopupModule } from '../../modules/text-question-popup/text-question-popup.module';
-import { SpearfishingSpeedModule } from '../../modules/spearfishing-speed-tooltip/spearfishing-speed.module';
+
+
+
 
 const routes: Routes = [
   {
@@ -36,25 +36,22 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        CommonModule,
-        FlexLayoutModule,
-        FormsModule,
-        CoreModule,
-        PipesModule,
-        ItemIconModule,
-        ListPickerModule,
-        ProgressPopupModule,
-        MapModule,
-        AlarmsModule,
-        FishingBaitModule,
-        RouterModule.forChild(routes),
-        TooltipModule,
-        FullpageMessageModule,
-        AntdSharedModule,
-        TextQuestionPopupModule,
-        SpearfishingSpeedModule,
-        LogTrackerComponent, FishingLogTrackerComponent
-    ]
+    CommonModule,
+    FlexLayoutModule,
+    FormsModule,
+    CoreModule,
+    PipesModule,
+    ItemIconModule,
+    ListPickerModule,
+    ProgressPopupModule,
+    MapModule,
+    AlarmsModule,
+    FishingBaitModule,
+    RouterModule.forChild(routes),
+    TooltipModule,
+    FullpageMessageModule,
+    LogTrackerComponent, FishingLogTrackerComponent
+]
 })
 export class LogTrackerModule {
 }

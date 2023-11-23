@@ -17,7 +17,7 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { MarketboardModule } from '../../modules/marketboard/marketboard.module';
 import { NzFormModule } from 'ng-zorro-antd/form';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 
 
@@ -32,26 +32,25 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        CommonModule,
-        CoreModule,
-        FormsModule,
-        ReactiveFormsModule,
-        FlexLayoutModule,
-        TranslateModule,
-        RouterModule.forChild(routes),
-        FullpageMessageModule,
-        NzGridModule,
-        PipesModule,
-        ItemIconModule,
-        NzSwitchModule,
-        NzSelectModule,
-        NzInputNumberModule,
-        MarketboardModule,
-        NzFormModule,
-        PageLoaderModule,
-        NzAlertModule,
-        RetainerVenturesComponent
-    ]
+    CommonModule,
+    CoreModule,
+    FormsModule,
+    ReactiveFormsModule,
+    FlexLayoutModule,
+    TranslateModule,
+    RouterModule.forChild(routes),
+    FullpageMessageModule,
+    NzGridModule,
+    PipesModule,
+    ItemIconModule,
+    NzSwitchModule,
+    NzSelectModule,
+    NzInputNumberModule,
+    MarketboardModule,
+    NzFormModule,
+    NzAlertModule,
+    RetainerVenturesComponent
+]
 })
 export class RetainerVenturesModule {
 }

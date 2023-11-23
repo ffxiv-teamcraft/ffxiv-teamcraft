@@ -45,12 +45,12 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 
 @Component({
-    selector: 'app-collectables',
-    templateUrl: './collectables.component.html',
-    styleUrls: ['./collectables.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [PageLoaderComponent, NgIf, FormsModule, NzFormModule, ReactiveFormsModule, NgFor, NzGridModule, NzButtonModule, NzInputModule, NzToolTipModule, NzWaveModule, NzIconModule, NzTabsModule, NzCollapseModule, FlexModule, NzCheckboxModule, ItemIconComponent, I18nNameComponent, MapPositionComponent, AlarmButtonComponent, NzInputNumberModule, FullpageMessageComponent, I18nPipe, TranslateModule, I18nRowPipe, NodeTypeIconPipe, KeysPipe, JobUnicodePipe, AsyncPipe, DecimalPipe]
+  selector: 'app-collectables',
+  templateUrl: './collectables.component.html',
+  styleUrls: ['./collectables.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [PageLoaderComponent, NgIf, FormsModule, NzFormModule, ReactiveFormsModule, NgFor, NzGridModule, NzButtonModule, NzInputModule, NzToolTipModule, NzWaveModule, NzIconModule, NzTabsModule, NzCollapseModule, FlexModule, NzCheckboxModule, ItemIconComponent, I18nNameComponent, MapPositionComponent, AlarmButtonComponent, NzInputNumberModule, FullpageMessageComponent, I18nPipe, TranslateModule, I18nRowPipe, NodeTypeIconPipe, KeysPipe, JobUnicodePipe, AsyncPipe, DecimalPipe]
 })
 export class CollectablesComponent {
 
@@ -94,13 +94,12 @@ export class CollectablesComponent {
 
   selectedTab$: Observable<number> = merge(this.selectedTabFromRoute$, this.selectedTabFromTabset$);
 
-  constructor(private fb: UntypedFormBuilder, private authFacade: AuthFacade,
+  constructor(fb: UntypedFormBuilder, private authFacade: AuthFacade,
               private lazyData: LazyDataFacade, private rotationPicker: RotationPickerService,
               private listPicker: ListPickerService, private listManager: ListManagerService,
-              private progressService: ProgressPopupService, private notificationService: NzNotificationService,
+              private progressService: ProgressPopupService,
               private listsFacade: ListsFacade, private i18n: I18nToolsService,
-              private router: Router, private activeRoute: ActivatedRoute, private location: Location,
-              private gatheringNodesService: GatheringNodesService, private alarmsFacade: AlarmsFacade) {
+              private router: Router, private activeRoute: ActivatedRoute, private location: Location, private alarmsFacade: AlarmsFacade) {
 
     this.form$ = this.levels$.pipe(
       map(levels => {

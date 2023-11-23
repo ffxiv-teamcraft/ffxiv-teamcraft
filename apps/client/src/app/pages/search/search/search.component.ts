@@ -9,14 +9,24 @@ import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
-import { AbstractControl, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { I18nName, SearchFilter, SearchResult, SearchType, XivapiPatch } from '@ffxiv-teamcraft/types';
+import { AbstractControl, FormsModule, ReactiveFormsModule, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { I18nName, SearchFilter, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
-import { isPlatformBrowser, isPlatformServer, NgFor, NgIf, NgTemplateOutlet, NgSwitch, NgSwitchCase, AsyncPipe, UpperCasePipe, DecimalPipe } from '@angular/common';
-import * as _ from 'lodash';
-import { isEqual } from 'lodash';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import {
+  AsyncPipe,
+  DecimalPipe,
+  isPlatformBrowser,
+  isPlatformServer,
+  NgFor,
+  NgIf,
+  NgSwitch,
+  NgSwitchCase,
+  NgTemplateOutlet,
+  UpperCasePipe
+} from '@angular/common';
+import { isEqual, uniq } from 'lodash';
 import { stats } from '../../../core/data/sources/stats';
 import { KeysOfType } from '../../../core/tools/key-of-type';
 import { Language } from '../../../core/data/language';
@@ -64,11 +74,11 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-    selector: 'app-search',
-    templateUrl: './search.component.html',
-    styleUrls: ['./search.component.less'],
-    standalone: true,
-    imports: [FlexModule, NzSelectModule, TutorialStepDirective, FormsModule, NgFor, NzSpinModule, NgIf, ReactiveFormsModule, NzButtonModule, NzIconModule, NzInputModule, NgTemplateOutlet, NzWaveModule, NzToolTipModule, ClipboardDirective, NzAutocompleteModule, NzInputNumberModule, MouseWheelDirective, NzCheckboxModule, NzCardModule, NgSwitch, NgSwitchCase, SearchJobPickerComponent, NzGridModule, SimpleTabsetComponent, SimpleTabComponent, SearchIntroComponent, NzRadioModule, NzPopconfirmModule, ItemIconComponent, I18nNameComponent, ItemDetailsBoxComponent, RouterLink, PageLoaderComponent, NzPaginationModule, SearchResultComponent, FullpageMessageComponent, AsyncPipe, UpperCasePipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, IfMobilePipe, XivapiL12nPipe, JobUnicodePipe]
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.less'],
+  standalone: true,
+  imports: [FlexModule, NzSelectModule, TutorialStepDirective, FormsModule, NgFor, NzSpinModule, NgIf, ReactiveFormsModule, NzButtonModule, NzIconModule, NzInputModule, NgTemplateOutlet, NzWaveModule, NzToolTipModule, ClipboardDirective, NzAutocompleteModule, NzInputNumberModule, MouseWheelDirective, NzCheckboxModule, NzCardModule, NgSwitch, NgSwitchCase, SearchJobPickerComponent, NzGridModule, SimpleTabsetComponent, SimpleTabComponent, SearchIntroComponent, NzRadioModule, NzPopconfirmModule, ItemIconComponent, I18nNameComponent, ItemDetailsBoxComponent, RouterLink, PageLoaderComponent, NzPaginationModule, SearchResultComponent, FullpageMessageComponent, AsyncPipe, UpperCasePipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, IfMobilePipe, XivapiL12nPipe, JobUnicodePipe]
 })
 export class SearchComponent extends TeamcraftComponent implements OnInit {
 
@@ -265,7 +275,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       }
       if (query.length > 0) {
         const searchHistory = JSON.parse(localStorage.getItem('search:history') || '{}');
-        searchHistory[type] = _.uniq([...(searchHistory[type] || []), query]);
+        searchHistory[type] = uniq([...(searchHistory[type] || []), query]);
         localStorage.setItem('search:history', JSON.stringify(searchHistory));
       }
       this.data.setSearchLang(lang);

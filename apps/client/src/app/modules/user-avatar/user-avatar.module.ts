@@ -6,21 +6,20 @@ import { XivapiClientModule } from '@xivapi/angular-client';
 import { CoreModule } from '../../core/core.module';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 
 @NgModule({
     imports: [
-        CommonModule,
-        RouterModule,
-        CoreModule,
-        FlexLayoutModule,
-        DatabaseModule,
-        XivapiClientModule,
-        AntdSharedModule,
-        NzAvatarModule,
-        UserAvatarComponent
-    ],
+    CommonModule,
+    RouterModule,
+    CoreModule,
+    FlexLayoutModule,
+    DatabaseModule,
+    XivapiClientModule,
+    NzAvatarModule,
+    UserAvatarComponent
+],
     exports: [UserAvatarComponent]
 })
 export class UserAvatarModule {

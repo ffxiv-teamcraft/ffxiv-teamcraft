@@ -6,19 +6,18 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ItemIconModule } from '../item-icon/item-icon.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { TooltipModule } from '../tooltip/tooltip.module';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 
 @NgModule({
     imports: [
-        CommonModule,
-        CoreModule,
-        FlexLayoutModule,
-        ItemIconModule,
-        PipesModule,
-        AntdSharedModule,
-        TooltipModule,
-        FishingBaitComponent
-    ],
+    CommonModule,
+    CoreModule,
+    FlexLayoutModule,
+    ItemIconModule,
+    PipesModule,
+    TooltipModule,
+    FishingBaitComponent
+],
     exports: [FishingBaitComponent]
 })
 export class FishingBaitModule {

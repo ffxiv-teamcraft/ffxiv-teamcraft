@@ -12,7 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
-import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
+
 import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
@@ -23,26 +23,25 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 
 @NgModule({
     imports: [
-        CommonModule,
-        FishTrainsRoutingModule,
-        NzPageHeaderModule,
-        TranslateModule,
-        NzButtonModule,
-        NzInputModule,
-        NzFormModule,
-        ReactiveFormsModule,
-        NzSegmentedModule,
-        NzListModule,
-        FullpageMessageModule,
-        LazyScrollModule,
-        UserAvatarModule,
-        NzAvatarModule,
-        NzToolTipModule,
-        NzTagModule,
-        NzSelectModule,
-        NzDividerModule,
-        FishTrainsComponent
-    ]
+    CommonModule,
+    FishTrainsRoutingModule,
+    NzPageHeaderModule,
+    TranslateModule,
+    NzButtonModule,
+    NzInputModule,
+    NzFormModule,
+    ReactiveFormsModule,
+    NzSegmentedModule,
+    NzListModule,
+    FullpageMessageModule,
+    UserAvatarModule,
+    NzAvatarModule,
+    NzToolTipModule,
+    NzTagModule,
+    NzSelectModule,
+    NzDividerModule,
+    FishTrainsComponent
+]
 })
 export class FishTrainsModule {
 }

@@ -31,7 +31,7 @@ import { DevGuard } from './guard/dev.guard';
 import { DATA_REPORTERS } from './data-reporting/data-reporters-index';
 import { VersionLockModule } from '../pages/version-lock/version-lock.module';
 import { LazyComponentDirective } from './tools/lazy-component';
-import { TutorialModule } from './tutorial/tutorial.module';
+
 import { ModeratorGuard } from './guard/moderator.guard';
 import { MouseWheelDirective } from './event/mouse-wheel/mouse-wheel.directive';
 import { SupportUsPopupComponent } from './patreon/support-us-popup/support-us-popup.component';
@@ -43,7 +43,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { CommissionNotification } from '../model/notification/commission-notification';
 import { NzModalModule } from 'ng-zorro-antd/modal';
-import { IpcPopupsModule } from '../modules/ipc-popups/ipc-popups.module';
+
 import { ItemNameClipboardDirective } from './item-name-clipboard.directive';
 import { I18nNameComponent } from './i18n/i18n-name/i18n-name.component';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
@@ -57,56 +57,54 @@ import { PirschEventDirective } from './analytics/pirsch-event.directive';
 
 @NgModule({
     imports: [
-        CommonModule,
-        TranslateModule,
-        HttpClientModule,
-        NgSerializerModule.forChild([
-            {
-                parent: AbstractNotification,
-                children: {
-                    LIST_COMMENT: ListCommentNotification,
-                    LIST_ITEM_COMMENT: ListItemCommentNotification,
-                    DB_ITEM_COMMENT: DbItemCommentNotification,
-                    DB_COMMENT_REPLY: DbCommentReplyNotification,
-                    COMMISSION: CommissionNotification
-                }
-            },
-            {
-                parent: CustomLink,
-                children: {
-                    link: CustomLink,
-                    template: ListTemplate
-                }
+    CommonModule,
+    TranslateModule,
+    HttpClientModule,
+    NgSerializerModule.forChild([
+        {
+            parent: AbstractNotification,
+            children: {
+                LIST_COMMENT: ListCommentNotification,
+                LIST_ITEM_COMMENT: ListItemCommentNotification,
+                DB_ITEM_COMMENT: DbItemCommentNotification,
+                DB_COMMENT_REPLY: DbCommentReplyNotification,
+                COMMISSION: CommissionNotification
             }
-        ]),
-        MaintenanceModule,
-        VersionLockModule,
-        RouterModule,
-        TutorialModule,
-        ClipboardModule,
-        IpcPopupsModule,
-        NzButtonModule,
-        NzToolTipModule,
-        NzIconModule,
-        NzDividerModule,
-        NzModalModule,
-        NzSkeletonModule,
-        NzNotificationModule,
-        I18nPipe,
-        TimerPipe,
-        DbButtonComponent,
-        ItemRarityDirective,
-        LazyComponentDirective,
-        MouseWheelDirective,
-        SupportUsPopupComponent,
-        ClipboardDirective,
-        ItemNameClipboardDirective,
-        I18nNameComponent,
-        I18nRowPipe,
-        NgForTrackByIdDirective,
-        NgForTrackByKeyDirective,
-        PirschEventDirective
-    ],
+        },
+        {
+            parent: CustomLink,
+            children: {
+                link: CustomLink,
+                template: ListTemplate
+            }
+        }
+    ]),
+    MaintenanceModule,
+    VersionLockModule,
+    RouterModule,
+    ClipboardModule,
+    NzButtonModule,
+    NzToolTipModule,
+    NzIconModule,
+    NzDividerModule,
+    NzModalModule,
+    NzSkeletonModule,
+    NzNotificationModule,
+    I18nPipe,
+    TimerPipe,
+    DbButtonComponent,
+    ItemRarityDirective,
+    LazyComponentDirective,
+    MouseWheelDirective,
+    SupportUsPopupComponent,
+    ClipboardDirective,
+    ItemNameClipboardDirective,
+    I18nNameComponent,
+    I18nRowPipe,
+    NgForTrackByIdDirective,
+    NgForTrackByKeyDirective,
+    PirschEventDirective
+],
     providers: [
         PendingChangesService,
         PlatformService,
@@ -122,26 +120,25 @@ import { PirschEventDirective } from './analytics/pirsch-event.directive';
         ...DATA_REPORTERS
     ],
     exports: [
-        I18nPipe,
-        TranslateModule,
-        MaintenanceModule,
-        TimerPipe,
-        DbButtonComponent,
-        ItemRarityDirective,
-        LazyComponentDirective,
-        TutorialModule,
-        MouseWheelDirective,
-        ClipboardDirective,
-        ItemNameClipboardDirective,
-        I18nNameComponent,
-        NzButtonModule,
-        NzToolTipModule,
-        NzIconModule,
-        I18nRowPipe,
-        PirschEventDirective,
-        NgForTrackByIdDirective,
-        NgForTrackByKeyDirective
-    ]
+    I18nPipe,
+    TranslateModule,
+    MaintenanceModule,
+    TimerPipe,
+    DbButtonComponent,
+    ItemRarityDirective,
+    LazyComponentDirective,
+    MouseWheelDirective,
+    ClipboardDirective,
+    ItemNameClipboardDirective,
+    I18nNameComponent,
+    NzButtonModule,
+    NzToolTipModule,
+    NzIconModule,
+    I18nRowPipe,
+    PirschEventDirective,
+    NgForTrackByIdDirective,
+    NgForTrackByKeyDirective
+]
 })
 export class CoreModule {
   static forRoot(): ModuleWithProviders<CoreModule> {

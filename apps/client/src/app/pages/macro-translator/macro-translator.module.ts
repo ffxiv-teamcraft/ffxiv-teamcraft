@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 
 const routes: Routes = [
@@ -22,16 +22,15 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        CommonModule,
-        FormsModule,
-        FlexLayoutModule,
-        AntdSharedModule,
-        CoreModule,
-        TranslateModule,
-        RouterModule.forChild(routes),
-        NzRadioModule,
-        MacroTranslatorComponent
-    ]
+    CommonModule,
+    FormsModule,
+    FlexLayoutModule,
+    CoreModule,
+    TranslateModule,
+    RouterModule.forChild(routes),
+    NzRadioModule,
+    MacroTranslatorComponent
+]
 })
 export class MacroTranslatorModule {
 }

@@ -74,9 +74,9 @@ import { NotificationsModule } from './modules/notifications/notifications.modul
 import { SimulatorModule } from './pages/simulator/simulator.module';
 import { RotationsModule } from './modules/rotations/rotations.module';
 import { CustomLinksModule } from './modules/custom-links/custom-links.module';
-import { PageLoaderModule } from './modules/page-loader/page-loader.module';
+
 import { MapModule } from './modules/map/map.module';
-import { LoadingScreenModule } from './pages/loading-screen/loading-screen.module';
+
 import { WorkshopModule } from './modules/workshop/workshop.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { CustomItemsModule } from './modules/custom-items/custom-items.module';
@@ -96,11 +96,11 @@ import { InventoryModule } from './modules/inventory/inventory.module';
 import { EorzeaModule } from './modules/eorzea/eorzea.module';
 import { QuickSearchModule } from './modules/quick-search/quick-search.module';
 import { GearsetsModule } from './modules/gearsets/gearsets.module';
-import { ChangelogPopupModule } from './modules/changelog-popup/changelog-popup.module';
+
 import { PlayerMetricsModule } from './modules/player-metrics/player-metrics.module';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { CraftingReplayModule } from './modules/crafting-replay/crafting-replay.module';
-import { AntdSharedModule } from './core/antd-shared.module';
+
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
@@ -109,7 +109,7 @@ import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NavigationSidebarModule } from './modules/navigation-sidebar/navigation-sidebar.module';
 import { APP_INITIALIZERS } from './app-initializers';
 import { FreeCompanyWorkshopsModule } from './modules/free-company-workshops/free-company-workshops.module';
-import { AdsModule } from './modules/ads/ads.module';
+
 import { NzNoAnimationModule } from 'ng-zorro-antd/core/no-animation';
 import * as AllaganReportsGQLProviders from './pages/allagan-reports/allagan-reports.gql';
 import { initialState as listsInitialState, listsReducer } from './modules/list/+state/lists.reducer';
@@ -128,6 +128,10 @@ import { APOLLO_OPTIONS, ApolloModule } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 import { apolloClientFactory } from './apollo-client-factory';
 import { AuthFacade } from './+state/auth.facade';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { NzTagModule } from 'ng-zorro-antd/tag';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -210,9 +214,7 @@ const nzConfig: NzConfig = {
   ],
   imports: [
     FlexLayoutModule,
-
     MarkdownModule.forRoot(),
-
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -220,7 +222,6 @@ const nzConfig: NzConfig = {
         deps: [HttpClient, PLATFORM_ID, PlatformService]
       }
     }),
-
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => {
@@ -231,12 +232,9 @@ const nzConfig: NzConfig = {
     provideDatabase(() => getDatabase()),
     provideFunctions(() => getFunctions()),
     providePerformance(() => getPerformance()),
-
     XivapiClientModule.forRoot(),
-
     RouterModule.forRoot([], { useHash: IS_ELECTRON }),
     DirtyModule,
-
     AppRoutingModule,
     AuthModule,
     ListModule,
@@ -251,41 +249,26 @@ const nzConfig: NzConfig = {
     RotationsModule,
     CustomLinksModule,
     CustomItemsModule,
-    PageLoaderModule,
-    LoadingScreenModule,
     GearsetsModule,
     CraftingReplayModule,
     FishTrainModule,
-
-    ChangelogPopupModule,
-
     AlarmsModule,
     AlarmsSidebarModule,
-
     QuickSearchModule,
-
     InventoryModule,
     EorzeaModule,
     FreeCompanyWorkshopsModule,
-
     HttpClientModule,
-
     environment.noAnimations ? NoopAnimationsModule : BrowserAnimationsModule,
     environment.noAnimations ? NzNoAnimationModule : [],
-
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-
     NgSerializerModule.forRoot(),
-
     AppRoutingModule,
     CoreModule.forRoot(),
     PipesModule,
-
-    AntdSharedModule,
     NzMenuModule,
-
     StoreModule.forRoot({}, {
       runtimeChecks: {
         strictStateSerializability: false,
@@ -301,22 +284,21 @@ const nzConfig: NzConfig = {
     EffectsModule.forRoot([]),
     StoreModule.forFeature('auth', authReducer, { initialState: authInitialState }),
     EffectsModule.forFeature([AuthEffects]),
-
     StoreModule.forFeature('lists', listsReducer, { initialState: listsInitialState }),
     EffectsModule.forFeature([ListsEffects]),
-
     ListAggregateModule,
-
     ApolloModule,
-
     PlayerMetricsModule,
     NzSpaceModule,
     NzLayoutModule,
     NzAvatarModule,
     NzSpinModule,
     NzAlertModule,
+    NzBadgeModule,
+    NzSelectModule,
+    NzTagModule,
+    NzPopoverModule,
     NavigationSidebarModule,
-    AdsModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     }),

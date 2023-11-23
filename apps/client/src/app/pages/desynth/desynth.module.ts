@@ -13,8 +13,8 @@ import { DesynthComponent } from './desynth/desynth.component';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { MarketboardModule } from '../../modules/marketboard/marketboard.module';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
+
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 
 const routes: Routes = [
@@ -26,23 +26,21 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        CommonModule,
-        FormsModule,
-        TranslateModule,
-        AntdSharedModule,
-        PipesModule,
-        CoreModule,
-        ListModule,
-        FlexLayoutModule,
-        FullpageMessageModule,
-        MarketboardModule,
-        ProgressPopupModule,
-        PageLoaderModule,
-        RouterModule.forChild(routes),
-        ItemIconModule,
-        NzPaginationModule,
-        DesynthComponent
-    ]
+    CommonModule,
+    FormsModule,
+    TranslateModule,
+    PipesModule,
+    CoreModule,
+    ListModule,
+    FlexLayoutModule,
+    FullpageMessageModule,
+    MarketboardModule,
+    ProgressPopupModule,
+    RouterModule.forChild(routes),
+    ItemIconModule,
+    NzPaginationModule,
+    DesynthComponent
+]
 })
 export class DesynthModule {
 }
