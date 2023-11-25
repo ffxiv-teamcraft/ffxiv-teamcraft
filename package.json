@@ -183,6 +183,7 @@
     "@nguniversal/module-map-ngfactory-loader": "^8.2.6",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
+    "@nrwl/linter": "^17.1.3",
     "@nx/angular": "17.1.3",
     "@nx/eslint-plugin": "17.1.3",
     "@nx/jest": "17.1.3",
