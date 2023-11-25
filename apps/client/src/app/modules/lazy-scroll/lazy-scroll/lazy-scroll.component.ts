@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, TemplateRef, TrackByFunction } from '@angular/core';
+import { booleanAttribute, ChangeDetectionStrategy, Component, Input, numberAttribute, TemplateRef, TrackByFunction } from '@angular/core';
 import { CdkVirtualScrollViewport, CdkFixedSizeVirtualScroll, CdkVirtualForOf } from '@angular/cdk/scrolling';
 import { NgIf, NgTemplateOutlet, NgFor } from '@angular/common';
 
@@ -18,13 +18,13 @@ export class LazyScrollComponent {
   @Input({required: true})
   rowTemplate: TemplateRef<any>;
 
-  @Input()
+  @Input({transform: numberAttribute})
   rowSize = 36;
 
-  @Input()
+  @Input({transform: numberAttribute})
   displayedRows = 8;
 
-  @Input()
+  @Input({transform: booleanAttribute})
   noScroll = false;
 
   @Input()

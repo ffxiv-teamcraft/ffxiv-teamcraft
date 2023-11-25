@@ -6,7 +6,7 @@ import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { debounceTime, filter, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { Region, SearchResult } from '@ffxiv-teamcraft/types';
 import { CustomItemsFacade } from '../../custom-items/+state/custom-items.facade';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { SettingsService } from '../../settings/settings.service';
 import { IfRegionsPipe } from '../../../pipes/pipes/if-regions';
 import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
@@ -20,19 +20,20 @@ import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { LazyScrollComponent } from '../../lazy-scroll/lazy-scroll/lazy-scroll.component';
 import { NzListModule } from 'ng-zorro-antd/list';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { FormsModule } from '@angular/forms';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 @Component({
-    selector: 'app-item-picker',
-    templateUrl: './item-picker.component.html',
-    styleUrls: ['./item-picker.component.less'],
-    standalone: true,
-    imports: [NzButtonModule, NzInputModule, FormsModule, NzCheckboxModule, RouterLink, NgIf, NzListModule, LazyScrollComponent, I18nNameComponent, ItemIconComponent, NzToolTipModule, FlexModule, NzWaveModule, NzIconModule, AsyncPipe, TranslateModule, XivapiIconPipe, CustomItemNamePipe, JobUnicodePipe, IfRegionsPipe]
+  selector: 'app-item-picker',
+  templateUrl: './item-picker.component.html',
+  styleUrls: ['./item-picker.component.less'],
+  standalone: true,
+  imports: [NzButtonModule, NzInputModule, FormsModule, NzCheckboxModule, RouterLink, NgIf, NzListModule, LazyScrollComponent, I18nNameComponent, ItemIconComponent, NzToolTipModule, FlexModule, NzWaveModule, NzIconModule, AsyncPipe, TranslateModule, XivapiIconPipe, CustomItemNamePipe, JobUnicodePipe, IfRegionsPipe, NzSpinModule]
 })
 export class ItemPickerComponent implements OnInit {
 
@@ -117,6 +118,10 @@ export class ItemPickerComponent implements OnInit {
 
   nothingSelected(results: SearchResult[]): boolean {
     return results.every(r => !r.selected);
+  }
+
+  trackById(index: number, row: SearchResult): number {
+    return row.id;
   }
 
   ngOnInit(): void {
