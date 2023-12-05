@@ -9654,7 +9654,7 @@
     "zh": "蛇水湖的雅·修特拉想要进行下一步行动。"
   },
   "68870": {
-    "zh": "法诺村夏梅十分稀奇地看着冒险者。"
+    "zh": "法诺村的夏梅十分稀奇地看着冒险者。"
   },
   "68871": {
     "zh": "法诺村的奥梅愿意为冒险者等人带路。"
@@ -12435,7 +12435,7 @@
     "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的学院研究生正在为朋友迟迟未归而担心。"
   },
   "69850": {
-    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的即将出发的异国人很在意冒险者。"
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的即将出发的访客很在意冒险者。"
   },
   "69851": {
     "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的革罗菲拉正在为抽不开身而发愁。"
@@ -13514,6 +13514,12 @@
   "70214": {
     "zh": "巨胆石采掘场的零正在思考今后的事情。"
   },
+  "70215": {
+    "zh": "※本任务是特定期间内的任务。\n\n舰尾楼的辰监察想请冒险者协助举办降神节。"
+  },
+  "70216": {
+    "zh": "※本任务是特定期间内的任务。\n\n永恒川的辰奉行想要前往瀑布。"
+  },
   "70217": {
     "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n旧萨雷安的梦明威正在寻找冒险者。"
   },
@@ -13670,6 +13676,12 @@
   "70268": {
     "zh": "<UIForeground>F201F6</UIForeground><UIGlow>F201F7</UIGlow>特殊规则： 职业固定<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n中庸工艺馆前的乔菈·佐希望能继续改良莫雯卓越工具。"
   },
+  "70269": {
+    "zh": "列柱廊的莎萝·摩尔有话想对冒险者说。"
+  },
+  "70270": {
+    "zh": "望海泉附近的椿有事想告诉冒险者。"
+  },
   "70271": {
     "zh": "云使宫前的瓦尔桑想要确认状况。"
   },
@@ -13683,7 +13695,7 @@
     "zh": "索鲁斯广场的尤卢斯想要为政务官送行。"
   },
   "70275": {
-    "zh": "第三站的尤卢斯正在担心梅提乌斯的去向。"
+    "zh": "第三站的尤卢斯正在担心梅提乌斯的安危。"
   },
   "70276": {
     "zh": "第三站的于里昂热打算继续推进计划。"
@@ -13696,6 +13708,12 @@
   },
   "70279": {
     "zh": "灵水之剑附近的雅·修特拉对于一行人平安回归感到安心。"
+  },
+  "70290": {
+    "zh": "拉札罕的德里昂似乎有些慌张。"
+  },
+  "70291": {
+    "zh": "熏香丘陵的希尔迪布兰德正热切地等待着冒险者。"
   },
   "70292": {
     "zh": "无路总部的吕斯诺对冒险者的到来感到高兴。"
@@ -13723,6 +13741,42 @@
   },
   "70300": {
     "zh": "秘术师行会的图比尔盖姆有话想跟冒险者说。"
+  },
+  "70303": {
+    "zh": "中庸工艺馆前的盖雷诺尔特有好消息想告诉冒险者。"
+  },
+  "70304": {
+    "zh": "<UIForeground>F201F6</UIForeground><UIGlow>F201F7</UIGlow>特殊规则： 职业固定<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n中庸工艺馆前的乔菈·佐开始着手进一步改良莫雯卓越工具。"
+  },
+  "70305": {
+    "zh": "<UIForeground>F201F6</UIForeground><UIGlow>F201F7</UIGlow>特殊规则： 职业固定<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n中庸工艺馆前的乔菈·佐开始着手进行莫雯卓越工具的下一次改良。"
+  },
+  "70306": {
+    "zh": "中庸工艺馆前的盖雷诺尔特希望能慰劳一番大家。"
+  },
+  "70307": {
+    "zh": "<UIForeground>F201F6</UIForeground><UIGlow>F201F7</UIGlow>特殊规则： 职业固定<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n炼金术制药堂的盖罗尔特看上去有些无精打采。"
+  },
+  "70308": {
+    "zh": "<UIForeground>F201F6</UIForeground><UIGlow>F201F7</UIGlow>特殊规则： 职业固定<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n炼金术制药堂的曼德维尔家的工匠已经做好了改良武器的万全准备。"
+  },
+  "70309": {
+    "zh": "乌尔达哈的马丁满心期待着与冒险者的重逢。"
+  },
+  "70310": {
+    "zh": "乌尔达哈的佩·雅恩荻一直站在原地不动。"
+  },
+  "70311": {
+    "zh": "乌尔达哈的佩·雅恩荻继续站在那里一动不动。"
+  },
+  "70312": {
+    "zh": "乌尔达哈的佩·雅恩荻今天也站在那里一动不动。"
+  },
+  "70313": {
+    "zh": "乌尔达哈的马丁看起来有些不安。"
+  },
+  "70314": {
+    "zh": "乌尔达哈的马丁看起来有些不甘心。"
   },
   "70317": {
     "zh": "※本任务是特定期间内的任务。\n\n米·凯特露天剧场的毛绒绒胡子执行委员有事想拜托冒险者。"
