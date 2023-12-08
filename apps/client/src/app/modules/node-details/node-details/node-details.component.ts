@@ -23,6 +23,9 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
+import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { LazyIconPipe } from '../../../pipes/pipes/lazy-icon.pipe';
 
 @Component({
     selector: 'app-node-details',
@@ -30,7 +33,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./node-details.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NgIf, NgSwitch, NgSwitchCase, DbButtonComponent, NgSwitchDefault, NzTagModule, NzToolTipModule, NgFor, AlarmButtonComponent, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, TranslateModule, XivapiIconPipe, WeatherIconPipe, MapNamePipe, LazyRowPipe, I18nPipe, I18nRowPipe, AlarmDisplayPipe]
+  imports: [FlexModule, NgIf, NgSwitch, NgSwitchCase, DbButtonComponent, NgSwitchDefault, NzTagModule, NzToolTipModule, NgFor, AlarmButtonComponent, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, TranslateModule, XivapiIconPipe, WeatherIconPipe, MapNamePipe, LazyRowPipe, I18nPipe, I18nRowPipe, AlarmDisplayPipe, I18nNameComponent, LazyIconPipe]
 })
 export class NodeDetailsComponent {
 
