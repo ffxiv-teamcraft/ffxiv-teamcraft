@@ -525,6 +525,8 @@
     "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
     "Disconnect_patreon": "Disconnect from Patreon",
     "Disconnect_tipeee": "Disconnect from Tipeee",
+    "Supporter_issue": "Your supporter status appears to be having an issue",
+    "Supporter_issue_description": "Your account is linked to Patreon or Tipeee but you still have ads, if you're still a supporter, you might want to disconnect from Patreon/Tipeee in setting and connect again to refresh your status.",
     "Export_settings": "Export settings",
     "Import_settings": "Import settings",
     "Import_successful": "Settings imported",

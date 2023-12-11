@@ -182,6 +182,8 @@ export class AppComponent implements OnInit {
 
   public showDesktopTip = localStorage.getItem('desktop-tip-closed') !== 'true';
 
+  public showSupporterIssueBanner = localStorage.getItem('show-supporter-issue-closed') !== 'true';
+
   UpdaterStatus = UpdaterStatus;
 
   public checkingForUpdate$ = new BehaviorSubject<number>(UpdaterStatus.NO_UPDATE);
