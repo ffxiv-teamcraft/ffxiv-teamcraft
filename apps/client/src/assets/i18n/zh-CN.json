@@ -525,6 +525,8 @@
     "Alarm_groups_before_no_group": "将分组闹钟显示在未分组闹钟之前",
     "Disconnect_patreon": "取消与 Patreon 账号的关联",
     "Disconnect_tipeee": "取消与 Tipeee 账号的关联",
+    "Supporter_issue": "Your supporter status appears to be having an issue",
+    "Supporter_issue_description": "Your account is linked to Patreon or Tipeee but you still have ads, if you're still a supporter, you might want to disconnect from Patreon/Tipeee in setting and connect again to refresh your status.",
     "Export_settings": "导出设置",
     "Import_settings": "导入设置",
     "Import_successful": "设置已导入！",
@@ -810,6 +812,7 @@
       "Crafts": "清单中的制品",
       "Toggle_overlay": "打开/关闭逐步模式悬浮窗",
       "Empty_map": "当前地图没有需要采集或者兑换的物品，该清单中最近的地图是{{closest}}",
+      "Only_crafts_remaining": "Everything has been gathered for this list, only crafts remain.",
       "Unknown_map": "未知地图，请更换地图以检测数据",
       "No_list": "未选择列表, 请在主窗口中打开一个列表, 以便悬浮窗如期工作。",
       "Others": "其他"
