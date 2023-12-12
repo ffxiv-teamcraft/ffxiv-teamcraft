@@ -4,7 +4,7 @@ import { List } from '../../../modules/list/model/list';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { debounceTime, filter, first, map, mergeMap, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import {
   NameQuestionPopupComponent
 } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
@@ -19,16 +19,42 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import {
   DeleteMultipleListsPopupComponent
 } from '../delete-multiple-lists-popup/delete-multiple-lists-popup.component';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, CdkDropList, CdkDrag } from '@angular/cdk/drag-drop';
 import { ListAggregate } from '../../../modules/list-aggregate/model/list-aggregate';
 import { ListAggregatesFacade } from '../../../modules/list-aggregate/+state/list-aggregates.facade';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { TeamcraftLinkPipe } from '../../../pipes/pipes/teamcraft-link.pipe';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { WorkshopPanelComponent } from '../../../modules/workshop/workshop-panel/workshop-panel.component';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { ListPanelComponent } from '../../../modules/list/list-panel/list-panel.component';
+import { NgForTrackByKeyDirective } from '../../../core/track-by/ng-for-track-by-key.directive';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { FormsModule } from '@angular/forms';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { RouterLink } from '@angular/router';
+import { TutorialStepDirective } from '../../../core/tutorial/tutorial-step.directive';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-lists',
-  templateUrl: './lists.component.html',
-  styleUrls: ['./lists.component.less']
+    selector: 'app-lists',
+    templateUrl: './lists.component.html',
+    styleUrls: ['./lists.component.less'],
+    standalone: true,
+    imports: [NgIf, PageLoaderComponent, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, TutorialStepDirective, RouterLink, NzSwitchModule, FormsModule, NzAlertModule, NzInputModule, NzDividerModule, NgFor, NgForTrackByKeyDirective, ListPanelComponent, CdkDropList, CdkDrag, NzEmptyModule, NzListModule, NzTagModule, ClipboardDirective, NzPopconfirmModule, WorkshopPanelComponent, NzCollapseModule, AsyncPipe, TranslateModule, TeamcraftLinkPipe]
 })
 export class ListsComponent {
 

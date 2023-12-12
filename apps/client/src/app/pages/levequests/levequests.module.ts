@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListModule } from '../../modules/list/list.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { PipesModule } from '../../pipes/pipes.module';
 import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 import { CoreModule } from '../../core/core.module';
@@ -18,7 +18,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 import { NzProgressModule } from 'ng-zorro-antd/progress';
 
 const routes: Routes = [
@@ -30,30 +30,25 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
+    imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-
     CoreModule,
     ListModule,
     TranslateModule,
     FullpageMessageModule,
-    PageLoaderModule,
     PipesModule,
     SettingsModule,
     ListPickerModule,
     ProgressPopupModule,
     MapModule,
     ItemIconModule,
-
-    AntdSharedModule,
     NzProgressModule,
-
-    RouterModule.forChild(routes)
-  ],
-  declarations: [LevequestsComponent]
+    RouterModule.forChild(routes),
+    LevequestsComponent
+]
 })
 export class LevequestsModule {
 }

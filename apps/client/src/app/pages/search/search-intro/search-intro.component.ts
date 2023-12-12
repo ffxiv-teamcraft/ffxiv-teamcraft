@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { Database, objectVal, ref } from '@angular/fire/database';
 import { GuidesService } from '../../../core/database/guides.service';
@@ -14,6 +14,17 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { first, map, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { cachedFirebaseValue } from '../../../core/rxjs/cached-firebase-value';
+import { NzTypographyModule } from 'ng-zorro-antd/typography';
+import { RouterLink } from '@angular/router';
+import { PirschEventDirective } from '../../../core/analytics/pirsch-event.directive';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NgIf, NgSwitch, NgSwitchCase, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
 
 interface FeatureEntry {
   link: string;
@@ -23,9 +34,11 @@ interface FeatureEntry {
 }
 
 @Component({
-  selector: 'app-search-intro',
-  templateUrl: './search-intro.component.html',
-  styleUrls: ['./search-intro.component.less']
+    selector: 'app-search-intro',
+    templateUrl: './search-intro.component.html',
+    styleUrls: ['./search-intro.component.less'],
+    standalone: true,
+    imports: [NgIf, NzDividerModule, NzGridModule, NzButtonModule, NzIconModule, NzWaveModule, NzCardModule, NzListModule, NgSwitch, NgSwitchCase, PirschEventDirective, RouterLink, NgFor, NzTypographyModule, AsyncPipe, DecimalPipe, TranslateModule]
 })
 export class SearchIntroComponent {
 

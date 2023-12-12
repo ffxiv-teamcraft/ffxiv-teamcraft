@@ -7,11 +7,23 @@ import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { ActivatedRoute } from '@angular/router';
 import { map, shareReplay } from 'rxjs/operators';
 import { AuthFacade } from '../../../../+state/auth.facade';
+import { CharacterNamePipe } from '../../../../pipes/pipes/character-name.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { PageLoaderComponent } from '../../../../modules/page-loader/page-loader/page-loader.component';
+import { FullpageMessageComponent } from '../../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { RotationPanelComponent } from '../rotation-panel/rotation-panel.component';
+import { FavoriteButtonComponent } from '../../../../modules/favorites/favorite-button/favorite-button.component';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { UserAvatarComponent } from '../../../../modules/user-avatar/user-avatar/user-avatar.component';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-rotation-folder-page',
-  templateUrl: './rotation-folder-page.component.html',
-  styleUrls: ['./rotation-folder-page.component.less']
+    selector: 'app-rotation-folder-page',
+    templateUrl: './rotation-folder-page.component.html',
+    styleUrls: ['./rotation-folder-page.component.less'],
+    standalone: true,
+    imports: [NgIf, NzCardModule, UserAvatarComponent, FlexModule, FavoriteButtonComponent, NgFor, RotationPanelComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule, CharacterNamePipe]
 })
 export class RotationFolderPageComponent {
 

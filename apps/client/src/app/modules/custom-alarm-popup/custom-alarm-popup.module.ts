@@ -7,22 +7,20 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CoreModule } from '../../core/core.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { ItemIconModule } from '../item-icon/item-icon.module';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 
 @NgModule({
-  declarations: [CustomAlarmPopupComponent],
-  imports: [
+    imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
     TranslateModule,
-    AntdSharedModule,
-
     CoreModule,
     PipesModule,
-    ItemIconModule
-  ]
+    ItemIconModule,
+    CustomAlarmPopupComponent
+]
 })
 export class CustomAlarmPopupModule {
 }

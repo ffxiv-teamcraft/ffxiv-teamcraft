@@ -1,6 +1,6 @@
-import { DataType, Drop } from '@ffxiv-teamcraft/types';
+import { DataType, Drop, Vector2 } from '@ffxiv-teamcraft/types';
 import { AbstractItemDetailsExtractor } from './abstract-item-details-extractor';
-import { uniqBy } from 'lodash';
+import { max, min, uniqBy } from 'lodash';
 import { monsterDrops } from '@ffxiv-teamcraft/data/handmade/monster-drops';
 
 export class DropsExtractor extends AbstractItemDetailsExtractor<Drop[]> {
@@ -21,10 +21,12 @@ export class DropsExtractor extends AbstractItemDetailsExtractor<Drop[]> {
           } else {
             const zoneid = this.monsters[monsterId].positions[0]?.zoneid;
             const mapid = this.monsters[monsterId].positions[0]?.map;
+            const avgPosition = this.getAvgPosition(this.monsters[monsterId].positions.filter(p => p.zoneid === zoneid));
             const position = {
               zoneid: zoneid,
-              x: +this.monsters[monsterId].positions[0]?.x,
-              y: +this.monsters[monsterId].positions[0]?.y
+              x: +avgPosition.x,
+              y: +avgPosition.y,
+              radius: avgPosition.radius
             };
             drops.push({
               id: monsterId,
@@ -47,10 +49,12 @@ export class DropsExtractor extends AbstractItemDetailsExtractor<Drop[]> {
         }
         const zoneid = this.monsters[monsterId].positions[0].zoneid;
         const mapid = this.monsters[monsterId].positions[0].map;
+        const avgPosition = this.getAvgPosition(this.monsters[monsterId].positions.filter(p => p.zoneid === zoneid));
         const position = {
           zoneid: zoneid,
-          x: +this.monsters[monsterId].positions[0].x,
-          y: +this.monsters[monsterId].positions[0].y
+          x: +avgPosition.x,
+          y: +avgPosition.y,
+          radius: avgPosition.radius
         };
         return {
           id: +monsterId,
@@ -62,6 +66,23 @@ export class DropsExtractor extends AbstractItemDetailsExtractor<Drop[]> {
       })
     );
     return uniqBy(drops, 'id');
+  }
+
+  getAvgPosition(coords: Vector2[]): Vector2 & { radius: number } {
+    const amplitude = (this.getAmplitude(coords, 'x') + this.getAmplitude(coords, 'y')) / 2;
+    return {
+      x: this.avgAxis(coords, 'x'),
+      y: this.avgAxis(coords, 'y'),
+      radius: Math.min((amplitude * 41) || 100, 600)
+    };
+  }
+
+  private getAmplitude(data: Vector2[], axis: keyof Vector2): number {
+    return max(data.map(r => r[axis])) - min(data.map(r => r[axis]));
+  }
+
+  private avgAxis(data: Vector2[], axis: keyof Vector2): number {
+    return data.reduce((acc, row) => row[axis] + acc, 0) / data.length;
   }
 
   getDataType(): DataType {

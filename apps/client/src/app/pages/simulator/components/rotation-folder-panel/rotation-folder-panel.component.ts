@@ -8,7 +8,7 @@ import { AuthFacade } from '../../../../+state/auth.facade';
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { PermissionsBoxComponent } from '../../../../modules/permissions/permissions-box/permissions-box.component';
 import { RotationFoldersFacade } from '../../../../modules/rotation-folders/+state/rotation-folders.facade';
@@ -18,13 +18,30 @@ import { CustomLink } from '../../../../core/database/custom-links/custom-link';
 import { FolderAdditionPickerComponent } from '../../../../modules/folder-addition-picker/folder-addition-picker/folder-addition-picker.component';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { PermissionsController } from '../../../../core/database/permissions-controller';
-import { CdkDragDrop } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, CdkDropList, CdkDrag } from '@angular/cdk/drag-drop';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { FavoriteButtonComponent } from '../../../../modules/favorites/favorite-button/favorite-button.component';
+import { ClipboardDirective } from '../../../../core/clipboard.directive';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { RouterLink } from '@angular/router';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { RotationPanelComponent } from '../rotation-panel/rotation-panel.component';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-rotation-folder-panel',
-  templateUrl: './rotation-folder-panel.component.html',
-  styleUrls: ['./rotation-folder-panel.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-rotation-folder-panel',
+    templateUrl: './rotation-folder-panel.component.html',
+    styleUrls: ['./rotation-folder-panel.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, NzCollapseModule, CdkDropList, FlexModule, NgFor, CdkDrag, RotationPanelComponent, NzGridModule, NzButtonModule, NzToolTipModule, RouterLink, NzIconModule, NzWaveModule, ClipboardDirective, FavoriteButtonComponent, NzPopconfirmModule, NzDropDownModule, NzMenuModule, AsyncPipe, TranslateModule]
 })
 export class RotationFolderPanelComponent {
 

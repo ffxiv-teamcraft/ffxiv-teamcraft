@@ -5,8 +5,9 @@ import { UserService } from '../../core/database/user.service';
 import { UserLevel } from '../../model/other/user-level';
 
 @Pipe({
-  name: 'userLevel',
-  pure: true
+    name: 'userLevel',
+    pure: true,
+    standalone: true
 })
 export class UserLevelPipe implements PipeTransform {
 

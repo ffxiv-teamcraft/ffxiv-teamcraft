@@ -9,11 +9,24 @@ import { RotationFoldersFacade } from '../../rotation-folders/+state/rotation-fo
 import { BehaviorSubject, combineLatest } from 'rxjs';
 import { CraftingRotationsFolder } from '../../../model/other/crafting-rotations-folder';
 import { Craft } from '@ffxiv-teamcraft/simulator';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { FormsModule } from '@angular/forms';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { RouterLink } from '@angular/router';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-rotation-picker-drawer',
-  templateUrl: './rotation-picker-drawer.component.html',
-  styleUrls: ['./rotation-picker-drawer.component.less']
+    selector: 'app-rotation-picker-drawer',
+    templateUrl: './rotation-picker-drawer.component.html',
+    styleUrls: ['./rotation-picker-drawer.component.less'],
+    standalone: true,
+    imports: [NgIf, NzButtonModule, RouterLink, NzIconModule, NzDividerModule, NzInputModule, FormsModule, FlexModule, NzListModule, NzToolTipModule, NgFor, AsyncPipe, DecimalPipe, TranslateModule]
 })
 export class RotationPickerDrawerComponent {
 

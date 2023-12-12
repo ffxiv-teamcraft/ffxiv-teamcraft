@@ -2,13 +2,25 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 import { CraftingAction, Simulation, StepState } from '@ffxiv-teamcraft/simulator';
 import { SimulationService } from '../../../../core/simulation/simulation.service';
 import { SettingsService } from '../../../../modules/settings/settings.service';
-import { NzContextMenuService, NzDropdownMenuComponent } from 'ng-zorro-antd/dropdown';
+import { NzContextMenuService, NzDropdownMenuComponent, NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { XivapiIconPipe } from '../../../../pipes/pipes/xivapi-icon.pipe';
+import { AbsolutePipe } from '../../../../pipes/pipes/absolute.pipe';
+import { ActionIconPipe } from '../../../../pipes/pipes/action-icon.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { ExtendedModule } from '@angular/flex-layout/extended';
+import { XivapiActionTooltipDirective } from '../../../../modules/tooltip/xivapi-action-tooltip/xivapi-action-tooltip.directive';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NgIf, NgClass, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-action',
-  templateUrl: './action.component.html',
-  styleUrls: ['./action.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-action',
+    templateUrl: './action.component.html',
+    styleUrls: ['./action.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, NzBadgeModule, XivapiActionTooltipDirective, NgClass, ExtendedModule, NzDropDownModule, NzMenuModule, NgFor, NzButtonModule, TranslateModule, ActionIconPipe, AbsolutePipe, XivapiIconPipe]
 })
 export class ActionComponent {
 

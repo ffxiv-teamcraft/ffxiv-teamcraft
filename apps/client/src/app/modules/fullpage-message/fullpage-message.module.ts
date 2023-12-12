@@ -4,12 +4,12 @@ import { FullpageMessageComponent } from './fullpage-message/fullpage-message.co
 import { PipesModule } from '../../pipes/pipes.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    PipesModule
-  ],
-  declarations: [FullpageMessageComponent],
-  exports: [FullpageMessageComponent]
+    imports: [
+        CommonModule,
+        PipesModule,
+        FullpageMessageComponent
+    ],
+    exports: [FullpageMessageComponent]
 })
 export class FullpageMessageModule {
 }

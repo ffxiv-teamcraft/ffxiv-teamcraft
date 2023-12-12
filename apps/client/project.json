@@ -54,14 +54,8 @@
           },
           "apps/client/src/oembed.json"
         ],
-        "styles": [
-          "apps/client/src/cdk.less",
-          "apps/client/src/styles.less",
-          "apps/client/src/theme.less"
-        ],
-        "scripts": [
-          "node_modules/marked/marked.min.js"
-        ]
+        "styles": ["apps/client/src/cdk.less", "apps/client/src/styles.less", "apps/client/src/theme.less"],
+        "scripts": ["node_modules/marked/marked.min.js"]
       },
       "configurations": {
         "dev": {
@@ -247,16 +241,13 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "client:build"
+        "buildTarget": "client:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/client/**/*.ts",
-          "apps/client/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/client/**/*.ts", "apps/client/**/*.html"]
       }
     },
     "server": {
@@ -286,7 +277,7 @@
       "defaultConfiguration": ""
     },
     "serve-ssr": {
-      "executor": "@nguniversal/builders:ssr-dev-server",
+      "executor": "@angular-devkit/build-angular:ssr-dev-server",
       "options": {
         "browserTarget": "client:build",
         "serverTarget": "client:server"
@@ -299,13 +290,11 @@
       }
     },
     "prerender": {
-      "executor": "@nguniversal/builders:prerender",
+      "executor": "@angular-devkit/build-angular:prerender",
       "options": {
         "browserTarget": "client:build:production",
         "serverTarget": "client:server:production",
-        "routes": [
-          "/"
-        ]
+        "routes": ["/"]
       },
       "configurations": {
         "production": {}
@@ -313,12 +302,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/client"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/client"],
       "options": {
-        "jestConfig": "apps/client/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "apps/client/jest.config.ts"
       }
     }
   },

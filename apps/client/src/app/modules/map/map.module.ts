@@ -12,34 +12,29 @@ import { NavigationMapComponent } from './navigation-map/navigation-map.componen
 import { WorldNavigationMapComponent } from './world-navigation-map/world-navigation-map.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 
 @NgModule({
-  imports: [
+    imports: [
     CommonModule,
     HttpClientModule,
     FlexLayoutModule,
     XivapiClientModule,
     FormsModule,
     RouterModule,
-
-    AntdSharedModule,
     NzToolTipModule,
-
     PipesModule,
-    CoreModule
-  ],
-  declarations: [
+    CoreModule,
     MapPositionComponent,
     MapComponent,
     NavigationMapComponent,
     WorldNavigationMapComponent
-  ],
-  exports: [
-    MapPositionComponent,
-    MapComponent
-  ]
+],
+    exports: [
+        MapPositionComponent,
+        MapComponent
+    ]
 })
 export class MapModule {
 

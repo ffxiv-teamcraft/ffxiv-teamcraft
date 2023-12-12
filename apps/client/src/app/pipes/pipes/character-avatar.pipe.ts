@@ -4,7 +4,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Pipe({
-  name: 'characterAvatar'
+    name: 'characterAvatar',
+    standalone: true
 })
 export class CharacterAvatarPipe implements PipeTransform {
   constructor(private service: LodestoneService) {

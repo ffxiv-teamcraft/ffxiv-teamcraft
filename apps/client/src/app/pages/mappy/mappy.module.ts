@@ -8,7 +8,7 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
 import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { MappyDashboardComponent } from './mappy-dashboard/mappy-dashboard.component';
@@ -37,26 +37,24 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [MappyComponent, MappyDashboardComponent],
-  imports: [
+    imports: [
     CommonModule,
     MapModule,
     FlexLayoutModule,
     FormsModule,
-
     RouterModule.forChild(routes),
     NzDividerModule,
     PipesModule,
     CoreModule,
     NzStatisticModule,
-    PageLoaderModule,
     NzButtonModule,
     NzPopconfirmModule,
     NzTagModule,
     NzCardModule,
     NzEmptyModule,
-    NzSwitchModule
-  ]
+    NzSwitchModule,
+    MappyComponent, MappyDashboardComponent
+]
 })
 export class MappyModule {
 }

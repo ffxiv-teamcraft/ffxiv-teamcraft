@@ -7,11 +7,23 @@ import { combineLatest, Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NgFor, NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-macro-translator',
-  templateUrl: './macro-translator.component.html',
-  styleUrls: ['./macro-translator.component.less']
+    selector: 'app-macro-translator',
+    templateUrl: './macro-translator.component.html',
+    styleUrls: ['./macro-translator.component.less'],
+    standalone: true,
+    imports: [FlexModule, NzRadioModule, FormsModule, NgFor, NgIf, NzInputModule, NzButtonModule, NzWaveModule, NzTabsModule, NzAlertModule, TranslateModule]
 })
 export class MacroTranslatorComponent {
   macroToTranslate: string;

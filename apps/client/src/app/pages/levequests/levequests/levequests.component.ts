@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { BehaviorSubject, combineLatest, concat, Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
@@ -18,6 +18,29 @@ import { IpcService } from '../../../core/electron/ipc.service';
 import { EnvironmentService } from '../../../core/environment.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
+import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { DbButtonComponent } from '../../../core/db-button/db-button.component';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NgFor, NgIf, AsyncPipe, DecimalPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 interface ExpObj {
   exp: number,
@@ -26,9 +49,11 @@ interface ExpObj {
 }
 
 @Component({
-  selector: 'app-levequests',
-  templateUrl: './levequests.component.html',
-  styleUrls: ['./levequests.component.less']
+    selector: 'app-levequests',
+    templateUrl: './levequests.component.html',
+    styleUrls: ['./levequests.component.less'],
+    standalone: true,
+    imports: [FlexModule, NzGridModule, NzSelectModule, FormsModule, NgFor, NgIf, NzButtonModule, NzInputModule, NzIconModule, NzToolTipModule, NzInputNumberModule, NzSwitchModule, NzCheckboxModule, NzWaveModule, PageLoaderComponent, ItemIconComponent, I18nNameComponent, DbButtonComponent, NzProgressModule, FullpageMessageComponent, RouterLink, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, JobUnicodePipe]
 })
 export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 

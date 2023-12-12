@@ -8,12 +8,19 @@ import { observeInput } from '../../../../../core/rxjs/observe-input';
 import { combineLatest } from 'rxjs';
 import { safeCombineLatest } from '../../../../../core/rxjs/safe-combine-latest';
 import { map, switchMap } from 'rxjs/operators';
+import { TranslateModule } from '@ngx-translate/core';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { ExtendedModule } from '@angular/flex-layout/extended';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { NgIf, NgClass, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-vessel-build-column',
-  templateUrl: './vessel-build-column.component.html',
-  styleUrls: ['./vessel-build-column.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-vessel-build-column',
+    templateUrl: './vessel-build-column.component.html',
+    styleUrls: ['./vessel-build-column.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, NzPopoverModule, NgClass, ExtendedModule, FlexModule, NgFor, AsyncPipe, TranslateModule]
 })
 export class VesselBuildColumnComponent {
   @Input() name: string;

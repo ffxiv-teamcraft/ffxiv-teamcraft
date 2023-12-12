@@ -9,11 +9,27 @@ import { FirestoreListStorage } from '../../../core/database/storage/list/firest
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import * as semver from 'semver';
+import { TranslateModule } from '@ngx-translate/core';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { ListPanelComponent } from '../../../modules/list/list-panel/list-panel.component';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { FormsModule } from '@angular/forms';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-community-lists',
-  templateUrl: './community-lists.component.html',
-  styleUrls: ['./community-lists.component.less']
+    selector: 'app-community-lists',
+    templateUrl: './community-lists.component.html',
+    styleUrls: ['./community-lists.component.less'],
+    standalone: true,
+    imports: [FlexModule, NzInputModule, FormsModule, NzSelectModule, NgFor, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, PageLoaderComponent, NgIf, ListPanelComponent, NzPaginationModule, FullpageMessageComponent, AsyncPipe, TranslateModule]
 })
 export class CommunityListsComponent implements OnDestroy {
 

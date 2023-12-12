@@ -5,7 +5,8 @@ import { map } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 
 @Pipe({
-  name: 'characterName'
+    name: 'characterName',
+    standalone: true
 })
 export class CharacterNamePipe implements PipeTransform {
   constructor(private service: LodestoneService, private translate: TranslateService) {

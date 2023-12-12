@@ -1,22 +1,49 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { filter, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { combineLatest, Observable, Subject } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { CommissionStatus } from '../../../modules/commission-board/model/commission-status';
 import { Commission } from '../../../modules/commission-board/model/commission';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { NotificationsFacade } from '../../../modules/notifications/+state/notifications.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
+import { CharacterNamePipe } from '../../../pipes/pipes/character-name.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { FormsModule } from '@angular/forms';
+import { NzRateModule } from 'ng-zorro-antd/rate';
+import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { UserAvatarComponent } from '../../../modules/user-avatar/user-avatar/user-avatar.component';
+import { UserRatingDisplayComponent } from '../../../modules/commission-board/user-rating-display/user-rating-display.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { NgIf, NgSwitch, NgSwitchCase, NgFor, AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-commission-details',
-  templateUrl: './commission-details.component.html',
-  styleUrls: ['./commission-details.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-commission-details',
+    templateUrl: './commission-details.component.html',
+    styleUrls: ['./commission-details.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, FullpageMessageComponent, NzCardModule, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzDropDownModule, NzMenuModule, NzPopconfirmModule, NgSwitch, NgSwitchCase, NzTagModule, UserRatingDisplayComponent, UserAvatarComponent, NzDividerModule, NzGridModule, ItemIconComponent, NgFor, NzProgressModule, RouterLink, NzRateModule, FormsModule, NzEmptyModule, PageLoaderComponent, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, ItemNamePipe, CharacterNamePipe]
 })
 export class CommissionDetailsComponent extends TeamcraftComponent implements OnInit {
 

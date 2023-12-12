@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { CraftingAction, CraftingActionsRegistry } from '@ffxiv-teamcraft/simulator';
 
 @Pipe({
-  name: 'craftingAction'
+    name: 'craftingAction',
+    standalone: true
 })
 export class CraftingActionPipe implements PipeTransform {
 

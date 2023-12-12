@@ -3,20 +3,30 @@ import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { DataService } from '../../../core/api/data.service';
 import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, pairwise, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SettingsService } from '../../../modules/settings/settings.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
-import { AbstractControl, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-import { I18nName, SearchFilter, SearchResult, SearchType, XivapiPatch } from '@ffxiv-teamcraft/types';
+import { AbstractControl, FormsModule, ReactiveFormsModule, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { I18nName, SearchFilter, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
-import { TranslateService } from '@ngx-translate/core';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
-import * as _ from 'lodash';
-import { isEqual } from 'lodash';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import {
+  AsyncPipe,
+  DecimalPipe,
+  isPlatformBrowser,
+  isPlatformServer,
+  NgFor,
+  NgIf,
+  NgSwitch,
+  NgSwitchCase,
+  NgTemplateOutlet,
+  UpperCasePipe
+} from '@angular/common';
+import { isEqual, uniq } from 'lodash';
 import { stats } from '../../../core/data/sources/stats';
 import { KeysOfType } from '../../../core/tools/key-of-type';
 import { Language } from '../../../core/data/language';
@@ -28,11 +38,47 @@ import { EnvironmentService } from '../../../core/environment.service';
 import { toIndex } from '../../../core/rxjs/to-index';
 import { jobAbbrs } from '@ffxiv-teamcraft/data/handmade/job-abbr-en';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
+import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
+import { XivapiL12nPipe } from '../../../pipes/pipes/xivapi-l12n.pipe';
+import { IfMobilePipe } from '../../../pipes/pipes/if-mobile.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { SearchResultComponent } from '../search-result/search-result.component';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { ItemDetailsBoxComponent } from '../item-details-box/item-details-box.component';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { SearchIntroComponent } from '../search-intro/search-intro.component';
+import { SimpleTabComponent } from '../../../modules/simple-tabset/simple-tab/simple-tab.component';
+import { SimpleTabsetComponent } from '../../../modules/simple-tabset/simple-tabset/simple-tabset.component';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { SearchJobPickerComponent } from '../search-job-picker/search-job-picker.component';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { MouseWheelDirective } from '../../../core/event/mouse-wheel/mouse-wheel.directive';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { TutorialStepDirective } from '../../../core/tutorial/tutorial-step.directive';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.less']
+  styleUrls: ['./search.component.less'],
+  standalone: true,
+  imports: [FlexModule, NzSelectModule, TutorialStepDirective, FormsModule, NgFor, NzSpinModule, NgIf, ReactiveFormsModule, NzButtonModule, NzIconModule, NzInputModule, NgTemplateOutlet, NzWaveModule, NzToolTipModule, ClipboardDirective, NzAutocompleteModule, NzInputNumberModule, MouseWheelDirective, NzCheckboxModule, NzCardModule, NgSwitch, NgSwitchCase, SearchJobPickerComponent, NzGridModule, SimpleTabsetComponent, SimpleTabComponent, SearchIntroComponent, NzRadioModule, NzPopconfirmModule, ItemIconComponent, I18nNameComponent, ItemDetailsBoxComponent, RouterLink, PageLoaderComponent, NzPaginationModule, SearchResultComponent, FullpageMessageComponent, AsyncPipe, UpperCasePipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, IfMobilePipe, XivapiL12nPipe, JobUnicodePipe]
 })
 export class SearchComponent extends TeamcraftComponent implements OnInit {
 
@@ -229,7 +275,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       }
       if (query.length > 0) {
         const searchHistory = JSON.parse(localStorage.getItem('search:history') || '{}');
-        searchHistory[type] = _.uniq([...(searchHistory[type] || []), query]);
+        searchHistory[type] = uniq([...(searchHistory[type] || []), query]);
         localStorage.setItem('search:history', JSON.stringify(searchHistory));
       }
       this.data.setSearchLang(lang);

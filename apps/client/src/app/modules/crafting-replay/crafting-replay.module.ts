@@ -22,34 +22,30 @@ import { CoreModule } from '../../core/core.module';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [ReplaySimulationComponent, CraftingReplayRowComponent],
-  imports: [
-    CommonModule,
-    StoreModule.forFeature(
-      fromCraftingReplay.CRAFTINGREPLAY_FEATURE_KEY,
-      fromCraftingReplay.reducer
-    ),
-    EffectsModule.forFeature([CraftingReplayEffects]),
-    SimulatorModule,
-    PipesModule,
-    NzCardModule,
-    NzButtonModule,
-    NzToolTipModule,
-    NzPopconfirmModule,
-    NzMessageModule,
-    NzIconModule,
-    FlexLayoutModule,
-    TranslateModule,
-    ItemIconModule,
-
-    CoreModule,
-    RouterModule
-  ],
-  providers: [CraftingReplayFacade],
-  exports: [
-    ReplaySimulationComponent,
-    CraftingReplayRowComponent
-  ]
+    imports: [
+        CommonModule,
+        StoreModule.forFeature(fromCraftingReplay.CRAFTINGREPLAY_FEATURE_KEY, fromCraftingReplay.reducer),
+        EffectsModule.forFeature([CraftingReplayEffects]),
+        SimulatorModule,
+        PipesModule,
+        NzCardModule,
+        NzButtonModule,
+        NzToolTipModule,
+        NzPopconfirmModule,
+        NzMessageModule,
+        NzIconModule,
+        FlexLayoutModule,
+        TranslateModule,
+        ItemIconModule,
+        CoreModule,
+        RouterModule,
+        ReplaySimulationComponent, CraftingReplayRowComponent
+    ],
+    providers: [CraftingReplayFacade],
+    exports: [
+        ReplaySimulationComponent,
+        CraftingReplayRowComponent
+    ]
 })
 export class CraftingReplayModule {
 }

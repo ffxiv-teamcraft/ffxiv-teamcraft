@@ -3,8 +3,9 @@ import { fromEvent, Subscription } from 'rxjs';
 import { auditTime, map, startWith } from 'rxjs/operators';
 
 @Pipe({
-  name: 'widthBreakpoints',
-  pure: false
+    name: 'widthBreakpoints',
+    pure: false,
+    standalone: true
 })
 export class WidthBreakpointsPipe<T> implements PipeTransform {
   private currentValue?: T;

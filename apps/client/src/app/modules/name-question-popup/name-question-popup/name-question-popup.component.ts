@@ -1,11 +1,21 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd/modal';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NgIf } from '@angular/common';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-name-question-popup',
-  templateUrl: './name-question-popup.component.html',
-  styleUrls: ['./name-question-popup.component.less']
+    selector: 'app-name-question-popup',
+    templateUrl: './name-question-popup.component.html',
+    styleUrls: ['./name-question-popup.component.less'],
+    standalone: true,
+    imports: [FormsModule, FlexModule, ReactiveFormsModule, NzInputModule, NgIf, NzCheckboxModule, NzToolTipModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
 export class NameQuestionPopupComponent implements OnInit {
 

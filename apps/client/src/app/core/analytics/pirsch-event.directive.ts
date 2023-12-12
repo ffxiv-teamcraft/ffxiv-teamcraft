@@ -3,8 +3,9 @@ import { AnalyticsService } from './analytics.service';
 import { Scalar } from 'pirsch-sdk';
 
 @Directive({
-  // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: '[pirschEvent]'
+    // eslint-disable-next-line @angular-eslint/directive-selector
+    selector: '[pirschEvent]',
+    standalone: true
 })
 export class PirschEventDirective {
 

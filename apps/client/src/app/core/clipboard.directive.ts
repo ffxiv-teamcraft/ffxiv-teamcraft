@@ -6,8 +6,9 @@ import { isObservable, Observable, of } from 'rxjs';
 import { first } from 'rxjs/operators';
 
 @Directive({
-  // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: '[clipboard]'
+    // eslint-disable-next-line @angular-eslint/directive-selector
+    selector: '[clipboard]',
+    standalone: true
 })
 export class ClipboardDirective {
 

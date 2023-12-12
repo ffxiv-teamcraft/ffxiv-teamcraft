@@ -9,12 +9,31 @@ import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { ProbeSource } from '../../model/probe-source';
 import { MetricDisplayComponent } from '../metric-display/metric-display.component';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { I18nPipe } from '../../../../core/i18n.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault, AsyncPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { TutorialStepDirective } from '../../../../core/tutorial/tutorial-step.directive';
+import { NzCardModule } from 'ng-zorro-antd/card';
 
 @Component({
-  selector: 'app-metrics-display-editor',
-  templateUrl: './metrics-display-editor.component.html',
-  styleUrls: ['./metrics-display-editor.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-metrics-display-editor',
+    templateUrl: './metrics-display-editor.component.html',
+    styleUrls: ['./metrics-display-editor.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzCardModule, TutorialStepDirective, FlexModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, NzDividerModule, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NgFor, NgIf, NzCheckboxModule, NgSwitch, NgSwitchCase, NgSwitchDefault, NzInputModule, AsyncPipe, TranslateModule, I18nPipe]
 })
 export class MetricsDisplayEditorComponent {
 

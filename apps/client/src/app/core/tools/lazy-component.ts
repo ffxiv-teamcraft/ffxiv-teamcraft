@@ -3,7 +3,8 @@ import { Subject } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
 
 @Directive({
-  selector: '[appLazyComponent]'
+    selector: '[appLazyComponent]',
+    standalone: true
 })
 export class LazyComponentDirective implements AfterViewInit {
 

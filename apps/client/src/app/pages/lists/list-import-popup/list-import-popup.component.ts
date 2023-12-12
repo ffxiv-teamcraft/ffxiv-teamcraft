@@ -9,11 +9,24 @@ import { Router } from '@angular/router';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { GarlandtoolsGroupLinkParser } from './link-parser/garlandtools-group-link-parser';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { TranslateModule } from '@ngx-translate/core';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { FormsModule } from '@angular/forms';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-list-import-popup',
-  templateUrl: './list-import-popup.component.html',
-  styleUrls: ['./list-import-popup.component.less']
+    selector: 'app-list-import-popup',
+    templateUrl: './list-import-popup.component.html',
+    styleUrls: ['./list-import-popup.component.less'],
+    standalone: true,
+    imports: [NgIf, NzGridModule, NzFormModule, NzInputModule, FormsModule, FlexModule, NzCheckboxModule, NzButtonModule, NzWaveModule, PageLoaderComponent, TranslateModule]
 })
 export class ListImportPopupComponent {
 

@@ -2,8 +2,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Pipe({
-  name: 'xivUIText',
-  pure: true
+    name: 'xivUIText',
+    pure: true,
+    standalone: true
 })
 export class UiTextPipe implements PipeTransform {
   constructor(private sanitizer: DomSanitizer) {

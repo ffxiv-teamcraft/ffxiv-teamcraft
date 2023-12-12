@@ -342,6 +342,17 @@
                       nzCloseable
                       nzType="warning">
             </nz-alert>
+            <ng-container *ngIf="user$ | async as user">
+              <nz-alert *ngIf="!overlay && showSupporterIssueBanner && (user.patreonToken || user.tipeeeToken) && showAd$ | async"
+                        [nzMessage]="'Supporter_issue' | translate"
+                        [nzDescription]="'Supporter_issue_description' | translate"
+                        class="new-version-alert"
+                        nzBanner
+                        nzShowIcon
+                        nzCloseable
+                        nzType="warning">
+              </nz-alert>
+            </ng-container>
             <nz-alert *ngIf="showChildWindowTip && platformService.isDesktop() && !overlay && !childWindow"
                       [nzMessage]="'SETTINGS.Child_windows_title' | translate"
                       [nzDescription]="'SETTINGS.Child_windows_description' | translate"

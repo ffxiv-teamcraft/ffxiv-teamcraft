@@ -8,7 +8,7 @@ import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { CommissionsPageComponent } from './commissions-page/commissions-page.component';
 import { CommissionArchivesComponent } from './commission-archives/commission-archives.component';
 import { CoreModule } from '../../core/core.module';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { CommissionBoardModule } from '../../modules/commission-board/commission-board.module';
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
@@ -40,17 +40,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [CommissionBoardComponent, CommissionsPageComponent, CommissionArchivesComponent],
-  imports: [
+    imports: [
     CommonModule,
     CoreModule,
-
     FlexLayoutModule,
-
     RouterModule.forChild(routes),
-
     NzButtonModule,
-    PageLoaderModule,
     CommissionBoardModule,
     FormsModule,
     NzSelectModule,
@@ -60,8 +55,9 @@ const routes: Routes = [
     NzInputNumberModule,
     NzCheckboxModule,
     NzAlertModule,
-    NzGridModule
-  ]
+    NzGridModule,
+    CommissionBoardComponent, CommissionsPageComponent, CommissionArchivesComponent
+]
 })
 export class CommissionsModule {
 }

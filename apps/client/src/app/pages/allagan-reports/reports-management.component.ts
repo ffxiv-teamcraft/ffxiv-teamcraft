@@ -5,7 +5,8 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { map, shareReplay, switchMap } from 'rxjs/operators';
 
 @Component({
-  template: ''
+    template: '',
+    standalone: true
 })
 export class ReportsManagementComponent extends TeamcraftComponent {
 

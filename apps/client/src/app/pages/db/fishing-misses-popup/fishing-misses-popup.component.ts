@@ -3,15 +3,28 @@ import gql from 'graphql-tag';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { Apollo } from 'apollo-angular';
 import { debounceTime, first, map, shareReplay, switchMap } from 'rxjs/operators';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import * as _ from 'lodash';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { TugNamePipe } from '../../../pipes/pipes/tug-name.pipe';
+import { WeatherIconPipe } from '../../../pipes/pipes/weather-icon.pipe';
+import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-fishing-misses-popup',
-  templateUrl: './fishing-misses-popup.component.html',
-  styleUrls: ['./fishing-misses-popup.component.less']
+    selector: 'app-fishing-misses-popup',
+    templateUrl: './fishing-misses-popup.component.html',
+    styleUrls: ['./fishing-misses-popup.component.less'],
+    standalone: true,
+    imports: [NgIf, NzTableModule, NgFor, FlexModule, ItemIconComponent, NzToolTipModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, XivapiIconPipe, WeatherIconPipe, TugNamePipe]
 })
 export class FishingMissesPopupComponent implements OnInit {
 

@@ -7,7 +7,7 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { AlarmsPageDisplay } from '../../../core/alarms/alarms-page-display';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { filter, first, map, switchMap } from 'rxjs/operators';
 import { AlarmGroupDisplay } from '../../../core/alarms/alarm-group-display';
@@ -25,12 +25,58 @@ import { groupBy } from 'lodash';
 import { AdditionPickerEntry } from '../../../modules/folder-addition-picker/folder-addition-picker/addition-picker-entry';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 import { CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
+import { LazyRowPipe } from '../../../pipes/pipes/lazy-row.pipe';
+import { HooksetActionIdPipe } from '../../../pipes/pipes/hookset-action-id.pipe';
+import { MapNamePipe } from '../../../pipes/pipes/map-name.pipe';
+import { LazyIconPipe } from '../../../pipes/pipes/lazy-icon.pipe';
+import { WeatherIconPipe } from '../../../pipes/pipes/weather-icon.pipe';
+import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
+import { ClosestAetherytePipe } from '../../../pipes/pipes/closest-aetheryte.pipe';
+import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
+import { IfMobilePipe } from '../../../pipes/pipes/if-mobile.pipe';
+import { ActionNamePipe } from '../../../pipes/pipes/action-name.pipe';
+import { ActionIconPipe } from '../../../pipes/pipes/action-icon.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { TimerPipe } from '../../../core/eorzea/timer.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { MapComponent } from '../../../modules/map/map/map.component';
+import { FishingBaitComponent } from '../../../modules/fishing-bait/fishing-bait/fishing-bait.component';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { TimerTooltipDirective } from '../../../core/alarms/timer-tooltip.directive';
+import { DbButtonComponent } from '../../../core/db-button/db-button.component';
+import { MapPositionComponent } from '../../../modules/map/map-position/map-position.component';
+import { GatheringItemUsesComponent } from '../../../modules/node-details/gathering-item-uses/gathering-item-uses.component';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { FormsModule } from '@angular/forms';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { TutorialStepDirective } from '../../../core/tutorial/tutorial-step.directive';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { RouterLink } from '@angular/router';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-alarms-page',
-  templateUrl: './alarms-page.component.html',
-  styleUrls: ['./alarms-page.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-alarms-page',
+    templateUrl: './alarms-page.component.html',
+    styleUrls: ['./alarms-page.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, FlexModule, NzButtonModule, NzToolTipModule, RouterLink, NzIconModule, NzWaveModule, TutorialStepDirective, NzPopconfirmModule, NzSwitchModule, FormsModule, NgTemplateOutlet, CdkDropList, NgFor, NzCollapseModule, CdkDrag, ClipboardDirective, NzDropDownModule, NzMenuModule, FullpageMessageComponent, PageLoaderComponent, NzCardModule, ItemIconComponent, NzAvatarModule, I18nNameComponent, GatheringItemUsesComponent, MapPositionComponent, DbButtonComponent, TimerTooltipDirective, NzPopoverModule, FishingBaitComponent, MapComponent, NzGridModule, AsyncPipe, TranslateModule, I18nPipe, TimerPipe, I18nRowPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, IfMobilePipe, NodeTypeIconPipe, ClosestAetherytePipe, XivapiIconPipe, WeatherIconPipe, LazyIconPipe, MapNamePipe, HooksetActionIdPipe, LazyRowPipe]
 })
 export class AlarmsPageComponent implements OnInit {
 

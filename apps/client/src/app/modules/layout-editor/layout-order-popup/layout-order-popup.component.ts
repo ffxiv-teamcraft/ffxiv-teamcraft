@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { ListLayout } from '../../../core/layout/list-layout';
 import { LayoutRow } from '../../../core/layout/layout-row';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, CdkDropList, CdkDrag } from '@angular/cdk/drag-drop';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-layout-order-popup',
-  templateUrl: './layout-order-popup.component.html',
-  styleUrls: ['./layout-order-popup.component.less']
+    selector: 'app-layout-order-popup',
+    templateUrl: './layout-order-popup.component.html',
+    styleUrls: ['./layout-order-popup.component.less'],
+    standalone: true,
+    imports: [CdkDropList, NgFor, CdkDrag]
 })
 export class LayoutOrderPopupComponent {
 

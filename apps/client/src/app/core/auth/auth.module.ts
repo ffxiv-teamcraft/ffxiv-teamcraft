@@ -19,28 +19,25 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 
 @NgModule({
-  imports: [
-    CommonModule,
-
-    FormsModule,
-    ReactiveFormsModule,
-    TranslateModule,
-
-
-    NzModalModule,
-    NzMessageModule,
-    NzFormModule,
-    NzAlertModule,
-    NzDividerModule,
-    NzAutocompleteModule,
-    NzListModule,
-    NzSpinModule,
-    NzInputModule,
-    NzButtonModule,
-    NzCheckboxModule
-  ],
-  providers: [OauthService],
-  declarations: [RegisterPopupComponent, LoginPopupComponent, CharacterLinkPopupComponent]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        TranslateModule,
+        NzModalModule,
+        NzMessageModule,
+        NzFormModule,
+        NzAlertModule,
+        NzDividerModule,
+        NzAutocompleteModule,
+        NzListModule,
+        NzSpinModule,
+        NzInputModule,
+        NzButtonModule,
+        NzCheckboxModule,
+        RegisterPopupComponent, LoginPopupComponent, CharacterLinkPopupComponent
+    ],
+    providers: [OauthService]
 })
 export class AuthModule {
 }

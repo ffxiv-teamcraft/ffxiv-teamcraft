@@ -12,11 +12,25 @@ import { MateriaService } from '../materia.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { jobAbbrs } from '@ffxiv-teamcraft/data/handmade/job-abbr-en';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { FormsModule } from '@angular/forms';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NgIf, NgFor } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-import-from-pcap-popup',
-  templateUrl: './import-from-pcap-popup.component.html',
-  styleUrls: ['./import-from-pcap-popup.component.less']
+    selector: 'app-import-from-pcap-popup',
+    templateUrl: './import-from-pcap-popup.component.html',
+    styleUrls: ['./import-from-pcap-popup.component.less'],
+    standalone: true,
+    imports: [FlexModule, NgIf, NzGridModule, NzFormModule, NzInputModule, FormsModule, NzSelectModule, NgFor, NzAlertModule, JobUnicodePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class ImportFromPcapPopupComponent extends TeamcraftComponent {
 

@@ -11,17 +11,17 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 
 
 @NgModule({
-  declarations: [CompanyWorkshopTreePopupComponent, CompanyWorkshopTreeButtonComponent],
-  exports: [CompanyWorkshopTreeButtonComponent],
-  imports: [
-    CommonModule,
-    NzButtonModule,
-    NzToolTipModule,
-    TranslateModule,
-    PipesModule,
-    CoreModule,
-    NzModalModule
-  ]
+    exports: [CompanyWorkshopTreeButtonComponent],
+    imports: [
+        CommonModule,
+        NzButtonModule,
+        NzToolTipModule,
+        TranslateModule,
+        PipesModule,
+        CoreModule,
+        NzModalModule,
+        CompanyWorkshopTreePopupComponent, CompanyWorkshopTreeButtonComponent
+    ]
 })
 export class CompanyWorkshopTreeModule {
 }

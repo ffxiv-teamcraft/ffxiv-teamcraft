@@ -11,12 +11,34 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { NpcBreakdownRow } from '../../../model/common/npc-breakdown-row';
+import { LazyRowPipe } from '../../../pipes/pipes/lazy-row.pipe';
+import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
+import { TradeIconPipe } from '../../../pipes/pipes/trade-icon.pipe';
+import { LazyIconPipe } from '../../../pipes/pipes/lazy-icon.pipe';
+import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
+import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { StepByStepRowComponent } from '../step-by-step-row/step-by-step-row.component';
+import { LazyScrollComponent } from '../../lazy-scroll/lazy-scroll/lazy-scroll.component';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { MapPositionComponent } from '../../map/map-position/map-position.component';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NgIf, NgSwitch, NgSwitchCase, NgFor, AsyncPipe, LowerCasePipe } from '@angular/common';
+import { NzCardModule } from 'ng-zorro-antd/card';
 
 @Component({
-  selector: 'app-step-by-step-datatype',
-  templateUrl: './step-by-step-datatype.component.html',
-  styleUrls: ['./step-by-step-datatype.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-step-by-step-datatype',
+    templateUrl: './step-by-step-datatype.component.html',
+    styleUrls: ['./step-by-step-datatype.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzCardModule, NgIf, NzButtonModule, NzWaveModule, NzToolTipModule, NzPopconfirmModule, NzIconModule, NgSwitch, NgSwitchCase, ItemIconComponent, FlexModule, NgFor, MapPositionComponent, NzDividerModule, LazyScrollComponent, StepByStepRowComponent, AsyncPipe, LowerCasePipe, TranslateModule, NodeTypeIconPipe, XivapiIconPipe, LazyIconPipe, TradeIconPipe, JobUnicodePipe, LazyRowPipe]
 })
 export class StepByStepDatatypeComponent {
   DataType = DataType;

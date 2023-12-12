@@ -6,12 +6,24 @@ import { FishContextService } from '../../service/fish-context.service';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { mapIds } from '../../../../core/data/sources/map-ids';
+import { WeatherIconPipe } from '../../../../pipes/pipes/weather-icon.pipe';
+import { XivapiIconPipe } from '../../../../pipes/pipes/xivapi-icon.pipe';
+import { I18nRowPipe } from '../../../../core/i18n/i18n-row.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nPipe } from '../../../../core/i18n.pipe';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NgFor, NgIf, AsyncPipe, DecimalPipe } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzCardModule } from 'ng-zorro-antd/card';
 
 @Component({
-  selector: 'app-fish-weather-transitions',
-  templateUrl: './fish-weather-transitions.component.html',
-  styleUrls: ['./fish-weather-transitions.component.less', '../../common-db.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-fish-weather-transitions',
+    templateUrl: './fish-weather-transitions.component.html',
+    styleUrls: ['./fish-weather-transitions.component.less', '../../common-db.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzCardModule, FlexModule, NgFor, NzButtonModule, NzIconModule, NgIf, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, XivapiIconPipe, WeatherIconPipe]
 })
 export class FishWeatherTransitionsComponent {
   public readonly loading$ = this.fishCtx.weatherTransitionsByFish$.pipe(map((res) => res.loading));

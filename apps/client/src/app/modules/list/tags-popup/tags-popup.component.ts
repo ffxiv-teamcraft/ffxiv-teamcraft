@@ -6,11 +6,21 @@ import { ListsFacade } from '../+state/lists.facade';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { ListController } from '../list-controller';
+import { TranslateModule } from '@ngx-translate/core';
+import { PageLoaderComponent } from '../../page-loader/page-loader/page-loader.component';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-tags-popup',
-  templateUrl: './tags-popup.component.html',
-  styleUrls: ['./tags-popup.component.less']
+    selector: 'app-tags-popup',
+    templateUrl: './tags-popup.component.html',
+    styleUrls: ['./tags-popup.component.less'],
+    standalone: true,
+    imports: [NgIf, FlexModule, NzSelectModule, FormsModule, NgFor, NzButtonModule, NzWaveModule, PageLoaderComponent, AsyncPipe, TranslateModule]
 })
 export class TagsPopupComponent implements OnInit {
 

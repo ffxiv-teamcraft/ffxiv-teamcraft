@@ -4,7 +4,8 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { Observable } from 'rxjs';
 
 @Pipe({
-  name: 'i18nRow'
+    name: 'i18nRow',
+    standalone: true
 })
 export class I18nRowPipe implements PipeTransform {
 

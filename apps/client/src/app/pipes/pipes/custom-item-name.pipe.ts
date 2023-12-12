@@ -4,8 +4,9 @@ import { CustomItemsFacade } from '../../modules/custom-items/+state/custom-item
 import { map } from 'rxjs/operators';
 
 @Pipe({
-  name: 'customItemName',
-  pure: true
+    name: 'customItemName',
+    pure: true,
+    standalone: true
 })
 export class CustomItemNamePipe implements PipeTransform {
   constructor(private facade: CustomItemsFacade) {

@@ -5,7 +5,8 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { mapIds } from '../../core/data/sources/map-ids';
 
 @Pipe({
-  name: 'mapName'
+    name: 'mapName',
+    standalone: true
 })
 export class MapNamePipe implements PipeTransform {
   constructor(private lazyData: LazyDataFacade) {

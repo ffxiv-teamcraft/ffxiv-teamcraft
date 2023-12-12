@@ -8,13 +8,18 @@ import { uniq } from 'lodash';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { TranslateService } from '@ngx-translate/core';
-import { formatNumber } from '@angular/common';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { formatNumber, NgIf } from '@angular/common';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 
 @Component({
-  selector: 'app-bait-breakdown',
-  templateUrl: './bait-breakdown.component.html',
-  styleUrls: ['./bait-breakdown.component.less']
+    selector: 'app-bait-breakdown',
+    templateUrl: './bait-breakdown.component.html',
+    styleUrls: ['./bait-breakdown.component.less'],
+    standalone: true,
+    imports: [NgIf, PageLoaderComponent, NgxEchartsModule, NzEmptyModule, TranslateModule]
 })
 export class BaitBreakdownComponent extends TeamcraftComponent {
   echartsInstance$ = new ReplaySubject<any>();

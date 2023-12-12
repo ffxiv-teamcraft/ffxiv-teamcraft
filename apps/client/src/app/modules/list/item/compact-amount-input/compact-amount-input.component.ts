@@ -7,11 +7,19 @@ import { ProcessedListAggregate } from '../../../list-aggregate/model/processed-
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { ListsFacade } from '../../+state/lists.facade';
 import { SettingsService } from '../../../settings/settings.service';
+import { FormsModule } from '@angular/forms';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-compact-amount-input',
-  templateUrl: './compact-amount-input.component.html',
-  styleUrls: ['./compact-amount-input.component.less']
+    selector: 'app-compact-amount-input',
+    templateUrl: './compact-amount-input.component.html',
+    styleUrls: ['./compact-amount-input.component.less'],
+    standalone: true,
+    imports: [NgIf, NzButtonModule, NzWaveModule, NzIconModule, NzInputNumberModule, FormsModule]
 })
 export class CompactAmountInputComponent extends TeamcraftComponent {
   @Input()

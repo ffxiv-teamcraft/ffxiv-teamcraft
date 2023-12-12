@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -27,11 +27,63 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { LazyItemsDatabasePage } from '@ffxiv-teamcraft/data/model/lazy-items-database-page';
+import { LazyRowPipe } from '../../../pipes/pipes/lazy-row.pipe';
+import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
+import { LazyIconPipe } from '../../../pipes/pipes/lazy-icon.pipe';
+import { IngameStarsPipe } from '../../../pipes/pipes/ingame-stars.pipe';
+import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
+import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
+import { IfMobilePipe } from '../../../pipes/pipes/if-mobile.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { DbCommentsComponent } from '../db-comments/db-comments/db-comments.component';
+import { QuestsComponent } from '../../../modules/item-details/quests/quests.component';
+import { AchievementsComponent } from '../../../modules/item-details/achievements/achievements.component';
+import { MapPositionComponent } from '../../../modules/map/map-position/map-position.component';
+import { VenturesComponent } from '../../../modules/item-details/ventures/ventures.component';
+import { VoyagesComponent } from '../../../modules/item-details/voyages/voyages.component';
+import { VendorsComponent } from '../../../modules/item-details/vendors/vendors.component';
+import { DesynthsComponent } from '../../../modules/item-details/desynth/desynths.component';
+import { ReducedFromComponent } from '../../../modules/item-details/reduced-from/reduced-from.component';
+import { InstancesComponent } from '../../../modules/item-details/instances/instances.component';
+import { GatheredByComponent } from '../../../modules/item-details/gathered-by/gathered-by.component';
+import { MogstationComponent } from '../../../modules/item-details/mogstation/mogstation.component';
+import { FatesComponent } from '../../../modules/item-details/fates/fates.component';
+import { TreasuresComponent } from '../../../modules/item-details/treasures/treasures.component';
+import { TradesComponent } from '../../../modules/item-details/trades/trades.component';
+import { IslandAnimalComponent } from '../../../modules/item-details/island-animal/island-animal.component';
+import { HuntingComponent } from '../../../modules/item-details/hunting/hunting.component';
+import { GardeningComponent } from '../../../modules/item-details/gardening/gardening.component';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { LazyScrollComponent } from '../../../modules/lazy-scroll/lazy-scroll/lazy-scroll.component';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { FishComponent } from '../fish/fish.component';
+import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display/i18n-display.component';
+import { MarketboardIconComponent } from '../../../modules/marketboard/marketboard-icon/marketboard-icon.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { FormsModule } from '@angular/forms';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { DbButtonComponent } from '../../../core/db-button/db-button.component';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { ItemRarityDirective } from '../../../core/item-rarity/item-rarity.directive';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, NgSwitch, NgSwitchCase, NgTemplateOutlet, AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-item',
-  templateUrl: './item.component.html',
-  styleUrls: ['./item.component.less']
+    selector: 'app-item',
+    templateUrl: './item.component.html',
+    styleUrls: ['./item.component.less'],
+    standalone: true,
+    imports: [NgIf, FlexModule, ItemRarityDirective, I18nNameComponent, DbButtonComponent, NzButtonModule, NzInputModule, FormsModule, NzWaveModule, NzToolTipModule, NzIconModule, NgFor, MarketboardIconComponent, RouterLink, I18nDisplayComponent, FishComponent, NzDividerModule, FullpageMessageComponent, NzCardModule, LazyScrollComponent, ItemIconComponent, NzTableModule, NzListModule, NgSwitch, NgSwitchCase, GardeningComponent, HuntingComponent, IslandAnimalComponent, TradesComponent, TreasuresComponent, FatesComponent, MogstationComponent, GatheredByComponent, InstancesComponent, ReducedFromComponent, DesynthsComponent, VendorsComponent, VoyagesComponent, VenturesComponent, MapPositionComponent, AchievementsComponent, QuestsComponent, DbCommentsComponent, NgTemplateOutlet, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, IfMobilePipe, NodeTypeIconPipe, XivapiIconPipe, IngameStarsPipe, LazyIconPipe, JobUnicodePipe, LazyRowPipe]
 })
 export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnDestroy {
   public noData = false;

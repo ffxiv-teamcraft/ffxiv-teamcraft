@@ -14,12 +14,28 @@ import { AlarmsFacade } from '../../../../core/alarms/+state/alarms.facade';
 import { DataType, getItemSource, ItemSource } from '@ffxiv-teamcraft/types';
 import { EorzeanTimeService } from '../../../../core/eorzea/eorzean-time.service';
 import { LayoutRow } from '../../../../core/layout/layout-row';
+import { XivapiIconPipe } from '../../../../pipes/pipes/xivapi-icon.pipe';
+import { CeilPipe } from '../../../../pipes/pipes/ceil.pipe';
+import { ItemNamePipe } from '../../../../pipes/pipes/item-name.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nPipe } from '../../../../core/i18n.pipe';
+import { AlarmButtonComponent } from '../../../alarm-button/alarm-button/alarm-button.component';
+import { CompactAmountInputComponent } from '../compact-amount-input/compact-amount-input.component';
+import { ItemInventoryButtonComponent } from '../../item-inventory-button/item-inventory-button.component';
+import { ItemSourcesDisplayComponent } from '../item-sources-display/item-sources-display.component';
+import { I18nNameComponent } from '../../../../core/i18n/i18n-name/i18n-name.component';
+import { ItemNameClipboardDirective } from '../../../../core/item-name-clipboard.directive';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { ItemIconComponent } from '../../../item-icon/item-icon/item-icon.component';
+import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-compact-item-row',
-  templateUrl: './compact-item-row.component.html',
-  styleUrls: ['./compact-item-row.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-compact-item-row',
+    templateUrl: './compact-item-row.component.html',
+    styleUrls: ['./compact-item-row.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, ItemIconComponent, NzToolTipModule, ItemNameClipboardDirective, I18nNameComponent, ItemSourcesDisplayComponent, ItemInventoryButtonComponent, CompactAmountInputComponent, NgTemplateOutlet, AlarmButtonComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, CeilPipe, XivapiIconPipe]
 })
 export class CompactItemRowComponent extends TeamcraftComponent implements OnInit {
   @Input()

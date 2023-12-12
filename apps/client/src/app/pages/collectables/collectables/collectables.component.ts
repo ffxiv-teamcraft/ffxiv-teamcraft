@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { combineLatest, merge, Observable, Subject } from 'rxjs';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
@@ -11,7 +11,7 @@ import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common';
+import { Location, NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
@@ -19,12 +19,38 @@ import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyDataEntries } from '@ffxiv-teamcraft/types';
+import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
+import { KeysPipe } from '../../../pipes/pipes/keys.pipe';
+import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { AlarmButtonComponent } from '../../../modules/alarm-button/alarm-button/alarm-button.component';
+import { MapPositionComponent } from '../../../modules/map/map-position/map-position.component';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 
 @Component({
   selector: 'app-collectables',
   templateUrl: './collectables.component.html',
   styleUrls: ['./collectables.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [PageLoaderComponent, NgIf, FormsModule, NzFormModule, ReactiveFormsModule, NgFor, NzGridModule, NzButtonModule, NzInputModule, NzToolTipModule, NzWaveModule, NzIconModule, NzTabsModule, NzCollapseModule, FlexModule, NzCheckboxModule, ItemIconComponent, I18nNameComponent, MapPositionComponent, AlarmButtonComponent, NzInputNumberModule, FullpageMessageComponent, I18nPipe, TranslateModule, I18nRowPipe, NodeTypeIconPipe, KeysPipe, JobUnicodePipe, AsyncPipe, DecimalPipe]
 })
 export class CollectablesComponent {
 
@@ -68,13 +94,12 @@ export class CollectablesComponent {
 
   selectedTab$: Observable<number> = merge(this.selectedTabFromRoute$, this.selectedTabFromTabset$);
 
-  constructor(private fb: UntypedFormBuilder, private authFacade: AuthFacade,
+  constructor(fb: UntypedFormBuilder, private authFacade: AuthFacade,
               private lazyData: LazyDataFacade, private rotationPicker: RotationPickerService,
               private listPicker: ListPickerService, private listManager: ListManagerService,
-              private progressService: ProgressPopupService, private notificationService: NzNotificationService,
+              private progressService: ProgressPopupService,
               private listsFacade: ListsFacade, private i18n: I18nToolsService,
-              private router: Router, private activeRoute: ActivatedRoute, private location: Location,
-              private gatheringNodesService: GatheringNodesService, private alarmsFacade: AlarmsFacade) {
+              private router: Router, private activeRoute: ActivatedRoute, private location: Location, private alarmsFacade: AlarmsFacade) {
 
     this.form$ = this.levels$.pipe(
       map(levels => {

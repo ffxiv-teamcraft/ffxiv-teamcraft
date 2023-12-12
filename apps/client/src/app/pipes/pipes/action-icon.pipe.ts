@@ -5,8 +5,9 @@ import { map } from 'rxjs/operators';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 @Pipe({
-  name: 'actionIcon',
-  pure: false
+    name: 'actionIcon',
+    pure: false,
+    standalone: true
 })
 export class ActionIconPipe implements PipeTransform, OnDestroy {
   private static readonly DEFAULT = 'assets/icons/remove_final_appraisal.png';

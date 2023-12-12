@@ -11,18 +11,15 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FullpageMessageModule,
-
-    RouterModule.forChild(routes)
-  ],
-  declarations: [
-    MaintenanceComponent
-  ],
-  providers: [
-    MaintenanceGuard
-  ]
+    imports: [
+        CommonModule,
+        FullpageMessageModule,
+        RouterModule.forChild(routes),
+        MaintenanceComponent
+    ],
+    providers: [
+        MaintenanceGuard
+    ]
 })
 export class MaintenanceModule {
 }

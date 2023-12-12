@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { groupBy } from 'lodash';
 import { BehaviorSubject, combineLatest, interval, Observable } from 'rxjs';
 import { first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
@@ -10,6 +10,26 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { UniversalisService } from '../../../core/api/universalis.service';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
+import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { TimerPipe } from '../../../core/eorzea/timer.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FormsModule } from '@angular/forms';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 
 interface RetainerPriceEntry {
   lowest: number,
@@ -26,10 +46,12 @@ interface RetainerPrices {
 const LS_KEY = 'retainers:prices';
 
 @Component({
-  selector: 'app-retainers',
-  templateUrl: './retainers.component.html',
-  styleUrls: ['./retainers.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-retainers',
+    templateUrl: './retainers.component.html',
+    styleUrls: ['./retainers.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [PageLoaderComponent, FlexModule, NzSwitchModule, FormsModule, NzButtonModule, NzWaveModule, NgIf, NgTemplateOutlet, NgFor, NzDividerModule, NzToolTipModule, NzIconModule, NzCollapseModule, NzGridModule, ItemIconComponent, NzTagModule, FullpageMessageComponent, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, ItemNamePipe, JobUnicodePipe]
 })
 export class RetainersComponent {
 

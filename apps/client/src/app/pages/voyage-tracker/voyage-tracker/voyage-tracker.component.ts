@@ -4,16 +4,32 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { FreeCompanyWorkshopFacade } from '../../../modules/free-company-workshops/+state/free-company-workshop.facade';
 import { BehaviorSubject } from 'rxjs';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { SectorExploration } from '../../../modules/free-company-workshops/model/sector-exploration';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { VesselListComponent } from './vessel-list/vessel-list.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { FormsModule } from '@angular/forms';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NgIf, NgFor, AsyncPipe, KeyValuePipe } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-voyage-tracker',
-  templateUrl: './voyage-tracker.component.html',
-  styleUrls: ['./voyage-tracker.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-voyage-tracker',
+    templateUrl: './voyage-tracker.component.html',
+    styleUrls: ['./voyage-tracker.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FlexModule, NgIf, NzButtonModule, NzWaveModule, NzSwitchModule, FormsModule, PageLoaderComponent, NgFor, NzCollapseModule, NzGridModule, NzToolTipModule, NzPopconfirmModule, NzIconModule, VesselListComponent, FullpageMessageComponent, AsyncPipe, KeyValuePipe, TranslateModule]
 })
 export class VoyageTrackerComponent extends TeamcraftComponent {
   isLoading$ = new BehaviorSubject(false);

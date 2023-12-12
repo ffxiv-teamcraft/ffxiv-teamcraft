@@ -6,19 +6,18 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { UserAvatarModule } from '../user-avatar/user-avatar.module';
 import { CommentsService } from './comments.service';
 import { FormsModule } from '@angular/forms';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 
 @NgModule({
-  imports: [
+    imports: [
     CommonModule,
-    AntdSharedModule,
     TranslateModule,
     FlexLayoutModule,
     UserAvatarModule,
-    FormsModule
-  ],
-  declarations: [CommentsPopupComponent],
-  exports: [CommentsPopupComponent]
+    FormsModule,
+    CommentsPopupComponent
+],
+    exports: [CommentsPopupComponent]
 })
 export class CommentsModule {
 }

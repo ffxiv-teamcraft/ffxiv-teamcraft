@@ -14,8 +14,9 @@ import { DatePipe } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 
 @Directive({
-  // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: '[timerTooltip]'
+    // eslint-disable-next-line @angular-eslint/directive-selector
+    selector: '[timerTooltip]',
+    standalone: true
 })
 export class TimerTooltipDirective extends NzTooltipDirective implements OnChanges {
 

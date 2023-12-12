@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'nodeTypeIcon'
+    name: 'nodeTypeIcon',
+    standalone: true
 })
 export class NodeTypeIconPipe implements PipeTransform {
   public static icons = [

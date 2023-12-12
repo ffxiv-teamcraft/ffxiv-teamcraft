@@ -8,7 +8,7 @@ import { CoreModule } from '../../core/core.module';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { PipesModule } from '../../pipes/pipes.module';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { CommissionBoardModule } from '../../modules/commission-board/commission-board.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -40,21 +40,17 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [CommissionDetailsComponent, CommissionImportComponent],
-  imports: [
+    imports: [
     CommonModule,
     CoreModule,
     FlexLayoutModule,
     FormsModule,
-
     CommissionBoardModule,
-
     RouterModule.forChild(routes),
     NzCardModule,
     NzGridModule,
     UserAvatarModule,
     PipesModule,
-    PageLoaderModule,
     ItemIconModule,
     NzDividerModule,
     NzTagModule,
@@ -65,8 +61,9 @@ const routes: Routes = [
     NzEmptyModule,
     NzProgressModule,
     NzRateModule,
-    FullpageMessageModule
-  ]
+    FullpageMessageModule,
+    CommissionDetailsComponent, CommissionImportComponent
+]
 })
 export class CommissionModule {
 }

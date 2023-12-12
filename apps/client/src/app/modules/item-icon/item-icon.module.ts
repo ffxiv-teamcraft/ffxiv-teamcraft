@@ -7,16 +7,15 @@ import { RouterModule } from '@angular/router';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    SettingsModule,
-    RouterModule,
-
-    TooltipModule,
-    NzSkeletonModule
-  ],
-  declarations: [ItemIconComponent],
-  exports: [ItemIconComponent]
+    imports: [
+        CommonModule,
+        SettingsModule,
+        RouterModule,
+        TooltipModule,
+        NzSkeletonModule,
+        ItemIconComponent
+    ],
+    exports: [ItemIconComponent]
 })
 export class ItemIconModule {
 }

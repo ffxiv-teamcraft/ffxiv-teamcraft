@@ -12,19 +12,16 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FullpageMessageModule,
-    TranslateModule,
-
-    RouterModule.forChild(routes)
-  ],
-  declarations: [
-    VersionLockComponent
-  ],
-  providers: [
-    VersionLockGuard
-  ]
+    imports: [
+        CommonModule,
+        FullpageMessageModule,
+        TranslateModule,
+        RouterModule.forChild(routes),
+        VersionLockComponent
+    ],
+    providers: [
+        VersionLockGuard
+    ]
 })
 export class VersionLockModule {
 }

@@ -7,7 +7,7 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { DataType, FishTrainStop, GatheringNode, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
 import { BehaviorSubject, combineLatest, of, Subscription, timer } from 'rxjs';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { FishDataService } from '../../db/service/fish-data.service';
 import { findLastIndex } from 'lodash';
 import { PlatformService } from '../../../core/tools/platform.service';
@@ -26,11 +26,58 @@ import { TrainFishingReport } from '../../../core/data-reporting/fishing-report'
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { PushNotificationsService } from '../../../core/push-notifications.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { HooksetActionIdPipe } from '../../../pipes/pipes/hookset-action-id.pipe';
+import { MapNamePipe } from '../../../pipes/pipes/map-name.pipe';
+import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
+import { IfMobilePipe } from '../../../pipes/pipes/if-mobile.pipe';
+import { ActionNamePipe } from '../../../pipes/pipes/action-name.pipe';
+import { ActionIconPipe } from '../../../pipes/pipes/action-icon.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { TimerPipe } from '../../../core/eorzea/timer.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { FishSizeChartComponent } from '../fish-size-chart/fish-size-chart.component';
+import { BaitBreakdownComponent } from '../bait-breakdown/bait-breakdown.component';
+import { FishBreakdownComponent } from '../fish-breakdown/fish-breakdown.component';
+import { ContributionPerPassengerComponent } from '../contribution-per-passenger/contribution-per-passenger.component';
+import { NzStatisticModule } from 'ng-zorro-antd/statistic';
+import { MapPositionComponent } from '../../../modules/map/map-position/map-position.component';
+import { NgForTrackByIdDirective } from '../../../core/track-by/ng-for-track-by-id.directive';
+import { NzStepsModule } from 'ng-zorro-antd/steps';
+import { NzSliderModule } from 'ng-zorro-antd/slider';
+import { NzAffixModule } from 'ng-zorro-antd/affix';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { UserAvatarComponent } from '../../../modules/user-avatar/user-avatar/user-avatar.component';
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
+import { MapComponent } from '../../../modules/map/map/map.component';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FishingBaitComponent } from '../../../modules/fishing-bait/fishing-bait/fishing-bait.component';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe, LowerCasePipe, DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-fish-train',
-  templateUrl: './fish-train.component.html',
-  styleUrls: ['./fish-train.component.less']
+    selector: 'app-fish-train',
+    templateUrl: './fish-train.component.html',
+    styleUrls: ['./fish-train.component.less'],
+    standalone: true,
+    imports: [NgIf, FullpageMessageComponent, NzCardModule, ItemIconComponent, I18nNameComponent, NzToolTipModule, NzDividerModule, NzGridModule, FishingBaitComponent, NzButtonModule, NzWaveModule, NzPopoverModule, NzSpaceModule, ClipboardDirective, MapComponent, NzPageHeaderModule, UserAvatarComponent, NzIconModule, NzInputModule, NzSelectModule, FormsModule, NgFor, NzTagModule, NzSwitchModule, NzPopconfirmModule, NzAlertModule, NzAffixModule, NzSliderModule, NzStepsModule, NgForTrackByIdDirective, MapPositionComponent, NgTemplateOutlet, NzStatisticModule, ContributionPerPassengerComponent, FishBreakdownComponent, BaitBreakdownComponent, FishSizeChartComponent, PageLoaderComponent, AsyncPipe, LowerCasePipe, DatePipe, TranslateModule, I18nPipe, TimerPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, IfMobilePipe, XivapiIconPipe, MapNamePipe, HooksetActionIdPipe]
 })
 export class FishTrainComponent extends TeamcraftComponent {
 

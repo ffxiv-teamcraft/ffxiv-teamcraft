@@ -10,7 +10,7 @@ import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 
 
 const routes: Routes = [
@@ -22,21 +22,17 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ResetTimersComponent],
-  imports: [
+    imports: [
     CommonModule,
     FormsModule,
     FlexLayoutModule,
-
     RouterModule.forChild(routes),
-
     TranslateModule,
-
     SettingsModule,
-    AntdSharedModule,
     PipesModule,
-    CoreModule
-  ]
+    CoreModule,
+    ResetTimersComponent
+]
 })
 export class ResetTimersModule {
 }

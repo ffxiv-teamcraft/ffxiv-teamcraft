@@ -4,18 +4,22 @@ import { map, switchMap } from 'rxjs/operators';
 import { ProbeReport } from '../../model/probe-report';
 import { ProbeSource } from '../../model/probe-source';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { SettingsService } from '../../../settings/settings.service';
 import { Observable } from 'rxjs';
 import { safeCombineLatest } from '../../../../core/rxjs/safe-combine-latest';
 import { EChartsOption } from 'echarts';
-import { formatNumber } from '@angular/common';
+import { formatNumber, NgIf, AsyncPipe } from '@angular/common';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 @Component({
-  selector: 'app-pie-chart',
-  templateUrl: './pie-chart.component.html',
-  styleUrls: ['./pie-chart.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-pie-chart',
+    templateUrl: './pie-chart.component.html',
+    styleUrls: ['./pie-chart.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, NgxEchartsModule, NzEmptyModule, AsyncPipe, TranslateModule]
 })
 export class PieChartComponent extends AbstractMetricDisplayComponent {
   options$: Observable<EChartsOption> = this.data$.pipe(

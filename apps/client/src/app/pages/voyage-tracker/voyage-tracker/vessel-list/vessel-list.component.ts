@@ -1,14 +1,19 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { VesselType } from '../../../../modules/free-company-workshops/model/vessel-type';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { Submarine } from '../../../../modules/free-company-workshops/model/submarine';
 import { Airship } from '../../../../modules/free-company-workshops/model/airship';
+import { VesselRowComponent } from '../vessel-row/vessel-row.component';
+import { NgTemplateOutlet, NgFor, NgIf } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-vessel-list',
-  templateUrl: './vessel-list.component.html',
-  styleUrls: ['./vessel-list.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-vessel-list',
+    templateUrl: './vessel-list.component.html',
+    styleUrls: ['./vessel-list.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FlexModule, NgTemplateOutlet, NgFor, NgIf, VesselRowComponent, TranslateModule]
 })
 export class VesselListComponent {
   @Input() airships: Airship[];

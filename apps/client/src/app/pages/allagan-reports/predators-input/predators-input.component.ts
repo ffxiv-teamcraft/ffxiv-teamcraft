@@ -1,16 +1,30 @@
 import { ChangeDetectionStrategy, Component, forwardRef, Input } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NgFor, NgIf } from '@angular/common';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-predators-input',
-  templateUrl: './predators-input.component.html',
-  styleUrls: ['./predators-input.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => PredatorsInputComponent),
-    multi: true
-  }]
+    selector: 'app-predators-input',
+    templateUrl: './predators-input.component.html',
+    styleUrls: ['./predators-input.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [{
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => PredatorsInputComponent),
+            multi: true
+        }],
+    standalone: true,
+    imports: [FlexModule, NzSelectModule, FormsModule, NgFor, NgIf, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, ItemIconComponent, I18nNameComponent, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class PredatorsInputComponent implements ControlValueAccessor {
 

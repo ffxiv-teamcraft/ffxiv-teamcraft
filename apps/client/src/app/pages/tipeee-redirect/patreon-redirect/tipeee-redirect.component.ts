@@ -6,11 +6,15 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
 import { UserService } from '../../../core/database/user.service';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-tipeee-redirect',
-  templateUrl: './tipeee-redirect.component.html',
-  styleUrls: ['./tipeee-redirect.component.less']
+    selector: 'app-tipeee-redirect',
+    templateUrl: './tipeee-redirect.component.html',
+    styleUrls: ['./tipeee-redirect.component.less'],
+    standalone: true,
+    imports: [NgIf, NzAlertModule]
 })
 export class TipeeeRedirectComponent {
 

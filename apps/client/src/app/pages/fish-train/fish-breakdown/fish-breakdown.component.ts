@@ -8,13 +8,20 @@ import { isEqual, uniq } from 'lodash';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { TranslateService } from '@ngx-translate/core';
-import { formatNumber } from '@angular/common';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { formatNumber, NgIf, AsyncPipe } from '@angular/common';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { FormsModule } from '@angular/forms';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 
 @Component({
-  selector: 'app-fish-breakdown',
-  templateUrl: './fish-breakdown.component.html',
-  styleUrls: ['./fish-breakdown.component.less']
+    selector: 'app-fish-breakdown',
+    templateUrl: './fish-breakdown.component.html',
+    styleUrls: ['./fish-breakdown.component.less'],
+    standalone: true,
+    imports: [NgIf, PageLoaderComponent, NzSwitchModule, FormsModule, NgxEchartsModule, NzEmptyModule, AsyncPipe, TranslateModule]
 })
 export class FishBreakdownComponent extends TeamcraftComponent {
   echartsInstance$ = new ReplaySubject<any>();

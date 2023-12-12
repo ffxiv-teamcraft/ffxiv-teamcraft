@@ -7,11 +7,29 @@ import { ListsFacade } from '../../list/+state/lists.facade';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { InventoryService } from '../../inventory/inventory.service';
 import { ListController } from '../../list/list-controller';
+import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
+import { CeilPipe } from '../../../pipes/pipes/ceil.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { InventoryPositionComponent } from '../../inventory/inventory-position/inventory-position.component';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-relationships',
-  templateUrl: './relationships.component.html',
-  styleUrls: ['./relationships.component.less']
+    selector: 'app-relationships',
+    templateUrl: './relationships.component.html',
+    styleUrls: ['./relationships.component.less'],
+    standalone: true,
+    imports: [NgIf, FlexModule, NgFor, ItemIconComponent, I18nNameComponent, NzTagModule, NzToolTipModule, InventoryPositionComponent, NzButtonModule, NzWaveModule, NzIconModule, NzListModule, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, CeilPipe, XivapiIconPipe]
 })
 export class RelationshipsComponent implements OnInit {
 

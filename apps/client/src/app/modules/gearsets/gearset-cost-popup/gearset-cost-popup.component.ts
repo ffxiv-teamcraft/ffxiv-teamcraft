@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { DataType, Extracts, getExtract, getItemSource } from '@ffxiv-teamcraft/types';
 import { TradeSource } from '../../list/model/trade-source';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { TradeEntry } from '../../list/model/trade-entry';
 import { GearsetProgression } from '../../../model/gearset/gearset-progression';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
@@ -11,11 +11,20 @@ import { map, switchMap } from 'rxjs/operators';
 import { combineLatest, Observable } from 'rxjs';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { observeInput } from '../../../core/rxjs/observe-input';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { PageLoaderComponent } from '../../page-loader/page-loader/page-loader.component';
+import { FullpageMessageComponent } from '../../fullpage-message/fullpage-message/fullpage-message.component';
+import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-gearset-cost-popup',
-  templateUrl: './gearset-cost-popup.component.html',
-  styleUrls: ['./gearset-cost-popup.component.less']
+    selector: 'app-gearset-cost-popup',
+    templateUrl: './gearset-cost-popup.component.html',
+    styleUrls: ['./gearset-cost-popup.component.less'],
+    standalone: true,
+    imports: [NgIf, NgFor, FlexModule, ItemIconComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, ItemNamePipe, I18nPipe, TranslateModule]
 })
 export class GearsetCostPopupComponent {
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { SettingsService } from '../settings.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -28,11 +28,37 @@ import { SoundNotificationType } from '../../../core/sound-notification/sound-no
 import { SoundNotificationService } from '../../../core/sound-notification/sound-notification.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { Auth, sendPasswordResetEmail } from '@angular/fire/auth';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { AetheryteNamePipe } from '../../../pipes/pipes/aetheryte-name.pipe';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzSliderModule } from 'ng-zorro-antd/slider';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { ColorPickerModule } from 'ngx-color-picker';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NgFor, NgIf, NgTemplateOutlet, AsyncPipe, UpperCasePipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
 
 @Component({
-  selector: 'app-settings-popup',
-  templateUrl: './settings-popup.component.html',
-  styleUrls: ['./settings-popup.component.less']
+    selector: 'app-settings-popup',
+    templateUrl: './settings-popup.component.html',
+    styleUrls: ['./settings-popup.component.less'],
+    standalone: true,
+    imports: [NzTabsModule, FlexModule, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NgFor, NgIf, NzCheckboxModule, NzDividerModule, ColorPickerModule, NzButtonModule, NzWaveModule, NzSwitchModule, NzInputNumberModule, NzIconModule, NzUploadModule, NzPopconfirmModule, NzToolTipModule, NzInputModule, NzSliderModule, NgTemplateOutlet, NzCardModule, AsyncPipe, UpperCasePipe, TranslateModule, AetheryteNamePipe, I18nPipe, I18nRowPipe]
 })
 export class SettingsPopupComponent {
 

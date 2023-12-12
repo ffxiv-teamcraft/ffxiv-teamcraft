@@ -8,7 +8,8 @@ import { map, switchMap } from 'rxjs/operators';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 @Pipe({
-  name: 'stat'
+    name: 'stat',
+    standalone: true
 })
 export class StatPipe implements PipeTransform {
 

@@ -2,23 +2,39 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CraftingReplayFacade } from '../../../modules/crafting-replay/+state/crafting-replay.facade';
 import { map, startWith, switchMap } from 'rxjs/operators';
 import { CraftingReplayService } from '../../../modules/crafting-replay/crafting-replay.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { CraftingReplay } from '../../../modules/crafting-replay/model/crafting-replay';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { FoldersFacade } from '../../../modules/folders/+state/folders.facade';
 import { FolderContentType } from '../../../model/folder/folder-content-type';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { CdkDrag, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDrag, moveItemInArray, CdkDropList } from '@angular/cdk/drag-drop';
 import { FolderDisplay } from '../../../model/folder/folder-display';
 import { Folder } from '../../../model/folder/folder';
 import { DataModel } from '../../../core/database/storage/data-model';
+import { CraftingReplayRowComponent } from '../../../modules/crafting-replay/crafting-replay-row/crafting-replay-row.component';
+import { LazyScrollComponent } from '../../../modules/lazy-scroll/lazy-scroll/lazy-scroll.component';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { FolderComponent } from '../../../modules/folders/folder/folder.component';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 
 @Component({
-  selector: 'app-crafting-replays',
-  templateUrl: './crafting-replays.component.html',
-  styleUrls: ['./crafting-replays.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-crafting-replays',
+    templateUrl: './crafting-replays.component.html',
+    styleUrls: ['./crafting-replays.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [PageLoaderComponent, FlexModule, NgIf, NzAlertModule, NzDividerModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, FullpageMessageComponent, CdkDropList, NgFor, CdkDrag, NgTemplateOutlet, FolderComponent, NzPopconfirmModule, LazyScrollComponent, CraftingReplayRowComponent, AsyncPipe, TranslateModule]
 })
 export class CraftingReplaysComponent {
 

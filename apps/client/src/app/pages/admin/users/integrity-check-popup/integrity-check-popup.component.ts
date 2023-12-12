@@ -5,12 +5,21 @@ import { combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { UserService } from '../../../../core/database/user.service';
 import { map, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-integrity-check-popup',
-  templateUrl: './integrity-check-popup.component.html',
-  styleUrls: ['./integrity-check-popup.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-integrity-check-popup',
+    templateUrl: './integrity-check-popup.component.html',
+    styleUrls: ['./integrity-check-popup.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, NgFor, FlexModule, NgSwitch, NgSwitchCase, NzButtonModule, NzIconModule, NgSwitchDefault, NzWaveModule, NzToolTipModule, AsyncPipe, TranslateModule]
 })
 export class IntegrityCheckPopupComponent extends TeamcraftComponent {
 

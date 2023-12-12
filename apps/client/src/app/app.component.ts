@@ -8,7 +8,7 @@ import {
   Injector,
   OnInit,
   PLATFORM_ID,
-  ViewChild
+  ViewChild,
 } from '@angular/core';
 import { environment } from '../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
@@ -38,7 +38,7 @@ import { DirtyFacade } from './core/dirty/+state/dirty.facade';
 import { SeoService } from './core/seo/seo.service';
 import { Theme } from './modules/settings/theme';
 import { DOCUMENT, isPlatformBrowser, isPlatformServer } from '@angular/common';
-import { REQUEST } from '@nguniversal/express-engine/tokens';
+import { REQUEST } from '../express.tokens';
 import * as semver from 'semver';
 import { UniversalisService } from './core/api/universalis.service';
 import { TextQuestionPopupComponent } from './modules/text-question-popup/text-question-popup/text-question-popup.component';
@@ -71,10 +71,9 @@ import { PushNotificationsService } from './core/push-notifications.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {
-
   public overlay = window.location.href.indexOf('?overlay') > -1;
 
   public childWindow = this.ipc.isChildWindow;
@@ -86,24 +85,24 @@ export class AppComponent implements OnInit {
   public availableDateLocales = this.settings.availableLocales;
 
   public pcapStatus$: Observable<NzBadgeStatusType> = this.ipc.pcapStatus$.pipe(
-    map(status => {
+    map((status) => {
       return (<Record<PacketCaptureStatus, NzBadgeStatusType>>{
         [PacketCaptureStatus.STARTING]: 'processing',
         [PacketCaptureStatus.RUNNING]: 'success',
         [PacketCaptureStatus.STOPPED]: 'default',
         [PacketCaptureStatus.ERROR]: 'error',
-        [PacketCaptureStatus.WARNING]: 'warning'
+        [PacketCaptureStatus.WARNING]: 'warning',
       })[status];
     })
   );
 
   public inventoryStatus$: Observable<NzBadgeStatusType> = this.inventoryService.status$.pipe(
-    map(status => {
+    map((status) => {
       return (<Record<InventoryCaptureStatus, NzBadgeStatusType>>{
         [InventoryCaptureStatus.RUNNING]: 'success',
         [InventoryCaptureStatus.IGNORED_CHAR]: 'default',
         [InventoryCaptureStatus.ERROR]: 'error',
-        [InventoryCaptureStatus.UNKNOWN_CHAR]: 'warning'
+        [InventoryCaptureStatus.UNKNOWN_CHAR]: 'warning',
       })[status];
     })
   );
@@ -132,20 +131,18 @@ export class AppComponent implements OnInit {
 
   public titleBreakpoints = {
     785: `TC\nv${this.version}`,
-    default: `v${this.version}`
+    default: `v${this.version}`,
   };
 
-  public githubStars$ = this.http.get<{ stargazers_count: number }>('https://api.github.com/repos/ffxiv-teamcraft/ffxiv-teamcraft').pipe(
-    map(repo => repo.stargazers_count)
-  );
+  public githubStars$ = this.http
+    .get<{ stargazers_count: number }>('https://api.github.com/repos/ffxiv-teamcraft/ffxiv-teamcraft')
+    .pipe(map((repo) => repo.stargazers_count));
 
   public overlayOpacity = 1;
 
   collapsedAlarmsBar$ = new LocalStorageBehaviorSubject('alarms-sidebar:collapsed', true);
 
-  public notifications$ = this.notificationsFacade.notificationsDisplay$.pipe(
-    isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
-  );
+  public notifications$ = this.notificationsFacade.notificationsDisplay$.pipe(isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap());
 
   public loadingLazyData$ = this.lazyDataFacade.isLoading$;
 
@@ -155,13 +152,9 @@ export class AppComponent implements OnInit {
 
   public otherCharacters$: Observable<Partial<Character>[]>;
 
-  public userId$ = this.authFacade.userId$.pipe(
-    isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
-  );
+  public userId$ = this.authFacade.userId$.pipe(isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap());
 
-  public user$ = this.authFacade.user$.pipe(
-    isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
-  );
+  public user$ = this.authFacade.user$.pipe(isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap());
 
   public loading$: Observable<boolean>;
 
@@ -189,6 +182,8 @@ export class AppComponent implements OnInit {
 
   public showDesktopTip = localStorage.getItem('desktop-tip-closed') !== 'true';
 
+  public showSupporterIssueBanner = localStorage.getItem('show-supporter-issue-closed') !== 'true';
+
   UpdaterStatus = UpdaterStatus;
 
   public checkingForUpdate$ = new BehaviorSubject<number>(UpdaterStatus.NO_UPDATE);
@@ -202,13 +197,13 @@ export class AppComponent implements OnInit {
   public suggestedRegion: Region = null;
 
   public showAd$ = this.authFacade.user$.pipe(
-    map(user => {
+    map((user) => {
       return !(user.admin || user.moderator || user.supporter);
     })
   );
 
   public showPatreonButton$ = this.authFacade.user$.pipe(
-    map(user => {
+    map((user) => {
       return !user.supporter;
     })
   );
@@ -228,24 +223,41 @@ export class AppComponent implements OnInit {
 
   public currentLink = () => `https://ffxivteamcraft.com${window.location.hash.replace('#', '')}`;
 
-  constructor(@Inject(DOCUMENT) private document: Document, public translate: TranslateService,
-              public ipc: IpcService, private router: Router, private firebase: Database,
-              private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
-              public listsFacade: ListsFacade, public settings: SettingsService,
-              public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade,
-              private iconService: NzIconService, public platformService: PlatformService,
-              private settingsPopupService: SettingsPopupService, private http: HttpClient,
-              private lazyDataFacade: LazyDataFacade,
-              private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
-              private universalis: UniversalisService,
-              private inventoryService: InventoryService, @Inject(PLATFORM_ID) private platform: any,
-              private quickSearch: QuickSearchService, public mappy: MappyReporterService,
-              private tutorialService: TutorialService,
-              private playerMetricsService: PlayerMetricsService, private patreonService: SupportService,
-              private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, private cd: ChangeDetectorRef,
-              private data: DataService, private allaganReportsService: AllaganReportsService,
-              pushNotificationsService: PushNotificationsService) {
-
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    public translate: TranslateService,
+    public ipc: IpcService,
+    private router: Router,
+    private firebase: Database,
+    private authFacade: AuthFacade,
+    private dialog: NzModalService,
+    private eorzeanTime: EorzeanTimeService,
+    public listsFacade: ListsFacade,
+    public settings: SettingsService,
+    public teamsFacade: TeamsFacade,
+    private notificationsFacade: NotificationsFacade,
+    private iconService: NzIconService,
+    public platformService: PlatformService,
+    private settingsPopupService: SettingsPopupService,
+    private http: HttpClient,
+    private lazyDataFacade: LazyDataFacade,
+    private dirtyFacade: DirtyFacade,
+    private seoService: SeoService,
+    private injector: Injector,
+    private universalis: UniversalisService,
+    private inventoryService: InventoryService,
+    @Inject(PLATFORM_ID) private platform: any,
+    private quickSearch: QuickSearchService,
+    public mappy: MappyReporterService,
+    private tutorialService: TutorialService,
+    private playerMetricsService: PlayerMetricsService,
+    private patreonService: SupportService,
+    private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade,
+    private cd: ChangeDetectorRef,
+    private data: DataService,
+    private allaganReportsService: AllaganReportsService,
+    pushNotificationsService: PushNotificationsService
+  ) {
     if (pushNotificationsService.isSupported() && pushNotificationsService.permission === 'default') {
       pushNotificationsService.requestPermission();
     }
@@ -266,7 +278,7 @@ export class AppComponent implements OnInit {
     this.time$ = this.reloadTime$.pipe(
       switchMap(() => {
         return this.eorzeanTime.getEorzeanTime().pipe(
-          map(date => {
+          map((date) => {
             const minutes = date.getUTCMinutes();
             const minutesStr = minutes < 10 ? '0' + minutes : minutes;
             if (this.settings.timeFormat === '24H') {
@@ -306,12 +318,12 @@ export class AppComponent implements OnInit {
           }, 60);
         });
         this.emptyInventory$ = this.inventoryService.inventory$.pipe(
-          map(inventory => {
+          map((inventory) => {
             return inventory.contentId && Object.keys(inventory.items[inventory.contentId]).length === 0;
           })
         );
         this.unknownContentId$ = this.inventoryService.inventory$.pipe(
-          map(inventory => {
+          map((inventory) => {
             return !inventory.contentId;
           })
         );
@@ -320,20 +332,16 @@ export class AppComponent implements OnInit {
       this.freeCompanyWorkshopFacade.init();
 
       objectVal<string>(ref(this.firebase, 'maintenance'))
-        .pipe(
-          isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
-        )
-        .subscribe(maintenance => {
+        .pipe(isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap())
+        .subscribe((maintenance) => {
           if (maintenance && environment.production) {
             this.router.navigate(['maintenance']);
           }
         });
 
       objectVal<string>(ref(this.firebase, 'version_lock'))
-        .pipe(
-          isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
-        )
-        .subscribe(v => {
+        .pipe(isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap())
+        .subscribe((v) => {
           if (semver.ltr(environment.version, v)) {
             this.router.navigate(['version-lock']);
           }
@@ -341,27 +349,26 @@ export class AppComponent implements OnInit {
 
       this.updateVersion$ = objectVal<string>(ref(this.firebase, 'app_version'));
 
-      this.newVersionAvailable$ = this.updateVersion$
-        .pipe(
-          map((value: string) => {
-            return semver.ltr(environment.version, value);
-          }),
-          tap(update => {
-            if (update && this.settings.autoDownloadUpdate) {
-              this.updateDesktopApp();
-            } else {
-              this.checkingForUpdate$.next(UpdaterStatus.UPDATE_AVAILABLE);
-            }
-          })
-        );
+      this.newVersionAvailable$ = this.updateVersion$.pipe(
+        map((value: string) => {
+          return semver.ltr(environment.version, value);
+        }),
+        tap((update) => {
+          if (update && this.settings.autoDownloadUpdate) {
+            this.updateDesktopApp();
+          } else {
+            this.checkingForUpdate$.next(UpdaterStatus.UPDATE_AVAILABLE);
+          }
+        })
+      );
 
       const language$ = this.translate.onLangChange.pipe(
-        map(event => event.lang),
+        map((event) => event.lang),
         startWith(this.translate.currentLang)
       );
 
       const region$ = this.settings.regionChange$.pipe(
-        map(change => change.next),
+        map((change) => change.next),
         startWith(this.settings.region)
       );
 
@@ -400,7 +407,7 @@ export class AppComponent implements OnInit {
         this.suggestedRegion = region === suggestedRegion ? null : suggestedRegion;
       });
 
-      this.dirtyFacade.hasEntries$.subscribe(dirty => this.dirty = dirty);
+      this.dirtyFacade.hasEntries$.subscribe((dirty) => (this.dirty = dirty));
 
       // Navigation handle for a proper loader display
       router.events.subscribe((event) => {
@@ -427,27 +434,28 @@ export class AppComponent implements OnInit {
             }
             return true;
           })
-        ).subscribe((event: any) => {
-        this.tutorialService.reset();
-        this.seoService.resetConfig();
-        if (this.overlay) {
-          this.ipc.on(`overlay:${this.ipc.overlayUri}:opacity`, (e, value) => {
-            this.overlayOpacity = value;
-          });
-          this.ipc.send('overlay:get-opacity', { uri: this.ipc.overlayUri });
-        } else if (event.url !== '/') {
-          this.ipc.send('navigated', event.url);
-        }
-        const languageIndex = event.url.indexOf('?lang=');
-        if (languageIndex > -1) {
-          this.use(event.url.substr(languageIndex + 6, 2), false, true);
-        }
-      });
+        )
+        .subscribe((event: any) => {
+          this.tutorialService.reset();
+          this.seoService.resetConfig();
+          if (this.overlay) {
+            this.ipc.on(`overlay:${this.ipc.overlayUri}:opacity`, (e, value) => {
+              this.overlayOpacity = value;
+            });
+            this.ipc.send('overlay:get-opacity', { uri: this.ipc.overlayUri });
+          } else if (event.url !== '/') {
+            this.ipc.send('navigated', event.url);
+          }
+          const languageIndex = event.url.indexOf('?lang=');
+          if (languageIndex > -1) {
+            this.use(event.url.substr(languageIndex + 6, 2), false, true);
+          }
+        });
 
       // Custom protocol detection
       this.hasDesktop$ = this.hasDesktopReloader$.pipe(
         switchMap(() => router.events),
-        filter(current => current instanceof NavigationEnd),
+        filter((current) => current instanceof NavigationEnd),
         first(),
         switchMap((current: NavigationEnd) => {
           let url = current.url;
@@ -462,7 +470,7 @@ export class AppComponent implements OnInit {
           }
           return this.http.get('http://localhost:14500/', { responseType: 'text' }).pipe(
             map(() => true),
-            tap(hasDesktop => {
+            tap((hasDesktop) => {
               if (hasDesktop) {
                 window.location.assign(`teamcraft://${url}`);
               }
@@ -474,9 +482,9 @@ export class AppComponent implements OnInit {
           );
         })
       );
-      this.translate.onLangChange.subscribe(l => this.locale = l.lang as Language);
+      this.translate.onLangChange.subscribe((l) => (this.locale = l.lang as Language));
 
-      this.translate.onLangChange.subscribe(change => {
+      this.translate.onLangChange.subscribe((change) => {
         this.locale = change.lang;
       });
     } else {
@@ -515,7 +523,7 @@ export class AppComponent implements OnInit {
     this.dialog.create({
       nzTitle: this.translate.instant('COMMON.Support_us_remove_ads'),
       nzContent: RemoveAdsPopupComponent,
-      nzFooter: null
+      nzFooter: null,
     });
   }
 
@@ -527,23 +535,27 @@ export class AppComponent implements OnInit {
 
   showPatchNotes(): Observable<any> {
     const res$ = new Subject<void>();
-    this.translate.get('Patch_notes').pipe(
-      switchMap(title => {
-        return this.dialog.create({
-          nzTitle: title,
-          nzContent: ChangelogPopupComponent,
-          nzFooter: null,
-          nzStyle: {
-            'z-index': 10000
-          }
-        }).afterClose
-          .pipe(
-            tap(() => {
-              this.settings.lastChangesSeen = version;
+    this.translate
+      .get('Patch_notes')
+      .pipe(
+        switchMap((title) => {
+          return this.dialog
+            .create({
+              nzTitle: title,
+              nzContent: ChangelogPopupComponent,
+              nzFooter: null,
+              nzStyle: {
+                'z-index': 10000,
+              },
             })
-          );
-      })
-    ).subscribe(() => res$.next());
+            .afterClose.pipe(
+              tap(() => {
+                this.settings.lastChangesSeen = version;
+              })
+            );
+        })
+      )
+      .subscribe(() => res$.next());
     return res$;
   }
 
@@ -581,16 +593,18 @@ export class AppComponent implements OnInit {
   updateDesktopApp(): void {
     this.ipc.send('update:check');
     this.checkingForUpdate$.next(UpdaterStatus.DOWNLOADING);
-    this.checkingForUpdate$.pipe(
-      filter(status => status === UpdaterStatus.NO_UPDATE || status === UpdaterStatus.UPDATE_AVAILABLE),
-      startWith(null),
-      skip(1),
-      first()
-    ).subscribe((status) => {
-      if (status === null) {
-        this.checkingForUpdate$.next(UpdaterStatus.POSSIBLE_ERROR);
-      }
-    });
+    this.checkingForUpdate$
+      .pipe(
+        filter((status) => status === UpdaterStatus.NO_UPDATE || status === UpdaterStatus.UPDATE_AVAILABLE),
+        startWith(null),
+        skip(1),
+        first()
+      )
+      .subscribe((status) => {
+        if (status === null) {
+          this.checkingForUpdate$.next(UpdaterStatus.POSSIBLE_ERROR);
+        }
+      });
   }
 
   ngOnInit(): void {
@@ -600,17 +614,14 @@ export class AppComponent implements OnInit {
       }, 2000);
       this.authFacade.loadUser();
       // Loading is !loaded
-      this.loading$ = this.authFacade.loaded$.pipe(map(loaded => !loaded));
+      this.loading$ = this.authFacade.loaded$.pipe(map((loaded) => !loaded));
       this.loggedIn$ = this.authFacade.loggedIn$;
 
-      this.character$ = this.authFacade.mainCharacter$.pipe(
-        shareReplay({ bufferSize: 1, refCount: true }),
-        startWith({ loading: true })
-      );
+      this.character$ = this.authFacade.mainCharacter$.pipe(shareReplay({ bufferSize: 1, refCount: true }), startWith({ loading: true }));
 
       this.otherCharacters$ = combineLatest([this.authFacade.characters$, this.authFacade.mainCharacter$]).pipe(
         map(([entries, mainChar]) => {
-          return entries.map(entry => entry.Character).filter(e => e.ID !== mainChar.ID);
+          return entries.map((entry) => entry.Character).filter((e) => e.ID !== mainChar.ID);
         })
       );
 
@@ -618,7 +629,7 @@ export class AppComponent implements OnInit {
 
       let increasedPageViews = false;
 
-      this.user$.subscribe(user => {
+      this.user$.subscribe((user) => {
         if (!user.supporter && !user.admin && this.settings.theme.name === 'CUSTOM') {
           this.settings.theme = Theme.DEFAULT;
         }
@@ -632,9 +643,9 @@ export class AppComponent implements OnInit {
         }
       });
 
-      this.settings.themeChange$.subscribe((change => {
+      this.settings.themeChange$.subscribe((change) => {
         this.applyTheme(change.next);
-      }));
+      });
     } else {
       this.loading$ = of(false);
       this.loggedIn$ = of(false);
@@ -683,28 +694,31 @@ export class AppComponent implements OnInit {
   }
 
   openRegisterPopup(): void {
-    this.dialog.create({
-      nzTitle: this.translate.instant('Registration'),
-      nzContent: RegisterPopupComponent,
-      nzFooter: null
-    }).afterClose
-      .pipe(delay(1000))
+    this.dialog
+      .create({
+        nzTitle: this.translate.instant('Registration'),
+        nzContent: RegisterPopupComponent,
+        nzFooter: null,
+      })
+      .afterClose.pipe(delay(1000))
       .subscribe(() => {
         window.location.reload();
       });
   }
 
   openLoginPopup(): void {
-    this.dialog.create({
-      nzTitle: this.translate.instant('Login'),
-      nzContent: LoginPopupComponent,
-      nzFooter: null
-    }).afterClose.subscribe((res) => {
-      if (res) {
-        // HOTFIX
-        window.location.reload();
-      }
-    });
+    this.dialog
+      .create({
+        nzTitle: this.translate.instant('Login'),
+        nzContent: LoginPopupComponent,
+        nzFooter: null,
+      })
+      .afterClose.subscribe((res) => {
+        if (res) {
+          // HOTFIX
+          window.location.reload();
+        }
+      });
   }
 
   logOut(): void {
@@ -713,16 +727,19 @@ export class AppComponent implements OnInit {
 
   openInApp(): void {
     if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
-      this.http.get(`http://localhost:14500${window.location.pathname}`).pipe(
-        map(() => true),
-        catchError(() => {
-          return of(false);
-        })
-      ).subscribe(opened => {
-        if (!opened) {
-          window.open(`teamcraft://${window.location.pathname}`);
-        }
-      });
+      this.http
+        .get(`http://localhost:14500${window.location.pathname}`)
+        .pipe(
+          map(() => true),
+          catchError(() => {
+            return of(false);
+          })
+        )
+        .subscribe((opened) => {
+          if (!opened) {
+            window.open(`teamcraft://${window.location.pathname}`);
+          }
+        });
       setTimeout(() => {
         this.hasDesktopReloader$.next(null);
       }, 30000);
@@ -730,14 +747,13 @@ export class AppComponent implements OnInit {
   }
 
   openLink(): void {
-    this.dialog.create({
-      nzTitle: this.translate.instant('COMMON.Open_link'),
-      nzContent: TextQuestionPopupComponent,
-      nzFooter: null
-    }).afterClose
-      .pipe(
-        filter(res => res !== undefined && res.startsWith('https://ffxivteamcraft.com/'))
-      )
+    this.dialog
+      .create({
+        nzTitle: this.translate.instant('COMMON.Open_link'),
+        nzContent: TextQuestionPopupComponent,
+        nzFooter: null,
+      })
+      .afterClose.pipe(filter((res) => res !== undefined && res.startsWith('https://ffxivteamcraft.com/')))
       .subscribe((data: string) => {
         this.router.navigate(data.replace('https://ffxivteamcraft.com/', '').split('/'));
       });
@@ -819,10 +835,10 @@ export class AppComponent implements OnInit {
     if (theme !== undefined) {
       document.documentElement.style.setProperty('--background-color', theme.background);
       document.documentElement.style.setProperty('--primary-color', theme.primary);
-      document.documentElement.style.setProperty('--primary-color-50', this.hexToRgbA(theme.primary, 0.50));
+      document.documentElement.style.setProperty('--primary-color-50', this.hexToRgbA(theme.primary, 0.5));
       document.documentElement.style.setProperty('--primary-color-25', this.hexToRgbA(theme.primary, 0.25));
       document.documentElement.style.setProperty('--highlight-color', theme.highlight);
-      document.documentElement.style.setProperty('--highlight-color-50', this.hexToRgbA(theme.highlight, 0.50));
+      document.documentElement.style.setProperty('--highlight-color-50', this.hexToRgbA(theme.highlight, 0.5));
       document.documentElement.style.setProperty('--highlight-color-25', this.hexToRgbA(theme.highlight, 0.25));
       document.documentElement.style.setProperty('--text-color', theme.text);
       document.documentElement.style.setProperty('--topbar-color', theme.topbar);

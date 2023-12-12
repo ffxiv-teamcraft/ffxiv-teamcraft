@@ -10,11 +10,20 @@ import { CraftingRotation } from '../../../model/other/crafting-rotation';
 import { RotationsFacade } from '../../../modules/rotations/+state/rotations.facade';
 import { CraftingRotationsFolder } from '../../../model/other/crafting-rotations-folder';
 import { RotationFoldersFacade } from '../../../modules/rotation-folders/+state/rotation-folders.facade';
+import { TranslateModule } from '@ngx-translate/core';
+import { RotationFolderPanelComponent } from '../../simulator/components/rotation-folder-panel/rotation-folder-panel.component';
+import { RotationPanelComponent } from '../../simulator/components/rotation-panel/rotation-panel.component';
+import { ListPanelComponent } from '../../../modules/list/list-panel/list-panel.component';
+import { WorkshopPanelComponent } from '../../../modules/workshop/workshop-panel/workshop-panel.component';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-favorites',
-  templateUrl: './favorites.component.html',
-  styleUrls: ['./favorites.component.less']
+    selector: 'app-favorites',
+    templateUrl: './favorites.component.html',
+    styleUrls: ['./favorites.component.less'],
+    standalone: true,
+    imports: [NgIf, NzListModule, WorkshopPanelComponent, ListPanelComponent, RotationPanelComponent, RotationFolderPanelComponent, AsyncPipe, TranslateModule]
 })
 export class FavoritesComponent {
 

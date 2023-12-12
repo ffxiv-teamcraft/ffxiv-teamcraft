@@ -6,12 +6,31 @@ import { GearsetsFacade } from '../+state/gearsets.facade';
 import { GearsetsComparison } from '../../../model/gearset/gearsets-comparison';
 import { filter, first, map } from 'rxjs/operators';
 import { GearsetComparatorService } from '../gearset-comparator.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-gearset-comparator-popup',
-  templateUrl: './gearset-comparator-popup.component.html',
-  styleUrls: ['./gearset-comparator-popup.component.less']
+    selector: 'app-gearset-comparator-popup',
+    templateUrl: './gearset-comparator-popup.component.html',
+    styleUrls: ['./gearset-comparator-popup.component.less'],
+    standalone: true,
+    imports: [NgIf, NzDividerModule, FlexModule, NgFor, ItemIconComponent, NzAlertModule, NzSelectModule, FormsModule, NzGridModule, NzFormModule, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, AsyncPipe, DecimalPipe, ItemNamePipe, JobUnicodePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class GearsetComparatorPopupComponent {
 

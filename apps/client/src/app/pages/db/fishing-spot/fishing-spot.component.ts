@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { distinctUntilChanged, filter, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
@@ -12,12 +12,35 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { FishingMissesPopupComponent } from '../fishing-misses-popup/fishing-misses-popup.component';
 import { FishContextService } from '../service/fish-context.service';
+import { MapNamePipe } from '../../../pipes/pipes/map-name.pipe';
+import { IfMobilePipe } from '../../../pipes/pipes/if-mobile.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { FishingSpotBiteTimesComponent } from './fishing-spot-bite-times/fishing-spot-bite-times.component';
+import { FishingSpotHooksetDatagridComponent } from './fishing-spot-hookset-datagrid/fishing-spot-hookset-datagrid.component';
+import { FishingSpotTugDatagridComponent } from './fishing-spot-tug-datagrid/fishing-spot-tug-datagrid.component';
+import { FishingSpotWeatherDatagridComponent } from './fishing-spot-weather-datagrid/fishing-spot-weather-datagrid.component';
+import { FishingSpotBaitDatagridComponent } from './fishing-spot-bait-datagrid/fishing-spot-bait-datagrid.component';
+import { FishingSpotHoursComponent } from './fishing-spot-hours/fishing-spot-hours.component';
+import { FishingSpotAvailableFishesComponent } from './fishing-spot-available-fishes/fishing-spot-available-fishes.component';
+import { FishingSpotWeatherTransitionsComponent } from './fishing-spot-weather-transitions/fishing-spot-weather-transitions.component';
+import { FishingSpotWeathersComponent } from './fishing-spot-weathers/fishing-spot-weathers.component';
+import { FishingSpotPositionComponent } from './fishing-spot-position/fishing-spot-position.component';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { DbCommentsComponent } from '../db-comments/db-comments/db-comments.component';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display/i18n-display.component';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-fishing-spot',
-  templateUrl: './fishing-spot.component.html',
-  styleUrls: ['./fishing-spot.component.less', '../fish/fish.common.less', '../common-db.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-fishing-spot',
+    templateUrl: './fishing-spot.component.html',
+    styleUrls: ['./fishing-spot.component.less', '../fish/fish.common.less', '../common-db.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, FlexModule, I18nDisplayComponent, NzButtonModule, NzWaveModule, DbCommentsComponent, NzDividerModule, FishingSpotPositionComponent, FishingSpotWeathersComponent, FishingSpotWeatherTransitionsComponent, FishingSpotAvailableFishesComponent, FishingSpotHoursComponent, FishingSpotBaitDatagridComponent, FishingSpotWeatherDatagridComponent, FishingSpotTugDatagridComponent, FishingSpotHooksetDatagridComponent, FishingSpotBiteTimesComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, IfMobilePipe, MapNamePipe]
 })
 export class FishingSpotComponent extends TeamcraftPageComponent implements OnInit, OnDestroy {
   public highlightedFish$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);

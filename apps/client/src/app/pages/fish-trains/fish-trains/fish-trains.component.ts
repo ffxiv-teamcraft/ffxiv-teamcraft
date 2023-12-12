@@ -1,8 +1,8 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { FishTrainFacade } from '../../../modules/fish-train/fish-train/fish-train.facade';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { combineLatest, map, switchMap } from 'rxjs';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { FishTrainStatus } from './fish-train-status';
 import { distinctUntilChanged, startWith, takeUntil, tap, withLatestFrom } from 'rxjs/operators';
 import { getFishTrainStatus } from '../../../modules/fish-train/get-fish-train-status';
@@ -11,11 +11,28 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { DataModel } from '../../../core/database/storage/data-model';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { UserAvatarComponent } from '../../../modules/user-avatar/user-avatar/user-avatar.component';
+import { RouterLink } from '@angular/router';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { LazyScrollComponent } from '../../../modules/lazy-scroll/lazy-scroll/lazy-scroll.component';
+import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
+import { NgFor, NgIf, NgSwitch, NgSwitchCase, AsyncPipe, LowerCasePipe, DatePipe } from '@angular/common';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 
 @Component({
-  selector: 'app-fish-trains',
-  templateUrl: './fish-trains.component.html',
-  styleUrls: ['./fish-trains.component.less']
+    selector: 'app-fish-trains',
+    templateUrl: './fish-trains.component.html',
+    styleUrls: ['./fish-trains.component.less'],
+    standalone: true,
+    imports: [NzPageHeaderModule, NzButtonModule, FormsModule, ReactiveFormsModule, NzInputModule, NzSelectModule, NgFor, NgIf, NzSegmentedModule, LazyScrollComponent, FullpageMessageComponent, NzDividerModule, NzGridModule, RouterLink, UserAvatarComponent, NzAvatarModule, NzToolTipModule, NgSwitch, NgSwitchCase, NzTagModule, AsyncPipe, LowerCasePipe, DatePipe, TranslateModule]
 })
 export class FishTrainsComponent extends TeamcraftComponent {
 

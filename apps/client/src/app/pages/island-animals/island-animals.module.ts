@@ -19,21 +19,19 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    IslandAnimalsComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    NzTableModule,
-    TranslateModule,
-    PipesModule,
-    MapModule,
-    CoreModule,
-    AlarmButtonModule,
-    NzPageHeaderModule,
-    ItemIconModule
-  ]
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        NzTableModule,
+        TranslateModule,
+        PipesModule,
+        MapModule,
+        CoreModule,
+        AlarmButtonModule,
+        NzPageHeaderModule,
+        ItemIconModule,
+        IslandAnimalsComponent
+    ]
 })
 export class IslandAnimalsModule {
 }

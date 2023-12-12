@@ -4,15 +4,28 @@ import { BehaviorSubject, combineLatest, merge, Subject } from 'rxjs';
 import { debounceTime, filter, map, switchMap, tap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SettingsService } from '../../settings/settings.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { DataService } from '../../../core/api/data.service';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { NzModalRef } from 'ng-zorro-antd/modal';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
+import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
+import { IfMobilePipe } from '../../../pipes/pipes/if-mobile.pipe';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault, NgIf, AsyncPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @Component({
-  selector: 'app-quick-search',
-  templateUrl: './quick-search.component.html',
-  styleUrls: ['./quick-search.component.less']
+    selector: 'app-quick-search',
+    templateUrl: './quick-search.component.html',
+    styleUrls: ['./quick-search.component.less'],
+    standalone: true,
+    imports: [NzButtonModule, NzInputModule, NzSelectModule, FormsModule, NgFor, FlexModule, NgSwitch, NgSwitchCase, NgSwitchDefault, NgIf, AsyncPipe, IfMobilePipe, NodeTypeIconPipe, XivapiIconPipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class QuickSearchComponent extends TeamcraftComponent {
 

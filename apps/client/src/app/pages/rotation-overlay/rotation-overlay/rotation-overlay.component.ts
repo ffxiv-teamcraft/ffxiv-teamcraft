@@ -6,11 +6,18 @@ import { map, switchMap, tap } from 'rxjs/operators';
 import { CraftingRotation } from '../../../model/other/crafting-rotation';
 import { SimulationService } from '../../../core/simulation/simulation.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { ActionComponent } from '../../simulator/components/action/action.component';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { OverlayContainerComponent } from '../../../modules/overlay-container/overlay-container/overlay-container.component';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-rotation-overlay',
-  templateUrl: './rotation-overlay.component.html',
-  styleUrls: ['./rotation-overlay.component.less']
+    selector: 'app-rotation-overlay',
+    templateUrl: './rotation-overlay.component.html',
+    styleUrls: ['./rotation-overlay.component.less'],
+    standalone: true,
+    imports: [NgIf, OverlayContainerComponent, FlexModule, NgFor, ActionComponent, PageLoaderComponent, AsyncPipe]
 })
 export class RotationOverlayComponent {
 

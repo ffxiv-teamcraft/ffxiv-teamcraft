@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'xivapiIcon'
+    name: 'xivapiIcon',
+    standalone: true
 })
 export class XivapiIconPipe implements PipeTransform {
 

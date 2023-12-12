@@ -11,7 +11,7 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { SettingsModule } from '../../modules/settings/settings.module';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -34,23 +34,18 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AlarmGroupComponent],
-  imports: [
+    imports: [
     CommonModule,
     FlexLayoutModule,
     FormsModule,
-
     RouterModule.forChild(routes),
-
     TranslateModule,
-
     MapModule,
     CoreModule,
     PipesModule,
     ItemIconModule,
     AlarmsModule,
     SettingsModule,
-    PageLoaderModule,
     FullpageMessageModule,
     NzCardModule,
     NzAvatarModule,
@@ -59,8 +54,9 @@ const routes: Routes = [
     NzToolTipModule,
     NzButtonModule,
     NzIconModule,
-    AlarmButtonModule
-  ]
+    AlarmButtonModule,
+    AlarmGroupComponent
+]
 })
 export class AlarmGroupModule {
 }

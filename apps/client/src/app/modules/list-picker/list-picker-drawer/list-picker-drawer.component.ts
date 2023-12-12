@@ -8,11 +8,22 @@ import { debounceTime, filter, first, map, shareReplay } from 'rxjs/operators';
 import { WorkshopsFacade } from '../../workshop/+state/workshops.facade';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
 import { ListController } from '../../list/list-controller';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { FormsModule } from '@angular/forms';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-list-picker-drawer',
-  templateUrl: './list-picker-drawer.component.html',
-  styleUrls: ['./list-picker-drawer.component.less']
+    selector: 'app-list-picker-drawer',
+    templateUrl: './list-picker-drawer.component.html',
+    styleUrls: ['./list-picker-drawer.component.less'],
+    standalone: true,
+    imports: [NgIf, NzButtonModule, NzWaveModule, NzIconModule, NzDividerModule, NzInputModule, FormsModule, NzListModule, NgFor, AsyncPipe, TranslateModule]
 })
 export class ListPickerDrawerComponent {
 

@@ -4,7 +4,8 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { I18nName } from '@ffxiv-teamcraft/types';
 
 @Pipe({
-  name: 'itemName'
+    name: 'itemName',
+    standalone: true
 })
 export class ItemNamePipe implements PipeTransform {
   constructor(private readonly lazyData: LazyDataFacade) {

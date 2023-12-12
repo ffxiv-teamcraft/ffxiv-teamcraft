@@ -8,12 +8,24 @@ import { ListController } from '../list-controller';
 import { ListManagerService } from '../list-manager.service';
 import { first, switchMap, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
+import { FormsModule } from '@angular/forms';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { LazyScrollComponent } from '../../lazy-scroll/lazy-scroll/lazy-scroll.component';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-list-split-popup',
-  templateUrl: './list-split-popup.component.html',
-  styleUrls: ['./list-split-popup.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-list-split-popup',
+    templateUrl: './list-split-popup.component.html',
+    styleUrls: ['./list-split-popup.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FlexModule, NzButtonModule, NzWaveModule, LazyScrollComponent, NzCheckboxModule, FormsModule, ItemIconComponent, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class ListSplitPopupComponent {
 

@@ -5,17 +5,29 @@ import { ProgressPopupService } from '../../../modules/progress-popup/progress-p
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { filter, first, map, skip, switchMap, tap } from 'rxjs/operators';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { concat } from 'rxjs';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
 import { AbstractListsSelectionPopupComponent } from '../abstract-lists-selection-popup.component';
 import { ListController } from '../../../modules/list/list-controller';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { FormsModule } from '@angular/forms';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe, UpperCasePipe } from '@angular/common';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
 
 @Component({
-  selector: 'app-merge-lists-popup',
-  templateUrl: './merge-lists-popup.component.html',
-  styleUrls: ['./merge-lists-popup.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-merge-lists-popup',
+    templateUrl: './merge-lists-popup.component.html',
+    styleUrls: ['./merge-lists-popup.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzAlertModule, NgIf, NgTemplateOutlet, NgFor, FlexModule, NzButtonModule, NzWaveModule, NzCheckboxModule, FormsModule, NzListModule, NzTagModule, NzToolTipModule, AsyncPipe, UpperCasePipe, TranslateModule]
 })
 export class MergeListsPopupComponent extends AbstractListsSelectionPopupComponent {
 

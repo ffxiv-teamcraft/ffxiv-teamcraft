@@ -31,7 +31,7 @@ import { DevGuard } from './guard/dev.guard';
 import { DATA_REPORTERS } from './data-reporting/data-reporters-index';
 import { VersionLockModule } from '../pages/version-lock/version-lock.module';
 import { LazyComponentDirective } from './tools/lazy-component';
-import { TutorialModule } from './tutorial/tutorial.module';
+
 import { ModeratorGuard } from './guard/moderator.guard';
 import { MouseWheelDirective } from './event/mouse-wheel/mouse-wheel.directive';
 import { SupportUsPopupComponent } from './patreon/support-us-popup/support-us-popup.component';
@@ -43,7 +43,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { CommissionNotification } from '../model/notification/commission-notification';
 import { NzModalModule } from 'ng-zorro-antd/modal';
-import { IpcPopupsModule } from '../modules/ipc-popups/ipc-popups.module';
+
 import { ItemNameClipboardDirective } from './item-name-clipboard.directive';
 import { I18nNameComponent } from './i18n/i18n-name/i18n-name.component';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
@@ -56,59 +56,40 @@ import { PirschEventDirective } from './analytics/pirsch-event.directive';
 
 
 @NgModule({
-  imports: [
+    imports: [
     CommonModule,
     TranslateModule,
     HttpClientModule,
     NgSerializerModule.forChild([
-      {
-        parent: AbstractNotification,
-        children: {
-          LIST_COMMENT: ListCommentNotification,
-          LIST_ITEM_COMMENT: ListItemCommentNotification,
-          DB_ITEM_COMMENT: DbItemCommentNotification,
-          DB_COMMENT_REPLY: DbCommentReplyNotification,
-          COMMISSION: CommissionNotification
+        {
+            parent: AbstractNotification,
+            children: {
+                LIST_COMMENT: ListCommentNotification,
+                LIST_ITEM_COMMENT: ListItemCommentNotification,
+                DB_ITEM_COMMENT: DbItemCommentNotification,
+                DB_COMMENT_REPLY: DbCommentReplyNotification,
+                COMMISSION: CommissionNotification
+            }
+        },
+        {
+            parent: CustomLink,
+            children: {
+                link: CustomLink,
+                template: ListTemplate
+            }
         }
-      },
-      {
-        parent: CustomLink,
-        children: {
-          link: CustomLink,
-          template: ListTemplate
-        }
-      }
     ]),
     MaintenanceModule,
     VersionLockModule,
     RouterModule,
-    TutorialModule,
     ClipboardModule,
-    IpcPopupsModule,
-
     NzButtonModule,
     NzToolTipModule,
     NzIconModule,
     NzDividerModule,
     NzModalModule,
     NzSkeletonModule,
-    NzNotificationModule
-  ],
-  providers: [
-    PendingChangesService,
-    PlatformService,
-    MathToolsService,
-    HtmlToolsService,
-    LinkToolsService,
-    DiscordWebhookService,
-    SupportService,
-    WeatherService,
-    AdminGuard,
-    ModeratorGuard,
-    DevGuard,
-    ...DATA_REPORTERS
-  ],
-  declarations: [
+    NzNotificationModule,
     I18nPipe,
     TimerPipe,
     DbButtonComponent,
@@ -123,8 +104,22 @@ import { PirschEventDirective } from './analytics/pirsch-event.directive';
     NgForTrackByIdDirective,
     NgForTrackByKeyDirective,
     PirschEventDirective
-  ],
-  exports: [
+],
+    providers: [
+        PendingChangesService,
+        PlatformService,
+        MathToolsService,
+        HtmlToolsService,
+        LinkToolsService,
+        DiscordWebhookService,
+        SupportService,
+        WeatherService,
+        AdminGuard,
+        ModeratorGuard,
+        DevGuard,
+        ...DATA_REPORTERS
+    ],
+    exports: [
     I18nPipe,
     TranslateModule,
     MaintenanceModule,
@@ -132,12 +127,10 @@ import { PirschEventDirective } from './analytics/pirsch-event.directive';
     DbButtonComponent,
     ItemRarityDirective,
     LazyComponentDirective,
-    TutorialModule,
     MouseWheelDirective,
     ClipboardDirective,
     ItemNameClipboardDirective,
     I18nNameComponent,
-
     NzButtonModule,
     NzToolTipModule,
     NzIconModule,
@@ -145,7 +138,7 @@ import { PirschEventDirective } from './analytics/pirsch-event.directive';
     PirschEventDirective,
     NgForTrackByIdDirective,
     NgForTrackByKeyDirective
-  ]
+]
 })
 export class CoreModule {
   static forRoot(): ModuleWithProviders<CoreModule> {

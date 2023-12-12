@@ -24,50 +24,40 @@ import { FishingBaitModule } from '../fishing-bait/fishing-bait.module';
 import { MapModule } from '../map/map.module';
 import { TooltipModule } from '../tooltip/tooltip.module';
 import { CoreModule } from '../../core/core.module';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 import { NodeDetailsModule } from '../node-details/node-details.module';
 import { InventoryModule } from '../inventory/inventory.module';
 import { GardeningComponent } from './gardening/gardening.component';
 import { MogstationComponent } from './mogstation/mogstation.component';
 import { QuestsComponent } from './quests/quests.component';
-import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
+
 import { AchievementsComponent } from './achievements/achievements.component';
-import { PageLoaderModule } from '../page-loader/page-loader.module';
-import { SpearfishingSpeedModule } from '../spearfishing-speed-tooltip/spearfishing-speed.module';
+
+
 import { IslandAnimalComponent } from './island-animal/island-animal.component';
 import { IslandCropComponent } from './island-crop/island-crop.component';
 import { NzPipesModule } from 'ng-zorro-antd/pipes';
 import { YoutubeEmbedPipe } from './gathered-by/youtube-embed.pipe';
 
 @NgModule({
-  imports: [
+    imports: [
     CommonModule,
     FormsModule,
-
     CoreModule,
     ItemIconModule,
     PipesModule,
     AlarmsModule,
-
     MapModule,
     FishingBaitModule,
     LayoutModule,
     TooltipModule,
     RouterModule,
-
     FlexLayoutModule,
-
     TranslateModule,
-    AntdSharedModule,
     NodeDetailsModule,
     InventoryModule,
-    LazyScrollModule,
-    PageLoaderModule,
-    SpearfishingSpeedModule,
     NzPipesModule,
-    YoutubeEmbedPipe
-  ],
-  declarations: [
+    YoutubeEmbedPipe,
     GatheredByComponent,
     HuntingComponent,
     InstancesComponent,
@@ -86,27 +76,27 @@ import { YoutubeEmbedPipe } from './gathered-by/youtube-embed.pipe';
     AchievementsComponent,
     IslandAnimalComponent,
     IslandCropComponent
-  ],
-  exports: [
-    GatheredByComponent,
-    HuntingComponent,
-    InstancesComponent,
-    ReducedFromComponent,
-    VendorsComponent,
-    VoyagesComponent,
-    VenturesComponent,
-    TradesComponent,
-    TreasuresComponent,
-    FatesComponent,
-    DesynthsComponent,
-    RelationshipsComponent,
-    GardeningComponent,
-    MogstationComponent,
-    QuestsComponent,
-    AchievementsComponent,
-    IslandAnimalComponent,
-    IslandCropComponent
-  ]
+],
+    exports: [
+        GatheredByComponent,
+        HuntingComponent,
+        InstancesComponent,
+        ReducedFromComponent,
+        VendorsComponent,
+        VoyagesComponent,
+        VenturesComponent,
+        TradesComponent,
+        TreasuresComponent,
+        FatesComponent,
+        DesynthsComponent,
+        RelationshipsComponent,
+        GardeningComponent,
+        MogstationComponent,
+        QuestsComponent,
+        AchievementsComponent,
+        IslandAnimalComponent,
+        IslandCropComponent
+    ]
 })
 export class ItemDetailsPopupsModule {
 }

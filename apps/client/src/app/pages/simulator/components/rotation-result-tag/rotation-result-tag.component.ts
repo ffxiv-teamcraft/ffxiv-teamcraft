@@ -15,12 +15,19 @@ import { BonusType } from '../../model/consumable-bonus';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../../core/rxjs/with-lazy-data';
 import { EnvironmentService } from '../../../../core/environment.service';
+import { FloorPipe } from '../../../../pipes/pipes/floor.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-rotation-result-tag',
-  templateUrl: './rotation-result-tag.component.html',
-  styleUrls: ['./rotation-result-tag.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-rotation-result-tag',
+    templateUrl: './rotation-result-tag.component.html',
+    styleUrls: ['./rotation-result-tag.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, NzToolTipModule, NzTagModule, AsyncPipe, TranslateModule, FloorPipe]
 })
 export class RotationResultTagComponent implements OnInit {
 

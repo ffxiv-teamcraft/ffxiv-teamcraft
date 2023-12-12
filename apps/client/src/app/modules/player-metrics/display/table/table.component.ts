@@ -1,18 +1,29 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { AbstractMetricDisplayComponent } from '../abstract-metric-display-component';
 import { ProbeSource } from '../../model/probe-source';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { map } from 'rxjs/operators';
 import { IpcService } from '../../../../core/electron/ipc.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { PlayerMetricsService } from '../../player-metrics.service';
 import { SettingsService } from '../../../settings/settings.service';
+import { I18nPipe } from '../../../../core/i18n.pipe';
+import { WidthBreakpointsPipe } from '../../../../pipes/pipes/width-breakpoints';
+import { ItemNamePipe } from '../../../../pipes/pipes/item-name.pipe';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NgIf, NgFor, AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-table',
+    templateUrl: './table.component.html',
+    styleUrls: ['./table.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, NzTableModule, NgFor, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, AsyncPipe, DecimalPipe, DatePipe, TranslateModule, ItemNamePipe, WidthBreakpointsPipe, I18nPipe]
 })
 export class TableComponent extends AbstractMetricDisplayComponent implements OnInit {
   ProbeSource = ProbeSource;
