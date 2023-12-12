@@ -9,11 +9,17 @@ import { takeUntil, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { FolderDisplay } from '../../../model/folder/folder-display';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
+import { GearsetRowComponent } from '../../../modules/gearsets/gearset-row/gearset-row.component';
+import { FolderPageComponent } from '../../../modules/folders/folder-page/folder-page.component';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 
 @Component({
-  selector: 'app-gearset-folder',
-  templateUrl: './gearset-folder.component.html',
-  styleUrls: ['./gearset-folder.component.less']
+    selector: 'app-gearset-folder',
+    templateUrl: './gearset-folder.component.html',
+    styleUrls: ['./gearset-folder.component.less'],
+    standalone: true,
+    imports: [PageLoaderComponent, NgIf, FolderPageComponent, GearsetRowComponent, AsyncPipe]
 })
 export class GearsetFolderComponent extends TeamcraftComponent {
 

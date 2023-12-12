@@ -5,6 +5,10 @@ import { combineLatest, Observable, of, Subject } from 'rxjs';
 import { distinctUntilChanged, filter, map, shareReplay, switchMap, takeUntil } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
 import { EChartsOption } from 'echarts';
+import { TranslateModule } from '@ngx-translate/core';
+import { AsyncPipe } from '@angular/common';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { NzCardModule } from 'ng-zorro-antd/card';
 
 interface FishingSpotChartData {
   id: number;
@@ -13,10 +17,12 @@ interface FishingSpotChartData {
 }
 
 @Component({
-  selector: 'app-fishing-spot-hours',
-  templateUrl: './fishing-spot-hours.component.html',
-  styleUrls: ['./fishing-spot-hours.component.less', '../../common-db.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-fishing-spot-hours',
+    templateUrl: './fishing-spot-hours.component.html',
+    styleUrls: ['./fishing-spot-hours.component.less', '../../common-db.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzCardModule, NgxEchartsModule, AsyncPipe, TranslateModule]
 })
 export class FishingSpotHoursComponent implements OnInit, OnDestroy {
   @Output()

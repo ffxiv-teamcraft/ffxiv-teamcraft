@@ -29,7 +29,9 @@ export interface TreeFolderDisplay<T> {
   root: T[]
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class FoldersFacade {
   allFolders$ = this.store.pipe(select(foldersQuery.getAllFolders));
 

@@ -5,10 +5,10 @@ import { DbComment } from '../model/db-comment';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { filter, map, shareReplay, switchMap, takeUntil } from 'rxjs/operators';
 import { AuthFacade } from '../../../../+state/auth.facade';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
 import { UserLevel } from '../../../../model/other/user-level';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { DbItemCommentNotification } from '../../../../model/notification/db-item-comment-notification';
 import { NotificationService } from '../../../../core/notification/notification.service';
 import { environment } from '../../../../../environments/environment';
@@ -17,11 +17,35 @@ import { XivapiPatch } from '@ffxiv-teamcraft/types';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { LazyPatchName } from '@ffxiv-teamcraft/data/model/lazy-patch-name';
 import { SettingsService } from '../../../../modules/settings/settings.service';
+import { CommentLinksPipe } from '../comment-links.pipe';
+import { IsVerifiedPipe } from '../../../../pipes/pipes/is-verified.pipe';
+import { IsPatronPipe } from '../../../../pipes/pipes/is-patron.pipe';
+import { UserLevelPipe } from '../../../../pipes/pipes/user-level.pipe';
+import { CharacterAvatarPipe } from '../../../../pipes/pipes/character-avatar.pipe';
+import { XivapiI18nPipe } from '../../../../pipes/pipes/xivapi-i18n.pipe';
+import { CharacterNamePipe } from '../../../../pipes/pipes/character-name.pipe';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { FormsModule } from '@angular/forms';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzCommentModule } from 'ng-zorro-antd/comment';
+import { FullpageMessageComponent } from '../../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe, DatePipe } from '@angular/common';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
 
 @Component({
-  selector: 'app-db-comments',
-  templateUrl: './db-comments.component.html',
-  styleUrls: ['./db-comments.component.less']
+    selector: 'app-db-comments',
+    templateUrl: './db-comments.component.html',
+    styleUrls: ['./db-comments.component.less'],
+    standalone: true,
+    imports: [NzDividerModule, NgIf, FullpageMessageComponent, NzCommentModule, FlexModule, NzToolTipModule, NzButtonModule, NzIconModule, NzAvatarModule, RouterLink, NzPopconfirmModule, NgTemplateOutlet, NgFor, NzGridModule, NzFormModule, NzInputModule, FormsModule, NzWaveModule, AsyncPipe, DatePipe, TranslateModule, CharacterNamePipe, XivapiI18nPipe, CharacterAvatarPipe, UserLevelPipe, IsPatronPipe, IsVerifiedPipe, CommentLinksPipe]
 })
 export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
   userLevels = UserLevel;

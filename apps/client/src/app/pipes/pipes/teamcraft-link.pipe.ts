@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { LinkToolsService } from '../../core/tools/link-tools.service';
 
 @Pipe({
-  name: 'tcLink'
+    name: 'tcLink',
+    standalone: true
 })
 export class TeamcraftLinkPipe implements PipeTransform {
 

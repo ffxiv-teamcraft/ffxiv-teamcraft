@@ -5,9 +5,10 @@ import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-simulator-opener',
-  templateUrl: './simulator-opener.component.html',
-  styleUrls: ['./simulator-opener.component.less']
+    selector: 'app-simulator-opener',
+    templateUrl: './simulator-opener.component.html',
+    styleUrls: ['./simulator-opener.component.less'],
+    standalone: true
 })
 export class SimulatorOpenerComponent implements OnInit {
 

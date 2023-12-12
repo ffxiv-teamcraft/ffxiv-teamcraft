@@ -5,11 +5,17 @@ import { BehaviorSubject, combineLatest } from 'rxjs';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyDataWithExtracts } from '@ffxiv-teamcraft/types';
 import { ModificationEntry } from '../../../modules/list/model/modification-entry';
+import { CharacterNamePipe } from '../../../pipes/pipes/character-name.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-list-contributions',
-  templateUrl: './list-contributions.component.html',
-  styleUrls: ['./list-contributions.component.less']
+    selector: 'app-list-contributions',
+    templateUrl: './list-contributions.component.html',
+    styleUrls: ['./list-contributions.component.less'],
+    standalone: true,
+    imports: [NgIf, NzTableModule, NgFor, AsyncPipe, DecimalPipe, TranslateModule, CharacterNamePipe]
 })
 export class ListContributionsComponent {
 

@@ -7,11 +7,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from '../../core/core.module';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 
 @NgModule({
-  declarations: [QuickSearchComponent],
-  imports: [
+    imports: [
     CommonModule,
     RouterModule,
     FormsModule,
@@ -19,9 +18,9 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
     PipesModule,
     CoreModule,
     TranslateModule,
-    AntdSharedModule
-  ],
-  exports: [QuickSearchComponent]
+    QuickSearchComponent
+],
+    exports: [QuickSearchComponent]
 })
 export class QuickSearchModule {
 }

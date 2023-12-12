@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 import { CoreModule } from '../../core/core.module';
 import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
@@ -15,7 +15,7 @@ import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { ListModule } from '../../modules/list/list.module';
 import { MapModule } from '../../modules/map/map.module';
 import { MarketboardModule } from '../../modules/marketboard/marketboard.module';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { QuickSearchModule } from '../../modules/quick-search/quick-search.module';
 import { RotationsModule } from '../../modules/rotations/rotations.module';
 import { TooltipModule } from '../../modules/tooltip/tooltip.module';
@@ -69,7 +69,7 @@ import { TraitComponent } from './trait/trait.component';
 import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 import { NzCommentModule } from 'ng-zorro-antd/comment';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
-import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
+
 import { SpearfishingSpotComponent } from './spearfishing-spot/spearfishing-spot.component';
 import { FishDataModule } from './fish/fish-data.module';
 import { FishingSpotHooksetDatagridComponent } from './fishing-spot/fishing-spot-hookset-datagrid/fishing-spot-hookset-datagrid.component';
@@ -253,7 +253,34 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
+    imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    CoreModule,
+    FlexLayoutModule,
+    FormsModule,
+    TranslateModule,
+    MapModule,
+    PipesModule,
+    ItemIconModule,
+    AlarmsModule,
+    FullpageMessageModule,
+    FishingBaitModule,
+    TooltipModule,
+    ListModule,
+    RotationsModule,
+    ItemDetailsPopupsModule,
+    I18nDisplayModule,
+    MarketboardModule,
+    UserAvatarModule,
+    QuickSearchModule,
+    NzStatisticModule,
+    NzCommentModule,
+    NzAvatarModule,
+    FishDataModule,
+    AlarmButtonModule,
+    NgxEchartsModule,
+    NzPipesModule,
     DbComponent,
     ChartComponent,
     InstanceComponent,
@@ -299,43 +326,11 @@ const routes: Routes = [
     FishingSpotWeatherDatagridComponent,
     FishingSpotTugDatagridComponent,
     FishingSpotHooksetDatagridComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    CoreModule,
-    FlexLayoutModule,
-    FormsModule,
-    TranslateModule,
-    MapModule,
-    PipesModule,
-    ItemIconModule,
-    AlarmsModule,
-    PageLoaderModule,
-    FullpageMessageModule,
-    FishingBaitModule,
-    TooltipModule,
-    ListModule,
-    RotationsModule,
-    ItemDetailsPopupsModule,
-    I18nDisplayModule,
-    MarketboardModule,
-    AntdSharedModule,
-    UserAvatarModule,
-    QuickSearchModule,
-    NzStatisticModule,
-    NzCommentModule,
-    NzAvatarModule,
-    LazyScrollModule,
-    FishDataModule,
-    AlarmButtonModule,
-    NgxEchartsModule,
-    NzPipesModule
-  ],
-  exports: [
-    FishBaitsComponent
-  ],
-  providers: [ItemContextService]
+],
+    exports: [
+        FishBaitsComponent
+    ],
+    providers: [ItemContextService]
 })
 export class DbModule {
 }

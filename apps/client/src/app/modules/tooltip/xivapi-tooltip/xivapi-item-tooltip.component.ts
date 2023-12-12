@@ -5,12 +5,39 @@ import { Observable } from 'rxjs';
 import { observeInput } from '../../../core/rxjs/observe-input';
 import { filter, map } from 'rxjs/operators';
 import { uniqBy } from 'lodash';
+import { NzPipesModule } from 'ng-zorro-antd/pipes';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { LazyRowPipe } from '../../../pipes/pipes/lazy-row.pipe';
+import { HooksetActionIdPipe } from '../../../pipes/pipes/hookset-action-id.pipe';
+import { TugNamePipe } from '../../../pipes/pipes/tug-name.pipe';
+import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
+import { MapNamePipe } from '../../../pipes/pipes/map-name.pipe';
+import { LazyIconPipe } from '../../../pipes/pipes/lazy-icon.pipe';
+import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
+import { ClosestAetherytePipe } from '../../../pipes/pipes/closest-aetheryte.pipe';
+import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
+import { ActionIconPipe } from '../../../pipes/pipes/action-icon.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { NodeDetailsComponent } from '../../node-details/node-details/node-details.component';
+import { MapComponent } from '../../map/map/map.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { NgIf, NgFor, NgSwitch, NgSwitchCase, AsyncPipe } from '@angular/common';
+import { ItemRarityDirective } from '../../../core/item-rarity/item-rarity.directive';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzGridModule } from 'ng-zorro-antd/grid';
 
 @Component({
-  selector: 'app-item-tooltip-component',
-  templateUrl: './xivapi-item-tooltip.component.html',
-  styleUrls: ['./xivapi-item-tooltip.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-item-tooltip-component',
+    templateUrl: './xivapi-item-tooltip.component.html',
+    styleUrls: ['./xivapi-item-tooltip.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzGridModule, FlexModule, ItemRarityDirective, NgIf, I18nNameComponent, NgFor, NzToolTipModule, NzButtonModule, NzIconModule, NgSwitch, NgSwitchCase, MapComponent, NodeDetailsComponent, AsyncPipe, TranslateModule, ItemNamePipe, ActionIconPipe, NodeTypeIconPipe, ClosestAetherytePipe, XivapiIconPipe, LazyIconPipe, MapNamePipe, JobUnicodePipe, TugNamePipe, HooksetActionIdPipe, LazyRowPipe, I18nPipe, I18nRowPipe, NzPipesModule]
 })
 export class XivapiItemTooltipComponent implements OnInit {
 

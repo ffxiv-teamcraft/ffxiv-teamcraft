@@ -8,12 +8,26 @@ import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.faca
 import { RotationsFacade } from '../../../modules/rotations/+state/rotations.facade';
 import { RotationFoldersFacade } from '../../../modules/rotation-folders/+state/rotation-folders.facade';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-custom-links',
-  templateUrl: './custom-links.component.html',
-  styleUrls: ['./custom-links.component.less']
+    selector: 'app-custom-links',
+    templateUrl: './custom-links.component.html',
+    styleUrls: ['./custom-links.component.less'],
+    standalone: true,
+    imports: [NgIf, FullpageMessageComponent, NzListModule, FlexModule, NzTagModule, NzButtonModule, NzWaveModule, NzToolTipModule, ClipboardDirective, NzIconModule, NzPopconfirmModule, PageLoaderComponent, AsyncPipe, TranslateModule]
 })
 export class CustomLinksComponent {
 

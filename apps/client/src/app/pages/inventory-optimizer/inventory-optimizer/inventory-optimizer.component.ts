@@ -8,7 +8,7 @@ import * as _ from 'lodash';
 import { uniq, uniqBy } from 'lodash';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { HasTooFew } from '../optimizations/has-too-few';
 import { ConsolidateStacks } from '../optimizations/consolidate-stacks';
 import { UnwantedMaterials } from '../optimizations/unwanted-materials';
@@ -18,11 +18,35 @@ import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { InventoryPositionComponent } from '../../../modules/inventory/inventory-position/inventory-position.component';
+import { ItemNameClipboardDirective } from '../../../core/item-name-clipboard.directive';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { NgIf, NgFor, NgSwitch, NgSwitchCase, AsyncPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-inventory-optimizer',
-  templateUrl: './inventory-optimizer.component.html',
-  styleUrls: ['./inventory-optimizer.component.less']
+    selector: 'app-inventory-optimizer',
+    templateUrl: './inventory-optimizer.component.html',
+    styleUrls: ['./inventory-optimizer.component.less'],
+    standalone: true,
+    imports: [FlexModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzSwitchModule, FormsModule, NgIf, FullpageMessageComponent, NzSpinModule, NgFor, NzCollapseModule, ClipboardDirective, NzIconModule, NgSwitch, NgSwitchCase, NzInputModule, NzSelectModule, NzToolTipModule, NzListModule, ItemIconComponent, ItemNameClipboardDirective, InventoryPositionComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class InventoryOptimizerComponent {
 

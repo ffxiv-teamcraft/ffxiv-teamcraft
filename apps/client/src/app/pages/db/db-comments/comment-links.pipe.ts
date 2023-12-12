@@ -14,8 +14,9 @@ import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { IS_HEADLESS } from '../../../../environments/is-headless';
 
 @Pipe({
-  name: 'commentLinks',
-  pure: true
+    name: 'commentLinks',
+    pure: true,
+    standalone: true
 })
 export class CommentLinksPipe implements PipeTransform {
 

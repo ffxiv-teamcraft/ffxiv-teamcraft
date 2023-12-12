@@ -23,6 +23,10 @@
         <img *ngIf="node.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
              src="./assets/icons/status/snagging.png">
       </div>
+      <div *ngIf="node.folklore" class="flex-row gap-5 align-center">
+        <img [src]="node.folklore | lazyIcon" alt="" class="item-icon">
+        <app-i18n-name content="items" [id]="node.folklore"></app-i18n-name>
+      </div>
     </div>
   </div>
   <div fxLayout="row wrap" fxLayoutGap="5px">

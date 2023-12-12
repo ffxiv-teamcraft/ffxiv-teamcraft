@@ -3,8 +3,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { EorzeanTimeService } from './eorzean-time.service';
 
 @Pipe({
-  name: 'timer',
-  pure: true
+    name: 'timer',
+    pure: true,
+    standalone: true
 })
 export class TimerPipe implements PipeTransform {
 

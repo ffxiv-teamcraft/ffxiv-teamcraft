@@ -13,7 +13,7 @@ import { ListModule } from '../../modules/list/list.module';
 import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { RouterModule, Routes } from '@angular/router';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
@@ -25,7 +25,7 @@ import { GearsetDisplaySlotComponent } from './gearset-display-slot/gearset-disp
 
 import { FavoritesModule } from '../../modules/favorites/favorites.module';
 import { StatDisplayPipe } from './gearset-editor/stat-display.pipe';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 
 const routes: Routes = [
   {
@@ -41,8 +41,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [GearsetEditorComponent, GearsetDisplayComponent, MateriasPopupComponent, MateriasNeededPopupComponent, GearsetEditorRowComponent, GearsetDisplaySlotComponent, StatDisplayPipe],
-  imports: [
+    imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
@@ -53,19 +52,14 @@ const routes: Routes = [
     ProgressPopupModule,
     FullpageMessageModule,
     GearsetsModule,
-
     ListModule,
     ListPickerModule,
-
-    AntdSharedModule,
     PipesModule,
     ItemIconModule,
-    PageLoaderModule,
-
-
     RouterModule.forChild(routes),
-    FavoritesModule
-  ]
+    FavoritesModule,
+    GearsetEditorComponent, GearsetDisplayComponent, MateriasPopupComponent, MateriasNeededPopupComponent, GearsetEditorRowComponent, GearsetDisplaySlotComponent, StatDisplayPipe
+]
 })
 export class GearsetModule {
 }

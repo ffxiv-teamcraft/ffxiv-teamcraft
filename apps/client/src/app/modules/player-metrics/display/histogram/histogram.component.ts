@@ -4,14 +4,18 @@ import { map } from 'rxjs/operators';
 import { SettingsService } from '../../../settings/settings.service';
 import { EChartsOption } from 'echarts';
 import { Observable } from 'rxjs';
-import { formatDate } from '@angular/common';
-import { TranslateService } from '@ngx-translate/core';
+import { formatDate, NgIf, AsyncPipe } from '@angular/common';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 @Component({
-  selector: 'app-histogram',
-  templateUrl: './histogram.component.html',
-  styleUrls: ['./histogram.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-histogram',
+    templateUrl: './histogram.component.html',
+    styleUrls: ['./histogram.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, NgxEchartsModule, NzEmptyModule, AsyncPipe, TranslateModule]
 })
 export class HistogramComponent extends AbstractMetricDisplayComponent {
 

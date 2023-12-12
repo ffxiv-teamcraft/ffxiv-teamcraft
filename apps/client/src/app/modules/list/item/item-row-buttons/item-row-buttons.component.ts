@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import { ItemRowMenuElement } from '../../../../model/display/item-row-menu-element';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { SettingsService } from '../../../settings/settings.service';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { filter, map, switchMap, takeUntil } from 'rxjs/operators';
@@ -23,15 +23,31 @@ import { RotationsFacade } from '../../../rotations/+state/rotations.facade';
 import { IpcService } from '../../../../core/electron/ipc.service';
 import { PlatformService } from '../../../../core/tools/platform.service';
 import { ItemRowMenuComponent } from '../item-row-menu/item-row-menu.component';
-import { NzContextMenuService } from 'ng-zorro-antd/dropdown';
+import { NzContextMenuService, NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { observeInput } from '../../../../core/rxjs/observe-input';
+import { CharacterNamePipe } from '../../../../pipes/pipes/character-name.pipe';
+import { RotationResultTagComponent } from '../../../../pages/simulator/components/rotation-result-tag/rotation-result-tag.component';
+import { TutorialStepDirective } from '../../../../core/tutorial/tutorial-step.directive';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { ItemNameClipboardDirective } from '../../../../core/item-name-clipboard.directive';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { MarketboardIconComponent } from '../../../marketboard/marketboard-icon/marketboard-icon.component';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-item-row-buttons',
-  templateUrl: './item-row-buttons.component.html',
-  styleUrls: ['./item-row-buttons.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-item-row-buttons',
+    templateUrl: './item-row-buttons.component.html',
+    styleUrls: ['./item-row-buttons.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FlexModule, NgIf, MarketboardIconComponent, NzButtonModule, NzWaveModule, ItemNameClipboardDirective, NzIconModule, NzToolTipModule, NzBadgeModule, NzDropDownModule, NzMenuModule, NgFor, NzPopconfirmModule, TutorialStepDirective, RotationResultTagComponent, AsyncPipe, TranslateModule, CharacterNamePipe]
 })
 export class ItemRowButtonsComponent extends TeamcraftComponent {
 

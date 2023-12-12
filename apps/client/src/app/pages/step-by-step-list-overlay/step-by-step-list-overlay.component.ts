@@ -23,7 +23,7 @@ import { PermissionLevel } from '../../core/database/permissions/permission-leve
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { EorzeanTimeService } from '../../core/eorzea/eorzean-time.service';
 import { AlarmsFacade } from '../../core/alarms/+state/alarms.facade';
 import { StepByStepComponent } from '../../modules/list/step-by-step-details/step-by-step-component';
@@ -34,7 +34,7 @@ import { ListDisplay } from '../../core/layout/list-display';
   standalone: true,
   imports: [CommonModule, OverlayContainerModule, MapModule, PipesModule, CoreModule, FullpageMessageModule,
     NzListModule, ItemIconModule, ListModule,
-    NzDividerModule, NzBreadCrumbModule, NzEmptyModule, PageLoaderModule],
+    NzDividerModule, NzBreadCrumbModule, NzEmptyModule],
   templateUrl: './step-by-step-list-overlay.component.html',
   styleUrls: ['./step-by-step-list-overlay.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -102,6 +102,9 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
     );
     this.closestMap$ = combineLatest([this.stepByStep$, this.mapId$]).pipe(
       map(([stepByStep, currentMapId]) => {
+        if (stepByStep.maps.length === 0) {
+          return -1;
+        }
         return stepByStep.maps.filter(mapId => {
           return mapId !== currentMapId && stepByStep.steps[mapId].progress < 100;
         })[0];

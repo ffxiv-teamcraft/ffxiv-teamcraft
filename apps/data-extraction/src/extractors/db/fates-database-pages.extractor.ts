@@ -12,7 +12,7 @@ export class FatesDatabasePagesExtractor extends AbstractExtractor {
         });
         return acc;
       }, {});
-    this.getSheet(xiv, 'Fate', ['Name', 'Description', 'IconMap', 'ClassJobLevel#', 'ClassJobLevelMax#']).subscribe(
+    this.getSheet(xiv, 'Fate', ['Name', 'Description', 'MapIcon', 'ClassJobLevel#', 'ClassJobLevelMax#']).subscribe(
       fates => {
         const pages = {};
         this.extendNames(fates, [
@@ -29,7 +29,7 @@ export class FatesDatabasePagesExtractor extends AbstractExtractor {
           const lazyFate = lazyFates[row.index];
           pages[row.index] = {
             id: row.index,
-            icon: makeIcon(row.IconMap),
+            icon: makeIcon(row.MapIcon),
             patch: this.findPatch('fate', row.index),
             ...extended,
             lvl: row.ClassJobLevel,

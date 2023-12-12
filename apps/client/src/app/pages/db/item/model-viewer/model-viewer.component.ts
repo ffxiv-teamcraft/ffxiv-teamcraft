@@ -2,9 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-model-viewer',
-  templateUrl: './model-viewer.component.html',
-  styleUrls: ['./model-viewer.component.less']
+    selector: 'app-model-viewer',
+    templateUrl: './model-viewer.component.html',
+    styleUrls: ['./model-viewer.component.less'],
+    standalone: true
 })
 export class ModelViewerComponent implements OnInit {
 

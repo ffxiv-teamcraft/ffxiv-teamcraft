@@ -9,19 +9,31 @@ import { FoldersFacade, TreeFolderDisplay } from '../../../modules/folders/+stat
 import { FolderContentType } from '../../../model/folder/folder-content-type';
 import { DataModel } from '../../../core/database/storage/data-model';
 import { Folder } from '../../../model/folder/folder';
-import { CdkDrag, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDrag, moveItemInArray, CdkDropList } from '@angular/cdk/drag-drop';
 import { FolderDisplay } from '../../../model/folder/folder-display';
 import { debounceTime, first, map, switchMap, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { uniq } from 'lodash';
 import { GuidesService } from '../../../core/database/guides.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { FolderComponent } from '../../../modules/folders/folder/folder.component';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { GearsetRowComponent } from '../../../modules/gearsets/gearset-row/gearset-row.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 
 @Component({
-  selector: 'app-gearsets-page',
-  templateUrl: './gearsets-page.component.html',
-  styleUrls: ['./gearsets-page.component.less']
+    selector: 'app-gearsets-page',
+    templateUrl: './gearsets-page.component.html',
+    styleUrls: ['./gearsets-page.component.less'],
+    standalone: true,
+    imports: [PageLoaderComponent, FlexModule, NzButtonModule, NzWaveModule, NgIf, NzIconModule, GearsetRowComponent, NzDividerModule, FullpageMessageComponent, CdkDropList, NgFor, CdkDrag, NgTemplateOutlet, FolderComponent, AsyncPipe, TranslateModule]
 })
 export class GearsetsPageComponent extends TeamcraftComponent implements OnInit {
 

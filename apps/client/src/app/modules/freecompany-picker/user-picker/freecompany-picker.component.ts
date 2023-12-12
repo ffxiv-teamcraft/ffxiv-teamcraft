@@ -1,16 +1,27 @@
 import { Component } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
-import { UntypedFormControl, Validators } from '@angular/forms';
+import { UntypedFormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { debounceTime, filter, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LodestoneService } from '../../../core/api/lodestone.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzGridModule } from 'ng-zorro-antd/grid';
 
 @Component({
-  selector: 'app-freecompany-picker',
-  templateUrl: './freecompany-picker.component.html',
-  styleUrls: ['./freecompany-picker.component.less']
+    selector: 'app-freecompany-picker',
+    templateUrl: './freecompany-picker.component.html',
+    styleUrls: ['./freecompany-picker.component.less'],
+    standalone: true,
+    imports: [NzGridModule, NzFormModule, NzInputModule, FormsModule, NzAutocompleteModule, ReactiveFormsModule, NgFor, NgIf, NzListModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
 })
 export class FreecompanyPickerComponent {
 

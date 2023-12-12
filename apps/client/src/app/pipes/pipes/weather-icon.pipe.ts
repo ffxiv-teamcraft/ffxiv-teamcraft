@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { weatherIcons } from '../../core/data/sources/weather-icons';
 
 @Pipe({
-  name: 'weatherIcon'
+    name: 'weatherIcon',
+    standalone: true
 })
 export class WeatherIconPipe implements PipeTransform {
   transform(id: number): string | undefined {

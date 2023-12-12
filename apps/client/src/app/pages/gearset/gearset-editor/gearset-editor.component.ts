@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import {
   distinctUntilChanged,
@@ -16,13 +16,13 @@ import {
   tap
 } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { BehaviorSubject, combineLatest, EMPTY, Observable, of, ReplaySubject, timer } from 'rxjs';
 import { SearchAlgo, SearchIndex, XivapiSearchFilter, XivapiService } from '@xivapi/angular-client';
 import { chunk } from 'lodash';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { MateriasPopupComponent } from '../materias-popup/materias-popup.component';
 import { StatsService } from '../../../modules/gearsets/stats.service';
@@ -39,12 +39,40 @@ import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { Memoized } from '../../../core/decorators/memoized';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { EnvironmentService } from '../../../core/environment.service';
+import { StatDisplayPipe } from './stat-display.pipe';
+import { FoodBonusesPipePipe } from '../../../pipes/pipes/food-bonuses.pipe';
+import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
+import { FloorPipe } from '../../../pipes/pipes/floor.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { GearsetEditorRowComponent } from '../gearset-editor-row/gearset-editor-row.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-gearset-editor',
-  templateUrl: './gearset-editor.component.html',
-  styleUrls: ['./gearset-editor.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-gearset-editor',
+    templateUrl: './gearset-editor.component.html',
+    styleUrls: ['./gearset-editor.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzPopconfirmModule, RouterLink, NzAlertModule, NzCollapseModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NzInputNumberModule, NgFor, NzCardModule, NzTagModule, GearsetEditorRowComponent, NzDividerModule, PageLoaderComponent, NzSelectModule, AsyncPipe, DecimalPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, FloorPipe, JobUnicodePipe, FoodBonusesPipePipe, StatDisplayPipe]
 })
 export class GearsetEditorComponent extends TeamcraftComponent implements OnInit {
 

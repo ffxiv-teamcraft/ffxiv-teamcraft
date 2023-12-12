@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { combineLatest, Observable, Subject } from 'rxjs';
-import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { debounceTime, first, map, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
@@ -17,12 +17,33 @@ import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { EnvironmentService } from '../../../core/environment.service';
+import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-leveling-equipment',
-  templateUrl: './leveling-equipment.component.html',
-  styleUrls: ['./leveling-equipment.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-leveling-equipment',
+    templateUrl: './leveling-equipment.component.html',
+    styleUrls: ['./leveling-equipment.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FlexModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzSelectModule, NgFor, NzInputNumberModule, NzCheckboxModule, NgIf, NzButtonModule, NzWaveModule, NzIconModule, ItemIconComponent, NzToolTipModule, ClipboardDirective, FullpageMessageComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, JobUnicodePipe]
 })
 export class LevelingEquipmentComponent extends TeamcraftComponent {
 

@@ -3,7 +3,7 @@ import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { combineLatest, Observable } from 'rxjs';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { debounceTime, filter, first, map, tap } from 'rxjs/operators';
@@ -13,12 +13,25 @@ import { GuidesService } from '../../../../core/database/guides.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { uniq } from 'lodash';
 import { AuthFacade } from '../../../../+state/auth.facade';
+import { FullpageMessageComponent } from '../../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { RotationFolderPanelComponent } from '../rotation-folder-panel/rotation-folder-panel.component';
+import { RotationPanelComponent } from '../rotation-panel/rotation-panel.component';
+import { CdkDropList, CdkDrag } from '@angular/cdk/drag-drop';
+import { PageLoaderComponent } from '../../../../modules/page-loader/page-loader/page-loader.component';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-rotations-page',
-  templateUrl: './rotations-page.component.html',
-  styleUrls: ['./rotations-page.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-rotations-page',
+    templateUrl: './rotations-page.component.html',
+    styleUrls: ['./rotations-page.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NgIf, PageLoaderComponent, CdkDropList, NgFor, CdkDrag, RotationPanelComponent, RotationFolderPanelComponent, FullpageMessageComponent, AsyncPipe, TranslateModule]
 })
 export class RotationsPageComponent {
 

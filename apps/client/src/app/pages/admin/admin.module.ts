@@ -54,37 +54,33 @@ const userIntegrityChecks: Provider[] = [
 ];
 
 @NgModule({
-  providers: [
-    ...userIntegrityChecks
-  ],
-  declarations: [
-    UsersComponent,
-    IntegrityCheckPopupComponent,
-    AdminComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-
-    CoreModule,
-    PipesModule,
-    XivapiClientModule,
-
-    RouterModule.forChild(routes),
-    FlexLayoutModule,
-    NzSelectModule,
-    NzFormModule,
-    NzAutocompleteModule,
-    NzInputModule,
-    NzListModule,
-    NzIconModule,
-    UserAvatarModule,
-    FullpageMessageModule,
-    NzButtonModule,
-    NzToolTipModule,
-    NzTabsModule
-  ]
+    providers: [
+        ...userIntegrityChecks
+    ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        CoreModule,
+        PipesModule,
+        XivapiClientModule,
+        RouterModule.forChild(routes),
+        FlexLayoutModule,
+        NzSelectModule,
+        NzFormModule,
+        NzAutocompleteModule,
+        NzInputModule,
+        NzListModule,
+        NzIconModule,
+        UserAvatarModule,
+        FullpageMessageModule,
+        NzButtonModule,
+        NzToolTipModule,
+        NzTabsModule,
+        UsersComponent,
+        IntegrityCheckPopupComponent,
+        AdminComponent
+    ]
 })
 export class AdminModule {
 }

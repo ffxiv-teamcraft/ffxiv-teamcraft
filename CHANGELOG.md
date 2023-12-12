@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.15...v11.0.16) (2023-12-12)
+
+
+### Features
+
+* **data:** update for cn patch-6.45 ([7935dd6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7935dd60dc66bc37f7d960eab76de31ee70cdd64))
+* **patreon:** new banner to give instructions on hiding ads again when they show up ([1523786](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1523786752b57474d6fe2733b794141a1f7b8f59))
+* **step-by-step:** better message for when everything has been gathered in overlay ([6383b32](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6383b328ecb79e960288c5a8836be881ad03ce7d))
+
+
+### Bug Fixes
+
+* **db:** better drops position accuracy ([b542798](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b5427987b799176569a38fd398bebbe9261bba9f))
+* **fishing-overlay:** remove spot on fishing end to prevent wrong reports ([98c39f2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/98c39f224b887c745c8fb5cbb21d7ed898f1c3de))
+* **gathering:** add folklore book to node details ([7d3c781](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7d3c781e54c89b2d9334c580597d1be70f8e2bc2))
+* **list:** fixed missing checkbox in item picker ([7d4fb07](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7d4fb076eac069b94ce9936ee63c27ae7fd009d0))
+
+### [11.0.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.14...v11.0.15) (2023-11-21)
+
+
+### Features
+
+* **currency-spending:** add potshreds as possible currency ([9c001e0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9c001e0fc4dbb3288b61e3a2a1c3545a8ba3726f))
+* **db:** support for korean v6.401 update ([6c2560b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6c2560bab92e840352bb8ba507c69cc95d532c82))
+
+
+### Bug Fixes
+
+* **db:** fixed comments sometimes not loading at all ([c956b7e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c956b7e53aa9426d22a525e7f86cb59aa269ea42))
+* **i18n:** missing good omen translation ([341309b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/341309bfa62c05fa801253ba82170a4fe90cc79d))
+* **list-details:** fixed flickering on tiers completion ([ce21aa1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ce21aa1d9f6f5e666b4cfa253f1c694b475a0f05))
+* **list:** fixed item picker freezing with result sets too large ([362a92a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/362a92a440f2871d8274c201cb52843e46c3dcba))
+
 ### [11.0.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.13...v11.0.14) (2023-10-31)
 
 

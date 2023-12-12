@@ -6,11 +6,26 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { topologicalSort } from '../../../core/tools/topological-sort';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { InventoryPositionComponent } from '../../../modules/inventory/inventory-position/inventory-position.component';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-inventory-synthesis-popup',
-  templateUrl: './inventory-synthesis-popup.component.html',
-  styleUrls: ['./inventory-synthesis-popup.component.less']
+    selector: 'app-inventory-synthesis-popup',
+    templateUrl: './inventory-synthesis-popup.component.html',
+    styleUrls: ['./inventory-synthesis-popup.component.less'],
+    standalone: true,
+    imports: [FlexModule, NzCheckboxModule, FormsModule, NgIf, NgFor, NzCardModule, ItemIconComponent, NzButtonModule, NzIconModule, NzToolTipModule, InventoryPositionComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class InventorySynthesisPopupComponent implements OnInit {
 

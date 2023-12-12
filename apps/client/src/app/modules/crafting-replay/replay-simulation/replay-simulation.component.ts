@@ -7,17 +7,26 @@ import { ActionResult, Craft, EffectiveBuff, Simulation, SimulationService } fro
 import { SettingsService } from '../../settings/settings.service';
 import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
 import { MacroPopupComponent } from '../../../pages/simulator/components/macro-popup/macro-popup.component';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { ActionComponent } from '../../../pages/simulator/components/action/action.component';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { SimulationResultComponent } from '../../../pages/simulator/components/simulation-result/simulation-result.component';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-replay-simulation',
-  templateUrl: './replay-simulation.component.html',
-  styleUrls: [
-    '../../../pages/simulator/components/simulator/simulator.component.less',
-    './replay-simulation.component.less'
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-replay-simulation',
+    templateUrl: './replay-simulation.component.html',
+    styleUrls: [
+        '../../../pages/simulator/components/simulator/simulator.component.less',
+        './replay-simulation.component.less'
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, FlexModule, SimulationResultComponent, NzCardModule, NgFor, ActionComponent, NgSwitch, NgSwitchCase, NgSwitchDefault, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
 })
 export class ReplaySimulationComponent {
 

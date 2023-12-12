@@ -30,30 +30,27 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ItemSearchOverlayComponent],
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-
-    RouterModule.forChild(routes),
-
-    TranslateModule,
-
-    CoreModule,
-    OverlayContainerModule,
-    FormsModule,
-    NzAutocompleteModule,
-    NzInputModule,
-    PipesModule,
-    ItemIconModule,
-    NzTagModule,
-    NzButtonModule,
-    ListModule,
-    NzDividerModule,
-    MarketboardModule,
-    FullpageMessageModule,
-    InventoryModule
-  ]
+    imports: [
+        CommonModule,
+        FlexLayoutModule,
+        RouterModule.forChild(routes),
+        TranslateModule,
+        CoreModule,
+        OverlayContainerModule,
+        FormsModule,
+        NzAutocompleteModule,
+        NzInputModule,
+        PipesModule,
+        ItemIconModule,
+        NzTagModule,
+        NzButtonModule,
+        ListModule,
+        NzDividerModule,
+        MarketboardModule,
+        FullpageMessageModule,
+        InventoryModule,
+        ItemSearchOverlayComponent
+    ]
 })
 export class ItemSearchOverlayModule {
 }

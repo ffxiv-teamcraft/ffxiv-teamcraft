@@ -1,12 +1,21 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FiredReason } from '../model/fired-reason';
 import { NzModalRef } from 'ng-zorro-antd/modal';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NgFor } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-fired-feedback-popup',
-  templateUrl: './fired-feedback-popup.component.html',
-  styleUrls: ['./fired-feedback-popup.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-fired-feedback-popup',
+    templateUrl: './fired-feedback-popup.component.html',
+    styleUrls: ['./fired-feedback-popup.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FlexModule, NzRadioModule, FormsModule, NgFor, NzButtonModule, NzWaveModule, TranslateModule]
 })
 export class FiredFeedbackPopupComponent {
 

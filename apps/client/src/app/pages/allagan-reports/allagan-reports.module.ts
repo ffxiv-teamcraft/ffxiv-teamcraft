@@ -21,7 +21,7 @@ import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
-import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
+
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { PredatorsInputComponent } from './predators-input/predators-input.component';
 import { ItemContextService } from '../db/service/item-context.service';
@@ -30,7 +30,7 @@ import { FishContextService } from '../db/service/fish-context.service';
 import * as FishGQLProviders from '../db/service/fish-data.gql';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { ReportsManagementComponent } from './reports-management.component';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
@@ -40,7 +40,7 @@ import { ReportSourceDisplayComponent } from './report-source-display/report-sou
 import { ReportSourceCompactDetailsComponent } from './report-source-compact-details/report-source-compact-details.component';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { QuickSearchModule } from '../../modules/quick-search/quick-search.module';
-import { SpearfishingSpeedModule } from '../../modules/spearfishing-speed-tooltip/spearfishing-speed.module';
+
 
 
 const routes: Routes = [
@@ -57,15 +57,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AllaganReportsComponent,
-    AllaganReportDetailsComponent,
-    AllaganReportRowComponent,
-    PredatorsInputComponent,
-    ReportsManagementComponent,
-    ReportSourceDisplayComponent,
-    ReportSourceCompactDetailsComponent
-  ],
-  imports: [
+    imports: [
     CommonModule,
     RouterModule.forChild(routes),
     ItemIconModule,
@@ -83,26 +75,30 @@ const routes: Routes = [
     NzTagModule,
     NzAvatarModule,
     NzPopconfirmModule,
-    LazyScrollModule,
     NzInputNumberModule,
     NzSpinModule,
     NzAlertModule,
-    PageLoaderModule,
     NzUploadModule,
     NzProgressModule,
     NzCardModule,
     NzStatisticModule,
     NzCheckboxModule,
     QuickSearchModule,
-    SpearfishingSpeedModule
-  ],
-  providers: [
-    ...Object.values(AllaganReportsGQLProviders),
-    ItemContextService,
-    FishDataService,
-    FishContextService,
-    ...Object.values(FishGQLProviders)
-  ]
+    AllaganReportsComponent,
+    AllaganReportDetailsComponent,
+    AllaganReportRowComponent,
+    PredatorsInputComponent,
+    ReportsManagementComponent,
+    ReportSourceDisplayComponent,
+    ReportSourceCompactDetailsComponent
+],
+    providers: [
+        ...Object.values(AllaganReportsGQLProviders),
+        ItemContextService,
+        FishDataService,
+        FishContextService,
+        ...Object.values(FishGQLProviders)
+    ]
 })
 export class AllaganReportsModule {
 }

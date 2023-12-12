@@ -4,7 +4,8 @@ import { map, shareReplay } from 'rxjs/operators';
 import { UserService } from '../../core/database/user.service';
 
 @Pipe({
-  name: 'isPatron'
+    name: 'isPatron',
+    standalone: true
 })
 export class IsPatronPipe implements PipeTransform {
 

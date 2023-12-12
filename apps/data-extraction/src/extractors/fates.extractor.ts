@@ -5,7 +5,7 @@ import { makeIcon } from '../xiv/make-icon';
 export class FatesExtractor extends AbstractExtractor {
   protected doExtract(xiv: XivDataService): any {
     const fates = {};
-    this.getSheet<any>(xiv, 'Fate', ['Name', 'Description', 'IconMap', 'ClassJobLevel', 'Location'])
+    this.getSheet<any>(xiv, 'Fate', ['Name', 'Description', 'MapIcon', 'ClassJobLevel', 'Location'])
       .subscribe(entries => {
         entries.forEach(fate => {
           fates[fate.index] = {
@@ -21,7 +21,7 @@ export class FatesExtractor extends AbstractExtractor {
               de: fate.Description_de,
               fr: fate.Description_fr
             },
-            icon: makeIcon(fate.IconMap),
+            icon: makeIcon(fate.MapIcon),
             level: fate.ClassJobLevel,
             location: fate.Location
           };

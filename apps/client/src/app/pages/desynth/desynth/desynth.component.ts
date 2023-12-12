@@ -12,11 +12,38 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyJobAbbr } from '@ffxiv-teamcraft/data/model/lazy-job-abbr';
 import { DataType, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
 import { DataService } from '../../../core/api/data.service';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { LazyRowPipe } from '../../../pipes/pipes/lazy-row.pipe';
+import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
+import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { DbButtonComponent } from '../../../core/db-button/db-button.component';
+import { MarketboardIconComponent } from '../../../modules/marketboard/marketboard-icon/marketboard-icon.component';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { TutorialStepDirective } from '../../../core/tutorial/tutorial-step.directive';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { FormsModule } from '@angular/forms';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-desynth',
-  templateUrl: './desynth.component.html',
-  styleUrls: ['./desynth.component.less']
+    selector: 'app-desynth',
+    templateUrl: './desynth.component.html',
+    styleUrls: ['./desynth.component.less'],
+    standalone: true,
+    imports: [FlexModule, FormsModule, NzFormModule, NzGridModule, NzSelectModule, TutorialStepDirective, NgFor, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, NgIf, ItemIconComponent, MarketboardIconComponent, DbButtonComponent, NzTagModule, NzToolTipModule, NzPaginationModule, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule, ItemNamePipe, XivapiIconPipe, JobUnicodePipe, LazyRowPipe, I18nPipe]
 })
 export class DesynthComponent {
 

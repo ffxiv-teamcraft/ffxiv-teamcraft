@@ -1,6 +1,6 @@
 import { isPlatformServer } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { IS_HEADLESS } from '../../../../environments/is-headless';
 import { combineLatest } from 'rxjs';
@@ -9,11 +9,15 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { Language } from '../../../core/data/language';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { QuickSearchComponent } from '../../../modules/quick-search/quick-search/quick-search.component';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-db',
-  templateUrl: './db.component.html',
-  styleUrls: ['./db.component.less']
+    selector: 'app-db',
+    templateUrl: './db.component.html',
+    styleUrls: ['./db.component.less'],
+    standalone: true,
+    imports: [FlexModule, QuickSearchComponent, RouterOutlet]
 })
 export class DbComponent extends TeamcraftComponent implements OnInit {
   constructor(

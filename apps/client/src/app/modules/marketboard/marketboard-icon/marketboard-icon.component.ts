@@ -1,19 +1,26 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzSizeLDSType } from 'ng-zorro-antd/core/types';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { MarketboardPopupComponent } from '../marketboard-popup/marketboard-popup.component';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { first, map, switchMap } from 'rxjs/operators';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { observeInput } from '../../../core/rxjs/observe-input';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-marketboard-icon',
-  templateUrl: './marketboard-icon.component.html',
-  styleUrls: ['./marketboard-icon.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-marketboard-icon',
+    templateUrl: './marketboard-icon.component.html',
+    styleUrls: ['./marketboard-icon.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, AsyncPipe, TranslateModule]
 })
 export class MarketboardIconComponent {
 

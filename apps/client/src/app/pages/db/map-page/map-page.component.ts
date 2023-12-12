@@ -3,7 +3,7 @@ import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-c
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
@@ -15,11 +15,32 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { mapIds } from '../../../core/data/sources/map-ids';
 import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
+import { MapNamePipe } from '../../../pipes/pipes/map-name.pipe';
+import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
+import { IfMobilePipe } from '../../../pipes/pipes/if-mobile.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { DbButtonComponent } from '../../../core/db-button/db-button.component';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { MapComponent } from '../../../modules/map/map/map.component';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { DbCommentsComponent } from '../db-comments/db-comments/db-comments.component';
+import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display/i18n-display.component';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-map-page',
-  templateUrl: './map-page.component.html',
-  styleUrls: ['./map-page.component.less']
+    selector: 'app-map-page',
+    templateUrl: './map-page.component.html',
+    styleUrls: ['./map-page.component.less'],
+    standalone: true,
+    imports: [NgIf, FlexModule, NgFor, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, NzSelectModule, FormsModule, MapComponent, FullpageMessageComponent, NzListModule, I18nNameComponent, DbButtonComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, IfMobilePipe, XivapiIconPipe, MapNamePipe]
 })
 export class MapPageComponent extends TeamcraftPageComponent {
 

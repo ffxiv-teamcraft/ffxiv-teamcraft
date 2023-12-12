@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'absolute'
+    name: 'absolute',
+    standalone: true
 })
 export class AbsolutePipe implements PipeTransform {
 

@@ -3,6 +3,7 @@
   <ng-template #searchTypeTpl>
     <nz-select (ngModelChange)="setSearchType($event)" [ngModel]="searchType$ | async"
                class="search-type with-addon-before"
+               name="searchType"
                nzShowSearch tutorialStep="TUTORIAL.SEARCH.Search_type" tutorialStepAlign="bottom" tutorialStepIndex="0">
       <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ANY) | translate"
                  [nzValue]="searchTypes.ANY"></nz-option>
@@ -37,7 +38,7 @@
 
   <ng-template #languageSelector>
     <nz-select (ngModelChange)="updateSearchLang($event)" [ngModel]="searchLang$ | async"
-               class="search-language with-addon-before">
+               class="search-language with-addon-before" name="searchLanguage">
       <nz-option *ngFor="let locale of availableLanguages" [nzLabel]="locale | uppercase"
                  [nzValue]="locale"></nz-option>
     </nz-select>

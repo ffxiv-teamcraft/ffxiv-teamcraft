@@ -12,7 +12,8 @@ import { StepState } from '@ffxiv-teamcraft/simulator';
  * This directive take care of the XivDB request, based on the given action ID.
  */
 @Directive({
-  selector: '[appXivdbActionTooltip]'
+    selector: '[appXivdbActionTooltip]',
+    standalone: true
 })
 export class XivapiActionTooltipDirective implements OnDestroy {
 

@@ -8,11 +8,23 @@ import { shareReplay } from 'rxjs/operators';
 import { AbstractNotification } from '../../../core/notification/abstract-notification';
 import { NotificationService } from '../../../core/notification/notification.service';
 import { SettingsService } from '../../settings/settings.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { FormsModule } from '@angular/forms';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { UserAvatarComponent } from '../../user-avatar/user-avatar/user-avatar.component';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NgIf, AsyncPipe, DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-comments-popup',
-  templateUrl: './comments-popup.component.html',
-  styleUrls: ['./comments-popup.component.less']
+    selector: 'app-comments-popup',
+    templateUrl: './comments-popup.component.html',
+    styleUrls: ['./comments-popup.component.less'],
+    standalone: true,
+    imports: [NgIf, NzListModule, UserAvatarComponent, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, NzInputModule, FormsModule, AsyncPipe, DatePipe, TranslateModule]
 })
 export class CommentsPopupComponent implements OnInit {
 

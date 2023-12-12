@@ -379,7 +379,7 @@
   "Use_lodestoneId": "Lodestone ID 사용",
   "LodestoneId": "Lodestone ID",
   "List_forked": "목록이 내 계정에 복사되었습니다",
-  "List_fork": "이 목록을 내 계정에 복사하기",
+  "List_fork": "Copy this list to your account (ctrl + click to copy as offline list)",
   "List_not_found": "목록이 없거나 접근할 권한이 없습니다",
   "Requirements_for_craft": "상세정보",
   "Zone_breakdown": "지역 그룹화",
@@ -421,9 +421,11 @@
   "Precraft_tier": "단계",
   "Regenerating_lists": "목록 갱신",
   "SETTINGS": {
+    "Requires_restart": "Requires restart/refresh to be taken into account",
     "Title": "설정",
     "General": "일반",
     "Link_base": "아이템 링크",
+    "DateFormat": "Date Format",
     "Region": "지역",
     "Region_explain": "특정 게임 버전에 따라 데이터 소스와 기능이 맞춰집니다. 일부 소스나 기능은 지역에 따라서 이용 못할 수도 있습니다",
     "Proxy": "프록시",
@@ -456,6 +458,7 @@
     "No_nickname_warning": "후원자 전용 기능들을 사용하기 위해 설정 페이지에서 닉네임을 설정하시기 바랍니다.",
     "Show_devtools": "개발 도구 표시",
     "Clear_cache": "캐시 지우기(프로그램이 다시 시작됩니다)",
+    "Disable_fc_integration": "Disable FC sharing features",
     "Enable_item_tags": "아이템 태그 사용",
     "Show_copy_list_own_list": "내 목록 패널에 복사 버튼 표시",
     "Custom_theme": "사용자 지정 테마",
@@ -1137,7 +1140,8 @@
       "Centered": "안정",
       "Malleable": "빠른 진행",
       "Primed": "장기 지속",
-      "Normal": "보통"
+      "Normal": "보통",
+      "Good_omen": "Good Omen"
     },
     "SOLVER": {
       "Hq_target": "HQ 목표치",
@@ -1694,6 +1698,7 @@
         "Size": "크기",
         "Large": "월척",
         "Time_since_thrown": "[낚싯대 던지기] 사용 후 시간",
+        "Throw_etime": "Line throw etime",
         "Ignored_spot": "해당 낚시터는 리포트 기능을 지원하지 않기 때문에, 이상한 값이 보일 수도 있습니다.",
         "Ignored_spot_description": "잡은 물고기는 낚시 리포트에 포함되지 않습니다",
         "ERRORS": {

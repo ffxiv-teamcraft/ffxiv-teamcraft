@@ -8,8 +8,9 @@ import { map, switchMap } from 'rxjs/operators';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 @Pipe({
-  name: 'alarmDisplay',
-  pure: true
+    name: 'alarmDisplay',
+    pure: true,
+    standalone: true
 })
 export class AlarmDisplayPipe implements PipeTransform {
 

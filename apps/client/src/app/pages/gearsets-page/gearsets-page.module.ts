@@ -12,14 +12,14 @@ import { ListModule } from '../../modules/list/list.module';
 import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { RouterModule, Routes } from '@angular/router';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FoldersModule } from '../../modules/folders/folders.module';
 import { GearsetsModule } from '../../modules/gearsets/gearsets.module';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 
 const routes: Routes = [
   {
@@ -30,8 +30,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [GearsetsPageComponent],
-  imports: [
+    imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
@@ -42,19 +41,15 @@ const routes: Routes = [
     ProgressPopupModule,
     FullpageMessageModule,
     DragDropModule,
-
     ListModule,
     ListPickerModule,
-
-    AntdSharedModule,
     PipesModule,
     ItemIconModule,
-    PageLoaderModule,
     FoldersModule,
-
     RouterModule.forChild(routes),
-    GearsetsModule
-  ]
+    GearsetsModule,
+    GearsetsPageComponent
+]
 })
 export class GearsetsPageModule {
 }

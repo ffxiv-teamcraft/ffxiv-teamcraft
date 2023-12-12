@@ -105,7 +105,7 @@ export class NodesExtractor extends AbstractExtractor {
             this.gatheringPoints[point.index].spawns = [0, 1, 2].map(index => {
               return point.GatheringPointTransient.GatheringRarePopTimeTable.StartTime[index];
             }).filter(start => start < 65535).map(start => start / 100);
-            this.gatheringPoints[point.index].duration = point.GatheringPointTransient.GatheringRarePopTimeTable.Durationm[0];
+            this.gatheringPoints[point.index].duration = point.GatheringPointTransient.GatheringRarePopTimeTable.Duration[0];
             if (this.gatheringPoints[point.index].duration === 160) {
               this.gatheringPoints[point.index].duration = 120;
             }

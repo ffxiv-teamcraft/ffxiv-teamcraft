@@ -11,7 +11,7 @@ export class GcSupplyExtractor extends AbstractExtractor {
     const index = {};
     combineLatest([
       this.getSheet<any>(xiv, 'GcSupplyDuty', [
-        'Item#', 'ItemCount#', 'Icon', 'ExperienceSupply', 'SealsSupply'
+        'SupplyData:Item#', 'SupplyData:ItemCount#'
       ]),
       this.getSheet<any>(xiv, 'GCSupplyDutyReward', [
         'ExperienceSupply', 'SealsProvisioning', 'SealsSupply'
@@ -20,13 +20,13 @@ export class GcSupplyExtractor extends AbstractExtractor {
     .subscribe(([entries, rewards]) => {
       entries.forEach(row => {
         index[row.index] = {};
-        row.Item.forEach((items, i) => {
-          index[row.index][this.jobIds[i]] = items
+        row.SupplyData.forEach((supply, i) => {
+          index[row.index][this.jobIds[i]] = supply.Item
             .filter(Boolean)
             .map((item, index) => {
             return {
               itemId: item,
-              count: row.ItemCount[i][index],
+              count: row.SupplyData[i].ItemCount[index],
               reward: {
                 xp: rewards[row.index - 1].ExperienceSupply,
                 seals: rewards[row.index - 1].SealsSupply

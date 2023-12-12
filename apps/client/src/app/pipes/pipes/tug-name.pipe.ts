@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Tug } from '@ffxiv-teamcraft/types';
 
 @Pipe({
-  name: 'tugName'
+    name: 'tugName',
+    standalone: true
 })
 export class TugNamePipe implements PipeTransform {
 

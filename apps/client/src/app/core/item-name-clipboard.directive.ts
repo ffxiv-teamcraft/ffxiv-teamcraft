@@ -9,8 +9,9 @@ import { first, map, switchMap } from 'rxjs/operators';
 import { observeInput } from './rxjs/observe-input';
 
 @Directive({
-  // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: '[itemNameCopy]'
+    // eslint-disable-next-line @angular-eslint/directive-selector
+    selector: '[itemNameCopy]',
+    standalone: true
 })
 export class ItemNameClipboardDirective extends NzTooltipDirective implements OnInit {
 

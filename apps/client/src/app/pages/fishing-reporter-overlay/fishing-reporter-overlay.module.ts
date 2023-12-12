@@ -11,10 +11,10 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { SettingsModule } from '../../modules/settings/settings.module';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { OverlayContainerModule } from '../../modules/overlay-container/overlay-container.module';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 
 const routes: Routes = [
   {
@@ -25,26 +25,20 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
+    imports: [
     CommonModule,
     FlexLayoutModule,
-
     RouterModule.forChild(routes),
-
     TranslateModule,
-
     CoreModule,
     PipesModule,
     ItemIconModule,
     AlarmsModule,
     SettingsModule,
-    PageLoaderModule,
     FullpageMessageModule,
-
-    AntdSharedModule,
-    OverlayContainerModule
-  ],
-  declarations: [FishingReporterOverlayComponent]
+    OverlayContainerModule,
+    FishingReporterOverlayComponent
+]
 })
 export class FishingReporterOverlayModule {
 }

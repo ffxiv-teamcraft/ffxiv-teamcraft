@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
@@ -10,7 +10,7 @@ import { ListRow } from '../../../modules/list/model/list-row';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { LayoutEditorComponent } from '../../../modules/layout-editor/layout-editor/layout-editor.component';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
@@ -49,12 +49,39 @@ import { uniq } from 'lodash';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 import { ListDisplayMode } from './list-display-mode';
 import { AnalyticsService } from '../../../core/analytics/analytics.service';
+import { PermissionLevelPipe } from '../../../pipes/pipes/permission-level.pipe';
+import { IfMobilePipe } from '../../../pipes/pipes/if-mobile.pipe';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { ListDetailsPanelComponent } from '../../../modules/list/list-details-panel/list-details-panel.component';
+import { ListCrystalsPanelComponent } from '../list-crystals-panel/list-crystals-panel.component';
+import { StepByStepDetailsComponent } from '../../../modules/list/step-by-step-details/step-by-step-details.component';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { FormsModule } from '@angular/forms';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { FavoriteButtonComponent } from '../../../modules/favorites/favorite-button/favorite-button.component';
+import { TutorialStepDirective } from '../../../core/tutorial/tutorial-step.directive';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, NgSwitch, NgSwitchCase, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-list-details',
-  templateUrl: './list-details.component.html',
-  styleUrls: ['./list-details.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-list-details',
+    templateUrl: './list-details.component.html',
+    styleUrls: ['./list-details.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, FlexModule, NzButtonModule, NzWaveModule, NzDropDownModule, NzToolTipModule, NzIconModule, NzMenuModule, NgFor, TutorialStepDirective, FavoriteButtonComponent, NzTagModule, NzCheckboxModule, FormsModule, RouterLink, NgSwitch, NgSwitchCase, NzRadioModule, ClipboardDirective, NzPopconfirmModule, NzAlertModule, NzSwitchModule, StepByStepDetailsComponent, ListCrystalsPanelComponent, ListDetailsPanelComponent, InventoryViewComponent, PageLoaderComponent, FullpageMessageComponent, AsyncPipe, TranslateModule, IfMobilePipe, PermissionLevelPipe]
 })
 export class ListDetailsComponent extends TeamcraftPageComponent implements OnInit, OnDestroy {
 

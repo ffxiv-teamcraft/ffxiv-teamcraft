@@ -15,12 +15,48 @@ import { List } from '../../model/list';
 import { ListController } from '../../list-controller';
 import { Team } from '../../../../model/team/team';
 import { Craft } from '@ffxiv-teamcraft/simulator';
+import { LazyIconPipe } from '../../../../pipes/pipes/lazy-icon.pipe';
+import { XivapiIconPipe } from '../../../../pipes/pipes/xivapi-icon.pipe';
+import { CeilPipe } from '../../../../pipes/pipes/ceil.pipe';
+import { ItemNamePipe } from '../../../../pipes/pipes/item-name.pipe';
+import { I18nRowPipe } from '../../../../core/i18n/i18n-row.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nPipe } from '../../../../core/i18n.pipe';
+import { ItemSourcesDisplayComponent } from '../item-sources-display/item-sources-display.component';
+import { CompactAmountInputComponent } from '../compact-amount-input/compact-amount-input.component';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NgForTrackByIdDirective } from '../../../../core/track-by/ng-for-track-by-id.directive';
+import { MapPositionComponent } from '../../../map/map-position/map-position.component';
+import { AlarmButtonComponent } from '../../../alarm-button/alarm-button/alarm-button.component';
+import { TutorialStepDirective } from '../../../../core/tutorial/tutorial-step.directive';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
+import { FormsModule } from '@angular/forms';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { InventoryPositionComponent } from '../../../inventory/inventory-position/inventory-position.component';
+import { ItemRowButtonsComponent } from '../item-row-buttons/item-row-buttons.component';
+import { UserAvatarComponent } from '../../../user-avatar/user-avatar/user-avatar.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { I18nNameComponent } from '../../../../core/i18n/i18n-name/i18n-name.component';
+import { ItemNameClipboardDirective } from '../../../../core/item-name-clipboard.directive';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { ItemIconComponent } from '../../../item-icon/item-icon/item-icon.component';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-item-row',
-  templateUrl: './item-row.component.html',
-  styleUrls: ['./item-row.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-item-row',
+    templateUrl: './item-row.component.html',
+    styleUrls: ['./item-row.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, FlexModule, NzGridModule, ItemIconComponent, NzButtonModule, NzIconModule, NzToolTipModule, ItemNameClipboardDirective, I18nNameComponent, NzTagModule, NgFor, UserAvatarComponent, ItemRowButtonsComponent, InventoryPositionComponent, NzDropDownModule, NzMenuModule, NzInputModule, FormsModule, NzAutocompleteModule, TutorialStepDirective, AlarmButtonComponent, MapPositionComponent, NgForTrackByIdDirective, NzWaveModule, NzPopoverModule, NzInputNumberModule, CompactAmountInputComponent, ItemSourcesDisplayComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, CeilPipe, XivapiIconPipe, LazyIconPipe]
 })
 export class ItemRowComponent extends AbstractItemRowComponent implements OnInit {
 

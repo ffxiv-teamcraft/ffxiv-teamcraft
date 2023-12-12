@@ -6,17 +6,35 @@ import { LayoutRow } from '../../../core/layout/layout-row';
 import { LayoutRowOrder } from '../../../core/layout/layout-row-order.enum';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../text-question-popup/text-question-popup/text-question-popup.component';
 import { filter, map } from 'rxjs/operators';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { LayoutRowDisplayEditorComponent } from '../layout-row-display-editor/layout-row-display-editor.component';
 import { LayoutOrderPopupComponent } from '../layout-order-popup/layout-order-popup.component';
+import { LayoutEditorRowComponent } from '../layout-editor-row/layout-editor-row.component';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-layout-editor',
-  templateUrl: './layout-editor.component.html',
-  styleUrls: ['./layout-editor.component.less']
+    selector: 'app-layout-editor',
+    templateUrl: './layout-editor.component.html',
+    styleUrls: ['./layout-editor.component.less'],
+    standalone: true,
+    imports: [NgIf, FlexModule, NzSelectModule, FormsModule, NgFor, NzButtonModule, NzWaveModule, NzIconModule, NzPopconfirmModule, NzToolTipModule, ClipboardDirective, NzAlertModule, NzInputModule, NzCardModule, NzCheckboxModule, NzRadioModule, LayoutEditorRowComponent, AsyncPipe, TranslateModule]
 })
 export class LayoutEditorComponent {
 

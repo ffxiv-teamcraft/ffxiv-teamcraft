@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { AllaganReportsService } from '../allagan-reports.service';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { distinctUntilChanged, filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -11,12 +11,36 @@ import { AllaganReportStatus } from '../model/allagan-report-status';
 import { AllaganReportSource, getExtract, TRADE_SOURCES_PRIORITIES } from '@ffxiv-teamcraft/types';
 import { uniq } from 'lodash';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { ReportSourceCompactDetailsComponent } from '../report-source-compact-details/report-source-compact-details.component';
+import { ReportSourceDisplayComponent } from '../report-source-display/report-source-display.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { RouterLink } from '@angular/router';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { LazyScrollComponent } from '../../../modules/lazy-scroll/lazy-scroll/lazy-scroll.component';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NzStatisticModule } from 'ng-zorro-antd/statistic';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-allagan-reports',
-  templateUrl: './allagan-reports.component.html',
-  styleUrls: ['./allagan-reports.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-allagan-reports',
+    templateUrl: './allagan-reports.component.html',
+    styleUrls: ['./allagan-reports.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FlexModule, NgIf, NzSelectModule, FormsModule, NgFor, NzDividerModule, NzCardModule, NzStatisticModule, NzEmptyModule, LazyScrollComponent, ItemIconComponent, I18nNameComponent, NzButtonModule, NzToolTipModule, RouterLink, NzIconModule, NzWaveModule, NzPopconfirmModule, NzGridModule, NzTagModule, ReportSourceDisplayComponent, ReportSourceCompactDetailsComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, TranslateModule]
 })
 export class AllaganReportsComponent {
 

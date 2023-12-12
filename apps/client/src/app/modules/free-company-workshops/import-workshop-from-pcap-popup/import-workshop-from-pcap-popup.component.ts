@@ -9,12 +9,21 @@ import { FreeCompanyWorkshop } from '../model/free-company-workshop';
 import { VesselType } from '../model/vessel-type';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { worlds } from '../../../core/data/sources/worlds';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NgSwitch, NgSwitchCase, NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
+import { NzStepsModule } from 'ng-zorro-antd/steps';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-import-workshop-from-pcap-popup',
-  templateUrl: './import-workshop-from-pcap-popup.component.html',
-  styleUrls: ['./import-workshop-from-pcap-popup.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-import-workshop-from-pcap-popup',
+    templateUrl: './import-workshop-from-pcap-popup.component.html',
+    styleUrls: ['./import-workshop-from-pcap-popup.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FlexModule, NzStepsModule, NgSwitch, NgSwitchCase, NzBadgeModule, NgIf, NgTemplateOutlet, NzButtonModule, NzWaveModule, NgFor, AsyncPipe, TranslateModule]
 })
 export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent implements OnInit {
   private _freeCompany = new BehaviorSubject(null);

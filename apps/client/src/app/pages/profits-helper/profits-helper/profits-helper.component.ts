@@ -4,18 +4,38 @@ import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-be
 import { AuthFacade } from '../../../+state/auth.facade';
 import { first, map, pluck, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, merge, Subject } from 'rxjs';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { ProfitEntry } from '../model/profit-entry';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ListAdditionRecord } from '../../../modules/list-picker/list-addition-record';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { FormsModule } from '@angular/forms';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { MarketboardIconComponent } from '../../../modules/marketboard/marketboard-icon/marketboard-icon.component';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-profits-helper',
-  templateUrl: './profits-helper.component.html',
-  styleUrls: ['./profits-helper.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-profits-helper',
+    templateUrl: './profits-helper.component.html',
+    styleUrls: ['./profits-helper.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzTableModule, NgIf, NgFor, ItemIconComponent, I18nNameComponent, MarketboardIconComponent, NzSpinModule, NzGridModule, NzCardModule, NzCheckboxModule, FormsModule, NgTemplateOutlet, NzInputNumberModule, NzEmptyModule, AsyncPipe, DecimalPipe, DatePipe, TranslateModule, JobUnicodePipe]
 })
 export class ProfitsHelperComponent {
 

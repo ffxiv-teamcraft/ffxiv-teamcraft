@@ -10,12 +10,12 @@ import { CoreModule } from '../../core/core.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { SettingsModule } from '../../modules/settings/settings.module';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { OverlayContainerModule } from '../../modules/overlay-container/overlay-container.module';
 import { MapModule } from '../../modules/map/map.module';
 import { FormsModule } from '@angular/forms';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 
 const routes: Routes = [
   {
@@ -26,27 +26,21 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
+    imports: [
     CommonModule,
     FlexLayoutModule,
     FormsModule,
-
     RouterModule.forChild(routes),
-
     TranslateModule,
-
     CoreModule,
     PipesModule,
     ItemIconModule,
     SettingsModule,
-    PageLoaderModule,
     FullpageMessageModule,
     MapModule,
-
-    AntdSharedModule,
-    OverlayContainerModule
-  ],
-  declarations: [MappyOverlayComponent]
+    OverlayContainerModule,
+    MappyOverlayComponent
+]
 })
 export class MappyOverlayModule {
 }

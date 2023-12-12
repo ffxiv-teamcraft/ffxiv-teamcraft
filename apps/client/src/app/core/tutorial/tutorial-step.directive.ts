@@ -8,8 +8,9 @@ import { TutorialStepComponent } from './tutorial-step/tutorial-step.component';
 import { tap } from 'rxjs/operators';
 
 @Directive({
-  // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: '[tutorialStep]'
+    // eslint-disable-next-line @angular-eslint/directive-selector
+    selector: '[tutorialStep]',
+    standalone: true
 })
 export class TutorialStepDirective implements OnInit, OnDestroy {
 

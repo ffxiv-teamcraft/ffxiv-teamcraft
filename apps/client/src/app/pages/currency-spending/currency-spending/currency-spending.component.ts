@@ -12,11 +12,31 @@ import { UniversalisService } from '../../../core/api/universalis.service';
 import { DataType, getItemSource, SearchType } from '@ffxiv-teamcraft/types';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { LazyIconPipe } from '../../../pipes/pipes/lazy-icon.pipe';
+import { FloorPipe } from '../../../pipes/pipes/floor.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { MarketboardIconComponent } from '../../../modules/marketboard/marketboard-icon/marketboard-icon.component';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { DbButtonComponent } from '../../../core/db-button/db-button.component';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { NgFor, NgIf, AsyncPipe, DecimalPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-currency-spending',
-  templateUrl: './currency-spending.component.html',
-  styleUrls: ['./currency-spending.component.less']
+    selector: 'app-currency-spending',
+    templateUrl: './currency-spending.component.html',
+    styleUrls: ['./currency-spending.component.less'],
+    standalone: true,
+    imports: [FlexModule, NzSelectModule, FormsModule, NgFor, I18nNameComponent, NzInputNumberModule, NgIf, NzProgressModule, NzListModule, NzEmptyModule, DbButtonComponent, ItemIconComponent, MarketboardIconComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, FloorPipe, LazyIconPipe]
 })
 export class CurrencySpendingComponent extends TeamcraftComponent implements OnInit {
 
@@ -63,7 +83,9 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
           33870,
           15857,
           15858,
-          39884
+          38533, // Sil'dihn Potsherd
+          39884, // Rokkon Potsherd
+          41078 // Aloalo Potsherd
         ];
       })
     );

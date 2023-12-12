@@ -3,6 +3,18 @@ import { SettingsService } from '../../../../modules/settings/settings.service';
 import { map, shareReplay, startWith } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
 import { Observable } from 'rxjs';
+import { LazyRowPipe } from '../../../../pipes/pipes/lazy-row.pipe';
+import { XivapiIconPipe } from '../../../../pipes/pipes/xivapi-icon.pipe';
+import { I18nRowPipe } from '../../../../core/i18n/i18n-row.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nPipe } from '../../../../core/i18n.pipe';
+import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 interface FishDetailsStatsSummary {
   min?: number;
@@ -13,10 +25,12 @@ interface FishDetailsStatsSummary {
 }
 
 @Component({
-  selector: 'app-fish-details-container',
-  templateUrl: './fish-details-container.component.html',
-  styleUrls: ['./fish-details-container.component.less', '../../common-db.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-fish-details-container',
+    templateUrl: './fish-details-container.component.html',
+    styleUrls: ['./fish-details-container.component.less', '../../common-db.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FlexModule, NzButtonModule, NzIconModule, NzToolTipModule, NzSelectModule, FormsModule, NgIf, NgFor, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, XivapiIconPipe, LazyRowPipe]
 })
 export class FishDetailsContainerComponent {
   public readonly loading$ = this.fishCtx.statisticsByFish$.pipe(map((res) => res.loading));

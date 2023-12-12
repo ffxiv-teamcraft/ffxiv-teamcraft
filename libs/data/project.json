@@ -11,7 +11,8 @@
         "outputPath": "dist/libs/data",
         "main": "libs/data/src/index.ts",
         "tsConfig": "libs/data/tsconfig.lib.json",
-        "assets": ["libs/data/*.md"]
+        "assets": ["libs/data/*.md"],
+        "updateBuildableProjectDepsInPackageJson": true
       }
     },
     "lint": {
@@ -25,8 +26,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/data"],
       "options": {
-        "jestConfig": "libs/data/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "libs/data/jest.config.ts"
       }
     }
   },

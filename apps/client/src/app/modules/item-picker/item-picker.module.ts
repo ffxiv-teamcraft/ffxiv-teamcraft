@@ -8,25 +8,27 @@ import { ItemPickerService } from './item-picker.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
 import { PipesModule } from '../../pipes/pipes.module';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 import { RouterModule } from '@angular/router';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+
 
 @NgModule({
-  imports: [
+    imports: [
     CommonModule,
     CoreModule,
     FlexLayoutModule,
-    AntdSharedModule,
     ItemIconModule,
     TranslateModule,
     FormsModule,
     PipesModule,
-    RouterModule
-  ],
-  declarations: [ItemPickerComponent],
-  providers: [
-    ItemPickerService
-  ]
+    RouterModule,
+    ScrollingModule,
+    ItemPickerComponent
+],
+    providers: [
+        ItemPickerService
+    ]
 })
 export class ItemPickerModule {
 }

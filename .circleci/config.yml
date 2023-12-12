@@ -149,15 +149,15 @@ jobs:
             - v2-deps-{ .Branch }-{ checksum "yarn.lock" }
       - run: choco install wget -y
       - run:
-          command: wget https://nodejs.org/dist/v16.17.0/node-v16.17.0-x86.msi -P C:\Users\circleci\Downloads\
+          command: wget https://nodejs.org/dist/v18.18.0/node-v18.18.0-x86.msi -P C:\Users\circleci\Downloads\
           shell: cmd.exe
-      - run: MsiExec.exe /i C:\Users\circleci\Downloads\node-v16.17.0-x86.msi /qn
+      - run: MsiExec.exe /i C:\Users\circleci\Downloads\node-v18.18.0-x86.msi /qn
       - run:
           name: Install yarn
           command: |
              Start-Process powershell -verb runAs -Args "-start GeneralProfile"
-             nvm install 16.17.0
-             nvm use 16.17.0
+             nvm install 18.18.0
+             nvm use 18.18.0
              npm i -g yarn
       - run:
           name: Reinstalling dependencies for windows

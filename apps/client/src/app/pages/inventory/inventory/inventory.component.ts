@@ -13,11 +13,39 @@ import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { LazyIconPipe } from '../../../pipes/pipes/lazy-icon.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { DbButtonComponent } from '../../../core/db-button/db-button.component';
+import { InventoryPositionComponent } from '../../../modules/inventory/inventory-position/inventory-position.component';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { CdkVirtualScrollViewport, CdkFixedSizeVirtualScroll, CdkVirtualForOf } from '@angular/cdk/scrolling';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-inventory',
-  templateUrl: './inventory.component.html',
-  styleUrls: ['./inventory.component.less']
+    selector: 'app-inventory',
+    templateUrl: './inventory.component.html',
+    styleUrls: ['./inventory.component.less'],
+    standalone: true,
+    imports: [NgIf, FlexModule, NzSelectModule, FormsModule, NgFor, NzButtonModule, NzInputModule, NzIconModule, NzToolTipModule, NzWaveModule, NzDropDownModule, NzMenuModule, ClipboardDirective, NzPopconfirmModule, NzGridModule, NzSpinModule, NzCardModule, ItemIconComponent, CdkVirtualScrollViewport, CdkFixedSizeVirtualScroll, NzListModule, CdkVirtualForOf, I18nNameComponent, InventoryPositionComponent, DbButtonComponent, FullpageMessageComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, LazyIconPipe]
 })
 export class InventoryComponent {
 

@@ -52,7 +52,7 @@
     "Want_filters": "需要更多过滤方式？",
     "Open_search": "打开搜索页面",
     "Island_recipe": "无人岛配方",
-    "Ingesting_index": "Ingesting content for the newly selected language, this should take few seconds..."
+    "Ingesting_index": "提取新选定的语言的内容，这将需要几秒钟……"
   },
   "Use_as_default_character": "设为默认角色",
   "Download_desktop_app": "下载客户端",
@@ -207,8 +207,8 @@
     "Visibility": "可见性",
     "Public": "公开",
     "Private": "私人",
-    "Pagination_text": "{{start}}-{{end}} of {{total}} items",
-    "And_X_more": "and {{amount}} more...",
+    "Pagination_text": "{{total}} 物品中的 {{start}}-{{end}}",
+    "And_X_more": "还有 {{amount}} 个……",
     "DAYS": {
       "Monday": "星期一",
       "Tuesday": "星期二",
@@ -379,7 +379,7 @@
   "Use_lodestoneId": "使用 Lodestone ID",
   "LodestoneId": "Lodestone ID",
   "List_forked": "清单已复制到你的账号",
-  "List_fork": "将此清单复制到你的账号",
+  "List_fork": "将此清单复制到您的账户 (ctrl + 单击 以离线清单形式复制)",
   "List_not_found": "没有找到清单或者你没有权限访问",
   "Requirements_for_craft": "查看要求",
   "Zone_breakdown": "按地图显示",
@@ -421,9 +421,11 @@
   "Precraft_tier": "阶段",
   "Regenerating_lists": "重新生成清单",
   "SETTINGS": {
+    "Requires_restart": "需要重新启动/刷新以生效",
     "Title": "设置",
     "General": "通用",
     "Link_base": "物品链接",
+    "DateFormat": "日期格式",
     "Region": "区域",
     "Region_explain": "数据源和基于特定游戏版本的功能将根据区域而做调整。在特定区域下某些功能可能无法使用。",
     "Proxy": "代理",
@@ -456,6 +458,7 @@
     "No_nickname_warning": "请到设置页面设置昵称以使用赞助人专属功能",
     "Show_devtools": "显示开发者工具",
     "Clear_cache": "清除缓存 (将重新启动应用程序)",
+    "Disable_fc_integration": "禁用部队共享功能",
     "Enable_item_tags": "启用物品标签",
     "Show_copy_list_own_list": "在自己的清单页也显示复制清单按钮",
     "Custom_theme": "自定义主题",
@@ -537,11 +540,11 @@
     "Housing_map_explain": "你的房屋所在的房区地图",
     "Reset_linked_characters_ok": "已重置角色链接",
     "Display_slow_mode_notification": "显示 制作/采集 慢速模式通知",
-    "New_child_window": "Create a new child window",
-    "Child_windows_title": "You can now open child windows in Teamcraft desktop !",
-    "Child_windows_description": "When clicking something that navigates (like the \"i\" button for database pages or any link in the app), use ctrl + click or middle click instead to open in a new window. Additionally, you can create a new window using the new button next to the github stars count.",
-    "Desktop_tip_title": "Teamcraft has a desktop app ! Better, faster, stronger",
-    "Desktop_tip_description": "Desktop app is way faster by using offline search, it also adds overlay features and more using packet capture (which is disabled by default if you want to avoid using packet capture). It's strongly advized to use it instead of web version for a better experience.",
+    "New_child_window": "创建一个新的子窗口",
+    "Child_windows_title": "您现在可以在 Teamcraft 客户端中打开子窗口了！",
+    "Child_windows_description": "当点击跳转时(如数据库页面的“i”按钮或应用程序中的任何链接)， 使用ctrl + 单击或中键单击来在新窗口中打开。另外您可以使用 github 星标数旁边的新按钮来创建一个新窗口。",
+    "Desktop_tip_title": "Teamcraft 拥有桌面客户端！更好、更快、更强！",
+    "Desktop_tip_description": "桌面客户端使用离线搜索更快， 它还添加了悬浮窗功能和更多使用数据包捕获的功能(如果你想避免使用数据包捕获，默认情况下它是禁用的)。强烈建议使用它而不是网页版以获得更好的体验。",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -1137,7 +1140,8 @@
       "Centered": "居中对齐",
       "Malleable": "大进展",
       "Primed": "长持续",
-      "Normal": "通常"
+      "Normal": "通常",
+      "Good_omen": "好兆头"
     },
     "SOLVER": {
       "Hq_target": "目标HQ率",
@@ -1224,7 +1228,7 @@
       "Craftsmanship": "作业精度",
       "Control": "加工精度",
       "Specialist": "专家",
-      "Splendorous": "Uses a splendorous tool",
+      "Splendorous": "使用莫雯卓越工具",
       "Ingredients": "HQ 材料",
       "Consumables": "消耗品",
       "Apply_stats": "应用面板属性",
@@ -1381,11 +1385,11 @@
     "Ilvl": "品级",
     "Cost": "消耗",
     "Class_job": "职业/特职",
-    "Damage_phys": "Phys. Damage",
-    "Damage_mag": "Mag. Damage",
-    "Defense_phys": "Phys. Defense",
-    "Defense_mag": "Mag. Defense",
-    "Masterbooks": "Requires a masterbook"
+    "Damage_phys": "物理伤害",
+    "Damage_mag": "魔法伤害",
+    "Defense_phys": "物理防御力",
+    "Defense_mag": "魔法防御力",
+    "Masterbooks": "需要秘籍"
   },
   "SEARCH_INTRO": {
     "Slogan": "制作，分享，贡献",
@@ -1619,9 +1623,9 @@
     "Currencies": "货币",
     "Rowena_splendor": "罗薇娜显赫商会",
     "Unlocks": "解锁",
-    "Jump_to_page": "Open db page",
+    "Jump_to_page": "打开数据库页面",
     "Ishgard_restoration": "伊修加德重建",
-    "GC_supply_value": "Expert Delivery",
+    "GC_supply_value": "筹备稀有品",
     "ITEM": {
       "Masterpiece_exp_tooltip": "下一等级所需经验的百分比",
       "Required_craftsmanship": "需要作业精度",
@@ -1633,8 +1637,8 @@
       "Requires_gc_rank": "所需大国防联军军衔 {{rank}}"
     },
     "FISH": {
-      "Fruity_video": "How to catch video",
-      "Fruity_video_description": "Link to the \"how catch video\" from Fruity Snacks for this fish",
+      "Fruity_video": "如何捕获的视频",
+      "Fruity_video_description": "连接到 Fruity Snacks “如何捕获这条鱼”的视频",
       "Hour": "上钩时间",
       "Etime": "艾欧泽亚时间",
       "Misses_popup_title": "此钓场的提钩失败记录",
@@ -1694,6 +1698,7 @@
         "Size": "尺寸",
         "Large": "大",
         "Time_since_thrown": "抛竿以来的时间",
+        "Throw_etime": "抛竿时间(艾)",
         "Ignored_spot": "报告工具不支持该钓场，可能会显示不正常的数值。",
         "Ignored_spot_description": "报告工具不会上传你钓到的鱼",
         "ERRORS": {
@@ -1862,7 +1867,7 @@
     "NPC": "NPC",
     "Leve": "理符任务",
     "Leve_info_message": "左侧的理符任务功能可以帮你准备材料并计算经验奖励",
-    "Comparison_tip": "You can compare items by selecting them and setting selection to comparison mode",
+    "Comparison_tip": "您可以通过选择项目并设置选区进行比较模式来比较项目",
     "Monster": "怪物",
     "Lore": "台词&设定",
     "Fate": "危命任务",
@@ -1975,8 +1980,8 @@
     "Select_stat": "选择属性",
     "Level": "等级",
     "SELECTION_MODE": {
-      "List": "List",
-      "Compare": "Compare"
+      "List": "清单",
+      "Compare": "比较"
     },
     "SORT_BY": {
       "Relevance": "相关性",
@@ -2099,8 +2104,8 @@
       "Message": "物品还存放于： {{containers}}。"
     },
     "NOT_IN_LIST": {
-      "Title": "Items that are not used in any of your lists",
-      "Message": "This item is not used in any of your lists."
+      "Title": "您的列表中没有使用的项目",
+      "Message": "此物品不在您的任何列表中使用。"
     },
     "HAS_TOO_FEW": {
       "Title": "持有数量非常少的物品",
@@ -3031,7 +3036,7 @@
     "Home_subtitle": "在合并视图中同时打开多个清单",
     "Select_lists": "选择需要合并的清单",
     "Select_layout": "选择布局",
-    "Select_layout_dropdown": "Display layout",
+    "Select_layout_dropdown": "显示布局",
     "Open_aggregate": "打开合并视图",
     "Title": "合并清单视图",
     "Select_panel": "选择一个面板以打开视图",

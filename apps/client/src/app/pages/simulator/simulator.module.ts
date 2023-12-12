@@ -28,9 +28,9 @@ import { StepByStepReportComponent } from './components/step-by-step-report/step
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { RotationsModule } from '../../modules/rotations/rotations.module';
-import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-question-popup.module';
-import { TextQuestionPopupModule } from '../../modules/text-question-popup/text-question-popup.module';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
+
+
 import { FavoritesModule } from '../../modules/favorites/favorites.module';
 import { RotationFoldersModule } from '../../modules/rotation-folders/rotation-folders.module';
 import { RotationFolderPanelComponent } from './components/rotation-folder-panel/rotation-folder-panel.component';
@@ -46,10 +46,10 @@ import { SimulatorOpenerComponent } from './components/simulator-opener/simulato
 import { SimulationSharePopupComponent } from './components/simulation-share-popup/simulation-share-popup.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { SimulationResultComponent } from './components/simulation-result/simulation-result.component';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
-import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
+
 import { RotationResultTagComponent } from './components/rotation-result-tag/rotation-result-tag.component';
 import { CommunityRotationFinderPopupComponent } from './components/community-rotation-finder-popup/community-rotation-finder-popup.component';
 
@@ -107,30 +107,22 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
+    imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
     FlexLayoutModule,
-
     TranslateModule,
     ItemIconModule,
     FullpageMessageModule,
     RotationsModule,
     RotationFoldersModule,
-    NameQuestionPopupModule,
-    TextQuestionPopupModule,
-    PageLoaderModule,
     FavoritesModule,
     UserAvatarModule,
     CustomLinksModule,
     RotationTipsModule,
-
-    AntdSharedModule,
     NzIconModule,
-
-
     // CustomLinksModule,
     TooltipModule,
     PipesModule,
@@ -140,9 +132,6 @@ const routes: Routes = [
     DragDropModule,
     NzPaginationModule,
     NzCheckboxModule,
-    LazyScrollModule
-  ],
-  declarations: [
     CustomSimulatorPageComponent,
     SimulatorPageComponent,
     SimulatorComponent,
@@ -163,19 +152,19 @@ const routes: Routes = [
     SimulationResultComponent,
     RotationResultTagComponent,
     CommunityRotationFinderPopupComponent
-  ],
-  exports: [
-    RotationPanelComponent,
-    RotationFolderPanelComponent,
-    ActionComponent,
-    SimulatorComponent,
-    SimulationResultComponent,
-    RotationResultTagComponent
-  ],
-  providers: [
-    ConsumablesService,
-    FreeCompanyActionsService
-  ]
+],
+    exports: [
+        RotationPanelComponent,
+        RotationFolderPanelComponent,
+        ActionComponent,
+        SimulatorComponent,
+        SimulationResultComponent,
+        RotationResultTagComponent
+    ],
+    providers: [
+        ConsumablesService,
+        FreeCompanyActionsService
+    ]
 })
 export class SimulatorModule {
 }

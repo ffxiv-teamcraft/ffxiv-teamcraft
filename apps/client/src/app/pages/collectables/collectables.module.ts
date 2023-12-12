@@ -20,7 +20,7 @@ import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { NodeDetailsModule } from '../../modules/node-details/node-details.module';
 import { MapModule } from '../../modules/map/map.module';
 import { ListModule } from '../../modules/list/list.module';
@@ -41,16 +41,13 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [
+    imports: [
     CoreModule,
     PipesModule,
-
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-
     FlexLayoutModule,
-
     NzCollapseModule,
     NzTabsModule,
     NzInputModule,
@@ -60,20 +57,16 @@ const routes: Routes = [
     NzNotificationModule,
     NzIconModule,
     NzCheckboxModule,
-
     RouterModule.forChild(routes),
     ItemIconModule,
     NzInputNumberModule,
     FullpageMessageModule,
-    PageLoaderModule,
     NodeDetailsModule,
     MapModule,
     ListModule,
-    AlarmButtonModule
-  ],
-  declarations: [
+    AlarmButtonModule,
     CollectablesComponent
-  ]
+]
 })
 export class CollectablesModule {
 }

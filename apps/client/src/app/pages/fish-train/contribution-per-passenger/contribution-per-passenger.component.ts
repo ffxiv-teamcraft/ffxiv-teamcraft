@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, Input } from '@angular/core';
 import { PersistedFishTrain } from '../../../model/other/persisted-fish-train';
 import { EChartsOption } from 'echarts';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { LodestoneService } from '../../../core/api/lodestone.service';
 import { observeInput } from '../../../core/rxjs/observe-input';
@@ -9,11 +9,18 @@ import { BehaviorSubject, combineLatest, ReplaySubject } from 'rxjs';
 import { isEqual } from 'lodash';
 import { auditTime, delay, distinctUntilChanged, map, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { FormsModule } from '@angular/forms';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
 
 @Component({
-  selector: 'app-contribution-per-passenger',
-  templateUrl: './contribution-per-passenger.component.html',
-  styleUrls: ['./contribution-per-passenger.component.less']
+    selector: 'app-contribution-per-passenger',
+    templateUrl: './contribution-per-passenger.component.html',
+    styleUrls: ['./contribution-per-passenger.component.less'],
+    standalone: true,
+    imports: [NzSwitchModule, FormsModule, NgxEchartsModule, NgIf, NzEmptyModule, AsyncPipe, TranslateModule]
 })
 export class ContributionPerPassengerComponent extends TeamcraftComponent {
   echartsInstance$ = new ReplaySubject<any>();

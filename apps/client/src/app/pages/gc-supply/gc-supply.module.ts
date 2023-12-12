@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { GcSupplyComponent } from './gc-supply/gc-supply.component';
 import { PipesModule } from '../../pipes/pipes.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { ListModule } from '../../modules/list/list.module';
 import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,7 +16,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { TooltipModule } from '../../modules/tooltip/tooltip.module';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 
 const routes: Routes = [
   {
@@ -27,8 +27,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [GcSupplyComponent],
-  imports: [
+    imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
@@ -38,17 +37,13 @@ const routes: Routes = [
     TooltipModule,
     ProgressPopupModule,
     FullpageMessageModule,
-
     ListModule,
     ListPickerModule,
-
-    AntdSharedModule,
     PipesModule,
     ItemIconModule,
-    PageLoaderModule,
-
-    RouterModule.forChild(routes)
-  ]
+    RouterModule.forChild(routes),
+    GcSupplyComponent
+]
 })
 export class GcSupplyModule {
 }

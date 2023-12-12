@@ -1,10 +1,13 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-simple-tab',
-  templateUrl: './simple-tab.component.html',
-  styleUrls: ['./simple-tab.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-simple-tab',
+    templateUrl: './simple-tab.component.html',
+    styleUrls: ['./simple-tab.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf]
 })
 export class SimpleTabComponent {
 

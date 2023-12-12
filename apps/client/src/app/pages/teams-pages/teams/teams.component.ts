@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Team } from '../../../model/team/team';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { filter, first, map, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -17,12 +17,36 @@ import { IpcService } from '../../../core/electron/ipc.service';
 import { WebhookSetting } from '../../../model/team/webhook-setting';
 import { OauthService } from '../../../core/auth/oauth.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { TeamcraftLinkPipe } from '../../../pipes/pipes/teamcraft-link.pipe';
+import { CharacterNamePipe } from '../../../pipes/pipes/character-name.pipe';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { UserAvatarComponent } from '../../../modules/user-avatar/user-avatar/user-avatar.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { NgIf, NgFor, AsyncPipe, DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-teams',
-  templateUrl: './teams.component.html',
-  styleUrls: ['./teams.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-teams',
+    templateUrl: './teams.component.html',
+    styleUrls: ['./teams.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, PageLoaderComponent, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NgFor, NzCollapseModule, NzPopconfirmModule, NzSelectModule, FormsModule, NzGridModule, NzCheckboxModule, NzAlertModule, NzListModule, ClipboardDirective, NzTagModule, UserAvatarComponent, NzDividerModule, FullpageMessageComponent, AsyncPipe, DatePipe, TranslateModule, CharacterNamePipe, TeamcraftLinkPipe]
 })
 export class TeamsComponent implements OnInit {
 

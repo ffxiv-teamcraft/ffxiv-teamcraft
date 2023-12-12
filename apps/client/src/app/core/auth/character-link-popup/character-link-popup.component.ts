@@ -2,18 +2,32 @@ import { Component } from '@angular/core';
 import { Character, CharacterSearchResultRow } from '@xivapi/angular-client';
 import { combineLatest, Observable, of } from 'rxjs';
 import { debounceTime, filter, map, mergeMap, startWith, tap } from 'rxjs/operators';
-import { UntypedFormControl, Validators } from '@angular/forms';
+import { UntypedFormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AddCharacter, AddCustomCharacter, Logout, VerifyCharacter } from '../../../+state/auth.actions';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { uniq } from 'lodash';
 import { LodestoneService } from '../../api/lodestone.service';
 import { CHINESE_GAME_SERVERS, GAME_SERVERS, KOREAN_GAME_SERVERS } from '@ffxiv-teamcraft/data/handmade/game-servers';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-character-link-popup',
-  templateUrl: './character-link-popup.component.html',
-  styleUrls: ['./character-link-popup.component.less']
+    selector: 'app-character-link-popup',
+    templateUrl: './character-link-popup.component.html',
+    styleUrls: ['./character-link-popup.component.less'],
+    standalone: true,
+    imports: [NgIf, NzGridModule, NzFormModule, NzInputModule, FormsModule, NzAutocompleteModule, ReactiveFormsModule, NgFor, NzButtonModule, NzWaveModule, NzListModule, NzDividerModule, NzCheckboxModule, NzSpinModule, AsyncPipe, TranslateModule]
 })
 export class CharacterLinkPopupComponent {
 

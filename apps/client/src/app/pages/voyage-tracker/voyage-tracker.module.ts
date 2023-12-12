@@ -5,11 +5,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
 import { FreeCompanyWorkshopsModule } from '../../modules/free-company-workshops/free-company-workshops.module';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { VesselRowComponent } from './voyage-tracker/vessel-row/vessel-row.component';
@@ -30,31 +30,25 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
+    imports: [
+    CommonModule,
+    FormsModule,
+    FlexLayoutModule,
+    CoreModule,
+    PipesModule,
+    FreeCompanyWorkshopsModule,
+    RouterModule.forChild(routes),
+    NzBreadCrumbModule,
+    NzPopoverModule,
+    FullpageMessageModule,
+    NzPipesModule,
     VoyageTrackerComponent,
     VesselRowComponent,
     VesselListComponent,
     VesselBuildColumnComponent,
     VesselRankColumnComponent,
-    VesselVoyageColumnComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    FlexLayoutModule,
-    AntdSharedModule,
-
-    CoreModule,
-    PipesModule,
-
-    FreeCompanyWorkshopsModule,
-
-    RouterModule.forChild(routes),
-    PageLoaderModule,
-    NzBreadCrumbModule,
-    NzPopoverModule,
-    FullpageMessageModule,
-    NzPipesModule
-  ]
+    VesselVoyageColumnComponent
+]
 })
 export class VoyageTrackerModule {
 }

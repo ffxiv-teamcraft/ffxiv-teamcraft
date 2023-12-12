@@ -1,7 +1,11 @@
 import { Directive, EventEmitter, HostListener, Output } from '@angular/core';
 
-// eslint-disable-next-line @angular-eslint/directive-selector
-@Directive({ selector: '[mouseWheel]' })
+
+@Directive({
+    // eslint-disable-next-line @angular-eslint/directive-selector
+    selector: '[mouseWheel]',
+    standalone: true
+})
 export class MouseWheelDirective {
   @Output() mouseWheelUp = new EventEmitter();
 

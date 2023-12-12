@@ -6,23 +6,21 @@ import { EffectsModule } from '@ngrx/effects';
 import { FreeCompanyWorkshopEffects } from './+state/free-company-workshop.effects';
 import { ImportWorkshopFromPcapPopupComponent } from './import-workshop-from-pcap-popup/import-workshop-from-pcap-popup.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 import { CoreModule } from '../../core/core.module';
 import { NzStepsModule } from 'ng-zorro-antd/steps';
 
 
 @NgModule({
-  declarations: [ImportWorkshopFromPcapPopupComponent],
-  imports: [
+    imports: [
     CommonModule,
     StoreModule.forFeature(fromFreeCompanyWorkshop.freeCompanyWorkshopsFeatureKey, fromFreeCompanyWorkshop.reducer),
     EffectsModule.forFeature([FreeCompanyWorkshopEffects]),
-
     FlexLayoutModule,
-    AntdSharedModule,
     CoreModule,
-    NzStepsModule
-  ]
+    NzStepsModule,
+    ImportWorkshopFromPcapPopupComponent
+]
 })
 export class FreeCompanyWorkshopsModule {
 }

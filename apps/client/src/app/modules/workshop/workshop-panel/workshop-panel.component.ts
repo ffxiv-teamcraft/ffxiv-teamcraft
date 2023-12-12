@@ -6,7 +6,7 @@ import { PermissionLevel } from '../../../core/database/permissions/permission-l
 import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
@@ -19,12 +19,29 @@ import { CustomLink } from '../../../core/database/custom-links/custom-link';
 import { ListPickerService } from '../../list-picker/list-picker.service';
 import { FolderAdditionPickerComponent } from '../../folder-addition-picker/folder-addition-picker/folder-addition-picker.component';
 import { PermissionsController } from '../../../core/database/permissions-controller';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { RouterLink } from '@angular/router';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { ListPanelComponent } from '../../list/list-panel/list-panel.component';
+import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { CdkDropList, CdkDrag } from '@angular/cdk/drag-drop';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 
 @Component({
-  selector: 'app-workshop-panel',
-  templateUrl: './workshop-panel.component.html',
-  styleUrls: ['./workshop-panel.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-workshop-panel',
+    templateUrl: './workshop-panel.component.html',
+    styleUrls: ['./workshop-panel.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzCollapseModule, CdkDropList, FlexModule, NgFor, CdkDrag, ListPanelComponent, NzGridModule, NzButtonModule, NzWaveModule, NzToolTipModule, ClipboardDirective, NzIconModule, NgIf, RouterLink, NzPopconfirmModule, NzDropDownModule, NzMenuModule, AsyncPipe, TranslateModule]
 })
 export class WorkshopPanelComponent {
 

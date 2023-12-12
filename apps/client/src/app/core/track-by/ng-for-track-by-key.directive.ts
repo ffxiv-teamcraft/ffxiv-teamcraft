@@ -3,8 +3,9 @@ import { Directive, Host } from '@angular/core';
 import { DataModel } from '../database/storage/data-model';
 
 @Directive({
-  // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: '[ngForTrackByKey]'
+    // eslint-disable-next-line @angular-eslint/directive-selector
+    selector: '[ngForTrackByKey]',
+    standalone: true
 })
 export class NgForTrackByKeyDirective<T extends DataModel>{
   constructor(@Host() private readonly ngFor: NgForOf<T>) {

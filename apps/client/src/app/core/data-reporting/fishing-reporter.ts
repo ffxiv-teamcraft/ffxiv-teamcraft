@@ -1,5 +1,5 @@
 import { DataReporter } from './data-reporter';
-import { combineLatest, merge, Observable } from 'rxjs';
+import { combineLatest, merge, Observable, Subject } from 'rxjs';
 import { ofMessageType } from '../rxjs/of-message-type';
 import { delay, distinctUntilChanged, filter, map, mapTo, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
@@ -16,6 +16,7 @@ import { getFishTrainStatus } from '../../modules/fish-train/get-fish-train-stat
 import { FishTrainStatus } from '../../pages/fish-trains/fish-trains/fish-train-status';
 import { FishingReport } from './fishing-report';
 import { AuthFacade } from '../../+state/auth.facade';
+import { LazyFishingSpot } from '@ffxiv-teamcraft/data/model/lazy-fishing-spot';
 
 
 export class FishingReporter implements DataReporter {
@@ -57,7 +58,9 @@ export class FishingReporter implements DataReporter {
       })
     );
 
-    const spot$ = this.lazyData.getEntry('fishingSpots').pipe(
+    const spotOverride$ = new Subject<LazyFishingSpot | null>();
+
+    const _spot$ = this.lazyData.getEntry('fishingSpots').pipe(
       switchMap(fishingSpots => {
         return packets$.pipe(
           ofMessageType('systemLogMessage'),
@@ -76,6 +79,8 @@ export class FishingReporter implements DataReporter {
       })
     );
 
+    const spot$ = merge(spotOverride$, _spot$);
+
     const isFishing$ = merge(
       packets$.pipe(ofMessageType('eventStart')),
       packets$.pipe(ofMessageType('eventFinish'))
@@ -83,6 +88,13 @@ export class FishingReporter implements DataReporter {
       filter(packet => packet.parsedIpcData.eventId === 0x150001),
       map(packet => {
         return packet.type === 'eventStart';
+      }),
+      tap(isFishing => {
+        if (!isFishing) {
+          this.eorzea.setZone(0);
+          this.eorzea.setMap(0);
+          spotOverride$.next(null);
+        }
       }),
       startWith(false),
       shareReplay({ bufferSize: 1, refCount: true })

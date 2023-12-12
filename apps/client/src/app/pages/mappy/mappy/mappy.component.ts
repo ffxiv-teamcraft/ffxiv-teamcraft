@@ -5,7 +5,7 @@ import { map, mapTo, switchMap, takeUntil } from 'rxjs/operators';
 import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
 import { MapService } from '../../../modules/map/map.service';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { SettingsService } from '../../../modules/settings/settings.service';
@@ -13,12 +13,29 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { StaticData } from '../../../lazy-data/static-data';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { Memoized } from '../../../core/decorators/memoized';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { MapNamePipe } from '../../../pipes/pipes/map-name.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NzStatisticModule } from 'ng-zorro-antd/statistic';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NgIf, NgFor, AsyncPipe, DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-mappy',
-  templateUrl: './mappy.component.html',
-  styleUrls: ['./mappy.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-mappy',
+    templateUrl: './mappy.component.html',
+    styleUrls: ['./mappy.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, NzDividerModule, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, NgFor, NzToolTipModule, NzStatisticModule, NzEmptyModule, NzPopconfirmModule, PageLoaderComponent, AsyncPipe, DatePipe, ItemNamePipe, MapNamePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class MappyComponent extends TeamcraftComponent {
 

@@ -30,30 +30,28 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [
-    IslandWorkshopComponent,
-    WorkshopPlanningComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    NzPageHeaderModule,
-    TranslateModule,
-    NzAlertModule,
-    RouterModule.forChild(routes),
-    NzTableModule,
-    ItemIconModule,
-    CoreModule,
-    FlexModule,
-    NzCheckboxModule,
-    NzSelectModule,
-    NzCardModule,
-    NzInputModule,
-    NzInputNumberModule,
-    NzDividerModule,
-    NzEmptyModule,
-    NzSwitchModule,
-    NzGridModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        NzPageHeaderModule,
+        TranslateModule,
+        NzAlertModule,
+        RouterModule.forChild(routes),
+        NzTableModule,
+        ItemIconModule,
+        CoreModule,
+        FlexModule,
+        NzCheckboxModule,
+        NzSelectModule,
+        NzCardModule,
+        NzInputModule,
+        NzInputNumberModule,
+        NzDividerModule,
+        NzEmptyModule,
+        NzSwitchModule,
+        NzGridModule,
+        IslandWorkshopComponent,
+        WorkshopPlanningComponent
+    ]
 })
 export class IslandWorkshopModule { }

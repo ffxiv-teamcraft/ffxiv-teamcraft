@@ -13,41 +13,38 @@
   {{'ITEMS.Open_search' | translate}}
 </a>
 <ng-container *ngIf="results$ | async as results">
-  <nz-list [nzDataSource]="results" [nzLoading]="loading" [nzRenderItem]="itemTemplate">
-    <ng-template #itemTemplate let-result>
-      <nz-list-item [nzContent]="content">
-        <nz-list-item-meta [nzAvatar]="avatar"
-                           [nzDescription]="result.recipe !== undefined?description:null"
-                           [nzTitle]="title">
-          <ng-template #title>
-            <span *ngIf="result.isCustom">
-              {{result.itemId | customItemName | async}}
-            </span>
-            <span *ngIf="!result.isCustom">
-              <app-i18n-name [content]="result.contentType" [id]="result.itemId"></app-i18n-name>
-            </span>
-          </ng-template>
-          <ng-template #avatar>
-            <div class="item-icon-container">
-              <label nz-checkbox [(ngModel)]="result.selected" *ngIf="multi"></label>
-              <app-item-icon *ngIf="result.contentType === 'items'" [icon]="result.icon" [itemId]="result.itemId" [width]="32"></app-item-icon>
-              <app-item-icon *ngIf="result.contentType !== 'items'" [icon]="result.icon | xivapiIcon" [itemId]="null" [width]="32"
-                             [tooltipDisabled]="true"></app-item-icon>
+  <nz-spin [nzSpinning]="loading">
+    <app-lazy-scroll [data]="results" [rowTemplate]="rowTpl" rowSize="46" [trackBy]="trackById">
+      <ng-template #rowTpl let-result>
+        <div class="flex-row align-center gap-5 result-row">
+          <label class="checkbox-label" nz-checkbox [(ngModel)]="result.selected" *ngIf="multi"></label>
+          <div>
+            <app-item-icon *ngIf="result.contentType === 'items'" [icon]="result.icon" [itemId]="result.itemId" [width]="32"></app-item-icon>
+            <app-item-icon *ngIf="result.contentType !== 'items'" [icon]="result.icon | xivapiIcon" [itemId]="null" [width]="32"
+                           [tooltipDisabled]="true"></app-item-icon>
+          </div>
+          <div class="flex-column">
+            <div class="row-title">
+              <span *ngIf="result.isCustom">
+                {{result.itemId | customItemName | async}}
+              </span>
+              <span *ngIf="!result.isCustom">
+                <app-i18n-name [content]="result.contentType" [id]="result.itemId"></app-i18n-name>
+              </span>
             </div>
-          </ng-template>
-          <ng-template #description>
-            <div class="flex-row align-center gap-2" *ngIf="result.recipe.job > 0">
-              <span class="companion-svg" [innerHtml]="result.recipe.job | jobUnicode"></span>
-              {{result.recipe.lvl}}
-              {{getStars(result.recipe.stars)}}
+            <div class="row-description" *ngIf="result.recipe">
+              <div class="flex-row align-center gap-2" *ngIf="result.recipe.job > 0">
+                <span class="companion-svg" [innerHtml]="result.recipe.job | jobUnicode"></span>
+                {{result.recipe.lvl}}
+                {{getStars(result.recipe.stars)}}
+              </div>
+              <ng-container *ngIf="result.recipe.isIslandRecipe">
+                <img src="./assets/icons/island.png" alt="Island Recipe" class="img-icon" nz-tooltip [nzTooltipTitle]="'ITEMS.Island_recipe' | translate">
+              </ng-container>
             </div>
-            <ng-container *ngIf="result.recipe.isIslandRecipe">
-              <img src="./assets/icons/island.png" alt="Island Recipe" class="img-icon" nz-tooltip [nzTooltipTitle]="'ITEMS.Island_recipe' | translate">
-            </ng-container>
-          </ng-template>
-        </nz-list-item-meta>
-        <ng-template #content>
-          <div fxLayout="row" fxLayoutGap="5px">
+          </div>
+          <div class="flex-auto"></div>
+          <div class="flex-row gap-5">
             <nz-input-group *ngIf="!hideAmount" [nzAddOnBefore]="null | ifRegions:[Region.China, Region.Korea]:(result.recipe !== undefined?addCrafts:null)"
                             [nzCompact]="true">
               <input [(ngModel)]="result.amount" class="amount-input" nz-input type="number">
@@ -61,10 +58,10 @@
               <i nz-icon nzType="check"></i>
             </button>
           </div>
-        </ng-template>
-      </nz-list-item>
-    </ng-template>
-  </nz-list>
+        </div>
+      </ng-template>
+    </app-lazy-scroll>
+  </nz-spin>
   <button nz-button nzBlock (click)="pickMulti(results)" [disabled]="nothingSelected(results)"
           *ngIf="multi">{{'LISTS.Add_selection_to_list' | translate}}</button>
 </ng-container>

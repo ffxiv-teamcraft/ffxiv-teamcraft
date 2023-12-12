@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { FishTrainRoutingModule } from './fish-train-routing.module';
 import { FishTrainComponent } from './fish-train/fish-train.component';
-import { LoadingScreenModule } from '../loading-screen/loading-screen.module';
+
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { TranslateModule } from '@ngx-translate/core';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { NzStepsModule } from 'ng-zorro-antd/steps';
 import { CoreModule } from '../../core/core.module';
 import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.module';
@@ -39,14 +39,11 @@ import { FishSizeChartComponent } from './fish-size-chart/fish-size-chart.compon
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 
 @NgModule({
-  declarations: [FishTrainComponent, ContributionPerPassengerComponent, FishBreakdownComponent, BaitBreakdownComponent, FishSizeChartComponent],
-  imports: [
+    imports: [
     CommonModule,
     FishTrainRoutingModule,
-    LoadingScreenModule,
     FullpageMessageModule,
     TranslateModule,
-    PageLoaderModule,
     NzStepsModule,
     CoreModule,
     FishingBaitModule,
@@ -72,8 +69,9 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
     NzAlertModule,
     NzSliderModule,
     NzAffixModule,
-    NzPopconfirmModule
-  ]
+    NzPopconfirmModule,
+    FishTrainComponent, ContributionPerPassengerComponent, FishBreakdownComponent, BaitBreakdownComponent, FishSizeChartComponent
+]
 })
 export class FishTrainPageModule {
 }

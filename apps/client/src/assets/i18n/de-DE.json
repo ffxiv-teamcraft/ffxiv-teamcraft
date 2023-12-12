@@ -379,7 +379,7 @@
   "Use_lodestoneId": "Lodestone ID verwenden",
   "LodestoneId": "Lodestone ID",
   "List_forked": "Liste zu deinem Account kopiert",
-  "List_fork": "Kopiere diese Liste zu deinem Account",
+  "List_fork": "Copy this list to your account (ctrl + click to copy as offline list)",
   "List_not_found": "Liste nicht gefunden oder du hast keinen Zugriff darauf",
   "Requirements_for_craft": "Bedingungen ansehen",
   "Zone_breakdown": "Gebietsübersicht",
@@ -421,9 +421,11 @@
   "Precraft_tier": "Meilenstein",
   "Regenerating_lists": "Neugenerierende Liste",
   "SETTINGS": {
+    "Requires_restart": "Requires restart/refresh to be taken into account",
     "Title": "Einstellungen",
     "General": "Allgemein",
     "Link_base": "Gegenstandslink-Quelle",
+    "DateFormat": "Date Format",
     "Region": "Region",
     "Region_explain": "Datenquelle und Funktionen, die auf einer bestimmten Spielversion basieren, werden pro Region angepasst. Einige davon sind in bestimmten Regionen möglicherweise nicht verfügbar.",
     "Proxy": "Proxy",
@@ -456,6 +458,7 @@
     "No_nickname_warning": "Bitte gehe in die Einstellungen und gib einen Benutzernamen an, um die Unterstützer-Funktionen vollständig nutzen zu können.",
     "Show_devtools": "Entwicklerwerkzeuge zeigen",
     "Clear_cache": "Cache leeren (erfordert einen Neustart der App)",
+    "Disable_fc_integration": "Disable FC sharing features",
     "Enable_item_tags": "Gegenstand-Markierungen aktivieren",
     "Show_copy_list_own_list": "Kopieren-Schaltfläche auf eigenen Listenblöcken anzeigen",
     "Custom_theme": "Benutzerdefiniertes Design",
@@ -1137,7 +1140,8 @@
       "Centered": "Stabil",
       "Malleable": "Formbar",
       "Primed": "Präpariert",
-      "Normal": "Normal"
+      "Normal": "Normal",
+      "Good_omen": "Good Omen"
     },
     "SOLVER": {
       "Hq_target": "Zielwert für HQ%",
@@ -1694,6 +1698,7 @@
         "Size": "Größe",
         "Large": "Groß",
         "Time_since_thrown": "Zeit seit Wurf",
+        "Throw_etime": "Line throw etime",
         "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
         "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
         "ERRORS": {

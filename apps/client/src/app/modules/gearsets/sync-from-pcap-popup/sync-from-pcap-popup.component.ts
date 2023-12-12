@@ -8,16 +8,22 @@ import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { debounceBufferTime } from '../../../core/rxjs/debounce-buffer-time';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { GearsetsFacade } from '../+state/gearsets.facade';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { MateriaService } from '../materia.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { Job } from '@ffxiv-teamcraft/data/model/lazy-equipment';
+import { NgFor } from '@angular/common';
+import { NzTimelineModule } from 'ng-zorro-antd/timeline';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 
 @Component({
-  selector: 'app-sync-from-pcap-popup',
-  templateUrl: './sync-from-pcap-popup.component.html',
-  styleUrls: ['./sync-from-pcap-popup.component.less']
+    selector: 'app-sync-from-pcap-popup',
+    templateUrl: './sync-from-pcap-popup.component.html',
+    styleUrls: ['./sync-from-pcap-popup.component.less'],
+    standalone: true,
+    imports: [FlexModule, NzAlertModule, NzTimelineModule, NgFor, TranslateModule]
 })
 export class SyncFromPcapPopupComponent extends TeamcraftComponent {
 

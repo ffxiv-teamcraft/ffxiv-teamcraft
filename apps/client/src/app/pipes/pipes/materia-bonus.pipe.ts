@@ -4,7 +4,8 @@ import { map } from 'rxjs/operators';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 @Pipe({
-  name: 'materiaBonus'
+    name: 'materiaBonus',
+    standalone: true
 })
 export class MateriaBonusPipe implements PipeTransform {
   constructor(private lazyData: LazyDataFacade) {

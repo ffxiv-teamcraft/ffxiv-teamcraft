@@ -12,7 +12,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { PipesModule } from '../../pipes/pipes.module';
 import { UiTextPipe } from './xiv-ui-text.pipe';
 import { CoreModule } from '../../core/core.module';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 import { NodeDetailsModule } from '../node-details/node-details.module';
 import { FishDataModule } from '../../pages/db/fish/fish-data.module';
 import { NzPipesModule } from 'ng-zorro-antd/pipes';
@@ -20,12 +20,11 @@ import { MapModule } from '../map/map.module';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
 
 @NgModule({
-  imports: [
+    imports: [
     CommonModule,
     HttpClientModule,
     OverlayModule,
     FlexLayoutModule,
-    AntdSharedModule,
     TranslateModule,
     PipesModule,
     CoreModule,
@@ -33,11 +32,11 @@ import { AlarmsModule } from '../../core/alarms/alarms.module';
     FishDataModule,
     NzPipesModule,
     MapModule,
-    AlarmsModule
-  ],
-  declarations: [XivapiActionTooltipComponent, XivapiItemTooltipComponent, XivapiItemTooltipDirective, XivapiActionTooltipDirective, UiTextPipe],
-  exports: [XivapiItemTooltipDirective, XivapiActionTooltipDirective, UiTextPipe, XivapiItemTooltipComponent],
-  providers: [TooltipDataService]
+    AlarmsModule,
+    XivapiActionTooltipComponent, XivapiItemTooltipComponent, XivapiItemTooltipDirective, XivapiActionTooltipDirective, UiTextPipe
+],
+    exports: [XivapiItemTooltipDirective, XivapiActionTooltipDirective, UiTextPipe, XivapiItemTooltipComponent],
+    providers: [TooltipDataService]
 })
 export class TooltipModule {
 }

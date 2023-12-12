@@ -3,8 +3,9 @@ import { TRADE_SOURCES_PRIORITIES } from '@ffxiv-teamcraft/types';
 import { TradeSource } from '../../modules/list/model/trade-source';
 
 @Pipe({
-  name: 'tradeIcon',
-  pure: true
+    name: 'tradeIcon',
+    pure: true,
+    standalone: true
 })
 export class TradeIconPipe implements PipeTransform {
 

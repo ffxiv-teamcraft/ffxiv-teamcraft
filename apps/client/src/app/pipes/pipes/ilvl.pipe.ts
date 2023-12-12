@@ -4,8 +4,9 @@ import { map } from 'rxjs/operators';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 @Pipe({
-  name: 'ilvl',
-  pure: false
+    name: 'ilvl',
+    pure: false,
+    standalone: true
 })
 export class IlvlPipe implements PipeTransform, OnDestroy {
   private readonly ilvl$ = this.lazyData.getEntry('ilvls');

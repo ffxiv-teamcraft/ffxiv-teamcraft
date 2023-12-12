@@ -6,14 +6,24 @@ import { SidebarIconType } from '../sidebar-icon-type';
 import { SidebarEntry, SidebarItem } from '../sidebar-entry';
 import { SidebarBadgeType } from '../sidebar-badge-type';
 import { NavigationSidebarService } from '../navigation-sidebar.service';
-import { NzContextMenuService, NzDropdownMenuComponent } from 'ng-zorro-antd/dropdown';
+import { NzContextMenuService, NzDropdownMenuComponent, NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { PlatformService } from '../../../core/tools/platform.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { RouterLinkActive, RouterLink } from '@angular/router';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NgSwitch, NgSwitchCase, NgFor, NgTemplateOutlet, NgIf, AsyncPipe } from '@angular/common';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
 
 @Component({
-  selector: 'app-navigation-sidebar',
-  templateUrl: './navigation-sidebar.component.html',
-  styleUrls: ['./navigation-sidebar.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-navigation-sidebar',
+    templateUrl: './navigation-sidebar.component.html',
+    styleUrls: ['./navigation-sidebar.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzMenuModule, NgSwitch, NgSwitchCase, NzIconModule, NzButtonModule, NzBadgeModule, NgFor, NgTemplateOutlet, NgIf, RouterLinkActive, RouterLink, NzDropDownModule, NzToolTipModule, AsyncPipe, TranslateModule]
 })
 export class NavigationSidebarComponent {
 

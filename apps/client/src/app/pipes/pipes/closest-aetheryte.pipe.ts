@@ -6,7 +6,8 @@ import { filter, switchMap } from 'rxjs/operators';
 import { LazyAetheryte } from '@ffxiv-teamcraft/data/model/lazy-aetheryte';
 
 @Pipe({
-  name: 'closestAetheryte'
+    name: 'closestAetheryte',
+    standalone: true
 })
 export class ClosestAetherytePipe implements PipeTransform {
   constructor(private mapService: MapService) {

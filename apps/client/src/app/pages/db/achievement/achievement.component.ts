@@ -4,18 +4,36 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { XivapiEndpoint } from '@xivapi/angular-client';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyAchievementsDatabasePage } from '@ffxiv-teamcraft/data/model/lazy-achievements-database-page';
+import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
+import { IfMobilePipe } from '../../../pipes/pipes/if-mobile.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { ItemRarityDirective } from '../../../core/item-rarity/item-rarity.directive';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { DbCommentsComponent } from '../db-comments/db-comments/db-comments.component';
+import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display/i18n-display.component';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { DbButtonComponent } from '../../../core/db-button/db-button.component';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-achievement',
-  templateUrl: './achievement.component.html',
-  styleUrls: ['./achievement.component.less']
+    selector: 'app-achievement',
+    templateUrl: './achievement.component.html',
+    styleUrls: ['./achievement.component.less'],
+    standalone: true,
+    imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzCardModule, NzListModule, ItemIconComponent, ItemRarityDirective, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, IfMobilePipe, XivapiIconPipe]
 })
 export class AchievementComponent extends TeamcraftPageComponent {
 

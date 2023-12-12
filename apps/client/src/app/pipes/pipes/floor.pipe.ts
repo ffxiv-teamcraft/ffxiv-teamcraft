@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { MathTools } from '../../tools/math-tools';
 
 @Pipe({
-  name: 'floor'
+    name: 'floor',
+    standalone: true
 })
 export class FloorPipe implements PipeTransform {
 

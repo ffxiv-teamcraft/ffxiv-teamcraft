@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { PlayerMetricsService } from '../../../modules/player-metrics/player-metrics.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { endOfDay, startOfDay, startOfMonth, startOfWeek } from 'date-fns';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
@@ -11,7 +11,7 @@ import { MetricsDashboardLayout } from '../../../modules/player-metrics/display/
 import { MetricsDisplay } from '../metrics-display';
 import { METRICS_DISPLAY_FILTERS, MetricsDisplayFilter } from '../../../modules/player-metrics/filters/metrics-display-filter';
 import { MetricsDisplayEntry } from '../../../modules/player-metrics/display/metrics-display-entry';
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDropListGroup, CdkDropList, CdkDrag } from '@angular/cdk/drag-drop';
 import { MetricType } from '../../../modules/player-metrics/model/metric-type';
 import { ProbeReport } from '../../../modules/player-metrics/model/probe-report';
 import { PendingChangesService } from '../../../core/database/pending-changes/pending-changes.service';
@@ -19,11 +19,30 @@ import { MetricsDashboardsFacade } from '../../../modules/player-metrics/+state/
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
+import { MetricDisplayComponent } from '../../../modules/player-metrics/display/metric-display/metric-display.component';
+import { MetricsDisplayEditorComponent } from '../../../modules/player-metrics/display/metrics-display-editor/metrics-display-editor.component';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { FormsModule } from '@angular/forms';
+import { TutorialStepDirective } from '../../../core/tutorial/tutorial-step.directive';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-metrics',
-  templateUrl: './metrics.component.html',
-  styleUrls: ['./metrics.component.less']
+    selector: 'app-metrics',
+    templateUrl: './metrics.component.html',
+    styleUrls: ['./metrics.component.less'],
+    standalone: true,
+    imports: [NgIf, FlexModule, NzCardModule, NzDatePickerModule, TutorialStepDirective, FormsModule, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, NzSelectModule, NgFor, NzToolTipModule, NzPopconfirmModule, ClipboardDirective, NzAlertModule, CdkDropListGroup, CdkDropList, MetricsDisplayEditorComponent, CdkDrag, MetricDisplayComponent, TranslateModule, AsyncPipe]
 })
 export class MetricsComponent extends TeamcraftPageComponent {
 

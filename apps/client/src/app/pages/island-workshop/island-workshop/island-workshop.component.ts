@@ -5,8 +5,8 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { combineLatest, EMPTY, map, Observable, of, timer } from 'rxjs';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
-import { NzTableFilterFn, NzTableFilterList, NzTableSortFn, NzTableSortOrder } from 'ng-zorro-antd/table';
-import { TranslateService } from '@ngx-translate/core';
+import { NzTableFilterFn, NzTableFilterList, NzTableSortFn, NzTableSortOrder, NzTableModule } from 'ng-zorro-antd/table';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
 import { catchError, distinctUntilChanged, filter, retry, switchMap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -25,6 +25,26 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { islandWorkshopRankRatio } from '@ffxiv-teamcraft/data/handmade/island-workshop-rank-ratio';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { WorkshopPlanningComponent } from '../workshop-planning/workshop-planning.component';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FormsModule } from '@angular/forms';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 
 interface ColumnItem {
   name: string;
@@ -37,10 +57,12 @@ interface ColumnItem {
 }
 
 @Component({
-  selector: 'app-island-workshop',
-  templateUrl: './island-workshop.component.html',
-  styleUrls: ['./island-workshop.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-island-workshop',
+    templateUrl: './island-workshop.component.html',
+    styleUrls: ['./island-workshop.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzPageHeaderModule, NzCheckboxModule, FormsModule, NzButtonModule, NzWaveModule, ClipboardDirective, NzIconModule, NgIf, NzToolTipModule, FlexModule, NzInputModule, NzInputNumberModule, NzAlertModule, WorkshopPlanningComponent, NgTemplateOutlet, NzDividerModule, NzGridModule, NzCardModule, NgFor, ItemIconComponent, I18nNameComponent, NzTableModule, NzSelectModule, AsyncPipe, TranslateModule]
 })
 export class IslandWorkshopComponent extends TeamcraftComponent {
 

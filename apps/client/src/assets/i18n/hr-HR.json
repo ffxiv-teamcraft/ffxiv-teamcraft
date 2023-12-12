@@ -379,7 +379,7 @@
   "Use_lodestoneId": "Koristite Lodestone ID",
   "LodestoneId": "Lodestone ID",
   "List_forked": "Popis kopiran na vaš račun",
-  "List_fork": "Kopirajte ovaj popis na račun",
+  "List_fork": "Copy this list to your account (ctrl + click to copy as offline list)",
   "List_not_found": "Popis nije pronađen ili nemate pristup",
   "Requirements_for_craft": "Vidjeti zahtjeve",
   "Zone_breakdown": "Opis područja",
@@ -421,9 +421,11 @@
   "Precraft_tier": "Tier",
   "Regenerating_lists": "Regenerating lists",
   "SETTINGS": {
+    "Requires_restart": "Requires restart/refresh to be taken into account",
     "Title": "Settings",
     "General": "General",
     "Link_base": "Item links",
+    "DateFormat": "Date Format",
     "Region": "Region",
     "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain regions.",
     "Proxy": "Proxy",
@@ -456,6 +458,7 @@
     "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the supporter exclusive features properly.",
     "Show_devtools": "Show dev tools",
     "Clear_cache": "Clear cache (will restart the app)",
+    "Disable_fc_integration": "Disable FC sharing features",
     "Enable_item_tags": "Enable item tags",
     "Show_copy_list_own_list": "Show copy button on own list panels",
     "Custom_theme": "Custom theme",
@@ -1137,7 +1140,8 @@
       "Centered": "Centered",
       "Malleable": "Malleable",
       "Primed": "Primed",
-      "Normal": "Normal"
+      "Normal": "Normal",
+      "Good_omen": "Good Omen"
     },
     "SOLVER": {
       "Hq_target": "Target HQ%",
@@ -1694,6 +1698,7 @@
         "Size": "Size",
         "Large": "Large",
         "Time_since_thrown": "Time since throw",
+        "Throw_etime": "Line throw etime",
         "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
         "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
         "ERRORS": {

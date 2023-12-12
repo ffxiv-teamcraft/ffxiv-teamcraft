@@ -11,25 +11,23 @@ import { RotationPickerDrawerComponent } from './rotation-picker-drawer/rotation
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 
 @NgModule({
-  imports: [
+    imports: [
     CommonModule,
     CoreModule,
     FormsModule,
     TranslateModule,
-    AntdSharedModule,
     RouterModule,
     FlexLayoutModule,
-
     StoreModule.forFeature('rotations', rotationsReducer, {
-      initialState: rotationsInitialState
+        initialState: rotationsInitialState
     }),
-    EffectsModule.forFeature([RotationsEffects])
-  ],
-  declarations: [RotationPickerDrawerComponent],
-  providers: [RotationsFacade]
+    EffectsModule.forFeature([RotationsEffects]),
+    RotationPickerDrawerComponent
+],
+    providers: [RotationsFacade]
 })
 export class RotationsModule {
 }

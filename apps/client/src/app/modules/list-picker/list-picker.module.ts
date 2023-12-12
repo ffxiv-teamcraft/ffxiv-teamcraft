@@ -5,19 +5,18 @@ import { ListPickerService } from './list-picker.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { ListModule } from '../list/list.module';
 import { FormsModule } from '@angular/forms';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-
     ListModule,
-
-    AntdSharedModule,
-    TranslateModule
+    TranslateModule,
+    ListPickerDrawerComponent,
+    NzDrawerModule
   ],
-  declarations: [ListPickerDrawerComponent],
   providers: [ListPickerService]
 })
 export class ListPickerModule {

@@ -4,7 +4,7 @@ import { TreasureFinderComponent } from './treasure-finder/treasure-finder.compo
 import { RouterModule, Routes } from '@angular/router';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { TranslateModule } from '@ngx-translate/core';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { CoreModule } from '../../core/core.module';
@@ -28,14 +28,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [TreasureFinderComponent],
-  imports: [
+    imports: [
     CommonModule,
     CoreModule,
     FlexLayoutModule,
     FormsModule,
     PipesModule,
-    PageLoaderModule,
     TranslateModule,
     FullpageMessageModule,
     RouterModule.forChild(routes),
@@ -44,8 +42,9 @@ const routes: Routes = [
     MapModule,
     NzDividerModule,
     NzGridModule,
-    NzFormModule
-  ]
+    NzFormModule,
+    TreasureFinderComponent
+]
 })
 export class TreasureFinderModule {
 }

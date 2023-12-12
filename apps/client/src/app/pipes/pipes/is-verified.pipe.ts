@@ -4,7 +4,8 @@ import { map, shareReplay } from 'rxjs/operators';
 import { UserService } from '../../core/database/user.service';
 
 @Pipe({
-  name: 'isVerified'
+    name: 'isVerified',
+    standalone: true
 })
 export class IsVerifiedPipe implements PipeTransform {
 

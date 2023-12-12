@@ -43,30 +43,27 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    ListAggregateComponent,
-    ListAggregateHomeComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-
-    RouterModule.forChild(routes),
-    NzTransferModule,
-    NzTableModule,
-    NzTagModule,
-    TranslateModule,
-    NzPageHeaderModule,
-    NzInputModule,
-    NzSelectModule,
-    NzButtonModule,
-    ListModule,
-    NzAlertModule,
-    NzIconModule,
-    NzRadioModule,
-    NzDropDownModule,
-    PipesModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        RouterModule.forChild(routes),
+        NzTransferModule,
+        NzTableModule,
+        NzTagModule,
+        TranslateModule,
+        NzPageHeaderModule,
+        NzInputModule,
+        NzSelectModule,
+        NzButtonModule,
+        ListModule,
+        NzAlertModule,
+        NzIconModule,
+        NzRadioModule,
+        NzDropDownModule,
+        PipesModule,
+        ListAggregateComponent,
+        ListAggregateHomeComponent
+    ]
 })
 export class ListAggregatePagesModule {
 }

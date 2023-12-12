@@ -10,7 +10,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { PipesModule } from '../../pipes/pipes.module';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { FoldersModule } from '../../modules/folders/folders.module';
 import { CraftingReplayModule } from '../../modules/crafting-replay/crafting-replay.module';
 
@@ -24,22 +24,19 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [CraftingReplayFolderComponent],
-  imports: [
+    imports: [
     CommonModule,
     TranslateModule,
     CoreModule,
     FlexLayoutModule,
     ProgressPopupModule,
     FullpageMessageModule,
-
     PipesModule,
-    PageLoaderModule,
     FoldersModule,
     CraftingReplayModule,
-
-    RouterModule.forChild(routes)
-  ]
+    RouterModule.forChild(routes),
+    CraftingReplayFolderComponent
+]
 })
 export class CraftingReplayFolderModule {
 }

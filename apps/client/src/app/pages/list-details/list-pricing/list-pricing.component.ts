@@ -2,11 +2,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ListPricingService } from './list-pricing.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { ListController } from '../../../modules/list/list-controller';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { BehaviorSubject, combineLatest, interval, Observable, Subject } from 'rxjs';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { DataType, getItemSource } from '@ffxiv-teamcraft/types';
@@ -21,12 +21,29 @@ import { ProgressPopupService } from '../../../modules/progress-popup/progress-p
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { ListPricingRowComponent } from './list-pricing-row/list-pricing-row.component';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { FormsModule } from '@angular/forms';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { ClipboardDirective } from '../../../core/clipboard.directive';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @Component({
-  selector: 'app-list-pricing',
-  templateUrl: './list-pricing.component.html',
-  styleUrls: ['./list-pricing.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-list-pricing',
+    templateUrl: './list-pricing.component.html',
+    styleUrls: ['./list-pricing.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [RouterLink, NzButtonModule, NzIconModule, NzToolTipModule, NgIf, FlexModule, NzCardModule, ItemIconComponent, NzWaveModule, ClipboardDirective, NzCheckboxModule, FormsModule, NzCollapseModule, NgFor, ListPricingRowComponent, NzInputModule, NzAlertModule, AsyncPipe, DecimalPipe, TranslateModule]
 })
 export class ListPricingComponent extends TeamcraftComponent {
 

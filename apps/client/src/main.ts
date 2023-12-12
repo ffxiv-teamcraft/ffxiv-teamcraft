@@ -22,26 +22,26 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Patching console to prevent too many ads-related shit
-const originalWarning = console.warn;
-console.warn = (message?: any, ...optionalParams: any[]) => {
-  try {
-    if (!message.includes('[GPT]')) {
-      originalWarning(message, ...optionalParams);
-    }
-  } catch (e) {
-    originalWarning(message, ...optionalParams);
-  }
-};
-const originalError = console.error;
-console.error = (message?: any, ...optionalParams: any[]) => {
-  try {
-    if (message.includes('[Teamcraft]')) {
-      originalError(message, ...optionalParams);
-    }
-  } catch (e) {
-    originalError(message, ...optionalParams);
-  }
-};
+// const originalWarning = console.warn;
+// console.warn = (message?: any, ...optionalParams: any[]) => {
+//   try {
+//     if (!message.includes('[GPT]')) {
+//       originalWarning(message, ...optionalParams);
+//     }
+//   } catch (e) {
+//     originalWarning(message, ...optionalParams);
+//   }
+// };
+// const originalError = console.error;
+// console.error = (message?: any, ...optionalParams: any[]) => {
+//   try {
+//     if (message.includes('[Teamcraft]')) {
+//       originalError(message, ...optionalParams);
+//     }
+//   } catch (e) {
+//     originalError(message, ...optionalParams);
+//   }
+// };
 
 navigator.mediaDevices.getUserMedia = () => Promise.resolve(null);
 navigator.mediaDevices.enumerateDevices = () => Promise.resolve([]);

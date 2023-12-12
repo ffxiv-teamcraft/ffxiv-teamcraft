@@ -11,7 +11,8 @@ import { XivapiItemTooltipComponent } from './xivapi-item-tooltip.component';
  * This directive take care of the XivDB request, based on the given item ID.
  */
 @Directive({
-  selector: '[appXivApiTooltip]'
+    selector: '[appXivApiTooltip]',
+    standalone: true
 })
 export class XivapiItemTooltipDirective implements OnDestroy {
 

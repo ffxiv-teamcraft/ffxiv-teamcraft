@@ -4,7 +4,8 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { I18nName } from '@ffxiv-teamcraft/types';
 
 @Pipe({
-  name: 'voyageName'
+    name: 'voyageName',
+    standalone: true
 })
 export class VoyageNamePipe implements PipeTransform {
   constructor(private lazyData: LazyDataFacade) {

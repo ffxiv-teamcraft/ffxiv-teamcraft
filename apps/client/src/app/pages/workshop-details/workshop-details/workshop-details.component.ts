@@ -9,11 +9,23 @@ import { List } from '../../../modules/list/model/list';
 import { Character } from '@xivapi/angular-client';
 import { UserService } from '../../../core/database/user.service';
 import { LodestoneService } from '../../../core/api/lodestone.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { ListPanelComponent } from '../../../modules/list/list-panel/list-panel.component';
+import { NgForTrackByKeyDirective } from '../../../core/track-by/ng-for-track-by-key.directive';
+import { FavoriteButtonComponent } from '../../../modules/favorites/favorite-button/favorite-button.component';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-workshop-details',
-  templateUrl: './workshop-details.component.html',
-  styleUrls: ['./workshop-details.component.less']
+    selector: 'app-workshop-details',
+    templateUrl: './workshop-details.component.html',
+    styleUrls: ['./workshop-details.component.less'],
+    standalone: true,
+    imports: [NgIf, NzCardModule, NzAvatarModule, FlexModule, FavoriteButtonComponent, NgFor, NgForTrackByKeyDirective, ListPanelComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule]
 })
 export class WorkshopDetailsComponent {
 

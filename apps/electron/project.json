@@ -13,9 +13,7 @@
         "outputPath": "dist/apps/electron",
         "main": "apps/electron/src/main.ts",
         "tsConfig": "apps/electron/tsconfig.app.json",
-        "assets": [
-          "apps/electron/src/loader.html"
-        ]
+        "assets": ["apps/electron/src/loader.html"]
       }
     },
     "serve": {

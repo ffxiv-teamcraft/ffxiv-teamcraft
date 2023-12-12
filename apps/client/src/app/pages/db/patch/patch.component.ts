@@ -3,18 +3,42 @@ import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-c
 import { Observable } from 'rxjs';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyPatchName } from '@ffxiv-teamcraft/data/model/lazy-patch-name';
+import { LazyRowPipe } from '../../../pipes/pipes/lazy-row.pipe';
+import { MapIdPipe } from '../../../pipes/pipes/map-id.pipe';
+import { LazyIconPipe } from '../../../pipes/pipes/lazy-icon.pipe';
+import { XivapiL12nPipe } from '../../../pipes/pipes/xivapi-l12n.pipe';
+import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
+import { IfMobilePipe } from '../../../pipes/pipes/if-mobile.pipe';
+import { ActionNamePipe } from '../../../pipes/pipes/action-name.pipe';
+import { ActionIconPipe } from '../../../pipes/pipes/action-icon.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { DbCommentsComponent } from '../db-comments/db-comments/db-comments.component';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { DbButtonComponent } from '../../../core/db-button/db-button.component';
+import { LazyScrollComponent } from '../../../modules/lazy-scroll/lazy-scroll/lazy-scroll.component';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display/i18n-display.component';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-patch',
-  templateUrl: './patch.component.html',
-  styleUrls: ['./patch.component.less']
+    selector: 'app-patch',
+    templateUrl: './patch.component.html',
+    styleUrls: ['./patch.component.less'],
+    standalone: true,
+    imports: [NgIf, FlexModule, I18nDisplayComponent, NzDividerModule, NzCardModule, NzListModule, LazyScrollComponent, DbButtonComponent, ItemIconComponent, DbCommentsComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, IfMobilePipe, XivapiIconPipe, XivapiL12nPipe, LazyIconPipe, MapIdPipe, LazyRowPipe]
 })
 export class PatchComponent extends TeamcraftPageComponent {
 

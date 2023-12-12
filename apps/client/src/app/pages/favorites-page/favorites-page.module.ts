@@ -11,7 +11,7 @@ import { SimulatorModule } from '../simulator/simulator.module';
 import { RotationFoldersModule } from '../../modules/rotation-folders/rotation-folders.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 
 const routes: Routes = [
   {
@@ -22,7 +22,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
+    imports: [
     CommonModule,
     CoreModule,
     TranslateModule,
@@ -31,12 +31,9 @@ const routes: Routes = [
     RotationsModule,
     RotationFoldersModule,
     SimulatorModule,
-
-    AntdSharedModule,
-
-    RouterModule.forChild(routes)
-  ],
-  declarations: [FavoritesComponent]
+    RouterModule.forChild(routes),
+    FavoritesComponent
+]
 })
 export class FavoritesPageModule {
 }

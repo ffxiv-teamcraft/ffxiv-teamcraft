@@ -26,24 +26,23 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [LevelingEquipmentComponent],
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-    TranslateModule,
-    CoreModule,
-
-    RouterModule.forChild(routes),
-    NzFormModule,
-    NzSelectModule,
-    NzInputModule,
-    PipesModule,
-    ReactiveFormsModule,
-    NzCheckboxModule,
-    NzInputNumberModule,
-    ItemIconModule,
-    FullpageMessageModule
-  ]
+    imports: [
+        CommonModule,
+        FlexLayoutModule,
+        TranslateModule,
+        CoreModule,
+        RouterModule.forChild(routes),
+        NzFormModule,
+        NzSelectModule,
+        NzInputModule,
+        PipesModule,
+        ReactiveFormsModule,
+        NzCheckboxModule,
+        NzInputNumberModule,
+        ItemIconModule,
+        FullpageMessageModule,
+        LevelingEquipmentComponent
+    ]
 })
 export class LevelingEquipmentModule {
 }

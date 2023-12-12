@@ -10,14 +10,14 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { SettingsModule } from '../../modules/settings/settings.module';
-import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { AlarmsSidebarModule } from '../../modules/alarms-sidebar/alarms-sidebar.module';
 import { FormsModule } from '@angular/forms';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { OverlayContainerModule } from '../../modules/overlay-container/overlay-container.module';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 
 const routes: Routes = [
   {
@@ -28,29 +28,23 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
+    imports: [
     CommonModule,
     FlexLayoutModule,
     FormsModule,
-
     RouterModule.forChild(routes),
-
     TranslateModule,
-
     MapModule,
     CoreModule,
     PipesModule,
     ItemIconModule,
     AlarmsModule,
     SettingsModule,
-    PageLoaderModule,
     FullpageMessageModule,
     AlarmsSidebarModule,
-
-    AntdSharedModule,
-    OverlayContainerModule
-  ],
-  declarations: [AlarmsOverlayComponent]
+    OverlayContainerModule,
+    AlarmsOverlayComponent
+]
 })
 export class AlarmsOverlayModule {
 }

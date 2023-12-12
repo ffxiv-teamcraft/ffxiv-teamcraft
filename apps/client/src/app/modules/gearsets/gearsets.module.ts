@@ -38,11 +38,37 @@ import { ItemCapsTableComponent } from './item-caps-table/item-caps-table.compon
 import { StatsPopupComponent } from './stats-popup/stats-popup.component';
 import { SyncFromPcapPopupComponent } from './sync-from-pcap-popup/sync-from-pcap-popup.component';
 import { FavoritesModule } from '../favorites/favorites.module';
-import { PageLoaderModule } from '../page-loader/page-loader.module';
+
 import { EtroImportPopupComponent } from './etro-import-popup/etro-import-popup.component';
 
 @NgModule({
-  declarations: [
+    imports: [
+    CommonModule,
+    NzFormModule,
+    NzSelectModule,
+    NzInputModule,
+    NzButtonModule,
+    NzAlertModule,
+    NzDividerModule,
+    NzModalModule,
+    NzToolTipModule,
+    NzPopconfirmModule,
+    NzIconModule,
+    NzMessageModule,
+    FormsModule,
+    ReactiveFormsModule,
+    PipesModule,
+    CoreModule,
+    FlexLayoutModule,
+    StoreModule.forFeature(fromGearsets.GEARSETS_FEATURE_KEY, fromGearsets.reducer),
+    EffectsModule.forFeature([GearsetsEffects]),
+    TranslateModule,
+    RouterModule,
+    ItemIconModule,
+    FullpageMessageModule,
+    NzTagModule,
+    NzTimelineModule,
+    FavoritesModule,
     GearsetCreationPopupComponent,
     MateriaSlotIconComponent,
     StatPipe,
@@ -56,51 +82,15 @@ import { EtroImportPopupComponent } from './etro-import-popup/etro-import-popup.
     StatsPopupComponent,
     SyncFromPcapPopupComponent,
     EtroImportPopupComponent
-  ],
-  imports: [
-    CommonModule,
-
-    NzFormModule,
-    NzSelectModule,
-    NzInputModule,
-    NzButtonModule,
-    NzAlertModule,
-    NzDividerModule,
-    NzModalModule,
-    NzToolTipModule,
-    NzPopconfirmModule,
-    NzIconModule,
-    NzMessageModule,
-
-    FormsModule,
-    ReactiveFormsModule,
-    PipesModule,
-    CoreModule,
-    FlexLayoutModule,
-
-    StoreModule.forFeature(
-      fromGearsets.GEARSETS_FEATURE_KEY,
-      fromGearsets.reducer
-    ),
-    EffectsModule.forFeature([GearsetsEffects]),
-
-    TranslateModule,
-    RouterModule,
-    ItemIconModule,
-    FullpageMessageModule,
-    NzTagModule,
-    NzTimelineModule,
-    FavoritesModule,
-    PageLoaderModule
-  ],
-  exports: [
-    MateriaSlotIconComponent,
-    StatPipe,
-    GearsetRowComponent,
-    GearsetCostPopupComponent,
-    ItemCapsTableComponent,
-    StatsPopupComponent
-  ]
+],
+    exports: [
+        MateriaSlotIconComponent,
+        StatPipe,
+        GearsetRowComponent,
+        GearsetCostPopupComponent,
+        ItemCapsTableComponent,
+        StatsPopupComponent
+    ]
 })
 export class GearsetsModule {
 }

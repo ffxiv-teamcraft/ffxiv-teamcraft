@@ -7,15 +7,46 @@ import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { MapService } from '../../../modules/map/map.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { GatheringNode } from '@ffxiv-teamcraft/types';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { UntypedFormBuilder } from '@angular/forms';
+import { UntypedFormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { chunk } from 'lodash';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { AlarmDetails, SpearfishingShadowSize, SpearfishingSpeed } from '@ffxiv-teamcraft/types';
+import { AlarmDisplayPipe } from '../../../core/alarms/alarm-display.pipe';
+import { LazyRowPipe } from '../../../pipes/pipes/lazy-row.pipe';
+import { HooksetActionIdPipe } from '../../../pipes/pipes/hookset-action-id.pipe';
+import { TugNamePipe } from '../../../pipes/pipes/tug-name.pipe';
+import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
+import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
+import { ActionNamePipe } from '../../../pipes/pipes/action-name.pipe';
+import { ActionIconPipe } from '../../../pipes/pipes/action-icon.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
+import { AlarmButtonComponent } from '../../../modules/alarm-button/alarm-button/alarm-button.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { SpearfishingSpeedComponent } from '../../../modules/spearfishing-speed-tooltip/spearfishing-speed/spearfishing-speed.component';
+import { FishingBaitComponent } from '../../../modules/fishing-bait/fishing-bait/fishing-bait.component';
+import { GatheringItemUsesComponent } from '../../../modules/node-details/gathering-item-uses/gathering-item-uses.component';
+import { NodeDetailsComponent } from '../../../modules/node-details/node-details/node-details.component';
+import { MapComponent } from '../../../modules/map/map/map.component';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { NgFor, NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 interface ResultRow {
   originalItemId: number,
@@ -24,10 +55,12 @@ interface ResultRow {
 }
 
 @Component({
-  selector: 'app-gathering-location',
-  templateUrl: './gathering-location.component.html',
-  styleUrls: ['./gathering-location.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-gathering-location',
+    templateUrl: './gathering-location.component.html',
+    styleUrls: ['./gathering-location.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule, FlexModule, NzButtonModule, NzIconModule, NzInputModule, NzSelectModule, NgFor, NgIf, ItemIconComponent, NzSwitchModule, NzToolTipModule, NzWaveModule, NzPaginationModule, NgTemplateOutlet, NzCardModule, MapComponent, NodeDetailsComponent, GatheringItemUsesComponent, FishingBaitComponent, SpearfishingSpeedComponent, NzTagModule, AlarmButtonComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, ActionIconPipe, ActionNamePipe, NodeTypeIconPipe, XivapiIconPipe, TugNamePipe, HooksetActionIdPipe, LazyRowPipe, AlarmDisplayPipe]
 })
 export class GatheringLocationComponent {
 

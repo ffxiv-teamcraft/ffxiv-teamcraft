@@ -5,11 +5,21 @@ import { LodestoneService } from '../../../core/api/lodestone.service';
 import { catchError, filter, map, shareReplay, startWith } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { UserService } from '../../../core/database/user.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { RouterLink } from '@angular/router';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-user-avatar',
-  templateUrl: './user-avatar.component.html',
-  styleUrls: ['./user-avatar.component.less']
+    selector: 'app-user-avatar',
+    templateUrl: './user-avatar.component.html',
+    styleUrls: ['./user-avatar.component.less'],
+    standalone: true,
+    imports: [NgIf, NzBadgeModule, RouterLink, NzToolTipModule, NzAvatarModule, NzButtonModule, NzIconModule, AsyncPipe, TranslateModule]
 })
 export class UserAvatarComponent implements OnInit {
 

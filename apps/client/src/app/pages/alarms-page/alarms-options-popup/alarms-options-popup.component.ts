@@ -3,11 +3,25 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { SoundNotificationType } from '../../../core/sound-notification/sound-notification-type';
 import { SoundNotificationService } from '../../../core/sound-notification/sound-notification.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { NgIf, NgFor } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NzSliderModule } from 'ng-zorro-antd/slider';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-alarms-options-popup',
-  templateUrl: './alarms-options-popup.component.html',
-  styleUrls: ['./alarms-options-popup.component.less']
+    selector: 'app-alarms-options-popup',
+    templateUrl: './alarms-options-popup.component.html',
+    styleUrls: ['./alarms-options-popup.component.less'],
+    standalone: true,
+    imports: [FlexModule, NzSliderModule, FormsModule, NgIf, NzSwitchModule, NzButtonModule, NzWaveModule, NzIconModule, NzGridModule, NzFormModule, NzSelectModule, NgFor, TranslateModule]
 })
 export class AlarmsOptionsPopupComponent {
 

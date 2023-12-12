@@ -2,12 +2,18 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { SettingsService } from '../../settings/settings.service';
 import * as semver from 'semver';
+import { TranslateModule } from '@ngx-translate/core';
+import { MarkdownModule } from 'ngx-markdown';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-changelog-popup',
-  templateUrl: './changelog-popup.component.html',
-  styleUrls: ['./changelog-popup.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-changelog-popup',
+    templateUrl: './changelog-popup.component.html',
+    styleUrls: ['./changelog-popup.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgFor, NzDividerModule, MarkdownModule, TranslateModule]
 })
 export class ChangelogPopupComponent implements OnInit {
   public patchNotes: typeof environment.patchNotes;

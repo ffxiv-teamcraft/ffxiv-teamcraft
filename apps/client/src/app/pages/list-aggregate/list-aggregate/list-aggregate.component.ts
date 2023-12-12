@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { debounceTime, distinctUntilChanged, filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { combineLatest, merge, of } from 'rxjs';
@@ -13,12 +13,29 @@ import { ListAggregate } from '../../../modules/list-aggregate/model/list-aggreg
 import { arrayRemove } from '@angular/fire/firestore';
 import { ListDisplayMode } from '../../list-details/list-details/list-display-mode';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
+import { EncodeUriComponentPipe } from '../../../pipes/pipes/encode-uri-component.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { ListDetailsPanelComponent } from '../../../modules/list/list-details-panel/list-details-panel.component';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { FormsModule } from '@angular/forms';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 
 @Component({
-  selector: 'app-list-aggregate',
-  templateUrl: './list-aggregate.component.html',
-  styleUrls: ['./list-aggregate.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-list-aggregate',
+    templateUrl: './list-aggregate.component.html',
+    styleUrls: ['./list-aggregate.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzPageHeaderModule, NgIf, NzButtonModule, NzIconModule, NzRadioModule, FormsModule, NzInputModule, NzSelectModule, NgFor, NzWaveModule, NzDropDownModule, NzMenuModule, RouterLink, NzAlertModule, ListDetailsPanelComponent, AsyncPipe, TranslateModule, EncodeUriComponentPipe]
 })
 export class ListAggregateComponent {
 

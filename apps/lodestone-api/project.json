@@ -51,8 +51,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/lodestone-api"],
       "options": {
-        "jestConfig": "apps/lodestone-api/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "apps/lodestone-api/jest.config.ts"
       }
     }
   },

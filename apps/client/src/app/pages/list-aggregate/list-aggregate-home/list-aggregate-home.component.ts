@@ -5,12 +5,24 @@ import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { List } from '../../../modules/list/model/list';
+import { TranslateModule } from '@ngx-translate/core';
+import { RouterLink } from '@angular/router';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 
 @Component({
-  selector: 'app-list-aggregate-home',
-  templateUrl: './list-aggregate-home.component.html',
-  styleUrls: ['./list-aggregate-home.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-list-aggregate-home',
+    templateUrl: './list-aggregate-home.component.html',
+    styleUrls: ['./list-aggregate-home.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NzPageHeaderModule, NgIf, NzTableModule, NgFor, NzInputModule, NzButtonModule, NzSelectModule, FormsModule, NzWaveModule, RouterLink, AsyncPipe, TranslateModule]
 })
 export class ListAggregateHomeComponent {
 

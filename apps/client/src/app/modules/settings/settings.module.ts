@@ -8,15 +8,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
-import { AntdSharedModule } from '../../core/antd-shared.module';
+
 import { NzSliderModule } from 'ng-zorro-antd/slider';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @NgModule({
-  imports: [
+    imports: [
     CommonModule,
-    AntdSharedModule,
     FlexLayoutModule,
     TranslateModule,
     FormsModule,
@@ -25,14 +24,12 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
     CoreModule,
     NzSliderModule,
     NzUploadModule,
-    NzIconModule
-  ],
-  declarations: [
+    NzIconModule,
     SettingsPopupComponent
-  ],
-  providers: [
-    SettingsPopupService
-  ]
+],
+    providers: [
+        SettingsPopupService
+    ]
 })
 export class SettingsModule {
   static forRoot(): ModuleWithProviders<SettingsModule> {

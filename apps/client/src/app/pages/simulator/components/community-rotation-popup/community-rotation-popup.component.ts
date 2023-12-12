@@ -3,11 +3,23 @@ import { MuscleMemory, Simulation } from '@ffxiv-teamcraft/simulator';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { RotationTag } from '../community-rotations-page/rotation-tag';
 import { CommunityRotationsPageComponent } from '../community-rotations-page/community-rotations-page.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { MouseWheelDirective } from '../../../../core/event/mouse-wheel/mouse-wheel.directive';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NgFor } from '@angular/common';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { FormsModule } from '@angular/forms';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-community-rotation-popup',
-  templateUrl: './community-rotation-popup.component.html',
-  styleUrls: ['./community-rotation-popup.component.less']
+    selector: 'app-community-rotation-popup',
+    templateUrl: './community-rotation-popup.component.html',
+    styleUrls: ['./community-rotation-popup.component.less'],
+    standalone: true,
+    imports: [FlexModule, NzSwitchModule, FormsModule, NzFormModule, NzGridModule, NzSelectModule, NgFor, NzInputNumberModule, MouseWheelDirective, TranslateModule]
 })
 export class CommunityRotationPopupComponent implements OnInit {
 

@@ -3,9 +3,9 @@ import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { StatsService } from '../../../modules/gearsets/stats.service';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -30,11 +30,36 @@ import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { EnvironmentService } from '../../../core/environment.service';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
+import { FoodBonusesPipePipe } from '../../../pipes/pipes/food-bonuses.pipe';
+import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
+import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { GearsetCostPopupComponent } from '../../../modules/gearsets/gearset-cost-popup/gearset-cost-popup.component';
+import { MateriasNeededPopupComponent } from '../materias-needed-popup/materias-needed-popup.component';
+import { StatsPopupComponent } from '../../../modules/gearsets/stats-popup/stats-popup.component';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { GearsetDisplaySlotComponent } from '../gearset-display-slot/gearset-display-slot.component';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { FavoriteButtonComponent } from '../../../modules/favorites/favorite-button/favorite-button.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzWaveModule } from 'ng-zorro-antd/core/wave';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexModule } from '@angular/flex-layout/flex';
+import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-gearset-display',
-  templateUrl: './gearset-display.component.html',
-  styleUrls: ['./gearset-display.component.less']
+    selector: 'app-gearset-display',
+    templateUrl: './gearset-display.component.html',
+    styleUrls: ['./gearset-display.component.less'],
+    standalone: true,
+    imports: [NgIf, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzPopconfirmModule, NzIconModule, FavoriteButtonComponent, RouterLink, NzDividerModule, NgFor, GearsetDisplaySlotComponent, NzSelectModule, FormsModule, NzInputNumberModule, I18nNameComponent, NzTableModule, StatsPopupComponent, MateriasNeededPopupComponent, GearsetCostPopupComponent, AsyncPipe, DecimalPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, JobUnicodePipe, FoodBonusesPipePipe]
 })
 export class GearsetDisplayComponent extends TeamcraftComponent {
 

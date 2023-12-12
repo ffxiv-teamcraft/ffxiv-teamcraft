@@ -8,11 +8,26 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { I18nName, SearchFilter, SearchType } from '@ffxiv-teamcraft/types';
 import { DataService } from '../../../core/api/data.service';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
+import { LazyIconPipe } from '../../../pipes/pipes/lazy-icon.pipe';
+import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nPipe } from '../../../core/i18n.pipe';
+import { MarketboardIconComponent } from '../../../modules/marketboard/marketboard-icon/marketboard-icon.component';
+import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
+import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
+import { DbButtonComponent } from '../../../core/db-button/db-button.component';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-  selector: 'app-food-picker',
-  templateUrl: './food-picker.component.html',
-  styleUrls: ['./food-picker.component.less']
+    selector: 'app-food-picker',
+    templateUrl: './food-picker.component.html',
+    styleUrls: ['./food-picker.component.less'],
+    standalone: true,
+    imports: [FlexModule, NgIf, NzSelectModule, FormsModule, NgFor, NzListModule, DbButtonComponent, ItemIconComponent, I18nNameComponent, MarketboardIconComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, LazyIconPipe]
 })
 export class FoodPickerComponent extends TeamcraftComponent {
 
