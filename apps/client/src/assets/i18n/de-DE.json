@@ -525,6 +525,8 @@
     "Alarm_groups_before_no_group": "Zeige Alarmgruppen vor ungruppierten Alarmen",
     "Disconnect_patreon": "Verbindung zu Patreon trennen",
     "Disconnect_tipeee": "Verbindung zu Tipeee trennen",
+    "Supporter_issue": "Your supporter status appears to be having an issue",
+    "Supporter_issue_description": "Your account is linked to Patreon or Tipeee but you still have ads, if you're still a supporter, you might want to disconnect from Patreon/Tipeee in setting and connect again to refresh your status.",
     "Export_settings": "Einstellungen exportieren",
     "Import_settings": "Einstellungen importieren",
     "Import_successful": "Einstellungen importiert",
@@ -810,6 +812,7 @@
       "Crafts": "Bestellte Herstellungen",
       "Toggle_overlay": "Schritt-für-Schritt-Overlay öffnen/schließen",
       "Empty_map": "Nichts in der aktuellen Karte zu tun, die nächste Karte für diese Liste ist {{closest}}",
+      "Only_crafts_remaining": "Everything has been gathered for this list, only crafts remain.",
       "Unknown_map": "Unbekannte Karte, bitte wechsle die die Karte, damit TC sie erkennen kann.",
       "No_list": "Keine Liste ausgewählt, bitte öffne eine Liste im Hauptfenster, damit das Overlay wie beabsichtigt arbeitet.",
       "Others": "Weitere"
