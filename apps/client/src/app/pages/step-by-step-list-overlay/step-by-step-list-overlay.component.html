@@ -41,7 +41,10 @@
 
         <nz-list [nzDataSource]="stepsList$ | async" [nzRenderItem]="stepTemplate" nzSize="small" [nzNoResult]="noStepsTpl">
           <ng-template #noStepsTpl>
-            <nz-empty [nzNotFoundContent]="'LIST_DETAILS.STEP_BY_STEP.Empty_map' | translate:{ closest: closestMap$ | async| mapName | i18n }"></nz-empty>
+            <ng-container *ngIf="closestMap$ | async as closestMap">
+              <nz-empty [nzNotFoundContent]="'LIST_DETAILS.STEP_BY_STEP.Empty_map' | translate:{ closest: closestMap | mapName | i18n }" *ngIf="closestMap > -1"></nz-empty>
+              <nz-empty [nzNotFoundContent]="'LIST_DETAILS.STEP_BY_STEP.Only_crafts_remaining' | translate" *ngIf="closestMap === -1"></nz-empty>
+            </ng-container>
           </ng-template>
           <ng-template #stepTemplate let-step>
             <nz-list-item [nzContent]="rowContent">
