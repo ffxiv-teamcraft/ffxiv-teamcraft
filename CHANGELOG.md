@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.16...v11.0.17) (2023-12-14)
+
+
+### Bug Fixes
+
+* **island-workshop:** fixed workshop rank 5 bonus value ([6932f59](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6932f59b414dded91e8ded37e3b805b7db8f9339))
+
 ### [11.0.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.15...v11.0.16) (2023-12-12)
 
 
