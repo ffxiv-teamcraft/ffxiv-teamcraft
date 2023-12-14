@@ -199,7 +199,8 @@ export class AppComponent implements OnInit {
   public showAd$ = this.authFacade.user$.pipe(
     map((user) => {
       return !(user.admin || user.moderator || user.supporter);
-    })
+    }),
+    shareReplay(1)
   );
 
   public showPatreonButton$ = this.authFacade.user$.pipe(
