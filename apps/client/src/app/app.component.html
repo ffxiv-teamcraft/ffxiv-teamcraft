@@ -344,8 +344,8 @@
             </nz-alert>
             <ng-container *ngIf="user$ | async as user">
               <nz-alert *ngIf="!overlay && showSupporterIssueBanner && (user.patreonToken || user.tipeeeToken) && showAd$ | async"
-                        [nzMessage]="'Supporter_issue' | translate"
-                        [nzDescription]="'Supporter_issue_description' | translate"
+                        [nzMessage]="'SETTINGS.Supporter_issue' | translate"
+                        [nzDescription]="'SETTINGS.Supporter_issue_description' | translate"
                         class="new-version-alert"
                         nzBanner
                         nzShowIcon
