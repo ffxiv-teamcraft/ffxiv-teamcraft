@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.17...v11.0.18) (2023-12-18)
+
+
+### Bug Fixes
+
+* **i18n:** fixed missing translation ([981c6da](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/981c6da3f94968daffa4df00c34e2a17a8794dd0))
+
 ### [11.0.17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.16...v11.0.17) (2023-12-14)
 
 
