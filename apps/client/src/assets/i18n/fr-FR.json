@@ -525,6 +525,8 @@
     "Alarm_groups_before_no_group": "Afficher les groupes d'alarmes avant les alarmes sans groupe",
     "Disconnect_patreon": "Se déconnecter de Patreon",
     "Disconnect_tipeee": "Se déconnecter de Tipeee",
+    "Supporter_issue": "Votre statut de supporter semble avoir un problème",
+    "Supporter_issue_description": "Votre compte est lié à Patreon ou Tipeee mais vous avez toujours des publicités ? Si vous êtes toujours un supporter, vous pouvez vous déconnecter de Patreon/Tipeee dans les paramètres, puis vous reconnecter pour actualiser votre statut.",
     "Export_settings": "Exporter les paramètres",
     "Import_settings": "Importer les paramètres",
     "Import_successful": "Paramètres importés",
@@ -810,6 +812,7 @@
       "Crafts": "Fabrications ordonnées",
       "Toggle_overlay": "Ouvrir/Fermer l'overlay pas à pas",
       "Empty_map": "Rien à faire sur la carte actuelle, la carte la plus proche pour cette liste est {{closest}}",
+      "Only_crafts_remaining": "Tout a été récolté pour cette liste, il ne reste plus que l'artisanat.",
       "Unknown_map": "Carte inconnue, veuillez changer de carte pour permettre à TC de la détecter.",
       "No_list": "Aucune liste sélectionnée, veuillez ouvrir une liste dans la fenêtre principale pour que l'overlay fonctionne comme prévu.",
       "Others": "Autres"
@@ -1141,7 +1144,7 @@
       "Malleable": "Malléable",
       "Primed": "Apprêté",
       "Normal": "Normal",
-      "Good_omen": "Good Omen"
+      "Good_omen": "Bon présage"
     },
     "SOLVER": {
       "Hq_target": "%HQ Ciblé",
