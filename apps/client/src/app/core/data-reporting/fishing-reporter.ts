@@ -1,5 +1,5 @@
 import { DataReporter } from './data-reporter';
-import { combineLatest, merge, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, merge, Observable, Subject } from 'rxjs';
 import { ofMessageType } from '../rxjs/of-message-type';
 import { delay, distinctUntilChanged, filter, map, mapTo, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
@@ -38,6 +38,9 @@ export class FishingReporter implements DataReporter {
   }
 
   getDataReports(_packets$: Observable<any>): Observable<any[]> {
+    const _mapId$ = new BehaviorSubject(0);
+    const mapId$ = merge(_mapId$, this.eorzea.mapId$);
+
     const packets$ = _packets$.pipe(
       filter(packet => packet.header.sourceActor === packet.header.targetActor)
     );
@@ -91,8 +94,7 @@ export class FishingReporter implements DataReporter {
       }),
       tap(isFishing => {
         if (!isFishing) {
-          this.eorzea.setZone(0);
-          this.eorzea.setMap(0);
+          _mapId$.next(0);
           spotOverride$.next(null);
         }
       }),
@@ -251,7 +253,7 @@ export class FishingReporter implements DataReporter {
      */
     combineLatest([
       isFishing$,
-      this.eorzea.mapId$,
+      mapId$,
       this.eorzea.baitId$,
       spot$.pipe(startWith(null)),
       fisherStats$.pipe(startWith(null)),
