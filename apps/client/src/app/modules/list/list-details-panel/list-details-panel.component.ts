@@ -378,7 +378,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
           this.authFacade.markAsDoneInLog('gathering', row.id, true);
         }
         if (row.sources.some(s => s.type === DataType.CRAFTED_BY)) {
-          this.authFacade.markAsDoneInLog('crafting', row.id, true);
+          this.authFacade.markAsDoneInLog('crafting', +row.recipeId, true);
         }
       }
     });
