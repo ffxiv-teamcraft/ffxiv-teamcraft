@@ -39,7 +39,7 @@ export class InventoryCleanupPopupComponent implements OnInit {
     this.cleanup$ = this.inventoryFacade.inventory$.pipe(
       map((inventory) => {
         return inventory.getFromContainers(ContainerType.Bag0, ContainerType.Bag1, ContainerType.Bag2, ContainerType.Bag3)
-          .filter(item => !allItemIds.includes(item.itemId));
+          .filter(item => item.contentId === inventory.contentId && !allItemIds.includes(item.itemId));
       })
     );
   }
