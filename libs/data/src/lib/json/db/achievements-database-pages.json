@@ -11029,7 +11029,7 @@
     "icon": "/i/062000/062910.png",
     "patch": 2,
     "en": "Been There, Done That",
-    "de": "Oshons Weggefährte",
+    "de": "Oschons Weggefährte",
     "ja": "旅神オシュオンに愛されし者",
     "fr": "Les voyages forment la jeunesse",
     "ko": "여행신 오쉬온의 총애",
@@ -16618,7 +16618,7 @@
       "ja": "F.A.T.E.「手負いの魔獣「ベヒーモス」」を最高評価でコンプリートする",
       "fr": "Accomplir l'ALÉA “Défi&nbsp;: contre-traque” avec la meilleure évaluation possible.",
       "ko": "돌발 임무 '부상당한 마수'를 최고 평가로 완료",
-      "zh": "以最高评价完成危命任务“受伤魔兽——贝希摩斯”。"
+      "zh": "以最高评价完成危命任务“受伤的魔兽——贝希摩斯”。"
     },
     "item": 0,
     "title": 0
@@ -64296,14 +64296,14 @@
     "icon": "/i/026000/026002.png",
     "patch": 80,
     "en": "Newfound Adventure",
-    "de": "Newfound Adventure",
+    "de": "Neu entdecktes Abenteuer",
     "ja": "新たなる冒険",
     "fr": "Vers de nouvelles aventures",
     "ko": "새로운 모험",
     "zh": "崭新的冒险",
     "description": {
       "en": "Complete the main scenario quest “A Satrap's Duty.”",
-      "de": "Den Auftrag des Hauptszenarios „Neu entdecktes Abenteuer“ abgeschlossen.",
+      "de": "Den Auftrag des Hauptszenarios „Des Herrschers Pflicht“ abgeschlossen.",
       "ja": "クエスト「ヴリトラの覚悟」をコンプリートする",
       "fr": "Accomplir la quête de l'épopée “La résolution de Vrtra”.",
       "ko": "퀘스트 '브리트라의 각오' 완료",
@@ -66016,7 +66016,7 @@
     "icon": "/i/026000/026002.png",
     "patch": 86,
     "en": "Hallowed and Harrowed",
-    "de": "Gods Revel, Lands Tremble",
+    "de": "Unerreichbares Nichts",
     "ja": "天の祝祭、地の鳴動",
     "fr": "Les Dieux festoient, la terre tremble",
     "ko": "하늘의 축제, 땅의 전율",
@@ -66751,7 +66751,7 @@
     "ja": "モーエン商会の認定職人",
     "fr": "Merveille attitrée de Mowen",
     "ko": "모웬 상회가 인정한 장인",
-    "zh": "莫雯卓越商会的认定商人",
+    "zh": "商会认定的工匠",
     "description": {
       "en": "Complete the quest “An Adaptive Tool.”",
       "de": "Den Auftrag „Werkzeug voller Gefühle“ abgeschlossen.",
@@ -67087,12 +67087,14 @@
     "ja": "東方のかわいいドラゴン",
     "fr": "Et le dragon piou",
     "ko": "동방의 귀여운 드래곤",
+    "zh": "东方的可爱龙族",
     "description": {
       "en": "Complete the quest “Unlike a Dragon.”",
       "de": "Den Auftrag „Drachen bringen Glück“ abgeschlossen.",
       "ja": "クエスト「縁起物と降神祭」をコンプリートする",
       "fr": "Accomplir la quête “Sous le signe du dragon d'eau”.",
-      "ko": "퀘스트 '복을 부르는 용과 강신제' 완료"
+      "ko": "퀘스트 '복을 부르는 용과 강신제' 완료",
+      "zh": "完成任务“辰龙祥意降神节”。"
     },
     "item": 0,
     "title": 0
@@ -67420,7 +67422,7 @@
     "de": "Manderville-Waffen: Fantastisches Manderville-Schwert und fantastischer Manderville-Drachenschild",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・ソード＆マンダヴィル・アメイジング・カイトシールド",
     "fr": "Armes des Manderville : épée éblouissante et écu mandorle éblouissant",
-    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 한손검과 훌륭한 맨더빌 연모양 방패",
+    "ko": "맨더빌 웨폰 - 훌륭한 맨더빌 한손검과 훌륭한 맨더빌 연모양 방패",
     "zh": "曼德维尔之骑士·惊异",
     "description": {
       "en": "Obtain an amazing Manderville sword and amazing Manderville kite shield.",
@@ -67441,7 +67443,7 @@
     "de": "Manderville-Waffen: Fantastische Manderville-Axt",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・アクス",
     "fr": "Armes des Manderville : hache éblouissante",
-    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 도끼",
+    "ko": "맨더빌 웨폰 - 훌륭한 맨더빌 도끼",
     "zh": "曼德维尔之战士·惊异",
     "description": {
       "en": "Obtain an amazing Manderville axe.",
@@ -67462,7 +67464,7 @@
     "de": "Manderville-Waffen: Fantastischer Manderville-Zweihänder",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・ツヴァイハンダー",
     "fr": "Armes des Manderville : espadon éblouissant",
-    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 츠바이헨더",
+    "ko": "맨더빌 웨폰 - 훌륭한 맨더빌 츠바이헨더",
     "zh": "曼德维尔之暗黑骑士·惊异",
     "description": {
       "en": "Obtain an amazing Manderville zweihander.",
@@ -67483,7 +67485,7 @@
     "de": "Manderville-Waffen: Fantastische Manderville-Revolverklinge",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・ガンブレード",
     "fr": "Armes des Manderville : pistolame éblouissante",
-    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 건블레이드",
+    "ko": "맨더빌 웨폰 - 훌륭한 맨더빌 건블레이드",
     "zh": "曼德维尔之绝枪战士·惊异",
     "description": {
       "en": "Obtain an amazing Manderville gunblade.",
@@ -67504,7 +67506,7 @@
     "de": "Manderville-Waffen: Fantastischer Manderville-Speer",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・スピア",
     "fr": "Armes des Manderville : hast éblouissant",
-    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 창",
+    "ko": "맨더빌 웨폰 - 훌륭한 맨더빌 창",
     "zh": "曼德维尔之龙骑士·惊异",
     "description": {
       "en": "Obtain an amazing Manderville spear.",
@@ -67525,7 +67527,7 @@
     "de": "Manderville-Waffen: Fantastische Manderville-Klauen",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・ナックル",
     "fr": "Armes des Manderville : poings éblouissants",
-    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 너클",
+    "ko": "맨더빌 웨폰 - 훌륭한 맨더빌 너클",
     "zh": "曼德维尔之武僧·惊异",
     "description": {
       "en": "Obtain a pair of amazing Manderville knuckles.",
@@ -67546,7 +67548,7 @@
     "de": "Manderville-Waffen: Fantastische Manderville-Messer",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・ナイフ",
     "fr": "Armes des Manderville : couteaux éblouissants",
-    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 단검",
+    "ko": "맨더빌 웨폰 - 훌륭한 맨더빌 단검",
     "zh": "曼德维尔之忍者·惊异",
     "description": {
       "en": "Obtain a pair of amazing Manderville knives.",
@@ -67567,7 +67569,7 @@
     "de": "Manderville-Waffen: Fantastische Manderville-Samuraiklinge",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・サムライブレード",
     "fr": "Armes des Manderville : lame de samouraï éblouissante",
-    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 외날검",
+    "ko": "맨더빌 웨폰 - 훌륭한 맨더빌 외날검",
     "zh": "曼德维尔之武士·惊异",
     "description": {
       "en": "Obtain an amazing Manderville samurai blade.",
@@ -67588,7 +67590,7 @@
     "de": "Manderville-Waffen: Fantastische Manderville-Sense",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・サイズ",
     "fr": "Armes des Manderville : faux éblouissante",
-    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 큰낫",
+    "ko": "맨더빌 웨폰 - 훌륭한 맨더빌 큰낫",
     "zh": "曼德维尔之钐镰客·惊异",
     "description": {
       "en": "Obtain an amazing Manderville scythe.",
@@ -67609,7 +67611,7 @@
     "de": "Manderville-Waffen: Fantastischer Manderville-Harfenbogen",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・ハープボウ",
     "fr": "Armes des Manderville : arc-harpe éblouissant",
-    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 현악궁",
+    "ko": "맨더빌 웨폰 - 훌륭한 맨더빌 현악궁",
     "zh": "曼德维尔之吟游诗人·惊异",
     "description": {
       "en": "Obtain an amazing Manderville harp bow.",
@@ -67630,7 +67632,7 @@
     "de": "Manderville-Waffen: Fantastischer Manderville-Revolver",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・リボルバー",
     "fr": "Armes des Manderville : revolver éblouissant",
-    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 연발권총",
+    "ko": "맨더빌 웨폰 - 훌륭한 맨더빌 연발권총",
     "zh": "曼德维尔之机工士·惊异",
     "description": {
       "en": "Obtain an amazing Manderville revolver.",
@@ -67651,7 +67653,7 @@
     "de": "Manderville-Waffen: Fantastische Manderville-Chakrams",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・チャクラム",
     "fr": "Armes des Manderville : chakrams éblouissants",
-    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 차크람",
+    "ko": "맨더빌 웨폰 - 훌륭한 맨더빌 차크람",
     "zh": "曼德维尔之舞者·惊异",
     "description": {
       "en": "Obtain a pair of amazing Manderville chakrams.",
@@ -67672,7 +67674,7 @@
     "de": "Manderville-Waffen: Fantastischer Manderville-Stab",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・ロッド",
     "fr": "Armes des Manderville : sceptre éblouissant",
-    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 주술봉",
+    "ko": "맨더빌 웨폰 - 훌륭한 맨더빌 주술봉",
     "zh": "曼德维尔之黑魔法师·惊异",
     "description": {
       "en": "Obtain an amazing Manderville rod.",
@@ -67693,7 +67695,7 @@
     "de": "Manderville-Waffen: Fantastischer Manderville-Index",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・インデックス",
     "fr": "Armes des Manderville : index éblouissant",
-    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 금서",
+    "ko": "맨더빌 웨폰 - 훌륭한 맨더빌 금서",
     "zh": "曼德维尔之召唤师·惊异",
     "description": {
       "en": "Obtain an amazing Manderville index.",
@@ -67714,7 +67716,7 @@
     "de": "Manderville-Waffen: Fantastisches Manderville-Rapier",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・レイピア",
     "fr": "Armes des Manderville : rapière éblouissante",
-    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 레이피어",
+    "ko": "맨더빌 웨폰 - 훌륭한 맨더빌 레이피어",
     "zh": "曼德维尔之赤魔法师·惊异",
     "description": {
       "en": "Obtain an amazing Manderville rapier.",
@@ -67735,7 +67737,7 @@
     "de": "Manderville-Waffen: Fantastischer Manderville-Stock",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・ケーン",
     "fr": "Armes des Manderville : canne éblouissante",
-    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 환술봉",
+    "ko": "맨더빌 웨폰 - 훌륭한 맨더빌 환술봉",
     "zh": "曼德维尔之白魔法师·惊异",
     "description": {
       "en": "Obtain an amazing Manderville cane.",
@@ -67756,7 +67758,7 @@
     "de": "Manderville-Waffen: Fantastischer Manderville-Kodex",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・コーデックス",
     "fr": "Armes des Manderville : codex éblouissant",
-    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 치유서",
+    "ko": "맨더빌 웨폰 - 훌륭한 맨더빌 치유서",
     "zh": "曼德维尔之学者·惊异",
     "description": {
       "en": "Obtain an amazing Manderville codex.",
@@ -67777,7 +67779,7 @@
     "de": "Manderville-Waffen: Fantastisches Manderville-Torquetum",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・トルクエタム",
     "fr": "Armes des Manderville : torquetum éblouissant",
-    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 좌표기",
+    "ko": "맨더빌 웨폰 - 훌륭한 맨더빌 좌표기",
     "zh": "曼德维尔之占星术士·惊异",
     "description": {
       "en": "Obtain an amazing Manderville torquetum.",
@@ -67798,7 +67800,7 @@
     "de": "Manderville-Waffen: Fantastische Manderville-Hascherlite",
     "ja": "マンダヴィルウェポン：マンダヴィル・アメイジング・ミルプレーヴェ",
     "fr": "Armes des Manderville : mein gwrac'h éblouissants",
-    "ko": "맨더빌 웨폰: 훌륭한 맨더빌 밀프레베",
+    "ko": "맨더빌 웨폰 - 훌륭한 맨더빌 밀프레베",
     "zh": "曼德维尔之贤者·惊异",
     "description": {
       "en": "Obtain an array of amazing Manderville milpreves.",
@@ -68557,8 +68559,8 @@
     "ko": "지역 챔피언: CCRC2023",
     "zh": "2023年度水晶冲突区域锦标赛冠军",
     "description": {
-      "en": "Emerge victorious in the 2023 Crystalline Conflict Regional Championship (Europe).",
-      "de": "Crystalline Conflict Regional Championship 2023 in der Region Europa gewonnen.",
+      "en": "Emerge victorious in the 2023 Crystalline Conflict Regional Championship (Europe & Oceania).",
+      "de": "Crystalline Conflict Regional Championship 2023 in der Region Europa & Ozeanien gewonnen.",
       "ja": "Crystalline Conflictリージョンチャンピオンシップ2023にて、欧州/太平洋リージョンで優勝する",
       "fr": "Sortir vainqueur du championnat “Crystalline Conflict Regional Championship 2023” de la zone Europe/Pacifique.",
       "ko": "'크리스탈라인 컨플릭트 지역 챔피언십 2023' 유럽 지역에서 우승",
@@ -68693,11 +68695,15 @@
     "de": "Manderville-Waffen: Majestätisches Manderville-Schwert und majestätischer Manderville-Schild",
     "ja": "マンダヴィルウェポン：マンダヴィル・マジェスティック・ソード＆マンダヴィル・マジェスティック・シールド",
     "fr": "Armes des Manderville : épée majestueuse et bouclier majestueux",
+    "ko": "맨더빌 웨폰 - 당당한 맨더빌 한손검 & 당당한 맨더빌 방패",
+    "zh": "曼德维尔之骑士·威严",
     "description": {
       "en": "Obtain a majestic Manderville sword and majestic Manderville shield.",
       "de": "Das majestätische Manderville-Schwert und den majestätischen Manderville-Schild erhalten.",
       "ja": "マンダヴィル・マジェスティック・ソードとマンダヴィル・マジェスティック・シールドを入手する",
-      "fr": "Obtenir l'épée majestueuse et le bouclier majestueux des Manderville."
+      "fr": "Obtenir l'épée majestueuse et le bouclier majestueux des Manderville.",
+      "ko": "당당한 맨더빌 한손검과 당당한 맨더빌 방패 입수",
+      "zh": "获得曼德维尔威严之剑和曼德维尔威严盾。"
     },
     "item": 0,
     "title": 0
@@ -68710,11 +68716,15 @@
     "de": "Manderville-Waffen: Majestätische Manderville-Berdysch",
     "ja": "マンダヴィルウェポン：マンダヴィル・マジェスティック・バルディッシュ",
     "fr": "Armes des Manderville : bardiche majestueuse",
+    "ko": "맨더빌 웨폰 - 당당한 맨더빌 긴날도끼",
+    "zh": "曼德维尔之战士·威严",
     "description": {
       "en": "Obtain a majestic Manderville bardiche.",
       "de": "Die majestätische Manderville-Berdysch erhalten.",
       "ja": "マンダヴィル・マジェスティック・バルディッシュを入手する",
-      "fr": "Obtenir la bardiche majestueuse des Manderville."
+      "fr": "Obtenir la bardiche majestueuse des Manderville.",
+      "ko": "당당한 맨더빌 긴날도끼 입수",
+      "zh": "获得曼德维尔威严巨斧。"
     },
     "item": 0,
     "title": 0
@@ -68727,11 +68737,15 @@
     "de": "Manderville-Waffen: Majestätisches Manderville-Großschwert",
     "ja": "マンダヴィルウェポン：マンダヴィル・マジェスティック・グレートソード",
     "fr": "Armes des Manderville : grande épée majestueuse",
+    "ko": "맨더빌 웨폰 - 당당한 맨더빌 그레이트소드",
+    "zh": "曼德维尔之暗黑骑士·威严",
     "description": {
       "en": "Obtain a majestic Manderville greatsword.",
       "de": "Das majestätische Manderville-Großschwert erhalten.",
       "ja": "マンダヴィル・マジェスティック・グレートソードを入手する",
-      "fr": "Obtenir la grande épée majestueuse des Manderville."
+      "fr": "Obtenir la grande épée majestueuse des Manderville.",
+      "ko": "당당한 맨더빌 그레이트소드 입수",
+      "zh": "获得曼德维尔威严巨剑。"
     },
     "item": 0,
     "title": 0
@@ -68744,11 +68758,15 @@
     "de": "Manderville-Waffen: Majestätisches Manderville-Bajonett",
     "ja": "マンダヴィルウェポン：マンダヴィル・マジェスティック・バヨネット",
     "fr": "Armes des Manderville : baïonnette majestueuse",
+    "ko": "맨더빌 웨폰 - 당당한 맨더빌 총검",
+    "zh": "曼德维尔之绝枪战士·威严",
     "description": {
       "en": "Obtain a majestic Manderville bayonet.",
       "de": "Das majestätische Manderville-Bajonett erhalten.",
       "ja": "マンダヴィル・マジェスティック・バヨネットを入手する",
-      "fr": "Obtenir la baïonnette majestueuse des Manderville."
+      "fr": "Obtenir la baïonnette majestueuse des Manderville.",
+      "ko": "당당한 맨더빌 총검 입수",
+      "zh": "获得曼德维尔威严刺刀。"
     },
     "item": 0,
     "title": 0
@@ -68761,11 +68779,15 @@
     "de": "Manderville-Waffen: Majestätischer Manderville-Speer",
     "ja": "マンダヴィルウェポン：マンダヴィル・マジェスティック・スピア",
     "fr": "Armes des Manderville : hast majestueux",
+    "ko": "맨더빌 웨폰 - 당당한 맨더빌 창",
+    "zh": "曼德维尔之龙骑士·威严",
     "description": {
       "en": "Obtain a majestic Manderville spear.",
       "de": "Den majestätischen Manderville-Speer erhalten.",
       "ja": "マンダヴィル・マジェスティック・スピアを入手する",
-      "fr": "Obtenir l'hast majestueux des Manderville."
+      "fr": "Obtenir l'hast majestueux des Manderville.",
+      "ko": "당당한 맨더빌 창 입수",
+      "zh": "获得曼德维尔威严长枪。"
     },
     "item": 0,
     "title": 0
@@ -68778,11 +68800,15 @@
     "de": "Manderville-Waffen: Majestätische Manderville-Fäuste",
     "ja": "マンダヴィルウェポン：マンダヴィル・マジェスティック・フィスト",
     "fr": "Armes des Manderville : poings majestueux",
+    "ko": "맨더빌 웨폰 - 당당한 맨더빌 주먹",
+    "zh": "曼德维尔之武僧·威严",
     "description": {
       "en": "Obtain a pair of majestic Manderville fists.",
       "de": "Ein Paar majestätischer Manderville-Fäuste erhalten.",
       "ja": "マンダヴィル・マジェスティック・フィストを入手する",
-      "fr": "Obtenir les poings majestueux des Manderville."
+      "fr": "Obtenir les poings majestueux des Manderville.",
+      "ko": "당당한 맨더빌 주먹 입수",
+      "zh": "获得曼德维尔威严之拳。"
     },
     "item": 0,
     "title": 0
@@ -68795,11 +68821,15 @@
     "de": "Manderville-Waffen: Majestätische Manderville-Messer",
     "ja": "マンダヴィルウェポン：マンダヴィル・マジェスティック・ナイフ",
     "fr": "Armes des Manderville : couteaux majestueux",
+    "ko": "맨더빌 웨폰 - 당당한 맨더빌 단검",
+    "zh": "曼德维尔之忍者·威严",
     "description": {
       "en": "Obtain a pair of majestic Manderville knives.",
       "de": "Ein Paar majestätischer Manderville-Messer erhalten.",
       "ja": "マンダヴィル・マジェスティック・ナイフを入手する",
-      "fr": "Obtenir les couteaux majestueux des Manderville."
+      "fr": "Obtenir les couteaux majestueux des Manderville.",
+      "ko": "당당한 맨더빌 단검 입수",
+      "zh": "获得曼德维尔威严匕首。"
     },
     "item": 0,
     "title": 0
@@ -68812,11 +68842,15 @@
     "de": "Manderville-Waffen: Majestätische Manderville-Samuraiklinge",
     "ja": "マンダヴィルウェポン：マンダヴィル・マジェスティック・サムライブレード",
     "fr": "Armes des Manderville : lame de samouraï majestueuse",
+    "ko": "맨더빌 웨폰 - 당당한 맨더빌 외날검",
+    "zh": "曼德维尔之武士·威严",
     "description": {
       "en": "Obtain a majestic Manderville samurai blade.",
       "de": "Die majestätische Manderville-Samuraiklinge erhalten.",
       "ja": "マンダヴィル・マジェスティック・サムライブレードを入手する",
-      "fr": "Obtenir la lame de samouraï majestueuse des Manderville."
+      "fr": "Obtenir la lame de samouraï majestueuse des Manderville.",
+      "ko": "당당한 맨더빌 외날검 입수",
+      "zh": "获得曼德维尔威严武士刀。"
     },
     "item": 0,
     "title": 0
@@ -68829,11 +68863,15 @@
     "de": "Manderville-Waffen: Majestätische Manderville-Kriegssense",
     "ja": "マンダヴィルウェポン：マンダヴィル・マジェスティック・ウォーサイズ",
     "fr": "Armes des Manderville : faux de guerre majestueuse",
+    "ko": "맨더빌 웨폰 - 당당한 맨더빌 전투낫",
+    "zh": "曼德维尔之钐镰客·威严",
     "description": {
       "en": "Obtain a majestic Manderville war scythe.",
       "de": "Die majestätische Manderville-Kriegssense erhalten.",
       "ja": "マンダヴィル・マジェスティック・ウォーサイズを入手する",
-      "fr": "Obtenir la faux de guerre majestueuse des Manderville."
+      "fr": "Obtenir la faux de guerre majestueuse des Manderville.",
+      "ko": "당당한 맨더빌 전투낫 입수",
+      "zh": "获得曼德维尔威严战镰。"
     },
     "item": 0,
     "title": 0
@@ -68846,11 +68884,15 @@
     "de": "Manderville-Waffen: Majestätischer Manderville-Harfenbogen",
     "ja": "マンダヴィルウェポン：マンダヴィル・マジェスティック・ハープボウ",
     "fr": "Armes des Manderville : arc-harpe majestueux",
+    "ko": "맨더빌 웨폰 - 당당한 맨더빌 현악궁",
+    "zh": "曼德维尔之吟游诗人·威严",
     "description": {
       "en": "Obtain a majestic Manderville harp bow.",
       "de": "Den majestätischen Manderville-Harfenbogen erhalten.",
       "ja": "マンダヴィル・マジェスティック・ハープボウを入手する",
-      "fr": "Obtenir l'arc-harpe majestueux des Manderville."
+      "fr": "Obtenir l'arc-harpe majestueux des Manderville.",
+      "ko": "당당한 맨더빌 현악궁 입수",
+      "zh": "获得曼德维尔威严琴弓。"
     },
     "item": 0,
     "title": 0
@@ -68863,11 +68905,15 @@
     "de": "Manderville-Waffen: Majestätische Manderville-Pistole",
     "ja": "マンダヴィルウェポン：マンダヴィル・マジェスティック・ハンドガン",
     "fr": "Armes des Manderville : pistolet majestueux",
+    "ko": "맨더빌 웨폰 - 당당한 맨더빌 권총",
+    "zh": "曼德维尔之机工士·威严",
     "description": {
       "en": "Obtain a majestic Manderville pistol.",
       "de": "Die majestätische Manderville-Pistole erhalten.",
       "ja": "マンダヴィル・マジェスティック・ハンドガンを入手する",
-      "fr": "Obtenir le pistolet majestueux des Manderville."
+      "fr": "Obtenir le pistolet majestueux des Manderville.",
+      "ko": "당당한 맨더빌 권총 입수",
+      "zh": "获得曼德维尔威严手枪。"
     },
     "item": 0,
     "title": 0
@@ -68880,11 +68926,15 @@
     "de": "Manderville-Waffen: Majestätische Manderville-Chakrams",
     "ja": "マンダヴィルウェポン：マンダヴィル・マジェスティック・チャクラム",
     "fr": "Armes des Manderville : chakrams majestueux",
+    "ko": "맨더빌 웨폰 - 당당한 맨더빌 차크람",
+    "zh": "曼德维尔之舞者·威严",
     "description": {
       "en": "Obtain a pair of majestic Manderville chakrams.",
       "de": "Ein Paar majestätischer Manderville-Chakrams erhalten.",
       "ja": "マンダヴィル・マジェスティック・チャクラムを入手する",
-      "fr": "Obtenir les chakrams majestueux des Manderville."
+      "fr": "Obtenir les chakrams majestueux des Manderville.",
+      "ko": "당당한 맨더빌 차크람 입수",
+      "zh": "获得曼德维尔威严圆月轮。"
     },
     "item": 0,
     "title": 0
@@ -68897,11 +68947,15 @@
     "de": "Manderville-Waffen: Majestätischer Manderville-Stab",
     "ja": "マンダヴィルウェポン：マンダヴィル・マジェスティック・スタッフ",
     "fr": "Armes des Manderville : bâton majestueux",
+    "ko": "맨더빌 웨폰 - 당당한 맨더빌 주술봉",
+    "zh": "曼德维尔之黑魔法师·威严",
     "description": {
       "en": "Obtain a majestic Manderville staff.",
       "de": "Den majestätischen Manderville-Stab erhalten.",
       "ja": "マンダヴィル・マジェスティック・スタッフを入手する",
-      "fr": "Obtenir le bâton majestueux des Manderville."
+      "fr": "Obtenir le bâton majestueux des Manderville.",
+      "ko": "당당한 맨더빌 주술봉 입수",
+      "zh": "获得曼德维尔威严咒杖。"
     },
     "item": 0,
     "title": 0
@@ -68914,11 +68968,15 @@
     "de": "Manderville-Waffen: Majestätischer Manderville-Index",
     "ja": "マンダヴィルウェポン：マンダヴィル・マジェスティック・インデックス",
     "fr": "Armes des Manderville : index majestueux",
+    "ko": "맨더빌 웨폰 - 당당한 맨더빌 금서",
+    "zh": "曼德维尔之召唤师·威严",
     "description": {
       "en": "Obtain a majestic Manderville index.",
       "de": "Den majestätischen Manderville-Index erhalten.",
       "ja": "マンダヴィル・マジェスティック・インデックスを入手する",
-      "fr": "Obtenir l'index majestueux des Manderville."
+      "fr": "Obtenir l'index majestueux des Manderville.",
+      "ko": "당당한 맨더빌 금서 입수",
+      "zh": "获得曼德维尔威严魔导书。"
     },
     "item": 0,
     "title": 0
@@ -68931,11 +68989,15 @@
     "de": "Manderville-Waffen: Majestätischer Manderville-Degen",
     "ja": "マンダヴィルウェポン：マンダヴィル・マジェスティック・デーゲン",
     "fr": "Armes des Manderville : alfange majestueuse",
+    "ko": "맨더빌 웨폰 - 당당한 맨더빌 데겐",
+    "zh": "曼德维尔之赤魔法师·威严",
     "description": {
       "en": "Obtain a majestic Manderville degen.",
       "de": "Den majestätischen Manderville-Degen erhalten.",
       "ja": "マンダヴィル・マジェスティック・デーゲンを入手する",
-      "fr": "Obtenir l'alfange majestueuse des Manderville."
+      "fr": "Obtenir l'alfange majestueuse des Manderville.",
+      "ko": "당당한 맨더빌 데겐 입수",
+      "zh": "获得曼德维尔威严重刺剑。"
     },
     "item": 0,
     "title": 0
@@ -68948,11 +69010,15 @@
     "de": "Manderville-Waffen: Majestätischer Manderville-Zweig",
     "ja": "マンダヴィルウェポン：マンダヴィル・マジェスティック・ワンド",
     "fr": "Armes des Manderville : baguette majestueuse",
+    "ko": "맨더빌 웨폰 - 당당한 맨더빌 환술봉",
+    "zh": "曼德维尔之白魔法师·威严",
     "description": {
       "en": "Obtain a majestic Manderville wand.",
       "de": "Den majestätischen Manderville-Zweig erhalten.",
       "ja": "マンダヴィル・マジェスティック・ワンドを入手する",
-      "fr": "Obtenir la baguette majestueuse des Manderville."
+      "fr": "Obtenir la baguette majestueuse des Manderville.",
+      "ko": "당당한 맨더빌 환술봉 입수",
+      "zh": "获得曼德维尔威严幻杖。"
     },
     "item": 0,
     "title": 0
@@ -68965,11 +69031,15 @@
     "de": "Manderville-Waffen: Majestätischer Manderville-Kodex",
     "ja": "マンダヴィルウェポン：マンダヴィル・マジェスティック・コーデックス",
     "fr": "Armes des Manderville : codex majestueux",
+    "ko": "맨더빌 웨폰 - 당당한 맨더빌 치유서",
+    "zh": "曼德维尔之学者·威严",
     "description": {
       "en": "Obtain a majestic Manderville codex.",
       "de": "Den majestätischen Manderville-Kodex erhalten.",
       "ja": "マンダヴィル・マジェスティック・コーデックスを入手する",
-      "fr": "Obtenir le codex majestueux des Manderville."
+      "fr": "Obtenir le codex majestueux des Manderville.",
+      "ko": "당당한 맨더빌 치유서 입수",
+      "zh": "获得曼德维尔威严魔导典。"
     },
     "item": 0,
     "title": 0
@@ -68982,11 +69052,15 @@
     "de": "Manderville-Waffen: Majestätisches Manderville-Orrery",
     "ja": "マンダヴィルウェポン：マンダヴィル・マジェスティック・オーラリー",
     "fr": "Armes des Manderville : planétaire majestueux",
+    "ko": "맨더빌 웨폰 - 당당한 맨더빌 태양계의",
+    "zh": "曼德维尔之占星术士·威严",
     "description": {
       "en": "Obtain a majestic Manderville orrery.",
       "de": "Das majestätische Manderville-Orrery erhalten.",
       "ja": "マンダヴィル・マジェスティック・オーラリーを入手する",
-      "fr": "Obtenir le planétaire majestueux des Manderville."
+      "fr": "Obtenir le planétaire majestueux des Manderville.",
+      "ko": "당당한 맨더빌 태양계의 입수",
+      "zh": "获得曼德维尔威严太阳仪。"
     },
     "item": 0,
     "title": 0
@@ -68999,11 +69073,15 @@
     "de": "Manderville-Waffen: Majestätische Manderville-Schwingen",
     "ja": "マンダヴィルウェポン：マンダヴィル・マジェスティック・ウィング",
     "fr": "Armes des Manderville : ailes majestueuses",
+    "ko": "맨더빌 웨폰 - 당당한 맨더빌 날개",
+    "zh": "曼德维尔之贤者·威严",
     "description": {
       "en": "Obtain an array of majestic Manderville wings.",
       "de": "Ein Quartett majestätischer Manderville-Schwingen erhalten.",
       "ja": "マンダヴィル・マジェスティック・ウィングを入手する",
-      "fr": "Obtenir les ailes majestueuses des Manderville."
+      "fr": "Obtenir les ailes majestueuses des Manderville.",
+      "ko": "당당한 맨더빌 날개 입수",
+      "zh": "获得曼德维尔威严飞翼。"
     },
     "item": 0,
     "title": 0
@@ -69016,11 +69094,15 @@
     "de": "Mowen-Stammkunde",
     "ja": "モーエン商会の贔屓職人",
     "fr": "Merveille favorite de Mowen",
+    "ko": "모웬 상회 후원 장인",
+    "zh": "商会中意的工匠",
     "description": {
       "en": "Complete the quest “La Vie Mowen.”",
       "de": "Den Auftrag „Sternenhagelvoll“ abgeschlossen.",
       "ja": "クエスト「階段亭で乾杯を」をコンプリートする",
-      "fr": "Accomplir la quête “Une soirée bien arrosée”."
+      "fr": "Accomplir la quête “Une soirée bien arrosée”.",
+      "ko": "퀘스트 '계단 식당에서 건배를' 완료",
+      "zh": "完成任务“在彷徨阶梯亭干杯”。"
     },
     "item": 0,
     "title": 0
@@ -69033,11 +69115,15 @@
     "de": "Mowen-Werkzeug: Prachtvolle Zoi-Säge",
     "ja": "モーエンツール：ゾイズスプレンディド・ソー",
     "fr": "Outils des merveilles : scie splendide",
+    "ko": "모웬 도구: 조이의 빛나는 톱",
+    "zh": "莫雯卓越工具：乔菈卓绝手锯",
     "description": {
       "en": "Obtain a brilliant saw.",
       "de": "Eine prachtvolle Zoi-Säge erlangt.",
       "ja": "ゾイズスプレンディド・ソーを入手する",
-      "fr": "Obtenir une scie splendide."
+      "fr": "Obtenir une scie splendide.",
+      "ko": "조이의 빛나는 톱 입수",
+      "zh": "获得乔菈卓绝手锯。"
     },
     "item": 0,
     "title": 0
@@ -69050,11 +69136,15 @@
     "de": "Mowen-Werkzeug: Prachtvoller Zoi-Kreuzschlaghammer",
     "ja": "モーエンツール：ゾイズスプレンディド・クロスペインハンマー",
     "fr": "Outils des merveilles : marteau à panne croisée splendide",
+    "ko": "모웬 도구: 조이의 빛나는 단조망치",
+    "zh": "莫雯卓越工具：乔菈卓绝横头锤",
     "description": {
       "en": "Obtain a brilliant cross-pein hammer.",
       "de": "Einen prachtvollen Zoi-Kreuzschlaghammer erlangt.",
       "ja": "ゾイズスプレンディド・クロスペインハンマーを入手する",
-      "fr": "Obtenir un marteau à panne croisée splendide."
+      "fr": "Obtenir un marteau à panne croisée splendide.",
+      "ko": "조이의 빛나는 단조망치 입수",
+      "zh": "获得乔菈卓绝横头锤。"
     },
     "item": 0,
     "title": 0
@@ -69067,11 +69157,15 @@
     "de": "Mowen-Werkzeug: Prachtvoller Zoi-Schlichthammer",
     "ja": "モーエンツール：ゾイズスプレンディド・レイジングハンマー",
     "fr": "Outils des merveilles : marteau de batteur splendide",
+    "ko": "모웬 도구: 조이의 빛나는 돋을무늬 망치",
+    "zh": "莫雯卓越工具：乔菈卓绝圆头锤",
     "description": {
       "en": "Obtain a brilliant raising hammer.",
       "de": "Einen prachtvollen Zoi-Schlichthammer erlangt.",
       "ja": "ゾイズスプレンディド・レイジングハンマーを入手する",
-      "fr": "Obtenir un marteau de batteur splendide."
+      "fr": "Obtenir un marteau de batteur splendide.",
+      "ko": "조이의 빛나는 돋을무늬 망치 입수",
+      "zh": "获得乔菈卓绝圆头锤。"
     },
     "item": 0,
     "title": 0
@@ -69084,11 +69178,15 @@
     "de": "Mowen-Werkzeug: Prachtvoller Zoi-Fäustel",
     "ja": "モーエンツール：ゾイズスプレンディド・マレット",
     "fr": "Outils des merveilles : massette splendide",
+    "ko": "모웬 도구: 조이의 빛나는 세공망치",
+    "zh": "莫雯卓越工具：乔菈卓绝工艺锤",
     "description": {
       "en": "Obtain a brilliant mallet.",
       "de": "Einen prachtvollen Zoi-Fäustel erlangt.",
       "ja": "ゾイズスプレンディド・マレットを入手する",
-      "fr": "Obtenir une massette splendide."
+      "fr": "Obtenir une massette splendide.",
+      "ko": "조이의 빛나는 세공망치 입수",
+      "zh": "获得乔菈卓绝工艺锤。"
     },
     "item": 0,
     "title": 0
@@ -69101,11 +69199,15 @@
     "de": "Mowen-Werkzeug: Prachtvolles Zoi-Rundmesser",
     "ja": "モーエンツール：ゾイズスプレンディド・ラウンドナイフ",
     "fr": "Outils des merveilles : couteau arrondi splendide",
+    "ko": "모웬 도구: 조이의 빛나는 둥근칼",
+    "zh": "莫雯卓越工具：乔菈卓绝圆革刀",
     "description": {
       "en": "Obtain a brilliant round knife.",
       "de": "Ein prachtvolles Zoi-Rundmesser erlangt.",
       "ja": "ゾイズスプレンディド・ラウンドナイフを入手する",
-      "fr": "Obtenir un couteau arrondi splendide."
+      "fr": "Obtenir un couteau arrondi splendide.",
+      "ko": "조이의 빛나는 둥근칼 입수",
+      "zh": "获得乔菈卓绝圆革刀。"
     },
     "item": 0,
     "title": 0
@@ -69118,11 +69220,15 @@
     "de": "Mowen-Werkzeug: Prachtvolle Zoi-Nadel",
     "ja": "モーエンツール：ゾイズスプレンディド・ニードル",
     "fr": "Outils des merveilles : aiguille splendide",
+    "ko": "모웬 도구: 조이의 빛나는 바늘",
+    "zh": "莫雯卓越工具：乔菈卓绝缝针",
     "description": {
       "en": "Obtain a brilliant needle.",
       "de": "Eine prachtvolle Zoi-Nadel erlangt.",
       "ja": "ゾイズスプレンディド・ニードルを入手する",
-      "fr": "Obtenir une aiguille splendide."
+      "fr": "Obtenir une aiguille splendide.",
+      "ko": "조이의 빛나는 바늘 입수",
+      "zh": "获得乔菈卓绝缝针。"
     },
     "item": 0,
     "title": 0
@@ -69135,11 +69241,15 @@
     "de": "Mowen-Werkzeug: Prachtvoller Zoi-Destillierkolben",
     "ja": "モーエンツール：ゾイズスプレンディド・アレンビック",
     "fr": "Outils des merveilles : alambic splendide",
+    "ko": "모웬 도구: 조이의 빛나는 증류기",
+    "zh": "莫雯卓越工具：乔菈卓绝蒸馏器",
     "description": {
       "en": "Obtain a brilliant alembic.",
       "de": "Einen prachtvollen Zoi-Destillierkolben erlangt.",
       "ja": "ゾイズスプレンディド・アレンビックを入手する",
-      "fr": "Obtenir un alambic splendide."
+      "fr": "Obtenir un alambic splendide.",
+      "ko": "조이의 빛나는 증류기 입수",
+      "zh": "获得乔菈卓绝蒸馏器。"
     },
     "item": 0,
     "title": 0
@@ -69152,11 +69262,15 @@
     "de": "Mowen-Werkzeug: Prachtvolle Zoi-Bratpfanne",
     "ja": "モーエンツール：ゾイズスプレンディド・フライパン",
     "fr": "Outils des merveilles : poêle à frire splendide",
+    "ko": "모웬 도구: 조이의 빛나는 프라이팬",
+    "zh": "莫雯卓越工具：乔菈卓绝煎锅",
     "description": {
       "en": "Obtain a brilliant frypan.",
       "de": "Eine prachtvolle Zoi-Bratpfanne erlangt.",
       "ja": "ゾイズスプレンディド・フライパンを入手する",
-      "fr": "Obtenir une poêle à frire splendide."
+      "fr": "Obtenir une poêle à frire splendide.",
+      "ko": "조이의 빛나는 프라이팬 입수",
+      "zh": "获得乔菈卓绝煎锅。"
     },
     "item": 0,
     "title": 0
@@ -69169,11 +69283,15 @@
     "de": "Mowen-Werkzeug: Prachtvolle Zoi-Spitzhacke",
     "ja": "モーエンツール：ゾイズスプレンディド・ピック",
     "fr": "Outils des merveilles : pioche splendide",
+    "ko": "모웬 도구: 조이의 빛나는 곡괭이",
+    "zh": "莫雯卓越工具：乔菈卓绝鹤嘴锄",
     "description": {
       "en": "Obtain a brilliant pickaxe.",
       "de": "Eine prachtvolle Zoi-Spitzhacke erlangt.",
       "ja": "ゾイズスプレンディド・ピックを入手する",
-      "fr": "Obtenir une pioche splendide."
+      "fr": "Obtenir une pioche splendide.",
+      "ko": "조이의 빛나는 곡괭이 입수",
+      "zh": "获得乔菈卓绝鹤嘴锄。"
     },
     "item": 0,
     "title": 0
@@ -69186,11 +69304,15 @@
     "de": "Mowen-Werkzeug: Prachtvolles Zoi-Handbeil",
     "ja": "モーエンツール：ゾイズスプレンディド・ハチェット",
     "fr": "Outils des merveilles : hachette splendide",
+    "ko": "모웬 도구: 조이의 빛나는 손도끼",
+    "zh": "莫雯卓越工具：乔菈卓绝手斧",
     "description": {
       "en": "Obtain a brilliant hatchet.",
       "de": "Ein prachtvolles Zoi-Handbeil erlangt.",
       "ja": "ゾイズスプレンディド・ハチェットを入手する",
-      "fr": "Obtenir une hachette splendide."
+      "fr": "Obtenir une hachette splendide.",
+      "ko": "조이의 빛나는 손도끼 입수",
+      "zh": "获得乔菈卓绝手斧。"
     },
     "item": 0,
     "title": 0
@@ -69203,11 +69325,15 @@
     "de": "Mowen-Werkzeug: Prachtvolle Zoi-Angelrute",
     "ja": "モーエンツール：ゾイズスプレンディド・フィッシングロッド",
     "fr": "Outils des merveilles : canne à pêche splendide",
+    "ko": "모웬 도구: 조이의 빛나는 낚싯대",
+    "zh": "莫雯卓越工具：乔菈卓绝钓竿",
     "description": {
       "en": "Obtain a brilliant fishing rod.",
       "de": "Eine prachtvolle Zoi-Angelrute erlangt.",
       "ja": "ゾイズスプレンディド・フィッシングロッドを入手する",
-      "fr": "Obtenir une canne à pêche splendide."
+      "fr": "Obtenir une canne à pêche splendide.",
+      "ko": "조이의 빛나는 낚싯대 입수",
+      "zh": "获得乔菈卓绝钓竿。"
     },
     "item": 0,
     "title": 0
@@ -69220,11 +69346,15 @@
     "de": "Meisterschaft über die Blaumagie VIII",
     "ja": "青魔道士：レベル80",
     "fr": "Mage bleu emblématique",
+    "ko": "청마도사: 레벨 80",
+    "zh": "魔书中的领悟8",
     "description": {
       "en": "Achieve blue mage level 80.",
       "de": "Als Blaumagier Stufe 80 erreicht.",
       "ja": "青魔道士のレベルが80に到達する",
-      "fr": "Atteindre le niveau 80 avec le job mage bleu."
+      "fr": "Atteindre le niveau 80 avec le job mage bleu.",
+      "ko": "청마도사 레벨 80 달성",
+      "zh": "将青魔法师升到80级。"
     },
     "item": 0,
     "title": 0
@@ -69237,11 +69367,15 @@
     "de": "Das Wissen der Blauen Künste IX",
     "ja": "ラーニングマニア：ランク9",
     "fr": "Incollable IX",
+    "ko": "체득광: 9단계",
+    "zh": "学海无涯9",
     "description": {
       "en": "Learn 120 blue mage spells.",
       "de": "120 Blaumagierzauber gelernt.",
       "ja": "青魔法を120種類ラーニングする",
-      "fr": "Apprendre 120 actions de magie bleue."
+      "fr": "Apprendre 120 actions de magie bleue.",
+      "ko": "청마법 120종류 체득",
+      "zh": "学习120种青魔法。"
     },
     "item": 0,
     "title": 0
@@ -69254,11 +69388,15 @@
     "de": "Güldenes Blau",
     "ja": "ゴールデンブルー",
     "fr": "Bleu doré",
+    "ko": "금빛 청마도사",
+    "zh": "黄金之青",
     "description": {
       "en": "Achieve the “Going for Gold” feat at the Masked Carnivale.",
       "de": "In der Großen Maskerade die Auszeichnung „Güldenes Blau“ erreicht.",
       "ja": "マスクカーニバルにて、ゴールデンブルーを達成する",
-      "fr": "Accomplir la prouesse “Bleu doré” à la Grande Mascarade."
+      "fr": "Accomplir la prouesse “Bleu doré” à la Grande Mascarade.",
+      "ko": "가면 무투회에서 '금빛 청마도사' 달성",
+      "zh": "在假面狂欢中达成黄金之青。"
     },
     "item": 0,
     "title": 692
@@ -69271,11 +69409,15 @@
     "de": "Blau zielt besser V",
     "ja": "青魔道士ログ：ランク5",
     "fr": "Tout un palmarès V",
+    "ko": "청마도사 임무: 5단계",
+    "zh": "魔书记录者5",
     "description": {
       "en": "Complete 110 types of routine mission in the Blue Mage Log.",
       "de": "110 unterschiedliche normale Ziele im Journal des Blaumagiers abgeschlossen.",
       "ja": "青魔道士ログの通常任務を110種類コンプリートする",
-      "fr": "Accomplir 110 missions différentes dans le palmarès bleu."
+      "fr": "Accomplir 110 missions différentes dans le palmarès bleu.",
+      "ko": "청마도사 임무의 일반 임무 110종류 완료",
+      "zh": "完成110种青魔法师记录中的普通任务。"
     },
     "item": 0,
     "title": 693
@@ -69288,11 +69430,15 @@
     "de": "Team Blau gegen Titania",
     "ja": "妖精王を屠りし青魔道士",
     "fr": "Des bleus pour le Monarque féérique",
+    "ko": "요정왕을 처치한 청마도사",
+    "zh": "天青的绮梦弑君者",
     "description": {
       "en": "Complete the Dancing Plague (Extreme) with a party of only blue mages, Silence Echo turned on, and Unrestricted Party turned off.",
       "de": "„Letzte Läuterung - Titania“ mit einer vollständigen Gruppe (Option „Keine Beschränkungen“ deaktiviert) abgeschlossen, die nur aus Blaumagiern besteht und für die die Kraft des Transzendierens deaktiviert ist.",
       "ja": "極ティターニア討滅戦を青魔道士だけで「制限解除」を行わず、また「超える力無効での参加」を設定したうえで攻略する",
-      "fr": "Vaincre Titania dans le défi “La Valse du Monarque (extrême)” avec une équipe composée exclusivement de mages bleus, sans avoir activé l'option “Sans restriction” et en ayant désactivé le pouvoir de l'Écho."
+      "fr": "Vaincre Titania dans le défi “La Valse du Monarque (extrême)” avec une équipe composée exclusivement de mages bleus, sans avoir activé l'option “Sans restriction” et en ayant désactivé le pouvoir de l'Écho.",
+      "ko": "청마도사로만 구성된 파티로 제한 해제를 하지 않고 초월하는 힘을 무효화한 후 극 티타니아 토벌전 완료",
+      "zh": "仅限由青魔法师组成的小队，在不解除限制并开启超越之力无效化的状态下完成缇坦妮雅歼殛战。"
     },
     "item": 0,
     "title": 0
@@ -69305,11 +69451,15 @@
     "de": "Team Blau gegen Innozenz",
     "ja": "全能者を屠りし青魔道士",
     "fr": "Des bleus pour l'Immaculé",
+    "ko": "전능자를 처치한 청마도사",
+    "zh": "天青的无瑕弑君者",
     "description": {
       "en": "Complete the Crown of the Immaculate (Extreme) with a party of only blue mages, Silence Echo turned on, and Unrestricted Party turned off.",
       "de": "„Letzte Läuterung - Innozenz“ mit einer vollständigen Gruppe (Option „Keine Beschränkungen“ deaktiviert) abgeschlossen, die nur aus Blaumagiern besteht und für die die Kraft des Transzendierens deaktiviert ist.",
       "ja": "極イノセンス討滅戦を青魔道士だけで「制限解除」を行わず、また「超える力無効での参加」を設定したうえで攻略する",
-      "fr": "Vaincre Innocence dans le défi “La Couronne de l'Immaculé (extrême)” avec une équipe composée exclusivement de mages bleus, sans avoir activé l'option “Sans restriction” et en ayant désactivé le pouvoir de l'Écho."
+      "fr": "Vaincre Innocence dans le défi “La Couronne de l'Immaculé (extrême)” avec une équipe composée exclusivement de mages bleus, sans avoir activé l'option “Sans restriction” et en ayant désactivé le pouvoir de l'Écho.",
+      "ko": "청마도사로만 구성된 파티로 제한 해제를 하지 않고 초월하는 힘을 무효화한 후 극 이노센스 토벌전 완료",
+      "zh": "仅限由青魔法师组成的小队，在不解除限制并开启超越之力无效化的状态下完成无瑕灵君歼殛战。"
     },
     "item": 0,
     "title": 0
@@ -69322,11 +69472,15 @@
     "de": "Team Blau gegen Hades",
     "ja": "冥王を屠りし青魔道士",
     "fr": "Des bleus pour le Maître des Enfers",
+    "ko": "명왕을 처치한 청마도사",
+    "zh": "天青的冥魂送葬者",
     "description": {
       "en": "Complete the Minstrel's Ballad: Hades's Elegy with a party of only blue mages, Silence Echo turned on, and Unrestricted Party turned off.",
       "de": "„Letzte Läuterung - Hades“ mit einer vollständigen Gruppe (Option „Keine Beschränkungen“ deaktiviert) abgeschlossen, die nur aus Blaumagiern besteht und für die die Kraft des Transzendierens deaktiviert ist.",
       "ja": "極ハーデス討滅戦を青魔道士だけで「制限解除」を行わず、また「超える力無効での参加」を設定したうえで攻略する",
-      "fr": "Vaincre Hadès dans le défi “Le Râle de l'Agonie (extrême)” avec une équipe composée exclusivement de mages bleus, sans avoir activé l'option “Sans restriction” et en ayant désactivé le pouvoir de l'Écho."
+      "fr": "Vaincre Hadès dans le défi “Le Râle de l'Agonie (extrême)” avec une équipe composée exclusivement de mages bleus, sans avoir activé l'option “Sans restriction” et en ayant désactivé le pouvoir de l'Écho.",
+      "ko": "청마도사로만 구성된 파티로 제한 해제를 하지 않고 초월하는 힘을 무효화한 후 극 하데스 토벌전 완료",
+      "zh": "仅限由青魔法师组成的小队，在不解除限制并开启超越之力无效化的状态下完成哈迪斯孤念歼灭战。"
     },
     "item": 0,
     "title": 0
@@ -69339,11 +69493,15 @@
     "de": "Team Blau gegen die Rubin-Waffe",
     "ja": "ルビーウェポンを破壊せし青魔道士",
     "fr": "Des bleus pour l'Arme Rubis",
+    "ko": "루비 웨폰을 파괴한 청마도사",
+    "zh": "天青的红宝石降神者",
     "description": {
       "en": "Complete the Cinder Drift (Extreme) with a party of only blue mages, Silence Echo turned on, and Unrestricted Party turned off.",
       "de": "„Rubinfeuer - Trauma“ mit einer vollständigen Gruppe (Option „Keine Beschränkungen“ deaktiviert) abgeschlossen, die nur aus Blaumagiern besteht und für die die Kraft des Transzendierens deaktiviert ist.",
       "ja": "極ルビーウェポン破壊作戦を青魔道士だけで「制限解除」を行わず、また「超える力無効での参加」を設定したうえで攻略する",
-      "fr": "Vaincre l'Arme Rubis dans le défi “Les Nuées de Brandons (extrême)” avec une équipe composée exclusivement de mages bleus, sans avoir activé l'option “Sans restriction” et en ayant désactivé le pouvoir de l'Écho."
+      "fr": "Vaincre l'Arme Rubis dans le défi “Les Nuées de Brandons (extrême)” avec une équipe composée exclusivement de mages bleus, sans avoir activé l'option “Sans restriction” et en ayant désactivé le pouvoir de l'Écho.",
+      "ko": "청마도사로만 구성된 파티로 제한 해제를 하지 않고 초월하는 힘을 무효화한 후 극 루비 웨폰 파괴작전 완료",
+      "zh": "仅限由青魔法师组成的小队，在不解除限制并开启超越之力无效化的状态下完成红宝石神兵狂想作战。"
     },
     "item": 0,
     "title": 0
@@ -69373,11 +69531,15 @@
     "de": "Team Blau gegen die Smaragd-Waffe",
     "ja": "エメラルドウェポンを破壊せし青魔道士",
     "fr": "Des bleus pour l'Arme Émeraude",
+    "ko": "에메랄드 웨폰을 파괴한 청마도사",
+    "zh": "天青的绿宝石降神者",
     "description": {
       "en": "Complete Castrum Marinum (Extreme) with a party of only blue mages, Silence Echo turned on, and Unrestricted Party turned off.",
       "de": "„Smaragdsturm - Trauma“ mit einer vollständigen Gruppe (Option „Keine Beschränkungen“ deaktiviert) abgeschlossen, die nur aus Blaumagiern besteht und für die die Kraft des Transzendierens deaktiviert ist.",
       "ja": "極エメラルドウェポン破壊作戦を青魔道士だけで「制限解除」を行わず、また「超える力無効での参加」を設定したうえで攻略する",
-      "fr": "Vaincre l'Arme Émeraude dans le défi “Castrum Marinum (extrême)” avec une équipe composée exclusivement de mages bleus, sans avoir activé l'option “Sans restriction” et en ayant désactivé le pouvoir de l'Écho."
+      "fr": "Vaincre l'Arme Émeraude dans le défi “Castrum Marinum (extrême)” avec une équipe composée exclusivement de mages bleus, sans avoir activé l'option “Sans restriction” et en ayant désactivé le pouvoir de l'Écho.",
+      "ko": "청마도사로만 구성된 파티로 제한 해제를 하지 않고 초월하는 힘을 무효화한 후 극 에메랄드 웨폰 파괴작전 완료",
+      "zh": "仅限由青魔法师组成的小队，在不解除限制并开启超越之力无效化的状态下完成绿宝石神兵狂想作战。"
     },
     "item": 0,
     "title": 0
@@ -69390,11 +69552,15 @@
     "de": "Team Blau gegen die Diamant-Waffe",
     "ja": "ダイヤウェポンを捕獲せし青魔道士",
     "fr": "Des bleus pour l'Arme Diamant",
+    "ko": "다이아몬드 웨폰을 포획한 청마도사",
+    "zh": "天青的钻石降神者",
     "description": {
       "en": "Complete the Cloud Deck (Extreme) with a party of only blue mages, Silence Echo turned on, and Unrestricted Party turned off.",
       "de": "„Diamantblitz - Trauma“ mit einer vollständigen Gruppe (Option „Keine Beschränkungen“ deaktiviert) abgeschlossen, die nur aus Blaumagiern besteht und für die die Kraft des Transzendierens deaktiviert ist.",
       "ja": "極ダイヤウェポン捕獲作戦を青魔道士だけで「制限解除」を行わず、また「超える力無効での参加」を設定したうえで攻略する",
-      "fr": "Vaincre l'Arme Diamant dans le défi “Le Tillac des Cirrus (extrême)” avec une équipe composée exclusivement de mages bleus, sans avoir activé l'option “Sans restriction” et en ayant désactivé le pouvoir de l'Écho."
+      "fr": "Vaincre l'Arme Diamant dans le défi “Le Tillac des Cirrus (extrême)” avec une équipe composée exclusivement de mages bleus, sans avoir activé l'option “Sans restriction” et en ayant désactivé le pouvoir de l'Écho.",
+      "ko": "청마도사로만 구성된 파티로 제한 해제를 하지 않고 초월하는 힘을 무효화한 후 극 다이아몬드 웨폰 포획작전 완료",
+      "zh": "仅限由青魔法师组成的小队，在不解除限制并开启超越之力无效化的状态下完成钻石神兵狂想作战。"
     },
     "item": 0,
     "title": 0
@@ -69407,11 +69573,15 @@
     "de": "Team Blau gegen Edens Erwachen",
     "ja": "覚醒に至りしエデンを制覇せし青魔道士",
     "fr": "Des bleus pour Éden I",
+    "ko": "각성한 에덴을 제패한 청마도사",
+    "zh": "称霸觉醒伊甸的青魔法师",
     "description": {
       "en": "Complete Eden's Gate: Sepulture (Savage) with a party of only blue mages, Silence Echo turned on, and Unrestricted Party turned off.",
       "de": "„Edens Erwachen - Beerdigung (episch)“ mit einer vollständigen Gruppe (Option „Keine Beschränkungen“ deaktiviert) abgeschlossen, die nur aus Blaumagiern besteht und für die die Kraft des Transzendierens deaktiviert ist.",
       "ja": "希望の園エデン零式：覚醒編4を青魔道士だけで「制限解除」を行わず、また「超える力無効での参加」を設定したうえで攻略する",
-      "fr": "Finir “L'Éveil d'Éden (sadique)” avec une équipe composée exclusivement de mages bleus, sans avoir activé l'option “Sans restriction” et en ayant désactivé le pouvoir de l'Écho."
+      "fr": "Finir “L'Éveil d'Éden (sadique)” avec une équipe composée exclusivement de mages bleus, sans avoir activé l'option “Sans restriction” et en ayant désactivé le pouvoir de l'Écho.",
+      "ko": "청마도사로만 구성된 파티로 제한 해제를 하지 않고 초월하는 힘을 무효화한 후 희망의 낙원 에덴: 각성편4(영웅) 완료",
+      "zh": "仅限由青魔法师组成的小队，在不解除限制并开启超越之力无效化的状态下完成伊甸零式希望乐园 觉醒之章4。"
     },
     "item": 0,
     "title": 0
@@ -69424,11 +69594,15 @@
     "de": "Team Blau gegen Edens Resonanz",
     "ja": "共鳴に至りしエデンを制覇せし青魔道士",
     "fr": "Des bleus pour Éden II",
+    "ko": "공명한 에덴을 제패한 청마도사",
+    "zh": "称霸共鸣伊甸的青魔法师",
     "description": {
       "en": "Complete Eden's Verse: Refulgence (Savage) with a party of only blue mages, Silence Echo turned on, and Unrestricted Party turned off.",
       "de": "„Edens Resonanz - Erstarrung (episch)“ mit einer vollständigen Gruppe (Option „Keine Beschränkungen“ deaktiviert) abgeschlossen, die nur aus Blaumagiern besteht und für die die Kraft des Transzendierens deaktiviert ist.",
       "ja": "希望の園エデン零式：共鳴編4を青魔道士だけで「制限解除」を行わず、また「超える力無効での参加」を設定したうえで攻略する",
-      "fr": "Finir “Les Accords d'Éden (sadique)” avec une équipe composée exclusivement de mages bleus, sans avoir activé l'option “Sans restriction” et en ayant désactivé le pouvoir de l'Écho."
+      "fr": "Finir “Les Accords d'Éden (sadique)” avec une équipe composée exclusivement de mages bleus, sans avoir activé l'option “Sans restriction” et en ayant désactivé le pouvoir de l'Écho.",
+      "ko": "청마도사로만 구성된 파티로 제한 해제를 하지 않고 초월하는 힘을 무효화한 후 희망의 낙원 에덴: 공명편4(영웅) 완료",
+      "zh": "仅限由青魔法师组成的小队，在不解除限制并开启超越之力无效化的状态下完成伊甸零式希望乐园 共鸣之章4。"
     },
     "item": 0,
     "title": 0
@@ -69441,11 +69615,15 @@
     "de": "Team Blau gegen Edens Verheißung",
     "ja": "再生に至りしエデンを制覇せし青魔道士",
     "fr": "Des bleus pour Éden III",
+    "ko": "재생한 에덴을 제패한 청마도사",
+    "zh": "称霸再生伊甸的青魔法师",
     "description": {
       "en": "Complete Eden's Promise: Eternity (Savage) with a party of only blue mages, Silence Echo turned on, and Unrestricted Party turned off.",
       "de": "„Edens Verheißung - Ewigkeit (episch)“ mit einer vollständigen Gruppe (Option „Keine Beschränkungen“ deaktiviert) abgeschlossen, die nur aus Blaumagiern besteht und für die die Kraft des Transzendierens deaktiviert ist.",
       "ja": "希望の園エデン零式：再生編4を青魔道士だけで「制限解除」を行わず、また「超える力無効での参加」を設定したうえで攻略する",
-      "fr": "Finir “La Promesse d'Éden (sadique)” avec une équipe composée exclusivement de mages bleus, sans avoir activé l'option “Sans restriction” et en ayant désactivé le pouvoir de l'Écho."
+      "fr": "Finir “La Promesse d'Éden (sadique)” avec une équipe composée exclusivement de mages bleus, sans avoir activé l'option “Sans restriction” et en ayant désactivé le pouvoir de l'Écho.",
+      "ko": "청마도사로만 구성된 파티로 제한 해제를 하지 않고 초월하는 힘을 무효화한 후 희망의 낙원 에덴: 재생편4(영웅) 완료",
+      "zh": "仅限由青魔法师组成的小队，在不解除限制并开启超越之力无效化的状态下完成伊甸零式希望乐园 再生之章4。"
     },
     "item": 0,
     "title": 0
@@ -69458,11 +69636,15 @@
     "de": "Team Blau 3, Eden 0",
     "ja": "希望の園を極めし青魔道士",
     "fr": "Conte bleu d'Éden",
+    "ko": "희망의 낙원의 정점에 다다른 청마도사",
+    "zh": "通晓希望乐园的青魔法师",
     "description": {
       "en": "Obtain the achievements “Mightier than the Gate,” “Mightier than the Verse,” and “Mightier than the Promise.”",
       "de": "Die Errungenschaften „Team Blau gegen Edens Erwachen“, „Team Blau gegen Edens Resonanz“, „Team Blau gegen Edens Verheißung“ erhalten.",
       "ja": "アチーブメント「覚醒に至りしエデンを制覇せし青魔道士」「共鳴に至りしエデンを制覇せし青魔道士」「再生に至りしエデンを制覇せし青魔道士」をすべて達成する",
-      "fr": "Accomplir les trois hauts faits de la série “Des bleus pour Éden”."
+      "fr": "Accomplir les trois hauts faits de la série “Des bleus pour Éden”.",
+      "ko": "업적 '각성한 에덴을 제패한 청마도사', '공명한 에덴을 제패한 청마도사', '재생한 에덴을 제패한 청마도사'를 모두 달성",
+      "zh": "达成“称霸觉醒伊甸的青魔法师”“称霸共鸣伊甸的青魔法师”“称霸再生伊甸的青魔法师”三个成就。"
     },
     "item": 0,
     "title": 694
@@ -69475,11 +69657,15 @@
     "de": "Kartograph: Der Rokkon",
     "ja": "六根山を踏破せし者",
     "fr": "Cartographe du continent : Mont Rokkon",
+    "ko": "육근산 탐험가",
+    "zh": "踏遍六根山",
     "description": {
       "en": "Discover every location within the Mount Rokkon variant dungeon.",
       "de": "Alle Orte am Rokkon erkundet.",
       "ja": "六根山（ヴァリアントダンジョン）を踏破し、マップをすべて開示する",
-      "fr": "Découvrir toute la carte du mont Rokkon."
+      "fr": "Découvrir toute la carte du mont Rokkon.",
+      "ko": "변형 던전: 육근산을 탐험하여 모든 지역 발견",
+      "zh": "成功探索六根山（多变迷宫）的所有地区。"
     },
     "item": 0,
     "title": 0
@@ -69492,11 +69678,15 @@
     "de": "Über den Rastlosen erhoben",
     "ja": "モウコを狩りし者",
     "fr": "Trancher dans le manque de lard",
+    "ko": "모우코를 쓰러뜨린 자",
+    "zh": "狩猎猛虎",
     "description": {
       "en": "Defeat Moko the Restless in the Mount Rokkon variant dungeon.",
       "de": "Moko den Rastlosen am Rokkon besiegt.",
       "ja": "六根山（ヴァリアントダンジョン）で、モウコを討伐する",
-      "fr": "Vaincre Môko le tourmenté dans “Le mont Rokkon - Donjon à embranchements”."
+      "fr": "Vaincre Môko le tourmenté dans “Le mont Rokkon - Donjon à embranchements”.",
+      "ko": "변형 던전: 육근산에서 모우코 처치",
+      "zh": "在六根山（多变迷宫）中战胜猛虎。"
     },
     "item": 0,
     "title": 0
@@ -69509,11 +69699,15 @@
     "de": "Den Entfesselten aufgerüttelt",
     "ja": "ゴウライを狩りし者",
     "fr": "Le rat dans sa cage aux trésors",
+    "ko": "고우라이를 쓰러뜨린 자",
+    "zh": "狩猎豪雷",
     "description": {
       "en": "Defeat Gorai the Uncaged in the Mount Rokkon variant dungeon.",
       "de": "Gorai den Entfesselten am Rokkon besiegt.",
       "ja": "六根山（ヴァリアントダンジョン）で、ゴウライを討伐する",
-      "fr": "Vaincre Gôrai le fureteur dans “Le mont Rokkon - Donjon à embranchements”."
+      "fr": "Vaincre Gôrai le fureteur dans “Le mont Rokkon - Donjon à embranchements”.",
+      "ko": "변형 던전: 육근산에서 고우라이 처치",
+      "zh": "在六根山（多变迷宫）中战胜豪雷。"
     },
     "item": 0,
     "title": 0
@@ -69526,11 +69720,15 @@
     "de": "Den König der Löwen erlegt",
     "ja": "獅子王を狩りし者",
     "fr": "Le roi des animaux disparus",
+    "ko": "사자왕을 쓰러뜨린 자",
+    "zh": "狩猎狮子王",
     "description": {
       "en": "Defeat Shishio in the Mount Rokkon variant dungeon.",
       "de": "Shishio am Rokkon besiegt.",
       "ja": "六根山（ヴァリアントダンジョン）で、獅子王を討伐する",
-      "fr": "Vaincre Shishiô dans “Le mont Rokkon - Donjon à embranchements”."
+      "fr": "Vaincre Shishiô dans “Le mont Rokkon - Donjon à embranchements”.",
+      "ko": "변형 던전: 육근산에서 사자왕 처치",
+      "zh": "在六根山（多变迷宫）中战胜狮子王。"
     },
     "item": 0,
     "title": 0
@@ -69543,11 +69741,15 @@
     "de": "In Rauch aufgegangen",
     "ja": "煙々羅を狩りし者",
     "fr": "Partir en fumée",
+    "ko": "엔엔라를 쓰러뜨린 자",
+    "zh": "狩猎烟烟罗",
     "description": {
       "en": "Defeat Enenra in the Mount Rokkon variant dungeon.",
       "de": "Enenra am Rokkon besiegt.",
       "ja": "六根山（ヴァリアントダンジョン）で、煙々羅を討伐する",
-      "fr": "Vaincre Enenra dans “Le mont Rokkon - Donjon à embranchements”."
+      "fr": "Vaincre Enenra dans “Le mont Rokkon - Donjon à embranchements”.",
+      "ko": "변형 던전: 육근산에서 엔엔라 처치",
+      "zh": "在六根山（多变迷宫）中战胜烟烟罗。"
     },
     "item": 0,
     "title": 0
@@ -69560,11 +69762,15 @@
     "de": "Geschichte zweier Waisenkinder",
     "ja": "幸不幸と孤児ふたり",
     "fr": "Une histoire d'orphelins",
+    "ko": "행복과 불행은 제 하기 나름",
+    "zh": "两个孤儿的故事",
     "description": {
       "en": "Complete the quest “Of Price and Ruin.”",
       "de": "Den Auftrag „Fernöstliche Waisen“ abgeschlossen.",
       "ja": "クエスト「幸不幸と孤児ふたり」をコンプリートする",
-      "fr": "Accomplir la quête “Orphelins d'Orient”."
+      "fr": "Accomplir la quête “Orphelins d'Orient”.",
+      "ko": "퀘스트 '행복과 불행은 제 하기 나름' 완료",
+      "zh": "完成任务“两个孤儿的故事”。"
     },
     "item": 0,
     "title": 695
@@ -69577,11 +69783,15 @@
     "de": "Auf den Grund gegangen: Der Rokkon",
     "ja": "六根山 探索記",
     "fr": "Les mots de Hancock",
+    "ko": "육근산 탐색기",
+    "zh": "六根山探索记",
     "description": {
       "en": "Unlock all exorcism records on Mount Rokkon.",
       "de": "Alle Einträge des Exorzismusberichtes vom Rokkon aufgedeckt.",
       "ja": "六根山 探索記をすべて開示する",
-      "fr": "Découvrir toutes les entrées du journal d'exploration du mont Rokkon."
+      "fr": "Découvrir toutes les entrées du journal d'exploration du mont Rokkon.",
+      "ko": "육근산 탐색기 모두 수집",
+      "zh": "成功发现六根山探索记中的所有故事。"
     },
     "item": 40387,
     "title": 0
@@ -69594,11 +69804,15 @@
     "de": "Kartograph: Der kuriose Rokkon",
     "ja": "異聞六根山を踏破せし者",
     "fr": "Cartographe du continent : Mont Rokkon annexe",
+    "ko": "번외 육근산 탐험가",
+    "zh": "踏遍异闻六根山",
     "description": {
       "en": "Discover every location within Another Mount Rokkon.",
       "de": "Alle Orte am kuriosen Rokkon erkundet.",
       "ja": "異聞六根山（アナザーダンジョン）を踏破し、マップをすべて開示する",
-      "fr": "Découvrir toute la carte du mont Rokkon annexe."
+      "fr": "Découvrir toute la carte du mont Rokkon annexe.",
+      "ko": "파생 던전: 번외 육근산을 탐험하여 모든 지역 발견",
+      "zh": "成功探索六根山（异闻迷宫）的所有地区。"
     },
     "item": 0,
     "title": 0
@@ -69611,11 +69825,15 @@
     "de": "Einen Maulwurfshügel bezwungen",
     "ja": "異聞六根山を制覇せし者",
     "fr": "Déplacer des montagnes",
+    "ko": "번외 육근산을 제패한 자",
+    "zh": "称霸异闻六根山",
     "description": {
       "en": "Complete the criterion dungeon Another Mount Rokkon.",
       "de": "Den kuriosen Rokkon erfolgreich abgeschlossen.",
       "ja": "異聞六根山（アナザーダンジョン）を攻略する",
-      "fr": "Finir Le mont Rokkon annexe - Donjon alternatif."
+      "fr": "Finir Le mont Rokkon annexe - Donjon alternatif.",
+      "ko": "파생 던전: 번외 육근산 완료",
+      "zh": "成功挑战异闻六根山（异闻迷宫）。"
     },
     "item": 0,
     "title": 0
@@ -69628,11 +69846,15 @@
     "de": "Einen Berg versetzt",
     "ja": "異聞六根山を完全制覇せし者",
     "fr": "Supplicier des montagnes",
+    "ko": "번외 육근산을 완벽히 제패한 자",
+    "zh": "完全称霸异闻六根山",
     "description": {
       "en": "Complete the criterion dungeon Another Mount Rokkon (Savage).",
       "de": "Den kuriosen Rokkon (episch) erfolgreich abgeschlossen.",
       "ja": "異聞六根山 零式（アナザーダンジョン）を攻略する",
-      "fr": "Finir Le mont Rokkon annexe - Donjon alternatif (sadique)."
+      "fr": "Finir Le mont Rokkon annexe - Donjon alternatif (sadique).",
+      "ko": "파생 던전: 번외 육근산(영웅) 완료",
+      "zh": "成功挑战零式异闻六根山（异闻迷宫）。"
     },
     "item": 0,
     "title": 696
@@ -70200,20 +70422,20 @@
   },
   "3374": {
     "id": 3374,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/026000/026002.png",
+    "patch": 93,
+    "en": "With Great Power Comes Great Mandervillity",
+    "de": "Mandervillöses Meisterhandwerk",
+    "ja": "マンダヴィラス・マンダヴィル",
+    "fr": "Manderveilleusement Manderville",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “Resonating with Perfection.”",
+      "de": "Den Auftrag „Perfekt im Einklang“ abgeschlossen.",
+      "ja": "クエスト「踊る匠たち」をコンプリートする",
+      "fr": "Accomplir la quête “La dernière danse”."
     },
     "item": 0,
-    "title": 0
+    "title": 701
   },
   "3375": {
     "id": 3375,
@@ -70268,357 +70490,357 @@
   },
   "3378": {
     "id": 3378,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/001000/001102.png",
+    "patch": 93,
+    "en": "Go Big Till the End III",
+    "de": "Apokalyptische Kapitalbeschaffung III",
+    "ja": "暁月の太公望：ランク3",
+    "fr": "Pêcheur de légendes intemporel III",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Catch 40 different varieties of big fish in areas explored during Endwalker.",
+      "de": "40 verschiedene Kapitalfische in den Arealen von Endwalker gefangen.",
+      "ja": "暁月のフィナーレのエリアにいるヌシを40種類、釣り上げる",
+      "fr": "Pêcher 40 prises légendaires différentes dans les zones explorées lors d'Endwalker."
     },
     "item": 0,
-    "title": 0
+    "title": 705
   },
   "3379": {
     "id": 3379,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/001000/001141.png",
+    "patch": 93,
+    "en": "Fish Fear Me",
+    "de": "Ultimative Kapitalbeschaffung",
+    "ja": "超太公望への道",
+    "fr": "Fléau des mers",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain the achievements “No River Wide Enough” and “Go Big Till the End III.”",
+      "de": "Die Errungenschaften „Formvollendete Kapitalbeschaffung“ und „Apokalyptische Kapitalbeschaffung III“ erlangt.",
+      "ja": "アチーブメント「真太公望への道」「暁月の太公望：ランク3」をすべて達成する",
+      "fr": "Accomplir les hauts faits “À la croisée des mers” et “Pêcheur de légendes intemporel III”."
     },
     "item": 0,
-    "title": 0
+    "title": 706
   },
   "3380": {
     "id": 3380,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/030000/030670.png",
+    "patch": 93,
+    "en": "Perfect: Mandervillous Falchion & Kite Shield",
+    "de": "Manderville-Waffen: Mandervillöses Manderville-Falchion und mandervillöser Manderville-Drachenschild",
+    "ja": "マンダヴィルウェポン：マンダヴィラス・ファルシオン＆マンダヴィラス・カイトシールド",
+    "fr": "Armes des Manderville : fauchon et écu mandorle manderveilleux",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a Mandervillous falchion and Mandervillous kite shield.",
+      "de": "Das mandervillöse Manderville-Falchion und den mandervillösen Manderville-Drachenschild erhalten.",
+      "ja": "マンダヴィラス・ファルシオンとマンダヴィラス・カイトシールドを入手する",
+      "fr": "Obtenir le fauchon et l'écu mandorle manderveilleux des Manderville."
     },
     "item": 0,
     "title": 0
   },
   "3381": {
     "id": 3381,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/031000/031244.png",
+    "patch": 93,
+    "en": "Perfect: Mandervillous Battleaxe",
+    "de": "Manderville-Waffen: Mandervillöse Manderville-Kriegsaxt",
+    "ja": "マンダヴィルウェポン：マンダヴィラス・バトルアクス",
+    "fr": "Armes des Manderville : hache de combat manderveilleuse",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a Mandervillous battleaxe.",
+      "de": "Die mandervillöse Manderville-Kriegsaxt erhalten.",
+      "ja": "マンダヴィラス・バトルアクスを入手する",
+      "fr": "Obtenir la hache de combat manderveilleuse des Manderville."
     },
     "item": 0,
     "title": 0
   },
   "3382": {
     "id": 3382,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/034000/034398.png",
+    "patch": 93,
+    "en": "Perfect: Mandervillous Greatsword",
+    "de": "Manderville-Waffen: Mandervillöses Manderville-Großschwert",
+    "ja": "マンダヴィルウェポン：マンダヴィラス・グレートソード",
+    "fr": "Armes des Manderville : grande épée manderveilleuse",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a Mandervillous greatsword.",
+      "de": "Das mandervillöse Manderville-Großschwert erhalten.",
+      "ja": "マンダヴィラス・グレートソードを入手する",
+      "fr": "Obtenir la grande épée manderveilleuse des Manderville."
     },
     "item": 0,
     "title": 0
   },
   "3383": {
     "id": 3383,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/036000/036090.png",
+    "patch": 93,
+    "en": "Perfect: Mandervillous Gunblade",
+    "de": "Manderville-Waffen: Mandervillöse Manderville-Revolverklinge",
+    "ja": "マンダヴィルウェポン：マンダヴィラス・ガンブレード",
+    "fr": "Armes des Manderville : pistolame manderveilleuse",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a Mandervillous gunblade.",
+      "de": "Die mandervillöse Manderville-Revolverklinge erhalten.",
+      "ja": "マンダヴィラス・ガンブレードを入手する",
+      "fr": "Obtenir la pistolame manderveilleuse des Manderville."
     },
     "item": 0,
     "title": 0
   },
   "3384": {
     "id": 3384,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/031000/031646.png",
+    "patch": 93,
+    "en": "Perfect: Mandervillous Trident",
+    "de": "Manderville-Waffen: Mandervillöser Manderville-Dreizack",
+    "ja": "マンダヴィルウェポン：マンダヴィラス・トライデント",
+    "fr": "Armes des Manderville : trident manderveilleux",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a Mandervillous trident.",
+      "de": "Den mandervillösen Manderville-Dreizack erhalten.",
+      "ja": "マンダヴィラス・トライデントを入手する",
+      "fr": "Obtenir le trident manderveilleux des Manderville."
     },
     "item": 0,
     "title": 0
   },
   "3385": {
     "id": 3385,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/030000/030834.png",
+    "patch": 93,
+    "en": "Perfect: Mandervillous Fists",
+    "de": "Manderville-Waffen: Mandervillöse Manderville-Fäuste",
+    "ja": "マンダヴィルウェポン：マンダヴィラス・フィスト",
+    "fr": "Armes des Manderville : poings manderveilleux",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a pair of Mandervillous fists.",
+      "de": "Ein Paar mandervillöser Manderville-Fäuste erhalten.",
+      "ja": "マンダヴィラス・フィストを入手する",
+      "fr": "Obtenir les poings manderveilleux des Manderville."
     },
     "item": 0,
     "title": 0
   },
   "3386": {
     "id": 3386,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/033000/033620.png",
+    "patch": 93,
+    "en": "Perfect: Mandervillous Knives",
+    "de": "Manderville-Waffen: Mandervillöse Manderville-Messer",
+    "ja": "マンダヴィルウェポン：マンダヴィラス・ナイフ",
+    "fr": "Armes des Manderville : couteaux manderveilleux",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a pair of Mandervillous knives.",
+      "de": "Das mandervillöse Manderville-Messer erhalten.",
+      "ja": "マンダヴィラス・ナイフを入手する",
+      "fr": "Obtenir les couteaux manderveilleux des Manderville."
     },
     "item": 0,
     "title": 0
   },
   "3387": {
     "id": 3387,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/036000/036548.png",
+    "patch": 93,
+    "en": "Perfect: Mandervillous Samurai Blade",
+    "de": "Manderville-Waffen: Mandervillöse Manderville-Samuraiklinge",
+    "ja": "マンダヴィルウェポン：マンダヴィラス・サムライブレード",
+    "fr": "Armes des Manderville : lame de samouraï manderveilleuse",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a Mandervillous samurai blade.",
+      "de": "Die mandervillöse Manderville-Samuraiklinge erhalten.",
+      "ja": "マンダヴィラス・サムライブレードを入手する",
+      "fr": "Obtenir la lame de samouraï manderveilleuse des Manderville."
     },
     "item": 0,
     "title": 0
   },
   "3388": {
     "id": 3388,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/037000/037259.png",
+    "patch": 93,
+    "en": "Perfect: Mandervillous Zaghnal",
+    "de": "Manderville-Waffen: Mandervillöser Manderville-Zaghnal",
+    "ja": "マンダヴィルウェポン：マンダヴィラス・ザグナル",
+    "fr": "Armes des Manderville : zaghnal manderveilleux",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a Mandervillous zaghnal.",
+      "de": "Den mandervillösen Manderville-Zaghnal erhalten.",
+      "ja": "マンダヴィラス・ザグナルを入手する",
+      "fr": "Obtenir le zaghnal manderveilleux des Manderville."
     },
     "item": 0,
     "title": 0
   },
   "3389": {
     "id": 3389,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/032000/032034.png",
+    "patch": 93,
+    "en": "Perfect: Mandervillous Compound Bow",
+    "de": "Manderville-Waffen: Mandervillöser Manderville-Kompositbogen",
+    "ja": "マンダヴィルウェポン：マンダヴィラス・コンパウンドボウ",
+    "fr": "Armes des Manderville : arc à poulies manderveilleux",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a Mandervillous compound bow.",
+      "de": "Den mandervillösen Manderville-Kompositbogen erhalten.",
+      "ja": "マンダヴィラス・コンパウンドボウを入手する",
+      "fr": "Obtenir l'arc à poulies manderveilleux des Manderville."
     },
     "item": 0,
     "title": 0
   },
   "3390": {
     "id": 3390,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/034000/034493.png",
+    "patch": 93,
+    "en": "Perfect: Mandervillous Revolver",
+    "de": "Manderville-Waffen: Mandervillöser Manderville-Revolver",
+    "ja": "マンダヴィルウェポン：マンダヴィラス・リボルバー",
+    "fr": "Armes des Manderville : revolver manderveilleux",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a Mandervillous revolver.",
+      "de": "Den mandervillösen Manderville-Revolver erhalten.",
+      "ja": "マンダヴィラス・リボルバーを入手する",
+      "fr": "Obtenir le revolver manderveilleux des Manderville."
     },
     "item": 0,
     "title": 0
   },
   "3391": {
     "id": 3391,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/036000/036289.png",
+    "patch": 93,
+    "en": "Perfect: Mandervillous Chakrams",
+    "de": "Manderville-Waffen: Mandervillöse Manderville-Chakrams",
+    "ja": "マンダヴィルウェポン：マンダヴィラス・チャクラム",
+    "fr": "Armes des Manderville : chakrams manderveilleux",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a pair of Mandervillous chakrams.",
+      "de": "Ein Paar mandervillöser Manderville-Chakrams erhalten.",
+      "ja": "マンダヴィラス・チャクラムを入手する",
+      "fr": "Obtenir les chakrams manderveilleux des Manderville."
     },
     "item": 0,
     "title": 0
   },
   "3392": {
     "id": 3392,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/032000/032879.png",
+    "patch": 93,
+    "en": "Perfect: Mandervillous Rod",
+    "de": "Manderville-Waffen: Mandervillöser Manderville-Stab",
+    "ja": "マンダヴィルウェポン：マンダヴィラス・ロッド",
+    "fr": "Armes des Manderville : sceptre manderveilleux",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a Mandervillous rod.",
+      "de": "Den mandervillösen Manderville-Stab erhalten.",
+      "ja": "マンダヴィラス・ロッドを入手する",
+      "fr": "Obtenir le sceptre manderveilleux des Manderville."
     },
     "item": 0,
     "title": 0
   },
   "3393": {
     "id": 3393,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/033000/033392.png",
+    "patch": 93,
+    "en": "Perfect: Mandervillous Index",
+    "de": "Manderville-Waffen: Mandervillöser Manderville-Index",
+    "ja": "マンダヴィルウェポン：マンダヴィラス・インデックス",
+    "fr": "Armes des Manderville : index manderveilleux",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a Mandervillous index.",
+      "de": "Den mandervillösen Manderville-Index erhalten.",
+      "ja": "マンダヴィラス・インデックスを入手する",
+      "fr": "Obtenir l'index manderveilleux des Manderville."
     },
     "item": 0,
     "title": 0
   },
   "3394": {
     "id": 3394,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/036000/036847.png",
+    "patch": 93,
+    "en": "Perfect: Mandervillous Rapier",
+    "de": "Manderville-Waffen: Mandervillöses Manderville-Rapier",
+    "ja": "マンダヴィルウェポン：マンダヴィラス・レイピア",
+    "fr": "Armes des Manderville : rapière manderveilleuse",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a Mandervillous rapier.",
+      "de": "Das mandervillöse Manderville-Rapier erhalten.",
+      "ja": "マンダヴィラス・レイピアを入手する",
+      "fr": "Obtenir la rapière manderveilleuse des Manderville."
     },
     "item": 0,
     "title": 0
   },
   "3395": {
     "id": 3395,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/032000/032464.png",
+    "patch": 93,
+    "en": "Perfect: Mandervillous Cane",
+    "de": "Manderville-Waffen: Mandervillöser Manderville-Stock",
+    "ja": "マンダヴィルウェポン：マンダヴィラス・ケーン",
+    "fr": "Armes des Manderville : canne manderveilleuse",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a Mandervillous cane.",
+      "de": "Den mandervillösen Manderville-Stock erhalten.",
+      "ja": "マンダヴィラス・ケーンを入手する",
+      "fr": "Obtenir la canne manderveilleuse des Manderville."
     },
     "item": 0,
     "title": 0
   },
   "3396": {
     "id": 3396,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/033000/033391.png",
+    "patch": 93,
+    "en": "Perfect: Mandervillous Codex",
+    "de": "Manderville-Waffen: Mandervillöser Manderville-Kodex",
+    "ja": "マンダヴィルウェポン：マンダヴィラス・コーデックス",
+    "fr": "Armes des Manderville : codex manderveilleux",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a Mandervillous codex.",
+      "de": "Den mandervillösen Manderville-Kodex erhalten.",
+      "ja": "マンダヴィラス・コーデックスを入手する",
+      "fr": "Obtenir le codex manderveilleux des Manderville."
     },
     "item": 0,
     "title": 0
   },
   "3397": {
     "id": 3397,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/034000/034991.png",
+    "patch": 93,
+    "en": "Perfect: Mandervillous Torquetum",
+    "de": "Manderville-Waffen: Mandervillöses Manderville-Torquetum",
+    "ja": "マンダヴィルウェポン：マンダヴィラス・トルクエタム",
+    "fr": "Armes des Manderville : torquetum manderveilleux",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain a Mandervillous torquetum.",
+      "de": "Das mandervillöse Manderville-Torquetum erhalten.",
+      "ja": "マンダヴィラス・トルクエタムを入手する",
+      "fr": "Obtenir le torquetum manderveilleux des Manderville."
     },
     "item": 0,
     "title": 0
   },
   "3398": {
     "id": 3398,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/037000/037056.png",
+    "patch": 93,
+    "en": "Perfect: Mandervillous Wings",
+    "de": "Manderville-Waffen: Mandervillöse Manderville-Schwingen",
+    "ja": "マンダヴィルウェポン：マンダヴィラス・ウィング",
+    "fr": "Armes des Manderville : ailes manderveilleuses",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Obtain an array of Mandervillous wings.",
+      "de": "Ein Quartett mandervillöser Manderville-Schwingen erhalten.",
+      "ja": "マンダヴィラス・ウィングを入手する",
+      "fr": "Obtenir les ailes manderveilleuses des Manderville."
     },
     "item": 0,
     "title": 0
@@ -70812,34 +71034,34 @@
   },
   "3410": {
     "id": 3410,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/026000/026002.png",
+    "patch": 93,
+    "en": "Big Dreams, Found Fortune",
+    "de": "Wohlstand für alle",
+    "ja": "末永く大繁盛",
+    "fr": "Le dernier coup de collier ?",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “More Precious than Gil.”",
+      "de": "Den Auftrag „Lang lebe der Wohlstand“ abgeschlossen.",
+      "ja": "クエスト「大繁盛の輪よ、永遠に」をコンプリートする",
+      "fr": "Accomplir la quête “Longue vie à la Tarufacture&nbsp;!”."
     },
     "item": 0,
     "title": 0
   },
   "3411": {
     "id": 3411,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/060000/060033.png",
+    "patch": 93,
+    "en": "Space Race",
+    "de": "Champion des Wiegenstern-Cups",
+    "ja": "第一回ラストレムナント杯優勝者",
+    "fr": "Les Fous volants",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “A Dream Worth Chasing.”",
+      "de": "Den Auftrag „Ein Rennen zwischen den Sternen“ abgeschlossen.",
+      "ja": "クエスト「宇宙の果てで最高のレースを！」をコンプリートする",
+      "fr": "Accomplir la quête “La grande course aux confins de l'univers”."
     },
     "item": 0,
     "title": 0
@@ -70880,34 +71102,34 @@
   },
   "3414": {
     "id": 3414,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/026000/026002.png",
+    "patch": 93,
+    "en": "Tomorrows Unknown",
+    "de": "Der Dämmerung entgegen",
+    "ja": "明日への一歩",
+    "fr": "L'appel de l'aventure",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “The Coming Dawn.”",
+      "de": "Den Auftrag „Der Dämmerung entgegen“ abgeschlossen.",
+      "ja": "クエスト「明日への一歩」をコンプリートする",
+      "fr": "Accomplir la quête de l'épopée “L'appel de l'aventure”."
     },
     "item": 0,
-    "title": 0
+    "title": 713
   },
   "3415": {
     "id": 3415,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/026000/026002.png",
+    "patch": 93,
+    "en": "Identified Flying Gentlemen",
+    "de": "Chevalier auf immer und ewig!",
+    "ja": "受け継がれる紳士の心",
+    "fr": "La vérité est ailleurs",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “Gentlemen at Heart.”",
+      "de": "Den Auftrag „Mandervillsches Mysterium“ abgeschlossen.",
+      "ja": "クエスト「マンダヴィル家の謎」をコンプリートする",
+      "fr": "Accomplir la quête “Le cadeau des Dieux”."
     },
     "item": 0,
     "title": 0
@@ -70916,12 +71138,12 @@
     "id": 3416,
     "icon": "/i/052000/052793.png",
     "patch": 91,
-    "en": "愛と勇気の伝道師",
+    "en": "A Heartfelt Gesture",
     "de": "Liebe liegt in der Luft",
     "ja": "愛と勇気の伝道師",
     "fr": "Tout un symbole",
     "description": {
-      "en": "クエスト「ヴァレンティオンデーに勇気を出して」をコンプリートする",
+      "en": "Complete the quest “It's All about Heart.”",
       "de": "Den Auftrag „Fass dir ein Herz“ abgeschlossen.",
       "ja": "クエスト「ヴァレンティオンデーに勇気を出して」をコンプリートする",
       "fr": "Accomplir la quête “Le symbole de l'amour”."
@@ -70933,15 +71155,15 @@
     "id": 3417,
     "icon": "/i/004000/004276.png",
     "patch": 91,
-    "en": "花咲か姫様",
+    "en": "She's Goobbue and She's Grace",
     "de": "Prinzessin der Herzen",
     "ja": "花咲か姫様",
-    "fr": "花咲か姫様",
+    "fr": "Miragœufs et demoiselles",
     "description": {
-      "en": "クエスト「プリンセスデーに咲く笑顔の花」をコンプリートする",
+      "en": "Complete the quest “Peatie in Pink.”",
       "de": "Den Auftrag „Aufblühende Gemüter“ abgeschlossen.",
       "ja": "クエスト「プリンセスデーに咲く笑顔の花」をコンプリートする",
-      "fr": "クエスト「プリンセスデーに咲く笑顔の花」をコンプリートする"
+      "fr": "Accomplir la quête “Princesse pêche”."
     },
     "item": 0,
     "title": 0
@@ -70950,15 +71172,15 @@
     "id": 3418,
     "icon": "/i/056000/056635.png",
     "patch": 91,
-    "en": "カパパッパ！",
+    "en": "Mission: Imp Possible",
     "de": "Plitschplatsch!",
     "ja": "カパパッパ！",
-    "fr": "カパパッパ！",
+    "fr": "La kappattitude",
     "description": {
-      "en": "クエスト「ゴールドソーサーとカッパの謎」をコンプリートする",
+      "en": "Complete the quest “Of Impish Importance.”",
       "de": "Den Auftrag „Im Namen der Wahrheit“ abgeschlossen.",
       "ja": "クエスト「ゴールドソーサーとカッパの謎」をコンプリートする",
-      "fr": "クエスト「ゴールドソーサーとカッパの謎」をコンプリートする"
+      "fr": "Accomplir la quête “Les petits hommes verts du Gold Saucer”."
     },
     "item": 0,
     "title": 0

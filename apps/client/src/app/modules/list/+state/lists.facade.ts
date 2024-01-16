@@ -36,7 +36,7 @@ import { NameQuestionPopupComponent } from '../../name-question-popup/name-quest
 import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
-import { combineLatest, concat, Observable, of } from 'rxjs';
+import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { ListRow } from '../model/list-row';
@@ -68,16 +68,22 @@ export class ListsFacade {
 
   connectedTeams$ = this.store.select(listsQuery.getConnectedTeams);
 
-  allListDetails$ = this.store.select(listsQuery.getAllListDetails)
-    .pipe(
-      map(lists => {
-        return lists.filter(list => {
-          return list.finalItems !== undefined
-            && list.items !== undefined;
-        });
-      }),
-      shareReplay(1)
-    );
+  #listsRealoader$ = new BehaviorSubject<void>(void 0);
+
+  allListDetails$ = this.#listsRealoader$.pipe(
+    switchMap(() => {
+      return this.store.select(listsQuery.getAllListDetails)
+        .pipe(
+          map(lists => {
+            return lists.filter(list => {
+              return list.finalItems !== undefined
+                && list.items !== undefined;
+            });
+          }),
+          shareReplay(1)
+        );
+    })
+  );
 
   myLists$ = combineLatest([this.allListDetails$, this.authFacade.userId$]).pipe(
     map(([compacts, userId]) => {
@@ -247,6 +253,10 @@ export class ListsFacade {
       fromPacket: fromPacket,
       hq: hq
     }));
+  }
+
+  reloadLists(): void {
+    this.#listsRealoader$.next();
   }
 
   removeModificationsHistoryEntry(entryId: string): void {

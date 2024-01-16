@@ -50,7 +50,7 @@ export class AriyalaLinkParser implements ExternalListLinkParser {
             return this.lazyData.getRow('itemMeldingData', +itemId);
           })).pipe(
             map(itemData => {
-              gear.itemMateriaSlots = itemData.map(id => id.slots);
+              gear.itemMateriaSlots = itemData.filter(Boolean).map(id => id.slots);
               return gear;
             })
           );

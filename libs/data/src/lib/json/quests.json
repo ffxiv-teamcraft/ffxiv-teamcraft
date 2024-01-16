@@ -72634,7 +72634,7 @@
     "name": {
       "en": " A Hard Task to Digest",
       "ja": " 調査の代償",
-      "de": " Im Namen der Forschung",
+      "de": " Steine im Magen",
       "fr": " Une soif de savoir dévorante"
     },
     "icon": "/i/071000/071221.png"
@@ -82693,30 +82693,65 @@
   },
   "70287": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "When One Door Closes...",
+      "ja": "冒険の兆しは突然に",
+      "de": "Ein unerwartetes Abenteuer",
+      "fr": "Rencontre sous le signe du destin"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071201.png",
+    "banner": "/i/101000/101273.png"
   },
   "70288": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Game Is Afoot",
+      "ja": "その瞳が見据えるもの",
+      "de": "Die Jagd ist eröffnet",
+      "fr": "Par-delà l'horizon"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 39871,
+        "amount": 2,
+        "hq": true
+      },
+      {
+        "id": 39875,
+        "amount": 2,
+        "hq": true
+      },
+      {
+        "id": 39876,
+        "amount": 2,
+        "hq": true
+      },
+      {
+        "id": 39878,
+        "amount": 2,
+        "hq": true
+      },
+      {
+        "id": 5825,
+        "amount": 3
+      }
+    ],
+    "banner": "/i/101000/101274.png"
   },
   "70289": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Coming Dawn",
+      "ja": "明日への一歩",
+      "de": "Der Dämmerung entgegen",
+      "fr": "L'appel de l'aventure"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071201.png",
+    "rewards": [
+      {
+        "id": 41469,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101275.png"
   },
   "70290": {
     "name": {
@@ -84216,21 +84251,33 @@
   },
   "70323": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Dinner and a Show",
+      "ja": "希望と夢をカートに詰めて",
+      "de": "Hippowagen für die Sterne",
+      "fr": "Des rêves plein l'hippochar"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101266.png"
   },
   "70324": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Dream Worth Chasing",
+      "ja": "宇宙の果てで最高のレースを！",
+      "de": "Ein Rennen zwischen den Sternen",
+      "fr": "La grande course aux confins de l'univers"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 41114,
+        "amount": 1
+      },
+      {
+        "id": 41457,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101267.png"
   },
   "70325": {
     "name": {
@@ -84317,12 +84364,19 @@
   },
   "70330": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Where Worries Melt Away",
+      "ja": "余談？ エンジョイ不足な野郎ども",
+      "de": "Sommerfrische leicht gemacht",
+      "fr": "Repos, soldats"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36081,
+        "amount": 6
+      }
+    ],
+    "banner": "/i/101000/101289.png"
   },
   "70331": {
     "name": {
@@ -84368,21 +84422,33 @@
   },
   "70335": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Of Duplicity and Duplication",
+      "ja": "ママこそ最強",
+      "de": "Verdoppelt und verdreifacht",
+      "fr": "Une poêle dans la tête"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101279.png"
   },
   "70336": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Gentlemen at Heart",
+      "ja": "マンダヴィル家の謎",
+      "de": "Mandervillsches Mysterium",
+      "fr": "Le cadeau des Dieux"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36908,
+        "amount": 1
+      },
+      {
+        "id": 41658,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101280.png"
   },
   "70337": {
     "name": {
@@ -84851,25 +84917,579 @@
   },
   "70342": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Resonating with Perfection",
+      "ja": " 踊る匠たち",
+      "de": " Perfekt im Einklang",
+      "fr": " La dernière danse"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "trades": [
+      {
+        "currencies": [
+          {
+            "id": 39920,
+            "amount": 1
+          },
+          {
+            "id": 39939,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40932,
+            "amount": 1
+          },
+          {
+            "id": 40951,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39921,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40933,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39922,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40934,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39923,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40935,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39924,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40936,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39928,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40940,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39929,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40941,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39930,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40942,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39931,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40943,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39925,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40937,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39926,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40938,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39927,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40939,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39932,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40944,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39933,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40945,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39934,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40946,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39935,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40947,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39936,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40948,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39938,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40950,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39937,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40949,
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "banner": "/i/101000/101282.png"
   },
   "70343": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Positively Mandervillous",
+      "ja": " 素晴らしきマンダヴィルウェポン",
+      "de": " Mandervillöse Meisterkunst",
+      "fr": " Les armes manderveilleuses des Manderville"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "trades": [
+      {
+        "currencies": [
+          {
+            "id": 39920,
+            "amount": 1
+          },
+          {
+            "id": 39939,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40932,
+            "amount": 1
+          },
+          {
+            "id": 40951,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39921,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40933,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39922,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40934,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39923,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40935,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39924,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40936,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39928,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40940,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39929,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40941,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39930,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40942,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39931,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40943,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39925,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40937,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39926,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40938,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39927,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40939,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39932,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40944,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39933,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40945,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39934,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40946,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39935,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40947,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39936,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40948,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39938,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40950,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "currencies": [
+          {
+            "id": 39937,
+            "amount": 1
+          }
+        ],
+        "items": [
+          {
+            "id": 40949,
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "banner": "/i/101000/101283.png"
   },
   "70344": {
     "name": {
-      "en": "ヴァレンティオンデーにハートを込めて",
+      "en": "The Symbol of Love",
       "ja": "ヴァレンティオンデーにハートを込めて",
       "de": "Ein Tag, um Herz zu zeigen",
       "fr": "L'angle parfait"
@@ -84879,7 +85499,7 @@
   },
   "70345": {
     "name": {
-      "en": "ヴァレンティオンデーに勇気を出して",
+      "en": "It's All about Heart",
       "ja": "ヴァレンティオンデーに勇気を出して",
       "de": "Fass dir ein Herz",
       "fr": "Le symbole de l'amour"
@@ -84889,20 +85509,20 @@
   },
   "70346": {
     "name": {
-      "en": "エッグハントと桃色のグゥーブー",
+      "en": "The Princesses and the Eggs",
       "ja": "エッグハントと桃色のグゥーブー",
       "de": "Ein Überraschungsei zum Prinzessinnenfest",
-      "fr": "エッグハントと桃色のグゥーブー"
+      "fr": "Festivités doublées"
     },
     "icon": "/i/080000/080131.png",
     "banner": "/i/101000/101286.png"
   },
   "70347": {
     "name": {
-      "en": "プリンセスデーに咲く笑顔の花",
+      "en": "Peatie in Pink",
       "ja": "プリンセスデーに咲く笑顔の花",
       "de": "Aufblühende Gemüter",
-      "fr": "プリンセスデーに咲く笑顔の花"
+      "fr": "Princesse pêche"
     },
     "icon": "/i/080000/080131.png",
     "rewards": [
@@ -84915,28 +85535,40 @@
   },
   "70348": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Treasured Bonds",
+      "ja": "暁月の未来に繋がれ、大繁盛の輪！",
+      "de": "Wertvolle Beziehungen",
+      "fr": "L'appel des racines"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "banner": "/i/101000/101284.png"
   },
   "70349": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "More Precious than Gil",
+      "ja": "大繁盛の輪よ、永遠に",
+      "de": "Lang lebe der Wohlstand",
+      "fr": "Longue vie à la Tarufacture&nbsp;!"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 41470,
+        "amount": 1
+      },
+      {
+        "id": 41370,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101285.png"
   },
   "70350": {
     "name": {
-      "en": "ゴールドソーサーとカッパの謎",
+      "en": "Of Impish Importance",
       "ja": "ゴールドソーサーとカッパの謎",
       "de": "Im Namen der Wahrheit",
-      "fr": "ゴールドソーサーとカッパの謎"
+      "fr": "Les petits hommes verts du Gold Saucer"
     },
     "icon": "/i/080000/080116.png",
     "rewards": [

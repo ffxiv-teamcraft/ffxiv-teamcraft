@@ -50,11 +50,11 @@ import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/pa
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-    selector: 'app-lists',
-    templateUrl: './lists.component.html',
-    styleUrls: ['./lists.component.less'],
-    standalone: true,
-    imports: [NgIf, PageLoaderComponent, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, TutorialStepDirective, RouterLink, NzSwitchModule, FormsModule, NzAlertModule, NzInputModule, NzDividerModule, NgFor, NgForTrackByKeyDirective, ListPanelComponent, CdkDropList, CdkDrag, NzEmptyModule, NzListModule, NzTagModule, ClipboardDirective, NzPopconfirmModule, WorkshopPanelComponent, NzCollapseModule, AsyncPipe, TranslateModule, TeamcraftLinkPipe]
+  selector: 'app-lists',
+  templateUrl: './lists.component.html',
+  styleUrls: ['./lists.component.less'],
+  standalone: true,
+  imports: [NgIf, PageLoaderComponent, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, TutorialStepDirective, RouterLink, NzSwitchModule, FormsModule, NzAlertModule, NzInputModule, NzDividerModule, NgFor, NgForTrackByKeyDirective, ListPanelComponent, CdkDropList, CdkDrag, NzEmptyModule, NzListModule, NzTagModule, ClipboardDirective, NzPopconfirmModule, WorkshopPanelComponent, NzCollapseModule, AsyncPipe, TranslateModule, TeamcraftLinkPipe]
 })
 export class ListsComponent {
 
@@ -167,7 +167,10 @@ export class ListsComponent {
 
   public query$ = new BehaviorSubject<string>('');
 
-  public lists$: Observable<{ communityLists: List[], otherLists: List[] }> = combineLatest([this.listsFacade.loadingMyLists$, this.listsFacade.myLists$, this.workshops$, this.sharedWorkshops$, this.teamsDisplays$, this.query$]).pipe(
+  public lists$: Observable<{
+    communityLists: List[],
+    otherLists: List[]
+  }> = combineLatest([this.listsFacade.loadingMyLists$, this.listsFacade.myLists$, this.workshops$, this.sharedWorkshops$, this.teamsDisplays$, this.query$]).pipe(
     filter(([loading]) => !loading),
     debounceTime(100),
     map(([, lists, myWorkshops, workshopsWithWriteAccess, teamDisplays, query]: [boolean, List[], WorkshopDisplay[], WorkshopDisplay[], any[], string]) => {
@@ -208,6 +211,8 @@ export class ListsComponent {
   public needsVerification$ = this.listsFacade.needsVerification$;
 
   private loadingLists = [];
+
+  private cdr = inject(ChangeDetectorRef);
 
   constructor(private listsFacade: ListsFacade,
               private translate: TranslateService, private dialog: NzModalService,
@@ -264,6 +269,8 @@ export class ListsComponent {
   setListIndex(list: List, index: number, lists: List[]): void {
     if (list.workshopId !== undefined) {
       this.workshopsFacade.removeListFromWorkshop(list.$key, list.workshopId);
+      delete list.workshopId;
+      this.listsFacade.reloadLists();
     }
     if (index === list.index) {
       return;
@@ -279,7 +286,7 @@ export class ListsComponent {
       }
       return l;
     }));
-    inject(ChangeDetectorRef).markForCheck();
+    this.cdr.markForCheck();
   }
 
   setWorkshopIndex(event: CdkDragDrop<WorkshopDisplay>, workshopDisplays: WorkshopDisplay[]): void {

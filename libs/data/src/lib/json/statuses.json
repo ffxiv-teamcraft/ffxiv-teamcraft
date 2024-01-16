@@ -48256,16 +48256,16 @@
     }
   },
   "3713": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Sticky",
+    "de": "Festgeklebt",
+    "ja": "粘着",
+    "fr": "Englué",
+    "icon": "/i/014000/014111.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "A viscous substance is hampering movement.",
+      "de": "Kann sich aufgrund einer klebrigen Substanz nicht bewegen.",
+      "ja": "粘液により、身動きが取れない状態。",
+      "fr": "Une substance visqueuse empêche tout mouvement."
     }
   },
   "3714": {
@@ -48724,16 +48724,16 @@
     }
   },
   "3749": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Sticky",
+    "de": "Festgeklebt",
+    "ja": "粘着",
+    "fr": "Englué",
+    "icon": "/i/014000/014111.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "A viscous substance is hampering movement.",
+      "de": "Kann sich aufgrund einer klebrigen Substanz nicht bewegen.",
+      "ja": "粘液により、身動きが取れない状態。",
+      "fr": "Une substance visqueuse empêche tout mouvement."
     }
   },
   "3750": {
@@ -48841,16 +48841,16 @@
     }
   },
   "3758": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Raging Rroneek",
+    "de": "Herz des Rroneek",
+    "ja": "ロネークの心熱",
+    "fr": "Ardeur du Rroneek",
+    "icon": "/i/012000/012551.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Enmity is increased.",
+      "de": "Feindseligkeit ist erhöht.",
+      "ja": "自身に向けられる敵視が上昇する状態。",
+      "fr": "La génération d'inimitié est augmentée."
     }
   },
   "3759": {
@@ -49166,42 +49166,42 @@
     }
   },
   "3783": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Rroneek Pulse",
+    "de": "Blutrausch des Rroneek",
+    "ja": "ロネークの血潮",
+    "fr": "Sang chaud du Rroneek",
+    "icon": "/i/013000/013911.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage taken is reduced.",
+      "de": "Erlittener Schaden ist verringert.",
+      "ja": "受けるダメージの一部が軽減される状態。",
+      "fr": "Les dégâts reçus sont réduits."
     }
   },
   "3784": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Br'aax Pulse",
+    "de": "Blutrausch des Br'aax",
+    "ja": "ブラーシャの血潮",
+    "fr": "Sang chaud du Br'aax",
+    "icon": "/i/010000/010256.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Damage taken is reduced while inflicting a portion of sustained damage back to its source.",
+      "de": "Erlittener Schaden ist verringert und ein Teil des erlittenen physischen Schadens wird auf den Angreifer zurückgeworfen.",
+      "ja": "受けるダメージが軽減され、かつ物理攻撃を受けた場合に、反撃ダメージを与える状態。",
+      "fr": "Les dégâts reçus sont réduits, et des dégâts sont infligés chaque fois qu'un coup est reçu."
     }
   },
   "3785": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Luwatena Pulse",
+    "de": "Blutrausch der Luwatena",
+    "ja": "ルワテナの血潮",
+    "fr": "Sang chaud du Luwatena",
+    "icon": "/i/010000/010254.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Maximum HP and HP recovery via healing actions are increased.",
+      "de": "Maximal-LP und eigene LP-Regeneration durch Heilmagie sind erhöht.",
+      "ja": "最大ＨＰが増加し、自身に対するＨＰ回復効果を向上させる状態。",
+      "fr": "Les PV maximums et les effets de récupération reçus de PV sont augmentés."
     }
   },
   "3786": {

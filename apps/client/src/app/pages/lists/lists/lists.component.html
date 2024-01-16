@@ -71,9 +71,9 @@
            cdkDrag [cdkDragData]="list">
         <app-list-panel [hideAvatar]="true" [list]="list"></app-list-panel>
       </div>
+      <nz-empty *ngIf="lists.otherLists.length === 0 && (loading$ | async) === false" [nzNotFoundContent]="'LISTS.No_lists' | translate"
+                nzNotFoundImage="simple"></nz-empty>
     </div>
-    <nz-empty *ngIf="lists.otherLists.length === 0 && (loading$ | async) === false" [nzNotFoundContent]="'LISTS.No_lists' | translate"
-              nzNotFoundImage="simple"></nz-empty>
     <ng-container *ngIf="sharedLists$ | async as sharedLists">
       <div *ngIf="sharedLists.length > 0">
         <nz-divider [nzText]="'LISTS.Shared_lists' | translate" nzOrientation="left"></nz-divider>

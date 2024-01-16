@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.19](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.18...v11.0.19) (2024-01-16)
+
+
+### Features
+
+* **db:** Patch 6.55 data ([e3435a2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e3435a27148354b03a77fa08bf90eb3749ccdc52))
+* **db:** support for korean v6.45 update ([63624b2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/63624b200bc59d7f87edd0d95cb494e301f7eb19))
+
+
+### Bug Fixes
+
+* **desktop:** fixed fishing stop resetting current map ([ec82b29](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec82b2936ede8323a16b06b01da7b582dc5339e2))
+* **list:** fixed "mark panel as done" marking wrong recipes as done in log ([09f9daf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/09f9daf3d6cc2beaa6e5751ccbb03daed3ee5632))
+* **list:** fixed ariyala import with materia estimate ([6873e6b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6873e6b6766fda4ba24540be5f0c7f95148439ac))
+* **list:** fixed cleanup popup including items from other characters ([a46ce99](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a46ce99c5c4be2eed09269ee9f62c1bdb4c81e71))
+* **lists:** fixed empty lists preventing from removing lists from workshops ([f5b8f6a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f5b8f6af0375d8c65714852ed7e3775071bc2344))
+* **map:** fixed position sometimes not loading in popup ([31d485d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/31d485dfc1ff2968f97249c8e2da385ea6f51231))
+
 ### [11.0.18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.17...v11.0.18) (2023-12-18)
 
 
