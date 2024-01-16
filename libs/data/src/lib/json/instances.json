@@ -4642,6 +4642,33 @@
       35500
     ]
   },
+  "5067": {
+    "id": 5067,
+    "en": "The Game Is Afoot",
+    "ja": "その瞳が見据えるもの",
+    "de": "Die Jagd ist eröffnet",
+    "fr": "Par-delà l'horizon",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061805.png",
+    "banner": "",
+    "gamePatch": 88,
+    "contentType": 7,
+    "levelReq": 90,
+    "ilvlReq": 0,
+    "sync": 90,
+    "exp": 0,
+    "map": 831,
+    "contentText": [
+      37750,
+      37700
+    ]
+  },
   "10001": {
     "id": 10001,
     "en": "Basic Training: Enemy Parties",
@@ -5910,7 +5937,7 @@
     "id": 20014,
     "en": "The Gilded Araya",
     "ja": "アスラ討滅戦",
-    "de": "Arayas Palast",
+    "de": "Prophetie - Asura",
     "fr": "Le temple doré d'Araya",
     "description": null,
     "members": {
@@ -7992,7 +8019,7 @@
     "description": {
       "en": "The account of your triumph over the god of Darkness has prompted the wandering minstrel to once again perform the impossible, by taking an already senses-shattering encounter and exaggerating it to ludicrous extremes. His mellifluous musings transport your mind to that fateful moment, where your terrifying foe awaits, His unfathomable strength surpassing even your wildest imagination...",
       "ja": "異邦の詩人は謳う。自らの生命を賭して、星の意思たるゾディアークを召喚した人々の決意を想って。新たに理を紡ぎ直すほどの力、世界を救わんとする強き意思を、たったひとりの英雄ではなく、全人類の半数が持ち得た古代世界とは、いかなるものだったのだろうか。太古の昔に思いを馳せながら謳われた歌を聴き、光の戦士は今、闇の神ゾディアークとの戦いを追体験する。",
-      "de": "Der fahrende Sänger erzählt eine schier unglaubliche Geschichte von der Befreiung Zodiarks, Gott der Dunkelheit und Gegenspieler Hydaelyns, für den sich einst die Hälfte aller Alten opferte. Vermag die Kraft des Lichtes das drohende Ende des Universums abzuwenden?",
+      "de": "Der Fahrende Sänger erzählt eine schier unglaubliche Geschichte von der Befreiung Zodiarks, Gott der Dunkelheit und Gegenspieler Hydaelyns, für den sich einst die Hälfte aller Alten opferte. Vermag die Kraft des Lichtes das drohende Ende des Universums abzuwenden?",
       "fr": "Inspiré par le chant de l'Apocalypse, le ménestrel errant a lui-même composé une ode à celui qui fut jadis l'incarnation de la volonté de l'astre. Quelle puissance véritable une créature formée par le sacrifice de la moitié de l'humanité peut-elle posséder&nbsp;? Seule la Guerrière de la Lumière peut en tout cas s'y mesurer&nbsp;!"
     },
     "members": {
@@ -8120,7 +8147,7 @@
     "description": {
       "en": "The void─a world without death, where the strong devour the weak... Upon hearing your tales from that lightless place, the wandering minstrel cannot help but wonder: what if Barbariccia had devoured more of the great wyrm's aether? Having mused thus, the man then calls upon his not inconsiderable dramatic flair to weave a new verse, one which imagines a vastly empowered archfiend. The breezy melody sets your mind adrift upon shadowed winds, where you relive the stormy encounter, now stormier still...",
       "ja": "異邦の詩人は謳う。死なき異界で、ただひたすらに力を求め、互いに喰らい合う妖異たちの終わりなき日々を。その果てに、結晶へと封じられた魂に刻まれるは、悔恨の叫声か、それとも安堵の溜息か。もし、天竜のエーテルを、さらに多く喰らうことができていたのなら、風の妖異はいかなる存在に昇華し、いかなる結末を迎えたのか。異界の風に思いを馳せながら謳われた歌を聴き、冒険者は今、風のバルバリシアとの戦いを追体験する。",
-      "de": "Das Nichts ist grausam wie faszinierend. Ein Ort voller Alpträume, den selbst der Tod meidet. Und doch ist er reich an faszinierenden Schicksalen, die den fahrenden Sänger zu einem Gedankenspiel inspirieren: Was wäre gewesen, hätte Barbarizia den ganzen Äther des Drachen verschlungen? Dieser düsteren Idee entspringt ein blutiger Vers und eine noch weitaus brutalere Barbarizia, als du sie erleben durftest. Die Vorstellung packt auch deine Gedanken und trägt dich zurück an den Ort des heulenden Sturms und der peitschenden Winde&nbsp;...",
+      "de": "Das Nichts ist grausam wie faszinierend. Ein Ort voller Alpträume, den selbst der Tod meidet. Und doch ist er reich an faszinierenden Schicksalen, die den Fahrenden Sänger zu einem Gedankenspiel inspirieren: Was wäre gewesen, hätte Barbarizia den ganzen Äther des Drachen verschlungen? Dieser düsteren Idee entspringt ein blutiger Vers und eine noch weitaus brutalere Barbarizia, als du sie erleben durftest. Die Vorstellung packt auch deine Gedanken und trägt dich zurück an den Ort des heulenden Sturms und der peitschenden Winde&nbsp;...",
       "fr": "Vos péripéties dans le treizième reflet ont fourni une inspiration nouvelle au ménestrel errant&nbsp;: dans un monde uniquement régi par la loi du plus fort, où les habitants s'entre-dévorent sans cesse, que serait-il advenu si Barbariccia avait absorbé davantage d'éther de dragon ancien avant votre duel&nbsp;? Nul doute que la puissance de ses bourrasques et autres rafales en aurait été grandement augmentée... Saurez-vous y faire face sans sourciller&nbsp;?"
     },
     "members": {
@@ -8205,6 +8232,38 @@
     "contentText": [
       35729,
       35700
+    ]
+  },
+  "20088": {
+    "id": 20088,
+    "en": "The Gilded Araya",
+    "ja": "アスラ討滅戦",
+    "de": "Prophetie - Asura",
+    "fr": "Le temple doré d'Araya",
+    "description": {
+      "en": "Vanhudi has welcomed you to the Gilded Araya, the historic vault within which he houses his many and wondrous treasures. But it is not wonder that fills your heart when you spy the ominous devices lining the side of the structure─devices you remember seeing inside the Tower of Babil.<br><br>Your sense of dread is justified when the summoning begins. Drawing upon the devotion of the imprisoned faithful, the corrupted incarnation of a Manusya is brought into being. She is Asura, a deity of battle and conflict, and whether you wish it or not, your mettle will be tested!",
+      "ja": "新進気鋭の商人、ヴァンフディからの招待で冒険者たちが訪れた「アラヤの宝塔」――そこには彼が集めた宝の数々が納められているという。しかし、その塔の側面には、かつて「バブイルの塔」で見た禍々しき装置が並んでいた。<br>悪い予感は得てして的中するもの。異形の装置に囚われた者たちの信心から、歪められたマヌシャの神「アスラ」が蛮神として召喚されてしまう。闘争に生きる荒々しき神の前で、冒険者たちの力が今、試される！",
+      "de": "Der gewiefte Händler Vanhudi hat dir von einem sagenumwobenen Turm erzählt - Arayas Palast, in dem derart große Reichtümer schlummern, dass eine Abenteurerin kaum von ihnen zu träumen wagt. Allerdings sieht das Gebäude den Türmen der Endzeit verdächtig ähnlich, und das verheißt selbstverständlich wenig Gutes. Im Inneren wurde die Manusya Asura durch die erzwungenen Gebete ihrer Anbeter zum Leben erweckt und stellt sich dir nun mit all ihrer Macht entgegen!",
+      "fr": "Vous vous êtes invitée au temple doré d'Araya, dont Vanhudi a fait sa demeure. Derrière l'impressionnante quantité de richesses amassées par le commerçant parvenu se cache un sinistre dispositif rappelant celui de la tour de Babil. Votre mauvais pressentiment se confirme alors que des clones captifs sont utilisés afin d'invoquer de force Asura, la Manusya incarnant la guerre. La divinité belliqueuse est assoiffée de sang, et vous seule pouvez la tenir en respect&nbsp;!"
+    },
+    "members": {
+      "HealersPerParty": 2,
+      "MeleesPerParty": 2,
+      "RangedPerParty": 2,
+      "TanksPerParty": 2
+    },
+    "icon": "/i/061000/061804.png",
+    "banner": "/i/112000/112536.png",
+    "gamePatch": 86,
+    "contentType": 4,
+    "levelReq": 90,
+    "ilvlReq": 625,
+    "sync": 90,
+    "exp": 0,
+    "map": 838,
+    "contentText": [
+      36814,
+      36800
     ]
   },
   "20089": {
@@ -11789,7 +11848,7 @@
     "description": {
       "en": "“There are no ifs in history, yet man is wont to cast his mind towards the path not walked.” Thus spoke the wandering minstrel, and at his urging, you reflect upon bygone trials with newfound perspective. Your imagination stirred by the man's masterfully woven verse, you dream of an alternate conclusion to the Dragonsong War─one in which a dear comrade is spared his tragic fate...",
       "ja": "異邦の詩人は語る。歴史に「もし」はないと言うが、それでも、「もし」の先を考えてしまうのが人の常であると。<br>そして今、終末の危機を乗り越えた光の戦士は、過去の旅路を振り返り、託された想いと共に竜詩戦争を思い起こす。異邦の詩人が紡いだ詩と共に、あり得たかもしれない「もし」の先を夢想せよ。",
-      "de": "Der Marsch der Geschichte treibt uns auf einem einzigen Pfad stetig voran, und doch kommen wir nicht umhin, die Gedanken auf ungegangene Wege zu schicken - so sprach der fahrende Sänger und unterbreitet dir einen Vorschlag: Nutze den Moment, um aus einem neuen Blickwinkel auf vergangene Prüfungen zurückzublicken und aus alten Taten zu lernen. Die meisterhaft gewobenen Verse des Sängers beflügeln deine Fantasie und so tauchst du hinab in den Traum eines anderen, neuen Drachenkriegs ...",
+      "de": "Der Marsch der Geschichte treibt uns auf einem einzigen Pfad stetig voran, und doch kommen wir nicht umhin, die Gedanken auf ungegangene Wege zu schicken - so sprach der Fahrende Sänger und unterbreitet dir einen Vorschlag: Nutze den Moment, um aus einem neuen Blickwinkel auf vergangene Prüfungen zurückzublicken und aus alten Taten zu lernen. Die meisterhaft gewobenen Verse des Sängers beflügeln deine Fantasie und so tauchst du hinab in den Traum eines anderen, neuen Drachenkriegs ...",
       "fr": "L'Histoire ne repasse pas les plats, comme dirait le ménestrel errant, mais il est humain de songer à ce qui aurait pu être... Après avoir accompli votre destinée aux confins de l'univers, et sous l'impulsion des vers mélodieux de votre ami poète, vous vous remémorez l'époque pas si lointaine de la Guerre du chant des dragons. Connaîtra-t-elle un dénouement nouveau grâce à la puissance de votre imagination&nbsp;?"
     },
     "members": {

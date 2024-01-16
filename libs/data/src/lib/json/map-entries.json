@@ -6701,7 +6701,7 @@
     "name": "The Gilded Araya",
     "territory": 1136,
     "scale": 400,
-    "weatherRate": 0
+    "weatherRate": 114
   },
   {
     "id": 839,
@@ -6897,11 +6897,11 @@
   },
   {
     "id": 863,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 0,
-    "weatherRate": null
+    "zone": 4297,
+    "name": "The Aetherfont",
+    "territory": 1177,
+    "scale": 200,
+    "weatherRate": 0
   },
   {
     "id": 864,
