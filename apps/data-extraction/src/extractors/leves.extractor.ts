@@ -33,7 +33,7 @@ export class LevesExtractor extends AbstractExtractor {
             fr: leve.Name_fr,
             banner: makeIcon(leve.IconIssuer),
             job: {
-              id: leve.ClassJobCategory.index,
+              id: leve.ClassJobCategory.index - 1,
               en: leve.ClassJobCategory.Name_en,
               ja: leve.ClassJobCategory.Name_ja,
               de: leve.ClassJobCategory.Name_de,

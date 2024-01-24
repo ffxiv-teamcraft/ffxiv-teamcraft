@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.20](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.19...v11.0.20) (2024-01-24)
+
+
+### Features
+
+* **db:** new 6.55 fish + fix levequest job id link ([195ba47](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/195ba47c9e17599b338cbd4f9075755afa96a0e9))
+
 ### [11.0.19](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.18...v11.0.19) (2024-01-16)
 
 
