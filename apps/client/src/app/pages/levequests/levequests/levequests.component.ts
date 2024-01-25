@@ -151,9 +151,9 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
               let matches = !query || this.i18n.getName(leve).includes(query);
 
               if (job) {
-                matches = matches && leve.job.id === +job + 1;
+                matches = matches && leve.job.id === +job;
               } else {
-                matches = matches && leve.job.id >= 9 && leve.job.id <= 16;
+                matches = matches && leve.job.id >= 8 && leve.job.id <= 15;
               }
 
               matches = matches && leve.lvl >= levelMin && leve.lvl <= levelMax;
@@ -174,11 +174,11 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
           results.push({
             id: leve.id,
             level: leve.lvl,
-            jobId: leve.job.id - 1,
+            jobId: leve.job.id,
             itemId: leve.items[0].itemId,
             exp: leve.expReward * (roadToBuff ? 2 : 1),
             gil: leve.gilReward * (roadToBuff ? 2 : 1),
-            hq: this.settings.alwaysHQLeves && leve.job.id - 1 !== 18,
+            hq: this.settings.alwaysHQLeves && leve.job.id !== 18,
             allDeliveries: this.settings.alwaysAllDeliveries,
             amount: globalExp ? 0 : 1,
             itemQuantity: leve.items.reduce((acc, item) => acc + item.amount, 0),
@@ -281,7 +281,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
       mergeMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
         return this.listsFacade.myLists$.pipe(
-          map(lists => lists.find(l => l.createdAt.seconds === list.createdAt.seconds && l.$key !== undefined)),
+          map(lists => lists.find(l => l.createdAt?.seconds === list.createdAt?.seconds && l.$key !== undefined)),
           filter(l => l !== undefined),
           first()
         );
