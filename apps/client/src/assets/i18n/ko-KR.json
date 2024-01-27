@@ -379,7 +379,7 @@
   "Use_lodestoneId": "Lodestone ID 사용",
   "LodestoneId": "Lodestone ID",
   "List_forked": "목록이 내 계정에 복사되었습니다",
-  "List_fork": "Copy this list to your account (ctrl + click to copy as offline list)",
+  "List_fork": "이 목록을 계정에 복사 (오프라인 목록으로 복사 하려면 Ctrl + 클릭)",
   "List_not_found": "목록이 없거나 접근할 권한이 없습니다",
   "Requirements_for_craft": "상세정보",
   "Zone_breakdown": "지역 그룹화",
@@ -421,11 +421,11 @@
   "Precraft_tier": "단계",
   "Regenerating_lists": "목록 갱신",
   "SETTINGS": {
-    "Requires_restart": "Requires restart/refresh to be taken into account",
+    "Requires_restart": "계정에 적용하려면 재시작/새로고침이 필요합니다",
     "Title": "설정",
     "General": "일반",
     "Link_base": "아이템 링크",
-    "DateFormat": "Date Format",
+    "DateFormat": "날짜 형식",
     "Region": "지역",
     "Region_explain": "특정 게임 버전에 따라 데이터 소스와 기능이 맞춰집니다. 일부 소스나 기능은 지역에 따라서 이용 못할 수도 있습니다",
     "Proxy": "프록시",
@@ -1144,7 +1144,7 @@
       "Malleable": "빠른 진행",
       "Primed": "장기 지속",
       "Normal": "보통",
-      "Good_omen": "Good Omen"
+      "Good_omen": "길조"
     },
     "SOLVER": {
       "Hq_target": "HQ 목표치",
@@ -1701,7 +1701,7 @@
         "Size": "크기",
         "Large": "월척",
         "Time_since_thrown": "[낚싯대 던지기] 사용 후 시간",
-        "Throw_etime": "Line throw etime",
+        "Throw_etime": "[낚싯대 던지기] 한 에오르제아 시각",
         "Ignored_spot": "해당 낚시터는 리포트 기능을 지원하지 않기 때문에, 이상한 값이 보일 수도 있습니다.",
         "Ignored_spot_description": "잡은 물고기는 낚시 리포트에 포함되지 않습니다",
         "ERRORS": {
