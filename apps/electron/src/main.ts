@@ -28,12 +28,12 @@ ipcMain.setMaxListeners(0);
 // Options formatting
 
 const options: any = {
-  noHA: false
+  noHA: true
 };
 
 for (let i = 0; i < argv.length; i++) {
-  if (argv[i] === '--noHardwareAcceleration' || argv[i] === '-noHA') {
-    options.noHA = true;
+  if (argv[i] === '--hardwareAcceleration' || argv[i] === '-ha') {
+    options.noHA = false;
   }
   if (argv[i] === '--verbose' || argv[i] === '-v') {
     options.verbose = true;
@@ -63,7 +63,7 @@ const datFilesWatcher = new DatFilesWatcher(mainWindow, store);
   });
 });
 
-if (options.noHA || store.get('hardware-acceleration', false)) {
+if (!options.ha && !store.get('hardware-acceleration:enable', false)) {
   app.disableHardwareAcceleration();
 }
 

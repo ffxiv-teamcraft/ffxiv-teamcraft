@@ -118,7 +118,7 @@ const allowedChannels = [
   'clear-cache',
   'fishing-state:get',
   'mappy-state:get',
-  ...twoWayBinding('hardware-acceleration')
+  ...twoWayBinding('hardware-acceleration:enable')
 ];
 
 function twoWayBinding(channel: string): string[] {
