@@ -537,7 +537,7 @@
     "Reload_auth_token": "Recharger le jeton d'authentification",
     "Materia_confidence_rate": "Taux de confiance du sertissage de matérias",
     "Materia_confidence_rate_explain": "Le taux de confiance pour l'estimation de matéria, plus ce taux est élevé plus le nombre de matérias suggérées sera important, pour être sûr de réussir tous les sertissages",
-    "Disable_hardware_acceleration": "Désactiver l'accélération matérielle",
+    "Enable_hardware_acceleration": "Enable hardware acceleration",
     "Housing_map": "Carte du logement",
     "Housing_map_explain": "La carte du logement de votre maison",
     "Reset_linked_characters_ok": "Les liens des personnages ont été réinitialisés",
