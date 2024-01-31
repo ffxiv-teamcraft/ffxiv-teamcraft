@@ -537,7 +537,7 @@
     "Reload_auth_token": "Authentifizierungs-Token neu laden",
     "Materia_confidence_rate": "Erfolgsrate fürs Materia einsetzen",
     "Materia_confidence_rate_explain": "Zuversichtsrate für Materiaschätzungen. Höher bedeutet, dass mehr Materia vorgeschlagen wird, damit der Wert für erfolgreiche Verschmelzungen verlässlicher wird",
-    "Disable_hardware_acceleration": "Hardwarebeschleunigung deaktivieren",
+    "Enable_hardware_acceleration": "Enable hardware acceleration",
     "Housing_map": "Wohngebietskarte",
     "Housing_map_explain": "Die Karte des Wohngebiets, in dem dein Haus ist",
     "Reset_linked_characters_ok": "Charakterverknüpfungen wurden zurückgesetzt",
