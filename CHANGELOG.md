@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.21](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.20...v11.0.21) (2024-01-31)
+
+
+### Features
+
+* **desktop:** hardware acceleration is now disabled by default ([97a270e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/97a270e5e591cc25c7c62be4b4253d904ac88f60))
+
+
+### Bug Fixes
+
+* **currency-spending:** remove MGP from possible currencies ([31fde92](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/31fde920c1229dbe4ecf580690b1e84c9ccdd8ea))
+* **levequests:** you can now create lists properly, with the right job linked ([a8523b7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a8523b75b6c3382886fa0d1af822aaffdc4171e5))
+
 ### [11.0.20](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.19...v11.0.20) (2024-01-24)
 
 
