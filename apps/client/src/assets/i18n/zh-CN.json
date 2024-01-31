@@ -537,7 +537,7 @@
     "Reload_auth_token": "重新加载认证口令",
     "Materia_confidence_rate": "魔晶石禁断置信率",
     "Materia_confidence_rate_explain": "置信率用于预估魔晶石禁断数量，更高的置信率意味着预估时更多的魔晶石，从而提升完成禁断的可能性。会依据你的禁断方案调整。",
-    "Disable_hardware_acceleration": "禁用硬件加速",
+    "Enable_hardware_acceleration": "Enable hardware acceleration",
     "Housing_map": "房区地图",
     "Housing_map_explain": "你的房屋所在的房区地图",
     "Reset_linked_characters_ok": "已重置角色链接",
