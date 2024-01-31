@@ -133,6 +133,8 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { AdComponent } from './modules/ads/ad/ad.component';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NzListModule } from 'ng-zorro-antd/list';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -304,7 +306,9 @@ const nzConfig: NzConfig = {
       echarts: () => import('echarts')
     }),
     BreakpointDebugComponent,
-    AdComponent
+    AdComponent,
+    NzEmptyModule,
+    NzListModule
   ],
   bootstrap: [AppComponent]
 })

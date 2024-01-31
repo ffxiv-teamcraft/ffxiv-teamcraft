@@ -3,8 +3,7 @@ import { BehaviorSubject, combineLatest, Observable, of, Subject } from 'rxjs';
 import { bufferCount, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SpendingEntry } from '../spending-entry';
 import { DataService } from '../../../core/api/data.service';
-import * as _ from 'lodash';
-import { uniqBy } from 'lodash';
+import { chunk, uniqBy } from 'lodash';
 import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
@@ -26,17 +25,17 @@ import { NzListModule } from 'ng-zorro-antd/list';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
-import { NgFor, NgIf, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-    selector: 'app-currency-spending',
-    templateUrl: './currency-spending.component.html',
-    styleUrls: ['./currency-spending.component.less'],
-    standalone: true,
-    imports: [FlexModule, NzSelectModule, FormsModule, NgFor, I18nNameComponent, NzInputNumberModule, NgIf, NzProgressModule, NzListModule, NzEmptyModule, DbButtonComponent, ItemIconComponent, MarketboardIconComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, FloorPipe, LazyIconPipe]
+  selector: 'app-currency-spending',
+  templateUrl: './currency-spending.component.html',
+  styleUrls: ['./currency-spending.component.less'],
+  standalone: true,
+  imports: [FlexModule, NzSelectModule, FormsModule, NgFor, I18nNameComponent, NzInputNumberModule, NgIf, NzProgressModule, NzListModule, NzEmptyModule, DbButtonComponent, ItemIconComponent, MarketboardIconComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, FloorPipe, LazyIconPipe]
 })
 export class CurrencySpendingComponent extends TeamcraftComponent implements OnInit {
 
@@ -78,7 +77,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
         return [
           ...res.filter(item => {
             // Remove gil, venture and outdated tomes/scrips
-            return [1, 23, 24, 26, 30, 31, 32, 33, 34, 35, 36, 37, 38, 10308, 10309, 10310, 10311, 21072].indexOf(+item.itemId) === -1;
+            return [1, 23, 24, 26,29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 10308, 10309, 10310, 10311, 21072].indexOf(+item.itemId) === -1;
           }).map(item => item.itemId as number),
           33870,
           15857,
@@ -124,7 +123,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
             if (entries.length === 0) {
               return of([]);
             }
-            const batches = _.chunk(entries, 100)
+            const batches = chunk(entries, 100)
               .map((chunk: any) => {
                 return this.universalis.getServerHistoryPrices(
                   server,

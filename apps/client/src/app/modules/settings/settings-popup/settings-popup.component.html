@@ -554,8 +554,8 @@
         </label>
       </div>
       <div>
-        <label [(ngModel)]="noHA" (ngModelChange)="noHAChange($event)" nz-checkbox>
-          {{'SETTINGS.Disable_hardware_acceleration' | translate}}
+        <label [(ngModel)]="ha" (ngModelChange)="haChange($event)" nz-checkbox>
+          {{'SETTINGS.Enable_hardware_acceleration' | translate}}
         </label>
       </div>
       <div>
