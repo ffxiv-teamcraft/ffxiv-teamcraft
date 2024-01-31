@@ -537,7 +537,7 @@
     "Reload_auth_token": "Recargar token de entrada",
     "Materia_confidence_rate": "Probabilidad de éxito del melding",
     "Materia_confidence_rate_explain": "La probabilidad de éxito para las materias es una estimación. Un valor mayor propondrá mayor cantidad de materia para estar (casi) seguro de tener éxito",
-    "Disable_hardware_acceleration": "Disable hardware acceleration",
+    "Enable_hardware_acceleration": "Enable hardware acceleration",
     "Housing_map": "Housing map",
     "Housing_map_explain": "The housing map in which your house is",
     "Reset_linked_characters_ok": "Character links have been reset",
