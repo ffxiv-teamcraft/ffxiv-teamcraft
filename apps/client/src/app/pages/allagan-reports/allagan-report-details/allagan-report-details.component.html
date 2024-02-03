@@ -304,11 +304,12 @@
                   <nz-form-item>
                     <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Spawn' | translate}}</nz-form-label>
                     <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisSpawn">
-                      <nz-input-group class="spawn-input" nzAddOnAfter=":00">
-                        <nz-input-number [nzMax]="SPAWN_VALIDATOR.max" [nzMin]="SPAWN_VALIDATOR.min" [nzStep]="1" class="input-number-with-addon"
+                      <nz-input-group class="spawn-input" nzAddOnAfter="h">
+                        <nz-input-number [nzMax]="SPAWN_VALIDATOR.max" [nzMin]="SPAWN_VALIDATOR.min" class="input-number-with-addon"
                                          formControlName="spawn"></nz-input-number>
                       </nz-input-group>
                       <ng-template #gubalAnalysisSpawn>
+                        {{'ALLAGAN_REPORTS.Input_hours_tip' | translate}}<br>
                         <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
                           {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
                           <b>{{suggestions.spawn === null ? ('COMMON.None' | translate) : suggestions.spawn}}</b>
@@ -320,10 +321,13 @@
                     <nz-form-label [nzSpan]="3"
                                    [nzRequired]="form.getRawValue()?.spawn !== '' && form.getRawValue()?.spawn !== null">{{'ALLAGAN_REPORTS.Duration' | translate}}</nz-form-label>
                     <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisDuration">
-                      <nz-input-number [nzMax]="DURATION_VALIDATOR.max" [nzMin]="DURATION_VALIDATOR.min"
-                                       formControlName="duration">
-                      </nz-input-number>
+                      <nz-input-group class="spawn-input" nzAddOnAfter="h">
+                        <nz-input-number [nzMax]="DURATION_VALIDATOR.max" [nzMin]="DURATION_VALIDATOR.min"
+                                         formControlName="duration">
+                        </nz-input-number>
+                      </nz-input-group>
                       <ng-template #gubalAnalysisDuration>
+                        {{'ALLAGAN_REPORTS.Input_hours_tip' | translate}}<br>
                         <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
                           {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
                           <b>{{suggestions.duration === null ? ('COMMON.None' | translate) : suggestions.duration}}</b>
