@@ -438,16 +438,6 @@
                         nzCloseable
                         nzType="warning">
               </nz-alert>
-              <ng-container *ngIf="user$ | async as user">
-                <nz-alert *ngIf="user.cid === undefined && (loggedIn$ | async) && settings.enableUniversalisSourcing && !overlay"
-                          [nzDescription]="'PACKET_CAPTURE.Please_relog' | translate"
-                          [nzMessage]="'PACKET_CAPTURE.No_character_id' | translate"
-                          class="new-version-alert"
-                          nzBanner
-                          nzShowIcon
-                          nzType="warning">
-                </nz-alert>
-              </ng-container>
             </ng-container>
           </ng-container>
           <nz-spin [nzSize]="'large'" [nzSpinning]="navigating" class="app-container">
