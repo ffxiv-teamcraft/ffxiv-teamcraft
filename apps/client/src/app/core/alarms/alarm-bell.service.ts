@@ -17,6 +17,7 @@ import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { SoundNotificationType } from '../sound-notification/sound-notification-type';
 import { safeCombineLatest } from '../rxjs/safe-combine-latest';
 import { PushNotificationsService } from '../push-notifications.service';
+import { differenceInMinutes } from 'date-fns';
 
 @Injectable({
   providedIn: 'root'
@@ -173,8 +174,9 @@ export class AlarmBellService {
                   return false;
                 }
                 const lastPlayed = this.getLastPlayed(alarm);
+                const status = this.alarmsFacade.getStatus(alarm, date);
                 // Ceiling on /6 so precision is 1/10
-                const timeBeforePlay = Math.round(this.alarmsFacade.getMinutesBefore(date, this.alarmsFacade.getNextSpawn(alarm, date)) / 6) / 10 - this.settings.alarmHoursBefore;
+                const timeBeforePlay = Math.round(differenceInMinutes(date, status.nextSpawn.date) / 6) / 10 - this.settings.alarmHoursBefore;
                 // Irl alarm duration in ms
                 let irlAlarmDuration = this.eorzeanTime.toEarthTime(alarm.duration * 60) * 1000;
                 // If the alarm has no duration, it's because it has no spawn time and only depends on weather

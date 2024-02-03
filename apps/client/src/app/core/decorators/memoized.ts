@@ -1,4 +1,4 @@
-import * as memoizee from 'memoizee';
+import memoizee from 'memoizee';
 
 export function Memoized() {
   return function(target, key, descriptor) {

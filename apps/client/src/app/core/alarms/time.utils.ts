@@ -1,4 +1,5 @@
 export type Interval = [number, number];
+export type DateInterval = [Date, Date];
 
 export class TimeUtils {
   static isInInterval(interval: Interval, time: number): boolean {
@@ -21,6 +22,24 @@ export class TimeUtils {
       return this.getComplexIntersection(a, b);
     }
     return this.getSimpleIntersection(a, b);
+  }
+
+  static getDateIntersection(a: DateInterval, b: DateInterval): DateInterval | null {
+    if (a[0].getTime() === a[1].getTime()) {
+      return b;
+    }
+    if (b[0].getTime() === b[1].getTime()) {
+      return a;
+    }
+    const intersection: DateInterval = [
+      a[0].getTime() > b[0].getTime() ? a[0] : b[0],
+      a[1].getTime() < b[1].getTime() ? a[1] : b[1]
+    ];
+    // If start is after end, it means we don't have an intersection at all
+    if (intersection[0].getTime() > intersection[1].getTime()) {
+      return null;
+    }
+    return intersection;
   }
 
   static getComplexIntersection(a: Interval, b: Interval): Interval | null {

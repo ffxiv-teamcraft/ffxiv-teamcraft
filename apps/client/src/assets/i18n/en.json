@@ -254,6 +254,7 @@
     "No_folder": "No folder",
     "Click_to_show_all_alarms": "Click to show all alarms",
     "Enable_TTS": "Enable Text-to-Speech",
+    "Next_spawn_prefix": "Next: ",
     "REALTIME": {
       "Reset_timers": "Reminders",
       "WEEKLY_RESETS": "Weeklies",
