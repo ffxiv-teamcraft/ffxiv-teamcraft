@@ -5,7 +5,9 @@ import { EorzeanTimeService } from './eorzean-time.service';
 import { add, addHours, sub } from 'date-fns';
 import { TimeUtils } from '../alarms/time.utils';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class WeatherService {
 
 
@@ -28,7 +30,7 @@ export class WeatherService {
     try {
       return this.getNextDiffWeatherTime(nextWeatherTime, allowedWeathers, mapId);
     } catch (maxCallStack) {
-      return null;
+      return nextWeatherTime;
     }
   }
 
@@ -87,6 +89,15 @@ export class WeatherService {
   public nextWeatherTime(timestamp: number): number {
     const date = new Date(timestamp);
     const newDate = add(date, { hours: 8 });
+    newDate.setUTCHours(Math.floor(newDate.getUTCHours() / 8) * 8);
+    newDate.setUTCMinutes(0);
+    newDate.setUTCSeconds(0);
+    return newDate.getTime();
+  }
+
+  public previousWeatherTime(timestamp: number): number {
+    const date = new Date(timestamp);
+    const newDate = sub(date, { hours: 8 });
     newDate.setUTCHours(Math.floor(newDate.getUTCHours() / 8) * 8);
     newDate.setUTCMinutes(0);
     newDate.setUTCSeconds(0);

@@ -6,7 +6,7 @@ export interface AlarmSpawn {
 
 export interface AlarmStatus {
   spawned: boolean;
-  despawn?: Date;
+  previousSpawn: AlarmSpawn;
   // Next time this will spawn, cannot be in the past
   nextSpawn: AlarmSpawn;
   // Next time this will spawn after the next spawn (basically second spawn)

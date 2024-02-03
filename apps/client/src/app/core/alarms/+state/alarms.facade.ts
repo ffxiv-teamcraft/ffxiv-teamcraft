@@ -248,6 +248,7 @@ export class AlarmsFacade {
   }
 
   public createDisplay<T extends AlarmDetails | PersistedAlarm = PersistedAlarm>(alarm: T, date: Date): AlarmDisplay<T> {
+    console.log(alarm, date);
     const display = new AlarmDisplay(alarm);
     const nextSpawn = { ...this.getNextSpawn(alarm, date) };
     display.spawned = this.isSpawned(alarm, date);

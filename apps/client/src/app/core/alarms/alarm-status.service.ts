@@ -1,33 +1,112 @@
 import { AlarmDetails } from '@ffxiv-teamcraft/types';
 import { PersistedAlarm } from './persisted-alarm';
 import { AlarmStatus } from './alarm-status';
-import { TimeUtils } from './time.utils';
+import { DateInterval, TimeUtils } from './time.utils';
 import { WeatherService } from '../eorzea/weather.service';
 import { inject, Injectable } from '@angular/core';
-import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
+import { addDays, addMinutes, subDays } from 'date-fns';
 
 @Injectable({ providedIn: 'root' })
 export class AlarmStatusService {
 
   private weatherService = inject(WeatherService);
 
-  public getAlarmStatus(alarm: AlarmDetails | PersistedAlarm, edate: Date): AlarmStatus {
-    return null;
+  public getAlarmStatus(alarm: AlarmDetails | PersistedAlarm, etime: Date): AlarmStatus {
+    if (alarm.weathers?.length > 0) {
+      // If we have weather conditions, let's move to more complex stuff
+      const { spawn: previousSpawn, despawn: previousDespawn, weather: previousWeather } = this.findWeatherSpawnCombination(alarm, this.weatherService.previousWeatherTime(etime.getTime()), true);
+      const { spawn, despawn, weather } = this.findWeatherSpawnCombination(alarm, etime.getTime());
+      const { spawn: nextSpawn, despawn: nextDespawn, weather: nextWeather } = this.findWeatherSpawnCombination(alarm, despawn.getTime());
+
+      return {
+        spawned: previousDespawn.getTime() > etime.getTime(),
+        previousSpawn: {
+          date: previousSpawn,
+          despawn: previousDespawn,
+          weather: previousWeather
+        },
+        nextSpawn: {
+          date: spawn,
+          despawn: despawn,
+          weather: weather
+        },
+        secondNextSpawn: {
+          date: nextSpawn,
+          despawn: nextDespawn,
+          weather: nextWeather
+        }
+      };
+    }
+    // If we don't have weather stuff at all and just need time condition
+    return this.getSimpleAlarmStatus(alarm, etime);
+  }
+
+  private getSimpleAlarmStatus(alarm: AlarmDetails | PersistedAlarm, etime: Date): AlarmStatus | null {
+    if (alarm.spawns.length === 0) {
+      return null;
+    }
+    const previousSpawn = alarm.spawns.map(spawn => {
+      // Getting minutes from spawn hour's decimal part
+      const spawnMinutes = Math.floor(spawn % 1 * 60);
+      const spawnHours = Math.floor(spawn);
+      return this.findPreviousTime(etime, spawnHours, spawnMinutes);
+    }).sort((a, b) => {
+      return (etime.getTime() - a.getTime()) - (etime.getTime() - b.getTime());
+    })[0];
+    const previousDespawn = addMinutes(previousSpawn, alarm.duration * 60);
+    const nextSpawn = this.getNextSpawnFromTime(alarm, etime);
+    const secondNextSpawn = this.getNextSpawnFromTime(alarm, addMinutes(nextSpawn, alarm.duration * 60));
+    return {
+      spawned: previousDespawn.getTime() > etime.getTime(),
+      previousSpawn: {
+        date: previousSpawn,
+        despawn: previousDespawn
+      },
+      nextSpawn: {
+        date: nextSpawn,
+        despawn: addMinutes(nextSpawn, alarm.duration * 60)
+      },
+      secondNextSpawn: {
+        date: secondNextSpawn,
+        despawn: addMinutes(secondNextSpawn, alarm.duration * 60)
+      }
+    };
+  }
+
+  private getNextSpawnFromTime(alarm: AlarmDetails | PersistedAlarm, etime: Date): Date {
+    return alarm.spawns.map(spawn => {
+      // Getting minutes from spawn hour's decimal part
+      const spawnMinutes = Math.floor(spawn % 1 * 60);
+      const spawnHours = Math.floor(spawn);
+      return this.findNextTime(etime, spawnHours, spawnMinutes);
+    }).sort((a, b) => {
+      return (a.getTime() - etime.getTime()) - (b.getTime() - etime.getTime());
+    })[0];
+  }
+
+  public findPreviousTime(etime: Date, hour: number, minutes = 0): Date {
+    const occurence = new Date(etime);
+    occurence.setUTCHours(hour, minutes, 0, 0);
+    if (occurence.getTime() < etime.getTime()) {
+      return occurence;
+    }
+    return subDays(occurence, 1);
   }
 
   public findNextTime(etime: Date, hour: number, minutes = 0): Date {
-    const adjustedHour = hour || 24;
-    const adjustedMinutes = minutes || 60;
     const nextOccurence = new Date(etime);
-    nextOccurence.setUTCHours(hour, minutes);
-    if (etime.getUTCHours() < adjustedHour && etime.getUTCMinutes() < adjustedMinutes) {
-      const result = new Date(etime);
-      result.setUTCHours(hour, minutes);
-      return result;
+    nextOccurence.setUTCHours(hour, minutes, 0, 0);
+    if (nextOccurence.getTime() > etime.getTime()) {
+      return nextOccurence;
     }
+    return addDays(nextOccurence, 1);
   }
 
-  private findWeatherSpawnCombination(alarm: AlarmDetails, sortedSpawns: number[], time: number, iteration = time) {
+  private findWeatherSpawnCombination(alarm: AlarmDetails, etime: number, previous = false, iteration = etime): {
+    spawn: Date,
+    despawn: Date,
+    weather: number
+  } {
     const weatherSpawns = alarm.weathers
       .map(weather => {
         if (alarm.weathersFrom !== undefined && alarm.weathersFrom.length > 0) {
@@ -42,56 +121,31 @@ export class AlarmStatusService {
       .filter(spawn => spawn.spawn !== null)
       .sort((a, b) => a.spawn.getTime() - b.spawn.getTime());
     for (const weatherSpawn of weatherSpawns) {
-      for (const spawn of sortedSpawns) {
-        const despawn = (spawn + alarm.duration) % 24;
-        const weatherStart = weatherSpawn.spawn.getUTCHours();
-        const normalWeatherStop = new Date(this.weatherService.getNextDiffWeatherTime(weatherSpawn.spawn.getTime(), alarm.weathers, alarm.mapId)).getUTCHours() || 24;
-        const transitionWeatherStop = new Date(this.weatherService.nextWeatherTime(weatherSpawn.spawn.getTime())).getUTCHours() || 24;
-        const weatherStop = alarm.weathersFrom?.length > 0 ? transitionWeatherStop : normalWeatherStop;
-        const range = TimeUtils.getIntersection([spawn, despawn], [weatherStart, weatherStop % 24]);
-        if (range) {
-          const intersectSpawn = range[0];
-          const intersectDespawn = range[1] || 24;
-          // Set the snapshot date to the moment at which the node will spawn for real.
-          const date = weatherSpawn.spawn;
-          date.setUTCHours(intersectSpawn);
-          date.setUTCMinutes(0);
-          date.setUTCSeconds(0);
-          date.setUTCMilliseconds(0);
-          // Adding 3 seconds margin for days computation
-          const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time + 3000 * EorzeanTimeService.EPOCH_TIME_FACTOR) / 86400000), 0);
-          // If it's for today, make sure it's not already despawned
-          const now = new Date(time);
-          const didntSpawnYet = !TimeUtils.isSameDay(now, weatherSpawn.spawn) || now.getUTCHours() < intersectDespawn;
-          const isSpawned = TimeUtils.isSameDay(now, weatherSpawn.spawn) && now.getUTCHours() >= weatherStart;
-          if (days > 0 || didntSpawnYet || isSpawned) {
-            return {
-              hours: intersectSpawn,
-              days: days,
-              despawn: intersectDespawn,
-              weather: weatherSpawn.weather,
-              date
-            };
-          }
-        }
+      const normalWeatherStop = new Date(this.weatherService.getNextDiffWeatherTime(weatherSpawn.spawn.getTime(), alarm.weathers, alarm.mapId));
+      const transitionWeatherStop = new Date(this.weatherService.nextWeatherTime(weatherSpawn.spawn.getTime()));
+      const weatherStop = alarm.weathersFrom?.length > 0 ? transitionWeatherStop : normalWeatherStop;
+      if (alarm.spawns.length === 0) {
+        const weatherSpawn = weatherSpawns[0];
+        return {
+          spawn: weatherSpawn.spawn,
+          despawn: weatherStop,
+          weather: weatherSpawn.weather
+        };
       }
-    }
-    if (sortedSpawns?.length === 0) {
-      const weatherSpawn = weatherSpawns[0];
-      const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
-      const normalWeatherStop = new Date(this.weatherService.getNextDiffWeatherTime(weatherSpawn.spawn.getTime(), alarm.weathers, alarm.mapId)).getUTCHours() || 24;
-      const transitionWeatherStop = new Date(this.weatherService.nextWeatherTime(weatherSpawn.spawn.getTime())).getUTCHours() || 24;
-      return {
-        hours: weatherSpawn.spawn.getUTCHours(),
-        days: days,
-        date: weatherSpawn.spawn,
-        despawn: alarm.weathersFrom?.length > 0 ? transitionWeatherStop : normalWeatherStop,
-        weather: weatherSpawn.weather
-      };
+      const status = this.getSimpleAlarmStatus(alarm, weatherSpawn.spawn);
+      const spawnBasedRange: DateInterval = status.spawned ? [status.previousSpawn.date, status.previousSpawn.despawn] : [status.nextSpawn.date, status.nextSpawn.despawn];
+      const range = TimeUtils.getDateIntersection(spawnBasedRange, [weatherSpawn.spawn, weatherStop]);
+      if (range) {
+        return {
+          spawn: range[0],
+          despawn: range[1],
+          weather: weatherSpawn.weather
+        };
+      }
     }
 
     try {
-      return this.findWeatherSpawnCombination(alarm, sortedSpawns, time, this.weatherService.nextWeatherTime(weatherSpawns[0].spawn.getTime()));
+      return this.findWeatherSpawnCombination(alarm, etime, previous, previous ? this.weatherService.previousWeatherTime(etime) : this.weatherService.nextWeatherTime(weatherSpawns[0].spawn.getTime()));
     } catch (e) {
       console.error(e);
       return null;
