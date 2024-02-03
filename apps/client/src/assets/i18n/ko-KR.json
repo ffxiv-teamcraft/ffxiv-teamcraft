@@ -254,6 +254,7 @@
     "No_folder": "폴더 없음",
     "Click_to_show_all_alarms": "클릭하여 모든 알람 표시",
     "Enable_TTS": "텍스트 음성 변환(TTS) 사용",
+    "Next_spawn_prefix": "Next: ",
     "REALTIME": {
       "Reset_timers": "초기화 타이머",
       "WEEKLY_RESETS": "주 제한",
@@ -2963,6 +2964,7 @@
     "Shadow_size": "그림자 크기",
     "Deprecated": "해당 아이템은 더 이상 획득할 수 없습니다",
     "Select_all": "모든 제안서 선택",
+    "Input_hours_tip": "Input value in hours, use decimals to add minutes (ex: 7.5 is equal to 7:30)",
     "SPEEDS": {
       "VERY_SLOW": "매우 느림",
       "SLOW": "느림",
