@@ -1,7 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 import { AlarmStatusService } from './alarm-status.service';
 import { WeatherService } from '../eorzea/weather.service';
-import { BLACK_JET_ALARM, CATKILLER_ALARM, CRYSTAL_PIGEON_ALARM, DARKSTEEL_ORE_ALARM, MUD_PILGRIM_ALARM } from './alarm-mocks';
+import {
+  BLACK_JET_ALARM, CAPTAINS_CHALICE_ALARM,
+  CATKILLER_ALARM,
+  CRYSTAL_PIGEON_ALARM,
+  DARKSTEEL_ORE_ALARM,
+  EALAD_SKAAN_ALARM,
+  FURCACAUDA_ALARM,
+  MUD_PILGRIM_ALARM
+} from './alarm-mocks';
 import { differenceInHours, differenceInMinutes } from 'date-fns';
 
 describe('AlarmStatusService', () => {
@@ -166,5 +174,31 @@ describe('AlarmStatusService', () => {
     expect(simpleBlackJetNotSpawned.spawned).toBeFalsy();
     expect(differenceInMinutes(simpleBlackJetNotSpawned.previousSpawn.despawn, notSpawned)).toBeLessThan(0);
     expect(differenceInHours(simpleBlackJetNotSpawned.nextSpawn.date, notSpawned)).toBe(76); // 76 is around 4 hours
+  });
+
+  it('Should handle annoying fishing cases', () => {
+    const ealadSpawned = new Date('Oct 23 3082 23:40:00 GMT');
+    const simpleEaladSkaan = service.getAlarmStatus(EALAD_SKAAN_ALARM, ealadSpawned);
+    expect(simpleEaladSkaan.spawned).toBeTruthy();
+    expect(differenceInMinutes(simpleEaladSkaan.previousSpawn.despawn, ealadSpawned)).toBeGreaterThan(0);
+
+    const ealadNotSpawned = new Date('Wed Oct 04 3082 22:12:56 GMT');
+    const simpleEaladSkaanNotSpawned = service.getAlarmStatus(EALAD_SKAAN_ALARM, ealadNotSpawned);
+    expect(simpleEaladSkaanNotSpawned.spawned).toBeFalsy();
+    expect(differenceInMinutes(simpleEaladSkaanNotSpawned.previousSpawn.despawn, ealadNotSpawned)).toBeLessThan(0);
+
+
+    const furcacauda = new Date('Oct 05 3082 23:40:00 GMT');
+    const simpleFurcacauda = service.getAlarmStatus(FURCACAUDA_ALARM, furcacauda);
+    expect(simpleFurcacauda.nextSpawn.date.getUTCHours()).toBe(16);
+    expect(simpleFurcacauda.nextSpawn.despawn.getUTCHours()).toBe(16);
+    expect(simpleFurcacauda.nextSpawn.despawn.getUTCMinutes()).toBe(30);
+
+
+    const captainsChalice = new Date('Oct 05 3082 23:40:00 GMT');
+    const simpleCaptainsChalice = service.getAlarmStatus(CAPTAINS_CHALICE_ALARM, captainsChalice);
+    expect(simpleCaptainsChalice.nextSpawn.date.getUTCHours()).toBe(23);
+    expect(simpleCaptainsChalice.nextSpawn.despawn.getUTCHours()).toBe(1);
+    expect(simpleCaptainsChalice.nextSpawn.despawn.getUTCMinutes()).toBe(4);
   });
 });

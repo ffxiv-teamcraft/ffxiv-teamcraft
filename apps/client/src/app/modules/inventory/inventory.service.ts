@@ -583,10 +583,6 @@ export class InventoryService {
     itemId: number,
     quantity: number
   }): UserInventory {
-    // TODO handle currencies in their own inventory, for now just skip it.
-    if ((window as any).debugToken) {
-      console.log(action);
-    }
     return inventory;
   }
 

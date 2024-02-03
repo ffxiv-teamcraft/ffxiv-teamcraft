@@ -14,12 +14,23 @@ export class AlarmStatusService {
   public getAlarmStatus(alarm: AlarmDetails | PersistedAlarm, etime: Date): AlarmStatus {
     if (alarm.weathers?.length > 0) {
       // If we have weather conditions, let's move to more complex stuff
-      const { spawn: previousSpawn, despawn: previousDespawn, weather: previousWeather } = this.findWeatherSpawnCombination(alarm, this.weatherService.previousWeatherTime(etime.getTime()), true);
+      let previousTime = etime;
+      let previousSpawn = etime;
+      let previousDespawn: Date;
+      let previousWeather: number;
+      while (previousSpawn.getTime() >= etime.getTime()) {
+        previousTime = new Date(this.weatherService.previousWeatherTime(previousTime.getTime()))
+        const spawn = this.findWeatherSpawnCombination(alarm, previousTime.getTime(), true);
+        previousSpawn = spawn.spawn;
+        previousDespawn = spawn.despawn;
+        previousWeather = spawn.weather;
+      }
+
       const { spawn, despawn, weather } = this.findWeatherSpawnCombination(alarm, etime.getTime());
       const { spawn: nextSpawn, despawn: nextDespawn, weather: nextWeather } = this.findWeatherSpawnCombination(alarm, despawn.getTime());
 
       return {
-        spawned: previousDespawn.getTime() > etime.getTime(),
+        spawned: despawn.getTime() > etime.getTime() && spawn.getTime() < etime.getTime(),
         previousSpawn: {
           date: previousSpawn,
           despawn: previousDespawn,

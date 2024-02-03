@@ -224,11 +224,12 @@
             </div>
             <div *ngIf="row.alarm.spawns">
             <span *ngFor="let spawn of row.alarm.spawns; last as last">
-              {{spawn}}:00 - {{(spawn + row.alarm.duration) % 24}}:00<span *ngIf="!last">,&nbsp;</span>
+              {{spawn}}:{{(spawn % 1 * 60) || "00"}} - {{(spawn + row.alarm.duration) % 24}}:{{((spawn + row.alarm.duration) % 1 * 60) || "00"}}<span *ngIf="!last">,&nbsp;</span>
             </span>
             </div>
             <div *ngIf="row.remainingTime" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <div [timerTooltip]="row.remainingTime">{{row.remainingTime | timer}}</div>
+              <div>&nbsp;<span nz-icon nzType="clock-circle" [timerTooltip]="row.nextSpawnTime" [prefix]="'ALARMS.Next_spawn_prefix' | translate"></span></div>
               <div *ngIf="row.alarm.nodeContent" [nzPopoverContent]="nodeContent"
                    [nzPopoverTitle]="'ALARMS.Node_content' | translate"
                    nz-popover>

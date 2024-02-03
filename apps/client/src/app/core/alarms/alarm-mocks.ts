@@ -202,3 +202,134 @@ export const BLACK_JET_ALARM = {
   ],
   'hookset': 2
 };
+
+export const EALAD_SKAAN_ALARM = {
+  'itemId': 33242,
+  'nodeId': 219,
+  'duration': 0.5,
+  'mapId': 494,
+  'zoneId': 2956,
+  'areaId': 3309,
+  'type': -5,
+  'coords': {
+    'x': 21.02,
+    'y': 22.83,
+    'z': 0
+  },
+  'spawns': [
+    23.5
+  ],
+  'folklore': 26810,
+  'reduction': false,
+  'ephemeral': false,
+  'nodeContent': [
+    27470,
+    27479,
+    27469,
+    27476,
+    27477,
+    30593,
+    28070,
+    33242
+  ],
+  'weathers': [
+    1
+  ],
+  'weathersFrom': [
+    10
+  ],
+  'snagging': false,
+  'predators': [],
+  'baits': [
+    {
+      'id': 27589
+    }
+  ],
+  'hookset': 2
+};
+
+export const FURCACAUDA_ALARM = {
+  'itemId': 41410,
+  'nodeId': 277,
+  'duration': 1,
+  'mapId': 700,
+  'zoneId': 3713,
+  'areaId': 4075,
+  'type': -5,
+  'coords': {
+    'x': 33.72,
+    'y': 16.259999999999998,
+    'z': 0
+  },
+  'spawns': [
+    15.5
+  ],
+  'folklore': 36609,
+  'reduction': false,
+  'ephemeral': false,
+  'nodeContent': [
+    36476,
+    36484,
+    36477,
+    35607,
+    38836,
+    41410
+  ],
+  'weathers': [
+    49
+  ],
+  'weathersFrom': [
+    2
+  ],
+  'snagging': false,
+  'predators': [],
+  'baits': [
+    {
+      'id': 36590
+    }
+  ],
+  'hookset': 2
+};
+
+export const CAPTAINS_CHALICE_ALARM = {
+  'itemId': 7948,
+  'nodeId': 101,
+  'duration': 1.58,
+  'mapId': 18,
+  'zoneId': 33,
+  'areaId': 363,
+  'type': -5,
+  'coords': {
+    'x': 17.14,
+    'y': 15.78,
+    'z': 0
+  },
+  'spawns': [
+    23.5
+  ],
+  'reduction': false,
+  'ephemeral': false,
+  'nodeContent': [
+    4898,
+    4900,
+    5462,
+    5466,
+    4906,
+    4910,
+    7948
+  ],
+  'weathers': [],
+  'weathersFrom': [],
+  'snagging': false,
+  'predators': [],
+  'baits': [
+    {
+      'id': 2616
+    },
+    {
+      'id': 4898,
+      'tug': 2
+    }
+  ],
+  'hookset': 1
+};
