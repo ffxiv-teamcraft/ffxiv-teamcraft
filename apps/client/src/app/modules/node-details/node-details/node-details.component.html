@@ -35,7 +35,7 @@
       </span>
     <span *ngIf="node.spawns !== undefined">
         <i *ngFor="let time of node.spawns">
-          {{time}}:00 - {{getDespawnTime(time, node.duration)}}:00
+          {{time | hourDisplay}} - {{(time + node.duration / 60) % 24 | floor:2 | hourDisplay}}
         </i>
       </span>
   </div>

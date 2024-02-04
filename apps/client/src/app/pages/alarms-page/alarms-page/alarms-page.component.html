@@ -147,7 +147,7 @@
   <ng-template #compactAlarmsTpl>
     <ng-container *ngTemplateOutlet="compactAlarms"></ng-container>
   </ng-template>
-  <div        class="alarms-container"
+  <div class="alarms-container"
        id="alarms-group"
        fxLayout="row wrap"
        fxLayoutGap="5px">
@@ -223,8 +223,8 @@
               {{aetheryte.nameid | i18nRow:'places' | i18n}}
             </div>
             <div *ngIf="row.alarm.spawns">
-            <span *ngFor="let spawn of row.alarm.spawns; last as last">
-              {{spawn}}:{{(spawn % 1 * 60) || "00"}} - {{(spawn + row.alarm.duration) % 24}}:{{((spawn + row.alarm.duration) % 1 * 60) || "00"}}<span *ngIf="!last">,&nbsp;</span>
+            <span *ngFor="let spawn of row.alarm.spawns; last as last">{{spawn | hourDisplay}}
+              - {{(spawn + row.alarm.duration) % 24 | floor:2 | hourDisplay}}<span *ngIf="!last">,&nbsp;</span>
             </span>
             </div>
             <div *ngIf="row.remainingTime" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">

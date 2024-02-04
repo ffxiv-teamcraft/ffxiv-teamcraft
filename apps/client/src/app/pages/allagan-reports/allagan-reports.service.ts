@@ -94,9 +94,12 @@ export class AllaganReportsService {
           map(res => {
             return res.data.allagan_reports_queue.map(row => {
               if (typeof row.data === 'string') {
-                row.data = JSON.parse(row.data);
+                return {
+                  ...row,
+                  data: JSON.parse(row.data)
+                };
               }
-              return row;
+              return { ...row };
             });
           }),
           shareReplay({ bufferSize: 1, refCount: true })
@@ -228,7 +231,8 @@ export class AllaganReportsService {
           itemId: proposal.itemId,
           source: proposal.source,
           data: JSON.stringify(proposal.data),
-          reporter: proposal.author
+          reporter: proposal.author,
+          gt: false
         }
       }
     });
