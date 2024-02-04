@@ -8067,7 +8067,7 @@
       "tug": 1,
       "bait": 4898,
       "spawn": 23,
-      "duration": 3,
+      "duration": 2.08,
       "snagging": false,
       "minGathering": 358
     }
@@ -8385,7 +8385,7 @@
       "tug": 1,
       "bait": 4978,
       "spawn": 1,
-      "duration": 3,
+      "duration": 2.33,
       "weathers": [
         4
       ],
@@ -10065,7 +10065,7 @@
       "tug": 0,
       "bait": 12706,
       "spawn": 8,
-      "duration": 4,
+      "duration": 3.66,
       "snagging": false,
       "minGathering": 0
     }
@@ -10552,22 +10552,22 @@
   ],
   "12828": [
     {
-      "spot": 120,
-      "hookset": 1,
-      "tug": 0,
-      "bait": 12722,
-      "spawn": 22,
-      "duration": 6,
-      "snagging": false,
-      "minGathering": 0
-    },
-    {
       "spot": 10001,
       "hookset": 1,
       "tug": -1,
       "bait": 12711,
       "spawn": 22,
       "duration": 6,
+      "snagging": false,
+      "minGathering": 0
+    },
+    {
+      "spot": 120,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 12722,
+      "spawn": 22,
+      "duration": 5.33,
       "snagging": false,
       "minGathering": 0
     }

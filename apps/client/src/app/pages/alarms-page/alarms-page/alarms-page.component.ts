@@ -69,6 +69,8 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
+import { FloorPipe } from '../../../pipes/pipes/floor.pipe';
+import { HourDisplayPipe } from '../../../pipes/pipes/hour-display.pipe';
 
 @Component({
     selector: 'app-alarms-page',
@@ -76,7 +78,7 @@ import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
     styleUrls: ['./alarms-page.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, FlexModule, NzButtonModule, NzToolTipModule, RouterLink, NzIconModule, NzWaveModule, TutorialStepDirective, NzPopconfirmModule, NzSwitchModule, FormsModule, NgTemplateOutlet, CdkDropList, NgFor, NzCollapseModule, CdkDrag, ClipboardDirective, NzDropDownModule, NzMenuModule, FullpageMessageComponent, PageLoaderComponent, NzCardModule, ItemIconComponent, NzAvatarModule, I18nNameComponent, GatheringItemUsesComponent, MapPositionComponent, DbButtonComponent, TimerTooltipDirective, NzPopoverModule, FishingBaitComponent, MapComponent, NzGridModule, AsyncPipe, TranslateModule, I18nPipe, TimerPipe, I18nRowPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, IfMobilePipe, NodeTypeIconPipe, ClosestAetherytePipe, XivapiIconPipe, WeatherIconPipe, LazyIconPipe, MapNamePipe, HooksetActionIdPipe, LazyRowPipe]
+  imports: [NgIf, FlexModule, NzButtonModule, NzToolTipModule, RouterLink, NzIconModule, NzWaveModule, TutorialStepDirective, NzPopconfirmModule, NzSwitchModule, FormsModule, NgTemplateOutlet, CdkDropList, NgFor, NzCollapseModule, CdkDrag, ClipboardDirective, NzDropDownModule, NzMenuModule, FullpageMessageComponent, PageLoaderComponent, NzCardModule, ItemIconComponent, NzAvatarModule, I18nNameComponent, GatheringItemUsesComponent, MapPositionComponent, DbButtonComponent, TimerTooltipDirective, NzPopoverModule, FishingBaitComponent, MapComponent, NzGridModule, AsyncPipe, TranslateModule, I18nPipe, TimerPipe, I18nRowPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, IfMobilePipe, NodeTypeIconPipe, ClosestAetherytePipe, XivapiIconPipe, WeatherIconPipe, LazyIconPipe, MapNamePipe, HooksetActionIdPipe, LazyRowPipe, FloorPipe, HourDisplayPipe]
 })
 export class AlarmsPageComponent implements OnInit {
 

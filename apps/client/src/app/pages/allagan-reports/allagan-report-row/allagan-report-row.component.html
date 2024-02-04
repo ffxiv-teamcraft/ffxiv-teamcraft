@@ -76,11 +76,11 @@
       </ng-container>
     </div>
     <div fxLayout="row" fxLayoutGap="10px" *ngIf="!embed">
-      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="report?.gt">
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="report?.gt && !report?.reporter">
         <div><img src="https://garlandtools.org/db/images/site/Garland.png" class="garland-avatar" alt="">{{'ALLAGAN_REPORTS.Imported_from_GT_data' | translate }}
         </div>
       </div>
-      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="queueEntry || (report && !report.gt)">
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="queueEntry || (report?.reporter)">
         <div>{{'ALLAGAN_REPORTS.Reported_by' | translate }}:</div>
         <ng-container *ngTemplateOutlet="userDisplay; context:{$implicit: author}"></ng-container>
       </div>
@@ -109,11 +109,10 @@
   <div nz-col nzMd="12" class="right-block" fxLayout="column">
     <ng-container *ngIf="source === AllaganReportSource.SPEARFISHING">
       <div *ngIf="data.spawn !== undefined">
-        {{'ALLAGAN_REPORTS.Spawn' | translate}}: {{data.spawn}}:00
+        {{'ALLAGAN_REPORTS.Spawn' | translate}}: {{data.spawn | hourDisplay}}
       </div>
       <div *ngIf="data.spawn !== undefined">
-        {{'ALLAGAN_REPORTS.Duration' | translate}}: {{data.duration}}{{'TIMERS.Hours' | translate}} ({{data.spawn}}:00
-        - {{(data.spawn + data.duration) % 24}}:00)
+        {{'ALLAGAN_REPORTS.Duration' | translate}}: {{data.duration}}{{'TIMERS.Hours' | translate}} ({{data.spawn | hourDisplay}} - {{(data.spawn + data.duration) % 24 | floor:100 | hourDisplay}})
       </div>
     </ng-container>
     <ng-container *ngIf="source === AllaganReportSource.FISHING">
@@ -142,11 +141,10 @@
             {{'ALLAGAN_REPORTS.Ocean_fishing_time' | translate}}: {{('OCEAN_FISHING.' + OceanFishingTime[data.oceanFishingTime]) | translate}}
           </div>
           <div *ngIf="data.spawn !== undefined">
-            {{'ALLAGAN_REPORTS.Spawn' | translate}}: {{data.spawn}}:00
+            {{'ALLAGAN_REPORTS.Spawn' | translate}}: {{data.spawn | hourDisplay}}
           </div>
           <div *ngIf="data.spawn !== undefined">
-            {{'ALLAGAN_REPORTS.Duration' | translate}}: {{data.duration}}{{'TIMERS.Hours' | translate}} ({{data.spawn}}:00
-            - {{(data.spawn + data.duration) % 24}}:00)
+            {{'ALLAGAN_REPORTS.Duration' | translate}}: {{data.duration}}{{'TIMERS.Hours' | translate}} ({{data.spawn | hourDisplay}} - {{(data.spawn + data.duration) % 24 | floor:2 | hourDisplay}})
           </div>
           <div *ngIf="data.predators?.length > 0; else noPredators" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip

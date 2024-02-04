@@ -44,6 +44,8 @@ import { NgIf, NgSwitch, NgSwitchCase, NgTemplateOutlet, NgFor, AsyncPipe, DateP
 import { ReportSourceDisplayComponent } from '../report-source-display/report-source-display.component';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { HourDisplayPipe } from '../../../pipes/pipes/hour-display.pipe';
+import { FloorPipe } from '../../../pipes/pipes/floor.pipe';
 
 @Component({
     selector: 'app-allagan-report-row',
@@ -51,7 +53,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
     styleUrls: ['./allagan-report-row.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzGridModule, FlexModule, ReportSourceDisplayComponent, NgIf, NzTagModule, NzToolTipModule, NzButtonModule, NzWaveModule, NzIconModule, NzPopconfirmModule, NgSwitch, ReportSourceCompactDetailsComponent, NgSwitchCase, DbButtonComponent, NgTemplateOutlet, NgFor, ItemIconComponent, I18nNameComponent, SpearfishingSpeedComponent, NzAvatarModule, RouterLink, AsyncPipe, DatePipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, XivapiIconPipe, CharacterNamePipe, WeatherIconPipe, CharacterAvatarPipe, UserLevelPipe, IsPatronPipe, IsVerifiedPipe, MapNamePipe, TugNamePipe]
+  imports: [NzGridModule, FlexModule, ReportSourceDisplayComponent, NgIf, NzTagModule, NzToolTipModule, NzButtonModule, NzWaveModule, NzIconModule, NzPopconfirmModule, NgSwitch, ReportSourceCompactDetailsComponent, NgSwitchCase, DbButtonComponent, NgTemplateOutlet, NgFor, ItemIconComponent, I18nNameComponent, SpearfishingSpeedComponent, NzAvatarModule, RouterLink, AsyncPipe, DatePipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, XivapiIconPipe, CharacterNamePipe, WeatherIconPipe, CharacterAvatarPipe, UserLevelPipe, IsPatronPipe, IsVerifiedPipe, MapNamePipe, TugNamePipe, HourDisplayPipe, FloorPipe]
 })
 export class AllaganReportRowComponent {
 
