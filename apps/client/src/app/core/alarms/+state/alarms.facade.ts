@@ -254,7 +254,7 @@ export class AlarmsFacade {
       display.dbType = 'fishing-spot';
     }
     if (display.spawned) {
-      display.remainingTime = differenceInSeconds(status.previousSpawn.despawn, etime) / 60;
+      display.remainingTime = differenceInSeconds(status.nextSpawn.despawn, etime) / 60;
     } else {
       display.remainingTime = differenceInSeconds(status.nextSpawn.date, etime) / 60;
     }
