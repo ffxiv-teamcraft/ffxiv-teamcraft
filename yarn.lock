@@ -2405,6 +2405,13 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
+"@babel/runtime@^7.23.9":
+  version "7.23.9"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.23.9.tgz#47791a15e4603bb5f905bc0753801cf21d6345f7"
+  integrity sha512-0CX6F+BI2s9dkUqr08KFrAIZgNFj75rdBU/DjCyYLIaV/quFjkk6T+EJ2LkZHyZTbEV4L5p97mNkUsHl2wLFAw==
+  dependencies:
+    regenerator-runtime "^0.14.0"
+
 "@babel/runtime@^7.7.2":
   version "7.22.6"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.22.6.tgz#57d64b9ae3cff1d67eb067ae117dac087f5bd438"
@@ -2987,21 +2994,21 @@
   resolved "https://registry.yarnpkg.com/@fastify/busboy/-/busboy-2.1.0.tgz#0709e9f4cb252351c609c6e6d8d6779a8d25edff"
   integrity sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==
 
-"@ffxiv-teamcraft/dll-inject@0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/dll-inject/-/dll-inject-0.0.8.tgz#4a1897e5f854c8f1f9aff0de9fe5be584d34465b"
-  integrity sha512-PWaT3TAuZopD1x3Hfh4RuzTw7KiPYE1Xjm+luEkPbdMQllPRdrUCpYDW+tcdLCq8sfLtUKqfghFcekVTY6rOkA==
+"@ffxiv-teamcraft/dll-inject@0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/dll-inject/-/dll-inject-0.0.10.tgz#100ba8e3fca72dfd953ef0d01cc863b7100a4dd4"
+  integrity sha512-PU51PLCvtuAH4IFZWdjBK05eWMANbLNvpeuoh+S4ZYla+xSujmn7gl2eluy0M3RjAzepYGqGuMiJBLEyF1hx6A==
   dependencies:
     bindings "^1.5.0"
     cross-spawn "^5.1.0"
-    nan "^2.11.1"
+    nan "^2.18.0"
 
-"@ffxiv-teamcraft/pcap-ffxiv@1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.1.4.tgz#8dc70445adb04e7fb8dcf14f373eb2025051eb06"
-  integrity sha512-otwhiliA/CQBoJjcxA353f23AHzJ331SJglJ6fd9qlCTqQm4lkKcdkVY20ps1g1PtrLjAaK789m1sZsvMg5PLw==
+"@ffxiv-teamcraft/pcap-ffxiv@1.1.6":
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-1.1.6.tgz#ee2dffca951ed00109029345724adf4189a87197"
+  integrity sha512-d1hx83AEEBV0BLMUs3SgMdLw/D3keERb5NyD1221pa3V1Hl7kfsS9MhuaZZNCTXv5q7pPpCmM8aZueBSBONLiQ==
   dependencies:
-    "@ffxiv-teamcraft/dll-inject" "0.0.8"
+    "@ffxiv-teamcraft/dll-inject" "0.0.10"
 
 "@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@3.3.2", "@ffxiv-teamcraft/simulator-kr@npm:@ffxiv-teamcraft/simulator@3.3.2", "@ffxiv-teamcraft/simulator@^3.3.2":
   version "3.3.2"
@@ -10990,10 +10997,10 @@ electron-to-chromium@^1.4.535:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.590.tgz#85a428fbabb77265a4804040837ed4f2538e3300"
   integrity sha512-hohItzsQcG7/FBsviCYMtQwUSWvVF7NVqPOnJCErWsAshsP/CR2LAXdmq276RbESNdhxiAq5/vRo1g2pxGXVww==
 
-electron@27.3.1:
-  version "27.3.1"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-27.3.1.tgz#b64ae70410b657c911d8c7665605c02695722fd3"
-  integrity sha512-hDAeaTJvXHu3vCmR6l6/muPGaKRlEp6v471yyqOju9xhLKUaGOAdMN46F0V+SCABZq2nWr9DTwqHsJ0b4hUZLQ==
+electron@28.2.1:
+  version "28.2.1"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-28.2.1.tgz#8edf2be24d97160b7eb52b7ce9a2424cf14c0791"
+  integrity sha512-wlzXf+OvOiVlBf9dcSeMMf7Q+N6DG+wtgFbMK0sA/JpIJcdosRbLMQwLg/LTwNVKIbmayqFLDp4FmmFkEMhbYA==
   dependencies:
     "@electron/get" "^2.0.0"
     "@types/node" "^18.11.18"
@@ -16983,10 +16990,15 @@ mute-stream@1.0.0:
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-1.0.0.tgz#e31bd9fe62f0aed23520aa4324ea6671531e013e"
   integrity sha512-avsJQhyd+680gKXyG/sQc0nXaC6rBkPOfyHYcFb9+hdkqQkR9bdnkJ0AMZhke0oesPqIO+mFFJ+IdBc7mst4IA==
 
-nan@^2.11.1, nan@^2.16.0:
+nan@^2.16.0:
   version "2.17.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.17.0.tgz#c0150a2368a182f033e9aa5195ec76ea41a199cb"
   integrity sha512-2ZTgtl0nJsO0KQCjEpxcIr5D+Yv90plTitZt9JBfQvVJDS5seMl3FOvsh3+9CoYWXf/1l5OaZzzF6nDm4cagaQ==
+
+nan@^2.18.0:
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.18.0.tgz#26a6faae7ffbeb293a39660e88a76b82e30b7554"
+  integrity sha512-W7tfG7vMOGtD30sHoZSSc/JVYiyDPEyQVso/Zz+/uQd0B0L46gtC+pHha5FFMRpil6fm/AoEcRWyOVi4+E/f8w==
 
 nanoid@^3.3.6:
   version "3.3.6"

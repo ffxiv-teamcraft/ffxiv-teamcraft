@@ -52,7 +52,7 @@ export class AlarmStatusService {
     return this.getSimpleAlarmStatus(alarm, etime);
   }
 
-  private getSimpleAlarmStatus(alarm: AlarmDetails | PersistedAlarm, etime: Date): AlarmStatus | null {
+  public getSimpleAlarmStatus(alarm: AlarmDetails | PersistedAlarm, etime: Date): AlarmStatus | null {
     if (alarm.spawns.length === 0) {
       return null;
     }
@@ -109,7 +109,7 @@ export class AlarmStatusService {
   public findPreviousTime(etime: Date, hour: number, minutes = 0): Date {
     const occurence = new Date(etime);
     occurence.setUTCHours(hour, minutes, 0, 0);
-    if (occurence.getTime() < etime.getTime()) {
+    if (occurence.getTime() <= etime.getTime()) {
       return occurence;
     }
     return subDays(occurence, 1);
@@ -118,7 +118,7 @@ export class AlarmStatusService {
   public findNextTime(etime: Date, hour: number, minutes = 0): Date {
     const nextOccurence = new Date(etime);
     nextOccurence.setUTCHours(hour, minutes, 0, 0);
-    if (nextOccurence.getTime() > etime.getTime()) {
+    if (nextOccurence.getTime() >= etime.getTime()) {
       return nextOccurence;
     }
     return addDays(nextOccurence, 1);
@@ -140,7 +140,7 @@ export class AlarmStatusService {
         }
         return { weather: weather, spawn: this.weatherService.getNextWeatherStart(alarm.mapId, weather, iteration, false, alarm.spawns, alarm.duration) };
       })
-      .filter(spawn => spawn.spawn !== null)
+      .filter(spawn => spawn?.spawn !== null)
       .sort((a, b) => a.spawn.getTime() - b.spawn.getTime());
     for (const weatherSpawn of weatherSpawns) {
       const normalWeatherStop = new Date(this.weatherService.getNextDiffWeatherTime(weatherSpawn.spawn.getTime(), alarm.weathers, alarm.mapId));
@@ -167,7 +167,7 @@ export class AlarmStatusService {
     }
 
     try {
-      return this.findWeatherSpawnCombination(alarm, etime, previous, previous ? this.weatherService.previousWeatherTime(etime) : this.weatherService.nextWeatherTime(weatherSpawns[0].spawn.getTime()));
+      return this.findWeatherSpawnCombination(alarm, etime, previous, previous ? this.weatherService.previousWeatherTime(iteration) : this.weatherService.nextWeatherTime(weatherSpawns[0].spawn.getTime()));
     } catch (e) {
       console.error(e);
       return null;
