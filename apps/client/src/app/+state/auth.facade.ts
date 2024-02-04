@@ -72,7 +72,11 @@ export class AuthFacade {
 
   loggedIn$ = this.store.select(authQuery.getLoggedIn);
 
-  userId$ = of('ZxUJAbsKlWg1KF5biaVakK34Ygr2');
+  userId$ = this.store.select(authQuery.getUserId).pipe(
+    filter(uid => !!uid),
+    distinctUntilChanged(),
+    shareReplay(1)
+  );
 
   user$ = this.store.select(authQuery.getUser).pipe(filter(u => !!u && !u.notFound && u.$key !== undefined));
 
