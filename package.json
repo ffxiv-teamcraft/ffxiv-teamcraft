@@ -109,8 +109,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/ssr": "17.0.3",
-    "@ffxiv-teamcraft/pcap-ffxiv": "1.1.4",
+    "@ffxiv-teamcraft/pcap-ffxiv": "1.1.6",
     "@ungap/structured-clone": "^1.0.1",
     "@xivapi/nodestone": "^0.2.5",
     "buffer-reader": "^0.1.0",
@@ -132,6 +131,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@angular/ssr": "17.0.3",
     "@angular-builders/custom-webpack": "^17.0.0",
     "@angular-devkit/build-angular": "17.0.3",
     "@angular-devkit/core": "17.0.3",
@@ -237,7 +237,7 @@
     "dexie": "^3.2.3",
     "dotenv": "10.0.0",
     "echarts": "^5.4.0",
-    "electron": "27.3.1",
+    "electron": "28.2.1",
     "electron-builder": "^23.6.0",
     "electron-builder-squirrel-windows": "^23.6.0",
     "enquirer": "^2.3.6",
