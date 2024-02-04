@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.24](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.23...v11.0.24) (2024-02-04)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarms crash with some fish ([51fcd12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/51fcd12e55d9f074593373211b6c032ed9d7f10c))
+* **alarms:** fixed timers sometimes displaying weird values ([802ab48](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/802ab487b8eb41c98e700cdd338a3d58a6190ceb))
+
 ### [11.0.23](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.22...v11.0.23) (2024-02-04)
 
 
