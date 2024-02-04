@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.22](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.21...v11.0.22) (2024-02-04)
+
+
+### Features
+
+* **alarms:** new alarms system, much more accurate, reliable, tested, fishing-proof ([19f98a4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/19f98a45c316d7dde30798624992c02bbd855797))
+* **allagan-reports:** support for minute accuracy in fish data ([ff5a37c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ff5a37c91a9dc00b99d4848bb994918061743af0))
+* **db:** allagan reports import ([5d088d1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5d088d1ede1b7d48756406bfd6108b20181b211c))
+
+
+### Bug Fixes
+
+* **marketboard:** adjusted tax rate computing for Universalis change ([f3bbe36](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f3bbe3648ff053714fa932886919c84e7e9bb92a))
+
 ### [11.0.21](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.20...v11.0.21) (2024-01-31)
 
 
