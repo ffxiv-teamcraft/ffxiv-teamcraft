@@ -4,7 +4,7 @@ import { AlarmStatus } from './alarm-status';
 import { DateInterval, TimeUtils } from './time.utils';
 import { WeatherService } from '../eorzea/weather.service';
 import { inject, Injectable } from '@angular/core';
-import { addDays, addMinutes, subDays } from 'date-fns';
+import { addDays, addMinutes, subDays, subMinutes } from 'date-fns';
 
 @Injectable({ providedIn: 'root' })
 export class AlarmStatusService {
@@ -56,7 +56,7 @@ export class AlarmStatusService {
     if (alarm.spawns.length === 0) {
       return null;
     }
-    const previousSpawn = alarm.spawns.map(spawn => {
+    let previousSpawn = alarm.spawns.map(spawn => {
       // Getting minutes from spawn hour's decimal part
       const spawnMinutes = Math.floor(spawn % 1 * 60);
       const spawnHours = Math.floor(spawn);
@@ -64,18 +64,29 @@ export class AlarmStatusService {
     }).sort((a, b) => {
       return (etime.getTime() - a.getTime()) - (etime.getTime() - b.getTime());
     })[0];
-    const previousDespawn = addMinutes(previousSpawn, alarm.duration * 60);
-    const nextSpawn = this.getNextSpawnFromTime(alarm, etime);
+    let nextSpawn = this.getNextSpawnFromTime(alarm, etime);
+    if(addMinutes(previousSpawn, alarm.duration * 60).getTime() > etime.getTime()) {
+      nextSpawn = previousSpawn;
+      previousSpawn = alarm.spawns.map(spawn => {
+        // Getting minutes from spawn hour's decimal part
+        const spawnMinutes = Math.floor(spawn % 1 * 60);
+        const spawnHours = Math.floor(spawn);
+        return this.findPreviousTime(subMinutes(previousSpawn, 5), spawnHours, spawnMinutes);
+      }).sort((a, b) => {
+        return (etime.getTime() - a.getTime()) - (etime.getTime() - b.getTime());
+      })[0];
+    }
+    const nextDespawn = addMinutes(nextSpawn, alarm.duration * 60);
     const secondNextSpawn = this.getNextSpawnFromTime(alarm, addMinutes(nextSpawn, alarm.duration * 60));
     return {
-      spawned: previousDespawn.getTime() > etime.getTime(),
+      spawned: nextDespawn.getTime() > etime.getTime() && nextSpawn.getTime() < etime.getTime(),
       previousSpawn: {
         date: previousSpawn,
-        despawn: previousDespawn
+        despawn: addMinutes(previousSpawn, alarm.duration * 60)
       },
       nextSpawn: {
         date: nextSpawn,
-        despawn: addMinutes(nextSpawn, alarm.duration * 60)
+        despawn: nextDespawn
       },
       secondNextSpawn: {
         date: secondNextSpawn,
@@ -144,7 +155,7 @@ export class AlarmStatusService {
         };
       }
       const status = this.getSimpleAlarmStatus(alarm, weatherSpawn.spawn);
-      const spawnBasedRange: DateInterval = status.spawned ? [status.previousSpawn.date, status.previousSpawn.despawn] : [status.nextSpawn.date, status.nextSpawn.despawn];
+      const spawnBasedRange: DateInterval = [status.nextSpawn.date, status.nextSpawn.despawn];
       const range = TimeUtils.getDateIntersection(spawnBasedRange, [weatherSpawn.spawn, weatherStop]);
       if (range) {
         return {

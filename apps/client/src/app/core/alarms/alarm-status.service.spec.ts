@@ -2,7 +2,8 @@ import { TestBed } from '@angular/core/testing';
 import { AlarmStatusService } from './alarm-status.service';
 import { WeatherService } from '../eorzea/weather.service';
 import {
-  BLACK_JET_ALARM, CAPTAINS_CHALICE_ALARM,
+  BLACK_JET_ALARM,
+  CAPTAINS_CHALICE_ALARM,
   CATKILLER_ALARM,
   CRYSTAL_PIGEON_ALARM,
   DARKSTEEL_ORE_ALARM,
@@ -121,14 +122,14 @@ describe('AlarmStatusService', () => {
     const nowSpawned = new Date('Tue Oct 03 3082 03:25:00 GMT+0200');
     const simpleSpawnedDarksteel = service.getAlarmStatus(DARKSTEEL_ORE_ALARM, nowSpawned);
     expect(simpleSpawnedDarksteel.spawned).toBeTruthy();
-    expect(differenceInMinutes(simpleSpawnedDarksteel.previousSpawn.despawn, nowSpawned)).toBe(155);
+    expect(differenceInMinutes(simpleSpawnedDarksteel.nextSpawn.despawn, nowSpawned)).toBe(155);
   });
 
   it('Should get alarm status properly for weather-only alarms', () => {
     const now = new Date('Wed Oct 04 3082 00:47:24 GMT+0200');
     const simpleCatkiller = service.getAlarmStatus(CATKILLER_ALARM, now);
     expect(simpleCatkiller.spawned).toBeTruthy();
-    expect(differenceInMinutes(simpleCatkiller.previousSpawn.despawn, now)).toBeGreaterThan(0);
+    expect(differenceInMinutes(simpleCatkiller.nextSpawn.despawn, now)).toBeGreaterThan(0);
 
     const notSpawned = new Date('Wed Oct 04 3082 05:00:00 GMT+0200');
     const simpleCatkillerNotSpawned = service.getAlarmStatus(CATKILLER_ALARM, notSpawned);
