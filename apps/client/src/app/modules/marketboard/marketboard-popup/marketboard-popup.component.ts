@@ -4,23 +4,22 @@ import { catchError, first, map, shareReplay, switchMap, tap } from 'rxjs/operat
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { MarketboardItem } from '../../../core/api/market/marketboard-item';
 import { SettingsService } from '../../settings/settings.service';
-import { HttpClient } from '@angular/common/http';
 import { UniversalisService } from '../../../core/api/universalis.service';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { WorldNamePipe } from '../../../pipes/pipes/world-name.pipe';
 import { I18nPipe } from '../../../core/i18n.pipe';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DatePipe, DecimalPipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
-    selector: 'app-marketboard-popup',
-    templateUrl: './marketboard-popup.component.html',
-    styleUrls: ['./marketboard-popup.component.less'],
-    standalone: true,
-    imports: [NgIf, NzAlertModule, FlexModule, NzTableModule, NgFor, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, WorldNamePipe]
+  selector: 'app-marketboard-popup',
+  templateUrl: './marketboard-popup.component.html',
+  styleUrls: ['./marketboard-popup.component.less'],
+  standalone: true,
+  imports: [NgIf, NzAlertModule, FlexModule, NzTableModule, NgFor, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, WorldNamePipe]
 })
 export class MarketboardPopupComponent implements OnInit {
 
@@ -49,8 +48,8 @@ export class MarketboardPopupComponent implements OnInit {
     value: 'ascend'
   });
 
-  constructor(private authFacade: AuthFacade, private http: HttpClient, private lazyData: LazyDataFacade,
-              public settings: SettingsService, private universalis: UniversalisService, private translate: TranslateService) {
+  constructor(private authFacade: AuthFacade, private lazyData: LazyDataFacade,
+              public settings: SettingsService, private universalis: UniversalisService) {
   }
 
   ngOnInit() {
@@ -152,10 +151,6 @@ export class MarketboardPopupComponent implements OnInit {
 
   sort(event: any): void {
     this.sort$.next({ key: event.key, value: event.value });
-  }
-
-  getLocale(): string {
-    return this.translate.currentLang;
   }
 
 }

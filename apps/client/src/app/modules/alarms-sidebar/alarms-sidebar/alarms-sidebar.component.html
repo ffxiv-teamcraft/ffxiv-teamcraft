@@ -48,6 +48,7 @@
           </ng-template>
           <div fxLayout="row wrap" fxLayoutGap="5px">
             <div class="timer" [timerTooltip]="row.remainingTime">{{row.remainingTime | timer}}</div>
+            <div>&nbsp;<span nz-icon nzType="clock-circle" [timerTooltip]="row.nextSpawnTime" [prefix]="'ALARMS.Next_spawn_prefix' | translate"></span></div>
             <div class="map" *ngIf="row.alarm.mapId | closestAetheryte:row.alarm.coords | async as aetheryte">
               {{aetheryte.nameid | i18nRow:'places' | i18n}}
             </div>

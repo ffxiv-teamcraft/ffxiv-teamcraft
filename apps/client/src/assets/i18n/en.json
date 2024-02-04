@@ -254,6 +254,7 @@
     "No_folder": "No folder",
     "Click_to_show_all_alarms": "Click to show all alarms",
     "Enable_TTS": "Enable Text-to-Speech",
+    "Next_spawn_prefix": "Next: ",
     "REALTIME": {
       "Reset_timers": "Reminders",
       "WEEKLY_RESETS": "Weeklies",
@@ -2963,6 +2964,7 @@
     "Shadow_size": "Shadow size",
     "Deprecated": "This item cannot be obtained anymore",
     "Select_all": "Select all proposals",
+    "Input_hours_tip": "Input value in hours, use decimals to add minutes (ex: 7.5 is equal to 7:30)",
     "SPEEDS": {
       "VERY_SLOW": "Very slow",
       "SLOW": "Slow",

@@ -243,7 +243,7 @@ export class AlarmsPageComponent implements OnInit {
           ja: 'rp',
           ko: '반복'
         };
-        return `/alarm "${itemName.slice(0, 10)}" et ${this.i18n.getName(rp)} ${display.nextSpawn.hours < 10 ? '0' : ''}${display.nextSpawn.hours}00 ${
+        return `/alarm "${itemName.slice(0, 10)}" et ${this.i18n.getName(rp)} ${display.status.nextSpawn.date.getUTCHours() < 10 ? '0' : ''}${display.status.nextSpawn.date.getUTCHours()}${display.status.nextSpawn.date.getUTCMinutes() < 10 ? '0' : ''}${display.status.nextSpawn.date.getUTCMinutes()} ${
           Math.ceil(this.etime.toEarthTime(this.settings.alarmHoursBefore * 60) / 60)}`;
       })
     );

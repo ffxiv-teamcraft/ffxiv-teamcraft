@@ -2,6 +2,7 @@ import { PersistedAlarm } from './persisted-alarm';
 import { Aetheryte } from '../data/aetheryte';
 import { NextSpawn } from './next-spawn';
 import { AlarmDetails } from '@ffxiv-teamcraft/types';
+import { AlarmStatus } from './alarm-status';
 
 export class AlarmDisplay<T extends AlarmDetails | PersistedAlarm = PersistedAlarm> {
 
@@ -21,14 +22,19 @@ export class AlarmDisplay<T extends AlarmDetails | PersistedAlarm = PersistedAla
   closestAetheryte: Aetheryte;
 
   /**
-   * Remaining earth time before it spawns, in seconds.
+   * Remaining earth time before it spawns, in minutes.
    */
   remainingTime: number;
 
   /**
-   * Next spawn for the ingame alarm macro generator.
+   * Remaining earth time before its next spawn, in minutes.
    */
-  nextSpawn: NextSpawn;
+  nextSpawnTime: number;
+
+  /**
+   * Status for the ingame alarm macro generator.
+   */
+  status: AlarmStatus;
 
   /**
    * Is the alarm registered in store?

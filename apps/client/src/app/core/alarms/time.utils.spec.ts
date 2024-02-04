@@ -41,4 +41,24 @@ describe('TimeUtils', () => {
     expect(TimeUtils.getDuration([1, 4])).toBe(3);
     expect(TimeUtils.getDuration([4, 1])).toBe(21);
   });
+
+  it('Should compute date interval properly', () => {
+    expect(TimeUtils.getDateIntersection([
+        new Date('Sat Feb 03 2024 20:05:54'),
+        new Date('Sat Feb 03 2024 23:05:54')
+      ],
+      [
+        new Date('Sat Feb 03 2024 22:05:54'),
+        new Date('Sat Feb 04 2024 01:05:54')]
+    )).toStrictEqual([new Date('Sat Feb 03 2024 22:05:54'), new Date('Sat Feb 03 2024 23:05:54')]);
+
+    expect(TimeUtils.getDateIntersection([
+        new Date('Sat Feb 03 2024 20:05:54'),
+        new Date('Sat Feb 03 2024 23:05:54')
+      ],
+      [
+        new Date('Sat Feb 04 2024 22:05:54'),
+        new Date('Sat Feb 04 2024 23:05:54')]
+    )).toBeNull();
+  });
 });
