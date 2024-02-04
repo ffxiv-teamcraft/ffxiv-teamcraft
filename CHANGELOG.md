@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.23](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.22...v11.0.23) (2024-02-04)
+
+
+### Features
+
+* **alarms:** import of minute-accurate fishing alarms and display fixes ([a4e39e9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a4e39e96bfa95248b204ca0c215ec570906cd842))
+
+
+### Bug Fixes
+
+* **desktop:** fixed critical crash at startup ([899140f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/899140fb1c9761684d07758c95c838f771553e37)), closes [#2759](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2759)
+
 ### [11.0.22](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.21...v11.0.22) (2024-02-04)
 
 
