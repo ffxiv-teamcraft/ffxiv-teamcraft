@@ -16,7 +16,7 @@
   </ng-container>
   <ng-template #noDataTpl>
     <div class="no-data">
-      <nz-spin *ngIf="loading$; else emptyTpl"></nz-spin>
+      <nz-spin *ngIf="loading$ | async; else emptyTpl"></nz-spin>
       <ng-template #emptyTpl>
         <nz-empty [nzNotFoundContent]="contentTpl"></nz-empty>
       </ng-template>
