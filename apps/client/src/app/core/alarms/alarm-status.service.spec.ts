@@ -9,7 +9,8 @@ import {
   DARKSTEEL_ORE_ALARM,
   EALAD_SKAAN_ALARM,
   FURCACAUDA_ALARM,
-  MUD_PILGRIM_ALARM
+  MUD_PILGRIM_ALARM,
+  THE_HORNED_KING_ALARM
 } from './alarm-mocks';
 import { differenceInHours, differenceInMinutes } from 'date-fns';
 
@@ -201,5 +202,15 @@ describe('AlarmStatusService', () => {
     expect(simpleCaptainsChalice.nextSpawn.date.getUTCHours()).toBe(23);
     expect(simpleCaptainsChalice.nextSpawn.despawn.getUTCHours()).toBe(1);
     expect(simpleCaptainsChalice.nextSpawn.despawn.getUTCMinutes()).toBe(4);
+  });
+
+  it('Should find current simple spawn right on time', () => {
+    const simpleSpawn = service.getSimpleAlarmStatus(THE_HORNED_KING_ALARM, new Date('3082-10-29T00:00:00.000Z'));
+    expect(simpleSpawn.nextSpawn.date.getUTCDate()).toBe(29);
+  });
+
+  it('Should work fine for Horned King', () => {
+    const hornedKing = new Date(35117301600000);
+    expect(service.getAlarmStatus(THE_HORNED_KING_ALARM, hornedKing)).not.toBeNull();
   });
 });

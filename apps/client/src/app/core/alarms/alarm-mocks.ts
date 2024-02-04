@@ -333,3 +333,50 @@ export const CAPTAINS_CHALICE_ALARM = {
   ],
   'hookset': 1
 };
+
+export const THE_HORNED_KING_ALARM = {
+  'type': -5,
+  'zoneId': 3305,
+  'nodeContent': [
+    27458,
+    27459,
+    27462,
+    27460,
+    27461,
+    28069,
+    33241
+  ],
+  'snagging': false,
+  'groupNames': '',
+  'mapId': 493,
+  'hookset': 1,
+  'duration': 6,
+  'ephemeral': false,
+  'nodeId': 215,
+  'folklore': 26810,
+  'itemId': 28069,
+  'coords': {
+    'z': 0,
+    'x': 31.84,
+    'y': 12.72
+  },
+  'predators': [],
+  'weathersFrom': [],
+  'baits': [
+    {
+      'id': 27586
+    },
+    {
+      'tug': 0,
+      'id': 27460
+    }
+  ],
+  'spawns': [
+    0
+  ],
+  'reduction': false,
+  'areaId': 3305,
+  'weathers': [
+    11
+  ]
+};
