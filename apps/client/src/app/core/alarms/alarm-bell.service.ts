@@ -176,7 +176,7 @@ export class AlarmBellService {
                 const lastPlayed = this.getLastPlayed(alarm);
                 const status = this.alarmsFacade.getStatus(alarm, date);
                 // Ceiling on /6 so precision is 1/10
-                const timeBeforePlay = Math.round(differenceInMinutes(date, status.nextSpawn.date) / 6) / 10 - this.settings.alarmHoursBefore;
+                const timeBeforePlay = Math.round(differenceInMinutes(status.nextSpawn.date, date) / 6) / 10 - this.settings.alarmHoursBefore;
                 // Irl alarm duration in ms
                 let irlAlarmDuration = this.eorzeanTime.toEarthTime(alarm.duration * 60) * 1000;
                 // If the alarm has no duration, it's because it has no spawn time and only depends on weather
