@@ -227,7 +227,7 @@
               - {{(spawn + row.alarm.duration) % 24 | floor:2 | hourDisplay}}<span *ngIf="!last">,&nbsp;</span>
             </span>
             </div>
-            <div *ngIf="row.remainingTime" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+            <div *ngIf="row.remainingTime !== undefined" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <div [timerTooltip]="row.remainingTime">{{row.remainingTime | timer}}</div>
               <div>&nbsp;<span nz-icon nzType="clock-circle" [timerTooltip]="row.nextSpawnTime" [prefix]="'ALARMS.Next_spawn_prefix' | translate"></span></div>
               <div *ngIf="row.alarm.nodeContent" [nzPopoverContent]="nodeContent"
@@ -380,7 +380,7 @@
                  src="./assets/icons/status/snagging.png">
           </div>
           <div nz-col nzMd="2">
-            <div *ngIf="row.remainingTime" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+            <div *ngIf="row.remainingTime !== undefined" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <div [timerTooltip]="row.remainingTime">{{row.remainingTime | timer}}</div>
               <div *ngIf="row.alarm.nodeContent" [nzPopoverContent]="nodeContent"
                    [nzPopoverTitle]="'ALARMS.Node_content' | translate"

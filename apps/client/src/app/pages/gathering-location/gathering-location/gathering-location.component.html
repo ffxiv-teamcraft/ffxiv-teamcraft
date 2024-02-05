@@ -169,7 +169,7 @@
         <div fxLayout="row" fxLayoutAlign="space-around center">
           <ng-container *ngFor="let generatedAlarm of row.alarms; trackBy: trackByAlarm">
             <ng-container *ngIf="(generatedAlarm | alarmDisplay | async) as alarm">
-              <div *ngIf="alarm.remainingTime"
+              <div *ngIf="alarm.remainingTime !== undefined"
                    fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                 <img *ngIf="generatedAlarm.fishEyes" nz-tooltip [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate"
                      [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon"
