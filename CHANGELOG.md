@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.26...v11.0.27) (2024-02-05)
+
+
+### Features
+
+* **db:** import latest allagan reports ([1ff03b4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1ff03b4d5c8be41ed5d6fbe4bb39a08ff64fb027))
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarm timer switching to weird display on spawn ([3e5c6ae](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3e5c6aed382a008c4ef3b91a979104269b641102))
+* **alarms:** fixed possible crash when loading alarms page ([b85b2d7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b85b2d7bea99c521dfc99a33e8f194519adbd23f))
+
 ### [11.0.26](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.25...v11.0.26) (2024-02-05)
 
 ### [11.0.25](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.24...v11.0.25) (2024-02-05)
