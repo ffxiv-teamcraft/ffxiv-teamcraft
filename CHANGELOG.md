@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.25](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.24...v11.0.25) (2024-02-05)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarms randomly ringing when they shouldn't ([518ba0e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/518ba0ed77cca406718ef2e23151d818e3d9b2b3))
+
 ### [11.0.24](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.23...v11.0.24) (2024-02-04)
 
 
