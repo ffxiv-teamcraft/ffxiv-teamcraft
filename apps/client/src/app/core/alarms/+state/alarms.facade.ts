@@ -278,7 +278,7 @@ export class AlarmsFacade {
       const status = this.alarmStatusService.getAlarmStatus(alarm, etime);
       this.statusCache[cacheKey] = {
         status,
-        expires: status.nextSpawn.despawn
+        expires: this.etime.toEarthDate(status.spawned ? status.nextSpawn.despawn : status.nextSpawn.date)
       };
     }
     return this.statusCache[cacheKey].status;

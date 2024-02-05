@@ -12,6 +12,9 @@ export class AlarmStatusService {
   private weatherService = inject(WeatherService);
 
   public getAlarmStatus(alarm: AlarmDetails | PersistedAlarm, etime: Date): AlarmStatus {
+    if (!alarm.spawns) {
+      alarm.spawns = [];
+    }
     if (alarm.weathers?.length > 0) {
       // If we have weather conditions, let's move to more complex stuff
       let previousTime = etime;
@@ -19,7 +22,7 @@ export class AlarmStatusService {
       let previousDespawn: Date;
       let previousWeather: number;
       while (previousSpawn.getTime() >= etime.getTime()) {
-        previousTime = new Date(this.weatherService.previousWeatherTime(previousTime.getTime()))
+        previousTime = new Date(this.weatherService.previousWeatherTime(previousTime.getTime()));
         const spawn = this.findWeatherSpawnCombination(alarm, previousTime.getTime(), true);
         previousSpawn = spawn.spawn;
         previousDespawn = spawn.despawn;
@@ -65,7 +68,7 @@ export class AlarmStatusService {
       return (etime.getTime() - a.getTime()) - (etime.getTime() - b.getTime());
     })[0];
     let nextSpawn = this.getNextSpawnFromTime(alarm, etime);
-    if(addMinutes(previousSpawn, alarm.duration * 60).getTime() > etime.getTime()) {
+    if (addMinutes(previousSpawn, alarm.duration * 60).getTime() > etime.getTime()) {
       nextSpawn = previousSpawn;
       previousSpawn = alarm.spawns.map(spawn => {
         // Getting minutes from spawn hour's decimal part
@@ -135,10 +138,10 @@ export class AlarmStatusService {
           return {
             weather: weather,
             spawn: this.weatherService.getNextWeatherTransition(alarm.mapId, alarm.weathersFrom, weather, iteration,
-              alarm.spawns, alarm.duration)
+              alarm.spawns || [], alarm.duration)
           };
         }
-        return { weather: weather, spawn: this.weatherService.getNextWeatherStart(alarm.mapId, weather, iteration, false, alarm.spawns, alarm.duration) };
+        return { weather: weather, spawn: this.weatherService.getNextWeatherStart(alarm.mapId, weather, iteration, false, alarm.spawns || [], alarm.duration) };
       })
       .filter(spawn => spawn?.spawn !== null)
       .sort((a, b) => a.spawn.getTime() - b.spawn.getTime());
@@ -146,7 +149,7 @@ export class AlarmStatusService {
       const normalWeatherStop = new Date(this.weatherService.getNextDiffWeatherTime(weatherSpawn.spawn.getTime(), alarm.weathers, alarm.mapId));
       const transitionWeatherStop = new Date(this.weatherService.nextWeatherTime(weatherSpawn.spawn.getTime()));
       const weatherStop = alarm.weathersFrom?.length > 0 ? transitionWeatherStop : normalWeatherStop;
-      if (alarm.spawns.length === 0) {
+      if (alarm.spawns?.length === 0) {
         const weatherSpawn = weatherSpawns[0];
         return {
           spawn: weatherSpawn.spawn,
