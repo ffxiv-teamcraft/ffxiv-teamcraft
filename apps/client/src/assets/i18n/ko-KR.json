@@ -254,7 +254,7 @@
     "No_folder": "폴더 없음",
     "Click_to_show_all_alarms": "클릭하여 모든 알람 표시",
     "Enable_TTS": "텍스트 음성 변환(TTS) 사용",
-    "Next_spawn_prefix": "Next: ",
+    "Next_spawn_prefix": "다음: ",
     "REALTIME": {
       "Reset_timers": "초기화 타이머",
       "WEEKLY_RESETS": "주 제한",
@@ -538,7 +538,7 @@
     "Reload_auth_token": "인증 토큰 다시 불러오기",
     "Materia_confidence_rate": "금단 신뢰율",
     "Materia_confidence_rate_explain": "마테리아 예측 신뢰율이 높다는 것은 더 많은 마테리아가 요구되며, 해당 수량 이내로 금단을 끝낼 가능성이 높다는 것을 의미합니다",
-    "Enable_hardware_acceleration": "Enable hardware acceleration",
+    "Enable_hardware_acceleration": "하드웨어 가속 사용",
     "Housing_map": "모험가 거주구 구역",
     "Housing_map_explain": "내 하우징이 있는 하우징 맵",
     "Reset_linked_characters_ok": "캐릭터 링크가 재설정되었습니다",
@@ -1701,8 +1701,8 @@
         "Fish": "물고기",
         "Size": "크기",
         "Large": "월척",
-        "Time_since_thrown": "[낚싯대 던지기] 사용 후 시간",
-        "Throw_etime": "[낚싯대 던지기] 한 에오르제아 시각",
+        "Time_since_thrown": "낚싯대 던진 후 경과 시간",
+        "Throw_etime": "낚싯대 던진 에오르제아 시각",
         "Ignored_spot": "해당 낚시터는 리포트 기능을 지원하지 않기 때문에, 이상한 값이 보일 수도 있습니다.",
         "Ignored_spot_description": "잡은 물고기는 낚시 리포트에 포함되지 않습니다",
         "ERRORS": {
