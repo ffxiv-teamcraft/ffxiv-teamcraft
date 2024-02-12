@@ -36,6 +36,10 @@ export class LayoutRowFilter {
     return vendors.length > 0;
   }, 'CAN_BE_BOUGHT', [DataType.VENDORS]);
 
+  static CAN_BE_BOUGHT_WITHOUT_TRIBES = this.CAN_BE_BOUGHT._and(new LayoutRowFilter((row) => {
+    return getItemSource(row, DataType.VENDORS).some(vendor => !beastTribeNpcs.includes(vendor.npcId));
+  }, 'CAN_BE_BOUGHT_WITHOUT_TRIBES', [DataType.VENDORS]));
+
   static IS_FROM_HOUSING_VENDOR = new LayoutRowFilter((row, _, settings) => {
     let vendors = getItemSource<Vendor[]>(row, DataType.VENDORS).filter(s => {
       return housingMaterialSuppliers.includes(s.npcId);
