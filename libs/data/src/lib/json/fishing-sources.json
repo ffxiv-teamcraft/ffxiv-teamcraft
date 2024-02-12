@@ -1923,14 +1923,6 @@
       "hookset": 1,
       "tug": 0,
       "bait": 4872,
-      "weathers": [
-        1,
-        2,
-        4,
-        3,
-        5,
-        6
-      ],
       "snagging": false,
       "minGathering": 0
     }
@@ -7420,7 +7412,7 @@
       "tug": 1,
       "bait": 2597,
       "spawn": 17,
-      "duration": 2,
+      "duration": 1.5,
       "snagging": false,
       "minGathering": 335,
       "video": "https://youtu.be/8Smzp2u2m44"
@@ -7462,7 +7454,7 @@
       "tug": 1,
       "bait": 4995,
       "spawn": 17,
-      "duration": 3,
+      "duration": 2.5,
       "weathers": [
         3,
         4
@@ -7477,8 +7469,8 @@
       "hookset": 1,
       "tug": 1,
       "bait": 2606,
-      "spawn": 17,
-      "duration": 1,
+      "spawn": 17.5,
+      "duration": 0.5,
       "snagging": false,
       "minGathering": 335
     }
@@ -7634,8 +7626,8 @@
       "hookset": 1,
       "tug": 1,
       "bait": 2599,
-      "spawn": 17,
-      "duration": 3,
+      "spawn": 17.5,
+      "duration": 2.5,
       "weathers": [
         1
       ],
@@ -7677,8 +7669,8 @@
       "hookset": 1,
       "tug": 1,
       "bait": 2617,
-      "spawn": 21,
-      "duration": 6,
+      "spawn": 21.5,
+      "duration": 5.5,
       "weathers": [
         1,
         2
@@ -7764,7 +7756,7 @@
       "tug": 1,
       "bait": 2626,
       "spawn": 16,
-      "duration": 3,
+      "duration": 2.75,
       "snagging": false,
       "minGathering": 345
     },
@@ -7774,7 +7766,7 @@
       "tug": 1,
       "bait": 2626,
       "spawn": 16,
-      "duration": 3,
+      "duration": 2.75,
       "snagging": false,
       "minGathering": 345
     }
@@ -7905,8 +7897,8 @@
       "hookset": 1,
       "tug": 1,
       "bait": 2601,
-      "spawn": 19,
-      "duration": 8,
+      "spawn": 19.5,
+      "duration": 7.25,
       "weathers": [
         7
       ],
@@ -8025,7 +8017,7 @@
       "tug": 1,
       "bait": 4937,
       "spawn": 20,
-      "duration": 7,
+      "duration": 8,
       "weathers": [
         1,
         2
@@ -8051,8 +8043,8 @@
       "hookset": 1,
       "tug": 1,
       "bait": 2624,
-      "spawn": 4,
-      "duration": 6,
+      "spawn": 4.5,
+      "duration": 5.5,
       "weathers": [
         4
       ],
@@ -8552,8 +8544,8 @@
       "hookset": 1,
       "tug": 1,
       "bait": 4978,
-      "spawn": 4,
-      "duration": 8,
+      "spawn": 4.5,
+      "duration": 7,
       "weathers": [
         4
       ],
@@ -10482,7 +10474,7 @@
       "tug": 1,
       "bait": 12712,
       "spawn": 9,
-      "duration": 8,
+      "duration": 7.5,
       "snagging": false,
       "minGathering": 0
     }
@@ -10752,8 +10744,8 @@
       "hookset": 1,
       "tug": 0,
       "bait": 12712,
-      "spawn": 15,
-      "duration": 2,
+      "spawn": 15.5,
+      "duration": 1.5,
       "weathers": [
         1,
         2
@@ -10963,7 +10955,7 @@
       "tug": 2,
       "bait": 12710,
       "spawn": 18,
-      "duration": 5,
+      "duration": 6,
       "weathers": [
         9
       ],
@@ -12680,7 +12672,7 @@
       "tug": 2,
       "bait": 20613,
       "spawn": 16,
-      "duration": 3,
+      "duration": 2.25,
       "snagging": false,
       "minGathering": 0
     }
@@ -22540,8 +22532,8 @@
       "hookset": 2,
       "tug": 1,
       "bait": 27589,
-      "spawn": 23,
-      "duration": 1,
+      "spawn": 23.5,
+      "duration": 0.5,
       "weathers": [
         1
       ],
@@ -25934,7 +25926,8 @@
           "amount": 3
         }
       ],
-      "minGathering": 3300
+      "minGathering": 3300,
+      "video": "https://youtu.be/EyneCL9gcvM"
     }
   ],
   "41410": [
@@ -25943,8 +25936,8 @@
       "hookset": 2,
       "tug": 1,
       "bait": 36590,
-      "spawn": 15,
-      "duration": 2,
+      "spawn": 15.5,
+      "duration": 1,
       "weathers": [
         49
       ],
