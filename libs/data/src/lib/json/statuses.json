@@ -10537,7 +10537,7 @@
     "icon": "/i/013000/013116.png",
     "description": {
       "en": "Most attacks will not reduce HP below 1. Restoring HP with each weaponskill successfully delivered and spell cast. The inability to restore 100% of HP before timer runs out will result in KO.",
-      "de": "Die meisten Attacken verringern die LP auf nicht weniger als 1. Geht k. o., wenn nicht vor Ende des Effekts insgesamt 100&nbsp;% der Maximal-LP geheilt wurden. Eigene Waffenfertigkeiten und Magie regenerieren HP.",
+      "de": "Die meisten Attacken verringern die LP auf nicht weniger als 1. Geht k. o., wenn nicht vor Ende des Effekts insgesamt 100&nbsp;% der Maximal-LP geheilt wurden. Eigene Waffenfertigkeiten und Magie regenerieren LP.",
       "ja": "一部を除くすべての攻撃に対してＨＰが1より減ることがない状態。十分な回復効果を得られないまま効果が切れると戦闘不能になる。また、自身のウェポンスキルおよび魔法による攻撃が命中するとＨＰを回復する状態。",
       "fr": "Les PV ne peuvent pas être réduits en dessous de 1 par la plupart des attaques. Le personnage tombera inconscient si les PV ne sont pas restaurés à 100% avant la fin de l'effet. Absorbe des PV lorsque des techniques d'arme ou des sorts touchent."
     }
@@ -40795,7 +40795,7 @@
   },
   "3139": {
     "en": "Frontline March",
-    "de": "Marsch der Front",
+    "de": "Frontenmarsch",
     "ja": "進撃のマーチ［被］",
     "fr": "Marche des conquérants",
     "icon": "/i/012000/012602.png",
@@ -40821,7 +40821,7 @@
   },
   "3141": {
     "en": "Frontline Forte",
-    "de": "Front Forte",
+    "de": "Forte der Front",
     "ja": "エイペックス・フォルテ［被］",
     "fr": "Alpha mezzo forte",
     "icon": "/i/012000/012604.png",

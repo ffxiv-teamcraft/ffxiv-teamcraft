@@ -9554,7 +9554,7 @@
     "rewards": [
       {
         "id": 30362,
-        "amount": 12
+        "amount": 40
       },
       {
         "id": 3550,
@@ -9792,7 +9792,7 @@
     "rewards": [
       {
         "id": 30362,
-        "amount": 8
+        "amount": 26
       }
     ],
     "banner": "/i/100000/100164.png"
@@ -13983,7 +13983,7 @@
     "rewards": [
       {
         "id": 30362,
-        "amount": 10
+        "amount": 33
       }
     ],
     "banner": "/i/100000/100117.png"
