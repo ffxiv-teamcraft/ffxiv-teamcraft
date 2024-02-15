@@ -254,6 +254,7 @@
     "No_folder": "Aucun dossier",
     "Click_to_show_all_alarms": "Cliquez pour afficher toutes les alarmes",
     "Enable_TTS": "Activer la synthèse vocale",
+    "Next_spawn_prefix": "Next: ",
     "REALTIME": {
       "Reset_timers": "Rappels",
       "WEEKLY_RESETS": "Resets hebdos",
@@ -525,6 +526,8 @@
     "Alarm_groups_before_no_group": "Afficher les groupes d'alarmes avant les alarmes sans groupe",
     "Disconnect_patreon": "Se déconnecter de Patreon",
     "Disconnect_tipeee": "Se déconnecter de Tipeee",
+    "Supporter_issue": "Votre statut de supporter semble avoir un problème",
+    "Supporter_issue_description": "Votre compte est lié à Patreon ou Tipeee mais vous avez toujours des publicités ? Si vous êtes toujours un supporter, vous pouvez vous déconnecter de Patreon/Tipeee dans les paramètres, puis vous reconnecter pour actualiser votre statut.",
     "Export_settings": "Exporter les paramètres",
     "Import_settings": "Importer les paramètres",
     "Import_successful": "Paramètres importés",
@@ -535,7 +538,7 @@
     "Reload_auth_token": "Recharger le jeton d'authentification",
     "Materia_confidence_rate": "Taux de confiance du sertissage de matérias",
     "Materia_confidence_rate_explain": "Le taux de confiance pour l'estimation de matéria, plus ce taux est élevé plus le nombre de matérias suggérées sera important, pour être sûr de réussir tous les sertissages",
-    "Disable_hardware_acceleration": "Désactiver l'accélération matérielle",
+    "Enable_hardware_acceleration": "Enable hardware acceleration",
     "Housing_map": "Carte du logement",
     "Housing_map_explain": "La carte du logement de votre maison",
     "Reset_linked_characters_ok": "Les liens des personnages ont été réinitialisés",
@@ -810,6 +813,7 @@
       "Crafts": "Fabrications ordonnées",
       "Toggle_overlay": "Ouvrir/Fermer l'overlay pas à pas",
       "Empty_map": "Rien à faire sur la carte actuelle, la carte la plus proche pour cette liste est {{closest}}",
+      "Only_crafts_remaining": "Tout a été récolté pour cette liste, il ne reste plus que l'artisanat.",
       "Unknown_map": "Carte inconnue, veuillez changer de carte pour permettre à TC de la détecter.",
       "No_list": "Aucune liste sélectionnée, veuillez ouvrir une liste dans la fenêtre principale pour que l'overlay fonctionne comme prévu.",
       "Others": "Autres"
@@ -1141,7 +1145,7 @@
       "Malleable": "Malléable",
       "Primed": "Apprêté",
       "Normal": "Normal",
-      "Good_omen": "Good Omen"
+      "Good_omen": "Bon présage"
     },
     "SOLVER": {
       "Hq_target": "%HQ Ciblé",
@@ -2960,6 +2964,7 @@
     "Shadow_size": "Taille de l'ombre",
     "Deprecated": "Cet objet ne peut plus être obtenu",
     "Select_all": "Sélectionner toutes les propositions",
+    "Input_hours_tip": "Input value in hours, use decimals to add minutes (ex: 7.5 is equal to 7:30)",
     "SPEEDS": {
       "VERY_SLOW": "Très lent",
       "SLOW": "Lent",

@@ -254,6 +254,7 @@
     "No_folder": "No folder",
     "Click_to_show_all_alarms": "Click to show all alarms",
     "Enable_TTS": "Enable Text-to-Speech",
+    "Next_spawn_prefix": "Next: ",
     "REALTIME": {
       "Reset_timers": "Repor temporizadores",
       "WEEKLY_RESETS": "Semanais",
@@ -525,6 +526,8 @@
     "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
     "Disconnect_patreon": "Disconnect from Patreon",
     "Disconnect_tipeee": "Disconnect from Tipeee",
+    "Supporter_issue": "Your supporter status appears to be having an issue",
+    "Supporter_issue_description": "Your account is linked to Patreon or Tipeee but you still have ads, if you're still a supporter, you might want to disconnect from Patreon/Tipeee in setting and connect again to refresh your status.",
     "Export_settings": "Export settings",
     "Import_settings": "Import settings",
     "Import_successful": "Settings imported",
@@ -535,7 +538,7 @@
     "Reload_auth_token": "Reload auth token",
     "Materia_confidence_rate": "Melding confidence rate",
     "Materia_confidence_rate_explain": "Confidence rate for materia estimate. Higher means that more materias will be suggested to be more confident that with this amount, your melds will succeed",
-    "Disable_hardware_acceleration": "Disable hardware acceleration",
+    "Enable_hardware_acceleration": "Enable hardware acceleration",
     "Housing_map": "Housing map",
     "Housing_map_explain": "The housing map in which your house is",
     "Reset_linked_characters_ok": "Character links have been reset",
@@ -810,6 +813,7 @@
       "Crafts": "Ordered crafts",
       "Toggle_overlay": "Open/Close step by step overlay",
       "Empty_map": "Nothing to do in the current map, closest map for this list is {{closest}}",
+      "Only_crafts_remaining": "Everything has been gathered for this list, only crafts remain.",
       "Unknown_map": "Unknown map, please change map to allow TC to detect it.",
       "No_list": "No list selected, please open a list in main window to have the overlay work as intended.",
       "Others": "Others"
@@ -2960,6 +2964,7 @@
     "Shadow_size": "Shadow size",
     "Deprecated": "This item cannot be obtained anymore",
     "Select_all": "Select all proposals",
+    "Input_hours_tip": "Input value in hours, use decimals to add minutes (ex: 7.5 is equal to 7:30)",
     "SPEEDS": {
       "VERY_SLOW": "Very slow",
       "SLOW": "Slow",
