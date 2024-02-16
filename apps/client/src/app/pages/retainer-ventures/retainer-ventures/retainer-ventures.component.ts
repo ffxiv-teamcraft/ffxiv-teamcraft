@@ -37,6 +37,7 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
+import { PlatformService } from '../../../core/tools/platform.service';
 
 @Component({
     selector: 'app-retainer-ventures',
@@ -202,7 +203,7 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
   constructor(private retainersService: RetainersService, private inventoryFacade: InventoryService,
               private lazyData: LazyDataFacade, private fb: UntypedFormBuilder, private gearsetsFacade: GearsetsFacade,
               private statsService: StatsService, private universalis: UniversalisService,
-              private authFacade: AuthFacade,
+              private authFacade: AuthFacade, public platform: PlatformService,
               public translate: TranslateService, private environment: EnvironmentService) {
     super();
     this.servers$ = this.lazyData.servers$.pipe(
