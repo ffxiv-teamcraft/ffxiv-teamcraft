@@ -116,6 +116,7 @@ export function listsReducer(
       state = {
         ...updateLists(action.payload, state, list => {
           return list.authorId === action.userId
+            && list.$key !== state.selectedId
             && !list.offline
             && !list.archived;
         }),
@@ -157,7 +158,8 @@ export function listsReducer(
     case ListsActionTypes.TeamListsLoaded: {
       state = {
         ...updateLists(action.payload, state, list => {
-          return list.teamId === action.teamId;
+          return list.teamId === action.teamId
+            && list.$key !== state.selectedId;
         }),
         connectedTeams: [
           ...state.connectedTeams,

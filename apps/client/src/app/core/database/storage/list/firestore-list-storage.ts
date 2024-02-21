@@ -80,7 +80,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> {
         return cleanedItem;
       }, {}) as ListRow;
     });
-    return ListController.updateEtag(clone);
+    return clone;
   }
 
   public completeListData(list: List): Observable<List> {

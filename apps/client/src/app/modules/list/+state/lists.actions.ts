@@ -138,14 +138,14 @@ export class SetItemDone implements Action {
               public readonly finalItem: boolean, public readonly doneDelta: number,
               public readonly recipeId: string, public readonly totalNeeded: number, public readonly settings: { enableAutofillHQFilter: boolean, enableAutofillNQFilter: boolean },
               public readonly external = false, public readonly fromPacket = false,
-              public readonly hq = false, public readonly listId?: string, public readonly skipHistory = false) {
+              public readonly hq = false, public readonly listId?: string, public readonly timestamp = Date.now()) {
   }
 }
 
 export class UpdateItem implements Action {
   readonly type = ListsActionTypes.UpdateItem;
 
-  constructor(public readonly item: ListRow, public readonly finalItem: boolean) {
+  constructor(public readonly item: ListRow, public readonly finalItem: boolean, public readonly timestamp = Date.now()) {
   }
 }
 

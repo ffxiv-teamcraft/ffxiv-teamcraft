@@ -9,6 +9,7 @@ import { List } from './model/list';
 import { syncHqFlags } from '../../core/data/sources/sync-hq-flags';
 import { Timestamp } from '@angular/fire/firestore';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
+import { now } from 'lodash';
 
 
 declare const gtag: (...args: any[]) => any;
@@ -228,8 +229,9 @@ export class ListController {
    * @param recipeId
    * @param external
    * @param initialAddition
+   * @param newEtag
    */
-  public static setDone(list: List, itemId: number | string, amount: number, excludeFinalItems = false, onlyFinalItems = false, setUsed = false, recipeId?: string, external = false, initialAddition = amount): void {
+  public static setDone(list: List, itemId: number | string, amount: number, excludeFinalItems: boolean = false, onlyFinalItems = false, setUsed: boolean = false, recipeId?: string, external = false, initialAddition = amount, newEtag = Date.now()): void {
     const item = ListController.getItemById(list, itemId, excludeFinalItems, onlyFinalItems, recipeId);
     const previousDone = item.amount_needed - MathTools.absoluteCeil((item.amount - item.done) / item.yield);
     if (setUsed) {
@@ -276,12 +278,12 @@ export class ListController {
             && (newDone - previousDone <= 0) === (initialAddition <= 0)) {
             // If the amount of items we did in this iteration hasn't changed, no need to mark requirements as used,
             // as we didn't use more.
-            ListController.setDone(list, requirement.id, nextAmount, true, false, true, undefined, external, initialAddition);
+            ListController.setDone(list, requirement.id, nextAmount, true, false, true, undefined, external, initialAddition, newEtag);
           }
         }
       }
     }
-    ListController.updateEtag(list);
+    list.etag = newEtag;
   }
 
   public static canBeCrafted(list: List, item: ListRow): boolean {

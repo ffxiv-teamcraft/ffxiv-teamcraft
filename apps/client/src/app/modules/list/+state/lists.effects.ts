@@ -56,7 +56,6 @@ import { PlatformService } from '../../../core/tools/platform.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { SettingsService } from '../../settings/settings.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { DirtyFacade } from '../../../core/dirty/+state/dirty.facade';
 import { CommissionService } from '../../commission-board/commission.service';
 import { SoundNotificationService } from '../../../core/sound-notification/sound-notification.service';
 import { SoundNotificationType } from '../../../core/sound-notification/sound-notification-type';
@@ -69,10 +68,7 @@ import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 import { increment, UpdateData, where } from '@angular/fire/firestore';
 import { debounceBufferTime } from '../../../core/rxjs/debounce-buffer-time';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
-import { ListHistoryService } from '../../../core/database/storage/list/list-history.service';
-import { ModificationEntry } from '../model/modification-entry';
 
-// noinspection JSUnusedGlobalSymbols
 @Injectable()
 export class ListsEffects {
 
@@ -457,7 +453,7 @@ export class ListsEffects {
     debounceBufferTime(50)
   ).pipe(
     concatMap((entries: [SetItemDone, List][]) => {
-      const groupedByList = entries.reduce((acc, entry) => {
+      const groupedByList: { list: List, actions: SetItemDone[] }[] = entries.reduce((acc, entry) => {
         let listEntry = acc.find(e => e.list.$key === entry[1].$key);
         if (!listEntry) {
           acc.push({
@@ -481,25 +477,11 @@ export class ListsEffects {
             if (list.hasCommission) {
               this.updateCommission(list);
             }
-            const historyEntries = actions
-              .filter(action => !action.skipHistory)
-              .map((action: SetItemDone) => {
-                return <ModificationEntry>{
-                  listId: list.$key,
-                  amount: action.doneDelta,
-                  itemId: action.itemId,
-                  finalItem: action.finalItem || false,
-                  recipeId: action.recipeId,
-                  total: action.totalNeeded
-                };
-              });
-            if (historyEntries.length > 0) {
-              this.listsFacade.addModificationsHistoryEntries(historyEntries);
-            }
             return this.listService.runTransaction(list.$key, (transaction, serverCopy) => {
               const serverList = serverCopy.data() as List;
+              this.listService.recordOperation('read');
               actions.forEach(action => {
-                ListController.setDone(serverList, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
+                ListController.setDone(serverList, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external, action.doneDelta, action.timestamp);
                 ListController.updateAllStatuses(serverList, action.itemId);
               });
               this.listService.recordOperation('write');
@@ -525,7 +507,7 @@ export class ListsEffects {
         list.items = updatedItems;
       }
       ListController.updateAllStatuses(list, action.item.id);
-      ListController.updateEtag(list);
+      list.etag = action.timestamp;
       return list;
     }),
     map(list => new UpdateList(list))
@@ -608,11 +590,9 @@ export class ListsEffects {
     private settings: SettingsService,
     private i18n: I18nToolsService,
     private lazyData: LazyDataFacade,
-    private dirtyFacade: DirtyFacade,
     private commissionService: CommissionService,
     private soundNotificationService: SoundNotificationService,
-    private pricingService: ListPricingService,
-    private listHistoryService: ListHistoryService
+    private pricingService: ListPricingService
   ) {
   }
 
