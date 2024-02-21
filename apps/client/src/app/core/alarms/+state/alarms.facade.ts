@@ -41,7 +41,7 @@ import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { LazyPatchName } from '@ffxiv-teamcraft/data/model/lazy-patch-name';
 import { AlarmStatus } from '../alarm-status';
 import { AlarmStatusService } from '../alarm-status.service';
-import { differenceInMinutes, differenceInSeconds } from 'date-fns';
+import { addSeconds, differenceInMinutes, differenceInSeconds } from 'date-fns';
 
 @Injectable({
   providedIn: 'root'
@@ -278,7 +278,7 @@ export class AlarmsFacade {
       const status = this.alarmStatusService.getAlarmStatus(alarm, etime);
       this.statusCache[cacheKey] = {
         status,
-        expires: this.etime.toEarthDate(status.spawned ? status.nextSpawn.despawn : status.nextSpawn.date)
+        expires: addSeconds(this.etime.toEarthDate(status.spawned ? status.nextSpawn.despawn : status.nextSpawn.date), 3)
       };
     }
     return this.statusCache[cacheKey].status;
