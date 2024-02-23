@@ -9,7 +9,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 * **db:** 6.57 data changes ([1df17c2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1df17c23410dd567fc4b27e7644167ca86a37aee))
 * **db:** allagan reports import ([4904ddb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4904ddb421a5e72e6996b086559d32122ba8ce4a))
-* **db:** allagan reports import ([4483a8e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4483a8e77d57b538ec174da850c880195c918115))
 * **layouts:** Add CAN_BE_BOUGHT_WITHOUT_TRIBES layout filter ([d1e7ecc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d1e7ecc564929fb497ad3b1c1182b58c39f4cbf1))
 
 
@@ -18,9 +17,7 @@ All notable changes to this project will be documented in this file. See [standa
 * **alarms:** alarms sometimes ringing at the end of the trigger ([77cc194](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/77cc194e24d25275ebbedf432d841402c95b3863))
 * **allagan-reports:** allow spawn times <= 24 instead of <=23 ([bf98b6b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bf98b6b72c0a8cfed93c25d65a510a261a33f143))
 * **gearset:** disabled lodestone import for now as it's not working ([46deac6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/46deac6b219c130dffbdceb3167c2781a58735a1))
-* Handmade levemetes data ([437ba36](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/437ba3610539e29513680e847024dd2c49966a67))
-* Handmade levemetes data ([504812e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/504812e5e61ddb1a55ca6741b9f758964cbf40c2))
-* Handmade levemetes data ([c42aa6b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c42aa6b8ac542f2c081e20444d2d62f0b6fb770b))
+* **leves:** fix handmade levemetes data ([437ba36](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/437ba3610539e29513680e847024dd2c49966a67))
 * **retainer-ventures:** do not show "fill with retainer" on web ([e0766e8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e0766e84ac7d2746a32e76f32ac5280f02752df6))
 
 ### [11.0.27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.26...v11.0.27) (2024-02-05)
