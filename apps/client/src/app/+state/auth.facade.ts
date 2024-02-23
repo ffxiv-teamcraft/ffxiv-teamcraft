@@ -25,7 +25,7 @@ import {
   UpdateUser,
   VerifyCharacter
 } from './auth.actions';
-import { catchError, delay, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
+import { catchError, delay, distinctUntilChanged, distinctUntilKeyChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { PlatformService } from '../core/tools/platform.service';
 import { IpcService } from '../core/electron/ipc.service';
 import { CharacterLinkPopupComponent } from '../core/auth/character-link-popup/character-link-popup.component';
@@ -82,6 +82,7 @@ export class AuthFacade {
 
   logTracking$ = this.store.select(authQuery.getLogTracking).pipe(
     lazyLoaded(this.store, this.user$.pipe(
+      distinctUntilKeyChanged('defaultLodestoneId'),
       map(user => new LoadLogTracking(user.$key, user.defaultLodestoneId))
     )),
     isFoundAndDefined('crafting', 'gathering')

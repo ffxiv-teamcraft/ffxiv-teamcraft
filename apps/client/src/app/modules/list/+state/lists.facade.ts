@@ -210,7 +210,7 @@ export class ListsFacade {
 
   constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
               private teamsFacade: TeamsFacade, private settings: SettingsService, private userInventoryService: InventoryService,
-              private router: Router, private serializer: NgSerializerService, private itemPicker: ItemPickerService,
+              router: Router, private serializer: NgSerializerService, private itemPicker: ItemPickerService,
               private listManager: ListManagerService, private progress: ProgressPopupService, private ipc: IpcService,
               private listsService: FirestoreListStorage, private analyticsService: AnalyticsService, private listsHistoryService: ListHistoryService) {
     router.events
@@ -338,8 +338,7 @@ export class ListsFacade {
                 totalNeeded,
                 external = false,
                 fromPacket = false,
-                hq = false,
-                skipHistory = false
+                hq = false
               }: {
     itemId: number,
     itemIcon: number,
@@ -362,8 +361,7 @@ export class ListsFacade {
       totalNeeded: totalNeeded,
       external: external,
       fromPacket: fromPacket,
-      hq: hq,
-      skipHistory: skipHistory
+      hq: hq
     });
   }
 
@@ -377,8 +375,7 @@ export class ListsFacade {
                     totalNeeded,
                     external = false,
                     fromPacket = false,
-                    hq = false,
-                    skipHistory = false
+                    hq = false
                   }: {
     listId: string,
     itemId: number,
@@ -390,7 +387,6 @@ export class ListsFacade {
     external?: boolean,
     fromPacket?: boolean,
     hq?: boolean,
-    skipHistory?: boolean
   }): void {
     if (this.settings.autoMarkAsCompleted && delta > 0) {
       this.authFacade.markAsDoneInLog(recipeId ? 'crafting' : 'gathering', +(recipeId || itemId), true);
@@ -403,7 +399,7 @@ export class ListsFacade {
     this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, {
       enableAutofillHQFilter: this.settings.enableAutofillHQFilter,
       enableAutofillNQFilter: this.settings.enableAutofillNQFilter
-    }, external, fromPacket, hq, listId, skipHistory));
+    }, external, fromPacket, hq, listId));
   }
 
   markAsHq(itemIds: number[], hq: boolean, finalItems: boolean): void {

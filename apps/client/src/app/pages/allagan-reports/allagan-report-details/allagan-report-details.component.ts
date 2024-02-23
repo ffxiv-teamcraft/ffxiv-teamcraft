@@ -186,16 +186,16 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     .filter(key => !isNaN(+key))
     .map(key => ({ key: +key, value: OceanFishingTime[key] }));
 
-  /** Spawn are limited to hours (0 to 23) **/
+  /** Spawn are limited to hours (0 to 24) **/
   public SPAWN_VALIDATOR = {
     min: 0,
-    max: 23
+    max: 24
   };
 
-  /** Duration is only limited to hours (0 to 23) **/
+  /** Duration is only limited to hours (0 to 24) **/
   public DURATION_VALIDATOR = {
     min: 0,
-    max: 23
+    max: 24
   };
 
   form: UntypedFormGroup = this.fb.group({
@@ -719,6 +719,6 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   }
 
   private getDuration(byId: Record<string, number>): number | null {
-    return Object.values(byId).filter(v => v > 0).length;
+    return Object.values(byId).filter(v => v > 0).length / 4;
   }
 }

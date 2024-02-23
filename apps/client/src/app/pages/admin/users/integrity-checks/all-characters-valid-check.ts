@@ -1,13 +1,13 @@
 import { IntegrityCheck } from './integrity-check';
 import { combineLatest, Observable, of } from 'rxjs';
 import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
-import { catchError, map, mapTo } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
+import { inject } from '@angular/core';
 import { LodestoneService } from '../../../../core/api/lodestone.service';
 
 export class AllCharactersValidCheck implements IntegrityCheck<number[]> {
 
-  constructor(private characterService: LodestoneService) {
-  }
+  private characterService = inject(LodestoneService)
 
   getNameKey(): string {
     return 'All_characters_valid';
@@ -21,7 +21,7 @@ export class AllCharactersValidCheck implements IntegrityCheck<number[]> {
     return combineLatest(
       user.lodestoneIds.map(entry => {
         return this.characterService.getCharacter(entry.id).pipe(
-          mapTo(true),
+          map(() => true),
           catchError(() => of(false))
         );
       })

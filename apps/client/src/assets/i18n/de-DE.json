@@ -254,6 +254,7 @@
     "No_folder": "Kein Ordner",
     "Click_to_show_all_alarms": "Klicken, um alle Alarme anzuzeigen",
     "Enable_TTS": "Text-zu-Sprache aktivieren",
+    "Next_spawn_prefix": "Next: ",
     "REALTIME": {
       "Reset_timers": "Timer-Zurücksetzung",
       "WEEKLY_RESETS": "Wöchentliche",
@@ -525,6 +526,8 @@
     "Alarm_groups_before_no_group": "Zeige Alarmgruppen vor ungruppierten Alarmen",
     "Disconnect_patreon": "Verbindung zu Patreon trennen",
     "Disconnect_tipeee": "Verbindung zu Tipeee trennen",
+    "Supporter_issue": "Your supporter status appears to be having an issue",
+    "Supporter_issue_description": "Your account is linked to Patreon or Tipeee but you still have ads, if you're still a supporter, you might want to disconnect from Patreon/Tipeee in setting and connect again to refresh your status.",
     "Export_settings": "Einstellungen exportieren",
     "Import_settings": "Einstellungen importieren",
     "Import_successful": "Einstellungen importiert",
@@ -535,7 +538,7 @@
     "Reload_auth_token": "Authentifizierungs-Token neu laden",
     "Materia_confidence_rate": "Erfolgsrate fürs Materia einsetzen",
     "Materia_confidence_rate_explain": "Zuversichtsrate für Materiaschätzungen. Höher bedeutet, dass mehr Materia vorgeschlagen wird, damit der Wert für erfolgreiche Verschmelzungen verlässlicher wird",
-    "Disable_hardware_acceleration": "Hardwarebeschleunigung deaktivieren",
+    "Enable_hardware_acceleration": "Enable hardware acceleration",
     "Housing_map": "Wohngebietskarte",
     "Housing_map_explain": "Die Karte des Wohngebiets, in dem dein Haus ist",
     "Reset_linked_characters_ok": "Charakterverknüpfungen wurden zurückgesetzt",
@@ -810,6 +813,7 @@
       "Crafts": "Bestellte Herstellungen",
       "Toggle_overlay": "Schritt-für-Schritt-Overlay öffnen/schließen",
       "Empty_map": "Nichts in der aktuellen Karte zu tun, die nächste Karte für diese Liste ist {{closest}}",
+      "Only_crafts_remaining": "Everything has been gathered for this list, only crafts remain.",
       "Unknown_map": "Unbekannte Karte, bitte wechsle die die Karte, damit TC sie erkennen kann.",
       "No_list": "Keine Liste ausgewählt, bitte öffne eine Liste im Hauptfenster, damit das Overlay wie beabsichtigt arbeitet.",
       "Others": "Weitere"
@@ -2960,6 +2964,7 @@
     "Shadow_size": "Schattengröße",
     "Deprecated": "Dieser Gegenstand kann nicht mehr erhalten werden",
     "Select_all": "Alle Vorschläge auswählen",
+    "Input_hours_tip": "Input value in hours, use decimals to add minutes (ex: 7.5 is equal to 7:30)",
     "SPEEDS": {
       "VERY_SLOW": "Sehr langsam",
       "SLOW": "Langsam",

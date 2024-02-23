@@ -10,16 +10,18 @@
       </ng-template>
     </nz-alert>
   </ng-container>
-  <div *ngIf="retainersWithStats$ | async as retainers" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
-    <div>{{'RETAINER_VENTURES.Use_retainer' | translate}}:&nbsp;</div>
-    <nz-select [nzPlaceHolder]="'RETAINER_VENTURES.Select_retainer' | translate"
-               [ngModel]="null"
-               (ngModelChange)="selectRetainer($event)"
-               class="retainer-filter"
-               nzShowSearch>
-      <nz-option *ngFor="let retainer of retainers" nzLabel="{{retainer.name}} (ilvl {{retainer.ilvl}})" [nzValue]="retainer"></nz-option>
-    </nz-select>
-  </div>
+  <ng-container *ngIf="platform.isDesktop()">
+    <div *ngIf="retainersWithStats$ | async as retainers" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+      <div>{{'RETAINER_VENTURES.Use_retainer' | translate}}:&nbsp;</div>
+      <nz-select [nzPlaceHolder]="'RETAINER_VENTURES.Select_retainer' | translate"
+                 [ngModel]="null"
+                 (ngModelChange)="selectRetainer($event)"
+                 class="retainer-filter"
+                 nzShowSearch>
+        <nz-option *ngFor="let retainer of retainers" nzLabel="{{retainer.name}} (ilvl {{retainer.ilvl}})" [nzValue]="retainer"></nz-option>
+      </nz-select>
+    </div>
+  </ng-container>
 
   <form nz-form nzLayout="inline" [formGroup]="form" (ngSubmit)="filters$.next(form.value)" fxLayout="row">
     <nz-form-item>
