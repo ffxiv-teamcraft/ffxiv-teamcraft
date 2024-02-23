@@ -52,7 +52,7 @@
     "Want_filters": "Brauchen Sie mehr Filter?",
     "Open_search": "Suchseite stattdessen öffnen",
     "Island_recipe": "Inselparadiesrezept",
-    "Ingesting_index": "Ingesting content for the newly selected language, this should take few seconds..."
+    "Ingesting_index": "Lese Inhalte für die neu gewählet Sprache ein, was nur wenige Sekunden dauern sollte..."
   },
   "Use_as_default_character": "Als Standard-Charakter setzen",
   "Download_desktop_app": "Desktopanwendung herunterladen",
@@ -137,7 +137,7 @@
     "Search": "Suche"
   },
   "COMMON": {
-    "Play": "Play",
+    "Play": "Wiedergabe",
     "Pause": "Pause",
     "Speed": "Geschwindigkeit",
     "Done": "Fertig",
@@ -190,7 +190,7 @@
     "Never": "Nie",
     "Festival": "Nur während eines Festivals",
     "Back": "Zurück",
-    "Support_us_remove_ads": "Support us to remove ads",
+    "Support_us_remove_ads": "Unterstütze uns, um Werbung zu entfernen",
     "Support_us": "Unterstütze uns",
     "Show_more": "Mehr anzeigen",
     "Item": "Gegenstand",
@@ -207,7 +207,7 @@
     "Visibility": "Sichtbarkeit",
     "Public": "Öffentlich",
     "Private": "Privat",
-    "Pagination_text": "{{start}}-{{end}} of {{total}} items",
+    "Pagination_text": "{{start}}-{{end}} von {{total}} Gegenständen",
     "And_X_more": "und {{amount}} mehr...",
     "DAYS": {
       "Monday": "Montag",
@@ -254,7 +254,7 @@
     "No_folder": "Kein Ordner",
     "Click_to_show_all_alarms": "Klicken, um alle Alarme anzuzeigen",
     "Enable_TTS": "Text-zu-Sprache aktivieren",
-    "Next_spawn_prefix": "Next: ",
+    "Next_spawn_prefix": "Nächste/r: ",
     "REALTIME": {
       "Reset_timers": "Timer-Zurücksetzung",
       "WEEKLY_RESETS": "Wöchentliche",
@@ -380,7 +380,7 @@
   "Use_lodestoneId": "Lodestone ID verwenden",
   "LodestoneId": "Lodestone ID",
   "List_forked": "Liste zu deinem Account kopiert",
-  "List_fork": "Copy this list to your account (ctrl + click to copy as offline list)",
+  "List_fork": "Kopiere diese Liste in dein Konto (Strg + Klicken zum Kopieren als Offline-Liste)",
   "List_not_found": "Liste nicht gefunden oder du hast keinen Zugriff darauf",
   "Requirements_for_craft": "Bedingungen ansehen",
   "Zone_breakdown": "Gebietsübersicht",
@@ -422,11 +422,11 @@
   "Precraft_tier": "Meilenstein",
   "Regenerating_lists": "Neugenerierende Liste",
   "SETTINGS": {
-    "Requires_restart": "Requires restart/refresh to be taken into account",
+    "Requires_restart": "Neustart/Aktualisierung für Übernahme in den Account notwendig",
     "Title": "Einstellungen",
     "General": "Allgemein",
     "Link_base": "Gegenstandslink-Quelle",
-    "DateFormat": "Date Format",
+    "DateFormat": "Datumsformat",
     "Region": "Region",
     "Region_explain": "Datenquelle und Funktionen, die auf einer bestimmten Spielversion basieren, werden pro Region angepasst. Einige davon sind in bestimmten Regionen möglicherweise nicht verfügbar.",
     "Proxy": "Proxy",
@@ -459,7 +459,7 @@
     "No_nickname_warning": "Bitte gehe in die Einstellungen und gib einen Benutzernamen an, um die Unterstützer-Funktionen vollständig nutzen zu können.",
     "Show_devtools": "Entwicklerwerkzeuge zeigen",
     "Clear_cache": "Cache leeren (erfordert einen Neustart der App)",
-    "Disable_fc_integration": "Disable FC sharing features",
+    "Disable_fc_integration": "Deaktiviere FG-Freigabefunktionen",
     "Enable_item_tags": "Gegenstand-Markierungen aktivieren",
     "Show_copy_list_own_list": "Kopieren-Schaltfläche auf eigenen Listenblöcken anzeigen",
     "Custom_theme": "Benutzerdefiniertes Design",
@@ -526,8 +526,8 @@
     "Alarm_groups_before_no_group": "Zeige Alarmgruppen vor ungruppierten Alarmen",
     "Disconnect_patreon": "Verbindung zu Patreon trennen",
     "Disconnect_tipeee": "Verbindung zu Tipeee trennen",
-    "Supporter_issue": "Your supporter status appears to be having an issue",
-    "Supporter_issue_description": "Your account is linked to Patreon or Tipeee but you still have ads, if you're still a supporter, you might want to disconnect from Patreon/Tipeee in setting and connect again to refresh your status.",
+    "Supporter_issue": "Dein Unterstützerstatus scheint ein Problem zu haben",
+    "Supporter_issue_description": "Dein Account ist mit Patreon oder Tipee verknüpft aber zeigt dennoch Werbung an. Wenn du nach wie vor Unterstützer bist, solltest du die Verknüpfung von Patreon/Tipee trennen und neu verbinden, um den Status zu aktualisieren.",
     "Export_settings": "Einstellungen exportieren",
     "Import_settings": "Einstellungen importieren",
     "Import_successful": "Einstellungen importiert",
@@ -538,14 +538,14 @@
     "Reload_auth_token": "Authentifizierungs-Token neu laden",
     "Materia_confidence_rate": "Erfolgsrate fürs Materia einsetzen",
     "Materia_confidence_rate_explain": "Zuversichtsrate für Materiaschätzungen. Höher bedeutet, dass mehr Materia vorgeschlagen wird, damit der Wert für erfolgreiche Verschmelzungen verlässlicher wird",
-    "Enable_hardware_acceleration": "Enable hardware acceleration",
+    "Enable_hardware_acceleration": "Hardwarebeschleunigung aktivieren",
     "Housing_map": "Wohngebietskarte",
     "Housing_map_explain": "Die Karte des Wohngebiets, in dem dein Haus ist",
     "Reset_linked_characters_ok": "Charakterverknüpfungen wurden zurückgesetzt",
-    "Display_slow_mode_notification": "Display crafting/gathering slow mode notification",
-    "New_child_window": "Create a new child window",
-    "Child_windows_title": "You can now open child windows in Teamcraft desktop !",
-    "Child_windows_description": "When clicking something that navigates (like the \"i\" button for database pages or any link in the app), use ctrl + click or middle click instead to open in a new window. Additionally, you can create a new window using the new button next to the github stars count.",
+    "Display_slow_mode_notification": "Zeige langsames Herstellen / Sammeln von Benachrichtigungen",
+    "New_child_window": "Neues Unterfenster erstellen",
+    "Child_windows_title": "Du kannst jetzt das neue Unterfesnter im Teamcraft-Desktop öffnen!",
+    "Child_windows_description": "Wenn du auf etwas klickst, das navigiert (wie der \"i\" Button für Datenbankeinträge oder jeder andere Link in der App), benutze Strg + Mausklick oder mittlerer Mausklick stattdessen, um in einem neuen Fenster zu öffnen. Zusätzlich kannst du ein neues Fenster erstellen, indem du den neuen Button neben den GitHub Sternezähler benutzt.",
     "Desktop_tip_title": "Teamcraft hat eine Desktop-App! Besser, schneller, stärker",
     "Desktop_tip_description": "Desktop-App ist viel schneller durch die Offline-Suche. Es fügt auch Overlay-Funktionen und mehr mit der Paketerfassung hinzu (dies ist standardmäßig deaktiviert, wenn Sie die Paketerfassung vermeiden wollen). Es ist sehr empfehlenswert, sie anstelle der Web-Version für eine bessere Erfahrung zu verwenden.",
     "COLORS": {
@@ -813,7 +813,7 @@
       "Crafts": "Bestellte Herstellungen",
       "Toggle_overlay": "Schritt-für-Schritt-Overlay öffnen/schließen",
       "Empty_map": "Nichts in der aktuellen Karte zu tun, die nächste Karte für diese Liste ist {{closest}}",
-      "Only_crafts_remaining": "Everything has been gathered for this list, only crafts remain.",
+      "Only_crafts_remaining": "Alles wurde für diese Liste gesammelt, nur noch Herstellungen verbleiben.",
       "Unknown_map": "Unbekannte Karte, bitte wechsle die die Karte, damit TC sie erkennen kann.",
       "No_list": "Keine Liste ausgewählt, bitte öffne eine Liste im Hauptfenster, damit das Overlay wie beabsichtigt arbeitet.",
       "Others": "Weitere"
@@ -984,7 +984,7 @@
     "Ephemeral_node": "Vergängliches Vorkommen, kann erneut erscheinen",
     "Intro": "In dieser Kategorie kannst du nach sammelbaren Gegenständen suchen und Details und Standorte anzeigen lassen, sowie Alarme für einzelne Sammelstellen anlegen. Trage einfach einen Namen in das obige Feld ein und lass uns finden was du suchst!",
     "Hidden_item": "Versteckt",
-    "Fish_eyes": "Requires Fish Eyes to only care about weather requirement",
+    "Fish_eyes": "Fischauge notwendig, um sich nur um die Wettervoraussetzungen Gedanken zu machen",
     "Add_alarm": "Benachrichtigung hinzufügen",
     "Add_alarm_fish_eyes": "Alarm mit Fischaugen hinzufügen",
     "Snagging": "Benötigt Reißen",
@@ -1194,10 +1194,10 @@
     },
     "ROTATIONS": {
       "Search_placeholder": "Suche eine Rotation",
-      "Scan_guides": "Update guide links",
-      "Guide": "Guide",
-      "Cannot_delete_guide_rotation": "You cannot delete rotations that are used in guides",
-      "Guides_flags_updated": "Guide links have been updated",
+      "Scan_guides": "Update Leitfadenlinks",
+      "Guide": "Leitfaden",
+      "Cannot_delete_guide_rotation": "Du kannst keine Rotationen löschen, die in Leitfäden genutzt werden",
+      "Guides_flags_updated": "Leitfadenlinks wurden aktualisiert",
       "FOLDERS": {
         "Not_found": "Rotationsordner konnte nicht gefunden werden",
         "Folders": "Rotations-Ordner",
@@ -1389,10 +1389,10 @@
     "Ilvl": "G.-St.",
     "Cost": "Kosten",
     "Class_job": "Klasse/Job",
-    "Damage_phys": "Phys. Damage",
-    "Damage_mag": "Mag. Damage",
-    "Defense_phys": "Phys. Defense",
-    "Defense_mag": "Mag. Defense",
+    "Damage_phys": "Phys. Schaden",
+    "Damage_mag": "Mag. Schaden",
+    "Defense_phys": "Phys. Verteidigung",
+    "Defense_mag": "Mag. Verteidigung",
     "Masterbooks": "Benötigt ein Meisterbuch"
   },
   "SEARCH_INTRO": {
@@ -1627,9 +1627,9 @@
     "Currencies": "Währungen",
     "Rowena_splendor": "Rowenas Haus der Wunder",
     "Unlocks": "Freischaltung von",
-    "Jump_to_page": "Open db page",
+    "Jump_to_page": "Öffne DB Seite",
     "Ishgard_restoration": "Wiederaufbau Ishgards",
-    "GC_supply_value": "Expert Delivery",
+    "GC_supply_value": "Expertenlieferung",
     "ITEM": {
       "Masterpiece_exp_tooltip": "% an Routine, die für das nächste Level benötigt wird",
       "Required_craftsmanship": "benötigte Kunstfertigkeit",
@@ -1641,8 +1641,8 @@
       "Requires_gc_rank": "Erfordert Rang {{rank}} bei der Staatlichen Gesellschaft"
     },
     "FISH": {
-      "Fruity_video": "How to catch video",
-      "Fruity_video_description": "Link to the \"how catch video\" from Fruity Snacks for this fish",
+      "Fruity_video": "Wie fangen Video",
+      "Fruity_video_description": "Link zum \"Wie fangen Video\" von Fruity Snacks für diesen Fisch",
       "Hour": "Eorzea-Zeit",
       "Etime": "Eorzea-Zeit",
       "Misses_popup_title": "Fehlschläge für diesen Ort",
@@ -1703,8 +1703,8 @@
         "Large": "Groß",
         "Time_since_thrown": "Zeit seit Wurf",
         "Throw_etime": "Line throw etime",
-        "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
-        "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
+        "Ignored_spot": "Dieser Spot wird nicht unterstützt, vermutlich werden seltsame Werte angezeigt.",
+        "Ignored_spot_description": "Keiner deiner gefangenen Fische wird durch den Reporter unterstützt.",
         "ERRORS": {
           "No_bait": "Kein Köder erkannt. Zur Behebung Köder einmal wechseln.",
           "No_stats": "Keine Attribute gefunden. Wechsel erneut zum Fischer, um dies zu beheben."
@@ -1718,11 +1718,11 @@
       "Fish_per_weather": "Fisch pro Wetter",
       "Fish_per_bait": "Fisch pro Köder",
       "Fish_per_tug": "Fisch pro Spitze",
-      "Fish_per_hookset": "Fish per hookset",
+      "Fish_per_hookset": "Fische pro Hakenset",
       "Include_misses": "Fehlschläge einbeziehen",
       "Miss": "Fehlschlag",
       "Remove_this_bait": "Diesen Köder entfernen",
-      "Bait_removed": "Bait removed from this spot",
+      "Bait_removed": "Köder entfernt für diesen Spot",
       "Position_unknown": "Unbekannter Ort"
     },
     "NODE": {
@@ -1745,7 +1745,7 @@
       "Repeatable": "Wiederholbar",
       "Beast_tribe_rank": "Rang bei Wilden Stämmen",
       "Chain_length": "Folgende Quests",
-      "Possible_trades": "Possible trades"
+      "Possible_trades": "Mögliche Handelsgeschäfte"
     },
     "NPC": {
       "Other_entries": "Andere Auftritte",
@@ -1871,7 +1871,7 @@
     "NPC": "NPC",
     "Leve": "Freibrief",
     "Leve_info_message": "Du kannst die Freibrief-Seite nutzen, um Levekits vorzubereiten und Erfahrungspunkte für deine Freibriefe zu berechnen",
-    "Comparison_tip": "You can compare items by selecting them and setting selection to comparison mode",
+    "Comparison_tip": "Du kannst Sachen vergleichen, indem du sie auswählst und die Auswahl in den Vergleichsmodus setzt",
     "Monster": "Monster",
     "Lore": "Handlung",
     "Fate": "FATE",
@@ -1923,7 +1923,7 @@
     "Shown_only_collectables": "Nur Sammlerstücke",
     "Recipe_level": "Rezeptstufe",
     "Shown_only_not_completed": "Nur im Log nicht erledigt",
-    "Add_results_to_pool": "Add to pool when adding to basket",
+    "Add_results_to_pool": "Beim Hinzufügen in den Warenkorb zum Pool hinzufügen",
     "Show_only_leve_items": "Nur Gegenstände die in Freibriefen verwendet werden"
   },
   "CURRENCY_SPENDING": {
@@ -1984,8 +1984,8 @@
     "Select_stat": "Attribut auswählen",
     "Level": "Stufe",
     "SELECTION_MODE": {
-      "List": "List",
-      "Compare": "Compare"
+      "List": "Liste",
+      "Compare": "Vergleichen"
     },
     "SORT_BY": {
       "Relevance": "Relevanz",
@@ -2108,8 +2108,8 @@
       "Message": "Dieser Gegenstand ist ebenfalls in folgendem Inventar enthalten: {{containers}}."
     },
     "NOT_IN_LIST": {
-      "Title": "Items that are not used in any of your lists",
-      "Message": "This item is not used in any of your lists."
+      "Title": "Elemente, die in keiner deiner Listen verwendet werden",
+      "Message": "Dieses Element wird in keiner deiner Listen verwendet."
     },
     "HAS_TOO_FEW": {
       "Title": "Gegenstände, die du in sehr kleinen Stapeln hast",
@@ -2419,9 +2419,9 @@
     "Import_success": "Übersichtsseite importiert und ausgewählt",
     "Nothing_to_show": "Keine anzuzeigenden Daten",
     "Nothing_to_show_description": "Stelle sicher, dass du einen Zeitraum ausgewählt hast, in dem TC Daten erfasst hat und stelle sicher, dass diese Option aktiviert ist (Einstellungen -> Desktop -> Metriken erfassen aktivieren)",
-    "Importing": "Importing metrics data to the new sql format, please don't close Teamcraft. This may take up to 15 minutes.",
-    "Imported": "Metrics data has been imported.",
-    "Deleted": "Metrics entry deleted",
+    "Importing": "Metrik-Daten werden in das neue sql-Format importiert, bitte schließe Teamcraft. Dies kann bis zu 15 Minuten dauern.",
+    "Imported": "Metrik-Daten wurden importiert.",
+    "Deleted": "Metrik-Eintrag gelöscht",
     "SOURCES": {
       "UNKNOWN": "Unbekannt",
       "GATHERING": "Sammeln",
@@ -2731,7 +2731,7 @@
     "Use_retainer": "Wähle Gehilfe aus",
     "Select_retainer": "Wähle einen Gehilfen",
     "Missing_gear": "Fehlende Ausrüstung",
-    "Missing_gear_description": "Some of your retainers are missing their gear in TC data, please summon each retainer again to load their gear"
+    "Missing_gear_description": "Einige deiner Gehilfen vermissen ihre Ausrüstung in den TC Daten, bitte rufe jeden Gehilfen noch einmal, um deren Ausrüstung zu laden"
   },
   "PATREON": {
     "By_supporting_us": "Durch deine Unterstützung auf Patreon erhältst du:",
@@ -2742,7 +2742,7 @@
     "Starting_at_X": "Ab ${{monthly}} pro Monat oder ${{yearly}} pro Jahr",
     "Footer_text": "Auch schon $1 pro Monat hat einen erheblichen Einfluss auf die Entwicklung von Teamcraft und bringt mich meinem Traum näher, ein Vollzeit-Entwickler bei diesem Projekt zu werden und es mehr als ein bloßes Werkzeug für FFXIV werden zu lassen.",
     "Already_supporter": "Du bist bereits ein Unterstützer?",
-    "Disable_ads_explanation": "To disable ads, connect with your Patreon or Tipeee account to make Teamcraft able to verify your support and disable ads automatically"
+    "Disable_ads_explanation": "Um Werbung zu deaktivieren, verbinde dich mit deinem Patreon oder Tipeee Konto, damit Teamcraft deine Unterstützung verifizieren und Werbung automatisch deaktivieren kann"
   },
   "SUPPORT_US": {
     "Popup_introduction": "Hallo, ich bin Miu, Entwickler jenes Programmes, dass du gerade verwendest.<br/> Teamcraft ist seit einigen Jahren ein Hobby für mich und mein Traum ist es, dieses Hobby zu meinem Vollzeitjob zu machen. <br/><br/>Mit deiner Hilfe könnte dieser Traum Wirklichkeit werden. Hierfür kannst du mich auf Patreon unterstützen. Jeder einzelne Euro zählt und wird mir helfen, dieses Ziel zu erreichen. <br/><br/> Die Unterstützung des Projekts auf Patreon bietet dir außerdem einige coole Vorteile:",
@@ -2809,7 +2809,7 @@
       "Favor": "Gunst"
     },
     "RANK_DETAILS": {
-      "Experience_Points": "Experience Points"
+      "Experience_Points": "Erfahrungspunkte"
     }
   },
   "AIRSHIP": {
@@ -2824,7 +2824,7 @@
         "Abbreviation": "E"
       },
       "INVINCIBLE_II": {
-        "Abbreviation": "J"
+        "Abbreviation": ""
       },
       "ODYSSEY": {
         "Abbreviation": "O"
@@ -3042,9 +3042,9 @@
     "Select_lists": "Wähle die Listen, die du zusammenfassen möchtest",
     "Select_layout": "Wähle ein Layout",
     "Select_layout_dropdown": "Display layout",
-    "Open_aggregate": "Open an aggregated view",
+    "Open_aggregate": "Öffne zusammengefasste Ansicht",
     "Title": "Aggregated list view",
-    "Select_panel": "Select a panel to open its view",
+    "Select_panel": "Wähle ein Panel, um seine Ansicht zu öffnen",
     "Missing_lists": "{{amount}} Liste(n) konnten nicht korrekt geladen werden",
     "Remove_missing_ids": "Fehlende Listen aus der Zusammenfassung entfernen",
     "Missing_lists_description": "Bitte stelle sicher, dass du genügend Berechtigungen für alle Listen hast und dass diese noch existieren (fehlende IDs: {{ids}}).",
