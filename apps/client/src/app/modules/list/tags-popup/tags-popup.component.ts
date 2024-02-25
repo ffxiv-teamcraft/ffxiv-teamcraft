@@ -36,7 +36,7 @@ export class TagsPopupComponent implements OnInit {
 
   confirm(list: List): void {
     ListController.updateEtag(list);
-    this.listsFacade.updateList(list, true);
+    this.listsFacade.updateList(list);
     this.modalRef.close();
   }
 

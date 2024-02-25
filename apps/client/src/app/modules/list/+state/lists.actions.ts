@@ -213,7 +213,7 @@ export class CreateList implements Action {
 export class UpdateList implements Action {
   readonly type = ListsActionTypes.UpdateList;
 
-  constructor(public readonly payload: List, public readonly updateCompact = false, public force = false, public fromPacket = false) {
+  constructor(public readonly payload: List) {
   }
 }
 
