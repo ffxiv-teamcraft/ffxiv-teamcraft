@@ -109,7 +109,7 @@
   },
   "private": true,
   "dependencies": {
-    "@ffxiv-teamcraft/pcap-ffxiv": "1.1.6",
+    "@ffxiv-teamcraft/pcap-ffxiv": "1.1.7",
     "@ungap/structured-clone": "^1.0.1",
     "@xivapi/nodestone": "^0.2.5",
     "buffer-reader": "^0.1.0",
