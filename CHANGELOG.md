@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.29](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.28...v11.0.29) (2024-02-29)
+
+
+### Bug Fixes
+
+* **desktop:** fixed items merge tracking in retainer inventory interactions ([31e973a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/31e973acb92ae34469cc0f7fd95439fa5d4a78d2))
+* **list:** fixed list sometimes not updating after adding/removing an item ([bc3a145](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bc3a145b51028b2bc2d9d2548667a1536f25af75))
+
 ### [11.0.28](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.27...v11.0.28) (2024-02-23)
 
 
