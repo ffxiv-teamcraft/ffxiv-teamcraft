@@ -447,7 +447,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.progressService.showProgress(this.listManager.upgradeList(list), 1, 'List_popup_title')
       .pipe(first())
       .subscribe((updatedList) => {
-        this.listsFacade.updateList(updatedList, false, true);
+        this.listsFacade.updateList(updatedList);
       });
   }
 

@@ -18,7 +18,7 @@
   "List_fork_in_progress": "Kopiere diese Liste zu deinem Account…",
   "Network_error_logged_out": "Ein Netzwerkfehler wurde erkannt und du wurdest abgemeldet. Wenn dieses Problem weiterhin besteht, kontaktiere bitte Miu auf dem Discord Server.",
   "Hide_zone_duplicates": "Zonen-Dubletten ausblenden (Gegenstände aus mehreren Zonen werden nur einmal angezeigt)",
-  "Patch_notes": "Patch Notes",
+  "Patch_notes": "Patchnotes",
   "Patch_notes_footer": "Gefallen dir die neuen Funktionen? Dann ziehe doch in Betracht das Projekt auf Patreon zu unterstützen",
   "Selection": "Auswahl",
   "Change_character": "Charakter",
@@ -52,7 +52,7 @@
     "Want_filters": "Brauchen Sie mehr Filter?",
     "Open_search": "Suchseite stattdessen öffnen",
     "Island_recipe": "Inselparadiesrezept",
-    "Ingesting_index": "Ingesting content for the newly selected language, this should take few seconds..."
+    "Ingesting_index": "Lese Inhalte für die neu gewählet Sprache ein, was nur wenige Sekunden dauern sollte..."
   },
   "Use_as_default_character": "Als Standard-Charakter setzen",
   "Download_desktop_app": "Desktopanwendung herunterladen",
@@ -137,7 +137,7 @@
     "Search": "Suche"
   },
   "COMMON": {
-    "Play": "Play",
+    "Play": "Wiedergabe",
     "Pause": "Pause",
     "Speed": "Geschwindigkeit",
     "Done": "Fertig",
@@ -190,7 +190,7 @@
     "Never": "Nie",
     "Festival": "Nur während eines Festivals",
     "Back": "Zurück",
-    "Support_us_remove_ads": "Support us to remove ads",
+    "Support_us_remove_ads": "Unterstütze uns, um Werbung zu entfernen",
     "Support_us": "Unterstütze uns",
     "Show_more": "Mehr anzeigen",
     "Item": "Gegenstand",
@@ -207,7 +207,7 @@
     "Visibility": "Sichtbarkeit",
     "Public": "Öffentlich",
     "Private": "Privat",
-    "Pagination_text": "{{start}}-{{end}} of {{total}} items",
+    "Pagination_text": "{{start}}-{{end}} von {{total}} Gegenständen",
     "And_X_more": "und {{amount}} mehr...",
     "DAYS": {
       "Monday": "Montag",
@@ -254,7 +254,7 @@
     "No_folder": "Kein Ordner",
     "Click_to_show_all_alarms": "Klicken, um alle Alarme anzuzeigen",
     "Enable_TTS": "Text-zu-Sprache aktivieren",
-    "Next_spawn_prefix": "Next: ",
+    "Next_spawn_prefix": "Nächste/r: ",
     "REALTIME": {
       "Reset_timers": "Timer-Zurücksetzung",
       "WEEKLY_RESETS": "Wöchentliche",
@@ -380,7 +380,7 @@
   "Use_lodestoneId": "Lodestone ID verwenden",
   "LodestoneId": "Lodestone ID",
   "List_forked": "Liste zu deinem Account kopiert",
-  "List_fork": "Copy this list to your account (ctrl + click to copy as offline list)",
+  "List_fork": "Kopiere diese Liste in dein Konto (Strg + Klicken zum Kopieren als Offline-Liste)",
   "List_not_found": "Liste nicht gefunden oder du hast keinen Zugriff darauf",
   "Requirements_for_craft": "Bedingungen ansehen",
   "Zone_breakdown": "Gebietsübersicht",
@@ -422,11 +422,11 @@
   "Precraft_tier": "Meilenstein",
   "Regenerating_lists": "Neugenerierende Liste",
   "SETTINGS": {
-    "Requires_restart": "Requires restart/refresh to be taken into account",
+    "Requires_restart": "Neustart/Aktualisierung für Übernahme in den Account notwendig",
     "Title": "Einstellungen",
     "General": "Allgemein",
     "Link_base": "Gegenstandslink-Quelle",
-    "DateFormat": "Date Format",
+    "DateFormat": "Datumsformat",
     "Region": "Region",
     "Region_explain": "Datenquelle und Funktionen, die auf einer bestimmten Spielversion basieren, werden pro Region angepasst. Einige davon sind in bestimmten Regionen möglicherweise nicht verfügbar.",
     "Proxy": "Proxy",
@@ -459,7 +459,7 @@
     "No_nickname_warning": "Bitte gehe in die Einstellungen und gib einen Benutzernamen an, um die Unterstützer-Funktionen vollständig nutzen zu können.",
     "Show_devtools": "Entwicklerwerkzeuge zeigen",
     "Clear_cache": "Cache leeren (erfordert einen Neustart der App)",
-    "Disable_fc_integration": "Disable FC sharing features",
+    "Disable_fc_integration": "Deaktiviere FG-Freigabefunktionen",
     "Enable_item_tags": "Gegenstand-Markierungen aktivieren",
     "Show_copy_list_own_list": "Kopieren-Schaltfläche auf eigenen Listenblöcken anzeigen",
     "Custom_theme": "Benutzerdefiniertes Design",
@@ -526,8 +526,8 @@
     "Alarm_groups_before_no_group": "Zeige Alarmgruppen vor ungruppierten Alarmen",
     "Disconnect_patreon": "Verbindung zu Patreon trennen",
     "Disconnect_tipeee": "Verbindung zu Tipeee trennen",
-    "Supporter_issue": "Your supporter status appears to be having an issue",
-    "Supporter_issue_description": "Your account is linked to Patreon or Tipeee but you still have ads, if you're still a supporter, you might want to disconnect from Patreon/Tipeee in setting and connect again to refresh your status.",
+    "Supporter_issue": "Dein Unterstützerstatus scheint ein Problem zu haben",
+    "Supporter_issue_description": "Dein Account ist mit Patreon oder Tipee verknüpft aber zeigt dennoch Werbung an. Wenn du nach wie vor Unterstützer bist, solltest du die Verknüpfung von Patreon/Tipee trennen und neu verbinden, um den Status zu aktualisieren.",
     "Export_settings": "Einstellungen exportieren",
     "Import_settings": "Einstellungen importieren",
     "Import_successful": "Einstellungen importiert",
@@ -538,14 +538,14 @@
     "Reload_auth_token": "Authentifizierungs-Token neu laden",
     "Materia_confidence_rate": "Erfolgsrate fürs Materia einsetzen",
     "Materia_confidence_rate_explain": "Zuversichtsrate für Materiaschätzungen. Höher bedeutet, dass mehr Materia vorgeschlagen wird, damit der Wert für erfolgreiche Verschmelzungen verlässlicher wird",
-    "Enable_hardware_acceleration": "Enable hardware acceleration",
+    "Enable_hardware_acceleration": "Hardwarebeschleunigung aktivieren",
     "Housing_map": "Wohngebietskarte",
     "Housing_map_explain": "Die Karte des Wohngebiets, in dem dein Haus ist",
     "Reset_linked_characters_ok": "Charakterverknüpfungen wurden zurückgesetzt",
-    "Display_slow_mode_notification": "Display crafting/gathering slow mode notification",
-    "New_child_window": "Create a new child window",
-    "Child_windows_title": "You can now open child windows in Teamcraft desktop !",
-    "Child_windows_description": "When clicking something that navigates (like the \"i\" button for database pages or any link in the app), use ctrl + click or middle click instead to open in a new window. Additionally, you can create a new window using the new button next to the github stars count.",
+    "Display_slow_mode_notification": "Zeige langsames Herstellen / Sammeln von Benachrichtigungen",
+    "New_child_window": "Neues Unterfenster erstellen",
+    "Child_windows_title": "Du kannst jetzt das neue Unterfesnter im Teamcraft-Desktop öffnen!",
+    "Child_windows_description": "Wenn du auf etwas klickst, das navigiert (wie der \"i\" Button für Datenbankeinträge oder jeder andere Link in der App), benutze Strg + Mausklick oder mittlerer Mausklick stattdessen, um in einem neuen Fenster zu öffnen. Zusätzlich kannst du ein neues Fenster erstellen, indem du den neuen Button neben den GitHub Sternezähler benutzt.",
     "Desktop_tip_title": "Teamcraft hat eine Desktop-App! Besser, schneller, stärker",
     "Desktop_tip_description": "Desktop-App ist viel schneller durch die Offline-Suche. Es fügt auch Overlay-Funktionen und mehr mit der Paketerfassung hinzu (dies ist standardmäßig deaktiviert, wenn Sie die Paketerfassung vermeiden wollen). Es ist sehr empfehlenswert, sie anstelle der Web-Version für eine bessere Erfahrung zu verwenden.",
     "COLORS": {
@@ -813,7 +813,7 @@
       "Crafts": "Bestellte Herstellungen",
       "Toggle_overlay": "Schritt-für-Schritt-Overlay öffnen/schließen",
       "Empty_map": "Nichts in der aktuellen Karte zu tun, die nächste Karte für diese Liste ist {{closest}}",
-      "Only_crafts_remaining": "Everything has been gathered for this list, only crafts remain.",
+      "Only_crafts_remaining": "Alles wurde für diese Liste gesammelt, nur noch Herstellungen verbleiben.",
       "Unknown_map": "Unbekannte Karte, bitte wechsle die die Karte, damit TC sie erkennen kann.",
       "No_list": "Keine Liste ausgewählt, bitte öffne eine Liste im Hauptfenster, damit das Overlay wie beabsichtigt arbeitet.",
       "Others": "Weitere"
@@ -984,7 +984,7 @@
     "Ephemeral_node": "Vergängliches Vorkommen, kann erneut erscheinen",
     "Intro": "In dieser Kategorie kannst du nach sammelbaren Gegenständen suchen und Details und Standorte anzeigen lassen, sowie Alarme für einzelne Sammelstellen anlegen. Trage einfach einen Namen in das obige Feld ein und lass uns finden was du suchst!",
     "Hidden_item": "Versteckt",
-    "Fish_eyes": "Requires Fish Eyes to only care about weather requirement",
+    "Fish_eyes": "Fischauge notwendig, um sich nur um die Wettervoraussetzungen Gedanken zu machen",
     "Add_alarm": "Benachrichtigung hinzufügen",
     "Add_alarm_fish_eyes": "Alarm mit Fischaugen hinzufügen",
     "Snagging": "Benötigt Reißen",
@@ -1194,10 +1194,10 @@
     },
     "ROTATIONS": {
       "Search_placeholder": "Suche eine Rotation",
-      "Scan_guides": "Update guide links",
-      "Guide": "Guide",
-      "Cannot_delete_guide_rotation": "You cannot delete rotations that are used in guides",
-      "Guides_flags_updated": "Guide links have been updated",
+      "Scan_guides": "Update Leitfadenlinks",
+      "Guide": "Leitfaden",
+      "Cannot_delete_guide_rotation": "Du kannst keine Rotationen löschen, die in Leitfäden genutzt werden",
+      "Guides_flags_updated": "Leitfadenlinks wurden aktualisiert",
       "FOLDERS": {
         "Not_found": "Rotationsordner konnte nicht gefunden werden",
         "Folders": "Rotations-Ordner",
@@ -1389,10 +1389,10 @@
     "Ilvl": "G.-St.",
     "Cost": "Kosten",
     "Class_job": "Klasse/Job",
-    "Damage_phys": "Phys. Damage",
-    "Damage_mag": "Mag. Damage",
-    "Defense_phys": "Phys. Defense",
-    "Defense_mag": "Mag. Defense",
+    "Damage_phys": "Phys. Schaden",
+    "Damage_mag": "Mag. Schaden",
+    "Defense_phys": "Phys. Verteidigung",
+    "Defense_mag": "Mag. Verteidigung",
     "Masterbooks": "Benötigt ein Meisterbuch"
   },
   "SEARCH_INTRO": {
@@ -1627,9 +1627,9 @@
     "Currencies": "Währungen",
     "Rowena_splendor": "Rowenas Haus der Wunder",
     "Unlocks": "Freischaltung von",
-    "Jump_to_page": "Open db page",
+    "Jump_to_page": "Öffne DB Seite",
     "Ishgard_restoration": "Wiederaufbau Ishgards",
-    "GC_supply_value": "Expert Delivery",
+    "GC_supply_value": "Expertenlieferung",
     "ITEM": {
       "Masterpiece_exp_tooltip": "% an Routine, die für das nächste Level benötigt wird",
       "Required_craftsmanship": "benötigte Kunstfertigkeit",
@@ -1641,8 +1641,8 @@
       "Requires_gc_rank": "Erfordert Rang {{rank}} bei der Staatlichen Gesellschaft"
     },
     "FISH": {
-      "Fruity_video": "How to catch video",
-      "Fruity_video_description": "Link to the \"how catch video\" from Fruity Snacks for this fish",
+      "Fruity_video": "Wie fangen Video",
+      "Fruity_video_description": "Link zum \"Wie fangen Video\" von Fruity Snacks für diesen Fisch",
       "Hour": "Eorzea-Zeit",
       "Etime": "Eorzea-Zeit",
       "Misses_popup_title": "Fehlschläge für diesen Ort",
@@ -1703,8 +1703,8 @@
         "Large": "Groß",
         "Time_since_thrown": "Zeit seit Wurf",
         "Throw_etime": "Line throw etime",
-        "Ignored_spot": "This spot is not supported by the reporter, expect weird values to show.",
-        "Ignored_spot_description": "None of your fish caught will be reported by the fishing reporter.",
+        "Ignored_spot": "Dieser Spot wird nicht unterstützt, vermutlich werden seltsame Werte angezeigt.",
+        "Ignored_spot_description": "Keiner deiner gefangenen Fische wird durch den Reporter unterstützt.",
         "ERRORS": {
           "No_bait": "Kein Köder erkannt. Zur Behebung Köder einmal wechseln.",
           "No_stats": "Keine Attribute gefunden. Wechsel erneut zum Fischer, um dies zu beheben."
@@ -1718,11 +1718,11 @@
       "Fish_per_weather": "Fisch pro Wetter",
       "Fish_per_bait": "Fisch pro Köder",
       "Fish_per_tug": "Fisch pro Spitze",
-      "Fish_per_hookset": "Fish per hookset",
+      "Fish_per_hookset": "Fische pro Hakenset",
       "Include_misses": "Fehlschläge einbeziehen",
       "Miss": "Fehlschlag",
       "Remove_this_bait": "Diesen Köder entfernen",
-      "Bait_removed": "Bait removed from this spot",
+      "Bait_removed": "Köder entfernt für diesen Spot",
       "Position_unknown": "Unbekannter Ort"
     },
     "NODE": {
@@ -1745,7 +1745,7 @@
       "Repeatable": "Wiederholbar",
       "Beast_tribe_rank": "Rang bei Wilden Stämmen",
       "Chain_length": "Folgende Quests",
-      "Possible_trades": "Possible trades"
+      "Possible_trades": "Mögliche Handelsgeschäfte"
     },
     "NPC": {
       "Other_entries": "Andere Auftritte",
@@ -1871,7 +1871,7 @@
     "NPC": "NPC",
     "Leve": "Freibrief",
     "Leve_info_message": "Du kannst die Freibrief-Seite nutzen, um Levekits vorzubereiten und Erfahrungspunkte für deine Freibriefe zu berechnen",
-    "Comparison_tip": "You can compare items by selecting them and setting selection to comparison mode",
+    "Comparison_tip": "Du kannst Sachen vergleichen, indem du sie auswählst und die Auswahl in den Vergleichsmodus setzt",
     "Monster": "Monster",
     "Lore": "Handlung",
     "Fate": "FATE",
@@ -1923,7 +1923,7 @@
     "Shown_only_collectables": "Nur Sammlerstücke",
     "Recipe_level": "Rezeptstufe",
     "Shown_only_not_completed": "Nur im Log nicht erledigt",
-    "Add_results_to_pool": "Add to pool when adding to basket",
+    "Add_results_to_pool": "Beim Hinzufügen in den Warenkorb zum Pool hinzufügen",
     "Show_only_leve_items": "Nur Gegenstände die in Freibriefen verwendet werden"
   },
   "CURRENCY_SPENDING": {
@@ -1984,8 +1984,8 @@
     "Select_stat": "Attribut auswählen",
     "Level": "Stufe",
     "SELECTION_MODE": {
-      "List": "List",
-      "Compare": "Compare"
+      "List": "Liste",
+      "Compare": "Vergleichen"
     },
     "SORT_BY": {
       "Relevance": "Relevanz",
@@ -2108,8 +2108,8 @@
       "Message": "Dieser Gegenstand ist ebenfalls in folgendem Inventar enthalten: {{containers}}."
     },
     "NOT_IN_LIST": {
-      "Title": "Items that are not used in any of your lists",
-      "Message": "This item is not used in any of your lists."
+      "Title": "Elemente, die in keiner deiner Listen verwendet werden",
+      "Message": "Dieses Element wird in keiner deiner Listen verwendet."
     },
     "HAS_TOO_FEW": {
       "Title": "Gegenstände, die du in sehr kleinen Stapeln hast",
@@ -2419,9 +2419,9 @@
     "Import_success": "Übersichtsseite importiert und ausgewählt",
     "Nothing_to_show": "Keine anzuzeigenden Daten",
     "Nothing_to_show_description": "Stelle sicher, dass du einen Zeitraum ausgewählt hast, in dem TC Daten erfasst hat und stelle sicher, dass diese Option aktiviert ist (Einstellungen -> Desktop -> Metriken erfassen aktivieren)",
-    "Importing": "Importing metrics data to the new sql format, please don't close Teamcraft. This may take up to 15 minutes.",
-    "Imported": "Metrics data has been imported.",
-    "Deleted": "Metrics entry deleted",
+    "Importing": "Metrik-Daten werden in das neue sql-Format importiert, bitte schließe Teamcraft. Dies kann bis zu 15 Minuten dauern.",
+    "Imported": "Metrik-Daten wurden importiert.",
+    "Deleted": "Metrik-Eintrag gelöscht",
     "SOURCES": {
       "UNKNOWN": "Unbekannt",
       "GATHERING": "Sammeln",
@@ -2731,7 +2731,7 @@
     "Use_retainer": "Wähle Gehilfe aus",
     "Select_retainer": "Wähle einen Gehilfen",
     "Missing_gear": "Fehlende Ausrüstung",
-    "Missing_gear_description": "Some of your retainers are missing their gear in TC data, please summon each retainer again to load their gear"
+    "Missing_gear_description": "Einige deiner Gehilfen vermissen ihre Ausrüstung in den TC Daten, bitte rufe jeden Gehilfen noch einmal, um deren Ausrüstung zu laden"
   },
   "PATREON": {
     "By_supporting_us": "Durch deine Unterstützung auf Patreon erhältst du:",
@@ -2742,7 +2742,7 @@
     "Starting_at_X": "Ab ${{monthly}} pro Monat oder ${{yearly}} pro Jahr",
     "Footer_text": "Auch schon $1 pro Monat hat einen erheblichen Einfluss auf die Entwicklung von Teamcraft und bringt mich meinem Traum näher, ein Vollzeit-Entwickler bei diesem Projekt zu werden und es mehr als ein bloßes Werkzeug für FFXIV werden zu lassen.",
     "Already_supporter": "Du bist bereits ein Unterstützer?",
-    "Disable_ads_explanation": "To disable ads, connect with your Patreon or Tipeee account to make Teamcraft able to verify your support and disable ads automatically"
+    "Disable_ads_explanation": "Um Werbung zu deaktivieren, verbinde dich mit deinem Patreon oder Tipeee Konto, damit Teamcraft deine Unterstützung verifizieren und Werbung automatisch deaktivieren kann"
   },
   "SUPPORT_US": {
     "Popup_introduction": "Hallo, ich bin Miu, Entwickler jenes Programmes, dass du gerade verwendest.<br/> Teamcraft ist seit einigen Jahren ein Hobby für mich und mein Traum ist es, dieses Hobby zu meinem Vollzeitjob zu machen. <br/><br/>Mit deiner Hilfe könnte dieser Traum Wirklichkeit werden. Hierfür kannst du mich auf Patreon unterstützen. Jeder einzelne Euro zählt und wird mir helfen, dieses Ziel zu erreichen. <br/><br/> Die Unterstützung des Projekts auf Patreon bietet dir außerdem einige coole Vorteile:",
@@ -2809,7 +2809,7 @@
       "Favor": "Gunst"
     },
     "RANK_DETAILS": {
-      "Experience_Points": "Experience Points"
+      "Experience_Points": "Erfahrungspunkte"
     }
   },
   "AIRSHIP": {
@@ -2824,7 +2824,7 @@
         "Abbreviation": "E"
       },
       "INVINCIBLE_II": {
-        "Abbreviation": "J"
+        "Abbreviation": ""
       },
       "ODYSSEY": {
         "Abbreviation": "O"
@@ -2921,7 +2921,7 @@
     "Duration": "Dauer",
     "Predator": "Predator",
     "Predator_explain": "Fische die du Fangen musst bevor du Petri Heil oder den Fisch für das Speerfischen bekommst",
-    "Unknown_hookset": "Unknown hookset",
+    "Unknown_hookset": "Unbekanntes Hakenset",
     "Gig_head": "Gig head",
     "No_predators": "No predators",
     "Loading_gubal_analysis": "Loading gubal analysis",
@@ -2964,7 +2964,7 @@
     "Shadow_size": "Schattengröße",
     "Deprecated": "Dieser Gegenstand kann nicht mehr erhalten werden",
     "Select_all": "Alle Vorschläge auswählen",
-    "Input_hours_tip": "Input value in hours, use decimals to add minutes (ex: 7.5 is equal to 7:30)",
+    "Input_hours_tip": "Wert in Stunden eingeben, Dezimalstellen verwenden um Minuten hinzuzufügen (z. B.: 7.5 entspricht 7:30)",
     "SPEEDS": {
       "VERY_SLOW": "Sehr langsam",
       "SLOW": "Langsam",
@@ -3037,14 +3037,14 @@
     "Add_to_list": "Diese Gegenstände zu einer Liste hinzufügen"
   },
   "LIST_AGGREGATE": {
-    "Home_title": "List Aggregate",
+    "Home_title": "Zusammenfassung auflisten",
     "Home_subtitle": "Mehrere Listen gleichzeitig in einer Gesamtansicht öffnen",
     "Select_lists": "Wähle die Listen, die du zusammenfassen möchtest",
     "Select_layout": "Wähle ein Layout",
-    "Select_layout_dropdown": "Display layout",
-    "Open_aggregate": "Open an aggregated view",
-    "Title": "Aggregated list view",
-    "Select_panel": "Select a panel to open its view",
+    "Select_layout_dropdown": "Layout anzeigen",
+    "Open_aggregate": "Öffne zusammengefasste Ansicht",
+    "Title": "Zusammengefasste Listenansicht",
+    "Select_panel": "Wähle ein Panel, um seine Ansicht zu öffnen",
     "Missing_lists": "{{amount}} Liste(n) konnten nicht korrekt geladen werden",
     "Remove_missing_ids": "Fehlende Listen aus der Zusammenfassung entfernen",
     "Missing_lists_description": "Bitte stelle sicher, dass du genügend Berechtigungen für alle Listen hast und dass diese noch existieren (fehlende IDs: {{ids}}).",
@@ -3052,17 +3052,17 @@
     "Saved": "Zusammenfassung auf der Listenseite gespeichert",
     "Final_items_count": "Anzahl der Elemente",
     "Requirement_items_count": "# benötigter Gegenstände",
-    "Switch_panel": "Switch panel"
+    "Switch_panel": "Panel wechseln"
   },
   "PCAP_ERRORS": {
-    "Default": "Packet Capture error",
-    "GAME_NOT_RUNNING": "Packet capture failed to start",
-    "RESTART_GAME": "Packet capture didn't shut down properly",
-    "GAME_RUNNING_AS_ADMIN": "Cannot access game process",
+    "Default": "Fehler bei der Paketerfassung",
+    "GAME_NOT_RUNNING": "Paketaufzeichnung konnte nicht gestartet werden",
+    "RESTART_GAME": "Paketerfassung wurde nicht korrekt beendet",
+    "GAME_RUNNING_AS_ADMIN": "Zugriff auf Spielprozess nicht möglich",
     "DESCRIPTION": {
       "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.",
-      "GAME_NOT_RUNNING": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.",
-      "RESTART_GAME": "Please restart the game to be able to run packet capture properly.",
+      "GAME_NOT_RUNNING": "Bitte stelle sicher, dass das Spiel läuft und nicht als Admininstrator ausgeführt wird (oder, in diesem Fall, TC als Administrator starten).<br>Wenn dieses Problem weiterhin besteht, melde dich bitte an Discords Fehlerbehebungskanal #troubleshooting mit einem Screenshot der obigen Nachrichten.",
+      "RESTART_GAME": "Bitte starte das Spiel neu, um die Paketerfassung korrekt ausführen zu können.",
       "GAME_RUNNING_AS_ADMIN": "Das Spiel läuft als Admin. Bitte starte es entweder normal neu oder starte Teamcraft als Administrator neu."
     }
   },
@@ -3104,7 +3104,7 @@
       "Create_list": "Eine Liste für diese Planung erstellen",
       "Exclude_pasture_materials": "Weidematerial ausschließen",
       "Exclude_crop_materials": "Erntematerial ausschließen",
-      "Display_item_metadata": "Display category and craft time of items in planning",
+      "Display_item_metadata": "Kategorie und Herstellungszeit von Gegenständen in der Planung anzeigen",
       "Groove_tooltip": "Groove at the end of the day",
       "Crafting_time": "Herstellungszeit",
       "Categories": "Kategorien",
@@ -3164,11 +3164,11 @@
     "Copy_macro": "Makro kopieren",
     "Are_you_on_spot": "Bist du bereits am Angelplatz?",
     "Copy_move_macro": "Kopiere Zug-Bewege-Makro",
-    "Slap": "Slap: {{target}}",
-    "Fish_before": "Intuition Trigger Requirements: {{target}}",
+    "Slap": "Buntes Gewässer: {{target}}",
+    "Fish_before": "Voraussetzung für Petri Heil: {{target}}",
     "Current_position_macro": "/shout Fischereizug fischt derzeit nach {{itemName}} an {{mapName}}: {{coords}}. Bevorzugter Köder: {{bait}}, Min. Sammeln: {{minGathering}}.",
     "Next_position_macro": "/shout TschuTschu! Fischereizug zieht weiter nach {{mapName}}: {{coords}} , um {{itemName}} zu fangen. Bevorzugter Köder: {{bait}}, Min. Sammeln: {{minGathering}}.",
-    "Board_train": "Board train",
+    "Board_train": "Fischzug beitreten",
     "Leave_train": "Diesen Zug verlassen",
     "Stats": "Werte",
     "Passengers": "Passagiere",
@@ -3179,7 +3179,7 @@
     "Accuracy_explain": "% der gefangenen Fische entsprechen der Route",
     "Contribution_per_passenger": "Beiträge pro Passagier",
     "Fishing_rate": "Fischfangrate",
-    "Nothing_to_show": "No contributions to display",
+    "Nothing_to_show": "Keine anzuzeigenden Beiträge",
     "Terminus_tag": "Terminus",
     "Open_fishing_overlay": "Öffne Fischerei-Overlay",
     "Claim_conductor_role": "Leiterrolle beanspruchen",
@@ -3189,7 +3189,7 @@
     "Train_conductor": "Zugleiter: {{name}}",
     "No_conductor": "Kein Leiter",
     "Rename_train": "Diesen Zug umbenennen",
-    "No_slap": "No slap",
+    "No_slap": "Kein Buntes Gewässer",
     "Select_slap": "Wähle einen Fisch zum angeln",
     "Visiblity_explain": "Öffentliche Züge sind auf der Zugseite sichtbar",
     "Moving_notification_title": "Zug bewegt sich zum nächsten Platz",
@@ -3206,7 +3206,7 @@
     "Your_trains": "Deine Züge",
     "Missing_world": "Fehlende Welt",
     "Missing_world_explain": "Ein Zug ohne ausgewählte Welt ist für Leute viel schwieriger zu folgen oder zu finden. Bitte wähle einen Server in der oben stehenden Server-Dropdown-Liste.",
-    "Time_travel": "Time travel",
+    "Time_travel": "Reisezeit",
     "Only_target_fish": "Nur Zielfisch",
     "All_fish": "Alle Fische",
     "Fish_breakdown": "Fischübersicht",
@@ -3214,9 +3214,9 @@
     "Fish_size_chart": "Fischgrößen",
     "Delete_train": "Löschen",
     "Train_not_running": "Zug läuft nicht",
-    "Outdated": "This train is outdated",
-    "Outdated_description": "This train is using an outdated data storage approach, please migrate to be able to see your stats again",
-    "Outdated_description_passenger": "This train is using an outdated data storage approach, please ask the conductor to migrate it to see the stats again.",
-    "Migrate": "Migrate"
+    "Outdated": "Dieser Fischzug ist veraltet",
+    "Outdated_description": "Dieser Zug verwendet einen veralteten Datenspeicherungsansatz, bitte migrieren, um deine Statistiken wieder sehen zu können",
+    "Outdated_description_passenger": "Dieser Zug verwendet einen veralteten Datenspeicherungsansatz, bitte den Leiter, ihn zu migrieren, um die Statistiken wieder zu sehen.",
+    "Migrate": "Migriere"
   }
 }

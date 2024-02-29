@@ -229,7 +229,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     }
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(): void {
     if (!this.displayRow) {
       return;
     }

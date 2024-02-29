@@ -50,7 +50,6 @@ import { ItemPickerService } from '../../item-picker/item-picker.service';
 import { ListManagerService } from '../list-manager.service';
 import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
 import { InventoryService } from '../../inventory/inventory.service';
-import { ModificationEntry } from '../model/modification-entry';
 import { PermissionsController } from '../../../core/database/permissions-controller';
 import { ListController } from '../list-controller';
 import { IpcService } from '../../../core/electron/ipc.service';
@@ -437,16 +436,14 @@ export class ListsFacade {
     });
   }
 
-  updateList(list: List, updateCompact = false, force = false): void {
-    this.store.dispatch(new UpdateList(ListController.clone(list, true), updateCompact, force));
+  updateList(list: List): void {
+    const clone = ListController.clone(list, true);
+    ListController.updateEtag(clone);
+    this.store.dispatch(new UpdateList(clone));
   }
 
   clearModificationsHistory(key: string): void {
     // this.store.dispatch(new ClearModificationsHistory(key));
-  }
-
-  addModificationsHistoryEntries(entries: ModificationEntry[]): void {
-    // this.store.dispatch(new AddModificationHistoryEntries(entries));
   }
 
   pureUpdateList($key: string, data: Partial<List>): void {

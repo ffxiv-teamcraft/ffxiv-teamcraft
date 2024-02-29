@@ -61,7 +61,7 @@ export class ListCompletionPopupComponent {
     ListController.reset(this.list);
     this.listPricingService.removeEntriesForList(this.list.$key);
     this.listsFacade.clearModificationsHistory(this.list.$key);
-    this.listsFacade.updateList(this.list, true, true);
+    this.listsFacade.updateList(this.list);
     this.close();
   }
 }

@@ -170,7 +170,7 @@ export class ItemRowComponent extends AbstractItemRowComponent implements OnInit
         })
       )
       .subscribe((list) => {
-        this.listsFacade.updateList(list, true);
+        this.listsFacade.updateList(list);
       });
   }
 
@@ -181,7 +181,7 @@ export class ItemRowComponent extends AbstractItemRowComponent implements OnInit
         return this.listManager.addToList({ itemId: item.id, list: list, recipeId: item.recipeId, amount: -item.amount });
       })
     ).subscribe((list) => {
-      this.listsFacade.updateList(list, true);
+      this.listsFacade.updateList(list);
     });
   }
 

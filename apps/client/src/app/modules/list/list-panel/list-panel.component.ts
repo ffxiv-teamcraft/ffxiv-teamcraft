@@ -271,7 +271,7 @@ export class ListPanelComponent extends TeamcraftComponent {
         }))
         .subscribe(list => {
           delete this.updateAmountDebounces[item.id];
-          this.listsFacade.updateList(list, true);
+          this.listsFacade.updateList(list);
         });
     }
     updateSubject.next(inputValue);
@@ -296,7 +296,7 @@ export class ListPanelComponent extends TeamcraftComponent {
         return list;
       })
     ).subscribe(list => {
-      this.listsFacade.updateList(list, true);
+      this.listsFacade.updateList(list);
       if (team.webhook !== undefined) {
         this.discordWebhookService.notifyListAddedToTeam(team, list);
       }
@@ -309,7 +309,7 @@ export class ListPanelComponent extends TeamcraftComponent {
     if (team.webhook !== undefined) {
       this.discordWebhookService.notifyListRemovedFromTeam(team, list);
     }
-    this.listsFacade.updateList(list, true, true);
+    this.listsFacade.updateList(list);
 
   }
 
