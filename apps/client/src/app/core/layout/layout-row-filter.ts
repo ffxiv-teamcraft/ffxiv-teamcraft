@@ -274,12 +274,14 @@ export class LayoutRowFilter {
    */
   static IS_GATHERED_BY_BTN = LayoutRowFilter.IS_GATHERING
     ._and(new LayoutRowFilter((row: ListRow) => {
-      return [2, 3].indexOf(getItemSource(row, DataType.GATHERED_BY, true).type) > -1;
+      const gatheredBy = getItemSource(row, DataType.GATHERED_BY, true);
+      return gatheredBy.nodes.some(node => [2, 3].includes(node.type));
     }, 'IS_GATHERED_BY_BTN', [DataType.GATHERED_BY]));
 
   static IS_GATHERED_BY_MIN = LayoutRowFilter.IS_GATHERING
     ._and(new LayoutRowFilter((row: ListRow) => {
-      return [0, 1].indexOf(getItemSource(row, DataType.GATHERED_BY, true).type) > -1;
+      const gatheredBy = getItemSource(row, DataType.GATHERED_BY, true);
+      return gatheredBy.nodes.some(node => [0, 1].includes(node.type));
     }, 'IS_GATHERED_BY_MIN', [DataType.GATHERED_BY]));
 
   static IS_GATHERED_BY_FSH = LayoutRowFilter.IS_GATHERING
