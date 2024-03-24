@@ -144,7 +144,7 @@ export class TeamsComponent implements OnInit {
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
       nzFooter: null,
-      nzComponentParams: { baseName: team.name },
+      nzData: { baseName: team.name },
       nzTitle: this.translate.instant('TEAMS.Create_team')
     }).afterClose.pipe(
       filter(name => name !== undefined),

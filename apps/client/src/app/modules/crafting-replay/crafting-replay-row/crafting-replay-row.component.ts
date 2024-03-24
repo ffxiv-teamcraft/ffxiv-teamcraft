@@ -60,7 +60,7 @@ export class CraftingReplayRowComponent {
     this.dialog.create({
       nzTitle: this.translate.instant('CRAFTING_REPLAYS.Replay_result'),
       nzContent: ReplaySimulationComponent,
-      nzComponentParams: {
+      nzData: {
         replay: replay
       },
       nzFooter: null

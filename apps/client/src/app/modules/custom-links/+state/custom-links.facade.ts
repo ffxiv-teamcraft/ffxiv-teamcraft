@@ -46,7 +46,7 @@ export class CustomLinksFacade {
     }
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
-      nzComponentParams: { baseName: baseName },
+      nzData: { baseName: baseName },
       nzFooter: null,
       nzTitle: this.translate.instant('CUSTOM_LINKS.Add_link')
     }).afterClose.pipe(

@@ -103,7 +103,7 @@ export class ProfileEditorComponent {
   editMasterbooks(jobId: number): void {
     this.dialog.create({
       nzContent: MasterbooksPopupComponent,
-      nzComponentParams: {
+      nzData: {
         jobId: jobId
       },
       nzFooter: null,
@@ -114,7 +114,7 @@ export class ProfileEditorComponent {
   editStats(jobId: number): void {
     this.dialog.create({
       nzContent: StatsPopupComponent,
-      nzComponentParams: {
+      nzData: {
         jobId: jobId
       },
       nzFooter: null,
@@ -153,7 +153,7 @@ export class ProfileEditorComponent {
   verifyCharacter(userId: string, lodestoneId: number): void {
     this.dialog.create({
       nzContent: VerificationPopupComponent,
-      nzComponentParams: {
+      nzData: {
         verificationCode: userId,
         lodestoneId: lodestoneId
       },

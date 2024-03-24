@@ -59,7 +59,7 @@ export class LayoutEditorComponent {
     this.dialog.create({
       nzTitle: this.translate.instant('LIST_DETAILS.LAYOUT_DIALOG.Reorder_panels'),
       nzContent: LayoutOrderPopupComponent,
-      nzComponentParams: {
+      nzData: {
         layout: layout
       },
       nzFooter: null
@@ -127,7 +127,7 @@ export class LayoutEditorComponent {
     this.dialog.create({
       nzTitle: this.translate.instant('LIST_DETAILS.LAYOUT_DIALOG.Edit_row_buttons_display'),
       nzContent: LayoutRowDisplayEditorComponent,
-      nzComponentParams: {
+      nzData: {
         layout: layout
       },
       nzFooter: null

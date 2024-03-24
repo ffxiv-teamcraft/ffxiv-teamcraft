@@ -321,7 +321,7 @@ export class LogTrackerComponent extends TrackerComponent {
     const ref = this.dialog.create({
       nzTitle: this.translate.instant('NAVIGATION.Title'),
       nzContent: WorldNavigationMapComponent,
-      nzComponentParams: {
+      nzData: {
         points: steps
       },
       nzFooter: null

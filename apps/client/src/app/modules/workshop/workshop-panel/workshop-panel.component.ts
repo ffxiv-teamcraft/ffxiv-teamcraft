@@ -110,7 +110,7 @@ export class WorkshopPanelComponent {
         return this.dialog.create({
           nzTitle: this.translate.instant('WORKSHOP.Add_lists'),
           nzContent: FolderAdditionPickerComponent,
-          nzComponentParams: {
+          nzData: {
             elements: elements.map(list => {
               return {
                 $key: list.$key,
@@ -145,7 +145,7 @@ export class WorkshopPanelComponent {
   renameWorkshop(): void {
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
-      nzComponentParams: { baseName: this._workshop.name },
+      nzData: { baseName: this._workshop.name },
       nzFooter: null,
       nzTitle: this.translate.instant('Edit')
     }).afterClose.pipe(
@@ -163,7 +163,7 @@ export class WorkshopPanelComponent {
       nzTitle: this.translate.instant('PERMISSIONS.Title'),
       nzFooter: null,
       nzContent: PermissionsBoxComponent,
-      nzComponentParams: {
+      nzData: {
         data: this._workshop,
         ready$: modalReady$,
         enablePropagation: true

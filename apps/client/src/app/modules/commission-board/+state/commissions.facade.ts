@@ -122,7 +122,7 @@ export class CommissionsFacade {
   edit(commission: Commission): void {
     this.dialog.create({
       nzContent: CommissionEditionPopupComponent,
-      nzComponentParams: {
+      nzData: {
         commission: commission
       },
       nzFooter: null,
@@ -140,7 +140,7 @@ export class CommissionsFacade {
   apply(commission: Commission): void {
     this.dialog.create({
       nzContent: ApplyPopupComponent,
-      nzComponentParams: {
+      nzData: {
         price: commission.price
       },
       nzFooter: null,
@@ -222,7 +222,7 @@ export class CommissionsFacade {
   rate(commission: Commission, authorId: string): Observable<boolean> {
     return this.dialog.create({
       nzContent: CommissionRatingPopupComponent,
-      nzComponentParams: {
+      nzData: {
         commission,
         authorId
       },

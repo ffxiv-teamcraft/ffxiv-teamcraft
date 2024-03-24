@@ -291,7 +291,7 @@ export class AuthFacade {
     this.dialog.create({
       nzTitle: this.translate.instant('Character_informations'),
       nzContent: CharacterLinkPopupComponent,
-      nzComponentParams: {
+      nzData: {
         useAsDefault: useAsDefault,
         mandatory: disableClose
       },

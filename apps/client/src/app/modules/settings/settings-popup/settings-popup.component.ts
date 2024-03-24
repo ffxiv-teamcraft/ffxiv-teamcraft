@@ -471,7 +471,7 @@ export class SettingsPopupComponent {
   updateEmail(): void {
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
-      nzComponentParams: {
+      nzData: {
         type: 'email',
         baseName: this.auth.currentUser.email
       },

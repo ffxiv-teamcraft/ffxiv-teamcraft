@@ -54,7 +54,7 @@ export class GearsetRowComponent {
   rename(gearset: TeamcraftGearset): void {
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
-      nzComponentParams: { baseName: gearset.name },
+      nzData: { baseName: gearset.name },
       nzFooter: null,
       nzTitle: this.translate.instant('GEARSETS.Rename_gearset')
     }).afterClose.pipe(

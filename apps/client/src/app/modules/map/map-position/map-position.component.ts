@@ -95,7 +95,7 @@ export class MapPositionComponent {
       this.dialog.create({
         nzTitle: title,
         nzContent: MapComponent,
-        nzComponentParams: {
+        nzData: {
           mapId: this.mapId,
           markers: [this.marker, ...(this.additionalMarkers || [])]
         },

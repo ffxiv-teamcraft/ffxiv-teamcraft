@@ -142,7 +142,7 @@ export class UsersComponent {
       nzTitle: this.translate.instant('ADMIN.USERS.Integrity_check'),
       nzContent: IntegrityCheckPopupComponent,
       nzFooter: null,
-      nzComponentParams: {
+      nzData: {
         user: user
       }
     });

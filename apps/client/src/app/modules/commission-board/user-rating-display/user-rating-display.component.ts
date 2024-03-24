@@ -50,7 +50,7 @@ export class UserRatingDisplayComponent implements OnInit {
     this.modalService.create({
       nzTitle: this.translate.instant('COMMISSIONS.PROFILE.Details'),
       nzContent: UserRatingDetailsPopupComponent,
-      nzComponentParams: {
+      nzData: {
         profile
       },
       nzFooter: null

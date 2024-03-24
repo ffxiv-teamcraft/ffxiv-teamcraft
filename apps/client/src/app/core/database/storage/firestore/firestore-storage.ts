@@ -280,7 +280,7 @@ export abstract class FirestoreStorage<T extends DataModel> {
       const batch = writeBatch(this.firestore);
       rows.forEach(row => {
         const ref = this.docRef(row.$key) as DocumentReference<T & { index: number }>;
-        return batch.update<T & { index: number }>(ref, { index: row.index } as UpdateData<T & { index: number }>);
+        return batch.update<T & { index: number }, any>(ref, { index: row.index } as UpdateData<T & { index: number }>);
       });
       return from(batch.commit());
     });

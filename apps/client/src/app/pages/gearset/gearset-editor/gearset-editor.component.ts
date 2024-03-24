@@ -558,7 +558,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         return this.dialog.create({
           nzTitle: this.translate.instant('GEARSETS.Modal_editor', { itemName }),
           nzContent: MateriasPopupComponent,
-          nzComponentParams: {
+          nzData: {
             equipmentPiece: equipmentPiece,
             job: gearset.job
           },
@@ -599,7 +599,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     this.dialog.create({
       nzTitle: this.translate.instant('GEARSETS.Total_materias_needed'),
       nzContent: MateriasNeededPopupComponent,
-      nzComponentParams: {
+      nzData: {
         gearset: gearset
       },
       nzFooter: null
@@ -610,7 +610,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     this.dialog.create({
       nzTitle: this.translate.instant('GEARSETS.Total_cost'),
       nzContent: GearsetCostPopupComponent,
-      nzComponentParams: {
+      nzData: {
         gearset: gearset
       },
       nzFooter: null
@@ -620,7 +620,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   updateFromPcap(gearset: TeamcraftGearset): void {
     this.dialog.create({
       nzContent: ImportFromPcapPopupComponent,
-      nzComponentParams: {
+      nzData: {
         job: gearset.job,
         gearsetName: gearset.name,
         updateMode: true
@@ -640,7 +640,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     Object.assign(clone, JSON.parse(JSON.stringify(gearset)));
     this.dialog.create({
       nzContent: GearsetCreationPopupComponent,
-      nzComponentParams: { gearset: clone },
+      nzData: { gearset: clone },
       nzFooter: null,
       nzTitle: this.translate.instant('GEARSETS.Edit_gearset')
     }).afterClose.pipe(

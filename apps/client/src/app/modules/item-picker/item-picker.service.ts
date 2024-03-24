@@ -16,7 +16,7 @@ export class ItemPickerService {
       nzContent: ItemPickerComponent,
       nzFooter: null,
       nzCloseOnNavigation: true,
-      nzComponentParams: {
+      nzData: {
         multi: true
       },
       nzTitle: this.translate.instant('Pick_an_item')
