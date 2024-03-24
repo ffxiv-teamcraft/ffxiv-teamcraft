@@ -2605,15 +2605,7 @@
       "spot": 96,
       "hookset": 2,
       "tug": 2,
-      "bait": 2623,
-      "snagging": false,
-      "minGathering": 0
-    },
-    {
-      "spot": 2,
-      "hookset": 2,
-      "tug": 2,
-      "bait": 2623,
+      "bait": 2588,
       "snagging": false,
       "minGathering": 0
     },
@@ -2621,31 +2613,15 @@
       "spot": 3,
       "hookset": 2,
       "tug": 2,
-      "bait": 2623,
+      "bait": 2592,
       "snagging": false,
       "minGathering": 0
     },
     {
-      "spot": 8,
+      "spot": 2,
       "hookset": 2,
       "tug": 2,
-      "bait": 2623,
-      "snagging": false,
-      "minGathering": 0
-    },
-    {
-      "spot": 18,
-      "hookset": 2,
-      "tug": 2,
-      "bait": 2623,
-      "snagging": false,
-      "minGathering": 0
-    },
-    {
-      "spot": 72,
-      "hookset": 2,
-      "tug": 2,
-      "bait": 2623,
+      "bait": 2607,
       "snagging": false,
       "minGathering": 0
     },
@@ -2653,7 +2629,31 @@
       "spot": 75,
       "hookset": 2,
       "tug": 2,
-      "bait": 2623,
+      "bait": 2607,
+      "snagging": false,
+      "minGathering": 0
+    },
+    {
+      "spot": 72,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 2599,
+      "snagging": false,
+      "minGathering": 0
+    },
+    {
+      "spot": 8,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 2588,
+      "snagging": false,
+      "minGathering": 0
+    },
+    {
+      "spot": 18,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 2588,
       "snagging": false,
       "minGathering": 0
     },
@@ -2661,7 +2661,7 @@
       "spot": 106,
       "hookset": 2,
       "tug": 2,
-      "bait": 2623,
+      "bait": 2588,
       "snagging": false,
       "minGathering": 0
     }
@@ -24933,7 +24933,8 @@
       "weathersFrom": [
         149
       ],
-      "minGathering": 3060
+      "minGathering": 3060,
+      "video": "https://youtu.be/pXipq-E3pZo"
     }
   ],
   "39883": [
