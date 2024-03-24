@@ -323,14 +323,14 @@ export class ListPanelComponent extends TeamcraftComponent {
       nzTitle: this.translate.instant('LIST_DETAILS.Split_list'),
       nzFooter: null,
       nzContent: ListSplitPopupComponent,
-      nzComponentParams: { list: list }
+      nzData: { list: list }
     });
   }
 
   renameList(_list: List): void {
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
-      nzComponentParams: { baseName: _list.name },
+      nzData: { baseName: _list.name },
       nzFooter: null,
       nzTitle: this.translate.instant('Edit')
     }).afterClose.pipe(
@@ -355,7 +355,7 @@ export class ListPanelComponent extends TeamcraftComponent {
       nzTitle: this.translate.instant('PERMISSIONS.Title'),
       nzFooter: null,
       nzContent: PermissionsBoxComponent,
-      nzComponentParams: { data: list, ready$: modalReady$ }
+      nzData: { data: list, ready$: modalReady$ }
     });
     modalReady$.pipe(
       first(),
@@ -387,7 +387,7 @@ export class ListPanelComponent extends TeamcraftComponent {
       nzTitle: `${list.name} - ${this.translate.instant('COMMENTS.Title')}`,
       nzFooter: null,
       nzContent: CommentsPopupComponent,
-      nzComponentParams: {
+      nzData: {
         targetType: CommentTargetType.LIST,
         targetId: list.$key,
         isAuthor: isAuthor,
@@ -403,7 +403,7 @@ export class ListPanelComponent extends TeamcraftComponent {
       nzTitle: this.translate.instant('LIST_DETAILS.Tags_popup'),
       nzFooter: null,
       nzContent: TagsPopupComponent,
-      nzComponentParams: { list: list }
+      nzData: { list: list }
     });
   }
 
@@ -414,7 +414,7 @@ export class ListPanelComponent extends TeamcraftComponent {
   createTemplate(list: List, user: TeamcraftUser): void {
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
-      nzComponentParams: { baseName: list.name },
+      nzData: { baseName: list.name },
       nzFooter: null,
       nzTitle: this.translate.instant('LIST_TEMPLATE.Create_template')
     }).afterClose.pipe(

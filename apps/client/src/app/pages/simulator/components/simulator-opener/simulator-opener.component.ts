@@ -22,7 +22,7 @@ export class SimulatorOpenerComponent implements OnInit {
       this.dialog.create({
         nzFooter: null,
         nzContent: RecipeChoicePopupComponent,
-        nzComponentParams: {
+        nzData: {
           showCustom: true
         },
         nzTitle: this.translate.instant('Pick_a_recipe')

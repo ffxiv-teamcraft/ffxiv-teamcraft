@@ -158,7 +158,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
         this.dialog.create({
           nzFooter: null,
           nzContent: RecipeChoicePopupComponent,
-          nzComponentParams: {
+          nzData: {
             statsStr: `${craftsmanship}/${control}/${cp}/${this.level$.value}/${specialist ? 1 : 0}`,
             pickRotation: true
           },
@@ -172,7 +172,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
     this.dialog.create({
       nzTitle: this.translate.instant('GEARSETS.COMPARISON.Compare_popup_title', { setName: gearset.name }),
       nzContent: GearsetComparatorPopupComponent,
-      nzComponentParams: {
+      nzData: {
         gearset: gearset,
         includeAllTools: this.includeAllTools
       },

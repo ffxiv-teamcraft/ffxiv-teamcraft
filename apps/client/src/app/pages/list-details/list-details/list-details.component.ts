@@ -308,7 +308,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   renameList(list: List): void {
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
-      nzComponentParams: { baseName: list.name },
+      nzData: { baseName: list.name },
       nzFooter: null,
       nzTitle: this.translate.instant('Edit')
     }).afterClose.pipe(
@@ -336,7 +336,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       nzTitle: this.translate.instant('LIST_DETAILS.Edit_note'),
       nzFooter: null,
       nzContent: TextQuestionPopupComponent,
-      nzComponentParams: { baseText: list.note }
+      nzData: { baseText: list.note }
     }).afterClose.pipe(
       filter(note => note !== undefined)
     ).subscribe((note) => {
@@ -470,7 +470,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       nzTitle: this.translate.instant('LIST_DETAILS.Tags_popup'),
       nzFooter: null,
       nzContent: TagsPopupComponent,
-      nzComponentParams: { list: list }
+      nzData: { list: list }
     });
   }
 
@@ -479,7 +479,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       nzTitle: this.translate.instant('LIST_DETAILS.Split_list'),
       nzFooter: null,
       nzContent: ListSplitPopupComponent,
-      nzComponentParams: { list: list }
+      nzData: { list: list }
     });
   }
 
@@ -500,7 +500,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       nzTitle: this.translate.instant('PERMISSIONS.Title'),
       nzFooter: null,
       nzContent: PermissionsBoxComponent,
-      nzComponentParams: { data: list, ready$: modalReady$ }
+      nzData: { data: list, ready$: modalReady$ }
     });
     modalReady$.pipe(
       first(),
@@ -519,7 +519,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       nzTitle: this.translate.instant('LIST_DETAILS.Inventory_breakdown'),
       nzFooter: null,
       nzContent: InventoryViewComponent,
-      nzComponentParams: { list: list }
+      nzData: { list: list }
     });
   }
 
@@ -528,7 +528,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       nzTitle: this.translate.instant('LIST_DETAILS.Inventory_synthesis'),
       nzFooter: null,
       nzContent: InventorySynthesisPopupComponent,
-      nzComponentParams: { list: list }
+      nzData: { list: list }
     });
   }
 
@@ -537,7 +537,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       nzTitle: this.translate.instant('LIST_DETAILS.Inventory_cleanup'),
       nzFooter: null,
       nzContent: InventoryCleanupPopupComponent,
-      nzComponentParams: { list: list }
+      nzData: { list: list }
     });
   }
 

@@ -191,7 +191,7 @@ export class ItemSourcesDisplayComponent extends TeamcraftComponent {
         nzTitle: itemName || (item as CustomItem).name,
         nzContent: component,
         nzCloseOnNavigation: true,
-        nzComponentParams: {
+        nzData: {
           item: item,
           details: getItemSource(item, dataType),
           dbDisplay: this.dbDisplay

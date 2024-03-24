@@ -70,7 +70,7 @@ export class AlarmButtonComponent {
       this.dialog.create({
         nzTitle: `${itemName} - ${mapName}`,
         nzContent: MapComponent,
-        nzComponentParams: {
+        nzData: {
           mapId: this.alarm.mapId,
           markers: [this.alarm.coords]
         },

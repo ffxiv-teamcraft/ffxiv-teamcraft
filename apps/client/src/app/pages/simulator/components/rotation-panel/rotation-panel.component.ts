@@ -237,7 +237,7 @@ export class RotationPanelComponent implements OnInit {
       const freeCompanyActionsData = this.freeCompanyActionsService.fromData(freeCompanyActions);
       this.dialog.create({
         nzContent: MacroPopupComponent,
-        nzComponentParams: {
+        nzData: {
           rotation: this.registry.deserializeRotation(rotation.rotation),
           job: rotation.recipe?.job,
           food: foodsData.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq),
@@ -253,7 +253,7 @@ export class RotationPanelComponent implements OnInit {
   renameRotation(rotation: CraftingRotation): void {
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
-      nzComponentParams: { baseName: rotation.getName() },
+      nzData: { baseName: rotation.getName() },
       nzFooter: null,
       nzTitle: this.translate.instant('Edit')
     }).afterClose.pipe(

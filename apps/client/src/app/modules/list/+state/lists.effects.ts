@@ -564,7 +564,7 @@ export class ListsEffects {
           nzTitle: this.translate.instant('LIST.COMPLETION_POPUP.Title'),
           nzFooter: null,
           nzContent: ListCompletionPopupComponent,
-          nzComponentParams: {
+          nzData: {
             list: list
           }
         });

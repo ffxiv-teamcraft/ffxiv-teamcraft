@@ -1,8 +1,5 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "affected": {
-    "defaultBase": "staging"
-  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,
@@ -58,5 +55,8 @@
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/src/test-setup.[jt]s"
     ]
-  }
+  },
+  "nxCloudAccessToken": "ZGZlMTM3NjktOTIwMy00ZjBlLWIwZGMtMmM4YjA2MjJjMWI5fHJlYWQtd3JpdGU=",
+  "useInferencePlugins": false,
+  "defaultBase": "staging"
 }

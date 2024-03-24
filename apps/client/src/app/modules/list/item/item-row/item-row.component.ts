@@ -101,7 +101,7 @@ export class ItemRowComponent extends AbstractItemRowComponent implements OnInit
               nzTitle: `${itemName} - ${this.translate.instant('COMMENTS.Title')}`,
               nzFooter: null,
               nzContent: CommentsPopupComponent,
-              nzComponentParams: {
+              nzData: {
                 targetType: CommentTargetType.LIST,
                 targetId: list.$key,
                 targetDetails: `${this.finalItem ? 'finalItems' : 'items'}:${item.id}`,
@@ -148,7 +148,7 @@ export class ItemRowComponent extends AbstractItemRowComponent implements OnInit
       nzTitle: this.translate.instant('Edit_amount'),
       nzFooter: null,
       nzContent: NumberQuestionPopupComponent,
-      nzComponentParams: {
+      nzData: {
         value: item.amount
       }
     }).afterClose
@@ -257,7 +257,7 @@ export class ItemRowComponent extends AbstractItemRowComponent implements OnInit
       const freeCompanyActionsData = this.freeCompanyActionsService.fromData(freeCompanyActions);
       this.modal.create({
         nzContent: MacroPopupComponent,
-        nzComponentParams: {
+        nzData: {
           rotation: this.registry.deserializeRotation(rotation.rotation),
           job: (<any>item).craftedBy[0].jobId,
           food: foodsData.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq),

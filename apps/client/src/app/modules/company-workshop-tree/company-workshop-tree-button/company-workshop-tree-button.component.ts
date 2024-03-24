@@ -32,7 +32,7 @@ export class CompanyWorkshopTreeButtonComponent {
       nzTitle: this.translate.instant('WORKSHOP_TREE.Title'),
       nzContent: CompanyWorkshopTreePopupComponent,
       nzFooter: null,
-      nzComponentParams: {
+      nzData: {
         workshopRecipeId: this.recipeId
       }
     });

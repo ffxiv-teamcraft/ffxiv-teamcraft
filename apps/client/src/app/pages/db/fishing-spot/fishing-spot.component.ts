@@ -102,7 +102,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
     this.dialog.create({
       nzTitle: `${this.translate.instant('DB.FISH.Misses_popup_title')}`,
       nzContent: FishingMissesPopupComponent,
-      nzComponentParams: {
+      nzData: {
         spotId: spotId
       },
       nzFooter: null,

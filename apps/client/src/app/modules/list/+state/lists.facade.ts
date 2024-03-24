@@ -297,7 +297,7 @@ export class ListsFacade {
       nzContent: NameQuestionPopupComponent,
       nzFooter: null,
       nzTitle: this.translate.instant('New_List'),
-      nzComponentParams: {
+      nzData: {
         showEphemeralCheckbox: true,
         showOfflineCheckbox: true
       }

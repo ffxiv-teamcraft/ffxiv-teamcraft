@@ -93,7 +93,7 @@ export class CommissionsEffects {
         };
         return this.modalService.create({
           nzContent: CommissionEditionPopupComponent,
-          nzComponentParams: {
+          nzData: {
             commission: formData
           },
           nzFooter: null,

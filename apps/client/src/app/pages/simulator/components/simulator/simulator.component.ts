@@ -383,10 +383,10 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
     this.simulation$.pipe(
       first(),
       switchMap(simulation => {
-        return this.dialog.create<CommunityRotationFinderPopupComponent, CraftingRotation>({
+        return this.dialog.create<CommunityRotationFinderPopupComponent, Partial<CommunityRotationFinderPopupComponent>, CraftingRotation>({
           nzFooter: null,
           nzContent: CommunityRotationFinderPopupComponent,
-          nzComponentParams: {
+          nzData: {
             recipe: simulation.recipe,
             stats: stats
           },
@@ -428,7 +428,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
     this.dialog.create({
       nzFooter: null,
       nzContent: SimulationSharePopupComponent,
-      nzComponentParams: {
+      nzData: {
         rotation: rotation,
         stats: stats,
         food: this.selectedFood,
@@ -465,7 +465,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
     this.dialog.create({
       nzFooter: null,
       nzContent: RecipeChoicePopupComponent,
-      nzComponentParams: {
+      nzData: {
         rotationId: rotation.$key,
         warning: this.dirty ? 'SIMULATOR.Changing_recipe_save_warning' : null
       },
@@ -482,7 +482,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
     this.dialog.create({
       nzFooter: null,
       nzContent: RotationTipsPopupComponent,
-      nzComponentParams: {
+      nzData: {
         tips: tips,
         result: result
       },
@@ -494,7 +494,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
     this.markAsDirty();
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
-      nzComponentParams: { baseName: rotation.getName() },
+      nzData: { baseName: rotation.getName() },
       nzFooter: null,
       nzTitle: this.translate.instant('Edit')
     }).afterClose.pipe(
@@ -531,7 +531,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
   openMacroPopup(simulation: Simulation): void {
     this.dialog.create({
       nzContent: MacroPopupComponent,
-      nzComponentParams: {
+      nzData: {
         rotation: this.actions$.value,
         job: this.job,
         simulation: simulation.clone(),
@@ -547,7 +547,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
   openMinStatsPopup(simulation: Simulation): void {
     this.dialog.create({
       nzContent: SimulationMinStatsPopupComponent,
-      nzComponentParams: {
+      nzData: {
         simulation: simulation.clone(),
         thresholds: this.thresholds
       },
@@ -559,7 +559,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
   openStepByStepReportPopup(result: SimulationResult): void {
     this.dialog.create({
       nzContent: StepByStepReportComponent,
-      nzComponentParams: {
+      nzData: {
         steps: result.steps
       },
       nzTitle: this.translate.instant('SIMULATOR.Step_by_step_report'),
@@ -906,7 +906,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
     this.cd.detach();
     this.dialog.create({
       nzContent: CommunityRotationPopupComponent,
-      nzComponentParams: {
+      nzData: {
         rotation: rotation,
         simulation: simulation.clone(),
         bonuses: {

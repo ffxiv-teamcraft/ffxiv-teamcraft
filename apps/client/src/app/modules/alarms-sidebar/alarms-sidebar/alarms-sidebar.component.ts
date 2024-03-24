@@ -86,7 +86,7 @@ export class AlarmsSidebarComponent implements OnInit {
       this.dialog.create({
         nzTitle: title,
         nzContent: MapComponent,
-        nzComponentParams: {
+        nzData: {
           mapId: alarm.mapId,
           markers: [alarm.coords]
         },

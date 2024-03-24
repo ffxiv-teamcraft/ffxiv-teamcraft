@@ -315,7 +315,7 @@ export class FishTrainComponent extends TeamcraftComponent {
       nzContent: NameQuestionPopupComponent,
       nzFooter: null,
       nzTitle: this.translate.instant('FISH_TRAIN.Enter_conductor_token'),
-      nzComponentParams: {
+      nzData: {
         placeholder: 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'
       }
     }).afterClose.pipe(
@@ -335,7 +335,7 @@ export class FishTrainComponent extends TeamcraftComponent {
       nzContent: NameQuestionPopupComponent,
       nzFooter: null,
       nzTitle: this.translate.instant('FISH_TRAIN.Rename_train'),
-      nzComponentParams: {
+      nzData: {
         baseName: name
       }
     }).afterClose.pipe(

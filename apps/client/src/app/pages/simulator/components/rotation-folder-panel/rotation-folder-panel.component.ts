@@ -93,7 +93,7 @@ export class RotationFolderPanelComponent {
         return this.dialog.create({
           nzTitle: this.translate.instant('SIMULATOR.ROTATIONS.FOLDERS.Add_rotations'),
           nzContent: FolderAdditionPickerComponent,
-          nzComponentParams: {
+          nzData: {
             elements: elements.map(rotation => {
               return {
                 $key: rotation.$key,
@@ -127,7 +127,7 @@ export class RotationFolderPanelComponent {
   renameFolder(): void {
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
-      nzComponentParams: { baseName: this._folder.name },
+      nzData: { baseName: this._folder.name },
       nzFooter: null,
       nzTitle: this.translate.instant('Edit')
     }).afterClose.pipe(
@@ -145,7 +145,7 @@ export class RotationFolderPanelComponent {
       nzTitle: this.translate.instant('PERMISSIONS.Title'),
       nzFooter: null,
       nzContent: PermissionsBoxComponent,
-      nzComponentParams: { data: this._folder, ready$: modalReady$ }
+      nzData: { data: this._folder, ready$: modalReady$ }
     });
     modalReady$.pipe(
       first(),

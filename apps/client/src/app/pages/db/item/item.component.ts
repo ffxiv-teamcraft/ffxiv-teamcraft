@@ -573,7 +573,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
   //   this.dialog.create({
   //     nzTitle: this.translate.instant('DB.3d_model_viewer'),
   //     nzContent: ModelViewerComponent,
-  //     nzComponentParams: {
+  //     nzData: {
   //       slot: slot,
   //       models: gtData.item.models
   //     },
