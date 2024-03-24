@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.30](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.29...v11.0.30) (2024-03-24)
+
+
+### Features
+
+* **data:** update for cn patch-6.5 ([666820c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/666820c30c78e38fcf8a9a71c8bdb9be824ef784))
+* **db:** allagan reports import ([f8557e6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f8557e6254e70cefd729de11bf07abfbf5be7f38))
+
+
+### Bug Fixes
+
+* **alarm:** fixed an issue with double ringing when "early by" setting was enabled ([2b9490b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2b9490bd92c999b7969a84dc364603f319f43432))
+* **auth:** fix account sometimes not loading due to a Tipeee bug ([2f3f4d4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2f3f4d4c4244b19d0053047b647c87433dd8c987))
+* **layouts:** disable hide used rows in "Crafts and timed first" ([49de8e1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/49de8e133b08a1ccc12b26df7fb656f863c396f3))
+* **layouts:** fix for GATHERED_BY_XXX filters sometimes not matching properly ([1241abe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1241abee5a3c8aff4aaa0e6b98684ffd94a14dba))
+* **step-by-step:** show alarm buttons in timed rows display panel ([ebaf45b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ebaf45b13970dbd799a7435d4387ff278f19931b))
+
 ### [11.0.29](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.28...v11.0.29) (2024-02-29)
 
 
