@@ -9,7 +9,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { SupportUsPopupComponent } from './support-us-popup/support-us-popup.component';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { PlatformService } from '../tools/platform.service';
-import { IpcService } from '../electron/ipc.service';
 import { Router } from '@angular/router';
 import { OauthService } from '../auth/oauth.service';
 
@@ -20,9 +19,8 @@ export class SupportService {
 
   constructor(private http: HttpClient, private authFacade: AuthFacade,
               private dialog: NzModalService, private translate: TranslateService,
-              private platform: PlatformService, private ipc: IpcService,
-              private message: NzMessageService, private router: Router,
-              private oauth: OauthService) {
+              private platform: PlatformService, private message: NzMessageService,
+              private router: Router, private oauth: OauthService) {
   }
 
   public patreonOauth(): void {

@@ -73,7 +73,8 @@ export class PublicProfileComponent {
     );
     this.characterEntry$ = userId$.pipe(
       switchMap(userId => this.characterService.getUserCharacter(userId)),
-      catchError(() => {
+      catchError((err) => {
+        console.error('ERROR WTF', err);
         this.notFound = true;
         return EMPTY;
       })
