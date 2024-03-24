@@ -231,7 +231,7 @@ export class ListController {
    * @param initialAddition
    * @param newEtag
    */
-  public static setDone(list: List, itemId: number | string, amount: number, excludeFinalItems: boolean = false, onlyFinalItems = false, setUsed: boolean = false, recipeId?: string, external = false, initialAddition = amount, newEtag = Date.now()): void {
+  public static setDone(list: List, itemId: number | string, amount: number, excludeFinalItems = false, onlyFinalItems = false, setUsed = false, recipeId?: string, external = false, initialAddition = amount, newEtag = Date.now()): void {
     const item = ListController.getItemById(list, itemId, excludeFinalItems, onlyFinalItems, recipeId);
     const previousDone = item.amount_needed - MathTools.absoluteCeil((item.amount - item.done) / item.yield);
     if (setUsed) {

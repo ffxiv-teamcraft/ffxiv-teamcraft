@@ -31,10 +31,10 @@ export class Theme {
     public primary: string,
     public highlight: string,
     public text: string,
-    public topbar: string = '#001529',
-    public trigger: string = '#002140',
-    public triggerHover: string = '#2A3948',
-    public background: string = '#292929'
+    public topbar = '#001529',
+    public trigger = '#002140',
+    public triggerHover = '#2A3948',
+    public background = '#292929'
   ) {
   }
 
