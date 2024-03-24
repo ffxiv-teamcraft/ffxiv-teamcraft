@@ -525,7 +525,7 @@ export const lazyFilesList = {
   },
   'reduction': {
     'fileName': 'reduction.json',
-    'hashedFileName': 'reduction.b16c53b143cfcf5395390524c7b58e158b553f70.json'
+    'hashedFileName': 'reduction.5a57133067f6e303574f7114b8967bc1ae3222cf.json'
   },
   'retainerTasks': {
     'fileName': 'retainer-tasks.json',
@@ -661,7 +661,7 @@ export const lazyFilesList = {
   },
   'voyageSources': {
     'fileName': 'voyage-sources.json',
-    'hashedFileName': 'voyage-sources.4a45ee69a68d0ca5ac82e624de72df47425d7d15.json'
+    'hashedFileName': 'voyage-sources.c180cc7d2fcd556bdbdc756896b3f4275231a30b.json'
   },
   'weathers': {
     'fileName': 'weathers.json',

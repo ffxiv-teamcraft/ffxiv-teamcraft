@@ -13,7 +13,8 @@
         "outputPath": "dist/apps/data-extraction",
         "main": "apps/data-extraction/src/main.ts",
         "tsConfig": "apps/data-extraction/tsconfig.app.json",
-        "assets": ["apps/data-extraction/src/assets"]
+        "assets": ["apps/data-extraction/src/assets"],
+        "webpackConfig": "apps/electron/webpack.config.js"
       },
       "configurations": {
         "production": {

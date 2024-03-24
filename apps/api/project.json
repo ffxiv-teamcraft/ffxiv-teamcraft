@@ -25,7 +25,8 @@
             "input": "./libs/data/src/lib/extracts/",
             "output": "/assets/extracts/"
           }
-        ]
+        ],
+        "webpackConfig": "apps/electron/webpack.config.js"
       },
       "configurations": {
         "production": {

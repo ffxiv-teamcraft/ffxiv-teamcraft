@@ -246,7 +246,8 @@ export abstract class AbstractExtractor {
       },
       body: {
         query: gql
-      }
+      },
+      timeout: 120000
     }, (err, _, res) => {
       if (!res.data) {
         console.log(JSON.stringify(res));
