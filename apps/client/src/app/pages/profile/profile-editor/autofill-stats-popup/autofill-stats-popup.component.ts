@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { IpcService } from '../../../../core/electron/ipc.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
@@ -10,18 +9,18 @@ import { I18nPipe } from '../../../../core/i18n.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgIf } from '@angular/common';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-    selector: 'app-autofill-stats-popup',
-    templateUrl: './autofill-stats-popup.component.html',
-    styleUrls: ['./autofill-stats-popup.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [FlexModule, NzAlertModule, NzListModule, NgIf, NzButtonModule, NzIconModule, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe]
+  selector: 'app-autofill-stats-popup',
+  templateUrl: './autofill-stats-popup.component.html',
+  styleUrls: ['./autofill-stats-popup.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [FlexModule, NzAlertModule, NzListModule, NgIf, NzButtonModule, NzIconModule, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe]
 })
 export class AutofillStatsPopupComponent extends TeamcraftComponent {
 
@@ -38,7 +37,7 @@ export class AutofillStatsPopupComponent extends TeamcraftComponent {
     })
   );
 
-  constructor(private ipc: IpcService, private authFacade: AuthFacade,
+  constructor(private authFacade: AuthFacade,
               private eorzeaFacade: EorzeaFacade) {
     super();
     this.eorzeaFacade.classJobSet$

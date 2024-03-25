@@ -13,6 +13,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { AsyncPipe, DatePipe, DecimalPipe, NgFor, NgIf } from '@angular/common';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
   selector: 'app-marketboard-popup',
@@ -21,7 +22,7 @@ import { AsyncPipe, DatePipe, DecimalPipe, NgFor, NgIf } from '@angular/common';
   standalone: true,
   imports: [NgIf, NzAlertModule, FlexModule, NzTableModule, NgFor, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, WorldNamePipe]
 })
-export class MarketboardPopupComponent implements OnInit {
+export class MarketboardPopupComponent extends DialogComponent implements OnInit {
 
   @Input()
   itemId: number;
@@ -50,9 +51,11 @@ export class MarketboardPopupComponent implements OnInit {
 
   constructor(private authFacade: AuthFacade, private lazyData: LazyDataFacade,
               public settings: SettingsService, private universalis: UniversalisService) {
+    super();
   }
 
   ngOnInit() {
+    this.patchData();
     this.server$ = this.authFacade.mainCharacter$.pipe(
       tap(console.log),
       map(character => character.Server),

@@ -12,19 +12,22 @@ import { NzRateModule } from 'ng-zorro-antd/rate';
 import { NgFor, NgIf, DatePipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
-    selector: 'app-user-rating-details-popup',
-    templateUrl: './user-rating-details-popup.component.html',
-    styleUrls: ['./user-rating-details-popup.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [NzDividerModule, FlexModule, NgFor, NzRateModule, FormsModule, NzButtonModule, RouterLink, NgIf, NzEmptyModule, NzIconModule, DatePipe, TranslateModule]
+  selector: 'app-user-rating-details-popup',
+  templateUrl: './user-rating-details-popup.component.html',
+  styleUrls: ['./user-rating-details-popup.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NzDividerModule, FlexModule, NgFor, NzRateModule, FormsModule, NzButtonModule, RouterLink, NgIf, NzEmptyModule, NzIconModule, DatePipe, TranslateModule]
 })
-export class UserRatingDetailsPopupComponent {
+export class UserRatingDetailsPopupComponent extends DialogComponent {
   profile: CommissionProfile;
 
   constructor(private modalRef: NzModalRef, public translate: TranslateService, public settings: SettingsService) {
+    super();
+    this.patchData();
   }
 
   close(): void {

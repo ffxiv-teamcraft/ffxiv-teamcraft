@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthFacade } from '../../../../+state/auth.facade';
-import { first, map, tap } from 'rxjs/operators';
+import { first, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { I18nPipe } from '../../../../core/i18n.pipe';
@@ -11,16 +11,17 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FormsModule } from '@angular/forms';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { DialogComponent } from '../../../../core/dialog.component';
 
 @Component({
-    selector: 'app-masterbooks-popup',
-    templateUrl: './masterbooks-popup.component.html',
-    styleUrls: ['./masterbooks-popup.component.less'],
-    standalone: true,
-    imports: [NgIf, FlexModule, NgFor, NzCheckboxModule, FormsModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule, ItemNamePipe, I18nPipe]
+  selector: 'app-masterbooks-popup',
+  templateUrl: './masterbooks-popup.component.html',
+  styleUrls: ['./masterbooks-popup.component.less'],
+  standalone: true,
+  imports: [NgIf, FlexModule, NgFor, NzCheckboxModule, FormsModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule, ItemNamePipe, I18nPipe]
 })
-export class MasterbooksPopupComponent implements OnInit {
+export class MasterbooksPopupComponent extends DialogComponent implements OnInit {
 
   private static BOOKS: { [index: number]: number[] } = {
     //CRP
@@ -52,9 +53,11 @@ export class MasterbooksPopupComponent implements OnInit {
   public jobId: number;
 
   constructor(private authFacade: AuthFacade, private modalRef: NzModalRef) {
+    super();
   }
 
   ngOnInit(): void {
+    this.patchData();
     this.masterbooks$ = this.authFacade.mainCharacterEntry$.pipe(
       map(entry => {
         const books = MasterbooksPopupComponent.BOOKS[this.jobId];

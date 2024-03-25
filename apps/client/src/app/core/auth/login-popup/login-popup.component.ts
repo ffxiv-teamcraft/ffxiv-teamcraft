@@ -13,6 +13,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzFormModule } from 'ng-zorro-antd/form';
+import { DialogComponent } from '../../dialog.component';
 
 @Component({
     selector: 'app-login-popup',
@@ -21,7 +22,7 @@ import { NzFormModule } from 'ng-zorro-antd/form';
     standalone: true,
     imports: [FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NzButtonModule, NzWaveModule, NgIf, NzAlertModule, NzDividerModule, TranslateModule]
 })
-export class LoginPopupComponent {
+export class LoginPopupComponent extends DialogComponent {
 
   form: UntypedFormGroup;
 
@@ -30,10 +31,12 @@ export class LoginPopupComponent {
   constructor(private fb: UntypedFormBuilder, private authFacade: AuthFacade,
               private modalRef: NzModalRef, public platform: PlatformService,
               private message: NzMessageService, private translate: TranslateService) {
+    super();
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]]
     });
+    this.patchData();
   }
 
   login(): void {

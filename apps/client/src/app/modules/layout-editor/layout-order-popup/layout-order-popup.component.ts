@@ -3,17 +3,23 @@ import { ListLayout } from '../../../core/layout/list-layout';
 import { LayoutRow } from '../../../core/layout/layout-row';
 import { CdkDragDrop, moveItemInArray, CdkDropList, CdkDrag } from '@angular/cdk/drag-drop';
 import { NgFor } from '@angular/common';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
-    selector: 'app-layout-order-popup',
-    templateUrl: './layout-order-popup.component.html',
-    styleUrls: ['./layout-order-popup.component.less'],
-    standalone: true,
-    imports: [CdkDropList, NgFor, CdkDrag]
+  selector: 'app-layout-order-popup',
+  templateUrl: './layout-order-popup.component.html',
+  styleUrls: ['./layout-order-popup.component.less'],
+  standalone: true,
+  imports: [CdkDropList, NgFor, CdkDrag]
 })
-export class LayoutOrderPopupComponent {
+export class LayoutOrderPopupComponent extends DialogComponent {
 
   public layout: ListLayout;
+
+  constructor() {
+    super();
+    this.patchData();
+  }
 
   drop(event: CdkDragDrop<LayoutRow[]>) {
     moveItemInArray(this.layout.rows, event.previousIndex, event.currentIndex);

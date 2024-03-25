@@ -21,6 +21,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { DialogComponent } from '../../dialog.component';
 
 @Component({
     selector: 'app-character-link-popup',
@@ -29,7 +30,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     standalone: true,
     imports: [NgIf, NzGridModule, NzFormModule, NzInputModule, FormsModule, NzAutocompleteModule, ReactiveFormsModule, NgFor, NzButtonModule, NzWaveModule, NzListModule, NzDividerModule, NzCheckboxModule, NzSpinModule, AsyncPipe, TranslateModule]
 })
-export class CharacterLinkPopupComponent {
+export class CharacterLinkPopupComponent extends DialogComponent {
 
   public servers$: Observable<string[]>;
 
@@ -57,6 +58,7 @@ export class CharacterLinkPopupComponent {
 
   constructor(private store: Store<any>, private modalRef: NzModalRef,
               private lodestoneService: LodestoneService) {
+    super();
     this.servers$ = of(GAME_SERVERS).pipe(
       map(servers => {
         return uniq(servers).sort();
@@ -91,6 +93,8 @@ export class CharacterLinkPopupComponent {
       map(response => response.Character),
       filter(character => character !== null)
     );
+
+    this.patchData();
   }
 
   setCustomCharacter(): void {

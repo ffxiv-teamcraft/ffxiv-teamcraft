@@ -8,16 +8,17 @@ import { switchMap } from 'rxjs/operators';
 import { FloorPipe } from '../../../pipes/pipes/floor.pipe';
 import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
-    selector: 'app-stats-popup',
-    templateUrl: './stats-popup.component.html',
-    styleUrls: ['./stats-popup.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [FlexModule, NgIf, NgFor, AsyncPipe, DecimalPipe, FloorPipe, TranslateModule]
+  selector: 'app-stats-popup',
+  templateUrl: './stats-popup.component.html',
+  styleUrls: ['./stats-popup.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [FlexModule, NgIf, NgFor, AsyncPipe, DecimalPipe, FloorPipe, TranslateModule]
 })
-export class StatsPopupComponent {
+export class StatsPopupComponent extends DialogComponent {
 
   @Input()
   gearset: TeamcraftGearset;
@@ -43,5 +44,7 @@ export class StatsPopupComponent {
   );
 
   constructor(private statsService: StatsService, public translate: TranslateService) {
+    super();
+    this.patchData();
   }
 }

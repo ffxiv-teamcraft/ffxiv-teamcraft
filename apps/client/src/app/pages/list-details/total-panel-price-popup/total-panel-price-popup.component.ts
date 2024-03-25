@@ -14,6 +14,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
 import { NgIf, DecimalPipe } from '@angular/common';
 import { NzListModule } from 'ng-zorro-antd/list';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
     selector: 'app-total-panel-price-popup',
@@ -22,7 +23,7 @@ import { NzListModule } from 'ng-zorro-antd/list';
     standalone: true,
     imports: [NzListModule, NgIf, ItemIconComponent, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, DecimalPipe, I18nPipe, TranslateModule, ItemNamePipe]
 })
-export class TotalPanelPricePopupComponent implements OnInit {
+export class TotalPanelPricePopupComponent extends DialogComponent implements OnInit {
 
   public totalPrice: { currencyId: number, currencyIcon: number, amount: number, canIgnore: boolean }[] = [];
 

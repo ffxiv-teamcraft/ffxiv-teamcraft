@@ -28,7 +28,7 @@ export class ListPickerService {
     return this.nzDrawer.create<ListPickerDrawerComponent, Partial<ListPickerDrawerComponent>, List>({
       nzTitle: this.translate.instant('Pick_a_list'),
       nzContent: ListPickerDrawerComponent,
-      nzContentParams: {
+      nzData: {
         workshopView: workshopView
       }
     })

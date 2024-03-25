@@ -23,10 +23,11 @@ import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.compon
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
-import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { ItemCapsTableComponent } from '../../../modules/gearsets/item-caps-table/item-caps-table.component';
 import { FlexModule } from '@angular/flex-layout/flex';
+import { DialogComponent } from '../../../core/dialog.component';
 
 
 interface MateriaMenuEntry {
@@ -35,14 +36,14 @@ interface MateriaMenuEntry {
 }
 
 @Component({
-    selector: 'app-materias-popup',
-    templateUrl: './materias-popup.component.html',
-    styleUrls: ['./materias-popup.component.less'],
-    changeDetection: ChangeDetectionStrategy.Default,
-    standalone: true,
-    imports: [FlexModule, ItemCapsTableComponent, NzDividerModule, NgFor, NgIf, ItemIconComponent, NzButtonModule, NzIconModule, I18nNameComponent, NzWaveModule, NzDropDownModule, NzSelectModule, FormsModule, NzMenuModule, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, IfMobilePipe]
+  selector: 'app-materias-popup',
+  templateUrl: './materias-popup.component.html',
+  styleUrls: ['./materias-popup.component.less'],
+  changeDetection: ChangeDetectionStrategy.Default,
+  standalone: true,
+  imports: [FlexModule, ItemCapsTableComponent, NzDividerModule, NgFor, NgIf, ItemIconComponent, NzButtonModule, NzIconModule, I18nNameComponent, NzWaveModule, NzDropDownModule, NzSelectModule, FormsModule, NzMenuModule, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, IfMobilePipe]
 })
-export class MateriasPopupComponent {
+export class MateriasPopupComponent extends DialogComponent {
 
   equipmentPiece: EquipmentPiece;
 
@@ -77,6 +78,8 @@ export class MateriasPopupComponent {
 
   constructor(private lazyData: LazyDataFacade, public materiasService: MateriaService,
               private modalRef: NzModalRef, private statsService: StatsService) {
+    super();
+    this.patchData();
   }
 
   getBonus(materia: number, index: number): Observable<{ overcapped: boolean, value: number }> {

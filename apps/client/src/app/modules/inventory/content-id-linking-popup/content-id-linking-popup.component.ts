@@ -13,6 +13,7 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NgFor, NgIf, AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
     selector: 'app-content-id-linking-popup',
@@ -22,7 +23,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     standalone: true,
     imports: [FlexModule, NgFor, NgIf, NzToolTipModule, NzPopconfirmModule, NzAvatarModule, NzTagModule, NzButtonModule, NzWaveModule, NzIconModule, NzDividerModule, AsyncPipe, TranslateModule]
 })
-export class ContentIdLinkingPopupComponent {
+export class ContentIdLinkingPopupComponent extends DialogComponent{
 
   contentId: string;
 
@@ -32,6 +33,8 @@ export class ContentIdLinkingPopupComponent {
 
   constructor(private authFacade: AuthFacade, private settings: SettingsService,
               private modalRef: NzModalRef) {
+    super();
+    this.patchData();
   }
 
   selectCharacter(id: number): void {

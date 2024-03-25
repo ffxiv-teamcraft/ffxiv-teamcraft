@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ByregotsBlessing, CraftingAction, CraftingJob, FinalAppraisal, Simulation } from '@ffxiv-teamcraft/simulator';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Consumable } from '../../model/consumable';
 import { FreeCompanyAction } from '../../model/free-company-action';
 import { SettingsService } from '../../../../modules/settings/settings.service';
@@ -19,17 +19,18 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { FormsModule } from '@angular/forms';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
-import { NgIf, NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
+import { DialogComponent } from '../../../../core/dialog.component';
 
 @Component({
-    selector: 'app-macro-popup',
-    templateUrl: './macro-popup.component.html',
-    styleUrls: ['./macro-popup.component.less'],
-    standalone: true,
-    imports: [FlexModule, NgIf, NzAlertModule, NzCheckboxModule, FormsModule, NzGridModule, NzFormModule, NzInputNumberModule, NzInputModule, NgFor, NzButtonModule, NzWaveModule, ClipboardDirective, NzIconModule, TranslateModule]
+  selector: 'app-macro-popup',
+  templateUrl: './macro-popup.component.html',
+  styleUrls: ['./macro-popup.component.less'],
+  standalone: true,
+  imports: [FlexModule, NgIf, NzAlertModule, NzCheckboxModule, FormsModule, NzGridModule, NzFormModule, NzInputNumberModule, NzInputModule, NgFor, NzButtonModule, NzWaveModule, ClipboardDirective, NzIconModule, TranslateModule]
 })
-export class MacroPopupComponent implements OnInit {
+export class MacroPopupComponent extends DialogComponent implements OnInit {
 
   public macro: string[][] = [[]];
 
@@ -72,6 +73,7 @@ export class MacroPopupComponent implements OnInit {
   private readonly maxMacroLines = 15;
 
   constructor(private i18n: I18nToolsService, private translator: TranslateService, public settings: SettingsService) {
+    super();
     // TEMP: load settings and clean up localStorage
     if (localStorage.getItem('macros:addecho') !== null) {
       this.addEcho = this.settings.macroEcho = localStorage.getItem('macros:addecho') !== 'false';
@@ -87,6 +89,7 @@ export class MacroPopupComponent implements OnInit {
       this.addConsumables = this.settings.macroConsumables = localStorage.getItem('macros:consumables') === 'true';
       localStorage.removeItem('macros:consumables');
     }
+    this.patchData();
   }
 
   public generateMacros(): void {

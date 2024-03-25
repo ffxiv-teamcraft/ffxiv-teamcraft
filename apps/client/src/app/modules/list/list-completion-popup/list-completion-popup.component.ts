@@ -13,20 +13,23 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
-    selector: 'app-list-completion-popup',
-    templateUrl: './list-completion-popup.component.html',
-    styleUrls: ['./list-completion-popup.component.less'],
-    standalone: true,
-    imports: [FlexModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, LowerCasePipe, TranslateModule]
+  selector: 'app-list-completion-popup',
+  templateUrl: './list-completion-popup.component.html',
+  styleUrls: ['./list-completion-popup.component.less'],
+  standalone: true,
+  imports: [FlexModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, LowerCasePipe, TranslateModule]
 })
-export class ListCompletionPopupComponent {
+export class ListCompletionPopupComponent extends DialogComponent {
 
   list: List;
 
   constructor(private ref: NzModalRef, private listsFacade: ListsFacade, private router: Router,
               private commissionsFacade: CommissionsFacade, private listPricingService: ListPricingService) {
+    super();
+    this.patchData();
   }
 
   close(): void {

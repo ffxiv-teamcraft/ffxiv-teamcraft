@@ -24,6 +24,7 @@ import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
     selector: 'app-gearset-comparator-popup',
@@ -32,7 +33,7 @@ import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
     standalone: true,
     imports: [NgIf, NzDividerModule, FlexModule, NgFor, ItemIconComponent, NzAlertModule, NzSelectModule, FormsModule, NzGridModule, NzFormModule, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, AsyncPipe, DecimalPipe, ItemNamePipe, JobUnicodePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
-export class GearsetComparatorPopupComponent {
+export class GearsetComparatorPopupComponent extends DialogComponent{
 
   public static EXTERNAL_REGEXP = /https?:\/\/ffxivteamcraft\.com\/gearset\/([a-zA-Z0-9]+)/i;
 
@@ -62,7 +63,9 @@ export class GearsetComparatorPopupComponent {
 
   constructor(private gearsetsFacade: GearsetsFacade, private comparator: GearsetComparatorService,
               public translate: TranslateService) {
+    super();
     this.gearsetsFacade.loadAll();
+    this.patchData();
   }
 
   public updateLinkSupport(): void {

@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RotationsFacade } from '../+state/rotations.facade';
-import { NzDrawerRef } from 'ng-zorro-antd/drawer';
+import { NZ_DRAWER_DATA, NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { CraftingRotation } from '../../../model/other/crafting-rotation';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { RotationFoldersFacade } from '../../rotation-folders/+state/rotation-folders.facade';
-import { BehaviorSubject, combineLatest } from 'rxjs';
 import { CraftingRotationsFolder } from '../../../model/other/crafting-rotations-folder';
 import { Craft } from '@ffxiv-teamcraft/simulator';
 import { TranslateModule } from '@ngx-translate/core';
@@ -19,14 +18,14 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { RouterLink } from '@angular/router';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
-    selector: 'app-rotation-picker-drawer',
-    templateUrl: './rotation-picker-drawer.component.html',
-    styleUrls: ['./rotation-picker-drawer.component.less'],
-    standalone: true,
-    imports: [NgIf, NzButtonModule, RouterLink, NzIconModule, NzDividerModule, NzInputModule, FormsModule, FlexModule, NzListModule, NzToolTipModule, NgFor, AsyncPipe, DecimalPipe, TranslateModule]
+  selector: 'app-rotation-picker-drawer',
+  templateUrl: './rotation-picker-drawer.component.html',
+  styleUrls: ['./rotation-picker-drawer.component.less'],
+  standalone: true,
+  imports: [NgIf, NzButtonModule, RouterLink, NzIconModule, NzDividerModule, NzInputModule, FormsModule, FlexModule, NzListModule, NzToolTipModule, NgFor, AsyncPipe, DecimalPipe, TranslateModule]
 })
 export class RotationPickerDrawerComponent {
 
@@ -56,6 +55,7 @@ export class RotationPickerDrawerComponent {
 
   constructor(private rotationsFacade: RotationsFacade, private authFacade: AuthFacade,
               private rotationFoldersFacade: RotationFoldersFacade, public ref: NzDrawerRef<CraftingRotation>) {
+    Object.assign(this, inject(NZ_DRAWER_DATA));
     this.rotationsFacade.loadMyRotations();
 
     this.rotationFoldersDisplay$ = combineLatest([this.rotationFoldersFacade.myRotationFolders$, this.rotationsFacade.myRotations$, this.query$]).pipe(

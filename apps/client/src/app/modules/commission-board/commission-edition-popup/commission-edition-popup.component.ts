@@ -18,6 +18,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NgIf, NgFor } from '@angular/common';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
     selector: 'app-commission-edition-popup',
@@ -27,7 +28,7 @@ import { NgIf, NgFor } from '@angular/common';
     standalone: true,
     imports: [NgIf, NzAlertModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NzSelectModule, NgFor, NzInputNumberModule, NzCheckboxModule, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, ClipboardDirective, TranslateModule]
 })
-export class CommissionEditionPopupComponent implements OnInit {
+export class CommissionEditionPopupComponent extends DialogComponent implements OnInit {
 
   commission: Partial<Commission>;
 
@@ -43,9 +44,11 @@ export class CommissionEditionPopupComponent implements OnInit {
   showWarning = localStorage.getItem('cw:s') === null;
 
   constructor(private fb: UntypedFormBuilder, private modalRef: NzModalRef, private linkTools: LinkToolsService) {
+    super();
   }
 
   ngOnInit(): void {
+    this.patchData();
     this.form = this.fb.group({
       name: [this.commission.name, Validators.required],
       description: [this.commission.description || '', Validators.maxLength(1000)],

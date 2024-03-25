@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NzModalRef } from 'ng-zorro-antd/modal';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { map, switchMap, takeUntil, withLatestFrom } from 'rxjs/operators';
@@ -8,7 +7,7 @@ import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { debounceBufferTime } from '../../../core/rxjs/debounce-buffer-time';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { GearsetsFacade } from '../+state/gearsets.facade';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MateriaService } from '../materia.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { Job } from '@ffxiv-teamcraft/data/model/lazy-equipment';
@@ -19,18 +18,17 @@ import { FlexModule } from '@angular/flex-layout/flex';
 
 
 @Component({
-    selector: 'app-sync-from-pcap-popup',
-    templateUrl: './sync-from-pcap-popup.component.html',
-    styleUrls: ['./sync-from-pcap-popup.component.less'],
-    standalone: true,
-    imports: [FlexModule, NzAlertModule, NzTimelineModule, NgFor, TranslateModule]
+  selector: 'app-sync-from-pcap-popup',
+  templateUrl: './sync-from-pcap-popup.component.html',
+  styleUrls: ['./sync-from-pcap-popup.component.less'],
+  standalone: true,
+  imports: [FlexModule, NzAlertModule, NzTimelineModule, NgFor, TranslateModule]
 })
 export class SyncFromPcapPopupComponent extends TeamcraftComponent {
 
   public timeline: { color: string, label: string }[] = [];
 
-  constructor(private modalRef: NzModalRef,
-              private ipc: IpcService, private lazyData: LazyDataFacade,
+  constructor(private ipc: IpcService, private lazyData: LazyDataFacade,
               private i18n: I18nToolsService, private materiaService: MateriaService,
               private gearsetsFacade: GearsetsFacade, private translate: TranslateService
   ) {

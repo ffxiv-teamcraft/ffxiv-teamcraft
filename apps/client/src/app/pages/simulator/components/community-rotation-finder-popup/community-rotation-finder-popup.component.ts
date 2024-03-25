@@ -14,7 +14,7 @@ import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { first, map, switchMap } from 'rxjs/operators';
 import { SettingsService } from '../../../../modules/settings/settings.service';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { withLazyData } from '../../../../core/rxjs/with-lazy-data';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { ConsumablesService } from '../../model/consumables.service';
@@ -28,21 +28,22 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { UserAvatarComponent } from '../../../../modules/user-avatar/user-avatar/user-avatar.component';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { DialogComponent } from '../../../../core/dialog.component';
 
 @Component({
-    selector: 'app-community-rotation-finder-popup',
-    templateUrl: './community-rotation-finder-popup.component.html',
-    styleUrls: ['./community-rotation-finder-popup.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [NzCardModule, FlexModule, NzCheckboxModule, FormsModule, NgIf, NzEmptyModule, NzDividerModule, NgFor, UserAvatarComponent, NzButtonModule, NzIconModule, NzToolTipModule, NzTagModule, ActionComponent, NzWaveModule, PageLoaderComponent, AsyncPipe, TranslateModule]
+  selector: 'app-community-rotation-finder-popup',
+  templateUrl: './community-rotation-finder-popup.component.html',
+  styleUrls: ['./community-rotation-finder-popup.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NzCardModule, FlexModule, NzCheckboxModule, FormsModule, NgIf, NzEmptyModule, NzDividerModule, NgFor, UserAvatarComponent, NzButtonModule, NzIconModule, NzToolTipModule, NzTagModule, ActionComponent, NzWaveModule, PageLoaderComponent, AsyncPipe, TranslateModule]
 })
-export class CommunityRotationFinderPopupComponent implements OnInit {
+export class CommunityRotationFinderPopupComponent extends DialogComponent implements OnInit {
 
   recipe: Craft;
 
@@ -65,6 +66,7 @@ export class CommunityRotationFinderPopupComponent implements OnInit {
               private modalRef: NzModalRef, private simulationService: SimulationService,
               private settings: SettingsService, public translate: TranslateService,
               private lazyData: LazyDataFacade, public consumablesService: ConsumablesService) {
+    super();
   }
 
   private get simulator() {
@@ -72,6 +74,7 @@ export class CommunityRotationFinderPopupComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.patchData();
     this.rotations$ = combineLatest([
       this.amountToShow$,
       this.showRotationsAboveStats$

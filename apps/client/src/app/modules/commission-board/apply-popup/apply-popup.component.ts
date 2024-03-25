@@ -9,6 +9,7 @@ import { NgIf } from '@angular/common';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzFormModule } from 'ng-zorro-antd/form';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
     selector: 'app-apply-popup',
@@ -18,16 +19,18 @@ import { NzFormModule } from 'ng-zorro-antd/form';
     standalone: true,
     imports: [FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NgIf, FlexModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
-export class ApplyPopupComponent implements OnInit {
+export class ApplyPopupComponent extends DialogComponent implements OnInit {
 
   price: number;
 
   form: UntypedFormGroup;
 
   constructor(private fb: UntypedFormBuilder, private modalRef: NzModalRef) {
+    super();
   }
 
   ngOnInit(): void {
+    this.patchData();
     this.form = this.fb.group({
       price: [this.price, Validators.required],
       contactInformations: [localStorage.getItem('commission:contact') || '', Validators.required]

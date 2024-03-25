@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { List } from '../../list/model/list';
 import { ListsFacade } from '../../list/+state/lists.facade';
-import { NzDrawerRef } from 'ng-zorro-antd/drawer';
+import { NZ_DRAWER_DATA, NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { WorkshopDisplay } from '../../../model/other/workshop-display';
 import { debounceTime, filter, first, map, shareReplay } from 'rxjs/operators';
 import { WorkshopsFacade } from '../../workshop/+state/workshops.facade';
@@ -35,7 +35,7 @@ export class ListPickerDrawerComponent {
 
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  workshopView: boolean;
+  workshopView: boolean = inject(NZ_DRAWER_DATA)?.workshopView;
 
   constructor(private listsFacade: ListsFacade, private drawerRef: NzDrawerRef<List>,
               private workshopsFacade: WorkshopsFacade, private teamsFacade: TeamsFacade) {

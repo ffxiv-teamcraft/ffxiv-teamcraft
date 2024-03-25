@@ -18,15 +18,16 @@ import { FullpageMessageComponent } from '../../fullpage-message/fullpage-messag
 import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
-    selector: 'app-gearset-cost-popup',
-    templateUrl: './gearset-cost-popup.component.html',
-    styleUrls: ['./gearset-cost-popup.component.less'],
-    standalone: true,
-    imports: [NgIf, NgFor, FlexModule, ItemIconComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, ItemNamePipe, I18nPipe, TranslateModule]
+  selector: 'app-gearset-cost-popup',
+  templateUrl: './gearset-cost-popup.component.html',
+  styleUrls: ['./gearset-cost-popup.component.less'],
+  standalone: true,
+  imports: [NgIf, NgFor, FlexModule, ItemIconComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, ItemNamePipe, I18nPipe, TranslateModule]
 })
-export class GearsetCostPopupComponent {
+export class GearsetCostPopupComponent extends DialogComponent {
 
   @Input()
   gearset: TeamcraftGearset;
@@ -76,9 +77,14 @@ export class GearsetCostPopupComponent {
   );
 
   constructor(private lazyData: LazyDataFacade, public translate: TranslateService) {
+    super();
+    this.patchData();
   }
 
-  private computeCosts(currency: TradeEntry, itemEquipSlotCategory: LazyData['itemEquipSlotCategory'], extracts: Extracts, costs = []): { id: string | number, amount: number }[] {
+  private computeCosts(currency: TradeEntry, itemEquipSlotCategory: LazyData['itemEquipSlotCategory'], extracts: Extracts, costs = []): {
+    id: string | number,
+    amount: number
+  }[] {
     // If you can equip this item, let's trigger recursion and not include it as a trade currency
     if (itemEquipSlotCategory[currency.id]) {
       const itemExtract = getExtract(extracts, +currency.id);

@@ -18,6 +18,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { UserAvatarComponent } from '../../user-avatar/user-avatar/user-avatar.component';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NgIf, AsyncPipe, DatePipe } from '@angular/common';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
     selector: 'app-comments-popup',
@@ -26,7 +27,7 @@ import { NgIf, AsyncPipe, DatePipe } from '@angular/common';
     standalone: true,
     imports: [NgIf, NzListModule, UserAvatarComponent, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, NzInputModule, FormsModule, AsyncPipe, DatePipe, TranslateModule]
 })
-export class CommentsPopupComponent implements OnInit {
+export class CommentsPopupComponent extends DialogComponent implements OnInit {
 
   targetType: CommentTargetType;
 
@@ -46,9 +47,11 @@ export class CommentsPopupComponent implements OnInit {
 
   constructor(private commentsService: CommentsService, private authFacade: AuthFacade,
               private notificationService: NotificationService, public settings: SettingsService) {
+    super();
   }
 
   ngOnInit() {
+    this.patchData();
     this.comments$ = this.commentsService.getComments(this.targetType, this.targetId, this.targetDetails);
   }
 

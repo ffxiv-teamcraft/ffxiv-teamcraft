@@ -4,7 +4,7 @@ import { DataService } from '../../../../core/api/data.service';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { debounceTime, filter, map, startWith, switchMap, tap } from 'rxjs/operators';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { RotationPickerService } from '../../../../modules/rotations/rotation-picker.service';
 import { Recipe } from '@ffxiv-teamcraft/types';
 import { JobUnicodePipe } from '../../../../pipes/pipes/job-unicode.pipe';
@@ -18,16 +18,17 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgIf } from '@angular/common';
+import { DialogComponent } from '../../../../core/dialog.component';
 
 @Component({
-    selector: 'app-recipe-choice-popup',
-    templateUrl: './recipe-choice-popup.component.html',
-    styleUrls: ['./recipe-choice-popup.component.less'],
-    standalone: true,
-    imports: [NgIf, NzAlertModule, NzButtonModule, NzInputModule, NzIconModule, NzListModule, I18nNameComponent, ItemIconComponent, RouterLink, NzWaveModule, NzDividerModule, AsyncPipe, TranslateModule, JobUnicodePipe]
+  selector: 'app-recipe-choice-popup',
+  templateUrl: './recipe-choice-popup.component.html',
+  styleUrls: ['./recipe-choice-popup.component.less'],
+  standalone: true,
+  imports: [NgIf, NzAlertModule, NzButtonModule, NzInputModule, NzIconModule, NzListModule, I18nNameComponent, ItemIconComponent, RouterLink, NzWaveModule, NzDividerModule, AsyncPipe, TranslateModule, JobUnicodePipe]
 })
-export class RecipeChoicePopupComponent {
+export class RecipeChoicePopupComponent extends DialogComponent {
 
   public query$: ReplaySubject<string> = new ReplaySubject<string>();
 
@@ -48,6 +49,8 @@ export class RecipeChoicePopupComponent {
   constructor(private dataService: DataService, private dialogRef: NzModalRef,
               private htmlTools: HtmlToolsService,
               private translate: TranslateService, private rotationPickerService: RotationPickerService) {
+    super();
+    this.patchData();
     this.results$ = this.query$.pipe(
       filter(query => {
         if (['ko', 'zh', 'ja'].indexOf(this.translate.currentLang.toLowerCase()) > -1) {
