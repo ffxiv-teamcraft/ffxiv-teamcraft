@@ -17,12 +17,12 @@
           "apps/api/src/assets",
           {
             "glob": "**/*",
-            "input": "./libs/data/src/lib/json/",
+            "input": "libs/data/src/lib/json/",
             "output": "/assets/data/"
           },
           {
             "glob": "**/*",
-            "input": "./libs/data/src/lib/extracts/",
+            "input": "libs/data/src/lib/extracts/",
             "output": "/assets/extracts/"
           }
         ],
