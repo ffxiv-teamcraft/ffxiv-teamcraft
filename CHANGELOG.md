@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.31](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.30...v11.0.31) (2024-03-25)
+
+
+### Bug Fixes
+
+* **deps:** fixed item details popups not opening in list details page ([aadca4f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aadca4f6d97631e3c5c8c46a812e6d8fde2ce969))
+* **deps:** fixed weird navigation section layouts in navbar and log tracker ([9ae2c5d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9ae2c5dfa3ff15d0924b21e466deeebffb65d4e3))
+
 ### [11.0.30](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.29...v11.0.30) (2024-03-24)
 
 
