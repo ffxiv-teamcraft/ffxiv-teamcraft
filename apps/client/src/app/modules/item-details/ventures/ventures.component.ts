@@ -31,6 +31,7 @@ export class VenturesComponent extends ItemDetailsPopup<LazyRetainerTask[]> impl
   }
 
   ngOnInit(): void {
+    this.patchData();
     this.ventures = this.details.map(venture => {
       venture.quantities = (venture.quantities || []).map(q => {
         if (q.stat === 'perception') {
@@ -42,7 +43,7 @@ export class VenturesComponent extends ItemDetailsPopup<LazyRetainerTask[]> impl
       });
       return venture;
     });
-    super.ngOnInit();
+    this.details$.next(this.details);
   }
 
 }
