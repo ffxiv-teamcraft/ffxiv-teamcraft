@@ -24,11 +24,13 @@
   <li *ngFor="let category of content$ | async; trackBy: trackByName"
       [nzOpen]="settings.compactSidebar?false:state[category.collapsedKey]"
       (nzOpenChange)="onOpenChange(category.collapsedKey, $event)"
-      nz-submenu>
-                <span title>
-                  <ng-container *ngTemplateOutlet="icon;context:{$implicit: category.icon}"></ng-container>
-                  <span>{{category.name | translate}}</span>
-                </span>
+      nz-submenu [nzTitle]="titleRef">
+    <ng-template #titleRef>
+      <span>
+        <ng-container *ngTemplateOutlet="icon;context:{$implicit: category.icon}"></ng-container>
+        <span>{{ category.name | translate }}</span>
+      </span>
+    </ng-template>
     <ng-container *ngFor="let entry of category.children;trackBy: trackByName">
       <a *ngIf="!entry.hidden" (click)="(entry.preventDefault ? $event.preventDefault() : null);onNavLinkClick()"
          [routerLink]="entry.link" [routerLinkActiveOptions]="{exact: true}"
@@ -37,7 +39,7 @@
          routerLinkActive="ant-menu-item-selected">
             <span>
               <ng-container *ngTemplateOutlet="icon;context:{$implicit: entry.icon}"></ng-container>
-              <span>{{entry.name | translate}}</span>
+              <span>{{ entry.name | translate }}</span>
               <ng-container *ngIf="entry.badge">
                 <ng-container *ngTemplateOutlet="badge;context:{$implicit: entry.badge}"></ng-container>
               </ng-container>
@@ -46,9 +48,10 @@
       <nz-dropdown-menu #menu="nzDropdownMenu">
         <ul nz-menu>
           <li nz-menu-item *ngIf="category.name !== 'SIDEBAR.Favorites'; else removeFavorite"
-              (click)="addToFavorites(entry)">{{'SIDEBAR.Add_to_favorites' | translate}}</li>
+              (click)="addToFavorites(entry)">{{ 'SIDEBAR.Add_to_favorites' | translate }}
+          </li>
           <ng-template #removeFavorite>
-            <li nz-menu-item (click)="removeFromFavorites(entry)">{{'SIDEBAR.Remove_from_favorites' | translate}}</li>
+            <li nz-menu-item (click)="removeFromFavorites(entry)">{{ 'SIDEBAR.Remove_from_favorites' | translate }}</li>
           </ng-template>
         </ul>
       </nz-dropdown-menu>
@@ -56,37 +59,33 @@
   </li>
 
   <li [nzOpen]="settings.compactSidebar?false:state.other"
-      (nzOpenChange)="onOpenChange('other', $event)" nz-submenu>
-    <span title>
-      <i nz-icon nzType="info-circle"></i>
-      <span class="nav-text">{{'SIDEBAR.Other' | translate}}</span>
-    </span>
+      (nzOpenChange)="onOpenChange('other', $event)" nz-submenu [nzTitle]="'SIDEBAR.Other' | translate" nzIcon="info-circle">
     <a (click)="onNavLinkClick()" nz-menu-item class="menu-link" href="https://wiki.ffxivteamcraft.com"
        nz-tooltip target="_blank">
       <i nz-icon nzType="question-circle"></i>
-      <span class="nav-text">{{'WIKI.Title' | translate}}</span>
+      <span class="nav-text">{{ 'WIKI.Title' | translate }}</span>
     </a>
     <a *ngIf="!isDesktop" (click)="onNavLinkClick()" nz-menu-item class="menu-link" href="https://ffxivteamcraft.com/desktop"
        nz-tooltip target="_blank">
       <i nz-icon nzType="download" nzTheme="outline"></i>
-      <span class="nav-text">{{'Download_desktop_app' | translate}}</span>
+      <span class="nav-text">{{ 'Download_desktop_app' | translate }}</span>
     </a>
     <a (click)="onNavLinkClick()" nz-menu-item class="menu-link" href="https://guides.ffxivteamcraft.com"
        nz-tooltip target="_blank">
       <i nz-icon nzType="file-word" nzTheme="outline"></i>
-      <span class="nav-text">{{'Guides_links' | translate}}</span>
+      <span class="nav-text">{{ 'Guides_links' | translate }}</span>
     </a>
     <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/about"
        routerLinkActive="ant-menu-item-selected">
           <span>
               <i nz-icon nzType="info-circle-o"></i>
-              <span class="nav-text">{{'ABOUT.title' | translate}}</span>
+              <span class="nav-text">{{ 'ABOUT.title' | translate }}</span>
           </span>
     </a>
     <a (click)="onNavLinkClick();showPatchNotes.emit()" class="menu-link" nz-menu-item routerLinkActive="ant-menu-item-selected">
         <span>
             <i nz-icon nzType="diff" nzTheme="outline"></i>
-            <span class="nav-text">{{'Patch_notes' | translate:{ version: version } }}</span>
+            <span class="nav-text">{{ 'Patch_notes' | translate:{ version: version } }}</span>
         </span>
     </a>
   </li>
