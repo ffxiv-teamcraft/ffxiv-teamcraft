@@ -28,6 +28,7 @@ export class VendorsComponent extends ItemDetailsPopup<Vendor[]> implements OnIn
   }
 
   ngOnInit(): void {
+    this.patchData();
     this.details = this.details.sort((a, b) => {
       if (a.zoneId && !b.zoneId) {
         return -1;
@@ -37,7 +38,7 @@ export class VendorsComponent extends ItemDetailsPopup<Vendor[]> implements OnIn
         return 0;
       }
     });
-    super.ngOnInit();
+    this.details$.next(this.details);
   }
 
 }

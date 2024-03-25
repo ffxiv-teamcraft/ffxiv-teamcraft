@@ -23,10 +23,11 @@ export class GardeningComponent extends ItemDetailsPopup<GardeningData> implemen
   public formattedDuration: string;
 
   ngOnInit(): void {
+    this.patchData();
     const targetDate = addHours(new Date(), this.details.duration);
     if (this.details.duration > 0) {
       this.formattedDuration = formatDistance(new Date(), targetDate);
     }
-    super.ngOnInit();
+    this.details$.next(this.details);
   }
 }
