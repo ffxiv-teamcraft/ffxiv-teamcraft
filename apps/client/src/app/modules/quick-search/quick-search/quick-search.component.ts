@@ -14,7 +14,7 @@ import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
 import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
 import { IfMobilePipe } from '../../../pipes/pipes/if-mobile.pipe';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzInputModule } from 'ng-zorro-antd/input';
@@ -25,7 +25,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     templateUrl: './quick-search.component.html',
     styleUrls: ['./quick-search.component.less'],
     standalone: true,
-    imports: [NzButtonModule, NzInputModule, NzSelectModule, FormsModule, NgFor, FlexModule, NgSwitch, NgSwitchCase, NgSwitchDefault, NgIf, AsyncPipe, IfMobilePipe, NodeTypeIconPipe, XivapiIconPipe, I18nPipe, TranslateModule, I18nRowPipe]
+    imports: [NzButtonModule, NzInputModule, NzSelectModule, FormsModule, FlexModule, AsyncPipe, IfMobilePipe, NodeTypeIconPipe, XivapiIconPipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class QuickSearchComponent extends TeamcraftComponent {
 

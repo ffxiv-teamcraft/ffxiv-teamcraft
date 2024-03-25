@@ -7,14 +7,14 @@ import { FormsModule } from '@angular/forms';
 import { TutorialStepDirective } from '../../../core/tutorial/tutorial-step.directive';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { NzListModule } from 'ng-zorro-antd/list';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-reset-timers',
     templateUrl: './reset-timers.component.html',
     styleUrls: ['./reset-timers.component.less'],
     standalone: true,
-    imports: [NgIf, NzListModule, NgFor, NzSwitchModule, TutorialStepDirective, FormsModule, AsyncPipe, TranslateModule, TimerPipe]
+    imports: [NzListModule, NzSwitchModule, TutorialStepDirective, FormsModule, AsyncPipe, TranslateModule, TimerPipe]
 })
 export class ResetTimersComponent {
 

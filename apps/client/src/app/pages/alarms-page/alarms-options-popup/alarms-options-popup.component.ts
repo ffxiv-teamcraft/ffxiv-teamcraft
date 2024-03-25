@@ -11,7 +11,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
-import { NgIf, NgFor } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 import { NzSliderModule } from 'ng-zorro-antd/slider';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -21,7 +21,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     templateUrl: './alarms-options-popup.component.html',
     styleUrls: ['./alarms-options-popup.component.less'],
     standalone: true,
-    imports: [FlexModule, NzSliderModule, FormsModule, NgIf, NzSwitchModule, NzButtonModule, NzWaveModule, NzIconModule, NzGridModule, NzFormModule, NzSelectModule, NgFor, TranslateModule]
+    imports: [FlexModule, NzSliderModule, FormsModule, NzSwitchModule, NzButtonModule, NzWaveModule, NzIconModule, NzGridModule, NzFormModule, NzSelectModule, TranslateModule]
 })
 export class AlarmsOptionsPopupComponent {
 

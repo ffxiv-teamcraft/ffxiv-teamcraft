@@ -48,7 +48,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { QuickSearchComponent } from '../../../modules/quick-search/quick-search/quick-search.component';
 
 
@@ -66,7 +66,7 @@ function durationRequired(control: AbstractControl) {
     styleUrls: ['./allagan-report-details.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [QuickSearchComponent, NgIf, FlexModule, ItemIconComponent, I18nNameComponent, NzDividerModule, PageLoaderComponent, NzEmptyModule, LazyScrollComponent, AllaganReportRowComponent, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzSelectModule, NgFor, NzInputModule, NzAutocompleteModule, NzButtonModule, NzInputNumberModule, NzAlertModule, NzSpinModule, PredatorsInputComponent, NzWaveModule, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, ActionNamePipe, AbsolutePipe, MapNamePipe, TugNamePipe, HooksetActionIdPipe]
+    imports: [QuickSearchComponent, FlexModule, ItemIconComponent, I18nNameComponent, NzDividerModule, PageLoaderComponent, NzEmptyModule, LazyScrollComponent, AllaganReportRowComponent, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzSelectModule, NzInputModule, NzAutocompleteModule, NzButtonModule, NzInputNumberModule, NzAlertModule, NzSpinModule, PredatorsInputComponent, NzWaveModule, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, ActionNamePipe, AbsolutePipe, MapNamePipe, TugNamePipe, HooksetActionIdPipe]
 })
 export class AllaganReportDetailsComponent extends ReportsManagementComponent {
 

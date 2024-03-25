@@ -1,63 +1,73 @@
-<div fxLayout="column" fxLayoutGap="10px" *ngIf="detailsDisplay$ | async as detailsDisplay">
-  <ng-container *ngIf="nodes$ | async as nodes; else loading">
-    <nz-card *ngFor="let reduction of detailsDisplay.data" fxFlex="1 1 auto">
-      <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="title">
-        <ng-template #title>
-          <span [appItemRarity]="reduction">{{reduction | itemName | i18n}}</span>
-        </ng-template>
-        <ng-template #itemIcon>
-          <app-item-icon [icon]="reduction | lazyIcon" [itemId]="reduction"
-                         [itemName]="reduction | itemName | i18n" [width]="32"></app-item-icon>
-        </ng-template>
-      </nz-card-meta>
-      <nz-list [nzDataSource]="nodes[reduction] || []" [nzRenderItem]="nodeTemplate">
-        <ng-template #nodeTemplate let-row>
-          <nz-list-item [nzActions]="[openMap]">
-            <nz-list-item-meta [nzDescription]="description" [nzTitle]="row.node.zoneId | i18nRow:'places' | i18n">
-              <ng-template #description>
-                <app-node-details [node]="row.node" [showAlarmsIntegration]="true"></app-node-details>
-              </ng-template>
-              <ng-template #openMap>
-                <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
-                  <app-map-position [mapId]="row.node.map"
+@if (detailsDisplay$ | async; as detailsDisplay) {
+  <div fxLayout="column" fxLayoutGap="10px">
+    @if (nodes$ | async; as nodes) {
+      @for (reduction of detailsDisplay.data; track reduction) {
+        <nz-card fxFlex="1 1 auto">
+          <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="title">
+            <ng-template #title>
+              <span [appItemRarity]="reduction">{{reduction | itemName | i18n}}</span>
+            </ng-template>
+            <ng-template #itemIcon>
+              <app-item-icon [icon]="reduction | lazyIcon" [itemId]="reduction"
+              [itemName]="reduction | itemName | i18n" [width]="32"></app-item-icon>
+            </ng-template>
+          </nz-card-meta>
+          <nz-list [nzDataSource]="nodes[reduction] || []" [nzRenderItem]="nodeTemplate">
+            <ng-template #nodeTemplate let-row>
+              <nz-list-item [nzActions]="[openMap]">
+                <nz-list-item-meta [nzDescription]="description" [nzTitle]="row.node.zoneId | i18nRow:'places' | i18n">
+                  <ng-template #description>
+                    <app-node-details [node]="row.node" [showAlarmsIntegration]="true"></app-node-details>
+                  </ng-template>
+                  <ng-template #openMap>
+                    <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
+                      <app-map-position [mapId]="row.node.map"
                                     [marker]="{
                                    x: row.node.x,
                                    y: row.node.y,
                                    iconType: 'img',
                                    iconImg: row.node.type | nodeTypeIcon: true
                                   }"
-                                    [zoneId]="row.node.zoneId"></app-map-position>
-                  <div
-                    *ngIf="row.node.map | closestAetheryte: { x: row.node.x, y: row.node.y } | async as aetheryte"
-                    class="closest-tp">
-                    <img alt="" class="aetheryte-icon" src="./assets/icons/Aetheryte.png">
-                    {{aetheryte?.nameid | i18nRow:'places' | i18n}}
-                  </div>
-                  <ng-container *ngIf="row.node.baits !== undefined">
-                    <app-fishing-bait [baits]="row.node.baits"></app-fishing-bait>
-                  </ng-container>
-                  <div *ngIf="row.node.predators && row.node.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
-                       fxLayoutGap="10px">
-                    <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
-                         src="./assets/icons/status/predators.png">
-                    <div *ngFor="let predator of row.node.predators" fxLayout="row" fxLayoutAlign="flex-start center"
-                         fxLayoutGap="5px">
-                      <div>{{predator.amount}}x</div>
-                      <app-item-icon [icon]="predator.icon" [itemId]="predator.id" [width]="32"></app-item-icon>
-                    </div>
-                  </div>
-                </div>
+                      [zoneId]="row.node.zoneId"></app-map-position>
+                      @if (row.node.map | closestAetheryte: { x: row.node.x, y: row.node.y } | async; as aetheryte) {
+                        <div
+                          class="closest-tp">
+                          <img alt="" class="aetheryte-icon" src="./assets/icons/Aetheryte.png">
+                          {{aetheryte?.nameid | i18nRow:'places' | i18n}}
+                        </div>
+                      }
+                      @if (row.node.baits !== undefined) {
+                        <app-fishing-bait [baits]="row.node.baits"></app-fishing-bait>
+                      }
+                      @if (row.node.predators && row.node.predators.length > 0) {
+                        <div fxLayout="row" fxLayoutAlign="flex-start center"
+                          fxLayoutGap="10px">
+                          <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
+                            src="./assets/icons/status/predators.png">
+                            @for (predator of row.node.predators; track predator) {
+                              <div fxLayout="row" fxLayoutAlign="flex-start center"
+                                fxLayoutGap="5px">
+                                <div>{{predator.amount}}x</div>
+                                <app-item-icon [icon]="predator.icon" [itemId]="predator.id" [width]="32"></app-item-icon>
+                              </div>
+                            }
+                          </div>
+                        }
+                      </div>
+                    </ng-template>
+                  </nz-list-item-meta>
+                </nz-list-item>
               </ng-template>
-            </nz-list-item-meta>
-          </nz-list-item>
-        </ng-template>
-      </nz-list>
-    </nz-card>
-  </ng-container>
-  <div fxLayout="row" fxLayoutAlign="center center">
-    <button nz-button *ngIf="detailsDisplay.hasMore" (click)="showEverything$.next(true)">{{'COMMON.Show_more' | translate}}</button>
-  </div>
-</div>
-<ng-template #loading>
-  <app-page-loader></app-page-loader>
-</ng-template>
+            </nz-list>
+          </nz-card>
+        }
+      } @else {
+        <app-page-loader></app-page-loader>
+      }
+      <div fxLayout="row" fxLayoutAlign="center center">
+        @if (detailsDisplay.hasMore) {
+          <button nz-button (click)="showEverything$.next(true)">{{'COMMON.Show_more' | translate}}</button>
+        }
+      </div>
+    </div>
+  }

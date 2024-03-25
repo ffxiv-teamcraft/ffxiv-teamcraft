@@ -1,80 +1,99 @@
-<div *ngIf="characterEntry$ | async as characterEntry">
-  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="flex-start flex-start" fxLayoutAlign.lt-md="center center"
-       fxLayoutGap="10px">
-    <img [class.avatar]="false |ifMobile:true" [class.portrait]="true | ifMobile: false"
-         [src]="characterEntry.character.Portrait | ifMobile: characterEntry.character.Avatar " alt="">
-    <div fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign.lt-md="center center" fxLayoutGap="10px">
-      <h2>
-        {{characterEntry.character.Name}}
-        <i *ngIf="!characterEntry.verified" [nzTooltipTitle]="'Not_verified' | translate" nz-icon nz-tooltip
-           type="exclamation-circle"></i>
-      </h2>
-      <span>{{characterEntry.character.Server}}</span>
-      <ng-container *ngIf="user$ | async as user">
-        <div fxLayout="row wrap" fxLayoutGap="5px">
-          <nz-tag *ngIf="user.admin" [nzColor]="'magenta'">{{'COMMON.Admin' | translate}}</nz-tag>
-          <nz-tag *ngIf="user.supporter" [nzColor]="'purple'">{{'PROFILE.Patreon_supporter' | translate}}</nz-tag>
-          <nz-tag *ngIf="user.stats?.listsCreated > 100"
-                  [nzColor]="'orange'">{{'PROFILE.More_than_100_lists_created' | translate}}</nz-tag>
-        </div>
-        <app-user-rating-display [userId]="user.$key"></app-user-rating-display>
-      </ng-container>
-      <div *ngIf="gearSets$ | async as sets" fxLayout="row wrap" fxLayoutAlign="space-evenly">
-        <div *ngFor="let set of sets" class="stat-row" fxLayout="column" fxLayoutAlign="center center">
-          <div [innerHTML]="set.jobId | jobUnicode" class="companion-svg"></div>
-          <div>{{set.level}}</div>
-        </div>
-      </div>
-      <nz-divider nzType="horizontal" nzOrientation="left" [nzText]="'PROFILE.Community_contributions' | translate"></nz-divider>
-      <nz-collapse>
-        <nz-collapse-panel [nzHeader]="'Public_lists' | translate">
-          <nz-list [nzDataSource]="communityLists$ | async" [nzRenderItem]="list">
-            <ng-template #list let-list>
-              <app-list-panel [hideAvatar]="true" [list]="list" [publicDisplay]="true"></app-list-panel>
-            </ng-template>
-          </nz-list>
-        </nz-collapse-panel>
-        <nz-collapse-panel [nzHeader]="'SIMULATOR.COMMUNITY_ROTATIONS.Title' | translate">
-          <nz-list [nzDataSource]="communityRotations$ | async"
-                   [nzRenderItem]="rotation">
-            <ng-template #rotation let-rotation>
-              <app-rotation-panel [publicDisplay]="true" [rotation]="rotation"></app-rotation-panel>
-            </ng-template>
-          </nz-list>
-        </nz-collapse-panel>
-      </nz-collapse>
-      <ng-container *ngIf="fishingRankings$ | async as fishingRankings; else loadingFishRankings">
-        <nz-divider nzType="horizontal" nzOrientation="left" [nzText]="'PROFILE.Fishing_rankings' | translate"></nz-divider>
-        <nz-list [nzHeader]="summary">
-          <ng-template #summary>{{'PROFILE.Total_rankings' | translate}}: #1: {{fishingRankings.summary[1]}}, #2: {{fishingRankings.summary[2]}},
+@if (characterEntry$ | async; as characterEntry) {
+  <div>
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="flex-start flex-start" fxLayoutAlign.lt-md="center center"
+      fxLayoutGap="10px">
+      <img [class.avatar]="false |ifMobile:true" [class.portrait]="true | ifMobile: false"
+        [src]="characterEntry.character.Portrait | ifMobile: characterEntry.character.Avatar " alt="">
+      <div fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign.lt-md="center center" fxLayoutGap="10px">
+        <h2>
+          {{characterEntry.character.Name}}
+          @if (!characterEntry.verified) {
+            <i [nzTooltipTitle]="'Not_verified' | translate" nz-icon nz-tooltip
+            type="exclamation-circle"></i>
+          }
+        </h2>
+        <span>{{characterEntry.character.Server}}</span>
+        @if (user$ | async; as user) {
+          <div fxLayout="row wrap" fxLayoutGap="5px">
+            @if (user.admin) {
+              <nz-tag [nzColor]="'magenta'">{{'COMMON.Admin' | translate}}</nz-tag>
+            }
+            @if (user.supporter) {
+              <nz-tag [nzColor]="'purple'">{{'PROFILE.Patreon_supporter' | translate}}</nz-tag>
+            }
+            @if (user.stats?.listsCreated > 100) {
+              <nz-tag
+              [nzColor]="'orange'">{{'PROFILE.More_than_100_lists_created' | translate}}</nz-tag>
+            }
+          </div>
+          <app-user-rating-display [userId]="user.$key"></app-user-rating-display>
+        }
+        @if (gearSets$ | async; as sets) {
+          <div fxLayout="row wrap" fxLayoutAlign="space-evenly">
+            @for (set of sets; track set) {
+              <div class="stat-row" fxLayout="column" fxLayoutAlign="center center">
+                <div [innerHTML]="set.jobId | jobUnicode" class="companion-svg"></div>
+                <div>{{set.level}}</div>
+              </div>
+            }
+          </div>
+        }
+        <nz-divider nzType="horizontal" nzOrientation="left" [nzText]="'PROFILE.Community_contributions' | translate"></nz-divider>
+        <nz-collapse>
+          <nz-collapse-panel [nzHeader]="'Public_lists' | translate">
+            <nz-list [nzDataSource]="communityLists$ | async" [nzRenderItem]="list">
+              <ng-template #list let-list>
+                <app-list-panel [hideAvatar]="true" [list]="list" [publicDisplay]="true"></app-list-panel>
+              </ng-template>
+            </nz-list>
+          </nz-collapse-panel>
+          <nz-collapse-panel [nzHeader]="'SIMULATOR.COMMUNITY_ROTATIONS.Title' | translate">
+            <nz-list [nzDataSource]="communityRotations$ | async"
+              [nzRenderItem]="rotation">
+              <ng-template #rotation let-rotation>
+                <app-rotation-panel [publicDisplay]="true" [rotation]="rotation"></app-rotation-panel>
+              </ng-template>
+            </nz-list>
+          </nz-collapse-panel>
+        </nz-collapse>
+        @if (fishingRankings$ | async; as fishingRankings) {
+          <nz-divider nzType="horizontal" nzOrientation="left" [nzText]="'PROFILE.Fishing_rankings' | translate"></nz-divider>
+          <nz-list [nzHeader]="summary">
+            <ng-template #summary>{{'PROFILE.Total_rankings' | translate}}: #1: {{fishingRankings.summary[1]}}, #2: {{fishingRankings.summary[2]}},
             #3: {{fishingRankings.summary[3]}}</ng-template>
-          <cdk-virtual-scroll-viewport itemSize="73" class="fish-rankings-viewport">
-            <nz-list-item *cdkVirtualFor="let row of fishingRankings.data" [nzContent]="row.date | date:'short':undefined:settings.dateFormat">
-              <nz-skeleton *ngIf="!row" [nzAvatar]="true" [nzParagraph]="{ rows: 1 }"></nz-skeleton>
-              <nz-list-item-meta [nzAvatar]="avatar"
-                                 nzTitle="#{{row.ranking.rank}} - {{row.itemId | itemName | i18n}}"
-                                 [nzDescription]="description">
-                <ng-template #avatar>
-                  <app-item-icon [itemId]="row.itemId" width="32"></app-item-icon>
-                </ng-template>
-                <ng-template #description>
-                  {{row.size / 10}}ilm -
-                  {{row.baitId | itemName | i18n}}
-                </ng-template>
-              </nz-list-item-meta>
-            </nz-list-item>
-          </cdk-virtual-scroll-viewport>
-          <nz-list-empty *ngIf="fishingRankings.length === 0"></nz-list-empty>
-        </nz-list>
-      </ng-container>
-      <ng-template #loadingFishRankings>
-<!--        <div fxLayout="row" fxLayoutAlign="center center" class="fish-rankings-loader">-->
-<!--          <nz-spin nzSimple [nzTip]="'PROFILE.Loading_fish_rankings' | translate"></nz-spin>-->
-<!--        </div>-->
-      </ng-template>
+            <cdk-virtual-scroll-viewport itemSize="73" class="fish-rankings-viewport">
+              <nz-list-item *cdkVirtualFor="let row of fishingRankings.data" [nzContent]="row.date | date:'short':undefined:settings.dateFormat">
+                @if (!row) {
+                  <nz-skeleton [nzAvatar]="true" [nzParagraph]="{ rows: 1 }"></nz-skeleton>
+                }
+                <nz-list-item-meta [nzAvatar]="avatar"
+                  nzTitle="#{{row.ranking.rank}} - {{row.itemId | itemName | i18n}}"
+                  [nzDescription]="description">
+                  <ng-template #avatar>
+                    <app-item-icon [itemId]="row.itemId" width="32"></app-item-icon>
+                  </ng-template>
+                  <ng-template #description>
+                    {{row.size / 10}}ilm -
+                    {{row.baitId | itemName | i18n}}
+                  </ng-template>
+                </nz-list-item-meta>
+              </nz-list-item>
+            </cdk-virtual-scroll-viewport>
+            @if (fishingRankings.length === 0) {
+              <nz-list-empty></nz-list-empty>
+            }
+          </nz-list>
+        } @else {
+          <!--        <div fxLayout="row" fxLayoutAlign="center center" class="fish-rankings-loader">-->
+          <!--          <nz-spin nzSimple [nzTip]="'PROFILE.Loading_fish_rankings' | translate"></nz-spin>-->
+        <!--        </div>-->
+      }
     </div>
   </div>
 </div>
-<app-fullpage-message *ngIf="notFound">
-  {{'Character_not_found' | translate}}
-</app-fullpage-message>
+}
+@if (notFound) {
+  <app-fullpage-message>
+    {{'Character_not_found' | translate}}
+  </app-fullpage-message>
+}

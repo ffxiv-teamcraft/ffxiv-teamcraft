@@ -9,7 +9,7 @@ import { I18nPipe } from '../../../core/i18n.pipe';
 import { MapPositionComponent } from '../../map/map-position/map-position.component';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { NzTagModule } from 'ng-zorro-antd/tag';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzListModule } from 'ng-zorro-antd/list';
 
@@ -19,7 +19,7 @@ import { NzListModule } from 'ng-zorro-antd/list';
     styleUrls: ['./vendors.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzListModule, FlexModule, NgIf, NzTagModule, DbButtonComponent, MapPositionComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ClosestAetherytePipe]
+    imports: [NzListModule, FlexModule, NzTagModule, DbButtonComponent, MapPositionComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ClosestAetherytePipe]
 })
 export class VendorsComponent extends ItemDetailsPopup<Vendor[]> implements OnInit {
 

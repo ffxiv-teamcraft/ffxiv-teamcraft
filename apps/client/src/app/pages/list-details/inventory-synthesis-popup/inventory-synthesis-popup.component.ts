@@ -15,7 +15,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -25,7 +25,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     templateUrl: './inventory-synthesis-popup.component.html',
     styleUrls: ['./inventory-synthesis-popup.component.less'],
     standalone: true,
-    imports: [FlexModule, NzCheckboxModule, FormsModule, NgIf, NgFor, NzCardModule, ItemIconComponent, NzButtonModule, NzIconModule, NzToolTipModule, InventoryPositionComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe]
+    imports: [FlexModule, NzCheckboxModule, FormsModule, NzCardModule, ItemIconComponent, NzButtonModule, NzIconModule, NzToolTipModule, InventoryPositionComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class InventorySynthesisPopupComponent implements OnInit {
 

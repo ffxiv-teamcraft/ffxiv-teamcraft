@@ -26,14 +26,14 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-achievement',
     templateUrl: './achievement.component.html',
     styleUrls: ['./achievement.component.less'],
     standalone: true,
-    imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzCardModule, NzListModule, ItemIconComponent, ItemRarityDirective, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, IfMobilePipe, XivapiIconPipe]
+    imports: [FlexModule, I18nNameComponent, DbButtonComponent, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzCardModule, NzListModule, ItemIconComponent, ItemRarityDirective, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, IfMobilePipe, XivapiIconPipe]
 })
 export class AchievementComponent extends TeamcraftPageComponent {
 

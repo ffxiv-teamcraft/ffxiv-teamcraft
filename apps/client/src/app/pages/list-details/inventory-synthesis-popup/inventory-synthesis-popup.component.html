@@ -1,22 +1,30 @@
 <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
   <label nz-checkbox [ngModel]="removeDone$ | async" (ngModelChange)="setRemoveDone($event)">{{'LIST_DETAILS.Filter_items_done' | translate}}</label>
 
-  <div *ngIf="synthesis$ | async as synthesis" fxLayout="column" fxLayoutGap="10px">
-    <nz-card *ngFor="let row of synthesis; trackBy: trackByRow" [nzTitle]="row.isRetainer ? row.containerName : (('INVENTORY.BAG.' + row.containerName) | translate)">
-      <div fxLayout="column" fxLayoutGap="5px">
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngFor="let item of row.items; let odd = odd">
-          <app-item-icon [width]="24" [itemId]="item.itemId" [hq]="item.hq"></app-item-icon>
-          <div>{{item.itemId | itemName | i18n}}</div>
-          <img *ngIf="item.hq" alt="(HQ)" src="./assets/icons/HQ.png" class="hq-icon">
-          <div>x{{item.quantity}} ({{'LIST_DETAILS.X_needed' | translate: { amount: item.needed } }})</div>
-          <div>
-            <i nz-icon nzType="search" nzTheme="outline" nz-tooltip [nzTooltipTitle]="positionTooltip"></i>
-            <ng-template #positionTooltip>
-              <app-inventory-position [item]="item"></app-inventory-position>
-            </ng-template>
+  @if (synthesis$ | async; as synthesis) {
+    <div fxLayout="column" fxLayoutGap="10px">
+      @for (row of synthesis; track trackByRow($index, row)) {
+        <nz-card [nzTitle]="row.isRetainer ? row.containerName : (('INVENTORY.BAG.' + row.containerName) | translate)">
+          <div fxLayout="column" fxLayoutGap="5px">
+            @for (item of row.items; track item; let odd = $odd) {
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <app-item-icon [width]="24" [itemId]="item.itemId" [hq]="item.hq"></app-item-icon>
+                <div>{{item.itemId | itemName | i18n}}</div>
+                @if (item.hq) {
+                  <img alt="(HQ)" src="./assets/icons/HQ.png" class="hq-icon">
+                }
+                <div>x{{item.quantity}} ({{'LIST_DETAILS.X_needed' | translate: { amount: item.needed } }})</div>
+                <div>
+                  <i nz-icon nzType="search" nzTheme="outline" nz-tooltip [nzTooltipTitle]="positionTooltip"></i>
+                  <ng-template #positionTooltip>
+                    <app-inventory-position [item]="item"></app-inventory-position>
+                  </ng-template>
+                </div>
+              </div>
+            }
           </div>
-        </div>
-      </div>
-    </nz-card>
-  </div>
+        </nz-card>
+      }
+    </div>
+  }
 </div>

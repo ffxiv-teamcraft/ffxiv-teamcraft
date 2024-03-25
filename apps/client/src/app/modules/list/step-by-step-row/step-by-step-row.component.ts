@@ -33,7 +33,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { ItemNameClipboardDirective } from '../../../core/item-name-clipboard.directive';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 
 @Component({
@@ -42,7 +42,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
     styleUrls: ['./step-by-step-row.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzGridModule, NgIf, ItemIconComponent, I18nNameComponent, ItemNameClipboardDirective, NzToolTipModule, NzButtonModule, NzIconModule, ItemInventoryButtonComponent, NgFor, NgForTrackByKeyDirective, AlarmButtonComponent, NzTagModule, ItemSourcesDisplayComponent, NgForTrackByIdDirective, CompactAmountInputComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, CeilPipe, XivapiIconPipe, LazyIconPipe]
+    imports: [NzGridModule, ItemIconComponent, I18nNameComponent, ItemNameClipboardDirective, NzToolTipModule, NzButtonModule, NzIconModule, ItemInventoryButtonComponent, NgForTrackByKeyDirective, AlarmButtonComponent, NzTagModule, ItemSourcesDisplayComponent, NgForTrackByIdDirective, CompactAmountInputComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, CeilPipe, XivapiIconPipe, LazyIconPipe]
 })
 export class StepByStepRowComponent {
   @Input()

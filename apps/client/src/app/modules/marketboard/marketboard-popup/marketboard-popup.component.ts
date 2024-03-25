@@ -12,14 +12,14 @@ import { I18nPipe } from '../../../core/i18n.pipe';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
-import { AsyncPipe, DatePipe, DecimalPipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, DatePipe, DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-marketboard-popup',
   templateUrl: './marketboard-popup.component.html',
   styleUrls: ['./marketboard-popup.component.less'],
   standalone: true,
-  imports: [NgIf, NzAlertModule, FlexModule, NzTableModule, NgFor, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, WorldNamePipe]
+  imports: [NzAlertModule, FlexModule, NzTableModule, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, WorldNamePipe]
 })
 export class MarketboardPopupComponent implements OnInit {
 

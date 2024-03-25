@@ -3,7 +3,7 @@ import { IpcService } from '../../../core/electron/ipc.service';
 import { SettingsService } from '../../settings/settings.service';
 import { Title } from '@angular/platform-browser';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
-import { NgIf } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 import { NzSliderModule } from 'ng-zorro-antd/slider';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -15,7 +15,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     templateUrl: './overlay-container.component.html',
     styleUrls: ['./overlay-container.component.less'],
     standalone: true,
-    imports: [FlexModule, NzButtonModule, NzIconModule, NzSliderModule, FormsModule, NgIf, NzSwitchModule]
+    imports: [FlexModule, NzButtonModule, NzIconModule, NzSliderModule, FormsModule, NzSwitchModule]
 })
 export class OverlayContainerComponent implements OnInit {
 

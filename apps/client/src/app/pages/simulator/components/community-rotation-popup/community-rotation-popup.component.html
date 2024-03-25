@@ -7,8 +7,10 @@
     <nz-form-label [nzSpan]="6">{{'SIMULATOR.COMMUNITY_ROTATIONS.Tags_filter_placeholder' | translate}}</nz-form-label>
     <nz-form-control [nzSpan]="12">
       <nz-select [(ngModel)]="rotation.tags" [nzDisabled]="!rotation.public" name="tags" nzAllowClear nzMode="multiple"
-                 nzShowSearch>
-        <nz-option *ngFor="let tag of tags" [nzLabel]="tag.label | translate" [nzValue]="tag.value"></nz-option>
+        nzShowSearch>
+        @for (tag of tags; track tag) {
+          <nz-option [nzLabel]="tag.label | translate" [nzValue]="tag.value"></nz-option>
+        }
       </nz-select>
     </nz-form-control>
   </nz-form-item>
@@ -16,17 +18,19 @@
     <nz-form-label [nzSpan]="6">{{'SIMULATOR.COMMUNITY_ROTATIONS.Rlvl_filter_placeholder' | translate}}</nz-form-label>
     <nz-form-control [nzSpan]="12">
       <nz-select [(ngModel)]="rotation.community.rlvl" [nzDisabled]="!rotation.public" name="rlvl"
-                 nzAllowClear nzShowSearch>
-        <nz-option *ngFor="let rlvl of rlvls" [nzLabel]="rlvl.label" [nzValue]="rlvl.value"></nz-option>
+        nzAllowClear nzShowSearch>
+        @for (rlvl of rlvls; track rlvl) {
+          <nz-option [nzLabel]="rlvl.label" [nzValue]="rlvl.value"></nz-option>
+        }
       </nz-select>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-label
-      [nzSpan]="6">{{'SIMULATOR.COMMUNITY_ROTATIONS.Durability_filter_placeholder' | translate}}</nz-form-label>
+    [nzSpan]="6">{{'SIMULATOR.COMMUNITY_ROTATIONS.Durability_filter_placeholder' | translate}}</nz-form-label>
     <nz-form-control [nzSpan]="12">
       <nz-select [(ngModel)]="rotation.community.durability" [nzDisabled]="!rotation.public" name="durability"
-                 nzAllowClear nzShowSearch>
+        nzAllowClear nzShowSearch>
         <nz-option [nzValue]="30" nzLabel="30"></nz-option>
         <nz-option [nzValue]="35" nzLabel="35"></nz-option>
         <nz-option [nzValue]="40" nzLabel="40"></nz-option>
@@ -39,32 +43,32 @@
   </nz-form-item>
   <nz-form-item>
     <nz-form-label
-      [nzSpan]="6">{{'SIMULATOR.COMMUNITY_ROTATIONS.Min_craftsmanship_filter_placeholder' | translate}}</nz-form-label>
+    [nzSpan]="6">{{'SIMULATOR.COMMUNITY_ROTATIONS.Min_craftsmanship_filter_placeholder' | translate}}</nz-form-label>
     <nz-form-control [nzSpan]="12">
       <nz-input-number mouseWheel [(ngModel)]="rotation.community.minCraftsmanship"
-                       [nzDisabled]="!rotation.public"  [nzMin]="1" [nzStep]="1" name="minCraft"
-                       (mouseWheelUp)="adjust('minCraftsmanship', 1, 1)"
-                       (mouseWheelDown)="adjust('minCraftsmanship', -1, 1)"></nz-input-number>
+        [nzDisabled]="!rotation.public"  [nzMin]="1" [nzStep]="1" name="minCraft"
+        (mouseWheelUp)="adjust('minCraftsmanship', 1, 1)"
+      (mouseWheelDown)="adjust('minCraftsmanship', -1, 1)"></nz-input-number>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-label
-      [nzSpan]="6">{{'SIMULATOR.COMMUNITY_ROTATIONS.Min_control_filter_placeholder' | translate}}</nz-form-label>
+    [nzSpan]="6">{{'SIMULATOR.COMMUNITY_ROTATIONS.Min_control_filter_placeholder' | translate}}</nz-form-label>
     <nz-form-control [nzSpan]="12">
       <nz-input-number mouseWheel [(ngModel)]="rotation.community.minControl"
-                       [nzDisabled]="!rotation.public" [nzMin]="1" [nzStep]="1" name="minControl"
-                       (mouseWheelUp)="adjust('minControl', 1, 1)"
-                       (mouseWheelDown)="adjust('minControl', -1, 1)"></nz-input-number>
+        [nzDisabled]="!rotation.public" [nzMin]="1" [nzStep]="1" name="minControl"
+        (mouseWheelUp)="adjust('minControl', 1, 1)"
+      (mouseWheelDown)="adjust('minControl', -1, 1)"></nz-input-number>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-label
-      [nzSpan]="6">{{'SIMULATOR.COMMUNITY_ROTATIONS.Min_cp_filter_placeholder' | translate}}</nz-form-label>
+    [nzSpan]="6">{{'SIMULATOR.COMMUNITY_ROTATIONS.Min_cp_filter_placeholder' | translate}}</nz-form-label>
     <nz-form-control [nzSpan]="12">
       <nz-input-number mouseWheel [(ngModel)]="rotation.community.minCp"
-                       [nzDisabled]="!rotation.public" [nzMin]="1" [nzStep]="1" name="minCP"
-                       (mouseWheelUp)="adjust('minCp', 1, 1)"
-                       (mouseWheelDown)="adjust('minCp', -1, 1)"></nz-input-number>
+        [nzDisabled]="!rotation.public" [nzMin]="1" [nzStep]="1" name="minCP"
+        (mouseWheelUp)="adjust('minCp', 1, 1)"
+      (mouseWheelDown)="adjust('minCp', -1, 1)"></nz-input-number>
     </nz-form-control>
   </nz-form-item>
 </form>

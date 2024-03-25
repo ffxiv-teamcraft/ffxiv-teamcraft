@@ -6,7 +6,7 @@ import { CommunityRotationsPageComponent } from '../community-rotations-page/com
 import { TranslateModule } from '@ngx-translate/core';
 import { MouseWheelDirective } from '../../../../core/event/mouse-wheel/mouse-wheel.directive';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
-import { NgFor } from '@angular/common';
+
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzFormModule } from 'ng-zorro-antd/form';
@@ -19,7 +19,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     templateUrl: './community-rotation-popup.component.html',
     styleUrls: ['./community-rotation-popup.component.less'],
     standalone: true,
-    imports: [FlexModule, NzSwitchModule, FormsModule, NzFormModule, NzGridModule, NzSelectModule, NgFor, NzInputNumberModule, MouseWheelDirective, TranslateModule]
+    imports: [FlexModule, NzSwitchModule, FormsModule, NzFormModule, NzGridModule, NzSelectModule, NzInputNumberModule, MouseWheelDirective, TranslateModule]
 })
 export class CommunityRotationPopupComponent implements OnInit {
 

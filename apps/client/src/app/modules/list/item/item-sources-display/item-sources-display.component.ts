@@ -44,7 +44,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgFor, NgSwitch, NgSwitchCase, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
@@ -53,7 +53,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./item-sources-display.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NgFor, NgSwitch, NgSwitchCase, NzButtonModule, NzIconModule, NzToolTipModule, NzWaveModule, NgIf, ItemIconComponent, CompanyWorkshopTreeButtonComponent, AsyncPipe, I18nPipe, TranslateModule, NodeTypeIconPipe, XivapiIconPipe, LazyIconPipe, TradeIconPipe, JobUnicodePipe, LazyRowPipe]
+    imports: [FlexModule, NzButtonModule, NzIconModule, NzToolTipModule, NzWaveModule, ItemIconComponent, CompanyWorkshopTreeButtonComponent, AsyncPipe, I18nPipe, TranslateModule, NodeTypeIconPipe, XivapiIconPipe, LazyIconPipe, TradeIconPipe, JobUnicodePipe, LazyRowPipe]
 })
 export class ItemSourcesDisplayComponent extends TeamcraftComponent {
   @Input()

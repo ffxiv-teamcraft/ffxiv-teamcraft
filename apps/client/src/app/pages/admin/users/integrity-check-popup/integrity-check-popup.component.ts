@@ -11,7 +11,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-integrity-check-popup',
@@ -19,7 +19,7 @@ import { NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault, AsyncPipe } from 
     styleUrls: ['./integrity-check-popup.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NgFor, FlexModule, NgSwitch, NgSwitchCase, NzButtonModule, NzIconModule, NgSwitchDefault, NzWaveModule, NzToolTipModule, AsyncPipe, TranslateModule]
+    imports: [FlexModule, NzButtonModule, NzIconModule, NzWaveModule, NzToolTipModule, AsyncPipe, TranslateModule]
 })
 export class IntegrityCheckPopupComponent extends TeamcraftComponent {
 

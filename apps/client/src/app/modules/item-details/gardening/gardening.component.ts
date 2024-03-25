@@ -6,7 +6,7 @@ import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { I18nPipe } from '../../../core/i18n.pipe';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
-import { NgIf, NgFor } from '@angular/common';
+
 import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
 import { FlexModule } from '@angular/flex-layout/flex';
 
@@ -16,7 +16,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./gardening.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, ItemIconComponent, NgIf, NzDividerModule, NgFor, I18nPipe, TranslateModule, ItemNamePipe]
+    imports: [FlexModule, ItemIconComponent, NzDividerModule, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class GardeningComponent extends ItemDetailsPopup<GardeningData> implements OnInit {
 

@@ -11,14 +11,14 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FormsModule } from '@angular/forms';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-masterbooks-popup',
     templateUrl: './masterbooks-popup.component.html',
     styleUrls: ['./masterbooks-popup.component.less'],
     standalone: true,
-    imports: [NgIf, FlexModule, NgFor, NzCheckboxModule, FormsModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule, ItemNamePipe, I18nPipe]
+    imports: [FlexModule, NzCheckboxModule, FormsModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule, ItemNamePipe, I18nPipe]
 })
 export class MasterbooksPopupComponent implements OnInit {
 

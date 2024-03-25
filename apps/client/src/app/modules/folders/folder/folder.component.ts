@@ -12,7 +12,7 @@ import { SettingsService } from '../../settings/settings.service';
 import { FoldersModule } from '../folders.module';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { RouterLink } from '@angular/router';
-import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 import { ClipboardDirective } from '../../../core/clipboard.directive';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
@@ -27,7 +27,7 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
   styleUrls: ['./folder.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NzCollapseModule, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, ClipboardDirective, NgIf, RouterLink, NzPopconfirmModule, CdkDropList, NgFor, CdkDrag, NgTemplateOutlet, TranslateModule]
+  imports: [NzCollapseModule, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, ClipboardDirective, RouterLink, NzPopconfirmModule, CdkDropList, CdkDrag, NgTemplateOutlet, TranslateModule]
 })
 export class FolderComponent<T extends DataModel> implements OnInit {
 

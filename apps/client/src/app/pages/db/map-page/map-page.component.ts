@@ -33,14 +33,14 @@ import { DbCommentsComponent } from '../db-comments/db-comments/db-comments.comp
 import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display/i18n-display.component';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
     selector: 'app-map-page',
     templateUrl: './map-page.component.html',
     styleUrls: ['./map-page.component.less'],
     standalone: true,
-    imports: [NgIf, FlexModule, NgFor, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, NzSelectModule, FormsModule, MapComponent, FullpageMessageComponent, NzListModule, I18nNameComponent, DbButtonComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, IfMobilePipe, XivapiIconPipe, MapNamePipe]
+    imports: [FlexModule, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, NzSelectModule, FormsModule, MapComponent, FullpageMessageComponent, NzListModule, I18nNameComponent, DbButtonComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, IfMobilePipe, XivapiIconPipe, MapNamePipe]
 })
 export class MapPageComponent extends TeamcraftPageComponent {
 

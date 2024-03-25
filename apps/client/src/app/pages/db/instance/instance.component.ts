@@ -29,14 +29,14 @@ import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
     selector: 'app-instance',
     templateUrl: './instance.component.html',
     styleUrls: ['./instance.component.less'],
     standalone: true,
-    imports: [NgIf, FlexModule, DbButtonComponent, NgFor, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, MapComponent, ItemIconComponent, ItemRarityDirective, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, IfMobilePipe, XivapiIconPipe, XivapiL12nPipe, LazyIconPipe]
+    imports: [FlexModule, DbButtonComponent, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, MapComponent, ItemIconComponent, ItemRarityDirective, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, IfMobilePipe, XivapiIconPipe, XivapiL12nPipe, LazyIconPipe]
 })
 export class InstanceComponent extends TeamcraftPageComponent {
 

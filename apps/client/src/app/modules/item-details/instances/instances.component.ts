@@ -9,7 +9,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { RouterLink } from '@angular/router';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzListModule } from 'ng-zorro-antd/list';
 
@@ -18,7 +18,7 @@ import { NzListModule } from 'ng-zorro-antd/list';
     templateUrl: './instances.component.html',
     styleUrls: ['./instances.component.less'],
     standalone: true,
-    imports: [NzListModule, FlexModule, NgIf, DbButtonComponent, RouterLink, NzButtonModule, NzIconModule, AsyncPipe, I18nPipe, I18nRowPipe, MapNamePipe, LazyRowPipe]
+    imports: [NzListModule, FlexModule, DbButtonComponent, RouterLink, NzButtonModule, NzIconModule, AsyncPipe, I18nPipe, I18nRowPipe, MapNamePipe, LazyRowPipe]
 })
 export class InstancesComponent extends ItemDetailsPopup {
 

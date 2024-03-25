@@ -12,7 +12,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
-import { NgIf, DecimalPipe } from '@angular/common';
+import { DecimalPipe } from '@angular/common';
 import { NzListModule } from 'ng-zorro-antd/list';
 
 @Component({
@@ -20,7 +20,7 @@ import { NzListModule } from 'ng-zorro-antd/list';
     templateUrl: './total-panel-price-popup.component.html',
     styleUrls: ['./total-panel-price-popup.component.less'],
     standalone: true,
-    imports: [NzListModule, NgIf, ItemIconComponent, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, DecimalPipe, I18nPipe, TranslateModule, ItemNamePipe]
+    imports: [NzListModule, ItemIconComponent, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, DecimalPipe, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class TotalPanelPricePopupComponent implements OnInit {
 

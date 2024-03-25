@@ -17,14 +17,14 @@ import { PageLoaderComponent } from '../../page-loader/page-loader/page-loader.c
 import { FullpageMessageComponent } from '../../fullpage-message/fullpage-message/fullpage-message.component';
 import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
     selector: 'app-gearset-cost-popup',
     templateUrl: './gearset-cost-popup.component.html',
     styleUrls: ['./gearset-cost-popup.component.less'],
     standalone: true,
-    imports: [NgIf, NgFor, FlexModule, ItemIconComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, ItemNamePipe, I18nPipe, TranslateModule]
+    imports: [FlexModule, ItemIconComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, ItemNamePipe, I18nPipe, TranslateModule]
 })
 export class GearsetCostPopupComponent {
 

@@ -8,7 +8,7 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { I18nPipe } from '../../../core/i18n.pipe';
 import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
 import { TranslateModule } from '@ngx-translate/core';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 interface WorkshopTreeNode {
   index: number,
@@ -21,7 +21,7 @@ interface WorkshopTreeNode {
     styleUrls: ['./company-workshop-tree-popup.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NgFor, AsyncPipe, TranslateModule, ItemNamePipe, I18nPipe]
+    imports: [AsyncPipe, TranslateModule, ItemNamePipe, I18nPipe]
 })
 export class CompanyWorkshopTreePopupComponent implements OnInit {
 

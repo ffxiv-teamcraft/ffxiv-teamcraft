@@ -16,7 +16,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { MapComponent } from '../../../modules/map/map/map.component';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
@@ -25,7 +25,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./treasure-finder.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NgIf, NzButtonModule, NzWaveModule, MapComponent, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NgFor, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe]
+    imports: [FlexModule, NzButtonModule, NzWaveModule, MapComponent, NzGridModule, NzFormModule, NzSelectModule, FormsModule, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe]
 })
 export class TreasureFinderComponent {
 

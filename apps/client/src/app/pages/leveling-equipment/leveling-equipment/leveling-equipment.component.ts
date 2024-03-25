@@ -31,7 +31,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
-import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzFormModule } from 'ng-zorro-antd/form';
@@ -43,7 +43,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./leveling-equipment.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzSelectModule, NgFor, NzInputNumberModule, NzCheckboxModule, NgIf, NzButtonModule, NzWaveModule, NzIconModule, ItemIconComponent, NzToolTipModule, ClipboardDirective, FullpageMessageComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, JobUnicodePipe]
+    imports: [FlexModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzSelectModule, NzInputNumberModule, NzCheckboxModule, NzButtonModule, NzWaveModule, NzIconModule, ItemIconComponent, NzToolTipModule, ClipboardDirective, FullpageMessageComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, JobUnicodePipe]
 })
 export class LevelingEquipmentComponent extends TeamcraftComponent {
 

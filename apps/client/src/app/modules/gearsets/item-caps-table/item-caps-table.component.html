@@ -1,16 +1,20 @@
-<table *ngIf="maxValuesTable$ | async as caps">
-  <thead>
-  <tr>
-    <th>{{'GEARSETS.Stat_name' | translate}}</th>
-    <th>{{'GEARSETS.Current_value' | translate}}</th>
-    <th>{{'GEARSETS.Cap_value' | translate}}</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let row of caps" [class.capped]="row[1] === row[2]" [class.melded]="row[1] !== row[2] && row[1] !== row[3]">
-    <td><b>{{row[0] | i18nRow:'baseParams' | i18n}}</b></td>
-    <td>{{row[1]}}</td>
-    <td>{{row[2]}}</td>
-  </tr>
-  </tbody>
-</table>
+@if (maxValuesTable$ | async; as caps) {
+  <table>
+    <thead>
+      <tr>
+        <th>{{'GEARSETS.Stat_name' | translate}}</th>
+        <th>{{'GEARSETS.Current_value' | translate}}</th>
+        <th>{{'GEARSETS.Cap_value' | translate}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (row of caps; track row) {
+        <tr [class.capped]="row[1] === row[2]" [class.melded]="row[1] !== row[2] && row[1] !== row[3]">
+          <td><b>{{row[0] | i18nRow:'baseParams' | i18n}}</b></td>
+          <td>{{row[1]}}</td>
+          <td>{{row[2]}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}

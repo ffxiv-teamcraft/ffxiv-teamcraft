@@ -18,14 +18,14 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-recipe-choice-popup',
     templateUrl: './recipe-choice-popup.component.html',
     styleUrls: ['./recipe-choice-popup.component.less'],
     standalone: true,
-    imports: [NgIf, NzAlertModule, NzButtonModule, NzInputModule, NzIconModule, NzListModule, I18nNameComponent, ItemIconComponent, RouterLink, NzWaveModule, NzDividerModule, AsyncPipe, TranslateModule, JobUnicodePipe]
+    imports: [NzAlertModule, NzButtonModule, NzInputModule, NzIconModule, NzListModule, I18nNameComponent, ItemIconComponent, RouterLink, NzWaveModule, NzDividerModule, AsyncPipe, TranslateModule, JobUnicodePipe]
 })
 export class RecipeChoicePopupComponent {
 

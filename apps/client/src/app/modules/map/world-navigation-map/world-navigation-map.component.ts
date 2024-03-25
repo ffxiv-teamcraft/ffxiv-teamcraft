@@ -24,14 +24,14 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
     selector: 'app-world-navigation-map',
     templateUrl: './world-navigation-map.component.html',
     styleUrls: ['./world-navigation-map.component.less'],
     standalone: true,
-    imports: [NgIf, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, NzSelectModule, FormsModule, NgFor, MapComponent, NzListModule, NzToolTipModule, ClipboardDirective, NzSpinModule, AsyncPipe, DecimalPipe, NodeTypeIconPipe, LazyIconPipe, I18nPipe, TranslateModule, I18nRowPipe]
+    imports: [FlexModule, NzButtonModule, NzWaveModule, NzIconModule, NzSelectModule, FormsModule, MapComponent, NzListModule, NzToolTipModule, ClipboardDirective, NzSpinModule, AsyncPipe, DecimalPipe, NodeTypeIconPipe, LazyIconPipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class WorldNavigationMapComponent extends TeamcraftComponent implements OnInit {
 

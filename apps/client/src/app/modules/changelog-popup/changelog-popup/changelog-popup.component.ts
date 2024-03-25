@@ -5,7 +5,7 @@ import * as semver from 'semver';
 import { TranslateModule } from '@ngx-translate/core';
 import { MarkdownModule } from 'ngx-markdown';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
-import { NgFor } from '@angular/common';
+
 
 @Component({
     selector: 'app-changelog-popup',
@@ -13,7 +13,7 @@ import { NgFor } from '@angular/common';
     styleUrls: ['./changelog-popup.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgFor, NzDividerModule, MarkdownModule, TranslateModule]
+    imports: [NzDividerModule, MarkdownModule, TranslateModule]
 })
 export class ChangelogPopupComponent implements OnInit {
   public patchNotes: typeof environment.patchNotes;

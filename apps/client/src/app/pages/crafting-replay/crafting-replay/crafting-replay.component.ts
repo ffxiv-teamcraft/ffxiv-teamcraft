@@ -13,7 +13,7 @@ import { ReplaySimulationComponent } from '../../../modules/crafting-replay/repl
 import { UserAvatarComponent } from '../../../modules/user-avatar/user-avatar/user-avatar.component';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
-import { NgIf, AsyncPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DatePipe } from '@angular/common';
 
 @Component({
     selector: 'app-crafting-replay',
@@ -21,7 +21,7 @@ import { NgIf, AsyncPipe, DatePipe } from '@angular/common';
     styleUrls: ['./crafting-replay.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, FullpageMessageComponent, FlexModule, UserAvatarComponent, ReplaySimulationComponent, PageLoaderComponent, AsyncPipe, DatePipe, TranslateModule, CharacterNamePipe]
+    imports: [FullpageMessageComponent, FlexModule, UserAvatarComponent, ReplaySimulationComponent, PageLoaderComponent, AsyncPipe, DatePipe, TranslateModule, CharacterNamePipe]
 })
 export class CraftingReplayComponent extends TeamcraftComponent {
 

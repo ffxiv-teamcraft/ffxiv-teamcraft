@@ -3,40 +3,37 @@
     <div>{{ vessel?.name }}</div>
   </div>
   <div fxFlex="0 0 20%" fxLayoutAlign="center center">
-    <ng-container *ngIf="vessel?.returnTime > 0; else noReturnTime">
+    @if (vessel?.returnTime > 0) {
       {{ vessel?.returnTime * 1000 | date:'short':null:settings.dateFormat }}
-    </ng-container>
-    <ng-template #noReturnTime>
+    } @else {
       -
-    </ng-template>
+    }
   </div>
   <div fxFlex="0 0 20%" fxLayoutAlign="center center">
-    <ng-container *ngIf="!isVesselBack(vessel); else isBack">
+    @if (!isVesselBack(vessel)) {
       <i nz-icon nzType="field-time" nzTheme="outline" class="task-icon"></i>
       {{ remainingTime$ | async | timer:true }}
-    </ng-container>
-    <ng-template #isBack>
-      <ng-container *ngIf="isVesselCompleted(vessel); else isIdle">
+    } @else {
+      @if (isVesselCompleted(vessel)) {
         <i nz-icon nzType="check-circle" nzTheme="outline" class="task-icon complete"></i>
         {{'VOYAGE_TRACKER.Voyage_complete' | translate}}
-      </ng-container>
-      <ng-template #isIdle>
+      } @else {
         -
-      </ng-template>
-    </ng-template>
+      }
+    }
   </div>
   <div fxFlex="0 0 90px" fxLayoutAlign="center center">
     <app-vessel-rank-column [rank]="vessel?.rank"
-                            [currentExperience]="vessel?.currentExperience"
-                            [totalExperienceForNextRank]="vessel?.totalExperienceForNextRank"
-                            [maxRank]="maxRank"
+      [currentExperience]="vessel?.currentExperience"
+      [totalExperienceForNextRank]="vessel?.totalExperienceForNextRank"
+      [maxRank]="maxRank"
     ></app-vessel-rank-column>
   </div>
   <div fxFlex="0 0 120px" fxLayoutAlign="center center">
     <app-vessel-build-column [type]="vessel?.vesselType"
-                             [name]="vessel?.name"
-                             [rank]="vessel?.rank"
-                             [parts]="vessel?.parts"
+      [name]="vessel?.name"
+      [rank]="vessel?.rank"
+      [parts]="vessel?.parts"
     ></app-vessel-build-column>
   </div>
   <div fxFlex="0" fxLayoutAlign="center center" style="text-align: center">

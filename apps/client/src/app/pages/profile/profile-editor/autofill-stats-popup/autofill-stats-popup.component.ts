@@ -10,7 +10,7 @@ import { I18nPipe } from '../../../../core/i18n.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -21,7 +21,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./autofill-stats-popup.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NzAlertModule, NzListModule, NgIf, NzButtonModule, NzIconModule, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe]
+    imports: [FlexModule, NzAlertModule, NzListModule, NzButtonModule, NzIconModule, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe]
 })
 export class AutofillStatsPopupComponent extends TeamcraftComponent {
 

@@ -15,7 +15,7 @@ import { ActionComponent } from '../../../pages/simulator/components/action/acti
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { SimulationResultComponent } from '../../../pages/simulator/components/simulation-result/simulation-result.component';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-replay-simulation',
@@ -26,7 +26,7 @@ import { NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault, AsyncPipe } from 
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, FlexModule, SimulationResultComponent, NzCardModule, NgFor, ActionComponent, NgSwitch, NgSwitchCase, NgSwitchDefault, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
+    imports: [FlexModule, SimulationResultComponent, NzCardModule, ActionComponent, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
 })
 export class ReplaySimulationComponent {
 

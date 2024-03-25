@@ -11,7 +11,7 @@ import { FolderDisplay } from '../../../model/folder/folder-display';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetRowComponent } from '../../../modules/gearsets/gearset-row/gearset-row.component';
 import { FolderPageComponent } from '../../../modules/folders/folder-page/folder-page.component';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 
 @Component({
@@ -19,7 +19,7 @@ import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/pa
     templateUrl: './gearset-folder.component.html',
     styleUrls: ['./gearset-folder.component.less'],
     standalone: true,
-    imports: [PageLoaderComponent, NgIf, FolderPageComponent, GearsetRowComponent, AsyncPipe]
+    imports: [PageLoaderComponent, FolderPageComponent, GearsetRowComponent, AsyncPipe]
 })
 export class GearsetFolderComponent extends TeamcraftComponent {
 

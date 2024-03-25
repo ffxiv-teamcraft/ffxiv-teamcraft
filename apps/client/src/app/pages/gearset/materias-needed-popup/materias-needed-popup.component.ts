@@ -22,14 +22,14 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
     selector: 'app-materias-needed-popup',
     templateUrl: './materias-needed-popup.component.html',
     styleUrls: ['./materias-needed-popup.component.less'],
     standalone: true,
-    imports: [NgIf, FlexModule, NzButtonModule, NzInputModule, NzIconModule, NzToolTipModule, NzInputNumberModule, FormsModule, NzCheckboxModule, NzTableModule, NgFor, ItemIconComponent, ItemNameClipboardDirective, I18nNameComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, TranslateModule, I18nPipe, I18nRowPipe]
+    imports: [FlexModule, NzButtonModule, NzInputModule, NzIconModule, NzToolTipModule, NzInputNumberModule, FormsModule, NzCheckboxModule, NzTableModule, ItemIconComponent, ItemNameClipboardDirective, I18nNameComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, TranslateModule, I18nPipe, I18nRowPipe]
 })
 export class MateriasNeededPopupComponent {
 

@@ -35,7 +35,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { PlatformService } from '../../../core/tools/platform.service';
 
@@ -45,7 +45,7 @@ import { PlatformService } from '../../../core/tools/platform.service';
     styleUrls: ['./retainer-ventures.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NgIf, NzAlertModule, NgFor, NzSelectModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputNumberModule, NzButtonModule, NzWaveModule, NzIconModule, PageLoaderComponent, ItemIconComponent, DbButtonComponent, MarketboardIconComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, LazyIconPipe, JobUnicodePipe]
+    imports: [FlexModule, NzAlertModule, NzSelectModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputNumberModule, NzButtonModule, NzWaveModule, NzIconModule, PageLoaderComponent, ItemIconComponent, DbButtonComponent, MarketboardIconComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, LazyIconPipe, JobUnicodePipe]
 })
 export class RetainerVenturesComponent extends TeamcraftComponent implements OnInit {
 

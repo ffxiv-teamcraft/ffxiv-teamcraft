@@ -1,4 +1,5 @@
-<app-page-loader *ngIf="!notFound; else notFoundTemplate"></app-page-loader>
-<ng-template #notFoundTemplate>
+@if (!notFound) {
+  <app-page-loader></app-page-loader>
+} @else {
   <app-fullpage-message>{{'CUSTOM_LINKS.Not_found' | translate}}</app-fullpage-message>
-</ng-template>
+}

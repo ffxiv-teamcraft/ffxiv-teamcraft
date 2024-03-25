@@ -9,7 +9,7 @@ import { I18nPipe } from '../../../core/i18n.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { MateriaSlotIconComponent } from '../../../modules/gearsets/materia-slot-icon/materia-slot-icon.component';
-import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
@@ -23,7 +23,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
     styleUrls: ['./gearset-editor-row.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzGridModule, FlexModule, NzCheckboxModule, ItemIconComponent, NzSwitchModule, FormsModule, NgFor, MateriaSlotIconComponent, NzToolTipModule, NgIf, AsyncPipe, TranslateModule, I18nPipe, StatPipe, ItemNamePipe, IfMobilePipe, XivapiL12nPipe]
+    imports: [NzGridModule, FlexModule, NzCheckboxModule, ItemIconComponent, NzSwitchModule, FormsModule, MateriaSlotIconComponent, NzToolTipModule, AsyncPipe, TranslateModule, I18nPipe, StatPipe, ItemNamePipe, IfMobilePipe, XivapiL12nPipe]
 })
 export class GearsetEditorRowComponent {
 

@@ -1,15 +1,18 @@
-<div *ngIf="rotation$ | async as rotation; else loader">
-  <app-overlay-container title="Rotation overlay" uri="/rotation-overlay/{{rotation.$key}}">
-    <div class="container">
-      <h3>{{rotation.getName()}}</h3>
-      <div fxLayout="row wrap" fxLayoutGap="5px">
-        <app-action *ngFor="let action of rotation.actions" [action]="action" [tooltipDisabled]="true"
-                    [jobId]="rotation.recipe?.job" [hideCost]="true"
-                    class="action"></app-action>
+@if (rotation$ | async; as rotation) {
+  <div>
+    <app-overlay-container title="Rotation overlay" uri="/rotation-overlay/{{rotation.$key}}">
+      <div class="container">
+        <h3>{{rotation.getName()}}</h3>
+        <div fxLayout="row wrap" fxLayoutGap="5px">
+          @for (action of rotation.actions; track action) {
+            <app-action [action]="action" [tooltipDisabled]="true"
+              [jobId]="rotation.recipe?.job" [hideCost]="true"
+            class="action"></app-action>
+          }
+        </div>
       </div>
-    </div>
-  </app-overlay-container>
-</div>
-<ng-template #loader>
+    </app-overlay-container>
+  </div>
+} @else {
   <app-page-loader></app-page-loader>
-</ng-template>
+}

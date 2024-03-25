@@ -28,7 +28,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { UserAvatarComponent } from '../../../../modules/user-avatar/user-avatar/user-avatar.component';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -40,7 +40,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     styleUrls: ['./community-rotation-finder-popup.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCardModule, FlexModule, NzCheckboxModule, FormsModule, NgIf, NzEmptyModule, NzDividerModule, NgFor, UserAvatarComponent, NzButtonModule, NzIconModule, NzToolTipModule, NzTagModule, ActionComponent, NzWaveModule, PageLoaderComponent, AsyncPipe, TranslateModule]
+    imports: [NzCardModule, FlexModule, NzCheckboxModule, FormsModule, NzEmptyModule, NzDividerModule, UserAvatarComponent, NzButtonModule, NzIconModule, NzToolTipModule, NzTagModule, ActionComponent, NzWaveModule, PageLoaderComponent, AsyncPipe, TranslateModule]
 })
 export class CommunityRotationFinderPopupComponent implements OnInit {
 

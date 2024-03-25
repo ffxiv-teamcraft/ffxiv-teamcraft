@@ -24,7 +24,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzTagModule } from 'ng-zorro-antd/tag';
-import { NgIf, NgSwitch, NgSwitchCase, NgFor, AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { UserAvatarComponent } from '../../user-avatar/user-avatar/user-avatar.component';
 import { NzGridModule } from 'ng-zorro-antd/grid';
@@ -37,7 +37,7 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
     styleUrls: ['./commission-panel.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCollapseModule, FlexModule, NzGridModule, UserAvatarComponent, NzBadgeModule, NgIf, NgSwitch, NgSwitchCase, NzTagModule, NzToolTipModule, NgFor, ItemIconComponent, NzButtonModule, NzWaveModule, ClipboardDirective, NzIconModule, RouterLink, NzDropDownModule, NzMenuModule, NzPopconfirmModule, LazyScrollComponent, AsyncPipe, DecimalPipe, DatePipe, TranslateModule, ItemNamePipe, TeamcraftLinkPipe, I18nPipe]
+    imports: [NzCollapseModule, FlexModule, NzGridModule, UserAvatarComponent, NzBadgeModule, NzTagModule, NzToolTipModule, ItemIconComponent, NzButtonModule, NzWaveModule, ClipboardDirective, NzIconModule, RouterLink, NzDropDownModule, NzMenuModule, NzPopconfirmModule, LazyScrollComponent, AsyncPipe, DecimalPipe, DatePipe, TranslateModule, ItemNamePipe, TeamcraftLinkPipe, I18nPipe]
 })
 export class CommissionPanelComponent implements OnInit {
 

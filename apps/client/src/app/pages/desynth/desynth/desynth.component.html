@@ -4,17 +4,19 @@
       <nz-form-label>{{'DESYNTH.Job' | translate}}</nz-form-label>
       <nz-form-control>
         <nz-select (ngModelChange)="job$.next($event)" [ngModel]="job$.value" [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Select_job' | translate"
-                   class="job-filter"
-                   name="job"
-                   tutorialStep="TUTORIAL.DESYNTH.Job"
-                   tutorialStepIndex="0"
-                   nzShowSearch>
-          <nz-option *ngFor="let job of jobList$ | async" [nzLabel]="+job[0] | lazyRow:'jobAbbr' |  i18n" [nzValue]="job[0]" nzCustomContent>
-            <div class="flex-row align-center gap-2">
-              <span class="companion-svg" [innerHTML]="+job[0] | jobUnicode"></span>
-              {{+job[0] | lazyRow:'jobAbbr' |  i18n}}
-            </div>
-          </nz-option>
+          class="job-filter"
+          name="job"
+          tutorialStep="TUTORIAL.DESYNTH.Job"
+          tutorialStepIndex="0"
+          nzShowSearch>
+          @for (job of jobList$ | async; track job) {
+            <nz-option [nzLabel]="+job[0] | lazyRow:'jobAbbr' |  i18n" [nzValue]="job[0]" nzCustomContent>
+              <div class="flex-row align-center gap-2">
+                <span class="companion-svg" [innerHTML]="+job[0] | jobUnicode"></span>
+                {{+job[0] | lazyRow:'jobAbbr' |  i18n}}
+              </div>
+            </nz-option>
+          }
         </nz-select>
       </nz-form-control>
     </nz-form-item>
@@ -22,86 +24,114 @@
       <nz-form-label>{{'DESYNTH.Level' | translate}}</nz-form-label>
       <nz-form-control>
         <input (ngModelChange)="level$.next($event)" [ngModel]="level$ | async" min="0" name="minCraft"
-               nz-input type="number"
-               tutorialStep="TUTORIAL.DESYNTH.Level"
-               tutorialStepIndex="1"/>
-      </nz-form-control>
-    </nz-form-item>
-    <nz-form-item>
-      <nz-form-control>
-        <button (click)="search$.next()" [disabled]="((job$ | async) === null) || ((level$ | async) === null)" nz-button
-                nzType="primary"
-                tutorialStep="TUTORIAL.DESYNTH.Search"
-                tutorialStepIndex="2">
-          <i nz-icon nzType="search"></i>{{'GC_SUPPLY.Search' | translate}}
-        </button>
-      </nz-form-control>
-    </nz-form-item>
-  </form>
-</div>
-<div *ngIf="level$ | async as userDesynthLevel" fxLayout="column">
-  <div *ngFor="let row of results$ | async; let odd = odd" [class.odd]="odd"
-       class="result-row"
-       fxLayout="row"
-       fxLayoutAlign="flex-start center">
-    <div fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
-         fxLayoutAlign="space-between center"
-         fxLayoutAlign.lt-md="center center"
-         fxLayoutGap="5px">
-      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
-        <app-item-icon [icon]="row.icon | xivapiIcon" [itemId]="+row.itemId" [width]="32"></app-item-icon>
-        <div fxLayout="column" fxLayoutGap="5px">
-          <div fxLayout="row" fxLayoutGap="5px">
-            <div>{{+row.itemId | itemName | i18n}}</div>
-            <app-marketboard-icon [itemId]="+row.itemId" [showHistory]="true"></app-marketboard-icon>
-            <app-db-button [id]="+row.itemId" type="item"></app-db-button>
-          </div>
-          <div>
-            <nz-tag *ngIf="userDesynthLevel > row.dlvl"
-                    nzColor="darkgreen">{{'DESYNTH.TAGS.Higher_chances' | translate}}</nz-tag>
-            <nz-tag *ngIf="userDesynthLevel > row.dlvl" nzColor="#f50">{{'DESYNTH.TAGS.Lower_exp' | translate}}</nz-tag>
-            <nz-tag *ngIf="userDesynthLevel === row.dlvl"
-                    nzColor="#108ee9">{{'DESYNTH.TAGS.Good_chances' | translate}}</nz-tag>
-            <nz-tag *ngIf="userDesynthLevel === row.dlvl"
-                    nzColor="#108ee9">{{'DESYNTH.TAGS.Good_exp' | translate}}</nz-tag>
-            <nz-tag *ngIf="userDesynthLevel < row.dlvl"
-                    nzColor="#f50">{{'DESYNTH.TAGS.Lower_chances' | translate}}</nz-tag>
-            <nz-tag *ngIf="userDesynthLevel < row.dlvl"
-                    nzColor="darkgreen">{{'DESYNTH.TAGS.Higher_exp' | translate}}</nz-tag>
-            <nz-tag *ngIf="row.score >= 100" nzColor="darkgreen">{{'DESYNTH.TAGS.Very_common' | translate}}</nz-tag>
-            <nz-tag *ngIf="row.score < 100 && row.score >= 50"
-                    nzColor="#108ee9">{{'DESYNTH.TAGS.Common' | translate}}</nz-tag>
-            <nz-tag *ngIf="row.score < 50" nzColor="#f50">{{'DESYNTH.TAGS.Rare' | translate}}</nz-tag>
-          </div>
-        </div>
-      </div>
-      <div class="inputs-container" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center"
-           fxLayoutGap="10px" fxLayoutGap.lt-md="10px">
-        <div class="input-box" fxLayout="row" fxLayoutAlign="center center">
-          <nz-input-group [nzCompact]="true" class="amount-input">
-            <input [(ngModel)]="row.amount" nz-input type="number">
-          </nz-input-group>
-        </div>
-        <div class="actions" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-          <button (click)="addItemsToList([row])" [nzShape]="'circle'" [nzTooltipTitle]="'ITEMS.Add_to_list' | translate" [nzType]="'primary'"
-                  nz-button nz-tooltip>
-            <i nz-icon nzType="plus"></i>
+          nz-input type="number"
+          tutorialStep="TUTORIAL.DESYNTH.Level"
+          tutorialStepIndex="1"/>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <button (click)="search$.next()" [disabled]="((job$ | async) === null) || ((level$ | async) === null)" nz-button
+            nzType="primary"
+            tutorialStep="TUTORIAL.DESYNTH.Search"
+            tutorialStepIndex="2">
+            <i nz-icon nzType="search"></i>{{'GC_SUPPLY.Search' | translate}}
           </button>
-          <button (click)="createQuickList(row)" [nzShape]="'circle'" [nzTooltipTitle]="'Quick_list_create' | translate" [nzType]="'primary'"
-                  nz-button nz-tooltip>
-            <i nz-icon nzType="clock-circle-o"></i>
-          </button>
-        </div>
-      </div>
-    </div>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
   </div>
-</div>
-<nz-pagination (nzPageIndexChange)="page$.next($event)" *ngIf="totalLength > 0" [nzPageIndex]="page$ | async"
-               [nzPageSize]="pageSize"
-               [nzTotal]="totalLength" fxLayout="row"
-               fxLayoutAlign="center center"></nz-pagination>
+  @if (level$ | async; as userDesynthLevel) {
+    <div fxLayout="column">
+      @for (row of results$ | async; track row; let odd = $odd) {
+        <div [class.odd]="odd"
+          class="result-row"
+          fxLayout="row"
+          fxLayoutAlign="flex-start center">
+          <div fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
+            fxLayoutAlign="space-between center"
+            fxLayoutAlign.lt-md="center center"
+            fxLayoutGap="5px">
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+              <app-item-icon [icon]="row.icon | xivapiIcon" [itemId]="+row.itemId" [width]="32"></app-item-icon>
+              <div fxLayout="column" fxLayoutGap="5px">
+                <div fxLayout="row" fxLayoutGap="5px">
+                  <div>{{+row.itemId | itemName | i18n}}</div>
+                  <app-marketboard-icon [itemId]="+row.itemId" [showHistory]="true"></app-marketboard-icon>
+                  <app-db-button [id]="+row.itemId" type="item"></app-db-button>
+                </div>
+                <div>
+                  @if (userDesynthLevel > row.dlvl) {
+                    <nz-tag
+                    nzColor="darkgreen">{{'DESYNTH.TAGS.Higher_chances' | translate}}</nz-tag>
+                  }
+                  @if (userDesynthLevel > row.dlvl) {
+                    <nz-tag nzColor="#f50">{{'DESYNTH.TAGS.Lower_exp' | translate}}</nz-tag>
+                  }
+                  @if (userDesynthLevel === row.dlvl) {
+                    <nz-tag
+                    nzColor="#108ee9">{{'DESYNTH.TAGS.Good_chances' | translate}}</nz-tag>
+                  }
+                  @if (userDesynthLevel === row.dlvl) {
+                    <nz-tag
+                    nzColor="#108ee9">{{'DESYNTH.TAGS.Good_exp' | translate}}</nz-tag>
+                  }
+                  @if (userDesynthLevel < row.dlvl) {
+                    <nz-tag
+                    nzColor="#f50">{{'DESYNTH.TAGS.Lower_chances' | translate}}</nz-tag>
+                  }
+                  @if (userDesynthLevel < row.dlvl) {
+                    <nz-tag
+                    nzColor="darkgreen">{{'DESYNTH.TAGS.Higher_exp' | translate}}</nz-tag>
+                  }
+                  @if (row.score >= 100) {
+                    <nz-tag nzColor="darkgreen">{{'DESYNTH.TAGS.Very_common' | translate}}</nz-tag>
+                  }
+                  @if (row.score < 100 && row.score >= 50) {
+                    <nz-tag
+                    nzColor="#108ee9">{{'DESYNTH.TAGS.Common' | translate}}</nz-tag>
+                  }
+                  @if (row.score < 50) {
+                    <nz-tag nzColor="#f50">{{'DESYNTH.TAGS.Rare' | translate}}</nz-tag>
+                  }
+                </div>
+              </div>
+            </div>
+            <div class="inputs-container" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center"
+              fxLayoutGap="10px" fxLayoutGap.lt-md="10px">
+              <div class="input-box" fxLayout="row" fxLayoutAlign="center center">
+                <nz-input-group [nzCompact]="true" class="amount-input">
+                  <input [(ngModel)]="row.amount" nz-input type="number">
+                </nz-input-group>
+              </div>
+              <div class="actions" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+                <button (click)="addItemsToList([row])" [nzShape]="'circle'" [nzTooltipTitle]="'ITEMS.Add_to_list' | translate" [nzType]="'primary'"
+                  nz-button nz-tooltip>
+                  <i nz-icon nzType="plus"></i>
+                </button>
+                <button (click)="createQuickList(row)" [nzShape]="'circle'" [nzTooltipTitle]="'Quick_list_create' | translate" [nzType]="'primary'"
+                  nz-button nz-tooltip>
+                  <i nz-icon nzType="clock-circle-o"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  }
+  @if (totalLength > 0) {
+    <nz-pagination (nzPageIndexChange)="page$.next($event)" [nzPageIndex]="page$ | async"
+      [nzPageSize]="pageSize"
+      [nzTotal]="totalLength" fxLayout="row"
+    fxLayoutAlign="center center"></nz-pagination>
+  }
 
-<app-fullpage-message *ngIf="pristine" height="300px" fontSize="3rem">
-  {{'DESYNTH.Intro' | translate}}
-</app-fullpage-message>
-<app-page-loader *ngIf="loading" [message]="'DESYNTH.Loading_message' | translate"></app-page-loader>
+  @if (pristine) {
+    <app-fullpage-message height="300px" fontSize="3rem">
+      {{'DESYNTH.Intro' | translate}}
+    </app-fullpage-message>
+  }
+  @if (loading) {
+    <app-page-loader [message]="'DESYNTH.Loading_message' | translate"></app-page-loader>
+  }

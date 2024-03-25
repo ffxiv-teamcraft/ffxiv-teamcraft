@@ -30,14 +30,14 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzFormModule } from 'ng-zorro-antd/form';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-gc-supply',
     templateUrl: './gc-supply.component.html',
     styleUrls: ['./gc-supply.component.less'],
     standalone: true,
-    imports: [NgIf, FormsModule, NzFormModule, ReactiveFormsModule, NgFor, NzGridModule, NzButtonModule, NzInputModule, NzToolTipModule, NzWaveModule, NzIconModule, FlexModule, NzSelectModule, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, LazyIconPipe, KeysPipe, JobUnicodePipe]
+    imports: [FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzButtonModule, NzInputModule, NzToolTipModule, NzWaveModule, NzIconModule, FlexModule, NzSelectModule, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, LazyIconPipe, KeysPipe, JobUnicodePipe]
 })
 export class GcSupplyComponent {
 

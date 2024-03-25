@@ -1,30 +1,41 @@
-<div *ngIf="folder$ | async as folder; else loading">
-  <nz-card *ngIf="!folder.notFound; else notFound">
-    <nz-card-meta [nzAvatar]="avatarTemplate" [nzDescription]="description"
-                  [nzTitle]="folderName">
-      <ng-template #description>
-        {{'SIMULATOR.ROTATIONS.FOLDERS.Created_by' | translate: { name: folder.authorId | characterName | async } }}
-      </ng-template>
-    </nz-card-meta>
-    <ng-template #avatarTemplate>
-      <app-user-avatar [userId]="folder.authorId"></app-user-avatar>
+@if (folder$ | async; as folder) {
+  <div>
+    @if (!folder.notFound) {
+      <nz-card>
+        <nz-card-meta [nzAvatar]="avatarTemplate" [nzDescription]="description"
+          [nzTitle]="folderName">
+          <ng-template #description>
+            {{'SIMULATOR.ROTATIONS.FOLDERS.Created_by' | translate: { name: folder.authorId | characterName | async } }}
+          </ng-template>
+        </nz-card-meta>
+        <ng-template #avatarTemplate>
+          <app-user-avatar [userId]="folder.authorId"></app-user-avatar>
+        </ng-template>
+        <ng-template #folderName>
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+            <div>{{folder.name}}</div>
+            <app-favorite-button [key]="folder.$key" type="rotationFolders"></app-favorite-button>
+          </div>
+        </ng-template>
+        @if (rotations$ | async; as rotations) {
+          <div class="rotations" fxLayout="column" fxLayoutGap="5px">
+            @for (rotation of rotations; track rotation) {
+              <app-rotation-panel [rotation]="rotation"></app-rotation-panel>
+            }
+          </div>
+        }
+      </nz-card>
+    } @else {
+      <app-fullpage-message>
+        {{'SIMULATOR.ROTATIONS.FOLDERS.Not_found' | translate}}
+      </app-fullpage-message>
+    }
+    <ng-template #notFound>
+      <app-fullpage-message>
+        {{'SIMULATOR.ROTATIONS.FOLDERS.Not_found' | translate}}
+      </app-fullpage-message>
     </ng-template>
-    <ng-template #folderName>
-      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
-        <div>{{folder.name}}</div>
-        <app-favorite-button [key]="folder.$key" type="rotationFolders"></app-favorite-button>
-      </div>
-    </ng-template>
-    <div *ngIf="rotations$ | async as rotations" class="rotations" fxLayout="column" fxLayoutGap="5px">
-      <app-rotation-panel *ngFor="let rotation of rotations" [rotation]="rotation"></app-rotation-panel>
-    </div>
-  </nz-card>
-  <ng-template #notFound>
-    <app-fullpage-message>
-      {{'SIMULATOR.ROTATIONS.FOLDERS.Not_found' | translate}}
-    </app-fullpage-message>
-  </ng-template>
-</div>
-<ng-template #loading>
+  </div>
+} @else {
   <app-page-loader></app-page-loader>
-</ng-template>
+}

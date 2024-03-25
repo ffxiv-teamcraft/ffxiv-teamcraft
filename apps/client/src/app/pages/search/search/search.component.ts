@@ -14,18 +14,7 @@ import { I18nName, SearchFilter, SearchResult, SearchType } from '@ffxiv-teamcra
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import {
-  AsyncPipe,
-  DecimalPipe,
-  isPlatformBrowser,
-  isPlatformServer,
-  NgFor,
-  NgIf,
-  NgSwitch,
-  NgSwitchCase,
-  NgTemplateOutlet,
-  UpperCasePipe
-} from '@angular/common';
+import { AsyncPipe, DecimalPipe, isPlatformBrowser, isPlatformServer, NgTemplateOutlet, UpperCasePipe } from '@angular/common';
 import { isEqual, uniq } from 'lodash';
 import { stats } from '../../../core/data/sources/stats';
 import { KeysOfType } from '../../../core/tools/key-of-type';
@@ -78,7 +67,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.less'],
   standalone: true,
-  imports: [FlexModule, NzSelectModule, TutorialStepDirective, FormsModule, NgFor, NzSpinModule, NgIf, ReactiveFormsModule, NzButtonModule, NzIconModule, NzInputModule, NgTemplateOutlet, NzWaveModule, NzToolTipModule, ClipboardDirective, NzAutocompleteModule, NzInputNumberModule, MouseWheelDirective, NzCheckboxModule, NzCardModule, NgSwitch, NgSwitchCase, SearchJobPickerComponent, NzGridModule, SimpleTabsetComponent, SimpleTabComponent, SearchIntroComponent, NzRadioModule, NzPopconfirmModule, ItemIconComponent, I18nNameComponent, ItemDetailsBoxComponent, RouterLink, PageLoaderComponent, NzPaginationModule, SearchResultComponent, FullpageMessageComponent, AsyncPipe, UpperCasePipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, IfMobilePipe, XivapiL12nPipe, JobUnicodePipe]
+  imports: [FlexModule, NzSelectModule, TutorialStepDirective, FormsModule, NzSpinModule, ReactiveFormsModule, NzButtonModule, NzIconModule, NzInputModule, NgTemplateOutlet, NzWaveModule, NzToolTipModule, ClipboardDirective, NzAutocompleteModule, NzInputNumberModule, MouseWheelDirective, NzCheckboxModule, NzCardModule, SearchJobPickerComponent, NzGridModule, SimpleTabsetComponent, SimpleTabComponent, SearchIntroComponent, NzRadioModule, NzPopconfirmModule, ItemIconComponent, I18nNameComponent, ItemDetailsBoxComponent, RouterLink, PageLoaderComponent, NzPaginationModule, SearchResultComponent, FullpageMessageComponent, AsyncPipe, UpperCasePipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, IfMobilePipe, XivapiL12nPipe, JobUnicodePipe]
 })
 export class SearchComponent extends TeamcraftComponent implements OnInit {
 

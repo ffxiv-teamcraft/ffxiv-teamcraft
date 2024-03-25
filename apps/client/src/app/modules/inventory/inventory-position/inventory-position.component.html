@@ -1,17 +1,23 @@
-<ng-container *ngIf="display$ | async as display">
-  <div fxLayout="row" fxLayoutGap="5px" class="display-container" *ngIf="display.length > 0; else noPosition">
-    <div fxLayout="column" fxLayoutGap="1px" *ngFor="let tab of display">
-      <div fxLayout="row" fxLayoutGap="1px" *ngFor="let row of tab">
-        <ng-container *ngFor="let slot of row">
-          <img src="./assets/icons/slot_full.png" alt="" *ngIf="slot; else nope">
-          <ng-template #nope>
-            <img src="./assets/icons/slot_empty.png" alt="">
-          </ng-template>
-        </ng-container>
-      </div>
+@if (display$ | async; as display) {
+  @if (display.length > 0) {
+    <div fxLayout="row" fxLayoutGap="5px" class="display-container">
+      @for (tab of display; track tab) {
+        <div fxLayout="column" fxLayoutGap="1px">
+          @for (row of tab; track row) {
+            <div fxLayout="row" fxLayoutGap="1px">
+              @for (slot of row; track slot) {
+                @if (slot) {
+                  <img src="./assets/icons/slot_full.png" alt="">
+                } @else {
+                  <img src="./assets/icons/slot_empty.png" alt="">
+                }
+              }
+            </div>
+          }
+        </div>
+      }
     </div>
-  </div>
-  <ng-template #noPosition>
+  } @else {
     {{'INVENTORY.Unknown_position' | translate}}
-  </ng-template>
-</ng-container>
+  }
+}

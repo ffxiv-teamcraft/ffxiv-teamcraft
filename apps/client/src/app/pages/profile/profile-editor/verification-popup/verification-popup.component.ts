@@ -8,14 +8,14 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-verification-popup',
     templateUrl: './verification-popup.component.html',
     styleUrls: ['./verification-popup.component.less'],
     standalone: true,
-    imports: [NgIf, NzAlertModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
+    imports: [NzAlertModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
 })
 export class VerificationPopupComponent implements OnDestroy {
 

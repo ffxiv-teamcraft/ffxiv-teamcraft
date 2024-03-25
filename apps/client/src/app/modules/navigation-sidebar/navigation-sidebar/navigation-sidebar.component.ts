@@ -14,7 +14,7 @@ import { RouterLinkActive, RouterLink } from '@angular/router';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NgSwitch, NgSwitchCase, NgFor, NgTemplateOutlet, NgIf, AsyncPipe } from '@angular/common';
+import { NgTemplateOutlet, AsyncPipe } from '@angular/common';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 
 @Component({
@@ -23,7 +23,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
     styleUrls: ['./navigation-sidebar.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzMenuModule, NgSwitch, NgSwitchCase, NzIconModule, NzButtonModule, NzBadgeModule, NgFor, NgTemplateOutlet, NgIf, RouterLinkActive, RouterLink, NzDropDownModule, NzToolTipModule, AsyncPipe, TranslateModule]
+    imports: [NzMenuModule, NzIconModule, NzButtonModule, NzBadgeModule, NgTemplateOutlet, RouterLinkActive, RouterLink, NzDropDownModule, NzToolTipModule, AsyncPipe, TranslateModule]
 })
 export class NavigationSidebarComponent {
 

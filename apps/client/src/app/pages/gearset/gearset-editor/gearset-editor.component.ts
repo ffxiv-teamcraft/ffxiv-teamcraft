@@ -64,7 +64,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
     selector: 'app-gearset-editor',
@@ -72,7 +72,7 @@ import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
     styleUrls: ['./gearset-editor.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzPopconfirmModule, RouterLink, NzAlertModule, NzCollapseModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NzInputNumberModule, NgFor, NzCardModule, NzTagModule, GearsetEditorRowComponent, NzDividerModule, PageLoaderComponent, NzSelectModule, AsyncPipe, DecimalPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, FloorPipe, JobUnicodePipe, FoodBonusesPipePipe, StatDisplayPipe]
+    imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzPopconfirmModule, RouterLink, NzAlertModule, NzCollapseModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NzInputNumberModule, NzCardModule, NzTagModule, GearsetEditorRowComponent, NzDividerModule, PageLoaderComponent, NzSelectModule, AsyncPipe, DecimalPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, FloorPipe, JobUnicodePipe, FoodBonusesPipePipe, StatDisplayPipe]
 })
 export class GearsetEditorComponent extends TeamcraftComponent implements OnInit {
 

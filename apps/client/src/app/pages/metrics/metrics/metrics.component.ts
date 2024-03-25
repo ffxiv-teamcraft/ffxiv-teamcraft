@@ -35,14 +35,14 @@ import { TutorialStepDirective } from '../../../core/tutorial/tutorial-step.dire
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-metrics',
     templateUrl: './metrics.component.html',
     styleUrls: ['./metrics.component.less'],
     standalone: true,
-    imports: [NgIf, FlexModule, NzCardModule, NzDatePickerModule, TutorialStepDirective, FormsModule, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, NzSelectModule, NgFor, NzToolTipModule, NzPopconfirmModule, ClipboardDirective, NzAlertModule, CdkDropListGroup, CdkDropList, MetricsDisplayEditorComponent, CdkDrag, MetricDisplayComponent, TranslateModule, AsyncPipe]
+    imports: [FlexModule, NzCardModule, NzDatePickerModule, TutorialStepDirective, FormsModule, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, NzSelectModule, NzToolTipModule, NzPopconfirmModule, ClipboardDirective, NzAlertModule, CdkDropListGroup, CdkDropList, MetricsDisplayEditorComponent, CdkDrag, MetricDisplayComponent, TranslateModule, AsyncPipe]
 })
 export class MetricsComponent extends TeamcraftPageComponent {
 

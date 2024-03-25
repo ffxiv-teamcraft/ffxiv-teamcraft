@@ -1,15 +1,27 @@
 <div fxLayout="column">
-  <div *ngFor="let tip of tips; let last = last">
-    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="24px">
-      <div>
-        <div [ngSwitch]="tip.type">
-          <i *ngSwitchCase="0" [nzTwotoneColor]="'red'" nz-icon nzTheme="twotone" nzType="exclamation-circle"></i>
-          <i *ngSwitchCase="1" [nzTwotoneColor]="'yellow'" nz-icon nzTheme="twotone" nzType="warning"></i>
-          <i *ngSwitchCase="2" nz-icon nzTheme="twotone" nzType="info-circle"></i>
+  @for (tip of tips; track tip; let last = $last) {
+    <div>
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="24px">
+        <div>
+          <div>
+            @switch (tip.type) {
+              @case (0) {
+                <i [nzTwotoneColor]="'red'" nz-icon nzTheme="twotone" nzType="exclamation-circle"></i>
+              }
+              @case (1) {
+                <i [nzTwotoneColor]="'yellow'" nz-icon nzTheme="twotone" nzType="warning"></i>
+              }
+              @case (2) {
+                <i nz-icon nzTheme="twotone" nzType="info-circle"></i>
+              }
+            }
+          </div>
         </div>
+        <div>{{('SIMULATOR.ROTATION_TIPS.' + tip.message) | translate: tip.messageParams(result)}}</div>
       </div>
-      <div>{{('SIMULATOR.ROTATION_TIPS.' + tip.message) | translate: tip.messageParams(result)}}</div>
+      @if (!last) {
+        <nz-divider></nz-divider>
+      }
     </div>
-    <nz-divider *ngIf="!last"></nz-divider>
-  </div>
+  }
 </div>

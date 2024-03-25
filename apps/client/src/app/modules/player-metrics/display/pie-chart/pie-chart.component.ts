@@ -9,7 +9,7 @@ import { SettingsService } from '../../../settings/settings.service';
 import { Observable } from 'rxjs';
 import { safeCombineLatest } from '../../../../core/rxjs/safe-combine-latest';
 import { EChartsOption } from 'echarts';
-import { formatNumber, NgIf, AsyncPipe } from '@angular/common';
+import { formatNumber, AsyncPipe } from '@angular/common';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NgxEchartsModule } from 'ngx-echarts';
 
@@ -19,7 +19,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
     styleUrls: ['./pie-chart.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NgxEchartsModule, NzEmptyModule, AsyncPipe, TranslateModule]
+    imports: [NgxEchartsModule, NzEmptyModule, AsyncPipe, TranslateModule]
 })
 export class PieChartComponent extends AbstractMetricDisplayComponent {
   options$: Observable<EChartsOption> = this.data$.pipe(

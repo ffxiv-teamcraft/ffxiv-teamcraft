@@ -5,7 +5,7 @@ import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
 import { TranslateModule } from '@ngx-translate/core';
-import { NgFor, NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { NgTemplateOutlet, AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
@@ -21,7 +21,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
         }
     ],
     standalone: true,
-    imports: [FlexModule, NgFor, NgIf, NgTemplateOutlet, AsyncPipe, TranslateModule, JobUnicodePipe]
+    imports: [FlexModule, NgTemplateOutlet, AsyncPipe, TranslateModule, JobUnicodePipe]
 })
 export class SearchJobPickerComponent implements ControlValueAccessor {
 

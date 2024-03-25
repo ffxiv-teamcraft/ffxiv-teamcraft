@@ -1,13 +1,15 @@
 <nz-collapse>
   <nz-collapse-panel [nzHeader]="panelHeader">
     <div (cdkDropListDropped)="onListDrop($event.item.data, $event.currentIndex)" (cdkDropListExited)="removeList($event.item.data)"
-         class="ngx-dnd-container lists-container"
-         cdkDropList id="ws-lists-group" [cdkDropListConnectedTo]="['lists-group']"
-         fxLayout="column" fxLayoutGap="5px">
-      <div *ngFor="let list of lists; trackBy: trackByList" class="list-panel"
-           cdkDrag [cdkDragData]="list">
-        <app-list-panel [list]="list"></app-list-panel>
-      </div>
+      class="ngx-dnd-container lists-container"
+      cdkDropList id="ws-lists-group" [cdkDropListConnectedTo]="['lists-group']"
+      fxLayout="column" fxLayoutGap="5px">
+      @for (list of lists; track trackByList($index, list)) {
+        <div class="list-panel"
+          cdkDrag [cdkDragData]="list">
+          <app-list-panel [list]="list"></app-list-panel>
+        </div>
+      }
     </div>
   </nz-collapse-panel>
   <ng-template #panelHeader>
@@ -17,36 +19,39 @@
       </div>
       <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="2px" nz-col nzMd="4">
         <button (click)="$event.stopPropagation()" [clipboard]="getLink" [nzShape]="'circle'"
-                [clipboardSuccessMessage]="'WORKSHOP.Share_link_copied' | translate"
-                [nzTooltipTitle]="'LIST.BUTTONS.Share_description' | translate"
-                nz-button nz-tooltip>
+          [clipboardSuccessMessage]="'WORKSHOP.Share_link_copied' | translate"
+          [nzTooltipTitle]="'LIST.BUTTONS.Share_description' | translate"
+          nz-button nz-tooltip>
           <i nz-icon nzType="share-alt"></i>
         </button>
-        <button (click)="$event.stopPropagation(); addLists()" *ngIf="(permissionLevel$ | async) >= 30" [nzShape]="'circle'"
-                [nzTooltipTitle]="'WORKSHOP.Add_lists' | translate"
-                [nzType]="'primary'"
-                nz-button
-                nz-tooltip>
-          <i nz-icon nzType="plus"></i>
-        </button>
-        <a [nzShape]="'circle'"
-                *ngIf="_workshop.listIds.length>1"
-                (click)="$event.stopPropagation()"
-                [nzTooltipTitle]="'LIST_AGGREGATE.Open_aggregate' | translate"
-                routerLink="/list-aggregate/{{aggregatedIds}}/defaultLayout"
-                [nzType]="'primary'"
-                nz-button
-                nz-tooltip>
-          <i nz-icon nzType="folder-view"></i>
-        </a>
+        @if ((permissionLevel$ | async) >= 30) {
+          <button (click)="$event.stopPropagation(); addLists()" [nzShape]="'circle'"
+            [nzTooltipTitle]="'WORKSHOP.Add_lists' | translate"
+            [nzType]="'primary'"
+            nz-button
+            nz-tooltip>
+            <i nz-icon nzType="plus"></i>
+          </button>
+        }
+        @if (_workshop.listIds.length>1) {
+          <a [nzShape]="'circle'"
+            (click)="$event.stopPropagation()"
+            [nzTooltipTitle]="'LIST_AGGREGATE.Open_aggregate' | translate"
+            routerLink="/list-aggregate/{{aggregatedIds}}/defaultLayout"
+            [nzType]="'primary'"
+            nz-button
+            nz-tooltip>
+            <i nz-icon nzType="folder-view"></i>
+          </a>
+        }
         <button (nzOnConfirm)="deleteWorkshop()" [disabled]="(permissionLevel$ | async) < 30" [nzShape]="'circle'"
-                [nzPopconfirmTitle]="'WORKSHOP.Delete_message' | translate"
-                nzDanger nz-button nz-popconfirm>
+          [nzPopconfirmTitle]="'WORKSHOP.Delete_message' | translate"
+          nzDanger nz-button nz-popconfirm>
           <i nz-icon nzType="delete"></i>
         </button>
         <button (click)="$event.stopPropagation()" [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'" [nzShape]="'circle'"
-                [nzTrigger]="'click'"
-                nz-button nz-dropdown>
+          [nzTrigger]="'click'"
+          nz-button nz-dropdown>
           <i nz-icon nzType="ellipsis"></i>
         </button>
         <nz-dropdown-menu #menu="nzDropdownMenu">
@@ -57,24 +62,27 @@
             <li (click)="openPermissionsPopup()" [nzDisabled]="(permissionLevel$ | async) < 40" nz-menu-item>
               {{'PERMISSIONS.Title' | translate}}
             </li>
-            <ng-container *ngIf="(permissionLevel$ | async) >= 40">
-              <ng-container *ngIf="user$ | async as user">
-                <ng-container *ngIf="user.supporter || user.admin">
-                  <li (click)="createCustomLink(_workshop, user)" *ngIf="(customLink$ | async) === undefined; else copyLink"
+            @if ((permissionLevel$ | async) >= 40) {
+              @if (user$ | async; as user) {
+                @if (user.supporter || user.admin) {
+                  @if ((customLink$ | async) === undefined) {
+                    <li (click)="createCustomLink(_workshop, user)"
                       [nzDisabled]="!user.nickname"
                       nz-menu-item>
-                    {{'CUSTOM_LINKS.Add_link' | translate}}
-                  </li>
-                  <ng-template #copyLink>
-                    <li *ngIf="customLink$ | async as link" [clipboard]="link.getUrl"
+                      {{'CUSTOM_LINKS.Add_link' | translate}}
+                    </li>
+                  } @else {
+                    @if (customLink$ | async; as link) {
+                      <li [clipboard]="link.getUrl"
                         [clipboardSuccessMessage]="'CUSTOM_LINKS.Share_link_copied' | translate"
                         nz-menu-item>
-                      {{'CUSTOM_LINKS.Copy_custom_link' | translate}}
-                    </li>
-                  </ng-template>
-                </ng-container>
-              </ng-container>
-            </ng-container>
+                        {{'CUSTOM_LINKS.Copy_custom_link' | translate}}
+                      </li>
+                    }
+                  }
+                }
+              }
+            }
           </ul>
         </nz-dropdown-menu>
       </div>

@@ -12,14 +12,14 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzTagModule } from 'ng-zorro-antd/tag';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-item-inventory-button',
     templateUrl: './item-inventory-button.component.html',
     styleUrls: ['./item-inventory-button.component.less'],
     standalone: true,
-    imports: [NgIf, NzTagModule, NzDropDownModule, NzMenuModule, NgFor, NzButtonModule, NzToolTipModule, FlexModule, InventoryPositionComponent, AsyncPipe, TranslateModule]
+    imports: [NzTagModule, NzDropDownModule, NzMenuModule, NzButtonModule, NzToolTipModule, FlexModule, InventoryPositionComponent, AsyncPipe, TranslateModule]
 })
 export class ItemInventoryButtonComponent {
 

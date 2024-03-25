@@ -1,4 +1,4 @@
-<ng-container *ngIf="fishingSpot$ | async as spot; else loader">
+@if (fishingSpot$ | async; as spot) {
   <div [style.padding]="'0 25px' | ifMobile: '0'" fxLayout="column" fxLayoutGap="10px">
     <div
       class="top-bar"
@@ -8,7 +8,7 @@
       fxLayoutAlign="flex-start flex-start"
       fxLayoutGap="5px"
       fxLayoutGap.lt-md="10px"
-    >
+      >
       <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="10px">
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <img src="./assets/icons/classjob/fisher.png" fxFlex="0 0 auto"/>
@@ -27,7 +27,6 @@
         [value]="spot | i18n"
       ></app-i18n-display>
     </div>
-
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
       <div class="details-block">
         <div class="detail-name">{{ 'DB.Level' | translate }}</div>
@@ -36,13 +35,12 @@
       <div fxFlex="1 1 auto"></div>
       <button nz-button (click)="showMissesPopup(spot.id)">{{ 'DB.FISH.Show_misses' | translate }}</button>
     </div>
-
-    <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="spot.id" type="fishing-spot"></app-db-comments>
-
+    @if (settings.dbCommentsPosition === 'TOP') {
+      <app-db-comments [id]="spot.id" type="fishing-spot"></app-db-comments>
+    }
     <div>
       <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     </div>
-
     <div fxLayout="row wrap" fxLayoutGap="10px grid" fxLayoutGap.lt-md="5px grid" fxLayoutAlign="space-between stretch" fxLayout.lt-sm="column">
       <app-fishing-spot-position fxFlex="nogrow" [spot]="fishingSpot$ | async" [loading]="loading$ | async"></app-fishing-spot-position>
       <app-fishing-spot-weathers fxFlex="1 1 auto" [spot]="fishingSpot$ | async"></app-fishing-spot-weathers>
@@ -77,9 +75,10 @@
         (activeFishChange)="highlightedFish$.next($event)"
       ></app-fishing-spot-bite-times>
     </div>
-    <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="spot.id" type="fishing-spot"></app-db-comments>
+    @if (settings.dbCommentsPosition === 'BOTTOM') {
+      <app-db-comments [id]="spot.id" type="fishing-spot"></app-db-comments>
+    }
   </div>
-</ng-container>
-<ng-template #loader>
+} @else {
   <app-page-loader></app-page-loader>
-</ng-template>
+}

@@ -35,7 +35,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
-import { NgIf, NgSwitch, NgSwitchCase, NgFor, AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
 
 @Component({
     selector: 'app-commission-details',
@@ -43,7 +43,7 @@ import { NgIf, NgSwitch, NgSwitchCase, NgFor, AsyncPipe, DecimalPipe, DatePipe }
     styleUrls: ['./commission-details.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, FullpageMessageComponent, NzCardModule, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzDropDownModule, NzMenuModule, NzPopconfirmModule, NgSwitch, NgSwitchCase, NzTagModule, UserRatingDisplayComponent, UserAvatarComponent, NzDividerModule, NzGridModule, ItemIconComponent, NgFor, NzProgressModule, RouterLink, NzRateModule, FormsModule, NzEmptyModule, PageLoaderComponent, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, ItemNamePipe, CharacterNamePipe]
+    imports: [FullpageMessageComponent, NzCardModule, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzDropDownModule, NzMenuModule, NzPopconfirmModule, NzTagModule, UserRatingDisplayComponent, UserAvatarComponent, NzDividerModule, NzGridModule, ItemIconComponent, NzProgressModule, RouterLink, NzRateModule, FormsModule, NzEmptyModule, PageLoaderComponent, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, ItemNamePipe, CharacterNamePipe]
 })
 export class CommissionDetailsComponent extends TeamcraftComponent implements OnInit {
 

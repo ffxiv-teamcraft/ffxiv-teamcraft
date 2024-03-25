@@ -6,7 +6,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
-import { NgIf } from '@angular/common';
+
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { FlexModule } from '@angular/flex-layout/flex';
 
@@ -15,7 +15,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     templateUrl: './name-question-popup.component.html',
     styleUrls: ['./name-question-popup.component.less'],
     standalone: true,
-    imports: [FormsModule, FlexModule, ReactiveFormsModule, NzInputModule, NgIf, NzCheckboxModule, NzToolTipModule, NzButtonModule, NzWaveModule, TranslateModule]
+    imports: [FormsModule, FlexModule, ReactiveFormsModule, NzInputModule, NzCheckboxModule, NzToolTipModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
 export class NameQuestionPopupComponent implements OnInit {
 

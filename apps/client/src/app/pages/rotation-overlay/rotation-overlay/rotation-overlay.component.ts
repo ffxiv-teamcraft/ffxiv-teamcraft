@@ -10,14 +10,14 @@ import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/pa
 import { ActionComponent } from '../../simulator/components/action/action.component';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { OverlayContainerComponent } from '../../../modules/overlay-container/overlay-container/overlay-container.component';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-rotation-overlay',
     templateUrl: './rotation-overlay.component.html',
     styleUrls: ['./rotation-overlay.component.less'],
     standalone: true,
-    imports: [NgIf, OverlayContainerComponent, FlexModule, NgFor, ActionComponent, PageLoaderComponent, AsyncPipe]
+    imports: [OverlayContainerComponent, FlexModule, ActionComponent, PageLoaderComponent, AsyncPipe]
 })
 export class RotationOverlayComponent {
 

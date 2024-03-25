@@ -1,34 +1,43 @@
-<div *ngIf="!inProgress; else loader">
-  <nz-form-item>
-    <nz-form-control [nzValidateStatus]="importLinkSupported === false?'error':null" [nzExtra]="extra">
-      <input [(ngModel)]="importLink" (ngModelChange)="updateLinkSupport()" [placeholder]="'LISTS.IMPORT.Paste_link_step_title' | translate" nz-input
-             type="text">
-      <ng-template #extra>
-        <i *ngIf="importLinkSupported === undefined">{{'LISTS.IMPORT.Links_supported' | translate: { links: linkTypes } }}</i>
-        <i *ngIf="importLinkSupported === false">{{'LISTS.IMPORT.Link_not_supported' | translate}}</i>
-        <i *ngIf="importLinkSupported === true">{{'LISTS.IMPORT.Link_recognized' | translate: { type: linkType } }}</i>
-      </ng-template>
-    </nz-form-control>
-  </nz-form-item>
-  <nz-form-item *ngIf="linkType === 'Ariyala' || linkType === 'Etro'">
-    <div fxLayout="column" fxLayoutGap="5px">
-      <div>
-        <label [(ngModel)]="materiaOptions.estimateOvermeldMateria"
-               nz-checkbox>{{'LISTS.IMPORT.Estimate_overmeld_materia' | translate}}</label>
-      </div>
-      <div>
-        <label [(ngModel)]="materiaOptions.multiplyToolMateria" [nzDisabled]="!materiaOptions.estimateOvermeldMateria"
-               nz-checkbox>{{'LISTS.IMPORT.Multiply_tool_materia' | translate}}</label>
-      </div>
-      <div>
-        <label [(ngModel)]="materiaOptions.groupTogether"
-               nz-checkbox>{{'LISTS.IMPORT.Group_together' | translate}}</label>
-      </div>
+@if (!inProgress) {
+  <div>
+    <nz-form-item>
+      <nz-form-control [nzValidateStatus]="importLinkSupported === false?'error':null" [nzExtra]="extra">
+        <input [(ngModel)]="importLink" (ngModelChange)="updateLinkSupport()" [placeholder]="'LISTS.IMPORT.Paste_link_step_title' | translate" nz-input
+          type="text">
+          <ng-template #extra>
+            @if (importLinkSupported === undefined) {
+              <i>{{'LISTS.IMPORT.Links_supported' | translate: { links: linkTypes } }}</i>
+            }
+            @if (importLinkSupported === false) {
+              <i>{{'LISTS.IMPORT.Link_not_supported' | translate}}</i>
+            }
+            @if (importLinkSupported === true) {
+              <i>{{'LISTS.IMPORT.Link_recognized' | translate: { type: linkType } }}</i>
+            }
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      @if (linkType === 'Ariyala' || linkType === 'Etro') {
+        <nz-form-item>
+          <div fxLayout="column" fxLayoutGap="5px">
+            <div>
+              <label [(ngModel)]="materiaOptions.estimateOvermeldMateria"
+              nz-checkbox>{{'LISTS.IMPORT.Estimate_overmeld_materia' | translate}}</label>
+            </div>
+            <div>
+              <label [(ngModel)]="materiaOptions.multiplyToolMateria" [nzDisabled]="!materiaOptions.estimateOvermeldMateria"
+              nz-checkbox>{{'LISTS.IMPORT.Multiply_tool_materia' | translate}}</label>
+            </div>
+            <div>
+              <label [(ngModel)]="materiaOptions.groupTogether"
+              nz-checkbox>{{'LISTS.IMPORT.Group_together' | translate}}</label>
+            </div>
+          </div>
+        </nz-form-item>
+      }
+      <button (click)="submit()" [disabled]="!importLinkSupported" nz-button
+      nzType="primary">{{'Import' | translate}}</button>
     </div>
-  </nz-form-item>
-  <button (click)="submit()" [disabled]="!importLinkSupported" nz-button
-          nzType="primary">{{'Import' | translate}}</button>
-</div>
-<ng-template #loader>
-  <app-page-loader></app-page-loader>
-</ng-template>
+  } @else {
+    <app-page-loader></app-page-loader>
+  }

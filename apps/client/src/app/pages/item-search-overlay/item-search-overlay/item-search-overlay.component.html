@@ -9,47 +9,55 @@
       class="name-input"
       fxFlex="1 1 auto"
       nz-input
-    />
-    <nz-autocomplete #auto nzBackfill>
-      <nz-auto-option *ngFor="let option of completion$ | async" [nzValue]="option.name | i18n">
-        {{ option.name | i18n }}
-      </nz-auto-option>
-    </nz-autocomplete>
-    <div class="result-display" *ngIf="selectedItem$ | async as display; else welcome" fxLayout="column" fxLayoutGap="10px">
-      <div class="item-card" fxLayout="row" fxLayoutGap="5px">
-        <app-item-icon tooltipDisabled="true" [itemId]="display.data.id"></app-item-icon>
-        <div fxLayout="column" fxLayoutGap="5px">
-          <div><app-i18n-name [id]="display.data.id" content="items"></app-i18n-name></div>
-          <div fxLayout="row wrap" *ngIf="display.inventoryItems.length > 0; else nothingInsideInventory">
-            <ng-container *ngFor="let item of display.inventoryItems">
-              <ng-template #positionTooltip>
-                <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
-                  <app-inventory-position [item]="item"></app-inventory-position>
-                  <div>{{'INVENTORY.Click_to_add_to_progression' | translate}}</div>
+      />
+      <nz-autocomplete #auto nzBackfill>
+        @for (option of completion$ | async; track option) {
+          <nz-auto-option [nzValue]="option.name | i18n">
+            {{ option.name | i18n }}
+          </nz-auto-option>
+        }
+      </nz-autocomplete>
+      @if (selectedItem$ | async; as display) {
+        <div class="result-display" fxLayout="column" fxLayoutGap="10px">
+          <div class="item-card" fxLayout="row" fxLayoutGap="5px">
+            <app-item-icon tooltipDisabled="true" [itemId]="display.data.id"></app-item-icon>
+            <div fxLayout="column" fxLayoutGap="5px">
+              <div><app-i18n-name [id]="display.data.id" content="items"></app-i18n-name></div>
+              @if (display.inventoryItems.length > 0) {
+                <div fxLayout="row wrap">
+                  @for (item of display.inventoryItems; track item) {
+                    <ng-template #positionTooltip>
+                      <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
+                        <app-inventory-position [item]="item"></app-inventory-position>
+                        <div>{{'INVENTORY.Click_to_add_to_progression' | translate}}</div>
+                      </div>
+                    </ng-template>
+                    <nz-tag nz-tooltip [nzTooltipTitle]="positionTooltip">{{item.containerName | translate}}: {{item.quantity}}
+                      @if (item.hq) {
+                        <img alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
+                      }
+                    </nz-tag>
+                  }
                 </div>
-              </ng-template>
-              <nz-tag nz-tooltip [nzTooltipTitle]="positionTooltip">{{item.containerName | translate}}: {{item.quantity}}
-                <img *ngIf="item.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
-              </nz-tag>
-            </ng-container>
+              } @else {
+                <i>{{'ITEM_SEARCH_OVERLAY.None_inside_inventory' | translate}}</i>
+              }
+            </div>
           </div>
-          <ng-template #nothingInsideInventory>
-            <i>{{'ITEM_SEARCH_OVERLAY.None_inside_inventory' | translate}}</i>
-          </ng-template>
+          <div>
+            <button nz-button nzBlock (click)="openInMainWindow(display.data.id)">{{'ITEM_SEARCH_OVERLAY.Open_in_main_window' | translate}}</button>
+          </div>
+          <app-item-sources-display [overlay]="true" [item]="display.data" [sources]="display.data.sources" flex="1 1 auto"
+          layoutAlign="center flex-start"></app-item-sources-display>
+          @if (display.canBeSold) {
+            <div>
+              <nz-divider nzOrientation="left" [nzText]="'ITEM_SEARCH_OVERLAY.Marketboard_informations' | translate"></nz-divider>
+              <app-marketboard-popup [itemId]="display.data.id" showHistory="true"></app-marketboard-popup>
+            </div>
+          }
         </div>
-      </div>
-      <div>
-        <button nz-button nzBlock (click)="openInMainWindow(display.data.id)">{{'ITEM_SEARCH_OVERLAY.Open_in_main_window' | translate}}</button>
-      </div>
-      <app-item-sources-display [overlay]="true" [item]="display.data" [sources]="display.data.sources" flex="1 1 auto"
-                                layoutAlign="center flex-start"></app-item-sources-display>
-      <div *ngIf="display.canBeSold">
-        <nz-divider nzOrientation="left" [nzText]="'ITEM_SEARCH_OVERLAY.Marketboard_informations' | translate"></nz-divider>
-        <app-marketboard-popup [itemId]="display.data.id" showHistory="true"></app-marketboard-popup>
-      </div>
+      } @else {
+        <app-fullpage-message>{{'ITEM_SEARCH_OVERLAY.Intro_message' | translate}}</app-fullpage-message>
+      }
     </div>
-  </div>
-  <ng-template #welcome>
-    <app-fullpage-message>{{'ITEM_SEARCH_OVERLAY.Intro_message' | translate}}</app-fullpage-message>
-  </ng-template>
-</app-overlay-container>
+  </app-overlay-container>

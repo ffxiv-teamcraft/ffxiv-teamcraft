@@ -1,55 +1,80 @@
-<nz-alert *ngIf="error; else content" [nzMessage]="'MARKETBOARD.Error' | translate" nzShowIcon
-          nzType="error"></nz-alert>
-<ng-template #content>
-  <div *ngIf="lastUpdated$ | async as lastUpdated" class="last-updated"><i>{{'MARKETBOARD.Last_updated' | translate}}: {{lastUpdated | date:'medium':null:settings.dateFormat}}</i></div>
+@if (error) {
+  <nz-alert [nzMessage]="'MARKETBOARD.Error' | translate" nzShowIcon
+  nzType="error"></nz-alert>
+} @else {
+  @if (lastUpdated$ | async; as lastUpdated) {
+    <div class="last-updated"><i>{{'MARKETBOARD.Last_updated' | translate}}: {{lastUpdated | date:'medium':null:settings.dateFormat}}</i></div>
+  }
   <a href="https://universalis.app/market/{{itemId}}"
-     target="_blank">{{'MARKETBOARD.More_on_universalis' | translate}}</a>
+  target="_blank">{{'MARKETBOARD.More_on_universalis' | translate}}</a>
   <div fxLayout="column" fxLayoutGap="15px">
-    <nz-table #pricesTable *ngIf="prices$ | async as prices" [nzData]="prices" [nzLoading]="loading" nzSize="small">
-      <thead (nzSortOrderChange)="sort($event)">
-      <tr>
-        <th nzShowSort [nzSortFn]="true" nzColumnKey="Quantity">{{'MARKETBOARD.Amount' | translate}}</th>
-        <th nzShowSort [nzSortFn]="true" *ngIf="!settings.disableCrossWorld" nzColumnKey="Server">{{'MARKETBOARD.Server' | translate}}</th>
-        <th nzShowSort [nzSortFn]="true" nzColumnKey="IsHQ">{{'MARKETBOARD.HQ' | translate}}</th>
-        <th nzShowSort [nzSortFn]="true" nzColumnKey="PriceTotal">{{'MARKETBOARD.Total_price' | translate}}</th>
-        <th nzShowSort [nzSortFn]="true" nzColumnKey="PricePerUnit">{{'MARKETBOARD.Unit_price' | translate}}</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let row of pricesTable.data">
-        <td>{{row.Quantity}}</td>
-        <td *ngIf="!settings.disableCrossWorld">{{row.Server | worldName | i18n}}</td>
-        <td><img *ngIf="row.IsHQ" alt="HQ" class="hq-icon" src="./assets/icons/HQ.png"></td>
-        <td>{{row.PriceTotal | number}}</td>
-        <td>{{row.PricePerUnit | number}}</td>
-      </tr>
-      </tbody>
-    </nz-table>
-    <div *ngIf="showHistory">
-      <h3>{{'MARKETBOARD.History' | translate}}</h3>
-      <nz-table #historyTable *ngIf="history$ | async as history" [nzData]="history" [nzLoading]="loadingHistory"
-                nzSize="small">
-        <thead>
-        <tr>
-          <th>{{'MARKETBOARD.Purchase_date' | translate}}</th>
-          <th>{{'MARKETBOARD.Amount' | translate}}</th>
-          <th *ngIf="!settings.disableCrossWorld">{{'MARKETBOARD.Server' | translate}}</th>
-          <th>{{'MARKETBOARD.HQ' | translate}}</th>
-          <th>{{'MARKETBOARD.Total_price' | translate}}</th>
-          <th>{{'MARKETBOARD.Unit_price' | translate}}</th>
-        </tr>
+    @if (prices$ | async; as prices) {
+      <nz-table #pricesTable [nzData]="prices" [nzLoading]="loading" nzSize="small">
+        <thead (nzSortOrderChange)="sort($event)">
+          <tr>
+            <th nzShowSort [nzSortFn]="true" nzColumnKey="Quantity">{{'MARKETBOARD.Amount' | translate}}</th>
+            @if (!settings.disableCrossWorld) {
+              <th nzShowSort [nzSortFn]="true" nzColumnKey="Server">{{'MARKETBOARD.Server' | translate}}</th>
+            }
+            <th nzShowSort [nzSortFn]="true" nzColumnKey="IsHQ">{{'MARKETBOARD.HQ' | translate}}</th>
+            <th nzShowSort [nzSortFn]="true" nzColumnKey="PriceTotal">{{'MARKETBOARD.Total_price' | translate}}</th>
+            <th nzShowSort [nzSortFn]="true" nzColumnKey="PricePerUnit">{{'MARKETBOARD.Unit_price' | translate}}</th>
+          </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let row of historyTable.data">
-          <td>{{row.PurchaseDate | date:'short':undefined:settings.dateFormat}}</td>
-          <td>{{row.Quantity}}</td>
-          <td *ngIf="!settings.disableCrossWorld">{{row.Server | worldName | i18n}}</td>
-          <td><img *ngIf="row.IsHQ" alt="HQ" class="hq-icon" src="./assets/icons/HQ.png"></td>
-          <td>{{row.PriceTotal | number}}</td>
-          <td>{{row.PricePerUnit | number}}</td>
-        </tr>
+          @for (row of pricesTable.data; track row) {
+            <tr>
+              <td>{{row.Quantity}}</td>
+              @if (!settings.disableCrossWorld) {
+                <td>{{row.Server | worldName | i18n}}</td>
+              }
+              <td>@if (row.IsHQ) {
+                <img alt="HQ" class="hq-icon" src="./assets/icons/HQ.png">
+              }</td>
+              <td>{{row.PriceTotal | number}}</td>
+              <td>{{row.PricePerUnit | number}}</td>
+            </tr>
+          }
         </tbody>
       </nz-table>
-    </div>
+    }
+    @if (showHistory) {
+      <div>
+        <h3>{{'MARKETBOARD.History' | translate}}</h3>
+        @if (history$ | async; as history) {
+          <nz-table #historyTable [nzData]="history" [nzLoading]="loadingHistory"
+            nzSize="small">
+            <thead>
+              <tr>
+                <th>{{'MARKETBOARD.Purchase_date' | translate}}</th>
+                <th>{{'MARKETBOARD.Amount' | translate}}</th>
+                @if (!settings.disableCrossWorld) {
+                  <th>{{'MARKETBOARD.Server' | translate}}</th>
+                }
+                <th>{{'MARKETBOARD.HQ' | translate}}</th>
+                <th>{{'MARKETBOARD.Total_price' | translate}}</th>
+                <th>{{'MARKETBOARD.Unit_price' | translate}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (row of historyTable.data; track row) {
+                <tr>
+                  <td>{{row.PurchaseDate | date:'short':undefined:settings.dateFormat}}</td>
+                  <td>{{row.Quantity}}</td>
+                  @if (!settings.disableCrossWorld) {
+                    <td>{{row.Server | worldName | i18n}}</td>
+                  }
+                  <td>@if (row.IsHQ) {
+                    <img alt="HQ" class="hq-icon" src="./assets/icons/HQ.png">
+                  }</td>
+                  <td>{{row.PriceTotal | number}}</td>
+                  <td>{{row.PricePerUnit | number}}</td>
+                </tr>
+              }
+            </tbody>
+          </nz-table>
+        }
+      </div>
+    }
   </div>
-</ng-template>
+}

@@ -1,6 +1,6 @@
 import { booleanAttribute, ChangeDetectionStrategy, Component, Input, numberAttribute, TemplateRef, TrackByFunction } from '@angular/core';
 import { CdkVirtualScrollViewport, CdkFixedSizeVirtualScroll, CdkVirtualForOf } from '@angular/cdk/scrolling';
-import { NgIf, NgTemplateOutlet, NgFor } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 
 @Component({
     selector: 'app-lazy-scroll',
@@ -8,7 +8,7 @@ import { NgIf, NgTemplateOutlet, NgFor } from '@angular/common';
     styleUrls: ['./lazy-scroll.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, CdkVirtualScrollViewport, CdkFixedSizeVirtualScroll, CdkVirtualForOf, NgTemplateOutlet, NgFor]
+    imports: [CdkVirtualScrollViewport, CdkFixedSizeVirtualScroll, CdkVirtualForOf, NgTemplateOutlet]
 })
 export class LazyScrollComponent {
 

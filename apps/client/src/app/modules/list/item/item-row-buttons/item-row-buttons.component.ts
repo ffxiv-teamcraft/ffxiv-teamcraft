@@ -38,7 +38,7 @@ import { ItemNameClipboardDirective } from '../../../../core/item-name-clipboard
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { MarketboardIconComponent } from '../../../marketboard/marketboard-icon/marketboard-icon.component';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
@@ -47,7 +47,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./item-row-buttons.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NgIf, MarketboardIconComponent, NzButtonModule, NzWaveModule, ItemNameClipboardDirective, NzIconModule, NzToolTipModule, NzBadgeModule, NzDropDownModule, NzMenuModule, NgFor, NzPopconfirmModule, TutorialStepDirective, RotationResultTagComponent, AsyncPipe, TranslateModule, CharacterNamePipe]
+    imports: [FlexModule, MarketboardIconComponent, NzButtonModule, NzWaveModule, ItemNameClipboardDirective, NzIconModule, NzToolTipModule, NzBadgeModule, NzDropDownModule, NzMenuModule, NzPopconfirmModule, TutorialStepDirective, RotationResultTagComponent, AsyncPipe, TranslateModule, CharacterNamePipe]
 })
 export class ItemRowButtonsComponent extends TeamcraftComponent {
 

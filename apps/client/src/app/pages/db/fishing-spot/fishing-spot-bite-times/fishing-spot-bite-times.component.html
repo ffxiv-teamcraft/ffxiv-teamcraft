@@ -1,32 +1,39 @@
 <nz-card [nzTitle]="'DB.FISH.Bite_times' | translate" [nzExtra]="baitSelector" [nzLoading]="loading$ | async">
   <ng-template #baitSelector>
-    <nz-select *ngIf="baitIds$ | async as baits" [ngModel]="baitFilter$ | async" (ngModelChange)="setBaitId($event)" nzShowSearch class="bait-selector">
-      <nz-option [nzValue]="-1" [nzLabel]="'DB.FISH.All_baits' | translate"></nz-option>
-      <nz-option *ngFor="let bait of baits" [nzLabel]="bait | itemName | i18n"
-                 [nzValue]="bait"
-                 nzCustomContent>
-        <div [title]="bait | itemName | i18n" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img [src]="bait | lazyIcon" alt="" class="bait-icon">
-          <div>
-            {{bait | itemName | i18n}}
-          </div>
-        </div>
-      </nz-option>
-    </nz-select>
+    @if (baitIds$ | async; as baits) {
+      <nz-select [ngModel]="baitFilter$ | async" (ngModelChange)="setBaitId($event)" nzShowSearch class="bait-selector">
+        <nz-option [nzValue]="-1" [nzLabel]="'DB.FISH.All_baits' | translate"></nz-option>
+        @for (bait of baits; track bait) {
+          <nz-option [nzLabel]="bait | itemName | i18n"
+            [nzValue]="bait"
+            nzCustomContent>
+            <div [title]="bait | itemName | i18n" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <img [src]="bait | lazyIcon" alt="" class="bait-icon">
+              <div>
+                {{bait | itemName | i18n}}
+              </div>
+            </div>
+          </nz-option>
+        }
+      </nz-select>
+    }
   </ng-template>
   <div>
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center" *ngFor="let row of colors">
-        <div class="legend-box" style.background-color="rgba({{row.color}}, 0.3)" style.border="1px solid rgba({{row.color}}, 0.5)"></div>
-        <div>{{row.tug | tugName | translate}}</div>
-      </div>
+      @for (row of colors; track row) {
+        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+          <div class="legend-box" style.background-color="rgba({{row.color}}, 0.3)" style.border="1px solid rgba({{row.color}}, 0.5)"></div>
+          <div>{{row.tug | tugName | translate}}</div>
+        </div>
+      }
     </div>
-    <ng-container  *ngIf="biteTimesChartJSData$ | async as data">
-      <app-chart type="horizontalBoxplot" *ngIf="data.datasets.length > 0; else noData" [data]="data" [options]="options"></app-chart>
-      <ng-template #noData>
+    @if (biteTimesChartJSData$ | async; as data) {
+      @if (data.datasets.length > 0) {
+        <app-chart type="horizontalBoxplot" [data]="data" [options]="options"></app-chart>
+      } @else {
         <nz-empty [nzNotFoundContent]="'DB.FISH.Not_enough_data_points' | translate"></nz-empty>
-      </ng-template>
-    </ng-container>
+      }
+    }
   </div>
 </nz-card>
 

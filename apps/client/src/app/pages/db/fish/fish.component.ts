@@ -16,7 +16,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { FishDetailsContainerComponent } from './fish-details-container/fish-details-container.component';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
-import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { NgTemplateOutlet, AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-fish',
@@ -24,7 +24,7 @@ import { NgIf, NgTemplateOutlet, AsyncPipe } from '@angular/common';
     styleUrls: ['../common-db.less', './fish.common.less', './fish.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, PageLoaderComponent, FishDetailsContainerComponent, NgTemplateOutlet, NzDividerModule, FlexModule, FishHoursComponent, FishBaitsComponent, FishHooksetsComponent, FishSpotsListComponent, FishBiteTimesComponent, FishWeathersComponent, FishWeatherTransitionsComponent, FishMoochesComponent, DbCommentsComponent, AsyncPipe, TranslateModule]
+    imports: [PageLoaderComponent, FishDetailsContainerComponent, NgTemplateOutlet, NzDividerModule, FlexModule, FishHoursComponent, FishBaitsComponent, FishHooksetsComponent, FishSpotsListComponent, FishBiteTimesComponent, FishWeathersComponent, FishWeatherTransitionsComponent, FishMoochesComponent, DbCommentsComponent, AsyncPipe, TranslateModule]
 })
 export class FishComponent implements OnDestroy {
   @Input() usedForTpl: TemplateRef<any>;

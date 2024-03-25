@@ -25,7 +25,7 @@ import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzListModule } from 'ng-zorro-antd/list';
-import { NgIf, NgFor, AsyncPipe, UpperCasePipe } from '@angular/common';
+import { AsyncPipe, UpperCasePipe } from '@angular/common';
 
 @Component({
     selector: 'app-permissions-box',
@@ -33,7 +33,7 @@ import { NgIf, NgFor, AsyncPipe, UpperCasePipe } from '@angular/common';
     styleUrls: ['./permissions-box.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NzListModule, NgFor, NzAvatarModule, NzSelectModule, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, FlexModule, PageLoaderComponent, AsyncPipe, UpperCasePipe, TranslateModule, IfMobilePipe]
+    imports: [NzListModule, NzAvatarModule, NzSelectModule, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, FlexModule, PageLoaderComponent, AsyncPipe, UpperCasePipe, TranslateModule, IfMobilePipe]
 })
 export class PermissionsBoxComponent implements OnInit {
 

@@ -5,7 +5,7 @@ import { observeInput } from '../../../core/rxjs/observe-input';
 import { map, switchMap } from 'rxjs/operators';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { XivapiItemTooltipComponent } from '../../../modules/tooltip/xivapi-tooltip/xivapi-item-tooltip.component';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -16,7 +16,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     styleUrls: ['./item-details-box.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzButtonModule, NzWaveModule, NzIconModule, NgIf, XivapiItemTooltipComponent, NzSpinModule, AsyncPipe]
+    imports: [NzButtonModule, NzWaveModule, NzIconModule, XivapiItemTooltipComponent, NzSpinModule, AsyncPipe]
 })
 export class ItemDetailsBoxComponent {
 

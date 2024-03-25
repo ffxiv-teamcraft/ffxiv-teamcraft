@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Simulation } from '@ffxiv-teamcraft/simulator';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
-import { NgIf } from '@angular/common';
+
 
 @Component({
     selector: 'app-simulation-min-stats-popup',
     templateUrl: './simulation-min-stats-popup.component.html',
     styleUrls: ['./simulation-min-stats-popup.component.less'],
     standalone: true,
-    imports: [NgIf, NzAlertModule, TranslateModule]
+    imports: [NzAlertModule, TranslateModule]
 })
 export class SimulationMinStatsPopupComponent implements OnInit {
 

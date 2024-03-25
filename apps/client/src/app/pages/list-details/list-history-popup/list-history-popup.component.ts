@@ -17,14 +17,14 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { UserAvatarComponent } from '../../../modules/user-avatar/user-avatar/user-avatar.component';
 import { LazyScrollComponent } from '../../../modules/lazy-scroll/lazy-scroll/lazy-scroll.component';
 import { NzListModule } from 'ng-zorro-antd/list';
-import { NgIf, AsyncPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DatePipe } from '@angular/common';
 
 @Component({
     selector: 'app-list-history-popup',
     templateUrl: './list-history-popup.component.html',
     styleUrls: ['./list-history-popup.component.less'],
     standalone: true,
-    imports: [NgIf, NzListModule, LazyScrollComponent, UserAvatarComponent, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzEmptyModule, PageLoaderComponent, AsyncPipe, DatePipe, I18nPipe, TranslateModule, ItemNamePipe, CharacterNamePipe]
+    imports: [NzListModule, LazyScrollComponent, UserAvatarComponent, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzEmptyModule, PageLoaderComponent, AsyncPipe, DatePipe, I18nPipe, TranslateModule, ItemNamePipe, CharacterNamePipe]
 })
 export class ListHistoryPopupComponent {
 

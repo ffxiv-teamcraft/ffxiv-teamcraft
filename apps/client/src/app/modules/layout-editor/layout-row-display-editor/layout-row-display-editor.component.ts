@@ -7,7 +7,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
-import { NgFor } from '@angular/common';
+
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
@@ -15,7 +15,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     templateUrl: './layout-row-display-editor.component.html',
     styleUrls: ['./layout-row-display-editor.component.less'],
     standalone: true,
-    imports: [FlexModule, NgFor, NzSelectModule, FormsModule, NzButtonModule, NzWaveModule, TranslateModule]
+    imports: [FlexModule, NzSelectModule, FormsModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
 export class LayoutRowDisplayEditorComponent {
 

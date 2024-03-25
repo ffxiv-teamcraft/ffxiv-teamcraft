@@ -1,141 +1,156 @@
-<div *ngIf="selectedLayout$ | async as layout">
-  <div *ngIf="allLayouts$ | async as allLayouts" class="topbar" fxLayout="row" fxLayout.lt-md="column"
-       fxLayoutGap="5px">
-    <div fxLayout="column" fxLayoutGap="5px" fxFlex="1 1 auto">
-      <nz-select (ngModelChange)="select($event)" [compareWith]="layoutComparator" [ngModel]="layout" fxFlex="1 1 auto">
-        <nz-option *ngFor="let availableLayout of allLayouts" [nzLabel]="availableLayout.name"
-                   [nzValue]="availableLayout"></nz-option>
-      </nz-select>
-      <div>{{'LIST_DETAILS.LAYOUT_DIALOG.Want_to_learn_more' | translate}}&nbsp;<a href="https://wiki.ffxivteamcraft.com/base-features/layout-system"
-                                                                                   target="_blank">{{'LIST_DETAILS.LAYOUT_DIALOG.Open_wiki_page' | translate}}</a>.
+@if (selectedLayout$ | async; as layout) {
+  <div>
+    @if (allLayouts$ | async; as allLayouts) {
+      <div class="topbar" fxLayout="row" fxLayout.lt-md="column"
+        fxLayoutGap="5px">
+        <div fxLayout="column" fxLayoutGap="5px" fxFlex="1 1 auto">
+          <nz-select (ngModelChange)="select($event)" [compareWith]="layoutComparator" [ngModel]="layout" fxFlex="1 1 auto">
+            @for (availableLayout of allLayouts; track availableLayout) {
+              <nz-option [nzLabel]="availableLayout.name"
+              [nzValue]="availableLayout"></nz-option>
+            }
+          </nz-select>
+          <div>{{'LIST_DETAILS.LAYOUT_DIALOG.Want_to_learn_more' | translate}}&nbsp;<a href="https://wiki.ffxivteamcraft.com/base-features/layout-system"
+          target="_blank">{{'LIST_DETAILS.LAYOUT_DIALOG.Open_wiki_page' | translate}}</a>.
+        </div>
+      </div>
+      <div class="buttons" fxLayout="row" fxLayoutGap="5px">
+        <button (click)="addLayout()" nz-button nzType="primary">
+          <i nz-icon nzType="plus"></i>
+        </button>
+        <button (click)="save(layout)" [disabled]="layout.default || layout.$key === undefined || !dirty" nz-button
+          nzType="primary">
+          <i class="material-icons">save</i>
+        </button>
+        <button (nzOnConfirm)="deleteLayout(layout.$key)" [disabled]="layout.default || layout.$key === undefined" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
+          nz-popconfirm nzDanger>
+          <i nz-icon nzType="delete"></i>
+        </button>
+        <div class="spacer"></div>
+        @if (!layout.default) {
+          <button [clipboard]="layout.base64"
+            [clipboardSuccessMessage]="'LIST_DETAILS.LAYOUT_DIALOG.Import_string_copied' | translate"
+            [nzTooltipTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Export_layout' | translate"
+            nz-button
+            nz-tooltip>
+            <i nz-icon nzType="upload"></i>
+          </button>
+        }
+        <button (click)="importLayout()" [nzTooltipTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Import_layout' | translate"
+          nz-button
+          nz-tooltip>
+          <i nz-icon nzType="download"></i>
+        </button>
       </div>
     </div>
-    <div class="buttons" fxLayout="row" fxLayoutGap="5px">
-      <button (click)="addLayout()" nz-button nzType="primary">
-        <i nz-icon nzType="plus"></i>
-      </button>
-      <button (click)="save(layout)" [disabled]="layout.default || layout.$key === undefined || !dirty" nz-button
-              nzType="primary">
-        <i class="material-icons">save</i>
-      </button>
-      <button (nzOnConfirm)="deleteLayout(layout.$key)" [disabled]="layout.default || layout.$key === undefined" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
-              nz-popconfirm nzDanger>
-        <i nz-icon nzType="delete"></i>
-      </button>
-      <div class="spacer"></div>
-      <button [clipboard]="layout.base64"
-              [clipboardSuccessMessage]="'LIST_DETAILS.LAYOUT_DIALOG.Import_string_copied' | translate"
-              [nzTooltipTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Export_layout' | translate"
-              *ngIf="!layout.default"
-              nz-button
-              nz-tooltip>
-        <i nz-icon nzType="upload"></i>
-      </button>
-      <button (click)="importLayout()" [nzTooltipTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Import_layout' | translate"
-              nz-button
-              nz-tooltip>
-        <i nz-icon nzType="download"></i>
-      </button>
-    </div>
-  </div>
-  <nz-alert *ngIf="layout.default" [nzMessage]="'LIST_DETAILS.LAYOUT_DIALOG.Default_readonly_message' | translate"
-            class="default-warning" nzShowIcon nzType="info"></nz-alert>
+  }
+  @if (layout.default) {
+    <nz-alert [nzMessage]="'LIST_DETAILS.LAYOUT_DIALOG.Default_readonly_message' | translate"
+    class="default-warning" nzShowIcon nzType="info"></nz-alert>
+  }
   <div fxLayout="column" fxLayoutGap="10px">
     <nz-input-group nzPrefixIcon="edit">
       <input [(ngModel)]="layout.name" (ngModelChange)="dirty = true" [disabled]="layout.default"
-             nz-input type="text">
-    </nz-input-group>
-    <div>
-      <button (click)="editRowButtons(layout)" [disabled]="layout.default" nz-button nzBlock>
-        {{'LIST_DETAILS.LAYOUT_DIALOG.Edit_row_buttons_display' | translate}}
-      </button>
-    </div>
-    <div>
-      <button (click)="openReorderPopup(layout)" [disabled]="layout.default" nz-button nzBlock>
-        {{'LIST_DETAILS.LAYOUT_DIALOG.Reorder_panels' | translate}}
-      </button>
-    </div>
-    <nz-card [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Global_options' | translate">
-      <div fxLayout="column" fxLayoutGap="10px">
-        <label [(ngModel)]="layout.considerCrystalsAsItems" (ngModelChange)="dirty = true"
-               [nzDisabled]="layout.default" nz-checkbox>
-          {{"LIST.Enable_crystals_tracking" | translate}}
-        </label>
+        nz-input type="text">
+      </nz-input-group>
+      <div>
+        <button (click)="editRowButtons(layout)" [disabled]="layout.default" nz-button nzBlock>
+          {{'LIST_DETAILS.LAYOUT_DIALOG.Edit_row_buttons_display' | translate}}
+        </button>
       </div>
-      <div fxLayout="column" fxLayoutGap="10px">
-        <label [(ngModel)]="layout.includeRecipesInItems" (ngModelChange)="dirty = true"
-               [nzDisabled]="layout.default" nz-checkbox>
-          {{"LIST.Include_final_items_in_main_layout" | translate}}
-        </label>
+      <div>
+        <button (click)="openReorderPopup(layout)" [disabled]="layout.default" nz-button nzBlock>
+          {{'LIST_DETAILS.LAYOUT_DIALOG.Reorder_panels' | translate}}
+        </button>
       </div>
-      <div fxLayout="column" fxLayoutGap="10px">
-        <label [(ngModel)]="layout.filterBasedOnLevel" (ngModelChange)="dirty = true"
-               [nzDisabled]="layout.default" nz-checkbox>
-          {{"LIST_DETAILS.LAYOUT_DIALOG.Filter_using_level" | translate}}
-        </label>
-      </div>
-      <div fxLayout="column" fxLayoutGap="10px">
-        <label [(ngModel)]="layout.showInventory" (ngModelChange)="dirty = true"
-               [nzDisabled]="layout.default" nz-checkbox>
-          {{"LIST.Always_show_inventory" | translate}}
-        </label>
-      </div>
-      <div fxLayout="column" fxLayoutGap="10px">
-        <label [(ngModel)]="layout.showCraftableAmount" (ngModelChange)="dirty = true"
-               [nzDisabled]="layout.default" nz-checkbox>
-          {{"LIST.Show_craftable_amount" | translate}}
-        </label>
-      </div>
-      <div fxLayout="column" fxLayoutGap="10px">
-        <label [(ngModel)]="layout.showVendors" (ngModelChange)="dirty = true"
-               [nzDisabled]="layout.default" nz-checkbox>
-          {{"LIST.Show_vendors" | translate}}
-        </label>
-      </div>
-    </nz-card>
-    <nz-card [nzTitle]="'Items' | translate" *ngIf="!layout.includeRecipesInItems">
-      <div fxLayout="column" fxLayoutGap="10px">
-        <div class="final-items-ordering">
-          {{'LIST_DETAILS.LAYOUT.Order_by' | translate}}
-          <nz-select [(ngModel)]="layout.recipeOrderBy"
-                     (ngModelChange)="dirty = true"
-                     [nzDisabled]="layout.default">
-            <nz-option nzLabel="NAME" nzValue="NAME"></nz-option>
-            <nz-option nzLabel="NONE" nzValue="NONE"></nz-option>
-            <nz-option nzLabel="LEVEL" nzValue="LEVEL"></nz-option>
-            <nz-option nzLabel="JOB" nzValue="JOB"></nz-option>
-            <nz-option nzLabel="INGAME_LOG" nzValue="INGAME_LOG"></nz-option>
-            <nz-option nzLabel="SLOT" nzValue="SLOT"></nz-option>
-          </nz-select>
-          <nz-select [(ngModel)]="layout.recipeOrder"
-                     (ngModelChange)="dirty = true"
-                     [nzDisabled]="layout.default">
-            <nz-option [nzValue]="0" nzLabel="ASC"></nz-option>
-            <nz-option [nzValue]="1" nzLabel="DESC"></nz-option>
-          </nz-select>
+      <nz-card [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Global_options' | translate">
+        <div fxLayout="column" fxLayoutGap="10px">
+          <label [(ngModel)]="layout.considerCrystalsAsItems" (ngModelChange)="dirty = true"
+            [nzDisabled]="layout.default" nz-checkbox>
+            {{"LIST.Enable_crystals_tracking" | translate}}
+          </label>
         </div>
-        <nz-radio-group (ngModelChange)="setItemsLayoutType(layout, $event)"
-                        [ngModel]="getItemsLayoutType(layout)"
-                        [nzDisabled]="layout.default">
-          <label [nzValue]="'default'" nz-radio-button>{{"Default" | translate}}</label>
-          <label [nzValue]="'zoneBreakdown'" nz-radio-button>{{"Zone_breakdown" | translate}}</label>
-        </nz-radio-group>
-        <label [(ngModel)]="layout.recipeHideCompleted" (ngModelChange)="dirty = true" nz-checkbox>{{"Hide_completed" |
-          translate}}</label>
-        <label [(ngModel)]="layout.recipeHideZoneDuplicates" *ngIf="layout.recipeZoneBreakdown" (ngModelChange)="dirty = true"
-               nz-checkbox>{{"Hide_zone_duplicates" | translate}}</label>
-      </div>
-    </nz-card>
-    <div fxLayout="column" fxLayoutGap="10px">
-      <button (click)="addPanel(layout)" [disabled]="layout.default" nz-button nzBlock
-              nzType="primary">
-        <i nz-icon nzType="plus"></i> {{'LIST_DETAILS.LAYOUT_DIALOG.Add_panel' | translate}}
-      </button>
-      <div *ngFor="let row of layout.rows; trackBy: trackByRow">
-        <app-layout-editor-row (delete)="removePanel(layout, row)" (rowChange)="updatePanel(layout, $event)"
-                               [readonly]="layout.default"
-                               [row]="row"></app-layout-editor-row>
+        <div fxLayout="column" fxLayoutGap="10px">
+          <label [(ngModel)]="layout.includeRecipesInItems" (ngModelChange)="dirty = true"
+            [nzDisabled]="layout.default" nz-checkbox>
+            {{"LIST.Include_final_items_in_main_layout" | translate}}
+          </label>
+        </div>
+        <div fxLayout="column" fxLayoutGap="10px">
+          <label [(ngModel)]="layout.filterBasedOnLevel" (ngModelChange)="dirty = true"
+            [nzDisabled]="layout.default" nz-checkbox>
+            {{"LIST_DETAILS.LAYOUT_DIALOG.Filter_using_level" | translate}}
+          </label>
+        </div>
+        <div fxLayout="column" fxLayoutGap="10px">
+          <label [(ngModel)]="layout.showInventory" (ngModelChange)="dirty = true"
+            [nzDisabled]="layout.default" nz-checkbox>
+            {{"LIST.Always_show_inventory" | translate}}
+          </label>
+        </div>
+        <div fxLayout="column" fxLayoutGap="10px">
+          <label [(ngModel)]="layout.showCraftableAmount" (ngModelChange)="dirty = true"
+            [nzDisabled]="layout.default" nz-checkbox>
+            {{"LIST.Show_craftable_amount" | translate}}
+          </label>
+        </div>
+        <div fxLayout="column" fxLayoutGap="10px">
+          <label [(ngModel)]="layout.showVendors" (ngModelChange)="dirty = true"
+            [nzDisabled]="layout.default" nz-checkbox>
+            {{"LIST.Show_vendors" | translate}}
+          </label>
+        </div>
+      </nz-card>
+      @if (!layout.includeRecipesInItems) {
+        <nz-card [nzTitle]="'Items' | translate">
+          <div fxLayout="column" fxLayoutGap="10px">
+            <div class="final-items-ordering">
+              {{'LIST_DETAILS.LAYOUT.Order_by' | translate}}
+              <nz-select [(ngModel)]="layout.recipeOrderBy"
+                (ngModelChange)="dirty = true"
+                [nzDisabled]="layout.default">
+                <nz-option nzLabel="NAME" nzValue="NAME"></nz-option>
+                <nz-option nzLabel="NONE" nzValue="NONE"></nz-option>
+                <nz-option nzLabel="LEVEL" nzValue="LEVEL"></nz-option>
+                <nz-option nzLabel="JOB" nzValue="JOB"></nz-option>
+                <nz-option nzLabel="INGAME_LOG" nzValue="INGAME_LOG"></nz-option>
+                <nz-option nzLabel="SLOT" nzValue="SLOT"></nz-option>
+              </nz-select>
+              <nz-select [(ngModel)]="layout.recipeOrder"
+                (ngModelChange)="dirty = true"
+                [nzDisabled]="layout.default">
+                <nz-option [nzValue]="0" nzLabel="ASC"></nz-option>
+                <nz-option [nzValue]="1" nzLabel="DESC"></nz-option>
+              </nz-select>
+            </div>
+            <nz-radio-group (ngModelChange)="setItemsLayoutType(layout, $event)"
+              [ngModel]="getItemsLayoutType(layout)"
+              [nzDisabled]="layout.default">
+              <label [nzValue]="'default'" nz-radio-button>{{"Default" | translate}}</label>
+              <label [nzValue]="'zoneBreakdown'" nz-radio-button>{{"Zone_breakdown" | translate}}</label>
+            </nz-radio-group>
+            <label [(ngModel)]="layout.recipeHideCompleted" (ngModelChange)="dirty = true" nz-checkbox>{{"Hide_completed" |
+            translate}}</label>
+            @if (layout.recipeZoneBreakdown) {
+              <label [(ngModel)]="layout.recipeHideZoneDuplicates" (ngModelChange)="dirty = true"
+              nz-checkbox>{{"Hide_zone_duplicates" | translate}}</label>
+            }
+          </div>
+        </nz-card>
+      }
+      <div fxLayout="column" fxLayoutGap="10px">
+        <button (click)="addPanel(layout)" [disabled]="layout.default" nz-button nzBlock
+          nzType="primary">
+          <i nz-icon nzType="plus"></i> {{'LIST_DETAILS.LAYOUT_DIALOG.Add_panel' | translate}}
+        </button>
+        @for (row of layout.rows; track trackByRow($index, row)) {
+          <div>
+            <app-layout-editor-row (delete)="removePanel(layout, row)" (rowChange)="updatePanel(layout, $event)"
+              [readonly]="layout.default"
+            [row]="row"></app-layout-editor-row>
+          </div>
+        }
       </div>
     </div>
   </div>
-</div>
+}

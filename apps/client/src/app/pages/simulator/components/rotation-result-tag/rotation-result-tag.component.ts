@@ -19,7 +19,7 @@ import { FloorPipe } from '../../../../pipes/pipes/floor.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-rotation-result-tag',
@@ -27,7 +27,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     styleUrls: ['./rotation-result-tag.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NzToolTipModule, NzTagModule, AsyncPipe, TranslateModule, FloorPipe]
+    imports: [NzToolTipModule, NzTagModule, AsyncPipe, TranslateModule, FloorPipe]
 })
 export class RotationResultTagComponent implements OnInit {
 
