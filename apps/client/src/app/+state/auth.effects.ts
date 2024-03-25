@@ -89,7 +89,7 @@ export class AuthEffects {
       if (user.supporter) {
         if (user.lastPatreonRefresh && Date.now() - user.lastPatreonRefresh >= 3 * 7 * 86400000) {
           this.supportService.refreshPatreonToken(user);
-        } else if (user.tipeeeRefreshToken && Date.now() - user.lastTipeeeRefresh >= 3600000) {
+        } else if (user.tipeeeRefreshToken && Date.now() - user.lastTipeeeRefresh >= 1800000) {
           this.supportService.refreshTipeeeToken(user);
         }
       }
