@@ -7,7 +7,6 @@ import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { HttpClient } from '@angular/common/http';
 import { Firestore, where } from '@angular/fire/firestore';
-import { Auth } from '@angular/fire/auth';
 import { addMonths } from 'date-fns';
 
 @Injectable({
@@ -20,7 +19,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
   userCache = {};
 
   constructor(protected firestore: Firestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService, private auth: Auth, private http: HttpClient) {
+              protected pendingChangesService: PendingChangesService, private http: HttpClient) {
     super(firestore, serializer, zone, pendingChangesService);
   }
 
@@ -54,13 +53,18 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
                   return of(user);
                 }
               }
+              const tipeeeSource$ = this.http.get<any>(`https://api.tipeee.com/v2.0/partners/tips?access_token=${user.tipeeeToken}`).pipe(
+                catchError(err => {
+                  return of(null);
+                })
+              );
               return combineLatest([
                 user.patreonToken ? this.http.get<any>(`https://us-central1-ffxivteamcraft.cloudfunctions.net/patreon-pledges?token=${user.patreonToken}`) : of(null),
-                user.tipeeeToken ? this.http.get<any>(`https://api.tipeee.com/v2.0/partners/tips?access_token=${user.tipeeeToken}`) : of(null)
+                user.tipeeeToken ? tipeeeSource$ : of(null)
               ]).pipe(
                 map(([patreon, tipeee]) => {
                   const patreonSupporter = patreon?.included?.some(e => e.attributes?.patron_status === 'active_patron');
-                  const tipeeeSupporter = tipeee && tipeee.items.some(i => i.donation_type === 'PER_MONTH' && i.is_active);
+                  const tipeeeSupporter = tipeee && tipeee.items?.some(i => i.donation_type === 'PER_MONTH' && i.is_active);
                   if (tipeee && !tipeeeSupporter) {
                     user.supporterUntil = tipeee.items
                       // Only take direct donations into consideration

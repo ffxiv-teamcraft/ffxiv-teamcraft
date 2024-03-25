@@ -137,6 +137,7 @@
             <app-step-by-step-row [row]="row" [class.odd]="odd"
                                   [finalItem]="row.finalItem"
                                   [dataTypes]="[dataType]"
+                                  [showAlarms]="dataType === DataType.ALARMS"
                                   [permissionLevel]="permissionLevel"></app-step-by-step-row>
           </ng-template>
         </app-lazy-scroll>
@@ -148,6 +149,7 @@
       <ng-template #rowTpl let-step let-odd="odd">
         <app-step-by-step-row [row]="step.row" [class.odd]="odd" [dataTypes]="[dataType]"
                               [finalItem]="step.row.finalItem"
+                              [showAlarms]="dataType === DataType.ALARMS"
                               [permissionLevel]="permissionLevel"></app-step-by-step-row>
       </ng-template>
     </app-lazy-scroll>

@@ -9,6 +9,7 @@ import { I18nPipe } from '../../../core/i18n.pipe';
 import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { DialogComponent } from '../../../core/dialog.component';
 
 interface WorkshopTreeNode {
   index: number,
@@ -23,16 +24,18 @@ interface WorkshopTreeNode {
     standalone: true,
     imports: [NgIf, NgFor, AsyncPipe, TranslateModule, ItemNamePipe, I18nPipe]
 })
-export class CompanyWorkshopTreePopupComponent implements OnInit {
+export class CompanyWorkshopTreePopupComponent extends DialogComponent implements OnInit {
 
   workshopRecipeId: string;
 
   display$: Observable<WorkshopTreeNode[]>;
 
-  constructor(private modalRef: NzModalRef, private lazyData: LazyDataFacade) {
+  constructor(private lazyData: LazyDataFacade) {
+    super();
   }
 
   ngOnInit(): void {
+    this.patchData();
     this.display$ = this.lazyData.getRecipe(this.workshopRecipeId).pipe(
       map(recipe => {
         return Object.entries(groupBy(recipe.ingredients, 'phase'))

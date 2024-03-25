@@ -112,7 +112,7 @@ export class ReplaySimulationComponent {
   openMacroPopup(simulation: Simulation): void {
     this.dialog.create({
       nzContent: MacroPopupComponent,
-      nzComponentParams: {
+      nzData: {
         rotation: simulation.steps.map(step => step.action),
         job: simulation.crafterStats.jobId,
         simulation: simulation.clone(),

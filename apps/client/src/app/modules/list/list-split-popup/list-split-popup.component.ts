@@ -18,16 +18,17 @@ import { LazyScrollComponent } from '../../lazy-scroll/lazy-scroll/lazy-scroll.c
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
-    selector: 'app-list-split-popup',
-    templateUrl: './list-split-popup.component.html',
-    styleUrls: ['./list-split-popup.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [FlexModule, NzButtonModule, NzWaveModule, LazyScrollComponent, NzCheckboxModule, FormsModule, ItemIconComponent, I18nPipe, TranslateModule, ItemNamePipe]
+  selector: 'app-list-split-popup',
+  templateUrl: './list-split-popup.component.html',
+  styleUrls: ['./list-split-popup.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [FlexModule, NzButtonModule, NzWaveModule, LazyScrollComponent, NzCheckboxModule, FormsModule, ItemIconComponent, I18nPipe, TranslateModule, ItemNamePipe]
 })
-export class ListSplitPopupComponent {
+export class ListSplitPopupComponent extends DialogComponent {
 
   public list: List;
 
@@ -37,6 +38,8 @@ export class ListSplitPopupComponent {
 
   public constructor(private listPicker: ListPickerService, private listsFacade: ListsFacade,
                      private modalRef: NzModalRef, private listManager: ListManagerService) {
+    super();
+    this.patchData();
   }
 
   setSelection(item: ListRow, selected: boolean): void {
@@ -65,10 +68,10 @@ export class ListSplitPopupComponent {
           this.list.finalItems = this.list.finalItems.filter(row => !this.selectedItems.includes(row.id));
           return this.listManager.upgradeList(ListController.updateEtag(ListController.clean(this.list))).pipe(
             first(),
-            tap(res =>              this.listsFacade.updateList(res))
+            tap(res => this.listsFacade.updateList(res))
           );
         }
-        return of(null)
+        return of(null);
       })
     ).subscribe(() => {
       this.modalRef.close();

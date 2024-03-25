@@ -70037,11 +70037,13 @@
     "de": "Wer rastet, der rostet I",
     "ja": "マーグラット：ランク1",
     "fr": "Je sers la science et c'est ma joie I",
+    "zh": "玛格拉特的信任1",
     "description": {
       "en": "Achieve a satisfaction level of 1 with Margrat.",
       "de": "Zufriedenheitsrang 1 bei Margrat erlangt.",
       "ja": "マーグラットの信頼ランクを1にする",
-      "fr": "Atteindre le rang 1 de satisfaction auprès de Margrat."
+      "fr": "Atteindre le rang 1 de satisfaction auprès de Margrat.",
+      "zh": "玛格拉特的信赖等级达到1级。"
     },
     "item": 0,
     "title": 0
@@ -70054,11 +70056,13 @@
     "de": "Wer rastet, der rostet II",
     "ja": "マーグラット：ランク2",
     "fr": "Je sers la science et c'est ma joie II",
+    "zh": "玛格拉特的信任2",
     "description": {
       "en": "Achieve a satisfaction level of 2 with Margrat.",
       "de": "Zufriedenheitsrang 2 bei Margrat erlangt.",
       "ja": "マーグラットの信頼ランクを2にする",
-      "fr": "Atteindre le rang 2 de satisfaction auprès de Margrat."
+      "fr": "Atteindre le rang 2 de satisfaction auprès de Margrat.",
+      "zh": "玛格拉特的信赖等级达到2级。"
     },
     "item": 0,
     "title": 0
@@ -70071,11 +70075,13 @@
     "de": "Wer rastet, der rostet III",
     "ja": "マーグラット：ランク3",
     "fr": "Je sers la science et c'est ma joie III",
+    "zh": "玛格拉特的信任3",
     "description": {
       "en": "Achieve a satisfaction level of 3 with Margrat.",
       "de": "Zufriedenheitsrang 3 bei Margrat erlangt.",
       "ja": "マーグラットの信頼ランクを3にする",
-      "fr": "Atteindre le rang 3 de satisfaction auprès de Margrat."
+      "fr": "Atteindre le rang 3 de satisfaction auprès de Margrat.",
+      "zh": "玛格拉特的信赖等级达到3级。"
     },
     "item": 0,
     "title": 0
@@ -70088,11 +70094,13 @@
     "de": "Wer rastet, der rostet IV ",
     "ja": "マーグラット：ランク4",
     "fr": "Je sers la science et c'est ma joie IV",
+    "zh": "玛格拉特的信任4",
     "description": {
       "en": "Achieve a satisfaction level of 4 with Margrat.",
       "de": "Zufriedenheitsrang 4 bei Margrat erlangt.",
       "ja": "マーグラットの信頼ランクを4にする",
-      "fr": "Atteindre le rang 4 de satisfaction auprès de Margrat."
+      "fr": "Atteindre le rang 4 de satisfaction auprès de Margrat.",
+      "zh": "玛格拉特的信赖等级达到4级。"
     },
     "item": 0,
     "title": 0
@@ -70105,11 +70113,13 @@
     "de": "Wer rastet, der rostet V ",
     "ja": "マーグラット：ランク5",
     "fr": "Je sers la science et c'est ma joie V",
+    "zh": "玛格拉特的信任5",
     "description": {
       "en": "Achieve a satisfaction level of 5 with Margrat.",
       "de": "Zufriedenheitsrang 5 bei Margrat erlangt.",
       "ja": "マーグラットの信頼ランクを5にする",
-      "fr": "Atteindre le rang 5 de satisfaction auprès de Margrat."
+      "fr": "Atteindre le rang 5 de satisfaction auprès de Margrat.",
+      "zh": "玛格拉特的信赖等级达到5级。"
     },
     "item": 0,
     "title": 699
@@ -70122,11 +70132,13 @@
     "de": "Für die Wissenschaft I",
     "ja": "マーグラットの得意先：ランク1",
     "fr": "Fournisseur officiel de Margrat I",
+    "zh": "玛格拉特的老主顾1",
     "description": {
       "en": "Deliver 36 collectables to Margrat.",
       "de": "Margrat 36 Sammlerstücke geliefert.",
       "ja": "マーグラットに収集品を計36回納品する",
-      "fr": "Échanger 36 objets collectionnables à Margrat."
+      "fr": "Échanger 36 objets collectionnables à Margrat.",
+      "zh": "在玛格拉特处累计交纳收藏品36次。"
     },
     "item": 0,
     "title": 0
@@ -70139,11 +70151,13 @@
     "de": "Für die Wissenschaft II ",
     "ja": "マーグラットの得意先：ランク2",
     "fr": "Fournisseur officiel de Margrat II",
+    "zh": "玛格拉特的老主顾2",
     "description": {
       "en": "Deliver 48 collectables to Margrat.",
       "de": "Margrat 48 Sammlerstücke geliefert.",
       "ja": "マーグラットに収集品を計48回納品する",
-      "fr": "Échanger 48 objets collectionnables à Margrat."
+      "fr": "Échanger 48 objets collectionnables à Margrat.",
+      "zh": "在玛格拉特处累计交纳收藏品48次。"
     },
     "item": 0,
     "title": 0
@@ -70156,11 +70170,13 @@
     "de": "Für die Wissenschaft III",
     "ja": "マーグラットの得意先：ランク3",
     "fr": "Fournisseur officiel de Margrat III",
+    "zh": "玛格拉特的老主顾3",
     "description": {
       "en": "Deliver 60 collectables to Margrat.",
       "de": "Margrat 60 Sammlerstücke geliefert.",
       "ja": "マーグラットに収集品を計60回納品する",
-      "fr": "Échanger 60 objets collectionnables à Margrat."
+      "fr": "Échanger 60 objets collectionnables à Margrat.",
+      "zh": "在玛格拉特处累计交纳收藏品60次。"
     },
     "item": 0,
     "title": 0
@@ -70173,11 +70189,13 @@
     "de": "Für die Wissenschaft IV ",
     "ja": "マーグラットの得意先：ランク4",
     "fr": "Fournisseur officiel de Margrat IV",
+    "zh": "玛格拉特的老主顾4",
     "description": {
       "en": "Deliver 90 collectables to Margrat.",
       "de": "Margrat 90 Sammlerstücke geliefert.",
       "ja": "マーグラットに収集品を計90回納品する",
-      "fr": "Échanger 90 objets collectionnables à Margrat."
+      "fr": "Échanger 90 objets collectionnables à Margrat.",
+      "zh": "在玛格拉特处累计交纳收藏品90次。"
     },
     "item": 0,
     "title": 0
@@ -70190,11 +70208,13 @@
     "de": "Für die Wissenschaft V",
     "ja": "マーグラットの得意先：ランク5",
     "fr": "Fournisseur officiel de Margrat V",
+    "zh": "玛格拉特的老主顾5",
     "description": {
       "en": "Deliver 120 collectables to Margrat.",
       "de": "Margrat 120 Sammlerstücke geliefert.",
       "ja": "マーグラットに収集品を計120回納品する",
-      "fr": "Échanger 120 objets collectionnables à Margrat."
+      "fr": "Échanger 120 objets collectionnables à Margrat.",
+      "zh": "在玛格拉特处累计交纳收藏品120次。"
     },
     "item": 0,
     "title": 0
@@ -70207,11 +70227,13 @@
     "de": "Für die Wissenschaft VI",
     "ja": "マーグラットの得意先：ランク6",
     "fr": "Fournisseur officiel de Margrat VI",
+    "zh": "玛格拉特的老主顾6",
     "description": {
       "en": "Deliver 150 collectables to Margrat.",
       "de": "Margrat 150 Sammlerstücke geliefert.",
       "ja": "マーグラットに収集品を計150回納品する",
-      "fr": "Échanger 150 objets collectionnables à Margrat."
+      "fr": "Échanger 150 objets collectionnables à Margrat.",
+      "zh": "在玛格拉特处累计交纳收藏品150次。"
     },
     "item": 0,
     "title": 700
@@ -70445,11 +70467,13 @@
     "de": "Ich hab's gefunden: Minenarbeiter VIII",
     "ja": "手帳好きの採掘師：ランク8",
     "fr": "Carnet de notes : mineur VIII",
+    "zh": "专研采掘笔记8",
     "description": {
       "en": "Mine and record discovery of 260 unique items that can only be gathered as a miner.",
       "de": "260 verschiedene Gegenstände als Minenarbeiter gesammelt und im Sammler-Notizbuch vermerkt.",
       "ja": "採掘師でのみ採集可能アイテムのうち、260種類を採集し、採集手帳に印を付ける",
-      "fr": "Récolter 260 objets différents en tant que mineur et les avoir notés dans le carnet de récolte."
+      "fr": "Récolter 260 objets différents en tant que mineur et les avoir notés dans le carnet de récolte.",
+      "zh": "累计采掘成功并标记260种采集笔记中记载的采矿工专属素材。"
     },
     "item": 0,
     "title": 702
@@ -70462,11 +70486,13 @@
     "de": "Ich hab's gefunden: Gärtner VIII",
     "ja": "手帳好きの園芸師：ランク8",
     "fr": "Carnet de notes : botaniste VIII",
+    "zh": "专研采伐笔记8",
     "description": {
       "en": "Harvest and record discovery of 380 unique items that can only be gathered as a botanist.",
       "de": "380 verschiedene Gegenstände als Gärtner gesammelt und im Sammler-Notizbuch vermerkt.",
       "ja": "園芸師でのみ採集可能アイテムのうち、380種類を採集し、採集手帳に印を付ける",
-      "fr": "Récolter 380 objets différents en tant que botaniste et les avoir notés dans le carnet de récolte."
+      "fr": "Récolter 380 objets différents en tant que botaniste et les avoir notés dans le carnet de récolte.",
+      "zh": "累计采伐成功并标记380种采集笔记中记载的园艺工专属素材。"
     },
     "item": 0,
     "title": 703
@@ -70479,11 +70505,13 @@
     "de": "Dicker Fang VIII",
     "ja": "手帳好きの漁師：ランク8",
     "fr": "Carnet de notes : pêcheur VIII",
+    "zh": "专研钓鱼笔记8",
     "description": {
       "en": "Catch and record discovery of 1,460 unique fish.",
       "de": "1.460 verschiedene Fische gefangen und im Fischer-Notizbuch vermerkt.",
       "ja": "漁師の採集可能アイテムのうち、1,460種類を採集し、釣り手帳に印を付ける",
-      "fr": "Pêcher 1 460 prises différentes et les avoir notées dans le carnet de pêche."
+      "fr": "Pêcher 1 460 prises différentes et les avoir notées dans le carnet de pêche.",
+      "zh": "累计钓上并标记1460种钓鱼笔记中记载的物种。"
     },
     "item": 0,
     "title": 704
@@ -70853,11 +70881,13 @@
     "de": "Krone aus Sand",
     "ja": "無人島のレジェンド開拓者",
     "fr": "Félicité légendaire",
+    "zh": "无人岛的传奇开拓者",
     "description": {
       "en": "Achieve sanctuary rank 20 in your island sanctuary.",
       "de": "Inselstufe 20 in deinem Inselparadies erreicht.",
       "ja": "無人島開拓にて、開拓ランクが20に到達する",
-      "fr": "Atteindre le rang 20 sur la Félicité insulaire."
+      "fr": "Atteindre le rang 20 sur la Félicité insulaire.",
+      "zh": "在开拓无人岛的开拓等级升到20级。"
     },
     "item": 0,
     "title": 707
@@ -70870,11 +70900,13 @@
     "de": "Kartograph: Monduntergrund",
     "ja": "月の地下渓谷を踏破せし者",
     "fr": "Cartographe du continent : Souterrain lunaire",
+    "zh": "踏遍月面地下溪谷",
     "description": {
       "en": "Discover every location within the Lunar Subterrane.",
       "de": "Alle Orte im Monduntergrund erkundet.",
       "ja": "月の地下渓谷（深淵潜行）を踏破し、マップをすべて開示する",
-      "fr": "Découvrir toute la carte du Souterrain lunaire."
+      "fr": "Découvrir toute la carte du Souterrain lunaire.",
+      "zh": "成功探索月面地下溪谷（异界深渊）的所有地区。"
     },
     "item": 0,
     "title": 0
@@ -70887,11 +70919,13 @@
     "de": "Kartograph: Thaleia",
     "ja": "タレイアを踏破せし者",
     "fr": "Cartographe du continent : Thalie",
+    "zh": "踏遍塔利亚",
     "description": {
       "en": "Discover every location within Thaleia.",
       "de": "Alle Orte in Thaleia erkundet.",
       "ja": "華めく神域 タレイアを踏破し、マップをすべて開示する",
-      "fr": "Découvrir toute la carte du domaine divin - Thalie."
+      "fr": "Découvrir toute la carte du domaine divin - Thalie.",
+      "zh": "成功探索荣华神域塔利亚的所有地区。"
     },
     "item": 0,
     "title": 0
@@ -70904,11 +70938,13 @@
     "de": "Schlächter der Dunkelheit",
     "ja": "暗黒妖異を狩りし者",
     "fr": "Disperser l'amalgame du néant",
+    "zh": "暗黑的降妖者",
     "description": {
       "en": "Defeat Zeromus in the Abyssal Fracture (Extreme).",
       "de": "Zeromus in „Eschatos - Zeromus“ besiegt.",
       "ja": "極ゼロムス討滅戦でゼロムスを討伐する",
-      "fr": "Vaincre Zeromus dans le défi “La Fracture abyssale (extrême)”."
+      "fr": "Vaincre Zeromus dans le défi “La Fracture abyssale (extrême)”.",
+      "zh": "在泽罗姆斯歼殛战中战胜泽罗姆斯。"
     },
     "item": 0,
     "title": 0
@@ -70921,11 +70957,13 @@
     "de": "Mythenmacher",
     "ja": "タレイアを制覇せし者",
     "fr": "Divine abondance",
+    "zh": "称霸塔利亚",
     "description": {
       "en": "Complete Thaleia.",
       "de": "Thaleia erfolgreich abgeschlossen.",
       "ja": "華めく神域 タレイアを攻略する",
-      "fr": "Finir le domaine divin - Thalie."
+      "fr": "Finir le domaine divin - Thalie.",
+      "zh": "成功挑战荣华神域塔利亚。"
     },
     "item": 0,
     "title": 0
@@ -71006,11 +71044,13 @@
     "de": "Geliebtes Kind",
     "ja": "神々に愛されし者",
     "fr": "Enfant béni des Dieux",
+    "zh": "众神眷爱之人",
     "description": {
       "en": "Complete the quest “Embraced by Gods.”",
       "de": "Den Auftrag „Von den Göttern umarmt“ abgeschlossen.",
       "ja": "クエスト「神々に愛されし地、エオルゼア」をコンプリートする",
-      "fr": "Accomplir la quête “Éorzéa, terre bénie des Dieux”."
+      "fr": "Accomplir la quête “Éorzéa, terre bénie des Dieux”.",
+      "zh": "完成任务“受众神眷顾之地——艾欧泽亚”。"
     },
     "item": 0,
     "title": 709
@@ -71074,11 +71114,13 @@
     "de": "Drachengesang im Mondlicht",
     "ja": "月に灯りし想い",
     "fr": "Cantate au clair de lune",
+    "zh": "月下幽愿",
     "description": {
       "en": "Obtain an apocryphal Bahamut horn.",
       "de": "Das Reittier „Apokryph-Bahamut“ erhalten.",
       "ja": "バハムート・アポクリファの魔笛を入手する",
-      "fr": "Obtenir le cor Bahamut apocryphe."
+      "fr": "Obtenir le cor Bahamut apocryphe.",
+      "zh": "获得幽愿巴哈姆特魔笛。"
     },
     "item": 0,
     "title": 711
@@ -71091,11 +71133,13 @@
     "de": "Ein strahlender Neuanfang",
     "ja": "光明の起点",
     "fr": "Nitescence nouvelle",
+    "zh": "光明的零点",
     "description": {
       "en": "Complete the main scenario quest “Growing Light.”",
       "de": "Den Auftrag „Ein strahlender Neuanfang“ abgeschlossen.",
       "ja": "クエスト「光明の起点」をコンプリートする",
-      "fr": "Accomplir la quête de l'épopée “Nitescence nouvelle”."
+      "fr": "Accomplir la quête de l'épopée “Nitescence nouvelle”.",
+      "zh": "完成任务“光明的零点”。"
     },
     "item": 0,
     "title": 712
@@ -71142,11 +71186,13 @@
     "de": "Liebe liegt in der Luft",
     "ja": "愛と勇気の伝道師",
     "fr": "Tout un symbole",
+    "zh": "愛と勇気の伝道師",
     "description": {
       "en": "Complete the quest “It's All about Heart.”",
       "de": "Den Auftrag „Fass dir ein Herz“ abgeschlossen.",
       "ja": "クエスト「ヴァレンティオンデーに勇気を出して」をコンプリートする",
-      "fr": "Accomplir la quête “Le symbole de l'amour”."
+      "fr": "Accomplir la quête “Le symbole de l'amour”.",
+      "zh": "クエスト「ヴァレンティオンデーに勇気を出して」をコンプリートする"
     },
     "item": 0,
     "title": 0
@@ -71159,11 +71205,13 @@
     "de": "Prinzessin der Herzen",
     "ja": "花咲か姫様",
     "fr": "Miragœufs et demoiselles",
+    "zh": "花咲か姫様",
     "description": {
       "en": "Complete the quest “Peatie in Pink.”",
       "de": "Den Auftrag „Aufblühende Gemüter“ abgeschlossen.",
       "ja": "クエスト「プリンセスデーに咲く笑顔の花」をコンプリートする",
-      "fr": "Accomplir la quête “Princesse pêche”."
+      "fr": "Accomplir la quête “Princesse pêche”.",
+      "zh": "クエスト「プリンセスデーに咲く笑顔の花」をコンプリートする"
     },
     "item": 0,
     "title": 0
@@ -71176,11 +71224,13 @@
     "de": "Plitschplatsch!",
     "ja": "カパパッパ！",
     "fr": "La kappattitude",
+    "zh": "カパパッパ！",
     "description": {
       "en": "Complete the quest “Of Impish Importance.”",
       "de": "Den Auftrag „Im Namen der Wahrheit“ abgeschlossen.",
       "ja": "クエスト「ゴールドソーサーとカッパの謎」をコンプリートする",
-      "fr": "Accomplir la quête “Les petits hommes verts du Gold Saucer”."
+      "fr": "Accomplir la quête “Les petits hommes verts du Gold Saucer”.",
+      "zh": "クエスト「ゴールドソーサーとカッパの謎」をコンプリートする"
     },
     "item": 0,
     "title": 0
@@ -71193,11 +71243,13 @@
     "de": "Kristallkönig (8. Saison)",
     "ja": "コンフリクトの王者：シーズン8",
     "fr": "Roi du conflit : saison 8",
+    "zh": "冲突的王者第8赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Eight ranked #1.",
       "de": "Die 8. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン8にて、ランキングで1位になる",
-      "fr": "Terminer la saison 8 de Crystalline Conflict à la 1re place du classement."
+      "fr": "Terminer la saison 8 de Crystalline Conflict à la 1re place du classement.",
+      "zh": "在水晶冲突的第8赛季中取得排名第1名的成绩。"
     },
     "item": 0,
     "title": 714
@@ -71210,11 +71262,13 @@
     "de": "Kristallfürst (8. Saison)",
     "ja": "コンフリクトの勇者：シーズン8",
     "fr": "Prince du conflit : saison 8",
+    "zh": "冲突的勇者第8赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Eight ranked within the top 30.",
       "de": "Die 8. Saison von „Crystalline Conflict“ in den Top 30 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン8にて、ランキングで30位以内に入る",
-      "fr": "Terminer la saison 8 de Crystalline Conflict dans les 30 premières places du classement."
+      "fr": "Terminer la saison 8 de Crystalline Conflict dans les 30 premières places du classement.",
+      "zh": "在水晶冲突的第8赛季中取得排名前30名的成绩。"
     },
     "item": 0,
     "title": 715
@@ -71227,11 +71281,13 @@
     "de": "Kristallkämpfer (8. Saison)",
     "ja": "コンフリクトの入賞者：シーズン8",
     "fr": "As du conflit : saison 8",
+    "zh": "冲突的获奖者第8赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Eight ranked within the top 100.",
       "de": "Die 8. Saison von „Crystalline Conflict“ in den Top 100 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン8にて、ランキングで100位以内に入る",
-      "fr": "Terminer la saison 8 de Crystalline Conflict dans les 100 premières places du classement."
+      "fr": "Terminer la saison 8 de Crystalline Conflict dans les 100 premières places du classement.",
+      "zh": "在水晶冲突的第8赛季中取得排名前100名的成绩。"
     },
     "item": 0,
     "title": 716
@@ -71244,11 +71300,13 @@
     "de": "Kristallkönig (9. Saison)",
     "ja": "コンフリクトの王者：シーズン9",
     "fr": "Roi du conflit : saison 9",
+    "zh": "冲突的王者第9赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Nine ranked #1.",
       "de": "Die 9. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン9にて、ランキングで1位になる",
-      "fr": "Terminer la saison 9 de Crystalline Conflict à la 1re place du classement."
+      "fr": "Terminer la saison 9 de Crystalline Conflict à la 1re place du classement.",
+      "zh": "在水晶冲突的第9赛季中取得排名第1名的成绩。"
     },
     "item": 0,
     "title": 717
@@ -71261,11 +71319,13 @@
     "de": "Kristallfürst (9. Saison)",
     "ja": "コンフリクトの勇者：シーズン9",
     "fr": "Prince du conflit : saison 9",
+    "zh": "冲突的勇者第9赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Nine ranked within the top 30.",
       "de": "Die 9. Saison von „Crystalline Conflict“ in den Top 30 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン9にて、ランキングで30位以内に入る",
-      "fr": "Terminer la saison 9 de Crystalline Conflict dans les 30 premières places du classement."
+      "fr": "Terminer la saison 9 de Crystalline Conflict dans les 30 premières places du classement.",
+      "zh": "在水晶冲突的第9赛季中取得排名前30名的成绩。"
     },
     "item": 0,
     "title": 718
@@ -71278,11 +71338,13 @@
     "de": "Kristallkämpfer (9. Saison)",
     "ja": "コンフリクトの入賞者：シーズン9",
     "fr": "As du conflit : saison 9",
+    "zh": "冲突的获奖者第9赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Nine ranked within the top 100.",
       "de": "Die 9. Saison von „Crystalline Conflict“ in den Top 100 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン9にて、ランキングで100位以内に入る",
-      "fr": "Terminer la saison 9 de Crystalline Conflict dans les 100 premières places du classement."
+      "fr": "Terminer la saison 9 de Crystalline Conflict dans les 100 premières places du classement.",
+      "zh": "在水晶冲突的第9赛季中取得排名前100名的成绩。"
     },
     "item": 0,
     "title": 719
@@ -71295,11 +71357,13 @@
     "de": "Kristallkönig (10. Saison)",
     "ja": "コンフリクトの王者：シーズン10",
     "fr": "Roi du conflit : saison 10",
+    "zh": "冲突的王者第10赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Ten ranked #1.",
       "de": "Die 10. Saison von „Crystalline Conflict“ auf Platz 1 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン10にて、ランキングで1位になる",
-      "fr": "Terminer la saison 10 de Crystalline Conflict à la 1re place du classement."
+      "fr": "Terminer la saison 10 de Crystalline Conflict à la 1re place du classement.",
+      "zh": "在水晶冲突的第10赛季中取得排名第1名的成绩。"
     },
     "item": 0,
     "title": 720
@@ -71312,11 +71376,13 @@
     "de": "Kristallfürst (10. Saison)",
     "ja": "コンフリクトの勇者：シーズン10",
     "fr": "Prince du conflit : saison 10",
+    "zh": "冲突的勇者第10赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Ten ranked within the top 30.",
       "de": "Die 10. Saison von „Crystalline Conflict“ in den Top 30 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン10にて、ランキングで30位以内に入る",
-      "fr": "Terminer la saison 10 de Crystalline Conflict dans les 30 premières places du classement."
+      "fr": "Terminer la saison 10 de Crystalline Conflict dans les 30 premières places du classement.",
+      "zh": "在水晶冲突的第10赛季中取得排名前30名的成绩。"
     },
     "item": 0,
     "title": 721
@@ -71329,11 +71395,13 @@
     "de": "Kristallkämpfer (10. Saison)",
     "ja": "コンフリクトの入賞者：シーズン10",
     "fr": "As du conflit : saison 10",
+    "zh": "冲突的获奖者第10赛季",
     "description": {
       "en": "Complete Crystalline Conflict Season Ten ranked within the top 100.",
       "de": "Die 10. Saison von „Crystalline Conflict“ in den Top 100 abgeschlossen.",
       "ja": "クリスタルコンフリクトのシーズン10にて、ランキングで100位以内に入る",
-      "fr": "Terminer la saison 10 de Crystalline Conflict dans les 100 premières places du classement."
+      "fr": "Terminer la saison 10 de Crystalline Conflict dans les 100 premières places du classement.",
+      "zh": "在水晶冲突的第10赛季中取得排名前100名的成绩。"
     },
     "item": 0,
     "title": 722

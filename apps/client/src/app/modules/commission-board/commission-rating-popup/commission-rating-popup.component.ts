@@ -10,6 +10,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzRateModule } from 'ng-zorro-antd/rate';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzFormModule } from 'ng-zorro-antd/form';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
     selector: 'app-commission-rating-popup',
@@ -19,7 +20,7 @@ import { NzFormModule } from 'ng-zorro-antd/form';
     standalone: true,
     imports: [FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzRateModule, NzInputModule, FlexModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
-export class CommissionRatingPopupComponent implements OnInit {
+export class CommissionRatingPopupComponent extends DialogComponent implements OnInit {
 
   commission: Commission;
 
@@ -28,6 +29,7 @@ export class CommissionRatingPopupComponent implements OnInit {
   form: UntypedFormGroup;
 
   constructor(private fb: UntypedFormBuilder, private modalRef: NzModalRef) {
+    super();
   }
 
   submit(): void {
@@ -37,6 +39,7 @@ export class CommissionRatingPopupComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.patchData();
     this.form = this.fb.group({
       rating: [5, Validators.required],
       comment: ['', Validators.maxLength(240)]

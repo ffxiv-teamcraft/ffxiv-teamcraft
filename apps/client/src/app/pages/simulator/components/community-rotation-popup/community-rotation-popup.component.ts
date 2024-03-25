@@ -13,15 +13,16 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { FormsModule } from '@angular/forms';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { FlexModule } from '@angular/flex-layout/flex';
+import { DialogComponent } from '../../../../core/dialog.component';
 
 @Component({
-    selector: 'app-community-rotation-popup',
-    templateUrl: './community-rotation-popup.component.html',
-    styleUrls: ['./community-rotation-popup.component.less'],
-    standalone: true,
-    imports: [FlexModule, NzSwitchModule, FormsModule, NzFormModule, NzGridModule, NzSelectModule, NgFor, NzInputNumberModule, MouseWheelDirective, TranslateModule]
+  selector: 'app-community-rotation-popup',
+  templateUrl: './community-rotation-popup.component.html',
+  styleUrls: ['./community-rotation-popup.component.less'],
+  standalone: true,
+  imports: [FlexModule, NzSwitchModule, FormsModule, NzFormModule, NzGridModule, NzSelectModule, NgFor, NzInputNumberModule, MouseWheelDirective, TranslateModule]
 })
-export class CommunityRotationPopupComponent implements OnInit {
+export class CommunityRotationPopupComponent extends DialogComponent implements OnInit {
 
   public rotation: CraftingRotation;
 
@@ -34,6 +35,7 @@ export class CommunityRotationPopupComponent implements OnInit {
   public rlvls = CommunityRotationsPageComponent.RLVLS;
 
   constructor() {
+    super();
     this.tags = Object.keys(RotationTag).map(key => {
       return {
         value: key,
@@ -43,6 +45,7 @@ export class CommunityRotationPopupComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.patchData();
     const minStats = this.simulation.getMinStats();
     let rlvl = this.rotation.recipe.rlvl;
     if (rlvl >= 120 && rlvl <= 150) {

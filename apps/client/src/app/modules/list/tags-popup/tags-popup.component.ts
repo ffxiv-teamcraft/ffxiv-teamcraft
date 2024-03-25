@@ -14,15 +14,16 @@ import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
-    selector: 'app-tags-popup',
-    templateUrl: './tags-popup.component.html',
-    styleUrls: ['./tags-popup.component.less'],
-    standalone: true,
-    imports: [NgIf, FlexModule, NzSelectModule, FormsModule, NgFor, NzButtonModule, NzWaveModule, PageLoaderComponent, AsyncPipe, TranslateModule]
+  selector: 'app-tags-popup',
+  templateUrl: './tags-popup.component.html',
+  styleUrls: ['./tags-popup.component.less'],
+  standalone: true,
+  imports: [NgIf, FlexModule, NzSelectModule, FormsModule, NgFor, NzButtonModule, NzWaveModule, PageLoaderComponent, AsyncPipe, TranslateModule]
 })
-export class TagsPopupComponent implements OnInit {
+export class TagsPopupComponent extends DialogComponent implements OnInit {
 
   @Input()
   list: Partial<List>;
@@ -32,6 +33,8 @@ export class TagsPopupComponent implements OnInit {
   tags: any[] = [];
 
   constructor(private modalRef: NzModalRef, private listsFacade: ListsFacade) {
+    super();
+    this.patchData();
   }
 
   confirm(list: List): void {

@@ -3,15 +3,16 @@ import { Simulation } from '@ffxiv-teamcraft/simulator';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NgIf } from '@angular/common';
+import { DialogComponent } from '../../../../core/dialog.component';
 
 @Component({
-    selector: 'app-simulation-min-stats-popup',
-    templateUrl: './simulation-min-stats-popup.component.html',
-    styleUrls: ['./simulation-min-stats-popup.component.less'],
-    standalone: true,
-    imports: [NgIf, NzAlertModule, TranslateModule]
+  selector: 'app-simulation-min-stats-popup',
+  templateUrl: './simulation-min-stats-popup.component.html',
+  styleUrls: ['./simulation-min-stats-popup.component.less'],
+  standalone: true,
+  imports: [NgIf, NzAlertModule, TranslateModule]
 })
-export class SimulationMinStatsPopupComponent implements OnInit {
+export class SimulationMinStatsPopupComponent extends DialogComponent implements OnInit {
 
   simulation: Simulation;
 
@@ -19,7 +20,12 @@ export class SimulationMinStatsPopupComponent implements OnInit {
 
   thresholds: number[];
 
+  constructor() {
+    super();
+  }
+
   ngOnInit(): void {
+    this.patchData();
     // setTimeout to queue and make sure CD will see it ocne it's done
     setTimeout(() => {
       this.stats = this.simulation.getMinStats();

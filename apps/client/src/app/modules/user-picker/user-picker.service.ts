@@ -14,7 +14,7 @@ export class UserPickerService {
     return this.dialog.create({
       nzTitle: this.translate.instant('Pick_a_user'),
       nzContent: UserPickerComponent,
-      nzComponentParams: {
+      nzData: {
         hideContacts: hideContacts
       },
       nzFooter: null

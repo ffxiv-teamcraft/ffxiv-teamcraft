@@ -19,7 +19,7 @@ export class RotationPickerService {
   pickRotation(itemId: number, recipeId: string, recipe?: Partial<Craft>, statsStr?: string): Observable<CraftingRotation> {
     return this.nzDrawer.create<RotationPickerDrawerComponent, Partial<RotationPickerDrawerComponent>, CraftingRotation>({
       nzContent: RotationPickerDrawerComponent,
-      nzContentParams: {
+      nzData: {
         itemId: itemId,
         recipeId: recipeId,
         disableNew: true,

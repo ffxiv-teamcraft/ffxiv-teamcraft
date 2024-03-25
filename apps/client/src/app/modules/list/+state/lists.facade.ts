@@ -36,7 +36,7 @@ import { NameQuestionPopupComponent } from '../../name-question-popup/name-quest
 import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
-import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
+import { BehaviorSubject, combineLatest, concat, Observable, of, take } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { ListRow } from '../model/list-row';
@@ -297,7 +297,7 @@ export class ListsFacade {
       nzContent: NameQuestionPopupComponent,
       nzFooter: null,
       nzTitle: this.translate.instant('New_List'),
-      nzComponentParams: {
+      nzData: {
         showEphemeralCheckbox: true,
         showOfflineCheckbox: true
       }
@@ -310,7 +310,7 @@ export class ListsFacade {
         this.analyticsService.event('List created');
         return list;
       }),
-      first()
+      take(1)
     );
   }
 

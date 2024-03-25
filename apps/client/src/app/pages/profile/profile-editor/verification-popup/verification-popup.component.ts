@@ -9,6 +9,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NgIf, AsyncPipe } from '@angular/common';
+import { DialogComponent } from '../../../../core/dialog.component';
 
 @Component({
     selector: 'app-verification-popup',
@@ -17,7 +18,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     standalone: true,
     imports: [NgIf, NzAlertModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
 })
-export class VerificationPopupComponent implements OnDestroy {
+export class VerificationPopupComponent extends DialogComponent implements OnDestroy {
 
   verificationCode: string;
 
@@ -30,6 +31,8 @@ export class VerificationPopupComponent implements OnDestroy {
   subscription: Subscription;
 
   constructor(private lodestone: LodestoneService, private authFacade: AuthFacade, private message: NzMessageService, private translate: TranslateService) {
+    super();
+    this.patchData();
     this.verificationResult$ = this.startVerify$.pipe(
       switchMap(code => {
         return this.lodestone.getCharacterFromLodestoneApi(this.lodestoneId, ['Character.Bio']).pipe(

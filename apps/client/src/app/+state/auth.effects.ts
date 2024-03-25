@@ -89,7 +89,7 @@ export class AuthEffects {
       if (user.supporter) {
         if (user.lastPatreonRefresh && Date.now() - user.lastPatreonRefresh >= 3 * 7 * 86400000) {
           this.supportService.refreshPatreonToken(user);
-        } else if (user.tipeeeRefreshToken && Date.now() - user.lastTipeeeRefresh >= 3600000) {
+        } else if (user.tipeeeRefreshToken && Date.now() - user.lastTipeeeRefresh >= 1800000) {
           this.supportService.refreshTipeeeToken(user);
         }
       }
@@ -269,7 +269,7 @@ export class AuthEffects {
   ), { dispatch: false });
 
   constructor(private actions$: Actions, private auth: Auth, private userService: UserService,
-              private store: Store<{ auth: AuthState }>, private dialog: NzModalService,
+              private store: Store<{ auth: AuthState }>,
               private translate: TranslateService, private notificationService: NzNotificationService, private authFacade: AuthFacade,
               private supportService: SupportService, private logTrackingService: LogTrackingService,
               private commissionProfileService: CommissionProfileService, private settings: SettingsService) {

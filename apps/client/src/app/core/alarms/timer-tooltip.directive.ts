@@ -14,11 +14,11 @@ export class TimerTooltipDirective extends NzTooltipDirective implements OnChang
   timerSeconds: number;
 
   @Input()
-  prefix: string = '';
+  prefix = '';
 
-  constructor(elementRef: ElementRef, hostView: ViewContainerRef, resolver: ComponentFactoryResolver, renderer: Renderer2,
+  constructor(elementRef: ElementRef, hostView: ViewContainerRef, renderer: Renderer2,
               private datePipe: DatePipe, private translate: TranslateService) {
-    super(elementRef, hostView, resolver, renderer);
+    super(elementRef, hostView, renderer);
   }
 
   ngOnChanges(changes: SimpleChanges) {

@@ -56,7 +56,7 @@ export class MarketboardIconComponent {
       this.dialog.create({
         nzTitle: `${this.translate.instant('MARKETBOARD.Title')} - ${itemName}`,
         nzContent: MarketboardPopupComponent,
-        nzComponentParams: {
+        nzData: {
           itemId: this.itemId,
           showHistory: true
         },

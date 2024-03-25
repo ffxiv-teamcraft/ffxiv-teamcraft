@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
@@ -13,21 +13,22 @@ import { I18nPipe } from '../../../core/i18n.pipe';
 import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgFor } from '@angular/common';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { FlexModule } from '@angular/flex-layout/flex';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
-    selector: 'app-gearset-creation-popup',
-    templateUrl: './gearset-creation-popup.component.html',
-    styleUrls: ['./gearset-creation-popup.component.less'],
-    standalone: true,
-    imports: [FormsModule, FlexModule, ReactiveFormsModule, NzInputModule, NzGridModule, NzFormModule, NzSelectModule, NgFor, NzButtonModule, NzWaveModule, AsyncPipe, JobUnicodePipe, I18nPipe, TranslateModule, I18nRowPipe]
+  selector: 'app-gearset-creation-popup',
+  templateUrl: './gearset-creation-popup.component.html',
+  styleUrls: ['./gearset-creation-popup.component.less'],
+  standalone: true,
+  imports: [FormsModule, FlexModule, ReactiveFormsModule, NzInputModule, NzGridModule, NzFormModule, NzSelectModule, NgFor, NzButtonModule, NzWaveModule, AsyncPipe, JobUnicodePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
-export class GearsetCreationPopupComponent implements OnInit {
+export class GearsetCreationPopupComponent extends DialogComponent implements OnInit {
 
   public form: UntypedFormGroup;
 
@@ -55,6 +56,8 @@ export class GearsetCreationPopupComponent implements OnInit {
 
   constructor(private modalRef: NzModalRef, private fb: UntypedFormBuilder,
               private lazyData: LazyDataFacade) {
+    super();
+    this.patchData();
   }
 
   public submit(): void {

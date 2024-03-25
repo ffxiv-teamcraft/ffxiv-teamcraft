@@ -18,15 +18,16 @@ import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-ico
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
-    selector: 'app-fishing-misses-popup',
-    templateUrl: './fishing-misses-popup.component.html',
-    styleUrls: ['./fishing-misses-popup.component.less'],
-    standalone: true,
-    imports: [NgIf, NzTableModule, NgFor, FlexModule, ItemIconComponent, NzToolTipModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, XivapiIconPipe, WeatherIconPipe, TugNamePipe]
+  selector: 'app-fishing-misses-popup',
+  templateUrl: './fishing-misses-popup.component.html',
+  styleUrls: ['./fishing-misses-popup.component.less'],
+  standalone: true,
+  imports: [NgIf, NzTableModule, NgFor, FlexModule, ItemIconComponent, NzToolTipModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, XivapiIconPipe, WeatherIconPipe, TugNamePipe]
 })
-export class FishingMissesPopupComponent implements OnInit {
+export class FishingMissesPopupComponent extends DialogComponent implements OnInit {
 
   public loading = true;
 
@@ -44,9 +45,11 @@ export class FishingMissesPopupComponent implements OnInit {
 
   constructor(private apollo: Apollo, public translate: TranslateService,
               private i18n: I18nToolsService, private lazyData: LazyDataFacade) {
+    super();
   }
 
   ngOnInit(): void {
+    this.patchData();
     this.data$ = this.filters$.pipe(
       switchMap(filters => {
         return this.apollo.query<any>({ query: this.getGraphQLQuery(+this.spotId, filters), fetchPolicy: 'no-cache' });

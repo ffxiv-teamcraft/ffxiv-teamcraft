@@ -300,7 +300,7 @@ export class RecipeFinderComponent implements OnDestroy {
           return this.dialog.create({
             nzTitle: this.translate.instant('RECIPE_FINDER.Import_from_clipboard'),
             nzContent: ClipboardImportPopupComponent,
-            nzComponentParams: {
+            nzData: {
               items: items
             },
             nzFooter: null

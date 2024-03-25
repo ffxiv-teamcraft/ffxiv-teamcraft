@@ -111,7 +111,7 @@ export class MetricsComponent extends TeamcraftPageComponent {
   importLayout(): void {
     this.dialog.create({
       nzContent: TextQuestionPopupComponent,
-      nzComponentParams: {
+      nzData: {
         placeholder: 'METRICS.Export_code'
       },
       nzFooter: null,

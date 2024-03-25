@@ -516,7 +516,7 @@ export class InventoryService {
         // If we're here, there's no matching entries anywhere
         return this.modal.create({
           nzContent: ContentIdLinkingPopupComponent,
-          nzComponentParams: {
+          nzData: {
             contentId: contentId,
             previousContentId: inventory.contentId
           },

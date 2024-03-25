@@ -274,7 +274,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     this.dialog.create({
       nzTitle: this.translate.instant(this.displayRow.title),
       nzContent: NavigationMapComponent,
-      nzComponentParams: {
+      nzData: {
         mapId: zoneBreakdownRow.mapId,
         points: <NavigationObjective[]>zoneBreakdownRow.items
           .filter(item => item.done < item.amount)
@@ -336,7 +336,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     const ref = this.dialog.create({
       nzTitle: this.translate.instant('LIST.Optimized_full_path'),
       nzContent: WorldNavigationMapComponent,
-      nzComponentParams: {
+      nzData: {
         points: this.getZoneBreakdownPathRows(zoneBreakdown)
       },
       nzFooter: null
@@ -428,7 +428,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     this.dialog.create({
       nzTitle: this.translate.instant('LIST.Total_price'),
       nzContent: TotalPanelPricePopupComponent,
-      nzComponentParams: {
+      nzData: {
         panelContent: this.displayRow.rows
       },
       nzFooter: null

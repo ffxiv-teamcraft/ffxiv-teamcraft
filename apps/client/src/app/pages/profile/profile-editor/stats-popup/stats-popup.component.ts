@@ -12,16 +12,17 @@ import { FormsModule } from '@angular/forms';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgIf } from '@angular/common';
+import { DialogComponent } from '../../../../core/dialog.component';
 
 @Component({
-    selector: 'app-stats-popup',
-    templateUrl: './stats-popup.component.html',
-    styleUrls: ['./stats-popup.component.less'],
-    standalone: true,
-    imports: [NgIf, FlexModule, NzGridModule, NzInputNumberModule, FormsModule, NzCheckboxModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
+  selector: 'app-stats-popup',
+  templateUrl: './stats-popup.component.html',
+  styleUrls: ['./stats-popup.component.less'],
+  standalone: true,
+  imports: [NgIf, FlexModule, NzGridModule, NzInputNumberModule, FormsModule, NzCheckboxModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
 })
-export class StatsPopupComponent implements OnInit {
+export class StatsPopupComponent extends DialogComponent implements OnInit {
 
   jobId: number;
 
@@ -30,6 +31,8 @@ export class StatsPopupComponent implements OnInit {
   allSets$: Observable<GearSet[]>;
 
   constructor(private authFacade: AuthFacade, private modalRef: NzModalRef) {
+    super();
+    this.patchData();
   }
 
   ngOnInit(): void {

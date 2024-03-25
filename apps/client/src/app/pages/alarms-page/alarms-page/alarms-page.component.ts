@@ -167,7 +167,7 @@ export class AlarmsPageComponent implements OnInit {
       nzTitle: this.translate.instant('ALARMS.Edit_note'),
       nzFooter: null,
       nzContent: TextQuestionPopupComponent,
-      nzComponentParams: { baseText: alarm.note }
+      nzData: { baseText: alarm.note }
     }).afterClose.pipe(
       filter(note => note !== undefined)
     ).subscribe((note) => {
@@ -206,7 +206,7 @@ export class AlarmsPageComponent implements OnInit {
       nzTitle: this.translate.instant('Please_enter_a_name'),
       nzFooter: null,
       nzContent: NameQuestionPopupComponent,
-      nzComponentParams: { baseName: group.name }
+      nzData: { baseName: group.name }
     }).afterClose.pipe(
       filter(name => name !== undefined)
     ).subscribe((name) => {
@@ -274,7 +274,7 @@ export class AlarmsPageComponent implements OnInit {
         return this.dialog.create({
           nzTitle: this.translate.instant('ALARMS.Add_alarms_to_group'),
           nzContent: FolderAdditionPickerComponent,
-          nzComponentParams: {
+          nzData: {
             elements: [
               ...display.noGroup.map(({ alarm }) => {
                 return this.alarmToEntry(alarm as PersistedAlarm);

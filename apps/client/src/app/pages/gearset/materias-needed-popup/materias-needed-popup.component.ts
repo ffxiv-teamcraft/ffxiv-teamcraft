@@ -23,6 +23,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
     selector: 'app-materias-needed-popup',
@@ -31,7 +32,7 @@ import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
     standalone: true,
     imports: [NgIf, FlexModule, NzButtonModule, NzInputModule, NzIconModule, NzToolTipModule, NzInputNumberModule, FormsModule, NzCheckboxModule, NzTableModule, NgFor, ItemIconComponent, ItemNameClipboardDirective, I18nNameComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, TranslateModule, I18nPipe, I18nRowPipe]
 })
-export class MateriasNeededPopupComponent {
+export class MateriasNeededPopupComponent extends DialogComponent {
 
   @Input()
   gearset: TeamcraftGearset;
@@ -50,6 +51,7 @@ export class MateriasNeededPopupComponent {
   totalPerCurrency$: Observable<{ id: number, amount: number }[]>;
 
   constructor(private materiaService: MateriaService, public settings: SettingsService, public translate: TranslateService) {
+    super();
     this.totalNeeded$ = combineLatest([
       observeInput(this, 'gearset'),
       observeInput(this, 'progression', true),
@@ -79,6 +81,8 @@ export class MateriasNeededPopupComponent {
         }, []);
       })
     );
+
+    this.patchData();
   }
 
 }

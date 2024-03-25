@@ -1,7 +1,7 @@
 defaults: &defaults
   working_directory: ~/ffxiv-teamcraft
   docker:
-    - image: cimg/node:18.15-browsers
+    - image: cimg/node:20.11-browsers
 
 
 version: 2.1

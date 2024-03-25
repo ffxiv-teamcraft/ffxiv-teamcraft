@@ -14,15 +14,16 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FormsModule } from '@angular/forms';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { FlexModule } from '@angular/flex-layout/flex';
+import { DialogComponent } from '../../../../core/dialog.component';
 
 @Component({
-    selector: 'app-simulation-share-popup',
-    templateUrl: './simulation-share-popup.component.html',
-    styleUrls: ['./simulation-share-popup.component.less'],
-    standalone: true,
-    imports: [FlexModule, NzCheckboxModule, FormsModule, NzButtonModule, NzInputModule, NzWaveModule, ClipboardDirective, TranslateModule]
+  selector: 'app-simulation-share-popup',
+  templateUrl: './simulation-share-popup.component.html',
+  styleUrls: ['./simulation-share-popup.component.less'],
+  standalone: true,
+  imports: [FlexModule, NzCheckboxModule, FormsModule, NzButtonModule, NzInputModule, NzWaveModule, ClipboardDirective, TranslateModule]
 })
-export class SimulationSharePopupComponent {
+export class SimulationSharePopupComponent extends DialogComponent {
 
   rotation: CraftingRotation;
 
@@ -38,6 +39,8 @@ export class SimulationSharePopupComponent {
 
   constructor(private linkTools: LinkToolsService, private message: NzMessageService,
               private translate: TranslateService, private modalRef: NzModalRef) {
+    super();
+    this.patchData();
   }
 
   getStatsParam(): string[] {

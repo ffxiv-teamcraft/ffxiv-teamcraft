@@ -357,7 +357,7 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
       this.modal.create({
         nzTitle: `${this.translate.instant('MARKETBOARD.Title')} - ${itemName}`,
         nzContent: MarketboardPopupComponent,
-        nzComponentParams: {
+        nzData: {
           itemId: item.id,
           showHistory: true
         },
@@ -500,7 +500,7 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
       this.modal.create({
         nzTitle: itemName || (item as CustomItem).name,
         nzContent: RelationshipsComponent,
-        nzComponentParams: {
+        nzData: {
           list$: this.list$,
           item: item,
           finalItem: this.finalItem
