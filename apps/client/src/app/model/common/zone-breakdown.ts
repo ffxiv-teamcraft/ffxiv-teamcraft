@@ -119,7 +119,7 @@ export class ZoneBreakdown {
     if (existingRow === undefined) {
       this._rows.push({ zoneId: zoneId, items: [item], mapId: mapId });
     } else {
-      if (existingRow.items.findIndex(i => i.id === item.id) === -1) {
+      if (!existingRow.items.some(i => i.id === item.id && i.finalItem === item.finalItem)) {
         existingRow.items.push(item);
       }
     }
