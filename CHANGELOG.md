@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.32](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.31...v11.0.32) (2024-03-26)
+
+
+### Bug Fixes
+
+* **core:** fixed user picker popup to add contacts ([36cbf36](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/36cbf364cd1306d7c7722678d462cf0192011178))
+* **crafting-replay:** fixed replay simulation popup ([da2f2ca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/da2f2ca0d3aa14f1c190ba5c5684840ca874c88e))
+* **folders:** fixed folder addition popup ([dc8dd05](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dc8dd052429935e50a0dd3b6803bc0bbb812e696))
+* **list:** fixed inventory view popup ([4807a6e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4807a6e7274fd35a694f02ea0959ebee9064d3d0))
+* **list:** fixed item picker not allowing to select items ([01e2660](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/01e26605c0b9e8788778482c8b37880ff1a2c60f))
+* **list:** fixed relationships popup (requirements) ([18988a7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/18988a79382f4ee93e9e489a41a254baa648b7a5))
+* **navigation:** fixed both zone and map navigation popups ([9ebd59b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9ebd59b18155fcac1b1eedd2edfb3dcc3c815118))
+* **permissions:** fixed permissions popup not loading ([4b73b6c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4b73b6c61eb2e682b49f2bee7e5ad4f73a0571dd))
+* **style:** minor extra gap in amount inputs ([4c9a41b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4c9a41b194b3b262dea1fd69528929f4b6af4dc9))
+
 ### [11.0.31](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.30...v11.0.31) (2024-03-25)
 
 
