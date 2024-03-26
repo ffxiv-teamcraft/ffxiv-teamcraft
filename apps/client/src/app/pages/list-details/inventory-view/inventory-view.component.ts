@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { List } from '../../../modules/list/model/list';
 import { Inventory } from '../../../model/other/inventory';
 import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
@@ -9,19 +9,20 @@ import { TranslateModule } from '@ngx-translate/core';
 import { I18nPipe } from '../../../core/i18n.pipe';
 import { ItemNameClipboardDirective } from '../../../core/item-name-clipboard.directive';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
-import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { FlexModule } from '@angular/flex-layout/flex';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
-    selector: 'app-inventory-view',
-    templateUrl: './inventory-view.component.html',
-    styleUrls: ['./inventory-view.component.less'],
-    standalone: true,
-    imports: [FlexModule, NzSwitchModule, FormsModule, NgFor, NzToolTipModule, NgIf, ItemNameClipboardDirective, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, LazyIconPipe]
+  selector: 'app-inventory-view',
+  templateUrl: './inventory-view.component.html',
+  styleUrls: ['./inventory-view.component.less'],
+  standalone: true,
+  imports: [FlexModule, NzSwitchModule, FormsModule, NgFor, NzToolTipModule, NgIf, ItemNameClipboardDirective, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, LazyIconPipe]
 })
-export class InventoryViewComponent {
+export class InventoryViewComponent extends DialogComponent implements OnInit {
 
   public display$: Observable<{ id: number, icon: number, amount: number }[][]>;
 
@@ -30,6 +31,7 @@ export class InventoryViewComponent {
   private list$: ReplaySubject<List> = new ReplaySubject<List>();
 
   public constructor() {
+    super();
     this.display$ = combineLatest([this.list$, this.showFinalItems$]).pipe(
       tap(([, showFinal]) => {
         localStorage.setItem('inventory-view:show-final', showFinal.toString());
@@ -47,6 +49,10 @@ export class InventoryViewComponent {
         return inventory.getDisplay();
       })
     );
+  }
+
+  ngOnInit(): void {
+    this.patchData();
   }
 
   @Input()
