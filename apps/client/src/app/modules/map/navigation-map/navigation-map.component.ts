@@ -22,16 +22,17 @@ import { ClipboardDirective } from '../../../core/clipboard.directive';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { MapComponent } from '../map/map.component';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe, NgFor, NgIf } from '@angular/common';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
-    selector: 'app-navigation-map',
-    templateUrl: './navigation-map.component.html',
-    styleUrls: ['./navigation-map.component.less'],
-    standalone: true,
-    imports: [NgIf, MapComponent, NgFor, NzListModule, NzToolTipModule, ClipboardDirective, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, AsyncPipe, DecimalPipe, NodeTypeIconPipe, XivapiIconPipe, LazyIconPipe, LazyRowPipe, I18nPipe, TranslateModule, I18nRowPipe]
+  selector: 'app-navigation-map',
+  templateUrl: './navigation-map.component.html',
+  styleUrls: ['./navigation-map.component.less'],
+  standalone: true,
+  imports: [NgIf, MapComponent, NgFor, NzListModule, NzToolTipModule, ClipboardDirective, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, AsyncPipe, DecimalPipe, NodeTypeIconPipe, XivapiIconPipe, LazyIconPipe, LazyRowPipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
-export class NavigationMapComponent implements OnInit {
+export class NavigationMapComponent extends DialogComponent implements OnInit {
 
   @Input()
   mapId: number;
@@ -49,9 +50,11 @@ export class NavigationMapComponent implements OnInit {
   markedAsDone = [];
 
   constructor(private mapService: MapService, private listsFacade: ListsFacade) {
+    super();
   }
 
   ngOnInit() {
+    this.patchData();
     this.optimizedPath$ = this.mapService.getOptimizedPathOnMap(this.mapId, this.points);
     setTimeout(() => {
       this.mapService.getMapById(this.mapId).pipe(first()).subscribe(map => this.map = map);
