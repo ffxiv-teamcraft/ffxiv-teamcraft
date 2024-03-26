@@ -25,17 +25,18 @@ import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzListModule } from 'ng-zorro-antd/list';
-import { NgIf, NgFor, AsyncPipe, UpperCasePipe } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf, UpperCasePipe } from '@angular/common';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
-    selector: 'app-permissions-box',
-    templateUrl: './permissions-box.component.html',
-    styleUrls: ['./permissions-box.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [NgIf, NzListModule, NgFor, NzAvatarModule, NzSelectModule, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, FlexModule, PageLoaderComponent, AsyncPipe, UpperCasePipe, TranslateModule, IfMobilePipe]
+  selector: 'app-permissions-box',
+  templateUrl: './permissions-box.component.html',
+  styleUrls: ['./permissions-box.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgIf, NzListModule, NgFor, NzAvatarModule, NzSelectModule, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, FlexModule, PageLoaderComponent, AsyncPipe, UpperCasePipe, TranslateModule, IfMobilePipe]
 })
-export class PermissionsBoxComponent implements OnInit {
+export class PermissionsBoxComponent extends DialogComponent implements OnInit {
 
   public data: DataWithPermissions;
 
@@ -67,10 +68,12 @@ export class PermissionsBoxComponent implements OnInit {
               private freecompanyPickerService: FreecompanyPickerService, private authFacade: AuthFacade,
               private teamsFacade: TeamsFacade, private lodestoneService: LodestoneService,
               private workshopsFacade: WorkshopsFacade) {
+    super();
     this.canAddFc$ = this.authFacade.mainCharacter$.pipe(map(char => char.ID > 0));
   }
 
   ngOnInit(): void {
+    this.patchData();
     if ((this.data as any).teamId !== undefined && this.data.registry[`team:${(this.data as any).teamId}`] === undefined) {
       // Cleanup possible previous teams
       Object.keys(this.data.registry).filter(key => key.startsWith('team:')).forEach(key => {
