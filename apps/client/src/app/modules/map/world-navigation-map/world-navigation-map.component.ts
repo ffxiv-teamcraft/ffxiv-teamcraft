@@ -1,13 +1,12 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, DestroyRef, ElementRef, inject, Input, OnInit, ViewChild } from '@angular/core';
 import { NavigationObjective } from '../navigation-objective';
 import { MapService } from '../map.service';
 import { NavigationStep } from '../navigation-step';
 import { BehaviorSubject, combineLatest, fromEvent, Observable, Subject } from 'rxjs';
 import { Vector2 } from '@ffxiv-teamcraft/types';
 import { MapData } from '../map-data';
-import { filter, first, map, shareReplay, takeUntil } from 'rxjs/operators';
+import { filter, first, map, shareReplay } from 'rxjs/operators';
 import { WorldNavigationStep } from '../world-navigation-step';
-import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { I18nPipe } from '../../../core/i18n.pipe';
@@ -24,16 +23,19 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe, NgFor, NgIf } from '@angular/common';
+import { DialogComponent } from '../../../core/dialog.component';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
-    selector: 'app-world-navigation-map',
-    templateUrl: './world-navigation-map.component.html',
-    styleUrls: ['./world-navigation-map.component.less'],
-    standalone: true,
-    imports: [NgIf, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, NzSelectModule, FormsModule, NgFor, MapComponent, NzListModule, NzToolTipModule, ClipboardDirective, NzSpinModule, AsyncPipe, DecimalPipe, NodeTypeIconPipe, LazyIconPipe, I18nPipe, TranslateModule, I18nRowPipe]
+  selector: 'app-world-navigation-map',
+  templateUrl: './world-navigation-map.component.html',
+  styleUrls: ['./world-navigation-map.component.less'],
+  standalone: true,
+  imports: [NgIf, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, NzSelectModule, FormsModule, NgFor, MapComponent, NzListModule, NzToolTipModule, ClipboardDirective, NzSpinModule, AsyncPipe, DecimalPipe, NodeTypeIconPipe, LazyIconPipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
-export class WorldNavigationMapComponent extends TeamcraftComponent implements OnInit {
+export class WorldNavigationMapComponent extends DialogComponent implements OnInit {
+  private destroyRef = inject(DestroyRef);
 
   @Input()
   public points: NavigationObjective[] = [];
@@ -54,7 +56,7 @@ export class WorldNavigationMapComponent extends TeamcraftComponent implements O
     super();
     fromEvent(window, 'keydown').pipe(
       filter((event: KeyboardEvent) => event.key === 'ArrowRight' || event.key === 'ArrowLeft'),
-      takeUntil(this.onDestroy$)
+      takeUntilDestroyed(this.destroyRef)
     ).subscribe(event => {
       const direction = event.key === 'ArrowRight' ? -1 : 1;
       this.currentPathIndex$.next(Math.max(this.currentPathIndex$.value - direction, 0));
@@ -69,6 +71,7 @@ export class WorldNavigationMapComponent extends TeamcraftComponent implements O
   }
 
   ngOnInit() {
+    this.patchData();
     this.optimizedPath$ = this.mapService.getOptimizedPathInWorld(this.points).pipe(
       first(),
       shareReplay({ bufferSize: 1, refCount: true })

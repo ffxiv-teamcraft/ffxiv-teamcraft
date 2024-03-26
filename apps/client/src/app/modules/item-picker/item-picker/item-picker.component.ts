@@ -27,6 +27,7 @@ import { FormsModule } from '@angular/forms';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
   selector: 'app-item-picker',
@@ -35,7 +36,7 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
   standalone: true,
   imports: [NzButtonModule, NzInputModule, FormsModule, NzCheckboxModule, RouterLink, NgIf, NzListModule, LazyScrollComponent, I18nNameComponent, ItemIconComponent, NzToolTipModule, FlexModule, NzWaveModule, NzIconModule, AsyncPipe, TranslateModule, XivapiIconPipe, CustomItemNamePipe, JobUnicodePipe, IfRegionsPipe, NzSpinModule]
 })
-export class ItemPickerComponent implements OnInit {
+export class ItemPickerComponent extends DialogComponent implements OnInit {
 
   public query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
@@ -57,6 +58,7 @@ export class ItemPickerComponent implements OnInit {
               private htmlTools: HtmlToolsService,
               private customItemsFacade: CustomItemsFacade, private translate: TranslateService,
               public settings: SettingsService) {
+    super();
     this.results$ = this.query$.pipe(
       debounceTime(500),
       filter(query => {
@@ -125,6 +127,7 @@ export class ItemPickerComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.patchData();
     if (this.includeCustomItems) {
       this.customItemsFacade.loadAll();
     }

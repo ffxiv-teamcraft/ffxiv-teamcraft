@@ -2,12 +2,11 @@ import { ChangeDetectionStrategy, Component, Input, Optional } from '@angular/co
 import { CraftingReplay } from '../model/crafting-replay';
 import { BehaviorSubject, combineLatest, ReplaySubject } from 'rxjs';
 import { map, switchMap, tap } from 'rxjs/operators';
-import { DataService } from '../../../core/api/data.service';
 import { ActionResult, Craft, EffectiveBuff, Simulation, SimulationService } from '../../../core/simulation/simulation.service';
 import { SettingsService } from '../../settings/settings.service';
 import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
 import { MacroPopupComponent } from '../../../pages/simulator/components/macro-popup/macro-popup.component';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -15,20 +14,21 @@ import { ActionComponent } from '../../../pages/simulator/components/action/acti
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { SimulationResultComponent } from '../../../pages/simulator/components/simulation-result/simulation-result.component';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
-    selector: 'app-replay-simulation',
-    templateUrl: './replay-simulation.component.html',
-    styleUrls: [
-        '../../../pages/simulator/components/simulator/simulator.component.less',
-        './replay-simulation.component.less'
-    ],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [NgIf, FlexModule, SimulationResultComponent, NzCardModule, NgFor, ActionComponent, NgSwitch, NgSwitchCase, NgSwitchDefault, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
+  selector: 'app-replay-simulation',
+  templateUrl: './replay-simulation.component.html',
+  styleUrls: [
+    '../../../pages/simulator/components/simulator/simulator.component.less',
+    './replay-simulation.component.less'
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgIf, FlexModule, SimulationResultComponent, NzCardModule, NgFor, ActionComponent, NgSwitch, NgSwitchCase, NgSwitchDefault, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
 })
-export class ReplaySimulationComponent {
+export class ReplaySimulationComponent extends DialogComponent {
 
   public replay$: ReplaySubject<CraftingReplay> = new ReplaySubject<CraftingReplay>();
 
@@ -94,10 +94,11 @@ export class ReplaySimulationComponent {
     })
   );
 
-  constructor(private lazyData: LazyDataFacade, private dataService: DataService,
-              private simulationService: SimulationService, private settings: SettingsService,
+  constructor(private lazyData: LazyDataFacade, private simulationService: SimulationService, private settings: SettingsService,
               @Optional() public ref: NzModalRef, private dialog: NzModalService,
               private translate: TranslateService) {
+    super();
+    this.patchData();
   }
 
   @Input()

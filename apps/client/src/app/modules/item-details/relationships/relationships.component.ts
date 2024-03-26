@@ -22,16 +22,17 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
-    selector: 'app-relationships',
-    templateUrl: './relationships.component.html',
-    styleUrls: ['./relationships.component.less'],
-    standalone: true,
-    imports: [NgIf, FlexModule, NgFor, ItemIconComponent, I18nNameComponent, NzTagModule, NzToolTipModule, InventoryPositionComponent, NzButtonModule, NzWaveModule, NzIconModule, NzListModule, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, CeilPipe, XivapiIconPipe]
+  selector: 'app-relationships',
+  templateUrl: './relationships.component.html',
+  styleUrls: ['./relationships.component.less'],
+  standalone: true,
+  imports: [NgIf, FlexModule, NgFor, ItemIconComponent, I18nNameComponent, NzTagModule, NzToolTipModule, InventoryPositionComponent, NzButtonModule, NzWaveModule, NzIconModule, NzListModule, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, CeilPipe, XivapiIconPipe]
 })
-export class RelationshipsComponent implements OnInit {
+export class RelationshipsComponent extends DialogComponent implements OnInit {
 
   public item: ListRow;
 
@@ -47,6 +48,8 @@ export class RelationshipsComponent implements OnInit {
 
   constructor(private listsFacade: ListsFacade, private inventoryService: InventoryService,
               private platform: PlatformService) {
+    super();
+    this.patchData();
     this.list$ = this.list$ || this.listsFacade.selectedList$;
   }
 
