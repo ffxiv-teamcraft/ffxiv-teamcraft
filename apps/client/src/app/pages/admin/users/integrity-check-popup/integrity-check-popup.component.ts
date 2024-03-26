@@ -1,27 +1,30 @@
-import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, inject, Inject } from '@angular/core';
 import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
 import { INTEGRITY_CHECKS, IntegrityCheck } from '../integrity-checks/integrity-check';
 import { combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { UserService } from '../../../../core/database/user.service';
-import { map, startWith, switchMap, takeUntil } from 'rxjs/operators';
-import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
+import { map, startWith, switchMap } from 'rxjs/operators';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+import { DialogComponent } from '../../../../core/dialog.component';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
-    selector: 'app-integrity-check-popup',
-    templateUrl: './integrity-check-popup.component.html',
-    styleUrls: ['./integrity-check-popup.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [NgIf, NgFor, FlexModule, NgSwitch, NgSwitchCase, NzButtonModule, NzIconModule, NgSwitchDefault, NzWaveModule, NzToolTipModule, AsyncPipe, TranslateModule]
+  selector: 'app-integrity-check-popup',
+  templateUrl: './integrity-check-popup.component.html',
+  styleUrls: ['./integrity-check-popup.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgIf, NgFor, FlexModule, NgSwitch, NgSwitchCase, NzButtonModule, NzIconModule, NgSwitchDefault, NzWaveModule, NzToolTipModule, AsyncPipe, TranslateModule]
 })
-export class IntegrityCheckPopupComponent extends TeamcraftComponent {
+export class IntegrityCheckPopupComponent extends DialogComponent {
+
+  destroyRef = inject(DestroyRef);
 
   user$: ReplaySubject<TeamcraftUser> = new ReplaySubject<TeamcraftUser>();
 
@@ -34,12 +37,13 @@ export class IntegrityCheckPopupComponent extends TeamcraftComponent {
         result: 'loading'
       };
     })),
-    takeUntil(this.onDestroy$)
+    takeUntilDestroyed(this.destroyRef)
   );
 
   constructor(@Inject(INTEGRITY_CHECKS) private integrityChecks: IntegrityCheck[],
               private userService: UserService) {
     super();
+    this.patchData();
   }
 
   private _user: TeamcraftUser;
