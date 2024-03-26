@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { combineLatest, Observable, of } from 'rxjs';
-import { UntypedFormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, UntypedFormControl, Validators } from '@angular/forms';
 import { CharacterSearchResultRow } from '@xivapi/angular-client';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { debounceTime, map, switchMap, tap } from 'rxjs/operators';
@@ -21,16 +21,17 @@ import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzGridModule } from 'ng-zorro-antd/grid';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
-    selector: 'app-user-picker',
-    templateUrl: './user-picker.component.html',
-    styleUrls: ['./user-picker.component.less'],
-    standalone: true,
-    imports: [NgIf, NzGridModule, NzFormModule, NzInputModule, FormsModule, NzAutocompleteModule, ReactiveFormsModule, NgFor, PageLoaderComponent, NzListModule, NzButtonModule, NzWaveModule, UserAvatarComponent, NzDividerModule, NzSpinModule, AsyncPipe, TranslateModule, CharacterNamePipe]
+  selector: 'app-user-picker',
+  templateUrl: './user-picker.component.html',
+  styleUrls: ['./user-picker.component.less'],
+  standalone: true,
+  imports: [NgIf, NzGridModule, NzFormModule, NzInputModule, FormsModule, NzAutocompleteModule, ReactiveFormsModule, NgFor, PageLoaderComponent, NzListModule, NzButtonModule, NzWaveModule, UserAvatarComponent, NzDividerModule, NzSpinModule, AsyncPipe, TranslateModule, CharacterNamePipe]
 })
-export class UserPickerComponent {
+export class UserPickerComponent extends DialogComponent implements OnInit {
 
   public servers$ = this.lazyData.servers$;
 
@@ -54,6 +55,7 @@ export class UserPickerComponent {
 
   constructor(private lazyData: LazyDataFacade, private lodestone: LodestoneService, private modalRef: NzModalRef,
               private userService: UserService, private authFacade: AuthFacade) {
+    super();
 
     this.autoCompleteRows$ = combineLatest([this.servers$, this.selectedServer.valueChanges])
       .pipe(
@@ -92,6 +94,10 @@ export class UserPickerComponent {
         }),
         tap(() => this.loadingResults = false)
       );
+  }
+
+  ngOnInit(): void {
+    this.patchData();
   }
 
   pickUser(row: any): void {
