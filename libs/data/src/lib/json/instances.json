@@ -4642,6 +4642,33 @@
       35500
     ]
   },
+  "5066": {
+    "id": 5066,
+    "en": "Memory of Embers",
+    "ja": "炎影の旅路",
+    "de": "Der Pfad der Flammen",
+    "fr": "Flammes primordiales",
+    "description": null,
+    "members": {
+      "HealersPerParty": 0,
+      "MeleesPerParty": 0,
+      "RangedPerParty": 0,
+      "TanksPerParty": 0
+    },
+    "icon": "/i/061000/061805.png",
+    "banner": "",
+    "gamePatch": 86,
+    "contentType": 7,
+    "levelReq": 50,
+    "ilvlReq": 0,
+    "sync": 50,
+    "exp": 0,
+    "map": 76,
+    "contentText": [
+      37918,
+      37900
+    ]
+  },
   "5067": {
     "id": 5067,
     "en": "The Game Is Afoot",
