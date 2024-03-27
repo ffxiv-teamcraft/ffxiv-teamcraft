@@ -71057,20 +71057,20 @@
   },
   "3409": {
     "id": 3409,
-    "icon": "",
-    "patch": 1,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
+    "icon": "/i/042000/042995.png",
+    "patch": 94,
+    "en": "Found the Flame",
+    "de": "Der Stern aus Valisthea",
+    "ja": "ヴァリスゼアを征く星に",
+    "fr": "L'étoile de Valisthéa",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Complete the quest “The Path Infernal.”",
+      "de": "Den Auftrag „Der Pfad der Flammen“ abgeschlossen.",
+      "ja": "クエスト「炎影の旅路」をコンプリートする",
+      "fr": "Accomplir la quête “Flammes primordiales”."
     },
     "item": 0,
-    "title": 0
+    "title": 710
   },
   "3410": {
     "id": 3410,

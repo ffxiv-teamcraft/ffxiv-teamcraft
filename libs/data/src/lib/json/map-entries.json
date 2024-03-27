@@ -601,11 +601,11 @@
   },
   {
     "id": 76,
-    "zone": 0,
-    "name": "",
-    "territory": null,
-    "scale": 100,
-    "weatherRate": null
+    "zone": 4442,
+    "name": "The Memory of Embers",
+    "territory": 1166,
+    "scale": 400,
+    "weatherRate": 155
   },
   {
     "id": 77,

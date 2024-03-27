@@ -84395,30 +84395,47 @@
   },
   "70332": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Land on Fire",
+      "ja": "燃え上がる大地にて",
+      "de": "Auf lodernder Erde",
+      "fr": "Terre incandescente"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080133.png",
+    "banner": "/i/101000/101290.png"
   },
   "70333": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Pain to Recall",
+      "ja": "失われた記憶を求めて",
+      "de": "Nebel der Erinnerung",
+      "fr": "À la recherche de la mémoire perdue"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080133.png",
+    "banner": "/i/101000/101291.png"
   },
   "70334": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Path Infernal",
+      "ja": "炎影の旅路",
+      "de": "Der Pfad der Flammen",
+      "fr": "Flammes primordiales"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080133.png",
+    "rewards": [
+      {
+        "id": 41559,
+        "amount": 1
+      },
+      {
+        "id": 41487,
+        "amount": 1
+      },
+      {
+        "id": 41478,
+        "amount": 1
+      }
+    ],
+    "banner": "/i/101000/101292.png"
   },
   "70335": {
     "name": {

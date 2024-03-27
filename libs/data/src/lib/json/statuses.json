@@ -48204,29 +48204,29 @@
     }
   },
   "3709": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Drop and Roll",
+    "de": "Ausweichrolle",
+    "ja": "ドッジロール",
+    "fr": "Virevolte",
+    "icon": "/i/016000/016762.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Prepared to dodge certain attacks.",
+      "de": "Weicht bestimmten Angriffen aus.",
+      "ja": "回避行動をとった状態。特定の攻撃を回避する。",
+      "fr": "Esquive une attaque."
     }
   },
   "3710": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Precision",
+    "de": "Perfektes Ausweichen",
+    "ja": "プレシジョンドッジ",
+    "fr": "Esquive habile",
+    "icon": "/i/016000/016763.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "A precision dodge has created an opening, enabling use of the duty action Precision Strike.",
+      "de": "Weicht im richtigen Moment aus und macht sich zum Gegenschlag bereit. Ermöglicht den Einsatz des Spezialkommandos <span style=\"color:#ffbfff\">Perfekter Hieb</span>.",
+      "ja": "回避に成功し、敵の隙を付いた状態。コンテンツアクション「プレシジョンストライク」が使用可能。",
+      "fr": "Une attaque a été esquivée. Peut utiliser l'action de mission Coup habile."
     }
   },
   "3711": {
@@ -48802,16 +48802,16 @@
     }
   },
   "3755": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Fetters",
+    "de": "Gefesselt",
+    "ja": "拘束",
+    "fr": "Attache",
+    "icon": "/i/015000/015545.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Unable to execute actions.",
+      "de": "Ist handlungsunfähig.",
+      "ja": "行動できなくなった状態。",
+      "fr": "Toute action est impossible."
     }
   },
   "3756": {
@@ -48997,29 +48997,29 @@
     }
   },
   "3770": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Towering Flame",
+    "de": "Überhitzung",
+    "ja": "過熱",
+    "fr": "Surchauffe",
+    "icon": "/i/016000/016765.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Rising flames are increasing damage dealt. Unable to execute Rising Flames.",
+      "de": "Die Hitze von <span style=\"color:#ffbfff\">Lohenschwinge</span> bringt den Körper zum Glühen und ausgeteilter Schaden ist erhöht. Während dieser Status aktiv ist, kann <span style=\"color:#ffbfff\">Lohenschwinge</span> nicht benutzt werden.",
+      "ja": "ライジングフレイムの発動によって過熱し、与ダメージが上昇した状態。<br>ただし、ライジングフレイムを使用できない。",
+      "fr": "Flamme émergente provoque une surchauffe et augmente les dégâts infligés, mais devient inutilisable."
     }
   },
   "3771": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Infernal Shroud",
+    "de": "Höllenschleier",
+    "ja": "炎影",
+    "fr": "Embrasement primordial",
+    "icon": "/i/016000/016764.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Bolstered by the power of flame.",
+      "de": "Die Entfachung der Flammenbrunst sorgt für Revitalisierung.",
+      "ja": "炎影が燃え盛り、活性化した状態。",
+      "fr": "Le voile infernal s'embrase ardemment."
     }
   },
   "3772": {

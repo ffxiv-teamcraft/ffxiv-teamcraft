@@ -23,7 +23,7 @@ interface Shop {
   id: number;
   topicSelectId?: number;
   gc?: number;
-  type: 'SpecialShop' | 'GCShop' | 'GilShop' | 'FccShop';
+  type: 'SpecialShop' | 'GCShop' | 'GilShop' | 'FccShop' | 'AnimaWeapon5TradeItem';
   npcs: number[];
   trades: Trade[];
   requiredQuest?: number;
@@ -40,7 +40,7 @@ export class ShopsExtractor extends AbstractExtractor {
     combineLatest([
       this.getSheet<any>(xiv, 'GilShop', ['Name']),
       this.getSheet<any>(xiv, 'GilShopItem', ['Item.PriceMid'], true, 1),
-      this.getSheet<any>(xiv, 'SpecialShop', ['Item:Item.PriceMid', 'Item:Quest#', 'SpecialShopItemCategory#','Item:ReceiveCount', 'Item:ReceiveHq', 'Item:ItemCost#', 'Item:CurrencyCost', 'Item:HqCost', 'Item:CollectabilityCost', 'UseCurrencyType'], false, 1),
+      this.getSheet<any>(xiv, 'SpecialShop', ['Item:Item.PriceMid', 'Item:Quest#', 'SpecialShopItemCategory#', 'Item:ReceiveCount', 'Item:ReceiveHq', 'Item:ItemCost#', 'Item:CurrencyCost', 'Item:HqCost', 'Item:CollectabilityCost', 'UseCurrencyType'], false, 1),
       this.getSheet<any>(xiv, 'GCScripShopItem', ['CostGCSeals', 'Item#', 'RequiredGrandCompanyRank#']),
       this.getSheet<any>(xiv, 'GCScripShopCategory', ['GrandCompany', 'Tier']),
       this.getSheet<any>(xiv, 'TopicSelect', ['Name', 'Shop']),
@@ -51,7 +51,7 @@ export class ShopsExtractor extends AbstractExtractor {
       this.getSheet<any>(xiv, 'FateShop', ['SpecialShop']),
       this.getSheet<any>(xiv, 'InclusionShop', ['Category.InclusionShopSeries.SpecialShop#'], false, 2),
       this.getSheet<any>(xiv, 'BnpcBase', ['ArrayEventHandler.Data#'], true, 2),
-      this.getNonXivapiUrl('https://gubal.hasura.app/api/rest/bnpc')
+      this.getSheet<any>(xiv, 'AnimaWeapon5TradeItem', ['CrystalSand', 'Item', 'ReceiveQuantity', 'Quantity', 'IsHq'], true)
     ]).pipe(
       map(([gilShops,
              gilShopItems,
@@ -65,15 +65,19 @@ export class ShopsExtractor extends AbstractExtractor {
              npcBases,
              fateShops,
              inclusionShops,
-             bnpcBases]) => {
+             bnpcBases,
+             animaTradeItems]) => {
         const shops = uniqBy([
           ...this.handleGilShops(gilShops, gilShopItems),
           ...this.handleSpecialShops(specialShops),
-          ...this.handleGCShop(gcShopItems, gcShopCategories)
+          ...this.handleGCShop(gcShopItems, gcShopCategories),
         ], 'id');
         const mappyJSONRecord = this.requireLazyFile('gubal-bnpcs-index');
         let linked = this.linkNpcs(shops, npcs, npcBases, topicSelect, customTalk, preHandler, fateShops, inclusionShops, specialShops);
-        linked = this.linkBNPCs(shops, bnpcBases, mappyJSONRecord);
+        linked = [
+          ...this.linkBNPCs(shops, bnpcBases, mappyJSONRecord),
+          ...this.handleAnimaTrades(animaTradeItems)
+        ];
         return linked.map(shop => {
           if (shop.npcs.length === 0 && linked.some(s => this.hashShop(s) === this.hashShop(shop) && s.npcs.length > 0)) {
             return null;
@@ -404,5 +408,31 @@ export class ShopsExtractor extends AbstractExtractor {
           [key]: npcIdsByDataId[key]
         };
       }, preEndwalkerGemstoneShops);
+  }
+
+  private handleAnimaTrades(animaTradeItems: any[]): Shop[] {
+    return [
+      {
+        id: -1,
+        npcs: [1017108],
+        type: 'AnimaWeapon5TradeItem',
+        trades: animaTradeItems
+          .filter(row => row.CrystalSand > 0)
+          .map(row => {
+          return {
+            items: [{
+              id: row.CrystalSand,
+              amount: row.ReceiveQuantity
+            }],
+              currencies: row.Item.filter(Boolean).map((item, index) => {
+              return {
+                id: item,
+                amount: row.Quantity[index]
+              };
+            })
+          };
+        })
+      }
+    ];
   }
 }

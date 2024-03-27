@@ -58,7 +58,11 @@ export class TradesComponent extends ItemDetailsPopup implements OnChanges {
     })
   );
 
-  public hasMoreAvailable$ = combineLatest([
+  public isLarge$ = this.tradeSources$.pipe(map(ts => {
+    return ts.some(t => t.trades.some(tr => tr.currencies.length > 2))
+  }))
+
+    public hasMoreAvailable$ = combineLatest([
     this.tradeSourcesData$,
     this.displayedTrades$
   ]).pipe(

@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.33](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.32...v11.0.33) (2024-03-27)
+
+
+### Bug Fixes
+
+* **alarms:** fixed possible double ringing bug ([df6e06c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/df6e06cb763c9715ff5e785b2a28cdae84898ac8))
+* **db:** add missing 6.58 data ([7726636](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/772663695db87f91dbead6f691471f88f882c012))
+* **db:** add missing HW relic trades ([0969d5a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0969d5afa61f389721693c72200646b65f212672))
+* **list:** fixed panel price showing no data ([7a3ec5e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7a3ec5e3455fb5862890e31e1a2630d49794001a))
+* **recipe-finder:** fixed clipboard import popup ([56140f2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/56140f2f0add1cc09cd8345bee18a052832e7f7d))
+
 ### [11.0.32](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.31...v11.0.32) (2024-03-26)
 
 

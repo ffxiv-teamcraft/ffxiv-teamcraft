@@ -56,7 +56,7 @@ import { IslandExtractor } from './extractors/island.extractor';
 import { TraitsExtractor } from './extractors/traits.extractor';
 import { KoboldService } from './kobold/kobold.service';
 import { XivDataService } from './xiv/xiv-data.service';
-import { from, mergeMap, tap } from 'rxjs';
+import { catchError, from, mergeMap, of, tap } from 'rxjs';
 import { ItemSeriesExtractor } from './extractors/item-series.extractor';
 import { ShopsExtractor } from './extractors/shops.extractor';
 import { SeedsExtractor } from './extractors/seeds.extractor';
@@ -186,6 +186,8 @@ const extractors: AbstractExtractor[] = [
   xiv.UIColor = await xiv.getSheet('UIColor');
   console.clear();
 
+  console.log('Do not forget to extract allrawexd using SaintCoinach in xivapi folder');
+
   const operationsSelection = new MultiSelect({
     name: 'operations',
     limit: 10,
@@ -277,6 +279,10 @@ const extractors: AbstractExtractor[] = [
         extractor.setProgress(progress);
         extractor.setMultiBarRef(multiBar);
         return extractor.extract(xiv).pipe(
+          catchError((err) => {
+            console.error(err);
+            return of(null);
+          }),
           tap(() => {
             progress.stop();
             multiBar.remove(progress);

@@ -122351,6 +122351,12 @@
     "slots": 0,
     "overmeld": false
   },
+  "41081": {
+    "modifier": 0,
+    "prop": "EarringPercent",
+    "slots": 0,
+    "overmeld": false
+  },
   "41180": {
     "modifier": 9,
     "prop": "OneHandWeaponPercent",
