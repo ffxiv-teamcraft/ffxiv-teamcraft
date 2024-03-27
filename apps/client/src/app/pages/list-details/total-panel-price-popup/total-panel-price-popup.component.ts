@@ -94,6 +94,7 @@ export class TotalPanelPricePopupComponent extends DialogComponent implements On
   }
 
   ngOnInit(): void {
+    this.patchData();
     this.computePrice();
   }
 

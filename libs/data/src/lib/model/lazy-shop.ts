@@ -14,10 +14,9 @@ export interface Trade {
 }
 
 export interface Currency {
-  amount?:   number;
-  hq?:       boolean;
-  id:        number;
-  quantity?: number;
+  amount: number;
+  hq?:    boolean;
+  id:     number;
 }
 
 export enum Type {

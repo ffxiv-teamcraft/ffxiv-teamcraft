@@ -561,11 +561,11 @@ export const lazyFilesList = {
   },
   'shopsByNpc': {
     'fileName': 'shops-by-npc.json',
-    'hashedFileName': 'shops-by-npc.e1504273d599e791aee6e4b08940c91ce7f53f0f.json'
+    'hashedFileName': 'shops-by-npc.f50c5884c79cace58d0015321b76f3a162a6825c.json'
   },
   'shops': {
     'fileName': 'shops.json',
-    'hashedFileName': 'shops.846b20ee43fde440cd2b26bc4193f700908d06fd.json'
+    'hashedFileName': 'shops.88ecfa96f43c7051c0ef526fc7071c90bc9ca938.json'
   },
   'spearFishingFish': {
     'fileName': 'spear-fishing-fish.json',
