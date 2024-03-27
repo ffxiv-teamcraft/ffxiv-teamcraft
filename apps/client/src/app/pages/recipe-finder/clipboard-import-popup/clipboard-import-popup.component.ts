@@ -9,19 +9,22 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
 import { NgFor } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
-    selector: 'app-clipboard-import-popup',
-    templateUrl: './clipboard-import-popup.component.html',
-    styleUrls: ['./clipboard-import-popup.component.less'],
-    standalone: true,
-    imports: [FlexModule, NgFor, ItemIconComponent, NzButtonModule, NzWaveModule, TranslateModule, ItemNamePipe, LazyIconPipe, I18nPipe]
+  selector: 'app-clipboard-import-popup',
+  templateUrl: './clipboard-import-popup.component.html',
+  styleUrls: ['./clipboard-import-popup.component.less'],
+  standalone: true,
+  imports: [FlexModule, NgFor, ItemIconComponent, NzButtonModule, NzWaveModule, TranslateModule, ItemNamePipe, LazyIconPipe, I18nPipe]
 })
-export class ClipboardImportPopupComponent {
+export class ClipboardImportPopupComponent extends DialogComponent {
 
-  items: { id: number, amount: number }[] = [];
+  items: { id: number, amount: number }[];
 
   constructor(private ref: NzModalRef) {
+    super();
+    this.patchData();
   }
 
   confirm(): void {
