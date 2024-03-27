@@ -14,12 +14,14 @@ export interface Trade {
 }
 
 export interface Currency {
-  amount: number;
-  hq?:    boolean;
-  id:     number;
+  amount?:   number;
+  hq?:       boolean;
+  id:        number;
+  quantity?: number;
 }
 
 export enum Type {
+  AnimaWeapon5TradeItem = "AnimaWeapon5TradeItem",
   GCShop = "GCShop",
   GilShop = "GilShop",
   SpecialShop = "SpecialShop",
