@@ -112,7 +112,7 @@ export abstract class StepByStepComponent extends TeamcraftComponent implements 
       switchMap(([display, position, stepByStep, etime]) => {
         const alarmMarkers = stepByStep.alarms.filter(row => {
           const alarms = getItemSource(row, DataType.ALARMS);
-          return alarms.some(a => a.mapId === display.mapId);
+          return row.done < row.amount && alarms.some(a => a.mapId === display.mapId);
         }).map(row => {
           return getItemSource(row, DataType.ALARMS).filter(a => a.mapId === display.mapId)
             .map(alarm => {
