@@ -1,4 +1,4 @@
-import { app, ipcMain, nativeImage, shell } from 'electron';
+import { app, clipboard, ipcMain, nativeImage, shell } from 'electron';
 import log from 'electron-log';
 import { PacketCapture } from '../pcap/packet-capture';
 import { Store } from '../store';
@@ -165,6 +165,9 @@ export class IpcListenersManager {
     this.setupFreeCompanyWorkshopsListeners();
 
     this.setupAnalyticsListeners();
+    ipcMain.on('clipboard:get', (event) => {
+      event.sender.send('clipboard', clipboard.readText());
+    });
   }
 
   private setupSearchListeners(): void {
