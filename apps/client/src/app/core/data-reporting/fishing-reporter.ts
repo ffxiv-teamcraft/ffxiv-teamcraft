@@ -29,7 +29,9 @@ export class FishingReporter implements DataReporter {
               private etime: EorzeanTimeService, private ipc: IpcService,
               private settings: SettingsService, private fishTrainFacade: FishTrainFacade,
               private authFacade: AuthFacade) {
-    this.fishTrainFacade.loadRunning();
+    if (this.ipc.pcapToggle) {
+      this.fishTrainFacade.loadRunning();
+    }
     this.pcapStopped$.subscribe(() => {
       this.state = {};
       this.setState({});

@@ -18,7 +18,7 @@ export class GubalService {
 
   private readonly version: number;
 
-  constructor(private http: HttpClient, private ipc: IpcService, private authFacade: AuthFacade,
+  constructor(private ipc: IpcService, private authFacade: AuthFacade,
               @Inject(DataReporters) private reporters: DataReporter[], private apollo: Apollo,
               private platform: PlatformService) {
     const versionFragments = environment.version.split('.');
