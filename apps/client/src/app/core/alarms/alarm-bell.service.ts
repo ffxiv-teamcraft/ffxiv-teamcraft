@@ -57,7 +57,7 @@ export class AlarmBellService {
   }
 
   public notify(_alarm: PersistedAlarm): Observable<unknown> {
-    if ((Date.now() - 10000) >= (this.getLastPlayed(_alarm) + this.settings.alarmHoursBefore * 3600000 + 10000)) {
+    if ((Date.now() - 10000) >= (this.getLastPlayed(_alarm) + this.settings.alarmHoursBefore * 3600000)) {
       localStorage.setItem(`played:${_alarm.$key}`, Date.now().toString());
       return of(_alarm).pipe(
         switchMap(alarm => {
@@ -183,7 +183,7 @@ export class AlarmBellService {
                 if (irlAlarmDuration === 0) {
                   irlAlarmDuration = this.eorzeanTime.toEarthTime(8 * 60) * 1000;
                 }
-                return Date.now() - lastPlayed >= irlAlarmDuration
+                return Date.now() - lastPlayed >= (irlAlarmDuration + 10000)
                   && timeBeforePlay <= 0;
               });
             })
