@@ -1845,6 +1845,9 @@
     },
     "PATCH": {
       "Open_patch_page": "데이터베이스내 패치 변경점을 모두 보려면 이곳을 클릭하세요",
+      "Previous": "Previous ({{version}})",
+      "Next": "Next ({{version}})",
+      "Release_date": "Release date: {{date}}",
       "CONTENT": {
         "Title": "패치 내용",
         "Achievements": "업적 ({{amount}})",
@@ -1983,6 +1986,7 @@
     "Exclude": "제외",
     "Select_stat": "능력치 선택",
     "Level": "레벨",
+    "Open_patch_data": "Open patch content for {{version}}",
     "SELECTION_MODE": {
       "List": "목록",
       "Compare": "비교"
