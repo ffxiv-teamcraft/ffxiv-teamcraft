@@ -6,7 +6,6 @@ import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
-import * as _ from 'lodash';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { MapNamePipe } from '../../../pipes/pipes/map-name.pipe';
 import { NodeTypeNamePipe } from '../../../pipes/pipes/node-type-name';
@@ -25,6 +24,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzFormModule } from 'ng-zorro-antd/form';
+import { uniq } from 'lodash';
 
 @Component({
     selector: 'app-custom-alarm-popup',
@@ -163,7 +163,7 @@ export class CustomAlarmPopupComponent implements OnInit {
       map((m) => {
         const defaultWeather = weatherIndex[m.weatherRate];
         if (defaultWeather != undefined) {
-          return _.uniq(defaultWeather.map(row => +row.weatherId)) as number[];
+          return uniq(defaultWeather.map(row => +row.weatherId)) as number[];
         }
       }),
       startWith([]),

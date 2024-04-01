@@ -4,7 +4,6 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { I18nName } from '@ffxiv-teamcraft/types';
 import { debounceTime, filter, first, map, mergeMap, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
-import * as _ from 'lodash';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
@@ -59,6 +58,7 @@ import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { IpcService } from '../../../core/electron/ipc.service';
+import { uniqBy } from 'lodash';
 
 @Component({
   selector: 'app-recipe-finder',
@@ -184,7 +184,7 @@ export class RecipeFinderComponent implements OnDestroy {
               return canBeAdded && ingredientEntry.amount <= item.amount;
             }));
         }
-        const uniquified = _.uniqBy(possibleEntries, 'recipeId');
+        const uniquified = uniqBy(possibleEntries, 'recipeId');
         const indexedPool = this.pool.reduce((acc, item) => {
           acc[item.id] = item;
           return acc;

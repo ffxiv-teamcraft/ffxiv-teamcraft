@@ -1,14 +1,13 @@
 import { Component, Inject } from '@angular/core';
 import { INVENTORY_OPTIMIZER, InventoryOptimizer } from '../optimizations/inventory-optimizer';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { filter, map, startWith, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { filter, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { InventoryOptimization } from '../inventory-optimization';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
-import * as _ from 'lodash';
-import { uniq, uniqBy } from 'lodash';
+import { chain, uniq, uniqBy } from 'lodash';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HasTooFew } from '../optimizations/has-too-few';
 import { ConsolidateStacks } from '../optimizations/consolidate-stacks';
 import { UnwantedMaterials } from '../optimizations/unwanted-materials';
@@ -33,7 +32,7 @@ import { ClipboardDirective } from '../../../core/clipboard.directive';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
-import { NgIf, NgFor, NgSwitch, NgSwitchCase, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf, NgSwitch, NgSwitchCase } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
@@ -42,11 +41,11 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-    selector: 'app-inventory-optimizer',
-    templateUrl: './inventory-optimizer.component.html',
-    styleUrls: ['./inventory-optimizer.component.less'],
-    standalone: true,
-    imports: [FlexModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzSwitchModule, FormsModule, NgIf, FullpageMessageComponent, NzSpinModule, NgFor, NzCollapseModule, ClipboardDirective, NzIconModule, NgSwitch, NgSwitchCase, NzInputModule, NzSelectModule, NzToolTipModule, NzListModule, ItemIconComponent, ItemNameClipboardDirective, InventoryPositionComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe]
+  selector: 'app-inventory-optimizer',
+  templateUrl: './inventory-optimizer.component.html',
+  styleUrls: ['./inventory-optimizer.component.less'],
+  standalone: true,
+  imports: [FlexModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzSwitchModule, FormsModule, NgIf, FullpageMessageComponent, NzSpinModule, NgFor, NzCollapseModule, ClipboardDirective, NzIconModule, NgSwitch, NgSwitchCase, NzInputModule, NzSelectModule, NzToolTipModule, NzListModule, ItemIconComponent, ItemNameClipboardDirective, InventoryPositionComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class InventoryOptimizerComponent {
 
@@ -74,7 +73,7 @@ export class InventoryOptimizerComponent {
         ),
         this.reloader$
       ]).pipe(
-        switchMapTo(combineLatest([this.inventoryFacade.inventory$, this.pauseTracking$]).pipe(
+        switchMap(() => combineLatest([this.inventoryFacade.inventory$, this.pauseTracking$]).pipe(
           filter(([, pause]) => !pause),
           map(([inventory]) => inventory),
           switchMap(inventory => {
@@ -115,7 +114,7 @@ export class InventoryOptimizerComponent {
                         });
                       return {
                         type: optimizer.getId(),
-                        entries: _.chain(entries)
+                        entries: chain(entries)
                           .groupBy('containerName')
                           .map((value, key) => ({ containerName: key, isRetainer: value[0].isRetainer, items: value }))
                           .value(),

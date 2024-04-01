@@ -4,7 +4,6 @@ import { GearSet } from '@ffxiv-teamcraft/simulator';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
-import * as _ from 'lodash';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
@@ -31,6 +30,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { uniq } from 'lodash';
 
 @Component({
     selector: 'app-gc-supply',
@@ -84,7 +84,7 @@ export class GcSupplyComponent {
             levels[key] === environment.maxLevel ? null : { jobId: +key, level: Math.max(levels[key] - 5, 1) }
           ].filter(row => row !== null);
         }));
-        const uniqLevels = _.uniq(levelsArray.map(entry => entry.level) as number[]);
+        const uniqLevels = uniq(levelsArray.map(entry => entry.level) as number[]);
         return this.lazyData.getRows('gcSupply', ...uniqLevels).pipe(
           map(supply => {
             return levelsArray
