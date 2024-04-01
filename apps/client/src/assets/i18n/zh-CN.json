@@ -1845,6 +1845,9 @@
     },
     "PATCH": {
       "Open_patch_page": "点击此处在数据库中打开新版本的全部改动",
+      "Previous": "Previous ({{version}})",
+      "Next": "Next ({{version}})",
+      "Release_date": "Release date: {{date}}",
       "CONTENT": {
         "Title": "版本内容",
         "Achievements": "成就 ({{amount}})",
@@ -1983,6 +1986,7 @@
     "Exclude": "反选",
     "Select_stat": "选择属性",
     "Level": "等级",
+    "Open_patch_data": "Open patch content for {{version}}",
     "SELECTION_MODE": {
       "List": "清单",
       "Compare": "比较"
