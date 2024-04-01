@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { catchError } from 'rxjs/operators';
-import { ExtractRow, I18nName, Region, SearchFilter, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
+import { ExtractRow, I18nName, SearchFilter, SearchResult, SearchType } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Language } from '../data/language';
 import { environment } from '../../../environments/environment';
@@ -47,18 +47,6 @@ export class DataService {
     if (!this.availableLanguages.includes(this.searchLang)) {
       this.searchLang = 'en';
     }
-  }
-
-  private get isCompatible() {
-    return this.searchLang === 'ko' || this.searchLang === 'zh' && this.settings.region !== Region.China;
-  }
-
-  private get baseUrl() {
-    if (this.settings.region === Region.China) {
-      return 'https://cafemaker.wakingsands.com';
-    }
-
-    return 'https://xivapi.com';
   }
 
   public setSearchLang(lang: Language): void {

@@ -157,6 +157,9 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
         gearset.job = retainer.job;
         inventory.getRetainerGear(retainer.name)
           .forEach(item => {
+            if (!item.itemId) {
+              return;
+            }
             const itemMeldingData = lazyItemMeldingData[item.itemId] || { slots: 0, modifier: 100, overmeld: false };
             const materias = item.materias || [];
             while (materias.length < itemMeldingData.slots) {

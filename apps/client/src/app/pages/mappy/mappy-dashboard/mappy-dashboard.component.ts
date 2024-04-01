@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { BehaviorSubject, combineLatest } from 'rxjs';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
-import { map, switchMapTo, tap } from 'rxjs/operators';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { map, switchMap, tap } from 'rxjs/operators';
 import { subMonths } from 'date-fns';
 import { StaticData } from '../../../lazy-data/static-data';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
@@ -12,7 +12,7 @@ import { I18nPipe } from '../../../core/i18n.pipe';
 import { MapNamePipe } from '../../../pipes/pipes/map-name.pipe';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzCardModule } from 'ng-zorro-antd/card';
-import { NgIf, NgFor, AsyncPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DatePipe, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -22,11 +22,11 @@ import { FlexModule } from '@angular/flex-layout/flex';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 
 @Component({
-    selector: 'app-mappy-dashboard',
-    templateUrl: './mappy-dashboard.component.html',
-    styleUrls: ['./mappy-dashboard.component.less'],
-    standalone: true,
-    imports: [NzDividerModule, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, NzSwitchModule, FormsModule, NgIf, NgFor, NzCardModule, NzTagModule, RouterLink, AsyncPipe, DatePipe, MapNamePipe, I18nPipe, TranslateModule]
+  selector: 'app-mappy-dashboard',
+  templateUrl: './mappy-dashboard.component.html',
+  styleUrls: ['./mappy-dashboard.component.less'],
+  standalone: true,
+  imports: [NzDividerModule, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, NzSwitchModule, FormsModule, NgIf, NgFor, NzCardModule, NzTagModule, RouterLink, AsyncPipe, DatePipe, MapNamePipe, I18nPipe, TranslateModule]
 })
 export class MappyDashboardComponent {
 
@@ -38,7 +38,7 @@ export class MappyDashboardComponent {
 
   public onlyMissingNodes$ = new BehaviorSubject(false);
 
-  public display$ = this.reloader$.pipe(switchMapTo(
+  public display$ = this.reloader$.pipe(switchMap(() =>
     combineLatest([
       this.xivapi.getList('mappy/updates' as XivapiEndpoint, { staging: true }),
       this.xivapi.getList(`mappy/nodes` as XivapiEndpoint, { staging: true }),
@@ -81,8 +81,7 @@ export class MappyDashboardComponent {
   );
 
   constructor(private xivapi: XivapiService,
-              private lazyData: LazyDataFacade, public translate: TranslateService,
-              public settigns: SettingsService) {
+              private lazyData: LazyDataFacade, public translate: TranslateService) {
   }
 
 }

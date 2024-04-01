@@ -1,8 +1,8 @@
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { Observable, OperatorFunction } from 'rxjs';
-import { LazyDataEntries, LazyDataRecordKey } from '../../lazy-data/lazy-data-types';
 import { map, switchMap } from 'rxjs/operators';
 import { safeCombineLatest } from './safe-combine-latest';
+import { LazyDataEntries, LazyDataRecordKey } from '@ffxiv-teamcraft/types';
 
 
 export function withLazyRows<T extends Array<any>, K extends LazyDataRecordKey>(lazyData: LazyDataFacade, entry: K, idMappingFunction: (row: T[0]) => number): OperatorFunction<T, [T, LazyDataEntries[K][]]> {

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UsersComponent } from './users/users.component';
 import { CoreModule } from '../../core/core.module';
 import { PipesModule } from '../../pipes/pipes.module';
-import { XivapiClientModule, XivapiService } from '@xivapi/angular-client';
+import { XivapiClientModule } from '@xivapi/angular-client';
 import { RouterModule, Routes } from '@angular/router';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -24,6 +24,7 @@ import { AllCharactersValidCheck } from './users/integrity-checks/all-characters
 import { AdminComponent } from './admin/admin.component';
 import { AllListsOkCheck } from './users/integrity-checks/all-lists-ok-check';
 import { FirestoreListStorage } from '../../core/database/storage/list/firestore-list-storage';
+import { LodestoneService } from '../../core/api/lodestone.service';
 
 const routes: Routes = [
   {
@@ -42,7 +43,7 @@ const userIntegrityChecks: Provider[] = [
   {
     provide: INTEGRITY_CHECKS,
     useClass: AllCharactersValidCheck,
-    deps: [XivapiService],
+    deps: [LodestoneService],
     multi: true
   },
   {
@@ -54,33 +55,32 @@ const userIntegrityChecks: Provider[] = [
 ];
 
 @NgModule({
-    providers: [
-        ...userIntegrityChecks
-    ],
-    imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        CoreModule,
-        PipesModule,
-        XivapiClientModule,
-        RouterModule.forChild(routes),
-        FlexLayoutModule,
-        NzSelectModule,
-        NzFormModule,
-        NzAutocompleteModule,
-        NzInputModule,
-        NzListModule,
-        NzIconModule,
-        UserAvatarModule,
-        FullpageMessageModule,
-        NzButtonModule,
-        NzToolTipModule,
-        NzTabsModule,
-        UsersComponent,
-        IntegrityCheckPopupComponent,
-        AdminComponent
-    ]
+  providers: [
+    ...userIntegrityChecks
+  ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CoreModule,
+    PipesModule,
+    RouterModule.forChild(routes),
+    FlexLayoutModule,
+    NzSelectModule,
+    NzFormModule,
+    NzAutocompleteModule,
+    NzInputModule,
+    NzListModule,
+    NzIconModule,
+    UserAvatarModule,
+    FullpageMessageModule,
+    NzButtonModule,
+    NzToolTipModule,
+    NzTabsModule,
+    UsersComponent,
+    IntegrityCheckPopupComponent,
+    AdminComponent
+  ]
 })
 export class AdminModule {
 }

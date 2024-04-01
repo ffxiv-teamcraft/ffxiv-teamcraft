@@ -26,7 +26,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MateriaSlotIconComponent } from './materia-slot-icon/materia-slot-icon.component';
 import { StatPipe } from './stat.pipe';
 import { AriyalaImportPopupComponent } from './ariyala-import-popup/ariyala-import-popup.component';
-import { LodestoneImportPopupComponent } from './lodestone-import-popup/lodestone-import-popup.component';
 import { GearsetComparatorPopupComponent } from './gearset-comparator-popup/gearset-comparator-popup.component';
 import { ItemIconModule } from '../item-icon/item-icon.module';
 import { ImportFromPcapPopupComponent } from './import-from-pcap-popup/import-from-pcap-popup.component';
@@ -42,7 +41,7 @@ import { FavoritesModule } from '../favorites/favorites.module';
 import { EtroImportPopupComponent } from './etro-import-popup/etro-import-popup.component';
 
 @NgModule({
-    imports: [
+  imports: [
     CommonModule,
     NzFormModule,
     NzSelectModule,
@@ -73,7 +72,6 @@ import { EtroImportPopupComponent } from './etro-import-popup/etro-import-popup.
     MateriaSlotIconComponent,
     StatPipe,
     AriyalaImportPopupComponent,
-    LodestoneImportPopupComponent,
     GearsetComparatorPopupComponent,
     ImportFromPcapPopupComponent,
     GearsetRowComponent,
@@ -82,15 +80,7 @@ import { EtroImportPopupComponent } from './etro-import-popup/etro-import-popup.
     StatsPopupComponent,
     SyncFromPcapPopupComponent,
     EtroImportPopupComponent
-],
-    exports: [
-        MateriaSlotIconComponent,
-        StatPipe,
-        GearsetRowComponent,
-        GearsetCostPopupComponent,
-        ItemCapsTableComponent,
-        StatsPopupComponent
-    ]
+  ],
 })
 export class GearsetsModule {
 }

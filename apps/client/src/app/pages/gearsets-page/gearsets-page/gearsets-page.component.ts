@@ -145,10 +145,6 @@ export class GearsetsPageComponent extends TeamcraftComponent implements OnInit 
     this.gearsetsFacade.syncFromPcap();
   }
 
-  importLodestoneGearset(): void {
-    this.gearsetsFacade.importLodestoneGearset();
-  }
-
   drop(event: any, root: TeamcraftGearset[]): void {
     moveItemInArray(root, event.previousIndex, event.currentIndex);
     root.forEach((row, i) => {

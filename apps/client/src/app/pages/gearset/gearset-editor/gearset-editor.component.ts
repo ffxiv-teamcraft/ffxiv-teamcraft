@@ -1,28 +1,14 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
-import {
-  distinctUntilChanged,
-  distinctUntilKeyChanged,
-  expand,
-  filter,
-  first,
-  last,
-  map,
-  shareReplay,
-  switchMap,
-  switchMapTo,
-  takeUntil,
-  tap
-} from 'rxjs/operators';
+import { distinctUntilChanged, distinctUntilKeyChanged, filter, first, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
-import { BehaviorSubject, combineLatest, EMPTY, Observable, of, ReplaySubject, timer } from 'rxjs';
-import { SearchAlgo, SearchIndex, XivapiSearchFilter, XivapiService } from '@xivapi/angular-client';
+import { BehaviorSubject, combineLatest, Observable, of, ReplaySubject } from 'rxjs';
 import { chunk } from 'lodash';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { MateriasPopupComponent } from '../materias-popup/materias-popup.component';
 import { StatsService } from '../../../modules/gearsets/stats.service';
@@ -33,7 +19,6 @@ import { IpcService } from '../../../core/electron/ipc.service';
 import { ImportFromPcapPopupComponent } from '../../../modules/gearsets/import-from-pcap-popup/import-from-pcap-popup.component';
 import { GearsetCostPopupComponent } from '../../../modules/gearsets/gearset-cost-popup/gearset-cost-popup.component';
 import { GearsetCreationPopupComponent } from '../../../modules/gearsets/gearset-creation-popup/gearset-creation-popup.component';
-import { XivapiSearchOptions } from '@xivapi/angular-client/model';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { Memoized } from '../../../core/decorators/memoized';
@@ -64,19 +49,19 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe, NgFor, NgIf } from '@angular/common';
+import { SearchFilter, SearchType } from '@ffxiv-teamcraft/types';
+import { DataService } from '../../../core/api/data.service';
 
 @Component({
-    selector: 'app-gearset-editor',
-    templateUrl: './gearset-editor.component.html',
-    styleUrls: ['./gearset-editor.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [NgIf, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzPopconfirmModule, RouterLink, NzAlertModule, NzCollapseModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NzInputNumberModule, NgFor, NzCardModule, NzTagModule, GearsetEditorRowComponent, NzDividerModule, PageLoaderComponent, NzSelectModule, AsyncPipe, DecimalPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, FloorPipe, JobUnicodePipe, FoodBonusesPipePipe, StatDisplayPipe]
+  selector: 'app-gearset-editor',
+  templateUrl: './gearset-editor.component.html',
+  styleUrls: ['./gearset-editor.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgIf, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzPopconfirmModule, RouterLink, NzAlertModule, NzCollapseModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NzInputNumberModule, NgFor, NzCardModule, NzTagModule, GearsetEditorRowComponent, NzDividerModule, PageLoaderComponent, NzSelectModule, AsyncPipe, DecimalPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, FloorPipe, JobUnicodePipe, FoodBonusesPipePipe, StatDisplayPipe]
 })
 export class GearsetEditorComponent extends TeamcraftComponent implements OnInit {
-
-  public pcapToggle = false;
 
   itemFiltersform: UntypedFormGroup = this.fb.group({
     ilvlMin: [this.environment.maxIlvl - 30],
@@ -104,7 +89,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   missingItems: boolean;
 
-  public filters$ = new ReplaySubject<XivapiSearchFilter[]>();
+  public filters$ = new ReplaySubject<SearchFilter[]>();
 
   public gearset$: Observable<TeamcraftGearset> = this.gearsetsFacade.selectedGearset$;
 
@@ -168,129 +153,51 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   public items$: Observable<any[]> = combineLatest([this.filters$, this.job$]).pipe(
     withLazyData(this.lazyData, 'jobAbbr'),
     switchMap(([[filters, job], jobAbbr]) => {
-      const xivapiFilters: XivapiSearchFilter[] = [
+      const rawFilters: SearchFilter[] = [
         ...filters,
         {
-          column: `ClassJobCategory.${jobAbbr[job].en}`,
-          operator: '=',
+          name: `cjc.${jobAbbr[job].en}`,
           value: 1
         }
       ];
+
       const requests = [
-        this.fullSearchResults({
-          indexes: [SearchIndex.ITEM],
-          string_algo: SearchAlgo.QUERY_STRING,
-          string: '-Dated*',
-          string_column: 'Name_en',
-          filters: xivapiFilters,
-          columns: [
-            'ID',
-            'Name_*',
-            'Icon',
-            'EquipSlotCategory',
-            'BaseParamModifier',
-            'IsAdvancedMeldingPermitted',
-            'BaseParam*',
-            'MateriaSlotCount',
-            'LevelItem',
-            'LevelEquip',
-            'Stats',
-            'CanBeHq'
-          ],
-          limit: 250
-        })
+        this.dataService.search('', SearchType.ITEM, rawFilters, ['ilvl', 'desc'])
       ];
       if (job >= 8 && job <= 15) {
-        requests.push(this.xivapi.search({
-          indexes: [SearchIndex.ITEM],
-          filters: [
-            {
-              column: 'EquipSlotCategory.SoulCrystal',
-              operator: '=',
-              value: 1
-            }, {
-              column: 'ItemUICategoryTargetID',
-              operator: '=',
-              value: 62
-            },
-            {
-              column: `ClassJobCategory.${jobAbbr[job].en}`,
-              operator: '=',
-              value: 1
-            }
-          ],
-          columns: [
-            'ID',
-            'Name_*',
-            'Icon',
-            'EquipSlotCategory',
-            'BaseParamModifier',
-            'IsAdvancedMeldingPermitted',
-            'MateriaSlotCount',
-            'LevelItem',
-            'LevelEquip',
-            'Stats',
-            'CanBeHq'
-          ],
-          limit: 250
-        }));
+        // Soul Crystal
+        requests.push(this.dataService.search('', SearchType.ITEM, [
+          { name: 'category', value: 62 },
+          { name: `cjc.${jobAbbr[job].en}`, value: 1 }
+        ], ['ilvl', 'desc']));
       } else if (job === 18) {
         // If it's fisher, add spearfishing gig
-        requests.push(this.xivapi.search({
-          indexes: [SearchIndex.ITEM],
-          filters: [
-            {
-              column: 'ID',
-              operator: '=',
-              value: 17726
-            }
-          ],
-          columns: [
-            'ID',
-            'Name_*',
-            'Icon',
-            'EquipSlotCategory',
-            'BaseParamModifier',
-            'IsAdvancedMeldingPermitted',
-            'MateriaSlotCount',
-            'LevelItem',
-            'LevelEquip',
-            'Stats',
-            'CanBeHq'
-          ],
-          limit: 250
-        }));
+        requests.push(this.dataService.search('', SearchType.ITEM, [
+          { name: 'id', value: 17726 }
+        ], ['ilvl', 'desc']));
       } else {
-        requests.push(of({ Results: [] }));
+        requests.push(of([]));
       }
       return combineLatest(requests);
     }),
     switchMap(([response, crystal]) => {
       return this.gearset$.pipe(
-        switchMap(gearset => {
-          return this.lazyData.getEntry('ilvls')
-            .pipe(
-              map(ilvls => {
-                return [gearset, ilvls];
-              })
-            );
-        }),
-        map(([gearset, lazyIlvls]: [TeamcraftGearset, LazyData['ilvls']]) => {
+        withLazyData(this.lazyData, 'ilvls', 'itemEquipSlotCategory', 'itemStats', 'equipSlotCategories', 'hqFlags', 'itemMeldingData'),
+        map(([gearset, lazyIlvls, itemEquipSlotCategory, stats, equipSlotCategories, hqFlags, itemMeldingData]) => {
           const relevantStats = this.statsService.getRelevantBaseStats(gearset.job);
-          const prepared = [...response.Results, ...crystal.Results]
+          const prepared = [...response, ...crystal]
             .filter(item => {
-              return (this.environment.gameVersion < 6 || item.EquipSlotCategory.ID !== 6)
+              return (this.environment.gameVersion < 6 || itemEquipSlotCategory[item.itemId] !== 6)
                 && relevantStats.some(stat => {
                   if (!gearset.isCombatSet()) {
-                    return item.Stats && Object.values<any>(item.Stats).some(value => value.ID === stat);
+                    return stats[item.itemId] && Object.values(stats[item.itemId]).some(value => value.ID === stat);
                   }
                   return true;
                 });
             })
             .reduce((resArray, item) => {
-              const slotName = Object.keys(item.EquipSlotCategory)
-                .filter(key => key !== 'ID')
-                .find(key => item.EquipSlotCategory[key] === 1);
+              const slotName = Object.keys(equipSlotCategories[itemEquipSlotCategory[item.itemId]])
+                .find(key => equipSlotCategories[itemEquipSlotCategory[item.itemId]][key] === 1);
 
               const itemSlotNames = [slotName];
 
@@ -304,7 +211,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
                 if (arrayEntry === undefined) {
                   resArray.push({
                     name: itemSlotName,
-                    index: itemSlotName === 'FingerR' ? 12.1 : item.EquipSlotCategory.ID,
+                    index: itemSlotName === 'FingerR' ? 12.1 : itemEquipSlotCategory[item.itemId],
                     property: propertyName,
                     items: []
                   });
@@ -314,17 +221,17 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
                 const itemEntry = {
                   item: item,
                   equipmentPiece: {
-                    itemId: item.ID,
-                    hq: item.CanBeHq === 1,
-                    materias: this.getMaterias(item, propertyName),
-                    materiaSlots: item.MateriaSlotCount,
-                    canOvermeld: item.IsAdvancedMeldingPermitted === 1
+                    itemId: item.itemId,
+                    hq: hqFlags[item.itemId] === 1,
+                    materias: this.getMaterias(item, propertyName, itemMeldingData),
+                    materiaSlots: itemMeldingData[item.itemId].slots,
+                    canOvermeld: itemMeldingData[item.itemId].overmeld
                   }
                 };
 
                 const equipmentPieceFromGearset: EquipmentPiece = gearset[propertyName] as EquipmentPiece;
 
-                if (equipmentPieceFromGearset && equipmentPieceFromGearset.itemId === item.ID) {
+                if (equipmentPieceFromGearset && equipmentPieceFromGearset.itemId === item.itemId) {
                   itemEntry.equipmentPiece = equipmentPieceFromGearset;
                 }
 
@@ -375,11 +282,12 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   );
 
   constructor(private fb: UntypedFormBuilder, private gearsetsFacade: GearsetsFacade,
-              private activatedRoute: ActivatedRoute, private xivapi: XivapiService,
+              private activatedRoute: ActivatedRoute,
               private lazyData: LazyDataFacade, private cd: ChangeDetectorRef,
               public translate: TranslateService, private dialog: NzModalService,
               private statsService: StatsService, private i18n: I18nToolsService,
-              private ipc: IpcService, private environment: EnvironmentService) {
+              public ipc: IpcService, private environment: EnvironmentService,
+              private dataService: DataService) {
     super();
     this.gearset$.pipe(
       distinctUntilKeyChanged('$key'),
@@ -430,9 +338,6 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
           };
         }
       });
-    });
-    this.ipc.pcapToggle$.subscribe((value) => {
-      this.pcapToggle = value;
     });
   }
 
@@ -518,33 +423,23 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   }
 
   submitFilters(): void {
-    localStorage.setItem('gearset:filters', JSON.stringify(this.itemFiltersform.getRawValue()));
-    const controls = this.itemFiltersform.controls;
-    const filters: XivapiSearchFilter[] = [
+    const rawValue = this.itemFiltersform.getRawValue();
+    localStorage.setItem('gearset:filters', JSON.stringify(rawValue));
+    const filters: SearchFilter[] = [
       {
-        column: 'LevelItem',
-        operator: '>=',
-        value: controls.ilvlMin.value
+        name: 'ilvl',
+        minMax: true,
+        value: { min: rawValue.ilvlMin, max: rawValue.ilvlMax }
       },
       {
-        column: 'LevelItem',
-        operator: '<=',
-        value: controls.ilvlMax.value
+        name: 'elvl',
+        minMax: true,
+        value: { min: rawValue.elvlMin, max: rawValue.elvlMax }
       },
       {
-        column: 'LevelEquip',
-        operator: '>=',
-        value: controls.elvlMin.value
-      },
-      {
-        column: 'LevelEquip',
-        operator: '<=',
-        value: controls.elvlMax.value
-      },
-      {
-        column: 'EquipSlotCategoryTargetID',
-        operator: '>',
-        value: 0
+        name: 'category',
+        minMax: true,
+        value: { min: 0, max: 999999999 }
       }
     ];
     this.filters$.next(filters);
@@ -678,44 +573,16 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     return index;
   }
 
-  private fullSearchResults(options: XivapiSearchOptions): Observable<{ Results: any[] }> {
-    return this.xivapi.search(options).pipe(
-      expand((response) => {
-        if (response.Pagination.PageNext) {
-          return timer(200).pipe(
-            first(),
-            switchMapTo(this.xivapi.search({
-                ...options,
-                page: response.Pagination.PageNext
-              }).pipe(
-                map(res => {
-                  return {
-                    ...res,
-                    Results: [
-                      ...response.Results,
-                      ...res.Results
-                    ]
-                  };
-                })
-              )
-            )
-          );
-        }
-        return EMPTY;
-      }),
-      last()
-    );
-  }
-
-  private getMaterias(item: any, propertyName: string): number[] {
-    if (this.materiaCache[`${item.ID}:${propertyName}`]) {
-      return this.materiaCache[`${item.ID}:${propertyName}`].materias;
+  private getMaterias(item: any, propertyName: string, itemMeldingData: LazyData['itemMeldingData']): number[] {
+    if (this.materiaCache[`${item.itemId}:${propertyName}`]) {
+      return this.materiaCache[`${item.itemId}:${propertyName}`].materias;
     }
-    if (item.MateriaSlotCount > 0) {
-      if (item.IsAdvancedMeldingPermitted === 1) {
+    const meldingData = itemMeldingData[item.itemId];
+    if (meldingData.slots > 0) {
+      if (meldingData.overmeld) {
         return [0, 0, 0, 0, 0];
       }
-      return new Array(item.MateriaSlotCount).fill(0);
+      return new Array(meldingData.slots).fill(0);
     }
     return [];
   }
