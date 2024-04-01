@@ -1845,6 +1845,9 @@
     },
     "PATCH": {
       "Open_patch_page": "Cliquez ici pour ouvrir les modifications de patch dans la base de données",
+      "Previous": "Previous ({{version}})",
+      "Next": "Next ({{version}})",
+      "Release_date": "Release date: {{date}}",
       "CONTENT": {
         "Title": "Contenu du patch",
         "Achievements": "Hauts faits ({{amount}})",
@@ -1983,6 +1986,7 @@
     "Exclude": "Exclure",
     "Select_stat": "Sélectionnez une stat",
     "Level": "Niveau",
+    "Open_patch_data": "Open patch content for {{version}}",
     "SELECTION_MODE": {
       "List": "Liste",
       "Compare": "Comparer"
