@@ -1845,6 +1845,9 @@
     },
     "PATCH": {
       "Open_patch_page": "Haga clic aquí para abrir cambios de parche completos en la base de datos",
+      "Previous": "Previous ({{version}})",
+      "Next": "Next ({{version}})",
+      "Release_date": "Release date: {{date}}",
       "CONTENT": {
         "Title": "Contenido del parche",
         "Achievements": "Logros ({{amount}})",
@@ -1983,6 +1986,7 @@
     "Exclude": "Exclude",
     "Select_stat": "Select a stat",
     "Level": "Level",
+    "Open_patch_data": "Open patch content for {{version}}",
     "SELECTION_MODE": {
       "List": "List",
       "Compare": "Compare"
