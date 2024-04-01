@@ -2,18 +2,17 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Retainer, RetainersService } from '../../../core/electron/retainers.service';
 import { map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { combineLatest, Observable, of, Subject } from 'rxjs';
-import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { StatsService } from '../../../modules/gearsets/stats.service';
 import { BaseParam } from '@ffxiv-teamcraft/types';
 import { UniversalisService } from '../../../core/api/universalis.service';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import * as _ from 'lodash';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { SpendingEntry } from '../../currency-spending/spending-entry';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
@@ -35,17 +34,18 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe, NgFor, NgIf } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { PlatformService } from '../../../core/tools/platform.service';
+import { chunk } from 'lodash';
 
 @Component({
-    selector: 'app-retainer-ventures',
-    templateUrl: './retainer-ventures.component.html',
-    styleUrls: ['./retainer-ventures.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [FlexModule, NgIf, NzAlertModule, NgFor, NzSelectModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputNumberModule, NzButtonModule, NzWaveModule, NzIconModule, PageLoaderComponent, ItemIconComponent, DbButtonComponent, MarketboardIconComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, LazyIconPipe, JobUnicodePipe]
+  selector: 'app-retainer-ventures',
+  templateUrl: './retainer-ventures.component.html',
+  styleUrls: ['./retainer-ventures.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [FlexModule, NgIf, NzAlertModule, NgFor, NzSelectModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputNumberModule, NzButtonModule, NzWaveModule, NzIconModule, PageLoaderComponent, ItemIconComponent, DbButtonComponent, MarketboardIconComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, LazyIconPipe, JobUnicodePipe]
 })
 export class RetainerVenturesComponent extends TeamcraftComponent implements OnInit {
 
@@ -91,7 +91,7 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
             });
         }),
         switchMap(tasks => {
-          const batches = _.chunk(tasks, 100)
+          const batches = chunk(tasks, 100)
             .map((chunk: any) => {
               return this.universalis.getServerPrices(
                 filters.server,
@@ -157,7 +157,7 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
         gearset.job = retainer.job;
         inventory.getRetainerGear(retainer.name)
           .forEach(item => {
-            const itemMeldingData = lazyItemMeldingData[item.itemId];
+            const itemMeldingData = lazyItemMeldingData[item.itemId] || { slots: 0, modifier: 100, overmeld: false };
             const materias = item.materias || [];
             while (materias.length < itemMeldingData.slots) {
               materias.push(0);
