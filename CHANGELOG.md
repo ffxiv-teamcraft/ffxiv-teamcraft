@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.34](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.33...v11.0.34) (2024-04-01)
+
+
+### Features
+
+* **db:** allagan reports import ([a8d4404](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a8d440478df80430dba0dc10c849d112d8e829ea))
+* **db:** better patch navigation and new direct latest patch link in search page ([e955464](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e9554644e33407a8fa53d2bd0f7ac9cb1e2c463c))
+* **db:** show misses by default in spot pages ([4cecddd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4cecdddffc7722add5e32b32b03c63ed51269cc0))
+* **item-picker:** add nice spinboxes to number input ([a0f9eb0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a0f9eb081d841001a81b990bc380fb1649b5ec44))
+
+
+### Bug Fixes
+
+* **alarms:** alarms ringing on despawn too ([a799783](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a799783f62d5339d8fc6fa2432ef0403a1a7fe9c))
+* **desktop:** retainers list sometimes not loading ([1635658](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1635658e5e3110c31c9b6d5330a65ba143a53ea0))
+* **list:** hide completed timed rows in map ([c1f45d0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1f45d0a81b9de65c2c7392951fcea194b0a15d7))
+* **recipe-finder:** fixed import from clipboard on desktop env ([83f5bb0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/83f5bb0dab6d110925715f08b2aae0bf311a7425))
+* **reporters:** don't load fishing reporter on web ([f9c1a05](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f9c1a0549cc3b98de0bbb825c5f1f795dbb04b35))
+* **simulator:** simulator not opening on very first anonymous open ([8b43cb3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8b43cb3a839884c5d4f5cc5f21ff44d6ee271ba2))
+
 ### [11.0.33](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.32...v11.0.33) (2024-03-27)
 
 
