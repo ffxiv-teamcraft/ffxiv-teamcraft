@@ -1845,6 +1845,9 @@
     },
     "PATCH": {
       "Open_patch_page": "Нажмите здесь чтобы открыть полный список изменений патча",
+      "Previous": "Previous ({{version}})",
+      "Next": "Next ({{version}})",
+      "Release_date": "Release date: {{date}}",
       "CONTENT": {
         "Title": "Содержимое патча",
         "Achievements": "Достижения ({{amount}})",
@@ -1983,6 +1986,7 @@
     "Exclude": "Исключить",
     "Select_stat": "Выберите параметр",
     "Level": "Уровень",
+    "Open_patch_data": "Open patch content for {{version}}",
     "SELECTION_MODE": {
       "List": "List",
       "Compare": "Compare"
