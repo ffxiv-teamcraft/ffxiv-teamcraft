@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { Observable } from 'rxjs';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { combineLatest, Observable } from 'rxjs';
+import { ActivatedRoute, ParamMap, Router, RouterLink } from '@angular/router';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
@@ -31,22 +31,62 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display/i18n-display.component';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe, DatePipe, NgIf } from '@angular/common';
+import { LazyPatchContent } from '@ffxiv-teamcraft/data/model/lazy-patch-content';
+import { NzButtonComponent } from 'ng-zorro-antd/button';
+import { NzIconDirective } from 'ng-zorro-antd/icon';
 
 @Component({
-    selector: 'app-patch',
-    templateUrl: './patch.component.html',
-    styleUrls: ['./patch.component.less'],
-    standalone: true,
-    imports: [NgIf, FlexModule, I18nDisplayComponent, NzDividerModule, NzCardModule, NzListModule, LazyScrollComponent, DbButtonComponent, ItemIconComponent, DbCommentsComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, IfMobilePipe, XivapiIconPipe, XivapiL12nPipe, LazyIconPipe, MapIdPipe, LazyRowPipe]
+  selector: 'app-patch',
+  templateUrl: './patch.component.html',
+  styleUrls: ['./patch.component.less'],
+  standalone: true,
+  imports: [NgIf, FlexModule, I18nDisplayComponent, RouterLink, NzDividerModule, NzIconDirective, NzCardModule, NzListModule, LazyScrollComponent, DbButtonComponent, ItemIconComponent, DbCommentsComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, ActionIconPipe, ActionNamePipe, IfMobilePipe, XivapiIconPipe, XivapiL12nPipe, LazyIconPipe, MapIdPipe, LazyRowPipe, NzButtonComponent, DatePipe]
 })
 export class PatchComponent extends TeamcraftPageComponent {
 
-  public patch$: Observable<LazyPatchName>;
+  public patch$: Observable<LazyPatchName & LazyPatchContent> = this.route.paramMap.pipe(
+    filter(params => params.get('slug') !== null),
+    map(params => +params.get('patchId')),
+    switchMap(patchId => {
+      return this.lazyData.patches$.pipe(
+        map(patches => {
+          return [patchId, patches] as [number, LazyPatchName[]];
+        })
+      );
+    }),
+    map(([id, patches]) => {
+      return patches.find(p => p.id === id);
+    }),
+    switchMap(patch => {
+      return this.lazyData.getRow('patchContent', patch.id).pipe(
+        map(patchContent => {
+          return {
+            ...patch,
+            ...patchContent
+          };
+
+        })
+      );
+    }),
+    shareReplay({ bufferSize: 1, refCount: true })
+  );
+
+  patches$ = this.lazyData.patches$;
+
+  previousAndNext$ = combineLatest([this.patch$, this.patches$]).pipe(
+    map(([patch, patches]) => {
+      const patchIndex = patches.findIndex(p => p.id === patch.id);
+      return {
+        previous: patches[patchIndex - 1],
+        next: patches[patchIndex + 1]
+      };
+    })
+  );
 
   public fallbackIcon = 'https://img.finalfantasyxiv.com/lds/h/k/aL011xxU_6LyWUio1Gi2Fx7-qo.svg';
 
-  constructor(private route: ActivatedRoute, private i18n: I18nToolsService, private translate: TranslateService,
+  constructor(private route: ActivatedRoute, private i18n: I18nToolsService, public translate: TranslateService,
               private router: Router, private lazyData: LazyDataFacade,
               public settings: SettingsService, seo: SeoService) {
     super(seo);
@@ -81,36 +121,6 @@ export class PatchComponent extends TeamcraftPageComponent {
           );
         }
       });
-
-    const patchId$ = this.route.paramMap.pipe(
-      filter(params => params.get('slug') !== null),
-      map(params => +params.get('patchId'))
-    );
-
-    this.patch$ = patchId$.pipe(
-      switchMap(patchId => {
-        return this.lazyData.patches$.pipe(
-          map(patches => {
-            return [patchId, patches] as [number, LazyPatchName[]];
-          })
-        );
-      }),
-      map(([id, patches]) => {
-        return patches.find(p => p.id === id);
-      }),
-      switchMap(patch => {
-        return this.lazyData.getRow('patchContent', patch.id).pipe(
-          map(patchContent => {
-            return {
-              ...patch,
-              ...patchContent
-            };
-
-          })
-        );
-      }),
-      shareReplay({ bufferSize: 1, refCount: true })
-    );
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
