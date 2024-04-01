@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
-import { map, mapTo, switchMap, takeUntil } from 'rxjs/operators';
+import { map, switchMap, takeUntil } from 'rxjs/operators';
 import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
 import { MapService } from '../../../modules/map/map.service';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { SettingsService } from '../../../modules/settings/settings.service';
@@ -27,15 +27,15 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
-import { NgIf, NgFor, AsyncPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DatePipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
-    selector: 'app-mappy',
-    templateUrl: './mappy.component.html',
-    styleUrls: ['./mappy.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [NgIf, NzDividerModule, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, NgFor, NzToolTipModule, NzStatisticModule, NzEmptyModule, NzPopconfirmModule, PageLoaderComponent, AsyncPipe, DatePipe, ItemNamePipe, MapNamePipe, I18nPipe, TranslateModule, I18nRowPipe]
+  selector: 'app-mappy',
+  templateUrl: './mappy.component.html',
+  styleUrls: ['./mappy.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgIf, NzDividerModule, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, NgFor, NzToolTipModule, NzStatisticModule, NzEmptyModule, NzPopconfirmModule, PageLoaderComponent, AsyncPipe, DatePipe, ItemNamePipe, MapNamePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class MappyComponent extends TeamcraftComponent {
 
@@ -43,7 +43,7 @@ export class MappyComponent extends TeamcraftComponent {
 
   display$ = this.activatedRoute.paramMap.pipe(
     switchMap(params => {
-      return this.reloader$.pipe(mapTo(params));
+      return this.reloader$.pipe(map(() => params));
     }),
     switchMap(params => {
       const mapId = +params.get('mapId');

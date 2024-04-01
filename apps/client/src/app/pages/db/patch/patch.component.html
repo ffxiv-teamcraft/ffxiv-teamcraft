@@ -6,18 +6,29 @@
          fxLayoutAlign="space-between" fxLayoutGap="10px">
       <div class="icon-block" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="flex-start center"
            fxLayoutGap="5px">
-        <img [src]="patch.Banner || fallbackIcon" alt="{{patch | xivapiL12n: 'patchs' | i18n}}"
+        <img [src]="patch.banner || fallbackIcon" alt="{{patch | i18n}}"
              class="patch-banner" fxFlex="0 0 auto">
         <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-          <h2 class="item-name">{{patch | xivapiL12n: 'patchs' | i18n}}</h2>
+          <h2 class="item-name">{{patch | i18n}}</h2>
+          <div class="item-kind">{{'DB.PATCH.Release_date' | translate:{date: (patch.release * 1000) | date:null:null:translate.currentLang} }}</div>
         </div>
       </div>
     </div>
-    <div fxFlex="1 1 auto">
+    <div fxFlex="1 1 auto" class="flex-row justify-center">
+      <div *ngIf="previousAndNext$ | async as nav" class="flex-row gap-10">
+        <div>
+          <a routerLink="/db/{{translate.currentLang}}/patch/{{nav.previous.id}}" nz-button nzType="primary" nzGhost *ngIf="nav.previous"><span nz-icon nzType="arrow-left" nzTheme="outline"></span>{{'DB.PATCH.Previous' | translate:{version: nav.previous.version} }}</a>
+        </div>
+        <div>
+          <a routerLink="/db/{{translate.currentLang}}/patch/{{nav.next.id}}" nz-button nzType="primary" nzGhost *ngIf="nav.next">{{'DB.PATCH.Next' | translate:{version: nav.next.version} }}<span nz-icon nzType="arrow-right" nzTheme="outline"></span></a>
+        </div>
+      </div>
     </div>
     <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
-                      [value]="patch | xivapiL12n: 'patchs'"></app-i18n-display>
+                      [value]="patch"></app-i18n-display>
   </div>
+
+  <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="patch.id" type="patch"></app-db-comments>
 
   <nz-divider [nzText]="'DB.PATCH.CONTENT.Title' | translate" nzOrientation="left"></nz-divider>
 
@@ -113,7 +124,7 @@
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
                 [nzAvatar]="avatar"
-                [nzTitle]="entry | i18nRow:'instances' | i18n">
+                [nzTitle]="entry | i18nRow:'instances' | i18n: '???'">
                 <ng-template #avatar>
                   <img [src]="entry | lazyRow:'instances':'icon' | async" alt="" class="img-icon">
                 </ng-template>
@@ -280,10 +291,8 @@
       </nz-list>
     </nz-card>
   </div>
-
-  <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="patch.ID" type="patch"></app-db-comments>
+  <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="patch.id" type="patch"></app-db-comments>
 </div>
-<app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="patch.ID" type="patch"></app-db-comments>
 <ng-template #loader>
   <app-page-loader></app-page-loader>
 </ng-template>

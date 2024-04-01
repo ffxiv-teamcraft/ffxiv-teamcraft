@@ -6,7 +6,6 @@ import { bufferCount, catchError, distinctUntilChanged, filter, first, map, shar
 import { AuthFacade } from '../../+state/auth.facade';
 import { IpcService } from '../electron/ipc.service';
 import { SettingsService } from '../../modules/settings/settings.service';
-import * as _ from 'lodash';
 import type {
   MarketBoardItemListing,
   MarketBoardItemListingHistory,
@@ -17,6 +16,7 @@ import type {
 } from '@ffxiv-teamcraft/pcap-ffxiv/models';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../rxjs/with-lazy-data';
+import { chunk, compact } from 'lodash';
 
 @Injectable({ providedIn: 'root' })
 export class UniversalisService {
@@ -95,7 +95,7 @@ export class UniversalisService {
     if (server.toLowerCase().startsWith('korean server')) {
       server = server.toLowerCase().replace('korean server (', '').replace(')', '');
     }
-    const chunks = _.chunk(itemIds, 100);
+    const chunks = chunk(itemIds, 100);
     return combineLatest(chunks.map(chunk => {
       return this.http.get<any>(`https://universalis.app/api/${server}/${chunk.join(',')}`)
         .pipe(
@@ -147,7 +147,7 @@ export class UniversalisService {
   }
 
   public getServerHistoryPrices(server: string, ...itemIds: number[]): Observable<MarketboardItem[]> {
-    const chunks = _.chunk(itemIds, 100);
+    const chunks = chunk(itemIds, 100);
     return combineLatest(chunks.map(chunk => {
       const params = new HttpParams().set('entriesWithin', 86400 * 7);
       return this.http.get<any>(`https://universalis.app/api/v2/history/${server}/${chunk.join(',')}`, { params })
@@ -237,7 +237,7 @@ export class UniversalisService {
         const data = {
           worldID: worldId,
           uploaderID: cid,
-          itemIDs: _.compact(packet.items.map((item) => {
+          itemIDs: compact(packet.items.map((item) => {
             if (item.itemCatalogId && !item.quantity) {
               return item.itemCatalogId;
             }

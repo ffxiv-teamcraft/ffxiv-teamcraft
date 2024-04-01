@@ -17,7 +17,7 @@ import {
 } from 'rxjs/operators';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { AuthFacade } from '../../../../+state/auth.facade';
-import { UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ConsumablesService } from '../../model/consumables.service';
 import { FreeCompanyActionsService } from '../../model/free-company-actions.service';
 import { Consumable } from '../../model/consumable';
@@ -32,7 +32,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TextQuestionPopupComponent } from '../../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Language } from '../../../../core/data/language';
 import { MacroPopupComponent } from '../macro-popup/macro-popup.component';
 import { SimulationMinStatsPopupComponent } from '../simulation-min-stats-popup/simulation-min-stats-popup.component';
@@ -65,7 +65,7 @@ import {
   SimulationService,
   StepState
 } from '../../../../core/simulation/simulation.service';
-import { CdkDragDrop, CdkDragEnter, CdkDropList, DragRef, moveItemInArray, CdkDropListGroup, CdkDrag } from '@angular/cdk/drag-drop';
+import { CdkDrag, CdkDragDrop, CdkDragEnter, CdkDropList, CdkDropListGroup, DragRef, moveItemInArray } from '@angular/cdk/drag-drop';
 import { RouteConsumables } from '../../model/route-consumables';
 import { CommunityRotationFinderPopupComponent } from '../community-rotation-finder-popup/community-rotation-finder-popup.component';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
@@ -110,14 +110,14 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 
 @Component({
-    selector: 'app-simulator',
-    templateUrl: './simulator.component.html',
-    styleUrls: ['./simulator.component.less'],
-    standalone: true,
-    imports: [NgIf, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, TutorialStepDirective, NzIconModule, NzPopconfirmModule, ClipboardDirective, NzBadgeModule, FavoriteButtonComponent, NzTagModule, NzSwitchModule, FormsModule, NzCollapseModule, NzSelectModule, NgFor, NzAlertModule, ReactiveFormsModule, NzGridModule, NzFormModule, NzInputModule, NzInputNumberModule, NzCheckboxModule, NzListModule, ItemIconComponent, SimulationResultComponent, NzCardModule, CdkDropListGroup, NgStyle, ExtendedModule, CdkDropList, ActionComponent, CdkDrag, NgSwitch, NgSwitchCase, NgSwitchDefault, FullpageMessageComponent, AsyncPipe, TranslateModule, ItemNamePipe, FloorPipe, ActionNamePipe, IfMobilePipe, JobUnicodePipe, I18nPipe, I18nRowPipe]
+  selector: 'app-simulator',
+  templateUrl: './simulator.component.html',
+  styleUrls: ['./simulator.component.less'],
+  standalone: true,
+  imports: [NgIf, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, TutorialStepDirective, NzIconModule, NzPopconfirmModule, ClipboardDirective, NzBadgeModule, FavoriteButtonComponent, NzTagModule, NzSwitchModule, FormsModule, NzCollapseModule, NzSelectModule, NgFor, NzAlertModule, ReactiveFormsModule, NzGridModule, NzFormModule, NzInputModule, NzInputNumberModule, NzCheckboxModule, NzListModule, ItemIconComponent, SimulationResultComponent, NzCardModule, CdkDropListGroup, NgStyle, ExtendedModule, CdkDropList, ActionComponent, CdkDrag, NgSwitch, NgSwitchCase, NgSwitchDefault, FullpageMessageComponent, AsyncPipe, TranslateModule, ItemNamePipe, FloorPipe, ActionNamePipe, IfMobilePipe, JobUnicodePipe, I18nPipe, I18nRowPipe]
 })
 export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
 
@@ -207,7 +207,7 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
   private unsavedChanges$ = new Subject<CraftingRotation>();
 
   public rotation$ = merge(
-    this.rotationsFacade.selectedRotation$,
+    this.rotationsFacade.selectedRotation$.pipe(startWith(new CraftingRotation())),
     this.unsavedChanges$
   ).pipe(
     distinctUntilChanged(),

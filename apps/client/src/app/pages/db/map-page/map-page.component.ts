@@ -3,12 +3,11 @@ import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-c
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
-import * as _ from 'lodash';
-import { cloneDeep } from 'lodash';
+import { cloneDeep, uniqBy } from 'lodash';
 import { MapRelatedElement } from './map-related-element';
 import { MapMarker } from '../../../modules/map/map-marker';
 import { SettingsService } from '../../../modules/settings/settings.service';
@@ -33,14 +32,14 @@ import { DbCommentsComponent } from '../db-comments/db-comments/db-comments.comp
 import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display/i18n-display.component';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
-    selector: 'app-map-page',
-    templateUrl: './map-page.component.html',
-    styleUrls: ['./map-page.component.less'],
-    standalone: true,
-    imports: [NgIf, FlexModule, NgFor, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, NzSelectModule, FormsModule, MapComponent, FullpageMessageComponent, NzListModule, I18nNameComponent, DbButtonComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, IfMobilePipe, XivapiIconPipe, MapNamePipe]
+  selector: 'app-map-page',
+  templateUrl: './map-page.component.html',
+  styleUrls: ['./map-page.component.less'],
+  standalone: true,
+  imports: [NgIf, FlexModule, NgFor, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, NzSelectModule, FormsModule, MapComponent, FullpageMessageComponent, NzListModule, I18nNameComponent, DbButtonComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, IfMobilePipe, XivapiIconPipe, MapNamePipe]
 })
 export class MapPageComponent extends TeamcraftPageComponent {
 
@@ -320,7 +319,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
           });
 
 
-        return _.uniqBy(fromNodePositions, 'id');
+        return uniqBy(fromNodePositions, 'id');
       })
     );
   }

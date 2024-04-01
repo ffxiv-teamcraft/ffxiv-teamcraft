@@ -16,6 +16,9 @@ import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-ico
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { ExtractRow, I18nName, SearchResult } from '@ffxiv-teamcraft/types';
+import { LazyItemSearch } from '@ffxiv-teamcraft/data/model/lazy-item-search';
+import { LazyRowPipe } from '../../../pipes/pipes/lazy-row.pipe';
 
 @Component({
     selector: 'app-gearset-editor-row',
@@ -23,7 +26,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
     styleUrls: ['./gearset-editor-row.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzGridModule, FlexModule, NzCheckboxModule, ItemIconComponent, NzSwitchModule, FormsModule, NgFor, MateriaSlotIconComponent, NzToolTipModule, NgIf, AsyncPipe, TranslateModule, I18nPipe, StatPipe, ItemNamePipe, IfMobilePipe, XivapiL12nPipe]
+  imports: [NzGridModule, FlexModule, NzCheckboxModule, ItemIconComponent, NzSwitchModule, FormsModule, NgFor, MateriaSlotIconComponent, NzToolTipModule, NgIf, AsyncPipe, TranslateModule, I18nPipe, StatPipe, ItemNamePipe, IfMobilePipe, XivapiL12nPipe, LazyRowPipe]
 })
 export class GearsetEditorRowComponent {
 
@@ -37,7 +40,9 @@ export class GearsetEditorRowComponent {
   property: string;
 
   @Input()
-  item: any;
+  item: LazyItemSearch['data'] & I18nName & {
+    sources: ExtractRow['sources']
+  };
 
   @Input()
   equipmentPiece: EquipmentPiece;
@@ -81,7 +86,7 @@ export class GearsetEditorRowComponent {
   }
 
   isPieceSelected(): boolean {
-    return this.gearset[this.property] && this.gearset[this.property].itemId === this.item.ID;
+    return this.gearset[this.property] && this.gearset[this.property].itemId === this.item.itemId;
   }
 
   trackByStat(index: number, stat: { id: number, value: number }): number {

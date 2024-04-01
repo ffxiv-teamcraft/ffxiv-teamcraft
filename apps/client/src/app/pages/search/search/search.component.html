@@ -84,6 +84,9 @@
                   </nz-select>
                 </nz-input-group>
               </div>
+              <div *ngIf="lastPatch$ | async as lastPatch">
+                <a routerLink="/db/{{translate.currentLang}}/patch/{{lastPatch.id}}" nz-button nzType="primary" nzGhost>{{'SEARCH.Open_patch_data' | translate:{version: lastPatch.version} }}</a>
+              </div>
             </div>
             <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutGap="10px">
               <nz-input-group [nzAddOnBefore]="'SEARCH.Language' | translate">

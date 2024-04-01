@@ -144,8 +144,12 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
 
   uiCategories$: Observable<{ id: number, data: I18nName }[]>;
 
-  patches$: Observable<Array<I18nName & { id: number }>> = this.lazyData.patches$.pipe(
-    map(patches => patches.reverse())
+  patches$ = this.lazyData.patches$.pipe(
+    map(patches => [...patches].reverse())
+  );
+
+  lastPatch$ = this.patches$.pipe(
+    map(patches => patches[0]),
   );
 
   autocomplete$: Observable<string[]> = combineLatest([this.query$, this.searchType$]).pipe(

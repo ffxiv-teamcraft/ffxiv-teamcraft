@@ -1,14 +1,13 @@
 import { Component, OnDestroy, TemplateRef, ViewChild } from '@angular/core';
 import { BehaviorSubject, combineLatest, concat, from, Observable, of, Subject } from 'rxjs';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { I18nName } from '@ffxiv-teamcraft/types';
 import { debounceTime, filter, first, map, mergeMap, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
-import * as _ from 'lodash';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
-import { Router, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { List } from '../../../modules/list/model/list';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -56,15 +55,17 @@ import { FormsModule } from '@angular/forms';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
+import { IpcService } from '../../../core/electron/ipc.service';
+import { uniqBy } from 'lodash';
 
 @Component({
-    selector: 'app-recipe-finder',
-    templateUrl: './recipe-finder.component.html',
-    styleUrls: ['./recipe-finder.component.less'],
-    standalone: true,
-    imports: [FlexModule, NgIf, NzAlertModule, NzInputModule, NzAutocompleteModule, FormsModule, NgFor, NzButtonModule, NzWaveModule, NzIconModule, NzInputNumberModule, MouseWheelDirective, NzCheckboxModule, NzCollapseModule, NzToolTipModule, ClipboardDirective, NzPopconfirmModule, ItemIconComponent, I18nNameComponent, NzDividerModule, NzPaginationModule, NzListModule, MarketboardIconComponent, NzTagModule, NzEmptyModule, DbButtonComponent, RouterLink, AsyncPipe, TranslateModule, ItemNamePipe, IfMobilePipe, IngameStarsPipe, LazyIconPipe, I18nPipe, I18nRowPipe]
+  selector: 'app-recipe-finder',
+  templateUrl: './recipe-finder.component.html',
+  styleUrls: ['./recipe-finder.component.less'],
+  standalone: true,
+  imports: [FlexModule, NgIf, NzAlertModule, NzInputModule, NzAutocompleteModule, FormsModule, NgFor, NzButtonModule, NzWaveModule, NzIconModule, NzInputNumberModule, MouseWheelDirective, NzCheckboxModule, NzCollapseModule, NzToolTipModule, ClipboardDirective, NzPopconfirmModule, ItemIconComponent, I18nNameComponent, NzDividerModule, NzPaginationModule, NzListModule, MarketboardIconComponent, NzTagModule, NzEmptyModule, DbButtonComponent, RouterLink, AsyncPipe, TranslateModule, ItemNamePipe, IfMobilePipe, IngameStarsPipe, LazyIconPipe, I18nPipe, I18nRowPipe]
 })
 export class RecipeFinderComponent implements OnDestroy {
 
@@ -145,7 +146,7 @@ export class RecipeFinderComponent implements OnDestroy {
   constructor(private lazyData: LazyDataFacade, private translate: TranslateService,
               private i18n: I18nToolsService, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private progressService: ProgressPopupService,
-              private router: Router, private listPicker: ListPickerService, private environmentService: EnvironmentService,
+              private ipc: IpcService, private listPicker: ListPickerService, private environmentService: EnvironmentService,
               private notificationService: NzNotificationService, private message: NzMessageService,
               private dialog: NzModalService, private authFacade: AuthFacade,
               public platform: PlatformService, public settings: SettingsService) {
@@ -183,7 +184,7 @@ export class RecipeFinderComponent implements OnDestroy {
               return canBeAdded && ingredientEntry.amount <= item.amount;
             }));
         }
-        const uniquified = _.uniqBy(possibleEntries, 'recipeId');
+        const uniquified = uniqBy(possibleEntries, 'recipeId');
         const indexedPool = this.pool.reduce((acc, item) => {
           acc[item.id] = item;
           return acc;
@@ -293,33 +294,44 @@ export class RecipeFinderComponent implements OnDestroy {
   }
 
   public importFromClipboard(): void {
-    from((<any>navigator).clipboard.readText())
-      .pipe(
-        map((text: string) => JSON.parse(text)),
-        switchMap(items => {
-          return this.dialog.create({
-            nzTitle: this.translate.instant('RECIPE_FINDER.Import_from_clipboard'),
-            nzContent: ClipboardImportPopupComponent,
-            nzData: {
-              items: items
-            },
-            nzFooter: null
-          }).afterClose;
-        }),
-        filter(items => {
-          return items && items.length > 0;
-        })
-      )
-      .subscribe(items => {
+    let source$ = from((<any>navigator).clipboard.readText());
+    if (this.platform.isDesktop()) {
+      source$ = new Observable<string>(observer => {
+        this.ipc.on('clipboard', (event, data) => {
+          observer.next(data);
+          observer.complete();
+        });
+        this.ipc.send('clipboard:get');
+      });
+    }
+
+    source$.pipe(
+      map((text: string) => JSON.parse(text)),
+      switchMap(items => {
+        return this.dialog.create({
+          nzTitle: this.translate.instant('RECIPE_FINDER.Import_from_clipboard'),
+          nzContent: ClipboardImportPopupComponent,
+          nzData: {
+            items: items
+          },
+          nzFooter: null
+        }).afterClose;
+      }),
+      filter(items => {
+        return items && items.length > 0;
+      })
+    ).subscribe({
+      next: items => {
         items.forEach(item => {
           this.addToPool(item.id, item.amount, true);
         });
-      }, error => {
+      }, error: error => {
         console.error(error);
         this.message.error(this.translate.instant('RECIPE_FINDER.Clipboard_content_malformed'), {
           nzDuration: 3000
         });
-      });
+      }
+    });
   }
 
   importFromInventory(): void {

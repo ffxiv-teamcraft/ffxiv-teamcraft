@@ -113,7 +113,7 @@ export class FishContextService {
   /** The fish eyes state that is currently active and being used to filter results by. */
   public readonly fishEyes$ = new BehaviorSubject<boolean>(false);
 
-  public readonly showMisses$ = new BehaviorSubject<boolean>(localStorage.getItem('db:fish:show-misses') === 'true');
+  public readonly showMisses$ = new BehaviorSubject<boolean>(localStorage.getItem('db:fish:show-misses') !== 'false');
 
   /** An observable containing information about the spots of the currently active fish. */
   public readonly spotsByFish$ = this.fishId$.pipe(

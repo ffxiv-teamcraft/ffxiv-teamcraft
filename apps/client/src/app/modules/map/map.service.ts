@@ -6,9 +6,7 @@ import { MathToolsService } from '../../core/tools/math-tools';
 import { NavigationStep } from './navigation-step';
 import { NavigationObjective } from './navigation-objective';
 import { debounceTime, map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
-import { XivapiService } from '@xivapi/angular-client';
-import * as _ from 'lodash';
-import { max, min } from 'lodash';
+import { max, min, uniq } from 'lodash';
 import { WorldNavigationStep } from './world-navigation-step';
 import { SettingsService } from '../settings/settings.service';
 import { EorzeaFacade } from '../eorzea/+state/eorzea.facade';
@@ -87,7 +85,7 @@ export class MapService {
   }
 
   public getOptimizedPathInWorld(points: NavigationObjective[]): Observable<WorldNavigationStep[]> {
-    const allMaps = _.uniq(points.map(point => point.mapId));
+    const allMaps = uniq(points.map(point => point.mapId));
     return safeCombineLatest(allMaps.map(mapId => this.getMapById(mapId)))
       .pipe(
         switchMap(maps => {

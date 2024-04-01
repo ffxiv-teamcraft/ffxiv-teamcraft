@@ -5,7 +5,6 @@ import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { SeoService } from '../../../../core/seo/seo.service';
 import { SeoMetaConfig } from '../../../../core/seo/seo-meta-config';
-import { Craft } from '@ffxiv-teamcraft/simulator';
 import { AbstractSimulationPage } from '../../abstract-simulation-page';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { LazyRecipe } from '@ffxiv-teamcraft/data/model/lazy-recipe';

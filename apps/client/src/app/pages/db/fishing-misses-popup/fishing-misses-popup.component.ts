@@ -4,7 +4,6 @@ import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { Apollo } from 'apollo-angular';
 import { debounceTime, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
-import * as _ from 'lodash';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { TugNamePipe } from '../../../pipes/pipes/tug-name.pipe';
@@ -19,6 +18,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
 import { DialogComponent } from '../../../core/dialog.component';
+import { groupBy } from 'lodash';
 
 @Component({
   selector: 'app-fishing-misses-popup',
@@ -68,56 +68,56 @@ export class FishingMissesPopupComponent extends DialogComponent implements OnIn
         return this.data$.pipe(
           map(data => {
             return {
-              etime: Object.keys(_.groupBy(data, 'etime'))
+              etime: Object.keys(groupBy(data, 'etime'))
                 .map(value => {
                   return {
                     text: value.toString(),
                     value: value
                   };
                 }),
-              baitId: Object.keys(_.groupBy(data, 'baitId'))
+              baitId: Object.keys(groupBy(data, 'baitId'))
                 .map(value => {
                   return {
                     text: this.i18n.getName(items[+value]),
                     value: value
                   };
                 }),
-              biteTime: Object.keys(_.groupBy(data, 'biteTime'))
+              biteTime: Object.keys(groupBy(data, 'biteTime'))
                 .map(value => {
                   return {
                     text: value.toString(),
                     value: value
                   };
                 }),
-              gathering: Object.keys(_.groupBy(data, 'gathering'))
+              gathering: Object.keys(groupBy(data, 'gathering'))
                 .map(value => {
                   return {
                     text: value.toString(),
                     value: value
                   };
                 }),
-              weatherId: Object.keys(_.groupBy(data, 'weatherId'))
+              weatherId: Object.keys(groupBy(data, 'weatherId'))
                 .map(value => {
                   return {
                     text: this.i18n.getName(weathers[+value]),
                     value: value
                   };
                 }),
-              previousWeatherId: Object.keys(_.groupBy(data, 'previousWeatherId'))
+              previousWeatherId: Object.keys(groupBy(data, 'previousWeatherId'))
                 .map(value => {
                   return {
                     text: this.i18n.getName(weathers[+value]),
                     value: value
                   };
                 }),
-              snagging: Object.keys(_.groupBy(data, 'snagging'))
+              snagging: Object.keys(groupBy(data, 'snagging'))
                 .map(value => {
                   return {
                     text: this.translate.instant(value === 'true' ? 'Yes' : 'No'),
                     value: value
                   };
                 }),
-              tug: Object.keys(_.groupBy(data, 'tug'))
+              tug: Object.keys(groupBy(data, 'tug'))
                 .map(value => {
                   return {
                     text: this.translate.instant(`DB.FISH.TUG.${this.getTugName(+value)}`),

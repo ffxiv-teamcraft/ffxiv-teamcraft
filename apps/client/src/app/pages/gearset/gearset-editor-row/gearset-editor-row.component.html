@@ -5,14 +5,14 @@
              [nzDisabled]="!canEquip"
              (nzCheckedChange)="setGearsetPiece($event)"></label>
       <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2px">
-        <app-item-icon [itemId]="item.ID" [hq]="equipmentPiece.hq" [width]="32 | ifMobile:24"></app-item-icon>
-        <div class="ilvl">{{'TOOLTIP.Ilvl' | translate}} {{item.LevelItem}}</div>
+        <app-item-icon [itemId]="item.itemId" [hq]="equipmentPiece.hq" [width]="32 | ifMobile:24"></app-item-icon>
+        <div class="ilvl">{{'TOOLTIP.Ilvl' | translate}} {{item.ilvl}}</div>
       </div>
       <div fxLayout="column" fxLayoutGap="5px">
         <div fxLayout="row" fxLayoutGap="10px">
-          <div>{{item | xivapiL12n: 'items' | i18n}}</div>
+          <div>{{item | i18n}}</div>
           <nz-switch [(ngModel)]="equipmentPiece.hq"
-                     [nzDisabled]="item.CanBeHq === 0"
+                     [nzDisabled]="(item.itemId | lazyRow:'hqFlags' | async) === 0"
                      (ngModelChange)="updateHq($event)"
                      [nzCheckedChildren]="'COMMON.Hq' | translate"
                      [nzUnCheckedChildren]="'COMMON.Nq' | translate"></nz-switch>

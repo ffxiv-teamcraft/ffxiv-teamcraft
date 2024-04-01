@@ -9,7 +9,6 @@ import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { Team } from '../../../model/team/team';
 import { List } from '../model/list';
 import { ListController } from '../list-controller';
-import * as _ from 'lodash';
 import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
 import { ListsFacade } from '../+state/lists.facade';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
@@ -38,6 +37,7 @@ import { MarketboardPopupComponent } from '../../marketboard/marketboard-popup/m
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { CustomItem } from '../../custom-items/model/custom-item';
 import { RelationshipsComponent } from '../../item-details/relationships/relationships.component';
+import { uniq } from 'lodash';
 
 @Component({
   template: ''
@@ -173,7 +173,7 @@ export class AbstractItemRowComponent extends TeamcraftOptimizedComponent implem
 
   availableTags$ = combineLatest([this.tagInput$, this.authFacade.user$]).pipe(
     map(([input, user]) => {
-      return _.uniq(user.itemTags
+      return uniq(user.itemTags
         .filter(entry => entry.tag.toLowerCase().indexOf(input.toLowerCase()) > -1)
         .map(entry => entry.tag));
     })

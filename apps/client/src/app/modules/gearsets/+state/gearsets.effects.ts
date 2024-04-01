@@ -11,7 +11,6 @@ import {
   GearsetsLoaded,
   ImportAriyalaGearset,
   ImportFromPcap,
-  ImportLodestoneGearset,
   LoadGearset,
   LoadGearsetProgression,
   LoadGearsets,
@@ -30,7 +29,6 @@ import { EMPTY, of } from 'rxjs';
 import { GearsetCreationPopupComponent } from '../gearset-creation-popup/gearset-creation-popup.component';
 import { Router } from '@angular/router';
 import { AriyalaImportPopupComponent } from '../ariyala-import-popup/ariyala-import-popup.component';
-import { LodestoneImportPopupComponent } from '../lodestone-import-popup/lodestone-import-popup.component';
 import { ImportFromPcapPopupComponent } from '../import-from-pcap-popup/import-from-pcap-popup.component';
 import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 import { GearsetsFacade } from './gearsets.facade';
@@ -250,38 +248,6 @@ export class GearsetsEffects {
         nzTitle: this.translate.instant('GEARSETS.SYNC.Title')
       }).afterClose;
     })
-  ), {
-    dispatch: false
-  });
-
-
-  importLodestoneGearset$ = createEffect(() => this.actions$.pipe(
-    ofType<ImportLodestoneGearset>(GearsetsActionTypes.ImportLodestoneGearset),
-    switchMap(() => {
-      return this.authFacade.userId$.pipe(
-        first(),
-        switchMap(userId => {
-          return this.dialog.create({
-            nzContent: LodestoneImportPopupComponent,
-            nzFooter: null,
-            nzTitle: this.translate.instant('GEARSETS.Import_from_lodestone')
-          }).afterClose.pipe(
-            filter(opts => opts),
-            map((gearset) => {
-              gearset.authorId = userId;
-              return gearset;
-            })
-          );
-        }),
-        switchMap(gearset => {
-          return this.gearsetService.add(gearset);
-        })
-      );
-    }),
-    tap((res) => {
-      this.router.navigate(['/gearset', res, 'edit']);
-    }),
-    switchMapTo(EMPTY)
   ), {
     dispatch: false
   });

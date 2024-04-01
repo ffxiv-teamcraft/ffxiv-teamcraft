@@ -22,7 +22,6 @@ import { combineLatest, Observable, of, timer } from 'rxjs';
 import { PersistedFishTrain } from '../../../model/other/persisted-fish-train';
 import { TrainFishingReport } from '../../../core/data-reporting/fishing-report';
 import { FishTrainService } from '../../../core/database/fish-train.service';
-import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'

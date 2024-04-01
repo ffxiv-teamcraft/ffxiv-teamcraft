@@ -107,6 +107,11 @@ export abstract class FirestoreStorage<T extends DataModel> {
 
   public query(...filterQuery: QueryConstraint[]): Observable<T[]> {
     return collectionData(query(this.collection, ...filterQuery).withConverter(this.converter)).pipe(
+      catchError(error => {
+        console.error(`QUERY ${this.getBaseUri()}`);
+        console.error(error);
+        return throwError(error);
+      }),
       distinctUntilChanged((a, b) => isEqual(a, b))
     );
   }

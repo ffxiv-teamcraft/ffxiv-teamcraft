@@ -3,6 +3,8 @@ import { IpcRendererEvent } from 'electron';
 const { contextBridge, ipcRenderer } = require('electron');
 
 const allowedChannels = [
+  'clipboard',
+  'clipboard:get',
   'search',
   'search:results',
   'search:ingest',

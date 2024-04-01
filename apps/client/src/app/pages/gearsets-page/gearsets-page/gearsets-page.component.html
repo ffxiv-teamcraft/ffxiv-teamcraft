@@ -12,9 +12,6 @@
     <div>
       <button nz-button (click)="importEtroGearset()">{{'GEARSETS.Import_from_etro' | translate}}</button>
     </div>
-<!--    <div>-->
-<!--      <button nz-button (click)="importLodestoneGearset()">{{'GEARSETS.Import_from_lodestone' | translate}}</button>-->
-<!--    </div>-->
     <div>
       <button nz-button *ngIf="pcapToggle" (click)="importFromPcap()">{{'GEARSETS.Import_using_pcap' | translate}}</button>
     </div>
