@@ -197,6 +197,7 @@ export interface Currency {
 }
 
 export enum TradeEntryType {
+  AnimaWeapon5TradeItem = "AnimaWeapon5TradeItem",
   GCShop = "GCShop",
   GilShop = "GilShop",
   SpecialShop = "SpecialShop",
