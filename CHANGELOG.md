@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.35](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.34...v11.0.35) (2024-04-02)
+
+
+### Features
+
+* **db:** support for korean v6.5 update ([f04a32f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f04a32f31e5ecb08a56947d3b3bbc81866d3c459))
+
 ### [11.0.34](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.33...v11.0.34) (2024-04-01)
 
 
