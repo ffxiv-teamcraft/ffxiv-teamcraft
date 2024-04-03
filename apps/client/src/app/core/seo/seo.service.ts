@@ -22,7 +22,7 @@ export class SeoService {
 
   public resetConfig(): void {
     this.config = {
-      title: `FFXIV Teamcraft`,
+      title: 'FFXIV Teamcraft',
       description: 'Create crafting lists and collaborate with others, set gathering alarms, simulate crafting rotations, and more...',
       url: 'https://ffxivteamcraft.com/',
       image: 'https://ffxivteamcraft.com/assets/logo.png'
