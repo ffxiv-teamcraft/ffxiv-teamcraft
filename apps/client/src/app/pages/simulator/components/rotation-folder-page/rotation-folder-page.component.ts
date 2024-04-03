@@ -60,10 +60,10 @@ export class RotationFolderPageComponent extends SeoPageComponent {
     return combineLatest([this.folder$, this.userId$]).pipe(
       map(([folder, userId]) => {
         return {
-          title: folder.name,
-          description: `A list of rotations for ${folder.name}`,
+          title: `${folder.name} - FFXIV Teamcraft`,
+          description: 'A list of crafting rotations.',
           url: `https://ffxivteamcraft.com/simulator/${userId}/rotation-folder/${folder.$key}`,
-          image: `https://ffxivteamcraft.com/assets/logo.png`
+          image: 'https://ffxivteamcraft.com/assets/logo.png'
         };
       }
     ))
