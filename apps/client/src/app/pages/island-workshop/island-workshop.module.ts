@@ -24,7 +24,10 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 const routes: Routes = [
   {
     path: '',
-    component: IslandWorkshopComponent
+    component: IslandWorkshopComponent,
+    data: {
+      title: 'TITLE.Workshop'
+    }
   }
 ]
 

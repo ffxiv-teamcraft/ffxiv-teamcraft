@@ -22,7 +22,10 @@ const routes: Routes = [
   {
     path: '',
     component: GcSupplyComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Grand_Company_Supplies'
+    }
   }
 ];
 

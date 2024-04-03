@@ -26,7 +26,10 @@ const routes: Routes = [
   {
     path: '',
     component: ListsComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Lists'
+    }
   }
 ];
 

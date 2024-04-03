@@ -30,12 +30,18 @@ const routes: Routes = [
   {
     path: ':jobAbbr',
     component: CollectablesComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Collectables'
+    }
   },
   {
     path: '',
     redirectTo: 'CRP',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    data: {
+      title: 'TITLE.Collectables'
+    }
   }
 ];
 

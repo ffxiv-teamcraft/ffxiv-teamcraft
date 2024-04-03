@@ -25,12 +25,18 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'DoH',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    data: {
+      title: 'TITLE.Log_Tracker'
+    }
   },
   {
     path: ':type',
     component: LogTrackerComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Log_Tracker'
+    }
   }
 ];
 

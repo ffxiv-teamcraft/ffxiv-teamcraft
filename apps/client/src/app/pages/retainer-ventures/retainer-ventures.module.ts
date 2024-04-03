@@ -25,7 +25,10 @@ const routes: Routes = [
   {
     path: '',
     component: RetainerVenturesComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Retainer_Ventures'
+    }
   }
 ];
 
