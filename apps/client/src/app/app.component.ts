@@ -427,9 +427,11 @@ export class AppComponent implements OnInit {
         if (event instanceof ActivationEnd) {
           if (!event.snapshot.data.title) return
 
-          seoService.setConfig({
-            title: translate.instant(event.snapshot.data.title),
-          })
+          this.translate.get(event.snapshot.data.title).subscribe((title) => {
+            this.seoService.setConfig({
+              title: title,
+            })
+          }).unsubscribe();
         }
       });
 
