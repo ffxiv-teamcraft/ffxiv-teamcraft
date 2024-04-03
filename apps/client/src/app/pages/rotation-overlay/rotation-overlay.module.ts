@@ -19,7 +19,7 @@ const routes: Routes = [
   {
     path: ':rotationId',
     component: RotationOverlayComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
   }
 ];
 

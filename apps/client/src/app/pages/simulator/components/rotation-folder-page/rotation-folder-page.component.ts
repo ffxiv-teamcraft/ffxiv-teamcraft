@@ -17,6 +17,9 @@ import { FlexModule } from '@angular/flex-layout/flex';
 import { UserAvatarComponent } from '../../../../modules/user-avatar/user-avatar/user-avatar.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { SeoPageComponent } from '../../../../core/seo/seo-page-component';
+import { SeoMetaConfig } from '../../../../core/seo/seo-meta-config';
+import { SeoService } from '../../../../core/seo/seo.service';
 
 @Component({
     selector: 'app-rotation-folder-page',
@@ -25,8 +28,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     standalone: true,
     imports: [NgIf, NzCardModule, UserAvatarComponent, FlexModule, FavoriteButtonComponent, NgFor, RotationPanelComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule, CharacterNamePipe]
 })
-export class RotationFolderPageComponent {
-
+export class RotationFolderPageComponent extends SeoPageComponent {
   folder$: Observable<CraftingRotationsFolder>;
 
   rotations$: Observable<CraftingRotation[]>;
@@ -34,7 +36,8 @@ export class RotationFolderPageComponent {
   userId$: Observable<string>;
 
   constructor(private rotationsFacade: RotationsFacade, private foldersFacade: RotationFoldersFacade,
-              private authFacade: AuthFacade, private route: ActivatedRoute) {
+              private authFacade: AuthFacade, private route: ActivatedRoute, private seo: SeoService) {
+    super(seo)
     this.route.paramMap.pipe(
       map(params => params.get('folderId'))
     ).subscribe(folderId => {
@@ -51,6 +54,19 @@ export class RotationFolderPageComponent {
       }),
       shareReplay({ bufferSize: 1, refCount: true })
     );
+  }
+
+  protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
+    return combineLatest([this.folder$, this.userId$]).pipe(
+      map(([folder, userId]) => {
+        return {
+          title: folder.name,
+          description: `A list of rotations for ${folder.name}`,
+          url: `https://ffxivteamcraft.com/simulator/${userId}/rotation-folder/${folder.$key}`,
+          image: `https://ffxivteamcraft.com/assets/logo.png`
+        };
+      }
+    ))
   }
 
 }
