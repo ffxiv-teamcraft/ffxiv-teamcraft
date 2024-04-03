@@ -23,7 +23,10 @@ const routes: Routes = [
   {
     path: '',
     component: RecipeFinderComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Recipe_Finder'
+    }
   }
 ];
 

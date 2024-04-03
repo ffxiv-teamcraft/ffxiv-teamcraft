@@ -39,7 +39,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { FormsModule } from '@angular/forms';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TutorialStepDirective } from '../../../core/tutorial/tutorial-step.directive';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
@@ -48,6 +48,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 
 @Component({
   selector: 'app-lists',
@@ -56,7 +57,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   standalone: true,
   imports: [NgIf, PageLoaderComponent, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, TutorialStepDirective, RouterLink, NzSwitchModule, FormsModule, NzAlertModule, NzInputModule, NzDividerModule, NgFor, NgForTrackByKeyDirective, ListPanelComponent, CdkDropList, CdkDrag, NzEmptyModule, NzListModule, NzTagModule, ClipboardDirective, NzPopconfirmModule, WorkshopPanelComponent, NzCollapseModule, AsyncPipe, TranslateModule, TeamcraftLinkPipe]
 })
-export class ListsComponent {
+export class ListsComponent extends TeamcraftComponent {
 
   public teamsDisplays$: Observable<{ team: Team, lists: List[] }[]> = this.teamsFacade.myTeams$.pipe(
     switchMap(teams => {
@@ -218,7 +219,10 @@ export class ListsComponent {
               private translate: TranslateService, private dialog: NzModalService,
               private workshopsFacade: WorkshopsFacade, private teamsFacade: TeamsFacade,
               private authFacade: AuthFacade, private listAggregatesFacade: ListAggregatesFacade,
-              private layoutsFacade: LayoutsFacade) {
+              private layoutsFacade: LayoutsFacade, private route: ActivatedRoute) {
+
+    super()
+
     this.listsFacade.loadMyLists();
     this.listsFacade.loadListsWithWriteAccess();
     this.workshopsFacade.loadMyWorkshops();

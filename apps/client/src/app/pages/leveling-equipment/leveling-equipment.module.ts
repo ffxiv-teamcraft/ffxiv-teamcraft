@@ -21,7 +21,10 @@ const routes: Routes = [
   {
     path: '',
     component: LevelingEquipmentComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Leveling_Equipment'
+    }
   }
 ];
 

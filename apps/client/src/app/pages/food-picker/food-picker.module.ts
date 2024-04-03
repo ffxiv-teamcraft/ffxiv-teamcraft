@@ -16,7 +16,10 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 
 const routes: Routes = [{
   path: '',
-  component: FoodPickerComponent
+  component: FoodPickerComponent,
+  data: {
+    title: 'TITLE.Food_Picker',
+  }
 }];
 
 @NgModule({

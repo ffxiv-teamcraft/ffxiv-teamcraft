@@ -14,7 +14,10 @@ import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 const routes: Routes = [
   {
     path: '',
-    component: IslandAnimalsComponent
+    component: IslandAnimalsComponent,
+    data: {
+      title: 'TITLE.Animals'
+    }
   }
 ];
 

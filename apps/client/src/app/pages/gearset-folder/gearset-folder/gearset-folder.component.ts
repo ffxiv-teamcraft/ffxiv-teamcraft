@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { FoldersFacade } from '../../../modules/folders/+state/folders.facade';
@@ -13,6 +13,7 @@ import { GearsetRowComponent } from '../../../modules/gearsets/gearset-row/gears
 import { FolderPageComponent } from '../../../modules/folders/folder-page/folder-page.component';
 import { NgIf, AsyncPipe } from '@angular/common';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
+import { SeoService } from '../../../core/seo/seo.service';
 
 @Component({
     selector: 'app-gearset-folder',

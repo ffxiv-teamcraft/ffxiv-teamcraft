@@ -25,17 +25,26 @@ const routes: Routes = [
   {
     path: '',
     component: CommissionsPageComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Commissions'
+    }
   },
   {
     path: 'board/:dc',
     component: CommissionBoardComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Commissions'
+    }
   },
   {
     path: 'archives',
     component: CommissionArchivesComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Archives'
+    }
   }
 ];
 
