@@ -429,7 +429,7 @@ export class AppComponent implements OnInit {
 
           this.translate.get(event.snapshot.data.title).subscribe((title) => {
             this.seoService.setConfig({
-              title: title,
+              title: `${title} - FFXIV Teamcraft`,
             })
           }).unsubscribe();
         }
