@@ -426,7 +426,6 @@ export class AppComponent implements OnInit {
         }
         if (event instanceof ActivationEnd) {
           if (!event.snapshot.data.title) return
-          console.log(event.snapshot.data.title);
 
           seoService.setConfig({
             title: translate.instant(event.snapshot.data.title),
