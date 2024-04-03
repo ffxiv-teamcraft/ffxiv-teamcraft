@@ -424,15 +424,21 @@ export class AppComponent implements OnInit {
         if (event instanceof NavigationError) {
           this.navigating = false;
         }
-        if (event instanceof ActivationEnd) {
-          if (!event.snapshot.data.title) return
+      });
 
-          this.translate.get(event.snapshot.data.title).subscribe((title) => {
-            this.seoService.setConfig({
-              title: `${title} - FFXIV Teamcraft`,
-            })
-          }).unsubscribe();
-        }
+       // Subscribe to events again but only for title update
+      router.events.pipe(
+        filter(event => event instanceof ActivationEnd && event.snapshot.data.title),
+        switchMap((event: ActivationEnd) => {
+          return this.translate.onLangChange.pipe(
+            startWith(this.translate.currentLang),
+            switchMap(() => this.translate.get(event.snapshot.data.title))
+          );
+        })
+      ).subscribe(title => {
+        this.seoService.setConfig({
+          title: `${title} - FFXIV Teamcraft`
+        });
       });
 
       // Google Analytics & patreon popup stuff
