@@ -4,7 +4,7 @@ import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade
 import { FoldersFacade } from '../../../modules/folders/+state/folders.facade';
 import { FolderContentType } from '../../../model/folder/folder-content-type';
 import { ActivatedRoute } from '@angular/router';
-import { map, takeUntil, tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { combineLatest, Observable } from 'rxjs';
 import { FolderDisplay } from '../../../model/folder/folder-display';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
@@ -12,9 +12,7 @@ import { GearsetRowComponent } from '../../../modules/gearsets/gearset-row/gears
 import { FolderPageComponent } from '../../../modules/folders/folder-page/folder-page.component';
 import { NgIf, AsyncPipe } from '@angular/common';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
-import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { SeoService } from '../../../core/seo/seo.service';
-import { SeoPageComponent } from '../../../core/seo/seo-page-component';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
