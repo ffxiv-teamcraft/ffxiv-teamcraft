@@ -74,8 +74,4 @@ export class RotationFolderPageComponent {
     })
   }
 
-  protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return
-  }
-
 }
