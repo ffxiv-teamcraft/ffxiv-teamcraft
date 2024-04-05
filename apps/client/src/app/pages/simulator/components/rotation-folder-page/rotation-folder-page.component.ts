@@ -17,7 +17,6 @@ import { FlexModule } from '@angular/flex-layout/flex';
 import { UserAvatarComponent } from '../../../../modules/user-avatar/user-avatar/user-avatar.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
-import { SeoMetaConfig } from '../../../../core/seo/seo-meta-config';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { SeoService } from '../../../../core/seo/seo.service';
 
