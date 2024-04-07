@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
@@ -10,6 +10,7 @@ import { NgIf } from '@angular/common';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { DialogComponent } from '../../../core/dialog.component';
+import { SettingsService } from '../../settings/settings.service';
 
 @Component({
   selector: 'app-name-question-popup',
@@ -19,6 +20,8 @@ import { DialogComponent } from '../../../core/dialog.component';
   imports: [FormsModule, FlexModule, ReactiveFormsModule, NzInputModule, NgIf, NzCheckboxModule, NzToolTipModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
 export class NameQuestionPopupComponent extends DialogComponent implements OnInit {
+
+  #settings = inject(SettingsService);
 
   @Input()
   baseName = '';
@@ -51,7 +54,7 @@ export class NameQuestionPopupComponent extends DialogComponent implements OnIni
     this.control = this.fb.group({
       name: [this.baseName, Validators.required],
       ephemeral: [false],
-      offline: [false]
+      offline: [this.#settings.offlineListByDefault]
     });
   }
 

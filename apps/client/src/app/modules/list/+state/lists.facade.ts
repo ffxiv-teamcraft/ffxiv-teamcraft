@@ -318,7 +318,7 @@ export class ListsFacade {
     this.loadMyLists();
     const list = this.newListWithName(itemName);
     list.ephemeral = true;
-    list.offline = this.settings.makeQuickListsOffline;
+    list.offline = this.settings.offlineListByDefault || this.settings.makeQuickListsOffline;
     return list;
   }
 
