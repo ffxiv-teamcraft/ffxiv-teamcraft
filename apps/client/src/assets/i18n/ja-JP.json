@@ -1845,6 +1845,9 @@
     },
     "PATCH": {
       "Open_patch_page": "データベースのパッチ変更点はこちらをクリックしてください",
+      "Previous": "Previous ({{version}})",
+      "Next": "Next ({{version}})",
+      "Release_date": "Release date: {{date}}",
       "CONTENT": {
         "Title": "パッチ内容",
         "Achievements": "アチーブメント({{amount}})",
@@ -1983,6 +1986,7 @@
     "Exclude": "除く",
     "Select_stat": "ステータス選択",
     "Level": "レベル",
+    "Open_patch_data": "Open patch content for {{version}}",
     "SELECTION_MODE": {
       "List": "List",
       "Compare": "Compare"
