@@ -548,6 +548,7 @@
     "Child_windows_description": "Wenn du auf etwas klickst, das navigiert (wie der \"i\" Button für Datenbankeinträge oder jeder andere Link in der App), benutze Strg + Mausklick oder mittlerer Mausklick stattdessen, um in einem neuen Fenster zu öffnen. Zusätzlich kannst du ein neues Fenster erstellen, indem du den neuen Button neben den GitHub Sternezähler benutzt.",
     "Desktop_tip_title": "Teamcraft hat eine Desktop-App! Besser, schneller, stärker",
     "Desktop_tip_description": "Desktop-App ist viel schneller durch die Offline-Suche. Es fügt auch Overlay-Funktionen und mehr mit der Paketerfassung hinzu (dies ist standardmäßig deaktiviert, wenn Sie die Paketerfassung vermeiden wollen). Es ist sehr empfehlenswert, sie anstelle der Web-Version für eine bessere Erfahrung zu verwenden.",
+    "Lists_offline_by_default": "Make lists offline by default",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -709,6 +710,8 @@
     "Mark_whole_panel_nq": "Manuelle HQ-Markierungen entfernen",
     "Mark_whole_panel_hq": "Gesamtes Panel HQ markieren",
     "Crafts": "herstellungen",
+    "Convert_to_online": "Convert to online list",
+    "Converted_to_online": "Your list is now online",
     "SCROLLING": {
       "Default": "Standard",
       "Only_large": "Nur große Listen",
