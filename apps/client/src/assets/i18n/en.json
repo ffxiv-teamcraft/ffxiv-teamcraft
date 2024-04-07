@@ -710,6 +710,8 @@
     "Mark_whole_panel_nq": "Remove manual HQ flags",
     "Mark_whole_panel_hq": "Mark whole panel HQ",
     "Crafts": "crafts",
+    "Convert_to_online": "Convert to online list",
+    "Converted_to_online": "Your list is now online",
     "SCROLLING": {
       "Default": "Default",
       "Only_large": "Only large lists",

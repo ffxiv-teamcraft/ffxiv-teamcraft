@@ -1,4 +1,4 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { List } from './model/list';
 import { combineLatest, concat, Observable, of } from 'rxjs';
 import { getCraftByPriority, ListRow } from './model/list-row';
@@ -35,7 +35,6 @@ export class ListManagerService {
 
   constructor(protected db: DataService,
               protected i18n: I18nToolsService,
-              private zone: NgZone,
               private discordWebhookService: DiscordWebhookService,
               private teamsFacade: TeamsFacade,
               private lazyData: LazyDataFacade,
