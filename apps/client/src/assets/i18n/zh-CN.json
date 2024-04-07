@@ -548,6 +548,7 @@
     "Child_windows_description": "当点击跳转时(如数据库页面的“i”按钮或应用程序中的任何链接)， 使用ctrl + 单击或中键单击来在新窗口中打开。另外您可以使用 github 星标数旁边的新按钮来创建一个新窗口。",
     "Desktop_tip_title": "Teamcraft 拥有桌面客户端！更好、更快、更强！",
     "Desktop_tip_description": "桌面客户端使用离线搜索更快， 它还添加了悬浮窗功能和更多使用数据包捕获的功能(如果你想避免使用数据包捕获，默认情况下它是禁用的)。强烈建议使用它而不是网页版以获得更好的体验。",
+    "Lists_offline_by_default": "Make lists offline by default",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -709,6 +710,8 @@
     "Mark_whole_panel_nq": "移除所有手动添加的HQ标志",
     "Mark_whole_panel_hq": "标记整个面板为HQ",
     "Crafts": "制作",
+    "Convert_to_online": "Convert to online list",
+    "Converted_to_online": "Your list is now online",
     "SCROLLING": {
       "Default": "默认",
       "Only_large": "仅限超长清单",
