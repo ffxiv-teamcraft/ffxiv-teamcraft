@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.37](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.36...v11.0.37) (2024-04-07)
+
+
+### Features
+
+* **community-rotation-finder:** add food tags to results ([804d651](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/804d65103075c3843964f33d750267b7d9450162))
+* **list-details:** new button to convert offline list to online ([733aa9a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/733aa9a8e181f466640e5699e1da83788bfdfb41))
+* **settings:** new setting to make lists offline by default ([1f1e50c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1f1e50c547d97d8a93f1138c56b31d3af6210862))
+* **ux:** provide unique titles for each page  ([dd782ad](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dd782ad88c8e9186d2ca384448f19ee11dba5e37))
+
 ### [11.0.36](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.34...v11.0.36) (2024-04-02)
 
 
