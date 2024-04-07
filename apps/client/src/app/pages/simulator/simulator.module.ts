@@ -92,12 +92,18 @@ const routes: Routes = [
   {
     path: 'rotations',
     component: RotationsPageComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Crafting_Rotation'
+    }
   },
   {
     path: 'community-rotations',
     component: CommunityRotationsPageComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Community_Rotations'
+    }
   },
   {
     path: 'rotation-folder/:folderId',

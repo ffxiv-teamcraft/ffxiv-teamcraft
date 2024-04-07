@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DestroyRef, inject } from '@angular/core';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { RotationFoldersFacade } from '../../../../modules/rotation-folders/+state/rotation-folders.facade';
 import { CraftingRotationsFolder } from '../../../../model/other/crafting-rotations-folder';
@@ -17,6 +17,8 @@ import { FlexModule } from '@angular/flex-layout/flex';
 import { UserAvatarComponent } from '../../../../modules/user-avatar/user-avatar/user-avatar.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { SeoService } from '../../../../core/seo/seo.service';
 
 @Component({
     selector: 'app-rotation-folder-page',
@@ -26,15 +28,19 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     imports: [NgIf, NzCardModule, UserAvatarComponent, FlexModule, FavoriteButtonComponent, NgFor, RotationPanelComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule, CharacterNamePipe]
 })
 export class RotationFolderPageComponent {
-
   folder$: Observable<CraftingRotationsFolder>;
 
   rotations$: Observable<CraftingRotation[]>;
 
   userId$: Observable<string>;
 
+  private destroyRef = inject(DestroyRef)
+
+  private seoService = inject(SeoService)
+
   constructor(private rotationsFacade: RotationsFacade, private foldersFacade: RotationFoldersFacade,
               private authFacade: AuthFacade, private route: ActivatedRoute) {
+
     this.route.paramMap.pipe(
       map(params => params.get('folderId'))
     ).subscribe(folderId => {
@@ -51,6 +57,20 @@ export class RotationFolderPageComponent {
       }),
       shareReplay({ bufferSize: 1, refCount: true })
     );
+
+    combineLatest([this.folder$, this.userId$]).pipe(
+      map(([folder, userId]) => {
+        return {
+          title: `${folder.name} - FFXIV Teamcraft`,
+          description: 'A list of crafting rotations.',
+          url: `https://ffxivteamcraft.com/simulator/${userId}/rotation-folder/${folder.$key}`,
+          image: 'https://ffxivteamcraft.com/assets/logo.png'
+        };
+      }),
+      takeUntilDestroyed(this.destroyRef)
+    ).subscribe(meta => {
+      this.seoService.setConfig(meta)
+    })
   }
 
 }
