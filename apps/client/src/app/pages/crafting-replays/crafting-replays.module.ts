@@ -31,7 +31,10 @@ const routes: Routes = [
   {
     path: '',
     component: CraftingReplaysComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Crafting_Replays'
+    }
   }
 ];
 

@@ -17,7 +17,10 @@ const routes: Routes = [
   {
     path: '',
     component: ResetTimersComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Reminders'
+    }
   }
 ];
 

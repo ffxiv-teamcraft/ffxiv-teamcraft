@@ -72,6 +72,7 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { TutorialStepDirective } from '../../../core/tutorial/tutorial-step.directive';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { FlexModule } from '@angular/flex-layout/flex';
+import { SeoService } from '../../../core/seo/seo.service';
 
 @Component({
   selector: 'app-search',
@@ -322,6 +323,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
               private environment: EnvironmentService,
               private platformService: PlatformService, @Inject(PLATFORM_ID) private platform: any) {
     super();
+
     this.uiCategories$ = this.settings.watchSetting('search:language', 'en').pipe(
       switchMap(lang => {
         switch (lang) {
@@ -369,6 +371,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       if (before.lang === this.searchLang$.value) {
         this.searchLang$.next(after.lang as Language);
       }
+
     });
 
     this.route.queryParams.pipe(

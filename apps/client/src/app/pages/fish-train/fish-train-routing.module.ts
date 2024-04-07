@@ -8,7 +8,10 @@ const routes: Routes = [
   {
     path: ':id',
     component: FishTrainComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Fish_Train'
+    }
   }
 ];
 

@@ -23,7 +23,10 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutEditorPageComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Layouts'
+    }
   }
 ];
 

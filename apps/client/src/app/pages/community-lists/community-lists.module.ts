@@ -17,7 +17,10 @@ const routes: Routes = [
   {
     path: '',
     component: CommunityListsComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Community_Lists'
+    }
   }
 ];
 

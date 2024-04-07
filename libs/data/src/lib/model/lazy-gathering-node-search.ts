@@ -5,7 +5,7 @@ export interface LazyGatheringNodeSearch {
   fr:    string;
   id:    number;
   ja:    string;
-  ko?:   string;
+  ko:    string;
   patch: number;
   zh:    string;
 }

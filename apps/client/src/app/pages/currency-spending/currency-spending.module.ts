@@ -17,7 +17,10 @@ import { MarketboardModule } from '../../modules/marketboard/marketboard.module'
 
 const routes: Routes = [{
   path: '',
-  component: CurrencySpendingComponent
+  component: CurrencySpendingComponent,
+  data: {
+    title: 'TITLE.Currency_Spending_Guide',
+  }
 }];
 
 @NgModule({

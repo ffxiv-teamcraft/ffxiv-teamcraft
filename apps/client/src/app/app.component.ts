@@ -13,7 +13,7 @@ import {
 import { environment } from '../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 import { IpcService } from './core/electron/ipc.service';
-import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
+import { ActivationEnd, NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
@@ -366,7 +366,7 @@ export class AppComponent implements OnInit {
       const language$ = this.translate.onLangChange.pipe(
         map((event) => event.lang),
         startWith(this.translate.currentLang)
-      );
+      )
 
       const region$ = this.settings.regionChange$.pipe(
         map((change) => change.next),
@@ -426,6 +426,21 @@ export class AppComponent implements OnInit {
         }
       });
 
+       // Subscribe to events again but only for title update
+      router.events.pipe(
+        filter(event => event instanceof ActivationEnd && event.snapshot.data.title),
+        switchMap((event: ActivationEnd) => {
+          return this.translate.onLangChange.pipe(
+            startWith(this.translate.currentLang),
+            switchMap(() => this.translate.get(event.snapshot.data.title))
+          );
+        })
+      ).subscribe(title => {
+        this.seoService.setConfig({
+          title: `${title} - FFXIV Teamcraft`
+        });
+      });
+
       // Google Analytics & patreon popup stuff
       router.events
         .pipe(
@@ -438,7 +453,6 @@ export class AppComponent implements OnInit {
         )
         .subscribe((event: any) => {
           this.tutorialService.reset();
-          this.seoService.resetConfig();
           if (this.overlay) {
             this.ipc.on(`overlay:${this.ipc.overlayUri}:opacity`, (e, value) => {
               this.overlayOpacity = value;
