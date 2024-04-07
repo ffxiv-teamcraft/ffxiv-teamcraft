@@ -2,7 +2,7 @@
   <div fxLayout="row" fxLayoutGap="5px">
     <div fxLayout="row" fxLayoutGap="5px">
       <div><label nz-checkbox [ngModel]="showRotationsAboveStats$ | async" (ngModelChange)="showRotationsAboveStats$.next($event)"></label></div>
-      <div>{{'SIMULATOR.Show_rotations_above_stats' | translate}}</div>
+      <div>{{ 'SIMULATOR.Show_rotations_above_stats' | translate }}</div>
     </div>
   </div>
 </nz-card>
@@ -13,7 +13,7 @@
     <div class="rotation-row" fxLayout="column" fxLayoutGap="10px">
       <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
         <app-user-avatar [userId]="row.rotation.authorId" [width]="24"></app-user-avatar>
-        <div>{{row.rotation.getName()}}</div>
+        <div>{{ row.rotation.getName() }}</div>
       </div>
       <div fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
         <div *ngIf="row.rotation.tags.indexOf('SPECIALIST') > -1 && !stats.specialist">
@@ -24,30 +24,46 @@
         <div [nzTooltipTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Result_tooltip' | translate" nz-tooltip>
           <nz-tag *ngIf="row.result.success"
                   [style.border-color]="'darkgreen'"
-                  class="custom-tag">{{'SIMULATOR.COMMUNITY_ROTATIONS.Success' | translate: { HQ: row.result.hqPercent } }}</nz-tag>
+                  class="custom-tag">{{ 'SIMULATOR.COMMUNITY_ROTATIONS.Success' | translate: { HQ: row.result.hqPercent } }}
+          </nz-tag>
           <nz-tag *ngIf="!row.result.success"
                   [style.border-color]="'#f50'"
-                  class="custom-tag">{{'SIMULATOR.COMMUNITY_ROTATIONS.Fail' | translate}}</nz-tag>
+                  class="custom-tag">{{ 'SIMULATOR.COMMUNITY_ROTATIONS.Fail' | translate }}
+          </nz-tag>
         </div>
         <nz-tag [style.border-color]="row.successColor">
-          {{'SIMULATOR.Reliability' | translate}}: {{row.reliability.successPercent}}%
+          {{ 'SIMULATOR.Reliability' | translate }}: {{ row.reliability.successPercent }}%
         </nz-tag>
         <nz-tag [style.border-color]="row.qualityColor" nz-tooltip [nzTooltipTitle]="detailsTooltip">
-          {{'SIMULATOR.Average_hq' | translate}}: {{row.reliability.averageHQPercent}}%
+          {{ 'SIMULATOR.Average_hq' | translate }}: {{ row.reliability.averageHQPercent }}%
           <ng-template #detailsTooltip>
             <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
-              <div>{{'SIMULATOR.Median_HQ' | translate}}:</div>
-              <div>{{row.reliability.medianHQPercent}}%</div>
+              <div>{{ 'SIMULATOR.Median_HQ' | translate }}:</div>
+              <div>{{ row.reliability.medianHQPercent }}%</div>
             </div>
             <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="row.reliability.minHQPercent !== undefined" fxLayoutGap="5px">
-              <div>{{'SIMULATOR.Min_HQ' | translate}}:</div>
-              <div>{{row.reliability.minHQPercent}}%</div>
+              <div>{{ 'SIMULATOR.Min_HQ' | translate }}:</div>
+              <div>{{ row.reliability.minHQPercent }}%</div>
             </div>
             <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="row.reliability.maxHQPercent !== undefined" fxLayoutGap="5px">
-              <div>{{'SIMULATOR.Max_HQ' | translate}}:</div>
-              <div>{{row.reliability.maxHQPercent}}%</div>
+              <div>{{ 'SIMULATOR.Max_HQ' | translate }}:</div>
+              <div>{{ row.reliability.maxHQPercent }}%</div>
             </div>
           </ng-template>
+        </nz-tag>
+        <nz-tag *ngIf="row.rotation.food">
+          <div class="flex-row gap-2 align-center">
+            <app-item-icon [itemId]="row.rotation.food.id" [width]="16"></app-item-icon>
+            <app-i18n-name content="items" [id]="row.rotation.food.id"></app-i18n-name>
+            <img *ngIf="row.rotation.food.hq" alt="HQ" class="hq-icon" src="./assets/icons/HQ.png"/>
+          </div>
+        </nz-tag>
+        <nz-tag *ngIf="row.rotation.medicine">
+          <div class="flex-row gap-2 align-center">
+            <app-item-icon [itemId]="row.rotation.medicine.id" [width]="16"></app-item-icon>
+            <app-i18n-name content="items" [id]="row.rotation.medicine.id"></app-i18n-name>
+            <img *ngIf="row.rotation.medicine.hq" alt="HQ" class="hq-icon" src="./assets/icons/HQ.png"/>
+          </div>
         </nz-tag>
       </div>
       <div fxLayout="row wrap" fxLayoutGap="10px">
@@ -55,7 +71,7 @@
       </div>
     </div>
   </nz-card>
-  <button nz-button *ngIf="rows.length === 3" nzType="primary" nzBlock (click)="amountToShow$.next(5)">{{'COMMON.Show_more' | translate}}</button>
+  <button nz-button *ngIf="rows.length === 3" nzType="primary" nzBlock (click)="amountToShow$.next(5)">{{ 'COMMON.Show_more' | translate }}</button>
 </div>
 <ng-template #loader>
   <app-page-loader [loading]="true" [message]="'SIMULATOR.Searching_for_rotation' | translate"></app-page-loader>
