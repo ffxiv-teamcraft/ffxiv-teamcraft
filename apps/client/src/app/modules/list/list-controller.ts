@@ -12,8 +12,6 @@ import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
 import { now } from 'lodash';
 
 
-declare const gtag: (...args: any[]) => any;
-
 interface CraftAdditionParams {
   _additions: CraftAddition[];
   extracts: Extracts;
@@ -40,6 +38,7 @@ export class ListController {
   public static clone(list: List, internal = false): List {
     const clone = new List();
     clone.everyone = list.everyone;
+    clone.createdAt = Timestamp.now();
     clone.disableHQSuggestions = list.disableHQSuggestions;
     clone.name = list.name;
     clone.version = list.version || '1.0.0';
@@ -55,14 +54,6 @@ export class ListController {
           clone[prop] = JSON.parse(JSON.stringify(list[prop]));
         }
       }
-      gtag('event', 'List', {
-        'event_label': 'creation',
-        'non_interaction': true
-      });
-      gtag('event', 'List', {
-        'event_label': 'clone',
-        'non_interaction': true
-      });
       list.forks++;
       ListController.reset(clone);
     }

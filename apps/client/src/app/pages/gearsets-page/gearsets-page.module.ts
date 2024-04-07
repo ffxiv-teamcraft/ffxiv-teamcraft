@@ -25,7 +25,10 @@ const routes: Routes = [
   {
     path: '',
     component: GearsetsPageComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Gearsets'
+    }
   }
 ];
 

@@ -57,8 +57,6 @@ import { FirestoreListStorage } from '../../../core/database/storage/list/firest
 import { AnalyticsService } from '../../../core/analytics/analytics.service';
 import { ListHistoryService } from '../../../core/database/storage/list/list-history.service';
 
-declare const gtag: (...args: any[]) => void;
-
 @Injectable({
   providedIn: 'root'
 })
@@ -318,7 +316,7 @@ export class ListsFacade {
     this.loadMyLists();
     const list = this.newListWithName(itemName);
     list.ephemeral = true;
-    list.offline = this.settings.makeQuickListsOffline;
+    list.offline = this.settings.offlineListByDefault || this.settings.makeQuickListsOffline;
     return list;
   }
 
@@ -411,10 +409,6 @@ export class ListsFacade {
 
   addList(list: List): void {
     this.store.dispatch(new CreateList(list));
-    gtag('event', 'List', {
-      'event_label': 'creation',
-      'non_interaction': true
-    });
   }
 
   addListAndWait(list: List): Observable<List> {
@@ -430,10 +424,6 @@ export class ListsFacade {
 
   deleteList(key: string, offline: boolean): void {
     this.store.dispatch(new DeleteList(key, offline));
-    gtag('event', 'List', {
-      'event_label': 'deletion',
-      'non_interaction': true
-    });
   }
 
   updateList(list: List): void {

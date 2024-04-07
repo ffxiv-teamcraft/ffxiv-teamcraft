@@ -15,7 +15,7 @@
           <nz-dropdown-menu #menu="nzDropdownMenu">
             <ul *ngIf="selectedLayout$ | async as selectedLayout" nz-menu>
               <li (click)="selectLayout(layout)" *ngFor="let layout of layouts" nz-menu-item>
-                {{layout.name}}<i *ngIf="layout.$key === selectedLayout.$key" nz-icon nzType="check"></i>
+                {{ layout.name }}<i *ngIf="layout.$key === selectedLayout.$key" nz-icon nzType="check"></i>
               </li>
             </ul>
           </nz-dropdown-menu>
@@ -62,7 +62,7 @@
           </button>
           <nz-dropdown-menu #menu="nzDropdownMenu">
             <ul nz-menu>
-              <li (click)="assignTeam(list, team)" *ngFor="let team of teams" nz-menu-item>{{team.name}}</li>
+              <li (click)="assignTeam(list, team)" *ngFor="let team of teams" nz-menu-item>{{ team.name }}</li>
             </ul>
           </nz-dropdown-menu>
         </div>
@@ -70,7 +70,7 @@
           <nz-tag (nzOnClose)="removeTeam(list, team)" *ngIf="list.teamId !== undefined"
                   [nzMode]="(canRemoveTag$ | async) ? 'closeable' : 'default'"
                   nzColor="purple">
-            {{team.name}}
+            {{ team.name }}
           </nz-tag>
         </div>
         <ng-container *ngIf="inventories$ | async as inventories">
@@ -84,7 +84,7 @@
           <nz-dropdown-menu #menu="nzDropdownMenu">
             <ul nz-menu class="inventories-menu">
               <li (click)="fillWithInventory(list, inventory)" *ngFor="let inventory of inventories" nz-menu-item>
-                {{inventory | translate}}
+                {{ inventory | translate }}
               </li>
             </ul>
           </nz-dropdown-menu>
@@ -97,7 +97,7 @@
                [nzDisabled]="(permissionLevel$ | async) < 40 || list.ephemeral || list.hasCommission"
                [nzTooltipTitle]="'LIST_DETAILS.Public_list_description' | translate" nz-checkbox
                nz-tooltip>
-          {{'Public_list' | translate}}
+          {{ 'Public_list' | translate }}
         </label>
         <div fxLayout="row" fxLayoutGap="5px">
           <button (click)="openSplitPopup(list)"
@@ -137,29 +137,29 @@
                   nz-button nz-tooltip nzShape="circle">
             <i nz-icon nzType="number" nzTheme="outline"></i>
           </button>
-<!--          <button (click)="openHistoryPopup()"-->
-<!--                  [disabled]="(permissionLevel$ | async) < 20"-->
-<!--                  [nzTooltipTitle]="'LIST.History' | translate" nz-button-->
-<!--                  nz-tooltip-->
-<!--                  nzShape="circle" nzType="primary">-->
-<!--            <i nz-icon nzType="field-time" nzTheme="outline"></i>-->
-<!--          </button>-->
-<!--          <button (click)="openContributionsPopup()"-->
-<!--                  [disabled]="(permissionLevel$ | async) < 20"-->
-<!--                  [nzTooltipTitle]="'LIST_DETAILS.Contributions_popup' | translate"-->
-<!--                  nz-button-->
-<!--                  nz-tooltip-->
-<!--                  nzShape="circle"-->
-<!--                  nzType="default">-->
-<!--            <i nz-icon nzType="pie-chart"></i>-->
-<!--          </button>-->
+          <!--          <button (click)="openHistoryPopup()"-->
+          <!--                  [disabled]="(permissionLevel$ | async) < 20"-->
+          <!--                  [nzTooltipTitle]="'LIST.History' | translate" nz-button-->
+          <!--                  nz-tooltip-->
+          <!--                  nzShape="circle" nzType="primary">-->
+          <!--            <i nz-icon nzType="field-time" nzTheme="outline"></i>-->
+          <!--          </button>-->
+          <!--          <button (click)="openContributionsPopup()"-->
+          <!--                  [disabled]="(permissionLevel$ | async) < 20"-->
+          <!--                  [nzTooltipTitle]="'LIST_DETAILS.Contributions_popup' | translate"-->
+          <!--                  nz-button-->
+          <!--                  nz-tooltip-->
+          <!--                  nzShape="circle"-->
+          <!--                  nzType="default">-->
+          <!--            <i nz-icon nzType="pie-chart"></i>-->
+          <!--          </button>-->
         </div>
       </div>
     </div>
     <div fxLayout="row" fxLayoutAlign="flex-start center"
          fxLayoutAlign.lt-md="center center"
          fxLayoutGap="10px">
-      <h2>{{list.name}}</h2>
+      <h2>{{ list.name }}</h2>
       <div *ngIf="(permissionLevel$ | async) === 40 && !list.offline"
            [nzTooltipTitle]="'PERMISSIONS.List_tooltip' | translate: { level: list.everyone | permissionLevel }"
            class="permission-icon"
@@ -175,6 +175,13 @@
               nzShape="circle" nzSize="small">
         <i nz-icon nzType="edit"></i>
       </button>
+      <nz-tag *ngIf="list.offline" [nzTooltipTitle]="'LIST.Offline_help' | translate" [style.border-color]="'#bd0ef2'"
+              nz-tooltip>
+        {{ 'LIST.Offline' | translate }}
+      </nz-tag>
+      <button nz-button *ngIf="list.offline" nzSize="small" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
+              (nzOnConfirm)="convertToOnlineList(list)">{{ 'LIST.Convert_to_online' | translate }}
+      </button>
       <button (click)="archiveList(list)"
               *ngIf="!list.archived && !list.offline"
               [nzTooltipTitle]="'LIST.COMPLETION_POPUP.Archive' | translate"
@@ -188,29 +195,29 @@
               [nzTooltipTitle]="'COMMISSIONS.Open_commission_details' | translate"
               routerLink="/commission/{{list.$key}}">
         <i nz-icon nzType="shop" nzTheme="outline"></i>
-        {{'LIST_DETAILS.Commission_list' | translate}}
+        {{ 'LIST_DETAILS.Commission_list' | translate }}
       </nz-tag>
       <nz-tag nzColor="purple" *ngIf="list.archived"
               [nzMode]="(permissionLevel$ | async) < 40 ? 'default': 'closeable'"
               (nzOnClose)="unArchiveList(list)">
         <i nz-icon nzType="file-zip" nzTheme="outline"></i>
-        {{'Archived_tag' | translate}}
+        {{ 'Archived_tag' | translate }}
       </nz-tag>
       <div class="spacer"></div>
       <div class="flex-column gap-2">
         <div class="display-mode-selector">
           <span class="selector-label">
-          {{'LIST_DETAILS.DISPLAY_MODE.Title' | translate}}
+          {{ 'LIST_DETAILS.DISPLAY_MODE.Title' | translate }}
           </span>
           <nz-radio-group [ngModel]="displayMode$ | async" (ngModelChange)="_displayMode$.next($event)">
-            <label nz-radio-button [nzValue]="ListDisplayMode.FULL">{{'LIST_DETAILS.DISPLAY_MODE.Full' | translate}}</label>
-            <label nz-radio-button [nzValue]="ListDisplayMode.MINIMALIST">{{'LIST_DETAILS.DISPLAY_MODE.Minimalist' | translate}}</label>
-            <label nz-radio-button [nzValue]="ListDisplayMode.STEP_BY_STEP">{{'LIST_DETAILS.DISPLAY_MODE.Step_by_step' | translate}}</label>
+            <label nz-radio-button [nzValue]="ListDisplayMode.FULL">{{ 'LIST_DETAILS.DISPLAY_MODE.Full' | translate }}</label>
+            <label nz-radio-button [nzValue]="ListDisplayMode.MINIMALIST">{{ 'LIST_DETAILS.DISPLAY_MODE.Minimalist' | translate }}</label>
+            <label nz-radio-button [nzValue]="ListDisplayMode.STEP_BY_STEP">{{ 'LIST_DETAILS.DISPLAY_MODE.Step_by_step' | translate }}</label>
           </nz-radio-group>
         </div>
         <div *ngIf="isDesktop" class="step-by-step-overlay-button">
           <button nz-button nzBlock nzType="primary" (click)="toggleStepByStepOverlay()">
-            {{'LIST_DETAILS.STEP_BY_STEP.Toggle_overlay' | translate}}
+            {{ 'LIST_DETAILS.STEP_BY_STEP.Toggle_overlay' | translate }}
           </button>
         </div>
       </div>
@@ -221,7 +228,7 @@
       <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center" fxLayoutGap="5px">
         <div fxLayout="row" fxLayoutGap="5px">
           <button nz-button nzSize="small" nzType="primary" (click)="addItems()">
-            <i nz-icon nzType="plus"></i> {{'LIST_DETAILS.Add_item' | translate}}
+            <i nz-icon nzType="plus"></i> {{ 'LIST_DETAILS.Add_item' | translate }}
           </button>
           <button (click)="createAlarms(list)" [nzTooltipTitle]="'LIST.Add_all_alarms' | translate" nz-button nz-tooltip
                   nzShape="circle" nzSize="small">
@@ -265,25 +272,25 @@
         </div>
         <div>
           <label *ngIf="loggedIn$ | async" [(ngModel)]="adaptativeFilter"
-                 nz-checkbox>{{'LIST_DETAILS.Adaptative_filter' | translate}}</label>
+                 nz-checkbox>{{ 'LIST_DETAILS.Adaptative_filter' | translate }}</label>
         </div>
         <div>
           <label (ngModelChange)="toggleAutomaticHQFlag(list, $event)" *ngIf="(loggedIn$ | async) && (permissionLevel$ | async) >= 40"
                  [ngModel]="list.disableHQSuggestions"
                  nz-checkbox>
-            {{'LIST_DETAILS.Disable_HQ_suggestions' | translate}}
+            {{ 'LIST_DETAILS.Disable_HQ_suggestions' | translate }}
           </label>
         </div>
         <div>
           <label (ngModelChange)="hideCompletedGlobal$.next($event)" [ngModel]="hideCompletedGlobal$ | async"
                  nz-checkbox nz-tooltip>
-            {{'Hide_completed' | translate}}
+            {{ 'Hide_completed' | translate }}
           </label>
         </div>
       </div>
     </div>
     <div class="note" fxLayout="row wrap" fxLayoutAlign="flext-start center" fxLayoutGap="5px">
-      <div>{{list.note || ('LIST_DETAILS.No_note' | translate)}}</div>
+      <div>{{ list.note || ('LIST_DETAILS.No_note' | translate) }}</div>
       <button (click)="editNote(list)" [disabled]="(permissionLevel$ | async) < 40"
               [nzTooltipTitle]="'LIST_DETAILS.Edit_note' | translate" nz-button
               nz-tooltip nzShape="circle"
@@ -294,15 +301,15 @@
     <div *ngIf="list.public && list.tags?.length === 0" class="alert">
       <nz-alert [nzMessage]="message" nzShowIcon nzType="warning">
         <ng-template #message>
-          {{'LIST_DETAILS.Missing_tags_before_button' | translate}} <i nz-icon nzType="tags-o"></i>
-          {{'LIST_DETAILS.Missing_tags_after_button' | translate}}
+          {{ 'LIST_DETAILS.Missing_tags_before_button' | translate }} <i nz-icon nzType="tags-o"></i>
+          {{ 'LIST_DETAILS.Missing_tags_after_button' | translate }}
         </ng-template>
       </nz-alert>
     </div>
     <div *ngIf="machinaToggle" class="alert" fxLayout="row" fxLayoutGap="10px">
       <div fxLayout="row" fxLayoutGap="5px">
         <div [nzTooltipTitle]="'LIST_DETAILS.Autofill_details' | translate"
-             nz-tooltip>{{'LIST_DETAILS.Autofill' | translate}}:
+             nz-tooltip>{{ 'LIST_DETAILS.Autofill' | translate }}:
         </div>
         <div>
           <nz-switch (ngModelChange)="listsFacade.toggleAutocomplete($event)"
@@ -311,7 +318,7 @@
       </div>
       <div fxLayout="row" fxLayoutGap="5px" *ngIf="listsFacade.autocompleteEnabled$ | async">
         <div [nzTooltipTitle]="'LIST_DETAILS.Autofill_notification_details' | translate"
-             nz-tooltip>{{'LIST_DETAILS.Autofill_notification' | translate}}:
+             nz-tooltip>{{ 'LIST_DETAILS.Autofill_notification' | translate }}:
         </div>
         <div>
           <nz-switch (ngModelChange)="listsFacade.toggleCompletionNotification($event)"
@@ -367,6 +374,6 @@
 </ng-template>
 <ng-template #notFound>
   <app-fullpage-message>
-    {{'List_not_found' | translate}}
+    {{ 'List_not_found' | translate }}
   </app-fullpage-message>
 </ng-template>

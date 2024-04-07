@@ -940,6 +940,14 @@ export class SettingsService {
     this.setBoolean('alarms:tts', enabled);
   }
 
+  public get offlineListByDefault(): boolean {
+    return this.getBoolean('lists:default-offline', false);
+  }
+
+  public set offlineListByDefault(enabled: boolean) {
+    this.setBoolean('lists:default-offline', enabled);
+  }
+
   public getBoolean(name: string, defaultValue: boolean): boolean {
     return this.getSetting(name, defaultValue.toString()) === 'true';
   }

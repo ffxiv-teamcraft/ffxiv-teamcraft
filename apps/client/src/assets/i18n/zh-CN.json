@@ -1845,6 +1845,9 @@
     },
     "PATCH": {
       "Open_patch_page": "点击此处在数据库中打开新版本的全部改动",
+      "Previous": "Previous ({{version}})",
+      "Next": "Next ({{version}})",
+      "Release_date": "Release date: {{date}}",
       "CONTENT": {
         "Title": "版本内容",
         "Achievements": "成就 ({{amount}})",
@@ -1983,6 +1986,7 @@
     "Exclude": "反选",
     "Select_stat": "选择属性",
     "Level": "等级",
+    "Open_patch_data": "Open patch content for {{version}}",
     "SELECTION_MODE": {
       "List": "清单",
       "Compare": "比较"
@@ -3218,5 +3222,38 @@
     "Outdated_description": "此渔车使用过时的数据存储方法，请迁移以再次查看您的统计",
     "Outdated_description_passenger": "此渔车使用过时的数据存储方法，请联系车头对其迁移以再次查看统计.",
     "Migrate": "迁移"
+  },
+  "TITLE": {
+    "Search": "Search",
+    "Lists": "Lists",
+    "Crafting_Simulator": "Crafting Simulator",
+    "Crafting_Rotation": "Crafting Rotation",
+    "Gearsets": "Gearsets",
+    "Crafting_Replays": "Crafting Replays",
+    "Allagan_Reports": "Allagan Reports",
+    "Community_Lists": "Community Lists",
+    "Community_Rotations": "Community Rotations",
+    "Commissions": "My Commissions",
+    "Archives": "Archives",
+    "Alarms": "Alarms",
+    "Gathering_Items": "Gathering Items",
+    "Fish_Trains": "Fish Trains",
+    "Workshop": "Workshop",
+    "Animals": "Animals",
+    "Levequests": "Levequests",
+    "Desynth_Guide": "Desynth Guide",
+    "Leveling_Equipment": "Leveling Equipment",
+    "Grand_Company_Supplies": "Grand Company Supplies",
+    "Currency_Spending_Guide": "Currency Guide",
+    "Collectables": "Collectables",
+    "Retainer_Ventures": "Retainer Ventures",
+    "Treasure_Finder": "Treasure Finder",
+    "Layouts": "Layouts",
+    "Macro_Translator": "Macro Translator",
+    "Log_Tracker": "Log Tracker",
+    "Recipe_Finder": "Recipe Finder",
+    "Food_Picker": "Food Picker",
+    "Reminders": "Reminders",
+    "About": "About"
   }
 }

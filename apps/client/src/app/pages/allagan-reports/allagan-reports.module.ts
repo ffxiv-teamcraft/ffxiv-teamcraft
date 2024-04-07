@@ -47,12 +47,18 @@ const routes: Routes = [
   {
     path: '',
     component: AllaganReportsComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Allagan_Reports'
+    }
   },
   {
     path: ':itemId',
     component: AllaganReportDetailsComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Allagan_Reports'
+    }
   }
 ];
 

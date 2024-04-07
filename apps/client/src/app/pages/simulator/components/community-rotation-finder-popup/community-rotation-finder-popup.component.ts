@@ -34,6 +34,8 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { DialogComponent } from '../../../../core/dialog.component';
+import { ItemIconComponent } from '../../../../modules/item-icon/item-icon/item-icon.component';
+import { I18nNameComponent } from '../../../../core/i18n/i18n-name/i18n-name.component';
 
 @Component({
   selector: 'app-community-rotation-finder-popup',
@@ -41,7 +43,7 @@ import { DialogComponent } from '../../../../core/dialog.component';
   styleUrls: ['./community-rotation-finder-popup.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NzCardModule, FlexModule, NzCheckboxModule, FormsModule, NgIf, NzEmptyModule, NzDividerModule, NgFor, UserAvatarComponent, NzButtonModule, NzIconModule, NzToolTipModule, NzTagModule, ActionComponent, NzWaveModule, PageLoaderComponent, AsyncPipe, TranslateModule]
+  imports: [NzCardModule, FlexModule, NzCheckboxModule, FormsModule, NgIf, NzEmptyModule, NzDividerModule, NgFor, UserAvatarComponent, NzButtonModule, NzIconModule, NzToolTipModule, NzTagModule, ActionComponent, NzWaveModule, PageLoaderComponent, AsyncPipe, TranslateModule, ItemIconComponent, I18nNameComponent]
 })
 export class CommunityRotationFinderPopupComponent extends DialogComponent implements OnInit {
 

@@ -32,7 +32,10 @@ const routes: Routes = [
   {
     path: '',
     component: AlarmsPageComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Alarms'
+    }
   }
 ];
 

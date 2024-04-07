@@ -21,7 +21,10 @@ const routes: Routes = [
   {
     path: ':id',
     component: WorkshopDetailsComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Workshop',
+    }
   }
 ];
 

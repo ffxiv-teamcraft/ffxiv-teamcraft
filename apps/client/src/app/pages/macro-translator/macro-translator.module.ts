@@ -16,7 +16,10 @@ const routes: Routes = [
   {
     path: '',
     component: MacroTranslatorComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Macro_Translator'
+    }
   }
 ];
 

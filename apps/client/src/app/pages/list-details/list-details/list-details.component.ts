@@ -10,13 +10,12 @@ import { ListRow } from '../../../modules/list/model/list-row';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { LayoutEditorComponent } from '../../../modules/layout-editor/layout-editor/layout-editor.component';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { TagsPopupComponent } from '../../../modules/list/tags-popup/tags-popup.component';
-import { ListHistoryPopupComponent } from '../list-history-popup/list-history-popup.component';
 import { InventoryViewComponent } from '../inventory-view/inventory-view.component';
 import { PermissionsBoxComponent } from '../../../modules/permissions/permissions-box/permissions-box.component';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
@@ -73,15 +72,15 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, NgSwitch, NgSwitchCase, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf, NgSwitch, NgSwitchCase } from '@angular/common';
 
 @Component({
-    selector: 'app-list-details',
-    templateUrl: './list-details.component.html',
-    styleUrls: ['./list-details.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [NgIf, FlexModule, NzButtonModule, NzWaveModule, NzDropDownModule, NzToolTipModule, NzIconModule, NzMenuModule, NgFor, TutorialStepDirective, FavoriteButtonComponent, NzTagModule, NzCheckboxModule, FormsModule, RouterLink, NgSwitch, NgSwitchCase, NzRadioModule, ClipboardDirective, NzPopconfirmModule, NzAlertModule, NzSwitchModule, StepByStepDetailsComponent, ListCrystalsPanelComponent, ListDetailsPanelComponent, InventoryViewComponent, PageLoaderComponent, FullpageMessageComponent, AsyncPipe, TranslateModule, IfMobilePipe, PermissionLevelPipe]
+  selector: 'app-list-details',
+  templateUrl: './list-details.component.html',
+  styleUrls: ['./list-details.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgIf, FlexModule, NzButtonModule, NzWaveModule, NzDropDownModule, NzToolTipModule, NzIconModule, NzMenuModule, NgFor, TutorialStepDirective, FavoriteButtonComponent, NzTagModule, NzCheckboxModule, FormsModule, RouterLink, NgSwitch, NgSwitchCase, NzRadioModule, ClipboardDirective, NzPopconfirmModule, NzAlertModule, NzSwitchModule, StepByStepDetailsComponent, ListCrystalsPanelComponent, ListDetailsPanelComponent, InventoryViewComponent, PageLoaderComponent, FullpageMessageComponent, AsyncPipe, TranslateModule, IfMobilePipe, PermissionLevelPipe]
 })
 export class ListDetailsComponent extends TeamcraftPageComponent implements OnInit, OnDestroy {
 
@@ -541,12 +540,21 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     });
   }
 
-  openHistoryPopup(): void {
-    this.dialog.create({
-      nzTitle: this.translate.instant('LIST.History'),
-      nzFooter: null,
-      nzContent: ListHistoryPopupComponent
-    });
+  convertToOnlineList(list: List): void {
+    const clone = ListController.clone(list);
+    clone.offline = false;
+    this.listsFacade.addList(clone);
+    this.listsFacade.myLists$
+      .pipe(
+        map(lists => lists.find(l => l.createdAt.seconds === clone.createdAt.seconds && l.$key !== undefined && !l.offline)),
+        filter(l => l !== undefined),
+        first()
+      )
+      .subscribe((resultList) => {
+        this.listsFacade.deleteList(list.$key, true);
+        this.message.success(this.translate.instant('LIST.Converted_to_online'));
+        this.router.navigate(['list', resultList.$key]);
+      });
   }
 
   public fillWithInventory(list: List, containerName: string): void {

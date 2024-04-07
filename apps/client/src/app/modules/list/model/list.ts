@@ -64,6 +64,7 @@ export class List extends DataWithPermissions {
     if (settings) {
       this.everyone = settings.defaultPermissionLevel;
       this.disableHQSuggestions = settings.disableHQSuggestions;
+      this.offline = settings.offlineListByDefault;
     }
   }
 }

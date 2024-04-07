@@ -23,7 +23,10 @@ const routes: Routes = [
   {
     path: '',
     component: TreasureFinderComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Treasure_Finder'
+    }
   }
 ];
 

@@ -26,7 +26,10 @@ const routes: Routes = [
   {
     path: '',
     component: GatheringLocationComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard],
+    data: {
+      title: 'TITLE.Gathering_Items'
+    }
   }
 ];
 

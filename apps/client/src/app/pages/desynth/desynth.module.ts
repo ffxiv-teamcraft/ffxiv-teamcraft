@@ -20,7 +20,10 @@ import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 const routes: Routes = [
   {
     path: '',
-    component: DesynthComponent
+    component: DesynthComponent,
+    data: {
+      title: 'TITLE.Desynth_Guide'
+    }
   }
 ];
 
