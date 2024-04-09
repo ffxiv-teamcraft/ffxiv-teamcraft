@@ -548,7 +548,7 @@
     "Child_windows_description": "当点击跳转时(如数据库页面的“i”按钮或应用程序中的任何链接)， 使用ctrl + 单击或中键单击来在新窗口中打开。另外您可以使用 github 星标数旁边的新按钮来创建一个新窗口。",
     "Desktop_tip_title": "Teamcraft 拥有桌面客户端！更好、更快、更强！",
     "Desktop_tip_description": "桌面客户端使用离线搜索更快， 它还添加了悬浮窗功能和更多使用数据包捕获的功能(如果你想避免使用数据包捕获，默认情况下它是禁用的)。强烈建议使用它而不是网页版以获得更好的体验。",
-    "Lists_offline_by_default": "Make lists offline by default",
+    "Lists_offline_by_default": "默认使用离线模式创建清单",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -710,7 +710,7 @@
     "Mark_whole_panel_nq": "移除所有手动添加的HQ标志",
     "Mark_whole_panel_hq": "标记整个面板为HQ",
     "Crafts": "制作",
-    "Convert_to_online": "Convert to online list",
+    "Convert_to_online": "转换为在线清单",
     "Converted_to_online": "Your list is now online",
     "SCROLLING": {
       "Default": "默认",
@@ -1848,9 +1848,9 @@
     },
     "PATCH": {
       "Open_patch_page": "点击此处在数据库中打开新版本的全部改动",
-      "Previous": "Previous ({{version}})",
-      "Next": "Next ({{version}})",
-      "Release_date": "Release date: {{date}}",
+      "Previous": "上一版本 ({{version}})",
+      "Next": "下一版本 ({{version}})",
+      "Release_date": "发布日期: {{date}}",
       "CONTENT": {
         "Title": "版本内容",
         "Achievements": "成就 ({{amount}})",
@@ -1989,7 +1989,7 @@
     "Exclude": "反选",
     "Select_stat": "选择属性",
     "Level": "等级",
-    "Open_patch_data": "Open patch content for {{version}}",
+    "Open_patch_data": "打开 {{version}} 版本内容",
     "SELECTION_MODE": {
       "List": "清单",
       "Compare": "比较"
@@ -3227,15 +3227,15 @@
     "Migrate": "迁移"
   },
   "TITLE": {
-    "Search": "Search",
-    "Lists": "Lists",
-    "Crafting_Simulator": "Crafting Simulator",
-    "Crafting_Rotation": "Crafting Rotation",
-    "Gearsets": "Gearsets",
-    "Crafting_Replays": "Crafting Replays",
-    "Allagan_Reports": "Allagan Reports",
-    "Community_Lists": "Community Lists",
-    "Community_Rotations": "Community Rotations",
+    "Search": "搜索",
+    "Lists": "清单",
+    "Crafting_Simulator": "生产模拟器",
+    "Crafting_Rotation": "生产手法",
+    "Gearsets": "配装",
+    "Crafting_Replays": "工序重现",
+    "Allagan_Reports": "亚拉戈报告",
+    "Community_Lists": "共享清单",
+    "Community_Rotations": "共享手法",
     "Commissions": "My Commissions",
     "Archives": "Archives",
     "Alarms": "Alarms",
@@ -3257,6 +3257,6 @@
     "Recipe_Finder": "Recipe Finder",
     "Food_Picker": "Food Picker",
     "Reminders": "Reminders",
-    "About": "About"
+    "About": "关于"
   }
 }
