@@ -548,6 +548,7 @@
     "Child_windows_description": "Lorsque vous cliquez et que cela changera de page (comme le bouton \"i\" pour les pages de la base de données ou tout lien dans l'application), utilisez ctrl + clic ou le clic molette pour ouvrir une nouvelle fenêtre. De plus, vous pouvez créer une nouvelle fenêtre en utilisant le nouveau bouton à côté du nombre d'étoiles Github.",
     "Desktop_tip_title": "Teamcraft a une application de bureau ! Essayez-là",
     "Desktop_tip_description": "L'application de bureau est beaucoup plus rapide en utilisant la recherche hors ligne, elle ajoute aussi des fonctionnalités d'overlays et plus encore si vous activez la capture de paquets (qui est désactivée par défaut). Il est fortement recommandé de l'utiliser au lieu de la version web pour une meilleure expérience.",
+    "Lists_offline_by_default": "Make lists offline by default",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -709,6 +710,8 @@
     "Mark_whole_panel_nq": "Supprimer les flags HQ manuels",
     "Mark_whole_panel_hq": "Marquer tout le panneau HQ",
     "Crafts": "fabrication",
+    "Convert_to_online": "Convert to online list",
+    "Converted_to_online": "Your list is now online",
     "SCROLLING": {
       "Default": "Défaut",
       "Only_large": "Seulement les grandes listes",
