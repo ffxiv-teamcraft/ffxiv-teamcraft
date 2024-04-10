@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NgFor } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
+import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
     selector: 'app-layout-row-display-editor',
@@ -17,7 +18,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     standalone: true,
     imports: [FlexModule, NgFor, NzSelectModule, FormsModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
-export class LayoutRowDisplayEditorComponent {
+export class LayoutRowDisplayEditorComponent extends DialogComponent {
 
   types = ItemRowMenuElement;
 
@@ -28,6 +29,7 @@ export class LayoutRowDisplayEditorComponent {
   layout: ListLayout;
 
   constructor(private modalRef: NzModalRef) {
+    super();
   }
 
   currentType(type: ItemRowMenuElement): 'button' | 'menu' {

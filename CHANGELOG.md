@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.38](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.37...v11.0.38) (2024-04-10)
+
+
+### Features
+
+* **data:** update for cn patch-6.51 ([e2db8e6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e2db8e6d48fe0efafa58863e8172a40954c33c1e))
+
+
+### Bug Fixes
+
+* **layout-editor:** fix buttons display popup not loading ([e2c0cba](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e2c0cbaa14cfa75752f41574966c2d0fad47808b))
+* **list:** fixed blue "can craft" highlight for multi-yield crafts ([01dbf84](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/01dbf8466f536b3a83a458652035be7dbf048f94))
+
 ### [11.0.37](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.36...v11.0.37) (2024-04-07)
 
 

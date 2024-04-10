@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutGap="10px">
   <div *ngFor="let item of allTypes" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
     <div>{{('LIST_DETAILS.LAYOUT_DIALOG.ITEMS.' + types[item]) | translate}}</div>
-    <nz-select (ngModelChange)="setType(item, $event)" [ngModel]="currentType(item)" style="width: 100px;">
+    <nz-select *ngIf="layout" (ngModelChange)="setType(item, $event)" [ngModel]="currentType(item)" style="width: 100px;">
       <nz-option [nzLabel]="'LIST_DETAILS.LAYOUT_DIALOG.Buttons' | translate" nzValue="button"></nz-option>
       <nz-option [nzLabel]="'LIST_DETAILS.LAYOUT_DIALOG.Menu' | translate" nzValue="menu"></nz-option>
     </nz-select>

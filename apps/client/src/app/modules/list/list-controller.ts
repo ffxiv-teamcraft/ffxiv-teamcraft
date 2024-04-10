@@ -9,7 +9,6 @@ import { List } from './model/list';
 import { syncHqFlags } from '../../core/data/sources/sync-hq-flags';
 import { Timestamp } from '@angular/fire/firestore';
 import { LazyData } from '@ffxiv-teamcraft/data/model/lazy-data';
-import { now } from 'lodash';
 
 
 interface CraftAdditionParams {
@@ -296,16 +295,17 @@ export class ListController {
       }
       const requirementItem = ListController.getItemById(list, requirement.id, true);
       if (requirementItem !== undefined) {
+        const totalNeeded = requirement.amount * Math.ceil((item.amount - item.done) / item.yield);
         // While each requirement has enough items remaining, you can craft the item.
         // If only one misses, then this will turn false for the rest of the loop
         let requirementAvailableQuantity = requirementItem.done - requirementItem.used;
         // If this is yielding more than one and it's an not exact amount (theorically crafted a float amount)
+        // It also has to not be the last craft needed otherwise we want it completed (1 / 4 with yield of 2 is fine, 3 / 4 isn't because we still need a craft anyways)
         // add one to simulate it properly.
-        if (item.yield > 1 && ((item.done / item.yield) % 1 !== 0) && requirementAvailableQuantity > 0) {
+        if (item.yield > 1 && ((item.done / item.yield) % 1 !== 0) && item.amount - item.done > item.yield && requirementAvailableQuantity > 0) {
           requirementAvailableQuantity += requirement.amount;
         }
-        canCraft = canCraft &&
-          (requirementAvailableQuantity) >= requirement.amount * (item.amount_needed - (item.done / item.yield));
+        canCraft = canCraft && requirementAvailableQuantity >= totalNeeded;
       }
     }
     return canCraft;

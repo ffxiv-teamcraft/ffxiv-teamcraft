@@ -548,6 +548,7 @@
     "Child_windows_description": "When clicking something that navigates (like the \"i\" button for database pages or any link in the app), use ctrl + click or middle click instead to open in a new window. Additionally, you can create a new window using the new button next to the github stars count.",
     "Desktop_tip_title": "Teamcraft has a desktop app ! Better, faster, stronger",
     "Desktop_tip_description": "Desktop app is way faster by using offline search, it also adds overlay features and more using packet capture (which is disabled by default if you want to avoid using packet capture). It's strongly advized to use it instead of web version for a better experience.",
+    "Lists_offline_by_default": "Make lists offline by default",
     "COLORS": {
       "Background": "Cor de fundo",
       "Primary": "Cor principal",
@@ -709,6 +710,8 @@
     "Mark_whole_panel_nq": "Remove manual HQ flags",
     "Mark_whole_panel_hq": "Mark whole panel HQ",
     "Crafts": "crafts",
+    "Convert_to_online": "Convert to online list",
+    "Converted_to_online": "Your list is now online",
     "SCROLLING": {
       "Default": "Default",
       "Only_large": "Only large lists",
