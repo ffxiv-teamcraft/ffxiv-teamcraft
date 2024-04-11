@@ -1,5 +1,10 @@
 import { ListRow } from '../../modules/list/model/list-row';
 
+/**
+ * Returns a sorted version of a given list row array where items are always placed after their requirements.
+ *
+ * @param data
+ */
 export function topologicalSort(data: ListRow[]): ListRow[] {
   const res: ListRow[] = [];
   const doneList: boolean[] = [];
