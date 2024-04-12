@@ -144,6 +144,7 @@ export class ListController {
               row.amount = ListController.totalAmountRequired(list, row);
               row.amount_needed = Math.ceil(row.amount / row.yield);
             }
+            row.done = Math.min(row.done, row.amount);
           });
         }
         list[prop] = list[prop].filter((row: ListRow) => row.amount > 0);
