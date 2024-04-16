@@ -74,6 +74,7 @@ export class SeString {
       // Idk what the hell UIGlow is supposed to do, let's just skip it for now
       case SeStringChunkType.UIGlow:
       // The ignored ones
+      // eslint-disable-next-line no-fallthrough
       case 0x16:
       case 0x17:
         return new StaticResultChunk('');

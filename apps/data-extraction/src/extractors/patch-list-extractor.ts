@@ -2,7 +2,7 @@ import { AbstractExtractor } from '../abstract-extractor';
 
 export class PatchListExtractor extends AbstractExtractor {
   protected doExtract(): void {
-    this.get('https://xivapi.com/patchlist').subscribe(patches => {
+    this.get('https://raw.githubusercontent.com/xivapi/ffxiv-datamining-patches/master/patchlist.json').subscribe(patches => {
       this.persistToJsonAsset('patch-names', patches.reduce((acc, p) => {
         return {
           ...acc,

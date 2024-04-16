@@ -13,9 +13,9 @@ export class ActionsDbPagesExtractor extends AbstractExtractor {
         'IsPlayerAction', 'ClassJobLevel#', 'ClassJob#', 'ActionCategory#',
         'Range', 'EffectRange', 'PrimaryCostType#', 'PrimaryCostValue#', 'Cost#', 'IsPvP', 'PreservesCombo', 'AffectsPosition',
         'ActionProcStatus.Status.Icon', 'ActionProcStatus.Status.Name'], false, 2),
-      of(xiv.getFromSaintCSV<{ '#': string, Description: I18nName }>('ActionTransient')),
+      xiv.getFromSaintCSV<{ '#': string, Description: I18nName }>('ActionTransient'),
       this.getSheet<any>(xiv, 'CraftAction', ['Name', 'Icon']),
-      of(xiv.getFromSaintCSV<{ '#': string, Description: I18nName }>('CraftAction')),
+      xiv.getFromSaintCSV<{ '#': string, Description: I18nName }>('CraftAction'),
       this.getSheet<any>(xiv, 'Trait', ['Name', 'Icon']),
       this.getSheet<any>(xiv, 'TraitTransient', ['Description'])
     ]).subscribe(([actions, actionTransient, craftActions, saintCraftActions, traits, traitTransient]) => {

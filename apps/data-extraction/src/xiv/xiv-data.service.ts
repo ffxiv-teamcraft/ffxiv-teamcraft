@@ -1,5 +1,4 @@
 import { KoboldService } from '../kobold/kobold.service';
-import { readFileSync } from 'fs';
 import { join } from 'path';
 import { ColumnSeekOptions, Row } from '@kobold/excel/dist/row';
 import { ParsedColumn, ParsedRow } from './parsed-row';
@@ -14,6 +13,9 @@ import { readdirSync } from 'fs-extra';
 import { numberToCssColor } from './string/number-to-css-color';
 import { ExdYamlParser } from './exd/exd-yaml-parser';
 import { EXDSchema } from './exd/EXDSchema';
+import { spawn } from 'child_process';
+import { Observable } from 'rxjs';
+import { readFileSync } from 'fs';
 
 export class XivDataService {
 
@@ -40,41 +42,61 @@ export class XivDataService {
    * @param sheetName
    * @param useFirstColumnAsHeader
    */
-  public getFromSaintCSV<T = ParsedRow>(sheetName: string, useFirstColumnAsHeader = false): T[] {
-    const latestExtractFolder = readdirSync(this.rawExdPath)
-      .filter(folder => /\d+\.\d+\.\d+\.\d+\.\d+/.test(folder))
-      .sort()
-      .reverse()[0];
-    const rawExdPath = join(this.rawExdPath, latestExtractFolder, 'raw-exd-all');
-    const parsed = {
-      en: parse(readFileSync(join(rawExdPath, `${sheetName}.en.csv`)), {
-        columns: true,
-        from_line: useFirstColumnAsHeader ? 1 : 2
-      }),
-      ja: parse(readFileSync(join(rawExdPath, `${sheetName}.ja.csv`)), {
-        columns: true,
-        from_line: useFirstColumnAsHeader ? 1 : 2
-      }),
-      de: parse(readFileSync(join(rawExdPath, `${sheetName}.de.csv`)), {
-        columns: true,
-        from_line: useFirstColumnAsHeader ? 1 : 2
-      }),
-      fr: parse(readFileSync(join(rawExdPath, `${sheetName}.fr.csv`)), {
-        columns: true,
-        from_line: useFirstColumnAsHeader ? 1 : 2
-      })
-    };
-    return parsed.en.map((row, index) => {
-      Object.entries(row)
-        .forEach(([key, value]) => {
-          if (typeof value === 'string' && isNaN(+value)) {
-            row[`${key}_en`] = this.processSaintString(value, sheetName === 'CraftAction');
-            row[`${key}_de`] = this.processSaintString(parsed.de[index][key], sheetName === 'CraftAction');
-            row[`${key}_ja`] = this.processSaintString(parsed.ja[index][key], sheetName === 'CraftAction');
-            row[`${key}_fr`] = this.processSaintString(parsed.fr[index][key], sheetName === 'CraftAction');
-          }
-        });
-      return row;
+  public getFromSaintCSV<T = ParsedRow>(sheetName: string, useFirstColumnAsHeader = false): Observable<T[]> {
+    return new Observable<T[]>(observer => {
+      const saintProcess = spawn(join(this.rawExdPath, 'SaintCoinach.Cmd.exe'), ['C:\\Program Files (x86)\\SquareEnix\\FINAL FANTASY XIV - A Realm Reborn', `allrawexd ${sheetName}`], {
+        stdio: 'pipe',
+        cwd: this.rawExdPath
+      });
+      saintProcess.stdout.on('data', (stdout) => {
+        const line = stdout.toString();
+        if (line.includes('perform update')) {
+          saintProcess.stdin.write('N\n');
+        }
+        if (line.includes('files exported')) {
+          saintProcess.kill();
+          const latestExtractFolder = readdirSync(this.rawExdPath)
+            .filter(folder => /\d+\.\d+\.\d+\.\d+\.\d+/.test(folder))
+            .sort()
+            .reverse()[0];
+          const rawExdPath = join(this.rawExdPath, latestExtractFolder, 'raw-exd-all');
+          const parsed = {
+            en: parse(readFileSync(join(rawExdPath, `${sheetName}.en.csv`)), {
+              columns: true,
+              from_line: useFirstColumnAsHeader ? 1 : 2
+            }),
+            ja: parse(readFileSync(join(rawExdPath, `${sheetName}.ja.csv`)), {
+              columns: true,
+              from_line: useFirstColumnAsHeader ? 1 : 2
+            }),
+            de: parse(readFileSync(join(rawExdPath, `${sheetName}.de.csv`)), {
+              columns: true,
+              from_line: useFirstColumnAsHeader ? 1 : 2
+            }),
+            fr: parse(readFileSync(join(rawExdPath, `${sheetName}.fr.csv`)), {
+              columns: true,
+              from_line: useFirstColumnAsHeader ? 1 : 2
+            })
+          };
+          observer.next(parsed.en.map((row, index) => {
+            Object.entries(row)
+              .forEach(([key, value]) => {
+                if (typeof value === 'string' && isNaN(+value)) {
+                  row[`${key}_en`] = this.processSaintString(value, sheetName === 'CraftAction');
+                  row[`${key}_de`] = this.processSaintString(parsed.de[index][key], sheetName === 'CraftAction');
+                  row[`${key}_ja`] = this.processSaintString(parsed.ja[index][key], sheetName === 'CraftAction');
+                  row[`${key}_fr`] = this.processSaintString(parsed.fr[index][key], sheetName === 'CraftAction');
+                }
+              });
+            return row;
+          }));
+          observer.complete();
+        }
+      });
+      saintProcess.on('error', (err) => {
+        observer.error(err);
+        observer.complete();
+      });
     });
   }
 
@@ -194,7 +216,7 @@ export class XivDataService {
       return (row as number[] | number[][]).map((e: number | number[]) => {
         return this.mapEntry(e, entry, sheets, fullRow);
       });
-    } else if(entry.mapper) {
+    } else if (entry.mapper) {
       return entry.mapper.fn(Number(row), fullRow, sheets);
     }
     return row;
