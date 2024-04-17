@@ -14964,8 +14964,8 @@
       "hookset": 2,
       "tug": 1,
       "bait": 20675,
-      "spawn": 5,
-      "duration": 2,
+      "spawn": 5.5,
+      "duration": 1,
       "weathers": [
         1
       ],
