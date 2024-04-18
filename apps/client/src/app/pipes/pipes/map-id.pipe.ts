@@ -4,9 +4,9 @@ import { distinctUntilChanged, map, switchMap } from 'rxjs/operators';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 @Pipe({
-    name: 'mapId',
-    pure: false,
-    standalone: true
+  name: 'mapId',
+  pure: false,
+  standalone: true
 })
 export class MapIdPipe implements PipeTransform, OnDestroy {
   private readonly placeId$ = new Subject<number | undefined>();
@@ -14,7 +14,7 @@ export class MapIdPipe implements PipeTransform, OnDestroy {
   private readonly mapId$ = this.placeId$.pipe(
     distinctUntilChanged(),
     switchMap((placeId) => (placeId >= 0 ? this.lazyData.getI18nName('places', placeId).pipe(map(name => name.en)) : of(undefined))),
-    map((enName) => this.lazyData.getMapId(enName))
+    switchMap((enName) => this.lazyData.getMapId(enName))
   );
 
   private readonly sub: Subscription;

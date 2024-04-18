@@ -19,7 +19,13 @@ export class MapIdsExtractor extends AbstractExtractor {
               weatherRate: map.TerritoryType?.WeatherRate ?? null
             });
           });
-        this.persistToTypescript('map-ids', 'mapIds', mapIds);
+        this.persistToTypescript('map-ids', 'mapIds', mapIds.map(row => {
+          return {
+            zone: row.zone,
+            id: row.id,
+            weatherRate: row.weatherRate
+          };
+        }));
         this.persistToJsonAsset('map-entries', mapIds);
         this.done();
       });

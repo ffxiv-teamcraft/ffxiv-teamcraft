@@ -193,22 +193,26 @@ export class LazyDataFacade {
   /**
    * PUBLIC UTILITY METHODS
    */
-  public getMapId(name: string): number {
-    const result = mapIds.find((m) => m.name === name);
-    if (result === undefined) {
-      if (name === 'Gridania') {
-        return 2;
-      }
-      if (name.startsWith('Eulmore - ')) {
-        return 498;
-      }
-      // Diadem
-      if (name === 'The Diadem') {
-        return 538;
-      }
-      return -1;
-    }
-    return result.id;
+  public getMapId(name: string): Observable<number> {
+    return this.getEntry('mapEntries').pipe(
+      map(maps => {
+        const result = maps.find((m) => m.name === name);
+        if (result === undefined) {
+          if (name === 'Gridania') {
+            return 2;
+          }
+          if (name.startsWith('Eulmore - ')) {
+            return 498;
+          }
+          // Diadem
+          if (name === 'The Diadem') {
+            return 538;
+          }
+          return -1;
+        }
+        return result.id;
+      })
+    )
   }
 
   public getWorldName(world: string): I18nName {
