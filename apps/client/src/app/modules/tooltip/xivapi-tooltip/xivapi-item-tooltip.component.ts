@@ -92,10 +92,6 @@ export class XivapiItemTooltipComponent implements OnInit {
    */
   public mainAttributes = [];
 
-  public trackByNode(index: number, node: GatheringNode): number {
-    return node.id;
-  }
-
   public trackByBait(index: number, bait: FishingBait): number {
     return bait.id;
   }
@@ -131,6 +127,16 @@ export class XivapiItemTooltipComponent implements OnInit {
         ID: BaseParam.MAGIC_DEFENSE,
         NQ: this.item.mDef,
         HQ: this.item.mDef + this.item.bpSpecial[1]
+      });
+    }
+
+    if(this.item.bonuses){
+      this.mainAttributes = this.item.bonuses.map(bonus => {
+        return {
+          ID: bonus.ID,
+          NQ: bonus.Relative ? `${bonus.NQ}% (${bonus.Max})` : bonus.NQ,
+          HQ: bonus.Relative ? `${bonus.HQ}% (${bonus.MaxHQ})` : bonus.HQ
+        }
       });
     }
   }
