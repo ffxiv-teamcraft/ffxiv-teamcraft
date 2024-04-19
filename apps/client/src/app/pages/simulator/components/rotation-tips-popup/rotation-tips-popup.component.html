@@ -1,5 +1,5 @@
 <div fxLayout="column">
-  <div *ngFor="let tip of tips; let last = last">
+  <div *ngFor="let tip of data.tips; let last = last">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="24px">
       <div>
         <div [ngSwitch]="tip.type">
@@ -8,7 +8,7 @@
           <i *ngSwitchCase="2" nz-icon nzTheme="twotone" nzType="info-circle"></i>
         </div>
       </div>
-      <div>{{('SIMULATOR.ROTATION_TIPS.' + tip.message) | translate: tip.messageParams(result)}}</div>
+      <div>{{('SIMULATOR.ROTATION_TIPS.' + tip.message) | translate: tip.messageParams(data.result)}}</div>
     </div>
     <nz-divider *ngIf="!last"></nz-divider>
   </div>
