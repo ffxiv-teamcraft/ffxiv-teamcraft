@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.39](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.38...v11.0.39) (2024-04-19)
+
+
+### Features
+
+* **item-tooltip:** add consumable bonuses ([24418a2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/24418a200ebc1dccf5db88c3b978a39c1bea03ab))
+
+
+### Bug Fixes
+
+* **community-rotations:** add 50 as possible durability value ([dc01c1b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dc01c1b41c23c04a11b900dcafb9a5c53884cd8f))
+* **desktop:** fallback opcodes loading for when github cdn is not reached ([f18dfce](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f18dfce35f4d6d5a78cf58741f4e77cd2ef696ba))
+* **list:** fill with inventory now fills crafts before materials ([9087c52](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9087c5220f76a0b2ca0ed93534b5f844948f0bd3))
+* **list:** fix wrong materials amount after reducing final item quantity ([37b5d9d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/37b5d9d50be8c9ebbec5786f955192d24afc668e))
+* **simulator:** rotation tips not loading content ([f5071cf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f5071cf68deccc35060a6aaf6c157e03605b025d))
+
 ### [11.0.38](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.37...v11.0.38) (2024-04-10)
 
 
