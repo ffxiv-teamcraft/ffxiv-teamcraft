@@ -73,6 +73,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { AsyncPipe, NgFor, NgIf, NgSwitch, NgSwitchCase } from '@angular/common';
+import { topologicalSort } from '../../../core/tools/topological-sort';
 
 @Component({
   selector: 'app-list-details',
@@ -578,7 +579,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
             ListController.setDone(list, item.id, Math.min(item.done + totalAmount, item.amount), false, true, false, null, true);
           }
         });
-        list.items.forEach(item => {
+        topologicalSort(list.items).reverse().forEach(item => {
           let inventoryItems = inventory.getItem(item.id)
             .filter(e => {
               return containerName === null || this.inventoryFacade.getContainerDisplayName(e) === containerName;
@@ -599,31 +600,6 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
           }
         });
         ListController.updateAllStatuses(list);
-        return list;
-      })
-    ).subscribe(res => {
-      this.listsFacade.updateList(res);
-    });
-  }
-
-  public syncWithInventory(list: List): void {
-    this.inventoryFacade.inventory$.pipe(
-      first(),
-      map(inventory => {
-        list.items.forEach(item => {
-          const inventoryItems = inventory.getItem(item.id, true);
-          if (inventoryItems.length > 0) {
-            const totalAmount = inventoryItems.reduce((total, i) => total + i.quantity, 0);
-            ListController.setDone(list, item.id, Math.min(totalAmount, item.amount), true);
-          }
-        });
-        list.finalItems.forEach(item => {
-          const inventoryItems = inventory.getItem(item.id, true);
-          if (inventoryItems.length > 0) {
-            const totalAmount = inventoryItems.reduce((total, i) => total + i.quantity, 0);
-            ListController.setDone(list, item.id, Math.min(totalAmount, item.amount), false, true);
-          }
-        });
         return list;
       })
     ).subscribe(res => {

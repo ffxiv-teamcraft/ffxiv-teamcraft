@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { Vector2 } from '@ffxiv-teamcraft/types';
-import { mapIds } from '../../../core/data/sources/map-ids';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
@@ -32,14 +31,14 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
-    selector: 'app-mob',
-    templateUrl: './mob.component.html',
-    styleUrls: ['./mob.component.less'],
-    standalone: true,
-    imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, MapComponent, NzListModule, ItemIconComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, IfMobilePipe, XivapiIconPipe, LazyIconPipe]
+  selector: 'app-mob',
+  templateUrl: './mob.component.html',
+  styleUrls: ['./mob.component.less'],
+  standalone: true,
+  imports: [NgIf, FlexModule, I18nNameComponent, DbButtonComponent, NgFor, NzToolTipModule, I18nDisplayComponent, DbCommentsComponent, NzDividerModule, NzCardModule, MapComponent, NzListModule, ItemIconComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, IfMobilePipe, XivapiIconPipe, LazyIconPipe]
 })
 export class MobComponent extends TeamcraftPageComponent {
 
@@ -59,8 +58,8 @@ export class MobComponent extends TeamcraftPageComponent {
 
   constructor(private route: ActivatedRoute,
               private i18n: I18nToolsService, private translate: TranslateService,
-              private router: Router, private lazyData: LazyDataFacade, public settings: SettingsService,
-              private mapService: MapService, seo: SeoService) {
+              private lazyData: LazyDataFacade, public settings: SettingsService,
+              private mapService: MapService, seo: SeoService, router: Router) {
     super(seo);
     this.updateSlug(router, i18n, route, 'mobs', 'mobId');
 
@@ -70,7 +69,7 @@ export class MobComponent extends TeamcraftPageComponent {
 
     this.spawns$ = this.mob$.pipe(
       withLazyData(this.lazyData, 'hunts'),
-      map(([mob, hunts]) => {
+      switchMap(([mob, hunts]) => {
         const spawns = [];
         if (mob.monster?.positions !== undefined) {
           for (const position of mob.monster.positions) {
@@ -91,24 +90,29 @@ export class MobComponent extends TeamcraftPageComponent {
         }
         const mobHuntSpawns = hunts.find(h => (h.hunts || []).some(hh => hh.name.toLowerCase() === mob.en.toLowerCase()));
         if (mobHuntSpawns !== undefined) {
-          const mapIdEntry = mapIds.find(entry => entry.territory === mobHuntSpawns.zoneid);
-          const c = mapIdEntry.scale / 100;
-          spawns.push({
-              map: mapIdEntry.id,
-              level: '??',
-              zoneid: mapIdEntry.zone,
-              positions: (mobHuntSpawns.hunts ?? []).find(hh => hh.name.toLowerCase() === mob.en.toLowerCase())
-                .spawns
-                .map(hSpawn => {
-                  return {
-                    x: (41.0 / c) * ((hSpawn.x + 1024) / 2048.0),
-                    y: (41.0 / c) * ((hSpawn.y + 1024) / 2048.0)
-                  };
-                })
-            }
+          return this.lazyData.getEntry('mapEntries').pipe(
+            map(maps => {
+              const mapIdEntry = Object.values(maps).find(entry => entry.territory === mobHuntSpawns.zoneid);
+              const c = mapIdEntry.scale / 100;
+              spawns.push({
+                  map: mapIdEntry.id,
+                  level: '??',
+                  zoneid: mapIdEntry.zone,
+                  positions: (mobHuntSpawns.hunts ?? []).find(hh => hh.name.toLowerCase() === mob.en.toLowerCase())
+                    .spawns
+                    .map(hSpawn => {
+                      return {
+                        x: (41.0 / c) * ((hSpawn.x + 1024) / 2048.0),
+                        y: (41.0 / c) * ((hSpawn.y + 1024) / 2048.0)
+                      };
+                    })
+                }
+              );
+              return spawns;
+            })
           );
         }
-        return spawns;
+        return of(spawns);
       })
     );
 

@@ -163,7 +163,6 @@ export class ItemRowComponent extends AbstractItemRowComponent implements OnInit
                 list: list,
                 recipeId: item.recipeId,
                 amount: amount - item.amount
-
               });
             })
           );

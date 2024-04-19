@@ -1,22 +1,11 @@
 import { Injectable } from '@angular/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { debounceTime, filter, first, map, shareReplay, skipWhile, switchMap } from 'rxjs/operators';
-import {
-  I18nElement,
-  I18nName,
-  LazyDataEntries,
-  LazyDataI18nKey,
-  LazyDataKey,
-  LazyDataRecordKey,
-  LazyDataWithExtracts,
-  Region,
-  XivapiPatch
-} from '@ffxiv-teamcraft/types';
+import { I18nElement, I18nName, LazyDataEntries, LazyDataI18nKey, LazyDataKey, LazyDataRecordKey, LazyDataWithExtracts, Region } from '@ffxiv-teamcraft/types';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { zhWorlds } from '../../core/data/sources/zh-worlds';
 import { koWorlds } from '../../core/data/sources/ko-worlds';
 import { LazyRecipe } from '@ffxiv-teamcraft/data/model/lazy-recipe';
-import { HttpClient } from '@angular/common/http';
 import { mapIds } from '../../core/data/sources/map-ids';
 import { Language } from '../../core/data/language';
 import { normalizeI18nName } from '../../core/tools/normalize-i18n';
@@ -47,7 +36,7 @@ export class LazyDataFacade {
   public isLoading$ = this.state.loading$;
 
   constructor(private state: LazyDataStateService,
-              private settings: SettingsService, private http: HttpClient,
+              private settings: SettingsService,
               private translate: TranslateService) {
     this.isLoading$
       .pipe(
@@ -204,22 +193,26 @@ export class LazyDataFacade {
   /**
    * PUBLIC UTILITY METHODS
    */
-  public getMapId(name: string): number {
-    const result = mapIds.find((m) => m.name === name);
-    if (result === undefined) {
-      if (name === 'Gridania') {
-        return 2;
-      }
-      if (name.startsWith('Eulmore - ')) {
-        return 498;
-      }
-      // Diadem
-      if (name === 'The Diadem') {
-        return 538;
-      }
-      return -1;
-    }
-    return result.id;
+  public getMapId(name: string): Observable<number> {
+    return this.getEntry('mapEntries').pipe(
+      map(maps => {
+        const result = maps.find((m) => m.name === name);
+        if (result === undefined) {
+          if (name === 'Gridania') {
+            return 2;
+          }
+          if (name.startsWith('Eulmore - ')) {
+            return 498;
+          }
+          // Diadem
+          if (name === 'The Diadem') {
+            return 538;
+          }
+          return -1;
+        }
+        return result.id;
+      })
+    )
   }
 
   public getWorldName(world: string): I18nName {

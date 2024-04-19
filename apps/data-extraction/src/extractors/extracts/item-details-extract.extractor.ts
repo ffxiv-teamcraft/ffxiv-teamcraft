@@ -45,7 +45,7 @@ export class ItemDetailsExtractExtractor extends AbstractExtractor {
     const spinner = createSpinner('Item details', {
       frames: ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏']
     }).start();
-    this.get('https://xivapi.com/patchlist').pipe(
+    this.get('https://raw.githubusercontent.com/xivapi/ffxiv-datamining-patches/master/patchlist.json').pipe(
       map(patches => {
         this.alarmsExtractor = new AlarmsExtractor(patches);
         const extractors: AbstractItemDetailsExtractor<any>[] = [

@@ -4,6 +4,8 @@ import { LazyQuest } from '@ffxiv-teamcraft/data/model/lazy-quest';
 import { uniq } from 'lodash';
 import { questChainLengths } from '@ffxiv-teamcraft/data/handmade/quests-chain-lengths';
 import { I18nName } from '@ffxiv-teamcraft/types';
+import { switchMap } from 'rxjs/operators';
+import { combineLatest, tap } from 'rxjs';
 
 export class QuestsDbPagesExtractor extends AbstractExtractor {
   npcs = this.requireLazyFileByKey('npcs');
@@ -38,51 +40,58 @@ export class QuestsDbPagesExtractor extends AbstractExtractor {
         'BeastReputationRank#',
         'Id'
       ], false, 1)
-      .subscribe(quests => {
-        this.getExtendedNames<LazyQuest>('quests', q => q.name).forEach(extended => {
-          const row = quests.find(q => q.index === +extended.id);
-          const folder = row.Id.split('_')[1].slice(-6, 3);
-          const textCSV = xiv.getFromSaintCSV<{ key: string, 0: string, 1: string }>(`quest/${folder}/${row.Id}`, true);
-          const { name, ...quest } = extended;
-          const ActorSpawnSeq = row.QuestListenerParams.map(({ActorSpawnSeq}) => ActorSpawnSeq).filter(Boolean)
-          pages[quest.id] = {
-            ...quest,
-            id: +quest.id,
-            patch: this.findPatch('quest', quest.id),
-            description: {
-              en: textCSV[2]['1_en'],
-              de: textCSV[2]['1_de'],
-              ja: textCSV[2]['1_ja'],
-              fr: textCSV[2]['1_fr'],
-              ko: koDescriptions[quest.id]?.ko,
-              zh: zhDescriptions[quest.id]?.zh
-            },
-            chainLength: questChainLengths[+quest.id],
-            genre: row.JournalGenre,
-            requires: row.PreviousQuest.filter(Boolean),
-            next: quests.filter(q => q.PreviousQuest.includes(row.index)).map(q => q.index),
-            start: row.IssuerStart,
-            end: row.TargetEnd,
-            startingPoint: this.npcs[row.IssuerStart]?.position ?? null,
-            npcs: uniq([
-              ...ActorSpawnSeq,
-              row.IssuerStart
-            ]).filter(id => this.npcs[id] !== undefined),
-            rewards: [
-              ...(quest.rewards || []).map(r => ({ ...r, type: 'item' })),
-              row.GilReward ? { id: 1, amount: row.GilReward, type: 'item' } : null,
-              row.InstanceContentUnlock ? { id: row.InstanceContentUnlock, type: 'instance' } : null,
-              row.ActionReward ? { id: row.ActionReward, type: 'action' } : null,
-              row.GCSeals ? { id: [20, 21, 22][row.GrandCompany - 1], amount: row.GCSeals, type: 'item' } : null,
-              row.ReputationReward ? { amount: row.ReputationReward, type: 'rep' } : null
-            ].filter(Boolean),
-            jobCategory: row.ClassJobCategory0,
-            level: row.ClassJobLevel[0],
-            repeatable: row.IsRepeatable,
-            beastRank: row.BeastReputationRank
-          };
-          textIndex[row.index] = this.processText(textCSV);
-        });
+      .pipe(
+        switchMap(quests => {
+          return combineLatest(this.getExtendedNames<LazyQuest>('quests', q => q.name).map(extended => {
+            const row = quests.find(q => q.index === +extended.id);
+            const folder = row.Id.split('_')[1].slice(-6, 3);
+            return xiv.getFromSaintCSV<{ key: string, 0: string, 1: string }>(`quest/${folder}/${row.Id}`, true).pipe(
+              tap(textCSV => {
+                const { name, ...quest } = extended;
+                const ActorSpawnSeq = row.QuestListenerParams.map(({ ActorSpawnSeq }) => ActorSpawnSeq).filter(Boolean);
+                pages[quest.id] = {
+                  ...quest,
+                  id: +quest.id,
+                  patch: this.findPatch('quest', quest.id),
+                  description: {
+                    en: textCSV[2]['1_en'],
+                    de: textCSV[2]['1_de'],
+                    ja: textCSV[2]['1_ja'],
+                    fr: textCSV[2]['1_fr'],
+                    ko: koDescriptions[quest.id]?.ko,
+                    zh: zhDescriptions[quest.id]?.zh
+                  },
+                  chainLength: questChainLengths[+quest.id],
+                  genre: row.JournalGenre,
+                  requires: row.PreviousQuest.filter(Boolean),
+                  next: quests.filter(q => q.PreviousQuest.includes(row.index)).map(q => q.index),
+                  start: row.IssuerStart,
+                  end: row.TargetEnd,
+                  startingPoint: this.npcs[row.IssuerStart]?.position ?? null,
+                  npcs: uniq([
+                    ...ActorSpawnSeq,
+                    row.IssuerStart
+                  ]).filter(id => this.npcs[id] !== undefined),
+                  rewards: [
+                    ...(quest.rewards || []).map(r => ({ ...r, type: 'item' })),
+                    row.GilReward ? { id: 1, amount: row.GilReward, type: 'item' } : null,
+                    row.InstanceContentUnlock ? { id: row.InstanceContentUnlock, type: 'instance' } : null,
+                    row.ActionReward ? { id: row.ActionReward, type: 'action' } : null,
+                    row.GCSeals ? { id: [20, 21, 22][row.GrandCompany - 1], amount: row.GCSeals, type: 'item' } : null,
+                    row.ReputationReward ? { amount: row.ReputationReward, type: 'rep' } : null
+                  ].filter(Boolean),
+                  jobCategory: row.ClassJobCategory0,
+                  level: row.ClassJobLevel[0],
+                  repeatable: row.IsRepeatable,
+                  beastRank: row.BeastReputationRank
+                };
+                textIndex[row.index] = this.processText(textCSV);
+              })
+            );
+          }));
+        })
+      )
+      .subscribe(() => {
         this.persistToMinifiedJsonAsset('db/quests-database-pages', pages);
         this.persistToCompressedJsonAsset('db/quests-text', textIndex);
         this.done();
