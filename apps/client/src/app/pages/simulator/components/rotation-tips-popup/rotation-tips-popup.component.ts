@@ -1,6 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { RotationTip } from '../../rotation-tips/rotation-tip';
-import { SimulationResult } from '@ffxiv-teamcraft/simulator';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzIconModule } from 'ng-zorro-antd/icon';
