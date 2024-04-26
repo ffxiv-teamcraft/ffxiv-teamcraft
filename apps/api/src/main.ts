@@ -1,7 +1,6 @@
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
 import { createProxyMiddleware, fixRequestBody } from 'http-proxy-middleware';
 
 async function bootstrap() {
@@ -32,7 +31,7 @@ async function bootstrap() {
     proxy
   );
   await app.listen(port);
-  Logger.log(`🚀 Application is running on: http://localhost:${port}, XIVAPI_KEY LOADED: ${environment.xivapiKey !== undefined}`);
+  Logger.log(`🚀 Application is running on: http://localhost:${port}`);
 }
 
 bootstrap();
