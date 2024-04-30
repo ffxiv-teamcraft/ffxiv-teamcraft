@@ -60,8 +60,8 @@ export class TradeSourcesExtractor extends AbstractItemDetailsExtractor<TradeSou
       }];
     }
     if (collectableReward) {
-      // Specific case for fishing trade goods exchange.
-      const npc = collectableReward[1].group === 73 ? 1045069 : 1035014
+      // Specific case for fishing trade goods exchange was collectableReward[1].group === 73 ? 1044740 : 1035014, keeping it here just in case
+      const npc = 1045080;
       return [{
         type: 'CollectableReward',
         id: +collectableReward[0],
