@@ -234,7 +234,7 @@ export class LogsExtractor extends AbstractExtractor {
       map(([fishParameterSheet, fishingNoteInfoSheet]) => {
         const fishParameter = {};
         fishParameterSheet
-          .filter(fish => fish.Item.index > 0 && fish.FishingSpot.TerritoryType !== undefined)
+          .filter(fish => fish.Item.index > 0 && fish.FishingSpot.TerritoryType !== undefined && fish.Item.index !== 13631)
           .forEach(fish => {
             const fishingNote = fishingNoteInfoSheet.find(row => row.Item === fish.Item.index);
             if (fishes.indexOf(fish.Item.index) === -1) {
