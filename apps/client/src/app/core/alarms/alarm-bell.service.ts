@@ -34,10 +34,9 @@ export class AlarmBellService {
 
   /**
    * Plays the sound part of the alarm.
-   * @param alarm
    * @param itemName
    */
-  public ring(alarm: PersistedAlarm, itemName: string): void {
+  public ring(itemName: string): void {
     if (this.settings.TTSAlarms) {
       try {
         const notificationSettings = this.settings.getNotificationSettings(SoundNotificationType.ALARM);
@@ -57,7 +56,7 @@ export class AlarmBellService {
   }
 
   public notify(_alarm: PersistedAlarm): Observable<unknown> {
-    if ((Date.now() - 10000) >= (this.getLastPlayed(_alarm) + this.settings.alarmHoursBefore * 3600000)) {
+    if ((Date.now() - 10000) >= (this.getLastPlayed(_alarm) + this.settings.alarmHoursBefore * 3600000 + 3000)) {
       localStorage.setItem(`played:${_alarm.$key}`, Date.now().toString());
       return of(_alarm).pipe(
         switchMap(alarm => {
@@ -106,7 +105,7 @@ export class AlarmBellService {
           const notificationTitle = (alarm.itemId || alarm.bnpcName) ? itemName : alarm.name;
           const notificationBody = `${placeName} - `
             + `${aetheryteName ? aetheryteName : ''}`;
-          this.ring(alarm, itemName);
+          this.ring(itemName);
           if (this.platform.isDesktop()) {
             this.ipc.send('notification', {
               title: notificationTitle,
