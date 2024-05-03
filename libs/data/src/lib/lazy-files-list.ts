@@ -77,7 +77,7 @@ export const lazyFilesList = {
   },
   'collectablesPageData': {
     'fileName': 'collectables-page-data.json',
-    'hashedFileName': 'collectables-page-data.fe03ab1d9be7dbb66948cc3dbc9ec73ac502c8ad.json'
+    'hashedFileName': 'collectables-page-data.a4e1f1134eb6f56f9fedd966ad753f0ff6cb1bab.json'
   },
   'collectablesShopItemGroup': {
     'fileName': 'collectables-shop-item-group.json',
@@ -169,7 +169,7 @@ export const lazyFilesList = {
   },
   'fishingLogTrackerPageData': {
     'fileName': 'fishing-log-tracker-page-data.json',
-    'hashedFileName': 'fishing-log-tracker-page-data.2d210a124970efdf63d157cd6dc7ee02163780cf.json'
+    'hashedFileName': 'fishing-log-tracker-page-data.b37dd91ecd157ea4298a7ef2a62a222dc4bcb0bf.json'
   },
   'fishingLog': {
     'fileName': 'fishing-log.json',
@@ -177,7 +177,7 @@ export const lazyFilesList = {
   },
   'fishingSources': {
     'fileName': 'fishing-sources.json',
-    'hashedFileName': 'fishing-sources.166e2b570c73c1b2c4345acd64a51e044b91c798.json'
+    'hashedFileName': 'fishing-sources.5956966fbece45b974b5c2573a3dff0d00e2c5eb.json'
   },
   'fishingSpotSearch': {
     'fileName': 'fishing-spot-search.index',
@@ -481,7 +481,7 @@ export const lazyFilesList = {
   },
   'patchNames': {
     'fileName': 'patch-names.json',
-    'hashedFileName': 'patch-names.2f6547dff6ca6f6ea672ec206bdaa88804bff6d9.json'
+    'hashedFileName': 'patch-names.6a786cf1ea40de567341e3f7e6988b08c89a77f0.json'
   },
   'places': {
     'fileName': 'places.json',
@@ -661,7 +661,7 @@ export const lazyFilesList = {
   },
   'voyageSources': {
     'fileName': 'voyage-sources.json',
-    'hashedFileName': 'voyage-sources.4a45ee69a68d0ca5ac82e624de72df47425d7d15.json'
+    'hashedFileName': 'voyage-sources.8d2da756d528a4abb34eda6c2137f31e9266c3d2.json'
   },
   'weathers': {
     'fileName': 'weathers.json',
