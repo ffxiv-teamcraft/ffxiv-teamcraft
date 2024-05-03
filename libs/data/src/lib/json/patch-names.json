@@ -1155,5 +1155,44 @@
     "ko": "Patch 6.5",
     "zh": "Patch 6.5",
     "version": "6.5"
+  },
+  "92": {
+    "id": 92,
+    "banner": null,
+    "ex": 4,
+    "release": 1698739674,
+    "en": "Patch 6.51",
+    "de": "Patch 6.51",
+    "ja": "Patch 6.51",
+    "fr": "Patch 6.51",
+    "ko": "Patch 6.51",
+    "zh": "Patch 6.51",
+    "version": "6.51"
+  },
+  "93": {
+    "id": 93,
+    "banner": null,
+    "ex": 4,
+    "release": 1705400895,
+    "en": "Patch 6.55",
+    "de": "Patch 6.55",
+    "ja": "Patch 6.55",
+    "fr": "Patch 6.55",
+    "ko": "Patch 6.55",
+    "zh": "Patch 6.55",
+    "version": "6.55"
+  },
+  "94": {
+    "id": 94,
+    "banner": null,
+    "ex": 4,
+    "release": 1710842400,
+    "en": "Patch 6.58",
+    "de": "Patch 6.58",
+    "ja": "Patch 6.58",
+    "fr": "Patch 6.58",
+    "ko": "Patch 6.58",
+    "zh": "Patch 6.58",
+    "version": "6.58"
   }
 }
