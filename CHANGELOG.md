@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.40](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.39...v11.0.40) (2024-05-03)
+
+
+### Features
+
+* **patreon:** new supporter in loading screen: Raraputin Susuputin ([153f26a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/153f26a472a407d870e9bc46ae0e2d443cb2afd3))
+
+
+### Bug Fixes
+
+* **alarms:** fix second notification on alarm despawn ([10ea26c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/10ea26c248a55310c770458e5fccd7cdcb0a8c7f))
+* **db:** add missing patch names ([e60123a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e60123a7187ab5bf66adeb0a97ff146bae83035d))
+* **db:** fixed recursive fish bait crash ([3788ca4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3788ca407e2cd3a4b355e11f6285c91f1848a02b))
+* **db:** hide baits that only have missed from datagrid ([1ca09bf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1ca09bf29a77a5da4d84ae62e9a71045cc141b46))
+* **db:** Pirate Spoil is not a fish ([838b6fd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/838b6fd85509e2780ad2c9f978b66a8491191867))
+* **db:** Quinnana is now the delivery NPC for collectable stuff ([d466a72](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d466a72bea9c38c0f06ef73cdca074311c08e16e))
+
 ### [11.0.39](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.38...v11.0.39) (2024-04-19)
 
 
