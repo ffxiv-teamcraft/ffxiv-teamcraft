@@ -301,13 +301,46 @@ export class FishContextService {
   );
 
   /** An observable containing information about the baits used to catch fish at the active spot. */
-  public readonly baitsBySpot$: Observable<OccurrencesResult> = this.baitMoochesBySpot$.pipe(map(occurrenceResultMapper('baits', 'baitId')), shareReplay({
-    bufferSize: 1,
-    refCount: true
-  }));
+  public readonly baitsBySpot$: Observable<OccurrencesResult> = this.baitMoochesBySpot$.pipe(
+    map(res => {
+      return {
+        ...res,
+        data: {
+          ...res.data,
+          baits: res.data.baits.filter(row => {
+            if (row.itemId > -1) {
+              return true;
+            }
+            // If we only have misses (itemId is -1) for this bait, just hide it
+            return res.data.baits.filter(_row => row.baitId === _row.baitId).length > 1;
+          })
+        }
+      };
+    }),
+    map(occurrenceResultMapper('baits', 'baitId')),
+    shareReplay({
+      bufferSize: 1,
+      refCount: true
+    })
+  );
 
   /** An observable containing information about the baits used to catch fish at the active spot. */
   public readonly baitsBySpotByFish$: Observable<ApolloQueryResult<Datagrid>> = this.baitMoochesBySpot$.pipe(
+    map(res => {
+      return {
+        ...res,
+        data: {
+          ...res.data,
+          baits: res.data.baits.filter(row => {
+            if (row.itemId > -1) {
+              return true;
+            }
+            // If we only have misses (itemId is -1) for this bait, just hide it
+            return res.data.baits.filter(_row => row.baitId === _row.baitId).length > 1;
+          })
+        }
+      };
+    }),
     map(datagridResultMapper('baits', 'itemId', 'baitId')),
     shareReplay({ bufferSize: 1, refCount: true })
   );

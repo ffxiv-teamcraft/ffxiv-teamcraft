@@ -22,12 +22,12 @@ export class AlarmDisplay<T extends AlarmDetails | PersistedAlarm = PersistedAla
   closestAetheryte: Aetheryte;
 
   /**
-   * Remaining earth time before it spawns, in minutes.
+   * Remaining earth time before it spawns, in seconds.
    */
   remainingTime: number;
 
   /**
-   * Remaining earth time before its next spawn, in minutes.
+   * Remaining earth time before its next spawn, in seconds.
    */
   nextSpawnTime: number;
 

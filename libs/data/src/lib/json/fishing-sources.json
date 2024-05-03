@@ -24781,7 +24781,8 @@
       "weathers": [
         49
       ],
-      "minGathering": 2950
+      "minGathering": 2950,
+      "video": "https://youtu.be/CgHNy8Z6LeU"
     }
   ],
   "38835": [
@@ -25712,7 +25713,7 @@
       "spot": 245,
       "hookset": 1,
       "tug": 0,
-      "bait": 41299,
+      "bait": 41302,
       "minGathering": 0
     }
   ],

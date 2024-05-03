@@ -66,7 +66,8 @@ const patrons = [
   'Savia Constantin & Sen Lin\'ly',
   'Leufia Leinfall',
   'Melodia',
-  'Seyna Renbatal (Zodiark)'
+  'Seyna Renbatal (Zodiark)',
+  'Raraputin Susuputin'
 ];
 
 const gifs = [

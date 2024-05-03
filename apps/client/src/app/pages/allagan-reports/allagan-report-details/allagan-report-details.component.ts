@@ -290,8 +290,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
           map(([baits, hooksetTugs, weathers, hours, stats]) => {
             return {
               bait: +baits.data.baits.filter(row => row.itemId === details.itemId).sort((a, b) => b.occurences - a.occurences)[0]?.baitId || null,
-              tug: +hooksetTugs.data.tugs.sort((a, b) => b.occurences - a.occurences)[0]?.tug || null,
-              hookset: +hooksetTugs.data.hooksets.sort((a, b) => b.occurences - a.occurences)[0]?.hookset || null,
+              tug: +[...hooksetTugs.data.tugs].sort((a, b) => b.occurences - a.occurences)[0]?.tug || null,
+              hookset: +[...hooksetTugs.data.hooksets].sort((a, b) => b.occurences - a.occurences)[0]?.hookset || null,
               spawn: this.getSpawnHour(hours.data.byId),
               duration: this.getDuration(hours.data.byId),
               weathers: weathers.data.weathers.length > 4 ? [] : weathers.data.weathers.filter(w => w.occurences > 5).map(w => w.weatherId),
