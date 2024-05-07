@@ -69869,12 +69869,14 @@
     "de": "Kartograph: Aloalo",
     "ja": "アロアロ島を踏破せし者",
     "fr": "Cartographe du continent : Île d'Aloalo",
+    "ko": "알로알로 섬 탐험가",
     "zh": "踏遍阿罗阿罗岛",
     "description": {
       "en": "Discover every location within the Aloalo Island variant dungeon.",
       "de": "Alle Orte auf Aloalo erkundet.",
       "ja": "アロアロ島（ヴァリアントダンジョン）を踏破し、マップをすべて開示する",
       "fr": "Découvrir toute la carte de l'île d'Aloalo.",
+      "ko": "변형 던전: 알로알로 섬을 탐험하여 모든 지역 발견",
       "zh": "成功探索阿罗阿罗岛（多变迷宫）的所有地区。"
     },
     "item": 0,
@@ -69888,12 +69890,14 @@
     "de": "Auf Walfischflügeln",
     "ja": "ケトゥドゥケを狩りし者",
     "fr": "C'est assez !",
+    "ko": "케투두케를 쓰러뜨린 자",
     "zh": "狩猎凯图嘟凯",
     "description": {
       "en": "Defeat Ketuduke in the Aloalo Island variant dungeon.",
       "de": "Ketuduke auf Aloalo besiegt.",
       "ja": "アロアロ島（ヴァリアントダンジョン）で、ケトゥドゥケを討伐する",
       "fr": "Vaincre Ketuduke dans “L'île d'Aloalo - Donjon à embranchements”.",
+      "ko": "변형 던전: 알로알로 섬에서 케투두케 처치",
       "zh": "在阿罗阿罗岛（多变迷宫）中战胜凯图嘟凯。"
     },
     "item": 0,
@@ -69907,12 +69911,14 @@
     "de": "Mathematisches Meisterstück",
     "ja": "ララを狩りし者",
     "fr": "Problème résolu",
+    "ko": "랄랄을 쓰러뜨린 자",
     "zh": "狩猎拉拉鲁",
     "description": {
       "en": "Defeat the lala in the Aloalo Island variant dungeon.",
       "de": "Lala auf Aloalo besiegt.",
       "ja": "アロアロ島（ヴァリアントダンジョン）で、ララを討伐する",
       "fr": "Vaincre Lala dans “L'île d'Aloalo - Donjon à embranchements”.",
+      "ko": "변형 던전: 알로알로 섬에서 랄랄 처치",
       "zh": "在阿罗阿罗岛（多变迷宫）中战胜拉拉鲁。"
     },
     "item": 0,
@@ -69926,12 +69932,14 @@
     "de": "Zwischen Nieten und Gewinnen",
     "ja": "スターチスを狩りし者",
     "fr": "Fée du logis",
+    "ko": "스타티스를 쓰러뜨린 자",
     "zh": "狩猎斯塔缇丝",
     "description": {
       "en": "Defeat Statice in the Aloalo Island variant dungeon.",
       "de": "Statice auf Aloalo besiegt.",
       "ja": "アロアロ島（ヴァリアントダンジョン）で、スターチスを討伐する",
       "fr": "Vaincre Statice dans “L'île d'Aloalo - Donjon à embranchements”.",
+      "ko": "변형 던전: 알로알로 섬에서 스타티스 처치",
       "zh": "在阿罗阿罗岛（多变迷宫）中战胜斯塔缇丝。"
     },
     "item": 0,
@@ -69945,12 +69953,14 @@
     "de": "Weisheit in Worten",
     "ja": "ロクロクイを狩りし者",
     "fr": "Joyau endormi",
+    "ko": "로쿠로쿠이를 쓰러뜨린 자",
     "zh": "狩猎罗库罗库伊",
     "description": {
       "en": "Defeat the Loquloqui in the Aloalo Island variant dungeon.",
       "de": "Loquloqui auf Aloalo besiegt.",
       "ja": "アロアロ島（ヴァリアントダンジョン）で、ロクロクイを討伐する",
       "fr": "Vaincre Loquloqui dans “L'île d'Aloalo - Donjon à embranchements”.",
+      "ko": "변형 던전: 알로알로 섬에서 로쿠로쿠이 처치",
       "zh": "在阿罗阿罗岛（多变迷宫）中战胜罗库罗库伊。"
     },
     "item": 0,
@@ -69964,12 +69974,14 @@
     "de": "Wer auf steinig Pfaden wandelt",
     "ja": "焼けた道を行く君へ",
     "fr": "Du poisson pour le poupon",
+    "ko": "불타버린 길을 걸어갈 너에게",
     "zh": "感谢艰险之路的陪伴",
     "description": {
       "en": "Complete the quest “A Fish a Day.”",
       "de": "Den Auftrag „Wer auf steinig Pfaden wandelt“ abgeschlossen.",
       "ja": "クエスト「焼けた道を行く君へ」をコンプリートする",
       "fr": "Accomplir la quête “Le cadeau de Matsya”.",
+      "ko": "퀘스트 '불타버린 길을 걸어갈 너에게' 완료",
       "zh": "完成任务“感谢艰险之路的陪伴”。"
     },
     "item": 0,
@@ -69983,12 +69995,14 @@
     "de": "Auf den Grund gegangen: Aloalo",
     "ja": "アロアロ島 探索記",
     "fr": "Les mots de Matsya",
+    "ko": "알로알로 섬 탐색기",
     "zh": "阿罗阿罗岛探索记",
     "description": {
       "en": "Unlock all conservation records on Aloalo Island.",
       "de": "Alle Einträge des Naturschutzberichtes von Aloalo aufgedeckt.",
       "ja": "アロアロ島 探索記をすべて開示する",
       "fr": "Découvrir toutes les entrées du journal d'exploration de l'île d'Aloalo.",
+      "ko": "알로알로 섬 탐색기 모두 수집",
       "zh": "成功发现阿罗阿罗岛探索记中的所有故事。"
     },
     "item": 41495,
@@ -70002,12 +70016,14 @@
     "de": "Kartograph: Kurioses Aloalo",
     "ja": "異聞アロアロ島を踏破せし者",
     "fr": "Cartographe du continent : Île d'Aloalo annexe",
+    "ko": "번외 알로알로 섬 탐험가",
     "zh": "踏遍异闻阿罗阿罗岛",
     "description": {
       "en": "Discover every location within Another Aloalo Island.",
       "de": "Alle Orte auf dem kuriosen Aloalo erkundet.",
       "ja": "異聞アロアロ島（アナザーダンジョン）を踏破し、マップをすべて開示する",
       "fr": "Découvrir toute la carte de l'île d'Aloalo annexe.",
+      "ko": "파생 던전: 번외 알로알로 섬을 탐험하여 모든 지역 발견",
       "zh": "成功探索阿罗阿罗岛（异闻迷宫）的所有地区。"
     },
     "item": 0,
@@ -70021,12 +70037,14 @@
     "de": "Mit dem Finken geflogen",
     "ja": "異聞アロアロ島を制覇せし者",
     "fr": "À l'huile !",
+    "ko": "번외 알로알로 섬을 제패한 자",
     "zh": "称霸异闻阿罗阿罗岛",
     "description": {
       "en": "Complete the criterion dungeon Another Aloalo Island.",
       "de": "Das kuriose Aloalo abgeschlossen.",
       "ja": "異聞アロアロ島（アナザーダンジョン）を攻略する",
       "fr": "Finir L'île d'Aloalo annexe - Donjon alternatif.",
+      "ko": "파생 던전: 번외 알로알로 섬 완료",
       "zh": "成功挑战异闻阿罗阿罗岛（异闻迷宫）。"
     },
     "item": 0,
@@ -70040,12 +70058,14 @@
     "de": "Mit dem Finken gesungen",
     "ja": "異聞アロアロ島を完全制覇せし者",
     "fr": "Île cauchemardesque",
+    "ko": "번외 알로알로 섬을 완벽히 제패한 자",
     "zh": "完全称霸异闻阿罗阿罗岛",
     "description": {
       "en": "Complete the criterion dungeon Another Aloalo Island (Savage).",
       "de": "Das kuriose Aloalo (episch) abgeschlossen.",
       "ja": "異聞アロアロ島 零式（アナザーダンジョン）を攻略する",
       "fr": "Finir L'île d'Aloalo annexe - Donjon alternatif (sadique).",
+      "ko": "파생 던전: 번외 알로알로 섬(영웅) 완료",
       "zh": "成功挑战零式异闻阿罗阿罗岛（异闻迷宫）。"
     },
     "item": 0,
@@ -70290,12 +70310,14 @@
     "de": "Mowen-Werkzeug: Leitstern-Säge",
     "ja": "モーエンツール：ロードスター・ソー",
     "fr": "Outils des merveilles : scie superstellaire",
+    "ko": "모웬 도구: 노르브란트 길잡이 톱",
     "zh": "莫雯卓越工具：领航星手锯",
     "description": {
       "en": "Obtain a lodestar saw.",
       "de": "Eine Leitstern-Säge erlangt.",
       "ja": "ロードスター・ソーを入手する",
       "fr": "Obtenir une scie superstellaire.",
+      "ko": "노르브란트 길잡이 톱 입수",
       "zh": "获得领航星手锯。"
     },
     "item": 0,
@@ -70309,12 +70331,14 @@
     "de": "Mowen-Werkzeug: Leitstern-Kreuzschlaghammer",
     "ja": "モーエンツール：ロードスター・クロスペインハンマー",
     "fr": "Outils des merveilles : marteau à panne croisée superstellaire",
+    "ko": "모웬 도구: 노르브란트 길잡이 단조망치",
     "zh": "莫雯卓越工具：领航星横头锤",
     "description": {
       "en": "Obtain a lodestar cross-pein hammer.",
       "de": "Einen Leitstern-Kreuzschlaghammer erlangt.",
       "ja": "ロードスター・クロスペインハンマーを入手する",
       "fr": "Obtenir un marteau à panne croisée superstellaire.",
+      "ko": "노르브란트 길잡이 단조망치 입수",
       "zh": "获得领航星横头锤。"
     },
     "item": 0,
@@ -70328,12 +70352,14 @@
     "de": "Mowen-Werkzeug: Leitstern-Schlichthammer",
     "ja": "モーエンツール：ロードスター・レイジングハンマー",
     "fr": "Outils des merveilles : marteau de batteur superstellaire",
+    "ko": "모웬 도구: 노르브란트 길잡이 돋을무늬 망치",
     "zh": "莫雯卓越工具：领航星圆头锤",
     "description": {
       "en": "Obtain a lodestar raising hammer.",
       "de": "Einen Leitstern-Schlichthammer erlangt.",
       "ja": "ロードスター・レイジングハンマーを入手する",
       "fr": "Obtenir un marteau de batteur superstellaire.",
+      "ko": "노르브란트 길잡이 돋을무늬 망치 입수",
       "zh": "获得领航星圆头锤。"
     },
     "item": 0,
@@ -70347,12 +70373,14 @@
     "de": "Mowen-Werkzeug: Leitstern-Fäustel",
     "ja": "モーエンツール：ロードスター・マレット",
     "fr": "Outils des merveilles : massette superstellaire",
+    "ko": "모웬 도구: 노르브란트 길잡이 세공망치",
     "zh": "莫雯卓越工具：领航星工艺锤",
     "description": {
       "en": "Obtain a lodestar mallet.",
       "de": "Einen Leitstern-Fäustel erlangt.",
       "ja": "ロードスター・マレットを入手する",
       "fr": "Obtenir une massette superstellaire.",
+      "ko": "노르브란트 길잡이 세공망치 입수",
       "zh": "获得领航星工艺锤。"
     },
     "item": 0,
@@ -70366,12 +70394,14 @@
     "de": "Mowen-Werkzeug: Leitstern-Rundmesser",
     "ja": "モーエンツール：ロードスター・ラウンドナイフ",
     "fr": "Outils des merveilles : couteau arrondi superstellaire",
+    "ko": "모웬 도구: 노르브란트 길잡이 둥근칼",
     "zh": "莫雯卓越工具：领航星圆革刀",
     "description": {
       "en": "Obtain a lodestar round knife.",
       "de": "Ein Leitstern-Rundmesser erlangt.",
       "ja": "ロードスター・ラウンドナイフを入手する",
       "fr": "Obtenir un couteau arrondi superstellaire.",
+      "ko": "노르브란트 길잡이 둥근칼 입수",
       "zh": "获得领航星圆革刀。"
     },
     "item": 0,
@@ -70385,12 +70415,14 @@
     "de": "Mowen-Werkzeug: Leitstern-Nadel",
     "ja": "モーエンツール：ロードスター・ニードル",
     "fr": "Outils des merveilles : aiguille superstellaire",
+    "ko": "모웬 도구: 노르브란트 길잡이 바늘",
     "zh": "莫雯卓越工具：领航星缝针",
     "description": {
       "en": "Obtain a lodestar needle.",
       "de": "Eine Leitstern-Nadel erlangt.",
       "ja": "ロードスター・ニードルを入手する",
       "fr": "Obtenir une aiguille superstellaire.",
+      "ko": "노르브란트 길잡이 바늘 입수",
       "zh": "获得领航星缝针。"
     },
     "item": 0,
@@ -70404,12 +70436,14 @@
     "de": "Mowen-Werkzeug: Leitstern-Destillierkolben",
     "ja": "モーエンツール：ロードスター・アレンビック",
     "fr": "Outils des merveilles : alambic superstellaire",
+    "ko": "모웬 도구: 노르브란트 길잡이 증류기",
     "zh": "莫雯卓越工具：领航星蒸馏器",
     "description": {
       "en": "Obtain a lodestar alembic.",
       "de": "Einen Leitstern-Destillierkolben erlangt.",
       "ja": "ロードスター・アレンビックを入手する",
       "fr": "Obtenir un alambic superstellaire.",
+      "ko": "노르브란트 길잡이 증류기 입수",
       "zh": "获得领航星蒸馏器。"
     },
     "item": 0,
@@ -70423,12 +70457,14 @@
     "de": "Mowen-Werkzeug: Leitstern-Bratpfanne",
     "ja": "モーエンツール：ロードスター・フライパン",
     "fr": "Outils des merveilles : poêle à frire superstellaire",
+    "ko": "모웬 도구: 노르브란트 길잡이 프라이팬",
     "zh": "莫雯卓越工具：领航星平底锅",
     "description": {
       "en": "Obtain a lodestar frypan.",
       "de": "Eine Leitstern-Bratpfanne erlangt.",
       "ja": "ロードスター・フライパンを入手する",
       "fr": "Obtenir une poêle à frire superstellaire.",
+      "ko": "노르브란트 길잡이 프라이팬 입수",
       "zh": "获得领航星平底锅。"
     },
     "item": 0,
@@ -70442,12 +70478,14 @@
     "de": "Mowen-Werkzeug: Leitstern-Spitzhacke",
     "ja": "モーエンツール：ロードスター・ピック",
     "fr": "Outils des merveilles : pioche superstellaire",
+    "ko": "모웬 도구: 노르브란트 길잡이 곡괭이",
     "zh": "莫雯卓越工具：领航星鹤嘴锄",
     "description": {
       "en": "Obtain a lodestar pickaxe.",
       "de": "Eine Leitstern-Spitzhacke erlangt.",
       "ja": "ロードスター・ピックを入手する",
       "fr": "Obtenir une pioche superstellaire.",
+      "ko": "노르브란트 길잡이 곡괭이 입수",
       "zh": "获得领航星鹤嘴锄。"
     },
     "item": 0,
@@ -70461,12 +70499,14 @@
     "de": "Mowen-Werkzeug: Leitstern-Handbeil",
     "ja": "モーエンツール：ロードスター・ハチェット",
     "fr": "Outils des merveilles : hachette superstellaire",
+    "ko": "모웬 도구: 노르브란트 길잡이 손도끼",
     "zh": "莫雯卓越工具：领航星手斧",
     "description": {
       "en": "Obtain a lodestar hatchet.",
       "de": "Ein Leitstern-Handbeil erlangt.",
       "ja": "ロードスター・ハチェットを入手する",
       "fr": "Obtenir une hachette superstellaire.",
+      "ko": "노르브란트 길잡이 손도끼 입수",
       "zh": "获得领航星手斧。"
     },
     "item": 0,
@@ -70480,12 +70520,14 @@
     "de": "Mowen-Werkzeug: Leitstern-Angelrute",
     "ja": "モーエンツール：ロードスター・フィッシングロッド",
     "fr": "Outils des merveilles : canne à pêche superstellaire",
+    "ko": "모웬 도구: 노르브란트 길잡이 낚싯대",
     "zh": "莫雯卓越工具：领航星钓竿",
     "description": {
       "en": "Obtain a lodestar fishing rod.",
       "de": "Eine Leitstern-Angelrute erlangt.",
       "ja": "ロードスター・フィッシングロッドを入手する",
       "fr": "Obtenir une canne à pêche superstellaire.",
+      "ko": "노르브란트 길잡이 낚싯대 입수",
       "zh": "获得领航星钓竿。"
     },
     "item": 0,
@@ -70499,12 +70541,14 @@
     "de": "Mowen-Hoflieferant",
     "ja": "モーエン商会の御用達職人",
     "fr": "Merveille d'honneur de Mowen",
+    "ko": "모웬 상회 납품 장인",
     "zh": "商会御用的工匠",
     "description": {
       "en": "Complete the quest “Dearly Bekettled.”",
       "de": "Den Auftrag „Kessel der Liebe“ abgeschlossen.",
       "ja": "クエスト「ふたりのヤカン」をコンプリートする",
       "fr": "Accomplir la quête “Une bouilloire pour deux”.",
+      "ko": "퀘스트 '두 사람의 주전자' 완료",
       "zh": "完成任务“两个人、两个水壶”。"
     },
     "item": 0,
@@ -71060,12 +71104,14 @@
     "de": "Kampf um die Krone: Rang 1",
     "ja": "ゲットザクラウン：ランク1",
     "fr": "À moi la couronne I",
+    "ko": "왕관을 잡아라: 1단계",
     "zh": "勇夺桂冠1",
     "description": {
       "en": "Place first in Blunderville.",
       "de": "1 Mal Platz 1 in Stolperville erreicht.",
       "ja": "ブランダーヴィルで1位を1回獲得する",
       "fr": "Remporter le Blunderville 1 fois.",
+      "ko": "블런더빌에서 1위 1회 차지",
       "zh": "在金碟巨豆中心获得第1名1次。"
     },
     "item": 0,
@@ -71079,12 +71125,14 @@
     "de": "Kampf um die Krone: Rang 2",
     "ja": "ゲットザクラウン：ランク2",
     "fr": "À moi la couronne II",
+    "ko": "왕관을 잡아라: 2단계",
     "zh": "勇夺桂冠2",
     "description": {
       "en": "Place first in Blunderville 10 times.",
       "de": "10 Mal Platz 1 in Stolperville erreicht.",
       "ja": "ブランダーヴィルで1位を10回獲得する",
       "fr": "Remporter le Blunderville 10 fois.",
+      "ko": "블런더빌에서 1위 10회 차지",
       "zh": "在金碟巨豆中心获得第1名10次。"
     },
     "item": 0,
@@ -71098,12 +71146,14 @@
     "de": "Kampf um die Krone: Rang 3",
     "ja": "ゲットザクラウン：ランク3",
     "fr": "À moi la couronne III",
+    "ko": "왕관을 잡아라: 3단계",
     "zh": "勇夺桂冠3",
     "description": {
       "en": "Place first in Blunderville 50 times.",
       "de": "50 Mal Platz 1 in Stolperville erreicht.",
       "ja": "ブランダーヴィルで1位を50回獲得する",
       "fr": "Remporter le Blunderville 50 fois.",
+      "ko": "블런더빌에서 1위 50회 차지",
       "zh": "在金碟巨豆中心获得第1名50次。"
     },
     "item": 0,
@@ -71117,12 +71167,14 @@
     "de": "Kampf um die Krone: Rang 4",
     "ja": "ゲットザクラウン：ランク4",
     "fr": "À moi la couronne IV",
+    "ko": "왕관을 잡아라: 4단계",
     "zh": "勇夺桂冠4",
     "description": {
       "en": "Place first in Blunderville 100 times.",
       "de": "100 Mal Platz 1 in Stolperville erreicht.",
       "ja": "ブランダーヴィルで1位を100回獲得する",
       "fr": "Remporter le Blunderville 100 fois.",
+      "ko": "블런더빌에서 1위 100회 차지",
       "zh": "在金碟巨豆中心获得第1名100次。"
     },
     "item": 0,
@@ -71536,12 +71588,14 @@
     "de": "Heldenhaftes Epos",
     "ja": "異聞奇譚の勇傑",
     "fr": "Accroc de l'annexe",
+    "ko": "서사시의 영웅",
     "zh": "异闻奇谭的英杰",
     "description": {
       "en": "Obtain the achievements “The Savage Sands Below,” “Moving a Savage Mountain,” and “Charting the Savage Unknown.”",
       "de": "Die Errungenschaften „Auf epischen Sanden“, „Einen Berg versetzt“ und „Mit dem Finken gesungen“ wurden freigespielt.",
       "ja": "アチーブメント「異聞シラディハ水道を完全制覇せし者」「異聞六根山を完全制覇せし者」「異聞アロアロ島を完全制覇せし者」をすべて達成する",
       "fr": "Accomplir les hauts faits “L'égout et les couleurs”, “Supplicier des montagnes” et “Île cauchemardesque”.",
+      "ko": "업적 '번외 실디하 지하수도를 완벽히 제패한 자', '번외 육근산을 완벽히 제패한 자', '번외 알로알로 섬을 완벽히 제패한 자'를 모두 달성",
       "zh": "达成“完全称霸异闻希拉狄哈水道”“完全称霸异闻六根山”“完全称霸异闻阿罗阿罗岛”三个成就。"
     },
     "item": 0,
