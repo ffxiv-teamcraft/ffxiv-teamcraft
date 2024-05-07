@@ -247,7 +247,7 @@
     "file-saver": "^2.0.5",
     "firebase": "^10.9.0",
     "firebase-admin": "^11.5.0",
-    "firebase-tools": "^12.6.1",
+    "firebase-tools": "^13.6.0",
     "graphql": "^16.8.1",
     "graphql-tag": "^2.12.6",
     "hammerjs": "^2.0.8",
