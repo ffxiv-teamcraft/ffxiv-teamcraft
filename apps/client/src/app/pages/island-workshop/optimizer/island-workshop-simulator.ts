@@ -12,7 +12,7 @@ export class IslandWorkshopSimulator {
     this.maxGroove = [
       10, 15, 20, 25, 35, 45
     ][landmarks] || 0;
-    this.workshopRankRatio = (islandWorkshopRankRatio[workshopLevel] || 100) / 100;
+    this.workshopRankRatio = (islandWorkshopRankRatio[workshopLevel - 1] || 100) / 100;
   }
 
   public getScore(planning: WorkshopPlanning[]): number {
