@@ -1,5 +1,5 @@
 <div nz-row class="step-row">
-  <div nz-col [nzSpan]="8">
+  <div nz-col [nzSpan]="7">
     <div class="flex-row align-center gap-2">
       <app-item-icon [itemId]="row.id" [itemName]="row.id | itemName: row | i18n"
                      [width]="24" [forceCollectable]="row.collectable" *ngIf="!row.xivapiIcon"></app-item-icon>
@@ -21,7 +21,7 @@
   <div nz-col [nzSpan]="4" *ngIf="hasItemInInventory$ | async">
     <app-item-inventory-button [itemId]="row.id" [permissionLevel]="permissionLevel" (add)="add($event, row)"></app-item-inventory-button>
   </div>
-  <div nz-col [nzSpan]="(hasItemInInventory$ | async) ? 3 : 7">
+  <div nz-col [nzSpan]="(hasItemInInventory$ | async) ? 4 : 7">
     <ng-container *ngIf="showAlarms">
       <div class="timers flex-row align-center gap-5" *ngIf="alarmsDisplay$ | async as alarmsDisplay">
         <div *ngFor="let alarm of alarmsDisplay.alarms; trackByKey">
