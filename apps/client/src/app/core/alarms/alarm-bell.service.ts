@@ -182,7 +182,7 @@ export class AlarmBellService {
                 if (irlAlarmDuration === 0) {
                   irlAlarmDuration = this.eorzeanTime.toEarthTime(8 * 60) * 1000;
                 }
-                return Date.now() - lastPlayed >= (irlAlarmDuration + 10000)
+                return (Date.now() - lastPlayed) >= (irlAlarmDuration + 30000)
                   && timeBeforePlay <= 0;
               });
             })
