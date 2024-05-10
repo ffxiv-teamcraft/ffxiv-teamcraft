@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { combineLatest, Observable, Subject } from 'rxjs';
-import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AbstractControl, FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { debounceTime, first, map, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
@@ -31,19 +31,19 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
-import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
-    selector: 'app-leveling-equipment',
-    templateUrl: './leveling-equipment.component.html',
-    styleUrls: ['./leveling-equipment.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [FlexModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzSelectModule, NgFor, NzInputNumberModule, NzCheckboxModule, NgIf, NzButtonModule, NzWaveModule, NzIconModule, ItemIconComponent, NzToolTipModule, ClipboardDirective, FullpageMessageComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, JobUnicodePipe]
+  selector: 'app-leveling-equipment',
+  templateUrl: './leveling-equipment.component.html',
+  styleUrls: ['./leveling-equipment.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [FlexModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzSelectModule, NgFor, NzInputNumberModule, NzCheckboxModule, NgIf, NzButtonModule, NzWaveModule, NzIconModule, ItemIconComponent, NzToolTipModule, ClipboardDirective, FullpageMessageComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, JobUnicodePipe]
 })
 export class LevelingEquipmentComponent extends TeamcraftComponent {
 
@@ -338,9 +338,14 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
         mainStat = BaseParam.GP;
       }
       if ([8, 9, 10, 11, 12, 13, 14, 15].includes(job)) {
-        return (itemStats[itemId]?.find(stat => stat.ID === BaseParam.CRAFTSMANSHIP)?.NQ || 0)
-          + (itemStats[itemId]?.find(stat => stat.ID === BaseParam.CONTROL)?.NQ || 0)
-          + (itemStats[itemId]?.find(stat => stat.ID === BaseParam.CP)?.NQ || 0);
+        const isCraftingJewelry = [40, 41, 42, 43].some(category => equipSlotCategories.includes(category));
+        if (isCraftingJewelry) {
+          mainStat = BaseParam.CP;
+        } else {
+          return (itemStats[itemId]?.find(stat => stat.ID === BaseParam.CRAFTSMANSHIP)?.NQ || 0)
+            + (itemStats[itemId]?.find(stat => stat.ID === BaseParam.CONTROL)?.NQ || 0)
+            + (itemStats[itemId]?.find(stat => stat.ID === BaseParam.CP)?.NQ || 0);
+        }
       }
     }
 
