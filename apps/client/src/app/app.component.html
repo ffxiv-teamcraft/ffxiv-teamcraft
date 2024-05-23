@@ -1,476 +1,592 @@
-<app-loading-screen *ngIf="!dataLoaded; else appLayout"></app-loading-screen>
-<app-breakpoint-debug *ngIf="breakpointDebug"></app-breakpoint-debug>
-<ng-template #appLayout>
-  <nz-layout *ngIf="!(hasDesktop$ | async); else desktopOpenedMessage" [class.no-panel-borders]="settings.noPanelBorders"
-             class="app-container" [class.blur]="desktopLoading$ | async">
-    <nz-layout *ngIf="!overlay">
-      <nz-header class="header">
-        <img src="./assets/logo_home.png" alt="LOGO" class="logo-img" *ngIf="true | ifMobile: false">
-        <a class="logo" routerLink="/" fxLayout="row" fxLayoutAlign="center center" [innerHTML]="titleBreakpoints | widthBreakpoints"></a>
-        <div class="language-swap" *ngIf="true | ifMobile: false">
-          <nz-select (ngModelChange)="use($event)" [ngModel]="translate.currentLang"
-                     fxFlex="0 0 auto"
-                     fxLayout="row">
-            <nz-option *ngFor="let locale of availableLanguages" [nzLabel]="locale | uppercase"
-                       [nzValue]="locale"></nz-option>
-          </nz-select>
-        </div>
-        <div>
-          <a *ngIf="true | ifMobile: false" nz-button nz-tooltip [nzTooltipTitle]="'See_code_github' | translate" nzTooltipPlacement="bottom"
-             href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft" target="_blank">
-            <span nz-icon nzType="github" nzTheme="outline"></span>
-            <span class="stars-count">
-              <span nz-icon nzType="star" nzTheme="outline"></span>
-              {{githubStars$ | async | number:'1.0-0':translate.currentLang}}
-            </span>
-          </a>
-        </div>
-        <div *ngIf="platformService.isDesktop()" class="new-window">
-          <button nz-button nz-tooltip [nzTooltipTitle]="'SETTINGS.New_child_window' | translate" (click)="newChildWindow()">
-            <span nz-icon nzIconfont="icon-new-window"></span>
-          </button>
-        </div>
-        <div *ngIf="!childWindow && platformService.isDesktop() && newVersionAvailable$ | async" class="update-status">
-          <ng-container *ngIf="checkingForUpdate$ | async as updateStatus">
-            <div [ngSwitch]="updateStatus">
-              <div *ngSwitchCase="UpdaterStatus.UPDATE_AVAILABLE">
-                <button (click)="updateDesktopApp()" [nzTooltipTitle]="'UPDATE.New_update_available_desktop' | translate" nz-button nz-tooltip
-                        nzTooltipPlacement="bottom"
-                        nzShape="circle"
-                        nzType="primary"><i nz-icon nzType="download"></i></button>
+@if (!dataLoaded) {
+  <app-loading-screen></app-loading-screen>
+} @else {
+  @if (!(hasDesktop$ | async)) {
+    <nz-layout [class.no-panel-borders]="settings.noPanelBorders"
+      class="app-container" [class.blur]="desktopLoading$ | async">
+      @if (!overlay) {
+        <nz-layout>
+          <nz-header class="header">
+            @if (true | ifMobile: false) {
+              <img src="./assets/logo_home.png" alt="LOGO" class="logo-img">
+            }
+            <a class="logo" routerLink="/" fxLayout="row" fxLayoutAlign="center center" [innerHTML]="titleBreakpoints | widthBreakpoints"></a>
+            @if (true | ifMobile: false) {
+              <div class="language-swap">
+                <nz-select (ngModelChange)="use($event)" [ngModel]="translate.currentLang"
+                  fxFlex="0 0 auto"
+                  fxLayout="row">
+                  @for (locale of availableLanguages; track locale) {
+                    <nz-option [nzLabel]="locale | uppercase"
+                    [nzValue]="locale"></nz-option>
+                  }
+                </nz-select>
               </div>
-              <div *ngSwitchCase="UpdaterStatus.DOWNLOADING"
-                   class="download-spinner"
-                   nz-tooltip
-                   [nzTooltipTitle]="'UPDATE.Downloading_update' | translate">
-                <nz-spin [nzSimple]="true"></nz-spin>
-              </div>
-              <div *ngSwitchCase="UpdaterStatus.POSSIBLE_ERROR">
-                <a *ngIf="updateVersion$ | async as updateVersion"
-                   href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/download/v{{updateVersion}}/ffxiv-teamcraft-Setup-{{updateVersion}}.exe"
-                   target="_blank">
-                  <i nz-icon nzType="exclamation-circle"
-                     nzTheme="twotone"
-                     nzTwotoneColor="#f5222d"
-                     nz-tooltip
-                     [nzTooltipTitle]="'UPDATE.Possible_update_issue' | translate"></i>
+            }
+            <div>
+              @if (true | ifMobile: false) {
+                <a nz-button nz-tooltip [nzTooltipTitle]="'See_code_github' | translate" nzTooltipPlacement="bottom"
+                  href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft" target="_blank">
+                  <span nz-icon nzType="github" nzTheme="outline"></span>
+                  <span class="stars-count">
+                    <span nz-icon nzType="star" nzTheme="outline"></span>
+                    {{githubStars$ | async | number:'1.0-0':translate.currentLang}}
+                  </span>
                 </a>
-              </div>
+              }
             </div>
-          </ng-container>
-        </div>
-        <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="center center">
-          <app-ad *ngIf="showAd$ | async"></app-ad>
-        </div>
-        <ul [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu" nz-menu>
-          <ng-container *ngIf="user$ | async as user">
-            <li *ngIf="(user.admin || user.allaganChecker) | ifMobile: false" nz-menu-item class="ant-menu-item allagan-reports">
-              <nz-badge [nzCount]="allaganReportsQueueCount$ | async">
-                <a routerLink="/allagan-reports" class="allagan-link">
-                  {{'ALLAGAN_REPORTS.Title' | translate}}
-                </a>
-                <nz-tag *ngIf="user.admin">{{allaganReportsUnappliedCount$ | async | number}}</nz-tag>
-              </nz-badge>
-            </li>
-          </ng-container>
-          <li *ngIf="desktop && ipc.pcapToggle && !childWindow">
-            <ng-template #pcapStatusTpl>
-              <div class="flex-row space-between">
-                <div>{{'PACKET_CAPTURE.Pcap' | translate}}</div>
-                <div *ngIf="pcapStatus$ | async as pcapStatus">
-                  <nz-badge [nzStatus]="pcapStatus"></nz-badge>
-                  <button nz-button *ngIf="pcapStatus === 'default'" nzSize="small" nzType="primary" nzShape="circle" (click)="startPcap()">
-                    <span nz-icon nzType="caret-right" nzTheme="outline"></span>
-                  </button>
-                  <button nz-button *ngIf="pcapStatus === 'error'" nzSize="small" nzType="primary" nzShape="circle" (click)="startPcap()">
-                    <span nz-icon nzType="reload" nzTheme="outline"></span>
-                  </button>
-                </div>
+            @if (platformService.isDesktop()) {
+              <div class="new-window">
+                <button nz-button nz-tooltip [nzTooltipTitle]="'SETTINGS.New_child_window' | translate" (click)="newChildWindow()">
+                  <span nz-icon nzIconfont="icon-new-window"></span>
+                </button>
               </div>
-              <div class="flex-row space-between">
-                <div>{{'PACKET_CAPTURE.Inventory' | translate}}</div>
-                <div>
-                  <nz-badge [nzStatus]="inventoryStatus$ | async"></nz-badge>
+            }
+            @if (!childWindow && platformService.isDesktop() && newVersionAvailable$ | async) {
+              <div class="update-status">
+                @if (checkingForUpdate$ | async; as updateStatus) {
+                  <div>
+                    @switch (updateStatus) {
+                      @case (UpdaterStatus.UPDATE_AVAILABLE) {
+                        <div>
+                          <button (click)="updateDesktopApp()" [nzTooltipTitle]="'UPDATE.New_update_available_desktop' | translate" nz-button nz-tooltip
+                            nzTooltipPlacement="bottom"
+                            nzShape="circle"
+                            nzType="primary"><i nz-icon nzType="download"></i></button>
+                          </div>
+                        }
+                        @case (UpdaterStatus.DOWNLOADING) {
+                          <div
+                            class="download-spinner"
+                            nz-tooltip
+                            [nzTooltipTitle]="'UPDATE.Downloading_update' | translate">
+                            <nz-spin [nzSimple]="true"></nz-spin>
+                          </div>
+                        }
+                        @case (UpdaterStatus.POSSIBLE_ERROR) {
+                          <div>
+                            @if (updateVersion$ | async; as updateVersion) {
+                              <a
+                                href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/download/v{{updateVersion}}/ffxiv-teamcraft-Setup-{{updateVersion}}.exe"
+                                target="_blank">
+                                <i nz-icon nzType="exclamation-circle"
+                                  nzTheme="twotone"
+                                  nzTwotoneColor="#f5222d"
+                                  nz-tooltip
+                                [nzTooltipTitle]="'UPDATE.Possible_update_issue' | translate"></i>
+                              </a>
+                            }
+                          </div>
+                        }
+                      }
+                    </div>
+                  }
                 </div>
+              }
+              <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="center center">
+                @if (showAd$ | async) {
+                  <app-ad></app-ad>
+                }
               </div>
-            </ng-template>
-            <div class="pcap-status" nz-popover [nzPopoverTitle]="'PACKET_CAPTURE.Status' | translate" [nzPopoverContent]="pcapStatusTpl"
-                 nzPopoverPlacement="bottom">
-              <nz-badge [nzStatus]="pcapFeaturesStatus$ | async" class="status-badge"></nz-badge>
-              <span nz-icon nzType="scan" nzTheme="outline"></span>
-            </div>
-          </li>
-          <ng-container *ngIf="pinnedList$ | async as pinnedList">
-            <li *ngIf="pinnedList !== 'none'"
-                class="ant-menu-item"
-                nzTooltipPlacement="bottom"
-                (contextmenu)="$event.preventDefault();listsFacade.unpin()"
-                nz-tooltip [nzTooltipTitle]="'LIST.Go_to_pinned' | translate"
-                routerLink="/list/{{pinnedList}}">
-              <i nz-icon nzType="pushpin" nzTheme="outline"></i>
-            </li>
-          </ng-container>
-          <li (click)="toggleTimeFormat()" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow>
-            {{time$ | async}}
-          </li>
-          <li *ngIf="!platformService.isDesktop()" [nzTooltipTitle]="'COMMON.Open_in_desktop' | translate" class="clock ant-menu-item" fxFlex fxHide.lt-sm
-              fxShow
-              nz-tooltip nzTooltipPlacement="bottom">
-            <a (click)="openInApp()">
-              <i nzIconfont="icon-openinapp" nz-icon></i>
-            </a>
-          </li>
-          <li *ngIf="platformService.isDesktop()" [nzTooltipTitle]="'COMMON.Open_link' | translate" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow
-              nz-tooltip nzTooltipPlacement="bottom" (click)="openLink()">
-            <i nz-icon nzType="laptop" nzTheme="outline"></i>
-          </li>
-          <li *ngIf="notifications$ | async as notifications" [nzPopoverContent]="notificationsTemplate" class="ant-menu-item" nz-popover
-              nzPopoverPlacement="bottomRight">
-            <nz-badge [nzCount]="notifications.length" class="notifications-count">
-              <i nz-icon nzType="notification"></i>
-            </nz-badge>
-            <ng-template #notificationsTemplate>
-              <nz-list [nzDataSource]="notifications" [nzNoResult]="noNotifications"
-                       [nzRenderItem]="notificationTemplate" class="notifications-list">
-                <ng-template #noNotifications>
-                  <nz-empty [nzNotFoundContent]="'NOTIFICATIONS.No_notifications' | translate"></nz-empty>
-                </ng-template>
-                <ng-template #notificationTemplate let-notification>
-                  <nz-list-item [nzActions]="[actionOpen, actionClose]">
-                    <nz-list-item-meta [nzAvatar]="icon"
-                                       [nzDescription]="notification.route.join('/')"
-                                       [nzTitle]="notification.content">
-                      <ng-template #icon>
-                        <i nz-icon nzType="{{notification.icon}}"></i>
-                      </ng-template>
-                    </nz-list-item-meta>
-                  </nz-list-item>
-                  <ng-template #actionClose>
-                    <i (click)="$event.stopPropagation();deleteNotification(notification)" nz-icon nzType="close"></i>
-                  </ng-template>
-                  <ng-template #actionOpen>
-                    <a (click)="$event.stopPropagation();deleteNotification(notification)"
-                       [routerLink]="notification.route">
-                      <i nz-icon nzType="select"></i>
-                    </a>
-                  </ng-template>
-                </ng-template>
-              </nz-list>
-            </ng-template>
-          </li>
-          <li [class.accent]="!(loggedIn$ | async)" class="user-menu" nz-submenu nzMenuClassName="user-menu-content">
-            <span title class="user-menu-title">
-              <nz-spin class="user-loading" *ngIf="loading$ | async; else authDetails"></nz-spin>
-              <ng-template #authDetails>
-                <span *ngIf="!(loggedIn$ | async); else userLoggedIn">
-                  <nz-avatar [nzText]="'A'">
-                  </nz-avatar>
-                  {{'COMMON.Anonymous' | translate}}
-                </span>
-              </ng-template>
-              <ng-template #userLoggedIn>
-                <div *ngIf="character$ | async as character; else emptyCharacter"
-                     tutorialStep="TUTORIAL.APP.Profile" tutorialStepIndex="999" tutorialStepAlign="bottom">
-                  <nz-spin class="user-loading" *ngIf="character.loading"></nz-spin>
-                  <ng-container *ngIf="!character.loading">
-                    <app-user-avatar *ngIf="character.ID > 0; else krAvatar" [flex]="false" [ignoreVerification]="true"
-                                     [userId]="userId$ | async"
-                                     [width]="32"></app-user-avatar>
-                    <ng-template #krAvatar>
-                      <nz-avatar [nzText]="character.Name[0]"></nz-avatar>
+              <ul [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu" nz-menu>
+                @if (user$ | async; as user) {
+                  @if ((user.admin || user.allaganChecker) | ifMobile: false) {
+                    <li nz-menu-item class="ant-menu-item allagan-reports">
+                      <nz-badge [nzCount]="allaganReportsQueueCount$ | async">
+                        <a routerLink="/allagan-reports" class="allagan-link">
+                          {{'ALLAGAN_REPORTS.Title' | translate}}
+                        </a>
+                        @if (user.admin) {
+                          <nz-tag>{{allaganReportsUnappliedCount$ | async | number}}</nz-tag>
+                        }
+                      </nz-badge>
+                    </li>
+                  }
+                }
+                @if (desktop && ipc.pcapToggle && !childWindow) {
+                  <li>
+                    <ng-template #pcapStatusTpl>
+                      <div class="flex-row space-between">
+                        <div>{{'PACKET_CAPTURE.Pcap' | translate}}</div>
+                        @if (pcapStatus$ | async; as pcapStatus) {
+                          <div>
+                            <nz-badge [nzStatus]="pcapStatus"></nz-badge>
+                            @if (pcapStatus === 'default') {
+                              <button nz-button nzSize="small" nzType="primary" nzShape="circle" (click)="startPcap()">
+                                <span nz-icon nzType="caret-right" nzTheme="outline"></span>
+                              </button>
+                            }
+                            @if (pcapStatus === 'error') {
+                              <button nz-button nzSize="small" nzType="primary" nzShape="circle" (click)="startPcap()">
+                                <span nz-icon nzType="reload" nzTheme="outline"></span>
+                              </button>
+                            }
+                          </div>
+                        }
+                      </div>
+                      <div class="flex-row space-between">
+                        <div>{{'PACKET_CAPTURE.Inventory' | translate}}</div>
+                        <div>
+                          <nz-badge [nzStatus]="inventoryStatus$ | async"></nz-badge>
+                        </div>
+                      </div>
                     </ng-template>
-                    {{character.Name | ifMobile:''}}
-                  </ng-container>
-                </div>
-              </ng-template>
-              <ng-template #emptyCharacter>
-                <span>
-                  <nz-avatar [nzText]="'U'">
-                  </nz-avatar>
-                  {{'COMMON.Unknown' | translate}}
-                </span>
-              </ng-template>
-            </span>
-            <div *ngIf="!childWindow">
-              <a *ngIf="loggedIn$ | async" nz-menu-item routerLink="/profile">
-                <i nz-icon nzType="idcard"></i>
-                {{'Profile' | translate}}
-              </a>
-              <a *ngIf="loggedIn$ | async" nz-menu-item routerLink="/teams">
-                <i nz-icon nzType="team"></i>
-                {{'TEAMS.Title' | translate}}
-              </a>
-              <a *ngIf="loggedIn$ | async" nz-menu-item routerLink="/favorites">
-                <i nz-icon nzType="heart"></i>
-                {{'Favorites' | translate}}
-              </a>
-              <ng-container *ngIf="otherCharacters$ | async as characters">
-              <span *ngIf="characters.length > 0" nz-submenu>
-                <span title>
-                  <i nz-icon nzType="swap" nzTheme="outline"></i>
-                  {{'Change_character' | translate}}
-                </span>
-                <ul>
-                  <li nz-menu-item *ngFor="let character of characters" (click)="switchCharacter(character.ID)">
-                    {{character.Name}} ({{character.Server}})
+                    <div class="pcap-status" nz-popover [nzPopoverTitle]="'PACKET_CAPTURE.Status' | translate" [nzPopoverContent]="pcapStatusTpl"
+                      nzPopoverPlacement="bottom">
+                      <nz-badge [nzStatus]="pcapFeaturesStatus$ | async" class="status-badge"></nz-badge>
+                      <span nz-icon nzType="scan" nzTheme="outline"></span>
+                    </div>
                   </li>
-                </ul>
-              </span>
-              </ng-container>
-              <a (click)="openSettings()" nz-menu-item>
-                <i nz-icon nzType="setting"></i>
-                {{'SETTINGS.Title' | translate}}
-              </a>
-              <ng-container *ngIf="user$ | async as user">
-                <a *ngIf="user.patron || user.admin" nz-menu-item routerLink="/custom-links">
-                  <i nz-icon nzType="link"></i>
-                  {{'CUSTOM_LINKS.Title' | translate}}
-                </a>
-                <a *ngIf="user.sekrit" nz-menu-item routerLink="/mappy">
-                  <i nz-icon nzType="scan"></i>
-                  Mappy
-                </a>
-              </ng-container>
-              <span nz-menu-divider></span>
-              <a (click)="logOut()" *ngIf="loggedIn$ | async" nz-menu-item>
-                <i nz-icon nzType="logout"></i>
-                {{'Disconnect' | translate}}
-              </a>
-              <a (click)="openRegisterPopup()" *ngIf="!(loggedIn$ | async)" nz-menu-item>
-                <i nz-icon nzType="form"></i>
-                {{'Registration' | translate}}
-              </a>
-              <a (click)="openLoginPopup()" *ngIf="!(loggedIn$ | async)" nz-menu-item>
-                <i nz-icon nzType="login"></i>
-                {{'Login' | translate}}
-              </a>
-            </div>
-          </li>
-        </ul>
-      </nz-header>
-    </nz-layout>
-    <nz-layout [class.overlay]="overlay" class="content-container">
-      <nz-sider (nzCollapsedChange)="settings.compactSidebar = $event"
-                *ngIf="!overlay"
-                [(nzCollapsed)]="settings.compactSidebar"
-                [nzCollapsedWidth]="80 | ifMobile: 0"
-                [nzWidth]="255 | ifMobile: 200"
-                class="sider"
-                nzCollapsible>
-        <div class="sidebar-container" fxLayout="column" fxLayoutAlign="space-between">
-          <div fxLayout="column" fxFlex="1 1 auto" class="menu-categories-container">
-            <button class="back-button" (click)="back()" *ngIf="platformService.isDesktop() && !settings.hideBackButton">
-              <i nz-icon nzType="left" nzTheme="outline"></i>
-              {{'COMMON.Back' | translate}}
-            </button>
-            <div class="menu-categories" fxFlex="1 1 auto">
-              <app-navigation-sidebar
-                [desktop]="platformService.isDesktop()"
-                [collapsed]="settings.compactSidebar"
-                [mappyEnabled]="mappy.available"
-                [version]="version"
-                (showPatchNotes)="showPatchNotes()">
-              </app-navigation-sidebar>
-            </div>
-
-            <div [fxLayout]="settings.compactSidebar?'column':'row'" fxLayoutAlign="center center" fxLayoutGap="5px" class="overlay-buttons"
-                 *ngIf="platformService.isDesktop()&& !childWindow">
-              <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'Copy_current_link' | translate"
-                      [clipboard]="currentLink">
-                <i nz-icon nzType="share-alt"></i>
-              </button>
-              <ng-container *ngIf="!childWindow">
-                <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'ALARMS.Open_alarms_overlay' | translate"
-                        (click)="openOverlay('/alarms-overlay')">
-                  <i nz-icon nzType="bell"></i>
-                </button>
-                <button nz-button nzShape="circle"
-                        *ngIf="ipc.pcapToggle"
-                        nz-tooltip [nzTooltipTitle]="'DB.FISH.OVERLAY.Open' | translate"
-                        (click)="openOverlay('/fishing-reporter-overlay')" class="button-with-img">
-                  <img src="./assets/icons/classjob/fisher.png" alt="">
-                </button>
-                <button nz-button nzShape="circle"
-                        *ngIf="ipc.pcapToggle && mappy.available"
-                        nz-tooltip nzTooltipTitle="Open mappy overlay"
-                        (click)="openOverlay('/mappy-overlay')">
-                  <i nz-icon nzType="scan" nzTheme="outline"></i>
-                </button>
-                <button nz-button nzShape="circle"
-                        nz-tooltip [nzTooltipTitle]="'LIST_DETAILS.OVERLAY.Open' | translate"
-                        (click)="openOverlay('/list-panel-overlay')">
-                  <i nz-icon nzType="unordered-list" nzTheme="outline"></i>
-                </button>
-                <button nz-button nzShape="circle"
-                        nz-tooltip [nzTooltipTitle]="'ITEM_SEARCH_OVERLAY.Open' | translate"
-                        (click)="openOverlay('/item-search-overlay')">
-                  <i nz-icon nzType="search" nzTheme="outline"></i>
-                </button>
-              </ng-container>
-            </div>
-
-            <button class="support-button" *ngIf="showPatreonButton$ | async" (click)="openSupportPopup()">
-              <span *ngIf="settings.compactSidebar">{{'COMMON.Support_us' | translate}}</span>
-              <span *ngIf="!settings.compactSidebar">{{'COMMON.Support_us_remove_ads' | translate}}</span>
-            </button>
-          </div>
-        </div>
-      </nz-sider>
-      <nz-content id="scroll-container">
-        <div class="slider" *ngIf="loadingLazyData$ | async">
-          <div class="line"></div>
-          <div class="subline inc"></div>
-          <div class="subline dec"></div>
-        </div>
-        <div [class.overlay]="overlay" [class.with-clock]="settings.getOverlayClockDisplay(ipc.overlayUri)" class="page-container">
-          <ng-container *ngIf="!childWindow">
-            <nz-alert *ngIf="(newVersionAvailable$ | async) && !platformService.isDesktop()" [nzMessage]="message" class="new-version-alert"
-                      nzBanner
-                      nzShowIcon
-                      nzType="info">
-              <ng-template #message>
-                {{'UPDATE.New_update_available' | translate}}
-                {{'UPDATE.Web_instructions' | translate}}
-              </ng-template>
-            </nz-alert>
-            <nz-alert *ngIf="ipc.pcapToggle && (pcapOutDated$ | async) && !overlay"
-                      [nzMessage]="'PACKET_CAPTURE.Outdated' | translate"
-                      [nzDescription]="'PACKET_CAPTURE.Outdated_description' | translate"
+                }
+                @if (pinnedList$ | async; as pinnedList) {
+                  @if (pinnedList !== 'none') {
+                    <li
+                      class="ant-menu-item"
+                      nzTooltipPlacement="bottom"
+                      (contextmenu)="$event.preventDefault();listsFacade.unpin()"
+                      nz-tooltip [nzTooltipTitle]="'LIST.Go_to_pinned' | translate"
+                      routerLink="/list/{{pinnedList}}">
+                      <i nz-icon nzType="pushpin" nzTheme="outline"></i>
+                    </li>
+                  }
+                }
+                <li (click)="toggleTimeFormat()" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow>
+                  {{time$ | async}}
+                </li>
+                @if (!platformService.isDesktop()) {
+                  <li [nzTooltipTitle]="'COMMON.Open_in_desktop' | translate" class="clock ant-menu-item" fxFlex fxHide.lt-sm
+                    fxShow
+                    nz-tooltip nzTooltipPlacement="bottom">
+                    <a (click)="openInApp()">
+                      <i nzIconfont="icon-openinapp" nz-icon></i>
+                    </a>
+                  </li>
+                }
+                @if (platformService.isDesktop()) {
+                  <li [nzTooltipTitle]="'COMMON.Open_link' | translate" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow
+                    nz-tooltip nzTooltipPlacement="bottom" (click)="openLink()">
+                    <i nz-icon nzType="laptop" nzTheme="outline"></i>
+                  </li>
+                }
+                @if (notifications$ | async; as notifications) {
+                  <li [nzPopoverContent]="notificationsTemplate" class="ant-menu-item" nz-popover
+                    nzPopoverPlacement="bottomRight">
+                    <nz-badge [nzCount]="notifications.length" class="notifications-count">
+                      <i nz-icon nzType="notification"></i>
+                    </nz-badge>
+                    <ng-template #notificationsTemplate>
+                      <nz-list [nzDataSource]="notifications" [nzNoResult]="noNotifications"
+                        [nzRenderItem]="notificationTemplate" class="notifications-list">
+                        <ng-template #noNotifications>
+                          <nz-empty [nzNotFoundContent]="'NOTIFICATIONS.No_notifications' | translate"></nz-empty>
+                        </ng-template>
+                        <ng-template #notificationTemplate let-notification>
+                          <nz-list-item [nzActions]="[actionOpen, actionClose]">
+                            <nz-list-item-meta [nzAvatar]="icon"
+                              [nzDescription]="notification.route.join('/')"
+                              [nzTitle]="notification.content">
+                              <ng-template #icon>
+                                <i nz-icon nzType="{{notification.icon}}"></i>
+                              </ng-template>
+                            </nz-list-item-meta>
+                          </nz-list-item>
+                          <ng-template #actionClose>
+                            <i (click)="$event.stopPropagation();deleteNotification(notification)" nz-icon nzType="close"></i>
+                          </ng-template>
+                          <ng-template #actionOpen>
+                            <a (click)="$event.stopPropagation();deleteNotification(notification)"
+                              [routerLink]="notification.route">
+                              <i nz-icon nzType="select"></i>
+                            </a>
+                          </ng-template>
+                        </ng-template>
+                      </nz-list>
+                    </ng-template>
+                  </li>
+                }
+                <li [class.accent]="!(loggedIn$ | async)" class="user-menu" nz-submenu nzMenuClassName="user-menu-content">
+                  <span title class="user-menu-title">
+                    @if (loading$ | async) {
+                      <nz-spin class="user-loading"></nz-spin>
+                    } @else {
+                      @if (!(loggedIn$ | async)) {
+                        <span>
+                          <nz-avatar [nzText]="'A'">
+                          </nz-avatar>
+                          {{'COMMON.Anonymous' | translate}}
+                        </span>
+                      } @else {
+                        @if (character$ | async; as character) {
+                          <div
+                            tutorialStep="TUTORIAL.APP.Profile" tutorialStepIndex="999" tutorialStepAlign="bottom">
+                            @if (character.loading) {
+                              <nz-spin class="user-loading"></nz-spin>
+                            }
+                            @if (!character.loading) {
+                              @if (character.ID > 0) {
+                                <app-user-avatar [flex]="false" [ignoreVerification]="true"
+                                  [userId]="userId$ | async"
+                                [width]="32"></app-user-avatar>
+                              } @else {
+                                <nz-avatar [nzText]="character.Name[0]"></nz-avatar>
+                              }
+                              {{character.Name | ifMobile:''}}
+                            }
+                          </div>
+                        } @else {
+                          <span>
+                            <nz-avatar [nzText]="'U'">
+                            </nz-avatar>
+                            {{'COMMON.Unknown' | translate}}
+                          </span>
+                        }
+                      }
+                    }
+                  </span>
+                  @if (!childWindow) {
+                    <div>
+                      @if (loggedIn$ | async) {
+                        <a nz-menu-item routerLink="/profile">
+                          <i nz-icon nzType="idcard"></i>
+                          {{'Profile' | translate}}
+                        </a>
+                      }
+                      @if (loggedIn$ | async) {
+                        <a nz-menu-item routerLink="/teams">
+                          <i nz-icon nzType="team"></i>
+                          {{'TEAMS.Title' | translate}}
+                        </a>
+                      }
+                      @if (loggedIn$ | async) {
+                        <a nz-menu-item routerLink="/favorites">
+                          <i nz-icon nzType="heart"></i>
+                          {{'Favorites' | translate}}
+                        </a>
+                      }
+                      @if (otherCharacters$ | async; as characters) {
+                        @if (characters.length > 0) {
+                          <span nz-submenu>
+                            <span title>
+                              <i nz-icon nzType="swap" nzTheme="outline"></i>
+                              {{'Change_character' | translate}}
+                            </span>
+                            <ul>
+                              @for (character of characters; track character) {
+                                <li nz-menu-item (click)="switchCharacter(character.ID)">
+                                  {{character.Name}} ({{character.Server}})
+                                </li>
+                              }
+                            </ul>
+                          </span>
+                        }
+                      }
+                      <a (click)="openSettings()" nz-menu-item>
+                        <i nz-icon nzType="setting"></i>
+                        {{'SETTINGS.Title' | translate}}
+                      </a>
+                      @if (user$ | async; as user) {
+                        @if (user.patron || user.admin) {
+                          <a nz-menu-item routerLink="/custom-links">
+                            <i nz-icon nzType="link"></i>
+                            {{'CUSTOM_LINKS.Title' | translate}}
+                          </a>
+                        }
+                        @if (user.sekrit) {
+                          <a nz-menu-item routerLink="/mappy">
+                            <i nz-icon nzType="scan"></i>
+                            Mappy
+                          </a>
+                        }
+                      }
+                      <span nz-menu-divider></span>
+                      @if (loggedIn$ | async) {
+                        <a (click)="logOut()" nz-menu-item>
+                          <i nz-icon nzType="logout"></i>
+                          {{'Disconnect' | translate}}
+                        </a>
+                      }
+                      @if (!(loggedIn$ | async)) {
+                        <a (click)="openRegisterPopup()" nz-menu-item>
+                          <i nz-icon nzType="form"></i>
+                          {{'Registration' | translate}}
+                        </a>
+                      }
+                      @if (!(loggedIn$ | async)) {
+                        <a (click)="openLoginPopup()" nz-menu-item>
+                          <i nz-icon nzType="login"></i>
+                          {{'Login' | translate}}
+                        </a>
+                      }
+                    </div>
+                  }
+                </li>
+              </ul>
+            </nz-header>
+          </nz-layout>
+        }
+        <nz-layout [class.overlay]="overlay" class="content-container">
+          @if (!overlay) {
+            <nz-sider (nzCollapsedChange)="settings.compactSidebar = $event"
+              [(nzCollapsed)]="settings.compactSidebar"
+              [nzCollapsedWidth]="80 | ifMobile: 0"
+              [nzWidth]="255 | ifMobile: 200"
+              class="sider"
+              nzCollapsible>
+              <div class="sidebar-container" fxLayout="column" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="1 1 auto" class="menu-categories-container">
+                  @if (platformService.isDesktop() && !settings.hideBackButton) {
+                    <button class="back-button" (click)="back()">
+                      <i nz-icon nzType="left" nzTheme="outline"></i>
+                      {{'COMMON.Back' | translate}}
+                    </button>
+                  }
+                  <div class="menu-categories" fxFlex="1 1 auto">
+                    <app-navigation-sidebar
+                      [desktop]="platformService.isDesktop()"
+                      [collapsed]="settings.compactSidebar"
+                      [mappyEnabled]="mappy.available"
+                      [version]="version"
+                      (showPatchNotes)="showPatchNotes()">
+                    </app-navigation-sidebar>
+                  </div>
+                  @if (platformService.isDesktop()&& !childWindow) {
+                    <div [fxLayout]="settings.compactSidebar?'column':'row'" fxLayoutAlign="center center" fxLayoutGap="5px" class="overlay-buttons"
+                      >
+                      <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'Copy_current_link' | translate"
+                        [clipboard]="currentLink">
+                        <i nz-icon nzType="share-alt"></i>
+                      </button>
+                      @if (!childWindow) {
+                        <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'ALARMS.Open_alarms_overlay' | translate"
+                          (click)="openOverlay('/alarms-overlay')">
+                          <i nz-icon nzType="bell"></i>
+                        </button>
+                        @if (ipc.pcapToggle) {
+                          <button nz-button nzShape="circle"
+                            nz-tooltip [nzTooltipTitle]="'DB.FISH.OVERLAY.Open' | translate"
+                            (click)="openOverlay('/fishing-reporter-overlay')" class="button-with-img">
+                            <img src="./assets/icons/classjob/fisher.png" alt="">
+                          </button>
+                        }
+                        @if (ipc.pcapToggle && mappy.available) {
+                          <button nz-button nzShape="circle"
+                            nz-tooltip nzTooltipTitle="Open mappy overlay"
+                            (click)="openOverlay('/mappy-overlay')">
+                            <i nz-icon nzType="scan" nzTheme="outline"></i>
+                          </button>
+                        }
+                        <button nz-button nzShape="circle"
+                          nz-tooltip [nzTooltipTitle]="'LIST_DETAILS.OVERLAY.Open' | translate"
+                          (click)="openOverlay('/list-panel-overlay')">
+                          <i nz-icon nzType="unordered-list" nzTheme="outline"></i>
+                        </button>
+                        <button nz-button nzShape="circle"
+                          nz-tooltip [nzTooltipTitle]="'ITEM_SEARCH_OVERLAY.Open' | translate"
+                          (click)="openOverlay('/item-search-overlay')">
+                          <i nz-icon nzType="search" nzTheme="outline"></i>
+                        </button>
+                      }
+                    </div>
+                  }
+                  @if (showPatreonButton$ | async) {
+                    <button class="support-button" (click)="openSupportPopup()">
+                      @if (settings.compactSidebar) {
+                        <span>{{'COMMON.Support_us' | translate}}</span>
+                      }
+                      @if (!settings.compactSidebar) {
+                        <span>{{'COMMON.Support_us_remove_ads' | translate}}</span>
+                      }
+                    </button>
+                  }
+                </div>
+              </div>
+            </nz-sider>
+          }
+          <nz-content id="scroll-container">
+            @if (loadingLazyData$ | async) {
+              <div class="slider">
+                <div class="line"></div>
+                <div class="subline inc"></div>
+                <div class="subline dec"></div>
+              </div>
+            }
+            <div [class.overlay]="overlay" [class.with-clock]="settings.getOverlayClockDisplay(ipc.overlayUri)" class="page-container">
+              @if (!childWindow) {
+                @if ((newVersionAvailable$ | async) && !platformService.isDesktop()) {
+                  <nz-alert [nzMessage]="message" class="new-version-alert"
+                    nzBanner
+                    nzShowIcon
+                    nzType="info">
+                    <ng-template #message>
+                      {{'UPDATE.New_update_available' | translate}}
+                      {{'UPDATE.Web_instructions' | translate}}
+                    </ng-template>
+                  </nz-alert>
+                }
+                @if (ipc.pcapToggle && (pcapOutDated$ | async) && !overlay) {
+                  <nz-alert
+                    [nzMessage]="'PACKET_CAPTURE.Outdated' | translate"
+                    [nzDescription]="'PACKET_CAPTURE.Outdated_description' | translate"
+                    class="new-version-alert"
+                    nzBanner
+                    nzShowIcon
+                    nzCloseable
+                    nzType="warning">
+                  </nz-alert>
+                }
+                @if (user$ | async; as user) {
+                  @if (!overlay && showSupporterIssueBanner && (user.patreonToken || user.tipeeeToken) && showAd$ | async) {
+                    <nz-alert
+                      [nzMessage]="'SETTINGS.Supporter_issue' | translate"
+                      [nzDescription]="'SETTINGS.Supporter_issue_description' | translate"
                       class="new-version-alert"
                       nzBanner
                       nzShowIcon
                       nzCloseable
                       nzType="warning">
-            </nz-alert>
-            <ng-container *ngIf="user$ | async as user">
-              <nz-alert *ngIf="!overlay && showSupporterIssueBanner && (user.patreonToken || user.tipeeeToken) && showAd$ | async"
-                        [nzMessage]="'SETTINGS.Supporter_issue' | translate"
-                        [nzDescription]="'SETTINGS.Supporter_issue_description' | translate"
-                        class="new-version-alert"
-                        nzBanner
-                        nzShowIcon
-                        nzCloseable
-                        nzType="warning">
-              </nz-alert>
-            </ng-container>
-            <nz-alert *ngIf="showChildWindowTip && platformService.isDesktop() && !overlay && !childWindow"
-                      [nzMessage]="'SETTINGS.Child_windows_title' | translate"
-                      [nzDescription]="'SETTINGS.Child_windows_description' | translate"
+                    </nz-alert>
+                  }
+                }
+                @if (showChildWindowTip && platformService.isDesktop() && !overlay && !childWindow) {
+                  <nz-alert
+                    [nzMessage]="'SETTINGS.Child_windows_title' | translate"
+                    [nzDescription]="'SETTINGS.Child_windows_description' | translate"
+                    class="new-version-alert"
+                    nzBanner
+                    nzShowIcon
+                    nzCloseable
+                    (nzOnClose)="hideChildWindowTip()"
+                    nzType="info">
+                  </nz-alert>
+                }
+                @if ((showDesktopTip | ifMobile: false) && !platformService.isDesktop() && !overlay && !childWindow) {
+                  <nz-alert
+                    [nzMessage]="'SETTINGS.Desktop_tip_title' | translate"
+                    [nzDescription]="'SETTINGS.Desktop_tip_description' | translate"
+                    class="new-version-alert"
+                    nzBanner
+                    nzShowIcon
+                    nzCloseable
+                    (nzOnClose)="hideDesktopTip()"
+                    nzType="info" [nzAction]="downloadButtonTpl">
+                    <ng-template #downloadButtonTpl>
+                      <a nz-button nzType="link" href="https://ffxivteamcraft.com/desktop" target="_blank">
+                        {{'Download_desktop_app' | translate}}
+                      </a>
+                    </ng-template>
+                  </nz-alert>
+                }
+                @if (ipc.pcapToggle && !(loggedIn$ | async)) {
+                  <nz-alert
+                    [nzMessage]="'PACKET_CAPTURE.Not_as_anonymous' | translate"
+                    [nzDescription]="'PACKET_CAPTURE.Not_as_anonymous_description' | translate"
+                    class="new-version-alert"
+                    nzBanner nzShowIcon nzType="error">
+                  </nz-alert>
+                }
+                @if (!settings.hideRegionBanner && suggestedRegion) {
+                  <nz-alert (nzOnClose)="settings.hideRegionBanner = true"
+                    [nzCloseText]="'Close' | translate"
+                    [nzDescription]="versionDescription"
+                    [nzMessage]="'SUGGESTED_REGION.Banner_title' | translate: { region: ('SETTINGS.REGIONS.' + suggestedRegion | translate) }"
+                    class="new-version-alert"
+                    nzBanner
+                    nzShowIcon
+                    nzType="info">
+                    <ng-template #versionDescription>
+                      {{'SUGGESTED_REGION.Banner_description' | translate}}<br>
+                      <button (click)="changeToSuggestedRegion()" nz-button>
+                        {{'SUGGESTED_REGION.Button_label' | translate}}
+                      </button>
+                    </ng-template>
+                  </nz-alert>
+                }
+                @if (platformService.isDesktop() && !settings.hideMachinaBanner && !ipc.pcapToggle) {
+                  <nz-alert (nzOnClose)="settings.hideMachinaBanner = true"
+                    [nzCloseText]="'Close' | translate"
+                    [nzDescription]="pcapDescription"
+                    [nzMessage]="'PACKET_CAPTURE.Banner_title' | translate"
+                    class="new-version-alert"
+                    nzBanner
+                    nzShowIcon
+                    nzCloseable
+                    nzType="info">
+                    <ng-template #pcapDescription>
+                      {{'PACKET_CAPTURE.Banner_description' | translate}}<br>
+                      <i>{{'PACKET_CAPTURE.Banner_description_warning' | translate}}</i><br>
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <button (click)="enablePacketCapture()" nz-button>
+                          {{'PACKET_CAPTURE.Button_label' | translate}}
+                        </button>
+                        <div>{{'Or' | translate}}</div>
+                        <a href="https://wiki.ffxivteamcraft.com/advanced-features/packet-capture">{{'COMMON.Read_more_on_wiki' | translate}}</a>
+                      </div>
+                    </ng-template>
+                  </nz-alert>
+                }
+                @if (platformService.isDesktop() && ipc.pcapToggle && !overlay) {
+                  @if (emptyInventory$ | async) {
+                    <nz-alert [nzDescription]="'PACKET_CAPTURE.Please_zone' | translate"
+                      [nzMessage]="'PACKET_CAPTURE.Empty_inventory' | translate"
                       class="new-version-alert"
                       nzBanner
                       nzShowIcon
                       nzCloseable
-                      (nzOnClose)="hideChildWindowTip()"
-                      nzType="info">
-            </nz-alert>
-            <nz-alert *ngIf="(showDesktopTip | ifMobile: false) && !platformService.isDesktop() && !overlay && !childWindow"
-                      [nzMessage]="'SETTINGS.Desktop_tip_title' | translate"
-                      [nzDescription]="'SETTINGS.Desktop_tip_description' | translate"
+                      nzType="warning">
+                    </nz-alert>
+                  }
+                  @if (unknownContentId$ | async) {
+                    <nz-alert [nzDescription]="'PACKET_CAPTURE.Please_sort' | translate"
+                      [nzMessage]="'PACKET_CAPTURE.Unknown_character' | translate"
                       class="new-version-alert"
                       nzBanner
                       nzShowIcon
                       nzCloseable
-                      (nzOnClose)="hideDesktopTip()"
-                      nzType="info" [nzAction]="downloadButtonTpl">
-              <ng-template #downloadButtonTpl>
-                <a nz-button nzType="link" href="https://ffxivteamcraft.com/desktop" target="_blank">
-                  {{'Download_desktop_app' | translate}}
-                </a>
+                      nzType="warning">
+                    </nz-alert>
+                  }
+                }
+              }
+              <nz-spin [nzSize]="'large'" [nzSpinning]="navigating" class="app-container">
+                <router-outlet></router-outlet>
+              </nz-spin>
+            </div>
+          </nz-content>
+          @if (!overlay) {
+            <nz-sider
+              [nzCollapsed]="collapsedAlarmsBar$ | async"
+              (nzCollapsedChange)="collapsedAlarmsBar$.next($event)"
+              [nzCollapsedWidth]="0"
+              [nzWidth]="230"
+              [nzZeroTrigger]="alarmsTrigger"
+              class="right-sider"
+              nzCollapsible>
+              <ng-template #alarmsTrigger>
+                <i nz-icon nzType="bell"></i>
               </ng-template>
-            </nz-alert>
-            <nz-alert *ngIf="ipc.pcapToggle && !(loggedIn$ | async)"
-                      [nzMessage]="'PACKET_CAPTURE.Not_as_anonymous' | translate"
-                      [nzDescription]="'PACKET_CAPTURE.Not_as_anonymous_description' | translate"
-                      class="new-version-alert"
-                      nzBanner nzShowIcon nzType="error">
-            </nz-alert>
-            <nz-alert (nzOnClose)="settings.hideRegionBanner = true" *ngIf="!settings.hideRegionBanner && suggestedRegion"
-                      [nzCloseText]="'Close' | translate"
-                      [nzDescription]="description"
-                      [nzMessage]="'SUGGESTED_REGION.Banner_title' | translate: { region: ('SETTINGS.REGIONS.' + suggestedRegion | translate) }"
-                      class="new-version-alert"
-                      nzBanner
-                      nzShowIcon
-                      nzType="info">
-              <ng-template #description>
-                {{'SUGGESTED_REGION.Banner_description' | translate}}<br>
-                <button (click)="changeToSuggestedRegion()" nz-button>
-                  {{'SUGGESTED_REGION.Button_label' | translate}}
-                </button>
-              </ng-template>
-            </nz-alert>
-            <nz-alert (nzOnClose)="settings.hideMachinaBanner = true"
-                      *ngIf="platformService.isDesktop() && !settings.hideMachinaBanner && !ipc.pcapToggle"
-                      [nzCloseText]="'Close' | translate"
-                      [nzDescription]="description"
-                      [nzMessage]="'PACKET_CAPTURE.Banner_title' | translate"
-                      class="new-version-alert"
-                      nzBanner
-                      nzShowIcon
-                      nzCloseable
-                      nzType="info">
-              <ng-template #description>
-                {{'PACKET_CAPTURE.Banner_description' | translate}}<br>
-                <i>{{'PACKET_CAPTURE.Banner_description_warning' | translate}}</i><br>
-                <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <button (click)="enablePacketCapture()" nz-button>
-                    {{'PACKET_CAPTURE.Button_label' | translate}}
-                  </button>
-                  <div>{{'Or' | translate}}</div>
-                  <a href="https://wiki.ffxivteamcraft.com/advanced-features/packet-capture">{{'COMMON.Read_more_on_wiki' | translate}}</a>
-                </div>
-              </ng-template>
-            </nz-alert>
-            <ng-container *ngIf="platformService.isDesktop() && ipc.pcapToggle && !overlay">
-              <nz-alert *ngIf="emptyInventory$ | async" [nzDescription]="'PACKET_CAPTURE.Please_zone' | translate"
-                        [nzMessage]="'PACKET_CAPTURE.Empty_inventory' | translate"
-                        class="new-version-alert"
-                        nzBanner
-                        nzShowIcon
-                        nzCloseable
-                        nzType="warning">
-              </nz-alert>
-              <nz-alert *ngIf="unknownContentId$ | async" [nzDescription]="'PACKET_CAPTURE.Please_sort' | translate"
-                        [nzMessage]="'PACKET_CAPTURE.Unknown_character' | translate"
-                        class="new-version-alert"
-                        nzBanner
-                        nzShowIcon
-                        nzCloseable
-                        nzType="warning">
-              </nz-alert>
-            </ng-container>
-          </ng-container>
-          <nz-spin [nzSize]="'large'" [nzSpinning]="navigating" class="app-container">
-            <router-outlet></router-outlet>
-          </nz-spin>
+              @if (!(loading$ | async)) {
+                <app-alarms-sidebar appLazyComponent></app-alarms-sidebar>
+              }
+            </nz-sider>
+          }
+        </nz-layout>
+        @if (settings.getOverlayClockDisplay(ipc.overlayUri)) {
+          <nz-footer [fxHide]="!overlay" class="footer" fxShow.lt-sm>
+            <span (click)="toggleTimeFormat()" class="timer">{{time$ | async}}</span>
+          </nz-footer>
+        }
+      </nz-layout>
+    } @else {
+      <div class="opened-in-desktop" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+        <img alt="FFXIV Teamcraft" src="./assets/logo.png">
+        <div class="desktop-message">{{'COMMON.Opened_in_desktop' | translate}}</div>
+        <div class="desktop-message-description">{{'COMMON.Opened_in_desktop_setting' | translate}}</div>
+        <div class="desktop-message-button">
+          <button nz-button (click)="disableAutoOpen()">{{'COMMON.Opened_in_desktop_button' | translate}}</button>
         </div>
-      </nz-content>
-      <nz-sider *ngIf="!overlay"
-                [nzCollapsed]="collapsedAlarmsBar$ | async"
-                (nzCollapsedChange)="collapsedAlarmsBar$.next($event)"
-                [nzCollapsedWidth]="0"
-                [nzWidth]="230"
-                [nzZeroTrigger]="alarmsTrigger"
-                class="right-sider"
-                nzCollapsible>
-        <ng-template #alarmsTrigger>
-          <i nz-icon nzType="bell"></i>
-        </ng-template>
-        <app-alarms-sidebar *ngIf="!(loading$ | async)" appLazyComponent></app-alarms-sidebar>
-      </nz-sider>
-    </nz-layout>
-    <nz-footer *ngIf="settings.getOverlayClockDisplay(ipc.overlayUri)" [fxHide]="!overlay" class="footer" fxShow.lt-sm>
-      <span (click)="toggleTimeFormat()" class="timer">{{time$ | async}}</span>
-    </nz-footer>
-  </nz-layout>
-  <ng-template #desktopOpenedMessage>
-    <div class="opened-in-desktop" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
-      <img alt="FFXIV Teamcraft" src="./assets/logo.png">
-      <div class="desktop-message">{{'COMMON.Opened_in_desktop' | translate}}</div>
-      <div class="desktop-message-description">{{'COMMON.Opened_in_desktop_setting' | translate}}</div>
-      <div class="desktop-message-button">
-        <button nz-button (click)="disableAutoOpen()">{{'COMMON.Opened_in_desktop_button' | translate}}</button>
       </div>
-    </div>
-  </ng-template>
-</ng-template>
+    }
+  }
+  @if (breakpointDebug) {
+    <app-breakpoint-debug></app-breakpoint-debug>
+  }

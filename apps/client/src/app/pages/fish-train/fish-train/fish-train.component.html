@@ -8,7 +8,7 @@
       <div class="details-column" [class.overlay]="overlay">
         <h3>{{'FISH_TRAIN.Current_fish' | translate}}</h3>
         <nz-card [nzCover]="coverTpl" [nzActions]="[copyMacroTpl]" *ngIf="display.running; else trainNotRunningTpl">
-          <nz-card-meta [nzTitle]="titleTpl" [nzAvatar]="avatarTpl" [nzDescription]="descriptionTpl">
+          <nz-card-meta [nzTitle]="titleTpl" [nzAvatar]="avatarTpl" [nzDescription]="fishDescriptionTpl">
             <ng-template #avatarTpl>
               <app-item-icon [itemId]="display.current.id" [width]="32"></app-item-icon>
             </ng-template>
@@ -24,7 +24,7 @@
                 </div>
               </div>
             </ng-template>
-            <ng-template #descriptionTpl>
+            <ng-template #fishDescriptionTpl>
               {{display.current.node.map | mapName | i18n}} -
               <app-i18n-name content="places" [id]="display.current.node.zoneId"></app-i18n-name>
               - X:{{display.current.node.x}} - Y:{{display.current.node.y}}
@@ -172,8 +172,8 @@
       </nz-page-header>
       <div nz-row [nzGutter]="[10,10]">
         <nz-alert *ngIf="outdated$ | async" nzShowIcon nzType="error" nz-col [nzSpan]="24"
-                  [nzMessage]="'FISH_TRAIN.Outdated' | translate" [nzDescription]="descriptionTpl">
-          <ng-template #descriptionTpl>
+                  [nzMessage]="'FISH_TRAIN.Outdated' | translate" [nzDescription]="trainDescriptionTpl">
+          <ng-template #trainDescriptionTpl>
             <ng-container *ngIf="display.isConductor">
               {{'FISH_TRAIN.Outdated_description' | translate}}
               &nbsp;
