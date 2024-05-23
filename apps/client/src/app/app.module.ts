@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, PLATFORM_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { RouterModule } from '@angular/router';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -194,123 +194,117 @@ const nzConfig: NzConfig = {
   }
 };
 
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  providers: [
-    GOOGLE_ANALYTICS_ROUTER_INITIALIZER_PROVIDER,
-    {
-      provide: APOLLO_OPTIONS,
-      useFactory: apolloClientFactory,
-      deps: [HttpLink, AuthFacade]
-    },
-    { provide: NZ_I18N, useValue: en_US },
-    {
-      provide: NZ_CONFIG,
-      useValue: nzConfig
-    },
-    { provide: NZ_ICONS, useValue: icons },
-    { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true },
-    ...APP_INITIALIZERS,
-    ...Object.values(AllaganReportsGQLProviders)
-  ],
-  imports: [
-    FlexLayoutModule,
-    MarkdownModule.forRoot(),
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: TranslationsLoaderFactory,
-        deps: [HttpClient, PLATFORM_ID, PlatformService]
-      }
-    }),
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => {
-      const firestore = getFirestore();
-      enableMultiTabIndexedDbPersistence(firestore);
-      return firestore;
-    }),
-    provideDatabase(() => getDatabase()),
-    provideFunctions(() => getFunctions()),
-    providePerformance(() => getPerformance()),
-    XivapiClientModule.forRoot(),
-    RouterModule.forRoot([], { useHash: IS_ELECTRON }),
-    DirtyModule,
-    AppRoutingModule,
-    AuthModule,
-    ListModule,
-    WorkshopModule,
-    TeamsModule,
-    LayoutModule,
-    NotificationsModule,
-    SettingsModule.forRoot(),
-    MapModule.forRoot(),
-    UserAvatarModule,
-    SimulatorModule,
-    RotationsModule,
-    CustomLinksModule,
-    CustomItemsModule,
-    GearsetsModule,
-    CraftingReplayModule,
-    FishTrainModule,
-    AlarmsModule,
-    AlarmsSidebarModule,
-    QuickSearchModule,
-    InventoryModule,
-    EorzeaModule,
-    FreeCompanyWorkshopsModule,
-    HttpClientModule,
-    environment.noAnimations ? NoopAnimationsModule : BrowserAnimationsModule,
-    environment.noAnimations ? NzNoAnimationModule : [],
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    NgSerializerModule.forRoot(),
-    AppRoutingModule,
-    CoreModule.forRoot(),
-    PipesModule,
-    NzMenuModule,
-    StoreModule.forRoot({}, {
-      runtimeChecks: {
-        strictStateSerializability: false,
-        strictActionSerializability: false,
-        strictStateImmutability: false,
-        strictActionImmutability: false,
-        strictActionWithinNgZone: false
-      }
-    }),
-    !environment.production ? StoreDevtoolsModule.instrument({
-      name: 'FFXIV Teamcraft'
-    }) : [],
-    EffectsModule.forRoot([]),
-    StoreModule.forFeature('auth', authReducer, { initialState: authInitialState }),
-    EffectsModule.forFeature([AuthEffects]),
-    StoreModule.forFeature('lists', listsReducer, { initialState: listsInitialState }),
-    EffectsModule.forFeature([ListsEffects]),
-    ListAggregateModule,
-    ApolloModule,
-    PlayerMetricsModule,
-    NzSpaceModule,
-    NzLayoutModule,
-    NzAvatarModule,
-    NzSpinModule,
-    NzAlertModule,
-    NzBadgeModule,
-    NzSelectModule,
-    NzTagModule,
-    NzPopoverModule,
-    NavigationSidebarModule,
-    NgxEchartsModule.forRoot({
-      echarts: () => import('echarts')
-    }),
-    BreakpointDebugComponent,
-    AdComponent,
-    NzEmptyModule,
-    NzListModule
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent
+    ],
+    bootstrap: [AppComponent], imports: [FlexLayoutModule,
+        MarkdownModule.forRoot(),
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: TranslationsLoaderFactory,
+                deps: [HttpClient, PLATFORM_ID, PlatformService]
+            }
+        }),
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideAuth(() => getAuth()),
+        provideFirestore(() => {
+            const firestore = getFirestore();
+            enableMultiTabIndexedDbPersistence(firestore);
+            return firestore;
+        }),
+        provideDatabase(() => getDatabase()),
+        provideFunctions(() => getFunctions()),
+        providePerformance(() => getPerformance()),
+        XivapiClientModule.forRoot(),
+        RouterModule.forRoot([], { useHash: IS_ELECTRON }),
+        DirtyModule,
+        AppRoutingModule,
+        AuthModule,
+        ListModule,
+        WorkshopModule,
+        TeamsModule,
+        LayoutModule,
+        NotificationsModule,
+        SettingsModule.forRoot(),
+        MapModule.forRoot(),
+        UserAvatarModule,
+        SimulatorModule,
+        RotationsModule,
+        CustomLinksModule,
+        CustomItemsModule,
+        GearsetsModule,
+        CraftingReplayModule,
+        FishTrainModule,
+        AlarmsModule,
+        AlarmsSidebarModule,
+        QuickSearchModule,
+        InventoryModule,
+        EorzeaModule,
+        FreeCompanyWorkshopsModule,
+        environment.noAnimations ? NoopAnimationsModule : BrowserAnimationsModule,
+        environment.noAnimations ? NzNoAnimationModule : [],
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NgSerializerModule.forRoot(),
+        AppRoutingModule,
+        CoreModule.forRoot(),
+        PipesModule,
+        NzMenuModule,
+        StoreModule.forRoot({}, {
+            runtimeChecks: {
+                strictStateSerializability: false,
+                strictActionSerializability: false,
+                strictStateImmutability: false,
+                strictActionImmutability: false,
+                strictActionWithinNgZone: false
+            }
+        }),
+        !environment.production ? StoreDevtoolsModule.instrument({
+            name: 'FFXIV Teamcraft'
+        }) : [],
+        EffectsModule.forRoot([]),
+        StoreModule.forFeature('auth', authReducer, { initialState: authInitialState }),
+        EffectsModule.forFeature([AuthEffects]),
+        StoreModule.forFeature('lists', listsReducer, { initialState: listsInitialState }),
+        EffectsModule.forFeature([ListsEffects]),
+        ListAggregateModule,
+        ApolloModule,
+        PlayerMetricsModule,
+        NzSpaceModule,
+        NzLayoutModule,
+        NzAvatarModule,
+        NzSpinModule,
+        NzAlertModule,
+        NzBadgeModule,
+        NzSelectModule,
+        NzTagModule,
+        NzPopoverModule,
+        NavigationSidebarModule,
+        NgxEchartsModule.forRoot({
+            echarts: () => import('echarts')
+        }),
+        BreakpointDebugComponent,
+        AdComponent,
+        NzEmptyModule,
+        NzListModule], providers: [
+        GOOGLE_ANALYTICS_ROUTER_INITIALIZER_PROVIDER,
+        {
+            provide: APOLLO_OPTIONS,
+            useFactory: apolloClientFactory,
+            deps: [HttpLink, AuthFacade]
+        },
+        { provide: NZ_I18N, useValue: en_US },
+        {
+            provide: NZ_CONFIG,
+            useValue: nzConfig
+        },
+        { provide: NZ_ICONS, useValue: icons },
+        { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true },
+        ...APP_INITIALIZERS,
+        ...Object.values(AllaganReportsGQLProviders),
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule {
 }

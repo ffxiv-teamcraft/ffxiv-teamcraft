@@ -14,7 +14,7 @@ import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup
 import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 
@@ -27,7 +27,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [
+  imports: [
     CommonModule,
     CoreModule,
     FormsModule,
@@ -40,9 +40,9 @@ const routes: Routes = [
     PipesModule,
     ProgressPopupModule,
     ListPickerModule,
-    HttpClientModule,
     ImportComponent
-]
+  ],
+  providers: [provideHttpClient(withInterceptorsFromDi())]
 })
 export class ImportModule {
 }
