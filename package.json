@@ -146,7 +146,7 @@
     "@angular/compiler": "18.0.0",
     "@angular/compiler-cli": "18.0.0",
     "@angular/core": "18.0.0",
-    "@angular/fire": "^17.0.1",
+    "@angular/fire": "18.0.0",
     "@angular/flex-layout": "^15.0.0-beta.42",
     "@angular/forms": "18.0.0",
     "@angular/language-service": "18.0.0",
