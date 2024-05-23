@@ -1,42 +1,70 @@
-<nz-button-group *ngIf="alarm | alarmDisplay | async as display"
-                 [timerTooltip]="useTimerTooltip ? display.remainingTime:null">
-  <button (click)="toggleAlarm.emit(display)" [nzGhost]="!display.registered" [nzSize]="'small'"
-          [nzType]="display.spawned?'primary':'default'"
-          nz-button
-          nz-tooltip
-          [nzTooltipTitle]="!useTimerTooltip ? tooltipText || tooltip:null">
-    <ng-template #tooltip>
-      <span *ngIf="display.alarm.itemId">
-          <span *ngIf="display.alarm.mapId | closestAetheryte:display.alarm.coords | async as aetheryte">
-            {{aetheryte.nameid | i18nRow:'places' | i18n}}
-          </span> - {{display.alarm.zoneId | i18nRow:'places' | i18n}}
-      </span>
-      <span *ngIf="!display.alarm.itemId">{{display.alarm.name}}</span>
-      <span *ngIf="display.alarm.type === -10"><app-i18n-name content="mobs" [id]="display.alarm.bnpcName"></app-i18n-name></span>
-      <span *ngIf="display.alarm.fishEyes">{{'GATHERING_LOCATIONS.Fish_eyes' | translate}}</span>
-    </ng-template>
-    <i *ngIf="!display.registered" nz-icon nzType="bell"></i>
-    <i *ngIf="display.registered" nz-icon nzType="close-circle-o"></i>
-    {{display.remainingTime | timer}}
-    <span *ngIf="display.alarm.slot">({{display.alarm.slot}})</span>
-    <img *ngIf="!display.alarm.fishEyes" [src]="display.alarm.type | nodeTypeIcon: true" alt="" class="node-type-icon">
-    <img *ngIf="display.alarm.fishEyes" [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon" alt="" class="node-type-icon fish-eyes">
-  </button>
-  <button *ngIf="!display.registered && alarmGroups?.length > 0" [nzDropdownMenu]="menu"
+@if (alarm | alarmDisplay | async; as display) {
+  <nz-button-group
+    [timerTooltip]="useTimerTooltip ? display.remainingTime:null">
+    <button (click)="toggleAlarm.emit(display)" [nzGhost]="!display.registered" [nzSize]="'small'"
+      [nzType]="display.spawned?'primary':'default'"
+      nz-button
+      nz-tooltip
+      [nzTooltipTitle]="!useTimerTooltip ? tooltipText || tooltip:null">
+      <ng-template #tooltip>
+        @if (display.alarm.itemId) {
+          <span>
+            @if (display.alarm.mapId | closestAetheryte:display.alarm.coords | async; as aetheryte) {
+              <span>
+                {{aetheryte.nameid | i18nRow:'places' | i18n}}
+              </span>
+              } - {{display.alarm.zoneId | i18nRow:'places' | i18n}}
+            </span>
+          }
+          @if (!display.alarm.itemId) {
+            <span>{{display.alarm.name}}</span>
+          }
+          @if (display.alarm.type === -10) {
+            <span><app-i18n-name content="mobs" [id]="display.alarm.bnpcName"></app-i18n-name></span>
+          }
+          @if (display.alarm.fishEyes) {
+            <span>{{'GATHERING_LOCATIONS.Fish_eyes' | translate}}</span>
+          }
+        </ng-template>
+        @if (!display.registered) {
+          <i nz-icon nzType="bell"></i>
+        }
+        @if (display.registered) {
+          <i nz-icon nzType="close-circle-o"></i>
+        }
+        {{display.remainingTime | timer}}
+        @if (display.alarm.slot) {
+          <span>({{display.alarm.slot}})</span>
+        }
+        @if (!display.alarm.fishEyes) {
+          <img [src]="display.alarm.type | nodeTypeIcon: true" alt="" class="node-type-icon">
+        }
+        @if (display.alarm.fishEyes) {
+          <img [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon" alt="" class="node-type-icon fish-eyes">
+        }
+      </button>
+      @if (!display.registered && alarmGroups?.length > 0) {
+        <button [nzDropdownMenu]="menu"
           [nzPlacement]="'bottomCenter'"
           [nzSize]="'small'" nz-button
           nz-dropdown>
-    <i nz-icon nzType="ellipsis"></i>
-  </button>
-  <button [nzSize]="'small'" *ngIf="showPosition" nz-tooltip [nzTooltipTitle]="'See_on_map' | translate"
+          <i nz-icon nzType="ellipsis"></i>
+        </button>
+      }
+      @if (showPosition) {
+        <button [nzSize]="'small'" nz-tooltip [nzTooltipTitle]="'See_on_map' | translate"
           (click)="openMap()" nz-button>
-    <i nz-icon nzType="environment" nzTheme="outline" class="position-icon"></i>
-  </button>
-  <nz-dropdown-menu #menu="nzDropdownMenu">
-    <ul nz-menu>
-      <li (click)="addAlarmWithGroup.emit({alarm: alarm, group: group})" *ngFor="let group of alarmGroups" nz-menu-item>
-        {{group.name}}
-      </li>
-    </ul>
-  </nz-dropdown-menu>
-</nz-button-group>
+          <i nz-icon nzType="environment" nzTheme="outline" class="position-icon"></i>
+        </button>
+      }
+      <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+          @for (group of alarmGroups; track group) {
+            <li (click)="addAlarmWithGroup.emit({alarm: alarm, group: group})" nz-menu-item>
+              {{group.name}}
+            </li>
+          }
+        </ul>
+      </nz-dropdown-menu>
+    </nz-button-group>
+  }

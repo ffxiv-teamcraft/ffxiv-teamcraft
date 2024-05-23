@@ -1,4 +1,6 @@
-<div *ngFor="let lang of languages" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-  <img [alt]="lang.key | uppercase" class="language-flag" src="./assets/icons/{{ lang.icon }}.png" />
-  <div [innerHTML]="getValue(lang) | async | xivUIText"></div>
-</div>
+@for (lang of languages; track lang) {
+  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+    <img [alt]="lang.key | uppercase" class="language-flag" src="./assets/icons/{{ lang.icon }}.png" />
+    <div [innerHTML]="getValue(lang) | async | xivUIText"></div>
+  </div>
+}

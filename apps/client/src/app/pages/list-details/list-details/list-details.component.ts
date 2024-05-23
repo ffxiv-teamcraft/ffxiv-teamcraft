@@ -72,7 +72,7 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { AsyncPipe, NgFor, NgIf, NgSwitch, NgSwitchCase } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { topologicalSort } from '../../../core/tools/topological-sort';
 
 @Component({
@@ -81,7 +81,7 @@ import { topologicalSort } from '../../../core/tools/topological-sort';
   styleUrls: ['./list-details.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, FlexModule, NzButtonModule, NzWaveModule, NzDropDownModule, NzToolTipModule, NzIconModule, NzMenuModule, NgFor, TutorialStepDirective, FavoriteButtonComponent, NzTagModule, NzCheckboxModule, FormsModule, RouterLink, NgSwitch, NgSwitchCase, NzRadioModule, ClipboardDirective, NzPopconfirmModule, NzAlertModule, NzSwitchModule, StepByStepDetailsComponent, ListCrystalsPanelComponent, ListDetailsPanelComponent, InventoryViewComponent, PageLoaderComponent, FullpageMessageComponent, AsyncPipe, TranslateModule, IfMobilePipe, PermissionLevelPipe]
+  imports: [FlexModule, NzButtonModule, NzWaveModule, NzDropDownModule, NzToolTipModule, NzIconModule, NzMenuModule, TutorialStepDirective, FavoriteButtonComponent, NzTagModule, NzCheckboxModule, FormsModule, RouterLink, NzRadioModule, ClipboardDirective, NzPopconfirmModule, NzAlertModule, NzSwitchModule, StepByStepDetailsComponent, ListCrystalsPanelComponent, ListDetailsPanelComponent, InventoryViewComponent, PageLoaderComponent, FullpageMessageComponent, AsyncPipe, TranslateModule, IfMobilePipe, PermissionLevelPipe]
 })
 export class ListDetailsComponent extends TeamcraftPageComponent implements OnInit, OnDestroy {
 

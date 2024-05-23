@@ -23,7 +23,7 @@ import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
@@ -31,7 +31,7 @@ import { DialogComponent } from '../../../core/dialog.component';
     templateUrl: './gearset-comparator-popup.component.html',
     styleUrls: ['./gearset-comparator-popup.component.less'],
     standalone: true,
-    imports: [NgIf, NzDividerModule, FlexModule, NgFor, ItemIconComponent, NzAlertModule, NzSelectModule, FormsModule, NzGridModule, NzFormModule, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, AsyncPipe, DecimalPipe, ItemNamePipe, JobUnicodePipe, I18nPipe, TranslateModule, I18nRowPipe]
+    imports: [NzDividerModule, FlexModule, ItemIconComponent, NzAlertModule, NzSelectModule, FormsModule, NzGridModule, NzFormModule, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, AsyncPipe, DecimalPipe, ItemNamePipe, JobUnicodePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class GearsetComparatorPopupComponent extends DialogComponent{
 

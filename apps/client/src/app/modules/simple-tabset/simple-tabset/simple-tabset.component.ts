@@ -1,6 +1,6 @@
 import { AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, QueryList } from '@angular/core';
 import { SimpleTabComponent } from '../simple-tab/simple-tab.component';
-import { NgFor } from '@angular/common';
+
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
@@ -9,7 +9,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./simple-tabset.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NgFor]
+    imports: [FlexModule]
 })
 export class SimpleTabsetComponent implements AfterContentInit {
 

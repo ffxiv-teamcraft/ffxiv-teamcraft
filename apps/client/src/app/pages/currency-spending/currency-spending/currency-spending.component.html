@@ -10,45 +10,55 @@
       [nzPlaceHolder]="'CURRENCY_SPENDING.Pick_currency' | translate"
       class="currency-picker"
       nzShowSearch>
-      <nz-option *ngFor="let currency of currencies$ | async" [nzLabel]="currency | itemName | i18n"
-                 [nzValue]="currency"
-                 nzCustomContent>
-        <div [title]="currency | itemName | i18n" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img [src]="currency | lazyIcon" alt="" class="currency-icon">
-          <div>
-            <app-i18n-name [id]="currency" content="items"></app-i18n-name>
+      @for (currency of currencies$ | async; track currency) {
+        <nz-option [nzLabel]="currency | itemName | i18n"
+          [nzValue]="currency"
+          nzCustomContent>
+          <div [title]="currency | itemName | i18n" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+            <img [src]="currency | lazyIcon" alt="" class="currency-icon">
+            <div>
+              <app-i18n-name [id]="currency" content="items"></app-i18n-name>
+            </div>
           </div>
-        </div>
-      </nz-option>
+        </nz-option>
+      }
     </nz-select>
     <nz-input-number (ngModelChange)="amount$.next($event)" [ngModel]="amount$ | async" [nzPlaceHolder]="'COMMON.Amount' | translate"
-                     [nzStep]="1"></nz-input-number>
+    [nzStep]="1"></nz-input-number>
     <nz-select
       (ngModelChange)="server$.next($event)"
       [ngModel]="server$ | async"
       [nzPlaceHolder]="'Server_name' | translate"
       class="server-picker"
       nzShowSearch
-    >
-      <nz-option *ngFor="let server of servers$ | async" [nzLabel]="server"
-                 [nzValue]="server">
-      </nz-option>
+      >
+      @for (server of servers$ | async; track server) {
+        <nz-option [nzLabel]="server"
+          [nzValue]="server">
+        </nz-option>
+      }
     </nz-select>
   </div>
 </div>
 
 
-<div *ngIf="loading" fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center" class="loader">
-  <div>{{loadedPrices}} / {{tradesCount}}</div>
-  <div>
-    <span *ngIf="tradesCount === 0">{{'CURRENCY_SPENDING.Loading_data' | translate}}</span>
-    <span *ngIf="tradesCount > 0">{{'CURRENCY_SPENDING.Loading_universalis' | translate:{ amount: tradesCount } }}</span>
+@if (loading) {
+  <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center" class="loader">
+    <div>{{loadedPrices}} / {{tradesCount}}</div>
+    <div>
+      @if (tradesCount === 0) {
+        <span>{{'CURRENCY_SPENDING.Loading_data' | translate}}</span>
+      }
+      @if (tradesCount > 0) {
+        <span>{{'CURRENCY_SPENDING.Loading_universalis' | translate:{ amount: tradesCount } }}</span>
+      }
+    </div>
+    <nz-progress nzStatus="active" [nzPercent]="(100 * loadedPrices / tradesCount) | floor"></nz-progress>
   </div>
-  <nz-progress nzStatus="active" [nzPercent]="(100 * loadedPrices / tradesCount) | floor"></nz-progress>
-</div>
+}
 
-<ng-container *ngIf="results$ | async as results">
-  <ng-container *ngIf="!loading">
+@if (results$ | async; as results) {
+  @if (!loading) {
     <nz-list [nzDataSource]="results" [nzRenderItem]="item" [nzNoResult]="noTrades">
       <ng-template #noTrades>
         <nz-empty [nzNotFoundContent]="'CURRENCY_SPENDING.No_trades' | translate"></nz-empty>
@@ -65,7 +75,7 @@
             [nzAvatar]="avatar"
             [nzDescription]="description"
             [nzTitle]="nzTitle"
-          >
+            >
             <ng-template #description>
               <div fxLayout="row" fxLayoutAlign="flex-start center">
                 <div>{{'CURRENCY_SPENDING.You_can_buy' | translate: { amount: (item.rate * (amount$ | async) | floor) } }},&nbsp;</div>
@@ -80,7 +90,7 @@
             </ng-template>
             <ng-template #avatar>
               <app-item-icon [hq]="item.HQ" [icon]="item.item | lazyIcon" [itemId]="item.item"
-                             [width]="32"></app-item-icon>
+              [width]="32"></app-item-icon>
             </ng-template>
             <ng-template #nzTitle>
               <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
@@ -93,5 +103,5 @@
         </nz-list-item>
       </ng-template>
     </nz-list>
-  </ng-container>
-</ng-container>
+  }
+}

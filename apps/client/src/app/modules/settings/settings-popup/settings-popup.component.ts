@@ -45,7 +45,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
-import { NgFor, NgIf, NgTemplateOutlet, AsyncPipe, UpperCasePipe } from '@angular/common';
+import { NgTemplateOutlet, AsyncPipe, UpperCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzFormModule } from 'ng-zorro-antd/form';
@@ -58,7 +58,7 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
     templateUrl: './settings-popup.component.html',
     styleUrls: ['./settings-popup.component.less'],
     standalone: true,
-    imports: [NzTabsModule, FlexModule, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NgFor, NgIf, NzCheckboxModule, NzDividerModule, ColorPickerModule, NzButtonModule, NzWaveModule, NzSwitchModule, NzInputNumberModule, NzIconModule, NzUploadModule, NzPopconfirmModule, NzToolTipModule, NzInputModule, NzSliderModule, NgTemplateOutlet, NzCardModule, AsyncPipe, UpperCasePipe, TranslateModule, AetheryteNamePipe, I18nPipe, I18nRowPipe]
+    imports: [NzTabsModule, FlexModule, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NzCheckboxModule, NzDividerModule, ColorPickerModule, NzButtonModule, NzWaveModule, NzSwitchModule, NzInputNumberModule, NzIconModule, NzUploadModule, NzPopconfirmModule, NzToolTipModule, NzInputModule, NzSliderModule, NgTemplateOutlet, NzCardModule, AsyncPipe, UpperCasePipe, TranslateModule, AetheryteNamePipe, I18nPipe, I18nRowPipe]
 })
 export class SettingsPopupComponent {
 

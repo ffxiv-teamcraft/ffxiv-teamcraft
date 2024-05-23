@@ -1,8 +1,8 @@
 <div class="quick-search">
   <app-quick-search [reportsMode]="true" [searchType]="SearchType.ITEM"></app-quick-search>
 </div>
-<ng-container *ngIf="itemId$ | async as itemId">
-  <ng-container *ngIf="itemDetails$ | async as details">
+@if (itemId$ | async; as itemId) {
+  @if (itemDetails$ | async; as details) {
     <div class="top-bar">
       <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
         <app-item-icon [itemId]="itemId"></app-item-icon>
@@ -14,119 +14,150 @@
     <nz-divider [nzText]="'ALLAGAN_REPORTS.Reports' | translate" nzOrientation="left"></nz-divider>
     <div class="reports">
       <app-page-loader [loading]="loadingReports">
-        <nz-empty *ngIf="details.reports.length === 0" [nzNotFoundContent]="'ALLAGAN_REPORTS.No_reports' | translate"></nz-empty>
+        @if (details.reports.length === 0) {
+          <nz-empty [nzNotFoundContent]="'ALLAGAN_REPORTS.No_reports' | translate"></nz-empty>
+        }
         <app-lazy-scroll [trackBy]="trackByUid" [displayedRows]="4" rowSize="130" [data]="details.reports" [rowTemplate]="reportTpl">
           <ng-template #reportTpl let-entry>
             <app-allagan-report-row [report]="entry" [userIsChecker]="isChecker$ | async"
-                                    [userId]="userId$ | async" [reportsQueue]="itemReportsQueue$ | async"
-                                    [focusId]="hoverId$ | async"
-                                    (delete)="suggestDeletion(entry)"
-                                    (edit)="startModification(entry)"></app-allagan-report-row>
+              [userId]="userId$ | async" [reportsQueue]="itemReportsQueue$ | async"
+              [focusId]="hoverId$ | async"
+              (delete)="suggestDeletion(entry)"
+            (edit)="startModification(entry)"></app-allagan-report-row>
           </ng-template>
         </app-lazy-scroll>
       </app-page-loader>
     </div>
     <nz-divider [nzText]="'ALLAGAN_REPORTS.Pending_changes' | translate" nzOrientation="left"></nz-divider>
     <app-page-loader [loading]="loadingReportsQueue">
-      <div class="pending-reports" *ngIf="itemReportsQueue$ | async as queue">
-        <nz-empty *ngIf="queue.length === 0" [nzNotFoundContent]="'ALLAGAN_REPORTS.No_pending_changes' | translate"></nz-empty>
-        <app-lazy-scroll [trackBy]="trackByUid" [displayedRows]="4" rowSize="130" [data]="queue" [rowTemplate]="reportQueueEntryTpl">
-          <ng-template #reportQueueEntryTpl let-entry>
-            <app-allagan-report-row [queueEntry]="entry" [userIsChecker]="isChecker$ | async"
-                                    [userId]="userId$ | async"
-                                    (accept)="accept(entry)" (reject)="reject(entry)"
-                                    (deleteOwn)="deleteOwnProposal(entry)"
-                                    (mouseenter)="hoverQueueEntry(entry)"
-                                    (mouseleave)="hoverId$.next(null)"></app-allagan-report-row>
-          </ng-template>
-        </app-lazy-scroll>
-      </div>
+      @if (itemReportsQueue$ | async; as queue) {
+        <div class="pending-reports">
+          @if (queue.length === 0) {
+            <nz-empty [nzNotFoundContent]="'ALLAGAN_REPORTS.No_pending_changes' | translate"></nz-empty>
+          }
+          <app-lazy-scroll [trackBy]="trackByUid" [displayedRows]="4" rowSize="130" [data]="queue" [rowTemplate]="reportQueueEntryTpl">
+            <ng-template #reportQueueEntryTpl let-entry>
+              <app-allagan-report-row [queueEntry]="entry" [userIsChecker]="isChecker$ | async"
+                [userId]="userId$ | async"
+                (accept)="accept(entry)" (reject)="reject(entry)"
+                (deleteOwn)="deleteOwnProposal(entry)"
+                (mouseenter)="hoverQueueEntry(entry)"
+              (mouseleave)="hoverId$.next(null)"></app-allagan-report-row>
+            </ng-template>
+          </app-lazy-scroll>
+        </div>
+      }
     </app-page-loader>
     <nz-divider [nzText]="formTitle" nzOrientation="left"></nz-divider>
     <ng-template #formTitle>
-      <span *ngIf="!modificationId$.value">{{'ALLAGAN_REPORTS.New_report' | translate}}</span>
-      <span *ngIf="modificationId$.value">{{'ALLAGAN_REPORTS.Suggest_modification' | translate}}</span>
+      @if (!modificationId$.value) {
+        <span>{{'ALLAGAN_REPORTS.New_report' | translate}}</span>
+      }
+      @if (modificationId$.value) {
+        <span>{{'ALLAGAN_REPORTS.Suggest_modification' | translate}}</span>
+      }
     </ng-template>
     <div class="add-source">
       <form nz-form [formGroup]="form"
-            (ngSubmit)="modificationId$.value ? submitModification(itemId, modificationId$.value) : addSource(itemId)">
+        (ngSubmit)="modificationId$.value ? submitModification(itemId, modificationId$.value) : addSource(itemId)">
         <nz-form-item>
           <nz-form-label [nzSpan]="3" nzRequired>{{'ALLAGAN_REPORTS.Source' | translate}}</nz-form-label>
           <nz-form-control [nzSpan]="10">
             <nz-select formControlName="source" nzShowSearch [nzDisabled]="!!modificationId$.value">
-              <nz-option *ngFor="let source of sources" [nzValue]="source.key" [nzLabel]="('ALLAGAN_REPORTS.SOURCE.' + source.value) | translate"></nz-option>
+              @for (source of sources; track source) {
+                <nz-option [nzValue]="source.key" [nzLabel]="('ALLAGAN_REPORTS.SOURCE.' + source.value) | translate"></nz-option>
+              }
             </nz-select>
           </nz-form-control>
         </nz-form-item>
-        <nz-form-item *ngIf="needsItem(source)">
-          <nz-form-label [nzSpan]="3" nzRequired>{{'COMMON.Item' | translate}}</nz-form-label>
-          <nz-form-control [nzSpan]="10">
-            <input
-              formControlName="item"
-              (input)="itemInput$.next($event.target?.value)"
-              [nzAutocomplete]="auto"
-              [placeholder]="'RECIPE_FINDER.Placeholder' | translate"
-              nz-input
-            />
-            <nz-autocomplete #auto nzBackfill>
-              <nz-auto-option *ngFor="let option of itemCompletion$ | async" nzValue="[{{option.id}}] {{ option.name | i18n }}">
-                [{{option.id}}] {{ option.name | i18n }}
-              </nz-auto-option>
+        @if (needsItem(source)) {
+          <nz-form-item>
+            <nz-form-label [nzSpan]="3" nzRequired>{{'COMMON.Item' | translate}}</nz-form-label>
+            <nz-form-control [nzSpan]="10">
+              <input
+                formControlName="item"
+                (input)="itemInput$.next($event.target?.value)"
+                [nzAutocomplete]="auto"
+                [placeholder]="'RECIPE_FINDER.Placeholder' | translate"
+                nz-input
+                />
+              <nz-autocomplete #auto nzBackfill>
+                @for (option of itemCompletion$ | async; track option) {
+                  <nz-auto-option nzValue="[{{option.id}}] {{ option.name | i18n }}">
+                    [{{option.id}}] {{ option.name | i18n }}
+                  </nz-auto-option>
+                }
+              </nz-autocomplete>
+            </nz-form-control>
+          </nz-form-item>
+        }
+        @if (source === AllaganReportSource.INSTANCE) {
+          <nz-form-item>
+            <nz-form-label [nzSpan]="3" nzRequired>{{'COMMON.Instance' | translate}}</nz-form-label>
+            <nz-form-control [nzSpan]="10">
+              <input
+                formControlName="instance"
+                (input)="instanceInput$.next($event.target?.value)"
+                [nzAutocomplete]="instanceCompletion"
+                [placeholder]="'ALLAGAN_REPORTS.Instance_placeholder' | translate"
+                nz-input
+                />
+              <nz-autocomplete #instanceCompletion nzBackfill>
+                @for (option of instanceCompletion$ | async; track option) {
+                  <nz-auto-option nzValue="[{{option.id}}] {{ option.name | i18n }}">
+                    {{ option.name | i18n }} ({{(option.id < 0 ? 'DB.Map' : 'COMMON.Instance') | translate}}#{{option.id | absolute}})
+                  </nz-auto-option>
+                }
+              </nz-autocomplete>
+            </nz-form-control>
+          </nz-form-item>
+        }
+        @if (source === AllaganReportSource.VENTURE) {
+          <nz-form-item>
+            <nz-form-label [nzSpan]="3" nzRequired>{{'COMMON.Venture' | translate}}</nz-form-label>
+            <nz-form-control [nzSpan]="10">
+              <input
+                formControlName="venture"
+                (input)="ventureInput$.next($event.target?.value)"
+                [nzAutocomplete]="auto"
+                [placeholder]="'ALLAGAN_REPORTS.Venture_placeholder' | translate"
+                nz-input
+                />
+              <nz-autocomplete #auto nzBackfill>
+                @for (option of ventureCompletion$ | async; track option) {
+                  <nz-auto-option nzValue="[{{option.id}}] {{ option.name | i18n }}">
+                    [{{option.id}}] {{ option.name | i18n }}
+                  </nz-auto-option>
+                }
+              </nz-autocomplete>
+            </nz-form-control>
+          </nz-form-item>
+        }
+        @if (source === AllaganReportSource.DROP) {
+          <nz-form-item>
+            <nz-form-label [nzSpan]="3" nzRequired>{{'COMMON.Monster' | translate}}</nz-form-label>
+            <nz-form-control [nzSpan]="10">
+              <input
+                formControlName="mob"
+                (input)="mobInput$.next($event.target?.value)"
+                [nzAutocomplete]="auto"
+                [placeholder]="'ALLAGAN_REPORTS.Monster_placeholder' | translate"
+                nz-input
+                />
+              <nz-autocomplete #auto nzBackfill>
+                @for (option of mobCompletion$ | async; track option) {
+                  <nz-auto-option nzValue="[{{option.id}}] {{ option.name | i18n }}">
+                    [{{option.id}}] {{ option.name | i18n }} @if (option.details) {
+                    <span>({{option.details.zoneid | i18nRow:'places' | i18n}})</span>
+                  }
+                </nz-auto-option>
+              }
             </nz-autocomplete>
           </nz-form-control>
         </nz-form-item>
-        <nz-form-item *ngIf="source === AllaganReportSource.INSTANCE">
-          <nz-form-label [nzSpan]="3" nzRequired>{{'COMMON.Instance' | translate}}</nz-form-label>
-          <nz-form-control [nzSpan]="10">
-            <input
-              formControlName="instance"
-              (input)="instanceInput$.next($event.target?.value)"
-              [nzAutocomplete]="instanceCompletion"
-              [placeholder]="'ALLAGAN_REPORTS.Instance_placeholder' | translate"
-              nz-input
-            />
-            <nz-autocomplete #instanceCompletion nzBackfill>
-              <nz-auto-option *ngFor="let option of instanceCompletion$ | async" nzValue="[{{option.id}}] {{ option.name | i18n }}">
-                {{ option.name | i18n }} ({{(option.id < 0 ? 'DB.Map' : 'COMMON.Instance') | translate}}#{{option.id | absolute}})
-              </nz-auto-option>
-            </nz-autocomplete>
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item *ngIf="source === AllaganReportSource.VENTURE">
-          <nz-form-label [nzSpan]="3" nzRequired>{{'COMMON.Venture' | translate}}</nz-form-label>
-          <nz-form-control [nzSpan]="10">
-            <input
-              formControlName="venture"
-              (input)="ventureInput$.next($event.target?.value)"
-              [nzAutocomplete]="auto"
-              [placeholder]="'ALLAGAN_REPORTS.Venture_placeholder' | translate"
-              nz-input
-            />
-            <nz-autocomplete #auto nzBackfill>
-              <nz-auto-option *ngFor="let option of ventureCompletion$ | async" nzValue="[{{option.id}}] {{ option.name | i18n }}">
-                [{{option.id}}] {{ option.name | i18n }}
-              </nz-auto-option>
-            </nz-autocomplete>
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item *ngIf="source === AllaganReportSource.DROP">
-          <nz-form-label [nzSpan]="3" nzRequired>{{'COMMON.Monster' | translate}}</nz-form-label>
-          <nz-form-control [nzSpan]="10">
-            <input
-              formControlName="mob"
-              (input)="mobInput$.next($event.target?.value)"
-              [nzAutocomplete]="auto"
-              [placeholder]="'ALLAGAN_REPORTS.Monster_placeholder' | translate"
-              nz-input
-            />
-            <nz-autocomplete #auto nzBackfill>
-              <nz-auto-option *ngFor="let option of mobCompletion$ | async" nzValue="[{{option.id}}] {{ option.name | i18n }}">
-                [{{option.id}}] {{ option.name | i18n }} <span *ngIf="option.details">({{option.details.zoneid | i18nRow:'places' | i18n}})</span>
-              </nz-auto-option>
-            </nz-autocomplete>
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item *ngIf="source === AllaganReportSource.QUEST">
+      }
+      @if (source === AllaganReportSource.QUEST) {
+        <nz-form-item>
           <nz-form-label [nzSpan]="3" nzRequired>{{'SEARCH_TYPES.Quest' | translate}}</nz-form-label>
           <nz-form-control [nzSpan]="10">
             <input
@@ -135,15 +166,19 @@
               [nzAutocomplete]="auto"
               [placeholder]="'ALLAGAN_REPORTS.Quest_placeholder' | translate"
               nz-input
-            />
+              />
             <nz-autocomplete #auto nzBackfill>
-              <nz-auto-option *ngFor="let option of questCompletion$ | async" nzValue="[{{option.id}}] {{ option.name | i18n }}">
-                [{{option.id}}] {{ option.name | i18n }}
-              </nz-auto-option>
+              @for (option of questCompletion$ | async; track option) {
+                <nz-auto-option nzValue="[{{option.id}}] {{ option.name | i18n }}">
+                  [{{option.id}}] {{ option.name | i18n }}
+                </nz-auto-option>
+              }
             </nz-autocomplete>
           </nz-form-control>
         </nz-form-item>
-        <nz-form-item *ngIf="source === AllaganReportSource.FATE">
+      }
+      @if (source === AllaganReportSource.FATE) {
+        <nz-form-item>
           <nz-form-label [nzSpan]="3" nzRequired>{{'COMMON.Fate' | translate}}</nz-form-label>
           <nz-form-control [nzSpan]="10">
             <input
@@ -152,315 +187,350 @@
               [nzAutocomplete]="auto"
               [placeholder]="'ALLAGAN_REPORTS.Fate_placeholder' | translate"
               nz-input
-            />
+              />
             <nz-autocomplete #auto nzBackfill>
-              <nz-auto-option *ngFor="let option of fateCompletion$ | async" nzValue="[{{option.id}}] {{ option.name | i18n }}">
-                [{{option.id}}] {{ option.name | i18n }}
-              </nz-auto-option>
+              @for (option of fateCompletion$ | async; track option) {
+                <nz-auto-option nzValue="[{{option.id}}] {{ option.name | i18n }}">
+                  [{{option.id}}] {{ option.name | i18n }}
+                </nz-auto-option>
+              }
             </nz-autocomplete>
           </nz-form-control>
         </nz-form-item>
-        <ng-container *ngIf="source === AllaganReportSource.MOGSTATION">
-          <nz-form-item>
-            <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Price' | translate}}</nz-form-label>
-            <nz-form-control [nzSpan]="10">
-              <nz-input-group class="spawn-input" nzAddOnBefore="$">
-                <nz-input-number class="input-number-with-addon" formControlName="price"></nz-input-number>
-              </nz-input-group>
-            </nz-form-control>
-          </nz-form-item>
-          <nz-form-item>
-            <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Product_id' | translate}}</nz-form-label>
-            <nz-form-control [nzSpan]="10" [nzExtra]="'ALLAGAN_REPORTS.Product_id_explain' | translate">
-              <nz-input-group class="spawn-input" nzAddOnBefore="https://store.finalfantasyxiv.com/ffxivstore/en-us/product/">
-                <nz-input-number class="input-number-with-addon" formControlName="productId"></nz-input-number>
-              </nz-input-group>
-            </nz-form-control>
-          </nz-form-item>
-        </ng-container>
-        <ng-container *ngIf="source === AllaganReportSource.VOYAGE">
-          <nz-form-item>
-            <nz-form-label [nzSpan]="3" nzRequired>{{'ALLAGAN_REPORTS.Voyage_type' | translate}}</nz-form-label>
-            <nz-form-control [nzSpan]="10">
-              <nz-select formControlName="voyageType">
-                <nz-option [nzValue]="0" [nzLabel]="'COMMON.Airship' | translate"></nz-option>
-                <nz-option [nzValue]="1" [nzLabel]="'COMMON.Submarine' | translate"></nz-option>
-              </nz-select>
-            </nz-form-control>
-          </nz-form-item>
-          <nz-form-item>
-            <nz-form-label [nzSpan]="3" nzRequired>{{'COMMON.Voyage' | translate}}</nz-form-label>
-            <nz-form-control [nzSpan]="10">
-              <input
-
-                formControlName="voyage"
-                (input)="voyageInput$.next($event.target?.value)"
-                [nzAutocomplete]="auto"
-                [placeholder]="'ALLAGAN_REPORTS.Voyage_placeholder' | translate"
-                nz-input
+      }
+      @if (source === AllaganReportSource.MOGSTATION) {
+        <nz-form-item>
+          <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Price' | translate}}</nz-form-label>
+          <nz-form-control [nzSpan]="10">
+            <nz-input-group class="spawn-input" nzAddOnBefore="$">
+              <nz-input-number class="input-number-with-addon" formControlName="price"></nz-input-number>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Product_id' | translate}}</nz-form-label>
+          <nz-form-control [nzSpan]="10" [nzExtra]="'ALLAGAN_REPORTS.Product_id_explain' | translate">
+            <nz-input-group class="spawn-input" nzAddOnBefore="https://store.finalfantasyxiv.com/ffxivstore/en-us/product/">
+              <nz-input-number class="input-number-with-addon" formControlName="productId"></nz-input-number>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+      }
+      @if (source === AllaganReportSource.VOYAGE) {
+        <nz-form-item>
+          <nz-form-label [nzSpan]="3" nzRequired>{{'ALLAGAN_REPORTS.Voyage_type' | translate}}</nz-form-label>
+          <nz-form-control [nzSpan]="10">
+            <nz-select formControlName="voyageType">
+              <nz-option [nzValue]="0" [nzLabel]="'COMMON.Airship' | translate"></nz-option>
+              <nz-option [nzValue]="1" [nzLabel]="'COMMON.Submarine' | translate"></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="3" nzRequired>{{'COMMON.Voyage' | translate}}</nz-form-label>
+          <nz-form-control [nzSpan]="10">
+            <input
+              formControlName="voyage"
+              (input)="voyageInput$.next($event.target?.value)"
+              [nzAutocomplete]="auto"
+              [placeholder]="'ALLAGAN_REPORTS.Voyage_placeholder' | translate"
+              nz-input
               />
-              <nz-autocomplete #auto nzBackfill>
-                <nz-auto-option *ngFor="let option of voyageCompletion$ | async" nzValue="[{{option.id}}] {{ option.name | i18n }}">
+            <nz-autocomplete #auto nzBackfill>
+              @for (option of voyageCompletion$ | async; track option) {
+                <nz-auto-option nzValue="[{{option.id}}] {{ option.name | i18n }}">
                   [{{option.id}}] {{ option.name | i18n }}
                 </nz-auto-option>
-              </nz-autocomplete>
-            </nz-form-control>
-          </nz-form-item>
-          <nz-form-item>
-            <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Voyage_rarity' | translate}}</nz-form-label>
-            <nz-form-control [nzSpan]="10">
-              <nz-select formControlName="rarity">
-                <nz-option [nzValue]="0" [nzLabel]="'ALLAGAN_REPORTS.Rarity_Common' | translate"></nz-option>
-                <nz-option [nzValue]="1" [nzLabel]="'ALLAGAN_REPORTS.Rarity_Voyage_exclusive' | translate"></nz-option>
-                <nz-option [nzValue]="2" [nzLabel]="'ALLAGAN_REPORTS.Rarity_Rare' | translate"></nz-option>
-              </nz-select>
-            </nz-form-control>
-          </nz-form-item>
-
-        </ng-container>
-        <ng-container *ngIf="source === AllaganReportSource.FISHING">
-          <nz-form-item>
-            <nz-form-label [nzSpan]="3" nzRequired>{{'SEARCH_TYPES.Fishing-spot' | translate}}</nz-form-label>
-            <nz-form-control [nzSpan]="10">
-              <nz-select formControlName="spot" [nzDisabled]="!!modificationId$.value">
-                <nz-option *ngFor="let spot of details.spots" [nzValue]="spot"
-                           nzLabel="{{spot.mapId | mapName | i18n}} - {{spot.zoneId | i18nRow:'places' | i18n}}"></nz-option>
-              </nz-select>
-            </nz-form-control>
-          </nz-form-item>
-          <ng-container *ngIf="fishingSpot$ | async as fishingSpot">
-            <ng-template #cantSuggestForThisSpotTpl>
-              <nz-alert class="please-edit" nzType="warning" [nzMessage]="'ALLAGAN_REPORTS.Cannot_report_for_this_spot' | translate"
-                        [nzDescription]="'ALLAGAN_REPORTS.Please_suggest_edit_instead' | translate"></nz-alert>
-            </ng-template>
-            <ng-container *ngIf="canSuggestForThisSpot$ | async; else cantSuggestForThisSpotTpl">
-              <nz-spin [nzSpinning]="loadingGubal" [nzTip]="'ALLAGAN_REPORTS.Loading_gubal_analysis' | translate">
+              }
+            </nz-autocomplete>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Voyage_rarity' | translate}}</nz-form-label>
+          <nz-form-control [nzSpan]="10">
+            <nz-select formControlName="rarity">
+              <nz-option [nzValue]="0" [nzLabel]="'ALLAGAN_REPORTS.Rarity_Common' | translate"></nz-option>
+              <nz-option [nzValue]="1" [nzLabel]="'ALLAGAN_REPORTS.Rarity_Voyage_exclusive' | translate"></nz-option>
+              <nz-option [nzValue]="2" [nzLabel]="'ALLAGAN_REPORTS.Rarity_Rare' | translate"></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      }
+      @if (source === AllaganReportSource.FISHING) {
+        <nz-form-item>
+          <nz-form-label [nzSpan]="3" nzRequired>{{'SEARCH_TYPES.Fishing-spot' | translate}}</nz-form-label>
+          <nz-form-control [nzSpan]="10">
+            <nz-select formControlName="spot" [nzDisabled]="!!modificationId$.value">
+              @for (spot of details.spots; track spot) {
+                <nz-option [nzValue]="spot"
+                nzLabel="{{spot.mapId | mapName | i18n}} - {{spot.zoneId | i18nRow:'places' | i18n}}"></nz-option>
+              }
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+        @if (fishingSpot$ | async; as fishingSpot) {
+          @if (canSuggestForThisSpot$ | async) {
+            <nz-spin [nzSpinning]="loadingGubal" [nzTip]="'ALLAGAN_REPORTS.Loading_gubal_analysis' | translate">
+              <nz-form-item>
+                <nz-form-label [nzSpan]="3">{{'DB.FISH.Fruity_video' | translate}}</nz-form-label>
+                <nz-form-control [nzSpan]="10" nzExtra="{{'DB.FISH.Fruity_video_description' | translate}}">
+                  <input type="text" nz-input formControlName="fruityVideo">
+                </nz-form-control>
+              </nz-form-item>
+              <nz-form-item>
+                <nz-form-label [nzSpan]="3">{{'DB.FISH.OVERLAY.Hookset' | translate}}</nz-form-label>
+                <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisHookset">
+                  <nz-select formControlName="hookset">
+                    @for (entry of hooksets; track entry) {
+                      <nz-option [nzValue]="entry.key" [nzLabel]="entry.value | actionName | i18n"></nz-option>
+                    }
+                  </nz-select>
+                  <ng-template #gubalAnalysisHookset>
+                    @if (gubalSuggestions$ | async; as suggestions) {
+                      {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
+                      <b>{{suggestions.hookset === null ? ('COMMON.None' | translate) : (suggestions.hookset | hooksetActionId | actionName | i18n)}}</b>
+                    }
+                  </ng-template>
+                </nz-form-control>
+              </nz-form-item>
+              <nz-form-item>
+                <nz-form-label [nzSpan]="3" nzRequired>{{'DB.FISH.OVERLAY.Tug' | translate}}</nz-form-label>
+                <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisTug">
+                  <nz-select formControlName="tug" nzShowSearch>
+                    @for (entry of tugs; track entry) {
+                      <nz-option [nzValue]="entry.key" [nzLabel]="entry.key | tugName | translate"></nz-option>
+                    }
+                  </nz-select>
+                  <ng-template #gubalAnalysisTug>
+                    @if (gubalSuggestions$ | async; as suggestions) {
+                      {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
+                      <b>{{suggestions.tug === null ? ('COMMON.None' | translate) : (suggestions.tug | tugName | translate)}}</b>
+                    }
+                  </ng-template>
+                </nz-form-control>
+              </nz-form-item>
+              <nz-form-item>
+                <nz-form-label [nzSpan]="3" nzRequired>{{'DB.FISH.OVERLAY.Bait' | translate}}</nz-form-label>
+                <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisBait">
+                  <nz-select formControlName="bait" nzShowSearch>
+                    @for (bait of possibleBaits$ | async; track bait) {
+                      <nz-option [nzValue]="bait" [nzLabel]="bait | itemName | i18n"></nz-option>
+                    }
+                  </nz-select>
+                  <ng-template #gubalAnalysisBait>
+                    @if (gubalSuggestions$ | async; as suggestions) {
+                      {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
+                      <b>{{suggestions.bait === null ? ('COMMON.None' | translate) : (suggestions.bait | itemName | i18n)}}</b>
+                    }
+                  </ng-template>
+                </nz-form-control>
+              </nz-form-item>
+              <nz-form-item>
+                <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Predator' | translate}}</nz-form-label>
+                <nz-form-control [nzSpan]="10" [nzExtra]="'ALLAGAN_REPORTS.Predator_explain' | translate">
+                  <app-predators-input formControlName="predators" [fishingSpot]="fishingSpot"></app-predators-input>
+                </nz-form-control>
+              </nz-form-item>
+              @if (isOceanFishing$ | async) {
                 <nz-form-item>
-                  <nz-form-label [nzSpan]="3">{{'DB.FISH.Fruity_video' | translate}}</nz-form-label>
-                  <nz-form-control [nzSpan]="10" nzExtra="{{'DB.FISH.Fruity_video_description' | translate}}">
-                    <input type="text" nz-input formControlName="fruityVideo">
+                  <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Ocean_fishing_time' | translate}}</nz-form-label>
+                  <nz-form-control [nzSpan]="10">
+                    <nz-select formControlName="oceanFishingTime">
+                      @for (entry of oceanFishingTimes; track entry) {
+                        <nz-option [nzValue]="entry.key"
+                        [nzLabel]="('OCEAN_FISHING.' + entry.value) | translate"></nz-option>
+                      }
+                    </nz-select>
                   </nz-form-control>
                 </nz-form-item>
+              } @else {
                 <nz-form-item>
-                  <nz-form-label [nzSpan]="3">{{'DB.FISH.OVERLAY.Hookset' | translate}}</nz-form-label>
-                  <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisHookset">
-                    <nz-select formControlName="hookset">
-                      <nz-option *ngFor="let entry of hooksets" [nzValue]="entry.key" [nzLabel]="entry.value | actionName | i18n"></nz-option>
-                    </nz-select>
-                    <ng-template #gubalAnalysisHookset>
-                      <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
+                  <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Spawn' | translate}}</nz-form-label>
+                  <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisSpawn">
+                    <nz-input-group class="spawn-input" nzAddOnAfter="h">
+                      <nz-input-number [nzMax]="SPAWN_VALIDATOR.max" [nzMin]="SPAWN_VALIDATOR.min" class="input-number-with-addon"
+                      formControlName="spawn"></nz-input-number>
+                    </nz-input-group>
+                    <ng-template #gubalAnalysisSpawn>
+                      {{'ALLAGAN_REPORTS.Input_hours_tip' | translate}}<br>
+                      @if (gubalSuggestions$ | async; as suggestions) {
                         {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
-                        <b>{{suggestions.hookset === null ? ('COMMON.None' | translate) : (suggestions.hookset | hooksetActionId | actionName | i18n)}}</b>
-                      </ng-container>
+                        <b>{{suggestions.spawn === null ? ('COMMON.None' | translate) : suggestions.spawn}}</b>
+                      }
                     </ng-template>
                   </nz-form-control>
                 </nz-form-item>
                 <nz-form-item>
-                  <nz-form-label [nzSpan]="3" nzRequired>{{'DB.FISH.OVERLAY.Tug' | translate}}</nz-form-label>
-                  <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisTug">
-                    <nz-select formControlName="tug" nzShowSearch>
-                      <nz-option *ngFor="let entry of tugs" [nzValue]="entry.key" [nzLabel]="entry.key | tugName | translate"></nz-option>
-                    </nz-select>
-                    <ng-template #gubalAnalysisTug>
-                      <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
-                        {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
-                        <b>{{suggestions.tug === null ? ('COMMON.None' | translate) : (suggestions.tug | tugName | translate)}}</b>
-                      </ng-container>
-                    </ng-template>
-                  </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                  <nz-form-label [nzSpan]="3" nzRequired>{{'DB.FISH.OVERLAY.Bait' | translate}}</nz-form-label>
-                  <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisBait">
-                    <nz-select formControlName="bait" nzShowSearch>
-                      <nz-option *ngFor="let bait of possibleBaits$ | async" [nzValue]="bait" [nzLabel]="bait | itemName | i18n"></nz-option>
-                    </nz-select>
-                    <ng-template #gubalAnalysisBait>
-                      <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
-                        {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
-                        <b>{{suggestions.bait === null ? ('COMMON.None' | translate) : (suggestions.bait | itemName | i18n)}}</b>
-                      </ng-container>
-                    </ng-template>
-                  </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                  <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Predator' | translate}}</nz-form-label>
-                  <nz-form-control [nzSpan]="10" [nzExtra]="'ALLAGAN_REPORTS.Predator_explain' | translate">
-                    <app-predators-input formControlName="predators" [fishingSpot]="fishingSpot"></app-predators-input>
-                  </nz-form-control>
-                </nz-form-item>
-                <ng-container *ngIf="isOceanFishing$ | async; else openWorldFishing">
-                  <nz-form-item>
-                    <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Ocean_fishing_time' | translate}}</nz-form-label>
-                    <nz-form-control [nzSpan]="10">
-                      <nz-select formControlName="oceanFishingTime">
-                        <nz-option *ngFor="let entry of oceanFishingTimes" [nzValue]="entry.key"
-                                   [nzLabel]="('OCEAN_FISHING.' + entry.value) | translate"></nz-option>
-                      </nz-select>
-                    </nz-form-control>
-                  </nz-form-item>
-                </ng-container>
-                <ng-template #openWorldFishing>
-                  <nz-form-item>
-                    <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Spawn' | translate}}</nz-form-label>
-                    <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisSpawn">
-                      <nz-input-group class="spawn-input" nzAddOnAfter="h">
-                        <nz-input-number [nzMax]="SPAWN_VALIDATOR.max" [nzMin]="SPAWN_VALIDATOR.min" class="input-number-with-addon"
-                                         formControlName="spawn"></nz-input-number>
-                      </nz-input-group>
-                      <ng-template #gubalAnalysisSpawn>
-                        {{'ALLAGAN_REPORTS.Input_hours_tip' | translate}}<br>
-                        <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
-                          {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
-                          <b>{{suggestions.spawn === null ? ('COMMON.None' | translate) : suggestions.spawn}}</b>
-                        </ng-container>
-                      </ng-template>
-                    </nz-form-control>
-                  </nz-form-item>
-                  <nz-form-item>
-                    <nz-form-label [nzSpan]="3"
-                                   [nzRequired]="form.getRawValue()?.spawn !== '' && form.getRawValue()?.spawn !== null">{{'ALLAGAN_REPORTS.Duration' | translate}}</nz-form-label>
-                    <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisDuration">
-                      <nz-input-group class="spawn-input" nzAddOnAfter="h">
-                        <nz-input-number [nzMax]="DURATION_VALIDATOR.max" [nzMin]="DURATION_VALIDATOR.min"
-                                         formControlName="duration">
-                        </nz-input-number>
-                      </nz-input-group>
-                      <ng-template #gubalAnalysisDuration>
-                        {{'ALLAGAN_REPORTS.Input_hours_tip' | translate}}<br>
-                        <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
-                          {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
-                          <b>{{suggestions.duration === null ? ('COMMON.None' | translate) : suggestions.duration}}</b>
-                        </ng-container>
-                      </ng-template>
-                    </nz-form-control>
-                  </nz-form-item>
-                  <nz-form-item>
-                    <nz-form-label [nzSpan]="3">{{'GATHERING_LOCATIONS.Snagging' | translate}}</nz-form-label>
-                    <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisSnagging">
-                      <input formControlName="snagging" type="checkbox">
-                      <ng-template #gubalAnalysisSnagging>
-                        <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
-                          {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
-                          <b>{{(suggestions.snagging ? 'Yes' : 'No') | translate}}</b>
-                        </ng-container>
-                      </ng-template>
-                    </nz-form-control>
-                  </nz-form-item>
-                  <nz-form-item>
-                    <nz-form-label [nzSpan]="3">{{'DB.FISH.Min_gathering' | translate}}</nz-form-label>
-                    <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisMinGathering">
-                      <nz-input-number formControlName="minGathering">
+                  <nz-form-label [nzSpan]="3"
+                  [nzRequired]="form.getRawValue()?.spawn !== '' && form.getRawValue()?.spawn !== null">{{'ALLAGAN_REPORTS.Duration' | translate}}</nz-form-label>
+                  <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisDuration">
+                    <nz-input-group class="spawn-input" nzAddOnAfter="h">
+                      <nz-input-number [nzMax]="DURATION_VALIDATOR.max" [nzMin]="DURATION_VALIDATOR.min"
+                        formControlName="duration">
                       </nz-input-number>
-                      <ng-template #gubalAnalysisMinGathering>
-                        <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
-                          {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
-                          <b>{{suggestions.minGathering}}</b>
-                        </ng-container>
-                      </ng-template>
-                    </nz-form-control>
-                  </nz-form-item>
-                </ng-template>
-                <ng-container *ngIf="mapWeathers$ | async as mapWeathers">
-                  <nz-form-item>
-                    <nz-form-label [nzSpan]="3">{{'ALARMS.CUSTOM.Weather' | translate}}</nz-form-label>
-                    <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisWeathers">
-                      <nz-select formControlName="weathers" nzAllowClear nzMode="multiple">
-                        <nz-option *ngFor="let weather of mapWeathers" [nzLabel]="weather | i18nRow:'weathers' | i18n"
-                                   [nzValue]="weather"></nz-option>
-                      </nz-select>
-                      <ng-template #gubalAnalysisWeathers>
-                        <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
-                          {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
-                          <ng-container *ngFor="let weather of suggestions.weathers; let last = last">
-                            <b>{{weather | i18nRow:'weathers' | i18n}}</b><span *ngIf="!last">, </span>
-                          </ng-container>
-                          <b *ngIf="suggestions.weathers?.length === 0">{{'COMMON.Any' | translate}}</b>
-                        </ng-container>
-                      </ng-template>
-                    </nz-form-control>
-                  </nz-form-item>
-                  <nz-form-item *ngIf="!(isOceanFishing$ | async)">
-                    <nz-form-label [nzSpan]="3">{{'ALARMS.CUSTOM.Weather_from' | translate}}</nz-form-label>
-                    <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisWeathersFrom">
-                      <nz-select formControlName="weathersFrom" nzAllowClear nzMode="multiple">
-                        <nz-option *ngFor="let weather of mapWeathers" [nzLabel]="weather | i18nRow:'weathers' | i18n"
-                                   [nzValue]="weather"></nz-option>
-                      </nz-select>
-                      <ng-template #gubalAnalysisWeathersFrom>
-                        <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
-                          {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
-                          <ng-container *ngFor="let weather of suggestions.weathersFrom; let last = last">
-                            <b>{{weather | i18nRow:'weathers' | i18n}}</b><span *ngIf="!last">, </span>
-                          </ng-container>
-                          <b *ngIf="suggestions.weathersFrom?.length === 0">{{'COMMON.Any' | translate}}</b>
-                        </ng-container>
-                      </ng-template>
-                    </nz-form-control>
-                  </nz-form-item>
-                </ng-container>
-              </nz-spin>
-            </ng-container>
-          </ng-container>
-        </ng-container>
-        <ng-container *ngIf="source === AllaganReportSource.SPEARFISHING">
-          <nz-form-item>
-            <nz-form-label [nzSpan]="3" nzRequired>{{'ALLAGAN_REPORTS.Speed' | translate}}</nz-form-label>
-            <nz-form-control [nzSpan]="10">
-              <nz-select formControlName="speed">
-                <nz-option *ngFor="let row of speeds" [nzValue]="row.key" [nzLabel]="('ALLAGAN_REPORTS.SPEEDS.' + row.value) | translate"></nz-option>
-              </nz-select>
-              <img *ngIf="form.getRawValue()?.speed !== null" src="./assets/spearfishing/speed_{{form.getRawValue()?.speed}}.gif"
-                   style="width: 320px;margin-top:5px">
-            </nz-form-control>
-          </nz-form-item>
-          <nz-form-item>
-            <nz-form-label [nzSpan]="3" nzRequired>{{'ALLAGAN_REPORTS.Shadow_size' | translate}}</nz-form-label>
-            <nz-form-control [nzSpan]="10">
-              <nz-select formControlName="shadowSize">
-                <nz-option *ngFor="let row of shadowSizes" [nzValue]="row.key" [nzLabel]="('ALLAGAN_REPORTS.SHADOWS.' + row.value) | translate"></nz-option>
-              </nz-select>
-            </nz-form-control>
-          </nz-form-item>
-          <nz-form-item>
-            <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Predator' | translate}}</nz-form-label>
-            <nz-form-control [nzSpan]="10" [nzExtra]="'ALLAGAN_REPORTS.Predator_explain' | translate">
-              <app-predators-input formControlName="predators" [possibleFishList]="spearFishingFishList$ | async"></app-predators-input>
-            </nz-form-control>
-          </nz-form-item>
-          <nz-form-item>
-            <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Spawn' | translate}}</nz-form-label>
-            <nz-form-control [nzSpan]="10">
-              <nz-input-group class="spawn-input" nzAddOnAfter=":00">
-                <nz-input-number [nzMax]="SPAWN_VALIDATOR.max" [nzMin]="SPAWN_VALIDATOR.min" [nzStep]="1" class="input-number-with-addon"
-                                 formControlName="spawn"></nz-input-number>
-              </nz-input-group>
-            </nz-form-control>
-          </nz-form-item>
-          <nz-form-item>
-            <nz-form-label [nzSpan]="3" [nzRequired]="form.getRawValue()?.spawn !== null">{{'ALLAGAN_REPORTS.Duration' | translate}}</nz-form-label>
-            <nz-form-control [nzSpan]="10">
-              <nz-input-number [nzMax]="DURATION_VALIDATOR.max" [nzMin]="DURATION_VALIDATOR.min"
-                               formControlName="duration">
-              </nz-input-number>
-            </nz-form-control>
-          </nz-form-item>
-        </ng-container>
-        <div fxLayout="row" fxLayoutGap="10px">
-          <div>
-            <button nz-button nzType="primary" type="submit"
-                    [disabled]="form.invalid || (source === AllaganReportSource.FISHING && !(canSuggestForThisSpot$ | async))">
-              <span *ngIf="!(modificationId$ | async)">{{'ALLAGAN_REPORTS.Submit_new_report' | translate}}</span>
-              <span *ngIf="modificationId$ | async">{{'ALLAGAN_REPORTS.Submit_modification_suggestion' | translate}}</span>
-            </button>
-          </div>
-          <div>
-            <button nz-button nzDanger type="button" (click)="cancel()">
-              {{'Cancel' | translate}}
-            </button>
-          </div>
-        </div>
-      </form>
+                    </nz-input-group>
+                    <ng-template #gubalAnalysisDuration>
+                      {{'ALLAGAN_REPORTS.Input_hours_tip' | translate}}<br>
+                      @if (gubalSuggestions$ | async; as suggestions) {
+                        {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
+                        <b>{{suggestions.duration === null ? ('COMMON.None' | translate) : suggestions.duration}}</b>
+                      }
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label [nzSpan]="3">{{'GATHERING_LOCATIONS.Snagging' | translate}}</nz-form-label>
+                  <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisSnagging">
+                    <input formControlName="snagging" type="checkbox">
+                    <ng-template #gubalAnalysisSnagging>
+                      @if (gubalSuggestions$ | async; as suggestions) {
+                        {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
+                        <b>{{(suggestions.snagging ? 'Yes' : 'No') | translate}}</b>
+                      }
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label [nzSpan]="3">{{'DB.FISH.Min_gathering' | translate}}</nz-form-label>
+                  <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisMinGathering">
+                    <nz-input-number formControlName="minGathering">
+                    </nz-input-number>
+                    <ng-template #gubalAnalysisMinGathering>
+                      @if (gubalSuggestions$ | async; as suggestions) {
+                        {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
+                        <b>{{suggestions.minGathering}}</b>
+                      }
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+              }
+              @if (mapWeathers$ | async; as mapWeathers) {
+                <nz-form-item>
+                  <nz-form-label [nzSpan]="3">{{'ALARMS.CUSTOM.Weather' | translate}}</nz-form-label>
+                  <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisWeathers">
+                    <nz-select formControlName="weathers" nzAllowClear nzMode="multiple">
+                      @for (weather of mapWeathers; track weather) {
+                        <nz-option [nzLabel]="weather | i18nRow:'weathers' | i18n"
+                        [nzValue]="weather"></nz-option>
+                      }
+                    </nz-select>
+                    <ng-template #gubalAnalysisWeathers>
+                      @if (gubalSuggestions$ | async; as suggestions) {
+                        {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
+                        @for (weather of suggestions.weathers; track weather; let last = $last) {
+                          <b>{{weather | i18nRow:'weathers' | i18n}}</b>@if (!last) {
+                          <span>, </span>
+                        }
+                      }
+                      @if (suggestions.weathers?.length === 0) {
+                        <b>{{'COMMON.Any' | translate}}</b>
+                      }
+                    }
+                  </ng-template>
+                </nz-form-control>
+              </nz-form-item>
+              @if (!(isOceanFishing$ | async)) {
+                <nz-form-item>
+                  <nz-form-label [nzSpan]="3">{{'ALARMS.CUSTOM.Weather_from' | translate}}</nz-form-label>
+                  <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisWeathersFrom">
+                    <nz-select formControlName="weathersFrom" nzAllowClear nzMode="multiple">
+                      @for (weather of mapWeathers; track weather) {
+                        <nz-option [nzLabel]="weather | i18nRow:'weathers' | i18n"
+                        [nzValue]="weather"></nz-option>
+                      }
+                    </nz-select>
+                    <ng-template #gubalAnalysisWeathersFrom>
+                      @if (gubalSuggestions$ | async; as suggestions) {
+                        {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
+                        @for (weather of suggestions.weathersFrom; track weather; let last = $last) {
+                          <b>{{weather | i18nRow:'weathers' | i18n}}</b>@if (!last) {
+                          <span>, </span>
+                        }
+                      }
+                      @if (suggestions.weathersFrom?.length === 0) {
+                        <b>{{'COMMON.Any' | translate}}</b>
+                      }
+                    }
+                  </ng-template>
+                </nz-form-control>
+              </nz-form-item>
+            }
+          }
+        </nz-spin>
+      } @else {
+        <nz-alert class="please-edit" nzType="warning" [nzMessage]="'ALLAGAN_REPORTS.Cannot_report_for_this_spot' | translate"
+        [nzDescription]="'ALLAGAN_REPORTS.Please_suggest_edit_instead' | translate"></nz-alert>
+      }
+    }
+  }
+  @if (source === AllaganReportSource.SPEARFISHING) {
+    <nz-form-item>
+      <nz-form-label [nzSpan]="3" nzRequired>{{'ALLAGAN_REPORTS.Speed' | translate}}</nz-form-label>
+      <nz-form-control [nzSpan]="10">
+        <nz-select formControlName="speed">
+          @for (row of speeds; track row) {
+            <nz-option [nzValue]="row.key" [nzLabel]="('ALLAGAN_REPORTS.SPEEDS.' + row.value) | translate"></nz-option>
+          }
+        </nz-select>
+        @if (form.getRawValue()?.speed !== null) {
+          <img src="./assets/spearfishing/speed_{{form.getRawValue()?.speed}}.gif"
+            style="width: 320px;margin-top:5px">
+        }
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="3" nzRequired>{{'ALLAGAN_REPORTS.Shadow_size' | translate}}</nz-form-label>
+      <nz-form-control [nzSpan]="10">
+        <nz-select formControlName="shadowSize">
+          @for (row of shadowSizes; track row) {
+            <nz-option [nzValue]="row.key" [nzLabel]="('ALLAGAN_REPORTS.SHADOWS.' + row.value) | translate"></nz-option>
+          }
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Predator' | translate}}</nz-form-label>
+      <nz-form-control [nzSpan]="10" [nzExtra]="'ALLAGAN_REPORTS.Predator_explain' | translate">
+        <app-predators-input formControlName="predators" [possibleFishList]="spearFishingFishList$ | async"></app-predators-input>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Spawn' | translate}}</nz-form-label>
+      <nz-form-control [nzSpan]="10">
+        <nz-input-group class="spawn-input" nzAddOnAfter=":00">
+          <nz-input-number [nzMax]="SPAWN_VALIDATOR.max" [nzMin]="SPAWN_VALIDATOR.min" [nzStep]="1" class="input-number-with-addon"
+          formControlName="spawn"></nz-input-number>
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="3" [nzRequired]="form.getRawValue()?.spawn !== null">{{'ALLAGAN_REPORTS.Duration' | translate}}</nz-form-label>
+      <nz-form-control [nzSpan]="10">
+        <nz-input-number [nzMax]="DURATION_VALIDATOR.max" [nzMin]="DURATION_VALIDATOR.min"
+          formControlName="duration">
+        </nz-input-number>
+      </nz-form-control>
+    </nz-form-item>
+  }
+  <div fxLayout="row" fxLayoutGap="10px">
+    <div>
+      <button nz-button nzType="primary" type="submit"
+        [disabled]="form.invalid || (source === AllaganReportSource.FISHING && !(canSuggestForThisSpot$ | async))">
+        @if (!(modificationId$ | async)) {
+          <span>{{'ALLAGAN_REPORTS.Submit_new_report' | translate}}</span>
+        }
+        @if (modificationId$ | async) {
+          <span>{{'ALLAGAN_REPORTS.Submit_modification_suggestion' | translate}}</span>
+        }
+      </button>
     </div>
-  </ng-container>
-</ng-container>
+    <div>
+      <button nz-button nzDanger type="button" (click)="cancel()">
+        {{'Cancel' | translate}}
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+}
+}

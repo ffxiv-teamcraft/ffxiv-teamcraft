@@ -1,9 +1,10 @@
-<ng-container *ngIf="i18nName$ | i18n as displayString; else loading"><span [innerHtml]="displayString"></span></ng-container>
-<ng-template #loading>
+@if (i18nName$ | i18n; as displayString) {
+  <span [innerHtml]="displayString"></span>
+} @else {
   <nz-skeleton
     nzActive="true"
     [nzTitle]="{width: +width}"
     [nzParagraph]="false"
   ></nz-skeleton>
-</ng-template>
+}
 

@@ -1,8 +1,9 @@
-<ng-container *ngIf="replay$ | async as replay; else loading">
-  <app-fullpage-message *ngIf="replay.notFound; else display">
-    {{'CRAFTING_REPLAYS.Replay_not_found' | translate}}
-  </app-fullpage-message>
-  <ng-template #display>
+@if (replay$ | async; as replay) {
+  @if (replay.notFound) {
+    <app-fullpage-message>
+      {{'CRAFTING_REPLAYS.Replay_not_found' | translate}}
+    </app-fullpage-message>
+  } @else {
     <div fxLayout="column" fxLayoutGap="10px">
       <div fxLayout="row wrap" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
         <app-user-avatar [userId]="replay.authorId"></app-user-avatar>
@@ -17,8 +18,7 @@
       </div>
       <app-replay-simulation [replay]="replay"></app-replay-simulation>
     </div>
-  </ng-template>
-</ng-container>
-<ng-template #loading>
+  }
+} @else {
   <app-page-loader></app-page-loader>
-</ng-template>
+}

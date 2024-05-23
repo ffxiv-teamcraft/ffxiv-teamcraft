@@ -1,9 +1,9 @@
 <nz-input-group [nzAddOnAfter]="suffix">
   <input #searchInput (keyup)="!settings.disableSearchDebounce?query$.next(searchInput.value):null"
-         (keydown.enter)="query$.next(searchInput.value)"
-         (ngModelChange)="!settings.disableSearchDebounce?query$.next($event):null"
-         [ngModel]="query$.value" nz-input nzAutoFocus
-         placeholder="{{'ITEMS.Item_name' | translate}}" type="text">
+    (keydown.enter)="query$.next(searchInput.value)"
+    (ngModelChange)="!settings.disableSearchDebounce?query$.next($event):null"
+    [ngModel]="query$.value" nz-input nzAutoFocus
+    placeholder="{{'ITEMS.Item_name' | translate}}" type="text">
   <ng-template #suffix>
     <label nz-checkbox [(ngModel)]="onlyCraftable" (ngModelChange)="settings.onlyRecipesInPicker = $event">{{'ITEMS.Only_craftable' | translate}}</label>
   </ng-template>
@@ -12,48 +12,64 @@
 <a routerLink="/search" (click)="close()">
   {{'ITEMS.Open_search' | translate}}
 </a>
-<ng-container *ngIf="results$ | async as results">
+@if (results$ | async; as results) {
   <nz-spin [nzSpinning]="loading">
     <app-lazy-scroll [data]="results" [rowTemplate]="rowTpl" rowSize="46" [trackBy]="trackById">
       <ng-template #rowTpl let-result>
         <div class="flex-row align-center gap-5 result-row">
-          <label class="checkbox-label" nz-checkbox [(ngModel)]="result.selected" *ngIf="multi"></label>
+          @if (multi) {
+            <label class="checkbox-label" nz-checkbox [(ngModel)]="result.selected"></label>
+          }
           <div>
-            <app-item-icon *ngIf="result.contentType === 'items'" [icon]="result.icon" [itemId]="result.itemId" [width]="32"></app-item-icon>
-            <app-item-icon *ngIf="result.contentType !== 'items'" [icon]="result.icon | xivapiIcon" [itemId]="null" [width]="32"
-                           [tooltipDisabled]="true"></app-item-icon>
+            @if (result.contentType === 'items') {
+              <app-item-icon [icon]="result.icon" [itemId]="result.itemId" [width]="32"></app-item-icon>
+            }
+            @if (result.contentType !== 'items') {
+              <app-item-icon [icon]="result.icon | xivapiIcon" [itemId]="null" [width]="32"
+              [tooltipDisabled]="true"></app-item-icon>
+            }
           </div>
           <div class="flex-column">
             <div class="row-title">
-              <span *ngIf="result.isCustom">
-                {{result.itemId | customItemName | async}}
-              </span>
-              <span *ngIf="!result.isCustom">
-                <app-i18n-name [content]="result.contentType" [id]="result.itemId"></app-i18n-name>
-              </span>
+              @if (result.isCustom) {
+                <span>
+                  {{result.itemId | customItemName | async}}
+                </span>
+              }
+              @if (!result.isCustom) {
+                <span>
+                  <app-i18n-name [content]="result.contentType" [id]="result.itemId"></app-i18n-name>
+                </span>
+              }
             </div>
-            <div class="row-description" *ngIf="result.recipe">
-              <div class="flex-row align-center gap-2" *ngIf="result.recipe.job > 0">
-                <span class="companion-svg" [innerHtml]="result.recipe.job | jobUnicode"></span>
-                {{result.recipe.lvl}}
-                {{getStars(result.recipe.stars)}}
+            @if (result.recipe) {
+              <div class="row-description">
+                @if (result.recipe.job > 0) {
+                  <div class="flex-row align-center gap-2">
+                    <span class="companion-svg" [innerHtml]="result.recipe.job | jobUnicode"></span>
+                    {{result.recipe.lvl}}
+                    {{getStars(result.recipe.stars)}}
+                  </div>
+                }
+                @if (result.recipe.isIslandRecipe) {
+                  <img src="./assets/icons/island.png" alt="Island Recipe" class="img-icon" nz-tooltip [nzTooltipTitle]="'ITEMS.Island_recipe' | translate">
+                }
               </div>
-              <ng-container *ngIf="result.recipe.isIslandRecipe">
-                <img src="./assets/icons/island.png" alt="Island Recipe" class="img-icon" nz-tooltip [nzTooltipTitle]="'ITEMS.Island_recipe' | translate">
-              </ng-container>
-            </div>
+            }
           </div>
           <div class="flex-auto"></div>
           <div class="flex-row gap-5">
-            <nz-input-group *ngIf="!hideAmount" [nzAddOnBefore]="null | ifRegions:[Region.China, Region.Korea]:(result.recipe !== undefined?addCrafts:null)"
-                            [nzCompact]="true">
-              <nz-input-number [(ngModel)]="result.amount" class="amount-input"></nz-input-number>
-              <ng-template #addCrafts>
-                <label [(ngModel)]="result.addCrafts" nz-checkbox>
-                  {{'Collectable_flag' | translate}}
-                </label>
-              </ng-template>
-            </nz-input-group>
+            @if (!hideAmount) {
+              <nz-input-group [nzAddOnBefore]="null | ifRegions:[Region.China, Region.Korea]:(result.recipe !== undefined?addCrafts:null)"
+                [nzCompact]="true">
+                <nz-input-number [(ngModel)]="result.amount" class="amount-input"></nz-input-number>
+                <ng-template #addCrafts>
+                  <label [(ngModel)]="result.addCrafts" nz-checkbox>
+                    {{'Collectable_flag' | translate}}
+                  </label>
+                </ng-template>
+              </nz-input-group>
+            }
             <button (click)="close(result)" [nzShape]="'circle'" [nzType]="'primary'" nz-button>
               <i nz-icon nzType="check"></i>
             </button>
@@ -62,6 +78,8 @@
       </ng-template>
     </app-lazy-scroll>
   </nz-spin>
-  <button nz-button nzBlock (click)="pickMulti(results)" [disabled]="nothingSelected(results)"
-          *ngIf="multi">{{'LISTS.Add_selection_to_list' | translate}}</button>
-</ng-container>
+  @if (multi) {
+    <button nz-button nzBlock (click)="pickMulti(results)" [disabled]="nothingSelected(results)"
+    >{{'LISTS.Add_selection_to_list' | translate}}</button>
+  }
+}

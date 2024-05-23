@@ -22,7 +22,7 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
 import { InventoryPositionComponent } from '../../../modules/inventory/inventory-position/inventory-position.component';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
-import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { FormsModule } from '@angular/forms';
@@ -41,7 +41,7 @@ interface Display {
     styleUrls: ['./item-search-overlay.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [OverlayContainerComponent, FlexModule, FormsModule, NzInputModule, NzAutocompleteModule, NgFor, NgIf, ItemIconComponent, I18nNameComponent, InventoryPositionComponent, NzTagModule, NzToolTipModule, NzButtonModule, NzWaveModule, ItemSourcesDisplayComponent, NzDividerModule, MarketboardPopupComponent, FullpageMessageComponent, AsyncPipe, TranslateModule, I18nPipe, IfMobilePipe]
+    imports: [OverlayContainerComponent, FlexModule, FormsModule, NzInputModule, NzAutocompleteModule, ItemIconComponent, I18nNameComponent, InventoryPositionComponent, NzTagModule, NzToolTipModule, NzButtonModule, NzWaveModule, ItemSourcesDisplayComponent, NzDividerModule, MarketboardPopupComponent, FullpageMessageComponent, AsyncPipe, TranslateModule, I18nPipe, IfMobilePipe]
 })
 export class ItemSearchOverlayComponent {
 

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
-import { NgIf } from '@angular/common';
+
 
 @Component({
     selector: 'app-simple-tab',
@@ -7,7 +7,7 @@ import { NgIf } from '@angular/common';
     styleUrls: ['./simple-tab.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf]
+    imports: []
 })
 export class SimpleTabComponent {
 

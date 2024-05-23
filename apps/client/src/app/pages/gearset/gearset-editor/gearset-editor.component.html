@@ -1,48 +1,54 @@
-<ng-container *ngIf="gearset$ | async as gearset">
-  <ng-container *ngIf="stats$ | async as stats">
+@if (gearset$ | async; as gearset) {
+  @if (stats$ | async; as stats) {
     <div class="editor-container" [class.two-cols]="stats.length <= 3" #editorContainer>
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="page-title">
         <span class="gearset-name">{{gearset.name}}</span>
         <span class="companion-svg job-icon" [innerHTML]="gearset.job | jobUnicode"></span>
-        <button nz-button nzShape="circle" *ngIf="(isReadonly$ | async) === false" (click)="edit(gearset)" nz-tooltip
-                [nzTooltipTitle]="'GEARSETS.Edit_gearset' | translate">
-          <i nz-icon nzType="edit"></i>
-        </button>
-        <button nz-button nzShape="circle" *ngIf="!(isReadonly$ | async)"
-                (nzOnConfirm)="emptyMaterias(gearset)" nz-tooltip nz-popconfirm
-                [nzTooltipTitle]="'GEARSETS.Empty_materias' | translate"
-                [nzPopconfirmTitle]="'Confirmation' | translate"
-        >
-          <i nz-icon nzType="undo" nzTheme="outline"></i>
-        </button>
+        @if ((isReadonly$ | async) === false) {
+          <button nz-button nzShape="circle" (click)="edit(gearset)" nz-tooltip
+            [nzTooltipTitle]="'GEARSETS.Edit_gearset' | translate">
+            <i nz-icon nzType="edit"></i>
+          </button>
+        }
+        @if (!(isReadonly$ | async)) {
+          <button nz-button nzShape="circle"
+            (nzOnConfirm)="emptyMaterias(gearset)" nz-tooltip nz-popconfirm
+            [nzTooltipTitle]="'GEARSETS.Empty_materias' | translate"
+            [nzPopconfirmTitle]="'Confirmation' | translate"
+            >
+            <i nz-icon nzType="undo" nzTheme="outline"></i>
+          </button>
+        }
         <div fxFlex="1 1 auto"></div>
-        <button nz-button nzShape="circle"
-                nzType="primary"
-                *ngIf="isReadonly$ | async"
-                nz-tooltip [nzTooltipTitle]="'GEARSETS.Clone_gearset' | translate"
-                (click)="saveAsNew(gearset)">
-          <i nz-icon nzType="save" nzTheme="outline"></i>
-        </button>
-        <button nz-button nzShape="circle" nzType="primary"
-                *ngIf="ipc.pcapToggle"
-                (click)="updateFromPcap(gearset)" nz-tooltip [nzTooltipTitle]="'GEARSETS.Update_from_pcap' | translate">
-          <i nz-icon nzType="api"></i>
-        </button>
+        @if (isReadonly$ | async) {
+          <button nz-button nzShape="circle"
+            nzType="primary"
+            nz-tooltip [nzTooltipTitle]="'GEARSETS.Clone_gearset' | translate"
+            (click)="saveAsNew(gearset)">
+            <i nz-icon nzType="save" nzTheme="outline"></i>
+          </button>
+        }
+        @if (ipc.pcapToggle) {
+          <button nz-button nzShape="circle" nzType="primary"
+            (click)="updateFromPcap(gearset)" nz-tooltip [nzTooltipTitle]="'GEARSETS.Update_from_pcap' | translate">
+            <i nz-icon nzType="api"></i>
+          </button>
+        }
         <a nz-button nzShape="circle"
-           nz-tooltip [nzTooltipTitle]="'GEARSETS.View_gearset' | translate"
-           routerLink="/gearset/{{gearset.$key}}">
+          nz-tooltip [nzTooltipTitle]="'GEARSETS.View_gearset' | translate"
+          routerLink="/gearset/{{gearset.$key}}">
           <i nz-icon nzType="eye"></i>
         </a>
       </div>
-
-      <nz-alert *ngIf="isReadonly$ | async"
-                nzType="warning"
-                nzShowIcon
-                nzBanner
-                class="readonly-warning"
-                [nzMessage]="'GEARSETS.Editing_others_gearset' | translate"
-                [nzDescription]="'GEARSETS.Editing_others_gearset_description' | translate"></nz-alert>
-
+      @if (isReadonly$ | async) {
+        <nz-alert
+          nzType="warning"
+          nzShowIcon
+          nzBanner
+          class="readonly-warning"
+          [nzMessage]="'GEARSETS.Editing_others_gearset' | translate"
+        [nzDescription]="'GEARSETS.Editing_others_gearset_description' | translate"></nz-alert>
+      }
       <nz-collapse>
         <nz-collapse-panel [nzHeader]="'GEARSETS.Filters' | translate" class="filters">
           <form (ngSubmit)="submitFilters()" [formGroup]="itemFiltersform" nz-form nzLayout="inline" fxLayout="row" fxLayoutAlign="center center">
@@ -52,10 +58,10 @@
               <nz-form-control>
                 <nz-input-group fxLayout="row" class="input-min-max">
                   <nz-input-number [nzMax]="999" [nzMin]="0" [nzPrecision]="0" formControlName="ilvlMin"
-                                   id="ilvl" class="min"></nz-input-number>
+                  id="ilvl" class="min"></nz-input-number>
                   <input disabled nz-input placeholder="-" type="text" class="input-splitter">
                   <nz-input-number [nzMax]="999" [nzMin]="1" [nzPrecision]="0"
-                                   formControlName="ilvlMax" class="max"></nz-input-number>
+                  formControlName="ilvlMax" class="max"></nz-input-number>
                 </nz-input-group>
               </nz-form-control>
             </nz-form-item>
@@ -65,10 +71,10 @@
               <nz-form-control>
                 <nz-input-group fxLayout="row" class="input-min-max">
                   <nz-input-number [nzMax]="gearset.level" [nzMin]="0" [nzPrecision]="0" formControlName="elvlMin"
-                                   id="elvl" class="min"></nz-input-number>
+                  id="elvl" class="min"></nz-input-number>
                   <input disabled nz-input placeholder="-" type="text" class="input-splitter">
                   <nz-input-number [nzMax]="gearset.level" [nzMin]="1" [nzPrecision]="0"
-                                   formControlName="elvlMax" class="max"></nz-input-number>
+                  formControlName="elvlMax" class="max"></nz-input-number>
                 </nz-input-group>
               </nz-form-control>
             </nz-form-item>
@@ -80,106 +86,135 @@
           </form>
         </nz-collapse-panel>
       </nz-collapse>
-
-      <nz-alert nzType="warning" [nzMessage]="'GEARSETS.Missing_items' | translate" nzCloseable="true" *ngIf="missingItems" class="missing-items"></nz-alert>
-
-      <div fxLayout="column" fxLayoutGap="10px" *ngIf="items$ | async as chunks; else loading">
-        <div nz-row *ngFor="let categories of chunks; trackBy: trackByChunk">
-          <div nz-col [nzMd]="stats.length > 3 ? 24 : 12" nzSm="24" class="category-card" [class.full]="stats.length > 3" [class.last]="last"
-               [class.first]="first"
-               *ngFor="let category of categories;let last=last; let first=first; trackBy: trackByCategory">
-            <nz-card [nzTitle]="cardTitleRef">
-              <ng-template #cardTitleRef>
-                <div nz-row>
-                  <div nz-col [nzMd]="24 - stats.length * (stats.length > 3 ? 2 : 4)" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-                    <div>{{('GEARSETS.SLOT.' + category.name) | translate}}</div>
-                    <i nz-icon nzType="warning" nzTheme="twotone" nzTwotoneColor="#f5222d"
-                       *ngIf="!gearset[category.property] && category.name !== 'SoulCrystal' && canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId) | async"></i>
-                    <nz-tag *ngIf="!(canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId) | async)">
-                      {{'GEARSETS.Unavailable_slot' | translate}}
-                    </nz-tag>
-                  </div>
-                  <div nz-col [nzMd]="stats.length > 3 ? 2 : 4" *ngFor="let stat of stats;let lastStat = last" class="item-stat-row" [class.last]="lastStat">
-                    <b>{{stat.id | i18nRow:'baseParams' | i18n}}</b>
-                  </div>
+      @if (missingItems) {
+        <nz-alert nzType="warning" [nzMessage]="'GEARSETS.Missing_items' | translate" nzCloseable="true" class="missing-items"></nz-alert>
+      }
+      @if (items$ | async; as chunks) {
+        <div fxLayout="column" fxLayoutGap="10px">
+          @for (categories of chunks; track trackByChunk($index, categories)) {
+            <div nz-row>
+              @for (category of categories; track trackByCategory($index, category); let last = $last; let first = $first) {
+                <div nz-col [nzMd]="stats.length > 3 ? 24 : 12" nzSm="24" class="category-card" [class.full]="stats.length > 3" [class.last]="last"
+                  [class.first]="first"
+                  >
+                  <nz-card [nzTitle]="cardTitleRef">
+                    <ng-template #cardTitleRef>
+                      <div nz-row>
+                        <div nz-col [nzMd]="24 - stats.length * (stats.length > 3 ? 2 : 4)" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                          <div>{{('GEARSETS.SLOT.' + category.name) | translate}}</div>
+                          @if (!gearset[category.property] && category.name !== 'SoulCrystal' && canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId) | async) {
+                            <i nz-icon nzType="warning" nzTheme="twotone" nzTwotoneColor="#f5222d"
+                            ></i>
+                          }
+                          @if (!(canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId) | async)) {
+                            <nz-tag>
+                              {{'GEARSETS.Unavailable_slot' | translate}}
+                            </nz-tag>
+                          }
+                        </div>
+                        @for (stat of stats; track stat; let lastStat = $last) {
+                          <div nz-col [nzMd]="stats.length > 3 ? 2 : 4" class="item-stat-row" [class.last]="lastStat">
+                            <b>{{stat.id | i18nRow:'baseParams' | i18n}}</b>
+                          </div>
+                        }
+                      </div>
+                    </ng-template>
+                    <div fxLayout="column">
+                      @for (row of category.items; track trackByItemId($index, row); let last = $last; let odd = $odd) {
+                        <app-gearset-editor-row [property]="category.property"
+                          [equipmentPiece]="row.equipmentPiece"
+                          [canEquip]="canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId) | async"
+                          [item]="row.item"
+                          [gearset]="gearset"
+                          [materias]="row.equipmentPiece.materias"
+                          [stats]="stats"
+                          (pieceChange)="$event?setGearsetPiece(gearset, category.property, row.equipmentPiece):setGearsetPiece(gearset, category.property, null)"
+                        (editMaterias)="editMaterias(gearset, category.property, row.equipmentPiece, category)"></app-gearset-editor-row>
+                        @if (!last) {
+                          <nz-divider></nz-divider>
+                        }
+                      }
+                    </div>
+                  </nz-card>
                 </div>
-              </ng-template>
-              <div fxLayout="column">
-                <ng-container *ngFor="let row of category.items;let last=last; let odd = odd; trackBy: trackByItemId">
-                  <app-gearset-editor-row [property]="category.property"
-                                          [equipmentPiece]="row.equipmentPiece"
-                                          [canEquip]="canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId) | async"
-                                          [item]="row.item"
-                                          [gearset]="gearset"
-                                          [materias]="row.equipmentPiece.materias"
-                                          [stats]="stats"
-                                          (pieceChange)="$event?setGearsetPiece(gearset, category.property, row.equipmentPiece):setGearsetPiece(gearset, category.property, null)"
-                                          (editMaterias)="editMaterias(gearset, category.property, row.equipmentPiece, category)"></app-gearset-editor-row>
-                  <nz-divider *ngIf="!last"></nz-divider>
-                </ng-container>
-              </div>
-            </nz-card>
-          </div>
+              }
+            </div>
+          }
         </div>
-      </div>
-
-      <ng-template #loading>
+      } @else {
         <app-page-loader></app-page-loader>
-      </ng-template>
+      }
     </div>
-
     <div nz-row class="stats-footer" [style.width.px]="editorContainer.offsetWidth" [class.two-cols]="stats.length <= 3">
       <div nz-col [nzMd]="22 - stats.length * 2" class="footer-title" fxLayout="row" fxLayoutGap="10px">
         <nz-select [ngModel]="food$ | async" (ngModelChange)="setGearsetPiece(gearset, 'food', $event)" [style.width.px]="250"
-                   [nzPlaceHolder]="'GEARSETS.No_food_selected' | translate" nzShowSearch nzAllowClear nzSize="small" [compareWith]="foodComparator">
-          <nz-option *ngFor="let food of foods$ | async" [nzValue]="food"
-                     [nzLabel]="(food.ID | itemName | i18n) + (food.HQ ? ('('+( 'COMMON.Hq' | translate )+')') : '') + ' / ' + (food | foodBonuses:true | async)"
-                     nzCustomContent>
-            <b>{{food.ID | itemName | i18n}} <span *ngIf="food.HQ">{{'COMMON.Hq' | translate}}</span></b>
-            <div class="food-bonus" *ngFor="let bonus of food | foodBonuses | async">
-              {{bonus}}
-            </div>
-          </nz-option>
+          [nzPlaceHolder]="'GEARSETS.No_food_selected' | translate" nzShowSearch nzAllowClear nzSize="small" [compareWith]="foodComparator">
+          @for (food of foods$ | async; track food) {
+            <nz-option [nzValue]="food"
+              [nzLabel]="(food.ID | itemName | i18n) + (food.HQ ? ('('+( 'COMMON.Hq' | translate )+')') : '') + ' / ' + (food | foodBonuses:true | async)"
+              nzCustomContent>
+              <b>{{food.ID | itemName | i18n}} @if (food.HQ) {
+                <span>{{'COMMON.Hq' | translate}}</span>
+              }</b>
+              @for (bonus of food | foodBonuses | async; track bonus) {
+                <div class="food-bonus">
+                  {{bonus}}
+                </div>
+              }
+            </nz-option>
+          }
         </nz-select>
-        <div fxLayout="row" fxLayoutAlign="flex-start bottom" fxLayoutGap="5px" *ngIf="gearset.job < 8 || gearset.job > 18">
-          <nz-select [ngModel]="tribe$ | async" (ngModelChange)="tribe$.next($event)" [style.width.px]="100" nzSize="small">
-            <nz-option-group *ngFor="let row of tribesMenu" [nzLabel]="row.race | i18nRow:'races' | i18n">
-              <nz-option *ngFor="let tribe of row.tribes" [nzValue]="tribe" [nzLabel]="tribe | i18nRow:'tribes' | i18n"></nz-option>
-            </nz-option-group>
-          </nz-select>
-          <nz-input-number [nzMin]="1" [nzMax]="maxLevel" [ngModel]="level$ | async" (ngModelChange)="level$.next($event)" nzSize="small"></nz-input-number>
-        </div>
+        @if (gearset.job < 8 || gearset.job > 18) {
+          <div fxLayout="row" fxLayoutAlign="flex-start bottom" fxLayoutGap="5px">
+            <nz-select [ngModel]="tribe$ | async" (ngModelChange)="tribe$.next($event)" [style.width.px]="100" nzSize="small">
+              @for (row of tribesMenu; track row) {
+                <nz-option-group [nzLabel]="row.race | i18nRow:'races' | i18n">
+                  @for (tribe of row.tribes; track tribe) {
+                    <nz-option [nzValue]="tribe" [nzLabel]="tribe | i18nRow:'tribes' | i18n"></nz-option>
+                  }
+                </nz-option-group>
+              }
+            </nz-select>
+            <nz-input-number [nzMin]="1" [nzMax]="maxLevel" [ngModel]="level$ | async" (ngModelChange)="level$.next($event)" nzSize="small"></nz-input-number>
+          </div>
+        }
         <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTooltipTitle]="'GEARSETS.Total_materias_needed' | translate"
-                (click)="openTotalNeededPopup(gearset)">
+          (click)="openTotalNeededPopup(gearset)">
           <i nz-icon nzType="calculator" nzTheme="outline"></i>
         </button>
         <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTooltipTitle]="'GEARSETS.Total_cost' | translate"
-                (click)="openTotalCostPopup(gearset)">
+          (click)="openTotalCostPopup(gearset)">
           <i nzIconfont="icon-dollar" nz-icon></i>
         </button>
       </div>
-      <div nz-col [nzMd]="2" fxLayout="row" fxLayoutAlign="flex-end center" class="avg-ilvl" *ngIf="(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):0 | async) as computed">{{'GEARSETS.STAT_DISPLAY.Ilvl' | translate}}
+      @if ((gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):0 | async); as computed) {
+        <div nz-col [nzMd]="2" fxLayout="row" fxLayoutAlign="flex-end center" class="avg-ilvl">{{'GEARSETS.STAT_DISPLAY.Ilvl' | translate}}
         : {{computed[0].value }}</div>
-      <div nz-col [nzMd]="2" *ngFor="let stat of stats;let lastStat = last" class="item-stat-row" [class.last]="lastStat">
-        <ng-container *ngIf="(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):stat.id | async) as statDisplays">
-          <b>{{stat.value | number:'1.0-0':translate.currentLang}}
-            <span *ngFor="let statDisplay of statDisplays"
+      }
+      @for (stat of stats; track stat; let lastStat = $last) {
+        <div nz-col [nzMd]="2" class="item-stat-row" [class.last]="lastStat">
+          @if ((gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):stat.id | async); as statDisplays) {
+            <b>{{stat.value | number:'1.0-0':translate.currentLang}}
+              @for (statDisplay of statDisplays; track statDisplay) {
+                <span
                   nz-tooltip [nzTooltipTitle]="tooltip"
                   [class.multiple-stats-display]="statDisplays.length > 1">
-              <ng-template #tooltip>
-                <div fxLayout="column">
-                  <div>{{('GEARSETS.STAT_DISPLAY.' + statDisplay.name) | translate}}</div>
-                  <ng-container *ngIf="gearset.job < 8 || gearset.job > 18">
-                    <div>{{'GEARSETS.Value_for_next' | translate}}: +{{statDisplay.next | number:'1.0-2':translate.currentLang}}</div>
-                    <div>{{'GEARSETS.Value_for_previous' | translate}}: {{statDisplay.previous | number:'1.0-2':translate.currentLang}}</div>
-                  </ng-container>
-                </div>
-              </ng-template>
-            ({{statDisplay.value | floor:2 | number:'1.0-2':translate.currentLang}}{{statDisplay.suffix}})
-          </span>
-          </b>
-        </ng-container>
-      </div>
+                  <ng-template #tooltip>
+                    <div fxLayout="column">
+                      <div>{{('GEARSETS.STAT_DISPLAY.' + statDisplay.name) | translate}}</div>
+                      @if (gearset.job < 8 || gearset.job > 18) {
+                        <div>{{'GEARSETS.Value_for_next' | translate}}: +{{statDisplay.next | number:'1.0-2':translate.currentLang}}</div>
+                        <div>{{'GEARSETS.Value_for_previous' | translate}}: {{statDisplay.previous | number:'1.0-2':translate.currentLang}}</div>
+                      }
+                    </div>
+                  </ng-template>
+                  ({{statDisplay.value | floor:2 | number:'1.0-2':translate.currentLang}}{{statDisplay.suffix}})
+                </span>
+              }
+            </b>
+          }
+        </div>
+      }
     </div>
-  </ng-container>
-</ng-container>
+  }
+}

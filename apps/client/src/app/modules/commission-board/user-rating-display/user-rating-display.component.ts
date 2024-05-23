@@ -13,7 +13,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { FormsModule } from '@angular/forms';
 import { NzRateModule } from 'ng-zorro-antd/rate';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-user-rating-display',
@@ -21,7 +21,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     styleUrls: ['./user-rating-display.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, FlexModule, NzRateModule, FormsModule, NzToolTipModule, NzButtonModule, NzIconModule, NzWaveModule, AsyncPipe, TranslateModule]
+    imports: [FlexModule, NzRateModule, FormsModule, NzToolTipModule, NzButtonModule, NzIconModule, NzWaveModule, AsyncPipe, TranslateModule]
 })
 export class UserRatingDisplayComponent implements OnInit {
 

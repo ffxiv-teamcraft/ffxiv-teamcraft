@@ -1,16 +1,20 @@
-<nz-alert nzType="warning" nzBanner *ngIf="showWarning"
-          [nzMessage]="'COMMISSIONS.CREATION.Warning' | translate"
-          [nzDescription]="'COMMISSIONS.CREATION.Warning_description' | translate"
-          nzCloseable
-          (nzOnClose)="hideWarning()"
-          [nzCloseText]="'Close' | translate"></nz-alert>
+@if (showWarning) {
+  <nz-alert nzType="warning" nzBanner
+    [nzMessage]="'COMMISSIONS.CREATION.Warning' | translate"
+    [nzDescription]="'COMMISSIONS.CREATION.Warning_description' | translate"
+    nzCloseable
+    (nzOnClose)="hideWarning()"
+  [nzCloseText]="'Close' | translate"></nz-alert>
+}
 <form nz-form nzLayout="vertical" [formGroup]="form">
   <nz-form-item>
     <nz-form-label nzFor="name" nzRequired>{{'COMMISSIONS.CREATION.Name' | translate}}</nz-form-label>
     <nz-form-control nzHasFeedback [nzErrorTip]="nameErrorTpl">
       <input nz-input formControlName="name" type="text" id="name" [placeholder]="'COMMISSIONS.CREATION.Name_placeholder' | translate">
       <ng-template #nameErrorTpl let-control>
-        <ng-container *ngIf="control.hasError('required')">{{'COMMISSIONS.CREATION.Name_required_error' | translate}}</ng-container>
+        @if (control.hasError('required')) {
+          {{'COMMISSIONS.CREATION.Name_required_error' | translate}}
+        }
       </ng-template>
     </nz-form-control>
   </nz-form-item>
@@ -18,10 +22,12 @@
     <nz-form-label nzFor="description" nzRequired>{{'COMMISSIONS.CREATION.Description' | translate}}</nz-form-label>
     <nz-form-control nzHasFeedback [nzErrorTip]="descriptionErrorTpl">
       <textarea nz-input formControlName="description" rows="4" id="description"
-                [placeholder]="'COMMISSIONS.CREATION.Description_placeholder' | translate">
+        [placeholder]="'COMMISSIONS.CREATION.Description_placeholder' | translate">
       </textarea>
       <ng-template #descriptionErrorTpl let-control>
-        <ng-container *ngIf="control.hasError('maxlength')">{{'COMMISSIONS.CREATION.Description_max_length_error' | translate}}</ng-container>
+        @if (control.hasError('maxlength')) {
+          {{'COMMISSIONS.CREATION.Description_max_length_error' | translate}}
+        }
       </ng-template>
     </nz-form-control>
   </nz-form-item>
@@ -29,8 +35,10 @@
     <nz-form-label>{{'COMMISSIONS.CREATION.Tags' | translate}}</nz-form-label>
     <nz-form-control>
       <nz-select class="filter-select" formControlName="tags" nzAllowClear nzMode="multiple" nzShowSearch>
-        <nz-option *ngFor="let tag of commissionTags" [nzLabel]="tag.label | translate" [nzValue]="tag.value">
-        </nz-option>
+        @for (tag of commissionTags; track tag) {
+          <nz-option [nzLabel]="tag.label | translate" [nzValue]="tag.value">
+          </nz-option>
+        }
       </nz-select>
     </nz-form-control>
   </nz-form-item>
@@ -59,10 +67,12 @@
     <nz-form-label nzFor="contactInformations" nzRequired>{{'COMMISSIONS.CREATION.Contact_info' | translate}}</nz-form-label>
     <nz-form-control nzHasFeedback [nzErrorTip]="contactInformationsErrorTpl">
       <textarea nz-input formControlName="contactInformations" rows="4" id="contactInformations"
-                [placeholder]="'COMMISSIONS.CREATION.Contact_info_placeholder' | translate">
+        [placeholder]="'COMMISSIONS.CREATION.Contact_info_placeholder' | translate">
       </textarea>
       <ng-template #contactInformationsErrorTpl let-control>
-        <ng-container *ngIf="control.hasError('required')">{{'COMMISSIONS.CREATION.Contact_info_required_error' | translate}}</ng-container>
+        @if (control.hasError('required')) {
+          {{'COMMISSIONS.CREATION.Contact_info_required_error' | translate}}
+        }
       </ng-template>
     </nz-form-control>
   </nz-form-item>
@@ -72,13 +82,15 @@
     <button [disabled]="!form.valid" (click)="submit()" nzType="primary" nz-button>{{'Confirm' | translate}}
     </button>
   </div>
-  <div *ngIf="commission.items?.length">
-    <button [disabled]="!form.valid" [clipboard]="getCreationLink"
-            nz-tooltip [nzTooltipTitle]="'COMMISSIONS.CREATION.Copy_link_tooltip' | translate"
-            [clipboardSuccessMessage]="'COMMISSIONS.CREATION.Link_copied' | translate"
-            nz-button>{{'COMMISSIONS.CREATION.Copy_link' | translate}}
-    </button>
-  </div>
+  @if (commission.items?.length) {
+    <div>
+      <button [disabled]="!form.valid" [clipboard]="getCreationLink"
+        nz-tooltip [nzTooltipTitle]="'COMMISSIONS.CREATION.Copy_link_tooltip' | translate"
+        [clipboardSuccessMessage]="'COMMISSIONS.CREATION.Link_copied' | translate"
+        nz-button>{{'COMMISSIONS.CREATION.Copy_link' | translate}}
+      </button>
+    </div>
+  }
   <div>
     <button (click)="close()" nz-button>{{'Cancel' | translate}}
     </button>

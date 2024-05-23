@@ -16,45 +16,69 @@
     <ng-template #selectTpl>
       <nz-select class="dc-select" formControlName="datacenter" nzShowSearch>
         <nz-option [nzValue]="null" [nzLabel]="'COMMON.Any' | translate"></nz-option>
-        <nz-option *ngFor="let datacenter of datacentersList$ | async" [nzLabel]="datacenter" [nzValue]="datacenter"></nz-option>
+        @for (datacenter of datacentersList$ | async; track datacenter) {
+          <nz-option [nzLabel]="datacenter" [nzValue]="datacenter"></nz-option>
+        }
       </nz-select>
     </ng-template>
     <input formControlName="name"
-           [placeholder]="'FISH_TRAIN.Name_filter_placeholder' | translate"
-           autofocus nz-input type="text">
+      [placeholder]="'FISH_TRAIN.Name_filter_placeholder' | translate"
+      autofocus nz-input type="text">
   </nz-input-group>
-  <nz-segmented formControlName="status" *ngIf="runningOptions$ | async as runningOptions" [nzOptions]="runningOptions"></nz-segmented>
+  @if (runningOptions$ | async; as runningOptions) {
+    <nz-segmented formControlName="status" [nzOptions]="runningOptions"></nz-segmented>
+  }
 </form>
-<div class="results flex-column gap-5" *ngIf="results$ | async as results">
-  <app-lazy-scroll *ngIf="results.length > 0" [data]="results" [trackBy]="trackByKey" [displayedRows]="8"
-                   [rowTemplate]="trainRowTpl" [rowSize]="57"></app-lazy-scroll>
-  <app-fullpage-message *ngIf="results.length === 0" height="300px">
-    {{'FISH_TRAIN.No_trains_found' | translate}}
-  </app-fullpage-message>
-</div>
-<ng-container *ngIf="userTrains$ | async as userTrains">
-  <div class="user-trains" *ngIf="userTrains.length > 0">
-    <nz-divider [nzText]="'FISH_TRAIN.Your_trains' | translate" nzOrientation="left"></nz-divider>
-    <app-lazy-scroll [data]="userTrains" [trackBy]="trackByKey" [displayedRows]="8"
-                     [rowTemplate]="trainRowTpl" [rowSize]="57"></app-lazy-scroll>
+@if (results$ | async; as results) {
+  <div class="results flex-column gap-5">
+    @if (results.length > 0) {
+      <app-lazy-scroll [data]="results" [trackBy]="trackByKey" [displayedRows]="8"
+      [rowTemplate]="trainRowTpl" [rowSize]="57"></app-lazy-scroll>
+    }
+    @if (results.length === 0) {
+      <app-fullpage-message height="300px">
+        {{'FISH_TRAIN.No_trains_found' | translate}}
+      </app-fullpage-message>
+    }
   </div>
-</ng-container>
+}
+@if (userTrains$ | async; as userTrains) {
+  @if (userTrains.length > 0) {
+    <div class="user-trains">
+      <nz-divider [nzText]="'FISH_TRAIN.Your_trains' | translate" nzOrientation="left"></nz-divider>
+      <app-lazy-scroll [data]="userTrains" [trackBy]="trackByKey" [displayedRows]="8"
+      [rowTemplate]="trainRowTpl" [rowSize]="57"></app-lazy-scroll>
+    </div>
+  }
+}
 
 <ng-template #trainRowTpl let-train>
   <a nz-row nzAlign="middle" class="train-row" routerLink="/fish-train/{{train.$key}}">
     <div nz-col [nzXs]="24" [nzSm]="8" [nzXl]="4">
-      <app-user-avatar *ngIf="train.conductor" [userId]="train.conductor" messageKey="FISH_TRAIN.Train_conductor" [width]="32"></app-user-avatar>
-      <nz-avatar *ngIf="!train.conductor" nzText="?" nz-tooltip [nzTooltipTitle]="'FISH_TRAIN.No_conductor' | translate"></nz-avatar>
+      @if (train.conductor) {
+        <app-user-avatar [userId]="train.conductor" messageKey="FISH_TRAIN.Train_conductor" [width]="32"></app-user-avatar>
+      }
+      @if (!train.conductor) {
+        <nz-avatar nzText="?" nz-tooltip [nzTooltipTitle]="'FISH_TRAIN.No_conductor' | translate"></nz-avatar>
+      }
       &nbsp;{{train.name || ('FISH_TRAIN.Details_title' | translate:{ id: train.$key })}}
     </div>
     <div nz-col [nzXs]="24" [nzSm]="4" [nzXl]="3">
-      <ng-container [ngSwitch]="train.status">
-        <nz-tag class="custom-tag" [style.border-color]="'#f50'" *ngSwitchCase="FishTrainStatus.STOPPED">{{'FISH_TRAIN.Stopped' | translate}}</nz-tag>
-        <nz-tag class="custom-tag" [style.border-color]="'#108ee9'" *ngSwitchCase="FishTrainStatus.RUNNING">{{'FISH_TRAIN.Running' | translate}}</nz-tag>
-        <nz-tag *ngSwitchCase="FishTrainStatus.WAITING">{{'FISH_TRAIN.Waiting' | translate}}</nz-tag>
-      </ng-container>
-      <nz-tag class="custom-tag" [style.border-color]="'#f50'" *ngIf="!train.public"
-              nz-tooltip [nzTooltipTitle]="'FISH_TRAIN.Private_display_explain' | translate">{{'COMMON.Private' | translate}}</nz-tag>
+      @switch (train.status) {
+        @case (FishTrainStatus.STOPPED) {
+          <nz-tag class="custom-tag" [style.border-color]="'#f50'">{{'FISH_TRAIN.Stopped' | translate}}</nz-tag>
+        }
+        @case (FishTrainStatus.RUNNING) {
+          <nz-tag class="custom-tag" [style.border-color]="'#108ee9'">{{'FISH_TRAIN.Running' | translate}}</nz-tag>
+        }
+        @case (FishTrainStatus.WAITING) {
+          <nz-tag>{{'FISH_TRAIN.Waiting' | translate}}</nz-tag>
+        }
+      }
+      @if (!train.public) {
+        <nz-tag class="custom-tag" [style.border-color]="'#f50'"
+        nz-tooltip [nzTooltipTitle]="'FISH_TRAIN.Private_display_explain' | translate">{{'COMMON.Private' | translate}}</nz-tag>
+      }
     </div>
     <div nz-col [nzXs]="24" [nzSm]="6" [nzMd]="6" [nzXl]="3">
       <nz-tag>{{'FISH_TRAIN.Fish_count' | translate: { amount: train.fish.length } }}</nz-tag>
@@ -78,7 +102,7 @@
         </div>
         <div>
           <a nz-button href="https://ff14fish.carbuncleplushy.com/trainpass?tcid={{train.$key}}" target="_blank"
-             (click)="$event.stopPropagation()">
+            (click)="$event.stopPropagation()">
             {{'FISH_TRAIN.Open_in_carbuncleplushy' | translate}}
           </a>
         </div>

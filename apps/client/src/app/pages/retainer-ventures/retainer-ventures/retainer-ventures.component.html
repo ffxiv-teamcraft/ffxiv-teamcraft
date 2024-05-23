@@ -2,92 +2,111 @@
 
 <div fxLayout="column" fxLayoutGap="10px">
   <i>{{'RETAINER_VENTURES.Description' | translate}}</i>
-  <ng-container *ngIf="retainersMissingStats$ | async as retainersMissingStats">
-    <nz-alert *ngIf="retainersMissingStats.length > 0" nzType="warning" nzShowIcon [nzMessage]="'RETAINER_VENTURES.Missing_gear' | translate"
-              [nzDescription]="descriptionTpl">
-      <ng-template #descriptionTpl>
-        {{'RETAINER_VENTURES.Missing_gear_description' | translate}}: <span *ngFor="let retainer of retainersMissingStats;let last = last">{{retainer.name}}<span *ngIf="!last">, </span></span>
+  @if (retainersMissingStats$ | async; as retainersMissingStats) {
+    @if (retainersMissingStats.length > 0) {
+      <nz-alert nzType="warning" nzShowIcon [nzMessage]="'RETAINER_VENTURES.Missing_gear' | translate"
+        [nzDescription]="descriptionTpl">
+        <ng-template #descriptionTpl>
+          {{'RETAINER_VENTURES.Missing_gear_description' | translate}}: @for (retainer of retainersMissingStats; track retainer; let last = $last) {
+          <span>{{retainer.name}}@if (!last) {
+            <span>, </span>
+          }</span>
+        }
       </ng-template>
     </nz-alert>
-  </ng-container>
-  <ng-container *ngIf="platform.isDesktop()">
-    <div *ngIf="retainersWithStats$ | async as retainers" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+  }
+}
+@if (platform.isDesktop()) {
+  @if (retainersWithStats$ | async; as retainers) {
+    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
       <div>{{'RETAINER_VENTURES.Use_retainer' | translate}}:&nbsp;</div>
       <nz-select [nzPlaceHolder]="'RETAINER_VENTURES.Select_retainer' | translate"
-                 [ngModel]="null"
-                 (ngModelChange)="selectRetainer($event)"
-                 class="retainer-filter"
-                 nzShowSearch>
-        <nz-option *ngFor="let retainer of retainers" nzLabel="{{retainer.name}} (ilvl {{retainer.ilvl}})" [nzValue]="retainer"></nz-option>
+        [ngModel]="null"
+        (ngModelChange)="selectRetainer($event)"
+        class="retainer-filter"
+        nzShowSearch>
+        @for (retainer of retainers; track retainer) {
+          <nz-option nzLabel="{{retainer.name}} (ilvl {{retainer.ilvl}})" [nzValue]="retainer"></nz-option>
+        }
       </nz-select>
     </div>
-  </ng-container>
+  }
+}
 
-  <form nz-form nzLayout="inline" [formGroup]="form" (ngSubmit)="filters$.next(form.value)" fxLayout="row">
-    <nz-form-item>
-      <nz-form-label>{{'DESYNTH.Job' | translate}}</nz-form-label>
-      <nz-form-control>
-        <nz-select formControlName="job" [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Select_job' | translate"
-                   class="job-filter"
-                   nzShowSearch>
-          <nz-option *ngFor="let job of jobList$ | async" [nzLabel]="job | i18nRow:'jobName' | i18n" [nzValue]="job" nzCustomContent>
+<form nz-form nzLayout="inline" [formGroup]="form" (ngSubmit)="filters$.next(form.value)" fxLayout="row">
+  <nz-form-item>
+    <nz-form-label>{{'DESYNTH.Job' | translate}}</nz-form-label>
+    <nz-form-control>
+      <nz-select formControlName="job" [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Select_job' | translate"
+        class="job-filter"
+        nzShowSearch>
+        @for (job of jobList$ | async; track job) {
+          <nz-option [nzLabel]="job | i18nRow:'jobName' | i18n" [nzValue]="job" nzCustomContent>
             <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
               <div class="companion-svg job-icon" [innerHtml]="job | jobUnicode"></div>
               <div>{{job | i18nRow:'jobName' | i18n}}</div>
             </div>
           </nz-option>
-        </nz-select>
-      </nz-form-control>
-    </nz-form-item>
+        }
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label>{{'Level' | translate}}</nz-form-label>
+    <nz-form-control>
+      <nz-input-number formControlName="level" nzMin="1"></nz-input-number>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label>{{'RETAINER_VENTURES.Retainer_ilvl' | translate}}</nz-form-label>
+    <nz-form-control>
+      <nz-input-number formControlName="ilvl" nzMin="1"></nz-input-number>
+    </nz-form-control>
+  </nz-form-item>
+  @if (form.get('job').value >= 16 && form.get('job').value <= 18) {
     <nz-form-item>
-      <nz-form-label>{{'Level' | translate}}</nz-form-label>
-      <nz-form-control>
-        <nz-input-number formControlName="level" nzMin="1"></nz-input-number>
-      </nz-form-control>
-    </nz-form-item>
-    <nz-form-item>
-      <nz-form-label>{{'RETAINER_VENTURES.Retainer_ilvl' | translate}}</nz-form-label>
-      <nz-form-control>
-        <nz-input-number formControlName="ilvl" nzMin="1"></nz-input-number>
-      </nz-form-control>
-    </nz-form-item>
-    <nz-form-item *ngIf="form.get('job').value >= 16 && form.get('job').value <= 18">
       <nz-form-label>{{'RETAINER_VENTURES.Gathering' | translate}}</nz-form-label>
       <nz-form-control>
         <nz-input-number formControlName="gathering" nzMin="0"></nz-input-number>
       </nz-form-control>
     </nz-form-item>
-    <nz-form-item *ngIf="form.get('job').value >= 16 && form.get('job').value <= 18">
+  }
+  @if (form.get('job').value >= 16 && form.get('job').value <= 18) {
+    <nz-form-item>
       <nz-form-label>{{73 | i18nRow:'baseParams' | i18n}}</nz-form-label>
       <nz-form-control>
         <nz-input-number formControlName="perception" nzMin="0"></nz-input-number>
       </nz-form-control>
     </nz-form-item>
-    <nz-form-item>
-      <nz-form-label>{{'MARKETBOARD.Server' | translate}}</nz-form-label>
-      <nz-form-control>
-        <nz-select formControlName="server"
-                   [nzPlaceHolder]="'Server_name' | translate"
-                   class="server-picker"
-                   nzShowSearch>
-          <nz-option *ngFor="let server of servers$ | async" [nzLabel]="server"
-                     [nzValue]="server">
+  }
+  <nz-form-item>
+    <nz-form-label>{{'MARKETBOARD.Server' | translate}}</nz-form-label>
+    <nz-form-control>
+      <nz-select formControlName="server"
+        [nzPlaceHolder]="'Server_name' | translate"
+        class="server-picker"
+        nzShowSearch>
+        @for (server of servers$ | async; track server) {
+          <nz-option [nzLabel]="server"
+            [nzValue]="server">
           </nz-option>
-        </nz-select>
-      </nz-form-control>
-    </nz-form-item>
-    <nz-form-item>
-      <nz-form-control>
-        <button [disabled]="form.invalid" nz-button type="submit" nzType="primary">
-          <i nz-icon nzType="search"></i>{{'GC_SUPPLY.Search' | translate}}
-        </button>
-      </nz-form-control>
-    </nz-form-item>
-  </form>
+        }
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control>
+      <button [disabled]="form.invalid" nz-button type="submit" nzType="primary">
+        <i nz-icon nzType="search"></i>{{'GC_SUPPLY.Search' | translate}}
+      </button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
 
-  <div>
-    <app-page-loader [loading]="loading">
-      <div *ngFor="let task of results$ | async;odd as odd" nz-row [class.odd]="odd">
+<div>
+  <app-page-loader [loading]="loading">
+    @for (task of results$ | async; track task; let odd = $odd) {
+      <div nz-row [class.odd]="odd">
         <div nz-col nzMd="1" fxLayout="row" fxLayoutAlign="center center">
           <app-item-icon [itemId]="task.item" [width]="32"></app-item-icon>
         </div>
@@ -108,9 +127,10 @@
         </div>
         <div nz-col nzMd="3" fxLayout="row" fxLayoutAlign="flex-start center">{{'RETAINER_VENTURES.Task_level' | translate}}: {{task.lvl}}</div>
         <div nz-col nzMd="3" fxLayout="row" fxLayoutAlign="flex-start center"><img alt="exp" class="img-icon"
-                                                                                   src="./assets/icons/exp.png">&nbsp;{{task.exp | number:'1.0-0':translate.currentLang}}
+          src="./assets/icons/exp.png">&nbsp;{{task.exp | number:'1.0-0':translate.currentLang}}
         </div>
       </div>
-    </app-page-loader>
-  </div>
+    }
+  </app-page-loader>
+</div>
 </div>

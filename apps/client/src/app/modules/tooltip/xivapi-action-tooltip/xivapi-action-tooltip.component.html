@@ -5,27 +5,35 @@
     </div>
     <div class="name">
       <div>{{action | i18n}}</div>
-      <i *ngIf="state > 1" class="state" [style.color]="stateColor">{{('SIMULATOR.STATE.' + stateName) | translate}}</i>
+      @if (state > 1) {
+        <i class="state" [style.color]="stateColor">{{('SIMULATOR.STATE.' + stateName) | translate}}</i>
+      }
     </div>
   </div>
   <div class="description">
     <span [innerHtml]="action.description | i18n | nzSanitizer:'html'"></span>
   </div>
   <div class="details">
-    <div *ngFor="let row of details" nz-row nzGutter="10">
-      <div [nzXs]="12" nz-col>
-        <p class="detail-name">
-          {{row.name | translate}}
-        </p>
+    @for (row of details; track row) {
+      <div nz-row nzGutter="10">
+        <div [nzXs]="12" nz-col>
+          <p class="detail-name">
+            {{row.name | translate}}
+          </p>
+        </div>
+        <div [nzXs]="12" nz-col>
+          @if (!row.requiresPipe) {
+            <p class="detail-value">
+              {{row.value}}
+            </p>
+          }
+          @if (row.requiresPipe) {
+            <p class="detail-value">
+              {{row.value | i18n}}
+            </p>
+          }
+        </div>
       </div>
-      <div [nzXs]="12" nz-col>
-        <p *ngIf="!row.requiresPipe" class="detail-value">
-          {{row.value}}
-        </p>
-        <p *ngIf="row.requiresPipe" class="detail-value">
-          {{row.value | i18n}}
-        </p>
-      </div>
-    </div>
+    }
   </div>
 </div>

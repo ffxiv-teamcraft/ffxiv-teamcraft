@@ -9,7 +9,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
-import { NgFor, NgIf } from '@angular/common';
+
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { FlexModule } from '@angular/flex-layout/flex';
 
@@ -24,7 +24,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
             multi: true
         }],
     standalone: true,
-    imports: [FlexModule, NzSelectModule, FormsModule, NgFor, NgIf, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, ItemIconComponent, I18nNameComponent, I18nPipe, TranslateModule, ItemNamePipe]
+    imports: [FlexModule, NzSelectModule, FormsModule, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, ItemIconComponent, I18nNameComponent, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class PredatorsInputComponent implements ControlValueAccessor {
 

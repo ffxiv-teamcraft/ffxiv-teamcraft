@@ -23,7 +23,7 @@ import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component
 import { ItemRarityDirective } from '../../../core/item-rarity/item-rarity.directive';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-reduced-from',
@@ -31,7 +31,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     styleUrls: ['./reduced-from.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, FlexModule, NgFor, NzCardModule, ItemRarityDirective, ItemIconComponent, NzListModule, NodeDetailsComponent, MapPositionComponent, FishingBaitComponent, NzToolTipModule, NzButtonModule, NzWaveModule, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, NodeTypeIconPipe, ClosestAetherytePipe, LazyIconPipe]
+    imports: [FlexModule, NzCardModule, ItemRarityDirective, ItemIconComponent, NzListModule, NodeDetailsComponent, MapPositionComponent, FishingBaitComponent, NzToolTipModule, NzButtonModule, NzWaveModule, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, NodeTypeIconPipe, ClosestAetherytePipe, LazyIconPipe]
 })
 export class ReducedFromComponent extends ItemDetailsPopup<number[]> implements OnInit {
 

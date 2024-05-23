@@ -1,7 +1,9 @@
 <div fxLayout="column" fxLayoutGap="10px">
   <p>{{'COMMISSIONS.FIRED.Please_pick_reason' | translate}}</p>
   <nz-radio-group [(ngModel)]="pickedReason">
-    <label nz-radio *ngFor="let reason of firedReasons" [nzValue]="reason.value">{{reason.label | translate}}</label>
+    @for (reason of firedReasons; track reason) {
+      <label nz-radio [nzValue]="reason.value">{{reason.label | translate}}</label>
+    }
   </nz-radio-group>
   <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
     <div>

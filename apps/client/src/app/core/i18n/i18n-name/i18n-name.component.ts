@@ -7,7 +7,7 @@ import { observeInput } from '../../rxjs/observe-input';
 import { I18nToolsService } from '../../tools/i18n-tools.service';
 import { I18nPipe } from '../../i18n.pipe';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
-import { NgIf } from '@angular/common';
+
 
 @Component({
     selector: 'app-i18n-name',
@@ -15,7 +15,7 @@ import { NgIf } from '@angular/common';
     styleUrls: ['./i18n-name.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NzSkeletonModule, I18nPipe]
+    imports: [NzSkeletonModule, I18nPipe]
 })
 export class I18nNameComponent {
 

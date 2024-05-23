@@ -38,14 +38,14 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FormsModule } from '@angular/forms';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
     selector: 'app-alarms-sidebar',
     templateUrl: './alarms-sidebar.component.html',
     styleUrls: ['./alarms-sidebar.component.less'],
     standalone: true,
-    imports: [NgIf, FlexModule, NzSwitchModule, FormsModule, NgFor, NzButtonModule, NzIconModule, NzToolTipModule, ItemIconComponent, NzWaveModule, GatheringItemUsesComponent, ItemNameClipboardDirective, TimerTooltipDirective, FishingBaitComponent, RouterLink, NzPopconfirmModule, NzDividerModule, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, ItemNamePipe, ActionIconPipe, NodeTypeIconPipe, ClosestAetherytePipe, XivapiIconPipe, LazyIconPipe, HooksetActionIdPipe, LazyRowPipe]
+    imports: [FlexModule, NzSwitchModule, FormsModule, NzButtonModule, NzIconModule, NzToolTipModule, ItemIconComponent, NzWaveModule, GatheringItemUsesComponent, ItemNameClipboardDirective, TimerTooltipDirective, FishingBaitComponent, RouterLink, NzPopconfirmModule, NzDividerModule, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, ItemNamePipe, ActionIconPipe, NodeTypeIconPipe, ClosestAetherytePipe, XivapiIconPipe, LazyIconPipe, HooksetActionIdPipe, LazyRowPipe]
 })
 export class AlarmsSidebarComponent implements OnInit {
 

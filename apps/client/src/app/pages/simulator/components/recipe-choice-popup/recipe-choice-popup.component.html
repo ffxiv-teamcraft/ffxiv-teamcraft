@@ -1,8 +1,10 @@
-<nz-alert *ngIf="warning" [nzMessage]="warning | translate" nzShowIcon nzType="warning">
-</nz-alert>
+@if (warning) {
+  <nz-alert [nzMessage]="warning | translate" nzShowIcon nzType="warning">
+  </nz-alert>
+}
 <nz-input-group [nzSuffix]="suffixIconSearch">
   <input #searchInput (keyup)="query$.next(searchInput.value)" autofocus nz-input
-         placeholder="{{'SIMULATOR.Recipe_picker_placeholder' | translate}}" type="text">
+    placeholder="{{'SIMULATOR.Recipe_picker_placeholder' | translate}}" type="text">
 </nz-input-group>
 <ng-template #suffixIconSearch>
   <i nz-icon nzType="search"></i>
@@ -11,8 +13,8 @@
   <ng-template #recipeTemplate let-recipe>
     <nz-list-item [nzContent]="content">
       <nz-list-item-meta [nzAvatar]="avatar"
-                         [nzDescription]="description"
-                         [nzTitle]="titleTpl">
+        [nzDescription]="description"
+        [nzTitle]="titleTpl">
         <ng-template #titleTpl>
           <app-i18n-name content="items" [id]="recipe.itemId"></app-i18n-name>
         </ng-template>
@@ -28,24 +30,29 @@
         </ng-template>
       </nz-list-item-meta>
       <ng-template #content>
-        <a (click)="close()" [nzShape]="'circle'" [nzType]="'primary'" nz-button
-           *ngIf="!pickRotation"
-           routerLink="/simulator/{{recipe.itemId}}/{{recipe.recipeId}}/{{rotationId}}" [queryParams]="statsStr?{stats: statsStr}:null">
-          <i nz-icon nzType="check"></i>
-        </a>
+        @if (!pickRotation) {
+          <a (click)="close()" [nzShape]="'circle'" [nzType]="'primary'" nz-button
+            routerLink="/simulator/{{recipe.itemId}}/{{recipe.recipeId}}/{{rotationId}}" [queryParams]="statsStr?{stats: statsStr}:null">
+            <i nz-icon nzType="check"></i>
+          </a>
+        }
 
-        <button (click)="openRotationPicker(recipe)" [nzShape]="'circle'" [nzType]="'primary'" nz-button
-                *ngIf="pickRotation">
-          <i nz-icon nzType="check"></i>
-        </button>
+        @if (pickRotation) {
+          <button (click)="openRotationPicker(recipe)" [nzShape]="'circle'" [nzType]="'primary'" nz-button
+            >
+            <i nz-icon nzType="check"></i>
+          </button>
+        }
       </ng-template>
     </nz-list-item>
   </ng-template>
 </nz-list>
-<div *ngIf="showCustom">
-  <nz-divider [nzText]="'Or' | translate"></nz-divider>
-  <a (click)="close()" class="new-list-button" nz-button nzBlock
-     routerLink="/simulator/custom/{{rotationId}}" [queryParams]="statsStr?{stats: statsStr}:null">
-    {{'SIMULATOR.Create_a_custom_rotation' | translate}}
-  </a>
-</div>
+@if (showCustom) {
+  <div>
+    <nz-divider [nzText]="'Or' | translate"></nz-divider>
+    <a (click)="close()" class="new-list-button" nz-button nzBlock
+      routerLink="/simulator/custom/{{rotationId}}" [queryParams]="statsStr?{stats: statsStr}:null">
+      {{'SIMULATOR.Create_a_custom_rotation' | translate}}
+    </a>
+  </div>
+}

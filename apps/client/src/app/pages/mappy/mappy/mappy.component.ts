@@ -27,7 +27,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
-import { AsyncPipe, DatePipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-mappy',
@@ -35,7 +35,7 @@ import { AsyncPipe, DatePipe, NgFor, NgIf } from '@angular/common';
   styleUrls: ['./mappy.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, NzDividerModule, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, NgFor, NzToolTipModule, NzStatisticModule, NzEmptyModule, NzPopconfirmModule, PageLoaderComponent, AsyncPipe, DatePipe, ItemNamePipe, MapNamePipe, I18nPipe, TranslateModule, I18nRowPipe]
+  imports: [NzDividerModule, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, NzToolTipModule, NzStatisticModule, NzEmptyModule, NzPopconfirmModule, PageLoaderComponent, AsyncPipe, DatePipe, ItemNamePipe, MapNamePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class MappyComponent extends TeamcraftComponent {
 

@@ -1,232 +1,249 @@
 <div class="menu-buttons" fxLayout="row" fxLayoutGap="5px">
-  <app-marketboard-icon *ngIf="isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS) && itemId > 0" [itemId]="itemId"
-                        [showHistory]="finalItem"></app-marketboard-icon>
-  <ng-container *ngIf="isButton(itemRowTypes.COPY_NAME_NOT_FAVORITE)">
+  @if (isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS) && itemId > 0) {
+    <app-marketboard-icon [itemId]="itemId"
+    [showHistory]="finalItem"></app-marketboard-icon>
+  }
+  @if (isButton(itemRowTypes.COPY_NAME_NOT_FAVORITE)) {
     <button [itemNameCopy]="itemId"
-            [forceCopyMode]="notFavoriteCopyMode"
-            nz-button
-            nzShape="circle"
-            nzSize="small">
+      [forceCopyMode]="notFavoriteCopyMode"
+      nz-button
+      nzShape="circle"
+      nzSize="small">
       <i nz-icon nzType="copy"></i>
     </button>
-  </ng-container>
+  }
 
-  <ng-container *ngIf="!overlay && isButton(itemRowTypes.ATTACH_ROTATION) && isCraft && itemId > 0">
-    <button (click)="attachRotation.emit()" *ngIf="!attachedRotation; else detachRotationRef"
-            [nzTooltipTitle]="'LIST.ROTATION.Attach' | translate" nz-button
-            nz-tooltip nzShape="circle"
-            nzSize="small">
-      <i nz-icon nzType="link"></i>
-    </button>
-    <ng-template #detachRotationRef>
+  @if (!overlay && isButton(itemRowTypes.ATTACH_ROTATION) && isCraft && itemId > 0) {
+    @if (!attachedRotation) {
+      <button (click)="attachRotation.emit()"
+        [nzTooltipTitle]="'LIST.ROTATION.Attach' | translate" nz-button
+        nz-tooltip nzShape="circle"
+        nzSize="small">
+        <i nz-icon nzType="link"></i>
+      </button>
+    } @else {
       <button (click)="detachRotation.emit()" [nzTooltipTitle]="'LIST.ROTATION.Detach' | translate" nz-button nz-tooltip
-              nzShape="circle" nzSize="small"
-              nzDanger>
+        nzShape="circle" nzSize="small"
+        nzDanger>
         <i nz-icon nzType="disconnect"></i>
       </button>
-    </ng-template>
-  </ng-container>
+    }
+  }
 
-  <ng-container *ngIf="isButton(itemRowTypes.COMMENTS)  && !offlineList">
+  @if (isButton(itemRowTypes.COMMENTS)  && !offlineList) {
     <button (click)="openCommentsPopup.emit()" [nzTooltipTitle]="'COMMENTS.Title' | translate" nz-button nz-tooltip
-            nzShape="circle"
-            nzSize="small">
+      nzShape="circle"
+      nzSize="small">
       <nz-badge [nzDot]="commentBadge">
         <i nz-icon nzType="message"></i>
       </nz-badge>
     </button>
-  </ng-container>
+  }
 
-  <ng-container *ngIf="isButton(itemRowTypes.ADD_ALL_ALARMS)">
-    <button (click)="addAllAlarms.emit()" *ngIf="hasAlarms"
-            [nzTooltipTitle]="'LIST_DETAILS.Add_all_item_alarms' | translate" nz-button
-            nz-tooltip
-            nzShape="circle" nzSize="small">
-      <i nz-icon nzType="bell"></i>
-    </button>
-  </ng-container>
-
-  <ng-container *ngIf="isButton(itemRowTypes.ASSIGN_TEAM_MEMBER)">
-    <ng-container *ngIf="team">
-      <button (click)="$event.stopPropagation()"
-              *ngIf="team?.leader === userId || (!team?.notFound && team?.isOfficer(userId))"
-              [nzDropdownMenu]="menu"
-              [nzPlacement]="'bottomLeft'"
-              [nzShape]="'circle'" [nzTooltipTitle]="'TEAMS.Assign_team_member' | translate"
-              [nzTrigger]="'click'"
-              nz-button nz-dropdown
-              nz-tooltip nzSize="small">
-        <i nz-icon nzType="team"></i>
+  @if (isButton(itemRowTypes.ADD_ALL_ALARMS)) {
+    @if (hasAlarms) {
+      <button (click)="addAllAlarms.emit()"
+        [nzTooltipTitle]="'LIST_DETAILS.Add_all_item_alarms' | translate" nz-button
+        nz-tooltip
+        nzShape="circle" nzSize="small">
+        <i nz-icon nzType="bell"></i>
       </button>
+    }
+  }
+
+  @if (isButton(itemRowTypes.ASSIGN_TEAM_MEMBER)) {
+    @if (team) {
+      @if (team?.leader === userId || (!team?.notFound && team?.isOfficer(userId))) {
+        <button (click)="$event.stopPropagation()"
+          [nzDropdownMenu]="menu"
+          [nzPlacement]="'bottomLeft'"
+          [nzShape]="'circle'" [nzTooltipTitle]="'TEAMS.Assign_team_member' | translate"
+          [nzTrigger]="'click'"
+          nz-button nz-dropdown
+          nz-tooltip nzSize="small">
+          <i nz-icon nzType="team"></i>
+        </button>
+      }
       <nz-dropdown-menu #menu="nzDropdownMenu" class="item-options">
         <ul class="team-members" nz-menu>
-          <ng-container *ngFor="let member of team?.members">
-            <ng-container *ngIf="(workingOnIt || [])?.indexOf(member) === -1">
-              <li (click)="assignTeamMember.emit({userId: member, team: team})"
-                  *ngIf="member | characterName | async as charName"
+          @for (member of team?.members; track member) {
+            @if ((workingOnIt || [])?.indexOf(member) === -1) {
+              @if (member | characterName | async; as charName) {
+                <li (click)="assignTeamMember.emit({userId: member, team: team})"
                   nz-menu-item>{{charName}}
-              </li>
-            </ng-container>
-          </ng-container>
+                </li>
+              }
+            }
+          }
         </ul>
       </nz-dropdown-menu>
-    </ng-container>
-  </ng-container>
+    }
+  }
 
-  <ng-container *ngIf="isButton(itemRowTypes.WORK_ON_IT)">
-    <button (click)="setWorkingOnIt.emit(userId)"
-            *ngIf="(workingOnIt || [])?.indexOf(userId) === -1 && loggedIn"
-            [nzTooltipTitle]="'Work_on_it' | translate" nz-button nz-tooltip
-            nzShape="circle"
-            nzSize="small">
-      <i nz-icon nzType="user-add"></i>
-    </button>
-    <ng-container *ngIf="team; else removeSingleAssignment">
+  @if (isButton(itemRowTypes.WORK_ON_IT)) {
+    @if ((workingOnIt || [])?.indexOf(userId) === -1 && loggedIn) {
+      <button (click)="setWorkingOnIt.emit(userId)"
+        [nzTooltipTitle]="'Work_on_it' | translate" nz-button nz-tooltip
+        nzShape="circle"
+        nzSize="small">
+        <i nz-icon nzType="user-add"></i>
+      </button>
+    }
+    @if (team) {
       <button (click)="$event.stopPropagation()" [nzDropdownMenu]="menu"
-              [nzPlacement]="'bottomLeft'" [nzShape]="'circle'"
-              [nzTooltipTitle]="'Remove_work_on_it' | translate"
-              [nzTrigger]="'click'"
-              nz-button nz-dropdown
-              nz-tooltip nzSize="small">
+        [nzPlacement]="'bottomLeft'" [nzShape]="'circle'"
+        [nzTooltipTitle]="'Remove_work_on_it' | translate"
+        [nzTrigger]="'click'"
+        nz-button nz-dropdown
+        nz-tooltip nzSize="small">
         <i nz-icon nzType="user-delete"></i>
       </button>
       <nz-dropdown-menu #menu="nzDropdownMenu" class="item-options">
         <ul class="team-members" nz-menu>
-          <ng-container *ngFor="let user of workingOnIt">
-            <li (click)="removeWorkingOnIt.emit(user)" *ngIf="user | characterName | async as charName"
+          @for (user of workingOnIt; track user) {
+            @if (user | characterName | async; as charName) {
+              <li (click)="removeWorkingOnIt.emit(user)"
                 [nzDisabled]="team?.leader !== userId && (team?.notFound || !team?.isOfficer(userId)) && user !== userId"
                 nz-menu-item>{{charName}}
-            </li>
-          </ng-container>
+              </li>
+            }
+          }
         </ul>
       </nz-dropdown-menu>
-    </ng-container>
-    <ng-template #removeSingleAssignment>
-      <button (click)="removeWorkingOnIt.emit(userId)"
-              *ngIf="(workingOnIt || [])?.indexOf(userId) > -1 && loggedIn"
-              [nzShape]="'circle'"
-              [nzTooltipTitle]="'Remove_work_on_it' | translate"
-              nz-button nz-dropdown
-              nz-tooltip nzSize="small">
-        <i nz-icon nzType="user-delete"></i>
-      </button>
-    </ng-template>
-  </ng-container>
+    } @else {
+      @if ((workingOnIt || [])?.indexOf(userId) > -1 && loggedIn) {
+        <button (click)="removeWorkingOnIt.emit(userId)"
+          [nzShape]="'circle'"
+          [nzTooltipTitle]="'Remove_work_on_it' | translate"
+          nz-button nz-dropdown
+          nz-tooltip nzSize="small">
+          <i nz-icon nzType="user-delete"></i>
+        </button>
+      }
+    }
+  }
 
-  <ng-container *ngIf="isButton(itemRowTypes.REQUIREMENTS)">
+  @if (isButton(itemRowTypes.REQUIREMENTS)) {
     <button (click)="openRequirementsPopup.emit()" [nzTooltipTitle]="'Requirements_for_craft' | translate" nz-button
-            nz-tooltip nzShape="circle"
-            nzSize="small">
+      nz-tooltip nzShape="circle"
+      nzSize="small">
       <i nz-icon nzType="bars"></i>
     </button>
-  </ng-container>
+  }
 
-  <ng-container *ngIf="isButton(itemRowTypes.ADD_TAG) && settings.itemTagsEnabled">
+  @if (isButton(itemRowTypes.ADD_TAG) && settings.itemTagsEnabled) {
     <button (click)="showTagInput.emit()" [nzTooltipTitle]="'LIST_DETAILS.New_tag' | translate" nz-button nz-tooltip
-            nzShape="circle"
-            nzSize="small">
+      nzShape="circle"
+      nzSize="small">
       <i nz-icon nzType="tag"></i>
     </button>
-  </ng-container>
+  }
 
-  <ng-container *ngIf="isButton(itemRowTypes.EDIT_AMOUNT)">
-    <button (click)="changeAmount.emit()" *ngIf="finalItem && permissionLevel >= 30"
-            [nzTooltipTitle]="'Edit_amount' | translate" nz-button
-            nz-tooltip nzShape="circle" nzSize="small">
-      <i nz-icon nzType="diff"></i>
-    </button>
-  </ng-container>
+  @if (isButton(itemRowTypes.EDIT_AMOUNT)) {
+    @if (finalItem && permissionLevel >= 30) {
+      <button (click)="changeAmount.emit()"
+        [nzTooltipTitle]="'Edit_amount' | translate" nz-button
+        nz-tooltip nzShape="circle" nzSize="small">
+        <i nz-icon nzType="diff"></i>
+      </button>
+    }
+  }
 
-  <ng-container *ngIf="isButton(itemRowTypes.MARK_HQ) && itemId > 0">
-    <button (click)="requiredAsHQ = true; requiredAsHQChange.emit(requiredAsHQ)"
-            *ngIf="permissionLevel >= 30 && requiredForFinalCraft === 0 && !requiredAsHQ"
-            [nzTooltipTitle]="'Mark_HQ' | translate"
-            nz-button
-            nz-tooltip
-            nzShape="circle" nzSize="small">
-      <i nz-icon nzType="highlight"></i>
-    </button>
+  @if (isButton(itemRowTypes.MARK_HQ) && itemId > 0) {
+    @if (permissionLevel >= 30 && requiredForFinalCraft === 0 && !requiredAsHQ) {
+      <button (click)="requiredAsHQ = true; requiredAsHQChange.emit(requiredAsHQ)"
+        [nzTooltipTitle]="'Mark_HQ' | translate"
+        nz-button
+        nz-tooltip
+        nzShape="circle" nzSize="small">
+        <i nz-icon nzType="highlight"></i>
+      </button>
+    }
+    @if ((requiredForFinalCraft > 0 || requiredAsHQ) && permissionLevel >= 30 && itemId > 0) {
+      <button (click)="requiredAsHQ = false; requiredAsHQChange.emit(requiredAsHQ)"
+        [nzTooltipTitle]="'Unmark_HQ' | translate" nz-button
+        nz-tooltip
+        nzShape="circle"
+        nzSize="small" nzDanger>
+        <i nz-icon nzType="highlight"></i>
+      </button>
+    }
+  }
 
-    <button (click)="requiredAsHQ = false; requiredAsHQChange.emit(requiredAsHQ)"
-            *ngIf="(requiredForFinalCraft > 0 || requiredAsHQ) && permissionLevel >= 30 && itemId > 0"
-            [nzTooltipTitle]="'Unmark_HQ' | translate" nz-button
-            nz-tooltip
-            nzShape="circle"
-            nzSize="small" nzDanger>
-      <i nz-icon nzType="highlight"></i>
-    </button>
-  </ng-container>
-
-  <ng-container *ngIf="isButton(itemRowTypes.ADD_TO_ANOTHER_LIST)">
+  @if (isButton(itemRowTypes.ADD_TO_ANOTHER_LIST)) {
     <button (click)="addToList.emit()" [nzTooltipTitle]="'LIST_DETAILS.LAYOUT_DIALOG.ITEMS.ADD_TO_ANOTHER_LIST' | translate" nz-button
-            nz-tooltip
-            nzShape="circle"
-            nzSize="small">
+      nz-tooltip
+      nzShape="circle"
+      nzSize="small">
       <i nz-icon nzType="plus"></i>
     </button>
-  </ng-container>
+  }
 
-  <ng-container *ngIf="isButton(itemRowTypes.REMOVE_ITEM) && finalItem && permissionLevel >= 30">
+  @if (isButton(itemRowTypes.REMOVE_ITEM) && finalItem && permissionLevel >= 30) {
     <button (nzOnConfirm)="removeItem.emit()" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
-            nz-popconfirm
-            nzShape="circle"
-            nzSize="small"
-            nzDanger>
+      nz-popconfirm
+      nzShape="circle"
+      nzSize="small"
+      nzDanger>
       <i nz-icon nzType="delete"></i>
     </button>
-  </ng-container>
-  <ng-container *ngIf="showLogCompletionButton && itemId > 0">
-    <button (click)="markAsDoneInLog.emit()" *ngIf="isButton(itemRowTypes.MARK_AS_DONE_IN_LOG)"
-            [nzTooltipTitle]="'LOG_TRACKER.Mark_as_done_external' | translate"
-            nz-button
-            nz-tooltip
-            nzShape="circle"
-            nzSize="small">
-      <i nz-icon nzType="file-done"></i>
-    </button>
-  </ng-container>
+  }
+  @if (showLogCompletionButton && itemId > 0) {
+    @if (isButton(itemRowTypes.MARK_AS_DONE_IN_LOG)) {
+      <button (click)="markAsDoneInLog.emit()"
+        [nzTooltipTitle]="'LOG_TRACKER.Mark_as_done_external' | translate"
+        nz-button
+        nz-tooltip
+        nzShape="circle"
+        nzSize="small">
+        <i nz-icon nzType="file-done"></i>
+      </button>
+    }
+  }
 
-  <ng-container *ngIf="!overlay">
+  @if (!overlay) {
     <button (click)="$event.stopPropagation();openMenu($event)" [disabled]="permissionLevel < 20"
-            tutorialStep="TUTORIAL.LIST.More_actions_button"
-            tutorialStepIndex="10"
-            nz-button
-            nzShape="circle"
-            nzSize="small">
+      tutorialStep="TUTORIAL.LIST.More_actions_button"
+      tutorialStepIndex="10"
+      nz-button
+      nzShape="circle"
+      nzSize="small">
       <nz-badge [nzDot]="commentBadge && !isButton(itemRowTypes.COMMENTS)">
         <i nz-icon nzType="ellipsis"></i>
       </nz-badge>
     </button>
-  </ng-container>
+  }
   <div #menuHost></div>
-  <button (click)="checkMasterbooks.emit(missingBooks)"
-          *ngIf="missingBooks?.length > 0 && missingBooks?.length === masterbooks?.length"
-          [nzTooltipTitle]="'LIST_DETAILS.Missing_masterbook' | translate" class="missing-masterbooks" nz-button
-          nz-tooltip
-          nzGhost
-          nzShape="circle"
-          nzSize="small"
-          nzDanger>
-    <i nz-icon nzType="warning" nzTheme="outline"></i>
-  </button>
-  <ng-container *ngIf="attachedRotation">
-    <ng-container *ngIf="recipe$ | async as recipe">
-      <ng-container *ngIf="rotation$ | async as rotation">
+  @if (missingBooks?.length > 0 && missingBooks?.length === masterbooks?.length) {
+    <button (click)="checkMasterbooks.emit(missingBooks)"
+      [nzTooltipTitle]="'LIST_DETAILS.Missing_masterbook' | translate" class="missing-masterbooks" nz-button
+      nz-tooltip
+      nzGhost
+      nzShape="circle"
+      nzSize="small"
+      nzDanger>
+      <i nz-icon nzType="warning" nzTheme="outline"></i>
+    </button>
+  }
+  @if (attachedRotation) {
+    @if (recipe$ | async; as recipe) {
+      @if (rotation$ | async; as rotation) {
         <nz-button-group>
           <button nz-button nzSize="small" (click)="openRotationMacroPopup.emit(rotation)"
-                  [nzTooltipTitle]="'LIST.ROTATION.Click_to_copy_macro' | translate"
-                  nz-tooltip>
+            [nzTooltipTitle]="'LIST.ROTATION.Click_to_copy_macro' | translate"
+            nz-tooltip>
             {{rotation.getName()}}
           </button>
-          <button nz-button nzSize="small" (click)="openRotationOverlay(rotation)"
-                  *ngIf="platform.isDesktop()"
-                  [nzTooltipTitle]="'LIST.ROTATION.Open_in_overlay' | translate"
-                  nz-tooltip>
-            <i nz-icon nzType="desktop"></i>
-          </button>
+          @if (platform.isDesktop()) {
+            <button nz-button nzSize="small" (click)="openRotationOverlay(rotation)"
+              [nzTooltipTitle]="'LIST.ROTATION.Open_in_overlay' | translate"
+              nz-tooltip>
+              <i nz-icon nzType="desktop"></i>
+            </button>
+          }
         </nz-button-group>
         <app-rotation-result-tag [rotation]="rotation" [recipe]="recipe" [collectable]="collectable$ | async"></app-rotation-result-tag>
-      </ng-container>
-    </ng-container>
-  </ng-container>
+      }
+    }
+  }
 </div>

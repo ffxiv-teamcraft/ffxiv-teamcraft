@@ -30,7 +30,7 @@ import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-ico
 import { FormsModule } from '@angular/forms';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgSwitch, NgSwitchCase, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-search-result',
@@ -38,7 +38,7 @@ import { NgIf, NgSwitch, NgSwitchCase, AsyncPipe } from '@angular/common';
     styleUrls: ['./search-result.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, FlexModule, NzCheckboxModule, FormsModule, ItemIconComponent, ItemRarityDirective, DbButtonComponent, TutorialStepDirective, NzButtonModule, NzToolTipModule, RouterLink, NzIconModule, MarketboardIconComponent, CompanyWorkshopTreeButtonComponent, ItemSourcesDisplayComponent, NzGridModule, NzInputModule, NzInputNumberModule, MouseWheelDirective, NzWaveModule, NgSwitch, NgSwitchCase, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ActionNamePipe, NodeTypeIconPipe, XivapiIconPipe, XivapiL12nPipe, MapNamePipe, IfRegionsPipe]
+    imports: [FlexModule, NzCheckboxModule, FormsModule, ItemIconComponent, ItemRarityDirective, DbButtonComponent, TutorialStepDirective, NzButtonModule, NzToolTipModule, RouterLink, NzIconModule, MarketboardIconComponent, CompanyWorkshopTreeButtonComponent, ItemSourcesDisplayComponent, NzGridModule, NzInputModule, NzInputNumberModule, MouseWheelDirective, NzWaveModule, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ActionNamePipe, NodeTypeIconPipe, XivapiIconPipe, XivapiL12nPipe, MapNamePipe, IfRegionsPipe]
 })
 export class SearchResultComponent {
 

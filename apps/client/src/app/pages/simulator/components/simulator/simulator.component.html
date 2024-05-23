@@ -1,758 +1,877 @@
-<ng-container *ngIf="rotation$ | async as rotation">
-  <div *ngIf="!rotation.notFound; else notFound" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px">
-    <div class="buttons" [class.expanded]="(showFullButtons$ | async)" fxLayout="column" fxLayout.lt-md="row wrap" fxLayoutAlign="center center"
-         fxLayoutGap="10px">
-      <button (click)="saveRotationAsNew(rotation)" *ngIf="rotation.$key !== undefined"
-              [nzTooltipTitle]="'SIMULATOR.Save_as_new' | translate" nz-button
-              nz-tooltip
-              tutorialStep="TUTORIAL.SIMULATOR.Save_as_new"
-              tutorialStepAlign="right"
-              tutorialStepIndex="0"
-              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
-              [class.full-button]="showFullButtons$ | async"
-              nzType="primary">
-        <i nz-icon nzType="copy"></i>
-        <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Save_as_new' | translate}}</span>
-      </button>
-      <button (click)="saveRotation(rotation)" *ngIf="(permissionLevel$ | async) >= 30"
-              [nzTooltipTitle]="'SIMULATOR.Persist' | translate" nz-button nz-tooltip
-              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
-              [class.full-button]="showFullButtons$ | async" nzType="primary">
-        <i nz-icon nzType="save"></i>
-        <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Persist' | translate}}</span>
-      </button>
-      <ng-container *ngIf="dirty">
-        <button (nzOnConfirm)="resetToSavedRotation(rotation)"
-                [nzTooltipTitle]="'SIMULATOR.Reset_saved' | translate"
-                [nzPopconfirmTitle]="'Confirmation' | translate"
-                nz-button nz-popconfirm nz-tooltip
-                [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
-                [class.full-button]="showFullButtons$ | async"
-                nzType="primary">
-          <i nz-icon nzType="rollback" nzTheme="outline"></i>
-          <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Reset_saved' | translate}}</span>
+@if (rotation$ | async; as rotation) {
+  @if (!rotation.notFound) {
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px">
+      <div class="buttons" [class.expanded]="(showFullButtons$ | async)" fxLayout="column" fxLayout.lt-md="row wrap" fxLayoutAlign="center center"
+        fxLayoutGap="10px">
+        @if (rotation.$key !== undefined) {
+          <button (click)="saveRotationAsNew(rotation)"
+            [nzTooltipTitle]="'SIMULATOR.Save_as_new' | translate" nz-button
+            nz-tooltip
+            tutorialStep="TUTORIAL.SIMULATOR.Save_as_new"
+            tutorialStepAlign="right"
+            tutorialStepIndex="0"
+            [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+            [class.full-button]="showFullButtons$ | async"
+            nzType="primary">
+            <i nz-icon nzType="copy"></i>
+            @if ((showFullButtons$ | async)) {
+              <span>{{'SIMULATOR.Save_as_new' | translate}}</span>
+            }
+          </button>
+        }
+        @if ((permissionLevel$ | async) >= 30) {
+          <button (click)="saveRotation(rotation)"
+            [nzTooltipTitle]="'SIMULATOR.Persist' | translate" nz-button nz-tooltip
+            [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+            [class.full-button]="showFullButtons$ | async" nzType="primary">
+            <i nz-icon nzType="save"></i>
+            @if ((showFullButtons$ | async)) {
+              <span>{{'SIMULATOR.Persist' | translate}}</span>
+            }
+          </button>
+        }
+        @if (dirty) {
+          <button (nzOnConfirm)="resetToSavedRotation(rotation)"
+            [nzTooltipTitle]="'SIMULATOR.Reset_saved' | translate"
+            [nzPopconfirmTitle]="'Confirmation' | translate"
+            nz-button nz-popconfirm nz-tooltip
+            [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+            [class.full-button]="showFullButtons$ | async"
+            nzType="primary">
+            <i nz-icon nzType="rollback" nzTheme="outline"></i>
+            @if ((showFullButtons$ | async)) {
+              <span>{{'SIMULATOR.Reset_saved' | translate}}</span>
+            }
+          </button>
+        }
+        @if (custom) {
+          <button (click)="changeRecipe(rotation)" [nzTooltipTitle]="'SIMULATOR.Convert_rotation' | translate"
+            nz-button nz-tooltip
+            [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+            [class.full-button]="showFullButtons$ | async"
+            nzType="primary">
+            <i nz-icon nzType="redo"></i>
+            @if ((showFullButtons$ | async)) {
+              <span>{{'SIMULATOR.Convert_rotation' | translate}}</span>
+            }
+          </button>
+        }
+        <button (nzOnConfirm)="actions$.next([]);this.dirty = true;dirtyFacade.removeEntry('simulator', dirtyScope.PAGE);"
+          [nzTooltipTitle]="'SIMULATOR.Reset' | translate"
+          [nzPopconfirmTitle]="'Confirmation' | translate"
+          nz-button nz-popconfirm nz-tooltip
+          [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+          [class.full-button]="showFullButtons$ | async"
+          nzType="primary">
+          <i nz-icon nzType="reload"></i>
+          @if ((showFullButtons$ | async)) {
+            <span>{{'SIMULATOR.Reset' | translate}}</span>
+          }
         </button>
-      </ng-container>
-      <button (click)="changeRecipe(rotation)" *ngIf="custom" [nzTooltipTitle]="'SIMULATOR.Convert_rotation' | translate"
-              nz-button nz-tooltip
-              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
-              [class.full-button]="showFullButtons$ | async"
-              nzType="primary">
-        <i nz-icon nzType="redo"></i>
-        <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Convert_rotation' | translate}}</span>
-      </button>
-      <button (nzOnConfirm)="actions$.next([]);this.dirty = true;dirtyFacade.removeEntry('simulator', dirtyScope.PAGE);"
-              [nzTooltipTitle]="'SIMULATOR.Reset' | translate"
-              [nzPopconfirmTitle]="'Confirmation' | translate"
-              nz-button nz-popconfirm nz-tooltip
-              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
-              [class.full-button]="showFullButtons$ | async"
-              nzType="primary">
-        <i nz-icon nzType="reload"></i>
-        <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Reset' | translate}}</span>
-      </button>
-      <button (click)="importFromCraftingOptimizer()"
-              [nzTooltipTitle]="'SIMULATOR.Import_from_crafting_optimizer' | translate"
-              nz-button nz-tooltip
-              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
-              [class.full-button]="showFullButtons$ | async"
-              nzType="primary">
-        <i nz-icon nzType="download"></i>
-        <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Import_from_crafting_optimizer' | translate}}</span>
-      </button>
-      <button [clipboardSuccessMessage]="'SIMULATOR.Export_copied' | translate"
-              [clipboard]="getCraftOptExportString"
-              [disabled]="actions$.value.length === 0"
-              [nzTooltipTitle]="'SIMULATOR.Export_crafting_optimizer' | translate"
-              nz-button nz-tooltip
-              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
-              [class.full-button]="showFullButtons$ | async"
-              nzType="primary">
-        <i nz-icon nzType="upload"></i>
-        <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Export_crafting_optimizer' | translate}}</span>
-      </button>
-      <button (click)="importFromXIVMacro()" [nzTooltipTitle]="'SIMULATOR.Import_macro' | translate" nz-button nz-tooltip
-              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
-              [class.full-button]="showFullButtons$ | async"
-              tutorialStep="TUTORIAL.SIMULATOR.Import_ingame_macro"
-              tutorialStepAlign="right"
-              tutorialStepIndex="1"
-              nzType="primary">
-        <i nz-icon nzType="select"></i>
-        <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Import_macro' | translate}}</span>
-      </button>
-      <button (click)="openMacroPopup(simulation)" *ngIf="simulation$ | async as simulation"
-              [disabled]="actions$.value.length === 0" [nzTooltipTitle]="'SIMULATOR.Generate_ingame_macro' | translate"
-              nz-button
-              nz-tooltip
-              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
-              [class.full-button]="showFullButtons$ | async"
-              tutorialStep="TUTORIAL.SIMULATOR.Generate_ingame_macro"
-              tutorialStepAlign="right"
-              tutorialStepIndex="2"
-              nzType="primary" class="text-icon">
-        <span class="text-icon">XIV</span>
-        <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Generate_ingame_macro' | translate}}</span>
-      </button>
-      <button (click)="openMinStatsPopup(simulation)" *ngIf="simulation$ | async as simulation"
-              [nzTooltipTitle]="'SIMULATOR.Min_stats' | translate" nz-button
-              nz-tooltip
-              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
-              [class.full-button]="showFullButtons$ | async"
-              nzType="primary">
-        <i nz-icon nzType="safety-certificate"></i>
-        <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Min_stats' | translate}}</span>
-      </button>
-      <button (click)="openStepByStepReportPopup(resultData)" *ngIf="result$ | async as resultData"
-              [nzTooltipTitle]="'SIMULATOR.Step_by_step_report' | translate" nz-button
-              nz-tooltip
-              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
-              [class.full-button]="showFullButtons$ | async"
-              nzType="primary">
-        <i nz-icon nzType="ordered-list"></i>
-        <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Step_by_step_report' | translate}}</span>
-      </button>
-      <ng-container *ngIf="crafterStats$ | async as stats">
-        <button (click)="openSharePopup(rotation, stats)"
-                *ngIf="rotation.$key"
-                [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
-                [class.full-button]="showFullButtons$ | async"
-                [nzTooltipTitle]="'SIMULATOR.Share_button_tooltip' | translate"
-                tutorialStep="TUTORIAL.SIMULATOR.Share_with_stats"
-                tutorialStepAlign="right"
-                tutorialStepIndex="3"
-                [nzType]="'primary'"
-                nz-button nz-tooltip>
-          <i nz-icon nzType="share-alt"></i>
-          <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Share_button_tooltip' | translate}}</span>
+        <button (click)="importFromCraftingOptimizer()"
+          [nzTooltipTitle]="'SIMULATOR.Import_from_crafting_optimizer' | translate"
+          nz-button nz-tooltip
+          [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+          [class.full-button]="showFullButtons$ | async"
+          nzType="primary">
+          <i nz-icon nzType="download"></i>
+          @if ((showFullButtons$ | async)) {
+            <span>{{'SIMULATOR.Import_from_crafting_optimizer' | translate}}</span>
+          }
         </button>
-        <button (click)="findRotation(stats)"
+        <button [clipboardSuccessMessage]="'SIMULATOR.Export_copied' | translate"
+          [clipboard]="getCraftOptExportString"
+          [disabled]="actions$.value.length === 0"
+          [nzTooltipTitle]="'SIMULATOR.Export_crafting_optimizer' | translate"
+          nz-button nz-tooltip
+          [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+          [class.full-button]="showFullButtons$ | async"
+          nzType="primary">
+          <i nz-icon nzType="upload"></i>
+          @if ((showFullButtons$ | async)) {
+            <span>{{'SIMULATOR.Export_crafting_optimizer' | translate}}</span>
+          }
+        </button>
+        <button (click)="importFromXIVMacro()" [nzTooltipTitle]="'SIMULATOR.Import_macro' | translate" nz-button nz-tooltip
+          [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+          [class.full-button]="showFullButtons$ | async"
+          tutorialStep="TUTORIAL.SIMULATOR.Import_ingame_macro"
+          tutorialStepAlign="right"
+          tutorialStepIndex="1"
+          nzType="primary">
+          <i nz-icon nzType="select"></i>
+          @if ((showFullButtons$ | async)) {
+            <span>{{'SIMULATOR.Import_macro' | translate}}</span>
+          }
+        </button>
+        @if (simulation$ | async; as simulation) {
+          <button (click)="openMacroPopup(simulation)"
+            [disabled]="actions$.value.length === 0" [nzTooltipTitle]="'SIMULATOR.Generate_ingame_macro' | translate"
+            nz-button
+            nz-tooltip
+            [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+            [class.full-button]="showFullButtons$ | async"
+            tutorialStep="TUTORIAL.SIMULATOR.Generate_ingame_macro"
+            tutorialStepAlign="right"
+            tutorialStepIndex="2"
+            nzType="primary" class="text-icon">
+            <span class="text-icon">XIV</span>
+            @if ((showFullButtons$ | async)) {
+              <span>{{'SIMULATOR.Generate_ingame_macro' | translate}}</span>
+            }
+          </button>
+        }
+        @if (simulation$ | async; as simulation) {
+          <button (click)="openMinStatsPopup(simulation)"
+            [nzTooltipTitle]="'SIMULATOR.Min_stats' | translate" nz-button
+            nz-tooltip
+            [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+            [class.full-button]="showFullButtons$ | async"
+            nzType="primary">
+            <i nz-icon nzType="safety-certificate"></i>
+            @if ((showFullButtons$ | async)) {
+              <span>{{'SIMULATOR.Min_stats' | translate}}</span>
+            }
+          </button>
+        }
+        @if (result$ | async; as resultData) {
+          <button (click)="openStepByStepReportPopup(resultData)"
+            [nzTooltipTitle]="'SIMULATOR.Step_by_step_report' | translate" nz-button
+            nz-tooltip
+            [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+            [class.full-button]="showFullButtons$ | async"
+            nzType="primary">
+            <i nz-icon nzType="ordered-list"></i>
+            @if ((showFullButtons$ | async)) {
+              <span>{{'SIMULATOR.Step_by_step_report' | translate}}</span>
+            }
+          </button>
+        }
+        @if (crafterStats$ | async; as stats) {
+          @if (rotation.$key) {
+            <button (click)="openSharePopup(rotation, stats)"
+              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+              [class.full-button]="showFullButtons$ | async"
+              [nzTooltipTitle]="'SIMULATOR.Share_button_tooltip' | translate"
+              tutorialStep="TUTORIAL.SIMULATOR.Share_with_stats"
+              tutorialStepAlign="right"
+              tutorialStepIndex="3"
+              [nzType]="'primary'"
+              nz-button nz-tooltip>
+              <i nz-icon nzType="share-alt"></i>
+              @if ((showFullButtons$ | async)) {
+                <span>{{'SIMULATOR.Share_button_tooltip' | translate}}</span>
+              }
+            </button>
+          }
+          <button (click)="findRotation(stats)"
+            [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+            [class.full-button]="showFullButtons$ | async"
+            [nzTooltipTitle]="'SIMULATOR.Find_rotation' | translate"
+            [nzType]="'primary'"
+            nz-button
+            nz-tooltip>
+            <i nz-icon nzTheme="outline" nzType="reconciliation"></i>
+            @if ((showFullButtons$ | async)) {
+              <span>{{'SIMULATOR.Find_rotation' | translate}}</span>
+            }
+          </button>
+        }
+        @if (tips$ | async; as tips) {
+          <nz-badge [nzCount]="tips.length">
+            @if (result$ | async; as result) {
+              <button (click)="showRotationTips(tips, result)"
+                [disabled]="tips?.length === 0"
                 [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
                 [class.full-button]="showFullButtons$ | async"
-                [nzTooltipTitle]="'SIMULATOR.Find_rotation' | translate"
+                [nzTooltipTitle]="'SIMULATOR.Rotation_tips' | translate"
                 [nzType]="'primary'"
                 nz-button
                 nz-tooltip>
-          <i nz-icon nzTheme="outline" nzType="reconciliation"></i>
-          <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Find_rotation' | translate}}</span>
-        </button>
-      </ng-container>
-      <ng-container *ngIf="tips$ | async as tips">
-        <nz-badge [nzCount]="tips.length">
-          <button (click)="showRotationTips(tips, result)" *ngIf="result$ | async as result"
-                  [disabled]="tips?.length === 0"
-                  [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
-                  [class.full-button]="showFullButtons$ | async"
-                  [nzTooltipTitle]="'SIMULATOR.Rotation_tips' | translate"
-                  [nzType]="'primary'"
-                  nz-button
-                  nz-tooltip>
-            <i nz-icon nzType="bulb"></i>
-            <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Rotation_tips' | translate}}</span>
+                <i nz-icon nzType="bulb"></i>
+                @if ((showFullButtons$ | async)) {
+                  <span>{{'SIMULATOR.Rotation_tips' | translate}}</span>
+                }
+              </button>
+            }
+          </nz-badge>
+        }
+        @if (simulation$ | async; as simulation) {
+          @if (crafterStats$ | async; as stats) {
+            @if (rotation.$key && ((permissionLevel$ | async) === 40)) {
+              <button (click)="openCommunityRotationConfiguration(rotation, simulation, stats)"
+                [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+                [class.full-button]="showFullButtons$ | async"
+                [nzTooltipTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Configuration_popup' | translate"
+                nz-button
+                nz-tooltip
+                nzType="primary">
+                <img class="man-attacked-by-tetris-block button-icon" src="./assets/icons/svg/thing.svg"/>
+              </button>
+            }
+          }
+        }
+        @if (platformService.isDesktop() && rotation.$key) {
+          <button (nzOnConfirm)="openOverlay(rotation)"
+            [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+            [class.full-button]="showFullButtons$ | async"
+            [nzPopconfirmTitle]="'ALARMS.Open_overlay' | translate"
+            nz-button
+            nz-popconfirm>
+            <i nz-icon nzType="desktop"></i>
           </button>
-        </nz-badge>
-      </ng-container>
-      <ng-container *ngIf="simulation$ | async as simulation">
-        <ng-container *ngIf="crafterStats$ | async as stats">
-          <button (click)="openCommunityRotationConfiguration(rotation, simulation, stats)"
-                  *ngIf="rotation.$key && ((permissionLevel$ | async) === 40)"
-                  [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
-                  [class.full-button]="showFullButtons$ | async"
-                  [nzTooltipTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Configuration_popup' | translate"
-                  nz-button
-                  nz-tooltip
-                  nzType="primary">
-            <img class="man-attacked-by-tetris-block button-icon" src="./assets/icons/svg/thing.svg"/>
-          </button>
-        </ng-container>
-      </ng-container>
-      <button (nzOnConfirm)="openOverlay(rotation)" *ngIf="platformService.isDesktop() && rotation.$key"
-              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
-              [class.full-button]="showFullButtons$ | async"
-              [nzPopconfirmTitle]="'ALARMS.Open_overlay' | translate"
-              nz-button
-              nz-popconfirm>
-        <i nz-icon nzType="desktop"></i>
-      </button>
-      <app-favorite-button *ngIf="rotation.$key" [key]="rotation.$key" type="rotations"></app-favorite-button>
-    </div>
-    <div class="simulator" fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px"
-         [class.buttons-collapsed]="(showFullButtons$ | async) === false" [class.buttons-expanded]="(showFullButtons$ | async)">
-      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-        <nz-tag *ngIf="rotation.public" [nzColor]="'geekblue'">
-          {{'SIMULATOR.COMMUNITY_ROTATIONS.Community_rotation' | translate}}
-        </nz-tag>
-        <div>{{rotation.getName()}}<span *ngIf="dirty">*</span></div>
-        <button (click)="renameRotation(rotation)" [disabled]="(permissionLevel$ | async) < 40"
-                [nzTooltipTitle]="'Edit' | translate" nz-button nz-tooltip
-                nzShape="circle" nzSize="small">
-          <i nz-icon nzType="edit"></i>
-        </button>
-        <button (click)="changeRotation()" [nzTooltipTitle]="'SIMULATOR.Change_rotation' | translate" nz-button nz-tooltip
-                nzShape="circle"
-                nzSize="small">
-          <i nzIconfont="icon-exchange" nz-icon></i>
-        </button>
-        <div [nzTooltipTitle]="'SIMULATOR.Safe_mode_tooltip' | translate" fxLayout="row" fxLayoutAlign="flex-start center"
-             fxLayoutGap="5px"
-             nz-tooltip>
-          <div>
-            <nz-switch (ngModelChange)="safeMode$.next($event);saveSafeMode($event)"
-                       [ngModel]="safeMode$ | async"></nz-switch>
-          </div>
-          <div>{{'SIMULATOR.Safe_mode' | translate}}</div>
-        </div>
-        <div fxFlex="1 1 auto"></div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <div>
-            <nz-switch [ngModel]="(showFullButtons$ | async)" (ngModelChange)="showFullButtons$.next($event)"></nz-switch>
-          </div>
-          <div>{{'SIMULATOR.Full_buttons' | translate}}</div>
-        </div>
+        }
+        @if (rotation.$key) {
+          <app-favorite-button [key]="rotation.$key" type="rotations"></app-favorite-button>
+        }
       </div>
-      <nz-collapse>
-        <nz-collapse-panel [(nzActive)]="settings.configurationPanelExpanded"
-                           [nzHeader]="'SIMULATOR.Configuration' | translate">
-          <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutAlign="space-evenly"
-               fxLayoutAlign.lt-md="center center"
-               fxLayoutGap="16px" fxLayoutGap.lt-md="16px">
-            <div fxFlex="1 0 30%" fxLayout="column"
-                 tutorialStep="TUTORIAL.SIMULATOR.Character_configuration"
-                 tutorialStepIndex="4">
-              <h3>{{'SIMULATOR.CONFIGURATION.Job' | translate}}</h3>
-              <nz-select (ngModelChange)="customJob$.next($event)" [ngModel]="(stats$ | async)?.jobId"
-                         [nzDisabled]="!custom" class="job-selector">
-                <nz-option *ngFor="let job of [8,9,10,11,12,13,14,15]" [nzLabel]="job | i18nRow:'jobAbbr' | i18n"
-                           [nzValue]="job" nzCustomContent>
-                  <div class="flex-row align-center gap-2">
-                    <div class="companion-svg" [innerHtml]="job | jobUnicode"></div>
-                    {{job | i18nRow:'jobAbbr' | i18n}}
-                  </div>
-                </nz-option>
-              </nz-select>
-              <nz-alert *ngIf="(stats$ | async)?.craftsmanship === 0" [nzMessage]="((loggedIn$ | async)?'SIMULATOR.CONFIGURATION.Job_not_configured':
+      <div class="simulator" fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px"
+        [class.buttons-collapsed]="(showFullButtons$ | async) === false" [class.buttons-expanded]="(showFullButtons$ | async)">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          @if (rotation.public) {
+            <nz-tag [nzColor]="'geekblue'">
+              {{'SIMULATOR.COMMUNITY_ROTATIONS.Community_rotation' | translate}}
+            </nz-tag>
+          }
+          <div>{{rotation.getName()}}@if (dirty) {
+            <span>*</span>
+          }</div>
+          <button (click)="renameRotation(rotation)" [disabled]="(permissionLevel$ | async) < 40"
+            [nzTooltipTitle]="'Edit' | translate" nz-button nz-tooltip
+            nzShape="circle" nzSize="small">
+            <i nz-icon nzType="edit"></i>
+          </button>
+          <button (click)="changeRotation()" [nzTooltipTitle]="'SIMULATOR.Change_rotation' | translate" nz-button nz-tooltip
+            nzShape="circle"
+            nzSize="small">
+            <i nzIconfont="icon-exchange" nz-icon></i>
+          </button>
+          <div [nzTooltipTitle]="'SIMULATOR.Safe_mode_tooltip' | translate" fxLayout="row" fxLayoutAlign="flex-start center"
+            fxLayoutGap="5px"
+            nz-tooltip>
+            <div>
+              <nz-switch (ngModelChange)="safeMode$.next($event);saveSafeMode($event)"
+              [ngModel]="safeMode$ | async"></nz-switch>
+            </div>
+            <div>{{'SIMULATOR.Safe_mode' | translate}}</div>
+          </div>
+          <div fxFlex="1 1 auto"></div>
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+            <div>
+              <nz-switch [ngModel]="(showFullButtons$ | async)" (ngModelChange)="showFullButtons$.next($event)"></nz-switch>
+            </div>
+            <div>{{'SIMULATOR.Full_buttons' | translate}}</div>
+          </div>
+        </div>
+        <nz-collapse>
+          <nz-collapse-panel [(nzActive)]="settings.configurationPanelExpanded"
+            [nzHeader]="'SIMULATOR.Configuration' | translate">
+            <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutAlign="space-evenly"
+              fxLayoutAlign.lt-md="center center"
+              fxLayoutGap="16px" fxLayoutGap.lt-md="16px">
+              <div fxFlex="1 0 30%" fxLayout="column"
+                tutorialStep="TUTORIAL.SIMULATOR.Character_configuration"
+                tutorialStepIndex="4">
+                <h3>{{'SIMULATOR.CONFIGURATION.Job' | translate}}</h3>
+                <nz-select (ngModelChange)="customJob$.next($event)" [ngModel]="(stats$ | async)?.jobId"
+                  [nzDisabled]="!custom" class="job-selector">
+                  @for (job of [8,9,10,11,12,13,14,15]; track job) {
+                    <nz-option [nzLabel]="job | i18nRow:'jobAbbr' | i18n"
+                      [nzValue]="job" nzCustomContent>
+                      <div class="flex-row align-center gap-2">
+                        <div class="companion-svg" [innerHtml]="job | jobUnicode"></div>
+                        {{job | i18nRow:'jobAbbr' | i18n}}
+                      </div>
+                    </nz-option>
+                  }
+                </nz-select>
+                @if ((stats$ | async)?.craftsmanship === 0) {
+<nz-alert [nzMessage]="((loggedIn$ | async)?'SIMULATOR.CONFIGURATION.Job_not_configured':
                       'SIMULATOR.CONFIGURATION.Job_not_configured_anonymous') | translate" nzShowIcon
-                        nzType="warning">
-              </nz-alert>
-              <form (ngSubmit)="applyStats()" *ngIf="bonuses$ | async as bonuses" [formGroup]="statsForm"
+                    nzType="warning">
+                  </nz-alert>
+                }
+                @if (bonuses$ | async; as bonuses) {
+                  <form (ngSubmit)="applyStats()" [formGroup]="statsForm"
                     fxLayout="column"
                     fxLayoutAlign="space-between"
                     id="ngForm">
-                <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-evenly center"
-                     fxLayoutAlign.lt-md="center center"
-                     fxLayoutGap="5px">
-                  <nz-form-item>
-                    <nz-form-label nzFor="craftsmanship" nzRequired>{{'SIMULATOR.CONFIGURATION.Craftsmanship' |
-                      translate}}
-                    </nz-form-label>
-                    <nz-form-control>
-                      <nz-input-group nzAddOnAfter="+{{bonuses.craftsmanship}}">
-                        <nz-input-number [nzMin]="0" class="input-number-with-addon" formControlName="craftsmanship"
-                                         id="craftsmanship"></nz-input-number>
-                      </nz-input-group>
-                    </nz-form-control>
-                  </nz-form-item>
-                  <nz-form-item>
-                    <nz-form-label nzFor="control" nzRequired>{{'SIMULATOR.CONFIGURATION.Control' | translate}}
-                    </nz-form-label>
-                    <nz-form-control>
-                      <nz-input-group nzAddOnAfter="+{{bonuses.control}}">
-                        <nz-input-number [nzMin]="0" class="input-number-with-addon" formControlName="control"
-                                         id="control"></nz-input-number>
-                      </nz-input-group>
-                    </nz-form-control>
-                  </nz-form-item>
-                  <nz-form-item>
-                    <nz-form-label nzFor="cp" nzRequired>{{'SIMULATOR.Cp_amount' | translate}}</nz-form-label>
-                    <nz-form-control>
-                      <nz-input-group nzAddOnAfter="+{{bonuses.cp}}">
-                        <nz-input-number [nzMin]="0" class="input-number-with-addon" formControlName="cp"
-                                         id="cp"></nz-input-number>
-                      </nz-input-group>
-                    </nz-form-control>
-                  </nz-form-item>
-                </div>
-                <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-evenly center"
-                     fxLayoutAlign.lt-md="center center"
-                     fxLayoutGap="5px">
-                  <nz-form-item>
-                    <nz-form-label nzFor="level" nzRequired>{{'SIMULATOR.Level' | translate}}</nz-form-label>
-                    <nz-form-control>
-                      <nz-input-number [nzMin]="0" formControlName="level" id="level"></nz-input-number>
-                    </nz-form-control>
-                  </nz-form-item>
-                  <nz-form-item>
-                    <nz-form-control>
-                      <label formControlName="specialist"
-                             id="specialist"
-                             nz-checkbox>{{'SIMULATOR.CONFIGURATION.Specialist' | translate}}</label>
-                    </nz-form-control>
-                  </nz-form-item>
-                  <nz-form-item>
-                    <nz-form-control>
-                      <label formControlName="splendorous"
-                             id="splendorous"
-                             nz-checkbox>{{'SIMULATOR.CONFIGURATION.Splendorous' | translate}}</label>
-                    </nz-form-control>
-                  </nz-form-item>
-                </div>
-              </form>
-              <div class="apply" fxLayout="column" fxLayoutGap="5px">
-                <div>
-                  <button form="ngForm" nz-button nzBlock nzType="primary" type="submit">
-                    {{'SIMULATOR.CONFIGURATION.Apply_stats' | translate}}
-                  </button>
-                </div>
-                <div>
-                  <button (click)="saveSet()" *ngIf="loggedIn$ | async" [disabled]="savedSet" nz-button nzBlock>
-                    {{'SIMULATOR.CONFIGURATION.Save_on_profile' | translate}}
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div *ngIf="!custom && hqIngredientsData$ | async as hqIngredientsData; else hqInput" class="ingredients"
-                 fxFlex="1 1 30%" fxLayout="column"
-                 tutorialStep="TUTORIAL.SIMULATOR.HQ_ingredients"
-                 tutorialStepIndex="5">
-              <h3>
-                {{'SIMULATOR.CONFIGURATION.Ingredients' | translate}}
-                <span *ngIf="startingQuality$ | async as startingQuality">({{startingQuality | floor}})</span>
-              </h3>
-              <nz-list [nzDataSource]="hqIngredientsData"
-                       [nzRenderItem]="hqIngredientTemplate">
-                <ng-template #hqIngredientTemplate let-ingredient>
-                  <nz-list-item [nzContent]="content">
-                    <nz-list-item-meta [nzDescription]="ingredient.quality | floor"
-                                       [nzTitle]="title"></nz-list-item-meta>
-                    <ng-template #title>
-                      <span (clipboardCopySuccess)="nameCopied('Item_name_copied', {itemname: $event.content})"
-                            [clipboard]="ingredient.id | itemName | i18n"
-                            class="hq-ingredient-name">{{ingredient.id | itemName | i18n}}</span>
-                    </ng-template>
-                    <ng-template #content>
-                      <div>
+                    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-evenly center"
+                      fxLayoutAlign.lt-md="center center"
+                      fxLayoutGap="5px">
+                      <nz-form-item>
+                        <nz-form-label nzFor="craftsmanship" nzRequired>{{'SIMULATOR.CONFIGURATION.Craftsmanship' |
+                          translate}}
+                        </nz-form-label>
                         <nz-form-control>
-                          <nz-input-group nzAddOnAfter="/ {{ingredient.max}}">
-                            <nz-input-number [(ngModel)]="ingredient.amount" [nzMax]="ingredient.max"
-                                             [nzMin]="0"
-                                             class="input-number-with-addon"></nz-input-number>
+                          <nz-input-group nzAddOnAfter="+{{bonuses.craftsmanship}}">
+                            <nz-input-number [nzMin]="0" class="input-number-with-addon" formControlName="craftsmanship"
+                            id="craftsmanship"></nz-input-number>
                           </nz-input-group>
                         </nz-form-control>
-                      </div>
-                    </ng-template>
-                  </nz-list-item>
-                </ng-template>
-              </nz-list>
-              <div class="apply">
-                <button (click)="hqIngredients = hqIngredientsData" nz-button nzBlock nzType="primary">
-                  {{'SIMULATOR.CONFIGURATION.Apply_ingredients' | translate}}
-                </button>
+                      </nz-form-item>
+                      <nz-form-item>
+                        <nz-form-label nzFor="control" nzRequired>{{'SIMULATOR.CONFIGURATION.Control' | translate}}
+                        </nz-form-label>
+                        <nz-form-control>
+                          <nz-input-group nzAddOnAfter="+{{bonuses.control}}">
+                            <nz-input-number [nzMin]="0" class="input-number-with-addon" formControlName="control"
+                            id="control"></nz-input-number>
+                          </nz-input-group>
+                        </nz-form-control>
+                      </nz-form-item>
+                      <nz-form-item>
+                        <nz-form-label nzFor="cp" nzRequired>{{'SIMULATOR.Cp_amount' | translate}}</nz-form-label>
+                        <nz-form-control>
+                          <nz-input-group nzAddOnAfter="+{{bonuses.cp}}">
+                            <nz-input-number [nzMin]="0" class="input-number-with-addon" formControlName="cp"
+                            id="cp"></nz-input-number>
+                          </nz-input-group>
+                        </nz-form-control>
+                      </nz-form-item>
+                    </div>
+                    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-evenly center"
+                      fxLayoutAlign.lt-md="center center"
+                      fxLayoutGap="5px">
+                      <nz-form-item>
+                        <nz-form-label nzFor="level" nzRequired>{{'SIMULATOR.Level' | translate}}</nz-form-label>
+                        <nz-form-control>
+                          <nz-input-number [nzMin]="0" formControlName="level" id="level"></nz-input-number>
+                        </nz-form-control>
+                      </nz-form-item>
+                      <nz-form-item>
+                        <nz-form-control>
+                          <label formControlName="specialist"
+                            id="specialist"
+                          nz-checkbox>{{'SIMULATOR.CONFIGURATION.Specialist' | translate}}</label>
+                        </nz-form-control>
+                      </nz-form-item>
+                      <nz-form-item>
+                        <nz-form-control>
+                          <label formControlName="splendorous"
+                            id="splendorous"
+                          nz-checkbox>{{'SIMULATOR.CONFIGURATION.Splendorous' | translate}}</label>
+                        </nz-form-control>
+                      </nz-form-item>
+                    </div>
+                  </form>
+                }
+                <div class="apply" fxLayout="column" fxLayoutGap="5px">
+                  <div>
+                    <button form="ngForm" nz-button nzBlock nzType="primary" type="submit">
+                      {{'SIMULATOR.CONFIGURATION.Apply_stats' | translate}}
+                    </button>
+                  </div>
+                  <div>
+                    @if (loggedIn$ | async) {
+                      <button (click)="saveSet()" [disabled]="savedSet" nz-button nzBlock>
+                        {{'SIMULATOR.CONFIGURATION.Save_on_profile' | translate}}
+                      </button>
+                    }
+                  </div>
+                </div>
               </div>
-            </div>
-            <ng-template #hqInput>
-              <div *ngIf="simulation$ | async as simulation" fxFlex="1 1 30%">
-                <h3>{{'SIMULATOR.CONFIGURATION.Starting_quality' | translate}}</h3>
-                <nz-form-control class="hq-input">
-                  <nz-input-group nzAddOnAfter="/ {{simulation.recipe.quality}}">
-                    <nz-input-number (ngModelChange)="forcedStartingQuality$.next($event)"
-                                     [ngModel]="forcedStartingQuality$ | async"
-                                     [nzMax]="simulation.recipe.quality"
-                                     [nzMin]="0"
-                                     class="input-number-with-addon"></nz-input-number>
-                  </nz-input-group>
-                </nz-form-control>
-              </div>
-            </ng-template>
-            <div *ngIf="crafterStats$ | async as crafterStats" fxFlex="1 0 30%" fxLayout="column"
-                 tutorialStep="TUTORIAL.SIMULATOR.Consumables"
-                 tutorialStepIndex="6">
-
-              <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}} <b *ngIf="dirtyConsumables" nz-tooltip
-                                                                           [nzTooltipTitle]="'COMMON.Dirty_changes' | translate">*</b></h3>
-              <div>
-                <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center" fxLayoutGap="5px">
-                  <div class="consumable-col" fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px">
-                    <nz-select [(ngModel)]="selectedFood" (ngModelChange)="dirtyConsumables = true"
-                               [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Food' | translate"
-                               nzAllowClear nzShowSearch [nzFilterOption]="filterOptions">
-                      <nz-option *ngFor="let food of foods" [nzValue]="food"
-                                 nzLabel="{{food.hq?'HQ':''}} {{food.itemId | itemName | i18n}}">
-                      </nz-option>
-                    </nz-select>
-                    <div *ngIf="selectedFood !== undefined && selectedFood !== null; else noFood">
-                      <div fxLayout="row" fxLayoutGap="10px">
-                        <app-item-icon [itemId]="selectedFood.itemId" width="32" [hq]="selectedFood.hq"></app-item-icon>
-                        <div fxLayout="column" fxLayoutGap="5px">
+              @if (!custom && hqIngredientsData$ | async; as hqIngredientsData) {
+                <div class="ingredients"
+                  fxFlex="1 1 30%" fxLayout="column"
+                  tutorialStep="TUTORIAL.SIMULATOR.HQ_ingredients"
+                  tutorialStepIndex="5">
+                  <h3>
+                    {{'SIMULATOR.CONFIGURATION.Ingredients' | translate}}
+                    @if (startingQuality$ | async; as startingQuality) {
+                      <span>({{startingQuality | floor}})</span>
+                    }
+                  </h3>
+                  <nz-list [nzDataSource]="hqIngredientsData"
+                    [nzRenderItem]="hqIngredientTemplate">
+                    <ng-template #hqIngredientTemplate let-ingredient>
+                      <nz-list-item [nzContent]="content">
+                        <nz-list-item-meta [nzDescription]="ingredient.quality | floor"
+                        [nzTitle]="title"></nz-list-item-meta>
+                        <ng-template #title>
+                          <span (clipboardCopySuccess)="nameCopied('Item_name_copied', {itemname: $event.content})"
+                            [clipboard]="ingredient.id | itemName | i18n"
+                          class="hq-ingredient-name">{{ingredient.id | itemName | i18n}}</span>
+                        </ng-template>
+                        <ng-template #content>
                           <div>
-                            <b>{{selectedFood.itemId | itemName | i18n}}</b>
-                            <img *ngIf="selectedFood.hq" alt="(HQ)" src="./assets/icons/HQ.png">
+                            <nz-form-control>
+                              <nz-input-group nzAddOnAfter="/ {{ingredient.max}}">
+                                <nz-input-number [(ngModel)]="ingredient.amount" [nzMax]="ingredient.max"
+                                  [nzMin]="0"
+                                class="input-number-with-addon"></nz-input-number>
+                              </nz-input-group>
+                            </nz-form-control>
                           </div>
-                          <div *ngFor="let bonus of selectedFood.bonuses">
-                            {{('SIMULATOR.CONFIGURATION.STATS.' + bonus.type) | translate}}: {{(bonus.value * 100) | floor}}
-                            %
-                            ({{bonus.max}})
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-                    <ng-template #noFood>
-                      <div class="nothing-selected">
-                        {{'SIMULATOR.CONFIGURATION.No_food' | translate}}
-                      </div>
+                        </ng-template>
+                      </nz-list-item>
                     </ng-template>
+                  </nz-list>
+                  <div class="apply">
+                    <button (click)="hqIngredients = hqIngredientsData" nz-button nzBlock nzType="primary">
+                      {{'SIMULATOR.CONFIGURATION.Apply_ingredients' | translate}}
+                    </button>
                   </div>
-                  <div class="consumable-col" fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px">
-                    <nz-select [(ngModel)]="selectedMedicine" (ngModelChange)="dirtyConsumables = true"
-                               [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Medicine' | translate"
-                               nzAllowClear nzShowSearch [nzFilterOption]="filterOptions">
-                      <nz-option *ngFor="let medicine of medicines" [nzValue]="medicine"
-                                 nzLabel=" {{medicine.hq?'HQ':''}} {{medicine.itemId | itemName | i18n}}">
-                      </nz-option>
-                    </nz-select>
-                    <div *ngIf="selectedMedicine !== undefined && selectedMedicine !== null; else noMedicine">
-                      <div fxLayout="row" fxLayoutGap="10px">
-                        <app-item-icon [itemId]="selectedMedicine.itemId" width="32" [hq]="selectedMedicine.hq"></app-item-icon>
-                        <div fxLayout="column" fxLayoutGap="5px">
+                </div>
+              } @else {
+                @if (simulation$ | async; as simulation) {
+                  <div fxFlex="1 1 30%">
+                    <h3>{{'SIMULATOR.CONFIGURATION.Starting_quality' | translate}}</h3>
+                    <nz-form-control class="hq-input">
+                      <nz-input-group nzAddOnAfter="/ {{simulation.recipe.quality}}">
+                        <nz-input-number (ngModelChange)="forcedStartingQuality$.next($event)"
+                          [ngModel]="forcedStartingQuality$ | async"
+                          [nzMax]="simulation.recipe.quality"
+                          [nzMin]="0"
+                        class="input-number-with-addon"></nz-input-number>
+                      </nz-input-group>
+                    </nz-form-control>
+                  </div>
+                }
+              }
+              @if (crafterStats$ | async; as crafterStats) {
+                <div fxFlex="1 0 30%" fxLayout="column"
+                  tutorialStep="TUTORIAL.SIMULATOR.Consumables"
+                  tutorialStepIndex="6">
+                  <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}} @if (dirtyConsumables) {
+                    <b nz-tooltip
+                    [nzTooltipTitle]="'COMMON.Dirty_changes' | translate">*</b>
+                  }</h3>
+                  <div>
+                    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center" fxLayoutGap="5px">
+                      <div class="consumable-col" fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px">
+                        <nz-select [(ngModel)]="selectedFood" (ngModelChange)="dirtyConsumables = true"
+                          [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Food' | translate"
+                          nzAllowClear nzShowSearch [nzFilterOption]="filterOptions">
+                          @for (food of foods; track food) {
+                            <nz-option [nzValue]="food"
+                              nzLabel="{{food.hq?'HQ':''}} {{food.itemId | itemName | i18n}}">
+                            </nz-option>
+                          }
+                        </nz-select>
+                        @if (selectedFood !== undefined && selectedFood !== null) {
                           <div>
-                            <b>{{selectedMedicine.itemId | itemName | i18n}}</b>
-                            <img *ngIf="selectedMedicine.hq" alt="(HQ)" src="./assets/icons/HQ.png">
+                            <div fxLayout="row" fxLayoutGap="10px">
+                              <app-item-icon [itemId]="selectedFood.itemId" width="32" [hq]="selectedFood.hq"></app-item-icon>
+                              <div fxLayout="column" fxLayoutGap="5px">
+                                <div>
+                                  <b>{{selectedFood.itemId | itemName | i18n}}</b>
+                                  @if (selectedFood.hq) {
+                                    <img alt="(HQ)" src="./assets/icons/HQ.png">
+                                  }
+                                </div>
+                                @for (bonus of selectedFood.bonuses; track bonus) {
+                                  <div>
+                                    {{('SIMULATOR.CONFIGURATION.STATS.' + bonus.type) | translate}}: {{(bonus.value * 100) | floor}}
+                                    %
+                                    ({{bonus.max}})
+                                  </div>
+                                }
+                              </div>
+                            </div>
                           </div>
-                          <div *ngFor="let bonus of selectedMedicine.bonuses">
-                            {{('SIMULATOR.CONFIGURATION.STATS.' + bonus.type) | translate}}: {{(bonus.value * 100) | floor}}
-                            %
-                            ({{bonus.max}})
+                        } @else {
+                          <div class="nothing-selected">
+                            {{'SIMULATOR.CONFIGURATION.No_food' | translate}}
                           </div>
-                        </div>
+                        }
+                      </div>
+                      <div class="consumable-col" fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px">
+                        <nz-select [(ngModel)]="selectedMedicine" (ngModelChange)="dirtyConsumables = true"
+                          [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Medicine' | translate"
+                          nzAllowClear nzShowSearch [nzFilterOption]="filterOptions">
+                          @for (medicine of medicines; track medicine) {
+                            <nz-option [nzValue]="medicine"
+                              nzLabel=" {{medicine.hq?'HQ':''}} {{medicine.itemId | itemName | i18n}}">
+                            </nz-option>
+                          }
+                        </nz-select>
+                        @if (selectedMedicine !== undefined && selectedMedicine !== null) {
+                          <div>
+                            <div fxLayout="row" fxLayoutGap="10px">
+                              <app-item-icon [itemId]="selectedMedicine.itemId" width="32" [hq]="selectedMedicine.hq"></app-item-icon>
+                              <div fxLayout="column" fxLayoutGap="5px">
+                                <div>
+                                  <b>{{selectedMedicine.itemId | itemName | i18n}}</b>
+                                  @if (selectedMedicine.hq) {
+                                    <img alt="(HQ)" src="./assets/icons/HQ.png">
+                                  }
+                                </div>
+                                @for (bonus of selectedMedicine.bonuses; track bonus) {
+                                  <div>
+                                    {{('SIMULATOR.CONFIGURATION.STATS.' + bonus.type) | translate}}: {{(bonus.value * 100) | floor}}
+                                    %
+                                    ({{bonus.max}})
+                                  </div>
+                                }
+                              </div>
+                            </div>
+                          </div>
+                        } @else {
+                          <div class="nothing-selected">
+                            {{'SIMULATOR.CONFIGURATION.No_medicine' | translate}}
+                          </div>
+                        }
                       </div>
                     </div>
-                    <ng-template #noMedicine>
-                      <div class="nothing-selected">
-                        {{'SIMULATOR.CONFIGURATION.No_medicine' | translate}}
-                      </div>
-                    </ng-template>
+                    <div class="consumable-col" fxLayout="column" fxLayoutGap="10px">
+                      <nz-select [(ngModel)]="selectedFreeCompanyActions" (ngModelChange)="dirtyConsumables = true"
+                        [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Action' | translate"
+                        nzAllowClear nzMode="multiple">
+                        @for (type of ['Control', 'Craftsmanship']; track type) {
+                          <nz-option-group
+                            [nzLabel]="('SIMULATOR.CONFIGURATION.'+type) | translate">
+                            @for (action of getFreeCompanyActions(type); track action) {
+                              <nz-option
+                                [nzDisabled]="isFreeCompanyActionOptionDisabled(type, action.actionId)"
+                                [nzLabel]="action.actionId | i18nRow:'freeCompanyActions' | i18n"
+                              [nzValue]="action"></nz-option>
+                            }
+                          </nz-option-group>
+                        }
+                      </nz-select>
+                      @if (selectedFreeCompanyActions.length > 0) {
+                        <div>
+                          @for (action of selectedFreeCompanyActions; track action) {
+                            <div>
+                              <div>
+                                <b>{{action.actionId | i18nRow:'freeCompanyActions' | i18n}}</b>
+                              </div>
+                              <div>
+                                {{('SIMULATOR.CONFIGURATION.STATS.' + action.type) | translate}}: {{action.value}}
+                              </div>
+                            </div>
+                          }
+                        </div>
+                      } @else {
+                        <div class="nothing-selected">
+                          {{'SIMULATOR.CONFIGURATION.No_fc_buffs' | translate}}
+                        </div>
+                      }
+                    </div>
+                  </div>
+                  <div class="apply" fxFlexAlign="flex-end flex-end" fxLayout="column" fxLayoutGap="5px">
+                    <div>
+                      <button
+                        (click)="applyConsumables(crafterStats);this.dirty = true;dirtyFacade.removeEntry('simulator', dirtyScope.PAGE);"
+                        nz-button nzBlock
+                        [nzType]="dirtyConsumables ? 'primary' : 'default'">
+                        {{'SIMULATOR.CONFIGURATION.Apply_foods' | translate}}
+                      </button>
+                    </div>
+                    <div>
+                      <button (click)="saveDefaultConsumables()" nz-button nzBlock>
+                        {{'SIMULATOR.CONFIGURATION.Save_consumables' | translate}}
+                      </button>
+                    </div>
                   </div>
                 </div>
-                <div class="consumable-col" fxLayout="column" fxLayoutGap="10px">
-                  <nz-select [(ngModel)]="selectedFreeCompanyActions" (ngModelChange)="dirtyConsumables = true"
-                             [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Action' | translate"
-                             nzAllowClear nzMode="multiple">
-                    <nz-option-group *ngFor="let type of ['Control', 'Craftsmanship']"
-                                     [nzLabel]="('SIMULATOR.CONFIGURATION.'+type) | translate">
-                      <nz-option *ngFor="let action of getFreeCompanyActions(type)"
-                                 [nzDisabled]="isFreeCompanyActionOptionDisabled(type, action.actionId)"
-                                 [nzLabel]="action.actionId | i18nRow:'freeCompanyActions' | i18n"
-                                 [nzValue]="action"></nz-option>
-                    </nz-option-group>
-                  </nz-select>
-                  <div *ngIf="selectedFreeCompanyActions.length > 0; else noFcBuffs">
-                    <div *ngFor="let action of selectedFreeCompanyActions">
-                      <div>
-                        <b>{{action.actionId | i18nRow:'freeCompanyActions' | i18n}}</b>
-                      </div>
-                      <div>
-                        {{('SIMULATOR.CONFIGURATION.STATS.' + action.type) | translate}}: {{action.value}}
-                      </div>
+              }
+            </div>
+          </nz-collapse-panel>
+        </nz-collapse>
+        @if (result$ | async; as resultData;) {
+          <div
+            fxLayout="column"
+            fxLayoutGap="10px">
+            <app-simulation-result [result]="resultData"
+              [itemId]="itemId"
+              [progressPer100]="progressPer100$ | async"
+              [qualityPer100]="qualityPer100$ | async"
+              [thresholds]="thresholds"
+              [report]="report$ | async"
+              (snapshotStepChange)="snapshotStep$.next($event)"
+              (snapshotModeChange)="snapshotMode = $event"
+              (changeRecipe)="changeRecipe(rotation)"
+              [custom]="custom">
+            </app-simulation-result>
+            <nz-card [class.mobile-buffs]="false | ifMobile: true">
+              <div class="buffs-container" fxLayout="row" fxLayoutAlign="flex-start center">
+                @for (buff of resultData.simulation.buffs; track buff) {
+                  <div class="buff-container">
+                    @if (buff.stacks > 0) {
+                      <span class="stacks">{{buff.stacks}}</span>
+                    }
+                    <img [src]="getBuffIcon(buff)" alt="" class="buff-icon">
+                    @if (buff.duration.toString() !== 'Infinity') {
+                      <span class="duration">{{buff.duration}}</span>
+                    }
+                  </div>
+                }
+              </div>
+            </nz-card>
+            <nz-card [class.failed]="actionFailed" [class.success]="resultData.simulation.success" class="actions-card">
+              @if (dirty) {
+                <i [nzTooltipTitle]="'SIMULATOR.Unsaved_changes' | translate" [twoToneColor]="'#aa9400'"
+                  class="warning-icon" nz-icon
+                nz-tooltip nzType="exclamation-circle" theme="twotone"></i>
+              }
+              <div class="rotation__container"
+                fxLayout="row wrap"
+                [ngStyle]="{ '--box-width': boxWidth, '--box-height': boxHeight }"
+                cdkDropListGroup
+                #rotationContainer>
+                <div cdkDropList
+                  id="rotation__container__step--template"
+                  class="rotation__container__step"
+                  (cdkDropListEntered)="actionEnter($event)"
+                  (cdkDropListDropped)="actionDrop($event)"
+                  #stepTemplate
+                ></div>
+                <div cdkDropList
+                  id="rotation__container__step--placeholder"
+                  class="rotation__container__step"
+                  (cdkDropListEntered)="actionEnter($event)"
+                  (cdkDropListDropped)="actionDrop($event)"
+                  #placeholder
+                ></div>
+                @for (step of resultData.steps; track trackByAction(i, step); let i = $index) {
+                  <div
+                    cdkDropList
+                    [id]="'rotation__container__step--' + i.toString()"
+                    class="rotation__container__step"
+                    (cdkDropListEntered)="actionEnter($event)"
+                    (cdkDropListDropped)="actionDrop($event)">
+                    <app-action cdkDrag
+                      tutorialStep="TUTORIAL.SIMULATOR.Right_click_condition"
+                      tutorialStepIndex="6"
+                      (actionclick)="removeAction(i)"
+                      (stepstate)="setState(i, $event)"
+                      (failChange)="setFail(i, $event)"
+                      [cdkDragData]="step.action"
+                      [cdkDragDisabled]="!step.action.canBeMoved(i)"
+                      [action]="step.action"
+                      [cpCost]="step.cpDifference"
+                      [disabled]="!step.success || step.skipped"
+                      [failed]="!step.success"
+                      [tooltipDisabled]="step.action.getIds()[0] < 0"
+                      [ignoreDisabled]="true"
+                      [showStateMenu]="true"
+                      [simulation]="resultData.simulation"
+                    [state]="stepStates$.value[i] || 1"></app-action>
+                  </div>
+                }
+              </div>
+              @if (resultData.failCause !== undefined) {
+                <div class="fail-reason">
+                  @switch (resultData.failCause) {
+                    @case ('MISSING_STATS_REQUIREMENT') {
+                      {{('SIMULATOR.FAIL_CAUSE.' + resultData.failCause) | translate}} ({{resultData.simulation.recipe.craftsmanshipReq}}
+                      /{{resultData.simulation.recipe.controlReq}})
+                    }
+                    @default {
+                      {{('SIMULATOR.FAIL_CAUSE.' + resultData.failCause) | translate}}
+                    }
+                  }
+                </div>
+              }
+            </nz-card>
+            <nz-card class="actions-card"
+              [class.mobile-actions]="false | ifMobile: true">
+              <div class="actions-card-content">
+                <div class="detailed-toggle">
+                  <nz-switch [(ngModel)]="settings.detailedSimulatorActions"
+                    [nzUnCheckedChildren]="'SIMULATOR.Compact' | translate"
+                  [nzCheckedChildren]="'SIMULATOR.Detailed' | translate"></nz-switch>
+                </div>
+                @if (statsTooLow$ | async) {
+                  <nz-alert nzType="error" nzShowIcon
+                  [nzMessage]="'SIMULATOR.FAIL_CAUSE.MISSING_STATS_REQUIREMENT' | translate"></nz-alert>
+                }
+                @if (levelTooLow$ | async) {
+                  <nz-alert nzType="error" nzShowIcon
+                  [nzMessage]="'SIMULATOR.FAIL_CAUSE.MISSING_LEVEL_REQUIREMENT' | translate"></nz-alert>
+                }
+                <div class="category-row">
+                  <div>
+                    <h4>{{'SIMULATOR.CATEGORY.Progression' | translate}}</h4>
+                    <div cdkDropList
+                      class="actions-row"
+                      fxLayout="row wrap"
+                      fxLayoutAlign="flex-start center"
+                      [fxLayoutGap]="settings.detailedSimulatorActions ? '10px' : '5px'"
+                      [cdkDropListConnectedTo]="connectedDropLists"
+                      cdkDropListSortingDisabled>
+                      @for (action of getProgressActions(); track action) {
+                        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                          <app-action cdkDrag
+                            (actionclick)="addAction(action)"
+                            (cdkDragEnded)="tooltipsDisabled = false"
+                            (cdkDragStarted)="tooltipsDisabled = true"
+                            [cdkDragData]="action"
+                            [cdkDragStartDelay]="50"
+                            [cdkDragDisabled]="snapshotMode"
+                            [action]="action"
+                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
+                            [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                            [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
+                            [simulation]="resultData.simulation"
+                          [tooltipDisabled]="tooltipsDisabled"></app-action>
+                          @if (settings.detailedSimulatorActions) {
+                            <div>
+                              <div class="action-name">{{action.getId(resultData.simulation.crafterStats.jobId) | actionName | i18n}}</div>
+                            </div>
+                          }
+                        </div>
+                      }
                     </div>
                   </div>
-                  <ng-template #noFcBuffs>
-                    <div class="nothing-selected">
-                      {{'SIMULATOR.CONFIGURATION.No_fc_buffs' | translate}}
-                    </div>
-                  </ng-template>
-                </div>
-              </div>
-              <div class="apply" fxFlexAlign="flex-end flex-end" fxLayout="column" fxLayoutGap="5px">
-                <div>
-                  <button
-                    (click)="applyConsumables(crafterStats);this.dirty = true;dirtyFacade.removeEntry('simulator', dirtyScope.PAGE);"
-                    nz-button nzBlock
-                    [nzType]="dirtyConsumables ? 'primary' : 'default'">
-                    {{'SIMULATOR.CONFIGURATION.Apply_foods' | translate}}
-                  </button>
-                </div>
-                <div>
-                  <button (click)="saveDefaultConsumables()" nz-button nzBlock>
-                    {{'SIMULATOR.CONFIGURATION.Save_consumables' | translate}}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </nz-collapse-panel>
-      </nz-collapse>
-
-      <div *ngIf="result$ | async as resultData;"
-           fxLayout="column"
-           fxLayoutGap="10px">
-        <app-simulation-result [result]="resultData"
-                               [itemId]="itemId"
-                               [progressPer100]="progressPer100$ | async"
-                               [qualityPer100]="qualityPer100$ | async"
-                               [thresholds]="thresholds"
-                               [report]="report$ | async"
-                               (snapshotStepChange)="snapshotStep$.next($event)"
-                               (snapshotModeChange)="snapshotMode = $event"
-                               (changeRecipe)="changeRecipe(rotation)"
-                               [custom]="custom">
-        </app-simulation-result>
-
-        <nz-card [class.mobile-buffs]="false | ifMobile: true">
-          <div class="buffs-container" fxLayout="row" fxLayoutAlign="flex-start center">
-            <div *ngFor="let buff of resultData.simulation.buffs" class="buff-container">
-              <span *ngIf="buff.stacks > 0" class="stacks">{{buff.stacks}}</span>
-              <img [src]="getBuffIcon(buff)" alt="" class="buff-icon">
-              <span *ngIf="buff.duration.toString() !== 'Infinity'" class="duration">{{buff.duration}}</span>
-            </div>
-          </div>
-        </nz-card>
-
-        <nz-card [class.failed]="actionFailed" [class.success]="resultData.simulation.success" class="actions-card">
-          <i *ngIf="dirty" [nzTooltipTitle]="'SIMULATOR.Unsaved_changes' | translate" [twoToneColor]="'#aa9400'"
-             class="warning-icon" nz-icon
-             nz-tooltip nzType="exclamation-circle" theme="twotone"></i>
-          <div class="rotation__container"
-               fxLayout="row wrap"
-               [ngStyle]="{ '--box-width': boxWidth, '--box-height': boxHeight }"
-               cdkDropListGroup
-               #rotationContainer>
-            <div cdkDropList
-                 id="rotation__container__step--template"
-                 class="rotation__container__step"
-                 (cdkDropListEntered)="actionEnter($event)"
-                 (cdkDropListDropped)="actionDrop($event)"
-                 #stepTemplate
-            ></div>
-            <div cdkDropList
-                 id="rotation__container__step--placeholder"
-                 class="rotation__container__step"
-                 (cdkDropListEntered)="actionEnter($event)"
-                 (cdkDropListDropped)="actionDrop($event)"
-                 #placeholder
-            ></div>
-            <div *ngFor="let step of resultData.steps; let i = index; trackBy: trackByAction"
-                 cdkDropList
-                 [id]="'rotation__container__step--' + i.toString()"
-                 class="rotation__container__step"
-                 (cdkDropListEntered)="actionEnter($event)"
-                 (cdkDropListDropped)="actionDrop($event)">
-              <app-action cdkDrag
-                          tutorialStep="TUTORIAL.SIMULATOR.Right_click_condition"
-                          tutorialStepIndex="6"
-                          (actionclick)="removeAction(i)"
-                          (stepstate)="setState(i, $event)"
-                          (failChange)="setFail(i, $event)"
-                          [cdkDragData]="step.action"
-                          [cdkDragDisabled]="!step.action.canBeMoved(i)"
-                          [action]="step.action"
-                          [cpCost]="step.cpDifference"
-                          [disabled]="!step.success || step.skipped"
-                          [failed]="!step.success"
-                          [tooltipDisabled]="step.action.getIds()[0] < 0"
-                          [ignoreDisabled]="true"
-                          [showStateMenu]="true"
-                          [simulation]="resultData.simulation"
-                          [state]="stepStates$.value[i] || 1"></app-action>
-            </div>
-          </div>
-          <ng-container *ngIf="resultData.failCause !== undefined">
-            <div [ngSwitch]="resultData.failCause" class="fail-reason">
-              <ng-container *ngSwitchCase="'MISSING_STATS_REQUIREMENT'">
-                {{('SIMULATOR.FAIL_CAUSE.' + resultData.failCause) | translate}} ({{resultData.simulation.recipe.craftsmanshipReq}}
-                /{{resultData.simulation.recipe.controlReq}})
-              </ng-container>
-              <ng-container *ngSwitchDefault>
-                {{('SIMULATOR.FAIL_CAUSE.' + resultData.failCause) | translate}}
-              </ng-container>
-            </div>
-          </ng-container>
-        </nz-card>
-
-        <nz-card class="actions-card"
-                 [class.mobile-actions]="false | ifMobile: true">
-          <div class="actions-card-content">
-            <div class="detailed-toggle">
-              <nz-switch [(ngModel)]="settings.detailedSimulatorActions"
-                         [nzUnCheckedChildren]="'SIMULATOR.Compact' | translate"
-                         [nzCheckedChildren]="'SIMULATOR.Detailed' | translate"></nz-switch>
-            </div>
-            <nz-alert nzType="error" nzShowIcon *ngIf="statsTooLow$ | async"
-                      [nzMessage]="'SIMULATOR.FAIL_CAUSE.MISSING_STATS_REQUIREMENT' | translate"></nz-alert>
-            <nz-alert nzType="error" nzShowIcon *ngIf="levelTooLow$ | async"
-                      [nzMessage]="'SIMULATOR.FAIL_CAUSE.MISSING_LEVEL_REQUIREMENT' | translate"></nz-alert>
-            <div class="category-row">
-              <div>
-                <h4>{{'SIMULATOR.CATEGORY.Progression' | translate}}</h4>
-                <div cdkDropList
-                     class="actions-row"
-                     fxLayout="row wrap"
-                     fxLayoutAlign="flex-start center"
-                     [fxLayoutGap]="settings.detailedSimulatorActions ? '10px' : '5px'"
-                     [cdkDropListConnectedTo]="connectedDropLists"
-                     cdkDropListSortingDisabled>
-                  <ng-container *ngFor="let action of getProgressActions()">
-                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <app-action cdkDrag
-                                  (actionclick)="addAction(action)"
-                                  (cdkDragEnded)="tooltipsDisabled = false"
-                                  (cdkDragStarted)="tooltipsDisabled = true"
-                                  [cdkDragData]="action"
-                                  [cdkDragStartDelay]="50"
-                                  [cdkDragDisabled]="snapshotMode"
-                                  [action]="action"
-                                  [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                                  [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
-                                  [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
-                                  [simulation]="resultData.simulation"
-                                  [tooltipDisabled]="tooltipsDisabled"></app-action>
-                      <div *ngIf="settings.detailedSimulatorActions">
-                        <div class="action-name">{{action.getId(resultData.simulation.crafterStats.jobId) | actionName | i18n}}</div>
-                      </div>
-                    </div>
-                  </ng-container>
-                </div>
-              </div>
-              <div>
-                <h4>{{'SIMULATOR.CATEGORY.Quality' | translate}}</h4>
-                <div cdkDropList
-                     [cdkDropListConnectedTo]="connectedDropLists"
-                     cdkDropListSortingDisabled
-                     fxLayout="row wrap"
-                     fxLayoutGap="5px"
-                     fxLayoutAlign="flex-start center" class="actions-row">
-                  <ng-container *ngFor="let action of getQualityActions()">
-                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <app-action (actionclick)="addAction(action)"
-                                  cdkDrag
-                                  (cdkDragEnded)="tooltipsDisabled = false"
-                                  (cdkDragStarted)="tooltipsDisabled = true"
-                                  [cdkDragData]="action"
-                                  [cdkDragStartDelay]="50"
-                                  [cdkDragDisabled]="snapshotMode"
-                                  [action]="action"
-                                  [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                                  [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
-                                  [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
-                                  [simulation]="resultData.simulation"
-                                  [tooltipDisabled]="tooltipsDisabled"></app-action>
-                      <div *ngIf="settings.detailedSimulatorActions">
-                        <div class="action-name">{{action.getId(resultData.simulation.crafterStats.jobId) | actionName | i18n}}</div>
-                      </div>
-                    </div>
-                  </ng-container>
-                </div>
-              </div>
-            </div>
-            <div class="category-row">
-              <div>
-                <h4>{{'SIMULATOR.CATEGORY.Buff' | translate}}</h4>
-                <div cdkDropList
-                     [cdkDropListConnectedTo]="connectedDropLists"
-                     cdkDropListSortingDisabled
-                     fxLayout="row wrap"
-                     fxLayoutGap="5px"
-                     fxLayoutAlign="flex-start center" class="actions-row">
-                  <ng-container *ngFor="let action of getBuffActions()">
-                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <app-action (actionclick)="addAction(action)"
-                                  cdkDrag
-                                  (cdkDragEnded)="tooltipsDisabled = false"
-                                  (cdkDragStarted)="tooltipsDisabled = true"
-                                  [cdkDragData]="action"
-                                  [cdkDragStartDelay]="50"
-                                  [cdkDragDisabled]="snapshotMode"
-                                  [action]="action"
-                                  [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                                  [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
-                                  [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
-                                  [simulation]="resultData.simulation"
-                                  [tooltipDisabled]="tooltipsDisabled"></app-action>
-                      <div *ngIf="settings.detailedSimulatorActions">
-                        <div class="action-name">{{action.getId(resultData.simulation.crafterStats.jobId) | actionName | i18n}}</div>
-                      </div>
-                    </div>
-                  </ng-container>
-                </div>
-              </div>
-              <div>
-                <h4>{{'SIMULATOR.CATEGORY.Repair' | translate}}</h4>
-
-                <div cdkDropList
-                     [cdkDropListConnectedTo]="connectedDropLists"
-                     cdkDropListSortingDisabled
-                     fxLayout="row wrap"
-                     fxLayoutGap="5px"
-                     fxLayoutAlign="flex-start center" class="actions-row">
-
-                  <ng-container *ngFor="let action of getRepairActions()">
-                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <app-action (actionclick)="addAction(action)"
-                                  cdkDrag
-                                  (cdkDragEnded)="tooltipsDisabled = false"
-                                  (cdkDragStarted)="tooltipsDisabled = true"
-                                  [cdkDragData]="action"
-                                  [cdkDragStartDelay]="50"
-                                  [cdkDragDisabled]="snapshotMode"
-                                  [action]="action"
-                                  [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                                  [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
-                                  [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
-                                  [simulation]="resultData.simulation"
-                                  [tooltipDisabled]="tooltipsDisabled"></app-action>
-                      <div *ngIf="settings.detailedSimulatorActions">
-                        <div class="action-name">{{action.getId(resultData.simulation.crafterStats.jobId) | actionName | i18n}}</div>
-                      </div>
-                    </div>
-                  </ng-container>
-                </div>
-              </div>
-              <div>
-                <h4>{{'SIMULATOR.CATEGORY.Other' | translate}}</h4>
-                <div cdkDropList
-                     [cdkDropListConnectedTo]="connectedDropLists"
-                     cdkDropListSortingDisabled
-                     fxLayout="row wrap"
-                     fxLayoutGap="5px"
-                     fxLayoutAlign="flex-start center"
-                     class="actions-row">
-
-                  <ng-container *ngFor="let action of getOtherActions()">
-                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <app-action (actionclick)="addAction(action)"
-                                  cdkDrag
-                                  (cdkDragEnded)="tooltipsDisabled = false"
-                                  (cdkDragStarted)="tooltipsDisabled = true"
-                                  [cdkDragData]="action"
-                                  [cdkDragStartDelay]="50"
-                                  [cdkDragDisabled]="snapshotMode"
-                                  [action]="action"
-                                  [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                                  [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
-                                  [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
-                                  [simulation]="resultData.simulation"
-                                  [tooltipDisabled]="tooltipsDisabled"></app-action>
-                      <div *ngIf="settings.detailedSimulatorActions">
-                        <div class="action-name">
-                          <span
-                            *ngIf="action.getId(resultData.simulation.crafterStats.jobId) === -1; else actionName">{{'SIMULATOR.Remove_IP' | translate}}</span>
-                          <ng-template #actionName>
-                            {{action.getId(resultData.simulation.crafterStats.jobId) | actionName | i18n}}
-                          </ng-template>
+                  <div>
+                    <h4>{{'SIMULATOR.CATEGORY.Quality' | translate}}</h4>
+                    <div cdkDropList
+                      [cdkDropListConnectedTo]="connectedDropLists"
+                      cdkDropListSortingDisabled
+                      fxLayout="row wrap"
+                      fxLayoutGap="5px"
+                      fxLayoutAlign="flex-start center" class="actions-row">
+                      @for (action of getQualityActions(); track action) {
+                        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                          <app-action (actionclick)="addAction(action)"
+                            cdkDrag
+                            (cdkDragEnded)="tooltipsDisabled = false"
+                            (cdkDragStarted)="tooltipsDisabled = true"
+                            [cdkDragData]="action"
+                            [cdkDragStartDelay]="50"
+                            [cdkDragDisabled]="snapshotMode"
+                            [action]="action"
+                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
+                            [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                            [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
+                            [simulation]="resultData.simulation"
+                          [tooltipDisabled]="tooltipsDisabled"></app-action>
+                          @if (settings.detailedSimulatorActions) {
+                            <div>
+                              <div class="action-name">{{action.getId(resultData.simulation.crafterStats.jobId) | actionName | i18n}}</div>
+                            </div>
+                          }
                         </div>
-                      </div>
+                      }
                     </div>
-                  </ng-container>
+                  </div>
+                </div>
+                <div class="category-row">
+                  <div>
+                    <h4>{{'SIMULATOR.CATEGORY.Buff' | translate}}</h4>
+                    <div cdkDropList
+                      [cdkDropListConnectedTo]="connectedDropLists"
+                      cdkDropListSortingDisabled
+                      fxLayout="row wrap"
+                      fxLayoutGap="5px"
+                      fxLayoutAlign="flex-start center" class="actions-row">
+                      @for (action of getBuffActions(); track action) {
+                        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                          <app-action (actionclick)="addAction(action)"
+                            cdkDrag
+                            (cdkDragEnded)="tooltipsDisabled = false"
+                            (cdkDragStarted)="tooltipsDisabled = true"
+                            [cdkDragData]="action"
+                            [cdkDragStartDelay]="50"
+                            [cdkDragDisabled]="snapshotMode"
+                            [action]="action"
+                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
+                            [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                            [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
+                            [simulation]="resultData.simulation"
+                          [tooltipDisabled]="tooltipsDisabled"></app-action>
+                          @if (settings.detailedSimulatorActions) {
+                            <div>
+                              <div class="action-name">{{action.getId(resultData.simulation.crafterStats.jobId) | actionName | i18n}}</div>
+                            </div>
+                          }
+                        </div>
+                      }
+                    </div>
+                  </div>
+                  <div>
+                    <h4>{{'SIMULATOR.CATEGORY.Repair' | translate}}</h4>
+                    <div cdkDropList
+                      [cdkDropListConnectedTo]="connectedDropLists"
+                      cdkDropListSortingDisabled
+                      fxLayout="row wrap"
+                      fxLayoutGap="5px"
+                      fxLayoutAlign="flex-start center" class="actions-row">
+                      @for (action of getRepairActions(); track action) {
+                        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                          <app-action (actionclick)="addAction(action)"
+                            cdkDrag
+                            (cdkDragEnded)="tooltipsDisabled = false"
+                            (cdkDragStarted)="tooltipsDisabled = true"
+                            [cdkDragData]="action"
+                            [cdkDragStartDelay]="50"
+                            [cdkDragDisabled]="snapshotMode"
+                            [action]="action"
+                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
+                            [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                            [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
+                            [simulation]="resultData.simulation"
+                          [tooltipDisabled]="tooltipsDisabled"></app-action>
+                          @if (settings.detailedSimulatorActions) {
+                            <div>
+                              <div class="action-name">{{action.getId(resultData.simulation.crafterStats.jobId) | actionName | i18n}}</div>
+                            </div>
+                          }
+                        </div>
+                      }
+                    </div>
+                  </div>
+                  <div>
+                    <h4>{{'SIMULATOR.CATEGORY.Other' | translate}}</h4>
+                    <div cdkDropList
+                      [cdkDropListConnectedTo]="connectedDropLists"
+                      cdkDropListSortingDisabled
+                      fxLayout="row wrap"
+                      fxLayoutGap="5px"
+                      fxLayoutAlign="flex-start center"
+                      class="actions-row">
+                      @for (action of getOtherActions(); track action) {
+                        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                          <app-action (actionclick)="addAction(action)"
+                            cdkDrag
+                            (cdkDragEnded)="tooltipsDisabled = false"
+                            (cdkDragStarted)="tooltipsDisabled = true"
+                            [cdkDragData]="action"
+                            [cdkDragStartDelay]="50"
+                            [cdkDragDisabled]="snapshotMode"
+                            [action]="action"
+                            [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
+                            [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                            [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
+                            [simulation]="resultData.simulation"
+                          [tooltipDisabled]="tooltipsDisabled"></app-action>
+                          @if (settings.detailedSimulatorActions) {
+                            <div>
+                              <div class="action-name">
+                                @if (action.getId(resultData.simulation.crafterStats.jobId) === -1) {
+                                  <span
+                                  >{{'SIMULATOR.Remove_IP' | translate}}</span>
+                                } @else {
+                                  {{action.getId(resultData.simulation.crafterStats.jobId) | actionName | i18n}}
+                                }
+                                <ng-template #actionName>
+                                  {{action.getId(resultData.simulation.crafterStats.jobId) | actionName | i18n}}
+                                </ng-template>
+                              </div>
+                            </div>
+                          }
+                        </div>
+                      }
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </nz-card>
           </div>
-        </nz-card>
+        }
       </div>
     </div>
-  </div>
+  } @else {
+    <app-fullpage-message>
+      {{'SIMULATOR.Rotation_not_found' | translate}}
+    </app-fullpage-message>
+  }
   <ng-template #notFound>
     <app-fullpage-message>
       {{'SIMULATOR.Rotation_not_found' | translate}}
     </app-fullpage-message>
   </ng-template>
-</ng-container>
+}

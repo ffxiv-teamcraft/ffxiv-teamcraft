@@ -19,7 +19,7 @@ import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 interface ImportData {
   items: { id: number, recipes?: LazyRecipesPerItem[], quantity: number, recipeId?: string }[],
@@ -31,7 +31,7 @@ interface ImportData {
     templateUrl: './import.component.html',
     styleUrls: ['./import.component.less'],
     standalone: true,
-    imports: [NgIf, FlexModule, NgFor, ItemIconComponent, I18nNameComponent, NzAlertModule, NzRadioModule, FormsModule, NzButtonModule, NzWaveModule, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe]
+    imports: [FlexModule, ItemIconComponent, I18nNameComponent, NzAlertModule, NzRadioModule, FormsModule, NzButtonModule, NzWaveModule, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class ImportComponent {
 

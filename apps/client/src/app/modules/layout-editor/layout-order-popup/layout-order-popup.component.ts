@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ListLayout } from '../../../core/layout/list-layout';
 import { LayoutRow } from '../../../core/layout/layout-row';
 import { CdkDragDrop, moveItemInArray, CdkDropList, CdkDrag } from '@angular/cdk/drag-drop';
-import { NgFor } from '@angular/common';
+
 import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
@@ -10,7 +10,7 @@ import { DialogComponent } from '../../../core/dialog.component';
   templateUrl: './layout-order-popup.component.html',
   styleUrls: ['./layout-order-popup.component.less'],
   standalone: true,
-  imports: [CdkDropList, NgFor, CdkDrag]
+  imports: [CdkDropList, CdkDrag]
 })
 export class LayoutOrderPopupComponent extends DialogComponent {
 

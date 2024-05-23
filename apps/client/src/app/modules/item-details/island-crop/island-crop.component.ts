@@ -6,7 +6,7 @@ import { IslandCrop } from '../../list/model/island-crop';
 import { getItemSource } from '@ffxiv-teamcraft/types';
 import { DataType } from '@ffxiv-teamcraft/types';
 import { MapComponent } from '../../map/map/map.component';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -17,7 +17,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./island-crop.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, ItemIconComponent, I18nNameComponent, NgIf, MapComponent, AsyncPipe]
+    imports: [FlexModule, ItemIconComponent, I18nNameComponent, MapComponent, AsyncPipe]
 })
 export class IslandCropComponent extends ItemDetailsPopup<IslandCrop> {
 

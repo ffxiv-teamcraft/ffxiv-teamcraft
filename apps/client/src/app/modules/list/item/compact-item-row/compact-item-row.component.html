@@ -1,32 +1,50 @@
 <div class="row">
-  <app-item-icon [itemId]="item.id" [itemName]="item.id | itemName: item | i18n"
-                 [width]="24" [forceCollectable]="item.collectable" *ngIf="!item.xivapiIcon"></app-item-icon>
-  <app-item-icon [icon]="item.xivapiIcon | xivapiIcon" [itemId]="null"
-                 [width]="24" *ngIf="item.xivapiIcon" [tooltipDisabled]="true"></app-item-icon>
+  @if (!item.xivapiIcon) {
+    <app-item-icon [itemId]="item.id" [itemName]="item.id | itemName: item | i18n"
+    [width]="24" [forceCollectable]="item.collectable"></app-item-icon>
+  }
+  @if (item.xivapiIcon) {
+    <app-item-icon [icon]="item.xivapiIcon | xivapiIcon" [itemId]="null"
+    [width]="24" [tooltipDisabled]="true"></app-item-icon>
+  }
   <div [itemNameCopy]="item.id" class="item-name" nz-tooltip>
     <app-i18n-name [content]="item.contentType || 'items'" [id]="item.id"></app-i18n-name>
-    <span *ngIf="item.amount > item.done" class="needed" nz-tooltip
-          [nzTooltipTitle]="'Required_crafts_amount' | translate">&nbsp;x{{item.amount - item.done}}<span
-      *ngIf="item.amount !== item.amount_needed">({{((item.amount - item.done) / item.yield) | ceil}})</span>
+    @if (item.amount > item.done) {
+      <span class="needed" nz-tooltip
+        [nzTooltipTitle]="'Required_crafts_amount' | translate">&nbsp;x{{item.amount - item.done}}@if (item.amount !== item.amount_needed) {
+        <span
+        >({{((item.amount - item.done) / item.yield) | ceil}})</span>
+      }
     </span>
-  </div>
-  <div class="spacer"></div>
-  <app-item-sources-display class="source-display" [sources]="source" [item]="item" [overlay]="false" size="small"></app-item-sources-display>
+  }
+</div>
+<div class="spacer"></div>
+<app-item-sources-display class="source-display" [sources]="source" [item]="item" [overlay]="false" size="small"></app-item-sources-display>
 </div>
 <div class="row">
-  <ng-container *ngIf="hasItemInInventory$ | async else alarmsTpl">
+  @if (hasItemInInventory$ | async) {
     <app-item-inventory-button [itemId]="this.item.id" [permissionLevel]="permissionLevel" (add)="add($event, this.item)"></app-item-inventory-button>
-  </ng-container>
+  } @else {
+    @if (alarmDisplay$ | async; as display) {
+      <app-alarm-button [alarm]="display.alarm" [alarmGroups]="alarmGroups"
+        (toggleAlarm)="toggleAlarm($event)"
+      (addAlarmWithGroup)="addAlarmWithGroup($event.alarm, $event.group)"></app-alarm-button>
+    }
+  }
 </div>
 <div class="row">
   <app-compact-amount-input [permissionLevel]="permissionLevel" [aggregate]="aggregate" [item]="item" [finalItem]="finalItem"></app-compact-amount-input>
 </div>
-<div class="row" *ngIf="hasItemInInventory$ | async">
-  <ng-container *ngTemplateOutlet="alarmsTpl"></ng-container>
-</div>
+@if (hasItemInInventory$ | async) {
+  <div class="row">
+    <ng-container *ngTemplateOutlet="alarmsTpl"></ng-container>
+  </div>
+}
 
 <ng-template #alarmsTpl>
-  <app-alarm-button *ngIf="alarmDisplay$ | async as display" [alarm]="display.alarm" [alarmGroups]="alarmGroups"
-                    (toggleAlarm)="toggleAlarm($event)"
-                    (addAlarmWithGroup)="addAlarmWithGroup($event.alarm, $event.group)"></app-alarm-button>
+  @if (alarmDisplay$ | async; as display) {
+    <app-alarm-button [alarm]="display.alarm" [alarmGroups]="alarmGroups"
+      (toggleAlarm)="toggleAlarm($event)"
+    (addAlarmWithGroup)="addAlarmWithGroup($event.alarm, $event.group)"></app-alarm-button>
+  }
 </ng-template>

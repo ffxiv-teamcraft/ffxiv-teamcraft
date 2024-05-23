@@ -1,16 +1,20 @@
 <app-page-loader [loading]="addingGroupAndAlarms">
-  <ng-container *ngIf="group$ | async as group; else loading">
-    <ng-container *ngIf="alarms$ | async as alarms">
-      <app-fullpage-message *ngIf="group.notFound || (outdated$ | async); else groupCard">
-      <span *ngIf="group.notFound">
-      {{'ALARMS.Group_not_found' | translate}}
-      </span>
-        <span *ngIf="outdated$ | async">
-      {{'ALARMS.Group_outdated' | translate}}
-      </span>
-      </app-fullpage-message>
-
-      <ng-template #groupCard>
+  @if (group$ | async; as group) {
+    @if (alarms$ | async; as alarms) {
+      @if (group.notFound || (outdated$ | async)) {
+        <app-fullpage-message>
+          @if (group.notFound) {
+            <span>
+              {{'ALARMS.Group_not_found' | translate}}
+            </span>
+          }
+          @if (outdated$ | async) {
+            <span>
+              {{'ALARMS.Group_outdated' | translate}}
+            </span>
+          }
+        </app-fullpage-message>
+      } @else {
         <nz-card [nzTitle]="cardHeader">
           <ng-template #cardHeader>
             <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-between center">
@@ -22,38 +26,47 @@
                 </div>
               </div>
               <button nz-button nz-tooltip nzShape="circle" nzType="primary" [nzTooltipTitle]="'ALARMS.Add_group_and_alarms' | translate"
-                      (click)="cloneGroup(group, alarms)">
+                (click)="cloneGroup(group, alarms)">
                 <i nz-icon nzType="copy" nzTheme="outline"></i>
               </button>
             </div>
           </ng-template>
           <div fxLayout="column" fxLayoutGap="5px">
-            <app-fullpage-message *ngIf="alarms.length === 0"></app-fullpage-message>
+            @if (alarms.length === 0) {
+              <app-fullpage-message></app-fullpage-message>
+            }
             <div class="alarms-container">
-              <div *ngFor="let alarm of alarms; last as last" class="alarm-row" [class.border-bottom]="!last" nz-row>
-                <div nz-col nzMd="4" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <app-item-icon *ngIf="alarm.itemId; else customAlarmIcon" [icon]="alarm.itemId | lazyIcon"
-                                 [itemId]="alarm.itemId" [width]="32"></app-item-icon>
-                  <ng-template #customAlarmIcon>
-                    <nz-avatar [nzText]="alarm.name?alarm.name[0] + alarm.name[1]:'?'"></nz-avatar>
-                  </ng-template>
-                  <div fxLayout="column" fxLayoutAlign="center flex-start">
-                    <div><app-i18n-name [id]="alarm.itemId" content="items"></app-i18n-name></div>
-                    <div>{{alarm.mapId | mapName | i18n}} <span *ngIf="alarm.itemId">- {{alarm.zoneId | i18nRow:'places' | i18n}}</span></div>
+              @for (alarm of alarms; track alarm; let last = $last) {
+                <div class="alarm-row" [class.border-bottom]="!last" nz-row>
+                  <div nz-col nzMd="4" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                    @if (alarm.itemId) {
+                      <app-item-icon [icon]="alarm.itemId | lazyIcon"
+                      [itemId]="alarm.itemId" [width]="32"></app-item-icon>
+                    } @else {
+                      <nz-avatar [nzText]="alarm.name?alarm.name[0] + alarm.name[1]:'?'"></nz-avatar>
+                    }
+                    <div fxLayout="column" fxLayoutAlign="center flex-start">
+                      <div><app-i18n-name [id]="alarm.itemId" content="items"></app-i18n-name></div>
+                      <div>{{alarm.mapId | mapName | i18n}} @if (alarm.itemId) {
+                        <span>- {{alarm.zoneId | i18nRow:'places' | i18n}}</span>
+                      }</div>
+                    </div>
+                  </div>
+                  <div nz-col nzMd="8">{{alarm.name}} - {{alarm.note}}</div>
+                  <div nz-col nzMd="4" fxLayout="row" fxLayoutAlign="center center">
+                    <app-alarm-button [alarm]="alarm" [alarmGroups]="alarmGroups$ | async" (toggleAlarm)="toggleAlarm($event)"
+                    (addAlarmWithGroup)="addAlarmWithGroup($event.alarm, $event.group)"></app-alarm-button>
                   </div>
                 </div>
-                <div nz-col nzMd="8">{{alarm.name}} - {{alarm.note}}</div>
-                <div nz-col nzMd="4" fxLayout="row" fxLayoutAlign="center center">
-                  <app-alarm-button [alarm]="alarm" [alarmGroups]="alarmGroups$ | async" (toggleAlarm)="toggleAlarm($event)"
-                                    (addAlarmWithGroup)="addAlarmWithGroup($event.alarm, $event.group)"></app-alarm-button>
-                </div>
-              </div>
+              }
             </div>
           </div>
         </nz-card>
-      </ng-template>
-    </ng-container>
-  </ng-container>
+      }
+    }
+  } @else {
+    <app-page-loader [loading]="true"></app-page-loader>
+  }
 </app-page-loader>
 <ng-template #loading>
   <app-page-loader [loading]="true"></app-page-loader>

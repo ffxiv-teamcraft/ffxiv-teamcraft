@@ -9,14 +9,14 @@ import { ListController } from '../../../modules/list/list-controller';
 import { TranslateModule } from '@ngx-translate/core';
 import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
-import { NgIf } from '@angular/common';
+
 
 @Component({
     selector: 'app-template',
     templateUrl: './template.component.html',
     styleUrls: ['./template.component.less'],
     standalone: true,
-    imports: [NgIf, PageLoaderComponent, FullpageMessageComponent, TranslateModule]
+    imports: [PageLoaderComponent, FullpageMessageComponent, TranslateModule]
 })
 export class TemplateComponent {
 

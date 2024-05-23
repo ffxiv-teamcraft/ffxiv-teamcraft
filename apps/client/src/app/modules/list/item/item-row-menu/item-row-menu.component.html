@@ -1,144 +1,155 @@
 <nz-dropdown-menu #menu="nzDropdownMenu" class="item-options">
   <ul nz-menu>
-    <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.COPY_NAME_NOT_FAVORITE)">
+    @if (!isButton(buttonsComponentRef.itemRowTypes.COPY_NAME_NOT_FAVORITE)) {
       <li [itemNameCopy]="buttonsComponentRef.itemId"
-          [forceCopyMode]="buttonsComponentRef.notFavoriteCopyMode"
-          [disableTooltip]="true"
-          nz-menu-item>
+        [forceCopyMode]="buttonsComponentRef.notFavoriteCopyMode"
+        [disableTooltip]="true"
+        nz-menu-item>
         {{(buttonsComponentRef.notFavoriteCopyMode === 'isearch' ? 'Copy_isearch' : 'Copy_item_name_to_clipboard') | translate}}
       </li>
-    </ng-container>
+    }
 
-    <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.MARKET_BOARD_INFORMATIONS) && buttonsComponentRef.itemId > 0">
+    @if (!isButton(buttonsComponentRef.itemRowTypes.MARKET_BOARD_INFORMATIONS) && buttonsComponentRef.itemId > 0) {
       <li (click)="buttonsComponentRef.openMarketboardDialog.emit()" nz-menu-item>
         {{'MARKETBOARD.Title' | translate}}
       </li>
-    </ng-container>
+    }
 
-    <ng-container
-      *ngIf="!isButton(buttonsComponentRef.itemRowTypes.ATTACH_ROTATION) && buttonsComponentRef.isCraft && buttonsComponentRef.itemId > 0">
-      <li (click)="buttonsComponentRef.attachRotation.emit()" *ngIf="!buttonsComponentRef.attachedRotation; else detachRotationRef" nz-menu-item>
-        {{'LIST.ROTATION.Attach' | translate}}
-      </li>
-      <ng-template #detachRotationRef>
+    @if (!isButton(buttonsComponentRef.itemRowTypes.ATTACH_ROTATION) && buttonsComponentRef.isCraft && buttonsComponentRef.itemId > 0) {
+      @if (!buttonsComponentRef.attachedRotation) {
+        <li (click)="buttonsComponentRef.attachRotation.emit()" nz-menu-item>
+          {{'LIST.ROTATION.Attach' | translate}}
+        </li>
+      } @else {
         <li (click)="buttonsComponentRef.detachRotation.emit()" nz-menu-item>
           {{'LIST.ROTATION.Detach' | translate}}
         </li>
-      </ng-template>
-    </ng-container>
+      }
+    }
 
 
-    <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.COMMENTS) && !buttonsComponentRef.offlineList">
+    @if (!isButton(buttonsComponentRef.itemRowTypes.COMMENTS) && !buttonsComponentRef.offlineList) {
       <li (click)="buttonsComponentRef.openCommentsPopup.emit()"
-          nz-menu-item>
+        nz-menu-item>
         <nz-badge [nzDot]="buttonsComponentRef.commentBadge">
           {{'COMMENTS.Title' | translate}}
         </nz-badge>
       </li>
-    </ng-container>
+    }
 
-    <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.ADD_ALL_ALARMS)">
-      <li (click)="buttonsComponentRef.addAllAlarms.emit()" *ngIf="buttonsComponentRef.hasAlarms"
+    @if (!isButton(buttonsComponentRef.itemRowTypes.ADD_ALL_ALARMS)) {
+      @if (buttonsComponentRef.hasAlarms) {
+        <li (click)="buttonsComponentRef.addAllAlarms.emit()"
           nz-menu-item>
-        {{'LIST_DETAILS.Add_all_item_alarms' | translate}}
-      </li>
-    </ng-container>
+          {{'LIST_DETAILS.Add_all_item_alarms' | translate}}
+        </li>
+      }
+    }
 
-    <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.REQUIREMENTS)">
+    @if (!isButton(buttonsComponentRef.itemRowTypes.REQUIREMENTS)) {
       <li (click)="buttonsComponentRef.openRequirementsPopup.emit()" nz-menu-item>{{'Requirements_for_craft' | translate}}</li>
-    </ng-container>
+    }
 
-    <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.ASSIGN_TEAM_MEMBER)">
-      <li
-        *ngIf="buttonsComponentRef.team?.leader === buttonsComponentRef.userId || (!buttonsComponentRef.team?.notFound && buttonsComponentRef.team?.isOfficer(buttonsComponentRef.userId))"
-        nz-submenu>
-        <span title>{{'TEAMS.Assign_team_member' | translate}}</span>
-        <ul class="team-members" nz-menu>
-          <ng-container *ngFor="let member of buttonsComponentRef.team?.members">
-            <ng-container *ngIf="(buttonsComponentRef.workingOnIt || []).indexOf(member) === -1">
-              <li (click)="buttonsComponentRef.assignTeamMember.emit({userId: member, team: buttonsComponentRef.team})"
-                  *ngIf="member | characterName | async as charName"
-                  nz-menu-item>{{charName}}
-              </li>
-            </ng-container>
-          </ng-container>
-        </ul>
-      </li>
-    </ng-container>
+    @if (!isButton(buttonsComponentRef.itemRowTypes.ASSIGN_TEAM_MEMBER)) {
+      @if (buttonsComponentRef.team?.leader === buttonsComponentRef.userId || (!buttonsComponentRef.team?.notFound && buttonsComponentRef.team?.isOfficer(buttonsComponentRef.userId))) {
+        <li
+          nz-submenu>
+          <span title>{{'TEAMS.Assign_team_member' | translate}}</span>
+          <ul class="team-members" nz-menu>
+            @for (member of buttonsComponentRef.team?.members; track member) {
+              @if ((buttonsComponentRef.workingOnIt || []).indexOf(member) === -1) {
+                @if (member | characterName | async; as charName) {
+                  <li (click)="buttonsComponentRef.assignTeamMember.emit({userId: member, team: buttonsComponentRef.team})"
+                    nz-menu-item>{{charName}}
+                  </li>
+                }
+              }
+            }
+          </ul>
+        </li>
+      }
+    }
 
-    <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.WORK_ON_IT)">
-      <li (click)="buttonsComponentRef.setWorkingOnIt.emit(buttonsComponentRef.userId)"
-          *ngIf="(buttonsComponentRef.workingOnIt || []).indexOf(buttonsComponentRef.userId) === -1 && buttonsComponentRef.loggedIn"
+    @if (!isButton(buttonsComponentRef.itemRowTypes.WORK_ON_IT)) {
+      @if ((buttonsComponentRef.workingOnIt || []).indexOf(buttonsComponentRef.userId) === -1 && buttonsComponentRef.loggedIn) {
+        <li (click)="buttonsComponentRef.setWorkingOnIt.emit(buttonsComponentRef.userId)"
           nz-menu-item>
-        {{'Work_on_it' | translate}}
-      </li>
-      <ng-container *ngIf="buttonsComponentRef.team; else removeSingleAssignment">
+          {{'Work_on_it' | translate}}
+        </li>
+      }
+      @if (buttonsComponentRef.team) {
         <li nz-submenu>
           <span title>{{'Remove_work_on_it' | translate}}</span>
           <ul class="team-members" nz-menu>
-            <ng-container *ngFor="let user of buttonsComponentRef.workingOnIt">
-              <li (click)="buttonsComponentRef.removeWorkingOnIt.emit(user)" *ngIf="user | characterName | async as charName"
+            @for (user of buttonsComponentRef.workingOnIt; track user) {
+              @if (user | characterName | async; as charName) {
+                <li (click)="buttonsComponentRef.removeWorkingOnIt.emit(user)"
                   [nzDisabled]="buttonsComponentRef.team?.leader !== buttonsComponentRef.userId && (buttonsComponentRef.team?.notFound || !buttonsComponentRef.team?.isOfficer(buttonsComponentRef.userId)) && user !== buttonsComponentRef.userId"
                   nz-menu-item>{{charName}}
-              </li>
-            </ng-container>
+                </li>
+              }
+            }
           </ul>
         </li>
-      </ng-container>
-      <ng-template #removeSingleAssignment>
-        <li (click)="buttonsComponentRef.removeWorkingOnIt.emit(buttonsComponentRef.userId)"
-            *ngIf="(buttonsComponentRef.workingOnIt || []).indexOf(buttonsComponentRef.userId) > -1 && buttonsComponentRef.loggedIn"
+      } @else {
+        @if ((buttonsComponentRef.workingOnIt || []).indexOf(buttonsComponentRef.userId) > -1 && buttonsComponentRef.loggedIn) {
+          <li (click)="buttonsComponentRef.removeWorkingOnIt.emit(buttonsComponentRef.userId)"
             nz-menu-item>
-          {{'Remove_work_on_it' | translate}}
+            {{'Remove_work_on_it' | translate}}
+          </li>
+        }
+      }
+    }
+
+    @if (!isButton(buttonsComponentRef.itemRowTypes.EDIT_AMOUNT)) {
+      @if (buttonsComponentRef.finalItem && buttonsComponentRef.permissionLevel >= 30) {
+        <li (click)="buttonsComponentRef.changeAmount.emit()"
+          nz-menu-item>
+          {{'Edit_amount' | translate}}
         </li>
-      </ng-template>
-
-    </ng-container>
-
-    <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.EDIT_AMOUNT)">
-      <li (click)="buttonsComponentRef.changeAmount.emit()" *ngIf="buttonsComponentRef.finalItem && buttonsComponentRef.permissionLevel >= 30"
+      }
+    }
+    @if (!isButton(buttonsComponentRef.itemRowTypes.MARK_HQ) && buttonsComponentRef.itemId > 0) {
+      @if (buttonsComponentRef.permissionLevel >= 30 && buttonsComponentRef.requiredForFinalCraft === 0 && !buttonsComponentRef.requiredAsHQ) {
+        <li (click)="buttonsComponentRef.requiredAsHQ = true; buttonsComponentRef.requiredAsHQChange.emit(true)"
           nz-menu-item>
-        {{'Edit_amount' | translate}}
-      </li>
-    </ng-container>
-    <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.MARK_HQ) && buttonsComponentRef.itemId > 0">
-      <li (click)="buttonsComponentRef.requiredAsHQ = true; buttonsComponentRef.requiredAsHQChange.emit(true)"
-          *ngIf="buttonsComponentRef.permissionLevel >= 30 && buttonsComponentRef.requiredForFinalCraft === 0 && !buttonsComponentRef.requiredAsHQ"
+          {{'Mark_HQ' | translate}}
+        </li>
+      }
+      @if ((buttonsComponentRef.requiredForFinalCraft >= 0 || buttonsComponentRef.requiredAsHQ) && buttonsComponentRef.permissionLevel >= 30) {
+        <li (click)="buttonsComponentRef.requiredAsHQ = false; buttonsComponentRef.requiredAsHQChange.emit(false)"
           nz-menu-item>
-        {{'Mark_HQ' | translate}}
-      </li>
-      <li (click)="buttonsComponentRef.requiredAsHQ = false; buttonsComponentRef.requiredAsHQChange.emit(false)"
-          *ngIf="(buttonsComponentRef.requiredForFinalCraft >= 0 || buttonsComponentRef.requiredAsHQ) && buttonsComponentRef.permissionLevel >= 30"
-          nz-menu-item>
-        {{'Unmark_HQ' | translate}}
-      </li>
-    </ng-container>
-    <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.ADD_TO_ANOTHER_LIST)">
+          {{'Unmark_HQ' | translate}}
+        </li>
+      }
+    }
+    @if (!isButton(buttonsComponentRef.itemRowTypes.ADD_TO_ANOTHER_LIST)) {
       <li (click)="buttonsComponentRef.addToList.emit()" nz-menu-item>
         {{'LIST_DETAILS.LAYOUT_DIALOG.ITEMS.ADD_TO_ANOTHER_LIST' | translate}}
       </li>
-    </ng-container>
-    <ng-container
-      *ngIf="!isButton(buttonsComponentRef.itemRowTypes.REMOVE_ITEM) && buttonsComponentRef.finalItem && buttonsComponentRef.permissionLevel >= 30">
+    }
+    @if (!isButton(buttonsComponentRef.itemRowTypes.REMOVE_ITEM) && buttonsComponentRef.finalItem && buttonsComponentRef.permissionLevel >= 30) {
       <li (click)="buttonsComponentRef.removeItem.emit()" nz-menu-item>
         {{'LIST_DETAILS.LAYOUT_DIALOG.ITEMS.REMOVE_ITEM' | translate}}
       </li>
-    </ng-container>
+    }
 
-    <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.ADD_TAG) && buttonsComponentRef.settings.itemTagsEnabled">
+    @if (!isButton(buttonsComponentRef.itemRowTypes.ADD_TAG) && buttonsComponentRef.settings.itemTagsEnabled) {
       <li (click)="buttonsComponentRef.showTagInput.emit()" nz-menu-item>
         {{'LIST_DETAILS.New_tag' | translate}}
       </li>
-    </ng-container>
+    }
 
     <li (click)="buttonsComponentRef.toggleIgnoreRequirements()" nz-menu-item>
       {{(buttonsComponentRef.ignoreRequirements ? 'LIST_DETAILS.Consider_requirements' : 'LIST_DETAILS.Ignore_requirements') | translate}}
     </li>
 
-    <ng-container *ngIf="buttonsComponentRef.showLogCompletionButton && buttonsComponentRef.itemId > 0">
-      <li (click)="buttonsComponentRef.markAsDoneInLog.emit()" *ngIf="!isButton(buttonsComponentRef.itemRowTypes.MARK_AS_DONE_IN_LOG)" nz-menu-item>
-        {{'LOG_TRACKER.Mark_as_done_external' | translate}}
-      </li>
-    </ng-container>
+    @if (buttonsComponentRef.showLogCompletionButton && buttonsComponentRef.itemId > 0) {
+      @if (!isButton(buttonsComponentRef.itemRowTypes.MARK_AS_DONE_IN_LOG)) {
+        <li (click)="buttonsComponentRef.markAsDoneInLog.emit()" nz-menu-item>
+          {{'LOG_TRACKER.Mark_as_done_external' | translate}}
+        </li>
+      }
+    }
   </ul>
 </nz-dropdown-menu>

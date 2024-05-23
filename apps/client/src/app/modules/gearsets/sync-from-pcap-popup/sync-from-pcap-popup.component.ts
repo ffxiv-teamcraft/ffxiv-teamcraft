@@ -11,7 +11,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MateriaService } from '../materia.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { Job } from '@ffxiv-teamcraft/data/model/lazy-equipment';
-import { NgFor } from '@angular/common';
+
 import { NzTimelineModule } from 'ng-zorro-antd/timeline';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -22,7 +22,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
   templateUrl: './sync-from-pcap-popup.component.html',
   styleUrls: ['./sync-from-pcap-popup.component.less'],
   standalone: true,
-  imports: [FlexModule, NzAlertModule, NzTimelineModule, NgFor, TranslateModule]
+  imports: [FlexModule, NzAlertModule, NzTimelineModule, TranslateModule]
 })
 export class SyncFromPcapPopupComponent extends TeamcraftComponent {
 

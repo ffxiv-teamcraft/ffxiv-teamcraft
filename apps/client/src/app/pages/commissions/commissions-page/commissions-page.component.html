@@ -3,35 +3,47 @@
     <i nz-icon nzType="file-add"></i>
   </button>
 </div>
-<ng-container *ngIf="notifications$ | async as notifications">
-  <nz-alert nzType="info" *ngIf="notifications.length > 0" nzCloseable nzShowIcon
-            [nzCloseText]="'COMMISSIONS.Clear_notifications' | translate"
-            (nzOnClose)="removeNotifications()"
-            [nzMessage]="'COMMISSIONS.Updates' | translate" [nzDescription]="changes">
-    <ng-template #changes>
-      <ul>
-        <li *ngFor="let notification of notifications">{{notification.content}}</li>
-      </ul>
-    </ng-template>
-  </nz-alert>
-</ng-container>
-<div *ngIf="display$ | async as display; else loader">
-  <nz-divider nzOrientation="left" [nzText]="'COMMISSIONS.Your_commissions_as_client' | translate"></nz-divider>
-  <div fxLayout="column" fxLayoutGap="5px">
-    <app-fullpage-message *ngIf="display.commissionsAsClient.length === 0"
-                          fontSize="2rem"
-                          height="50px">{{'COMMISSIONS.No_commissions_as_client' | translate}}</app-fullpage-message>
-    <app-commission-panel *ngFor="let commission of display.commissionsAsClient" [commission]="commission"></app-commission-panel>
+@if (notifications$ | async; as notifications) {
+  @if (notifications.length > 0) {
+    <nz-alert nzType="info" nzCloseable nzShowIcon
+      [nzCloseText]="'COMMISSIONS.Clear_notifications' | translate"
+      (nzOnClose)="removeNotifications()"
+      [nzMessage]="'COMMISSIONS.Updates' | translate" [nzDescription]="changes">
+      <ng-template #changes>
+        <ul>
+          @for (notification of notifications; track notification) {
+            <li>{{notification.content}}</li>
+          }
+        </ul>
+      </ng-template>
+    </nz-alert>
+  }
+}
+@if (display$ | async; as display) {
+  <div>
+    <nz-divider nzOrientation="left" [nzText]="'COMMISSIONS.Your_commissions_as_client' | translate"></nz-divider>
+    <div fxLayout="column" fxLayoutGap="5px">
+      @if (display.commissionsAsClient.length === 0) {
+        <app-fullpage-message
+          fontSize="2rem"
+        height="50px">{{'COMMISSIONS.No_commissions_as_client' | translate}}</app-fullpage-message>
+      }
+      @for (commission of display.commissionsAsClient; track commission) {
+        <app-commission-panel [commission]="commission"></app-commission-panel>
+      }
+    </div>
+    <nz-divider nzOrientation="left" [nzText]="'COMMISSIONS.Your_commissions_as_crafter' | translate"></nz-divider>
+    <div fxLayout="column" fxLayoutGap="5px">
+      @if (display.commissionsAsCrafter.length === 0) {
+        <app-fullpage-message
+          fontSize="2rem"
+        height="50px">{{'COMMISSIONS.No_commissions_as_crafter' | translate}}</app-fullpage-message>
+      }
+      @for (commission of display.commissionsAsCrafter; track commission) {
+        <app-commission-panel [commission]="commission"></app-commission-panel>
+      }
+    </div>
   </div>
-
-  <nz-divider nzOrientation="left" [nzText]="'COMMISSIONS.Your_commissions_as_crafter' | translate"></nz-divider>
-  <div fxLayout="column" fxLayoutGap="5px">
-    <app-fullpage-message *ngIf="display.commissionsAsCrafter.length === 0"
-                          fontSize="2rem"
-                          height="50px">{{'COMMISSIONS.No_commissions_as_crafter' | translate}}</app-fullpage-message>
-    <app-commission-panel *ngFor="let commission of display.commissionsAsCrafter" [commission]="commission"></app-commission-panel>
-  </div>
-</div>
-<ng-template #loader>
+} @else {
   <app-page-loader></app-page-loader>
-</ng-template>
+}

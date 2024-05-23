@@ -1,144 +1,177 @@
 <app-overlay-container uri="/mappy-overlay" title="Mappy Overlay">
-  <ng-container *ngIf="display$ | async as display">
-    <div *ngIf="display.mapId; else noMap" class="mappy-overlay-container">
-      <ng-container *ngIf="!display.layersNotConfigured; else noLayers">
-        <img [src]="display.map.image" alt="" class="map-background" [style.transform]="imageTransform" (wheel)="onScroll($event)" (pan)="onPan($event)">
-        <div class="layer" [style.transform]="imageTransform" *ngIf="showLGBLayers">
-          <img src="./assets/icons/mappy/npc.png"
-               class="marker"
-               *ngFor="let enpc of display.enpcs; trackBy: trackByUid"
-               [style.width.px]="markerSizes.enpc.x"
-               [style.height.px]="markerSizes.enpc.y"
-               [style.margin-left.px]="-markerSizes.enpc.x/2"
-               [style.margin-top.px]="-markerSizes.enpc.y/2"
-               [style.top.%]="enpc.displayPosition.y"
-               [style.left.%]="enpc.displayPosition.x">
+  @if (display$ | async; as display) {
+    @if (display.mapId) {
+      <div class="mappy-overlay-container">
+        @if (!display.layersNotConfigured) {
+          <img [src]="display.map.image" alt="" class="map-background" [style.transform]="imageTransform" (wheel)="onScroll($event)" (pan)="onPan($event)">
+          @if (showLGBLayers) {
+            <div class="layer" [style.transform]="imageTransform">
+              @for (enpc of display.enpcs; track trackByUid($index, enpc)) {
+                <img src="./assets/icons/mappy/npc.png"
+                  class="marker"
+                  [style.width.px]="markerSizes.enpc.x"
+                  [style.height.px]="markerSizes.enpc.y"
+                  [style.margin-left.px]="-markerSizes.enpc.x/2"
+                  [style.margin-top.px]="-markerSizes.enpc.y/2"
+                  [style.top.%]="enpc.displayPosition.y"
+                  [style.left.%]="enpc.displayPosition.x">
+              }
+            </div>
+          }
+          @if (showLGBLayers) {
+            <div class="layer" [style.transform]="imageTransform">
+              @for (aetheryte of display.aetherytes; track trackByUid($index, aetheryte)) {
+                <img [src]="aetheryte.data.type === 1 ? './assets/icons/Aetheryte_Shard.png' : './assets/icons/Aetheryte.png'"
+                  class="marker"
+                  [style.width.px]="markerSizes.aetheryte.x"
+                  [style.height.px]="markerSizes.aetheryte.y"
+                  [style.margin-left.px]="-markerSizes.aetheryte.x/2"
+                  [style.margin-top.px]="-markerSizes.aetheryte.y/2"
+                  [style.top.%]="aetheryte.displayPosition.y"
+                  [style.left.%]="aetheryte.displayPosition.x">
+              }
+            </div>
+          }
+          <div class="layer" [style.transform]="imageTransform">
+            @for (snap of display.trail; track trackBySnap($index, snap)) {
+              <img src="./assets/icons/mappy/trail.png"
+                class="marker trail"
+                [style.width.px]="markerSizes.player.x"
+                [style.height.px]="markerSizes.player.y"
+                [style.margin-left.px]="-markerSizes.player.x/2"
+                [style.margin-top.px]="-markerSizes.player.y/2"
+                [style.top.%]="snap.y"
+                [style.left.%]="snap.x">
+            }
+          </div>
+          @if (showLocalLayers) {
+            <div class="layer" [style.transform]="imageTransform">
+              @for (bnpc of display.bnpcs; track trackByUid($index, bnpc)) {
+                <img [src]="bnpc.fateId ? './assets/icons/mappy/unknown.png' : './assets/icons/mappy/enemy.png'"
+                  class="marker hover"
+                  [style.width.px]="markerSizes.bnpc.x"
+                  [style.height.px]="markerSizes.bnpc.y"
+                  [style.margin-left.px]="-markerSizes.bnpc.x/2"
+                  [style.margin-top.px]="-markerSizes.bnpc.y/2"
+                  [style.top.%]="bnpc.displayPosition.y"
+                  [style.left.%]="bnpc.displayPosition.x"
+                  nz-tooltip [nzTooltipTitle]="bnpc.nameId | i18nRow:'mobs' | i18n">
+              }
+            </div>
+          }
+          @if (showMappyLayers) {
+            <div class="layer" [style.transform]="imageTransform">
+              @for (bnpc of display.mappyBnpcs; track trackByUid($index, bnpc)) {
+                <img [src]="bnpc.fateId ? './assets/icons/mappy/unknown.png' : './assets/icons/mappy/enemy.png'"
+                  class="marker hover"
+                  [style.width.px]="markerSizes.bnpc.x"
+                  [style.height.px]="markerSizes.bnpc.y"
+                  [style.margin-left.px]="-markerSizes.bnpc.x/2"
+                  [style.margin-top.px]="-markerSizes.bnpc.y/2"
+                  [style.top.%]="bnpc.displayPosition.y"
+                  [style.left.%]="bnpc.displayPosition.x"
+                  nz-tooltip [nzTooltipTitle]="bnpc.nameId | i18nRow:'mobs' | i18n">
+              }
+            </div>
+          }
+          @if (showLocalLayers) {
+            <div class="layer" [style.transform]="imageTransform">
+              @for (obj of display.objs; track trackByUid($index, obj)) {
+                <img class="marker hover"
+                  [src]="obj.icon"
+                  [style.width.px]="markerSizes.obj.x"
+                  [style.height.px]="markerSizes.obj.y"
+                  [style.margin-left.px]="-markerSizes.obj.x/2"
+                  [style.margin-top.px]="-markerSizes.obj.y/2"
+                  [style.top.%]="obj.displayPosition.y"
+                  [style.left.%]="obj.displayPosition.x">
+              }
+            </div>
+          }
+          @if (showMappyLayers) {
+            <div class="layer" [style.transform]="imageTransform">
+              @for (obj of display.mappyObjs; track trackByUid($index, obj)) {
+                <img class="marker hover"
+                  [src]="obj.icon"
+                  [style.width.px]="markerSizes.obj.x"
+                  [style.height.px]="markerSizes.obj.y"
+                  [style.margin-left.px]="-markerSizes.obj.x/2"
+                  [style.margin-top.px]="-markerSizes.obj.y/2"
+                  [style.top.%]="obj.displayPosition.y"
+                  [style.left.%]="obj.displayPosition.x">
+              }
+            </div>
+          }
+          <div class="layer" [style.transform]="imageTransform">
+            <img src="./assets/icons/mappy/player.png"
+              alt="You"
+              class="marker"
+              [style.transform]="display.playerRotationTransform"
+              [style.width.px]="markerSizes.player.x"
+              [style.height.px]="markerSizes.player.y"
+              [style.margin-left.px]="-markerSizes.player.x/2"
+              [style.margin-top.px]="-markerSizes.player.y/2"
+              [style.top.%]="display.player.y"
+              [style.left.%]="display.player.x">
+          </div>
+        } @else {
+          <div class="no-layers">
+            <app-fullpage-message [subtitle]="possibleLayersRef">
+              No layers configured, please take note of min and max Z values for this territory with each map and send to Miu.
+            </app-fullpage-message>
+            <ng-template #possibleLayersRef>
+              <h3>Maps for this territory:</h3>
+              <ul>
+                @for (row of display.territoryMaps; track row) {
+                  <li>{{row.mapId}} - {{row.subZoneId | i18nRow:'places' | i18n}}</li>
+                }
+              </ul>
+            </ng-template>
+          </div>
+        }
+        <div class="debug-box" [class.hidden]="!showDebugBox">
+          <div class="debug-box-content">
+            @if (!display.layersNotConfigured) {
+              <span>{{display.mapId}} - {{display.zoneId | i18nRow:'places' | i18n}}<br></span>
+            }
+            X: {{display.playerCoords.x | number:'1.1-2'}}<br>
+            Y: {{display.playerCoords.y | number:'1.1-2'}}<br>
+            Z: {{display.playerCoords.z | number:'1.1-2'}}<br>
+            Reports: {{display.reports | number:'1.0'}}<br>
+            @if (!display.layersNotConfigured) {
+              <label nz-checkbox [(ngModel)]="trackPlayer">Follow player</label>
+              }<br>
+              @if (!display.layersNotConfigured) {
+                <label nz-checkbox [(ngModel)]="showLGBLayers">Show LGB data</label>
+              }
+              @if (!display.layersNotConfigured) {
+                <label nz-checkbox [(ngModel)]="showLocalLayers">Show Local data</label>
+              }
+              @if (!display.layersNotConfigured) {
+                <label nz-checkbox [(ngModel)]="showMappyLayers">Show Mappy data</label>
+              }
+              @if (!display.layersNotConfigured && showMappyLayers) {
+                <label nz-checkbox [(ngModel)]="watchMappy">Watch Mappy data</label>
+              }
+            </div>
+            <div class="debug-toggle">
+              <button nz-button (click)="showDebugBox = !showDebugBox">
+                <i nz-icon nzType="bug" nzTheme="outline"></i>
+              </button>
+            </div>
+          </div>
+          <div class="mappy-reloader">
+            @if (!watchMappy) {
+              <button nz-button (click)="reloadMappyData()" nz-tooltip nzTooltipTitle="Reload mappy data">
+                <i nz-icon nzType="reload" nzTheme="outline"></i>
+              </button>
+            }
+          </div>
         </div>
-        <div class="layer" [style.transform]="imageTransform" *ngIf="showLGBLayers">
-          <img [src]="aetheryte.data.type === 1 ? './assets/icons/Aetheryte_Shard.png' : './assets/icons/Aetheryte.png'"
-               class="marker"
-               *ngFor="let aetheryte of display.aetherytes; trackBy: trackByUid"
-               [style.width.px]="markerSizes.aetheryte.x"
-               [style.height.px]="markerSizes.aetheryte.y"
-               [style.margin-left.px]="-markerSizes.aetheryte.x/2"
-               [style.margin-top.px]="-markerSizes.aetheryte.y/2"
-               [style.top.%]="aetheryte.displayPosition.y"
-               [style.left.%]="aetheryte.displayPosition.x">
-        </div>
-        <div class="layer" [style.transform]="imageTransform">
-          <img src="./assets/icons/mappy/trail.png"
-               class="marker trail"
-               *ngFor="let snap of display.trail; trackBy: trackBySnap"
-               [style.width.px]="markerSizes.player.x"
-               [style.height.px]="markerSizes.player.y"
-               [style.margin-left.px]="-markerSizes.player.x/2"
-               [style.margin-top.px]="-markerSizes.player.y/2"
-               [style.top.%]="snap.y"
-               [style.left.%]="snap.x">
-        </div>
-        <div class="layer" [style.transform]="imageTransform" *ngIf="showLocalLayers">
-          <img [src]="bnpc.fateId ? './assets/icons/mappy/unknown.png' : './assets/icons/mappy/enemy.png'"
-               class="marker hover"
-               *ngFor="let bnpc of display.bnpcs; trackBy: trackByUid"
-               [style.width.px]="markerSizes.bnpc.x"
-               [style.height.px]="markerSizes.bnpc.y"
-               [style.margin-left.px]="-markerSizes.bnpc.x/2"
-               [style.margin-top.px]="-markerSizes.bnpc.y/2"
-               [style.top.%]="bnpc.displayPosition.y"
-               [style.left.%]="bnpc.displayPosition.x"
-               nz-tooltip [nzTooltipTitle]="bnpc.nameId | i18nRow:'mobs' | i18n">
-        </div>
-        <div class="layer" [style.transform]="imageTransform" *ngIf="showMappyLayers">
-          <img [src]="bnpc.fateId ? './assets/icons/mappy/unknown.png' : './assets/icons/mappy/enemy.png'"
-               class="marker hover"
-               *ngFor="let bnpc of display.mappyBnpcs; trackBy: trackByUid"
-               [style.width.px]="markerSizes.bnpc.x"
-               [style.height.px]="markerSizes.bnpc.y"
-               [style.margin-left.px]="-markerSizes.bnpc.x/2"
-               [style.margin-top.px]="-markerSizes.bnpc.y/2"
-               [style.top.%]="bnpc.displayPosition.y"
-               [style.left.%]="bnpc.displayPosition.x"
-               nz-tooltip [nzTooltipTitle]="bnpc.nameId | i18nRow:'mobs' | i18n">
-        </div>
-        <div class="layer" [style.transform]="imageTransform" *ngIf="showLocalLayers">
-          <img class="marker hover"
-               *ngFor="let obj of display.objs; trackBy: trackByUid"
-               [src]="obj.icon"
-               [style.width.px]="markerSizes.obj.x"
-               [style.height.px]="markerSizes.obj.y"
-               [style.margin-left.px]="-markerSizes.obj.x/2"
-               [style.margin-top.px]="-markerSizes.obj.y/2"
-               [style.top.%]="obj.displayPosition.y"
-               [style.left.%]="obj.displayPosition.x">
-        </div>
-        <div class="layer" [style.transform]="imageTransform" *ngIf="showMappyLayers">
-          <img class="marker hover"
-               *ngFor="let obj of display.mappyObjs; trackBy: trackByUid"
-               [src]="obj.icon"
-               [style.width.px]="markerSizes.obj.x"
-               [style.height.px]="markerSizes.obj.y"
-               [style.margin-left.px]="-markerSizes.obj.x/2"
-               [style.margin-top.px]="-markerSizes.obj.y/2"
-               [style.top.%]="obj.displayPosition.y"
-               [style.left.%]="obj.displayPosition.x">
-        </div>
-        <div class="layer" [style.transform]="imageTransform">
-          <img src="./assets/icons/mappy/player.png"
-               alt="You"
-               class="marker"
-               [style.transform]="display.playerRotationTransform"
-               [style.width.px]="markerSizes.player.x"
-               [style.height.px]="markerSizes.player.y"
-               [style.margin-left.px]="-markerSizes.player.x/2"
-               [style.margin-top.px]="-markerSizes.player.y/2"
-               [style.top.%]="display.player.y"
-               [style.left.%]="display.player.x">
-        </div>
-      </ng-container>
-      <div class="debug-box" [class.hidden]="!showDebugBox">
-        <div class="debug-box-content">
-          <span *ngIf="!display.layersNotConfigured">{{display.mapId}} - {{display.zoneId | i18nRow:'places' | i18n}}<br></span>
-          X: {{display.playerCoords.x | number:'1.1-2'}}<br>
-          Y: {{display.playerCoords.y | number:'1.1-2'}}<br>
-          Z: {{display.playerCoords.z | number:'1.1-2'}}<br>
-          Reports: {{display.reports | number:'1.0'}}<br>
-          <label nz-checkbox *ngIf="!display.layersNotConfigured" [(ngModel)]="trackPlayer">Follow player</label><br>
-          <label nz-checkbox *ngIf="!display.layersNotConfigured" [(ngModel)]="showLGBLayers">Show LGB data</label>
-          <label nz-checkbox *ngIf="!display.layersNotConfigured" [(ngModel)]="showLocalLayers">Show Local data</label>
-          <label nz-checkbox *ngIf="!display.layersNotConfigured" [(ngModel)]="showMappyLayers">Show Mappy data</label>
-          <label nz-checkbox *ngIf="!display.layersNotConfigured && showMappyLayers" [(ngModel)]="watchMappy">Watch Mappy data</label>
-        </div>
-        <div class="debug-toggle">
-          <button nz-button (click)="showDebugBox = !showDebugBox">
-            <i nz-icon nzType="bug" nzTheme="outline"></i>
-          </button>
-        </div>
-      </div>
-
-      <div class="mappy-reloader">
-        <button *ngIf="!watchMappy" nz-button (click)="reloadMappyData()" nz-tooltip nzTooltipTitle="Reload mappy data">
-          <i nz-icon nzType="reload" nzTheme="outline"></i>
-        </button>
-      </div>
-    </div>
-    <ng-template #noMap>
-      <app-fullpage-message>
-        No map detected, change zone to load map
-      </app-fullpage-message>
-    </ng-template>
-    <ng-template #noLayers>
-      <div class="no-layers">
-        <app-fullpage-message [subtitle]="possibleLayersRef">
-          No layers configured, please take note of min and max Z values for this territory with each map and send to Miu.
+      } @else {
+        <app-fullpage-message>
+          No map detected, change zone to load map
         </app-fullpage-message>
-
-        <ng-template #possibleLayersRef>
-          <h3>Maps for this territory:</h3>
-          <ul>
-            <li *ngFor="let row of display.territoryMaps">{{row.mapId}} - {{row.subZoneId | i18nRow:'places' | i18n}}</li>
-          </ul>
-        </ng-template>
-      </div>
-    </ng-template>
-  </ng-container>
-</app-overlay-container>
+      }
+    }
+  </app-overlay-container>

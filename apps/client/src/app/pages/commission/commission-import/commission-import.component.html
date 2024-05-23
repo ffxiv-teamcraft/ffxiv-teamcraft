@@ -3,20 +3,25 @@
   <div class="description">
     {{'COMMISSIONS.IMPORT.Description' | translate}}
   </div>
-  <div *ngIf="template$ | async as data; else loading" class="items-container" fxLayout="column">
-    <div *ngFor="let row of data.items; let odd = odd;" [class.odd]="odd" class="item-row" fxLayout="row"
-         fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <app-item-icon [itemId]="row.id" [width]="32"></app-item-icon>
-      <div class="item-name">{{row.id | itemName | i18n}} x{{row.quantity}}</div>
+  @if (template$ | async; as data) {
+    <div class="items-container" fxLayout="column">
+      @for (row of data.items; track row; let odd = $odd) {
+        <div [class.odd]="odd" class="item-row" fxLayout="row"
+          fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <app-item-icon [itemId]="row.id" [width]="32"></app-item-icon>
+          <div class="item-name">{{row.id | itemName | i18n}} x{{row.quantity}}</div>
+        </div>
+      }
+      @if (data.items.length === 0) {
+        <app-fullpage-message height="200px">
+          {{'COMMISSIONS.IMPORT.No_items' | translate}}
+        </app-fullpage-message>
+      }
+      <button (click)="doImport(data)" [disabled]="!canDoImport(data)" nz-button nzBlock nzType="primary">
+        {{'COMMISSIONS.IMPORT.Create_commission' | translate}}
+      </button>
     </div>
-    <app-fullpage-message *ngIf="data.items.length === 0" height="200px">
-      {{'COMMISSIONS.IMPORT.No_items' | translate}}
-    </app-fullpage-message>
-    <button (click)="doImport(data)" [disabled]="!canDoImport(data)" nz-button nzBlock nzType="primary">
-      {{'COMMISSIONS.IMPORT.Create_commission' | translate}}
-    </button>
-  </div>
+  } @else {
+    <app-page-loader></app-page-loader>
+  }
 </div>
-<ng-template #loading>
-  <app-page-loader></app-page-loader>
-</ng-template>

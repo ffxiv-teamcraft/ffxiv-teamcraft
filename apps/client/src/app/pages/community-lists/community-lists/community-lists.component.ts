@@ -18,7 +18,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { FormsModule } from '@angular/forms';
 import { NzInputModule } from 'ng-zorro-antd/input';
@@ -29,7 +29,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     templateUrl: './community-lists.component.html',
     styleUrls: ['./community-lists.component.less'],
     standalone: true,
-    imports: [FlexModule, NzInputModule, FormsModule, NzSelectModule, NgFor, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, PageLoaderComponent, NgIf, ListPanelComponent, NzPaginationModule, FullpageMessageComponent, AsyncPipe, TranslateModule]
+    imports: [FlexModule, NzInputModule, FormsModule, NzSelectModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, PageLoaderComponent, ListPanelComponent, NzPaginationModule, FullpageMessageComponent, AsyncPipe, TranslateModule]
 })
 export class CommunityListsComponent implements OnDestroy {
 

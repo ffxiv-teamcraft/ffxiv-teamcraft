@@ -10,7 +10,7 @@ import { ActionIconPipe } from '../../../../pipes/pipes/action-icon.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { I18nPipe } from '../../../../core/i18n.pipe';
 import { NzGridModule } from 'ng-zorro-antd/grid';
-import { NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCardModule } from 'ng-zorro-antd/card';
@@ -21,7 +21,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     styleUrls: ['./fish-hooksets.component.less', '../../common-db.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCardModule, FlexModule, NzDividerModule, NgFor, NzGridModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, ActionIconPipe, ActionNamePipe, XivapiIconPipe, TugNamePipe]
+    imports: [NzCardModule, FlexModule, NzDividerModule, NzGridModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, ActionIconPipe, ActionNamePipe, XivapiIconPipe, TugNamePipe]
 })
 export class FishHooksetsComponent {
   public readonly loading$ = combineLatest([this.fishCtx.hooksetsByFish$, this.fishCtx.tugsByFish$]).pipe(map(([hook, tug]) => hook.loading || tug.loading));

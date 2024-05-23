@@ -11,7 +11,7 @@ import { CraftingReplayFacade } from '../../../modules/crafting-replay/+state/cr
 import { CraftingReplay } from '../../../modules/crafting-replay/model/crafting-replay';
 import { CraftingReplayRowComponent } from '../../../modules/crafting-replay/crafting-replay-row/crafting-replay-row.component';
 import { FolderPageComponent } from '../../../modules/folders/folder-page/folder-page.component';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 
 @Component({
@@ -20,7 +20,7 @@ import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/pa
     styleUrls: ['./crafting-replay-folder.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [PageLoaderComponent, NgIf, FolderPageComponent, CraftingReplayRowComponent, AsyncPipe]
+    imports: [PageLoaderComponent, FolderPageComponent, CraftingReplayRowComponent, AsyncPipe]
 })
 export class CraftingReplayFolderComponent extends TeamcraftComponent {
 

@@ -16,7 +16,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { FormsModule } from '@angular/forms';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { uniq } from 'lodash';
@@ -27,7 +27,7 @@ import { uniq } from 'lodash';
     styleUrls: ['./layout-editor-row.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCardModule, FlexModule, NgIf, NgFor, NzCheckboxModule, FormsModule, NzSelectModule, NzButtonModule, NzWaveModule, NzIconModule, NzRadioModule, NzInputModule, NzAutocompleteModule, AsyncPipe, TranslateModule, IfMobilePipe]
+    imports: [NzCardModule, FlexModule, NzCheckboxModule, FormsModule, NzSelectModule, NzButtonModule, NzWaveModule, NzIconModule, NzRadioModule, NzInputModule, NzAutocompleteModule, AsyncPipe, TranslateModule, IfMobilePipe]
 })
 export class LayoutEditorRowComponent implements OnInit {
 

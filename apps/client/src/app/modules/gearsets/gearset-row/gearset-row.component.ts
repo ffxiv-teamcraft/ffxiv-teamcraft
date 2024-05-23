@@ -16,7 +16,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgIf, NgFor } from '@angular/common';
+
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
@@ -25,7 +25,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./gearset-row.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NgIf, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzTagModule, NgFor, ClipboardDirective, RouterLink, FavoriteButtonComponent, NzPopconfirmModule, JobUnicodePipe, TranslateModule]
+    imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzTagModule, ClipboardDirective, RouterLink, FavoriteButtonComponent, NzPopconfirmModule, JobUnicodePipe, TranslateModule]
 })
 export class GearsetRowComponent {
 

@@ -2,32 +2,33 @@
   [nzTitle]="'DB.FISH.Weather_transitions' | translate"
   [nzLoading]="(weatherTransitions$ | async) === false"
   [class.card-with-list]="weatherTransitions$ | async"
->
-  <div
-    fxLayout="row"
-    fxLayoutGap="10px"
-    fxLayoutAlign="space-between center"
-    *ngFor="let row of (weatherTransitions$ | async) || []; let last = last"
-    [class.border-bottom]="!last"
-    [style.background-color]="row.active ? (highlightColor$ | async) : ''"
-    class="list-row"
   >
-    <div fxLayout="column">
-      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-        <div>
-          <img src="{{ row.previousWeatherId | weatherIcon | xivapiIcon }}" alt="" />
-          <span>{{ row.previousWeatherId | i18nRow:'weathers' | i18n }}</span>
+  @for (row of (weatherTransitions$ | async) || []; track row; let last = $last) {
+    <div
+      fxLayout="row"
+      fxLayoutGap="10px"
+      fxLayoutAlign="space-between center"
+      [class.border-bottom]="!last"
+      [style.background-color]="row.active ? (highlightColor$ | async) : ''"
+      class="list-row"
+      >
+      <div fxLayout="column">
+        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+          <div>
+            <img src="{{ row.previousWeatherId | weatherIcon | xivapiIcon }}" alt="" />
+            <span>{{ row.previousWeatherId | i18nRow:'weathers' | i18n }}</span>
+          </div>
+          <i nz-icon nzType="right" nzTheme="outline"></i>
+          <div>
+            <img src="{{ row.weatherId | weatherIcon | xivapiIcon }}" alt="" />
+            <span>{{ row.weatherId | i18nRow:'weathers' | i18n }}</span>
+          </div>
         </div>
-        <i nz-icon nzType="right" nzTheme="outline"></i>
         <div>
-          <img src="{{ row.weatherId | weatherIcon | xivapiIcon }}" alt="" />
-          <span>{{ row.weatherId | i18nRow:'weathers' | i18n }}</span>
+          <span>{{ 'DB.FISHING_SPOT.Next' | translate }}: {{ row.next | date: 'short':undefined:translate.currentLang }} ({{row.nextET}}:00 ET)</span>
         </div>
       </div>
-      <div>
-        <span>{{ 'DB.FISHING_SPOT.Next' | translate }}: {{ row.next | date: 'short':undefined:translate.currentLang }} ({{row.nextET}}:00 ET)</span>
-      </div>
+      <div>{{ row.chances | number: '1.0-1' }}%</div>
     </div>
-    <div>{{ row.chances | number: '1.0-1' }}%</div>
-  </div>
+  }
 </nz-card>

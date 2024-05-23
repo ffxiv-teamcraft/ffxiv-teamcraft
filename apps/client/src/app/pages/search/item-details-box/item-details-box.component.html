@@ -3,7 +3,8 @@
     <span nz-icon nzType="close"></span>
   </button>
 </div>
-<app-item-tooltip-component *ngIf="data$ | async as data; else loader" [item]="data"></app-item-tooltip-component>
-<ng-template #loader>
+@if (data$ | async; as data) {
+  <app-item-tooltip-component [item]="data"></app-item-tooltip-component>
+} @else {
   <nz-spin nzSpinning></nz-spin>
-</ng-template>
+}

@@ -13,7 +13,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
-import { NgFor } from '@angular/common';
+
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 
@@ -23,7 +23,7 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
     styleUrls: ['./list-crystals-panel.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCollapseModule, FlexModule, NgFor, ItemIconComponent, NzButtonModule, NzWaveModule, NzToolTipModule, ClipboardDirective, NzIconModule, I18nPipe, TranslateModule, ItemNamePipe]
+    imports: [NzCollapseModule, FlexModule, ItemIconComponent, NzButtonModule, NzWaveModule, NzToolTipModule, ClipboardDirective, NzIconModule, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class ListCrystalsPanelComponent {
 

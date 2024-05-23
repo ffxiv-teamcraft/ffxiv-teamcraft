@@ -15,7 +15,7 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzTableModule } from 'ng-zorro-antd/table';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
 
 @Component({
     selector: 'app-table',
@@ -23,7 +23,7 @@ import { NgIf, NgFor, AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
     styleUrls: ['./table.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NzTableModule, NgFor, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, AsyncPipe, DecimalPipe, DatePipe, TranslateModule, ItemNamePipe, WidthBreakpointsPipe, I18nPipe]
+    imports: [NzTableModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, AsyncPipe, DecimalPipe, DatePipe, TranslateModule, ItemNamePipe, WidthBreakpointsPipe, I18nPipe]
 })
 export class TableComponent extends AbstractMetricDisplayComponent implements OnInit {
   ProbeSource = ProbeSource;

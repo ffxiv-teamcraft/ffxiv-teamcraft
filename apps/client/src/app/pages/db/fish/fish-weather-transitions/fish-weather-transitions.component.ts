@@ -13,7 +13,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { I18nPipe } from '../../../../core/i18n.pipe';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgFor, NgIf, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCardModule } from 'ng-zorro-antd/card';
 
@@ -23,7 +23,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     styleUrls: ['./fish-weather-transitions.component.less', '../../common-db.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCardModule, FlexModule, NgFor, NzButtonModule, NzIconModule, NgIf, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, XivapiIconPipe, WeatherIconPipe]
+    imports: [NzCardModule, FlexModule, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, XivapiIconPipe, WeatherIconPipe]
 })
 export class FishWeatherTransitionsComponent {
   public readonly loading$ = this.fishCtx.weatherTransitionsByFish$.pipe(map((res) => res.loading));

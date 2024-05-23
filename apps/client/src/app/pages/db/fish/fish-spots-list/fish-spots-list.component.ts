@@ -5,7 +5,7 @@ import { FishContextService } from '../../service/fish-context.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { DbButtonComponent } from '../../../../core/db-button/db-button.component';
 import { MapPositionComponent } from '../../../../modules/map/map-position/map-position.component';
-import { NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCardModule } from 'ng-zorro-antd/card';
 
@@ -15,7 +15,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     styleUrls: ['./fish-spots-list.component.less', '../../common-db.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCardModule, FlexModule, NgFor, MapPositionComponent, DbButtonComponent, AsyncPipe, TranslateModule]
+    imports: [NzCardModule, FlexModule, MapPositionComponent, DbButtonComponent, AsyncPipe, TranslateModule]
 })
 export class FishSpotsListComponent {
   public readonly loading$ = this.fishCtx.spotsByFish$.pipe(map((res) => res.loading));

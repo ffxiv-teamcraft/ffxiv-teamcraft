@@ -2,14 +2,22 @@
   <ng-template #vendorTemplate let-vendor>
     <nz-list-item [nzContent]="vendor.zoneId !== undefined?position:null">
       <nz-list-item-meta [nzDescription]="price"
-                         [nzTitle]="title">
+        [nzTitle]="title">
       </nz-list-item-meta>
       <ng-template #title>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <div *ngIf="vendor.npcId > 1000000">{{vendor.npcId | i18nRow:'npcs' | i18n}}</div>
-          <div *ngIf="vendor.npcId < 1000000">{{vendor.npcId | i18nRow:'mobs' | i18n}}</div>
-          <nz-tag class="custom-tag" style.border-color="f50" *ngIf="vendor.festival">{{'COMMON.Festival' | translate}}</nz-tag>
-          <app-db-button  *ngIf="vendor.npcId > 1000000" [id]="vendor.npcId" type="npc" (click)="modalRef?.close()"></app-db-button>
+          @if (vendor.npcId > 1000000) {
+            <div>{{vendor.npcId | i18nRow:'npcs' | i18n}}</div>
+          }
+          @if (vendor.npcId < 1000000) {
+            <div>{{vendor.npcId | i18nRow:'mobs' | i18n}}</div>
+          }
+          @if (vendor.festival) {
+            <nz-tag class="custom-tag" style.border-color="f50">{{'COMMON.Festival' | translate}}</nz-tag>
+          }
+          @if (vendor.npcId > 1000000) {
+            <app-db-button  [id]="vendor.npcId" type="npc" (click)="modalRef?.close()"></app-db-button>
+          }
         </div>
       </ng-template>
       <ng-template #price>
@@ -19,13 +27,15 @@
         <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
           <div>{{vendor.zoneId | i18nRow:'places' | i18n}}</div>
           <app-map-position [mapId]="vendor.mapId" [marker]="vendor.coords" [zoneId]="vendor.zoneId"></app-map-position>
-          <div *ngIf="vendor.mapId | closestAetheryte: vendor.coords | async as aetheryte"
-               class="closest-tp">
-            <img alt="" class="aetheryte-icon"
-                 src="./assets/icons/Aetheryte.png"> {{aetheryte?.nameid | i18nRow:'places' | i18n}}
+          @if (vendor.mapId | closestAetheryte: vendor.coords | async; as aetheryte) {
+            <div
+              class="closest-tp">
+              <img alt="" class="aetheryte-icon"
+                src="./assets/icons/Aetheryte.png"> {{aetheryte?.nameid | i18nRow:'places' | i18n}}
+              </div>
+            }
           </div>
-        </div>
-      </ng-template>
-    </nz-list-item>
-  </ng-template>
-</nz-list>
+        </ng-template>
+      </nz-list-item>
+    </ng-template>
+  </nz-list>

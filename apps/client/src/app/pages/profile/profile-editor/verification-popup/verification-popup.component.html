@@ -1,11 +1,13 @@
 <p [innerHTML]="'PROFILE.VERIFICATION.Guide' | translate: { userId: verificationCode }">
 </p>
-<nz-alert *ngIf="verificationResult$ | async as result"
-          class="dark"
-          [nzMessage]="(result.verified?'PROFILE.VERIFICATION.Success':'PROFILE.VERIFICATION.Error') | translate"
-          [nzType]="result.verified?'success':'error'"
-          nzShowIcon>
-</nz-alert>
+@if (verificationResult$ | async; as result) {
+  <nz-alert
+    class="dark"
+    [nzMessage]="(result.verified?'PROFILE.VERIFICATION.Success':'PROFILE.VERIFICATION.Error') | translate"
+    [nzType]="result.verified?'success':'error'"
+    nzShowIcon>
+  </nz-alert>
+}
 <button (click)="validate()" nz-button nzType="primary">
   {{'PROFILE.VERIFICATION.Validate' | translate}}
 </button>

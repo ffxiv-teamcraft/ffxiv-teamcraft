@@ -1,15 +1,17 @@
 <nz-collapse>
   <nz-collapse-panel [nzActive]="false" [nzHeader]="panelHeader">
     <div fxLayout="row wrap" fxLayoutGap="5px">
-      <div *ngFor="let crystal of crystals; trackBy: trackByItem" fxLayout="column" fxLayoutAlign="center center"
-           fxLayoutGap="2px">
-        <app-item-icon
-          [icon]="crystal.icon"
-          [itemId]="crystal.id"
-          [itemName]="crystal.id | itemName| i18n"
+      @for (crystal of crystals; track trackByItem($index, crystal)) {
+        <div fxLayout="column" fxLayoutAlign="center center"
+          fxLayoutGap="2px">
+          <app-item-icon
+            [icon]="crystal.icon"
+            [itemId]="crystal.id"
+            [itemName]="crystal.id | itemName| i18n"
           [width]="32"></app-item-icon>
-        <span>x{{crystal.amount - crystal.done}}</span>
-      </div>
+          <span>x{{crystal.amount - crystal.done}}</span>
+        </div>
+      }
     </div>
   </nz-collapse-panel>
   <ng-template #panelHeader>
@@ -19,9 +21,9 @@
       </div>
       <div fxLayout="row" fxLayoutGap="10px">
         <button (click)="$event.stopPropagation()" [clipboard]="getTextExport"
-                [clipboardSuccessMessage]="'LIST.Copied_as_text' | translate"
-                [nzTooltipTitle]="'LIST.Copy_as_text' | translate"
-                nz-button nz-tooltip nzShape="circle" nzSize="small">
+          [clipboardSuccessMessage]="'LIST.Copied_as_text' | translate"
+          [nzTooltipTitle]="'LIST.Copy_as_text' | translate"
+          nz-button nz-tooltip nzShape="circle" nzSize="small">
           <i nz-icon nzType="copy"></i>
         </button>
       </div>

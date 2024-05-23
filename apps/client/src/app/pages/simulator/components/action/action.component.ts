@@ -12,7 +12,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { ExtendedModule } from '@angular/flex-layout/extended';
 import { XivapiActionTooltipDirective } from '../../../../modules/tooltip/xivapi-action-tooltip/xivapi-action-tooltip.directive';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
-import { NgIf, NgClass, NgFor } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'app-action',
@@ -20,7 +20,7 @@ import { NgIf, NgClass, NgFor } from '@angular/common';
     styleUrls: ['./action.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NzBadgeModule, XivapiActionTooltipDirective, NgClass, ExtendedModule, NzDropDownModule, NzMenuModule, NgFor, NzButtonModule, TranslateModule, ActionIconPipe, AbsolutePipe, XivapiIconPipe]
+    imports: [NzBadgeModule, XivapiActionTooltipDirective, NgClass, ExtendedModule, NzDropDownModule, NzMenuModule, NzButtonModule, TranslateModule, ActionIconPipe, AbsolutePipe, XivapiIconPipe]
 })
 export class ActionComponent {
 

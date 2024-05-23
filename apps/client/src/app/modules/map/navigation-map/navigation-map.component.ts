@@ -22,7 +22,7 @@ import { ClipboardDirective } from '../../../core/clipboard.directive';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { MapComponent } from '../map/map.component';
-import { AsyncPipe, DecimalPipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
@@ -30,7 +30,7 @@ import { DialogComponent } from '../../../core/dialog.component';
   templateUrl: './navigation-map.component.html',
   styleUrls: ['./navigation-map.component.less'],
   standalone: true,
-  imports: [NgIf, MapComponent, NgFor, NzListModule, NzToolTipModule, ClipboardDirective, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, AsyncPipe, DecimalPipe, NodeTypeIconPipe, XivapiIconPipe, LazyIconPipe, LazyRowPipe, I18nPipe, TranslateModule, I18nRowPipe]
+  imports: [MapComponent, NzListModule, NzToolTipModule, ClipboardDirective, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, AsyncPipe, DecimalPipe, NodeTypeIconPipe, XivapiIconPipe, LazyIconPipe, LazyRowPipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class NavigationMapComponent extends DialogComponent implements OnInit {
 

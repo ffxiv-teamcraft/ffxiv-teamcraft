@@ -33,7 +33,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { RotationPanelComponent } from '../rotation-panel/rotation-panel.component';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-rotation-folder-panel',
@@ -41,7 +41,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     styleUrls: ['./rotation-folder-panel.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NzCollapseModule, CdkDropList, FlexModule, NgFor, CdkDrag, RotationPanelComponent, NzGridModule, NzButtonModule, NzToolTipModule, RouterLink, NzIconModule, NzWaveModule, ClipboardDirective, FavoriteButtonComponent, NzPopconfirmModule, NzDropDownModule, NzMenuModule, AsyncPipe, TranslateModule]
+    imports: [NzCollapseModule, CdkDropList, FlexModule, CdkDrag, RotationPanelComponent, NzGridModule, NzButtonModule, NzToolTipModule, RouterLink, NzIconModule, NzWaveModule, ClipboardDirective, FavoriteButtonComponent, NzPopconfirmModule, NzDropDownModule, NzMenuModule, AsyncPipe, TranslateModule]
 })
 export class RotationFolderPanelComponent {
 

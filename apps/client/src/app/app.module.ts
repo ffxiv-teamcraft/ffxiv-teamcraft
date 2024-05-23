@@ -135,6 +135,7 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
 import { AdComponent } from './modules/ads/ad/ad.component';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NzListModule } from 'ng-zorro-antd/list';
+import { LoadingScreenComponent } from './pages/loading-screen/loading-screen/loading-screen.component';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -198,97 +199,97 @@ const nzConfig: NzConfig = {
         AppComponent
     ],
     bootstrap: [AppComponent], imports: [FlexLayoutModule,
-        MarkdownModule.forRoot(),
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: TranslationsLoaderFactory,
-                deps: [HttpClient, PLATFORM_ID, PlatformService]
-            }
-        }),
-        provideFirebaseApp(() => initializeApp(environment.firebase)),
-        provideAuth(() => getAuth()),
-        provideFirestore(() => {
-            const firestore = getFirestore();
-            enableMultiTabIndexedDbPersistence(firestore);
-            return firestore;
-        }),
-        provideDatabase(() => getDatabase()),
-        provideFunctions(() => getFunctions()),
-        providePerformance(() => getPerformance()),
-        XivapiClientModule.forRoot(),
-        RouterModule.forRoot([], { useHash: IS_ELECTRON }),
-        DirtyModule,
-        AppRoutingModule,
-        AuthModule,
-        ListModule,
-        WorkshopModule,
-        TeamsModule,
-        LayoutModule,
-        NotificationsModule,
-        SettingsModule.forRoot(),
-        MapModule.forRoot(),
-        UserAvatarModule,
-        SimulatorModule,
-        RotationsModule,
-        CustomLinksModule,
-        CustomItemsModule,
-        GearsetsModule,
-        CraftingReplayModule,
-        FishTrainModule,
-        AlarmsModule,
-        AlarmsSidebarModule,
-        QuickSearchModule,
-        InventoryModule,
-        EorzeaModule,
-        FreeCompanyWorkshopsModule,
-        environment.noAnimations ? NoopAnimationsModule : BrowserAnimationsModule,
-        environment.noAnimations ? NzNoAnimationModule : [],
-        BrowserModule,
-        FormsModule,
-        ReactiveFormsModule,
-        NgSerializerModule.forRoot(),
-        AppRoutingModule,
-        CoreModule.forRoot(),
-        PipesModule,
-        NzMenuModule,
-        StoreModule.forRoot({}, {
-            runtimeChecks: {
-                strictStateSerializability: false,
-                strictActionSerializability: false,
-                strictStateImmutability: false,
-                strictActionImmutability: false,
-                strictActionWithinNgZone: false
-            }
-        }),
-        !environment.production ? StoreDevtoolsModule.instrument({
-            name: 'FFXIV Teamcraft'
-        }) : [],
-        EffectsModule.forRoot([]),
-        StoreModule.forFeature('auth', authReducer, { initialState: authInitialState }),
-        EffectsModule.forFeature([AuthEffects]),
-        StoreModule.forFeature('lists', listsReducer, { initialState: listsInitialState }),
-        EffectsModule.forFeature([ListsEffects]),
-        ListAggregateModule,
-        ApolloModule,
-        PlayerMetricsModule,
-        NzSpaceModule,
-        NzLayoutModule,
-        NzAvatarModule,
-        NzSpinModule,
-        NzAlertModule,
-        NzBadgeModule,
-        NzSelectModule,
-        NzTagModule,
-        NzPopoverModule,
-        NavigationSidebarModule,
-        NgxEchartsModule.forRoot({
-            echarts: () => import('echarts')
-        }),
-        BreakpointDebugComponent,
-        AdComponent,
-        NzEmptyModule,
-        NzListModule], providers: [
+    MarkdownModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: TranslationsLoaderFactory,
+        deps: [HttpClient, PLATFORM_ID, PlatformService]
+      }
+    }),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => {
+      const firestore = getFirestore();
+      enableMultiTabIndexedDbPersistence(firestore);
+      return firestore;
+    }),
+    provideDatabase(() => getDatabase()),
+    provideFunctions(() => getFunctions()),
+    providePerformance(() => getPerformance()),
+    XivapiClientModule.forRoot(),
+    RouterModule.forRoot([], { useHash: IS_ELECTRON }),
+    DirtyModule,
+    AppRoutingModule,
+    AuthModule,
+    ListModule,
+    WorkshopModule,
+    TeamsModule,
+    LayoutModule,
+    NotificationsModule,
+    SettingsModule.forRoot(),
+    MapModule.forRoot(),
+    UserAvatarModule,
+    SimulatorModule,
+    RotationsModule,
+    CustomLinksModule,
+    CustomItemsModule,
+    GearsetsModule,
+    CraftingReplayModule,
+    FishTrainModule,
+    AlarmsModule,
+    AlarmsSidebarModule,
+    QuickSearchModule,
+    InventoryModule,
+    EorzeaModule,
+    FreeCompanyWorkshopsModule,
+    environment.noAnimations ? NoopAnimationsModule : BrowserAnimationsModule,
+    environment.noAnimations ? NzNoAnimationModule : [],
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgSerializerModule.forRoot(),
+    AppRoutingModule,
+    CoreModule.forRoot(),
+    PipesModule,
+    NzMenuModule,
+    StoreModule.forRoot({}, {
+      runtimeChecks: {
+        strictStateSerializability: false,
+        strictActionSerializability: false,
+        strictStateImmutability: false,
+        strictActionImmutability: false,
+        strictActionWithinNgZone: false
+      }
+    }),
+    !environment.production ? StoreDevtoolsModule.instrument({
+      name: 'FFXIV Teamcraft'
+    }) : [],
+    EffectsModule.forRoot([]),
+    StoreModule.forFeature('auth', authReducer, { initialState: authInitialState }),
+    EffectsModule.forFeature([AuthEffects]),
+    StoreModule.forFeature('lists', listsReducer, { initialState: listsInitialState }),
+    EffectsModule.forFeature([ListsEffects]),
+    ListAggregateModule,
+    ApolloModule,
+    PlayerMetricsModule,
+    NzSpaceModule,
+    NzLayoutModule,
+    NzAvatarModule,
+    NzSpinModule,
+    NzAlertModule,
+    NzBadgeModule,
+    NzSelectModule,
+    NzTagModule,
+    NzPopoverModule,
+    NavigationSidebarModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts')
+    }),
+    BreakpointDebugComponent,
+    AdComponent,
+    NzEmptyModule,
+    NzListModule, LoadingScreenComponent], providers: [
         GOOGLE_ANALYTICS_ROUTER_INITIALIZER_PROVIDER,
         {
             provide: APOLLO_OPTIONS,

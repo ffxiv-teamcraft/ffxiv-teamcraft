@@ -1,1 +1,3 @@
-<nz-alert *ngIf="errorCode !== undefined" [nzMessage]="errorCode" nzShowIcon nzType="error"></nz-alert>
+@if (errorCode !== undefined) {
+  <nz-alert [nzMessage]="errorCode" nzShowIcon nzType="error"></nz-alert>
+}

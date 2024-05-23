@@ -1,124 +1,172 @@
 <div class="obtentions-container" [fxFlex]="flex" fxLayout="row wrap" [fxLayoutAlign]="layoutAlign" fxLayoutGap="2px">
-  <ng-container *ngFor="let source of sourcesDisplay$ | async; trackBy: trackByItemSource">
-    <ng-container [ngSwitch]="source.type">
-      <div *ngSwitchCase="dataTypes.DEPRECATED">
-        <i nz-icon nzType="close-circle" nzTheme="twotone" [nzTwotoneColor]="'#F5222DFF'"
-           nz-tooltip [nzTooltipTitle]="'ALLAGAN_REPORTS.Deprecated' | translate">
-        </i>
-      </div>
-      <button (click)="openGardeningPopup(item)" *ngSwitchCase="dataTypes.GARDENING" nz-button [nzSize]="size"
-              nz-tooltip
-              nzShape="circle" nzTooltipTitle="{{'Gardening' | translate}}">
-        <img class="img-icon gardening-icon" src="./assets/icons/Gardening.png">
-      </button>
-      <button (click)="openHuntingPopup(item)" *ngSwitchCase="dataTypes.DROPS" nz-button [nzSize]="size"
-              nz-tooltip
-              nzShape="circle" nzTooltipTitle="{{'Hunting' | translate}}">
-        <img alt="Drops" class="gathering-icon" src="./assets/icons/mob.png">
-      </button>
-      <button (click)="openIslandAnimalsPopup(item)" *ngSwitchCase="dataTypes.ISLAND_PASTURE" nz-button [nzSize]="size"
-              nz-tooltip
-              nzShape="circle" nzTooltipTitle="{{'Island_animal' | translate}}">
-        <img class="gathering-icon" src="https://xivapi.com/i/063000/063949.png" alt="Island animals">
-      </button>
-      <button (click)="openIslandCropPopup(item)" *ngSwitchCase="dataTypes.ISLAND_CROP" nz-button [nzSize]="size"
-              nz-tooltip
-              nzShape="circle" nzTooltipTitle="{{'Island_crop' | translate}}">
-        <img class="gathering-icon" src="https://xivapi.com/i/063000/063950_hr1.png" alt="Island crop">
-      </button>
-      <button (click)="openTradesPopup(item)"
-              *ngSwitchCase="dataTypes.TRADE_SOURCES"
-              nz-button [nzSize]="size"
-              nz-tooltip nzShape="circle" nzTooltipTitle="{{'Trade' | translate}}">
-        <span *ngIf="source.data | tradeIcon as icon; else gtFallBack">
-          <app-item-icon width="24" disableClick="true" tooltipDisabled="true" [itemId]="icon"></app-item-icon>
-        </span>
-        <ng-template #gtFallBack>
-          <img src="./assets/icons/Shop.png" class="img-icon round-icon">
-        </ng-template>
-      </button>
-      <button (click)="openInstancesPopup(item)" *ngSwitchCase="dataTypes.INSTANCES"
-              nz-button [nzSize]="size"
-              nz-tooltip nzShape="circle" nzTooltipTitle="{{source.data[0].name | i18n}}">
-        <img [src]="source.data[0] | lazyRow:'instances':'icon' | async | xivapiIcon" class="img-icon round-icon">
-      </button>
-      <button (click)="openMogstationPopup(item)" *ngSwitchCase="dataTypes.MOGSTATION"
-              nz-button [nzSize]="size"
-              nz-tooltip nzShape="circle" [nzTooltipTitle]="'Mogstation' | translate">
-        <img class="img-icon round-icon" src="./assets/icons/mogstation.ico">
-      </button>
-      <button (click)="openQuestPopup(item)" *ngSwitchCase="dataTypes.QUESTS"
-              nz-button [nzSize]="size"
-              nz-tooltip nzShape="circle" [nzTooltipTitle]="'Quests' | translate">
-        <img class="img-icon round-icon" src="./assets/icons/quest.png">
-      </button>
-      <button (click)="openAchievementsPopup(item)" *ngSwitchCase="dataTypes.ACHIEVEMENTS"
-              nz-button [nzSize]="size"
-              nz-tooltip nzShape="circle" [nzTooltipTitle]="'DB.Achievements' | translate">
-        <img class="img-icon round-icon" [src]="source.data[0] | lazyRow:'achievements':'icon' | async | xivapiIcon">
-      </button>
-      <button (click)="openReducedFromPopup(item)" *ngSwitchCase="dataTypes.REDUCED_FROM"
-              nz-button [nzSize]="size"
-              nz-tooltip nzShape="circle" nzTooltipTitle="{{'Reduction' | translate}}">
-        <img class="img-icon round-icon" src="./assets/icons/Reduce.png">
-      </button>
-      <button (click)="openDesynthsPopup(item)" *ngSwitchCase="dataTypes.DESYNTHS"
-              nz-button [nzSize]="size"
-              nz-tooltip nzShape="circle" nzTooltipTitle="{{'Desynth' | translate}}">
-        <i nzIconfont="icon-vectorcombine" nz-icon></i>
-      </button>
-      <button (click)="openVendorsPopup(item)" *ngSwitchCase="dataTypes.VENDORS"
-              [nzTooltipTitle]="'Vendors' | translate"
-              nz-button [nzSize]="size" nz-tooltip nzShape="circle">
-        <img alt="Gil" class="img-icon" src="https://xivapi.com/i/065000/065002.png">
-      </button>
-      <button (click)="openVoyagesPopup(item)" *ngSwitchCase="dataTypes.VOYAGES"
-              [nzTooltipTitle]="'Voyages' | translate"
-              nz-button [nzSize]="size" nz-tooltip nzShape="circle">
-        <img alt="Voyages" class="img-icon" src="./assets/icons/Voyage.png">
-      </button>
-      <button (click)="openVenturesPopup(item)" *ngSwitchCase="dataTypes.VENTURES"
-              [nzTooltipTitle]="'Retainer_ventures' | translate"
-              nz-button [nzSize]="size" nz-tooltip nzShape="circle">
-        <img [src]="21072 | lazyIcon" alt="Ventures" class="img-icon round-icon">
-      </button>
-      <button (click)="openTreasuresPopup(item)" *ngSwitchCase="dataTypes.TREASURES"
-              [nzTooltipTitle]="'Treasures' | translate"
-              nz-button [nzSize]="size" nz-tooltip nzShape="circle">
-        <img alt="Treasures" class="img-icon round-icon" src="./assets/icons/chest_open.png">
-      </button>
-      <button (click)="openFatesPopup(item)" *ngSwitchCase="dataTypes.FATES"
-              [nzTooltipTitle]="'Fates' | translate"
-              nz-button [nzSize]="size" nz-tooltip nzShape="circle">
-        <img [src]="source.data[0].id | lazyRow:'fates':'icon' | async | xivapiIcon" alt="Fates" class="img-icon round-icon">
-      </button>
-      <ng-container *ngSwitchCase="dataTypes.CRAFTED_BY">
-        <div *ngFor="let craft of source.data; trackBy: trackByCraft"
-             [fxLayoutGap]="source.data.length > 1?'0px':'5px'"
-             [fxLayout]="!forceHorizontal && source.data.length > 1?'column':'row'"
-             fxLayoutAlign="center center">
-          <ng-container *ngIf="craft.job > 0">
-            <button (click)="overlay?null:openSimulator(craft.id, item, craft)" *ngIf="craft.icon !== ''" [nzShape]="'circle'"
-                    nz-button [nzSize]="size">
-              <span [innerHTML]="craft.job | jobUnicode" class="craft-icon companion-svg"></span>
-            </button>
-            <div>{{craft.lvl}}</div>
-            <div *ngIf="craft.stars_tooltip !== undefined">{{craft.stars_tooltip}}</div>
-          </ng-container>
-          <ng-container *ngIf="craft.isIslandRecipe">
-            <img src="./assets/icons/island.png" alt="Island Recipe" class="img-icon" nz-tooltip [nzTooltipTitle]="'ITEMS.Island_recipe' | translate">
-          </ng-container>
-          <app-company-workshop-tree-button *ngIf="craft.job === 0" [recipeId]="craft.id" [size]="size"></app-company-workshop-tree-button>
+  @for (source of sourcesDisplay$ | async; track trackByItemSource($index, source)) {
+    @switch (source.type) {
+      @case (dataTypes.DEPRECATED) {
+        <div>
+          <i nz-icon nzType="close-circle" nzTheme="twotone" [nzTwotoneColor]="'#F5222DFF'"
+            nz-tooltip [nzTooltipTitle]="'ALLAGAN_REPORTS.Deprecated' | translate">
+          </i>
         </div>
-      </ng-container>
-      <div *ngSwitchCase="dataTypes.GATHERED_BY" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2px">
-        <button (click)="openGatheredByPopup(item)" nz-button [nzSize]="size" nzShape="circle" nz-tooltip
-                [nzTooltipTitle]="'LIST_DETAILS.SOURCES.Gatherable' | translate">
-          <img class="gathering-icon" [class.small]="source.data.type === -10" src="{{source.data.type | nodeTypeIcon: source.data.nodes[0]?.limited}}">
+      }
+      @case (dataTypes.GARDENING) {
+        <button (click)="openGardeningPopup(item)" nz-button [nzSize]="size"
+          nz-tooltip
+          nzShape="circle" nzTooltipTitle="{{'Gardening' | translate}}">
+          <img class="img-icon gardening-icon" src="./assets/icons/Gardening.png">
         </button>
-        <div *ngIf="!source.data.nodes[0].isIslandNode">{{source.data.level}}</div>
-        <div *ngIf="source.data.stars_tooltip !== undefined">{{source.data.stars_tooltip}}</div>
-      </div>
-    </ng-container>
-  </ng-container>
+      }
+      @case (dataTypes.DROPS) {
+        <button (click)="openHuntingPopup(item)" nz-button [nzSize]="size"
+          nz-tooltip
+          nzShape="circle" nzTooltipTitle="{{'Hunting' | translate}}">
+          <img alt="Drops" class="gathering-icon" src="./assets/icons/mob.png">
+        </button>
+      }
+      @case (dataTypes.ISLAND_PASTURE) {
+        <button (click)="openIslandAnimalsPopup(item)" nz-button [nzSize]="size"
+          nz-tooltip
+          nzShape="circle" nzTooltipTitle="{{'Island_animal' | translate}}">
+          <img class="gathering-icon" src="https://xivapi.com/i/063000/063949.png" alt="Island animals">
+        </button>
+      }
+      @case (dataTypes.ISLAND_CROP) {
+        <button (click)="openIslandCropPopup(item)" nz-button [nzSize]="size"
+          nz-tooltip
+          nzShape="circle" nzTooltipTitle="{{'Island_crop' | translate}}">
+          <img class="gathering-icon" src="https://xivapi.com/i/063000/063950_hr1.png" alt="Island crop">
+        </button>
+      }
+      @case (dataTypes.TRADE_SOURCES) {
+        <button (click)="openTradesPopup(item)"
+          nz-button [nzSize]="size"
+          nz-tooltip nzShape="circle" nzTooltipTitle="{{'Trade' | translate}}">
+          @if (source.data | tradeIcon; as icon) {
+            <span>
+              <app-item-icon width="24" disableClick="true" tooltipDisabled="true" [itemId]="icon"></app-item-icon>
+            </span>
+          } @else {
+            <img src="./assets/icons/Shop.png" class="img-icon round-icon">
+          }
+        </button>
+      }
+      @case (dataTypes.INSTANCES) {
+        <button (click)="openInstancesPopup(item)"
+          nz-button [nzSize]="size"
+          nz-tooltip nzShape="circle" nzTooltipTitle="{{source.data[0].name | i18n}}">
+          <img [src]="source.data[0] | lazyRow:'instances':'icon' | async | xivapiIcon" class="img-icon round-icon">
+        </button>
+      }
+      @case (dataTypes.MOGSTATION) {
+        <button (click)="openMogstationPopup(item)"
+          nz-button [nzSize]="size"
+          nz-tooltip nzShape="circle" [nzTooltipTitle]="'Mogstation' | translate">
+          <img class="img-icon round-icon" src="./assets/icons/mogstation.ico">
+        </button>
+      }
+      @case (dataTypes.QUESTS) {
+        <button (click)="openQuestPopup(item)"
+          nz-button [nzSize]="size"
+          nz-tooltip nzShape="circle" [nzTooltipTitle]="'Quests' | translate">
+          <img class="img-icon round-icon" src="./assets/icons/quest.png">
+        </button>
+      }
+      @case (dataTypes.ACHIEVEMENTS) {
+        <button (click)="openAchievementsPopup(item)"
+          nz-button [nzSize]="size"
+          nz-tooltip nzShape="circle" [nzTooltipTitle]="'DB.Achievements' | translate">
+          <img class="img-icon round-icon" [src]="source.data[0] | lazyRow:'achievements':'icon' | async | xivapiIcon">
+        </button>
+      }
+      @case (dataTypes.REDUCED_FROM) {
+        <button (click)="openReducedFromPopup(item)"
+          nz-button [nzSize]="size"
+          nz-tooltip nzShape="circle" nzTooltipTitle="{{'Reduction' | translate}}">
+          <img class="img-icon round-icon" src="./assets/icons/Reduce.png">
+        </button>
+      }
+      @case (dataTypes.DESYNTHS) {
+        <button (click)="openDesynthsPopup(item)"
+          nz-button [nzSize]="size"
+          nz-tooltip nzShape="circle" nzTooltipTitle="{{'Desynth' | translate}}">
+          <i nzIconfont="icon-vectorcombine" nz-icon></i>
+        </button>
+      }
+      @case (dataTypes.VENDORS) {
+        <button (click)="openVendorsPopup(item)"
+          [nzTooltipTitle]="'Vendors' | translate"
+          nz-button [nzSize]="size" nz-tooltip nzShape="circle">
+          <img alt="Gil" class="img-icon" src="https://xivapi.com/i/065000/065002.png">
+        </button>
+      }
+      @case (dataTypes.VOYAGES) {
+        <button (click)="openVoyagesPopup(item)"
+          [nzTooltipTitle]="'Voyages' | translate"
+          nz-button [nzSize]="size" nz-tooltip nzShape="circle">
+          <img alt="Voyages" class="img-icon" src="./assets/icons/Voyage.png">
+        </button>
+      }
+      @case (dataTypes.VENTURES) {
+        <button (click)="openVenturesPopup(item)"
+          [nzTooltipTitle]="'Retainer_ventures' | translate"
+          nz-button [nzSize]="size" nz-tooltip nzShape="circle">
+          <img [src]="21072 | lazyIcon" alt="Ventures" class="img-icon round-icon">
+        </button>
+      }
+      @case (dataTypes.TREASURES) {
+        <button (click)="openTreasuresPopup(item)"
+          [nzTooltipTitle]="'Treasures' | translate"
+          nz-button [nzSize]="size" nz-tooltip nzShape="circle">
+          <img alt="Treasures" class="img-icon round-icon" src="./assets/icons/chest_open.png">
+        </button>
+      }
+      @case (dataTypes.FATES) {
+        <button (click)="openFatesPopup(item)"
+          [nzTooltipTitle]="'Fates' | translate"
+          nz-button [nzSize]="size" nz-tooltip nzShape="circle">
+          <img [src]="source.data[0].id | lazyRow:'fates':'icon' | async | xivapiIcon" alt="Fates" class="img-icon round-icon">
+        </button>
+      }
+      @case (dataTypes.CRAFTED_BY) {
+        @for (craft of source.data; track trackByCraft($index, craft)) {
+          <div
+            [fxLayoutGap]="source.data.length > 1?'0px':'5px'"
+            [fxLayout]="!forceHorizontal && source.data.length > 1?'column':'row'"
+            fxLayoutAlign="center center">
+            @if (craft.job > 0) {
+              @if (craft.icon !== '') {
+                <button (click)="overlay?null:openSimulator(craft.id, item, craft)" [nzShape]="'circle'"
+                  nz-button [nzSize]="size">
+                  <span [innerHTML]="craft.job | jobUnicode" class="craft-icon companion-svg"></span>
+                </button>
+              }
+              <div>{{craft.lvl}}</div>
+              @if (craft.stars_tooltip !== undefined) {
+                <div>{{craft.stars_tooltip}}</div>
+              }
+            }
+            @if (craft.isIslandRecipe) {
+              <img src="./assets/icons/island.png" alt="Island Recipe" class="img-icon" nz-tooltip [nzTooltipTitle]="'ITEMS.Island_recipe' | translate">
+            }
+            @if (craft.job === 0) {
+              <app-company-workshop-tree-button [recipeId]="craft.id" [size]="size"></app-company-workshop-tree-button>
+            }
+          </div>
+        }
+      }
+      @case (dataTypes.GATHERED_BY) {
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2px">
+          <button (click)="openGatheredByPopup(item)" nz-button [nzSize]="size" nzShape="circle" nz-tooltip
+            [nzTooltipTitle]="'LIST_DETAILS.SOURCES.Gatherable' | translate">
+            <img class="gathering-icon" [class.small]="source.data.type === -10" src="{{source.data.type | nodeTypeIcon: source.data.nodes[0]?.limited}}">
+          </button>
+          @if (!source.data.nodes[0].isIslandNode) {
+            <div>{{source.data.level}}</div>
+          }
+          @if (source.data.stars_tooltip !== undefined) {
+            <div>{{source.data.stars_tooltip}}</div>
+          }
+        </div>
+      }
+    }
+  }
 </div>

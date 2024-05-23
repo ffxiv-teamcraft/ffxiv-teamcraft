@@ -14,7 +14,7 @@ import { AlarmButtonComponent } from '../../../modules/alarm-button/alarm-button
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
 import { MapPositionComponent } from '../../../modules/map/map-position/map-position.component';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
-import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 
@@ -24,7 +24,7 @@ import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
     styleUrls: ['./island-animals.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzPageHeaderModule, NzTableModule, NgFor, I18nNameComponent, MapPositionComponent, ItemIconComponent, NgIf, AlarmButtonComponent, AsyncPipe, TranslateModule, XivapiIconPipe, WeatherIconPipe]
+    imports: [NzPageHeaderModule, NzTableModule, I18nNameComponent, MapPositionComponent, ItemIconComponent, AlarmButtonComponent, AsyncPipe, TranslateModule, XivapiIconPipe, WeatherIconPipe]
 })
 export class IslandAnimalsComponent {
 

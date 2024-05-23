@@ -4,44 +4,73 @@
   </div>
   <div fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px" class="list-preview">
     <nz-select [ngModel]="selectedListKey$ | async" (ngModelChange)="selectList($event)"
-               [nzPlaceHolder]="'LIST_DETAILS.LAYOUT_DIALOG.Select_preview_list' | translate">
-      <nz-option *ngFor="let list of lists$ | async" nzLabel="{{list.name}} ({{list.size}})" [nzValue]="list.key"></nz-option>
+      [nzPlaceHolder]="'LIST_DETAILS.LAYOUT_DIALOG.Select_preview_list' | translate">
+      @for (list of lists$ | async; track list) {
+        <nz-option nzLabel="{{list.name}} ({{list.size}})" [nzValue]="list.key"></nz-option>
+      }
     </nz-select>
 
-    <div *ngIf="display$ | async as display; else noSelectedList" fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px">
-      <nz-collapse *ngFor="let panel of display.rows">
-        <nz-collapse-panel [nzHeader]="title">
-          <ng-template #title>
-            <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign=" flex-start center">
-              <div>{{panel.title | translate}} ({{panel.rows.length}})</div>
-              <nz-tag *ngIf="panel.layoutRow.zoneBreakdown" [style.border-color]="'#108ee9'" class="custom-tag">{{'Zone_breakdown' | translate}}</nz-tag>
-              <nz-tag *ngIf="panel.layoutRow.npcBreakdown" [style.border-color]="'#108ee9'" class="custom-tag">{{'Npc_breakdown' | translate}}</nz-tag>
-              <nz-tag *ngIf="panel.layoutRow.tiers" [style.border-color]="'#108ee9'" class="custom-tag">{{'Tier_display_toggle' | translate}}</nz-tag>
-              <nz-tag *ngIf="panel.layoutRow.reverseTiers" [style.border-color]="'#108ee9'" class="custom-tag">{{'Reverse_tiers' | translate}}</nz-tag>
-              <nz-tag *ngIf="panel.layoutRow.hideCompletedRows" [style.border-color]="'#cd4aff'" class="custom-tag">{{'Hide_completed' | translate}}</nz-tag>
-              <nz-tag *ngIf="panel.layoutRow.hideUsedRows" [style.border-color]="'#cd4aff'" class="custom-tag">{{'Hide_used' | translate}}</nz-tag>
-              <nz-tag *ngIf="panel.layoutRow.hideIfEmpty" [style.border-color]="'#f2b10e'" class="custom-tag">{{'LIST_DETAILS.LAYOUT_DIALOG.Hidden_if_empty' | translate}}</nz-tag>
-              <nz-tag *ngIf="panel.layoutRow.collapsedByDefault" [style.border-color]="'#d9ff00'" class="custom-tag">{{'LIST_DETAILS.LAYOUT_DIALOG.Collapsed_by_default' | translate}}</nz-tag>
-              <nz-tag *ngIf="panel.layoutRow.hasTag !== null" [style.border-color]="'#002aff'" class="custom-tag">
-                <span *ngIf="panel.layoutRow.hasTag">INCLUDES</span>
-                <span *ngIf="!panel.layoutRow.hasTag">DOESN'T INCLUDE</span>
-              </nz-tag>
-            </div>
-          </ng-template>
-          <div fxLayout="column" fxLayoutGap="10px">
-            <div *ngFor="let item of panel.rows" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-              <app-item-icon width="24" [itemId]="item.id"></app-item-icon>
-              <div><app-i18n-name [id]="item.id" content="items"></app-i18n-name></div>
-            </div>
-          </div>
-        </nz-collapse-panel>
-      </nz-collapse>
-    </div>
+    @if (display$ | async; as display) {
+      <div fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px">
+        @for (panel of display.rows; track panel) {
+          <nz-collapse>
+            <nz-collapse-panel [nzHeader]="title">
+              <ng-template #title>
+                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign=" flex-start center">
+                  <div>{{panel.title | translate}} ({{panel.rows.length}})</div>
+                  @if (panel.layoutRow.zoneBreakdown) {
+                    <nz-tag [style.border-color]="'#108ee9'" class="custom-tag">{{'Zone_breakdown' | translate}}</nz-tag>
+                  }
+                  @if (panel.layoutRow.npcBreakdown) {
+                    <nz-tag [style.border-color]="'#108ee9'" class="custom-tag">{{'Npc_breakdown' | translate}}</nz-tag>
+                  }
+                  @if (panel.layoutRow.tiers) {
+                    <nz-tag [style.border-color]="'#108ee9'" class="custom-tag">{{'Tier_display_toggle' | translate}}</nz-tag>
+                  }
+                  @if (panel.layoutRow.reverseTiers) {
+                    <nz-tag [style.border-color]="'#108ee9'" class="custom-tag">{{'Reverse_tiers' | translate}}</nz-tag>
+                  }
+                  @if (panel.layoutRow.hideCompletedRows) {
+                    <nz-tag [style.border-color]="'#cd4aff'" class="custom-tag">{{'Hide_completed' | translate}}</nz-tag>
+                  }
+                  @if (panel.layoutRow.hideUsedRows) {
+                    <nz-tag [style.border-color]="'#cd4aff'" class="custom-tag">{{'Hide_used' | translate}}</nz-tag>
+                  }
+                  @if (panel.layoutRow.hideIfEmpty) {
+                    <nz-tag [style.border-color]="'#f2b10e'" class="custom-tag">{{'LIST_DETAILS.LAYOUT_DIALOG.Hidden_if_empty' | translate}}</nz-tag>
+                  }
+                  @if (panel.layoutRow.collapsedByDefault) {
+                    <nz-tag [style.border-color]="'#d9ff00'" class="custom-tag">{{'LIST_DETAILS.LAYOUT_DIALOG.Collapsed_by_default' | translate}}</nz-tag>
+                  }
+                  @if (panel.layoutRow.hasTag !== null) {
+                    <nz-tag [style.border-color]="'#002aff'" class="custom-tag">
+                      @if (panel.layoutRow.hasTag) {
+                        <span>INCLUDES</span>
+                      }
+                      @if (!panel.layoutRow.hasTag) {
+                        <span>DOESN'T INCLUDE</span>
+                      }
+                    </nz-tag>
+                  }
+                </div>
+              </ng-template>
+              <div fxLayout="column" fxLayoutGap="10px">
+                @for (item of panel.rows; track item) {
+                  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                    <app-item-icon width="24" [itemId]="item.id"></app-item-icon>
+                    <div><app-i18n-name [id]="item.id" content="items"></app-i18n-name></div>
+                  </div>
+                }
+              </div>
+            </nz-collapse-panel>
+          </nz-collapse>
+        }
+      </div>
+    } @else {
+      <app-fullpage-message height="300px" [subtitle]="subtitle">
+        <ng-template #subtitle>{{'LIST_DETAILS.LAYOUT_DIALOG.Please_pick_list' | translate}}</ng-template>
+        {{'LIST_DETAILS.LAYOUT_DIALOG.No_preview' | translate}}
+      </app-fullpage-message>
+    }
   </div>
-  <ng-template #noSelectedList>
-    <app-fullpage-message height="300px" [subtitle]="subtitle">
-      <ng-template #subtitle>{{'LIST_DETAILS.LAYOUT_DIALOG.Please_pick_list' | translate}}</ng-template>
-      {{'LIST_DETAILS.LAYOUT_DIALOG.No_preview' | translate}}
-    </app-fullpage-message>
-  </ng-template>
 </div>

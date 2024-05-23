@@ -18,7 +18,7 @@ import { RotationFolderPanelComponent } from '../rotation-folder-panel/rotation-
 import { RotationPanelComponent } from '../rotation-panel/rotation-panel.component';
 import { CdkDropList, CdkDrag } from '@angular/cdk/drag-drop';
 import { PageLoaderComponent } from '../../../../modules/page-loader/page-loader/page-loader.component';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
@@ -31,7 +31,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./rotations-page.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NgIf, PageLoaderComponent, CdkDropList, NgFor, CdkDrag, RotationPanelComponent, RotationFolderPanelComponent, FullpageMessageComponent, AsyncPipe, TranslateModule]
+    imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, PageLoaderComponent, CdkDropList, CdkDrag, RotationPanelComponent, RotationFolderPanelComponent, FullpageMessageComponent, AsyncPipe, TranslateModule]
 })
 export class RotationsPageComponent {
 

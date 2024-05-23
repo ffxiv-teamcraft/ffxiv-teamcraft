@@ -5,49 +5,56 @@
       /{{replay.playerStats._control}}/{{replay.playerStats.cp}}
     </div>
     <div fxLayout="row wrap" fxLayoutGap="5px">
-      <button nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Save_replay' | translate" nz-button nzShape="circle" nzType="primary"
-              (click)="saveReplay(replay)" *ngIf="!replay.online">
-        <i nz-icon nzType="save" nzTheme="outline"></i>
-      </button>
+      @if (!replay.online) {
+        <button nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Save_replay' | translate" nz-button nzShape="circle" nzType="primary"
+          (click)="saveReplay(replay)">
+          <i nz-icon nzType="save" nzTheme="outline"></i>
+        </button>
+      }
 
-      <a nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Open_replay_page' | translate" nz-button nzShape="circle" nzType="primary"
-         routerLink="/crafting-replay/{{replay.$key}}" *ngIf="replay.online">
-        <i nz-icon nzType="folder-open" nzTheme="outline"></i>
-      </a>
+      @if (replay.online) {
+        <a nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Open_replay_page' | translate" nz-button nzShape="circle" nzType="primary"
+          routerLink="/crafting-replay/{{replay.$key}}">
+          <i nz-icon nzType="folder-open" nzTheme="outline"></i>
+        </a>
+      }
 
       <button nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Open_result_modal' | translate" nz-button nzShape="circle" nzType="primary"
-              (click)="openResultPopup(replay)">
+        (click)="openResultPopup(replay)">
         <i nz-icon nzType="eye" nzTheme="outline"></i>
       </button>
-      <button *ngIf="replay.online" nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Copy_to_clipboard' | translate" nz-button nzShape="circle"
-              nzType="primary"
-              [clipboard]="('/crafting-replay/' + replay.$key) | tcLink"
-              [clipboardSuccessMessage]="'COMMON.Share_link_copied' | translate">
-        <i nz-icon nzType="share-alt" nzTheme="outline"></i>
-      </button>
-      <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Delete' | translate"
-              nzDanger nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
-              (nzOnConfirm)="deleteReplay(replay)" *ngIf="replay.online && replay.authorId === userId">
-        <i nz-icon nzType="delete" nzTheme="outline"></i>
-      </button>
+      @if (replay.online) {
+        <button nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Copy_to_clipboard' | translate" nz-button nzShape="circle"
+          nzType="primary"
+          [clipboard]="('/crafting-replay/' + replay.$key) | tcLink"
+          [clipboardSuccessMessage]="'COMMON.Share_link_copied' | translate">
+          <i nz-icon nzType="share-alt" nzTheme="outline"></i>
+        </button>
+      }
+      @if (replay.online && replay.authorId === userId) {
+        <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Delete' | translate"
+          nzDanger nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
+          (nzOnConfirm)="deleteReplay(replay)">
+          <i nz-icon nzType="delete" nzTheme="outline"></i>
+        </button>
+      }
     </div>
   </div>
   <div fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
     <app-item-icon [itemId]="replay.itemId" width="40"></app-item-icon>
-    <ng-container *ngFor="let step of replay.steps">
-      <ng-container *ngIf="step.action | craftingAction as craftingActionEntry; else missingCraftingAction">
+    @for (step of replay.steps; track step) {
+      @if (step.action | craftingAction; as craftingActionEntry) {
         <app-action [action]="craftingActionEntry"
-                    [state]="step.state"
-                    [jobId]="replay.playerStats.jobId"
-                    [failed]="!step.success"
-                    class="replay-action"
-                    [hideCost]="true"></app-action>
-      </ng-container>
-      <ng-template #missingCraftingAction>
+          [state]="step.state"
+          [jobId]="replay.playerStats.jobId"
+          [failed]="!step.success"
+          class="replay-action"
+        [hideCost]="true"></app-action>
+      } @else {
         <div fxLayout="row" fxLayoutAlign="center center">
           Error {{step.action}}
         </div>
-      </ng-template>
-    </ng-container>
+      }
+    }
   </div>
 </div>

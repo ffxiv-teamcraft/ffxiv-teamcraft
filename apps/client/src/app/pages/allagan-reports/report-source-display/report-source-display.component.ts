@@ -5,7 +5,7 @@ import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgSwitch, NgSwitchCase } from '@angular/common';
+
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
@@ -14,7 +14,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./report-source-display.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NgSwitch, NgSwitchCase, NzButtonModule, NzIconModule, TranslateModule, NodeTypeIconPipe, LazyIconPipe]
+    imports: [FlexModule, NzButtonModule, NzIconModule, TranslateModule, NodeTypeIconPipe, LazyIconPipe]
 })
 export class ReportSourceDisplayComponent {
 

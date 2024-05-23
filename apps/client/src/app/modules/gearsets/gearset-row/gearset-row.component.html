@@ -1,44 +1,58 @@
 <div class="gearset-row" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" [class.used-in-guide]="gearset.usedInGuides?.length > 0">
   <div [innerHTML]="gearset.job | jobUnicode" class="companion-svg job-icon"></div>
   <div>{{gearset.name}}</div>
-  <button nz-button nzSize="small" nzShape="circle" *ngIf="!gearset.fromSync" (click)="rename(gearset)" nz-tooltip
-          [nzTooltipTitle]="'GEARSETS.Rename_gearset' | translate">
-    <i nz-icon nzType="edit"></i>
-  </button>
-  <nz-tag *ngIf="gearset.authorId === userId && gearset.fromSync" [nzTooltipTitle]="'GEARSETS.SYNC.Tag_tooltip' | translate" [style.border-color]="'#bd0ef2'" nz-tooltip>
-    {{'GEARSETS.SYNC.Tag' | translate}}
-  </nz-tag>
-  <nz-tag *ngFor="let guideTitle of gearset.usedInGuides" [style.border-color]="'rgba(38,233,16,0.65)'" class="custom-tag">
-    {{'SIMULATOR.ROTATIONS.Guide' | translate}}: {{guideTitle}}
-  </nz-tag>
+  @if (!gearset.fromSync) {
+    <button nz-button nzSize="small" nzShape="circle" (click)="rename(gearset)" nz-tooltip
+      [nzTooltipTitle]="'GEARSETS.Rename_gearset' | translate">
+      <i nz-icon nzType="edit"></i>
+    </button>
+  }
+  @if (gearset.authorId === userId && gearset.fromSync) {
+    <nz-tag [nzTooltipTitle]="'GEARSETS.SYNC.Tag_tooltip' | translate" [style.border-color]="'#bd0ef2'" nz-tooltip>
+      {{'GEARSETS.SYNC.Tag' | translate}}
+    </nz-tag>
+  }
+  @for (guideTitle of gearset.usedInGuides; track guideTitle) {
+    <nz-tag [style.border-color]="'rgba(38,233,16,0.65)'" class="custom-tag">
+      {{'SIMULATOR.ROTATIONS.Guide' | translate}}: {{guideTitle}}
+    </nz-tag>
+  }
   <div fxFlex="1 1 auto"></div>
   <button (click)="$event.stopPropagation()" [clipboard]="getLink"
-          [clipboardSuccessMessage]="'COMMON.Share_link_copied' | translate"
-          nzShape="circle"
-          [nzTooltipTitle]="'LIST.BUTTONS.Share_description' | translate"
-          nz-button nz-tooltip nzType="primary">
+    [clipboardSuccessMessage]="'COMMON.Share_link_copied' | translate"
+    nzShape="circle"
+    [nzTooltipTitle]="'LIST.BUTTONS.Share_description' | translate"
+    nz-button nz-tooltip nzType="primary">
     <i nz-icon nzType="share-alt"></i>
   </button>
-  <button nz-button *ngIf="gearset.authorId === userId" nzType="primary"
-          nzShape="circle" nz-tooltip [nzTooltipTitle]="'GEARSETS.Clone_gearset_from_sync' | translate"
-          (click)="cloneGearset(gearset)">
-    <i nz-icon nzType="copy" nzTheme="outline"></i>
-  </button>
+  @if (gearset.authorId === userId) {
+    <button nz-button nzType="primary"
+      nzShape="circle" nz-tooltip [nzTooltipTitle]="'GEARSETS.Clone_gearset_from_sync' | translate"
+      (click)="cloneGearset(gearset)">
+      <i nz-icon nzType="copy" nzTheme="outline"></i>
+    </button>
+  }
   <a nz-button routerLink="/gearset/{{gearset.$key}}" nzShape="circle" nzType="primary" nz-tooltip [nzTooltipTitle]="'GEARSETS.View_gearset' | translate">
     <i nz-icon nzType="eye" nzTheme="outline"></i>
   </a>
-  <app-favorite-button *ngIf="gearset.authorId !== userId"
-                       type="gearsets"
-                       [key]="gearset.$key"
-                       size="default"></app-favorite-button>
-  <a nz-button routerLink="/gearset/{{gearset.$key}}/edit" *ngIf="gearset.authorId === userId" nzShape="circle" nzType="primary" nz-tooltip
-     [nzTooltipTitle]="'GEARSETS.Edit_gearset' | translate">
-    <i nz-icon nzType="edit" nzTheme="outline"></i>
-  </a>
-  <button nz-button *ngIf="gearset.authorId === userId" nzDanger
-          nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" nzShape="circle"
-          nz-tooltip [nzTooltipTitle]="'GEARSETS.Delete_gearset' | translate"
-          (nzOnConfirm)="deleteGearset(gearset.$key)">
-    <i nz-icon nzType="delete" nzTheme="outline"></i>
-  </button>
+  @if (gearset.authorId !== userId) {
+    <app-favorite-button
+      type="gearsets"
+      [key]="gearset.$key"
+    size="default"></app-favorite-button>
+  }
+  @if (gearset.authorId === userId) {
+    <a nz-button routerLink="/gearset/{{gearset.$key}}/edit" nzShape="circle" nzType="primary" nz-tooltip
+      [nzTooltipTitle]="'GEARSETS.Edit_gearset' | translate">
+      <i nz-icon nzType="edit" nzTheme="outline"></i>
+    </a>
+  }
+  @if (gearset.authorId === userId) {
+    <button nz-button nzDanger
+      nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" nzShape="circle"
+      nz-tooltip [nzTooltipTitle]="'GEARSETS.Delete_gearset' | translate"
+      (nzOnConfirm)="deleteGearset(gearset.$key)">
+      <i nz-icon nzType="delete" nzTheme="outline"></i>
+    </button>
+  }
 </div>

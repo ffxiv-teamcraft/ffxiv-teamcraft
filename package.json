@@ -49,7 +49,7 @@
     "prebuild": "node ./tools/build/prebuild.js && yarn update-lazy-files && yarn web:copyfiles",
     "release:print": "node ./tools/build/release-notes-print.js",
     "assets:hash": "node ./tools/build/prod-assets-hash.js",
-    "start": "yarn prebuild && yarn nx serve --project=client",
+    "start": "yarn nx serve --project=client",
     "build:watch": "yarn prebuild && yarn nx build --project=client --watch --configuration=electron-dev",
     "build:prod": "yarn prebuild && nx run client:build:production && yarn assets:hash",
     "build:functions": "yarn prebuild && yarn nx build --project=client --configuration=functions --no-progress",
@@ -132,7 +132,7 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@angular-builders/custom-webpack": "^17.0.2",
+    "@angular-builders/custom-webpack": "^18.0.0-beta.1",
     "@angular-devkit/build-angular": "18.0.0",
     "@angular-devkit/core": "18.0.0",
     "@angular-devkit/schematics": "18.0.0",
@@ -262,7 +262,7 @@
     "ngx-echarts": "^17.2.0",
     "ngx-markdown": "^17.2.1",
     "node-polyfill-webpack-plugin": "^2.0.1",
-    "nx": "18.1.2",
+    "nx": "^19.0.6",
     "pirsch-sdk": "^2.6.0",
     "prettier": "2.6.2",
     "qs": "^6.11.0",

@@ -4,7 +4,7 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { Submarine } from '../../../../modules/free-company-workshops/model/submarine';
 import { Airship } from '../../../../modules/free-company-workshops/model/airship';
 import { VesselRowComponent } from '../vessel-row/vessel-row.component';
-import { NgTemplateOutlet, NgFor, NgIf } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
@@ -13,7 +13,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./vessel-list.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NgTemplateOutlet, NgFor, NgIf, VesselRowComponent, TranslateModule]
+    imports: [FlexModule, NgTemplateOutlet, VesselRowComponent, TranslateModule]
 })
 export class VesselListComponent {
   @Input() airships: Airship[];

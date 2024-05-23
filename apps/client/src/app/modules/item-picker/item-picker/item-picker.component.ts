@@ -20,7 +20,7 @@ import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { LazyScrollComponent } from '../../lazy-scroll/lazy-scroll/lazy-scroll.component';
 import { NzListModule } from 'ng-zorro-antd/list';
-import { AsyncPipe, NgIf } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { FormsModule } from '@angular/forms';
@@ -35,7 +35,7 @@ import { NzInputNumberComponent } from 'ng-zorro-antd/input-number';
   templateUrl: './item-picker.component.html',
   styleUrls: ['./item-picker.component.less'],
   standalone: true,
-  imports: [NzButtonModule, NzInputModule, FormsModule, NzCheckboxModule, RouterLink, NgIf, NzListModule, LazyScrollComponent, I18nNameComponent, ItemIconComponent, NzToolTipModule, FlexModule, NzWaveModule, NzIconModule, AsyncPipe, TranslateModule, XivapiIconPipe, CustomItemNamePipe, JobUnicodePipe, IfRegionsPipe, NzSpinModule, NzInputNumberComponent]
+  imports: [NzButtonModule, NzInputModule, FormsModule, NzCheckboxModule, RouterLink, NzListModule, LazyScrollComponent, I18nNameComponent, ItemIconComponent, NzToolTipModule, FlexModule, NzWaveModule, NzIconModule, AsyncPipe, TranslateModule, XivapiIconPipe, CustomItemNamePipe, JobUnicodePipe, IfRegionsPipe, NzSpinModule, NzInputNumberComponent]
 })
 export class ItemPickerComponent extends DialogComponent implements OnInit {
 

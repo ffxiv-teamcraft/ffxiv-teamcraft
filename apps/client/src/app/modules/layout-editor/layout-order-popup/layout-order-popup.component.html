@@ -1,3 +1,5 @@
 <div (cdkDropListDropped)="drop($event)" cdkDropList class="rows">
-  <div *ngFor="let panel of layout.rows" cdkDrag class="row">{{panel.name}}</div>
+  @for (panel of layout.rows; track panel) {
+    <div cdkDrag class="row">{{panel.name}}</div>
+  }
 </div>

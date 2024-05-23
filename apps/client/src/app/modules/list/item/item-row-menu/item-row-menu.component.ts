@@ -8,7 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { ItemNameClipboardDirective } from '../../../../core/item-name-clipboard.directive';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 
 @Component({
@@ -17,7 +17,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
     styleUrls: ['./item-row-menu.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzDropDownModule, NzMenuModule, NgIf, NzButtonModule, ItemNameClipboardDirective, NzBadgeModule, NgFor, AsyncPipe, TranslateModule, CharacterNamePipe]
+    imports: [NzDropDownModule, NzMenuModule, NzButtonModule, ItemNameClipboardDirective, NzBadgeModule, AsyncPipe, TranslateModule, CharacterNamePipe]
 })
 export class ItemRowMenuComponent {
 

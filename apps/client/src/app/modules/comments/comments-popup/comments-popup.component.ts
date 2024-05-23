@@ -17,7 +17,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { UserAvatarComponent } from '../../user-avatar/user-avatar/user-avatar.component';
 import { NzListModule } from 'ng-zorro-antd/list';
-import { NgIf, AsyncPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DatePipe } from '@angular/common';
 import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
@@ -25,7 +25,7 @@ import { DialogComponent } from '../../../core/dialog.component';
     templateUrl: './comments-popup.component.html',
     styleUrls: ['./comments-popup.component.less'],
     standalone: true,
-    imports: [NgIf, NzListModule, UserAvatarComponent, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, NzInputModule, FormsModule, AsyncPipe, DatePipe, TranslateModule]
+    imports: [NzListModule, UserAvatarComponent, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, NzInputModule, FormsModule, AsyncPipe, DatePipe, TranslateModule]
 })
 export class CommentsPopupComponent extends DialogComponent implements OnInit {
 

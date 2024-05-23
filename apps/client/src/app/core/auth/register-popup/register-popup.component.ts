@@ -6,7 +6,7 @@ import { PlatformService } from '../../tools/platform.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
-import { NgIf } from '@angular/common';
+
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
@@ -18,7 +18,7 @@ import { NzFormModule } from 'ng-zorro-antd/form';
     templateUrl: './register-popup.component.html',
     styleUrls: ['./register-popup.component.less'],
     standalone: true,
-    imports: [FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NzButtonModule, NzWaveModule, NgIf, NzAlertModule, NzDividerModule, TranslateModule]
+    imports: [FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NzButtonModule, NzWaveModule, NzAlertModule, NzDividerModule, TranslateModule]
 })
 export class RegisterPopupComponent {
 

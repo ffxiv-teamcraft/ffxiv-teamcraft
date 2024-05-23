@@ -1,4 +1,4 @@
-<ng-container *ngIf="data$ | async as missesData">
+@if (data$ | async; as missesData) {
   <nz-table
     #ajaxTable
     nzShowSizeChanger
@@ -8,77 +8,81 @@
     [nzTotal]="missesData.length"
     [(nzPageIndex)]="pageIndex"
     [(nzPageSize)]="pageSize"
-  >
+    >
     <thead>
-    <tr *ngIf="filterOptions$ | async as filters">
-      <th nzShowFilter
-          [nzFilters]="filters.baitId"
-          (nzFilterChange)="filter('baitId', $event)"
+      @if (filterOptions$ | async; as filters) {
+        <tr>
+          <th nzShowFilter
+            [nzFilters]="filters.baitId"
+            (nzFilterChange)="filter('baitId', $event)"
           nzSortKey="baitId">{{'DB.FISH.Baits' | translate}}</th>
-      <th nzShowFilter
-          [nzFilters]="filters.etime"
-          (nzFilterChange)="filter('etime', $event)"
+          <th nzShowFilter
+            [nzFilters]="filters.etime"
+            (nzFilterChange)="filter('etime', $event)"
           nzSortKey="etime">{{'DB.FISH.Etime' | translate}}</th>
-      <th nzShowFilter
-          [nzFilters]="filters.biteTime"
-          (nzFilterChange)="filter('biteTime', $event)"
+          <th nzShowFilter
+            [nzFilters]="filters.biteTime"
+            (nzFilterChange)="filter('biteTime', $event)"
           nzSortKey="biteTime">{{'DB.FISH.Bite_time' | translate}}</th>
-      <th nzShowFilter
-          [nzFilters]="filters.snagging"
-          (nzFilterChange)="filter('snagging', $event)"
+          <th nzShowFilter
+            [nzFilters]="filters.snagging"
+            (nzFilterChange)="filter('snagging', $event)"
           nzSortKey="snagging">{{761 | i18nRow:'statuses' | async | i18n}}</th>
-      <th nzShowFilter
-          [nzFilters]="filters.tug"
-          (nzFilterChange)="filter('tug', $event)"
+          <th nzShowFilter
+            [nzFilters]="filters.tug"
+            (nzFilterChange)="filter('tug', $event)"
           nzSortKey="tug">{{'DB.FISH.OVERLAY.Tug' | translate}}</th>
-      <th nzShowFilter
-          [nzFilters]="filters.gathering"
-          (nzFilterChange)="filter('gathering', $event)"
-          nzSortKey="gathering">Gathering
-      </th>
-      <th nzShowFilter
-          [nzFilters]="filters.weatherId"
-          (nzFilterChange)="filter('weatherId', $event)"
+          <th nzShowFilter
+            [nzFilters]="filters.gathering"
+            (nzFilterChange)="filter('gathering', $event)"
+            nzSortKey="gathering">Gathering
+          </th>
+          <th nzShowFilter
+            [nzFilters]="filters.weatherId"
+            (nzFilterChange)="filter('weatherId', $event)"
           nzSortKey="weatherId">{{'ALARMS.CUSTOM.Weather' | translate}}</th>
-      <th nzShowFilter
-          [nzFilters]="filters.previousWeatherId"
-          (nzFilterChange)="filter('previousWeatherId', $event)"
+          <th nzShowFilter
+            [nzFilters]="filters.previousWeatherId"
+            (nzFilterChange)="filter('previousWeatherId', $event)"
           nzSortKey="previousWeatherId">{{'DB.FISH.OVERLAY.Previous_weather' | translate}}</th>
-    </tr>
+        </tr>
+      }
     </thead>
     <tbody>
-    <tr *ngFor="let data of ajaxTable.data">
-      <td>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <app-item-icon width="24" [itemId]="data.baitId"></app-item-icon>
-          <div>{{data.baitId | itemName | i18n}}</div>
-        </div>
-      </td>
-      <td>{{data.etime}}</td>
-      <td>{{ (data.biteTime / 10) | number:'1.1':translate.currentLang}}s</td>
-      <td>{{ (data.snagging ? 'Yes' : 'No') | translate }}</td>
-      <td>{{ data.tug | tugName | translate }}</td>
-      <td>{{ data.gathering }}</td>
-      <td>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img src="{{data.weatherId | weatherIcon | xivapiIcon}}"
-               nz-tooltip
-               [nzTooltipTitle]="data.weatherId | i18nRow:'weathers' | i18n"
-               alt="{{data.weatherId | i18nRow:'weathers' | i18n}}">
-          <div>{{data.weatherId | i18nRow:'weathers' | i18n}}</div>
-        </div>
-      </td>
-      <td>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img src="{{data.previousWeatherId | weatherIcon | xivapiIcon}}"
-               nz-tooltip
-               [nzTooltipTitle]="data.previousWeatherId | i18nRow:'weathers' | i18n"
-               alt="{{data.previousWeatherId | i18nRow:'weathers' | i18n}}">
-          <div>{{data.previousWeatherId | i18nRow:'weathers' | i18n}}</div>
-        </div>
-      </td>
-    </tr>
+      @for (data of ajaxTable.data; track data) {
+        <tr>
+          <td>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <app-item-icon width="24" [itemId]="data.baitId"></app-item-icon>
+              <div>{{data.baitId | itemName | i18n}}</div>
+            </div>
+          </td>
+          <td>{{data.etime}}</td>
+          <td>{{ (data.biteTime / 10) | number:'1.1':translate.currentLang}}s</td>
+          <td>{{ (data.snagging ? 'Yes' : 'No') | translate }}</td>
+          <td>{{ data.tug | tugName | translate }}</td>
+          <td>{{ data.gathering }}</td>
+          <td>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <img src="{{data.weatherId | weatherIcon | xivapiIcon}}"
+                nz-tooltip
+                [nzTooltipTitle]="data.weatherId | i18nRow:'weathers' | i18n"
+                alt="{{data.weatherId | i18nRow:'weathers' | i18n}}">
+              <div>{{data.weatherId | i18nRow:'weathers' | i18n}}</div>
+            </div>
+          </td>
+          <td>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <img src="{{data.previousWeatherId | weatherIcon | xivapiIcon}}"
+                nz-tooltip
+                [nzTooltipTitle]="data.previousWeatherId | i18nRow:'weathers' | i18n"
+                alt="{{data.previousWeatherId | i18nRow:'weathers' | i18n}}">
+              <div>{{data.previousWeatherId | i18nRow:'weathers' | i18n}}</div>
+            </div>
+          </td>
+        </tr>
+      }
     </tbody>
   </nz-table>
-</ng-container>
+}
 

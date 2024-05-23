@@ -15,7 +15,7 @@ import { RouterLink } from '@angular/router';
 import { ExtendedModule } from '@angular/flex-layout/extended';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
-import { NgIf, NgFor, NgStyle, AsyncPipe, DecimalPipe } from '@angular/common';
+import { NgStyle, AsyncPipe, DecimalPipe } from '@angular/common';
 import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
@@ -24,7 +24,7 @@ import { DialogComponent } from '../../../core/dialog.component';
     styleUrls: ['./map.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, DbButtonComponent, NgFor, NzToolTipModule, NgStyle, ExtendedModule, RouterLink, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, AetheryteNamePipe, I18nPipe, TranslateModule, I18nRowPipe]
+    imports: [DbButtonComponent, NzToolTipModule, NgStyle, ExtendedModule, RouterLink, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, AetheryteNamePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class MapComponent extends DialogComponent implements OnInit {
 

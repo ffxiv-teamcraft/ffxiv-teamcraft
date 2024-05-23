@@ -22,7 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzGridModule } from 'ng-zorro-antd/grid';
-import { NgIf, NgFor } from '@angular/common';
+
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
@@ -30,7 +30,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     templateUrl: './import-from-pcap-popup.component.html',
     styleUrls: ['./import-from-pcap-popup.component.less'],
     standalone: true,
-    imports: [FlexModule, NgIf, NzGridModule, NzFormModule, NzInputModule, FormsModule, NzSelectModule, NgFor, NzAlertModule, JobUnicodePipe, I18nPipe, TranslateModule, I18nRowPipe]
+    imports: [FlexModule, NzGridModule, NzFormModule, NzInputModule, FormsModule, NzSelectModule, NzAlertModule, JobUnicodePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class ImportFromPcapPopupComponent extends TeamcraftComponent {
 

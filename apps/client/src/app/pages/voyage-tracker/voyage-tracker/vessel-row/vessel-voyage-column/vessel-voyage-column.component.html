@@ -1,12 +1,18 @@
 <div nz-popover
-     [nzPopoverTitle]="voyageDetailsTitle"
-     nzPopoverPlacement="topRight"
-     [nzPopoverContent]="voyageDetailsContent">
+  [nzPopoverTitle]="voyageDetailsTitle"
+  nzPopoverPlacement="topRight"
+  [nzPopoverContent]="voyageDetailsContent">
   <nz-breadcrumb [nzSeparator]="iconTemplate">
-    <nz-breadcrumb-item *ngFor="let sector of vessel?.destinations">
-      <span *ngIf="vessel.vesselType === VesselType.AIRSHIP">{{ sector + 1 }}</span>
-      <span *ngIf="vessel.vesselType === VesselType.SUBMARINE" [innerHTML]="sector | lazyRow:'submarineVoyages':'location' | async | nzSanitizer"></span>
-    </nz-breadcrumb-item>
+    @for (sector of vessel?.destinations; track sector) {
+      <nz-breadcrumb-item>
+        @if (vessel.vesselType === VesselType.AIRSHIP) {
+          <span>{{ sector + 1 }}</span>
+        }
+        @if (vessel.vesselType === VesselType.SUBMARINE) {
+          <span [innerHTML]="sector | lazyRow:'submarineVoyages':'location' | async | nzSanitizer"></span>
+        }
+      </nz-breadcrumb-item>
+    }
   </nz-breadcrumb>
   <ng-template #iconTemplate><i nz-icon nzType="arrow-right"></i></ng-template>
 </div>
@@ -17,8 +23,10 @@
 
 <ng-template #voyageDetailsContent>
   <nz-breadcrumb [nzSeparator]="iconTemplate">
-    <nz-breadcrumb-item *ngFor="let sector of destinationNames$ | async">
-      <span [innerHtml]="sector"></span>
-    </nz-breadcrumb-item>
+    @for (sector of destinationNames$ | async; track sector) {
+      <nz-breadcrumb-item>
+        <span [innerHtml]="sector"></span>
+      </nz-breadcrumb-item>
+    }
   </nz-breadcrumb>
 </ng-template>

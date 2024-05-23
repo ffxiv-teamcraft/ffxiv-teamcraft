@@ -1,9 +1,13 @@
 <form (submit)="submit()" [formGroup]="control" fxLayout="column" fxLayoutGap="5px">
   <input autofocus formControlName="name" nz-input placeholder="{{placeholder | translate}}" [type]="type">
-  <label *ngIf="showEphemeralCheckbox" formControlName="ephemeral" nz-checkbox>{{'Ephemeral_tag' | translate}}</label>
-  <label *ngIf="showEphemeralCheckbox" [nzTooltipTitle]="'LIST.Offline_help' | translate" formControlName="offline"
-         nz-checkbox nz-tooltip>{{'LIST.Offline' | translate}}</label>
+  @if (showEphemeralCheckbox) {
+    <label formControlName="ephemeral" nz-checkbox>{{'Ephemeral_tag' | translate}}</label>
+  }
+  @if (showEphemeralCheckbox) {
+    <label [nzTooltipTitle]="'LIST.Offline_help' | translate" formControlName="offline"
+    nz-checkbox nz-tooltip>{{'LIST.Offline' | translate}}</label>
+  }
   <button [disabled]="!control.valid" [nzType]="'primary'" nz-button
-          type="submit">{{'Submit' | translate}}
+    type="submit">{{'Submit' | translate}}
   </button>
 </form>

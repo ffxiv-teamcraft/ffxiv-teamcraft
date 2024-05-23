@@ -10,7 +10,7 @@ import { MapComponent } from '../../map/map/map.component';
 import { MapPositionComponent } from '../../map/map-position/map-position.component';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-hunting',
@@ -18,7 +18,7 @@ import { AsyncPipe, NgFor, NgIf } from '@angular/common';
   styleUrls: ['./hunting.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgFor, FlexModule, DbButtonComponent, NgIf, MapPositionComponent, MapComponent, AsyncPipe, I18nPipe, I18nRowPipe, ClosestAetherytePipe]
+  imports: [FlexModule, DbButtonComponent, MapPositionComponent, MapComponent, AsyncPipe, I18nPipe, I18nRowPipe, ClosestAetherytePipe]
 })
 export class HuntingComponent extends ItemDetailsPopup<Drop[]> {
 

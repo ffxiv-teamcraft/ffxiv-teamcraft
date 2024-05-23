@@ -1,6 +1,10 @@
-<app-page-loader *ngIf="loading"></app-page-loader>
-<ng-container *ngIf="!loading">
+@if (loading) {
+  <app-page-loader></app-page-loader>
+}
+@if (!loading) {
   <div echarts theme="dark" [options]="options" (chartInit)="onChartInit($event)" [initOpts]="{height: '550px'}" [class.hidden]="options.empty"></div>
-  <nz-empty [nzNotFoundContent]="'FISH_TRAIN.Nothing_to_show' | translate" *ngIf="options.empty"></nz-empty>
-</ng-container>
+  @if (options.empty) {
+    <nz-empty [nzNotFoundContent]="'FISH_TRAIN.Nothing_to_show' | translate"></nz-empty>
+  }
+}
 
