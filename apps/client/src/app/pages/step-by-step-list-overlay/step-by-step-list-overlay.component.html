@@ -106,7 +106,9 @@
                   <ng-template #avatar>
                     <app-item-icon [itemId]="alarm.row.id" [itemName]="alarm.row.id | itemName: alarm.row | i18n"
                                    [width]="32"
-                                   [forceCollectable]="alarm.row.collectable" *ngIf="!alarm.row.xivapiIcon"></app-item-icon>
+                                   openNewWindow
+                                   [forceCollectable]="alarm.row.collectable"
+                                   *ngIf="!alarm.row.xivapiIcon"></app-item-icon>
                     <app-item-icon [icon]="alarm.row.xivapiIcon | xivapiIcon" [itemId]="null"
                                    [width]="32"
                                    *ngIf="alarm.row.xivapiIcon" [tooltipDisabled]="true"></app-item-icon>
