@@ -215,7 +215,6 @@ export class GatheringLocationComponent {
                 const itemId = row.id;
                 return this.gatheringNodesService.getItemNodes(itemId).pipe(
                   map(nodes => {
-                    console.log(nodes);
                     return nodes.map(node => {
                       return {
                         originalItemId: itemId,
