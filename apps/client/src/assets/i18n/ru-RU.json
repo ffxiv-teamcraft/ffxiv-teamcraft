@@ -1630,7 +1630,7 @@
     "Currencies": "Валюты",
     "Rowena_splendor": "Rowena's splendors",
     "Unlocks": "Разблокирует",
-    "Jump_to_page": "Open db page",
+    "Jump_to_page": "Открыть БД страницу",
     "Ishgard_restoration": "Восстановление Ишгарда",
     "GC_supply_value": "Expert Delivery",
     "ITEM": {
@@ -1640,12 +1640,12 @@
       "Mark_as_done_in_gathering_log": "Отметить как выполнено в журнале",
       "X_Equipped": "{{amount}} Equipped:",
       "Item_series": "Set details",
-      "Requires_fate_rank": "Requires FATE rank {{rank}}",
-      "Requires_gc_rank": "Requires Grand Company rank {{rank}}"
+      "Requires_fate_rank": "Требуется ранг FATE {{rank}}",
+      "Requires_gc_rank": "Требуется ранг Гранд Компании {{rank}}"
     },
     "FISH": {
-      "Fruity_video": "How to catch video",
-      "Fruity_video_description": "Link to the \"how catch video\" from Fruity Snacks for this fish",
+      "Fruity_video": "Видео \"Как поймать\"",
+      "Fruity_video_description": "Ссылка на видео \"Как поймать\" от Fruity Snacks для этой рыбы",
       "Hour": "Время",
       "Etime": "Время Eorzean",
       "Misses_popup_title": "Не хватает для этого места",
@@ -1660,8 +1660,8 @@
       "Bite_time": "Время клева",
       "Spots": "Места",
       "Min_gathering": "Мин. собирательство",
-      "Min_observed_gathering": "Min. observed gathering",
-      "Min_observed_gathering_explain": "The minimum value among all the automated reports we have so far. Doesn't mean it's the minimum gathering required, just the one we observed.",
+      "Min_observed_gathering": "Мин. сбор (по отчетам)",
+      "Min_observed_gathering_explain": "Минимальное значение среди всех автоматизированных отчетов, которые у нас есть. Не означает, что это минимальные требования, а только те, которые мы наблюдали.",
       "Min_size": "Мин. размер",
       "Max_size": "Макс. размер",
       "Avg_size": "Средний размер",
@@ -1942,7 +1942,7 @@
     "Loading_data": "Загрузка данных о сделках для выбранной валюты",
     "Loading_universalis": "Получение цен на рынке от Universalis для {{amount}} позиций",
     "X_sold_last_week": "{{amount}} продано на прошлой неделе",
-    "No_trades": "This currency cannot be traded with something that can be sold on marketboard"
+    "No_trades": "Эта валюта не обменивается на что-то, что может быть продано на маркете"
   },
   "FOOD_PICKER": {
     "Title": "Подборщик еды",
@@ -2104,7 +2104,7 @@
     "Show_hidden": "Показать скрытые оптимизаторы",
     "No_optimizations": "Оптимизация недоступна",
     "Optimization_copied": "Оптимизация скопирована в буфер обмена как JSON",
-    "Pause_tracking": "Pause inventory tracking",
+    "Pause_tracking": "Приостановить отслеживание инвентаря",
     "CAN_BE_BOUGHT": {
       "Title": "Предметы, которые можно купить за gil",
       "Message": "Этот предмет можно купить у нпс за gil и не требует репутации с beast tribe.",
@@ -2717,7 +2717,7 @@
     "Selling": "Продает {{amount}} товаров",
     "X_items": "{{amount}} предметов",
     "Task_complete": "Задание выполнено",
-    "No_task": "No task",
+    "No_task": "Нет задач",
     "Task_completed_notification_title": "{{name}} завершил свое задание",
     "Task_completed_notification_content": "{{name}} выполнил задание {{taskName}}",
     "Task_completion_alarm": "Сигнал выполнения задания",
