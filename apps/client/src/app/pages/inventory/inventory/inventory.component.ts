@@ -148,12 +148,12 @@ export class InventoryComponent {
             .filter(item => {
               if (selectedExpansion !== null && selectedExpansion >= 0) {
                 // Find the patch this item was released in, and then get that patch's expansion
-                const itemExpansion: any = patches.find(p => {
+                const itemExpansion = patches.find(p => {
                   return p.id === itemPatch[item.itemId];
                 });
 
                 // We test if false and return false here instead of the inverse so that we can continue through the rest of our search
-                if (!itemExpansion || itemExpansion.ExVersion !== selectedExpansion) {
+                if (!itemExpansion || itemExpansion.ex !== selectedExpansion) {
                   return false;
                 }
               }
