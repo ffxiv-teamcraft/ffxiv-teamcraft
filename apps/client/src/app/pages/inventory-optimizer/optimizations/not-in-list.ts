@@ -22,7 +22,7 @@ export class NotInList extends InventoryOptimizer {
         return this.listsFacade.myLists$.pipe(
           first(),
           map(lists => {
-            const usedInLists = lists.some(list => ListController.getItemById(list, item.itemId));
+            const usedInLists = lists.some(list => !list.archived && ListController.getItemById(list, item.itemId));
             if (usedInLists) {
               return null;
             }
