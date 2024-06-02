@@ -1,9 +1,9 @@
 <div class="menu-buttons" fxLayout="row" fxLayoutGap="5px">
-  @if (isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS) && itemId > 0) {
+  @defer (when isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS) && itemId > 0) {
     <app-marketboard-icon [itemId]="itemId"
     [showHistory]="finalItem"></app-marketboard-icon>
   }
-  @if (isButton(itemRowTypes.COPY_NAME_NOT_FAVORITE)) {
+  @defer (when isButton(itemRowTypes.COPY_NAME_NOT_FAVORITE)) {
     <button [itemNameCopy]="itemId"
       [forceCopyMode]="notFavoriteCopyMode"
       nz-button
@@ -13,7 +13,7 @@
     </button>
   }
 
-  @if (!overlay && isButton(itemRowTypes.ATTACH_ROTATION) && isCraft && itemId > 0) {
+  @defer (when !overlay && isButton(itemRowTypes.ATTACH_ROTATION) && isCraft && itemId > 0) {
     @if (!attachedRotation) {
       <button (click)="attachRotation.emit()"
         [nzTooltipTitle]="'LIST.ROTATION.Attach' | translate" nz-button
@@ -30,7 +30,7 @@
     }
   }
 
-  @if (isButton(itemRowTypes.COMMENTS)  && !offlineList) {
+  @defer (when isButton(itemRowTypes.COMMENTS)  && !offlineList) {
     <button (click)="openCommentsPopup.emit()" [nzTooltipTitle]="'COMMENTS.Title' | translate" nz-button nz-tooltip
       nzShape="circle"
       nzSize="small">
@@ -40,7 +40,7 @@
     </button>
   }
 
-  @if (isButton(itemRowTypes.ADD_ALL_ALARMS)) {
+  @defer (when isButton(itemRowTypes.ADD_ALL_ALARMS)) {
     @if (hasAlarms) {
       <button (click)="addAllAlarms.emit()"
         [nzTooltipTitle]="'LIST_DETAILS.Add_all_item_alarms' | translate" nz-button
@@ -51,7 +51,7 @@
     }
   }
 
-  @if (isButton(itemRowTypes.ASSIGN_TEAM_MEMBER)) {
+  @defer (when isButton(itemRowTypes.ASSIGN_TEAM_MEMBER)) {
     @if (team) {
       @if (team?.leader === userId || (!team?.notFound && team?.isOfficer(userId))) {
         <button (click)="$event.stopPropagation()"
@@ -80,7 +80,7 @@
     }
   }
 
-  @if (isButton(itemRowTypes.WORK_ON_IT)) {
+  @defer (when isButton(itemRowTypes.WORK_ON_IT)) {
     @if ((workingOnIt || [])?.indexOf(userId) === -1 && loggedIn) {
       <button (click)="setWorkingOnIt.emit(userId)"
         [nzTooltipTitle]="'Work_on_it' | translate" nz-button nz-tooltip
@@ -123,7 +123,7 @@
     }
   }
 
-  @if (isButton(itemRowTypes.REQUIREMENTS)) {
+  @defer (when isButton(itemRowTypes.REQUIREMENTS)) {
     <button (click)="openRequirementsPopup.emit()" [nzTooltipTitle]="'Requirements_for_craft' | translate" nz-button
       nz-tooltip nzShape="circle"
       nzSize="small">
@@ -131,7 +131,7 @@
     </button>
   }
 
-  @if (isButton(itemRowTypes.ADD_TAG) && settings.itemTagsEnabled) {
+  @defer (when isButton(itemRowTypes.ADD_TAG) && settings.itemTagsEnabled) {
     <button (click)="showTagInput.emit()" [nzTooltipTitle]="'LIST_DETAILS.New_tag' | translate" nz-button nz-tooltip
       nzShape="circle"
       nzSize="small">
@@ -139,7 +139,7 @@
     </button>
   }
 
-  @if (isButton(itemRowTypes.EDIT_AMOUNT)) {
+  @defer (when isButton(itemRowTypes.EDIT_AMOUNT)) {
     @if (finalItem && permissionLevel >= 30) {
       <button (click)="changeAmount.emit()"
         [nzTooltipTitle]="'Edit_amount' | translate" nz-button
@@ -149,7 +149,7 @@
     }
   }
 
-  @if (isButton(itemRowTypes.MARK_HQ) && itemId > 0) {
+  @defer (when isButton(itemRowTypes.MARK_HQ) && itemId > 0) {
     @if (permissionLevel >= 30 && requiredForFinalCraft === 0 && !requiredAsHQ) {
       <button (click)="requiredAsHQ = true; requiredAsHQChange.emit(requiredAsHQ)"
         [nzTooltipTitle]="'Mark_HQ' | translate"
@@ -170,7 +170,7 @@
     }
   }
 
-  @if (isButton(itemRowTypes.ADD_TO_ANOTHER_LIST)) {
+  @defer (when isButton(itemRowTypes.ADD_TO_ANOTHER_LIST)) {
     <button (click)="addToList.emit()" [nzTooltipTitle]="'LIST_DETAILS.LAYOUT_DIALOG.ITEMS.ADD_TO_ANOTHER_LIST' | translate" nz-button
       nz-tooltip
       nzShape="circle"
@@ -179,7 +179,7 @@
     </button>
   }
 
-  @if (isButton(itemRowTypes.REMOVE_ITEM) && finalItem && permissionLevel >= 30) {
+  @defer (when isButton(itemRowTypes.REMOVE_ITEM) && finalItem && permissionLevel >= 30) {
     <button (nzOnConfirm)="removeItem.emit()" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
       nz-popconfirm
       nzShape="circle"
@@ -189,7 +189,7 @@
     </button>
   }
   @if (showLogCompletionButton && itemId > 0) {
-    @if (isButton(itemRowTypes.MARK_AS_DONE_IN_LOG)) {
+    @defer (when isButton(itemRowTypes.MARK_AS_DONE_IN_LOG)) {
       <button (click)="markAsDoneInLog.emit()"
         [nzTooltipTitle]="'LOG_TRACKER.Mark_as_done_external' | translate"
         nz-button
@@ -201,7 +201,7 @@
     }
   }
 
-  @if (!overlay) {
+  @defer (when !overlay) {
     <button (click)="$event.stopPropagation();openMenu($event)" [disabled]="permissionLevel < 20"
       tutorialStep="TUTORIAL.LIST.More_actions_button"
       tutorialStepIndex="10"
@@ -214,7 +214,7 @@
     </button>
   }
   <div #menuHost></div>
-  @if (missingBooks?.length > 0 && missingBooks?.length === masterbooks?.length) {
+  @defer (when missingBooks?.length > 0 && missingBooks?.length === masterbooks?.length) {
     <button (click)="checkMasterbooks.emit(missingBooks)"
       [nzTooltipTitle]="'LIST_DETAILS.Missing_masterbook' | translate" class="missing-masterbooks" nz-button
       nz-tooltip
@@ -225,7 +225,7 @@
       <i nz-icon nzType="warning" nzTheme="outline"></i>
     </button>
   }
-  @if (attachedRotation) {
+  @defer (when attachedRotation) {
     @if (recipe$ | async; as recipe) {
       @if (rotation$ | async; as rotation) {
         <nz-button-group>

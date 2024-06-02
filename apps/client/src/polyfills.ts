@@ -18,7 +18,7 @@
  */
 (window as any).global = window;
 /** Evergreen browsers require these. **/
-import 'core-js/es6/reflect';
+// import 'core-js/es6/reflect';
 /***************************************************************************************************
  * Zone JS is required by Angular itself.
  */

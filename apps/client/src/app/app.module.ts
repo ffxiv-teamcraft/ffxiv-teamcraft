@@ -201,10 +201,12 @@ const nzConfig: NzConfig = {
   }
 };
 
-@NgModule({ declarations: [
-        AppComponent
-    ],
-    bootstrap: [AppComponent], imports: [FlexLayoutModule,
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  bootstrap: [AppComponent],
+  imports: [FlexLayoutModule,
     MarkdownModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
@@ -213,19 +215,6 @@ const nzConfig: NzConfig = {
         deps: [HttpClient, PLATFORM_ID, PlatformService]
       }
     }),
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => {
-      return initializeFirestore(getApp(), {
-        localCache: persistentLocalCache({
-          cacheSizeBytes: 200000000,
-          tabManager: persistentMultipleTabManager()
-        })
-      });
-    }),
-    provideDatabase(() => getDatabase()),
-    provideFunctions(() => getFunctions()),
-    providePerformance(() => getPerformance()),
     XivapiClientModule.forRoot(),
     RouterModule.forRoot([], { useHash: IS_ELECTRON }),
     DirtyModule,
@@ -298,23 +287,39 @@ const nzConfig: NzConfig = {
     BreakpointDebugComponent,
     AdComponent,
     NzEmptyModule,
-    NzListModule, LoadingScreenComponent], providers: [
-        GOOGLE_ANALYTICS_ROUTER_INITIALIZER_PROVIDER,
-        {
-            provide: APOLLO_OPTIONS,
-            useFactory: apolloClientFactory,
-            deps: [HttpLink, AuthFacade]
-        },
-        { provide: NZ_I18N, useValue: en_US },
-        {
-            provide: NZ_CONFIG,
-            useValue: nzConfig
-        },
-        { provide: NZ_ICONS, useValue: icons },
-        { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true },
-        ...APP_INITIALIZERS,
-        ...Object.values(AllaganReportsGQLProviders),
-        provideHttpClient(withInterceptorsFromDi())
-    ] })
+    NzListModule, LoadingScreenComponent],
+
+  providers: [
+    GOOGLE_ANALYTICS_ROUTER_INITIALIZER_PROVIDER,
+    {
+      provide: APOLLO_OPTIONS,
+      useFactory: apolloClientFactory,
+      deps: [HttpLink, AuthFacade]
+    },
+    { provide: NZ_I18N, useValue: en_US },
+    {
+      provide: NZ_CONFIG,
+      useValue: nzConfig
+    },
+    { provide: NZ_ICONS, useValue: icons },
+    { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true },
+    ...APP_INITIALIZERS,
+    ...Object.values(AllaganReportsGQLProviders),
+    provideHttpClient(withInterceptorsFromDi()),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => {
+      return initializeFirestore(getApp(), {
+        localCache: persistentLocalCache({
+          cacheSizeBytes: 200000000,
+          tabManager: persistentMultipleTabManager()
+        })
+      });
+    }),
+    provideDatabase(() => getDatabase()),
+    provideFunctions(() => getFunctions()),
+    providePerformance(() => getPerformance())
+  ]
+})
 export class AppModule {
 }

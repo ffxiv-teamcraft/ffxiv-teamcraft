@@ -460,18 +460,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     return item.id;
   }
 
-  trackByTier(index: number) {
-    return true;
-  }
-
-  trackByZone(index: number, item: ZoneBreakdownRow) {
-    return item.zoneId;
-  }
-
-  trackByNpc(index: number, item: NpcBreakdownRow) {
-    return item.npcId;
-  }
-
   private hasPositionsInRows(rows: ListRow[], zoneId?: number): Observable<boolean> {
     return this.lazyData.getEntry('maps')
       .pipe(
