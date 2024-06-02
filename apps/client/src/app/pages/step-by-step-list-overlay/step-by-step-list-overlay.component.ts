@@ -30,13 +30,14 @@ import { StepByStepComponent } from '../../modules/list/step-by-step-details/ste
 import { ListDisplay } from '../../core/layout/list-display';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { uniqBy } from 'lodash';
+import { PageLoaderComponent } from '../../modules/page-loader/page-loader/page-loader.component';
 
 @Component({
   selector: 'app-step-by-step-list-overlay',
   standalone: true,
   imports: [CommonModule, OverlayContainerModule, MapModule, PipesModule, CoreModule, FullpageMessageModule,
     NzListModule, ItemIconModule, ListModule,
-    NzDividerModule, NzBreadCrumbModule, NzEmptyModule, NzGridModule],
+    NzDividerModule, NzBreadCrumbModule, NzEmptyModule, NzGridModule, PageLoaderComponent],
   templateUrl: './step-by-step-list-overlay.component.html',
   styleUrls: ['./step-by-step-list-overlay.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush

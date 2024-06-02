@@ -81,6 +81,9 @@ export class ListPickerService {
       }),
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
       switchMap(list => {
+        if (list.offline) {
+          return of(list);
+        }
         // We want to get the list created before calling it a success, let's be pessimistic !
         return this.progressService.showProgress(
           combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
@@ -103,7 +106,7 @@ export class ListPickerService {
           }
         );
         return race(
-          ref.onClick.pipe(delay(100),map(() => list)),
+          ref.onClick.pipe(delay(100), map(() => list)),
           ref.onClose.pipe(map(() => false))
         );
       })

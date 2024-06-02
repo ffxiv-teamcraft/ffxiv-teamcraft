@@ -241,7 +241,8 @@ export class AuthEffects {
       ofType<LoadLogTracking>(AuthActionTypes.LoadLogTracking),
       switchMap(action => {
         return this.logTrackingService.get(`${action.userId}:${action.lodestoneId?.toString()}`).pipe(
-          catchError((_) => {
+          catchError((err) => {
+            console.error(err);
             return of({
               crafting: [],
               gathering: []

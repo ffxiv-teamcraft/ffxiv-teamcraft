@@ -120,7 +120,7 @@ export class MapComponent extends DialogComponent implements OnInit {
   }
 
   trackByMarker(index: number, marker: MapMarker): string {
-    return `${marker.x}:${marker.y}:${marker.iconType}`;
+    return marker ? `${marker.x}:${marker.y}:${marker.iconType}` : index.toString();
   }
 
 }

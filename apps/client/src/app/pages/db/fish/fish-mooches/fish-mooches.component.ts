@@ -11,6 +11,7 @@ import { ItemIconComponent } from '../../../../modules/item-icon/item-icon/item-
 import { AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-fish-mooches',
@@ -35,9 +36,10 @@ export class FishMoochesComponent {
     map((res) => res.loading)
   );
 
-  public readonly mooches$ = this.fishCtx.moochesByFish$.pipe(
+  public readonly mooches$: Observable<number[]> = this.fishCtx.moochesByFish$.pipe(
     map((res) => res.data ?? []),
     startWith([]),
+    map(rows => rows.filter(row => row > -1)),
     shareReplay({ bufferSize: 1, refCount: true })
   );
 
