@@ -53,7 +53,7 @@ import { AggregateItemRowComponent } from '../item/aggregate-item-row/aggregate-
 import { ItemRowComponent } from '../item/item-row/item-row.component';
 import { LazyScrollComponent } from '../../lazy-scroll/lazy-scroll/lazy-scroll.component';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
-import { NgIf, NgFor, NgTemplateOutlet, NgSwitch, NgSwitchCase, NgSwitchDefault, AsyncPipe, DecimalPipe } from '@angular/common';
+import { NgTemplateOutlet, AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
     selector: 'app-list-details-panel',
@@ -61,7 +61,7 @@ import { NgIf, NgFor, NgTemplateOutlet, NgSwitch, NgSwitchCase, NgSwitchDefault,
     styleUrls: ['./list-details-panel.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NzCollapseModule, LazyScrollComponent, ItemRowComponent, AggregateItemRowComponent, NzGridModule, NgFor, NgForTrackByIdDirective, CompactItemRowComponent, NzDividerModule, NgTemplateOutlet, NgSwitch, NgSwitchCase, FlexModule, NzButtonModule, NzIconModule, NzToolTipModule, NzWaveModule, MapPositionComponent, NgSwitchDefault, NzProgressModule, NzPopconfirmModule, ClipboardDirective, NzSpinModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule]
+    imports: [NzCollapseModule, LazyScrollComponent, ItemRowComponent, AggregateItemRowComponent, NzGridModule, NgForTrackByIdDirective, CompactItemRowComponent, NzDividerModule, NgTemplateOutlet, FlexModule, NzButtonModule, NzIconModule, NzToolTipModule, NzWaveModule, MapPositionComponent, NzProgressModule, NzPopconfirmModule, ClipboardDirective, NzSpinModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule]
 })
 export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
@@ -458,18 +458,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   trackByItem(index: number, item: ListRow): number {
     return item.id;
-  }
-
-  trackByTier(index: number) {
-    return true;
-  }
-
-  trackByZone(index: number, item: ZoneBreakdownRow) {
-    return item.zoneId;
-  }
-
-  trackByNpc(index: number, item: NpcBreakdownRow) {
-    return item.npcId;
   }
 
   private hasPositionsInRows(rows: ListRow[], zoneId?: number): Observable<boolean> {

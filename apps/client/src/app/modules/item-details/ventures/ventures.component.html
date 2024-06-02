@@ -5,25 +5,30 @@
         [nzTitle]="venture.name ? (venture.job | i18nRow:'jobAbbr' | i18n) || (DOWM | i18n): (venture.id | i18nRow:'ventures' | i18n)"
         [nzDescription]="description">
         <ng-template #description>
-          <span *ngIf="venture.lvl">
-            Lv. {{venture.lvl}}
-          </span>
+          @if (venture.lvl) {
+            <span>
+              Lv. {{venture.lvl}}
+            </span>
+          }
         </ng-template>
       </nz-list-item-meta>
       <ng-template #content>
         <div fxLayout="column">
-          <div *ngFor="let threshold of venture.quantities" fxLayout="row" fxLayoutAlign="flex-end center"
-               fxLayoutGap="5px">
-            <div>{{threshold.name | translate}} &gt; {{threshold.value || 0}}</div>
-            <i nz-icon nzType="arrow-right"></i>
-            <div>x{{threshold.quantity}}
-              <span [nzTooltipTitle]="'Requires_x_ventures' | translate: {amount: (item.amount - item.done) / threshold.quantity | ceil}"
-                    *ngIf="item.amount"
+          @for (threshold of venture.quantities; track threshold) {
+            <div fxLayout="row" fxLayoutAlign="flex-end center"
+              fxLayoutGap="5px">
+              <div>{{threshold.name | translate}} &gt; {{threshold.value || 0}}</div>
+              <i nz-icon nzType="arrow-right"></i>
+              <div>x{{threshold.quantity}}
+                @if (item.amount) {
+                  <span [nzTooltipTitle]="'Requires_x_ventures' | translate: {amount: (item.amount - item.done) / threshold.quantity | ceil}"
                     nz-tooltip>
-                ({{((item.amount - item.done) / threshold.quantity) | ceil }})
-              </span>
+                    ({{((item.amount - item.done) / threshold.quantity) | ceil }})
+                  </span>
+                }
+              </div>
             </div>
-          </div>
+          }
         </div>
       </ng-template>
     </nz-list-item>

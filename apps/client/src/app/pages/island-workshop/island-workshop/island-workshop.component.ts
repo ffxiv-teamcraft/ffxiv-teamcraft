@@ -37,7 +37,7 @@ import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
-import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
+import { NgTemplateOutlet, AsyncPipe } from '@angular/common';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { ClipboardDirective } from '../../../core/clipboard.directive';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
@@ -62,7 +62,7 @@ interface ColumnItem {
     styleUrls: ['./island-workshop.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzPageHeaderModule, NzCheckboxModule, FormsModule, NzButtonModule, NzWaveModule, ClipboardDirective, NzIconModule, NgIf, NzToolTipModule, FlexModule, NzInputModule, NzInputNumberModule, NzAlertModule, WorkshopPlanningComponent, NgTemplateOutlet, NzDividerModule, NzGridModule, NzCardModule, NgFor, ItemIconComponent, I18nNameComponent, NzTableModule, NzSelectModule, AsyncPipe, TranslateModule]
+    imports: [NzPageHeaderModule, NzCheckboxModule, FormsModule, NzButtonModule, NzWaveModule, ClipboardDirective, NzIconModule, NzToolTipModule, FlexModule, NzInputModule, NzInputNumberModule, NzAlertModule, WorkshopPlanningComponent, NgTemplateOutlet, NzDividerModule, NzGridModule, NzCardModule, ItemIconComponent, I18nNameComponent, NzTableModule, NzSelectModule, AsyncPipe, TranslateModule]
 })
 export class IslandWorkshopComponent extends TeamcraftComponent {
 

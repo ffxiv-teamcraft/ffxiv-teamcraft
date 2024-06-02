@@ -16,7 +16,7 @@ import { FavoriteButtonComponent } from '../../../../modules/favorites/favorite-
 import { FlexModule } from '@angular/flex-layout/flex';
 import { UserAvatarComponent } from '../../../../modules/user-avatar/user-avatar/user-avatar.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { SeoService } from '../../../../core/seo/seo.service';
 
@@ -25,7 +25,7 @@ import { SeoService } from '../../../../core/seo/seo.service';
     templateUrl: './rotation-folder-page.component.html',
     styleUrls: ['./rotation-folder-page.component.less'],
     standalone: true,
-    imports: [NgIf, NzCardModule, UserAvatarComponent, FlexModule, FavoriteButtonComponent, NgFor, RotationPanelComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule, CharacterNamePipe]
+    imports: [NzCardModule, UserAvatarComponent, FlexModule, FavoriteButtonComponent, RotationPanelComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule, CharacterNamePipe]
 })
 export class RotationFolderPageComponent {
   folder$: Observable<CraftingRotationsFolder>;

@@ -1,39 +1,41 @@
-<div *ngIf="linksDisplay$ | async as display; else loading" class="links-container">
-  <div *ngIf="display.length === 0; else nzList">
-    <app-fullpage-message>{{'CUSTOM_LINKS.No_links' | translate}}</app-fullpage-message>
+@if (linksDisplay$ | async; as display) {
+  <div class="links-container">
+    @if (display.length === 0) {
+      <div>
+        <app-fullpage-message>{{'CUSTOM_LINKS.No_links' | translate}}</app-fullpage-message>
+      </div>
+    } @else {
+      <nz-list [nzDataSource]="display" [nzHeader]="'CUSTOM_LINKS.Title' | translate" [nzRenderItem]="linkTemplate">
+        <ng-template #linkTemplate let-linkDisplay>
+          <nz-list-item [nzActions]="[share, delete]">
+            <nz-list-item-meta [nzDescription]="linkDisplay.targetName" [nzTitle]="title">
+              <ng-template #title>
+                <div fxLayout="row" fxLayoutGap="5px">
+                  <div>{{linkDisplay.link.uri}}</div>
+                  <nz-tag>{{linkDisplay.link.getType()}}</nz-tag>
+                </div>
+              </ng-template>
+            </nz-list-item-meta>
+          </nz-list-item>
+          <ng-template #share>
+            <button [clipboardSuccessMessage]="'Share_link_copied' | translate" [clipboard]="linkDisplay.link.getUrl"
+              [nzTooltipTitle]="(linkDisplay.link.type === 'link'?'CUSTOM_LINKS.Copy_custom_link':'LIST_TEMPLATE.Copy_template_url') | translate"
+              nz-button
+              nz-tooltip nzShape="circle" nzType="primary">
+              <i nz-icon nzType="share-alt"></i>
+            </button>
+          </ng-template>
+          <ng-template #delete>
+            <button (nzOnConfirm)="deleteLink(linkDisplay.link.$key)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
+              nz-popconfirm
+              nzShape="circle" nzDanger>
+              <i nz-icon nzType="delete"></i>
+            </button>
+          </ng-template>
+        </ng-template>
+      </nz-list>
+    }
   </div>
-  <ng-template #nzList>
-    <nz-list [nzDataSource]="display" [nzHeader]="'CUSTOM_LINKS.Title' | translate" [nzRenderItem]="linkTemplate">
-      <ng-template #linkTemplate let-linkDisplay>
-        <nz-list-item [nzActions]="[share, delete]">
-          <nz-list-item-meta [nzDescription]="linkDisplay.targetName" [nzTitle]="title">
-            <ng-template #title>
-              <div fxLayout="row" fxLayoutGap="5px">
-                <div>{{linkDisplay.link.uri}}</div>
-                <nz-tag>{{linkDisplay.link.getType()}}</nz-tag>
-              </div>
-            </ng-template>
-          </nz-list-item-meta>
-        </nz-list-item>
-        <ng-template #share>
-          <button [clipboardSuccessMessage]="'Share_link_copied' | translate" [clipboard]="linkDisplay.link.getUrl"
-                  [nzTooltipTitle]="(linkDisplay.link.type === 'link'?'CUSTOM_LINKS.Copy_custom_link':'LIST_TEMPLATE.Copy_template_url') | translate"
-                  nz-button
-                  nz-tooltip nzShape="circle" nzType="primary">
-            <i nz-icon nzType="share-alt"></i>
-          </button>
-        </ng-template>
-        <ng-template #delete>
-          <button (nzOnConfirm)="deleteLink(linkDisplay.link.$key)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
-                  nz-popconfirm
-                  nzShape="circle" nzDanger>
-            <i nz-icon nzType="delete"></i>
-          </button>
-        </ng-template>
-      </ng-template>
-    </nz-list>
-  </ng-template>
-</div>
-<ng-template #loading>
+} @else {
   <app-page-loader></app-page-loader>
-</ng-template>
+}

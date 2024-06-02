@@ -10,9 +10,9 @@
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-input-group class="spawn-input" nzAddOnAfter=":00">
         <nz-input-number mouseWheel [nzMax]="SPAWN_VALIDATOR.max" [nzMin]="SPAWN_VALIDATOR.min" [nzStep]="1" class="input-number-with-addon"
-                         formControlName="spawn"
-                         (mouseWheelUp)="adjust('spawn', 1)" (mouseWheelDown)="adjust('spawn', -1)"
-                         id="spawn"></nz-input-number>
+          formControlName="spawn"
+          (mouseWheelUp)="adjust('spawn', 1)" (mouseWheelDown)="adjust('spawn', -1)"
+        id="spawn"></nz-input-number>
       </nz-input-group>
     </nz-form-control>
   </nz-form-item>
@@ -20,14 +20,14 @@
     <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Spawns_twice' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <label [nzTooltipTitle]="'ALARMS.CUSTOM.Spawns_twice_description' | translate" formControlName="spawnsTwice" nz-checkbox
-             nz-tooltip></label>
+      nz-tooltip></label>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Duration' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-input-number mouseWheel [nzMax]="DURATION_VALIDATOR.max" [nzMin]="DURATION_VALIDATOR.min" formControlName="duration"
-                       (mouseWheelUp)="adjust('duration', 1)" (mouseWheelDown)="adjust('duration', -1)">
+        (mouseWheelUp)="adjust('duration', 1)" (mouseWheelDown)="adjust('duration', -1)">
       </nz-input-number>
     </nz-form-control>
   </nz-form-item>
@@ -51,20 +51,25 @@
   <nz-form-item>
     <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>{{'ALARMS.CUSTOM.Map' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
-      <nz-select *ngIf="maps$ | async as maps; else loading" formControlName="mapId" nzAllowClear nzShowSearch>
-        <nz-option *ngFor="let map of maps" nzLabel="{{map.id | mapName | i18n}}" [nzValue]="map.id"></nz-option>
-      </nz-select>
-      <ng-template #loading>
+      @if (maps$ | async; as maps) {
+        <nz-select formControlName="mapId" nzAllowClear nzShowSearch>
+          @for (map of maps; track map) {
+            <nz-option nzLabel="{{map.id | mapName | i18n}}" [nzValue]="map.id"></nz-option>
+          }
+        </nz-select>
+      } @else {
         <nz-spin></nz-spin>
-      </ng-template>
+      }
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Weather' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-select formControlName="weathers" nzAllowClear nzMode="multiple">
-        <nz-option *ngFor="let weather of mapWeathers$ | async" [nzLabel]="weather | i18nRow:'weathers' | i18n"
-                   [nzValue]="weather"></nz-option>
+        @for (weather of mapWeathers$ | async; track weather) {
+          <nz-option [nzLabel]="weather | i18nRow:'weathers' | i18n"
+          [nzValue]="weather"></nz-option>
+        }
       </nz-select>
     </nz-form-control>
   </nz-form-item>
@@ -72,8 +77,10 @@
     <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Weather_from' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-select formControlName="weathersFrom" nzAllowClear nzMode="multiple">
-        <nz-option *ngFor="let weather of mapWeathers$ | async" [nzLabel]="weather | i18nRow:'weathers' | i18n"
-                   [nzValue]="weather"></nz-option>
+        @for (weather of mapWeathers$ | async; track weather) {
+          <nz-option [nzLabel]="weather | i18nRow:'weathers' | i18n"
+          [nzValue]="weather"></nz-option>
+        }
       </nz-select>
     </nz-form-control>
   </nz-form-item>
@@ -81,7 +88,7 @@
     <nz-form-label [nzSm]="8" [nzXs]="24">X</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-input-number mouseWheel [nzMax]="X_VALIDATOR.max" [nzMin]="X_VALIDATOR.min" formControlName="x"
-                       (mouseWheelUp)="adjust('x', 1)" (mouseWheelDown)="adjust('x', -1)">
+        (mouseWheelUp)="adjust('x', 1)" (mouseWheelDown)="adjust('x', -1)">
       </nz-input-number>
     </nz-form-control>
   </nz-form-item>
@@ -89,7 +96,7 @@
     <nz-form-label [nzSm]="8" [nzXs]="24">Y</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-input-number mouseWheel [nzMax]="Y_VALIDATOR.max" [nzMin]="Y_VALIDATOR.min" formControlName="y"
-                       (mouseWheelUp)="adjust('y', 1)" (mouseWheelDown)="adjust('y', -1)">
+        (mouseWheelUp)="adjust('y', 1)" (mouseWheelDown)="adjust('y', -1)">
       </nz-input-number>
     </nz-form-control>
   </nz-form-item>

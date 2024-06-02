@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf } from '@angular/common';
+
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzFormModule } from 'ng-zorro-antd/form';
@@ -17,7 +17,7 @@ import { DialogComponent } from '../../../core/dialog.component';
     styleUrls: ['./apply-popup.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NgIf, FlexModule, NzButtonModule, NzWaveModule, TranslateModule]
+    imports: [FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, FlexModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
 export class ApplyPopupComponent extends DialogComponent implements OnInit {
 

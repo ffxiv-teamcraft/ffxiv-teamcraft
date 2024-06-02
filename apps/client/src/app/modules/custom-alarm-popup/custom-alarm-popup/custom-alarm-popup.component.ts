@@ -14,7 +14,7 @@ import { I18nPipe } from '../../../core/i18n.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
@@ -31,7 +31,7 @@ import { uniq } from 'lodash';
     templateUrl: './custom-alarm-popup.component.html',
     styleUrls: ['./custom-alarm-popup.component.less'],
     standalone: true,
-    imports: [FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NzButtonModule, NzInputNumberModule, MouseWheelDirective, NzCheckboxModule, NzToolTipModule, NzSelectModule, NgIf, NgFor, NzSpinModule, NzWaveModule, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, NodeTypeNamePipe, MapNamePipe]
+    imports: [FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputModule, NzButtonModule, NzInputNumberModule, MouseWheelDirective, NzCheckboxModule, NzToolTipModule, NzSelectModule, NzSpinModule, NzWaveModule, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, NodeTypeNamePipe, MapNamePipe]
 })
 export class CustomAlarmPopupComponent implements OnInit {
 

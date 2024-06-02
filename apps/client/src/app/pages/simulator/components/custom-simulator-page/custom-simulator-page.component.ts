@@ -13,7 +13,7 @@ import { Craft } from '@ffxiv-teamcraft/simulator';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { TranslateModule } from '@ngx-translate/core';
 import { SimulatorComponent } from '../simulator/simulator.component';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { MouseWheelDirective } from '../../../../core/event/mouse-wheel/mouse-wheel.directive';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
@@ -27,7 +27,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     templateUrl: './custom-simulator-page.component.html',
     styleUrls: ['./custom-simulator-page.component.less'],
     standalone: true,
-    imports: [FlexModule, NzCollapseModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputNumberModule, MouseWheelDirective, NzCheckboxModule, NgIf, SimulatorComponent, AsyncPipe, TranslateModule]
+    imports: [FlexModule, NzCollapseModule, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzInputNumberModule, MouseWheelDirective, NzCheckboxModule, SimulatorComponent, AsyncPipe, TranslateModule]
 })
 export class CustomSimulatorPageComponent extends AbstractSimulationPage {
 

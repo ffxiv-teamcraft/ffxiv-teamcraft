@@ -24,7 +24,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 
 @Component({
@@ -32,7 +32,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     templateUrl: './commission-import.component.html',
     styleUrls: ['./commission-import.component.less'],
     standalone: true,
-    imports: [NgIf, FlexModule, NgFor, ItemIconComponent, FullpageMessageComponent, NzButtonModule, NzWaveModule, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe]
+    imports: [FlexModule, ItemIconComponent, FullpageMessageComponent, NzButtonModule, NzWaveModule, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class CommissionImportComponent {
 

@@ -14,7 +14,7 @@ import { VesselBuildColumnComponent } from './vessel-build-column/vessel-build-c
 import { VesselRankColumnComponent } from './vessel-rank-column/vessel-rank-column.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgIf, AsyncPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DatePipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 
@@ -24,7 +24,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./vessel-row.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NgIf, NzButtonModule, NzIconModule, VesselRankColumnComponent, VesselBuildColumnComponent, VesselVoyageColumnComponent, AsyncPipe, DatePipe, TranslateModule, TimerPipe]
+    imports: [FlexModule, NzButtonModule, NzIconModule, VesselRankColumnComponent, VesselBuildColumnComponent, VesselVoyageColumnComponent, AsyncPipe, DatePipe, TranslateModule, TimerPipe]
 })
 export class VesselRowComponent extends TeamcraftComponent {
   @Input()

@@ -25,7 +25,7 @@ import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 
 @Component({
@@ -34,7 +34,7 @@ import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/pa
     styleUrls: ['./alarm-group.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [PageLoaderComponent, NgIf, FullpageMessageComponent, NzCardModule, FlexModule, NzAvatarModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NgFor, NzGridModule, ItemIconComponent, I18nNameComponent, AlarmButtonComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, CharacterNamePipe, LazyIconPipe, CharacterAvatarPipe, MapNamePipe]
+    imports: [PageLoaderComponent, FullpageMessageComponent, NzCardModule, FlexModule, NzAvatarModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzGridModule, ItemIconComponent, I18nNameComponent, AlarmButtonComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe, CharacterNamePipe, LazyIconPipe, CharacterAvatarPipe, MapNamePipe]
 })
 export class AlarmGroupComponent {
 

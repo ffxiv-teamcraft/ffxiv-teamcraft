@@ -11,7 +11,7 @@ import { LazyRowPipe } from '../../../../../pipes/pipes/lazy-row.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
 
@@ -21,7 +21,7 @@ import { NzPopoverModule } from 'ng-zorro-antd/popover';
     styleUrls: ['./vessel-voyage-column.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzPopoverModule, NzBreadCrumbModule, NgFor, NgIf, NzButtonModule, NzIconModule, AsyncPipe, TranslateModule, LazyRowPipe, NzPipesModule]
+    imports: [NzPopoverModule, NzBreadCrumbModule, NzButtonModule, NzIconModule, AsyncPipe, TranslateModule, LazyRowPipe, NzPipesModule]
 })
 export class VesselVoyageColumnComponent {
   @Input() vessel: Vessel;

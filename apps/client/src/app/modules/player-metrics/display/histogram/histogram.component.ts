@@ -4,7 +4,7 @@ import { map } from 'rxjs/operators';
 import { SettingsService } from '../../../settings/settings.service';
 import { EChartsOption } from 'echarts';
 import { Observable } from 'rxjs';
-import { formatDate, NgIf, AsyncPipe } from '@angular/common';
+import { formatDate, AsyncPipe } from '@angular/common';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NgxEchartsModule } from 'ngx-echarts';
@@ -15,7 +15,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
     styleUrls: ['./histogram.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NgxEchartsModule, NzEmptyModule, AsyncPipe, TranslateModule]
+    imports: [NgxEchartsModule, NzEmptyModule, AsyncPipe, TranslateModule]
 })
 export class HistogramComponent extends AbstractMetricDisplayComponent {
 

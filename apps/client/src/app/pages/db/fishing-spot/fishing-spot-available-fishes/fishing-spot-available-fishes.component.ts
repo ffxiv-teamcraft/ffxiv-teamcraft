@@ -20,7 +20,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { AlarmButtonComponent } from '../../../../modules/alarm-button/alarm-button/alarm-button.component';
 import { DbButtonComponent } from '../../../../core/db-button/db-button.component';
 import { ItemIconComponent } from '../../../../modules/item-icon/item-icon/item-icon.component';
-import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCardModule } from 'ng-zorro-antd/card';
 
@@ -30,7 +30,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     styleUrls: ['./fishing-spot-available-fishes.component.less', '../../common-db.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCardModule, FlexModule, NgFor, ItemIconComponent, DbButtonComponent, NgIf, AlarmButtonComponent, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, LazyIconPipe]
+    imports: [NzCardModule, FlexModule, ItemIconComponent, DbButtonComponent, AlarmButtonComponent, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, LazyIconPipe]
 })
 export class FishingSpotAvailableFishesComponent {
   public readonly fishes$: Observable<{ itemId: number, alarms: PersistedAlarm[], done: boolean }[] | undefined> = combineLatest([this.fishCtx.spotId$, this.lazyData.getEntry('fishingSpots'), this.authFacade.logTracking$]).pipe(

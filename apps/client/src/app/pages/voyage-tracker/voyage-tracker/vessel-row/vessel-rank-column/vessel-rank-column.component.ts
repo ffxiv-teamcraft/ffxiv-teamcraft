@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-vessel-rank-column',
@@ -14,7 +14,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     styleUrls: ['./vessel-rank-column.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NzPopoverModule, NzProgressModule, AsyncPipe, TranslateModule]
+    imports: [NzPopoverModule, NzProgressModule, AsyncPipe, TranslateModule]
 })
 export class VesselRankColumnComponent {
   @Input() rank: number;

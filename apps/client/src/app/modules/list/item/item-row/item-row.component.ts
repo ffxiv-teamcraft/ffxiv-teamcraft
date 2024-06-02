@@ -48,7 +48,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ItemIconComponent } from '../../../item-icon/item-icon/item-icon.component';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-item-row',
@@ -56,7 +56,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     styleUrls: ['./item-row.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, FlexModule, NzGridModule, ItemIconComponent, NzButtonModule, NzIconModule, NzToolTipModule, ItemNameClipboardDirective, I18nNameComponent, NzTagModule, NgFor, UserAvatarComponent, ItemRowButtonsComponent, InventoryPositionComponent, NzDropDownModule, NzMenuModule, NzInputModule, FormsModule, NzAutocompleteModule, TutorialStepDirective, AlarmButtonComponent, MapPositionComponent, NgForTrackByIdDirective, NzWaveModule, NzPopoverModule, NzInputNumberModule, CompactAmountInputComponent, ItemSourcesDisplayComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, CeilPipe, XivapiIconPipe, LazyIconPipe]
+    imports: [FlexModule, NzGridModule, ItemIconComponent, NzButtonModule, NzIconModule, NzToolTipModule, ItemNameClipboardDirective, I18nNameComponent, NzTagModule, UserAvatarComponent, ItemRowButtonsComponent, InventoryPositionComponent, NzDropDownModule, NzMenuModule, NzInputModule, FormsModule, NzAutocompleteModule, TutorialStepDirective, AlarmButtonComponent, MapPositionComponent, NgForTrackByIdDirective, NzWaveModule, NzPopoverModule, NzInputNumberModule, CompactAmountInputComponent, ItemSourcesDisplayComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, CeilPipe, XivapiIconPipe, LazyIconPipe]
 })
 export class ItemRowComponent extends AbstractItemRowComponent implements OnInit {
 

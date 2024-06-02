@@ -119,7 +119,6 @@ export class AlarmBellService {
               this.pushNotificationsService.create(notificationTitle,
                 {
                   icon: notificationIcon,
-                  renotify: false,
                   body: notificationBody
                 }
               );

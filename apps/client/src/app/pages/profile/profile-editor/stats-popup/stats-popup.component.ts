@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { AsyncPipe, NgIf } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { DialogComponent } from '../../../../core/dialog.component';
 
 @Component({
@@ -20,7 +20,7 @@ import { DialogComponent } from '../../../../core/dialog.component';
   templateUrl: './stats-popup.component.html',
   styleUrls: ['./stats-popup.component.less'],
   standalone: true,
-  imports: [NgIf, FlexModule, NzGridModule, NzInputNumberModule, FormsModule, NzCheckboxModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
+  imports: [FlexModule, NzGridModule, NzInputNumberModule, FormsModule, NzCheckboxModule, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
 })
 export class StatsPopupComponent extends DialogComponent implements OnInit {
 

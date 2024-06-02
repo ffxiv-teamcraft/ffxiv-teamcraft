@@ -19,7 +19,7 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzInputModule } from 'ng-zorro-antd/input';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -32,7 +32,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./commission-board.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NzToolTipModule, NzButtonModule, NzIconModule, PageLoaderComponent, NgIf, NzInputModule, NzSelectModule, FormsModule, NgFor, NzCheckboxModule, NzInputNumberModule, NzGridModule, CommissionPanelComponent, FullpageMessageComponent, AsyncPipe, TranslateModule]
+    imports: [FlexModule, NzToolTipModule, NzButtonModule, NzIconModule, PageLoaderComponent, NzInputModule, NzSelectModule, FormsModule, NzCheckboxModule, NzInputNumberModule, NzGridModule, CommissionPanelComponent, FullpageMessageComponent, AsyncPipe, TranslateModule]
 })
 export class CommissionBoardComponent {
 

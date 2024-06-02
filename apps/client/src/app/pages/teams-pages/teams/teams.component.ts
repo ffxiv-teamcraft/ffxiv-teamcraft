@@ -38,7 +38,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
-import { NgIf, NgFor, AsyncPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DatePipe } from '@angular/common';
 
 @Component({
     selector: 'app-teams',
@@ -46,7 +46,7 @@ import { NgIf, NgFor, AsyncPipe, DatePipe } from '@angular/common';
     styleUrls: ['./teams.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, PageLoaderComponent, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NgFor, NzCollapseModule, NzPopconfirmModule, NzSelectModule, FormsModule, NzGridModule, NzCheckboxModule, NzAlertModule, NzListModule, ClipboardDirective, NzTagModule, UserAvatarComponent, NzDividerModule, FullpageMessageComponent, AsyncPipe, DatePipe, TranslateModule, CharacterNamePipe, TeamcraftLinkPipe]
+    imports: [PageLoaderComponent, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzCollapseModule, NzPopconfirmModule, NzSelectModule, FormsModule, NzGridModule, NzCheckboxModule, NzAlertModule, NzListModule, ClipboardDirective, NzTagModule, UserAvatarComponent, NzDividerModule, FullpageMessageComponent, AsyncPipe, DatePipe, TranslateModule, CharacterNamePipe, TeamcraftLinkPipe]
 })
 export class TeamsComponent implements OnInit {
 

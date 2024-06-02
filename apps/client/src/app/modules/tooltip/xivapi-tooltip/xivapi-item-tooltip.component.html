@@ -10,24 +10,30 @@
         <i class="db-tip">{{'DB.Click_to_navigate' | translate}}</i>
       </div>
     </div>
-    <div *ngIf="item.description.en" class="description">
-      <span [innerHtml]="item.description | i18n | nzSanitizer:'html'"></span>
-    </div>
-    <div *ngIf="item.patch" class="patch">
-      <app-i18n-name content="patchNames" [id]="item.patch"></app-i18n-name>
-    </div>
-    <div *ngIf="item.cjc" class="class-jobs" nz-row [nzGutter]="[5, 5]">
-      <div [nzXs]="12" nz-col>
-      <span class="detail-name">
-        {{'TOOLTIP.Class_job' | translate}}
-      </span>
+    @if (item.description.en) {
+      <div class="description">
+        <span [innerHtml]="item.description | i18n | nzSanitizer:'html'"></span>
       </div>
-      <div [nzXs]="12" nz-col>
-      <span class="detail-value">
-        {{item.cjc | i18nRow: 'jobCategories' | i18n}}
-      </span>
+    }
+    @if (item.patch) {
+      <div class="patch">
+        <app-i18n-name content="patchNames" [id]="item.patch"></app-i18n-name>
       </div>
-    </div>
+    }
+    @if (item.cjc) {
+      <div class="class-jobs" nz-row [nzGutter]="[5, 5]">
+        <div [nzXs]="12" nz-col>
+          <span class="detail-name">
+            {{'TOOLTIP.Class_job' | translate}}
+          </span>
+        </div>
+        <div [nzXs]="12" nz-col>
+          <span class="detail-value">
+            {{item.cjc | i18nRow: 'jobCategories' | i18n}}
+          </span>
+        </div>
+      </div>
+    }
     <div class="main-attributes details" nz-row [nzGutter]="[5, 5]">
       <div [nzSpan]="12" nz-col>
         <span class="detail-name">
@@ -49,379 +55,512 @@
           {{item.ilvl}}
         </span>
       </div>
-      <ng-container *ngFor="let row of mainAttributes">
+      @for (row of mainAttributes; track row) {
         <div [nzSpan]="12" nz-col>
-        <span class="detail-name">
-          {{row.ID | i18nRow: 'baseParams' | i18n}}
-        </span>
-        </div>
-        <div [nzSpan]="12" nz-col>
-        <span class="detail-value">
-          {{row.NQ}}
-          <span *ngIf="item.hq && row.HQ && row.HQ !== row.NQ" class="hq-value">
-            ({{row.HQ}})
+          <span class="detail-name">
+            {{row.ID | i18nRow: 'baseParams' | i18n}}
           </span>
-        </span>
         </div>
-      </ng-container>
+        <div [nzSpan]="12" nz-col>
+          <span class="detail-value">
+            {{row.NQ}}
+            @if (item.hq && row.HQ && row.HQ !== row.NQ) {
+              <span class="hq-value">
+                ({{row.HQ}})
+              </span>
+            }
+          </span>
+        </div>
+      }
     </div>
     <div class="details" nz-row [nzGutter]="[5, 5]">
-      <ng-container *ngFor="let row of item.stats">
+      @for (row of item.stats; track row) {
         <div [nzXs]="12" nz-col>
-        <span class="detail-name">
-          {{row.ID | i18nRow: 'baseParams' | i18n}}
-        </span>
-        </div>
-        <div [nzXs]="12" nz-col>
-        <span class="detail-value">
-          {{row.NQ}}
-          <span *ngIf="item.hq && row.HQ && row.HQ !== row.NQ" class="hq-value">
-            ({{row.HQ}})
+          <span class="detail-name">
+            {{row.ID | i18nRow: 'baseParams' | i18n}}
           </span>
-        </span>
         </div>
-      </ng-container>
+        <div [nzXs]="12" nz-col>
+          <span class="detail-value">
+            {{row.NQ}}
+            @if (item.hq && row.HQ && row.HQ !== row.NQ) {
+              <span class="hq-value">
+                ({{row.HQ}})
+              </span>
+            }
+          </span>
+        </div>
+      }
     </div>
-    <div *ngIf="minGathering$ | async as minGathering">
-      <span>{{'DB.FISH.Min_gathering' | translate}}: {{minGathering}}</span>
-    </div>
-    <div *ngIf="globalFshInfo$ | async as node" class="details">
-      <div class="flex-column gap-5 align-start">
-        <img *ngIf="node.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
-             src="./assets/icons/status/snagging.png">
-        <div *ngIf="node.hookset !== undefined">{{'DB.FISH.OVERLAY.Hookset' | translate}}:&nbsp;<img
-          [src]="node.hookset | hooksetActionId | actionIcon | xivapiIcon" alt=""
-          class="small-icon">&nbsp;{{node.hookset | hooksetActionId | i18nRow:'actions' | i18n}}</div>
-        <div *ngIf="node.tug !== undefined">{{'DB.FISH.OVERLAY.Tug' | translate}}:&nbsp;{{node.tug | tugName | translate}}</div>
+    @if (minGathering$ | async; as minGathering) {
+      <div>
+        <span>{{'DB.FISH.Min_gathering' | translate}}: {{minGathering}}</span>
       </div>
-      <ng-container *ngFor="let row of baits$ | async">
-        <div *ngFor="let bait of row; let index = index; let last = last; trackBy: trackByBait"
-             class="flex-row align-center gap-5 bait-row">
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div class="icon-container">
-              <img [src]="bait.id | lazyIcon" class="item-icon small-icon">
-              <img *ngIf="index > 0" class="hq-overlay small-icon"
-                   src="./assets/icons/HQOverlay.png">
-            </div>
-            <div>{{bait.id | itemName | i18n}}</div>
+    }
+    @if (globalFshInfo$ | async; as node) {
+      <div class="details">
+        <div class="flex-column gap-5 align-start">
+          @if (node.snagging) {
+            <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
+              src="./assets/icons/status/snagging.png">
+            }
+            @if (node.hookset !== undefined) {
+              <div>{{'DB.FISH.OVERLAY.Hookset' | translate}}:&nbsp;<img
+                [src]="node.hookset | hooksetActionId | actionIcon | xivapiIcon" alt=""
+              class="small-icon">&nbsp;{{node.hookset | hooksetActionId | i18nRow:'actions' | i18n}}</div>
+            }
+            @if (node.tug !== undefined) {
+              <div>{{'DB.FISH.OVERLAY.Tug' | translate}}:&nbsp;{{node.tug | tugName | translate}}</div>
+            }
           </div>
-          <i *ngIf="!last" nz-icon nzType="caret-right" theme="outline"></i>
-        </div>
-      </ng-container>
-      <div *ngIf="predators$ | async as predators" fxLayout="row" fxLayoutAlign="flex-start center"
-           fxLayoutGap="10px">
-        <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
-             src="./assets/icons/status/predators.png">
-        <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutAlign="flex-start center"
-             fxLayoutGap="5px">
-          <div>{{predator.amount}}x</div>
-          <img class="small-icon" src="{{predator.id | lazyIcon}}"/>
-          <div>{{predator.id | itemName | i18n}}</div>
-        </div>
+          @for (row of baits$ | async; track row) {
+            @for (bait of row; track trackByBait(index, bait); let index = $index; let last = $last) {
+              <div
+                class="flex-row align-center gap-5 bait-row">
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <div class="icon-container">
+                  <img [src]="bait.id | lazyIcon" class="item-icon small-icon">
+                  @if (index > 0) {
+                    <img class="hq-overlay small-icon"
+                      src="./assets/icons/HQOverlay.png">
+                    }
+                  </div>
+                  <div>{{bait.id | itemName | i18n}}</div>
+                </div>
+                @if (!last) {
+                  <i nz-icon nzType="caret-right" theme="outline"></i>
+                }
+              </div>
+            }
+          }
+          @if (predators$ | async; as predators) {
+            <div fxLayout="row" fxLayoutAlign="flex-start center"
+              fxLayoutGap="10px">
+            <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
+              src="./assets/icons/status/predators.png">
+              @for (predator of node.predators; track predator) {
+                <div fxLayout="row" fxLayoutAlign="flex-start center"
+                  fxLayoutGap="5px">
+                <div>{{predator.amount}}x</div>
+                <img class="small-icon" src="{{predator.id | lazyIcon}}"/>
+                <div>{{predator.id | itemName | i18n}}</div>
+              </div>
+            }
+          </div>
+        }
       </div>
-    </div>
+    }
   </div>
   <div class="xivapi">Item#{{item.id}}</div>
-  <div nz-col [nzSpan]="12" class="sources" *ngIf="item.sources?.length > 0">
-    <div class="sources-title">{{'DB.How_to_obtain' | translate}}</div>
-    <ng-container *ngFor="let source of item.sources; last as last">
-      <ng-container [ngSwitch]="source.type">
-        <div class="source" *ngSwitchCase="DataType.DEPRECATED">
-          <div class="source-title">
-            <span nz-icon nzType="close-circle" nzTheme="twotone" [nzTwotoneColor]="'#F5222DFF'"></span>
-            {{'ALLAGAN_REPORTS.Deprecated' | translate}}
-          </div>
-        </div>
-        <div class="source" *ngSwitchCase="DataType.CRAFTED_BY">
-          <ng-container *ngIf="source.data[0] as craft">
-            <div class="source-title flex-row align-center space-between gap-5">
-              <div class="flex-row align-center gap-5">
+  @if (item.sources?.length > 0) {
+    <div nz-col [nzSpan]="12" class="sources">
+      <div class="sources-title">{{'DB.How_to_obtain' | translate}}</div>
+      @for (source of item.sources; track source; let last = $last) {
+        @switch (source.type) {
+          @case (DataType.DEPRECATED) {
+            <div class="source">
+              <div class="source-title">
+                <span nz-icon nzType="close-circle" nzTheme="twotone" [nzTwotoneColor]="'#F5222DFF'"></span>
+                {{'ALLAGAN_REPORTS.Deprecated' | translate}}
+              </div>
+            </div>
+          }
+          @case (DataType.CRAFTED_BY) {
+            <div class="source">
+              @if (source.data[0]; as craft) {
+                <div class="source-title flex-row align-center space-between gap-5">
+                  <div class="flex-row align-center gap-5">
+                    <div class="flex-row align-center gap-2">
+                      @if (craft.isIslandRecipe) {
+                        <img src="./assets/icons/island.png" alt="Island Recipe" class="img-icon">
+                      }
+                      @if (!craft.isIslandRecipe) {
+                        <span [innerHTML]="craft.job | jobUnicode" class="companion-svg"></span>
+                        {{craft.lvl}}
+                        @if (craft.stars_tooltip) {
+                          {{craft.stars_tooltip}}
+                        }
+                      }
+                    </div>
+                  </div>
+                  <div>rlvl {{craft.rlvl}}</div>
+                </div>
+                <div class="recipe-stats flex-row align-center space-between">
+                  <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Quality_filter_placeholder' | translate}}:&nbsp;{{craft.quality}}</div>
+                  <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Difficulty_filter_placeholder' | translate}}:&nbsp;{{craft.progression}}</div>
+                  <div>{{'SIMULATOR.Durability' | translate}}:&nbsp;{{craft.durability}}</div>
+                </div>
+                <div class="source-details flex-column gap-5">
+                  @for (ingredient of craft.ingredients; track ingredient) {
+                    <div class="flex-row align-center justify-start gap-2 details-row">
+                      <img [src]="ingredient.id | lazyIcon | xivapiIcon" alt="" class="small-icon">
+                      {{ingredient.id | i18nRow: 'items' | i18n}}
+                      x{{ingredient.amount}}
+                    </div>
+                  }
+                  @if (source.data.length > 1) {
+                    <i class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 1 } }}</i>
+                  }
+                </div>
+              }
+            </div>
+          }
+          @case (DataType.TREASURES) {
+            <div class="source">
+              <div class="source-title flex-row align-center gap-2">
+                <img class="img-icon" src="./assets/icons/chest_open.png">
+                <div>
+                  {{'Treasures' | translate}}
+                </div>
+              </div>
+              <div class="source-details">
+                @for (item of source.data.slice(0,3); track item) {
+                  <div class="flex-row align-center justify-start gap-2 details-row">
+                    <img [src]="item | lazyIcon | xivapiIcon" alt="" class="small-icon">
+                    {{item | i18nRow: 'items' | i18n}}
+                  </div>
+                }
+                @if (source.data.length > 3) {
+                  <i class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
+                }
+              </div>
+            </div>
+          }
+          @case (DataType.FATES) {
+            <div class="source">
+              <div class="source-title flex-row align-center gap-2">
+                <img [src]="source.data[0].id | lazyRow:'fates':'icon' | async | xivapiIcon" class="img-icon">
+                <div>
+                  {{'Fates' | translate}}
+                </div>
+              </div>
+              <div class="source-details">
+                @for (fate of source.data.slice(0,3); track fate) {
+                  <div class="flex-row align-center justify-start gap-2 details-row">
+                    <div>{{fate.id | i18nRow:'fates' | i18n}} - lvl {{fate.level}}</div>
+                    {{fate.zoneId | i18nRow:'places' | i18n}} X: {{fate.coords.x}} - Y: {{fate.coords.y}}
+                  </div>
+                }
+                @if (source.data.length > 3) {
+                  <i class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
+                }
+              </div>
+            </div>
+          }
+          @case (DataType.DESYNTHS) {
+            <div class="source">
+              <div class="source-title flex-row align-center gap-2">
+                <i nzIconfont="icon-vectorcombine" nz-icon></i>
+                <div>
+                  {{'Desynth' | translate}}
+                </div>
+              </div>
+              <div class="source-details">
+                @for (item of source.data.slice(0,3); track item) {
+                  <div class="flex-row align-center justify-start gap-2 details-row">
+                    <img [src]="item | lazyIcon | xivapiIcon" alt="" class="small-icon">
+                    {{item | i18nRow: 'items' | i18n}}
+                  </div>
+                }
+                @if (source.data.length > 3) {
+                  <i class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
+                }
+              </div>
+            </div>
+          }
+          @case (DataType.INSTANCES) {
+            <div class="source">
+              <div class="source-title flex-row align-center gap-2">
+                <img [src]="source.data[0] | lazyRow:'instances':'icon' | async | xivapiIcon" class="img-icon round-icon">
+                <div>
+                  {{'DB.Dungeons' | translate}}
+                </div>
+              </div>
+              <div class="source-details">
+                @for (instance of source.data.slice(0,3); track instance) {
+                  <div class="flex-row align-center justify-start gap-2 details-row">
+                    <img [src]="instance | lazyRow:'instances':'icon' | async | xivapiIcon" class="small-icon">
+                    @if (instance > 0) {
+                      <div>{{instance | i18nRow:'instances' | i18n}}</div>
+                    } @else {
+                      <div>{{-1 * instance | mapName | i18n}}</div>
+                    }
+                  </div>
+                }
+                @if (source.data.length > 3) {
+                  <i class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
+                }
+              </div>
+            </div>
+          }
+          @case (DataType.ACHIEVEMENTS) {
+            <div class="source">
+              <div class="source-title flex-row align-center gap-2">
+                <img [src]="source.data[0] | lazyRow:'achievements':'icon' | async | xivapiIcon" class="img-icon round-icon">
+                <div>
+                  {{'DB.Achievements' | translate}}
+                </div>
+              </div>
+              <div class="source-details">
+                @for (achievement of source.data.slice(0,3); track achievement) {
+                  <div class="flex-row align-center justify-start gap-2 details-row">
+                    <img [src]="achievement | lazyRow:'achievements':'icon' | async | xivapiIcon" class="small-icon">
+                    <div>{{achievement | i18nRow:'achievements' | i18n}}</div>
+                  </div>
+                }
+                @if (source.data.length > 3) {
+                  <i class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
+                }
+              </div>
+            </div>
+          }
+          @case (DataType.DROPS) {
+            <div class="source">
+              <div class="source-title flex-row align-center gap-2">
+                <img alt="Drops" class="img-icon" src="./assets/icons/mob.png">
+                <div>
+                  {{'Hunting' | translate}}
+                </div>
+              </div>
+              <div class="source-details">
+                @for (drop of source.data.slice(0,3); track drop) {
+                  <div class="flex-row align-center justify-start gap-2 details-row">
+                    <div>{{drop.id | i18nRow:'mobs' | i18n}}:
+                      @if (drop.mapid) {
+                        {{drop.mapid | mapName | i18n}}
+                      }
+                    </div>
+                  </div>
+                }
+                @if (source.data.length > 3) {
+                  <i class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
+                }
+              </div>
+            </div>
+          }
+          @case (DataType.REDUCED_FROM) {
+            <div class="source">
+              <div class="source-title flex-row align-center gap-2">
+                <img class="img-icon round-icon" src="./assets/icons/Reduce.png">
+                <div>
+                  {{'Reduction' | translate}}
+                </div>
+              </div>
+              <div class="source-details">
+                @for (item of source.data.slice(0,3); track item) {
+                  <div class="flex-row align-center justify-start gap-2 details-row">
+                    <img [src]="item | lazyIcon | xivapiIcon" alt="" class="small-icon">
+                    {{item | i18nRow: 'items' | i18n}}
+                  </div>
+                }
+                @if (source.data.length > 3) {
+                  <i class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
+                }
+              </div>
+            </div>
+          }
+          @case (DataType.QUESTS) {
+            <div class="source">
+              <div class="source-title flex-row align-center gap-2">
+                <img class="img-icon round-icon" src="./assets/icons/quest.png">
+                <div>
+                  {{'Quests' | translate}}
+                </div>
+              </div>
+              <div class="source-details">
+                @for (quest of source.data.slice(0,3); track quest) {
+                  <div class="flex-row align-center justify-start gap-2 details-row">
+                    - {{quest | i18nRow: 'quests' | i18n}}
+                  </div>
+                }
+                @if (source.data.length > 3) {
+                  <i class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
+                }
+              </div>
+            </div>
+          }
+          @case (DataType.VOYAGES) {
+            <div class="source">
+              <div class="source-title flex-row align-center gap-2">
+                <img alt="Voyages" class="img-icon" src="./assets/icons/Voyage.png">
+                <div>
+                  {{'Voyages' | translate}}
+                </div>
+              </div>
+              <div class="source-details">
+                @for (voyage of source.data.slice(0,3); track voyage) {
+                  <div class="flex-row align-center justify-start gap-2 details-row">
+                    - {{(voyage.type === ExplorationType.AIRSHIP ? 'COMMON.Airship' : 'COMMON.Submarine') | translate}} - {{voyage.name | i18n}}
+                  </div>
+                }
+                @if (source.data.length > 3) {
+                  <i class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
+                }
+              </div>
+            </div>
+          }
+          @case (DataType.VENTURES) {
+            <div class="source">
+              <div class="source-title flex-row align-center gap-2">
+                <img [src]="21072 | lazyIcon" alt="Ventures" class="img-icon">
+                <div>
+                  {{'Retainer_ventures' | translate}}
+                </div>
+              </div>
+              <div class="source-details">
+                @for (venture of source.data.slice(0,3); track venture) {
+                  <div class="flex-row align-center justify-start gap-2 details-row">
+                    - {{venture.name ? (venture.job | i18nRow:'jobAbbr' | i18n) || (DOWM | i18n) : (venture.id | i18nRow:'ventures' | i18n)}}
+                  </div>
+                }
+                @if (source.data.length > 3) {
+                  <i class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
+                }
+              </div>
+            </div>
+          }
+          @case (DataType.MASTERBOOKS) {
+            <div class="source">
+              <div class="source-title flex-row align-center gap-2">
+                <i nz-icon nzType="book"></i>
+                <div>
+                  {{'TOOLTIP.Masterbooks' | translate}}
+                </div>
+              </div>
+              <div class="source-details">
+                @for (item of source.data; track item) {
+                  <div class="flex-row align-center justify-start gap-2 details-row">
+                    <img [src]="item.id | lazyIcon | xivapiIcon" alt="" class="small-icon">
+                    {{item.id | i18nRow: 'items' | i18n}}
+                  </div>
+                }
+              </div>
+            </div>
+          }
+          @case (DataType.VENDORS) {
+            <div class="source">
+              <div class="source-title flex-row align-center gap-2">
+                <img alt="Gil" class="img-icon" src="https://xivapi.com/i/065000/065002.png">
+                <div>
+                  {{'Vendors' | translate}}
+                </div>
+              </div>
+              <div class="source-details">
+                @for (vendor of source.data.slice(0,2); track vendor) {
+                  <div class="flex-row align-center space-between gap-2 details-row">
+                    <div class="flex-column">
+                      <div class="flex-row align-center gap-2">
+                        @if (vendor.npcId > 1000000) {
+                          <div>{{vendor.npcId | i18nRow:'npcs' | i18n}}</div>
+                        }
+                        @if (vendor.npcId < 1000000) {
+                          <div>{{vendor.npcId | i18nRow:'mobs' | i18n}}</div>
+                        }
+                      </div>
+                      @if (vendor.coords) {
+                        <div>
+                          {{vendor.zoneId | i18nRow:'places' | i18n}}: X:{{vendor.coords.x}} Y:{{vendor.coords.y}}
+                        </div>
+                      }
+                    </div>
+                    <div class="flex-row align-center gap-2">
+                      <img alt="Gil" src="https://xivapi.com/i/065000/065002.png" class="small-icon">{{vendor.price}}
+                    </div>
+                  </div>
+                }
+                @if (source.data.length > 2) {
+                  <i class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 2 } }}</i>
+                }
+              </div>
+            </div>
+          }
+          @case (DataType.TRADE_SOURCES) {
+            <div class="source">
+              <div class="source-title flex-row align-center gap-2">
+                <img class="img-icon round-icon" src="./assets/icons/Shop.png">
+                <div>
+                  {{'Trade' | translate}}
+                </div>
+              </div>
+              <div class="source-details">
+                @for (tradeSource of source.data.slice(0,2); track tradeSource) {
+                  <div class="flex-column gap-2 details-row">
+                    @if (tradeSource.npcs[0] ; as npc) {
+                      <div class="flex-column">
+                        <div class="flex-row align-center gap-2">
+                          {{npc?.id | i18nRow:'npcs' | i18n}} - {{tradeSource.shopName | i18n}}
+                        </div>
+                        @if (npc.coords) {
+                          <div>
+                            {{npc.zoneId | i18nRow:'places' | i18n}}: X:{{npc.coords.x}} Y:{{npc.coords.y}}
+                          </div>
+                        }
+                      </div>
+                    }
+                    <div class="flex-row align-center gap-2">
+                      @for (item of tradeSource.trades[0].currencies; track item) {
+                        <div class="flex-row align-center justify-start gap-2">
+                          <img [src]="item.id | lazyIcon | xivapiIcon" alt="" class="small-icon">
+                          {{item.id | i18nRow: 'items' | i18n}}&nbsp;x{{item.amount}}
+                        </div>
+                      }
+                      <div>
+                        <span nz-icon nzType="arrow-right"></span>
+                      </div>
+                      @for (item of tradeSource.trades[0].items; track item) {
+                        <div class="flex-row align-center justify-start gap-2">
+                          <img [src]="item.id | lazyIcon | xivapiIcon" alt="" class="small-icon">
+                          {{item.id | i18nRow: 'items' | i18n}}&nbsp;x{{item.amount}}
+                        </div>
+                      }
+                    </div>
+                  </div>
+                }
+                @if (source.data.length > 2) {
+                  <i class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 2 } }}</i>
+                }
+              </div>
+            </div>
+          }
+          @case (DataType.GATHERED_BY) {
+            <div class="source">
+              <div class="source-title flex-row align-center space-between gap-2">
                 <div class="flex-row align-center gap-2">
-                  <ng-container *ngIf="craft.isIslandRecipe">
-                    <img src="./assets/icons/island.png" alt="Island Recipe" class="img-icon">
-                  </ng-container>
-                  <ng-container *ngIf="!craft.isIslandRecipe">
-                    <span [innerHTML]="craft.job | jobUnicode" class="companion-svg"></span>
-                    {{craft.lvl}}
-                    <ng-container *ngIf="craft.stars_tooltip">{{craft.stars_tooltip}}</ng-container>
-                  </ng-container>
-                </div>
-              </div>
-              <div>rlvl {{craft.rlvl}}</div>
-            </div>
-            <div class="recipe-stats flex-row align-center space-between">
-              <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Quality_filter_placeholder' | translate}}:&nbsp;{{craft.quality}}</div>
-              <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Difficulty_filter_placeholder' | translate}}:&nbsp;{{craft.progression}}</div>
-              <div>{{'SIMULATOR.Durability' | translate}}:&nbsp;{{craft.durability}}</div>
-            </div>
-            <div class="source-details flex-column gap-5">
-              <div class="flex-row align-center justify-start gap-2 details-row" *ngFor="let ingredient of craft.ingredients">
-                <img [src]="ingredient.id | lazyIcon | xivapiIcon" alt="" class="small-icon">
-                {{ingredient.id | i18nRow: 'items' | i18n}}
-                x{{ingredient.amount}}
-              </div>
-              <i *ngIf="source.data.length > 1" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 1 } }}</i>
-            </div>
-          </ng-container>
-        </div>
-        <div class="source" *ngSwitchCase="DataType.TREASURES">
-          <div class="source-title flex-row align-center gap-2">
-            <img class="img-icon" src="./assets/icons/chest_open.png">
-            <div>
-              {{'Treasures' | translate}}
-            </div>
-          </div>
-          <div class="source-details">
-            <div class="flex-row align-center justify-start gap-2 details-row" *ngFor="let item of source.data.slice(0,3)">
-              <img [src]="item | lazyIcon | xivapiIcon" alt="" class="small-icon">
-              {{item | i18nRow: 'items' | i18n}}
-            </div>
-            <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
-          </div>
-        </div>
-        <div class="source" *ngSwitchCase="DataType.FATES">
-          <div class="source-title flex-row align-center gap-2">
-            <img [src]="source.data[0].id | lazyRow:'fates':'icon' | async | xivapiIcon" class="img-icon">
-            <div>
-              {{'Fates' | translate}}
-            </div>
-          </div>
-          <div class="source-details">
-            <div class="flex-row align-center justify-start gap-2 details-row" *ngFor="let fate of source.data.slice(0,3)">
-              <div>{{fate.id | i18nRow:'fates' | i18n}} - lvl {{fate.level}}</div>
-              {{fate.zoneId | i18nRow:'places' | i18n}} X: {{fate.coords.x}} - Y: {{fate.coords.y}}
-            </div>
-            <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
-          </div>
-        </div>
-        <div class="source" *ngSwitchCase="DataType.DESYNTHS">
-          <div class="source-title flex-row align-center gap-2">
-            <i nzIconfont="icon-vectorcombine" nz-icon></i>
-            <div>
-              {{'Desynth' | translate}}
-            </div>
-          </div>
-          <div class="source-details">
-            <div class="flex-row align-center justify-start gap-2 details-row" *ngFor="let item of source.data.slice(0,3)">
-              <img [src]="item | lazyIcon | xivapiIcon" alt="" class="small-icon">
-              {{item | i18nRow: 'items' | i18n}}
-            </div>
-            <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
-          </div>
-        </div>
-        <div class="source" *ngSwitchCase="DataType.INSTANCES">
-          <div class="source-title flex-row align-center gap-2">
-            <img [src]="source.data[0] | lazyRow:'instances':'icon' | async | xivapiIcon" class="img-icon round-icon">
-            <div>
-              {{'DB.Dungeons' | translate}}
-            </div>
-          </div>
-          <div class="source-details">
-            <div class="flex-row align-center justify-start gap-2 details-row" *ngFor="let instance of source.data.slice(0,3)">
-              <img [src]="instance | lazyRow:'instances':'icon' | async | xivapiIcon" class="small-icon">
-              <ng-container *ngIf="instance > 0; else mapDisplay">
-                <div>{{instance | i18nRow:'instances' | i18n}}</div>
-              </ng-container>
-              <ng-template #mapDisplay>
-                <div>{{-1 * instance | mapName | i18n}}</div>
-              </ng-template>
-            </div>
-            <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
-          </div>
-        </div>
-        <div class="source" *ngSwitchCase="DataType.ACHIEVEMENTS">
-          <div class="source-title flex-row align-center gap-2">
-            <img [src]="source.data[0] | lazyRow:'achievements':'icon' | async | xivapiIcon" class="img-icon round-icon">
-            <div>
-              {{'DB.Achievements' | translate}}
-            </div>
-          </div>
-          <div class="source-details">
-            <div class="flex-row align-center justify-start gap-2 details-row" *ngFor="let achievement of source.data.slice(0,3)">
-              <img [src]="achievement | lazyRow:'achievements':'icon' | async | xivapiIcon" class="small-icon">
-              <div>{{achievement | i18nRow:'achievements' | i18n}}</div>
-            </div>
-            <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
-          </div>
-        </div>
-        <div class="source" *ngSwitchCase="DataType.DROPS">
-          <div class="source-title flex-row align-center gap-2">
-            <img alt="Drops" class="img-icon" src="./assets/icons/mob.png">
-            <div>
-              {{'Hunting' | translate}}
-            </div>
-          </div>
-          <div class="source-details">
-            <div class="flex-row align-center justify-start gap-2 details-row" *ngFor="let drop of source.data.slice(0,3)">
-              <div>{{drop.id | i18nRow:'mobs' | i18n}}:
-                <ng-container *ngIf="drop.mapid">{{drop.mapid | mapName | i18n}}</ng-container>
-              </div>
-            </div>
-            <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
-          </div>
-        </div>
-        <div class="source" *ngSwitchCase="DataType.REDUCED_FROM">
-          <div class="source-title flex-row align-center gap-2">
-            <img class="img-icon round-icon" src="./assets/icons/Reduce.png">
-            <div>
-              {{'Reduction' | translate}}
-            </div>
-          </div>
-          <div class="source-details">
-            <div class="flex-row align-center justify-start gap-2 details-row" *ngFor="let item of source.data.slice(0,3)">
-              <img [src]="item | lazyIcon | xivapiIcon" alt="" class="small-icon">
-              {{item | i18nRow: 'items' | i18n}}
-            </div>
-            <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
-          </div>
-        </div>
-        <div class="source" *ngSwitchCase="DataType.QUESTS">
-          <div class="source-title flex-row align-center gap-2">
-            <img class="img-icon round-icon" src="./assets/icons/quest.png">
-            <div>
-              {{'Quests' | translate}}
-            </div>
-          </div>
-          <div class="source-details">
-            <div class="flex-row align-center justify-start gap-2 details-row" *ngFor="let quest of source.data.slice(0,3)">
-              - {{quest | i18nRow: 'quests' | i18n}}
-            </div>
-            <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
-          </div>
-        </div>
-        <div class="source" *ngSwitchCase="DataType.VOYAGES">
-          <div class="source-title flex-row align-center gap-2">
-            <img alt="Voyages" class="img-icon" src="./assets/icons/Voyage.png">
-            <div>
-              {{'Voyages' | translate}}
-            </div>
-          </div>
-          <div class="source-details">
-            <div class="flex-row align-center justify-start gap-2 details-row" *ngFor="let voyage of source.data.slice(0,3)">
-              - {{(voyage.type === ExplorationType.AIRSHIP ? 'COMMON.Airship' : 'COMMON.Submarine') | translate}} - {{voyage.name | i18n}}
-            </div>
-            <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
-          </div>
-        </div>
-        <div class="source" *ngSwitchCase="DataType.VENTURES">
-          <div class="source-title flex-row align-center gap-2">
-            <img [src]="21072 | lazyIcon" alt="Ventures" class="img-icon">
-            <div>
-              {{'Retainer_ventures' | translate}}
-            </div>
-          </div>
-          <div class="source-details">
-            <div class="flex-row align-center justify-start gap-2 details-row" *ngFor="let venture of source.data.slice(0,3)">
-              - {{venture.name ? (venture.job | i18nRow:'jobAbbr' | i18n) || (DOWM | i18n) : (venture.id | i18nRow:'ventures' | i18n)}}
-            </div>
-            <i *ngIf="source.data.length > 3" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 3 } }}</i>
-          </div>
-        </div>
-        <div class="source" *ngSwitchCase="DataType.MASTERBOOKS">
-          <div class="source-title flex-row align-center gap-2">
-            <i nz-icon nzType="book"></i>
-            <div>
-              {{'TOOLTIP.Masterbooks' | translate}}
-            </div>
-          </div>
-          <div class="source-details">
-            <div class="flex-row align-center justify-start gap-2 details-row" *ngFor="let item of source.data">
-              <img [src]="item.id | lazyIcon | xivapiIcon" alt="" class="small-icon">
-              {{item.id | i18nRow: 'items' | i18n}}
-            </div>
-          </div>
-        </div>
-        <div class="source" *ngSwitchCase="DataType.VENDORS">
-          <div class="source-title flex-row align-center gap-2">
-            <img alt="Gil" class="img-icon" src="https://xivapi.com/i/065000/065002.png">
-            <div>
-              {{'Vendors' | translate}}
-            </div>
-          </div>
-          <div class="source-details">
-            <div class="flex-row align-center space-between gap-2 details-row" *ngFor="let vendor of source.data.slice(0,2)">
-              <div class="flex-column">
-                <div class="flex-row align-center gap-2">
-                  <div *ngIf="vendor.npcId > 1000000">{{vendor.npcId | i18nRow:'npcs' | i18n}}</div>
-                  <div *ngIf="vendor.npcId < 1000000">{{vendor.npcId | i18nRow:'mobs' | i18n}}</div>
-                </div>
-                <div *ngIf="vendor.coords">
-                  {{vendor.zoneId | i18nRow:'places' | i18n}}: X:{{vendor.coords.x}} Y:{{vendor.coords.y}}
-                </div>
-              </div>
-
-              <div class="flex-row align-center gap-2">
-                <img alt="Gil" src="https://xivapi.com/i/065000/065002.png" class="small-icon">{{vendor.price}}
-              </div>
-
-            </div>
-            <i *ngIf="source.data.length > 2" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 2 } }}</i>
-          </div>
-        </div>
-        <div class="source" *ngSwitchCase="DataType.TRADE_SOURCES">
-          <div class="source-title flex-row align-center gap-2">
-            <img class="img-icon round-icon" src="./assets/icons/Shop.png">
-            <div>
-              {{'Trade' | translate}}
-            </div>
-          </div>
-          <div class="source-details">
-            <div class="flex-column gap-2 details-row" *ngFor="let tradeSource of source.data.slice(0,2)">
-              <div class="flex-column" *ngIf="tradeSource.npcs[0]  as npc">
-                <div class="flex-row align-center gap-2">
-                  {{npc?.id | i18nRow:'npcs' | i18n}} - {{tradeSource.shopName | i18n}}
-                </div>
-                <div *ngIf="npc.coords">
-                  {{npc.zoneId | i18nRow:'places' | i18n}}: X:{{npc.coords.x}} Y:{{npc.coords.y}}
-                </div>
-              </div>
-
-              <div class="flex-row align-center gap-2">
-                <div class="flex-row align-center justify-start gap-2" *ngFor="let item of tradeSource.trades[0].currencies">
-                  <img [src]="item.id | lazyIcon | xivapiIcon" alt="" class="small-icon">
-                  {{item.id | i18nRow: 'items' | i18n}}&nbsp;x{{item.amount}}
+                  <img class="img-icon gathering-icon" src="{{source.data.type | nodeTypeIcon}}">
+                  <div>
+                    {{'DB.Gathering' | translate}}
+                  </div>
                 </div>
                 <div>
-                  <span nz-icon nzType="arrow-right"></span>
-                </div>
-                <div class="flex-row align-center justify-start gap-2" *ngFor="let item of tradeSource.trades[0].items">
-                  <img [src]="item.id | lazyIcon | xivapiIcon" alt="" class="small-icon">
-                  {{item.id | i18nRow: 'items' | i18n}}&nbsp;x{{item.amount}}
-                </div>
-              </div>
-
-            </div>
-            <i *ngIf="source.data.length > 2" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.length - 2 } }}</i>
-          </div>
-        </div>
-        <div class="source" *ngSwitchCase="DataType.GATHERED_BY">
-          <div class="source-title flex-row align-center space-between gap-2">
-            <div class="flex-row align-center gap-2">
-              <img class="img-icon gathering-icon" src="{{source.data.type | nodeTypeIcon}}">
-              <div>
-                {{'DB.Gathering' | translate}}
-              </div>
-            </div>
-            <div>
-              lvl{{source.data.level}}
-              <ng-container *ngIf="source.data.stars_tooltip">{{source.data.stars_tooltip}}</ng-container>
-            </div>
-          </div>
-          <div class="source-details">
-            <div class="flex-row align-start gap-5 details-row" *ngFor="let node of source.data.nodes.slice(0,1)">
-              <app-map [mapId]="node.map" [markers]="[node]" [hideDbButton]="true" [small]="true"></app-map>
-              <div class="flex-column gap-2">
-                <app-node-details [node]="node" [showAlarmsIntegration]="false" [hideDbButton]="true"></app-node-details>
-                <div class="flex-row align-center gap-2" *ngIf="node.map | closestAetheryte:node | async as aetheryte">
-                  <img src="./assets/icons/Aetheryte.png" alt="" class="small-icon">
-                  {{aetheryte.nameid | i18nRow:'places' | i18n}}
+                  lvl{{source.data.level}}
+                  @if (source.data.stars_tooltip) {
+                    {{source.data.stars_tooltip}}
+                  }
                 </div>
               </div>
+              <div class="source-details">
+                @for (node of source.data.nodes.slice(0,1); track node) {
+                  <div class="flex-row align-start gap-5 details-row">
+                    <app-map [mapId]="node.map" [markers]="[node]" [hideDbButton]="true" [small]="true"></app-map>
+                    <div class="flex-column gap-2">
+                      <app-node-details [node]="node" [showAlarmsIntegration]="false" [hideDbButton]="true"></app-node-details>
+                      @if (node.map | closestAetheryte:node | async; as aetheryte) {
+                        <div class="flex-row align-center gap-2">
+                          <img src="./assets/icons/Aetheryte.png" alt="" class="small-icon">
+                          {{aetheryte.nameid | i18nRow:'places' | i18n}}
+                        </div>
+                      }
+                    </div>
+                  </div>
+                }
+                @if (source.data.nodes.length > 1) {
+                  <i class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.nodes.length - 1 } }}</i>
+                }
+              </div>
             </div>
-            <i *ngIf="source.data.nodes.length > 1" class="more">{{'COMMON.And_X_more' | translate:{ amount: source.data.nodes.length - 1 } }}</i>
-          </div>
-        </div>
-      </ng-container>
-    </ng-container>
-  </div>
+          }
+        }
+      }
+    </div>
+  }
 </div>

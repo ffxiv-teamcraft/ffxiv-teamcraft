@@ -1,17 +1,16 @@
 import { Component } from '@angular/core';
 import { PlatformService } from '../../../core/tools/platform.service';
-import { fromEvent, Subscription } from 'rxjs';
-import { auditTime, delay, distinctUntilChanged, map, startWith, takeUntil } from 'rxjs/operators';
+import { auditTime, delay, distinctUntilChanged, fromEvent, map, startWith, Subscription, takeUntil } from 'rxjs';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 
 declare const ramp: any;
 declare const gtag: any;
 
 @Component({
-    selector: 'app-ad',
-    templateUrl: './ad.component.html',
-    styleUrls: ['./ad.component.less'],
-    standalone: true
+  selector: 'app-ad',
+  templateUrl: './ad.component.html',
+  styleUrls: ['./ad.component.less'],
+  standalone: true
 })
 export class AdComponent extends TeamcraftComponent {
 

@@ -5,7 +5,7 @@ import { EtroImportStatic } from './etro-import-static';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgIf } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzFormModule } from 'ng-zorro-antd/form';
@@ -17,7 +17,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
     styleUrls: ['./etro-import-popup.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzGridModule, NzFormModule, NzInputModule, FormsModule, NgIf, NzButtonModule, NzWaveModule, TranslateModule]
+    imports: [NzGridModule, NzFormModule, NzInputModule, FormsModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
 export class EtroImportPopupComponent {
 

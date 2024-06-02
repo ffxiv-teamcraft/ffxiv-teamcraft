@@ -1,14 +1,18 @@
 <nz-alert [nzMessage]="'LISTS.Merge_lists_warning' | translate" nzShowIcon nzType="info"></nz-alert>
 
-<div *ngIf="lists$ | async as lists">
-  <h3>{{'LISTS.Your_lists' | translate}}</h3>
-  <ng-container *ngTemplateOutlet="listsDisplay; context: {$implicit: lists}"></ng-container>
-</div>
+@if (lists$ | async; as lists) {
+  <div>
+    <h3>{{'LISTS.Your_lists' | translate}}</h3>
+    <ng-container *ngTemplateOutlet="listsDisplay; context: {$implicit: lists}"></ng-container>
+  </div>
+}
 
-<div *ngFor="let workshopDisplay of workshops$ | async">
-  <h4>{{workshopDisplay.workshop.name}}</h4>
-  <ng-container *ngTemplateOutlet="listsDisplay; context: {$implicit: workshopDisplay.lists}"></ng-container>
-</div>
+@for (workshopDisplay of workshops$ | async; track workshopDisplay) {
+  <div>
+    <h4>{{workshopDisplay.workshop.name}}</h4>
+    <ng-container *ngTemplateOutlet="listsDisplay; context: {$implicit: workshopDisplay.lists}"></ng-container>
+  </div>
+}
 
 <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
   <button (click)="merge()" [disabled]="selectedLists.length < 2 || merging" nz-button>{{'Confirm' | translate}}
@@ -25,19 +29,27 @@
         <nz-list-item-meta [nzAvatar]="checkbox" [nzDescription]="description" [nzTitle]="list.name">
           <ng-template #checkbox>
             <label (ngModelChange)="setSelection(list, $event)" [ngModel]="false" [nzDisabled]="ListController.isOutDated(list) || ListController.isLarge(list)"
-                   nz-checkbox></label>
+            nz-checkbox></label>
           </ng-template>
           <ng-template #description>
-            <nz-tag *ngIf="list.ephemeral" [nzColor]="'volcano'" [nzTooltipTitle]="'Ephemeral_list' | translate" nz-tooltip>
-              {{'Ephemeral_tag' | translate}}
-            </nz-tag>
-            <nz-tag *ngIf="list.public" [nzColor]="'geekblue'" [nzTooltipTitle]="'LIST_DETAILS.HELP.Public_list' | translate"
-                    nz-tooltip>
-              {{'Public_list' | translate}}
-            </nz-tag>
-            <nz-tag *ngIf="ListController.isOutDated(list)" [nzColor]="'magenta'" [nzTooltipTitle]="'LIST_TAGS.Outdated' | translate"
-                    nz-tooltip></nz-tag>
-            <nz-tag *ngFor="let tag of list.tags">{{('LIST_TAGS.' + tag) | uppercase | translate}}</nz-tag>
+            @if (list.ephemeral) {
+              <nz-tag [nzColor]="'volcano'" [nzTooltipTitle]="'Ephemeral_list' | translate" nz-tooltip>
+                {{'Ephemeral_tag' | translate}}
+              </nz-tag>
+            }
+            @if (list.public) {
+              <nz-tag [nzColor]="'geekblue'" [nzTooltipTitle]="'LIST_DETAILS.HELP.Public_list' | translate"
+                nz-tooltip>
+                {{'Public_list' | translate}}
+              </nz-tag>
+            }
+            @if (ListController.isOutDated(list)) {
+              <nz-tag [nzColor]="'magenta'" [nzTooltipTitle]="'LIST_TAGS.Outdated' | translate"
+              nz-tooltip></nz-tag>
+            }
+            @for (tag of list.tags; track tag) {
+              <nz-tag>{{('LIST_TAGS.' + tag) | uppercase | translate}}</nz-tag>
+            }
           </ng-template>
         </nz-list-item-meta>
       </nz-list-item>

@@ -18,14 +18,14 @@ import { FavoriteButtonComponent } from '../../../modules/favorites/favorite-but
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzCardModule } from 'ng-zorro-antd/card';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-workshop-details',
     templateUrl: './workshop-details.component.html',
     styleUrls: ['./workshop-details.component.less'],
     standalone: true,
-    imports: [NgIf, NzCardModule, NzAvatarModule, FlexModule, FavoriteButtonComponent, NgFor, NgForTrackByKeyDirective, ListPanelComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule]
+    imports: [NzCardModule, NzAvatarModule, FlexModule, FavoriteButtonComponent, NgForTrackByKeyDirective, ListPanelComponent, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule]
 })
 export class WorkshopDetailsComponent {
 

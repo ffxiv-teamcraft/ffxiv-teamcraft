@@ -24,7 +24,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { TimerTooltipDirective } from '../../../core/alarms/timer-tooltip.directive';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-alarm-button',
@@ -32,7 +32,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     styleUrls: ['./alarm-button.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NzButtonModule, TimerTooltipDirective, NzWaveModule, NzToolTipModule, I18nNameComponent, NzIconModule, NzDropDownModule, NzMenuModule, NgFor, AsyncPipe, AlarmDisplayPipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, NodeTypeIconPipe, ClosestAetherytePipe, XivapiIconPipe, LazyRowPipe]
+    imports: [NzButtonModule, TimerTooltipDirective, NzWaveModule, NzToolTipModule, I18nNameComponent, NzIconModule, NzDropDownModule, NzMenuModule, AsyncPipe, AlarmDisplayPipe, I18nPipe, TranslateModule, TimerPipe, I18nRowPipe, NodeTypeIconPipe, ClosestAetherytePipe, XivapiIconPipe, LazyRowPipe]
 })
 export class AlarmButtonComponent {
 

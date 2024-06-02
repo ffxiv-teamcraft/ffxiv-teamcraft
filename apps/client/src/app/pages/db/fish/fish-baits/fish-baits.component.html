@@ -1,10 +1,9 @@
 <nz-card [nzTitle]="'DB.FISH.Baits' | translate"
-         [nzLoading]="loading$ | async"
-         [style.width.px]="480 + 48">
-  <ng-container *ngIf="options$ | async as options; else loadingTpl">
+  [nzLoading]="loading$ | async"
+  [style.width.px]="480 + 48">
+  @if (options$ | async; as options) {
     <div echarts theme="dark" [options]="options" [initOpts]="{height: '300px'}"></div>
-  </ng-container>
-  <ng-template #loadingTpl>
+  } @else {
     <nz-spin></nz-spin>
-  </ng-template>
+  }
 </nz-card>

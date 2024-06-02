@@ -19,7 +19,7 @@ import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
@@ -27,7 +27,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     templateUrl: './food-picker.component.html',
     styleUrls: ['./food-picker.component.less'],
     standalone: true,
-    imports: [FlexModule, NgIf, NzSelectModule, FormsModule, NgFor, NzListModule, DbButtonComponent, ItemIconComponent, I18nNameComponent, MarketboardIconComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, LazyIconPipe]
+    imports: [FlexModule, NzSelectModule, FormsModule, NzListModule, DbButtonComponent, ItemIconComponent, I18nNameComponent, MarketboardIconComponent, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe, LazyIconPipe]
 })
 export class FoodPickerComponent extends TeamcraftComponent {
 

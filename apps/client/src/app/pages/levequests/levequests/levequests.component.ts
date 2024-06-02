@@ -36,7 +36,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgFor, NgIf, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzGridModule } from 'ng-zorro-antd/grid';
@@ -53,7 +53,7 @@ interface ExpObj {
     templateUrl: './levequests.component.html',
     styleUrls: ['./levequests.component.less'],
     standalone: true,
-    imports: [FlexModule, NzGridModule, NzSelectModule, FormsModule, NgFor, NgIf, NzButtonModule, NzInputModule, NzIconModule, NzToolTipModule, NzInputNumberModule, NzSwitchModule, NzCheckboxModule, NzWaveModule, PageLoaderComponent, ItemIconComponent, I18nNameComponent, DbButtonComponent, NzProgressModule, FullpageMessageComponent, RouterLink, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, JobUnicodePipe]
+    imports: [FlexModule, NzGridModule, NzSelectModule, FormsModule, NzButtonModule, NzInputModule, NzIconModule, NzToolTipModule, NzInputNumberModule, NzSwitchModule, NzCheckboxModule, NzWaveModule, PageLoaderComponent, ItemIconComponent, I18nNameComponent, DbButtonComponent, NzProgressModule, FullpageMessageComponent, RouterLink, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, JobUnicodePipe]
 })
 export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 

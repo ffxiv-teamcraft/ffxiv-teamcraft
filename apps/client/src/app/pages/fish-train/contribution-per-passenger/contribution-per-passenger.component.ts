@@ -10,7 +10,7 @@ import { isEqual } from 'lodash';
 import { auditTime, delay, distinctUntilChanged, map, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { FormsModule } from '@angular/forms';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
@@ -20,7 +20,7 @@ import { NzSwitchModule } from 'ng-zorro-antd/switch';
     templateUrl: './contribution-per-passenger.component.html',
     styleUrls: ['./contribution-per-passenger.component.less'],
     standalone: true,
-    imports: [NzSwitchModule, FormsModule, NgxEchartsModule, NgIf, NzEmptyModule, AsyncPipe, TranslateModule]
+    imports: [NzSwitchModule, FormsModule, NgxEchartsModule, NzEmptyModule, AsyncPipe, TranslateModule]
 })
 export class ContributionPerPassengerComponent extends TeamcraftComponent {
   echartsInstance$ = new ReplaySubject<any>();

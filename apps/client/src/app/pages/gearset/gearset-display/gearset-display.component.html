@@ -1,130 +1,155 @@
-<ng-container *ngIf="gearset$ | async as gearset">
-  <ng-container *ngIf="progression$ | async as progression">
-    <ng-container *ngIf="stats$ | async as stats">
-      <div fxLayout="column" *ngIf="permissionLevel$ | async as permissionLevel">
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="page-title">
-          <span class="gearset-name">{{gearset.name}}</span>
-          <span class="companion-svg job-icon" [innerHTML]="gearset.job | jobUnicode"></span>
-          <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'GEARSETS.Reset_progression' | translate"
-                  nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="resetProgression(gearset)">
-            <i nz-icon nzType="reload"></i>
-          </button>
-          <ng-container *ngIf="userId$ | async as userId">
-            <app-favorite-button *ngIf="gearset.authorId !== userId"
-                                 type="gearsets"
-                                 [key]="gearset.$key"
-                                 size="small"></app-favorite-button>
-          </ng-container>
-          <div fxFlex="1 1 auto"></div>
-          <button nz-button nzShape="circle" nzType="primary"
-                  nz-tooltip [nzTooltipTitle]="'GEARSETS.Use_in_simulator' | translate"
-                  (click)="openSimulator(gearset)"
-                  *ngIf="gearset.job >= 8 && gearset.job <=15">
-            <i class="companion-svg link-icon">
-              &#xF239;
-            </i>
-          </button>
-          <button nz-button nzShape="circle" nzType="primary"
-                  nz-tooltip [nzTooltipTitle]="'GEARSETS.Generate_list' | translate"
-                  (click)="generateList(gearset, progression)">
-            <i nz-icon nzType="unordered-list" nzTheme="outline"></i>
-          </button>
-          <button nz-button nzShape="circle" nzType="primary"
-                  *ngIf="loggedIn$ | async"
-                  nz-tooltip [nzTooltipTitle]="'GEARSETS.Create_commission' | translate"
-                  (click)="createCommission(gearset, progression)">
-            <i nz-icon nzType="shop" nzTheme="outline"></i>
-          </button>
-          <button nz-button nzShape="circle"
-                  nz-tooltip [nzTooltipTitle]="'GEARSETS.Compare_gearset' | translate"
-                  (click)="compare(gearset)">
-            <i nz-icon nzType="diff" nzTheme="outline"></i>
-          </button>
-          <button nz-button nzShape="circle"
-                  nz-tooltip [nzTooltipTitle]="'GEARSETS.Clone_gearset' | translate"
-                  (click)="clone(gearset)">
-            <i nz-icon nzType="copy" nzTheme="outline"></i>
-          </button>
-          <button nz-button nzShape="circle"
-                  nz-tooltip [nzTooltipTitle]="'GEARSETS.Copy_as_text' | translate"
-                  (click)="copyToClipboard(gearset)">
-            <i nz-icon nzType="snippets" nzTheme="outline"></i>
-          </button>
-          <a nz-button nzShape="circle"
-             nz-tooltip [nzTooltipTitle]="'GEARSETS.Edit_gearset' | translate"
-             routerLink="/gearset/{{gearset.$key}}/edit">
-            <i nz-icon nzType="edit"></i>
-          </a>
-        </div>
-        <div fxLayout="column" fxLayoutAlign="center stretch" fxFlex="1 1 auto" class="set-content">
-          <nz-divider nzOrientation="left" [nzText]="'GEARSETS.Content' | translate"></nz-divider>
-          <div fxLayout="row" fxLayoutAlign="space-evenly flex-start" fxLayout.lt-md="column" fxLayoutAlign.lt-md="flex-start center">
-            <div fxFlexOrder="1" fxLayout="row" fxLayoutAlign="center center">
-              <div fxLayout="column">
-                <ng-container *ngFor="let row of gearsetSlotProperties">
-                  <app-gearset-display-slot *ngIf="row[0]" [gearset]="gearset" [propertyName]="row[0]"
-                                            [verbose]="true" [progression]="progression"
-                                            (progressionChange)="updateProgression(gearset.$key, $event)"></app-gearset-display-slot>
-                </ng-container>
+@if (gearset$ | async; as gearset) {
+  @if (progression$ | async; as progression) {
+    @if (stats$ | async; as stats) {
+      @if (permissionLevel$ | async; as permissionLevel) {
+        <div fxLayout="column">
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="page-title">
+            <span class="gearset-name">{{gearset.name}}</span>
+            <span class="companion-svg job-icon" [innerHTML]="gearset.job | jobUnicode"></span>
+            <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'GEARSETS.Reset_progression' | translate"
+              nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="resetProgression(gearset)">
+              <i nz-icon nzType="reload"></i>
+            </button>
+            @if (userId$ | async; as userId) {
+              @if (gearset.authorId !== userId) {
+                <app-favorite-button
+                  type="gearsets"
+                  [key]="gearset.$key"
+                size="small"></app-favorite-button>
+              }
+            }
+            <div fxFlex="1 1 auto"></div>
+            @if (gearset.job >= 8 && gearset.job <=15) {
+              <button nz-button nzShape="circle" nzType="primary"
+                nz-tooltip [nzTooltipTitle]="'GEARSETS.Use_in_simulator' | translate"
+                (click)="openSimulator(gearset)"
+                >
+                <i class="companion-svg link-icon">
+                  &#xF239;
+                </i>
+              </button>
+            }
+            <button nz-button nzShape="circle" nzType="primary"
+              nz-tooltip [nzTooltipTitle]="'GEARSETS.Generate_list' | translate"
+              (click)="generateList(gearset, progression)">
+              <i nz-icon nzType="unordered-list" nzTheme="outline"></i>
+            </button>
+            @if (loggedIn$ | async) {
+              <button nz-button nzShape="circle" nzType="primary"
+                nz-tooltip [nzTooltipTitle]="'GEARSETS.Create_commission' | translate"
+                (click)="createCommission(gearset, progression)">
+                <i nz-icon nzType="shop" nzTheme="outline"></i>
+              </button>
+            }
+            <button nz-button nzShape="circle"
+              nz-tooltip [nzTooltipTitle]="'GEARSETS.Compare_gearset' | translate"
+              (click)="compare(gearset)">
+              <i nz-icon nzType="diff" nzTheme="outline"></i>
+            </button>
+            <button nz-button nzShape="circle"
+              nz-tooltip [nzTooltipTitle]="'GEARSETS.Clone_gearset' | translate"
+              (click)="clone(gearset)">
+              <i nz-icon nzType="copy" nzTheme="outline"></i>
+            </button>
+            <button nz-button nzShape="circle"
+              nz-tooltip [nzTooltipTitle]="'GEARSETS.Copy_as_text' | translate"
+              (click)="copyToClipboard(gearset)">
+              <i nz-icon nzType="snippets" nzTheme="outline"></i>
+            </button>
+            <a nz-button nzShape="circle"
+              nz-tooltip [nzTooltipTitle]="'GEARSETS.Edit_gearset' | translate"
+              routerLink="/gearset/{{gearset.$key}}/edit">
+              <i nz-icon nzType="edit"></i>
+            </a>
+          </div>
+          <div fxLayout="column" fxLayoutAlign="center stretch" fxFlex="1 1 auto" class="set-content">
+            <nz-divider nzOrientation="left" [nzText]="'GEARSETS.Content' | translate"></nz-divider>
+            <div fxLayout="row" fxLayoutAlign="space-evenly flex-start" fxLayout.lt-md="column" fxLayoutAlign.lt-md="flex-start center">
+              <div fxFlexOrder="1" fxLayout="row" fxLayoutAlign="center center">
+                <div fxLayout="column">
+                  @for (row of gearsetSlotProperties; track row) {
+                    @if (row[0]) {
+                      <app-gearset-display-slot [gearset]="gearset" [propertyName]="row[0]"
+                        [verbose]="true" [progression]="progression"
+                      (progressionChange)="updateProgression(gearset.$key, $event)"></app-gearset-display-slot>
+                    }
+                  }
+                </div>
               </div>
-            </div>
-            <div fxFlexOrder="2" fxLayout="row" fxLayoutAlign="center center">
-              <div fxLayout="column">
-                <app-gearset-display-slot *ngFor="let row of gearsetSlotProperties" [gearset]="gearset" [propertyName]="row[1]"
-                                          [verbose]="true" [progression]="progression"
-                                          (progressionChange)="updateProgression(gearset.$key, $event)"></app-gearset-display-slot>
+              <div fxFlexOrder="2" fxLayout="row" fxLayoutAlign="center center">
+                <div fxLayout="column">
+                  @for (row of gearsetSlotProperties; track row) {
+                    <app-gearset-display-slot [gearset]="gearset" [propertyName]="row[1]"
+                      [verbose]="true" [progression]="progression"
+                    (progressionChange)="updateProgression(gearset.$key, $event)"></app-gearset-display-slot>
+                  }
+                </div>
               </div>
-            </div>
-            <div fxFlexOrder="3" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="gearset.job < 8 || gearset.job > 18">
-                <nz-select [ngModel]="tribe$ | async" (ngModelChange)="tribe$.next($event)" [style.width.px]="150">
-                  <nz-option-group *ngFor="let row of tribesMenu" [nzLabel]="row.race | i18nRow:'races' | i18n">
-                    <nz-option *ngFor="let tribe of row.tribes" [nzValue]="tribe" [nzLabel]="tribe | i18nRow:'tribes' | i18n"></nz-option>
-                  </nz-option-group>
-                </nz-select>
-                <nz-input-number [nzMin]="1" [nzMax]="maxLevel" [ngModel]="level$ | async" (ngModelChange)="level$.next($event)"></nz-input-number>
-              </div>
-              <nz-select [ngModel]="food$ | async" (ngModelChange)="food$.next($event)" [style.width.px]="300"
-                         [nzPlaceHolder]="'GEARSETS.No_food_selected' | translate" nzAllowClear [compareWith]="foodComparator">
-                <nz-option [nzValue]="null" [nzLabel]="'GEARSETS.No_food_selected' | translate"></nz-option>
-                <nz-option *ngFor="let food of foods$ | async" [nzValue]="food"
-                           [nzLabel]="(food.ID | itemName | i18n) + (food.HQ ? ('('+( 'COMMON.Hq' | translate )+')') : '') + ' / ' + (food | foodBonuses:true | async)"
-                           nzCustomContent>
-                  <b><app-i18n-name [id]="food.ID" content="items"></app-i18n-name> <span *ngIf="food.HQ">{{'COMMON.Hq' | translate}}</span></b>
-                  <div class="food-bonus" *ngFor="let bonus of food | foodBonuses | async">
-                    {{bonus}}
+              <div fxFlexOrder="3" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+                @if (gearset.job < 8 || gearset.job > 18) {
+                  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                    <nz-select [ngModel]="tribe$ | async" (ngModelChange)="tribe$.next($event)" [style.width.px]="150">
+                      @for (row of tribesMenu; track row) {
+                        <nz-option-group [nzLabel]="row.race | i18nRow:'races' | i18n">
+                          @for (tribe of row.tribes; track tribe) {
+                            <nz-option [nzValue]="tribe" [nzLabel]="tribe | i18nRow:'tribes' | i18n"></nz-option>
+                          }
+                        </nz-option-group>
+                      }
+                    </nz-select>
+                    <nz-input-number [nzMin]="1" [nzMax]="maxLevel" [ngModel]="level$ | async" (ngModelChange)="level$.next($event)"></nz-input-number>
                   </div>
-                </nz-option>
+                }
+                <nz-select [ngModel]="food$ | async" (ngModelChange)="food$.next($event)" [style.width.px]="300"
+                  [nzPlaceHolder]="'GEARSETS.No_food_selected' | translate" nzAllowClear [compareWith]="foodComparator">
+                  <nz-option [nzValue]="null" [nzLabel]="'GEARSETS.No_food_selected' | translate"></nz-option>
+                  @for (food of foods$ | async; track food) {
+                    <nz-option [nzValue]="food"
+                      [nzLabel]="(food.ID | itemName | i18n) + (food.HQ ? ('('+( 'COMMON.Hq' | translate )+')') : '') + ' / ' + (food | foodBonuses:true | async)"
+                      nzCustomContent>
+                      <b><app-i18n-name [id]="food.ID" content="items"></app-i18n-name> @if (food.HQ) {
+                      <span>{{'COMMON.Hq' | translate}}</span>
+                    }</b>
+                    @for (bonus of food | foodBonuses | async; track bonus) {
+                      <div class="food-bonus">
+                        {{bonus}}
+                      </div>
+                    }
+                  </nz-option>
+                }
               </nz-select>
               <div fxLayout="row" fxLayoutAlign="center center" class="full-width-table">
                 <table fxFlex="1 1 auto">
                   <thead>
-                  <tr>
-                    <th class="table-cell">{{'GEARSETS.Stat_name' | translate}}</th>
-                    <th class="table-cell amount">{{'GEARSETS.Value' | translate}}</th>
-                  </tr>
+                    <tr>
+                      <th class="table-cell">{{'GEARSETS.Stat_name' | translate}}</th>
+                      <th class="table-cell amount">{{'GEARSETS.Value' | translate}}</th>
+                    </tr>
                   </thead>
                   <tbody>
-                  <tr *ngFor="let row of stats">
-                    <td class="table-cell first">
-                      {{row.id | i18nRow:'baseParams' | i18n}}
-                    </td>
-                    <td class="amount table-cell">
-                      {{row.value | number:'1.0-0':translate.currentLang}}
-                    </td>
-                  </tr>
+                    @for (row of stats; track row) {
+                      <tr>
+                        <td class="table-cell first">
+                          {{row.id | i18nRow:'baseParams' | i18n}}
+                        </td>
+                        <td class="amount table-cell">
+                          {{row.value | number:'1.0-0':translate.currentLang}}
+                        </td>
+                      </tr>
+                    }
                   </tbody>
                 </table>
               </div>
               <app-stats-popup class="full-width-table" [gearset]="gearset" [food]="food$ | async" [level]="level$ | async"
-                               [tribe]="tribe$ | async"></app-stats-popup>
+              [tribe]="tribe$ | async"></app-stats-popup>
               <app-materias-needed-popup class="full-width-table" [gearset]="gearset" [progression]="progression"
-                                         [(includeAllTools)]="includeAllTools"></app-materias-needed-popup>
+              [(includeAllTools)]="includeAllTools"></app-materias-needed-popup>
               <app-gearset-cost-popup class="full-width-table" [gearset]="gearset" [progression]="progression"></app-gearset-cost-popup>
             </div>
           </div>
         </div>
       </div>
-    </ng-container>
-  </ng-container>
-</ng-container>
+    }
+  }
+}
+}

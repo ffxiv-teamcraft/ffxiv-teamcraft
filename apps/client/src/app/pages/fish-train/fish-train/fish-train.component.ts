@@ -225,14 +225,14 @@ export class FishTrainComponent extends TeamcraftComponent {
 
   public overlay = false;
 
-  constructor(private fishTrainFacade: FishTrainFacade, private route: ActivatedRoute,
+  constructor(private fishTrainFacade: FishTrainFacade, route: ActivatedRoute,
               private lazyData: LazyDataFacade, private i18n: I18nToolsService,
               public translate: TranslateService, private fishDataService: FishDataService,
               public platform: PlatformService, private ipc: IpcService,
               private dialog: NzModalService, private message: NzMessageService,
               private authFacade: AuthFacade, private soundNotificationService: SoundNotificationService,
               private notificationService: NzNotificationService, private pushNotificationsService: PushNotificationsService,
-              private cd: ChangeDetectorRef, private router: Router, private progressPopup: ProgressPopupService,
+              private cd: ChangeDetectorRef, router: Router, private progressPopup: ProgressPopupService,
               private lodestone: LodestoneService, public settings: SettingsService) {
     super();
     route.paramMap
@@ -395,7 +395,6 @@ export class FishTrainComponent extends TeamcraftComponent {
             this.pushNotificationsService.create(title,
               {
                 icon: icon,
-                renotify: false,
                 body: body
               }
             );

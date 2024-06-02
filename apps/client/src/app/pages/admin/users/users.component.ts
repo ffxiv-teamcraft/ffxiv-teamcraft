@@ -19,7 +19,7 @@ import { FullpageMessageComponent } from '../../../modules/fullpage-message/full
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { NzInputModule } from 'ng-zorro-antd/input';
-import { NgFor, NgSwitch, NgSwitchCase, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzGridModule } from 'ng-zorro-antd/grid';
@@ -30,7 +30,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     templateUrl: './users.component.html',
     styleUrls: ['./users.component.less'],
     standalone: true,
-    imports: [FlexModule, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NgFor, NgSwitch, NgSwitchCase, NzInputModule, ReactiveFormsModule, NzAutocompleteModule, NgIf, NzListModule, FullpageMessageComponent, UserAvatarComponent, RouterLink, AsyncPipe, TranslateModule, CharacterNamePipe]
+    imports: [FlexModule, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NzInputModule, ReactiveFormsModule, NzAutocompleteModule, NzListModule, FullpageMessageComponent, UserAvatarComponent, RouterLink, AsyncPipe, TranslateModule, CharacterNamePipe]
 })
 export class UsersComponent {
 

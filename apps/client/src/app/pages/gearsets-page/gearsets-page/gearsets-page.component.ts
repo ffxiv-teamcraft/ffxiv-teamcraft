@@ -22,7 +22,7 @@ import { FullpageMessageComponent } from '../../../modules/fullpage-message/full
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { GearsetRowComponent } from '../../../modules/gearsets/gearset-row/gearset-row.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { NgTemplateOutlet, AsyncPipe } from '@angular/common';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -33,7 +33,7 @@ import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/pa
     templateUrl: './gearsets-page.component.html',
     styleUrls: ['./gearsets-page.component.less'],
     standalone: true,
-    imports: [PageLoaderComponent, FlexModule, NzButtonModule, NzWaveModule, NgIf, NzIconModule, GearsetRowComponent, NzDividerModule, FullpageMessageComponent, CdkDropList, NgFor, CdkDrag, NgTemplateOutlet, FolderComponent, AsyncPipe, TranslateModule]
+    imports: [PageLoaderComponent, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, GearsetRowComponent, NzDividerModule, FullpageMessageComponent, CdkDropList, CdkDrag, NgTemplateOutlet, FolderComponent, AsyncPipe, TranslateModule]
 })
 export class GearsetsPageComponent extends TeamcraftComponent implements OnInit {
 

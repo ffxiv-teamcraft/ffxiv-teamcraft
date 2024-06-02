@@ -1,7 +1,9 @@
 <div class="flex-column align-stretch gap-10 intro-container">
   <h1 class="align-self-center">{{'SEARCH_INTRO.Slogan' | translate}}</h1>
-  <h2 class="align-self-center"
-      *ngIf="counter$ | async as counter">{{'SEARCH_INTRO.Lists_created_counter' | translate: { amount: counter | number:'1.0-0':translate.currentLang } }}</h2>
+  @if (counter$ | async; as counter) {
+    <h2 class="align-self-center"
+    >{{'SEARCH_INTRO.Lists_created_counter' | translate: { amount: counter | number:'1.0-0':translate.currentLang } }}</h2>
+  }
   <nz-divider class="intro-divider"></nz-divider>
   <div nz-row [nzGutter]="[10, 10]" class="buttons">
     <div nz-col [nzXs]="24" [nzXl]="12">
@@ -12,16 +14,20 @@
             {{"Join_discord_server" | translate}}
           </a>
         </div>
-        <div nz-col [nzMd]="8" *ngIf="!platform.isDesktop()">
-          <a class="button" href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/latest" nz-button nzType="primary" target="_blank">
-            <i nz-icon nzType="download" nzTheme="outline"></i>
-            {{"Download_desktop_app" | translate}}
-          </a>
-        </div>
+        @if (!platform.isDesktop()) {
+          <div nz-col [nzMd]="8">
+            <a class="button" href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/latest" nz-button nzType="primary" target="_blank">
+              <i nz-icon nzType="download" nzTheme="outline"></i>
+              {{"Download_desktop_app" | translate}}
+            </a>
+          </div>
+        }
         <div nz-col [nzMd]="8">
-          <button class="button patreon-button" nz-button nzType="primary" *ngIf="showPatreonButton$ | async" (click)="openSupportPopup()">
-            <span>{{'COMMON.Support_us' | translate}}</span>
-          </button>
+          @if (showPatreonButton$ | async) {
+            <button class="button patreon-button" nz-button nzType="primary" (click)="openSupportPopup()">
+              <span>{{'COMMON.Support_us' | translate}}</span>
+            </button>
+          }
         </div>
       </div>
 
@@ -51,21 +57,31 @@
       <nz-card [nzTitle]="'SEARCH_INTRO.Features_header' | translate">
 
         <nz-list [nzDataSource]="features" [nzRenderItem]="featureRow"
-                 nzSplit="false">
+          nzSplit="false">
           <ng-template #featureRow let-feature>
             <nz-list-item [nzActions]="[navigateTo]">
               <nz-list-item-meta [nzDescription]="('SEARCH_INTRO.DESCRIPTION.'+feature.description) | translate"
-                                 [nzTitle]="feature.title | translate" [nzAvatar]="avatarTpl">
+                [nzTitle]="feature.title | translate" [nzAvatar]="avatarTpl">
               </nz-list-item-meta>
               <ng-template #avatarTpl>
                 <div class="feature-icon">
-                  <ng-container [ngSwitch]="feature.icon.type">
-                    <i *ngSwitchCase="SidebarIconType.ANTD" nz-icon [nzType]="feature.icon.content"></i>
-                    <i *ngSwitchCase="SidebarIconType.ANTD_ICONFONT" nz-icon [nzIconfont]="feature.icon.content"></i>
-                    <i *ngSwitchCase="SidebarIconType.COMPANION_SVG" class="companion-svg anticon" [innerHTML]="feature.icon.content"></i>
-                    <i *ngSwitchCase="SidebarIconType.CUSTOM_FONT" class="teamcraft-svg anticon" [innerHTML]="feature.icon.content"></i>
-                    <span *ngSwitchCase="SidebarIconType.CUSTOM" [innerHTML]="feature.icon.content"></span>
-                  </ng-container>
+                  @switch (feature.icon.type) {
+                    @case (SidebarIconType.ANTD) {
+                      <i nz-icon [nzType]="feature.icon.content"></i>
+                    }
+                    @case (SidebarIconType.ANTD_ICONFONT) {
+                      <i nz-icon [nzIconfont]="feature.icon.content"></i>
+                    }
+                    @case (SidebarIconType.COMPANION_SVG) {
+                      <i class="companion-svg anticon" [innerHTML]="feature.icon.content"></i>
+                    }
+                    @case (SidebarIconType.CUSTOM_FONT) {
+                      <i class="teamcraft-svg anticon" [innerHTML]="feature.icon.content"></i>
+                    }
+                    @case (SidebarIconType.CUSTOM) {
+                      <span [innerHTML]="feature.icon.content"></span>
+                    }
+                  }
                 </div>
               </ng-template>
               <ng-template #navigateTo>
@@ -86,17 +102,19 @@
           </a>
         </ng-template>
         <div class="flex-column gap-5">
-          <div class="guide-row" [class.with-border]="!last" *ngFor="let guide of guides$ | async; last as last">
-            <img src="{{guide.banner}}" alt="{{guide.title}}" class="guide-banner">
-            <div class="flex-column gap-2">
-              <h3>{{guide.title}}</h3>
-              <div nz-typography nzEllipsis [nzEllipsisRows]="2" class="guide-description">{{guide.description}}</div>
-              <a nz-button nzSize="small" nzType="primary" nzBlock href="https://guides.ffxivteamcraft.com/guide/{{guide.slug}}"
-                 pirschEvent="homepage guide click">
-                {{'SEARCH_INTRO.Open_in_guides' | translate}}
-              </a>
+          @for (guide of guides$ | async; track guide; let last = $last) {
+            <div class="guide-row" [class.with-border]="!last">
+              <img src="{{guide.banner}}" alt="{{guide.title}}" class="guide-banner">
+              <div class="flex-column gap-2">
+                <h3>{{guide.title}}</h3>
+                <div nz-typography nzEllipsis [nzEllipsisRows]="2" class="guide-description">{{guide.description}}</div>
+                <a nz-button nzSize="small" nzType="primary" nzBlock href="https://guides.ffxivteamcraft.com/guide/{{guide.slug}}"
+                  pirschEvent="homepage guide click">
+                  {{'SEARCH_INTRO.Open_in_guides' | translate}}
+                </a>
+              </div>
             </div>
-          </div>
+          }
         </div>
       </nz-card>
     </div>

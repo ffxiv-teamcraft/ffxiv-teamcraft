@@ -1,28 +1,40 @@
-<nz-badge [nzColor]="getColor(state)" *ngIf="action">
-  <div (click)="ignoreDisabled || (!disabled && !notEnoughCp)?actionclick.emit():null"
-       (contextmenu)="showStateMenu?contextMenu($event, template):null"
-       class="action-container">
-    <div [appXivdbActionTooltipDisabled]="tooltipDisabled || action.getId(getJobId()) < 0"
-         [appXivdbActionTooltip]="action.getId(getJobId())"
-         [appXivdbActionState]="state"
-         [appXivdbActionStateColor]="getColor(state)"
-         [ngClass]="{'wasted': wasted, 'disabled': disabled || notEnoughCp || !safe, 'not-enough-cp': notEnoughCp}"
-         class="action">
-      <img alt="{{getAlt()}}" src="{{action.getId(getJobId()) | actionIcon | xivapiIcon}}" class="action-icon">
-      <div *ngIf="notEnoughCp || disabled" class="red-overlay"></div>
-      <i *ngIf="failed || !safe" class="material-icons failed">close</i>
-      <span *ngIf="!hideCost && action.getBaseCPCost(simulation) > 0 && (cpCost === undefined || cpCost !== 0)"
+@if (action) {
+  <nz-badge [nzColor]="getColor(state)">
+    <div (click)="ignoreDisabled || (!disabled && !notEnoughCp)?actionclick.emit():null"
+      (contextmenu)="showStateMenu?contextMenu($event, template):null"
+      class="action-container">
+      <div [appXivdbActionTooltipDisabled]="tooltipDisabled || action.getId(getJobId()) < 0"
+        [appXivdbActionTooltip]="action.getId(getJobId())"
+        [appXivdbActionState]="state"
+        [appXivdbActionStateColor]="getColor(state)"
+        [ngClass]="{'wasted': wasted, 'disabled': disabled || notEnoughCp || !safe, 'not-enough-cp': notEnoughCp}"
+        class="action">
+        <img alt="{{getAlt()}}" src="{{action.getId(getJobId()) | actionIcon | xivapiIcon}}" class="action-icon">
+        @if (notEnoughCp || disabled) {
+          <div class="red-overlay"></div>
+        }
+        @if (failed || !safe) {
+          <i class="material-icons failed">close</i>
+        }
+        @if (!hideCost && action.getBaseCPCost(simulation) > 0 && (cpCost === undefined || cpCost !== 0)) {
+          <span
             class="cost">
             {{(cpCost === undefined ? action.getBaseCPCost(simulation) : cpCost) | absolute}}
-        </span>
+          </span>
+        }
+      </div>
     </div>
-  </div>
-</nz-badge>
+  </nz-badge>
+}
 <nz-dropdown-menu #template="nzDropdownMenu">
-  <ul (click)="close()" nz-menu *ngIf="simulation">
-    <li *ngFor="let condition of availableConditions" (click)="setState(condition.condition)" [nzSelected]="state === condition.condition"
+  @if (simulation) {
+    <ul (click)="close()" nz-menu>
+      @for (condition of availableConditions; track condition) {
+        <li (click)="setState(condition.condition)" [nzSelected]="state === condition.condition"
         nz-menu-item>{{('SIMULATOR.STATE.' + condition.name) | translate}}</li>
-    <li (click)="failChange.next(!failed)" [nzSelected]="failed"
-        nz-menu-item>{{'SIMULATOR.STATE.Fail' | translate}}</li>
-  </ul>
+      }
+      <li (click)="failChange.next(!failed)" [nzSelected]="failed"
+      nz-menu-item>{{'SIMULATOR.STATE.Fail' | translate}}</li>
+    </ul>
+  }
 </nz-dropdown-menu>

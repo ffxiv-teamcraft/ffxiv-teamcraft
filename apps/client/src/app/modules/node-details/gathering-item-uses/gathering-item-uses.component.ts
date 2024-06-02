@@ -10,7 +10,7 @@ import { ItemNamePipe } from '../../../pipes/pipes/item-name.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-gathering-item-uses',
@@ -18,7 +18,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     styleUrls: ['./gathering-item-uses.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NzPopoverModule, FlexModule, NgFor, AsyncPipe, TranslateModule, ItemNamePipe, XivapiIconPipe, LazyIconPipe, I18nPipe]
+    imports: [NzPopoverModule, FlexModule, AsyncPipe, TranslateModule, ItemNamePipe, XivapiIconPipe, LazyIconPipe, I18nPipe]
 })
 export class GatheringItemUsesComponent {
 

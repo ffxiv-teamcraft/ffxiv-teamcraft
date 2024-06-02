@@ -13,7 +13,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
@@ -21,7 +21,7 @@ import { DialogComponent } from '../../../core/dialog.component';
   templateUrl: './tags-popup.component.html',
   styleUrls: ['./tags-popup.component.less'],
   standalone: true,
-  imports: [NgIf, FlexModule, NzSelectModule, FormsModule, NgFor, NzButtonModule, NzWaveModule, PageLoaderComponent, AsyncPipe, TranslateModule]
+  imports: [FlexModule, NzSelectModule, FormsModule, NzButtonModule, NzWaveModule, PageLoaderComponent, AsyncPipe, TranslateModule]
 })
 export class TagsPopupComponent extends DialogComponent implements OnInit {
 

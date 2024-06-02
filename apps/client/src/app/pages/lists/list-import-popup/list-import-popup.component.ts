@@ -19,14 +19,14 @@ import { FormsModule } from '@angular/forms';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzGridModule } from 'ng-zorro-antd/grid';
-import { NgIf } from '@angular/common';
+
 
 @Component({
     selector: 'app-list-import-popup',
     templateUrl: './list-import-popup.component.html',
     styleUrls: ['./list-import-popup.component.less'],
     standalone: true,
-    imports: [NgIf, NzGridModule, NzFormModule, NzInputModule, FormsModule, FlexModule, NzCheckboxModule, NzButtonModule, NzWaveModule, PageLoaderComponent, TranslateModule]
+    imports: [NzGridModule, NzFormModule, NzInputModule, FormsModule, FlexModule, NzCheckboxModule, NzButtonModule, NzWaveModule, PageLoaderComponent, TranslateModule]
 })
 export class ListImportPopupComponent {
 

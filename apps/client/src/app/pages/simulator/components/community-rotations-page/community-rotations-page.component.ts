@@ -20,7 +20,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { TutorialStepDirective } from '../../../../core/tutorial/tutorial-step.directive';
 import { FormsModule } from '@angular/forms';
@@ -32,7 +32,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     templateUrl: './community-rotations-page.component.html',
     styleUrls: ['./community-rotations-page.component.less'],
     standalone: true,
-    imports: [FlexModule, NzInputModule, FormsModule, TutorialStepDirective, NzSelectModule, NgFor, NzButtonModule, NzInputNumberModule, NgIf, NzWaveModule, NzToolTipModule, NzIconModule, PageLoaderComponent, RotationPanelComponent, NzPaginationModule, FullpageMessageComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe]
+    imports: [FlexModule, NzInputModule, FormsModule, TutorialStepDirective, NzSelectModule, NzButtonModule, NzInputNumberModule, NzWaveModule, NzToolTipModule, NzIconModule, PageLoaderComponent, RotationPanelComponent, NzPaginationModule, FullpageMessageComponent, AsyncPipe, TranslateModule, I18nPipe, I18nRowPipe]
 })
 export class CommunityRotationsPageComponent {
 

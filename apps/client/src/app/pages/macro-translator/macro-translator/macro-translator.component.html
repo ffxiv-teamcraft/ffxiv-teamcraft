@@ -3,25 +3,39 @@
   <div fxLayout="column" fxLayoutGap="10px">
     <h3>{{'MACRO_TRANSLATION.Macro_language' | translate}}</h3>
     <nz-radio-group [(ngModel)]="macroLanguage">
-      <label *ngFor="let language of languages" [nzValue]="language.id" nz-radio-button>{{language.name}}</label>
+      @for (language of languages; track language) {
+        <label [nzValue]="language.id" nz-radio-button>{{language.name}}</label>
+      }
     </nz-radio-group>
   </div>
 
   <div fxLayout="column" fxLayoutGap="10px">
-  <textarea *ngIf="macroLanguage" [(ngModel)]="macroToTranslate" [nzAutosize]="{minRows: 5, maxRows: 15}" nz-input
-            placeholder="{{'MACRO_TRANSLATION.Macro_to_translate' | translate}}"
-            rows="4"></textarea>
+    @if (macroLanguage) {
+      <textarea [(ngModel)]="macroToTranslate" [nzAutosize]="{minRows: 5, maxRows: 15}" nz-input
+        placeholder="{{'MACRO_TRANSLATION.Macro_to_translate' | translate}}"
+      rows="4"></textarea>
+    }
   </div>
 
-  <button (click)="translateMacro()" *ngIf="macroToTranslate" nz-button nzType="primary">{{'MACRO_TRANSLATION.Do_translate' | translate}}</button>
+  @if (macroToTranslate) {
+    <button (click)="translateMacro()" nz-button nzType="primary">{{'MACRO_TRANSLATION.Do_translate' | translate}}</button>
+  }
 
-  <nz-tabset *ngIf="!invalidInputs && translationDone">
-    <nz-tab *ngFor="let macroTranslatedTab of macroTranslatedTabs" [nzTitle]="macroTranslatedTab.label">
-      <span *ngFor="let row of macroTranslatedTab.content">{{row}}<br/></span>
-    </nz-tab>
-  </nz-tabset>
+  @if (!invalidInputs && translationDone) {
+    <nz-tabset>
+      @for (macroTranslatedTab of macroTranslatedTabs; track macroTranslatedTab) {
+        <nz-tab [nzTitle]="macroTranslatedTab.label">
+          @for (row of macroTranslatedTab.content; track row) {
+            <span>{{row}}<br/></span>
+          }
+        </nz-tab>
+      }
+    </nz-tabset>
+  }
 
-  <nz-alert *ngIf="invalidInputs" [nzMessage]="'MACRO_TRANSLATION.Invalid_macro_or_language' | translate"
-            nzType="error" class="dark">
-  </nz-alert>
+  @if (invalidInputs) {
+    <nz-alert [nzMessage]="'MACRO_TRANSLATION.Invalid_macro_or_language' | translate"
+      nzType="error" class="dark">
+    </nz-alert>
+  }
 </div>

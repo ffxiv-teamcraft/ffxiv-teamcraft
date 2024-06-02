@@ -7,7 +7,7 @@ import { FishingSpotUtilsService } from '../fishing-spot-utils.service';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { ItemIconComponent } from '../../../../modules/item-icon/item-icon/item-icon.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
-import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe, DecimalPipe } from '@angular/common';
+import { NgTemplateOutlet, AsyncPipe, DecimalPipe } from '@angular/common';
 
 /**
  * Renders a data grid for the fishing spot based on the provided Datagrid input.
@@ -20,7 +20,7 @@ import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe, DecimalPipe } from '@angular/
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [FishingSpotUtilsService],
     standalone: true,
-    imports: [NgIf, NzTableModule, NgFor, NgTemplateOutlet, ItemIconComponent, NzToolTipModule, AsyncPipe, DecimalPipe]
+    imports: [NzTableModule, NgTemplateOutlet, ItemIconComponent, NzToolTipModule, AsyncPipe, DecimalPipe]
 })
 export class FishingSpotDatagridComponent<T extends string | number = number> {
   public readonly activeFish$ = new BehaviorSubject<number | undefined>(undefined);

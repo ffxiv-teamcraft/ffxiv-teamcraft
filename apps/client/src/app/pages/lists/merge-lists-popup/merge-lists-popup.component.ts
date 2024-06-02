@@ -18,7 +18,7 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe, UpperCasePipe } from '@angular/common';
+import { NgTemplateOutlet, AsyncPipe, UpperCasePipe } from '@angular/common';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 
 @Component({
@@ -27,7 +27,7 @@ import { NzAlertModule } from 'ng-zorro-antd/alert';
     styleUrls: ['./merge-lists-popup.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzAlertModule, NgIf, NgTemplateOutlet, NgFor, FlexModule, NzButtonModule, NzWaveModule, NzCheckboxModule, FormsModule, NzListModule, NzTagModule, NzToolTipModule, AsyncPipe, UpperCasePipe, TranslateModule]
+    imports: [NzAlertModule, NgTemplateOutlet, FlexModule, NzButtonModule, NzWaveModule, NzCheckboxModule, FormsModule, NzListModule, NzTagModule, NzToolTipModule, AsyncPipe, UpperCasePipe, TranslateModule]
 })
 export class MergeListsPopupComponent extends AbstractListsSelectionPopupComponent {
 

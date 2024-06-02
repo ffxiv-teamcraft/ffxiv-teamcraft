@@ -2,74 +2,114 @@
   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
     <div fxLayout="column">
       <div>
-        {{node.map | mapName | i18n}} <span *ngIf="node.type !== -10">- lvl {{node.level}}</span>
-        <ng-container [ngSwitch]="node.type" *ngIf="!hideDbButton && node.id">
-          <app-db-button *ngSwitchCase="-5" [id]="node.id" type="fishing-spot"></app-db-button>
-          <app-db-button *ngSwitchCase="4" [id]="node.id" type="spearfishing-spot"></app-db-button>
-          <app-db-button *ngSwitchDefault [id]="node.id" type="node"></app-db-button>
-        </ng-container>
-      </div>
-      <div>X: {{node.x | number:'1.1-1':translate.currentLang}}, Y: {{node.y | number:'1.1-1':translate.currentLang}}</div>
-      <div>
-        <nz-tag *ngIf="node.ephemeral" nzColor="#108ee9">
+        {{node.map | mapName | i18n}} @if (node.type !== -10) {
+        <span>- lvl {{node.level}}</span>
+      }
+      @if (!hideDbButton && node.id) {
+        @switch (node.type) {
+          @case (-5) {
+            <app-db-button [id]="node.id" type="fishing-spot"></app-db-button>
+          }
+          @case (4) {
+            <app-db-button [id]="node.id" type="spearfishing-spot"></app-db-button>
+          }
+          @default {
+            <app-db-button [id]="node.id" type="node"></app-db-button>
+          }
+        }
+      }
+    </div>
+    <div>X: {{node.x | number:'1.1-1':translate.currentLang}}, Y: {{node.y | number:'1.1-1':translate.currentLang}}</div>
+    <div>
+      @if (node.ephemeral) {
+        <nz-tag nzColor="#108ee9">
           {{'Ephemeral_tag' | translate}}
         </nz-tag>
-        <nz-tag *ngIf="node.legendary" nzColor="#108ee9">
+      }
+      @if (node.legendary) {
+        <nz-tag nzColor="#108ee9">
           {{'GATHERING_LOCATIONS.Legendary' | translate}}
         </nz-tag>
-        <nz-tag *ngIf="node.matchingItemIsHidden" nzColor="#108ee9">
+      }
+      @if (node.matchingItemIsHidden) {
+        <nz-tag nzColor="#108ee9">
           {{'GATHERING_LOCATIONS.Hidden_item' | translate}}
         </nz-tag>
-        <img *ngIf="node.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
-             src="./assets/icons/status/snagging.png">
+      }
+      @if (node.snagging) {
+        <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
+          src="./assets/icons/status/snagging.png">
+        }
       </div>
-      <div *ngIf="node.folklore" class="flex-row gap-5 align-center">
-        <img [src]="node.folklore | lazyIcon" alt="" class="item-icon">
-        <app-i18n-name content="items" [id]="node.folklore"></app-i18n-name>
-      </div>
+      @if (node.folklore) {
+        <div class="flex-row gap-5 align-center">
+          <img [src]="node.folklore | lazyIcon" alt="" class="item-icon">
+          <app-i18n-name content="items" [id]="node.folklore"></app-i18n-name>
+        </div>
+      }
     </div>
   </div>
   <div fxLayout="row wrap" fxLayoutGap="5px">
-      <span *ngIf="node.oceanFishingTime !== undefined && node.oceanFishingTime !== null">
+    @if (node.oceanFishingTime !== undefined && node.oceanFishingTime !== null) {
+      <span>
         {{'ALLAGAN_REPORTS.Ocean_fishing_time' | translate}}: {{('OCEAN_FISHING.' + OceanFishingTime[node.oceanFishingTime]) | translate}}
       </span>
-    <span *ngIf="node.spawns !== undefined">
-        <i *ngFor="let time of node.spawns">
-          {{time | hourDisplay}} - {{(time + node.duration / 60) % 24 | floor:2 | hourDisplay}}
-        </i>
+    }
+    @if (node.spawns !== undefined) {
+      <span>
+        @for (time of node.spawns; track time) {
+          <i>
+            {{time | hourDisplay}} - {{(time + node.duration / 60) % 24 | floor:2 | hourDisplay}}
+          </i>
+        }
       </span>
+    }
   </div>
-  <ng-container *ngIf="!hideTimers">
-    <ng-container *ngFor="let generatedAlarm of alarms; trackBy: trackByAlarm">
-      <ng-container *ngIf="(generatedAlarm | alarmDisplay | async) as alarm">
-        <div *ngIf="alarm.remainingTime !== undefined"
-             fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img *ngIf="generatedAlarm.fishEyes" nz-tooltip [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate"
-               [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon"
-               alt="" class="fish-eyes-alarm">
-          <ng-container *ngIf="showAlarmsIntegration">
+  @if (!hideTimers) {
+    @for (generatedAlarm of alarms; track trackByAlarm($index, generatedAlarm)) {
+      @if ((generatedAlarm | alarmDisplay | async); as alarm) {
+        @if (alarm.remainingTime !== undefined) {
+          <div
+            fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          @if (generatedAlarm.fishEyes) {
+            <img nz-tooltip [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate"
+              [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon"
+              alt="" class="fish-eyes-alarm">
+          }
+          @if (showAlarmsIntegration) {
             <app-alarm-button [alarm]="alarm.alarm" (toggleAlarm)="toggleAlarm($event)" (addAlarmWithGroup)="toggleAlarm($event, $event.group)"
-                              [alarmGroups]="alarmGroups$ | async" [showPosition]="false"></app-alarm-button>
-          </ng-container>
+            [alarmGroups]="alarmGroups$ | async" [showPosition]="false"></app-alarm-button>
+          }
         </div>
-      </ng-container>
-    </ng-container>
-  </ng-container>
-  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-    <div *ngIf="node.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
-      <div *ngFor="let weather of node.weathersFrom">
-        <img [nzTooltipTitle]="weather | i18nRow:'weathers' | i18n" [src]="weather | weatherIcon" alt="{{weather | i18nRow:'weathers' | i18n}}"
-             nz-tooltip>
-      </div>
+      }
+    }
+  }
+}
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+  @if (node.weathersFrom !== undefined) {
+    <div fxLayout="row wrap" fxLayoutGap="5px">
+      @for (weather of node.weathersFrom; track weather) {
+        <div>
+          <img [nzTooltipTitle]="weather | i18nRow:'weathers' | i18n" [src]="weather | weatherIcon" alt="{{weather | i18nRow:'weathers' | i18n}}"
+            nz-tooltip>
+        </div>
+      }
     </div>
-    <div *ngIf="node.weathersFrom !== undefined">
+  }
+  @if (node.weathersFrom !== undefined) {
+    <div>
       <i nz-icon nzType="right" theme="outline"></i>
     </div>
-    <div *ngIf="node.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
-      <div *ngFor="let weather of node.weathers">
-        <img [nzTooltipTitle]="weather | i18nRow:'weathers' | i18n" [src]="weather | weatherIcon" alt="{{weather | i18nRow:'weathers' | i18n}}"
-             nz-tooltip>
-      </div>
+  }
+  @if (node.weathers !== undefined) {
+    <div fxLayout="row wrap" fxLayoutGap="5px">
+      @for (weather of node.weathers; track weather) {
+        <div>
+          <img [nzTooltipTitle]="weather | i18nRow:'weathers' | i18n" [src]="weather | weatherIcon" alt="{{weather | i18nRow:'weathers' | i18n}}"
+            nz-tooltip>
+        </div>
+      }
     </div>
-  </div>
+  }
+</div>
 </div>

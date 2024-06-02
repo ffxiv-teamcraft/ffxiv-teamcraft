@@ -1,14 +1,22 @@
 <div fxLayout="{{flex}} wrap" fxLayoutAlign="flex-start">
-  <div *ngFor="let bait of baits; let index = index; let last = last" [fxLayout]="flex" fxLayoutAlign="center center"
-       fxLayoutGap="5px">
-    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <app-item-icon [itemId]="bait.id"
-                     [width]="iconWidth"></app-item-icon>
-      <div *ngIf="!hideNames" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2px">
-        <div>{{bait.id | itemName | i18n}}</div>
-        <i class="tug" *ngIf="index > 0 && bait.tug !== undefined">{{bait.tug | tugName | translate}}</i>
+  @for (bait of baits; track bait; let index = $index; let last = $last) {
+    <div [fxLayout]="flex" fxLayoutAlign="center center"
+      fxLayoutGap="5px">
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+        <app-item-icon [itemId]="bait.id"
+        [width]="iconWidth"></app-item-icon>
+        @if (!hideNames) {
+          <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2px">
+            <div>{{bait.id | itemName | i18n}}</div>
+            @if (index > 0 && bait.tug !== undefined) {
+              <i class="tug">{{bait.tug | tugName | translate}}</i>
+            }
+          </div>
+        }
       </div>
+      @if (!last) {
+        <i [nzType]="flex === 'column'?'caret-down':'caret-right'" nz-icon theme="outline"></i>
+      }
     </div>
-    <i *ngIf="!last" [nzType]="flex === 'column'?'caret-down':'caret-right'" nz-icon theme="outline"></i>
-  </div>
+  }
 </div>

@@ -16,7 +16,7 @@ import { XivapiItemTooltipDirective } from '../../tooltip/xivapi-tooltip/xivapi-
   styleUrls: ['./item-icon.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [XivapiItemTooltipDirective, NgIf, NzSkeletonModule, AsyncPipe]
+  imports: [XivapiItemTooltipDirective, NzSkeletonModule, AsyncPipe]
 })
 export class ItemIconComponent {
 

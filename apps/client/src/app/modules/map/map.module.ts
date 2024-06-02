@@ -1,7 +1,7 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MapService } from './map.service';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { MapPositionComponent } from './map-position/map-position.component';
 import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
@@ -16,9 +16,12 @@ import { RouterModule } from '@angular/router';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 
 @NgModule({
-    imports: [
+  exports: [
+    MapPositionComponent,
+    MapComponent
+  ],
+  imports: [
     CommonModule,
-    HttpClientModule,
     FlexLayoutModule,
     XivapiClientModule,
     FormsModule,
@@ -30,11 +33,8 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
     MapComponent,
     NavigationMapComponent,
     WorldNavigationMapComponent
-],
-    exports: [
-        MapPositionComponent,
-        MapComponent
-    ]
+  ],
+  providers: [provideHttpClient(withInterceptorsFromDi())]
 })
 export class MapModule {
 

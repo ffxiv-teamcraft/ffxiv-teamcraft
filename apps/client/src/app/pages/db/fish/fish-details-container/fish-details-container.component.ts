@@ -8,7 +8,7 @@ import { XivapiIconPipe } from '../../../../pipes/pipes/xivapi-icon.pipe';
 import { I18nRowPipe } from '../../../../core/i18n/i18n-row.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { I18nPipe } from '../../../../core/i18n.pipe';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
@@ -30,7 +30,7 @@ interface FishDetailsStatsSummary {
     styleUrls: ['./fish-details-container.component.less', '../../common-db.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NzButtonModule, NzIconModule, NzToolTipModule, NzSelectModule, FormsModule, NgIf, NgFor, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, XivapiIconPipe, LazyRowPipe]
+    imports: [FlexModule, NzButtonModule, NzIconModule, NzToolTipModule, NzSelectModule, FormsModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, XivapiIconPipe, LazyRowPipe]
 })
 export class FishDetailsContainerComponent {
   public readonly loading$ = this.fishCtx.statisticsByFish$.pipe(map((res) => res.loading));

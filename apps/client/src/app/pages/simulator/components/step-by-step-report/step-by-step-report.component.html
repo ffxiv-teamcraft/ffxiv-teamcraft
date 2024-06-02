@@ -1,32 +1,38 @@
 <nz-table #basicTable [nzData]="steps">
   <thead>
-  <tr>
-    <th>Step</th>
-    <th *ngIf="true|ifMobile:false">Action</th>
-    <th>CP</th>
-    <th>Durability</th>
-    <th>Quality</th>
-    <th>Progress</th>
-  </tr>
+    <tr>
+      <th>Step</th>
+      @if (true|ifMobile:false) {
+        <th>Action</th>
+      }
+      <th>CP</th>
+      <th>Durability</th>
+      <th>Quality</th>
+      <th>Progress</th>
+    </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let actionResult of basicTable.data; let i = index">
-    <td>{{i}}</td>
-    <td *ngIf="true|ifMobile:false">
-      <app-action [action]="actionResult.action | craftingAction" [hideCost]="true"></app-action>
-    </td>
-    <td>
-      {{actionResult.cpDifference > 0 ? '+' : ''}}{{actionResult.cpDifference}}
-    </td>
-    <td>
-      {{actionResult.solidityDifference > 0 ? '+' : ''}}{{actionResult.solidityDifference}}
-    </td>
-    <td>
-      {{actionResult.addedQuality > 0 ? '+' : ''}}{{actionResult.addedQuality}}
-    </td>
-    <td>
-      {{actionResult.addedProgression > 0 ? '+' : ''}}{{actionResult.addedProgression}}
-    </td>
-  </tr>
+    @for (actionResult of basicTable.data; track actionResult; let i = $index) {
+      <tr>
+        <td>{{i}}</td>
+        @if (true|ifMobile:false) {
+          <td>
+            <app-action [action]="actionResult.action | craftingAction" [hideCost]="true"></app-action>
+          </td>
+        }
+        <td>
+          {{actionResult.cpDifference > 0 ? '+' : ''}}{{actionResult.cpDifference}}
+        </td>
+        <td>
+          {{actionResult.solidityDifference > 0 ? '+' : ''}}{{actionResult.solidityDifference}}
+        </td>
+        <td>
+          {{actionResult.addedQuality > 0 ? '+' : ''}}{{actionResult.addedQuality}}
+        </td>
+        <td>
+          {{actionResult.addedProgression > 0 ? '+' : ''}}{{actionResult.addedProgression}}
+        </td>
+      </tr>
+    }
   </tbody>
 </nz-table>

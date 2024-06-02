@@ -21,7 +21,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
 import { LazyScrollComponent } from '../../../modules/lazy-scroll/lazy-scroll/lazy-scroll.component';
 import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
-import { NgFor, NgIf, NgSwitch, NgSwitchCase, AsyncPipe, LowerCasePipe, DatePipe } from '@angular/common';
+import { AsyncPipe, LowerCasePipe, DatePipe } from '@angular/common';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -32,7 +32,7 @@ import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
     templateUrl: './fish-trains.component.html',
     styleUrls: ['./fish-trains.component.less'],
     standalone: true,
-    imports: [NzPageHeaderModule, NzButtonModule, FormsModule, ReactiveFormsModule, NzInputModule, NzSelectModule, NgFor, NgIf, NzSegmentedModule, LazyScrollComponent, FullpageMessageComponent, NzDividerModule, NzGridModule, RouterLink, UserAvatarComponent, NzAvatarModule, NzToolTipModule, NgSwitch, NgSwitchCase, NzTagModule, AsyncPipe, LowerCasePipe, DatePipe, TranslateModule]
+    imports: [NzPageHeaderModule, NzButtonModule, FormsModule, ReactiveFormsModule, NzInputModule, NzSelectModule, NzSegmentedModule, LazyScrollComponent, FullpageMessageComponent, NzDividerModule, NzGridModule, RouterLink, UserAvatarComponent, NzAvatarModule, NzToolTipModule, NzTagModule, AsyncPipe, LowerCasePipe, DatePipe, TranslateModule]
 })
 export class FishTrainsComponent extends TeamcraftComponent {
 

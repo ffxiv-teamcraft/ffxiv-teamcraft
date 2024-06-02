@@ -1,4 +1,6 @@
-<button (click)="openDialog()" [disabled]="disabled$ | async" [nzSize]="size" [nzTooltipTitle]="'MARKETBOARD.Title' | translate" nz-button
-        nz-tooltip nzShape="circle" *ngIf="itemCanBeSold$ | async">
-  <i nz-icon nzType="line-chart"></i>
-</button>
+@if (itemCanBeSold$ | async) {
+  <button (click)="openDialog()" [disabled]="disabled$ | async" [nzSize]="size" [nzTooltipTitle]="'MARKETBOARD.Title' | translate" nz-button
+    nz-tooltip nzShape="circle">
+    <i nz-icon nzType="line-chart"></i>
+  </button>
+}

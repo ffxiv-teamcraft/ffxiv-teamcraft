@@ -4,7 +4,7 @@ import { MateriaService } from '../materia.service';
 import { observeInput } from '../../../core/rxjs/observe-input';
 import { map, switchMap } from 'rxjs/operators';
 import { combineLatest, of } from 'rxjs';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
@@ -13,7 +13,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./materia-slot-icon.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NgIf, AsyncPipe]
+    imports: [FlexModule, AsyncPipe]
 })
 export class MateriaSlotIconComponent {
 

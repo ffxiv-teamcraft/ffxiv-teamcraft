@@ -13,7 +13,7 @@ import { I18nPipe } from '../../../../core/i18n.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
-import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzFormModule } from 'ng-zorro-antd/form';
@@ -33,7 +33,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     styleUrls: ['./metrics-display-editor.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCardModule, TutorialStepDirective, FlexModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, NzDividerModule, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NgFor, NgIf, NzCheckboxModule, NgSwitch, NgSwitchCase, NgSwitchDefault, NzInputModule, AsyncPipe, TranslateModule, I18nPipe]
+    imports: [NzCardModule, TutorialStepDirective, FlexModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzIconModule, NzDividerModule, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NzCheckboxModule, NzInputModule, AsyncPipe, TranslateModule, I18nPipe]
 })
 export class MetricsDisplayEditorComponent {
 

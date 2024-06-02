@@ -13,7 +13,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
-import { NgSwitch, NgSwitchCase, NgIf, NgTemplateOutlet, NgFor, AsyncPipe } from '@angular/common';
+import { NgTemplateOutlet, AsyncPipe } from '@angular/common';
 import { NzStepsModule } from 'ng-zorro-antd/steps';
 import { FlexModule } from '@angular/flex-layout/flex';
 
@@ -23,7 +23,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./import-workshop-from-pcap-popup.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NzStepsModule, NgSwitch, NgSwitchCase, NzBadgeModule, NgIf, NgTemplateOutlet, NzButtonModule, NzWaveModule, NgFor, AsyncPipe, TranslateModule]
+    imports: [FlexModule, NzStepsModule, NzBadgeModule, NgTemplateOutlet, NzButtonModule, NzWaveModule, AsyncPipe, TranslateModule]
 })
 export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent implements OnInit {
   private _freeCompany = new BehaviorSubject(null);

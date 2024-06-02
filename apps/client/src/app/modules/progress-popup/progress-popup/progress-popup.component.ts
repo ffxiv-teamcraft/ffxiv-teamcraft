@@ -4,7 +4,7 @@ import { catchError, map, scan, skip, startWith } from 'rxjs/operators';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
-import { AsyncPipe, NgIf } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { DialogComponent } from '../../../core/dialog.component';
 
 @Component({
@@ -12,7 +12,7 @@ import { DialogComponent } from '../../../core/dialog.component';
   templateUrl: './progress-popup.component.html',
   styleUrls: ['./progress-popup.component.less'],
   standalone: true,
-  imports: [NgIf, NzProgressModule, NzSpinModule, AsyncPipe]
+  imports: [NzProgressModule, NzSpinModule, AsyncPipe]
 })
 export class ProgressPopupComponent extends DialogComponent implements OnInit {
 

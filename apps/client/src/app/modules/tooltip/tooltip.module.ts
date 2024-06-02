@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TooltipDataService } from './tooltip-data.service';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { XivapiActionTooltipComponent } from './xivapi-action-tooltip/xivapi-action-tooltip.component';
 import { XivapiItemTooltipDirective } from './xivapi-tooltip/xivapi-item-tooltip.directive';
@@ -20,9 +20,9 @@ import { MapModule } from '../map/map.module';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
 
 @NgModule({
-    imports: [
+  exports: [XivapiItemTooltipDirective, XivapiActionTooltipDirective, UiTextPipe, XivapiItemTooltipComponent],
+  imports: [
     CommonModule,
-    HttpClientModule,
     OverlayModule,
     FlexLayoutModule,
     TranslateModule,
@@ -34,9 +34,8 @@ import { AlarmsModule } from '../../core/alarms/alarms.module';
     MapModule,
     AlarmsModule,
     XivapiActionTooltipComponent, XivapiItemTooltipComponent, XivapiItemTooltipDirective, XivapiActionTooltipDirective, UiTextPipe
-],
-    exports: [XivapiItemTooltipDirective, XivapiActionTooltipDirective, UiTextPipe, XivapiItemTooltipComponent],
-    providers: [TooltipDataService]
+  ],
+  providers: [TooltipDataService, provideHttpClient(withInterceptorsFromDi())]
 })
 export class TooltipModule {
 }

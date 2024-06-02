@@ -4,7 +4,9 @@
   </div>
   <div class="timeline">
     <nz-timeline nzReverse="true" [nzPending]="'GEARSETS.SYNC.Syncing_gearsets' | translate">
-      <nz-timeline-item *ngFor="let entry of timeline" [nzColor]="entry.color || 'gray'">{{entry.label}}</nz-timeline-item>
+      @for (entry of timeline; track entry) {
+        <nz-timeline-item [nzColor]="entry.color || 'gray'">{{entry.label}}</nz-timeline-item>
+      }
     </nz-timeline>
   </div>
 </div>

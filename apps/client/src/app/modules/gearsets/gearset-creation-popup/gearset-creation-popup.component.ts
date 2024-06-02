@@ -13,7 +13,7 @@ import { I18nPipe } from '../../../core/i18n.pipe';
 import { JobUnicodePipe } from '../../../pipes/pipes/job-unicode.pipe';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { AsyncPipe, NgFor } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzGridModule } from 'ng-zorro-antd/grid';
@@ -26,7 +26,7 @@ import { DialogComponent } from '../../../core/dialog.component';
   templateUrl: './gearset-creation-popup.component.html',
   styleUrls: ['./gearset-creation-popup.component.less'],
   standalone: true,
-  imports: [FormsModule, FlexModule, ReactiveFormsModule, NzInputModule, NzGridModule, NzFormModule, NzSelectModule, NgFor, NzButtonModule, NzWaveModule, AsyncPipe, JobUnicodePipe, I18nPipe, TranslateModule, I18nRowPipe]
+  imports: [FormsModule, FlexModule, ReactiveFormsModule, NzInputModule, NzGridModule, NzFormModule, NzSelectModule, NzButtonModule, NzWaveModule, AsyncPipe, JobUnicodePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class GearsetCreationPopupComponent extends DialogComponent implements OnInit {
 

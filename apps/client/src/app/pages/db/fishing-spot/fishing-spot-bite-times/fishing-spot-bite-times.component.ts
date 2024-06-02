@@ -18,7 +18,7 @@ import { ChartComponent } from './chart.component';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { NzCardModule } from 'ng-zorro-antd/card';
 
 const fishImageUrls = [];
@@ -50,7 +50,7 @@ interface FishingSpotChartData {
     styleUrls: ['./fishing-spot-bite-times.component.less', '../../common-db.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCardModule, NgIf, NzSelectModule, FormsModule, NgFor, FlexModule, ChartComponent, NzEmptyModule, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, LazyIconPipe, TugNamePipe]
+    imports: [NzCardModule, NzSelectModule, FormsModule, FlexModule, ChartComponent, NzEmptyModule, AsyncPipe, I18nPipe, TranslateModule, ItemNamePipe, LazyIconPipe, TugNamePipe]
 })
 export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
   public readonly colors = [{ tug: Tug.LIGHT, color: '184, 245, 110' }, { tug: Tug.MEDIUM, color: '245, 196, 110' }, { tug: Tug.BIG, color: '245, 153, 110' }];

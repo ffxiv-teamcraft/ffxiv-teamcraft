@@ -20,7 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgIf, NgFor, AsyncPipe, KeyValuePipe } from '@angular/common';
+import { AsyncPipe, KeyValuePipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
@@ -29,7 +29,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./voyage-tracker.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NgIf, NzButtonModule, NzWaveModule, NzSwitchModule, FormsModule, PageLoaderComponent, NgFor, NzCollapseModule, NzGridModule, NzToolTipModule, NzPopconfirmModule, NzIconModule, VesselListComponent, FullpageMessageComponent, AsyncPipe, KeyValuePipe, TranslateModule]
+    imports: [FlexModule, NzButtonModule, NzWaveModule, NzSwitchModule, FormsModule, PageLoaderComponent, NzCollapseModule, NzGridModule, NzToolTipModule, NzPopconfirmModule, NzIconModule, VesselListComponent, FullpageMessageComponent, AsyncPipe, KeyValuePipe, TranslateModule]
 })
 export class VoyageTrackerComponent extends TeamcraftComponent {
   isLoading$ = new BehaviorSubject(false);

@@ -17,7 +17,7 @@ import { FishingBaitComponent } from '../../fishing-bait/fishing-bait/fishing-ba
 import { NodeDetailsComponent } from '../../node-details/node-details/node-details.component';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+
 
 @Component({
     selector: 'app-gathered-by',
@@ -25,7 +25,7 @@ import { NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/c
     styleUrls: ['./gathered-by.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NgFor, FlexModule, NgSwitch, NgSwitchCase, DbButtonComponent, NgSwitchDefault, NodeDetailsComponent, FishingBaitComponent, NzTagModule, NzToolTipModule, ItemIconComponent, SpearfishingSpeedComponent, MapComponent, NzDividerModule, I18nPipe, TranslateModule, I18nRowPipe, NodeTypeIconPipe, NzPipesModule, YoutubeEmbedPipe]
+    imports: [FlexModule, DbButtonComponent, NodeDetailsComponent, FishingBaitComponent, NzTagModule, NzToolTipModule, ItemIconComponent, SpearfishingSpeedComponent, MapComponent, NzDividerModule, I18nPipe, TranslateModule, I18nRowPipe, NodeTypeIconPipe, NzPipesModule, YoutubeEmbedPipe]
 })
 export class GatheredByComponent extends ItemDetailsPopup {
 

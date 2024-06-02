@@ -37,7 +37,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCommentModule } from 'ng-zorro-antd/comment';
 import { FullpageMessageComponent } from '../../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
-import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe, DatePipe } from '@angular/common';
+import { NgTemplateOutlet, AsyncPipe, DatePipe } from '@angular/common';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 
 @Component({
@@ -45,7 +45,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
     templateUrl: './db-comments.component.html',
     styleUrls: ['./db-comments.component.less'],
     standalone: true,
-    imports: [NzDividerModule, NgIf, FullpageMessageComponent, NzCommentModule, FlexModule, NzToolTipModule, NzButtonModule, NzIconModule, NzAvatarModule, RouterLink, NzPopconfirmModule, NgTemplateOutlet, NgFor, NzGridModule, NzFormModule, NzInputModule, FormsModule, NzWaveModule, AsyncPipe, DatePipe, TranslateModule, CharacterNamePipe, XivapiI18nPipe, CharacterAvatarPipe, UserLevelPipe, IsPatronPipe, IsVerifiedPipe, CommentLinksPipe]
+    imports: [NzDividerModule, FullpageMessageComponent, NzCommentModule, FlexModule, NzToolTipModule, NzButtonModule, NzIconModule, NzAvatarModule, RouterLink, NzPopconfirmModule, NgTemplateOutlet, NzGridModule, NzFormModule, NzInputModule, FormsModule, NzWaveModule, AsyncPipe, DatePipe, TranslateModule, CharacterNamePipe, XivapiI18nPipe, CharacterAvatarPipe, UserLevelPipe, IsPatronPipe, IsVerifiedPipe, CommentLinksPipe]
 })
 export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
   userLevels = UserLevel;

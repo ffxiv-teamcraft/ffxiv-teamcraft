@@ -19,7 +19,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { FormsModule } from '@angular/forms';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
-import { NgFor, NgIf } from '@angular/common';
+
 import { FlexModule } from '@angular/flex-layout/flex';
 import { DialogComponent } from '../../../../core/dialog.component';
 
@@ -28,7 +28,7 @@ import { DialogComponent } from '../../../../core/dialog.component';
   templateUrl: './macro-popup.component.html',
   styleUrls: ['./macro-popup.component.less'],
   standalone: true,
-  imports: [FlexModule, NgIf, NzAlertModule, NzCheckboxModule, FormsModule, NzGridModule, NzFormModule, NzInputNumberModule, NzInputModule, NgFor, NzButtonModule, NzWaveModule, ClipboardDirective, NzIconModule, TranslateModule]
+  imports: [FlexModule, NzAlertModule, NzCheckboxModule, FormsModule, NzGridModule, NzFormModule, NzInputNumberModule, NzInputModule, NzButtonModule, NzWaveModule, ClipboardDirective, NzIconModule, TranslateModule]
 })
 export class MacroPopupComponent extends DialogComponent implements OnInit {
 

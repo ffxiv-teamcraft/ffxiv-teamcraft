@@ -1,182 +1,253 @@
 <app-overlay-container uri="/fishing-reporter-overlay">
-  <div *ngIf="state$ | async as state" class="state-container">
-    <ng-container *ngIf="getErrors(state) as errors">
-      <div class="errors" fxLayout="column" *ngIf="errors.length > 0">
-        <div class="error" *ngFor="let error of errors">- {{error | translate}}</div>
-      </div>
-    </ng-container>
-    <nz-alert nzType="error" nzCloseable *ngIf="state.wrongSpot"
-              [nzMessage]="'FISH_TRAIN.Wrong_spot' | translate"
-              [nzDescription]="'FISH_TRAIN.Wrong_spot_description' | translate"></nz-alert>
-    <nz-alert nzType="info"
-              *ngIf="isIgnoredSpot$ | async"
-              nzCloseable
-              [nzMessage]="'DB.FISH.OVERLAY.Ignored_spot' | translate"
-              [nzDescription]="'DB.FISH.OVERLAY.Ignored_spot_description' | translate"></nz-alert>
-    <ng-template #unknown>
-      <span class="error-text">{{'COMMON.Unknown' | translate}}</span>
-    </ng-template>
-    <div fxLayout="column" fxLayoutGap="5px">
-      <div fxLayout="row" fxLayoutAlign="space-between center">
-        <div>{{'DB.FISH.OVERLAY.Fishing' | translate}}</div>
-        <div>{{(state.isFishing ? 'Yes' : 'No') | translate}}</div>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="space-between center">
-        <div>{{'DB.FISH.OVERLAY.Bait' | translate}}</div>
-        <div *ngIf="(state.baitId || state.mooch); else unknown" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
-          <img class="fish-icon" src="{{(state.mooch || state.baitId) | lazyIcon | xivapiIcon}}">
-          <div>{{(state.mooch || state.baitId) | itemName | i18n}}</div>
+  @if (state$ | async; as state) {
+    <div class="state-container">
+      @if (getErrors(state); as errors) {
+        @if (errors.length > 0) {
+          <div class="errors" fxLayout="column">
+            @for (error of errors; track error) {
+              <div class="error">- {{error | translate}}</div>
+            }
+          </div>
+        }
+      }
+      @if (state.wrongSpot) {
+        <nz-alert nzType="error" nzCloseable
+          [nzMessage]="'FISH_TRAIN.Wrong_spot' | translate"
+        [nzDescription]="'FISH_TRAIN.Wrong_spot_description' | translate"></nz-alert>
+      }
+      @if (isIgnoredSpot$ | async) {
+        <nz-alert nzType="info"
+          nzCloseable
+          [nzMessage]="'DB.FISH.OVERLAY.Ignored_spot' | translate"
+        [nzDescription]="'DB.FISH.OVERLAY.Ignored_spot_description' | translate"></nz-alert>
+      }
+      <div fxLayout="column" fxLayoutGap="5px">
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div>{{'DB.FISH.OVERLAY.Fishing' | translate}}</div>
+          <div>{{(state.isFishing ? 'Yes' : 'No') | translate}}</div>
         </div>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="space-between center">
-        <div>{{'DB.FISH.OVERLAY.Throw_etime' | translate}}</div>
-        <div>{{throwTime$ | async | date:'hh:mm:ss':'UTC'}}</div>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="space-between center">
-        <div>{{'DB.FISH.OVERLAY.Time_since_thrown' | translate}}</div>
-        <div>{{timeSinceThrown$ | async}}s</div>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="space-between center">
-        <div>{{'DB.FISH.OVERLAY.Mooch' | translate}}</div>
-        <div>{{(state.mooch ? 'Yes' : 'No') | translate}}</div>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="space-between center">
-        <div>{{'DB.FISH.OVERLAY.Spot' | translate}}</div>
-        <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px" *ngIf="state.spot; else unknown">
-          <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTooltipTitle]="'COMMON.Open_in_main_window' | translate"
-                  (click)="openSpotInMainWindow(state.spot)">
-            <i nz-icon nzType="info"></i>
-          </button>
-          <div>{{state.spot.zoneId | i18nRow:'places' | i18n}}</div>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div>{{'DB.FISH.OVERLAY.Bait' | translate}}</div>
+          @if ((state.baitId || state.mooch)) {
+            <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
+              <img class="fish-icon" src="{{(state.mooch || state.baitId) | lazyIcon | xivapiIcon}}">
+              <div>{{(state.mooch || state.baitId) | itemName | i18n}}</div>
+            </div>
+          } @else {
+            <span class="error-text">{{'COMMON.Unknown' | translate}}</span>
+          }
         </div>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="state.train">
-        <div>{{'FISH_TRAIN.Train' | translate}}</div>
-        <div>
-          <button nz-button nzSize="small" nzShape="circle" (click)="openTrainInMainWindow(state.train.$key)"
-                  nz-tooltip [nzTooltipTitle]="'COMMON.Open_in_main_window' | translate">
-            <i nz-icon nzType="info"></i>
-          </button>
-          {{state.train.name || ('FISH_TRAIN.Details_title' | translate:{ id: state.train.$key })}}
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div>{{'DB.FISH.OVERLAY.Throw_etime' | translate}}</div>
+          <div>{{throwTime$ | async | date:'hh:mm:ss':'UTC'}}</div>
         </div>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="space-between center">
-        <div>{{'DB.FISH.OVERLAY.Previous_weather' | translate}}</div>
-        <div *ngIf="state.previousWeatherId; else unknown" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
-          <img class="fish-icon" *ngIf="state.previousWeatherId > 0"
-               src="{{state.previousWeatherId | weatherIcon | xivapiIcon}}"
-               alt="{{state.previousWeatherId | i18nRow:'weathers' | i18n}}">
-          <div>{{state.previousWeatherId | i18nRow:'weathers' | i18n}}</div>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div>{{'DB.FISH.OVERLAY.Time_since_thrown' | translate}}</div>
+          <div>{{timeSinceThrown$ | async}}s</div>
         </div>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="space-between center">
-        <div>{{'DB.FISH.OVERLAY.Current_weather' | translate}}</div>
-        <div *ngIf="state.weatherId; else unknown" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
-          <img class="fish-icon" *ngIf="state.weatherId > 0"
-               src="{{state.weatherId | weatherIcon | xivapiIcon}}"
-               alt="{{state.weatherId | i18nRow:'weathers' | i18n}}">
-          <div>{{state.weatherId | i18nRow:'weathers' | i18n}}</div>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div>{{'DB.FISH.OVERLAY.Mooch' | translate}}</div>
+          <div>{{(state.mooch ? 'Yes' : 'No') | translate}}</div>
         </div>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="space-between center">
-        <div>{{'DB.FISH.OVERLAY.Stats' | translate}}</div>
-        <div *ngIf="state.stats; else unknown">{{state.stats.gathering}} / {{state.stats.perception}} / {{state.stats.gp}}</div>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="space-between center">
-        <div>{{'DB.FISH.OVERLAY.Statuses' | translate}}</div>
-        <div *ngIf="state.statuses; else unknown" fxLayout="row" fxLayoutGap="5px">
-          <img *ngFor="let status of state.statuses; trackBy: trackByValue" src="{{status | lazyRow:'statuses':'icon' | async | xivapiIcon}}" nz-tooltip
-               [nzTooltipTitle]="status | i18nRow:'statuses' | async | i18n"
-               alt="{{status}}">
-          <span *ngIf="state.statuses.length === 0">
-            {{'DB.FISH.OVERLAY.No_statuses' | translate}}
-          </span>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div>{{'DB.FISH.OVERLAY.Spot' | translate}}</div>
+          @if (state.spot) {
+            <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
+              <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTooltipTitle]="'COMMON.Open_in_main_window' | translate"
+                (click)="openSpotInMainWindow(state.spot)">
+                <i nz-icon nzType="info"></i>
+              </button>
+              <div>{{state.spot.zoneId | i18nRow:'places' | i18n}}</div>
+            </div>
+          } @else {
+            <span class="error-text">{{'COMMON.Unknown' | translate}}</span>
+          }
         </div>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="space-between center">
-        <div>{{'DB.FISH.OVERLAY.Total_reports' | translate}}</div>
-        <div>{{(state.reports || []).length}}</div>
-      </div>
-      <nz-divider [nzText]="'DB.FISH.OVERLAY.Last_report' | translate"></nz-divider>
-      <div *ngIf="(state.reports || []).length === 0; else lastReport">
-        {{'COMMON.None' | translate}}
-      </div>
-      <ng-template #lastReport>
-        <div fxLayout="column" *ngIf="state.reports[state.reports.length - 1] as report">
+        @if (state.train) {
           <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div>{{'DB.FISH.OVERLAY.Fish' | translate}}</div>
-            <div *ngIf="report.itemId && report.itemId > 0; else unknown" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
-              <img class="fish-icon" src="{{report.itemId | lazyIcon | xivapiIcon}}">
-              <div>{{report.itemId | itemName | i18n}}</div>
+            <div>{{'FISH_TRAIN.Train' | translate}}</div>
+            <div>
+              <button nz-button nzSize="small" nzShape="circle" (click)="openTrainInMainWindow(state.train.$key)"
+                nz-tooltip [nzTooltipTitle]="'COMMON.Open_in_main_window' | translate">
+                <i nz-icon nzType="info"></i>
+              </button>
+              {{state.train.name || ('FISH_TRAIN.Details_title' | translate:{ id: state.train.$key })}}
             </div>
           </div>
-          <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div>{{'DB.FISH.OVERLAY.Size' | translate}}</div>
-            <div *ngIf="report.size; else unknown">{{(report.size / 10) | number: '1.0-1'}} ilm</div>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div>{{'DB.FISH.Bite_time' | translate}}</div>
-            <div *ngIf="report.biteTime; else unknown">{{(report.biteTime / 10) | number: '1.0-1'}} s</div>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div>{{'DB.FISH.OVERLAY.Large' | translate}}</div>
-            <div>{{(report.hq ? 'Yes' : 'No') | translate}}</div>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div>{{'DB.FISH.Baits' | translate}}</div>
-            <div *ngIf="report.baitId; else unknown" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
-              <img class="fish-icon" src="{{report.baitId | lazyIcon | xivapiIcon}}">
-              <div>{{report.baitId | itemName | i18n}}</div>
+        }
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div>{{'DB.FISH.OVERLAY.Previous_weather' | translate}}</div>
+          @if (state.previousWeatherId) {
+            <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
+              @if (state.previousWeatherId > 0) {
+                <img class="fish-icon"
+                  src="{{state.previousWeatherId | weatherIcon | xivapiIcon}}"
+                  alt="{{state.previousWeatherId | i18nRow:'weathers' | i18n}}">
+              }
+              <div>{{state.previousWeatherId | i18nRow:'weathers' | i18n}}</div>
             </div>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div>{{761 | i18nRow:'statuses' | async | i18n}}</div>
-            <div>{{(report.snagging ? 'Yes' : 'No') | translate}}</div>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div>{{568 | i18nRow:'statuses' | async | i18n}}</div>
-            <div>{{(report.intuition ? 'Yes' : 'No') | translate}}</div>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div>{{763 | i18nRow:'statuses' | async | i18n}}</div>
-            <div>{{(report.chum ? 'Yes' : 'No') | translate}}</div>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div>{{'DB.FISH.OVERLAY.Mooch_report' | translate}}</div>
-            <div>{{(report.mooch ? 'Yes' : 'No') | translate}}</div>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div>{{'DB.FISH.OVERLAY.Tug' | translate}}</div>
-            <div>{{('DB.FISH.TUG.' + getTugName(report.tug)) | translate}}</div>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div>{{'DB.FISH.OVERLAY.Hookset' | translate}}</div>
-            <div>{{getHooksetActionId(report.hookset) | actionName | i18n}}</div>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div>{{'DB.FISH.OVERLAY.Current_weather' | translate}}</div>
-            <div *ngIf="report.weatherId; else unknown" fxLayout="row" fxLayoutGap="5px">
-              <img class="fish-icon" *ngIf="report.weatherId > 0"
-                   src="{{report.weatherId | weatherIcon | xivapiIcon}}"
-                   nz-tooltip
-                   [nzTooltipTitle]="report.weatherId | i18nRow:'weathers' | i18n"
-                   alt="{{report.weatherId | i18nRow:'weathers' | i18n}}">
-              <div>{{report.weatherId | i18nRow:'weathers' | i18n}}</div>
-            </div>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div>{{'DB.FISH.OVERLAY.Previous_weather' | translate}}</div>
-            <div *ngIf="report.previousWeatherId; else unknown" fxLayout="row" fxLayoutGap="5px">
-              <img class="fish-icon" *ngIf="report.previousWeatherId > 0"
-                   src="{{report.previousWeatherId | weatherIcon | xivapiIcon}}"
-                   nz-tooltip
-                   [nzTooltipTitle]="report.previousWeatherId | i18nRow:'weathers' | i18n"
-                   alt="{{report.previousWeatherId | i18nRow:'weathers' | i18n}}">
-              <div>{{report.previousWeatherId | i18nRow:'weathers' | i18n}}</div>
-            </div>
-          </div>
+          } @else {
+            <span class="error-text">{{'COMMON.Unknown' | translate}}</span>
+          }
         </div>
-      </ng-template>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div>{{'DB.FISH.OVERLAY.Current_weather' | translate}}</div>
+          @if (state.weatherId) {
+            <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
+              @if (state.weatherId > 0) {
+                <img class="fish-icon"
+                  src="{{state.weatherId | weatherIcon | xivapiIcon}}"
+                  alt="{{state.weatherId | i18nRow:'weathers' | i18n}}">
+              }
+              <div>{{state.weatherId | i18nRow:'weathers' | i18n}}</div>
+            </div>
+          } @else {
+            <span class="error-text">{{'COMMON.Unknown' | translate}}</span>
+          }
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div>{{'DB.FISH.OVERLAY.Stats' | translate}}</div>
+          @if (state.stats) {
+            <div>{{state.stats.gathering}} / {{state.stats.perception}} / {{state.stats.gp}}</div>
+          } @else {
+            <span class="error-text">{{'COMMON.Unknown' | translate}}</span>
+          }
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div>{{'DB.FISH.OVERLAY.Statuses' | translate}}</div>
+          @if (state.statuses) {
+            <div fxLayout="row" fxLayoutGap="5px">
+              @for (status of state.statuses; track trackByValue($index, status)) {
+                <img src="{{status | lazyRow:'statuses':'icon' | async | xivapiIcon}}" nz-tooltip
+                  [nzTooltipTitle]="status | i18nRow:'statuses' | async | i18n"
+                  alt="{{status}}">
+              }
+              @if (state.statuses.length === 0) {
+                <span>
+                  {{'DB.FISH.OVERLAY.No_statuses' | translate}}
+                </span>
+              }
+            </div>
+          } @else {
+            <span class="error-text">{{'COMMON.Unknown' | translate}}</span>
+          }
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div>{{'DB.FISH.OVERLAY.Total_reports' | translate}}</div>
+          <div>{{(state.reports || []).length}}</div>
+        </div>
+        <nz-divider [nzText]="'DB.FISH.OVERLAY.Last_report' | translate"></nz-divider>
+        @if ((state.reports || []).length === 0) {
+          <div>
+            {{'COMMON.None' | translate}}
+          </div>
+        } @else {
+          @if (state.reports[state.reports.length - 1]; as report) {
+            <div fxLayout="column">
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div>{{'DB.FISH.OVERLAY.Fish' | translate}}</div>
+                @if (report.itemId && report.itemId > 0) {
+                  <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
+                    <img class="fish-icon" src="{{report.itemId | lazyIcon | xivapiIcon}}">
+                    <div>{{report.itemId | itemName | i18n}}</div>
+                  </div>
+                } @else {
+                  <span class="error-text">{{'COMMON.Unknown' | translate}}</span>
+                }
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div>{{'DB.FISH.OVERLAY.Size' | translate}}</div>
+                @if (report.size) {
+                  <div>{{(report.size / 10) | number: '1.0-1'}} ilm</div>
+                } @else {
+                  <span class="error-text">{{'COMMON.Unknown' | translate}}</span>
+                }
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div>{{'DB.FISH.Bite_time' | translate}}</div>
+                @if (report.biteTime) {
+                  <div>{{(report.biteTime / 10) | number: '1.0-1'}} s</div>
+                } @else {
+                  <span class="error-text">{{'COMMON.Unknown' | translate}}</span>
+                }
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div>{{'DB.FISH.OVERLAY.Large' | translate}}</div>
+                <div>{{(report.hq ? 'Yes' : 'No') | translate}}</div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div>{{'DB.FISH.Baits' | translate}}</div>
+                @if (report.baitId) {
+                  <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
+                    <img class="fish-icon" src="{{report.baitId | lazyIcon | xivapiIcon}}">
+                    <div>{{report.baitId | itemName | i18n}}</div>
+                  </div>
+                } @else {
+                  <span class="error-text">{{'COMMON.Unknown' | translate}}</span>
+                }
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div>{{761 | i18nRow:'statuses' | async | i18n}}</div>
+                <div>{{(report.snagging ? 'Yes' : 'No') | translate}}</div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div>{{568 | i18nRow:'statuses' | async | i18n}}</div>
+                <div>{{(report.intuition ? 'Yes' : 'No') | translate}}</div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div>{{763 | i18nRow:'statuses' | async | i18n}}</div>
+                <div>{{(report.chum ? 'Yes' : 'No') | translate}}</div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div>{{'DB.FISH.OVERLAY.Mooch_report' | translate}}</div>
+                <div>{{(report.mooch ? 'Yes' : 'No') | translate}}</div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div>{{'DB.FISH.OVERLAY.Tug' | translate}}</div>
+                <div>{{('DB.FISH.TUG.' + getTugName(report.tug)) | translate}}</div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div>{{'DB.FISH.OVERLAY.Hookset' | translate}}</div>
+                <div>{{getHooksetActionId(report.hookset) | actionName | i18n}}</div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div>{{'DB.FISH.OVERLAY.Current_weather' | translate}}</div>
+                @if (report.weatherId) {
+                  <div fxLayout="row" fxLayoutGap="5px">
+                    @if (report.weatherId > 0) {
+                      <img class="fish-icon"
+                        src="{{report.weatherId | weatherIcon | xivapiIcon}}"
+                        nz-tooltip
+                        [nzTooltipTitle]="report.weatherId | i18nRow:'weathers' | i18n"
+                        alt="{{report.weatherId | i18nRow:'weathers' | i18n}}">
+                    }
+                    <div>{{report.weatherId | i18nRow:'weathers' | i18n}}</div>
+                  </div>
+                } @else {
+                  <span class="error-text">{{'COMMON.Unknown' | translate}}</span>
+                }
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div>{{'DB.FISH.OVERLAY.Previous_weather' | translate}}</div>
+                @if (report.previousWeatherId) {
+                  <div fxLayout="row" fxLayoutGap="5px">
+                    @if (report.previousWeatherId > 0) {
+                      <img class="fish-icon"
+                        src="{{report.previousWeatherId | weatherIcon | xivapiIcon}}"
+                        nz-tooltip
+                        [nzTooltipTitle]="report.previousWeatherId | i18nRow:'weathers' | i18n"
+                        alt="{{report.previousWeatherId | i18nRow:'weathers' | i18n}}">
+                    }
+                    <div>{{report.previousWeatherId | i18nRow:'weathers' | i18n}}</div>
+                  </div>
+                } @else {
+                  <span class="error-text">{{'COMMON.Unknown' | translate}}</span>
+                }
+              </div>
+            </div>
+          }
+        }
+      </div>
     </div>
-  </div>
+  }
 </app-overlay-container>

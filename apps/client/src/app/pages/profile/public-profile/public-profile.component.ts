@@ -35,14 +35,14 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DatePipe } from '@angular/common';
 
 @Component({
     selector: 'app-public-profile',
     templateUrl: './public-profile.component.html',
     styleUrls: ['./public-profile.component.less'],
     standalone: true,
-    imports: [NgIf, FlexModule, NzButtonModule, NzIconModule, NzToolTipModule, NzTagModule, UserRatingDisplayComponent, NgFor, NzDividerModule, NzCollapseModule, NzListModule, ListPanelComponent, RotationPanelComponent, CdkVirtualScrollViewport, CdkFixedSizeVirtualScroll, CdkVirtualForOf, NzSkeletonModule, ItemIconComponent, FullpageMessageComponent, AsyncPipe, DatePipe, TranslateModule, ItemNamePipe, IfMobilePipe, JobUnicodePipe, I18nPipe]
+    imports: [FlexModule, NzButtonModule, NzIconModule, NzToolTipModule, NzTagModule, UserRatingDisplayComponent, NzDividerModule, NzCollapseModule, NzListModule, ListPanelComponent, RotationPanelComponent, CdkVirtualScrollViewport, CdkFixedSizeVirtualScroll, CdkVirtualForOf, NzSkeletonModule, ItemIconComponent, FullpageMessageComponent, AsyncPipe, DatePipe, TranslateModule, ItemNamePipe, IfMobilePipe, JobUnicodePipe, I18nPipe]
 })
 export class PublicProfileComponent {
 

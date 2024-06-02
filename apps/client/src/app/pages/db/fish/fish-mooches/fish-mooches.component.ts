@@ -8,7 +8,7 @@ import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { I18nNameComponent } from '../../../../core/i18n/i18n-name/i18n-name.component';
 import { ItemIconComponent } from '../../../../modules/item-icon/item-icon/item-icon.component';
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { Observable } from 'rxjs';
@@ -22,8 +22,6 @@ import { Observable } from 'rxjs';
   imports: [
     NzCardModule,
     FlexModule,
-    NgIf,
-    NgFor,
     ItemIconComponent,
     I18nNameComponent,
     NzSpinModule,
@@ -31,7 +29,7 @@ import { Observable } from 'rxjs';
     AsyncPipe,
     TranslateModule,
     LazyIconPipe
-  ]
+]
 })
 export class FishMoochesComponent {
   public readonly loading$ = this.fishCtx.moochesByFish$.pipe(
