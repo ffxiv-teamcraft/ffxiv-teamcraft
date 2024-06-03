@@ -28,6 +28,12 @@ export class GatheredByExtractor<T = GatheredBy> extends AbstractItemDetailsExtr
   });
 
   protected gatheringItems = this.requireLazyFile('gatheringItems');
+  protected gatheringItemsIndex = Object.entries(this.gatheringItems).reduce((acc, [key, value]) => {
+    return {
+      ...acc,
+      [value.itemId]: value
+    };
+  }, {});
 
   getItemNodes(itemId: number, onlyDirect = false): GatheringNode[] {
     let idsToConsider = [itemId];
@@ -46,12 +52,25 @@ export class GatheredByExtractor<T = GatheredBy> extends AbstractItemDetailsExtr
         return (node.hiddenItems || []).includes(id) && node.zoneId > 0;
       });
 
-      const minBtnSpearHiddenMatches: GatheringNode[] = [...minBtnSpearMatches, ...hiddenReferences.map(node => ({
+      const sublimeItems = this.minBtnSpearNodes.filter(node => {
+        return (node.sublimeItems || []).some(({ sublime }) => sublime === id) && node.zoneId > 0;
+      });
+
+      const minBtnSpearHiddenMatches: GatheringNode[] = [...minBtnSpearMatches, ...sublimeItems.map(node => {
+        const matchingItemSublime = node.sublimeItems.find(s => s.sublime === id)?.source;
+        return {
+          ...node,
+          matchingItemSublime
+        };
+      }), ...hiddenReferences.map(node => ({
         ...node,
         matchingItemIsHidden: true
-      }))].map(node => {
+      }))].map((node: GatheringNode) => {
         if (node.type === 5) {
           node.type = 4;
+        }
+        if (this.gatheringItemsIndex[id]?.perceptionReq) {
+          node.perceptionReq = this.gatheringItemsIndex[id].perceptionReq;
         }
         return node;
       });

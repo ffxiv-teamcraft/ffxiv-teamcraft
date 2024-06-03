@@ -20,20 +20,25 @@
       }
     </div>
     <div>X: {{node.x | number:'1.1-1':translate.currentLang}}, Y: {{node.y | number:'1.1-1':translate.currentLang}}</div>
-    <div>
+    <div class="flex-row-wrap gap-2">
       @if (node.ephemeral) {
-        <nz-tag nzColor="#108ee9">
+        <nz-tag class="custom-tag" [style.border-color]="'#108ee9'">
           {{'Ephemeral_tag' | translate}}
         </nz-tag>
       }
       @if (node.legendary) {
-        <nz-tag nzColor="#108ee9">
+        <nz-tag class="custom-tag" [style.border-color]="'#108ee9'">
           {{'GATHERING_LOCATIONS.Legendary' | translate}}
         </nz-tag>
       }
       @if (node.matchingItemIsHidden) {
-        <nz-tag nzColor="#108ee9">
+        <nz-tag class="custom-tag" [style.border-color]="'#108ee9'">
           {{'GATHERING_LOCATIONS.Hidden_item' | translate}}
+        </nz-tag>
+      }
+      @if (node.perceptionReq) {
+        <nz-tag class="custom-tag" [style.border-color]="'#10e94d'">
+          <app-i18n-name content="baseParams" [id]="73"></app-i18n-name> >= {{node.perceptionReq}}
         </nz-tag>
       }
       @if (node.snagging) {
@@ -49,6 +54,13 @@
       }
     </div>
   </div>
+  @if (node.matchingItemSublime) {
+    <div nz-tooltip [nzTooltipTitle]="'GATHERING_LOCATIONS.Sublime_item_explain' | translate">
+      {{'GATHERING_LOCATIONS.Sublime_item' | translate}}:
+      <br><img [src]="node.matchingItemSublime | lazyIcon" alt="" class="item-icon">&nbsp;<app-i18n-name content="items" [id]="node.matchingItemSublime"></app-i18n-name>
+      &nbsp;<img src="./assets/icons/svg/collectable.svg" class="collectable-icon" alt="collectability"> 1000
+    </div>
+  }
   <div fxLayout="row wrap" fxLayoutGap="5px">
     @if (node.oceanFishingTime !== undefined && node.oceanFishingTime !== null) {
       <span>

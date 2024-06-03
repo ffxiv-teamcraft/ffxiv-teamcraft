@@ -5,9 +5,14 @@ export interface GatheringNode {
   id: number;
   items: number[];
   hiddenItems?: number[];
+  sublimeItems?: {
+    source: number;
+    sublime: number;
+  }[];
   limited?: boolean;
   level: number;
   type: number;
+  perceptionReq?: number;
   legendary?: boolean;
   ephemeral?: boolean;
   spawns?: number[];
@@ -44,5 +49,6 @@ export interface GatheringNode {
    */
   matchingItemId?: number;
   matchingItemIsHidden?: boolean;
+  matchingItemSublime?: number;
   isReduction?: boolean;
 }

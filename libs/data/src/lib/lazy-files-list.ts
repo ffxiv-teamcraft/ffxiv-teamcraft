@@ -205,7 +205,7 @@ export const lazyFilesList = {
   },
   'gatheringItems': {
     'fileName': 'gathering-items.json',
-    'hashedFileName': 'gathering-items.2916a9f3692ef4ccbb1cb0e6942e2057af481d51.json'
+    'hashedFileName': 'gathering-items.50460122e52c5dc93dea5b969150eea33a4fff2e.json'
   },
   'gatheringLevels': {
     'fileName': 'gathering-levels.json',
@@ -453,7 +453,7 @@ export const lazyFilesList = {
   },
   'nodes': {
     'fileName': 'nodes.json',
-    'hashedFileName': 'nodes.b7a7f42b3ac9dd9335194b76cd0199d9ac549d91.json'
+    'hashedFileName': 'nodes.7c178f078d9833961e9e9dcbe41cc01d1c8dd719.json'
   },
   'notebookDivisionCategory': {
     'fileName': 'notebook-division-category.json',
