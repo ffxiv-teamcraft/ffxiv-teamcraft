@@ -987,6 +987,8 @@
     "Ephemeral_node": "Nodo efímero, puede reaparecer",
     "Intro": "La ubicación de recolección le permite buscar fácilmente un objeto recolectadle y ver detalles sobre el mismo, donde encontrarlo y crear una alarma para un nodo determinado. ¡Simplemente ingresé un nombre en el campo de arriba y permítalo encontrar lo que busca Usted!",
     "Hidden_item": "Oculto",
+    "Sublime_item": "Sublime",
+    "Sublime_item_explain": "This item is obtained by getting its non-sublime variant with maximum collectability rating",
     "Fish_eyes": "Requiere ojos de pez para preocuparse solamente por el requisito de estación",
     "Add_alarm": "Añade una alarma",
     "Add_alarm_fish_eyes": "Añade una alarma con ojos de pez",
