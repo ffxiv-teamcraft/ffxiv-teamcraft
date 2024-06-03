@@ -987,6 +987,8 @@
     "Ephemeral_node": "Node ephemeral, pode reaparecer",
     "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for!",
     "Hidden_item": "Oculto",
+    "Sublime_item": "Sublime",
+    "Sublime_item_explain": "This item is obtained by getting its non-sublime variant with maximum collectability rating",
     "Fish_eyes": "Requires Fish Eyes to only care about weather requirement",
     "Add_alarm": "Add alarm",
     "Add_alarm_fish_eyes": "Add alarm with Fish Eyes",
