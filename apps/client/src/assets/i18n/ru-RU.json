@@ -987,6 +987,8 @@
     "Ephemeral_node": "Эфемерная нода, можно респаунить",
     "Intro": "Место сбора позволяет легко найти собираемый предмет и увидеть подробности о нём, где его найти и создать уведомление для нужной ноды. Просто введите название в поле выше и оно найдёт то, что вы ищете!",
     "Hidden_item": "Скрытый",
+    "Sublime_item": "Sublime",
+    "Sublime_item_explain": "This item is obtained by getting its non-sublime variant with maximum collectability rating",
     "Fish_eyes": "Требует скилл Fish eyes чтобы переживать только о погодных условиях",
     "Add_alarm": "Добавить оповещение",
     "Add_alarm_fish_eyes": "Добавить оповещение с Fish Eyes",
