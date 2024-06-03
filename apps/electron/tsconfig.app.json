@@ -1,12 +1,14 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "ES2022",
+    "resolveJsonModule": false,
     "importHelpers": true,
-    "module": "commonjs",
+    "module": "Node16",
     "sourceMap": false,
     "declaration": false,
-    "moduleResolution": "Node",
+    "moduleDetection": "force",
+    "moduleResolution": "Node16",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "downlevelIteration": true,

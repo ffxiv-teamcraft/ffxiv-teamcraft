@@ -1,7 +1,6 @@
 import { MainWindow } from '../window/main-window';
 import { Store } from '../store';
 import { join, resolve } from 'path';
-import isDev from 'electron-is-dev';
 import log from 'electron-log';
 import { CaptureInterface, CaptureInterfaceOptions, ErrorCodes, Message, Region } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { app } from 'electron';
@@ -184,7 +183,7 @@ export class PacketCapture {
       name: 'FFXIV_Teamcraft'
     };
 
-    if (isDev) {
+    if (app.isPackaged) {
       const localDataPath = this.getLocalDataPath();
       if (localDataPath) {
         options.localDataPath = localDataPath;

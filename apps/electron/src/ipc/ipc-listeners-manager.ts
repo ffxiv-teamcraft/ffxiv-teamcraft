@@ -18,7 +18,6 @@ import { SearchParams, XIVSearch } from '@ffxiv-teamcraft/search';
 import { combineLatest, filter, first, interval, map, Observable, skip, tap } from 'rxjs';
 import { Extracts, I18nName, SearchType } from '@ffxiv-teamcraft/types';
 import { extractsHash } from '@ffxiv-teamcraft/data/extracts-hash';
-import isDev from 'electron-is-dev';
 
 
 export class IpcListenersManager {
@@ -142,7 +141,7 @@ export class IpcListenersManager {
 
   public init(): void {
     performance.mark('start');
-    const extractsFileName = isDev ? 'extracts.json' : `extracts.${extractsHash}.json`;
+    const extractsFileName = app.isPackaged ? 'extracts.json' : `extracts.${extractsHash}.json`;
     readFile(join(Constants.BASE_APP_PATH, `/assets/extracts/`, extractsFileName), 'utf-8', (err, data) => {
       if (data) {
         performance.mark('extracts');

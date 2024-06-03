@@ -1,7 +1,6 @@
 import { MainWindow } from '../window/main-window';
 import log from 'electron-log';
 import { app, autoUpdater, BrowserWindow, ipcMain } from 'electron';
-import isDev from 'electron-is-dev';
 
 
 export class AutoUpdater {
@@ -13,7 +12,7 @@ export class AutoUpdater {
   }
 
   connectListeners(): void {
-    if (!isDev) {
+    if (!app.isPackaged) {
       autoUpdater.setFeedURL({
         url: `https://update.ffxivteamcraft.com`
       });
