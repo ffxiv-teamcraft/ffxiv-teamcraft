@@ -987,6 +987,8 @@
     "Ephemeral_node": "Vergängliches Vorkommen, kann erneut erscheinen",
     "Intro": "In dieser Kategorie kannst du nach sammelbaren Gegenständen suchen und Details und Standorte anzeigen lassen, sowie Alarme für einzelne Sammelstellen anlegen. Trage einfach einen Namen in das obige Feld ein und lass uns finden was du suchst!",
     "Hidden_item": "Versteckt",
+    "Sublime_item": "Sublime",
+    "Sublime_item_explain": "This item is obtained by getting its non-sublime variant with maximum collectability rating",
     "Fish_eyes": "Fischauge notwendig, um sich nur um die Wettervoraussetzungen Gedanken zu machen",
     "Add_alarm": "Benachrichtigung hinzufügen",
     "Add_alarm_fish_eyes": "Alarm mit Fischaugen hinzufügen",
