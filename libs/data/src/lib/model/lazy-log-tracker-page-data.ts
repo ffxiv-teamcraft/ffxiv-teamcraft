@@ -62,13 +62,21 @@ export interface GatheringNode {
   map:                   number;
   matchingItemId:        number;
   matchingItemIsHidden?: boolean;
+  matchingItemSublime?:  number;
+  perceptionReq?:        number;
   radius:                number;
   spawns:                number[];
+  sublimeItems?:         SublimeItem[];
   type:                  number;
   x:                     number;
   y:                     number;
   z:                     number;
   zoneId:                number;
+}
+
+export interface SublimeItem {
+  source:  number;
+  sublime: number;
 }
 
 export interface Recipe {

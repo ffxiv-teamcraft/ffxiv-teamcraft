@@ -115,10 +115,11 @@ function validateLines(lines) {
           const propertyName = getPropertyName(row);
           const splitRow = row.split('.');
           const fileType = splitRow[splitRow.length - 1];
+          const fileName = row.startsWith('/') ? row.slice(1) : row;
           return {
             ...acc,
             [propertyName]: {
-              fileName: row,
+              fileName: fileName,
               hashedFileName: `${row.replace(`.${fileType}`, '')}.${hash}.${fileType}`
             }
           };
