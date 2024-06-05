@@ -1,13 +1,41 @@
+// Based off https://github.com/Microsoft/vscode-recipes/tree/master/Angular-CLI
 {
-  // See https://go.microsoft.com/fwlink/?LinkId=733558
-  // for the documentation about the tasks.json format
   "version": "2.0.0",
-  "tasks": [{
-    "label": "npm start",
-    "type": "npm",
-    "script": "start",
-    "problemMatcher": [
-      "$tsc"
-    ]
-  }]
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "start",
+      "isBackground": true,
+      "presentation": {
+        "focus": true,
+        "panel": "dedicated"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "owner": "typescript",
+        "source": "ts",
+        "applyTo": "closedDocuments",
+        "fileLocation": [
+          "relative",
+          "${cwd}"
+        ],
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "(.*?)"
+          },
+          "endsPattern": {
+            // Regex to look for in the terminal output to determine when the background process
+            // has completed and the foreground browser launching process can proceed.
+            // This may need to be updated if messaging changes or unaccounted messages appear.
+            "regexp": "Application bundle generation complete. |Failed to compile. |terminated with exit code: 1"
+          }
+        }
+      }
+    },
+  ]
 }
