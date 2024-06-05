@@ -161,6 +161,9 @@ export class MacroTranslatorComponent {
         if (name === 'Scrutiny' && language === 'en') {
           resultIndex = 22185;
         }
+        if (name === 'Cast' && language === 'en') {
+          resultIndex = 289;
+        }
         const result: I18nName = craftActions[resultIndex] || actions[resultIndex];
         if (resultIndex === -1) {
           throw new Error(`Data row not found for crafting action ${name}`);
