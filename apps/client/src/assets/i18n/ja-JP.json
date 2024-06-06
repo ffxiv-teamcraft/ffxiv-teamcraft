@@ -18,7 +18,7 @@
   "List_fork_in_progress": "このリストをマイアカウントにコピー中…",
   "Network_error_logged_out": "ネットワークエラーが検出されたため、ログアウトしました。この問題が解決しない場合は、DiscordでMiuにお問い合わせください。",
   "Hide_zone_duplicates": "複数のエリアで入手できるアイテムは一度だけ表示するようにする",
-  "Patch_notes": "Patch Notes",
+  "Patch_notes": "{{version}} の変更",
   "Patch_notes_footer": "新機能は気に入っていただけましたか？Patreonでのプロジェクトのサポートを検討してください",
   "Selection": "選択",
   "Change_character": "キャラクター",
@@ -190,7 +190,7 @@
     "Never": "しない",
     "Festival": "フェスティバルの間のみ",
     "Back": "戻る",
-    "Support_us_remove_ads": "Support us to remove ads",
+    "Support_us_remove_ads": "Patreonをサポートして広告を消す",
     "Support_us": "サポート",
     "Show_more": "詳細を表示",
     "Item": "アイテム",
@@ -380,7 +380,7 @@
   "Use_lodestoneId": "キャラクターIDで検索",
   "LodestoneId": "ロドストID",
   "List_forked": "このリストが自分のアカウントにコピーされました",
-  "List_fork": "Copy this list to your account (ctrl + click to copy as offline list)",
+  "List_fork": "このリストを自分のアカウントにコピーする",
   "List_not_found": "リストになかったり、接近する権限がありません",
   "Requirements_for_craft": "詳細情報",
   "Zone_breakdown": "エリアを纏めて表示する",
@@ -456,7 +456,7 @@
     "Connected_with_tipeee": "Connected with Tipeee",
     "Nickname": "Patreonの通称名",
     "Nickname_used": "通称名は既に使用されてる",
-    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the supporter exclusive features properly.",
+    "No_nickname_warning": "寄付者専用の機能を使用するためには、設定ページからニックネームを設定して下さい。",
     "Show_devtools": "Devツールを表示",
     "Clear_cache": "キャッシュをクリア(アプリが再起動されます)",
     "Disable_fc_integration": "Disable FC sharing features",
@@ -793,7 +793,7 @@
     "Autofill_notification_body": "{{listName}} リストの{{itemName}} 作業が完了できました",
     "Autofill_crafting_gathering_title": "製作・収集中",
     "Autofill_crafting_gathering_message": "データベースの更新を安定化させるために、製作中または採集中はオートフィルの反応を遅らせています。製作を終わらせて、ゲーム内で立ち上がるか、採集UIを閉じたときに通常のオートフィルに戻ります。",
-    "Fill_with_inventory": "Fill with inventory",
+    "Fill_with_inventory": "Fill with inventory (only accounts for what you have in personal inventory)",
     "Filter_items_done": "完了したアイテムを非表示",
     "Inventory_synthesis": "所持品統合(各所持品ごとのアイテム)",
     "X_needed": "{{amount}} 個必要",
@@ -1394,10 +1394,10 @@
     "Ilvl": "IL",
     "Cost": "費用",
     "Class_job": "ジョブ",
-    "Damage_phys": "Phys. Damage",
-    "Damage_mag": "Mag. Damage",
-    "Defense_phys": "Phys. Defense",
-    "Defense_mag": "Mag. Defense",
+    "Damage_phys": "物理ダメージ",
+    "Damage_mag": "魔法ダメージ",
+    "Defense_phys": "物理防御力",
+    "Defense_mag": "魔法防御力",
     "Masterbooks": "Requires a masterbook"
   },
   "SEARCH_INTRO": {
@@ -1542,7 +1542,7 @@
     "Search": "検索",
     "Generate_list": "クイックリストを作成",
     "Intro": "レベルを入力し、検索をクリックして開始します。",
-    "Loading_message": "Loading possible deliveries..."
+    "Loading_message": "可能な調達品を読み込み中... 時間が所要されます"
   },
   "DESYNTH": {
     "Title": "分解ガイド",
@@ -1632,7 +1632,7 @@
     "Currencies": "通貨",
     "Rowena_splendor": "ロウェナ商会取引",
     "Unlocks": "ロック解除",
-    "Jump_to_page": "Open db page",
+    "Jump_to_page": "Open item db page",
     "Ishgard_restoration": "イシュガルド復興",
     "GC_supply_value": "Expert Delivery",
     "ITEM": {
@@ -2751,7 +2751,7 @@
     "Starting_at_X": "Starting at ${{monthly}} per month or ${{yearly}} per year",
     "Footer_text": "As little as $1 a month has a significant impact on Teamcraft's development and brings me closer to my dream of becoming a full-time developer on this project and expanding it beyond just being a tool for FFXIV.",
     "Already_supporter": "Already a supporter?",
-    "Disable_ads_explanation": "To disable ads, connect with your Patreon or Tipeee account to make Teamcraft able to verify your support and disable ads automatically"
+    "Disable_ads_explanation": "To disable ads, connect with your Patreon account to make Teamcraft able to verify your support and disable ads automatically"
   },
   "SUPPORT_US": {
     "Popup_introduction": "おはようございます、私はTeamcraft開発者Miuです。<br/>Teamcraftはここ数年前から私の趣味であり現在は趣味ではない私の職業にするための夢として、その夢を叶えるために頑張っています。<br/><br/>もし皆さんがpatreonでサポートしてくれるなら、Teamcraftをもっと改善して私は私の夢を現実にする事ができます。<br/><br/>patreonでプロジェクトにサポートしてくれるなら次のような素敵な特典を得る事ができます。",
@@ -3069,7 +3069,7 @@
     "RESTART_GAME": "Packet capture didn't shut down properly",
     "GAME_RUNNING_AS_ADMIN": "Cannot access game process",
     "DESCRIPTION": {
-      "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.",
+      "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.<br><br> Retrying in {{retryDelay}}s",
       "GAME_NOT_RUNNING": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.",
       "RESTART_GAME": "Please restart the game to be able to run packet capture properly.",
       "GAME_RUNNING_AS_ADMIN": "Game is running as admin, please either restart it normally or restart Teamcraft as admin."
