@@ -120,7 +120,7 @@ function validateLines(lines) {
             ...acc,
             [propertyName]: {
               fileName: fileName,
-              hashedFileName: `${row.replace(`.${fileType}`, '')}.${hash}.${fileType}`
+              hashedFileName: `${fileName.replace(`.${fileType}`, '')}.${hash}.${fileType}`
             }
           };
         }, {}),

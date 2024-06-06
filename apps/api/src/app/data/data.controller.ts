@@ -18,6 +18,9 @@ export class DataController {
     @Param('key') key: string,
     @Param('hash') hash: string
   ) {
+    if (key.startsWith('/')) {
+      key = key.slice(1);
+    }
     const contentName = key === 'extracts' ? key : Object.keys(lazyFilesList).find(k => lazyFilesList[k].fileName === `${key}.json` || lazyFilesList[k].fileName === `${key}.index`);
     if (!contentName) {
       throw new HttpException(`${contentName || key} is not available`, 404);
