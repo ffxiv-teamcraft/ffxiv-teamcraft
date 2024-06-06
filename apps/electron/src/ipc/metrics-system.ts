@@ -15,7 +15,7 @@ export class MetricsSystem {
 
   public async start() {
     const APP_DATA = process.env.APPDATA || (process.platform === 'darwin' ? process.env.HOME + '/Library/Preferences' : process.env.HOME + '/.local/share');
-    let METRICS_FOLDER = this.store.get('metrics:folder', join(APP_DATA, `ffxiv-teamcraft-metrics${app.isPackaged ? '-dev' : ''}`));
+    let METRICS_FOLDER = this.store.get('metrics:folder', join(APP_DATA, `ffxiv-teamcraft-metrics${!app.isPackaged ? '-dev' : ''}`));
 
     if (!existsSync(METRICS_FOLDER)) {
       mkdirSync(METRICS_FOLDER);

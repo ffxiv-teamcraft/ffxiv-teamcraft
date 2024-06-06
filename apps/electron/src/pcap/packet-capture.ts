@@ -183,7 +183,7 @@ export class PacketCapture {
       name: 'FFXIV_Teamcraft'
     };
 
-    if (app.isPackaged) {
+    if (!app.isPackaged) {
       const localDataPath = this.getLocalDataPath();
       if (localDataPath) {
         options.localDataPath = localDataPath;
