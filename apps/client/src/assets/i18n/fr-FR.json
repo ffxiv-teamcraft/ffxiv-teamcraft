@@ -987,6 +987,8 @@
     "Ephemeral_node": "Nœud éphémère, peut être re-déclenché",
     "Intro": "L'emplacement de collecte vous permet de rechercher facilement un objet récoltable et de voir les détails à ce sujet, où le trouver et créer une alarme pour un point de récolte donné. Il suffit d'entrer un nom dans le champ ci-dessus et de le laisser trouver ce que vous cherchez !",
     "Hidden_item": "Caché",
+    "Sublime_item": "Sublime",
+    "Sublime_item_explain": "This item is obtained by getting its non-sublime variant with maximum collectability rating",
     "Fish_eyes": "Nécessite Yeux de poisson pour se soucier uniquement des conditions météorologiques",
     "Add_alarm": "Ajouter une alarme",
     "Add_alarm_fish_eyes": "Ajouter une alarme avec Yeux de poisson",
@@ -3257,6 +3259,7 @@
     "Recipe_Finder": "Recipe Finder",
     "Food_Picker": "Food Picker",
     "Reminders": "Reminders",
-    "About": "About"
+    "About": "About",
+    "Fish_Train": "Fish Train"
   }
 }

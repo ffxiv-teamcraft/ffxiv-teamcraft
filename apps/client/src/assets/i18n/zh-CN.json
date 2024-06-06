@@ -987,6 +987,8 @@
     "Ephemeral_node": "限时采集点，可以刷新",
     "Intro": "采集地点用于快速搜索可采集物品，并查看其详情，并为节点设置采集闹钟。在上面的输入框中输入物品名字，它会找到你要找的物品！",
     "Hidden_item": "隐藏资源",
+    "Sublime_item": "Sublime",
+    "Sublime_item_explain": "This item is obtained by getting its non-sublime variant with maximum collectability rating",
     "Fish_eyes": "通过鱼眼忽略天气以外的条件",
     "Add_alarm": "添加闹钟",
     "Add_alarm_fish_eyes": "添加使用鱼眼的闹钟",
@@ -3257,6 +3259,7 @@
     "Recipe_Finder": "配方检索器",
     "Food_Picker": "食物选择器",
     "Reminders": "CD计时器",
-    "About": "关于"
+    "About": "关于",
+    "Fish_Train": "Fish Train"
   }
 }
