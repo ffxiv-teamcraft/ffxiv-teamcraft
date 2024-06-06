@@ -5,11 +5,9 @@ import { FoldersFacade } from '../+state/folders.facade';
 import { CdkDrag, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
 import { first } from 'rxjs/operators';
 import { Folder } from '../../../model/folder/folder';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { NzMessageService } from 'ng-zorro-antd/message';
+import { TranslateModule } from '@ngx-translate/core';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { SettingsService } from '../../settings/settings.service';
-import { FoldersModule } from '../folders.module';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { RouterLink } from '@angular/router';
 import { NgTemplateOutlet } from '@angular/common';
@@ -122,10 +120,6 @@ export class FolderComponent<T extends DataModel> implements OnInit {
 
   public deleteFolder(folder: Folder<T>): void {
     this.foldersFacade.deleteFolder(folder);
-  }
-
-  trackByKey(index: number, data: DataModel): string {
-    return data.$key;
   }
 
   expandedChange(expanded: boolean): void {

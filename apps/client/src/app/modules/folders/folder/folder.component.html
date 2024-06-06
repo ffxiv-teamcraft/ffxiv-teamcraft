@@ -41,7 +41,7 @@
       (cdkDropListEntered)="entered($event)"
       (cdkDropListDropped)="drop($event)"
       fxLayout="column" fxLayoutGap="10px">
-      @for (element of display.content; track trackByKey(i, element); let i = $index) {
+      @for (element of display.content; track element.$key; let i = $index) {
         <div cdkDrag [cdkDragDisabled]="disableDnd" [cdkDragData]="element">
           <ng-container *ngTemplateOutlet="elementTemplate;context:{$implicit: element}"></ng-container>
         </div>
@@ -58,7 +58,7 @@
       (cdkDropListExited)="exited($event)"
       (cdkDropListEntered)="entered($event)"
       (cdkDropListDropped)="dropFolder($event)">
-      @for (folder of display.subFolders; track trackByKey(i, folder); let i = $index) {
+      @for (folder of display.subFolders; track folder.folder.$key; let i = $index) {
         <div
           cdkDrag [cdkDragData]="folder.folder" [cdkDragDisabled]="disableDnd">
           <app-folder [userId]="userId"

@@ -150,7 +150,7 @@
   }
 
   @defer (when isButton(itemRowTypes.MARK_HQ) && itemId > 0) {
-    @if (permissionLevel >= 30 && requiredForFinalCraft === 0 && !requiredAsHQ) {
+    @if (permissionLevel >= 30 && !requiredForFinalCraft && !requiredAsHQ) {
       <button (click)="requiredAsHQ = true; requiredAsHQChange.emit(requiredAsHQ)"
         [nzTooltipTitle]="'Mark_HQ' | translate"
         nz-button
@@ -159,7 +159,7 @@
         <i nz-icon nzType="highlight"></i>
       </button>
     }
-    @if ((requiredForFinalCraft > 0 || requiredAsHQ) && permissionLevel >= 30 && itemId > 0) {
+    @if ((requiredForFinalCraft || requiredAsHQ) && permissionLevel >= 30 && itemId > 0) {
       <button (click)="requiredAsHQ = false; requiredAsHQChange.emit(requiredAsHQ)"
         [nzTooltipTitle]="'Unmark_HQ' | translate" nz-button
         nz-tooltip

@@ -22,7 +22,7 @@
 }
 
 <div fxLayout="column" fxLayoutGap="10px">
-  @for (element of display.content; track trackByKey(i, element); let i = $index) {
+  @for (element of display.content; track element.$key; let i = $index) {
     <div>
       <ng-container *ngTemplateOutlet="elementTemplate;context:{$implicit: element}"></ng-container>
     </div>
@@ -30,7 +30,7 @@
 </div>
 
 <div fxLayout="column" fxLayoutGap="10px">
-  @for (folder of display.subFolders; track trackByKey(i, folder); let i = $index) {
+  @for (folder of display.subFolders; track folder.folder.$key; let i = $index) {
     <div>
       <app-folder [userId]="userId"
         [display]="folder"
