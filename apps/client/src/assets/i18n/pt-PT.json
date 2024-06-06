@@ -18,7 +18,7 @@
   "List_fork_in_progress": "A copiar a lista para a sua conta…",
   "Network_error_logged_out": "A network error has been detected, and you have been logged out. If this issue persists, please contact Miu on the Discord server.",
   "Hide_zone_duplicates": "Hide zone duplicates (items that are in multiple zones are shown only once)",
-  "Patch_notes": "Patch Notes",
+  "Patch_notes": "{{version}} changes",
   "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on Patreon",
   "Selection": "Selection",
   "Change_character": "Personagem",
@@ -190,7 +190,7 @@
     "Never": "Never",
     "Festival": "Only during a festival",
     "Back": "Back",
-    "Support_us_remove_ads": "Support us to remove ads",
+    "Support_us_remove_ads": "Support us on Patreon to remove ads",
     "Support_us": "Support us",
     "Show_more": "Show more",
     "Item": "Item",
@@ -380,7 +380,7 @@
   "Use_lodestoneId": "Use o ID da Lodestone",
   "LodestoneId": "ID da Lodestone",
   "List_forked": "Lista copiada para sua conta",
-  "List_fork": "Copy this list to your account (ctrl + click to copy as offline list)",
+  "List_fork": "Copiar a lista para sua conta",
   "List_not_found": "Lista não encontrada ou você não tem acesso a ela",
   "Requirements_for_craft": "Veja os requerimentos",
   "Zone_breakdown": "Área breakdown",
@@ -456,7 +456,7 @@
     "Connected_with_tipeee": "Connected with Tipeee",
     "Nickname": "Nome de utilizador",
     "Nickname_used": "Nome de utilizador já em utilização",
-    "No_nickname_warning": "Please navigate to the settings page and setup a nickname in order to be able to use the supporter exclusive features properly.",
+    "No_nickname_warning": "Por favor vá à página de configurações e crie um nome de utilizador novo para aceder às funções exclusivas do patreon.",
     "Show_devtools": "Mostrar ferramentas de desenvolvimento",
     "Clear_cache": "Limpar a cache (a app será reiniciada)",
     "Disable_fc_integration": "Disable FC sharing features",
@@ -793,7 +793,7 @@
     "Autofill_notification_body": "{{itemName}} is now completed for list {{listName}}",
     "Autofill_crafting_gathering_title": "Crafting or gathering detected",
     "Autofill_crafting_gathering_message": "Autofill is on slow mode until you are done crafting (stand up ingame) or gathering (close the UI) in order to prevent database issues with autofilling too fast.",
-    "Fill_with_inventory": "Fill with inventory",
+    "Fill_with_inventory": "Fill with inventory (only accounts for what you have in personal inventory)",
     "Filter_items_done": "Ignore completed items",
     "Inventory_synthesis": "Inventory synthesis (items per inventory)",
     "X_needed": "{{amount}} needed",
@@ -1394,10 +1394,10 @@
     "Ilvl": "ilvl",
     "Cost": "Custo",
     "Class_job": "Classe/Profissão",
-    "Damage_phys": "Phys. Damage",
-    "Damage_mag": "Mag. Damage",
-    "Defense_phys": "Phys. Defense",
-    "Defense_mag": "Mag. Defense",
+    "Damage_phys": "Dano físico",
+    "Damage_mag": "Dano mágico",
+    "Defense_phys": "Defesa Física",
+    "Defense_mag": "Defesa Mágica",
     "Masterbooks": "Requires a masterbook"
   },
   "SEARCH_INTRO": {
@@ -1542,7 +1542,7 @@
     "Search": "Pesquisa",
     "Generate_list": "Criar uma lista rápida",
     "Intro": "Insira os seus níveis e clique Pesquisar para começar",
-    "Loading_message": "Loading possible deliveries..."
+    "Loading_message": "A carregando possíveis entregas, pode demorar até um minuto"
   },
   "DESYNTH": {
     "Title": "Desynth guide",
@@ -1632,7 +1632,7 @@
     "Currencies": "Currencies",
     "Rowena_splendor": "Rowena's splendors",
     "Unlocks": "Unlocks",
-    "Jump_to_page": "Open db page",
+    "Jump_to_page": "Open item db page",
     "Ishgard_restoration": "Ishgardian restoration",
     "GC_supply_value": "Expert Delivery",
     "ITEM": {
@@ -2751,7 +2751,7 @@
     "Starting_at_X": "Starting at ${{monthly}} per month or ${{yearly}} per year",
     "Footer_text": "As little as $1 a month has a significant impact on Teamcraft's development and brings me closer to my dream of becoming a full-time developer on this project and expanding it beyond just being a tool for FFXIV.",
     "Already_supporter": "Already a supporter?",
-    "Disable_ads_explanation": "To disable ads, connect with your Patreon or Tipeee account to make Teamcraft able to verify your support and disable ads automatically"
+    "Disable_ads_explanation": "To disable ads, connect with your Patreon account to make Teamcraft able to verify your support and disable ads automatically"
   },
   "SUPPORT_US": {
     "Popup_introduction": "Hi, I'm Miu, the developer of the tool you're currently using.<br/> Teamcraft has been a hobby for me since the last few years and my dream is to make this my fulltime job. <br/><br/>With your help, this dream could become a reality, you can support the tool on patreon, every single dollar counts and will help me reach this goal. <br/><br/> Supporting the project on patreon also gives you some cool benefits:",
@@ -3069,7 +3069,7 @@
     "RESTART_GAME": "Packet capture didn't shut down properly",
     "GAME_RUNNING_AS_ADMIN": "Cannot access game process",
     "DESCRIPTION": {
-      "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.",
+      "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.<br><br> Retrying in {{retryDelay}}s",
       "GAME_NOT_RUNNING": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.",
       "RESTART_GAME": "Please restart the game to be able to run packet capture properly.",
       "GAME_RUNNING_AS_ADMIN": "Game is running as admin, please either restart it normally or restart Teamcraft as admin."
