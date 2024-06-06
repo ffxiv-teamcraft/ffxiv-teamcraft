@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.1.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.1.0...v11.1.1) (2024-06-06)
+
+
+### Bug Fixes
+
+* **desktop:** fix deucalion dll not found in prod env ([2036bb9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2036bb91a9382c58142568c38586fa95d8b77b10))
+
 ## [11.1.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.41...v11.1.0) (2024-06-06)
 
 
