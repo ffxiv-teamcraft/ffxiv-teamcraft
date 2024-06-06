@@ -27,14 +27,14 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-layout-editor',
     templateUrl: './layout-editor.component.html',
     styleUrls: ['./layout-editor.component.less'],
     standalone: true,
-    imports: [NgIf, FlexModule, NzSelectModule, FormsModule, NgFor, NzButtonModule, NzWaveModule, NzIconModule, NzPopconfirmModule, NzToolTipModule, ClipboardDirective, NzAlertModule, NzInputModule, NzCardModule, NzCheckboxModule, NzRadioModule, LayoutEditorRowComponent, AsyncPipe, TranslateModule]
+    imports: [FlexModule, NzSelectModule, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, NzPopconfirmModule, NzToolTipModule, ClipboardDirective, NzAlertModule, NzInputModule, NzCardModule, NzCheckboxModule, NzRadioModule, LayoutEditorRowComponent, AsyncPipe, TranslateModule]
 })
 export class LayoutEditorComponent {
 

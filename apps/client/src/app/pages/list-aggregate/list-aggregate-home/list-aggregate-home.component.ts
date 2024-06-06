@@ -13,7 +13,7 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzTableModule } from 'ng-zorro-antd/table';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 
 @Component({
@@ -22,7 +22,7 @@ import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
     styleUrls: ['./list-aggregate-home.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzPageHeaderModule, NgIf, NzTableModule, NgFor, NzInputModule, NzButtonModule, NzSelectModule, FormsModule, NzWaveModule, RouterLink, AsyncPipe, TranslateModule]
+    imports: [NzPageHeaderModule, NzTableModule, NzInputModule, NzButtonModule, NzSelectModule, FormsModule, NzWaveModule, RouterLink, AsyncPipe, TranslateModule]
 })
 export class ListAggregateHomeComponent {
 

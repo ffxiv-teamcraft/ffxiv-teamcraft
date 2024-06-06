@@ -35,9 +35,19 @@ export class GatheringNodesService {
       this.lazyData.getEntry('fishingSources'),
       this.lazyData.getEntry('fishingSpots'),
       this.lazyData.getEntry('fishParameter'),
-      this.lazyData.getEntry('islandGatheringItems')
+      this.lazyData.getEntry('islandGatheringItems'),
+      this.lazyData.getEntry('gatheringItems').pipe(
+        map(items => {
+          return Object.entries(items).reduce((acc, [key, value]) => {
+            return {
+              ...acc,
+              [value.itemId]: value
+            };
+          }, {});
+        })
+      )
     ]).pipe(
-      map(([idsToConsider, minBtnSpearNodes, spearfishingSources, fishingSources, fishingSpots, fishParameter, islandGatheringItems]) => {
+      map(([idsToConsider, minBtnSpearNodes, spearfishingSources, fishingSources, fishingSpots, fishParameter, islandGatheringItems, gatheringItems]) => {
         const results: GatheringNode[][] = idsToConsider.map(id => {
           const minBtnSpearMatches: GatheringNode[] = minBtnSpearNodes.filter(node => {
             return node.items.includes(id) && node.zoneId > 0;
@@ -47,12 +57,25 @@ export class GatheringNodesService {
             return (node.hiddenItems || []).includes(id) && node.zoneId > 0;
           });
 
-          const minBtnSpearHiddenMatches: GatheringNode[] = [...minBtnSpearMatches, ...hiddenReferences.map(node => ({
+          const sublimeItems = minBtnSpearNodes.filter(node => {
+            return (node.sublimeItems || []).some(({ sublime }) => sublime === id) && node.zoneId > 0;
+          });
+
+          const minBtnSpearHiddenMatches: GatheringNode[] = [...minBtnSpearMatches, ...sublimeItems.map(node => {
+            const matchingItemSublime = node.sublimeItems.find(s => s.sublime === id)?.source;
+            return {
+              ...node,
+              matchingItemSublime
+            };
+          }), ...hiddenReferences.map(node => ({
             ...node,
             matchingItemIsHidden: true
-          }))].map(node => {
+          }))].map((node: GatheringNode) => {
             if (node.type === 5) {
               node.type = 4;
+            }
+            if (gatheringItems[id]?.perceptionReq) {
+              node.perceptionReq = gatheringItems[id].perceptionReq;
             }
             return node;
           });

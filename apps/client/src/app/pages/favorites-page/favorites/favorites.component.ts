@@ -16,14 +16,14 @@ import { RotationPanelComponent } from '../../simulator/components/rotation-pane
 import { ListPanelComponent } from '../../../modules/list/list-panel/list-panel.component';
 import { WorkshopPanelComponent } from '../../../modules/workshop/workshop-panel/workshop-panel.component';
 import { NzListModule } from 'ng-zorro-antd/list';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-favorites',
     templateUrl: './favorites.component.html',
     styleUrls: ['./favorites.component.less'],
     standalone: true,
-    imports: [NgIf, NzListModule, WorkshopPanelComponent, ListPanelComponent, RotationPanelComponent, RotationFolderPanelComponent, AsyncPipe, TranslateModule]
+    imports: [NzListModule, WorkshopPanelComponent, ListPanelComponent, RotationPanelComponent, RotationFolderPanelComponent, AsyncPipe, TranslateModule]
 })
 export class FavoritesComponent {
 

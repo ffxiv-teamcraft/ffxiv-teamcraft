@@ -32,7 +32,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { I18nDisplayComponent } from '../../../modules/i18n-display/i18n-display/i18n-display.component';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-fishing-spot',
@@ -40,7 +40,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
     styleUrls: ['./fishing-spot.component.less', '../fish/fish.common.less', '../common-db.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, FlexModule, I18nDisplayComponent, NzButtonModule, NzWaveModule, DbCommentsComponent, NzDividerModule, FishingSpotPositionComponent, FishingSpotWeathersComponent, FishingSpotWeatherTransitionsComponent, FishingSpotAvailableFishesComponent, FishingSpotHoursComponent, FishingSpotBaitDatagridComponent, FishingSpotWeatherDatagridComponent, FishingSpotTugDatagridComponent, FishingSpotHooksetDatagridComponent, FishingSpotBiteTimesComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, IfMobilePipe, MapNamePipe]
+    imports: [FlexModule, I18nDisplayComponent, NzButtonModule, NzWaveModule, DbCommentsComponent, NzDividerModule, FishingSpotPositionComponent, FishingSpotWeathersComponent, FishingSpotWeatherTransitionsComponent, FishingSpotAvailableFishesComponent, FishingSpotHoursComponent, FishingSpotBaitDatagridComponent, FishingSpotWeatherDatagridComponent, FishingSpotTugDatagridComponent, FishingSpotHooksetDatagridComponent, FishingSpotBiteTimesComponent, PageLoaderComponent, AsyncPipe, I18nPipe, TranslateModule, IfMobilePipe, MapNamePipe]
 })
 export class FishingSpotComponent extends TeamcraftPageComponent implements OnInit, OnDestroy {
   public highlightedFish$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);

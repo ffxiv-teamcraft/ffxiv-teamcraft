@@ -52,14 +52,14 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
     selector: 'app-gearset-display',
     templateUrl: './gearset-display.component.html',
     styleUrls: ['./gearset-display.component.less'],
     standalone: true,
-    imports: [NgIf, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzPopconfirmModule, NzIconModule, FavoriteButtonComponent, RouterLink, NzDividerModule, NgFor, GearsetDisplaySlotComponent, NzSelectModule, FormsModule, NzInputNumberModule, I18nNameComponent, NzTableModule, StatsPopupComponent, MateriasNeededPopupComponent, GearsetCostPopupComponent, AsyncPipe, DecimalPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, JobUnicodePipe, FoodBonusesPipePipe]
+    imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzPopconfirmModule, NzIconModule, FavoriteButtonComponent, RouterLink, NzDividerModule, GearsetDisplaySlotComponent, NzSelectModule, FormsModule, NzInputNumberModule, I18nNameComponent, NzTableModule, StatsPopupComponent, MateriasNeededPopupComponent, GearsetCostPopupComponent, AsyncPipe, DecimalPipe, TranslateModule, I18nPipe, I18nRowPipe, ItemNamePipe, JobUnicodePipe, FoodBonusesPipePipe]
 })
 export class GearsetDisplayComponent extends TeamcraftComponent {
 

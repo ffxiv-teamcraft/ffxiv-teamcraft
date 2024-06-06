@@ -2,15 +2,17 @@
   <input autofocus formControlName="name" nz-input placeholder="{{'Please_enter_a_name' | translate}}" type="text">
   <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
     <nz-form-control [nzValidateStatus]="gearset && gearset.job !== form.controls.job.value ? 'warning' : 'validating'"
-                     [nzWarningTip]="'GEARSETS.Warning_job_switch' | translate">
+      [nzWarningTip]="'GEARSETS.Warning_job_switch' | translate">
       <nz-select class="filter-select" formControlName="job" nzShowSearch [nzPlaceHolder]="'GEARSETS.Pick_a_job' | translate">
-        <nz-option *ngFor="let job of availableJobs$ | async" [nzLabel]="job | i18nRow:'jobAbbr' | i18n"
-                   [nzValue]="job" nzCustomContent>
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div class="companion-svg" [innerHtml]="job | jobUnicode"></div>
-            <div>{{job | i18nRow:'jobAbbr' | i18n}}</div>
-          </div>
-        </nz-option>
+        @for (job of availableJobs$ | async; track job) {
+          <nz-option [nzLabel]="job | i18nRow:'jobAbbr' | i18n"
+            [nzValue]="job" nzCustomContent>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <div class="companion-svg" [innerHtml]="job | jobUnicode"></div>
+              <div>{{job | i18nRow:'jobAbbr' | i18n}}</div>
+            </div>
+          </nz-option>
+        }
       </nz-select>
     </nz-form-control>
   </nz-form-item>

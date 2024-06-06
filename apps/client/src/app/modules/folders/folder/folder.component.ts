@@ -5,14 +5,12 @@ import { FoldersFacade } from '../+state/folders.facade';
 import { CdkDrag, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
 import { first } from 'rxjs/operators';
 import { Folder } from '../../../model/folder/folder';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { NzMessageService } from 'ng-zorro-antd/message';
+import { TranslateModule } from '@ngx-translate/core';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { SettingsService } from '../../settings/settings.service';
-import { FoldersModule } from '../folders.module';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { RouterLink } from '@angular/router';
-import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 import { ClipboardDirective } from '../../../core/clipboard.directive';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
@@ -27,7 +25,7 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
   styleUrls: ['./folder.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NzCollapseModule, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, ClipboardDirective, NgIf, RouterLink, NzPopconfirmModule, CdkDropList, NgFor, CdkDrag, NgTemplateOutlet, TranslateModule]
+  imports: [NzCollapseModule, FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, ClipboardDirective, RouterLink, NzPopconfirmModule, CdkDropList, CdkDrag, NgTemplateOutlet, TranslateModule]
 })
 export class FolderComponent<T extends DataModel> implements OnInit {
 
@@ -122,10 +120,6 @@ export class FolderComponent<T extends DataModel> implements OnInit {
 
   public deleteFolder(folder: Folder<T>): void {
     this.foldersFacade.deleteFolder(folder);
-  }
-
-  trackByKey(index: number, data: DataModel): string {
-    return data.$key;
   }
 
   expandedChange(expanded: boolean): void {

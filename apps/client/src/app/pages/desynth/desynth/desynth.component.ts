@@ -30,7 +30,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
-import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { TutorialStepDirective } from '../../../core/tutorial/tutorial-step.directive';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzGridModule } from 'ng-zorro-antd/grid';
@@ -43,7 +43,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     templateUrl: './desynth.component.html',
     styleUrls: ['./desynth.component.less'],
     standalone: true,
-    imports: [FlexModule, FormsModule, NzFormModule, NzGridModule, NzSelectModule, TutorialStepDirective, NgFor, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, NgIf, ItemIconComponent, MarketboardIconComponent, DbButtonComponent, NzTagModule, NzToolTipModule, NzPaginationModule, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule, ItemNamePipe, XivapiIconPipe, JobUnicodePipe, LazyRowPipe, I18nPipe]
+    imports: [FlexModule, FormsModule, NzFormModule, NzGridModule, NzSelectModule, TutorialStepDirective, NzInputModule, NzButtonModule, NzWaveModule, NzIconModule, ItemIconComponent, MarketboardIconComponent, DbButtonComponent, NzTagModule, NzToolTipModule, NzPaginationModule, FullpageMessageComponent, PageLoaderComponent, AsyncPipe, TranslateModule, ItemNamePipe, XivapiIconPipe, JobUnicodePipe, LazyRowPipe, I18nPipe]
 })
 export class DesynthComponent {
 

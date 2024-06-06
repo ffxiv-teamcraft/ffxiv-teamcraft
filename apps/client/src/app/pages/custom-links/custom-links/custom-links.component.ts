@@ -20,14 +20,14 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-custom-links',
     templateUrl: './custom-links.component.html',
     styleUrls: ['./custom-links.component.less'],
     standalone: true,
-    imports: [NgIf, FullpageMessageComponent, NzListModule, FlexModule, NzTagModule, NzButtonModule, NzWaveModule, NzToolTipModule, ClipboardDirective, NzIconModule, NzPopconfirmModule, PageLoaderComponent, AsyncPipe, TranslateModule]
+    imports: [FullpageMessageComponent, NzListModule, FlexModule, NzTagModule, NzButtonModule, NzWaveModule, NzToolTipModule, ClipboardDirective, NzIconModule, NzPopconfirmModule, PageLoaderComponent, AsyncPipe, TranslateModule]
 })
 export class CustomLinksComponent {
 

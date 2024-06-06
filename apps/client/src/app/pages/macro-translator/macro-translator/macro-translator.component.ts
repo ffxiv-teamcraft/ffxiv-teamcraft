@@ -13,7 +13,7 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
-import { NgFor, NgIf } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -23,7 +23,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     templateUrl: './macro-translator.component.html',
     styleUrls: ['./macro-translator.component.less'],
     standalone: true,
-    imports: [FlexModule, NzRadioModule, FormsModule, NgFor, NgIf, NzInputModule, NzButtonModule, NzWaveModule, NzTabsModule, NzAlertModule, TranslateModule]
+    imports: [FlexModule, NzRadioModule, FormsModule, NzInputModule, NzButtonModule, NzWaveModule, NzTabsModule, NzAlertModule, TranslateModule]
 })
 export class MacroTranslatorComponent {
   macroToTranslate: string;
@@ -160,6 +160,9 @@ export class MacroTranslatorComponent {
         }
         if (name === 'Scrutiny' && language === 'en') {
           resultIndex = 22185;
+        }
+        if (name === 'Cast' && language === 'en') {
+          resultIndex = 289;
         }
         const result: I18nName = craftActions[resultIndex] || actions[resultIndex];
         if (resultIndex === -1) {

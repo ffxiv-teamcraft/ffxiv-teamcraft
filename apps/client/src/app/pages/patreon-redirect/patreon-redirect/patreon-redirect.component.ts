@@ -6,14 +6,14 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
-import { NgIf } from '@angular/common';
+
 
 @Component({
     selector: 'app-patreon-redirect',
     templateUrl: './patreon-redirect.component.html',
     styleUrls: ['./patreon-redirect.component.less'],
     standalone: true,
-    imports: [NgIf, NzAlertModule]
+    imports: [NzAlertModule]
 })
 export class PatreonRedirectComponent {
 

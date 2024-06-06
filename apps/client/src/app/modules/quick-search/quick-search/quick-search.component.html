@@ -13,37 +13,65 @@
       (nzOnSearch)="query$.next($event)"
       [nzLoading]="loading"
       [nzOptionHeightPx]="54"
-    >
-      <nz-option *ngFor="let row of results$ | async"
-                 nzCustomContent
-                 [nzValue]="row">
-        <div fxLayout="row" fxLayoutGap="10px">
-          <div [ngSwitch]="row.type">
-            <img class="result-icon" *ngSwitchCase="searchTypes.MAP" src="{{'/c/PlaceName.png' | xivapiIcon}}" alt="">
-            <img class="result-icon" *ngSwitchCase="searchTypes.FISHING_SPOT" src="./assets/icons/classjob/fisher.png" alt="">
-            <img class="result-icon" *ngSwitchCase="searchTypes.GATHERING_NODE" [src]="row.node.type | nodeTypeIcon" alt="">
-            <img class="result-icon" *ngSwitchCase="searchTypes.MONSTER" src="https://xivapi.com/c/BNpcName.png" alt="">
-            <img class="result-icon" *ngSwitchCase="searchTypes.NPC" src="https://xivapi.com/c/ENpcResident.png" alt="">
-            <img class="result-icon" *ngSwitchDefault src="{{row.icon | xivapiIcon}}" alt="">
-          </div>
-          <div fxLayout="column">
-            <div class="result-name" [ngSwitch]="row.type">
-              <span *ngSwitchCase="searchTypes.MONSTER">
-                  {{row | i18n}}
-                  <div *ngIf="row.zoneid">{{row.zoneid | i18nRow:'places' | i18n}}</div>
-              </span>
-              <span *ngSwitchDefault>
-                  {{row | i18n}}
-                </span>
+      >
+      @for (row of results$ | async; track row) {
+        <nz-option
+          nzCustomContent
+          [nzValue]="row">
+          <div fxLayout="row" fxLayoutGap="10px">
+            <div>
+              @switch (row.type) {
+                @case (searchTypes.MAP) {
+                  <img class="result-icon" src="{{'/c/PlaceName.png' | xivapiIcon}}" alt="">
+                }
+                @case (searchTypes.FISHING_SPOT) {
+                  <img class="result-icon" src="./assets/icons/classjob/fisher.png" alt="">
+                }
+                @case (searchTypes.GATHERING_NODE) {
+                  <img class="result-icon" [src]="row.node.type | nodeTypeIcon" alt="">
+                }
+                @case (searchTypes.MONSTER) {
+                  <img class="result-icon" src="https://xivapi.com/c/BNpcName.png" alt="">
+                }
+                @case (searchTypes.NPC) {
+                  <img class="result-icon" src="https://xivapi.com/c/ENpcResident.png" alt="">
+                }
+                @default {
+                  <img class="result-icon" src="{{row.icon | xivapiIcon}}" alt="">
+                }
+              }
             </div>
-            <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+            <div fxLayout="column">
+              <div class="result-name">
+                @switch (row.type) {
+                  @case (searchTypes.MONSTER) {
+                    <span>
+                      {{row | i18n}}
+                      @if (row.zoneid) {
+                        <div>{{row.zoneid | i18nRow:'places' | i18n}}</div>
+                      }
+                    </span>
+                  }
+                  @default {
+                    <span>
+                      {{row | i18n}}
+                    </span>
+                  }
+                }
+              </div>
+              <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+            </div>
           </div>
-        </div>
-      </nz-option>
+        </nz-option>
+      }
     </nz-select>
     <ng-template #searchType>
-      <span *ngIf="reportsMode">{{'ALLAGAN_REPORTS.Jump_to_item' | translate}}</span>
-      <span *ngIf="!reportsMode">{{'DB.Jump_to_page' | translate}}</span>
+      @if (reportsMode) {
+        <span>{{'ALLAGAN_REPORTS.Jump_to_item' | translate}}</span>
+      }
+      @if (!reportsMode) {
+        <span>{{'DB.Jump_to_page' | translate}}</span>
+      }
     </ng-template>
   </nz-input-group>
 </div>

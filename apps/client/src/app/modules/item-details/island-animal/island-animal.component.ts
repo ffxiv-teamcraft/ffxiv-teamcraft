@@ -8,7 +8,7 @@ import { LazyIslandAnimal } from '@ffxiv-teamcraft/data/model/lazy-island-animal
 import { LazyRowPipe } from '../../../pipes/pipes/lazy-row.pipe';
 import { XivapiIconPipe } from '../../../pipes/pipes/xivapi-icon.pipe';
 import { I18nPipe } from '../../../core/i18n.pipe';
-import { NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { NzListModule } from 'ng-zorro-antd/list';
 
 @Component({
@@ -17,7 +17,7 @@ import { NzListModule } from 'ng-zorro-antd/list';
     styleUrls: ['./island-animal.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzListModule, NgFor, AsyncPipe, I18nPipe, XivapiIconPipe, LazyRowPipe]
+    imports: [NzListModule, AsyncPipe, I18nPipe, XivapiIconPipe, LazyRowPipe]
 })
 export class IslandAnimalComponent extends ItemDetailsPopup<IslandAnimal[]> {
 

@@ -11,7 +11,7 @@ import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Location, NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { Location, AsyncPipe, DecimalPipe } from '@angular/common';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
@@ -50,7 +50,7 @@ import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/pa
   styleUrls: ['./collectables.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [PageLoaderComponent, NgIf, FormsModule, NzFormModule, ReactiveFormsModule, NgFor, NzGridModule, NzButtonModule, NzInputModule, NzToolTipModule, NzWaveModule, NzIconModule, NzTabsModule, NzCollapseModule, FlexModule, NzCheckboxModule, ItemIconComponent, I18nNameComponent, MapPositionComponent, AlarmButtonComponent, NzInputNumberModule, FullpageMessageComponent, I18nPipe, TranslateModule, I18nRowPipe, NodeTypeIconPipe, KeysPipe, JobUnicodePipe, AsyncPipe, DecimalPipe]
+  imports: [PageLoaderComponent, FormsModule, NzFormModule, ReactiveFormsModule, NzGridModule, NzButtonModule, NzInputModule, NzToolTipModule, NzWaveModule, NzIconModule, NzTabsModule, NzCollapseModule, FlexModule, NzCheckboxModule, ItemIconComponent, I18nNameComponent, MapPositionComponent, AlarmButtonComponent, NzInputNumberModule, FullpageMessageComponent, I18nPipe, TranslateModule, I18nRowPipe, NodeTypeIconPipe, KeysPipe, JobUnicodePipe, AsyncPipe, DecimalPipe]
 })
 export class CollectablesComponent {
 

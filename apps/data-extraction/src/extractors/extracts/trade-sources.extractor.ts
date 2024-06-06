@@ -22,6 +22,10 @@ export class TradeSourcesExtractor extends AbstractItemDetailsExtractor<TradeSou
 
   shops = this.requireLazyFile('shops');
 
+  itemPatches = this.requireLazyFile('itemPatch');
+
+  patches = this.requireLazyFile('patchNames');
+
 
   doExtract(itemId: number): TradeSource[] {
     const inspection = this.hwdInspections.find(row => {
@@ -60,8 +64,13 @@ export class TradeSourcesExtractor extends AbstractItemDetailsExtractor<TradeSou
       }];
     }
     if (collectableReward) {
+      const expansion = this.patches[this.itemPatches[itemId]]?.ex;
       // Specific case for fishing trade goods exchange was collectableReward[1].group === 73 ? 1044740 : 1035014, keeping it here just in case
-      const npc = 1045080;
+      const npc = {
+        2: 1045080,
+        3: 1027566, // Limbeth
+        4: 1045080 // Quinnana
+      }[expansion];
       return [{
         type: 'CollectableReward',
         id: +collectableReward[0],

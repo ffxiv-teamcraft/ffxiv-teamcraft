@@ -1,4 +1,8 @@
-<ng-container *ngIf="options$ | async as options" >
-  <div *ngIf="!options.empty" echarts theme="dark" [options]="options"></div>
-  <nz-empty [nzNotFoundContent]="'METRICS.Nothing_to_show' | translate" *ngIf="options.empty"></nz-empty>
-</ng-container>
+@if (options$ | async; as options) {
+  @if (!options.empty) {
+    <div echarts theme="dark" [options]="options"></div>
+  }
+  @if (options.empty) {
+    <nz-empty [nzNotFoundContent]="'METRICS.Nothing_to_show' | translate"></nz-empty>
+  }
+}

@@ -1,29 +1,33 @@
 <div class="input-container" fxLayout="row">
   <nz-select fxFlex="1 1 auto" class="left-element" [(ngModel)]="predatorModel.id" nzShowSearch>
-    <ng-container *ngFor="let fish of (fishingSpot?.fishes || possibleFishList)">
-      <nz-option *ngIf="fish > 0" [nzValue]="fish" [nzLabel]="fish | itemName | i18n"></nz-option>
-    </ng-container>
+    @for (fish of (fishingSpot?.fishes || possibleFishList); track fish) {
+      @if (fish > 0) {
+        <nz-option [nzValue]="fish" [nzLabel]="fish | itemName | i18n"></nz-option>
+      }
+    }
   </nz-select>
   <input type="number" class="middle-element" [(ngModel)]="predatorModel.amount" nz-input placeholder="{{'COMMON.Amount' | translate}}" fxFlex="0 0 100px"/>
   <button nz-button [disabled]="!predatorModel.amount || !predatorModel.id" class="right-element" nzType="primary" nzSearch (click)="addPredator()"
-          fxFlex="1 1 50px" type="button"><i nz-icon nzType="plus" nzTheme="outline"></i></button>
-</div>
-<div fxLayout="column" fxLayoutGap="10px">
-  <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" *ngFor="let predator of predators">
-    <div>
-      <app-item-icon [itemId]="predator.id" width="24"></app-item-icon>
-    </div>
-    <div>
-      <app-i18n-name [id]="predator.id" content="items"></app-i18n-name>
-    </div>
-    <div>
-      x{{predator.amount}}
-    </div>
-    <div fxFlex="1 1 auto"></div>
-    <div>
-      <button nz-button nzDanger nzSize="small" nzShape="circle" type="button" (click)="removePredator(predator.id)">
-        <i nz-icon nzType="close"></i>
-      </button>
-    </div>
+    fxFlex="1 1 50px" type="button"><i nz-icon nzType="plus" nzTheme="outline"></i></button>
   </div>
-</div>
+  <div fxLayout="column" fxLayoutGap="10px">
+    @for (predator of predators; track predator) {
+      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+        <div>
+          <app-item-icon [itemId]="predator.id" width="24"></app-item-icon>
+        </div>
+        <div>
+          <app-i18n-name [id]="predator.id" content="items"></app-i18n-name>
+        </div>
+        <div>
+          x{{predator.amount}}
+        </div>
+        <div fxFlex="1 1 auto"></div>
+        <div>
+          <button nz-button nzDanger nzSize="small" nzShape="circle" type="button" (click)="removePredator(predator.id)">
+            <i nz-icon nzType="close"></i>
+          </button>
+        </div>
+      </div>
+    }
+  </div>

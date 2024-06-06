@@ -21,7 +21,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgIf, NgFor, DatePipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
@@ -30,7 +30,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./crafting-replay-row.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NgIf, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, RouterLink, ClipboardDirective, NzPopconfirmModule, ItemIconComponent, NgFor, ActionComponent, DatePipe, ItemNamePipe, TeamcraftLinkPipe, CraftingActionPipe, TranslateModule, I18nPipe]
+    imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, RouterLink, ClipboardDirective, NzPopconfirmModule, ItemIconComponent, ActionComponent, DatePipe, ItemNamePipe, TeamcraftLinkPipe, CraftingActionPipe, TranslateModule, I18nPipe]
 })
 export class CraftingReplayRowComponent {
 

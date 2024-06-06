@@ -7,7 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
-import { NgFor } from '@angular/common';
+
 import { FlexModule } from '@angular/flex-layout/flex';
 import { DialogComponent } from '../../../core/dialog.component';
 
@@ -16,7 +16,7 @@ import { DialogComponent } from '../../../core/dialog.component';
   templateUrl: './clipboard-import-popup.component.html',
   styleUrls: ['./clipboard-import-popup.component.less'],
   standalone: true,
-  imports: [FlexModule, NgFor, ItemIconComponent, NzButtonModule, NzWaveModule, TranslateModule, ItemNamePipe, LazyIconPipe, I18nPipe]
+  imports: [FlexModule, ItemIconComponent, NzButtonModule, NzWaveModule, TranslateModule, ItemNamePipe, LazyIconPipe, I18nPipe]
 })
 export class ClipboardImportPopupComponent extends DialogComponent {
 

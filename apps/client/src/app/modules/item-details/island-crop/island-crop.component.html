@@ -3,5 +3,7 @@
   <app-i18n-name content="items" [id]="details.seed"></app-i18n-name>
 </div>
 
-<app-map *ngIf="gatheringDetails$ | async as gatheringDetails"
-         [mapId]="772" [markers]="[{x: gatheringDetails.nodes[0].x, y: gatheringDetails.nodes[0].y}]"></app-map>
+@if (gatheringDetails$ | async; as gatheringDetails) {
+  <app-map
+  [mapId]="772" [markers]="[{x: gatheringDetails.nodes[0].x, y: gatheringDetails.nodes[0].y}]"></app-map>
+}

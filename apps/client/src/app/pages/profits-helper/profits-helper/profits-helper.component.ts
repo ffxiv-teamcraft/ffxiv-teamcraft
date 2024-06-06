@@ -21,7 +21,7 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { MarketboardIconComponent } from '../../../modules/marketboard/marketboard-icon/marketboard-icon.component';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
-import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
+import { NgTemplateOutlet, AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
@@ -35,7 +35,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./profits-helper.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzTableModule, NgIf, NgFor, ItemIconComponent, I18nNameComponent, MarketboardIconComponent, NzSpinModule, NzGridModule, NzCardModule, NzCheckboxModule, FormsModule, NgTemplateOutlet, NzInputNumberModule, NzEmptyModule, AsyncPipe, DecimalPipe, DatePipe, TranslateModule, JobUnicodePipe]
+    imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, NzTableModule, ItemIconComponent, I18nNameComponent, MarketboardIconComponent, NzSpinModule, NzGridModule, NzCardModule, NzCheckboxModule, FormsModule, NgTemplateOutlet, NzInputNumberModule, NzEmptyModule, AsyncPipe, DecimalPipe, DatePipe, TranslateModule, JobUnicodePipe]
 })
 export class ProfitsHelperComponent {
 

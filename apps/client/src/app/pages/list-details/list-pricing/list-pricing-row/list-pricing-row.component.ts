@@ -29,7 +29,7 @@ import { FormsModule } from '@angular/forms';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzGridModule } from 'ng-zorro-antd/grid';
-import { NgIf, AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
 
 @Component({
     selector: 'app-list-pricing-row',
@@ -37,7 +37,7 @@ import { NgIf, AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
     styleUrls: ['./list-pricing-row.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NzGridModule, FlexModule, NzCheckboxModule, FormsModule, ItemIconComponent, I18nNameComponent, ClipboardDirective, MarketboardIconComponent, NzTagModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzSwitchModule, NzIconModule, NzInputModule, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, ItemNamePipe, WorldNamePipe]
+    imports: [NzGridModule, FlexModule, NzCheckboxModule, FormsModule, ItemIconComponent, I18nNameComponent, ClipboardDirective, MarketboardIconComponent, NzTagModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzSwitchModule, NzIconModule, NzInputModule, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, ItemNamePipe, WorldNamePipe]
 })
 export class ListPricingRowComponent extends TeamcraftComponent {
 

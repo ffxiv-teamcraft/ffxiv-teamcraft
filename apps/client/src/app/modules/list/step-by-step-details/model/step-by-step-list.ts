@@ -75,7 +75,7 @@ export class StepByStepList {
                   // If it's a trade, we want to filter to make sure it's on this map, to avoid showing wrong currency and details.
                   preparedSource.data = preparedSource.data.filter(npc => npc.mapId === position.mapId);
                 }
-                const sourcesToTransfer = row.sources.filter(s => [DataType.MASTERBOOKS, DataType.DEPRECATED].includes(s.type));
+                const sourcesToTransfer = row.sources.filter(s => ![DataType.MASTERBOOKS, DataType.DEPRECATED].includes(s.type));
                 const sources = [...sourcesToTransfer, preparedSource];
                 this.addToMapIndex(position.mapId, row, sources, position);
               }

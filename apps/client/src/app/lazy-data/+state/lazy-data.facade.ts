@@ -6,7 +6,6 @@ import { SettingsService } from '../../modules/settings/settings.service';
 import { zhWorlds } from '../../core/data/sources/zh-worlds';
 import { koWorlds } from '../../core/data/sources/ko-worlds';
 import { LazyRecipe } from '@ffxiv-teamcraft/data/model/lazy-recipe';
-import { mapIds } from '../../core/data/sources/map-ids';
 import { Language } from '../../core/data/language';
 import { normalizeI18nName } from '../../core/tools/normalize-i18n';
 import { TranslateService } from '@ngx-translate/core';
@@ -212,7 +211,7 @@ export class LazyDataFacade {
         }
         return result.id;
       })
-    )
+    );
   }
 
   public getWorldName(world: string): I18nName {

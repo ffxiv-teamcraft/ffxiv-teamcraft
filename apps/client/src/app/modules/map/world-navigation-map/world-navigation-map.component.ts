@@ -23,7 +23,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { AsyncPipe, DecimalPipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 import { DialogComponent } from '../../../core/dialog.component';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
@@ -32,7 +32,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   templateUrl: './world-navigation-map.component.html',
   styleUrls: ['./world-navigation-map.component.less'],
   standalone: true,
-  imports: [NgIf, FlexModule, NzButtonModule, NzWaveModule, NzIconModule, NzSelectModule, FormsModule, NgFor, MapComponent, NzListModule, NzToolTipModule, ClipboardDirective, NzSpinModule, AsyncPipe, DecimalPipe, NodeTypeIconPipe, LazyIconPipe, I18nPipe, TranslateModule, I18nRowPipe]
+  imports: [FlexModule, NzButtonModule, NzWaveModule, NzIconModule, NzSelectModule, FormsModule, MapComponent, NzListModule, NzToolTipModule, ClipboardDirective, NzSpinModule, AsyncPipe, DecimalPipe, NodeTypeIconPipe, LazyIconPipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class WorldNavigationMapComponent extends DialogComponent implements OnInit {
   private destroyRef = inject(DestroyRef);

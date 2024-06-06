@@ -28,13 +28,16 @@ import { EorzeanTimeService } from '../../core/eorzea/eorzean-time.service';
 import { AlarmsFacade } from '../../core/alarms/+state/alarms.facade';
 import { StepByStepComponent } from '../../modules/list/step-by-step-details/step-by-step-component';
 import { ListDisplay } from '../../core/layout/list-display';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { uniqBy } from 'lodash';
+import { PageLoaderComponent } from '../../modules/page-loader/page-loader/page-loader.component';
 
 @Component({
   selector: 'app-step-by-step-list-overlay',
   standalone: true,
   imports: [CommonModule, OverlayContainerModule, MapModule, PipesModule, CoreModule, FullpageMessageModule,
     NzListModule, ItemIconModule, ListModule,
-    NzDividerModule, NzBreadCrumbModule, NzEmptyModule],
+    NzDividerModule, NzBreadCrumbModule, NzEmptyModule, NzGridModule, PageLoaderComponent],
   templateUrl: './step-by-step-list-overlay.component.html',
   styleUrls: ['./step-by-step-list-overlay.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -98,7 +101,7 @@ export class StepByStepListOverlayComponent extends StepByStepComponent implemen
   ngOnInit() {
     super.ngOnInit();
     this.stepsList$ = this.currentPath$.pipe(
-      map(path => path.path.steps.slice(1))
+      map(path => uniqBy(path.path.steps.slice(1), 'itemId'))
     );
     this.closestMap$ = combineLatest([this.stepByStep$, this.mapId$]).pipe(
       map(([stepByStep, currentMapId]) => {

@@ -13,7 +13,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgSwitch, NgSwitchCase, NgTemplateOutlet, NgIf, NgSwitchDefault, AsyncPipe, DecimalPipe, CurrencyPipe } from '@angular/common';
+import { NgTemplateOutlet, AsyncPipe, DecimalPipe, CurrencyPipe } from '@angular/common';
 
 @Component({
     selector: 'app-report-source-compact-details',
@@ -21,7 +21,7 @@ import { NgSwitch, NgSwitchCase, NgTemplateOutlet, NgIf, NgSwitchDefault, AsyncP
     styleUrls: ['./report-source-compact-details.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgSwitch, NgSwitchCase, NgTemplateOutlet, FlexModule, DbButtonComponent, NgIf, NzButtonModule, NzIconModule, NgSwitchDefault, ItemIconComponent, I18nNameComponent, AsyncPipe, DecimalPipe, CurrencyPipe, I18nPipe, TranslateModule, I18nRowPipe, XivapiIconPipe, MapNamePipe, VoyageNamePipe, LazyRowPipe]
+    imports: [NgTemplateOutlet, FlexModule, DbButtonComponent, NzButtonModule, NzIconModule, ItemIconComponent, I18nNameComponent, AsyncPipe, DecimalPipe, CurrencyPipe, I18nPipe, TranslateModule, I18nRowPipe, XivapiIconPipe, MapNamePipe, VoyageNamePipe, LazyRowPipe]
 })
 export class ReportSourceCompactDetailsComponent {
 

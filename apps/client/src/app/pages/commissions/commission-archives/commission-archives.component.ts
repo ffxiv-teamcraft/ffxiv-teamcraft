@@ -8,7 +8,7 @@ import { CommissionPanelComponent } from '../../../modules/commission-board/comm
 import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-commission-archives',
@@ -16,7 +16,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     styleUrls: ['./commission-archives.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NzDividerModule, FlexModule, FullpageMessageComponent, NgFor, CommissionPanelComponent, PageLoaderComponent, AsyncPipe, TranslateModule]
+    imports: [NzDividerModule, FlexModule, FullpageMessageComponent, CommissionPanelComponent, PageLoaderComponent, AsyncPipe, TranslateModule]
 })
 export class CommissionArchivesComponent implements OnInit {
 

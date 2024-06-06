@@ -1,13 +1,12 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { PersistedAlarm } from '../../../core/alarms/persisted-alarm';
-import { GatheringNode } from '@ffxiv-teamcraft/types';
+import { AlarmDetails, GatheringNode } from '@ffxiv-teamcraft/types';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { Observable } from 'rxjs';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { OceanFishingTime } from '../../../pages/allagan-reports/model/ocean-fishing-time';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
-import { AlarmDetails } from '@ffxiv-teamcraft/types';
 import { AlarmDisplayPipe } from '../../../core/alarms/alarm-display.pipe';
 import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
 import { I18nPipe } from '../../../core/i18n.pipe';
@@ -21,21 +20,20 @@ import { AlarmButtonComponent } from '../../alarm-button/alarm-button/alarm-butt
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { DbButtonComponent } from '../../../core/db-button/db-button.component';
-import { NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { LazyIconPipe } from '../../../pipes/pipes/lazy-icon.pipe';
 import { FloorPipe } from '../../../pipes/pipes/floor.pipe';
 import { HourDisplayPipe } from '../../../pipes/pipes/hour-display.pipe';
 
 @Component({
-    selector: 'app-node-details',
-    templateUrl: './node-details.component.html',
-    styleUrls: ['./node-details.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-  imports: [FlexModule, NgIf, NgSwitch, NgSwitchCase, DbButtonComponent, NgSwitchDefault, NzTagModule, NzToolTipModule, NgFor, AlarmButtonComponent, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, TranslateModule, XivapiIconPipe, WeatherIconPipe, MapNamePipe, LazyRowPipe, I18nPipe, I18nRowPipe, AlarmDisplayPipe, I18nNameComponent, LazyIconPipe, FloorPipe, HourDisplayPipe]
+  selector: 'app-node-details',
+  templateUrl: './node-details.component.html',
+  styleUrls: ['./node-details.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [FlexModule, DbButtonComponent, NzTagModule, NzToolTipModule, AlarmButtonComponent, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, TranslateModule, XivapiIconPipe, WeatherIconPipe, MapNamePipe, LazyRowPipe, I18nPipe, I18nRowPipe, AlarmDisplayPipe, I18nNameComponent, LazyIconPipe, FloorPipe, HourDisplayPipe]
 })
 export class NodeDetailsComponent {
 

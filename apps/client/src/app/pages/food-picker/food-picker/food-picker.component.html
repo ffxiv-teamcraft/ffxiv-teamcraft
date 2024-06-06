@@ -4,21 +4,25 @@
     <i>{{'FOOD_PICKER.Description' | translate}}</i>
   </div>
 
-  <div fxLayout="row" fxLayoutGap="5px" *ngIf="stats$ | async as stats">
-    <nz-select (ngModelChange)="updateStats($event)"
-               [ngModel]="stats"
-               [nzPlaceHolder]="'FOOD_PICKER.Pick_stat' | translate"
-               class="food-picker"
-               nzMode="multiple"
-               nzMaxMultipleCount="3"
-               nzAllowClear
-               nzShowArrow
-               nzShowSearch>
-      <nz-option *ngFor="let availableStat of availableStats" [nzLabel]="availableStat | i18n"
-                 [nzValue]="availableStat">
-      </nz-option>
-    </nz-select>
-  </div>
+  @if (stats$ | async; as stats) {
+    <div fxLayout="row" fxLayoutGap="5px">
+      <nz-select (ngModelChange)="updateStats($event)"
+        [ngModel]="stats"
+        [nzPlaceHolder]="'FOOD_PICKER.Pick_stat' | translate"
+        class="food-picker"
+        nzMode="multiple"
+        nzMaxMultipleCount="3"
+        nzAllowClear
+        nzShowArrow
+        nzShowSearch>
+        @for (availableStat of availableStats; track availableStat) {
+          <nz-option [nzLabel]="availableStat | i18n"
+            [nzValue]="availableStat">
+          </nz-option>
+        }
+      </nz-select>
+    </div>
+  }
 </div>
 
 <nz-list [nzDataSource]="results$ | async" [nzLoading]="loading" [nzRenderItem]="item">
@@ -33,29 +37,35 @@
         [nzAvatar]="avatar"
         [nzDescription]="description"
         [nzTitle]="nzTitle"
-      >
+        >
         <ng-template #description>
           <div fxLayout="row" fxLayoutAlign="flex-start center">
             <ul class="bonuses-list">
-              <li *ngFor="let bonus of item.bonuses">
-                <strong>{{ bonus.ID | i18nRow:'baseParams' | i18n }}</strong> : {{bonus.Value}}<span *ngIf="bonus.Relative">% ({{bonus.Max}})</span>&nbsp; <span
-                class="bonus-hq"><img alt="" src="./assets/icons/HQ.png"/> {{bonus.ValueHQ}}<span *ngIf="bonus.Relative">% ({{bonus.MaxHQ}})</span></span>
+              @for (bonus of item.bonuses; track bonus) {
+                <li>
+                  <strong>{{ bonus.ID | i18nRow:'baseParams' | i18n }}</strong> : {{bonus.Value}}@if (bonus.Relative) {
+                  <span>% ({{bonus.Max}})</span>
+                  }&nbsp; <span
+                  class="bonus-hq"><img alt="" src="./assets/icons/HQ.png"/> {{bonus.ValueHQ}}@if (bonus.Relative) {
+                  <span>% ({{bonus.MaxHQ}})</span>
+                }</span>
               </li>
-            </ul>
-          </div>
-        </ng-template>
-        <ng-template #avatar>
-          <app-item-icon [hq]="item.HQ" [icon]="item.id | lazyIcon" [itemId]="item.id"
-                         [width]="32"></app-item-icon>
-        </ng-template>
-        <ng-template #nzTitle>
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div><app-i18n-name [id]="item.id" content="items"></app-i18n-name></div>
-            <app-db-button [id]="item.id" type="item"></app-db-button>
-            <app-marketboard-icon [itemId]="item.id" [showHistory]="true"></app-marketboard-icon>
-          </div>
-        </ng-template>
-      </nz-list-item-meta>
-    </nz-list-item>
-  </ng-template>
+            }
+          </ul>
+        </div>
+      </ng-template>
+      <ng-template #avatar>
+        <app-item-icon [hq]="item.HQ" [icon]="item.id | lazyIcon" [itemId]="item.id"
+        [width]="32"></app-item-icon>
+      </ng-template>
+      <ng-template #nzTitle>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div><app-i18n-name [id]="item.id" content="items"></app-i18n-name></div>
+          <app-db-button [id]="item.id" type="item"></app-db-button>
+          <app-marketboard-icon [itemId]="item.id" [showHistory]="true"></app-marketboard-icon>
+        </div>
+      </ng-template>
+    </nz-list-item-meta>
+  </nz-list-item>
+</ng-template>
 </nz-list>

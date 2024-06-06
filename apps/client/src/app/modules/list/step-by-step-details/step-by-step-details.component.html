@@ -76,7 +76,7 @@
       <div nz-col [nzLg]="17">
         <div nz-row [nzGutter]="[10,10]">
           <app-step-by-step-datatype *ngFor="let source of mapDisplay.sources; trackBy: trackByMapId; index as i"
-                                     nz-col [nzXXl]="(i % 2 === 0 && !mapDisplay.sources[i + 1]) ? 24 : 12" [nzLg]="24"
+                                     nz-col [nzXXl]="((i % 2 === 0 && !mapDisplay.sources[i + 1]) || source === DataType.ALARMS) ? 24 : 12" [nzLg]="24"
                                      [dataType]="source"
                                      [steps]="mapDisplay[source]"
                                      [permissionLevel]="permissionLevel"></app-step-by-step-datatype>

@@ -1,3 +1,20 @@
 {
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+
+    // Debugging requires Powershell to execute yarn commands.
+    // By default, Powershell disables execution of scripts.
+    // To allow yarn, we include this workspace-specific configuration
+    // to allow execution of remote signed scripts
+    // https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.4#powershell-execution-policies
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell",
+            "args": [
+                "-ExecutionPolicy",
+                "RemoteSigned"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
 }

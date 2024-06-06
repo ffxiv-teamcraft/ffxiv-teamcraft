@@ -22,42 +22,38 @@ export class LogTrackingService extends FirestoreStorage<LogTracking> {
     super(firestore, serializer, zone, pendingChangesService);
   }
 
-  get(uid: string, uriParams?: any): Observable<LogTracking> {
-    return super.get(uid, uriParams);
-  }
-
   public markAsDone(uid: string, entries: MarkAsDoneEntry[]): Observable<any> {
     return concat(chunk(entries, 450)
       .map(entriesChunk => {
-        return from(runTransaction(this.firestore, transaction => {
+        return from(runTransaction(this.firestore, async transaction => {
           const docRef = this.docRef(uid);
-          return transaction.get(docRef)
-            .then(doc => {
-              entriesChunk
-                .filter(entry => !!entry.itemId)
-                .forEach(entry => {
-                  if (!doc.exists() && entry.done) {
-                    const newLog = {
-                      crafting: [],
-                      gathering: []
-                    };
-                    newLog[entry.log].push(entry.itemId);
-                    transaction.set(docRef, newLog);
-                  } else {
-                    if (entry.done && (doc.get(entry.log.toString()) || []).indexOf(entry.itemId) === -1) {
-                      transaction.update(docRef, {
-                        [entry.log]: arrayUnion(entry.itemId)
-                      });
-                    } else if (!entry.done) {
-                      transaction.update(docRef, {
-                        [entry.log]: arrayRemove(entry.itemId)
-                      });
-                    } else {
-                      Promise.resolve();
-                    }
+          try {
+            const doc = await transaction.get(docRef);
+            return entriesChunk
+              .filter(entry => !!entry.itemId)
+              .forEach(entry => {
+                if (!doc.exists() && entry.done) {
+                  const newLog = {
+                    crafting: [],
+                    gathering: []
+                  };
+                  newLog[entry.log].push(entry.itemId);
+                  transaction.set(docRef, newLog);
+                } else {
+                  if (entry.done && (doc.get(entry.log.toString()) || []).indexOf(entry.itemId) === -1) {
+                    transaction.update(docRef, {
+                      [entry.log]: arrayUnion(entry.itemId)
+                    });
+                  } else if (!entry.done) {
+                    transaction.update(docRef, {
+                      [entry.log]: arrayRemove(entry.itemId)
+                    });
                   }
-                });
-            });
+                }
+              });
+          } catch (err) {
+            return console.error(err);
+          }
         }));
       })
     );

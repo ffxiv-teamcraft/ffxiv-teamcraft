@@ -43,7 +43,7 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
 import { UserAvatarComponent } from '../../../../modules/user-avatar/user-avatar/user-avatar.component';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 
 @Component({
     selector: 'app-rotation-panel',
@@ -51,7 +51,7 @@ import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
     styleUrls: ['./rotation-panel.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NzCollapseModule, FlexModule, UserAvatarComponent, NgFor, NzTagModule, NzButtonModule, NzIconModule, NzToolTipModule, RotationResultTagComponent, NzWaveModule, ClipboardDirective, RouterLink, NzPopconfirmModule, NzDropDownModule, NzMenuModule, ActionComponent, AsyncPipe, DecimalPipe, TranslateModule]
+    imports: [NzCollapseModule, FlexModule, UserAvatarComponent, NzTagModule, NzButtonModule, NzIconModule, NzToolTipModule, RotationResultTagComponent, NzWaveModule, ClipboardDirective, RouterLink, NzPopconfirmModule, NzDropDownModule, NzMenuModule, ActionComponent, AsyncPipe, DecimalPipe, TranslateModule]
 })
 export class RotationPanelComponent implements OnInit {
 

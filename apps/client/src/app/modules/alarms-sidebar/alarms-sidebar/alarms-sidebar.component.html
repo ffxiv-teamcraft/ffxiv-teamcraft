@@ -1,91 +1,137 @@
-<ng-container *ngIf="loaded$ | async; else loading">
-  <div *ngIf="!overlayMode" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-    <nz-switch [(ngModel)]="settings.alarmsMuted"></nz-switch>
-    <div>{{'Mute_alarms' | translate}} </div>
-  </div>
-  <div *ngIf="alarms$ | async as alarms" [class.sidebar]="!overlayMode" class="alarms-container">
-    <div *ngFor="let row of alarms; trackBy: trackByAlarm; let last = last">
-      <div [class.played]="row.played && !row.spawned" [class.spawned]="row.spawned" class="alarm-row" fxLayout="row"
-           fxLayoutGap="5px">
-        <div class="ephemeral">
-          <i *ngIf="row.alarm.ephemeral" [nzTooltipTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
-             nzType="clock-circle"></i>
-        </div>
-        <div class="flex-column gap-2 justify-center">
-          <div>
-            <div class="item-icon">
-              <app-item-icon *ngIf="row.alarm.itemId"
-                             [icon]="row.alarm.itemId | lazyIcon"
-                             [itemId]="row.alarm.itemId"
-                             [itemName]="row.alarm.itemId | itemName: row.alarm | i18n"
-                             [width]="32"></app-item-icon>
-              <img *ngIf="row.alarm.type === -10" class="img-icon" [src]="row.alarm.icon | xivapiIcon" alt="">
-              <img *ngIf="row.alarm.type !== -10" alt="" class="node-type" src="{{row.alarm.type | nodeTypeIcon: true}}">
-              <img *ngIf="row.alarm.type === -10" alt="" class="node-type" src="https://xivapi.com/i/063000/063949.png">
-            </div>
-          </div>
-          <div>
-            <button *ngIf="row.spawned && !row.done" nz-button nzSize="small" nzType="primary" (click)="markAsDone(row.alarm)"
-                    class="done-button" nz-tooltip [nzTooltipTitle]="'COMMON.Done' | translate"><span nz-icon nzType="check" nzTheme="outline"></span></button>
-          </div>
-        </div>
-        <div class="center-content">
-          <span *ngIf="row.alarm.itemId; else customName">
-            <i *ngIf="row.groupNames" [nzTooltipTitle]="row.groupNames" class="folder-icon" nz-icon
-               nz-tooltip nzType="folder-open"></i>
-            <app-gathering-item-uses [itemId]="row.alarm.itemId" [compact]="true"></app-gathering-item-uses>
-            <span [itemNameCopy]="row.alarm.itemId" [disableTooltip]="true" class="item-name">{{row.alarm.itemId | itemName: row.alarm | i18n}}</span>
-            <i *ngIf="row.alarm.note" [nzTooltipTitle]="row.alarm.note" class="note-icon" nz-icon
-               nz-tooltip nzType="edit"></i>
-          </span>
-          <ng-template #customName>
-            <div fxLayout="row" fxLayoutAlign="flex-start center">
-              <div><i *ngIf="row.groupNames" [nzTooltipTitle]="row.groupNames" class="folder-icon" nz-icon
-                      nz-tooltip nzType="folder-open"></i></div>
-              <div class="item-name" *ngIf="row.alarm.type !== -10">{{row.alarm.name}}</div>
-              <div class="item-name" *ngIf="row.alarm.type === -10">{{row.alarm.bnpcName | lazyRow:'mobs' | i18n}}</div>
-            </div>
-          </ng-template>
-          <div fxLayout="row wrap" fxLayoutGap="5px">
-            <div class="timer" [timerTooltip]="row.remainingTime">{{row.remainingTime | timer}}</div>
-            <div>&nbsp;<span nz-icon nzType="clock-circle" [timerTooltip]="row.nextSpawnTime" [prefix]="'ALARMS.Next_spawn_prefix' | translate"></span></div>
-            <div class="map" *ngIf="row.alarm.mapId | closestAetheryte:row.alarm.coords | async as aetheryte">
-              {{aetheryte.nameid | i18nRow:'places' | i18n}}
-            </div>
-            <div class="coords">X:{{row.alarm.coords.x | number: '1.0-2'}} - Y: {{row.alarm.coords.y | number: '1.0-2'}}</div>
-          </div>
-          <div *ngIf="row.alarm.baits">
-            <app-fishing-bait [baits]="row.alarm.baits" hideNames="true" iconWidth="24" flex="row"></app-fishing-bait>
-          </div>
-        </div>
-        <img *ngIf="row.alarm.hookset" src="{{row.alarm.hookset | hooksetActionId | actionIcon | xivapiIcon}}" class="hookset-icon"/>
-        <img *ngIf="row.alarm.fishEyes" [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon" alt="" class="fish-eyes" nz-tooltip
-             [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
-        <div *ngIf="!overlayMode" class="map-button">
-          <button *ngIf="row.alarm.type > -1" (click)="openMap(row.alarm)" nz-button nzShape="circle" nzSize="small" nzType="primary">
-            <i nz-icon nzType="environment-o"></i>
-          </button>
-          <button *ngIf="row.alarm.type === -5" routerLink="/db/{{translate.currentLang}}/fishing-spot/{{row.alarm.nodeId}}" nz-button nzShape="circle"
-                  nzSize="small" nzType="primary">
-            <i nz-icon nzType="environment-o"></i>
-          </button>
-        </div>
-        <div class="top-right-icons" fxLayout="row" fxLayoutGap="5px">
-          <div (click)="hideAlarm(row.alarm)" class="hide-icon">
-            <i nz-icon nzType="eye-invisible" nzTheme="outline"></i>
-          </div>
-          <div (nzOnConfirm)="deleteAlarm(row.alarm)" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" class="delete-icon">
-            <i nz-icon nzType="close"></i>
-          </div>
-        </div>
-      </div>
-      <nz-divider *ngIf="!last"></nz-divider>
+@if (loaded$ | async) {
+  @if (!overlayMode) {
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+      <nz-switch [(ngModel)]="settings.alarmsMuted"></nz-switch>
+      <div>{{'Mute_alarms' | translate}} </div>
     </div>
-    <app-fullpage-message *ngIf="alarms.length === 0">
-      {{'ALARMS.No_alarm' | translate}}
-    </app-fullpage-message>
-  </div>
-</ng-container>
-<ng-template #loading>
-  <app-page-loader></app-page-loader>
-</ng-template>
+  }
+  @if (alarms$ | async; as alarms) {
+    <div [class.sidebar]="!overlayMode" class="alarms-container">
+      @for (row of alarms; track trackByAlarm($index, row); let last = $last) {
+        <div>
+          <div [class.played]="row.played && !row.spawned" [class.spawned]="row.spawned" class="alarm-row" fxLayout="row"
+            fxLayoutGap="5px">
+            <div class="ephemeral">
+              @if (row.alarm.ephemeral) {
+                <i [nzTooltipTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
+                nzType="clock-circle"></i>
+              }
+            </div>
+            <div class="flex-column gap-2 justify-center">
+              <div>
+                <div class="item-icon">
+                  @if (row.alarm.itemId) {
+                    <app-item-icon
+                      [icon]="row.alarm.itemId | lazyIcon"
+                      [itemId]="row.alarm.itemId"
+                      [itemName]="row.alarm.itemId | itemName: row.alarm | i18n"
+                    [width]="32"></app-item-icon>
+                  }
+                  @if (row.alarm.type === -10) {
+                    <img class="img-icon" [src]="row.alarm.icon | xivapiIcon" alt="">
+                  }
+                  @if (row.alarm.type !== -10) {
+                    <img alt="" class="node-type" src="{{row.alarm.type | nodeTypeIcon: true}}">
+                  }
+                  @if (row.alarm.type === -10) {
+                    <img alt="" class="node-type" src="https://xivapi.com/i/063000/063949.png">
+                  }
+                </div>
+              </div>
+              <div>
+                @if (row.spawned && !row.done) {
+                  <button nz-button nzSize="small" nzType="primary" (click)="markAsDone(row.alarm)"
+                    class="done-button" nz-tooltip [nzTooltipTitle]="'COMMON.Done' | translate"><span nz-icon nzType="check" nzTheme="outline"></span></button>
+                  }
+                </div>
+              </div>
+              <div class="center-content">
+                @if (row.alarm.itemId) {
+                  <span>
+                    @if (row.groupNames) {
+                      <i [nzTooltipTitle]="row.groupNames" class="folder-icon" nz-icon
+                      nz-tooltip nzType="folder-open"></i>
+                    }
+                    <app-gathering-item-uses [itemId]="row.alarm.itemId" [compact]="true"></app-gathering-item-uses>
+                    <span [itemNameCopy]="row.alarm.itemId" [disableTooltip]="true" class="item-name">{{row.alarm.itemId | itemName: row.alarm | i18n}}</span>
+                    @if (row.alarm.note) {
+                      <i [nzTooltipTitle]="row.alarm.note" class="note-icon" nz-icon
+                      nz-tooltip nzType="edit"></i>
+                    }
+                  </span>
+                } @else {
+                  <div fxLayout="row" fxLayoutAlign="flex-start center">
+                    <div>@if (row.groupNames) {
+                      <i [nzTooltipTitle]="row.groupNames" class="folder-icon" nz-icon
+                      nz-tooltip nzType="folder-open"></i>
+                    }</div>
+                    @if (row.alarm.type !== -10) {
+                      <div class="item-name">{{row.alarm.name}}</div>
+                    }
+                    @if (row.alarm.type === -10) {
+                      <div class="item-name">{{row.alarm.bnpcName | lazyRow:'mobs' | i18n}}</div>
+                    }
+                  </div>
+                }
+                <div fxLayout="row wrap" fxLayoutGap="5px">
+                  <div class="timer" [timerTooltip]="row.remainingTime">{{row.remainingTime | timer}}</div>
+                  <div>&nbsp;<span nz-icon nzType="clock-circle" [timerTooltip]="row.nextSpawnTime" [prefix]="'ALARMS.Next_spawn_prefix' | translate"></span></div>
+                  @if (row.alarm.mapId | closestAetheryte:row.alarm.coords | async; as aetheryte) {
+                    <div class="map">
+                      {{aetheryte.nameid | i18nRow:'places' | i18n}}
+                    </div>
+                  }
+                  <div class="coords">X:{{row.alarm.coords.x | number: '1.0-2'}} - Y: {{row.alarm.coords.y | number: '1.0-2'}}</div>
+                </div>
+                @if (row.alarm.baits) {
+                  <div>
+                    <app-fishing-bait [baits]="row.alarm.baits" hideNames="true" iconWidth="24" flex="row"></app-fishing-bait>
+                  </div>
+                }
+              </div>
+              @if (row.alarm.hookset) {
+                <img src="{{row.alarm.hookset | hooksetActionId | actionIcon | xivapiIcon}}" class="hookset-icon"/>
+              }
+              @if (row.alarm.fishEyes) {
+                <img [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon" alt="" class="fish-eyes" nz-tooltip
+                  [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
+              }
+              @if (!overlayMode) {
+                <div class="map-button">
+                  @if (row.alarm.type > -1) {
+                    <button (click)="openMap(row.alarm)" nz-button nzShape="circle" nzSize="small" nzType="primary">
+                      <i nz-icon nzType="environment-o"></i>
+                    </button>
+                  }
+                  @if (row.alarm.type === -5) {
+                    <button routerLink="/db/{{translate.currentLang}}/fishing-spot/{{row.alarm.nodeId}}" nz-button nzShape="circle"
+                      nzSize="small" nzType="primary">
+                      <i nz-icon nzType="environment-o"></i>
+                    </button>
+                  }
+                </div>
+              }
+              <div class="top-right-icons" fxLayout="row" fxLayoutGap="5px">
+                <div (click)="hideAlarm(row.alarm)" class="hide-icon">
+                  <i nz-icon nzType="eye-invisible" nzTheme="outline"></i>
+                </div>
+                <div (nzOnConfirm)="deleteAlarm(row.alarm)" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" class="delete-icon">
+                  <i nz-icon nzType="close"></i>
+                </div>
+              </div>
+            </div>
+            @if (!last) {
+              <nz-divider></nz-divider>
+            }
+          </div>
+        }
+        @if (alarms.length === 0) {
+          <app-fullpage-message>
+            {{'ALARMS.No_alarm' | translate}}
+          </app-fullpage-message>
+        }
+      </div>
+    }
+  } @else {
+    <app-page-loader></app-page-loader>
+  }

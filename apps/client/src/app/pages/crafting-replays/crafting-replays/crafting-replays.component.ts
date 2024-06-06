@@ -24,7 +24,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
-import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { NgTemplateOutlet, AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/page-loader.component';
 
@@ -34,7 +34,7 @@ import { PageLoaderComponent } from '../../../modules/page-loader/page-loader/pa
     styleUrls: ['./crafting-replays.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [PageLoaderComponent, FlexModule, NgIf, NzAlertModule, NzDividerModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, FullpageMessageComponent, CdkDropList, NgFor, CdkDrag, NgTemplateOutlet, FolderComponent, NzPopconfirmModule, LazyScrollComponent, CraftingReplayRowComponent, AsyncPipe, TranslateModule]
+    imports: [PageLoaderComponent, FlexModule, NzAlertModule, NzDividerModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, FullpageMessageComponent, CdkDropList, CdkDrag, NgTemplateOutlet, FolderComponent, NzPopconfirmModule, LazyScrollComponent, CraftingReplayRowComponent, AsyncPipe, TranslateModule]
 })
 export class CraftingReplaysComponent {
 

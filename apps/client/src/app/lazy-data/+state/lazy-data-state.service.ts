@@ -4,12 +4,25 @@ import { LazyDataLoadingState, PartialLoading } from './lazy-data-loading-state'
 import { lazyFilesList } from '@ffxiv-teamcraft/data/lazy-files-list';
 import { environment } from '../../../environments/environment';
 import { extractsHash } from '@ffxiv-teamcraft/data/extracts-hash';
-import { BehaviorSubject, first, map, Observable, Subject, Subscription } from 'rxjs';
+import {
+  BehaviorSubject,
+  catchError,
+  distinctUntilChanged,
+  EMPTY,
+  filter,
+  first,
+  map,
+  mergeMap,
+  Observable,
+  shareReplay,
+  Subject,
+  Subscription,
+  tap
+} from 'rxjs';
 import { isPlatformServer } from '@angular/common';
 import { IS_HEADLESS } from '../../../environments/is-headless';
 import { HttpClient } from '@angular/common/http';
 import { PlatformService } from '../../core/tools/platform.service';
-import { distinctUntilChanged, filter, mergeMap, shareReplay, tap } from 'rxjs/operators';
 import { debounceBufferTime } from '../../core/rxjs/debounce-buffer-time';
 import { pick } from 'lodash';
 import { LazyDataContent } from './lazy-data-content';
@@ -50,16 +63,21 @@ export class LazyDataStateService {
       };
       this.loadingKeys$.next([...this.loadingKeys$.value, `${propertyKey}:full`]);
       this.getData(this.getUrl(propertyKey))
-        .subscribe((content: LazyDataWithExtracts[K]) => {
-          this.loadingStates[propertyKey] = {
-            status: 'full'
-          };
-          data$.next({
-            status: 'full',
-            ids: [],
-            content
-          });
-          this.loadingKeys$.next(this.loadingKeys$.value.filter(v => !v.startsWith(propertyKey)));
+        .subscribe({
+          next: (content: LazyDataWithExtracts[K]) => {
+            this.loadingStates[propertyKey] = {
+              status: 'full'
+            };
+            data$.next({
+              status: 'full',
+              ids: [],
+              content
+            });
+            this.loadingKeys$.next(this.loadingKeys$.value.filter(v => !v.startsWith(propertyKey)));
+          },
+          error: () => {
+            this.loadingKeys$.next(this.loadingKeys$.value.filter(v => !v.startsWith(propertyKey)));
+          }
         });
     }
     return data$.pipe(
@@ -183,22 +201,31 @@ export class LazyDataStateService {
                 this.loadingKeys$.next(loadingKeys);
               }
             }),
+            catchError(() => {
+              const loadingKeys = this.loadingKeys$.value.filter(v => {
+                return !ids.some(id => v === `${propertyKey}:${id.toString()}`);
+              });
+              this.loadingKeys$.next(loadingKeys);
+              return EMPTY;
+            }),
             map(content => ({ ids, content, fullLoading }))
           );
         })
-      ).subscribe(({ ids, content, fullLoading }) => {
-        const obs$ = this.getDataSubject(propertyKey);
-        obs$.next({
-          status: fullLoading ? 'full' : 'partial',
-          content: {
-            ...(obs$.value?.content || {}),
-            ...content
-          },
-          ids: fullLoading ? [] : [
-            ...(obs$.value?.ids || []),
-            ...ids
-          ]
-        });
+      ).subscribe({
+        next: ({ ids, content, fullLoading }) => {
+          const obs$ = this.getDataSubject(propertyKey);
+          obs$.next({
+            status: fullLoading ? 'full' : 'partial',
+            content: {
+              ...(obs$.value?.content || {}),
+              ...content
+            },
+            ids: fullLoading ? [] : [
+              ...(obs$.value?.ids || []),
+              ...ids
+            ]
+          });
+        }
       });
     }
     this.partialLoadQueue[propertyKey].next(id);

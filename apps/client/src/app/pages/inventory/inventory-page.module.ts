@@ -7,7 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { PipesModule } from '../../pipes/pipes.module';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
@@ -26,7 +26,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [
+  imports: [
     CommonModule,
     FormsModule,
     CoreModule,
@@ -35,12 +35,12 @@ const routes: Routes = [
     FlexLayoutModule,
     ItemIconModule,
     PipesModule,
-    HttpClientModule,
     FullpageMessageModule,
     ScrollingModule,
     InventoryModule,
     InventoryComponent
-]
+  ],
+  providers: [provideHttpClient(withInterceptorsFromDi())]
 })
 export class InventoryPageModule {
 }

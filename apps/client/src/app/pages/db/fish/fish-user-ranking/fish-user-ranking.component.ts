@@ -7,7 +7,7 @@ import { ItemNamePipe } from '../../../../pipes/pipes/item-name.pipe';
 import { I18nPipe } from '../../../../core/i18n.pipe';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { ItemIconComponent } from '../../../../modules/item-icon/item-icon/item-icon.component';
-import { NgIf, AsyncPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DatePipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCardModule } from 'ng-zorro-antd/card';
 
@@ -17,7 +17,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     styleUrls: ['./fish-user-ranking.component.less', '../../common-db.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzCardModule, FlexModule, NgIf, ItemIconComponent, NzListModule, AsyncPipe, DatePipe, I18nPipe, TranslateModule, ItemNamePipe]
+    imports: [NzCardModule, FlexModule, ItemIconComponent, NzListModule, AsyncPipe, DatePipe, I18nPipe, TranslateModule, ItemNamePipe]
 })
 export class FishUserRankingComponent {
   public readonly loading$ = this.fishCtx.rankingsByFish$.pipe(map((res) => res.loading));

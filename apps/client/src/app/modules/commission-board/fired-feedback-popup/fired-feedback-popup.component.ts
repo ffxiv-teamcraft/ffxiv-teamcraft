@@ -4,7 +4,7 @@ import { NzModalRef } from 'ng-zorro-antd/modal';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgFor } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -15,7 +15,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./fired-feedback-popup.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NzRadioModule, FormsModule, NgFor, NzButtonModule, NzWaveModule, TranslateModule]
+    imports: [FlexModule, NzRadioModule, FormsModule, NzButtonModule, NzWaveModule, TranslateModule]
 })
 export class FiredFeedbackPopupComponent {
 

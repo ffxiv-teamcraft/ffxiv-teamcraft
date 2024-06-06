@@ -1,10 +1,12 @@
 <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px" class="folder-title-block">
   <div class="folder-name">{{display.folder.name}}</div>
-  <app-favorite-button [key]="display.folder.$key"
-                       [type]="favoriteType"
-                       size="small"
-                       *ngIf="display.folder.authorId !== userId">
-  </app-favorite-button>
+  @if (display.folder.authorId !== userId) {
+    <app-favorite-button [key]="display.folder.$key"
+      [type]="favoriteType"
+      size="small"
+      >
+    </app-favorite-button>
+  }
 </div>
 <div class="author" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
   <app-user-avatar [userId]="display.folder.authorId" [width]="24"></app-user-avatar>
@@ -13,20 +15,26 @@
 
 <nz-divider nzOrientation="left" [nzText]="'FOLDERS.Content' | translate"></nz-divider>
 
-<app-fullpage-message *ngIf="display.folder.notFound" height="300px">
-  {{'FOLDERS.Folder_not_found' | translate}}
-</app-fullpage-message>
+@if (display.folder.notFound) {
+  <app-fullpage-message height="300px">
+    {{'FOLDERS.Folder_not_found' | translate}}
+  </app-fullpage-message>
+}
 
 <div fxLayout="column" fxLayoutGap="10px">
-  <div *ngFor="let element of display.content; let i = index;  trackBy: trackByKey">
-    <ng-container *ngTemplateOutlet="elementTemplate;context:{$implicit: element}"></ng-container>
-  </div>
+  @for (element of display.content; track element.$key; let i = $index) {
+    <div>
+      <ng-container *ngTemplateOutlet="elementTemplate;context:{$implicit: element}"></ng-container>
+    </div>
+  }
 </div>
 
 <div fxLayout="column" fxLayoutGap="10px">
-  <div *ngFor="let folder of display.subFolders; let i = index;  trackBy: trackByKey">
-    <app-folder [userId]="userId"
-                [display]="folder"
-                [elementTemplate]="elementTemplate"></app-folder>
-  </div>
+  @for (folder of display.subFolders; track folder.folder.$key; let i = $index) {
+    <div>
+      <app-folder [userId]="userId"
+        [display]="folder"
+      [elementTemplate]="elementTemplate"></app-folder>
+    </div>
+  }
 </div>

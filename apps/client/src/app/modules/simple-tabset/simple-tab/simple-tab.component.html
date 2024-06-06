@@ -1,3 +1,5 @@
-<div class="tab-content" *ngIf="active">
-  <ng-content></ng-content>
-</div>
+@if (active) {
+  <div class="tab-content">
+    <ng-content></ng-content>
+  </div>
+}

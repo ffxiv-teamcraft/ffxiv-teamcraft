@@ -9,7 +9,7 @@ import { FullpageMessageComponent } from '../../fullpage-message/fullpage-messag
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { UserAvatarComponent } from '../../user-avatar/user-avatar/user-avatar.component';
 import { FavoriteButtonComponent } from '../../favorites/favorite-button/favorite-button.component';
-import { NgIf, NgFor, NgTemplateOutlet, AsyncPipe } from '@angular/common';
+import { NgTemplateOutlet, AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
@@ -18,7 +18,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
   styleUrls: ['./folder-page.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FlexModule, NgIf, FavoriteButtonComponent, UserAvatarComponent, NzDividerModule, FullpageMessageComponent, NgFor, NgTemplateOutlet, FolderComponent, AsyncPipe, TranslateModule, CharacterNamePipe]
+  imports: [FlexModule, FavoriteButtonComponent, UserAvatarComponent, NzDividerModule, FullpageMessageComponent, NgTemplateOutlet, FolderComponent, AsyncPipe, TranslateModule, CharacterNamePipe]
 })
 export class FolderPageComponent<T extends DataModel> {
 
@@ -33,10 +33,5 @@ export class FolderPageComponent<T extends DataModel> {
 
   @Input()
   favoriteType: keyof Favorites;
-
-
-  trackByKey(index: number, data: DataModel): string {
-    return data.$key;
-  }
 
 }

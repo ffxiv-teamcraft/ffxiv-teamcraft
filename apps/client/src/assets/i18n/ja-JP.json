@@ -987,6 +987,8 @@
     "Ephemeral_node": "リスポン可能な、時間制採集場所",
     "Intro": "採集手帳では、採集可能なアイテムを検索することができ、採集場所の確認とアラーム作成などの詳細な機能を提供します。検索欄に内容を書き、探そうとする採集情報をご確認下さい！",
     "Hidden_item": "隠し資源",
+    "Sublime_item": "Sublime",
+    "Sublime_item_explain": "This item is obtained by getting its non-sublime variant with maximum collectability rating",
     "Fish_eyes": "Requires Fish Eyes to only care about weather requirement",
     "Add_alarm": "アラームを追加する",
     "Add_alarm_fish_eyes": "Add alarm with Fish Eyes",
@@ -3257,6 +3259,7 @@
     "Recipe_Finder": "調理品・薬品検索",
     "Food_Picker": "調理品・薬品検索",
     "Reminders": "タイマーのリセット",
-    "About": "当サイトについて"
+    "About": "当サイトについて",
+    "Fish_Train": "Fish Train"
   }
 }

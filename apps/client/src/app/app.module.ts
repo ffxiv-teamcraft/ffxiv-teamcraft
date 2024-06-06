@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, PLATFORM_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { RouterModule } from '@angular/router';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -115,8 +115,14 @@ import * as AllaganReportsGQLProviders from './pages/allagan-reports/allagan-rep
 import { initialState as listsInitialState, listsReducer } from './modules/list/+state/lists.reducer';
 import { ListsEffects } from './modules/list/+state/lists.effects';
 import { GOOGLE_ANALYTICS_ROUTER_INITIALIZER_PROVIDER } from './core/analytics/analytics-router-initializer';
-import { enableMultiTabIndexedDbPersistence, getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import {
+  enableMultiTabIndexedDbPersistence,
+  initializeFirestore,
+  persistentLocalCache,
+  persistentMultipleTabManager,
+  provideFirestore
+} from '@angular/fire/firestore';
+import { getApp, initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFunctions, provideFunctions } from '@angular/fire/functions';
@@ -135,6 +141,7 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
 import { AdComponent } from './modules/ads/ad/ad.component';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NzListModule } from 'ng-zorro-antd/list';
+import { LoadingScreenComponent } from './pages/loading-screen/loading-screen/loading-screen.component';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -198,25 +205,8 @@ const nzConfig: NzConfig = {
   declarations: [
     AppComponent
   ],
-  providers: [
-    GOOGLE_ANALYTICS_ROUTER_INITIALIZER_PROVIDER,
-    {
-      provide: APOLLO_OPTIONS,
-      useFactory: apolloClientFactory,
-      deps: [HttpLink, AuthFacade]
-    },
-    { provide: NZ_I18N, useValue: en_US },
-    {
-      provide: NZ_CONFIG,
-      useValue: nzConfig
-    },
-    { provide: NZ_ICONS, useValue: icons },
-    { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true },
-    ...APP_INITIALIZERS,
-    ...Object.values(AllaganReportsGQLProviders)
-  ],
-  imports: [
-    FlexLayoutModule,
+  bootstrap: [AppComponent],
+  imports: [FlexLayoutModule,
     MarkdownModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
@@ -225,16 +215,6 @@ const nzConfig: NzConfig = {
         deps: [HttpClient, PLATFORM_ID, PlatformService]
       }
     }),
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => {
-      const firestore = getFirestore();
-      enableMultiTabIndexedDbPersistence(firestore);
-      return firestore;
-    }),
-    provideDatabase(() => getDatabase()),
-    provideFunctions(() => getFunctions()),
-    providePerformance(() => getPerformance()),
     XivapiClientModule.forRoot(),
     RouterModule.forRoot([], { useHash: IS_ELECTRON }),
     DirtyModule,
@@ -261,7 +241,6 @@ const nzConfig: NzConfig = {
     InventoryModule,
     EorzeaModule,
     FreeCompanyWorkshopsModule,
-    HttpClientModule,
     environment.noAnimations ? NoopAnimationsModule : BrowserAnimationsModule,
     environment.noAnimations ? NzNoAnimationModule : [],
     BrowserModule,
@@ -308,9 +287,39 @@ const nzConfig: NzConfig = {
     BreakpointDebugComponent,
     AdComponent,
     NzEmptyModule,
-    NzListModule
-  ],
-  bootstrap: [AppComponent]
+    NzListModule, LoadingScreenComponent],
+
+  providers: [
+    GOOGLE_ANALYTICS_ROUTER_INITIALIZER_PROVIDER,
+    {
+      provide: APOLLO_OPTIONS,
+      useFactory: apolloClientFactory,
+      deps: [HttpLink, AuthFacade]
+    },
+    { provide: NZ_I18N, useValue: en_US },
+    {
+      provide: NZ_CONFIG,
+      useValue: nzConfig
+    },
+    { provide: NZ_ICONS, useValue: icons },
+    { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true },
+    ...APP_INITIALIZERS,
+    ...Object.values(AllaganReportsGQLProviders),
+    provideHttpClient(withInterceptorsFromDi()),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => {
+      return initializeFirestore(getApp(), {
+        localCache: persistentLocalCache({
+          cacheSizeBytes: 200000000,
+          tabManager: persistentMultipleTabManager()
+        })
+      });
+    }),
+    provideDatabase(() => getDatabase()),
+    provideFunctions(() => getFunctions()),
+    providePerformance(() => getPerformance())
+  ]
 })
 export class AppModule {
 }

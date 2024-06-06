@@ -35,7 +35,7 @@ import { ItemPickerModule } from '../item-picker/item-picker.module';
 import { SimulatorModule } from '../../pages/simulator/simulator.module';
 import { CompanyWorkshopTreeModule } from '../company-workshop-tree/company-workshop-tree.module';
 import { InventoryModule } from '../inventory/inventory.module';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ItemRowMenuComponent } from './item/item-row-menu/item-row-menu.component';
 import { AggregateItemRowComponent } from './item/aggregate-item-row/aggregate-item-row.component';
 import { AlarmButtonModule } from '../alarm-button/alarm-button.module';
@@ -47,8 +47,8 @@ import { CompactAmountInputComponent } from './item/compact-amount-input/compact
 import { ItemInventoryButtonComponent } from './item-inventory-button/item-inventory-button.component';
 
 @NgModule({
-    imports: [
-    CommonModule,
+  exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent, StepByStepDetailsComponent, CompactAmountInputComponent],
+  imports: [CommonModule,
     CoreModule,
     FormsModule,
     DatabaseModule,
@@ -71,7 +71,6 @@ import { ItemInventoryButtonComponent } from './item-inventory-button/item-inven
     SimulatorModule,
     CompanyWorkshopTreeModule,
     InventoryModule,
-    HttpClientModule,
     AlarmButtonModule,
     ListPanelComponent,
     ListDetailsPanelComponent,
@@ -90,8 +89,8 @@ import { ItemInventoryButtonComponent } from './item-inventory-button/item-inven
     StepByStepRowComponent,
     CompactAmountInputComponent,
     ItemInventoryButtonComponent
-],
-    exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent, StepByStepDetailsComponent, CompactAmountInputComponent]
+  ],
+  providers: [provideHttpClient(withInterceptorsFromDi())]
 })
 export class ListModule {
 }

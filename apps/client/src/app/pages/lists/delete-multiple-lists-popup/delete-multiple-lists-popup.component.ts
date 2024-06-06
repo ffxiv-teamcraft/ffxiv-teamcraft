@@ -15,7 +15,7 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe, UpperCasePipe } from '@angular/common';
+import { NgTemplateOutlet, AsyncPipe, UpperCasePipe } from '@angular/common';
 
 @Component({
     selector: 'app-delete-multiple-lists-popup',
@@ -23,7 +23,7 @@ import { NgIf, NgTemplateOutlet, NgFor, AsyncPipe, UpperCasePipe } from '@angula
     styleUrls: ['./delete-multiple-lists-popup.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NgTemplateOutlet, NgFor, FlexModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzListModule, NgForTrackByKeyDirective, NzCheckboxModule, FormsModule, NzTagModule, NzToolTipModule, AsyncPipe, UpperCasePipe, TranslateModule]
+    imports: [NgTemplateOutlet, FlexModule, NzButtonModule, NzWaveModule, NzPopconfirmModule, NzListModule, NgForTrackByKeyDirective, NzCheckboxModule, FormsModule, NzTagModule, NzToolTipModule, AsyncPipe, UpperCasePipe, TranslateModule]
 })
 export class DeleteMultipleListsPopupComponent extends AbstractListsSelectionPopupComponent {
 

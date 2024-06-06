@@ -24,7 +24,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
-import { NgIf, NgSwitch, NgSwitchCase, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 
 interface FeatureEntry {
   link: string;
@@ -38,7 +38,7 @@ interface FeatureEntry {
     templateUrl: './search-intro.component.html',
     styleUrls: ['./search-intro.component.less'],
     standalone: true,
-    imports: [NgIf, NzDividerModule, NzGridModule, NzButtonModule, NzIconModule, NzWaveModule, NzCardModule, NzListModule, NgSwitch, NgSwitchCase, PirschEventDirective, RouterLink, NgFor, NzTypographyModule, AsyncPipe, DecimalPipe, TranslateModule]
+    imports: [NzDividerModule, NzGridModule, NzButtonModule, NzIconModule, NzWaveModule, NzCardModule, NzListModule, PirschEventDirective, RouterLink, NzTypographyModule, AsyncPipe, DecimalPipe, TranslateModule]
 })
 export class SearchIntroComponent {
 

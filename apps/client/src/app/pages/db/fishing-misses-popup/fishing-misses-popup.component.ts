@@ -16,7 +16,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzTableModule } from 'ng-zorro-antd/table';
-import { NgIf, NgFor, AsyncPipe, DecimalPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 import { DialogComponent } from '../../../core/dialog.component';
 import { groupBy } from 'lodash';
 
@@ -25,7 +25,7 @@ import { groupBy } from 'lodash';
   templateUrl: './fishing-misses-popup.component.html',
   styleUrls: ['./fishing-misses-popup.component.less'],
   standalone: true,
-  imports: [NgIf, NzTableModule, NgFor, FlexModule, ItemIconComponent, NzToolTipModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, XivapiIconPipe, WeatherIconPipe, TugNamePipe]
+  imports: [NzTableModule, FlexModule, ItemIconComponent, NzToolTipModule, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, XivapiIconPipe, WeatherIconPipe, TugNamePipe]
 })
 export class FishingMissesPopupComponent extends DialogComponent implements OnInit {
 

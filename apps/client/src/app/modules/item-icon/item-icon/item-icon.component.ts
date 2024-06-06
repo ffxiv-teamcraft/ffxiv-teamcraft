@@ -7,16 +7,16 @@ import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest, of } from 'rxjs';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgIf } from '@angular/common';
 import { XivapiItemTooltipDirective } from '../../tooltip/xivapi-tooltip/xivapi-item-tooltip.directive';
 
 @Component({
-    selector: 'app-item-icon',
-    templateUrl: './item-icon.component.html',
-    styleUrls: ['./item-icon.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [XivapiItemTooltipDirective, NgIf, NzSkeletonModule, AsyncPipe]
+  selector: 'app-item-icon',
+  templateUrl: './item-icon.component.html',
+  styleUrls: ['./item-icon.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [XivapiItemTooltipDirective, NzSkeletonModule, AsyncPipe]
 })
 export class ItemIconComponent {
 
@@ -52,6 +52,9 @@ export class ItemIconComponent {
 
   @Input({ transform: booleanAttribute })
   forceCollectable = false;
+
+  @Input({ transform: booleanAttribute })
+  openNewWindow = false;
 
   itemId$ = observeInput(this, 'itemId', true);
 
@@ -120,12 +123,15 @@ export class ItemIconComponent {
     if (this.disableClick || this.itemId === null || (event.type === 'mouseup' && event.button !== 1)) {
       return;
     }
+    //
     if (event.button === 1 || event.ctrlKey) {
       if (this.ipc.ready) {
         this.ipc.send('child:new', this.getLink());
       } else {
         window.open('https://ffxivteamcraft.com' + this.getLink(), '_blank');
       }
+    } else if (this.openNewWindow) {
+      this.ipc.send('child:new', this.getLink());
     } else if (this.ipc.overlayUri) {
       this.ipc.send('overlay:open-page', this.getLink());
     } else {

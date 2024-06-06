@@ -15,7 +15,7 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { OverlayContainerComponent } from '../../../modules/overlay-container/overlay-container/overlay-container.component';
 
 @Component({
@@ -23,7 +23,7 @@ import { OverlayContainerComponent } from '../../../modules/overlay-container/ov
   templateUrl: './list-panel-overlay.component.html',
   styleUrls: ['./list-panel-overlay.component.less'],
   standalone: true,
-  imports: [OverlayContainerComponent, NgIf, FlexModule, NgFor, NzButtonModule, NzWaveModule, NzCheckboxModule, FormsModule, ListDetailsPanelComponent, FullpageMessageComponent, AsyncPipe, TranslateModule]
+  imports: [OverlayContainerComponent, FlexModule, NzButtonModule, NzWaveModule, NzCheckboxModule, FormsModule, ListDetailsPanelComponent, FullpageMessageComponent, AsyncPipe, TranslateModule]
 })
 export class ListPanelOverlayComponent {
 

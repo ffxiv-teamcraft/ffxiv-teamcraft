@@ -1,46 +1,65 @@
-<div *ngIf="mapData$ | async as map" class="map-container">
-  <app-db-button *ngIf="!hideDbButton" [id]="mapId" class="db-button" type="map"></app-db-button>
-  <img (load)="loaded.emit()" alt="" class="map-image" src="{{map.image}}">
-  <img *ngFor="let aetheryte of map.aetherytes" [ngStyle]="getMarkerStyle(map, aetheryte, true)"
-       [src]="getIcon(aetheryte.type)" alt="" class="aetheryte" [class.small]="small"
-       nz-tooltip nzTooltipTitle="{{(aetheryte.id | aetheryteName | i18n) || (aetheryte?.nameid | i18nRow:'places' | i18n)}}">
-  <div *ngIf="unknownPosition" class="unknown-position">
-    {{'No_known_coordinates' | translate}}
+@if (mapData$ | async; as map) {
+  <div class="map-container">
+    @if (!hideDbButton) {
+      <app-db-button [id]="mapId" class="db-button" type="map"></app-db-button>
+    }
+    <img (load)="loaded.emit()" alt="" class="map-image" src="{{map.image}}">
+    @for (aetheryte of map.aetherytes; track aetheryte) {
+      <img [ngStyle]="getMarkerStyle(map, aetheryte, true)"
+        [src]="getIcon(aetheryte.type)" alt="" class="aetheryte" [class.small]="small"
+        nz-tooltip nzTooltipTitle="{{(aetheryte.id | aetheryteName | i18n) || (aetheryte?.nameid | i18nRow:'places' | i18n)}}">
+    }
+    @if (unknownPosition) {
+      <div class="unknown-position">
+        {{'No_known_coordinates' | translate}}
+      </div>
+    }
+    @for (marker of markers; track trackByMarker($index, marker)) {
+      @if (marker.x || marker.y) {
+        @if (!marker.iconType || (marker.iconType === 'img' && !marker.iconImg)) {
+          <i
+            [ngStyle]="getMarkerStyle(map, marker)"
+            [nzTooltipTitle]="marker.tooltip || 'X: ' + (marker.x | number: '1.0-1') + ' - Y: ' + (marker.y | number: '1.0-1')"
+            [routerLink]="marker.link"
+            class="marker material-icons default-marker"
+            [class.small]="small" nz-tooltip>
+            location_on
+          </i>
+        }
+        @if (marker.radius) {
+          <img src="./assets/icons/map/circle.png" alt=""
+            [ngStyle]="getRadiusStyle(map, marker)"
+            class="radius">
+        }
+        @if (marker.iconType === 'img') {
+          <img [ngStyle]="getMarkerStyle(map, marker)"
+            [nzTooltipTitle]="marker.tooltip || 'X: ' + (marker.x | number: '1.0-1') + ' - Y: ' + (marker.y | number: '1.0-1')"
+            [routerLink]="marker.link"
+            [src]="marker.iconImg"
+            alt=""
+            class="marker" nz-tooltip>
+        }
+        @if (marker.iconType === 'ant') {
+          <i [ngStyle]="getMarkerStyle(map, marker)"
+            [nzTooltipTitle]="marker.tooltip || 'X: ' + (marker.x | number: '1.0-1') + ' - Y: ' + (marker.y | number: '1.0-1')"
+            [routerLink]="marker.link"
+            [type]="marker.nzIcon"
+            class="marker"
+          nz-icon nz-tooltip></i>
+        }
+        @if (marker.iconType === 'material') {
+          <i
+            [ngStyle]="getMarkerStyle(map, marker)"
+            [nzTooltipTitle]="marker.tooltip || 'X: ' + (marker.x | number: '1.0-1') + ' - Y: ' + (marker.y | number: '1.0-1')"
+            [routerLink]="marker.link"
+            class="marker material-icons" nz-tooltip>
+            {{marker.materialIcon}}
+          </i>
+        }
+        @if (marker.subtitle) {
+          <div class="marker subtitle" [ngStyle]="getSubtitleStyle(map, marker)">{{marker.subtitle}}</div>
+        }
+      }
+    }
   </div>
-  <ng-container *ngFor="let marker of markers; trackBy: trackByMarker">
-    <ng-container *ngIf="marker.x || marker.y">
-      <i *ngIf="!marker.iconType || (marker.iconType === 'img' && !marker.iconImg)"
-         [ngStyle]="getMarkerStyle(map, marker)"
-         [nzTooltipTitle]="marker.tooltip || 'X: ' + (marker.x | number: '1.0-1') + ' - Y: ' + (marker.y | number: '1.0-1')"
-         [routerLink]="marker.link"
-         class="marker material-icons default-marker"
-         [class.small]="small" nz-tooltip>
-        location_on
-      </i>
-      <img src="./assets/icons/map/circle.png" alt=""
-           *ngIf="marker.radius"
-           [ngStyle]="getRadiusStyle(map, marker)"
-           class="radius">
-      <img *ngIf="marker.iconType === 'img'" [ngStyle]="getMarkerStyle(map, marker)"
-           [nzTooltipTitle]="marker.tooltip || 'X: ' + (marker.x | number: '1.0-1') + ' - Y: ' + (marker.y | number: '1.0-1')"
-           [routerLink]="marker.link"
-           [src]="marker.iconImg"
-           alt=""
-           class="marker" nz-tooltip>
-      <i *ngIf="marker.iconType === 'ant'" [ngStyle]="getMarkerStyle(map, marker)"
-         [nzTooltipTitle]="marker.tooltip || 'X: ' + (marker.x | number: '1.0-1') + ' - Y: ' + (marker.y | number: '1.0-1')"
-         [routerLink]="marker.link"
-         [type]="marker.nzIcon"
-         class="marker"
-         nz-icon nz-tooltip></i>
-      <i *ngIf="marker.iconType === 'material'"
-         [ngStyle]="getMarkerStyle(map, marker)"
-         [nzTooltipTitle]="marker.tooltip || 'X: ' + (marker.x | number: '1.0-1') + ' - Y: ' + (marker.y | number: '1.0-1')"
-         [routerLink]="marker.link"
-         class="marker material-icons" nz-tooltip>
-        {{marker.materialIcon}}
-      </i>
-      <div *ngIf="marker.subtitle" class="marker subtitle" [ngStyle]="getSubtitleStyle(map, marker)">{{marker.subtitle}}</div>
-    </ng-container>
-  </ng-container>
-</div>
+}

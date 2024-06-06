@@ -7,7 +7,7 @@ import { switchMap } from 'rxjs/operators';
 import { I18nRowPipe } from '../../../core/i18n/i18n-row.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { I18nPipe } from '../../../core/i18n.pipe';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-item-caps-table',
@@ -15,7 +15,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     styleUrls: ['./item-caps-table.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NgFor, AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe]
+    imports: [AsyncPipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class ItemCapsTableComponent {
 

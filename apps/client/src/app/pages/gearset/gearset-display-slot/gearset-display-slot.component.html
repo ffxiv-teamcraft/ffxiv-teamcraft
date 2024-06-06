@@ -1,60 +1,74 @@
 <div fxLayout="row" fxLayoutAlign="flex-start flex-start" fxLayoutGap="10px" class="display-container">
   <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2px">
-    <ng-container *ngIf="equipmentPiece; else emptySlot">
+    @if (equipmentPiece) {
       <app-item-icon [itemId]="equipmentPiece.itemId" [hq]="equipmentPiece.hq" [width]="32 | ifMobile:24"></app-item-icon>
       <div class="ilvl">{{'TOOLTIP.Ilvl' | translate}} {{equipmentPiece.itemId | ilvl}}</div>
-    </ng-container>
-    <ng-template #emptySlot>
+    } @else {
       <div class="empty-slot companion-svg" [innerHTML]="emptySlotIconUnicode"></div>
-    </ng-template>
+    }
   </div>
   <div fxLayout="column" fxLayoutGap="5px">
     <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-      <ng-container *ngIf="equipmentPiece; else emptySlotName">
+      @if (equipmentPiece) {
         <div>
           <label nz-tooltip [nzTooltipTitle]="'GEARSETS.Mark_as_done' | translate" nz-checkbox [(ngModel)]="progression[propertyName].item"
-                 (ngModelChange)="progressionChange.emit(progression)"></label>
+          (ngModelChange)="progressionChange.emit(progression)"></label>
         </div>
         <div [itemNameCopy]="equipmentPiece.itemId">{{equipmentPiece.itemId | itemName | i18n}}</div>
-        <img *ngIf="equipmentPiece.hq" alt="HQ" class="item-hq" src="./assets/icons/HQ.png"/>
+        @if (equipmentPiece.hq) {
+          <img alt="HQ" class="item-hq" src="./assets/icons/HQ.png"/>
+        }
         <ng-template #caps>
           <app-item-caps-table [job]="gearset.job" [equipmentPiece]="equipmentPiece"></app-item-caps-table>
         </ng-template>
-        <i nz-icon nzType="file-search" nzTheme="outline" nz-popover [nzPopoverTitle]="'GEARSETS.Stats_caps' | translate" [nzPopoverContent]="caps"
-           *ngIf="equipmentPiece.materias[0] > 0">
-        </i>
-      </ng-container>
-      <ng-template #emptySlotName>{{'GEARSETS.Empty_slot' | translate}}</ng-template>
+        @if (equipmentPiece.materias[0] > 0) {
+          <i nz-icon nzType="file-search" nzTheme="outline" nz-popover [nzPopoverTitle]="'GEARSETS.Stats_caps' | translate" [nzPopoverContent]="caps"
+            >
+          </i>
+        }
+      } @else {
+        {{'GEARSETS.Empty_slot' | translate}}
+      }
     </div>
-    <div fxLayout="row" class="materias" *ngIf="equipmentPiece && propertyName !== 'crystal'">
-      <ng-container *ngIf="verbose; else compactSlots">
-        <div fxLayout="column" fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px">
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngFor="let materia of equipmentPiece.materias; let i = index;">
-            <app-materia-slot-icon nz-tooltip
-                                   [equipmentPiece]="equipmentPiece"
-                                   [index]="i"></app-materia-slot-icon>
-            <div *ngIf="materia > 0">
-              <label nz-tooltip [nzTooltipTitle]="'GEARSETS.Mark_as_done' | translate" nz-checkbox [(ngModel)]="progression[propertyName].materias[i]"
-                     (ngModelChange)="progressionChange.emit(progression)"></label>
+    @if (equipmentPiece && propertyName !== 'crystal') {
+      <div fxLayout="row" class="materias">
+        @if (verbose) {
+          <div fxLayout="column" fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px">
+            @for (materia of equipmentPiece.materias; track materia; let i = $index) {
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <app-materia-slot-icon nz-tooltip
+                  [equipmentPiece]="equipmentPiece"
+                [index]="i"></app-materia-slot-icon>
+                @if (materia > 0) {
+                  <div>
+                    <label nz-tooltip [nzTooltipTitle]="'GEARSETS.Mark_as_done' | translate" nz-checkbox [(ngModel)]="progression[propertyName].materias[i]"
+                    (ngModelChange)="progressionChange.emit(progression)"></label>
+                  </div>
+                }
+                <div class="verbose-materia-name" [itemNameCopy]="materia">
+                  @if (materia === 0) {
+                    <span>
+                      {{'GEARSETS.No_materia' | translate}}
+                    </span>
+                  } @else {
+                    <app-i18n-name [id]="materia" content="items"></app-i18n-name> @if (materia | materiaBonus | async; as materiaBonus) {
+                    <span>({{materiaBonus.baseParamId | i18nRow:'baseParams' | i18n}} +{{materiaBonus.value}})</span>
+                  }
+                }
+              </div>
             </div>
-            <div class="verbose-materia-name" [itemNameCopy]="materia">
-              <span *ngIf="materia === 0 else materiaDisplay">
-                {{'GEARSETS.No_materia' | translate}}
-              </span>
-              <ng-template #materiaDisplay>
-                <app-i18n-name [id]="materia" content="items"></app-i18n-name> <span *ngIf="materia | materiaBonus | async as materiaBonus">({{materiaBonus.baseParamId | i18nRow:'baseParams' | i18n}} +{{materiaBonus.value}})</span>
-              </ng-template>
-            </div>
-          </div>
+          }
         </div>
-      </ng-container>
-      <ng-template #compactSlots>
-        <app-materia-slot-icon *ngFor="let materia of equipmentPiece.materias; let i = index;"
-                               nz-tooltip
-                               [nzTooltipTitle]="materia === 0 ? null : materia | itemName | i18n"
-                               [equipmentPiece]="equipmentPiece"
-                               [index]="i"></app-materia-slot-icon>
-      </ng-template>
+      } @else {
+        @for (materia of equipmentPiece.materias; track materia; let i = $index) {
+          <app-materia-slot-icon
+            nz-tooltip
+            [nzTooltipTitle]="materia === 0 ? null : materia | itemName | i18n"
+            [equipmentPiece]="equipmentPiece"
+          [index]="i"></app-materia-slot-icon>
+        }
+      }
     </div>
-  </div>
+  }
+</div>
 </div>

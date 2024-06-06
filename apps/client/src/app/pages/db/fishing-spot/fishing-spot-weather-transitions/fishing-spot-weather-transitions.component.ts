@@ -14,7 +14,7 @@ import { I18nPipe } from '../../../../core/i18n.pipe';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgFor, AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
 import { NzCardModule } from 'ng-zorro-antd/card';
 
 @Component({
@@ -24,7 +24,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [FishingSpotUtilsService],
     standalone: true,
-    imports: [NzCardModule, NgFor, FlexModule, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, I18nRowPipe, XivapiIconPipe, WeatherIconPipe]
+    imports: [NzCardModule, FlexModule, NzButtonModule, NzIconModule, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, I18nRowPipe, XivapiIconPipe, WeatherIconPipe]
 })
 export class FishingSpotWeatherTransitionsComponent {
   public readonly highlightColor$ = this.utils.getHighlightColor(0.5).pipe(distinctUntilChanged());

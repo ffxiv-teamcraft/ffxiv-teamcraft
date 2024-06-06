@@ -13,7 +13,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
 import { ItemIconComponent } from '../../../modules/item-icon/item-icon/item-icon.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { DialogComponent } from '../../../core/dialog.component';
 
@@ -23,7 +23,7 @@ import { DialogComponent } from '../../../core/dialog.component';
   styleUrls: ['./inventory-cleanup-popup.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FlexModule, NgIf, NzCardModule, NgFor, ItemIconComponent, I18nNameComponent, NzButtonModule, NzIconModule, NzToolTipModule, InventoryPositionComponent, AsyncPipe, TranslateModule]
+  imports: [FlexModule, NzCardModule, ItemIconComponent, I18nNameComponent, NzButtonModule, NzIconModule, NzToolTipModule, InventoryPositionComponent, AsyncPipe, TranslateModule]
 })
 export class InventoryCleanupPopupComponent extends DialogComponent implements OnInit {
 

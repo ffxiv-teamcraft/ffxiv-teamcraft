@@ -1,63 +1,85 @@
-<div *ngIf="requires$ | async as requires" fxLayout="column">
-  <div *ngFor="let req of requires; last as last">
-    <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center"
-         [class.craftable]="req.canBeCrafted"
-         [class.done]="req.amount <= req.done"
-         [class.with-border]="!last"
-         class="item-row">
-      <app-item-icon [itemId]="req.id" [itemName]="req.id | itemName: req | i18n"
-                     [width]="32" *ngIf="!item.xivapiIcon"></app-item-icon>
-      <app-item-icon [icon]="req.xivapiIcon | xivapiIcon" [itemId]="null"
-                     [width]="32" *ngIf="req.xivapiIcon"></app-item-icon>
-      <div fxLayout="column" fxLayoutGap="5px">
-        <div>
-          <app-i18n-name [content]="req.contentType || 'items'" [id]="req.id" [fallback]="req.name"></app-i18n-name>&nbsp;<i>x{{req.reqAmount * ((item.amount_needed - item.done / item.yield) | ceil)}}({{req.reqAmount}}
-          x {{((item.amount_needed - item.done / item.yield) | ceil)}})</i>
-        </div>
-        <!-- Inventory informations -->
-        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-          <div class="amount-in-inventories" fxLayout="row wrap" fxLayoutGap="5px">
-            <nz-tag class="inventory-tag" [nzTooltipTitle]="positionTooltip" nz-tooltip
-                    *ngFor="let entry of req.inventoryEntries;trackBy: trackByInventoryEntry" [item]="entry">
-              <ng-template #positionTooltip>
-                <app-inventory-position [item]="entry"></app-inventory-position>
-              </ng-template>
-              {{entry.containerName}}: {{entry.amount}}
-              <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
-            </nz-tag>
+@if (requires$ | async; as requires) {
+  <div fxLayout="column">
+    @for (req of requires; track req; let last = $last) {
+      <div>
+        <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center"
+          [class.craftable]="req.canBeCrafted"
+          [class.done]="req.amount <= req.done"
+          [class.with-border]="!last"
+          class="item-row">
+          @if (!item.xivapiIcon) {
+            <app-item-icon [itemId]="req.id" [itemName]="req.id | itemName: req | i18n"
+            [width]="32"></app-item-icon>
+          }
+          @if (req.xivapiIcon) {
+            <app-item-icon [icon]="req.xivapiIcon | xivapiIcon" [itemId]="null"
+            [width]="32"></app-item-icon>
+          }
+          <div fxLayout="column" fxLayoutGap="5px">
+            <div>
+              <app-i18n-name [content]="req.contentType || 'items'" [id]="req.id" [fallback]="req.name"></app-i18n-name>&nbsp;<i>x{{req.reqAmount * ((item.amount_needed - item.done / item.yield) | ceil)}}({{req.reqAmount}}
+            x {{((item.amount_needed - item.done / item.yield) | ceil)}})</i>
+          </div>
+          <!-- Inventory informations -->
+          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+            <div class="amount-in-inventories" fxLayout="row wrap" fxLayoutGap="5px">
+              @for (entry of req.inventoryEntries; track trackByInventoryEntry($index, entry)) {
+                <nz-tag class="inventory-tag" [nzTooltipTitle]="positionTooltip" nz-tooltip
+                  [item]="entry">
+                  <ng-template #positionTooltip>
+                    <app-inventory-position [item]="entry"></app-inventory-position>
+                  </ng-template>
+                  {{entry.containerName}}: {{entry.amount}}
+                  @if (entry.hq) {
+                    <img alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
+                  }
+                </nz-tag>
+              }
+            </div>
           </div>
         </div>
+        <div fxFlex="1 1 auto"></div>
+        @if (req.reqAmount * ((item.amount_needed - item.done / item.yield) | ceil); as requiredAmount) {
+          @if (!markedAsDone[req.id] && req.amount > req.done) {
+            <button (click)="markAsDone(req, requiredAmount)" nz-button
+              nzShape="circle"
+              nzSize="small"
+              nzType="primary">
+              <i nz-icon nzType="check"></i>
+            </button>
+          }
+        }
       </div>
-      <div fxFlex="1 1 auto"></div>
-      <ng-container *ngIf="req.reqAmount * ((item.amount_needed - item.done / item.yield) | ceil) as requiredAmount">
-        <button *ngIf="!markedAsDone[req.id] && req.amount > req.done" (click)="markAsDone(req, requiredAmount)" nz-button
-                nzShape="circle"
-                nzSize="small"
-                nzType="primary">
-          <i nz-icon nzType="check"></i>
-        </button>
-      </ng-container>
     </div>
+  }
+</div>
+}
+@if (requiredBy$ | async; as requiredBy) {
+  <div>
+    @if (requiredBy.length > 0) {
+      <nz-list
+        [nzDataSource]="requiredBy"
+        [nzHeader]="'Used_for' | translate"
+        [nzRenderItem]="requiredByRow">
+        <ng-template #requiredByRow let-req>
+          <nz-list-item [class.craftable]="req.canBeCrafted" [class.done]="req.amount <= req.done" class="item-row">
+            <nz-list-item-meta [nzAvatar]="itemIcon" [nzTitle]="title"></nz-list-item-meta>
+            <ng-template #title>
+              <app-i18n-name [content]="req.contentType || 'items'" [id]="req.id" [fallback]="req.name"></app-i18n-name>
+            </ng-template>
+            <ng-template #itemIcon>
+              @if (!req.xivapiIcon) {
+                <app-item-icon [itemId]="req.id" [itemName]="req.id | itemName: req | i18n"
+                [width]="32"></app-item-icon>
+              }
+              @if (req.xivapiIcon) {
+                <app-item-icon [icon]="req.xivapiIcon | xivapiIcon" [itemId]="null"
+                [width]="32"></app-item-icon>
+              }
+            </ng-template>
+          </nz-list-item>
+        </ng-template>
+      </nz-list>
+    }
   </div>
-</div>
-<div *ngIf="requiredBy$ | async as requiredBy">
-  <nz-list *ngIf="requiredBy.length > 0"
-           [nzDataSource]="requiredBy"
-           [nzHeader]="'Used_for' | translate"
-           [nzRenderItem]="requiredByRow">
-    <ng-template #requiredByRow let-req>
-      <nz-list-item [class.craftable]="req.canBeCrafted" [class.done]="req.amount <= req.done" class="item-row">
-        <nz-list-item-meta [nzAvatar]="itemIcon" [nzTitle]="title"></nz-list-item-meta>
-        <ng-template #title>
-          <app-i18n-name [content]="req.contentType || 'items'" [id]="req.id" [fallback]="req.name"></app-i18n-name>
-        </ng-template>
-        <ng-template #itemIcon>
-          <app-item-icon [itemId]="req.id" [itemName]="req.id | itemName: req | i18n"
-                         [width]="32" *ngIf="!req.xivapiIcon"></app-item-icon>
-          <app-item-icon [icon]="req.xivapiIcon | xivapiIcon" [itemId]="null"
-                         [width]="32" *ngIf="req.xivapiIcon"></app-item-icon>
-        </ng-template>
-      </nz-list-item>
-    </ng-template>
-  </nz-list>
-</div>
+}

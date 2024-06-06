@@ -12,7 +12,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { ExtendedModule } from '@angular/flex-layout/extended';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
-import { NgIf, NgClass, NgFor, AsyncPipe } from '@angular/common';
+import { NgClass, AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-vessel-build-column',
@@ -20,7 +20,7 @@ import { NgIf, NgClass, NgFor, AsyncPipe } from '@angular/common';
     styleUrls: ['./vessel-build-column.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NzPopoverModule, NgClass, ExtendedModule, FlexModule, NgFor, AsyncPipe, TranslateModule]
+    imports: [NzPopoverModule, NgClass, ExtendedModule, FlexModule, AsyncPipe, TranslateModule]
 })
 export class VesselBuildColumnComponent {
   @Input() name: string;

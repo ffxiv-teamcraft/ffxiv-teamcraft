@@ -25,7 +25,7 @@ import { NzListModule } from 'ng-zorro-antd/list';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { I18nNameComponent } from '../../../core/i18n/i18n-name/i18n-name.component';
-import { AsyncPipe, DecimalPipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, DecimalPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { FlexModule } from '@angular/flex-layout/flex';
@@ -35,7 +35,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
   templateUrl: './currency-spending.component.html',
   styleUrls: ['./currency-spending.component.less'],
   standalone: true,
-  imports: [FlexModule, NzSelectModule, FormsModule, NgFor, I18nNameComponent, NzInputNumberModule, NgIf, NzProgressModule, NzListModule, NzEmptyModule, DbButtonComponent, ItemIconComponent, MarketboardIconComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, FloorPipe, LazyIconPipe]
+  imports: [FlexModule, NzSelectModule, FormsModule, I18nNameComponent, NzInputNumberModule, NzProgressModule, NzListModule, NzEmptyModule, DbButtonComponent, ItemIconComponent, MarketboardIconComponent, AsyncPipe, DecimalPipe, I18nPipe, TranslateModule, I18nRowPipe, ItemNamePipe, FloorPipe, LazyIconPipe]
 })
 export class CurrencySpendingComponent extends TeamcraftComponent implements OnInit {
 

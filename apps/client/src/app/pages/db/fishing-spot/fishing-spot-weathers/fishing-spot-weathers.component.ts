@@ -11,7 +11,7 @@ import { WeatherIconPipe } from '../../../../pipes/pipes/weather-icon.pipe';
 import { XivapiIconPipe } from '../../../../pipes/pipes/xivapi-icon.pipe';
 import { I18nRowPipe } from '../../../../core/i18n/i18n-row.pipe';
 import { I18nPipe } from '../../../../core/i18n.pipe';
-import { NgFor, AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe, DatePipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzCardModule } from 'ng-zorro-antd/card';
 
@@ -22,7 +22,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [FishingSpotUtilsService],
     standalone: true,
-    imports: [NzCardModule, FlexModule, NgFor, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, I18nRowPipe, XivapiIconPipe, WeatherIconPipe]
+    imports: [NzCardModule, FlexModule, AsyncPipe, DecimalPipe, DatePipe, I18nPipe, TranslateModule, I18nRowPipe, XivapiIconPipe, WeatherIconPipe]
 })
 export class FishingSpotWeathersComponent implements OnInit, OnDestroy {
   public highlightColor?: string;

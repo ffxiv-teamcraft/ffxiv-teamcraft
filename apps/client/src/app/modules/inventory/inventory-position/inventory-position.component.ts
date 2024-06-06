@@ -6,7 +6,7 @@ import { filter, map, switchMap } from 'rxjs/operators';
 import { InventoryService } from '../inventory.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { FlexModule } from '@angular/flex-layout/flex';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-inventory-position',
@@ -14,7 +14,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
     styleUrls: ['./inventory-position.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, FlexModule, NgFor, AsyncPipe, TranslateModule]
+    imports: [FlexModule, AsyncPipe, TranslateModule]
 })
 export class InventoryPositionComponent {
 

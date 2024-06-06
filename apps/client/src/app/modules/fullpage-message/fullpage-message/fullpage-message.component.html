@@ -2,7 +2,9 @@
   <h2 [style.font-size]="disableMobileBreakpoint ? fontSize : (fontSize | ifMobile: '1.2rem')">
     <ng-content></ng-content>
   </h2>
-  <div *ngIf="subtitle">
-    <ng-container *ngTemplateOutlet="subtitle"></ng-container>
-  </div>
+  @if (subtitle) {
+    <div>
+      <ng-container *ngTemplateOutlet="subtitle"></ng-container>
+    </div>
+  }
 </div>

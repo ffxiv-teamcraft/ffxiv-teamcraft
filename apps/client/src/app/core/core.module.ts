@@ -1,5 +1,5 @@
 import { ErrorHandler, ModuleWithProviders, NgModule } from '@angular/core';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgSerializerModule } from '@kaiu/ng-serializer';
 import { I18nPipe } from './i18n.pipe';
 import { TranslateModule } from '@ngx-translate/core';
@@ -56,28 +56,45 @@ import { PirschEventDirective } from './analytics/pirsch-event.directive';
 
 
 @NgModule({
-    imports: [
-    CommonModule,
+  exports: [
+    I18nPipe,
     TranslateModule,
-    HttpClientModule,
+    MaintenanceModule,
+    TimerPipe,
+    DbButtonComponent,
+    ItemRarityDirective,
+    LazyComponentDirective,
+    MouseWheelDirective,
+    ClipboardDirective,
+    ItemNameClipboardDirective,
+    I18nNameComponent,
+    NzButtonModule,
+    NzToolTipModule,
+    NzIconModule,
+    I18nRowPipe,
+    PirschEventDirective,
+    NgForTrackByIdDirective,
+    NgForTrackByKeyDirective
+  ], imports: [CommonModule,
+    TranslateModule,
     NgSerializerModule.forChild([
-        {
-            parent: AbstractNotification,
-            children: {
-                LIST_COMMENT: ListCommentNotification,
-                LIST_ITEM_COMMENT: ListItemCommentNotification,
-                DB_ITEM_COMMENT: DbItemCommentNotification,
-                DB_COMMENT_REPLY: DbCommentReplyNotification,
-                COMMISSION: CommissionNotification
-            }
-        },
-        {
-            parent: CustomLink,
-            children: {
-                link: CustomLink,
-                template: ListTemplate
-            }
+      {
+        parent: AbstractNotification,
+        children: {
+          LIST_COMMENT: ListCommentNotification,
+          LIST_ITEM_COMMENT: ListItemCommentNotification,
+          DB_ITEM_COMMENT: DbItemCommentNotification,
+          DB_COMMENT_REPLY: DbCommentReplyNotification,
+          COMMISSION: CommissionNotification
         }
+      },
+      {
+        parent: CustomLink,
+        children: {
+          link: CustomLink,
+          template: ListTemplate
+        }
+      }
     ]),
     MaintenanceModule,
     VersionLockModule,
@@ -103,42 +120,21 @@ import { PirschEventDirective } from './analytics/pirsch-event.directive';
     I18nRowPipe,
     NgForTrackByIdDirective,
     NgForTrackByKeyDirective,
-    PirschEventDirective
-],
-    providers: [
-        PendingChangesService,
-        PlatformService,
-        MathToolsService,
-        HtmlToolsService,
-        LinkToolsService,
-        DiscordWebhookService,
-        SupportService,
-        WeatherService,
-        AdminGuard,
-        ModeratorGuard,
-        DevGuard,
-        ...DATA_REPORTERS
-    ],
-    exports: [
-    I18nPipe,
-    TranslateModule,
-    MaintenanceModule,
-    TimerPipe,
-    DbButtonComponent,
-    ItemRarityDirective,
-    LazyComponentDirective,
-    MouseWheelDirective,
-    ClipboardDirective,
-    ItemNameClipboardDirective,
-    I18nNameComponent,
-    NzButtonModule,
-    NzToolTipModule,
-    NzIconModule,
-    I18nRowPipe,
-    PirschEventDirective,
-    NgForTrackByIdDirective,
-    NgForTrackByKeyDirective
-]
+    PirschEventDirective], providers: [
+    PendingChangesService,
+    PlatformService,
+    MathToolsService,
+    HtmlToolsService,
+    LinkToolsService,
+    DiscordWebhookService,
+    SupportService,
+    WeatherService,
+    AdminGuard,
+    ModeratorGuard,
+    DevGuard,
+    ...DATA_REPORTERS,
+    provideHttpClient(withInterceptorsFromDi())
+  ]
 })
 export class CoreModule {
   static forRoot(): ModuleWithProviders<CoreModule> {

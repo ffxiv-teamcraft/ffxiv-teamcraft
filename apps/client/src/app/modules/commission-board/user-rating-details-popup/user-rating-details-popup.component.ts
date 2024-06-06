@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FormsModule } from '@angular/forms';
 import { NzRateModule } from 'ng-zorro-antd/rate';
-import { NgFor, NgIf, DatePipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { DialogComponent } from '../../../core/dialog.component';
@@ -20,7 +20,7 @@ import { DialogComponent } from '../../../core/dialog.component';
   styleUrls: ['./user-rating-details-popup.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NzDividerModule, FlexModule, NgFor, NzRateModule, FormsModule, NzButtonModule, RouterLink, NgIf, NzEmptyModule, NzIconModule, DatePipe, TranslateModule]
+  imports: [NzDividerModule, FlexModule, NzRateModule, FormsModule, NzButtonModule, RouterLink, NzEmptyModule, NzIconModule, DatePipe, TranslateModule]
 })
 export class UserRatingDetailsPopupComponent extends DialogComponent {
   profile: CommissionProfile;

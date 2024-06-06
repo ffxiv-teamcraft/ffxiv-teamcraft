@@ -26,7 +26,7 @@ import { FormsModule } from '@angular/forms';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 
 @Component({
@@ -35,7 +35,7 @@ import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
     styleUrls: ['./list-aggregate.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NzPageHeaderModule, NgIf, NzButtonModule, NzIconModule, NzRadioModule, FormsModule, NzInputModule, NzSelectModule, NgFor, NzWaveModule, NzDropDownModule, NzMenuModule, RouterLink, NzAlertModule, ListDetailsPanelComponent, AsyncPipe, TranslateModule, EncodeUriComponentPipe]
+    imports: [NzPageHeaderModule, NzButtonModule, NzIconModule, NzRadioModule, FormsModule, NzInputModule, NzSelectModule, NzWaveModule, NzDropDownModule, NzMenuModule, RouterLink, NzAlertModule, ListDetailsPanelComponent, AsyncPipe, TranslateModule, EncodeUriComponentPipe]
 })
 export class ListAggregateComponent {
 

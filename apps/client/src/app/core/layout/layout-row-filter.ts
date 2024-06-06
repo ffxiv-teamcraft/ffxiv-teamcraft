@@ -374,6 +374,9 @@ export class LayoutRowFilter {
    * @param buildNewName
    */
   public or(pipedFilter: LayoutRowFilter, buildNewName = true): LayoutRowFilter {
+    if (!pipedFilter) {
+      return this;
+    }
     const newName = buildNewName ? `${this.name}:or:${pipedFilter.name}` : pipedFilter.name;
     return new LayoutRowFilter((row: ListRow, list: List, settings: SettingsService) => {
       return this._filter(row, list, settings) || pipedFilter._filter(row, list, settings);

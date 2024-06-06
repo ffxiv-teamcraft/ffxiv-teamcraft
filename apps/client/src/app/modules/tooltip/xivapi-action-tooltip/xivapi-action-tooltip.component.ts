@@ -6,7 +6,7 @@ import { NzPipesModule } from 'ng-zorro-antd/pipes';
 import { I18nPipe } from '../../../core/i18n.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzGridModule } from 'ng-zorro-antd/grid';
-import { NgIf, NgFor } from '@angular/common';
+
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
@@ -15,7 +15,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./xivapi-action-tooltip.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NgIf, NgFor, NzGridModule, TranslateModule, I18nPipe, NzPipesModule]
+    imports: [FlexModule, NzGridModule, TranslateModule, I18nPipe, NzPipesModule]
 })
 export class XivapiActionTooltipComponent implements OnInit {
 

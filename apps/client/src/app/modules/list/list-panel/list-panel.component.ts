@@ -59,7 +59,7 @@ import { ItemIconComponent } from '../../item-icon/item-icon/item-icon.component
 import { FlexModule } from '@angular/flex-layout/flex';
 import { LazyScrollComponent } from '../../lazy-scroll/lazy-scroll/lazy-scroll.component';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
-import { NgIf, NgSwitch, NgSwitchCase, NgFor, AsyncPipe, UpperCasePipe } from '@angular/common';
+import { AsyncPipe, UpperCasePipe } from '@angular/common';
 
 @Component({
     selector: 'app-list-panel',
@@ -67,7 +67,7 @@ import { NgIf, NgSwitch, NgSwitchCase, NgFor, AsyncPipe, UpperCasePipe } from '@
     styleUrls: ['./list-panel.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NzCollapseModule, LazyScrollComponent, FlexModule, ItemIconComponent, I18nNameComponent, NzInputNumberModule, MouseWheelDirective, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, NzGridModule, NzToolTipModule, NgSwitch, NgSwitchCase, UserAvatarComponent, NzTagModule, RouterLink, NgFor, ListProgressbarComponent, TutorialStepDirective, ClipboardDirective, NzBadgeModule, NzPopconfirmModule, NzDropDownModule, NzMenuModule, AsyncPipe, UpperCasePipe, I18nPipe, TranslateModule, ItemNamePipe, XivapiIconPipe, PermissionLevelPipe]
+    imports: [NzCollapseModule, LazyScrollComponent, FlexModule, ItemIconComponent, I18nNameComponent, NzInputNumberModule, MouseWheelDirective, FormsModule, NzButtonModule, NzWaveModule, NzIconModule, NzGridModule, NzToolTipModule, UserAvatarComponent, NzTagModule, RouterLink, ListProgressbarComponent, TutorialStepDirective, ClipboardDirective, NzBadgeModule, NzPopconfirmModule, NzDropDownModule, NzMenuModule, AsyncPipe, UpperCasePipe, I18nPipe, TranslateModule, ItemNamePipe, XivapiIconPipe, PermissionLevelPipe]
 })
 export class ListPanelComponent extends TeamcraftComponent {
 

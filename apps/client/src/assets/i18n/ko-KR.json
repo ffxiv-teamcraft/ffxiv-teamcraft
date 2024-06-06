@@ -987,6 +987,8 @@
     "Ephemeral_node": "재등장 가능한 시간제 채집 장소",
     "Intro": "채집 수첩에서는 채집 가능한 아이템을 찾을 수 있으며, 채집 장소 확인과 알람 생성 등의 세부 기능을 제공합니다. 위쪽 검색창에 내용을 적고 찾으려는 채집 정보를 확인하세요!",
     "Hidden_item": "숨은 자원",
+    "Sublime_item": "Sublime",
+    "Sublime_item_explain": "This item is obtained by getting its non-sublime variant with maximum collectability rating",
     "Fish_eyes": "오직 날씨 조건만을 위하여 물고기의 눈 필요",
     "Add_alarm": "알람 추가",
     "Add_alarm_fish_eyes": "물고기의 눈과 함께 알람을 추가",
@@ -3257,6 +3259,7 @@
     "Recipe_Finder": "Recipe Finder",
     "Food_Picker": "Food Picker",
     "Reminders": "Reminders",
-    "About": "About"
+    "About": "About",
+    "Fish_Train": "Fish Train"
   }
 }

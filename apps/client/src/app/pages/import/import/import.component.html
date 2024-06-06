@@ -3,26 +3,35 @@
   <div class="description">
     {{'LISTS.Import_description' | translate}}
   </div>
-  <div *ngIf="items$ | async as data; else loading" class="items-container" fxLayout="column">
-    <div *ngFor="let row of data.items; let odd = odd;" [class.odd]="odd" class="item-row" fxLayout="row"
-         fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <app-item-icon [itemId]="row.id" [width]="32"></app-item-icon>
-      <div class="item-name"><app-i18n-name content="items" [id]="row.id"></app-i18n-name> x{{row.quantity}}</div>
-      <div fxFlex="1 1 auto">
-        <nz-alert *ngIf="row.recipes?.length > 0 && row.recipeId === null" [nzMessage]="'LISTS.Please_pick_recipe' | translate"
-                  nzShowIcon nzType="error"></nz-alert>
-      </div>
-      <nz-radio-group *ngIf="row.recipes?.length > 0" [(ngModel)]="row.recipeId">
-        <label *ngFor="let craft of row.recipes" [nzValue]="craft.id.toString()" nz-radio-button>
-          {{craft.job | i18nRow:'jobAbbr' | i18n}} {{craft.lvl}}
-        </label>
-      </nz-radio-group>
+  @if (items$ | async; as data) {
+    <div class="items-container" fxLayout="column">
+      @for (row of data.items; track row; let odd = $odd) {
+        <div [class.odd]="odd" class="item-row" fxLayout="row"
+          fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <app-item-icon [itemId]="row.id" [width]="32"></app-item-icon>
+          <div class="item-name"><app-i18n-name content="items" [id]="row.id"></app-i18n-name> x{{row.quantity}}</div>
+          <div fxFlex="1 1 auto">
+            @if (row.recipes?.length > 0 && row.recipeId === null) {
+              <nz-alert [nzMessage]="'LISTS.Please_pick_recipe' | translate"
+              nzShowIcon nzType="error"></nz-alert>
+            }
+          </div>
+          @if (row.recipes?.length > 0) {
+            <nz-radio-group [(ngModel)]="row.recipeId">
+              @for (craft of row.recipes; track craft) {
+                <label [nzValue]="craft.id.toString()" nz-radio-button>
+                  {{craft.job | i18nRow:'jobAbbr' | i18n}} {{craft.lvl}}
+                </label>
+              }
+            </nz-radio-group>
+          }
+        </div>
+      }
+      <button (click)="doImport(data)" [disabled]="!canDoImport(data)" nz-button nzBlock nzType="primary">
+        {{'LISTS.Add_to_a_list' | translate}}
+      </button>
     </div>
-    <button (click)="doImport(data)" [disabled]="!canDoImport(data)" nz-button nzBlock nzType="primary">
-      {{'LISTS.Add_to_a_list' | translate}}
-    </button>
-  </div>
+  } @else {
+    <app-page-loader></app-page-loader>
+  }
 </div>
-<ng-template #loading>
-  <app-page-loader></app-page-loader>
-</ng-template>

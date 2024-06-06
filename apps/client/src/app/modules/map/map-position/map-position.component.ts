@@ -13,7 +13,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgIf } from '@angular/common';
+
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
@@ -22,7 +22,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./map-position.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NgIf, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, MapNamePipe, I18nPipe, TranslateModule, I18nRowPipe]
+    imports: [FlexModule, NzButtonModule, NzWaveModule, NzToolTipModule, NzIconModule, MapNamePipe, I18nPipe, TranslateModule, I18nRowPipe]
 })
 export class MapPositionComponent {
   @Input()

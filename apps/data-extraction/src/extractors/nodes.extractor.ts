@@ -25,7 +25,7 @@ export class NodesExtractor extends AbstractExtractor {
     const gatheringItemPoints$ = new Subject();
 
 
-    this.getSheet<any>(xiv, 'GatheringItem', ['GatheringItemLevel.GatheringItemLevel', 'GatheringItemLevel.Stars', 'IsHidden', 'Item#'], false, 1)
+    this.getSheet<any>(xiv, 'GatheringItem', ['GatheringItemLevel.GatheringItemLevel', 'GatheringItemLevel.Stars', 'IsHidden', 'Item#', 'SublimeVariant#', 'PerceptionReq'], false, 1)
       .subscribe(entries => {
         entries
           .filter(item => item.GatheringItemLevel && item.Item > 0)
@@ -34,9 +34,19 @@ export class NodesExtractor extends AbstractExtractor {
               level: item.GatheringItemLevel.GatheringItemLevel,
               stars: item.GatheringItemLevel.Stars,
               itemId: item.Item,
-              hidden: item.IsHidden ? 1 : 0
+              hidden: item.IsHidden ? 1 : 0,
+              perceptionReq: item.PerceptionReq,
+              sublimeVariant: item.SublimeVariant
             };
           });
+        // Second iteration to link sublime variants
+        Object.keys(this.gatheringItems).forEach(gatheringItemId => {
+          const entry = this.gatheringItems[gatheringItemId];
+          if (entry.sublimeVariant) {
+            this.gatheringItems[entry.sublimeVariant].sublimeOf = entry.itemId
+            entry.sublimeVariant = this.gatheringItems[entry.sublimeVariant].itemId;
+          }
+        });
         this.persistToJsonAsset('gathering-items', this.gatheringItems);
         gatheringItems$.next(this.gatheringItems);
       });
@@ -129,6 +139,17 @@ export class NodesExtractor extends AbstractExtractor {
           if (node.index === 306) {
             point = gatheringPoints[31437];
           }
+          const sublimeItems = linkedPoints
+            .map(p => (gatheringItemPoints[p] || []))
+            .flat()
+            .filter(i => items[i].sublimeOf)
+            .map(i => {
+              return {
+                source: items[i].sublimeOf,
+                sublime: items[i].itemId
+              }
+            })
+
           const hiddenItems = linkedPoints
             .map(p => (gatheringItemPoints[p] || []))
             .flat()
@@ -153,6 +174,12 @@ export class NodesExtractor extends AbstractExtractor {
             this.nodes[node.index] = {
               ...this.nodes[node.index],
               hiddenItems
+            };
+          }
+          if (sublimeItems.length > 0) {
+            this.nodes[node.index] = {
+              ...this.nodes[node.index],
+              sublimeItems
             };
           }
           if (linkedPoints.length > 0) {

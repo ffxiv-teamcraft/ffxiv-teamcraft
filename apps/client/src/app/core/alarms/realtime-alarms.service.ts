@@ -71,7 +71,6 @@ export class RealtimeAlarmsService {
       this.pushNotificationsService.create(this.translate.instant(`ALARMS.REALTIME.${alarm.label}`),
         {
           icon: '/assets/icons/notice.png',
-          renotify: false
         }
       );
       this.notificationService.info(this.translate.instant(`ALARMS.REALTIME.${alarm.label}`), '');

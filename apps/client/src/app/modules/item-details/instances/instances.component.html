@@ -2,24 +2,27 @@
   <ng-template #instanceTemplate let-instance>
     <nz-list-item>
       <nz-list-item-meta [nzAvatar]="avatar"
-                         [nzTitle]="title">
+        [nzTitle]="title">
         <ng-template #title>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <ng-container *ngIf="instance > 0; else mapDisplay">
+            @if (instance > 0) {
               <div [innerHtml]="instance | i18nRow:'instances' | i18n"></div>
               <app-db-button [id]="instance" type="instance"></app-db-button>
-            </ng-container>
-            <ng-template #mapDisplay>
+            } @else {
               <div>{{-1 * instance | mapName | i18n}}</div>
               <app-db-button [id]="-1 * instance" type="map"></app-db-button>
-            </ng-template>
+            }
           </div>
         </ng-template>
         <ng-template #avatar>
-          <a routerLink="/db/{{translate.currentLang}}/instance/{{instance}}" *ngIf="instance > 0">
-            <img [src]="instance | lazyRow:'instances':'icon' | async" alt="">
-          </a>
-          <i nz-icon nzType="environment-o" *ngIf="instance < 0"></i>
+          @if (instance > 0) {
+            <a routerLink="/db/{{translate.currentLang}}/instance/{{instance}}">
+              <img [src]="instance | lazyRow:'instances':'icon' | async" alt="">
+            </a>
+          }
+          @if (instance < 0) {
+            <i nz-icon nzType="environment-o"></i>
+          }
         </ng-template>
       </nz-list-item-meta>
     </nz-list-item>

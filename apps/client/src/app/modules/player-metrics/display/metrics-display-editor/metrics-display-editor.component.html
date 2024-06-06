@@ -13,69 +13,90 @@
       <nz-form-label nzSpan="8">{{'METRICS.EDITOR.Data_type' | translate}}</nz-form-label>
       <nz-form-control nzSpan="16" tutorialStep="TUTORIAL.METRICS.EDITOR.Data_type">
         <nz-select [(ngModel)]="entry.type" (ngModelChange)="entryChange.emit(entry)">
-          <nz-option *ngFor="let type of metricTypes" [nzValue]="type.value" [nzLabel]="('METRICS.TYPES.' + type.label) | translate"></nz-option>
+          @for (type of metricTypes; track type) {
+            <nz-option [nzValue]="type.value" [nzLabel]="('METRICS.TYPES.' + type.label) | translate"></nz-option>
+          }
         </nz-select>
       </nz-form-control>
     </nz-form-item>
-    <nz-card *ngFor="let filter of entry.filters; let first = first; let i = index" tutorialStep="TUTORIAL.METRICS.EDITOR.Filters">
-      <div fxLayout="row" fxLayoutAlign="flex-end center" class="delete-filter-div">
-        <button nz-button nzDanger nzShape="circle" nzSize="small"
-                nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="removeFilter(i)"
-                *ngIf="!first">
-          <i nz-icon nzType="delete"></i>
-        </button>
-      </div>
-      <nz-form-item class="form-row" *ngIf="!first">
-        <nz-form-label nzSpan="8">{{'METRICS.EDITOR.Operator' | translate}}</nz-form-label>
-        <nz-form-control nzSpan="16">
-          <nz-select [(ngModel)]="filter.gate" (ngModelChange)="entryChange.emit(entry)">
-            <nz-option nzValue="OR" nzLabel="OR"></nz-option>
-            <nz-option nzValue="AND" nzLabel="AND"></nz-option>
-          </nz-select>
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item class="form-row">
-        <nz-form-label nzSpan="8">{{'METRICS.EDITOR.Filter' | translate}}</nz-form-label>
-        <nz-form-control nzSpan="16" [nzExtra]="('METRICS.EDITOR.FILTER_TIPS.' + filter.name) | translate">
-          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
-            <label class="not-checkbox" nz-checkbox [(ngModel)]="filter.not" (ngModelChange)="entryChange.emit(entry)">NOT</label>
-            <nz-select [(ngModel)]="filter.name" (ngModelChange)="entryChange.emit(entry)">
-              <nz-option *ngFor="let filter of filterNames" [nzValue]="filter" [nzLabel]="filter"></nz-option>
-            </nz-select>
-          </div>
-        </nz-form-control>
-      </nz-form-item>
-      <ng-container [ngSwitch]="filter.name">
-        <nz-form-item *ngSwitchCase="'ItemFilter'" class="form-row">
-          <nz-form-label nzSpan="8">{{'METRICS.EDITOR.Accepted_items' | translate}}</nz-form-label>
-          <nz-form-control nzSpan="16" *ngIf="getItemNameCompletion(filter.name + filter.args.join('-'), filter.args) | async as completion">
-            <nz-select
-              nzMode="multiple"
-              nzAllowClear
-              nzShowSearch
-              [(ngModel)]="filter.args"
-              (ngModelChange)="entryChange.emit(entry)"
-              (nzOnSearch)="itemName$.next($event)">
-              <nz-option *ngFor="let item of completion" [nzValue]="item.id" [nzLabel]="item.name | i18n"></nz-option>
-            </nz-select>
+    @for (filter of entry.filters; track filter; let first = $first; let i = $index) {
+      <nz-card tutorialStep="TUTORIAL.METRICS.EDITOR.Filters">
+        <div fxLayout="row" fxLayoutAlign="flex-end center" class="delete-filter-div">
+          @if (!first) {
+            <button nz-button nzDanger nzShape="circle" nzSize="small"
+              nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="removeFilter(i)"
+              >
+              <i nz-icon nzType="delete"></i>
+            </button>
+          }
+        </div>
+        @if (!first) {
+          <nz-form-item class="form-row">
+            <nz-form-label nzSpan="8">{{'METRICS.EDITOR.Operator' | translate}}</nz-form-label>
+            <nz-form-control nzSpan="16">
+              <nz-select [(ngModel)]="filter.gate" (ngModelChange)="entryChange.emit(entry)">
+                <nz-option nzValue="OR" nzLabel="OR"></nz-option>
+                <nz-option nzValue="AND" nzLabel="AND"></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+        }
+        <nz-form-item class="form-row">
+          <nz-form-label nzSpan="8">{{'METRICS.EDITOR.Filter' | translate}}</nz-form-label>
+          <nz-form-control nzSpan="16" [nzExtra]="('METRICS.EDITOR.FILTER_TIPS.' + filter.name) | translate">
+            <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
+              <label class="not-checkbox" nz-checkbox [(ngModel)]="filter.not" (ngModelChange)="entryChange.emit(entry)">NOT</label>
+              <nz-select [(ngModel)]="filter.name" (ngModelChange)="entryChange.emit(entry)">
+                @for (filter of filterNames; track filter) {
+                  <nz-option [nzValue]="filter" [nzLabel]="filter"></nz-option>
+                }
+              </nz-select>
+            </div>
           </nz-form-control>
         </nz-form-item>
-        <nz-form-item *ngSwitchCase="'SourceFilter'" class="form-row">
-          <nz-form-label nzSpan="8">{{'METRICS.EDITOR.Accepted_sources' | translate}}</nz-form-label>
-          <nz-form-control nzSpan="16">
-            <nz-select
-              nzMode="multiple"
-              nzAllowClear
-              nzShowSearch
-              [(ngModel)]="filter.args"
-              (ngModelChange)="entryChange.emit(entry)">
-              <nz-option *ngFor="let source of sources" [nzValue]="source.value" [nzLabel]="('METRICS.SOURCES.'+source.label) | translate"></nz-option>
-            </nz-select>
-          </nz-form-control>
-        </nz-form-item>
-        <ng-container *ngSwitchDefault></ng-container>
-      </ng-container>
-    </nz-card>
+        @switch (filter.name) {
+          @case ('ItemFilter') {
+            <nz-form-item class="form-row">
+              <nz-form-label nzSpan="8">{{'METRICS.EDITOR.Accepted_items' | translate}}</nz-form-label>
+              @if (getItemNameCompletion(filter.name + filter.args.join('-'), filter.args) | async; as completion) {
+                <nz-form-control nzSpan="16">
+                  <nz-select
+                    nzMode="multiple"
+                    nzAllowClear
+                    nzShowSearch
+                    [(ngModel)]="filter.args"
+                    (ngModelChange)="entryChange.emit(entry)"
+                    (nzOnSearch)="itemName$.next($event)">
+                    @for (item of completion; track item) {
+                      <nz-option [nzValue]="item.id" [nzLabel]="item.name | i18n"></nz-option>
+                    }
+                  </nz-select>
+                </nz-form-control>
+              }
+            </nz-form-item>
+          }
+          @case ('SourceFilter') {
+            <nz-form-item class="form-row">
+              <nz-form-label nzSpan="8">{{'METRICS.EDITOR.Accepted_sources' | translate}}</nz-form-label>
+              <nz-form-control nzSpan="16">
+                <nz-select
+                  nzMode="multiple"
+                  nzAllowClear
+                  nzShowSearch
+                  [(ngModel)]="filter.args"
+                  (ngModelChange)="entryChange.emit(entry)">
+                  @for (source of sources; track source) {
+                    <nz-option [nzValue]="source.value" [nzLabel]="('METRICS.SOURCES.'+source.label) | translate"></nz-option>
+                  }
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+          }
+          @default {
+          }
+        }
+      </nz-card>
+    }
     <button nz-button nzBlock (click)="addFilter()">
       <i nz-icon nzType="filter" nzTheme="outline"></i>
       {{'METRICS.EDITOR.Add_filter' | translate}}
@@ -91,19 +112,21 @@
       <nz-form-label nzSpan="8">{{'METRICS.EDITOR.Display_type' | translate}}</nz-form-label>
       <nz-form-control nzSpan="16" tutorialStep="TUTORIAL.METRICS.EDITOR.Display_type" tutorialStepAlign="top">
         <nz-select [(ngModel)]="entry.component" (ngModelChange)="componentChange(entry)">
-          <nz-option *ngFor="let component of components" [nzValue]="component"
-                     [nzLabel]="('METRICS.EDITOR.DISPLAY_TYPES.' + component) | translate"></nz-option>
+          @for (component of components; track component) {
+            <nz-option [nzValue]="component"
+            [nzLabel]="('METRICS.EDITOR.DISPLAY_TYPES.' + component) | translate"></nz-option>
+          }
         </nz-select>
       </nz-form-control>
     </nz-form-item>
-    <ng-container [ngSwitch]="entry.component">
-      <ng-container *ngSwitchCase="'total'">
+    @switch (entry.component) {
+      @case ('total') {
         <nz-form-item class="form-row">
           <nz-form-label nzSpan="8">{{'METRICS.EDITOR.Font_size' | translate}}</nz-form-label>
           <nz-form-control nzSpan="16">
             <nz-input-group nzAddOnAfter="px">
               <input nz-input type="number" [ngModel]="+entry.params.fontSize.slice(0, -2)"
-                     (ngModelChange)="entry.params.fontSize = $event + 'px';entryChange.emit(entry)">
+                (ngModelChange)="entry.params.fontSize = $event + 'px';entryChange.emit(entry)">
             </nz-input-group>
           </nz-form-control>
         </nz-form-item>
@@ -113,8 +136,8 @@
             <input nz-input type="text" [(ngModel)]="entry.params.currencyName" (ngModelChange)="entryChange.next(entry)">
           </nz-form-control>
         </nz-form-item>
-      </ng-container>
-      <ng-container *ngSwitchCase="'pie-chart'">
+      }
+      @case ('pie-chart') {
         <nz-form-item class="form-row">
           <nz-form-label nzSpan="8">{{'METRICS.EDITOR.Pie_metric' | translate}}</nz-form-label>
           <nz-form-control nzSpan="16">
@@ -124,9 +147,9 @@
             </nz-select>
           </nz-form-control>
         </nz-form-item>
-
-      </ng-container>
-      <ng-container *ngSwitchDefault></ng-container>
-    </ng-container>
+      }
+      @default {
+      }
+    }
   </div>
 </nz-card>

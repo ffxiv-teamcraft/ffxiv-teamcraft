@@ -44,7 +44,7 @@ import { NzWaveModule } from 'ng-zorro-antd/core/wave';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NgFor, NgSwitch, NgSwitchCase, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { FlexModule } from '@angular/flex-layout/flex';
 
 @Component({
@@ -53,7 +53,7 @@ import { FlexModule } from '@angular/flex-layout/flex';
     styleUrls: ['./item-sources-display.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FlexModule, NgFor, NgSwitch, NgSwitchCase, NzButtonModule, NzIconModule, NzToolTipModule, NzWaveModule, NgIf, ItemIconComponent, CompanyWorkshopTreeButtonComponent, AsyncPipe, I18nPipe, TranslateModule, NodeTypeIconPipe, XivapiIconPipe, LazyIconPipe, TradeIconPipe, JobUnicodePipe, LazyRowPipe]
+    imports: [FlexModule, NzButtonModule, NzIconModule, NzToolTipModule, NzWaveModule, ItemIconComponent, CompanyWorkshopTreeButtonComponent, AsyncPipe, I18nPipe, TranslateModule, NodeTypeIconPipe, XivapiIconPipe, LazyIconPipe, TradeIconPipe, JobUnicodePipe, LazyRowPipe]
 })
 export class ItemSourcesDisplayComponent extends TeamcraftComponent {
   @Input()
@@ -103,75 +103,75 @@ export class ItemSourcesDisplayComponent extends TeamcraftComponent {
     super();
   }
 
-  public openGatheredByPopup(item: ListRow): void {
+  public openGatheredByPopup(item: typeof this['item']): void {
     this.openDetailsPopup(GatheredByComponent, item, DataType.GATHERED_BY);
   }
 
-  public openGardeningPopup(item: ListRow): void {
+  public openGardeningPopup(item: typeof this['item']): void {
     this.openDetailsPopup(GardeningComponent, item, DataType.GARDENING);
   }
 
-  public openHuntingPopup(item: ListRow): void {
+  public openHuntingPopup(item: typeof this['item']): void {
     this.openDetailsPopup(HuntingComponent, item, DataType.DROPS);
   }
 
-  public openIslandAnimalsPopup(item: ListRow): void {
+  public openIslandAnimalsPopup(item: typeof this['item']): void {
     this.openDetailsPopup(IslandAnimalComponent, item, DataType.ISLAND_PASTURE);
   }
 
-  public openIslandCropPopup(item: ListRow): void {
+  public openIslandCropPopup(item: typeof this['item']): void {
     this.openDetailsPopup(IslandCropComponent, item, DataType.ISLAND_CROP);
   }
 
-  public openInstancesPopup(item: ListRow): void {
+  public openInstancesPopup(item: typeof this['item']): void {
     this.openDetailsPopup(InstancesComponent, item, DataType.INSTANCES);
   }
 
-  public openMogstationPopup(item: ListRow): void {
+  public openMogstationPopup(item: typeof this['item']): void {
     this.openDetailsPopup(MogstationComponent, item, DataType.MOGSTATION);
   }
 
-  public openQuestPopup(item: ListRow): void {
+  public openQuestPopup(item: typeof this['item']): void {
     this.openDetailsPopup(QuestsComponent, item, DataType.QUESTS);
   }
 
-  public openAchievementsPopup(item: ListRow): void {
+  public openAchievementsPopup(item: typeof this['item']): void {
     this.openDetailsPopup(AchievementsComponent, item, DataType.ACHIEVEMENTS);
   }
 
-  public openReducedFromPopup(item: ListRow): void {
+  public openReducedFromPopup(item: typeof this['item']): void {
     this.openDetailsPopup(ReducedFromComponent, item, DataType.REDUCED_FROM);
   }
 
-  public openDesynthsPopup(item: ListRow): void {
+  public openDesynthsPopup(item: typeof this['item']): void {
     this.openDetailsPopup(DesynthsComponent, item, DataType.DESYNTHS);
   }
 
-  public openVendorsPopup(item: ListRow): void {
+  public openVendorsPopup(item: typeof this['item']): void {
     this.openDetailsPopup(VendorsComponent, item, DataType.VENDORS);
   }
 
-  public openVenturesPopup(item: ListRow): void {
+  public openVenturesPopup(item: typeof this['item']): void {
     this.openDetailsPopup(VenturesComponent, item, DataType.VENTURES);
   }
 
-  public openTreasuresPopup(item: ListRow): void {
+  public openTreasuresPopup(item: typeof this['item']): void {
     this.openDetailsPopup(TreasuresComponent, item, DataType.TREASURES);
   }
 
-  public openFatesPopup(item: ListRow): void {
+  public openFatesPopup(item: typeof this['item']): void {
     this.openDetailsPopup(FatesComponent, item, DataType.FATES);
   }
 
-  public openVoyagesPopup(item: ListRow): void {
+  public openVoyagesPopup(item: typeof this['item']): void {
     this.openDetailsPopup(VoyagesComponent, item, DataType.VOYAGES);
   }
 
-  public openTradesPopup(item: ListRow): void {
+  public openTradesPopup(item: typeof this['item']): void {
     this.openDetailsPopup(TradesComponent, item, DataType.TRADE_SOURCES);
   }
 
-  public openSimulator(recipeId: string, item: ListRow, entry: CraftedBy): void {
+  public openSimulator(recipeId: string, item: typeof this['item'], entry: CraftedBy): void {
     this.rotationPicker.openInSimulator(item.id, recipeId);
   }
 
@@ -183,7 +183,7 @@ export class ItemSourcesDisplayComponent extends TeamcraftComponent {
     return craft.id;
   }
 
-  private openDetailsPopup(component: Type<ItemDetailsPopup>, item: ListRow, dataType: DataType): void {
+  private openDetailsPopup(component: Type<ItemDetailsPopup>, item: typeof this['item'], dataType: DataType): void {
     this.i18n.getNameObservable('items', item.id).pipe(
       first()
     ).subscribe(itemName => {

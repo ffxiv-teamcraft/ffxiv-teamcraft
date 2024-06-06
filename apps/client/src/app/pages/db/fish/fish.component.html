@@ -1,14 +1,12 @@
-<ng-container *ngIf="settings.theme as theme">
-
+@if (settings.theme; as theme) {
   <app-page-loader [loading]="!(fishCtx.fishId$ | async)">
     <app-fish-details-container></app-fish-details-container>
-
-    <div class="obtain-template-container" *ngIf="obtentionTpl">
-      <ng-container *ngTemplateOutlet="obtentionTpl"></ng-container>
-    </div>
-
+    @if (obtentionTpl) {
+      <div class="obtain-template-container">
+        <ng-container *ngTemplateOutlet="obtentionTpl"></ng-container>
+      </div>
+    }
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
-
     <div fxLayout="row wrap" fxLayoutGap="24px grid" fxLayoutGap.lt-md="12px grid" fxLayoutAlign="space-between stretch" fxLayout.lt-sm="column">
       <app-fish-hours fxFlexOrder="1" fxFlex="none"></app-fish-hours>
       <app-fish-baits fxFlexOrder="2" fxFlexOrder.gt-sm="3" fxFlexOrder.gt-md="4" fxFlexOrder.gt-lg="3" fxFlex="none"></app-fish-baits>
@@ -26,11 +24,11 @@
       ></app-fish-weather-transitions>
       <app-fish-mooches fxFlexOrder="8" fxFlex fxFlex.gt-sm="40" fxFlex.gt-md="22" fxFlex.gt-lg="28"></app-fish-mooches>
     </div>
-
-    <ng-container *ngIf="usedForTpl">
+    @if (usedForTpl) {
       <ng-container *ngTemplateOutlet="usedForTpl"></ng-container>
-    </ng-container>
-
-    <app-db-comments *ngIf="fishCtx.fishId$ | async as fishId" [id]="fishId" type="item"></app-db-comments>
+    }
+    @if (fishCtx.fishId$ | async; as fishId) {
+      <app-db-comments [id]="fishId" type="item"></app-db-comments>
+    }
   </app-page-loader>
-</ng-container>
+}
