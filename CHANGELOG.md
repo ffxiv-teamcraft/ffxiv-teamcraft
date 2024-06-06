@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.1.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.41...v11.1.0) (2024-06-06)
+
+
+### Features
+
+* **data:** update for cn patch-6.55 ([cc4fd28](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cc4fd28d13163e51648f8c9a902a87e3310c6e62))
+* **db:** add support for sublime items ([9ba7daf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9ba7daf0e6cc0294b9f729aa0020d9ec7336c60f))
+* **db:** allagan reports import ([305d4aa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/305d4aab8f5da4fc8424b275f45018fe0e91eb6f))
+* **inventory-optimizer:** exclude archived lists from optimizer entirely ([39462e2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/39462e269a5971fb6f402bf2326ac137337a2912))
+* **step-by-step-overlay:** item icon click now opens a new child window ([3c337bd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3c337bdb4b44f8a2763584f69282b9466e8c1c11))
+
+
+### Bug Fixes
+
+* **alarms:** hopefully final fix for alarms playing on despawn ([009a140](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/009a140fdd57ac2c3ef3b1d8f4f248f669d79d53))
+* **data:** api call errors now cancel loading bar ([7c23a66](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7c23a66fc09485457b71f1752a86ad1d6efb938a))
+* **db:** don't show misses in fish mooch list ([7498233](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7498233dbac9ad12fb4ccacc6012c982132bbe61))
+* **db:** fix some hunting drop items not loading properly ([0f49418](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0f49418dccee1ffbf1d89ba695302edbec00377a))
+* **db:** lazy data files not loading properly when in subfolders ([667b1d5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/667b1d55f7bcd972db47934d7460556c699c5999))
+* **db:** Limbeth is now the NPC for ShB DoH relics and Quinnana for EW ones ([2db8239](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2db8239ef75984866684e11a79861b07ed96190c))
+* **db:** new import for better korean 6.51 data indexing ([9d855ae](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9d855aeb34621304c60014dce643f0594129cde1))
+* **i18n:** add missing fish train translation ([c0cae95](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c0cae95e9678996de0aea64251fe363f1488089c))
+* **inventory:** expansion filter now works as expected ([0755257](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0755257edf6d4b1766d85c935de25e60ea600507))
+* **island-workshop:** proper rank ratio for level 5 ([00b008b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/00b008b595dfa5e8308e0d687033cfa479661006)), closes [#2804](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2804)
+* **layout:** fix some broken layouts based on most recent default one ([7e41425](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7e41425fd82f2835186daeb15c20563a4b85ce31))
+* **leveling-equipment:** use CP as main stat for crafting jewelry ([829dc50](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/829dc50524e2a189e568841e8adcc8fabb97a787))
+* **lists:** offline lists stuck in saving data to server state ([50cc3fb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/50cc3fb0744a7800184264eb7c5a6334c222d4fa))
+* **step-by-step:** duplicate display for timed nodes in overlay ([4a38ddc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4a38ddc13994fd2c8f8fa24b7381c5c596793662))
+
 ### [11.0.41](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.0.40...v11.0.41) (2024-05-07)
 
 
