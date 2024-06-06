@@ -141,7 +141,7 @@ export class IpcListenersManager {
 
   public init(): void {
     performance.mark('start');
-    const extractsFileName = app.isPackaged ? 'extracts.json' : `extracts.${extractsHash}.json`;
+    const extractsFileName = !app.isPackaged ? 'extracts.json' : `extracts.${extractsHash}.json`;
     readFile(join(Constants.BASE_APP_PATH, `/assets/extracts/`, extractsFileName), 'utf-8', (err, data) => {
       if (data) {
         performance.mark('extracts');
