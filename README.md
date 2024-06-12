@@ -11,6 +11,8 @@ https://ffxivteamcraft.com
 
 Discord for support, bugs discussion and contributors: https://discord.gg/r6qxt6P
 
+Wiki for feature documentation and user guides: https://wiki.ffxivteamcraft.com/
+
 ## Development
 
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
