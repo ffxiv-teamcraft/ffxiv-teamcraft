@@ -110,7 +110,7 @@ export abstract class FirestoreStorage<T extends DataModel> {
       catchError(error => {
         console.error(`QUERY ${this.getBaseUri()}`);
         console.error(error);
-        return throwError(error);
+        throw error;
       }),
       distinctUntilChanged((a, b) => isEqual(a, b))
     );
@@ -126,7 +126,7 @@ export abstract class FirestoreStorage<T extends DataModel> {
         catchError(error => {
           console.error(`ADD ${this.getBaseUri()}`);
           console.error(error);
-          return throwError(error);
+          throw error;
         }),
         tap(() => this.recordOperation('write')),
         map(res => res.id)
@@ -141,7 +141,7 @@ export abstract class FirestoreStorage<T extends DataModel> {
           catchError(error => {
             console.error(`GET ${this.getBaseUri()}/${key}`);
             console.error(error);
-            return throwError(error);
+            throw error;
           }),
           filter(snap => !snap.metadata.hasPendingWrites),
           map(snap => {
@@ -175,7 +175,7 @@ export abstract class FirestoreStorage<T extends DataModel> {
         catchError(error => {
           console.error(`UPDATE ${this.getBaseUri()}/${key}`);
           console.error(error);
-          return throwError(error);
+          throw error;
         }),
         tap(() => {
           this.recordOperation('write', key);
@@ -195,7 +195,7 @@ export abstract class FirestoreStorage<T extends DataModel> {
         catchError(error => {
           console.error(`UPDATE ${this.getBaseUri()}/${key}`);
           console.error(error);
-          return throwError(error);
+          throw error;
         }),
         tap(() => {
           this.recordOperation('write', key);
