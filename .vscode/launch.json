@@ -6,7 +6,8 @@
       "name": "Launch Edge",
       "type": "msedge",
       "request": "launch",
-      "preLaunchTask": "npm: start",
+      "preLaunchTask": "Live Development Server",
+      "postDebugTask": "Terminate Live Development Server",
       "url": "http://localhost:4200/#",
       "webRoot": "${workspaceFolder}",
       "sourceMapPathOverrides": {

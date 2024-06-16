@@ -3,6 +3,8 @@
   "version": "2.0.0",
   "tasks": [
     {
+      // Task to start the Live Development Server
+      "label": "Live Development Server",
       "type": "npm",
       "script": "start",
       "isBackground": true,
@@ -37,5 +39,19 @@
         }
       }
     },
-  ]
+    {
+      // Task to terminate the Live Development Server
+      "label": "Terminate Live Development Server",
+      "command": "echo ${input:termianteLiveDevelopmentServer}",
+      "type": "shell",
+    },
+  ],
+  "inputs": [
+    {
+      "id": "termianteLiveDevelopmentServer",
+      "type": "command",
+      "command": "workbench.action.tasks.terminate",
+      "args": "Live Development Server" // The task label to terminate
+    },
+  ],
 }
