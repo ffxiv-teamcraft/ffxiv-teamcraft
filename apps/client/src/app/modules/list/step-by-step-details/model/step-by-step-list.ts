@@ -75,6 +75,10 @@ export class StepByStepList {
                   // If it's a trade, we want to filter to make sure it's on this map, to avoid showing wrong currency and details.
                   preparedSource.data = preparedSource.data.filter(npc => npc.mapId === position.mapId);
                 }
+                if (preparedSource.type === DataType.ALARMS) {
+                  // If it's a trade, we want to filter to make sure it's on this map, to avoid showing wrong currency and details.
+                  preparedSource.data = preparedSource.data.filter(alarm => alarm.mapId === position.mapId);
+                }
                 const sourcesToTransfer = row.sources.filter(s => [DataType.MASTERBOOKS, DataType.DEPRECATED].includes(s.type));
                 const sources = [...sourcesToTransfer, preparedSource];
                 this.addToMapIndex(position.mapId, row, sources, position);
@@ -208,7 +212,7 @@ export class StepByStepList {
       entry.progress = Math.ceil(100 * entry.totalDone / entry.totalTodo);
       this.progress = Math.ceil(100 * this.totalDone / this.totalTodo);
     });
-    if (sources.some(s => s.type === DataType.ALARMS)) {
+    if (sources.some(s => s.type === DataType.ALARMS) && !this.alarms.some(a => a.id === row.id)) {
       this.alarms.push(row);
     }
   }
