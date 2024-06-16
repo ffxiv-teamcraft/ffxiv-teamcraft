@@ -17,6 +17,22 @@
         "/*": "*",
         "/./~/*": "${webRoot}/node_modules/*"
       }
-    }
+    },
+    {
+      // A configuration based on the time-of-writing's CONTRIBUTING.md
+      // NOTE: Some changes that are picked up by --watch flag can be reflected
+      // in the electron app simply by refreshing the app (CTRL-R)
+      "name": "Electron: Main",
+      "type": "node",
+      "request": "launch",
+      "preLaunchTask": "Build and Watch",
+      "postDebugTask": "Terminate 'Build and Watch'",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": [
+        "electron:start"
+      ],
+      "outputCapture": "std",
+    },
   ]
 }
