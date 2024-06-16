@@ -5,7 +5,7 @@
     "resolveJsonModule": false,
     "importHelpers": true,
     "module": "Node16",
-    "sourceMap": false,
+    "sourceMap": true,
     "declaration": false,
     "moduleDetection": "force",
     "moduleResolution": "Node16",
