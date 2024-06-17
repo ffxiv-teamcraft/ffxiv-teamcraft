@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.1.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.1.1...v11.1.2) (2024-06-17)
+
+
+### Features
+
+* **db:** add new Dynamis servers ([215a1b1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/215a1b1db56583f5866f24f40385bc3171a1c1e1))
+
+
+### Bug Fixes
+
+* **admin:** fix character links status check ([f37afcc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f37afcc783df7666f3112c9a62e4664beefd02b5))
+* **alarms:** sort alarms by item id if remaining time is identical ([8180682](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/818068243aa95f8d4b40d54dc92ed7175eb7a077)), closes [#2831](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2831)
+* **core:** switch Firestore persistence to memory ([289ad3e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/289ad3ee573dd75ac06b8c65947ccb75eb9e6fa8))
+* **desktop:** fix step-by-step overlay opening in main window on item icon click ([b0c5ea6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b0c5ea6d41f7d5363fb64cc49149b3dca979b94e))
+* **step-by-step:** filter sources for current map only ([a046cdd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a046cdda9633c5a0a1f78662246012328021d27d))
+* **step-by-step:** only add alarm once per item to the alarms display ([da068db](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/da068dbd0816a50c42bca30a8aa2c0b751b5a2c3))
+
 ### [11.1.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.1.0...v11.1.1) (2024-06-06)
 
 

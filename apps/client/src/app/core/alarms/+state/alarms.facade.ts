@@ -408,7 +408,10 @@ export class AlarmsFacade {
         return -1;
       }
       if (a.spawned && b.spawned) {
-        return Math.abs(a.remainingTime - b.remainingTime) < 10 ? -1 : 1;
+        if (Math.abs(a.remainingTime - b.remainingTime) < 10) {
+          return b.alarm.itemId - a.alarm.itemId;
+        }
+        return a.remainingTime - b.remainingTime;
       }
       if (a.spawned) {
         return -1;
@@ -417,9 +420,9 @@ export class AlarmsFacade {
         return 1;
       }
       if (Math.abs(a.remainingTime - b.remainingTime) < 10) {
-        return a.alarm.itemId < b.alarm.itemId ? -1 : 1;
+        return b.alarm.itemId - a.alarm.itemId;
       }
-      return a.remainingTime < b.remainingTime ? -1 : 1;
+      return a.remainingTime - b.remainingTime;
     });
   }
 

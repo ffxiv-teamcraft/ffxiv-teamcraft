@@ -3,10 +3,10 @@ import { UserService } from '../../../core/database/user.service';
 import { combineLatest, merge, Observable, of } from 'rxjs';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { debounceTime, map, switchMap, tap } from 'rxjs/operators';
-import { UntypedFormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, UntypedFormControl, Validators } from '@angular/forms';
 import { UserSearchMode } from './user-search-mode.enum';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { IntegrityCheckPopupComponent } from './integrity-check-popup/integrity-check-popup.component';
 import { LodestoneService } from '../../../core/api/lodestone.service';
 import { Functions, httpsCallable } from '@angular/fire/functions';
@@ -16,7 +16,6 @@ import { CharacterNamePipe } from '../../../pipes/pipes/character-name.pipe';
 import { RouterLink } from '@angular/router';
 import { UserAvatarComponent } from '../../../modules/user-avatar/user-avatar/user-avatar.component';
 import { FullpageMessageComponent } from '../../../modules/fullpage-message/fullpage-message/fullpage-message.component';
-import { NzListModule } from 'ng-zorro-antd/list';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { AsyncPipe } from '@angular/common';
@@ -24,13 +23,15 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { FlexModule } from '@angular/flex-layout/flex';
+import { NzDividerComponent } from 'ng-zorro-antd/divider';
 
 @Component({
-    selector: 'app-users',
-    templateUrl: './users.component.html',
-    styleUrls: ['./users.component.less'],
-    standalone: true,
-    imports: [FlexModule, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NzInputModule, ReactiveFormsModule, NzAutocompleteModule, NzListModule, FullpageMessageComponent, UserAvatarComponent, RouterLink, AsyncPipe, TranslateModule, CharacterNamePipe]
+  selector: 'app-users',
+  templateUrl: './users.component.html',
+  styleUrls: ['./users.component.less'],
+  standalone: true,
+  imports: [FlexModule, NzGridModule, NzFormModule, NzSelectModule, FormsModule, NzInputModule, ReactiveFormsModule, NzAutocompleteModule,
+    FullpageMessageComponent, UserAvatarComponent, RouterLink, AsyncPipe, TranslateModule, CharacterNamePipe, NzDividerComponent]
 })
 export class UsersComponent {
 

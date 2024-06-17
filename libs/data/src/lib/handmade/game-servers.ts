@@ -121,6 +121,10 @@ export const GAME_SERVERS = [
   'Maduin',
   'Marilith',
   'Seraph',
+  'Cuchulainn',
+  'Golem',
+  'Kraken',
+  'Rafflesia',
 
   // Chinese servers
   ...CHINESE_GAME_SERVERS,
@@ -175,7 +179,11 @@ export const GAME_SERVERS_PER_DC = {
       'Halicarnassus',
       'Maduin',
       'Marilith',
-      'Seraph'
+      'Seraph',
+      'Cuchulainn',
+      'Golem',
+      'Kraken',
+      'Rafflesia'
     ],
 
   // EU

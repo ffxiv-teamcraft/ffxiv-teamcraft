@@ -1,7 +1,7 @@
 import { IntegrityCheck } from './integrity-check';
-import { combineLatest, Observable, of } from 'rxjs';
+import { combineLatest, Observable, of, timeout } from 'rxjs';
 import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
-import { catchError, map } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { inject } from '@angular/core';
 import { LodestoneService } from '../../../../core/api/lodestone.service';
 
@@ -22,6 +22,7 @@ export class AllCharactersValidCheck implements IntegrityCheck<number[]> {
       user.lodestoneIds.map(entry => {
         return this.characterService.getCharacter(entry.id).pipe(
           map(() => true),
+          timeout(4000),
           catchError(() => of(false))
         );
       })

@@ -70,11 +70,11 @@
                   <img *ngIf="step.isTeleport" alt="" src="./assets/icons/Aetheryte.png">
                   <ng-container *ngIf="step.listRow">
                     <app-item-icon [itemId]="step.listRow.id" [itemName]="step.listRow.id | itemName: step.listRow | i18n"
-                                   [width]="32"
+                                   [width]="32" openNewWindow
                                    [forceCollectable]="step.listRow.collectable" *ngIf="!step.isTeleport && !step.listRow.xivapiIcon"></app-item-icon>
                     <app-item-icon [icon]="step.listRow.xivapiIcon | xivapiIcon" [itemId]="null"
-                                   [width]="32"
-                                   *ngIf="step.listRow.xivapiIcon" [tooltipDisabled]="true"></app-item-icon>
+                                   [width]="32" openNewWindow
+                                   *ngIf="step.listRow.xivapiIcon" tooltipDisabled></app-item-icon>
                   </ng-container>
                   <i *ngIf="!step.isTeleport && step.itemId === undefined" class="material-icons">location_on</i>
                   <img *ngIf="step.fate" [src]="step.fate | lazyRow:'fates':'icon' | async | xivapiIcon" class="item-icon">

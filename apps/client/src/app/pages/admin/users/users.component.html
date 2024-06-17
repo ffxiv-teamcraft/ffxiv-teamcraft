@@ -54,32 +54,26 @@
 </div>
 
 @if (results$ | async; as results) {
-  <nz-list [nzLoading]="loadingResults">
+  <div class="flex-column gap-10">
     @if (results.length === 0) {
       <app-fullpage-message height="300px">
         {{'ADMIN.USERS.No_users_found' | translate}}
       </app-fullpage-message>
     }
-    @for (user of results; track user) {
-      <nz-list-item>
-        <nz-list-item-meta [nzAvatar]="avatar" [nzDescription]="user.$key">
-          <ng-template #avatar>
-            <app-user-avatar [userId]="user.$key"></app-user-avatar>
-          </ng-template>
-          <nz-list-item-meta-title>
-            {{user.$key | characterName | async}}
-          </nz-list-item-meta-title>
-        </nz-list-item-meta>
-        <div>{{'ADMIN.USERS.X_characters_linked' | translate:{ amount: user.lodestoneIds.length } }}</div>
-        <ul nz-list-item-actions>
-          <nz-list-item-action>
-            <a routerLink="/profile/{{user.$key}}">{{'ADMIN.USERS.ACTIONS.Profile' | translate}}</a>
-          </nz-list-item-action>
-          <nz-list-item-action>
-            <a (click)="runIntegrityCheck(user)">{{'ADMIN.USERS.ACTIONS.Check' | translate}}</a>
-          </nz-list-item-action>
-        </ul>
-      </nz-list-item>
+    @for (user of results; track user.$key) {
+      <div class="flex-row gap-5">
+        <app-user-avatar [userId]="user.$key"></app-user-avatar>
+        <div class="flex-column gap-2">
+          <b>{{user.$key | characterName | async}}</b>
+          <div>{{user.$key}}</div>
+        </div>
+        <div class="spacer flex-row align-center justify-center">
+          <div>{{'ADMIN.USERS.X_characters_linked' | translate:{ amount: user.lodestoneIds.length } }}</div>
+        </div>
+        <a routerLink="/profile/{{user.$key}}">{{'ADMIN.USERS.ACTIONS.Profile' | translate}}</a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a (click)="runIntegrityCheck(user)">{{'ADMIN.USERS.ACTIONS.Check' | translate}}</a>
+      </div>
     }
-  </nz-list>
+  </div>
 }
