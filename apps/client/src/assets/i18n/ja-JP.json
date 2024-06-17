@@ -2109,7 +2109,7 @@
     "Pause_tracking": "所持品トラッカーの一時停止",
     "CAN_BE_BOUGHT": {
       "Title": "購入可能：ギル",
-      "Message": "購入可能: ギル / 購入条件: 蛮族クエスト解放",
+      "Message": "購入可能: ギル / 蛮族友好度不問",
       "Max_price": "最高価格"
     },
     "DUPLICATES": {
