@@ -279,7 +279,7 @@
     "validate-commit-msg": "^2.14.0",
     "webpack-bundle-analyzer": "^4.9.1",
     "webpack-merge": "^5.9.0",
-    "ws": "^8.2.3",
+    "ws": "^8.17.1",
     "xhr2": "^0.2.1",
     "yaml": "^2.3.4",
     "yargs": "^17.1.1",
