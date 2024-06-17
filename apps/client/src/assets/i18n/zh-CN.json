@@ -18,7 +18,7 @@
   "List_fork_in_progress": "正在复制清单到您的账号…",
   "Network_error_logged_out": "检测到网络错误，你已被注销。如果此问题一直存在，请在 Discord 上与 Miu 联系。",
   "Hide_zone_duplicates": "隐藏重复地图 (来自多个地图的物品只显示一次)",
-  "Patch_notes": "版本日志",
+  "Patch_notes": "{{version}} 更新",
   "Patch_notes_footer": "您喜欢新的功能吗？考虑下在Patreon支持这个项目？",
   "Selection": "已选中",
   "Change_character": "角色",
@@ -190,7 +190,7 @@
     "Never": "从不",
     "Festival": "季节活动期间限定",
     "Back": "返回",
-    "Support_us_remove_ads": "支持我们并移除广告",
+    "Support_us_remove_ads": "在 Patreon 上支持我们以移除广告",
     "Support_us": "支持我们",
     "Show_more": "显示更多",
     "Item": "物品",
@@ -380,7 +380,7 @@
   "Use_lodestoneId": "使用 Lodestone ID",
   "LodestoneId": "Lodestone ID",
   "List_forked": "清单已复制到你的账号",
-  "List_fork": "将此清单复制到您的账户 (ctrl + 单击 以离线清单形式复制)",
+  "List_fork": "将此清单复制到你的账号",
   "List_not_found": "没有找到清单或者你没有权限访问",
   "Requirements_for_craft": "查看要求",
   "Zone_breakdown": "按地图显示",
@@ -793,7 +793,7 @@
     "Autofill_notification_body": "{{listName}} 清单中的 {{itemName}} 已制作完成",
     "Autofill_crafting_gathering_title": "检测到正在制作或采集",
     "Autofill_crafting_gathering_message": "为避免变更速度过快导致的数据库问题，自动填写会工作在慢速模式，直到您结束制作（在游戏中站起）或采集（关闭采集窗口）。",
-    "Fill_with_inventory": "使用物品栏信息填充",
+    "Fill_with_inventory": "使用物品栏信息填充（只会使用个人物品栏的内容）",
     "Filter_items_done": "忽略已完成的物品",
     "Inventory_synthesis": "物品栏聚合（查看每个物品栏中已有的物品）",
     "X_needed": "需要 {{amount}} 个",
@@ -1542,7 +1542,7 @@
     "Search": "搜索",
     "Generate_list": "新建快速清单",
     "Intro": "输入等级并点击搜索",
-    "Loading_message": "正在加载筹备列表..."
+    "Loading_message": "正在加载筹备列表，可能需要一分钟"
   },
   "DESYNTH": {
     "Title": "分解指南",
@@ -1632,7 +1632,7 @@
     "Currencies": "货币",
     "Rowena_splendor": "罗薇娜显赫商会",
     "Unlocks": "解锁",
-    "Jump_to_page": "打开数据库页面",
+    "Jump_to_page": "打开物品数据库页面",
     "Ishgard_restoration": "伊修加德重建",
     "GC_supply_value": "筹备稀有品",
     "ITEM": {
@@ -2751,7 +2751,7 @@
     "Starting_at_X": "按月支付 {{monthly}} 美元或按年支付 {{yearly}} 美元",
     "Footer_text": "仅需每月一美元即可显著推动 Teamcraft 的开发进程，并使我更接近梦想——专职与此项目的开发并使其不仅局限于作为一个 FFXIV 的工具。",
     "Already_supporter": "已经成为支持者？",
-    "Disable_ads_explanation": "要禁用广告，请连接你的 Patreon 或 Tipeee 账号，以验证赞助情况并自动禁用广告。"
+    "Disable_ads_explanation": "要禁用广告，请连接你的 Patreon 账号，以验证赞助情况并自动禁用广告。"
   },
   "SUPPORT_US": {
     "Popup_introduction": "您好，我是 Miu ，您正在使用的工具的开发者。<br/> 自过去几年以来，Teamcraft对我来说一直是一个爱好，我的梦想是使这成为我的全职工作。 <br/><br/>在您的帮助下，这个梦想可能成为一个现实。 您可以在patreon上赞助这个工具，每一美元都很重要，并将帮助我实现这一目标。 <br/><br/> 在patreon赞助这个项目也给您一些好处：",
@@ -3069,7 +3069,7 @@
     "RESTART_GAME": "数据包捕获未正确关闭",
     "GAME_RUNNING_AS_ADMIN": "无法访问游戏进程",
     "DESCRIPTION": {
-      "Default": "尝试启动数据包捕获时发生未知错误，请在 Discord 的 #troubleshooting 频道上报告。",
+      "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.<br><br> Retrying in {{retryDelay}}s",
       "GAME_NOT_RUNNING": "请确保游戏正在运行（如果以管理员权限启动，TC同样需要管理员权限）<br>如果问题仍然存在，请在discord的 #troubleshooting 频道报告含上述消息的截图。",
       "RESTART_GAME": "请重新启动游戏以便能够正确运行数据包捕获。",
       "GAME_RUNNING_AS_ADMIN": "游戏正以管理员权限运行，请正常重启或以管理员权限重启Teamcraft。"

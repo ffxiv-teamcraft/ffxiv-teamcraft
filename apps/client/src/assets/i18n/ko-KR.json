@@ -18,7 +18,7 @@
   "List_fork_in_progress": "목록을 내 계정으로 복사중...",
   "Network_error_logged_out": "네트워크 오류가 감지되었으며 로그아웃 되었습니다. 이 문제가 계속된다면 Tc디스코드 서버의 'Miu' 에게 문의하시길 바랍니다.",
   "Hide_zone_duplicates": "중복 영역 숨기기(여러 영역에 있는 아이템의 경우 한 번만 표시됩니다)",
-  "Patch_notes": "패치 노트",
+  "Patch_notes": "{{version}} 변경점",
   "Patch_notes_footer": "새로운 기능에 만족하시나요? 그렇다면 저희의 프로젝트를 patreon으로 후원하는 것을 고려해보세요.",
   "Selection": "선택",
   "Change_character": "캐릭터",
@@ -190,7 +190,7 @@
     "Never": "하지 않음",
     "Festival": "이벤트 기간에만 가능",
     "Back": "뒤로 가기",
-    "Support_us_remove_ads": "후원하고 광고 제거",
+    "Support_us_remove_ads": "Patreon 후원하고 광고 없애기",
     "Support_us": "후원하기",
     "Show_more": "더 보기",
     "Item": "아이템",
@@ -380,7 +380,7 @@
   "Use_lodestoneId": "Lodestone ID 사용",
   "LodestoneId": "Lodestone ID",
   "List_forked": "목록이 내 계정에 복사되었습니다",
-  "List_fork": "이 목록을 계정에 복사 (오프라인 목록으로 복사 하려면 Ctrl + 클릭)",
+  "List_fork": "이 목록을 내 계정에 복사하기",
   "List_not_found": "목록이 없거나 접근할 권한이 없습니다",
   "Requirements_for_craft": "상세정보",
   "Zone_breakdown": "지역 그룹화",
@@ -793,7 +793,7 @@
     "Autofill_notification_body": "{{listName}} 목록의 {{itemName}} 작업이 완료되었습니다",
     "Autofill_crafting_gathering_title": "제작 또는 채집이 탐지됨",
     "Autofill_crafting_gathering_message": "자동채우기는 기본적으로 제작/채집이 완료될 때까지(인게임에서, UI를 닫을 때까지) 슬로우 모드로 동작합니다. 이것은 빠르게 자동 채우기를 하는 경우에 데이터가 꼬이는 문제를 방지하기 위함입니다.",
-    "Fill_with_inventory": "인벤토리에서 채우기",
+    "Fill_with_inventory": "소지품에서 채우기 (계정에 연동되어 있는 소지품에서만 채워집니다)",
     "Filter_items_done": "완료된 아이템 무시",
     "Inventory_synthesis": "소지품 통합(각 소지품별 아이템)",
     "X_needed": "{{amount}}개 필요",
@@ -1542,7 +1542,7 @@
     "Search": "검색",
     "Generate_list": "빠른 목록 만들기",
     "Intro": "시작하기 위해 레벨을 입력하고 검색을 클릭하세요",
-    "Loading_message": "가능한 조달 임무 로딩 중..."
+    "Loading_message": "가능한 조달품을 불러오는 중... 시간이 조금 소요됩니다"
   },
   "DESYNTH": {
     "Title": "분해 가이드",
@@ -1632,7 +1632,7 @@
     "Currencies": "화폐",
     "Rowena_splendor": "로웨나 거래",
     "Unlocks": "개방",
-    "Jump_to_page": "DB 페이지 열기",
+    "Jump_to_page": "Open item db page",
     "Ishgard_restoration": "이슈가르드 부흥",
     "GC_supply_value": "희귀품 조달",
     "ITEM": {
@@ -2751,7 +2751,7 @@
     "Starting_at_X": "매달 ${{monthly}} 또는 매년 ${{yearly}} 으로 시작할 수 있습니다",
     "Footer_text": "한달에 1달러만 후원하셔도 팀크래프트 개발에 큰 기여를 할 수 있으며, 개발자가 팀크래프트 프로젝트에 모든 시간을 투자하여 더 나은 파이널 판타지14 툴 개발에 힘쓸 수 있습니다.",
     "Already_supporter": "이미 후원 중이신가요?",
-    "Disable_ads_explanation": "광고를 제거하기 위해서는 patreon 또는 Tipeee 계정을 팀크래프트에 연동해야 합니다"
+    "Disable_ads_explanation": "광고를 제거하기 위해서는 patreon 계정을 팀크래프트에 연동해야 합니다"
   },
   "SUPPORT_US": {
     "Popup_introduction": "안녕하세요, 저는 팀크래프트 개발자 Miu입니다.<br/> 팀크래프트는 지난 몇 년 전부터 저의 취미였고 현재는 취미가 아닌 제 직업으로 삼기 위한 꿈으로써, 그 꿈을 이루기 위해 노력하고 있습니다. <br/><br/>만약 여러분들이 patreon으로 도움을 주신다면, 팀크래프트를 더욱 더 개선시키고 저는 제 꿈을 현실로 이룰 수 있습니다.<br/><br/> patreon에서 프로젝트에 도움을 주신다면 다음과 같은 멋진 특전을 얻으실 수 있습니다.",
@@ -3069,7 +3069,7 @@
     "RESTART_GAME": "패킷 캡쳐가 올바르게 종료되지 않았습니다",
     "GAME_RUNNING_AS_ADMIN": "게임에 엑세스할 수 없음",
     "DESCRIPTION": {
-      "Default": "패킵 캡쳐를 시작하는 동안 알 수 없는 오류가 발생했습니다. 팀크래프트 디스코드 #troubleshooting 채널로 리포트 해주세요.",
+      "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.<br><br> Retrying in {{retryDelay}}s",
       "GAME_NOT_RUNNING": "게임이 실행 중인지, 그리고 관리자 권한으로 실행되었는지 확인해 주세요 (이 경우에는 팀크래프트앱을 관리자 권한으로 실행해 주세요). <br> 만약 이 문제가 계속 지속된다면 팀크래프트 디스코드 #troubleshooting 채널에 오류 메세지와 함께 스크린샷을 올려주세요.",
       "RESTART_GAME": "패킷 캡쳐가 올바르게 작동하도록 게임을 다시 시작하세요.",
       "GAME_RUNNING_AS_ADMIN": "게임이 관리자 권한으로 실행 중이므로 게임을 관리자 권한 없이 다시 실행하시거나 팀크래프트를 관리자 권한으로 실행하세요."

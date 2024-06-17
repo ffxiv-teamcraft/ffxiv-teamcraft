@@ -18,7 +18,7 @@
   "List_fork_in_progress": "Kopiere diese Liste zu deinem Account…",
   "Network_error_logged_out": "Ein Netzwerkfehler wurde erkannt und du wurdest abgemeldet. Wenn dieses Problem weiterhin besteht, kontaktiere bitte Miu auf dem Discord Server.",
   "Hide_zone_duplicates": "Zonen-Dubletten ausblenden (Gegenstände aus mehreren Zonen werden nur einmal angezeigt)",
-  "Patch_notes": "Patchnotes",
+  "Patch_notes": "{{version}} Änderungen",
   "Patch_notes_footer": "Gefallen dir die neuen Funktionen? Dann ziehe doch in Betracht das Projekt auf Patreon zu unterstützen",
   "Selection": "Auswahl",
   "Change_character": "Charakter",
@@ -190,7 +190,7 @@
     "Never": "Nie",
     "Festival": "Nur während eines Festivals",
     "Back": "Zurück",
-    "Support_us_remove_ads": "Unterstütze uns, um Werbung zu entfernen",
+    "Support_us_remove_ads": "Unterstütze uns auf Patreon um Werbung zu entfernen",
     "Support_us": "Unterstütze uns",
     "Show_more": "Mehr anzeigen",
     "Item": "Gegenstand",
@@ -380,7 +380,7 @@
   "Use_lodestoneId": "Lodestone ID verwenden",
   "LodestoneId": "Lodestone ID",
   "List_forked": "Liste zu deinem Account kopiert",
-  "List_fork": "Kopiere diese Liste in dein Konto (Strg + Klicken zum Kopieren als Offline-Liste)",
+  "List_fork": "Kopiere diese Liste zu deinem Account",
   "List_not_found": "Liste nicht gefunden oder du hast keinen Zugriff darauf",
   "Requirements_for_craft": "Bedingungen ansehen",
   "Zone_breakdown": "Gebietsübersicht",
@@ -456,7 +456,7 @@
     "Connected_with_tipeee": "Mit Tipeee verbunden",
     "Nickname": "Benutzername",
     "Nickname_used": "Benutzername wird bereits verwendet",
-    "No_nickname_warning": "Bitte gehe in die Einstellungen und gib einen Benutzernamen an, um die Unterstützer-Funktionen vollständig nutzen zu können.",
+    "No_nickname_warning": "Bitte gehe in die Einstellungen und gib einen Benutzernamen an, um die Patreon-Funktionen vollständig nutzen zu können.",
     "Show_devtools": "Entwicklerwerkzeuge zeigen",
     "Clear_cache": "Cache leeren (erfordert einen Neustart der App)",
     "Disable_fc_integration": "Deaktiviere FG-Freigabefunktionen",
@@ -793,7 +793,7 @@
     "Autofill_notification_body": "{{itemName}} wurde in der Liste {{listName}} fertiggestellt",
     "Autofill_crafting_gathering_title": "Herstellungs- oder Sammelmethode erkannt",
     "Autofill_crafting_gathering_message": "Automatisches Ausfüllen ist im Slowmode solange du etwas herstellst (stehe ingame auf) oder sammelst (schließe das Fenster), um Datenbankprobleme durch zu schnelles Ausfüllen zu verhindern.",
-    "Fill_with_inventory": "Mit Inventar füllen",
+    "Fill_with_inventory": "Mit Inventar füllen (gilt nur für Gegenstände aus dem persönlichen Inventar)",
     "Filter_items_done": "Fertige Gegenstände ignorieren",
     "Inventory_synthesis": "Inventar-Synthese (Gegenstände pro Inventar)",
     "X_needed": "{{amount}} benötigt",
@@ -1394,10 +1394,10 @@
     "Ilvl": "G.-St.",
     "Cost": "Kosten",
     "Class_job": "Klasse/Job",
-    "Damage_phys": "Phys. Schaden",
-    "Damage_mag": "Mag. Schaden",
-    "Defense_phys": "Phys. Verteidigung",
-    "Defense_mag": "Mag. Verteidigung",
+    "Damage_phys": "Phys. Basiswert",
+    "Damage_mag": "Mag. Basiswert",
+    "Defense_phys": "Verteidigung",
+    "Defense_mag": "Magieabwehr",
     "Masterbooks": "Benötigt ein Meisterbuch"
   },
   "SEARCH_INTRO": {
@@ -1542,7 +1542,7 @@
     "Search": "Suche",
     "Generate_list": "Vergängliche Liste anlegen",
     "Intro": "Gib deine Stufen ein und drücke \"Suche\", um zu beginnen",
-    "Loading_message": "Mögliche Lieferungen werden geladen..."
+    "Loading_message": "Lädt mögliche Liefereinsätze, dies kann bis zu einer Minute dauern"
   },
   "DESYNTH": {
     "Title": "Desynthese-Leitfaden",
@@ -1632,7 +1632,7 @@
     "Currencies": "Währungen",
     "Rowena_splendor": "Rowenas Haus der Wunder",
     "Unlocks": "Freischaltung von",
-    "Jump_to_page": "Öffne DB Seite",
+    "Jump_to_page": "Open item db page",
     "Ishgard_restoration": "Wiederaufbau Ishgards",
     "GC_supply_value": "Expertenlieferung",
     "ITEM": {
@@ -2751,7 +2751,7 @@
     "Starting_at_X": "Ab ${{monthly}} pro Monat oder ${{yearly}} pro Jahr",
     "Footer_text": "Auch schon $1 pro Monat hat einen erheblichen Einfluss auf die Entwicklung von Teamcraft und bringt mich meinem Traum näher, ein Vollzeit-Entwickler bei diesem Projekt zu werden und es mehr als ein bloßes Werkzeug für FFXIV werden zu lassen.",
     "Already_supporter": "Du bist bereits ein Unterstützer?",
-    "Disable_ads_explanation": "Um Werbung zu deaktivieren, verbinde dich mit deinem Patreon oder Tipeee Konto, damit Teamcraft deine Unterstützung verifizieren und Werbung automatisch deaktivieren kann"
+    "Disable_ads_explanation": "Um Werbung zu deaktivieren, verbinde dich mit deinem Patreon Konto, damit Teamcraft deine Unterstützung verifizieren und Werbung automatisch deaktivieren kann"
   },
   "SUPPORT_US": {
     "Popup_introduction": "Hallo, ich bin Miu, Entwickler jenes Programmes, dass du gerade verwendest.<br/> Teamcraft ist seit einigen Jahren ein Hobby für mich und mein Traum ist es, dieses Hobby zu meinem Vollzeitjob zu machen. <br/><br/>Mit deiner Hilfe könnte dieser Traum Wirklichkeit werden. Hierfür kannst du mich auf Patreon unterstützen. Jeder einzelne Euro zählt und wird mir helfen, dieses Ziel zu erreichen. <br/><br/> Die Unterstützung des Projekts auf Patreon bietet dir außerdem einige coole Vorteile:",
@@ -3069,7 +3069,7 @@
     "RESTART_GAME": "Paketerfassung wurde nicht korrekt beendet",
     "GAME_RUNNING_AS_ADMIN": "Zugriff auf Spielprozess nicht möglich",
     "DESCRIPTION": {
-      "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.",
+      "Default": "An unknown error happened while trying to start packet capture, please report in Discord's #troubleshooting channel.<br><br> Retrying in {{retryDelay}}s",
       "GAME_NOT_RUNNING": "Bitte stelle sicher, dass das Spiel läuft und nicht als Admininstrator ausgeführt wird (oder, in diesem Fall, TC als Administrator starten).<br>Wenn dieses Problem weiterhin besteht, melde dich bitte an Discords Fehlerbehebungskanal #troubleshooting mit einem Screenshot der obigen Nachrichten.",
       "RESTART_GAME": "Bitte starte das Spiel neu, um die Paketerfassung korrekt ausführen zu können.",
       "GAME_RUNNING_AS_ADMIN": "Das Spiel läuft als Admin. Bitte starte es entweder normal neu oder starte Teamcraft als Administrator neu."
