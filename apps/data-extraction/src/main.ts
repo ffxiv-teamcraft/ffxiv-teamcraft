@@ -216,17 +216,17 @@ const extractors: AbstractExtractor[] = [
   });
 
   const dbExtractors = [
-    // new ItemsDbPagesExtractor(),
-    // new AchievementsDbPagesExtractor(),
-    // new ActionsDbPagesExtractor(),
-    // new FatesDatabasePagesExtractor(),
-    // new FishingSpotsDatabasePagesExtractor(),
-    // new LevesDatabasePagesExtractor(),
-    // new MobsDatabasePagesExtractor(),
-    // new NodesDatabasePagesExtractor(),
-    // new NpcsDbPagesExtractor(),
-    // new StatusesDbPagesExtractor(),
-    // new TraitsDbPagesExtractor(),
+    new ItemsDbPagesExtractor(),
+    new AchievementsDbPagesExtractor(),
+    new ActionsDbPagesExtractor(),
+    new FatesDatabasePagesExtractor(),
+    new FishingSpotsDatabasePagesExtractor(),
+    new LevesDatabasePagesExtractor(),
+    new MobsDatabasePagesExtractor(),
+    new NodesDatabasePagesExtractor(),
+    new NpcsDbPagesExtractor(),
+    new StatusesDbPagesExtractor(),
+    new TraitsDbPagesExtractor(),
     new QuestsDbPagesExtractor()
   ];
 
