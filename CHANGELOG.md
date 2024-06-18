@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.1.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.1.2...v11.1.3) (2024-06-18)
+
+
+### Features
+
+* **db:** kr 6.55 import and cowrie shop NPC link ([7702d8d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7702d8da36e4518d15ff5703e8dd0613964b8635))
+* **db:** support for korean v6.55 update ([1d3f580](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1d3f580cc110b4e0762d4945ddd6de6bc60f0727))
+
+
+### Bug Fixes
+
+* **desktop:** fix auto updater not downloading update ([2f96101](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2f96101b732bc0f480d328138e893b2a59265b86))
+
 ### [11.1.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.1.1...v11.1.2) (2024-06-17)
 
 
