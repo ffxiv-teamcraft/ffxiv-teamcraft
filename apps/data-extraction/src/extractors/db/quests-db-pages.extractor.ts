@@ -5,7 +5,7 @@ import { uniq } from 'lodash';
 import { questChainLengths } from '@ffxiv-teamcraft/data/handmade/quests-chain-lengths';
 import { I18nName } from '@ffxiv-teamcraft/types';
 import { switchMap } from 'rxjs/operators';
-import { combineLatest, tap } from 'rxjs';
+import { combineLatest, concat, tap } from 'rxjs';
 
 export class QuestsDbPagesExtractor extends AbstractExtractor {
   npcs = this.requireLazyFileByKey('npcs');
@@ -42,7 +42,7 @@ export class QuestsDbPagesExtractor extends AbstractExtractor {
       ], false, 1)
       .pipe(
         switchMap(quests => {
-          return combineLatest(this.getExtendedNames<LazyQuest>('quests', q => q.name).map(extended => {
+          return concat(this.getExtendedNames<LazyQuest>('quests', q => q.name).map(extended => {
             const row = quests.find(q => q.index === +extended.id);
             const folder = row.Id.split('_')[1].slice(-6, 3);
             return xiv.getFromSaintCSV<{ key: string, 0: string, 1: string }>(`quest/${folder}/${row.Id}`, true).pipe(

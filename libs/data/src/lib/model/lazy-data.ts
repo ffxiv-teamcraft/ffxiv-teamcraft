@@ -328,8 +328,8 @@ export interface LazyData {
   mobsDatabasePages: Record<number, LazyMobsDatabasePage>;
   nodesDatabasePages: Record<number, LazyNodesDatabasePage>;
   npcsDatabasePages: Record<number, LazyNpcsDatabasePage>;
-  questsDatabasePages: Record<number, LazyQuestsDatabasePage>;
-  questsText: Record<number, LazyQuestsText>;
+  questsDatabasePages: LazyQuestsDatabasePage;
+  questsText: LazyQuestsText;
   statusesDatabasePages: Record<number, LazyStatusesDatabasePage>;
   traitsDatabasePages: Record<number, LazyTraitsDatabasePage>;
   koAchievementDescriptions: Record<number, {ko: string}>;
