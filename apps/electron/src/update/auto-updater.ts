@@ -12,7 +12,7 @@ export class AutoUpdater {
   }
 
   connectListeners(): void {
-    if (!app.isPackaged) {
+    if (app.isPackaged) {
       autoUpdater.setFeedURL({
         url: `https://update.ffxivteamcraft.com`
       });
