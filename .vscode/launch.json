@@ -17,6 +17,44 @@
         "/*": "*",
         "/./~/*": "${webRoot}/node_modules/*"
       }
+    },
+
+    //// Heavily based off https://github.com/abartho/electron-typescript-vscode
+    {
+      "name": "Electron: Main",
+      "type": "node",
+      "request": "launch",
+      "preLaunchTask": "Build and Watch",
+      "postDebugTask": "Terminate 'Build and Watch'",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": [
+        "electron:start",
+        "--remote-debugging-port=9223" // open debugging port for renderer process
+      ],
+      "outputCapture": "std",
+      "sourceMaps": true,
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**", // use source maps for files in workspace folder
+        "!**/node_modules/**" // but ignore everything in the node_modules folder
+      ]
+    },
+    {
+      "name": "Electron: Renderer",
+      "type": "chrome", // Use the Chrome debugger that comes with VS Code
+      "request": "attach",
+      "port": 9223, // Use debug port opened in Electron: Main configuration
+      "webRoot": "${workspaceFolder}",
+      "timeout": 120000,
+    }
+  ],
+  "compounds": [ // Launch multiple configurations concurrently
+    {
+      "name": "Electron: All",
+      "configurations": [
+        "Electron: Main",
+        "Electron: Renderer"
+      ]
     }
   ]
 }

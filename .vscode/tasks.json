@@ -45,6 +45,49 @@
       "command": "echo ${input:termianteLiveDevelopmentServer}",
       "type": "shell",
     },
+    {
+      // Task to Build and Watch
+      "label": "Build and Watch",
+      "type": "npm",
+      "script": "build:watch",
+      "isBackground": true,
+      "presentation": {
+        "focus": true,
+        "panel": "dedicated"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "owner": "typescript",
+        "source": "ts",
+        "applyTo": "closedDocuments",
+        "fileLocation": [
+          "relative",
+          "${cwd}"
+        ],
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "(.*?)"
+          },
+          "endsPattern": {
+            // Regex to look for in the terminal output to determine when the background process
+            // has completed and the foreground browser launching process can proceed.
+            // This may need to be updated if messaging changes or unaccounted messages appear.
+            "regexp": "Watch mode enabled. Watching for file changes...|Failed tasks:|terminated with exit code: 1"
+          }
+        }
+      }
+    },
+    {
+      // Task to terminate the 'Build and Watch' task
+      "label": "Terminate 'Build and Watch'",
+      "command": "echo ${input:termianteBuildAndWatch}",
+      "type": "shell",
+    },
   ],
   "inputs": [
     {
@@ -52,6 +95,12 @@
       "type": "command",
       "command": "workbench.action.tasks.terminate",
       "args": "Live Development Server" // The task label to terminate
+    },
+    {
+      "id": "termianteBuildAndWatch",
+      "type": "command",
+      "command": "workbench.action.tasks.terminate",
+      "args": "Build and Watch" // The task label to terminate
     },
   ],
 }

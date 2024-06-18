@@ -11,6 +11,7 @@
         "target": "node",
         "compiler": "tsc",
         "outputPath": "dist/apps/electron",
+        "sourceMap": true,
         "main": "apps/electron/src/main.ts",
         "tsConfig": "apps/electron/tsconfig.app.json",
         "assets": ["apps/electron/src/loader.html"],
