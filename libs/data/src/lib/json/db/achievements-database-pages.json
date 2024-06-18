@@ -70562,11 +70562,15 @@
     "de": "Mandervillöses Meisterhandwerk",
     "ja": "マンダヴィラス・マンダヴィル",
     "fr": "Manderveilleusement Manderville",
+    "ko": "맨더빌한 맨더빌",
+    "zh": "盈满套装",
     "description": {
       "en": "Complete the quest “Resonating with Perfection.”",
       "de": "Den Auftrag „Perfekt im Einklang“ abgeschlossen.",
       "ja": "クエスト「踊る匠たち」をコンプリートする",
-      "fr": "Accomplir la quête “La dernière danse”."
+      "fr": "Accomplir la quête “La dernière danse”.",
+      "ko": "퀘스트 '춤추는 장인들' 완료",
+      "zh": "完成任务“起舞的工匠们”。"
     },
     "item": 0,
     "title": 701
@@ -70642,11 +70646,15 @@
     "de": "Apokalyptische Kapitalbeschaffung III",
     "ja": "暁月の太公望：ランク3",
     "fr": "Pêcheur de légendes intemporel III",
+    "ko": "효월의 강태공: 3단계",
+    "zh": "晓月太公3",
     "description": {
       "en": "Catch 40 different varieties of big fish in areas explored during Endwalker.",
       "de": "40 verschiedene Kapitalfische in den Arealen von Endwalker gefangen.",
       "ja": "暁月のフィナーレのエリアにいるヌシを40種類、釣り上げる",
-      "fr": "Pêcher 40 prises légendaires différentes dans les zones explorées lors d'Endwalker."
+      "fr": "Pêcher 40 prises légendaires différentes dans les zones explorées lors d'Endwalker.",
+      "ko": "효월의 종언 지역의 터주 40종류 낚기",
+      "zh": "在晓月区域钓上40种钓场之王。"
     },
     "item": 0,
     "title": 705
@@ -70659,11 +70667,15 @@
     "de": "Ultimative Kapitalbeschaffung",
     "ja": "超太公望への道",
     "fr": "Fléau des mers",
+    "ko": "초월한 강태공이 되는 길",
+    "zh": "太公封神",
     "description": {
       "en": "Obtain the achievements “No River Wide Enough” and “Go Big Till the End III.”",
       "de": "Die Errungenschaften „Formvollendete Kapitalbeschaffung“ und „Apokalyptische Kapitalbeschaffung III“ erlangt.",
       "ja": "アチーブメント「真太公望への道」「暁月の太公望：ランク3」をすべて達成する",
-      "fr": "Accomplir les hauts faits “À la croisée des mers” et “Pêcheur de légendes intemporel III”."
+      "fr": "Accomplir les hauts faits “À la croisée des mers” et “Pêcheur de légendes intemporel III”.",
+      "ko": "업적 '진정한 강태공이 되는 길', '효월의 강태공: 3단계' 모두 달성",
+      "zh": "达成“太公仙路”“晓月太公3”成就。"
     },
     "item": 0,
     "title": 706
@@ -70676,11 +70688,15 @@
     "de": "Manderville-Waffen: Mandervillöses Manderville-Falchion und mandervillöser Manderville-Drachenschild",
     "ja": "マンダヴィルウェポン：マンダヴィラス・ファルシオン＆マンダヴィラス・カイトシールド",
     "fr": "Armes des Manderville : fauchon et écu mandorle manderveilleux",
+    "ko": "맨더빌 웨폰 - 맨더빌한 언월도 & 맨더빌한 연모양 방패",
+    "zh": "曼德维尔之骑士·盈满",
     "description": {
       "en": "Obtain a Mandervillous falchion and Mandervillous kite shield.",
       "de": "Das mandervillöse Manderville-Falchion und den mandervillösen Manderville-Drachenschild erhalten.",
       "ja": "マンダヴィラス・ファルシオンとマンダヴィラス・カイトシールドを入手する",
-      "fr": "Obtenir le fauchon et l'écu mandorle manderveilleux des Manderville."
+      "fr": "Obtenir le fauchon et l'écu mandorle manderveilleux des Manderville.",
+      "ko": "맨더빌한 언월도와 맨더빌한 연모양 방패 입수",
+      "zh": "获得曼德维尔盈满弯刃刀和曼德维尔盈满鸢盾。"
     },
     "item": 0,
     "title": 0
@@ -70693,11 +70709,15 @@
     "de": "Manderville-Waffen: Mandervillöse Manderville-Kriegsaxt",
     "ja": "マンダヴィルウェポン：マンダヴィラス・バトルアクス",
     "fr": "Armes des Manderville : hache de combat manderveilleuse",
+    "ko": "맨더빌 웨폰 - 맨더빌한 전투도끼",
+    "zh": "曼德维尔之战士·盈满",
     "description": {
       "en": "Obtain a Mandervillous battleaxe.",
       "de": "Die mandervillöse Manderville-Kriegsaxt erhalten.",
       "ja": "マンダヴィラス・バトルアクスを入手する",
-      "fr": "Obtenir la hache de combat manderveilleuse des Manderville."
+      "fr": "Obtenir la hache de combat manderveilleuse des Manderville.",
+      "ko": "맨더빌한 전투도끼 입수",
+      "zh": "获得曼德维尔盈满战斧。"
     },
     "item": 0,
     "title": 0
@@ -70710,11 +70730,15 @@
     "de": "Manderville-Waffen: Mandervillöses Manderville-Großschwert",
     "ja": "マンダヴィルウェポン：マンダヴィラス・グレートソード",
     "fr": "Armes des Manderville : grande épée manderveilleuse",
+    "ko": "맨더빌 웨폰 - 맨더빌한 그레이트소드",
+    "zh": "曼德维尔之暗黑骑士·盈满",
     "description": {
       "en": "Obtain a Mandervillous greatsword.",
       "de": "Das mandervillöse Manderville-Großschwert erhalten.",
       "ja": "マンダヴィラス・グレートソードを入手する",
-      "fr": "Obtenir la grande épée manderveilleuse des Manderville."
+      "fr": "Obtenir la grande épée manderveilleuse des Manderville.",
+      "ko": "맨더빌한 그레이트소드 입수",
+      "zh": "获得曼德维尔盈满巨剑。"
     },
     "item": 0,
     "title": 0
@@ -70727,11 +70751,15 @@
     "de": "Manderville-Waffen: Mandervillöse Manderville-Revolverklinge",
     "ja": "マンダヴィルウェポン：マンダヴィラス・ガンブレード",
     "fr": "Armes des Manderville : pistolame manderveilleuse",
+    "ko": "맨더빌 웨폰 - 맨더빌한 건블레이드",
+    "zh": "曼德维尔之绝枪战士·盈满",
     "description": {
       "en": "Obtain a Mandervillous gunblade.",
       "de": "Die mandervillöse Manderville-Revolverklinge erhalten.",
       "ja": "マンダヴィラス・ガンブレードを入手する",
-      "fr": "Obtenir la pistolame manderveilleuse des Manderville."
+      "fr": "Obtenir la pistolame manderveilleuse des Manderville.",
+      "ko": "맨더빌한 건블레이드 입수",
+      "zh": "获得曼德维尔盈满枪刃。"
     },
     "item": 0,
     "title": 0
@@ -70744,11 +70772,15 @@
     "de": "Manderville-Waffen: Mandervillöser Manderville-Dreizack",
     "ja": "マンダヴィルウェポン：マンダヴィラス・トライデント",
     "fr": "Armes des Manderville : trident manderveilleux",
+    "ko": "맨더빌 웨폰 - 맨더빌한 삼지창",
+    "zh": "曼德维尔之龙骑士·盈满",
     "description": {
       "en": "Obtain a Mandervillous trident.",
       "de": "Den mandervillösen Manderville-Dreizack erhalten.",
       "ja": "マンダヴィラス・トライデントを入手する",
-      "fr": "Obtenir le trident manderveilleux des Manderville."
+      "fr": "Obtenir le trident manderveilleux des Manderville.",
+      "ko": "맨더빌한 삼지창 입수",
+      "zh": "获得曼德维尔盈满三尖枪。"
     },
     "item": 0,
     "title": 0
@@ -70761,11 +70793,15 @@
     "de": "Manderville-Waffen: Mandervillöse Manderville-Fäuste",
     "ja": "マンダヴィルウェポン：マンダヴィラス・フィスト",
     "fr": "Armes des Manderville : poings manderveilleux",
+    "ko": "맨더빌 웨폰 - 맨더빌한 주먹",
+    "zh": "曼德维尔之武僧·盈满",
     "description": {
       "en": "Obtain a pair of Mandervillous fists.",
       "de": "Ein Paar mandervillöser Manderville-Fäuste erhalten.",
       "ja": "マンダヴィラス・フィストを入手する",
-      "fr": "Obtenir les poings manderveilleux des Manderville."
+      "fr": "Obtenir les poings manderveilleux des Manderville.",
+      "ko": "맨더빌한 주먹 입수",
+      "zh": "获得曼德维尔盈满之拳。"
     },
     "item": 0,
     "title": 0
@@ -70778,11 +70814,15 @@
     "de": "Manderville-Waffen: Mandervillöse Manderville-Messer",
     "ja": "マンダヴィルウェポン：マンダヴィラス・ナイフ",
     "fr": "Armes des Manderville : couteaux manderveilleux",
+    "ko": "맨더빌 웨폰 - 맨더빌한 단검",
+    "zh": "曼德维尔之忍者·盈满",
     "description": {
       "en": "Obtain a pair of Mandervillous knives.",
       "de": "Das mandervillöse Manderville-Messer erhalten.",
       "ja": "マンダヴィラス・ナイフを入手する",
-      "fr": "Obtenir les couteaux manderveilleux des Manderville."
+      "fr": "Obtenir les couteaux manderveilleux des Manderville.",
+      "ko": "맨더빌한 단검 입수",
+      "zh": "获得曼德维尔盈满匕首。"
     },
     "item": 0,
     "title": 0
@@ -70795,11 +70835,15 @@
     "de": "Manderville-Waffen: Mandervillöse Manderville-Samuraiklinge",
     "ja": "マンダヴィルウェポン：マンダヴィラス・サムライブレード",
     "fr": "Armes des Manderville : lame de samouraï manderveilleuse",
+    "ko": "맨더빌 웨폰 - 맨더빌한 외날검",
+    "zh": "曼德维尔之武士·盈满",
     "description": {
       "en": "Obtain a Mandervillous samurai blade.",
       "de": "Die mandervillöse Manderville-Samuraiklinge erhalten.",
       "ja": "マンダヴィラス・サムライブレードを入手する",
-      "fr": "Obtenir la lame de samouraï manderveilleuse des Manderville."
+      "fr": "Obtenir la lame de samouraï manderveilleuse des Manderville.",
+      "ko": "맨더빌한 외날검 입수",
+      "zh": "获得曼德维尔盈满武士刀。"
     },
     "item": 0,
     "title": 0
@@ -70812,11 +70856,15 @@
     "de": "Manderville-Waffen: Mandervillöser Manderville-Zaghnal",
     "ja": "マンダヴィルウェポン：マンダヴィラス・ザグナル",
     "fr": "Armes des Manderville : zaghnal manderveilleux",
+    "ko": "맨더빌 웨폰 - 맨더빌한 자그날",
+    "zh": "曼德维尔之钐镰客·盈满",
     "description": {
       "en": "Obtain a Mandervillous zaghnal.",
       "de": "Den mandervillösen Manderville-Zaghnal erhalten.",
       "ja": "マンダヴィラス・ザグナルを入手する",
-      "fr": "Obtenir le zaghnal manderveilleux des Manderville."
+      "fr": "Obtenir le zaghnal manderveilleux des Manderville.",
+      "ko": "맨더빌한 자그날 입수",
+      "zh": "获得曼德维尔盈满扎戈斧镰。"
     },
     "item": 0,
     "title": 0
@@ -70829,11 +70877,15 @@
     "de": "Manderville-Waffen: Mandervillöser Manderville-Kompositbogen",
     "ja": "マンダヴィルウェポン：マンダヴィラス・コンパウンドボウ",
     "fr": "Armes des Manderville : arc à poulies manderveilleux",
+    "ko": "맨더빌 웨폰 - 맨더빌한 합성궁",
+    "zh": "曼德维尔之吟游诗人·盈满",
     "description": {
       "en": "Obtain a Mandervillous compound bow.",
       "de": "Den mandervillösen Manderville-Kompositbogen erhalten.",
       "ja": "マンダヴィラス・コンパウンドボウを入手する",
-      "fr": "Obtenir l'arc à poulies manderveilleux des Manderville."
+      "fr": "Obtenir l'arc à poulies manderveilleux des Manderville.",
+      "ko": "맨더빌한 합성궁 입수",
+      "zh": "获得曼德维尔盈满复合弓。"
     },
     "item": 0,
     "title": 0
@@ -70846,11 +70898,15 @@
     "de": "Manderville-Waffen: Mandervillöser Manderville-Revolver",
     "ja": "マンダヴィルウェポン：マンダヴィラス・リボルバー",
     "fr": "Armes des Manderville : revolver manderveilleux",
+    "ko": "맨더빌 웨폰 - 맨더빌한 연발권총",
+    "zh": "曼德维尔之机工士·盈满",
     "description": {
       "en": "Obtain a Mandervillous revolver.",
       "de": "Den mandervillösen Manderville-Revolver erhalten.",
       "ja": "マンダヴィラス・リボルバーを入手する",
-      "fr": "Obtenir le revolver manderveilleux des Manderville."
+      "fr": "Obtenir le revolver manderveilleux des Manderville.",
+      "ko": "맨더빌한 연발권총 입수",
+      "zh": "获得曼德维尔盈满左轮枪。"
     },
     "item": 0,
     "title": 0
@@ -70863,11 +70919,15 @@
     "de": "Manderville-Waffen: Mandervillöse Manderville-Chakrams",
     "ja": "マンダヴィルウェポン：マンダヴィラス・チャクラム",
     "fr": "Armes des Manderville : chakrams manderveilleux",
+    "ko": "맨더빌 웨폰 - 맨더빌한 차크람",
+    "zh": "曼德维尔之舞者·盈满",
     "description": {
       "en": "Obtain a pair of Mandervillous chakrams.",
       "de": "Ein Paar mandervillöser Manderville-Chakrams erhalten.",
       "ja": "マンダヴィラス・チャクラムを入手する",
-      "fr": "Obtenir les chakrams manderveilleux des Manderville."
+      "fr": "Obtenir les chakrams manderveilleux des Manderville.",
+      "ko": "맨더빌한 차크람 입수",
+      "zh": "获得曼德维尔盈满圆月轮。"
     },
     "item": 0,
     "title": 0
@@ -70880,11 +70940,15 @@
     "de": "Manderville-Waffen: Mandervillöser Manderville-Stab",
     "ja": "マンダヴィルウェポン：マンダヴィラス・ロッド",
     "fr": "Armes des Manderville : sceptre manderveilleux",
+    "ko": "맨더빌 웨폰 - 맨더빌한 주술봉",
+    "zh": "曼德维尔之黑魔法师·盈满",
     "description": {
       "en": "Obtain a Mandervillous rod.",
       "de": "Den mandervillösen Manderville-Stab erhalten.",
       "ja": "マンダヴィラス・ロッドを入手する",
-      "fr": "Obtenir le sceptre manderveilleux des Manderville."
+      "fr": "Obtenir le sceptre manderveilleux des Manderville.",
+      "ko": "맨더빌한 주술봉 입수",
+      "zh": "获得曼德维尔盈满法杖。"
     },
     "item": 0,
     "title": 0
@@ -70897,11 +70961,15 @@
     "de": "Manderville-Waffen: Mandervillöser Manderville-Index",
     "ja": "マンダヴィルウェポン：マンダヴィラス・インデックス",
     "fr": "Armes des Manderville : index manderveilleux",
+    "ko": "맨더빌 웨폰 - 맨더빌한 금서",
+    "zh": "曼德维尔之召唤师·盈满",
     "description": {
       "en": "Obtain a Mandervillous index.",
       "de": "Den mandervillösen Manderville-Index erhalten.",
       "ja": "マンダヴィラス・インデックスを入手する",
-      "fr": "Obtenir l'index manderveilleux des Manderville."
+      "fr": "Obtenir l'index manderveilleux des Manderville.",
+      "ko": "맨더빌한 금서 입수",
+      "zh": "获得曼德维尔盈满魔导书。"
     },
     "item": 0,
     "title": 0
@@ -70914,11 +70982,15 @@
     "de": "Manderville-Waffen: Mandervillöses Manderville-Rapier",
     "ja": "マンダヴィルウェポン：マンダヴィラス・レイピア",
     "fr": "Armes des Manderville : rapière manderveilleuse",
+    "ko": "맨더빌 웨폰 - 맨더빌한 레이피어",
+    "zh": "曼德维尔之赤魔法师·盈满",
     "description": {
       "en": "Obtain a Mandervillous rapier.",
       "de": "Das mandervillöse Manderville-Rapier erhalten.",
       "ja": "マンダヴィラス・レイピアを入手する",
-      "fr": "Obtenir la rapière manderveilleuse des Manderville."
+      "fr": "Obtenir la rapière manderveilleuse des Manderville.",
+      "ko": "맨더빌한 레이피어 입수",
+      "zh": "获得曼德维尔盈满刺剑。"
     },
     "item": 0,
     "title": 0
@@ -70931,11 +71003,15 @@
     "de": "Manderville-Waffen: Mandervillöser Manderville-Stock",
     "ja": "マンダヴィルウェポン：マンダヴィラス・ケーン",
     "fr": "Armes des Manderville : canne manderveilleuse",
+    "ko": "맨더빌 웨폰 - 맨더빌한 환술봉",
+    "zh": "曼德维尔之白魔法师·盈满",
     "description": {
       "en": "Obtain a Mandervillous cane.",
       "de": "Den mandervillösen Manderville-Stock erhalten.",
       "ja": "マンダヴィラス・ケーンを入手する",
-      "fr": "Obtenir la canne manderveilleuse des Manderville."
+      "fr": "Obtenir la canne manderveilleuse des Manderville.",
+      "ko": "맨더빌한 환술봉 입수",
+      "zh": "获得曼德维尔盈满牧杖。"
     },
     "item": 0,
     "title": 0
@@ -70948,11 +71024,15 @@
     "de": "Manderville-Waffen: Mandervillöser Manderville-Kodex",
     "ja": "マンダヴィルウェポン：マンダヴィラス・コーデックス",
     "fr": "Armes des Manderville : codex manderveilleux",
+    "ko": "맨더빌 웨폰 - 맨더빌한 치유서",
+    "zh": "曼德维尔之学者·盈满",
     "description": {
       "en": "Obtain a Mandervillous codex.",
       "de": "Den mandervillösen Manderville-Kodex erhalten.",
       "ja": "マンダヴィラス・コーデックスを入手する",
-      "fr": "Obtenir le codex manderveilleux des Manderville."
+      "fr": "Obtenir le codex manderveilleux des Manderville.",
+      "ko": "맨더빌한 치유서 입수",
+      "zh": "获得曼德维尔盈满魔导典。"
     },
     "item": 0,
     "title": 0
@@ -70965,11 +71045,15 @@
     "de": "Manderville-Waffen: Mandervillöses Manderville-Torquetum",
     "ja": "マンダヴィルウェポン：マンダヴィラス・トルクエタム",
     "fr": "Armes des Manderville : torquetum manderveilleux",
+    "ko": "맨더빌 웨폰 - 맨더빌한 좌표기",
+    "zh": "曼德维尔之占星术士·盈满",
     "description": {
       "en": "Obtain a Mandervillous torquetum.",
       "de": "Das mandervillöse Manderville-Torquetum erhalten.",
       "ja": "マンダヴィラス・トルクエタムを入手する",
-      "fr": "Obtenir le torquetum manderveilleux des Manderville."
+      "fr": "Obtenir le torquetum manderveilleux des Manderville.",
+      "ko": "맨더빌한 좌표기 입수",
+      "zh": "获得曼德维尔盈满黄道仪。"
     },
     "item": 0,
     "title": 0
@@ -70982,11 +71066,15 @@
     "de": "Manderville-Waffen: Mandervillöse Manderville-Schwingen",
     "ja": "マンダヴィルウェポン：マンダヴィラス・ウィング",
     "fr": "Armes des Manderville : ailes manderveilleuses",
+    "ko": "맨더빌 웨폰 - 맨더빌한 날개",
+    "zh": "曼德维尔之贤者·盈满",
     "description": {
       "en": "Obtain an array of Mandervillous wings.",
       "de": "Ein Quartett mandervillöser Manderville-Schwingen erhalten.",
       "ja": "マンダヴィラス・ウィングを入手する",
-      "fr": "Obtenir les ailes manderveilleuses des Manderville."
+      "fr": "Obtenir les ailes manderveilleuses des Manderville.",
+      "ko": "맨더빌한 날개 입수",
+      "zh": "获得曼德维尔盈满飞翼。"
     },
     "item": 0,
     "title": 0
@@ -71226,11 +71314,15 @@
     "de": "Wohlstand für alle",
     "ja": "末永く大繁盛",
     "fr": "Le dernier coup de collier ?",
+    "ko": "대박 상점이여, 영원하라",
+    "zh": "永世大繁荣",
     "description": {
       "en": "Complete the quest “More Precious than Gil.”",
       "de": "Den Auftrag „Lang lebe der Wohlstand“ abgeschlossen.",
       "ja": "クエスト「大繁盛の輪よ、永遠に」をコンプリートする",
-      "fr": "Accomplir la quête “Longue vie à la Tarufacture&nbsp;!”."
+      "fr": "Accomplir la quête “Longue vie à la Tarufacture&nbsp;!”.",
+      "ko": "퀘스트 '대박 상점이여, 영원하라' 완료",
+      "zh": "完成任务“联系你我至永远的大繁荣之轮”。"
     },
     "item": 0,
     "title": 0
@@ -71243,11 +71335,15 @@
     "de": "Champion des Wiegenstern-Cups",
     "ja": "第一回ラストレムナント杯優勝者",
     "fr": "Les Fous volants",
+    "ko": "제1회 라스트 렘넌트배 우승자",
+    "zh": "第一届背世咖啡厅杯获胜者",
     "description": {
       "en": "Complete the quest “A Dream Worth Chasing.”",
       "de": "Den Auftrag „Ein Rennen zwischen den Sternen“ abgeschlossen.",
       "ja": "クエスト「宇宙の果てで最高のレースを！」をコンプリートする",
-      "fr": "Accomplir la quête “La grande course aux confins de l'univers”."
+      "fr": "Accomplir la quête “La grande course aux confins de l'univers”.",
+      "ko": "퀘스트 '우주 끝에서 최고의 경주를!' 완료",
+      "zh": "完成任务“宇宙尽头的精彩比赛”。"
     },
     "item": 0,
     "title": 0
@@ -71302,11 +71398,15 @@
     "de": "Der Dämmerung entgegen",
     "ja": "明日への一歩",
     "fr": "L'appel de l'aventure",
+    "ko": "내일을 향한 한 걸음",
+    "zh": "迈向明日的一步",
     "description": {
       "en": "Complete the quest “The Coming Dawn.”",
       "de": "Den Auftrag „Der Dämmerung entgegen“ abgeschlossen.",
       "ja": "クエスト「明日への一歩」をコンプリートする",
-      "fr": "Accomplir la quête de l'épopée “L'appel de l'aventure”."
+      "fr": "Accomplir la quête de l'épopée “L'appel de l'aventure”.",
+      "ko": "퀘스트 '내일을 향한 한 걸음' 완료",
+      "zh": "完成任务“迈向明日的一步”。"
     },
     "item": 0,
     "title": 713
@@ -71319,11 +71419,15 @@
     "de": "Chevalier auf immer und ewig!",
     "ja": "受け継がれる紳士の心",
     "fr": "La vérité est ailleurs",
+    "ko": "대대로 이어지는 신사의 마음",
+    "zh": "传承的绅士之心",
     "description": {
       "en": "Complete the quest “Gentlemen at Heart.”",
       "de": "Den Auftrag „Mandervillsches Mysterium“ abgeschlossen.",
       "ja": "クエスト「マンダヴィル家の謎」をコンプリートする",
-      "fr": "Accomplir la quête “Le cadeau des Dieux”."
+      "fr": "Accomplir la quête “Le cadeau des Dieux”.",
+      "ko": "퀘스트 '가문의 수수께끼' 완료",
+      "zh": "完成任务“曼德维尔之谜”。"
     },
     "item": 0,
     "title": 0
@@ -71337,14 +71441,14 @@
     "ja": "愛と勇気の伝道師",
     "fr": "Tout un symbole",
     "ko": "사랑과 용기의 전도사",
-    "zh": "愛と勇気の伝道師",
+    "zh": "爱与勇气的传道士",
     "description": {
       "en": "Complete the quest “It's All about Heart.”",
       "de": "Den Auftrag „Fass dir ein Herz“ abgeschlossen.",
       "ja": "クエスト「ヴァレンティオンデーに勇気を出して」をコンプリートする",
       "fr": "Accomplir la quête “Le symbole de l'amour”.",
       "ko": "퀘스트 '발렌티온데이에 용기를 내어' 완료",
-      "zh": "クエスト「ヴァレンティオンデーに勇気を出して」をコンプリートする"
+      "zh": "完成任务“在恋人节勇敢告白”。"
     },
     "item": 0,
     "title": 0
@@ -71358,14 +71462,14 @@
     "ja": "花咲か姫様",
     "fr": "Miragœufs et demoiselles",
     "ko": "꽃 피우는 공주님",
-    "zh": "花咲か姫様",
+    "zh": "花一般的公主",
     "description": {
       "en": "Complete the quest “Peatie in Pink.”",
       "de": "Den Auftrag „Aufblühende Gemüter“ abgeschlossen.",
       "ja": "クエスト「プリンセスデーに咲く笑顔の花」をコンプリートする",
       "fr": "Accomplir la quête “Princesse pêche”.",
       "ko": "퀘스트 '프린세스데이에 피어나는 웃음꽃' 완료",
-      "zh": "クエスト「プリンセスデーに咲く笑顔の花」をコンプリートする"
+      "zh": "完成任务“女儿节盛开的笑容之花”。"
     },
     "item": 0,
     "title": 0
@@ -71379,14 +71483,14 @@
     "ja": "カパパッパ！",
     "fr": "La kappattitude",
     "ko": "보글보글!",
-    "zh": "カパパッパ！",
+    "zh": "咔啪啪啪！",
     "description": {
       "en": "Complete the quest “Of Impish Importance.”",
       "de": "Den Auftrag „Im Namen der Wahrheit“ abgeschlossen.",
       "ja": "クエスト「ゴールドソーサーとカッパの謎」をコンプリートする",
       "fr": "Accomplir la quête “Les petits hommes verts du Gold Saucer”.",
       "ko": "퀘스트 '골드 소서와 물요정의 수수께끼' 완료",
-      "zh": "クエスト「ゴールドソーサーとカッパの謎」をコンプリートする"
+      "zh": "完成任务“金碟游乐场与河童之谜”。"
     },
     "item": 0,
     "title": 0
