@@ -5,7 +5,7 @@ import { uniq } from 'lodash';
 import { questChainLengths } from '@ffxiv-teamcraft/data/handmade/quests-chain-lengths';
 import { I18nName } from '@ffxiv-teamcraft/types';
 import { switchMap } from 'rxjs/operators';
-import { combineLatest, concat, tap } from 'rxjs';
+import { combineLatest, concat, from, mergeMap, tap } from 'rxjs';
 
 export class QuestsDbPagesExtractor extends AbstractExtractor {
   npcs = this.requireLazyFileByKey('npcs');
@@ -42,7 +42,7 @@ export class QuestsDbPagesExtractor extends AbstractExtractor {
       ], false, 1)
       .pipe(
         switchMap(quests => {
-          return concat(this.getExtendedNames<LazyQuest>('quests', q => q.name).map(extended => {
+          return from(this.getExtendedNames<LazyQuest>('quests', q => q.name).map(extended => {
             const row = quests.find(q => q.index === +extended.id);
             const folder = row.Id.split('_')[1].slice(-6, 3);
             return xiv.getFromSaintCSV<{ key: string, 0: string, 1: string }>(`quest/${folder}/${row.Id}`, true).pipe(
@@ -88,13 +88,17 @@ export class QuestsDbPagesExtractor extends AbstractExtractor {
                 textIndex[row.index] = this.processText(textCSV);
               })
             );
-          }));
+          })).pipe(
+            mergeMap(observable => observable, 20)
+          );
         })
       )
-      .subscribe(() => {
-        this.persistToMinifiedJsonAsset('db/quests-database-pages', pages);
-        this.persistToCompressedJsonAsset('db/quests-text', textIndex);
-        this.done();
+      .subscribe({
+        complete: () => {
+          this.persistToMinifiedJsonAsset('db/quests-database-pages', pages);
+          this.persistToCompressedJsonAsset('db/quests-text', textIndex);
+          this.done();
+        }
       });
   }
 

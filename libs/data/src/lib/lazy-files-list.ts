@@ -705,11 +705,11 @@ export const lazyFilesList = {
   },
   'questsDatabasePages': {
     'fileName': 'db/quests-database-pages.json',
-    'hashedFileName': 'db/quests-database-pages.bf21a9e8fbc5a3846fb05b4fa0859e0917b2202f.json'
+    'hashedFileName': 'db/quests-database-pages.232882f642af8ab3eb0d3776d5a8fb8c041bf96d.json'
   },
   'questsText': {
     'fileName': 'db/quests-text.index',
-    'hashedFileName': 'db/quests-text.01c4384b6a053282b36d0fffeecf1775f0d08ff8.index'
+    'hashedFileName': 'db/quests-text.ec7419af097decf909a521ef7a6a364535e8fd98.index'
   },
   'statusesDatabasePages': {
     'fileName': 'db/statuses-database-pages.json',
