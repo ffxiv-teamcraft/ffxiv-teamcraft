@@ -137,9 +137,9 @@
     "Search": "検索"
   },
   "COMMON": {
-    "Play": "Play",
-    "Pause": "Pause",
-    "Speed": "Speed",
+    "Play": "再生",
+    "Pause": "停止",
+    "Speed": "スピード",
     "Done": "完了",
     "Length": "長さ",
     "Save": "保存",
@@ -204,9 +204,9 @@
     "Reload": "再読み込み",
     "Click_to_apply": "クリックして適用する",
     "Recommended": "推奨",
-    "Visibility": "Visibility",
-    "Public": "Public",
-    "Private": "Private",
+    "Visibility": "公開範囲",
+    "Public": "公開",
+    "Private": "非公開",
     "Pagination_text": "{{start}}-{{end}} of {{total}} items",
     "And_X_more": "and {{amount}} more...",
     "DAYS": {
@@ -428,7 +428,7 @@
     "Link_base": "アイテムリンク",
     "DateFormat": "Date Format",
     "Region": "地域",
-    "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain regions.",
+    "Region_explain": "特定のゲームバージョンに基づくデータソースと機能は、地域ごとに調整されます。一部は特定の地域で利用できない場合があります。",
     "Proxy": "プロキシ",
     "Proxy_bypass": "プロキシなし",
     "Theme": "テーマカラー",
@@ -451,7 +451,7 @@
     "Reset_password_warning": "本当にパスワードを再設定しますか？",
     "Password_reset_mail_sent": "パスワード再設定メールに寄せされました",
     "Connect_with_patreon": "Patreonアカウントを連携する",
-    "Connect_with_tipeee": "Connect with Tipeee",
+    "Connect_with_tipeee": "Tipeeeアカウントを連携する",
     "Connected_with_patreon": "Patreonアカウントに連携されています",
     "Connected_with_tipeee": "Connected with Tipeee",
     "Nickname": "Patreonの通称名",
@@ -504,7 +504,7 @@
     "Enable_metrics_capture": "メトリックキャプチャを有効にする",
     "Enable_metrics_capture_explain": "（これはあなたのためのものなので、ギルとアイテム収入の分析結果をサーバーにアップロードすることはありません）",
     "Metrics_capture_folder": "メトリックログフォルダ",
-    "Enable_local_fishing_dump": "Enable local fishing reports dump",
+    "Enable_local_fishing_dump": "釣りのローカルレポートダンプを有効にする",
     "Char_data_folder": "キャラクターデータフォルダ(CHRXXXXXXXフォルダがある所)",
     "Maximum_vendor_price": "ショップ購入単価最大値",
     "Maximum_vendor_price_explain": "CAN_BE_BOUGHT レイアウトフィルターで使用されるアイテムの単価の最大値 (0=最大値なし)",
@@ -521,7 +521,7 @@
     "Reset_contentid_characters": "キャラクター連結初期化",
     "Reset_contentid_characters_ok": "Linked characters have been reset",
     "Show_other_characters_inventories_in_list": "リストに他のキャラクターの所持品も表示",
-    "Show_other_characters_inventories_in_inventory_page": "Show other characters' inventories in inventory page",
+    "Show_other_characters_inventories_in_inventory_page": "所持品ページに他のキャラクターの所持品を表示",
     "Alarm_panels_collapsed_by_default": "アラームパネル簡素化を基本値として設定",
     "Alarm_groups_before_no_group": "アラームグループをグループ指定のないアラームより前に表示",
     "Disconnect_patreon": "Patreonアカウントとの連携を解除する",
@@ -538,8 +538,8 @@
     "Reload_auth_token": "認証トークンを再読み込みする",
     "Materia_confidence_rate": "Melding confidence rate",
     "Materia_confidence_rate_explain": "Confidence rate for materia estimate. Higher means that more materias will be suggested to be more confident that with this amount, your melds will succeed",
-    "Enable_hardware_acceleration": "Enable hardware acceleration",
-    "Housing_map": "Housing map",
+    "Enable_hardware_acceleration": "ハードウェアアクセラレーションを有効化",
+    "Housing_map": "ハウジングマップ",
     "Housing_map_explain": "The housing map in which your house is",
     "Reset_linked_characters_ok": "Character links have been reset",
     "Display_slow_mode_notification": "Display crafting/gathering slow mode notification",
@@ -2048,9 +2048,9 @@
     "Install_npcap_button": "Npcap をインストールして Teamcraft を再起動します",
     "Not_as_anonymous": "パケットキャプチャは匿名ユーザでは正しく動作しません",
     "Not_as_anonymous_description": "右上隅の「匿名」にカーソルを重ね、表示されたメニューの「登録」をクリックしてユーザ登録をするか、または設定内でパケットキャプチャを無効にしてください。",
-    "Status": "Packet capture status",
-    "Pcap": "Packet capture",
-    "Inventory": "Inventory tracking"
+    "Status": "パケットキャプチャの状態",
+    "Pcap": "パケットキャプチャ",
+    "Inventory": "所持品トラッキング"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "{{region}}に変更することをおすすめします",
@@ -2414,7 +2414,7 @@
     }
   },
   "METRICS": {
-    "Title": "Metrics dashboard",
+    "Title": "メトリクスダッシュボード",
     "Today": "今日",
     "This_week": "今週",
     "This_month": "今月",
@@ -2778,7 +2778,7 @@
     "Submersibles": "Submersibles"
   },
   "VOYAGE_TRACKER": {
-    "Title": "Voyage tracker",
+    "Title": "ボイジャートラッカー",
     "Import_using_pcap": "パケットキャプチャを使用してインポート",
     "Voyage_completion_alarm": "Voyage completion alarm",
     "Voyage_completed_notification_title": "{{name}} has completed its voyage",
@@ -3065,7 +3065,7 @@
   },
   "PCAP_ERRORS": {
     "Default": "Packet Capture error",
-    "GAME_NOT_RUNNING": "Packet capture failed to start",
+    "GAME_NOT_RUNNING": "パケットキャプチャの開始に失敗しました",
     "RESTART_GAME": "Packet capture didn't shut down properly",
     "GAME_RUNNING_AS_ADMIN": "Cannot access game process",
     "DESCRIPTION": {
