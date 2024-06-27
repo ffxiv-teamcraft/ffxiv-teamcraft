@@ -108,7 +108,7 @@
     "Contributors": "サポーター"
   },
   "Patreon_login_success": "Patreonのログインに成功しました！",
-  "Tipeee_login_success": "Tipeee login success!",
+  "Tipeee_login_success": "Tipeeeのログインに成功しました！",
   "Hide_if_empty": "空欄を隠す",
   "No_favorites": "お気に入りなし",
   "Ephemeral_list": "完了した後、削除予定",
@@ -266,7 +266,7 @@
       "LEVE_ALLOWANCES": "リーヴ受注権",
       "LEVE_ALLOWANCES_DESCRIPTION": "リーヴ受注権3枚獲得",
       "OCEAN_FISHING": "オーシャンフィッシング",
-      "OCEAN_FISHING_DESCRIPTION": "Ocean fishing will start."
+      "OCEAN_FISHING_DESCRIPTION": "オーシャンフィッシングの開始"
     },
     "CUSTOM": {
       "Title": "カスタムアラームを追加する",
@@ -453,7 +453,7 @@
     "Connect_with_patreon": "Patreonアカウントを連携する",
     "Connect_with_tipeee": "Tipeeeアカウントを連携する",
     "Connected_with_patreon": "Patreonアカウントに連携されています",
-    "Connected_with_tipeee": "Connected with Tipeee",
+    "Connected_with_tipeee": "Tipeeeアカウントを連携する",
     "Nickname": "Patreonの通称名",
     "Nickname_used": "通称名は既に使用されてる",
     "No_nickname_warning": "寄付者専用の機能を使用するためには、設定ページからニックネームを設定して下さい。",
@@ -525,7 +525,7 @@
     "Alarm_panels_collapsed_by_default": "アラームパネル簡素化を基本値として設定",
     "Alarm_groups_before_no_group": "アラームグループをグループ指定のないアラームより前に表示",
     "Disconnect_patreon": "Patreonアカウントとの連携を解除する",
-    "Disconnect_tipeee": "Disconnect from Tipeee",
+    "Disconnect_tipeee": "Tipeeeアカウントとの連携を解除する",
     "Supporter_issue": "Your supporter status appears to be having an issue",
     "Supporter_issue_description": "Your account is linked to Patreon or Tipeee but you still have ads, if you're still a supporter, you might want to disconnect from Patreon/Tipeee in setting and connect again to refresh your status.",
     "Export_settings": "設定をエクスポート",
@@ -1290,7 +1290,7 @@
     "Ignore_completed_items": "完了したアイテム除外",
     "Price_to_craft": "Price to craft",
     "Price_from_vendor": "Price from vendor",
-    "Last_update": "Last update"
+    "Last_update": "最終更新"
   },
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
@@ -2884,7 +2884,7 @@
     "Title": "トレジャーハント",
     "Description": "Pick a map and find the treasure you're looking for",
     "Select_map": "エリアを選択してください",
-    "Select_item": "Select treasure map item",
+    "Select_item": "古ぼけた地図を選択:",
     "Select_treasure_map": "宝の地図を選択してください",
     "Find_another": "Find another treasure"
   },
@@ -2924,7 +2924,7 @@
     "Modification_suggestion_submitted": "Modification suggestion submitted",
     "Modification_applied": "Modification applied",
     "Submit_modification_suggestion": "Submit modification suggestion",
-    "Last_updated": "Last updated",
+    "Last_updated": "最終更新",
     "Submitted": "Submitted",
     "Spawn": "Spawn",
     "Duration": "Duration",
