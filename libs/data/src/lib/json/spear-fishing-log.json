@@ -3452,5 +3452,599 @@
       "x": 18.1,
       "y": 20.6
     }
+  },
+  {
+    "id": 1005,
+    "itemId": 43803,
+    "mapId": 857,
+    "placeId": 4505,
+    "zoneId": 5077,
+    "coords": {
+      "x": 5.3,
+      "y": 19.4
+    }
+  },
+  {
+    "id": 1005,
+    "itemId": 43804,
+    "mapId": 857,
+    "placeId": 4505,
+    "zoneId": 5077,
+    "coords": {
+      "x": 5.3,
+      "y": 19.4
+    }
+  },
+  {
+    "id": 1005,
+    "itemId": 43805,
+    "mapId": 857,
+    "placeId": 4505,
+    "zoneId": 5077,
+    "coords": {
+      "x": 5.3,
+      "y": 19.4
+    }
+  },
+  {
+    "id": 1005,
+    "itemId": 43806,
+    "mapId": 857,
+    "placeId": 4505,
+    "zoneId": 5077,
+    "coords": {
+      "x": 5.3,
+      "y": 19.4
+    }
+  },
+  {
+    "id": 1005,
+    "itemId": 43807,
+    "mapId": 857,
+    "placeId": 4505,
+    "zoneId": 5077,
+    "coords": {
+      "x": 5.3,
+      "y": 19.4
+    }
+  },
+  {
+    "id": 1005,
+    "itemId": 43808,
+    "mapId": 857,
+    "placeId": 4505,
+    "zoneId": 5077,
+    "coords": {
+      "x": 5.3,
+      "y": 19.4
+    }
+  },
+  {
+    "id": 1006,
+    "itemId": 43809,
+    "mapId": 858,
+    "placeId": 4506,
+    "zoneId": 5078,
+    "coords": {
+      "x": 26.8,
+      "y": 29.5
+    }
+  },
+  {
+    "id": 1006,
+    "itemId": 43810,
+    "mapId": 858,
+    "placeId": 4506,
+    "zoneId": 5078,
+    "coords": {
+      "x": 26.8,
+      "y": 29.5
+    }
+  },
+  {
+    "id": 1006,
+    "itemId": 43811,
+    "mapId": 858,
+    "placeId": 4506,
+    "zoneId": 5078,
+    "coords": {
+      "x": 26.8,
+      "y": 29.5
+    }
+  },
+  {
+    "id": 1006,
+    "itemId": 43812,
+    "mapId": 858,
+    "placeId": 4506,
+    "zoneId": 5078,
+    "coords": {
+      "x": 26.8,
+      "y": 29.5
+    }
+  },
+  {
+    "id": 1006,
+    "itemId": 43813,
+    "mapId": 858,
+    "placeId": 4506,
+    "zoneId": 5078,
+    "coords": {
+      "x": 26.8,
+      "y": 29.5
+    }
+  },
+  {
+    "id": 1006,
+    "itemId": 43814,
+    "mapId": 858,
+    "placeId": 4506,
+    "zoneId": 5078,
+    "coords": {
+      "x": 26.8,
+      "y": 29.5
+    }
+  },
+  {
+    "id": 1007,
+    "itemId": 43815,
+    "mapId": 858,
+    "placeId": 4506,
+    "zoneId": 5079,
+    "coords": {
+      "x": 20.3,
+      "y": 32.4
+    }
+  },
+  {
+    "id": 1007,
+    "itemId": 43816,
+    "mapId": 858,
+    "placeId": 4506,
+    "zoneId": 5079,
+    "coords": {
+      "x": 20.3,
+      "y": 32.4
+    }
+  },
+  {
+    "id": 1007,
+    "itemId": 43817,
+    "mapId": 858,
+    "placeId": 4506,
+    "zoneId": 5079,
+    "coords": {
+      "x": 20.3,
+      "y": 32.4
+    }
+  },
+  {
+    "id": 1007,
+    "itemId": 43818,
+    "mapId": 858,
+    "placeId": 4506,
+    "zoneId": 5079,
+    "coords": {
+      "x": 20.3,
+      "y": 32.4
+    }
+  },
+  {
+    "id": 1007,
+    "itemId": 43819,
+    "mapId": 858,
+    "placeId": 4506,
+    "zoneId": 5079,
+    "coords": {
+      "x": 20.3,
+      "y": 32.4
+    }
+  },
+  {
+    "id": 1007,
+    "itemId": 43820,
+    "mapId": 858,
+    "placeId": 4506,
+    "zoneId": 5079,
+    "coords": {
+      "x": 20.3,
+      "y": 32.4
+    }
+  },
+  {
+    "id": 1008,
+    "itemId": 43823,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5081,
+    "coords": {
+      "x": 4.3,
+      "y": 6.7
+    }
+  },
+  {
+    "id": 1008,
+    "itemId": 43824,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5081,
+    "coords": {
+      "x": 4.3,
+      "y": 6.7
+    }
+  },
+  {
+    "id": 1008,
+    "itemId": 43825,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5081,
+    "coords": {
+      "x": 4.3,
+      "y": 6.7
+    }
+  },
+  {
+    "id": 1008,
+    "itemId": 43826,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5081,
+    "coords": {
+      "x": 4.3,
+      "y": 6.7
+    }
+  },
+  {
+    "id": 1008,
+    "itemId": 43827,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5081,
+    "coords": {
+      "x": 4.3,
+      "y": 6.7
+    }
+  },
+  {
+    "id": 1008,
+    "itemId": 43828,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5081,
+    "coords": {
+      "x": 4.3,
+      "y": 6.7
+    }
+  },
+  {
+    "id": 1009,
+    "itemId": 43829,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5082,
+    "coords": {
+      "x": 27.8,
+      "y": 3.9
+    }
+  },
+  {
+    "id": 1009,
+    "itemId": 43830,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5082,
+    "coords": {
+      "x": 27.8,
+      "y": 3.9
+    }
+  },
+  {
+    "id": 1009,
+    "itemId": 43831,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5082,
+    "coords": {
+      "x": 27.8,
+      "y": 3.9
+    }
+  },
+  {
+    "id": 1009,
+    "itemId": 43832,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5082,
+    "coords": {
+      "x": 27.8,
+      "y": 3.9
+    }
+  },
+  {
+    "id": 1009,
+    "itemId": 43833,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5082,
+    "coords": {
+      "x": 27.8,
+      "y": 3.9
+    }
+  },
+  {
+    "id": 1009,
+    "itemId": 43834,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5082,
+    "coords": {
+      "x": 27.8,
+      "y": 3.9
+    }
+  },
+  {
+    "id": 1010,
+    "itemId": 43835,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5083,
+    "coords": {
+      "x": 33.7,
+      "y": 6.7
+    }
+  },
+  {
+    "id": 1010,
+    "itemId": 43836,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5083,
+    "coords": {
+      "x": 33.7,
+      "y": 6.7
+    }
+  },
+  {
+    "id": 1010,
+    "itemId": 43837,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5083,
+    "coords": {
+      "x": 33.7,
+      "y": 6.7
+    }
+  },
+  {
+    "id": 1010,
+    "itemId": 43838,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5083,
+    "coords": {
+      "x": 33.7,
+      "y": 6.7
+    }
+  },
+  {
+    "id": 1010,
+    "itemId": 43839,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5083,
+    "coords": {
+      "x": 33.7,
+      "y": 6.7
+    }
+  },
+  {
+    "id": 1010,
+    "itemId": 43840,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5083,
+    "coords": {
+      "x": 33.7,
+      "y": 6.7
+    }
+  },
+  {
+    "id": 1011,
+    "itemId": 43843,
+    "mapId": 860,
+    "placeId": 4508,
+    "zoneId": 5085,
+    "coords": {
+      "x": 30.6,
+      "y": 10.2
+    }
+  },
+  {
+    "id": 1011,
+    "itemId": 43844,
+    "mapId": 860,
+    "placeId": 4508,
+    "zoneId": 5085,
+    "coords": {
+      "x": 30.6,
+      "y": 10.2
+    }
+  },
+  {
+    "id": 1011,
+    "itemId": 43845,
+    "mapId": 860,
+    "placeId": 4508,
+    "zoneId": 5085,
+    "coords": {
+      "x": 30.6,
+      "y": 10.2
+    }
+  },
+  {
+    "id": 1011,
+    "itemId": 43846,
+    "mapId": 860,
+    "placeId": 4508,
+    "zoneId": 5085,
+    "coords": {
+      "x": 30.6,
+      "y": 10.2
+    }
+  },
+  {
+    "id": 1011,
+    "itemId": 43847,
+    "mapId": 860,
+    "placeId": 4508,
+    "zoneId": 5085,
+    "coords": {
+      "x": 30.6,
+      "y": 10.2
+    }
+  },
+  {
+    "id": 1011,
+    "itemId": 43848,
+    "mapId": 860,
+    "placeId": 4508,
+    "zoneId": 5085,
+    "coords": {
+      "x": 30.6,
+      "y": 10.2
+    }
+  },
+  {
+    "id": 1012,
+    "itemId": 43809,
+    "mapId": 858,
+    "placeId": 4506,
+    "zoneId": 5080,
+    "coords": {
+      "x": 24.3,
+      "y": 30.4
+    }
+  },
+  {
+    "id": 1012,
+    "itemId": 43813,
+    "mapId": 858,
+    "placeId": 4506,
+    "zoneId": 5080,
+    "coords": {
+      "x": 24.3,
+      "y": 30.4
+    }
+  },
+  {
+    "id": 1012,
+    "itemId": 43815,
+    "mapId": 858,
+    "placeId": 4506,
+    "zoneId": 5080,
+    "coords": {
+      "x": 24.3,
+      "y": 30.4
+    }
+  },
+  {
+    "id": 1012,
+    "itemId": 43817,
+    "mapId": 858,
+    "placeId": 4506,
+    "zoneId": 5080,
+    "coords": {
+      "x": 24.3,
+      "y": 30.4
+    }
+  },
+  {
+    "id": 1012,
+    "itemId": 43821,
+    "mapId": 858,
+    "placeId": 4506,
+    "zoneId": 5080,
+    "coords": {
+      "x": 24.3,
+      "y": 30.4
+    }
+  },
+  {
+    "id": 1012,
+    "itemId": 43822,
+    "mapId": 858,
+    "placeId": 4506,
+    "zoneId": 5080,
+    "coords": {
+      "x": 24.3,
+      "y": 30.4
+    }
+  },
+  {
+    "id": 1013,
+    "itemId": 43831,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5084,
+    "coords": {
+      "x": 30.5,
+      "y": 6.1
+    }
+  },
+  {
+    "id": 1013,
+    "itemId": 43833,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5084,
+    "coords": {
+      "x": 30.5,
+      "y": 6.1
+    }
+  },
+  {
+    "id": 1013,
+    "itemId": 43835,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5084,
+    "coords": {
+      "x": 30.5,
+      "y": 6.1
+    }
+  },
+  {
+    "id": 1013,
+    "itemId": 43837,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5084,
+    "coords": {
+      "x": 30.5,
+      "y": 6.1
+    }
+  },
+  {
+    "id": 1013,
+    "itemId": 43841,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5084,
+    "coords": {
+      "x": 30.5,
+      "y": 6.1
+    }
+  },
+  {
+    "id": 1013,
+    "itemId": 43842,
+    "mapId": 859,
+    "placeId": 4507,
+    "zoneId": 5084,
+    "coords": {
+      "x": 30.5,
+      "y": 6.1
+    }
   }
 ]

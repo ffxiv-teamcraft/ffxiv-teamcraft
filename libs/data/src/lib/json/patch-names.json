@@ -1194,5 +1194,18 @@
     "ko": "Patch 6.58",
     "zh": "Patch 6.58",
     "version": "6.58"
+  },
+  "95": {
+    "id": 95,
+    "banner": null,
+    "ex": 5,
+    "release": 1719565205,
+    "en": "Patch 7.0",
+    "de": "Patch 7.0",
+    "ja": "Patch 7.0",
+    "fr": "Patch 7.0",
+    "ko": "Patch 7.0",
+    "zh": "Patch 7.0",
+    "version": "7.0"
   }
 }

@@ -6,6 +6,146 @@
     "fr": "",
     "icon": ""
   },
+  "2000001": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000002": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000003": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000004": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000005": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000006": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000007": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000008": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000009": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000010": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000011": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000012": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000013": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000014": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000015": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000016": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000017": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000018": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000019": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000020": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2000021": {
     "en": "Wooden Hairpin",
     "ja": "",
@@ -13,12 +153,47 @@
     "fr": "Épingle à cheveux",
     "icon": "/i/022000/022623.png"
   },
+  "2000022": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000023": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2000024": {
     "en": "Recruit's Toolbox",
     "ja": "",
     "de": "Nigelnagelneue Werkzeugkiste",
     "fr": "Caisse à outils",
     "icon": "/i/021000/021002.png"
+  },
+  "2000025": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000026": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000027": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000028": {
     "en": "Azeyma Rose",
@@ -33,6 +208,62 @@
     "de": "Metallbeschlag",
     "fr": "Pièce métallique",
     "icon": "/i/021000/021007.png"
+  },
+  "2000030": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000031": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000032": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000033": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000034": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000035": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000036": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000037": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000038": {
     "en": "Fire Candy",
@@ -181,6 +412,20 @@
     "fr": "Artifice de farce",
     "icon": "/i/022000/022645.png"
   },
+  "2000059": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000060": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2000061": {
     "en": "Amber Unguent",
     "ja": "",
@@ -195,12 +440,82 @@
     "fr": "Gonades de chigoe",
     "icon": "/i/022000/022623.png"
   },
+  "2000063": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000064": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000065": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000066": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000067": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000068": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000069": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000070": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2000071": {
     "en": "Anole Egg",
     "ja": "",
     "de": "Anolis-Ei",
     "fr": "Œuf d'anolis",
     "icon": "/i/025000/025251.png"
+  },
+  "2000072": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000073": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000074": {
     "en": "Handmade Eel Pie",
@@ -229,6 +544,13 @@
     "de": "Mikrochu-Blatt",
     "fr": "Jeune feuille de microtyugh",
     "icon": "/i/025000/025201.png"
+  },
+  "2000078": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000079": {
     "en": "F'mibhas's Sealed Message",
@@ -278,6 +600,48 @@
     "de": "Frische Gizar-Blätter",
     "fr": "Légume de Gysahl frais",
     "icon": "/i/025000/025218.png"
+  },
+  "2000086": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000087": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000088": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000089": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000090": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000091": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000092": {
     "en": "Roselet Seed",
@@ -377,6 +741,97 @@
     "fr": "Octant rouillé",
     "icon": "/i/021000/021002.png"
   },
+  "2000106": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000107": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000108": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000109": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000110": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000111": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000112": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000113": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000114": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000115": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000116": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000117": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000118": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2000119": {
     "en": "Handmade Eel Pie",
     "ja": "",
@@ -447,6 +902,55 @@
     "fr": "Peau d'animal",
     "icon": "/i/021000/021002.png"
   },
+  "2000129": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000130": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000131": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000132": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000133": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000134": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000135": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2000136": {
     "en": "Sealed Envelope",
     "ja": "",
@@ -467,6 +971,13 @@
     "de": "Spitzmullfell",
     "fr": "Peau de musaraigne agressive",
     "icon": "/i/021000/021809.png"
+  },
+  "2000139": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000140": {
     "en": "Burlap Sack",
@@ -502,6 +1013,13 @@
     "de": "Ölläuse",
     "fr": "Pucerons des bois",
     "icon": "/i/027000/027003.png"
+  },
+  "2000145": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000146": {
     "en": "Surveyor's Instruments",
@@ -566,6 +1084,69 @@
     "fr": "Appât en cuivre",
     "icon": "/i/027000/027055.png"
   },
+  "2000155": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000156": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000157": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000158": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000159": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000160": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000161": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000162": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000163": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2000164": {
     "en": "Coblyn Grease",
     "ja": "",
@@ -579,6 +1160,20 @@
     "de": "Brief an Momodi",
     "fr": "Lettre pour Momodi",
     "icon": "/i/025000/025918.png"
+  },
+  "2000166": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000167": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000168": {
     "en": "Antling Mandible",
@@ -601,12 +1196,103 @@
     "fr": "Minerai d'argent souillé",
     "icon": "/i/021000/021211.png"
   },
+  "2000171": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000172": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000173": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000174": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000175": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000176": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2000177": {
     "en": "Hammer Beak Rib",
     "ja": "",
     "de": "Hammerschnabel-Rippen",
     "fr": "Fragment d'os de bec-marteau",
     "icon": "/i/022000/022202.png"
+  },
+  "2000178": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000179": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000180": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000181": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000182": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000183": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000184": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000185": {
     "en": "Well-worn Fishing Rod",
@@ -643,6 +1329,13 @@
     "fr": "Cruche d'eau",
     "icon": "/i/025000/025055.png"
   },
+  "2000190": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2000191": {
     "en": "Leather Bag",
     "ja": "",
@@ -663,6 +1356,20 @@
     "de": "Tausendjahrpflaume",
     "fr": "Prune millénaire",
     "icon": "/i/025000/025308.png"
+  },
+  "2000194": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000195": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000196": {
     "en": "Deep-green Tonic",
@@ -706,6 +1413,13 @@
     "fr": "Bon de commande pour diadème",
     "icon": "/i/026000/026151.png"
   },
+  "2000202": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2000203": {
     "en": "Mun-Tuy Bean Box",
     "ja": "",
@@ -734,6 +1448,20 @@
     "fr": "Outils de chasse",
     "icon": "/i/021000/021002.png"
   },
+  "2000207": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000208": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2000209": {
     "en": "Antelope Umbles",
     "ja": "",
@@ -761,6 +1489,13 @@
     "de": "Silbererzklumpen",
     "fr": "Minerai d'argent souillé",
     "icon": "/i/021000/021215.png"
+  },
+  "2000213": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000214": {
     "en": "Fatty Orobon",
@@ -845,6 +1580,20 @@
     "de": "La Noscea-Lilie",
     "fr": "Clochette noscéenne",
     "icon": "/i/025000/025022.png"
+  },
+  "2000226": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000227": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000228": {
     "en": "Muddy Potsherd",
@@ -1588,6 +2337,13 @@
     "fr": "Amas de pollen",
     "icon": "/i/025000/025007.png"
   },
+  "2000334": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2000335": {
     "en": "Vulture Breast",
     "ja": "",
@@ -1686,6 +2442,13 @@
     "fr": "Outil agraire volé",
     "icon": "/i/021000/021002.png"
   },
+  "2000349": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2000350": {
     "en": "Tiller's Shovel",
     "ja": "",
@@ -1742,6 +2505,69 @@
     "fr": "Sac de pièces",
     "icon": "/i/025000/025919.png"
   },
+  "2000358": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000359": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000360": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000361": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000362": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000363": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000364": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000365": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000366": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2000367": {
     "en": "Hornet Stinger",
     "ja": "",
@@ -1797,6 +2623,13 @@
     "de": "Peiste-Augapfel",
     "fr": "Globe oculaire de peiste",
     "icon": "/i/021000/021280.png"
+  },
+  "2000375": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000376": {
     "en": "Mongrel Blood",
@@ -1888,6 +2721,13 @@
     "de": "Momodis Empfehlungsschreiben",
     "fr": "Lettre d'introduction",
     "icon": "/i/025000/025906.png"
+  },
+  "2000389": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000390": {
     "en": "Queer Leaflet",
@@ -2127,6 +2967,13 @@
     "fr": "Pièce de gils usée",
     "icon": "/i/025000/025917.png"
   },
+  "2000424": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2000425": {
     "en": "Book of Mormo",
     "ja": "",
@@ -2252,6 +3099,13 @@
     "de": "Sprengstoffbündel (6 Unzen)",
     "fr": "6 onz de poudre",
     "icon": "/i/021000/021001.png"
+  },
+  "2000443": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000444": {
     "en": "Streetlamp Oil",
@@ -2834,6 +3688,27 @@
     "fr": "Sacoche de Sighard",
     "icon": "/i/023000/023001.png"
   },
+  "2000527": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000528": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000529": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2000530": {
     "en": "Colorful Feather",
     "ja": "",
@@ -3065,6 +3940,20 @@
     "fr": "Note sur les Kobolds",
     "icon": "/i/025000/025918.png"
   },
+  "2000563": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000564": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2000565": {
     "en": "Flame of Magic",
     "ja": "",
@@ -3197,6 +4086,13 @@
     "de": "Fiegenfallen-Blüte",
     "fr": "Pétale de piège-poux",
     "icon": "/i/022000/022627.png"
+  },
+  "2000584": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000585": {
     "en": "Muddy Potsherd",
@@ -3547,6 +4443,13 @@
     "de": "Hoffnungsschimmer-Wasser",
     "fr": "Eau de la mare de l'Espoir",
     "icon": "/i/022000/022614.png"
+  },
+  "2000635": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000636": {
     "en": "Fattened Herring",
@@ -3932,6 +4835,20 @@
     "de": "Faules Dodo-Fleisch",
     "fr": "Morceau de viande de dodo avariée",
     "icon": "/i/024000/024353.png"
+  },
+  "2000691": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000692": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000693": {
     "en": "Stolen Wares",
@@ -4360,6 +5277,20 @@
     "fr": "Cristal corrompu",
     "icon": "/i/020000/020649.png"
   },
+  "2000754": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000755": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2000756": {
     "en": "Catalytic Ectoplasm",
     "ja": "",
@@ -4513,6 +5444,13 @@
     "de": "Operation: Schmelztiegel in Flammen",
     "fr": "Rapport sur l'opération creuset",
     "icon": "/i/026000/026151.png"
+  },
+  "2000778": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000779": {
     "en": "Twenty-four Onzes of Firesand",
@@ -4836,6 +5774,13 @@
     "fr": "Appeau à dragon",
     "icon": "/i/022000/022205.png"
   },
+  "2000825": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2000826": {
     "en": "Fresh Honey",
     "ja": "",
@@ -4891,6 +5836,13 @@
     "de": "Wellwick-Wurmfleisch",
     "fr": "Viande de ver de Lambton",
     "icon": "/i/029000/029001.png"
+  },
+  "2000834": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000835": {
     "en": "Shroud Pepper",
@@ -4975,6 +5927,13 @@
     "de": "Odin-Report",
     "fr": "Rapport sur Odin",
     "icon": "/i/026000/026151.png"
+  },
+  "2000847": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2000848": {
     "en": "Rotting Sea Wasp Umbrella",
@@ -5879,6 +6838,20 @@
     "fr": "Tonique toison d'or",
     "icon": "/i/022000/022606.png"
   },
+  "2000977": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2000978": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2000979": {
     "en": "Rime-bound Necrologos Page",
     "ja": "",
@@ -6669,6 +7642,13 @@
     "de": "Basiliskenleder-Schatzkarte",
     "fr": "Carte au trésor en peau de peiste",
     "icon": "/i/026000/026151.png"
+  },
+  "2001092": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2001093": {
     "en": "Flawless Earth Crystal",
@@ -7587,6 +8567,20 @@
     "fr": "Carte d'alexandrite",
     "icon": "/i/026000/026151.png"
   },
+  "2001224": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2001225": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2001226": {
     "en": "Smoky Coal",
     "ja": "",
@@ -8168,6 +9162,13 @@
     "fr": "Vin chaud",
     "icon": "/i/025000/025057.png"
   },
+  "2001309": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2001310": {
     "en": "Cleansing Water",
     "ja": "",
@@ -8392,6 +9393,13 @@
     "fr": "Cylindre magitek LI",
     "icon": "/i/021000/021003.png"
   },
+  "2001342": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2001343": {
     "en": "Stolen Foodstuffs",
     "ja": "",
@@ -8419,6 +9427,20 @@
     "de": "Abgegriffenes Buch",
     "fr": "Carnet fatigué",
     "icon": "/i/026000/026002.png"
+  },
+  "2001347": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2001348": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2001349": {
     "en": "Mistbeard's Coffer",
@@ -8475,6 +9497,20 @@
     "de": "Unheimliche Kürbislaternen",
     "fr": "Lanternes citrouille",
     "icon": "/i/025000/025990.png"
+  },
+  "2001357": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2001358": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2001359": {
     "en": "Gigantic Krakka Root",
@@ -9190,6 +10226,13 @@
     "fr": "Prospectus du tournoi de gladiateurs",
     "icon": "/i/026000/026153.png"
   },
+  "2001461": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2001462": {
     "en": "Cloudy Bottle",
     "ja": "",
@@ -9273,6 +10316,34 @@
     "de": "Gesegneter Ring der Zwölf",
     "fr": "Anneau béni par les Douze",
     "icon": "/i/054000/054564.png"
+  },
+  "2001474": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2001475": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2001476": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2001477": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2001478": {
     "en": "Elegant Earring",
@@ -9399,6 +10470,13 @@
     "de": "Elfter Band des Theologischen Gesamtwerks",
     "fr": "Onzième volume de l'Encyclopédie orthodoxe",
     "icon": "/i/026000/026161.png"
+  },
+  "2001496": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2001497": {
     "en": "Pumpkin Lantern",
@@ -9953,6 +11031,20 @@
     "fr": "Traité sur le principe de convergeur d'éther",
     "icon": "/i/026000/026162.png"
   },
+  "2001576": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2001577": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2001578": {
     "en": "Heretic Epistle",
     "ja": "",
@@ -10232,6 +11324,20 @@
     "de": "",
     "fr": "",
     "icon": "/i/026000/026153.png"
+  },
+  "2001618": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2001619": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2001620": {
     "en": "Yellow Pebble",
@@ -11458,6 +12564,13 @@
     "fr": "Feuillet déchiré",
     "icon": "/i/026000/026151.png"
   },
+  "2001795": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2001796": {
     "en": "Illuminati Whizzlepop",
     "ja": "",
@@ -12053,6 +13166,13 @@
     "fr": "Bourse en cuir",
     "icon": "/i/025000/025919.png"
   },
+  "2001881": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2001882": {
     "en": "Node Nacelle",
     "ja": "",
@@ -12122,6 +13242,27 @@
     "de": "Notiz einer Melodie",
     "fr": "Rapport d'ingénieur",
     "icon": "/i/025000/025906.png"
+  },
+  "2001892": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2001893": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2001894": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2001895": {
     "en": "Pirate Grog",
@@ -12325,6 +13466,20 @@
     "de": "Kraftstrotzender Paissa",
     "fr": "Païssa pétulant",
     "icon": "/i/026000/026110.png"
+  },
+  "2001924": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2001925": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2001926": {
     "en": "Fire-touched Wind Crystal",
@@ -12858,6 +14013,13 @@
     "fr": "Clef",
     "icon": "/i/025000/025902.png"
   },
+  "2002002": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2002003": {
     "en": "Creepy Cookie",
     "ja": "",
@@ -13277,6 +14439,13 @@
     "de": "Knochenprobe",
     "fr": "Squelette primitif",
     "icon": "/i/022000/022213.png"
+  },
+  "2002063": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2002064": {
     "en": "Cloud Dweller Organ",
@@ -14020,6 +15189,13 @@
     "fr": "Gants abandonnés",
     "icon": "/i/044000/044082.png"
   },
+  "2002170": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2002171": {
     "en": "Empty Dalmascan Wine Bottle",
     "ja": "",
@@ -14173,6 +15349,13 @@
     "de": "Seelenstein eines massiven Urolithen",
     "fr": "Noyau d'urolithe massif",
     "icon": "/i/021000/021278.png"
+  },
+  "2002193": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2002194": {
     "en": "Nightkin",
@@ -16085,6 +17268,27 @@
     "fr": "Esquisse",
     "icon": "/i/025000/025999.png"
   },
+  "2002467": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002468": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002469": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2002470": {
     "en": "Tamate-bako of Geomancy",
     "ja": "",
@@ -16218,6 +17422,34 @@
     "fr": "Grenades type XLII",
     "icon": "/i/026000/026015.png"
   },
+  "2002489": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002490": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002491": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002492": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2002493": {
     "en": "Subliming Scalebomb",
     "ja": "",
@@ -16274,6 +17506,20 @@
     "fr": "Prœuf ambré",
     "icon": "/i/021000/021310.png"
   },
+  "2002501": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002502": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2002503": {
     "en": "Seemingly Special Treasure Map",
     "ja": "",
@@ -16322,6 +17568,69 @@
     "de": "Päppelwurz",
     "fr": "Racine du réveil",
     "icon": "/i/025000/025005.png"
+  },
+  "2002510": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002511": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002512": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002513": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002514": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002515": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002516": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002517": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002518": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2002519": {
     "en": "Slitherbough Serum",
@@ -16495,7 +17804,7 @@
     "en": "Voeburtite Honor",
     "ja": "",
     "de": "Goldstück aus Voeburt",
-    "fr": "Pièces voeburtoises",
+    "fr": "Pièce voeburtoise",
     "icon": "/i/026000/026573.png"
   },
   "2002544": {
@@ -16637,6 +17946,13 @@
     "de": "Funkelnder Gesteinsbrocken",
     "fr": "Gemme étincelante",
     "icon": "/i/021000/021452.png"
+  },
+  "2002564": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2002565": {
     "en": "Leonine",
@@ -17680,6 +18996,20 @@
     "de": "Beutel mit Gulg-Klopfer",
     "fr": "Frappeur capturé",
     "icon": "/i/026000/026110.png"
+  },
+  "2002714": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002715": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2002716": {
     "en": "Feral Lizard Meat",
@@ -19060,6 +20390,34 @@
     "fr": "Pièce mécanique rouillée",
     "icon": "/i/026000/026598.png"
   },
+  "2002913": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002914": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002915": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002916": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2002917": {
     "en": "Note Concerning the State of Business in Eulmore",
     "ja": "",
@@ -19284,6 +20642,41 @@
     "fr": "Soie robuste de psammead",
     "icon": "/i/021000/021664.png"
   },
+  "2002949": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002950": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002951": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002952": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002953": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2002954": {
     "en": "Mulled Wine",
     "ja": "",
@@ -19431,6 +20824,13 @@
     "fr": "Lettre de Francel",
     "icon": "/i/026000/026176.png"
   },
+  "2002975": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2002976": {
     "en": "Salvaged Wood Scraps",
     "ja": "",
@@ -19494,6 +20894,13 @@
     "fr": "Ciment",
     "icon": "/i/021000/021464.png"
   },
+  "2002985": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2002986": {
     "en": "Processed Repair Material",
     "ja": "",
@@ -19556,6 +20963,20 @@
     "de": "Thavnair-Seelenstaub",
     "fr": "Écailles ombrales de Thavnair",
     "icon": "/i/022000/022650.png"
+  },
+  "2002995": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2002996": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2002997": {
     "en": "Sealed Documents",
@@ -19844,6 +21265,20 @@
     "fr": "Repousse-gremlin",
     "icon": "/i/025000/025979.png"
   },
+  "2003038": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003039": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2003040": {
     "en": "Aether Spectrometer",
     "ja": "",
@@ -19878,6 +21313,13 @@
     "de": "Ausstellungsflugblätter",
     "fr": "Affiche de spectacle",
     "icon": "/i/026000/026188.png"
+  },
+  "2003045": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2003046": {
     "en": "Imperial Supplies",
@@ -19977,6 +21419,13 @@
     "fr": "Lys de Nymeia",
     "icon": "/i/022000/022627.png"
   },
+  "2003060": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2003061": {
     "en": "Ticking Timepiece",
     "ja": "",
@@ -19990,6 +21439,13 @@
     "de": "Maschinenwesen-Wrackteil",
     "fr": "Carcasse de forme de vie mécanique",
     "icon": "/i/052000/052546.png"
+  },
+  "2003063": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2003064": {
     "en": "Indecipherable Tomes",
@@ -20011,6 +21467,13 @@
     "de": "Eisernes Bozja-Artefakt",
     "fr": "Antiquités bozjiennes en métal",
     "icon": "/i/026000/026108.png"
+  },
+  "2003067": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2003068": {
     "en": "Heavy Container",
@@ -20096,6 +21559,13 @@
     "fr": "Pot-pourri de lys de Nymeia",
     "icon": "/i/026000/026110.png"
   },
+  "2003080": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2003081": {
     "en": "Yak Fleece",
     "ja": "",
@@ -20110,12 +21580,33 @@
     "fr": "Peluche gagnante",
     "icon": "/i/053000/053359.png"
   },
+  "2003083": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2003084": {
     "en": "Ceruleum Tank",
     "ja": "",
     "de": "Erdseim-Fass",
     "fr": "Batterie au céruleum",
     "icon": "/i/025000/025946.png"
+  },
+  "2003085": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003086": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2003087": {
     "en": "Magitek Component",
@@ -20761,6 +22252,13 @@
     "fr": "Morceau de viande de suturmurg",
     "icon": "/i/025000/025155.png"
   },
+  "2003179": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2003180": {
     "en": "Special Amra Lassi",
     "ja": "",
@@ -20845,6 +22343,13 @@
     "fr": "Hamsa égaré",
     "icon": "/i/025000/025919.png"
   },
+  "2003192": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2003193": {
     "en": "Fragrant Oil",
     "ja": "",
@@ -20872,6 +22377,20 @@
     "de": "Beutel voll mit Buchweizenkörnern",
     "fr": "Sac de graines de sarrasin",
     "icon": "/i/026000/026110.png"
+  },
+  "2003197": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003198": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2003199": {
     "en": "Pungent Solution",
@@ -21027,6 +22546,13 @@
     "fr": "Épine repousse-démon",
     "icon": "/i/025000/025979.png"
   },
+  "2003221": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2003222": {
     "en": "Large Sack",
     "ja": "",
@@ -21047,6 +22573,13 @@
     "de": "Bhujamga-Kadaver",
     "fr": "Carcasse de bhujanga",
     "icon": "/i/029000/029248.png"
+  },
+  "2003225": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2003226": {
     "en": "Warding Scales",
@@ -21132,6 +22665,20 @@
     "fr": "Chai fumant",
     "icon": "/i/024000/024408.png"
   },
+  "2003238": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003239": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2003240": {
     "en": "Signed Documentation",
     "ja": "",
@@ -21209,6 +22756,20 @@
     "fr": "Œufs de dédalion",
     "icon": "/i/025000/025252.png"
   },
+  "2003251": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003252": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2003253": {
     "en": "Dispelling Concept",
     "ja": "",
@@ -21229,6 +22790,13 @@
     "de": "Kristallkern eines Luminion",
     "fr": "Noyau de luminion",
     "icon": "/i/021000/021263.png"
+  },
+  "2003256": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2003257": {
     "en": "Dragonstar Rougeblossom",
@@ -21293,6 +22861,13 @@
     "fr": "Philtre d'Hypnos",
     "icon": "/i/020000/020645.png"
   },
+  "2003266": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2003267": {
     "en": "Drying Agent",
     "ja": "",
@@ -21349,6 +22924,13 @@
     "fr": "Vérifiniveau portable rempli",
     "icon": "/i/053000/053266.png"
   },
+  "2003275": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2003276": {
     "en": "Leather Coinpurse",
     "ja": "",
@@ -21377,12 +22959,40 @@
     "fr": "Sac de nourriture pour le gros hamsa",
     "icon": "/i/026000/026110.png"
   },
+  "2003280": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2003281": {
     "en": "Matrimonial Band",
     "ja": "",
     "de": "Knotenarmband",
     "fr": "Cordon sacré",
     "icon": "/i/021000/021677.png"
+  },
+  "2003282": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003283": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003284": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2003285": {
     "en": "Letter to the High Crucible",
@@ -21454,6 +23064,20 @@
     "fr": "Clef en or",
     "icon": "/i/025000/025902.png"
   },
+  "2003295": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003296": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2003297": {
     "en": "Nymeia Lily Bulb",
     "ja": "",
@@ -21495,6 +23119,13 @@
     "de": "Archestratos Blume",
     "fr": "Brin d'archestrate",
     "icon": "/i/025000/025580.png"
+  },
+  "2003303": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2003304": {
     "en": "Aetherial Supplement",
@@ -21748,6 +23379,13 @@
     "fr": "Lasso éthéréen",
     "icon": "/i/020000/020905.png"
   },
+  "2003340": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2003341": {
     "en": "Bowl of Fruit",
     "ja": "",
@@ -21768,6 +23406,13 @@
     "de": "Gefesselter Ophion",
     "fr": "Ophion capturé",
     "icon": "/i/022000/022623.png"
+  },
+  "2003344": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2003345": {
     "en": "Crystallized Concepts",
@@ -22013,6 +23658,20 @@
     "de": "Brief",
     "fr": "Lettre",
     "icon": "/i/026000/026181.png"
+  },
+  "2003380": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003381": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   },
   "2003382": {
     "en": "Agavoides Young",
@@ -22315,6 +23974,111 @@
     "fr": "Conducteur spirituel de gentilhomme",
     "icon": "/i/026000/026610.png"
   },
+  "2003425": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003426": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003427": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003428": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003429": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003430": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003431": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003432": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003433": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003434": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003435": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003436": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003437": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003438": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003439": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2003440": {
     "en": "Packed Meal",
     "ja": "",
@@ -22546,6 +24310,13 @@
     "fr": "Cor de l'éternité",
     "icon": "/i/026000/026038.png"
   },
+  "2003473": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
   "2003474": {
     "en": "Turtle Statue",
     "ja": "",
@@ -22566,5 +24337,1636 @@
     "de": "Freizeitklamotten",
     "fr": "Tenue de vacancier",
     "icon": "/i/026000/026113.png"
+  },
+  "2003477": {
+    "en": "River Survey Notes",
+    "ja": "",
+    "de": "Bericht über Vylbrands Gewässer",
+    "fr": "Relevés fluviaux",
+    "icon": "/i/026000/026179.png"
+  },
+  "2003478": {
+    "en": "Fragrant Wildgrass",
+    "ja": "",
+    "de": "Wildblumen",
+    "fr": "Herbes odorantes de Gyr Abania",
+    "icon": "/i/021000/021681.png"
+  },
+  "2003479": {
+    "en": "Alpaca Wool",
+    "ja": "",
+    "de": "Alpakawolle",
+    "fr": "Pelote de laine d'alpaga",
+    "icon": "/i/021000/021655.png"
+  },
+  "2003480": {
+    "en": "Fine Hatchet",
+    "ja": "",
+    "de": "Hochwertiges Beil",
+    "fr": "Hachette",
+    "icon": "/i/038000/038101.png"
+  },
+  "2003481": {
+    "en": "Verdant Mate Leaves",
+    "ja": "",
+    "de": "Saftig grüne Mate-Teeblätter",
+    "fr": "Feuilles de yerba maté",
+    "icon": "/i/025000/025020.png"
+  },
+  "2003482": {
+    "en": "Top-grade Mate Leaves",
+    "ja": "",
+    "de": "Premium-Mate-Teeblätter",
+    "fr": "Feuilles de yerba maté extra",
+    "icon": "/i/025000/025992.png"
+  },
+  "2003483": {
+    "en": "Draftyshard",
+    "ja": "",
+    "de": "Windkristall",
+    "fr": "Cristal de vent",
+    "icon": "/i/020000/020010.png"
+  },
+  "2003484": {
+    "en": "Punutiy Feed",
+    "ja": "",
+    "de": "Punutiy-Futter",
+    "fr": "Appâts à punutiy",
+    "icon": "/i/025000/025979.png"
+  },
+  "2003485": {
+    "en": "Wool Poncho",
+    "ja": "",
+    "de": "Wollponcho",
+    "fr": "Poncho en laine",
+    "icon": "/i/057000/057171.png"
+  },
+  "2003486": {
+    "en": "Three-year Premium Mezcal",
+    "ja": "",
+    "de": "Extrareifer Premium-Mezcal",
+    "fr": "Bouteille de mezcal trois ans d'âge extra",
+    "icon": "/i/022000/022671.png"
+  },
+  "2003487": {
+    "en": "Pairing Stone",
+    "ja": "",
+    "de": "Klauberstein",
+    "fr": "Magnétite de glaneur",
+    "icon": "/i/021000/021222.png"
+  },
+  "2003488": {
+    "en": "Meteorite Shard",
+    "ja": "",
+    "de": "Meteoritensplitter",
+    "fr": "Fragment de météorite",
+    "icon": "/i/020000/020006.png"
+  },
+  "2003489": {
+    "en": "Sun-drenched Dandelion",
+    "ja": "",
+    "de": "Löwenzahn",
+    "fr": "Pissenlits solaires",
+    "icon": "/i/025000/025029.png"
+  },
+  "2003490": {
+    "en": "Great Putrid Morbol Saliva",
+    "ja": "",
+    "de": "Morbolspeichel",
+    "fr": "Salive de grand morbol",
+    "icon": "/i/022000/022603.png"
+  },
+  "2003491": {
+    "en": "Raw Abokixa",
+    "ja": "",
+    "de": "Abokixa-Erz",
+    "fr": "Pierre d'abokixa brute",
+    "icon": "/i/021000/021252.png"
+  },
+  "2003492": {
+    "en": "Glittering Gravel",
+    "ja": "",
+    "de": "Glitzerkiesel",
+    "fr": "Gravier scintillant",
+    "icon": "/i/021000/021458.png"
+  },
+  "2003493": {
+    "en": "Aurulent Quartz",
+    "ja": "",
+    "de": "Goldquarz",
+    "fr": "Quartz doré",
+    "icon": "/i/020000/020018.png"
+  },
+  "2003494": {
+    "en": "Copal",
+    "ja": "",
+    "de": "Kopal",
+    "fr": "Copal",
+    "icon": "/i/022000/022638.png"
+  },
+  "2003495": {
+    "en": "Sturdy Rope",
+    "ja": "",
+    "de": "Fangnetz",
+    "fr": "Corde robuste",
+    "icon": "/i/026000/026103.png"
+  },
+  "2003496": {
+    "en": "Captured Morbol Seedling",
+    "ja": "",
+    "de": "Synthetische Morbol-Knolle",
+    "fr": "Bulbe de morbol capturé",
+    "icon": "/i/059000/059412.png"
+  },
+  "2003497": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003498": {
+    "en": "Blessed Scale",
+    "ja": "",
+    "de": "Geweihte Schuppe",
+    "fr": "Écaille de Bakool Ja Ja",
+    "icon": "/i/025000/025990.png"
+  },
+  "2003499": {
+    "en": "Hartebeest Horn",
+    "ja": "",
+    "de": "Kuhantilopen-Horn",
+    "fr": "Corne de bubale",
+    "icon": "/i/022000/022204.png"
+  },
+  "2003500": {
+    "en": "Kupopo-sized Sack",
+    "ja": "",
+    "de": "Transportbeutel",
+    "fr": "Sac contenant Kupopo",
+    "icon": "/i/026000/026648.png"
+  },
+  "2003501": {
+    "en": "Saltworn Crate",
+    "ja": "",
+    "de": "Fortgetriebene Kiste",
+    "fr": "Cargaison perdue",
+    "icon": "/i/021000/021003.png"
+  },
+  "2003502": {
+    "en": "Ogre Crab Shell",
+    "ja": "",
+    "de": "Ogerkrabben-Panzer",
+    "fr": "Carapace de crabe ogre",
+    "icon": "/i/022000/022261.png"
+  },
+  "2003503": {
+    "en": "Kupopo-sized Sack",
+    "ja": "",
+    "de": "",
+    "fr": "Sac contenant Kupopo",
+    "icon": "/i/026000/026648.png"
+  },
+  "2003504": {
+    "en": "Stolen Engagement Ring",
+    "ja": "",
+    "de": "Verlobungsring endloser Liebe",
+    "fr": "Bague de fiançailles",
+    "icon": "/i/054000/054562.png"
+  },
+  "2003505": {
+    "en": "Hemp Sack",
+    "ja": "",
+    "de": "Kleiner Jutesack",
+    "fr": "Petit sac de chanvre",
+    "icon": "/i/026000/026110.png"
+  },
+  "2003506": {
+    "en": "Leavings-filled Sack",
+    "ja": "",
+    "de": "Jutesack voll Kot",
+    "fr": "Petit sac d'excréments",
+    "icon": "/i/027000/027404.png"
+  },
+  "2003507": {
+    "en": "Foul-smelling Attractant",
+    "ja": "",
+    "de": "Aromasäckchen",
+    "fr": "Sac odoriférant",
+    "icon": "/i/025000/025977.png"
+  },
+  "2003508": {
+    "en": "Clear Fire Crystal",
+    "ja": "",
+    "de": "Makelloser Kristall",
+    "fr": "Cristal très pur",
+    "icon": "/i/020000/020027.png"
+  },
+  "2003509": {
+    "en": "Beginner Dawn Hunt Bills",
+    "ja": "",
+    "de": "Goldene Jagdlizenz ★",
+    "fr": "Contrats de la coopérative (débutant)",
+    "icon": "/i/026000/026664.png"
+  },
+  "2003510": {
+    "en": "Intermediate Dawn Hunt Bills",
+    "ja": "",
+    "de": "Goldene Jagdlizenz ★★",
+    "fr": "Contrats de la coopérative (intermédiaire)",
+    "icon": "/i/026000/026665.png"
+  },
+  "2003511": {
+    "en": "Advanced Dawn Hunt Bills",
+    "ja": "",
+    "de": "Goldene Jagdlizenz ★★★",
+    "fr": "Contrats de la coopérative (avancé)",
+    "icon": "/i/026000/026666.png"
+  },
+  "2003512": {
+    "en": "Elite Dawn Hunt Bills",
+    "ja": "",
+    "de": "Goldene Hochwild-Jagdlizenz",
+    "fr": "Contrat d'élite de la coopérative",
+    "icon": "/i/026000/026667.png"
+  },
+  "2003513": {
+    "en": "Golden Reed",
+    "ja": "",
+    "de": "Goldwirbelschilf",
+    "fr": "Roseau doré",
+    "icon": "/i/025000/025035.png"
+  },
+  "2003514": {
+    "en": "Thick Golden Reed",
+    "ja": "",
+    "de": "Dickes Goldwirbelschilf",
+    "fr": "Gros roseau doré",
+    "icon": "/i/025000/025234.png"
+  },
+  "2003515": {
+    "en": "Brushflower",
+    "ja": "",
+    "de": "Pinselblume",
+    "fr": "Floribrosse",
+    "icon": "/i/025000/025501.png"
+  },
+  "2003516": {
+    "en": "Deepstar Blossom",
+    "ja": "",
+    "de": "Himmelssternblume",
+    "fr": "Cosmos étoilé",
+    "icon": "/i/025000/025587.png"
+  },
+  "2003517": {
+    "en": "Palelight Bloom",
+    "ja": "",
+    "de": "Funkelsternblume",
+    "fr": "Brillefleur",
+    "icon": "/i/025000/025589.png"
+  },
+  "2003518": {
+    "en": "Scarlet Ligaka Leaf",
+    "ja": "",
+    "de": "Blatt des Ligaka-Scharlachgrases",
+    "fr": "Feuille écarlate de Ligaka",
+    "icon": "/i/025000/025537.png"
+  },
+  "2003519": {
+    "en": "Scarlet Ligaka Sprout",
+    "ja": "",
+    "de": "Jungtrieb des Ligaka-Scharlachgrases",
+    "fr": "Jeune pousse de feuille écarlate de Ligaka",
+    "icon": "/i/025000/025552.png"
+  },
+  "2003520": {
+    "en": "Gigantic Water Lily",
+    "ja": "",
+    "de": "Riesenwasserlilie",
+    "fr": "Nénuphar géant",
+    "icon": "/i/025000/025020.png"
+  },
+  "2003521": {
+    "en": "Infested Plant",
+    "ja": "",
+    "de": "Befallenes Blatt",
+    "fr": "Plante infestée d'insectes",
+    "icon": "/i/025000/025015.png"
+  },
+  "2003522": {
+    "en": "Urqolupin Bloom",
+    "ja": "",
+    "de": "Blüte der Urqopacha-Lupine",
+    "fr": "Fleur de lupin d'Urqopacha",
+    "icon": "/i/025000/025002.png"
+  },
+  "2003523": {
+    "en": "Urqolupin Bean",
+    "ja": "",
+    "de": "Hülse der Urqopacha-Lupine",
+    "fr": "Graine de lupin d'Urqopacha",
+    "icon": "/i/025000/025021.png"
+  },
+  "2003524": {
+    "en": "Urqorn",
+    "ja": "",
+    "de": "Urqopacha-Maiskolben",
+    "fr": "Maïs d'Urqopacha",
+    "icon": "/i/025000/025352.png"
+  },
+  "2003525": {
+    "en": "Hardy Seed",
+    "ja": "",
+    "de": "Baumsamen",
+    "fr": "Semences pour la recherche",
+    "icon": "/i/025000/025021.png"
+  },
+  "2003526": {
+    "en": "Huge Hardy Seed",
+    "ja": "",
+    "de": "Zäher Baumsamen",
+    "fr": "Grosses graines pour la recherche",
+    "icon": "/i/025000/025301.png"
+  },
+  "2003527": {
+    "en": "Scalebuds",
+    "ja": "",
+    "de": "Lichtschuppenblätter",
+    "fr": "Feuilles-écailles",
+    "icon": "/i/025000/025026.png"
+  },
+  "2003528": {
+    "en": "Sap of Living Light",
+    "ja": "",
+    "de": "Baumharz",
+    "fr": "Sève d'arbre furoluminescent",
+    "icon": "/i/022000/022675.png"
+  },
+  "2003529": {
+    "en": "Burned Wood",
+    "ja": "",
+    "de": "Xobr'it-Baum",
+    "fr": "Bois de Xobr'it",
+    "icon": "/i/022000/022425.png"
+  },
+  "2003530": {
+    "en": "Carbonized Wood",
+    "ja": "",
+    "de": "Verkohlter Xobr'it-Baum",
+    "fr": "Bois carbonisé de Xobr'it",
+    "icon": "/i/022000/022426.png"
+  },
+  "2003531": {
+    "en": "Soapweed",
+    "ja": "",
+    "de": "Blatt des Seifenkrauts",
+    "fr": "Feuille de saponiflore",
+    "icon": "/i/025000/025026.png"
+  },
+  "2003532": {
+    "en": "Enthusiastic Soapweed",
+    "ja": "",
+    "de": "Langes Blatt des Seifenkrauts",
+    "fr": "Longue feuille de saponiflore",
+    "icon": "/i/025000/025009.png"
+  },
+  "2003533": {
+    "en": "Nopal",
+    "ja": "",
+    "de": "Nopal",
+    "fr": "Raquette de cactus",
+    "icon": "/i/025000/025214.png"
+  },
+  "2003534": {
+    "en": "Earth Horn",
+    "ja": "",
+    "de": "Horn der Erde",
+    "fr": "Terracorne",
+    "icon": "/i/022000/022425.png"
+  },
+  "2003535": {
+    "en": "Thick Earth Horn",
+    "ja": "",
+    "de": "Großes Horn der Erde",
+    "fr": "Terracorne épaisse",
+    "icon": "/i/022000/022426.png"
+  },
+  "2003536": {
+    "en": "Upland Volcanic Tuff",
+    "ja": "",
+    "de": "Hochland-Tuffsteinklumpen",
+    "fr": "Roche volcanique des plateaux",
+    "icon": "/i/021000/021453.png"
+  },
+  "2003537": {
+    "en": "Quality Volcanic Tuff",
+    "ja": "",
+    "de": "Hochwertiger Hochland-Tuffsteinklumpen",
+    "fr": "Roche volcanique de qualité",
+    "icon": "/i/021000/021454.png"
+  },
+  "2003538": {
+    "en": "Chabayuqeq Stone",
+    "ja": "",
+    "de": "Chabayuqeq-Stein",
+    "fr": "Pierre de Chabayuqeq",
+    "icon": "/i/021000/021203.png"
+  },
+  "2003539": {
+    "en": "Igneous Rock",
+    "ja": "",
+    "de": "Eruptivgestein",
+    "fr": "Roche ignée",
+    "icon": "/i/021000/021227.png"
+  },
+  "2003540": {
+    "en": "Quality Igneous Rock",
+    "ja": "",
+    "de": "Hochwertiges Eruptivgestein",
+    "fr": "Roche ignée de qualité",
+    "icon": "/i/021000/021225.png"
+  },
+  "2003541": {
+    "en": "Abandoned Rock",
+    "ja": "",
+    "de": "Abgebrochener Baustein",
+    "fr": "Pierre abandonnée",
+    "icon": "/i/021000/021252.png"
+  },
+  "2003542": {
+    "en": "Abandoned Boulder",
+    "ja": "",
+    "de": "Großer abgebrochener Baustein",
+    "fr": "Grosse pierre abandonnée",
+    "icon": "/i/021000/021251.png"
+  },
+  "2003543": {
+    "en": "Upland Piscatory Fossil",
+    "ja": "",
+    "de": "Hochgebirgsfossil",
+    "fr": "Fossile des plateaux",
+    "icon": "/i/022000/022209.png"
+  },
+  "2003544": {
+    "en": "Naryor Obsidian",
+    "ja": "",
+    "de": "Naryor-Obsidian",
+    "fr": "Obsidienne de Naryor Gorna",
+    "icon": "/i/021000/021452.png"
+  },
+  "2003545": {
+    "en": "Firebright Raw Abokixa",
+    "ja": "",
+    "de": "Rohes Abokixa-Gebrauchserz",
+    "fr": "Pierre d'abokixa brute",
+    "icon": "/i/021000/021469.png"
+  },
+  "2003546": {
+    "en": "Goodbright Raw Abokixa",
+    "ja": "",
+    "de": "Rohes Abokixa-Qualitätserz",
+    "fr": "Pierre d'abokixa brute de qualité",
+    "icon": "/i/021000/021293.png"
+  },
+  "2003547": {
+    "en": "Levee Stone",
+    "ja": "",
+    "de": "Dammstein",
+    "fr": "Pierre pour digue",
+    "icon": "/i/021000/021453.png"
+  },
+  "2003548": {
+    "en": "Smooth Roundstone",
+    "ja": "",
+    "de": "Schlichter Rundstein",
+    "fr": "Pierre ronde simple",
+    "icon": "/i/021000/021260.png"
+  },
+  "2003549": {
+    "en": "Shiny Roundstone",
+    "ja": "",
+    "de": "Schimmernder Rundstein",
+    "fr": "Pierre ronde brillante",
+    "icon": "/i/021000/021274.png"
+  },
+  "2003550": {
+    "en": "Yak T'el Rock",
+    "ja": "",
+    "de": "Yak T'el-Gesteinsprobe",
+    "fr": "Spécimen géologique de Yak T'el",
+    "icon": "/i/021000/021241.png"
+  },
+  "2003551": {
+    "en": "Cenote Crystal",
+    "ja": "",
+    "de": "Cenotenkristall",
+    "fr": "Cristal de cénote",
+    "icon": "/i/021000/021488.png"
+  },
+  "2003552": {
+    "en": "Remnant of Violence",
+    "ja": "",
+    "de": "Alter Xob'rit-Waffensplitter",
+    "fr": "Résidu d'arme",
+    "icon": "/i/021000/021251.png"
+  },
+  "2003553": {
+    "en": "Remnant of Magic",
+    "ja": "",
+    "de": "Magischer Xob'rit-Waffensplitter",
+    "fr": "Résidu magique",
+    "icon": "/i/021000/021487.png"
+  },
+  "2003554": {
+    "en": "Shaaloani Rock",
+    "ja": "",
+    "de": "Shaaloani-Gesteinsprobe",
+    "fr": "Spécimen géologique de Shaaloani",
+    "icon": "/i/021000/021234.png"
+  },
+  "2003555": {
+    "en": "Plains Piscatory Fossil",
+    "ja": "",
+    "de": "Shaaloani-Fossil",
+    "fr": "Fossile des plaines",
+    "icon": "/i/022000/022209.png"
+  },
+  "2003556": {
+    "en": "Burnslate",
+    "ja": "",
+    "de": "Shaaloani-Seimkiesel",
+    "fr": "Pyroplaque des plaines",
+    "icon": "/i/021000/021206.png"
+  },
+  "2003557": {
+    "en": "Shinestone",
+    "ja": "",
+    "de": "Toari-Pyroxen",
+    "fr": "Pyroxène de Toari",
+    "icon": "/i/021000/021285.png"
+  },
+  "2003558": {
+    "en": "Clear Shinestone",
+    "ja": "",
+    "de": "Durchsichtiger Toari-Pyroxen",
+    "fr": "Pyroxène clair de Toari",
+    "icon": "/i/021000/021266.png"
+  },
+  "2003559": {
+    "en": "Ogre Crab Bait",
+    "ja": "",
+    "de": "Ogerkrabben-Köder",
+    "fr": "Sac de plancton",
+    "icon": "/i/025000/025978.png"
+  },
+  "2003560": {
+    "en": "Full-strength Energy Tonic",
+    "ja": "",
+    "de": "Extra-wirksamer Energydrink",
+    "fr": "Boisson énergétique corsée",
+    "icon": "/i/024000/024421.png"
+  },
+  "2003561": {
+    "en": "Beginner's Energy Tonic",
+    "ja": "",
+    "de": "Energydrink für Einsteiger",
+    "fr": "Boisson énergétique légère",
+    "icon": "/i/024000/024420.png"
+  },
+  "2003562": {
+    "en": "Loboskin Treasure Map",
+    "ja": "",
+    "de": "Schakalleder-Schatzkarte",
+    "fr": "Carte au trésor en peau de loup argenté",
+    "icon": "/i/026000/026151.png"
+  },
+  "2003563": {
+    "en": "Br'aaxskin Treasure Map",
+    "ja": "",
+    "de": "Br'aaxleder-Schatzkarte",
+    "fr": "Carte au trésor en peau de br'aax",
+    "icon": "/i/026000/026151.png"
+  },
+  "2003564": {
+    "en": "Enigmatic Thief's Map",
+    "ja": "",
+    "de": "Äthergramm-Karte VII",
+    "fr": "Carte du portail magique",
+    "icon": "/i/026000/026151.png"
+  },
+  "2003565": {
+    "en": "Taming Saddle",
+    "ja": "",
+    "de": "Aromatisierter Sattel",
+    "fr": "Selle odorante pelupelu",
+    "icon": "/i/026000/026661.png"
+  },
+  "2003566": {
+    "en": "Old Coin",
+    "ja": "",
+    "de": "Alte Münze",
+    "fr": "Pièce ancienne",
+    "icon": "/i/026000/026573.png"
+  },
+  "2003567": {
+    "en": "The Medical Applications of Electrical Energy",
+    "ja": "",
+    "de": "Exposé über blitzelementare Behandlungsmethoden",
+    "fr": "Machines médicales et énergie de foudre",
+    "icon": "/i/026000/026158.png"
+  },
+  "2003568": {
+    "en": "A History of Alexandrian Medicine",
+    "ja": "",
+    "de": "Exposé über Alexandrias medizinische Geschichte",
+    "fr": "Histoire de la médecine à Alexandrie",
+    "icon": "/i/026000/026156.png"
+  },
+  "2003569": {
+    "en": "Aetheric Imbalance and its Symptoms",
+    "ja": "",
+    "de": "Exposé über elementare Einseitigkeit",
+    "fr": "Recueil des symptômes du déséquilibre élémentaire",
+    "icon": "/i/026000/026159.png"
+  },
+  "2003570": {
+    "en": "Hidden Clue",
+    "ja": "",
+    "de": "Versteckte Notiz 1",
+    "fr": "Note cachée 1",
+    "icon": "/i/026000/026151.png"
+  },
+  "2003571": {
+    "en": "Hidden Clue",
+    "ja": "",
+    "de": "Versteckte Notiz 2",
+    "fr": "Note cachée 2",
+    "icon": "/i/026000/026151.png"
+  },
+  "2003572": {
+    "en": "Hidden Clue",
+    "ja": "",
+    "de": "Versteckte Notiz 3",
+    "fr": "Note cachée 3",
+    "icon": "/i/026000/026151.png"
+  },
+  "2003573": {
+    "en": "Terminal Blueprints",
+    "ja": "",
+    "de": "Wichtiger Plan",
+    "fr": "Plan précieux",
+    "icon": "/i/026000/026151.png"
+  },
+  "2003574": {
+    "en": "Banana Leaves",
+    "ja": "",
+    "de": "Rosenblätter",
+    "fr": "Feuille de bananier",
+    "icon": "/i/027000/027454.png"
+  },
+  "2003575": {
+    "en": "Nepheletta Fronds",
+    "ja": "",
+    "de": "Sandmännchen-Blätter",
+    "fr": "Feuille de néphélé",
+    "icon": "/i/027000/027456.png"
+  },
+  "2003576": {
+    "en": "Irenaris Leaves",
+    "ja": "",
+    "de": "Esmeralda-Blätter",
+    "fr": "Feuille d'eiréné",
+    "icon": "/i/027000/027459.png"
+  },
+  "2003577": {
+    "en": "Woolback Loin",
+    "ja": "",
+    "de": "Wollrücken-Fleisch",
+    "fr": "Paleron de jeune dos-laineux",
+    "icon": "/i/025000/025155.png"
+  },
+  "2003578": {
+    "en": "Processed Electrope",
+    "ja": "",
+    "de": "Veredeltes Elektrob",
+    "fr": "Électrope gravé",
+    "icon": "/i/026000/026660.png"
+  },
+  "2003579": {
+    "en": "Energy Tonic Voucher",
+    "ja": "",
+    "de": "Getränke-Wertmarke",
+    "fr": "Coupon pour boisson énergétique",
+    "icon": "/i/026000/026173.png"
+  },
+  "2003580": {
+    "en": "Well Water",
+    "ja": "",
+    "de": "Kühles Brunnenwasser",
+    "fr": "Eau fraîche",
+    "icon": "/i/022000/022614.png"
+  },
+  "2003581": {
+    "en": "Curious Nopalitender Powder",
+    "ja": "",
+    "de": "Gelber Puder",
+    "fr": "Poudre jaune",
+    "icon": "/i/021000/021006.png"
+  },
+  "2003582": {
+    "en": "Succulent-looking Tuna",
+    "ja": "",
+    "de": "Feigenkaktor-Tuna",
+    "fr": "Figue de pampa de barbarie fructifère",
+    "icon": "/i/025000/025993.png"
+  },
+  "2003583": {
+    "en": "Rroneek Hay",
+    "ja": "",
+    "de": "Heu für das Rroneek",
+    "fr": "Foin pour rroneek",
+    "icon": "/i/021000/021653.png"
+  },
+  "2003584": {
+    "en": "Rroneek Corn",
+    "ja": "",
+    "de": "Mais für das Rroneek",
+    "fr": "Maïs denté pour rroneek",
+    "icon": "/i/025000/025352.png"
+  },
+  "2003585": {
+    "en": "Pemmican",
+    "ja": "",
+    "de": "Pemmikan",
+    "fr": "Nourriture séchée traditionnelle",
+    "icon": "/i/026000/026110.png"
+  },
+  "2003586": {
+    "en": "Fish Oil Candle",
+    "ja": "",
+    "de": "Fischölkerze",
+    "fr": "Bougie à l'huile de poisson",
+    "icon": "/i/026000/026102.png"
+  },
+  "2003587": {
+    "en": "Flying Popoto Repellent",
+    "ja": "",
+    "de": "Flugtoffel-Abwehrmittel",
+    "fr": "Répulsif anti popotos volantes",
+    "icon": "/i/025000/025453.png"
+  },
+  "2003588": {
+    "en": "Engraved Pickaxe",
+    "ja": "",
+    "de": "Gravierte Spitzhacke",
+    "fr": "Pioche usagée",
+    "icon": "/i/038000/038003.png"
+  },
+  "2003589": {
+    "en": "Elder Aspis Remains",
+    "ja": "",
+    "de": "Kadaver einer alten Aspisviper",
+    "fr": "Carcasse d'aspic ancestral",
+    "icon": "/i/026000/026110.png"
+  },
+  "2003590": {
+    "en": "Dawn Ring",
+    "ja": "",
+    "de": "Morgenring",
+    "fr": "Bague de l'aurore",
+    "icon": "/i/054000/054413.png"
+  },
+  "2003591": {
+    "en": "Dusk Ring",
+    "ja": "",
+    "de": "Nachtring",
+    "fr": "Bague du crépuscule",
+    "icon": "/i/054000/054429.png"
+  },
+  "2003592": {
+    "en": "Polished Horn",
+    "ja": "",
+    "de": "Poliertes Hornornament",
+    "fr": "Corne décorée",
+    "icon": "/i/022000/022206.png"
+  },
+  "2003593": {
+    "en": "Fresh Vegetables",
+    "ja": "",
+    "de": "Frisches Gemüse",
+    "fr": "Légumes frais",
+    "icon": "/i/025000/025919.png"
+  },
+  "2003594": {
+    "en": "Extra-strength Debugifier",
+    "ja": "",
+    "de": "Schädlingsbekämpfer",
+    "fr": "Répulsif à insectes",
+    "icon": "/i/020000/020661.png"
+  },
+  "2003595": {
+    "en": "Veggie Sack",
+    "ja": "",
+    "de": "Gemüsebeutel",
+    "fr": "Sac de légumes",
+    "icon": "/i/025000/025991.png"
+  },
+  "2003596": {
+    "en": "Silver Necklace",
+    "ja": "",
+    "de": "Silberanhänger",
+    "fr": "Médaillon en argent",
+    "icon": "/i/055000/055012.png"
+  },
+  "2003597": {
+    "en": "Freshly Cut Tuna",
+    "ja": "",
+    "de": "Frisches Tuna",
+    "fr": "Figue de barbarie fraîchement cueillie",
+    "icon": "/i/025000/025977.png"
+  },
+  "2003598": {
+    "en": "Freshly Cut Nopales",
+    "ja": "",
+    "de": "Frisches Nopal",
+    "fr": "Raquette de cactus fraîchement cueillie",
+    "icon": "/i/025000/025214.png"
+  },
+  "2003599": {
+    "en": "Rare Plant Seeds",
+    "ja": "",
+    "de": "Seltener Pflanzensamen",
+    "fr": "Graine de plante rare",
+    "icon": "/i/025000/025919.png"
+  },
+  "2003600": {
+    "en": "Calmed Cactuar",
+    "ja": "",
+    "de": "Beruhigter Kaktor",
+    "fr": "Pampa calmé",
+    "icon": "/i/059000/059429.png"
+  },
+  "2003601": {
+    "en": "Thick Sack",
+    "ja": "",
+    "de": "Dicker Stoffbeutel",
+    "fr": "Sac en toile épais",
+    "icon": "/i/021000/021610.png"
+  },
+  "2003602": {
+    "en": "Notocactuar-filled Sack",
+    "ja": "",
+    "de": "Stoffbeutel mit Noto-Kaktor",
+    "fr": "Sac contenant un notocactuar",
+    "icon": "/i/026000/026110.png"
+  },
+  "2003603": {
+    "en": "Missing Pouch",
+    "ja": "",
+    "de": "Puppe im Stoffbeutel",
+    "fr": "Sac contenant une poupée",
+    "icon": "/i/025000/025977.png"
+  },
+  "2003604": {
+    "en": "Fruity Blend",
+    "ja": "",
+    "de": "Mate-Tee mit Fruchtaroma",
+    "fr": "Thé aux agrumes",
+    "icon": "/i/024000/024412.png"
+  },
+  "2003605": {
+    "en": "Rich Blend",
+    "ja": "",
+    "de": "Mate-Tee mit süßlichem Duft",
+    "fr": "Thé sucré",
+    "icon": "/i/024000/024412.png"
+  },
+  "2003606": {
+    "en": "Earthy Blend",
+    "ja": "",
+    "de": "Mate-Tee mit erdigem Duft",
+    "fr": "Thé amer",
+    "icon": "/i/024000/024412.png"
+  },
+  "2003607": {
+    "en": "Stolen Coffee Beans",
+    "ja": "",
+    "de": "Gestohlene Kaffeebohnen",
+    "fr": "Grains de café volés",
+    "icon": "/i/026000/026110.png"
+  },
+  "2003608": {
+    "en": "Smoke Bomb Repellent",
+    "ja": "",
+    "de": "Monsterschreck-Böller",
+    "fr": "Bombe fumigène anti-monstre",
+    "icon": "/i/026000/026015.png"
+  },
+  "2003609": {
+    "en": "Soiled Coffee Beans",
+    "ja": "",
+    "de": "Dreckige Kaffeebohnen",
+    "fr": "Grains de café pleins de terre",
+    "icon": "/i/025000/025978.png"
+  },
+  "2003610": {
+    "en": "Enlarged Bulb",
+    "ja": "",
+    "de": "Riesige Knolle",
+    "fr": "Bulbe géant",
+    "icon": "/i/026000/026110.png"
+  },
+  "2003611": {
+    "en": "Larh Tortoh Violet",
+    "ja": "",
+    "de": "Veilchen aus Larh Tortoh",
+    "fr": "Violette de Larh Tortoh",
+    "icon": "/i/025000/025685.png"
+  },
+  "2003612": {
+    "en": "Wardingwater",
+    "ja": "",
+    "de": "Weihwasser",
+    "fr": "Eau enchantée",
+    "icon": "/i/020000/020662.png"
+  },
+  "2003613": {
+    "en": "Jar of Pigment",
+    "ja": "",
+    "de": "Krug mit Farbpigmenten",
+    "fr": "Pot de pigments colorés",
+    "icon": "/i/027000/027605.png"
+  },
+  "2003614": {
+    "en": "Alpine Seeds",
+    "ja": "",
+    "de": "Alpine Samen",
+    "fr": "Graines des hautes cimes",
+    "icon": "/i/025000/025919.png"
+  },
+  "2003615": {
+    "en": "Urqobombyx Larva",
+    "ja": "",
+    "de": "Nest voller Urqobombyx-Larven",
+    "fr": "Larve de ver à soie d'Urqopacha",
+    "icon": "/i/027000/027036.png"
+  },
+  "2003616": {
+    "en": "Mountain Herbmoss",
+    "ja": "",
+    "de": "Gebirgsheilmoos",
+    "fr": "Lichen des montagnes",
+    "icon": "/i/022000/022801.png"
+  },
+  "2003617": {
+    "en": "Tulidile Meat",
+    "ja": "",
+    "de": "Turaldil-Fleisch",
+    "fr": "Viande de turaldile",
+    "icon": "/i/025000/025157.png"
+  },
+  "2003618": {
+    "en": "Enchanted Saltwater",
+    "ja": "",
+    "de": "Verzaubertes Salzwasser",
+    "fr": "Eau salée rituelle",
+    "icon": "/i/022000/022636.png"
+  },
+  "2003619": {
+    "en": "Harvested Sanctifruit",
+    "ja": "",
+    "de": "Heilige Frucht",
+    "fr": "Fruits sacrés",
+    "icon": "/i/025000/025991.png"
+  },
+  "2003620": {
+    "en": "Vawtsaral Br'aax Carcass",
+    "ja": "",
+    "de": "Kadaver eines Vawtsaral Br'aax",
+    "fr": "Carcasse de vawtsaral br'aax",
+    "icon": "/i/023000/023001.png"
+  },
+  "2003621": {
+    "en": "Ty'aitya Bone",
+    "ja": "",
+    "de": "Ty'aitya-Knochen",
+    "fr": "Os de ty'aitya",
+    "icon": "/i/022000/022202.png"
+  },
+  "2003622": {
+    "en": "Ty'aitya Pelt",
+    "ja": "",
+    "de": "Ty'aitya-Haut",
+    "fr": "Peau de ty'aitya",
+    "icon": "/i/021000/021815.png"
+  },
+  "2003623": {
+    "en": "Ty'aitya Meat",
+    "ja": "",
+    "de": "Ty'aitya-Fleisch",
+    "fr": "Viande de ty'aitya",
+    "icon": "/i/025000/025155.png"
+  },
+  "2003624": {
+    "en": "Handmade Smoke Bomb",
+    "ja": "",
+    "de": "Selbstgemachte Rauchbombe",
+    "fr": "Bombe fumigène artisanale",
+    "icon": "/i/026000/026015.png"
+  },
+  "2003625": {
+    "en": "Handmade Stink Bomb",
+    "ja": "",
+    "de": "Selbstgemachte Stinkbombe",
+    "fr": "Bombe puante artisanale",
+    "icon": "/i/026000/026015.png"
+  },
+  "2003626": {
+    "en": "Repellent Resin",
+    "ja": "",
+    "de": "Wasserabweisendes Harz",
+    "fr": "Résine hydrofuge",
+    "icon": "/i/020000/020661.png"
+  },
+  "2003627": {
+    "en": "Marbled Shell",
+    "ja": "",
+    "de": "Marmorkäfer-Panzer",
+    "fr": "Carapace robuste",
+    "icon": "/i/022000/022257.png"
+  },
+  "2003628": {
+    "en": "Lush Reed Leaves",
+    "ja": "",
+    "de": "Frische Schilfblätter",
+    "fr": "Feuille de roseau",
+    "icon": "/i/025000/025009.png"
+  },
+  "2003629": {
+    "en": "Votive Fruit",
+    "ja": "",
+    "de": "Heilige Frucht",
+    "fr": "Fruit votif",
+    "icon": "/i/025000/025991.png"
+  },
+  "2003630": {
+    "en": "Blessed Fruit",
+    "ja": "",
+    "de": "Gesegnete Früchte",
+    "fr": "Ancien fruit votif",
+    "icon": "/i/025000/025993.png"
+  },
+  "2003631": {
+    "en": "Freshly Cut Reeds",
+    "ja": "",
+    "de": "Frisch geschnittenes Schilf",
+    "fr": "Fagots de roseaux",
+    "icon": "/i/025000/025035.png"
+  },
+  "2003632": {
+    "en": "Piping Hot Reed Dumpling",
+    "ja": "",
+    "de": "Schilfknödel",
+    "fr": "Boulette au roseau",
+    "icon": "/i/027000/027011.png"
+  },
+  "2003633": {
+    "en": "Goodpot Craftclay",
+    "ja": "",
+    "de": "Töpferlehm",
+    "fr": "Argile",
+    "icon": "/i/022000/022634.png"
+  },
+  "2003634": {
+    "en": "Fineflux Feldspar",
+    "ja": "",
+    "de": "Feldspat",
+    "fr": "Feldspaths",
+    "icon": "/i/052000/052546.png"
+  },
+  "2003635": {
+    "en": "Moblin Fishstick",
+    "ja": "",
+    "de": "Angelding",
+    "fr": "Canne à pêche de Mobelin",
+    "icon": "/i/038000/038201.png"
+  },
+  "2003636": {
+    "en": "Sparkly Stone",
+    "ja": "",
+    "de": "Glitzerstein",
+    "fr": "Petite pierre brillante",
+    "icon": "/i/021000/021472.png"
+  },
+  "2003637": {
+    "en": "Poxyleaf Waterweed",
+    "ja": "",
+    "de": "Bittergras",
+    "fr": "Plante aquatique à l'air toxique",
+    "icon": "/i/025000/025225.png"
+  },
+  "2003638": {
+    "en": "Fancyleaf Waterweed",
+    "ja": "",
+    "de": "Prächtiggras",
+    "fr": "Plante aquatique aux couleurs vives",
+    "icon": "/i/025000/025217.png"
+  },
+  "2003639": {
+    "en": "Gaudyleaf Waterweed",
+    "ja": "",
+    "de": "Grellgras",
+    "fr": "Plante aquatique à l'apparence répugnante",
+    "icon": "/i/025000/025039.png"
+  },
+  "2003640": {
+    "en": "Pungent Pellets",
+    "ja": "",
+    "de": "Müffelpulver",
+    "fr": "Poudre odoriférante",
+    "icon": "/i/021000/021006.png"
+  },
+  "2003641": {
+    "en": "Avant-garde Painting",
+    "ja": "",
+    "de": "Avantgardistisches Gemälde",
+    "fr": "Tableau de Shonihe",
+    "icon": "/i/025000/025999.png"
+  },
+  "2003642": {
+    "en": "Bird of Ligaka Thigh",
+    "ja": "",
+    "de": "Keule eines Ligaka-Vogels",
+    "fr": "Cuisse d'oiseau de Ligaka",
+    "icon": "/i/025000/025157.png"
+  },
+  "2003643": {
+    "en": "Widowmaker Belly",
+    "ja": "",
+    "de": "Witwenmacher-Bauchfleisch",
+    "fr": "Viande abdominale d'endeuilleur",
+    "icon": "/i/025000/025155.png"
+  },
+  "2003644": {
+    "en": "Lost Belongings",
+    "ja": "",
+    "de": "Verlorene Habseligkeit",
+    "fr": "Paquet perdu",
+    "icon": "/i/025000/025919.png"
+  },
+  "2003645": {
+    "en": "Memory Chip",
+    "ja": "",
+    "de": "Wacheinheits-Speicherkarte",
+    "fr": "Carte mémoire de sentinelle",
+    "icon": "/i/020000/020001.png"
+  },
+  "2003646": {
+    "en": "Scalebuds",
+    "ja": "",
+    "de": "Lichtschuppenblätter",
+    "fr": "Feuilles-écailles",
+    "icon": "/i/025000/025978.png"
+  },
+  "2003647": {
+    "en": "Ty'aitya Carcass",
+    "ja": "",
+    "de": "Erlegter Ty'aitya",
+    "fr": "Carcasse de ty'aitya",
+    "icon": "/i/023000/023001.png"
+  },
+  "2003648": {
+    "en": "Ty'aitya Carcass",
+    "ja": "",
+    "de": "Erlegter Ty'aitya",
+    "fr": "Carcasse de ty'aitya",
+    "icon": "/i/023000/023001.png"
+  },
+  "2003649": {
+    "en": "Crafting Materials",
+    "ja": "",
+    "de": "Handwerksmaterial",
+    "fr": "Matériau d'artisanat",
+    "icon": "/i/025000/025919.png"
+  },
+  "2003650": {
+    "en": "Potsworn Materials",
+    "ja": "",
+    "de": "Topfwerker-Material",
+    "fr": "Matériau pour mains-du-pot",
+    "icon": "/i/025000/025919.png"
+  },
+  "2003651": {
+    "en": "Metal Dirigible Parts",
+    "ja": "",
+    "de": "Ballonbauteil",
+    "fr": "Pièce de ballon en métal",
+    "icon": "/i/026000/026108.png"
+  },
+  "2003652": {
+    "en": "Landscape from High Ground",
+    "ja": "",
+    "de": "Bild „Landschaft von der Anhöhe“",
+    "fr": "Paysage peint des hauteurs",
+    "icon": "/i/025000/025999.png"
+  },
+  "2003653": {
+    "en": "Drum Inspection Kit",
+    "ja": "",
+    "de": "Trommel-Reparaturset ",
+    "fr": "Kit de réparation de tambour",
+    "icon": "/i/025000/025990.png"
+  },
+  "2003654": {
+    "en": "Variegated Vegetable Scraps",
+    "ja": "",
+    "de": "Gemüsereste",
+    "fr": "Sac de pelures colorées",
+    "icon": "/i/027000/027501.png"
+  },
+  "2003655": {
+    "en": "Worn Envelope",
+    "ja": "",
+    "de": "Verschlissener Umschlag",
+    "fr": "Enveloppe jaunie",
+    "icon": "/i/026000/026172.png"
+  },
+  "2003656": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003657": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003658": {
+    "en": "Green Imitation Ring",
+    "ja": "",
+    "de": "Grüner Imitationsring",
+    "fr": "Bague en verre",
+    "icon": "/i/054000/054417.png"
+  },
+  "2003659": {
+    "en": "Scattered Supply Crate",
+    "ja": "",
+    "de": "Verstreute Frachtkiste",
+    "fr": "Caisse de marchandises éparpillée",
+    "icon": "/i/026000/026108.png"
+  },
+  "2003660": {
+    "en": "Letter to Zeebil Ja",
+    "ja": "",
+    "de": "Brief an Zeebil Ja",
+    "fr": "Lettre pour Zeebil Ja",
+    "icon": "/i/026000/026171.png"
+  },
+  "2003661": {
+    "en": "Package for Uapyota",
+    "ja": "",
+    "de": "Paket mit Reinigungsprodukten",
+    "fr": "Paquet de purificateurs",
+    "icon": "/i/023000/023001.png"
+  },
+  "2003662": {
+    "en": "Azure Fragment",
+    "ja": "",
+    "de": "Blaue Himmelsblüte",
+    "fr": "Cristal bleu ciel",
+    "icon": "/i/020000/020048.png"
+  },
+  "2003663": {
+    "en": "Jayunja Butterfly",
+    "ja": "",
+    "de": "Jayunja-Schmetterling",
+    "fr": "Papillon de Jayunja",
+    "icon": "/i/059000/059579.png"
+  },
+  "2003664": {
+    "en": "Hoobigo Leaf",
+    "ja": "",
+    "de": "Büschel Hoobigo-Gras",
+    "fr": "Herbe des Hoobigo",
+    "icon": "/i/025000/025524.png"
+  },
+  "2003665": {
+    "en": "Boonewa Bramble",
+    "ja": "",
+    "de": "Büschel Boonewa-Gras",
+    "fr": "Herbe des Boonewa",
+    "icon": "/i/025000/025520.png"
+  },
+  "2003666": {
+    "en": "Jade Ring",
+    "ja": "",
+    "de": "Jadering",
+    "fr": "Bague de jade",
+    "icon": "/i/054000/054631.png"
+  },
+  "2003667": {
+    "en": "Kiishel Ja's Hammer",
+    "ja": "",
+    "de": "Kiishel Jas Hammer",
+    "fr": "Marteau de récolte",
+    "icon": "/i/038000/038051.png"
+  },
+  "2003668": {
+    "en": "Azure Crystal",
+    "ja": "",
+    "de": "Blaues Kristallstück",
+    "fr": "Morceau de cristal poli",
+    "icon": "/i/020000/020026.png"
+  },
+  "2003669": {
+    "en": "Najool Sack",
+    "ja": "",
+    "de": "Najool-Sack",
+    "fr": "Grand sac de toile",
+    "icon": "/i/021000/021610.png"
+  },
+  "2003670": {
+    "en": "Squirming Najool Sack",
+    "ja": "",
+    "de": "Gefüllter Najool-Sack",
+    "fr": "Sac contenant une amanite",
+    "icon": "/i/025000/025919.png"
+  },
+  "2003671": {
+    "en": "Cloud Dill",
+    "ja": "",
+    "de": "Yyasulani-Heilkraut",
+    "fr": "Herbes médicinales de la Yyasulani",
+    "icon": "/i/025000/025034.png"
+  },
+  "2003672": {
+    "en": "Alexandrian Salvage",
+    "ja": "",
+    "de": "Altes Baumaterial",
+    "fr": "Matériau de la Rive noyée",
+    "icon": "/i/022000/022453.png"
+  },
+  "2003673": {
+    "en": "Sunbeard Sideburn",
+    "ja": "",
+    "de": "Sonnenbart-Backenhaar",
+    "fr": "Laine de luminobarbe",
+    "icon": "/i/025000/025977.png"
+  },
+  "2003674": {
+    "en": "Drop of Blood of the Land",
+    "ja": "",
+    "de": "Blut des Bodens",
+    "fr": "Cristal spirituel",
+    "icon": "/i/025000/025977.png"
+  },
+  "2003675": {
+    "en": "Tegu Skin",
+    "ja": "",
+    "de": "Tegu-Haut",
+    "fr": "Peau de tegu",
+    "icon": "/i/021000/021803.png"
+  },
+  "2003676": {
+    "en": "Runaway Cat",
+    "ja": "",
+    "de": "Entflohener Kater",
+    "fr": "Chat perdu",
+    "icon": "/i/059000/059514.png"
+  },
+  "2003677": {
+    "en": "Ik'iit Ear",
+    "ja": "",
+    "de": "Ik'iit-Ohr",
+    "fr": "Fongus mystique de Yak T'el",
+    "icon": "/i/025000/025405.png"
+  },
+  "2003678": {
+    "en": "Kozanua Bark",
+    "ja": "",
+    "de": "Kozanua-Baumrinde",
+    "fr": "Écorce de Kozanua",
+    "icon": "/i/022000/022418.png"
+  },
+  "2003679": {
+    "en": "Naryor Obsidian",
+    "ja": "",
+    "de": "Naryor-Obsidian",
+    "fr": "Éclat d'obsidienne de Naryor Gorna",
+    "icon": "/i/021000/021452.png"
+  },
+  "2003680": {
+    "en": "Watchtower Repair Supplies",
+    "ja": "",
+    "de": "Werkzeug",
+    "fr": "Trousse à outils",
+    "icon": "/i/023000/023001.png"
+  },
+  "2003681": {
+    "en": "Handcrafted Equipment",
+    "ja": "",
+    "de": "Xbr'aal-Musterrüstung",
+    "fr": "Modèle d'équipement xbr'aal",
+    "icon": "/i/021000/021003.png"
+  },
+  "2003682": {
+    "en": "Xbr'aal Fabric",
+    "ja": "",
+    "de": "Iq Br'aax-Musterstoff",
+    "fr": "Échantillon d'étoffe d'Iq Br'aax",
+    "icon": "/i/021000/021680.png"
+  },
+  "2003683": {
+    "en": "Insect Repellent",
+    "ja": "",
+    "de": "Spezial-Insektenmittel",
+    "fr": "Répulsif spécial",
+    "icon": "/i/020000/020705.png"
+  },
+  "2003684": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003685": {
+    "en": "Napikwe's Notebook",
+    "ja": "",
+    "de": "Napikwes Notizbuch",
+    "fr": "Carnet de Napikwe",
+    "icon": "/i/026000/026167.png"
+  },
+  "2003686": {
+    "en": "Warding Stone",
+    "ja": "",
+    "de": "Kristallisiertes Fossil",
+    "fr": "Fossile cristallisé",
+    "icon": "/i/021000/021477.png"
+  },
+  "2003687": {
+    "en": "Jewelry Maker's Toolkit",
+    "ja": "",
+    "de": "Werkzeugkasten",
+    "fr": "Outils d'artisanat de rechange",
+    "icon": "/i/026000/026108.png"
+  },
+  "2003688": {
+    "en": "Waterlogged Coinpurse",
+    "ja": "",
+    "de": "",
+    "fr": "Petite bourse abîmée",
+    "icon": "/i/025000/025977.png"
+  },
+  "2003689": {
+    "en": "Consignment of Supplies",
+    "ja": "",
+    "de": "Arbeitsmaterial",
+    "fr": "Colis de stage d'orientation",
+    "icon": "/i/026000/026113.png"
+  },
+  "2003690": {
+    "en": "Engraved Metal Tag",
+    "ja": "",
+    "de": "Gravierte Plakette",
+    "fr": "Plaque de métal gravée",
+    "icon": "/i/020000/020963.png"
+  },
+  "2003691": {
+    "en": "Luxury Liquor",
+    "ja": "",
+    "de": "Teurer Schnaps",
+    "fr": "Bouteille de luxe",
+    "icon": "/i/026000/026550.png"
+  },
+  "2003692": {
+    "en": "Message",
+    "ja": "",
+    "de": "Kleine Grußkarte",
+    "fr": "Carte de vœux",
+    "icon": "/i/025000/025918.png"
+  },
+  "2003693": {
+    "en": "Note Concerning Lack of Employment",
+    "ja": "",
+    "de": "Notiz „Arbeitsplatz“",
+    "fr": "Note sur \"Perte d'emploi\"",
+    "icon": "/i/026000/026572.png"
+  },
+  "2003694": {
+    "en": "Note Concerning Soul Reserves",
+    "ja": "",
+    "de": "Notiz „Seelenvorrat“",
+    "fr": "Note sur \"Perte d'âmes\"",
+    "icon": "/i/026000/026572.png"
+  },
+  "2003695": {
+    "en": "Note Concerning Memories",
+    "ja": "",
+    "de": "Notiz „Erinnerungen“",
+    "fr": "Note sur \"Perte de mémoire\"",
+    "icon": "/i/026000/026572.png"
+  },
+  "2003696": {
+    "en": "Sack of Coin",
+    "ja": "",
+    "de": "Münzbeutel",
+    "fr": "Bourse remplie de pièces",
+    "icon": "/i/025000/025991.png"
+  },
+  "2003697": {
+    "en": "Alexandrian Wine",
+    "ja": "",
+    "de": "Alexandria-Wein",
+    "fr": "Vin alexandrin",
+    "icon": "/i/025000/025936.png"
+  },
+  "2003698": {
+    "en": "Parts Money",
+    "ja": "",
+    "de": "Geldbeutel für Bauteile",
+    "fr": "Bourse d'argent",
+    "icon": "/i/025000/025991.png"
+  },
+  "2003699": {
+    "en": "Sentry Parts",
+    "ja": "",
+    "de": "Maschinensoldaten-Bauteile",
+    "fr": "Pièce d'alimentation pour sentinelle mécanique",
+    "icon": "/i/021000/021003.png"
+  },
+  "2003700": {
+    "en": "Heirloom Ring",
+    "ja": "",
+    "de": "Familienring",
+    "fr": "Bague familiale",
+    "icon": "/i/054000/054429.png"
+  },
+  "2003701": {
+    "en": "True Vue Refuse Sack",
+    "ja": "",
+    "de": "Wahrlee-Müllbeutel",
+    "fr": "Sac de déchets de Vraie-vision",
+    "icon": "/i/026000/026110.png"
+  },
+  "2003702": {
+    "en": "Mysterious Liquid",
+    "ja": "",
+    "de": "Mysteriöse Tinktur",
+    "fr": "Décoction mystérieuse",
+    "icon": "/i/020000/020625.png"
+  },
+  "2003703": {
+    "en": "Leather Sack of Coin",
+    "ja": "",
+    "de": "Gefüllter Lederbeutel",
+    "fr": "Bourse pleine de gils",
+    "icon": "/i/025000/025919.png"
+  },
+  "2003704": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003705": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003706": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003707": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003708": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2003709": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   }
 }

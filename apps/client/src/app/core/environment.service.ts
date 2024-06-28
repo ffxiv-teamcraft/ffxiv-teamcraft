@@ -23,22 +23,21 @@ export class EnvironmentService {
   }
 
   public get maxLevel(): number {
-    if (this.gameVersion <= 7) {
+    if (this.gameVersion < 7) {
       return 90;
     }
     return 100;
   }
 
   public get maxIlvl(): number {
-    if (this.gameVersion <= 7) {
+    if (this.gameVersion < 7) {
       return 665;
     }
-    // TODO 7.0
     return 730;
   }
 
   public get maxSubmarineRank() : number {
-    if (this.gameVersion <= 7) {
+    if (this.gameVersion < 7) {
       return 115;
     }
     return 120;

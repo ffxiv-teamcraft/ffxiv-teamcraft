@@ -1670,5 +1670,125 @@
         "MaxHQ": 262
       }
     }
+  },
+  {
+    "ID": 44157,
+    "LevelEquip": 1,
+    "LevelItem": 690,
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 280,
+        "MaxHQ": 351
+      }
+    }
+  },
+  {
+    "ID": 44158,
+    "LevelEquip": 1,
+    "LevelItem": 690,
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 280,
+        "MaxHQ": 351
+      }
+    }
+  },
+  {
+    "ID": 44159,
+    "LevelEquip": 1,
+    "LevelItem": 690,
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 284,
+        "MaxHQ": 355
+      }
+    }
+  },
+  {
+    "ID": 44160,
+    "LevelEquip": 1,
+    "LevelItem": 690,
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 280,
+        "MaxHQ": 351
+      }
+    }
+  },
+  {
+    "ID": 44161,
+    "LevelEquip": 1,
+    "LevelItem": 690,
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10,
+        "Max": 280,
+        "MaxHQ": 351
+      }
+    }
+  },
+  {
+    "ID": 44167,
+    "LevelEquip": 1,
+    "LevelItem": 665,
+    "Bonuses": {
+      "Craftsmanship": {
+        "ID": 70,
+        "Relative": true,
+        "Value": 2,
+        "ValueHQ": 3,
+        "Max": 50,
+        "MaxHQ": 63
+      }
+    }
+  },
+  {
+    "ID": 44168,
+    "LevelEquip": 1,
+    "LevelItem": 670,
+    "Bonuses": {
+      "Control": {
+        "ID": 71,
+        "Relative": true,
+        "Value": 2,
+        "ValueHQ": 3,
+        "Max": 50,
+        "MaxHQ": 63
+      }
+    }
+  },
+  {
+    "ID": 44169,
+    "LevelEquip": 1,
+    "LevelItem": 675,
+    "Bonuses": {
+      "CP": {
+        "ID": 11,
+        "Relative": true,
+        "Value": 5,
+        "ValueHQ": 6,
+        "Max": 21,
+        "MaxHQ": 27
+      }
+    }
   }
 ]

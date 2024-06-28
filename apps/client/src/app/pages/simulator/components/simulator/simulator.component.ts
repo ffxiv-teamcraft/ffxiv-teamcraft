@@ -15,7 +15,6 @@ import {
   takeUntil,
   tap
 } from 'rxjs/operators';
-import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ConsumablesService } from '../../model/consumables.service';
@@ -28,7 +27,7 @@ import { BonusType } from '../../model/consumable-bonus';
 import { DefaultConsumables } from '../../../../model/user/default-consumables';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TextQuestionPopupComponent } from '../../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
@@ -38,7 +37,6 @@ import { MacroPopupComponent } from '../macro-popup/macro-popup.component';
 import { SimulationMinStatsPopupComponent } from '../simulation-min-stats-popup/simulation-min-stats-popup.component';
 import { StepByStepReportComponent } from '../step-by-step-report/step-by-step-report.component';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { LinkToolsService } from '../../../../core/tools/link-tools.service';
 import { RotationPickerService } from '../../../../modules/rotations/rotation-picker.service';
 import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
 import { RotationTip } from '../../rotation-tips/rotation-tip';
@@ -288,12 +286,12 @@ export class SimulatorComponent implements OnInit, AfterViewInit, OnDestroy {
 
   public boxHeight = 40;
 
-  constructor(private htmlTools: HtmlToolsService, public settings: SettingsService,
+  constructor(public settings: SettingsService,
               private authFacade: AuthFacade, private fb: UntypedFormBuilder, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService, private i18n: I18nToolsService,
               private rotationsFacade: RotationsFacade, private router: Router,
-              private route: ActivatedRoute, private dialog: NzModalService, public translate: TranslateService,
-              private message: NzMessageService, private linkTools: LinkToolsService, private rotationPicker: RotationPickerService,
+              private dialog: NzModalService, public translate: TranslateService,
+              private message: NzMessageService, private rotationPicker: RotationPickerService,
               private rotationTipsService: RotationTipsService, public dirtyFacade: DirtyFacade, private cd: ChangeDetectorRef,
               private ipc: IpcService, public platformService: PlatformService, private simulationService: SimulationService,
               private lazyData: LazyDataFacade) {

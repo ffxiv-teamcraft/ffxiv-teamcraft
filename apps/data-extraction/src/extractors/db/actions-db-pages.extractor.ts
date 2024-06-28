@@ -14,7 +14,7 @@ export class ActionsDbPagesExtractor extends AbstractExtractor {
         'Range', 'EffectRange', 'PrimaryCostType#', 'PrimaryCostValue#', 'Cost#', 'IsPvP', 'PreservesCombo', 'AffectsPosition',
         'ActionProcStatus.Status.Icon', 'ActionProcStatus.Status.Name'], false, 2),
       xiv.getFromSaintCSV<{ '#': string, Description: I18nName }>('ActionTransient'),
-      this.getSheet<any>(xiv, 'CraftAction', ['Name', 'Icon']),
+      this.getSheet<any>(xiv, 'CraftAction', ['Name', 'Icon', 'ClassJobLevel', 'ClassJob', 'ActionCategory', 'Cost']),
       xiv.getFromSaintCSV<{ '#': string, Description: I18nName }>('CraftAction'),
       this.getSheet<any>(xiv, 'Trait', ['Name', 'Icon']),
       this.getSheet<any>(xiv, 'TraitTransient', ['Description'])
@@ -135,6 +135,7 @@ export class ActionsDbPagesExtractor extends AbstractExtractor {
             pages[row.index].level = row.ClassJobLevel;
             pages[row.index].job = row.ClassJob;
             pages[row.index].category = row.ActionCategory;
+            pages[row.index].cost = row.Cost;
           }
           if (!pages[row.index].procStatus || pages[row.index].procStatus.id === 0) {
             delete pages[row.index].procStatus;

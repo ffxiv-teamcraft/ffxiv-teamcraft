@@ -3081,5 +3081,537 @@
       "x": 0,
       "y": 0
     }
+  },
+  {
+    "id": 207,
+    "zoneid": 4508,
+    "map": 860,
+    "x": 29.04,
+    "y": 30.89,
+    "z": 0,
+    "type": 0,
+    "nameid": 4659,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 208,
+    "zoneid": 4508,
+    "map": 860,
+    "x": 15.53,
+    "y": 19.34,
+    "z": 0.19,
+    "type": 0,
+    "nameid": 4667,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 209,
+    "zoneid": 4508,
+    "map": 860,
+    "x": 27.55,
+    "y": 10.18,
+    "z": -0.14,
+    "type": 0,
+    "nameid": 4664,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 229,
+    "zoneid": 4508,
+    "map": 860,
+    "x": 27.2,
+    "y": 36.94,
+    "z": 0.15,
+    "type": 1,
+    "nameid": 4745,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 210,
+    "zoneid": 4509,
+    "map": 861,
+    "x": 31.66,
+    "y": 25.78,
+    "z": 1.46,
+    "type": 0,
+    "nameid": 4678,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 211,
+    "zoneid": 4509,
+    "map": 861,
+    "x": 16.76,
+    "y": 10.04,
+    "z": 0.3,
+    "type": 0,
+    "nameid": 4685,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 212,
+    "zoneid": 4509,
+    "map": 861,
+    "x": 16.9,
+    "y": 24.06,
+    "z": 0.31,
+    "type": 0,
+    "nameid": 4694,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 237,
+    "zoneid": 4509,
+    "map": 861,
+    "x": 15.63,
+    "y": 4.84,
+    "z": 0.46,
+    "type": 1,
+    "nameid": 4740,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 213,
+    "zoneid": 4510,
+    "map": 862,
+    "x": 21.28,
+    "y": 37.67,
+    "z": 0.53,
+    "type": 0,
+    "nameid": 4700,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 214,
+    "zoneid": 4510,
+    "map": 862,
+    "x": 34.49,
+    "y": 16.09,
+    "z": 0.24,
+    "type": 0,
+    "nameid": 4721,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 215,
+    "zoneid": 4510,
+    "map": 862,
+    "x": 16.23,
+    "y": 13.76,
+    "z": 0.54,
+    "type": 0,
+    "nameid": 4713,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 217,
+    "zoneid": 4503,
+    "map": 856,
+    "x": 12.1,
+    "y": 14.47,
+    "z": 0.08,
+    "type": 0,
+    "nameid": 4503,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 230,
+    "zoneid": 4503,
+    "map": 856,
+    "x": 11.77,
+    "y": 18.45,
+    "z": -0.07,
+    "type": 1,
+    "nameid": 4733,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 231,
+    "zoneid": 4503,
+    "map": 856,
+    "x": 20.04,
+    "y": 15.64,
+    "z": 0.6,
+    "type": 1,
+    "nameid": 4734,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 232,
+    "zoneid": 4503,
+    "map": 856,
+    "x": 17.6,
+    "y": 17.09,
+    "z": 0.5,
+    "type": 1,
+    "nameid": 4735,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 233,
+    "zoneid": 4503,
+    "map": 856,
+    "x": 19.79,
+    "y": 20.69,
+    "z": 0.6,
+    "type": 1,
+    "nameid": 4736,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 234,
+    "zoneid": 4503,
+    "map": 856,
+    "x": 11.79,
+    "y": 7.34,
+    "z": 0.38,
+    "type": 1,
+    "nameid": 4737,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 235,
+    "zoneid": 4503,
+    "map": 856,
+    "x": 9.26,
+    "y": 14.65,
+    "z": 0,
+    "type": 1,
+    "nameid": 4738,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 236,
+    "zoneid": 4503,
+    "map": 856,
+    "x": 4.88,
+    "y": 16.96,
+    "z": 0.14,
+    "type": 1,
+    "nameid": 4739,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 200,
+    "zoneid": 4505,
+    "map": 857,
+    "x": 28.26,
+    "y": 13.35,
+    "z": -1.6,
+    "type": 0,
+    "nameid": 4550,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 201,
+    "zoneid": 4505,
+    "map": 857,
+    "x": 30.9,
+    "y": 34.39,
+    "z": 1.15,
+    "type": 0,
+    "nameid": 4562,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 225,
+    "zoneid": 4505,
+    "map": 857,
+    "x": 34.53,
+    "y": 12.63,
+    "z": -1.2,
+    "type": 1,
+    "nameid": 4741,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 202,
+    "zoneid": 4506,
+    "map": 858,
+    "x": 18.1,
+    "y": 11.64,
+    "z": 0.06,
+    "type": 0,
+    "nameid": 4582,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 203,
+    "zoneid": 4506,
+    "map": 858,
+    "x": 32.36,
+    "y": 25.75,
+    "z": 1.17,
+    "type": 0,
+    "nameid": 4598,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 204,
+    "zoneid": 4506,
+    "map": 858,
+    "x": 11.72,
+    "y": 27.93,
+    "z": 1.23,
+    "type": 0,
+    "nameid": 4603,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 227,
+    "zoneid": 4506,
+    "map": 858,
+    "x": 36.4,
+    "y": 32.76,
+    "z": 1.14,
+    "type": 1,
+    "nameid": 4743,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 226,
+    "zoneid": 4506,
+    "map": 858,
+    "x": 15.82,
+    "y": 5.18,
+    "z": 0.12,
+    "type": 1,
+    "nameid": 4742,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 205,
+    "zoneid": 4507,
+    "map": 859,
+    "x": 13.74,
+    "y": 12.89,
+    "z": 0.24,
+    "type": 0,
+    "nameid": 4614,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 206,
+    "zoneid": 4507,
+    "map": 859,
+    "x": 36.11,
+    "y": 32.07,
+    "z": -1.33,
+    "type": 0,
+    "nameid": 4625,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 228,
+    "zoneid": 4507,
+    "map": 859,
+    "x": 21.86,
+    "y": 8.15,
+    "z": 0.08,
+    "type": 1,
+    "nameid": 4744,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 216,
+    "zoneid": 4504,
+    "map": 855,
+    "x": 12.72,
+    "y": 11.2,
+    "z": 0,
+    "type": 0,
+    "nameid": 4504,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 218,
+    "zoneid": 4504,
+    "map": 855,
+    "x": 5,
+    "y": 10.03,
+    "z": 0.03,
+    "type": 1,
+    "nameid": 4726,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 219,
+    "zoneid": 4504,
+    "map": 855,
+    "x": 9.71,
+    "y": 11.05,
+    "z": 0.39,
+    "type": 1,
+    "nameid": 4727,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 220,
+    "zoneid": 4504,
+    "map": 855,
+    "x": 10.44,
+    "y": 14.88,
+    "z": -0.15,
+    "type": 1,
+    "nameid": 4728,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 221,
+    "zoneid": 4504,
+    "map": 855,
+    "x": 13.11,
+    "y": 13.79,
+    "z": -0.11,
+    "type": 1,
+    "nameid": 4729,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 222,
+    "zoneid": 4504,
+    "map": 855,
+    "x": 11.45,
+    "y": 6.58,
+    "z": 1,
+    "type": 1,
+    "nameid": 4730,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 223,
+    "zoneid": 4504,
+    "map": 855,
+    "x": 16.7,
+    "y": 11.69,
+    "z": -0.18,
+    "type": 1,
+    "nameid": 4731,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 224,
+    "zoneid": 4504,
+    "map": 855,
+    "x": 14.73,
+    "y": 4.36,
+    "z": 0.47,
+    "type": 1,
+    "nameid": 4732,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   }
 ]

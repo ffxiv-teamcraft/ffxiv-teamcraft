@@ -4270,44 +4270,44 @@ export const mapIds = [
     "weatherRate": 0
   },
   {
-    "zone": 0,
+    "zone": 4504,
     "id": 855,
-    "weatherRate": null
+    "weatherRate": 159
   },
   {
-    "zone": 0,
+    "zone": 4503,
     "id": 856,
-    "weatherRate": null
+    "weatherRate": 163
   },
   {
-    "zone": 0,
+    "zone": 4505,
     "id": 857,
-    "weatherRate": null
+    "weatherRate": 160
   },
   {
-    "zone": 0,
+    "zone": 4506,
     "id": 858,
-    "weatherRate": null
+    "weatherRate": 161
   },
   {
-    "zone": 0,
+    "zone": 4507,
     "id": 859,
-    "weatherRate": null
+    "weatherRate": 162
   },
   {
-    "zone": 0,
+    "zone": 4508,
     "id": 860,
-    "weatherRate": null
+    "weatherRate": 164
   },
   {
-    "zone": 0,
+    "zone": 4509,
     "id": 861,
-    "weatherRate": null
+    "weatherRate": 165
   },
   {
-    "zone": 0,
+    "zone": 4510,
     "id": 862,
-    "weatherRate": null
+    "weatherRate": 166
   },
   {
     "zone": 4297,
@@ -4480,23 +4480,228 @@ export const mapIds = [
     "weatherRate": null
   },
   {
-    "zone": 0,
+    "zone": 4602,
     "id": 897,
-    "weatherRate": null
+    "weatherRate": 0
   },
   {
-    "zone": 0,
+    "zone": 4602,
     "id": 898,
-    "weatherRate": null
+    "weatherRate": 0
   },
   {
-    "zone": 0,
+    "zone": 4909,
     "id": 899,
+    "weatherRate": 0
+  },
+  {
+    "zone": 4926,
+    "id": 900,
+    "weatherRate": 0
+  },
+  {
+    "zone": 4926,
+    "id": 901,
+    "weatherRate": 0
+  },
+  {
+    "zone": 4480,
+    "id": 902,
+    "weatherRate": 0
+  },
+  {
+    "zone": 4480,
+    "id": 903,
+    "weatherRate": 0
+  },
+  {
+    "zone": 4480,
+    "id": 904,
+    "weatherRate": 0
+  },
+  {
+    "zone": 5007,
+    "id": 905,
+    "weatherRate": 156
+  },
+  {
+    "zone": 5007,
+    "id": 906,
+    "weatherRate": 156
+  },
+  {
+    "zone": 5007,
+    "id": 907,
+    "weatherRate": 156
+  },
+  {
+    "zone": 5007,
+    "id": 908,
+    "weatherRate": 156
+  },
+  {
+    "zone": 5007,
+    "id": 909,
+    "weatherRate": 156
+  },
+  {
+    "zone": 3799,
+    "id": 910,
+    "weatherRate": 157
+  },
+  {
+    "zone": 3799,
+    "id": 911,
+    "weatherRate": 157
+  },
+  {
+    "zone": 3799,
+    "id": 912,
+    "weatherRate": 157
+  },
+  {
+    "zone": 3799,
+    "id": 913,
+    "weatherRate": 157
+  },
+  {
+    "zone": 3799,
+    "id": 914,
+    "weatherRate": 157
+  },
+  {
+    "zone": 5027,
+    "id": 915,
+    "weatherRate": 0
+  },
+  {
+    "zone": 5027,
+    "id": 916,
+    "weatherRate": 0
+  },
+  {
+    "zone": 5105,
+    "id": 917,
+    "weatherRate": 150
+  },
+  {
+    "zone": 20,
+    "id": 918,
+    "weatherRate": null
+  },
+  {
+    "zone": 20,
+    "id": 919,
+    "weatherRate": null
+  },
+  {
+    "zone": 4500,
+    "id": 920,
+    "weatherRate": null
+  },
+  {
+    "zone": 4501,
+    "id": 921,
+    "weatherRate": null
+  },
+  {
+    "zone": 4502,
+    "id": 922,
     "weatherRate": null
   },
   {
     "zone": 0,
-    "id": 900,
+    "id": 923,
     "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 924,
+    "weatherRate": null
+  },
+  {
+    "zone": 5115,
+    "id": 925,
+    "weatherRate": 0
+  },
+  {
+    "zone": 0,
+    "id": 926,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 927,
+    "weatherRate": null
+  },
+  {
+    "zone": 5116,
+    "id": 928,
+    "weatherRate": 157
+  },
+  {
+    "zone": 5117,
+    "id": 929,
+    "weatherRate": 158
+  },
+  {
+    "zone": 5105,
+    "id": 930,
+    "weatherRate": 150
+  },
+  {
+    "zone": 4523,
+    "id": 931,
+    "weatherRate": 159
+  },
+  {
+    "zone": 4748,
+    "id": 932,
+    "weatherRate": 165
+  },
+  {
+    "zone": 4750,
+    "id": 933,
+    "weatherRate": 0
+  },
+  {
+    "zone": 4654,
+    "id": 934,
+    "weatherRate": 0
+  },
+  {
+    "zone": 4909,
+    "id": 935,
+    "weatherRate": 0
+  },
+  {
+    "zone": 4751,
+    "id": 936,
+    "weatherRate": 0
+  },
+  {
+    "zone": 0,
+    "id": 937,
+    "weatherRate": null
+  },
+  {
+    "zone": 0,
+    "id": 938,
+    "weatherRate": null
+  },
+  {
+    "zone": 4540,
+    "id": 939,
+    "weatherRate": 159
+  },
+  {
+    "zone": 5120,
+    "id": 940,
+    "weatherRate": 0
+  },
+  {
+    "zone": 5121,
+    "id": 941,
+    "weatherRate": 0
   }
 ];

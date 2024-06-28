@@ -12,16 +12,16 @@
     "fr": ""
   },
   "3276802": {
-    "en": "Purchase Gordian Items",
-    "ja": "ゴルディオン関連アイテムの取引",
-    "de": "Gordische Gegenstände",
-    "fr": "Échange d'objets gordiens"
+    "en": "Purchase Gordian Items (IL 190)",
+    "ja": "ゴルディオンパーツの取引（ILv190）",
+    "de": "Gordische Gegenstände (G.-St. 190)",
+    "fr": "Échange d'éléments gordiens (NvObj 190)"
   },
   "3276803": {
-    "en": "Purchase Midan Items",
-    "ja": "ミダース関連アイテムの取引",
-    "de": "Midische Gegenstände",
-    "fr": "Échange d'objets midins"
+    "en": "Purchase Midan Items (IL 220)",
+    "ja": "ミダースパーツの取引（ILv220）",
+    "de": "Midische Gegenstände (G.-St. 220)",
+    "fr": "Échange d'éléments midins (NvObj 220)"
   },
   "3276804": {
     "en": "Aloalo Island Artifact Exchange",
@@ -36,10 +36,10 @@
     "fr": ""
   },
   "3276806": {
-    "en": "Purchase Alexandrian Items",
-    "ja": "アレキサンダー関連アイテムの取引",
-    "de": "Alexandrische Gegenstände",
-    "fr": "Échange d'objets alexandrins"
+    "en": "Purchase Alexandrian Items (IL 250)",
+    "ja": "アレキサンダーパーツの取引（ILv250）",
+    "de": "Alexandrische Gegenstände (G.-St. 220)",
+    "fr": "Échange d'éléments alexandrins (NvObj 250)"
   },
   "3276807": {
     "en": "",
@@ -60,22 +60,22 @@
     "fr": ""
   },
   "3276810": {
-    "en": "Purchase Artifact Gear",
-    "ja": "新生古典装備の取引",
-    "de": "Artefakt-Ausrüstung",
-    "fr": "Acheter un artefact"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276811": {
-    "en": "Purchase Doman Gear",
-    "ja": "ドマ風装備の取引",
-    "de": "Domanische Ausrüstung",
-    "fr": "Acheter un équipement domien"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276812": {
-    "en": "Improve Shire Gear",
-    "ja": "「イディルシャイア製装備」の改良",
-    "de": "Hinterländische Ausrüstung verbessern",
-    "fr": "Améliorer un équipement idylléen"
+    "en": "Improve Shire Gear (IL 260 → 270)",
+    "ja": "「イディルシャイア製装備」の改良（ILv260→270）",
+    "de": "Modifizierte Hinterländische Ausrüstung (G.-St. 260 → 270)",
+    "fr": "Améliorer un équipement idylléen (NvObj 260 → 270)"
   },
   "3276813": {
     "en": "",
@@ -300,46 +300,46 @@
     "fr": "Récompenses de hauts faits"
   },
   "3276850": {
-    "en": "Earn Resistance Tokens",
-    "ja": "解放軍の手形との交換（NQ）",
-    "de": "NQ-Ausrüstung in Armeemarken umtauschen",
-    "fr": "Échanger des pièces d'équipement (QN) contre des avoirs de l'armée de libération"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276851": {
-    "en": "Earn Resistance Tokens (HQ)",
-    "ja": "解放軍の手形との交換（HQ）",
-    "de": "HQ-Ausrüstung in Armeemarken umtauschen",
-    "fr": "Échanger des pièces d'équipement (HQ) contre des avoirs de l'armée de libération"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276852": {
-    "en": "Use Resistance Tokens",
-    "ja": "解放軍の手形の取引（NQ）",
-    "de": "Armeemarken in NQ-Ausrüstung umtauschen",
-    "fr": "Échanger des objets contre des pièces d'équipement (QN)"
+    "en": "Use Resistance Tokens (IL 350 → 360 NQ)",
+    "ja": "解放軍装備の強化取引（ILv350→360NQ）",
+    "de": "Armeemarken umtauschen (G.-St. 350 → 360 NQ)",
+    "fr": "Échanger des objets contre des pièces d'équipement QN (NvObj 350 → 360)"
   },
   "3276853": {
-    "en": "Use Resistance Tokens (HQ)",
-    "ja": "解放軍の手形の取引（HQ）",
-    "de": "Armeemarken in HQ-Ausrüstung umtauschen",
-    "fr": "Échanger des objets contre des pièces d'équipement (HQ)"
+    "en": "Use Resistance Tokens (IL 350 → 360 HQ)",
+    "ja": "解放軍装備の強化取引（ILv350→360HQ）",
+    "de": "Armeemarken umtauschen (G.-St. 350 → 360 HQ)",
+    "fr": "Échanger des objets contre des pièces d'équipement HQ (NvObj 350 → 360)"
   },
   "3276854": {
-    "en": "Earn Rakshasa Tokens",
-    "ja": "羅刹の手形との交換（NQ）",
-    "de": "NQ-Ausrüstung in Rakshasa-Marken umtauschen",
-    "fr": "Échanger des pièces d'équipement (QN) contre des avoirs rakshasa"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276855": {
-    "en": "Earn Rakshasa Tokens (HQ)",
-    "ja": "羅刹の手形との交換（HQ）",
-    "de": "HQ-Ausrüstung in Rakshasa-Marken umtauschen",
-    "fr": "Échanger des pièces d'équipement (HQ) contre des avoirs rakshasa"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276856": {
-    "en": "Use Rakshasa Tokens (HQ)",
-    "ja": "羅刹の手形の取引",
-    "de": "Rakshasa-Marken in HQ-Ausrüstung umtauschen",
-    "fr": "Échanger des avoirs rakshasa contre des pièces d'équipement"
+    "en": "Use Rakshasa Tokens (IL 380 → 390 HQ)",
+    "ja": "羅刹装備の強化取引（ILv380→390）",
+    "de": "Rakshasa-Marken umtauschen (G.-St. 380 → 390)",
+    "fr": "Échanger des avoirs rakshasa contre des pièces d'équipement (NvObj 380 → 390)"
   },
   "3276857": {
     "en": "Purchase Disciple of War Gear",
@@ -450,40 +450,40 @@
     "fr": "Échange d'assignats de récolteur"
   },
   "3276875": {
-    "en": "Earn Eulmoran Certificates of Import",
-    "ja": "ユールモアの手形G1との交換（NQ）",
-    "de": "Eulmore-Marken (NQ)",
-    "fr": "Échange de pièces d'équipement (QN) contre des avoirs d'Eulmore I"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276876": {
-    "en": "Earn Eulmoran Certificates of Import (HQ)",
-    "ja": "ユールモアの手形G1との交換（HQ）",
-    "de": "Eulmore-Marken (HQ)",
-    "fr": "Échange de pièces d'équipement (HQ) contre des avoirs d'Eulmore I"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276877": {
-    "en": "Purchase Augmented Facet Equipment",
-    "ja": "ミーン強化装備の取引",
-    "de": "Modifizierte Manufaktur-Ausrüstung",
-    "fr": "Amélioration de pièces d'équipement de la halle"
+    "en": "Purchase Augmented Facet Equipment (IL 450 → 460)",
+    "ja": "ミーン装備の強化取引（ILv450→460）",
+    "de": "Modifizierte Manufaktur-Ausrüstung (G.-St. 450 → 460)",
+    "fr": "Amélioration de pièces d'équipement de la halle (NvObj 450 → 460)"
   },
   "3276878": {
-    "en": "Earn Eulmoran Certificates of Novelty",
-    "ja": "ユールモアの手形G2との交換（NQ）",
-    "de": "Eulmore-Marken II (NQ)",
-    "fr": "Échange de pièces d'équipement (QN) contre des avoirs d'Eulmore II"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276879": {
-    "en": "Earn Eulmoran Certificates of Novelty (HQ)",
-    "ja": "ユールモアの手形G2との交換（HQ）",
-    "de": "Eulmore-Marken II (HQ)",
-    "fr": "Échange de pièces d'équipement (HQ) contre des avoirs d'Eulmore II"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276880": {
-    "en": "Purchase Augmented Neo-Ishgardian Equipment",
-    "ja": "ネオイシュガルディアン強化装備の取引",
-    "de": "Neo-Ishgarder Verstärkungen",
-    "fr": "Amélioration de pièces d'équipement néo-ishgardaises"
+    "en": "Purchase Augmented Neo-Ishgardian Equipment (IL 480 → 490)",
+    "ja": "ネオイシュガルディアン装備の強化取引（ILv480→490）",
+    "de": "Modifizierte Neo-Ishgarder Ausrüstung (G.-St. 480 → 490)",
+    "fr": "Amélioration de pièces d'équipement néo-ishgardaises (NvObj 480 → 490)"
   },
   "3276881": {
     "en": "Crafters' Scrip Exchange",
@@ -498,22 +498,22 @@
     "fr": "Échange d'assignats de récolteur"
   },
   "3276883": {
-    "en": "Earn Eulmoran Certificates of Grandeur",
-    "ja": "ユールモアの手形G3との交換（NQ）",
-    "de": "Eulmore-Marken III (NQ)",
-    "fr": "Échange de pièces d'équipement (QN) contre des avoirs d'Eulmore III"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276884": {
-    "en": "Earn Eulmoran Certificates of Grandeur (HQ)",
-    "ja": "ユールモアの手形G3との交換（HQ）",
-    "de": "Eulmore-Marken III (HQ)",
-    "fr": "Échange de pièces d'équipement (HQ) contre des avoirs d'Eulmore III"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276885": {
-    "en": "Purchase Augmented Exarchic Equipment",
-    "ja": "エクサーク強化装備の取引",
-    "de": "Modifizierte Exarchen-Ausrüstung",
-    "fr": "Amélioration de pièces d'équipement de l'exarchat"
+    "en": "Purchase Augmented Exarchic Equipment (IL 510 → 520)",
+    "ja": "エクサーク装備の強化取引（ILv510→520）",
+    "de": "Modifizierte Exarchen-Ausrüstung (G.-St. 510 → 520)",
+    "fr": "Amélioration de pièces d'équipement de l'exarchat (NvObj 510 → 520)"
   },
   "3276886": {
     "en": "Purchase Disciple of War Gear",
@@ -528,22 +528,22 @@
     "fr": "Armures (magie)"
   },
   "3276888": {
-    "en": "Earn Hannish Certificates of Grade 1 Import",
-    "ja": "ラザハンの手形G1との交換（NQ）",
-    "de": "Radz-at-Han-Marken I (NQ)",
-    "fr": "Échange de pièces d'équipement (QN) contre des avoirs de Radz-at-Han I"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276889": {
-    "en": "Earn Hannish Certificates of Grade 1 Import (HQ)",
-    "ja": "ラザハンの手形G1との交換（HQ）",
-    "de": "Radz-at-Han-Marken I (HQ)",
-    "fr": "Échange de pièces d'équipement (HQ) contre des avoirs de Radz-at-Han I"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276890": {
-    "en": "Purchase Augmented Classical Equipment",
-    "ja": "クラシカル強化装備の取引",
-    "de": "Modifizierte klassische Ausrüstung",
-    "fr": "Amélioration de pièces d'équipement classiques"
+    "en": "Purchase Augmented Classical Equipment (IL 580 → 590)",
+    "ja": "クラシカル装備の強化取引（ILv580→590）",
+    "de": "Modifizierte klassische Ausrüstung (G.-St. 580 → 590)",
+    "fr": "Amélioration de pièces d'équipement classiques (NvObj 580 → 590)"
   },
   "3276891": {
     "en": "Purchase Garo Gear (DoW II)",
@@ -552,28 +552,28 @@
     "fr": "Armures Garo (guerre 2)"
   },
   "3276892": {
-    "en": "Earn Hannish Certificates of Grade 3 Import",
-    "ja": "ラザハンの手形G3との交換（NQ）",
-    "de": "Radz-at-Han-Marken III (NQ)",
-    "fr": "Échange de pièces d'équipement (QN) contre des avoirs de Radz-at-Han III"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276893": {
-    "en": "Earn Hannish Certificates of Grade 2 Import",
-    "ja": "ラザハンの手形G2との交換（NQ）",
-    "de": "Radz-at-Han-Marken II (NQ)",
-    "fr": "Échange de pièces d'équipement (QN) contre des avoirs de Radz-at-Han II"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276894": {
-    "en": "Earn Hannish Certificates of Grade 2 Import (HQ)",
-    "ja": "ラザハンの手形G2との交換（HQ）",
-    "de": "Radz-at-Han-Marken II (HQ)",
-    "fr": "Échange de pièces d'équipement (HQ) contre des avoirs de Radz-at-Han II"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276895": {
-    "en": "Purchase Augmented Rinascita Equipment",
-    "ja": "リナシータ強化装備の取引",
-    "de": "Modifizierte Rinascita-Ausrüstung",
-    "fr": "Amélioration de pièces d'équipement de la rinascita"
+    "en": "Purchase Augmented Rinascita Equipment (IL 610 → 620)",
+    "ja": "リナシータ装備の強化取引（ILv610→620）",
+    "de": "Modifizierte Rinascita-Ausrüstung (G.-St. 610 → 620)",
+    "fr": "Amélioration de pièces d'équipement de la rinascita (NvObj 610 → 620)"
   },
   "3276896": {
     "en": "Sil'dihn Artifact Exchange",
@@ -588,15 +588,273 @@
     "fr": "Échanger des artefacts du mont Rokkon"
   },
   "3276898": {
-    "en": "Earn Hannish Certificates of Grade 3 Import (HQ)",
-    "ja": "ラザハンの手形G3との交換（HQ）",
-    "de": "Radz-at-Han-Marken III (HQ)",
-    "fr": "Échange de pièces d'équipement (HQ) contre des avoirs de Radz-at-Han III"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3276899": {
-    "en": "Purchase Augmented Diadochos Equipment",
-    "ja": "ディアドコス強化装備の取引",
-    "de": "Modifizierte Diadochen-Ausrüstung",
-    "fr": "Amélioration de pièces d'équipement de diadoque"
+    "en": "Purchase Augmented Diadochos Equipment (IL 640 → 650)",
+    "ja": "ディアドコス装備の強化取引（ILv640→650）",
+    "de": "Modifizierte Diadochen-Ausrüstung (G.-St. 640 → 650)",
+    "fr": "Amélioration de pièces d'équipement de diadoque (NvObj 640 → 650)"
+  },
+  "3276900": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276901": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276902": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276903": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276904": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276905": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276906": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276907": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276908": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276909": {
+    "en": "Gordian Manifesto Exchange (IL 210)",
+    "ja": "ゴルディオン断章の取引（ILv210）",
+    "de": "Gordische Kodizes (G.-St. 210)",
+    "fr": "Manifestes gordiens (NvObj 210)"
+  },
+  "3276910": {
+    "en": "Midan Manifesto Exchange (IL 240-245)",
+    "ja": "ミダース断章の取引（ILv240～245）",
+    "de": "Midische Kodizes (G.-St. 240/245)",
+    "fr": "Manifestes midins (NvObj 240-245)"
+  },
+  "3276911": {
+    "en": "Alexandrian Manifesto Exchange (IL 270-275)",
+    "ja": "アレキサンダー断章の取引（ILv270～275）",
+    "de": "Alexandrische Kodizes (G.-St. 270/275)",
+    "fr": "Manifestes alexandrins (NvObj 270-275)"
+  },
+  "3276912": {
+    "en": "Deltascape Part Exchange (IL 320)",
+    "ja": "デルタパーツの取引（ILv320）",
+    "de": "Deltametrie-Materialien (G.-St. 320)",
+    "fr": "Éléments deltastitiels (NvObj 320)"
+  },
+  "3276913": {
+    "en": "Deltascape Datalog Exchange (IL 340-345)",
+    "ja": "デルタデータログの取引（ILv340～345）",
+    "de": "Deltametrie-Chroniken (G.-St. 340/345)",
+    "fr": "Registres deltastitiels (NvObj 340-345)"
+  },
+  "3276914": {
+    "en": "Sigmascape Part Exchange (IL 350)",
+    "ja": "シグマパーツの取引（ILv350）",
+    "de": "Sigmametrie-Materialien (G.-St. 350)",
+    "fr": "Éléments sigmastitiels (NvObj 350)"
+  },
+  "3276915": {
+    "en": "Sigmascape Datalog Exchange (IL 370-375)",
+    "ja": "シグマデータログの取引（ILv370～375）",
+    "de": "Sigmametrie-Chroniken (G.-St. 370/375)",
+    "fr": "Registres sigmastitiels (NvObj 370-375)"
+  },
+  "3276916": {
+    "en": "Alphascape Part Exchange (IL 380)",
+    "ja": "アルファパーツの取引（ILv380）",
+    "de": "Alphametrie-Materialien (G.-St. 380)",
+    "fr": "Éléments alphastitiels (NvObj 380)"
+  },
+  "3276917": {
+    "en": "Alphascape Datalog Exchange (IL 400-405)",
+    "ja": "アルファデータログの取引（ILv400～405）",
+    "de": "Alphametrie-Chroniken (G.-St. 400/405)",
+    "fr": "Registres alphastitiels (NvObj 400-405)"
+  },
+  "3276918": {
+    "en": "Eden's Gate Antique Exchange (IL 450)",
+    "ja": "古びた装備【覚】の取引（ILv450）",
+    "de": "Edentor-Ausrüstung (G.-St. 450)",
+    "fr": "Équipements antiques de L'Éveil (NvObj 450)"
+  },
+  "3276919": {
+    "en": "Eden's Gate Apocrypha Exchange (IL 470-475)",
+    "ja": "覚醒の断章の取引（ILv470～475）",
+    "de": "Edengunst-Kodizes (G.-St. 470/475)",
+    "fr": "Codex de L'Éveil (NvObj 470-475)"
+  },
+  "3276920": {
+    "en": "Eden's Verse Antique Exchange (IL 480)",
+    "ja": "古びた装備【共】の取引（ILv480）",
+    "de": "Edenruf-Ausrüstung (G.-St. 480)",
+    "fr": "Équipements antiques des Accords (NvObj 480)"
+  },
+  "3276921": {
+    "en": "Eden's Verse Apocrypha Exchange (IL 500-505)",
+    "ja": "共鳴の断章の取引（ILv500～505）",
+    "de": "Edenchor-Kodizes (G.-St. 500/505)",
+    "fr": "Codex des Accords (NvObj 500-505)"
+  },
+  "3276922": {
+    "en": "Eden's Promise Antique Exchange (IL 510)",
+    "ja": "古びた装備【再】の取引（ILv510）",
+    "de": "Edenmaß-Ausrüstung (G.-St. 510)",
+    "fr": "Équipements antiques de la Promesse (NvObj 510)"
+  },
+  "3276923": {
+    "en": "Eden's Promise Apocrypha Exchange (IL 530-535)",
+    "ja": "再生の断章の取引（ILv530～535）",
+    "de": "Edenmorgen-Kodizes (G.-St. 530/535)",
+    "fr": "Codex de la Promesse (NvObj 530-535)"
+  },
+  "3276924": {
+    "en": "Unsung Relic of Asphodelos Exchange (IL 580)",
+    "ja": "朽ちた装備【辺獄】の取引（ILv580）",
+    "de": "Asphodeische Ausrüstung (G.-St. 580)",
+    "fr": "Équipements rouillés des Limbes (NvObj 580)"
+  },
+  "3276925": {
+    "en": "Asphodelos Mythos Exchange (IL 600-605)",
+    "ja": "辺獄の断章の取引（ILv600～605）",
+    "de": "Asphodeische Kodizes (G.-St. 600/605)",
+    "fr": "Codex des Limbes (NvObj 600-605)"
+  },
+  "3276926": {
+    "en": "Unsung Relic of Abyssos Exchange (IL 610)",
+    "ja": "朽ちた装備【煉獄】の取引（ILv610）",
+    "de": "Abyssische Ausrüstung (G.-St. 610)",
+    "fr": "Équipements rouillés du Purgatoire (NvObj 610)"
+  },
+  "3276927": {
+    "en": "Abyssos Mythos Exchange (IL 630-635)",
+    "ja": "煉獄の断章の取引（ILv630～635）",
+    "de": "Abyssische Kodizes (G.-St. 630/635)",
+    "fr": "Codex du Purgatoire (NvObj 630-635)"
+  },
+  "3276928": {
+    "en": "Unsung Relic of Anabaseios Exchange (IL 640)",
+    "ja": "朽ちた装備【天獄】の取引（ILv640）",
+    "de": "Anabaseische Ausrüstung (G.-St. 640)",
+    "fr": "Équipements rouillés du Paradis (NvObj 640)"
+  },
+  "3276929": {
+    "en": "Anabaseios Mythos Exchange (IL 660-665)",
+    "ja": "天獄の断章の取引（ILv660～665）",
+    "de": "Anabaseische Kodizes (G.-St. 660/665)",
+    "fr": "Codex du Paradis (NvObj 660-665)"
+  },
+  "3276930": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276931": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276932": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276933": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276934": {
+    "en": "Lost Allagan Gear Augmentation (IL 340)",
+    "ja": "「ロストアラガン装備」の強化（ILv330→340）",
+    "de": "Verschollene allagische Ausrüstung (G.-St. 330 → 340)",
+    "fr": "Amélioration d'équipements allagois oubliés (NvObj 330-340)"
+  },
+  "3276935": {
+    "en": "Ryumyaku Gear Augmentation (IL 370)",
+    "ja": "「龍脈装備」の強化（ILv360→370）",
+    "de": "Ryumyaku-Ausrüstung (G.-St. 360 → 370)",
+    "fr": "Amélioration d'équipements Ryûmyaku (NvObj 360-370)"
+  },
+  "3276936": {
+    "en": "Scaevan Gear Augmentation (IL 400)",
+    "ja": "「スカエウァ装備」の強化（ILv390→400）",
+    "de": "Scaeva-Ausrüstung (G.-St. 390 → 400)",
+    "fr": "Amélioration d'équipements Scaeva (NvObj 390-400)"
+  },
+  "3276937": {
+    "en": "Deepshadow Gear Augmentation (IL 470)",
+    "ja": "「ディープシャドウ装備」の強化（ILv460→470）",
+    "de": "Dunkelschatten-Ausrüstung (G.-St. 460 → 470)",
+    "fr": "Amélioration d'équipements de la Pleine-ombre (NvObj 460-470)"
+  },
+  "3276938": {
+    "en": "Crystarium Gear Augmentation (IL 500)",
+    "ja": "「クリスタリウム装備」の強化（ILv490→500）",
+    "de": "Crystarium-Ausrüstung (G.-St. 490 → 500)",
+    "fr": "Amélioration d'équipements cristariens (NvObj 490-500)"
+  },
+  "3276939": {
+    "en": "Cryptlurker Gear Augmentation (IL 530)",
+    "ja": "「クリプトラーカー装備」の強化（ILv520→530）",
+    "de": "Gruftschleicher-Ausrüstung (G.-St. 520 → 530)",
+    "fr": "Amélioration d'équipements de rôdeur des cryptes (NvObj 520-530)"
+  },
+  "3276940": {
+    "en": "Radiant's Gear Augmentation (IL 600)",
+    "ja": "「レディアント装備」の強化（ILv590→600）",
+    "de": "Himmelsheer-Ausrüstung (G.-St. 590 → 600)",
+    "fr": "Amélioration d'équipements radieux (NvObj 590-600)"
+  },
+  "3276941": {
+    "en": "Lunar Envoy's Gear Augmentation (IL 630)",
+    "ja": "「ルナエンヴォイ装備」の強化（ILv620→630）",
+    "de": "Mondgesandten-Ausrüstung (G.-St. 620 → 630)",
+    "fr": "Amélioration d'équipements d'émissaire sélénien (NvObj 620-630)"
+  },
+  "3276942": {
+    "en": "Credendum Gear Augmentation (IL 660)",
+    "ja": "「クレデンダム装備」の強化（ILv650→660）",
+    "de": "Credendum-Ausrüstung (G.-St. 650 → 660)",
+    "fr": "Amélioration d'équipements du credo (NvObj 650-660)"
   }
 }

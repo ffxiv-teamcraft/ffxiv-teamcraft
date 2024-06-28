@@ -104,10 +104,10 @@
     "itemReward": 0
   },
   "14": {
-    "en": "Bane of the Tribes",
+    "en": "Banes of Society",
     "ja": "大物狙い：蛮族",
-    "de": "Fluch der Wilden Stämme",
-    "fr": "Traqueur des tribus",
+    "de": "Fluch der Notorischen Monster",
+    "fr": "Traqueur de célébrités",
     "icon": "/i/062000/062904.png",
     "itemReward": 0
   },
@@ -8820,7 +8820,7 @@
     "ja": "街角のデュエリスト：ランク1",
     "de": "Tripleduellant I",
     "fr": "En cartes et en os I",
-    "icon": "/i/003000/003101.png",
+    "icon": "/i/003000/003564.png",
     "itemReward": 0
   },
   "1104": {
@@ -8828,7 +8828,7 @@
     "ja": "街角のデュエリスト：ランク2",
     "de": "Tripleduellant II",
     "fr": "En cartes et en os II",
-    "icon": "/i/003000/003101.png",
+    "icon": "/i/003000/003564.png",
     "itemReward": 9846
   },
   "1105": {
@@ -10434,7 +10434,7 @@
   "1305": {
     "en": "Hiding in Plain Sight: Adept",
     "ja": "革細工職人：名取",
-    "de": "Abziehen am hellichten Tage: Legende",
+    "de": "Abziehen am helllichten Tage: Legende",
     "fr": "Tourner autour des peaux : Expert",
     "icon": "/i/035000/035404.png",
     "itemReward": 0
@@ -10980,7 +10980,7 @@
     "ja": "街角のデュエリスト：ランク3",
     "de": "Tripleduellant III",
     "fr": "En cartes et en os III",
-    "icon": "/i/003000/003101.png",
+    "icon": "/i/003000/003564.png",
     "itemReward": 12277
   },
   "1374": {
@@ -11908,7 +11908,7 @@
     "ja": "街角のデュエリスト：ランク4",
     "de": "Tripleduellant IV",
     "fr": "En cartes et en os IV",
-    "icon": "/i/003000/003101.png",
+    "icon": "/i/003000/003564.png",
     "itemReward": 0
   },
   "1490": {
@@ -13052,7 +13052,7 @@
     "ja": "街角のデュエリスト：ランク5",
     "de": "Tripleduellant V",
     "fr": "En cartes et en os V",
-    "icon": "/i/003000/003101.png",
+    "icon": "/i/003000/003564.png",
     "itemReward": 16769
   },
   "1633": {
@@ -14810,7 +14810,7 @@
   "1852": {
     "en": "Hiding in Plain Sight: Veteran",
     "ja": "革細工職人：目録",
-    "de": "Abziehen am hellichten Tage: Koryphäe",
+    "de": "Abziehen am helllichten Tage: Koryphäe",
     "fr": "Tourner autour des peaux : Maître",
     "icon": "/i/035000/035404.png",
     "itemReward": 0
@@ -15268,7 +15268,7 @@
     "ja": "街角のデュエリスト：ランク6",
     "de": "Tripleduellant VI",
     "fr": "En cartes et en os VI",
-    "icon": "/i/003000/003101.png",
+    "icon": "/i/003000/003564.png",
     "itemReward": 20257
   },
   "1910": {
@@ -18266,7 +18266,7 @@
   "2284": {
     "en": "Hiding in Plain Sight: Master",
     "ja": "革細工職人：印可",
-    "de": "Abziehen am hellichten Tage: Mythos",
+    "de": "Abziehen am helllichten Tage: Mythos",
     "fr": "Tourner autour des peaux : Génie",
     "icon": "/i/035000/035404.png",
     "itemReward": 0
@@ -18948,7 +18948,7 @@
     "ja": "街角のデュエリスト：ランク7",
     "de": "Tripleduellant VII",
     "fr": "En cartes et en os VII",
-    "icon": "/i/003000/003101.png",
+    "icon": "/i/003000/003564.png",
     "itemReward": 26777
   },
   "2370": {
@@ -22388,7 +22388,7 @@
     "ja": "トーナメントの勝者：ランク１",
     "de": "Turnierchampion I",
     "fr": "Officiellement vainqueur I",
-    "icon": "/i/003000/003102.png",
+    "icon": "/i/003000/003116.png",
     "itemReward": 33025
   },
   "2800": {
@@ -22396,7 +22396,7 @@
     "ja": "トーナメントの勝者：ランク2",
     "de": "Turnierchampion II",
     "fr": "Officiellement vainqueur II",
-    "icon": "/i/003000/003102.png",
+    "icon": "/i/003000/003116.png",
     "itemReward": 0
   },
   "2801": {
@@ -23450,7 +23450,7 @@
   "2932": {
     "en": "Hiding in Plain Sight: Genius",
     "ja": "革細工職人：高弟",
-    "de": "Abziehen am hellichten Tage: Genie",
+    "de": "Abziehen am helllichten Tage: Genie",
     "fr": "Tourner autour des peaux : Prodige",
     "icon": "/i/035000/035404.png",
     "itemReward": 0
@@ -24164,7 +24164,7 @@
     "ja": "街角のデュエリスト：ランク8",
     "de": "Tripleduellant VIII",
     "fr": "En cartes et en os VIII",
-    "icon": "/i/003000/003101.png",
+    "icon": "/i/003000/003564.png",
     "itemReward": 36281
   },
   "3022": {
@@ -25236,7 +25236,7 @@
     "ja": "異聞シラディハ水道を制覇せし者",
     "de": "Auf blutigen Sanden",
     "fr": "Les bons tuyaux",
-    "icon": "/i/002000/002643.png",
+    "icon": "/i/000000/000317.png",
     "itemReward": 0
   },
   "3156": {
@@ -25244,7 +25244,7 @@
     "ja": "異聞シラディハ水道を完全制覇せし者",
     "de": "Auf epischen Sanden",
     "fr": "L'égout et les couleurs",
-    "icon": "/i/002000/002643.png",
+    "icon": "/i/000000/000317.png",
     "itemReward": 0
   },
   "3157": {
@@ -26035,7 +26035,7 @@
     "en": "No Rest (Cycle) for the Wicked III",
     "ja": "ぼうえきマスター：ランク3",
     "de": "Müßiggang ist aller Laster Anfang III",
-    "fr": "Commerçant né II",
+    "fr": "Commerçant né III",
     "icon": "/i/026000/026001.png",
     "itemReward": 0
   },
@@ -27421,6 +27421,1230 @@
     "de": "Heldenhaftes Epos",
     "fr": "Accroc de l'annexe",
     "icon": "/i/003000/003054.png",
+    "itemReward": 0
+  },
+  "3429": {
+    "en": "Stick Them with the Pointy End X",
+    "ja": "剣術士：レベル100",
+    "de": "Nur dem Schwert kannst du vertrauen X",
+    "fr": "Gladiateur mythique",
+    "icon": "/i/030000/030408.png",
+    "itemReward": 0
+  },
+  "3430": {
+    "en": "The Sweet Science X",
+    "ja": "格闘士：レベル100",
+    "de": "Zwei Fäuste für Eorzea X",
+    "fr": "Pugiliste mythique",
+    "icon": "/i/031000/031004.png",
+    "itemReward": 0
+  },
+  "3431": {
+    "en": "An Axe to Grind X",
+    "ja": "斧術士：レベル100",
+    "de": "Das Kriegsbeil ausgraben X",
+    "fr": "Maraudeur mythique",
+    "icon": "/i/031000/031409.png",
+    "itemReward": 0
+  },
+  "3432": {
+    "en": "Strong Lance Arm X",
+    "ja": "槍術士：レベル100",
+    "de": "Von der Pike auf X",
+    "fr": "Maître d'hast mythique",
+    "icon": "/i/031000/031816.png",
+    "itemReward": 0
+  },
+  "3433": {
+    "en": "Just Talkin' 'bout Shafts X",
+    "ja": "弓術士：レベル100",
+    "de": "Den Bogen raus X",
+    "fr": "Archer mythique",
+    "icon": "/i/032000/032204.png",
+    "itemReward": 0
+  },
+  "3434": {
+    "en": "I Got the Magic Stick X",
+    "ja": "幻術士：レベル100",
+    "de": "DAS ist mein Zauberstab X",
+    "fr": "Élémentaliste mythique",
+    "icon": "/i/032000/032611.png",
+    "itemReward": 0
+  },
+  "3435": {
+    "en": "Bring Out Your Dead X",
+    "ja": "呪術士：レベル100",
+    "de": "Bringt eure Toten raus X",
+    "fr": "Occultiste mythique",
+    "icon": "/i/032000/032806.png",
+    "itemReward": 0
+  },
+  "3436": {
+    "en": "Through the Gate X",
+    "ja": "巴術士：レベル100",
+    "de": "Durch die Tore X",
+    "fr": "Arcaniste mythique",
+    "icon": "/i/033000/033401.png",
+    "itemReward": 0
+  },
+  "3437": {
+    "en": "Come on, Rogue X",
+    "ja": "双剣士：レベル100",
+    "de": "Auf leisen Sohlen X",
+    "fr": "Surineur mythique",
+    "icon": "/i/033000/033801.png",
+    "itemReward": 0
+  },
+  "3438": {
+    "en": "Are You Afraid of the Dark? VIII",
+    "ja": "暗黒騎士：レベル100",
+    "de": "Im Dunkeln lässt sich gut munkeln VIII",
+    "fr": "Chevalier noir mythique",
+    "icon": "/i/034000/034203.png",
+    "itemReward": 0
+  },
+  "3439": {
+    "en": "Mean Machine VIII",
+    "ja": "機工士：レベル100",
+    "de": "Läuft wie geschmiert VIII",
+    "fr": "Machiniste mythique",
+    "icon": "/i/034000/034607.png",
+    "itemReward": 0
+  },
+  "3440": {
+    "en": "Starstruck VIII",
+    "ja": "占星術師：レベル100",
+    "de": "Sieg der Sterne VIII",
+    "fr": "Astromancien mythique",
+    "icon": "/i/034000/034808.png",
+    "itemReward": 0
+  },
+  "3441": {
+    "en": "How Deep the Rabbit Hole Goes VI",
+    "ja": "赤魔道士：レベル100",
+    "de": "Alarmstufe Rot VI",
+    "fr": "Mage rouge mythique",
+    "icon": "/i/036000/036747.png",
+    "itemReward": 0
+  },
+  "3442": {
+    "en": "Bushido Blade VI",
+    "ja": "侍：レベル100",
+    "de": "Bushido - Weg des Samurai VI",
+    "fr": "Samouraï mythique",
+    "icon": "/i/036000/036427.png",
+    "itemReward": 0
+  },
+  "3443": {
+    "en": "More Complex than You Think IV",
+    "ja": "ガンブレイカー：レベル100",
+    "de": "Vielleicht bin ich ein Löwe IV",
+    "fr": "Pistosabreur mythique",
+    "icon": "/i/036000/036005.png",
+    "itemReward": 0
+  },
+  "3444": {
+    "en": "We Got the Beat IV",
+    "ja": "踊り子：レベル100",
+    "de": "Tanz auf der Klinge IV",
+    "fr": "Danseur mythique",
+    "icon": "/i/036000/036205.png",
+    "itemReward": 0
+  },
+  "3445": {
+    "en": "Perchance to Dream III",
+    "ja": "リーパー：レベル100",
+    "de": "Pakt mit der Dunkelheit III",
+    "fr": "Faucheur mythique",
+    "icon": "/i/037000/037231.png",
+    "itemReward": 0
+  },
+  "3446": {
+    "en": "Do No Harm III",
+    "ja": "賢者：レベル100",
+    "de": "Uraltes Wissen III",
+    "fr": "Sage mythique",
+    "icon": "/i/037000/037030.png",
+    "itemReward": 0
+  },
+  "3447": {
+    "en": "Viper Way Your Tears I",
+    "ja": "ヴァイパー：レベル90",
+    "de": "Und die Viper hat zwei Zähne I",
+    "fr": "Rôdeur vipère légendaire",
+    "icon": "/i/037000/037435.png",
+    "itemReward": 0
+  },
+  "3448": {
+    "en": "Viper Way Your Tears II",
+    "ja": "ヴァイパー：レベル100",
+    "de": "Und die Viper hat zwei Zähne II",
+    "fr": "Rôdeur vipère mythique",
+    "icon": "/i/037000/037435.png",
+    "itemReward": 0
+  },
+  "3449": {
+    "en": "Let Me Paint You a Picture I",
+    "ja": "ピクトマンサー：レベル90",
+    "de": "Brotlose Kunst I",
+    "fr": "Pictomancien légendaire",
+    "icon": "/i/037000/037640.png",
+    "itemReward": 0
+  },
+  "3450": {
+    "en": "Let Me Paint You a Picture II",
+    "ja": "ピクトマンサー：レベル100",
+    "de": "Brotlose Kunst II",
+    "fr": "Pictomancien mythique",
+    "icon": "/i/037000/037640.png",
+    "itemReward": 0
+  },
+  "3451": {
+    "en": "Knock on Wood X",
+    "ja": "木工師：レベル100",
+    "de": "Aus anderem Holz X",
+    "fr": "Menuisier mythique",
+    "icon": "/i/035000/035001.png",
+    "itemReward": 0
+  },
+  "3452": {
+    "en": "Temper, Temper X",
+    "ja": "鍛冶師：レベル100",
+    "de": "Seines Glückes Schmied X",
+    "fr": "Forgeron mythique",
+    "icon": "/i/035000/035106.png",
+    "itemReward": 0
+  },
+  "3453": {
+    "en": "The Riddle of Steel X",
+    "ja": "甲冑師：レベル100",
+    "de": "Das Geheimnis des Stahls X",
+    "fr": "Armurier mythique",
+    "icon": "/i/035000/035203.png",
+    "itemReward": 0
+  },
+  "3454": {
+    "en": "Heart of Gold X",
+    "ja": "彫金師：レベル100",
+    "de": "Herz aus Gold X",
+    "fr": "Orfèvre mythique",
+    "icon": "/i/035000/035301.png",
+    "itemReward": 0
+  },
+  "3455": {
+    "en": "Tougher than Leather X",
+    "ja": "革細工師：レベル100",
+    "de": "Ganz in Leder X",
+    "fr": "Tanneur mythique",
+    "icon": "/i/035000/035404.png",
+    "itemReward": 0
+  },
+  "3456": {
+    "en": "Smiling, Styling, and Textiling X",
+    "ja": "裁縫師：レベル100",
+    "de": "Eorzeas neue Kleider X",
+    "fr": "Couturier mythique",
+    "icon": "/i/035000/035501.png",
+    "itemReward": 0
+  },
+  "3457": {
+    "en": "'Tis True without Lying X",
+    "ja": "錬金術師：レベル100",
+    "de": "Gut gemischt ist halb gewonnen X",
+    "fr": "Alchimiste mythique",
+    "icon": "/i/035000/035604.png",
+    "itemReward": 0
+  },
+  "3458": {
+    "en": "All in Good Taste X",
+    "ja": "調理師：レベル100",
+    "de": "Der richtige Pfiff X",
+    "fr": "Cuisinier mythique",
+    "icon": "/i/035000/035704.png",
+    "itemReward": 0
+  },
+  "3459": {
+    "en": "Fear the Reaper X",
+    "ja": "園芸師：レベル100",
+    "de": "Man erntet, was man sät X",
+    "fr": "Botaniste mythique",
+    "icon": "/i/038000/038103.png",
+    "itemReward": 0
+  },
+  "3460": {
+    "en": "Breaking Rocks in the Hot Sun X",
+    "ja": "採掘師：レベル100",
+    "de": "Gute Miene zur Mine X",
+    "fr": "Mineur mythique",
+    "icon": "/i/038000/038003.png",
+    "itemReward": 0
+  },
+  "3461": {
+    "en": "Gone Fishin' X",
+    "ja": "漁師：レベル100",
+    "de": "Was für ein Kaventsmann X",
+    "fr": "Pêcheur mythique",
+    "icon": "/i/038000/038203.png",
+    "itemReward": 0
+  },
+  "3462": {
+    "en": "Mastering War VI",
+    "ja": "武を解し者",
+    "de": "Meister des Krieges VI",
+    "fr": "Mythe de la guerre",
+    "icon": "/i/002000/002547.png",
+    "itemReward": 0
+  },
+  "3463": {
+    "en": "Mastering Magic VI",
+    "ja": "魔を解し者",
+    "de": "Meister der Magie VI",
+    "fr": "Mythe de la magie",
+    "icon": "/i/002000/002661.png",
+    "itemReward": 0
+  },
+  "3464": {
+    "en": "A Life of Adventure VI",
+    "ja": "二十の道を解し者",
+    "de": "Tausendsassa VI",
+    "fr": "Mythe du corps et de l'esprit",
+    "icon": "/i/002000/002517.png",
+    "itemReward": 43595
+  },
+  "3465": {
+    "en": "Mastering the Hand VI",
+    "ja": "職人魂を解し冒険者",
+    "de": "Meister des Handwerks VI",
+    "fr": "Mythe de la main",
+    "icon": "/i/061000/061269.png",
+    "itemReward": 0
+  },
+  "3466": {
+    "en": "Mastering the Land VI",
+    "ja": "黄金の恵みを我が身に",
+    "de": "Meister der Ressourcen VI",
+    "fr": "Mythe de la terre",
+    "icon": "/i/001000/001981.png",
+    "itemReward": 0
+  },
+  "3467": {
+    "en": "Going with the Grain: Exemplar",
+    "ja": "木工職人：皆伝",
+    "de": "Immer mit der Faser: Ass",
+    "fr": "Toucher du bois : As",
+    "icon": "/i/035000/035001.png",
+    "itemReward": 0
+  },
+  "3468": {
+    "en": "Working the Bellows: Exemplar",
+    "ja": "鍛冶職人：皆伝",
+    "de": "Spiel mit dem Feuer: Ass",
+    "fr": "En avant, forgez : As",
+    "icon": "/i/035000/035106.png",
+    "itemReward": 0
+  },
+  "3469": {
+    "en": "Pounding Out the Dents: Exemplar",
+    "ja": "板金職人：皆伝",
+    "de": "Da bist du platt: Ass",
+    "fr": "Entre le marteau et l'enclume : As",
+    "icon": "/i/035000/035203.png",
+    "itemReward": 0
+  },
+  "3470": {
+    "en": "Cutting the Carats: Exemplar",
+    "ja": "彫金職人：皆伝",
+    "de": "Hochkarätige Höchstleistung: Ass",
+    "fr": "Tout ce qui brille : As",
+    "icon": "/i/035000/035301.png",
+    "itemReward": 0
+  },
+  "3471": {
+    "en": "Hiding in Plain Sight: Exemplar",
+    "ja": "革細工職人：皆伝",
+    "de": "Abziehen am helllichten Tage: Ass",
+    "fr": "Tourner autour des peaux : As",
+    "icon": "/i/035000/035404.png",
+    "itemReward": 0
+  },
+  "3472": {
+    "en": "Threading the Needle: Exemplar",
+    "ja": "裁縫職人：皆伝",
+    "de": "Weber wenn sie losgelassen: Ass",
+    "fr": "De fil en aiguille : As",
+    "icon": "/i/035000/035501.png",
+    "itemReward": 0
+  },
+  "3473": {
+    "en": "Mixing It Up: Exemplar",
+    "ja": "錬成職人：皆伝",
+    "de": "Opus Magnum: Ass",
+    "fr": "Alchimiste d'acier : As",
+    "icon": "/i/035000/035604.png",
+    "itemReward": 0
+  },
+  "3474": {
+    "en": "Savoring the Realm: Exemplar",
+    "ja": "調理職人：皆伝",
+    "de": "Das große Fressen: Ass",
+    "fr": "Cordon-bleu : As",
+    "icon": "/i/035000/035704.png",
+    "itemReward": 0
+  },
+  "3475": {
+    "en": "Reaping Dawntrail",
+    "ja": "黄金の伐採名人",
+    "de": "Die Sense aus Gold",
+    "fr": "Deux bois, deux mesures : terres de l'aurore",
+    "icon": "/i/001000/001056.png",
+    "itemReward": 0
+  },
+  "3476": {
+    "en": "Mining Dawntrail",
+    "ja": "黄金の採掘名人",
+    "de": "Die Spitzhacke aus Gold",
+    "fr": "Payer de mine : terres de l'aurore",
+    "icon": "/i/001000/001015.png",
+    "itemReward": 0
+  },
+  "3477": {
+    "en": "Baiting Dawntrail",
+    "ja": "黄金の釣り名人",
+    "de": "Die Angel aus Gold",
+    "fr": "Surveiller sa ligne : terres de l'aurore",
+    "icon": "/i/001000/001101.png",
+    "itemReward": 0
+  },
+  "3478": {
+    "en": "I Made That (Worth Collecting) VII",
+    "ja": "収集品の製作者：ランク7",
+    "de": "Ich hab's sammelbar gemacht VII",
+    "fr": "Facteur de merveilles VII",
+    "icon": "/i/062000/062973.png",
+    "itemReward": 0
+  },
+  "3479": {
+    "en": "I Collected That VII",
+    "ja": "収集品の採集者：ランク7",
+    "de": "Ich hab's gesammelt VII",
+    "fr": "Chasseur de merveilles VII",
+    "icon": "/i/060000/060031.png",
+    "itemReward": 0
+  },
+  "3480": {
+    "en": "With Saw in Hand VIII",
+    "ja": "製作稼業木工師：ランク8",
+    "de": "Sägende Hand VIII",
+    "fr": "Féru de la scie VIII",
+    "icon": "/i/035000/035001.png",
+    "itemReward": 0
+  },
+  "3481": {
+    "en": "With Hammer in Hand VIII",
+    "ja": "製作稼業鍛冶師：ランク8",
+    "de": "Hämmernde Hand VIII",
+    "fr": "Féru de l'enclume VIII",
+    "icon": "/i/035000/035106.png",
+    "itemReward": 0
+  },
+  "3482": {
+    "en": "With Steel in Hand VIII",
+    "ja": "製作稼業甲冑師：ランク8",
+    "de": "Stählerne Hand VIII",
+    "fr": "Féru du marteau VIII",
+    "icon": "/i/035000/035203.png",
+    "itemReward": 0
+  },
+  "3483": {
+    "en": "With Gem in Hand VIII",
+    "ja": "製作稼業彫金師：ランク8",
+    "de": "Goldene Hand VIII",
+    "fr": "Féru du joyau VIII",
+    "icon": "/i/035000/035301.png",
+    "itemReward": 0
+  },
+  "3484": {
+    "en": "With Skin in Hand VIII",
+    "ja": "製作稼業革細工師：ランク8",
+    "de": "Gerbende Hand VIII",
+    "fr": "Féru du couteau VIII",
+    "icon": "/i/035000/035404.png",
+    "itemReward": 0
+  },
+  "3485": {
+    "en": "With Needle in Hand VIII",
+    "ja": "製作稼業裁縫師：ランク8",
+    "de": "Webende Hand VIII",
+    "fr": "Féru de l'aiguille VIII",
+    "icon": "/i/035000/035501.png",
+    "itemReward": 0
+  },
+  "3486": {
+    "en": "With Pestle in Hand VIII",
+    "ja": "製作稼業錬金術師：ランク8",
+    "de": "Brauende Hand VIII",
+    "fr": "Féru de l'alambic VIII",
+    "icon": "/i/035000/035604.png",
+    "itemReward": 0
+  },
+  "3487": {
+    "en": "With Pan in Hand VIII",
+    "ja": "製作稼業調理師：ランク8",
+    "de": "Brutzelnde Hand VIII",
+    "fr": "Féru de la poêle VIII",
+    "icon": "/i/035000/035704.png",
+    "itemReward": 0
+  },
+  "3488": {
+    "en": "With Axe in Hand VIII",
+    "ja": "採集稼業園芸師：ランク8",
+    "de": "Blühende Hand VIII",
+    "fr": "Féru de la hache VIII",
+    "icon": "/i/038000/038103.png",
+    "itemReward": 0
+  },
+  "3489": {
+    "en": "With Pick in Hand VIII",
+    "ja": "採集稼業採掘師：ランク8",
+    "de": "Hackende Hand VIII",
+    "fr": "Féru de la pioche VIII",
+    "icon": "/i/038000/038003.png",
+    "itemReward": 0
+  },
+  "3490": {
+    "en": "With Bait in Hand VIII",
+    "ja": "採集稼業漁師：ランク8",
+    "de": "Angelnde Hand VIII",
+    "fr": "Féru de l'hameçon VIII",
+    "icon": "/i/038000/038203.png",
+    "itemReward": 0
+  },
+  "3491": {
+    "en": "A Promise for the People",
+    "ja": "みんなのために",
+    "de": "Für das Volk",
+    "fr": "Pour le bien de tous",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "3492": {
+    "en": "Peaceful Intentions",
+    "ja": "ウクラマトの平和",
+    "de": "Wir kommen in Frieden",
+    "fr": "La paix selon Wuk Lamat",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "3493": {
+    "en": "In Rite Triumphant",
+    "ja": "すべての路は希望とともに",
+    "de": "Die Herren des Ritus",
+    "fr": "Tous les chemins mènent à l'espoir",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "3494": {
+    "en": "The Worth of a Soul",
+    "ja": "魂を扱う者たち",
+    "de": "Die Kraft der Seelen",
+    "fr": "Une ressource d'âmes",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "3495": {
+    "en": "The Burden of Legacy",
+    "ja": "奇跡の子",
+    "de": "Wunderkind",
+    "fr": "L'enfant prodige",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "3496": {
+    "en": "In the Glow of a New Dawn",
+    "ja": "黄金のレガシー",
+    "de": "Pfad der Morgensonne",
+    "fr": "Le sentier de l'aurore",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "3497": {
+    "en": "Victorious Viper",
+    "ja": "大物狩りのヴァイパー",
+    "de": "Der Weg der Viper",
+    "fr": "Vipère au poing",
+    "icon": "/i/026000/026068.png",
+    "itemReward": 0
+  },
+  "3498": {
+    "en": "Gotta Follow My Rainbow",
+    "ja": "想造のピクトマンサー",
+    "de": "Fantastische Piktomantie",
+    "fr": "Pictomancien imaginatif",
+    "icon": "/i/026000/026069.png",
+    "itemReward": 0
+  },
+  "3499": {
+    "en": "No Sleep Till Tuliyollal",
+    "ja": "イッカクの祭器を奪還せし者",
+    "de": "Wiederbeschaffer der Wiege der Schlaflosen",
+    "fr": "Sous la tutelle du Narval",
+    "icon": "/i/061000/061264.png",
+    "itemReward": 0
+  },
+  "3500": {
+    "en": "A Heartsting's a Heavy Burden",
+    "ja": "サソリの祭器を奪還せし者",
+    "de": "Wiederbeschaffer von Herzstich",
+    "fr": "Sous la tutelle du Scorpion",
+    "icon": "/i/061000/061251.png",
+    "itemReward": 0
+  },
+  "3501": {
+    "en": "Dreams Woven Anew",
+    "ja": "アゲハの祭器を奪還せし者",
+    "de": "Wiederbeschaffer von Flatterschein",
+    "fr": "Sous la tutelle du Papillon machaon",
+    "icon": "/i/061000/061265.png",
+    "itemReward": 0
+  },
+  "3502": {
+    "en": "Some Shields Are Made to Be Broken",
+    "ja": "アルマジロの祭器を奪還せし者",
+    "de": "Wiederbeschaffer von Stahlschwein",
+    "fr": "Sous la tutelle du tatou",
+    "icon": "/i/061000/061262.png",
+    "itemReward": 0
+  },
+  "3503": {
+    "en": "Reach for the Apex",
+    "ja": "フクロウの祭器を奪還せし者",
+    "de": "Wiederbeschaffer von Himmelswächter",
+    "fr": "Sous la tutelle de la Chouette",
+    "icon": "/i/061000/061253.png",
+    "itemReward": 0
+  },
+  "3504": {
+    "en": "Bonds Forged in Fire",
+    "ja": "金荒物屋の硬い絆",
+    "de": "Das Schmieden metallener Bande",
+    "fr": "Forger des liens dans le métal",
+    "icon": "/i/001000/001988.png",
+    "itemReward": 0
+  },
+  "3505": {
+    "en": "These Are Their Stories",
+    "ja": "パメカと綴じる物語",
+    "de": "Auf den Sonnenseiten",
+    "fr": "Relier les cultures par la reliure",
+    "icon": "/i/001000/001987.png",
+    "itemReward": 0
+  },
+  "3506": {
+    "en": "Worth the Squeeze",
+    "ja": "魔法のジュースの配合士",
+    "de": "Magischer Fruchtsaft-Sommelier",
+    "fr": "Décoctions rafraîchissantes",
+    "icon": "/i/001000/001955.png",
+    "itemReward": 0
+  },
+  "3507": {
+    "en": "Holistic Gathering",
+    "ja": "癒やしのアポサカリー",
+    "de": "Heilende Hände",
+    "fr": "La pharmacie du ciel bleu",
+    "icon": "/i/001000/001006.png",
+    "itemReward": 0
+  },
+  "3508": {
+    "en": "Forever Fancy",
+    "ja": "ドヌハヌの道楽仲間",
+    "de": "Flossig Fabelhaft",
+    "fr": "Du caviar pour le bazar",
+    "icon": "/i/001000/001116.png",
+    "itemReward": 0
+  },
+  "3509": {
+    "en": "Bound by Amity",
+    "ja": "知友の絆",
+    "de": "Freunde für immer",
+    "fr": "Pouvoir de l'amitié",
+    "icon": "/i/003000/003139.png",
+    "itemReward": 0
+  },
+  "3510": {
+    "en": "Happy Trails",
+    "ja": "黄金の探検家",
+    "de": "Das Gold der Erde",
+    "fr": "Touriste des terres de l'ouest",
+    "icon": "/i/001000/001019.png",
+    "itemReward": 0
+  },
+  "3511": {
+    "en": "Mapping the Realm: Urqopacha",
+    "ja": "オルコ・パチャを踏破せし者",
+    "de": "Kartograph: Urqopacha",
+    "fr": "Cartographe du continent : Urqopacha",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3512": {
+    "en": "Mapping the Realm: Kozama'uka",
+    "ja": "コザマル・カを踏破せし者",
+    "de": "Kartograph: Kozama'uka",
+    "fr": "Cartographe du continent : Kozama'uka",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3513": {
+    "en": "Mapping the Realm: Yak T'el",
+    "ja": "ヤクテル樹海を踏破せし者",
+    "de": "Kartograph: Yak T'el",
+    "fr": "Cartographe du continent : Yak T'el",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3514": {
+    "en": "Mapping the Realm: Shaaloani",
+    "ja": "シャーローニ荒野を踏破せし者",
+    "de": "Kartograph: Shaaloani",
+    "fr": "Cartographe du continent : Shaaloani",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3515": {
+    "en": "Mapping the Realm: Heritage Found",
+    "ja": "ヘリテージファウンドを踏破せし者",
+    "de": "Kartograph: Ewiges Erbe",
+    "fr": "Cartographe du continent : L'Hoirie recouvrée",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3516": {
+    "en": "Mapping the Realm: Living Memory",
+    "ja": "リビング・メモリーを踏破せし者",
+    "de": "Kartograph: Lebende Erinnerung",
+    "fr": "Cartographe du continent : La Mémoire vivante",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3517": {
+    "en": "Mapping the Realm: Ihuykatumu",
+    "ja": "イフイカ・トゥムを踏破せし者",
+    "de": "Kartograph: Ihuykatumu",
+    "fr": "Cartographe du continent : Remontée de l'Ihuykatumu",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3518": {
+    "en": "Mapping the Realm: Worqor Zormor",
+    "ja": "ウォーコー・ゾーモーを踏破せし者",
+    "de": "Kartograph: Worqor Zormor",
+    "fr": "Cartographe du continent : Worqor Zormor",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3519": {
+    "en": "Mapping the Realm: The Skydeep Cenote",
+    "ja": "天深きセノーテを踏破せし者",
+    "de": "Kartograph: Himmelstiefer Cenote",
+    "fr": "Cartographe du continent : Cénote des Cieux infinis",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3520": {
+    "en": "Mapping the Realm: Vanguard",
+    "ja": "ヴァンガードを踏破せし者",
+    "de": "Kartograph: Der Außenposten",
+    "fr": "Cartographe du continent : L'Avant-garde",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3521": {
+    "en": "Mapping the Realm: Origenics",
+    "ja": "オリジェニクスを踏破せし者",
+    "de": "Kartograph: Origenik",
+    "fr": "Cartographe du continent : L'Origenèse",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3522": {
+    "en": "Mapping the Realm: Alexandria",
+    "ja": "アレクサンドリアを踏破せし者",
+    "de": "Kartograph: Alexandria",
+    "fr": "Cartographe du continent : Alexandrie",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3523": {
+    "en": "Mapping the Realm: Tender Valley",
+    "ja": "サボテンダーバレーを踏破せし者",
+    "de": "Kartograph: Kaktorsenke",
+    "fr": "Cartographe du continent : Vallée des Pampas",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3524": {
+    "en": "Mapping the Realm: The Strayborough Deadwalk",
+    "ja": "ストレイバローを踏破せし者",
+    "de": "Kartograph: Mahrlingen-Promenade",
+    "fr": "Cartographe du continent : Parc-aux-Errants",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3525": {
+    "en": "Everkept",
+    "ja": "武王を打倒せし者",
+    "de": "Mut ist des Wunders Beginn",
+    "fr": "Fin de règne",
+    "icon": "/i/000000/000317.png",
+    "itemReward": 0
+  },
+  "3526": {
+    "en": "Valigarmastered",
+    "ja": "生ける天災を狩りし者",
+    "de": "Katastrophenhilfe",
+    "fr": "Calamité enterrée",
+    "icon": "/i/000000/000317.png",
+    "itemReward": 0
+  },
+  "3527": {
+    "en": "Tank You, Paladin VI",
+    "ja": "みんなのナイト：ランク6",
+    "de": "Ein Paladin für alle Fälle VI",
+    "fr": "Paladin philanthrope VI",
+    "icon": "/i/002000/002505.png",
+    "itemReward": 0
+  },
+  "3528": {
+    "en": "Tank You, Warrior VI",
+    "ja": "みんなの戦士：ランク6",
+    "de": "Ein Krieger für alle Fälle VI",
+    "fr": "Guerrier philanthrope VI",
+    "icon": "/i/002000/002551.png",
+    "itemReward": 0
+  },
+  "3529": {
+    "en": "Tank You, Dark Knight VI",
+    "ja": "みんなの暗黒騎士：ランク6",
+    "de": "Ein Dunkelritter für alle Fälle VI",
+    "fr": "Chevalier noir philanthrope VI",
+    "icon": "/i/003000/003071.png",
+    "itemReward": 0
+  },
+  "3530": {
+    "en": "Tank You, Gunbreaker VI",
+    "ja": "みんなのガンブレイカー：ランク6",
+    "de": "Eine Revolverklinge für alle Fälle VI",
+    "fr": "Pistosabreur philanthrope VI",
+    "icon": "/i/003000/003406.png",
+    "itemReward": 0
+  },
+  "3531": {
+    "en": "Dawn of a New A Game I",
+    "ja": "黄金の難物殺し：ランク1",
+    "de": "Jag mir ein A auf Tural I",
+    "fr": "L'aurore du menu fretin I",
+    "icon": "/i/002000/002680.png",
+    "itemReward": 0
+  },
+  "3532": {
+    "en": "Dawn of a New A Game II",
+    "ja": "黄金の難物殺し：ランク2",
+    "de": "Jag mir ein A auf Tural II",
+    "fr": "L'aurore du menu fretin II",
+    "icon": "/i/002000/002680.png",
+    "itemReward": 0
+  },
+  "3533": {
+    "en": "Dawn of a New A Game III",
+    "ja": "黄金の難物殺し：ランク3",
+    "de": "Jag mir ein A auf Tural III",
+    "fr": "L'aurore du menu fretin III",
+    "icon": "/i/002000/002680.png",
+    "itemReward": 0
+  },
+  "3534": {
+    "en": "Dawn of a New S Game I",
+    "ja": "黄金の超大物殺し：ランク1",
+    "de": "Jag mir ein S auf Tural I",
+    "fr": "L'aurore du gros gibier I",
+    "icon": "/i/002000/002731.png",
+    "itemReward": 0
+  },
+  "3535": {
+    "en": "Dawn of a New S Game II",
+    "ja": "黄金の超大物殺し：ランク2",
+    "de": "Jag mir ein S auf Tural II",
+    "fr": "L'aurore du gros gibier II",
+    "icon": "/i/002000/002731.png",
+    "itemReward": 0
+  },
+  "3536": {
+    "en": "Dawn of a New S Game III",
+    "ja": "黄金の超大物殺し：ランク3",
+    "de": "Jag mir ein S auf Tural III",
+    "fr": "L'aurore du gros gibier III",
+    "icon": "/i/002000/002731.png",
+    "itemReward": 0
+  },
+  "3537": {
+    "en": "Dawnbright Hunter",
+    "ja": "ゴールデンモブハンター",
+    "de": "Goldener Jäger",
+    "fr": "Chasseur de l'aurore",
+    "icon": "/i/002000/002685.png",
+    "itemReward": 43599
+  },
+  "3538": {
+    "en": "Aetherpool Party: Twinfangs",
+    "ja": "強化されし魔器：ツインファング",
+    "de": "Waffen des Padjal: Zwillingsfänge",
+    "fr": "Padjale, ton arme : crochets",
+    "icon": "/i/037000/037430.png",
+    "itemReward": 0
+  },
+  "3539": {
+    "en": "Aetherpool Party: Fan Brush",
+    "ja": "強化されし魔器：ファンブラシ",
+    "de": "Waffen des Padjal: Fächerpinsel",
+    "fr": "Padjale, ton arme : pinceau éventail",
+    "icon": "/i/037000/037639.png",
+    "itemReward": 0
+  },
+  "3540": {
+    "en": "Freebird: Urqopacha",
+    "ja": "オルコ・パチャの風を知る者",
+    "de": "Frei wie ein Vogel: Urqopacha",
+    "fr": "Aux quatre vents : Urqopacha",
+    "icon": "/i/021000/021901.png",
+    "itemReward": 0
+  },
+  "3541": {
+    "en": "Freebird: Kozama'uka",
+    "ja": "コザマル・カの風を知る者",
+    "de": "Frei wie ein Vogel: Kozama'uka",
+    "fr": "Aux quatre vents : Kozama'uka",
+    "icon": "/i/021000/021901.png",
+    "itemReward": 0
+  },
+  "3542": {
+    "en": "Freebird: Yak T'el",
+    "ja": "ヤクテル樹海の風を知る者",
+    "de": "Frei wie ein Vogel: Yak T'el",
+    "fr": "Aux quatre vents : Yak T'el",
+    "icon": "/i/021000/021901.png",
+    "itemReward": 0
+  },
+  "3543": {
+    "en": "Freebird: Shaaloani",
+    "ja": "シャーローニ荒野の風を知る者",
+    "de": "Frei wie ein Vogel: Shaaloani",
+    "fr": "Aux quatre vents : Shaaloani",
+    "icon": "/i/021000/021901.png",
+    "itemReward": 0
+  },
+  "3544": {
+    "en": "Freebird: Heritage Found",
+    "ja": "ヘリテージファウンドの風を知る者",
+    "de": "Frei wie ein Vogel: Ewiges Erbe",
+    "fr": "Aux quatre vents : L'Hoirie recouvrée",
+    "icon": "/i/021000/021901.png",
+    "itemReward": 0
+  },
+  "3545": {
+    "en": "Freebird: Living Memory",
+    "ja": "リビング・メモリーの風を知る者",
+    "de": "Frei wie ein Vogel: Lebende Erinnerung",
+    "fr": "Aux quatre vents : La Mémoire vivante",
+    "icon": "/i/021000/021901.png",
+    "itemReward": 0
+  },
+  "3546": {
+    "en": "Frequent Flyer V",
+    "ja": "黄金の風を知る者",
+    "de": "Vielflieger V",
+    "fr": "Navigateur des cieux de l'ouest",
+    "icon": "/i/021000/021901.png",
+    "itemReward": 0
+  },
+  "3547": {
+    "en": "I Can Dig It XV",
+    "ja": "トレジャーハンター：ランク15",
+    "de": "Wer sucht, der findet XV",
+    "fr": "Creuser son trou XV",
+    "icon": "/i/000000/000115.png",
+    "itemReward": 0
+  },
+  "3548": {
+    "en": "I Can Dig It XVI",
+    "ja": "トレジャーハンター：ランク16",
+    "de": "Wer sucht, der findet XVI",
+    "fr": "Creuser son trou XVI",
+    "icon": "/i/000000/000115.png",
+    "itemReward": 0
+  },
+  "3549": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3550": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3551": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3552": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3553": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3554": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3555": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3556": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3557": {
+    "en": "Triple-decker XIII",
+    "ja": "カードコレクター：ランク13",
+    "de": "Tripledecker XIII",
+    "fr": "Porte-cartes XIII",
+    "icon": "/i/027000/027661.png",
+    "itemReward": 43876
+  },
+  "3558": {
+    "en": "Triple Team IX",
+    "ja": "街角のデュエリスト：ランク9",
+    "de": "Tripleduellant IX",
+    "fr": "En cartes et en os IX",
+    "icon": "/i/003000/003564.png",
+    "itemReward": 43875
+  },
+  "3559": {
+    "en": "Free Market Friend: Urqopacha",
+    "ja": "広域交易商の味方：オルコ・パチャ",
+    "de": "FATE-Händler: Urqopacha",
+    "fr": "Héros de grand chemin : Urqopacha",
+    "icon": "/i/002000/002645.png",
+    "itemReward": 0
+  },
+  "3560": {
+    "en": "Free Market Friend: Kozama'uka",
+    "ja": "広域交易商の味方：コザマル・カ",
+    "de": "FATE-Händler: Kozama'uka",
+    "fr": "Héros de grand chemin : Kozama'uka",
+    "icon": "/i/002000/002645.png",
+    "itemReward": 0
+  },
+  "3561": {
+    "en": "Free Market Friend: Yak T'el",
+    "ja": "広域交易商の味方：ヤクテル樹海",
+    "de": "FATE-Händler: Yak T'el",
+    "fr": "Héros de grand chemin : Yak T'el",
+    "icon": "/i/002000/002645.png",
+    "itemReward": 0
+  },
+  "3562": {
+    "en": "Free Market Friend: Shaaloani",
+    "ja": "広域交易商の味方：シャーローニ荒野",
+    "de": "FATE-Händler: Shaaloani",
+    "fr": "Héros de grand chemin : Shaaloani",
+    "icon": "/i/002000/002645.png",
+    "itemReward": 0
+  },
+  "3563": {
+    "en": "Free Market Friend: Heritage Found",
+    "ja": "広域交易商の味方：ヘリテージファウンド",
+    "de": "FATE-Händler: Ewiges Erbe",
+    "fr": "Héros de grand chemin : L'Hoirie recouvrée",
+    "icon": "/i/002000/002645.png",
+    "itemReward": 0
+  },
+  "3564": {
+    "en": "Free Market Friend: Living Memory",
+    "ja": "広域交易商の味方：リビング・メモリー",
+    "de": "FATE-Händler: Lebende Erinnerung",
+    "fr": "Héros de grand chemin : La Mémoire vivante",
+    "icon": "/i/002000/002645.png",
+    "itemReward": 0
+  },
+  "3565": {
+    "en": "Transcontinental Trade",
+    "ja": "広域交易商の後見人",
+    "de": "Transkontinentaler Handel",
+    "fr": "Héros de grand chemin : Tural",
+    "icon": "/i/002000/002645.png",
+    "itemReward": 0
+  },
+  "3566": {
+    "en": "Terrible Ttokrrone",
+    "ja": "トクローネスレイヤー",
+    "de": "Ttokrrone der Terror",
+    "fr": "Ttokrrone charmé",
+    "icon": "/i/002000/002629.png",
+    "itemReward": 0
+  },
+  "3567": {
+    "en": "Thanks for the Mu-mories",
+    "ja": "マジカルブーギー",
+    "de": "Mu-mmenschanz",
+    "fr": "Farandole mu-gique",
+    "icon": "/i/002000/002629.png",
+    "itemReward": 0
+  },
+  "3568": {
+    "en": "Summer's Biggest Fan",
+    "ja": "暑気払いの大うちわ",
+    "de": "Held der Hitze",
+    "fr": "Gros éventails rafraîchissants",
+    "icon": "/i/064000/064452.png",
+    "itemReward": 0
+  },
+  "3569": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3570": {
+    "en": "The Little Fiends in Life",
+    "ja": "感謝味わう守護天節",
+    "de": "Ein vorzügliches Allerschutzheiligen",
+    "fr": "感謝味わう守護天節",
+    "icon": "/i/056000/056726.png",
+    "itemReward": 0
+  },
+  "3571": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3572": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3573": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3574": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3575": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3576": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3577": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3578": {
+    "en": "Top Tier: Season Eleven",
+    "ja": "コンフリクトの王者：シーズン11",
+    "de": "Kristallkönig (11. Saison)",
+    "fr": "Roi du conflit : saison 11",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3579": {
+    "en": "Crystal in the Rough: Season Eleven",
+    "ja": "コンフリクトの勇者：シーズン11",
+    "de": "Kristallfürst (11. Saison)",
+    "fr": "Prince du conflit : saison 11",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3580": {
+    "en": "Ranked and Filed: Season Eleven",
+    "ja": "コンフリクトの入賞者：シーズン11",
+    "de": "Kristallkämpfer (11. Saison)",
+    "fr": "As du conflit : saison 11",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3581": {
+    "en": "The Leader of the Band VII",
+    "ja": "旋律に魅せられし者：ランク7",
+    "de": "Hier spielt die Musik VII",
+    "fr": "Mélomane mécanique VII",
+    "icon": "/i/025000/025945.png",
     "itemReward": 0
   }
 }

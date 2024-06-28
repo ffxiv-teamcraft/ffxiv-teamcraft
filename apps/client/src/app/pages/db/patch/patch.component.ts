@@ -6,7 +6,7 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { SeoService } from '../../../core/seo/seo.service';
-import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
+import { filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyPatchName } from '@ffxiv-teamcraft/data/model/lazy-patch-name';
@@ -61,6 +61,7 @@ export class PatchComponent extends TeamcraftPageComponent {
     switchMap(patch => {
       return this.lazyData.getRow('patchContent', patch.id).pipe(
         map(patchContent => {
+          console.log(patchContent);
           return {
             ...patch,
             ...patchContent

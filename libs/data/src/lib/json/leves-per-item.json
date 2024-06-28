@@ -9534,5 +9534,725 @@
       "lvl": 86,
       "classJob": 19
     }
+  ],
+  "41854": [
+    {
+      "leve": 1719,
+      "amount": 1,
+      "lvl": 90,
+      "classJob": 12
+    }
+  ],
+  "41855": [
+    {
+      "leve": 1698,
+      "amount": 1,
+      "lvl": 90,
+      "classJob": 10
+    }
+  ],
+  "41856": [
+    {
+      "leve": 1749,
+      "amount": 1,
+      "lvl": 90,
+      "classJob": 15
+    }
+  ],
+  "41857": [
+    {
+      "leve": 1709,
+      "amount": 1,
+      "lvl": 90,
+      "classJob": 11
+    }
+  ],
+  "41903": [
+    {
+      "leve": 1729,
+      "amount": 1,
+      "lvl": 90,
+      "classJob": 13
+    }
+  ],
+  "41992": [
+    {
+      "leve": 1701,
+      "amount": 1,
+      "lvl": 92,
+      "classJob": 10
+    }
+  ],
+  "41997": [
+    {
+      "leve": 1750,
+      "amount": 1,
+      "lvl": 92,
+      "classJob": 15
+    }
+  ],
+  "42006": [
+    {
+      "leve": 1721,
+      "amount": 1,
+      "lvl": 92,
+      "classJob": 12
+    }
+  ],
+  "42008": [
+    {
+      "leve": 1691,
+      "amount": 1,
+      "lvl": 92,
+      "classJob": 9
+    }
+  ],
+  "42016": [
+    {
+      "leve": 1711,
+      "amount": 1,
+      "lvl": 92,
+      "classJob": 11
+    }
+  ],
+  "42019": [
+    {
+      "leve": 1710,
+      "amount": 1,
+      "lvl": 92,
+      "classJob": 11
+    }
+  ],
+  "42024": [
+    {
+      "leve": 1730,
+      "amount": 1,
+      "lvl": 92,
+      "classJob": 13
+    }
+  ],
+  "42036": [
+    {
+      "leve": 1731,
+      "amount": 1,
+      "lvl": 92,
+      "classJob": 13
+    }
+  ],
+  "42043": [
+    {
+      "leve": 1741,
+      "amount": 1,
+      "lvl": 92,
+      "classJob": 14
+    }
+  ],
+  "42153": [
+    {
+      "leve": 1703,
+      "amount": 1,
+      "lvl": 94,
+      "classJob": 10
+    }
+  ],
+  "42164": [
+    {
+      "leve": 1752,
+      "amount": 1,
+      "lvl": 94,
+      "classJob": 15
+    }
+  ],
+  "42184": [
+    {
+      "leve": 1743,
+      "amount": 1,
+      "lvl": 94,
+      "classJob": 14
+    }
+  ],
+  "42302": [
+    {
+      "leve": 1694,
+      "amount": 1,
+      "lvl": 96,
+      "classJob": 9
+    }
+  ],
+  "42306": [
+    {
+      "leve": 1755,
+      "amount": 1,
+      "lvl": 96,
+      "classJob": 15
+    }
+  ],
+  "42308": [
+    {
+      "leve": 1704,
+      "amount": 1,
+      "lvl": 96,
+      "classJob": 10
+    }
+  ],
+  "42321": [
+    {
+      "leve": 1715,
+      "amount": 1,
+      "lvl": 96,
+      "classJob": 11
+    }
+  ],
+  "42325": [
+    {
+      "leve": 1724,
+      "amount": 1,
+      "lvl": 96,
+      "classJob": 12
+    }
+  ],
+  "42334": [
+    {
+      "leve": 1734,
+      "amount": 1,
+      "lvl": 96,
+      "classJob": 13
+    }
+  ],
+  "42347": [
+    {
+      "leve": 1744,
+      "amount": 1,
+      "lvl": 96,
+      "classJob": 14
+    }
+  ],
+  "42350": [
+    {
+      "leve": 1714,
+      "amount": 1,
+      "lvl": 96,
+      "classJob": 11
+    }
+  ],
+  "42373": [
+    {
+      "leve": 1725,
+      "amount": 1,
+      "lvl": 96,
+      "classJob": 12
+    }
+  ],
+  "42455": [
+    {
+      "leve": 1696,
+      "amount": 1,
+      "lvl": 98,
+      "classJob": 9
+    }
+  ],
+  "42458": [
+    {
+      "leve": 1726,
+      "amount": 1,
+      "lvl": 98,
+      "classJob": 12
+    }
+  ],
+  "42459": [
+    {
+      "leve": 1756,
+      "amount": 1,
+      "lvl": 98,
+      "classJob": 15
+    }
+  ],
+  "42471": [
+    {
+      "leve": 1706,
+      "amount": 1,
+      "lvl": 98,
+      "classJob": 10
+    }
+  ],
+  "42483": [
+    {
+      "leve": 1717,
+      "amount": 1,
+      "lvl": 98,
+      "classJob": 11
+    }
+  ],
+  "42487": [
+    {
+      "leve": 1737,
+      "amount": 1,
+      "lvl": 98,
+      "classJob": 13
+    }
+  ],
+  "42496": [
+    {
+      "leve": 1716,
+      "amount": 1,
+      "lvl": 98,
+      "classJob": 11
+    }
+  ],
+  "42503": [
+    {
+      "leve": 1736,
+      "amount": 1,
+      "lvl": 98,
+      "classJob": 13
+    }
+  ],
+  "42504": [
+    {
+      "leve": 1727,
+      "amount": 1,
+      "lvl": 98,
+      "classJob": 12
+    }
+  ],
+  "42505": [
+    {
+      "leve": 1747,
+      "amount": 1,
+      "lvl": 98,
+      "classJob": 14
+    }
+  ],
+  "42506": [
+    {
+      "leve": 1746,
+      "amount": 1,
+      "lvl": 98,
+      "classJob": 14
+    }
+  ],
+  "43209": [
+    {
+      "leve": 1699,
+      "amount": 1,
+      "lvl": 90,
+      "classJob": 10
+    }
+  ],
+  "43226": [
+    {
+      "leve": 1723,
+      "amount": 1,
+      "lvl": 94,
+      "classJob": 12
+    }
+  ],
+  "43227": [
+    {
+      "leve": 1713,
+      "amount": 1,
+      "lvl": 94,
+      "classJob": 11
+    }
+  ],
+  "43231": [
+    {
+      "leve": 1693,
+      "amount": 1,
+      "lvl": 94,
+      "classJob": 9
+    }
+  ],
+  "43233": [
+    {
+      "leve": 1702,
+      "amount": 1,
+      "lvl": 94,
+      "classJob": 10
+    }
+  ],
+  "43258": [
+    {
+      "leve": 1695,
+      "amount": 1,
+      "lvl": 96,
+      "classJob": 9
+    }
+  ],
+  "43261": [
+    {
+      "leve": 1705,
+      "amount": 1,
+      "lvl": 96,
+      "classJob": 10
+    }
+  ],
+  "43278": [
+    {
+      "leve": 1707,
+      "amount": 1,
+      "lvl": 98,
+      "classJob": 10
+    }
+  ],
+  "43285": [
+    {
+      "leve": 1739,
+      "amount": 1,
+      "lvl": 90,
+      "classJob": 14
+    }
+  ],
+  "43296": [
+    {
+      "leve": 1733,
+      "amount": 1,
+      "lvl": 94,
+      "classJob": 13
+    }
+  ],
+  "43310": [
+    {
+      "leve": 1735,
+      "amount": 1,
+      "lvl": 96,
+      "classJob": 13
+    }
+  ],
+  "43312": [
+    {
+      "leve": 1745,
+      "amount": 1,
+      "lvl": 96,
+      "classJob": 14
+    }
+  ],
+  "43328": [
+    {
+      "leve": 1689,
+      "amount": 1,
+      "lvl": 90,
+      "classJob": 9
+    }
+  ],
+  "43345": [
+    {
+      "leve": 1697,
+      "amount": 1,
+      "lvl": 98,
+      "classJob": 9
+    }
+  ],
+  "43676": [
+    {
+      "leve": 1798,
+      "amount": 3,
+      "lvl": 90,
+      "classJob": 19
+    }
+  ],
+  "43692": [
+    {
+      "leve": 1800,
+      "amount": 3,
+      "lvl": 92,
+      "classJob": 19
+    }
+  ],
+  "43702": [
+    {
+      "leve": 1802,
+      "amount": 3,
+      "lvl": 94,
+      "classJob": 19
+    }
+  ],
+  "43739": [
+    {
+      "leve": 1804,
+      "amount": 3,
+      "lvl": 96,
+      "classJob": 19
+    }
+  ],
+  "43769": [
+    {
+      "leve": 1806,
+      "amount": 3,
+      "lvl": 98,
+      "classJob": 19
+    }
+  ],
+  "43804": [
+    {
+      "leve": 1799,
+      "amount": 9,
+      "lvl": 90,
+      "classJob": 19
+    }
+  ],
+  "43808": [
+    {
+      "leve": 1803,
+      "amount": 9,
+      "lvl": 94,
+      "classJob": 19
+    }
+  ],
+  "43811": [
+    {
+      "leve": 1801,
+      "amount": 9,
+      "lvl": 92,
+      "classJob": 19
+    }
+  ],
+  "43837": [
+    {
+      "leve": 1805,
+      "amount": 9,
+      "lvl": 96,
+      "classJob": 19
+    }
+  ],
+  "43843": [
+    {
+      "leve": 1807,
+      "amount": 9,
+      "lvl": 98,
+      "classJob": 19
+    }
+  ],
+  "43972": [
+    {
+      "leve": 1758,
+      "amount": 9,
+      "lvl": 90,
+      "classJob": 16
+    }
+  ],
+  "43974": [
+    {
+      "leve": 1761,
+      "amount": 9,
+      "lvl": 92,
+      "classJob": 16
+    }
+  ],
+  "43997": [
+    {
+      "leve": 1708,
+      "amount": 3,
+      "lvl": 90,
+      "classJob": 11
+    }
+  ],
+  "43998": [
+    {
+      "leve": 1700,
+      "amount": 3,
+      "lvl": 92,
+      "classJob": 10
+    }
+  ],
+  "43999": [
+    {
+      "leve": 1712,
+      "amount": 3,
+      "lvl": 94,
+      "classJob": 11
+    }
+  ],
+  "44008": [
+    {
+      "leve": 1718,
+      "amount": 3,
+      "lvl": 90,
+      "classJob": 12
+    }
+  ],
+  "44009": [
+    {
+      "leve": 1720,
+      "amount": 3,
+      "lvl": 92,
+      "classJob": 12
+    }
+  ],
+  "44010": [
+    {
+      "leve": 1722,
+      "amount": 3,
+      "lvl": 94,
+      "classJob": 12
+    }
+  ],
+  "44013": [
+    {
+      "leve": 1753,
+      "amount": 3,
+      "lvl": 94,
+      "classJob": 15
+    }
+  ],
+  "44019": [
+    {
+      "leve": 1688,
+      "amount": 3,
+      "lvl": 90,
+      "classJob": 9
+    }
+  ],
+  "44020": [
+    {
+      "leve": 1690,
+      "amount": 3,
+      "lvl": 92,
+      "classJob": 9
+    }
+  ],
+  "44021": [
+    {
+      "leve": 1692,
+      "amount": 3,
+      "lvl": 94,
+      "classJob": 9
+    }
+  ],
+  "44029": [
+    {
+      "leve": 1738,
+      "amount": 3,
+      "lvl": 90,
+      "classJob": 14
+    }
+  ],
+  "44030": [
+    {
+      "leve": 1740,
+      "amount": 3,
+      "lvl": 92,
+      "classJob": 14
+    }
+  ],
+  "44031": [
+    {
+      "leve": 1742,
+      "amount": 3,
+      "lvl": 94,
+      "classJob": 14
+    }
+  ],
+  "44047": [
+    {
+      "leve": 1751,
+      "amount": 9,
+      "lvl": 92,
+      "classJob": 15
+    }
+  ],
+  "44049": [
+    {
+      "leve": 1748,
+      "amount": 3,
+      "lvl": 90,
+      "classJob": 15
+    }
+  ],
+  "44058": [
+    {
+      "leve": 1728,
+      "amount": 3,
+      "lvl": 90,
+      "classJob": 13
+    }
+  ],
+  "44060": [
+    {
+      "leve": 1732,
+      "amount": 3,
+      "lvl": 94,
+      "classJob": 13
+    }
+  ],
+  "44073": [
+    {
+      "leve": 1759,
+      "amount": 3,
+      "lvl": 90,
+      "classJob": 16
+    }
+  ],
+  "44074": [
+    {
+      "leve": 1760,
+      "amount": 3,
+      "lvl": 92,
+      "classJob": 16
+    }
+  ],
+  "44076": [
+    {
+      "leve": 1767,
+      "amount": 3,
+      "lvl": 98,
+      "classJob": 16
+    }
+  ],
+  "44088": [
+    {
+      "leve": 1763,
+      "amount": 3,
+      "lvl": 94,
+      "classJob": 16
+    }
+  ],
+  "44093": [
+    {
+      "leve": 1762,
+      "amount": 3,
+      "lvl": 94,
+      "classJob": 16
+    }
+  ],
+  "44097": [
+    {
+      "leve": 1766,
+      "amount": 3,
+      "lvl": 98,
+      "classJob": 16
+    }
+  ],
+  "44102": [
+    {
+      "leve": 1765,
+      "amount": 3,
+      "lvl": 96,
+      "classJob": 16
+    }
+  ],
+  "44105": [
+    {
+      "leve": 1764,
+      "amount": 3,
+      "lvl": 96,
+      "classJob": 16
+    }
+  ],
+  "44161": [
+    {
+      "leve": 1757,
+      "amount": 3,
+      "lvl": 98,
+      "classJob": 15
+    }
+  ],
+  "44169": [
+    {
+      "leve": 1754,
+      "amount": 3,
+      "lvl": 96,
+      "classJob": 15
+    }
   ]
 }

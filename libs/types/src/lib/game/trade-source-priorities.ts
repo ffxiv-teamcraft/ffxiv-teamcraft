@@ -25,9 +25,10 @@ export const TRADE_SOURCES_PRIORITIES = {
   40: 0, // Allegory
   41: 0, // Revelation
   42: 0, // Aphorism
-  43: 25, // Astronomy
-  44: 25, // Causality
-  45: 25, // Comedy
+  43: 0, // Astronomy
+  44: 0, // Causality
+  45: 0, // Comedy
+  46: 25, // Aesthetics
   7811: 28, // Rowena's Token (Soldiery)
   9383: 28, // Rowena's Token (Poetics)
   14298: 28, // Rowena's Token (Lore)
