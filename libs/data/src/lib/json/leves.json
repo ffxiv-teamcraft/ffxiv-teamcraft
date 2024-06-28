@@ -27993,7 +27993,7 @@
       }
     ],
     "gilReward": 5304,
-    "expReward": 310930,
+    "expReward": 1710120,
     "cost": 10,
     "startPlaceId": 2300,
     "deliveryPlaceId": 2300,
@@ -42756,6 +42756,3066 @@
     "cost": 1,
     "startPlaceId": 3709,
     "deliveryPlaceId": 3706,
+    "repeats": 0
+  },
+  "1688": {
+    "en": "Hull Lotta Damage",
+    "ja": "製作依頼：帰りの船に補修の木材を",
+    "de": "Rumpfschäden",
+    "fr": "Fabrication&nbsp;: colmatage de coque",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 8,
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 90,
+    "items": [
+      {
+        "itemId": 44019,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2530,
+    "expReward": 1440660,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1689": {
+    "en": "Yimepi's Country Charms",
+    "ja": "製作依頼：癒し系なイヤリング",
+    "de": "Rustikale Ohrringe",
+    "fr": "Fabrication&nbsp;: boucles d'oreilles porte-bonheur",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 8,
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 90,
+    "items": [
+      {
+        "itemId": 43328,
+        "amount": 1
+      }
+    ],
+    "gilReward": 2530,
+    "expReward": 1440660,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1690": {
+    "en": "Wood You Be Quiet",
+    "ja": "製作依頼：静かな、静かな、吸音壁の木材",
+    "de": "Lärmbeschwerden",
+    "fr": "Fabrication&nbsp;: bois silencieux",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 8,
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 92,
+    "items": [
+      {
+        "itemId": 44020,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2535,
+    "expReward": 1665250,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1691": {
+    "en": "The Wing's Wings",
+    "ja": "製作依頼：森の息吹感じる賢具",
+    "de": "Kultureller Austausch",
+    "fr": "Fabrication&nbsp;: noulithes forestiers",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 8,
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 92,
+    "items": [
+      {
+        "itemId": 42008,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5070,
+    "expReward": 3115640,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1692": {
+    "en": "Turali Quality",
+    "ja": "製作依頼：強き、強き、高級家具の木材",
+    "de": "Schöner Wohnen",
+    "fr": "Fabrication&nbsp;: bois pour meubles de luxe",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 8,
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 94,
+    "items": [
+      {
+        "itemId": 44021,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2550,
+    "expReward": 1902430,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1693": {
+    "en": "Lament of the Lazylump",
+    "ja": "製作依頼：お魚釣り竿　あったらいいな～",
+    "de": "Müßiggang am Strand",
+    "fr": "Fabrication&nbsp;: canne à pêche",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 8,
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 94,
+    "items": [
+      {
+        "itemId": 43231,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5100,
+    "expReward": 2454760,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1694": {
+    "en": "Bow Out",
+    "ja": "製作依頼：鍛錬中の大弓不足報告書",
+    "de": "Ersatzbögen",
+    "fr": "Fabrication&nbsp;: arcs de la Légion",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 8,
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 96,
+    "items": [
+      {
+        "itemId": 42302,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5140,
+    "expReward": 4125360,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1695": {
+    "en": "Weaving a Path",
+    "ja": "製作依頼：金煌なる紡ぎ車",
+    "de": "Große Reisen",
+    "fr": "Fabrication&nbsp;: métier à tisser",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 8,
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 96,
+    "items": [
+      {
+        "itemId": 43258,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5140,
+    "expReward": 2845080,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1696": {
+    "en": "Spear Pressure",
+    "ja": "製作依頼：演練中の長槍破損顛末書",
+    "de": "Der furchtbare Dragoon",
+    "fr": "Fabrication&nbsp;: lances d'entraînement",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 8,
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 98,
+    "items": [
+      {
+        "itemId": 42455,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5180,
+    "expReward": 4664730,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1697": {
+    "en": "No Greater Treasure",
+    "ja": "製作依頼：トラル土産に首飾りを",
+    "de": "Andenken an Tural",
+    "fr": "Fabrication&nbsp;: souvenir du Tural",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 8,
+      "en": "CRP",
+      "ja": "木工師",
+      "de": "ZMR",
+      "fr": "MEN"
+    },
+    "lvl": 98,
+    "items": [
+      {
+        "itemId": 43345,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5180,
+    "expReward": 3217060,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1698": {
+    "en": "Always Be Prepaired",
+    "ja": "製作依頼：選抜中の二刀武具取違え始末書",
+    "de": "Ungleiche Doppelklingen",
+    "fr": "Fabrication&nbsp;: lames doubles",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 9,
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 90,
+    "items": [
+      {
+        "itemId": 41855,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5060,
+    "expReward": 2695430,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1699": {
+    "en": "Paring Is Caring",
+    "ja": "製作依頼：自然と向き合う手斧",
+    "de": "Baumpflege",
+    "fr": "Fabrication&nbsp;: hachette de jardinage",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 9,
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 90,
+    "items": [
+      {
+        "itemId": 43209,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5060,
+    "expReward": 1858920,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1700": {
+    "en": "Ruthenium Supremium",
+    "ja": "製作依頼：国一番に鍛えるルテニウム塊",
+    "de": "Rutheniummangel",
+    "fr": "Fabrication&nbsp;: le meilleur ruthénium du pays",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 9,
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 92,
+    "items": [
+      {
+        "itemId": 43998,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2535,
+    "expReward": 1665250,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1701": {
+    "en": "Axes to the Maxes",
+    "ja": "製作依頼：国一等の王族の斧",
+    "de": "Äxte für alle",
+    "fr": "Fabrication&nbsp;: hache royale",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 9,
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 92,
+    "items": [
+      {
+        "itemId": 41992,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5070,
+    "expReward": 3115640,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1702": {
+    "en": "Maintaining the Maintainers",
+    "ja": "製作依頼：大空への翼保つ整備道具",
+    "de": "Sicherheitskontrollen",
+    "fr": "Fabrication&nbsp;: réparation de ballon",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 9,
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 94,
+    "items": [
+      {
+        "itemId": 43233,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5100,
+    "expReward": 2454760,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1703": {
+    "en": "Dagger Swagger",
+    "ja": "製作依頼：国一級の輝く双剣",
+    "de": "Erfolg nach Vorlage",
+    "fr": "Fabrication&nbsp;: dagues de luxe",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 9,
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 94,
+    "items": [
+      {
+        "itemId": 42153,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5100,
+    "expReward": 3559400,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1704": {
+    "en": "Bladewinner",
+    "ja": "製作依頼：国一本の栄えある大剣",
+    "de": "Königliche Waffenschmiede",
+    "fr": "Fabrication&nbsp;: épée de toute beauté",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 9,
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 96,
+    "items": [
+      {
+        "itemId": 42308,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5140,
+    "expReward": 4125360,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1705": {
+    "en": "Maul Me",
+    "ja": "製作依頼：おニューのモール　持ってたい～",
+    "de": "Glänzende Arbeitsdinge",
+    "fr": "Fabrication&nbsp;: maillet renouvelé",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 9,
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 96,
+    "items": [
+      {
+        "itemId": 43261,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5140,
+    "expReward": 2845080,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1706": {
+    "en": "Ceremonial Teeth",
+    "ja": "製作依頼：御前試合用の二刀武具発注書",
+    "de": "Feierliche Präsentation",
+    "fr": "Fabrication&nbsp;: lames acérées",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 9,
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 98,
+    "items": [
+      {
+        "itemId": 42471,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5180,
+    "expReward": 4664730,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1707": {
+    "en": "Awl Dreams Come True",
+    "ja": "製作依頼：正確さ極める細工道具",
+    "de": "Großstadtkonkurrenz",
+    "fr": "Fabrication&nbsp;: un outil plus précis",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 9,
+      "en": "BSM",
+      "ja": "鍛冶師",
+      "de": "GRS",
+      "fr": "FRG"
+    },
+    "lvl": 98,
+    "items": [
+      {
+        "itemId": 43278,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5180,
+    "expReward": 3940890,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1708": {
+    "en": "Don't Bore Me, Ore Me",
+    "ja": "製作依頼：国一位の高山鋼塊",
+    "de": "Nervige Verkaufsgespräche",
+    "fr": "Fabrication&nbsp;: des lingots pour les frangins",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 10,
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 90,
+    "items": [
+      {
+        "itemId": 43997,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2530,
+    "expReward": 1440660,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1709": {
+    "en": "Shielding My Students",
+    "ja": "製作依頼：求む、勇将の盾",
+    "de": "Rekrutenschreck",
+    "fr": "Fabrication&nbsp;: les boucliers de la Légion",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 10,
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 90,
+    "items": [
+      {
+        "itemId": 41857,
+        "amount": 1
+      }
+    ],
+    "gilReward": 2530,
+    "expReward": 1440660,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1710": {
+    "en": "Brace for More Vambraces",
+    "ja": "製作依頼：国一流の隊士の手甲",
+    "de": "Schöne Armschienen",
+    "fr": "Fabrication&nbsp;: poignets renforcés",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 10,
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 92,
+    "items": [
+      {
+        "itemId": 42019,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5070,
+    "expReward": 2148720,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1711": {
+    "en": "Forgiveness for My Shins",
+    "ja": "製作依頼：求む、闘将の足甲",
+    "de": "Schmerzende Schienbeine",
+    "fr": "Fabrication&nbsp;: protèges-tibias",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 10,
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 92,
+    "items": [
+      {
+        "itemId": 42016,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5070,
+    "expReward": 2148720,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1712": {
+    "en": "Metal with Mettle",
+    "ja": "製作依頼：国一世の超硬合金塊",
+    "de": "Der härteste aller Barren",
+    "fr": "Fabrication&nbsp;: métaux en fusion",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 10,
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 94,
+    "items": [
+      {
+        "itemId": 43999,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2550,
+    "expReward": 1902430,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1713": {
+    "en": "Odd Instruments",
+    "ja": "製作依頼：舶来工程用の精密道具",
+    "de": "Fremdländische Heilkunde",
+    "fr": "Fabrication&nbsp;: métaux alambiqués",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 10,
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 94,
+    "items": [
+      {
+        "itemId": 43227,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5100,
+    "expReward": 2454760,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1714": {
+    "en": "Don't Ask about the Rivets",
+    "ja": "製作依頼：特別注文の鋲打ち全頭マスク",
+    "de": "Bizarre Großstadtmode",
+    "fr": "Fabrication&nbsp;: rivé à son casque",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 10,
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 96,
+    "items": [
+      {
+        "itemId": 42350,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5140,
+    "expReward": 3059520,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1715": {
+    "en": "Backing up My Words",
+    "ja": "製作依頼：求む、豪将の鉄鎧",
+    "de": "Aufmerksame Rekruten",
+    "fr": "Fabrication&nbsp;: une armure qui pique",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 10,
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 96,
+    "items": [
+      {
+        "itemId": 42321,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5140,
+    "expReward": 4554260,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1716": {
+    "en": "A Hand for a Deckhand",
+    "ja": "製作依頼：甲板員に厚い手袋を",
+    "de": "Geschundene Hände",
+    "fr": "Fabrication&nbsp;: gants de mousaillons",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 10,
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 98,
+    "items": [
+      {
+        "itemId": 42496,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5180,
+    "expReward": 3459540,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1717": {
+    "en": "Essays on Equipment",
+    "ja": "製作依頼：訓練中の脚部防具全損反省文",
+    "de": "Vernachlässigte Pflege",
+    "fr": "Fabrication&nbsp;: jambards notoires",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 10,
+      "en": "ARM",
+      "ja": "甲冑師",
+      "de": "PLA",
+      "fr": "ARM"
+    },
+    "lvl": 98,
+    "items": [
+      {
+        "itemId": 42483,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5180,
+    "expReward": 3459540,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1718": {
+    "en": "On Board for Lar",
+    "ja": "製作依頼：依頼するわ、ラァー塊を",
+    "de": "Hochwertige Metallbarren",
+    "fr": "Fabrication&nbsp;: façonner dans le lar",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 11,
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 90,
+    "items": [
+      {
+        "itemId": 44008,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2530,
+    "expReward": 1440660,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1719": {
+    "en": "Pendulums of Our Own",
+    "ja": "製作依頼：銀光輝くペンデュラム",
+    "de": "Nach überseeischem Vorbild",
+    "fr": "Fabrication&nbsp;: mettre les pendules au lar",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 11,
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 90,
+    "items": [
+      {
+        "itemId": 41854,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5060,
+    "expReward": 2695430,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1720": {
+    "en": "Guaranteed Gem",
+    "ja": "製作依頼：トラル名物なジュエル",
+    "de": " Jhuykan-was?",
+    "fr": "Fabrication&nbsp;: des ihuykanites et vite&nbsp;!",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 11,
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 92,
+    "items": [
+      {
+        "itemId": 44009,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2535,
+    "expReward": 1665250,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1721": {
+    "en": "Fan of the Foreign",
+    "ja": "製作依頼：求む、猛将の鉄扇",
+    "de": "Fächer aus Metall",
+    "fr": "Fabrication&nbsp;: éventer la Légion",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 11,
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 92,
+    "items": [
+      {
+        "itemId": 42006,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5070,
+    "expReward": 3115640,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1722": {
+    "en": "Shiny and Good",
+    "ja": "製作依頼：テッパンのらぶりージュエル",
+    "de": "Ljebljches Funkeln",
+    "fr": "Fabrication&nbsp;: béryls colorés",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 11,
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 94,
+    "items": [
+      {
+        "itemId": 44010,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2550,
+    "expReward": 1902430,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1723": {
+    "en": "Sew Excited",
+    "ja": "製作依頼：渾身のお針子道具",
+    "de": "Nähen mit Leidenschaft",
+    "fr": "Fabrication&nbsp;: aiguille alliée",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 11,
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 94,
+    "items": [
+      {
+        "itemId": 43226,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5100,
+    "expReward": 2454760,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1724": {
+    "en": "Orders Anonymous",
+    "ja": "製作依頼：トクメイでトゲトゲなハーフマスク",
+    "de": "Stacheliger Modetrend",
+    "fr": "Fabrication&nbsp;: demi-masqué, demi-caché",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 11,
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 96,
+    "items": [
+      {
+        "itemId": 42325,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5140,
+    "expReward": 3059520,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1725": {
+    "en": "Ringing Gratitude",
+    "ja": "製作依頼：輝く、輝く、功労賞の指輪",
+    "de": "Zeichen des Dankes",
+    "fr": "Fabrication&nbsp;: bague en or blanc",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 11,
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 96,
+    "items": [
+      {
+        "itemId": 42373,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5140,
+    "expReward": 2419380,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1726": {
+    "en": "The Right Rod",
+    "ja": "製作依頼：大地の祈り届ける呪杖",
+    "de": "Ein Stab aus Dunkelstahl",
+    "fr": "Fabrication&nbsp;: un sceptre rare",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 11,
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 98,
+    "items": [
+      {
+        "itemId": 42458,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5180,
+    "expReward": 4183380,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1727": {
+    "en": "Mask Maker",
+    "ja": "製作依頼：最先端でファンシーな仮面",
+    "de": "Ienseits des Hjmmels",
+    "fr": "Fabrication&nbsp;: masqué du côté obscur",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 11,
+      "en": "GSM",
+      "ja": "彫金師",
+      "de": "GLD",
+      "fr": "ORF"
+    },
+    "lvl": 98,
+    "items": [
+      {
+        "itemId": 42504,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5180,
+    "expReward": 3459540,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1728": {
+    "en": "Tenets of Tanning",
+    "ja": "製作依頼：命いただくシルバリオレザー",
+    "de": "Aus Liebe zum Tier",
+    "fr": "Fabrication&nbsp;: cuir lupin",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 12,
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 90,
+    "items": [
+      {
+        "itemId": 44058,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2530,
+    "expReward": 1440660,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1729": {
+    "en": "The Perfect Accessory",
+    "ja": "製作依頼：みんなに似合うイカした腕輪",
+    "de": "Leder geht immer",
+    "fr": "Fabrication&nbsp;: amulette clinquante",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 12,
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 90,
+    "items": [
+      {
+        "itemId": 41903,
+        "amount": 1
+      }
+    ],
+    "gilReward": 2530,
+    "expReward": 1440660,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1730": {
+    "en": "Freezing Fingers",
+    "ja": "製作依頼：大空操る丈夫なグローブ",
+    "de": "Eisige Höhen",
+    "fr": "Fabrication&nbsp;: attention les doigts",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 12,
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 92,
+    "items": [
+      {
+        "itemId": 42024,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5070,
+    "expReward": 2148720,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1731": {
+    "en": "Dreams of Ja",
+    "ja": "製作依頼：鱗纏うワニ革レギンス",
+    "de": "Wie ein Mamool Ja",
+    "fr": "Fabrication&nbsp;: jambes de croco",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 12,
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 92,
+    "items": [
+      {
+        "itemId": 42036,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5070,
+    "expReward": 2148720,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1732": {
+    "en": "Respect for Br'aax",
+    "ja": "製作依頼：トラルの誇りブラーシャレザー",
+    "de": "Respekt dem Br'aax",
+    "fr": "Fabrication&nbsp;: cuir de br'aax",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 12,
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 94,
+    "items": [
+      {
+        "itemId": 44060,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2550,
+    "expReward": 1902430,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1733": {
+    "en": "Lending Artisans a Hand",
+    "ja": "製作依頼：依頼します、職人の手袋を",
+    "de": "Handschuhe für den Kontinent",
+    "fr": "Fabrication&nbsp;: mitaines en cuir de br'aax",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 12,
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 94,
+    "items": [
+      {
+        "itemId": 43296,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5100,
+    "expReward": 2454760,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1734": {
+    "en": "Freezing Toes",
+    "ja": "製作依頼：大空踏みしめる最先端ブーツ",
+    "de": "Kalte Zehen",
+    "fr": "Fabrication&nbsp;: pieds frileux",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 12,
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 96,
+    "items": [
+      {
+        "itemId": 42334,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5140,
+    "expReward": 3059520,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1735": {
+    "en": "Giving Gatherers Their Gear",
+    "ja": "製作依頼：依頼します、革の機能着を",
+    "de": "Sammlerausrüstung",
+    "fr": "Fabrication&nbsp;: gilet pour récolteur",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 12,
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 96,
+    "items": [
+      {
+        "itemId": 43310,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5140,
+    "expReward": 4125360,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1736": {
+    "en": "Worqor Zormor or Bust",
+    "ja": "製作依頼：極暖毛皮の登山靴",
+    "de": "Soloexpedition zum Worqor Zormor",
+    "fr": "Fabrication&nbsp;: chaussures d'alpinisme",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 12,
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 98,
+    "items": [
+      {
+        "itemId": 42503,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5180,
+    "expReward": 3459540,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1737": {
+    "en": "Just Generally Freezing",
+    "ja": "製作依頼：大空過ごす極暖トラウザー",
+    "de": "Bibbernde Piloten",
+    "fr": "Fabrication&nbsp;: pantalon de pilote",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 12,
+      "en": "LTW",
+      "ja": "革細工師",
+      "de": "GER",
+      "fr": "TAN"
+    },
+    "lvl": 98,
+    "items": [
+      {
+        "itemId": 42487,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5180,
+    "expReward": 5149700,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1738": {
+    "en": "Comfy Cabins",
+    "ja": "製作依頼：癒やしのベッドリネン",
+    "de": "Kühlende Bettwäsche",
+    "fr": "Fabrication&nbsp;: des draps apaisants",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 13,
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 90,
+    "items": [
+      {
+        "itemId": 44029,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2530,
+    "expReward": 1440660,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1739": {
+    "en": "Begin with the Basics",
+    "ja": "製作依頼：基本のコットンジャケット",
+    "de": "Qualitätsmaßstab",
+    "fr": "Fabrication&nbsp;: simple, basique",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 13,
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 90,
+    "items": [
+      {
+        "itemId": 43285,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5060,
+    "expReward": 2695430,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1740": {
+    "en": "Cloth for Canvas",
+    "ja": "製作依頼：まっさらカンバスに描きたい",
+    "de": "Landschaftmalerei",
+    "fr": "Fabrication&nbsp;: étoffe des montagnes",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 13,
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 92,
+    "items": [
+      {
+        "itemId": 44030,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2535,
+    "expReward": 1665250,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1741": {
+    "en": "In Line with Linen",
+    "ja": "製作依頼：こだわりのリネンクローク",
+    "de": "Ganzkörpersilhouette",
+    "fr": "Fabrication&nbsp;: cape en lin",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 13,
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 92,
+    "items": [
+      {
+        "itemId": 42043,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5070,
+    "expReward": 3115640,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1742": {
+    "en": "Weaving the Envelope",
+    "ja": "製作依頼：大空飛び立つ気球布",
+    "de": "Luftdicht und feuerfest",
+    "fr": "Fabrication&nbsp;: étoffe pour ballons",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 13,
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 94,
+    "items": [
+      {
+        "itemId": 44031,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2550,
+    "expReward": 1902430,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1743": {
+    "en": "Traditional Trousers",
+    "ja": "製作依頼：伝統のサーセネットスロップ",
+    "de": "Wahrung der Tradition",
+    "fr": "Fabrication&nbsp;: sarcenet de légende",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 13,
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 94,
+    "items": [
+      {
+        "itemId": 42184,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5100,
+    "expReward": 3929450,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1744": {
+    "en": "Halfgloves, Full Effort",
+    "ja": "製作依頼：精妙なるハーフグローブ",
+    "de": "Turalische Tierwolle",
+    "fr": "Fabrication&nbsp;: mitaines raffinées",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 13,
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 96,
+    "items": [
+      {
+        "itemId": 42347,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5140,
+    "expReward": 3059520,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1745": {
+    "en": "Cruel Climates",
+    "ja": "製作依頼：依頼するわ、毛織の機能着を",
+    "de": "Wechselhaftes Klima",
+    "fr": "Fabrication&nbsp;: pantalon pour tous les temps",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 13,
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 96,
+    "items": [
+      {
+        "itemId": 43312,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5140,
+    "expReward": 4125360,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1746": {
+    "en": "Glamorous Gloves",
+    "ja": "製作依頼：依頼するわ、シルクの手袋を",
+    "de": "Zeremonielle Handschuhe",
+    "fr": "Fabrication&nbsp;: les gants élégants",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 13,
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 98,
+    "items": [
+      {
+        "itemId": 42506,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5180,
+    "expReward": 3459540,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1747": {
+    "en": "Silk for Sunperch",
+    "ja": "製作依頼：挑戦の正絹コート",
+    "de": "Seidene Mäntel",
+    "fr": "Fabrication&nbsp;: manteau de cérémonie",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 13,
+      "en": "WVR",
+      "ja": "裁縫師",
+      "de": "WEB",
+      "fr": "COU"
+    },
+    "lvl": 98,
+    "items": [
+      {
+        "itemId": 42505,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5180,
+    "expReward": 5149700,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1748": {
+    "en": "Fast-forwarding Flora",
+    "ja": "製作依頼：新薬研究のための成長促進剤 ",
+    "de": "Verbesserte Heilpflanzen",
+    "fr": "Fabrication&nbsp;: formules de croissance",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 14,
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 90,
+    "items": [
+      {
+        "itemId": 44049,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2530,
+    "expReward": 1440660,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1749": {
+    "en": "Big Brush, Big Dreams",
+    "ja": "製作依頼：巨大な絵筆を試したい",
+    "de": "Ein schräger Pinsel",
+    "fr": "Fabrication&nbsp;: pinceau pour fresque géante",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 14,
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 90,
+    "items": [
+      {
+        "itemId": 41856,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5060,
+    "expReward": 2695430,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1750": {
+    "en": "Binding Spells",
+    "ja": "製作依頼：賢士の新編魔道書",
+    "de": "Arkane Atlanten",
+    "fr": "Fabrication&nbsp;: l'index qui rend marteau",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 14,
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 92,
+    "items": [
+      {
+        "itemId": 41997,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5070,
+    "expReward": 3115640,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1751": {
+    "en": "For Tired Minds",
+    "ja": "製作依頼：明晰頭脳のための錬金薬",
+    "de": "Geistige Kapazitäten",
+    "fr": "Fabrication&nbsp;: des potions pour le ciboulot",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 14,
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 92,
+    "items": [
+      {
+        "itemId": 44047,
+        "amount": 9
+      }
+    ],
+    "gilReward": 2535,
+    "expReward": 1665250,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1752": {
+    "en": "I Like Big Brush and I Cannot Lie",
+    "ja": "製作依頼：巨大な絵筆でもっと描きたい",
+    "de": "Ein neuer Stil",
+    "fr": "Fabrication&nbsp;: toujours plus de fresques",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 14,
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 94,
+    "items": [
+      {
+        "itemId": 42164,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5100,
+    "expReward": 3559400,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1753": {
+    "en": "Cutting Edge of Culinary Quality",
+    "ja": "製作依頼：至高の輝きもたらす砥石",
+    "de": "Scharfe Messer",
+    "fr": "Fabrication&nbsp;: un tranchant à couper le souffle",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 14,
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 94,
+    "items": [
+      {
+        "itemId": 44013,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2550,
+    "expReward": 1902430,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1754": {
+    "en": "All-night Crafting",
+    "ja": "製作依頼：御用匠のための錬金薬",
+    "de": "Unermüdliche Handwerker",
+    "fr": "Fabrication&nbsp;: sérums énergétiques",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 14,
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 96,
+    "items": [
+      {
+        "itemId": 44169,
+        "amount": 3
+      }
+    ],
+    "gilReward": 5140,
+    "expReward": 2268950,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1755": {
+    "en": "Something Salty and Ceremonial",
+    "ja": "製作依頼：賢士の式典用魔道書",
+    "de": "Zeremonielle Bücher",
+    "fr": "Fabrication&nbsp;: codex en cuir",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 14,
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 96,
+    "items": [
+      {
+        "itemId": 42306,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5140,
+    "expReward": 4125360,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1756": {
+    "en": "Tome for Tradition",
+    "ja": "製作依頼：賢士の勅撰魔道書",
+    "de": "Ein Buch für die Krone",
+    "fr": "Fabrication&nbsp;: livre royal",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 14,
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 98,
+    "items": [
+      {
+        "itemId": 42459,
+        "amount": 1
+      }
+    ],
+    "gilReward": 5180,
+    "expReward": 4183380,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1757": {
+    "en": "Remedy for Reason",
+    "ja": "製作依頼：理王のための錬金薬",
+    "de": "Für Geist und Seele",
+    "fr": "Fabrication&nbsp;: des potions pour l'Aurarque de la Raison",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 14,
+      "en": "ALC",
+      "ja": "錬金術師",
+      "de": "ALC",
+      "fr": "ALC"
+    },
+    "lvl": 98,
+    "items": [
+      {
+        "itemId": 44161,
+        "amount": 3
+      }
+    ],
+    "gilReward": 5180,
+    "expReward": 2580080,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1758": {
+    "en": "More Mezcal",
+    "ja": "製作依頼：絶品タコスの不可欠料理酒",
+    "de": "Nicht ohne Mezcal",
+    "fr": "Cuisine&nbsp;: mezcal de cuisson",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 15,
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 90,
+    "items": [
+      {
+        "itemId": 43972,
+        "amount": 9
+      }
+    ],
+    "gilReward": 2530,
+    "expReward": 1440660,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1759": {
+    "en": "Friends Are Food",
+    "ja": "製作依頼：名物アルパカステーキ",
+    "de": "Alpaka-Abendessen",
+    "fr": "Cuisine&nbsp;: steak d'alpaga",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 15,
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 90,
+    "items": [
+      {
+        "itemId": 44073,
+        "amount": 3
+      }
+    ],
+    "gilReward": 5060,
+    "expReward": 1713570,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1760": {
+    "en": "Don't Knock It Till You've Tried It",
+    "ja": "製作依頼：名物河鬼のジューシー焼き",
+    "de": "Marinierter Sumpfmönch",
+    "fr": "Cuisine&nbsp;: marinade originale",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 15,
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 92,
+    "items": [
+      {
+        "itemId": 44074,
+        "amount": 3
+      }
+    ],
+    "gilReward": 5070,
+    "expReward": 2230900,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1761": {
+    "en": "Not-so-secret Ingredient",
+    "ja": "製作依頼：絶品タコスのロイヤルな隠し味",
+    "de": "Geheime Zutat",
+    "fr": "Cuisine&nbsp;: épices secrètes",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 15,
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 92,
+    "items": [
+      {
+        "itemId": 43974,
+        "amount": 9
+      }
+    ],
+    "gilReward": 2535,
+    "expReward": 1665250,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1762": {
+    "en": "Simple Is Hardest",
+    "ja": "製作依頼：常連絶賛ペペロンチーノ",
+    "de": "Überseeische Pasta",
+    "fr": "Cuisine&nbsp;: spaghettis relevés",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 15,
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 94,
+    "items": [
+      {
+        "itemId": 44093,
+        "amount": 3
+      }
+    ],
+    "gilReward": 5100,
+    "expReward": 2041900,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1763": {
+    "en": "Creative Chocolate",
+    "ja": "製作依頼：至高の甘味とろけるガトーショコラ",
+    "de": "Zarte Hülle, schmelziger Kern",
+    "fr": "Cuisine&nbsp;: fondant au chocolat",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 15,
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 94,
+    "items": [
+      {
+        "itemId": 44088,
+        "amount": 3
+      }
+    ],
+    "gilReward": 5100,
+    "expReward": 2382950,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1764": {
+    "en": "Bring Me Your Tacos",
+    "ja": "製作依頼：絶品タコスをパイナップルと",
+    "de": "Taco-Konkurrenz",
+    "fr": "Cuisine&nbsp;: tacos à l'ananas",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 15,
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 96,
+    "items": [
+      {
+        "itemId": 44105,
+        "amount": 3
+      }
+    ],
+    "gilReward": 5140,
+    "expReward": 2771460,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1765": {
+    "en": "Najoothie",
+    "ja": "製作依頼：至高のまろやかスムージー",
+    "de": "Palastbananen",
+    "fr": "Cuisine&nbsp;: frappé fruité",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 15,
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 96,
+    "items": [
+      {
+        "itemId": 44102,
+        "amount": 3
+      }
+    ],
+    "gilReward": 5140,
+    "expReward": 2952300,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1766": {
+    "en": "Sweet, Sweet Bean Juice",
+    "ja": "製作依頼：絶品タコスにぴったりジュース",
+    "de": "Erfrischend und sättigend",
+    "fr": "Cuisine&nbsp;: jus exquis pour tacos",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 15,
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 98,
+    "items": [
+      {
+        "itemId": 44097,
+        "amount": 3
+      }
+    ],
+    "gilReward": 5180,
+    "expReward": 2903990,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1767": {
+    "en": "Ocean Explosion",
+    "ja": "製作依頼：名物恵みの湾のアクアパッツァ",
+    "de": "Acqua Pazza",
+    "fr": "Cuisine&nbsp;: spécialité de fruits de mer",
+    "banner": "/i/110000/110184.png",
+    "job": {
+      "id": 15,
+      "en": "CUL",
+      "ja": "調理師",
+      "de": "GRM",
+      "fr": "CUI"
+    },
+    "lvl": 98,
+    "items": [
+      {
+        "itemId": 44076,
+        "amount": 3
+      }
+    ],
+    "gilReward": 5180,
+    "expReward": 3206200,
+    "cost": 1,
+    "startPlaceId": 4504,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1768": {
+    "en": "Reading Reeds",
+    "ja": "確認採集：水田の収穫見込み調査",
+    "de": "Schilfproben",
+    "fr": "Échantillons&nbsp;: roseaux dorés",
+    "banner": "/i/110000/110185.png",
+    "job": {
+      "id": 17,
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 90,
+    "items": [],
+    "gilReward": 2064,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4506,
+    "deliveryPlaceId": 4504
+  },
+  "1769": {
+    "en": "Brushing Up on Flowers",
+    "ja": "指定採集：依頼します、ブラシフラワーを",
+    "de": "Pinselblumen",
+    "fr": "Collecte&nbsp;: fleurs brossées",
+    "banner": "/i/110000/110185.png",
+    "job": {
+      "id": 17,
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 90,
+    "items": [],
+    "gilReward": 2264,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4506,
+    "deliveryPlaceId": 4504
+  },
+  "1770": {
+    "en": "All Stars",
+    "ja": "調査採集：季節占う星型の花",
+    "de": "Blumenhoroskop",
+    "fr": "Prélèvement&nbsp;: fleurs astrologiques",
+    "banner": "/i/110000/110185.png",
+    "job": {
+      "id": 17,
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 90,
+    "items": [],
+    "gilReward": 1844,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4506,
+    "deliveryPlaceId": 4504
+  },
+  "1771": {
+    "en": "Evaluating Energies",
+    "ja": "確認採集：リガカの潟一帯の地脈調査",
+    "de": "Energieströme",
+    "fr": "Échantillons&nbsp;: analyse du sol de Ligaka",
+    "banner": "/i/110000/110186.png",
+    "job": {
+      "id": 17,
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 92,
+    "items": [],
+    "gilReward": 2104,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4506,
+    "deliveryPlaceId": 4504
+  },
+  "1772": {
+    "en": "Plants Aquatic",
+    "ja": "大量採集：依頼します、オオオニバスを",
+    "de": "Säubernde Wasserpflanze",
+    "fr": "Grosse récolte&nbsp;: nénuphars géants",
+    "banner": "/i/110000/110186.png",
+    "job": {
+      "id": 17,
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 92,
+    "items": [],
+    "gilReward": 2308,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4506,
+    "deliveryPlaceId": 4504
+  },
+  "1773": {
+    "en": "First Beasts, Now Bugs",
+    "ja": "指定採集：害獣避け香木の虫取り",
+    "de": "Außergewöhnlicher Befall",
+    "fr": "Collecte&nbsp;: plantes repoussantes",
+    "banner": "/i/110000/110186.png",
+    "job": {
+      "id": 17,
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 92,
+    "items": [],
+    "gilReward": 2308,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4506,
+    "deliveryPlaceId": 4504
+  },
+  "1774": {
+    "en": "Herbs for Hurts",
+    "ja": "確認採集：王族のための練薬",
+    "de": "Heilendes Gebräu",
+    "fr": "Échantillons&nbsp;: lupin d'Urqopacha",
+    "banner": "/i/110000/110187.png",
+    "job": {
+      "id": 17,
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 94,
+    "items": [],
+    "gilReward": 2144,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4505,
+    "deliveryPlaceId": 4504
+  },
+  "1775": {
+    "en": "Good Ear for Corn",
+    "ja": "大量採集：モロコシの収穫手伝い",
+    "de": "Maisernte",
+    "fr": "Grosse récolte&nbsp;: grains de maïs",
+    "banner": "/i/110000/110187.png",
+    "job": {
+      "id": 17,
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 94,
+    "items": [],
+    "gilReward": 2352,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4505,
+    "deliveryPlaceId": 4504
+  },
+  "1776": {
+    "en": "Trusty Trees",
+    "ja": "調査採集：塩害対策用の樹木調査",
+    "de": "Straßensicherung",
+    "fr": "Collecte&nbsp;: étude des semences",
+    "banner": "/i/110000/110187.png",
+    "job": {
+      "id": 17,
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 94,
+    "items": [],
+    "gilReward": 1853,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4505,
+    "deliveryPlaceId": 4504
+  },
+  "1777": {
+    "en": "Sip of Scalebud",
+    "ja": "大量採集：王室のための煎じ薬",
+    "de": "Die Kraft der zwei Köpfe",
+    "fr": "Grosse récolte&nbsp;: décoction pour la famille royale",
+    "banner": "/i/110000/110188.png",
+    "job": {
+      "id": 17,
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 96,
+    "items": [],
+    "gilReward": 2396,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4507,
+    "deliveryPlaceId": 4504
+  },
+  "1778": {
+    "en": "Sacred Sap",
+    "ja": "指定採集：天の力秘める樹液",
+    "de": "Himmlisches Räucherwerk",
+    "fr": "Collecte&nbsp;: sève au pouvoir caché",
+    "banner": "/i/110000/110188.png",
+    "job": {
+      "id": 17,
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 96,
+    "items": [],
+    "gilReward": 2396,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4507,
+    "deliveryPlaceId": 4504
+  },
+  "1779": {
+    "en": "New Start for the Cinderfield",
+    "ja": "調査採集：灰戦場再生計画への予備調査",
+    "de": "Verbrannte Erde",
+    "fr": "Collecte&nbsp;: raviver les plaines cendrées",
+    "banner": "/i/110000/110188.png",
+    "job": {
+      "id": 17,
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 96,
+    "items": [],
+    "gilReward": 1867,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4507,
+    "deliveryPlaceId": 4504
+  },
+  "1780": {
+    "en": "Stopping Soapweed",
+    "ja": "確認採集：線路を覆う葉の伐採",
+    "de": "Wucherndes Seifenkraut",
+    "fr": "Échantillons&nbsp;: éradiquer les mauvaises herbes",
+    "banner": "/i/110000/110189.png",
+    "job": {
+      "id": 17,
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 98,
+    "items": [],
+    "gilReward": 2224,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4508,
+    "deliveryPlaceId": 4504
+  },
+  "1781": {
+    "en": "Need for Nopales",
+    "ja": "指定採集：名物サボテンステーキ",
+    "de": "Nopal, medium oder gar?",
+    "fr": "Collecte&nbsp;: steak de cactus",
+    "banner": "/i/110000/110189.png",
+    "job": {
+      "id": 17,
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 98,
+    "items": [],
+    "gilReward": 2440,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4508,
+    "deliveryPlaceId": 4504
+  },
+  "1782": {
+    "en": "Girth of the Earth",
+    "ja": "調査採集：開墾候補地の水脈調査",
+    "de": "Hörner der Erde",
+    "fr": "Collecte&nbsp;: cornes terrestres",
+    "banner": "/i/110000/110189.png",
+    "job": {
+      "id": 17,
+      "en": "BTN",
+      "ja": "園芸師",
+      "de": "GÄR",
+      "fr": "BOT"
+    },
+    "lvl": 98,
+    "items": [],
+    "gilReward": 1879,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4508,
+    "deliveryPlaceId": 4504
+  },
+  "1783": {
+    "en": "Tough Tuff",
+    "ja": "確認採集：肥料用の火山の恵み",
+    "de": "Perfekte Lösung",
+    "fr": "Échantillons&nbsp;: roches volcaniques",
+    "banner": "/i/110000/110190.png",
+    "job": {
+      "id": 16,
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 90,
+    "items": [],
+    "gilReward": 2064,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4505,
+    "deliveryPlaceId": 4504
+  },
+  "1784": {
+    "en": "Strong Arm for Stone",
+    "ja": "指定採集：依頼します、建築用の石材を",
+    "de": "Steine schleppen",
+    "fr": "Collecte&nbsp;: pierre de construction",
+    "banner": "/i/110000/110190.png",
+    "job": {
+      "id": 16,
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 90,
+    "items": [],
+    "gilReward": 2264,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4505,
+    "deliveryPlaceId": 4504
+  },
+  "1785": {
+    "en": "Old and Bubbly",
+    "ja": "調査採集：岩盤調査用の火成岩",
+    "de": "Hitzefest, nicht hitzefrei",
+    "fr": "Prélèvement&nbsp;: roches ignées",
+    "banner": "/i/110000/110190.png",
+    "job": {
+      "id": 16,
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 90,
+    "items": [],
+    "gilReward": 1844,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4505,
+    "deliveryPlaceId": 4504
+  },
+  "1786": {
+    "en": "Abandoned Architecture",
+    "ja": "確認採集：崖下落下予防の石材片付け",
+    "de": "Einst prächtige Bauten",
+    "fr": "Échantillons&nbsp;: restes yok huy",
+    "banner": "/i/110000/110191.png",
+    "job": {
+      "id": 16,
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 92,
+    "items": [],
+    "gilReward": 2104,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4505,
+    "deliveryPlaceId": 4504
+  },
+  "1787": {
+    "en": "Mountain Fish",
+    "ja": "大量採集：考察！ 高山は海だった！？",
+    "de": "Bergfossilien",
+    "fr": "Grosse récolte&nbsp;: poissons des montagnes",
+    "banner": "/i/110000/110191.png",
+    "job": {
+      "id": 16,
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 92,
+    "items": [],
+    "gilReward": 2308,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4505,
+    "deliveryPlaceId": 4504
+  },
+  "1788": {
+    "en": "Gleamstone for Lazybones",
+    "ja": "指定採集：まっくろ黒曜石　とってきて～",
+    "de": "Schlafenzeit weil Müdeauge",
+    "fr": "Collecte&nbsp;: roche toute noire",
+    "banner": "/i/110000/110191.png",
+    "job": {
+      "id": 16,
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 92,
+    "items": [],
+    "gilReward": 2308,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4505,
+    "deliveryPlaceId": 4504
+  },
+  "1789": {
+    "en": "Fuelgiving Passionwork",
+    "ja": "確認採集：らんらん原石　みつけてきて～",
+    "de": "Schimpfeworte über Arbeitsdinge",
+    "fr": "Échantillons&nbsp;: pierre brute",
+    "banner": "/i/110000/110192.png",
+    "job": {
+      "id": 16,
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 94,
+    "items": [],
+    "gilReward": 2144,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4506,
+    "deliveryPlaceId": 4504
+  },
+  "1790": {
+    "en": "Building the Banks",
+    "ja": "大量採集：岸壁工事用の岩石",
+    "de": "Deichverstärkung",
+    "fr": "Grosse récolte&nbsp;: construire une digue",
+    "banner": "/i/110000/110192.png",
+    "job": {
+      "id": 16,
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 94,
+    "items": [],
+    "gilReward": 2352,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4506,
+    "deliveryPlaceId": 4504
+  },
+  "1791": {
+    "en": "Pebbles for a Path",
+    "ja": "調査採集：依頼します、まぁるい小石を",
+    "de": "Vom Feinsten und Glattesten",
+    "fr": "Prélèvement&nbsp;: petites pierres",
+    "banner": "/i/110000/110192.png",
+    "job": {
+      "id": 16,
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 94,
+    "items": [],
+    "gilReward": 1853,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4506,
+    "deliveryPlaceId": 4504
+  },
+  "1792": {
+    "en": "Sampled Starfall",
+    "ja": "大量採集：研究！ 深き樹海の歴史",
+    "de": "Waldfossilien",
+    "fr": "Grosse récolte&nbsp;: spécimens géologiques",
+    "banner": "/i/110000/110193.png",
+    "job": {
+      "id": 16,
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 96,
+    "items": [],
+    "gilReward": 2396,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4507,
+    "deliveryPlaceId": 4504
+  },
+  "1793": {
+    "en": "Material for a Mindgenius",
+    "ja": "指定採集：ぴっかり水晶　あるだけほし～",
+    "de": "Blaustein bleibt Blaustein",
+    "fr": "Collecte&nbsp;: jolis cristaux",
+    "banner": "/i/110000/110193.png",
+    "job": {
+      "id": 16,
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 96,
+    "items": [],
+    "gilReward": 2396,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4507,
+    "deliveryPlaceId": 4504
+  },
+  "1794": {
+    "en": "Vestiges of War",
+    "ja": "調査採集：焦土化した激戦地の痕跡",
+    "de": "Für eine friedlichere Zukunft",
+    "fr": "Prélèvement&nbsp;: traces de la guerre",
+    "banner": "/i/110000/110193.png",
+    "job": {
+      "id": 16,
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 96,
+    "items": [],
+    "gilReward": 1867,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4507,
+    "deliveryPlaceId": 4504
+  },
+  "1795": {
+    "en": "Plains, Stone, Fish",
+    "ja": "確認採集：熟考！ 海と大陸の歴史",
+    "de": "Auffällige Gemeinsamkeiten",
+    "fr": "Échantillons&nbsp;: l'histoire du continent",
+    "banner": "/i/110000/110194.png",
+    "job": {
+      "id": 16,
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 98,
+    "items": [],
+    "gilReward": 2224,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4508,
+    "deliveryPlaceId": 4504
+  },
+  "1796": {
+    "en": "Burning Rival",
+    "ja": "指定採集：依頼するわ、燃石を",
+    "de": "Vielversprechendes Material",
+    "fr": "Collecte&nbsp;: pierre qui brûle...",
+    "banner": "/i/110000/110194.png",
+    "job": {
+      "id": 16,
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 98,
+    "items": [],
+    "gilReward": 2440,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4508,
+    "deliveryPlaceId": 4504
+  },
+  "1797": {
+    "en": "No Takebacks for Workshirk",
+    "ja": "調査採集：すんごい輝石で　大出世～",
+    "de": "Mehr Fleißigarbeit",
+    "fr": "Prélèvement&nbsp;: éclat de Toari",
+    "banner": "/i/110000/110194.png",
+    "job": {
+      "id": 16,
+      "en": "MIN",
+      "ja": "採掘師",
+      "de": "MIN",
+      "fr": "MIN"
+    },
+    "lvl": 98,
+    "items": [],
+    "gilReward": 1879,
+    "expReward": 0,
+    "cost": 1,
+    "startPlaceId": 4508,
+    "deliveryPlaceId": 4504
+  },
+  "1798": {
+    "en": "Axing for Fish",
+    "ja": "指定採集：伝承の古き業物",
+    "de": "Legende der Yok Huy",
+    "fr": "Collecte&nbsp;: contes et légendes yok huy",
+    "banner": "/i/110000/110203.png",
+    "job": {
+      "id": 18,
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 90,
+    "items": [
+      {
+        "itemId": 43676,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2460,
+    "expReward": 4395018,
+    "cost": 1,
+    "startPlaceId": 4505,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1799": {
+    "en": "Full Moon Frogs",
+    "ja": "指定採集：蛙声響く月例の儀",
+    "de": "Singende Kröten",
+    "fr": "Collecte&nbsp;: concerto de crapauds",
+    "banner": "/i/110000/110199.png",
+    "job": {
+      "id": 18,
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 90,
+    "items": [
+      {
+        "itemId": 43804,
+        "amount": 9
+      }
+    ],
+    "gilReward": 2460,
+    "expReward": 4395018,
+    "cost": 1,
+    "startPlaceId": 4505,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1800": {
+    "en": "Travel by Turtle",
+    "ja": "指定採集：落葉泳ぐ亀占の儀",
+    "de": "Wahrsagende Schildkröten",
+    "fr": "Collecte&nbsp;: tortues divinatoires",
+    "banner": "/i/110000/110196.png",
+    "job": {
+      "id": 18,
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 92,
+    "items": [
+      {
+        "itemId": 43692,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2510,
+    "expReward": 5080188,
+    "cost": 1,
+    "startPlaceId": 4506,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1801": {
+    "en": "Order for Odd Fish",
+    "ja": "指定採集：依頼します、怪魚を",
+    "de": "Eine merkwürdige Bestellung",
+    "fr": "Collecte&nbsp;: il est plat, il est plat mon poisson !",
+    "banner": "/i/110000/110200.png",
+    "job": {
+      "id": 18,
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 92,
+    "items": [
+      {
+        "itemId": 43811,
+        "amount": 9
+      }
+    ],
+    "gilReward": 2510,
+    "expReward": 5080188,
+    "cost": 1,
+    "startPlaceId": 4506,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1802": {
+    "en": "Perilous Peaks Poga",
+    "ja": "指定採集：依頼します、討伐を……！",
+    "de": "Springende Pelupelu-Fresser",
+    "fr": "Collecte&nbsp;: danger public pour Pelupelu",
+    "banner": "/i/110000/110197.png",
+    "job": {
+      "id": 18,
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 94,
+    "items": [
+      {
+        "itemId": 43702,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2560,
+    "expReward": 5803754,
+    "cost": 1,
+    "startPlaceId": 4506,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1803": {
+    "en": "Catch My Metaphor",
+    "ja": "指定採集：巨人誕生伝説の目撃魚",
+    "de": "Der heilige See",
+    "fr": "Collecte&nbsp;: sur les traces de la naissance des géants",
+    "banner": "/i/110000/110199.png",
+    "job": {
+      "id": 18,
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 94,
+    "items": [
+      {
+        "itemId": 43808,
+        "amount": 9
+      }
+    ],
+    "gilReward": 2560,
+    "expReward": 5803754,
+    "cost": 1,
+    "startPlaceId": 4505,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1804": {
+    "en": "Starry-finned",
+    "ja": "指定採集：空を映す星粒魚",
+    "de": "Versteckte Sterne",
+    "fr": "Collecte&nbsp;: constellation sur poisson",
+    "banner": "/i/110000/110198.png",
+    "job": {
+      "id": 18,
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 96,
+    "items": [
+      {
+        "itemId": 43739,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2610,
+    "expReward": 6726582,
+    "cost": 1,
+    "startPlaceId": 4507,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1805": {
+    "en": "Eeling Cleanse",
+    "ja": "指定採集：雷導く精霊降ろしの儀",
+    "de": "Blitzende Aale",
+    "fr": "Collecte&nbsp;: rituels électrisants",
+    "banner": "/i/110000/110201.png",
+    "job": {
+      "id": 18,
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 96,
+    "items": [
+      {
+        "itemId": 43837,
+        "amount": 9
+      }
+    ],
+    "gilReward": 2610,
+    "expReward": 6726582,
+    "cost": 1,
+    "startPlaceId": 4507,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1806": {
+    "en": "Fish Tacos",
+    "ja": "指定採集：絶品タコスの白身魚",
+    "de": "Exquisite Fischfüllung",
+    "fr": "Collecte&nbsp;: le tacos ultime",
+    "banner": "/i/110000/110195.png",
+    "job": {
+      "id": 18,
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 98,
+    "items": [
+      {
+        "itemId": 43769,
+        "amount": 3
+      }
+    ],
+    "gilReward": 2660,
+    "expReward": 7606049,
+    "cost": 1,
+    "startPlaceId": 4509,
+    "deliveryPlaceId": 4504,
+    "repeats": 0
+  },
+  "1807": {
+    "en": "Hungry Hungry Whalaqee",
+    "ja": "指定採集：活きいい魚で元気ハツラツ！",
+    "de": "Verjüngender Fischfang",
+    "fr": "Collecte&nbsp;: le poisson, ça rend intelligent",
+    "banner": "/i/110000/110202.png",
+    "job": {
+      "id": 18,
+      "en": "FSH",
+      "ja": "漁師",
+      "de": "FIS",
+      "fr": "PÊC"
+    },
+    "lvl": 98,
+    "items": [
+      {
+        "itemId": 43843,
+        "amount": 9
+      }
+    ],
+    "gilReward": 2660,
+    "expReward": 7606049,
+    "cost": 1,
+    "startPlaceId": 4508,
+    "deliveryPlaceId": 4504,
     "repeats": 0
   }
 }

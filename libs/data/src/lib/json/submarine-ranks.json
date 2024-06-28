@@ -1151,52 +1151,52 @@
   },
   "116": {
     "id": 116,
-    "capacity": 0,
-    "expToNext": 0,
-    "surveillanceBonus": 0,
-    "retrievalBonus": 0,
-    "speedBonus": 0,
-    "rangeBonus": 0,
-    "favorBonus": 0
+    "capacity": 80,
+    "expToNext": 22592742,
+    "surveillanceBonus": 81,
+    "retrievalBonus": 111,
+    "speedBonus": 71,
+    "rangeBonus": 101,
+    "favorBonus": 75
   },
   "117": {
     "id": 117,
-    "capacity": 0,
-    "expToNext": 0,
-    "surveillanceBonus": 0,
-    "retrievalBonus": 0,
-    "speedBonus": 0,
-    "rangeBonus": 0,
-    "favorBonus": 0
+    "capacity": 80,
+    "expToNext": 23157563,
+    "surveillanceBonus": 82,
+    "retrievalBonus": 111,
+    "speedBonus": 72,
+    "rangeBonus": 102,
+    "favorBonus": 75
   },
   "118": {
     "id": 118,
-    "capacity": 0,
-    "expToNext": 0,
-    "surveillanceBonus": 0,
-    "retrievalBonus": 0,
-    "speedBonus": 0,
-    "rangeBonus": 0,
-    "favorBonus": 0
+    "capacity": 80,
+    "expToNext": 23736502,
+    "surveillanceBonus": 83,
+    "retrievalBonus": 112,
+    "speedBonus": 73,
+    "rangeBonus": 103,
+    "favorBonus": 77
   },
   "119": {
     "id": 119,
-    "capacity": 0,
-    "expToNext": 0,
-    "surveillanceBonus": 0,
-    "retrievalBonus": 0,
-    "speedBonus": 0,
-    "rangeBonus": 0,
-    "favorBonus": 0
+    "capacity": 80,
+    "expToNext": 60824790,
+    "surveillanceBonus": 83,
+    "retrievalBonus": 113,
+    "speedBonus": 74,
+    "rangeBonus": 104,
+    "favorBonus": 79
   },
   "120": {
     "id": 120,
-    "capacity": 0,
-    "expToNext": 0,
-    "surveillanceBonus": 0,
-    "retrievalBonus": 0,
-    "speedBonus": 0,
-    "rangeBonus": 0,
-    "favorBonus": 0
+    "capacity": 80,
+    "expToNext": 24938164,
+    "surveillanceBonus": 85,
+    "retrievalBonus": 115,
+    "speedBonus": 75,
+    "rangeBonus": 105,
+    "favorBonus": 80
   }
 }

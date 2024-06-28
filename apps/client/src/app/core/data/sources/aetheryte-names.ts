@@ -676,5 +676,137 @@ export const aetheryteNames = {
     "de": "Tiegel von Al-Kimiya",
     "ja": "アルキミヤ製薬堂",
     "fr": "Creuset de l'Al-Kimiya"
+  },
+  "216": {
+    "en": "Tuliyollal Aetheryte Plaza",
+    "de": "Ätherytenplatz",
+    "ja": "エーテライト・プラザ",
+    "fr": "Place de l'Éthérite"
+  },
+  "217": {
+    "en": "Solution Nine Aetheryte Plaza",
+    "de": "Ätherytenplatz",
+    "ja": "エーテライト・プラザ",
+    "fr": "Place de l'Éthérite"
+  },
+  "218": {
+    "en": "Dirigible Landing",
+    "de": "Ballonplatz",
+    "ja": "気球発着場前",
+    "fr": "Embarcadère à ballons"
+  },
+  "219": {
+    "en": "The Resplendent Quarter",
+    "de": "Glanzfeder-Viertel",
+    "ja": "翼鏡の街",
+    "fr": "La Nuée bigarrée"
+  },
+  "220": {
+    "en": "The For'ard Cabins",
+    "de": "Kielkajüten",
+    "ja": "フォルアード・キャビンズ前",
+    "fr": "Cabines de Proue"
+  },
+  "221": {
+    "en": "Bayside Bevy Marketplace",
+    "de": "Küstenkolonie (Markt)",
+    "ja": "マーケット（ベイサイド・ベヴィー）",
+    "fr": "Marché (Baie commerçante)"
+  },
+  "222": {
+    "en": "Vollok Shoonsa",
+    "de": "Vollok Shoonsa",
+    "ja": "ヴォロク連王宮前",
+    "fr": "Palais de Vollok Shoonsa"
+  },
+  "223": {
+    "en": "Wachumeqimeqi",
+    "de": "Markt von Wachumeqimeqi",
+    "ja": "ワチュメキメキ万貨街",
+    "fr": "Bazar aux Mille Perles"
+  },
+  "224": {
+    "en": "Brightploom Post",
+    "de": "Grellfeder-Posten",
+    "ja": "ブライトプルーム・ポスト前",
+    "fr": "Vigie de Claireplume"
+  },
+  "225": {
+    "en": "Arch of the Dawn (Urqopacha)",
+    "de": "Tor der Morgensonne (nach Urqopacha)",
+    "ja": "グルージャジャ凱旋門（オルコ・パチャ方面）",
+    "fr": "Arc de Gulool Ja Ja (Urqopacha)"
+  },
+  "226": {
+    "en": "Arch of the Dawn (Kozama'uka)",
+    "de": "Tor der Morgensonne (ins untere Kozama'uka)",
+    "ja": "グルージャジャ凱旋門（コザマル・カ下流域方面）",
+    "fr": "Arc de Gulool Ja Ja (Kozama'uka)"
+  },
+  "227": {
+    "en": "Ihuykatumu (Kozama'uka)",
+    "de": "Ihuykatumu (ins obere Kozama'uka)",
+    "ja": "イフイカ・トゥム（コザマル・カ上流域方面）",
+    "fr": "Cours inférieur de l'Ihuykatumu (Kozama'uka)"
+  },
+  "228": {
+    "en": "Dirigible Landing (Yak T'el)",
+    "de": "Ballonplatz (nach Yak T'el)",
+    "ja": "気球発着場（ヤクテル樹海方面）",
+    "fr": "Embarcadère à ballons (Yak T'el)"
+  },
+  "229": {
+    "en": "Xak Tural Skygate (Shaaloani)",
+    "de": "Himmelstor von Xak Tural (nach Shaaloani)",
+    "ja": "サカ・トラル関門（シャーローニ荒野方面）",
+    "fr": "Porte du Xak Tural (Shaaloani)"
+  },
+  "230": {
+    "en": "Information Center",
+    "de": "Auskunft",
+    "ja": "インフォメーションセンター前",
+    "fr": "Centre d'informations"
+  },
+  "231": {
+    "en": "True Vue",
+    "de": "Wahrlee",
+    "ja": "トゥルービュー",
+    "fr": "Vraie-vision"
+  },
+  "232": {
+    "en": "Neon Stein",
+    "de": "Neonhumpen",
+    "ja": "ネオンスタイン前",
+    "fr": "La Chope à néons"
+  },
+  "233": {
+    "en": "The Arcadion",
+    "de": "Arkadion-Gesellschaft",
+    "ja": "アルカディア・ソサエティ前",
+    "fr": "Société de l'Arcadion"
+  },
+  "234": {
+    "en": "Resolution",
+    "de": "Schlichtung",
+    "ja": "レゾリューション",
+    "fr": "Résolution"
+  },
+  "235": {
+    "en": "Nexus Arcade",
+    "de": "Nexus-Arkaden",
+    "ja": "ネクサスアーケード",
+    "fr": "Arcades marchandes"
+  },
+  "236": {
+    "en": "Residential Sector",
+    "de": "Wohnsektor",
+    "ja": "レジデンシャルセクター",
+    "fr": "Secteur résidentiel"
+  },
+  "237": {
+    "en": "Scanning Port Nine (Heritage Found)",
+    "de": "Scanpass Neun (zum Ewigen Erbe)",
+    "ja": "スキャンポート（ヘリテージファウンド方面）",
+    "fr": "Sentinelle Neuf (L'Hoirie recouvrée)"
   }
 };

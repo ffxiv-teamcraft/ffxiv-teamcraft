@@ -562,7 +562,7 @@
   "71": {
     "en": "Sea of Jade 6",
     "ja": "S　翠浪海06",
-    "de": "Jademeer 5 (S)",
+    "de": "Jademeer 6 (S)",
     "fr": "Mer de Jade 6 (S)",
     "id": 71,
     "location": "S"
@@ -856,60 +856,60 @@
     "location": "M"
   },
   "108": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "the Floating Standard",
+    "ja": "N　旗弁島",
+    "de": "Fahneninsel (N)",
+    "fr": "Île de l'étendard (N)",
     "id": 108,
-    "location": ""
+    "location": "N"
   },
   "109": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "the Fluttering Bay",
+    "ja": "O　胡蝶の円湾",
+    "de": "Mondorchideenbucht (O)",
+    "fr": "Baie des orchidées papillon (O)",
     "id": 109,
-    "location": ""
+    "location": "O"
   },
   "110": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Lilac Sea 4",
+    "ja": "P　紫礁海04",
+    "de": "Fliedermeer 4 (P)",
+    "fr": "Mer de lilas 4 (P)",
     "id": 110,
-    "location": ""
+    "location": "P"
   },
   "111": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Proudkeel",
+    "ja": "Q　舟弁島",
+    "de": "Schiffcheninsel (Q)",
+    "fr": "Île de la carène (Q)",
     "id": 111,
-    "location": ""
+    "location": "Q"
   },
   "112": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "East Dodie's Abyss",
+    "ja": "R　ドディー海底谷東",
+    "de": "Östliche Dodhi-Furche (R)",
+    "fr": "Est de la vallée sous-marine de Dodie (R)",
     "id": 112,
-    "location": ""
+    "location": "R"
   },
   "113": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Lilac Sea 5",
+    "ja": "S　紫礁海05",
+    "de": "Fliedermeer 5 (S)",
+    "fr": "Mer de lilas 5 (S)",
     "id": 113,
-    "location": ""
+    "location": "S"
   },
   "114": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "West Dodie's Abyss",
+    "ja": "T　ドディー海底谷西",
+    "de": "Westliche Dodhi-Furche (T)",
+    "fr": "Ouest de la vallée sous-marine de Dodie (T)",
     "id": 114,
-    "location": ""
+    "location": "T"
   },
   "115": {
     "en": "",

@@ -299,21 +299,25 @@ export class XivDataService {
       }
 
       private generateReader(reader: ReaderEntry['reader']): any {
-        if (Array.isArray(reader)) {
-          // This means we have a child struct
-          if (Array.isArray(reader[0])) {
-            return reader.map(child => {
-              return child.reduce((acc, entry: ReaderEntry) => {
-                return {
-                  ...acc,
-                  [entry.name]: this.generateReader(entry.reader)
-                };
-              }, {});
-            });
+        try {
+          if (Array.isArray(reader)) {
+            // This means we have a child struct
+            if (Array.isArray(reader[0])) {
+              return reader.map(child => {
+                return child.reduce((acc, entry: ReaderEntry) => {
+                  return {
+                    ...acc,
+                    [entry.name]: this.generateReader(entry.reader)
+                  };
+                }, {});
+              });
+            }
+            return reader.map(e => this.generateReader(e));
+          } else {
+            return this.unknown({ column: reader });
           }
-          return reader.map(e => this.generateReader(e));
-        } else {
-          return this.unknown({ column: reader });
+        } catch (e) {
+          throw new Error(`Error when parsing sheet ${this.__sheet}: ` + e);
         }
       }
 

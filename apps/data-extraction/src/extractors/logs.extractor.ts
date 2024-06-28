@@ -277,7 +277,7 @@ export class LogsExtractor extends AbstractExtractor {
     ).subscribe((completeFetch) => {
       const spots = [];
       completeFetch
-        .filter(spot => spot.Item[0] && spot.PlaceName && (spot.TerritoryType || spot.index >= 10000))
+        .filter(spot => spot.Item[0] && spot.PlaceName && ((spot.TerritoryType && spot.TerritoryType.Map) || spot.index >= 10000))
         .forEach(spot => {
           // Let's check if this is diadem
           if (!spot.TerritoryType && spot.index >= 10000) {

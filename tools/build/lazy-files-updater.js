@@ -30,6 +30,7 @@ function getClassName(file) {
     .replace('/zh/', '')
     .replace('/db/', '')
     .replace('ies.json', 'y')
+    .replace('fishes.json', 'fish')
     .replace(/s?\.json/, '')
     .replace(/s?\.index/, '')
     .replace(/bonuse$/, 'bonus')

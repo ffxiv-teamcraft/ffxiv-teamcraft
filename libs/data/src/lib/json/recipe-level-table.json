@@ -3871,38 +3871,932 @@
   },
   "645": {
     "progressDivider": 130,
-    "progressModifier": 80,
+    "progressModifier": 100,
     "qualityDivider": 115,
-    "qualityModifier": 70
+    "qualityModifier": 100
   },
   "646": {
     "progressDivider": 130,
-    "progressModifier": 80,
+    "progressModifier": 100,
     "qualityDivider": 115,
-    "qualityModifier": 70
+    "qualityModifier": 100
   },
   "647": {
     "progressDivider": 130,
-    "progressModifier": 80,
+    "progressModifier": 100,
     "qualityDivider": 115,
-    "qualityModifier": 70
+    "qualityModifier": 100
   },
   "648": {
     "progressDivider": 130,
-    "progressModifier": 80,
+    "progressModifier": 100,
     "qualityDivider": 115,
-    "qualityModifier": 70
+    "qualityModifier": 100
   },
   "649": {
     "progressDivider": 130,
-    "progressModifier": 80,
+    "progressModifier": 100,
     "qualityDivider": 115,
-    "qualityModifier": 70
+    "qualityModifier": 100
   },
   "650": {
-    "progressDivider": 130,
+    "progressDivider": 143,
+    "progressModifier": 100,
+    "qualityDivider": 123,
+    "qualityModifier": 100
+  },
+  "651": {
+    "progressDivider": 143,
+    "progressModifier": 100,
+    "qualityDivider": 123,
+    "qualityModifier": 100
+  },
+  "652": {
+    "progressDivider": 143,
+    "progressModifier": 100,
+    "qualityDivider": 123,
+    "qualityModifier": 100
+  },
+  "653": {
+    "progressDivider": 146,
+    "progressModifier": 100,
+    "qualityDivider": 126,
+    "qualityModifier": 100
+  },
+  "654": {
+    "progressDivider": 146,
+    "progressModifier": 100,
+    "qualityDivider": 126,
+    "qualityModifier": 100
+  },
+  "655": {
+    "progressDivider": 146,
+    "progressModifier": 100,
+    "qualityDivider": 126,
+    "qualityModifier": 100
+  },
+  "656": {
+    "progressDivider": 149,
+    "progressModifier": 100,
+    "qualityDivider": 129,
+    "qualityModifier": 100
+  },
+  "657": {
+    "progressDivider": 149,
+    "progressModifier": 100,
+    "qualityDivider": 129,
+    "qualityModifier": 100
+  },
+  "658": {
+    "progressDivider": 149,
+    "progressModifier": 100,
+    "qualityDivider": 129,
+    "qualityModifier": 100
+  },
+  "659": {
+    "progressDivider": 149,
+    "progressModifier": 100,
+    "qualityDivider": 129,
+    "qualityModifier": 100
+  },
+  "660": {
+    "progressDivider": 152,
+    "progressModifier": 100,
+    "qualityDivider": 132,
+    "qualityModifier": 100
+  },
+  "661": {
+    "progressDivider": 152,
+    "progressModifier": 100,
+    "qualityDivider": 132,
+    "qualityModifier": 100
+  },
+  "662": {
+    "progressDivider": 152,
+    "progressModifier": 100,
+    "qualityDivider": 132,
+    "qualityModifier": 100
+  },
+  "663": {
+    "progressDivider": 152,
+    "progressModifier": 100,
+    "qualityDivider": 132,
+    "qualityModifier": 100
+  },
+  "664": {
+    "progressDivider": 152,
+    "progressModifier": 100,
+    "qualityDivider": 132,
+    "qualityModifier": 100
+  },
+  "665": {
+    "progressDivider": 155,
+    "progressModifier": 100,
+    "qualityDivider": 135,
+    "qualityModifier": 100
+  },
+  "666": {
+    "progressDivider": 155,
+    "progressModifier": 100,
+    "qualityDivider": 135,
+    "qualityModifier": 100
+  },
+  "667": {
+    "progressDivider": 155,
+    "progressModifier": 100,
+    "qualityDivider": 135,
+    "qualityModifier": 100
+  },
+  "668": {
+    "progressDivider": 155,
+    "progressModifier": 100,
+    "qualityDivider": 135,
+    "qualityModifier": 100
+  },
+  "669": {
+    "progressDivider": 155,
+    "progressModifier": 100,
+    "qualityDivider": 135,
+    "qualityModifier": 100
+  },
+  "670": {
+    "progressDivider": 158,
+    "progressModifier": 100,
+    "qualityDivider": 138,
+    "qualityModifier": 100
+  },
+  "671": {
+    "progressDivider": 158,
+    "progressModifier": 100,
+    "qualityDivider": 138,
+    "qualityModifier": 100
+  },
+  "672": {
+    "progressDivider": 158,
+    "progressModifier": 100,
+    "qualityDivider": 138,
+    "qualityModifier": 100
+  },
+  "673": {
+    "progressDivider": 158,
+    "progressModifier": 100,
+    "qualityDivider": 138,
+    "qualityModifier": 100
+  },
+  "674": {
+    "progressDivider": 158,
+    "progressModifier": 100,
+    "qualityDivider": 138,
+    "qualityModifier": 100
+  },
+  "675": {
+    "progressDivider": 161,
+    "progressModifier": 100,
+    "qualityDivider": 141,
+    "qualityModifier": 100
+  },
+  "676": {
+    "progressDivider": 161,
+    "progressModifier": 100,
+    "qualityDivider": 141,
+    "qualityModifier": 100
+  },
+  "677": {
+    "progressDivider": 161,
+    "progressModifier": 100,
+    "qualityDivider": 141,
+    "qualityModifier": 100
+  },
+  "678": {
+    "progressDivider": 161,
+    "progressModifier": 100,
+    "qualityDivider": 141,
+    "qualityModifier": 100
+  },
+  "679": {
+    "progressDivider": 161,
+    "progressModifier": 100,
+    "qualityDivider": 141,
+    "qualityModifier": 100
+  },
+  "680": {
+    "progressDivider": 164,
+    "progressModifier": 100,
+    "qualityDivider": 144,
+    "qualityModifier": 100
+  },
+  "681": {
+    "progressDivider": 164,
+    "progressModifier": 100,
+    "qualityDivider": 144,
+    "qualityModifier": 100
+  },
+  "682": {
+    "progressDivider": 164,
+    "progressModifier": 100,
+    "qualityDivider": 144,
+    "qualityModifier": 100
+  },
+  "683": {
+    "progressDivider": 164,
+    "progressModifier": 100,
+    "qualityDivider": 144,
+    "qualityModifier": 100
+  },
+  "684": {
+    "progressDivider": 164,
+    "progressModifier": 100,
+    "qualityDivider": 144,
+    "qualityModifier": 100
+  },
+  "685": {
+    "progressDivider": 167,
+    "progressModifier": 100,
+    "qualityDivider": 147,
+    "qualityModifier": 100
+  },
+  "686": {
+    "progressDivider": 167,
+    "progressModifier": 100,
+    "qualityDivider": 147,
+    "qualityModifier": 100
+  },
+  "687": {
+    "progressDivider": 167,
+    "progressModifier": 100,
+    "qualityDivider": 147,
+    "qualityModifier": 100
+  },
+  "688": {
+    "progressDivider": 167,
+    "progressModifier": 100,
+    "qualityDivider": 147,
+    "qualityModifier": 100
+  },
+  "689": {
+    "progressDivider": 167,
+    "progressModifier": 100,
+    "qualityDivider": 147,
+    "qualityModifier": 100
+  },
+  "690": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "691": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "692": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "693": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "694": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "695": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "696": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "697": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "698": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "699": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "700": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "701": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "702": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "703": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "704": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "705": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "706": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "707": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "708": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "709": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "710": {
+    "progressDivider": 170,
+    "progressModifier": 90,
+    "qualityDivider": 150,
+    "qualityModifier": 75
+  },
+  "711": {
+    "progressDivider": 170,
     "progressModifier": 80,
-    "qualityDivider": 115,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "712": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "713": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "714": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "715": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "716": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "717": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "718": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "719": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "720": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "721": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "722": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "723": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "724": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "725": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "726": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "727": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "728": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "729": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "730": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "731": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "732": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "733": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "734": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "735": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "736": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "737": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "738": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "739": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "740": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "741": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "742": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "743": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "744": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "745": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "746": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "747": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "748": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "749": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "750": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "751": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "752": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "753": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "754": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "755": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "756": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "757": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "758": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "759": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "760": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "761": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "762": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "763": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "764": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "765": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "766": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "767": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "768": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "769": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "770": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "771": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "772": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "773": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "774": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "775": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "776": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "777": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "778": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "779": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "780": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "781": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "782": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "783": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "784": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "785": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "786": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "787": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "788": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "789": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "790": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "791": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "792": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "793": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "794": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "795": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "796": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "797": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "798": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
+    "qualityModifier": 70
+  },
+  "799": {
+    "progressDivider": 170,
+    "progressModifier": 80,
+    "qualityDivider": 150,
     "qualityModifier": 70
   }
 }

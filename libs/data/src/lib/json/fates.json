@@ -16923,13 +16923,13 @@
       "en": "Run, Riders, Run",
       "ja": "氷上の狼",
       "de": "Wettlauf mit dem Tod",
-      "fr": "Les grands méchants loups argentés"
+      "fr": "Les grands méchants loups cendrés"
     },
     "description": {
       "en": "Outriders belonging to House Durendaire have been spotted fleeing from a pack of silver wolves which, despite losing over half of its number to the knights' steel, remains in pursuit, knowing the knights cannot run forever. Hurry to the outriders' aid before their legs fail them.",
       "ja": "哨戒任務中にウルフの群れに襲われた<br>デュランデル家の騎兵が救援を求めて来た<br>執拗に襲い来る、シルバーウルフを倒せ",
       "de": "Ein Ritter des Hauses Durendaire wird von einem Rudel Silberwölfe verfolgt. Zwar sind schon einige der Bestien seiner Klinge erlegen, aber ewig wird er sich der Übermacht nicht erwehren können.",
-      "fr": "Un éclaireur de la maison Durendaire, pris en chasse par une meute de loups argentés, est venu chercher de l'aide au Nid du faucon. Les chevaliers postés devant le camp essayent désespérément de repousser les bêtes sauvages, mais ces dernières sont très nombreuses. Venez-leur en aide."
+      "fr": "Un éclaireur de la maison Durendaire, pris en chasse par une meute de loups cendrés, est venu chercher de l'aide au Nid du faucon. Les chevaliers postés devant le camp essayent désespérément de repousser les bêtes sauvages, mais ces dernières sont très nombreuses. Venez-leur en aide."
     },
     "icon": "/i/060000/060501.png",
     "level": 50,
@@ -26000,7 +26000,7 @@
       "fr": "La meute de l'ombre"
     },
     "description": {
-      "en": "During the Garlean invasion of Doma, large swathes of Yanxian wilderness were razed, leaving nothing but the charred remains of once-lush forests. The fauna that once called that land home has been forced to roam deep into the realm of man in search of food. The violent exchanges that have erupted as a result have left many a family grieving the loss of a loved one.",
+      "en": "During the Garlean invasion of Doma, large swaths of Yanxian wilderness were razed, leaving nothing but the charred remains of once-lush forests. The fauna that once called that land home has been forced to roam deep into the realm of man in search of food. The violent exchanges that have erupted as a result have left many a family grieving the loss of a loved one.",
       "ja": "雑食性の野獣ヴァナラが<br>腹を空かせて、人を襲い始めた<br>気が立ったヴァナラを倒せ",
       "de": "Die Garlear zerstörten während ihrer Invasion zahlreiche Waldflächen und nahmen vielen Tieren ihren Lebensraum. Auf der Suche nach Futter geraten die Vertriebenen oft in Konflikt mit der Bevölkerung, und meistens enden die Streitigkeiten nicht gerade friedlich - insbesondere, wenn die Ernährung wie im Fall der Vanara auf Kinder und Alte umgestellt wurde.",
       "fr": "Un groupe de vanaras affamés, des bêtes omnivores féroces, s'est attaqué à des habitants de la région. Éliminez-les afin qu'ils ne fassent pas d'autres victimes."
@@ -40018,668 +40018,2360 @@
   },
   "1860": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Nopal Hunters",
+      "ja": "ノパルの引っ越し物語",
+      "de": "Gar nicht so feige Kaktoren",
+      "fr": "Aficionados de la raquette"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Tending crops is hard work, what with the plowing, the planting, the weeding, the watering; but when you add to that having to deal with furacious flora, it can be downright exhausting. Local farmers are actively seeking able-bodied adventurers to help them rid their fields of invasive nopalitenders.",
+      "ja": "養分豊かな畑を狙い<br>魔物が集まってきた<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Die Landwirtschaft ist an sich schon beschwerlich genug, da kann niemand zusätzliche Ärgernisse gebrauchen. Deshalb suchen örtliche Bauern händeringend nach Abenteurern, die sie von einer Feigenkaktor-Plage befreien.",
+      "fr": "Un groupe de monstres avec une petite fringale a jeté son dévolu sur un champ de cactus. Donnez-leur l'envie d'aller grignoter ailleurs."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 95,
+    "location": 10406450,
+    "position": {
+      "map": 860,
+      "zoneid": 4508,
+      "x": 28.72,
+      "y": 32.41,
+      "z": 0.06
+    }
   },
   "1861": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Claw and Order",
+      "ja": "タンブル・ウィード",
+      "de": "Akute Brandgefahr",
+      "fr": "Les virevoltants"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Tumbleclaw kindlers earn their name from doing what they do best, igniting fires─which is, admittedly, not a problem as long as they keep to damp areas such as ponds or swamps. Unfortunately, Sheshenewezi Springs is (despite the name) anything but damp, and a consortium of crabs currently marching through the place could see it all in flames if something is not done, and quick.",
+      "ja": "引火しやすい植物と共生する蟹が<br>シェシェネ青燐泉に近づいている<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Einige Krabbenläufer sind extrem trocken und leicht entzündbar. In Feuchtgebieten ist das kein Problem, doch leider sind die Sheshenewezi-Quellen entgegen ihres Namens alles andere als feucht. Da helfen nur noch prophylaktische Maßnahmen.",
+      "fr": "Un groupe de crabes couverts d'herbes séchées s'approche dangereusement des sources de Sheshenewezi. Empêchez ces créatures hautement inflammables de semer la panique."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 95,
+    "location": 10744501,
+    "position": {
+      "map": 860,
+      "zoneid": 4508,
+      "x": 20.66,
+      "y": 22.19,
+      "z": -0.01
+    }
   },
   "1862": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "You Are What You Drink",
+      "ja": "悪魔の種火「[UNHANDLED 0x28]」",
+      "de": "Geboren aus Flammen",
+      "fr": "Une haleine de feu"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "How exactly a lizard might be born in the searing blue flames of a raging ceruleum fire is a mystery for the ages. How leaving the deadly scalekin to wander Shaaloani unchecked would be inviting certain destruction? Not so much.",
+      "ja": "青燐水の炎より生じた魔物が<br>人里近くに現れた<br>悪魔の種火、[UNHANDLED 0x28]を倒せ",
+      "de": "Wie ein Salamander in den siedenden Flammen eines Erdseim-Feuers zur Welt kommen kann, bleibt ein ungelöstes Rätsel. An seiner Gefährlichkeit bestehen indes absolut keine Zweifel. Schnelles Handeln ist gefragt.",
+      "fr": "Le céruleum est certes un combustible aux applications multiples, mais son effet sur la faune est encore mal compris. Pour preuve, ce reptile de feu qui menace de ravager la Shaaloani. Calmez donc un peu ses ardeurs."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 95,
+    "location": 10744506,
+    "position": {
+      "map": 860,
+      "zoneid": 4508,
+      "x": 13.87,
+      "y": 24.23,
+      "z": 0.11
+    }
   },
   "1863": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "That's Me and the Porter",
+      "ja": "恐竜怪鳥の伝説",
+      "de": "Urzeitliche Vögel",
+      "fr": "La vie trouve toujours un chemin"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Pelupelu porter on the way to Luwateninyawawsa has discovered a press of peckish yeheheceyaa prohibiting prompt passage to the pueblo. She seeks a kind-hearted soul to scatter the scalekin that they might strike off to the settlement before sundown.",
+      "ja": "ペルペル族の行商人が<br>翼竜に行く手を阻まれている<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Eine Pelupelu-Händlerin auf dem Weg nach Luwateninyawawsa wird von einigen Yeheheceyaa an der Weiterreise gehindert. Sorge dafür, dass sie ihre Route ungefährdet fortsetzen kann.",
+      "fr": "Un marchand ambulant pelupelu s'est retrouvé piégé par des prédateurs préhistoriques. Débarrassez-le de ces volatiles."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 95,
+    "location": 10773794,
+    "position": {
+      "map": 860,
+      "zoneid": 4508,
+      "x": 21.77,
+      "y": 30.68,
+      "z": -0.07
+    }
   },
   "1864": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Dead Never Die",
+      "ja": "死せる悪漢「[UNHANDLED 0x28]」",
+      "de": "Totgesagte leben länger",
+      "fr": "Ce qui est mort ne saurait mourir"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "It has been several moons since reviled outlaw, bastard, brigand, and all-around nefarious ne'er-do-well, Zawtekwa the Undertaken was slain and the bounty on his head claimed. The bad news is, the villain has been spotted again near Sheshenewezi Springs, and its residents are on edge. The good news is, at least this means the bounty should still be active.",
+      "ja": "死んだと思われていた<br>賞金首の男が目撃された<br>死せる悪漢、[UNHANDLED 0x28]を倒せ",
+      "de": "Vor einigen Monden wurde der berüchtigte Bandit Zawtekwa für tot erklärt und sein Kopfgeld ausgezahlt. Die schlechte Nachricht: Der Totgesagte ist an den Sheshenewezi-Quellen wieder aufgetaucht und versetzt die Bewohner in Angst und Schrecken.  Die gute: Es gibt eine zweite Möglichkeit, das Kopfgeld einzukassieren. ",
+      "fr": "Le légendaire bandit Zawtekwa faisait partie de l'histoire, la prime sur sa tête empochée depuis un moment. Pourtant, le voilà qui rôde près des sources de Sheshenewezi. Débusquez-le et envoyez-le six fulms sous terre pour de bon."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 95,
+    "location": 10748740,
+    "position": {
+      "map": 860,
+      "zoneid": 4508,
+      "x": 11.73,
+      "y": 16.32,
+      "z": 0.31
+    }
   },
   "1865": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Gonna Have Me Some Fur",
+      "ja": "毛狩りの季節",
+      "de": "Backenhaar so wunderbar",
+      "fr": "Rasé de près"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Ask any weaver of the Tonawawta and they will tell you the only wool worth weaving with is that spun from the hair of the sunbeard─making the material a hotly sought-after commodity all across Shaaloani. The problem is that the sunbeards are quite (literally) attached to their lush locks, much to the chagrin of any looking to get their hands on a tuft or two.",
+      "ja": "[UNHANDLED 0x28]が<br>織物に使う毛を求めている<br>「[UNHANDLED 0x28]」を集めろ",
+      "de": "Viele Tonawawta-Weber schwören auf Wolle aus dem Fell der Sonnenbärte, sie ist in Shaaloani deshalb heiß begehrt. Dummerweise hängen die Sonnenbärte (im wahrsten Sinne des Wortes) sehr an ihrer Mähne. Da hilft nur gute Überzeugungsarbeit.",
+      "fr": "Ce récolteur tonawawta souhaiterait récupérer de la laine de luminobarbe. Il est temps de sortir la tondeuse."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060503.png",
+    "level": 95,
+    "location": 10748960,
+    "position": {
+      "map": 860,
+      "zoneid": 4508,
+      "x": 19.59,
+      "y": 24.79,
+      "z": 0.05
+    }
   },
   "1866": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Dhara Dared",
+      "ja": "イントゥ・ザ・ワイルド",
+      "de": "Wild ist die Wildnis",
+      "fr": "Vers l'inconnu"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Dharas are mostly harmless when left to wander the wide-open wastes, but should they lose their way and stray too near a settlement, even the slightest contact can rouse the creatures to violence. One such pack currently lingers outside Hhusatahwi and only with swift action can disaster be averted.",
+      "ja": "急な環境の変化により<br>土属性の魔物が街の近くに現れた<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Dhara sind harmlos, wenn man ihnen nicht auf die Pelle rückt. Kommen sie jedoch in die Nähe von Siedlungen, kann schon der kleinste Kontakt katastrophal enden. Momentan macht ein Rudel die Gegend um Hhusatahwi unsicher und muss schnellstens unschädlich gemacht werden.",
+      "fr": "Les changements drastiques dans l'environnement des plaines ont affecté une meute de dharas qui s'approche dangereusement des habitations. Ne les laissez pas s'en prendre aux habitants."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 95,
+    "location": 10744519,
+    "position": {
+      "map": 860,
+      "zoneid": 4508,
+      "x": 27.34,
+      "y": 27.29,
+      "z": 0.02
+    }
   },
   "1867": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Serpentlord Stirs",
+      "ja": "トクローネ：目覚めの予兆",
+      "de": "Künder seines Erwachens",
+      "fr": "Ttokkrone&nbsp;: prélude à l'éveil"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A pack of maddened lunyuhiyshahe threaten the village of Hhusatahwi, as a mysterious warrior whispers warnings of an ancient evil.",
+      "ja": "大人しいはずの草食獣が<br>人里近くで暴れている<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Ein Rudel aufgeschreckter Lunyuhiyshahe bedroht das Dorf Hhusatahwi, während ein mysteriöser Krieger von einem uralten Unheil kündet.",
+      "fr": "Un groupe de lunyuhiyshahe apeurés menace Hhusatahwi, alors qu'un étrange guerrier se présente à vous. Débarrassez-vous de ces monstres."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 95,
+    "location": 10775559,
+    "position": {
+      "map": 860,
+      "zoneid": 4508,
+      "x": 23.49,
+      "y": 32.53,
+      "z": 0.08
+    }
   },
   "1868": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Serpentlord Speaks",
+      "ja": "トクローネ：目覚めの前兆",
+      "de": "Das Erwachen rückt näher",
+      "fr": "Ttokkrone&nbsp;: le roi des serpents"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Following a recent close call with a pack of riled lunyuhiyshahe, the village of Hhusatahwi now finds itself threatened by a similarly agitated congregation of alligators. And as before, Br'uk Vaw of the Setting Sun is there to wax forebodingly on the Serpentlord's return.",
+      "ja": "恐慌状態の肉食ワニの群れが<br>人里近くに現れた<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Nach den Lunyuhiyshahe haben es nun nicht minder wütende Alligatoren auf Hhusatahwi abgesehen. Und ein weiteres Mal ist Br'uk Vaw zur Stelle, um von der Rückkehr des Schlangenkönigs zu künden.",
+      "fr": "Les créatures sauvages autour de Hhusatahwi sont décidément trop agitées. Arrêtez ces alligators enragés avant qu'il ne soit trop tard."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 96,
+    "location": 10790593,
+    "position": {
+      "map": 860,
+      "zoneid": 4508,
+      "x": 28.97,
+      "y": 17.75,
+      "z": -0.16
+    }
   },
   "1869": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Serpentlord Sires",
+      "ja": "トクローネ：狩猟の下準備",
+      "de": "Vorbereitung der Jagd",
+      "fr": "Ttokkrone&nbsp;: la grande chasse commence"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Wizened hunter Br'uk Vaw of the Setting Sun seeks to lure the elusive Serpentlord from his den and requires a unique variety of earth crystals known as “Blood of the Land” to do so.",
+      "ja": "老狩人ブルクバーが<br>蛇王を誘い出す餌の材料を求めている<br>「[UNHANDLED 0x28]」を集めろ",
+      "de": "Der erfahrene Jäger Br'uk Vaw will den Schlangenkönig aus seinem Nest locken. Dazu benötigt er Erdkristalle, die auch unter dem Namen Blut des Bodens bekannt sind.",
+      "fr": "Br'uk Vaw, chasseur émérite, a besoin d'aide pour mener son plan à bien et attirer la créature qu'il appelle “roi des serpents” hors de sa tanière. Commencez par ramasser des cristaux spirituels pour lui."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060503.png",
+    "level": 96,
+    "location": 10795970,
+    "position": {
+      "map": 860,
+      "zoneid": 4508,
+      "x": 20.88,
+      "y": 8.46,
+      "z": 0.26
+    }
   },
   "1870": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Serpentlord Suffers",
+      "ja": "トクローネ：狩猟の秘策",
+      "de": "Mit Blut fängt man Schlangen",
+      "fr": "Ttokrrone&nbsp;: massacre ophidien"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Br'uk Vaw of the Setting Sun would use the Blood of the Land to draw burrowing aspis to the desert surface so that you might slay them, thus provoking the Serpentlord from hiding.",
+      "ja": "魔力を求め蛇の群れが現れた<br>[UNHANDLED 0x28]を倒し<br>[UNHANDLED 0x28]を守れ",
+      "de": "Mit dem Blut des Bodens will Br'uk Vaw nistende Aspis hervorlocken, damit du sie niederschlagen und so den Schlangenkönig aus seinem Versteck holen kannst.",
+      "fr": "Br'uk Vaw souhaite utiliser les cristaux spirituels pour appâter les aspics. En massacrant ses congénères, il espère obtenir l'attention de Ttokkrone. De votre côté, faites en sorte que les reptiles ne volent pas tous vos cristaux&nbsp;!"
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060504.png",
+    "level": 96,
+    "location": 10795970
   },
   "1871": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Serpentlord Seethes",
+      "ja": "トクローネ：荒野の死闘",
+      "de": "In den sandigen Schlund",
+      "fr": "Ttokrrone&nbsp;: lutte ensablée"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Roused to anger by the slaughter of his spawn, the Serpentlord─Ttokrrone─has awoken and seeks bloody vengeance.",
+      "ja": "地霊水晶の魔力に引き寄せられ<br>ついにトラルヴィドラールが現れた<br>蛇王トクローネを倒せ",
+      "de": "Erzürnt über das Abschlachten seiner Brut hat sich der Schlangenkönig Ttokrrone erhoben und sinnt auf blutige Rache.",
+      "fr": "Rendu furieux par l'odeur du sang de ses sujets, le roi des serpents entre enfin en scène. Il est temps de mettre un terme à son règne&nbsp;!"
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 100,
+    "location": 10420637,
+    "position": {
+      "map": 860,
+      "zoneid": 4508,
+      "x": 22.56,
+      "y": 5.08,
+      "z": 0.47
+    }
   },
   "1872": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Tortoise of a Tale",
+      "ja": "亀は意外と速く歩く",
+      "de": "Seeungeheuer",
+      "fr": "Des tortues plus rapides que la moyenne"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Fishers are wont to spin tales taller than the great Loazensasaya, but common sense tells us to take those tales with a sizable grain of salt. So when local anglers started claiming “giant turtles” were scaring all the fish in Lake Toari, most people simply nodded their heads kindly and went about their business. When the selfsame anglers started <i>going missing</i>, however, alarms were finally raised.",
+      "ja": "トーリ湖のほとりに<br>巨大陸亀が押し寄せた<br>釣りの邪魔者、[UNHANDLED 0x28]を倒せ",
+      "de": "Angler sind für ihren Seemannsgarn bekannt. Als einige der hiesigen von Riesenschildkröten redeten, die die Fische im Toari-See aufschrecken würden, nickten die meisten deshalb einfach nur freundlich und gingen weiter ihren Geschäften nach. Als dieselben Angler aber plötzlich begannen, spurlos zu verschwinden, schlug man Alarm.",
+      "fr": "Des tortues gigantesques sèment la panique sur les rives du lac Toari. Arrêtez ces empêcheuses de pêcher en rond au plus vite."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 96,
+    "location": 10744530,
+    "position": {
+      "map": 860,
+      "zoneid": 4508,
+      "x": 34.94,
+      "y": 10.38,
+      "z": -0.15
+    }
   },
   "1873": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Breaking the Jaw",
+      "ja": "不条理魚人「[UNHANDLED 0x28]」",
+      "de": "Der Lügenfresser",
+      "fr": "Mâchoire déchue"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "For countless generations, Shaaloani grandmothers have told tales of a Namazu elemental─the Outjaw─who could sense the lies of wicked children with their whiskers, and would come in the night to swallow whole those who told the most untruths. As it would turn out, there was truth in those tales.",
+      "ja": "人喰いナマズの精霊と<br>噂される脅威の存在が現れた<br>不条理魚人、[UNHANDLED 0x28]を倒せ",
+      "de": "Seit Generationen erzählen Großmütter aus Shaaloani Geschichten von einem Namazu-Elementar, der die Lügen von Kindern mit seinen Barteln spürt und des Nachts kommt, um jene zu verschlingen, die die schlimmsten Unwahrheiten verbreiten. Offensichtlich waren das keine Ammenmärchen!",
+      "fr": "Les rumeurs en Shaaloani parlent d'un esprit maléfique de poisson-chat mangeur d'hommes. Malheureusement, ce ne sont pas que des histoires&nbsp;! Débarrassez-vous rapidement de ce monstre avant qu'il ne cause des victimes&nbsp;!"
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 96,
+    "location": 10749053,
+    "position": {
+      "map": 860,
+      "zoneid": 4508,
+      "x": 32.14,
+      "y": 20.9,
+      "z": -0.06
+    }
   },
   "1874": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Raptor Runs Through It",
+      "ja": "リバー・ランズ・スルー・イット",
+      "de": "Fang in Gefahr",
+      "fr": "Et au milieu coule une rivière"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Hungry ceratoraptors have risen from the murky depths of Lake Toari to rain on one unlucky Hhetsarro angler's parade.",
+      "ja": "釣人が釣った魚を求め<br>湖の底より魔物が現れた<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Hungrige Dissorophois sind vom Grund des Toari-Sees hervorgekrochen und stehen kurz davor, einem Angler seinen Tag gehörig zu vermiesen.",
+      "fr": "Un pêcheur un peu trop insistant a réveillé les créatures qui sommeillaient au fond du lac Toari. Renvoyez-les dans leur tanière avant qu'elles n'engloutissent toutes les prises du pauvre homme&nbsp;!"
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060504.png",
+    "level": 96,
+    "location": 10749190,
+    "position": {
+      "map": 860,
+      "zoneid": 4508,
+      "x": 34.98,
+      "y": 14.45,
+      "z": -0.15
+    }
   },
   "1875": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Ain't What I Herd",
+      "ja": "ロネークと人の大地",
+      "de": "Hüter der Herde",
+      "fr": "Terre des rroneeks"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Lunyucaua'pyas have gathered in the fields south of Lake Toari, threatening a nearby herd of rroneek tended by the Hhetsarro. If the scalekin are not driven off, their people risk starvation.",
+      "ja": "草を食むロネークを狙い<br>獰猛な肉食獣がやってきた<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Lunyucaua'pya haben sich in den Feldern südlich des Toari-Sees versammelt und bedrohen eine Rroneek-Herde der Hhetsarro. Wird nichts unternommen, droht eine Hungersnot.",
+      "fr": "Des prédateurs affamés menacent un troupeau de rroneeks qui beuglent joyeusement sans se douter du danger. Éliminez cette menace rapidement&nbsp;!"
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 96,
+    "location": 10749719,
+    "position": {
+      "map": 860,
+      "zoneid": 4508,
+      "x": 27.29,
+      "y": 22.35,
+      "z": -0.1
+    }
   },
   "1876": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Helms off to the Bull",
+      "ja": "嘆きの猛進「[UNHANDLED 0x28]」",
+      "de": "Brachialer Bulle",
+      "fr": "Hwittaeki"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "One of the bulls of the Hhetsarro's herd is on a rampage and needs reminding of its place.",
+      "ja": "群れのボス争いに負けた<br>若く強いロネークが暴れている<br>嘆きの猛進、[UNHANDLED 0x28]を倒せ",
+      "de": "Einer der Bullen der Hhetsarro-Herde läuft Amok und muss schleunigst in seine Schranken verwiesen werden.",
+      "fr": "Un jeune rroneek n'ayant pas réussi à s'imposer comme alpha du troupeau jette à présent son dévolu sur le reste des habitants des plaines. À vous de réfréner ses ardeurs."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 96,
+    "location": 10749905,
+    "position": {
+      "map": 860,
+      "zoneid": 4508,
+      "x": 23.87,
+      "y": 16.28,
+      "z": -0.05
+    }
   },
   "1877": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Pasture Expiration Date",
+      "ja": "ポゼッション",
+      "de": "Unerwünschte Rasenmäher",
+      "fr": "Bestioles nuisibles"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A freshly hatched urqocampa possesses an appetite greater than a hungry household of Pelupelu─so one can easily imagine what an entire swarm of them will do to the alpacas' grazing plain if they are not swiftly dealt with.",
+      "ja": "アルパカが好む牧草に<br>巨大蛾の幼虫が群がっている<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Ein paar frisch geschlüpfte Urco-Wamouracampas sind in das Weidgebiet der Alpakas eingefallen. Wenn sie nicht rasch ausgerottet werden, wird kein Grashalm mehr übrig bleiben.",
+      "fr": "Une colonie de cloportes a envahi les pâturages où broutent les alpagas. Terrassez-les avant qu'il ne reste plus un seul brin d'herbe dans les prés."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 91,
+    "location": 10467289,
+    "position": {
+      "map": 857,
+      "zoneid": 4505,
+      "x": 18.5,
+      "y": 8.06,
+      "z": -1.2
+    }
   },
   "1878": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Fire Suppression",
+      "ja": "踊る山火「[UNHANDLED 0x28]」",
+      "de": "Racaqurq die tanzende Flamme",
+      "fr": "La flamme dansante"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Enkindled by Valigarmanda's calamitous flames, the fearsome Racaqurq has descended the mountain in search of a worthy warrior. Until the stoutstrider returns with reinforcements, you are the only thing standing between Wachunpelo and destruction.",
+      "ja": "かつてヴァリガルマンダが吐いた<br>消えない炎から強力な魔物が発生した<br>踊る山火、[UNHANDLED 0x28]を倒せ",
+      "de": "Aus dem feurigen Odem von Valigarmanda geformt, ist der fürchterliche Racaqurq vom Berg hinabgestiegen, um einen würdigen Gegner zu finden. Bis Tsivli mit Verstärkung zurückkehrt, bist du die letzte Bastion zwischen Wachunpelo und seiner Zerstörung.",
+      "fr": "Racaqurq, le feu inextinguible né du souffle ardent de Valigarmanda, cherche un adversaire à sa taille. Mettez-le hors d'état de nuire."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 90,
+    "location": 10467294,
+    "position": {
+      "map": 857,
+      "zoneid": 4505,
+      "x": 25.5,
+      "y": 17.85,
+      "z": -0.8
+    }
   },
   "1879": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Wolf Parade",
+      "ja": "狼の家",
+      "de": "Hungrig wie die Wölfe",
+      "fr": "Loups affamés"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Some Pelupelu claim that a full supply wagon is the key to a full coinpurse. Others argue that it is an invitation for unwanted guests on the road, as this idle caravan has just discovered.",
+      "ja": "休憩中の隊商を狙って<br>狼たちが集まってきた<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Ein Rudel Wölfe hat zwei Wagen umkreist, die randvoll mit Nahrungsmitteln und Medizin für die Pelupelu beladen sind. Beseitige die Gefahr, damit die Händler und ihre Alpakas ihre Reise fortsetzen können.",
+      "fr": "Une meute de loups, par l'odeur alléchés, a décidé de s'en prendre à une caravane de marchands en train de  se reposer. Abattez ces prédateurs afin de sauver la marchandise des Pelupelu."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 91,
+    "location": 10468078,
+    "position": {
+      "map": 857,
+      "zoneid": 4505,
+      "x": 16.98,
+      "y": 15.83,
+      "z": -0.81
+    }
   },
   "1880": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Panaq Attack",
+      "ja": "空飛ぶ鍋奉行「[UNHANDLED 0x28]」",
+      "de": "Panaq-Attacke",
+      "fr": "Attaque de Panaq"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Legend has it that a great winged creature haunts Panaqpelu Retreat, lurking in the shadows until it is ready to feast. The Pelu eater prefers its prey fresh from the hot springs, and its next meal has just been served.",
+      "ja": "温泉でほどよく温まったペルペル族を<br>好んで狙う魔物が飛来した<br>空飛ぶ鍋奉行、[UNHANDLED 0x28]を倒せ",
+      "de": "Laut den Legenden der Pelupelu lauert nicht weit der Panaqpelu-Therme eine geflügelte Kreatur namens Pelufresser darauf, wohlig-warme Badegäste zu verspeisen. Aber das sind sicher bloß Ammenmärchen, nicht?",
+      "fr": "Des rumeurs parlent d'une terrible créature volante ayant un appétit vorace pour les Pelupelu trempant dans les sources chaudes de la Retraite de Panaqpelu. Mais, n'est-ce vraiment qu'une rumeur&nbsp;? Abattez le dévoreur de Pelupelu et sauvez les baigneurs."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 90,
+    "location": 10499024,
+    "position": {
+      "map": 857,
+      "zoneid": 4505,
+      "x": 32.01,
+      "y": 21.14,
+      "z": -0.95
+    }
   },
   "1881": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Ratels So Ravenous",
+      "ja": "今日もごきげん元気",
+      "de": "Hunger bringt Kummer",
+      "fr": "Ratels carnassiers"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Driven to desperation by hunger pangs, a clan of ratels has begun to encroach upon Wachunpelo. Stave them off before they discover a taste for alpacas...or worse.",
+      "ja": "飢えて凶暴になったラーテルが<br>人里近くに集結している<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Getrieben von Hunger ist ein Rudel Ratel gefährlich nah an Wachunpelo herangekommen. Vertreibe die Tiere, bevor sie auf den Geschmack von Alpakas oder schlimmer noch, Pelupelu, kommen. ",
+      "fr": "Une horde de ratels s'est approchée un peu trop près de Wachunpelo. Dispersez-les avant qu'ils ne s'en prennent à qui que ce soit."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 90,
+    "location": 10467596,
+    "position": {
+      "map": 857,
+      "zoneid": 4505,
+      "x": 32.79,
+      "y": 15.57,
+      "z": -0.99
+    }
   },
   "1882": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Too Irate to Migrate",
+      "ja": "トラルの渡り鳥",
+      "de": "Zornige Zugvögel",
+      "fr": "Oiseaux de malheur"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A flock of zu has swooped down to forage near the road to Wachunpelo. These short-tempered fowl must be dealt with swiftly, lest they pose a threat to passing civilians.",
+      "ja": "街道の近くに<br>気性の荒い渡り鳥が住みついた<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Ein Schwarm wandernder Montisaurier ist auf Futtersuche nahe der Straße nach Wachunpelo gelandet. Der jähzornigen Brut muss umgehend Einhalt geboten werden, sonst stellt sie eine ernsthafte Gefahr für Reisende dar.",
+      "fr": "Une nuée de zus errants en colère menace la sûreté de la prairie. Abattez-les et ramenez la paix dans le ciel de Wachunpelo."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 91,
+    "location": 10467741,
+    "position": {
+      "map": 857,
+      "zoneid": 4505,
+      "x": 23.56,
+      "y": 13.77,
+      "z": -1.52
+    }
   },
   "1883": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Megamaguey Mayhem",
+      "ja": "ワイルドマゲイ・メガマックス",
+      "de": "Anarcho-Agaven",
+      "fr": "Mégapitas, méga problèmes"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Many a megamaguey long for the rich, fertile soil of the agave fields─including this pack of particularly pungent ones. Dispatch the creatures before they have the chance to lay roots.",
+      "ja": "養分豊かなアガベ畑の土を求め<br>凶暴な移動性植物が流れてきた<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Der nährstoffreiche Boden der Agavenfelder hat ein Rudel Riesenagaven angelockt. Merze sie aus, bevor sie Wurzeln schlagen können.",
+      "fr": "Attirées par les sols riches et fertiles des champs d'agave, des hordes de créatures végétales à l'odeur méphitique s'y sont invitées. Chassez ces mauvaises plantes."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 91,
+    "location": 10467750,
+    "position": {
+      "map": 857,
+      "zoneid": 4505,
+      "x": 25.94,
+      "y": 9.85,
+      "z": -1.89
+    }
   },
   "1884": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Weeding the Garden",
+      "ja": "太陽のマテ茶園",
+      "de": "Unkrautvernichtung",
+      "fr": "Matéière va craquer"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "To ensure a high-quality mate crop, neither pest nor weed is welcome in the vicinity of Miplu's Mate Garden. Invasive ochus are no exception, and the farmers require capable cullers to exterminate the stinking seedkin.",
+      "ja": "ミープル・マテ茶園のすぐ近くに<br>悪臭放つオチューが繁殖してしまった<br>[UNHANDLED 0x28]を倒せ",
+      "de": "In der Nähe von Miplus Mategarten sind invasive Ochus gesichtet worden. Die bewegungsfähigen Pflanzen werden die Ernte zerstören, wenn man sie wuchern lässt, daher solltest du sie schleunigst beseitigen.",
+      "fr": "Des otyughs particulièrement envahissants se sont multipliés aux abords de la matéière de Miplu. Réduisez leur population."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 91,
+    "location": 10467762,
+    "position": {
+      "map": 857,
+      "zoneid": 4505,
+      "x": 13.98,
+      "y": 8.27,
+      "z": -0.24
+    }
   },
   "1885": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Birds Up",
+      "ja": "コーヒーを巡る冒険",
+      "de": "Hiebe für die Bohnendiebe",
+      "fr": "Jacu-se"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "If the coffee farmer was not already convinced that jacu birds were the worst birds in Tural, he is now, as a hungry flock has swooped down to snack on his precious crop. Repel the feathered fiends and see that the beans survive another day.",
+      "ja": "豆を食い荒らす害鳥の群れが現れた<br>「[UNHANDLED 0x28]」を護りつつ<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Angelockt vom deftigen Kaffeeduft ist ein Schwarm Jacus über die Ernte eines hilflosen Kaffeebauern hergefallen. Beschütze die Kisten mit den Bohnen vor der pickenden Plage.",
+      "fr": "Une volée d'oiseaux jacu friands de grains de café a pris d'assaut la caféière de Ciblu. Protégez les caisses de café en repoussant les indésirables volatiles."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060504.png",
+    "level": 91,
+    "location": 10499148,
+    "position": {
+      "map": 857,
+      "zoneid": 4505,
+      "x": 20.4,
+      "y": 10.39,
+      "z": -1.42
+    }
   },
   "1886": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Young Volcanoes",
+      "ja": "オンリー・ザ・ボム",
+      "de": "Junge Hitzköpfe",
+      "fr": "Panique volcanique"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The flames of Naryor Gorna have birthed a bevy of baby bombs who are eager to put their explosive abilities to the test. Douse their fiery aspirations before the volcanic winds carry them to Worlar's Echo.",
+      "ja": "ナーヨー・ゴーナの炎から<br>大量のボムが現れた<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Die brennenden Flammen von Naryor Gorna haben einige junge Bomber hervorgebracht. Vernichte sie, bevor sie mit ihren Explosionen einen Vulkanausbruch auslösen.",
+      "fr": "Des flammes de Naryor Gorna ont émergé toute une nuée de bombos prêts à exploser. Désamorcez ces dangers publics."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 93,
+    "location": 10467833,
+    "position": {
+      "map": 857,
+      "zoneid": 4505,
+      "x": 36.4,
+      "y": 26.96,
+      "z": 1.23
+    }
   },
   "1887": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Claws and Effect",
+      "ja": "小さな湖のほとりで",
+      "de": "Mörderische Meute",
+      "fr": "La source aux grosses pinces"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Though it remains unclear how so many bigclaws scuttled into such a small reservoir, one thing is certain: they cannot be suffered to disrupt the natural ecosystem.",
+      "ja": "小さな水源に<br>どこからか蟹が湧きだした<br>[UNHANDLED 0x28]を倒せ",
+      "de": "In diesem kleinen Reservoir ist eine regelrechte Mörderkrabbenplage ausgebrochen. Niemand weiß, wo sie plötzlich herkamen, trotzdem solltest du gerade deswegen sicherstellen, dass sie schleunigst dorthin zurückkehren.",
+      "fr": "La petite source de Pleure-aux-Étoiles a soudain été envahie par des crabes à grosses pinces sortis d'on ne sait où. Réduisez-les en pâté."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 93,
+    "location": 10467903,
+    "position": {
+      "map": 857,
+      "zoneid": 4505,
+      "x": 19.68,
+      "y": 28.64,
+      "z": 0.12
+    }
   },
   "1888": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "By Your Powers Combined",
+      "ja": "ダーク・ウォーター",
+      "de": "Wider die Wasserverschmutzung",
+      "fr": "Pollution lacustre"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A morbol infestation threatens to spoil the sacred waters of Karvarhur the First. Defend the lake and rout the foul beasts before any lasting damage can be done.",
+      "ja": "カーヴァーフー湖の湖畔に<br>水を汚すモルボルが発生した<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Morbol-Befall droht das heilige Wasser von Karvarhur der Ersten zu verunreinigen. Rotte die Plage aus, bevor es dazu kommt.",
+      "fr": "Les berges du Berceau de Karvarhur voient leurs eaux polluées par d'infâmes morbols. Faites un geste écologique en éliminant ces derniers."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 93,
+    "location": 10467918,
+    "position": {
+      "map": 857,
+      "zoneid": 4505,
+      "x": 8.31,
+      "y": 23.11,
+      "z": 0.53
+    }
   },
   "1889": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Gust Stop Already",
+      "ja": "不死の人",
+      "de": "Der Wind, das höllische Kind",
+      "fr": "Gravures au vent"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Agitated wind sprites have stormed into Proof, whipping up fierce gales that threaten to erode the gravestones. Take up arms and calm their fury, that the Yok Huy might mourn in peace once more.",
+      "ja": "荒ぶる風の精によって<br>ヨカフイ族の墓が脅威に晒されている<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Aufgewühlte Wind-Exergone laufen in Zeugnis Amok und erzeugen starke Böen, die die Grabsteine zu erodieren drohen. Blase ihnen die Flausen aus dem Kopf, damit die Yok Huy wieder in Ruhe trauern können.",
+      "fr": "Les tombes des Yok Huy sont menacées d'érosion par des élémentaires de vent déchaînés. Intervenez sans tarder."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 93,
+    "location": 10499184,
+    "position": {
+      "map": 857,
+      "zoneid": 4505,
+      "x": 15.93,
+      "y": 22.51,
+      "z": 0.56
+    }
   },
   "1890": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Big Storm Coming",
+      "ja": "暴風の乗り手「[UNHANDLED 0x28]」",
+      "de": "Durzurgir die Sturmreiterin",
+      "fr": "Durzurgir, le Chevaucheur des Tempêtes"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "As the Yok Huy histories tell it, the dread serpent Durzurgir slithers across raging tempests, wreaking havoc upon the land as the wind dies down. Only the noblest warriors can contend with the so-called Stormrider and live to tell the tale.",
+      "ja": "荒ぶる風に乗り<br>巨大な飛行生物が舞い降りた<br>暴風の乗り手、[UNHANDLED 0x28]を倒せ",
+      "de": "Die Legenden der Yok Huy erzählen davon, dass die fürchterliche geflügelte Schlange Durzurgir von stürmischen Winden durch die Lande getragen wird. Es heißt, dass nur die edelsten Krieger eine Chance haben, die Konfrontation mit der Sturmreiterin zu überstehen.",
+      "fr": "On raconte que cette immense créature volante se mouvrait au sein des tempêtes. Ajoutez-la à votre tableau de chasse."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 93,
+    "location": 10499279,
+    "position": {
+      "map": 857,
+      "zoneid": 4505,
+      "x": 15.93,
+      "y": 22.51,
+      "z": 0.56
+    }
   },
   "1891": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Salty Showdown",
+      "ja": "千年の孤独",
+      "de": "Salziges Stelldichein",
+      "fr": "Brutes géantes"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A cadre of Chirwagur has stationed themselves outside the saltern, harassing any who approach. They <i>can</i> be convinced to retreat by way of force, provided someone rises to the challenge.",
+      "ja": "チーワグー塩田のヨカフイ族が<br>道行く者に難癖をつけている<br>挑戦を受け、返り討ちにしろ",
+      "de": "Einige Chirwagur haben sich direkt vor den Salzgruben niedergelassen und greifen jeden an, der sich ihnen nähert. Zum Glück können sie zum Rückzug bewegt werden&nbsp;- ausreichend schlagende Argumente vorausgesetzt.",
+      "fr": "Les Yok Huy du salin de Chirwagur provoquent et agressent les voyageurs qui croisent leur route. Montrez-leur qui est la plus forte."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 93,
+    "location": 10499331,
+    "position": {
+      "map": 857,
+      "zoneid": 4505,
+      "x": 22.99,
+      "y": 27.54,
+      "z": 0.2
+    }
   },
   "1892": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Valiant Duel",
+      "ja": "傍若無人、[UNHANDLED 0x28]",
+      "de": "Wagemut, der gut nicht tut",
+      "fr": "Vaillant et revanchard"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Hearing the anguished cries of his brethren, Vorjirzur the Valiant has stepped forth to avenge them. Prove your mettle and bring this lauded warrior of the Chirwagur to his knees.",
+      "ja": "打ちのめされた仲間を見て<br>ヨカフイ族の強者が立ち上がった<br>傍若無人、[UNHANDLED 0x28]を倒せ",
+      "de": "Von den qualvollen Schreien seiner Brüder angelockt, ist Vorjirzur der Wagemutige erschienen und sinnt auf Rache. Beweise dein Können und zwinge den gefeierten Krieger der Chirwagur in die Knie.",
+      "fr": "Furieux de la défaite de ses camarades, Vorjirzur le Vaillant a décidé d'en découdre à son tour. Réglez-lui son compte."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 93,
+    "location": 10499447,
+    "position": {
+      "map": 857,
+      "zoneid": 4505,
+      "x": 22.99,
+      "y": 27.54,
+      "z": 0.2
+    }
   },
   "1893": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "So Long, Suckers",
+      "ja": "吸血怪獣",
+      "de": "Böses Blut",
+      "fr": "Pas de veine"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "In Urqopacha, few creatures are feared more than the bloodsuckers─ruthless predators who drain the life from anything they can sink their teeth into. If their numbers are not soon thinned, they are bound to leave a trail of mangled corpses in their wake.",
+      "ja": "動物の血を好んで啜る<br>獰猛な吸血怪獣が現れた<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Der Name ist Programm: Diese grausamen Jäger saugen das Leben aus jedem, der das Pech hat, ihnen über den Weg zu laufen. Du bist hiermit dazu ermächtigt, den Boden mit ihrem Blut zu tränken. Idealerweise, bevor du dein eigenes verlierst.",
+      "fr": "Des créatures suceuses de sang à l'appétit particulièrement vorace ont envahi les lieux. Élaguez leurs rangs."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 93,
+    "location": 10499631,
+    "position": {
+      "map": 857,
+      "zoneid": 4505,
+      "x": 28.64,
+      "y": 27.92,
+      "z": 0.45
+    }
   },
   "1894": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Lay Off the Horns",
+      "ja": "失われた山岳の都",
+      "de": "Es krazt mich gewaltig",
+      "fr": "Vandalisme cornu"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "It's horn-honing season, and the gazelles have set their sights on the ancient stonework at the Shades of Grief. Less enthusiastic about the prospect is a Yok Huy vigilkeeper, who would like you to dissuade the beasts by whatever means necessary.",
+      "ja": "角換わりの時期を迎えたガゼルたちが<br>遺跡の壁で角を研ぎ始めた<br>保全のため[UNHANDLED 0x28]を倒せ",
+      "de": "Die Gazellen schärfen ihre Hörner und haben dazu ausgerechnet die Mauern im Schatten der Trauer auserkoren. Ein Wächter der Yok Huy ist darüber verständlicherweise nicht sonderlich erbaut und bittet dich, die Tiere eines Besseren zu belehren&nbsp;- mit probaten Mitteln deiner Wahl.",
+      "fr": "Des gazelles viennent affûter leurs jeunes cornes sur les vestiges des Yok Huy. Chassez-les avant qu'elles ne les dégradent davantage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060504.png",
+    "level": 93,
+    "location": 10499663,
+    "position": {
+      "map": 857,
+      "zoneid": 4505,
+      "x": 24.6,
+      "y": 24.81,
+      "z": 0.23
+    }
   },
   "1895": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Could've Found Something Bigger",
+      "ja": "上段の突きを喰らうイブルク",
+      "de": "Zahlenmäßig unterlegen",
+      "fr": "Tout n'est pas bon dans l'ibruq"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Only after arriving in the jungle does a small band of Xbr'aal ibruq hunters realize their band is likely <i>too</i> small to stand a decent chance against the tusked horrors that await them beneath the canopy.",
+      "ja": "シュバラール族の狩人が野猪を狩る手伝いを求めている<br>森を荒らすイブルクたちを倒せ",
+      "de": "Bei seiner Ankunft im Dschungel hat ein kleiner Verband von Ibruq-Jägern der Xbr'aal festgestellt, dass er vielleicht etwas <i>zu</i> klein ist, um gegen die Schrecken unter dem Blätterdach zu bestehen.",
+      "fr": "Un troupeau d'ibruq particulièrement nombreux perturbe l'équilibre de la forêt. Aidez les chasseurs xbr'aal à réduire leur nombre... et à se réapprovisionner en viande par la même occasion."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060504.png",
+    "level": 94,
+    "location": 10509700,
+    "position": {
+      "map": 859,
+      "zoneid": 4507,
+      "x": 14.47,
+      "y": 16.38,
+      "z": 0.22
+    }
   },
   "1896": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "La Selva se lo Llevó",
+      "ja": "血濡れの爪「ミユールル」",
+      "de": "Ruhm oder Leben",
+      "fr": "Défi : Mille malheurs, voilà le Milyurrul"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Drawn to the stench of blood and gore, Milyurrul─a rarely seen, but terrifyingly deadly predator─has descended from the jungle canopy to revel in the slaughter. You can run and live to see tomorrow, or you can press the hunt and carve your name into legend. Or die. You could also die.",
+      "ja": "イブルク狩りをしていた狩人の前に<br>殺戮を好む獰猛な獣が現れた<br>血濡れの爪、ミユールルを倒せ",
+      "de": "Angezogen vom Blut ist Milyurrul, ein seltener, aber nicht minder tödlicher Jäger, aus den Baumkronen hinabgestiegen, um sich am Gemetzel zu ergötzen. Du könntest fliehen und dein Leben retten oder die Jagd fortsetzen und deinen Namen in die Geschichtsbücher schreiben. Oder sterben. Du könntest auch sterben.",
+      "fr": "Des chasseurs partis traquer les ibruq se sont retrouvés nez à nez avec le Milyurrul, un monstre sanguinaire ayant déjà commis des atrocités dans la région. Aidez-les à terrasser la bête avant qu'elle ne commette plus de dégâts."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060502.png",
+    "level": 94,
+    "location": 10509704,
+    "position": {
+      "map": 859,
+      "zoneid": 4507,
+      "x": 14.63,
+      "y": 17.99,
+      "z": 0.24
+    }
   },
   "1897": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Departed",
+      "ja": "邪聖樹ネクローシス",
+      "de": "Schlingelpflanzen",
+      "fr": "Nécrose ambiante"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "After a sudden, unexplained drop in passengers departing from Yak T'el's only dirigible landing, officials dispatched an expeditionary party into the jungle to determine a cause behind the change...only to find the road connecting the port to Ilyon Asoh infested with deadly flora that have a habit of strangling unexpecting travelers. The landing now seeks aid in clearing the overgrowth.",
+      "ja": "気球発着場から通じる林道に<br>危険な食獣植物が棲みついた<br>ネクローシス・ロイターを倒せ",
+      "de": "Als die Passagierzahlen am Ballonplatz plötzlich rapide sanken, entsandte man ein Expeditionskorps, um der Sache auf den Grund zu gehen. Dabei stellte man fest, dass die Straße nach Ilyon Asoh von Pflanzen mit der unangenehmen Angewohnheit bevölkert wird, sich um die Hälse ahnungsloser Reisender zu schlingen&nbsp;- ein Übel, das an der Wurzel gepackt werden muss.",
+      "fr": "Des flâneurs nécrotiques, de dangereux monstres carnivores, ont établi leur repaire sur la route forestière menant à l'embarcadère des ballons. Eliminez-les avant qu'ils ne blessent de pauvres voyageurs."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 94,
+    "location": 10501394,
+    "position": {
+      "map": 859,
+      "zoneid": 4507,
+      "x": 27.95,
+      "y": 12.42,
+      "z": 0.19
+    }
   },
   "1898": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Fright or Flight",
+      "ja": "呪われの森",
+      "de": "Denn sie wussten nicht, was sie tun",
+      "fr": "Terreur de l'au-delà"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Despite rampant rumors of it being haunted, a pair of unflinching Xbr'aal youths arrive at the site of an ancient battle to test their collective mettle...only to be promptly greeted by the restless spirits of the fallen.",
+      "ja": "シュバラール族の青年が<br>あろうことか古戦場で肝試しをしている<br>怒れる怨霊たちを倒せ",
+      "de": "Zwei junge Xbr'aal haben sich auf eine Mutprobe eingelassen und sind zu einem alten Schlachtfeld gewandert, auf dem es angeblich spuken soll. Jetzt schlottern den beiden die Knie, denn die Gerüchte scheinen ziemlich wahr zu sein.",
+      "fr": "Des jeunes chasseurs xbr'aal ont cru bon de mettre à l'épreuve leur courage en se rendant sur les ruines d'un champ de bataille. Éliminez les esprits courroucés avant qu'il ne leur arrive malheur."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060501.png",
+    "level": 94,
+    "location": 10501437,
+    "position": {
+      "map": 859,
+      "zoneid": 4507,
+      "x": 29.67,
+      "y": 16.07,
+      "z": 0.12
+    }
   },
   "1899": {
+    "name": {
+      "en": "Stick it to the Mantis",
+      "ja": "ザ・デッドリーマンティス",
+      "de": "Je mehr, desto lustiger",
+      "fr": "Mantes massivement mortelles"
+    },
+    "description": {
+      "en": "A pair of sentries manning a watchtower near Iq Br'aax have spotted a swarm of leaf mantises gathering in the distance, and do not relish the prospect of facing it alone.",
+      "ja": "イクブラーシャ付近の見張り台が<br>魔物の襲撃を受けている<br>アサルト・リーフマンティスを倒せ",
+      "de": "Zwei Wächter von einem der Türme nahe Iq Br'aax haben einen Schwarm Blattmantis entdeckt, dem sie sich nur ungern alleine stellen würden.",
+      "fr": "Les vigiles du village d'Iq Br'aax ont l'habitude d'avoir affaire aux créatures environnantes, mais celles-ci sont trop coriaces pour eux. Abattez les mantes végétales ravageuses avant qu'elles ne mettent le hameau à feu et à sang."
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 94,
+    "location": 10509427,
+    "position": {
+      "map": 859,
+      "zoneid": 4507,
+      "x": 21.17,
+      "y": 14.18,
+      "z": 0.04
+    }
+  },
+  "1900": {
+    "name": {
+      "en": "The Fruit of the Problem",
+      "ja": "猿の大陸 キングダム",
+      "de": "Viel gefragte Früchte",
+      "fr": "Petits singes mal élevés"
+    },
+    "description": {
+      "en": "Ask any Xbr'aal and they will tell you the belly of an ik'iit is deeper than the deepest cenote. This comes much to the dismay of Iq Br'aax's foragers who must compete with the creatures for the jungle's fruit. Any assistance in scaring off the insatiable sapiens would not only be greatly appreciated, but greatly rewarded.",
+      "ja": "腹を空かせた猿の群れが<br>イクブラーシャに向かおうとしている<br>イキートゥたちを倒せ",
+      "de": "Jeder Xbr'aal weiß, dass der Schlund eines Ik'iit unergründlicher ist als der tiefste Cenote. Sehr zum Leidwesen der Wildbeuter aus Iq Br'aax, die sich mit den Vielfraßen um die Früchte des Waldes streiten müssen. Hilfe bei ihrer Vertreibung wird deshalb nicht nur gern gesehen, sondern auch fürstlich belohnt.",
+      "fr": "Une bande de singes affamés se dirige vers Iq Br'aax pour y piller les réserves de nourriture. Repoussez-les ik'iits pour préserver le village de la famine."
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 94,
+    "location": 10497433,
+    "position": {
+      "map": 859,
+      "zoneid": 4507,
+      "x": 8.19,
+      "y": 16.8,
+      "z": 0.31
+    }
+  },
+  "1901": {
+    "name": {
+      "en": "My Star",
+      "ja": "ピューと鳴く、ブラーシャ",
+      "de": "Gefährlicher Wald",
+      "fr": "Ça va coûter un br'aax"
+    },
+    "description": {
+      "en": "A wise man once proclaimed there are more things in the jungle that will eat you than stars in the sky. He is believed to have been devoured by a vawtsaral br'aax one night while stargazing. You could be next.",
+      "ja": "森を歩く者を狙って<br>獰猛な肉食獣の群れが現れた<br>レイジング・ヴァザラルブラーシャを倒せ",
+      "de": "Ein weiser Mann sagte einmal, dass es im Wald mehr Gefahren gibt, als Sterne am Himmel stehen. Angeblich wurde er beim Observieren des Nachthimmels von einem Vawtsaral Br'aax verschlungen&nbsp;... Und du könntest der Nächste sein!",
+      "fr": "Une meute de féroces carnassiers est apparue près du village et s'en prend à tous ceux qui osent mettre un pied dans la forêt. Éliminez les vawtsaral br'aax déchaînés."
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 94,
+    "location": 10499167,
+    "position": {
+      "map": 859,
+      "zoneid": 4507,
+      "x": 16.61,
+      "y": 10.01,
+      "z": 0.2
+    }
+  },
+  "1902": {
+    "name": {
+      "en": "I Ain't Afraid of No Ghost",
+      "ja": "怒れる古兵「怨刃のクフェージャ」",
+      "de": "Denn sie wissen noch immer nicht, was sie tun",
+      "fr": "Défi : Qui ose perturber mon sommeil éternel, ja ?"
+    },
+    "description": {
+      "en": "Refusing to quit while they were ahead, the pair of fearless, yet foolish Xbr'aal youths have ventured deep into the Xobr'it Cinderfield in search of further excitement. They found more ghosts instead.",
+      "ja": "肝試しにきたシュバラール族の青年が<br>古戦場で死霊と遭遇してしまった<br>怒れる古兵、怨刃のクフェージャを倒せ",
+      "de": "Statt aufzuhören, solange sie können, haben sich die zwei so furchtlosen wie törichten Xbr'aal-Jünglinge auf der Suche nach dem nächsten Nervenkitzel tief auf die Aschenfront gewagt. Jetzt sind sie mit den Nerven am Ende!",
+      "fr": "Alors qu'ils venaient mettre leur courage à l'épreuve sur un ancien champ de bataille, des jeunes xbr'aal se retrouvent face à l'esprit d'un puissant défunt courroucé. Sauvez-les et renvoyez Quheel Ja la lame vengeresse d'où il vient."
+    },
+    "icon": "/i/060000/060502.png",
+    "level": 94,
+    "location": 10509514,
+    "position": {
+      "map": 859,
+      "zoneid": 4507,
+      "x": 34.14,
+      "y": 18.32,
+      "z": 0.15
+    }
+  },
+  "1903": {
+    "name": {
+      "en": "Stabbing Gutward",
+      "ja": "荒くれマムージャ襲撃編",
+      "de": "Zeittotstecherei",
+      "fr": "Les racailles de Mamook"
+    },
+    "description": {
+      "en": "A band of Mamool Ja troublemakers are looking for an easy fight. You can either give them one, or make them one.",
+      "ja": "マムージャ族の荒くれ集団が<br>道行く人を襲おうとしている<br>マムージャ族たちを倒せ",
+      "de": "Eine Bande Unruhe stiftender Mamool Ja sucht nach leichter Beute. Du kannst ihr entweder welche bieten oder sie zu welcher machen.",
+      "fr": "Un groupe de voyous mamool ja s'amuse à provoquer les voyageurs et à les agresser pour tromper leur ennui. Inculquez-leur votre vision du respect."
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 94,
+    "location": 10509745,
+    "position": {
+      "map": 859,
+      "zoneid": 4507,
+      "x": 15.49,
+      "y": 30.35,
+      "z": -1.68
+    }
+  },
+  "1904": {
+    "name": {
+      "en": "Trial by Firedance",
+      "ja": "烈火の怒心「火踊りのママージャ」",
+      "de": "Darf ich bitten?",
+      "fr": "Défi : Touche pas à mes potes !"
+    },
+    "description": {
+      "en": "Answering the cries of his wholly humbled underlings, Firedance Magmaal Ja arrives to give the troupe a lesson in “proper” stabbing.",
+      "ja": "マムージャ族の荒くれ集団を倒したことで<br>頭目と思しいドプロ族が現れた<br>烈火の怒心、火踊りのママージャを倒せ",
+      "de": "Gerufen von den Schreien seiner hoffnungslos unterlegenen Schützlinge, ist Magmaal Ja der Feuertänzer erschienen, um der Meute eine Vorführung in fortgeschrittener Stichelei zu geben.",
+      "fr": "Vous avez réussi à mettre en déroute les voyous mamool ja, mais ceux-ci sont allés se plaindre à leur chef, et ce dernier est bien décidé à les venger. Terrassez Magmaal Ja le feu impétueux."
+    },
+    "icon": "/i/060000/060502.png",
+    "level": 94,
+    "location": 10509754,
+    "position": {
+      "map": 859,
+      "zoneid": 4507,
+      "x": 15.33,
+      "y": 30.09,
+      "z": -1.68
+    }
+  },
+  "1905": {
+    "name": {
+      "en": "Porting Is Such Sweet Sorrow",
+      "ja": "秘薬を守る戦い",
+      "de": "Ein Spediteur hat's schwer",
+      "fr": "Pharmacopée en danger"
+    },
+    "description": {
+      "en": "A Mamool Ja porter tasked with delivering soil sweetener to Golmajiik Grove is beset upon by seedkin seeking to steal his precious cargo.",
+      "ja": "荷運び中のマムージャ族が<br>魔物に追われているようだ<br>積み荷に引き寄せられた魔物を倒せ",
+      "de": "Ein Träger der Mamool Ja wurde auf dem Weg zum Golmajiik-Hain von Ungeheuern angegriffen, die seine wertvolle Fracht stehlen wollen.",
+      "fr": "Un transporteur mamool ja est poursuivi par des monstres un peu trop intéressés par sa cargaison de remèdes, et ne parvient plus à s'en dépêtrer seul. Protégez ses paquets des ennemis qui s'en approchent."
+    },
+    "icon": "/i/060000/060504.png",
+    "level": 94,
+    "location": 10509766,
+    "position": {
+      "map": 859,
+      "zoneid": 4507,
+      "x": 24.19,
+      "y": 36.46,
+      "z": -1.62
+    }
+  },
+  "1906": {
+    "name": {
+      "en": "Escape Shroom",
+      "ja": "恐怖！ キノコ魔物",
+      "de": "Penetrante Pilze",
+      "fr": "Mycophobie, quand tu nous tiens"
+    },
+    "description": {
+      "en": "Upon arriving in Ja Tiika Heartland to collect medicinal fungi, a gatherer of the Hoobigo discovers the area crawling with hungry fly agarics. And thus has the mushroom hunter become the mushroom hunted.",
+      "ja": "キノコを採りにきたマムージャ族が<br>繁殖した魔物に戸惑っている<br>「ヤクテルの霊茸」を集めろ",
+      "de": "Bei seiner Ankunft im Herz von Ja Tiika muss ein Pilzsammler der Hoobigo feststellen, dass es dort vor hungrigen Fliegenpilzen nur so wimmelt. Jetzt ist aus dem Jäger ein Gejagter geworden!",
+      "fr": "Un Mamool Ja amateur de champignons souhaite faire une cueillette, mais son lieu de prédilection est envahi par des monstres fongiformes. Aidez-le à récolter des fongus mystiques de Yak T'el."
+    },
+    "icon": "/i/060000/060503.png",
+    "level": 94,
+    "location": 10509788,
+    "position": {
+      "map": 859,
+      "zoneid": 4507,
+      "x": 30.37,
+      "y": 34.9,
+      "z": -1.51
+    }
+  },
+  "1907": {
+    "name": {
+      "en": "Najool of Denial",
+      "ja": "バナナ剥きには最適の日",
+      "de": "Die Bananenkriege",
+      "fr": "Belle journée pour peler des bananes"
+    },
+    "description": {
+      "en": "The sickly sweet odor of wild najool left to rot in the jungle will oft attract all manner of hungry fauna─such as the ty'aitya─looking to partake of the fruit. When those wild najool are gone, the fauna will naturally search nearby for more. And when the only najool nearby are those growing in Golmajiik Grove, <i>then</i> we have a problem.",
+      "ja": "バナナの匂いに引き寄せられ<br>甘味を好む魔物の群れが押し寄せてきた<br>スイートトゥース・チャイチャを倒せ",
+      "de": "Der süßliche Duft wilder Najool, die auf dem Boden des Waldes vor sich hinrotten, lockt alle möglichen Leckermäuler an, darunter auch Ty'aitya. Sind die Bananen verzehrt, suchen die Tiere sich natürlich Ersatz. Und wenn der einzige greifbare Nachschlag im Golmajiik-Hain wächst, haben wir ein Problem.",
+      "fr": "Attirée par l'odeur sucrée des bananes, une horde de monstres menace de dévaster les plantations. Repoussez les ty'aityas croque-sucre."
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 94,
+    "location": 10499177,
+    "position": {
+      "map": 859,
+      "zoneid": 4507,
+      "x": 27.74,
+      "y": 29.25,
+      "z": -1.59
+    }
+  },
+  "1908": {
+    "name": {
+      "en": "Moths Are Tough",
+      "ja": "深き森の霊蛾「ゴーストモス」",
+      "de": "Doktor Motte",
+      "fr": "Défi : S.O.S phalène fantôme"
+    },
+    "description": {
+      "en": "If a moth flaps its wings in the forest, and no one is there to hear it, does it make a sound? Possibly, but it <i>does</i> release a toxic cloud of countless tiny scales that can linger in the air for days killing both flora and fauna alike, so it's best not to let the moth flap its wings at all.",
+      "ja": "人里の近くに<br>幻惑の鱗粉を撒き散らす危険な蛾が現れた<br>深き森の霊蛾、ゴーストモスを倒せ",
+      "de": "Wenn eine Motte im Wald mit den Flügeln schlägt, und niemand ist da, der es hört, macht sie dann trotzdem ein Geräusch? Vermutlich. Ganz sicher aber hinterlässt sie eine giftige Wolke aus winzigen Schuppen, die tagelang in der Luft schweben und sowohl Flora wie Fauna angreifen. Darum greift man am besten direkt zum Skalpel und lässt sie gar nicht erst dazu kommen.",
+      "fr": "Un dangereux papillon de nuit fantômatique est apparu à proximité d'un village, et commence à répandre de la poudre hallucinogène. Terrassez la phalène fantôme au plus vite."
+    },
+    "icon": "/i/060000/060502.png",
+    "level": 94,
+    "location": 10499182,
+    "position": {
+      "map": 859,
+      "zoneid": 4507,
+      "x": 20.19,
+      "y": 24.48,
+      "z": -1.56
+    }
+  },
+  "1909": {
+    "name": {
+      "en": "The Spawning",
+      "ja": "ピラニア・リターンズ",
+      "de": "Kapitale Killer",
+      "fr": "Les dents de l'étang"
+    },
+    "description": {
+      "en": "A school of piranhas have taken up residence in a popular watering hole near Mamook. The problem is these piranha aren't just deadly, they're downright murderous.",
+      "ja": "マムークにほど近い水場に、<br>血に飢えた怪魚の群れが押し寄せた<br>マーダラス・キラーピラニアを倒せ",
+      "de": "Ein Schwarm Piranhas hat sich in einem beliebten Wasserloch in der Nähe von Mamook niedergelassen. Dummerweise begnügen sich diese Exemplare nicht damit, einfach nur Killer zu sein. Ihre Mordlust kennt keine Grenzen!",
+      "fr": "Des poissons amateurs de chair fraîche se sont regroupés dans un point d'eau à proximité de Mamook. Il serait bien trop dangereux pour la population locale de les laisser s'installer. Éliminez les piranhas meurtriers."
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 94,
+    "location": 10499187,
+    "position": {
+      "map": 859,
+      "zoneid": 4507,
+      "x": 34.22,
+      "y": 29.75,
+      "z": -1.5
+    }
+  },
+  "1910": {
+    "name": {
+      "en": "Sick, Ornery Wivres",
+      "ja": "野生の王国",
+      "de": "Wundersame Wivren",
+      "fr": "Sauvagerie animale"
+    },
+    "description": {
+      "en": "Whyever would an under-the-weather wivre wander westward into Whetstone when the well-known waypoint is writhing wall-to-wall with well-oiled warriors? Who knows? But without question, it warrants wholesale warfare.",
+      "ja": "鱗の錬磨場の近くに<br>野生化したウィヴルが現れた<br>ウィヴルの群れを倒せ",
+      "de": "Warum um alles in der Welt wagen sich Wivren an einen Ort, an dem es vor Kriegern nur so wimmelt? Vermutlich wissen sie es selber nicht. Sicher ist nur, dass es Krieg bedeutet.",
+      "fr": "Un troupeau de wivres sauvages et particulièrement hostiles a fait son apparition près de l'Aiguisoir. Abattez-les afin d'éviter qu'elles ne commettent des dégâts."
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 94,
+    "location": 10499221,
+    "position": {
+      "map": 859,
+      "zoneid": 4507,
+      "x": 14.56,
+      "y": 33.71,
+      "z": -1.69
+    }
+  },
+  "1911": {
+    "name": {
+      "en": "Invaders from Asyle",
+      "ja": "インベーダー・フロム・アサイラム",
+      "de": "Eindringlinge aus Asylkan",
+      "fr": "Envahisseurs envahissants"
+    },
+    "description": {
+      "en": "Dangerous organisms from other districts are an ever-present threat and must be culled quickly once detected. Rid the area of any creatures which do not belong in Windspath Gardens.",
+      "ja": "隣接する区画から<br>危険生物が越境してきた<br>スコーピオン・インベーダーを倒せ",
+      "de": "Gefährliche Skorpion-Eroberer sind aus dem benachbarten Sektor eingefallen. Bezwinge sie, bevor sie zu einer ernsthaften Bedrohung werden.",
+      "fr": "Des scorpions envahisseurs sont venus d'un autre secteur mettre la pagaille. Empêchez-les de nuire&nbsp;!"
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 99,
+    "location": 10499012,
+    "position": {
+      "map": 862,
+      "zoneid": 4510,
+      "x": 15.93,
+      "y": 16.16,
+      "z": 0.4
+    }
+  },
+  "1912": {
+    "name": {
+      "en": "Feed Me, Sentries",
+      "ja": "思考する奇花「プラントブレイン」",
+      "de": "Grüne Gehirne",
+      "fr": "Défi&nbsp;: les fleurs pensantes"
+    },
+    "description": {
+      "en": "Even sentient plants must fill the void in their souls, and this one has chosen to do so by consuming anything in sight. Exterminating it will bring a merciful end to its existential dread and return peace to Windspath Gardens.",
+      "ja": "ウィンドパスガーデンに<br>突然変異の食獣植物が現れた<br>思考する奇花、プラントブレインを倒せ",
+      "de": "In den Windpfadgärten hat sich ein seltsames Lebewesen ausgebreitet. Es hält nicht viel von pflanzenbasierter Ernährung und tut dies wütend kund.",
+      "fr": "Des plantes carnivores ayant rapidement muté ont envahi les jardins de Soufflevent. Abattez les blambourines."
+    },
+    "icon": "/i/060000/060502.png",
+    "level": 99,
+    "location": 10559375,
+    "position": {
+      "map": 862,
+      "zoneid": 4510,
+      "x": 7.07,
+      "y": 8.95,
+      "z": -0.03
+    }
+  },
+  "1913": {
+    "name": {
+      "en": "Seeds of Tomorrow",
+      "ja": "種の期限",
+      "de": "Schützenswerte Samen",
+      "fr": "Graines à protéger"
+    },
+    "description": {
+      "en": "While the verdant fauna of Windspath Gardens is a feast for the eyes, it is also a literal feast for creatures whose diet consists of anything green and leafy. A store of seeds must be recovered so that the rarer specimens in the gardens are not eaten into extinction.",
+      "ja": "種子を好むアガヴォイデスが<br>大挙してザ・ノーアブルに押し寄せた<br>保護のため「希少植物の種子」を集めろ",
+      "de": "Agavoides lieben Samen&nbsp;- und zwar so sehr, dass sie auch vor seltenen Pflanzensamen keinen Halt machen. Beschütze die Samen vor diesen gefräßigen Wesen, die ins Unergründliche eingefallen sind.",
+      "fr": "Une horde d'agavoïdes affamés ont pris d'assaut Les Acquis. Rassemblez les graines de plantes rares afin de les empêcher d'être dévorées."
+    },
+    "icon": "/i/060000/060503.png",
+    "level": 99,
+    "location": 10561181,
+    "position": {
+      "map": 862,
+      "zoneid": 4510,
+      "x": 7.24,
+      "y": 15.06,
+      "z": -0.07
+    }
+  },
+  "1914": {
+    "name": {
+      "en": "Plumbers Don't Fear Slimes",
+      "ja": "水の迷宮の夢",
+      "de": "Wasser marsch",
+      "fr": "Labyrinthe aquatique"
+    },
+    "description": {
+      "en": "A group of contaminated organisms is oozing filth into Canal Town's waters, threatening their pristine beauty. Cleanse the area before the canals become clogged with detritus.",
+      "ja": "水詰まりの原因となり得る<br>ヘドロ状の魔法生物が大量発生した<br>カナルクロウラーを倒せ",
+      "de": "Jede Menge Kanalkriecher versetzen die Gegend in Angst und Schrecken. Wer fürchtet sich schließlich nicht davor, dass seine Rohre durch Versteinungsmagie verstopfen? Doch du bringst sicher den Durchbruch!",
+      "fr": "Des espèces de créatures semblant être faites de boue gluante bouchent les canaux. Débarrassez-vous des rampeurs des canaux."
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 99,
+    "location": 10563166,
+    "position": {
+      "map": 862,
+      "zoneid": 4510,
+      "x": 8.26,
+      "y": 34.04,
+      "z": -0.01
+    }
+  },
+  "1915": {
+    "name": {
+      "en": "Slime to Die",
+      "ja": "水路を呑む者「カナルガルパー」",
+      "de": "Von ganz unten hochgearbeitet",
+      "fr": "Défi&nbsp;: nettoyage de canaux"
+    },
+    "description": {
+      "en": "The crawling filth has coalesced into a mass of disgusting proportions. The entire district will go thirsty if someone does not rid the canals of this menace.",
+      "ja": "水路の汚れを浄化し続けて巨大化した<br>カナルクロウラーの異常個体が現れた<br>水路を呑む者、カナルガルパーを倒せ",
+      "de": "Einer der Kanalkriecher hat selbst den großen Durchbruch geschafft: Er ist durch Verschmutzungen im Wasser zum Kanallurch mutiert. Nun haben die Anwohner tatsächlich Grund zum Fürchten. Wie gut, dass du zur Stelle bist!",
+      "fr": "Il semblerait que des rampeurs de canaux défectueux aient fusionné pour former une créature géante après avoir passé trop de temps à nettoyer les canaux. Abattez le buveur des canaux."
+    },
+    "icon": "/i/060000/060502.png",
+    "level": 99,
+    "location": 10563166
+  },
+  "1916": {
+    "name": {
+      "en": "Canal Carnage",
+      "ja": "カナルタウンでやすらかに",
+      "de": "Mehr Sicherheit für Kanalstadt",
+      "fr": "Éternité lacustre"
+    },
+    "description": {
+      "en": "A patrol of unlost sentries has been pinned down by a group of ornery beasts. Clear the way so the sentries can fulfil their duty and maintain order in Canal Town. ",
+      "ja": "区画内設備の調査を行う機械兵に<br>いたずら好きのトルバランが群がってきた<br>機械兵アンロスト・セントリーGXを守れ",
+      "de": "Einige Maschinensoldaten, die nur gewissenhaft ihrer Arbeit nachgehen wollen, haben es auf einmal mit einer wildgewordenen Torbalan-Horde zu tun. Beschütze die unverlorenen Einheiten vor den Angreifern!",
+      "fr": "Des sentinelles missionnées pour patrouiller dans le secteur se font attaquer par des torbalans. Protégez les sentinelles inéphémères GX."
+    },
+    "icon": "/i/060000/060504.png",
+    "level": 99,
+    "location": 10570708,
+    "position": {
+      "map": 862,
+      "zoneid": 4510,
+      "x": 11.55,
+      "y": 34.38,
+      "z": 0
+    }
+  },
+  "1917": {
+    "name": {
+      "en": "Scattered Memories",
+      "ja": "メモリーズ",
+      "de": "Was bleibt, ist die Erinnerung",
+      "fr": "Souvenirs robotiques"
+    },
+    "description": {
+      "en": "The body of a sentry may be destroyed, but its memory lives on as data. Recover the chips of the fallen machines to uncover their fate.",
+      "ja": "保安用機械兵が大量に破壊された<br>情報の消失を防ぐため<br>メモリーチップを回収せよ。",
+      "de": "Viele Maschinensoldaten wurden beschädigt, doch um wenigstens die Informationen zu retten, die sie gesammelt haben, musst du ihre Speicherkarten bergen.",
+      "fr": "Un grand nombre de sentinelles protectrices ont subi d'importants dégâts. Récupérez leurs cartes mémoire pour empêcher la perte de données qui découlerait de leur destruction."
+    },
+    "icon": "/i/060000/060503.png",
+    "level": 99,
+    "location": 10585902,
+    "position": {
+      "map": 862,
+      "zoneid": 4510,
+      "x": 27.34,
+      "y": 8.72,
+      "z": 0.43
+    }
+  },
+  "1918": {
+    "name": {
+      "en": "Critical Corruption",
+      "ja": "彼らの想いで",
+      "de": "Aus den eigenen Reihen",
+      "fr": "Contre son camp"
+    },
+    "description": {
+      "en": "An analysis of the memory chips revealed that the source of the sentries' destruction was among their own number. Bugs in the system are inevitable, and when they present themselves, they must be squashed. Permanently.",
+      "ja": "機械兵を大量に破壊した者の正体が<br>暴走した同型であったことが判明した<br>ブロークン・セントリーGXを倒せ",
+      "de": "Es stellt sich heraus, dass die vielen zerstörten Maschinensoldaten von einer Maschine gleichen Typs angegriffen wurden. Zerstöre den defekten Unheilstifter!",
+      "fr": "Ce sont des sentinelles GX défectueuses qui ont endommagé les autres machines. Arrêtez-les avant qu'elle ne fassent encore plus de dégâts."
+    },
+    "icon": "/i/060000/060502.png",
+    "level": 99,
+    "location": 10590055,
+    "position": {
+      "map": 862,
+      "zoneid": 4510,
+      "x": 25.08,
+      "y": 5.88,
+      "z": 0.38
+    }
+  },
+  "1919": {
+    "name": {
+      "en": "Horse in the Round",
+      "ja": "緋色の戦馬「ラムポス」",
+      "de": "Scharlachrotes Streitross",
+      "fr": "Défi&nbsp;: le cheval écarlate"
+    },
+    "description": {
+      "en": "Descended from a warhorse of legend, Lampos has set out to ensure that its name, too, is spoken in hushed whispers. It will trample all challengers under its hooves until a worthy foe appears.",
+      "ja": "偉大なる戦車馬の子孫が<br>強者を求め荒れ狂っている<br>緋色の戦馬、ラムポスを倒せ",
+      "de": "Lampos, Nachfahre eines mächtigen Streitrosses, hat sich aufgemacht, um einen würdigen Gegner zu finden. In seinem Wahn trampelt er dabei alles nieder, was sich ihm in den Weg stellt.",
+      "fr": "Le descendant d'un célèbre cheval de guerre est en train de semer le chaos, à la recherche d'un adversaire à sa taille. Terrassez Lampos, le cheval écarlate."
+    },
+    "icon": "/i/060000/060502.png",
+    "level": 99,
+    "location": 10591981,
+    "position": {
+      "map": 862,
+      "zoneid": 4510,
+      "x": 26.67,
+      "y": 15.62,
+      "z": 0.16
+    }
+  },
+  "1920": {
+    "name": {
+      "en": "Mascot March",
+      "ja": "マイカ・ザ・ムー：出発進行",
+      "de": "Alles andere als fade, diese Parade",
+      "fr": "Mica le mu&nbsp;: début du spectacle"
+    },
+    "description": {
+      "en": "A jaunty rhythm heralds the arrival of a strange procession of bunnies. They draw near, and the sunny notes turn discordant as the smiling mascots draw their weapons. Put a stop to this menacing march or be trampled underfoot.",
+      "ja": "陽気な音楽が鳴り響き<br>奇妙なパレードが現れた<br>攻撃的な人形たちを撃退せよ",
+      "de": "Zu den fröhlichen Klängen der etwas bizarren Parade gesellen sich auf einmal angriffslustige Maskottchen. Sag den Puppen den Kampf an!",
+      "fr": "Une musique entraînante résonne, la grotesque parade débute. Débarrassez-vous des pantins menaçants."
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 99,
+    "location": 10593565,
+    "position": {
+      "map": 862,
+      "zoneid": 4510,
+      "x": 35.76,
+      "y": 34.22,
+      "z": 0.08
+    }
+  },
+  "1921": {
+    "name": {
+      "en": "Mascot Mayhem",
+      "ja": "マイカ・ザ・ムー：大行進",
+      "de": "Bizarres Zwischenspiel",
+      "fr": "Mica le mu&nbsp;: la grotesque parade"
+    },
+    "description": {
+      "en": "The festive spirit reaches a fever pitch, and an expectation of death hangs in the air. Will the parade overwhelm you, or will you lead this maniacal march to its grisly end?",
+      "ja": "陽気な音楽が鳴り響き<br>奇妙なパレードは続いていく<br>攻撃的な人形たちを撃退せよ",
+      "de": "Die fröhliche Musik der etwas bizarren Parade erklingt weiterhin, doch die angriffslustigen Maskottchen lassen nicht locker. Kannst du ihren irren Blicken standhalten?",
+      "fr": "Une musique entraînante résonne, la grotesque parade continue. Débarrassez-vous des pantins menaçants."
+    },
+    "icon": "/i/060000/060502.png",
+    "level": 99,
+    "location": 10593565
+  },
+  "1922": {
+    "name": {
+      "en": "Mascot Murder",
+      "ja": "マイカ・ザ・ムー：大団円",
+      "de": "Mordendes Maskottchen",
+      "fr": "Mica le mu&nbsp;: le grand final"
+    },
+    "description": {
+      "en": "The mascot parade marches headlong towards its terrifying climax. Will your fortitude falter during this final stretch, or will you take up the baton and emerge as the head of the procession?",
+      "ja": "陽気な音楽が鳴り響く<br>奇妙なパレードもこれにて終幕<br>楽園のマイカ・ザ・ムーを倒せ",
+      "de": "Die fröhlichen Töne der etwas bizarren Parade verhallen langsam, als sich der ärgste Feind zeigt: Mica das Magische Mu. ",
+      "fr": "Une musique entraînante résonne, c'est la fin de la grotesque parade. Abattez Mica le mu."
+    },
+    "icon": "/i/060000/060502.png",
+    "level": 100,
+    "location": 10553038,
+    "position": {
+      "map": 862,
+      "zoneid": 4510,
+      "x": 37.33,
+      "y": 33.37,
+      "z": 0.6
+    }
+  },
+  "1923": {
+    "name": {
+      "en": "No Loitering",
+      "ja": "沈んだ世界",
+      "de": "Versunkene Welt",
+      "fr": "Un monde englouti"
+    },
+    "description": {
+      "en": "Dangerous organisms have wandered into Yesterland from a neighboring district. Exterminate this menace before they lay waste to their surroundings.",
+      "ja": "隣接する区画から<br>危険生物が越境してきた<br>ワンダリング・フルイドソウルを倒せ",
+      "de": "Einige Flüssigseelen sind aus dem benachbarten Sektor eingedrungen und könnten zur Gefahr werden. Dem solltest du Einhalt gebieten!",
+      "fr": "Des âmes fluides errantes sont venues d'un autre secteur mettre la pagaille. Empêchez-les de nuire."
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 99,
+    "location": 10621288,
+    "position": {
+      "map": 862,
+      "zoneid": 4510,
+      "x": 31.21,
+      "y": 31.44,
+      "z": -0.01
+    }
+  },
+  "1924": {
+    "name": {
+      "en": "Crocs of the Creek",
+      "ja": "湖沼の謝肉祭",
+      "de": "Hammerharte Herausforderung",
+      "fr": "Des gloutons venus des lacs"
+    },
+    "description": {
+      "en": "Emboldened by hunger, a herd of hammerhead crocodiles has claimed the creek by the House of Winds High as their new hunting grounds. The ravenous beasts snap at anything that moves, and must be routed ere they devour any passing pilgrims.",
+      "ja": "飢えたハンマーヘッドダイルの群れが<br>街道沿いを徘徊している<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Eine Horde hungriger Hammerhaidile macht die Gegend unsicher. Zeige ihnen, wo der Hammer hängt und sorge so dafür, dass Reisende wieder ohne Angst passieren können.",
+      "fr": "Une horde de crocos-marteaux affamés est venue rôder un peu trop près de la route. Éliminez-les avant qu'ils ne croquent des voyageurs&nbsp;!"
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 90,
+    "location": 10558510,
+    "position": {
+      "map": 858,
+      "zoneid": 4506,
+      "x": 11.82,
+      "y": 12.61,
+      "z": 0.01
+    }
+  },
+  "1925": {
+    "name": {
+      "en": "Tegu or Not Tegu",
+      "ja": "天罰への階段",
+      "de": "Jeder Tegu ein Tegu zu viel",
+      "fr": "Des marches sans calme"
+    },
+    "description": {
+      "en": "Repairs to the Flight of We Wingless have been halted, and will remain so if the ingress of truculent tegus goes unchecked. Fortunately, you are on hand to see that this particular ingress is checked. Thoroughly.",
+      "ja": "崩壊した大階段にテグーが集まり<br>復旧作業の妨げとなっている<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Als wäre es nicht schon genug, dass die gewaltigen Stufen zerstört wurden&nbsp;- nun treiben dort auch noch kampflustige Tegus ihr Unwesen. Bezwinge sie, damit sie der Instandsetzung nicht im Wege stehen.",
+      "fr": "Des tegus agressifs se sont attroupés près des Marches des Sans-ailes, empêchant la conduite des travaux de réparation. Calmez-les une bonne fois pour toutes&nbsp;!"
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 91,
+    "location": 10558523,
+    "position": {
+      "map": 858,
+      "zoneid": 4506,
+      "x": 34.3,
+      "y": 19.15,
+      "z": 0.07
+    }
+  },
+  "1926": {
+    "name": {
+      "en": "There's Always a Bigger Beast",
+      "ja": "怪力の大食漢「[UNHANDLED 0x28]」",
+      "de": "Die Fische, die ich rief",
+      "fr": "Un maip très vorace"
+    },
+    "description": {
+      "en": "The Hanuhanu angler has lured a rather large─albeit landbound─creature to the river's edge. Dispatch the mighty maip before it can fill its belly with feathered flesh.",
+      "ja": "丸々と太ったエサを食べようと<br>森の奥から巨大な猛獣が現れた<br>怪力の大食漢、[UNHANDLED 0x28]を倒せ",
+      "de": "Diesem Köder kann anscheinend niemand widerstehen, weder zu Land noch zu Wasser. Hilf dem Hanuhanu-Fischer, das Ungetüm wieder loszuwerden, das er da versehentlich rief. Denn einem Maip ist er leider nicht gewachsen.",
+      "fr": "Un maip puissant est sorti des profondeurs de la forêt en quête de nourriture. Son appétit est tel qu'il est prêt à avaler n'importe quelle proie, même immense. Plombez-lui l'estomac un bon coup&nbsp;!"
+    },
+    "icon": "/i/060000/060502.png",
+    "level": 90,
+    "location": 10558713,
+    "position": {
+      "map": 858,
+      "zoneid": 4506,
+      "x": 18.65,
+      "y": 18.34,
+      "z": 0.03
+    }
+  },
+  "1927": {
+    "name": {
+      "en": "Reeds in Need",
+      "ja": "野性と葦",
+      "de": "Zu Schilfe!",
+      "fr": "SOS roseaux"
+    },
+    "description": {
+      "en": "Nesting orobon are a blight on reed fields, nibbling on roots and seeds until every last plant is plucked from its place. Rid the fields of these wavekin and spare the Hanuhanu farmer from a season of hunger.",
+      "ja": "葦の根を切ることで知られる魚が<br>水田付近に住みついてしまった<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Das wertvolle Schilf eines Hanuhanu-Farmers ist in Gefahr, denn einige Orobon haben sich ausgerechnet sein Feld zur Aufzucht ihres Nachwuchses ausgesucht. Besiege sie, bevor sie alle seine Pflanzen zerstört haben.",
+      "fr": "Des orobons nidifiants, qui ont la réputation de trancher la racine des roseaux, se sont installés dans les roselières. Chassez ces vilains poissons&nbsp;!"
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 90,
+    "location": 10558716,
+    "position": {
+      "map": 858,
+      "zoneid": 4506,
+      "x": 21.24,
+      "y": 16.19,
+      "z": 0.04
+    }
+  },
+  "1928": {
+    "name": {
+      "en": "This Kills the Craklaw",
+      "ja": "巨大カニ魔物の襲撃",
+      "de": "Es regnet Kraklaws",
+      "fr": "Expulsion de craqulovs"
+    },
+    "description": {
+      "en": "A violent band of craklaws has settled into the lower marshes, snipping away at all manner of plant life. It is feared that they will soon hone their claws on the House of Winds High if left unchecked, and thus the order has been given to cull the crustaceans.",
+      "ja": "大嵐の影響か<br>沼地に危険な蟹が住みついた<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Nach dem großen Sturm sind die Sümpfe zur neuen Heimat für herumstreunende Kraklaws geworden. Zwar weiß niemand genau, wie es dazu kam, doch eins ist sicher: Sie müssen definitiv weg!",
+      "fr": "Sans doute est-ce une conséquence de la tempête, mais de dangereux craqulovs vagabonds se sont installés dans les lacs. Expulsez-les <i>manu militari</i>&nbsp;!"
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 90,
+    "location": 10558718,
+    "position": {
+      "map": 858,
+      "zoneid": 4506,
+      "x": 7.38,
+      "y": 14.52,
+      "z": 0
+    }
+  },
+  "1929": {
+    "name": {
+      "en": "Feathery Dustup",
+      "ja": "血を啜る魔鳥「[UNHANDLED 0x28]」",
+      "de": "Ein Lied, sie alle zu binden",
+      "fr": "Clouer le bec de Huik'ku'uxo"
+    },
+    "description": {
+      "en": "Known as the “bloodthirsty bird” in the Hanuhanu's ancestral tongue, Huik'ku'uxo's deceptively dulcet cries have lured no few souls to a violent and untimely demise. The swampland scourge has been branded a threat to Ok'hanu, and its song must be silenced.",
+      "ja": "美しい鳴き声でハヌハヌ族を誘い<br>襲いかかる巨鳥が姿を現した<br>血を啜る魔鳥、[UNHANDLED 0x28]を倒せ",
+      "de": "Der Huik'ku'uxo zieht mit seinem sirenenhaften Gesang ahnungslose Hanuhanu in seinen Bann, um sich anschließend an ihrem Blut zu laben. Lass nicht zu, dass diese dämonische Kreatur sich noch weitere Opfer einverleiben kann!",
+      "fr": "L'immense oiseau qu'est Huik'ku'uxo a le pouvoir d'envoûter les Hanu Hanu avec ses chants afin de mieux les attaquer. Volez-lui dans les plumes&nbsp;!"
+    },
+    "icon": "/i/060000/060502.png",
+    "level": 91,
+    "location": 10559033,
+    "position": {
+      "map": 858,
+      "zoneid": 4506,
+      "x": 33.14,
+      "y": 16.83,
+      "z": 0.04
+    }
+  },
+  "1930": {
+    "name": {
+      "en": "The Pama-yawa Dilemma",
+      "ja": "密林の王者「[UNHANDLED 0x28]」",
+      "de": "Die Hackordnung der Pama-yawa",
+      "fr": "Pama-yawa, le maître de la jungle"
+    },
+    "description": {
+      "en": "Seemingly set on rising to the top of its pack, the ever-hungry Pama-yawa is on the prowl. Dispatch the beast before its razor-sharp fangs harm any hapless Hanuhanu.",
+      "ja": "群れの次期ボスと目される<br>若きピューマが獲物を求めている<br>密林の王者、[UNHANDLED 0x28]を倒せ",
+      "de": "Es gibt wohl kaum ein aggressiveres Wesen als einen Pama-yawa, der es darauf abgesehen hat, an die Spitze seines Rudels aufzusteigen. Jetzt liegt es an dir, ihn in seine Schranken zu weisen!",
+      "fr": "Destiné à devenir le chef de sa meute, un jeune puma du nom de Pama-yawa est sorti de la jungle en quête de proies. Éliminez-le&nbsp;!"
+    },
+    "icon": "/i/060000/060502.png",
+    "level": 91,
+    "location": 10559034,
+    "position": {
+      "map": 858,
+      "zoneid": 4506,
+      "x": 36.92,
+      "y": 13.41,
+      "z": 0.17
+    }
+  },
+  "1931": {
+    "name": {
+      "en": "Combing the Area",
+      "ja": "人鳥細工",
+      "de": "Auf das richtige Material kommt es an",
+      "fr": "Ça en vaut bien le peigne"
+    },
+    "description": {
+      "en": "The Hanuhanu combmaker requires a surplus of crafting materials to repair his myriad wares, and points you in the direction of the nearby rhino beetles. Gather the required components, and see that his business booms once more.",
+      "ja": "ハヌハヌ族の細工師が<br>材料となる甲殻や木材を集めている<br>「ハヌハヌ細工の素材」を集めろ",
+      "de": "Der Hanuhanu-Handwerker ist dabei, Holz und Panzer zu sammeln, die anschließend weiterverarbeitet werden sollen. Hilf ihm bei der Suche!",
+      "fr": "Un fabriquant de peignes hanu hanu souhaite obtenir des matériaux tels que des carapaces et des branches pour pouvoir travailler. Aidez-le&nbsp;!"
+    },
+    "icon": "/i/060000/060503.png",
+    "level": 90,
+    "location": 10559049,
+    "position": {
+      "map": 858,
+      "zoneid": 4506,
+      "x": 22.73,
+      "y": 8.97,
+      "z": 0.07
+    }
+  },
+  "1932": {
+    "name": {
+      "en": "Toucalibri at That Game",
+      "ja": "我々の貢物",
+      "de": "Nicht euer Obst",
+      "fr": "Volatiles voleurs d'offrandes"
+    },
+    "description": {
+      "en": "Lured by the sweet scent of fruit, a flock of toucalibri snatchers has descended from their perches. Fight off the inquisitive interlopers and ensure the mighty Kixaihih receives its offerings.",
+      "ja": "せっかく集めた果物を奪おうと<br>トゥカリブリたちが襲撃してきた<br>「[UNHANDLED 0x28]」を守れ！",
+      "de": "Einige Tukalibri haben es auf das Obst abgesehen, das garantiert nicht für sie bestimmt war. Wehre die frechen Vögel ab, damit sie sich nicht an den Devotionalien vergreifen.",
+      "fr": "Des toucanlibris chapardeurs ont été attirés par le parfum de fruits devant servir d'offrandes. Protégez les caisses contre ces volatiles gourmands&nbsp;!"
+    },
+    "icon": "/i/060000/060504.png",
+    "level": 91,
+    "location": 10559057,
+    "position": {
+      "map": 858,
+      "zoneid": 4506,
+      "x": 32.22,
+      "y": 11.18,
+      "z": 0.08
+    }
+  },
+  "1933": {
+    "name": {
+      "en": "Bandit Tax, Paid in Full",
+      "ja": "奸臣、非感心",
+      "de": "Nichts als Lug und Betrug",
+      "fr": "Imposteurs de l'imposition"
+    },
+    "description": {
+      "en": "Although some might argue that tax collection is a greater affront than banditry, brigands <i>impersonating</i> tax collectors are undoubtedly the worst of both worlds. Ensure that no more fall prey to the roaming gang's guile, and force them to pay the ultimate price.",
+      "ja": "理の院の税吏を装うことで知られる<br>狡猾な盗賊たちが獲物を探している<br>盗賊団を倒せ",
+      "de": "Ein paar Kämpfer, die sich als Steuereintreiber und Mitglieder der Helfenden Hand ausgeben, haben es auf wehrlose Opfer abgesehen. Diesen Betrug darfst du ihnen auf keinen Fall durchgehen lassen!",
+      "fr": "Des brigands qui ont la réputation de se faire passer pour des percepteurs du ministère de la Raison sont en quête de nouvelles victimes. Faites-leur payer cher cette imposture&nbsp;!"
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 92,
+    "location": 10559069,
+    "position": {
+      "map": 858,
+      "zoneid": 4506,
+      "x": 34.67,
+      "y": 29.15,
+      "z": 1.08
+    }
+  },
+  "1934": {
+    "name": {
+      "en": "Tax Dodging",
+      "ja": "奸臣、大寒心",
+      "de": "Ehrlich währt am längsten",
+      "fr": "Taxe sur le truandage"
+    },
+    "description": {
+      "en": "A pair of peddlers has been waylaid by brigands posing as Wing of Reflection tax collectors. Teach the villains a lesson before the poor Pelu are deprived of their precious parcels.",
+      "ja": "ペルペル族の隊商が<br>税吏に偽装した盗賊に襲われている<br>盗賊を倒し「[UNHANDLED 0x28]」を守れ！",
+      "de": "Als Steuereintreiber verkleidete Banditen wollen sich an den ehrlichen Pelupelu-Händlern vergreifen. Jetzt liegt es an dir, wieder für Recht und Ordnung zu sorgen. Besiege die Banditen und beschütze die Ware der Pelupelu.",
+      "fr": "Un groupe de colporteurs pelupelu est attaqué par des brigands se faisant passer pour des percepteurs d'impôt. Corrigez ces derniers et protégez les bagages des victimes&nbsp;!"
+    },
+    "icon": "/i/060000/060504.png",
+    "level": 92,
+    "location": 10559102,
+    "position": {
+      "map": 858,
+      "zoneid": 4506,
+      "x": 27.29,
+      "y": 25.49,
+      "z": 1.14
+    }
+  },
+  "1935": {
+    "name": {
+      "en": "Ruffling Feathers",
+      "ja": "禿鷹は舞い降りた",
+      "de": "Der Geier ist gelandet",
+      "fr": "La valse des vautours"
+    },
+    "description": {
+      "en": "An invasive flock of Ligaka vultures poses a threat to the wetland wildlife. Encourage the creatures to leave─preferably on a permanent basis─thus restoring the area's natural balance.",
+      "ja": "怪鳥の群れが集まり<br>周辺の脅威となっている<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Aggressive Ligaka-Geier verbreiten Angst und Schrecken in der Umgebung. Sorge dafür, dass die Vögel sich nicht auf ewig an diesem Ort einnisten. Wie du das am besten anstellst? Weiß der Geier! Aber du wirst es schon hinkriegen.",
+      "fr": "De nombreux vautours de Ligaka se sont réunis en un même endroit et créent une menace pour les passants. Vainquez ces vilains volatiles&nbsp;!"
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 92,
+    "location": 10559161,
+    "position": {
+      "map": 858,
+      "zoneid": 4506,
+      "x": 23.19,
+      "y": 25.01,
+      "z": 1.1
+    }
+  },
+  "1936": {
+    "name": {
+      "en": "Mole Patrol",
+      "ja": "モグラ退治",
+      "de": "Gefahr von unten",
+      "fr": "Taupes tapageuses"
+    },
+    "description": {
+      "en": "The presence of burrow moles often spells doom for the structural integrity of ancient ruins. Defeat the soil-shifting creatures and save the timeworn stones of the Imperious from a similar fate.",
+      "ja": "モグラたちが無節操に穴を掘り<br>石造遺跡が崩壊の危機にある<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Grabende Mulle sind der Albtraum eines jeden Vorgärtners, doch noch verheerendere Folgen kann ihr unterirdisches Tunnelsystem auf historische Steinruinen haben. Halte die unterirdischen Buddler auf, bevor alles zusammenkracht.",
+      "fr": "Des taupes creusent des galeries dans le sol de manière intempestive, provoquant un important risque d'effondrement des ruines. Tapez-les un bon coup&nbsp;!"
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 92,
+    "location": 10559162,
+    "position": {
+      "map": 858,
+      "zoneid": 4506,
+      "x": 8.68,
+      "y": 21.82,
+      "z": 1.38
+    }
+  },
+  "1937": {
+    "name": {
+      "en": "Borne on the Backs of Burrowers",
+      "ja": "落ち石拾い",
+      "de": "Steinchensucher",
+      "fr": "Un coup de main pour les mains-du-pot"
+    },
+    "description": {
+      "en": "Deleterious architectural impact notwithstanding, the recent mole activity has revealed a wealth of subterranean resources. The Moblin forager is eager to seize this lucrative opportunity, and will need all the hand-lending he can get to gather these prized materials for his potsworn.",
+      "ja": "モグラたちの活動により<br>地中の鉱石や輝石が表出した<br>「壺匠用の製作素材」を集めろ",
+      "de": "Mulls mögen für Freunde des gepflegten Rasens eine Katastrophe darstellen, doch durch ihre Buddelei fördern sie auch allerlei Schätze zutage. Sammle die herumliegenden Erze und Kristalle ein, die die Topfwerker der Moblins sicher gut gebrauchen können.",
+      "fr": "L'activité souterraine des taupes a fait ressurgir de nombreux minerais à la surface, lesquels font d'excellents matériaux pour les mains-du-pot de la Fournée. Ramassez-les&nbsp;!"
+    },
+    "icon": "/i/060000/060503.png",
+    "level": 92,
+    "location": 10559163,
+    "position": {
+      "map": 858,
+      "zoneid": 4506,
+      "x": 8.68,
+      "y": 21.82,
+      "z": 1.38
+    }
+  },
+  "1938": {
+    "name": {
+      "en": "Sayona Your Prayers",
+      "ja": "復讐の妖女「[UNHANDLED 0x28]」",
+      "de": "Verführerisches Verderben",
+      "fr": "Le succube Sayona"
+    },
+    "description": {
+      "en": "Countless men have fallen victim to Sayona─a vengeful spirit who lures her quarry deep into the forest before brutally maiming them. Her tortured soul must be granted eternal rest, or Kozama'uka will never know peace.",
+      "ja": "森に男を誘い込み<br>取り殺すと伝えられる存在が現れた<br>復讐の妖女、[UNHANDLED 0x28]を倒せ",
+      "de": "Sayona ist mit ihrem Gesang der Albtraum eines jeden Mannes. Und zwar nicht etwa, weil sie die Töne nicht treffen würde, sondern weil sie mit ihrer verführerischen Stimme jeden noch so starken Kerl schwach werden lässt&nbsp;- um ihn anschließend im Wald zu verspeisen.",
+      "fr": "Sayona est une créature aux traits féminins qui a la réputation de charmer les hommes pour les tuer. Supprimez-la au plus vite&nbsp;!"
+    },
+    "icon": "/i/060000/060502.png",
+    "level": 92,
+    "location": 10559165,
+    "position": {
+      "map": 858,
+      "zoneid": 4506,
+      "x": 21.28,
+      "y": 29.81,
+      "z": 1.14
+    }
+  },
+  "1939": {
+    "name": {
+      "en": "Sting Operation",
+      "ja": "蜂の物語",
+      "de": "Wespenplage",
+      "fr": "Dépeuplement de polistes"
+    },
+    "description": {
+      "en": "A swarm of paper wasps has established a colony on the outskirts of Earthenshire. Stave off the unsightly stingers, or their buzzing may well drive the Moblins mad.",
+      "ja": "アースンシャイアの近くに<br>大型の蜂がコロニーを作った<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Irdehalde hat ein Problem. Oder besser gesagt unzählig viele, denn die Papierwespen in der Nähe haben sich rasant vermehrt. Kümmere dich um den aggressiven Schwarm, denn riesige Wespen haben leider auch riesige Stacheln.",
+      "fr": "Un essaim de polistes bourdonnantes a fait son nid près de La Fournée. Éliminez ces insectes avant qu'ils ne s'en prennent aux Mobelins et aux artisans&nbsp;!"
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 92,
+    "location": 10559168,
+    "position": {
+      "map": 858,
+      "zoneid": 4506,
+      "x": 5.22,
+      "y": 26.58,
+      "z": 1.27
+    }
+  },
+  "1940": {
+    "name": {
+      "en": "Putting the Fun in Fungicide",
+      "ja": "素晴らしき、キノコの世界",
+      "de": "Es ist Pilzsaison",
+      "fr": "Anéantissement d'amanites"
+    },
+    "description": {
+      "en": "A cluster of fruitful fly agarics has sprung up in a clearing prized by Moblin potters for its plentiful clay reserves. Fearing a detrimental impact on soil quality, Bagnobrok entreats you to purge the pack of problematic fungi.",
+      "ja": "陶芸用の粘土の採集地で<br>土を蝕むキノコが増殖している<br>[UNHANDLED 0x28]を倒せ",
+      "de": "Ein paar unansehnliche Pilze haben sich genau dort vermehrt, wo die Moblins üblicherweise Lehm sammeln für Tonarbeiten. Du solltest schnell einmal Kahlschlag betreiben, bevor die Qualität des Bodens unter den Schädlingen zu leiden hat.",
+      "fr": "De dangereuses amanites tue-mouches pullulent sur le site d'extraction de l'argile servant à la poterie. Tuez ces champignons envahissants&nbsp;!"
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 92,
+    "location": 10559169,
+    "position": {
+      "map": 858,
+      "zoneid": 4506,
+      "x": 6.23,
+      "y": 33.28,
+      "z": 1.27
+    }
+  },
+  "1941": {
+    "name": {
+      "en": "Caphunter, Mushroom Muncher",
+      "ja": "夢見る猪「[UNHANDLED 0x28]」",
+      "de": "Rampensau",
+      "fr": "Sans pitié pour le sanglier"
+    },
+    "description": {
+      "en": "Enticed by the pungent scent of recently expired mushrooms, a voracious caphunter has charged forth in a frenzy. Slay the beast and calm its fury once and for all.",
+      "ja": "キノコの芳醇な香りに誘われて<br>幻覚作用を求める巨猪が現れた<br>夢見る猪、[UNHANDLED 0x28]を倒せ",
+      "de": "Angelockt vom aromatischen Duft der Pilze, taucht plötzlich ein Hutjäger auf. Das ungestüme Wesen kennt kein Halten, wenn es darum geht, seine Leibspeise aufzuspüren, und führt sich wie wild auf. Gebiete seiner wilden Raserei Einhalt!",
+      "fr": "Attiré par le parfum des champignons, un spécimen d'une espèce de sanglier géant a fait leur apparition. Refroidissez les ardeurs de ce renifleur de bolets&nbsp;!"
+    },
+    "icon": "/i/060000/060502.png",
+    "level": 92,
+    "location": 10559170,
+    "position": {
+      "map": 858,
+      "zoneid": 4506,
+      "x": 6.23,
+      "y": 33.28,
+      "z": 1.27
+    }
+  },
+  "1942": {
+    "name": {
+      "en": "It's Super Defective",
+      "ja": "ブロークンボットダイアリー",
+      "de": "Maschinen auf Abwegen",
+      "fr": "Le journal d'une sentinelle défectueuse"
+    },
+    "description": {
+      "en": "Defective sentries wander the wastes of East Yyasulani, their protocols corrupt and their directives long forgotten. Now they attack without provocation, putting the lives of the region's weary residents in further peril. ",
+      "ja": "故障して放棄された機械兵が<br>集落近くをうろついている<br>ブロークン・セントリーを倒せ",
+      "de": "Einige defekte Maschinensoldaten sind in der Nähe der Siedlung gesichtet worden. Leider kümmert sich niemand um diese Sondermüllentsorgung, es bleibt also an dir hängen.",
+      "fr": "Des sentinelles mécaniques laissées à l'abandon s'approchent dangereusement des habitations. Abattez-les avant qu'elles ne s'attaquent à des innocents&nbsp;!"
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 97,
+    "location": 10657442,
+    "position": {
+      "map": 861,
+      "zoneid": 4509,
+      "x": 29.97,
+      "y": 13.78,
+      "z": 0.78
+    }
+  },
+  "1943": {
+    "name": {
+      "en": "Running of the Katobleps",
+      "ja": "逃走テレメトリー",
+      "de": "Vom Regen in die Traufe",
+      "fr": "Télémétrie meurtrie"
+    },
+    "description": {
+      "en": "Without defective sentries around to keep them at bay, a herd of ravenous katobleps has returned to the Thunderyards to feed.",
+      "ja": "故障した機械兵を排除したことで<br>逃走していた危険な魔物が戻ってきた<br>ワンダリング・カトブレプタを倒せ",
+      "de": "Gegen die Maschinensoldaten konntest du dich erfolgreich durchsetzen, aber nun steht schon der nächste Gegner vor der Tür. Aber so ein Katoblep sollte ja auch zu schaffen sein!",
+      "fr": "Sans la présence des sentinelles pour les tenir éloignées, des créatures dangereuses se rapprochent des habitations. À vous d'éliminer les katobleps errants."
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 97,
+    "location": 10657443,
+    "position": {
+      "map": 861,
+      "zoneid": 4509,
+      "x": 31.91,
+      "y": 17.5,
+      "z": 0.82
+    }
+  },
+  "1944": {
+    "name": {
+      "en": "Anger Issues",
+      "ja": "紅い足跡",
+      "de": "Wutkissen wider Willen",
+      "fr": "Des traces écarlates"
+    },
+    "description": {
+      "en": "Cauahepyas have never been known as the most mild-mannered of creatures, but a Solution Nine sentry setting fire to their lair has sent a local brood into a right fit, and now they're attacking farmers and their stock. While we can all certainly sympathize with the cauahepyas' rage, their actions, unfortunately, cannot be condoned.",
+      "ja": "機械兵に巣を焼かれた<br>狼たちが怒り狂っている<br>レイジング・カワヘパを倒せ",
+      "de": "Die Cauahepyas sind wütend. Und das zu Recht, denn die Maschinensoldaten haben ihre Heimat zerstört! Leider lassen sie diese Wut nun an dir aus&nbsp;...",
+      "fr": "Les sentinelles mécaniques ayant mis le feu à leur tanière, cette meute de cauahepya a décidé de se venger sur les premières victimes venues. Empêchez-les de blesser qui que ce soit&nbsp;!"
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 97,
+    "location": 10657444,
+    "position": {
+      "map": 861,
+      "zoneid": 4509,
+      "x": 32.12,
+      "y": 30.33,
+      "z": 1.06
+    }
+  },
+  "1945": {
+    "name": {
+      "en": "Ware the Wolves",
+      "ja": "人狼伝説",
+      "de": "Auf sie mit Geheul",
+      "fr": "Gare aux garous"
+    },
+    "description": {
+      "en": "A party of hunters find themselves surrounded by a pack of cauahealoas and require a distraction so that they might ",
+      "ja": "人狼の群れに襲撃された<br>駆除人たちが窮地に陥っている<br>インクリースド・カワヘアローを倒せ",
+      "de": "Einige Merzer konnten mit knapper Not einem verheerenden Cauahealoa-Angriff entgehen. Nun liegt es an dir, ob sie es sicher wieder zurück nach Hause schaffen!",
+      "fr": "Un groupe de chasseurs s'est retrouvé piégé par une meute de loups-garous. Allez les défendre."
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 97,
+    "location": 10657445,
+    "position": {
+      "map": 861,
+      "zoneid": 4509,
+      "x": 25.93,
+      "y": 23.11,
+      "z": 0.97
+    }
+  },
+  "1946": {
+    "name": {
+      "en": "Days of Thunder",
+      "ja": "ウォー・オブ・カレント",
+      "de": "Helle Leuchte",
+      "fr": "Jours de tonnerre"
+    },
+    "description": {
+      "en": "Roused by the ever-roaring heavens, violent elemental spirits have descended upon the Thunderyards in a frenzy not soon stayed.",
+      "ja": "落雷が続いたことにより<br>サンダースピリットが活性化している<br>フレンジー・サンダースピリットを倒せ",
+      "de": "Zahllose Blitzeinschläge haben aus diesen Donnergeistern rasende Ungeheuer gemacht. Knips ihnen bloß schnell das Licht aus!",
+      "fr": "Le déchaînement de foudre constant a fini par raviver les élémentaires des Prés fulgurants. Calmez donc leurs ardeurs&nbsp;!"
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 97,
+    "location": 10657447,
+    "position": {
+      "map": 861,
+      "zoneid": 4509,
+      "x": 32.4,
+      "y": 9.52,
+      "z": 1.21
+    }
+  },
+  "1947": {
+    "name": {
+      "en": "Hack the Planet",
+      "ja": "ほとんど有害",
+      "de": "Voll drauf eingeschlossen",
+      "fr": "Aborder avec prudence"
+    },
+    "description": {
+      "en": "Automated assault turrets once used to defend Yyasulani Station appear to have malfunctioned and are now firing on anything and everything that approaches. While some believe that the turrets were damaged by lightning, others claim bandit reforgers have somehow hacked their way into the machine's cores and given them new orders. What all can agree on is that the turrets must be destroyed.",
+      "ja": "雷気による機器の異常で<br>タレットが見境なく通行者を攻撃している<br>ハックド・タレットを倒せ",
+      "de": "Ein Kurzschluss hat diesen Maschinen ordentlich zugesetzt. Nun sind sie anscheinend so programmiert, dass sie auch auf harmlose Passanten schießen. Dem solltest du blitzschnell ein Ende setzen!",
+      "fr": "Les tourelles défensives installées près de la gare de Yyasulani ont subi un coup de foudre de trop et attaquent désormais tout ce qui bouge. Mettez-les hors d'état de nuire."
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 97,
+    "location": 10657449,
+    "position": {
+      "map": 861,
+      "zoneid": 4509,
+      "x": 33.28,
+      "y": 27.66,
+      "z": 1.3
+    }
+  },
+  "1948": {
+    "name": {
+      "en": "A Scythe to an Axe Fight",
+      "ja": "断頭の嘴「サイスビーク」",
+      "de": "Tod durch den Schnabel",
+      "fr": "Bec-faucheur"
+    },
+    "description": {
+      "en": "While one might argue that the deadly protrusion on an axe beak's beak has always better resembled a scythe than an axe, the fact of the matter is that they have been and always will be called axe beaks, and not scythe beaks. Except for Scythebeak─the winged monstrosity that roams Exo Alexandria looking to reap the souls of his next victims.",
+      "ja": "数々の駆除人を葬った<br>アックスビークの異常個体が現れた<br>断頭の嘴、サイスビークを倒せ",
+      "de": "Ein besonders bösartiger Keilschnabel, der schon zahllose Merzer auf dem Gewissen hat, ist in der Nähe aufgetaucht. Besiege ihn, bevor er sich noch mehr von ihnen schnappen kann.",
+      "fr": "Le bec-faucheur est l'ennemi des chasseurs de la région, et quand un spécimen particulièrement coriace fait son apparition, il faut intervenir rapidement avant qu'il ne sème le chaos."
+    },
+    "icon": "/i/060000/060502.png",
+    "level": 97,
+    "location": 10657452,
+    "position": {
+      "map": 861,
+      "zoneid": 4509,
+      "x": 25.5,
+      "y": 14.52,
+      "z": 0.92
+    }
+  },
+  "1949": {
+    "name": {
+      "en": "License to Dill",
+      "ja": "薬屋のひと仕事",
+      "de": "Bauer sucht Heilkraut",
+      "fr": "Le carnet de l'apothicaire"
+    },
+    "description": {
+      "en": "A provider of the Tonawawta has traveled far to the eastern reaches of Yyasulani to gather a rare herb known as cloud dill only to discover the hills crawling with murderous myrmeleons.",
+      "ja": "農務役のトナワータ族が<br>希少な薬草を採集しようとしている<br>彼に協力し「ヤースラニの薬草」を集めろ",
+      "de": "Ein Tonawawta-Bauer sucht eine bestimmte Art von Heilkräutern, die sein Clan schon seit jeher zu sehr wirkungsvoller Medizin zu verarbeiten weiß. Hilf ihm bei der Beschaffung!",
+      "fr": "Un fournisseur tonawawta est parti récolter des herbes médicinales. Prêtez-lui main-forte."
+    },
+    "icon": "/i/060000/060503.png",
+    "level": 97,
+    "location": 10657459,
+    "position": {
+      "map": 861,
+      "zoneid": 4509,
+      "x": 35.78,
+      "y": 23.28,
+      "z": 1.49
+    }
+  },
+  "1950": {
+    "name": {
+      "en": "Domo Arigato",
+      "ja": "気まぐれロボット",
+      "de": "Durchgeknallte Schaltkreise",
+      "fr": "Robot capricieux"
+    },
+    "description": {
+      "en": "The Thunderyards are riddled with the rusting husks of sentries taken offline by lightning strikes, making the area popular amongst reforgers looking for salvage. Unfortunately, some of the sentries are not wholly damaged by the strikes, and still wander the area, posing a threat to any who cross their paths.",
+      "ja": "放棄された機械兵が<br>街道に大挙して現れた<br>ブロークン・セントリーを倒せ",
+      "de": "Massenweise defekte Einheiten wurden an der Straße gesichtet! Sorg dafür, dass sie keinen Schaden mehr anrichten können!",
+      "fr": "Des sentinelles mécaniques hors de contrôle sont apparues près de la route. Éliminez-les&nbsp;!"
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 98,
+    "location": 10657462,
+    "position": {
+      "map": 861,
+      "zoneid": 4509,
+      "x": 13.31,
+      "y": 15.42,
+      "z": 0.39
+    }
+  },
+  "1951": {
+    "name": {
+      "en": "Mr. Roboto",
+      "ja": "ロードソウルズ",
+      "de": "Das Gesetz der Straße",
+      "fr": "Âme chargée"
+    },
+    "description": {
+      "en": "While salvaging an inoperative mechanical sentry, a hapless forger unknowingly triggered the construct's emergency beacon, summoning reinforcements he is most certainly not equipped to handle.",
+      "ja": "故障した機械兵の救援信号を感知し<br>ライダータイプの機械兵が現れた<br>ブロークン・セントリーR6を倒せ",
+      "de": "Aufgrund des Hilfesignals einer defekten Einheit sind nun motorisierte Maschinensoldaten am Start, die es zu Fall zu bringen gilt!",
+      "fr": "Des sentinelles volantes se sont approchées après avoir détecté le signal de détresse d'une de leurs congénères. Débarrassez-vous de ces machines défectueuses."
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 98,
+    "location": 10657464,
+    "position": {
+      "map": 861,
+      "zoneid": 4509,
+      "x": 13.31,
+      "y": 15.42,
+      "z": 0.39
+    }
+  },
+  "1952": {
+    "name": {
+      "en": "Old Stampeding Grounds",
+      "ja": "巨獣めざめる",
+      "de": "Erwachen der Bestie",
+      "fr": "L'éveil de la bête"
+    },
+    "description": {
+      "en": "After being caught in a gomphotherium stampede, a band of outskirts reforgers lie battered and bruised not but a brisk jog from the encampment. However, with the wounds they've suffered, the reforgers can barely walk, let alone jog to safety─an endeavor made all the more difficult due to the offending stampeders having gathered right between them and safety.",
+      "ja": "拾得人の一団が<br>興奮した獣に襲われかけている<br>レイジング・ゴンフォテリウムを倒せ",
+      "de": "Eine Gruppe Metzer musste Bekanntschaft mit einer Gomphotherium-Horde machen. Hilf ihnen, damit sie es unverletzt nach Hause schaffen!",
+      "fr": "Un groupe de détecteurs est attaqué par des bêtes sauvages. Sauvez-les en éliminant les gomphotheriums enragés."
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 98,
+    "location": 10657465,
+    "position": {
+      "map": 861,
+      "zoneid": 4509,
+      "x": 9.25,
+      "y": 14.75,
+      "z": 0.31
+    }
+  },
+  "1953": {
+    "name": {
+      "en": "Pulling the Wool",
+      "ja": "道を視る青年",
+      "de": "Leider konnten wir Ihr Paket nicht zustellen",
+      "fr": "Bouchon de dos-laineux"
+    },
+    "description": {
+      "en": "A massive herd of woolbacks has chosen to graze directly in the path of a hurried courier, oblivious to the poor lad's delivery schedule. Instead of circumnavigating the beasts or simply waiting them out, the courier is considering a more <i>extreme</i> approach to solving his dilemma.",
+      "ja": "街道に迷い出てきた獣が<br>配達人の仕事を妨げている<br>ワンダリング・ウールバックを倒せ",
+      "de": "Ein etwas hilflos dreinschauender Lieferant möchte eigentlich nur seiner Arbeit nachgehen, doch dafür müssten erst ein paar Wollrücken aus dem Weg geräumt werden.",
+      "fr": "Un troupeau d'animaux barre le passage à un livreur. Débloquez la route pour lui."
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 98,
+    "location": 10657482,
+    "position": {
+      "map": 861,
+      "zoneid": 4509,
+      "x": 18.06,
+      "y": 28.28,
+      "z": 0.32
+    }
+  },
+  "1954": {
+    "name": {
+      "en": "To Each His Drone",
+      "ja": "スローター 機械の生贄",
+      "de": "Massakrierende Maschinen",
+      "fr": "Machina militari"
+    },
+    "description": {
+      "en": "A fleet of malfunctioning aerostats is slaughtering everything in their path. Some people apparently have a problem with this.",
+      "ja": "壊れて指揮系統を外れた機械兵器が<br>野生動物を殺戮している<br>スローター・エアロスタットを倒せ",
+      "de": "Maschinen, deren Kontrollfunktionen defekt sind, stürzen sich erbarmungslos auf die in der Nähe lebenden Wildtiere. Jetzt kannst du deinen inneren Tierschützer aktivieren!",
+      "fr": "Un groupe d'aérostats hors de contrôle s'est mis à attaquer les animaux du coin. Passez-leur l'envie de continuer&nbsp;!"
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 98,
+    "location": 10657483,
+    "position": {
+      "map": 861,
+      "zoneid": 4509,
+      "x": 20.17,
+      "y": 32.79,
+      "z": 0.36
+    }
+  },
+  "1955": {
+    "name": {
+      "en": "Mi Casa Es Mi Casa",
+      "ja": "怨讐領域",
+      "de": "Wie du mir, so ich dir",
+      "fr": "Sans rancune"
+    },
+    "description": {
+      "en": "Driven from their lair by a series of overaggressive aerostat patrols, a family of asterodias is forced to seek a new shelter, and is currently heading north to the driftdowns. The foragers who already call the camp home would rather it looked elsewhere.",
+      "ja": "機械兵に棲み処を追われた獣が<br>復讐のため人里近くに現れた<br>チェイスド・アステロディアを倒せ",
+      "de": "Grausame Bestien sind in der Nähe friedlicher Siedlungen gesichtet worden. Sie sind äußerst erbost und sinnen auf Rache an den Maschinen, die ihnen ihre Heimat nahmen.",
+      "fr": "Une meute d'astérodias chassés de leur territoire par des sentinelles mécaniques a décidé de se venger sur les humains les plus proches. Allez leur apprendre à passer leurs nerfs ailleurs."
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 98,
+    "location": 10657484,
+    "position": {
+      "map": 861,
+      "zoneid": 4509,
+      "x": 12.02,
+      "y": 21.92,
+      "z": 0.16
+    }
+  },
+  "1956": {
+    "name": {
+      "en": "(Got My Eye) Set on You",
+      "ja": "復讐の単眼「ザ・アベンジャー」",
+      "de": "Rache ist bitter",
+      "fr": "Le Vengeur"
+    },
+    "description": {
+      "en": "One evening, not too long ago, a mild-mannered monoeye returned from the day's hunt to find the withered husks of his wife and children splayed across the floor of his lair─their souls stolen. Faced with the decision to either turn the other cheek or seek bloody revenge on the world, he ultimately chose the latter.",
+      "ja": "魂資源用に仲間を狩られたモノアイが<br>怒りのままに進撃している<br>復讐の単眼、ザ・アベンジャーを倒せ",
+      "de": "Ein Einauge ist zum Rachebringer mutiert und lässt seiner unbändigen Wut über seine zum Zwecke der Seelenextrahierung getöteten Kumpanen freien Lauf.",
+      "fr": "Un n'a-qu'un-œil qui a vu ses compagnons périr pour servir de réserve d'âmes a choisi de laisser sa rage vengeresse prendre le dessus en s'attaquant à l'humanité tout entière. Arrêtez-le avant qu'il ne soit trop tard&nbsp;!"
+    },
+    "icon": "/i/060000/060502.png",
+    "level": 98,
+    "location": 10657555,
+    "position": {
+      "map": 861,
+      "zoneid": 4509,
+      "x": 24.07,
+      "y": 34.62,
+      "z": 0.81
+    }
+  },
+  "1957": {
+    "name": {
+      "en": "When It's So Salvage",
+      "ja": "人生がときめく片づけの技法",
+      "de": "Aufräumen mit Methode",
+      "fr": "La magie du rangement"
+    },
+    "description": {
+      "en": "The powerful electrical surges that plague the dome near Alexandria are known to have curious effects on the local fauna. While some lose their fur, or are permanently blinded, others exhibit heightened tendencies towards physical violence. Such appears to be the case with stray hounds that reside in and around the submerged skyline, making it difficult for the reforgers to go about their work in peace.",
+      "ja": "雷気で変異した魔狼が現れ<br>拾得人の仕事に影響が出ている<br>彼女に代わり「旧市街の資材」を集めろ",
+      "de": "Ein Rudel Blitzhunde hält eine sehr freundliche Wiederschafferin von der Arbeit ab. Wird Zeit, dass du hier mal richtig aufräumst und ihr beim Sammeln von Baumaterial hilfst.",
+      "fr": "Des loups transformés par l'abondance d'éther de foudre sous le dôme empêchent cette détectrice de terminer son travail. Allez récupérer du matériel à sa place."
+    },
+    "icon": "/i/060000/060503.png",
+    "level": 98,
+    "location": 10657557,
+    "position": {
+      "map": 861,
+      "zoneid": 4509,
+      "x": 9.7,
+      "y": 35.13,
+      "z": -0.11
+    }
+  },
+  "1958": {
+    "name": {
+      "en": "print('I hate snakes')",
+      "ja": "メガ・パイソン",
+      "de": "Falsche Schlange",
+      "fr": "Méga pythons"
+    },
+    "description": {
+      "en": "After years of feeding on the toxic waste that pollutes the submerged skyline, several of the lake's pythons have grown to previously unthinkable sizes. For the safety of the reforgers who scavenge the area, the scalekin will need to be removed.",
+      "ja": "廃棄物の影響で巨大化した蛇が<br>水没した旧市街付近に巣を作った<br>安全のため、バローズ・パイソンを倒せ",
+      "de": "Durch Abfälle in der versunkenen Stadt sind Pythons auf enorme Größe angewachsen und müssen daher beseitigt werden. Eine Aufgabe, für die sicher keiner Schlange steht, aber irgendwer muss es ja erledigen.",
+      "fr": "Des serpents géants ont élu domicile au milieu de la Rive noyée. Pour le bien de tous, allez les déloger&nbsp;!"
+    },
+    "icon": "/i/060000/060501.png",
+    "level": 98,
+    "location": 10657558,
+    "position": {
+      "map": 861,
+      "zoneid": 4509,
+      "x": 12.36,
+      "y": 31.73,
+      "z": -0.1
+    }
+  },
+  "1959": {
     "name": {
       "en": "",
       "ja": "",
@@ -40696,7 +42388,687 @@
     "level": 0,
     "location": 0
   },
-  "1900": {
+  "1960": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1961": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1962": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1963": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1964": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1965": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1966": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1967": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1968": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1969": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1970": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1971": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1972": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1973": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1974": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1975": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1976": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1977": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1978": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1979": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1980": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1981": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1982": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1983": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1984": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1985": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1986": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1987": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1988": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1989": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1990": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1991": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1992": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1993": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1994": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1995": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1996": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1997": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1998": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1999": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "2000": {
     "name": {
       "en": "",
       "ja": "",

@@ -39,6 +39,6 @@ export const jobAbbrs = {
   "38": "DNC",
   "39": "RPR",
   "40": "SGE",
-  "41": "",
-  "42": ""
+  "41": "VPR",
+  "42": "PCT"
 };
