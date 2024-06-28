@@ -32,7 +32,7 @@ export abstract class AbstractExtractor {
 
   multiBarRef: any;
 
-  maxLevel = 90;
+  maxLevel = 100;
 
   constructor() {
     interval(AbstractExtractor.XIVAPI_KEY ? 50 : 250)

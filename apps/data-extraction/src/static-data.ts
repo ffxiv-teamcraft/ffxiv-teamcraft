@@ -1,12 +1,12 @@
 export class StaticData {
   public static readonly CURRENCIES = {
     '1': 10309,
-    '2': 25199, // Unlimited Crafters' scrip
+    '2': 33913, // Unlimited Crafters' scrip
     '3': 10311,
-    '4': 25200, // Unlimited Gatherers' scrip
+    '4': 33914, // Unlimited Gatherers' scrip
     '5': 10307,
-    '6': 33913,
-    '7': 33914,
+    '6': 41784, // Limited Crafters' scrip
+    '7': 41785, // Limited Gatherers' scrip
     '8': 21072,
     '9': 21073,
     '10': 21074,
@@ -32,7 +32,6 @@ export class StaticData {
 
   public static readonly TOMESTONES = {
     '1': 28, // Legacy (poetics)
-    // TODO 7.0 make sure this is accurate
     '2': 46, // Current unlimited
     '3': 47 // Current limited
   };

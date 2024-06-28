@@ -9,7 +9,7 @@
     "levelMax": 51,
     "group": 8,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 49,
@@ -39,7 +39,7 @@
     "levelMax": 52,
     "group": 8,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 209,
@@ -69,7 +69,7 @@
     "levelMax": 51,
     "group": 8,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 141,
@@ -99,7 +99,7 @@
     "levelMax": 53,
     "group": 8,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 294,
@@ -129,7 +129,7 @@
     "levelMax": 54,
     "group": 8,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 74,
@@ -159,7 +159,7 @@
     "levelMax": 55,
     "group": 8,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 72,
@@ -189,7 +189,7 @@
     "levelMax": 56,
     "group": 8,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 311,
@@ -219,7 +219,7 @@
     "levelMax": 57,
     "group": 8,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 118,
@@ -249,7 +249,7 @@
     "levelMax": 60,
     "group": 8,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 137,
@@ -279,7 +279,7 @@
     "levelMax": 58,
     "group": 8,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 171,
@@ -309,7 +309,7 @@
     "levelMax": 59,
     "group": 8,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 376,
@@ -339,7 +339,7 @@
     "levelMax": 60,
     "group": 8,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 508,
@@ -369,7 +369,7 @@
     "levelMax": 60,
     "group": 8,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 650,
@@ -399,7 +399,7 @@
     "levelMax": 60,
     "group": 8,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 393,
@@ -429,7 +429,7 @@
     "levelMax": 60,
     "group": 8,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 346,
@@ -459,7 +459,7 @@
     "levelMax": 60,
     "group": 8,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 1039,
@@ -489,7 +489,7 @@
     "levelMax": 60,
     "group": 8,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 557,
@@ -519,7 +519,7 @@
     "levelMax": 60,
     "group": 8,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 19,
@@ -549,7 +549,7 @@
     "levelMax": 60,
     "group": 8,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 19,
@@ -579,7 +579,7 @@
     "levelMax": 60,
     "group": 8,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 622,
@@ -609,7 +609,7 @@
     "levelMax": 70,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 19,
@@ -639,7 +639,7 @@
     "levelMax": 70,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 23,
@@ -669,7 +669,7 @@
     "levelMax": 67,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 7,
@@ -699,7 +699,7 @@
     "levelMax": 70,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 17,
@@ -729,7 +729,7 @@
     "levelMax": 65,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 5,
@@ -759,7 +759,7 @@
     "levelMax": 70,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 785,
@@ -789,7 +789,7 @@
     "levelMax": 67,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 23,
@@ -819,7 +819,7 @@
     "levelMax": 70,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 314,
@@ -849,7 +849,7 @@
     "levelMax": 70,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 377,
@@ -879,7 +879,7 @@
     "levelMax": 61,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 314,
@@ -909,7 +909,7 @@
     "levelMax": 63,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 53,
@@ -939,7 +939,7 @@
     "levelMax": 70,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 456,
@@ -969,7 +969,7 @@
     "levelMax": 68,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 470,
@@ -999,7 +999,7 @@
     "levelMax": 64,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 206,
@@ -1029,7 +1029,7 @@
     "levelMax": 70,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 99,
@@ -1059,7 +1059,7 @@
     "levelMax": 68,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 395,
@@ -1089,7 +1089,7 @@
     "levelMax": 69,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 129,
@@ -1119,7 +1119,7 @@
     "levelMax": 70,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 403,
@@ -1149,7 +1149,7 @@
     "levelMax": 70,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 147,
@@ -1179,7 +1179,7 @@
     "levelMax": 69,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 20,
@@ -1209,7 +1209,7 @@
     "levelMax": 70,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 25,
@@ -1239,7 +1239,7 @@
     "levelMax": 69,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 370,
@@ -1269,7 +1269,7 @@
     "levelMax": 70,
     "group": 9,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 402,
@@ -1299,7 +1299,7 @@
     "levelMax": 71,
     "group": 10,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 346,
@@ -1329,7 +1329,7 @@
     "levelMax": 80,
     "group": 10,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 9,
@@ -1359,7 +1359,7 @@
     "levelMax": 78,
     "group": 10,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 6,
@@ -1389,7 +1389,7 @@
     "levelMax": 72,
     "group": 10,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 62,
@@ -1419,7 +1419,7 @@
     "levelMax": 80,
     "group": 10,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 157,
@@ -1449,7 +1449,7 @@
     "levelMax": 80,
     "group": 10,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 944,
@@ -1479,7 +1479,7 @@
     "levelMax": 74,
     "group": 10,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 96,
@@ -1509,7 +1509,7 @@
     "levelMax": 80,
     "group": 10,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 26,
@@ -1539,7 +1539,7 @@
     "levelMax": 76,
     "group": 10,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 314,
@@ -1569,7 +1569,7 @@
     "levelMax": 76,
     "group": 10,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 201,
@@ -1599,7 +1599,7 @@
     "levelMax": 80,
     "group": 10,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 14,
@@ -1629,7 +1629,7 @@
     "levelMax": 80,
     "group": 10,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 236,
@@ -1659,7 +1659,7 @@
     "levelMax": 80,
     "group": 10,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 314,
@@ -1689,7 +1689,7 @@
     "levelMax": 80,
     "group": 10,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 31,
@@ -1719,7 +1719,7 @@
     "levelMax": 74,
     "group": 10,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 362,
@@ -1749,7 +1749,7 @@
     "levelMax": 75,
     "group": 10,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 417,
@@ -1779,7 +1779,7 @@
     "levelMax": 80,
     "group": 10,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 181,
@@ -1809,7 +1809,7 @@
     "levelMax": 79,
     "group": 10,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 62,
@@ -1839,7 +1839,7 @@
     "levelMax": 80,
     "group": 10,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 31,
@@ -1869,7 +1869,7 @@
     "levelMax": 79,
     "group": 10,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 29,
@@ -3835,7 +3835,7 @@
     "levelMax": 50,
     "group": 11,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 110,
@@ -3865,7 +3865,7 @@
     "levelMax": 52,
     "group": 11,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 117,
@@ -3895,7 +3895,7 @@
     "levelMax": 54,
     "group": 11,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 125,
@@ -3925,7 +3925,7 @@
     "levelMax": 56,
     "group": 11,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 133,
@@ -3955,7 +3955,7 @@
     "levelMax": 58,
     "group": 11,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 140,
@@ -3985,7 +3985,7 @@
     "levelMax": 60,
     "group": 11,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 148,
@@ -4015,7 +4015,7 @@
     "levelMax": 62,
     "group": 12,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 158,
@@ -4045,7 +4045,7 @@
     "levelMax": 64,
     "group": 12,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 168,
@@ -4075,7 +4075,7 @@
     "levelMax": 66,
     "group": 12,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 178,
@@ -4105,7 +4105,7 @@
     "levelMax": 68,
     "group": 12,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 188,
@@ -4135,7 +4135,7 @@
     "levelMax": 70,
     "group": 12,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 198,
@@ -4165,7 +4165,7 @@
     "levelMax": 72,
     "group": 13,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 209,
@@ -4195,7 +4195,7 @@
     "levelMax": 74,
     "group": 13,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 220,
@@ -4225,7 +4225,7 @@
     "levelMax": 76,
     "group": 13,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 231,
@@ -4255,7 +4255,7 @@
     "levelMax": 78,
     "group": 13,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 242,
@@ -4285,7 +4285,7 @@
     "levelMax": 50,
     "group": 14,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 110,
@@ -4315,7 +4315,7 @@
     "levelMax": 52,
     "group": 14,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 117,
@@ -4345,7 +4345,7 @@
     "levelMax": 54,
     "group": 14,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 125,
@@ -4375,7 +4375,7 @@
     "levelMax": 56,
     "group": 14,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 133,
@@ -4405,7 +4405,7 @@
     "levelMax": 58,
     "group": 14,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 140,
@@ -4435,7 +4435,7 @@
     "levelMax": 60,
     "group": 14,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 148,
@@ -4465,7 +4465,7 @@
     "levelMax": 62,
     "group": 15,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 158,
@@ -4495,7 +4495,7 @@
     "levelMax": 64,
     "group": 15,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 168,
@@ -4525,7 +4525,7 @@
     "levelMax": 66,
     "group": 15,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 178,
@@ -4555,7 +4555,7 @@
     "levelMax": 68,
     "group": 15,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 188,
@@ -4585,7 +4585,7 @@
     "levelMax": 70,
     "group": 15,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 198,
@@ -4615,7 +4615,7 @@
     "levelMax": 72,
     "group": 16,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 209,
@@ -4645,7 +4645,7 @@
     "levelMax": 74,
     "group": 16,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 220,
@@ -4675,7 +4675,7 @@
     "levelMax": 76,
     "group": 16,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 231,
@@ -4705,7 +4705,7 @@
     "levelMax": 78,
     "group": 16,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 242,
@@ -4735,7 +4735,7 @@
     "levelMax": 50,
     "group": 17,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 110,
@@ -4765,7 +4765,7 @@
     "levelMax": 52,
     "group": 17,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 117,
@@ -4795,7 +4795,7 @@
     "levelMax": 54,
     "group": 17,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 125,
@@ -4825,7 +4825,7 @@
     "levelMax": 56,
     "group": 17,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 133,
@@ -4855,7 +4855,7 @@
     "levelMax": 58,
     "group": 17,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 140,
@@ -4885,7 +4885,7 @@
     "levelMax": 60,
     "group": 17,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 148,
@@ -4915,7 +4915,7 @@
     "levelMax": 62,
     "group": 18,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 158,
@@ -4945,7 +4945,7 @@
     "levelMax": 64,
     "group": 18,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 168,
@@ -4975,7 +4975,7 @@
     "levelMax": 66,
     "group": 18,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 178,
@@ -5005,7 +5005,7 @@
     "levelMax": 68,
     "group": 18,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 188,
@@ -5035,7 +5035,7 @@
     "levelMax": 70,
     "group": 18,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 198,
@@ -5065,7 +5065,7 @@
     "levelMax": 72,
     "group": 19,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 209,
@@ -5095,7 +5095,7 @@
     "levelMax": 74,
     "group": 19,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 220,
@@ -5125,7 +5125,7 @@
     "levelMax": 76,
     "group": 19,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 231,
@@ -5155,7 +5155,7 @@
     "levelMax": 78,
     "group": 19,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 242,
@@ -5185,7 +5185,7 @@
     "levelMax": 50,
     "group": 20,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 110,
@@ -5215,7 +5215,7 @@
     "levelMax": 52,
     "group": 20,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 117,
@@ -5245,7 +5245,7 @@
     "levelMax": 54,
     "group": 20,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 125,
@@ -5275,7 +5275,7 @@
     "levelMax": 56,
     "group": 20,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 133,
@@ -5305,7 +5305,7 @@
     "levelMax": 58,
     "group": 20,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 140,
@@ -5335,7 +5335,7 @@
     "levelMax": 60,
     "group": 20,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 148,
@@ -5365,7 +5365,7 @@
     "levelMax": 62,
     "group": 21,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 158,
@@ -5395,7 +5395,7 @@
     "levelMax": 64,
     "group": 21,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 168,
@@ -5425,7 +5425,7 @@
     "levelMax": 66,
     "group": 21,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 178,
@@ -5455,7 +5455,7 @@
     "levelMax": 68,
     "group": 21,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 188,
@@ -5485,7 +5485,7 @@
     "levelMax": 70,
     "group": 21,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 198,
@@ -5515,7 +5515,7 @@
     "levelMax": 72,
     "group": 22,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 209,
@@ -5545,7 +5545,7 @@
     "levelMax": 74,
     "group": 22,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 220,
@@ -5575,7 +5575,7 @@
     "levelMax": 76,
     "group": 22,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 231,
@@ -5605,7 +5605,7 @@
     "levelMax": 78,
     "group": 22,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 242,
@@ -5635,7 +5635,7 @@
     "levelMax": 50,
     "group": 23,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 110,
@@ -5665,7 +5665,7 @@
     "levelMax": 52,
     "group": 23,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 117,
@@ -5695,7 +5695,7 @@
     "levelMax": 54,
     "group": 23,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 125,
@@ -5725,7 +5725,7 @@
     "levelMax": 56,
     "group": 23,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 133,
@@ -5755,7 +5755,7 @@
     "levelMax": 58,
     "group": 23,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 140,
@@ -5785,7 +5785,7 @@
     "levelMax": 60,
     "group": 23,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 148,
@@ -5815,7 +5815,7 @@
     "levelMax": 62,
     "group": 24,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 158,
@@ -5845,7 +5845,7 @@
     "levelMax": 64,
     "group": 24,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 168,
@@ -5875,7 +5875,7 @@
     "levelMax": 66,
     "group": 24,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 178,
@@ -5905,7 +5905,7 @@
     "levelMax": 68,
     "group": 24,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 188,
@@ -5935,7 +5935,7 @@
     "levelMax": 70,
     "group": 24,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 198,
@@ -5965,7 +5965,7 @@
     "levelMax": 72,
     "group": 25,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 209,
@@ -5995,7 +5995,7 @@
     "levelMax": 74,
     "group": 25,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 220,
@@ -6025,7 +6025,7 @@
     "levelMax": 76,
     "group": 25,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 231,
@@ -6055,7 +6055,7 @@
     "levelMax": 78,
     "group": 25,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 242,
@@ -6085,7 +6085,7 @@
     "levelMax": 50,
     "group": 26,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 110,
@@ -6115,7 +6115,7 @@
     "levelMax": 52,
     "group": 26,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 117,
@@ -6145,7 +6145,7 @@
     "levelMax": 54,
     "group": 26,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 125,
@@ -6175,7 +6175,7 @@
     "levelMax": 56,
     "group": 26,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 133,
@@ -6205,7 +6205,7 @@
     "levelMax": 58,
     "group": 26,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 140,
@@ -6235,7 +6235,7 @@
     "levelMax": 60,
     "group": 26,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 148,
@@ -6265,7 +6265,7 @@
     "levelMax": 62,
     "group": 27,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 158,
@@ -6295,7 +6295,7 @@
     "levelMax": 64,
     "group": 27,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 168,
@@ -6325,7 +6325,7 @@
     "levelMax": 66,
     "group": 27,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 178,
@@ -6355,7 +6355,7 @@
     "levelMax": 68,
     "group": 27,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 188,
@@ -6385,7 +6385,7 @@
     "levelMax": 70,
     "group": 27,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 198,
@@ -6415,7 +6415,7 @@
     "levelMax": 72,
     "group": 28,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 209,
@@ -6445,7 +6445,7 @@
     "levelMax": 74,
     "group": 28,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 220,
@@ -6475,7 +6475,7 @@
     "levelMax": 76,
     "group": 28,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 231,
@@ -6505,7 +6505,7 @@
     "levelMax": 78,
     "group": 28,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 242,
@@ -6535,7 +6535,7 @@
     "levelMax": 50,
     "group": 29,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 110,
@@ -6565,7 +6565,7 @@
     "levelMax": 52,
     "group": 29,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 117,
@@ -6595,7 +6595,7 @@
     "levelMax": 54,
     "group": 29,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 125,
@@ -6625,7 +6625,7 @@
     "levelMax": 56,
     "group": 29,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 133,
@@ -6655,7 +6655,7 @@
     "levelMax": 58,
     "group": 29,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 140,
@@ -6685,7 +6685,7 @@
     "levelMax": 60,
     "group": 29,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 148,
@@ -6715,7 +6715,7 @@
     "levelMax": 62,
     "group": 30,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 158,
@@ -6745,7 +6745,7 @@
     "levelMax": 64,
     "group": 30,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 168,
@@ -6775,7 +6775,7 @@
     "levelMax": 66,
     "group": 30,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 178,
@@ -6805,7 +6805,7 @@
     "levelMax": 68,
     "group": 30,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 188,
@@ -6835,7 +6835,7 @@
     "levelMax": 70,
     "group": 30,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 198,
@@ -6865,7 +6865,7 @@
     "levelMax": 72,
     "group": 31,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 209,
@@ -6895,7 +6895,7 @@
     "levelMax": 74,
     "group": 31,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 220,
@@ -6925,7 +6925,7 @@
     "levelMax": 76,
     "group": 31,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 231,
@@ -6955,7 +6955,7 @@
     "levelMax": 78,
     "group": 31,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 242,
@@ -6985,7 +6985,7 @@
     "levelMax": 50,
     "group": 32,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 110,
@@ -7015,7 +7015,7 @@
     "levelMax": 52,
     "group": 32,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 117,
@@ -7045,7 +7045,7 @@
     "levelMax": 54,
     "group": 32,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 125,
@@ -7075,7 +7075,7 @@
     "levelMax": 56,
     "group": 32,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 133,
@@ -7105,7 +7105,7 @@
     "levelMax": 58,
     "group": 32,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 140,
@@ -7135,7 +7135,7 @@
     "levelMax": 60,
     "group": 32,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 148,
@@ -7165,7 +7165,7 @@
     "levelMax": 62,
     "group": 33,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 158,
@@ -7195,7 +7195,7 @@
     "levelMax": 64,
     "group": 33,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 168,
@@ -7225,7 +7225,7 @@
     "levelMax": 66,
     "group": 33,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 178,
@@ -7255,7 +7255,7 @@
     "levelMax": 68,
     "group": 33,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 188,
@@ -7285,7 +7285,7 @@
     "levelMax": 70,
     "group": 33,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 198,
@@ -7315,7 +7315,7 @@
     "levelMax": 72,
     "group": 34,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 209,
@@ -7345,7 +7345,7 @@
     "levelMax": 74,
     "group": 34,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 220,
@@ -7375,7 +7375,7 @@
     "levelMax": 76,
     "group": 34,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 231,
@@ -7405,7 +7405,7 @@
     "levelMax": 78,
     "group": 34,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 242,
@@ -8971,7 +8971,7 @@
     "levelMax": 80,
     "group": 13,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 253,
@@ -9001,7 +9001,7 @@
     "levelMax": 80,
     "group": 16,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 253,
@@ -9031,7 +9031,7 @@
     "levelMax": 80,
     "group": 19,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 253,
@@ -9061,7 +9061,7 @@
     "levelMax": 80,
     "group": 22,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 253,
@@ -9091,7 +9091,7 @@
     "levelMax": 80,
     "group": 25,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 253,
@@ -9121,7 +9121,7 @@
     "levelMax": 80,
     "group": 28,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 253,
@@ -9151,7 +9151,7 @@
     "levelMax": 80,
     "group": 31,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 253,
@@ -9181,7 +9181,7 @@
     "levelMax": 80,
     "group": 34,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 253,
@@ -10627,7 +10627,7 @@
     "levelMax": 51,
     "group": 2,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -10657,7 +10657,7 @@
     "levelMax": 53,
     "group": 2,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -10687,7 +10687,7 @@
     "levelMax": 55,
     "group": 2,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -10717,7 +10717,7 @@
     "levelMax": 57,
     "group": 2,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -10747,7 +10747,7 @@
     "levelMax": 59,
     "group": 2,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -10777,7 +10777,7 @@
     "levelMax": 61,
     "group": 3,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -10807,7 +10807,7 @@
     "levelMax": 63,
     "group": 3,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -10837,7 +10837,7 @@
     "levelMax": 65,
     "group": 3,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -10867,7 +10867,7 @@
     "levelMax": 67,
     "group": 3,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -10897,7 +10897,7 @@
     "levelMax": 69,
     "group": 3,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -10927,7 +10927,7 @@
     "levelMax": 71,
     "group": 4,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -10957,7 +10957,7 @@
     "levelMax": 73,
     "group": 4,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -10987,7 +10987,7 @@
     "levelMax": 75,
     "group": 4,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11017,7 +11017,7 @@
     "levelMax": 77,
     "group": 4,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11047,7 +11047,7 @@
     "levelMax": 79,
     "group": 4,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11077,7 +11077,7 @@
     "levelMax": 80,
     "group": 4,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11107,7 +11107,7 @@
     "levelMax": 80,
     "group": 4,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11137,7 +11137,7 @@
     "levelMax": 80,
     "group": 4,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11167,7 +11167,7 @@
     "levelMax": 51,
     "group": 2,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 400,
@@ -11197,7 +11197,7 @@
     "levelMax": 61,
     "group": 3,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 400,
@@ -11227,7 +11227,7 @@
     "levelMax": 71,
     "group": 4,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 400,
@@ -11257,7 +11257,7 @@
     "levelMax": 80,
     "group": 4,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 400,
@@ -11287,7 +11287,7 @@
     "levelMax": 51,
     "group": 5,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11317,7 +11317,7 @@
     "levelMax": 53,
     "group": 5,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11347,7 +11347,7 @@
     "levelMax": 55,
     "group": 5,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11377,7 +11377,7 @@
     "levelMax": 57,
     "group": 5,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11407,7 +11407,7 @@
     "levelMax": 59,
     "group": 5,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11437,7 +11437,7 @@
     "levelMax": 61,
     "group": 6,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11467,7 +11467,7 @@
     "levelMax": 63,
     "group": 6,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11497,7 +11497,7 @@
     "levelMax": 65,
     "group": 6,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11527,7 +11527,7 @@
     "levelMax": 67,
     "group": 6,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11557,7 +11557,7 @@
     "levelMax": 69,
     "group": 6,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11587,7 +11587,7 @@
     "levelMax": 71,
     "group": 7,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11617,7 +11617,7 @@
     "levelMax": 73,
     "group": 7,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11647,7 +11647,7 @@
     "levelMax": 75,
     "group": 7,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11677,7 +11677,7 @@
     "levelMax": 77,
     "group": 7,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11707,7 +11707,7 @@
     "levelMax": 79,
     "group": 7,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11737,7 +11737,7 @@
     "levelMax": 80,
     "group": 7,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11767,7 +11767,7 @@
     "levelMax": 80,
     "group": 7,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11797,7 +11797,7 @@
     "levelMax": 80,
     "group": 7,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -11827,7 +11827,7 @@
     "levelMax": 51,
     "group": 5,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 400,
@@ -11857,7 +11857,7 @@
     "levelMax": 61,
     "group": 6,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 400,
@@ -11887,7 +11887,7 @@
     "levelMax": 71,
     "group": 7,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 400,
@@ -11917,7 +11917,7 @@
     "levelMax": 80,
     "group": 7,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 400,
@@ -12667,7 +12667,7 @@
     "levelMax": 81,
     "group": 62,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 286,
@@ -12697,7 +12697,7 @@
     "levelMax": 83,
     "group": 62,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 341,
@@ -12727,7 +12727,7 @@
     "levelMax": 85,
     "group": 62,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 368,
@@ -12757,7 +12757,7 @@
     "levelMax": 87,
     "group": 62,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 379,
@@ -12787,7 +12787,7 @@
     "levelMax": 89,
     "group": 62,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 390,
@@ -12817,7 +12817,7 @@
     "levelMax": 81,
     "group": 62,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 286,
@@ -12847,7 +12847,7 @@
     "levelMax": 83,
     "group": 62,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 341,
@@ -12877,7 +12877,7 @@
     "levelMax": 85,
     "group": 62,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 368,
@@ -12907,7 +12907,7 @@
     "levelMax": 87,
     "group": 62,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 379,
@@ -12937,7 +12937,7 @@
     "levelMax": 89,
     "group": 62,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 390,
@@ -12967,7 +12967,7 @@
     "levelMax": 81,
     "group": 62,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 286,
@@ -12997,7 +12997,7 @@
     "levelMax": 83,
     "group": 62,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 341,
@@ -13027,7 +13027,7 @@
     "levelMax": 85,
     "group": 62,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 368,
@@ -13057,7 +13057,7 @@
     "levelMax": 87,
     "group": 62,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 379,
@@ -13087,7 +13087,7 @@
     "levelMax": 89,
     "group": 62,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 390,
@@ -13117,7 +13117,7 @@
     "levelMax": 81,
     "group": 62,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 286,
@@ -13147,7 +13147,7 @@
     "levelMax": 83,
     "group": 62,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 341,
@@ -13177,7 +13177,7 @@
     "levelMax": 85,
     "group": 62,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 368,
@@ -13207,7 +13207,7 @@
     "levelMax": 87,
     "group": 62,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 379,
@@ -13237,7 +13237,7 @@
     "levelMax": 89,
     "group": 62,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 390,
@@ -13267,7 +13267,7 @@
     "levelMax": 81,
     "group": 62,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 286,
@@ -13297,7 +13297,7 @@
     "levelMax": 83,
     "group": 62,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 341,
@@ -13327,7 +13327,7 @@
     "levelMax": 85,
     "group": 62,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 368,
@@ -13357,7 +13357,7 @@
     "levelMax": 87,
     "group": 62,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 379,
@@ -13387,7 +13387,7 @@
     "levelMax": 89,
     "group": 62,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 390,
@@ -13417,7 +13417,7 @@
     "levelMax": 81,
     "group": 62,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 286,
@@ -13447,7 +13447,7 @@
     "levelMax": 83,
     "group": 62,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 341,
@@ -13477,7 +13477,7 @@
     "levelMax": 85,
     "group": 62,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 368,
@@ -13507,7 +13507,7 @@
     "levelMax": 87,
     "group": 62,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 379,
@@ -13537,7 +13537,7 @@
     "levelMax": 89,
     "group": 62,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 390,
@@ -13567,7 +13567,7 @@
     "levelMax": 81,
     "group": 62,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 286,
@@ -13597,7 +13597,7 @@
     "levelMax": 83,
     "group": 62,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 341,
@@ -13627,7 +13627,7 @@
     "levelMax": 85,
     "group": 62,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 368,
@@ -13657,7 +13657,7 @@
     "levelMax": 87,
     "group": 62,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 379,
@@ -13687,7 +13687,7 @@
     "levelMax": 89,
     "group": 62,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 390,
@@ -13717,7 +13717,7 @@
     "levelMax": 81,
     "group": 62,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 286,
@@ -13747,7 +13747,7 @@
     "levelMax": 83,
     "group": 62,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 341,
@@ -13777,7 +13777,7 @@
     "levelMax": 85,
     "group": 62,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 368,
@@ -13807,7 +13807,7 @@
     "levelMax": 87,
     "group": 62,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 379,
@@ -13837,7 +13837,7 @@
     "levelMax": 89,
     "group": 62,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 390,
@@ -13867,7 +13867,7 @@
     "levelMax": 81,
     "group": 62,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 400,
@@ -13897,7 +13897,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 400,
@@ -13927,7 +13927,7 @@
     "levelMax": 81,
     "group": 62,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -13957,7 +13957,7 @@
     "levelMax": 83,
     "group": 62,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -13987,7 +13987,7 @@
     "levelMax": 85,
     "group": 62,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -14017,7 +14017,7 @@
     "levelMax": 87,
     "group": 62,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -14047,7 +14047,7 @@
     "levelMax": 89,
     "group": 62,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -14077,7 +14077,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -14107,7 +14107,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -14137,7 +14137,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -14167,7 +14167,7 @@
     "levelMax": 81,
     "group": 62,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 400,
@@ -14197,7 +14197,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 400,
@@ -14227,7 +14227,7 @@
     "levelMax": 81,
     "group": 62,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -14257,7 +14257,7 @@
     "levelMax": 83,
     "group": 62,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -14287,7 +14287,7 @@
     "levelMax": 85,
     "group": 62,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -14317,7 +14317,7 @@
     "levelMax": 87,
     "group": 62,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -14347,7 +14347,7 @@
     "levelMax": 89,
     "group": 62,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -14377,7 +14377,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -14407,7 +14407,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -14437,7 +14437,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -15187,7 +15187,7 @@
     "levelMax": 81,
     "group": 62,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 18,
@@ -15217,7 +15217,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 398,
@@ -15247,7 +15247,7 @@
     "levelMax": 82,
     "group": 62,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 188,
@@ -15277,7 +15277,7 @@
     "levelMax": 84,
     "group": 62,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 217,
@@ -15307,7 +15307,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 417,
@@ -15337,7 +15337,7 @@
     "levelMax": 86,
     "group": 62,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 211,
@@ -15367,7 +15367,7 @@
     "levelMax": 88,
     "group": 62,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 385,
@@ -15397,7 +15397,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 1055,
@@ -15427,7 +15427,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 1181,
@@ -15457,7 +15457,7 @@
     "levelMax": 86,
     "group": 62,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 244,
@@ -15487,7 +15487,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 501,
@@ -15517,7 +15517,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 433,
@@ -15547,7 +15547,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 330,
@@ -15577,7 +15577,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 1181,
@@ -15607,7 +15607,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 33,
@@ -15637,7 +15637,7 @@
     "levelMax": 89,
     "group": 62,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 423,
@@ -15667,7 +15667,7 @@
     "levelMax": 83,
     "group": 62,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 181,
@@ -15697,7 +15697,7 @@
     "levelMax": 85,
     "group": 62,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 31,
@@ -15727,7 +15727,7 @@
     "levelMax": 84,
     "group": 62,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 400,
@@ -15757,7 +15757,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 425,
@@ -15787,7 +15787,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 396,
@@ -15817,7 +15817,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 396,
@@ -15847,7 +15847,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 396,
@@ -15877,7 +15877,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 396,
@@ -15907,7 +15907,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 396,
@@ -15937,7 +15937,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 396,
@@ -15967,7 +15967,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 396,
@@ -15997,7 +15997,7 @@
     "levelMax": 90,
     "group": 62,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 396,
@@ -18187,7 +18187,7 @@
     "levelMax": 91,
     "group": 74,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 135,
@@ -18217,7 +18217,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 14,
-    "reward": 33914,
+    "reward": 41785,
     "base": {
       "quantity": 1,
       "rating": 70,
@@ -18247,7 +18247,7 @@
     "levelMax": 92,
     "group": 74,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 151,
@@ -18277,7 +18277,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 14,
-    "reward": 33914,
+    "reward": 41785,
     "base": {
       "quantity": 1,
       "rating": 348,
@@ -18307,7 +18307,7 @@
     "levelMax": 94,
     "group": 74,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 503,
@@ -18337,7 +18337,7 @@
     "levelMax": 96,
     "group": 74,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 480,
@@ -18367,7 +18367,7 @@
     "levelMax": 96,
     "group": 74,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 56,
@@ -18397,7 +18397,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 14,
-    "reward": 33914,
+    "reward": 41785,
     "base": {
       "quantity": 1,
       "rating": 491,
@@ -18427,7 +18427,7 @@
     "levelMax": 98,
     "group": 74,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 508,
@@ -18457,7 +18457,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 14,
-    "reward": 33914,
+    "reward": 41785,
     "base": {
       "quantity": 1,
       "rating": 469,
@@ -18487,7 +18487,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 14,
-    "reward": 33914,
+    "reward": 41785,
     "base": {
       "quantity": 1,
       "rating": 89,
@@ -18517,7 +18517,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 14,
-    "reward": 33914,
+    "reward": 41785,
     "base": {
       "quantity": 1,
       "rating": 440,
@@ -18547,7 +18547,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 14,
-    "reward": 33914,
+    "reward": 41785,
     "base": {
       "quantity": 1,
       "rating": 1078,
@@ -18577,7 +18577,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 14,
-    "reward": 33914,
+    "reward": 41785,
     "base": {
       "quantity": 1,
       "rating": 1141,
@@ -18607,7 +18607,7 @@
     "levelMax": 95,
     "group": 74,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 182,
@@ -18637,7 +18637,7 @@
     "levelMax": 93,
     "group": 74,
     "shopId": 14,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 401,
@@ -18667,7 +18667,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 14,
-    "reward": 33914,
+    "reward": 41785,
     "base": {
       "quantity": 1,
       "rating": 21,
@@ -18697,7 +18697,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 14,
-    "reward": 33914,
+    "reward": 41785,
     "base": {
       "quantity": 1,
       "rating": 425,
@@ -18727,7 +18727,7 @@
     "levelMax": 91,
     "group": 74,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 400,
@@ -18757,7 +18757,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 31,
-    "reward": 33914,
+    "reward": 41785,
     "base": {
       "quantity": 1,
       "rating": 400,
@@ -18787,7 +18787,7 @@
     "levelMax": 93,
     "group": 74,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -18817,7 +18817,7 @@
     "levelMax": 96,
     "group": 74,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -18847,7 +18847,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 31,
-    "reward": 33914,
+    "reward": 41785,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -18877,7 +18877,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 31,
-    "reward": 33914,
+    "reward": 41785,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -18907,7 +18907,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 31,
-    "reward": 33914,
+    "reward": 41785,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -18937,7 +18937,7 @@
     "levelMax": 91,
     "group": 74,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 400,
@@ -18967,7 +18967,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 32,
-    "reward": 33914,
+    "reward": 41785,
     "base": {
       "quantity": 1,
       "rating": 400,
@@ -18997,7 +18997,7 @@
     "levelMax": 93,
     "group": 74,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -19027,7 +19027,7 @@
     "levelMax": 96,
     "group": 74,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -19057,7 +19057,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 32,
-    "reward": 33914,
+    "reward": 41785,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -19087,7 +19087,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 32,
-    "reward": 33914,
+    "reward": 41785,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -19117,7 +19117,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 32,
-    "reward": 33914,
+    "reward": 41785,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -19147,7 +19147,7 @@
     "levelMax": 91,
     "group": 74,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 451,
@@ -19177,7 +19177,7 @@
     "levelMax": 93,
     "group": 74,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 495,
@@ -19207,7 +19207,7 @@
     "levelMax": 95,
     "group": 74,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 539,
@@ -19237,7 +19237,7 @@
     "levelMax": 97,
     "group": 74,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 583,
@@ -19267,7 +19267,7 @@
     "levelMax": 99,
     "group": 74,
     "shopId": 23,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 627,
@@ -19297,7 +19297,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 23,
-    "reward": 33913,
+    "reward": 41784,
     "base": {
       "quantity": 1,
       "rating": 660,
@@ -19327,7 +19327,7 @@
     "levelMax": 91,
     "group": 74,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 451,
@@ -19357,7 +19357,7 @@
     "levelMax": 93,
     "group": 74,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 495,
@@ -19387,7 +19387,7 @@
     "levelMax": 95,
     "group": 74,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 539,
@@ -19417,7 +19417,7 @@
     "levelMax": 97,
     "group": 74,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 583,
@@ -19447,7 +19447,7 @@
     "levelMax": 99,
     "group": 74,
     "shopId": 24,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 627,
@@ -19477,7 +19477,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 24,
-    "reward": 33913,
+    "reward": 41784,
     "base": {
       "quantity": 1,
       "rating": 660,
@@ -19507,7 +19507,7 @@
     "levelMax": 91,
     "group": 74,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 451,
@@ -19537,7 +19537,7 @@
     "levelMax": 93,
     "group": 74,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 495,
@@ -19567,7 +19567,7 @@
     "levelMax": 95,
     "group": 74,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 539,
@@ -19597,7 +19597,7 @@
     "levelMax": 97,
     "group": 74,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 583,
@@ -19627,7 +19627,7 @@
     "levelMax": 99,
     "group": 74,
     "shopId": 25,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 627,
@@ -19657,7 +19657,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 25,
-    "reward": 33913,
+    "reward": 41784,
     "base": {
       "quantity": 1,
       "rating": 660,
@@ -19687,7 +19687,7 @@
     "levelMax": 91,
     "group": 74,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 451,
@@ -19717,7 +19717,7 @@
     "levelMax": 93,
     "group": 74,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 495,
@@ -19747,7 +19747,7 @@
     "levelMax": 95,
     "group": 74,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 539,
@@ -19777,7 +19777,7 @@
     "levelMax": 97,
     "group": 74,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 583,
@@ -19807,7 +19807,7 @@
     "levelMax": 99,
     "group": 74,
     "shopId": 26,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 627,
@@ -19837,7 +19837,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 26,
-    "reward": 33913,
+    "reward": 41784,
     "base": {
       "quantity": 1,
       "rating": 660,
@@ -19867,7 +19867,7 @@
     "levelMax": 91,
     "group": 74,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 451,
@@ -19897,7 +19897,7 @@
     "levelMax": 93,
     "group": 74,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 495,
@@ -19927,7 +19927,7 @@
     "levelMax": 95,
     "group": 74,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 539,
@@ -19957,7 +19957,7 @@
     "levelMax": 97,
     "group": 74,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 583,
@@ -19987,7 +19987,7 @@
     "levelMax": 99,
     "group": 74,
     "shopId": 27,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 627,
@@ -20017,7 +20017,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 27,
-    "reward": 33913,
+    "reward": 41784,
     "base": {
       "quantity": 1,
       "rating": 660,
@@ -20047,7 +20047,7 @@
     "levelMax": 91,
     "group": 74,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 451,
@@ -20077,7 +20077,7 @@
     "levelMax": 93,
     "group": 74,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 495,
@@ -20107,7 +20107,7 @@
     "levelMax": 95,
     "group": 74,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 539,
@@ -20137,7 +20137,7 @@
     "levelMax": 97,
     "group": 74,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 583,
@@ -20167,7 +20167,7 @@
     "levelMax": 99,
     "group": 74,
     "shopId": 28,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 627,
@@ -20197,7 +20197,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 28,
-    "reward": 33913,
+    "reward": 41784,
     "base": {
       "quantity": 1,
       "rating": 660,
@@ -20227,7 +20227,7 @@
     "levelMax": 91,
     "group": 74,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 451,
@@ -20257,7 +20257,7 @@
     "levelMax": 93,
     "group": 74,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 495,
@@ -20287,7 +20287,7 @@
     "levelMax": 95,
     "group": 74,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 539,
@@ -20317,7 +20317,7 @@
     "levelMax": 97,
     "group": 74,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 583,
@@ -20347,7 +20347,7 @@
     "levelMax": 99,
     "group": 74,
     "shopId": 29,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 627,
@@ -20377,7 +20377,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 29,
-    "reward": 33913,
+    "reward": 41784,
     "base": {
       "quantity": 1,
       "rating": 660,
@@ -20407,7 +20407,7 @@
     "levelMax": 91,
     "group": 74,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 451,
@@ -20437,7 +20437,7 @@
     "levelMax": 93,
     "group": 74,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 495,
@@ -20467,7 +20467,7 @@
     "levelMax": 95,
     "group": 74,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 539,
@@ -20497,7 +20497,7 @@
     "levelMax": 97,
     "group": 74,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 583,
@@ -20527,7 +20527,7 @@
     "levelMax": 99,
     "group": 74,
     "shopId": 30,
-    "reward": 25199,
+    "reward": 33913,
     "base": {
       "quantity": 1,
       "rating": 627,
@@ -20557,7 +20557,7 @@
     "levelMax": 100,
     "group": 74,
     "shopId": 30,
-    "reward": 33913,
+    "reward": 41784,
     "base": {
       "quantity": 1,
       "rating": 660,
@@ -20587,7 +20587,7 @@
     "levelMax": 98,
     "group": 74,
     "shopId": 31,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
@@ -20617,7 +20617,7 @@
     "levelMax": 98,
     "group": 74,
     "shopId": 32,
-    "reward": 25200,
+    "reward": 33914,
     "base": {
       "quantity": 1,
       "rating": 600,
