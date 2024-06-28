@@ -1,7 +1,7 @@
 import { DataReporter } from './data-reporter';
 import { BehaviorSubject, combineLatest, merge, Observable, Subject } from 'rxjs';
 import { ofMessageType } from '../rxjs/of-message-type';
-import { delay, distinctUntilChanged, filter, map, mapTo, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { delay, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { IpcService } from '../electron/ipc.service';
@@ -120,8 +120,10 @@ export class FishingReporter implements DataReporter {
       });
     });
 
-    const throw$ = eventPlay$.pipe(
-      filter(packet => packet.scene === 1),
+    const throw$ = packets$.pipe(
+      ofMessageType('eventPlay4'),
+      toIpcData(),
+      filter(packet => packet.eventId === 0x150001 && packet.scene === 1),
       delay(200),
       withLatestFrom(
         this.eorzea.statuses$,
@@ -136,8 +138,9 @@ export class FishingReporter implements DataReporter {
           weatherId,
           previousWeatherId
         };
-      })
+      }),
     );
+
 
     const bite$ = eventPlay$.pipe(
       filter(packet => packet.scene === 5),
@@ -220,7 +223,7 @@ export class FishingReporter implements DataReporter {
 
     const playerStats$ = merge(
       packets$.pipe(ofMessageType('playerStats'), toIpcData()),
-      packets$.pipe(ofMessageType('logout'), mapTo(null))
+      packets$.pipe(ofMessageType('logout'), map(() => null))
     );
 
     const fisherStats$ = combineLatest([
