@@ -292,7 +292,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
                 type: partial.type,
                 gatheringType: partial.gatheringType,
                 monster: partial.monster,
-                fnalItem: this.finalItems || item.finalItem || false
+                finalItem: this.finalItems || item.finalItem || false
               };
             }
             return undefined;

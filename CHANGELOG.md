@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.2.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.2.0...v11.2.1) (2024-06-28)
+
+
+### Bug Fixes
+
+* **db:** fix scrips, collectables, leves and shops ([f282442](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f28244285761a71953248febc0b8331d3fe0f02f))
+* **desktop:** packet capture Dawntrail support ([f43cd13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f43cd134d8b964f4aaa73d64715e206c09f60ec3))
+* **gearset:** XI and XII materias can now be meld ([eda6d64](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eda6d64cf3a560ae5a79c6dce6e40724318e389e))
+* **list:** checking final items as done in navigation popup now works ([6650e98](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6650e981d219778e83dd2bda90126bc52696833e))
+
 ## [11.2.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.1.3...v11.2.0) (2024-06-28)
 
 

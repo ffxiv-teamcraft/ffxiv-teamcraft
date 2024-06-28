@@ -193,10 +193,12 @@ export class MateriasPopupComponent extends DialogComponent {
           case 5:
           case 7:
           case 9:
+          case 11:
             return meldingChances * 10;
           case 6:
           case 8:
           case 10:
+          case 12:
             return meldingChances * 30;
         }
       }),

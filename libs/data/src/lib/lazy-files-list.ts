@@ -77,7 +77,7 @@ export const lazyFilesList = {
   },
   'collectablesPageData': {
     'fileName': 'collectables-page-data.json',
-    'hashedFileName': 'collectables-page-data.57aedd26263534358eaceddef2da6c6696f6aba6.json'
+    'hashedFileName': 'collectables-page-data.f7e98d393e823796f7f4bb558b9d0d9209caafcd.json'
   },
   'collectablesShopItemGroup': {
     'fileName': 'collectables-shop-item-group.json',
@@ -89,7 +89,7 @@ export const lazyFilesList = {
   },
   'collectables': {
     'fileName': 'collectables.json',
-    'hashedFileName': 'collectables.6e6dd98bed02df71159dc0cdfae3bd8dad49bce7.json'
+    'hashedFileName': 'collectables.853eb073ab8d887887c8617bd1c9cbb7559a5e15.json'
   },
   'contentType': {
     'fileName': 'content-type.json',
@@ -545,7 +545,7 @@ export const lazyFilesList = {
   },
   'scripIndex': {
     'fileName': 'scrip-index.json',
-    'hashedFileName': 'scrip-index.00c9d45c2abc1bd7fcf2064df57a4308a5f4bfd0.json'
+    'hashedFileName': 'scrip-index.5c6aa2afd9349b9213710e30db5b26fb2612d18b.json'
   },
   'searchCategory': {
     'fileName': 'search-category.json',
@@ -561,11 +561,11 @@ export const lazyFilesList = {
   },
   'shopsByNpc': {
     'fileName': 'shops-by-npc.json',
-    'hashedFileName': 'shops-by-npc.118904fc238947d6d8e7ae95a75fc0270d9511d5.json'
+    'hashedFileName': 'shops-by-npc.0c8da69d62999268d4987988889e2d653eb8c19b.json'
   },
   'shops': {
     'fileName': 'shops.json',
-    'hashedFileName': 'shops.bcf236df5de5e544d5438c3ca4fe696fe1e6d5f7.json'
+    'hashedFileName': 'shops.ff87cb35accdd3a477ee1a51980f6a9ecfab27e7.json'
   },
   'spearFishingFish': {
     'fileName': 'spear-fishing-fish.json',
@@ -685,11 +685,11 @@ export const lazyFilesList = {
   },
   'itemsDatabasePages': {
     'fileName': 'db/items-database-pages.json',
-    'hashedFileName': 'db/items-database-pages.e797ee4a8877768fe029fb16a0e715914c96b26b.json'
+    'hashedFileName': 'db/items-database-pages.309105b3f74f18d22465708f896776883711b5d6.json'
   },
   'levesDatabasePages': {
     'fileName': 'db/leves-database-pages.json',
-    'hashedFileName': 'db/leves-database-pages.4035c77f640c1cec6e5e6e952209ae55e1c61757.json'
+    'hashedFileName': 'db/leves-database-pages.1a04eb59ce1505c76f13d4976ced3c74ad6a4e4a.json'
   },
   'mobsDatabasePages': {
     'fileName': 'db/mobs-database-pages.json',
@@ -701,15 +701,15 @@ export const lazyFilesList = {
   },
   'npcsDatabasePages': {
     'fileName': 'db/npcs-database-pages.json',
-    'hashedFileName': 'db/npcs-database-pages.87df15a91b99c89fa01dd56c58f632fa4b3e2e27.json'
+    'hashedFileName': 'db/npcs-database-pages.fcdd3334a496f4dc2906c46abd5586af135c86d0.json'
   },
   'questsDatabasePages': {
     'fileName': 'db/quests-database-pages.json',
-    'hashedFileName': 'db/quests-database-pages.232882f642af8ab3eb0d3776d5a8fb8c041bf96d.json'
+    'hashedFileName': 'db/quests-database-pages.fed56aaaff4c0234a561e043d5a52351aa863268.json'
   },
   'questsText': {
     'fileName': 'db/quests-text.index',
-    'hashedFileName': 'db/quests-text.ec7419af097decf909a521ef7a6a364535e8fd98.index'
+    'hashedFileName': 'db/quests-text.fd08f5b013d4abbbba15df268640172b573aaaa1.index'
   },
   'statusesDatabasePages': {
     'fileName': 'db/statuses-database-pages.json',

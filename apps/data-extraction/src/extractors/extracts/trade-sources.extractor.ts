@@ -69,7 +69,8 @@ export class TradeSourcesExtractor extends AbstractItemDetailsExtractor<TradeSou
       const npc = {
         2: 1045080,
         3: 1027566, // Limbeth
-        4: 1045080 // Quinnana
+        4: 1045080, // Quinnana
+        5: 1045080 // Quinnana
       }[expansion];
       return [{
         type: 'CollectableReward',
