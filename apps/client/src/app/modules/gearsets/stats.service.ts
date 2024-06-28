@@ -11,7 +11,6 @@ import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
 import { LazyItemStat } from '@ffxiv-teamcraft/data/model/lazy-item-stat';
 import { LazyItemSetBonus } from '@ffxiv-teamcraft/data/model/lazy-item-set-bonus';
 import { LazyMateria } from '@ffxiv-teamcraft/data/model/lazy-materia';
-import { Memoized } from '../../core/decorators/memoized';
 
 @Injectable({
   providedIn: 'root'
@@ -103,6 +102,17 @@ export class StatsService {
     [330, 376, 3034, 1930, 295, 466],
     [340, 380, 3164, 2000, 295, 466],
     // Placeholder values for 6.0
+    [345, 382, 1900, 2100, 569, 569],
+    [350, 384, 1900, 2200, 569, 569],
+    [355, 386, 1900, 2300, 569, 569],
+    [360, 388, 1900, 2400, 569, 569],
+    [365, 390, 1900, 2500, 569, 569],
+    [370, 392, 1900, 2600, 569, 569],
+    [375, 394, 1900, 2700, 569, 569],
+    [380, 396, 1900, 2800, 569, 569],
+    [385, 398, 1900, 2900, 569, 569],
+    [390, 400, 1900, 3000, 569, 569],
+    // Placeholder values for 7.0 lmao
     [345, 382, 1900, 2100, 569, 569],
     [350, 384, 1900, 2200, 569, 569],
     [355, 386, 1900, 2300, 569, 569],

@@ -12,48 +12,52 @@
           } @else {
             <i nz-icon nzType="stop" nzTheme="outline"></i>
           }
-          <div>{{materia > 0 ? (getMeldingChances(materia, i) | async) : ' - '}}%</div>
+          <div>{{ materia > 0 ? (getMeldingChances(materia, i) | async) : ' - ' }}%</div>
         </div>
         @if (materia > 0 && mobileEdit !== i) {
           <div fxLayout="column">
             <div fxLayout="row" fxLayoutGap="5px">
-              <div><app-i18n-name [id]="materia" content="items"></app-i18n-name></div>
+              <div>
+                <app-i18n-name [id]="materia" content="items"></app-i18n-name>
+              </div>
               @if (true | ifMobile: false) {
                 <button nz-button nz-dropdown [nzDropdownMenu]="menu" nzTrigger="click"
-                  nzShape="circle" nzSize="small">
+                        nzShape="circle" nzSize="small">
                   <i nz-icon nzType="edit" nzTheme="outline"></i>
                 </button>
               }
               @if (false | ifMobile: true) {
                 <button nz-button
-                  (click)="mobileEdit = i"
-                  nzShape="circle" nzSize="small">
+                        (click)="mobileEdit = i"
+                        nzShape="circle" nzSize="small">
                   <i nz-icon nzType="edit" nzTheme="outline"></i>
                 </button>
               }
             </div>
             <div>
-              {{(materiasService.getMateria(materia) | async)?.baseParamId | i18nRow:'baseParams' | i18n}}
+              {{ (materiasService.getMateria(materia) | async)?.baseParamId | i18nRow:'baseParams' | i18n }}
               @if (getBonus(materia, i) | async; as bonus) {
-                <span [class.overcapped]="bonus.overcapped">+{{bonus.value}}</span>
+                <span [class.overcapped]="bonus.overcapped">+{{ bonus.value }}</span>
               }
             </div>
           </div>
         } @else {
           @if (true | ifMobile: false) {
             <button nz-button nz-dropdown [nzDropdownMenu]="menu" nzTrigger="click"
-            [nzDisabled]="i > 0 && equipmentPiece.materias[i - 1] === 0">{{'GEARSETS.Add_materia' | translate}}</button>
+                    [nzDisabled]="i > 0 && equipmentPiece.materias[i - 1] === 0">{{ 'GEARSETS.Add_materia' | translate }}
+            </button>
           }
           @if (false | ifMobile: true) {
             <nz-select [ngModel]="equipmentPiece.materias[i]" (ngModelChange)="setMateria(i, $event); mobileEdit = -1"
-              nzShowSearch [nzPlaceHolder]="'GEARSETS.Add_materia' | translate" [style.width.px]="200">
+                       nzShowSearch [nzPlaceHolder]="'GEARSETS.Add_materia' | translate" [style.width.px]="200">
               @for (row of materiaMenu$ | async; track row) {
                 <nz-option-group [nzLabel]="row.baseParamId | i18nRow:'baseParams' | i18n">
                   @for (materia of row.materias; track materia) {
                     <nz-option [nzValue]="materia" [nzLabel]="materia | itemName | i18n" nzCustomContent>
-                      <app-i18n-name [id]="materia" content="items"></app-i18n-name> (@if (getBonus(materia, i) | async; as bonus) {
-                      <span [class.overcapped]="bonus.overcapped">+{{bonus.value}}</span>
-                      })
+                      <app-i18n-name [id]="materia" content="items"></app-i18n-name>
+                      (@if (getBonus(materia, i) | async; as bonus) {
+                      <span [class.overcapped]="bonus.overcapped">+{{ bonus.value }}</span>
+                    })
                     </nz-option>
                   }
                 </nz-option-group>
@@ -63,20 +67,23 @@
         }
         <nz-dropdown-menu #menu="nzDropdownMenu">
           <ul nz-menu>
-            <li nz-menu-item (click)="resetMaterias(i)">{{'GEARSETS.No_materia' | translate}}</li>
+            <li nz-menu-item (click)="resetMaterias(i)">{{ 'GEARSETS.No_materia' | translate }}</li>
             @for (row of materiaMenu$ | async; track row) {
               <li nz-submenu [nzTitle]="row.baseParamId | i18nRow:'baseParams' | i18n">
                 <ul>
                   @for (materia of row.materias; track materia) {
-                    <li nz-menu-item
-                      (click)="setMateria(i, materia)"
-                      [nzDisabled]="getMeldingChances(materia, i) === 0"
-                      [nzSelected]="equipmentPiece.materias[i] === materia"
+                    @if (materia > 0) {
+                      <li nz-menu-item
+                          (click)="setMateria(i, materia)"
+                          [nzDisabled]="(getMeldingChances(materia, i) | async) === 0"
+                          [nzSelected]="equipmentPiece.materias[i] === materia"
                       >
-                      <app-i18n-name [id]="materia" content="items"></app-i18n-name> (@if (getBonus(materia, i) | async; as bonus) {
-                      <span [class.overcapped]="bonus.overcapped">+{{bonus.value}}</span>
+                        <app-i18n-name [id]="materia" content="items"></app-i18n-name>
+                        (@if (getBonus(materia, i) | async; as bonus) {
+                        <span [class.overcapped]="bonus.overcapped">+{{ bonus.value }}</span>
                       })
-                    </li>
+                      </li>
+                    }
                   }
                 </ul>
               </li>
@@ -88,13 +95,13 @@
   </div>
   <nz-divider></nz-divider>
   <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="10px">
-    <button nz-button nzType="primary" (click)="optimize()">{{'GEARSETS.Optimize_materias' | translate}}</button>
+    <button nz-button nzType="primary" (click)="optimize()">{{ 'GEARSETS.Optimize_materias' | translate }}</button>
     <div fxFlex="1 1 auto"></div>
     <div>
-      <button nz-button nzType="primary" (click)="apply()">{{'COMMON.Apply' | translate}}</button>
+      <button nz-button nzType="primary" (click)="apply()">{{ 'COMMON.Apply' | translate }}</button>
     </div>
     <div>
-      <button nz-button nzType="default" (click)="cancel()">{{'Cancel' | translate}}</button>
+      <button nz-button nzType="default" (click)="cancel()">{{ 'Cancel' | translate }}</button>
     </div>
   </div>
 </div>
