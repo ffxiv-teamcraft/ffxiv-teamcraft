@@ -275,7 +275,7 @@ interface FishWeatherResult {
 @Injectable()
 export class WeathersPerFishPerSpotQuery extends Query<FishWeatherResult, FishIdSpotIdWeathersVariable> {
   public document = gql`
-    query WeathersPerFishPerSpotQuery($fishId: Int, $spotId: Int, $weatherIds: [Int]) {
+    query WeathersPerFishPerSpotQuery($fishId: Int, $spotId: Int, $weatherIds: [Int!]) {
       weathers: weathers_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, occurences: { _gt: 1 }, weatherId: {_in: $weatherIds} }) {
         itemId
         spot

@@ -82,6 +82,13 @@ export class LogsExtractor extends AbstractExtractor {
                   [2028, 2029, -1, 2031], // Sea of Stars
                   [2033, 2032, 2034, -1]  // World Sundered
                 ][row.index - 2010][index] || -1;
+              } else if (row.index >= 2037 && row.index <= 2047) {
+                // TODO DT folklore log pages
+                return [
+                  // Quarrying, Mining, Logging, Harvesting
+                  [2040, 2024, 2040, 2027], // Xak Tural
+                  [2044, 2029, 2044, 2031], // Yok Tural
+                ][row.index - 2010][index] || -1;
               } else if ([2006, 2007, 2008, 2009].includes(row.index)) {
                 return -1;
               } else {
@@ -107,7 +114,7 @@ export class LogsExtractor extends AbstractExtractor {
     this.getSheet<any>(this.xiv, 'RecipeNotebookList', ['Recipe.CraftType', 'Recipe.SecretRecipeBook', 'Recipe.RecipeLevelTable', 'Recipe.ItemResult'], true, 1).subscribe((completeFetch) => {
       completeFetch.forEach(page => {
         // If it's an empty page or a collectable one, don't go further
-        if (!page.Recipe[0] || page.Recipe[0]?.index <= 0 || (page.index >= 1256 && page.index < 1280)) {
+        if (!page.Recipe[0] || page.Recipe[0]?.index <= 0 || (page.index >= 1256 && page.index < 1280) || (page.index >= 1456 && page.index <= 1463)) {
           return;
         }
         page.Recipe.forEach((recipe) => {

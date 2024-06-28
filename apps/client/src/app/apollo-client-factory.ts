@@ -6,7 +6,8 @@ import { filter, firstValueFrom } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export function apolloClientFactory(httpLink: HttpLink, authFacade: AuthFacade) {
-  const httpL = httpLink.create({ uri: 'https://gubal.ffxivteamcraft.com/v1/graphql' });
+  // TODO Mesh: 'https://us-central1-ffxivteamcraft.cloudfunctions.net/graphql'
+  const httpL = httpLink.create({ uri: 'https://us-central1-ffxivteamcraft.cloudfunctions.net/graphql' });
 
   const httpAuth = setContext((operation, context) => {
     return firstValueFrom(authFacade.idToken$.pipe(
