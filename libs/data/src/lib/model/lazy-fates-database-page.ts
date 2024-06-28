@@ -9,12 +9,7 @@ export interface LazyFatesDatabasePage {
   ja:          string;
   lvl:         number;
   lvlMax:      number;
-  map?:        number;
   patch:       number;
-  x?:          number;
-  y?:          number;
-  z?:          number;
-  zoneid?:     number;
 }
 
 export interface Description {

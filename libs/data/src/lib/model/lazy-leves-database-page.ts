@@ -1,53 +1,30 @@
 export interface LazyLevesDatabasePage {
-  battleItems?: BattleItem[];
-  cost:         number;
-  de:           string;
-  description:  Description;
-  en:           string;
-  enemies?:     Enemy[];
-  exp:          number;
-  fr:           string;
-  genre:        number;
-  gil:          number;
-  icon:         string;
-  id:           number;
-  items?:       Item[];
-  ja:           string;
-  ko?:          string;
-  level:        number;
-  npcs:         Npc[];
-  repeats:      number;
-  rewards:      any[];
-  zh?:          string;
-}
-
-export interface BattleItem {
-  amount:   number;
-  dropRate: number;
-  icon:     string;
-  id:       number;
-  name:     Description;
+  cost:        number;
+  de:          string;
+  description: Description;
+  en:          string;
+  exp:         number;
+  fr:          string;
+  genre:       number;
+  gil:         number;
+  icon:        string;
+  id:          number;
+  ja:          string;
+  ko?:         string;
+  level:       number;
+  npcs:        Npc[];
+  repeats:     number;
+  rewards:     any[];
+  zh?:         string;
 }
 
 export interface Description {
-  de:    string;
-  en:    string;
-  fr:    string;
-  icon?: string;
-  id?:   string;
-  ja:    string;
-  ko?:   string;
-  zh?:   string;
-}
-
-export interface Enemy {
-  id:    number;
-  level: number;
-}
-
-export interface Item {
-  amount: number;
-  id:     number;
+  de:  string;
+  en:  string;
+  fr:  string;
+  ja:  string;
+  ko?: string;
+  zh?: string;
 }
 
 export interface Npc {

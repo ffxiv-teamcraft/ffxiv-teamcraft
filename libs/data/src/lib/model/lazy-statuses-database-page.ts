@@ -10,7 +10,7 @@ export interface LazyStatusesDatabasePage {
   ko?:          string;
   lockActions:  boolean;
   lockControl:  boolean;
-  lockMovement: boolean;
+  lockMovement: number;
   patch:        number;
   stacks:       number;
   zh?:          string;

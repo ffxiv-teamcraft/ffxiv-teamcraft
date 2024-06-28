@@ -19,9 +19,7 @@ export interface LazyItemsDatabasePage {
   icon?:              string;
   id:                 number;
   ilvl?:              number;
-  ingameDrawing?:     string;
   ingredientFor?:     IngredientFor[];
-  isFish?:            boolean;
   jobs?:              Job[];
   level?:             number;
   loots?:             string[];
@@ -44,8 +42,7 @@ export interface LazyItemsDatabasePage {
   supply?:            Supply;
   trade?:             boolean;
   tradeEntries?:      TradeEntry[];
-  unique?:            boolean | number;
-  usedForLeves?:      UsedForLeve[];
+  unique?:            number;
   usedInQuests?:      number[];
 }
 
@@ -142,6 +139,8 @@ export enum Job {
   Sge = "SGE",
   Smn = "SMN",
   Thm = "THM",
+  Unknown1 = "Unknown1",
+  Unknown2 = "Unknown2",
   War = "WAR",
   Whm = "WHM",
   Wvr = "WVR",
@@ -201,11 +200,4 @@ export enum TradeEntryType {
   GCShop = "GCShop",
   GilShop = "GilShop",
   SpecialShop = "SpecialShop",
-}
-
-export interface UsedForLeve {
-  amount:   number;
-  classJob: number;
-  leve:     number;
-  lvl:      number;
 }

@@ -22,7 +22,6 @@ export interface LazyRecipe {
   result:                  number;
   rlvl?:                   number;
   stars?:                  number;
-  suggestedControl?:       number;
   suggestedCraftsmanship?: number;
   yields:                  number;
 }

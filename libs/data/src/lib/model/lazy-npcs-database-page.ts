@@ -2,25 +2,15 @@ export interface LazyNpcsDatabasePage {
   de:           string;
   defaultTalks: Array<string[]>;
   en:           string;
-  festival?:    number;
   fr:           string;
   id:           string;
   ja:           string;
   ko?:          string;
   levemetes?:   number[];
   patch:        number;
-  position?:    Position;
   quests:       Quest[];
   title:        Title;
   zh?:          string;
-}
-
-export interface Position {
-  map:    number;
-  x:      number;
-  y:      number;
-  z:      number | null;
-  zoneid: number;
 }
 
 export interface Quest {
@@ -141,6 +131,7 @@ export interface Title {
 
 export enum Ja {
   Achievement = "ACHIEVEMENT",
+  AlpacaPorter = "ALPACA PORTER",
   AmaroPorter = "AMARO PORTER",
   Blunderville = "BLUNDERVILLE",
   Cactpot = "CACTPOT",
@@ -204,8 +195,10 @@ export enum Ja {
   TheMaskedCarnivale = "THE MASKED CARNIVALE",
   TotalTrade = "TOTAL TRADE",
   Trade = "TRADE",
+  Training = "TRAINING",
   Transportation = "TRANSPORTATION",
   TripleTriad = "TRIPLE TRIAD",
+  Turalileves = "TURALILEVES",
   VariantDungeon = "VARIANT DUNGEON",
   Weather = "WEATHER",
   Workshop = "WORKSHOP",
