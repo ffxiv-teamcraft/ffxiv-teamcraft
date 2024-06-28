@@ -21,11 +21,6 @@
         <lastmod>2024-06-02T14:33:09.125Z</lastmod>
     </url>
     <url>
-        <loc>https://ffxivteamcraft.com/list</loc>
-        <priority>0.80</priority>
-        <lastmod>2024-06-02T14:33:09.125Z</lastmod>
-    </url>
-    <url>
         <loc>https://ffxivteamcraft.com/list-aggregate</loc>
         <priority>0.80</priority>
         <lastmod>2024-06-02T14:33:09.125Z</lastmod>
@@ -121,16 +116,6 @@
         <lastmod>2024-06-02T14:33:09.125Z</lastmod>
     </url>
     <url>
-        <loc>https://ffxivteamcraft.com/commission</loc>
-        <priority>0.80</priority>
-        <lastmod>2024-06-02T14:33:09.125Z</lastmod>
-    </url>
-    <url>
-        <loc>https://ffxivteamcraft.com/commissions</loc>
-        <priority>0.80</priority>
-        <lastmod>2024-06-02T14:33:09.125Z</lastmod>
-    </url>
-    <url>
         <loc>https://ffxivteamcraft.com/teams</loc>
         <priority>0.80</priority>
         <lastmod>2024-06-02T14:33:09.125Z</lastmod>
@@ -162,26 +147,6 @@
     </url>
     <url>
         <loc>https://ffxivteamcraft.com/about</loc>
-        <priority>0.80</priority>
-        <lastmod>2024-06-02T14:33:09.125Z</lastmod>
-    </url>
-    <url>
-        <loc>https://ffxivteamcraft.com/import</loc>
-        <priority>0.80</priority>
-        <lastmod>2024-06-02T14:33:09.125Z</lastmod>
-    </url>
-    <url>
-        <loc>https://ffxivteamcraft.com/patreon-redirect</loc>
-        <priority>0.80</priority>
-        <lastmod>2024-06-02T14:33:09.125Z</lastmod>
-    </url>
-    <url>
-        <loc>https://ffxivteamcraft.com/tipeee-redirect</loc>
-        <priority>0.80</priority>
-        <lastmod>2024-06-02T14:33:09.125Z</lastmod>
-    </url>
-    <url>
-        <loc>https://ffxivteamcraft.com/list-import/:importString</loc>
         <priority>0.80</priority>
         <lastmod>2024-06-02T14:33:09.125Z</lastmod>
     </url>
@@ -221,11 +186,6 @@
         <lastmod>2024-06-02T14:33:09.125Z</lastmod>
     </url>
     <url>
-        <loc>https://ffxivteamcraft.com/db</loc>
-        <priority>0.80</priority>
-        <lastmod>2024-06-02T14:33:09.125Z</lastmod>
-    </url>
-    <url>
         <loc>https://ffxivteamcraft.com/recipe-finder</loc>
         <priority>0.80</priority>
         <lastmod>2024-06-02T14:33:09.125Z</lastmod>
@@ -247,36 +207,6 @@
     </url>
     <url>
         <loc>https://ffxivteamcraft.com/reset-timers</loc>
-        <priority>0.80</priority>
-        <lastmod>2024-06-02T14:33:09.125Z</lastmod>
-    </url>
-    <url>
-        <loc>https://ffxivteamcraft.com/inventory</loc>
-        <priority>0.80</priority>
-        <lastmod>2024-06-02T14:33:09.125Z</lastmod>
-    </url>
-    <url>
-        <loc>https://ffxivteamcraft.com/inventory-optimizer</loc>
-        <priority>0.80</priority>
-        <lastmod>2024-06-02T14:33:09.125Z</lastmod>
-    </url>
-    <url>
-        <loc>https://ffxivteamcraft.com/gearset</loc>
-        <priority>0.80</priority>
-        <lastmod>2024-06-02T14:33:09.125Z</lastmod>
-    </url>
-    <url>
-        <loc>https://ffxivteamcraft.com/gearset-folder</loc>
-        <priority>0.80</priority>
-        <lastmod>2024-06-02T14:33:09.125Z</lastmod>
-    </url>
-    <url>
-        <loc>https://ffxivteamcraft.com/gearsets</loc>
-        <priority>0.80</priority>
-        <lastmod>2024-06-02T14:33:09.125Z</lastmod>
-    </url>
-    <url>
-        <loc>https://ffxivteamcraft.com/metrics</loc>
         <priority>0.80</priority>
         <lastmod>2024-06-02T14:33:09.125Z</lastmod>
     </url>
