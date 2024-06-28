@@ -429,7 +429,7 @@ export const lazyFilesList = {
   },
   'materias': {
     'fileName': 'materias.json',
-    'hashedFileName': 'materias.d78266b4c75e3f0fc731140193dc820e19d21bcc.json'
+    'hashedFileName': 'materias.02002fd8b1ce584e8a0a7a2dcad81995299bb224.json'
   },
   'medicines': {
     'fileName': 'medicines.json',
@@ -669,7 +669,7 @@ export const lazyFilesList = {
   },
   'achievementsDatabasePages': {
     'fileName': 'db/achievements-database-pages.json',
-    'hashedFileName': 'db/achievements-database-pages.22c183d99e825c9a3d1d87db587142d38951d1de.json'
+    'hashedFileName': 'db/achievements-database-pages.9a939ef7f974b36f8178370abdc500c5e8e95210.json'
   },
   'actionsDatabasePages': {
     'fileName': 'db/actions-database-pages.json',
@@ -677,31 +677,31 @@ export const lazyFilesList = {
   },
   'fatesDatabasePages': {
     'fileName': 'db/fates-database-pages.json',
-    'hashedFileName': 'db/fates-database-pages.f6a0caa715222381a48f89a6c3165d43856907ec.json'
+    'hashedFileName': 'db/fates-database-pages.4d55814020b5cccd916334aca4c6337957a022b9.json'
   },
   'fishingSpotsDatabasePages': {
     'fileName': 'db/fishing-spots-database-pages.json',
-    'hashedFileName': 'db/fishing-spots-database-pages.10222a9bd8fd0fec8d5646f0c5b713ac26060121.json'
+    'hashedFileName': 'db/fishing-spots-database-pages.d3d5a75d48ed8dddfb4db10d74cf30c3ea72aa43.json'
   },
   'itemsDatabasePages': {
     'fileName': 'db/items-database-pages.json',
-    'hashedFileName': 'db/items-database-pages.5cdc7b6163fc0e22c8657dea51cf3d77e87124e4.json'
+    'hashedFileName': 'db/items-database-pages.e797ee4a8877768fe029fb16a0e715914c96b26b.json'
   },
   'levesDatabasePages': {
     'fileName': 'db/leves-database-pages.json',
-    'hashedFileName': 'db/leves-database-pages.8971ee9b54ca1195ae2a68253b1e21d77a659a67.json'
+    'hashedFileName': 'db/leves-database-pages.4035c77f640c1cec6e5e6e952209ae55e1c61757.json'
   },
   'mobsDatabasePages': {
     'fileName': 'db/mobs-database-pages.json',
-    'hashedFileName': 'db/mobs-database-pages.78cb43bb0c33cb704f61474a9cad892b4fffc66c.json'
+    'hashedFileName': 'db/mobs-database-pages.5a3bc980f3158c603ecc894cc54fb8fde50faa25.json'
   },
   'nodesDatabasePages': {
     'fileName': 'db/nodes-database-pages.json',
-    'hashedFileName': 'db/nodes-database-pages.af3c78218c3d7c449f1755916bdd6013b8b5cce0.json'
+    'hashedFileName': 'db/nodes-database-pages.e37a967dca31162bf6543581e31efcc0153251c5.json'
   },
   'npcsDatabasePages': {
     'fileName': 'db/npcs-database-pages.json',
-    'hashedFileName': 'db/npcs-database-pages.8b6b79f138b6db11c4357585140038830e8484a3.json'
+    'hashedFileName': 'db/npcs-database-pages.87df15a91b99c89fa01dd56c58f632fa4b3e2e27.json'
   },
   'questsDatabasePages': {
     'fileName': 'db/quests-database-pages.json',
@@ -713,11 +713,11 @@ export const lazyFilesList = {
   },
   'statusesDatabasePages': {
     'fileName': 'db/statuses-database-pages.json',
-    'hashedFileName': 'db/statuses-database-pages.cd05d66703914cc6e9ae29b04d74d2eef9d1debf.json'
+    'hashedFileName': 'db/statuses-database-pages.9584284508787902b1880a2cdfd3fb98e07e07f7.json'
   },
   'traitsDatabasePages': {
     'fileName': 'db/traits-database-pages.json',
-    'hashedFileName': 'db/traits-database-pages.35be1454c38c1dbdc5773833057ca85a2ae1bf39.json'
+    'hashedFileName': 'db/traits-database-pages.d9e74088f3ab53cb451a53c14829c97209dc0d14.json'
   },
   'koAchievementDescriptions': {
     'fileName': 'ko/ko-achievement-descriptions.json',

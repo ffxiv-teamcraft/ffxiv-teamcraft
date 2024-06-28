@@ -71708,7 +71708,7 @@
   "3429": {
     "id": 3429,
     "icon": "/i/030000/030408.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Stick Them with the Pointy End X",
     "de": "Nur dem Schwert kannst du vertrauen X",
     "ja": "剣術士：レベル100",
@@ -71725,7 +71725,7 @@
   "3430": {
     "id": 3430,
     "icon": "/i/031000/031004.png",
-    "patch": 1,
+    "patch": 95,
     "en": "The Sweet Science X",
     "de": "Zwei Fäuste für Eorzea X",
     "ja": "格闘士：レベル100",
@@ -71742,7 +71742,7 @@
   "3431": {
     "id": 3431,
     "icon": "/i/031000/031409.png",
-    "patch": 1,
+    "patch": 95,
     "en": "An Axe to Grind X",
     "de": "Das Kriegsbeil ausgraben X",
     "ja": "斧術士：レベル100",
@@ -71759,7 +71759,7 @@
   "3432": {
     "id": 3432,
     "icon": "/i/031000/031816.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Strong Lance Arm X",
     "de": "Von der Pike auf X",
     "ja": "槍術士：レベル100",
@@ -71776,7 +71776,7 @@
   "3433": {
     "id": 3433,
     "icon": "/i/032000/032204.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Just Talkin' 'bout Shafts X",
     "de": "Den Bogen raus X",
     "ja": "弓術士：レベル100",
@@ -71793,7 +71793,7 @@
   "3434": {
     "id": 3434,
     "icon": "/i/032000/032611.png",
-    "patch": 1,
+    "patch": 95,
     "en": "I Got the Magic Stick X",
     "de": "DAS ist mein Zauberstab X",
     "ja": "幻術士：レベル100",
@@ -71810,7 +71810,7 @@
   "3435": {
     "id": 3435,
     "icon": "/i/032000/032806.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Bring Out Your Dead X",
     "de": "Bringt eure Toten raus X",
     "ja": "呪術士：レベル100",
@@ -71827,7 +71827,7 @@
   "3436": {
     "id": 3436,
     "icon": "/i/033000/033401.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Through the Gate X",
     "de": "Durch die Tore X",
     "ja": "巴術士：レベル100",
@@ -71844,7 +71844,7 @@
   "3437": {
     "id": 3437,
     "icon": "/i/033000/033801.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Come on, Rogue X",
     "de": "Auf leisen Sohlen X",
     "ja": "双剣士：レベル100",
@@ -71861,7 +71861,7 @@
   "3438": {
     "id": 3438,
     "icon": "/i/034000/034203.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Are You Afraid of the Dark? VIII",
     "de": "Im Dunkeln lässt sich gut munkeln VIII",
     "ja": "暗黒騎士：レベル100",
@@ -71878,7 +71878,7 @@
   "3439": {
     "id": 3439,
     "icon": "/i/034000/034607.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mean Machine VIII",
     "de": "Läuft wie geschmiert VIII",
     "ja": "機工士：レベル100",
@@ -71895,7 +71895,7 @@
   "3440": {
     "id": 3440,
     "icon": "/i/034000/034808.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Starstruck VIII",
     "de": "Sieg der Sterne VIII",
     "ja": "占星術師：レベル100",
@@ -71912,7 +71912,7 @@
   "3441": {
     "id": 3441,
     "icon": "/i/036000/036747.png",
-    "patch": 1,
+    "patch": 95,
     "en": "How Deep the Rabbit Hole Goes VI",
     "de": "Alarmstufe Rot VI",
     "ja": "赤魔道士：レベル100",
@@ -71929,7 +71929,7 @@
   "3442": {
     "id": 3442,
     "icon": "/i/036000/036427.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Bushido Blade VI",
     "de": "Bushido - Weg des Samurai VI",
     "ja": "侍：レベル100",
@@ -71946,7 +71946,7 @@
   "3443": {
     "id": 3443,
     "icon": "/i/036000/036005.png",
-    "patch": 1,
+    "patch": 95,
     "en": "More Complex than You Think IV",
     "de": "Vielleicht bin ich ein Löwe IV",
     "ja": "ガンブレイカー：レベル100",
@@ -71963,7 +71963,7 @@
   "3444": {
     "id": 3444,
     "icon": "/i/036000/036205.png",
-    "patch": 1,
+    "patch": 95,
     "en": "We Got the Beat IV",
     "de": "Tanz auf der Klinge IV",
     "ja": "踊り子：レベル100",
@@ -71980,7 +71980,7 @@
   "3445": {
     "id": 3445,
     "icon": "/i/037000/037231.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Perchance to Dream III",
     "de": "Pakt mit der Dunkelheit III",
     "ja": "リーパー：レベル100",
@@ -71997,7 +71997,7 @@
   "3446": {
     "id": 3446,
     "icon": "/i/037000/037030.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Do No Harm III",
     "de": "Uraltes Wissen III",
     "ja": "賢者：レベル100",
@@ -72014,7 +72014,7 @@
   "3447": {
     "id": 3447,
     "icon": "/i/037000/037435.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Viper Way Your Tears I",
     "de": "Und die Viper hat zwei Zähne I",
     "ja": "ヴァイパー：レベル90",
@@ -72031,7 +72031,7 @@
   "3448": {
     "id": 3448,
     "icon": "/i/037000/037435.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Viper Way Your Tears II",
     "de": "Und die Viper hat zwei Zähne II",
     "ja": "ヴァイパー：レベル100",
@@ -72048,7 +72048,7 @@
   "3449": {
     "id": 3449,
     "icon": "/i/037000/037640.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Let Me Paint You a Picture I",
     "de": "Brotlose Kunst I",
     "ja": "ピクトマンサー：レベル90",
@@ -72065,7 +72065,7 @@
   "3450": {
     "id": 3450,
     "icon": "/i/037000/037640.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Let Me Paint You a Picture II",
     "de": "Brotlose Kunst II",
     "ja": "ピクトマンサー：レベル100",
@@ -72082,7 +72082,7 @@
   "3451": {
     "id": 3451,
     "icon": "/i/035000/035001.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Knock on Wood X",
     "de": "Aus anderem Holz X",
     "ja": "木工師：レベル100",
@@ -72099,7 +72099,7 @@
   "3452": {
     "id": 3452,
     "icon": "/i/035000/035106.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Temper, Temper X",
     "de": "Seines Glückes Schmied X",
     "ja": "鍛冶師：レベル100",
@@ -72116,7 +72116,7 @@
   "3453": {
     "id": 3453,
     "icon": "/i/035000/035203.png",
-    "patch": 1,
+    "patch": 95,
     "en": "The Riddle of Steel X",
     "de": "Das Geheimnis des Stahls X",
     "ja": "甲冑師：レベル100",
@@ -72133,7 +72133,7 @@
   "3454": {
     "id": 3454,
     "icon": "/i/035000/035301.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Heart of Gold X",
     "de": "Herz aus Gold X",
     "ja": "彫金師：レベル100",
@@ -72150,7 +72150,7 @@
   "3455": {
     "id": 3455,
     "icon": "/i/035000/035404.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Tougher than Leather X",
     "de": "Ganz in Leder X",
     "ja": "革細工師：レベル100",
@@ -72167,7 +72167,7 @@
   "3456": {
     "id": 3456,
     "icon": "/i/035000/035501.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Smiling, Styling, and Textiling X",
     "de": "Eorzeas neue Kleider X",
     "ja": "裁縫師：レベル100",
@@ -72184,7 +72184,7 @@
   "3457": {
     "id": 3457,
     "icon": "/i/035000/035604.png",
-    "patch": 1,
+    "patch": 95,
     "en": "'Tis True without Lying X",
     "de": "Gut gemischt ist halb gewonnen X",
     "ja": "錬金術師：レベル100",
@@ -72201,7 +72201,7 @@
   "3458": {
     "id": 3458,
     "icon": "/i/035000/035704.png",
-    "patch": 1,
+    "patch": 95,
     "en": "All in Good Taste X",
     "de": "Der richtige Pfiff X",
     "ja": "調理師：レベル100",
@@ -72218,7 +72218,7 @@
   "3459": {
     "id": 3459,
     "icon": "/i/038000/038103.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Fear the Reaper X",
     "de": "Man erntet, was man sät X",
     "ja": "園芸師：レベル100",
@@ -72235,7 +72235,7 @@
   "3460": {
     "id": 3460,
     "icon": "/i/038000/038003.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Breaking Rocks in the Hot Sun X",
     "de": "Gute Miene zur Mine X",
     "ja": "採掘師：レベル100",
@@ -72252,7 +72252,7 @@
   "3461": {
     "id": 3461,
     "icon": "/i/038000/038203.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Gone Fishin' X",
     "de": "Was für ein Kaventsmann X",
     "ja": "漁師：レベル100",
@@ -72269,7 +72269,7 @@
   "3462": {
     "id": 3462,
     "icon": "/i/002000/002547.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mastering War VI",
     "de": "Meister des Krieges VI",
     "ja": "武を解し者",
@@ -72286,7 +72286,7 @@
   "3463": {
     "id": 3463,
     "icon": "/i/002000/002661.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mastering Magic VI",
     "de": "Meister der Magie VI",
     "ja": "魔を解し者",
@@ -72303,7 +72303,7 @@
   "3464": {
     "id": 3464,
     "icon": "/i/002000/002517.png",
-    "patch": 1,
+    "patch": 95,
     "en": "A Life of Adventure VI",
     "de": "Tausendsassa VI",
     "ja": "二十の道を解し者",
@@ -72320,7 +72320,7 @@
   "3465": {
     "id": 3465,
     "icon": "/i/061000/061269.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mastering the Hand VI",
     "de": "Meister des Handwerks VI",
     "ja": "職人魂を解し冒険者",
@@ -72337,7 +72337,7 @@
   "3466": {
     "id": 3466,
     "icon": "/i/001000/001981.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mastering the Land VI",
     "de": "Meister der Ressourcen VI",
     "ja": "黄金の恵みを我が身に",
@@ -72354,7 +72354,7 @@
   "3467": {
     "id": 3467,
     "icon": "/i/035000/035001.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Going with the Grain: Exemplar",
     "de": "Immer mit der Faser: Ass",
     "ja": "木工職人：皆伝",
@@ -72371,7 +72371,7 @@
   "3468": {
     "id": 3468,
     "icon": "/i/035000/035106.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Working the Bellows: Exemplar",
     "de": "Spiel mit dem Feuer: Ass",
     "ja": "鍛冶職人：皆伝",
@@ -72388,7 +72388,7 @@
   "3469": {
     "id": 3469,
     "icon": "/i/035000/035203.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Pounding Out the Dents: Exemplar",
     "de": "Da bist du platt: Ass",
     "ja": "板金職人：皆伝",
@@ -72405,7 +72405,7 @@
   "3470": {
     "id": 3470,
     "icon": "/i/035000/035301.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Cutting the Carats: Exemplar",
     "de": "Hochkarätige Höchstleistung: Ass",
     "ja": "彫金職人：皆伝",
@@ -72422,7 +72422,7 @@
   "3471": {
     "id": 3471,
     "icon": "/i/035000/035404.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Hiding in Plain Sight: Exemplar",
     "de": "Abziehen am helllichten Tage: Ass",
     "ja": "革細工職人：皆伝",
@@ -72439,7 +72439,7 @@
   "3472": {
     "id": 3472,
     "icon": "/i/035000/035501.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Threading the Needle: Exemplar",
     "de": "Weber wenn sie losgelassen: Ass",
     "ja": "裁縫職人：皆伝",
@@ -72456,7 +72456,7 @@
   "3473": {
     "id": 3473,
     "icon": "/i/035000/035604.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mixing It Up: Exemplar",
     "de": "Opus Magnum: Ass",
     "ja": "錬成職人：皆伝",
@@ -72473,7 +72473,7 @@
   "3474": {
     "id": 3474,
     "icon": "/i/035000/035704.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Savoring the Realm: Exemplar",
     "de": "Das große Fressen: Ass",
     "ja": "調理職人：皆伝",
@@ -72490,7 +72490,7 @@
   "3475": {
     "id": 3475,
     "icon": "/i/001000/001056.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Reaping Dawntrail",
     "de": "Die Sense aus Gold",
     "ja": "黄金の伐採名人",
@@ -72507,7 +72507,7 @@
   "3476": {
     "id": 3476,
     "icon": "/i/001000/001015.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mining Dawntrail",
     "de": "Die Spitzhacke aus Gold",
     "ja": "黄金の採掘名人",
@@ -72524,7 +72524,7 @@
   "3477": {
     "id": 3477,
     "icon": "/i/001000/001101.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Baiting Dawntrail",
     "de": "Die Angel aus Gold",
     "ja": "黄金の釣り名人",
@@ -72541,7 +72541,7 @@
   "3478": {
     "id": 3478,
     "icon": "/i/062000/062973.png",
-    "patch": 1,
+    "patch": 95,
     "en": "I Made That (Worth Collecting) VII",
     "de": "Ich hab's sammelbar gemacht VII",
     "ja": "収集品の製作者：ランク7",
@@ -72558,7 +72558,7 @@
   "3479": {
     "id": 3479,
     "icon": "/i/060000/060031.png",
-    "patch": 1,
+    "patch": 95,
     "en": "I Collected That VII",
     "de": "Ich hab's gesammelt VII",
     "ja": "収集品の採集者：ランク7",
@@ -72575,7 +72575,7 @@
   "3480": {
     "id": 3480,
     "icon": "/i/035000/035001.png",
-    "patch": 1,
+    "patch": 95,
     "en": "With Saw in Hand VIII",
     "de": "Sägende Hand VIII",
     "ja": "製作稼業木工師：ランク8",
@@ -72592,7 +72592,7 @@
   "3481": {
     "id": 3481,
     "icon": "/i/035000/035106.png",
-    "patch": 1,
+    "patch": 95,
     "en": "With Hammer in Hand VIII",
     "de": "Hämmernde Hand VIII",
     "ja": "製作稼業鍛冶師：ランク8",
@@ -72609,7 +72609,7 @@
   "3482": {
     "id": 3482,
     "icon": "/i/035000/035203.png",
-    "patch": 1,
+    "patch": 95,
     "en": "With Steel in Hand VIII",
     "de": "Stählerne Hand VIII",
     "ja": "製作稼業甲冑師：ランク8",
@@ -72626,7 +72626,7 @@
   "3483": {
     "id": 3483,
     "icon": "/i/035000/035301.png",
-    "patch": 1,
+    "patch": 95,
     "en": "With Gem in Hand VIII",
     "de": "Goldene Hand VIII",
     "ja": "製作稼業彫金師：ランク8",
@@ -72643,7 +72643,7 @@
   "3484": {
     "id": 3484,
     "icon": "/i/035000/035404.png",
-    "patch": 1,
+    "patch": 95,
     "en": "With Skin in Hand VIII",
     "de": "Gerbende Hand VIII",
     "ja": "製作稼業革細工師：ランク8",
@@ -72660,7 +72660,7 @@
   "3485": {
     "id": 3485,
     "icon": "/i/035000/035501.png",
-    "patch": 1,
+    "patch": 95,
     "en": "With Needle in Hand VIII",
     "de": "Webende Hand VIII",
     "ja": "製作稼業裁縫師：ランク8",
@@ -72677,7 +72677,7 @@
   "3486": {
     "id": 3486,
     "icon": "/i/035000/035604.png",
-    "patch": 1,
+    "patch": 95,
     "en": "With Pestle in Hand VIII",
     "de": "Brauende Hand VIII",
     "ja": "製作稼業錬金術師：ランク8",
@@ -72694,7 +72694,7 @@
   "3487": {
     "id": 3487,
     "icon": "/i/035000/035704.png",
-    "patch": 1,
+    "patch": 95,
     "en": "With Pan in Hand VIII",
     "de": "Brutzelnde Hand VIII",
     "ja": "製作稼業調理師：ランク8",
@@ -72711,7 +72711,7 @@
   "3488": {
     "id": 3488,
     "icon": "/i/038000/038103.png",
-    "patch": 1,
+    "patch": 95,
     "en": "With Axe in Hand VIII",
     "de": "Blühende Hand VIII",
     "ja": "採集稼業園芸師：ランク8",
@@ -72728,7 +72728,7 @@
   "3489": {
     "id": 3489,
     "icon": "/i/038000/038003.png",
-    "patch": 1,
+    "patch": 95,
     "en": "With Pick in Hand VIII",
     "de": "Hackende Hand VIII",
     "ja": "採集稼業採掘師：ランク8",
@@ -72745,7 +72745,7 @@
   "3490": {
     "id": 3490,
     "icon": "/i/038000/038203.png",
-    "patch": 1,
+    "patch": 95,
     "en": "With Bait in Hand VIII",
     "de": "Angelnde Hand VIII",
     "ja": "採集稼業漁師：ランク8",
@@ -72762,7 +72762,7 @@
   "3491": {
     "id": 3491,
     "icon": "/i/026000/026002.png",
-    "patch": 1,
+    "patch": 95,
     "en": "A Promise for the People",
     "de": "Für das Volk",
     "ja": "みんなのために",
@@ -72779,7 +72779,7 @@
   "3492": {
     "id": 3492,
     "icon": "/i/026000/026002.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Peaceful Intentions",
     "de": "Wir kommen in Frieden",
     "ja": "ウクラマトの平和",
@@ -72796,7 +72796,7 @@
   "3493": {
     "id": 3493,
     "icon": "/i/026000/026002.png",
-    "patch": 1,
+    "patch": 95,
     "en": "In Rite Triumphant",
     "de": "Die Herren des Ritus",
     "ja": "すべての路は希望とともに",
@@ -72813,7 +72813,7 @@
   "3494": {
     "id": 3494,
     "icon": "/i/026000/026002.png",
-    "patch": 1,
+    "patch": 95,
     "en": "The Worth of a Soul",
     "de": "Die Kraft der Seelen",
     "ja": "魂を扱う者たち",
@@ -72830,7 +72830,7 @@
   "3495": {
     "id": 3495,
     "icon": "/i/026000/026002.png",
-    "patch": 1,
+    "patch": 95,
     "en": "The Burden of Legacy",
     "de": "Wunderkind",
     "ja": "奇跡の子",
@@ -72847,7 +72847,7 @@
   "3496": {
     "id": 3496,
     "icon": "/i/026000/026002.png",
-    "patch": 1,
+    "patch": 95,
     "en": "In the Glow of a New Dawn",
     "de": "Pfad der Morgensonne",
     "ja": "黄金のレガシー",
@@ -72864,7 +72864,7 @@
   "3497": {
     "id": 3497,
     "icon": "/i/026000/026068.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Victorious Viper",
     "de": "Der Weg der Viper",
     "ja": "大物狩りのヴァイパー",
@@ -72881,7 +72881,7 @@
   "3498": {
     "id": 3498,
     "icon": "/i/026000/026069.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Gotta Follow My Rainbow",
     "de": "Fantastische Piktomantie",
     "ja": "想造のピクトマンサー",
@@ -72898,7 +72898,7 @@
   "3499": {
     "id": 3499,
     "icon": "/i/061000/061264.png",
-    "patch": 1,
+    "patch": 95,
     "en": "No Sleep Till Tuliyollal",
     "de": "Wiederbeschaffer der Wiege der Schlaflosen",
     "ja": "イッカクの祭器を奪還せし者",
@@ -72915,7 +72915,7 @@
   "3500": {
     "id": 3500,
     "icon": "/i/061000/061251.png",
-    "patch": 1,
+    "patch": 95,
     "en": "A Heartsting's a Heavy Burden",
     "de": "Wiederbeschaffer von Herzstich",
     "ja": "サソリの祭器を奪還せし者",
@@ -72932,7 +72932,7 @@
   "3501": {
     "id": 3501,
     "icon": "/i/061000/061265.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Dreams Woven Anew",
     "de": "Wiederbeschaffer von Flatterschein",
     "ja": "アゲハの祭器を奪還せし者",
@@ -72949,7 +72949,7 @@
   "3502": {
     "id": 3502,
     "icon": "/i/061000/061262.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Some Shields Are Made to Be Broken",
     "de": "Wiederbeschaffer von Stahlschwein",
     "ja": "アルマジロの祭器を奪還せし者",
@@ -72966,7 +72966,7 @@
   "3503": {
     "id": 3503,
     "icon": "/i/061000/061253.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Reach for the Apex",
     "de": "Wiederbeschaffer von Himmelswächter",
     "ja": "フクロウの祭器を奪還せし者",
@@ -72983,7 +72983,7 @@
   "3504": {
     "id": 3504,
     "icon": "/i/001000/001988.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Bonds Forged in Fire",
     "de": "Das Schmieden metallener Bande",
     "ja": "金荒物屋の硬い絆",
@@ -73000,7 +73000,7 @@
   "3505": {
     "id": 3505,
     "icon": "/i/001000/001987.png",
-    "patch": 1,
+    "patch": 95,
     "en": "These Are Their Stories",
     "de": "Auf den Sonnenseiten",
     "ja": "パメカと綴じる物語",
@@ -73017,7 +73017,7 @@
   "3506": {
     "id": 3506,
     "icon": "/i/001000/001955.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Worth the Squeeze",
     "de": "Magischer Fruchtsaft-Sommelier",
     "ja": "魔法のジュースの配合士",
@@ -73034,7 +73034,7 @@
   "3507": {
     "id": 3507,
     "icon": "/i/001000/001006.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Holistic Gathering",
     "de": "Heilende Hände",
     "ja": "癒やしのアポサカリー",
@@ -73051,7 +73051,7 @@
   "3508": {
     "id": 3508,
     "icon": "/i/001000/001116.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Forever Fancy",
     "de": "Flossig Fabelhaft",
     "ja": "ドヌハヌの道楽仲間",
@@ -73068,7 +73068,7 @@
   "3509": {
     "id": 3509,
     "icon": "/i/003000/003139.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Bound by Amity",
     "de": "Freunde für immer",
     "ja": "知友の絆",
@@ -73085,7 +73085,7 @@
   "3510": {
     "id": 3510,
     "icon": "/i/001000/001019.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Happy Trails",
     "de": "Das Gold der Erde",
     "ja": "黄金の探検家",
@@ -73102,7 +73102,7 @@
   "3511": {
     "id": 3511,
     "icon": "/i/001000/001001.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mapping the Realm: Urqopacha",
     "de": "Kartograph: Urqopacha",
     "ja": "オルコ・パチャを踏破せし者",
@@ -73119,7 +73119,7 @@
   "3512": {
     "id": 3512,
     "icon": "/i/001000/001001.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mapping the Realm: Kozama'uka",
     "de": "Kartograph: Kozama'uka",
     "ja": "コザマル・カを踏破せし者",
@@ -73136,7 +73136,7 @@
   "3513": {
     "id": 3513,
     "icon": "/i/001000/001001.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mapping the Realm: Yak T'el",
     "de": "Kartograph: Yak T'el",
     "ja": "ヤクテル樹海を踏破せし者",
@@ -73153,7 +73153,7 @@
   "3514": {
     "id": 3514,
     "icon": "/i/001000/001001.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mapping the Realm: Shaaloani",
     "de": "Kartograph: Shaaloani",
     "ja": "シャーローニ荒野を踏破せし者",
@@ -73170,7 +73170,7 @@
   "3515": {
     "id": 3515,
     "icon": "/i/001000/001001.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mapping the Realm: Heritage Found",
     "de": "Kartograph: Ewiges Erbe",
     "ja": "ヘリテージファウンドを踏破せし者",
@@ -73187,7 +73187,7 @@
   "3516": {
     "id": 3516,
     "icon": "/i/001000/001001.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mapping the Realm: Living Memory",
     "de": "Kartograph: Lebende Erinnerung",
     "ja": "リビング・メモリーを踏破せし者",
@@ -73204,7 +73204,7 @@
   "3517": {
     "id": 3517,
     "icon": "/i/001000/001001.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mapping the Realm: Ihuykatumu",
     "de": "Kartograph: Ihuykatumu",
     "ja": "イフイカ・トゥムを踏破せし者",
@@ -73221,7 +73221,7 @@
   "3518": {
     "id": 3518,
     "icon": "/i/001000/001001.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mapping the Realm: Worqor Zormor",
     "de": "Kartograph: Worqor Zormor",
     "ja": "ウォーコー・ゾーモーを踏破せし者",
@@ -73238,7 +73238,7 @@
   "3519": {
     "id": 3519,
     "icon": "/i/001000/001001.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mapping the Realm: The Skydeep Cenote",
     "de": "Kartograph: Himmelstiefer Cenote",
     "ja": "天深きセノーテを踏破せし者",
@@ -73255,7 +73255,7 @@
   "3520": {
     "id": 3520,
     "icon": "/i/001000/001001.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mapping the Realm: Vanguard",
     "de": "Kartograph: Der Außenposten",
     "ja": "ヴァンガードを踏破せし者",
@@ -73272,7 +73272,7 @@
   "3521": {
     "id": 3521,
     "icon": "/i/001000/001001.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mapping the Realm: Origenics",
     "de": "Kartograph: Origenik",
     "ja": "オリジェニクスを踏破せし者",
@@ -73289,7 +73289,7 @@
   "3522": {
     "id": 3522,
     "icon": "/i/001000/001001.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mapping the Realm: Alexandria",
     "de": "Kartograph: Alexandria",
     "ja": "アレクサンドリアを踏破せし者",
@@ -73306,7 +73306,7 @@
   "3523": {
     "id": 3523,
     "icon": "/i/001000/001001.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mapping the Realm: Tender Valley",
     "de": "Kartograph: Kaktorsenke",
     "ja": "サボテンダーバレーを踏破せし者",
@@ -73323,7 +73323,7 @@
   "3524": {
     "id": 3524,
     "icon": "/i/001000/001001.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Mapping the Realm: The Strayborough Deadwalk",
     "de": "Kartograph: Mahrlingen-Promenade",
     "ja": "ストレイバローを踏破せし者",
@@ -73340,7 +73340,7 @@
   "3525": {
     "id": 3525,
     "icon": "/i/000000/000317.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Everkept",
     "de": "Mut ist des Wunders Beginn",
     "ja": "武王を打倒せし者",
@@ -73357,7 +73357,7 @@
   "3526": {
     "id": 3526,
     "icon": "/i/000000/000317.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Valigarmastered",
     "de": "Katastrophenhilfe",
     "ja": "生ける天災を狩りし者",
@@ -73374,7 +73374,7 @@
   "3527": {
     "id": 3527,
     "icon": "/i/002000/002505.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Tank You, Paladin VI",
     "de": "Ein Paladin für alle Fälle VI",
     "ja": "みんなのナイト：ランク6",
@@ -73391,7 +73391,7 @@
   "3528": {
     "id": 3528,
     "icon": "/i/002000/002551.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Tank You, Warrior VI",
     "de": "Ein Krieger für alle Fälle VI",
     "ja": "みんなの戦士：ランク6",
@@ -73408,7 +73408,7 @@
   "3529": {
     "id": 3529,
     "icon": "/i/003000/003071.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Tank You, Dark Knight VI",
     "de": "Ein Dunkelritter für alle Fälle VI",
     "ja": "みんなの暗黒騎士：ランク6",
@@ -73425,7 +73425,7 @@
   "3530": {
     "id": 3530,
     "icon": "/i/003000/003406.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Tank You, Gunbreaker VI",
     "de": "Eine Revolverklinge für alle Fälle VI",
     "ja": "みんなのガンブレイカー：ランク6",
@@ -73442,7 +73442,7 @@
   "3531": {
     "id": 3531,
     "icon": "/i/002000/002680.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Dawn of a New A Game I",
     "de": "Jag mir ein A auf Tural I",
     "ja": "黄金の難物殺し：ランク1",
@@ -73459,7 +73459,7 @@
   "3532": {
     "id": 3532,
     "icon": "/i/002000/002680.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Dawn of a New A Game II",
     "de": "Jag mir ein A auf Tural II",
     "ja": "黄金の難物殺し：ランク2",
@@ -73476,7 +73476,7 @@
   "3533": {
     "id": 3533,
     "icon": "/i/002000/002680.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Dawn of a New A Game III",
     "de": "Jag mir ein A auf Tural III",
     "ja": "黄金の難物殺し：ランク3",
@@ -73493,7 +73493,7 @@
   "3534": {
     "id": 3534,
     "icon": "/i/002000/002731.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Dawn of a New S Game I",
     "de": "Jag mir ein S auf Tural I",
     "ja": "黄金の超大物殺し：ランク1",
@@ -73510,7 +73510,7 @@
   "3535": {
     "id": 3535,
     "icon": "/i/002000/002731.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Dawn of a New S Game II",
     "de": "Jag mir ein S auf Tural II",
     "ja": "黄金の超大物殺し：ランク2",
@@ -73527,7 +73527,7 @@
   "3536": {
     "id": 3536,
     "icon": "/i/002000/002731.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Dawn of a New S Game III",
     "de": "Jag mir ein S auf Tural III",
     "ja": "黄金の超大物殺し：ランク3",
@@ -73544,7 +73544,7 @@
   "3537": {
     "id": 3537,
     "icon": "/i/002000/002685.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Dawnbright Hunter",
     "de": "Goldener Jäger",
     "ja": "ゴールデンモブハンター",
@@ -73561,7 +73561,7 @@
   "3538": {
     "id": 3538,
     "icon": "/i/037000/037430.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Aetherpool Party: Twinfangs",
     "de": "Waffen des Padjal: Zwillingsfänge",
     "ja": "強化されし魔器：ツインファング",
@@ -73578,7 +73578,7 @@
   "3539": {
     "id": 3539,
     "icon": "/i/037000/037639.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Aetherpool Party: Fan Brush",
     "de": "Waffen des Padjal: Fächerpinsel",
     "ja": "強化されし魔器：ファンブラシ",
@@ -73595,7 +73595,7 @@
   "3540": {
     "id": 3540,
     "icon": "/i/021000/021901.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Freebird: Urqopacha",
     "de": "Frei wie ein Vogel: Urqopacha",
     "ja": "オルコ・パチャの風を知る者",
@@ -73612,7 +73612,7 @@
   "3541": {
     "id": 3541,
     "icon": "/i/021000/021901.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Freebird: Kozama'uka",
     "de": "Frei wie ein Vogel: Kozama'uka",
     "ja": "コザマル・カの風を知る者",
@@ -73629,7 +73629,7 @@
   "3542": {
     "id": 3542,
     "icon": "/i/021000/021901.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Freebird: Yak T'el",
     "de": "Frei wie ein Vogel: Yak T'el",
     "ja": "ヤクテル樹海の風を知る者",
@@ -73646,7 +73646,7 @@
   "3543": {
     "id": 3543,
     "icon": "/i/021000/021901.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Freebird: Shaaloani",
     "de": "Frei wie ein Vogel: Shaaloani",
     "ja": "シャーローニ荒野の風を知る者",
@@ -73663,7 +73663,7 @@
   "3544": {
     "id": 3544,
     "icon": "/i/021000/021901.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Freebird: Heritage Found",
     "de": "Frei wie ein Vogel: Ewiges Erbe",
     "ja": "ヘリテージファウンドの風を知る者",
@@ -73680,7 +73680,7 @@
   "3545": {
     "id": 3545,
     "icon": "/i/021000/021901.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Freebird: Living Memory",
     "de": "Frei wie ein Vogel: Lebende Erinnerung",
     "ja": "リビング・メモリーの風を知る者",
@@ -73697,7 +73697,7 @@
   "3546": {
     "id": 3546,
     "icon": "/i/021000/021901.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Frequent Flyer V",
     "de": "Vielflieger V",
     "ja": "黄金の風を知る者",
@@ -73714,7 +73714,7 @@
   "3547": {
     "id": 3547,
     "icon": "/i/000000/000115.png",
-    "patch": 1,
+    "patch": 95,
     "en": "I Can Dig It XV",
     "de": "Wer sucht, der findet XV",
     "ja": "トレジャーハンター：ランク15",
@@ -73731,7 +73731,7 @@
   "3548": {
     "id": 3548,
     "icon": "/i/000000/000115.png",
-    "patch": 1,
+    "patch": 95,
     "en": "I Can Dig It XVI",
     "de": "Wer sucht, der findet XVI",
     "ja": "トレジャーハンター：ランク16",
@@ -73884,7 +73884,7 @@
   "3557": {
     "id": 3557,
     "icon": "/i/027000/027661.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Triple-decker XIII",
     "de": "Tripledecker XIII",
     "ja": "カードコレクター：ランク13",
@@ -73901,7 +73901,7 @@
   "3558": {
     "id": 3558,
     "icon": "/i/003000/003564.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Triple Team IX",
     "de": "Tripleduellant IX",
     "ja": "街角のデュエリスト：ランク9",
@@ -73918,7 +73918,7 @@
   "3559": {
     "id": 3559,
     "icon": "/i/002000/002645.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Free Market Friend: Urqopacha",
     "de": "FATE-Händler: Urqopacha",
     "ja": "広域交易商の味方：オルコ・パチャ",
@@ -73935,7 +73935,7 @@
   "3560": {
     "id": 3560,
     "icon": "/i/002000/002645.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Free Market Friend: Kozama'uka",
     "de": "FATE-Händler: Kozama'uka",
     "ja": "広域交易商の味方：コザマル・カ",
@@ -73952,7 +73952,7 @@
   "3561": {
     "id": 3561,
     "icon": "/i/002000/002645.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Free Market Friend: Yak T'el",
     "de": "FATE-Händler: Yak T'el",
     "ja": "広域交易商の味方：ヤクテル樹海",
@@ -73969,7 +73969,7 @@
   "3562": {
     "id": 3562,
     "icon": "/i/002000/002645.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Free Market Friend: Shaaloani",
     "de": "FATE-Händler: Shaaloani",
     "ja": "広域交易商の味方：シャーローニ荒野",
@@ -73986,7 +73986,7 @@
   "3563": {
     "id": 3563,
     "icon": "/i/002000/002645.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Free Market Friend: Heritage Found",
     "de": "FATE-Händler: Ewiges Erbe",
     "ja": "広域交易商の味方：ヘリテージファウンド",
@@ -74003,7 +74003,7 @@
   "3564": {
     "id": 3564,
     "icon": "/i/002000/002645.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Free Market Friend: Living Memory",
     "de": "FATE-Händler: Lebende Erinnerung",
     "ja": "広域交易商の味方：リビング・メモリー",
@@ -74020,7 +74020,7 @@
   "3565": {
     "id": 3565,
     "icon": "/i/002000/002645.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Transcontinental Trade",
     "de": "Transkontinentaler Handel",
     "ja": "広域交易商の後見人",
@@ -74037,7 +74037,7 @@
   "3566": {
     "id": 3566,
     "icon": "/i/002000/002629.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Terrible Ttokrrone",
     "de": "Ttokrrone der Terror",
     "ja": "トクローネスレイヤー",
@@ -74054,7 +74054,7 @@
   "3567": {
     "id": 3567,
     "icon": "/i/002000/002629.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Thanks for the Mu-mories",
     "de": "Mu-mmenschanz",
     "ja": "マジカルブーギー",
@@ -74071,7 +74071,7 @@
   "3568": {
     "id": 3568,
     "icon": "/i/064000/064452.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Summer's Biggest Fan",
     "de": "Held der Hitze",
     "ja": "暑気払いの大うちわ",
@@ -74105,7 +74105,7 @@
   "3570": {
     "id": 3570,
     "icon": "/i/056000/056726.png",
-    "patch": 1,
+    "patch": 95,
     "en": "The Little Fiends in Life",
     "de": "Ein vorzügliches Allerschutzheiligen",
     "ja": "感謝味わう守護天節",
@@ -74241,7 +74241,7 @@
   "3578": {
     "id": 3578,
     "icon": "/i/000000/000210.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Top Tier: Season Eleven",
     "de": "Kristallkönig (11. Saison)",
     "ja": "コンフリクトの王者：シーズン11",
@@ -74258,7 +74258,7 @@
   "3579": {
     "id": 3579,
     "icon": "/i/000000/000210.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Crystal in the Rough: Season Eleven",
     "de": "Kristallfürst (11. Saison)",
     "ja": "コンフリクトの勇者：シーズン11",
@@ -74275,7 +74275,7 @@
   "3580": {
     "id": 3580,
     "icon": "/i/000000/000210.png",
-    "patch": 1,
+    "patch": 95,
     "en": "Ranked and Filed: Season Eleven",
     "de": "Kristallkämpfer (11. Saison)",
     "ja": "コンフリクトの入賞者：シーズン11",
@@ -74292,7 +74292,7 @@
   "3581": {
     "id": 3581,
     "icon": "/i/025000/025945.png",
-    "patch": 1,
+    "patch": 95,
     "en": "The Leader of the Band VII",
     "de": "Hier spielt die Musik VII",
     "ja": "旋律に魅せられし者：ランク7",
