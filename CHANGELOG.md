@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.2.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.1.3...v11.2.0) (2024-06-28)
+
+
+### Features
+
+* FFXIV 7.0: Dawntrail ! ([3890e6b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3890e6bf9ab58f53fb99f0b804242f6f6338fdca))
+* **patroen:** new supporter: Auri Miyumi ([0f7b25f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0f7b25f7b2bec859239d236f923feeda7f491908))
+
+
+### Bug Fixes
+
+* **desktop:** center fishing overlay icon ([ed8e00e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ed8e00e52946524077c4cb46caf5bd0665b7237a)), closes [#2841](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2841)
+* **simulator:** show button tooltips at the right of buttons ([f9f8c50](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f9f8c50431c8da46eea02f96b8559108bda743f4))
+* **style:** buttons width and placement in search page ([84ef27c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/84ef27c28336a5dc06cffff4b2d646b4fb614f39)), closes [#2840](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2840)
+
 ### [11.1.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v11.1.2...v11.1.3) (2024-06-18)
 
 
